@@ -1,0 +1,312 @@
+{
+  "formats": {
+    "imagelists": {
+      "element_paths": 1,
+      "files": 107,
+      "parse_errors": 0
+    },
+    "levels": {
+      "element_paths": 6,
+      "files": 636,
+      "parse_errors": 0
+    },
+    "objects": {
+      "element_paths": 7,
+      "files": 345,
+      "parse_errors": 0
+    }
+  },
+  "inventory": [
+    {
+      "by_ext": {
+        ".ani": 11,
+        ".xml": 10
+      },
+      "bytes": 1936982,
+      "dir": "Animations",
+      "files": 21
+    },
+    {
+      "by_ext": {
+        ".xml": 1
+      },
+      "bytes": 55268,
+      "dir": "Audio",
+      "files": 1
+    },
+    {
+      "by_ext": {
+        ".wav": 3
+      },
+      "bytes": 110260,
+      "dir": "Audio/Algae",
+      "files": 3
+    },
+    {
+      "by_ext": {
+        ".wav": 18
+      },
+      "bytes": 315704,
+      "dir": "Audio/Allie",
+      "files": 18
+    },
+    {
+      "by_ext": {
+        ".wav": 14
+      },
+      "bytes": 202568,
+      "dir": "Audio/Balloons",
+      "files": 14
+    },
+    {
+      "by_ext": {
+        ".wav": 2
+      },
+      "bytes": 22136,
+      "dir": "Audio/Bombs",
+      "files": 2
+    },
+    {
+      "by_ext": {
+        ".wav": 55
+      },
+      "bytes": 290276,
+      "dir": "Audio/Cranky",
+      "files": 55
+    },
+    {
+      "by_ext": {
+        ".wav": 11
+      },
+      "bytes": 64404,
+      "dir": "Audio/Dirt",
+      "files": 11
+    },
+    {
+      "by_ext": {
+        ".wav": 79
+      },
+      "bytes": 614276,
+      "dir": "Audio/Duckies",
+      "files": 79
+    },
+    {
+      "by_ext": {
+        ".wav": 5
+      },
+      "bytes": 178476,
+      "dir": "Audio/GameWin",
+      "files": 5
+    },
+    {
+      "by_ext": {
+        ".wav": 22
+      },
+      "bytes": 464228,
+      "dir": "Audio/Liquids",
+      "files": 22
+    },
+    {
+      "by_ext": {
+        ".mp3": 2,
+        ".wav": 8
+      },
+      "bytes": 672313,
+      "dir": "Audio/Misc",
+      "files": 10
+    },
+    {
+      "by_ext": {
+        ".mp3": 39
+      },
+      "bytes": 12671089,
+      "dir": "Audio/Music",
+      "files": 39
+    },
+    {
+      "by_ext": {
+        ".wav": 14
+      },
+      "bytes": 4915422,
+      "dir": "Audio/Mystery",
+      "files": 14
+    },
+    {
+      "by_ext": {
+        ".wav": 12
+      },
+      "bytes": 130036,
+      "dir": "Audio/Objects",
+      "files": 12
+    },
+    {
+      "by_ext": {
+        ".mp3": 23
+      },
+      "bytes": 2243641,
+      "dir": "Audio/PuppetShows",
+      "files": 23
+    },
+    {
+      "by_ext": {
+        ".wav": 12
+      },
+      "bytes": 190928,
+      "dir": "Audio/Spouts",
+      "files": 12
+    },
+    {
+      "by_ext": {
+        ".wav": 54
+      },
+      "bytes": 705192,
+      "dir": "Audio/Swampy/Master",
+      "files": 54
+    },
+    {
+      "by_ext": {
+        ".wav": 3
+      },
+      "bytes": 14772,
+      "dir": "Audio/Switches",
+      "files": 3
+    },
+    {
+      "by_ext": {
+        ".mp3": 2,
+        ".wav": 6
+      },
+      "bytes": 470720,
+      "dir": "Audio/Theming",
+      "files": 8
+    },
+    {
+      "by_ext": {
+        ".wav": 3
+      },
+      "bytes": 34300,
+      "dir": "Audio/UI",
+      "files": 3
+    },
+    {
+      "by_ext": {
+        ".bin": 11,
+        ".xml": 6
+      },
+      "bytes": 1304416,
+      "dir": "Curves",
+      "files": 17
+    },
+    {
+      "by_ext": {
+        ".csv": 1,
+        ".db": 3,
+        ".xml": 104
+      },
+      "bytes": 726991,
+      "dir": "Data",
+      "files": 108
+    },
+    {
+      "by_ext": {
+        ".xml": 5
+      },
+      "bytes": 4440,
+      "dir": "Data/Notifications",
+      "files": 5
+    },
+    {
+      "by_ext": {
+        ".sql": 30,
+        ".xml": 11
+      },
+      "bytes": 311333,
+      "dir": "Data/UpdateScripts",
+      "files": 41
+    },
+    {
+      "by_ext": {
+        ".emitter": 9
+      },
+      "bytes": 7425,
+      "dir": "Emitters",
+      "files": 9
+    },
+    {
+      "by_ext": {
+        ".fnt": 12,
+        ".png": 46,
+        ".webp": 4
+      },
+      "bytes": 8250584,
+      "dir": "Fonts",
+      "files": 62
+    },
+    {
+      "by_ext": {
+        ".bak": 2,
+        ".editordata": 7,
+        ".editordata copy": 1,
+        ".png": 635,
+        ".psd": 1,
+        ".txt": 1,
+        ".xml": 636
+      },
+      "bytes": 9870524,
+      "dir": "Levels",
+      "files": 1283
+    },
+    {
+      "by_ext": {
+        ".hs": 345
+      },
+      "bytes": 291765,
+      "dir": "Objects",
+      "files": 345
+    },
+    {
+      "by_ext": {
+        ".ps": 24,
+        ".xml": 72
+      },
+      "bytes": 150801,
+      "dir": "PuppetShows",
+      "files": 96
+    },
+    {
+      "by_ext": {
+        ".txt": 1
+      },
+      "bytes": 789199,
+      "dir": "Script",
+      "files": 1
+    },
+    {
+      "by_ext": {
+        ".skeleton": 11
+      },
+      "bytes": 30912,
+      "dir": "Skeletons",
+      "files": 11
+    },
+    {
+      "by_ext": {
+        ".sprite": 527
+      },
+      "bytes": 1128857,
+      "dir": "Sprites",
+      "files": 527
+    },
+    {
+      "by_ext": {
+        ".imagelist": 107,
+        ".jpg": 4,
+        ".png": 112,
+        ".webp": 886
+      },
+      "bytes": 33256838,
+      "dir": "Textures",
+      "files": 1109
+    }
+  ]
+}

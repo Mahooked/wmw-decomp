@@ -1,0 +1,393 @@
+# class	typeinfo	kind	vtable	bases	details
+Dh	0x719b00	class	0x0	0	
+Di	0x719d30	class	0x0	0	
+Dn	0x719600	class	0x0	0	
+Ds	0x719ce0	class	0x0	0	
+Du	0x719c90	class	0x0	0	
+PDh	0x719b10	class	0x0	0	
+PDi	0x719d40	class	0x0	0	
+PDn	0x719610	class	0x0	0	
+PDs	0x719cf0	class	0x0	0	
+PDu	0x719ca0	class	0x0	0	
+PKDh	0x719b30	class	0x0	0	
+PKDi	0x719d60	class	0x0	0	
+PKDn	0x719630	class	0x0	0	
+PKDs	0x719d10	class	0x0	0	
+PKDu	0x719cc0	class	0x0	0	
+PKa	0x7197c0	class	0x0	0	
+PKb	0x719680	class	0x0	0	
+PKc	0x719720	class	0x0	0	
+PKd	0x719bd0	class	0x0	0	
+PKe	0x719c20	class	0x0	0	
+PKf	0x719b80	class	0x0	0	
+PKg	0x719c70	class	0x0	0	
+PKh	0x719770	class	0x0	0	
+PKi	0x7198b0	class	0x0	0	
+PKj	0x719900	class	0x0	0	
+PKl	0x719950	class	0x0	0	
+PKm	0x7199a0	class	0x0	0	
+PKn	0x719a90	class	0x0	0	
+PKo	0x719ae0	class	0x0	0	
+PKs	0x719810	class	0x0	0	
+PKt	0x719860	class	0x0	0	
+PKv	0x7195e0	class	0x0	0	
+PKw	0x7196d0	class	0x0	0	
+PKx	0x7199f0	class	0x0	0	
+PKy	0x719a40	class	0x0	0	
+Pa	0x7197a0	class	0x0	0	
+Pb	0x719660	class	0x0	0	
+Pc	0x719700	class	0x0	0	
+Pd	0x719bb0	class	0x0	0	
+Pe	0x719c00	class	0x0	0	
+Pf	0x719b60	class	0x0	0	
+Pg	0x719c50	class	0x0	0	
+Ph	0x719750	class	0x0	0	
+Pi	0x719890	class	0x0	0	
+Pj	0x7198e0	class	0x0	0	
+Pl	0x719930	class	0x0	0	
+Pm	0x719980	class	0x0	0	
+Pn	0x719a70	class	0x0	0	
+Po	0x719ac0	class	0x0	0	
+Ps	0x7197f0	class	0x0	0	
+Pt	0x719840	class	0x0	0	
+Pv	0x7195c0	class	0x0	0	
+Pw	0x7196b0	class	0x0	0	
+Px	0x7199d0	class	0x0	0	
+Py	0x719a20	class	0x0	0	
+Walaber::BezierCurve	0x710a90	si	0x710a18	1	Walaber::Curve@0
+Walaber::Bone	0x70e470	si	0x70e418	1	Walaber::Node@0
+Walaber::Callback	0x70ce10	class	0x70e2b0	0	
+Walaber::Curve	0x710a80	class	0x710aa8	0	
+Walaber::DrawableNode	0x710e00	si	0x710d98	1	Walaber::Node@0
+Walaber::FileManager::FH_StandardFileSystem	0x7106d0	si	0x710680	1	Walaber::FileManager::FileHandler@0
+Walaber::FileManager::FH_ZipFileSystem	0x7106f0	si	0x710648	1	Walaber::FileManager::FileHandler@0
+Walaber::FileManager::FileHandler	0x7106b8	class	0x0	0	
+Walaber::GameScreen	0x712968	class	0x0	0	
+Walaber::HermiteCurve	0x710bc0	si	0x710b58	1	Walaber::Curve@0
+Walaber::LinearCurve	0x710c40	si	0x710bd8	1	Walaber::Curve@0
+Walaber::MemberCallback<Walaber::BitmapFont>	0x70eab0	si	0x70ea88	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::CurveManager>	0x710b40	si	0x710b10	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::FontManager>	0x70eaf0	si	0x70eac8	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::NodeAnimationTrack>	0x70e340	si	0x70e318	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::NumericAnimationTrack>	0x70e380	si	0x70e358	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::ParticleEmitter>	0x710040	si	0x710018	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::Skeleton>	0x70e4b0	si	0x70e488	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::SkeletonActor>	0x70e600	si	0x70e5d8	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::SoundManager>	0x70e670	si	0x70e648	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::Sprite>	0x70ea70	si	0x70ea48	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::SpriteAnimation>	0x70ea30	si	0x70ea08	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::Texture2D>	0x710320	si	0x7102f8	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::TextureManager>	0x710360	si	0x710338	1	Walaber::Callback@0
+Walaber::MemberCallback<Walaber::XMLDocument>	0x710a00	si	0x7109d8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Bomb>	0x711660	si	0x711638	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::CustomTransitionLoader>	0x7161f0	si	0x7161c0	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::FluidConverter>	0x711bf0	si	0x711bc8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::GameState>	0x711360	si	0x711330	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::IAPNotification>	0x7126a0	si	0x712678	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::InteractiveObject>	0x7116a0	si	0x711678	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Notification>	0x712790	si	0x712768	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::NotificationSingleton>	0x714640	si	0x714618	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>	0x7113a0	si	0x711378	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::ScreenLoader>	0x70ce20	si	0x70cde8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Achievements>	0x712af0	si	0x712ac0	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>	0x712c20	si	0x712bf8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_AgeGate>	0x712da0	si	0x712d78	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_AnimationTest>	0x712ed0	si	0x712ea8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Challenges>	0x713050	si	0x713028	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Collectibles>	0x7131d0	si	0x7131a8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Credits>	0x713440	si	0x713418	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Dialogue>	0x713570	si	0x713548	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Editor>	0x7136a0	si	0x713678	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_EditorObjectEditor>	0x713820	si	0x7137f8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_FoodPyramid>	0x713ae0	si	0x713ab8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_FullScreenAlert>	0x713c10	si	0x713be8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_GameTransition>	0x713d90	si	0x713d68	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Hub>	0x714000	si	0x713fd8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>	0x714180	si	0x714158	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Languages>	0x714300	si	0x7142d8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_LevelSelect>	0x714480	si	0x714458	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Loading>	0x714600	si	0x7145d8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_MainMenu>	0x7147c0	si	0x714798	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_MainMenu_v2>	0x714940	si	0x714918	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_MenuOverlay>	0x714a70	si	0x714a48	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_MusicCollection>	0x714bf0	si	0x714bc8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_MysteryShow>	0x714d20	si	0x714cf8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_NoteChallenges>	0x714ea0	si	0x714e78	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_PerformanceTest>	0x714fc0	si	0x714f98	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_PerryDemo>	0x715140	si	0x715118	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Popup>	0x7152c0	si	0x715298	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Processing>	0x715440	si	0x715418	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>	0x715570	si	0x715548	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Settings>	0x7156f0	si	0x7156c8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_SettingsProfile>	0x715870	si	0x715848	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_SettingsReset>	0x7159f0	si	0x7159c8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Sunset>	0x715b70	si	0x715b48	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_Upsell>	0x715cf0	si	0x715cc8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>	0x715e70	si	0x715e48	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_WaterTest>	0x715ff0	si	0x715fc8	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Screen_WorldSelect>	0x716170	si	0x716148	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::StarSeed>	0x712130	si	0x712108	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::Switch>	0x712270	si	0x712248	1	Walaber::Callback@0
+Walaber::MemberCallback<WaterConcept::World>	0x711420	si	0x7113f8	1	Walaber::Callback@0
+Walaber::MemberCallback<ndk::DatabaseCallbackClass>	0x70ce60	si	0x70ce38	1	Walaber::Callback@0
+Walaber::Message	0x70cdd8	class	0x70cdb8	0	
+Walaber::MessageReceiver	0x710d88	class	0x710d60	0	
+Walaber::Message_AchievementUnlocked	0x70e300	si	0x70e2d8	1	Walaber::Message@0
+Walaber::Node	0x710e80	si	0x710e18	1	Walaber::PCSNode@0
+Walaber::PCSNode	0x710e68	class	0x710e98	0	
+Walaber::ParticleEmitter	0x710000	si	0x70ffa8	1	Walaber::Node@0
+Walaber::ProgrammaticTexture2D	0x710100	si	0x710058	1	Walaber::Texture@0
+Walaber::RenderTexture2D	0x7101e0	si	0x710178	1	Walaber::Texture@0
+Walaber::Skeleton	0x70e400	si	0x70e398	1	Walaber::DrawableNode@0
+Walaber::SkeletonActor::AnimationActionData	0x70e580	si	0x70e558	1	Walaber::SkeletonActor::EventActionData@0
+Walaber::SkeletonActor::EmitterActionData	0x70e5c0	si	0x70e598	1	Walaber::SkeletonActor::EventActionData@0
+Walaber::SkeletonActor::EventActionData	0x70e4e8	class	0x0	0	
+Walaber::SkeletonActor::PropActionData	0x70e540	si	0x70e518	1	Walaber::SkeletonActor::EventActionData@0
+Walaber::SkeletonActor::SoundActionData	0x70e500	si	0x70e4c8	1	Walaber::SkeletonActor::EventActionData@0
+Walaber::SoundEffectInstance	0x70e638	class	0x70e618	0	
+Walaber::Sprite	0x70e9f0	si	0x70e990	1	Walaber::DrawableNode@0
+Walaber::Subtexture	0x710260	si	0x7101f8	1	Walaber::Texture@0
+Walaber::Texture	0x7100d0	vmi	0x710118	1	non-public Walaber::Utilities::noncopyable_::noncopyable@0
+Walaber::Texture2D	0x7102e0	si	0x710278	1	Walaber::Texture@0
+Walaber::Transition	0x710ee8	class	0x710eb8	0	
+Walaber::Transition_Block	0x710f30	si	0x710ef8	1	Walaber::Transition@0
+Walaber::Transition_Fade	0x710f80	si	0x710f48	1	Walaber::Transition@0
+Walaber::Transition_Iris	0x710fd0	si	0x710f98	1	Walaber::Transition@0
+Walaber::Transition_Slide	0x711020	si	0x710fe8	1	Walaber::Transition@0
+Walaber::Transition_Widget_Slide	0x711070	si	0x711038	1	Walaber::Transition@0
+Walaber::Transition_Wipe	0x7110c0	si	0x711088	1	Walaber::Transition@0
+Walaber::TweenedLinearCurve	0x710cc0	si	0x710c58	1	Walaber::LinearCurve@0
+Walaber::Utilities::noncopyable_::noncopyable	0x7100b8	class	0x0	0	
+Walaber::Widget	0x70ebe0	si	0x70eb08	1	Walaber::DrawableNode@0
+Walaber::WidgetManagerEventHandler	0x712740	class	0x712848	0	
+Walaber::Widget_Canvas	0x70ecd0	si	0x70ebf8	1	Walaber::Widget@0
+Walaber::Widget_ClassicControls	0x70edc0	si	0x70ece8	1	Walaber::Widget@0
+Walaber::Widget_ColorPicker	0x70eeb0	si	0x70edd8	1	Walaber::Widget@0
+Walaber::Widget_FingerCatcher	0x70efa0	si	0x70eec8	1	Walaber::Widget@0
+Walaber::Widget_Group	0x70f090	si	0x70efb8	1	Walaber::Widget@0
+Walaber::Widget_IconList	0x70f180	si	0x70f0a8	1	Walaber::Widget@0
+Walaber::Widget_Label	0x70f270	si	0x70f198	1	Walaber::Widget@0
+Walaber::Widget_Manipulator	0x70f360	si	0x70f288	1	Walaber::Widget@0
+Walaber::Widget_MovingTextBox	0x70f450	si	0x70f378	1	Walaber::Widget@0
+Walaber::Widget_NumberSpinner	0x70f540	si	0x70f468	1	Walaber::Widget@0
+Walaber::Widget_ProgressBar	0x70f630	si	0x70f558	1	Walaber::Widget@0
+Walaber::Widget_PushButton	0x70f720	si	0x70f648	1	Walaber::Widget@0
+Walaber::Widget_ScoreCounter	0x70f810	si	0x70f738	1	Walaber::Widget@0
+Walaber::Widget_ScrollableCamera	0x70f900	si	0x70f828	1	Walaber::Widget@0
+Walaber::Widget_ScrollableGroup	0x70f9f0	si	0x70f918	1	Walaber::Widget@0
+Walaber::Widget_ScrollableSet	0x70fae0	si	0x70fa08	1	Walaber::Widget@0
+Walaber::Widget_SlideWheel	0x70fcc0	si	0x70fbe8	1	Walaber::Widget@0
+Walaber::Widget_Slider	0x70fbd0	si	0x70faf8	1	Walaber::Widget@0
+Walaber::Widget_Spinner	0x70fdb0	si	0x70fcd8	1	Walaber::Widget@0
+Walaber::Widget_TimedButton	0x70fea0	si	0x70fdc8	1	Walaber::Widget@0
+Walaber::Widget_Toggle	0x70ff90	si	0x70feb8	1	Walaber::Widget@0
+WaterConcept::AlgaeHider	0x711520	si	0x711438	1	WaterConcept::InteractiveObject@0
+WaterConcept::Bomb	0x711620	si	0x711538	1	WaterConcept::InteractiveObject@0
+WaterConcept::Collectible	0x7117a0	si	0x7116b8	1	WaterConcept::InteractiveObject@0
+WaterConcept::DirtyWall	0x7118a0	si	0x7117b8	1	WaterConcept::InteractiveObject@0
+WaterConcept::Fan	0x7119a0	si	0x7118b8	1	WaterConcept::InteractiveObject@0
+WaterConcept::Floater	0x711ab0	si	0x7119b8	1	WaterConcept::InteractiveObject@0
+WaterConcept::FluidConverter	0x711bb0	si	0x711ac8	1	WaterConcept::InteractiveObject@0
+WaterConcept::HDAssetsNotification	0x712550	vmi	0x712498	2	WaterConcept::Notification@0; Walaber::MessageReceiver@488
+WaterConcept::IAPNotification	0x712640	vmi	0x712588	2	WaterConcept::Notification@0; Walaber::MessageReceiver@488
+WaterConcept::IcyHot	0x711cf0	si	0x711c08	1	WaterConcept::InteractiveObject@0
+WaterConcept::InteractiveObject	0x711df0	si	0x711d08	1	Walaber::DrawableNode@0
+WaterConcept::MysteryCave	0x711ef0	si	0x711e08	1	WaterConcept::InteractiveObject@0
+WaterConcept::Notification	0x712750	si	0x7126b8	1	Walaber::WidgetManagerEventHandler@0
+WaterConcept::NotificationSingleton	0x712810	vmi	0x7127a8	2	Walaber::WidgetManagerEventHandler@0; Walaber::MessageReceiver@8
+WaterConcept::PurchaseHandler	0x7113e0	si	0x7113b8	1	Walaber::MessageReceiver@0
+WaterConcept::Screen_Achievements	0x7129c0	vmi	0x712868	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_AchievementsTest	0x712be0	si	0x712b08	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_AgeGate	0x712d40	vmi	0x712c38	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_AnimationTest	0x712e90	si	0x712db8	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_Challenges	0x712ff0	vmi	0x712ee8	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Collectibles	0x713170	vmi	0x713068	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_ComicStrip	0x7132c0	si	0x7131e8	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_Credits	0x7133e0	vmi	0x7132d8	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Dialogue	0x713530	si	0x713458	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_Editor	0x713660	si	0x713588	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_EditorObjectEditor	0x7137c0	vmi	0x7136b8	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_EditorObjectSelect	0x713940	vmi	0x713838	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_FoodPyramid	0x713a80	vmi	0x713978	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_FullScreenAlert	0x713bd0	si	0x713af8	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_GameTransition	0x713d30	vmi	0x713c28	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_GraphicsContextRestore	0x713e80	si	0x713da8	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_Hub	0x713fa0	vmi	0x713e98	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_InAppPurchase	0x714120	vmi	0x714018	2	WaterConcept::WCScreen@0; non-public Walaber::MessageReceiver@144
+WaterConcept::Screen_Languages	0x7142a0	vmi	0x714198	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_LevelSelect	0x714420	vmi	0x714318	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Loading	0x7145a0	vmi	0x714498	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_MainMenu	0x714760	vmi	0x714658	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_MainMenu_v2	0x7148e0	vmi	0x7147d8	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_MenuOverlay	0x714a30	si	0x714958	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_MusicCollection	0x714b90	vmi	0x714a88	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_MysteryShow	0x714ce0	si	0x714c08	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_NoteChallenges	0x714e40	vmi	0x714d38	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_PerformanceTest	0x714f80	si	0x714eb8	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_PerryDemo	0x7150e0	vmi	0x714fd8	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Popup	0x715260	vmi	0x715158	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Processing	0x7153e0	vmi	0x7152d8	2	WaterConcept::WCScreen@0; non-public Walaber::MessageReceiver@144
+WaterConcept::Screen_PuppetShow	0x715530	si	0x715458	1	WaterConcept::WCScreen@0
+WaterConcept::Screen_Settings	0x715690	vmi	0x715588	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_SettingsProfile	0x715810	vmi	0x715708	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_SettingsReset	0x715990	vmi	0x715888	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Sunset	0x715b10	vmi	0x715a08	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_Upsell	0x715c90	vmi	0x715b88	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_UpsellWater2	0x715e10	vmi	0x715d08	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_WaterTest	0x715f90	vmi	0x715e88	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Screen_WorldSelect	0x716110	vmi	0x716008	2	WaterConcept::WCScreen@0; Walaber::MessageReceiver@144
+WaterConcept::Spout	0x711ff0	si	0x711f08	1	WaterConcept::InteractiveObject@0
+WaterConcept::StarSeed	0x7120f0	si	0x712008	1	WaterConcept::InteractiveObject@0
+WaterConcept::Switch	0x712230	si	0x712148	1	WaterConcept::InteractiveObject@0
+WaterConcept::WCScreen	0x712980	vmi	0x7129f8	2	Walaber::GameScreen@0; Walaber::WidgetManagerEventHandler@32
+WaterConcept::WaterBalloon	0x712380	si	0x712288	1	WaterConcept::Floater@0
+WaterConcept::YSwitch	0x712480	si	0x712398	1	WaterConcept::Spout@0
+_ZTSNSt6__ndk110moneypunctIcLb0EEE	0x718ba0	vmi	0x716fd8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+_ZTSNSt6__ndk110moneypunctIwLb0EEE	0x718c20	vmi	0x7170b8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+_ZTSNSt6__ndk115__codecvt_utf16IDiLb0EEE	0x718380	si	0x718318	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+_ZTSNSt6__ndk115__codecvt_utf16IDsLb0EEE	0x718280	si	0x718218	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+_ZTSNSt6__ndk115__codecvt_utf16IwLb0EEE	0x718180	si	0x718118	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+_ZTSNSt6__ndk116__narrow_to_utf8ILm16EEE	0x717dc0	si	0x717d58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+_ZTSNSt6__ndk117__widen_from_utf8ILm16EEE	0x717ec0	si	0x717e58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+_ZTSNSt6__ndk117moneypunct_bynameIcLb0EEE	0x718ca0	si	0x717198	1	_ZTSNSt6__ndk110moneypunctIcLb0EEE@0
+_ZTSNSt6__ndk117moneypunct_bynameIwLb0EEE	0x718ce0	si	0x717278	1	_ZTSNSt6__ndk110moneypunctIwLb0EEE@0
+a	0x719790	class	0x0	0	
+b	0x719650	class	0x0	0	
+c	0x7196f0	class	0x0	0	
+d	0x719ba0	class	0x0	0	
+e	0x719bf0	class	0x0	0	
+f	0x719b50	class	0x0	0	
+g	0x719c40	class	0x0	0	
+h	0x719740	class	0x0	0	
+i	0x719880	class	0x0	0	
+j	0x7198d0	class	0x0	0	
+l	0x719920	class	0x0	0	
+m	0x719970	class	0x0	0	
+n	0x719a60	class	0x0	0	
+ndk::ApplicationContext	0x70cda0	si	0x70cd78	1	Walaber::MessageReceiver@0
+ndk::Mutex	0x70ce98	class	0x70ce78	0	
+o	0x719ab0	class	0x0	0	
+s	0x7197e0	class	0x0	0	
+std::__ndk1::__assoc_sub_state	0x7193e0	si	0x7193a8	1	std::__ndk1::__shared_count@0
+std::__ndk1::__codecvt_utf16<char16_t, bool>	0x718300	si	0x718298	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<char32_t, bool>	0x718400	si	0x718398	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<wchar_t, bool>	0x718200	si	0x718198	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8<char16_t>	0x718080	si	0x718018	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8<char32_t>	0x718100	si	0x718098	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8<wchar_t>	0x718000	si	0x717f58	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8_utf16<char16_t>	0x718580	si	0x718518	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8_utf16<char32_t>	0x718500	si	0x718498	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf8_utf16<wchar_t>	0x718480	si	0x718418	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::__money_get<char>	0x718d18	class	0x0	0	
+std::__ndk1::__money_get<wchar_t>	0x718d68	class	0x0	0	
+std::__ndk1::__money_put<char>	0x718db8	class	0x0	0	
+std::__ndk1::__money_put<wchar_t>	0x718e08	class	0x0	0	
+std::__ndk1::__narrow_to_utf8<unsigned long>	0x717e40	si	0x717dd8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__num_get<char>	0x718750	vmi	0x0	1	non-public std::__ndk1::__num_get_base@0
+std::__ndk1::__num_get<wchar_t>	0x7187c0	vmi	0x0	1	non-public std::__ndk1::__num_get_base@0
+std::__ndk1::__num_get_base	0x718738	class	0x0	0	
+std::__ndk1::__num_put<char>	0x718840	vmi	0x0	1	non-public std::__ndk1::__num_put_base@0
+std::__ndk1::__num_put<wchar_t>	0x7188b0	vmi	0x0	1	non-public std::__ndk1::__num_put_base@0
+std::__ndk1::__num_put_base	0x718828	class	0x0	0	
+std::__ndk1::__shared_count	0x719130	class	0x719108	0	
+std::__ndk1::__shared_weak_count	0x719180	vmi	0x719140	1	non-public std::__ndk1::__shared_count@0
+std::__ndk1::__time_get	0x7189e8	class	0x0	0	
+std::__ndk1::__time_get_c_storage<char>	0x718928	class	0x0	0	
+std::__ndk1::__time_get_c_storage<wchar_t>	0x718988	class	0x0	0	
+std::__ndk1::__time_get_storage<char>	0x718a00	si	0x0	1	std::__ndk1::__time_get@0
+std::__ndk1::__time_get_storage<wchar_t>	0x718a60	si	0x0	1	std::__ndk1::__time_get@0
+std::__ndk1::__time_put	0x718ab8	class	0x0	0	
+std::__ndk1::__widen_from_utf8<unsigned long>	0x717f40	si	0x717ed8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::bad_weak_ptr	0x7190f0	si	0x7190c8	1	std::exception@0
+std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>	0x710940	si	0x7108a8	1	std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>@0
+std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char>>	0x710890	si	0x710708	1	std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>@0
+std::__ndk1::basic_ifstream<char, std::__ndk1::char_traits<char>>	0x711300	si	0x711258	1	std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>@0
+std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char>>	0x710780	si	0x716238	1	std::__ndk1::ios_base@0
+std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t>>	0x7165a0	si	0x716258	1	std::__ndk1::ios_base@0
+std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>	0x710800	vmi	0x716478	2	std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>@0; std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>@16
+std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>	0x7107a0	vmi	0x7162f8	1	std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char>>@-24 virtual
+std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>	0x7165d0	vmi	0x716358	1	std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t>>@-24 virtual
+std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>	0x7107d0	vmi	0x7163b8	1	std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char>>@-24 virtual
+std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>	0x716600	vmi	0x716418	1	std::__ndk1::basic_ios<wchar_t, std::__ndk1::char_traits<wchar_t>>@-24 virtual
+std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>	0x710928	class	0x710958	0	
+std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>	0x7165b8	class	0x716278	0	
+std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	0x711240	si	0x7111b8	1	std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>@0
+std::__ndk1::basic_stringstream<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	0x7111a0	si	0x7110d8	1	std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>@0
+std::__ndk1::codecvt<char, char, mbstate_t>	0x717be0	vmi	0x717b68	2	std::__ndk1::locale::facet@0; std::__ndk1::codecvt_base@0
+std::__ndk1::codecvt<char16_t, char, mbstate_t>	0x717c80	vmi	0x717c18	2	std::__ndk1::locale::facet@0; std::__ndk1::codecvt_base@0
+std::__ndk1::codecvt<char32_t, char, mbstate_t>	0x717d20	vmi	0x717cb8	2	std::__ndk1::locale::facet@0; std::__ndk1::codecvt_base@0
+std::__ndk1::codecvt<wchar_t, char, mbstate_t>	0x717fc0	vmi	0x7178b8	2	std::__ndk1::locale::facet@0; std::__ndk1::codecvt_base@0
+std::__ndk1::codecvt_base	0x717bc8	class	0x0	0	
+std::__ndk1::codecvt_byname<char, char, mbstate_t>	0x718f30	si	0x717538	1	std::__ndk1::codecvt<char, char, mbstate_t>@0
+std::__ndk1::codecvt_byname<char16_t, char, mbstate_t>	0x718f70	si	0x7175f8	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::codecvt_byname<char32_t, char, mbstate_t>	0x718f90	si	0x717658	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::codecvt_byname<wchar_t, char, mbstate_t>	0x718f50	si	0x717598	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::collate<char>	0x7185c0	si	0x7169b8	1	std::__ndk1::locale::facet@0
+std::__ndk1::collate<wchar_t>	0x718600	si	0x7169f8	1	std::__ndk1::locale::facet@0
+std::__ndk1::collate_byname<char>	0x7185e0	si	0x7176e0	1	std::__ndk1::collate<char>@0
+std::__ndk1::collate_byname<wchar_t>	0x718620	si	0x717720	1	std::__ndk1::collate<wchar_t>@0
+std::__ndk1::ctype<char>	0x718640	vmi	0x717760	2	std::__ndk1::locale::facet@0; std::__ndk1::ctype_base@0
+std::__ndk1::ctype<wchar_t>	0x717b30	vmi	0x717a98	2	std::__ndk1::locale::facet@0; std::__ndk1::ctype_base@0
+std::__ndk1::ctype_base	0x717b20	class	0x0	0	
+std::__ndk1::ctype_byname<char>	0x718680	si	0x7177c8	1	std::__ndk1::ctype<char>@0
+std::__ndk1::ctype_byname<wchar_t>	0x7186a0	si	0x717830	1	std::__ndk1::ctype<wchar_t>@0
+std::__ndk1::error_category	0x719238	class	0x7191a8	0	
+std::__ndk1::future_error	0x719390	si	0x719368	1	std::logic_error@0
+std::__ndk1::ios_base	0x716588	class	0x716550	0	
+std::__ndk1::ios_base::failure	0x716570	si	0x716528	1	std::__ndk1::system_error@0
+std::__ndk1::locale::facet	0x717a80	si	0x717a58	1	std::__ndk1::__shared_count@0
+std::__ndk1::messages<char>	0x718e70	vmi	0x717438	2	std::__ndk1::locale::facet@0; std::__ndk1::messages_base@0
+std::__ndk1::messages<wchar_t>	0x718eb0	vmi	0x717478	2	std::__ndk1::locale::facet@0; std::__ndk1::messages_base@0
+std::__ndk1::messages_base	0x718e58	class	0x0	0	
+std::__ndk1::messages_byname<char>	0x718ef0	si	0x7174b8	1	std::__ndk1::messages<char>@0
+std::__ndk1::messages_byname<wchar_t>	0x718f10	si	0x7174f8	1	std::__ndk1::messages<wchar_t>@0
+std::__ndk1::money_base	0x718b88	class	0x0	0	
+std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718d30	vmi	0x717358	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_get<char>@0
+std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718d80	vmi	0x717390	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_get<wchar_t>@0
+std::__ndk1::money_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718dd0	vmi	0x7173c8	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_put<char>@0
+std::__ndk1::money_put<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718e20	vmi	0x717400	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_put<wchar_t>@0
+std::__ndk1::moneypunct<char, bool>	0x718be0	vmi	0x717048	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct<wchar_t, bool>	0x718c60	vmi	0x717128	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct_byname<char, bool>	0x718cc0	si	0x717208	1	std::__ndk1::moneypunct<char, bool>@0
+std::__ndk1::moneypunct_byname<wchar_t, bool>	0x718d00	si	0x7172e8	1	std::__ndk1::moneypunct<wchar_t, bool>@0
+std::__ndk1::num_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718780	vmi	0x716a38	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_get<char>@0
+std::__ndk1::num_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x7187f0	vmi	0x716ab8	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_get<wchar_t>@0
+std::__ndk1::num_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718870	vmi	0x716b38	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_put<char>@0
+std::__ndk1::num_put<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x7188e0	vmi	0x716ba0	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_put<wchar_t>@0
+std::__ndk1::numpunct<char>	0x7186c0	si	0x717918	1	std::__ndk1::locale::facet@0
+std::__ndk1::numpunct<wchar_t>	0x7186e0	si	0x717968	1	std::__ndk1::locale::facet@0
+std::__ndk1::numpunct_byname<char>	0x718700	si	0x7179b8	1	std::__ndk1::numpunct<char>@0
+std::__ndk1::numpunct_byname<wchar_t>	0x718720	si	0x717a08	1	std::__ndk1::numpunct<wchar_t>@0
+std::__ndk1::system_error	0x719220	si	0x7191f0	1	std::runtime_error@0
+std::__ndk1::time_base	0x718918	class	0x0	0	
+std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718940	vmi	0x716c08	3	std::__ndk1::locale::facet@0; std::__ndk1::time_base@0; non-public std::__ndk1::__time_get_c_storage<char>@16
+std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x7189a0	vmi	0x716cb0	3	std::__ndk1::locale::facet@0; std::__ndk1::time_base@0; non-public std::__ndk1::__time_get_c_storage<wchar_t>@16
+std::__ndk1::time_get_byname<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718a20	vmi	0x716d58	2	std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>@0; non-public std::__ndk1::__time_get_storage<char>@24
+std::__ndk1::time_get_byname<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718a80	vmi	0x716e38	2	std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>@0; non-public std::__ndk1::__time_get_storage<wchar_t>@24
+std::__ndk1::time_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718ad0	vmi	0x716f18	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__time_put@16
+std::__ndk1::time_put<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718b10	vmi	0x716f48	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__time_put@16
+std::__ndk1::time_put_byname<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718b50	si	0x716f78	1	std::__ndk1::time_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>@0
+std::__ndk1::time_put_byname<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718b70	si	0x716fa8	1	std::__ndk1::time_put<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>@0
+std::bad_alloc	0x71a140	si	0x71a040	1	std::exception@0
+std::bad_array_length	0x71a160	si	0x71a090	1	std::bad_alloc@0
+std::bad_array_new_length	0x71a180	si	0x71a068	1	std::bad_alloc@0
+std::bad_cast	0x71a470	si	0x71a3e8	1	std::exception@0
+std::bad_exception	0x71a120	si	0x71a0f0	1	std::exception@0
+std::bad_typeid	0x71a490	si	0x71a410	1	std::exception@0
+std::domain_error	0x71a230	si	0x71a1e8	1	std::logic_error@0
+std::exception	0x71a0e0	class	0x71a0b8	0	
+std::invalid_argument	0x71a270	si	0x71a248	1	std::logic_error@0
+std::length_error	0x71a2b0	si	0x71a288	1	std::logic_error@0
+std::logic_error	0x71a210	si	0x71a198	1	std::exception@0
+std::nested_exception	0x716228	class	0x716208	0	
+std::out_of_range	0x71a2f0	si	0x71a2c8	1	std::logic_error@0
+std::overflow_error	0x71a390	si	0x71a368	1	std::runtime_error@0
+std::range_error	0x71a350	si	0x71a308	1	std::runtime_error@0
+std::runtime_error	0x71a330	si	0x71a1c0	1	std::exception@0
+std::type_info	0x71a458	class	0x71a438	0	
+std::underflow_error	0x71a3d0	si	0x71a3a8	1	std::runtime_error@0
+t	0x719830	class	0x0	0	
+v	0x7195a8	class	0x0	0	
+w	0x7196a0	class	0x0	0	
+x	0x7199c0	class	0x0	0	
+y	0x719a10	class	0x0	0	

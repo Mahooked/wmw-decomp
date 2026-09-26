@@ -14,7 +14,8 @@
 #>
 param(
     [Parameter(Mandatory = $true)][ValidateSet('import', 'script')][string]$Mode,
-    [Parameter(Mandatory = $true)][string[]]$Rest
+    [Parameter(Mandatory = $true)][string[]]$Rest,
+    [string]$Script = 'DecompileAll.java'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -49,7 +50,7 @@ else {
     $maxFn = if ($Rest.Count -gt 4) { $Rest[4] } else { '0' }
     $tag = 'decompile'
     $gargs = @($Project, $ProjectName, '-process', $soName, '-noanalysis',
-        '-scriptPath', $ScriptDir, '-postScript', 'DecompileAll.java',
+        '-scriptPath', $ScriptDir, '-postScript', $Script,
         $symTsv, $outDir, $timeout, $maxFn, '-log', (Join-Path $LogDir "$tag.log"))
 }
 
@@ -70,8 +71,11 @@ Remove-Item -Force $shim -ErrorAction SilentlyContinue
 Write-Host "[gh] exit=$($p.ExitCode)"
 if (Test-Path (Join-Path $LogDir "$tag.log")) {
     Write-Host "[gh] ---- script output ----"
+    # Match any postScript's "INFO  <Script>: " lines, not just DecompileAll, so
+    # a different -Script still shows its progress and summary output.
+    $stem = [IO.Path]::GetFileNameWithoutExtension($Script)
     Get-Content (Join-Path $LogDir "$tag.log") |
-        Select-String -Pattern 'DecompileAll: |error:|ERROR .*Analysis|Save succeeded' |
-        ForEach-Object { $_.Line -replace '^.*?DecompileAll\.java> ', '' }
+        Select-String -Pattern "$stem`: |error:|ERROR .*Analysis|Save succeeded" |
+        ForEach-Object { $_.Line -replace "^.*?$([regex]::Escape($stem))\.java> ", '' }
 }
 exit $p.ExitCode

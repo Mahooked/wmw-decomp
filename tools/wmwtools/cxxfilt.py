@@ -162,6 +162,7 @@ class Demangler:
         self.s = s
         self.i = 0
         self.subs: list[str] = []
+        self.type_depth = 0
 
     # -- low level ------------------------------------------------------
     def eof(self) -> bool:
@@ -190,7 +191,10 @@ class Demangler:
 
     # -- substitutions --------------------------------------------------
     def add_sub(self, name: str) -> str:
-        if name and name not in self.subs:
+        # Itanium substitution indices are positional: every component takes
+        # the next index even when the same name was already registered.
+        # De-duplicating here would silently shift every later S<n>_ reference.
+        if name:
             self.subs.append(name)
         return name
 
@@ -206,7 +210,10 @@ class Demangler:
             num = self._number()
             if not self.eat("_"):
                 raise _Fail("bad substitution")
-            return self._sub_at(num)
+            # Itanium numbering is not what it looks like: 'S_' is the first
+            # substitution, then 'S0_' is the second, 'S1_' the third, so a
+            # numeric seq-id is offset by one.
+            return self._sub_at(num + 1)
         if c == "t":
             self.i += 1
             name = self._parse_name()
@@ -407,6 +414,10 @@ class Demangler:
                 self.add_sub(name)
                 # a ctor/dtor terminates the nested name apart from 'E'
                 self.eat("E")
+                # Constructors and destructors take no parameters, so the only
+                # thing that can follow is the empty 'v' list.
+                if self.eof() or self.eat("v"):
+                    name += "()"
                 return name
             components.append(comp)
             if comp.startswith("operator") or comp.startswith('operator""'):
@@ -429,7 +440,32 @@ class Demangler:
             name = quals + " " + name
         if ref:
             name += " " + ref
+        name += self._parse_function_params()
         return name
+
+    def _parse_function_params(self) -> str:
+        """Render the bare-function-type that follows a member function name.
+
+        In Itanium mangling a member function's parameter types are not wrapped
+        in parentheses -- they sit directly after the nested name's closing 'E',
+        which is why they have to be recovered here rather than by a reader.
+        They are the authoritative source for a method's signature, since the
+        mangling omits the return type but encodes every parameter type exactly.
+        """
+        if self.eof() or self.type_depth:
+            return ""
+        save = self.i
+        try:
+            params = self._parse_params()
+        except _Fail:
+            self.i = save
+            return ""
+        if self.i != len(self.s):
+            # Leftover input means this was not a function encoding; attaching
+            # a parameter list would invent one.
+            self.i = save
+            return ""
+        return "(%s)" % params
 
     def _parse_cv_qualifiers(self) -> str:
         quals = []
@@ -554,6 +590,17 @@ class Demangler:
         return ""
 
     def _parse_type(self) -> str:
+        # A nested name means different things depending on where it appears:
+        # as a function encoding it is followed by a bare-function-type, but as
+        # a class type it is not. Track the depth so the parameter parser can
+        # tell them apart.
+        self.type_depth += 1
+        try:
+            return self._parse_type_body()
+        finally:
+            self.type_depth -= 1
+
+    def _parse_type_body(self) -> str:
         c = self.peek()
         if c in BUILTIN_TYPES and len(c) == 1:
             if c == "D":
@@ -639,13 +686,16 @@ class Demangler:
         return self._parse_name()
 
     def _parse_params(self) -> str:
-        params = []
+        params: list[str] = []
         while not self.eof() and self.peek() != "E":
+            before = self.i
             t = self._parse_type()
+            if self.i == before:  # no progress; refuse to spin
+                break
             if t:
                 params.append(t)
-            if self.eof():
-                break
+        if len(params) == 1 and params[0] == "void":
+            return ""
         return ", ".join(params)
 
     def _parse_name(self) -> str:

@@ -1,0 +1,1211 @@
+[
+  {
+    "bytes": 221184,
+    "file": "water.db",
+    "header": {
+      "application_id": 0,
+      "encoding": "UTF-8",
+      "freelist_pages": 0,
+      "journal_mode": "delete",
+      "page_size": 4096,
+      "schema_format": 18,
+      "user_version": 0
+    },
+    "indexes": [],
+    "tables": [
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ScreenName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "Show",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "PreferAD",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "Flavor",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Interval",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "ADSettings",
+        "rows": 3,
+        "sql": "CREATE TABLE \"ADSettings\" (\"ScreenName\" TEXT NOT NULL UNIQUE, \"Show\" BOOL NOT NULL, \"PreferAD\" TEXT NOT NULL, \"Flavor\" INTEGER NOT NULL, \"Interval\" INTEGER NOT NULL)",
+        "table": "ADSettings",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "Points",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Hidden",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "PreEarnedDescription",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "EarnedDescription",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "Image",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "PercentComplete",
+            "notnull": true,
+            "pk": 0,
+            "type": "FLOAT"
+          },
+          {
+            "default": "0",
+            "name": "SortingGroup",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "FacebookDescription",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "Achievements",
+        "rows": 45,
+        "sql": "CREATE TABLE \"Achievements\" (\"Points\" INTEGER NOT NULL , \"ID\" TEXT PRIMARY KEY NOT NULL UNIQUE , \"Hidden\" INTEGER NOT NULL DEFAULT 0, \"PreEarnedDescription\" TEXT NOT NULL , \"EarnedDescription\" TEXT NOT NULL , \"Image\" TEXT NOT NULL , \"PercentComplete\" FLOAT NOT NULL DEFAULT 0, \"SortingGroup\" INTEGER NOT NULL DEFAULT 0, FacebookDescription TEXT)",
+        "table": "Achievements",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "Available",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "IAP_item_id",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Completed",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "LevelName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "TimesPlayed",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "TimesCompleted",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Desc",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "AllieChallengeInfo",
+        "rows": 24,
+        "sql": "CREATE TABLE \"AllieChallengeInfo\" (\"ID\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"Available\" BOOL DEFAULT 0, \"IAP_item_id\" TEXT, \"Completed\" BOOL DEFAULT 0, \"LevelName\" TEXT, \"TimesPlayed\" INTEGER DEFAULT 0, \"TimesCompleted\" INTEGER DEFAULT 0, \"Desc\" TEXT)",
+        "table": "AllieChallengeInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "song",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "unlocked",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "AllieSongs",
+        "rows": 10,
+        "sql": "CREATE TABLE AllieSongs(ID INTEGER NOT NULL, song TEXT, unlocked BOOL DEFAULT 0, PRIMARY KEY (id))",
+        "table": "AllieSongs",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "Unlocked",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "Basename",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "HasViewed",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "CollectibleInfo",
+        "rows": 60,
+        "sql": "CREATE TABLE \"CollectibleInfo\" (\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , \"Unlocked\" BOOL NOT NULL DEFAULT 0, \"Basename\" TEXT, \"HasViewed\" BOOL NOT NULL DEFAULT 0)",
+        "table": "CollectibleInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "HeldPushCommand",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "CommandURI",
+        "rows": 0,
+        "sql": "CREATE TABLE CommandURI(\"HeldPushCommand\" TEXT)",
+        "table": "CommandURI",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "Available",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "IAP_item_id",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Completed",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "LevelName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "LevelRequirements",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "TimesPlayed",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "TimesCompleted",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Desc",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "CrankyChallengeInfo",
+        "rows": 24,
+        "sql": "CREATE TABLE \"CrankyChallengeInfo\" (\"ID\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"Available\" BOOL DEFAULT 0, \"IAP_item_id\" TEXT, \"Completed\" BOOL DEFAULT 0, \"LevelName\" TEXT, \"LevelRequirements\" TEXT, \"TimesPlayed\" INTEGER DEFAULT 0, \"TimesCompleted\" INTEGER DEFAULT 0, \"Desc\" TEXT)",
+        "table": "CrankyChallengeInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Basename",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "ObjectName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "GroupName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Unlocked",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "HasViewed",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "FoodInfo",
+        "rows": 27,
+        "sql": "CREATE TABLE \"FoodInfo\" (\"ID\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"Basename\" TEXT, \"ObjectName\" TEXT, \"GroupName\" TEXT, \"Unlocked\" BOOL DEFAULT 0, \"HasViewed\" BOOL DEFAULT 0)",
+        "table": "FoodInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "-1",
+            "name": "Storyline",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "''",
+            "name": "IAP_item_id",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "1",
+            "name": "Bought",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "''",
+            "name": "TitleTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "MainTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "FrameTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "TextColor",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "TextLine1",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "TextLine2",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "DuckCharacter",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "ItemCharacter",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "DuckSQL1",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "DuckSQL2",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "ItemSQL1",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "ItemSQL2",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "TextButton",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "AlertText",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Unlocked",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "DisplayOrder",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "\"\"",
+            "name": "DuckyCounterTexture",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "HubInfo",
+        "rows": 5,
+        "sql": "CREATE TABLE \"HubInfo\" ( \"ID\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"Storyline\" INTEGER DEFAULT -1, \"IAP_item_id\" TEXT DEFAULT '', \"Bought\" BOOL DEFAULT 1, \"TitleTexture\" TEXT DEFAULT '', \"MainTexture\" TEXT DEFAULT '', \"FrameTexture\" TEXT DEFAULT '', \"TextColor\" TEXT DEFAULT '', \"TextLine1\" TEXT DEFAULT '', \"TextLine2\" TEXT DEFAULT '', \"DuckCharacter\" TEXT DEFAULT '', \"ItemCharacter\" TEXT DEFAULT '', \"DuckSQL1\" TEXT DEFAULT '', \"DuckSQL2\" TEXT DEFAULT '', \"ItemSQL1\" TEXT DEFAULT '', \"ItemSQL2\" TEXT DEFAULT '', \"TextButton\" TEXT DEFAULT '', \"AlertText\" TEXT DEFAULT '' , \"Unlocked\" BOOL DEFAULT 0, DisplayOrder INTEGER NOT NULL DEFAULT 0, DuckyCounterTexture TEXT NOT NULL DEFAULT \"\")",
+        "table": "HubInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Internal",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "iOS",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "Google",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "Amazon",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "IAPInfo",
+        "rows": 13,
+        "sql": "CREATE TABLE \"IAPInfo\" ( \"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, \"Internal\" TEXT NOT NULL UNIQUE, \"iOS\" TEXT DEFAULT '', \"Google\" TEXT DEFAULT '', \"Amazon\" TEXT DEFAULT '' )",
+        "table": "IAPInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "-1",
+            "name": "Storyline",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "'LP_'",
+            "name": "PackName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "-1",
+            "name": "DisplayOrder",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "'LN_'",
+            "name": "LevelName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "'1000-01-01 00:00:00'",
+            "name": "DownloadDate",
+            "notnull": true,
+            "pk": 0,
+            "type": "DATETIME"
+          },
+          {
+            "default": "''",
+            "name": "PortalTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "PlayButtonTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "BannerTexture",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "levelStoryline",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "LOWInfo",
+        "rows": 4,
+        "sql": "CREATE TABLE LOWInfo (ID INTEGER PRIMARY KEY NOT NULL UNIQUE, Storyline INTEGER NOT NULL UNIQUE DEFAULT -1, PackName TEXT NOT NULL DEFAULT 'LP_', DisplayOrder INTEGER NOT NULL DEFAULT -1, LevelName TEXT NOT NULL DEFAULT 'LN_', DownloadDate DATETIME NOT NULL DEFAULT '1000-01-01 00:00:00', PortalTexture TEXT DEFAULT '', PlayButtonTexture TEXT DEFAULT '', BannerTexture TEXT DEFAULT '', levelStoryline INTEGER)",
+        "table": "LOWInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Name",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "Filename",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Stars",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "PackName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "TimesPlayed",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "TimesFinished",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "Unlocked",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "15.0",
+            "name": "ParTime",
+            "notnull": true,
+            "pk": 0,
+            "type": "FLOAT"
+          },
+          {
+            "default": "0",
+            "name": "BestScore",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "-1",
+            "name": "CollectibleFound",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "PlayTime",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "TimesRetried",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "IgnoreInStarCount",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "Type",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "StartDate",
+            "notnull": false,
+            "pk": 0,
+            "type": "DATETIME"
+          },
+          {
+            "default": null,
+            "name": "EndDate",
+            "notnull": false,
+            "pk": 0,
+            "type": "DATETIME"
+          },
+          {
+            "default": "1",
+            "name": "Available",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "IsBonus",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "LevelInfo",
+        "rows": 671,
+        "sql": "CREATE TABLE \"LevelInfo\" (\"ID\" INTEGER PRIMARY KEY NOT NULL ,\"Name\" TEXT NOT NULL ,\"Filename\" TEXT NOT NULL ,\"Stars\" INTEGER NOT NULL DEFAULT (0) ,\"PackName\" TEXT,\"TimesPlayed\" INTEGER NOT NULL DEFAULT (0) ,\"TimesFinished\" INTEGER NOT NULL DEFAULT (0) ,\"Unlocked\" BOOL NOT NULL DEFAULT (0) ,\"ParTime\" FLOAT NOT NULL DEFAULT (15.0) ,\"BestScore\" INTEGER NOT NULL DEFAULT (0) ,\"CollectibleFound\" INTEGER NOT NULL DEFAULT (-1) ,\"PlayTime\" INTEGER NOT NULL DEFAULT (0) ,\"TimesRetried\" INTEGER NOT NULL DEFAULT (0) ,\"IgnoreInStarCount\" BOOL NOT NULL DEFAULT (0) ,\"Type\" INTEGER DEFAULT (0) ,\"StartDate\" DATETIME,\"EndDate\" DATETIME,\"Available\" BOOL NOT NULL DEFAULT (1) ,\"IsBonus\" BOOL NOT NULL DEFAULT (0) )",
+        "table": "LevelInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": "LP_",
+            "name": "PackName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Unlocked",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "HasPlayed",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "30",
+            "name": "StarsRequired",
+            "notnull": false,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "tile_world_01",
+            "name": "TileTexture",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "\"255 255 255\"",
+            "name": "LightingColor",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "shower_curtain_01",
+            "name": "CurtainTexture",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "\"255 255 255\"",
+            "name": "LockColor",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "HasAlerted",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "PackType",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "0",
+            "name": "Hidden",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": null,
+            "name": "PackIcon",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "StartDate",
+            "notnull": false,
+            "pk": 0,
+            "type": "DATETIME"
+          },
+          {
+            "default": null,
+            "name": "EndDate",
+            "notnull": false,
+            "pk": 0,
+            "type": "DATETIME"
+          },
+          {
+            "default": "0",
+            "name": "Storyline",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": "''",
+            "name": "IAP_item_id",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "Bought",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "''",
+            "name": "DuckTextureSuffix",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "FB_AlbumName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "''",
+            "name": "DisplayPackName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "0",
+            "name": "LS_Unlocked",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL"
+          },
+          {
+            "default": "0",
+            "name": "GrayType",
+            "notnull": true,
+            "pk": 0,
+            "type": "BOOL"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "LevelPackInfo",
+        "rows": 46,
+        "sql": "CREATE TABLE \"LevelPackInfo\" (\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE , \"PackName\" TEXT NOT NULL DEFAULT LP_, \"Unlocked\" BOOL NOT NULL DEFAULT 0, \"HasPlayed\" BOOL NOT NULL DEFAULT 0, \"StarsRequired\" INTEGER DEFAULT 30, \"TileTexture\" TEXT NOT NULL DEFAULT tile_world_01, \"LightingColor\" TEXT NOT NULL DEFAULT \"255 255 255\", \"CurtainTexture\" TEXT NOT NULL DEFAULT shower_curtain_01, \"LockColor\" TEXT NOT NULL DEFAULT \"255 255 255\", \"HasAlerted\" BOOL NOT NULL DEFAULT 0, \"PackType\" INTEGER NOT NULL DEFAULT 0, 'Hidden' BOOL NOT NULL DEFAULT 0, 'PackIcon' TEXT, 'StartDate' DATETIME, 'EndDate' DATETIME, 'Storyline' INTEGER NOT NULL DEFAULT 0, 'IAP_item_id' TEXT NOT NULL DEFAULT '', 'Bought' BOOL NOT NULL DEFAULT 0, 'DuckTextureSuffix' TEXT DEFAULT '', 'FB_AlbumName' TEXT NOT NULL DEFAULT '', 'DisplayPackName' TEXT NOT NULL DEFAULT '', \"LS_Unlocked\" BOOL DEFAULT 0, GrayType BOOL NOT NULL DEFAULT 0)",
+        "table": "LevelPackInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "Basename",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT(25)"
+          },
+          {
+            "default": null,
+            "name": "ObjectName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT(25)"
+          },
+          {
+            "default": null,
+            "name": "GroupName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT(25)"
+          },
+          {
+            "default": null,
+            "name": "Unlocked",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL(1)"
+          },
+          {
+            "default": null,
+            "name": "HasViewed",
+            "notnull": false,
+            "pk": 0,
+            "type": "BOOL(1)"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "MusicCollectInfo",
+        "rows": 24,
+        "sql": "CREATE TABLE MusicCollectInfo(ID INTEGER NOT NULL,Basename TEXT(25),ObjectName TEXT(25),GroupName TEXT(25),Unlocked BOOL(1),HasViewed BOOL(1), PRIMARY KEY (ID))",
+        "table": "MusicCollectInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "LevelName",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "Desc",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "MysteryChallengeInfo",
+        "rows": 12,
+        "sql": "CREATE TABLE \"MysteryChallengeInfo\" (\"ID\" INTEGER PRIMARY KEY NOT NULL UNIQUE , \"LevelName\" TEXT, \"Desc\" TEXT)",
+        "table": "MysteryChallengeInfo",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "ID",
+            "notnull": true,
+            "pk": 1,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "EventName",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": null,
+            "name": "EventValue",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          },
+          {
+            "default": null,
+            "name": "EventStringValue",
+            "notnull": false,
+            "pk": 0,
+            "type": "TEXT"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "PlayerData",
+        "rows": 24,
+        "sql": "CREATE TABLE \"PlayerData\" (\"ID\" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , \"EventName\" TEXT NOT NULL , \"EventValue\" INTEGER NOT NULL , 'EventStringValue' TEXT)",
+        "table": "PlayerData",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "Name",
+            "notnull": true,
+            "pk": 0,
+            "type": "TEXT"
+          },
+          {
+            "default": "1",
+            "name": "Value",
+            "notnull": true,
+            "pk": 0,
+            "type": "INTEGER"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "Settings",
+        "rows": 11,
+        "sql": "CREATE TABLE \"Settings\" (\"Name\" TEXT NOT NULL UNIQUE , \"Value\" INTEGER NOT NULL DEFAULT 1)",
+        "table": "Settings",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "name",
+            "notnull": false,
+            "pk": 0,
+            "type": "(none)"
+          },
+          {
+            "default": null,
+            "name": "seq",
+            "notnull": false,
+            "pk": 0,
+            "type": "(none)"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "sqlite_sequence",
+        "rows": 4,
+        "sql": "CREATE TABLE sqlite_sequence(name,seq)",
+        "table": "sqlite_sequence",
+        "type": "table"
+      },
+      {
+        "columns": [
+          {
+            "default": null,
+            "name": "tbl",
+            "notnull": false,
+            "pk": 0,
+            "type": "(none)"
+          },
+          {
+            "default": null,
+            "name": "idx",
+            "notnull": false,
+            "pk": 0,
+            "type": "(none)"
+          },
+          {
+            "default": null,
+            "name": "stat",
+            "notnull": false,
+            "pk": 0,
+            "type": "(none)"
+          }
+        ],
+        "foreign_keys": [],
+        "name": "sqlite_stat1",
+        "rows": 7,
+        "sql": "CREATE TABLE sqlite_stat1(tbl,idx,stat)",
+        "table": "sqlite_stat1",
+        "type": "table"
+      }
+    ],
+    "triggers": [],
+    "views": []
+  }
+]

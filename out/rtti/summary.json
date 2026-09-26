@@ -1,0 +1,45 @@
+{
+  "base_edges": 343,
+  "binary": "libwmw.so",
+  "by_namespace": {
+    "(global)": 84,
+    "Walaber": 127,
+    "WaterConcept": 61,
+    "ndk": 2,
+    "std": 118
+  },
+  "classes": 392,
+  "demangler_check": {
+    "compared": 464,
+    "examples": [
+      "substitution differs: _ZNSt6__ndk16vectorINS_12basic_stringIcNS_11char_traitsIcE",
+      "substitution differs: _ZNSt6__ndk16vectorINS0_INS_12basic_stringIcNS_11char_trai",
+      "substitution differs: _ZNSt6__ndk16vectorIPN7Walaber11AchievementENS_9allocatorI",
+      "substitution differs: _ZNSt6__ndk16vectorIPN7Walaber21NumericAnimationTrackENS_9",
+      "substitution differs: _ZNSt6__ndk16vectorIPN7Walaber18NodeAnimationTrackENS_9all",
+      "substitution differs: _ZNSt6__ndk16vectorIPN7Walaber20SpriteAnimationTrackENS_9a"
+    ],
+    "name_agrees": 77,
+    "name_differs": 71,
+    "oracle": "ghidra symbol table (name only, std::__ndk1 biased)",
+    "unparsed": 316
+  },
+  "demangler_coverage": {
+    "demangled": 4582,
+    "game_cxx_symbols": 5097,
+    "known_weakness": "std::__ndk1::__tree and SharedPtr template substitutions",
+    "left_mangled": 515,
+    "with_parameter_list": 3738
+  },
+  "game_classes": 188,
+  "polymorphic": 284,
+  "vfuncs_by_namespace": {
+    "(global)": 98,
+    "Walaber": 944,
+    "WaterConcept": 1298,
+    "ndk": 5,
+    "std": 658
+  },
+  "virtual_functions": 3003,
+  "with_bases": 281
+}
