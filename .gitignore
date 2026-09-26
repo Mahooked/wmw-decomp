@@ -15,3 +15,8 @@ Thumbs.db
 # The original APK and extracted assets are not redistributed here.
 # See README.md -> "What is not in this repository".
 *.apk
+
+# Scratch output from validation runs.
+out/smoke_src/
+out/valid/
+

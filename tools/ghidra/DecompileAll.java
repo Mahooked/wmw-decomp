@@ -20,11 +20,14 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.regex.*;
 
+import ghidra.app.cmd.disassemble.DisassembleCommand;
+import ghidra.app.cmd.function.CreateFunctionCmd;
 import ghidra.app.decompiler.DecompInterface;
 import ghidra.app.decompiler.DecompileOptions;
 import ghidra.app.decompiler.DecompileResults;
 import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
+import ghidra.program.model.address.AddressSetView;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionManager;
@@ -80,99 +83,100 @@ public class DecompileAll extends GhidraScript {
 
         // Group by owning scope so each class lands in one file.
         //
-        // We iterate our own symbol table rather than Ghidra's function list.
-        // Ghidra builds functions from call targets and jump tables, so it
-        // reports 17,375 functions of which ~9,300 are 16-byte thunks, and only
-        // 102 of them start where the ELF says a function starts.  The symbol
-        // table is authoritative for names *and* for grouping, so we drive from
-        // it and create a Function where Ghidra has not already found one.
+        // We iterate *Ghidra's* function list, because only its analysis has
+        // followed control flow well enough to give each function a real body.
+        // Driving from the symbol table instead (creating a Function per symbol)
+        // yields 1-instruction stubs that decompile to nonsense, because the
+        // addresses were never disassembled.
         //
-        // Everything is keyed by *address*, never by Function handle: creating a
-        // function over a region makes Ghidra delete the thunk objects that
-        // overlapped it, which invalidates any handle we were holding.
+        // Naming is the other half of the problem: Ghidra names functions from
+        // call targets, so its boundaries only coincide with the ELF symbol
+        // table at 102 of 17,375 addresses.  So we bind names by nearest
+        // preceding symbol instead of exact address match, claiming each symbol
+        // at most once so two Ghidra functions can never take the same name.
         Map<String, List<Long>> groups = new TreeMap<String, List<Long>>();
         Map<Long, String[]> meta = new HashMap<Long, String[]>();
         Map<Long, String> unsymbolized = new TreeMap<Long, String>();
-        Set<Long> symbolised = new HashSet<Long>();
+        Set<Long> claimed = new HashSet<Long>();
 
         FunctionManager fm = currentProgram.getFunctionManager();
         List<Long> addrs = new ArrayList<Long>(nameMap.keySet());
         Collections.sort(addrs);
 
-        int total = 0, created = 0, nocode = 0, covered = 0;
-        for (Long off : addrs) {
-            if (monitor.isCancelled()) {
-                break;
-            }
+        // Exact-address hits first, so a real match always beats a guess.
+        Map<Long, String[]> exact = new HashMap<Long, String[]>(nameMap);
+        long[] symAddr = new long[addrs.size()];
+        for (int i = 0; i < addrs.size(); i++) {
+            symAddr[i] = addrs.get(i);
+        }
+        // How far past a symbol a Ghidra function may start and still be that
+        // symbol.  Thunks are 16 bytes; real drift is a few dozen bytes.
+        final long CLAIM_WINDOW = 0x200L;
+
+        int total = 0, namedExact = 0, namedNear = 0;
+        FunctionIterator it = fm.getFunctions(true);
+        while (it.hasNext() && !monitor.isCancelled()) {
+            Function f = it.next();
             if (maxFunctions > 0 && total >= maxFunctions) {
                 break;
             }
-            Address a = toAddr(off);
-            if (fm.getFunctionAt(a) == null) {
-                if (fm.getFunctionContaining(a) != null) {
-                    // The symbol points into the middle of a function we have
-                    // already created -- typically the C1/C2 constructor aliases
-                    // or the D0/D1/D2 destructor family, which share a body.
-                    // Decompiling the containing function again under this name
-                    // would just duplicate it.
-                    covered++;
-                    continue;
-                }
-                try {
-                    if (createFunction(a, null) == null) {
-                        nocode++;
-                        continue;
-                    }
-                    created++;
-                } catch (Exception e) {
-                    // Not a valid instruction boundary, or the address is data.
-                    nocode++;
-                    continue;
+            long entry = f.getEntryPoint().getOffset();
+            String[] pair = exact.get(entry);
+            long claimKey = entry;
+            boolean isNear = false;
+            if (pair == null) {
+                int i = Arrays.binarySearch(symAddr, entry);
+                int j = (i >= 0) ? i : -i - 2;
+                if (j >= 0 && entry - symAddr[j] <= CLAIM_WINDOW && !claimed.contains(symAddr[j])) {
+                    claimKey = symAddr[j];
+                    pair = nameMap.get(claimKey);
+                    isNear = pair != null;
                 }
             }
             total++;
-            symbolised.add(off);
-            String[] pair = nameMap.get(off);
+            if (pair == null) {
+                // No ELF symbol behind this one; Ghidra's own GNU demangler has
+                // usually named it, and it handles libc++ template expansion
+                // better than our demangler does.
+                unsymbolized.put(entry, f.getName());
+                continue;
+            }
+            claimed.add(claimKey);
+            if (isNear) {
+                namedNear++;
+            } else {
+                namedExact++;
+            }
+            meta.put(entry, new String[] { pair[1], pair[0] });
             String key = groupKeyFor(pair[1]);
-            meta.put(off, new String[] { pair[1], pair[0] });
             List<Long> g = groups.get(key);
             if (g == null) {
                 g = new ArrayList<Long>();
                 groups.put(key, g);
             }
-            g.add(off);
+            g.add(entry);
         }
 
-        // Aliases and interior symbols: recorded so the class inventory stays
-        // complete, but not decompiled in their own right.
+        // Symbols that never bound to a Ghidra function, so the inventory stays
+        // complete and the gap is visible rather than silent.
         PrintWriter al = new PrintWriter(new OutputStreamWriter(
-            new FileOutputStream(root.resolve("_aliases.tsv").toFile()),
+            new FileOutputStream(root.resolve("_unclaimed.tsv").toFile()),
             StandardCharsets.UTF_8));
         al.println("#\taddress\tmangled\tdemangled\treason");
         for (Long off : addrs) {
-            if (symbolised.contains(off)) {
+            if (claimed.contains(off)) {
                 continue;
             }
             String[] pair = nameMap.get(off);
+            String reason = exact.containsKey(off) ? "no-ghidra-function" : "interior";
             al.println("0x" + Long.toHexString(off) + "\t" + pair[0] + "\t" + pair[1]
-                + "\t" + (fm.getFunctionContaining(toAddr(off)) != null ? "alias" : "no-code"));
+                + "\t" + reason);
         }
         al.close();
 
-        // Ghidra-discovered functions with no ELF symbol behind them. Recorded
-        // for completeness, but kept out of the class tree.
-        FunctionIterator it = fm.getFunctions(true);
-        while (it.hasNext()) {
-            Function f = it.next();
-            long off = f.getEntryPoint().getOffset();
-            if (!symbolised.contains(off)) {
-                unsymbolized.put(off, f.getName());
-            }
-        }
-        println("DecompileAll: " + total + " symbolised functions (" + created
-            + " newly created, " + covered + " aliases, " + nocode
-            + " without decodable code), " + unsymbolized.size()
-            + " unsymbolised, " + groups.size() + " groups");
+        println("DecompileAll: " + total + " functions, " + namedExact
+            + " exact symbol matches, " + namedNear + " bound by nearest symbol, "
+            + unsymbolized.size() + " unsymbolised, " + groups.size() + " groups");
 
         PrintWriter un = new PrintWriter(new OutputStreamWriter(
             new FileOutputStream(root.resolve("_unsymbolized.tsv").toFile()),
