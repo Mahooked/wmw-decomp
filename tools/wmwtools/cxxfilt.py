@@ -831,6 +831,11 @@ class Demangler:
             return BUILTIN_TYPES.get("D" + nxt, "auto")
         if c == "P":
             self.i += 1
+            if self.peek() == "F":
+                # A pointer to a function type carries its '*' inside the
+                # parentheses: `PFvPvE` is `void (*)(void*)`, not
+                # `void (void*)*`.
+                return self.add_sub(self._parse_fnptr())
             return self.add_sub(self._parse_type() + "*")
         if c == "R":
             self.i += 1
@@ -864,15 +869,12 @@ class Demangler:
             self.i = self.i  # no dim
             return self._parse_type() + " []"
         if c == "F":
+            # <function-type> ::= F [Y] <bare-function-type> E.  Without the
+            # 'Y' the first type of the bare-function-type *is* the return
+            # type, so `FvPvE` is `void (void*)` rather than `(void, void*)`.
             self.i += 1
-            if self.eat("Y"):
-                ret = self._parse_type()
-            else:
-                ret = ""
-            params = self._parse_params()
-            if self.peek() == "E" or True:
-                self.eat("E")
-            return "%s(%s)%s" % (ret, params, " noexcept" if False else "")
+            ret, params = self._parse_fn_sig()
+            return "%s (%s)" % (ret, params)
         if c == "M":
             self.i += 1
             cls = self._parse_type()
@@ -897,6 +899,25 @@ class Demangler:
             # name or a substitution are already registered by their own path.
             return self.add_sub(self._parse_name())
         return self._parse_name()
+
+    def _parse_fn_sig(self) -> tuple[str, str]:
+        """Parse ``[Y] <bare-function-type> E``, returning ``(ret, params)``.
+
+        Without the ``Y`` the first type of the bare-function-type is the
+        return type, which is why ``FvPvE`` is ``void (void*)`` and not
+        ``(void, void*)``.
+        """
+        self.eat("Y")
+        ret = "" if self.eof() or self.peek() == "E" else self._parse_type()
+        params = self._parse_params()
+        self.eat("E")
+        return ret, params
+
+    def _parse_fnptr(self) -> str:
+        """Parse a ``P F ... E`` pointer-to-function as ``RET (*)(params)``."""
+        self.expect("F")
+        ret, params = self._parse_fn_sig()
+        return "%s (*)(%s)" % (ret, params)
 
     def _parse_params(self) -> str:
         """Parse a bare-function-type.
