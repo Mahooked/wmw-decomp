@@ -162,6 +162,9 @@ class Demangler:
         self.s = s
         self.i = 0
         self.subs: list[str] = []
+        self.sub_is_reference = False
+        self.name_is_template = False
+        self.targs: list[list[str]] = []
         self.type_depth = 0
 
     # -- low level ------------------------------------------------------
@@ -199,12 +202,21 @@ class Demangler:
         return name
 
     def parse_substitution(self) -> str:
+        """Resolve an ``S...`` substitution.
+
+        Sets :attr:`sub_is_reference` to say whether this read an *existing*
+        table entry (``S_``/``S<n>_``) or introduced a new component via a
+        standard substitution (``St``/``Sa``/...).  GCC's ``d_prefix`` only
+        registers the latter, because the former is already in the table and
+        re-adding it would shift every later index.
+        """
         # caller has consumed 'S'
         if self.eof():
             raise _Fail("eof in substitution")
         c = self.s[self.i]
         if c == "_":
             self.i += 1
+            self.sub_is_reference = True
             return self._sub_at(0)
         if c.isdigit():
             num = self._number()
@@ -213,7 +225,9 @@ class Demangler:
             # Itanium numbering is not what it looks like: 'S_' is the first
             # substitution, then 'S0_' is the second, 'S1_' the third, so a
             # numeric seq-id is offset by one.
+            self.sub_is_reference = True
             return self._sub_at(num + 1)
+        self.sub_is_reference = False
         if c == "t":
             self.i += 1
             name = self._parse_name()
@@ -303,17 +317,24 @@ class Demangler:
                 return ""  # caller supplies class name
             self.next()  # 0/1/2
             return "~"
-        if c in OPERATORS:
-            op = OPERATORS[c]
-            if c == "cv":
+        # <operator-name> codes are two characters ("aS" is operator=, "ls" is
+        # operator<<), so the table has to be probed with both.
+        two = self.s[self.i - 1 : self.i + 1]
+        if two in OPERATORS:
+            self.i += 1
+            op = OPERATORS[two]
+            if two == "cv":
                 t = self._parse_type()
                 return "operator " + t
-            if c == "li":
+            if two == "li":
                 s = self._parse_source_name()
                 return 'operator""' + s
-            if c == "v":
+            if two == "v":
                 d = self._number()
                 return "operator __vector(%d)" % d
+            return "operator" + op
+        if c in OPERATORS:
+            op = OPERATORS[c]
             return "operator" + op
         if c.isdigit():
             self.i -= 1
@@ -341,7 +362,21 @@ class Demangler:
             return self._parse_template_args_body()
         return ""
 
-    def _parse_nested_name(self) -> str:
+    def _parse_nested_name(self, is_function: bool = False) -> str:
+        """Parse ``N [<CV-qualifiers>] [<ref-qualifier>] <prefix> <unqualified-name> E``.
+
+        The substitution bookkeeping mirrors GCC's ``d_prefix``
+        (GPL/DemanglerGnu/src/demangler_gnu_*/c/cp-demangle.c), which is the
+        authority for this binary.  Two rules there are easy to get wrong and
+        both shift every later index:
+
+        * a component is registered only if the next character is *not* ``E``
+          -- the component immediately before ``E`` is the trailing
+          <unqualified-name> and is never a substitution, and
+        * a component that was itself *read from* the table (``S_``/``S<n>_``)
+          is skipped via ``continue`` and not re-registered, while a standard
+          substitution (``St``, ``Sa``, ...) does introduce a new component.
+        """
         self.expect("N")
         quals = self._parse_cv_qualifiers()
         ref = ""
@@ -355,96 +390,131 @@ class Demangler:
         # needed because a ctor/dtor name refers to the class and not to the
         # template arguments that may have been parsed since.
         last_name_idx = -1
+        ctor_name: Optional[str] = None
         while True:
             if self.eof():
                 raise _Fail("eof in nested name")
             if self.eat("E"):
                 break
             c = self.s[self.i]
+            from_sub = False
             if c == "S":
                 self.i += 1
                 sub = self.parse_substitution()
                 components.append(sub)
+                from_sub = self.sub_is_reference
                 # The component just named is the class a following ctor/dtor
                 # belongs to, whether it came from St<name> or from a standard
                 # substitution such as Sa.
                 last_name_idx = len(components) - 1
-                self.add_sub("::".join(components))
-                continue
-            if c == "I":
+            elif c == "I":
                 if not components:
                     raise _Fail("template param as first component")
                 args = self._parse_template_args()
                 components[-1] = components[-1] + args
-                self.add_sub("::".join(components))
-                continue
-            if c == "T":
+            elif c == "T":
                 self.i += 1
                 p = self._number()
                 components.append("T%d_" % (p - 1))
-                continue
-            if c == "M":
+                last_name_idx = len(components) - 1
+            elif c == "M":
                 raise _Fail("member pointer in name")
-            if c == "L":  # external linkage
+            elif c == "L":  # external linkage
                 self.i += 1
                 continue
-            if c == "Z":  # local name inside nested
+            elif c == "Z":  # local name inside nested
                 self.i += 1
                 ent = self._parse_name()
-                comps = components + [ent]
-                self.add_sub("::".join(comps))
-                continue
-            comp = self._parse_unqualified_name(is_template_prefix, in_nested=True)
-            if comp == "" or comp.startswith("~"):
-                # ctor/dtor are named after the enclosing class, which is not
-                # necessarily the last component (template args may intervene).
-                # A constructor of `ns::Foo<int>` is `ns::Foo<int>::Foo`, so build
-                # the name from the recorded class component rather than from
-                # whatever happened to be parsed last.
-                if last_name_idx < 0:
-                    raise _Fail("ctor without class")
-                full = components[last_name_idx]
-                op = "~" if comp.startswith("~") else ""
-                simple = _split_template(full)[0].rpartition("::")[2]
-                name = full + "::" + op + simple
-                if self.peek() == "I":
-                    self.i += 1
-                    name += self._parse_template_args_body()
-                name += self._parse_abi_tags()
-                self.add_sub(name)
-                # a ctor/dtor terminates the nested name apart from 'E'
-                self.eat("E")
-                # Constructors and destructors take no parameters, so the only
-                # thing that can follow is the empty 'v' list.
-                if self.eof() or self.eat("v"):
-                    name += "()"
-                return name
-            components.append(comp)
-            if comp.startswith("operator") or comp.startswith('operator""'):
-                last_name_idx = -1
-            else:
+                components.append(ent)
                 last_name_idx = len(components) - 1
-            self.add_sub("::".join(components))
-            # <template-prefix> <template-args>: register the bare name first so
-            # that substitutions inside the argument list can refer to it.
-            args = self._maybe_template_args()
-            if args:
-                components[-1] += args
+            else:
+                comp = self._parse_unqualified_name(is_template_prefix, in_nested=True)
+                if comp == "" or comp.startswith("~"):
+                    # A ctor/dtor is named after the enclosing class, which is
+                    # not necessarily the last component (template args may
+                    # intervene).  The qualifier is the whole enclosing scope, so
+                    # every component up to the class name is kept; only the
+                    # trailing `~Foo` part is unqualified.
+                    if last_name_idx < 0:
+                        raise _Fail("ctor without class")
+                    full = "::".join(components[: last_name_idx + 1])
+                    op = "~" if comp.startswith("~") else ""
+                    simple = _split_template(full)[0].rpartition("::")[2]
+                    ctor_name = full + "::" + op + simple
+                    if self.peek() == "I":
+                        self.i += 1
+                        ctor_name += self._parse_template_args_body()
+                    ctor_name += self._parse_abi_tags()
+                    # A ctor/dtor terminates the nested name apart from 'E' and,
+                    # being the trailing <unqualified-name>, is not registered.
+                    self.eat("E")
+                    if self.eof():
+                        return ctor_name + "()"
+                    break
+                components.append(comp)
+                if comp.startswith("operator") or comp.startswith('operator""'):
+                    last_name_idx = -1
+                else:
+                    last_name_idx = len(components) - 1
+                if self.peek() == "I":
+                    # A bare <unscoped-template-name> is a substitution
+                    # candidate in its own right: it is entered before the
+                    # arguments are parsed, so an ``S<n>_`` inside them can
+                    # refer back to it.
+                    self.add_sub("::".join(components))
+                args = self._maybe_template_args()
+                if args:
+                    components[-1] += args
+                    # The trailing <unqualified-name> carried <template-args>, so
+                    # this is a function template instantiation.  Those encode
+                    # their return type ahead of the parameter list; a plain
+                    # function does not.
+                    self.name_is_template = True
+                else:
+                    self.name_is_template = False
+                if "<" in comp and comp.endswith(">") and "(" not in comp:
+                    is_template_prefix = True
+            if self.peek() == "E":
+                # The component before 'E' is the trailing <unqualified-name>,
+                # which d_prefix never registers.  In a *type* context the
+                # completed type is still a substitution candidate (GCC's
+                # `can_subst` check at the end of cplus_demangle_type), so it is
+                # registered here instead.
+                if not is_function and not from_sub:
+                    self.add_sub("::".join(components))
+                self.i += 1  # consume the 'E' that closed the nested name
+                break
+            if not from_sub:
                 self.add_sub("::".join(components))
-            if "<" in comp and comp.endswith(">") and "(" not in comp:
-                is_template_prefix = True
-        if not components:
-            raise _Fail("empty nested name")
-        name = "::".join(components)
+        if ctor_name is not None:
+            name = ctor_name
+            self.name_is_template = False
+        else:
+            if not components:
+                raise _Fail("empty nested name")
+            name = "::".join(components)
         if quals:
-            name = quals + " " + name
+            tail = quals
+        else:
+            tail = ""
         if ref:
-            name += " " + ref
-        name += self._parse_function_params()
+            tail = (tail + " " + ref).strip()
+        ret, params = self._parse_function_params()
+        if ret:
+            name = ret + " " + name
+        name += params
+        if tail:
+            # CV-/ref-qualifiers trail the parameter list: `Foo::bar(int) const`.
+            name += " " + tail
         return name
 
-    def _parse_function_params(self) -> str:
+    def _parse_function_params(self) -> tuple[str, str]:
         """Render the bare-function-type that follows a member function name.
+
+        Returns ``(return_type, "(params)")``.  The return type is non-empty
+        only for function *template* instantiations, which encode it ahead of
+        the parameter list (``...barIiEEvOT_`` is ``void Foo::bar<int>(int&&)``)
+        because it cannot be deduced from the arguments.
 
         In Itanium mangling a member function's parameter types are not wrapped
         in parentheses -- they sit directly after the nested name's closing 'E',
@@ -453,19 +523,28 @@ class Demangler:
         mangling omits the return type but encodes every parameter type exactly.
         """
         if self.eof() or self.type_depth:
-            return ""
+            return "", ""
         save = self.i
+        save_subs = len(self.subs)
+        ret = ""
         try:
+            if self.name_is_template:
+                # A template instantiation must carry its return type; GCC
+                # rejects the encoding outright when it is missing, so a failure
+                # here has to propagate rather than be silently dropped.
+                ret = self._parse_type()
             params = self._parse_params()
         except _Fail:
             self.i = save
-            return ""
+            del self.subs[save_subs:]
+            return "", ""
         if self.i != len(self.s):
             # Leftover input means this was not a function encoding; attaching
             # a parameter list would invent one.
             self.i = save
-            return ""
-        return "(%s)" % params
+            del self.subs[save_subs:]
+            return "", ""
+        return ret, "(%s)" % params
 
     def _parse_cv_qualifiers(self) -> str:
         quals = []
@@ -489,6 +568,9 @@ class Demangler:
             if self.eat("L"):
                 pass
             args.append(self._parse_template_arg())
+        # The arguments name types for the rest of the enclosing template, so
+        # make them visible to any T_ reference that follows.
+        self.targs.append(args)
         return "<" + ", ".join(a for a in args if a) + ">"
 
     def _parse_template_arg(self) -> str:
@@ -595,10 +677,42 @@ class Demangler:
         # a class type it is not. Track the depth so the parameter parser can
         # tell them apart.
         self.type_depth += 1
+        mark = len(self.targs)
         try:
             return self._parse_type_body()
         finally:
             self.type_depth -= 1
+            # Template arguments only name types inside the template that
+            # introduced them.
+            del self.targs[mark:]
+
+    @staticmethod
+    def _collapse_ref(base: str, op: str) -> str:
+        """Apply C++ reference collapsing to a rendered reference type.
+
+        A <template-param> can itself resolve to a reference -- ``O T_`` in
+        ``vector<T>::__push_back_slow_path(T)`` is an rvalue reference to a
+        parameter already declared ``T const&``.  Collapsing turns ``X& &&``
+        back into ``X&``, which is the type the source actually has.
+        """
+        if base.endswith("&&"):
+            return base[:-2] + ("&" if op == "&" else "&&")
+        if base.endswith("&"):
+            return base[:-1] + "&"
+        return base + op
+
+    def _template_param(self, index: int) -> str:
+        """Resolve ``T_``/``T<n>_`` against the enclosing template arguments.
+
+        A parameter type is written in terms of the template's own arguments
+        (``...__push_back_slow_pathIRKS2_EEvOT_`` is
+        ``void vector<...>::__push_back_slow_path<T>(T&&)``), so the arguments
+        have to be in scope while the signature is rendered.
+        """
+        for scope in reversed(self.targs):
+            if 0 <= index < len(scope):
+                return scope[index]
+        return "T%d_" % index
 
     def _parse_type_body(self) -> str:
         c = self.peek()
@@ -622,26 +736,26 @@ class Demangler:
             return BUILTIN_TYPES.get("D" + nxt, "auto")
         if c == "P":
             self.i += 1
-            return self._parse_type() + "*"
+            return self.add_sub(self._parse_type() + "*")
         if c == "R":
             self.i += 1
-            return self._parse_type() + "&"
+            return self.add_sub(self._collapse_ref(self._parse_type(), "&"))
         if c == "O":
             self.i += 1
-            return self._parse_type() + "&&"
+            return self.add_sub(self._collapse_ref(self._parse_type(), "&&"))
         if c == "C":
             self.i += 1
-            return self._parse_type() + " complex"
+            return self.add_sub(self._parse_type() + " complex")
         if c == "G":
             self.i += 1
-            return self._parse_type() + " imaginary"
+            return self.add_sub(self._parse_type() + " imaginary")
         for code, text in CV_QUALS:
             if c == code:
                 self.i += 1
                 t = self._parse_type()
                 if text == "const" and t.endswith("const"):
                     return t
-                return "%s %s" % (t, text)
+                return self.add_sub("%s %s" % (t, text))
         if c == "K" and self.peek(2) == "Kc":
             self.i += 3
             return "const char* const"
@@ -669,23 +783,37 @@ class Demangler:
             cls = self._parse_type()
             member = self._parse_type()
             return "%s %s::*" % (member, cls)
-        if c == "T_":
-            self.i += 2
-            n = self._number()
-            return "T%d_" % (n - 1)
         if c == "T":
+            # <template-param> ::= T_ | T <parameter-2 non-negative number> _
             self.i += 1
+            if self.eat("_"):
+                return self._template_param(0)
             n = self._number()
-            return "T%d_" % (n - 1)
-        if c in "1234":
-            self.i += 1
-            return ""
+            if not self.eat("_"):
+                raise _Fail("bad template param")
+            return self._template_param(n)
         if c == "u":
             self.i += 1
             return self._parse_source_name()
+        if c.isdigit():
+            # <class-enum-type> ::= <name>, and an unscoped <name> starts with a
+            # <source-name>, i.e. a length.  GCC reaches these through
+            # d_class_enum_type -> d_name, whose trailing check registers the
+            # completed name (cp-demangle.c:1535).  Types spelled as a nested
+            # name or a substitution are already registered by their own path.
+            return self.add_sub(self._parse_name())
         return self._parse_name()
 
     def _parse_params(self) -> str:
+        """Parse a bare-function-type.
+
+        Parameter types are *not* registered here: they are ordinary <type>s and
+        ``_parse_type_body`` already enters each non-builtin one into the
+        substitution table, exactly where GCC's ``can_subst`` check in
+        ``cplus_demangle_type`` does.  Registering again would shift every
+        later index, which is how ``...EP8_jobjectP10_jmethodID`` used to lose
+        its whole parameter list.
+        """
         params: list[str] = []
         while not self.eof() and self.peek() != "E":
             before = self.i
@@ -698,10 +826,10 @@ class Demangler:
             return ""
         return ", ".join(params)
 
-    def _parse_name(self) -> str:
+    def _parse_name(self, is_function: bool = False) -> str:
         c = self.peek()
         if c == "N":
-            return self._parse_nested_name()
+            return self._parse_nested_name(is_function)
         if c == "Z":
             return self._parse_local_name()
         if c == "S":
@@ -734,10 +862,12 @@ class Demangler:
             if self.peek(2) == "L_":
                 # external name
                 self.i += 2
-                return self._parse_name()
+                return self._parse_name(is_function=True)
             self.i += 1
             return self._parse_expr()
-        return self._parse_name()
+        # An <encoding> is a function: its nested name is followed by a
+        # bare-function-type rather than being a type in its own right.
+        return self._parse_name(is_function=True)
 
     def parse_top(self) -> str:
         c = self.peek()
