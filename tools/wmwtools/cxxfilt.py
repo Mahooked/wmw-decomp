@@ -328,6 +328,25 @@ class Demangler:
             raise _Fail("number expected")
         return int(self.s[start : self.i], 10)
 
+    def _signed_number(self) -> int:
+        """Parse ``<number>``, which is negative when prefixed with ``n``."""
+        neg = self.eat("n")
+        n = self._number()
+        return -n if neg else n
+
+    def _skip_call_offset(self, kind: str) -> None:
+        """Skip a ``<call-offset>`` in front of a thunk's base encoding.
+
+        ``h <nv-offset> _`` for a non-virtual thunk, or
+        ``v <v-offset> _ <virtual-offset> _`` for a virtual one.  The offsets
+        are not printed, but they have to be consumed to reach the base.
+        """
+        self._signed_number()
+        self.expect("_")
+        if kind == "v":
+            self._signed_number()
+            self.expect("_")
+
     # -- names ----------------------------------------------------------
     def _parse_source_name(self, in_nested: bool = False) -> str:
         n = self._number()
@@ -1022,6 +1041,14 @@ class Demangler:
                     self.next()
                     ctor = self._parse_type()
                 return "construction vtable for %s-in-%s" % (ctor or base, base)
+            if kind in "hv":  # thunk to
+                # T <call-offset> <base encoding>.  This binary is full of
+                # them: every virtual destructor and overriding method gets a
+                # non-virtual (and often a virtual) thunk.
+                self.i += 2
+                label = "virtual" if kind == "v" else "non-virtual"
+                self._skip_call_offset(kind)
+                return "%s thunk to %s" % (label, self._parse_encoding())
         if c == "G":
             # _ZGV <name>  guard variable for
             if self.s[1:2] == "V":
