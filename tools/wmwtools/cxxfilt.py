@@ -301,6 +301,9 @@ class Demangler:
             return self._sub_at(num + 1)
         self.sub_is_reference = False
         if c == "t":
+            # `St` introduces the std component; the name that follows is
+            # folded into it, which is what the substitution indices in this
+            # binary are built around.
             self.i += 1
             name = self._parse_name()
             return "std::" + name
@@ -486,8 +489,7 @@ class Demangler:
                 components[-1] = components[-1] + args
             elif c == "T":
                 self.i += 1
-                p = self._number()
-                components.append("T%d_" % (p - 1))
+                components.append(self._template_param(self._compact_number()))
                 last_name_idx = len(components) - 1
             elif c == "M":
                 raise _Fail("member pointer in name")
@@ -511,7 +513,11 @@ class Demangler:
                         raise _Fail("ctor without class")
                     full = "::".join(components[: last_name_idx + 1])
                     op = "~" if comp.startswith("~") else ""
-                    simple = _split_template(full)[0].rpartition("::")[2]
+                    # The ctor/dtor is named after the class itself: strip only
+                    # the last component's template arguments, then anything a
+                    # `St`-folded component carries in front of the class name.
+                    simple = _split_template(components[last_name_idx])[0]
+                    simple = simple.rpartition("::")[2] or simple
                     ctor_name = full + "::" + op + simple
                     if self.peek() == "I":
                         self.i += 1
@@ -658,13 +664,16 @@ class Demangler:
             lit = self._parse_literal()
             return lit
         if c == "J":
+            # <template-arg> ::= J <template-args> E -- an argument pack.  The
+            # opening 'I' is absent, so the pack runs to its own 'E'.
             self.i += 1
-            args = self._parse_template_args()
-            return " " + args.strip()
+            return self._parse_template_args_body()
         if c == "T":
+            # d_template_arg's default case is cplus_demangle_type, so a
+            # template-param used as an argument is registered as a
+            # substitution candidate just like any other non-builtin type.
             self.i += 1
-            self._number()
-            return ""
+            return self.add_sub(self._template_param(self._compact_number()))
         if c == "s":  # std::string shorthand
             self.i += 1
             return "std::string"
@@ -743,6 +752,22 @@ class Demangler:
         if base.endswith("&"):
             return base[:-1] + "&"
         return base + op
+
+    def _compact_number(self) -> int:
+        """Decode GCC's ``d_compact_number``: ``_`` is 0 and ``N`` means N+1.
+
+        This is why ``T_`` and ``T0_`` name *different* parameters.  For
+        ``operator+<char, char_traits<char>, allocator<char>>`` the first
+        argument is written ``T_``, the second ``T0_`` and the third ``T1_``.
+        """
+        if self.eat("_"):
+            return 0
+        if self.eat("n"):
+            raise _Fail("negative template param")
+        n = self._number()
+        if not self.eat("_"):
+            raise _Fail("bad template param")
+        return n + 1
 
     def _template_param(self, index: int) -> str:
         """Resolve ``T_``/``T<n>_`` against the enclosing template arguments.
@@ -828,13 +853,12 @@ class Demangler:
             return "%s %s::*" % (member, cls)
         if c == "T":
             # <template-param> ::= T_ | T <parameter-2 non-negative number> _
+            # A template-param reached as a <type> leaves cplus_demangle_type's
+            # can_subst set, so it is registered like any other non-builtin type
+            # -- that is what puts basic_string's three arguments at indices
+            # 7-9 and the completed basic_string at 10.
             self.i += 1
-            if self.eat("_"):
-                return self._template_param(0)
-            n = self._number()
-            if not self.eat("_"):
-                raise _Fail("bad template param")
-            return self._template_param(n)
+            return self.add_sub(self._template_param(self._compact_number()))
         if c == "u":
             self.i += 1
             return self._parse_source_name()
