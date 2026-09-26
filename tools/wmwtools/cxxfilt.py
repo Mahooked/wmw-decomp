@@ -637,21 +637,42 @@ class Demangler:
         return self._parse_template_args_body()
 
     def _parse_template_args_body(self) -> str:
+        args = self._parse_template_arglist()
+        # The arguments name types for the rest of the enclosing template, so
+        # make them visible to any T_ reference that follows.
+        self.targs.append(args)
+        return "<" + ", ".join(a for a in args if a) + ">"
+
+    def _parse_template_arglist(self, stop_before_e: bool = False) -> list[str]:
+        """Parse ``<template-arg>+``.
+
+        Inside a ``J`` argument pack the arguments carry no ``I`` and no
+        closing ``E`` of their own -- the pack's single ``E`` is the only
+        terminator -- so ``stop_before_e`` leaves that ``E`` for the caller.
+        """
         args: list[str] = []
         while True:
             if self.eof():
                 raise _Fail("eof in template args")
-            if self.eat("E"):
-                break
+            if self.peek() == "E":
+                if not stop_before_e:
+                    self.i += 1
+                return args
+            if self.peek() == "J":
+                # <template-arg> ::= J <template-args> E is an argument pack.
+                # Its arguments are *spliced* into the enclosing list, not
+                # bracketed: GCC prints tuple<J[RK i]> as `tuple<int const&>`
+                # and tuple<J[]> as `tuple<>`.
+                self.i += 1
+                args.extend(self._parse_template_arglist(stop_before_e=True))
+                self.eat("E")
+                continue
             # NB: a leading 'L' is not a separate marker here.  GCC routes
             # 'L' straight to d_expr_primary, which consumes the whole literal
             # (``Lb1_`` is the bool value true); swallowing the 'L' first would
             # leave ``b1_`` to be misread as the type `bool`.
             args.append(self._parse_template_arg())
-        # The arguments name types for the rest of the enclosing template, so
-        # make them visible to any T_ reference that follows.
-        self.targs.append(args)
-        return "<" + ", ".join(a for a in args if a) + ">"
+        return args
 
     def _parse_template_arg(self) -> str:
         c = self.peek()
@@ -664,8 +685,8 @@ class Demangler:
             lit = self._parse_literal()
             return lit
         if c == "J":
-            # <template-arg> ::= J <template-args> E -- an argument pack.  The
-            # opening 'I' is absent, so the pack runs to its own 'E'.
+            # Handled by _parse_template_arglist, which splices the pack into
+            # the enclosing argument list instead of bracketing it.
             self.i += 1
             return self._parse_template_args_body()
         if c == "T":
@@ -796,6 +817,12 @@ class Demangler:
             if self.eof():
                 raise _Fail("D eof")
             nxt = self.s[self.i]
+            if nxt == "p":
+                # <expr-primary> ::= Dp <type> -- a defaulted argument.  The
+                # type is printed as it stands; the `auto` is implied, so
+                # `DpOT_` is one parameter of the referenced type, not two.
+                self.i += 1
+                return self._parse_type()
             two = "D" + nxt
             if two in BUILTIN_TYPES:
                 self.i += 1
