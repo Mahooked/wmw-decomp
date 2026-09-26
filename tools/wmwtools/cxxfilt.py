@@ -50,7 +50,7 @@ BUILTIN_TYPES = {
     "Du": "char8_t",
     "Da": "auto",
     "Dc": "decltype(auto)",
-    "Dn": "std::nullptr_t",
+    "Dn": "decltype(nullptr)",
 }
 
 # operator name encodings (Itanium ABI 5.1.1)
@@ -141,20 +141,79 @@ class _Fail(Exception):
 
 
 def _split_template(name: str) -> tuple[str, str]:
-    """Split ``ns::Foo<int>`` into ``("ns::Foo", "<int>")``.
+    """Split ``ns::Foo<int>::bar`` into ``("ns::Foo", "<int>")``.
 
-    Scans for the '<' that opens the top-level template argument list, tracking
-    nesting depth and skipping anything inside an operator name.
+    Finds the ``<`` that opens the top-level argument list and the matching
+    ``>``, tracking nesting so that a nested ``char_traits<char>`` does not end
+    the search early -- and so that trailing ``::member`` is left out.
     """
     depth = 0
+    start = -1
     for idx, ch in enumerate(name):
         if ch == "<":
             if depth == 0:
-                return name[:idx], name[idx:]
+                start = idx
             depth += 1
         elif ch == ">":
-            depth = max(0, depth - 1)
+            depth -= 1
+            if depth <= 0:
+                if start < 0:
+                    return name, ""
+                return name[:start], name[start : idx + 1]
     return name, ""
+
+
+# Print styles, mirroring the d_builtin_type_print enum in cp-demangle.c.
+_D_DEFAULT = 0
+_D_FLOAT = 1
+_D_INT = 2
+_D_UNSIGNED = 3
+_D_LONG = 4
+_D_UNSIGNED_LONG = 5
+_D_LONG_LONG = 6
+_D_UNSIGNED_LONG_LONG = 7
+_D_VOID = 8
+_D_BOOL = 9
+
+# GCC prints an integral <literal> template-argument bare, with just the width
+# suffix (cplus_demangle_builtin_types' d_builtin_type_print column).
+_NUMERIC_SUFFIXES = {
+    _D_INT: "",
+    _D_UNSIGNED: "u",
+    _D_LONG: "l",
+    _D_UNSIGNED_LONG: "ul",
+    _D_LONG_LONG: "ll",
+    _D_UNSIGNED_LONG_LONG: "ull",
+}
+
+# cplus_demangle_builtin_types, verbatim.  Note 'a' is signed char and 'h' is
+# unsigned char -- both are easy to mistake for float types.
+_BUILTIN_TYPES = {
+    "a": ("signed char", _D_DEFAULT),
+    "b": ("bool", _D_BOOL),
+    "c": ("char", _D_DEFAULT),
+    "d": ("double", _D_FLOAT),
+    "e": ("long double", _D_FLOAT),
+    "f": ("float", _D_FLOAT),
+    "g": ("__float128", _D_FLOAT),
+    "h": ("unsigned char", _D_DEFAULT),
+    "i": ("int", _D_INT),
+    "j": ("unsigned int", _D_UNSIGNED),
+    "l": ("long", _D_LONG),
+    "m": ("unsigned long", _D_UNSIGNED_LONG),
+    "n": ("__int128", _D_DEFAULT),
+    "o": ("unsigned __int128", _D_DEFAULT),
+    "s": ("short", _D_DEFAULT),
+    "t": ("unsigned short", _D_DEFAULT),
+    "u": ("char8_t", _D_DEFAULT),
+    "U": ("char16_t", _D_DEFAULT),
+    "V": ("char32_t", _D_DEFAULT),
+    "v": ("void", _D_VOID),
+    "w": ("wchar_t", _D_DEFAULT),
+    "x": ("long long", _D_LONG_LONG),
+    "y": ("unsigned long long", _D_UNSIGNED_LONG_LONG),
+    "z": ("...", _D_DEFAULT),
+}
 
 
 class Demangler:
@@ -565,8 +624,10 @@ class Demangler:
                 raise _Fail("eof in template args")
             if self.eat("E"):
                 break
-            if self.eat("L"):
-                pass
+            # NB: a leading 'L' is not a separate marker here.  GCC routes
+            # 'L' straight to d_expr_primary, which consumes the whole literal
+            # (``Lb1_`` is the bool value true); swallowing the 'L' first would
+            # leave ``b1_`` to be misread as the type `bool`.
             args.append(self._parse_template_arg())
         # The arguments name types for the rest of the enclosing template, so
         # make them visible to any T_ reference that follows.
@@ -598,64 +659,33 @@ class Demangler:
 
     def _parse_literal(self) -> str:
         kind = self.next()
-        out = ""
-        if kind == "b":
-            out = "bool"
-        elif kind == "c":
-            out = "char"
-        elif kind == "a":
-            out = "double"
-        elif kind == "h":
-            out = "unsigned long"
-        elif kind == "s":
-            out = "short"
-        elif kind == "t":
-            out = "unsigned short"
-        elif kind == "i":
-            out = "int"
-        elif kind == "j":
-            out = "unsigned int"
-        elif kind == "l":
-            out = "long"
-        elif kind == "m":
-            out = "unsigned long"
-        elif kind == "x":
-            out = "long long"
-        elif kind == "y":
-            out = "unsigned long long"
-        elif kind == "f":
-            out = "float"
-        elif kind == "d":
-            out = "double"
-        elif kind == "e":
-            out = "long double"
-        elif kind == "g":
-            out = "__float128"
-        elif kind == "n":
-            out = "__int128"
-        elif kind == "o":
-            out = "unsigned __int128"
-        elif kind == "u":
-            out = "char8_t"
-        elif kind == "U":
-            out = "char16_t"
-        elif kind == "U":
-            out = "char32_t"
-        elif kind == "Dn":
-            out = "std::nullptr_t"
-        elif kind == "L":
-            out = "long long"
-        # number / string payload
+        name, style = _BUILTIN_TYPES.get(kind, ("", _D_DEFAULT))
+        # decltype(nullptr) is a builtin with no value payload: d_expr_primary
+        # returns the type as-is when the literal is immediately closed.
+        if kind == "D" and self.peek() == "n":
+            self.i += 1
+            self.eat("E")
+            return BUILTIN_TYPES["Dn"]
         neg = self.eat("n")
-        if self.peek().isdigit():
-            v = self._number()
-            if neg:
-                v = -v
-            out = "%d%s" % (v, (" " + out) if out else "")
-        else:
-            s = self._parse_source_name()
-            out = '"%s"%s' % (s, (" " + out) if out else "")
-        return out
+        is_number = self.peek().isdigit()
+        value = str(self._number()) if is_number else self._parse_source_name()
+        # d_expr_primary ends with d_check_char(di, 'E'); the '_' terminator of
+        # the bare <literal> production is not used inside a <template-arg>.
+        if not self.eat("E"):
+            self.eat("_")
+        if style in _NUMERIC_SUFFIXES:
+            # GCC prints integral literals bare, with only the width suffix, so
+            # that Foo<10u> stays a non-type template argument.
+            if style == _D_BOOL:
+                return "false" if (neg or value == "0") else "true"
+            return "%s%s%s" % ("-" if neg else "", value, _NUMERIC_SUFFIXES[style])
+        if style == _D_BOOL:
+            return "false" if (neg or value == "0") else "true"
+        # Everything else keeps the type, parenthesised, as in Foo<(char)97>.
+        out = "(%s)" % name if name else ""
+        if style == _D_FLOAT:
+            return out
+        return "%s%s%s" % (out, "-" if neg else "", value)
 
     def _parse_expr(self) -> str:
         c = self.next()
@@ -845,7 +875,18 @@ class Demangler:
             self._parse_source_name()
             return "(unnamed type)"
         nm = self._parse_unqualified_name()
-        return nm + self._maybe_template_args()
+        args = self._maybe_template_args()
+        name = nm + args
+        self.name_is_template = bool(args)
+        if is_function:
+            # GCC's d_encoding parses the bare-function-type after *any* <name>,
+            # not just a nested one, so an unqualified `fPKcj` still yields its
+            # parameter list.
+            ret, params = self._parse_function_params()
+            if ret:
+                name = ret + " " + name
+            name += params
+        return name
 
     def _parse_local_name(self) -> str:
         self.expect("Z")
