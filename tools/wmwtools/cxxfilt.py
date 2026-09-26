@@ -277,13 +277,26 @@ class Demangler:
             self.i += 1
             self.sub_is_reference = True
             return self._sub_at(0)
-        if c.isdigit():
-            num = self._number()
-            if not self.eat("_"):
-                raise _Fail("bad substitution")
+        if c.isdigit() or ("A" <= c <= "Z"):
             # Itanium numbering is not what it looks like: 'S_' is the first
-            # substitution, then 'S0_' is the second, 'S1_' the third, so a
-            # numeric seq-id is offset by one.
+            # substitution, then 'S0_' the second, 'S1_' the third, so the
+            # sequence-id is offset by one.  The sequence-id is base 36, with
+            # A-Z as the digits after 0-9 -- libc++ reaches subs[11+] here, so
+            # 'SA_' is the 12th entry and 'SB_' the 13th, not a bad token.
+            num = 0
+            while True:
+                ch = self.s[self.i] if self.i < len(self.s) else ""
+                if ch == "_":
+                    self.i += 1
+                    break
+                if ch.isdigit():
+                    digit = ord(ch) - 48
+                elif "A" <= ch <= "Z":
+                    digit = ord(ch) - 55
+                else:
+                    raise _Fail("bad substitution id %r" % ch)
+                num = num * 36 + digit
+                self.i += 1
             self.sub_is_reference = True
             return self._sub_at(num + 1)
         self.sub_is_reference = False
