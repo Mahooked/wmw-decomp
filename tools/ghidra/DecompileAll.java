@@ -27,6 +27,7 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
+import ghidra.program.model.listing.FunctionManager;
 import ghidra.program.model.symbol.Namespace;
 import ghidra.program.model.symbol.SourceType;
 import ghidra.program.model.symbol.Symbol;
@@ -77,48 +78,116 @@ public class DecompileAll extends GhidraScript {
                 StandardCharsets.UTF_8));
         index.println("#\tfile\taddress\tsize\tmangled\tdemangled\tstatus");
 
-        // group functions by owning scope so each class lands in one file
-        Map<String, List<Function>> groups = new TreeMap<String, List<Function>>();
-        Map<Function, String[]> meta = new IdentityHashMap<Function, String[]>();
-        Map<Function, String> groupKey = new IdentityHashMap<Function, String>();
+        // Group by owning scope so each class lands in one file.
+        //
+        // We iterate our own symbol table rather than Ghidra's function list.
+        // Ghidra builds functions from call targets and jump tables, so it
+        // reports 17,375 functions of which ~9,300 are 16-byte thunks, and only
+        // 102 of them start where the ELF says a function starts.  The symbol
+        // table is authoritative for names *and* for grouping, so we drive from
+        // it and create a Function where Ghidra has not already found one.
+        //
+        // Everything is keyed by *address*, never by Function handle: creating a
+        // function over a region makes Ghidra delete the thunk objects that
+        // overlapped it, which invalidates any handle we were holding.
+        Map<String, List<Long>> groups = new TreeMap<String, List<Long>>();
+        Map<Long, String[]> meta = new HashMap<Long, String[]>();
+        Map<Long, String> unsymbolized = new TreeMap<Long, String>();
+        Set<Long> symbolised = new HashSet<Long>();
 
-        int total = 0, named = 0;
-        FunctionIterator it = currentProgram.getFunctionManager().getFunctions(true);
-        while (it.hasNext() && !monitor.isCancelled()) {
-            Function f = it.next();
+        FunctionManager fm = currentProgram.getFunctionManager();
+        List<Long> addrs = new ArrayList<Long>(nameMap.keySet());
+        Collections.sort(addrs);
+
+        int total = 0, created = 0, nocode = 0, covered = 0;
+        for (Long off : addrs) {
+            if (monitor.isCancelled()) {
+                break;
+            }
             if (maxFunctions > 0 && total >= maxFunctions) {
                 break;
             }
-            total++;
-            String[] pair = nameMap.get(f.getEntryPoint().getOffset());
-            String demangled = pair != null ? pair[1] : null;
-            if (demangled == null || demangled.isEmpty()) {
-                // Not in the ELF symbol table (a thunk or a Ghidra-created
-                // function). Ghidra's own GNU demangler has already named it,
-                // and handles libc++ template expansion better than ours, so
-                // leave those names alone.
-                demangled = f.getName();
-            } else {
-                named++;
+            Address a = toAddr(off);
+            if (fm.getFunctionAt(a) == null) {
+                if (fm.getFunctionContaining(a) != null) {
+                    // The symbol points into the middle of a function we have
+                    // already created -- typically the C1/C2 constructor aliases
+                    // or the D0/D1/D2 destructor family, which share a body.
+                    // Decompiling the containing function again under this name
+                    // would just duplicate it.
+                    covered++;
+                    continue;
+                }
+                try {
+                    if (createFunction(a, null) == null) {
+                        nocode++;
+                        continue;
+                    }
+                    created++;
+                } catch (Exception e) {
+                    // Not a valid instruction boundary, or the address is data.
+                    nocode++;
+                    continue;
+                }
             }
-            String key = groupKeyFor(demangled);
-            meta.put(f, new String[] { demangled, pair != null ? pair[0] : "" });
-            groupKey.put(f, key);
-            List<Function> g = groups.get(key);
+            total++;
+            symbolised.add(off);
+            String[] pair = nameMap.get(off);
+            String key = groupKeyFor(pair[1]);
+            meta.put(off, new String[] { pair[1], pair[0] });
+            List<Long> g = groups.get(key);
             if (g == null) {
-                g = new ArrayList<Function>();
+                g = new ArrayList<Long>();
                 groups.put(key, g);
             }
-            g.add(f);
+            g.add(off);
         }
-        println("DecompileAll: " + total + " functions, " + named
-            + " matched to demangled names, " + groups.size() + " groups");
 
-        applyNames(meta, groupKey);
+        // Aliases and interior symbols: recorded so the class inventory stays
+        // complete, but not decompiled in their own right.
+        PrintWriter al = new PrintWriter(new OutputStreamWriter(
+            new FileOutputStream(root.resolve("_aliases.tsv").toFile()),
+            StandardCharsets.UTF_8));
+        al.println("#\taddress\tmangled\tdemangled\treason");
+        for (Long off : addrs) {
+            if (symbolised.contains(off)) {
+                continue;
+            }
+            String[] pair = nameMap.get(off);
+            al.println("0x" + Long.toHexString(off) + "\t" + pair[0] + "\t" + pair[1]
+                + "\t" + (fm.getFunctionContaining(toAddr(off)) != null ? "alias" : "no-code"));
+        }
+        al.close();
+
+        // Ghidra-discovered functions with no ELF symbol behind them. Recorded
+        // for completeness, but kept out of the class tree.
+        FunctionIterator it = fm.getFunctions(true);
+        while (it.hasNext()) {
+            Function f = it.next();
+            long off = f.getEntryPoint().getOffset();
+            if (!symbolised.contains(off)) {
+                unsymbolized.put(off, f.getName());
+            }
+        }
+        println("DecompileAll: " + total + " symbolised functions (" + created
+            + " newly created, " + covered + " aliases, " + nocode
+            + " without decodable code), " + unsymbolized.size()
+            + " unsymbolised, " + groups.size() + " groups");
+
+        PrintWriter un = new PrintWriter(new OutputStreamWriter(
+            new FileOutputStream(root.resolve("_unsymbolized.tsv").toFile()),
+            StandardCharsets.UTF_8));
+        un.println("#\taddress\tghidra_name");
+        for (Map.Entry<Long, String> e : unsymbolized.entrySet()) {
+            un.println("0x" + Long.toHexString(e.getKey()) + "\t" + e.getValue());
+        }
+        un.close();
+
+        applyNames(meta);
 
         int done = 0, ok = 0, failed = 0;
         long t0 = System.currentTimeMillis();
-        for (Map.Entry<String, List<Function>> e : groups.entrySet()) {
+        for (Map.Entry<String, List<Long>> e : groups.entrySet()) {
             if (monitor.isCancelled()) {
                 println("DecompileAll: cancelled");
                 break;
@@ -134,22 +203,32 @@ public class DecompileAll extends GhidraScript {
             out.println("/* generated by Ghidra DecompileAll; naming comes from the project's");
             out.println("   Itanium demangler via out/symbols/functions.tsv */");
             out.println();
-            for (Function f : e.getValue()) {
+            for (Long off : e.getValue()) {
                 done++;
-                String[] m = meta.get(f);
+                String[] m = meta.get(off);
                 monitor.setMessage("Decompiling " + m[0]);
                 String status;
                 String c = null;
-                try {
-                    DecompileResults res = ifc.decompileFunction(f, timeoutSec, monitor);
-                    if (res != null && res.getDecompiledFunction() != null) {
-                        c = res.getDecompiledFunction().getC();
-                        status = res.decompileCompleted() ? "ok" : "partial";
-                    } else {
-                        status = "fail:no-function";
+                long fsize = 0;
+                // Re-resolve the handle every time: the program is not mutated
+                // during decompilation, but a missing function must not abort
+                // the whole run.
+                Function f = fm.getFunctionAt(toAddr(off));
+                if (f == null) {
+                    status = "fail:no-function";
+                } else {
+                    fsize = f.getBody().getNumAddresses();
+                    try {
+                        DecompileResults res = ifc.decompileFunction(f, timeoutSec, monitor);
+                        if (res != null && res.getDecompiledFunction() != null) {
+                            c = res.getDecompiledFunction().getC();
+                            status = res.decompileCompleted() ? "ok" : "partial";
+                        } else {
+                            status = "fail:no-function";
+                        }
+                    } catch (Throwable t) {
+                        status = "fail:" + t.getClass().getSimpleName();
                     }
-                } catch (Throwable t) {
-                    status = "fail:" + t.getClass().getSimpleName();
                 }
                 if (c == null || c.trim().isEmpty()) {
                     failed++;
@@ -157,20 +236,20 @@ public class DecompileAll extends GhidraScript {
                 } else {
                     if (status.equals("ok")) ok++;
                 }
-                out.println("/* " + status + "  address 0x" + Long.toHexString(f.getEntryPoint().getOffset())
-                    + "  size " + f.getBody().getNumAddresses() + " */");
+                out.println("/* " + status + "  address 0x" + Long.toHexString(off)
+                    + "  size " + fsize + " */");
                 if (m[1] != null && !m[1].isEmpty()) {
                     out.println("/* mangled: " + m[1] + " */");
                 }
                 out.println("/* " + m[0] + " */");
                 out.println(c);
                 out.println();
-                index.println(rel + "\t0x" + Long.toHexString(f.getEntryPoint().getOffset())
-                    + "\t" + f.getBody().getNumAddresses() + "\t"
+                index.println(rel + "\t0x" + Long.toHexString(off)
+                    + "\t" + fsize + "\t"
                     + (m[1] == null ? "" : m[1]) + "\t" + m[0] + "\t" + status);
             }
             out.close();
-            if (done % 200 == 0) {
+            if (done % 100 == 0) {
                 long dt = (System.currentTimeMillis() - t0) / 1000;
                 println("DecompileAll: " + done + "/" + total + " (" + ok + " ok, " + failed
                     + " failed) " + dt + "s");
@@ -271,18 +350,20 @@ public class DecompileAll extends GhidraScript {
     }
 
     /** Move each function into a Ghidra namespace matching its C++ scope. */
-    private void applyNames(Map<Function, String[]> meta, Map<Function, String> groupKey) {
+    private void applyNames(Map<Long, String[]> meta) {
         SymbolTable st = currentProgram.getSymbolTable();
+        FunctionManager fm = currentProgram.getFunctionManager();
         int renamed = 0, nsFail = 0, skipped = 0;
-        for (Map.Entry<Function, String> e : groupKey.entrySet()) {
-            Function f = e.getKey();
-            String dem = meta.get(f)[0];
+        for (Map.Entry<Long, String[]> e : meta.entrySet()) {
+            long off = e.getKey();
+            String dem = e.getValue()[0];
+            String mangled = e.getValue()[1];
             // Only override Ghidra's own GNU demangler where we have an ELF
             // symbol to back the name, and never touch template instantiations:
             // our demangler's libc++ substitution handling is less faithful than
             // GNU c++filt's, and mangling those names into namespaces makes the
             // output worse rather than better.
-            if (meta.get(f)[1] == null || meta.get(f)[1].isEmpty() || dem.indexOf('<') >= 0) {
+            if (mangled == null || mangled.isEmpty() || dem.indexOf('<') >= 0) {
                 skipped++;
                 continue;
             }
@@ -297,6 +378,10 @@ public class DecompileAll extends GhidraScript {
             // strip cv-qualifiers and any "operator" spacing
             member = member.replaceAll("\\s+", "_");
             if (member.isEmpty()) {
+                continue;
+            }
+            Function f = fm.getFunctionAt(toAddr(off));
+            if (f == null) {
                 continue;
             }
             try {
