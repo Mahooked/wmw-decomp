@@ -1,0 +1,17 @@
+# Ghidra analysis logs are large, machine-specific, and regenerable.
+out/ghidra/
+*.log
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# The original APK and extracted assets are not redistributed here.
+# See README.md -> "What is not in this repository".
+*.apk
