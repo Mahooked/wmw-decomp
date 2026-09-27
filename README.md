@@ -277,9 +277,10 @@ It covers nested names, function and data manglings, template parameter and
 argument lists, substitution-compressed back-references, builtin types, CV
 qualifiers, ref qualifiers, operator overloads, converting constructors, the
 destructor's `D0`/`D1`/`D2` encodings, non-virtual and virtual thunks, and
-`J` argument packs (spliced into the enclosing argument list, as GCC does). It
-also demangles the RTTI symbols (`_ZTI`, `_ZTV`, `_ZTS`), which is what makes
-the class inventory possible.
+`J` argument packs — stored as a single template argument exactly as GCC
+numbers them, then expanded element-by-element (with reference collapsing) by
+`Dp` pack expansions. It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
+`_ZTS`), which is what makes the class inventory possible.
 
 It is deliberately **fault-tolerant**: a single malformed symbol degrades to a
 `raw:` prefix instead of aborting a bulk run.
@@ -292,30 +293,28 @@ asks it about synthetic names.
 
 | Reference set (6,769 names) | |
 |---|---|
-| Match GCC | 6,589 (97.3%) |
-| Differ | 180 (2.7%) |
+| Match GCC | 6,709 (99.1%) |
+| Differ | 60 (0.9%) |
 | Left mangled | 0 |
 
-The 180 remaining differences are almost all one construct: **defaulted
-function parameters** (`Dp`). Where GCC expands `__emplace_unique_key_args`'s
-trailing `Dp` argument into the full parameter list it defaults to, the local
-demangler stops at the first parameter. A smaller group is libc++ internal
-traits (`std::__ndk1::enable_if<__is_forward_iterator<...>>`) surfacing as
-template arguments, plus a few `__bit_iterator` instantiations.
+The 60 remaining differences break down as: 40 `std::__ndk1::enable_if`
+instantiations whose template arguments are full C++ expressions
+(`__is_forward_iterator<T>::value && is_constructible<...>::value`) — the
+expression parser only handles literals today; 18 `__sort`/`__insertion_sort`
+instantiations where a pointer-to-function parameter carries a reference
+qualifier and the return type fails to attach; and 2 `money_get` names with a
+one-substitution registration offset.
 
-The older game-symbol figures below are **stale** — they predate the thunk,
-pack, and default-argument work and have not been regenerated yet:
-
-| 5,097 game-namespace symbols (stale) | |
+| 5,097 game-namespace symbols | |
 |---|---|
-| Render to any readable form | 4,582 (89.9%) |
-| Render with a full parameter list | 3,738 (73.3%) |
-| Left mangled | 515 (10.1%) |
+| Render to any readable form | 5,097 (100%) |
+| Render with a full parameter list | 5,068 (99.4%) |
+| Left mangled | 0 |
 
 Cross-checked against the 464 symbols Ghidra had already demangled in its own
-symbol table, the local demangler's name agrees on 77, differs on 71, and leaves
-316 unparsed. Treat that figure as a **lower bound on quality**: the sample is
-almost entirely `std::__ndk1` internals, i.e. precisely the hardest case, and it
+symbol table, the local demangler's name agrees on 446, differs on 18, and
+leaves 0 unparsed. The 18 disagreements are concentrated in `std::__ndk1`
+internals (`__tree`, `__sort`) — precisely the hardest cases — and the sample
 excludes every ordinary `Walaber`/`WaterConcept` method. Ghidra's own rendering
 is not a clean oracle either — it stores name-only strings and contains visible
 errors of its own (`unsigned_int`, `int_const&`, a dropped `std::__ndk1::`
