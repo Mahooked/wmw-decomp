@@ -924,9 +924,18 @@ class Demangler:
             return self.add_sub(self._parse_type() + "*")
         if c == "R":
             self.i += 1
+            if self.peek(2) == "PF":
+                # A reference to a function pointer renders the & inside the
+                # parentheses: `RP F...E` is `RET (*&)(params)`, not
+                # `RET (*)(params)&`.
+                self.i += 1  # the 'P'; GCC registers pointer then reference
+                return self.add_sub(self._parse_fnptr("&"))
             return self.add_sub(self._collapse_ref(self._parse_type(), "&"))
         if c == "O":
             self.i += 1
+            if self.peek(2) == "PF":
+                self.i += 1
+                return self.add_sub(self._parse_fnptr("&&"))
             return self.add_sub(self._collapse_ref(self._parse_type(), "&&"))
         if c == "C":
             self.i += 1
@@ -959,7 +968,10 @@ class Demangler:
             # type, so `FvPvE` is `void (void*)` rather than `(void, void*)`.
             self.i += 1
             ret, params = self._parse_fn_sig()
-            return "%s (%s)" % (ret, params)
+            # GCC's can_subst stays set for 'F', so the completed function
+            # type is a substitution candidate; skipping it shifted every
+            # later S<n>_ index (how S9_ lost __sort's parameter list).
+            return self.add_sub("%s (%s)" % (ret, params))
         if c == "M":
             self.i += 1
             cls = self._parse_type()
@@ -998,10 +1010,20 @@ class Demangler:
         self.eat("E")
         return ret, params
 
-    def _parse_fnptr(self) -> str:
-        """Parse a ``P F ... E`` pointer-to-function as ``RET (*)(params)``."""
+    def _parse_fnptr(self, ref: str = "") -> str:
+        """Parse a ``P F ... E`` pointer-to-function as ``RET (*)(params)``.
+
+        GCC registers three substitutions for ``RPF...E`` — the function type,
+        the pointer, and the reference — in that order, so a missing entry here
+        shifts every later ``S<n>_`` index.
+        """
         self.expect("F")
         ret, params = self._parse_fn_sig()
+        self.add_sub("%s (%s)" % (ret, params))
+        if ref:
+            # R/O consumed the 'P', so the pointer substitution is ours too.
+            self.add_sub("%s (*)(%s)" % (ret, params))
+            return "%s (*%s)(%s)" % (ret, ref, params)
         return "%s (*)(%s)" % (ret, params)
 
     def _parse_params(self) -> str:
