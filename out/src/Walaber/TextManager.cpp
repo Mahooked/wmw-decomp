@@ -4,7 +4,7 @@
 
 /* ok  address 0x3f9d54  size 228 */
 /* mangled: _ZN7Walaber11TextManager9getStringENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::TextManager::getString */
+/* Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::TextManager::getString
                (undefined8 *param_1,ulong param_2,char param_3,int param_4,undefined8 param_5)
@@ -18,7 +18,7 @@ void Walaber::TextManager::getString
   
   lVar1 = tpidr_el0;
   local_48 = *(long *)(lVar1 + 0x28);
-  iVar2 = ::TweenedLinearCurve::~TweenedLinearCurve(*param_1,param_2,local_4c,&local_50);
+  iVar2 = TweenedLinearCurve::~TweenedLinearCurve(*param_1,param_2,local_4c,&local_50);
   if (iVar2 == 0) {
     if ((local_4c[0] != param_3) || (local_50 != param_4)) {
       loadedScriptFile(param_1,param_5,"Bad ptr map entry key=%d expected=(%d,%d) got=(%d,%d)",
@@ -42,7 +42,7 @@ void Walaber::TextManager::getString
 
 /* ok  address 0x3f9e38  size 1716 */
 /* mangled: _ZN7Walaber11TextManager12stringExistsENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_8LanguageE */
-/* Walaber::TextManager::stringExists */
+/* Walaber::TextManager::stringExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Language) */
 
 void Walaber::TextManager::stringExists
                (long *param_1,int param_2,undefined8 param_3,long *param_4,long *param_5)
@@ -340,7 +340,7 @@ LAB_003f9ee8:
 
 /* ok  address 0x3fa4ec  size 296 */
 /* mangled: _ZN7Walaber11TextManager16loadedScriptFileEPv */
-/* Walaber::TextManager::loadedScriptFile */
+/* Walaber::TextManager::loadedScriptFile(void*) */
 
 void Walaber::TextManager::loadedScriptFile
                (long param_1,long param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
@@ -398,7 +398,7 @@ void Walaber::TextManager::loadedScriptFile
 
 /* ok  address 0x3fad64  size 972 */
 /* mangled: _ZN7Walaber11TextManager16stringToLanguageENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS_8LanguageE */
-/* Walaber::TextManager::stringToLanguage */
+/* Walaber::TextManager::stringToLanguage(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Language&) */
 
 int Walaber::TextManager::stringToLanguage
               (long param_1,undefined8 *param_2,undefined8 *param_3,code *param_4,
@@ -593,7 +593,7 @@ LAB_003fb0f8:
 
 /* ok  address 0x3fb7dc  size 260 */
 /* mangled: _ZN7Walaber11TextManager16containsLanguageERKNSt6__ndk16vectorINS_8LanguageENS1_9allocatorIS3_EEEERKS3_ */
-/* Walaber::TextManager::containsLanguage */
+/* Walaber::TextManager::containsLanguage(std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>> const&, Walaber::Language const&) */
 
 undefined1 Walaber::TextManager::containsLanguage(byte *param_1,uint param_2)
 
@@ -625,7 +625,7 @@ undefined1 Walaber::TextManager::containsLanguage(byte *param_1,uint param_2)
 
 /* ok  address 0x3fb8e0  size 168 */
 /* mangled: _ZN7Walaber11TextManager20loadSubtitlesFromTSVENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS1_6vectorINS_8LanguageENS5_IS9_EEEE */
-/* Walaber::TextManager::loadSubtitlesFromTSV */
+/* Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>&) */
 
 undefined4 Walaber::TextManager::loadSubtitlesFromTSV(long *param_1)
 
@@ -664,7 +664,7 @@ undefined4 Walaber::TextManager::loadSubtitlesFromTSV(long *param_1)
 
 /* ok  address 0x3fb988  size 360 */
 /* mangled: _ZN7Walaber11TextManager18loadedSubtitleFileEPv */
-/* Walaber::TextManager::loadedSubtitleFile */
+/* Walaber::TextManager::loadedSubtitleFile(void*) */
 
 /* WARNING: Type propagation algorithm not settling */
 
@@ -704,7 +704,7 @@ LAB_003fba5c:
         else {
           if (bVar2 == 0x51) goto LAB_003fba88;
           if (bVar2 == 0x5c) {
-            *puVar5 = ::Transition_Block::~Transition_Block;
+            *puVar5 = Transition_Block::~Transition_Block;
             goto LAB_003fba8c;
           }
         }
@@ -755,7 +755,7 @@ joined_r0x003fbab8:
 
 /* ok  address 0x3fc348  size 80 */
 /* mangled: _ZN7Walaber11TextManager21CountryInfoToLanguageENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::TextManager::CountryInfoToLanguage */
+/* Walaber::TextManager::CountryInfoToLanguage(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::TextManager::CountryInfoToLanguage(long param_1)
 
@@ -782,7 +782,7 @@ void Walaber::TextManager::CountryInfoToLanguage(long param_1)
 
 /* ok  address 0x3fccbc  size 172 */
 /* mangled: _ZN7Walaber11TextManager36getISOLanguageCountryCodeForLanguageENS_8LanguageE */
-/* Walaber::TextManager::getISOLanguageCountryCodeForLanguage */
+/* Walaber::TextManager::getISOLanguageCountryCodeForLanguage(Walaber::Language) */
 
 void Walaber::TextManager::getISOLanguageCountryCodeForLanguage(undefined8 *param_1,int param_2)
 
@@ -820,7 +820,7 @@ void Walaber::TextManager::getISOLanguageCountryCodeForLanguage(undefined8 *para
 
 /* ok  address 0x3fcdcc  size 116 */
 /* mangled: _ZN7Walaber11TextManager39getPrivacyCountryCodeForCurrentLanguageEv */
-/* Walaber::TextManager::getPrivacyCountryCodeForCurrentLanguage */
+/* Walaber::TextManager::getPrivacyCountryCodeForCurrentLanguage() */
 
 void Walaber::TextManager::getPrivacyCountryCodeForCurrentLanguage(undefined8 param_1,long param_2)
 
@@ -843,7 +843,7 @@ void Walaber::TextManager::getPrivacyCountryCodeForCurrentLanguage(undefined8 pa
 
 /* ok  address 0x3fd010  size 132 */
 /* mangled: _ZN7Walaber11TextManager21getAvailableLanguagesERNSt6__ndk16vectorINS_8LanguageENS1_9allocatorIS3_EEEE */
-/* Walaber::TextManager::getAvailableLanguages */
+/* Walaber::TextManager::getAvailableLanguages(std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>&) */
 
 void Walaber::TextManager::getAvailableLanguages
                (int *param_1,undefined2 param_2,undefined1 param_3,undefined8 *param_4)
@@ -883,7 +883,7 @@ void Walaber::TextManager::getAvailableLanguages
 
 /* ok  address 0x3fd094  size 16148 */
 /* mangled: _ZN7Walaber11TextManager30getAvailableLanguagesAsStringsENSt6__ndk16vectorINS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS6_IS8_EEEE */
-/* Walaber::TextManager::getAvailableLanguagesAsStrings */
+/* Walaber::TextManager::getAvailableLanguagesAsStrings(std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>) */
 
 /* WARNING: Type propagation algorithm not settling */
 

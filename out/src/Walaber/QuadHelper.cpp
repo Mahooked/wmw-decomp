@@ -4,7 +4,7 @@
 
 /* ok  address 0x36f0e4  size 160 */
 /* mangled: _ZN7Walaber10QuadHelper8drawQuadEjRKNS_7Vector2EfS3_RKNS_5ColorE */
-/* Walaber::QuadHelper::drawQuad */
+/* Walaber::QuadHelper::drawQuad(unsigned int, Walaber::Vector2 const&, float, Walaber::Vector2 const&, Walaber::Color const&) */
 
 void Walaber::QuadHelper::drawQuad(long param_1,undefined4 param_2)
 
@@ -43,7 +43,7 @@ void Walaber::QuadHelper::drawQuad(long param_1,undefined4 param_2)
 
 /* ok  address 0x36f184  size 4068 */
 /* mangled: _ZN7Walaber10QuadHelper8drawQuadEjRKNS_7Vector2EfS3_RKNS_4RectEjjRKNS_5ColorEb */
-/* Walaber::QuadHelper::drawQuad */
+/* Walaber::QuadHelper::drawQuad(unsigned int, Walaber::Vector2 const&, float, Walaber::Vector2 const&, Walaber::Rect const&, unsigned int, unsigned int, Walaber::Color const&, bool) */
 
 long Walaber::QuadHelper::drawQuad(long *param_1,long *param_2,long *param_3,int *param_4)
 

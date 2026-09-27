@@ -4,7 +4,7 @@
 
 /* ok  address 0x4622ec  size 244 */
 /* mangled: _ZN7Walaber16CharacterManager25removeSkeletonActorWithIDEi */
-/* Walaber::CharacterManager::removeSkeletonActorWithID */
+/* Walaber::CharacterManager::removeSkeletonActorWithID(int) */
 
 /* Walaber::SpriteBatch::_drawStringRightClip(Walaber::BitmapFont*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::Vector2 const&,
@@ -48,7 +48,7 @@ Walaber::CharacterManager::removeSkeletonActorWithID
 
 /* ok  address 0x4623fc  size 436 */
 /* mangled: _ZN7Walaber16CharacterManager25createSkeletonActorWithIDEi */
-/* Walaber::CharacterManager::createSkeletonActorWithID */
+/* Walaber::CharacterManager::createSkeletonActorWithID(int) */
 
 /* Walaber::SpriteBatch::_drawStringLeftClip(Walaber::BitmapFont*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::Vector2 const&,

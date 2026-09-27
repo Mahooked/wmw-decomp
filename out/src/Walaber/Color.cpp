@@ -4,7 +4,7 @@
 
 /* ok  address 0x358d5c  size 152 */
 /* mangled: _ZN7Walaber5Color7fromHSVEfff */
-/* Walaber::Color::fromHSV */
+/* Walaber::Color::fromHSV(float, float, float) */
 
 void Walaber::Color::fromHSV(long *param_1)
 

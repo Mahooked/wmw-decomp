@@ -4,7 +4,7 @@
 
 /* ok  address 0x371630  size 124 */
 /* mangled: _ZN7Walaber12WidgetHelper22_parsePositionToScreenEP8_xmlNodePNS_6WidgetENS_7Vector2E */
-/* Walaber::WidgetHelper::_parsePositionToScreen */
+/* Walaber::WidgetHelper::_parsePositionToScreen(_xmlNode*, Walaber::Widget*, Walaber::Vector2) */
 
 void Walaber::WidgetHelper::_parsePositionToScreen(void)
 
@@ -22,7 +22,7 @@ void Walaber::WidgetHelper::_parsePositionToScreen(void)
     xmlRegisterDefaultInputCallbacks();
     xmlRegisterDefaultOutputCallbacks();
     htmlInitAutoClose();
-    ::Widget_Group::~Widget_Group();
+    Widget_Group::~Widget_Group();
     xmlXPathInit();
     DAT_0082af00 = 1;
   }
@@ -33,7 +33,7 @@ void Walaber::WidgetHelper::_parsePositionToScreen(void)
 
 /* ok  address 0x371a80  size 6040 */
 /* mangled: _ZN7Walaber12WidgetHelper15getTextureNamesERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS1_6vectorIS7_NS5_IS7_EEEE */
-/* Walaber::WidgetHelper::getTextureNames */
+/* Walaber::WidgetHelper::getTextureNames(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&) */
 
 /* WARNING: Type propagation algorithm not settling */
 
@@ -216,7 +216,7 @@ switchD_00371cec_default:
             (*(char *)(lVar14 + 4) == 'l')) &&
            ((*(byte *)(lVar14 + 5) < 0x21 &&
             ((1L << ((ulong)*(byte *)(lVar14 + 5) & 0x3f) & 0x100002600U) != 0)))) {
-          xmlParseXMLDecl(param_1);
+          Widget_ScrollableGroup::operator=(param_1);
           if ((int)param_1[0x11] != 0x20) {
             *(undefined4 *)(param_1 + 6) = *(undefined4 *)(param_1[7] + 0x60);
             if ((param_1[5] == 0) && (*(long *)(param_1[7] + 0x50) != 0)) {
@@ -981,7 +981,7 @@ LAB_00372f84:
 
 /* ok  address 0x373218  size 620 */
 /* mangled: _ZN7Walaber12WidgetHelper9_parseIntEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseInt */
+/* Walaber::WidgetHelper::_parseInt(_xmlNode*, char const*) */
 
 undefined8 *
 Walaber::WidgetHelper::_parseInt(void *param_1,long param_2,long param_3,int param_4,long param_5)
@@ -1101,7 +1101,7 @@ LAB_003733d8:
 
 /* ok  address 0x373df4  size 832 */
 /* mangled: _ZN7Walaber12WidgetHelper24_updateWidgetTimedButtonEP8_xmlNodePNS_18Widget_TimedButtonEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetTimedButton */
+/* Walaber::WidgetHelper::_updateWidgetTimedButton(_xmlNode*, Walaber::Widget_TimedButton*, Walaber::Widget*) */
 
 int Walaber::WidgetHelper::_updateWidgetTimedButton
               (long param_1,long param_2,int param_3,uint param_4,long *param_5)
@@ -1280,7 +1280,7 @@ LAB_003740d0:
 
 /* ok  address 0x374134  size 172 */
 /* mangled: _ZN7Walaber12WidgetHelper24_updateWidgetColorPickerEP8_xmlNodePNS_18Widget_ColorPickerEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetColorPicker */
+/* Walaber::WidgetHelper::_updateWidgetColorPicker(_xmlNode*, Walaber::Widget_ColorPicker*, Walaber::Widget*) */
 
 long Walaber::WidgetHelper::_updateWidgetColorPicker(long param_1,int param_2)
 
@@ -1316,7 +1316,7 @@ long Walaber::WidgetHelper::_updateWidgetColorPicker(long param_1,int param_2)
 
 /* ok  address 0x3744b8  size 124 */
 /* mangled: _ZN7Walaber12WidgetHelper21_updateWidgetIconListEP8_xmlNodePNS_15Widget_IconListEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetIconList */
+/* Walaber::WidgetHelper::_updateWidgetIconList(_xmlNode*, Walaber::Widget_IconList*, Walaber::Widget*) */
 
 undefined8 Walaber::WidgetHelper::_updateWidgetIconList(long param_1,long param_2)
 
@@ -1355,7 +1355,7 @@ undefined8 Walaber::WidgetHelper::_updateWidgetIconList(long param_1,long param_
 
 /* ok  address 0x3748f8  size 260 */
 /* mangled: _ZN7Walaber12WidgetHelper19_updateWidgetCanvasEP8_xmlNodePNS_13Widget_CanvasEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetCanvas */
+/* Walaber::WidgetHelper::_updateWidgetCanvas(_xmlNode*, Walaber::Widget_Canvas*, Walaber::Widget*) */
 
 long Walaber::WidgetHelper::_updateWidgetCanvas
                (long param_1,undefined8 param_2,int param_3,long param_4)
@@ -1386,7 +1386,7 @@ long Walaber::WidgetHelper::_updateWidgetCanvas
       plVar1[0x23] = lVar2;
     }
     *(int *)(plVar1 + 0x38) = param_3;
-    xmlParseDocument(plVar1);
+    Widget_ScrollableCamera::operator=(plVar1);
     lVar2 = plVar1[2];
     if ((int)plVar1[3] == 0 && param_3 == 0) {
       Widget_IconList::_updateFinger(lVar2);
@@ -1412,7 +1412,7 @@ long Walaber::WidgetHelper::_updateWidgetCanvas
 
 /* ok  address 0x3749fc  size 8 */
 /* mangled: _ZN7Walaber12WidgetHelper19_updateWidgetToggleEP8_xmlNodePNS_13Widget_ToggleEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetToggle */
+/* Walaber::WidgetHelper::_updateWidgetToggle(_xmlNode*, Walaber::Widget_Toggle*, Walaber::Widget*) */
 
 void Walaber::WidgetHelper::_updateWidgetToggle(void)
 
@@ -1425,7 +1425,7 @@ void Walaber::WidgetHelper::_updateWidgetToggle(void)
 
 /* ok  address 0x3760c8  size 524 */
 /* mangled: _ZN7Walaber12WidgetHelper23_updateWidgetSlideWheelEP8_xmlNodePNS_17Widget_SlideWheelEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetSlideWheel */
+/* Walaber::WidgetHelper::_updateWidgetSlideWheel(_xmlNode*, Walaber::Widget_SlideWheel*, Walaber::Widget*) */
 
 undefined8
 Walaber::WidgetHelper::_updateWidgetSlideWheel
@@ -1531,7 +1531,7 @@ LAB_00376290:
 
 /* ok  address 0x37640c  size 72 */
 /* mangled: _ZN7Walaber12WidgetHelper24_updateWidgetProgressBarEP8_xmlNodePNS_18Widget_ProgressBarEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetProgressBar */
+/* Walaber::WidgetHelper::_updateWidgetProgressBar(_xmlNode*, Walaber::Widget_ProgressBar*, Walaber::Widget*) */
 
 void Walaber::WidgetHelper::_updateWidgetProgressBar
                (undefined8 param_1,undefined8 param_2,undefined4 param_3)
@@ -1551,7 +1551,7 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
 
 /* ok  address 0x376968  size 468 */
 /* mangled: _ZN7Walaber12WidgetHelper26_updateWidgetMovingTextBoxEP8_xmlNodePNS_20Widget_MovingTextBoxEPNS_6WidgetE */
-/* Walaber::WidgetHelper::_updateWidgetMovingTextBox */
+/* Walaber::WidgetHelper::_updateWidgetMovingTextBox(_xmlNode*, Walaber::Widget_MovingTextBox*, Walaber::Widget*) */
 
 undefined8 Walaber::WidgetHelper::_updateWidgetMovingTextBox(long param_1,uint param_2)
 
@@ -1650,7 +1650,7 @@ undefined8 Walaber::WidgetHelper::_updateWidgetMovingTextBox(long param_1,uint p
 
 /* ok  address 0x37748c  size 444 */
 /* mangled: _ZN7Walaber12WidgetHelper11_getTextureERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::WidgetHelper::_getTexture */
+/* Walaber::WidgetHelper::_getTexture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 int Walaber::WidgetHelper::_getTexture(long param_1,int param_2)
 
@@ -1735,7 +1735,7 @@ LAB_003775fc:
 
 /* ok  address 0x377648  size 244 */
 /* mangled: _ZN7Walaber12WidgetHelper10_parseBoolEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseBool */
+/* Walaber::WidgetHelper::_parseBool(_xmlNode*, char const*) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -1768,7 +1768,7 @@ ulong Walaber::WidgetHelper::_parseBool(uint param_1)
 
 /* ok  address 0x37773c  size 204 */
 /* mangled: _ZN7Walaber12WidgetHelper11_parseColorEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseColor */
+/* Walaber::WidgetHelper::_parseColor(_xmlNode*, char const*) */
 
 void Walaber::WidgetHelper::_parseColor(long param_1,long param_2)
 
@@ -1798,7 +1798,7 @@ void Walaber::WidgetHelper::_parseColor(long param_1,long param_2)
 
 /* ok  address 0x377808  size 216 */
 /* mangled: _ZN7Walaber12WidgetHelper11_parseFloatEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseFloat */
+/* Walaber::WidgetHelper::_parseFloat(_xmlNode*, char const*) */
 
 void Walaber::WidgetHelper::_parseFloat
                (long param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4,
@@ -1824,7 +1824,7 @@ void Walaber::WidgetHelper::_parseFloat
 
 /* ok  address 0x3778e0  size 184 */
 /* mangled: _ZN7Walaber12WidgetHelper23_parseRealWorldToScreenEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseRealWorldToScreen */
+/* Walaber::WidgetHelper::_parseRealWorldToScreen(_xmlNode*, char const*) */
 
 bool Walaber::WidgetHelper::_parseRealWorldToScreen(uint param_1)
 
@@ -1857,7 +1857,7 @@ bool Walaber::WidgetHelper::_parseRealWorldToScreen(uint param_1)
 
 /* ok  address 0x377998  size 192 */
 /* mangled: _ZN7Walaber12WidgetHelper25_parseScreenCoordToScreenEP8_xmlNodePKc */
-/* Walaber::WidgetHelper::_parseScreenCoordToScreen */
+/* Walaber::WidgetHelper::_parseScreenCoordToScreen(_xmlNode*, char const*) */
 
 undefined8 Walaber::WidgetHelper::_parseScreenCoordToScreen(long *param_1,undefined4 param_2)
 
@@ -1899,7 +1899,7 @@ undefined8 Walaber::WidgetHelper::_parseScreenCoordToScreen(long *param_1,undefi
 
 /* ok  address 0x377f6c  size 224 */
 /* mangled: _ZN7Walaber12WidgetHelper16_extractPriorityEP8_xmlNode */
-/* Walaber::WidgetHelper::_extractPriority */
+/* Walaber::WidgetHelper::_extractPriority(_xmlNode*) */
 
 void Walaber::WidgetHelper::_extractPriority(long param_1,undefined8 param_2,undefined4 param_3)
 
@@ -1924,7 +1924,7 @@ void Walaber::WidgetHelper::_extractPriority(long param_1,undefined8 param_2,und
 
 /* ok  address 0x37804c  size 836 */
 /* mangled: _ZN7Walaber12WidgetHelper17_fileReadCallbackEPv */
-/* Walaber::WidgetHelper::_fileReadCallback */
+/* Walaber::WidgetHelper::_fileReadCallback(void*) */
 
 uint Walaber::WidgetHelper::_fileReadCallback(long param_1,undefined4 *param_2)
 

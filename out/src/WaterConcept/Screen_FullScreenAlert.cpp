@@ -4,7 +4,7 @@
 
 /* ok  address 0x4d8ad0  size 384 */
 /* mangled: _ZN12WaterConcept22Screen_FullScreenAlert18_curveLoadCallbackEPv */
-/* WaterConcept::Screen_FullScreenAlert::_curveLoadCallback */
+/* WaterConcept::Screen_FullScreenAlert::_curveLoadCallback(void*) */
 
 /* Walaber::ZipUtilities::_handleSounds(Walaber::XMLDocument::NamedIterator) */
 
@@ -73,7 +73,7 @@ void WaterConcept::Screen_FullScreenAlert::_curveLoadCallback(NamedIterator *par
 
 /* ok  address 0x4d8c88  size 376 */
 /* mangled: _ZN12WaterConcept22Screen_FullScreenAlert16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_FullScreenAlert::loadPropertyList */
+/* WaterConcept::Screen_FullScreenAlert::loadPropertyList(Walaber::PropertyList const&) */
 
 /* Walaber::ZipUtilities::_handleTextures(Walaber::XMLDocument::NamedIterator) */
 
@@ -148,7 +148,7 @@ void WaterConcept::Screen_FullScreenAlert::loadPropertyList(NamedIterator *param
 
 /* ok  address 0x4d91d4  size 484 */
 /* mangled: _ZN12WaterConcept22Screen_FullScreenAlert6updateEfb */
-/* WaterConcept::Screen_FullScreenAlert::update */
+/* WaterConcept::Screen_FullScreenAlert::update(float, bool) */
 
 /* Walaber::ZipUtilities::_handleSQLFile(Walaber::XMLDocument::NamedIterator) */
 
@@ -237,7 +237,7 @@ void WaterConcept::Screen_FullScreenAlert::update(NamedIterator *param_1)
 
 /* ok  address 0x4d97c0  size 20 */
 /* mangled: _ZN12WaterConcept22Screen_FullScreenAlert23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets */
+/* WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void*) */
 
 /* Walaber::ZipUtilities::_sqlScriptRead(void*) */
 
@@ -255,7 +255,7 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *param_1
 
 /* ok  address 0x4da12c  size 96 */
 /* mangled: _ZN12WaterConcept22Screen_FullScreenAlert8_buildUIEv */
-/* WaterConcept::Screen_FullScreenAlert::_buildUI */
+/* WaterConcept::Screen_FullScreenAlert::_buildUI() */
 
 void WaterConcept::Screen_FullScreenAlert::_buildUI(undefined8 param_1,long param_2)
 

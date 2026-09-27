@@ -4,7 +4,7 @@
 
 /* ok  address 0x3f6d04  size 4924 */
 /* mangled: _ZN7Walaber23Transition_Widget_Slide25_populateWidgetManagerMapEv */
-/* Walaber::Transition_Widget_Slide::_populateWidgetManagerMap */
+/* Walaber::Transition_Widget_Slide::_populateWidgetManagerMap() */
 
 /* WARNING: Removing unreachable block (ram,0x003f715c) */
 

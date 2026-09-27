@@ -4,7 +4,7 @@
 
 /* ok  address 0x4685b4  size 320 */
 /* mangled: _ZN12WaterConcept6Switch16triggerMomentaryERKN7Walaber7Vector2E */
-/* WaterConcept::Switch::triggerMomentary */
+/* WaterConcept::Switch::triggerMomentary(Walaber::Vector2 const&) */
 
 /* Walaber::BitmapFont::_drawGlyph(Walaber::BitmapFont::GlyphInfo const&, Walaber::Vector2 const&,
    float, float, float, float) */
@@ -62,7 +62,7 @@ void WaterConcept::Switch::triggerMomentary
 
 /* ok  address 0x494a5c  size 324 */
 /* mangled: _ZN12WaterConcept6Switch13setPropertiesERKN7Walaber12PropertyListE */
-/* WaterConcept::Switch::setProperties */
+/* WaterConcept::Switch::setProperties(Walaber::PropertyList const&) */
 
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::__move_range(Walaber::Particle*, Walaber::Particle*, Walaber::Particle*) */
@@ -139,7 +139,7 @@ WaterConcept::Switch::setProperties
 
 /* ok  address 0x495084  size 460 */
 /* mangled: _ZN12WaterConcept6Switch9_setStateEb */
-/* WaterConcept::Switch::_setState */
+/* WaterConcept::Switch::_setState(bool) */
 
 /* Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color> > >) */
@@ -251,7 +251,7 @@ void __thiscall WaterConcept::Switch::_setState(Switch *this,undefined8 *param_2
 
 /* ok  address 0x4953e8  size 100 */
 /* mangled: _ZN12WaterConcept6Switch6updateEf */
-/* WaterConcept::Switch::update */
+/* WaterConcept::Switch::update(float) */
 
 /* Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color> >
    >::~SharedPtr() */
@@ -284,7 +284,7 @@ void __thiscall WaterConcept::Switch::update(Switch *this)
 
 /* ok  address 0x495698  size 196 */
 /* mangled: _ZN12WaterConcept6Switch19particleHasCollidedEPNS_6FluidsERKNS_19ParticleDescriptionEiRb */
-/* WaterConcept::Switch::particleHasCollided */
+/* WaterConcept::Switch::particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&) */
 
 /* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int, unsigned
@@ -326,7 +326,7 @@ WaterConcept::Switch::particleHasCollided
 
 /* ok  address 0x495780  size 348 */
 /* mangled: _ZN12WaterConcept6Switch17_triggerMomentaryERKN7Walaber7Vector2E */
-/* WaterConcept::Switch::_triggerMomentary */
+/* WaterConcept::Switch::_triggerMomentary(Walaber::Vector2 const&) */
 
 /* Walaber::createProgrammaticSolidColorTexture2D(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int, unsigned
@@ -411,7 +411,7 @@ void WaterConcept::Switch::_triggerMomentary
 
 /* ok  address 0x495908  size 156 */
 /* mangled: _ZN12WaterConcept6Switch13_initFinishedEv */
-/* WaterConcept::Switch::_initFinished */
+/* WaterConcept::Switch::_initFinished() */
 
 /* Walaber::Texture::create_empty_buffer() */
 
@@ -452,7 +452,7 @@ void WaterConcept::Switch::_initFinished(void)
 
 /* ok  address 0x495a54  size 12 */
 /* mangled: _ZN12WaterConcept6Switch15_animationEventEPv */
-/* WaterConcept::Switch::_animationEvent */
+/* WaterConcept::Switch::_animationEvent(void*) */
 
 /* Walaber::ProgrammaticTexture2D::invalidate() */
 

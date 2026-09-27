@@ -4,7 +4,7 @@
 
 /* ok  address 0x4b5de0  size 76 */
 /* mangled: _ZN12WaterConcept17Screen_ComicStrip8_buildUIEv */
-/* WaterConcept::Screen_ComicStrip::_buildUI */
+/* WaterConcept::Screen_ComicStrip::_buildUI() */
 
 void WaterConcept::Screen_ComicStrip::_buildUI(long param_1,long param_2,int param_3)
 
@@ -21,7 +21,7 @@ void WaterConcept::Screen_ComicStrip::_buildUI(long param_1,long param_2,int par
 
 /* ok  address 0x4b5e78  size 84 */
 /* mangled: _ZN12WaterConcept17Screen_ComicStrip6updateEfb */
-/* WaterConcept::Screen_ComicStrip::update */
+/* WaterConcept::Screen_ComicStrip::update(float, bool) */
 
 void WaterConcept::Screen_ComicStrip::update(short *param_1,long param_2)
 
@@ -58,7 +58,7 @@ void WaterConcept::Screen_ComicStrip::update(short *param_1,long param_2)
 
 /* ok  address 0x4b5ecc  size 120 */
 /* mangled: _ZN12WaterConcept17Screen_ComicStrip8endStripEv */
-/* WaterConcept::Screen_ComicStrip::endStrip */
+/* WaterConcept::Screen_ComicStrip::endStrip() */
 
 void WaterConcept::Screen_ComicStrip::endStrip(short *param_1,long param_2)
 
@@ -86,7 +86,7 @@ void WaterConcept::Screen_ComicStrip::endStrip(short *param_1,long param_2)
 
 /* ok  address 0x4b5fec  size 112 */
 /* mangled: _ZN12WaterConcept17Screen_ComicStrip4drawEi */
-/* WaterConcept::Screen_ComicStrip::draw */
+/* WaterConcept::Screen_ComicStrip::draw(int) */
 
 void WaterConcept::Screen_ComicStrip::draw
                (undefined8 param_1,undefined8 param_2,ulong param_3,undefined4 param_4,
@@ -95,8 +95,8 @@ void WaterConcept::Screen_ComicStrip::draw
 {
                     /* try { // try from 004b5ff0 to 005b5ffb has its CatchHandler @ 004b8cbc */
                     /* try { // try from 004b5ffc to 005b61eb has its CatchHandler @ 004b5d88 */
-  ::Screen_Credits::Screen_Credits(param_1,1,param_3,8,param_4,param_5,param_6);
-  ::Screen_Credits::Screen_Credits(param_2,1,param_3 & 0xffffffff,8,param_4,param_5,param_6);
+  Screen_Credits::Screen_Credits(param_1,1,param_3,8,param_4,param_5,param_6);
+  Screen_Credits::Screen_Credits(param_2,1,param_3 & 0xffffffff,8,param_4,param_5,param_6);
   return;
 }
 
@@ -104,7 +104,7 @@ void WaterConcept::Screen_ComicStrip::draw
 
 /* ok  address 0x4b605c  size 128 */
 /* mangled: _ZN12WaterConcept17Screen_ComicStrip11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_ComicStrip::handleEvent */
+/* WaterConcept::Screen_ComicStrip::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 void WaterConcept::Screen_ComicStrip::handleEvent
                (long param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
@@ -115,7 +115,8 @@ void WaterConcept::Screen_ComicStrip::handleEvent
   param_1 = param_1 + (param_2 << 2);
   uVar1 = 4;
   do {
-    FUN_004b68a0(param_1,param_2,1,0x10,param_3,param_4,param_5);
+    non_virtual_thunk_to_WaterConcept::Screen_Credits::~Screen_Credits
+              (param_1,param_2,1,0x10,param_3,param_4,param_5);
     uVar1 = uVar1 - 1;
     param_1 = param_1 + (param_2 << 2);
   } while (1 < uVar1);

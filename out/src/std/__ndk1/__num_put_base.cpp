@@ -4,7 +4,7 @@
 
 /* ok  address 0x5ba818  size 7100 */
 /* mangled: _ZNSt6__ndk114__num_put_base12__format_intEPcPKcbj */
-/* std::__ndk1::__num_put_base::__format_int */
+/* std::__ndk1::__num_put_base::__format_int(char*, char const*, bool, unsigned int) */
 
 /* WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void*) */
 

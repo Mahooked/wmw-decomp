@@ -4,7 +4,7 @@
 
 /* ok  address 0x42ff48  size 844 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow11_clearSceneEv */
-/* WaterConcept::ParallaxPuppetShow::_clearScene */
+/* WaterConcept::ParallaxPuppetShow::_clearScene() */
 
 /* Walaber::AchievementManager::reportAchievement(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, float, bool) */
@@ -227,7 +227,7 @@ LAB_00430260:
 
 /* ok  address 0x43038c  size 656 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow6updateEf */
-/* WaterConcept::ParallaxPuppetShow::update */
+/* WaterConcept::ParallaxPuppetShow::update(float) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::AchievementManager::_setDBPercentComplete(std::__ndk1::basic_string<char,
@@ -390,7 +390,7 @@ WaterConcept::ParallaxPuppetShow::update(float param_1,ParallaxPuppetShow *this,
 
 /* ok  address 0x43082c  size 12 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow16_fireCameraMovesEff */
-/* WaterConcept::ParallaxPuppetShow::_fireCameraMoves */
+/* WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float, float) */
 
 /* Walaber::AchievementManager::clearCompletedAchievementsToPublishToFacebook() */
 
@@ -405,7 +405,7 @@ void __thiscall WaterConcept::ParallaxPuppetShow::_fireCameraMoves(ParallaxPuppe
 
 /* ok  address 0x430938  size 292 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow16_fireTransitionsEff */
-/* WaterConcept::ParallaxPuppetShow::_fireTransitions */
+/* WaterConcept::ParallaxPuppetShow::_fireTransitions(float, float) */
 
 /* Walaber::AchievementManager::sendAchievementsToPlatform() */
 
@@ -476,7 +476,7 @@ void __thiscall WaterConcept::ParallaxPuppetShow::_fireTransitions(ParallaxPuppe
 
 /* ok  address 0x430a90  size 340 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow18_fireAnimationCuesEff */
-/* WaterConcept::ParallaxPuppetShow::_fireAnimationCues */
+/* WaterConcept::ParallaxPuppetShow::_fireAnimationCues(float, float) */
 
 /* Walaber::StringHelper::floatToStr(float, int) */
 
@@ -554,7 +554,7 @@ LAB_00430ba8:
 
 /* ok  address 0x430be4  size 280 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow5pauseEv */
-/* WaterConcept::ParallaxPuppetShow::pause */
+/* WaterConcept::ParallaxPuppetShow::pause() */
 
 /* Walaber::AchievementManager::getAchievementsSortedByCompletion() */
 
@@ -624,7 +624,7 @@ void WaterConcept::ParallaxPuppetShow::pause(void)
 
 /* ok  address 0x430d14  size 80 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow4drawEv */
-/* WaterConcept::ParallaxPuppetShow::draw */
+/* WaterConcept::ParallaxPuppetShow::draw() */
 
 /* std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Achievement*>,
@@ -659,7 +659,7 @@ WaterConcept::ParallaxPuppetShow::draw(ParallaxPuppetShow *this,__tree_node *par
 
 /* ok  address 0x430df4  size 220 */
 /* mangled: _ZN12WaterConcept18ParallaxPuppetShow11_gotXmlFileEPv */
-/* WaterConcept::ParallaxPuppetShow::_gotXmlFile */
+/* WaterConcept::ParallaxPuppetShow::_gotXmlFile(void*) */
 
 /* std::__ndk1::__vector_base<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>
    >::~__vector_base() */

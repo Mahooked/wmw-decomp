@@ -4,7 +4,7 @@
 
 /* ok  address 0x4d1564  size 172 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect5enterEv */
-/* WaterConcept::Screen_EditorObjectSelect::enter */
+/* WaterConcept::Screen_EditorObjectSelect::enter() */
 
 int WaterConcept::Screen_EditorObjectSelect::enter
               (long param_1,int param_2,long param_3,int param_4)
@@ -44,7 +44,7 @@ int WaterConcept::Screen_EditorObjectSelect::enter
 
 /* ok  address 0x4d1714  size 32 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect8_buildUIEv */
-/* WaterConcept::Screen_EditorObjectSelect::_buildUI */
+/* WaterConcept::Screen_EditorObjectSelect::_buildUI() */
 
 void * WaterConcept::Screen_EditorObjectSelect::_buildUI(ulong param_1,ulong param_2)
 
@@ -69,7 +69,7 @@ void * WaterConcept::Screen_EditorObjectSelect::_buildUI(ulong param_1,ulong par
 
 /* ok  address 0x4d17f8  size 44 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect4exitEv */
-/* WaterConcept::Screen_EditorObjectSelect::exit */
+/* WaterConcept::Screen_EditorObjectSelect::exit() */
 
 /* Walaber::FileHelper::deleteFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
@@ -92,7 +92,7 @@ bool WaterConcept::Screen_EditorObjectSelect::exit(basic_string *param_1)
 
 /* ok  address 0x4d1944  size 132 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect4drawEi */
-/* WaterConcept::Screen_EditorObjectSelect::draw */
+/* WaterConcept::Screen_EditorObjectSelect::draw(int) */
 
 /* Walaber::FileManager::_initDefaultHandler() */
 
@@ -129,7 +129,7 @@ void __thiscall WaterConcept::Screen_EditorObjectSelect::draw(Screen_EditorObjec
 
 /* ok  address 0x4d1d54  size 472 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_EditorObjectSelect::handleEvent */
+/* WaterConcept::Screen_EditorObjectSelect::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 /* Walaber::FileManager::_appendNextPlatformTag(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
@@ -261,7 +261,7 @@ WaterConcept::Screen_EditorObjectSelect::handleEvent
 
 /* ok  address 0x4d1f78  size 448 */
 /* mangled: _ZN12WaterConcept25Screen_EditorObjectSelect9messageRxERKN7Walaber7MessageE */
-/* WaterConcept::Screen_EditorObjectSelect::messageRx */
+/* WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber::Message const&) */
 
 /* Walaber::FileManager::readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, Walaber::SharedPtr<Walaber::Callback>,

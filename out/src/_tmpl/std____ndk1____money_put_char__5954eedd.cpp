@@ -4,7 +4,7 @@
 
 /* ok  address 0x5cb85c  size 748 */
 /* mangled: _ZNSt6__ndk111__money_putIcE13__gather_infoEbbRKNS_6localeERNS_10money_base7patternERcS8_RNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESF_SF_Ri */
-/* std::__ndk1::__money_put<char>::__gather_info */
+/* std::__ndk1::__money_put<char>::__gather_info(bool, bool, std::__ndk1::locale const&, std::__ndk1::money_base::pattern&, char&, char&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, int&) */
 
 /* std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
@@ -260,7 +260,7 @@ LAB_005cb95c:
 
 /* ok  address 0x5cbb48  size 176 */
 /* mangled: _ZNSt6__ndk111__money_putIcE8__formatEPcRS2_S3_jPKcS5_RKNS_5ctypeIcEEbRKNS_10money_base7patternEccRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEESL_SL_i */
-/* std::__ndk1::__money_put<char>::__format */
+/* std::__ndk1::__money_put<char>::__format(char*, char*&, char*&, unsigned int, char const*, char const*, std::__ndk1::ctype<char> const&, bool, std::__ndk1::money_base::pattern const&, char, char, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
 
 /* std::__ndk1::__vector_base<WaterConcept::Screen_Editor::ObjectData,
    std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData> >::~__vector_base() */

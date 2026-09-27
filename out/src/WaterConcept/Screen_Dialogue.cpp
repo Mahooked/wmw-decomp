@@ -4,7 +4,7 @@
 
 /* ok  address 0x4b8b24  size 60 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_Dialogue::loadPropertyList */
+/* WaterConcept::Screen_Dialogue::loadPropertyList(Walaber::PropertyList const&) */
 
 void WaterConcept::Screen_Dialogue::loadPropertyList(uint *param_1,uint param_2)
 
@@ -38,7 +38,7 @@ void WaterConcept::Screen_Dialogue::loadPropertyList(uint *param_1,uint param_2)
 
 /* ok  address 0x4b9dd4  size 212 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue5enterEv */
-/* WaterConcept::Screen_Dialogue::enter */
+/* WaterConcept::Screen_Dialogue::enter() */
 
 uint WaterConcept::Screen_Dialogue::enter(uint param_1,uint *param_2)
 
@@ -93,7 +93,7 @@ uint WaterConcept::Screen_Dialogue::enter(uint param_1,uint *param_2)
 
 /* ok  address 0x4b9f20  size 244 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue18_curveLoadCallbackEPv */
-/* WaterConcept::Screen_Dialogue::_curveLoadCallback */
+/* WaterConcept::Screen_Dialogue::_curveLoadCallback(void*) */
 
 float WaterConcept::Screen_Dialogue::_curveLoadCallback(long param_1,int *param_2)
 
@@ -162,7 +162,7 @@ float WaterConcept::Screen_Dialogue::_curveLoadCallback(long param_1,int *param_
 
 /* ok  address 0x4ba014  size 692 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue6updateEfb */
-/* WaterConcept::Screen_Dialogue::update */
+/* WaterConcept::Screen_Dialogue::update(float, bool) */
 
 void WaterConcept::Screen_Dialogue::update
                (byte *param_1,byte *param_2,byte *param_3,byte *param_4,undefined1 *param_5,
@@ -297,7 +297,7 @@ void WaterConcept::Screen_Dialogue::update
 
 /* ok  address 0x4ba598  size 692 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue8_buildUIEv */
-/* WaterConcept::Screen_Dialogue::_buildUI */
+/* WaterConcept::Screen_Dialogue::_buildUI() */
 
 void WaterConcept::Screen_Dialogue::_buildUI
                (byte *param_1,byte *param_2,byte *param_3,byte *param_4,undefined1 *param_5,
@@ -403,7 +403,7 @@ void WaterConcept::Screen_Dialogue::_buildUI
 
 /* ok  address 0x4ba84c  size 720 */
 /* mangled: _ZN12WaterConcept15Screen_Dialogue23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_Dialogue::_finishedLoadingWidgets */
+/* WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void*) */
 
 void WaterConcept::Screen_Dialogue::_finishedLoadingWidgets
                (byte *param_1,byte *param_2,byte *param_3,byte *param_4,undefined1 *param_5,

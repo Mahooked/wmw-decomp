@@ -4,7 +4,7 @@
 
 /* ok  address 0x49c3ac  size 180 */
 /* mangled: _ZN12WaterConcept15IAPNotification11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::IAPNotification::handleEvent */
+/* WaterConcept::IAPNotification::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 /* Walaber::Subtexture::isTextureParent(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */

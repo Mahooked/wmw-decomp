@@ -4,7 +4,7 @@
 
 /* ok  address 0x2bd1a8  size 68 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer8resetAllEv */
-/* WaterConcept::PlayerDataSerializer::resetAll */
+/* WaterConcept::PlayerDataSerializer::resetAll() */
 
 void WaterConcept::PlayerDataSerializer::resetAll(void)
 
@@ -25,7 +25,7 @@ void WaterConcept::PlayerDataSerializer::resetAll(void)
 
 /* ok  address 0x43531c  size 232 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer30initAndMergeLocalLevelPackInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo() */
 
 /* std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>
@@ -101,7 +101,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo
 
 /* ok  address 0x435618  size 144 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer26initAndMergeLocalLevelInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo() */
 
 /* Walaber::SharedPtr<Walaber::SpriteAnimation>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::SpriteAnimation>
    const&) */
@@ -141,7 +141,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo
 
 /* ok  address 0x435df8  size 156 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer32initAndMergeLocalAchievementInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo() */
 
 /* std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack*,
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack*>&>::__split_buffer(unsigned long,
@@ -184,7 +184,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo
 
 /* ok  address 0x436080  size 312 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer32initAndMergeLocalCollectibleInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo() */
 
 /* std::__ndk1::enable_if<__is_forward_iterator<std::__ndk1::pair<float,
    int>*>::value&&is_constructible<std::__ndk1::pair<float, int>,
@@ -283,7 +283,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo
 
 /* ok  address 0x436408  size 296 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer36initAndMergeLocalCrankyChallengeInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo() */
 
 /* void std::__ndk1::vector<Walaber::SpriteAnimationTrack*,
    std::__ndk1::allocator<Walaber::SpriteAnimationTrack*>
@@ -367,7 +367,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo
 
 /* ok  address 0x436658  size 296 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer31initAndMergeLocalCrankyFoodInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo() */
 
 /* void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*,
    std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>
@@ -451,7 +451,7 @@ WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo
 
 /* ok  address 0x436d88  size 256 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer35initAndMergeLocalAllieChallengeInfoEv */
-/* WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo() */
 
 /* unsigned int std::__ndk1::__sort3<bool (*&)(std::__ndk1::pair<float, int> const&,
    std::__ndk1::pair<float, int> const&), std::__ndk1::pair<float, int>*>(std::__ndk1::pair<float,
@@ -514,7 +514,7 @@ uint WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo
 
 /* ok  address 0x436f54  size 260 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer15mergeRemoteInfoERNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES8_S8_S8_S8_S8_S8_S8_ */
-/* WaterConcept::PlayerDataSerializer::mergeRemoteInfo */
+/* WaterConcept::PlayerDataSerializer::mergeRemoteInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&) */
 
 /* unsigned int std::__ndk1::__sort5<bool (*&)(std::__ndk1::pair<float, int> const&,
    std::__ndk1::pair<float, int> const&), std::__ndk1::pair<float, int>*>(std::__ndk1::pair<float,
@@ -575,7 +575,7 @@ uint WaterConcept::PlayerDataSerializer::mergeRemoteInfo
 
 /* ok  address 0x437058  size 256 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer32deserializeAndMergeLevelPackInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* void std::__ndk1::__insertion_sort_3<bool (*&)(std::__ndk1::pair<float, int> const&,
    std::__ndk1::pair<float, int> const&), std::__ndk1::pair<float, int>*>(std::__ndk1::pair<float,
@@ -640,7 +640,7 @@ LAB_00437110:
 
 /* ok  address 0x437328  size 24 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer28deserializeAndMergeLevelInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack() */
 
@@ -661,7 +661,7 @@ WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(PlayerDataSeria
 
 /* ok  address 0x437738  size 116 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer34deserializeAndMergeCollectibleInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,
    std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent> >::__vdeallocate()
@@ -702,7 +702,7 @@ WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(PlayerDat
 
 /* ok  address 0x4379fc  size 220 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer38deserializeAndMergeCrankyChallengeInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::AnimationManager::update(float) */
 
@@ -762,7 +762,7 @@ LAB_00437ac4:
 
 /* ok  address 0x437c24  size 172 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer33deserializeAndMergeCrankyFoodInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::AnimationManager::createAnimation(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -811,7 +811,7 @@ WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo
 
 /* ok  address 0x437e74  size 200 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer33deserializeAndMergeAllieMusicInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::Animation::play(Walaber::AnimationPlaybackMode, float, int, Walaber::AnimationBlendMode)
     */
@@ -862,7 +862,7 @@ WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo
 
 /* ok  address 0x438250  size 68 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer37deserializeAndMergeAllieChallengeInfoERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::AnimationManager::playCurrentAnimation() */
 
@@ -884,7 +884,7 @@ WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo
 
 /* ok  address 0x438358  size 128 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer19getStorylineForPackERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::PlayerDataSerializer::getStorylineForPack */
+/* WaterConcept::PlayerDataSerializer::getStorylineForPack(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::Animation::stop() */
 
@@ -918,7 +918,7 @@ void __thiscall WaterConcept::PlayerDataSerializer::getStorylineForPack(PlayerDa
 
 /* ok  address 0x438618  size 748 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer22serializeLevelPackInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeLevelPackInfo */
+/* WaterConcept::PlayerDataSerializer::serializeLevelPackInfo() */
 
 /* std::__ndk1::__tree_node_base<void*>*&
    std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
@@ -1145,7 +1145,7 @@ LAB_00438718:
 
 /* ok  address 0x438904  size 92 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer18serializeLevelInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeLevelInfo */
+/* WaterConcept::PlayerDataSerializer::serializeLevelInfo() */
 
 /* std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Animation*>, void*>,
@@ -1190,7 +1190,7 @@ void WaterConcept::PlayerDataSerializer::serializeLevelInfo(pair *param_1)
 
 /* ok  address 0x438d00  size 92 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer24serializeAchievementInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeAchievementInfo */
+/* WaterConcept::PlayerDataSerializer::serializeAchievementInfo() */
 
 /* std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Animation*>,
@@ -1245,7 +1245,7 @@ void WaterConcept::PlayerDataSerializer::serializeAchievementInfo(__tree_node *p
 
 /* ok  address 0x438e30  size 116 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer24serializeCollectibleInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeCollectibleInfo */
+/* WaterConcept::PlayerDataSerializer::serializeCollectibleInfo() */
 
 /* std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Animation*>,
@@ -1297,7 +1297,7 @@ void WaterConcept::PlayerDataSerializer::serializeCollectibleInfo(pair *param_1)
 
 /* ok  address 0x438ffc  size 184 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer28serializeCrankyChallengeInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo() */
 
 /* std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Animation*>,
@@ -1383,7 +1383,7 @@ WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo
 
 /* ok  address 0x4391d8  size 48 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer23serializeCrankyFoodInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo */
+/* WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo() */
 
 /* Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber::Node*) */
 
@@ -1401,7 +1401,7 @@ WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo
 
 /* ok  address 0x4393e8  size 8 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer23serializeAllieMusicInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo */
+/* WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo() */
 
 /* Walaber::NodeAnimationTrack::setAnimation(Walaber::Animation*) */
 
@@ -1418,7 +1418,7 @@ WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo
 
 /* ok  address 0x439624  size 88 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer27serializeAllieChallengeInfoEv */
-/* WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo */
+/* WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo() */
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack> >::~SharedPtr() */
 
@@ -1445,7 +1445,7 @@ WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo(PlayerDataSerial
 
 /* ok  address 0x43980c  size 288 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer25_updateLocalLevelPackInfoERNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS0_13LevelPackInfoE */
-/* WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo */
+/* WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, WaterConcept::PlayerDataSerializer::LevelPackInfo) */
 
 /* Walaber::NodeAnimationTrack::loadCurve(Walaber::NodeTrackLocalAngle,
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
@@ -1515,7 +1515,7 @@ WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo
 
 /* ok  address 0x439c34  size 4 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer21_updateLocalLevelInfoERNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS0_9LevelInfoE */
-/* WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo */
+/* WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, WaterConcept::PlayerDataSerializer::LevelInfo) */
 
 /* Walaber::MemberCallback<Walaber::NodeAnimationTrack>::~MemberCallback() */
 
@@ -1531,7 +1531,7 @@ WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo(PlayerDataSerializer *
 
 /* ok  address 0x43ae5c  size 112 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer27_updateLocalAchievementInfoERNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS0_15AchievementInfoE */
-/* WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo */
+/* WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, WaterConcept::PlayerDataSerializer::AchievementInfo) */
 
 /* Walaber::Skeleton::TEMPNAMEPLACEHOLDERVALUE(Walaber::Skeleton const&) */
 
@@ -1569,7 +1569,7 @@ WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo
 
 /* ok  address 0x43b9fc  size 288 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer26_updateLocalCrankyFoodInfoEjNS0_15CollectibleInfoE */
-/* WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo */
+/* WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo(unsigned int, WaterConcept::PlayerDataSerializer::CollectibleInfo) */
 
 /* Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -1641,7 +1641,7 @@ WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo
 
 /* ok  address 0x43c44c  size 160 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer37decodeLevelAndStorylineBitmaskFromKeyERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERi */
-/* WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey */
+/* WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int&) */
 
 /* Walaber::Skeleton::setLayer(int) */
 
@@ -1686,7 +1686,7 @@ WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
 
 /* ok  address 0x43c594  size 156 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer29storyLineBitmaskFromStorylineEi */
-/* WaterConcept::PlayerDataSerializer::storyLineBitmaskFromStoryline */
+/* WaterConcept::PlayerDataSerializer::storyLineBitmaskFromStoryline(int) */
 
 /* Walaber::Skeleton::draw(Walaber::SpriteBatch*) */
 

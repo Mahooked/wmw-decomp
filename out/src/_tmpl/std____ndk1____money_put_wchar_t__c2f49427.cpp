@@ -4,7 +4,7 @@
 
 /* ok  address 0x5cc894  size 84 */
 /* mangled: _ZNSt6__ndk111__money_putIwE13__gather_infoEbbRKNS_6localeERNS_10money_base7patternERwS8_RNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS9_IwNSA_IwEENSC_IwEEEESJ_Ri */
-/* std::__ndk1::__money_put<wchar_t>::__gather_info */
+/* std::__ndk1::__money_put<wchar_t>::__gather_info(bool, bool, std::__ndk1::locale const&, std::__ndk1::money_base::pattern&, wchar_t&, wchar_t&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>&, int&) */
 
 /* std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*,
    std::__ndk1::less<WaterConcept::InteractiveObject*>,
@@ -46,7 +46,7 @@ __split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::le
 
 /* ok  address 0x5cca88  size 108 */
 /* mangled: _ZNSt6__ndk111__money_putIwE8__formatEPwRS2_S3_jPKwS5_RKNS_5ctypeIwEEbRKNS_10money_base7patternEwwRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNSE_IwNSF_IwEENSH_IwEEEESQ_i */
-/* std::__ndk1::__money_put<wchar_t>::__format */
+/* std::__ndk1::__money_put<wchar_t>::__format(wchar_t*, wchar_t*&, wchar_t*&, unsigned int, wchar_t const*, wchar_t const*, std::__ndk1::ctype<wchar_t> const&, bool, std::__ndk1::money_base::pattern const&, wchar_t, wchar_t, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const&, int) */
 
 /* std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, std::__ndk1::less<std::__ndk1::basic_string<char,

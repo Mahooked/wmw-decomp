@@ -4,7 +4,7 @@
 
 /* ok  address 0x395928  size 44 */
 /* mangled: _ZN7Walaber7Texture19create_empty_bufferEv */
-/* Walaber::Texture::create_empty_buffer */
+/* Walaber::Texture::create_empty_buffer() */
 
 long Walaber::Texture::create_empty_buffer(long param_1,long param_2)
 
@@ -18,6 +18,25 @@ long Walaber::Texture::create_empty_buffer(long param_1,long param_2)
     lVar1 = -(uVar2 >> 0x1f & 1);
   }
   return lVar1;
+}
+
+
+
+/* ok  address 0x395c98  size 44 */
+/* mangled: _ZN7Walaber7TextureD2Ev */
+/* Walaber::Texture::~Texture() */
+
+undefined8 Walaber::Texture::~Texture(long param_1,long param_2)
+
+{
+  undefined8 uVar1;
+  
+  uVar1 = 0xffffffffffffffff;
+  if ((param_1 != 0) && (param_2 != 0)) {
+    FUN_00395cc4(param_1);
+    uVar1 = 0;
+  }
+  return uVar1;
 }
 
 

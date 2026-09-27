@@ -4,7 +4,7 @@
 
 /* ok  address 0x49dd50  size 768 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton10reloadFontEv */
-/* WaterConcept::NotificationSingleton::reloadFont */
+/* WaterConcept::NotificationSingleton::reloadFont() */
 
 /* Walaber::TextureManager::setTextureSettings(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::TextureSettings)
@@ -199,7 +199,7 @@ WaterConcept::NotificationSingleton::reloadFont
 
 /* ok  address 0x49e0d8  size 132 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton6notifyERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_fiN7Walaber7Vector2E */
-/* WaterConcept::NotificationSingleton::notify */
+/* WaterConcept::NotificationSingleton::notify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, int, Walaber::Vector2) */
 
 /* Walaber::SharedPtr<Walaber::Texture2D>::TEMPNAMEPLACEHOLDERVALUE(Walaber::SharedPtr<Walaber::Texture2D>
    const&) */
@@ -237,7 +237,7 @@ WaterConcept::NotificationSingleton::notify(NotificationSingleton *this,SharedPt
 
 /* ok  address 0x49e23c  size 928 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton6updateEPv */
-/* WaterConcept::NotificationSingleton::update */
+/* WaterConcept::NotificationSingleton::update(void*) */
 
 /* Walaber::TextureManager::reloadTextureFromDisk(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
@@ -480,7 +480,7 @@ LAB_0049e42c:
 
 /* ok  address 0x49e8a4  size 180 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton24_handle10DaysAchievementEv */
-/* WaterConcept::NotificationSingleton::_handle10DaysAchievement */
+/* WaterConcept::NotificationSingleton::_handle10DaysAchievement() */
 
 /* Walaber::TextureManager::invalidateTextures(bool) */
 
@@ -528,7 +528,7 @@ WaterConcept::NotificationSingleton::_handle10DaysAchievement
 
 /* ok  address 0x49f900  size 264 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton19touchFirstResponderEPv */
-/* WaterConcept::NotificationSingleton::touchFirstResponder */
+/* WaterConcept::NotificationSingleton::touchFirstResponder(void*) */
 
 /* Walaber::TextureManager::getMemory() */
 
@@ -590,7 +590,7 @@ int __thiscall WaterConcept::NotificationSingleton::touchFirstResponder(Notifica
 
 /* ok  address 0x49fa08  size 132 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton23notifyIAPAdNotificationENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::NotificationSingleton::notifyIAPAdNotification */
+/* WaterConcept::NotificationSingleton::notifyIAPAdNotification(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 /* Walaber::TextureManager::getTextureFileName(unsigned int) const */
 
@@ -642,7 +642,7 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification(uint param_1)
 
 /* ok  address 0x49fb10  size 88 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton23notifyIAPAdNotificationENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEii */
-/* WaterConcept::NotificationSingleton::notifyIAPAdNotification */
+/* WaterConcept::NotificationSingleton::notifyIAPAdNotification(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int, int) */
 
 /* std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
@@ -689,7 +689,7 @@ WaterConcept::NotificationSingleton::notifyIAPAdNotification
 
 /* ok  address 0x49fbc8  size 88 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton21hideIAPAdNotificationEb */
-/* WaterConcept::NotificationSingleton::hideIAPAdNotification */
+/* WaterConcept::NotificationSingleton::hideIAPAdNotification(bool) */
 
 /* std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
@@ -729,7 +729,7 @@ WaterConcept::NotificationSingleton::hideIAPAdNotification
 
 /* ok  address 0x49fcd4  size 4 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton9messageRxERKN7Walaber7MessageE */
-/* WaterConcept::NotificationSingleton::messageRx */
+/* WaterConcept::NotificationSingleton::messageRx(Walaber::Message const&) */
 
 /* Walaber::MemberCallback<Walaber::TextureManager>::~MemberCallback() */
 
@@ -744,7 +744,7 @@ void __thiscall WaterConcept::NotificationSingleton::messageRx(NotificationSingl
 
 /* ok  address 0x506390  size 240 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton18clearNotificationsEv */
-/* WaterConcept::NotificationSingleton::clearNotifications */
+/* WaterConcept::NotificationSingleton::clearNotifications() */
 
 /* WaterConcept::Fluids::addParticle(int, float, Walaber::Vector2 const&, Walaber::Vector2 const&,
    float, float) */
@@ -796,7 +796,7 @@ WaterConcept::NotificationSingleton::clearNotifications
 
 /* ok  address 0x5066a4  size 188 */
 /* mangled: _ZN12WaterConcept21NotificationSingleton15addNotificationERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS_12NotificationE */
-/* WaterConcept::NotificationSingleton::addNotification */
+/* WaterConcept::NotificationSingleton::addNotification(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, WaterConcept::Notification*) */
 
 /* Walaber::FluidParticleSet::removeParticle(int) */
 

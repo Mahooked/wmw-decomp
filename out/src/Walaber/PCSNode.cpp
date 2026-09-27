@@ -4,7 +4,7 @@
 
 /* ok  address 0x3eb068  size 104 */
 /* mangled: _ZN7Walaber7PCSNode18removeNodeFromTreeEPS0_RKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE */
-/* Walaber::PCSNode::removeNodeFromTree */
+/* Walaber::PCSNode::removeNodeFromTree(Walaber::PCSNode*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::PCSNode::removeNodeFromTree(long param_1)
 
@@ -26,7 +26,7 @@ void Walaber::PCSNode::removeNodeFromTree(long param_1)
 
 /* ok  address 0x3eb0d0  size 188 */
 /* mangled: _ZN7Walaber7PCSNode18removeNodeFromTreeEPS0_RKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi */
-/* Walaber::PCSNode::removeNodeFromTree */
+/* Walaber::PCSNode::removeNodeFromTree(Walaber::PCSNode*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
 
 undefined8 Walaber::PCSNode::removeNodeFromTree(long param_1,undefined4 param_2)
 
@@ -72,7 +72,7 @@ undefined8 Walaber::PCSNode::removeNodeFromTree(long param_1,undefined4 param_2)
 
 /* ok  address 0x3eb18c  size 80 */
 /* mangled: _ZN7Walaber7PCSNode21_depthFirstNameSearchEPS0_RKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE */
-/* Walaber::PCSNode::_depthFirstNameSearch */
+/* Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::PCSNode::_depthFirstNameSearch(long *param_1)
 

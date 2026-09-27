@@ -4,7 +4,7 @@
 
 /* ok  address 0x5a52f4  size 316 */
 /* mangled: _ZNSt6__ndk115basic_streambufIwNS_11char_traitsIwEEE8pubimbueERKNS_6localeE */
-/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::pubimbue */
+/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::pubimbue(std::__ndk1::locale const&) */
 
 /* WaterConcept::Screen_AgeGate::_buildUI() */
 
@@ -96,7 +96,7 @@ void __thiscall WaterConcept::Screen_AgeGate::_buildUI(Screen_AgeGate *this)
 
 /* ok  address 0x5a5ba4  size 268 */
 /* mangled: _ZNSt6__ndk115basic_streambufIwNS_11char_traitsIwEEE5sputcEw */
-/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::sputc */
+/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t) */
 
 /* WaterConcept::Screen_AgeGate::draw(int) */
 
@@ -133,7 +133,7 @@ void __thiscall WaterConcept::Screen_AgeGate::draw(Screen_AgeGate *this,int para
 
 /* ok  address 0x5a5cb0  size 1368 */
 /* mangled: _ZNSt6__ndk115basic_streambufIwNS_11char_traitsIwEEE4swapERS3_ */
-/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::swap */
+/* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>::swap(std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>&) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_AgeGate::handleEvent(int, Walaber::Widget::WidgetActionRet const&,

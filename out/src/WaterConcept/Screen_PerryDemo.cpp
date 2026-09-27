@@ -4,7 +4,7 @@
 
 /* ok  address 0x542e08  size 4 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_PerryDemo::loadPropertyList */
+/* WaterConcept::Screen_PerryDemo::loadPropertyList(Walaber::PropertyList const&) */
 
 /* WaterConcept::PushLevelHandler::PushLevelHandler() */
 
@@ -18,7 +18,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::loadPropertyList(Screen_PerryDem
 
 /* ok  address 0x543084  size 120 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo5enterEv */
-/* WaterConcept::Screen_PerryDemo::enter */
+/* WaterConcept::Screen_PerryDemo::enter() */
 
 /* WaterConcept::SeaweedStrand::SeaweedStrand() */
 
@@ -45,7 +45,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::enter(Screen_PerryDemo *this)
 
 /* ok  address 0x5432fc  size 324 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo8_buildUIEv */
-/* WaterConcept::Screen_PerryDemo::_buildUI */
+/* WaterConcept::Screen_PerryDemo::_buildUI() */
 
 /* Walaber::ParticleSet::addParticle(float, Walaber::Vector2 const&, float, Walaber::Vector2 const&,
    int&) */
@@ -120,7 +120,7 @@ WaterConcept::Screen_PerryDemo::_buildUI
 
 /* ok  address 0x543440  size 8 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo6updateEfb */
-/* WaterConcept::Screen_PerryDemo::update */
+/* WaterConcept::Screen_PerryDemo::update(float, bool) */
 
 /* WaterConcept::SeaweedStrand::setTexture(Walaber::SharedPtr<Walaber::Texture>) */
 
@@ -136,7 +136,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::update(Screen_PerryDemo *this,Sh
 
 /* ok  address 0x543518  size 272 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo4drawEi */
-/* WaterConcept::Screen_PerryDemo::draw */
+/* WaterConcept::Screen_PerryDemo::draw(int) */
 
 /* WaterConcept::SeaweedStrand::_applySpringForces() */
 
@@ -199,7 +199,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::draw(Screen_PerryDemo *this)
 
 /* ok  address 0x543628  size 232 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo19_closeButtonPressedEv */
-/* WaterConcept::Screen_PerryDemo::_closeButtonPressed */
+/* WaterConcept::Screen_PerryDemo::_closeButtonPressed() */
 
 /* WaterConcept::SeaweedStrand::_applyPositionConstraints() */
 
@@ -264,7 +264,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::_closeButtonPressed(Screen_Perry
 
 /* ok  address 0x543e0c  size 1084 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo11handleFocusEPN7Walaber6WidgetENS1_10FocusEventE */
-/* WaterConcept::Screen_PerryDemo::handleFocus */
+/* WaterConcept::Screen_PerryDemo::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
 /* WaterConcept::ShowerCurtain::_applySpringForces() */
 
@@ -563,7 +563,7 @@ void __thiscall WaterConcept::Screen_PerryDemo::handleFocus(Screen_PerryDemo *th
 
 /* ok  address 0x544778  size 312 */
 /* mangled: _ZN12WaterConcept16Screen_PerryDemo11_loadSoundsEPv */
-/* WaterConcept::Screen_PerryDemo::_loadSounds */
+/* WaterConcept::Screen_PerryDemo::_loadSounds(void*) */
 
 /* WaterConcept::ShowerCurtain::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&)
     */

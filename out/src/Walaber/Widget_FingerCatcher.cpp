@@ -4,7 +4,7 @@
 
 /* ok  address 0x37c170  size 676 */
 /* mangled: _ZN7Walaber20Widget_FingerCatcher13_acceptFingerEiPNS_10FingerInfoE */
-/* Walaber::Widget_FingerCatcher::_acceptFinger */
+/* Walaber::Widget_FingerCatcher::_acceptFinger(int, Walaber::FingerInfo*) */
 
 void * Walaber::Widget_FingerCatcher::_acceptFinger(long *param_1,byte *param_2,int param_3)
 
@@ -117,7 +117,7 @@ LAB_0037c2e4:
 
 /* ok  address 0x37c414  size 4 */
 /* mangled: _ZN7Walaber20Widget_FingerCatcher14_releaseFingerEiPNS_10FingerInfoE */
-/* Walaber::Widget_FingerCatcher::_releaseFinger */
+/* Walaber::Widget_FingerCatcher::_releaseFinger(int, Walaber::FingerInfo*) */
 
 void Walaber::Widget_FingerCatcher::_releaseFinger(void)
 
@@ -129,7 +129,7 @@ void Walaber::Widget_FingerCatcher::_releaseFinger(void)
 
 /* ok  address 0x37c590  size 140 */
 /* mangled: _ZN7Walaber20Widget_FingerCatcher17lostFingerHandledEi */
-/* Walaber::Widget_FingerCatcher::lostFingerHandled */
+/* Walaber::Widget_FingerCatcher::lostFingerHandled(int) */
 
 void Walaber::Widget_FingerCatcher::lostFingerHandled
                (long param_1,undefined8 param_2,undefined4 param_3)

@@ -4,7 +4,7 @@
 
 /* ok  address 0x38a41c  size 232 */
 /* mangled: _ZN7Walaber14Widget_Spinner4drawEPNS_11SpriteBatchE */
-/* Walaber::Widget_Spinner::draw */
+/* Walaber::Widget_Spinner::draw(Walaber::SpriteBatch*) */
 
 long Walaber::Widget_Spinner::draw(char *param_1)
 
@@ -47,7 +47,7 @@ LAB_0038a468:
 
 /* ok  address 0x38a504  size 188 */
 /* mangled: _ZN7Walaber14Widget_Spinner19acceptNewFingerDownEiPNS_10FingerInfoE */
-/* Walaber::Widget_Spinner::acceptNewFingerDown */
+/* Walaber::Widget_Spinner::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
 undefined8 Walaber::Widget_Spinner::acceptNewFingerDown(long param_1)
 
@@ -91,7 +91,7 @@ LAB_0038a594:
 
 /* ok  address 0x38a5c0  size 284 */
 /* mangled: _ZN7Walaber14Widget_Spinner22acceptNewFingerEnteredEiPNS_10FingerInfoE */
-/* Walaber::Widget_Spinner::acceptNewFingerEntered */
+/* Walaber::Widget_Spinner::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
 void Walaber::Widget_Spinner::acceptNewFingerEntered(long *param_1)
 
@@ -141,7 +141,7 @@ void Walaber::Widget_Spinner::acceptNewFingerEntered(long *param_1)
 
 /* ok  address 0x38a6dc  size 416 */
 /* mangled: _ZN7Walaber14Widget_Spinner13_updateFingerEv */
-/* Walaber::Widget_Spinner::_updateFinger */
+/* Walaber::Widget_Spinner::_updateFinger() */
 
 undefined8 Walaber::Widget_Spinner::_updateFinger(long param_1,undefined8 *param_2)
 

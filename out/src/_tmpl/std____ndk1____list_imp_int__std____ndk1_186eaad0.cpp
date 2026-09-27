@@ -4,7 +4,7 @@
 
 /* ok  address 0x2c63a4  size 68 */
 /* mangled: _ZNSt6__ndk110__list_impIiNS_9allocatorIiEEE5clearEv */
-/* std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear */
+/* std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear() */
 
 void FUN_002c63a4(void)
 

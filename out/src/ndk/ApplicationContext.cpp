@@ -4,7 +4,7 @@
 
 /* ok  address 0x2b3d50  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext15resetDatabaseAtERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* ndk::ApplicationContext::resetDatabaseAt */
+/* ndk::ApplicationContext::resetDatabaseAt(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void ndk::ApplicationContext::resetDatabaseAt(void)
 
@@ -25,7 +25,7 @@ void ndk::ApplicationContext::resetDatabaseAt(void)
 
 /* ok  address 0x2ba340  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext15handleAgeChangeEii */
-/* ndk::ApplicationContext::handleAgeChange */
+/* ndk::ApplicationContext::handleAgeChange(int, int) */
 
 void ndk::ApplicationContext::handleAgeChange(void)
 
@@ -46,7 +46,7 @@ void ndk::ApplicationContext::handleAgeChange(void)
 
 /* ok  address 0x2ba450  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext16checkAudioStatusEv */
-/* ndk::ApplicationContext::checkAudioStatus */
+/* ndk::ApplicationContext::checkAudioStatus() */
 
 void ndk::ApplicationContext::checkAudioStatus(void)
 
@@ -67,7 +67,7 @@ void ndk::ApplicationContext::checkAudioStatus(void)
 
 /* ok  address 0x2ba51c  size 10552 */
 /* mangled: _ZN3ndk18ApplicationContext15handleURLIntentENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* ndk::ApplicationContext::handleURLIntent */
+/* ndk::ApplicationContext::handleURLIntent(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
@@ -2478,7 +2478,7 @@ void ndk::ApplicationContext::handleURLIntent(void)
 
 /* ok  address 0x2bcf90  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext24getPlayerHasMadeProgressEv */
-/* ndk::ApplicationContext::getPlayerHasMadeProgress */
+/* ndk::ApplicationContext::getPlayerHasMadeProgress() */
 
 void ndk::ApplicationContext::getPlayerHasMadeProgress(void)
 
@@ -2499,7 +2499,7 @@ void ndk::ApplicationContext::getPlayerHasMadeProgress(void)
 
 /* ok  address 0x2bd2f8  size 64 */
 /* mangled: _ZN3ndk18ApplicationContext27notifyRewardsInitFileSystemEPKc */
-/* ndk::ApplicationContext::notifyRewardsInitFileSystem */
+/* ndk::ApplicationContext::notifyRewardsInitFileSystem(char const*) */
 
 void ndk::ApplicationContext::notifyRewardsInitFileSystem(void)
 
@@ -2520,7 +2520,7 @@ void ndk::ApplicationContext::notifyRewardsInitFileSystem(void)
 
 /* ok  address 0x2c0050  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext27notifyLoWAMPSInitFileSystemEPKc */
-/* ndk::ApplicationContext::notifyLoWAMPSInitFileSystem */
+/* ndk::ApplicationContext::notifyLoWAMPSInitFileSystem(char const*) */
 
 void ndk::ApplicationContext::notifyLoWAMPSInitFileSystem(void)
 
@@ -2541,7 +2541,7 @@ void ndk::ApplicationContext::notifyLoWAMPSInitFileSystem(void)
 
 /* ok  address 0x2c047c  size 68 */
 /* mangled: _ZN3ndk18ApplicationContext29notifyLoWAMPSDownloadFinishedEPKcS2_b */
-/* ndk::ApplicationContext::notifyLoWAMPSDownloadFinished */
+/* ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char const*, char const*, bool) */
 
 void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(void)
 

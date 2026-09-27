@@ -4,7 +4,7 @@
 
 /* ok  address 0x38ddcc  size 536 */
 /* mangled: _ZN7Walaber16FluidParticleSet15updateParticlesEf */
-/* Walaber::FluidParticleSet::updateParticles */
+/* Walaber::FluidParticleSet::updateParticles(float) */
 
 void Walaber::FluidParticleSet::updateParticles(undefined4 param_1,ulong param_2,undefined8 param_3)
 
@@ -264,7 +264,7 @@ switchD_0038de20_caseD_0:
 
 /* ok  address 0x38dfe4  size 208 */
 /* mangled: _ZN7Walaber16FluidParticleSet13drawParticlesERNS_11SpriteBatchENS_9SharedPtrINS_7TextureEEERKNS_5ColorES8_iff */
-/* Walaber::FluidParticleSet::drawParticles */
+/* Walaber::FluidParticleSet::drawParticles(Walaber::SpriteBatch&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, Walaber::Color const&, int, float, float) */
 
 void Walaber::FluidParticleSet::drawParticles(long *param_1,undefined8 param_2,undefined8 param_3)
 
@@ -316,7 +316,7 @@ LAB_0038e068:
 
 /* ok  address 0x38e0b4  size 4 */
 /* mangled: _ZN7Walaber16FluidParticleSet13drawParticlesERNS_11SpriteBatchENS_9SharedPtrINS_7TextureEEERKNS_5ColorES8_iffi */
-/* Walaber::FluidParticleSet::drawParticles */
+/* Walaber::FluidParticleSet::drawParticles(Walaber::SpriteBatch&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, Walaber::Color const&, int, float, float, int) */
 
 void Walaber::FluidParticleSet::drawParticles(void)
 
@@ -329,7 +329,7 @@ void Walaber::FluidParticleSet::drawParticles(void)
 
 /* ok  address 0x38e268  size 8 */
 /* mangled: _ZN7Walaber16FluidParticleSet13drawParticlesERNS_11SpriteBatchENS_9SharedPtrINS_7TextureEEERKNS_5ColorES8_iPfff */
-/* Walaber::FluidParticleSet::drawParticles */
+/* Walaber::FluidParticleSet::drawParticles(Walaber::SpriteBatch&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, Walaber::Color const&, int, float*, float, float) */
 
 undefined8 Walaber::FluidParticleSet::drawParticles(void)
 
@@ -341,7 +341,7 @@ undefined8 Walaber::FluidParticleSet::drawParticles(void)
 
 /* ok  address 0x38e6c0  size 128 */
 /* mangled: _ZN7Walaber16FluidParticleSet13drawParticlesERNS_11SpriteBatchENS_9SharedPtrINS_7TextureEEERKNS_5ColorES8_iPfffffi */
-/* Walaber::FluidParticleSet::drawParticles */
+/* Walaber::FluidParticleSet::drawParticles(Walaber::SpriteBatch&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, Walaber::Color const&, int, float*, float, float, float, float, int) */
 
 int Walaber::FluidParticleSet::drawParticles(FILE *param_1,void *param_2,int param_3)
 
@@ -368,7 +368,7 @@ int Walaber::FluidParticleSet::drawParticles(FILE *param_1,void *param_2,int par
 
 /* ok  address 0x38e8f0  size 224 */
 /* mangled: _ZN7Walaber16FluidParticleSet18drawIntoVertBufferEPNS_24PositionTextureColorVertERjRKNS_5ColorES6_ffibifS6_i */
-/* Walaber::FluidParticleSet::drawIntoVertBuffer */
+/* Walaber::FluidParticleSet::drawIntoVertBuffer(Walaber::PositionTextureColorVert*, unsigned int&, Walaber::Color const&, Walaber::Color const&, float, float, int, bool, int, float, Walaber::Color const&, int) */
 
 undefined8 * Walaber::FluidParticleSet::drawIntoVertBuffer(long param_1)
 
@@ -423,7 +423,7 @@ LAB_0038e994:
 
 /* ok  address 0x38ec18  size 236 */
 /* mangled: _ZN7Walaber16FluidParticleSet19_drawIntoVertBufferEPNS_24PositionTextureColorVertERjjRKNS_7Vector2ES6_S6_ff */
-/* Walaber::FluidParticleSet::_drawIntoVertBuffer */
+/* Walaber::FluidParticleSet::_drawIntoVertBuffer(Walaber::PositionTextureColorVert*, unsigned int&, unsigned int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float) */
 
 long * Walaber::FluidParticleSet::_drawIntoVertBuffer(long param_1,undefined4 param_2)
 
@@ -469,7 +469,7 @@ long * Walaber::FluidParticleSet::_drawIntoVertBuffer(long param_1,undefined4 pa
 
 /* ok  address 0x38eed0  size 24 */
 /* mangled: _ZN7Walaber16FluidParticleSet18drawIntoVertBufferEPNS_24PositionTextureColorVertERjRKNS_5ColorES6_ffffibifS6_i */
-/* Walaber::FluidParticleSet::drawIntoVertBuffer */
+/* Walaber::FluidParticleSet::drawIntoVertBuffer(Walaber::PositionTextureColorVert*, unsigned int&, Walaber::Color const&, Walaber::Color const&, float, float, float, float, int, bool, int, float, Walaber::Color const&, int) */
 
 void Walaber::FluidParticleSet::drawIntoVertBuffer(void)
 
@@ -488,7 +488,7 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer(void)
 
 /* ok  address 0x38f120  size 60 */
 /* mangled: _ZN7Walaber16FluidParticleSet18drawIntoVertBufferEPNS_24PositionTextureColorVertERjRKNS_5ColorES6_S6_ibifi */
-/* Walaber::FluidParticleSet::drawIntoVertBuffer */
+/* Walaber::FluidParticleSet::drawIntoVertBuffer(Walaber::PositionTextureColorVert*, unsigned int&, Walaber::Color const&, Walaber::Color const&, Walaber::Color const&, int, bool, int, float, int) */
 
 int Walaber::FluidParticleSet::drawIntoVertBuffer(int param_1)
 
@@ -506,7 +506,7 @@ int Walaber::FluidParticleSet::drawIntoVertBuffer(int param_1)
 
 /* ok  address 0x38f2dc  size 72 */
 /* mangled: _ZN7Walaber16FluidParticleSet15writeIntoBufferEPvRKNS_5ColorES4_ffibiS4_i */
-/* Walaber::FluidParticleSet::writeIntoBuffer */
+/* Walaber::FluidParticleSet::writeIntoBuffer(void*, Walaber::Color const&, Walaber::Color const&, float, float, int, bool, int, Walaber::Color const&, int) */
 
 long * Walaber::FluidParticleSet::writeIntoBuffer(int param_1,undefined8 param_2)
 
@@ -535,7 +535,7 @@ long * Walaber::FluidParticleSet::writeIntoBuffer(int param_1,undefined8 param_2
 
 /* ok  address 0x38f694  size 8 */
 /* mangled: _ZN7Walaber16FluidParticleSet15writeIntoBufferEPvRKNS_5ColorES4_ffffibiS4_i */
-/* Walaber::FluidParticleSet::writeIntoBuffer */
+/* Walaber::FluidParticleSet::writeIntoBuffer(void*, Walaber::Color const&, Walaber::Color const&, float, float, float, float, int, bool, int, Walaber::Color const&, int) */
 
 undefined8 Walaber::FluidParticleSet::writeIntoBuffer(void)
 
@@ -547,7 +547,7 @@ undefined8 Walaber::FluidParticleSet::writeIntoBuffer(void)
 
 /* ok  address 0x38fbdc  size 276 */
 /* mangled: _ZN7Walaber16FluidParticleSet15writeIntoBufferEPvRKNS_5ColorES4_S4_ibii */
-/* Walaber::FluidParticleSet::writeIntoBuffer */
+/* Walaber::FluidParticleSet::writeIntoBuffer(void*, Walaber::Color const&, Walaber::Color const&, Walaber::Color const&, int, bool, int, int) */
 
 undefined8
 Walaber::FluidParticleSet::writeIntoBuffer(byte *param_1,int *param_2,byte *param_3,int *param_4)
@@ -625,7 +625,7 @@ LAB_0038fcc4:
 
 /* ok  address 0x38fd54  size 272 */
 /* mangled: _ZN7Walaber16FluidParticleSet21drawParticlesTeardropERNS_11SpriteBatchENS_9SharedPtrINS_7TextureEEERKNS_5ColorEi */
-/* Walaber::FluidParticleSet::drawParticlesTeardrop */
+/* Walaber::FluidParticleSet::drawParticlesTeardrop(Walaber::SpriteBatch&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, int) */
 
 void Walaber::FluidParticleSet::drawParticlesTeardrop(char *param_1)
 
@@ -690,7 +690,7 @@ LAB_0038fde0:
 
 /* ok  address 0x406488  size 152 */
 /* mangled: _ZN7Walaber16FluidParticleSet11addParticleEfRKNS_7Vector2ES3_S3_S3_S3_Ri */
-/* Walaber::FluidParticleSet::addParticle */
+/* Walaber::FluidParticleSet::addParticle(float, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, int&) */
 
 void Walaber::FluidParticleSet::addParticle
                (undefined8 *param_1,int *param_2,undefined8 *param_3,int param_4)
@@ -732,7 +732,7 @@ void Walaber::FluidParticleSet::addParticle
 
 /* ok  address 0x4066f0  size 240 */
 /* mangled: _ZN7Walaber16FluidParticleSet14removeParticleEi */
-/* Walaber::FluidParticleSet::removeParticle */
+/* Walaber::FluidParticleSet::removeParticle(int) */
 
 short * Walaber::FluidParticleSet::removeParticle
                   (long param_1,short *param_2,long *param_3,long *param_4)

@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d1ad0  size 144 */
 /* mangled: _ZN7Walaber11FileManager14addFileHandlerEiPNS0_11FileHandlerE */
-/* Walaber::FileManager::addFileHandler */
+/* Walaber::FileManager::addFileHandler(int, Walaber::FileManager::FileHandler*) */
 
 void Walaber::FileManager::addFileHandler(long param_1)
 
@@ -42,7 +42,7 @@ void Walaber::FileManager::addFileHandler(long param_1)
 
 /* ok  address 0x3d1b60  size 320 */
 /* mangled: _ZN7Walaber11FileManager10fileExistsERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListENS0_14PlatformPolicyE */
-/* Walaber::FileManager::fileExists */
+/* Walaber::FileManager::fileExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&, Walaber::FileManager::PlatformPolicy) */
 
 uint Walaber::FileManager::fileExists(long param_1,int param_2)
 
@@ -65,7 +65,7 @@ LAB_003d1c60:
       if (uVar2 == 0) {
         if (((*(char *)(lVar3 + 0x13) != '\x02') || (*(char *)(lVar3 + 8) == '\0')) ||
            (*(char *)(lVar3 + 9) != '\x01')) {
-          uVar2 = ::TweenedLinearCurve::TweenedLinearCurve(lVar3,*(undefined1 *)(lVar3 + 0x16));
+          uVar2 = TweenedLinearCurve::TweenedLinearCurve(lVar3,*(undefined1 *)(lVar3 + 0x16));
           if (((uVar2 & 0xff) == 0xd) || ((uVar2 & 0xff) == 10)) {
                     /* try { // try from 003d1bf4 to 004d1bfb has its CatchHandler @ 003d2394 */
             *(uint *)(lVar3 + 0x2c) = uVar2;
@@ -112,7 +112,7 @@ LAB_003d1c40:
 
 /* ok  address 0x3d1fbc  size 80 */
 /* mangled: _ZN7Walaber11FileManager8readFileERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListENS0_14PlatformPolicyE */
-/* Walaber::FileManager::readFile */
+/* Walaber::FileManager::readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&, Walaber::FileManager::PlatformPolicy) */
 
 void Walaber::FileManager::readFile(long param_1)
 
@@ -133,7 +133,7 @@ void Walaber::FileManager::readFile(long param_1)
 
 /* ok  address 0x3d227c  size 8 */
 /* mangled: _ZN7Walaber11FileManager18_printFileRequestsEv */
-/* Walaber::FileManager::_printFileRequests */
+/* Walaber::FileManager::_printFileRequests() */
 
 undefined4 Walaber::FileManager::_printFileRequests(long param_1)
 
@@ -145,7 +145,7 @@ undefined4 Walaber::FileManager::_printFileRequests(long param_1)
 
 /* ok  address 0x3d2378  size 96 */
 /* mangled: _ZN7Walaber11FileManager10_existFailERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS0_11FileHandlerENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::_existFail */
+/* Walaber::FileManager::_existFail(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::FileManager::FileHandler*, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 undefined4 Walaber::FileManager::_existFail(long param_1)
 
@@ -171,7 +171,7 @@ undefined4 Walaber::FileManager::_existFail(long param_1)
 
 /* ok  address 0x3d2854  size 8 */
 /* mangled: _ZN7Walaber11FileManager9_readFailERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS0_11FileHandlerENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::_readFail */
+/* Walaber::FileManager::_readFail(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::FileManager::FileHandler*, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::_readFail(undefined8 param_1)
 

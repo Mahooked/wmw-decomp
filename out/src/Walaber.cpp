@@ -4,7 +4,7 @@
 
 /* ok  address 0x395468  size 188 */
 /* mangled: _ZN7Walaber27createProgrammaticTexture2DERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceE */
-/* Walaber::createProgrammaticTexture2D */
+/* Walaber::createProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
 
 undefined8 Walaber::createProgrammaticTexture2D(long param_1,long param_2)
 
@@ -46,7 +46,7 @@ undefined8 Walaber::createProgrammaticTexture2D(long param_1,long param_2)
 
 /* ok  address 0x395614  size 84 */
 /* mangled: _ZN7Walaber27createProgrammaticTexture2DERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceENS_9SharedPtrINS0_6vectorINS_5ColorENS4_ISC_EEEEEE */
-/* Walaber::createProgrammaticTexture2D */
+/* Walaber::createProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace, Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>) */
 
 long Walaber::createProgrammaticTexture2D(undefined4 param_1,undefined8 param_2,undefined4 param_3)
 
@@ -70,7 +70,7 @@ long Walaber::createProgrammaticTexture2D(undefined4 param_1,undefined8 param_2,
 
 /* ok  address 0x3957bc  size 88 */
 /* mangled: _ZN7Walaber37createProgrammaticSolidColorTexture2DERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEjjNS_5ColorENS_25TextureInMemoryColorspaceE */
-/* Walaber::createProgrammaticSolidColorTexture2D */
+/* Walaber::createProgrammaticSolidColorTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::Color, Walaber::TextureInMemoryColorspace) */
 
 long Walaber::createProgrammaticSolidColorTexture2D
                (undefined8 param_1,undefined8 param_2,undefined4 param_3)
@@ -95,7 +95,7 @@ long Walaber::createProgrammaticSolidColorTexture2D
 
 /* ok  address 0x397944  size 396 */
 /* mangled: _ZN7Walaber30strToTextureInMemoryColorspaceERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE */
-/* Walaber::strToTextureInMemoryColorspace */
+/* Walaber::strToTextureInMemoryColorspace(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::strToTextureInMemoryColorspace
                (long param_1,long *param_2,int *param_3,char *param_4,undefined4 param_5)
@@ -186,7 +186,7 @@ LAB_00397a9c:
 
 /* ok  address 0x399488  size 212 */
 /* mangled: _ZN7Walaber15createTexture2DERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE */
-/* Walaber::createTexture2D */
+/* Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 int Walaber::createTexture2D(byte *param_1,byte *param_2)
 
@@ -239,7 +239,7 @@ int Walaber::createTexture2D(byte *param_1,byte *param_2)
 
 /* ok  address 0x39955c  size 104 */
 /* mangled: _ZN7Walaber15createTexture2DERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEENS_15TextureSettingsE */
-/* Walaber::createTexture2D */
+/* Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::TextureSettings) */
 
 undefined8 Walaber::createTexture2D(byte *param_1,uint param_2,uint param_3)
 

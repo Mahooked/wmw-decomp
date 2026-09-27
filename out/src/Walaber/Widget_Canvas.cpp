@@ -4,7 +4,7 @@
 
 /* ok  address 0x37a80c  size 4 */
 /* mangled: _ZN7Walaber13Widget_Canvas4initEv */
-/* Walaber::Widget_Canvas::init */
+/* Walaber::Widget_Canvas::init() */
 
 void Walaber::Widget_Canvas::init(void)
 
@@ -16,7 +16,7 @@ void Walaber::Widget_Canvas::init(void)
 
 /* ok  address 0x37a940  size 156 */
 /* mangled: _ZN7Walaber13Widget_Canvas6updateEfRNS_6Widget15WidgetActionRetE */
-/* Walaber::Widget_Canvas::update */
+/* Walaber::Widget_Canvas::update(float, Walaber::Widget::WidgetActionRet&) */
 
 void Walaber::Widget_Canvas::update(long param_1)
 
@@ -49,7 +49,7 @@ void Walaber::Widget_Canvas::update(long param_1)
 
 /* ok  address 0x37a9dc  size 1612 */
 /* mangled: _ZN7Walaber13Widget_Canvas19acceptNewFingerDownEiPNS_10FingerInfoE */
-/* Walaber::Widget_Canvas::acceptNewFingerDown */
+/* Walaber::Widget_Canvas::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
 void Walaber::Widget_Canvas::acceptNewFingerDown(long *param_1,long param_2,long *param_3)
 
@@ -220,8 +220,7 @@ LAB_0037ad24:
                   plVar13 = plVar13 + 2;
                 }
               }
-              ::Widget_ColorPicker::Widget_ColorPicker
-                        (param_1,puVar8,*(undefined8 *)(lVar14 + 0x58));
+              Widget_ColorPicker::Widget_ColorPicker(param_1,puVar8,*(undefined8 *)(lVar14 + 0x58));
 LAB_0037ad9c:
               if ((puVar8 != auStack_9c) && (puVar8 != *(undefined1 **)(lVar14 + 0x10))) {
                 (*(code *)xmlFree)(puVar8);
@@ -243,7 +242,7 @@ LAB_0037ae40:
     do {
       if (((*pcVar9 == 'x') && (pcVar9[1] == 'm')) &&
          ((pcVar9[2] == 'l' && ((pcVar9[3] == 'n' && (pcVar9[4] == 's')))))) {
-        ::Widget_ColorPicker::Widget_ColorPicker(param_1);
+        Widget_ColorPicker::Widget_ColorPicker(param_1);
       }
       if (*plVar13 == 0) break;
       pcVar9 = (char *)plVar13[-1];
@@ -272,7 +271,7 @@ LAB_0037ae40:
         do {
           if ((((*pcVar9 != 'x') || (pcVar9[1] != 'm')) || (pcVar9[2] != 'l')) ||
              ((pcVar9[3] != 'n' || (pcVar9[4] != 's')))) {
-            ::Widget_ColorPicker::Widget_ColorPicker(param_1);
+            Widget_ColorPicker::Widget_ColorPicker(param_1);
           }
           pcVar9 = (char *)plVar13[-1];
         } while ((pcVar9 != (char *)0x0) && (lVar10 = *plVar13, plVar13 = plVar13 + 2, lVar10 != 0))
@@ -282,7 +281,7 @@ LAB_0037ae40:
     else if (pcVar9 != (char *)0x0) {
       param_3 = param_3 + 3;
       do {
-        ::Widget_ColorPicker::Widget_ColorPicker(param_1,pcVar9,lVar10);
+        Widget_ColorPicker::Widget_ColorPicker(param_1,pcVar9,lVar10);
         pcVar9 = (char *)param_3[-1];
         lVar10 = *param_3;
         param_3 = param_3 + 2;

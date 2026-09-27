@@ -4,7 +4,7 @@
 
 /* ok  address 0x4a1e18  size 212 */
 /* mangled: _ZN12WaterConcept19Screen_Achievements4drawEi */
-/* WaterConcept::Screen_Achievements::draw */
+/* WaterConcept::Screen_Achievements::draw(int) */
 
 void WaterConcept::Screen_Achievements::draw(long param_1,undefined1 *param_2)
 
@@ -62,7 +62,7 @@ void WaterConcept::Screen_Achievements::draw(long param_1,undefined1 *param_2)
 
 /* ok  address 0x4a1eec  size 44 */
 /* mangled: _ZN12WaterConcept19Screen_Achievements11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_Achievements::handleEvent */
+/* WaterConcept::Screen_Achievements::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 int WaterConcept::Screen_Achievements::handleEvent(int param_1,uint param_2,uint param_3)
 
@@ -77,7 +77,7 @@ int WaterConcept::Screen_Achievements::handleEvent(int param_1,uint param_2,uint
 
 /* ok  address 0x4a2478  size 68 */
 /* mangled: _ZN12WaterConcept19Screen_Achievements23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_Achievements::_finishedLoadingWidgets */
+/* WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void*) */
 
 long WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void)
 

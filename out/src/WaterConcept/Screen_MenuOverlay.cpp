@@ -4,7 +4,7 @@
 
 /* ok  address 0x5309f8  size 220 */
 /* mangled: _ZN12WaterConcept18Screen_MenuOverlay16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_MenuOverlay::loadPropertyList */
+/* WaterConcept::Screen_MenuOverlay::loadPropertyList(Walaber::PropertyList const&) */
 
 /* WaterConcept::ParallaxPuppetShow::_fireAnimationCues(float, float) */
 
@@ -62,7 +62,7 @@ WaterConcept::Screen_MenuOverlay::loadPropertyList
 
 /* ok  address 0x530ad4  size 240 */
 /* mangled: _ZN12WaterConcept18Screen_MenuOverlay5enterEv */
-/* WaterConcept::Screen_MenuOverlay::enter */
+/* WaterConcept::Screen_MenuOverlay::enter() */
 
 /* WaterConcept::ParallaxPuppetShow::_fireColorCues(float, float) */
 
@@ -122,7 +122,7 @@ WaterConcept::Screen_MenuOverlay::enter(Screen_MenuOverlay *this,float param_1,f
 
 /* ok  address 0x530da4  size 8904 */
 /* mangled: _ZN12WaterConcept18Screen_MenuOverlay8_buildUIEv */
-/* WaterConcept::Screen_MenuOverlay::_buildUI */
+/* WaterConcept::Screen_MenuOverlay::_buildUI() */
 
 /* WaterConcept::ParallaxPuppetShow::_gotXmlFile(void*) */
 

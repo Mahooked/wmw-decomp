@@ -4,7 +4,7 @@
 
 /* ok  address 0x369ea8  size 1984 */
 /* mangled: _ZN7Walaber11FontManager7addFontENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES7_ */
-/* Walaber::FontManager::addFont */
+/* Walaber::FontManager::addFont(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::FontManager::addFont(long *param_1)
 

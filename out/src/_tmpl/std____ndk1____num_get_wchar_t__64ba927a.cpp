@@ -4,7 +4,7 @@
 
 /* ok  address 0x5b9d80  size 348 */
 /* mangled: _ZNSt6__ndk19__num_getIwE19__stage2_float_prepERNS_8ios_baseEPwRwS5_ */
-/* std::__ndk1::__num_get<wchar_t>::__stage2_float_prep */
+/* std::__ndk1::__num_get<wchar_t>::__stage2_float_prep(std::__ndk1::ios_base&, wchar_t*, wchar_t&, wchar_t&) */
 
 /* WaterConcept::Screen_Dialogue::enter() */
 
@@ -81,7 +81,7 @@ void __thiscall WaterConcept::Screen_Dialogue::enter(Screen_Dialogue *this)
 
 /* ok  address 0x5b9f1c  size 104 */
 /* mangled: _ZNSt6__ndk19__num_getIwE19__stage2_float_loopEwRbRcPcRS4_wwRKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPjRSE_RjPw */
-/* std::__ndk1::__num_get<wchar_t>::__stage2_float_loop */
+/* std::__ndk1::__num_get<wchar_t>::__stage2_float_loop(wchar_t, bool&, char&, char*, char*&, wchar_t, wchar_t, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int*, unsigned int*&, unsigned int&, wchar_t*) */
 
 /* WaterConcept::Screen_Dialogue::_curveLoadCallback(void*) */
 

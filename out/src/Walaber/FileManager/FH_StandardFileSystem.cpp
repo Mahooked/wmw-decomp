@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d2e50  size 60 */
 /* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystem10fileExistsERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::FH_StandardFileSystem::fileExists */
+/* Walaber::FileManager::FH_StandardFileSystem::fileExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_StandardFileSystem::fileExists(long param_1,undefined8 param_2)
 
@@ -20,7 +20,7 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists(long param_1,undefi
 
 /* ok  address 0x3d310c  size 60 */
 /* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystem8readFileERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::FH_StandardFileSystem::readFile */
+/* Walaber::FileManager::FH_StandardFileSystem::readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_StandardFileSystem::readFile(long param_1,uint param_2)
 
@@ -33,9 +33,48 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile(long param_1,uint par
 
 
 
+/* ok  address 0x3d4418  size 60 */
+/* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystemD2Ev */
+/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
+
+undefined1  [16]
+Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefined8 param_1)
+
+{
+  undefined1 auVar1 [16];
+  undefined8 uVar2;
+  
+  FUN_003d42c8();
+  auVar1 = FUN_003d2860();
+  uVar2 = auVar1._8_8_;
+  FUN_003d4360(param_1);
+  auVar1._8_8_ = uVar2;
+                    /* try { // try from 003d4448 to 004d444f has its CatchHandler @ 003d54e4 */
+  return auVar1;
+}
+
+
+
+/* ok  address 0x3d4454  size 52 */
+/* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystemD0Ev */
+/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
+
+undefined4 Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefined8 param_1)
+
+{
+  undefined4 uVar1;
+  
+  FUN_003d42c8();
+  uVar1 = FUN_003d2908();
+  FUN_003d4360(param_1);
+  return uVar1;
+}
+
+
+
 /* ok  address 0x3d4488  size 52 */
 /* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystem7getNameEv */
-/* Walaber::FileManager::FH_StandardFileSystem::getName */
+/* Walaber::FileManager::FH_StandardFileSystem::getName() */
 
 undefined8 Walaber::FileManager::FH_StandardFileSystem::getName(undefined8 param_1)
 

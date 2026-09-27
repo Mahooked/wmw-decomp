@@ -4,7 +4,7 @@
 
 /* ok  address 0x533a3c  size 320 */
 /* mangled: _ZN12WaterConcept22Screen_MusicCollection23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets */
+/* WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void*) */
 
 /* Walaber::AnimationCueAnimationTrack::addAnimationEvent(float, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
@@ -114,7 +114,7 @@ WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets
 
 /* ok  address 0x537250  size 700 */
 /* mangled: _ZN12WaterConcept22Screen_MusicCollection6updateEfb */
-/* WaterConcept::Screen_MusicCollection::update */
+/* WaterConcept::Screen_MusicCollection::update(float, bool) */
 
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -285,7 +285,7 @@ uint WaterConcept::Screen_MusicCollection::update(basic_string *param_1)
 
 /* ok  address 0x537558  size 412 */
 /* mangled: _ZN12WaterConcept22Screen_MusicCollection11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_MusicCollection::handleEvent */
+/* WaterConcept::Screen_MusicCollection::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -397,7 +397,7 @@ LAB_00537658:
 
 /* ok  address 0x5387cc  size 908 */
 /* mangled: _ZN12WaterConcept22Screen_MusicCollection9messageRxERKN7Walaber7MessageE */
-/* WaterConcept::Screen_MusicCollection::messageRx */
+/* WaterConcept::Screen_MusicCollection::messageRx(Walaber::Message const&) */
 
 /* WaterConcept::PlayerDataSerializer::serializeLevelInfo() */
 

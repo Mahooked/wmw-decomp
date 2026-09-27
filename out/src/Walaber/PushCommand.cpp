@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e8b00  size 412 */
 /* mangled: _ZN7Walaber11PushCommand19ResumeNotificationsEv */
-/* Walaber::PushCommand::ResumeNotifications */
+/* Walaber::PushCommand::ResumeNotifications() */
 
 void Walaber::PushCommand::ResumeNotifications
                (long param_1,uint param_2,long *param_3,uint *param_4)
@@ -53,7 +53,7 @@ void Walaber::PushCommand::ResumeNotifications
       }
     } while ((uVar7 == uVar8) || (uVar9 == uVar1));
     if (uVar7 <= *(uint *)(param_1 + 0x40)) {
-      iVar4 = ::TweenedLinearCurve::~TweenedLinearCurve(param_1,uVar7,local_58,&local_54);
+      iVar4 = TweenedLinearCurve::~TweenedLinearCurve(param_1,uVar7,local_58,&local_54);
       if ((iVar4 != 0 || local_58[0] != '\x04') || local_54 != param_2) {
         uVar7 = 0;
       }
@@ -98,7 +98,7 @@ LAB_003e8c4c:
 
 /* ok  address 0x3e8c9c  size 192 */
 /* mangled: _ZN7Walaber11PushCommand16LoadHeldCommandsEv */
-/* Walaber::PushCommand::LoadHeldCommands */
+/* Walaber::PushCommand::LoadHeldCommands() */
 
 void Walaber::PushCommand::LoadHeldCommands(long *param_1,int param_2)
 
@@ -143,7 +143,7 @@ void Walaber::PushCommand::LoadHeldCommands(long *param_1,int param_2)
 
 /* ok  address 0x3e8dc0  size 232 */
 /* mangled: _ZN7Walaber11PushCommand5ParseENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::PushCommand::Parse */
+/* Walaber::PushCommand::Parse(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::PushCommand::Parse(long param_1,undefined4 param_2,long *param_3)
 
@@ -201,7 +201,7 @@ void Walaber::PushCommand::Parse(long param_1,undefined4 param_2,long *param_3)
 
 /* ok  address 0x3e8f88  size 72 */
 /* mangled: _ZN7Walaber11PushCommand17PumpNotificationsEv */
-/* Walaber::PushCommand::PumpNotifications */
+/* Walaber::PushCommand::PumpNotifications() */
 
 void Walaber::PushCommand::PumpNotifications(long *param_1)
 
@@ -234,7 +234,7 @@ void Walaber::PushCommand::PumpNotifications(long *param_1)
 
 /* ok  address 0x3e8fd0  size 2596 */
 /* mangled: _ZN7Walaber11PushCommand11ValueAsBoolENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::PushCommand::ValueAsBool */
+/* Walaber::PushCommand::ValueAsBool(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::PushCommand::ValueAsBool(long *param_1)
 
@@ -692,7 +692,7 @@ code_r0x003e939c:
 
 /* ok  address 0x3e9bf0  size 192 */
 /* mangled: _ZN7Walaber11PushCommand11SaveCommandENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::PushCommand::SaveCommand */
+/* Walaber::PushCommand::SaveCommand(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::PushCommand::SaveCommand(long *param_1)
 
@@ -734,7 +734,7 @@ void Walaber::PushCommand::SaveCommand(long *param_1)
 
 /* ok  address 0x3e9de0  size 320 */
 /* mangled: _ZN7Walaber11PushCommand8RegisterENS_9SharedPtrINS_8CallbackEEENSt6__ndk112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEESA_SA_ */
-/* Walaber::PushCommand::Register */
+/* Walaber::PushCommand::Register(Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::PushCommand::Register(undefined8 *param_1,long *param_2)
 
@@ -813,7 +813,7 @@ void Walaber::PushCommand::Register(undefined8 *param_1,long *param_2)
 
 /* ok  address 0x3ea018  size 204 */
 /* mangled: _ZN7Walaber11PushCommand11ParseKVpairENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERNS1_3mapIS7_S7_NS1_4lessIS7_EENS5_INS1_4pairIKS7_S7_EEEEEE */
-/* Walaber::PushCommand::ParseKVpair */
+/* Walaber::PushCommand::ParseKVpair(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::map<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>&) */
 
 void Walaber::PushCommand::ParseKVpair
                (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,

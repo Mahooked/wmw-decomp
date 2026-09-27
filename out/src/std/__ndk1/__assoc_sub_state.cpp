@@ -4,7 +4,7 @@
 
 /* ok  address 0x5f0bc0  size 636 */
 /* mangled: _ZNSt6__ndk117__assoc_sub_state13set_exceptionESt13exception_ptr */
-/* std::__ndk1::__assoc_sub_state::set_exception */
+/* std::__ndk1::__assoc_sub_state::set_exception(std::exception_ptr) */
 
 /* WaterConcept::Screen_LevelSelect::_buildUI() */
 
@@ -140,7 +140,7 @@ switchD_005f0c44_caseD_4:
 
 /* ok  address 0x5f0e8c  size 4 */
 /* mangled: _ZNSt6__ndk117__assoc_sub_state28set_exception_at_thread_exitESt13exception_ptr */
-/* std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit */
+/* std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std::exception_ptr) */
 
 /* WaterConcept::Screen_LevelSelect::exit() */
 

@@ -4,7 +4,7 @@
 
 /* ok  address 0x4617b8  size 404 */
 /* mangled: _ZN12WaterConcept7YSwitch16strToYSwitchPortERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::YSwitch::strToYSwitchPort */
+/* WaterConcept::YSwitch::strToYSwitchPort(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 /* Walaber::SpriteBatch::drawStringClipped(Walaber::BitmapFont*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Vector2 const&,
@@ -77,7 +77,7 @@ LAB_00461918:
 
 /* ok  address 0x498ccc  size 88 */
 /* mangled: _ZN12WaterConcept7YSwitch6updateEf */
-/* WaterConcept::YSwitch::update */
+/* WaterConcept::YSwitch::update(float) */
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D> >::~SharedPtr() */
 
@@ -103,7 +103,7 @@ void __thiscall WaterConcept::YSwitch::update(YSwitch *this)
 
 /* ok  address 0x498d24  size 272 */
 /* mangled: _ZN12WaterConcept7YSwitch19_updateToggleSpriteEv */
-/* WaterConcept::YSwitch::_updateToggleSprite */
+/* WaterConcept::YSwitch::_updateToggleSprite() */
 
 /* Walaber::Texture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color> > >) */
@@ -166,7 +166,7 @@ LAB_00498e30:
 
 /* ok  address 0x498e50  size 452 */
 /* mangled: _ZN12WaterConcept7YSwitch17_updatePlugSpriteEf */
-/* WaterConcept::YSwitch::_updatePlugSprite */
+/* WaterConcept::YSwitch::_updatePlugSprite(float) */
 
 /* Walaber::Texture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color> > >, int, int, int, int, int, int, int) */
@@ -247,7 +247,7 @@ LAB_00499010:
 
 /* ok  address 0x499030  size 116 */
 /* mangled: _ZN12WaterConcept7YSwitch15handleTouchDownERKN7Walaber7Vector2E */
-/* WaterConcept::YSwitch::handleTouchDown */
+/* WaterConcept::YSwitch::handleTouchDown(Walaber::Vector2 const&) */
 
 /* Walaber::Texture2D::_applySettings() */
 
@@ -269,7 +269,7 @@ void __thiscall WaterConcept::YSwitch::handleTouchDown(YSwitch *this)
 
 /* ok  address 0x4990a4  size 292 */
 /* mangled: _ZN12WaterConcept7YSwitch18setYSwitchPositionEb */
-/* WaterConcept::YSwitch::setYSwitchPosition */
+/* WaterConcept::YSwitch::setYSwitchPosition(bool) */
 
 /* Walaber::Texture2D::_failedToLoad(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
@@ -340,7 +340,7 @@ void __thiscall WaterConcept::YSwitch::setYSwitchPosition(YSwitch *this,basic_st
 
 /* ok  address 0x4991f8  size 192 */
 /* mangled: _ZN12WaterConcept7YSwitch12addParticlesERKNS_19ParticleDescriptionEiNS_11YSwitchPortEif */
-/* WaterConcept::YSwitch::addParticles */
+/* WaterConcept::YSwitch::addParticles(WaterConcept::ParticleDescription const&, int, WaterConcept::YSwitchPort, int, float) */
 
 /* Walaber::Texture2D::bufferFromImageData(unsigned char*, int, int) */
 
@@ -383,7 +383,7 @@ void WaterConcept::YSwitch::addParticles(uchar *param_1,int param_2,int param_3)
 
 /* ok  address 0x499464  size 116 */
 /* mangled: _ZN12WaterConcept7YSwitch13_initFinishedEv */
-/* WaterConcept::YSwitch::_initFinished */
+/* WaterConcept::YSwitch::_initFinished() */
 
 /* Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */

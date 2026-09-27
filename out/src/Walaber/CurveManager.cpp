@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e1cec  size 320 */
 /* mangled: _ZN7Walaber12CurveManager20_initCurveFileLoadedEPv */
-/* Walaber::CurveManager::_initCurveFileLoaded */
+/* Walaber::CurveManager::_initCurveFileLoaded(void*) */
 
 void Walaber::CurveManager::_initCurveFileLoaded(long param_1,undefined4 *param_2)
 
@@ -90,7 +90,7 @@ LAB_003e1d70:
 
 /* ok  address 0x3e2188  size 96 */
 /* mangled: _ZN7Walaber12CurveManager19loadCurveCollectionERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEE */
-/* Walaber::CurveManager::loadCurveCollection */
+/* Walaber::CurveManager::loadCurveCollection(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>) */
 
 void Walaber::CurveManager::loadCurveCollection(long param_1)
 
@@ -131,7 +131,7 @@ void Walaber::CurveManager::loadCurveCollection(long param_1)
 
 /* ok  address 0x3e23c8  size 168 */
 /* mangled: _ZN7Walaber12CurveManager26_initCurveCollectionLoadedEPv */
-/* Walaber::CurveManager::_initCurveCollectionLoaded */
+/* Walaber::CurveManager::_initCurveCollectionLoaded(void*) */
 
 undefined4 Walaber::CurveManager::_initCurveCollectionLoaded(long param_1,ulong param_2)
 
@@ -170,7 +170,7 @@ undefined4 Walaber::CurveManager::_initCurveCollectionLoaded(long param_1,ulong 
 
 /* ok  address 0x3e25d4  size 144 */
 /* mangled: _ZN7Walaber12CurveManager21unloadCurveCollectionERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::CurveManager::unloadCurveCollection */
+/* Walaber::CurveManager::unloadCurveCollection(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::CurveManager::unloadCurveCollection(long *param_1,uint param_2)
 
@@ -184,7 +184,7 @@ void Walaber::CurveManager::unloadCurveCollection(long *param_1,uint param_2)
       puVar1 = (uint *)(lVar2 + 0x18);
       lVar2 = *(long *)(lVar2 + 0x38);
       if (param_2 < *puVar1) {
-        ::Curve::~Curve();
+        Curve::~Curve();
       }
     }
     if (param_2 == 0) {
@@ -208,7 +208,7 @@ void Walaber::CurveManager::unloadCurveCollection(long *param_1,uint param_2)
 
 /* ok  address 0x3e2918  size 288 */
 /* mangled: _ZN7Walaber12CurveManager17_loadV2CollectionERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPcj */
-/* Walaber::CurveManager::_loadV2Collection */
+/* Walaber::CurveManager::_loadV2Collection(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, char*, unsigned int) */
 
 void Walaber::CurveManager::_loadV2Collection(long param_1)
 
@@ -268,7 +268,7 @@ LAB_003e2958:
 
 /* ok  address 0x3e34c8  size 116 */
 /* mangled: _ZN7Walaber12CurveManager17_loadV1CollectionERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPcj */
-/* Walaber::CurveManager::_loadV1Collection */
+/* Walaber::CurveManager::_loadV1Collection(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, char*, unsigned int) */
 
 void Walaber::CurveManager::_loadV1Collection(long param_1)
 

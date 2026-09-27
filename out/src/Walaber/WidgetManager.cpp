@@ -4,7 +4,7 @@
 
 /* ok  address 0x36b0f4  size 308 */
 /* mangled: _ZN7Walaber13WidgetManager6updateEf */
-/* Walaber::WidgetManager::update */
+/* Walaber::WidgetManager::update(float) */
 
 undefined4 Walaber::WidgetManager::update(long param_1,undefined8 param_2,undefined8 *param_3)
 
@@ -47,7 +47,7 @@ undefined4 Walaber::WidgetManager::update(long param_1,undefined8 param_2,undefi
 
 /* ok  address 0x36ba58  size 1892 */
 /* mangled: _ZN7Walaber13WidgetManager15updateCustomizeEv */
-/* Walaber::WidgetManager::updateCustomize */
+/* Walaber::WidgetManager::updateCustomize() */
 
 void Walaber::WidgetManager::updateCustomize(long param_1)
 
@@ -317,7 +317,7 @@ LAB_0036bcf0:
 
 /* ok  address 0x36c1bc  size 424 */
 /* mangled: _ZN7Walaber13WidgetManager14drawLayerRangeERNS_11SpriteBatchEPNS_6CameraEii */
-/* Walaber::WidgetManager::drawLayerRange */
+/* Walaber::WidgetManager::drawLayerRange(Walaber::SpriteBatch&, Walaber::Camera*, int, int) */
 
 undefined8 Walaber::WidgetManager::drawLayerRange(long param_1)
 
@@ -352,7 +352,7 @@ undefined8 Walaber::WidgetManager::drawLayerRange(long param_1)
       cVar5 = **(char **)(*(long *)(param_1 + 0x38) + 0x20);
       if (cVar5 == '\'') {
         xmlNextChar(param_1);
-        uVar4 = xmlParseVersionNum(param_1);
+        uVar4 = Widget_IconList::operator=(param_1);
         bVar1 = **(char **)(*(long *)(param_1 + 0x38) + 0x20) == '\'';
 LAB_0036c318:
         if (bVar1) {
@@ -364,7 +364,7 @@ LAB_0036c318:
       }
       if (cVar5 == '\"') {
         xmlNextChar(param_1);
-        uVar4 = xmlParseVersionNum(param_1);
+        uVar4 = Widget_IconList::operator=(param_1);
         bVar1 = **(char **)(*(long *)(param_1 + 0x38) + 0x20) == '\"';
         goto LAB_0036c318;
       }
@@ -382,7 +382,7 @@ LAB_0036c318:
 
 /* ok  address 0x36c620  size 768 */
 /* mangled: _ZN7Walaber13WidgetManager14drawLayerRangeERNS_11SpriteBatchEii */
-/* Walaber::WidgetManager::drawLayerRange */
+/* Walaber::WidgetManager::drawLayerRange(Walaber::SpriteBatch&, int, int) */
 
 void Walaber::WidgetManager::drawLayerRange(long param_1,undefined8 param_2,undefined8 param_3)
 
@@ -512,7 +512,7 @@ LAB_0036c8e0:
 
 /* ok  address 0x36c920  size 204 */
 /* mangled: _ZN7Walaber13WidgetManager13_clearFingersEv */
-/* Walaber::WidgetManager::_clearFingers */
+/* Walaber::WidgetManager::_clearFingers() */
 
 void Walaber::WidgetManager::_clearFingers(long *param_1)
 
@@ -543,7 +543,7 @@ void Walaber::WidgetManager::_clearFingers(long *param_1)
 
 /* ok  address 0x36d03c  size 656 */
 /* mangled: _ZN7Walaber13WidgetManager7touchUpEiNS_7Vector2E */
-/* Walaber::WidgetManager::touchUp */
+/* Walaber::WidgetManager::touchUp(int, Walaber::Vector2) */
 
 /* WARNING: Removing unreachable block (ram,0x0036d16c) */
 
@@ -578,7 +578,7 @@ long Walaber::WidgetManager::touchUp(long *param_1)
   }
   xmlNextChar(param_1);
   if (((*(byte *)((long)param_1 + 0x23e) >> 4 & 1) == 0) &&
-     (lVar2 = const_Walaber::SoundManager::getFilenameForSoundInGroup(lVar1), lVar2 != 0)) {
+     (lVar2 = SoundManager::getFilenameForSoundInGroup(lVar1), lVar2 != 0)) {
     return lVar2;
   }
   param_1[0x58] = param_1[0x58] + 1;
@@ -593,7 +593,7 @@ long Walaber::WidgetManager::touchUp(long *param_1)
   iVar6 = (int)param_1[3];
   if ((lVar2 == 0) && (iVar6 == 1)) {
     if ((*(byte *)((long)param_1 + 0x23e) >> 4 & 1) != 0) {
-      lVar2 = const_Walaber::SoundManager::getFilenameForSoundInGroup(lVar1);
+      lVar2 = SoundManager::getFilenameForSoundInGroup(lVar1);
       iVar6 = (int)param_1[3];
       goto LAB_0036d180;
     }
@@ -659,7 +659,7 @@ LAB_0036d2bc:
 
 /* ok  address 0x36d2cc  size 888 */
 /* mangled: _ZN7Walaber13WidgetManager15getBoundingAreaEv */
-/* Walaber::WidgetManager::getBoundingArea */
+/* Walaber::WidgetManager::getBoundingArea() */
 
 int Walaber::WidgetManager::getBoundingArea
               (undefined8 *param_1,long param_2,long param_3,long *param_4)
@@ -825,6 +825,75 @@ int Walaber::WidgetManager::getBoundingArea
     }
   }
   return 1;
+}
+
+
+
+/* ok  address 0x49ca44  size 288 */
+/* mangled: _ZN7Walaber13WidgetManagerC2ERKS0_ */
+/* Walaber::WidgetManager::WidgetManager(Walaber::WidgetManager const&) */
+
+/* Walaber::TextureManager::loadTextureSettings(std::__ndk1::basic_string<char,
+   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
+
+void __thiscall Walaber::WidgetManager::WidgetManager(WidgetManager *this,basic_string *param_1)
+
+{
+  long lVar1;
+  undefined8 *puVar2;
+  int *piVar3;
+  Screen_EditorObjectSelect *pSVar4;
+  undefined8 *local_a0;
+  int *piStack_98;
+  undefined8 *local_90;
+  int *piStack_88;
+  undefined8 *local_80;
+  int *piStack_78;
+  undefined8 *local_70;
+  int *local_68;
+  PropertyList aPStack_60 [24];
+  undefined8 *local_48;
+  int *piStack_40;
+  long local_38;
+  
+  lVar1 = tpidr_el0;
+  local_38 = *(long *)(lVar1 + 0x28);
+  PropertyList::PropertyList(aPStack_60);
+  puVar2 = operator_new(0x28);
+  puVar2[2] = this;
+  *puVar2 = &PTR__Callback_00810348;
+  puVar2[1] = 0;
+  puVar2[4] = 0;
+  puVar2[3] = TextureManager::_loadedTextureSettings;
+  local_70 = puVar2;
+  piVar3 = operator_new(4);
+  *piVar3 = 3;
+  local_90 = puVar2;
+  piStack_88 = piVar3;
+  local_68 = piVar3;
+  local_48 = puVar2;
+  piStack_40 = piVar3;
+  SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_48);
+  *piVar3 = *piVar3 + 1;
+  local_80 = puVar2;
+  piStack_78 = piVar3;
+  SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_90);
+  pSVar4 = (Screen_EditorObjectSelect *)FileManager::getInstancePtr();
+  local_a0 = local_80;
+  piStack_98 = piStack_78;
+  if (local_80 != (undefined8 *)0x0) {
+    *piStack_78 = *piStack_78 + 1;
+  }
+  WaterConcept::Screen_EditorObjectSelect::messageRx(pSVar4,param_1,&local_a0,aPStack_60,0);
+  SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_a0);
+  SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_80);
+  WaterConcept::Notification::touchDown((Notification *)&local_70);
+  PropertyList::~PropertyList(aPStack_60);
+  if (*(long *)(lVar1 + 0x28) == local_38) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
 }
 
 

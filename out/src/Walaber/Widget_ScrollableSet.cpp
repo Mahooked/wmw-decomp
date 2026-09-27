@@ -4,7 +4,7 @@
 
 /* ok  address 0x38812c  size 268 */
 /* mangled: _ZN7Walaber20Widget_ScrollableSet6updateEfRNS_6Widget15WidgetActionRetE */
-/* Walaber::Widget_ScrollableSet::update */
+/* Walaber::Widget_ScrollableSet::update(float, Walaber::Widget::WidgetActionRet&) */
 
 void Walaber::Widget_ScrollableSet::update(long *param_1)
 

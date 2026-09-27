@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d7fd4  size 24 */
 /* mangled: _ZN7Walaber12ZipUtilities12_xmlFileReadEPv */
-/* Walaber::ZipUtilities::_xmlFileRead */
+/* Walaber::ZipUtilities::_xmlFileRead(void*) */
 
 undefined1 Walaber::ZipUtilities::_xmlFileRead(long param_1)
 
@@ -16,7 +16,7 @@ undefined1 Walaber::ZipUtilities::_xmlFileRead(long param_1)
 
 /* ok  address 0x3d8dfc  size 8 */
 /* mangled: _ZN7Walaber12ZipUtilities15_handleTexturesENS_11XMLDocument13NamedIteratorE */
-/* Walaber::ZipUtilities::_handleTextures */
+/* Walaber::ZipUtilities::_handleTextures(Walaber::XMLDocument::NamedIterator) */
 
 undefined8 Walaber::ZipUtilities::_handleTextures(long param_1)
 
@@ -28,7 +28,7 @@ undefined8 Walaber::ZipUtilities::_handleTextures(long param_1)
 
 /* ok  address 0x3d9018  size 288 */
 /* mangled: _ZN7Walaber12ZipUtilities14_handleAtlasesENS_11XMLDocument13NamedIteratorE */
-/* Walaber::ZipUtilities::_handleAtlases */
+/* Walaber::ZipUtilities::_handleAtlases(Walaber::XMLDocument::NamedIterator) */
 
 undefined8
 Walaber::ZipUtilities::_handleAtlases(long param_1,undefined8 *param_2,uint param_3,uint param_4)
@@ -98,7 +98,7 @@ Walaber::ZipUtilities::_handleAtlases(long param_1,undefined8 *param_2,uint para
 
 /* ok  address 0x3d9138  size 8 */
 /* mangled: _ZN7Walaber12ZipUtilities21_handleStreamedTracksENS_11XMLDocument13NamedIteratorE */
-/* Walaber::ZipUtilities::_handleStreamedTracks */
+/* Walaber::ZipUtilities::_handleStreamedTracks(Walaber::XMLDocument::NamedIterator) */
 
 undefined8 Walaber::ZipUtilities::_handleStreamedTracks(long param_1)
 
@@ -110,7 +110,7 @@ undefined8 Walaber::ZipUtilities::_handleStreamedTracks(long param_1)
 
 /* ok  address 0x3d9490  size 100 */
 /* mangled: _ZN7Walaber12ZipUtilities17_fileReadCallbackEPv */
-/* Walaber::ZipUtilities::_fileReadCallback */
+/* Walaber::ZipUtilities::_fileReadCallback(void*) */
 
 undefined8 Walaber::ZipUtilities::_fileReadCallback(long param_1)
 

@@ -4,7 +4,7 @@
 
 /* ok  address 0x5a8e80  size 92 */
 /* mangled: _ZNSt6__ndk113basic_istreamIwNS_11char_traitsIwEEE4swapERS3_ */
-/* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>::swap */
+/* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>::swap(std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>&) */
 
 /* Walaber::SoundManager::getLiveTracksInGroup(int) */
 

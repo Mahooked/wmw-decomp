@@ -4,7 +4,7 @@
 
 /* ok  address 0x3f8040  size 152 */
 /* mangled: _ZN7Walaber15Transition_Wipe6updateEf */
-/* Walaber::Transition_Wipe::update */
+/* Walaber::Transition_Wipe::update(float) */
 
 void Walaber::Transition_Wipe::update(long *param_1,int param_2)
 
@@ -47,7 +47,7 @@ void Walaber::Transition_Wipe::update(long *param_1,int param_2)
 
 /* ok  address 0x3f80d8  size 920 */
 /* mangled: _ZN7Walaber15Transition_Wipe4drawEv */
-/* Walaber::Transition_Wipe::draw */
+/* Walaber::Transition_Wipe::draw() */
 
 uint Walaber::Transition_Wipe::draw(long param_1,undefined1 *param_2,ulong param_3)
 

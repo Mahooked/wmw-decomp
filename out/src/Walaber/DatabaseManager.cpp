@@ -4,7 +4,7 @@
 
 /* ok  address 0x32c404  size 64 */
 /* mangled: _ZN7Walaber15DatabaseManager8_readSQLEPv */
-/* Walaber::DatabaseManager::_readSQL */
+/* Walaber::DatabaseManager::_readSQL(void*) */
 
 void Walaber::DatabaseManager::_readSQL(void)
 

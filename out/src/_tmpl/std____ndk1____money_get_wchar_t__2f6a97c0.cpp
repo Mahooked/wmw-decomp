@@ -4,7 +4,7 @@
 
 /* ok  address 0x5cb22c  size 80 */
 /* mangled: _ZNSt6__ndk111__money_getIwE13__gather_infoEbRKNS_6localeERNS_10money_base7patternERwS8_RNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS9_IwNSA_IwEENSC_IwEEEESJ_SJ_Ri */
-/* std::__ndk1::__money_get<wchar_t>::__gather_info */
+/* std::__ndk1::__money_get<wchar_t>::__gather_info(bool, std::__ndk1::locale const&, std::__ndk1::money_base::pattern&, wchar_t&, wchar_t&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>&, std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>&, int&) */
 
 /* WaterConcept::Screen_Editor::_worldToScreen(Walaber::Vector2 const&) */
 

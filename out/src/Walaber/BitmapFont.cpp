@@ -4,7 +4,7 @@
 
 /* ok  address 0x36471c  size 832 */
 /* mangled: _ZN7Walaber10BitmapFont4loadENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEE */
-/* Walaber::BitmapFont::load */
+/* Walaber::BitmapFont::load(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>) */
 
 void * Walaber::BitmapFont::load(long param_1)
 
@@ -150,9 +150,29 @@ LAB_00364a24:
 
 
 
+/* ok  address 0x366398  size 84 */
+/* mangled: _ZNK7Walaber10BitmapFont17_wrapStringAtWordERiRKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEff */
+/* Walaber::BitmapFont::_wrapStringAtWord(int&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, float) const */
+
+void const_Walaber::BitmapFont::_wrapStringAtWord(long param_1)
+
+{
+  int iVar1;
+  
+  xmlParserInputShrink(*(undefined8 *)(param_1 + 0x38));
+  if ((**(char **)(*(long *)(param_1 + 0x38) + 0x20) == '\0') &&
+     (iVar1 = Walaber::XML::parseAspectRatio(*(long *)(param_1 + 0x38),0xfa), iVar1 < 1)) {
+    xmlPopInput(param_1);
+    return;
+  }
+  return;
+}
+
+
+
 /* ok  address 0x367e24  size 264 */
 /* mangled: _ZN7Walaber10BitmapFont14drawStringWrapEPKcRKNS_7Vector2EfffRKNS_5ColorENS0_13JustificationE */
-/* Walaber::BitmapFont::drawStringWrap */
+/* Walaber::BitmapFont::drawStringWrap(char const*, Walaber::Vector2 const&, float, float, float, Walaber::Color const&, Walaber::BitmapFont::Justification) */
 
 byte * Walaber::BitmapFont::drawStringWrap(undefined8 param_1)
 
@@ -194,7 +214,7 @@ byte * Walaber::BitmapFont::drawStringWrap(undefined8 param_1)
 
 /* ok  address 0x367ff4  size 1468 */
 /* mangled: _ZN7Walaber10BitmapFont9_wrapTextERiNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEff */
-/* Walaber::BitmapFont::_wrapText */
+/* Walaber::BitmapFont::_wrapText(int&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float, float) */
 
 void Walaber::BitmapFont::_wrapText(long *param_1)
 
@@ -409,7 +429,7 @@ LAB_0036846c:
 
 /* ok  address 0x3685b0  size 792 */
 /* mangled: _ZN7Walaber10BitmapFont14_wrapTextScaleERffNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEERKNS_7Vector2E */
-/* Walaber::BitmapFont::_wrapTextScale */
+/* Walaber::BitmapFont::_wrapTextScale(float&, float, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Vector2 const&) */
 
 void Walaber::BitmapFont::_wrapTextScale(long *param_1)
 
@@ -509,7 +529,7 @@ LAB_0036889c:
 
 /* ok  address 0x3688c8  size 2132 */
 /* mangled: _ZN7Walaber10BitmapFont21_insertQuadIntoBufferEi */
-/* Walaber::BitmapFont::_insertQuadIntoBuffer */
+/* Walaber::BitmapFont::_insertQuadIntoBuffer(int) */
 
 void Walaber::BitmapFont::_insertQuadIntoBuffer(long *param_1)
 

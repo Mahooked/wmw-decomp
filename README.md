@@ -90,15 +90,15 @@ out/
 ## Recovered source
 
 `out/src/` holds the decompiler output, organised by owning class. 2,131
-functions were named from the ELF symbol table and decompiled across 568 groups:
+functions were named from the ELF symbol table and decompiled across 641 groups:
 
 | | |
 |---|---|
 | Functions decompiled | 2,131 (2,129 clean, 2 failed) |
 | Named by exact address | 102 |
 | Named by nearest preceding symbol | 2,029 |
-| Functions moved into C++ namespaces | 1,146 |
-| Real class files | 160 (`Walaber` 84, `WaterConcept` 68, `const_Walaber` 6, `const_WaterConcept` 2) |
+| Functions moved into C++ namespaces | 1,159 |
+| Real class files | 165 (`Walaber` 94, `WaterConcept` 71) |
 | Median function body | 148 instructions |
 
 The symbol table is larger than 2,131 because Ghidra's function boundaries

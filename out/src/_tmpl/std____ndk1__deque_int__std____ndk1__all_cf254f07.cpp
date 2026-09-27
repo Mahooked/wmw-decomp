@@ -4,7 +4,7 @@
 
 /* ok  address 0x48010c  size 76 */
 /* mangled: _ZNSt6__ndk15dequeIiNS_9allocatorIiEEE9push_backEOi */
-/* std::__ndk1::deque<int, std::__ndk1::allocator<int>>::push_back */
+/* std::__ndk1::deque<int, std::__ndk1::allocator<int>>::push_back(int&&) */
 
 /* Walaber::Widget_Label::setBGTexture(Walaber::SharedPtr<Walaber::Texture>) */
 
@@ -33,7 +33,7 @@ void __thiscall Walaber::Widget_Label::setBGTexture(Widget_Label *this,SharedPtr
 
 /* ok  address 0x480194  size 1264 */
 /* mangled: _ZNSt6__ndk15dequeIiNS_9allocatorIiEEE19__add_back_capacityEv */
-/* std::__ndk1::deque<int, std::__ndk1::allocator<int>>::__add_back_capacity */
+/* std::__ndk1::deque<int, std::__ndk1::allocator<int>>::__add_back_capacity() */
 
 /* Walaber::Widget_Label::draw(Walaber::SpriteBatch*) */
 

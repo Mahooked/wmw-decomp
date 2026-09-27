@@ -4,7 +4,7 @@
 
 /* ok  address 0x4db8e8  size 20 */
 /* mangled: _ZN12WaterConcept29Screen_GraphicsContextRestore6updateEfb */
-/* WaterConcept::Screen_GraphicsContextRestore::update */
+/* WaterConcept::Screen_GraphicsContextRestore::update(float, bool) */
 
 void WaterConcept::Screen_GraphicsContextRestore::update(undefined8 param_1)
 
@@ -17,7 +17,7 @@ void WaterConcept::Screen_GraphicsContextRestore::update(undefined8 param_1)
 
 /* ok  address 0x4db910  size 8 */
 /* mangled: _ZN12WaterConcept29Screen_GraphicsContextRestore4drawEi */
-/* WaterConcept::Screen_GraphicsContextRestore::draw */
+/* WaterConcept::Screen_GraphicsContextRestore::draw(int) */
 
 void WaterConcept::Screen_GraphicsContextRestore::draw(void)
 

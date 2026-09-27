@@ -4,7 +4,7 @@
 
 /* ok  address 0x3dfaa8  size 276 */
 /* mangled: _ZN7Walaber4AABB15expandToIncludeERKNS_7Vector2E */
-/* Walaber::AABB::expandToInclude */
+/* Walaber::AABB::expandToInclude(Walaber::Vector2 const&) */
 
 undefined8 Walaber::AABB::expandToInclude(long param_1,long param_2)
 
@@ -20,22 +20,21 @@ undefined8 Walaber::AABB::expandToInclude(long param_1,long param_2)
       if (((((*(byte *)(param_2 + 0x28) >> 2 & 1) == 0) && (*(char *)(param_1 + 0x13) != '\x03')) ||
           (uVar3 = Curve::writeToBuffer(param_1,1), (int)uVar3 == 0)) &&
          (((*(uint *)(param_2 + 0x18) <= *(uint *)(param_1 + 0x1c) ||
-           (iVar2 = const_Walaber::AABB::intersects(param_2), iVar2 == 0)) ||
-          (uVar3 = const_Walaber::BezierCurve::_evaluateCurve(param_2), (int)uVar3 == 0)))) {
+           (iVar2 = intersects(param_2), iVar2 == 0)) ||
+          (uVar3 = BezierCurve::_evaluateCurve(param_2), (int)uVar3 == 0)))) {
         uVar3 = FUN_003e05e8(param_1,param_2);
         iVar2 = (int)uVar3;
         goto joined_r0x003dfb88;
       }
     }
     else {
-      iVar2 = const_Walaber::AABB::intersects(param_2);
-      if ((iVar2 == 0) ||
-         (uVar3 = const_Walaber::BezierCurve::_evaluateCurve(param_2), (int)uVar3 == 0)) {
+      iVar2 = intersects(param_2);
+      if ((iVar2 == 0) || (uVar3 = BezierCurve::_evaluateCurve(param_2), (int)uVar3 == 0)) {
         uVar3 = BezierCurve::loadFromXmlNode(param_1,param_2,0,0,0);
         iVar2 = (int)uVar3;
 joined_r0x003dfb88:
         if (iVar2 == 0) {
-          ::Curve::~Curve(param_2);
+          Curve::~Curve(param_2);
           goto LAB_003dfac8;
         }
       }
@@ -51,6 +50,38 @@ LAB_003dfac8:
     uVar3 = 0;
   }
   return uVar3;
+}
+
+
+
+/* ok  address 0x3dfbbc  size 120 */
+/* mangled: _ZNK7Walaber4AABB10intersectsERKS0_ */
+/* Walaber::AABB::intersects(Walaber::AABB const&) const */
+
+undefined8 Walaber::AABB::intersects(long param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  long lVar4;
+  uint *puVar5;
+  
+  iVar2 = *(int *)(*(long *)(param_1 + 0x20) + 0x80);
+  if (0 < iVar2) {
+    uVar1 = *(uint *)(param_1 + 0x18);
+    lVar4 = 0;
+    puVar5 = (uint *)(*(long *)(*(long *)(param_1 + 0x20) + 0x78) + 0x18);
+    do {
+      if ((uVar1 <= *puVar5) &&
+         (iVar3 = Curve::getMinMaxNonTimeValue(*(undefined8 *)(puVar5 + -2),uVar1), iVar3 == 0)) {
+        return 1;
+      }
+      lVar4 = lVar4 + 1;
+      puVar5 = puVar5 + 0xc;
+    } while (lVar4 < iVar2);
+  }
+  return 0;
 }
 
 

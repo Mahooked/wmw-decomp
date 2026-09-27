@@ -4,7 +4,7 @@
 
 /* ok  address 0x49a6e0  size 88 */
 /* mangled: _ZN12WaterConcept12Notification9touchDownEiN7Walaber7Vector2E */
-/* WaterConcept::Notification::touchDown */
+/* WaterConcept::Notification::touchDown(int, Walaber::Vector2) */
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<Walaber::TextureManager> >::~SharedPtr() */
 
@@ -30,7 +30,7 @@ void __thiscall WaterConcept::Notification::touchDown(Notification *this)
 
 /* ok  address 0x49a738  size 3916 */
 /* mangled: _ZN12WaterConcept12Notification10touchMovedEiN7Walaber7Vector2ES2_ */
-/* WaterConcept::Notification::touchMoved */
+/* WaterConcept::Notification::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
 /* Walaber::TextureManager::getTexture(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,

@@ -4,7 +4,7 @@
 
 /* ok  address 0x46f2c8  size 252 */
 /* mangled: _ZNSt6__ndk16vectorIcNS_9allocatorIcEEE11__vallocateEm */
-/* std::__ndk1::vector<char, std::__ndk1::allocator<char>>::__vallocate */
+/* std::__ndk1::vector<char, std::__ndk1::allocator<char>>::__vallocate(unsigned long) */
 
 /* Walaber::QuadHelper::drawQuad(Walaber::Vector2 const&, float, Walaber::Vector2 const&,
    Walaber::Color const&) */

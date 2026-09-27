@@ -4,7 +4,7 @@
 
 /* ok  address 0x40d3a8  size 148 */
 /* mangled: _ZN12WaterConcept12GameSettings33packAndLevelInfoFromLevelFilenameERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERS7_RiSA_SA_SB_SB_RbSC_NS1_6vectorIiNS5_IiEEEEb */
-/* WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename */
+/* WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, int&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&, int&, int&, bool&, bool&, std::__ndk1::vector<int, std::__ndk1::allocator<int>>, bool) */
 
 void WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
                (undefined8 param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,
@@ -27,7 +27,7 @@ void WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
 
 /* ok  address 0x40f7ac  size 316 */
 /* mangled: _ZN12WaterConcept12GameSettings11goPlayLevelERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEiNS1_6vectorIiNS5_IiEEEEb */
-/* WaterConcept::GameSettings::goPlayLevel */
+/* WaterConcept::GameSettings::goPlayLevel(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int, std::__ndk1::vector<int, std::__ndk1::allocator<int>>, bool) */
 
 undefined8 *
 WaterConcept::GameSettings::goPlayLevel(undefined8 param_1,undefined8 *param_2,undefined4 param_3)
@@ -74,7 +74,7 @@ WaterConcept::GameSettings::goPlayLevel(undefined8 param_1,undefined8 *param_2,u
 
 /* ok  address 0x410d84  size 136 */
 /* mangled: _ZN12WaterConcept12GameSettings25setStandardFadePropertiesERN7Walaber12PropertyListE */
-/* WaterConcept::GameSettings::setStandardFadeProperties */
+/* WaterConcept::GameSettings::setStandardFadeProperties(Walaber::PropertyList&) */
 
 undefined8 WaterConcept::GameSettings::setStandardFadeProperties(long param_1,long param_2)
 
@@ -106,7 +106,7 @@ undefined8 WaterConcept::GameSettings::setStandardFadeProperties(long param_1,lo
 
 /* ok  address 0x410f70  size 144 */
 /* mangled: _ZN12WaterConcept12GameSettings20getChallengeForLevelERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERbSA_ */
-/* WaterConcept::GameSettings::getChallengeForLevel */
+/* WaterConcept::GameSettings::getChallengeForLevel(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, bool&, bool&) */
 
 undefined1 *
 WaterConcept::GameSettings::getChallengeForLevel
@@ -133,7 +133,7 @@ WaterConcept::GameSettings::getChallengeForLevel
 
 /* ok  address 0x4118f8  size 20 */
 /* mangled: _ZN12WaterConcept12GameSettings13playCinematicERN7Walaber12PropertyListEiNS_11ScreenTypesE */
-/* WaterConcept::GameSettings::playCinematic */
+/* WaterConcept::GameSettings::playCinematic(Walaber::PropertyList&, int, WaterConcept::ScreenTypes) */
 
 ulong WaterConcept::GameSettings::playCinematic(byte *param_1)
 
@@ -168,7 +168,7 @@ ulong WaterConcept::GameSettings::playCinematic(byte *param_1)
 
 /* ok  address 0x411f8c  size 312 */
 /* mangled: _ZN12WaterConcept12GameSettings20updateLOTWParametersEN21WaterConceptConstants16LOWStorylineTypeE */
-/* WaterConcept::GameSettings::updateLOTWParameters */
+/* WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOWStorylineType) */
 
 undefined4 WaterConcept::GameSettings::updateLOTWParameters(char *param_1,char *param_2)
 
@@ -233,7 +233,7 @@ undefined4 WaterConcept::GameSettings::updateLOTWParameters(char *param_1,char *
 
 /* ok  address 0x412b40  size 516 */
 /* mangled: _ZN12WaterConcept12GameSettings15goPlayLOTWLevelEN21WaterConceptConstants16LOWStorylineTypeE */
-/* WaterConcept::GameSettings::goPlayLOTWLevel */
+/* WaterConcept::GameSettings::goPlayLOTWLevel(WaterConceptConstants::LOWStorylineType) */
 
 uint WaterConcept::GameSettings::goPlayLOTWLevel
                (long *param_1,long param_2,undefined4 param_3,undefined4 param_4,int param_5)
@@ -316,7 +316,7 @@ uint WaterConcept::GameSettings::goPlayLOTWLevel
 
 /* ok  address 0x416d60  size 92 */
 /* mangled: _ZN12WaterConcept12GameSettings19unlockNextLevelPackERi */
-/* WaterConcept::GameSettings::unlockNextLevelPack */
+/* WaterConcept::GameSettings::unlockNextLevelPack(int&) */
 
 void WaterConcept::GameSettings::unlockNextLevelPack(undefined8 param_1,int *param_2)
 
@@ -345,7 +345,7 @@ void WaterConcept::GameSettings::unlockNextLevelPack(undefined8 param_1,int *par
 
 /* ok  address 0x4179ac  size 696 */
 /* mangled: _ZN12WaterConcept12GameSettings18packContainsLevelsERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::GameSettings::packContainsLevels */
+/* WaterConcept::GameSettings::packContainsLevels(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void WaterConcept::GameSettings::packContainsLevels(long *param_1,short *param_2,int *param_3)
 
@@ -473,7 +473,7 @@ LAB_00417bd0:
 
 /* ok  address 0x417c64  size 416 */
 /* mangled: _ZN12WaterConcept12GameSettings22canUnlockNextLevelPackERii */
-/* WaterConcept::GameSettings::canUnlockNextLevelPack */
+/* WaterConcept::GameSettings::canUnlockNextLevelPack(int&, int) */
 
 short * WaterConcept::GameSettings::canUnlockNextLevelPack
                   (long param_1,short *param_2,int param_3,int param_4)
@@ -533,7 +533,7 @@ short * WaterConcept::GameSettings::canUnlockNextLevelPack
 
 /* ok  address 0x419280  size 152 */
 /* mangled: _ZN12WaterConcept12GameSettings19nextLevelUnlockableEv */
-/* WaterConcept::GameSettings::nextLevelUnlockable */
+/* WaterConcept::GameSettings::nextLevelUnlockable() */
 
 void WaterConcept::GameSettings::nextLevelUnlockable(long param_1,long param_2,int param_3)
 
@@ -557,7 +557,7 @@ void WaterConcept::GameSettings::nextLevelUnlockable(long param_1,long param_2,i
 
 /* ok  address 0x41abe8  size 504 */
 /* mangled: _ZN12WaterConcept12GameSettings10goMainMenuEb */
-/* WaterConcept::GameSettings::goMainMenu */
+/* WaterConcept::GameSettings::goMainMenu(bool) */
 
 void WaterConcept::GameSettings::goMainMenu(long param_1,byte *param_2)
 
@@ -657,7 +657,7 @@ LAB_0041adb8:
 
 /* ok  address 0x41ade0  size 3856 */
 /* mangled: _ZN12WaterConcept12GameSettings13goMainMenu_v2Eb */
-/* WaterConcept::GameSettings::goMainMenu_v2 */
+/* WaterConcept::GameSettings::goMainMenu_v2(bool) */
 
 int WaterConcept::GameSettings::goMainMenu_v2(long *param_1,char *param_2,int param_3)
 
@@ -1387,7 +1387,7 @@ LAB_0041b6a4:
 
 /* ok  address 0x421e38  size 528 */
 /* mangled: _ZN12WaterConcept12GameSettings15appendPromotionENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::GameSettings::appendPromotion */
+/* WaterConcept::GameSettings::appendPromotion(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,char *param_2,int param_3)
 
@@ -1463,7 +1463,7 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,char *param
 
 /* ok  address 0x422048  size 204 */
 /* mangled: _ZN12WaterConcept12GameSettings16appendDuckSuffixENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::GameSettings::appendDuckSuffix */
+/* WaterConcept::GameSettings::appendDuckSuffix(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 short * WaterConcept::GameSettings::appendDuckSuffix(long *param_1,long param_2)
 
@@ -1514,7 +1514,7 @@ LAB_004220e0:
 
 /* ok  address 0x422114  size 580 */
 /* mangled: _ZN12WaterConcept12GameSettings17stripIAPGoofyCodeERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::GameSettings::stripIAPGoofyCode */
+/* WaterConcept::GameSettings::stripIAPGoofyCode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 undefined8
 WaterConcept::GameSettings::stripIAPGoofyCode
@@ -1639,7 +1639,7 @@ LAB_00422348:
 
 /* ok  address 0x422358  size 216 */
 /* mangled: _ZN12WaterConcept12GameSettings20getPurchasedIAPNamesEv */
-/* WaterConcept::GameSettings::getPurchasedIAPNames */
+/* WaterConcept::GameSettings::getPurchasedIAPNames() */
 
 void WaterConcept::GameSettings::getPurchasedIAPNames
                (long *param_1,long *param_2,undefined8 param_3,undefined4 param_4,undefined4 param_5
@@ -1675,7 +1675,7 @@ void WaterConcept::GameSettings::getPurchasedIAPNames
 
 /* ok  address 0x4229fc  size 828 */
 /* mangled: _ZN12WaterConcept12GameSettings22getLocksmithLevelPacksEv */
-/* WaterConcept::GameSettings::getLocksmithLevelPacks */
+/* WaterConcept::GameSettings::getLocksmithLevelPacks() */
 
 void WaterConcept::GameSettings::getLocksmithLevelPacks
                (undefined8 *param_1,long param_2,long param_3,long param_4,long *param_5,
@@ -1812,7 +1812,7 @@ void WaterConcept::GameSettings::getLocksmithLevelPacks
 
 /* ok  address 0x422d38  size 168 */
 /* mangled: _ZN12WaterConcept12GameSettings20restoreIAPUsingNamesENSt6__ndk16vectorINS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS6_IS8_EEEE */
-/* WaterConcept::GameSettings::restoreIAPUsingNames */
+/* WaterConcept::GameSettings::restoreIAPUsingNames(std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>) */
 
 void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1,long param_2)
 
@@ -1854,7 +1854,7 @@ void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1,long param_2
 
 /* ok  address 0x422de0  size 2552 */
 /* mangled: _ZN12WaterConcept12GameSettings20restoreLPsUsingNamesENSt6__ndk16vectorINS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS6_IS8_EEEE */
-/* WaterConcept::GameSettings::restoreLPsUsingNames */
+/* WaterConcept::GameSettings::restoreLPsUsingNames(std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>) */
 
 void WaterConcept::GameSettings::restoreLPsUsingNames
                (long *param_1,undefined8 *param_2,int param_3,int param_4,long param_5,int param_6,
@@ -2279,7 +2279,7 @@ LAB_00423738:
 
 /* ok  address 0x4239e8  size 160 */
 /* mangled: _ZN12WaterConcept12GameSettings12nextLanguageEv */
-/* WaterConcept::GameSettings::nextLanguage */
+/* WaterConcept::GameSettings::nextLanguage() */
 
 undefined4
 WaterConcept::GameSettings::nextLanguage(undefined8 *param_1,undefined4 param_2,long param_3)
@@ -2322,7 +2322,7 @@ LAB_00423a74:
 
 /* ok  address 0x423ecc  size 84 */
 /* mangled: _ZN12WaterConcept12GameSettings18setCurrentLanguageEN7Walaber8LanguageE */
-/* WaterConcept::GameSettings::setCurrentLanguage */
+/* WaterConcept::GameSettings::setCurrentLanguage(Walaber::Language) */
 
 void WaterConcept::GameSettings::setCurrentLanguage
                (undefined8 param_1,long param_2,undefined1 param_3)
@@ -2353,7 +2353,7 @@ void WaterConcept::GameSettings::setCurrentLanguage
 
 /* ok  address 0x4243b0  size 120 */
 /* mangled: _ZN12WaterConcept12GameSettings24getConsecutiveDaysPlayedEv */
-/* WaterConcept::GameSettings::getConsecutiveDaysPlayed */
+/* WaterConcept::GameSettings::getConsecutiveDaysPlayed() */
 
 undefined1 *
 WaterConcept::GameSettings::getConsecutiveDaysPlayed
@@ -2382,7 +2382,7 @@ WaterConcept::GameSettings::getConsecutiveDaysPlayed
 
 /* ok  address 0x4252c0  size 128 */
 /* mangled: _ZN12WaterConcept12GameSettings27getFurthestLevelIndexInPackENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* WaterConcept::GameSettings::getFurthestLevelIndexInPack */
+/* WaterConcept::GameSettings::getFurthestLevelIndexInPack(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void WaterConcept::GameSettings::getFurthestLevelIndexInPack(long *param_1,undefined8 param_2)
 
@@ -2418,7 +2418,7 @@ void WaterConcept::GameSettings::getFurthestLevelIndexInPack(long *param_1,undef
 
 /* ok  address 0x425518  size 276 */
 /* mangled: _ZN12WaterConcept12GameSettings31getLocksmithPacksNumInStorylineEN21WaterConceptConstants13StorylineTypeE */
-/* WaterConcept::GameSettings::getLocksmithPacksNumInStoryline */
+/* WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptConstants::StorylineType) */
 
 void WaterConcept::GameSettings::getLocksmithPacksNumInStoryline
                (long *param_1,undefined8 *param_2,undefined8 *param_3)
@@ -2474,7 +2474,7 @@ void WaterConcept::GameSettings::getLocksmithPacksNumInStoryline
 
 /* ok  address 0x427a84  size 128 */
 /* mangled: _ZN12WaterConcept12GameSettings23handleIAPPromotionTimesEPKcxxx */
-/* WaterConcept::GameSettings::handleIAPPromotionTimes */
+/* WaterConcept::GameSettings::handleIAPPromotionTimes(char const*, long long, long long, long long) */
 
 void WaterConcept::GameSettings::handleIAPPromotionTimes
                (long param_1,undefined8 param_2,undefined8 *param_3)
@@ -2500,7 +2500,7 @@ void WaterConcept::GameSettings::handleIAPPromotionTimes
 
 /* ok  address 0x4280cc  size 172 */
 /* mangled: _ZN12WaterConcept12GameSettings18shouldCheckForSaleEv */
-/* WaterConcept::GameSettings::shouldCheckForSale */
+/* WaterConcept::GameSettings::shouldCheckForSale() */
 
 void WaterConcept::GameSettings::shouldCheckForSale(long param_1,long param_2)
 
@@ -2543,7 +2543,7 @@ void WaterConcept::GameSettings::shouldCheckForSale(long param_1,long param_2)
 
 /* ok  address 0x4283ec  size 160 */
 /* mangled: _ZN12WaterConcept12GameSettings30getLocalizedSaleDaysLeftStringEii */
-/* WaterConcept::GameSettings::getLocalizedSaleDaysLeftString */
+/* WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(int, int) */
 
 void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(undefined8 param_1)
 
@@ -2582,7 +2582,7 @@ void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(undefined8 param
 
 /* ok  address 0x429538  size 560 */
 /* mangled: _ZN12WaterConcept12GameSettings15wrapTextInLabelEPN7Walaber12Widget_LabelE */
-/* WaterConcept::GameSettings::wrapTextInLabel */
+/* WaterConcept::GameSettings::wrapTextInLabel(Walaber::Widget_Label*) */
 
 void WaterConcept::GameSettings::wrapTextInLabel(long param_1,long param_2)
 

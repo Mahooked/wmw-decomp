@@ -4,7 +4,7 @@
 
 /* ok  address 0x496098  size 628 */
 /* mangled: _ZN12WaterConcept12WaterBalloon13_initFinishedEv */
-/* WaterConcept::WaterBalloon::_initFinished */
+/* WaterConcept::WaterBalloon::_initFinished() */
 
 /* Walaber::RenderTexture2D::initWithPixelData(unsigned int, unsigned int,
    Walaber::TextureInMemoryColorspace, unsigned char*) */
@@ -154,7 +154,7 @@ WaterConcept::WaterBalloon::_initFinished
 
 /* ok  address 0x49630c  size 192 */
 /* mangled: _ZN12WaterConcept12WaterBalloon13setPropertiesERKN7Walaber12PropertyListE */
-/* WaterConcept::WaterBalloon::setProperties */
+/* WaterConcept::WaterBalloon::setProperties(Walaber::PropertyList const&) */
 
 /* Walaber::RenderTexture2D::bind() */
 
@@ -186,7 +186,7 @@ void __thiscall WaterConcept::WaterBalloon::setProperties(WaterBalloon *this)
 
 /* ok  address 0x496d00  size 36 */
 /* mangled: _ZN12WaterConcept12WaterBalloon17addFluidParticlesEN21WaterConceptConstants9FluidTypeEfj */
-/* WaterConcept::WaterBalloon::addFluidParticles */
+/* WaterConcept::WaterBalloon::addFluidParticles(WaterConceptConstants::FluidType, float, unsigned int) */
 
 /* Walaber::RenderTexture2D::~RenderTexture2D() */
 
@@ -202,7 +202,7 @@ void __thiscall WaterConcept::WaterBalloon::addFluidParticles(WaterBalloon *this
 
 /* ok  address 0x49705c  size 192 */
 /* mangled: _ZN12WaterConcept12WaterBalloon6updateEf */
-/* WaterConcept::WaterBalloon::update */
+/* WaterConcept::WaterBalloon::update(float) */
 
 /* Walaber::Subtexture::Subtexture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, Walaber::SharedPtr<Walaber::Texture>, Walaber::TextureData
@@ -246,7 +246,7 @@ WaterConcept::WaterBalloon::update
 
 /* ok  address 0x4978a8  size 320 */
 /* mangled: _ZN12WaterConcept12WaterBalloon16_drawAttachMouthEPN7Walaber11SpriteBatchE */
-/* WaterConcept::WaterBalloon::_drawAttachMouth */
+/* WaterConcept::WaterBalloon::_drawAttachMouth(Walaber::SpriteBatch*) */
 
 /* Walaber::strToTextureInMemoryColorspace(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -327,7 +327,7 @@ LAB_004979b0:
 
 /* ok  address 0x497af4  size 472 */
 /* mangled: _ZN12WaterConcept12WaterBalloon16handleTouchMovedERKN7Walaber7Vector2ES4_ */
-/* WaterConcept::WaterBalloon::handleTouchMoved */
+/* WaterConcept::WaterBalloon::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 /* Walaber::Texture2D::initFromFileName() */
 
@@ -427,7 +427,7 @@ void __thiscall WaterConcept::WaterBalloon::handleTouchMoved(WaterBalloon *this)
 
 /* ok  address 0x497d34  size 728 */
 /* mangled: _ZN12WaterConcept12WaterBalloon19particleHasCollidedEPNS_6FluidsERKNS_19ParticleDescriptionEiRb */
-/* WaterConcept::WaterBalloon::particleHasCollided */
+/* WaterConcept::WaterBalloon::particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&) */
 
 /* Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback>) */
 

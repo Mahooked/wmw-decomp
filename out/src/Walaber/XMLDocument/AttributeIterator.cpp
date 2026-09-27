@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d62d8  size 120 */
 /* mangled: _ZN7Walaber11XMLDocument17AttributeIterator8getValueEv */
-/* Walaber::XMLDocument::AttributeIterator::getValue */
+/* Walaber::XMLDocument::AttributeIterator::getValue() */
 
 undefined4 Walaber::XMLDocument::AttributeIterator::getValue(long param_1)
 

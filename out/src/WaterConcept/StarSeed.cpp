@@ -4,7 +4,7 @@
 
 /* ok  address 0x45d0c8  size 188 */
 /* mangled: _ZN12WaterConcept8StarSeed11addTeleportERKN7Walaber7Vector2EffNS_17InteractiveObject8MoveEaseEbb */
-/* WaterConcept::StarSeed::addTeleport */
+/* WaterConcept::StarSeed::addTeleport(Walaber::Vector2 const&, float, float, WaterConcept::InteractiveObject::MoveEase, bool, bool) */
 
 /* std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame,
    std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>
@@ -67,7 +67,7 @@ void __thiscall WaterConcept::StarSeed::addTeleport(StarSeed *this,__split_buffe
 
 /* ok  address 0x490308  size 180 */
 /* mangled: _ZN12WaterConcept8StarSeed26_starSeedAnimationCallbackEPv */
-/* WaterConcept::StarSeed::_starSeedAnimationCallback */
+/* WaterConcept::StarSeed::_starSeedAnimationCallback(void*) */
 
 /* std::__ndk1::__split_buffer<Walaber::FluidParticle,
    std::__ndk1::allocator<Walaber::FluidParticle>&>::__split_buffer(unsigned long, unsigned long,
@@ -110,7 +110,7 @@ WaterConcept::StarSeed::_starSeedAnimationCallback
 
 /* ok  address 0x49059c  size 100 */
 /* mangled: _ZN12WaterConcept8StarSeed13setPropertiesERKN7Walaber12PropertyListE */
-/* WaterConcept::StarSeed::setProperties */
+/* WaterConcept::StarSeed::setProperties(Walaber::PropertyList const&) */
 
 /* Walaber::BaseParticle::BaseParticle(Walaber::BaseParticle const&) */
 
@@ -140,7 +140,7 @@ void __thiscall WaterConcept::StarSeed::setProperties(StarSeed *this,BaseParticl
 
 /* ok  address 0x49332c  size 352 */
 /* mangled: _ZN12WaterConcept8StarSeed4drawEPN7Walaber11SpriteBatchEbf */
-/* WaterConcept::StarSeed::draw */
+/* WaterConcept::StarSeed::draw(Walaber::SpriteBatch*, bool, float) */
 
 /* Walaber::ParticleSet::addParticle(float, Walaber::Vector2 const&, Walaber::Vector2 const&, float,
    Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float, int,
@@ -215,7 +215,7 @@ WaterConcept::StarSeed::draw
 
 /* ok  address 0x49348c  size 132 */
 /* mangled: _ZN12WaterConcept8StarSeed14_drawBGSpritesEPN7Walaber11SpriteBatchE */
-/* WaterConcept::StarSeed::_drawBGSprites */
+/* WaterConcept::StarSeed::_drawBGSprites(Walaber::SpriteBatch*) */
 
 /* Walaber::ParticleEmitter::draw(Walaber::SpriteBatch*) */
 
@@ -248,7 +248,7 @@ void __thiscall WaterConcept::StarSeed::_drawBGSprites(StarSeed *this,SpriteBatc
 
 /* ok  address 0x493524  size 132 */
 /* mangled: _ZN12WaterConcept8StarSeed14drawForegroundEPN7Walaber11SpriteBatchEbf */
-/* WaterConcept::StarSeed::drawForeground */
+/* WaterConcept::StarSeed::drawForeground(Walaber::SpriteBatch*, bool, float) */
 
 /* std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>,
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture> >
@@ -297,7 +297,7 @@ void __thiscall WaterConcept::StarSeed::drawForeground(StarSeed *this,vector *pa
 
 /* ok  address 0x493730  size 88 */
 /* mangled: _ZN12WaterConcept8StarSeed27_drawTeleportShockwaveIntroEPN7Walaber11SpriteBatchE */
-/* WaterConcept::StarSeed::_drawTeleportShockwaveIntro */
+/* WaterConcept::StarSeed::_drawTeleportShockwaveIntro(Walaber::SpriteBatch*) */
 
 /* std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>
    >::__vallocate(unsigned long) */
@@ -322,7 +322,7 @@ void __thiscall WaterConcept::StarSeed::_drawTeleportShockwaveIntro(StarSeed *th
 
 /* ok  address 0x493a44  size 252 */
 /* mangled: _ZN12WaterConcept8StarSeed24_drawTeleportSpiralIntroEPN7Walaber11SpriteBatchE */
-/* WaterConcept::StarSeed::_drawTeleportSpiralIntro */
+/* WaterConcept::StarSeed::_drawTeleportSpiralIntro(Walaber::SpriteBatch*) */
 
 /* Walaber::ParticleSet::initParticles(unsigned int) */
 

@@ -4,7 +4,7 @@
 
 /* ok  address 0x4a4d0c  size 196 */
 /* mangled: _ZN7Walaber14MemberCallbackIN12WaterConcept23Screen_AchievementsTestEE6invokeEPv */
-/* Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>::invoke */
+/* Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>::invoke(void*) */
 
 void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int *param_4)
 
@@ -26,7 +26,7 @@ void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int 
   if (pvVar3 != (void *)0x0) {
     lStack_1040 = param_1 + param_2;
     local_1048 = param_1;
-    iVar2 = Screen_AgeGate::Screen_AgeGate(&local_1048,pvVar3,param_3,1,1);
+    iVar2 = WaterConcept::Screen_AgeGate::Screen_AgeGate(&local_1048,pvVar3,param_3,1,1);
     if (iVar2 == 0) {
       free(local_1028);
       pvVar4 = (void *)0x0;

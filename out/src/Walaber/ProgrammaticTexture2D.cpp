@@ -4,7 +4,7 @@
 
 /* ok  address 0x395068  size 616 */
 /* mangled: _ZN7Walaber21ProgrammaticTexture2D12initWithSizeEjjNS_25TextureInMemoryColorspaceE */
-/* Walaber::ProgrammaticTexture2D::initWithSize */
+/* Walaber::ProgrammaticTexture2D::initWithSize(unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
 
 void Walaber::ProgrammaticTexture2D::initWithSize(long param_1,long param_2)
 
@@ -45,7 +45,7 @@ void Walaber::ProgrammaticTexture2D::initWithSize(long param_1,long param_2)
         lVar2 = *(long *)(param_2 + 0x58);
         while (lVar2 != 0) {
           lVar2 = *(long *)(lVar2 + 0x30);
-          const_Walaber::VerletIntegrator::integrateVelocities(param_1);
+          VerletIntegrator::integrateVelocities(param_1);
         }
       }
       lVar2 = *(long *)(param_2 + 0x50);
@@ -115,7 +115,7 @@ joined_r0x003952b0:
 
 /* ok  address 0x3952d0  size 116 */
 /* mangled: _ZN7Walaber21ProgrammaticTexture2D14_applySettingsEv */
-/* Walaber::ProgrammaticTexture2D::_applySettings */
+/* Walaber::ProgrammaticTexture2D::_applySettings() */
 
 void Walaber::ProgrammaticTexture2D::_applySettings(long param_1)
 
@@ -151,7 +151,7 @@ LAB_00395328:
 
 /* ok  address 0x395344  size 292 */
 /* mangled: _ZN7Walaber21ProgrammaticTexture2D6reloadENS_9SharedPtrINS_8CallbackEEENS_11FileManager14PlatformPolicyE */
-/* Walaber::ProgrammaticTexture2D::reload */
+/* Walaber::ProgrammaticTexture2D::reload(Walaber::SharedPtr<Walaber::Callback>, Walaber::FileManager::PlatformPolicy) */
 
 char * Walaber::ProgrammaticTexture2D::reload(char *param_1,undefined8 *param_2)
 
@@ -215,6 +215,43 @@ LAB_00395434:
                     /* WARNING: Subroutine does not return */
                     /* catch() { ... } // from try @ 003949b4 with catch @ 00395464 */
   __stack_chk_fail();
+}
+
+
+
+/* ok  address 0x395524  size 56 */
+/* mangled: _ZN7Walaber21ProgrammaticTexture2DC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceE */
+/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
+
+void ProgrammaticTexture2D::ProgrammaticTexture2D(undefined8 param_1,long *param_2)
+
+{
+  for (; param_2 != (long *)0x0; param_2 = (long *)*param_2) {
+    FUN_0039555c(param_1,param_2);
+  }
+  return;
+}
+
+
+
+/* ok  address 0x395764  size 88 */
+/* mangled: _ZN7Walaber21ProgrammaticTexture2DC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceENS_9SharedPtrINS1_6vectorINS_5ColorENS5_ISD_EEEEEE */
+/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace, Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>) */
+
+void ProgrammaticTexture2D::ProgrammaticTexture2D(long param_1)
+
+{
+  if (param_1 != 0) {
+    if (*(long *)(param_1 + 0x18) != 0) {
+      (*(code *)xmlFree)();
+    }
+    if (*(long *)(param_1 + 0x28) != 0) {
+      xmlOutputBufferClose();
+    }
+    (*(code *)xmlFree)(param_1);
+    return;
+  }
+  return;
 }
 
 

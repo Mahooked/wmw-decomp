@@ -4,7 +4,7 @@
 
 /* ok  address 0x3f4ec4  size 688 */
 /* mangled: _ZN7Walaber15Transition_Fade6updateEf */
-/* Walaber::Transition_Fade::update */
+/* Walaber::Transition_Fade::update(float) */
 
 void Walaber::Transition_Fade::update(long *param_1)
 
@@ -54,7 +54,7 @@ void Walaber::Transition_Fade::update(long *param_1)
     uVar3 = *puVar1;
     uVar4 = puVar1[1];
     if (*(char *)(lVar16 + 3) == '\0') {
-      uVar11 = ::Transition_Block::~Transition_Block(param_1,auStack_70);
+      uVar11 = Transition_Block::~Transition_Block(param_1,auStack_70);
       local_6c = (uint)uVar11;
       if (local_6c != 0) goto LAB_003f5068;
       local_6c = 0;
@@ -137,7 +137,7 @@ LAB_003f5068:
 
 /* ok  address 0x3f5174  size 88 */
 /* mangled: _ZN7Walaber15Transition_Fade4drawEv */
-/* Walaber::Transition_Fade::draw */
+/* Walaber::Transition_Fade::draw() */
 
 void Walaber::Transition_Fade::draw(undefined8 *param_1,long param_2)
 

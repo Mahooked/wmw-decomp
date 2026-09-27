@@ -4,7 +4,7 @@
 
 /* ok  address 0x5a6360  size 68 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE4swapERS3_ */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::swap */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::swap(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>&) */
 
 /* WaterConcept::Screen_AgeGate::_onAgeChange(int) */
 
@@ -25,7 +25,7 @@ void __thiscall WaterConcept::Screen_AgeGate::_onAgeChange(Screen_AgeGate *this,
 
 /* ok  address 0x5a68fc  size 372 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERb */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(bool&) */
 
 /* WaterConcept::Screen_AgeGate::_showIAPMessage() */
 
@@ -100,7 +100,7 @@ void __thiscall WaterConcept::Screen_AgeGate::_showIAPMessage(Screen_AgeGate *th
 
 /* ok  address 0x5a6ad0  size 200 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERs */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(short&) */
 
 /* WaterConcept::Screen_AgeGate::backKeyPressed() */
 
@@ -144,7 +144,7 @@ void __thiscall WaterConcept::Screen_AgeGate::backKeyPressed(Screen_AgeGate *thi
 
 /* ok  address 0x5a6bb0  size 4 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERt */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(unsigned short&) */
 
 /* Walaber::MemberCallback<WaterConcept::Screen_AgeGate>::~MemberCallback() */
 
@@ -161,7 +161,7 @@ Walaber::MemberCallback<WaterConcept::Screen_AgeGate>::~MemberCallback
 
 /* ok  address 0x5a6cc4  size 104 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERi */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(int&) */
 
 /* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
 
@@ -192,7 +192,7 @@ WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(Screen_AnimationTest *
 
 /* ok  address 0x5a6f34  size 568 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERl */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(long&) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_AnimationTest::enter() */
@@ -306,7 +306,7 @@ void __thiscall WaterConcept::Screen_AnimationTest::enter(Screen_AnimationTest *
 
 /* ok  address 0x5a71d8  size 320 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERx */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(long long&) */
 
 /* WaterConcept::Screen_AnimationTest::_buildUI() */
 
@@ -379,7 +379,7 @@ void __thiscall WaterConcept::Screen_AnimationTest::_buildUI(Screen_AnimationTes
 
 /* ok  address 0x5a7354  size 56 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERy */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(unsigned long long&) */
 
 /* WaterConcept::Screen_AnimationTest::exit() */
 
@@ -401,7 +401,7 @@ void __thiscall WaterConcept::Screen_AnimationTest::exit(Screen_AnimationTest *t
 
 /* ok  address 0x5a74b8  size 100 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERf */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(float&) */
 
 /* WaterConcept::Screen_AnimationTest::handleEvent(int, Walaber::Widget::WidgetActionRet const&,
    Walaber::Widget*) */
@@ -451,7 +451,7 @@ void WaterConcept::Screen_AnimationTest::handleEvent
 
 /* ok  address 0x5a7628  size 2668 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEErsERd */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::short restrict */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::operator>>(double&) */
 
 /* WaterConcept::Screen_AnimationTest::_reloadCurrentActor() */
 
@@ -959,7 +959,7 @@ LAB_005a8008:
 
 /* ok  address 0x5a81f8  size 8 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE7getlineEPclc */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::getline */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::getline(char*, long, char) */
 
 /* non-virtual thunk to WaterConcept::Screen_AnimationTest::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
@@ -977,7 +977,7 @@ WaterConcept::Screen_AnimationTest::handleEvent
 
 /* ok  address 0x5a82c4  size 88 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE6ignoreEli */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::ignore */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::ignore(long, int) */
 
 /* WaterConcept::Screen_AnimationTest::_worldToScreen(Walaber::Vector2 const&) */
 
@@ -1000,7 +1000,7 @@ void WaterConcept::Screen_AnimationTest::_worldToScreen(Vector2 *param_1)
 
 /* ok  address 0x5a8478  size 48 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE4peekEv */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::peek */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::peek() */
 
 /* WaterConcept::Screen_AnimationTest::backKeyPressed() */
 
@@ -1020,7 +1020,7 @@ void __thiscall WaterConcept::Screen_AnimationTest::backKeyPressed(Screen_Animat
 
 /* ok  address 0x5a85ec  size 116 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE8readsomeEPcl */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::readsome */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::readsome(char*, long) */
 
 /* WaterConcept::Screen_Challenges::~Screen_Challenges() */
 
@@ -1050,7 +1050,7 @@ void __thiscall WaterConcept::Screen_Challenges::~Screen_Challenges(Screen_Chall
 
 /* ok  address 0x5a868c  size 40 */
 /* mangled: _ZNSt6__ndk113basic_istreamIcNS_11char_traitsIcEEE7putbackEc */
-/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::putback */
+/* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::putback(char) */
 
 /* non-virtual thunk to WaterConcept::Screen_Challenges::~Screen_Challenges() */
 

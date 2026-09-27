@@ -4,7 +4,7 @@
 
 /* ok  address 0x4e4770  size 64 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_InAppPurchase::loadPropertyList */
+/* WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber::PropertyList const&) */
 
 /* std::__ndk1::__tree<std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>,
    std::__ndk1::__map_value_compare<unsigned char, std::__ndk1::__value_type<unsigned char,
@@ -31,7 +31,7 @@ WaterConcept::Screen_InAppPurchase::loadPropertyList
 
 /* ok  address 0x4e6bbc  size 16 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase16_setAndshowStateENS0_11DialogStateE */
-/* WaterConcept::Screen_InAppPurchase::_setAndshowState */
+/* WaterConcept::Screen_InAppPurchase::_setAndshowState(WaterConcept::Screen_InAppPurchase::DialogState) */
 
 /* Walaber::Tweens::linearTween(float, float, float, float) */
 
@@ -46,7 +46,7 @@ float WaterConcept::Screen_InAppPurchase::_setAndshowState
 
 /* ok  address 0x4e7350  size 20 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase4drawEi */
-/* WaterConcept::Screen_InAppPurchase::draw */
+/* WaterConcept::Screen_InAppPurchase::draw(int) */
 
 /* Walaber::Tweens::quadraticEaseIn(float, float, float, float) */
 
@@ -61,7 +61,7 @@ float WaterConcept::Screen_InAppPurchase::draw
 
 /* ok  address 0x4e73c0  size 28 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase9messageRxERKN7Walaber7MessageE */
-/* WaterConcept::Screen_InAppPurchase::messageRx */
+/* WaterConcept::Screen_InAppPurchase::messageRx(Walaber::Message const&) */
 
 /* Walaber::Tweens::quarticEaseIn(float, float, float, float) */
 
@@ -79,7 +79,7 @@ float WaterConcept::Screen_InAppPurchase::messageRx
 
 /* ok  address 0x4ea988  size 60 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase7dismissEv */
-/* WaterConcept::Screen_InAppPurchase::dismiss */
+/* WaterConcept::Screen_InAppPurchase::dismiss() */
 
 /* Walaber::Node::setWorldAngleDirty(bool) */
 
@@ -101,7 +101,7 @@ void __thiscall WaterConcept::Screen_InAppPurchase::dismiss(Screen_InAppPurchase
 
 /* ok  address 0x4eaa2c  size 80 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_InAppPurchase::handleEvent */
+/* WaterConcept::Screen_InAppPurchase::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 /* Walaber::Node::applyAngleOffset(float const&) */
 
@@ -124,7 +124,7 @@ WaterConcept::Screen_InAppPurchase::handleEvent(Screen_InAppPurchase *this,float
 
 /* ok  address 0x4eb7e8  size 388 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase8_buildUIEv */
-/* WaterConcept::Screen_InAppPurchase::_buildUI */
+/* WaterConcept::Screen_InAppPurchase::_buildUI() */
 
 /* Walaber::PCSNode::printTree(Walaber::PCSNode*) */
 
@@ -191,7 +191,7 @@ void WaterConcept::Screen_InAppPurchase::_buildUI(PCSNode *param_1)
 
 /* ok  address 0x4ebb38  size 156 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets */
+/* WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void*) */
 
 /* std::__ndk1::__split_buffer<Walaber::PCSNode*,
    std::__ndk1::allocator<Walaber::PCSNode*>&>::__split_buffer(unsigned long, unsigned long,
@@ -234,7 +234,7 @@ WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets
 
 /* ok  address 0x4ec6d4  size 120 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase19_fileExistsCallbackEPv */
-/* WaterConcept::Screen_InAppPurchase::_fileExistsCallback */
+/* WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void*) */
 
 /* Walaber::Camera::zoomToFactor(float, float) */
 
@@ -270,7 +270,7 @@ WaterConcept::Screen_InAppPurchase::_fileExistsCallback
 
 /* ok  address 0x4ec83c  size 220 */
 /* mangled: _ZN12WaterConcept20Screen_InAppPurchase14backKeyPressedEv */
-/* WaterConcept::Screen_InAppPurchase::backKeyPressed */
+/* WaterConcept::Screen_InAppPurchase::backKeyPressed() */
 
 /* Walaber::Camera::endAnimations(bool) */
 

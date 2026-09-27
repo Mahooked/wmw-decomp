@@ -4,7 +4,7 @@
 
 /* ok  address 0x3ea8c0  size 456 */
 /* mangled: _ZN7Walaber4Node13setLocalScaleERKNS_7Vector2E */
-/* Walaber::Node::setLocalScale */
+/* Walaber::Node::setLocalScale(Walaber::Vector2 const&) */
 
 long Walaber::Node::setLocalScale(byte *param_1,long *param_2,int param_3,char param_4)
 
@@ -124,7 +124,7 @@ LAB_003ea9cc:
 
 /* ok  address 0x3eaa88  size 1348 */
 /* mangled: _ZN7Walaber4Node16getWorldPositionEv */
-/* Walaber::Node::getWorldPosition */
+/* Walaber::Node::getWorldPosition() */
 
 undefined8 Walaber::Node::getWorldPosition(undefined8 *param_1,uint param_2)
 
@@ -369,7 +369,7 @@ LAB_003eaf6c:
 
 /* ok  address 0x3eafcc  size 156 */
 /* mangled: _ZN7Walaber4Node21inverseTransformPointERKNS_7Vector2E */
-/* Walaber::Node::inverseTransformPoint */
+/* Walaber::Node::inverseTransformPoint(Walaber::Vector2 const&) */
 
 undefined8 Walaber::Node::inverseTransformPoint(long param_1)
 

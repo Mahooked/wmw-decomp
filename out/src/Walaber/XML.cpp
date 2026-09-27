@@ -4,7 +4,7 @@
 
 /* ok  address 0x332690  size 68 */
 /* mangled: _ZN7Walaber3XML7loadDocENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES7_RP7_xmlDoc */
-/* Walaber::XML::loadDoc */
+/* Walaber::XML::loadDoc(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, _xmlDoc*&) */
 
 void Walaber::XML::loadDoc(void)
 
@@ -25,7 +25,7 @@ void Walaber::XML::loadDoc(void)
 
 /* ok  address 0x377a58  size 164 */
 /* mangled: _ZN7Walaber3XML16parseAspectRatioEP8_xmlNodePKc */
-/* Walaber::XML::parseAspectRatio */
+/* Walaber::XML::parseAspectRatio(_xmlNode*, char const*) */
 
 undefined8 Walaber::XML::parseAspectRatio(long *param_1)
 

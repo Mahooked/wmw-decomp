@@ -4,7 +4,7 @@
 
 /* ok  address 0x332500  size 68 */
 /* mangled: _ZN7Walaber9Animation14copyPropertiesERKS0_ */
-/* Walaber::Animation::copyProperties */
+/* Walaber::Animation::copyProperties(Walaber::Animation const&) */
 
 void Walaber::Animation::copyProperties(void)
 
@@ -25,7 +25,7 @@ void Walaber::Animation::copyProperties(void)
 
 /* ok  address 0x332584  size 64 */
 /* mangled: _ZN7Walaber9Animation22createAnimationFromXmlERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS_10SceneGraphE */
-/* Walaber::Animation::createAnimationFromXml */
+/* Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SceneGraph*) */
 
 void Walaber::Animation::createAnimationFromXml(void)
 
@@ -46,7 +46,7 @@ void Walaber::Animation::createAnimationFromXml(void)
 
 /* ok  address 0x33279c  size 68 */
 /* mangled: _ZN7Walaber9Animation26createAnimationFromXmlNodeEP8_xmlNodePNS_10SceneGraphE */
-/* Walaber::Animation::createAnimationFromXmlNode */
+/* Walaber::Animation::createAnimationFromXmlNode(_xmlNode*, Walaber::SceneGraph*) */
 
 void Walaber::Animation::createAnimationFromXmlNode(void)
 

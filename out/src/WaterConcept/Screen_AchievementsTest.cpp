@@ -4,7 +4,7 @@
 
 /* ok  address 0x4a4890  size 184 */
 /* mangled: _ZN12WaterConcept23Screen_AchievementsTest30_updateUIForCurrentAchievementEv */
-/* WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement */
+/* WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement() */
 
 undefined8
 WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement

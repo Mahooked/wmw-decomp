@@ -4,7 +4,7 @@
 
 /* ok  address 0x56858c  size 60 */
 /* mangled: _ZN7Walaber14MemberCallbackIN12WaterConcept13Screen_UpsellEE6invokeEPv */
-/* Walaber::MemberCallback<WaterConcept::Screen_Upsell>::invoke */
+/* Walaber::MemberCallback<WaterConcept::Screen_Upsell>::invoke(void*) */
 
 /* WaterConcept::Switch::triggerMomentary(Walaber::Vector2 const&) */
 

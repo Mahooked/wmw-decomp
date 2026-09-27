@@ -4,7 +4,7 @@
 
 /* ok  address 0x38ccd0  size 36 */
 /* mangled: _ZN7Walaber10GraphicsGL13DumpedGLState4dumpEv */
-/* Walaber::GraphicsGL::DumpedGLState::dump */
+/* Walaber::GraphicsGL::DumpedGLState::dump() */
 
 void Walaber::GraphicsGL::DumpedGLState::dump(long param_1,long param_2)
 
@@ -20,7 +20,7 @@ void Walaber::GraphicsGL::DumpedGLState::dump(long param_1,long param_2)
 
 /* ok  address 0x38ce28  size 124 */
 /* mangled: _ZN7Walaber10GraphicsGL13DumpedGLState5printEv */
-/* Walaber::GraphicsGL::DumpedGLState::print */
+/* Walaber::GraphicsGL::DumpedGLState::print() */
 
 void Walaber::GraphicsGL::DumpedGLState::print(long *param_1)
 
@@ -45,7 +45,7 @@ void Walaber::GraphicsGL::DumpedGLState::print(long *param_1)
 
 /* ok  address 0x38d1f8  size 12 */
 /* mangled: _ZN7Walaber10GraphicsGL13DumpedGLState10printDiffsERKS1_ */
-/* Walaber::GraphicsGL::DumpedGLState::printDiffs */
+/* Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber::GraphicsGL::DumpedGLState const&) */
 
 void Walaber::GraphicsGL::DumpedGLState::printDiffs(undefined8 param_1)
 

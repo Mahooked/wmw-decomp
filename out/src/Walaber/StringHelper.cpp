@@ -4,7 +4,7 @@
 
 /* ok  address 0x3f8640  size 192 */
 /* mangled: _ZN7Walaber12StringHelper15cleanLineEndingERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::StringHelper::cleanLineEnding */
+/* Walaber::StringHelper::cleanLineEnding(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::StringHelper::cleanLineEnding(long param_1,undefined1 *param_2,int *param_3)
 
@@ -46,7 +46,7 @@ void Walaber::StringHelper::cleanLineEnding(long param_1,undefined1 *param_2,int
 
 /* ok  address 0x3f8700  size 256 */
 /* mangled: _ZN7Walaber12StringHelper15removeExtensionERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::StringHelper::removeExtension */
+/* Walaber::StringHelper::removeExtension(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::StringHelper::removeExtension(long param_1,uint param_2,long param_3,long param_4)
 
@@ -103,7 +103,7 @@ void Walaber::StringHelper::removeExtension(long param_1,uint param_2,long param
 
 /* ok  address 0x3f8800  size 184 */
 /* mangled: _ZN7Walaber12StringHelper14stringContainsERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* Walaber::StringHelper::stringContains */
+/* Walaber::StringHelper::stringContains(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::StringHelper::stringContains
                (long param_1,int param_2,undefined8 param_3,undefined4 param_4,long param_5,
@@ -149,7 +149,7 @@ LAB_003f8898:
 
 /* ok  address 0x3f8a00  size 480 */
 /* mangled: _ZN7Walaber12StringHelper23removeLastPathComponentERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::StringHelper::removeLastPathComponent */
+/* Walaber::StringHelper::removeLastPathComponent(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 int Walaber::StringHelper::removeLastPathComponent(undefined8 *param_1,long param_2)
 
@@ -222,7 +222,7 @@ LAB_003f8ba0:
 
 /* ok  address 0x3f8be0  size 252 */
 /* mangled: _ZN7Walaber12StringHelper10appendPathERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* Walaber::StringHelper::appendPath */
+/* Walaber::StringHelper::appendPath(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::StringHelper::appendPath
                (undefined8 param_1,undefined8 *param_2,undefined8 *param_3,long *param_4)
@@ -281,7 +281,7 @@ LAB_003f8c94:
 
 /* ok  address 0x3f8cdc  size 272 */
 /* mangled: _ZN7Walaber12StringHelper7toLowerERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::StringHelper::toLower */
+/* Walaber::StringHelper::toLower(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::StringHelper::toLower(long param_1,int param_2)
 
@@ -337,7 +337,7 @@ void Walaber::StringHelper::toLower(long param_1,int param_2)
 
 /* ok  address 0x3f8dec  size 404 */
 /* mangled: _ZN7Walaber12StringHelper12formatStringERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEERKNS_12PropertyListE */
-/* Walaber::StringHelper::formatString */
+/* Walaber::StringHelper::formatString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::PropertyList const&) */
 
 void Walaber::StringHelper::formatString(undefined8 param_1,long *param_2)
 
@@ -434,7 +434,7 @@ LAB_003f8f48:
 
 /* ok  address 0x45ca38  size 280 */
 /* mangled: _ZN7Walaber12StringHelper9uIntToStrEj */
-/* Walaber::StringHelper::uIntToStr */
+/* Walaber::StringHelper::uIntToStr(unsigned int) */
 
 /* Walaber::Sprite::_loadAnimation(_xmlNode*) */
 

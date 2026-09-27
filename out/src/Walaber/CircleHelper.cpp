@@ -4,7 +4,7 @@
 
 /* ok  address 0x36994c  size 1372 */
 /* mangled: _ZN7Walaber12CircleHelper23drawFilledCircleSegmentERKNS_7Vector2EfffbRKNS_5ColorE */
-/* Walaber::CircleHelper::drawFilledCircleSegment */
+/* Walaber::CircleHelper::drawFilledCircleSegment(Walaber::Vector2 const&, float, float, float, bool, Walaber::Color const&) */
 
 undefined8 Walaber::CircleHelper::drawFilledCircleSegment(long param_1,undefined8 param_2)
 

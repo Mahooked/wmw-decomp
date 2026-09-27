@@ -4,7 +4,7 @@
 
 /* ok  address 0x40160c  size 1628 */
 /* mangled: _ZN7Walaber12ValueTweaker17setTweakableValueENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_4RectE */
-/* Walaber::ValueTweaker::setTweakableValue */
+/* Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Rect) */
 
 void Walaber::ValueTweaker::setTweakableValue
                (long *param_1,long *param_2,long *param_3,long param_4)
@@ -285,7 +285,7 @@ LAB_0040165c:
 
 /* ok  address 0x40201c  size 2840 */
 /* mangled: _ZN7Walaber12ValueTweaker17mapTweakableValueENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPfPv */
-/* Walaber::ValueTweaker::mapTweakableValue */
+/* Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float*, void*) */
 
 long * Walaber::ValueTweaker::mapTweakableValue
                  (long *param_1,undefined8 param_2,long param_3,long param_4,int *param_5,
@@ -775,7 +775,7 @@ LAB_00402094:
 
 /* ok  address 0x402b34  size 80 */
 /* mangled: _ZN7Walaber12ValueTweaker12loadFromFileENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::ValueTweaker::loadFromFile */
+/* Walaber::ValueTweaker::loadFromFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::ValueTweaker::loadFromFile(undefined8 *param_1,undefined8 param_2)
 

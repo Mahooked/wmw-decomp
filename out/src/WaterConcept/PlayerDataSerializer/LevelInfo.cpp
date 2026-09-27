@@ -4,7 +4,7 @@
 
 /* ok  address 0x438588  size 144 */
 /* mangled: _ZN12WaterConcept20PlayerDataSerializer9LevelInfo5mergeEhhjji */
-/* WaterConcept::PlayerDataSerializer::LevelInfo::merge */
+/* WaterConcept::PlayerDataSerializer::LevelInfo::merge(unsigned char, unsigned char, unsigned int, unsigned int, int) */
 
 /* WARNING: Heritage AFTER dead removal. Example location: x0 : 0x004385bc */
 /* WARNING: Restarted to delay deadcode elimination for space: register */

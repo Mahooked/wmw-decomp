@@ -4,7 +4,7 @@
 
 /* ok  address 0x444798  size 220 */
 /* mangled: _ZN12WaterConcept13ShowerCurtain16handleTouchMovedERKN7Walaber7Vector2ES4_ */
-/* WaterConcept::ShowerCurtain::handleTouchMoved */
+/* WaterConcept::ShowerCurtain::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 /* Walaber::SkeletonActor::init(Walaber::Vector2 const&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::Vector2 const&,

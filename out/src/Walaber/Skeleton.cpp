@@ -4,7 +4,7 @@
 
 /* ok  address 0x33b740  size 68 */
 /* mangled: _ZN7Walaber8Skeleton23_recursiveBuildSkeletonEP8_xmlNodePS0_PNS_4NodeE */
-/* Walaber::Skeleton::_recursiveBuildSkeleton */
+/* Walaber::Skeleton::_recursiveBuildSkeleton(_xmlNode*, Walaber::Skeleton*, Walaber::Node*) */
 
 void Walaber::Skeleton::_recursiveBuildSkeleton(void)
 
@@ -25,7 +25,7 @@ void Walaber::Skeleton::_recursiveBuildSkeleton(void)
 
 /* ok  address 0x33ba20  size 68 */
 /* mangled: _ZN7Walaber8Skeleton21loadAnimationsFromXmlERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::Skeleton::loadAnimationsFromXml */
+/* Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::Skeleton::loadAnimationsFromXml(void)
 
@@ -46,7 +46,7 @@ void Walaber::Skeleton::loadAnimationsFromXml(void)
 
 /* ok  address 0x33bb6c  size 68 */
 /* mangled: _ZN7Walaber8Skeleton24loadSkeletonWithCallbackERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_7Vector2EfSF_S9_ */
-/* Walaber::Skeleton::loadSkeletonWithCallback */
+/* Walaber::Skeleton::loadSkeletonWithCallback(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::Vector2 const&, float, Walaber::Vector2 const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::Skeleton::loadSkeletonWithCallback(void)
 

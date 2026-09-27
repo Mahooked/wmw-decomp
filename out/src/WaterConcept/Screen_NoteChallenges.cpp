@@ -4,7 +4,7 @@
 
 /* ok  address 0x53b670  size 532 */
 /* mangled: _ZN12WaterConcept21Screen_NoteChallenges5enterEv */
-/* WaterConcept::Screen_NoteChallenges::enter */
+/* WaterConcept::Screen_NoteChallenges::enter() */
 
 /* WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo(unsigned int,
    WaterConcept::PlayerDataSerializer::CrankyChallengeInfo) */
@@ -142,7 +142,7 @@ void __thiscall WaterConcept::Screen_NoteChallenges::enter(uint param_1,char par
 
 /* ok  address 0x53bd24  size 796 */
 /* mangled: _ZN12WaterConcept21Screen_NoteChallenges8_buildUIEv */
-/* WaterConcept::Screen_NoteChallenges::_buildUI */
+/* WaterConcept::Screen_NoteChallenges::_buildUI() */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::PlayerDataSerializer::_updateLocalAllieMusicInfo(unsigned int,

@@ -4,7 +4,7 @@
 
 /* ok  address 0x506760  size 140 */
 /* mangled: _ZN12WaterConcept12Notification30NotificationTransitionBehavior20calcTransitionLengthEv */
-/* WaterConcept::Notification::NotificationTransitionBehavior::calcTransitionLength */
+/* WaterConcept::Notification::NotificationTransitionBehavior::calcTransitionLength() */
 
 /* std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>
    std::__ndk1::remove<std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription*>,

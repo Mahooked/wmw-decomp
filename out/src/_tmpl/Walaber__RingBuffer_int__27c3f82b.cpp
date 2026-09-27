@@ -4,7 +4,7 @@
 
 /* ok  address 0x447320  size 120 */
 /* mangled: _ZN7Walaber10RingBufferIiE11setCapacityEi */
-/* Walaber::RingBuffer<int>::setCapacity */
+/* Walaber::RingBuffer<int>::setCapacity(int) */
 
 /* std::__ndk1::deque<_xmlNode*, std::__ndk1::allocator<_xmlNode*> >::push_back(_xmlNode* const&) */
 

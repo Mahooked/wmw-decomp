@@ -4,7 +4,7 @@
 
 /* ok  address 0x344980  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor4initERKNS_7Vector2EjS3_b */
-/* Walaber::SkeletonActor::init */
+/* Walaber::SkeletonActor::init(Walaber::Vector2 const&, unsigned int, Walaber::Vector2 const&, bool) */
 
 void Walaber::SkeletonActor::init(void)
 
@@ -25,7 +25,7 @@ void Walaber::SkeletonActor::init(void)
 
 /* ok  address 0x344acc  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor6updateEf */
-/* Walaber::SkeletonActor::update */
+/* Walaber::SkeletonActor::update(float) */
 
 void Walaber::SkeletonActor::update(void)
 
@@ -46,7 +46,7 @@ void Walaber::SkeletonActor::update(void)
 
 /* ok  address 0x344c60  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor4drawEPNS_11SpriteBatchEbb */
-/* Walaber::SkeletonActor::draw */
+/* Walaber::SkeletonActor::draw(Walaber::SpriteBatch*, bool, bool) */
 
 void Walaber::SkeletonActor::draw(void)
 
@@ -67,7 +67,7 @@ void Walaber::SkeletonActor::draw(void)
 
 /* ok  address 0x344dac  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor9drawPropsEPNS_11SpriteBatchE */
-/* Walaber::SkeletonActor::drawProps */
+/* Walaber::SkeletonActor::drawProps(Walaber::SpriteBatch*) */
 
 void Walaber::SkeletonActor::drawProps(void)
 
@@ -88,7 +88,7 @@ void Walaber::SkeletonActor::drawProps(void)
 
 /* ok  address 0x344ebc  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor13playAnimationENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEfNS_21AnimationPlaybackModeEib */
-/* Walaber::SkeletonActor::playAnimation */
+/* Walaber::SkeletonActor::playAnimation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float, Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::playAnimation(void)
 
@@ -109,7 +109,7 @@ void Walaber::SkeletonActor::playAnimation(void)
 
 /* ok  address 0x344f88  size 68 */
 /* mangled: _ZN7Walaber13SkeletonActor14_playAnimationEiNS0_19AnimationSoundStateEfNS_21AnimationPlaybackModeEib */
-/* Walaber::SkeletonActor::_playAnimation */
+/* Walaber::SkeletonActor::_playAnimation(int, Walaber::SkeletonActor::AnimationSoundState, float, Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::_playAnimation(void)
 

@@ -4,7 +4,7 @@
 
 /* ok  address 0x388ee0  size 80 */
 /* mangled: _ZN7Walaber13Widget_Slider8getValueEv */
-/* Walaber::Widget_Slider::getValue */
+/* Walaber::Widget_Slider::getValue() */
 
 void Walaber::Widget_Slider::getValue(FILE *param_1,undefined8 param_2)
 
@@ -24,7 +24,7 @@ void Walaber::Widget_Slider::getValue(FILE *param_1,undefined8 param_2)
 
 /* ok  address 0x388f30  size 552 */
 /* mangled: _ZN7Walaber13Widget_Slider4drawEPNS_11SpriteBatchE */
-/* Walaber::Widget_Slider::draw */
+/* Walaber::Widget_Slider::draw(Walaber::SpriteBatch*) */
 
 undefined4 Walaber::Widget_Slider::draw(char *param_1)
 
@@ -167,7 +167,7 @@ LAB_0038912c:
 
 /* ok  address 0x389558  size 964 */
 /* mangled: _ZN7Walaber13Widget_Slider19acceptNewFingerDownEiPNS_10FingerInfoE */
-/* Walaber::Widget_Slider::acceptNewFingerDown */
+/* Walaber::Widget_Slider::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
 undefined8 Walaber::Widget_Slider::acceptNewFingerDown(long param_1)
 

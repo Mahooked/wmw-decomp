@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e621c  size 184 */
 /* mangled: _ZN7Walaber11LinearCurve15loadFromXmlNodeEP8_xmlNode */
-/* Walaber::LinearCurve::loadFromXmlNode */
+/* Walaber::LinearCurve::loadFromXmlNode(_xmlNode*) */
 
 void Walaber::LinearCurve::loadFromXmlNode(long param_1,uint *param_2)
 
@@ -51,7 +51,7 @@ LAB_003e62ac:
 
 /* ok  address 0x3e65a0  size 860 */
 /* mangled: _ZN7Walaber11LinearCurve15computeTangentsEv */
-/* Walaber::LinearCurve::computeTangents */
+/* Walaber::LinearCurve::computeTangents() */
 
 uint Walaber::LinearCurve::computeTangents(long *param_1)
 
@@ -192,12 +192,12 @@ LAB_003e660c:
       }
     }
 LAB_003e6664:
-    iVar5 = const_Walaber::AABB::intersects(param_1);
+    iVar5 = AABB::intersects(param_1);
     if (iVar5 == 0) goto LAB_003e6680;
-    uVar6 = const_Walaber::BezierCurve::_evaluateCurve(param_1);
+    uVar6 = BezierCurve::_evaluateCurve(param_1);
   }
   else {
-    iVar5 = const_Walaber::AABB::intersects(param_1);
+    iVar5 = AABB::intersects(param_1);
     if (iVar5 != 0) goto LAB_003e6664;
 LAB_003e6680:
     uVar6 = 0;

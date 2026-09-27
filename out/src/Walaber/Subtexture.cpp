@@ -4,7 +4,7 @@
 
 /* ok  address 0x39c3dc  size 124 */
 /* mangled: _ZN7Walaber10Subtexture15isTextureParentERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::Subtexture::isTextureParent */
+/* Walaber::Subtexture::isTextureParent(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 int Walaber::Subtexture::isTextureParent
               (long param_1,undefined8 param_2,char *param_3,undefined8 param_4,undefined8 param_5)

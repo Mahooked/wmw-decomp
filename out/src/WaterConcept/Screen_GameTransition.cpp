@@ -4,7 +4,7 @@
 
 /* ok  address 0x4da878  size 100 */
 /* mangled: _ZN12WaterConcept21Screen_GameTransition8_buildUIEv */
-/* WaterConcept::Screen_GameTransition::_buildUI */
+/* WaterConcept::Screen_GameTransition::_buildUI() */
 
 void WaterConcept::Screen_GameTransition::_buildUI(undefined8 param_1,undefined8 *param_2)
 
@@ -51,7 +51,7 @@ void WaterConcept::Screen_GameTransition::_buildUI(undefined8 param_1,undefined8
 
 /* ok  address 0x4da948  size 148 */
 /* mangled: _ZN12WaterConcept21Screen_GameTransition6updateEfb */
-/* WaterConcept::Screen_GameTransition::update */
+/* WaterConcept::Screen_GameTransition::update(float, bool) */
 
 undefined4 WaterConcept::Screen_GameTransition::update(long param_1)
 

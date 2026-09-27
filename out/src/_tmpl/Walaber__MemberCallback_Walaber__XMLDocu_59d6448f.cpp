@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d71f0  size 276 */
 /* mangled: _ZN7Walaber14MemberCallbackINS_11XMLDocumentEE6invokeEPv */
-/* Walaber::MemberCallback<Walaber::XMLDocument>::invoke */
+/* Walaber::MemberCallback<Walaber::XMLDocument>::invoke(void*) */
 
 int FUN_003d71f0(long param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
                 undefined8 param_5,undefined8 *param_6,undefined8 param_7)

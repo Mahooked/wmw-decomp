@@ -4,7 +4,7 @@
 
 /* ok  address 0x58a364  size 156 */
 /* mangled: _ZN12WaterConcept16Screen_WaterTest19PhotoFinishSnapshot21InitFromRenderTextureEN7Walaber9SharedPtrINS2_15RenderTexture2DEEE */
-/* WaterConcept::Screen_WaterTest::PhotoFinishSnapshot::InitFromRenderTexture */
+/* WaterConcept::Screen_WaterTest::PhotoFinishSnapshot::InitFromRenderTexture(Walaber::SharedPtr<Walaber::RenderTexture2D>) */
 
 /* std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::MoveEase,
    std::__ndk1::allocator<WaterConcept::InteractiveObject::MoveEase>&>::__split_buffer(unsigned

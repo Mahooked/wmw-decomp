@@ -4,7 +4,7 @@
 
 /* ok  address 0x400fa8  size 128 */
 /* mangled: _ZN7Walaber12ValueTweaker14TweakableValue8setValueEf */
-/* Walaber::ValueTweaker::TweakableValue::setValue */
+/* Walaber::ValueTweaker::TweakableValue::setValue(float) */
 
 void Walaber::ValueTweaker::TweakableValue::setValue(long param_1,uint param_2,undefined8 *param_3)
 
@@ -71,7 +71,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(long param_1,uint param_2,u
 
 /* ok  address 0x401db8  size 132 */
 /* mangled: _ZN7Walaber12ValueTweaker14TweakableValue13_fireMappingsEv */
-/* Walaber::ValueTweaker::TweakableValue::_fireMappings */
+/* Walaber::ValueTweaker::TweakableValue::_fireMappings() */
 
 long Walaber::ValueTweaker::TweakableValue::_fireMappings
                (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,

@@ -4,7 +4,7 @@
 
 /* ok  address 0x32f440  size 68 */
 /* mangled: _ZN7Walaber18AchievementManager16loadAchievementsEiNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::AchievementManager::loadAchievements */
+/* Walaber::AchievementManager::loadAchievements(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
 
 void Walaber::AchievementManager::loadAchievements(void)
 

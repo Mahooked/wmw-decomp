@@ -4,7 +4,7 @@
 
 /* ok  address 0x4a73d4  size 260 */
 /* mangled: _ZN12WaterConcept20Screen_AnimationTest4drawEi */
-/* WaterConcept::Screen_AnimationTest::draw */
+/* WaterConcept::Screen_AnimationTest::draw(int) */
 
 bool WaterConcept::Screen_AnimationTest::draw(undefined8 param_1)
 
@@ -45,7 +45,7 @@ bool WaterConcept::Screen_AnimationTest::draw(undefined8 param_1)
 
 /* ok  address 0x4a74d8  size 168 */
 /* mangled: _ZN12WaterConcept20Screen_AnimationTest11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_AnimationTest::handleEvent */
+/* WaterConcept::Screen_AnimationTest::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 undefined8
 WaterConcept::Screen_AnimationTest::handleEvent
@@ -84,7 +84,7 @@ WaterConcept::Screen_AnimationTest::handleEvent
 
 /* ok  address 0x4a7580  size 1380 */
 /* mangled: _ZN12WaterConcept20Screen_AnimationTest14_playAnimationEi */
-/* WaterConcept::Screen_AnimationTest::_playAnimation */
+/* WaterConcept::Screen_AnimationTest::_playAnimation(int) */
 
 void * WaterConcept::Screen_AnimationTest::_playAnimation
                  (long param_1,uint *param_2,uint *param_3,uint *param_4,uint param_5)

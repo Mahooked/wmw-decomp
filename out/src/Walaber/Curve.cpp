@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e03b4  size 564 */
 /* mangled: _ZN7Walaber5Curve13writeToBufferEPc */
-/* Walaber::Curve::writeToBuffer */
+/* Walaber::Curve::writeToBuffer(char*) */
 
 void Walaber::Curve::writeToBuffer(long param_1,int param_2)
 
@@ -105,9 +105,38 @@ LAB_003e0444:
 
 
 
+/* ok  address 0x3e0774  size 120 */
+/* mangled: _ZN7Walaber5CurveD2Ev */
+/* Walaber::Curve::~Curve() */
+
+void Walaber::Curve::~Curve(long param_1)
+
+{
+  long lVar1;
+  
+  if ((*(byte *)(param_1 + 0x28) >> 1 & 1) != 0) {
+    CurveManager::loadCurveCollection();
+    *(ushort *)(param_1 + 0x28) = *(ushort *)(param_1 + 0x28) & 0xfff9;
+                    /* try { // try from 003e07b8 to 004e07bf has its CatchHandler @ 003e1aa0 */
+    if ((*(short *)(param_1 + 0x2a) == 0) &&
+       (lVar1 = *(long *)(param_1 + 0x30), *(int *)(lVar1 + 0x28) != 0)) {
+      if (*(int *)(param_1 + 0x18) == 1) {
+        *(undefined8 *)(lVar1 + 0x48) = 0;
+      }
+                    /* WARNING: Could not recover jumptable at 0x003e07e8. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (*DAT_008290d0)(*(undefined8 *)(lVar1 + 0x40),param_1,0);
+      return;
+    }
+  }
+  return;
+}
+
+
+
 /* ok  address 0x3e07ec  size 204 */
 /* mangled: _ZN7Walaber5Curve21getMinMaxNonTimeValueEv */
-/* Walaber::Curve::getMinMaxNonTimeValue */
+/* Walaber::Curve::getMinMaxNonTimeValue() */
 
 bool Walaber::Curve::getMinMaxNonTimeValue(uint *param_1,int param_2)
 
@@ -157,7 +186,7 @@ bool Walaber::Curve::getMinMaxNonTimeValue(uint *param_1,int param_2)
 
 /* ok  address 0x3e08b8  size 140 */
 /* mangled: _ZN7Walaber5Curve13writeToBufferEPcjRKNS_17CompressionRecordES4_ */
-/* Walaber::Curve::writeToBuffer */
+/* Walaber::Curve::writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&) */
 
 uint Walaber::Curve::writeToBuffer(long param_1,uint param_2)
 
@@ -195,7 +224,7 @@ uint Walaber::Curve::writeToBuffer(long param_1,uint param_2)
 
 /* ok  address 0x3e0de4  size 88 */
 /* mangled: _ZN7Walaber5Curve11loadFromXmlEP8_xmlNode */
-/* Walaber::Curve::loadFromXml */
+/* Walaber::Curve::loadFromXml(_xmlNode*) */
 
 void Walaber::Curve::loadFromXml(long *param_1)
 
@@ -232,7 +261,7 @@ void Walaber::Curve::loadFromXml(long *param_1)
 
 /* ok  address 0x3e1264  size 900 */
 /* mangled: _ZN7Walaber5Curve23curveLoopTypeFromStringERNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::Curve::curveLoopTypeFromString */
+/* Walaber::Curve::curveLoopTypeFromString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&) */
 
 int Walaber::Curve::curveLoopTypeFromString
               (long *param_1,undefined8 param_2,int param_3,int param_4)
@@ -261,7 +290,7 @@ int Walaber::Curve::curveLoopTypeFromString
     (**(code **)(*param_1 + 0x70))(*param_1,iVar3);
   }
   if (param_3 == 0) {
-    iVar3 = const_Walaber::Curve::findSegment(param_1,param_2);
+    iVar3 = findSegment(param_1,param_2);
     if (iVar3 == 5) {
       if (*(long *)param_1[6] == 0) {
         return -1;
@@ -407,6 +436,463 @@ LAB_003e1374:
 LAB_003e13e0:
   (*pcVar7)(plVar5,iVar3,1,5);
   return -1;
+}
+
+
+
+/* ok  address 0x3e15e8  size 1476 */
+/* mangled: _ZNK7Walaber5Curve11findSegmentEfRiS1_ */
+/* Walaber::Curve::findSegment(float, int&, int&) const */
+
+int Walaber::Curve::findSegment(long param_1,undefined4 *param_2)
+
+{
+  int iVar1;
+  uint uVar2;
+  int iVar3;
+  long lVar4;
+  bool bVar5;
+  int iVar6;
+  int iVar7;
+  uint *puVar8;
+  long lVar9;
+  long lVar10;
+  ulong uVar11;
+  uint uVar12;
+  ulong uVar13;
+  undefined8 uVar14;
+  long local_d0;
+  int local_bc;
+  long local_a8;
+  long local_a0;
+  byte local_98;
+  byte local_97;
+  byte local_96;
+  byte local_95;
+  uint local_94;
+  byte local_90;
+  byte local_8f;
+  byte local_8e;
+  byte local_8d;
+  uint local_8c;
+  undefined8 local_88;
+  uint local_80;
+  uint local_7c;
+  long local_78;
+  
+  lVar4 = tpidr_el0;
+  local_78 = *(long *)(lVar4 + 0x28);
+  iVar6 = FUN_003e1bac(param_1,0,&local_a8);
+  if (iVar6 != 0) goto LAB_003e1634;
+  if (local_a8 == 0) {
+    iVar7 = 1;
+LAB_003e1694:
+    if ((*(byte *)(param_1 + 0x41) >> 1 & 1) != 0) {
+      if (*(char *)(param_1 + 0x3e) == '\0') {
+        iVar6 = (**(code **)(**(long **)(param_1 + 8) + 0x70))(*(long **)(param_1 + 8),0,1,6);
+        if (iVar6 != 0) goto LAB_003e1634;
+        if (*(char *)(param_1 + 0x3e) == '\0') {
+          (**(code **)(**(long **)(param_1 + 8) + 0x70))(*(long **)(param_1 + 8),0,1,5);
+        }
+      }
+      iVar6 = 0x108;
+      goto LAB_003e1634;
+    }
+    if ((*(char *)(param_1 + 0x3e) == '\0') &&
+       (iVar6 = (**(code **)(**(long **)(param_1 + 8) + 0x70))(*(long **)(param_1 + 8),0,1,10),
+       iVar6 != 0)) goto LAB_003e1634;
+    *(undefined1 *)(param_1 + 0x3f) = 1;
+    iVar6 = FUN_003e1bac(param_1,0,&local_a8);
+    if (iVar6 == 0) {
+      iVar7 = CurveManager::_initCurveFileLoaded(param_1,param_2);
+      if (iVar7 == 0) {
+        iVar6 = 0;
+      }
+      else {
+        iVar1 = *(byte *)(param_1 + 0x40) + 1;
+        iVar3 = 7 - (uint)*(byte *)(param_1 + 0x40);
+        if ((*(char *)(param_1 + 0x3e) != '\0') ||
+           (iVar6 = (**(code **)(**(long **)(param_1 + 8) + 0x70))
+                              (*(long **)(param_1 + 8),iVar1,iVar3,10), iVar6 == 0)) {
+          *(undefined8 *)(param_1 + 0x6c) = 0;
+          *(undefined8 *)(param_1 + 100) = 0;
+          *(undefined8 *)(param_1 + 0x5c) = 0;
+          *(undefined8 *)(param_1 + 0x54) = 0;
+          *(undefined8 *)(param_1 + 0x4c) = 0;
+          *(undefined8 *)(param_1 + 0x44) = 0;
+          iVar6 = (**(code **)(**(long **)(param_1 + 0x10) + 0x30))
+                            (*(long **)(param_1 + 0x10),&local_a0);
+          if (iVar6 == 0) {
+            uVar14 = 0;
+            if (0x20 < local_a0) {
+              iVar6 = (**(code **)(**(long **)(param_1 + 0x10) + 0x10))
+                                (*(long **)(param_1 + 0x10),&local_98,0x20,0);
+              if (iVar6 != 0) goto LAB_003e1b18;
+              if (((uint)local_98 << 0x18 | (uint)local_97 << 0x10 | (uint)local_96 << 8 |
+                  local_95 & 0xfe) == 0x377f0682) {
+                uVar11 = (long)(int)((uint)local_90 << 0x18) | (ulong)local_8f << 0x10;
+                uVar13 = uVar11 | (ulong)local_8e << 8 | (ulong)local_8d;
+                uVar12 = (uint)uVar13;
+                if ((uVar12 - 0x200 < 0xfe01) && ((uVar12 - 1 & uVar12) == 0)) {
+                  uVar2 = local_95 & 1;
+                  *(uint *)(param_1 + 0x38) = uVar12;
+                  *(char *)(param_1 + 0x51) = (char)uVar2;
+                  lVar9 = param_1 + 0x5c;
+                  uVar12 = (local_8c & 0xff00ff00) >> 8 | (local_8c & 0xff00ff) << 8;
+                  *(uint *)(param_1 + 0x80) = uVar12 >> 0x10 | uVar12 << 0x10;
+                  *(undefined8 *)(param_1 + 100) = local_88;
+                  FUN_003e0f00(uVar2 ^ 1,&local_98,0x18,0,lVar9);
+                  uVar12 = (local_80 & 0xff00ff00) >> 8 | (local_80 & 0xff00ff) << 8;
+                  if ((*(uint *)(param_1 + 0x5c) == (uVar12 >> 0x10 | uVar12 << 0x10)) &&
+                     (uVar12 = (local_7c & 0xff00ff00) >> 8 | (local_7c & 0xff00ff) << 8,
+                     *(uint *)(param_1 + 0x60) == (uVar12 >> 0x10 | uVar12 << 0x10))) {
+                    uVar12 = (local_94 & 0xff00ff00) >> 8 | (local_94 & 0xff00ff) << 8;
+                    if ((uVar12 >> 0x10 | uVar12 << 0x10) == 0x2de218) {
+                      iVar6 = sqlite3_initialize();
+                      if (iVar6 == 0) {
+                        lVar10 = uVar13 + 0x18;
+                        puVar8 = (uint *)FUN_003cce48();
+                        if (puVar8 != (uint *)0x0) {
+                          if (local_a0 < (long)(uVar13 + 0x38)) {
+                            iVar6 = 0;
+                            uVar14 = 0;
+                          }
+                          else {
+                            uVar14 = 0;
+                            local_bc = 1;
+                            local_d0 = 0x20;
+                            while( true ) {
+                              iVar6 = (**(code **)(**(long **)(param_1 + 0x10) + 0x10))
+                                                (*(long **)(param_1 + 0x10),puVar8,lVar10,local_d0);
+                              if (iVar6 != 0) goto LAB_003e1ab4;
+                              if (*(long *)(param_1 + 100) != *(long *)(puVar8 + 2)) break;
+                              uVar12 = (*puVar8 & 0xff00ff00) >> 8 | (*puVar8 & 0xff00ff) << 8;
+                              uVar12 = uVar12 >> 0x10 | uVar12 << 0x10;
+                              iVar6 = 0;
+                              if (uVar12 == 0) goto LAB_003e1ab4;
+                              bVar5 = *(char *)(param_1 + 0x51) == '\0';
+                    /* catch() { ... } // from try @ 003e1260 with catch @ 003e1a00 */
+                              FUN_003e0f00(bVar5,puVar8,8,lVar9,lVar9);
+                    /* catch() { ... } // from try @ 003e11b8 with catch @ 003e1a10 */
+                              FUN_003e0f00(bVar5,puVar8 + 6,*(undefined4 *)(param_1 + 0x38),lVar9,
+                                           lVar9);
+                    /* catch() { ... } // from try @ 003e10f8 with catch @ 003e1a20 */
+                              uVar2 = (puVar8[4] & 0xff00ff00) >> 8 | (puVar8[4] & 0xff00ff) << 8;
+                    /* catch() { ... } // from try @ 003e1050 with catch @ 003e1a30 */
+                    /* catch() { ... } // from try @ 003e0f90 with catch @ 003e1a40 */
+                              if ((*(uint *)(param_1 + 0x5c) != (uVar2 >> 0x10 | uVar2 << 0x10)) ||
+                                 (uVar2 = (puVar8[5] & 0xff00ff00) >> 8 |
+                                          (puVar8[5] & 0xff00ff) << 8,
+                                 *(uint *)(param_1 + 0x60) != (uVar2 >> 0x10 | uVar2 << 0x10)))
+                              break;
+                    /* catch() { ... } // from try @ 003e0e38 with catch @ 003e1a50 */
+                              uVar2 = puVar8[1];
+                              iVar6 = FUN_003e105c(param_1,local_bc,uVar12);
+                    /* catch() { ... } // from try @ 003e0d78 with catch @ 003e1a60 */
+                              if (iVar6 != 0) goto LAB_003e1ab4;
+                              uVar12 = (uVar2 & 0xff00ff00) >> 8 | (uVar2 & 0xff00ff) << 8;
+                              uVar12 = uVar12 >> 0x10 | uVar12 << 0x10;
+                              if (uVar12 != 0) {
+                    /* catch() { ... } // from try @ 003e0cd0 with catch @ 003e1a70 */
+                                uVar14 = *(undefined8 *)(param_1 + 0x5c);
+                                *(int *)(param_1 + 0x54) = local_bc;
+                                *(uint *)(param_1 + 0x58) = uVar12;
+                                *(ushort *)(param_1 + 0x52) =
+                                     (ushort)local_8e << 8 | (ushort)(uVar11 >> 0x10);
+                              }
+                    /* catch() { ... } // from try @ 003e0aa0 with catch @ 003e1a80 */
+                              local_d0 = local_d0 + lVar10;
+                    /* catch() { ... } // from try @ 003e09f4 with catch @ 003e1a90 */
+                              local_bc = local_bc + 1;
+                    /* catch() { ... } // from try @ 003e07b8 with catch @ 003e1aa0 */
+                              if (local_a0 < lVar10 + local_d0) break;
+                            }
+                            iVar6 = 0;
+                          }
+LAB_003e1ab4:
+                          sqlite3_free(puVar8);
+                          if (iVar6 == 0) goto LAB_003e1ac0;
+                          goto LAB_003e1b18;
+                        }
+                      }
+                      iVar6 = 7;
+                    }
+                    else {
+                      iVar6 = 0xe;
+                      sqlite3_log(0xe,"cannot open file at line %d of [%.10s]",0xb1bd,&DAT_0071eb44)
+                      ;
+                    }
+                    goto LAB_003e1b18;
+                  }
+                }
+              }
+            }
+LAB_003e1ac0:
+            *(undefined8 *)(param_1 + 0x5c) = uVar14;
+            TweenedLinearCurve::TweenedLinearCurve(param_1);
+            lVar9 = 0;
+            lVar10 = **(long **)(param_1 + 0x30);
+            *(undefined4 *)(lVar10 + 0x60) = 0;
+            *(undefined4 *)(lVar10 + 100) = 0;
+            do {
+              *(undefined4 *)(lVar10 + 0x68 + lVar9) = 0xffffffff;
+                    /* catch() { ... } // from try @ 003e1598 with catch @ 003e1aec */
+              lVar9 = lVar9 + 4;
+            } while (lVar9 != 0x10);
+            if (*(int *)(param_1 + 0x58) != 0) {
+              sqlite3_log(0,0x721a6e,*(int *)(param_1 + 0x58),*(undefined8 *)(param_1 + 0x78));
+            }
+                    /* catch() { ... } // from try @ 003dfd44 with catch @ 003e1b14 */
+            iVar6 = 0;
+          }
+LAB_003e1b18:
+          if (*(char *)(param_1 + 0x3e) == '\0') {
+            (**(code **)(**(long **)(param_1 + 8) + 0x70))(*(long **)(param_1 + 8),iVar1,iVar3,9);
+          }
+        }
+        *param_2 = 1;
+      }
+    }
+    *(undefined1 *)(param_1 + 0x3f) = 0;
+    if (*(char *)(param_1 + 0x3e) == '\0') {
+      (**(code **)(**(long **)(param_1 + 8) + 0x70))(*(long **)(param_1 + 8),0,1,9);
+    }
+    if (iVar7 != 0) goto LAB_003e1634;
+  }
+  else {
+    iVar7 = CurveManager::_initCurveFileLoaded(param_1,param_2);
+    if (iVar7 != 0) goto LAB_003e1694;
+    iVar6 = 0;
+  }
+  if (*(int *)(param_1 + 0x44) != 0x2de218) {
+    iVar6 = 0xe;
+    sqlite3_log(0xe,"cannot open file at line %d of [%.10s]",0xb4f7,&DAT_0071eb44);
+  }
+LAB_003e1634:
+  if (*(long *)(lVar4 + 0x28) == local_78) {
+    return iVar6;
+  }
+                    /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
+}
+
+
+
+/* ok  address 0x3e3f2c  size 1256 */
+/* mangled: _ZN7Walaber5CurveC2EPcRj */
+/* Walaber::Curve::Curve(char*, unsigned int&) */
+
+int Walaber::Curve::Curve(long *param_1,int param_2)
+
+{
+  char *__s1;
+  long *plVar1;
+  int iVar2;
+  long lVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  int iVar6;
+  long *plVar7;
+  ulong uVar8;
+  char *pcVar9;
+  ulong uVar10;
+  long lVar11;
+  ulong uVar12;
+  uint uVar13;
+  char *pcVar14;
+  long lVar15;
+  int iVar16;
+  long lVar17;
+  int local_8c;
+  undefined4 local_88;
+  uint local_84;
+  long local_80;
+  int local_74;
+  int local_70;
+  undefined4 uStack_6c;
+  long local_68;
+  
+  lVar3 = tpidr_el0;
+  local_68 = *(long *)(lVar3 + 0x28);
+  lVar11 = *param_1;
+  local_8c = 1;
+  local_88 = 0;
+  iVar6 = (**(code **)(*(long *)param_1[10] + 0x30))((long *)param_1[10],&local_80);
+  if (iVar6 == 0) {
+    pcVar14 = (char *)param_1[0x1b];
+    iVar6 = FUN_003e52c0(param_1[10],pcVar14,*(int *)(*param_1 + 8) + 1);
+    if (iVar6 == 0) {
+      if (*pcVar14 == '\0') {
+        iVar6 = 0;
+LAB_003e4024:
+        if (local_8c == 0) goto LAB_003e4184;
+        plVar7 = param_1 + 0xc;
+        *plVar7 = 0;
+        iVar16 = param_2;
+LAB_003e4150:
+        iVar6 = FUN_003e4778(param_1,param_2,local_80,&local_84,&local_88);
+        uVar4 = local_88;
+        if (iVar6 == 0) {
+          if (local_84 == 0xffffffff) {
+                    /* try { // try from 003e4050 to 004e4057 has its CatchHandler @ 003e4b00 */
+            lVar11 = (long)(int)param_1[0x14] + 8;
+            local_84 = 0;
+            if (lVar11 != 0) {
+              local_84 = (uint)((long)(local_80 - (ulong)*(uint *)((long)param_1 + 0x9c)) / lVar11);
+            }
+          }
+          if (local_84 == 0 && param_2 == 0) {
+            uVar8 = (ulong)*(uint *)((long)param_1 + 0x9c);
+            uVar12 = param_1[0xd] + uVar8;
+            uVar10 = param_1[0xc];
+            if (uVar12 == param_1[0xc]) {
+              lVar11 = (long)(int)param_1[0x14] + 8;
+              local_84 = 0;
+              uVar10 = uVar12;
+              if (lVar11 != 0) {
+                local_84 = (uint)((long)(local_80 - uVar12) / lVar11);
+              }
+            }
+          }
+          else {
+            uVar8 = (ulong)*(uint *)((long)param_1 + 0x9c);
+            uVar10 = param_1[0xc];
+          }
+          uVar5 = local_84;
+          if (uVar10 == uVar8) {
+            iVar6 = FUN_003e5420(param_1,local_88);
+            if (iVar6 != 0) goto LAB_003e3fac;
+            *(undefined4 *)((long)param_1 + 0x1c) = uVar4;
+          }
+          if (uVar5 != 0) {
+            uVar13 = 0;
+            iVar6 = iVar16;
+            do {
+              if (iVar6 != 0) {
+                for (lVar11 = param_1[0xe]; lVar11 != 0; lVar11 = *(long *)(lVar11 + 0x40)) {
+                  *(undefined4 *)(lVar11 + 0x18) = 1;
+                }
+                CurveManager::unloadCurveCollection(param_1[0x1c],0);
+              }
+                    /* try { // try from 003e4110 to 004e4117 has its CatchHandler @ 003e4af0 */
+              iVar6 = FUN_003e4414(param_1,plVar7,0,1,0);
+              if (iVar6 != 0) {
+                if (iVar6 == 0x20a) goto LAB_003e4178;
+                if (iVar6 != 0x65) goto LAB_003e4184;
+                iVar16 = 0;
+                *plVar7 = local_80;
+                break;
+              }
+              uVar13 = uVar13 + 1;
+              iVar16 = 0;
+              iVar6 = 0;
+            } while (uVar13 < uVar5);
+          }
+          goto LAB_003e4150;
+        }
+        if (iVar6 != 0x65) goto LAB_003e4184;
+LAB_003e4178:
+        *(char *)((long)param_1 + 0x15) = (char)param_1[2];
+      }
+      else {
+        iVar6 = (**(code **)(lVar11 + 0x38))(lVar11,pcVar14,0,&local_8c);
+        if (iVar6 == 0) goto LAB_003e4024;
+LAB_003e4184:
+        *(char *)((long)param_1 + 0x15) = (char)param_1[2];
+        if (iVar6 != 0) goto LAB_003e3fb4;
+      }
+      pcVar14 = (char *)param_1[0x1b];
+      iVar6 = FUN_003e52c0(param_1[10],pcVar14,*(int *)(*param_1 + 8) + 1);
+                    /* try { // try from 003e41b8 to 004e41bf has its CatchHandler @ 003e4ae0 */
+      if ((iVar6 == 0) &&
+         ((((*(byte *)((long)param_1 + 0x13) - 1 < 3 ||
+            (iVar6 = FileManager::addFileHandler(param_1), iVar6 == 0)) &&
+           (iVar6 = TweenedLinearCurve::TweenedLinearCurve(param_1,*pcVar14 != '\0'), iVar6 == 0))
+          && ((*pcVar14 != '\0' && (local_8c != 0)))))) {
+        lVar11 = *param_1;
+        uVar12 = (long)*(int *)(lVar11 + 4) << 1;
+        plVar7 = (long *)FUN_003cce48(uVar12 & 0xffffffff);
+        if (plVar7 == (long *)0x0) {
+          iVar6 = 7;
+        }
+        else {
+          memset(plVar7,0,uVar12);
+          iVar16 = *(int *)(lVar11 + 4);
+          iVar6 = (**(code **)(lVar11 + 0x28))(lVar11,pcVar14,plVar7,0x4001,0);
+          if ((iVar6 == 0) && (iVar6 = (**(code **)(*plVar7 + 0x30))(plVar7,&local_70), iVar6 == 0))
+          {
+            iVar2 = *(int *)(lVar11 + 8);
+            lVar15 = FUN_003cce48(iVar2 + local_70 + 2);
+            if (lVar15 == 0) {
+              iVar6 = 7;
+            }
+            else {
+              lVar17 = CONCAT44(uStack_6c,local_70);
+              iVar6 = (**(code **)(*plVar7 + 0x10))(plVar7,lVar15,local_70,0);
+              if (iVar6 == 0) {
+                *(undefined1 *)(lVar15 + CONCAT44(uStack_6c,local_70)) = 0;
+                if (0 < CONCAT44(uStack_6c,local_70)) {
+                  plVar1 = (long *)((long)plVar7 + (long)iVar16);
+                  __s1 = (char *)(lVar15 + lVar17 + 1);
+                  lVar17 = lVar15;
+                  do {
+                    /* try { // try from 003e4320 to 004e4327 has its CatchHandler @ 003e4ac0 */
+                    iVar6 = (**(code **)(lVar11 + 0x38))(lVar11,lVar17,0,&local_74);
+                    if (iVar6 != 0) goto LAB_003e426c;
+                    if (local_74 != 0) {
+                      iVar6 = (**(code **)(lVar11 + 0x28))(lVar11,lVar17,plVar1,0x801,0);
+                      if (iVar6 != 0) goto LAB_003e426c;
+                      iVar6 = FUN_003e52c0(plVar1,__s1,iVar2 + 1);
+                      if (*plVar1 != 0) {
+                        (**(code **)(*plVar1 + 8))(plVar1);
+                        *plVar1 = 0;
+                      }
+                      if (iVar6 != 0) goto LAB_003e426c;
+                      if ((*__s1 != '\0') && (iVar6 = strcmp(__s1,pcVar14), iVar6 == 0)) {
+                        iVar6 = 0;
+                        goto LAB_003e426c;
+                      }
+                    }
+                    pcVar9 = (char *)(lVar17 + -1);
+                    do {
+                      pcVar9 = pcVar9 + 1;
+                    } while (*pcVar9 != '\0');
+                    lVar17 = lVar17 + ((ulong)(uint)((int)pcVar9 - (int)lVar17) & 0x3fffffff) + 1;
+                  } while (lVar17 - lVar15 < CONCAT44(uStack_6c,local_70));
+                }
+                if (*plVar7 != 0) {
+                  (**(code **)(*plVar7 + 8))(plVar7);
+                  *plVar7 = 0;
+                }
+                iVar6 = (**(code **)(lVar11 + 0x30))(lVar11,pcVar14,0);
+              }
+            }
+          }
+          else {
+            lVar15 = 0;
+          }
+LAB_003e426c:
+          sqlite3_free(lVar15);
+                    /* try { // try from 003e4278 to 004e427f has its CatchHandler @ 003e4ad0 */
+          if (*plVar7 != 0) {
+            (**(code **)(*plVar7 + 8))(plVar7);
+            *plVar7 = 0;
+          }
+          sqlite3_free(plVar7);
+        }
+      }
+      goto LAB_003e3fb4;
+    }
+  }
+LAB_003e3fac:
+  *(char *)((long)param_1 + 0x15) = (char)param_1[2];
+LAB_003e3fb4:
+  FUN_003dfa3c(param_1);
+  if (*(long *)(lVar3 + 0x28) == local_68) {
+    return iVar6;
+  }
+                    /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
 }
 
 

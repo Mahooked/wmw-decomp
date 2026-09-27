@@ -4,7 +4,7 @@
 
 /* ok  address 0x4b3fdc  size 160 */
 /* mangled: _ZNSt6__ndk113basic_ostreamIcNS_11char_traitsIcEEE3putEc */
-/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::put */
+/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::put(char) */
 
 void FUN_004b3fdc(long param_1,int param_2,void *param_3)
 
@@ -38,9 +38,28 @@ void FUN_004b3fdc(long param_1,int param_2,void *param_3)
 
 
 
+/* ok  address 0x5acb80  size 24 */
+/* mangled: _ZNSt6__ndk113basic_ostreamIcNS_11char_traitsIcEEElsEx */
+/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(long long) */
+
+/* WaterConcept::Screen_Challenges::update(float, bool) */
+
+void WaterConcept::Screen_Challenges::update(float param_1,bool param_2)
+
+{
+  ulong uVar1;
+  
+  uVar1 = (ulong)param_2;
+  *(float *)(uVar1 + 0xbc) = *(float *)(uVar1 + 0xbc) + param_1;
+  Walaber::WidgetManager::update(*(WidgetManager **)(uVar1 + 0x10),param_1);
+  return;
+}
+
+
+
 /* ok  address 0x5ad67c  size 224 */
 /* mangled: _ZNSt6__ndk113basic_ostreamIcNS_11char_traitsIcEEE5writeEPKcl */
-/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::write */
+/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::write(char const*, long) */
 
 /* WaterConcept::Screen_Challenges::backKeyPressed() */
 
@@ -80,7 +99,7 @@ void __thiscall WaterConcept::Screen_Challenges::backKeyPressed(Screen_Challenge
 
 /* ok  address 0x5ada20  size 24 */
 /* mangled: _ZNSt6__ndk113basic_ostreamIcNS_11char_traitsIcEEE5seekpExNS_8ios_base7seekdirE */
-/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::seekp */
+/* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::seekp(long long, std::__ndk1::ios_base::seekdir) */
 
 /* non-virtual thunk to WaterConcept::Screen_Challenges::messageRx(Walaber::Message const&) */
 

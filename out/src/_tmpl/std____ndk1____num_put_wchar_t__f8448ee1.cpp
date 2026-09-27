@@ -4,7 +4,7 @@
 
 /* ok  address 0x5bcb08  size 244 */
 /* mangled: _ZNSt6__ndk19__num_putIwE21__widen_and_group_intEPcS2_S2_PwRS3_S4_RKNS_6localeE */
-/* std::__ndk1::__num_put<wchar_t>::__widen_and_group_int */
+/* std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(char*, char*, char*, wchar_t*, wchar_t*&, wchar_t*&, std::__ndk1::locale const&) */
 
 /* WaterConcept::Screen_Editor::~Screen_Editor() */
 

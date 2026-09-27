@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e5944  size 312 */
 /* mangled: _ZN7Walaber12HermiteCurve15ComputeTangentsENS0_19HermiteCurveTangentES1_ */
-/* Walaber::HermiteCurve::ComputeTangents */
+/* Walaber::HermiteCurve::ComputeTangents(Walaber::HermiteCurve::HermiteCurveTangent, Walaber::HermiteCurve::HermiteCurveTangent) */
 
 undefined8 Walaber::HermiteCurve::ComputeTangents(long param_1,int param_2)
 
@@ -66,7 +66,7 @@ undefined8 Walaber::HermiteCurve::ComputeTangents(long param_1,int param_2)
 
 /* ok  address 0x3e5a7c  size 1656 */
 /* mangled: _ZN7Walaber12HermiteCurve7HermiteERKNS_8CurveKeyES3_f */
-/* Walaber::HermiteCurve::Hermite */
+/* Walaber::HermiteCurve::Hermite(Walaber::CurveKey const&, Walaber::CurveKey const&, float) */
 
 uint Walaber::HermiteCurve::Hermite(long *param_1)
 
@@ -301,7 +301,7 @@ joined_r0x003e5ec4:
 LAB_003e5ea0:
         uVar3 = FUN_003e2a38(param_1);
         if (uVar3 == 0) {
-          uVar3 = ::Curve::Curve(param_1,1);
+          uVar3 = Curve::Curve(param_1,1);
           *(undefined1 *)((long)param_1 + 0x13) = 0;
           goto joined_r0x003e5ec4;
         }

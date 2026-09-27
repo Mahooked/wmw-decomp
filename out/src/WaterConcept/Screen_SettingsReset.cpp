@@ -4,7 +4,7 @@
 
 /* ok  address 0x563818  size 600 */
 /* mangled: _ZN12WaterConcept20Screen_SettingsReset8_buildUIEv */
-/* WaterConcept::Screen_SettingsReset::_buildUI */
+/* WaterConcept::Screen_SettingsReset::_buildUI() */
 
 /* WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept::AlgaeHider*) */
 
@@ -127,7 +127,7 @@ WaterConcept::Screen_SettingsReset::_buildUI(Screen_SettingsReset *this,AlgaeHid
 
 /* ok  address 0x563a70  size 416 */
 /* mangled: _ZN12WaterConcept20Screen_SettingsReset4exitEv */
-/* WaterConcept::Screen_SettingsReset::exit */
+/* WaterConcept::Screen_SettingsReset::exit() */
 
 /* WaterConcept::World::_fillMaterialGridUsingObjectShape(WaterConcept::InteractiveObject*,
    WaterConceptConstants::MaterialType, bool) */
@@ -229,7 +229,7 @@ WaterConcept::Screen_SettingsReset::exit
 
 /* ok  address 0x563c10  size 488 */
 /* mangled: _ZN12WaterConcept20Screen_SettingsReset16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_SettingsReset::loadPropertyList */
+/* WaterConcept::Screen_SettingsReset::loadPropertyList(Walaber::PropertyList const&) */
 
 /* WaterConcept::World::setRoomPosition(Walaber::Vector2) */
 
@@ -329,7 +329,7 @@ LAB_00563cd8:
 
 /* ok  address 0x563dfc  size 1420 */
 /* mangled: _ZN12WaterConcept20Screen_SettingsReset11regainedTopEv */
-/* WaterConcept::Screen_SettingsReset::regainedTop */
+/* WaterConcept::Screen_SettingsReset::regainedTop() */
 
 /* WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void*) */
 
@@ -460,7 +460,7 @@ WaterConcept::Screen_SettingsReset::regainedTop(Screen_SettingsReset *this,void 
 
 /* ok  address 0x5650a8  size 212 */
 /* mangled: _ZN12WaterConcept20Screen_SettingsReset23_finishedLoadingWidgetsEPv */
-/* WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets */
+/* WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void*) */
 
 /* WaterConcept::World::_fluidCollisionCallbackWaterVsMud(void*) */
 
@@ -480,16 +480,16 @@ WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets
     uVar3 = *(long *)((long)param_1 + 8) - lVar4;
     if ((int)(uVar3 >> 5) != 0) {
       iVar1 = *(int *)(lVar4 + 0x10);
-      plVar2 = (long *)::Screen_MainMenu::~Screen_MainMenu
-                                 (*(void **)(this + 0x440),*(int *)(lVar4 + 0xc));
+      plVar2 = (long *)Screen_MainMenu::~Screen_MainMenu
+                                 (*(Screen_MainMenu **)(this + 0x440),*(int *)(lVar4 + 0xc));
       lVar4 = (uVar3 >> 5 & 0xffffffff) - 1;
       *(undefined4 *)(*plVar2 + (long)iVar1 * 0x90 + 0x84) = 0;
       if (lVar4 != 0) {
         lVar5 = 0;
         do {
           iVar1 = *(int *)(*(long *)param_1 + lVar5 + 0x30);
-          plVar2 = (long *)::Screen_MainMenu::~Screen_MainMenu
-                                     (*(void **)(this + 0x440),
+          plVar2 = (long *)Screen_MainMenu::~Screen_MainMenu
+                                     (*(Screen_MainMenu **)(this + 0x440),
                                       *(int *)(*(long *)param_1 + lVar5 + 0x2c));
           lVar4 = lVar4 + -1;
           lVar5 = lVar5 + 0x20;

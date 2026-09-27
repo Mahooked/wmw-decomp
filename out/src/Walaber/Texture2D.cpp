@@ -4,7 +4,7 @@
 
 /* ok  address 0x397ad0  size 12 */
 /* mangled: _ZN7Walaber9Texture2D12loadFromFileENS_9SharedPtrINS_8CallbackEEENS_11FileManager14PlatformPolicyE */
-/* Walaber::Texture2D::loadFromFile */
+/* Walaber::Texture2D::loadFromFile(Walaber::SharedPtr<Walaber::Callback>, Walaber::FileManager::PlatformPolicy) */
 
 void Walaber::Texture2D::loadFromFile(void)
 
@@ -17,7 +17,7 @@ void Walaber::Texture2D::loadFromFile(void)
 
 /* ok  address 0x397bec  size 8 */
 /* mangled: _ZN7Walaber9Texture2D16initFromFileNameEv */
-/* Walaber::Texture2D::initFromFileName */
+/* Walaber::Texture2D::initFromFileName() */
 
 void Walaber::Texture2D::initFromFileName(undefined8 param_1,undefined8 param_2)
 
@@ -30,7 +30,7 @@ void Walaber::Texture2D::initFromFileName(undefined8 param_1,undefined8 param_2)
 
 /* ok  address 0x397d70  size 232 */
 /* mangled: _ZN7Walaber9Texture2D8_getDataENS_9SharedPtrINS_8CallbackEEE */
-/* Walaber::Texture2D::_getData */
+/* Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback>) */
 
 void Walaber::Texture2D::_getData(undefined8 param_1,long param_2,long param_3,undefined4 param_4)
 
@@ -86,7 +86,7 @@ LAB_00397e2c:
 
 /* ok  address 0x398244  size 60 */
 /* mangled: _ZN7Walaber9Texture2D11_fileLoadedEPv */
-/* Walaber::Texture2D::_fileLoaded */
+/* Walaber::Texture2D::_fileLoaded(void*) */
 
 void Walaber::Texture2D::_fileLoaded(long param_1)
 
@@ -106,7 +106,7 @@ void Walaber::Texture2D::_fileLoaded(long param_1)
 
 /* ok  address 0x398d38  size 292 */
 /* mangled: _ZN7Walaber9Texture2D7setDataENS_9SharedPtrINSt6__ndk16vectorINS_5ColorENS2_9allocatorIS4_EEEEEE */
-/* Walaber::Texture2D::setData */
+/* Walaber::Texture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>) */
 
 void * Walaber::Texture2D::setData(byte *param_1,byte *param_2,ulong param_3)
 
@@ -176,7 +176,7 @@ LAB_00398e48:
 
 /* ok  address 0x398e5c  size 56 */
 /* mangled: _ZN7Walaber9Texture2D7setDataENS_9SharedPtrINSt6__ndk16vectorINS_5ColorENS2_9allocatorIS4_EEEEEEiiiiiii */
-/* Walaber::Texture2D::setData */
+/* Walaber::Texture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>, int, int, int, int, int, int, int) */
 
 void Walaber::Texture2D::setData(long param_1,long param_2)
 
@@ -205,7 +205,7 @@ void Walaber::Texture2D::setData(long param_1,long param_2)
 
 /* ok  address 0x39907c  size 168 */
 /* mangled: _ZN7Walaber9Texture2D14_applySettingsEv */
-/* Walaber::Texture2D::_applySettings */
+/* Walaber::Texture2D::_applySettings() */
 
 int Walaber::Texture2D::_applySettings(byte *param_1)
 
@@ -260,7 +260,7 @@ int Walaber::Texture2D::_applySettings(byte *param_1)
 
 /* ok  address 0x399124  size 300 */
 /* mangled: _ZN7Walaber9Texture2D13_failedToLoadERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::Texture2D::_failedToLoad */
+/* Walaber::Texture2D::_failedToLoad(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 uint Walaber::Texture2D::_failedToLoad(byte *param_1,int *param_2)
 
@@ -302,7 +302,7 @@ uint Walaber::Texture2D::_failedToLoad(byte *param_1,int *param_2)
 
 /* ok  address 0x399250  size 224 */
 /* mangled: _ZN7Walaber9Texture2D19bufferFromImageDataEPhii */
-/* Walaber::Texture2D::bufferFromImageData */
+/* Walaber::Texture2D::bufferFromImageData(unsigned char*, int, int) */
 
 undefined8 Walaber::Texture2D::bufferFromImageData(byte *param_1)
 
@@ -364,7 +364,7 @@ undefined8 Walaber::Texture2D::bufferFromImageData(byte *param_1)
 
 /* ok  address 0x399380  size 168 */
 /* mangled: _ZN7Walaber9Texture2D6reloadENS_9SharedPtrINS_8CallbackEEENS_11FileManager14PlatformPolicyE */
-/* Walaber::Texture2D::reload */
+/* Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback>, Walaber::FileManager::PlatformPolicy) */
 
 void * Walaber::Texture2D::reload(void *param_1,int param_2)
 
@@ -390,9 +390,53 @@ void * Walaber::Texture2D::reload(void *param_1,int param_2)
 
 
 
+/* ok  address 0x399808  size 160 */
+/* mangled: _ZN7Walaber9Texture2DD2Ev */
+/* Walaber::Texture2D::~Texture2D() */
+
+void Walaber::Texture2D::~Texture2D(long param_1,undefined4 param_2,undefined8 param_3)
+
+{
+  undefined8 uVar1;
+  
+  if (param_1 == 0) {
+    uVar1 = 0;
+  }
+  else {
+    uVar1 = *(undefined8 *)(param_1 + 0x38);
+  }
+  __xmlRaiseError(0,0,0,uVar1,0,0x19,param_2,3,0,0,0,0,0,0,0,"%s",param_3);
+  return;
+}
+
+
+
+/* ok  address 0x3998a8  size 88 */
+/* mangled: _ZN7Walaber9Texture2DD0Ev */
+/* Walaber::Texture2D::~Texture2D() */
+
+void Walaber::Texture2D::~Texture2D(void)
+
+{
+  long *plVar1;
+  
+  plVar1 = (long *)xmlLinkGetData();
+  if (plVar1 != (long *)0x0) {
+    if (*plVar1 != 0) {
+      (*(code *)xmlFree)();
+    }
+                    /* try { // try from 003998e8 to 004999d7 has its CatchHandler @ 0039b6b8 */
+    (*(code *)xmlFree)(plVar1);
+    return;
+  }
+  return;
+}
+
+
+
 /* ok  address 0x399900  size 52 */
 /* mangled: _ZN7Walaber9Texture2D10clearGlMemEv */
-/* Walaber::Texture2D::clearGlMem */
+/* Walaber::Texture2D::clearGlMem() */
 
 undefined8 Walaber::Texture2D::clearGlMem(undefined8 *param_1,undefined8 *param_2)
 

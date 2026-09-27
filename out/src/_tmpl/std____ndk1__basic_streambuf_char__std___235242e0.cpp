@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d4e6c  size 96 */
 /* mangled: _ZNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEE6xsgetnEPcl */
-/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::xsgetn */
+/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::xsgetn(char*, long) */
 
 undefined8 sqlite3_transfer_bindings(long param_1,long param_2)
 
@@ -26,7 +26,7 @@ undefined8 sqlite3_transfer_bindings(long param_1,long param_2)
 
 /* ok  address 0x3d5190  size 1604 */
 /* mangled: _ZNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEE5uflowEv */
-/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::uflow */
+/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::uflow() */
 
 undefined4
 sqlite3_blob_open(long param_1,undefined8 param_2,undefined8 param_3,char *param_4,
@@ -333,7 +333,7 @@ LAB_003d56dc:
 
 /* ok  address 0x5a5730  size 4 */
 /* mangled: _ZNSt6__ndk115basic_streambufIcNS_11char_traitsIcEEE5sputcEc */
-/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::sputc */
+/* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>::sputc(char) */
 
 /* WaterConcept::Screen_AgeGate::regainedTop() */
 

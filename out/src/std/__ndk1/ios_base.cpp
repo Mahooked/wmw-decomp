@@ -4,7 +4,7 @@
 
 /* ok  address 0x5a3e84  size 204 */
 /* mangled: _ZNSt6__ndk18ios_base5clearEj */
-/* std::__ndk1::ios_base::clear */
+/* std::__ndk1::ios_base::clear(unsigned int) */
 
 /* WaterConcept::Screen_Achievements::messageRx(Walaber::Message const&) */
 
@@ -59,9 +59,23 @@ undefined4 __thiscall std::__ndk1::ios_base::clear(ios_base *this,Message *param
 
 
 
+/* ok  address 0x5a40b4  size 4 */
+/* mangled: _ZNSt6__ndk18ios_baseD2Ev */
+/* std::__ndk1::ios_base::~ios_base() */
+
+/* Walaber::GameScreen::recreateGraphicsContext() */
+
+void std::__ndk1::ios_base::~ios_base(void)
+
+{
+  return;
+}
+
+
+
 /* ok  address 0x5a42d0  size 4 */
 /* mangled: _ZNSt6__ndk18ios_base7copyfmtERKS0_ */
-/* std::__ndk1::ios_base::copyfmt */
+/* std::__ndk1::ios_base::copyfmt(std::__ndk1::ios_base const&) */
 
 /* WaterConcept::WCScreen::~WCScreen() */
 
@@ -79,7 +93,7 @@ void __thiscall std::__ndk1::ios_base::copyfmt(ios_base *this)
 
 /* ok  address 0x5a4bf8  size 8 */
 /* mangled: _ZNSt6__ndk18ios_base4moveERS0_ */
-/* std::__ndk1::ios_base::move */
+/* std::__ndk1::ios_base::move(std::__ndk1::ios_base&) */
 
 /* non-virtual thunk to WaterConcept::Screen_AchievementsTest::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
@@ -97,7 +111,7 @@ std::__ndk1::ios_base::move(ios_base *this,int param_1,WidgetActionRet *param_2,
 
 /* ok  address 0x5a4c7c  size 88 */
 /* mangled: _ZNSt6__ndk18ios_base4swapERS0_ */
-/* std::__ndk1::ios_base::swap */
+/* std::__ndk1::ios_base::swap(std::__ndk1::ios_base&) */
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest> >::~SharedPtr()
     */

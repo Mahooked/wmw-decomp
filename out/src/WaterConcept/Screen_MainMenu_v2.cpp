@@ -4,12 +4,12 @@
 
 /* fail:no-function  address 0x517934  size 20 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v25enterEv */
-/* WaterConcept::Screen_MainMenu_v2::enter */
+/* WaterConcept::Screen_MainMenu_v2::enter() */
 /* decompilation failed (fail:no-function) */
 
 /* ok  address 0x519268  size 1596 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v218_curveLoadCallbackEPv */
-/* WaterConcept::Screen_MainMenu_v2::_curveLoadCallback */
+/* WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void*) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::nextLevelUnlockable() */
@@ -376,9 +376,294 @@ undefined4 WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void)
 
 
 
+/* ok  address 0x51ae18  size 1696 */
+/* mangled: _ZNK12WaterConcept18Screen_MainMenu_v230_getSubscreenIDForCurrentIndexEv */
+/* WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex() const */
+
+/* WaterConcept::GameSettings::loadFluidTextures() */
+
+void WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(void)
+
+{
+  int iVar1;
+  long lVar2;
+  long lVar3;
+  undefined8 uVar4;
+  undefined8 local_160;
+  undefined8 uStack_158;
+  undefined8 local_150;
+  undefined8 uStack_148;
+  undefined8 local_140;
+  undefined8 uStack_138;
+  undefined8 local_130;
+  undefined8 uStack_128;
+  undefined8 local_120;
+  undefined8 uStack_118;
+  undefined8 local_110;
+  undefined8 uStack_108;
+  undefined8 local_100;
+  undefined8 uStack_f8;
+  long local_f0;
+  int *piStack_e8;
+  undefined8 local_e0;
+  undefined8 uStack_d8;
+  ulong local_d0 [2];
+  char *local_c0;
+  long local_b0;
+  int *piStack_a8;
+  undefined8 local_a0;
+  undefined8 uStack_98;
+  undefined8 local_90;
+  undefined8 uStack_88;
+  undefined8 local_80;
+  undefined8 uStack_78;
+  ulong local_70;
+  undefined8 uStack_68;
+  char *local_60;
+  long local_58;
+  int *piStack_50;
+  long local_48 [2];
+  long local_38;
+  
+  lVar2 = tpidr_el0;
+  local_38 = *(long *)(lVar2 + 0x28);
+  lVar3 = Walaber::PlatformManager::getInstancePtr();
+  iVar1 = *(int *)(lVar3 + 0x28);
+  if (0x80 < iVar1) {
+    uVar4 = Walaber::TextureManager::getManager();
+    local_70 = 0;
+    uStack_68 = 0;
+    local_60 = (char *)0x0;
+    local_60 = operator_new(0x20);
+    builtin_strncpy(local_60,"/Textures/water_color.webp",0x1b);
+    local_90 = 0;
+    uStack_88 = 0;
+    local_a0 = 0;
+    uStack_98 = 0;
+    uStack_68 = 0x1a;
+    local_70 = 0x21;
+    Notification::touchMoved(&local_58,uVar4,&local_70,&local_a0,0,0);
+  }
+  else {
+    uVar4 = Walaber::TextureManager::getManager();
+    local_60 = operator_new(0x20);
+    builtin_strncpy(local_60,"/Textures/water_color_gpu1.webp",0x20);
+    local_90 = 0;
+    uStack_88 = 0;
+    local_80 = 0;
+    uStack_78 = 0;
+    uStack_68 = 0x1f;
+    local_70 = 0x21;
+    Notification::touchMoved(&local_58,uVar4,&local_70,&local_80,0,0);
+  }
+  if (local_58 == 0) {
+    local_48[0] = 0;
+    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)local_d0);
+  }
+  else {
+    *piStack_50 = *piStack_50 + 1;
+    *piStack_50 = *piStack_50 + 1;
+    local_48[0] = local_58;
+    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)local_d0);
+  }
+  if (0x80 < iVar1) {
+    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_58);
+    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_a0);
+    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_90);
+    if ((local_70 & 1) != 0) {
+      operator_delete(local_60);
+    }
+  }
+  if (iVar1 < 0x81) {
+    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_58);
+    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_80);
+    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_90);
+    if ((local_70 & 1) != 0) {
+      operator_delete(local_60);
+    }
+  }
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833fc8,(SharedPtr *)local_48);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00834188,(SharedPtr *)local_48);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00834268,(SharedPtr *)local_48);
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  builtin_strncpy(local_c0,"/Textures/steam_color.webp",0x1b);
+  local_f0 = 0;
+  piStack_e8 = (int *)0x0;
+  local_e0 = 0;
+  uStack_d8 = 0;
+  local_d0[1] = 0x1a;
+  local_d0[0] = 0x21;
+  Notification::touchMoved(&local_b0,uVar4,local_d0,&local_e0,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833ee8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_e0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_f0);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_008340a8,(SharedPtr *)local_48);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833fd8,(SharedPtr *)local_48);
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  local_d0[1] = 0x1a;
+  local_d0[0] = 0x21;
+  builtin_strncpy(local_c0,"/Textures/water_color.webp",0x1b);
+  local_f0 = 0;
+  piStack_e8 = (int *)0x0;
+  local_100 = 0;
+  uStack_f8 = 0;
+  Notification::touchMoved(&local_b0,uVar4,local_d0,&local_100,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00834198,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_100);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_f0);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  builtin_strncpy(local_c0,"/Textures/water_color_ooze.webp",0x20);
+  local_f0 = 0;
+  piStack_e8 = (int *)0x0;
+  local_110 = 0;
+  uStack_108 = 0;
+  local_d0[1] = 0x1f;
+  local_d0[0] = 0x21;
+  Notification::touchMoved(&local_b0,uVar4,local_d0,&local_110,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00834278,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_110);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_f0);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  builtin_strncpy(local_c0,"/Textures/steam_murk.webp",0x1a);
+  local_f0 = 0;
+  piStack_e8 = (int *)0x0;
+  local_120 = 0;
+  uStack_118 = 0;
+  local_d0[1] = 0x19;
+  local_d0[0] = 0x21;
+  Notification::touchMoved(&local_b0,uVar4,local_d0,&local_120,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833ef8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_120);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_f0);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  builtin_strncpy(local_c0,"/Textures/water_color_ooze.webp",0x20);
+  local_f0 = 0;
+  piStack_e8 = (int *)0x0;
+  local_d0[1] = 0x1f;
+  local_d0[0] = 0x21;
+  local_130 = 0;
+  uStack_128 = 0;
+  Notification::touchMoved(&local_b0,uVar4,local_d0,&local_130,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_008340b8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_130);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_f0);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  local_d0[1] = 0x1a;
+  local_d0[0] = 0x21;
+  builtin_strncpy(local_c0,"/Textures/water_alpha.webp",0x1b);
+  local_150 = 0;
+  uStack_148 = 0;
+  local_140 = 0;
+  uStack_138 = 0;
+  Notification::touchMoved(&local_f0,uVar4,local_d0,&local_140,0,0);
+  local_b0 = local_f0;
+  piStack_a8 = piStack_e8;
+  if (local_f0 != 0) {
+    *piStack_e8 = *piStack_e8 + 1;
+  }
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_f0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_140);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_150);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833fe8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_008341a8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00834288,(SharedPtr *)&local_b0);
+  uVar4 = Walaber::TextureManager::getManager();
+  local_d0[0] = 0;
+  local_d0[1] = 0;
+  local_c0 = (char *)0x0;
+  local_c0 = operator_new(0x20);
+  local_d0[1] = 0x1a;
+  local_d0[0] = 0x21;
+  builtin_strncpy(local_c0,"/Textures/steam_alpha.webp",0x1b);
+  local_150 = 0;
+  uStack_148 = 0;
+  local_160 = 0;
+  uStack_158 = 0;
+  Notification::touchMoved(&local_f0,uVar4,local_d0,&local_160,0,0);
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_00833f08,(SharedPtr *)&local_f0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_f0);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_160);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((SharedPtr<Walaber::Callback> *)&local_150);
+  if ((local_d0[0] & 1) != 0) {
+    operator_delete(local_c0);
+  }
+  Walaber::SharedPtr<Walaber::Texture>::operator=
+            ((SharedPtr<Walaber::Texture> *)&DAT_008340c8,(SharedPtr *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)&local_b0);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((SharedPtr<Walaber::Texture> *)local_48);
+  if (*(long *)(lVar2 + 0x28) == local_38) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
+}
+
+
+
 /* ok  address 0x521d68  size 268 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v210touchMovedEiN7Walaber7Vector2ES2_ */
-/* WaterConcept::Screen_MainMenu_v2::touchMoved */
+/* WaterConcept::Screen_MainMenu_v2::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
 /* WaterConcept::GameSettings::appendPromotion(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
@@ -456,7 +741,7 @@ LAB_00521e4c:
 
 /* ok  address 0x521fc0  size 268 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v227notifyTransitionPhaseChangeEj */
-/* WaterConcept::Screen_MainMenu_v2::notifyTransitionPhaseChange */
+/* WaterConcept::Screen_MainMenu_v2::notifyTransitionPhaseChange(unsigned int) */
 
 /* WaterConcept::GameSettings::appendDuckSuffix(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
@@ -534,7 +819,7 @@ LAB_005220a4:
 
 /* ok  address 0x5220ec  size 80 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v211regainedTopEv */
-/* WaterConcept::Screen_MainMenu_v2::regainedTop */
+/* WaterConcept::Screen_MainMenu_v2::regainedTop() */
 
 /* WaterConcept::GameSettings::stripIAPGoofyCode(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
@@ -575,7 +860,7 @@ LAB_00522138:
 
 /* ok  address 0x522190  size 1500 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v211handleFocusEPN7Walaber6WidgetENS1_10FocusEventE */
-/* WaterConcept::Screen_MainMenu_v2::handleFocus */
+/* WaterConcept::Screen_MainMenu_v2::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::getPurchasedIAPNames() */
@@ -936,7 +1221,7 @@ void __thiscall WaterConcept::Screen_MainMenu_v2::handleFocus(Screen_MainMenu_v2
 
 /* ok  address 0x525190  size 552 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v229_rebuildTextInHubForStoryLineENS0_19SubscreenIdentifierE */
-/* WaterConcept::Screen_MainMenu_v2::_rebuildTextInHubForStoryLine */
+/* WaterConcept::Screen_MainMenu_v2::_rebuildTextInHubForStoryLine(WaterConcept::Screen_MainMenu_v2::SubscreenIdentifier) */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::getFurthestLevelIndexInPack(std::__ndk1::basic_string<char,
@@ -1080,7 +1365,7 @@ int WaterConcept::Screen_MainMenu_v2::_rebuildTextInHubForStoryLine(byte *param_
 
 /* ok  address 0x529660  size 184 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v218_adjustTextureSizeEPN7Walaber12Widget_LabelE */
-/* WaterConcept::Screen_MainMenu_v2::_adjustTextureSize */
+/* WaterConcept::Screen_MainMenu_v2::_adjustTextureSize(Walaber::Widget_Label*) */
 
 /* std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, WaterConcept::Notification*>,
@@ -1165,7 +1450,7 @@ WaterConcept::Screen_MainMenu_v2::_adjustTextureSize(Screen_MainMenu_v2 *this,ba
 
 /* ok  address 0x5297c8  size 100 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v214_createButtonsENS0_11ButtonTypesEiPN7Walaber12Widget_GroupE */
-/* WaterConcept::Screen_MainMenu_v2::_createButtons */
+/* WaterConcept::Screen_MainMenu_v2::_createButtons(WaterConcept::Screen_MainMenu_v2::ButtonTypes, int, Walaber::Widget_Group*) */
 
 /* std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>
    >::vector(std::__ndk1::vector<Walaber::Widget_Label*,
@@ -1195,7 +1480,7 @@ WaterConcept::Screen_MainMenu_v2::_createButtons(Screen_MainMenu_v2 *this,vector
 
 /* ok  address 0x529a48  size 160 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v215_createTriducksEPN7Walaber12Widget_GroupENS0_19SubscreenIdentifierEi */
-/* WaterConcept::Screen_MainMenu_v2::_createTriducks */
+/* WaterConcept::Screen_MainMenu_v2::_createTriducks(Walaber::Widget_Group*, WaterConcept::Screen_MainMenu_v2::SubscreenIdentifier, int) */
 
 /* WaterConcept::GameState::reset() */
 
@@ -1245,7 +1530,7 @@ void __thiscall WaterConcept::Screen_MainMenu_v2::_createTriducks(Screen_MainMen
 
 /* ok  address 0x52b604  size 88 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v220_initTappableObjectsENS0_19SubscreenIdentifierEi */
-/* WaterConcept::Screen_MainMenu_v2::_initTappableObjects */
+/* WaterConcept::Screen_MainMenu_v2::_initTappableObjects(WaterConcept::Screen_MainMenu_v2::SubscreenIdentifier, int) */
 
 /* Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState> >::~SharedPtr() */
 
@@ -1273,7 +1558,7 @@ void __thiscall WaterConcept::Screen_MainMenu_v2::_initTappableObjects(Screen_Ma
 
 /* ok  address 0x52bee8  size 1136 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v215_buildLOWScreenEPN7Walaber12Widget_GroupEb */
-/* WaterConcept::Screen_MainMenu_v2::_buildLOWScreen */
+/* WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber::Widget_Group*, bool) */
 
 /* WaterConcept::GameState::update(float) */
 
@@ -1524,7 +1809,7 @@ LAB_0052bf54:
 
 /* ok  address 0x52dd58  size 208 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v229_rebuildTextLabelForStoryLineEN21WaterConceptConstants16LOWStorylineTypeE */
-/* WaterConcept::Screen_MainMenu_v2::_rebuildTextLabelForStoryLine */
+/* WaterConcept::Screen_MainMenu_v2::_rebuildTextLabelForStoryLine(WaterConceptConstants::LOWStorylineType) */
 
 /* WaterConcept::GameState::getNumSecondaryGoalSuccesses(int) */
 
@@ -1582,7 +1867,7 @@ WaterConcept::Screen_MainMenu_v2::_rebuildTextLabelForStoryLine
 
 /* ok  address 0x52f908  size 296 */
 /* mangled: _ZN12WaterConcept18Screen_MainMenu_v225_mergeRemoteLOTWLevelInfoEN21WaterConceptConstants16LOWStorylineTypeE */
-/* WaterConcept::Screen_MainMenu_v2::_mergeRemoteLOTWLevelInfo */
+/* WaterConcept::Screen_MainMenu_v2::_mergeRemoteLOTWLevelInfo(WaterConceptConstants::LOWStorylineType) */
 
 /* stretchQuad(Walaber::SpriteBatch*, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2 const&,
    Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Color, Walaber::VertexColorBlendMode)

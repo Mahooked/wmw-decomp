@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e76e0  size 1236 */
 /* mangled: _ZN7Walaber6Tweens29getTweenTypeForEasingFunctionEPFfffffE */
-/* Walaber::Tweens::getTweenTypeForEasingFunction */
+/* Walaber::Tweens::getTweenTypeForEasingFunction(float (*)(float, float, float, float)) */
 
 uint Walaber::Tweens::getTweenTypeForEasingFunction
                (long *param_1,long param_2,uint param_3,undefined4 param_4,ulong param_5,int param_6
@@ -48,9 +48,9 @@ uint Walaber::Tweens::getTweenTypeForEasingFunction
      (local_94 = FUN_003e572c(lVar19), uVar14 = local_94, local_94 != 0)) goto LAB_003e7870;
   uVar14 = (uint)*(ushort *)(lVar19 + 0x28);
   if (((*(ushort *)(lVar19 + 0x28) >> 1 & 1) != 0) &&
-     (iVar13 = const_Walaber::AABB::intersects(lVar19), iVar13 != 0)) {
+     (iVar13 = AABB::intersects(lVar19), iVar13 != 0)) {
                     /* try { // try from 003e7760 to 004e7cbb has its CatchHandler @ 003e5248 */
-    local_94 = const_Walaber::BezierCurve::_evaluateCurve(lVar19);
+    local_94 = BezierCurve::_evaluateCurve(lVar19);
     uVar14 = local_94;
     if (local_94 != 0) goto LAB_003e7870;
     uVar14 = (uint)*(ushort *)(lVar19 + 0x28);

@@ -4,7 +4,7 @@
 
 /* ok  address 0x55f884  size 1760 */
 /* mangled: _ZN12WaterConcept15Screen_Settings19_updateAudioButtonsEv */
-/* WaterConcept::Screen_Settings::_updateAudioButtons */
+/* WaterConcept::Screen_Settings::_updateAudioButtons() */
 
 /* WaterConcept::World::_waterBalloonCallback(void*) */
 

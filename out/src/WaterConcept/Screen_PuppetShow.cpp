@@ -4,7 +4,7 @@
 
 /* ok  address 0x55ca00  size 280 */
 /* mangled: _ZN12WaterConcept17Screen_PuppetShow8_buildUIEv */
-/* WaterConcept::Screen_PuppetShow::_buildUI */
+/* WaterConcept::Screen_PuppetShow::_buildUI() */
 
 /* Walaber::StringHelper::uIntToStr(unsigned int) */
 
@@ -74,7 +74,7 @@ LAB_0055cae0:
 
 /* ok  address 0x55cb18  size 1276 */
 /* mangled: _ZN12WaterConcept17Screen_PuppetShow12beingStackedEv */
-/* WaterConcept::Screen_PuppetShow::beingStacked */
+/* WaterConcept::Screen_PuppetShow::beingStacked() */
 
 /* WaterConcept::World::_spoutStateChangeCallback(void*) */
 
@@ -272,7 +272,7 @@ void __thiscall WaterConcept::Screen_PuppetShow::beingStacked(Screen_PuppetShow 
 
 /* ok  address 0x55d0a0  size 168 */
 /* mangled: _ZN12WaterConcept17Screen_PuppetShow11handleEventEiRKN7Walaber6Widget15WidgetActionRetEPS2_ */
-/* WaterConcept::Screen_PuppetShow::handleEvent */
+/* WaterConcept::Screen_PuppetShow::handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 /* WaterConcept::StarSeed::addTeleport(Walaber::Vector2 const&, float, float,
    WaterConcept::InteractiveObject::MoveEase, bool, bool) */

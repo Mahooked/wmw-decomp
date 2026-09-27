@@ -4,7 +4,7 @@
 
 /* ok  address 0x4ec918  size 60 */
 /* mangled: _ZN7Walaber14MemberCallbackIN12WaterConcept20Screen_InAppPurchaseEE6invokeEPv */
-/* Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::invoke */
+/* Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>::invoke(void*) */
 
 /* Walaber::Camera::clearAnimations() */
 

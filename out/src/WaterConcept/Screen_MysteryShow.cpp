@@ -4,7 +4,7 @@
 
 /* ok  address 0x538fc0  size 416 */
 /* mangled: _ZN12WaterConcept18Screen_MysteryShow20_spriteEventCallbackEPv */
-/* WaterConcept::Screen_MysteryShow::_spriteEventCallback */
+/* WaterConcept::Screen_MysteryShow::_spriteEventCallback(void*) */
 
 /* WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo() */
 
@@ -106,7 +106,7 @@ void WaterConcept::Screen_MysteryShow::_spriteEventCallback(void)
 
 /* ok  address 0x5395f0  size 416 */
 /* mangled: _ZN12WaterConcept18Screen_MysteryShow16loadPropertyListERKN7Walaber12PropertyListE */
-/* WaterConcept::Screen_MysteryShow::loadPropertyList */
+/* WaterConcept::Screen_MysteryShow::loadPropertyList(Walaber::PropertyList const&) */
 
 /* WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo() */
 
@@ -214,7 +214,7 @@ void WaterConcept::Screen_MysteryShow::loadPropertyList(void)
 
 /* ok  address 0x5397e0  size 840 */
 /* mangled: _ZN12WaterConcept18Screen_MysteryShow5enterEv */
-/* WaterConcept::Screen_MysteryShow::enter */
+/* WaterConcept::Screen_MysteryShow::enter() */
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo(std::__ndk1::basic_string<char,

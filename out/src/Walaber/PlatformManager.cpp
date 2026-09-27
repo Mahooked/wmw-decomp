@@ -4,7 +4,7 @@
 
 /* ok  address 0x358288  size 880 */
 /* mangled: _ZN7Walaber15PlatformManager29stripPlatformSpecificFilenameERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::PlatformManager::stripPlatformSpecificFilename */
+/* Walaber::PlatformManager::stripPlatformSpecificFilename(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 void Walaber::PlatformManager::stripPlatformSpecificFilename(long *param_1)
 
@@ -163,7 +163,7 @@ LAB_00358364:
 
 /* ok  address 0x3585f8  size 1892 */
 /* mangled: _ZN7Walaber15PlatformManager35appendSpecificPlatformTagToFilenameERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS0_19PlatformStringNamesE */
-/* Walaber::PlatformManager::appendSpecificPlatformTagToFilename */
+/* Walaber::PlatformManager::appendSpecificPlatformTagToFilename(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::PlatformManager::PlatformStringNames) */
 
 /* WARNING: Type propagation algorithm not settling */
 
@@ -223,7 +223,7 @@ uint Walaber::PlatformManager::appendSpecificPlatformTagToFilename(long *param_1
     } while( true );
   }
   iVar3 = xmlStrEqual(lVar6,&DAT_00712e5b);
-  ::SpriteBatch::SpriteBatch(param_1,lVar6);
+  SpriteBatch::SpriteBatch(param_1,lVar6);
   FUN_0035e868(param_1,lVar6);
   if ((int)param_1[0x25] < 1) {
     uVar17 = 0;

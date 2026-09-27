@@ -4,7 +4,7 @@
 
 /* ok  address 0x2bd2b4  size 68 */
 /* mangled: _ZN3ndk11file_existsEPKc */
-/* ndk::file_exists */
+/* ndk::file_exists(char const*) */
 
 void ndk::file_exists(void)
 

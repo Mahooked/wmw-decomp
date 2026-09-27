@@ -4,7 +4,7 @@
 
 /* ok  address 0x362e14  size 16 */
 /* mangled: _ZN7Walaber10GraphicsGL11setBlendingEb */
-/* Walaber::GraphicsGL::setBlending */
+/* Walaber::GraphicsGL::setBlending(bool) */
 
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
@@ -19,7 +19,7 @@ void Walaber::GraphicsGL::setBlending(void *__ptr)
 
 /* ok  address 0x362f4c  size 708 */
 /* mangled: _ZN7Walaber10GraphicsGL25disableTextureClientStateEv */
-/* Walaber::GraphicsGL::disableTextureClientState */
+/* Walaber::GraphicsGL::disableTextureClientState() */
 
 void Walaber::GraphicsGL::disableTextureClientState(long param_1)
 
@@ -123,7 +123,7 @@ LAB_00363200:
 
 /* ok  address 0x38d83c  size 8 */
 /* mangled: _ZN7Walaber10GraphicsGL13checkForErrorEv */
-/* Walaber::GraphicsGL::checkForError */
+/* Walaber::GraphicsGL::checkForError() */
 
 undefined8 Walaber::GraphicsGL::checkForError(void)
 

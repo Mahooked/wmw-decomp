@@ -4,7 +4,7 @@
 
 /* ok  address 0x3963c4  size 24 */
 /* mangled: _ZN7Walaber15RenderTexture2D4bindEv */
-/* Walaber::RenderTexture2D::bind */
+/* Walaber::RenderTexture2D::bind() */
 
 undefined8 Walaber::RenderTexture2D::bind(long param_1)
 
@@ -22,7 +22,7 @@ undefined8 Walaber::RenderTexture2D::bind(long param_1)
 
 /* ok  address 0x3963dc  size 76 */
 /* mangled: _ZN7Walaber15RenderTexture2D6unbindEv */
-/* Walaber::RenderTexture2D::unbind */
+/* Walaber::RenderTexture2D::unbind() */
 
 undefined4 Walaber::RenderTexture2D::unbind(long param_1)
 
@@ -48,7 +48,7 @@ undefined4 Walaber::RenderTexture2D::unbind(long param_1)
 
 /* ok  address 0x396444  size 28 */
 /* mangled: _ZN7Walaber15RenderTexture2D11setViewportEv */
-/* Walaber::RenderTexture2D::setViewport */
+/* Walaber::RenderTexture2D::setViewport() */
 
 undefined8 Walaber::RenderTexture2D::setViewport(long param_1,undefined8 param_2)
 
@@ -64,7 +64,7 @@ undefined8 Walaber::RenderTexture2D::setViewport(long param_1,undefined8 param_2
 
 /* ok  address 0x396460  size 1088 */
 /* mangled: _ZN7Walaber15RenderTexture2D14_applySettingsEv */
-/* Walaber::RenderTexture2D::_applySettings */
+/* Walaber::RenderTexture2D::_applySettings() */
 
 void Walaber::RenderTexture2D::_applySettings
                (undefined8 param_1,long param_2,undefined8 param_3,byte *param_4)
@@ -174,7 +174,7 @@ LAB_0039658c:
             uVar4 = xmlStrdup("ISO-8859-1");
             *(undefined8 *)(param_2 + 0x70) = uVar4;
           }
-          ::RenderTexture2D::RenderTexture2D(acStack_74,*pbVar10);
+          RenderTexture2D(acStack_74,*pbVar10);
           pcVar5 = acStack_74;
           uVar4 = 0xffffffff;
           goto LAB_00396804;
@@ -198,7 +198,7 @@ LAB_0039667c:
             uVar4 = xmlStrdup("ISO-8859-1");
             *(undefined8 *)(param_2 + 0x70) = uVar4;
           }
-          ::RenderTexture2D::RenderTexture2D(acStack_74,*pbVar10);
+          RenderTexture2D(acStack_74,*pbVar10);
           Widget_ScoreCounter::advanceToNextString(param_1,acStack_74,0xffffffff);
           goto LAB_00396808;
         }
@@ -214,7 +214,7 @@ LAB_00396644:
         }
         else if (((0xfffff < uVar7 - 0x10000) && (0xd7ff < uVar7)) && (0xffe < uVar7 - 0xe000 >> 1))
         goto LAB_0039667c;
-        ::RenderTexture2D::RenderTexture2D(acStack_74);
+        RenderTexture2D(acStack_74);
         Widget_ScoreCounter::advanceToNextString(param_1,acStack_74,0xffffffff);
         param_4 = pbVar10 + lVar11;
         pbVar10 = param_4;
@@ -237,9 +237,169 @@ LAB_00396644:
 
 
 
+/* ok  address 0x3968a0  size 308 */
+/* mangled: _ZN7Walaber15RenderTexture2DC2EjjNS_15TextureSettingsENS_25TextureInMemoryColorspaceE */
+/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, Walaber::TextureSettings, Walaber::TextureInMemoryColorspace) */
+
+void Walaber::RenderTexture2D::RenderTexture2D(undefined2 *param_1,uint param_2)
+
+{
+  undefined1 *puVar1;
+  long lVar2;
+  undefined1 *puVar3;
+  undefined1 uVar4;
+  
+  *param_1 = 0x2326;
+  *(undefined1 *)(param_1 + 1) = 0x78;
+  if ((int)param_2 < 0x10) {
+    puVar1 = (undefined1 *)((long)param_1 + 3);
+    param_1 = param_1 + 2;
+    puVar3 = puVar1;
+    if ((int)param_2 < 1) goto LAB_003969c4;
+  }
+  else {
+    if ((int)param_2 < 0x100) {
+      lVar2 = 4;
+    }
+    else if ((int)param_2 < 0x1000) {
+      lVar2 = 5;
+    }
+    else if ((int)param_2 < 0x10000) {
+      lVar2 = 6;
+    }
+    else {
+      lVar2 = 7;
+      if (0xfffff < (int)param_2) {
+        lVar2 = 8;
+      }
+    }
+    puVar3 = (undefined1 *)((long)param_1 + lVar2);
+    param_1 = (undefined2 *)(puVar3 + 1);
+    puVar1 = puVar3;
+  }
+  do {
+    switch(param_2 & 0xf) {
+    case 1:
+      uVar4 = 0x31;
+      break;
+    case 2:
+      uVar4 = 0x32;
+      break;
+    case 3:
+      uVar4 = 0x33;
+      break;
+    case 4:
+      uVar4 = 0x34;
+      break;
+    case 5:
+      uVar4 = 0x35;
+      break;
+    case 6:
+      uVar4 = 0x36;
+      break;
+    case 7:
+      uVar4 = 0x37;
+      break;
+    case 8:
+      uVar4 = 0x38;
+      break;
+    case 9:
+      uVar4 = 0x39;
+      break;
+    case 10:
+      uVar4 = 0x41;
+      break;
+    case 0xb:
+      uVar4 = 0x42;
+      break;
+    case 0xc:
+      uVar4 = 0x43;
+      break;
+    case 0xd:
+      uVar4 = 0x44;
+      break;
+    case 0xe:
+      uVar4 = 0x45;
+      break;
+    case 0xf:
+      uVar4 = 0x46;
+      break;
+    default:
+      uVar4 = 0x30;
+    }
+    param_2 = param_2 >> 4;
+    *puVar3 = uVar4;
+    puVar3 = puVar3 + -1;
+  } while (param_2 != 0);
+LAB_003969c4:
+  *(undefined1 *)param_1 = 0x3b;
+  puVar1[2] = 0;
+  return;
+}
+
+
+
+/* ok  address 0x396ab4  size 244 */
+/* mangled: _ZN7Walaber15RenderTexture2DC2EjjPhNS_25TextureInMemoryColorspaceE */
+/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, unsigned char*, Walaber::TextureInMemoryColorspace) */
+
+void Walaber::RenderTexture2D::RenderTexture2D
+               (long param_1,undefined8 param_2,long param_3,undefined4 param_4,undefined4 param_5,
+               char *param_6)
+
+{
+  char *pcVar1;
+  long lVar2;
+  int iVar3;
+  long lVar4;
+  undefined1 auStack_f8 [24];
+  char *local_e0;
+  long local_d0;
+  undefined8 uStack_c8;
+  uint local_c0;
+  undefined4 local_bc;
+  undefined4 uStack_b8;
+  long local_58;
+  
+  lVar2 = tpidr_el0;
+  local_58 = *(long *)(lVar2 + 0x28);
+  WidgetHelper::_parsePositionToScreen();
+  if ((param_1 != 0) && (param_3 != 0)) {
+    pcVar1 = "UTF-8";
+    if (param_6 != (char *)0x0) {
+      pcVar1 = param_6;
+    }
+    memset(auStack_f8,0,0xa0);
+    local_e0 = pcVar1;
+    local_d0 = param_1;
+    uStack_c8 = param_2;
+    local_bc = param_4;
+    uStack_b8 = param_5;
+    createScreenGrab(auStack_f8);
+    local_c0 = local_c0 | 0x20;
+    lVar4 = xmlGetIntSubset(param_2);
+    if ((lVar4 == 0) ||
+       (iVar3 = createProgrammaticTexture2D
+                          (*(undefined8 *)(lVar4 + 0x70),*(undefined8 *)(lVar4 + 0x68)), iVar3 < 1))
+    {
+      FUN_00395cc4(auStack_f8,param_3);
+    }
+    else {
+      clearGlMem(auStack_f8,param_3);
+    }
+  }
+  if (*(long *)(lVar2 + 0x28) == local_58) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  __stack_chk_fail();
+}
+
+
+
 /* ok  address 0x396c48  size 260 */
 /* mangled: _ZN7Walaber15RenderTexture2D16createScreenGrabEPjS1_S1_ */
-/* Walaber::RenderTexture2D::createScreenGrab */
+/* Walaber::RenderTexture2D::createScreenGrab(unsigned int*, unsigned int*, unsigned int*) */
 
 void Walaber::RenderTexture2D::createScreenGrab(long param_1)
 
@@ -299,7 +459,7 @@ void Walaber::RenderTexture2D::createScreenGrab(long param_1)
 
 /* ok  address 0x396d4c  size 3064 */
 /* mangled: _ZN7Walaber15RenderTexture2D10clearGlMemEv */
-/* Walaber::RenderTexture2D::clearGlMem */
+/* Walaber::RenderTexture2D::clearGlMem() */
 
 void Walaber::RenderTexture2D::clearGlMem(long param_1,long param_2)
 

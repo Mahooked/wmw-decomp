@@ -4,7 +4,7 @@
 
 /* ok  address 0x406238  size 352 */
 /* mangled: _ZN12WaterConcept6Fluids11addParticleEifRKN7Walaber7Vector2Ef */
-/* WaterConcept::Fluids::addParticle */
+/* WaterConcept::Fluids::addParticle(int, float, Walaber::Vector2 const&, float) */
 
 long * WaterConcept::Fluids::addParticle
                  (long *param_1,long param_2,long param_3,long param_4,long param_5,long param_6,
@@ -64,7 +64,7 @@ long * WaterConcept::Fluids::addParticle
 
 /* ok  address 0x406398  size 240 */
 /* mangled: _ZN12WaterConcept6Fluids11addParticleEifRKN7Walaber7Vector2ES4_ff */
-/* WaterConcept::Fluids::addParticle */
+/* WaterConcept::Fluids::addParticle(int, float, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float) */
 
 int * WaterConcept::Fluids::addParticle(long *param_1,int *param_2,undefined8 param_3)
 
@@ -123,7 +123,7 @@ LAB_004063d4:
 
 /* ok  address 0x406684  size 108 */
 /* mangled: _ZN12WaterConcept6Fluids14removeParticleERKNS_19ParticleDescriptionE */
-/* WaterConcept::Fluids::removeParticle */
+/* WaterConcept::Fluids::removeParticle(WaterConcept::ParticleDescription const&) */
 
 void WaterConcept::Fluids::removeParticle(undefined8 *param_1,short *param_2,long *param_3)
 
@@ -147,7 +147,7 @@ void WaterConcept::Fluids::removeParticle(undefined8 *param_1,short *param_2,lon
 
 /* ok  address 0x406950  size 1552 */
 /* mangled: _ZN12WaterConcept6Fluids25changeParticleToFluidTypeEiRKNS_19ParticleDescriptionE */
-/* WaterConcept::Fluids::changeParticleToFluidType */
+/* WaterConcept::Fluids::changeParticleToFluidType(int, WaterConcept::ParticleDescription const&) */
 
 void WaterConcept::Fluids::changeParticleToFluidType(long *param_1,long param_2,long param_3)
 
@@ -359,7 +359,7 @@ LAB_00406998:
 
 /* ok  address 0x406f60  size 4936 */
 /* mangled: _ZN12WaterConcept6Fluids34addCloneParticleToFluidWithDampingEiRKNS_19ParticleDescriptionEf */
-/* WaterConcept::Fluids::addCloneParticleToFluidWithDamping */
+/* WaterConcept::Fluids::addCloneParticleToFluidWithDamping(int, WaterConcept::ParticleDescription const&, float) */
 
 void WaterConcept::Fluids::addCloneParticleToFluidWithDamping
                (long *param_1,long param_2,int *param_3,undefined8 param_4,int param_5)
@@ -1006,7 +1006,7 @@ LAB_00407078:
 
 /* ok  address 0x4082a8  size 7900 */
 /* mangled: _ZN12WaterConcept6Fluids19_calculate_pressureEv */
-/* WaterConcept::Fluids::_calculate_pressure */
+/* WaterConcept::Fluids::_calculate_pressure() */
 
 void WaterConcept::Fluids::_calculate_pressure
                (long *param_1,long param_2,uint *param_3,undefined8 *param_4,long *param_5,
@@ -2049,7 +2049,7 @@ LAB_00408318:
 
 /* ok  address 0x40a184  size 212 */
 /* mangled: _ZN12WaterConcept6Fluids11_fillBufferEPN7Walaber16FluidParticleSetEPvRKNS1_5ColorES7_ffibS7_i */
-/* WaterConcept::Fluids::_fillBuffer */
+/* WaterConcept::Fluids::_fillBuffer(Walaber::FluidParticleSet*, void*, Walaber::Color const&, Walaber::Color const&, float, float, int, bool, Walaber::Color const&, int) */
 
 long * WaterConcept::Fluids::_fillBuffer(undefined8 param_1,long *param_2,undefined8 param_3)
 
@@ -2090,7 +2090,7 @@ LAB_0040a228:
 
 /* ok  address 0x40a258  size 112 */
 /* mangled: _ZN12WaterConcept6Fluids11_fillBufferEPN7Walaber16FluidParticleSetEPvRKNS1_5ColorES7_ffffibS7_i */
-/* WaterConcept::Fluids::_fillBuffer */
+/* WaterConcept::Fluids::_fillBuffer(Walaber::FluidParticleSet*, void*, Walaber::Color const&, Walaber::Color const&, float, float, float, float, int, bool, Walaber::Color const&, int) */
 
 long WaterConcept::Fluids::_fillBuffer(undefined8 *param_1,long param_2,undefined8 param_3)
 

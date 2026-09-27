@@ -4,7 +4,7 @@
 
 /* ok  address 0x47745c  size 36 */
 /* mangled: _ZN12WaterConcept10AlgaeHider19particleHasCollidedEPNS_6FluidsERKNS_19ParticleDescriptionEiRb */
-/* WaterConcept::AlgaeHider::particleHasCollided */
+/* WaterConcept::AlgaeHider::particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&) */
 
 /* Walaber::WidgetHelper::_extractLayer(_xmlNode*) */
 
@@ -24,7 +24,7 @@ int WaterConcept::AlgaeHider::particleHasCollided(_xmlNode *param_1)
 
 /* ok  address 0x4775a0  size 236 */
 /* mangled: _ZN12WaterConcept10AlgaeHider8addAlgaeENS_8GridCellE */
-/* WaterConcept::AlgaeHider::addAlgae */
+/* WaterConcept::AlgaeHider::addAlgae(WaterConcept::GridCell) */
 
 /* Walaber::WidgetHelper::_parseBool(_xmlNode*, char const*) */
 

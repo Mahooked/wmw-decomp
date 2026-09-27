@@ -4,7 +4,7 @@
 
 /* ok  address 0x36aadc  size 1560 */
 /* mangled: _ZN7Walaber6Widget16setLocalPositionERKNS_7Vector2E */
-/* Walaber::Widget::setLocalPosition */
+/* Walaber::Widget::setLocalPosition(Walaber::Vector2 const&) */
 
 int * Walaber::Widget::setLocalPosition(long param_1,int param_2)
 
@@ -294,7 +294,7 @@ LAB_0036b0e8:
 
 /* ok  address 0x36d644  size 1096 */
 /* mangled: _ZN7Walaber6Widget6updateEfRNS0_15WidgetActionRetE */
-/* Walaber::Widget::update */
+/* Walaber::Widget::update(float, Walaber::Widget::WidgetActionRet&) */
 
 int Walaber::Widget::update
               (long param_1,long param_2,long param_3,long param_4,int param_5,long param_6,
@@ -504,7 +504,7 @@ LAB_0036da54:
 
 /* ok  address 0x370168  size 152 */
 /* mangled: _ZN7Walaber6Widget13getWidgetNameEv */
-/* Walaber::Widget::getWidgetName */
+/* Walaber::Widget::getWidgetName() */
 
 void Walaber::Widget::getWidgetName(long param_1,uint param_2)
 

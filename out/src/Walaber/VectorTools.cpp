@@ -4,7 +4,7 @@
 
 /* ok  address 0x3e7bb4  size 292 */
 /* mangled: _ZN7Walaber11VectorTools27distanceBetweenLineSegmentsERKNS_7Vector2ES3_S3_S3_ */
-/* Walaber::VectorTools::distanceBetweenLineSegments */
+/* Walaber::VectorTools::distanceBetweenLineSegments(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 void Walaber::VectorTools::distanceBetweenLineSegments(undefined1 *param_1)
 
@@ -73,7 +73,7 @@ void Walaber::VectorTools::distanceBetweenLineSegments(undefined1 *param_1)
 
 /* ok  address 0x3e7cd8  size 440 */
 /* mangled: _ZN7Walaber11VectorTools17distToLineSegmentERKNS_7Vector2ES3_S3_S3_fS3_Rf */
-/* Walaber::VectorTools::distToLineSegment */
+/* Walaber::VectorTools::distToLineSegment(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::distToLineSegment
                (undefined8 *param_1,int param_2,char param_3,uint param_4,int *param_5)
@@ -160,7 +160,7 @@ LAB_003e7d08:
 
 /* ok  address 0x3e7e90  size 108 */
 /* mangled: _ZN7Walaber11VectorTools34distanceBetweenLineSegmentsSquaredERKNS_7Vector2ES3_S3_S3_ */
-/* Walaber::VectorTools::distanceBetweenLineSegmentsSquared */
+/* Walaber::VectorTools::distanceBetweenLineSegmentsSquared(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 void Walaber::VectorTools::distanceBetweenLineSegmentsSquared(long param_1,undefined4 param_2)
 
@@ -180,7 +180,7 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared(long param_1,undef
 
 /* ok  address 0x3e8020  size 136 */
 /* mangled: _ZN7Walaber11VectorTools24distToLineSegmentSquaredERKNS_7Vector2ES3_S3_S3_fS3_Rf */
-/* Walaber::VectorTools::distToLineSegmentSquared */
+/* Walaber::VectorTools::distToLineSegmentSquared(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::distToLineSegmentSquared(long param_1,long param_2,int *param_3)
 
@@ -213,7 +213,7 @@ void Walaber::VectorTools::distToLineSegmentSquared(long param_1,long param_2,in
 
 /* ok  address 0x3e80a8  size 376 */
 /* mangled: _ZN7Walaber11VectorTools17distToLineSegmentERKNS_7Vector2ES3_S3_Rf */
-/* Walaber::VectorTools::distToLineSegment */
+/* Walaber::VectorTools::distToLineSegment(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::distToLineSegment(long param_1,ulong param_2,ulong *param_3)
 
@@ -313,7 +313,7 @@ void Walaber::VectorTools::distToLineSegment(long param_1,ulong param_2,ulong *p
 
 /* ok  address 0x3e8220  size 168 */
 /* mangled: _ZN7Walaber11VectorTools20calculateSpringForceERKNS_7Vector2ES3_S3_S3_fff */
-/* Walaber::VectorTools::calculateSpringForce */
+/* Walaber::VectorTools::calculateSpringForce(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float, float) */
 
 void Walaber::VectorTools::calculateSpringForce(byte *param_1,uint *param_2)
 
@@ -355,7 +355,7 @@ void Walaber::VectorTools::calculateSpringForce(byte *param_1,uint *param_2)
 
 /* ok  address 0x3e82c8  size 380 */
 /* mangled: _ZN7Walaber11VectorTools20calculateSpringForceERKNS_7Vector2EfS3_S3_fff */
-/* Walaber::VectorTools::calculateSpringForce */
+/* Walaber::VectorTools::calculateSpringForce(Walaber::Vector2 const&, float, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float, float) */
 
 undefined8 Walaber::VectorTools::calculateSpringForce(byte *param_1,ulong *param_2)
 
@@ -448,7 +448,7 @@ undefined8 Walaber::VectorTools::calculateSpringForce(byte *param_1,ulong *param
 
 /* ok  address 0x3e8444  size 316 */
 /* mangled: _ZN7Walaber11VectorTools12bezierInterpERKNS_7Vector2ES3_S3_S3_f */
-/* Walaber::VectorTools::bezierInterp */
+/* Walaber::VectorTools::bezierInterp(Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float) */
 
 int Walaber::VectorTools::bezierInterp(long param_1,int param_2,long param_3)
 
@@ -474,8 +474,7 @@ int Walaber::VectorTools::bezierInterp(long param_1,int param_2,long param_3)
           iVar1 = 7;
         }
         else {
-          iVar1 = ::BroadcastManager::BroadcastManager
-                            (lVar5,0,*(undefined4 *)(lVar5 + 0x58),lVar2,0);
+          iVar1 = BroadcastManager::BroadcastManager(lVar5,0,*(undefined4 *)(lVar5 + 0x58),lVar2,0);
           if (iVar1 == 0) {
             *(long *)(lVar5 + 0x60) = lVar2;
             goto LAB_003e8504;

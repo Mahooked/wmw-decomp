@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d64a4  size 116 */
 /* mangled: _ZN7Walaber11XMLDocument13NamedIterator16getChildIteratorEv */
-/* Walaber::XMLDocument::NamedIterator::getChildIterator */
+/* Walaber::XMLDocument::NamedIterator::getChildIterator() */
 
 undefined8
 Walaber::XMLDocument::NamedIterator::getChildIterator
@@ -18,7 +18,7 @@ Walaber::XMLDocument::NamedIterator::getChildIterator
   }
   else if ((*(char *)(param_1 + 0x6f) == '\x01') ||
           (uVar1 = Transition_Iris::draw(param_1), (int)uVar1 == 0)) {
-    uVar1 = ::BroadcastManager::BroadcastManager(param_1,param_2,param_3,param_4,0);
+    uVar1 = BroadcastManager::BroadcastManager(param_1,param_2,param_3,param_4,0);
     return uVar1;
   }
   return uVar1;
@@ -28,7 +28,7 @@ Walaber::XMLDocument::NamedIterator::getChildIterator
 
 /* ok  address 0x3d6518  size 12 */
 /* mangled: _ZN7Walaber11XMLDocument13NamedIterator12getAttributeERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEERNS_8PropertyE */
-/* Walaber::XMLDocument::NamedIterator::getAttribute */
+/* Walaber::XMLDocument::NamedIterator::getAttribute(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::Property&) */
 
 void Walaber::XMLDocument::NamedIterator::getAttribute(void)
 
@@ -41,7 +41,7 @@ void Walaber::XMLDocument::NamedIterator::getAttribute(void)
 
 /* ok  address 0x3d66e4  size 116 */
 /* mangled: _ZN7Walaber11XMLDocument13NamedIterator12getNodeValueERNS_8PropertyE */
-/* Walaber::XMLDocument::NamedIterator::getNodeValue */
+/* Walaber::XMLDocument::NamedIterator::getNodeValue(Walaber::Property&) */
 
 undefined8
 Walaber::XMLDocument::NamedIterator::getNodeValue

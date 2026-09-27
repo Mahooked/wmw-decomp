@@ -4,7 +4,7 @@
 
 /* ok  address 0x48dd30  size 228 */
 /* mangled: _ZN12WaterConcept5Spout18pickFinalParticlesEPNS_6FluidsEPNSt6__ndk16vectorINS_19ParticleDescriptionENS3_9allocatorIS5_EEEE */
-/* WaterConcept::Spout::pickFinalParticles */
+/* WaterConcept::Spout::pickFinalParticles(WaterConcept::Fluids*, std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>*) */
 
 /* Walaber::FluidParticleSet::updateParticles(float) */
 
@@ -66,7 +66,7 @@ void __thiscall WaterConcept::Spout::pickFinalParticles(Spout *this,float param_
 
 /* ok  address 0x48e028  size 528 */
 /* mangled: _ZN12WaterConcept5Spout17addConnectedSpoutEPS0_fNS_11YSwitchPortE */
-/* WaterConcept::Spout::addConnectedSpout */
+/* WaterConcept::Spout::addConnectedSpout(WaterConcept::Spout*, float, WaterConcept::YSwitchPort) */
 
 /* Walaber::FluidParticleSet::drawParticles(Walaber::SpriteBatch&,
    Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, Walaber::Color const&, int, float,

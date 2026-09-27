@@ -4,7 +4,7 @@
 
 /* ok  address 0x34df1c  size 44 */
 /* mangled: _ZN7Walaber12SoundManager19_initConfigFileReadEPv */
-/* Walaber::SoundManager::_initConfigFileRead */
+/* Walaber::SoundManager::_initConfigFileRead(void*) */
 
 void Walaber::SoundManager::_initConfigFileRead(Init *param_1)
 
@@ -18,7 +18,7 @@ void Walaber::SoundManager::_initConfigFileRead(Init *param_1)
 
 /* ok  address 0x34e900  size 832 */
 /* mangled: _ZN7Walaber12SoundManager8addSoundEiNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEbfbbb */
-/* Walaber::SoundManager::addSound */
+/* Walaber::SoundManager::addSound(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, bool, float, bool, bool, bool) */
 
 void * Walaber::SoundManager::addSound(long param_1,byte *param_2,ulong param_3)
 
@@ -218,7 +218,7 @@ void * Walaber::SoundManager::addSound(long param_1,byte *param_2,ulong param_3)
 
 /* ok  address 0x34fd94  size 192 */
 /* mangled: _ZN7Walaber12SoundManager10_loadSoundEiiNS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::SoundManager::_loadSound */
+/* Walaber::SoundManager::_loadSound(int, int, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::SoundManager::_loadSound(void)
 
@@ -254,7 +254,7 @@ void Walaber::SoundManager::_loadSound(void)
 
 /* ok  address 0x350538  size 36 */
 /* mangled: _ZN7Walaber12SoundManager20refreshStreamedTrackERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi */
-/* Walaber::SoundManager::refreshStreamedTrack */
+/* Walaber::SoundManager::refreshStreamedTrack(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
 
 undefined * Walaber::SoundManager::refreshStreamedTrack(int param_1)
 
@@ -269,7 +269,7 @@ undefined * Walaber::SoundManager::refreshStreamedTrack(int param_1)
 
 /* ok  address 0x350e68  size 392 */
 /* mangled: _ZN7Walaber12SoundManager18_loadSoundFileReadEPv */
-/* Walaber::SoundManager::_loadSoundFileRead */
+/* Walaber::SoundManager::_loadSoundFileRead(void*) */
 
 int Walaber::SoundManager::_loadSoundFileRead(byte *param_1,int *param_2,byte *param_3,int *param_4)
 
@@ -367,7 +367,7 @@ LAB_00350fbc:
 
 /* ok  address 0x3517a4  size 296 */
 /* mangled: _ZN7Walaber12SoundManager18_loadSoundResourceEPNS_11FileManager26ReadFileCallbackParametersEb */
-/* Walaber::SoundManager::_loadSoundResource */
+/* Walaber::SoundManager::_loadSoundResource(Walaber::FileManager::ReadFileCallbackParameters*, bool) */
 
 void Walaber::SoundManager::_loadSoundResource
                (long param_1,long *param_2,undefined8 *param_3,int param_4)
@@ -426,7 +426,7 @@ void Walaber::SoundManager::_loadSoundResource
 
 /* ok  address 0x351a6c  size 712 */
 /* mangled: _ZN7Walaber12SoundManager19modifyMusicFilePathERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* Walaber::SoundManager::modifyMusicFilePath */
+/* Walaber::SoundManager::modifyMusicFilePath(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
 
 int Walaber::SoundManager::modifyMusicFilePath(long param_1,long *param_2,undefined8 *param_3)
 
@@ -525,7 +525,7 @@ LAB_00351c1c:
 
 /* ok  address 0x351d34  size 28 */
 /* mangled: _ZN7Walaber12SoundManager18playSoundFromGroupEiff */
-/* Walaber::SoundManager::playSoundFromGroup */
+/* Walaber::SoundManager::playSoundFromGroup(int, float, float) */
 
 int Walaber::SoundManager::playSoundFromGroup(long *param_1)
 
@@ -540,7 +540,7 @@ int Walaber::SoundManager::playSoundFromGroup(long *param_1)
 
 /* ok  address 0x351ea4  size 12 */
 /* mangled: _ZN7Walaber12SoundManager16_oneShotCallbackEPv */
-/* Walaber::SoundManager::_oneShotCallback */
+/* Walaber::SoundManager::_oneShotCallback(void*) */
 
 void Walaber::SoundManager::_oneShotCallback(void)
 
@@ -553,7 +553,7 @@ void Walaber::SoundManager::_oneShotCallback(void)
 
 /* ok  address 0x352184  size 364 */
 /* mangled: _ZN7Walaber12SoundManager17newSoundFromGroupEiNS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::SoundManager::newSoundFromGroup */
+/* Walaber::SoundManager::newSoundFromGroup(int, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 int Walaber::SoundManager::newSoundFromGroup
               (byte *param_1,int *param_2,byte *param_3,int *param_4,long param_5)
@@ -633,9 +633,52 @@ LAB_003522d4:
 
 
 
+/* ok  address 0x3522f0  size 240 */
+/* mangled: _ZNK7Walaber12SoundManager26getFilenameForSoundInGroupEii */
+/* Walaber::SoundManager::getFilenameForSoundInGroup(int, int) const */
+
+undefined * Walaber::SoundManager::getFilenameForSoundInGroup(byte *param_1)
+
+{
+  byte bVar1;
+  int iVar2;
+  
+  if (param_1 == (byte *)0x0) {
+    return (undefined *)0x0;
+  }
+  bVar1 = *param_1;
+  if (bVar1 < 0x6c) {
+    if (bVar1 == 0x61) {
+      iVar2 = xmlStrEqual(param_1,&DAT_0072db5e);
+      if (iVar2 != 0) {
+        return &DAT_00828118;
+      }
+      iVar2 = xmlStrEqual(param_1,&DAT_007122ef);
+      if (iVar2 != 0) {
+        return &DAT_008281a0;
+      }
+    }
+    else if ((bVar1 == 0x67) && (iVar2 = xmlStrEqual(param_1,&DAT_007122ec), iVar2 != 0)) {
+      return &DAT_00828090;
+    }
+  }
+  else if (bVar1 == 0x71) {
+    iVar2 = xmlStrEqual(param_1,&DAT_007122f4);
+    if (iVar2 != 0) {
+      return &DAT_00828228;
+    }
+  }
+  else if ((bVar1 == 0x6c) && (iVar2 = xmlStrEqual(param_1,&DAT_00721b82), iVar2 != 0)) {
+    return &DAT_00828008;
+  }
+  return (undefined *)0x0;
+}
+
+
+
 /* ok  address 0x3523e0  size 144 */
 /* mangled: _ZN7Walaber12SoundManager16newSoundSpecificEiiNS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::SoundManager::newSoundSpecific */
+/* Walaber::SoundManager::newSoundSpecific(int, int, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 long Walaber::SoundManager::newSoundSpecific(long param_1)
 
@@ -681,7 +724,7 @@ long Walaber::SoundManager::newSoundSpecific(long param_1)
 
 /* ok  address 0x3527d4  size 96 */
 /* mangled: _ZN7Walaber12SoundManager18soundCountForGroupEi */
-/* Walaber::SoundManager::soundCountForGroup */
+/* Walaber::SoundManager::soundCountForGroup(int) */
 
 long Walaber::SoundManager::soundCountForGroup(long param_1,undefined8 param_2)
 
@@ -712,7 +755,7 @@ long Walaber::SoundManager::soundCountForGroup(long param_1,undefined8 param_2)
 
 /* ok  address 0x352834  size 48 */
 /* mangled: _ZN7Walaber12SoundManager17playSoundSpecificEiif */
-/* Walaber::SoundManager::playSoundSpecific */
+/* Walaber::SoundManager::playSoundSpecific(int, int, float) */
 
 undefined8 Walaber::SoundManager::playSoundSpecific(long param_1)
 
@@ -736,7 +779,7 @@ undefined8 Walaber::SoundManager::playSoundSpecific(long param_1)
 
 /* ok  address 0x352d38  size 396 */
 /* mangled: _ZN7Walaber12SoundManager13playSoundFileERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEffb */
-/* Walaber::SoundManager::playSoundFile */
+/* Walaber::SoundManager::playSoundFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, float, bool) */
 
 byte * Walaber::SoundManager::playSoundFile(undefined8 param_1,byte *param_2)
 
@@ -834,7 +877,7 @@ LAB_00352e90:
 
 /* ok  address 0x352ec4  size 8 */
 /* mangled: _ZN7Walaber12SoundManager26_oneShotCallbackDirectFileEPv */
-/* Walaber::SoundManager::_oneShotCallbackDirectFile */
+/* Walaber::SoundManager::_oneShotCallbackDirectFile(void*) */
 
 void Walaber::SoundManager::_oneShotCallbackDirectFile(void)
 
@@ -847,7 +890,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void)
 
 /* ok  address 0x352fcc  size 484 */
 /* mangled: _ZN7Walaber12SoundManager12getSoundFileERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListEb */
-/* Walaber::SoundManager::getSoundFile */
+/* Walaber::SoundManager::getSoundFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&, bool) */
 
 void Walaber::SoundManager::getSoundFile(long param_1,long param_2)
 
@@ -930,7 +973,7 @@ LAB_0035314c:
 
 /* ok  address 0x3535c0  size 48 */
 /* mangled: _ZN7Walaber12SoundManager24_loadSoundFileDirectReadEPv */
-/* Walaber::SoundManager::_loadSoundFileDirectRead */
+/* Walaber::SoundManager::_loadSoundFileDirectRead(void*) */
 
 void Walaber::SoundManager::_loadSoundFileDirectRead(undefined8 *param_1)
 
@@ -947,7 +990,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(undefined8 *param_1)
 
 /* ok  address 0x354058  size 548 */
 /* mangled: _ZN7Walaber12SoundManager8optimizeEb */
-/* Walaber::SoundManager::optimize */
+/* Walaber::SoundManager::optimize(bool) */
 
 void Walaber::SoundManager::optimize
                (long param_1,char *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
@@ -1041,7 +1084,7 @@ void Walaber::SoundManager::optimize
 
 /* ok  address 0x35427c  size 176 */
 /* mangled: _ZN7Walaber12SoundManager9freeGroupEib */
-/* Walaber::SoundManager::freeGroup */
+/* Walaber::SoundManager::freeGroup(int, bool) */
 
 void Walaber::SoundManager::freeGroup(void *param_1)
 
@@ -1071,7 +1114,7 @@ void Walaber::SoundManager::freeGroup(void *param_1)
 
 /* ok  address 0x35432c  size 336 */
 /* mangled: _ZN7Walaber12SoundManager11removeGroupEi */
-/* Walaber::SoundManager::removeGroup */
+/* Walaber::SoundManager::removeGroup(int) */
 
 undefined8 Walaber::SoundManager::removeGroup(undefined8 *param_1,undefined8 *param_2)
 
@@ -1129,7 +1172,7 @@ undefined8 Walaber::SoundManager::removeGroup(undefined8 *param_1,undefined8 *pa
 
 /* ok  address 0x35447c  size 636 */
 /* mangled: _ZN7Walaber12SoundManager6updateEf */
-/* Walaber::SoundManager::update */
+/* Walaber::SoundManager::update(float) */
 
 void Walaber::SoundManager::update
                (long param_1,char *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
@@ -1236,7 +1279,7 @@ void Walaber::SoundManager::update
 
 /* ok  address 0x3546f8  size 636 */
 /* mangled: _ZN7Walaber12SoundManager18_streamMusicAtPathERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEii */
-/* Walaber::SoundManager::_streamMusicAtPath */
+/* Walaber::SoundManager::_streamMusicAtPath(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int, int) */
 
 void Walaber::SoundManager::_streamMusicAtPath
                (long param_1,char *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
@@ -1343,7 +1386,7 @@ void Walaber::SoundManager::_streamMusicAtPath
 
 /* ok  address 0x354974  size 1144 */
 /* mangled: _ZN7Walaber12SoundManager11resumeMusicEv */
-/* Walaber::SoundManager::resumeMusic */
+/* Walaber::SoundManager::resumeMusic() */
 
 void Walaber::SoundManager::resumeMusic
                (int *param_1,long param_2,char *param_3,code *param_4,undefined8 param_5)
@@ -1567,7 +1610,7 @@ LAB_00354db8:
 
 /* ok  address 0x354dec  size 192 */
 /* mangled: _ZN7Walaber12SoundManager21playHubMusicFromGroupEif */
-/* Walaber::SoundManager::playHubMusicFromGroup */
+/* Walaber::SoundManager::playHubMusicFromGroup(int, float) */
 
 void Walaber::SoundManager::playHubMusicFromGroup
                (undefined4 param_1,int param_2,undefined8 param_3,char *param_4,long param_5)
@@ -1599,7 +1642,7 @@ void Walaber::SoundManager::playHubMusicFromGroup
 
 /* ok  address 0x35511c  size 92 */
 /* mangled: _ZN7Walaber12SoundManager27_resumeStreamingMusicAtPathEPv */
-/* Walaber::SoundManager::_resumeStreamingMusicAtPath */
+/* Walaber::SoundManager::_resumeStreamingMusicAtPath(void*) */
 
 void Walaber::SoundManager::_resumeStreamingMusicAtPath(undefined8 param_1,code *param_2)
 
@@ -1618,7 +1661,7 @@ void Walaber::SoundManager::_resumeStreamingMusicAtPath(undefined8 param_1,code 
 
 /* ok  address 0x355178  size 76 */
 /* mangled: _ZN7Walaber12SoundManager21clearHubMusicChannelsEv */
-/* Walaber::SoundManager::clearHubMusicChannels */
+/* Walaber::SoundManager::clearHubMusicChannels() */
 
 void Walaber::SoundManager::clearHubMusicChannels(undefined8 param_1,undefined8 param_2)
 
@@ -1634,7 +1677,7 @@ void Walaber::SoundManager::clearHubMusicChannels(undefined8 param_1,undefined8 
 
 /* ok  address 0x355248  size 40 */
 /* mangled: _ZN7Walaber12SoundManager20playNextTrackInGroupEi */
-/* Walaber::SoundManager::playNextTrackInGroup */
+/* Walaber::SoundManager::playNextTrackInGroup(int) */
 
 undefined8 Walaber::SoundManager::playNextTrackInGroup(undefined8 param_1)
 
@@ -1651,7 +1694,7 @@ undefined8 Walaber::SoundManager::playNextTrackInGroup(undefined8 param_1)
 
 /* ok  address 0x3553f0  size 12 */
 /* mangled: _ZN7Walaber12SoundManager23playCurrentTrackInGroupEi */
-/* Walaber::SoundManager::playCurrentTrackInGroup */
+/* Walaber::SoundManager::playCurrentTrackInGroup(int) */
 
 undefined4 * Walaber::SoundManager::playCurrentTrackInGroup(void)
 
@@ -1663,7 +1706,7 @@ undefined4 * Walaber::SoundManager::playCurrentTrackInGroup(void)
 
 /* ok  address 0x35558c  size 12 */
 /* mangled: _ZN7Walaber12SoundManager26playSpecificMusicFromGroupEii */
-/* Walaber::SoundManager::playSpecificMusicFromGroup */
+/* Walaber::SoundManager::playSpecificMusicFromGroup(int, int) */
 
 undefined ** Walaber::SoundManager::playSpecificMusicFromGroup(void)
 
@@ -1675,7 +1718,7 @@ undefined ** Walaber::SoundManager::playSpecificMusicFromGroup(void)
 
 /* ok  address 0x3556ec  size 12 */
 /* mangled: _ZN7Walaber12SoundManager23initDefaultSubtitleTextEv */
-/* Walaber::SoundManager::initDefaultSubtitleText */
+/* Walaber::SoundManager::initDefaultSubtitleText() */
 
 undefined4 * Walaber::SoundManager::initDefaultSubtitleText(void)
 
@@ -1687,7 +1730,7 @@ undefined4 * Walaber::SoundManager::initDefaultSubtitleText(void)
 
 /* ok  address 0x355958  size 344 */
 /* mangled: _ZN7Walaber12SoundManager10pauseMusicEv */
-/* Walaber::SoundManager::pauseMusic */
+/* Walaber::SoundManager::pauseMusic() */
 
 void Walaber::SoundManager::pauseMusic(long *param_1,code *param_2)
 
@@ -1754,7 +1797,7 @@ void Walaber::SoundManager::pauseMusic(long *param_1,code *param_2)
 
 /* ok  address 0x355ab0  size 16 */
 /* mangled: _ZN7Walaber12SoundManager13isMusicPausedEv */
-/* Walaber::SoundManager::isMusicPaused */
+/* Walaber::SoundManager::isMusicPaused() */
 
 void Walaber::SoundManager::isMusicPaused(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 

@@ -4,7 +4,7 @@
 
 /* ok  address 0x3939ec  size 76 */
 /* mangled: _ZN7Walaber14MemberCallbackINS_15ParticleEmitterEE6invokeEPv */
-/* Walaber::MemberCallback<Walaber::ParticleEmitter>::invoke */
+/* Walaber::MemberCallback<Walaber::ParticleEmitter>::invoke(void*) */
 
 undefined8 xmlTextReaderHasAttributes(long param_1)
 

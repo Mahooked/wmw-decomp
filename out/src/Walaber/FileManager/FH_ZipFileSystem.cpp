@@ -4,7 +4,7 @@
 
 /* ok  address 0x3d3df0  size 12 */
 /* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystem18fileExistsSuceededERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_NS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded */
+/* Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 undefined8 Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded(long *param_1)
 
@@ -16,7 +16,7 @@ undefined8 Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded(long *para
 
 /* ok  address 0x3d4054  size 48 */
 /* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystem8readFileERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::FH_ZipFileSystem::readFile */
+/* Walaber::FileManager::FH_ZipFileSystem::readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 undefined8 Walaber::FileManager::FH_ZipFileSystem::readFile(long param_1,int param_2)
 
@@ -39,7 +39,7 @@ undefined8 Walaber::FileManager::FH_ZipFileSystem::readFile(long param_1,int par
 
 /* ok  address 0x3d4294  size 52 */
 /* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystem17readFileSucceededERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_NS_9SharedPtrINS_8CallbackEEERKNS_12PropertyListE */
-/* Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded */
+/* Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 undefined8 Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded(undefined8 param_1)
 
@@ -56,7 +56,7 @@ undefined8 Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded(undefined8 
 
 /* ok  address 0x3d44bc  size 56 */
 /* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystem7getNameEv */
-/* Walaber::FileManager::FH_ZipFileSystem::getName */
+/* Walaber::FileManager::FH_ZipFileSystem::getName() */
 
 undefined8 Walaber::FileManager::FH_ZipFileSystem::getName(undefined8 param_1)
 
