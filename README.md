@@ -273,30 +273,44 @@ ABI mangling grammar. It is needed because the analysis runs headless in places
 where `c++filt` is not available, and because the pipeline needs structured output
 rather than a flat string.
 
-It covers nested names, function and data manglings, template parameter and argument
-lists, substitution-compressed back-references, builtin types, CV qualifiers,
-ref qualifiers, operator overloads, converting constructors, and the destructor's
-`D0`/`D1`/`D2` encodings. It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
-`_ZTS`), which is what makes the class inventory possible.
+It covers nested names, function and data manglings, template parameter and
+argument lists, substitution-compressed back-references, builtin types, CV
+qualifiers, ref qualifiers, operator overloads, converting constructors, the
+destructor's `D0`/`D1`/`D2` encodings, non-virtual and virtual thunks, and
+`J` argument packs (spliced into the enclosing argument list, as GCC does). It
+also demangles the RTTI symbols (`_ZTI`, `_ZTV`, `_ZTS`), which is what makes
+the class inventory possible.
 
 It is deliberately **fault-tolerant**: a single malformed symbol degrades to a
 `raw:` prefix instead of aborting a bulk run.
 
-It is also **not** fully correct, and the limits are measured rather than
-assumed. Over the 5,097 game-namespace C++ symbols in `.text`:
+Accuracy is measured against an oracle built from Ghidra's bundled GCC 4.1
+`c++filt`, which resolves all 6,769 mangled names in the binary and agrees with
+GCC 2.24 on every one. `tools/refdemangle.py` builds that oracle,
+`tools/refdiff.py` localises the first divergence, and `tools/refprobe.py`
+asks it about synthetic names.
 
-| | |
+| Reference set (6,769 names) | |
+|---|---|
+| Match GCC | 6,589 (97.3%) |
+| Differ | 180 (2.7%) |
+| Left mangled | 0 |
+
+The 180 remaining differences are almost all one construct: **defaulted
+function parameters** (`Dp`). Where GCC expands `__emplace_unique_key_args`'s
+trailing `Dp` argument into the full parameter list it defaults to, the local
+demangler stops at the first parameter. A smaller group is libc++ internal
+traits (`std::__ndk1::enable_if<__is_forward_iterator<...>>`) surfacing as
+template arguments, plus a few `__bit_iterator` instantiations.
+
+The older game-symbol figures below are **stale** — they predate the thunk,
+pack, and default-argument work and have not been regenerated yet:
+
+| 5,097 game-namespace symbols (stale) | |
 |---|---|
 | Render to any readable form | 4,582 (89.9%) |
 | Render with a full parameter list | 3,738 (73.3%) |
 | Left mangled | 515 (10.1%) |
-
-The failures concentrate in one place: **deep template-argument substitution**.
-Instantiations of `std::__ndk1::__tree` and of `Walaber::SharedPtr` with nested
-template arguments either stay mangled or resolve `S<n>_` to the wrong table
-entry, which changes *which type a name refers to*, not just its spelling. This
-is a correctness limit, not a cosmetic one, and it is the reason
-`out/rtti/summary.json` records the coverage numbers.
 
 Cross-checked against the 464 symbols Ghidra had already demangled in its own
 symbol table, the local demangler's name agrees on 77, differs on 71, and leaves
