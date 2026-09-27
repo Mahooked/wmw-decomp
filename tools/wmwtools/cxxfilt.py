@@ -224,6 +224,16 @@ class Demangler:
         self.sub_is_reference = False
         self.name_is_template = False
         self.targs: list[list[str]] = []
+        # Parallel to targs: which index in each scope holds a ``J`` argument
+        # pack, and the pack's elements.  GCC stores a pack as *one* template
+        # argument (a TEMPLATE_ARGLIST node), so ``T<n>_`` numbering counts it
+        # as a single slot -- the numbering here must agree.
+        self.targ_packs: list[list[tuple[int, list[str]]]] = []
+        # Which pack element a T-reference resolves to while a ``Dp`` pack
+        # expansion is being rendered; 0 outside an expansion, exactly like
+        # cp-demangle.c's dpi->pack_index.
+        self.pack_index = 0
+        self._pack_hit: Optional[list[str]] = None
         self.type_depth = 0
 
     # -- low level ------------------------------------------------------
@@ -656,18 +666,27 @@ class Demangler:
         return self._parse_template_args_body()
 
     def _parse_template_args_body(self) -> str:
-        args = self._parse_template_arglist()
+        packs: list[tuple[int, list[str]]] = []
+        args = self._parse_template_arglist(packs=packs)
         # The arguments name types for the rest of the enclosing template, so
         # make them visible to any T_ reference that follows.
         self.targs.append(args)
+        self.targ_packs.append(packs)
         return "<" + ", ".join(a for a in args if a) + ">"
 
-    def _parse_template_arglist(self, stop_before_e: bool = False) -> list[str]:
+    def _parse_template_arglist(
+        self, stop_before_e: bool = False, packs: Optional[list] = None
+    ) -> list[str]:
         """Parse ``<template-arg>+``.
 
         Inside a ``J`` argument pack the arguments carry no ``I`` and no
         closing ``E`` of their own -- the pack's single ``E`` is the only
         terminator -- so ``stop_before_e`` leaves that ``E`` for the caller.
+
+        A ``J`` pack becomes a single argument (its elements rendered
+        comma-separated, so the visible output is unchanged) because GCC
+        counts it as one slot in ``T<n>_`` numbering; ``packs`` records
+        ``(index, elements)`` so ``Dp`` can later expand over the elements.
         """
         args: list[str] = []
         while True:
@@ -679,12 +698,14 @@ class Demangler:
                 return args
             if self.peek() == "J":
                 # <template-arg> ::= J <template-args> E is an argument pack.
-                # Its arguments are *spliced* into the enclosing list, not
-                # bracketed: GCC prints tuple<J[RK i]> as `tuple<int const&>`
-                # and tuple<J[]> as `tuple<>`.
+                # GCC prints tuple<J[RK i]> as `tuple<int const&>` and
+                # tuple<J[]> as `tuple<>`, so the elements join with ", ".
                 self.i += 1
-                args.extend(self._parse_template_arglist(stop_before_e=True))
+                elems = self._parse_template_arglist(stop_before_e=True)
                 self.eat("E")
+                if packs is not None:
+                    packs.append((len(args), elems))
+                args.append(", ".join(e for e in elems if e))
                 continue
             # NB: a leading 'L' is not a separate marker here.  GCC routes
             # 'L' straight to d_expr_primary, which consumes the whole literal
@@ -777,6 +798,7 @@ class Demangler:
             # Template arguments only name types inside the template that
             # introduced them.
             del self.targs[mark:]
+            del self.targ_packs[mark:]
 
     @staticmethod
     def _collapse_ref(base: str, op: str) -> str:
@@ -816,9 +838,26 @@ class Demangler:
         (``...__push_back_slow_pathIRKS2_EEvOT_`` is
         ``void vector<...>::__push_back_slow_path<T>(T&&)``), so the arguments
         have to be in scope while the signature is rendered.
+
+        An argument that is a ``J`` pack is one slot (as in GCC's numbering);
+        resolving it yields element ``pack_index`` of the pack -- element 0
+        outside an expansion, the current element during a ``Dp`` expansion.
         """
-        for scope in reversed(self.targs):
+        for si in range(len(self.targs) - 1, -1, -1):
+            scope = self.targs[si]
             if 0 <= index < len(scope):
+                for start, elems in self.targ_packs[si]:
+                    if start == index:
+                        # First pack the pattern touches: that is the pack
+                        # cp-demangle.c's d_find_pack would expand over.
+                        if self._pack_hit is None:
+                            self._pack_hit = elems
+                        if not elems:
+                            return ""
+                        k = self.pack_index
+                        if not 0 <= k < len(elems):
+                            k = 0
+                        return elems[k]
                 return scope[index]
         return "T%d_" % index
 
@@ -837,11 +876,38 @@ class Demangler:
                 raise _Fail("D eof")
             nxt = self.s[self.i]
             if nxt == "p":
-                # <expr-primary> ::= Dp <type> -- a defaulted argument.  The
-                # type is printed as it stands; the `auto` is implied, so
-                # `DpOT_` is one parameter of the referenced type, not two.
+                # <type> ::= Dp <type> -- a pack expansion.  cp-demangle.c
+                # finds the argument pack the pattern references and prints
+                # the pattern once per element with dpi->pack_index = i, so
+                # `RKT_DpOT0_` over a three-element pack yields four
+                # parameters, with reference collapsing applied per element
+                # (``X const& &&`` collapses back to ``X const&``).
                 self.i += 1
-                return self._parse_type()
+                pre = list(self.subs)
+                save = self.i
+                hold_idx = self.pack_index
+                prior_hit = self._pack_hit
+                self._pack_hit = None
+                pat = self._parse_type()
+                hit = self._pack_hit
+                self._pack_hit = prior_hit
+                if hit is None:
+                    # No argument pack in the pattern: print it as it stands.
+                    return pat
+                keep = list(self.subs)
+                end = self.i
+                out = []
+                for k in range(len(hit)):
+                    self.i = save
+                    self.subs[:] = pre
+                    self.pack_index = k
+                    self._pack_hit = None
+                    out.append(self._parse_type())
+                self.subs[:] = keep
+                self.i = end
+                self.pack_index = hold_idx
+                self._pack_hit = prior_hit
+                return ", ".join(out)
             two = "D" + nxt
             if two in BUILTIN_TYPES:
                 self.i += 1
@@ -969,7 +1035,16 @@ class Demangler:
         if c == "S":
             self.i += 1
             sub = self.parse_substitution()
-            return sub + self._maybe_template_args()
+            name = sub + self._maybe_template_args()
+            if is_function:
+                # A substitution-rooted encoding still carries its
+                # bare-function-type: `_ZSt18uncaught_exceptionv` ends in the
+                # `v` for its empty parameter list.
+                ret, params = self._parse_function_params()
+                if ret:
+                    name = ret + " " + name
+                name += params
+            return name
         if c == "U":  # unnamed type / vendor type
             self.i += 1
             if self.peek() == "t":
