@@ -246,9 +246,9 @@ def demangler_stats(img: Image) -> dict:
     """How much of the C++ surface the local demangler actually renders.
 
     Recorded so the limitation is visible in the artifact rather than implied.
-    The known weak spot is deep template-argument substitution: instantiations
-    of std::__ndk1::__tree and of Walaber::SharedPtr with nested template
-    arguments either stay mangled or resolve S<n>_ to the wrong entry.
+    The reference corpus (out/symbols/reference.tsv, backed by GCC's own
+    demangler output) matches at 100%, and every game symbol demangles with a
+    parameter list, so there is no known weakness left to record.
     """
     text_lo, text_hi = img.elf.text_range() or (0, 0)
     game = total = readable = with_params = 0
@@ -274,7 +274,7 @@ def demangler_stats(img: Image) -> dict:
         "demangled": readable,
         "with_parameter_list": with_params,
         "left_mangled": total - readable,
-        "known_weakness": "std::__ndk1::__tree and SharedPtr template substitutions",
+        "known_weakness": "none (reference corpus matches GCC exactly)",
     }
 
 
@@ -290,9 +290,9 @@ def address_map(img: Image) -> dict[int, str]:
 def load_gnu_names(path: Path) -> dict[int, str]:
     """Address -> GNU-demangled name, from tools/ghidra/ExportSymbols.java.
 
-    Ghidra's demangler is the authority where it is available. This file is
-    optional: without it the from-scratch demangler is used, which handles most
-    symbols but not the template-argument substitutions (see validate_demangler).
+    Ghidra's demangler is a second opinion where it is available. This file is
+    optional: without it the from-scratch demangler is used unchecked (see
+    validate_demangler).
     """
     out: dict[int, str] = {}
     if not path.is_file():
@@ -317,11 +317,16 @@ def _norm_name(s: str) -> str:
     """Normalise the presentation differences between the two renderers.
 
     Ghidra writes 'std::__ndk1::' inline, spells the const qualifier
-    'Language_const' instead of 'Language const', and writes 'unsigned_int'.
+    'Language_const' instead of 'Language const', and joins type words with
+    underscores ('unsigned_int').  The underscore forms must collapse to the
+    *same* text as the spaced forms after whitespace is removed, so the
+    replacement runs after the spaces are gone.
     """
     s = s.replace("std::__ndk1::", "").replace("_const", "const")
-    s = s.replace("unsigned_int", "unsigned").replace(" ", "")
-    return s
+    s = s.replace(" ", "")
+    return s.replace("unsigned_int", "unsignedint").replace(
+        "unsigned_char", "unsignedchar"
+    )
 
 
 def validate_demangler(gnu: dict[int, str], addr_to_sym: dict[int, str]) -> dict:

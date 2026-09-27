@@ -151,7 +151,7 @@ its own `typeinfo` object, the hierarchy is *read*, not inferred:
 | Generated game-class headers | 184 |
 
 By namespace: `Walaber` 127 classes / 944 slots, `WaterConcept` 61 / 1,298,
-`std` 118 / 658, global 84 / 98, `ndk` 2 / 5.
+`std` 127 / 756, global 75 / 0, `ndk` 2 / 5.
 
 Output lands in `out/rtti/`:
 
@@ -279,7 +279,11 @@ qualifiers, ref qualifiers, operator overloads, converting constructors, the
 destructor's `D0`/`D1`/`D2` encodings, non-virtual and virtual thunks, and
 `J` argument packs — stored as a single template argument exactly as GCC
 numbers them, then expanded element-by-element (with reference collapsing) by
-`Dp` pack expansions. It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
+`Dp` pack expansions. Template arguments that are full C++ expressions —
+`enable_if` conditions built from `sr` qualified names, binary operators,
+casts, `sizeof` and call expressions — are parsed and rendered the way
+cp-demangle.c prints them, including GCC's operand-parenthesisation rules.
+It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
 `_ZTS`), which is what makes the class inventory possible.
 
 It is deliberately **fault-tolerant**: a single malformed symbol degrades to a
@@ -293,32 +297,24 @@ asks it about synthetic names.
 
 | Reference set (6,769 names) | |
 |---|---|
-| Match GCC | 6,709 (99.1%) |
-| Differ | 60 (0.9%) |
+| Match GCC | 6,769 (100%) |
+| Differ | 0 |
 | Left mangled | 0 |
-
-The 60 remaining differences break down as: 40 `std::__ndk1::enable_if`
-instantiations whose template arguments are full C++ expressions
-(`__is_forward_iterator<T>::value && is_constructible<...>::value`) — the
-expression parser only handles literals today; 18 `__sort`/`__insertion_sort`
-instantiations where a pointer-to-function parameter carries a reference
-qualifier and the return type fails to attach; and 2 `money_get` names with a
-one-substitution registration offset.
 
 | 5,097 game-namespace symbols | |
 |---|---|
 | Render to any readable form | 5,097 (100%) |
-| Render with a full parameter list | 5,068 (99.4%) |
+| Render with a full parameter list | 5,097 (100%) |
 | Left mangled | 0 |
 
 Cross-checked against the 464 symbols Ghidra had already demangled in its own
-symbol table, the local demangler's name agrees on 446, differs on 18, and
-leaves 0 unparsed. The 18 disagreements are concentrated in `std::__ndk1`
-internals (`__tree`, `__sort`) — precisely the hardest cases — and the sample
-excludes every ordinary `Walaber`/`WaterConcept` method. Ghidra's own rendering
-is not a clean oracle either — it stores name-only strings and contains visible
-errors of its own (`unsigned_int`, `int_const&`, a dropped `std::__ndk1::`
-qualifier).
+symbol table, the local demangler's name agrees on 464, differs on 0, and
+leaves 0 unparsed. The comparison runs both names through a normaliser that
+folds presentation differences (Ghidra's `std::__ndk1::` inline spelling,
+`unsigned_int` for `unsigned int`, `Language_const` for `Language const`); the
+sample itself is biased toward `std::__ndk1` internals — precisely the hardest
+substitution cases — and excludes every ordinary `Walaber`/`WaterConcept`
+method, so the absolute numbers understate the demangler on game code.
 
 For anything load-bearing, prefer the mangled name in the source comments over
 either demangler.

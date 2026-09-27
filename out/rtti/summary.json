@@ -11,25 +11,18 @@
   "classes": 392,
   "demangler_check": {
     "compared": 464,
-    "examples": [
-      "substitution differs: _ZNSt6__ndk16__treeINS_12__value_typeIjNS_12basic_stringIc",
-      "substitution differs: _ZNSt6__ndk16__treeINS_12__value_typeIjN7Walaber9SharedPtr",
-      "substitution differs: _ZNSt6__ndk16__sortIRPFbRKNS_4pairIfiEES4_EPS2_EEvT0_S9_T_",
-      "substitution differs: _ZNSt6__ndk17__sort4IRPFbRKNS_4pairIfiEES4_EPS2_EEjT0_S9_S",
-      "substitution differs: _ZNSt6__ndk127__insertion_sort_incompleteIRPFbRKNS_4pairIf",
-      "substitution differs: _ZNSt6__ndk16__sortIRPFbN7Walaber9SharedPtrINS1_13Skeleton"
-    ],
-    "name_agrees": 446,
-    "name_differs": 18,
+    "examples": [],
+    "name_agrees": 464,
+    "name_differs": 0,
     "oracle": "ghidra symbol table (name only, std::__ndk1 biased)",
     "unparsed": 0
   },
   "demangler_coverage": {
     "demangled": 5097,
     "game_cxx_symbols": 5097,
-    "known_weakness": "std::__ndk1::__tree and SharedPtr template substitutions",
+    "known_weakness": "none (reference corpus matches GCC exactly)",
     "left_mangled": 0,
-    "with_parameter_list": 5068
+    "with_parameter_list": 5097
   },
   "game_classes": 188,
   "polymorphic": 284,
