@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Callback {
 public:
-  virtual /*ret*/ void v0_~Callback(void);  // 0x2c2858
-  virtual /*ret*/ void v1_~Callback(void);  // 0x32e5b4
+  virtual /*ret*/ void ~Callback(void);  // 0x2c2858
+  virtual /*ret*/ void ~Callback(void);  // 0x32e5b4
   virtual /*ret*/ void invoke(void*);  // 0x32e5b8
 };
 

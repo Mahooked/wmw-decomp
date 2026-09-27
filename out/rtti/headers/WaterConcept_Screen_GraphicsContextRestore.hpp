@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class Screen_GraphicsContextRestore : public WaterConcept::WCScreen {
 public:
-  virtual /*ret*/ void v0_~Screen_GraphicsContextRestore(void);  // 0x4dad20
-  virtual /*ret*/ void v1_~Screen_GraphicsContextRestore(void);  // 0x4dad24
+  virtual /*ret*/ void ~Screen_GraphicsContextRestore(void);  // 0x4dad20
+  virtual /*ret*/ void ~Screen_GraphicsContextRestore(void);  // 0x4dad24
   virtual /*ret*/ void enter(void);  // 0x4dad4c
   virtual /*ret*/ void exit(void);  // 0x4db714
   virtual /*ret*/ void recreateGraphicsContext(void);  // 0x4db728
@@ -19,15 +19,15 @@ public:
   virtual /*ret*/ void draw(int);  // 0x4db904
   virtual /*ret*/ void loadPropertyList(Walaber::PropertyList const&);  // 0x4dad48
   virtual /*ret*/ void touchDown(int, Walaber::Vector2);  // 0x4dba00
-  virtual /*ret*/ void touchMoved(int, Walaber::Vector2, Walaber);  // 0x4dba54
+  virtual /*ret*/ void touchMoved(int, Walaber::Vector2, Walaber::Vector2);  // 0x4dba54
   virtual /*ret*/ void touchUp(int, Walaber::Vector2);  // 0x4dbab0
   virtual /*ret*/ void v13_touchLost(int);  // 0x4a41d0
   virtual /*ret*/ void v14_backKeyPressed(void);  // 0x4a42dc
   virtual /*ret*/ void v15_accelerometerChanged(float, float, float);  // 0x4a41d4
   virtual /*ret*/ void v16_consumesInput(void);  // 0x4a41d8
   virtual /*ret*/ void v17_notifyTransitionPhaseChange(unsigned int);  // 0x4a41e0
-  virtual /*ret*/ void v18_handleFocus(Walaber::Widget*, WaterConcept::WCScreen::handleFocus::FocusEvent);  // 0x4a41e4
-  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber*);  // 0x4db9f8
+  virtual /*ret*/ void v18_handleFocus(Walaber::Widget*, Walaber::FocusEvent);  // 0x4a41e4
+  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*);  // 0x4db9f8
 };
 
 }  // namespace WaterConcept

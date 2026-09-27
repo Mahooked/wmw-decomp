@@ -9,7 +9,7 @@ namespace Walaber {
 class Message_AchievementUnlocked : public Walaber::Message {
 public:
   virtual /*ret*/ void v0_~Message(void);  // 0x2b52d0
-  virtual /*ret*/ void v1_~Message_AchievementUnlocked(void);  // 0x330d64
+  virtual /*ret*/ void ~Message_AchievementUnlocked(void);  // 0x330d64
 };
 
 }  // namespace Walaber

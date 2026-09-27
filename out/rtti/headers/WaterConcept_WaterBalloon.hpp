@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class WaterBalloon : public WaterConcept::Floater {
 public:
-  virtual /*ret*/ void v0_~WaterBalloon(void);  // 0x495fa4
-  virtual /*ret*/ void v1_~WaterBalloon(void);  // 0x496008
+  virtual /*ret*/ void ~WaterBalloon(void);  // 0x495fa4
+  virtual /*ret*/ void ~WaterBalloon(void);  // 0x496008
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x4775d0
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x4775f8
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x477620
@@ -26,7 +26,7 @@ public:
   virtual /*ret*/ void v15_drawForeground(Walaber::SpriteBatch*, bool, float);  // 0x487b24
   virtual /*ret*/ void particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&);  // 0x497d34
   virtual /*ret*/ void handleTouchDown(Walaber::Vector2 const&);  // 0x497ae4
-  virtual /*ret*/ void handleTouchMoved(void);  // 0x497af4
+  virtual /*ret*/ void handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&);  // 0x497af4
   virtual /*ret*/ void handleTouchUp(Walaber::Vector2 const&);  // 0x497af8
   virtual /*ret*/ void handleLostTouch(void);  // 0x4982e0
   virtual /*ret*/ void getTouchRadiusSlop(void);  // 0x4982e8

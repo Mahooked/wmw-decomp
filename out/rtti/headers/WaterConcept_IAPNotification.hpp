@@ -8,19 +8,19 @@ namespace WaterConcept {
 
 class IAPNotification : public WaterConcept::Notification {
 public:
-  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber*);  // 0x49c24c
+  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*);  // 0x49c24c
   virtual /*ret*/ void v1_handleFocus(Walaber::Widget*, Walaber::FocusEvent);  // 0x49c870
-  virtual /*ret*/ void v2_~IAPNotification(void);  // 0x49a9dc
-  virtual /*ret*/ void v3_~IAPNotification(void);  // 0x49aa9c
+  virtual /*ret*/ void ~IAPNotification(void);  // 0x49a9dc
+  virtual /*ret*/ void ~IAPNotification(void);  // 0x49aa9c
   virtual /*ret*/ void update(float);  // 0x49aff8
   virtual /*ret*/ void draw(Walaber::SpriteBatch&);  // 0x49afb0
-  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, WaterConcept::IAPNotification::goNotify::char_traits<char>, WaterConcept::IAPNotification::goNotify::allocator<char>> const&, float);  // 0x49b3dc
-  virtual /*ret*/ void v7_goNotify(std::__ndk1::basic_string<char, WaterConcept::Notification::goNotify::char_traits<char>, WaterConcept::Notification::goNotify::allocator<char>> const&, float, Walaber::Vector2);  // 0x49d22c
+  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float);  // 0x49b3dc
+  virtual /*ret*/ void v7_goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, Walaber::Vector2);  // 0x49d22c
   virtual /*ret*/ void v8_goToNextState(void);  // 0x49cfe8
   virtual /*ret*/ void v9_reloadFonts(void);  // 0x49a62c
   virtual /*ret*/ void v10_reloadWidgets(void);  // 0x49a634
   virtual /*ret*/ void v11_touchDown(int, Walaber::Vector2);  // 0x49a690
-  virtual /*ret*/ void v12_touchMoved(int, Walaber::Vector2, Walaber);  // 0x49a6e4
+  virtual /*ret*/ void v12_touchMoved(int, Walaber::Vector2, Walaber::Vector2);  // 0x49a6e4
   virtual /*ret*/ void v13_touchUp(int, Walaber::Vector2);  // 0x49a744
   virtual /*ret*/ void widgetsLoaded(void);  // 0x49c224
   virtual /*ret*/ void messageRx(Walaber::Message const&);  // 0x49c860

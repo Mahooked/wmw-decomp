@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class Switch : public WaterConcept::InteractiveObject {
 public:
-  virtual /*ret*/ void v0_~Switch(void);  // 0x4949d8
-  virtual /*ret*/ void v1_~Switch(void);  // 0x494a38
+  virtual /*ret*/ void ~Switch(void);  // 0x4949d8
+  virtual /*ret*/ void ~Switch(void);  // 0x494a38
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x4775d0
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x4775f8
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x477620
@@ -26,7 +26,7 @@ public:
   virtual /*ret*/ void v15_drawForeground(Walaber::SpriteBatch*, bool, float);  // 0x487b24
   virtual /*ret*/ void particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&);  // 0x4955a4
   virtual /*ret*/ void v17_handleTouchDown(Walaber::Vector2 const&);  // 0x488c24
-  virtual /*ret*/ void v18_handleTouchMoved(void);  // 0x488cc8
+  virtual /*ret*/ void v18_handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&);  // 0x488cc8
   virtual /*ret*/ void v19_handleTouchUp(Walaber::Vector2 const&);  // 0x488d9c
   virtual /*ret*/ void v20_handleLostTouch(void);  // 0x477668
   virtual /*ret*/ void v21_getTouchRadiusSlop(void);  // 0x477670

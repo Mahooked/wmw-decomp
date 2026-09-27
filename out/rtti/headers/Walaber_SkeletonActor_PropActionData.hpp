@@ -8,8 +8,8 @@ namespace Walaber {
 
 class SkeletonActor::PropActionData : public Walaber::SkeletonActor::EventActionData {
 public:
-  virtual /*ret*/ void v0_~PropActionData(void);  // 0x34808c
-  virtual /*ret*/ void v1_~PropActionData(void);  // 0x3480e0
+  virtual /*ret*/ void ~PropActionData(void);  // 0x34808c
+  virtual /*ret*/ void ~PropActionData(void);  // 0x3480e0
 };
 
 }  // namespace Walaber

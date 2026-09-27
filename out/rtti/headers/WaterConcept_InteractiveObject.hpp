@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class InteractiveObject : public Walaber::DrawableNode {
 public:
-  virtual /*ret*/ void v0_~InteractiveObject(void);  // 0x4810d4
-  virtual /*ret*/ void v1_~InteractiveObject(void);  // 0x4812a8
+  virtual /*ret*/ void ~InteractiveObject(void);  // 0x4810d4
+  virtual /*ret*/ void ~InteractiveObject(void);  // 0x4812a8
   virtual /*ret*/ void setLocalPosition(Walaber::Vector2 const&);  // 0x4775d0
   virtual /*ret*/ void setLocalScale(Walaber::Vector2 const&);  // 0x4775f8
   virtual /*ret*/ void setLocalAngle(float const&);  // 0x477620
@@ -26,7 +26,7 @@ public:
   virtual /*ret*/ void drawForeground(Walaber::SpriteBatch*, bool, float);  // 0x487b24
   virtual /*ret*/ void particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&);  // 0x47e958
   virtual /*ret*/ void handleTouchDown(Walaber::Vector2 const&);  // 0x488c24
-  virtual /*ret*/ void handleTouchMoved(void);  // 0x488cc8
+  virtual /*ret*/ void handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&);  // 0x488cc8
   virtual /*ret*/ void handleTouchUp(Walaber::Vector2 const&);  // 0x488d9c
   virtual /*ret*/ void handleLostTouch(void);  // 0x477668
   virtual /*ret*/ void getTouchRadiusSlop(void);  // 0x477670

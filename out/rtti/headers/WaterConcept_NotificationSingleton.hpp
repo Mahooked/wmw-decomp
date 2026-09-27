@@ -8,10 +8,10 @@ namespace WaterConcept {
 
 class NotificationSingleton : public Walaber::WidgetManagerEventHandler {
 public:
-  virtual /*ret*/ void v0_handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::WidgetManagerEventHandler::handleEvent*);  // 0x49d450
+  virtual /*ret*/ void v0_handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*);  // 0x49d450
   virtual /*ret*/ void v1_handleFocus(Walaber::Widget*, Walaber::FocusEvent);  // 0x49c870
-  virtual /*ret*/ void v2_~NotificationSingleton(void);  // 0x49dbd8
-  virtual /*ret*/ void v3_~NotificationSingleton(void);  // 0x49dcf4
+  virtual /*ret*/ void ~NotificationSingleton(void);  // 0x49dbd8
+  virtual /*ret*/ void ~NotificationSingleton(void);  // 0x49dcf4
   virtual /*ret*/ void messageRx(Walaber::Message const&);  // 0x49fc8c
 };
 

@@ -8,15 +8,15 @@ namespace Walaber {
 
 class Curve {
 public:
-  virtual /*ret*/ void v0_~Curve(void);  // 0x3e0758
-  virtual /*ret*/ void v1_~Curve(void);  // 0x3e0798
+  virtual /*ret*/ void ~Curve(void);  // 0x3e0758
+  virtual /*ret*/ void ~Curve(void);  // 0x3e0798
   virtual /*ret*/ void v2___cxa_pure_virtual(void);  // 0x5f3460
   virtual /*ret*/ void getWriteSize(unsigned int);  // 0x3e0110
   virtual /*ret*/ void getMinMaxNonTimeValue(void);  // 0x3e079c
   virtual /*ret*/ void getMinMaxKeyValue(void);  // 0x3e02ac
   virtual /*ret*/ void getMinMaxKeyPosition(void);  // 0x3e0300
   virtual /*ret*/ void writeToBuffer(char*);  // 0x3e0354
-  virtual /*ret*/ void writeToBuffer(void);  // 0x3e0814
+  virtual /*ret*/ void writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&);  // 0x3e0814
   virtual /*ret*/ void computeTangents(void);  // 0x3e0754
   virtual /*ret*/ void v10___cxa_pure_virtual(void);  // 0x5f3460
 };

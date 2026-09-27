@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Skeleton : public Walaber::DrawableNode {
 public:
-  virtual /*ret*/ void v0_~Skeleton(void);  // 0x33aecc
-  virtual /*ret*/ void v1_~Skeleton(void);  // 0x33b0c0
+  virtual /*ret*/ void ~Skeleton(void);  // 0x33aecc
+  virtual /*ret*/ void ~Skeleton(void);  // 0x33b0c0
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x3ea870
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x3ea8bc
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940

@@ -9,7 +9,7 @@ namespace Walaber {
 class Bone : public Walaber::Node {
 public:
   virtual /*ret*/ void v0_~Node(void);  // 0x3ea868
-  virtual /*ret*/ void v1_~Bone(void);  // 0x33d9a8
+  virtual /*ret*/ void ~Bone(void);  // 0x33d9a8
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x3ea870
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x3ea8bc
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940

@@ -8,11 +8,11 @@ namespace Walaber {
 
 class ProgrammaticTexture2D : public Walaber::Texture {
 public:
-  virtual /*ret*/ void v0_~ProgrammaticTexture2D(void);  // 0x3959b8
-  virtual /*ret*/ void v1_~ProgrammaticTexture2D(void);  // 0x395a2c
-  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, Walaber::allocator<std::__ndk1>>>);  // 0x395084
-  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, Walaber::allocator<std::__ndk1>>>, int, int, int, int, int, int, int);  // 0x395250
-  virtual /*ret*/ void v4_writeToFile(std::__ndk1::basic_string<char, Walaber::Texture::writeToFile::char_traits<char>, Walaber::Texture::writeToFile::allocator<char>>);  // 0x395a50
+  virtual /*ret*/ void ~ProgrammaticTexture2D(void);  // 0x3959b8
+  virtual /*ret*/ void ~ProgrammaticTexture2D(void);  // 0x395a2c
+  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>);  // 0x395084
+  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>, int, int, int, int, int, int, int);  // 0x395250
+  virtual /*ret*/ void v4_writeToFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>);  // 0x395a50
   virtual /*ret*/ void reload(Walaber::SharedPtr<Walaber::Callback>, Walaber::FileManager::PlatformPolicy);  // 0x3952dc
   virtual /*ret*/ void invalidate(void);  // 0x395a54
   virtual /*ret*/ void clearGlMem(void);  // 0x395a60

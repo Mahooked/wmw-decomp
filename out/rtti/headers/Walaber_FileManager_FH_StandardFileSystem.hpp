@@ -8,10 +8,10 @@ namespace Walaber {
 
 class FileManager::FH_StandardFileSystem : public Walaber::FileManager::FileHandler {
 public:
-  virtual /*ret*/ void v0_~FH_StandardFileSystem(void);  // 0x3d4410
-  virtual /*ret*/ void v1_~FH_StandardFileSystem(void);  // 0x3d4430
-  virtual /*ret*/ void fileExists(std::__ndk1::basic_string<char, Walaber::FileManager::FH_StandardFileSystem::fileExists::char_traits<char>, Walaber::FileManager::FH_StandardFileSystem::fileExists::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d2e44
-  virtual /*ret*/ void readFile(std::__ndk1::basic_string<char, Walaber::FileManager::FH_StandardFileSystem::readFile::char_traits<char>, Walaber::FileManager::FH_StandardFileSystem::readFile::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d30d8
+  virtual /*ret*/ void ~FH_StandardFileSystem(void);  // 0x3d4410
+  virtual /*ret*/ void ~FH_StandardFileSystem(void);  // 0x3d4430
+  virtual /*ret*/ void fileExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d2e44
+  virtual /*ret*/ void readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d30d8
   virtual /*ret*/ void getName(void);  // 0x3d4468
 };
 

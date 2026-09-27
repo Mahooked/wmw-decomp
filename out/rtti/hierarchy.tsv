@@ -242,15 +242,6 @@ WaterConcept::Switch	0x712230	si	0x712148	1	WaterConcept::InteractiveObject@0
 WaterConcept::WCScreen	0x712980	vmi	0x7129f8	2	Walaber::GameScreen@0; Walaber::WidgetManagerEventHandler@32
 WaterConcept::WaterBalloon	0x712380	si	0x712288	1	WaterConcept::Floater@0
 WaterConcept::YSwitch	0x712480	si	0x712398	1	WaterConcept::Spout@0
-_ZTSNSt6__ndk110moneypunctIcLb0EEE	0x718ba0	vmi	0x716fd8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
-_ZTSNSt6__ndk110moneypunctIwLb0EEE	0x718c20	vmi	0x7170b8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
-_ZTSNSt6__ndk115__codecvt_utf16IDiLb0EEE	0x718380	si	0x718318	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
-_ZTSNSt6__ndk115__codecvt_utf16IDsLb0EEE	0x718280	si	0x718218	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
-_ZTSNSt6__ndk115__codecvt_utf16IwLb0EEE	0x718180	si	0x718118	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
-_ZTSNSt6__ndk116__narrow_to_utf8ILm16EEE	0x717dc0	si	0x717d58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
-_ZTSNSt6__ndk117__widen_from_utf8ILm16EEE	0x717ec0	si	0x717e58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
-_ZTSNSt6__ndk117moneypunct_bynameIcLb0EEE	0x718ca0	si	0x717198	1	_ZTSNSt6__ndk110moneypunctIcLb0EEE@0
-_ZTSNSt6__ndk117moneypunct_bynameIwLb0EEE	0x718ce0	si	0x717278	1	_ZTSNSt6__ndk110moneypunctIwLb0EEE@0
 a	0x719790	class	0x0	0	
 b	0x719650	class	0x0	0	
 c	0x7196f0	class	0x0	0	
@@ -269,9 +260,12 @@ ndk::Mutex	0x70ce98	class	0x70ce78	0
 o	0x719ab0	class	0x0	0	
 s	0x7197e0	class	0x0	0	
 std::__ndk1::__assoc_sub_state	0x7193e0	si	0x7193a8	1	std::__ndk1::__shared_count@0
-std::__ndk1::__codecvt_utf16<char16_t, bool>	0x718300	si	0x718298	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
-std::__ndk1::__codecvt_utf16<char32_t, bool>	0x718400	si	0x718398	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
-std::__ndk1::__codecvt_utf16<wchar_t, bool>	0x718200	si	0x718198	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<char16_t, false>	0x718280	si	0x718218	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<char16_t, true>	0x718300	si	0x718298	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<char32_t, false>	0x718380	si	0x718318	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<char32_t, true>	0x718400	si	0x718398	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<wchar_t, false>	0x718180	si	0x718118	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
+std::__ndk1::__codecvt_utf16<wchar_t, true>	0x718200	si	0x718198	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
 std::__ndk1::__codecvt_utf8<char16_t>	0x718080	si	0x718018	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
 std::__ndk1::__codecvt_utf8<char32_t>	0x718100	si	0x718098	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
 std::__ndk1::__codecvt_utf8<wchar_t>	0x718000	si	0x717f58	1	std::__ndk1::codecvt<wchar_t, char, mbstate_t>@0
@@ -282,7 +276,8 @@ std::__ndk1::__money_get<char>	0x718d18	class	0x0	0
 std::__ndk1::__money_get<wchar_t>	0x718d68	class	0x0	0	
 std::__ndk1::__money_put<char>	0x718db8	class	0x0	0	
 std::__ndk1::__money_put<wchar_t>	0x718e08	class	0x0	0	
-std::__ndk1::__narrow_to_utf8<unsigned long>	0x717e40	si	0x717dd8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__narrow_to_utf8<16ul>	0x717dc0	si	0x717d58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__narrow_to_utf8<32ul>	0x717e40	si	0x717dd8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
 std::__ndk1::__num_get<char>	0x718750	vmi	0x0	1	non-public std::__ndk1::__num_get_base@0
 std::__ndk1::__num_get<wchar_t>	0x7187c0	vmi	0x0	1	non-public std::__ndk1::__num_get_base@0
 std::__ndk1::__num_get_base	0x718738	class	0x0	0	
@@ -297,7 +292,8 @@ std::__ndk1::__time_get_c_storage<wchar_t>	0x718988	class	0x0	0
 std::__ndk1::__time_get_storage<char>	0x718a00	si	0x0	1	std::__ndk1::__time_get@0
 std::__ndk1::__time_get_storage<wchar_t>	0x718a60	si	0x0	1	std::__ndk1::__time_get@0
 std::__ndk1::__time_put	0x718ab8	class	0x0	0	
-std::__ndk1::__widen_from_utf8<unsigned long>	0x717f40	si	0x717ed8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
+std::__ndk1::__widen_from_utf8<16ul>	0x717ec0	si	0x717e58	1	std::__ndk1::codecvt<char16_t, char, mbstate_t>@0
+std::__ndk1::__widen_from_utf8<32ul>	0x717f40	si	0x717ed8	1	std::__ndk1::codecvt<char32_t, char, mbstate_t>@0
 std::__ndk1::bad_weak_ptr	0x7190f0	si	0x7190c8	1	std::exception@0
 std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>	0x710940	si	0x7108a8	1	std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>@0
 std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char>>	0x710890	si	0x710708	1	std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>@0
@@ -346,10 +342,14 @@ std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1:
 std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718d80	vmi	0x717390	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_get<wchar_t>@0
 std::__ndk1::money_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718dd0	vmi	0x7173c8	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_put<char>@0
 std::__ndk1::money_put<wchar_t, std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x718e20	vmi	0x717400	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__money_put<wchar_t>@0
-std::__ndk1::moneypunct<char, bool>	0x718be0	vmi	0x717048	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
-std::__ndk1::moneypunct<wchar_t, bool>	0x718c60	vmi	0x717128	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
-std::__ndk1::moneypunct_byname<char, bool>	0x718cc0	si	0x717208	1	std::__ndk1::moneypunct<char, bool>@0
-std::__ndk1::moneypunct_byname<wchar_t, bool>	0x718d00	si	0x7172e8	1	std::__ndk1::moneypunct<wchar_t, bool>@0
+std::__ndk1::moneypunct<char, false>	0x718ba0	vmi	0x716fd8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct<char, true>	0x718be0	vmi	0x717048	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct<wchar_t, false>	0x718c20	vmi	0x7170b8	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct<wchar_t, true>	0x718c60	vmi	0x717128	2	std::__ndk1::locale::facet@0; std::__ndk1::money_base@0
+std::__ndk1::moneypunct_byname<char, false>	0x718ca0	si	0x717198	1	std::__ndk1::moneypunct<char, false>@0
+std::__ndk1::moneypunct_byname<char, true>	0x718cc0	si	0x717208	1	std::__ndk1::moneypunct<char, true>@0
+std::__ndk1::moneypunct_byname<wchar_t, false>	0x718ce0	si	0x717278	1	std::__ndk1::moneypunct<wchar_t, false>@0
+std::__ndk1::moneypunct_byname<wchar_t, true>	0x718d00	si	0x7172e8	1	std::__ndk1::moneypunct<wchar_t, true>@0
 std::__ndk1::num_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718780	vmi	0x716a38	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_get<char>@0
 std::__ndk1::num_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	0x7187f0	vmi	0x716ab8	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_get<wchar_t>@0
 std::__ndk1::num_put<char, std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>>>	0x718870	vmi	0x716b38	2	std::__ndk1::locale::facet@0; non-public std::__ndk1::__num_put<char>@0

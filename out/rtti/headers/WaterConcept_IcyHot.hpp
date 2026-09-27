@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class IcyHot : public WaterConcept::InteractiveObject {
 public:
-  virtual /*ret*/ void v0_~IcyHot(void);  // 0x47eca8
-  virtual /*ret*/ void v1_~IcyHot(void);  // 0x47ed14
+  virtual /*ret*/ void ~IcyHot(void);  // 0x47eca8
+  virtual /*ret*/ void ~IcyHot(void);  // 0x47ed14
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x4775d0
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x4775f8
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x477620
@@ -26,7 +26,7 @@ public:
   virtual /*ret*/ void v15_drawForeground(Walaber::SpriteBatch*, bool, float);  // 0x487b24
   virtual /*ret*/ void particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&);  // 0x47fbb0
   virtual /*ret*/ void v17_handleTouchDown(Walaber::Vector2 const&);  // 0x488c24
-  virtual /*ret*/ void v18_handleTouchMoved(void);  // 0x488cc8
+  virtual /*ret*/ void v18_handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&);  // 0x488cc8
   virtual /*ret*/ void v19_handleTouchUp(Walaber::Vector2 const&);  // 0x488d9c
   virtual /*ret*/ void v20_handleLostTouch(void);  // 0x477668
   virtual /*ret*/ void v21_getTouchRadiusSlop(void);  // 0x477670

@@ -9,16 +9,16 @@ namespace Walaber {
 class BezierCurve : public Walaber::Curve {
 public:
   virtual /*ret*/ void v0_~Curve(void);  // 0x3e0758
-  virtual /*ret*/ void v1_~BezierCurve(void);  // 0x3e00d4
+  virtual /*ret*/ void ~BezierCurve(void);  // 0x3e00d4
   virtual /*ret*/ void loadFromXmlNode(_xmlNode*);  // 0x3dfcd0
   virtual /*ret*/ void v3_getWriteSize(unsigned int);  // 0x3e0110
   virtual /*ret*/ void getMinMaxNonTimeValue(void);  // 0x3e0188
   virtual /*ret*/ void v5_getMinMaxKeyValue(void);  // 0x3e02ac
   virtual /*ret*/ void v6_getMinMaxKeyPosition(void);  // 0x3e0300
   virtual /*ret*/ void v7_writeToBuffer(char*);  // 0x3e0354
-  virtual /*ret*/ void writeToBuffer(void);  // 0x3e03d4
+  virtual /*ret*/ void writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&);  // 0x3e03d4
   virtual /*ret*/ void v9_computeTangents(void);  // 0x3e0754
-  virtual /*ret*/ void v10__evaluateCurve(float, float);  // 0x3dfbdc
+  virtual /*ret*/ void _evaluateCurve(float, float) const);  // 0x3dfbdc
 };
 
 }  // namespace Walaber

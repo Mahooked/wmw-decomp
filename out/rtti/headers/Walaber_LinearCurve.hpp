@@ -9,16 +9,16 @@ namespace Walaber {
 class LinearCurve : public Walaber::Curve {
 public:
   virtual /*ret*/ void v0_~Curve(void);  // 0x3e0758
-  virtual /*ret*/ void v1_~LinearCurve(void);  // 0x3e6698
+  virtual /*ret*/ void ~LinearCurve(void);  // 0x3e6698
   virtual /*ret*/ void loadFromXmlNode(_xmlNode*);  // 0x3e61e0
   virtual /*ret*/ void v3_getWriteSize(unsigned int);  // 0x3e0110
   virtual /*ret*/ void v4_getMinMaxNonTimeValue(void);  // 0x3e079c
   virtual /*ret*/ void v5_getMinMaxKeyValue(void);  // 0x3e02ac
   virtual /*ret*/ void v6_getMinMaxKeyPosition(void);  // 0x3e0300
   virtual /*ret*/ void v7_writeToBuffer(char*);  // 0x3e0354
-  virtual /*ret*/ void v8_writeToBuffer(void);  // 0x3e0814
+  virtual /*ret*/ void v8_writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&);  // 0x3e0814
   virtual /*ret*/ void computeTangents(void);  // 0x3e657c
-  virtual /*ret*/ void v10__evaluateCurve(float, float);  // 0x3e6610
+  virtual /*ret*/ void _evaluateCurve(float, float) const);  // 0x3e6610
 };
 
 }  // namespace Walaber

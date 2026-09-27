@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Message {
 public:
-  virtual /*ret*/ void v0_~Message(void);  // 0x2b52d0
-  virtual /*ret*/ void v1_~Message(void);  // 0x2c22dc
+  virtual /*ret*/ void ~Message(void);  // 0x2b52d0
+  virtual /*ret*/ void ~Message(void);  // 0x2c22dc
 };
 
 }  // namespace Walaber

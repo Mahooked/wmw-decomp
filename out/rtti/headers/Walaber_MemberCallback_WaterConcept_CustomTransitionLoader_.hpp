@@ -9,7 +9,7 @@ namespace Walaber {
 class MemberCallback<WaterConcept::CustomTransitionLoader> : public Walaber::Callback {
 public:
   virtual /*ret*/ void v0_~Callback(void);  // 0x2c2858
-  virtual /*ret*/ void v1_~MemberCallback(void);  // 0x5a3708
+  virtual /*ret*/ void ~MemberCallback(void);  // 0x5a3708
   virtual /*ret*/ void invoke(void*);  // 0x5a370c
 };
 

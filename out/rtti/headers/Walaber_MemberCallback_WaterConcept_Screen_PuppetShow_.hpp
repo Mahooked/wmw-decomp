@@ -9,7 +9,7 @@ namespace Walaber {
 class MemberCallback<WaterConcept::Screen_PuppetShow> : public Walaber::Callback {
 public:
   virtual /*ret*/ void v0_~Callback(void);  // 0x2c2858
-  virtual /*ret*/ void v1_~MemberCallback(void);  // 0x55d4e8
+  virtual /*ret*/ void ~MemberCallback(void);  // 0x55d4e8
   virtual /*ret*/ void invoke(void*);  // 0x55d4ec
 };
 

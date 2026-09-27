@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Widget_Label : public Walaber::Widget {
 public:
-  virtual /*ret*/ void v0_~Widget_Label(void);  // 0x37fc8c
-  virtual /*ret*/ void v1_~Widget_Label(void);  // 0x37fcd4
+  virtual /*ret*/ void ~Widget_Label(void);  // 0x37fc8c
+  virtual /*ret*/ void ~Widget_Label(void);  // 0x37fcd4
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x36aad8
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x36ac14
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940
@@ -22,7 +22,7 @@ public:
   virtual /*ret*/ void v11_setRotation(float);  // 0x36d508
   virtual /*ret*/ void v12_setEnabled(bool);  // 0x36d568
   virtual /*ret*/ void v13_reset(void);  // 0x36d574
-  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, Walaber::Widget::setFont::char_traits<char>, Walaber::Widget::setFont::allocator<char>> const&);  // 0x36d578
+  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&);  // 0x36d578
   virtual /*ret*/ void reloadFont(void);  // 0x37fcf8
   virtual /*ret*/ void update(float, Walaber::Widget::WidgetActionRet&);  // 0x380158
   virtual /*ret*/ void v17_acceptNewFingerDown(int, Walaber::FingerInfo*);  // 0x36d64c

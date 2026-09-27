@@ -8,8 +8,8 @@ namespace Walaber {
 
 class ParticleEmitter : public Walaber::Node {
 public:
-  virtual /*ret*/ void v0_~ParticleEmitter(void);  // 0x3907f0
-  virtual /*ret*/ void v1_~ParticleEmitter(void);  // 0x3908e4
+  virtual /*ret*/ void ~ParticleEmitter(void);  // 0x3907f0
+  virtual /*ret*/ void ~ParticleEmitter(void);  // 0x3908e4
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x3ea870
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x3ea8bc
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940

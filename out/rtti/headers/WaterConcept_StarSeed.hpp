@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class StarSeed : public WaterConcept::InteractiveObject {
 public:
-  virtual /*ret*/ void v0_~StarSeed(void);  // 0x48fe24
-  virtual /*ret*/ void v1_~StarSeed(void);  // 0x48fec4
+  virtual /*ret*/ void ~StarSeed(void);  // 0x48fe24
+  virtual /*ret*/ void ~StarSeed(void);  // 0x48fec4
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x4775d0
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x4775f8
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x477620
@@ -26,7 +26,7 @@ public:
   virtual /*ret*/ void drawForeground(Walaber::SpriteBatch*, bool, float);  // 0x4934b4
   virtual /*ret*/ void particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription const&, int, bool&);  // 0x4940b0
   virtual /*ret*/ void v17_handleTouchDown(Walaber::Vector2 const&);  // 0x488c24
-  virtual /*ret*/ void v18_handleTouchMoved(void);  // 0x488cc8
+  virtual /*ret*/ void v18_handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&);  // 0x488cc8
   virtual /*ret*/ void v19_handleTouchUp(Walaber::Vector2 const&);  // 0x488d9c
   virtual /*ret*/ void v20_handleLostTouch(void);  // 0x477668
   virtual /*ret*/ void v21_getTouchRadiusSlop(void);  // 0x477670

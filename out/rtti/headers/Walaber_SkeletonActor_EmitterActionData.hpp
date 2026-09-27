@@ -9,7 +9,7 @@ namespace Walaber {
 class SkeletonActor::EmitterActionData : public Walaber::SkeletonActor::EventActionData {
 public:
   virtual /*ret*/ void v0_~EventActionData(void);  // 0x348088
-  virtual /*ret*/ void v1_~EmitterActionData(void);  // 0x348194
+  virtual /*ret*/ void ~EmitterActionData(void);  // 0x348194
 };
 
 }  // namespace Walaber

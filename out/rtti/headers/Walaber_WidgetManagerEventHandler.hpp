@@ -8,7 +8,7 @@ namespace Walaber {
 
 class WidgetManagerEventHandler {
 public:
-  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::WidgetManagerEventHandler::handleEvent*);  // 0x49d450
+  virtual /*ret*/ void handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*);  // 0x49d450
   virtual /*ret*/ void handleFocus(Walaber::Widget*, Walaber::FocusEvent);  // 0x49c870
 };
 

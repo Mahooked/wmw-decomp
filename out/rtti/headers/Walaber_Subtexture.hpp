@@ -8,11 +8,11 @@ namespace Walaber {
 
 class Subtexture : public Walaber::Texture {
 public:
-  virtual /*ret*/ void v0_~Subtexture(void);  // 0x397138
-  virtual /*ret*/ void v1_~Subtexture(void);  // 0x397180
-  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, Walaber::allocator<std::__ndk1>>>);  // 0x3971a4
-  virtual /*ret*/ void v3_setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, Walaber::allocator<std::__ndk1>>>, int, int, int, int, int, int, int);  // 0x395cf0
-  virtual /*ret*/ void writeToFile(std::__ndk1::basic_string<char, Walaber::Subtexture::writeToFile::char_traits<char>, Walaber::Subtexture::writeToFile::allocator<char>>);  // 0x3971a8
+  virtual /*ret*/ void ~Subtexture(void);  // 0x397138
+  virtual /*ret*/ void ~Subtexture(void);  // 0x397180
+  virtual /*ret*/ void setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>);  // 0x3971a4
+  virtual /*ret*/ void v3_setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>, int, int, int, int, int, int, int);  // 0x395cf0
+  virtual /*ret*/ void writeToFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>);  // 0x3971a8
   virtual /*ret*/ void v5_reload(Walaber::SharedPtr<Walaber::Callback>, Walaber::FileManager::PlatformPolicy);  // 0x395cf4
   virtual /*ret*/ void v6_invalidate(void);  // 0x395cf8
   virtual /*ret*/ void v7_clearGlMem(void);  // 0x395d04

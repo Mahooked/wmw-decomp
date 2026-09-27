@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Node : public Walaber::PCSNode {
 public:
-  virtual /*ret*/ void v0_~Node(void);  // 0x3ea868
-  virtual /*ret*/ void v1_~Node(void);  // 0x3ea86c
+  virtual /*ret*/ void ~Node(void);  // 0x3ea868
+  virtual /*ret*/ void ~Node(void);  // 0x3ea86c
   virtual /*ret*/ void setLocalPosition(Walaber::Vector2 const&);  // 0x3ea870
   virtual /*ret*/ void setLocalScale(Walaber::Vector2 const&);  // 0x3ea8bc
   virtual /*ret*/ void setLocalAngle(float const&);  // 0x3ea940

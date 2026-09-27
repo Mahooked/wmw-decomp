@@ -9,7 +9,7 @@ namespace Walaber {
 class MemberCallback<WaterConcept::GameState> : public Walaber::Callback {
 public:
   virtual /*ret*/ void v0_~Callback(void);  // 0x2c2858
-  virtual /*ret*/ void v1_~MemberCallback(void);  // 0x42ebb4
+  virtual /*ret*/ void ~MemberCallback(void);  // 0x42ebb4
   virtual /*ret*/ void invoke(void*);  // 0x42ebb8
 };
 

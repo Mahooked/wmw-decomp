@@ -8,8 +8,8 @@ namespace WaterConcept {
 
 class PurchaseHandler : public Walaber::MessageReceiver {
 public:
-  virtual /*ret*/ void v0_~PurchaseHandler(void);  // 0x43d580
-  virtual /*ret*/ void v1_~PurchaseHandler(void);  // 0x43d5c0
+  virtual /*ret*/ void ~PurchaseHandler(void);  // 0x43d580
+  virtual /*ret*/ void ~PurchaseHandler(void);  // 0x43d5c0
   virtual /*ret*/ void messageRx(Walaber::Message const&);  // 0x43d660
 };
 

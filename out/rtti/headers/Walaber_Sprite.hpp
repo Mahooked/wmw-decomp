@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Sprite : public Walaber::DrawableNode {
 public:
-  virtual /*ret*/ void v0_~Sprite(void);  // 0x35cc84
-  virtual /*ret*/ void v1_~Sprite(void);  // 0x35ccd4
+  virtual /*ret*/ void ~Sprite(void);  // 0x35cc84
+  virtual /*ret*/ void ~Sprite(void);  // 0x35ccd4
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x3ea870
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x3ea8bc
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940

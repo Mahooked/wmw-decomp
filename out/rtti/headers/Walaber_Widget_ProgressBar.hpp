@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Widget_ProgressBar : public Walaber::Widget {
 public:
-  virtual /*ret*/ void v0_~Widget_ProgressBar(void);  // 0x382f14
-  virtual /*ret*/ void v1_~Widget_ProgressBar(void);  // 0x382f54
+  virtual /*ret*/ void ~Widget_ProgressBar(void);  // 0x382f14
+  virtual /*ret*/ void ~Widget_ProgressBar(void);  // 0x382f54
   virtual /*ret*/ void v2_setLocalPosition(Walaber::Vector2 const&);  // 0x36aad8
   virtual /*ret*/ void v3_setLocalScale(Walaber::Vector2 const&);  // 0x36ac14
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940
@@ -22,7 +22,7 @@ public:
   virtual /*ret*/ void v11_setRotation(float);  // 0x36d508
   virtual /*ret*/ void v12_setEnabled(bool);  // 0x36d568
   virtual /*ret*/ void v13_reset(void);  // 0x36d574
-  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, Walaber::Widget::setFont::char_traits<char>, Walaber::Widget::setFont::allocator<char>> const&);  // 0x36d578
+  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&);  // 0x36d578
   virtual /*ret*/ void v15_reloadFont(void);  // 0x36d5a8
   virtual /*ret*/ void update(float, Walaber::Widget::WidgetActionRet&);  // 0x382f78
   virtual /*ret*/ void v17_acceptNewFingerDown(int, Walaber::FingerInfo*);  // 0x36d64c

@@ -8,8 +8,8 @@ namespace Walaber {
 
 class SoundEffectInstance {
 public:
-  virtual /*ret*/ void v0_~SoundEffectInstance(void);  // 0x34c97c
-  virtual /*ret*/ void v1_~SoundEffectInstance(void);  // 0x34ca64
+  virtual /*ret*/ void ~SoundEffectInstance(void);  // 0x34c97c
+  virtual /*ret*/ void ~SoundEffectInstance(void);  // 0x34ca64
 };
 
 }  // namespace Walaber

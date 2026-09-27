@@ -8,8 +8,8 @@ namespace Walaber {
 
 class Widget_PushButton : public Walaber::Widget {
 public:
-  virtual /*ret*/ void v0_~Widget_PushButton(void);  // 0x383c00
-  virtual /*ret*/ void v1_~Widget_PushButton(void);  // 0x383c60
+  virtual /*ret*/ void ~Widget_PushButton(void);  // 0x383c00
+  virtual /*ret*/ void ~Widget_PushButton(void);  // 0x383c60
   virtual /*ret*/ void setLocalPosition(Walaber::Vector2 const&);  // 0x384474
   virtual /*ret*/ void setLocalScale(Walaber::Vector2 const&);  // 0x384528
   virtual /*ret*/ void v4_setLocalAngle(float const&);  // 0x3ea940
@@ -22,7 +22,7 @@ public:
   virtual /*ret*/ void v11_setRotation(float);  // 0x36d508
   virtual /*ret*/ void v12_setEnabled(bool);  // 0x36d568
   virtual /*ret*/ void reset(void);  // 0x3846b0
-  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, Walaber::Widget::setFont::char_traits<char>, Walaber::Widget::setFont::allocator<char>> const&);  // 0x36d578
+  virtual /*ret*/ void v14_setFont(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&);  // 0x36d578
   virtual /*ret*/ void reloadFont(void);  // 0x3846c8
   virtual /*ret*/ void update(float, Walaber::Widget::WidgetActionRet&);  // 0x383d24
   virtual /*ret*/ void acceptNewFingerDown(int, Walaber::FingerInfo*);  // 0x38454c

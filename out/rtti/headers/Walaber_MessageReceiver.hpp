@@ -8,8 +8,8 @@ namespace Walaber {
 
 class MessageReceiver {
 public:
-  virtual /*ret*/ void v0_~MessageReceiver(void);  // 0x3e8580
-  virtual /*ret*/ void v1_~MessageReceiver(void);  // 0x3e86c0
+  virtual /*ret*/ void ~MessageReceiver(void);  // 0x3e8580
+  virtual /*ret*/ void ~MessageReceiver(void);  // 0x3e86c0
   virtual /*ret*/ void messageRx(Walaber::Message const&);  // 0x3e87e8
 };
 

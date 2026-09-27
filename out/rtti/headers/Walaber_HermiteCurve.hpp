@@ -9,16 +9,16 @@ namespace Walaber {
 class HermiteCurve : public Walaber::Curve {
 public:
   virtual /*ret*/ void v0_~Curve(void);  // 0x3e0758
-  virtual /*ret*/ void v1_~HermiteCurve(void);  // 0x3e61a4
+  virtual /*ret*/ void ~HermiteCurve(void);  // 0x3e61a4
   virtual /*ret*/ void loadFromXmlNode(_xmlNode*);  // 0x3e5a9c
   virtual /*ret*/ void v3_getWriteSize(unsigned int);  // 0x3e0110
   virtual /*ret*/ void v4_getMinMaxNonTimeValue(void);  // 0x3e079c
   virtual /*ret*/ void v5_getMinMaxKeyValue(void);  // 0x3e02ac
   virtual /*ret*/ void v6_getMinMaxKeyPosition(void);  // 0x3e0300
   virtual /*ret*/ void v7_writeToBuffer(char*);  // 0x3e0354
-  virtual /*ret*/ void v8_writeToBuffer(void);  // 0x3e0814
+  virtual /*ret*/ void v8_writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&);  // 0x3e0814
   virtual /*ret*/ void v9_computeTangents(void);  // 0x3e0754
-  virtual /*ret*/ void v10__evaluateCurve(float, float);  // 0x3e599c
+  virtual /*ret*/ void _evaluateCurve(float, float) const);  // 0x3e599c
 };
 
 }  // namespace Walaber

@@ -8,8 +8,8 @@ namespace Walaber {
 
 class PCSNode {
 public:
-  virtual /*ret*/ void v0_~PCSNode(void);  // 0x3eb04c
-  virtual /*ret*/ void v1_~PCSNode(void);  // 0x3eb050
+  virtual /*ret*/ void ~PCSNode(void);  // 0x3eb04c
+  virtual /*ret*/ void ~PCSNode(void);  // 0x3eb050
 };
 
 }  // namespace Walaber

@@ -8,17 +8,17 @@ namespace Walaber {
 
 class TweenedLinearCurve : public Walaber::LinearCurve {
 public:
-  virtual /*ret*/ void v0_~TweenedLinearCurve(void);  // 0x3e6d74
-  virtual /*ret*/ void v1_~TweenedLinearCurve(void);  // 0x3e6de8
+  virtual /*ret*/ void ~TweenedLinearCurve(void);  // 0x3e6d74
+  virtual /*ret*/ void ~TweenedLinearCurve(void);  // 0x3e6de8
   virtual /*ret*/ void loadFromXmlNode(_xmlNode*);  // 0x3e66d4
   virtual /*ret*/ void getWriteSize(unsigned int);  // 0x3e6e0c
   virtual /*ret*/ void v4_getMinMaxNonTimeValue(void);  // 0x3e079c
   virtual /*ret*/ void v5_getMinMaxKeyValue(void);  // 0x3e02ac
   virtual /*ret*/ void v6_getMinMaxKeyPosition(void);  // 0x3e0300
   virtual /*ret*/ void writeToBuffer(char*);  // 0x3e6e4c
-  virtual /*ret*/ void writeToBuffer(void);  // 0x3e6f50
+  virtual /*ret*/ void writeToBuffer(char*, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&);  // 0x3e6f50
   virtual /*ret*/ void v9_computeTangents(void);  // 0x3e657c
-  virtual /*ret*/ void v10__evaluateCurve(float, float);  // 0x3e6ce8
+  virtual /*ret*/ void _evaluateCurve(float, float) const);  // 0x3e6ce8
 };
 
 }  // namespace Walaber

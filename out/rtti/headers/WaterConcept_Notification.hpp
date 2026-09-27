@@ -8,19 +8,19 @@ namespace WaterConcept {
 
 class Notification : public Walaber::WidgetManagerEventHandler {
 public:
-  virtual /*ret*/ void v0_handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::WidgetManagerEventHandler::handleEvent*);  // 0x49d450
+  virtual /*ret*/ void v0_handleEvent(int, Walaber::Widget::WidgetActionRet const&, Walaber::Widget*);  // 0x49d450
   virtual /*ret*/ void v1_handleFocus(Walaber::Widget*, Walaber::FocusEvent);  // 0x49c870
-  virtual /*ret*/ void v2_~Notification(void);  // 0x49cbfc
-  virtual /*ret*/ void v3_~Notification(void);  // 0x49cca4
+  virtual /*ret*/ void ~Notification(void);  // 0x49cbfc
+  virtual /*ret*/ void ~Notification(void);  // 0x49cca4
   virtual /*ret*/ void update(float);  // 0x49ccc8
   virtual /*ret*/ void draw(Walaber::SpriteBatch&);  // 0x49d048
-  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, WaterConcept::Notification::goNotify::char_traits<char>, WaterConcept::Notification::goNotify::allocator<char>> const&, float);  // 0x49d050
-  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, WaterConcept::Notification::goNotify::char_traits<char>, WaterConcept::Notification::goNotify::allocator<char>> const&, float, Walaber::Vector2);  // 0x49d22c
+  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float);  // 0x49d050
+  virtual /*ret*/ void goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, Walaber::Vector2);  // 0x49d22c
   virtual /*ret*/ void goToNextState(void);  // 0x49cfe8
   virtual /*ret*/ void reloadFonts(void);  // 0x49a62c
   virtual /*ret*/ void reloadWidgets(void);  // 0x49a634
   virtual /*ret*/ void touchDown(int, Walaber::Vector2);  // 0x49a690
-  virtual /*ret*/ void touchMoved(int, Walaber::Vector2, Walaber);  // 0x49a6e4
+  virtual /*ret*/ void touchMoved(int, Walaber::Vector2, Walaber::Vector2);  // 0x49a6e4
   virtual /*ret*/ void touchUp(int, Walaber::Vector2);  // 0x49a744
   virtual /*ret*/ void widgetsLoaded(void);  // 0x49d454
 };

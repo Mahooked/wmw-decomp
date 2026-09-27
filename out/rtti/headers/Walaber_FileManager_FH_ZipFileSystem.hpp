@@ -8,10 +8,10 @@ namespace Walaber {
 
 class FileManager::FH_ZipFileSystem : public Walaber::FileManager::FileHandler {
 public:
-  virtual /*ret*/ void v0_~FH_ZipFileSystem(void);  // 0x3d39fc
-  virtual /*ret*/ void v1_~FH_ZipFileSystem(void);  // 0x3d3a64
-  virtual /*ret*/ void fileExists(std::__ndk1::basic_string<char, Walaber::FileManager::FH_ZipFileSystem::fileExists::char_traits<char>, Walaber::FileManager::FH_ZipFileSystem::fileExists::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d3a88
-  virtual /*ret*/ void readFile(std::__ndk1::basic_string<char, Walaber::FileManager::FH_ZipFileSystem::readFile::char_traits<char>, Walaber::FileManager::FH_ZipFileSystem::readFile::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d3f30
+  virtual /*ret*/ void ~FH_ZipFileSystem(void);  // 0x3d39fc
+  virtual /*ret*/ void ~FH_ZipFileSystem(void);  // 0x3d3a64
+  virtual /*ret*/ void fileExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d3a88
+  virtual /*ret*/ void readFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&);  // 0x3d3f30
   virtual /*ret*/ void getName(void);  // 0x3d44a0
 };
 

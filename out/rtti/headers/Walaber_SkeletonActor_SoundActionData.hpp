@@ -8,8 +8,8 @@ namespace Walaber {
 
 class SkeletonActor::SoundActionData : public Walaber::SkeletonActor::EventActionData {
 public:
-  virtual /*ret*/ void v0_~SoundActionData(void);  // 0x348024
-  virtual /*ret*/ void v1_~SoundActionData(void);  // 0x348048
+  virtual /*ret*/ void ~SoundActionData(void);  // 0x348024
+  virtual /*ret*/ void ~SoundActionData(void);  // 0x348048
 };
 
 }  // namespace Walaber
