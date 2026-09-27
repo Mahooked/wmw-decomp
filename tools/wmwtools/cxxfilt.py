@@ -108,6 +108,42 @@ OPERATORS = {
     "v": "__vector",  # vendor extended
 }
 
+# Expression operator encodings with their operand counts, mirroring GCC's
+# cplus_demangle_operators table (cp-demangle.c): _parse_expr needs the arity
+# to know how many subexpressions each operator consumes.  The display string
+# is what d_print_expr_op appends verbatim, so spacing matters ("sizeof ",
+# "delete[] ", "alignof ").
+_EXPR_OPS = {
+    "aN": ("&=", 2), "aS": ("=", 2), "aa": ("&&", 2), "ad": ("&", 1),
+    "an": ("&", 2), "at": ("alignof ", 1), "aw": ("co_await ", 1),
+    "az": ("alignof ", 1), "cc": ("const_cast", 2), "cl": ("()", 2),
+    "cm": (",", 2), "co": ("~", 1), "dV": ("/=", 2), "dX": ("[...]", 3),
+    "da": ("delete[] ", 1), "dc": ("dynamic_cast", 2), "de": ("*", 1),
+    "di": ("=", 2), "dl": ("delete ", 1), "ds": (".*", 2), "dt": (".", 2),
+    "dv": ("/", 2), "dx": ("]=", 2), "eO": ("^=", 2), "eo": ("^", 2),
+    "eq": ("==", 2), "fL": ("...", 3), "fR": ("...", 3), "fl": ("...", 2),
+    "fr": ("...", 2), "ge": (">=", 2), "gs": ("::", 1), "gt": (">", 2),
+    "ix": ("[]", 2), "lS": ("<<=", 2), "le": ("<=", 2),
+    "li": ('operator"" ', 1), "ls": ("<<", 2), "lt": ("<", 2),
+    "mI": ("-=", 2), "mL": ("*=", 2), "mi": ("-", 2), "ml": ("*", 2),
+    "mm": ("--", 1), "na": ("new[]", 3), "ne": ("!=", 2), "ng": ("-", 1),
+    "nt": ("!", 1), "nw": ("new", 3), "nx": ("noexcept", 1),
+    "oR": ("|=", 2), "oo": ("||", 2), "or": ("|", 2), "pL": ("+=", 2),
+    "pl": ("+", 2), "pm": ("->*", 2), "pp": ("++", 1), "ps": ("+", 1),
+    "pt": ("->", 2), "qu": ("?", 3), "rM": ("%=", 2), "rS": (">>=", 2),
+    "rc": ("reinterpret_cast", 2), "rm": ("%", 2), "rs": (">>", 2),
+    "sP": ("sizeof...", 1), "sZ": ("sizeof...", 1),
+    "sc": ("static_cast", 2), "ss": ("<=>", 2), "st": ("sizeof ", 1),
+    "sz": ("sizeof ", 1), "tr": ("throw", 0), "tw": ("throw ", 1),
+}
+
+
+def _operand(text: str, simple: bool) -> str:
+    """Parenthesise an expression operand the way GCC's d_print_subexpr does:
+    names and qualified names stand alone, everything else is wrapped."""
+    return text if simple else "(%s)" % text
+
+
 CTOR_DTOR = {
     "C1": "", "C2": "", "C3": "",
     "CI1": "", "CI2": "",
@@ -717,9 +753,14 @@ class Demangler:
     def _parse_template_arg(self) -> str:
         c = self.peek()
         if c == "X":
+            # <template-arg> ::= X <expression> E -- the expression is the
+            # rendered argument (enable_if<cond> needs the condition text),
+            # and the E closing the X is this argument's own, not the
+            # enclosing argument list's.
             self.i += 1
-            self._parse_expr()
-            return ""
+            text = self._parse_expr()
+            self.expect("E")
+            return text
         if c == "L":
             self.i += 1
             lit = self._parse_literal()
@@ -771,18 +812,297 @@ class Demangler:
         return "%s%s%s" % (out, "-" if neg else "", value)
 
     def _parse_expr(self) -> str:
-        c = self.next()
+        return self._parse_expr_ex()[0]
+
+    def _parse_expr_ex(self) -> tuple[str, bool]:
+        """Parse an Itanium <expression> (ABI 5.1.1, GCC d_expression_1).
+
+        Returns ``(text, simple)``.  ``simple`` marks the renderings GCC's
+        d_print_subexpr leaves unparenthesised (unqualified and qualified
+        names); every other operand gets wrapped in parentheses exactly as
+        cp-demangle.c does.
+        """
+        if self.eof():
+            raise _Fail("eof in expression")
+        c = self.peek()
         if c == "L":
-            return self._parse_literal()
+            self.i += 1
+            return self._parse_literal(), False
         if c == "T":
-            self._number()
-            return ""
-        if c in "1234":
-            self.i -= 1
-            return ""
-        if c == "_":
-            return ""
-        return ""
+            self.i += 1
+            return self._template_param(self._compact_number()), False
+        if self.peek(2) == "sr":
+            return self._parse_unresolved_name()
+        if self.peek(2) == "sp":
+            # PACK_EXPANSION in an expression: the pack elements print
+            # comma-separated, like the Dp expansion of a template argument.
+            self.i += 2
+            return self._parse_expr_ex()
+        if self.peek(2) == "fp":
+            # Function parameter used in a late-specified return type.
+            self.i += 2
+            if self.eat("T"):
+                return "this", True
+            index = self._number() + 1
+            return "param %d" % index, True
+        if c.isdigit():
+            # A bare name used as an expression, e.g. a dependent call.
+            nm = self._parse_unqualified_name()
+            if self.peek() == "I":
+                self.i += 1
+                return nm + self._parse_template_args_body(), False
+            return nm, True
+        if self.peek(2) == "on":
+            # operator-function-id: `on` followed by the operator code.
+            self.i += 2
+            nm = self._parse_unqualified_name()
+            if self.peek() == "I":
+                self.i += 1
+                return nm + self._parse_template_args_body(), False
+            return nm, True
+        if self.peek(2) in ("il", "tl"):
+            two = self.peek(2)
+            self.i += 2
+            typ = self._parse_type() if two == "tl" else ""
+            items = []
+            while not self.eof() and self.peek() != "E":
+                items.append(self._parse_expr())
+                if not self.eat(","):
+                    break
+            self.expect("E")
+            body = "{%s}" % ", ".join(items)
+            return (typ + body if typ else body), True
+        if c == "u":
+            # vendor extended expression: u <source-name> <template-arg>* E
+            self.i += 1
+            nm = self._parse_source_name()
+            items = self._parse_template_arglist()
+            if items:
+                return nm + "<" + ", ".join(a for a in items if a) + ">", False
+            return nm, False
+        two = self.peek(2)
+        if two == "cv":
+            # cast: (type) operand; the `_` form carries an expression list
+            self.i += 2
+            typ = self._parse_type()
+            if self.eat("_"):
+                items = self._parse_exprlist("E")
+                return "(%s)(%s)" % (typ, ", ".join(items)), False
+            operand, simple = self._parse_expr_ex()
+            return "(%s)%s" % (typ, _operand(operand, simple)), False
+        if len(two) == 2 and two[0] == "v" and two[1].isdigit():
+            # vendor extended operator: v <digit-arity> <source-name>
+            arity = int(two[1])
+            self.i += 2
+            nm = self._parse_source_name()
+            return self._finish_expr_op("v?", "operator " + nm, arity), False
+        if two in _EXPR_OPS:
+            op, arity = _EXPR_OPS[two]
+            self.i += 2
+            return self._finish_expr_op(two, op, arity), False
+        # Anything we do not recognise: consume a character and mark the gap
+        # so a triage diff shows it, while guaranteeing forward progress.
+        self.next()
+        return "?", False
+
+    def _parse_expr_op_code(self) -> str:
+        """Fold expressions embed a second operator code before their
+        operands (``fl <binary operator-name> <expression>``)."""
+        two = self.peek(2)
+        if two in _EXPR_OPS:
+            self.i += 2
+            return _EXPR_OPS[two][0]
+        raise _Fail("bad fold operator %r" % two)
+
+    def _finish_expr_op(self, code: str, op: str, arity: int) -> str:
+        """Parse an operator's operands and render it, following GCC's
+        printing rules for unary/binary/ternary expressions."""
+        if arity == 0:
+            return op
+        if arity == 1:
+            if code in ("st", "sz", "at", "az"):
+                # sizeof(T)/alignof(T): the operand is a type, but a
+                # template-param (T_) arrives through the expression grammar.
+                if self.peek() == "T":
+                    operand, _ = self._parse_expr_ex()
+                else:
+                    operand = self._parse_type()
+                return "%s(%s)" % (op, operand)
+            if code == "sZ":
+                # sizeof...(T): GCC replaces the whole expression with the
+                # pack's length.
+                self._pack_hit = None
+                operand, _ = self._parse_expr_ex()
+                if self._pack_hit is not None:
+                    return str(len(self._pack_hit))
+                return operand
+            if code == "sP":
+                # sizeof...(args): GCC prints the argument count.
+                return str(len(self._parse_template_arglist()))
+            if code == "nx":
+                operand, _ = self._parse_expr_ex()
+                return "%s(%s)" % (op, operand)
+            if code in ("pp", "mm"):
+                # An underscore right after the code is the prefix form
+                # (``pp_ <expression>`` in the ABI); without it GCC renders
+                # the postfix form.
+                prefix = self.eat("_")
+                operand, simple = self._parse_expr_ex()
+                if prefix:
+                    return op + _operand(operand, simple)
+                return _operand(operand, simple) + op
+            if code == "gs":
+                # No parentheses after the scope operator.
+                operand, _ = self._parse_expr_ex()
+                return "::" + operand
+            operand, simple = self._parse_expr_ex()
+            return op + _operand(operand, simple)
+        if arity == 2:
+            if code == "cl":
+                # cl <expression>+ E: a call; the parentheses come from the
+                # argument list itself.
+                callee, simple = self._parse_expr_ex()
+                args = self._parse_exprlist("E")
+                return "%s(%s)" % (_operand(callee, simple), ", ".join(args))
+            if code == "ix":
+                left, ls = self._parse_expr_ex()
+                right, rs = self._parse_expr_ex()
+                return "%s[%s]" % (_operand(left, ls), _operand(right, rs))
+            if code in ("fl", "fr"):
+                # unary folds: (... op expr) and (expr op ...)
+                inner = self._parse_expr_op_code()
+                operand, _ = self._parse_expr_ex()
+                if code == "fl":
+                    return "(... %s %s)" % (inner, operand)
+                return "(%s %s ...)" % (operand, inner)
+            left, ls = self._parse_expr_ex()
+            right, rs = self._parse_expr_ex()
+            return "%s%s%s" % (_operand(left, ls), op, _operand(right, rs))
+        # arity == 3
+        if code == "qu":
+            first, fs = self._parse_expr_ex()
+            second, ss = self._parse_expr_ex()
+            third, ts = self._parse_expr_ex()
+            return "%s?%s:%s" % (_operand(first, fs), _operand(second, ss),
+                                 _operand(third, ts))
+        if code in ("nw", "na"):
+            # [gs] nw <expression>* _ <type> E  (or a trailing initializer)
+            self._parse_exprlist("_")
+            typ = self._parse_type()
+            if self.peek() == "E":
+                self.i += 1
+            elif self.peek(2) in ("il", "tl"):
+                self._parse_expr()
+            return "%s %s" % (op, typ)
+        if code == "dX":
+            # designated range: [begin ... end] = expr
+            first, _ = self._parse_expr_ex()
+            second, _ = self._parse_expr_ex()
+            third, _ = self._parse_expr_ex()
+            return "[%s ... %s]=%s" % (first, second, third)
+        if code in ("fL", "fR"):
+            # binary folds: (expr op ... op expr)
+            inner = self._parse_expr_op_code()
+            left, _ = self._parse_expr_ex()
+            right, _ = self._parse_expr_ex()
+            return "(%s %s ... %s %s)" % (left, inner, inner, right)
+        return op
+
+    def _parse_exprlist(self, term: str) -> list[str]:
+        """Parse comma-separated expressions up to and including ``term``
+        (GCC's d_exprlist)."""
+        items: list[str] = []
+        while True:
+            if self.eof():
+                raise _Fail("eof in expression list")
+            if self.peek() == term:
+                self.i += 1
+                return items
+            items.append(self._parse_expr())
+            if self.peek() == term:
+                continue
+            if not self.eat(","):
+                raise _Fail("expected %r in expression list" % term)
+
+    def _parse_unresolved_name(self) -> tuple[str, bool]:
+        """<unresolved-name> ::= [gs] sr <unresolved-type> <base-unresolved-name>
+
+        GCC's d_unresolved_name.  Returns (text, simple).
+        """
+        if self.peek(2) == "gs":
+            self.i += 2
+            if self.peek(2) != "sr":
+                raise _Fail("gs without sr")
+            self.i += 2
+            text, simple = self._parse_unresolved_body()
+            return "::" + text, simple
+        if self.peek(2) != "sr":
+            raise _Fail("expected sr at %d" % self.i)
+        self.i += 2
+        return self._parse_unresolved_body()
+
+    def _parse_unresolved_body(self) -> tuple[str, bool]:
+        if self.eof():
+            raise _Fail("eof after sr")
+        c = self.peek()
+        if c.isdigit() or (c != "" and c.islower()) or c in ("C", "U", "L"):
+            # The old syntax (sr1A1x) and the new one (sr1AE1x) share a
+            # prefix; GCC parses d_prefix and then swallows the separating
+            # 'E' when present.
+            prefix = self._parse_sr_prefix()
+            self.eat("E")
+        else:
+            prefix = self._parse_type()
+        base = self._parse_unqualified_name()
+        text = "%s::%s" % (prefix, base)
+        if self.peek() == "I":
+            self.i += 1
+            return text + self._parse_template_args_body(), False
+        return text, True
+
+    def _parse_sr_prefix(self) -> str:
+        """GCC's d_prefix with substable=0: a chain of unqualified names,
+        substitutions and template arguments terminated by 'E'."""
+        ret = ""
+        while True:
+            c = self.peek()
+            if c == "":
+                raise _Fail("eof in sr prefix")
+            if c == "D" and self.peek(2) in ("DT", "Dt"):
+                # decltype in the prefix position
+                ret = self._parse_type()
+            elif c == "I":
+                if not ret:
+                    raise _Fail("template args without prefix")
+                self.i += 1
+                ret = ret + self._parse_template_args_body()
+            elif c == "T":
+                if ret:
+                    raise _Fail("template param inside sr prefix")
+                self.i += 1
+                ret = self._template_param(self._compact_number())
+            elif c == "M":
+                # lambda scope marker: consume and continue
+                self.i += 1
+                continue
+            elif c == "S":
+                self.i += 1
+                ret = self.parse_substitution()
+                # GCC `continue`s here, skipping the E check; a following E
+                # ends the prefix on the next iteration instead.
+                continue
+            elif c in ("E", "I"):
+                break
+            else:
+                if not (c.isdigit() or c in ("C", "D") or c.islower()):
+                    break
+                part = self._parse_unqualified_name()
+                ret = "%s::%s" % (ret, part) if ret else part
+            if self.peek() == "E":
+                break
+        if not ret:
+            raise _Fail("empty sr prefix")
+        return ret
 
     def _parse_type(self) -> str:
         # A nested name means different things depending on where it appears:
