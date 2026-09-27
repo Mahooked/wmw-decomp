@@ -1,13 +1,60 @@
-# Where's My Water? — static analysis and decompilation
+# Where's My Water? — full decompilation
 
 Reverse-engineering notes, tooling, and recovered C++ for **Where's My Water? 1.18.9**
 (Android, `com.disney.WMW`).
 
-The point of this repository is that the game is **not** compiled to an opaque blob.
-The bulk of the game is a **native C++ engine** (`lib/arm64-v8a/libwmw.so`, 7.1 MB)
-that shipped **unstripped**, so thousands of real class, method, and RTTI names
-survive in `.dynsym`. That turns "decompiling a closed-source app" into something
-much closer to "reading a disassembly with the original identifier table attached".
+## The goal
+
+**The full source code, exactly as the developers had it** — every function in
+compilable C++ with its original names, types and file organisation, verified by
+rebuilding against the shipped `libwmw.so`. A symbol map or a folder of
+decompiler pseudocode is a milestone, not the destination.
+
+The game makes this unusually tractable: the bulk of it is a **native C++ engine**
+(`lib/arm64-v8a/libwmw.so`, 7.1 MB) that shipped **unstripped**, so thousands of
+real class, method, and RTTI names survive in `.dynsym`. That turns "decompiling a
+closed-source app" into something much closer to "reading a disassembly with the
+original identifier table attached". Names are the easy half: bodies still have to
+be lifted out of AArch64 machine code, and everything the compiler did not encode
+— local variable names, comments, macros, original file layout — has to be
+re-inferred.
+
+## Where we are
+
+| Subsystem | State | Coverage |
+|---|---|---|
+| ELF survey and symbol naming | **done** | 11,003 `.dynsym` entries; all 8,618 function symbols named and demangled |
+| Itanium demangler at GCC parity | **done** | 6,769/6,769 reference names (100%, 0 diffs), regression-tested |
+| Class hierarchy + vtables (RTTI) | **done** | 317 classes, 343 base edges, 284 polymorphic, 3,003 virtual slots, 184 headers |
+| Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
+| Decompiled, named function bodies | **in progress** | 2,131 / 8,618 symbols (~25%), 641 files |
+| Struct/field layouts, trustworthy body signatures | not started | exact function signatures are already in the manglings; layouts are not |
+| Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
+| Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
+
+### Remaining work
+
+1. **Bind the rest of the symbol table to bodies.** 2,131 of 8,618 symbols are
+   bound today. The rest never start a Ghidra function — 91% land *inside* one —
+   so binding needs finer-grained splitting, not just a better lookup.
+2. **Recover type definitions.** Function signatures are exact (they are encoded
+   in the manglings); struct/class field layouts, enums and typedefs must be
+   read out of the code that uses them.
+3. **Re-shape decompiler output into source-shaped code.** The emitted C is
+   machine-shaped: if-converted branches, spill/reload noise, register aliases.
+4. **Re-infer local identifiers and file organisation.** These were never in the
+   binary; they have to be reconstructed from behaviour and class structure.
+5. **Verify by recompilation.** Rebuilding and comparing against the shipped
+   binary is the only honest completion test.
+
+### Milestones (20 commits)
+
+- `5defcdf`–`febcf71` — ELF tooling, decompiled source tree, class model, data
+  formats, JNI bridge.
+- `c77d06c`–`e49d4fc` — demangler iterated against a GCC oracle from first cut
+  to **100% parity** (substitutions, templates, expressions, thunks) plus a
+  regression gate.
+- `0d307ad` — `out/src` regenerated with the final names, README stats refreshed.
 
 ## What the game turned out to be
 
@@ -28,6 +75,43 @@ Most of the interesting behaviour lives in the native library. The Java side is
 little more than an activity, a billing bridge (`com.android.vending.BILLING`), and
 a JNI entry point into `libwmw.so`.
 
+## Findings at a glance
+
+Everything below is recovered from the shipped binary and detailed in its own
+section further down:
+
+- **It is not Lua.** `.wmw` is a red herring; the game is a native C++ engine with
+  a 165 KB Java shell.
+- **The symbol table survived.** 8,618 function symbols, 403 typeinfo (`_ZTI`)
+  and 303 vtable (`_ZTV`) objects in `.dynsym`; `.symtab` is stripped but
+  `.dynsym` alone carries the developers' own identifiers.
+- **Two game namespaces:** `Walaber` (engine) 3,351 symbols,
+  `WaterConcept` (game) 2,356 — the rest is statically linked third-party code.
+- **Vendored libraries:** libc++ (spelled `std::__ndk1`, i.e. the NDK build),
+  SQLite, libxml2, libwebp, minizip.
+- **The demangler is finished.** A from-scratch Itanium C++ demangler that
+  matches GCC byte-for-byte on the full 6,769-name reference corpus (100%), with
+  5,097 game symbols rendering with full parameter lists, and 464/464 agreement
+  with Ghidra's own demangling.
+- **The class hierarchy is read, not guessed.** RTTI survived: 317 classes,
+  281 with recorded bases, 284 polymorphic, 3,003 primary-vtable slots; 184
+  per-class headers generated.
+- **Decompiled output:** 2,131 functions decompiled and named (median 148
+  instructions) across 641 per-class files — bound by 102 exact addresses plus
+  2,029 nearest-preceding-symbol matches; 15,244 Ghidra functions carry no ELF
+  symbol at all (roughly 9,300 of them are 16-byte thunks).
+- **Levels are XML scene graphs**, not a binary format: 636 level files, a
+  12-element vocabulary, ~42 objects per level; plus 345 reusable `.hs`
+  object prototypes.
+- **`water.db` is a real database** (19 tables, 1,014 rows: 671 levels, 46 packs,
+  IAP SKUs, achievements) — and partly a program: `DuckSQL1/2` columns store SQL
+  text inside the save file.
+- **The Java↔native bridge is fully accounted for:** all 44 game-owned native
+  methods resolve to `libwmw.so` exports; the 11 unresolved belong to Play
+  Billing (9) and FMOD (2), which ship their own libraries.
+- **Assets are inventoried without redistribution:** textures, audio and XML
+  format vocabularies are catalogued in `out/assets/`.
+
 ## Recovered symbol statistics
 
 From a single `libwmw.so` (arm64-v8a):
@@ -36,13 +120,13 @@ From a single `libwmw.so` (arm64-v8a):
 |---|---|
 | `.dynsym` entries | 11,003 |
 | Function symbols | 8,618 |
-| RTTI typeinfo objects (`_ZTI`) | 394 |
-| Virtual tables (`_ZTV`) | 294 |
+| RTTI typeinfo objects (`_ZTI`) | 403 |
+| Virtual tables (`_ZTV`) | 303 |
 | Data symbols | 2,058 |
 | Functions Ghidra identifies | 17,375 |
 
 Of the mangled function symbols that land in `.text`, 3,351 mention `Walaber`
-and 1,746 mention `WaterConcept`. The remainder is libc++, SQLite, libxml2,
+and 2,356 mention `WaterConcept`. The remainder is libc++, SQLite, libxml2,
 libwebp, and minizip, all statically linked into the same object.
 
 Because RTTI survived, the class hierarchy and virtual method layout are directly
@@ -62,6 +146,11 @@ tools/
   apkindex.py         classes.dex + binary AndroidManifest.xml reader, and the
                       JNI bridge between them and libwmw.so
   assetdoc.py         asset-tree inventory + XML format vocabulary recovery
+  refdemangle.py      builds the GCC oracle (out/symbols/reference.tsv)
+  refdiff.py          localises the first divergence against the oracle
+  refprobe.py         asks the oracle about synthetic names
+  test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
+                      on any mismatch)
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
@@ -73,6 +162,7 @@ tools/
 out/
   symbols/
     functions.tsv     address, size, mangled, demangled
+    reference.tsv     the 6,769-name GCC oracle
     classes.tsv       RTTI class inventory
     gnu_symbols.tsv   Ghidra's demangled names, as a cross-check oracle
     summary.json      section table + namespace histogram
@@ -89,12 +179,12 @@ out/
 
 ## Recovered source
 
-`out/src/` holds the decompiler output, organised by owning class. 2,131
-functions were named from the ELF symbol table and decompiled across 641 groups:
+`out/src/` holds the decompiler output, organised by owning class. 2,131 of the
+8,618 function symbols (~25%) were named and decompiled across 641 groups:
 
 | | |
 |---|---|
-| Functions decompiled | 2,131 (2,129 clean, 2 failed) |
+| Functions decompiled | 2,131 (2,129 clean, 2 failed) — ~25% of 8,618 symbols |
 | Named by exact address | 102 |
 | Named by nearest preceding symbol | 2,029 |
 | Functions moved into C++ namespaces | 1,159 |
@@ -127,11 +217,16 @@ Read this before treating `out/src/` as source.
   Ghidra's type propagation frequently mis-identifies them — a method taking
   `(Fluids*, ParticleDescription const&, int, bool&)` is emitted as taking
   `(_xmlNode*, char*)`. Trust the mangled comment, not the C signature.
+- **Local variable names, comments and macros never survive compilation.**
+  Everything inside a function body must be re-inferred; see the goal above.
 - **Prototype comments can be misattributed** to an unrelated function.
 - **Bodies are frequently incomplete.** 1.8% of functions decompile to 4
   instructions or fewer (median 148, but the long tail reaches 16,148). Small
   bodies are usually thunks, wrappers, or template instantiations the
   optimiser folded away.
+- **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
+  include 75 pointer/fundamental typeinfos (`char*`, `bool`, …) that are RTTI
+  objects, not classes — the real class count is 317 (filter pending).
 - This is decompiled machine code, not the original source. It does not
   compile as-is and never will without hand-reconstruction.
 
@@ -143,7 +238,7 @@ its own `typeinfo` object, the hierarchy is *read*, not inferred:
 
 | | |
 |---|---|
-| Classes recovered | 392 (of 394 `_ZTI` symbols; 2 are `__cxxabiv1` internals) |
+| Classes recovered | 317 (of 403 `_ZTI` symbols: 75 name pointer/fundamental types, 11 are `__cxxabiv1` internals) |
 | With a recorded base list | 281 |
 | Base-class edges | 343 |
 | Polymorphic classes | 284 |
@@ -151,7 +246,7 @@ its own `typeinfo` object, the hierarchy is *read*, not inferred:
 | Generated game-class headers | 184 |
 
 By namespace: `Walaber` 127 classes / 944 slots, `WaterConcept` 61 / 1,298,
-`std` 127 / 756, global 75 / 0, `ndk` 2 / 5.
+`std` 127 / 756, `ndk` 2 / 5.
 
 Output lands in `out/rtti/`:
 
@@ -289,11 +384,13 @@ It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
 It is deliberately **fault-tolerant**: a single malformed symbol degrades to a
 `raw:` prefix instead of aborting a bulk run.
 
-Accuracy is measured against an oracle built from Ghidra's bundled GCC 4.1
-`c++filt`, which resolves all 6,769 mangled names in the binary and agrees with
-GCC 2.24 on every one. `tools/refdemangle.py` builds that oracle,
+**Status: complete.** Accuracy is measured against an oracle built from Ghidra's
+bundled GCC 4.1 `c++filt`, which resolves all 6,769 mangled names in the binary
+and agrees with GCC 2.24 on every one. `tools/refdemangle.py` builds that oracle,
 `tools/refdiff.py` localises the first divergence, and `tools/refprobe.py`
-asks it about synthetic names.
+asks it about synthetic names. `tools/test_cxxfilt.py` runs the whole comparison
+as a regression gate and exits non-zero on any mismatch — run it before touching
+`cxxfilt.py`.
 
 | Reference set (6,769 names) | |
 |---|---|
@@ -324,6 +421,9 @@ either demangler.
 ```powershell
 $so  = '<extracted-apk>\lib\arm64-v8a\libwmw.so'
 $apk = '<extracted-apk>'
+
+# 0. demangler regression gate (6,769/6,769 must match GCC)
+py tools\test_cxxfilt.py
 
 # 1. survey the binary -> out/symbols/
 py tools\survey_native.py $so
