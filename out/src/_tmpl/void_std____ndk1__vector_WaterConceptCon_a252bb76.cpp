@@ -13,63 +13,67 @@
 
 void std::__ndk1::
      vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>
-     ::__push_back_slow_path<WaterConceptConstants::MaterialType>(long *param_1,undefined4 *param_2)
+     ::__push_back_slow_path<WaterConceptConstants::MaterialType>
+               (WaterConceptConstants__MaterialType **p0)
 
 {
   long lVar1;
+  undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  undefined4 *puVar6;
-  long lStack_60;
-  long lStack_58;
-  undefined4 *puStack_50;
-  long lStack_48;
+  WaterConceptConstants__MaterialType *pWVar4;
+  long lVar5;
+  ulong uVar6;
+  WaterConceptConstants__MaterialType *pWVar7;
+  WaterConceptConstants__MaterialType *pWStack_60;
+  WaterConceptConstants__MaterialType *pWStack_58;
+  WaterConceptConstants__MaterialType *pWStack_50;
+  WaterConceptConstants__MaterialType *pWStack_48;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 2;
+  lVar3 = (long)p0[1] - (long)*p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 2) < 0x1fffffffffffffff) {
-    uVar5 = lVar4 >> 1;
-    if (uVar2 <= uVar5) {
-      uVar2 = uVar5;
+  lVar5 = (long)p0[2] - (long)*p0;
+  if ((ulong)(lVar5 >> 2) < 0x1fffffffffffffff) {
+    uVar6 = lVar5 >> 1;
+    if (uVar2 <= uVar6) {
+      uVar2 = uVar6;
     }
   }
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  func_0x00168610(&lStack_60,uVar2,lVar3,param_1 + 2);
-  puVar6 = puStack_50 + 1;
-  *puStack_50 = *param_2;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lStack_58 = lStack_58 - (lVar3 - lStack_60);
-  puStack_50 = puVar6;
-  if (0 < lVar3 - lStack_60) {
+  func_0x00168610(&pWStack_60,uVar2,lVar3,p0 + 2);
+  pWVar7 = (WaterConceptConstants__MaterialType *)((long)pWStack_50 + 4);
+  *(undefined4 *)pWStack_50 = *in_x1;
+  pWStack_60 = *p0;
+  pWVar4 = p0[1];
+  pWStack_58 = (WaterConceptConstants__MaterialType *)
+               ((long)pWStack_58 - ((long)pWVar4 - (long)pWStack_60));
+  pWStack_50 = pWVar7;
+  if (0 < (long)pWVar4 - (long)pWStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    pWStack_60 = *p0;
+    pWVar4 = p0[1];
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puStack_50;
-  lVar4 = param_1[2];
-  param_1[2] = lStack_48;
-  puStack_50 = (undefined4 *)lVar3;
-  if (lVar3 != lStack_60) {
-    puStack_50 = (undefined4 *)(lVar3 + (~((lVar3 + -4) - lStack_60) & 0xfffffffffffffffcU));
+  *p0 = pWStack_58;
+  p0[1] = pWStack_50;
+  pWVar7 = p0[2];
+  p0[2] = pWStack_48;
+  pWStack_50 = pWVar4;
+  if (pWVar4 != pWStack_60) {
+    pWStack_50 = pWVar4 + (~(ulong)(pWVar4 + (-4 - (long)pWStack_60)) & 0xfffffffffffffffc);
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar4;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  pWStack_58 = pWStack_60;
+  pWStack_48 = pWVar7;
+  if (pWStack_60 != (WaterConceptConstants__MaterialType *)0x0) {
+    FUN_00166120(pWStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();
@@ -92,63 +96,67 @@ void std::__ndk1::
 void std::__ndk1::
      vector<WaterConceptConstants::MaterialType,std::__ndk1::allocator<WaterConceptConstants::MaterialType>>
      ::__push_back_slow_path<WaterConceptConstants::MaterialType_const&>
-               (long *param_1,undefined4 *param_2)
+               (WaterConceptConstants__MaterialType *p0)
 
 {
   long lVar1;
+  undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  undefined4 *puVar6;
-  long lStack_60;
-  long lStack_58;
+  void *pvVar4;
+  long lVar5;
+  ulong uVar6;
+  undefined4 *puVar7;
+  undefined8 uVar8;
+  void *pvStack_60;
+  void *pvStack_58;
   undefined4 *puStack_50;
-  long lStack_48;
+  undefined8 uStack_48;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 2;
+  lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 2) < 0x1fffffffffffffff) {
-    uVar5 = lVar4 >> 1;
-    if (uVar2 <= uVar5) {
-      uVar2 = uVar5;
+  lVar5 = *(long *)(p0 + 0x10) - *(long *)p0;
+  if ((ulong)(lVar5 >> 2) < 0x1fffffffffffffff) {
+    uVar6 = lVar5 >> 1;
+    if (uVar2 <= uVar6) {
+      uVar2 = uVar6;
     }
   }
   else {
     uVar2 = 0x3fffffffffffffff;
   }
-  func_0x00168610(&lStack_60,uVar2,lVar3,param_1 + 2);
-  puVar6 = puStack_50 + 1;
-  *puStack_50 = *param_2;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lStack_58 = lStack_58 - (lVar3 - lStack_60);
-  puStack_50 = puVar6;
-  if (0 < lVar3 - lStack_60) {
+  func_0x00168610(&pvStack_60,uVar2,lVar3,p0 + 0x10);
+  puVar7 = puStack_50 + 1;
+  *puStack_50 = *in_x1;
+  pvStack_60 = *(void **)p0;
+  pvVar4 = *(void **)(p0 + 8);
+  pvStack_58 = (void *)((long)pvStack_58 - ((long)pvVar4 - (long)pvStack_60));
+  puStack_50 = puVar7;
+  if (0 < (long)pvVar4 - (long)pvStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    pvStack_60 = *(void **)p0;
+    pvVar4 = *(void **)(p0 + 8);
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puStack_50;
-  lVar4 = param_1[2];
-  param_1[2] = lStack_48;
-  puStack_50 = (undefined4 *)lVar3;
-  if (lVar3 != lStack_60) {
-    puStack_50 = (undefined4 *)(lVar3 + (~((lVar3 + -4) - lStack_60) & 0xfffffffffffffffcU));
+  *(void **)p0 = pvStack_58;
+  *(undefined4 **)(p0 + 8) = puStack_50;
+  uVar8 = *(undefined8 *)(p0 + 0x10);
+  *(undefined8 *)(p0 + 0x10) = uStack_48;
+  puStack_50 = pvVar4;
+  if (pvVar4 != pvStack_60) {
+    puStack_50 = (undefined4 *)
+                 ((long)pvVar4 + (~((long)pvVar4 + (-4 - (long)pvStack_60)) & 0xfffffffffffffffcU));
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar4;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  pvStack_58 = pvStack_60;
+  uStack_48 = uVar8;
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

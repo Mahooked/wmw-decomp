@@ -60,28 +60,30 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
   long lVar2;
+  void *p0;
   long lVar3;
   
   lVar1 = param_1[1];
   lVar2 = param_1[2];
   while (lVar3 = lVar2, lVar3 != lVar1) {
     param_1[2] = lVar3 + -0x18;
+    p0 = *(void **)(lVar3 + -0x18);
     lVar2 = lVar3 + -0x18;
-    if (*(long *)(lVar3 + -0x18) != 0) {
-      *(long *)(lVar3 + -0x10) = *(long *)(lVar3 + -0x18);
-      FUN_00166120();
+    if (p0 != (void *)0x0) {
+      *(void **)(lVar3 + -0x10) = p0;
+      FUN_00166120(p0);
       lVar2 = param_1[2];
     }
   }
-  if (*param_1 == 0) {
+  if ((void *)*param_1 == (void *)0x0) {
     return;
   }
-  FUN_00166120();
+  FUN_00166120((void *)*param_1);
   return;
 }
 

@@ -17,26 +17,27 @@
 undefined8
 std::__ndk1::
 __tree<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::__map_value_compare<WaterConcept::Switch*,std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>,std::__ndk1::less<WaterConcept::Switch*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*,WaterConcept::World::SwitchAnimInfo>>>
-::__erase_unique<WaterConcept::Switch*>(long param_1,ulong *param_2)
+::__erase_unique<WaterConcept::Switch*>(WaterConcept__Switch **p0)
 
 {
-  long *plVar1;
-  long *plVar2;
+  ulong *in_x1;
+  WaterConcept__Switch *pWVar1;
+  WaterConcept__Switch *pWVar2;
   ulong uVar3;
-  long *plVar4;
+  WaterConcept__Switch *pWVar4;
   
-  plVar2 = (long *)(param_1 + 8);
-  plVar4 = (long *)*plVar2;
-  if (plVar4 != (long *)0x0) {
-    uVar3 = *param_2;
-    plVar1 = plVar2;
+  pWVar2 = (WaterConcept__Switch *)(p0 + 1);
+  pWVar4 = *(WaterConcept__Switch **)pWVar2;
+  if (pWVar4 != (WaterConcept__Switch *)0x0) {
+    uVar3 = *in_x1;
+    pWVar1 = pWVar2;
     do {
-      if ((ulong)plVar4[4] >= uVar3) {
-        plVar1 = plVar4;
+      if (*(ulong *)(pWVar4 + 0x20) >= uVar3) {
+        pWVar1 = pWVar4;
       }
-      plVar4 = (long *)plVar4[(ulong)plVar4[4] < uVar3];
-    } while (plVar4 != (long *)0x0);
-    if ((plVar1 != plVar2) && ((ulong)plVar1[4] <= uVar3)) {
+      pWVar4 = *(WaterConcept__Switch **)(pWVar4 + (ulong)(*(ulong *)(pWVar4 + 0x20) < uVar3) * 8);
+    } while (pWVar4 != (WaterConcept__Switch *)0x0);
+    if ((pWVar1 != pWVar2) && (*(ulong *)(pWVar1 + 0x20) <= uVar3)) {
       func_0x00162fb0();
       return 1;
     }

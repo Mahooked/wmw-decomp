@@ -9,31 +9,34 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::WCScreen::WCScreen(unsigned int) */
 
-void WaterConcept::WCScreen::WCScreen(undefined8 *param_1,undefined4 param_2)
+void WaterConcept::WCScreen::WCScreen(uint p0)
 
 {
   long lVar1;
-  undefined8 uVar2;
+  undefined8 *puVar2;
+  undefined8 uVar3;
+  undefined4 in_w1;
   undefined8 uStack_50;
   long lStack_48;
   
+  puVar2 = (undefined8 *)(ulong)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *(undefined4 *)(param_1 + 1) = param_2;
-  *(undefined1 *)((long)param_1 + 0xe) = 1;
-  *(undefined2 *)((long)param_1 + 0xc) = 0x100;
-  param_1[2] = 0;
-  *(undefined2 *)(param_1 + 3) = 0;
-  param_1[4] = &PTR_handleEvent_00712ab0;
-  *param_1 = &PTR__WCScreen_00712a08;
+  *(undefined4 *)(puVar2 + 1) = in_w1;
+  *(undefined1 *)((long)puVar2 + 0xe) = 1;
+  *(undefined2 *)((long)puVar2 + 0xc) = 0x100;
+  puVar2[2] = 0;
+  *(undefined2 *)(puVar2 + 3) = 0;
+  puVar2[4] = &PTR_handleEvent_00712ab0;
+  *puVar2 = &PTR__WCScreen_00712a08;
                     /* try { // try from 004a17f4 to 004a17fb has its CatchHandler @ 004a1874 */
-  func_0x00166d10(param_1 + 5);
+  func_0x00166d10(puVar2 + 5);
                     /* try { // try from 004a17fc to 004a1803 has its CatchHandler @ 004a1864 */
-  uVar2 = FUN_00164060(0x90);
+  uVar3 = FUN_00164060(0x90);
   uStack_50 = _sScreenSize;
                     /* try { // try from 004a1818 to 004a1823 has its CatchHandler @ 004a1854 */
-  func_0x0016ff30(uVar2,param_1 + 4,&uStack_50);
-  param_1[2] = uVar2;
+  func_0x0016ff30(uVar3,puVar2 + 4,&uStack_50);
+  puVar2[2] = uVar3;
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -192,16 +195,16 @@ void WaterConcept::WCScreen::handleFocus(undefined8 param_1,long param_2,int par
 void WaterConcept::WCScreen::~WCScreen(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
   *param_1 = &PTR__WCScreen_00712a08;
   param_1[4] = &PTR_handleEvent_00712ab0;
                     /* try { // try from 004a4290 to 004a4293 has its CatchHandler @ 004a42bc */
   func_0x0016eb90(param_1[2]);
-  lVar1 = param_1[2];
-  if (lVar1 != 0) {
-    func_0x00162160(lVar1);
-    FUN_00166120(lVar1);
+  p0 = (void *)param_1[2];
+  if (p0 != (void *)0x0) {
+    func_0x00162160(p0);
+    FUN_00166120(p0);
   }
   func_0x00168d60(param_1 + 5);
   return;

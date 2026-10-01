@@ -13,10 +13,12 @@
 
 void std::__ndk1::
      vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::__push_back_slow_path<Walaber::TextureManager::SubTexInfo_const&>(long *param_1,long param_2)
+     ::__push_back_slow_path<Walaber::TextureManager::SubTexInfo_const&>
+               (Walaber__TextureManager__SubTexInfo *p0)
 
 {
   long lVar1;
+  long in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
@@ -29,13 +31,13 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 6;
+  lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 6;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3a != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = *(long *)(p0 + 0x10) - *(long *)p0;
   if ((ulong)(lVar4 >> 6) < 0x1ffffffffffffff) {
     uVar5 = lVar4 >> 5;
     if (uVar2 <= uVar5) {
@@ -45,19 +47,19 @@ void std::__ndk1::
   else {
     uVar2 = 0x3ffffffffffffff;
   }
-  func_0x0016f830(auStack_60,uVar2,lVar3,param_1 + 2);
+  func_0x0016f830(auStack_60,uVar2,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 003a0134 to 003a0177 has its CatchHandler @ 003a01b0 */
-  func_0x0016f720(lStack_50,param_2);
-  uVar7 = *(undefined8 *)(param_2 + 0x20);
-  uVar6 = *(undefined8 *)(param_2 + 0x18);
-  *(undefined8 *)(lVar3 + 0x28) = *(undefined8 *)(param_2 + 0x28);
+  func_0x0016f720(lStack_50);
+  uVar7 = *(undefined8 *)(in_x1 + 0x20);
+  uVar6 = *(undefined8 *)(in_x1 + 0x18);
+  *(undefined8 *)(lVar3 + 0x28) = *(undefined8 *)(in_x1 + 0x28);
   *(undefined8 *)(lVar3 + 0x20) = uVar7;
   *(undefined8 *)(lVar3 + 0x18) = uVar6;
-  *(undefined8 *)(lVar3 + 0x30) = *(undefined8 *)(param_2 + 0x30);
-  *(undefined4 *)(lVar3 + 0x38) = *(undefined4 *)(param_2 + 0x38);
+  *(undefined8 *)(lVar3 + 0x30) = *(undefined8 *)(in_x1 + 0x30);
+  *(undefined4 *)(lVar3 + 0x38) = *(undefined4 *)(in_x1 + 0x38);
   lStack_50 = lStack_50 + 0x40;
-  func_0x0016ab60(param_1,auStack_60);
+  func_0x0016ab60(p0,auStack_60);
   func_0x00169090(auStack_60);
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

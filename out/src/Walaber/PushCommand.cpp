@@ -89,16 +89,16 @@ bool Walaber::PushCommand::HasInstance(void)
 void Walaber::PushCommand::Destroy(void)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = sm_pInstance;
-  if (sm_pInstance != 0) {
+  p0 = sm_pInstance;
+  if (sm_pInstance != (void *)0x0) {
     func_0x0016cc70(sm_pInstance);
-    func_0x0016bbf0(lVar1 + 0x18);
-    func_0x0016cc70(lVar1);
-    FUN_00166120(lVar1);
+    func_0x0016bbf0((long)p0 + 0x18);
+    func_0x0016cc70(p0);
+    FUN_00166120(p0);
   }
-  sm_pInstance = 0;
+  sm_pInstance = (void *)0x0;
   return;
 }
 
@@ -132,7 +132,7 @@ void Walaber::PushCommand::ResumeNotifications(long param_1)
   ulong uVar2;
   long lVar3;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
@@ -144,7 +144,7 @@ void Walaber::PushCommand::ResumeNotifications(long param_1)
                     /* try { // try from 003e8b1c to 003e8b27 has its CatchHandler @ 003e8b88 */
     uVar2 = func_0x001620b0(param_1,abStack_60);
     if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
     if ((uVar2 & 1) != 0) {
       lVar3 = func_0x00164130(param_1 + 0x18,lVar3);
@@ -184,25 +184,25 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
 
 {
   long lVar1;
-  undefined8 uVar2;
-  byte bVar3;
-  ulong uVar4;
+  void *p0;
+  byte bVar2;
+  ulong uVar3;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   byte bStack_70;
   undefined7 uStack_6f;
   undefined1 uStack_68;
   undefined2 uStack_67;
   undefined1 uStack_65;
   undefined4 uStack_64;
-  undefined8 uStack_60;
+  void *pvStack_60;
   byte bStack_58;
   undefined7 uStack_57;
   undefined1 uStack_50;
   undefined2 uStack_4f;
   undefined1 uStack_4d;
   undefined4 uStack_4c;
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined1 auStack_40 [8];
   long lStack_38;
   
@@ -213,40 +213,40 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
     uStack_64 = 0;
     uStack_67 = 0x4952;
     bStack_70 = 0x14;
-    uStack_60 = 0;
+    pvStack_60 = (void *)0x0;
     uStack_4f = 0x6f43;
     uStack_4d = 0x6d;
     uStack_4c = 0x646e616d;
     uStack_57 = 0x737550646c6548;
     uStack_50 = 0x68;
-    uStack_48 = 0;
+    pvStack_48 = (void *)0x0;
     uStack_6f = 0x646e616d6d6f43;
     uStack_68 = 0x55;
     uStack_65 = 0;
                     /* try { // try from 003e8c34 to 003e8c43 has its CatchHandler @ 003e8c64 */
     func_0x00167f50(auStack_40,*(int *)(param_1 + 0x30),&bStack_58,&bStack_70);
-    uVar2 = uStack_48;
-    bVar3 = bStack_58;
+    p0 = pvStack_48;
+    bVar2 = bStack_58;
     if ((bStack_70 & 1) != 0) {
-      FUN_00166120(uStack_60);
-      uVar2 = uStack_48;
-      bVar3 = bStack_58;
+      FUN_00166120(pvStack_60);
+      p0 = pvStack_48;
+      bVar2 = bStack_58;
     }
     while( true ) {
-      if ((bVar3 & 1) != 0) {
-        FUN_00166120(uVar2);
+      if ((bVar2 & 1) != 0) {
+        FUN_00166120(p0);
       }
                     /* try { // try from 003e8c90 to 003e8cab has its CatchHandler @ 003e8d60 */
-      uVar4 = func_0x001651e0(auStack_40);
-      if ((uVar4 & 1) == 0) break;
+      uVar3 = func_0x001651e0(auStack_40);
+      if ((uVar3 & 1) == 0) break;
       func_0x0016c5c0(abStack_88,auStack_40,0);
                     /* try { // try from 003e8cac to 003e8cb7 has its CatchHandler @ 003e8d48 */
       func_0x001620b0(param_1,abStack_88);
-      uVar2 = uStack_78;
-      bVar3 = abStack_88[0];
+      p0 = pvStack_78;
+      bVar2 = abStack_88[0];
     }
     uStack_4c = 0;
-    uStack_48 = 0;
+    pvStack_48 = (void *)0x0;
     bStack_58 = 0x14;
     uStack_4f = 0x4952;
     uStack_57 = 0x646e616d6d6f43;
@@ -255,7 +255,7 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
                     /* try { // try from 003e8cec to 003e8cf3 has its CatchHandler @ 003e8d34 */
     func_0x001631d0(*(undefined4 *)(param_1 + 0x30),&bStack_58);
     if ((bStack_58 & 1) != 0) {
-      FUN_00166120(uStack_48);
+      FUN_00166120(pvStack_48);
     }
     func_0x00169840(auStack_40);
   }
@@ -282,15 +282,15 @@ ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
   ulong uVar2;
   uint uVar3;
   byte abStack_c8 [16];
-  undefined8 uStack_b8;
+  void *pvStack_b8;
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
+  void *pvStack_a0;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   byte bStack_80;
-  undefined8 uStack_70;
+  void *pvStack_70;
   byte bStack_68;
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 *puStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -308,7 +308,7 @@ ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
                     /* try { // try from 003e8dfc to 003e8e0b has its CatchHandler @ 003e8ea8 */
     uVar2 = func_0x0016d9a0(param_1,abStack_b0,abStack_98);
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
     if ((uVar2 & 1) != 0) {
                     /* try { // try from 003e8e24 to 003e8e2f has its CatchHandler @ 003e8ed4 */
@@ -323,20 +323,20 @@ ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
                     /* try { // try from 003e8dd0 to 003e8ddb has its CatchHandler @ 003e8ebc */
     func_0x0016a7e0(param_1,abStack_c8);
     if ((abStack_c8[0] & 1) != 0) {
-      FUN_00166120(uStack_b8);
+      FUN_00166120(pvStack_b8);
     }
   }
   uVar3 = 0;
 LAB_003e8e3c:
   func_0x00167a20(&puStack_50,uStack_48);
   if ((bStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((abStack_98[0] & 1) != 0) {
-    FUN_00166120(uStack_88);
+    FUN_00166120(pvStack_88);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return (ulong)uVar3;
@@ -514,21 +514,21 @@ void Walaber::PushCommand::ParseURI(undefined8 param_1,byte *param_2,ulong *para
   ulong uVar7;
   ulong uVar8;
   byte *pbVar9;
-  int iVar10;
-  long lVar11;
-  ulong *puVar12;
-  ulong uVar13;
+  void *pvVar10;
+  int iVar11;
+  long lVar12;
+  ulong *puVar13;
   ulong uVar14;
   int iVar15;
   long lVar16;
   int iVar17;
   long lVar18;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   undefined1 auStack_88 [8];
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar2 = tpidr_el0;
@@ -587,18 +587,18 @@ LAB_003e9358:
   if (((long)(pbVar9 + uVar8) - (long)pbVar4 < 1) ||
      (pbVar4 = (byte *)FUN_001730d0(pbVar4,0x3a), pbVar4 == (byte *)0x0)) goto LAB_003e9364;
   if (*pbVar4 == 0x3a) {
-    lVar11 = (long)pbVar4 - (long)pbVar9;
+    lVar12 = (long)pbVar4 - (long)pbVar9;
     if (pbVar4 == pbVar9 + uVar8) {
-      lVar11 = -1;
+      lVar12 = -1;
     }
-    if (lVar11 << 0x20 == -0x100000000) goto LAB_003e9368;
-    lVar11 = ((lVar11 << 0x20) >> 0x20) + 1;
+    if (lVar12 << 0x20 == -0x100000000) goto LAB_003e9368;
+    lVar12 = ((lVar12 << 0x20) >> 0x20) + 1;
     goto joined_r0x003e93c8;
   }
   pbVar4 = pbVar4 + 1;
   goto LAB_003e9358;
 LAB_003e9364:
-  lVar11 = -1;
+  lVar12 = -1;
 LAB_003e9368:
   if ((bVar1 & 1) == 0) {
     pbVar9 = param_2 + 1;
@@ -679,10 +679,10 @@ LAB_003e94b8:
   }
   FUN_00166450("PushCommand",2,"No fragment seperator found, Assuming no fragment, URI: %s",pbVar9);
 LAB_003e94e0:
-  iVar10 = (int)lVar11;
+  iVar11 = (int)lVar12;
   iVar15 = (int)lVar16;
   iVar17 = (int)lVar18;
-  if (lVar11 << 0x20 == -0x100000000) {
+  if (lVar12 << 0x20 == -0x100000000) {
     if (iVar15 == -1) {
       iVar6 = (int)uVar14;
       if (iVar17 != -1) {
@@ -694,7 +694,7 @@ LAB_003e94e0:
     }
   }
   else {
-    iVar6 = iVar10 + -1;
+    iVar6 = iVar11 + -1;
   }
   func_0x00164360(&uStack_80,param_2,uVar7,(long)(iVar6 - (iVar3 + 3)),auStack_88);
   if ((*param_3 & 1) == 0) {
@@ -704,14 +704,14 @@ LAB_003e94e0:
     *(undefined1 *)param_3[2] = 0;
     param_3[1] = 0;
     if ((*param_3 & 1) != 0) {
-      FUN_00166120(param_3[2]);
+      FUN_00166120((void *)param_3[2]);
       *param_3 = 0;
     }
   }
-  param_3[2] = uStack_70;
+  param_3[2] = (ulong)pvStack_70;
   param_3[1] = uStack_78;
   *param_3 = uStack_80;
-  if (lVar11 << 0x20 != -0x100000000) {
+  if (lVar12 << 0x20 != -0x100000000) {
     if (iVar15 == -1) {
       uVar7 = uVar14;
       if (iVar17 != -1) {
@@ -722,22 +722,22 @@ LAB_003e94e0:
     else {
       iVar3 = iVar15 + -1;
     }
-    func_0x00164360(&uStack_80,param_2,(long)iVar10,(long)(iVar3 - iVar10),auStack_88);
-    puVar12 = param_3 + 3;
-    if ((*puVar12 & 1) == 0) {
-      *(undefined2 *)puVar12 = 0;
+    func_0x00164360(&uStack_80,param_2,(long)iVar11,(long)(iVar3 - iVar11),auStack_88);
+    puVar13 = param_3 + 3;
+    if ((*puVar13 & 1) == 0) {
+      *(undefined2 *)puVar13 = 0;
     }
     else {
       *(undefined1 *)param_3[5] = 0;
       param_3[4] = 0;
       if ((param_3[3] & 1) != 0) {
-        FUN_00166120(param_3[5]);
+        FUN_00166120((void *)param_3[5]);
         param_3[3] = 0;
       }
     }
-    param_3[5] = uStack_70;
+    param_3[5] = (ulong)pvStack_70;
     param_3[4] = uStack_78;
-    *puVar12 = uStack_80;
+    *puVar13 = uStack_80;
   }
   if (lVar16 << 0x20 != -0x100000000) {
     iVar3 = (int)uVar14;
@@ -750,16 +750,16 @@ LAB_003e94e0:
                     /* try { // try from 003e963c to 003e9643 has its CatchHandler @ 003e9790 */
     func_0x001686e0(uVar5,abStack_a0,param_3 + 9);
     if ((abStack_a0[0] & 1) != 0) {
-      FUN_00166120(uStack_90);
+      FUN_00166120(pvStack_90);
     }
     if ((uStack_80 & 1) != 0) {
-      FUN_00166120(uStack_70);
+      FUN_00166120(pvStack_70);
     }
   }
   if (lVar18 << 0x20 != -0x100000000) {
     uStack_80 = 0;
     uStack_78 = 0;
-    uStack_70 = 0;
+    pvStack_70 = (void *)0x0;
     bVar1 = *param_2;
     uVar14 = (ulong)(bVar1 >> 1);
     if ((bVar1 & 1) != 0) {
@@ -780,35 +780,35 @@ LAB_003e94e0:
       return;
     }
     if (uVar14 < 0x17) {
-      uVar8 = (ulong)&uStack_80 | 1;
+      pvVar10 = (void *)((ulong)&uStack_80 | 1);
       uStack_80 = (ulong)(byte)((int)uVar14 << 1);
       if (uVar14 != 0) goto LAB_003e96f4;
     }
     else {
-      uVar13 = uVar14 + 0x10 & 0xfffffffffffffff0;
-      uVar8 = FUN_00164060(uVar13);
-      uStack_80 = uVar13 | 1;
+      uVar8 = uVar14 + 0x10 & 0xfffffffffffffff0;
+      pvVar10 = (void *)FUN_00164060(uVar8);
+      uStack_80 = uVar8 | 1;
       uStack_78 = uVar14;
-      uStack_70 = uVar8;
+      pvStack_70 = pvVar10;
 LAB_003e96f4:
-      FUN_001715e0(uVar8,pbVar9 + uVar7,uVar14);
+      FUN_001715e0(pvVar10,pbVar9 + uVar7,uVar14);
     }
-    *(undefined1 *)(uVar8 + uVar14) = 0;
-    puVar12 = param_3 + 6;
-    if ((*puVar12 & 1) == 0) {
-      *(undefined2 *)puVar12 = 0;
+    *(undefined1 *)((long)pvVar10 + uVar14) = 0;
+    puVar13 = param_3 + 6;
+    if ((*puVar13 & 1) == 0) {
+      *(undefined2 *)puVar13 = 0;
     }
     else {
       *(undefined1 *)param_3[8] = 0;
       param_3[7] = 0;
       if ((param_3[6] & 1) != 0) {
-        FUN_00166120(param_3[8]);
+        FUN_00166120((void *)param_3[8]);
         param_3[6] = 0;
       }
     }
-    param_3[8] = uStack_70;
+    param_3[8] = (ulong)pvStack_70;
     param_3[7] = uStack_78;
-    *puVar12 = uStack_80;
+    *puVar13 = uStack_80;
   }
   uVar5 = 1;
 LAB_003e92dc:
@@ -827,7 +827,7 @@ LAB_003e92dc:
 
 /* Walaber::PushCommand::DoCommand(Walaber::CommandData&) */
 
-void Walaber::PushCommand::DoCommand(long param_1,long param_2)
+void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0)
 
 {
   ulong uVar1;
@@ -837,11 +837,12 @@ void Walaber::PushCommand::DoCommand(long param_1,long param_2)
   byte bVar5;
   bool bVar6;
   int iVar7;
+  long in_x1;
   char *pcVar8;
   long lVar9;
   char *pcVar10;
-  byte *pbVar11;
-  long lVar12;
+  Walaber__CommandData *pWVar11;
+  Walaber__CommandData *pWVar12;
   char *pcVar13;
   char *pcVar14;
   byte abStack_98 [8];
@@ -854,14 +855,14 @@ void Walaber::PushCommand::DoCommand(long param_1,long param_2)
   
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
-  lVar12 = *(long *)(param_1 + 8);
-  if (param_1 != lVar12) {
+  pWVar12 = *(Walaber__CommandData **)(p0 + 8);
+  if (p0 != pWVar12) {
     pcVar13 = (char *)((ulong)abStack_80 | 1);
     pcVar14 = (char *)((ulong)abStack_98 | 1);
     do {
-      func_0x00171fd0(abStack_80,lVar12 + 0x10);
+      func_0x00171fd0(abStack_80,pWVar12 + 0x10);
                     /* try { // try from 003e9878 to 003e9883 has its CatchHandler @ 003e9bb0 */
-      func_0x00171fd0(abStack_98,param_2);
+      func_0x00171fd0(abStack_98);
       bVar4 = abStack_80[0];
       bVar5 = abStack_98[0];
       uVar1 = (ulong)(abStack_80[0] >> 1);
@@ -913,17 +914,17 @@ joined_r0x003e9908:
         FUN_00166120(pcStack_70);
       }
       if (bVar6) {
-        pbVar11 = (byte *)(lVar12 + 0x28);
-        uVar1 = (ulong)(*pbVar11 >> 1);
-        if ((*pbVar11 & 1) != 0) {
-          uVar1 = *(ulong *)(lVar12 + 0x30);
+        pWVar11 = pWVar12 + 0x28;
+        uVar1 = (ulong)((byte)*pWVar11 >> 1);
+        if (((byte)*pWVar11 & 1) != 0) {
+          uVar1 = *(ulong *)(pWVar12 + 0x30);
         }
                     /* try { // try from 003e9948 to 003e9963 has its CatchHandler @ 003e9ba4 */
         if ((uVar1 != 0) ||
-           (iVar7 = func_0x001656c0(pbVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
-          func_0x00171fd0(abStack_80,pbVar11);
+           (iVar7 = func_0x001656c0(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+          func_0x00171fd0(abStack_80,pWVar11);
                     /* try { // try from 003e9974 to 003e997f has its CatchHandler @ 003e9bac */
-          func_0x00171fd0(abStack_98,param_2 + 0x18);
+          func_0x00171fd0(abStack_98,in_x1 + 0x18);
           bVar4 = abStack_80[0];
           bVar5 = abStack_98[0];
           uVar1 = (ulong)(abStack_80[0] >> 1);
@@ -976,17 +977,17 @@ joined_r0x003e9a28:
           }
           if (!bVar6) goto LAB_003e9b5c;
         }
-        pbVar11 = (byte *)(lVar12 + 0x40);
-        uVar1 = (ulong)(*pbVar11 >> 1);
-        if ((*pbVar11 & 1) != 0) {
-          uVar1 = *(ulong *)(lVar12 + 0x48);
+        pWVar11 = pWVar12 + 0x40;
+        uVar1 = (ulong)((byte)*pWVar11 >> 1);
+        if (((byte)*pWVar11 & 1) != 0) {
+          uVar1 = *(ulong *)(pWVar12 + 0x48);
         }
                     /* try { // try from 003e9a68 to 003e9a83 has its CatchHandler @ 003e9ba0 */
         if ((uVar1 != 0) ||
-           (iVar7 = func_0x001656c0(pbVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
-          func_0x00171fd0(abStack_80,pbVar11);
+           (iVar7 = func_0x001656c0(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+          func_0x00171fd0(abStack_80,pWVar11);
                     /* try { // try from 003e9a94 to 003e9a9f has its CatchHandler @ 003e9ba8 */
-          func_0x00171fd0(abStack_98,param_2 + 0x30);
+          func_0x00171fd0(abStack_98,in_x1 + 0x30);
           bVar4 = abStack_80[0];
           bVar5 = abStack_98[0];
           uVar1 = (ulong)(abStack_80[0] >> 1);
@@ -1039,11 +1040,11 @@ joined_r0x003e9b24:
           }
           if (!bVar6) goto LAB_003e9b5c;
         }
-        (**(code **)(**(long **)(lVar12 + 0x58) + 0x10))(*(long **)(lVar12 + 0x58),param_2);
+        (**(code **)(**(long **)(pWVar12 + 0x58) + 0x10))();
       }
 LAB_003e9b5c:
-      lVar12 = *(long *)(lVar12 + 8);
-    } while (param_1 != lVar12);
+      pWVar12 = *(Walaber__CommandData **)(pWVar12 + 8);
+    } while (p0 != pWVar12);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_68) {
     return;
@@ -1070,14 +1071,14 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
   byte *pbVar4;
   undefined8 uVar5;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte bStack_60;
   undefined6 uStack_5f;
   undefined1 uStack_59;
   undefined1 uStack_58;
   undefined6 uStack_57;
   undefined1 uStack_51;
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar3 = tpidr_el0;
@@ -1136,7 +1137,7 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
       param_2[0xe] = 0;
       param_2[0xf] = 0;
       if ((*param_2 & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(param_2 + 0x10));
+        FUN_00166120(*(void **)(param_2 + 0x10));
         param_2[0] = 0;
         param_2[1] = 0;
         param_2[2] = 0;
@@ -1157,7 +1158,7 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
     uStack_5f = 0;
     uStack_59 = 0;
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
     abStack_78[0xc] = 0;
     abStack_78[0xd] = 0;
@@ -1166,7 +1167,7 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
     abStack_78[0] = 0x14;
     abStack_78[9] = 0x52;
     abStack_78[10] = 0x49;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     bStack_60 = 0x1e;
     abStack_78[1] = 0x43;
     abStack_78[2] = 0x6f;
@@ -1182,14 +1183,14 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
     uStack_5f = 0x7550646c6548;
     uStack_59 = 0x73;
     uStack_58 = 0x68;
-    uStack_50 = 0;
+    pvStack_50 = (void *)0x0;
                     /* try { // try from 003e9d18 to 003e9d27 has its CatchHandler @ 003e9d74 */
     func_0x00168ac0(*(undefined4 *)(param_1 + 0x30),abStack_78,&bStack_60,param_2);
     if ((bStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
@@ -1218,11 +1219,11 @@ void Walaber::PushCommand::Register
 {
   long lVar1;
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
+  void *pvStack_a0;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   undefined1 auStack_68 [16];
   long lStack_58;
   
@@ -1237,13 +1238,13 @@ void Walaber::PushCommand::Register
   func_0x00162cc0(param_1,abStack_b0);
   FUN_0016bb90(auStack_68);
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((abStack_98[0] & 1) != 0) {
-    FUN_00166120(uStack_88);
+    FUN_00166120(pvStack_88);
   }
   if ((abStack_b0[0] & 1) != 0) {
-    FUN_00166120(uStack_a0);
+    FUN_00166120(pvStack_a0);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -1260,10 +1261,12 @@ void Walaber::PushCommand::Register
 
 /* Walaber::PushCommand::SetDataBaseKey(int) */
 
-void Walaber::PushCommand::SetDataBaseKey(long param_1,undefined4 param_2)
+void Walaber::PushCommand::SetDataBaseKey(int p0)
 
 {
-  *(undefined4 *)(param_1 + 0x30) = param_2;
+  undefined4 in_w1;
+  
+  *(undefined4 *)((ulong)(uint)p0 + 0x30) = in_w1;
   return;
 }
 

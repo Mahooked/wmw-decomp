@@ -52,7 +52,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
   undefined8 *puStack_78;
   undefined1 auStack_70 [8];
   ulong auStack_68 [2];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
   long lStack_38;
@@ -79,7 +79,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
                     /* try { // try from 005f14f4 to 005f14ff has its CatchHandler @ 005f15f8 */
         func_0x0016c1f0(appuStack_90,auStack_68);
         if ((auStack_68[0] & 1) != 0) {
-          FUN_00166120(uStack_58);
+          FUN_00166120(pvStack_58);
         }
         puStack_78 = puStack_48;
         uStack_80 = uStack_50;

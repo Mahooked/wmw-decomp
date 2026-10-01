@@ -41,11 +41,12 @@ void std::__ndk1::error_category::~error_category(void)
 
 /* std::__ndk1::error_category::default_error_condition(int) const */
 
-undefined4
-std::__ndk1::error_category::default_error_condition(undefined8 param_1,undefined4 param_2)
+undefined4 std::__ndk1::error_category::default_error_condition(int p0)
 
 {
-  return param_2;
+  undefined4 in_w1;
+  
+  return in_w1;
 }
 
 
@@ -56,14 +57,15 @@ std::__ndk1::error_category::default_error_condition(undefined8 param_1,undefine
 
 /* std::__ndk1::error_category::equivalent(int, std::__ndk1::error_condition const&) const */
 
-bool std::__ndk1::error_category::equivalent(long *param_1,undefined8 param_2,int *param_3)
+bool std::__ndk1::error_category::equivalent(int p0,std____ndk1__error_condition *p1)
 
 {
   int iVar1;
   long extraout_x1;
+  int *in_x2;
   
-  iVar1 = (**(code **)(*param_1 + 0x18))();
-  return *(long *)(param_3 + 2) == extraout_x1 && *param_3 == iVar1;
+  iVar1 = (**(code **)(*(long *)(ulong)(uint)p0 + 0x18))();
+  return *(long *)(in_x2 + 2) == extraout_x1 && *in_x2 == iVar1;
 }
 
 
@@ -74,10 +76,13 @@ bool std::__ndk1::error_category::equivalent(long *param_1,undefined8 param_2,in
 
 /* std::__ndk1::error_category::equivalent(std::__ndk1::error_code const&, int) const */
 
-bool std::__ndk1::error_category::equivalent(long param_1,int *param_2,int param_3)
+bool std::__ndk1::error_category::equivalent(std____ndk1__error_code *p0,int p1)
 
 {
-  return *(long *)(param_2 + 2) == param_1 && *param_2 == param_3;
+  int in_w2;
+  
+  return *(std____ndk1__error_code **)((int *)(ulong)(uint)p1 + 2) == p0 &&
+         *(int *)(ulong)(uint)p1 == in_w2;
 }
 
 
@@ -96,7 +101,7 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
   ulong uVar5;
   ulong uVar6;
   char *pcVar7;
-  ulong uVar8;
+  ulong p0;
   char acStack_458 [1024];
   long lStack_58;
   
@@ -135,11 +140,11 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
     if (uVar5 == 0) goto LAB_005eeed0;
   }
   else {
-    uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar6 = FUN_00164060(uVar8);
+    p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
+    uVar6 = FUN_00164060(p0);
     param_1[1] = uVar5;
     param_1[2] = uVar6;
-    *param_1 = uVar8 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar6,pcVar7,uVar5);
 LAB_005eeed0:

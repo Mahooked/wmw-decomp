@@ -15,26 +15,27 @@
 undefined8
 std::__ndk1::
 __tree<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::__map_value_compare<void*,std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::less<void*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<void*,Walaber::SharedPtr<Walaber::Callback>>>>
-::__erase_unique<void*>(long param_1,ulong *param_2)
+::__erase_unique<void*>(void **p0)
 
 {
-  long *plVar1;
-  long *plVar2;
-  ulong uVar3;
-  long *plVar4;
+  undefined8 *in_x1;
+  void **ppvVar1;
+  void **ppvVar2;
+  void *pvVar3;
+  void **ppvVar4;
   
-  plVar2 = (long *)(param_1 + 8);
-  plVar4 = (long *)*plVar2;
-  if (plVar4 != (long *)0x0) {
-    uVar3 = *param_2;
-    plVar1 = plVar2;
+  ppvVar2 = p0 + 1;
+  ppvVar4 = *ppvVar2;
+  if (ppvVar4 != (void **)0x0) {
+    pvVar3 = (void *)*in_x1;
+    ppvVar1 = ppvVar2;
     do {
-      if ((ulong)plVar4[4] >= uVar3) {
-        plVar1 = plVar4;
+      if (ppvVar4[4] >= pvVar3) {
+        ppvVar1 = ppvVar4;
       }
-      plVar4 = (long *)plVar4[(ulong)plVar4[4] < uVar3];
-    } while (plVar4 != (long *)0x0);
-    if ((plVar1 != plVar2) && ((ulong)plVar1[4] <= uVar3)) {
+      ppvVar4 = ppvVar4[ppvVar4[4] < pvVar3];
+    } while (ppvVar4 != (void **)0x0);
+    if ((ppvVar1 != ppvVar2) && (ppvVar1[4] <= pvVar3)) {
       func_0x001682d0();
       return 1;
     }

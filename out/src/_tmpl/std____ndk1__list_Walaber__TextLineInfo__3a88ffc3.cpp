@@ -27,7 +27,7 @@ long * std::__ndk1::list<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
       plVar3 = (long *)param_2[1];
       *(long *)(param_1 + 0x10) = *(long *)(param_1 + 0x10) + -1;
       if ((*(byte *)(param_2 + 2) & 1) != 0) {
-        FUN_00166120(param_2[4]);
+        FUN_00166120((void *)param_2[4]);
       }
       FUN_00166120(param_2);
       param_2 = plVar3;

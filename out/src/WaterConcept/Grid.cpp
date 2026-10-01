@@ -28,41 +28,42 @@ void WaterConcept::Grid::Grid(undefined8 *param_1)
 
 /* WaterConcept::Grid::Grid(Walaber::Vector2 const&, float, float, int, int) */
 
-void WaterConcept::Grid::Grid
-               (float param_1,float param_2,undefined8 *param_3,undefined8 *param_4,int param_5,
-               int param_6)
+void WaterConcept::Grid::Grid(Walaber__Vector2 *p0,float p1,float p2,int p3,int p4)
 
 {
+  int in_w3;
   undefined8 uVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
+  float fVar5;
   
-  *param_3 = 0;
-  param_3[4] = 0;
-  param_3[5] = 0;
-  param_3[3] = 0;
-  *(float *)(param_3 + 1) = param_1;
-  *(float *)((long)param_3 + 0xc) = param_2;
-  *(int *)(param_3 + 2) = param_5;
-  *(int *)((long)param_3 + 0x14) = param_6;
-  uVar1 = *param_4;
-  param_1 = param_1 / (float)param_5;
-  param_2 = param_2 / (float)param_6;
-  fVar3 = param_1;
-  if (param_1 < 0.0) {
-    fVar3 = -param_1;
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 0x20) = 0;
+  *(undefined8 *)(p0 + 0x28) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
+  *(float *)(p0 + 8) = p1;
+  *(float *)(p0 + 0xc) = p2;
+  *(int *)(p0 + 0x10) = p4;
+  *(int *)(p0 + 0x14) = in_w3;
+  uVar1 = *(undefined8 *)(ulong)(uint)p3;
+  fVar2 = p1 / (float)p4;
+  fVar3 = p2 / (float)in_w3;
+  fVar5 = fVar2;
+  if (fVar2 < 0.0) {
+    fVar5 = -fVar2;
   }
-  *(float *)(param_3 + 3) = param_1;
-  *(float *)((long)param_3 + 0x1c) = param_2;
-  fVar2 = param_2;
-  if (param_2 < 0.0) {
-    fVar2 = -param_2;
+  *(float *)(p0 + 0x18) = fVar2;
+  *(float *)(p0 + 0x1c) = fVar3;
+  fVar4 = fVar3;
+  if (fVar3 < 0.0) {
+    fVar4 = -fVar3;
   }
-  *param_3 = uVar1;
-  *(float *)(param_3 + 4) = fVar3;
-  *(float *)((long)param_3 + 0x24) = fVar2;
-  *(float *)(param_3 + 5) = param_1 * 0.5;
-  *(float *)((long)param_3 + 0x2c) = param_2 * 0.5;
+  *(undefined8 *)p0 = uVar1;
+  *(float *)(p0 + 0x20) = fVar5;
+  *(float *)(p0 + 0x24) = fVar4;
+  *(float *)(p0 + 0x28) = fVar2 * 0.5;
+  *(float *)(p0 + 0x2c) = fVar3 * 0.5;
   return;
 }
 
@@ -74,37 +75,38 @@ void WaterConcept::Grid::Grid
 
 /* WaterConcept::Grid::_setGridResolution(Walaber::Vector2 const&, float, float, int, int) */
 
-void WaterConcept::Grid::_setGridResolution
-               (float param_1,float param_2,undefined8 *param_3,undefined8 *param_4,int param_5,
-               int param_6)
+void WaterConcept::Grid::_setGridResolution(Walaber__Vector2 *p0,float p1,float p2,int p3,int p4)
 
 {
+  int in_w3;
   undefined8 uVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
+  float fVar5;
   
-  *(float *)(param_3 + 1) = param_1;
-  *(float *)((long)param_3 + 0xc) = param_2;
-  *(int *)(param_3 + 2) = param_5;
-  *(int *)((long)param_3 + 0x14) = param_6;
-  uVar1 = *param_4;
-  param_1 = param_1 / (float)param_5;
-  param_2 = param_2 / (float)param_6;
-  fVar3 = param_1;
-  if (param_1 < 0.0) {
-    fVar3 = -param_1;
+  *(float *)(p0 + 8) = p1;
+  *(float *)(p0 + 0xc) = p2;
+  *(int *)(p0 + 0x10) = p4;
+  *(int *)(p0 + 0x14) = in_w3;
+  uVar1 = *(undefined8 *)(ulong)(uint)p3;
+  fVar2 = p1 / (float)p4;
+  fVar3 = p2 / (float)in_w3;
+  fVar5 = fVar2;
+  if (fVar2 < 0.0) {
+    fVar5 = -fVar2;
   }
-  *(float *)(param_3 + 3) = param_1;
-  *(float *)((long)param_3 + 0x1c) = param_2;
-  fVar2 = param_2;
-  if (param_2 < 0.0) {
-    fVar2 = -param_2;
+  *(float *)(p0 + 0x18) = fVar2;
+  *(float *)(p0 + 0x1c) = fVar3;
+  fVar4 = fVar3;
+  if (fVar3 < 0.0) {
+    fVar4 = -fVar3;
   }
-  *param_3 = uVar1;
-  *(float *)(param_3 + 4) = fVar3;
-  *(float *)((long)param_3 + 0x24) = fVar2;
-  *(float *)(param_3 + 5) = param_1 * 0.5;
-  *(float *)((long)param_3 + 0x2c) = param_2 * 0.5;
+  *(undefined8 *)p0 = uVar1;
+  *(float *)(p0 + 0x20) = fVar5;
+  *(float *)(p0 + 0x24) = fVar4;
+  *(float *)(p0 + 0x28) = fVar2 * 0.5;
+  *(float *)(p0 + 0x2c) = fVar3 * 0.5;
   return;
 }
 
@@ -116,21 +118,22 @@ void WaterConcept::Grid::_setGridResolution
 
 /* WaterConcept::Grid::Grid(WaterConcept::Grid const&) */
 
-void WaterConcept::Grid::Grid(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::Grid::Grid(WaterConcept__Grid *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  uVar1 = param_2[2];
-  param_1[3] = param_2[3];
-  param_1[2] = uVar1;
-  *(undefined4 *)(param_1 + 4) = *(undefined4 *)(param_2 + 4);
-  *(undefined4 *)((long)param_1 + 0x24) = *(undefined4 *)((long)param_2 + 0x24);
-  *(undefined4 *)(param_1 + 5) = *(undefined4 *)(param_2 + 5);
-  *(undefined4 *)((long)param_1 + 0x2c) = *(undefined4 *)((long)param_2 + 0x2c);
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
+  uVar1 = in_x1[2];
+  *(undefined8 *)(p0 + 0x18) = in_x1[3];
+  *(undefined8 *)(p0 + 0x10) = uVar1;
+  *(undefined4 *)(p0 + 0x20) = *(undefined4 *)(in_x1 + 4);
+  *(undefined4 *)(p0 + 0x24) = *(undefined4 *)((long)in_x1 + 0x24);
+  *(undefined4 *)(p0 + 0x28) = *(undefined4 *)(in_x1 + 5);
+  *(undefined4 *)(p0 + 0x2c) = *(undefined4 *)((long)in_x1 + 0x2c);
   return;
 }
 
@@ -142,21 +145,22 @@ void WaterConcept::Grid::Grid(undefined8 *param_1,undefined8 *param_2)
 
 /* WaterConcept::Grid::TEMPNAMEPLACEHOLDERVALUE(WaterConcept::Grid const&) */
 
-void WaterConcept::Grid::operator=(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::Grid::operator=(WaterConcept__Grid *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  uVar1 = param_2[2];
-  param_1[3] = param_2[3];
-  param_1[2] = uVar1;
-  *(undefined4 *)(param_1 + 4) = *(undefined4 *)(param_2 + 4);
-  *(undefined4 *)((long)param_1 + 0x24) = *(undefined4 *)((long)param_2 + 0x24);
-  *(undefined4 *)(param_1 + 5) = *(undefined4 *)(param_2 + 5);
-  *(undefined4 *)((long)param_1 + 0x2c) = *(undefined4 *)((long)param_2 + 0x2c);
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
+  uVar1 = in_x1[2];
+  *(undefined8 *)(p0 + 0x18) = in_x1[3];
+  *(undefined8 *)(p0 + 0x10) = uVar1;
+  *(undefined4 *)(p0 + 0x20) = *(undefined4 *)(in_x1 + 4);
+  *(undefined4 *)(p0 + 0x24) = *(undefined4 *)((long)in_x1 + 0x24);
+  *(undefined4 *)(p0 + 0x28) = *(undefined4 *)(in_x1 + 5);
+  *(undefined4 *)(p0 + 0x2c) = *(undefined4 *)((long)in_x1 + 0x2c);
   return;
 }
 
@@ -182,19 +186,20 @@ void WaterConcept::Grid::~Grid(void)
 
 /* WaterConcept::Grid::getCellForPos(Walaber::Vector2 const&) const */
 
-undefined8 WaterConcept::Grid::getCellForPos(float *param_1,float *param_2)
+undefined8 WaterConcept::Grid::getCellForPos(Walaber__Vector2 *p0)
 
 {
+  float *in_x1;
   uint uVar1;
   uint uVar2;
   
-  uVar1 = (uint)((*param_2 - *param_1) / param_1[6]);
-  uVar2 = (uint)((param_2[1] - param_1[1]) / param_1[7]);
-  if ((int)((int)param_1[4] - 1U) <= (int)uVar1) {
-    uVar1 = (int)param_1[4] - 1U;
+  uVar1 = (uint)((*in_x1 - *(float *)p0) / *(float *)(p0 + 0x18));
+  uVar2 = (uint)((in_x1[1] - *(float *)(p0 + 4)) / *(float *)(p0 + 0x1c));
+  if ((int)(*(int *)(p0 + 0x10) - 1U) <= (int)uVar1) {
+    uVar1 = *(int *)(p0 + 0x10) - 1U;
   }
-  if ((int)((int)param_1[5] - 1U) <= (int)uVar2) {
-    uVar2 = (int)param_1[5] - 1U;
+  if ((int)(*(int *)(p0 + 0x14) - 1U) <= (int)uVar2) {
+    uVar2 = *(int *)(p0 + 0x14) - 1U;
   }
   return CONCAT44(uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU),
                   uVar1 & ((int)uVar1 >> 0x1f ^ 0xffffffffU));
@@ -208,15 +213,20 @@ undefined8 WaterConcept::Grid::getCellForPos(float *param_1,float *param_2)
 
 /* WaterConcept::Grid::getCellPos(WaterConcept::GridCell const&) const */
 
-void WaterConcept::Grid::getCellPos(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
+void WaterConcept::Grid::getCellPos(WaterConcept__GridCell *p0)
 
 {
+  undefined8 *in_x1;
+  undefined8 *in_x8;
   undefined8 uVar1;
   
-  uVar1 = NEON_scvtf(*param_3,4);
-  *param_1 = CONCAT44((float)((ulong)*param_2 >> 0x20) + (float)((ulong)param_2[5] >> 0x20) +
-                      (float)((ulong)param_2[3] >> 0x20) * (float)((ulong)uVar1 >> 0x20),
-                      (float)*param_2 + (float)param_2[5] + (float)param_2[3] * (float)uVar1);
+  uVar1 = NEON_scvtf(*in_x1,4);
+  *in_x8 = CONCAT44((float)((ulong)*(undefined8 *)p0 >> 0x20) +
+                    (float)((ulong)*(undefined8 *)(p0 + 0x28) >> 0x20) +
+                    (float)((ulong)*(undefined8 *)(p0 + 0x18) >> 0x20) *
+                    (float)((ulong)uVar1 >> 0x20),
+                    (float)*(undefined8 *)p0 + (float)*(undefined8 *)(p0 + 0x28) +
+                    (float)*(undefined8 *)(p0 + 0x18) * (float)uVar1);
   return;
 }
 

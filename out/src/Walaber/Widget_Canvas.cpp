@@ -82,7 +82,7 @@ void Walaber::Widget_Canvas::~Widget_Canvas(void)
 
 /* Walaber::Widget_Canvas::~Widget_Canvas() */
 
-void Walaber::Widget_Canvas::~Widget_Canvas(undefined8 param_1)
+void Walaber::Widget_Canvas::~Widget_Canvas(void *param_1)
 
 {
   FUN_00168a50();
@@ -98,10 +98,11 @@ void Walaber::Widget_Canvas::~Widget_Canvas(undefined8 param_1)
 
 /* Walaber::Widget_Canvas::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_Canvas::update(long param_1,long param_2)
+undefined8 Walaber::Widget_Canvas::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   undefined8 uVar1;
+  long in_x1;
   undefined4 uVar2;
   long lVar3;
   long lVar4;
@@ -110,19 +111,19 @@ undefined8 Walaber::Widget_Canvas::update(long param_1,long param_2)
   float fVar7;
   undefined8 uVar8;
   
-  switch(*(undefined4 *)(param_1 + 0x124)) {
+  switch(*(undefined4 *)(p1 + 0x124)) {
   case 1:
     uVar1 = 1;
-    *(undefined4 *)(param_2 + 0xc) = 1;
-    *(undefined4 *)(param_2 + 0x10) = *(undefined4 *)(param_1 + 0x11c);
-    *(undefined8 *)(param_2 + 4) = *(undefined8 *)(param_1 + 0x114);
+    *(undefined4 *)(in_x1 + 0xc) = 1;
+    *(undefined4 *)(in_x1 + 0x10) = *(undefined4 *)(p1 + 0x11c);
+    *(undefined8 *)(in_x1 + 4) = *(undefined8 *)(p1 + 0x114);
     goto LAB_0037a9a4;
   case 2:
-    *(undefined4 *)(param_2 + 0xc) = 2;
-    *(undefined4 *)(param_2 + 0x10) = *(undefined4 *)(param_1 + 0x11c);
-    uVar1 = *(undefined8 *)(*(long *)(param_1 + 0x100) + 4);
-    uVar8 = *(undefined8 *)(*(long *)(param_1 + 0x100) + 0xc);
-    *(ulong *)(param_2 + 4) =
+    *(undefined4 *)(in_x1 + 0xc) = 2;
+    *(undefined4 *)(in_x1 + 0x10) = *(undefined4 *)(p1 + 0x11c);
+    uVar1 = *(undefined8 *)(*(long *)(p1 + 0x100) + 4);
+    uVar8 = *(undefined8 *)(*(long *)(p1 + 0x100) + 0xc);
+    *(ulong *)(in_x1 + 4) =
          CONCAT44((float)((ulong)uVar1 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar1 - (float)uVar8);
     goto LAB_0037a994;
@@ -133,38 +134,36 @@ undefined8 Walaber::Widget_Canvas::update(long param_1,long param_2)
     uVar2 = 4;
     break;
   default:
-    lVar3 = *(long *)(param_1 + 0x100);
-    if ((lVar3 != 0) && (lVar4 = *(long *)(param_1 + 0x108), lVar4 != 0)) {
-      *(undefined4 *)(param_2 + 0xc) = 5;
-      *(undefined4 *)(param_2 + 0x10) = *(undefined4 *)(param_1 + 0x11c);
+    lVar3 = *(long *)(p1 + 0x100);
+    if ((lVar3 != 0) && (lVar4 = *(long *)(p1 + 0x108), lVar4 != 0)) {
+      *(undefined4 *)(in_x1 + 0xc) = 5;
+      *(undefined4 *)(in_x1 + 0x10) = *(undefined4 *)(p1 + 0x11c);
       fVar5 = *(float *)(lVar3 + 4) - *(float *)(lVar4 + 4);
       fVar6 = *(float *)(lVar3 + 8) - *(float *)(lVar4 + 8);
       fVar5 = SQRT(fVar5 * fVar5 + fVar6 * fVar6);
       if (NAN(fVar5)) {
         fVar5 = (float)func_0x0016cd20();
       }
-      fVar6 = *(float *)(*(long *)(param_1 + 0x100) + 0xc) -
-              *(float *)(*(long *)(param_1 + 0x108) + 0xc);
-      fVar7 = *(float *)(*(long *)(param_1 + 0x100) + 0x10) -
-              *(float *)(*(long *)(param_1 + 0x108) + 0x10);
+      fVar6 = *(float *)(*(long *)(p1 + 0x100) + 0xc) - *(float *)(*(long *)(p1 + 0x108) + 0xc);
+      fVar7 = *(float *)(*(long *)(p1 + 0x100) + 0x10) - *(float *)(*(long *)(p1 + 0x108) + 0x10);
       fVar7 = fVar6 * fVar6 + fVar7 * fVar7;
       fVar6 = SQRT(fVar7);
       if (NAN(fVar6)) {
         fVar6 = (float)func_0x0016cd20(fVar7);
       }
-      *(float *)(param_2 + 4) = fVar5 - fVar6;
+      *(float *)(in_x1 + 4) = fVar5 - fVar6;
       return 1;
     }
     uVar1 = 0;
 LAB_0037a9a4:
-    *(undefined4 *)(param_1 + 0x124) = 0;
+    *(undefined4 *)(p1 + 0x124) = 0;
     return uVar1;
   }
-  *(undefined4 *)(param_2 + 0xc) = uVar2;
-  *(undefined4 *)(param_2 + 0x10) = *(undefined4 *)(param_1 + 0x11c);
-  *(undefined8 *)(param_2 + 4) = *(undefined8 *)(param_1 + 0x114);
+  *(undefined4 *)(in_x1 + 0xc) = uVar2;
+  *(undefined4 *)(in_x1 + 0x10) = *(undefined4 *)(p1 + 0x11c);
+  *(undefined8 *)(in_x1 + 4) = *(undefined8 *)(p1 + 0x114);
 LAB_0037a994:
-  *(undefined4 *)(param_1 + 0x124) = 0;
+  *(undefined4 *)(p1 + 0x124) = 0;
   return 1;
 }
 
@@ -176,23 +175,27 @@ LAB_0037a994:
 
 /* Walaber::Widget_Canvas::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(long param_1,undefined4 param_2,long param_3)
+undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == 0) {
-    *(long *)(param_1 + 0x100) = param_3;
-    *(undefined4 *)(param_1 + 0x11c) = param_2;
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    *(long *)(uVar1 + 0x100) = in_x2;
+    *(int *)(uVar1 + 0x11c) = (int)p1;
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    *(long *)(param_1 + 0x108) = param_3;
-    *(undefined4 *)(param_1 + 0x120) = param_2;
+    *(long *)(uVar1 + 0x108) = in_x2;
+    *(int *)(uVar1 + 0x120) = (int)p1;
   }
-  *(undefined4 *)(param_1 + 0x110) = 0;
-  *(undefined8 *)(param_1 + 0x114) = *(undefined8 *)(param_3 + 4);
-  *(undefined4 *)(param_1 + 0x124) = 1;
+  *(undefined4 *)(uVar1 + 0x110) = 0;
+  *(undefined8 *)(uVar1 + 0x114) = *(undefined8 *)(in_x2 + 4);
+  *(undefined4 *)(uVar1 + 0x124) = 1;
   return 1;
 }
 
@@ -204,19 +207,23 @@ undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(long param_1,undefined4 p
 
 /* Walaber::Widget_Canvas::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::_acceptFinger(long param_1,undefined4 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_Canvas::_acceptFinger(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == 0) {
-    *(undefined8 *)(param_1 + 0x100) = param_3;
-    *(undefined4 *)(param_1 + 0x11c) = param_2;
+  ulong uVar1;
+  undefined8 in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    *(undefined8 *)(uVar1 + 0x100) = in_x2;
+    *(int *)(uVar1 + 0x11c) = (int)p1;
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    *(undefined8 *)(param_1 + 0x108) = param_3;
-    *(undefined4 *)(param_1 + 0x120) = param_2;
+    *(undefined8 *)(uVar1 + 0x108) = in_x2;
+    *(int *)(uVar1 + 0x120) = (int)p1;
   }
   return 1;
 }
@@ -229,25 +236,28 @@ undefined8 Walaber::Widget_Canvas::_acceptFinger(long param_1,undefined4 param_2
 
 /* Walaber::Widget_Canvas::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_Canvas::acceptNewFingerEntered(long param_1,undefined4 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_Canvas::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(char *)(param_1 + 0x128) == '\0') {
+  ulong uVar1;
+  undefined8 in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(char *)(uVar1 + 0x128) == '\0') {
     return 0;
   }
-  if (*(long *)(param_1 + 0x100) == 0) {
-    *(undefined8 *)(param_1 + 0x100) = param_3;
-    *(undefined4 *)(param_1 + 0x11c) = param_2;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    *(undefined8 *)(uVar1 + 0x100) = in_x2;
+    *(int *)(uVar1 + 0x11c) = (int)p1;
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    *(undefined8 *)(param_1 + 0x108) = param_3;
-    *(undefined4 *)(param_1 + 0x120) = param_2;
+    *(undefined8 *)(uVar1 + 0x108) = in_x2;
+    *(int *)(uVar1 + 0x120) = (int)p1;
   }
-  *(undefined4 *)(param_1 + 0x110) = 0xbf800000;
+  *(undefined4 *)(uVar1 + 0x110) = 0xbf800000;
   return 1;
 }
 
@@ -259,12 +269,16 @@ Walaber::Widget_Canvas::acceptNewFingerEntered(long param_1,undefined4 param_2,u
 
 /* Walaber::Widget_Canvas::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::releaseFingerStayed(long param_1,undefined8 param_2,long param_3)
+undefined8 Walaber::Widget_Canvas::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (((*(long *)(param_1 + 0x100) != 0) && (*(long *)(param_1 + 0x100) == param_3)) &&
-     (*(long *)(param_1 + 0x108) == 0)) {
-    *(undefined4 *)(param_1 + 0x124) = 2;
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (((*(long *)(uVar1 + 0x100) != 0) && (*(long *)(uVar1 + 0x100) == in_x2)) &&
+     (*(long *)(uVar1 + 0x108) == 0)) {
+    *(undefined4 *)(uVar1 + 0x124) = 2;
   }
   return 0;
 }
@@ -277,12 +291,16 @@ undefined8 Walaber::Widget_Canvas::releaseFingerStayed(long param_1,undefined8 p
 
 /* Walaber::Widget_Canvas::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::releaseFingerMoved(long param_1,undefined8 param_2,long param_3)
+undefined8 Walaber::Widget_Canvas::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (((*(long *)(param_1 + 0x100) != 0) && (*(long *)(param_1 + 0x100) == param_3)) &&
-     (*(long *)(param_1 + 0x108) == 0)) {
-    *(undefined4 *)(param_1 + 0x124) = 2;
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (((*(long *)(uVar1 + 0x100) != 0) && (*(long *)(uVar1 + 0x100) == in_x2)) &&
+     (*(long *)(uVar1 + 0x108) == 0)) {
+    *(undefined4 *)(uVar1 + 0x124) = 2;
   }
   return 0;
 }
@@ -295,10 +313,10 @@ undefined8 Walaber::Widget_Canvas::releaseFingerMoved(long param_1,undefined8 pa
 
 /* Walaber::Widget_Canvas::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Canvas::releaseFingerUp(void)
+void Walaber::Widget_Canvas::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  _releaseFinger();
+  _releaseFinger(p0,p1);
   return;
 }
 
@@ -310,57 +328,60 @@ void Walaber::Widget_Canvas::releaseFingerUp(void)
 
 /* Walaber::Widget_Canvas::_releaseFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::_releaseFinger(long param_1,undefined8 param_2,long param_3)
+undefined8 Walaber::Widget_Canvas::_releaseFinger(int p0,Walaber__FingerInfo *p1)
 
 {
   undefined4 uVar1;
-  long lVar2;
-  float fVar3;
+  ulong uVar2;
+  long in_x2;
+  long lVar3;
   float fVar4;
-  undefined8 uVar5;
+  float fVar5;
+  undefined8 uVar6;
   
-  if (*(long *)(param_1 + 0x100) != param_3) {
-    if (*(long *)(param_1 + 0x108) == param_3) {
-      *(undefined8 *)(param_1 + 0x108) = 0;
+  uVar2 = (ulong)(uint)p0;
+  if (*(long *)(uVar2 + 0x100) != in_x2) {
+    if (*(long *)(uVar2 + 0x108) == in_x2) {
+      *(undefined8 *)(uVar2 + 0x108) = 0;
       return 1;
     }
     return 0;
   }
-  if (*(float *)(param_1 + 0x110) < *(float *)(param_1 + 300)) {
-    uVar5 = *(undefined8 *)(param_1 + 0x114);
-    fVar3 = (float)*(undefined8 *)(param_3 + 4) - (float)uVar5;
-    fVar4 = (float)((ulong)*(undefined8 *)(param_3 + 4) >> 0x20) - (float)((ulong)uVar5 >> 0x20);
-    fVar4 = fVar3 * fVar3 + fVar4 * fVar4;
-    fVar3 = SQRT(fVar4);
-    if (NAN(fVar3)) {
-      fVar3 = (float)func_0x0016cd20(fVar4);
+  if (*(float *)(uVar2 + 0x110) < *(float *)(uVar2 + 300)) {
+    uVar6 = *(undefined8 *)(uVar2 + 0x114);
+    fVar4 = (float)*(undefined8 *)(in_x2 + 4) - (float)uVar6;
+    fVar5 = (float)((ulong)*(undefined8 *)(in_x2 + 4) >> 0x20) - (float)((ulong)uVar6 >> 0x20);
+    fVar5 = fVar4 * fVar4 + fVar5 * fVar5;
+    fVar4 = SQRT(fVar5);
+    if (NAN(fVar4)) {
+      fVar4 = (float)func_0x0016cd20(fVar5);
     }
-    if (fVar3 < *(float *)(param_1 + 0x130)) {
-      *(undefined4 *)(param_1 + 0x124) = 3;
-      *(undefined8 *)(param_1 + 0x114) = *(undefined8 *)(*(long *)(param_1 + 0x100) + 4);
-      lVar2 = *(long *)(param_1 + 0x108);
-      *(undefined8 *)(param_1 + 0x100) = 0;
-      if (lVar2 == 0) {
+    if (fVar4 < *(float *)(uVar2 + 0x130)) {
+      *(undefined4 *)(uVar2 + 0x124) = 3;
+      *(undefined8 *)(uVar2 + 0x114) = *(undefined8 *)(*(long *)(uVar2 + 0x100) + 4);
+      lVar3 = *(long *)(uVar2 + 0x108);
+      *(undefined8 *)(uVar2 + 0x100) = 0;
+      if (lVar3 == 0) {
         return 1;
       }
       goto LAB_0037ab7c;
     }
   }
-  lVar2 = *(long *)(param_1 + 0x108);
-  if (lVar2 == 0) {
-    *(undefined4 *)(param_1 + 0x124) = 4;
-    *(undefined8 *)(param_1 + 0x114) = *(undefined8 *)(*(long *)(param_1 + 0x100) + 4);
-    *(undefined8 *)(param_1 + 0x100) = 0;
+  lVar3 = *(long *)(uVar2 + 0x108);
+  if (lVar3 == 0) {
+    *(undefined4 *)(uVar2 + 0x124) = 4;
+    *(undefined8 *)(uVar2 + 0x114) = *(undefined8 *)(*(long *)(uVar2 + 0x100) + 4);
+    *(undefined8 *)(uVar2 + 0x100) = 0;
     return 1;
   }
-  *(undefined4 *)(param_1 + 0x124) = 0;
-  *(undefined8 *)(param_1 + 0x100) = 0;
+  *(undefined4 *)(uVar2 + 0x124) = 0;
+  *(undefined8 *)(uVar2 + 0x100) = 0;
 LAB_0037ab7c:
-  uVar1 = *(undefined4 *)(param_1 + 0x120);
-  *(long *)(param_1 + 0x100) = lVar2;
-  *(undefined8 *)(param_1 + 0x108) = 0;
-  *(undefined4 *)(param_1 + 0x120) = 0;
-  *(undefined4 *)(param_1 + 0x11c) = uVar1;
+  uVar1 = *(undefined4 *)(uVar2 + 0x120);
+  *(long *)(uVar2 + 0x100) = lVar3;
+  *(undefined8 *)(uVar2 + 0x108) = 0;
+  *(undefined4 *)(uVar2 + 0x120) = 0;
+  *(undefined4 *)(uVar2 + 0x11c) = uVar1;
   return 1;
 }
 
@@ -372,10 +393,10 @@ LAB_0037ab7c:
 
 /* Walaber::Widget_Canvas::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Canvas::releaseFingerLeft(void)
+void Walaber::Widget_Canvas::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
-  _releaseFinger();
+  _releaseFinger(p0,p1);
   return;
 }
 
@@ -387,10 +408,10 @@ void Walaber::Widget_Canvas::releaseFingerLeft(void)
 
 /* Walaber::Widget_Canvas::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Canvas::notifyFingerLost(void)
+void Walaber::Widget_Canvas::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  _releaseFinger();
+  _releaseFinger(p0,p1);
   return;
 }
 

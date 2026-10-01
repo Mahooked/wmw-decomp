@@ -11,138 +11,136 @@
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>
    >::__append_forward_unsafe<wchar_t*>(wchar_t*, wchar_t*) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        __append_forward_unsafe<wchar_t*>(ulong *param_1,undefined4 *param_2,undefined4 *param_3)
+wchar_t * std::__ndk1::
+          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+          __append_forward_unsafe<wchar_t*>(wchar_t *p0,wchar_t *p1)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  long lVar3;
-  undefined8 *puVar4;
-  ulong *puVar5;
+  byte bVar1;
+  long lVar2;
+  wchar_t *pwVar3;
+  void *pvVar4;
+  wchar_t *pwVar5;
   long lVar6;
+  wchar_t *in_x2;
   ulong uVar7;
   ulong uVar8;
-  undefined4 *puVar9;
+  wchar_t *pwVar9;
   ulong uVar10;
   ulong uVar11;
-  undefined8 *puVar12;
-  undefined8 *puVar13;
+  wchar_t *pwVar12;
+  wchar_t *pwVar13;
   ulong uVar14;
   ulong uVar15;
-  undefined4 *puVar16;
+  undefined8 uVar16;
   undefined8 uVar17;
   undefined8 uVar18;
-  undefined8 uVar19;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
-  bVar2 = (byte)*param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar15 = (ulong)(bVar2 >> 1);
+  lVar2 = tpidr_el0;
+  lStack_48 = *(long *)(lVar2 + 0x28);
+  bVar1 = (byte)*p0;
+  if ((bVar1 & 1) == 0) {
+    uVar15 = (ulong)(bVar1 >> 1);
     lVar6 = 4;
-    uVar7 = (ulong)bVar2;
+    uVar7 = (ulong)bVar1;
   }
   else {
-    uVar7 = *param_1;
-    uVar15 = param_1[1];
+    uVar7 = *(ulong *)p0;
+    uVar15 = *(ulong *)(p0 + 2);
     lVar6 = (uVar7 & 0xfffffffffffffffe) - 1;
   }
-  if ((long)param_3 - (long)param_2 == 0) goto LAB_005e2514;
-  if ((bVar2 & 1) == 0) {
-    puVar9 = (undefined4 *)((long)param_1 + 4);
-    uVar8 = (ulong)(bVar2 >> 1);
+  if ((long)in_x2 - (long)p1 == 0) goto LAB_005e2514;
+  if ((bVar1 & 1) == 0) {
+    pwVar5 = p0 + 1;
+    uVar8 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar8 = param_1[1];
-    puVar9 = (undefined4 *)param_1[2];
+    uVar8 = *(ulong *)(p0 + 2);
+    pwVar5 = *(wchar_t **)(p0 + 4);
   }
-  if ((puVar9 <= param_2) && (param_2 < puVar9 + uVar8)) {
+  if ((pwVar5 <= p1) && (p1 < pwVar5 + uVar8)) {
     uStack_60 = 0;
     uStack_58 = 0;
-    uStack_50 = 0;
-    func_0x0016bba0(&uStack_60,param_2,param_3);
+    pvStack_50 = (void *)0x0;
+    func_0x0016bba0(&uStack_60,p1);
     uVar7 = uStack_60 >> 1 & 0x7f;
-    uVar15 = (ulong)&uStack_60 | 4;
+    pvVar4 = (void *)((ulong)&uStack_60 | 4);
     if ((uStack_60 & 1) != 0) {
       uVar7 = uStack_58;
-      uVar15 = uStack_50;
+      pvVar4 = pvStack_50;
     }
                     /* try { // try from 005e23f4 to 005e23fb has its CatchHandler @ 005e2544 */
-    FUN_00170940(param_1,uVar15,uVar7);
+    FUN_00170940(p0,pvVar4,uVar7);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
     goto LAB_005e2514;
   }
-  uVar8 = (long)param_3 - (long)param_2 >> 2;
+  uVar8 = (long)in_x2 - (long)p1 >> 2;
   if (lVar6 - uVar15 < uVar8) {
-    FUN_00165770(param_1,lVar6,(uVar15 + uVar8) - lVar6,uVar15,uVar15,0,0);
-    uVar7 = (ulong)(byte)*param_1;
+    FUN_00165770(p0,lVar6,(uVar15 + uVar8) - lVar6,uVar15,uVar15,0,0);
+    uVar7 = (ulong)(byte)*p0;
   }
   if ((uVar7 & 1) == 0) {
-    uVar7 = (long)param_1 + 4;
+    pwVar5 = p0 + 1;
   }
   else {
-    uVar7 = param_1[2];
+    pwVar5 = *(wchar_t **)(p0 + 4);
   }
-  puVar9 = (undefined4 *)(uVar7 + uVar15 * 4);
-  if (param_2 != param_3) {
-    uVar11 = (ulong)((long)param_3 + (-4 - (long)param_2)) >> 2;
-    uVar1 = uVar11 + 1;
-    if ((uVar1 < 8) ||
-       ((puVar9 < param_2 + uVar11 + 1 &&
-        (param_2 < (undefined4 *)(uVar7 + (uVar15 + uVar11) * 4 + 4))))) {
+  pwVar9 = pwVar5 + uVar15;
+  if (p1 != in_x2) {
+    uVar11 = (ulong)((long)in_x2 + (-4 - (long)p1)) >> 2;
+    uVar7 = uVar11 + 1;
+    if ((uVar7 < 8) || ((pwVar9 < p1 + uVar11 + 1 && (p1 < pwVar5 + uVar15 + uVar11 + 1)))) {
 LAB_005e24e0:
       do {
-        puVar16 = param_2 + 1;
-        *puVar9 = *param_2;
-        puVar9 = puVar9 + 1;
-        param_2 = puVar16;
-      } while (param_3 != puVar16);
+        pwVar12 = p1 + 1;
+        *pwVar9 = *p1;
+        pwVar9 = pwVar9 + 1;
+        p1 = pwVar12;
+      } while (in_x2 != pwVar12);
     }
     else {
-      uVar10 = uVar1 & 0x7ffffffffffffff8;
-      puVar12 = (undefined8 *)(param_2 + 4);
-      puVar13 = (undefined8 *)(uVar7 + uVar15 * 4 + 0x10);
+      uVar10 = uVar7 & 0x7ffffffffffffff8;
+      pwVar12 = p1 + 4;
+      pwVar13 = pwVar5 + uVar15 + 4;
       uVar14 = uVar10;
       do {
-        puVar4 = puVar12 + -1;
-        uVar17 = puVar12[-2];
-        uVar19 = puVar12[1];
-        uVar18 = *puVar12;
-        puVar12 = puVar12 + 4;
+        pwVar3 = pwVar12 + -2;
+        uVar16 = *(undefined8 *)(pwVar12 + -4);
+        uVar18 = *(undefined8 *)(pwVar12 + 2);
+        uVar17 = *(undefined8 *)pwVar12;
+        pwVar12 = pwVar12 + 8;
         uVar14 = uVar14 - 8;
-        puVar13[-1] = *puVar4;
-        puVar13[-2] = uVar17;
-        puVar13[1] = uVar19;
-        *puVar13 = uVar18;
-        puVar13 = puVar13 + 4;
+        *(undefined8 *)(pwVar13 + -2) = *(undefined8 *)pwVar3;
+        *(undefined8 *)(pwVar13 + -4) = uVar16;
+        *(undefined8 *)(pwVar13 + 2) = uVar18;
+        *(undefined8 *)pwVar13 = uVar17;
+        pwVar13 = pwVar13 + 8;
       } while (uVar14 != 0);
-      puVar9 = puVar9 + uVar10;
-      param_2 = param_2 + uVar10;
-      if (uVar1 != uVar10) goto LAB_005e24e0;
+      pwVar9 = pwVar9 + uVar10;
+      p1 = p1 + uVar10;
+      if (uVar7 != uVar10) goto LAB_005e24e0;
     }
-    puVar9 = (undefined4 *)(uVar7 + (uVar15 + uVar11 + 1) * 4);
+    pwVar9 = pwVar5 + uVar15 + uVar11 + 1;
   }
-  *puVar9 = 0;
-  if ((*param_1 & 1) == 0) {
-    *(char *)param_1 = (char)((int)(uVar15 + uVar8) << 1);
+  *pwVar9 = L'\0';
+  if ((*p0 & L'\x01') == L'\0') {
+    *(char *)p0 = (char)((int)(uVar15 + uVar8) << 1);
   }
   else {
-    param_1[1] = uVar15 + uVar8;
+    *(ulong *)(p0 + 2) = uVar15 + uVar8;
   }
 LAB_005e2514:
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    puVar5 = (ulong *)FUN_00164ff0();
-    return puVar5;
+  if (*(long *)(lVar2 + 0x28) != lStack_48) {
+    pwVar5 = (wchar_t *)FUN_00164ff0();
+    return pwVar5;
   }
-  return param_1;
+  return p0;
 }
 
 

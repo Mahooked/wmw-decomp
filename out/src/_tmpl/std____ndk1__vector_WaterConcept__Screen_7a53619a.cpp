@@ -128,7 +128,7 @@ ulong std::__ndk1::
               pbVar1[0xe] = 0;
               pbVar1[0xf] = 0;
               if ((*pbVar1 & 1) != 0) {
-                FUN_00166120(*(undefined8 *)(pbVar1 + 0x10));
+                FUN_00166120(*(void **)(pbVar1 + 0x10));
                 puVar5[lVar9 * -0x11] = 0;
               }
             }
@@ -235,69 +235,73 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__move_range(long param_1,long param_2,ulong param_3,long param_4)
+     ::__move_range(WaterConcept__Screen_Editor__ObjectData *p0,
+                   WaterConcept__Screen_Editor__ObjectData *p1,
+                   WaterConcept__Screen_Editor__ObjectData *p2)
 
 {
-  ulong uVar1;
-  long lVar2;
+  WaterConcept__Screen_Editor__ObjectData *pWVar1;
+  WaterConcept__Screen_Editor__ObjectData *pWVar2;
   long lVar3;
   long lVar4;
+  long in_x3;
   long lVar5;
   byte *pbVar6;
   long lVar7;
-  undefined8 uVar8;
+  long lVar8;
   undefined8 uVar9;
+  undefined8 uVar10;
   
-  lVar7 = *(long *)(param_1 + 8);
-  param_4 = lVar7 - param_4;
+  lVar7 = *(long *)(p0 + 8);
+  lVar8 = lVar7 - in_x3;
+  pWVar2 = p1 + lVar8;
   lVar5 = lVar7;
-  for (uVar1 = param_2 + param_4; uVar1 < param_3; uVar1 = uVar1 + 0x88) {
-    func_0x0016c280(lVar5,uVar1);
-    lVar5 = *(long *)(param_1 + 8) + 0x88;
-    *(long *)(param_1 + 8) = lVar5;
+  for (pWVar1 = pWVar2; pWVar1 < p2; pWVar1 = pWVar1 + 0x88) {
+    func_0x0016c280(lVar5,pWVar1);
+    lVar5 = *(long *)(p0 + 8) + 0x88;
+    *(long *)(p0 + 8) = lVar5;
   }
-  if (param_4 != 0) {
+  if (lVar8 != 0) {
     lVar5 = 0;
     do {
-      lVar2 = lVar7 + lVar5;
-      pbVar6 = (byte *)(lVar2 + -0x88);
+      lVar3 = lVar7 + lVar5;
+      pbVar6 = (byte *)(lVar3 + -0x88);
       if ((*pbVar6 & 1) == 0) {
-        *(undefined1 *)(lVar2 + -0x87) = 0;
+        *(undefined1 *)(lVar3 + -0x87) = 0;
         *pbVar6 = 0;
       }
       else {
-        **(undefined1 **)(lVar2 + -0x78) = 0;
-        *(undefined8 *)(lVar2 + -0x80) = 0;
+        **(undefined1 **)(lVar3 + -0x78) = 0;
+        *(undefined8 *)(lVar3 + -0x80) = 0;
         if ((*pbVar6 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(lVar2 + -0x78));
+          FUN_00166120(*(void **)(lVar3 + -0x78));
           *(undefined8 *)(lVar7 + lVar5 + -0x88) = 0;
         }
       }
-      lVar3 = param_2 + param_4 + lVar5;
-      uVar9 = *(undefined8 *)(lVar3 + -0x80);
-      uVar8 = *(undefined8 *)(lVar3 + -0x88);
+      uVar10 = *(undefined8 *)(pWVar2 + lVar5 + -0x80);
+      uVar9 = *(undefined8 *)(pWVar2 + lVar5 + -0x88);
       lVar4 = lVar7 + lVar5;
-      *(undefined8 *)(lVar2 + -0x78) = *(undefined8 *)(lVar3 + -0x78);
-      *(undefined8 *)(lVar2 + -0x80) = uVar9;
-      *(undefined8 *)pbVar6 = uVar8;
-      *(undefined8 *)(lVar3 + -0x80) = 0;
-      *(undefined8 *)(lVar3 + -0x78) = 0;
-      *(undefined8 *)(lVar3 + -0x88) = 0;
-      *(undefined8 *)(lVar4 + -0x70) = *(undefined8 *)(lVar3 + -0x70);
-      func_0x0016d3d0(lVar4 + -0x68,lVar3 + -0x68);
-      func_0x0016d3d0(lVar4 + -0x50,lVar3 + -0x50);
-      *(undefined1 *)(lVar4 + -0x38) = *(undefined1 *)(lVar3 + -0x38);
+      *(undefined8 *)(lVar3 + -0x78) = *(undefined8 *)(pWVar2 + lVar5 + -0x78);
+      *(undefined8 *)(lVar3 + -0x80) = uVar10;
+      *(undefined8 *)pbVar6 = uVar9;
+      *(undefined8 *)(pWVar2 + lVar5 + -0x80) = 0;
+      *(undefined8 *)(pWVar2 + lVar5 + -0x78) = 0;
+      *(undefined8 *)(pWVar2 + lVar5 + -0x88) = 0;
+      *(undefined8 *)(lVar4 + -0x70) = *(undefined8 *)(pWVar2 + lVar5 + -0x70);
+      func_0x0016d3d0(lVar4 + -0x68,pWVar2 + lVar5 + -0x68);
+      func_0x0016d3d0(lVar4 + -0x50,pWVar2 + lVar5 + -0x50);
+      *(WaterConcept__Screen_Editor__ObjectData *)(lVar4 + -0x38) = pWVar2[lVar5 + -0x38];
       func_0x001691b0(lVar4 + -0x30);
-      uVar8 = *(undefined8 *)(lVar3 + -0x30);
-      *(undefined8 *)(lVar4 + -0x28) = *(undefined8 *)(lVar3 + -0x28);
-      *(undefined8 *)(lVar4 + -0x30) = uVar8;
-      *(undefined8 *)(lVar4 + -0x20) = *(undefined8 *)(lVar3 + -0x20);
-      *(undefined8 *)(lVar3 + -0x30) = 0;
-      *(undefined8 *)(lVar3 + -0x28) = 0;
-      *(undefined8 *)(lVar3 + -0x20) = 0;
-      func_0x00165e80(lVar4 + -0x18,lVar3 + -0x18);
+      uVar9 = *(undefined8 *)(pWVar2 + lVar5 + -0x30);
+      *(undefined8 *)(lVar4 + -0x28) = *(undefined8 *)(pWVar2 + lVar5 + -0x28);
+      *(undefined8 *)(lVar4 + -0x30) = uVar9;
+      *(undefined8 *)(lVar4 + -0x20) = *(undefined8 *)(pWVar2 + lVar5 + -0x20);
+      *(undefined8 *)(pWVar2 + lVar5 + -0x30) = 0;
+      *(undefined8 *)(pWVar2 + lVar5 + -0x28) = 0;
+      *(undefined8 *)(pWVar2 + lVar5 + -0x20) = 0;
+      func_0x00165e80(lVar4 + -0x18,pWVar2 + lVar5 + -0x18);
       lVar5 = lVar5 + -0x88;
-    } while ((param_4 >> 3) * -8 - lVar5 != 0);
+    } while ((lVar8 >> 3) * -8 - lVar5 != 0);
   }
   return;
 }

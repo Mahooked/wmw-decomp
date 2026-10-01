@@ -12,28 +12,27 @@
 undefined8
 std::__ndk1::
 __tree<unsigned_int,std::__ndk1::less<unsigned_int>,std::__ndk1::allocator<unsigned_int>>::
-__erase_unique<unsigned_int>(long param_1,uint *param_2)
+__erase_unique<unsigned_int>(uint *p0)
 
 {
   uint uVar1;
-  bool bVar2;
-  long *plVar3;
-  long *plVar4;
-  long *plVar5;
+  uint *in_x1;
+  uint *puVar2;
+  uint *puVar3;
+  uint *puVar4;
   
-  plVar4 = (long *)(param_1 + 8);
-  plVar5 = (long *)*plVar4;
-  if (plVar5 != (long *)0x0) {
-    uVar1 = *param_2;
-    plVar3 = plVar4;
+  puVar3 = p0 + 2;
+  puVar4 = *(uint **)puVar3;
+  if (puVar4 != (uint *)0x0) {
+    uVar1 = *in_x1;
+    puVar2 = puVar3;
     do {
-      bVar2 = *(uint *)((long)plVar5 + 0x1c) < uVar1;
-      if (!bVar2) {
-        plVar3 = plVar5;
+      if (puVar4[7] >= uVar1) {
+        puVar2 = puVar4;
       }
-      plVar5 = (long *)plVar5[bVar2];
-    } while (plVar5 != (long *)0x0);
-    if ((plVar3 != plVar4) && (*(uint *)((long)plVar3 + 0x1c) <= uVar1)) {
+      puVar4 = *(uint **)(puVar4 + (ulong)(puVar4[7] < uVar1) * 2);
+    } while (puVar4 != (uint *)0x0);
+    if ((puVar2 != puVar3) && (puVar2[7] <= uVar1)) {
       func_0x00165b70();
       return 1;
     }

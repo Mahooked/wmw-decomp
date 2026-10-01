@@ -11,31 +11,31 @@
 
 void std::__ndk1::
      __vector_base<WaterConcept::InteractiveObject::SpriteInfo,std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar2 = *param_1;
-  if (lVar2 == 0) {
+  pvVar2 = (void *)*param_1;
+  if (pvVar2 == (void *)0x0) {
     return;
   }
-  lVar3 = lVar2;
-  lVar1 = param_1[1];
-  if (param_1[1] != lVar2) {
+  pvVar3 = pvVar2;
+  pvVar1 = (void *)param_1[1];
+  if ((void *)param_1[1] != pvVar2) {
     do {
-      lVar3 = lVar1 + -0x28;
-      if ((*(byte *)(lVar1 + -0x18) & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(lVar1 + -8));
+      pvVar3 = (void *)((long)pvVar1 + -0x28);
+      if ((*(byte *)((long)pvVar1 + -0x18) & 1) != 0) {
+        FUN_00166120(*(void **)((long)pvVar1 + -8));
       }
-      lVar1 = lVar3;
-    } while (lVar2 != lVar3);
-    lVar3 = *param_1;
+      pvVar1 = pvVar3;
+    } while (pvVar2 != pvVar3);
+    pvVar3 = (void *)*param_1;
   }
-  param_1[1] = lVar2;
-  FUN_00166120(lVar3);
+  param_1[1] = pvVar2;
+  FUN_00166120(pvVar3);
   return;
 }
 

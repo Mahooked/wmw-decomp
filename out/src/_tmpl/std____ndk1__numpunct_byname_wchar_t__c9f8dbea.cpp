@@ -14,7 +14,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname(undefined8 *param_1
 {
   *param_1 = &PTR__numpunct_byname_00717978;
   if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    FUN_00166120(param_1[5]);
+    FUN_00166120((void *)param_1[5]);
   }
   FUN_00172660(param_1);
   return;
@@ -28,16 +28,45 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname(undefined8 *param_1
 
 /* std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char const*, unsigned long) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname
-               (undefined8 *param_1,undefined8 param_2,long param_3)
+void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1)
 
 {
-  param_1[5] = 0;
-  *param_1 = &PTR__numpunct_byname_00717a18;
-  param_1[1] = param_3 + -1;
-  param_1[2] = 0x2c0000002e;
-  param_1[3] = 0;
-  param_1[4] = 0;
+  long in_x2;
+  
+  p0[0x28] = '\0';
+  p0[0x29] = '\0';
+  p0[0x2a] = '\0';
+  p0[0x2b] = '\0';
+  p0[0x2c] = '\0';
+  p0[0x2d] = '\0';
+  p0[0x2e] = '\0';
+  p0[0x2f] = '\0';
+  *(undefined ***)p0 = &PTR__numpunct_byname_00717a18;
+  *(long *)(p0 + 8) = in_x2 + -1;
+  p0[0x10] = '.';
+  p0[0x11] = '\0';
+  p0[0x12] = '\0';
+  p0[0x13] = '\0';
+  p0[0x14] = ',';
+  p0[0x15] = '\0';
+  p0[0x16] = '\0';
+  p0[0x17] = '\0';
+  p0[0x18] = '\0';
+  p0[0x19] = '\0';
+  p0[0x1a] = '\0';
+  p0[0x1b] = '\0';
+  p0[0x1c] = '\0';
+  p0[0x1d] = '\0';
+  p0[0x1e] = '\0';
+  p0[0x1f] = '\0';
+  p0[0x20] = '\0';
+  p0[0x21] = '\0';
+  p0[0x22] = '\0';
+  p0[0x23] = '\0';
+  p0[0x24] = '\0';
+  p0[0x25] = '\0';
+  p0[0x26] = '\0';
+  p0[0x27] = '\0';
                     /* try { // try from 005dc61c to 005dc61f has its CatchHandler @ 005dc62c */
   FUN_0016f1d0();
   return;
@@ -51,7 +80,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname
 
 /* std::__ndk1::numpunct_byname<wchar_t>::__init(char const*) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::__init(long param_1,undefined8 param_2)
+void std::__ndk1::numpunct_byname<wchar_t>::__init(char *p0)
 
 {
   long lVar1;
@@ -62,19 +91,19 @@ void std::__ndk1::numpunct_byname<wchar_t>::__init(long param_1,undefined8 param
   ulong uVar6;
   ulong *puVar7;
   undefined8 uVar8;
-  ulong uVar9;
-  ulong uVar10;
+  void *pvVar9;
+  ulong p0_00;
   ulong uStack_78;
   ulong uStack_70;
-  ulong uStack_68;
+  void *pvStack_68;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  iVar2 = FUN_00169430(param_2,"C");
+  iVar2 = FUN_00169430();
   if (iVar2 == 0) {
 LAB_005dc708:
     if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -83,7 +112,7 @@ LAB_005dc708:
     }
     return;
   }
-  lVar3 = FUN_00164730(0x1fbf,param_2,0);
+  lVar3 = FUN_00164730(0x1fbf);
   if (lVar3 != 0) {
                     /* try { // try from 005dc6b8 to 005dc6bb has its CatchHandler @ 005dc840 */
     lVar4 = FUN_0016a870();
@@ -94,42 +123,42 @@ LAB_005dc708:
       FUN_0016a870(lVar4);
     }
                     /* try { // try from 005dc6dc to 005dc6ff has its CatchHandler @ 005dc840 */
-    FUN_005dc92c(param_1 + 0x10,*puVar5,lVar3);
-    FUN_005dc92c(param_1 + 0x14,puVar5[1],lVar3);
-    func_0x00165980(param_1 + 0x18,puVar5[2]);
+    FUN_005dc92c(p0 + 0x10,*puVar5,lVar3);
+    FUN_005dc92c(p0 + 0x14,puVar5[1],lVar3);
+    func_0x00165980(p0 + 0x18,puVar5[2]);
                     /* try { // try from 005dc700 to 005dc707 has its CatchHandler @ 005dc824 */
     FUN_00173520(lVar3);
     goto LAB_005dc708;
   }
   uStack_78 = 0;
   uStack_70 = 0;
-  uStack_68 = 0;
-  uVar6 = FUN_00173480(param_2);
+  pvStack_68 = (void *)0x0;
+  uVar6 = FUN_00173480();
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 005dc74c to 005dc787 has its CatchHandler @ 005dc81c */
     FUN_00164180(&uStack_78);
     return;
   }
   if (uVar6 < 0x17) {
-    uVar9 = (ulong)&uStack_78 | 1;
+    pvVar9 = (void *)((ulong)&uStack_78 | 1);
     uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar6 << 1));
     if (uVar6 == 0) goto LAB_005dc7a8;
   }
   else {
-    uVar10 = uVar6 + 0x10 & 0xfffffffffffffff0;
-    uVar9 = FUN_00164060(uVar10);
-    uStack_78 = uVar10 | 1;
+    p0_00 = uVar6 + 0x10 & 0xfffffffffffffff0;
+    pvVar9 = (void *)FUN_00164060(p0_00);
+    uStack_78 = p0_00 | 1;
     uStack_70 = uVar6;
-    uStack_68 = uVar9;
+    pvStack_68 = pvVar9;
   }
-  FUN_001715e0(uVar9,param_2,uVar6);
+  FUN_001715e0(pvVar9);
 LAB_005dc7a8:
-  *(undefined1 *)(uVar9 + uVar6) = 0;
+  *(undefined1 *)((long)pvVar9 + uVar6) = 0;
                     /* try { // try from 005dc7ac to 005dc7bf has its CatchHandler @ 005dc800 */
   puVar7 = (ulong *)func_0x00161c30(&uStack_78,0,
                                     "numpunct_byname<wchar_t>::numpunct_byname failed to construct for "
                                    );
-  uStack_50 = puVar7[2];
+  pvStack_50 = (void *)puVar7[2];
   uStack_58 = puVar7[1];
   uStack_60 = *puVar7;
   puVar7[1] = 0;
@@ -140,10 +169,10 @@ LAB_005dc7a8:
                     /* catch(type#1 @ 00000000) { ... } // from try @ 005dc7d8 with catch @ 005dc7e0
                         */
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
     FUN_00169180(uVar8);
     return;
   }
@@ -194,7 +223,7 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname(undefined8 *param_1
 {
   *param_1 = &PTR__numpunct_byname_00717978;
   if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    FUN_00166120(param_1[5]);
+    FUN_00166120((void *)param_1[5]);
   }
   FUN_00172660(param_1);
   FUN_00166120(param_1);

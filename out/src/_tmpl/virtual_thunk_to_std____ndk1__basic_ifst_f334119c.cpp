@@ -36,14 +36,14 @@ void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_if
                (long *param_1)
 
 {
-  undefined8 *puVar1;
+  undefined8 *p0;
   
-  puVar1 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
-  *puVar1 = &PTR__basic_ifstream_00711270;
-  puVar1[0x17] = &PTR__basic_ifstream_00711298;
-  func_0x00169460(puVar1 + 2);
-  FUN_00171f00(puVar1 + 0x17);
-  FUN_00166120(puVar1);
+  p0 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  *p0 = &PTR__basic_ifstream_00711270;
+  p0[0x17] = &PTR__basic_ifstream_00711298;
+  func_0x00169460(p0 + 2);
+  FUN_00171f00(p0 + 0x17);
+  FUN_00166120(p0);
   return;
 }
 

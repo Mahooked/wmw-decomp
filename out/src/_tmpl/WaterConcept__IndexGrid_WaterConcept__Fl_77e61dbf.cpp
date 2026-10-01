@@ -8,31 +8,33 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize
-               (int *param_1,int param_2,int param_3)
+void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int p0,int p1)
 
 {
   uint uVar1;
   undefined1 auVar2 [16];
-  undefined8 uVar3;
-  long lVar4;
+  int *piVar3;
+  undefined8 uVar4;
+  int in_w2;
+  long lVar5;
   
-  *param_1 = param_2;
-  param_1[1] = param_3;
-  if (*(long *)(param_1 + 2) != 0) {
-    FUN_001639e0();
+  piVar3 = (int *)(ulong)(uint)p0;
+  *piVar3 = p1;
+  piVar3[1] = in_w2;
+  if (*(void **)(piVar3 + 2) != (void *)0x0) {
+    FUN_001639e0(*(void **)(piVar3 + 2),(ulong)(uint)p1);
   }
-  uVar1 = param_3 * param_2;
+  uVar1 = in_w2 * p1;
   auVar2._8_8_ = 0;
   auVar2._0_8_ = (long)(int)uVar1;
-  lVar4 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffc00000000 | (ulong)uVar1 << 2) + (long)(int)uVar1) *
+  lVar5 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffc00000000 | (ulong)uVar1 << 2) + (long)(int)uVar1) *
           8;
   if (SUB168(auVar2 * ZEXT816(0x28),8) != 0) {
-    lVar4 = -1;
+    lVar5 = -1;
   }
-  uVar3 = FUN_00167620(lVar4);
-  FUN_0016b330(uVar3,0,lVar4);
-  *(undefined8 *)(param_1 + 2) = uVar3;
+  uVar4 = FUN_00167620(lVar5);
+  FUN_0016b330(uVar4,0,lVar5);
+  *(undefined8 *)(piVar3 + 2) = uVar4;
   return;
 }
 

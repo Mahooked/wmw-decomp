@@ -8,34 +8,36 @@
 
 /* std::__ndk1::ctype_byname<char>::ctype_byname(char const*, unsigned long) */
 
-void std::__ndk1::ctype_byname<char>::ctype_byname
-               (undefined8 *param_1,undefined8 param_2,long param_3)
+void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1)
 
 {
   long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
-  undefined8 uVar5;
-  ulong uVar6;
-  ulong uVar7;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  long in_x2;
+  void *pvVar5;
+  ulong p0_00;
+  undefined1 auVar6 [16];
   ulong uStack_78;
   ulong uStack_70;
-  ulong uStack_68;
+  void *pvStack_68;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = &PTR__ctype_byname_007177d8;
-  param_1[1] = param_3 + -1;
-  *(undefined1 *)(param_1 + 3) = 0;
-  param_1[2] = &DAT_00641af0;
+  *(undefined ***)p0 = &PTR__ctype_byname_007177d8;
+  *(long *)(p0 + 8) = in_x2 + -1;
+  p0[0x18] = '\0';
+  *(undefined **)(p0 + 0x10) = &DAT_00641af0;
                     /* try { // try from 005d73c4 to 005d73cf has its CatchHandler @ 005d74ec */
-  lVar2 = FUN_00164730(0x1fbf,param_2,0);
-  param_1[4] = lVar2;
+  lVar2 = FUN_00164730(0x1fbf,p1,0);
+  *(long *)(p0 + 0x20) = lVar2;
   if (lVar2 != 0) {
     if (*(long *)(lVar1 + 0x28) != lStack_48) {
       FUN_00164ff0();
@@ -45,53 +47,56 @@ void std::__ndk1::ctype_byname<char>::ctype_byname
   }
   uStack_78 = 0;
   uStack_70 = 0;
-  uStack_68 = 0;
-  uVar3 = FUN_00173480(param_2);
+  pvStack_68 = (void *)0x0;
+  uVar3 = FUN_00173480(p1);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d7418 to 005d741f has its CatchHandler @ 005d74e8 */
     FUN_00164180(&uStack_78);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar6 = (ulong)&uStack_78 | 1;
+    pvVar5 = (void *)((ulong)&uStack_78 | 1);
     uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005d7478;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005d7450 to 005d7457 has its CatchHandler @ 005d74e8 */
-    uVar6 = FUN_00164060(uVar7);
-    uStack_78 = uVar7 | 1;
+    pvVar5 = (void *)FUN_00164060(p0_00);
+    uStack_78 = p0_00 | 1;
     uStack_70 = uVar3;
-    uStack_68 = uVar6;
+    pvStack_68 = pvVar5;
   }
-  FUN_001715e0(uVar6,param_2,uVar3);
+  FUN_001715e0(pvVar5,p1,uVar3);
 LAB_005d7478:
-  *(undefined1 *)(uVar6 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 005d747c to 005d748f has its CatchHandler @ 005d74d0 */
   puVar4 = (ulong *)func_0x00161c30(&uStack_78,0,
                                     "ctype_byname<char>::ctype_byname failed to construct for ");
-  uStack_50 = puVar4[2];
+  pvStack_50 = (void *)puVar4[2];
   uStack_58 = puVar4[1];
   uStack_60 = *puVar4;
   puVar4[1] = 0;
   puVar4[2] = 0;
   *puVar4 = 0;
                     /* try { // try from 005d74a8 to 005d74af has its CatchHandler @ 005d74b0 */
-  uVar5 = FUN_005d5db0(&uStack_60);
+  auVar6 = FUN_005d5db0(&uStack_60);
+  uVar3 = auVar6._8_8_;
                     /* catch() { ... } // from try @ 005d74a8 with catch @ 005d74b0 */
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
+    uVar3 = extraout_x1;
   }
   if ((uStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
+    uVar3 = extraout_x1_00;
   }
-  *param_1 = &PTR__ctype_00717770;
-  if ((param_1[2] != 0) && (*(char *)(param_1 + 3) != '\0')) {
-    FUN_001639e0();
+  *(undefined ***)p0 = &PTR__ctype_00717770;
+  if ((*(void **)(p0 + 0x10) != (void *)0x0) && (p0[0x18] != '\0')) {
+    FUN_001639e0(*(void **)(p0 + 0x10),uVar3);
   }
-  FUN_00172660(param_1);
-  FUN_00169180(uVar5);
+  FUN_00172660(p0);
+  FUN_00169180(auVar6._0_8_);
   return;
 }
 
@@ -150,12 +155,14 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *par
 void std::__ndk1::ctype_byname<char>::~ctype_byname(undefined8 *param_1)
 
 {
+  ulong p1;
+  
   *param_1 = &PTR__ctype_byname_007177d8;
                     /* try { // try from 005d7650 to 005d7653 has its CatchHandler @ 005d7690 */
   FUN_00173520(param_1[4]);
   *param_1 = &PTR__ctype_00717770;
-  if ((param_1[2] != 0) && (*(char *)(param_1 + 3) != '\0')) {
-    FUN_001639e0();
+  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
+    FUN_001639e0((void *)param_1[2],p1);
   }
   FUN_00172660(param_1);
   FUN_00166120(param_1);
@@ -170,10 +177,12 @@ void std::__ndk1::ctype_byname<char>::~ctype_byname(undefined8 *param_1)
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_toupper(undefined8 param_1,undefined1 param_2)
+void std::__ndk1::ctype_byname<char>::do_toupper(char p0)
 
 {
-  FUN_00168a00(param_2);
+  undefined1 in_w1;
+  
+  FUN_00168a00(in_w1);
   return;
 }
 
@@ -185,21 +194,20 @@ void std::__ndk1::ctype_byname<char>::do_toupper(undefined8 param_1,undefined1 p
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char*, char const*) const */
 
-undefined1 *
-std::__ndk1::ctype_byname<char>::do_toupper
-          (undefined8 param_1,undefined1 *param_2,undefined1 *param_3)
+char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1)
 
 {
-  undefined1 *puVar1;
-  undefined1 uVar2;
+  char *pcVar1;
+  char cVar2;
+  char *in_x2;
   
-  puVar1 = param_2;
-  for (; param_2 != param_3; param_2 = param_2 + 1) {
-    uVar2 = FUN_00168a00(*param_2);
-    *param_2 = uVar2;
-    puVar1 = param_3;
+  pcVar1 = p1;
+  for (; p1 != in_x2; p1 = p1 + 1) {
+    cVar2 = FUN_00168a00(*p1);
+    *p1 = cVar2;
+    pcVar1 = in_x2;
   }
-  return puVar1;
+  return pcVar1;
 }
 
 
@@ -210,10 +218,12 @@ std::__ndk1::ctype_byname<char>::do_toupper
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_tolower(undefined8 param_1,undefined1 param_2)
+void std::__ndk1::ctype_byname<char>::do_tolower(char p0)
 
 {
-  FUN_00172400(param_2);
+  undefined1 in_w1;
+  
+  FUN_00172400(in_w1);
   return;
 }
 
@@ -225,21 +235,20 @@ void std::__ndk1::ctype_byname<char>::do_tolower(undefined8 param_1,undefined1 p
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char*, char const*) const */
 
-undefined1 *
-std::__ndk1::ctype_byname<char>::do_tolower
-          (undefined8 param_1,undefined1 *param_2,undefined1 *param_3)
+char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1)
 
 {
-  undefined1 *puVar1;
-  undefined1 uVar2;
+  char *pcVar1;
+  char cVar2;
+  char *in_x2;
   
-  puVar1 = param_2;
-  for (; param_2 != param_3; param_2 = param_2 + 1) {
-    uVar2 = FUN_00172400(*param_2);
-    *param_2 = uVar2;
-    puVar1 = param_3;
+  pcVar1 = p1;
+  for (; p1 != in_x2; p1 = p1 + 1) {
+    cVar2 = FUN_00172400(*p1);
+    *p1 = cVar2;
+    pcVar1 = in_x2;
   }
-  return puVar1;
+  return pcVar1;
 }
 
 
@@ -253,12 +262,14 @@ std::__ndk1::ctype_byname<char>::do_tolower
 void std::__ndk1::ctype_byname<char>::~ctype_byname(undefined8 *param_1)
 
 {
+  ulong p1;
+  
   *param_1 = &PTR__ctype_byname_007177d8;
                     /* try { // try from 005e01b8 to 005e01bb has its CatchHandler @ 005e01f0 */
   FUN_00173520(param_1[4]);
   *param_1 = &PTR__ctype_00717770;
-  if ((param_1[2] != 0) && (*(char *)(param_1 + 3) != '\0')) {
-    FUN_001639e0();
+  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
+    FUN_001639e0((void *)param_1[2],p1);
   }
   FUN_00172660(param_1);
   return;

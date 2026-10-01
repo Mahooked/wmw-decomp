@@ -43,28 +43,35 @@ void WaterConcept::Fan::Fan(undefined8 *param_1,undefined8 *param_2,undefined8 *
 void WaterConcept::Fan::~Fan(undefined8 *param_1)
 
 {
+  void *pvVar1;
+  
+  pvVar1 = (void *)param_1[0x87];
   *param_1 = &PTR__Fan_007118c8;
-  if (param_1[0x87] != 0) {
-    param_1[0x88] = param_1[0x87];
-    FUN_00166120();
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x88] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x84] != 0) {
-    param_1[0x85] = param_1[0x84];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x84];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x85] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x81] != 0) {
-    param_1[0x82] = param_1[0x81];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x81];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x82] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   FUN_0016bb90(param_1 + 0x7e);
   FUN_0016bb90(param_1 + 0x7c);
-  if (param_1[0x79] != 0) {
-    param_1[0x7a] = param_1[0x79];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x79];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x7a] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x76] != 0) {
-    param_1[0x77] = param_1[0x76];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x76];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x77] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   func_0x0016fb10(param_1);
   return;
@@ -78,7 +85,7 @@ void WaterConcept::Fan::~Fan(undefined8 *param_1)
 
 /* WaterConcept::Fan::~Fan() */
 
-void WaterConcept::Fan::~Fan(undefined8 param_1)
+void WaterConcept::Fan::~Fan(void *param_1)
 
 {
   func_0x001649d0();
@@ -94,7 +101,7 @@ void WaterConcept::Fan::~Fan(undefined8 param_1)
 
 /* WaterConcept::Fan::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
+void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
 
 {
   long lVar1;
@@ -111,9 +118,9 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
   undefined1 uStack_89;
   undefined1 uStack_88;
   undefined7 uStack_87;
-  undefined8 uStack_80;
+  void *pvStack_80;
   uint auStack_78 [4];
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte bStack_60;
   undefined4 uStack_5f;
   undefined1 uStack_5b;
@@ -121,7 +128,7 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
   undefined1 uStack_59;
   undefined1 uStack_58;
   undefined7 uStack_57;
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
@@ -130,35 +137,35 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
   uStack_59 = 0;
   uStack_58 = 0;
   uStack_57 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   bStack_60 = 10;
   uStack_5f = 0x72616547;
   uStack_5b = 0x73;
   uStack_5a = 0;
                     /* try { // try from 0047990c to 00479917 has its CatchHandler @ 00479cc4 */
-  uVar3 = func_0x00173810(param_2,&bStack_60);
+  uVar3 = func_0x00173810();
   if ((bStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uVar3 & 1) != 0) {
     uStack_89 = 0;
     uStack_88 = 0;
     uStack_87 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     uStack_90 = 0x6165470a;
     uStack_8c = 0x72;
     uStack_8b = 0x73;
     uStack_8a = 0;
                     /* try { // try from 00479954 to 00479967 has its CatchHandler @ 00479cb0 */
-    func_0x0016d4e0(param_2,&uStack_90);
+    func_0x0016d4e0();
     func_0x00162cf0(auStack_78);
                     /* try { // try from 00479968 to 00479977 has its CatchHandler @ 00479c88 */
     func_0x00173780(&bStack_60,auStack_78,0x20);
     if ((auStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
     if ((uStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
     pbVar7 = (byte *)CONCAT17(uStack_59,
                               CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT41(uStack_5f,bStack_60))))
@@ -172,14 +179,14 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
         }
         func_0x00170360(pbVar5,"%i",auStack_78);
         uStack_90 = auStack_78[0];
-        puVar6 = *(uint **)(param_1 + 0x3b8);
-        if (puVar6 < *(uint **)(param_1 + 0x3c0)) {
+        puVar6 = *(uint **)(p0 + 0x3b8);
+        if (puVar6 < *(uint **)(p0 + 0x3c0)) {
           *puVar6 = auStack_78[0];
-          *(uint **)(param_1 + 0x3b8) = puVar6 + 1;
+          *(uint **)(p0 + 0x3b8) = puVar6 + 1;
         }
         else {
                     /* try { // try from 004799f4 to 004799ff has its CatchHandler @ 00479ce0 */
-          func_0x00170200(param_1 + 0x3b0,&uStack_90);
+          func_0x00170200(p0 + 0x3b0,&uStack_90);
         }
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
@@ -187,7 +194,7 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
     func_0x00167a70(&bStack_60);
   }
   uStack_57 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   bStack_60 = 0xe;
   uStack_5f = 0x546e6146;
   uStack_5b = 0x79;
@@ -195,13 +202,13 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
   uStack_59 = 0x65;
   uStack_58 = 0;
                     /* try { // try from 00479a40 to 00479a4b has its CatchHandler @ 00479cac */
-  uVar3 = func_0x00173810(param_2,&bStack_60);
+  uVar3 = func_0x00173810();
   if ((bStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uVar3 & 1) != 0) {
     uStack_87 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     uStack_90 = 0x6e61460e;
     uStack_8c = 0x54;
     uStack_8b = 0x79;
@@ -209,15 +216,15 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
     uStack_89 = 0x65;
     uStack_88 = 0;
                     /* try { // try from 00479a88 to 00479a9b has its CatchHandler @ 00479ca8 */
-    func_0x0016d4e0(param_2,&uStack_90);
+    func_0x0016d4e0();
     func_0x00162cf0(auStack_78);
                     /* try { // try from 00479a9c to 00479aa7 has its CatchHandler @ 00479c84 */
     func_0x00171fd0(&bStack_60,auStack_78);
     if ((auStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
     if ((uStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
     uVar3 = (ulong)(bStack_60 >> 1);
     if ((bStack_60 & 1) != 0) {
@@ -231,43 +238,43 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
     else {
       uVar4 = 0;
     }
-    *(uint *)(param_1 + 0x3ac) = uVar4;
+    *(uint *)(p0 + 0x3ac) = uVar4;
     if ((bStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
   }
   uStack_5a = 0;
   uStack_59 = 0;
   uStack_58 = 0;
   uStack_57 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   bStack_60 = 8;
   uStack_5f = 0x736e6146;
   uStack_5b = 0;
                     /* try { // try from 00479b4c to 00479b57 has its CatchHandler @ 00479ca4 */
-  uVar3 = func_0x00173810(param_2,&bStack_60);
+  uVar3 = func_0x00173810();
   if ((bStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uVar3 & 1) != 0) {
     uStack_8a = 0;
     uStack_89 = 0;
     uStack_88 = 0;
     uStack_87 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     uStack_90 = 0x6e614608;
     uStack_8c = 0x73;
     uStack_8b = 0;
                     /* try { // try from 00479b88 to 00479b9b has its CatchHandler @ 00479ca0 */
-    func_0x0016d4e0(param_2,&uStack_90);
+    func_0x0016d4e0();
     func_0x00162cf0(auStack_78);
                     /* try { // try from 00479b9c to 00479bab has its CatchHandler @ 00479c80 */
     func_0x00173780(&bStack_60,auStack_78,0x20);
     if ((auStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
     if ((uStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
     pbVar7 = (byte *)CONCAT17(uStack_59,
                               CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT41(uStack_5f,bStack_60))))
@@ -281,14 +288,14 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
         }
         func_0x00170360(pbVar5,"%i",auStack_78);
         uStack_90 = auStack_78[0];
-        puVar6 = *(uint **)(param_1 + 0x3d0);
-        if (puVar6 < *(uint **)(param_1 + 0x3d8)) {
+        puVar6 = *(uint **)(p0 + 0x3d0);
+        if (puVar6 < *(uint **)(p0 + 0x3d8)) {
           *puVar6 = auStack_78[0];
-          *(uint **)(param_1 + 0x3d0) = puVar6 + 1;
+          *(uint **)(p0 + 0x3d0) = puVar6 + 1;
         }
         else {
                     /* try { // try from 00479c28 to 00479c33 has its CatchHandler @ 00479cdc */
-          func_0x00170200(param_1 + 0x3c8,&uStack_90);
+          func_0x00170200(p0 + 0x3c8,&uStack_90);
         }
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
@@ -311,11 +318,12 @@ void WaterConcept::Fan::setProperties(long param_1,undefined8 param_2)
 /* WARNING: Removing unreachable block (ram,0x00479d70) */
 /* WaterConcept::Fan::update(float) */
 
-void WaterConcept::Fan::update(float param_1,long param_2)
+void WaterConcept::Fan::update(float p0)
 
 {
   float *pfVar1;
   long lVar2;
+  long in_x0;
   long *plVar3;
   char cVar4;
   int iVar5;
@@ -340,66 +348,66 @@ void WaterConcept::Fan::update(float param_1,long param_2)
   
   lVar2 = tpidr_el0;
   lStack_78 = *(long *)(lVar2 + 0x28);
-  FUN_0016fc40();
-  if (*(char *)(param_2 + 0x3a8) != '\0') {
-    if (*(int **)(param_2 + 0x3b0) != *(int **)(param_2 + 0x3b8)) {
-      fVar13 = (*(float *)(param_2 + 0x2b8) + -10.0) / 90.0;
+  FUN_0016fc40(p0);
+  if (*(char *)(in_x0 + 0x3a8) != '\0') {
+    if (*(int **)(in_x0 + 0x3b0) != *(int **)(in_x0 + 0x3b8)) {
+      fVar13 = (*(float *)(in_x0 + 0x2b8) + -10.0) / 90.0;
       fVar14 = fVar13 * 270.0 + 90.0;
       if (fVar13 <= 0.0) {
         fVar14 = 90.0;
       }
-      piVar10 = *(int **)(param_2 + 0x3b0);
+      piVar10 = *(int **)(in_x0 + 0x3b0);
       do {
         piVar7 = piVar10 + 1;
-        plVar3 = *(long **)(*(long *)(param_2 + 400) + (long)*piVar10 * 0x28);
+        plVar3 = *(long **)(*(long *)(in_x0 + 400) + (long)*piVar10 * 0x28);
         uStack_90 = CONCAT44(uStack_90._4_4_,
-                             fVar14 * param_1 * 0.017453292 + *(float *)((long)plVar3 + 0x74));
+                             fVar14 * p0 * 0.017453292 + *(float *)((long)plVar3 + 0x74));
         (**(code **)(*plVar3 + 0x20))(plVar3,&uStack_90);
         piVar10 = piVar7;
-      } while (piVar7 != *(int **)(param_2 + 0x3b8));
+      } while (piVar7 != *(int **)(in_x0 + 0x3b8));
     }
-    lVar6 = *(long *)(param_2 + 0x408);
-    if (*(long *)(param_2 + 0x410) != lVar6) {
+    lVar6 = *(long *)(in_x0 + 0x408);
+    if (*(long *)(in_x0 + 0x410) != lVar6) {
       uVar11 = 0;
       do {
         puVar12 = (undefined8 *)(lVar6 + uVar11 * 0x28);
-        fVar14 = (float)func_0x00174170((float)uVar11 * 1.5707964 +
-                                        *(float *)(param_2 + 0x308) * 10.0);
+        fVar14 = (float)func_0x00174170((float)uVar11 * 1.5707964 + *(float *)(in_x0 + 0x308) * 10.0
+                                       );
         uStack_90._0_4_ = (fVar14 * 0.2 + 1.0) * *(float *)((long)puVar12 + 0x1c);
         uStack_90._4_4_ = (1.0 - fVar14 * 0.2) * *(float *)(puVar12 + 4);
         (**(code **)(*(long *)*puVar12 + 0x18))((long *)*puVar12,&uStack_90);
         plVar3 = (long *)*puVar12;
-        fVar14 = (float)func_0x00164d90(param_2);
+        fVar14 = (float)func_0x00164d90();
         uStack_90 = CONCAT44(uStack_90._4_4_,fVar14 + *(float *)(puVar12 + 2));
         (**(code **)(*plVar3 + 0x20))(plVar3,&uStack_90);
         func_0x00163030(&uStack_90,*puVar12,(long)puVar12 + 0x14);
-        func_0x00165310(&lStack_a0,param_2,puVar12 + 1);
+        func_0x00165310(&lStack_a0);
         uStack_80 = CONCAT44((float)((ulong)lStack_a0 >> 0x20) - (float)((ulong)uStack_90 >> 0x20),
                              (float)lStack_a0 - (float)uStack_90);
         (**(code **)(*(long *)*puVar12 + 0x10))((long *)*puVar12,&uStack_80);
-        lVar6 = *(long *)(param_2 + 0x408);
+        lVar6 = *(long *)(in_x0 + 0x408);
         uVar11 = (ulong)((int)uVar11 + 1);
-        uVar9 = (*(long *)(param_2 + 0x410) - lVar6 >> 3) * -0x3333333333333333;
+        uVar9 = (*(long *)(in_x0 + 0x410) - lVar6 >> 3) * -0x3333333333333333;
       } while (uVar11 <= uVar9 && uVar9 - uVar11 != 0);
     }
-    iVar5 = *(int *)(param_2 + 0x3ac);
+    iVar5 = *(int *)(in_x0 + 0x3ac);
     if (iVar5 != 1) goto LAB_0047a054;
-    fVar14 = (float)func_0x0016ee90(*(float *)(param_2 + 0x308) * 10.0);
-    uVar17 = func_0x00174170(*(float *)(param_2 + 0x308) * 20.0);
-    fVar13 = (float)func_0x00174170(*(float *)(param_2 + 0x308) * 8.0);
+    fVar14 = (float)func_0x0016ee90(*(float *)(in_x0 + 0x308) * 10.0);
+    uVar17 = func_0x00174170(*(float *)(in_x0 + 0x308) * 20.0);
+    fVar13 = (float)func_0x00174170(*(float *)(in_x0 + 0x308) * 8.0);
     fVar15 = (float)func_0x0016ee90(uVar17);
     fVar16 = (float)func_0x00174170(uVar17);
-    lVar6 = *(long *)(param_2 + 400);
-    if (*(long *)(param_2 + 0x198) != lVar6) {
+    lVar6 = *(long *)(in_x0 + 400);
+    if (*(long *)(in_x0 + 0x198) != lVar6) {
       uVar11 = 0;
       do {
-        pfVar1 = (float *)(*(long *)(param_2 + 0x420) + uVar11 * 8);
+        pfVar1 = (float *)(*(long *)(in_x0 + 0x420) + uVar11 * 8);
         plVar3 = *(long **)(lVar6 + uVar11 * 0x28);
         uStack_90 = CONCAT44(fVar15 * 0.0 + fVar14 * 0.1 * fVar16 + pfVar1[1],
                              (fVar14 * 0.1 * fVar15 - fVar16 * 0.0) + *pfVar1);
         (**(code **)(*plVar3 + 0x10))(plVar3,&uStack_90);
-        piVar10 = *(int **)(param_2 + 0x3b0);
-        piVar7 = *(int **)(param_2 + 0x3b8);
+        piVar10 = *(int **)(in_x0 + 0x3b0);
+        piVar7 = *(int **)(in_x0 + 0x3b8);
         if (piVar10 != piVar7) {
           iVar5 = *piVar10;
           while (iVar5 != (int)uVar11) {
@@ -410,23 +418,22 @@ void WaterConcept::Fan::update(float param_1,long param_2)
         }
         if (piVar10 == piVar7) {
 LAB_0047a000:
-          plVar3 = *(long **)(*(long *)(param_2 + 400) + uVar11 * 0x28);
+          plVar3 = *(long **)(*(long *)(in_x0 + 400) + uVar11 * 0x28);
           uStack_90 = CONCAT44(uStack_90._4_4_,
-                               fVar13 * 0.075 + *(float *)(*(long *)(param_2 + 0x438) + uVar11 * 4))
-          ;
+                               fVar13 * 0.075 + *(float *)(*(long *)(in_x0 + 0x438) + uVar11 * 4));
           (**(code **)(*plVar3 + 0x20))(plVar3,&uStack_90);
         }
-        lVar6 = *(long *)(param_2 + 400);
+        lVar6 = *(long *)(in_x0 + 400);
         uVar11 = (ulong)((int)uVar11 + 1);
-        uVar9 = (*(long *)(param_2 + 0x198) - lVar6 >> 3) * -0x3333333333333333;
+        uVar9 = (*(long *)(in_x0 + 0x198) - lVar6 >> 3) * -0x3333333333333333;
       } while (uVar11 <= uVar9 && uVar9 - uVar11 != 0);
     }
   }
-  iVar5 = *(int *)(param_2 + 0x3ac);
+  iVar5 = *(int *)(in_x0 + 0x3ac);
 LAB_0047a054:
   if (iVar5 == 0) {
-    piVar10 = *(int **)(param_2 + 0x3c8);
-    fVar13 = *(float *)(param_2 + 0x308) / 2.0;
+    piVar10 = *(int **)(in_x0 + 0x3c8);
+    fVar13 = *(float *)(in_x0 + 0x308) / 2.0;
     fVar14 = fVar13;
     if (1.0 < fVar13) {
       fVar14 = 1.0;
@@ -435,12 +442,12 @@ LAB_0047a054:
       fVar14 = 0.0;
     }
     fVar13 = 1.0 - fVar14;
-    if (*(char *)(param_2 + 0x2c4) != '\0') {
+    if (*(char *)(in_x0 + 0x2c4) != '\0') {
       fVar13 = fVar14;
     }
-    if (piVar10 != *(int **)(param_2 + 0x3d0)) {
+    if (piVar10 != *(int **)(in_x0 + 0x3d0)) {
       do {
-        lVar6 = *(long *)(*(long *)(param_2 + 0x178) + (long)*piVar10 * 0x28);
+        lVar6 = *(long *)(*(long *)(in_x0 + 0x178) + (long)*piVar10 * 0x28);
         lStack_a0 = *(long *)(lVar6 + 0xa0);
         piStack_98 = *(int **)(lVar6 + 0xa8);
         if (lStack_a0 == 0) {
@@ -457,20 +464,20 @@ LAB_0047a054:
         }
         func_0x0016d7e0(&uStack_90);
         piVar10 = piVar10 + 1;
-      } while (piVar10 != *(int **)(param_2 + 0x3d0));
+      } while (piVar10 != *(int **)(in_x0 + 0x3d0));
     }
   }
-  lVar8 = *(long *)(param_2 + 0x400);
-  lVar6 = param_2;
+  lVar8 = *(long *)(in_x0 + 0x400);
+  lVar6 = in_x0;
   if (lVar8 != 0) {
     lVar6 = lVar8;
   }
   cVar4 = *(char *)(lVar6 + 0x2c4);
-  if (cVar4 != *(char *)(param_2 + 0x3a8)) {
-    func_0x00172250(param_2,cVar4 != '\0');
+  if (cVar4 != *(char *)(in_x0 + 0x3a8)) {
+    func_0x00172250();
     cVar4 = *(char *)(lVar6 + 0x2c4);
   }
-  if ((cVar4 != '\0') && (plVar3 = *(long **)(param_2 + 0x3f0), plVar3 != (long *)0x0)) {
+  if ((cVar4 != '\0') && (plVar3 = *(long **)(in_x0 + 0x3f0), plVar3 != (long *)0x0)) {
     piStack_88 = (int *)CONCAT44(piStack_88._4_4_,(uint)(lVar8 != 0));
     uStack_90 = lVar6;
     (**(code **)(*plVar3 + 0x10))(plVar3,&uStack_90);
@@ -490,33 +497,37 @@ LAB_0047a054:
 
 /* WaterConcept::Fan::_setState(bool) */
 
-void WaterConcept::Fan::_setState(long param_1,byte param_2)
+void WaterConcept::Fan::_setState(bool p0)
 
 {
-  long lVar1;
-  long *plVar2;
-  long lVar3;
-  long lStack_48;
+  byte bVar1;
+  long lVar2;
+  ulong uVar3;
+  long *plVar4;
+  byte in_w1;
+  ulong uVar5;
+  ulong uStack_48;
   uint uStack_40;
   byte bStack_3c;
   long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
-  param_2 = param_2 & 1;
-  if ((param_2 != *(byte *)(param_1 + 0x3a8)) &&
-     (plVar2 = *(long **)(param_1 + 0x3e0), plVar2 != (long *)0x0)) {
-    lVar3 = *(long *)(param_1 + 0x400);
-    lStack_48 = param_1;
-    if (lVar3 != 0) {
-      lStack_48 = lVar3;
+  uVar3 = (ulong)p0;
+  lVar2 = tpidr_el0;
+  lStack_38 = *(long *)(lVar2 + 0x28);
+  bVar1 = in_w1 & 1;
+  if ((bVar1 != *(byte *)(uVar3 + 0x3a8)) &&
+     (plVar4 = *(long **)(uVar3 + 0x3e0), plVar4 != (long *)0x0)) {
+    uVar5 = *(ulong *)(uVar3 + 0x400);
+    uStack_48 = uVar3;
+    if (uVar5 != 0) {
+      uStack_48 = uVar5;
     }
-    uStack_40 = (uint)(lVar3 != 0);
-    bStack_3c = param_2;
-    (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_48);
+    uStack_40 = (uint)(uVar5 != 0);
+    bStack_3c = bVar1;
+    (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_48);
   }
-  *(byte *)(param_1 + 0x3a8) = param_2;
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
+  *(byte *)(uVar3 + 0x3a8) = bVar1;
+  if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }
@@ -532,13 +543,14 @@ void WaterConcept::Fan::_setState(long param_1,byte param_2)
 /* WaterConcept::Fan::particleHasCollided(WaterConcept::Fluids*, WaterConcept::ParticleDescription
    const&, int, bool&) */
 
-void WaterConcept::Fan::particleHasCollided(void)
+void WaterConcept::Fan::particleHasCollided
+               (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
   undefined1 *in_x4;
   
   *in_x4 = 0;
-  func_0x0016e9f0();
+  func_0x0016e9f0(p0,p1,p2);
   return;
 }
 
@@ -550,10 +562,12 @@ void WaterConcept::Fan::particleHasCollided(void)
 
 /* WaterConcept::Fan::connectDrain(WaterConcept::Spout*) */
 
-void WaterConcept::Fan::connectDrain(long param_1,undefined8 param_2)
+void WaterConcept::Fan::connectDrain(WaterConcept__Spout *p0)
 
 {
-  *(undefined8 *)(param_1 + 0x400) = param_2;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x400) = in_x1;
   return;
 }
 
@@ -565,12 +579,13 @@ void WaterConcept::Fan::connectDrain(long param_1,undefined8 param_2)
 
 /* WaterConcept::Fan::connectPump(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Fan::connectPump(long param_1,long param_2)
+void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
 
 {
   long lVar1;
   bool bVar2;
   ulong uVar3;
+  long in_x1;
   long *plVar4;
   long *plVar5;
   long lVar6;
@@ -599,14 +614,14 @@ void WaterConcept::Fan::connectPump(long param_1,long param_2)
   uStack_74 = 0;
   fStack_70 = 0.0;
   uStack_90 = 0;
-  uStack_64 = (undefined4)*(undefined8 *)(param_2 + 0x5c);
-  uStack_60 = (undefined4)((ulong)*(undefined8 *)(param_2 + 0x5c) >> 0x20);
+  uStack_64 = (undefined4)*(undefined8 *)(in_x1 + 0x5c);
+  uStack_60 = (undefined4)((ulong)*(undefined8 *)(in_x1 + 0x5c) >> 0x20);
   uStack_6c = uStack_78;
   uStack_68 = uStack_74;
   puStack_98 = &uStack_90;
-  plVar5 = *(long **)(param_2 + 0xc0);
-  lStack_80 = param_2;
-  while (plVar5 != (long *)(param_2 + 200)) {
+  plVar5 = *(long **)(in_x1 + 0xc0);
+  lStack_80 = in_x1;
+  while (plVar5 != (long *)(in_x1 + 200)) {
                     /* try { // try from 0047a2b8 to 0047a2c7 has its CatchHandler @ 0047a4b0 */
     func_0x0016d3f0(&puStack_98,&uStack_90,plVar5 + 4,plVar5 + 4);
     plVar4 = (long *)plVar5[1];
@@ -651,7 +666,7 @@ void WaterConcept::Fan::connectPump(long param_1,long param_2)
                     /* try { // try from 0047a344 to 0047a34f has its CatchHandler @ 0047a484 */
   uVar3 = func_0x00173810(&puStack_98,abStack_b0);
   if ((abStack_b0[0] & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_9e,CONCAT11(abStack_b0[0x11],abStack_b0[0x10])));
+    FUN_00166120((void *)CONCAT62(uStack_9e,CONCAT11(abStack_b0[0x11],abStack_b0[0x10])));
   }
   if ((uVar3 & 1) != 0) {
     uStack_9e = 0;
@@ -679,23 +694,23 @@ void WaterConcept::Fan::connectPump(long param_1,long param_2)
     uStack_6c = uStack_b8;
     uStack_68 = uStack_b4;
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_9e,CONCAT11(abStack_b0[0x11],abStack_b0[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_9e,CONCAT11(abStack_b0[0x11],abStack_b0[0x10])));
     }
   }
                     /* try { // try from 0047a3b0 to 0047a3c3 has its CatchHandler @ 0047a4a0 */
-  fVar7 = (float)func_0x00164d90(param_2);
-  fStack_70 = (float)func_0x00164d90(param_1);
+  fVar7 = (float)func_0x00164d90();
+  fStack_70 = (float)func_0x00164d90(p0);
   fStack_70 = fVar7 - fStack_70;
                     /* try { // try from 0047a3d4 to 0047a3df has its CatchHandler @ 0047a49c */
-  func_0x00165310(abStack_b0,param_2,&uStack_6c);
+  func_0x00165310(abStack_b0);
                     /* try { // try from 0047a3e0 to 0047a3ef has its CatchHandler @ 0047a47c */
-  func_0x0016b530(&uStack_b8,param_1,abStack_b0);
+  func_0x0016b530(&uStack_b8,p0,abStack_b0);
   uStack_78 = uStack_b8;
   uStack_74 = uStack_b4;
-  plVar5 = *(long **)(param_1 + 0x410);
-  if (plVar5 == *(long **)(param_1 + 0x418)) {
+  plVar5 = *(long **)(p0 + 0x410);
+  if (plVar5 == *(long **)(p0 + 0x418)) {
                     /* try { // try from 0047a43c to 0047a443 has its CatchHandler @ 0047a49c */
-    func_0x0016b2c0(param_1 + 0x408,&lStack_80);
+    func_0x0016b2c0(p0 + 0x408,&lStack_80);
   }
   else {
     *(undefined4 *)(plVar5 + 1) = uStack_b8;
@@ -704,7 +719,7 @@ void WaterConcept::Fan::connectPump(long param_1,long param_2)
     plVar5[2] = CONCAT44(uStack_6c,fStack_70);
     plVar5[3] = CONCAT44(uStack_64,uStack_68);
     *(undefined4 *)(plVar5 + 4) = uStack_60;
-    *(long **)(param_1 + 0x410) = plVar5 + 5;
+    *(long **)(p0 + 0x410) = plVar5 + 5;
   }
   func_0x00164ba0(&puStack_98);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
@@ -739,7 +754,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
   int *piStack_98;
   undefined8 uStack_90;
   int *piStack_88;
-  undefined8 uStack_80;
+  void *pvStack_80;
   undefined1 auStack_78 [16];
   long lStack_68;
   
@@ -784,7 +799,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
   if (piVar8 != *(int **)(param_1 + 0x3d0)) {
     do {
       piStack_88 = (int *)0x0;
-      uStack_80 = 0;
+      pvStack_80 = (void *)0x0;
       uStack_90 = 0x6e4f04;
                     /* try { // try from 0047a608 to 0047a617 has its CatchHandler @ 0047a6d0 */
       func_0x00168410(auStack_78,0x3c23d70a,
@@ -792,7 +807,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
       ;
       func_0x0016d7e0(auStack_78);
       if ((uStack_90 & 1) != 0) {
-        FUN_00166120(uStack_80);
+        FUN_00166120(pvStack_80);
       }
       lVar4 = *(long *)(*(long *)(param_1 + 0x178) + (long)*piVar8 * 0x28);
       lStack_a0 = *(long *)(lVar4 + 0xa0);
@@ -827,7 +842,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
 
 /* WaterConcept::Fan::_animationEvent(void*) */
 
-void WaterConcept::Fan::_animationEvent(void)
+void WaterConcept::Fan::_animationEvent(void *p0)
 
 {
   return;

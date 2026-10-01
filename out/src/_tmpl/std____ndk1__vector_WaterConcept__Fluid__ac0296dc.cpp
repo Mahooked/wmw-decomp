@@ -10,16 +10,18 @@
    >::vector(unsigned long) */
 
 void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::vector
-               (undefined8 *param_1,long param_2)
+               (ulong p0)
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  long in_x1;
+  
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (in_x1 != 0) {
                     /* try { // try from 004044cc to 004044db has its CatchHandler @ 004044e8 */
     func_0x00168340();
-    func_0x00163c80(param_1,param_2);
+    func_0x00163c80(p0);
   }
   return;
 }
@@ -34,19 +36,20 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
    >::__vallocate(unsigned long) */
 
 void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __vallocate(long *param_1,ulong param_2)
+     __vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x111111111111112) {
-    lVar1 = FUN_00164060(param_2 * 0xf0);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0xf0;
+  if (in_x1 < 0x111111111111112) {
+    lVar1 = FUN_00164060(in_x1 * 0xf0);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0xf0;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -60,12 +63,13 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
    >::__construct_at_end(unsigned long) */
 
 void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __construct_at_end(long param_1,long param_2)
+     __construct_at_end(ulong p0)
 
 {
+  long in_x1;
   long lVar1;
   
-  lVar1 = *(long *)(param_1 + 8);
+  lVar1 = *(long *)(p0 + 8);
   do {
     FUN_0016b330(lVar1,0,0xf0);
     *(undefined8 *)(lVar1 + 0x43) = 0xff000000ff;
@@ -74,10 +78,10 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
     *(undefined8 *)(lVar1 + 0x4b) = 0xff000000ff;
     *(undefined4 *)(lVar1 + 0x5b) = 0xff;
     *(undefined1 *)(lVar1 + 0x5f) = 0xff;
-    param_2 = param_2 + -1;
-    lVar1 = *(long *)(param_1 + 8) + 0xf0;
-    *(long *)(param_1 + 8) = lVar1;
-  } while (param_2 != 0);
+    in_x1 = in_x1 + -1;
+    lVar1 = *(long *)(p0 + 8) + 0xf0;
+    *(long *)(p0 + 8) = lVar1;
+  } while (in_x1 != 0);
   return;
 }
 

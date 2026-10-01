@@ -18,9 +18,10 @@
    WaterConcept::World::AlgaeDot> > >::find<WaterConcept::GridCell>(WaterConcept::GridCell const&)
     */
 
-long * std::__ndk1::
-       __tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>>>
-       ::find<WaterConcept::GridCell>(long param_1,int *param_2)
+WaterConcept__GridCell *
+std::__ndk1::
+__tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::AlgaeDot>>>
+::find<WaterConcept::GridCell>(WaterConcept__GridCell *p0)
 
 {
   int iVar1;
@@ -29,45 +30,46 @@ long * std::__ndk1::
   int iVar4;
   int iVar5;
   bool bVar6;
-  long *plVar7;
-  long *plVar8;
-  long *plVar9;
+  WaterConcept__GridCell *pWVar7;
+  int *in_x1;
+  WaterConcept__GridCell *pWVar8;
+  WaterConcept__GridCell *pWVar9;
   
-  plVar7 = (long *)(param_1 + 8);
-  plVar9 = (long *)*plVar7;
-  if (plVar9 != (long *)0x0) {
-    iVar3 = *param_2;
-    iVar4 = param_2[1];
-    plVar8 = plVar7;
+  pWVar7 = p0 + 8;
+  pWVar9 = *(WaterConcept__GridCell **)pWVar7;
+  if (pWVar9 != (WaterConcept__GridCell *)0x0) {
+    iVar3 = *in_x1;
+    iVar4 = in_x1[1];
+    pWVar8 = pWVar7;
     do {
-      iVar5 = (int)plVar9[4];
+      iVar5 = *(int *)(pWVar9 + 0x20);
       bVar6 = SBORROW4(iVar5,iVar4);
       iVar1 = iVar5 - iVar4;
       if (iVar5 == iVar4) {
-        bVar6 = SBORROW4(*(int *)((long)plVar9 + 0x1c),iVar3);
-        iVar1 = *(int *)((long)plVar9 + 0x1c) - iVar3;
+        bVar6 = SBORROW4(*(int *)(pWVar9 + 0x1c),iVar3);
+        iVar1 = *(int *)(pWVar9 + 0x1c) - iVar3;
       }
       lVar2 = 8;
       if (iVar1 < 0 == bVar6) {
         lVar2 = 0;
-        plVar8 = plVar9;
+        pWVar8 = pWVar9;
       }
-      plVar9 = *(long **)((long)plVar9 + lVar2);
-    } while (plVar9 != (long *)0x0);
-    if (plVar8 != plVar7) {
-      iVar5 = (int)plVar8[4];
+      pWVar9 = *(WaterConcept__GridCell **)(pWVar9 + lVar2);
+    } while (pWVar9 != (WaterConcept__GridCell *)0x0);
+    if (pWVar8 != pWVar7) {
+      iVar5 = *(int *)(pWVar8 + 0x20);
       bVar6 = SBORROW4(iVar4,iVar5);
       iVar1 = iVar4 - iVar5;
       if (iVar4 == iVar5) {
-        bVar6 = SBORROW4(iVar3,*(int *)((long)plVar8 + 0x1c));
-        iVar1 = iVar3 - *(int *)((long)plVar8 + 0x1c);
+        bVar6 = SBORROW4(iVar3,*(int *)(pWVar8 + 0x1c));
+        iVar1 = iVar3 - *(int *)(pWVar8 + 0x1c);
       }
       if (iVar1 < 0 == bVar6) {
-        return plVar8;
+        return pWVar8;
       }
     }
   }
-  return plVar7;
+  return pWVar7;
 }
 
 

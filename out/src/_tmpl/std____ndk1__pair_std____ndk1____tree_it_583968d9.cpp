@@ -12,28 +12,29 @@
 
 undefined1  [16]
 std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::
-__emplace_unique_key_args<int,int>(long param_1,int *param_2,undefined4 *param_3)
+__emplace_unique_key_args<int,int>(int *p0,int **p1)
 
 {
   bool bVar1;
   long *plVar2;
+  undefined4 *in_x2;
   long *plVar3;
   long *plVar4;
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
+  plVar3 = (long *)(p0 + 2);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+    plVar4 = (long *)(p0 + 2);
     do {
-      while (plVar3 = plVar2, *param_2 < *(int *)((long)plVar3 + 0x1c)) {
+      while (plVar3 = plVar2, *(int *)p1 < *(int *)((long)plVar3 + 0x1c)) {
         plVar2 = (long *)*plVar3;
         plVar4 = plVar3;
         if ((long *)*plVar3 == (long *)0x0) goto LAB_0046f4a4;
       }
-      if (*param_2 <= *(int *)((long)plVar3 + 0x1c)) break;
+      if (*(int *)p1 <= *(int *)((long)plVar3 + 0x1c)) break;
       plVar4 = plVar3 + 1;
       plVar2 = (long *)*plVar4;
     } while ((long *)*plVar4 != (long *)0x0);
@@ -43,8 +44,8 @@ LAB_0046f4a4:
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = FUN_00164060(0x20);
-    *(undefined4 *)(lVar5 + 0x1c) = *param_3;
-    func_0x00161c00(param_1,plVar3,plVar4,lVar5);
+    *(undefined4 *)(lVar5 + 0x1c) = *in_x2;
+    func_0x00161c00(p0,plVar3,plVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;
@@ -64,28 +65,29 @@ LAB_0046f4a4:
 
 undefined1  [16]
 std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::
-__emplace_unique_key_args<int,int_const&>(long param_1,int *param_2,undefined4 *param_3)
+__emplace_unique_key_args<int,int_const&>(int *p0,int *p1)
 
 {
   bool bVar1;
   long *plVar2;
+  undefined4 *in_x2;
   long *plVar3;
   long *plVar4;
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
+  plVar3 = (long *)(p0 + 2);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+    plVar4 = (long *)(p0 + 2);
     do {
-      while (plVar3 = plVar2, *param_2 < *(int *)((long)plVar3 + 0x1c)) {
+      while (plVar3 = plVar2, *p1 < *(int *)((long)plVar3 + 0x1c)) {
         plVar2 = (long *)*plVar3;
         plVar4 = plVar3;
         if ((long *)*plVar3 == (long *)0x0) goto LAB_004d0b4c;
       }
-      if (*param_2 <= *(int *)((long)plVar3 + 0x1c)) break;
+      if (*p1 <= *(int *)((long)plVar3 + 0x1c)) break;
       plVar4 = plVar3 + 1;
       plVar2 = (long *)*plVar4;
     } while ((long *)*plVar4 != (long *)0x0);
@@ -95,8 +97,8 @@ LAB_004d0b4c:
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = FUN_00164060(0x20);
-    *(undefined4 *)(lVar5 + 0x1c) = *param_3;
-    func_0x00161c00(param_1,plVar3,plVar4,lVar5);
+    *(undefined4 *)(lVar5 + 0x1c) = *in_x2;
+    func_0x00161c00(p0,plVar3,plVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;

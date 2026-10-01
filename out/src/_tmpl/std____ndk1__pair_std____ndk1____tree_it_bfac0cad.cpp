@@ -19,40 +19,43 @@ std::__ndk1::
 __tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>
 ::
 __emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo,Walaber::Widget_Group::WidgetInfo_const&>
-          (long param_1,ulong *param_2,undefined8 *param_3)
+          (Walaber__Widget_Group__WidgetInfo *p0,Walaber__Widget_Group__WidgetInfo *p1)
 
 {
   bool bVar1;
-  long *plVar2;
-  long *plVar3;
-  long *plVar4;
+  Walaber__Widget_Group__WidgetInfo *pWVar2;
+  undefined8 *in_x2;
+  Walaber__Widget_Group__WidgetInfo *pWVar3;
+  Walaber__Widget_Group__WidgetInfo *pWVar4;
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
-  plVar4 = plVar3;
-  if ((long *)*plVar3 != (long *)0x0) {
-    plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+  pWVar3 = p0 + 8;
+  pWVar4 = pWVar3;
+  if (*(Walaber__Widget_Group__WidgetInfo **)pWVar3 != (Walaber__Widget_Group__WidgetInfo *)0x0) {
+    pWVar2 = *(Walaber__Widget_Group__WidgetInfo **)pWVar3;
+    pWVar4 = p0 + 8;
     do {
-      while (plVar3 = plVar2, *param_2 < (ulong)plVar3[4]) {
-        plVar2 = (long *)*plVar3;
-        plVar4 = plVar3;
-        if ((long *)*plVar3 == (long *)0x0) goto LAB_0037d190;
+      while (pWVar3 = pWVar2, *(ulong *)p1 < *(ulong *)(pWVar3 + 0x20)) {
+        pWVar2 = *(Walaber__Widget_Group__WidgetInfo **)pWVar3;
+        pWVar4 = pWVar3;
+        if (*(Walaber__Widget_Group__WidgetInfo **)pWVar3 ==
+            (Walaber__Widget_Group__WidgetInfo *)0x0) goto LAB_0037d190;
       }
-      if (*param_2 <= (ulong)plVar3[4]) break;
-      plVar4 = plVar3 + 1;
-      plVar2 = (long *)*plVar4;
-    } while ((long *)*plVar4 != (long *)0x0);
+      if (*(ulong *)p1 <= *(ulong *)(pWVar3 + 0x20)) break;
+      pWVar4 = pWVar3 + 8;
+      pWVar2 = *(Walaber__Widget_Group__WidgetInfo **)pWVar4;
+    } while (*(Walaber__Widget_Group__WidgetInfo **)pWVar4 !=
+             (Walaber__Widget_Group__WidgetInfo *)0x0);
   }
 LAB_0037d190:
-  lVar5 = *plVar4;
+  lVar5 = *(long *)pWVar4;
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = FUN_00164060(0x30);
-    *(undefined8 *)(lVar5 + 0x20) = *param_3;
-    *(undefined8 *)(lVar5 + 0x28) = param_3[1];
-    func_0x00168b40(param_1,plVar3,plVar4,lVar5);
+    *(undefined8 *)(lVar5 + 0x20) = *in_x2;
+    *(undefined8 *)(lVar5 + 0x28) = in_x2[1];
+    func_0x00168b40(p0,pWVar3,pWVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;

@@ -67,7 +67,7 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
         *(undefined1 *)*puVar2 = 0;
         *(undefined8 *)(lVar5 + 0x10) = 0;
         if ((*pbVar10 & 1) != 0) {
-          FUN_00166120(*puVar2);
+          FUN_00166120((void *)*puVar2);
           pbVar10[0] = 0;
           pbVar10[1] = 0;
           pbVar10[2] = 0;
@@ -128,66 +128,70 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
 
 void std::__ndk1::
      vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__move_range(long param_1,long param_2,undefined8 *param_3,long param_4)
+     ::__move_range(Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0,
+                   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1,
+                   Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p2)
 
 {
-  undefined8 *puVar1;
+  Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar1;
   undefined8 *puVar2;
-  undefined8 *puVar3;
-  undefined8 *puVar4;
-  long lVar5;
+  Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar3;
+  long in_x3;
+  long lVar4;
+  undefined8 *puVar5;
   long lVar6;
-  byte *pbVar7;
-  undefined8 uVar8;
+  long lVar7;
+  byte *pbVar8;
   undefined8 uVar9;
+  undefined8 uVar10;
   
-  puVar4 = *(undefined8 **)(param_1 + 8);
-  param_4 = (long)puVar4 - param_4;
-  puVar3 = (undefined8 *)(param_2 + param_4);
-  puVar2 = puVar4;
-  for (puVar1 = puVar3; puVar1 < param_3; puVar1 = puVar1 + 5) {
-    *puVar2 = *puVar1;
-    uVar9 = puVar1[2];
-    uVar8 = puVar1[1];
-    puVar2[3] = puVar1[3];
-    puVar2[2] = uVar9;
-    puVar2[1] = uVar8;
-    puVar1[2] = 0;
-    puVar1[3] = 0;
-    puVar1[1] = 0;
-    *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(puVar1 + 4);
-    puVar2 = (undefined8 *)(*(long *)(param_1 + 8) + 0x28);
-    *(undefined8 **)(param_1 + 8) = puVar2;
+  puVar5 = *(undefined8 **)(p0 + 8);
+  lVar4 = (long)puVar5 - in_x3;
+  pWVar3 = p1 + lVar4;
+  puVar2 = puVar5;
+  for (pWVar1 = pWVar3; pWVar1 < p2; pWVar1 = pWVar1 + 0x28) {
+    *puVar2 = *(undefined8 *)pWVar1;
+    uVar10 = *(undefined8 *)(pWVar1 + 0x10);
+    uVar9 = *(undefined8 *)(pWVar1 + 8);
+    puVar2[3] = *(undefined8 *)(pWVar1 + 0x18);
+    puVar2[2] = uVar10;
+    puVar2[1] = uVar9;
+    *(undefined8 *)(pWVar1 + 0x10) = 0;
+    *(undefined8 *)(pWVar1 + 0x18) = 0;
+    *(undefined8 *)(pWVar1 + 8) = 0;
+    *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(pWVar1 + 0x20);
+    puVar2 = (undefined8 *)(*(long *)(p0 + 8) + 0x28);
+    *(undefined8 **)(p0 + 8) = puVar2;
   }
-  if (param_4 != 0) {
-    lVar5 = 0;
+  if (lVar4 != 0) {
+    lVar6 = 0;
     do {
-      pbVar7 = (byte *)((long)puVar4 + lVar5 + -0x20);
-      *(undefined8 *)((long)puVar4 + lVar5 + -0x28) = *(undefined8 *)((long)puVar3 + lVar5 + -0x28);
-      if ((*pbVar7 & 1) == 0) {
-        *(undefined1 *)((long)puVar4 + lVar5 + -0x1f) = 0;
-        *pbVar7 = 0;
+      pbVar8 = (byte *)((long)puVar5 + lVar6 + -0x20);
+      *(undefined8 *)((long)puVar5 + lVar6 + -0x28) = *(undefined8 *)(pWVar3 + lVar6 + -0x28);
+      if ((*pbVar8 & 1) == 0) {
+        *(undefined1 *)((long)puVar5 + lVar6 + -0x1f) = 0;
+        *pbVar8 = 0;
       }
       else {
-        **(undefined1 **)((long)puVar4 + lVar5 + -0x10) = 0;
-        *(undefined8 *)((long)puVar4 + lVar5 + -0x18) = 0;
-        if ((*pbVar7 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)((long)puVar4 + lVar5 + -0x10));
-          *(undefined8 *)((long)puVar4 + lVar5 + -0x20) = 0;
+        **(undefined1 **)((long)puVar5 + lVar6 + -0x10) = 0;
+        *(undefined8 *)((long)puVar5 + lVar6 + -0x18) = 0;
+        if ((*pbVar8 & 1) != 0) {
+          FUN_00166120(*(void **)((long)puVar5 + lVar6 + -0x10));
+          *(undefined8 *)((long)puVar5 + lVar6 + -0x20) = 0;
         }
       }
-      uVar9 = *(undefined8 *)((long)puVar3 + lVar5 + -0x18);
-      uVar8 = *(undefined8 *)((long)puVar3 + lVar5 + -0x20);
-      *(undefined8 *)((long)puVar4 + lVar5 + -0x10) = *(undefined8 *)((long)puVar3 + lVar5 + -0x10);
-      *(undefined8 *)((long)puVar4 + lVar5 + -0x18) = uVar9;
-      *(undefined8 *)pbVar7 = uVar8;
-      *(undefined8 *)((long)puVar3 + lVar5 + -0x18) = 0;
-      *(undefined8 *)((long)puVar3 + lVar5 + -0x10) = 0;
-      *(undefined8 *)((long)puVar3 + lVar5 + -0x20) = 0;
-      lVar6 = lVar5 + -0x28;
-      *(undefined2 *)((long)puVar4 + lVar5 + -8) = *(undefined2 *)((long)puVar3 + lVar5 + -8);
-      lVar5 = lVar6;
-    } while ((param_4 >> 3) * -8 - lVar6 != 0);
+      uVar10 = *(undefined8 *)(pWVar3 + lVar6 + -0x18);
+      uVar9 = *(undefined8 *)(pWVar3 + lVar6 + -0x20);
+      *(undefined8 *)((long)puVar5 + lVar6 + -0x10) = *(undefined8 *)(pWVar3 + lVar6 + -0x10);
+      *(undefined8 *)((long)puVar5 + lVar6 + -0x18) = uVar10;
+      *(undefined8 *)pbVar8 = uVar9;
+      *(undefined8 *)(pWVar3 + lVar6 + -0x18) = 0;
+      *(undefined8 *)(pWVar3 + lVar6 + -0x10) = 0;
+      *(undefined8 *)(pWVar3 + lVar6 + -0x20) = 0;
+      lVar7 = lVar6 + -0x28;
+      *(undefined2 *)((long)puVar5 + lVar6 + -8) = *(undefined2 *)(pWVar3 + lVar6 + -8);
+      lVar6 = lVar7;
+    } while ((lVar4 >> 3) * -8 - lVar7 != 0);
   }
   return;
 }
@@ -387,19 +391,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__vallocate(long *param_1,ulong param_2)
+     ::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x666666666666667) {
-    lVar1 = FUN_00164060(param_2 * 0x28);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x28;
+  if (in_x1 < 0x666666666666667) {
+    lVar1 = FUN_00164060(in_x1 * 0x28);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x28;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -414,29 +419,29 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
-     ::__vdeallocate(long *param_1)
+     ::__vdeallocate(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar2 = *param_1;
-  if (lVar2 != 0) {
-    lVar3 = lVar2;
-    lVar1 = param_1[1];
-    if (param_1[1] != lVar2) {
+  pvVar2 = (void *)*param_1;
+  if (pvVar2 != (void *)0x0) {
+    pvVar3 = pvVar2;
+    pvVar1 = (void *)param_1[1];
+    if ((void *)param_1[1] != pvVar2) {
       do {
-        lVar3 = lVar1 + -0x28;
-        if ((*(byte *)(lVar1 + -0x20) & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(lVar1 + -0x10));
+        pvVar3 = (void *)((long)pvVar1 + -0x28);
+        if ((*(byte *)((long)pvVar1 + -0x20) & 1) != 0) {
+          FUN_00166120(*(void **)((long)pvVar1 + -0x10));
         }
-        lVar1 = lVar3;
-      } while (lVar2 != lVar3);
-      lVar3 = *param_1;
+        pvVar1 = pvVar3;
+      } while (pvVar2 != pvVar3);
+      pvVar3 = (void *)*param_1;
     }
-    param_1[1] = lVar2;
-    FUN_00166120(lVar3);
+    param_1[1] = pvVar2;
+    FUN_00166120(pvVar3);
     *param_1 = 0;
     param_1[1] = 0;
     param_1[2] = 0;

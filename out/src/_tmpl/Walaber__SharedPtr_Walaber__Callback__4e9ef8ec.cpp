@@ -18,8 +18,8 @@ void Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(long *param_1)
   if ((plVar2 != (long *)0x0) &&
      (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
     (**(code **)(*plVar2 + 8))();
-    if (param_1[1] != 0) {
-      FUN_00166120();
+    if ((void *)param_1[1] != (void *)0x0) {
+      FUN_00166120((void *)param_1[1]);
       return;
     }
   }
@@ -48,8 +48,8 @@ long * Walaber::SharedPtr<Walaber::Callback>::operator=(long *param_1,long *para
     if ((plVar2 != (long *)0x0) &&
        (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
       (**(code **)(*plVar2 + 8))();
-      if (param_1[1] != 0) {
-        FUN_00166120();
+      if ((void *)param_1[1] != (void *)0x0) {
+        FUN_00166120((void *)param_1[1]);
       }
     }
     lVar4 = *param_2;

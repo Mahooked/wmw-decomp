@@ -8,21 +8,21 @@
 
 /* Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(long *param_1)
+void Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(undefined8 *param_1)
 
 {
   int iVar1;
-  long lVar2;
+  void *p0;
   
-  lVar2 = *param_1;
-  if (lVar2 != 0) {
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
     iVar1 = *(int *)param_1[1] + -1;
     *(int *)param_1[1] = iVar1;
     if (iVar1 == 0) {
-      func_0x00163a10(lVar2);
-      FUN_00166120(lVar2);
-      if (param_1[1] != 0) {
-        FUN_00166120();
+      func_0x00163a10(p0);
+      FUN_00166120(p0);
+      if ((void *)param_1[1] != (void *)0x0) {
+        FUN_00166120((void *)param_1[1]);
         return;
       }
     }
@@ -45,17 +45,18 @@ long * Walaber::SharedPtr<Walaber::SoundResource>::operator=(long *param_1,long 
   int iVar1;
   int *piVar2;
   long lVar3;
+  void *p0;
   
-  lVar3 = *param_1;
-  if (lVar3 != *param_2) {
-    if (lVar3 != 0) {
+  p0 = (void *)*param_1;
+  if (p0 != (void *)*param_2) {
+    if (p0 != (void *)0x0) {
       iVar1 = *(int *)param_1[1] + -1;
       *(int *)param_1[1] = iVar1;
       if (iVar1 == 0) {
-        func_0x00163a10(lVar3);
-        FUN_00166120(lVar3);
-        if (param_1[1] != 0) {
-          FUN_00166120();
+        func_0x00163a10(p0);
+        FUN_00166120(p0);
+        if ((void *)param_1[1] != (void *)0x0) {
+          FUN_00166120((void *)param_1[1]);
         }
       }
     }

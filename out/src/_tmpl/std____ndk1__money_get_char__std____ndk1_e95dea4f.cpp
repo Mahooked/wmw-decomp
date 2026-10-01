@@ -23,12 +23,12 @@ long * std::__ndk1::
   int iVar3;
   long *plVar4;
   ulong uVar5;
-  char *pcVar6;
-  undefined8 uVar7;
+  char *p0;
+  undefined8 uVar6;
+  char *pcVar7;
   char *pcVar8;
   char *pcVar9;
   char *pcVar10;
-  char *pcVar11;
   char acStack_17c [4];
   undefined8 uStack_178;
   char *pcStack_170;
@@ -72,72 +72,72 @@ long * std::__ndk1::
     builtin_strncpy(acStack_e0,"01234567",8);
                     /* try { // try from 005c7b10 to 005c7b1f has its CatchHandler @ 005c7d8c */
     (**(code **)(*plVar4 + 0x40))(plVar4,acStack_e0,auStack_d6,&cStack_ec);
-    pcVar11 = pcStack_168;
-    pcVar9 = pcStack_170;
+    pcVar10 = pcStack_168;
+    pcVar8 = pcStack_170;
     if ((long)pcStack_170 - (long)pcStack_168 < 99) {
-      pcVar6 = (char *)0x0;
-      pcVar10 = acStack_150;
+      p0 = (char *)0x0;
+      pcVar9 = acStack_150;
     }
     else {
-      pcVar6 = (char *)FUN_00164a70(((long)pcStack_170 - (long)pcStack_168) + 2);
-      pcVar10 = pcVar6;
-      if (pcVar6 == (char *)0x0) goto LAB_005c7d74;
+      p0 = (char *)FUN_00164a70(((long)pcStack_170 - (long)pcStack_168) + 2);
+      pcVar9 = p0;
+      if (p0 == (char *)0x0) goto LAB_005c7d74;
     }
     if (acStack_17c[0] != '\0') {
-      *pcVar10 = '-';
-      pcVar10 = pcVar10 + 1;
+      *pcVar9 = '-';
+      pcVar9 = pcVar9 + 1;
     }
-    if (pcVar11 < pcVar9) {
-      pcVar9 = pcVar10;
+    if (pcVar10 < pcVar8) {
+      pcVar8 = pcVar9;
       do {
-        cVar1 = *pcVar11;
+        cVar1 = *pcVar10;
         if (cStack_ec == cVar1) {
-          pcVar8 = &cStack_ec;
+          pcVar7 = &cStack_ec;
         }
         else {
-          pcVar8 = (char *)((ulong)&cStack_ec | 1);
+          pcVar7 = (char *)((ulong)&cStack_ec | 1);
           if ((((((cStack_eb != cVar1) &&
-                 (pcVar8 = (char *)((ulong)&cStack_ec | 2), cStack_ea != cVar1)) &&
-                (pcVar8 = (char *)((ulong)&cStack_ec | 3), cStack_e9 != cVar1)) &&
-               ((pcVar8 = &cStack_e8, cStack_e8 != cVar1 &&
-                (pcVar8 = &cStack_e7, cStack_e7 != cVar1)))) &&
-              ((pcVar8 = &cStack_e6, cStack_e6 != cVar1 &&
-               ((pcVar8 = &cStack_e5, cStack_e5 != cVar1 &&
-                (pcVar8 = &cStack_e4, cStack_e4 != cVar1)))))) &&
-             (pcVar8 = &cStack_e3, cStack_e3 != cVar1)) {
-            pcVar8 = acStack_e2;
+                 (pcVar7 = (char *)((ulong)&cStack_ec | 2), cStack_ea != cVar1)) &&
+                (pcVar7 = (char *)((ulong)&cStack_ec | 3), cStack_e9 != cVar1)) &&
+               ((pcVar7 = &cStack_e8, cStack_e8 != cVar1 &&
+                (pcVar7 = &cStack_e7, cStack_e7 != cVar1)))) &&
+              ((pcVar7 = &cStack_e6, cStack_e6 != cVar1 &&
+               ((pcVar7 = &cStack_e5, cStack_e5 != cVar1 &&
+                (pcVar7 = &cStack_e4, cStack_e4 != cVar1)))))) &&
+             (pcVar7 = &cStack_e3, cStack_e3 != cVar1)) {
+            pcVar7 = acStack_e2;
           }
         }
-        pcVar11 = pcVar11 + 1;
-        pcVar10 = pcVar9 + 1;
-        *pcVar9 = pcVar8[(long)(acStack_e0 + -(long)&cStack_ec)];
-        pcVar9 = pcVar10;
-      } while (pcVar11 < pcStack_170);
+        pcVar10 = pcVar10 + 1;
+        pcVar9 = pcVar8 + 1;
+        *pcVar8 = pcVar7[(long)(acStack_e0 + -(long)&cStack_ec)];
+        pcVar8 = pcVar9;
+      } while (pcVar10 < pcStack_170);
     }
-    *pcVar10 = '\0';
+    *pcVar9 = '\0';
     iVar3 = func_0x00170360(acStack_150,&DAT_00641601,param_7);
     if (iVar3 != 1) {
                     /* try { // try from 005c7d68 to 005c7d77 has its CatchHandler @ 005c7d78 */
       FUN_00167030("money_get error");
 LAB_005c7d74:
-      uVar7 = FUN_0016b440();
+      uVar6 = FUN_0016b440();
                     /* catch(type#1 @ 00000000) { ... } // from try @ 005c7d68 with catch @ 005c7d78
                         */
-      if (pcVar6 != (char *)0x0) {
-        FUN_00167af0(pcVar6);
+      if (p0 != (char *)0x0) {
+        FUN_00167af0(p0);
       }
       FUN_00166dc0(uStack_178);
-      pcVar11 = pcStack_168;
+      pcVar10 = pcStack_168;
       pcStack_168 = (char *)0x0;
-      if (pcVar11 != (char *)0x0) {
+      if (pcVar10 != (char *)0x0) {
                     /* try { // try from 005c7dcc to 005c7dcf has its CatchHandler @ 005c7dd8 */
         (*pcStack_160)();
       }
-      plVar4 = (long *)FUN_00169180(uVar7);
+      plVar4 = (long *)FUN_00169180(uVar6);
       return plVar4;
     }
-    if (pcVar6 != (char *)0x0) {
-      FUN_00167af0(pcVar6);
+    if (p0 != (char *)0x0) {
+      FUN_00167af0(p0);
     }
   }
   if ((plStack_158 == (long *)0x0) || (plStack_158[3] != plStack_158[4])) {
@@ -167,9 +167,9 @@ LAB_005c7d4c:
 LAB_005c7cd8:
   plVar4 = plStack_158;
   FUN_00166dc0(uStack_178);
-  pcVar11 = pcStack_168;
+  pcVar10 = pcStack_168;
   pcStack_168 = (char *)0x0;
-  if (pcVar11 != (char *)0x0) {
+  if (pcVar10 != (char *)0x0) {
                     /* try { // try from 005c7cf4 to 005c7cf7 has its CatchHandler @ 005c7d90 */
     (*pcStack_160)();
   }
@@ -243,7 +243,7 @@ ulong std::__ndk1::
   int iStack_28c;
   undefined8 uStack_288;
   ulong uStack_280;
-  long lStack_278;
+  void *pvStack_278;
   ulong uStack_270;
   ulong uStack_268;
   char *pcStack_260;
@@ -278,7 +278,7 @@ ulong std::__ndk1::
   pcStack_260 = (char *)0x0;
   uStack_288 = 0;
   uStack_280 = 0;
-  lStack_278 = 0;
+  pvStack_278 = (void *)0x0;
                     /* try { // try from 005c7e54 to 005c7e8b has its CatchHandler @ 005c8fdc */
   func_0x00169ee0(param_3 & 1,param_4,abStack_208,abStack_20c,abStack_210,&uStack_228,&uStack_240,
                   &uStack_258,&uStack_270,&iStack_28c);
@@ -431,7 +431,7 @@ LAB_005c8478:
         uVar14 = uStack_280;
       }
       if (uVar11 <= uVar14) {
-        pbVar1 = (byte *)(lStack_278 + uStack_280);
+        pbVar1 = (byte *)((long)pvStack_278 + uStack_280);
         if ((uStack_288 & 1) == 0) {
           pbVar1 = (byte *)((long)&uStack_288 + uVar30 + 1);
         }
@@ -1066,7 +1066,7 @@ LAB_005c8ed8:
   uVar15 = 1;
 joined_r0x005c8eec:
   if ((uStack_288 & 1) != 0) {
-    FUN_00166120(lStack_278);
+    FUN_00166120(pvStack_278);
   }
   if ((uStack_270 & 1) != 0) {
     FUN_00166120(pcStack_260);

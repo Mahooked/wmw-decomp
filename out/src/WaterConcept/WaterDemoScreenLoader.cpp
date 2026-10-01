@@ -8,28 +8,29 @@
 
 /* WaterConcept::WaterDemoScreenLoader::screenFromName(void*) */
 
-void WaterConcept::WaterDemoScreenLoader::screenFromName(undefined8 param_1,int *param_2)
+void * WaterConcept::WaterDemoScreenLoader::screenFromName(void *p0)
 
 {
   undefined8 uVar1;
+  int *in_x1;
   
-  param_2[2] = 0;
-  param_2[3] = 0;
-  switch(*param_2) {
+  in_x1[2] = 0;
+  in_x1[3] = 0;
+  switch(*in_x1) {
   case 1:
     uVar1 = FUN_00164060(0x478);
                     /* try { // try from 005a3304 to 005a3307 has its CatchHandler @ 005a3428 */
-    func_0x001622c0();
+    p0 = (void *)func_0x001622c0();
     break;
   case 2:
     uVar1 = FUN_00164060(0x2e8);
                     /* try { // try from 005a3334 to 005a3337 has its CatchHandler @ 005a3424 */
-    func_0x00169710();
+    p0 = (void *)func_0x00169710();
     break;
   case 3:
     uVar1 = FUN_00164060(0x2c8);
                     /* try { // try from 005a3348 to 005a334b has its CatchHandler @ 005a3420 */
-    func_0x00167680();
+    p0 = (void *)func_0x00167680();
     break;
   case 4:
   case 5:
@@ -47,54 +48,54 @@ void WaterConcept::WaterDemoScreenLoader::screenFromName(undefined8 param_1,int 
   case 6:
     uVar1 = FUN_00164060(0xa0);
                     /* try { // try from 005a335c to 005a335f has its CatchHandler @ 005a341c */
-    func_0x00168650();
+    p0 = (void *)func_0x00168650();
     break;
   case 7:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a3370 to 005a3373 has its CatchHandler @ 005a3418 */
-    func_0x001621b0();
+    p0 = (void *)func_0x001621b0();
     break;
   case 8:
     uVar1 = FUN_00164060(0x5b0);
                     /* try { // try from 005a3384 to 005a3387 has its CatchHandler @ 005a3414 */
-    func_0x00173bf0();
+    p0 = (void *)func_0x00173bf0();
     break;
   case 0xf:
     uVar1 = FUN_00164060(0x370);
                     /* try { // try from 005a3398 to 005a339b has its CatchHandler @ 005a3410 */
-    func_0x0016e170();
+    p0 = (void *)func_0x0016e170();
     break;
   case 0x11:
     uVar1 = FUN_00164060(0xd8);
                     /* try { // try from 005a33ac to 005a33af has its CatchHandler @ 005a340c */
-    func_0x0016f8c0();
+    p0 = (void *)func_0x0016f8c0();
     break;
   case 0x15:
     uVar1 = FUN_00164060(0xa8);
                     /* try { // try from 005a33c0 to 005a33c3 has its CatchHandler @ 005a3408 */
-    func_0x00167c90();
+    p0 = (void *)func_0x00167c90();
     break;
   case 0x16:
     uVar1 = FUN_00164060(0xb0);
                     /* try { // try from 005a33d4 to 005a33d7 has its CatchHandler @ 005a3404 */
-    func_0x00162100();
+    p0 = (void *)func_0x00162100();
     break;
   case 0x17:
     uVar1 = FUN_00164060(0x168);
                     /* try { // try from 005a33e8 to 005a33eb has its CatchHandler @ 005a3400 */
-    func_0x00164600();
+    p0 = (void *)func_0x00164600();
     break;
   default:
-    if (*param_2 != 0x20) {
-      return;
+    if (*in_x1 != 0x20) {
+      return p0;
     }
     uVar1 = FUN_00164060(0xa8);
                     /* try { // try from 005a3320 to 005a3323 has its CatchHandler @ 005a33fc */
-    func_0x00172240();
+    p0 = (void *)func_0x00172240();
   }
-  *(undefined8 *)(param_2 + 2) = uVar1;
+  *(undefined8 *)(in_x1 + 2) = uVar1;
 switchD_005a32f4_caseD_4:
-  return;
+  return p0;
 }
 
 

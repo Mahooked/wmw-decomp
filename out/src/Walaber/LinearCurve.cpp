@@ -8,7 +8,7 @@
 
 /* Walaber::LinearCurve::loadFromXmlNode(_xmlNode*) */
 
-void Walaber::LinearCurve::loadFromXmlNode(long *param_1,long param_2)
+void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0)
 
 {
   long lVar1;
@@ -19,8 +19,9 @@ void Walaber::LinearCurve::loadFromXmlNode(long *param_1,long param_2)
   undefined4 uVar6;
   undefined8 uVar7;
   ulong uVar8;
-  ulong uVar9;
-  ulong uVar10;
+  void *pvVar9;
+  long in_x1;
+  void *pvVar10;
   long lVar11;
   long lVar12;
   ulong uVar13;
@@ -30,20 +31,20 @@ void Walaber::LinearCurve::loadFromXmlNode(long *param_1,long param_2)
   undefined4 uStack_98;
   ulong uStack_90;
   ulong uStack_88;
-  ulong uStack_80;
+  void *pvStack_80;
   long lStack_78;
   
   lVar1 = tpidr_el0;
   lStack_78 = *(long *)(lVar1 + 0x28);
-  lVar11 = *(long *)(param_2 + 0x18);
+  lVar11 = *(long *)(in_x1 + 0x18);
   if (lVar11 != 0) {
-    uVar10 = (ulong)&uStack_90 | 1;
+    pvVar10 = (void *)((ulong)&uStack_90 | 1);
     do {
       iVar5 = FUN_00162900(*(undefined8 *)(lVar11 + 0x10),"PreLoop");
       if (iVar5 == 0) {
         uVar7 = FUN_00171ed0(lVar11,"value");
         uStack_88 = 0;
-        uStack_80 = 0;
+        pvStack_80 = (void *)0x0;
         uStack_90 = 0;
         uVar8 = FUN_00173480();
         if (0xffffffffffffffef < uVar8) {
@@ -53,33 +54,33 @@ LAB_003e6548:
         }
         if (uVar8 < 0x17) {
           uStack_90 = CONCAT71(uStack_90._1_7_,(char)((int)uVar8 << 1));
-          uVar9 = uVar10;
+          pvVar9 = pvVar10;
           if (uVar8 != 0) goto LAB_003e632c;
         }
         else {
           uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
-          uVar9 = FUN_00164060(uVar13);
+          pvVar9 = (void *)FUN_00164060(uVar13);
           uStack_90 = uVar13 | 1;
           uStack_88 = uVar8;
-          uStack_80 = uVar9;
+          pvStack_80 = pvVar9;
 LAB_003e632c:
-          FUN_001715e0(uVar9,uVar7,uVar8);
+          FUN_001715e0(pvVar9,uVar7,uVar8);
         }
         puVar2 = xmlFree;
-        *(undefined1 *)(uVar9 + uVar8) = 0;
+        *(undefined1 *)((long)pvVar9 + uVar8) = 0;
                     /* try { // try from 003e6344 to 003e634b has its CatchHandler @ 003e6558 */
         (*(code *)puVar2)(uVar7);
                     /* try { // try from 003e634c to 003e6393 has its CatchHandler @ 003e6560 */
         uVar6 = func_0x0016a2b0(&uStack_90);
-        *(undefined4 *)(param_1 + 4) = uVar6;
-        uVar8 = uVar10;
+        *(undefined4 *)(p0 + 0x20) = uVar6;
+        pvVar9 = pvVar10;
         if ((uStack_90 & 1) != 0) {
-          uVar8 = uStack_80;
+          pvVar9 = pvStack_80;
         }
-        FUN_00166450("Walaber",1,"PreLoop -> got content! [%s] = preLoop[%d]\n",uVar8,uVar6);
+        FUN_00166450("Walaber",1,"PreLoop -> got content! [%s] = preLoop[%d]\n",pvVar9,uVar6);
 LAB_003e6420:
         if ((uStack_90 & 1) != 0) {
-          FUN_00166120(uStack_80);
+          FUN_00166120(pvStack_80);
         }
       }
       else {
@@ -87,36 +88,36 @@ LAB_003e6420:
         if (iVar5 == 0) {
           uVar7 = FUN_00171ed0(lVar11,"value");
           uStack_88 = 0;
-          uStack_80 = 0;
+          pvStack_80 = (void *)0x0;
           uStack_90 = 0;
           uVar8 = FUN_00173480();
           if (0xffffffffffffffef < uVar8) goto LAB_003e6548;
           if (uVar8 < 0x17) {
             uStack_90 = CONCAT71(uStack_90._1_7_,(char)((int)uVar8 << 1));
-            uVar9 = uVar10;
+            pvVar9 = pvVar10;
             if (uVar8 != 0) goto LAB_003e63b8;
           }
           else {
             uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
-            uVar9 = FUN_00164060(uVar13);
+            pvVar9 = (void *)FUN_00164060(uVar13);
             uStack_90 = uVar13 | 1;
             uStack_88 = uVar8;
-            uStack_80 = uVar9;
+            pvStack_80 = pvVar9;
 LAB_003e63b8:
-            FUN_001715e0(uVar9,uVar7,uVar8);
+            FUN_001715e0(pvVar9,uVar7,uVar8);
           }
           puVar2 = xmlFree;
-          *(undefined1 *)(uVar9 + uVar8) = 0;
+          *(undefined1 *)((long)pvVar9 + uVar8) = 0;
                     /* try { // try from 003e63d0 to 003e63d7 has its CatchHandler @ 003e6554 */
           (*(code *)puVar2)(uVar7);
                     /* try { // try from 003e63d8 to 003e641f has its CatchHandler @ 003e655c */
           uVar6 = func_0x0016a2b0(&uStack_90);
-          *(undefined4 *)((long)param_1 + 0x24) = uVar6;
-          uVar8 = uVar10;
+          *(undefined4 *)(p0 + 0x24) = uVar6;
+          pvVar9 = pvVar10;
           if ((uStack_90 & 1) != 0) {
-            uVar8 = uStack_80;
+            pvVar9 = pvStack_80;
           }
-          FUN_00166450("Walaber",1,"PostLoop -> got content! [%s] = postLoop[%d]\n",uVar8,uVar6);
+          FUN_00166450("Walaber",1,"PostLoop -> got content! [%s] = postLoop[%d]\n",pvVar9,uVar6);
           goto LAB_003e6420;
         }
       }
@@ -141,10 +142,10 @@ LAB_003e63b8:
             fStack_a4 = fVar4;
             uStack_a0 = 0;
             uStack_98 = 0;
-            func_0x001713d0(param_1,&fStack_a8);
+            func_0x001713d0(p0,&fStack_a8);
           }
         }
-        (**(code **)(*param_1 + 0x48))(param_1);
+        (**(code **)(*(long *)p0 + 0x48))(p0);
       }
       lVar11 = *(long *)(lVar11 + 0x30);
     } while (lVar11 != 0);
@@ -202,11 +203,11 @@ void Walaber::LinearCurve::computeTangents(long param_1)
 
 /* Walaber::LinearCurve::_evaluateCurve(float, float) const */
 
-undefined1  [16]
-Walaber::LinearCurve::_evaluateCurve(undefined1 param_1 [16],float param_2,long param_3)
+undefined1  [16] Walaber::LinearCurve::_evaluateCurve(float p0,float p1)
 
 {
   long lVar1;
+  long in_x0;
   float fVar2;
   undefined4 extraout_s0;
   undefined4 extraout_var;
@@ -219,12 +220,11 @@ Walaber::LinearCurve::_evaluateCurve(undefined1 param_1 [16],float param_2,long 
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  fVar2 = (float)func_0x0016d2f0(param_3,&iStack_3c,&iStack_40);
-  fVar4 = *(float *)(*(long *)(param_3 + 0x18) + (long)iStack_3c * 0x18 + 4);
+  fVar2 = (float)func_0x0016d2f0(in_x0,&iStack_3c,&iStack_40);
+  fVar4 = *(float *)(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18 + 4);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return ZEXT416((uint)(fVar4 + fVar2 * (*(float *)(*(long *)(param_3 + 0x18) +
-                                                      (long)iStack_40 * 0x18 + 4) - fVar4) + param_2
-                         ));
+    return ZEXT416((uint)(fVar4 + fVar2 * (*(float *)(*(long *)(in_x0 + 0x18) +
+                                                      (long)iStack_40 * 0x18 + 4) - fVar4) + p1));
   }
   FUN_00164ff0();
   auVar3._4_4_ = extraout_var;
@@ -241,12 +241,12 @@ Walaber::LinearCurve::_evaluateCurve(undefined1 param_1 [16],float param_2,long 
 
 /* Walaber::LinearCurve::~LinearCurve() */
 
-void Walaber::LinearCurve::~LinearCurve(undefined8 *param_1)
+void Walaber::LinearCurve::~LinearCurve(undefined8 *param_1,ulong param_2)
 
 {
   *param_1 = &PTR__Curve_00710ab8;
-  if (param_1[3] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[3] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[3],param_2);
   }
   FUN_00166120(param_1);
   return;

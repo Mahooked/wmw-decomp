@@ -28,10 +28,10 @@ ulong Walaber::UTF8Helper::shiftBytes(ulong param_1,uint param_2,int param_3)
 
 /* Walaber::UTF8Helper::_shiftLeft(unsigned int, unsigned int) */
 
-int Walaber::UTF8Helper::_shiftLeft(int param_1,uint param_2)
+int Walaber::UTF8Helper::_shiftLeft(uint p0,uint p1)
 
 {
-  return param_1 << (ulong)(param_2 & 0x1f);
+  return p0 << (ulong)(p1 & 0x1f);
 }
 
 
@@ -42,10 +42,10 @@ int Walaber::UTF8Helper::_shiftLeft(int param_1,uint param_2)
 
 /* Walaber::UTF8Helper::_shiftRight(unsigned int, unsigned int) */
 
-uint Walaber::UTF8Helper::_shiftRight(uint param_1,uint param_2)
+uint Walaber::UTF8Helper::_shiftRight(uint p0,uint p1)
 
 {
-  return param_1 >> (ulong)(param_2 & 0x1f);
+  return p0 >> (ulong)(p1 & 0x1f);
 }
 
 
@@ -76,19 +76,18 @@ ulong Walaber::UTF8Helper::shiftBits(ulong param_1,uint param_2,int param_3)
 
 /* Walaber::UTF8Helper::decimalForUTF8Bytes(unsigned char const*, int) */
 
-uint Walaber::UTF8Helper::decimalForUTF8Bytes(byte *param_1,undefined4 param_2)
+uint Walaber::UTF8Helper::decimalForUTF8Bytes(uchar *p0,int p1)
 
 {
-  switch(param_2) {
+  switch(p1) {
   case 1:
-    return (uint)*param_1;
+    return (uint)*p0;
   case 2:
-    return param_1[1] & 0x3f | (*param_1 & 0x1f) << 6;
+    return p0[1] & 0x3f | (*p0 & 0x1f) << 6;
   case 3:
-    return (*param_1 & 0xf) << 0xc | (param_1[1] & 0x3f) << 6 | param_1[2] & 0x3f;
+    return (*p0 & 0xf) << 0xc | (p0[1] & 0x3f) << 6 | p0[2] & 0x3f;
   case 4:
-    return (*param_1 & 7) << 0x12 | (param_1[1] & 0x3f) << 0xc | (param_1[2] & 0x3f) << 6 |
-           param_1[3] & 0x3f;
+    return (*p0 & 7) << 0x12 | (p0[1] & 0x3f) << 0xc | (p0[2] & 0x3f) << 6 | p0[3] & 0x3f;
   default:
     return 0;
   }
@@ -102,19 +101,19 @@ uint Walaber::UTF8Helper::decimalForUTF8Bytes(byte *param_1,undefined4 param_2)
 
 /* Walaber::UTF8Helper::getNumCodeBytes(unsigned int) */
 
-long Walaber::UTF8Helper::getNumCodeBytes(uint param_1)
+long Walaber::UTF8Helper::getNumCodeBytes(uint p0)
 
 {
-  if ((param_1 >> 7 & 1) == 0) {
+  if ((p0 >> 7 & 1) == 0) {
     return 1;
   }
-  if ((param_1 & 0xe0) == 0xc0) {
+  if ((p0 & 0xe0) == 0xc0) {
     return 2;
   }
-  if ((param_1 & 0xf0) == 0xe0) {
+  if ((p0 & 0xf0) == 0xe0) {
     return 3;
   }
-  return (ulong)((param_1 & 0xf8) == 0xf0) << 2;
+  return (ulong)((p0 & 0xf8) == 0xf0) << 2;
 }
 
 

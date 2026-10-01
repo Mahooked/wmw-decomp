@@ -77,6 +77,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
 {
   long lVar1;
   bool bVar2;
+  void *p0;
   long *plVar3;
   long *plVar4;
   ulong uVar5;
@@ -106,7 +107,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
     }
     if (plVar4 != (long *)0x0) {
       if ((*(byte *)(plVar4 + 3) & 1) != 0) {
-        FUN_00166120(plVar4[5]);
+        FUN_00166120((void *)plVar4[5]);
       }
       FUN_00166120(plVar4);
     }
@@ -215,9 +216,10 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
   func_0x0016c310(param_1 + 200,*(undefined8 *)(param_1 + 0xd0));
   func_0x00167a70(param_1 + 0xb0);
   func_0x00167a70(param_1 + 0x98);
-  if (*(long *)(param_1 + 0x40) != 0) {
-    *(long *)(param_1 + 0x48) = *(long *)(param_1 + 0x40);
-    FUN_00166120();
+  p0 = *(void **)(param_1 + 0x40);
+  if (p0 != (void *)0x0) {
+    *(void **)(param_1 + 0x48) = p0;
+    FUN_00166120(p0);
   }
   func_0x001690a0(param_1 + 0x28,*puVar9);
   func_0x001690a0((undefined8 *)(param_1 + 0x10),*(long *)(param_1 + 0x18));
@@ -306,12 +308,13 @@ void Walaber::SkeletonActor::loadSkeleton(long param_1,undefined8 param_2,undefi
 
 /* Walaber::SkeletonActor::_skeletonLoaded(void*) */
 
-void Walaber::SkeletonActor::_skeletonLoaded(long param_1,long param_2)
+void Walaber::SkeletonActor::_skeletonLoaded(void *p0)
 
 {
   long lVar1;
   undefined8 *puVar2;
   int *piVar3;
+  long in_x1;
   long lVar4;
   undefined8 *puStack_88;
   int *piStack_80;
@@ -327,9 +330,9 @@ void Walaber::SkeletonActor::_skeletonLoaded(long param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *(undefined8 *)(param_1 + 8) = *(undefined8 *)(param_2 + 8);
+  *(undefined8 *)((long)p0 + 8) = *(undefined8 *)(in_x1 + 8);
   puVar2 = (undefined8 *)FUN_00164060(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = p0;
   *puVar2 = &PTR__Callback_0070e5e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -347,18 +350,18 @@ void Walaber::SkeletonActor::_skeletonLoaded(long param_1,long param_2)
   puStack_68 = puVar2;
   piStack_60 = piVar3;
   FUN_0016bb90(&puStack_78);
-  lVar4 = *(long *)(param_1 + 8);
+  lVar4 = *(long *)((long)p0 + 8);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 003406a0 to 003406ab has its CatchHandler @ 00340728 */
   puStack_88 = puVar2;
   piStack_80 = piVar3;
-  func_0x0016e4d0(lVar4 + 0xe8,param_1,&puStack_88);
+  func_0x0016e4d0(lVar4 + 0xe8,p0,&puStack_88);
   FUN_0016bb90(&puStack_88);
-  if (*(char *)(param_1 + 0x75) == '\0') {
+  if (*(char *)((long)p0 + 0x75) == '\0') {
                     /* try { // try from 003406cc to 003406ef has its CatchHandler @ 00340738 */
-    (**(code **)(**(long **)(param_1 + 8) + 0x10))(*(long **)(param_1 + 8),param_1 + 0x58);
-    (**(code **)(**(long **)(param_1 + 8) + 0x18))(*(long **)(param_1 + 8),param_1 + 100);
-    func_0x0016c910(*(undefined8 *)(param_1 + 8),*(undefined1 *)(param_1 + 0x74));
+    (**(code **)(**(long **)((long)p0 + 8) + 0x10))(*(long **)((long)p0 + 8),(long)p0 + 0x58);
+    (**(code **)(**(long **)((long)p0 + 8) + 0x18))(*(long **)((long)p0 + 8),(long)p0 + 100);
+    func_0x0016c910(*(undefined8 *)((long)p0 + 8),*(undefined1 *)((long)p0 + 0x74));
   }
   FUN_0016bb90(&puStack_68);
   func_0x00172a00(&puStack_58);
@@ -478,7 +481,7 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
   while (pbVar2 = pbVar8, pbVar2 != pbVar1) {
     pbVar8 = pbVar2 + -0x18;
     if ((*pbVar8 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(pbVar2 + -8));
+      FUN_00166120(*(void **)(pbVar2 + -8));
     }
   }
   *(byte **)(param_1 + 0xb8) = pbVar1;
@@ -496,7 +499,7 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
   while (pbVar2 = pbVar8, pbVar2 != pbVar1) {
     pbVar8 = pbVar2 + -0x18;
     if ((*pbVar8 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(pbVar2 + -8));
+      FUN_00166120(*(void **)(pbVar2 + -8));
     }
   }
   *(byte **)(param_1 + 0xa0) = pbVar1;
@@ -580,12 +583,12 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* Walaber::SkeletonActor::_xmlFileLoaded(void*) */
 
-void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
+void Walaber::SkeletonActor::_xmlFileLoaded(void *p0)
 
 {
   byte bVar1;
   long lVar2;
-  undefined8 uVar3;
+  void *pvVar3;
   uint uVar4;
   undefined1 uVar5;
   undefined1 uVar6;
@@ -606,6 +609,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   long *plVar21;
   undefined1 *puVar22;
   byte *pbVar23;
+  long in_x1;
   long lVar24;
   byte *pbVar25;
   ulong uVar26;
@@ -636,8 +640,8 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   undefined1 uStack_288;
   undefined1 uStack_287;
   undefined6 uStack_286;
-  ulong uStack_280;
-  undefined8 uStack_270;
+  void *pvStack_280;
+  void *pvStack_270;
   undefined8 uStack_268;
   undefined8 uStack_260;
   undefined8 uStack_258;
@@ -648,9 +652,9 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   undefined4 uStack_234;
   code *pcStack_230;
   undefined8 uStack_228;
-  undefined8 uStack_220;
+  void *pvStack_220;
   byte abStack_218 [16];
-  undefined8 uStack_208;
+  void *pvStack_208;
   byte bStack_200;
   undefined4 uStack_1ff;
   undefined1 uStack_1fb;
@@ -664,7 +668,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   undefined1 uStack_1f3;
   undefined1 uStack_1f2;
   undefined1 uStack_1f1;
-  undefined8 uStack_1f0;
+  void *pvStack_1f0;
   long alStack_1e8 [2];
   byte *pbStack_1d8;
   undefined8 *puStack_1d0;
@@ -681,7 +685,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   undefined1 *puStack_150;
   qword *pqStack_148;
   qword qStack_140;
-  undefined8 uStack_138;
+  void *pvStack_138;
   undefined8 uStack_130;
   undefined1 uStack_128;
   undefined1 uStack_127;
@@ -710,16 +714,16 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
   undefined1 uStack_c3;
   undefined1 uStack_c2;
   undefined1 uStack_c1;
-  ulong uStack_c0;
+  void *pvStack_c0;
   undefined8 uStack_b8;
   undefined1 uStack_b0;
   undefined7 uStack_af;
   
   lVar2 = tpidr_el0;
   lVar24 = *(long *)(lVar2 + 0x28);
-  if (*(long *)(param_2 + 0x20) != 0) {
+  if (*(long *)(in_x1 + 0x20) != 0) {
     uStack_c1 = 0;
-    uStack_c0 = 0;
+    pvStack_c0 = (void *)0x0;
     uStack_c7 = 0x6e;
     uStack_c6 = 0x4c;
     uStack_c5 = 0x69;
@@ -733,10 +737,9 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
     uStack_c8 = 0x6f;
     uStack_c2 = 0;
                     /* try { // try from 00340bc4 to 00340bcf has its CatchHandler @ 003440d8 */
-    func_0x00169040(&lStack_f8,*(long *)(param_2 + 0x20),*(undefined8 *)(param_2 + 0x28),&uStack_d0)
-    ;
+    func_0x00169040(&lStack_f8,*(long *)(in_x1 + 0x20),*(undefined8 *)(in_x1 + 0x28),&uStack_d0);
     if ((uStack_d0 & 1) != 0) {
-      FUN_00166120(uStack_c0);
+      FUN_00166120(pvStack_c0);
     }
     if (lStack_f8 != 0) {
       uStack_c8 = 0;
@@ -747,7 +750,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uStack_c3 = 0;
       uStack_c2 = 0;
       uStack_c1 = 0;
-      uStack_c0 = 0;
+      pvStack_c0 = (void *)0x0;
       uStack_cb = 0x65;
       uStack_ca = 0x73;
       uStack_d0 = 0x6563530c;
@@ -757,7 +760,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uVar14 = func_0x0016e500(uStack_f0,&uStack_d0);
       func_0x001656f0(alStack_108,uVar14);
       if ((uStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
                     /* try { // try from 00340c48 to 00340c53 has its CatchHandler @ 003440d4 */
       if ((alStack_108[0] != 0) && (func_0x00169fe0(&uStack_180,alStack_108), uStack_180 != 0)) {
@@ -769,26 +772,26 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
           uStack_288 = 0;
           uStack_287 = 0;
           uStack_286 = 0;
-          uStack_280 = 0;
+          pvStack_280 = (void *)0x0;
           bStack_290 = 8;
           uStack_28f = 0x656d616e;
           uStack_28b = 0;
                     /* try { // try from 00340c98 to 00340ca7 has its CatchHandler @ 003443fc */
           uVar15 = func_0x00171580(&uStack_180,&bStack_290,&uStack_d0);
           if ((bStack_290 & 1) != 0) {
-            FUN_00166120(uStack_280);
+            FUN_00166120(pvStack_280);
           }
           if ((uVar15 & 1) != 0) {
                     /* try { // try from 00340cc0 to 00340ccb has its CatchHandler @ 003442a0 */
             func_0x00162cf0(&bStack_290,&uStack_d0);
                     /* try { // try from 00340cd0 to 00340ce7 has its CatchHandler @ 003442a4 */
             pbStack_2b0 = &bStack_290;
-            lVar16 = func_0x00169b40(param_1 + 0x110,&bStack_290,&DAT_00628882,&pbStack_2b0,
+            lVar16 = func_0x00169b40((long)p0 + 0x110,&bStack_290,&DAT_00628882,&pbStack_2b0,
                                      &uStack_130);
             *(int *)(lVar16 + 0x38) = 1 << (ulong)(uVar32 & 0x1f);
             uVar32 = uVar32 + 1;
             if ((bStack_290 & 1) != 0) {
-              FUN_00166120(uStack_280);
+              FUN_00166120(pvStack_280);
             }
           }
                     /* try { // try from 00340d04 to 00340d0b has its CatchHandler @ 003443f4 */
@@ -804,7 +807,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uStack_c3 = 0;
       uStack_c2 = 0;
       uStack_c1 = 0;
-      uStack_c0 = 0;
+      pvStack_c0 = (void *)0x0;
       uStack_cb = 0x70;
       uStack_ca = 0x73;
       uStack_d0 = 0x6f72470c;
@@ -814,7 +817,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uVar14 = func_0x0016e500(uStack_f0,&uStack_d0);
       func_0x001656f0(alStack_118,uVar14);
       if ((uStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
       if (alStack_118[0] != 0) {
         uStack_2a8 = 0;
@@ -826,7 +829,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
         func_0x00169fe0(&pbStack_1d8,alStack_118);
         if (pbStack_1d8 != (byte *)0x0) {
           uVar32 = 0;
-          lVar16 = param_1 + 0xf8;
+          lVar16 = (long)p0 + 0xf8;
           pcVar33 = (char *)((ulong)&uStack_d0 | 1);
           do {
                     /* try { // try from 00340ddc to 00340de3 has its CatchHandler @ 003443f0 */
@@ -841,14 +844,14 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
             uStack_c3 = 0;
             uStack_c2 = 0;
             uStack_c1 = 0;
-            uStack_c0 = 0;
+            pvStack_c0 = (void *)0x0;
             uStack_d0 = 0x6d616e08;
             uStack_cc = 0x65;
             uStack_cb = 0;
                     /* try { // try from 00340df8 to 00340e07 has its CatchHandler @ 003443dc */
             uVar15 = func_0x00171580(&pbStack_1d8,&uStack_d0,&bStack_290);
             if ((uStack_d0 & 1) != 0) {
-              FUN_00166120(uStack_c0);
+              FUN_00166120(pvStack_c0);
             }
             if ((uVar15 & 1) != 0) {
                     /* try { // try from 00340e20 to 00340e2b has its CatchHandler @ 0034429c */
@@ -876,7 +879,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                 bVar9 = false;
               }
               if ((uStack_d0 & 1) != 0) {
-                FUN_00166120(uStack_c0);
+                FUN_00166120(pvStack_c0);
               }
               uStack_cc = (undefined1)((ulong)&uStack_130 >> 0x20);
               uVar5 = uStack_cc;
@@ -901,7 +904,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                 *(int *)(lVar17 + 0x38) = iVar11;
                 qStack_140 = 0;
                 pqStack_148 = (qword *)0x0;
-                uStack_138 = 0;
+                pvStack_138 = (void *)0x0;
                     /* try { // try from 00340f0c to 00340f5b has its CatchHandler @ 003442dc */
                 uStack_d0 = uVar4;
                 uStack_cc = uVar5;
@@ -915,8 +918,8 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                 uStack_cb = (undefined1)((ulong)lVar17 >> 0x28);
                 uStack_ca = (undefined1)((ulong)lVar17 >> 0x30);
                 uStack_c9 = (undefined1)((ulong)lVar17 >> 0x38);
-                lVar17 = func_0x0016b370(param_1 + 0x140,lVar17,&DAT_00628882,&uStack_d0,&uStack_180
-                                        );
+                lVar17 = func_0x0016b370((long)p0 + 0x140,lVar17,&DAT_00628882,&uStack_d0,
+                                         &uStack_180);
                 if ((qword **)(lVar17 + 0x28) != &pqStack_148) {
                   func_0x00172150((qword **)(lVar17 + 0x28),pqStack_148,qStack_140);
                 }
@@ -950,7 +953,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                                                    "NextAnimationGroup",0x12), iVar11 == 0)) {
                     /* try { // try from 00340fe8 to 00340fef has its CatchHandler @ 003442bc */
                         func_0x001627a0(&uStack_180);
-                        uStack_c0 = 0;
+                        pvStack_c0 = (void *)0x0;
                         uStack_b8 = 0x100000000;
                         uStack_d0 = 0;
                         uStack_cc = 0;
@@ -979,7 +982,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                     /* try { // try from 0034104c to 00341057 has its CatchHandler @ 00344180 */
                           func_0x00171f60(lVar17 + 0x28,&uStack_d0);
                           if ((uStack_d0 & 1) != 0) {
-                            FUN_00166120(uStack_c0);
+                            FUN_00166120(pvStack_c0);
                           }
                         }
                         lVar35 = *(long *)(lVar17 + 0x30);
@@ -993,14 +996,14 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_c3 = 0;
                         uStack_c2 = 0;
                         uStack_c1 = 0;
-                        uStack_c0 = 0;
+                        pvStack_c0 = (void *)0x0;
                         uStack_d0 = 0x6d616e08;
                         uStack_cc = 0x65;
                         uStack_cb = 0;
                     /* try { // try from 00341080 to 0034108f has its CatchHandler @ 003442b8 */
                         uVar15 = func_0x00171580(&bStack_200,&uStack_d0,&uStack_180);
                         if ((uStack_d0 & 1) != 0) {
-                          FUN_00166120(uStack_c0);
+                          FUN_00166120(pvStack_c0);
                         }
                         if ((uVar15 & 1) != 0) {
                     /* try { // try from 003410a8 to 003410b3 has its CatchHandler @ 0034417c */
@@ -1014,11 +1017,11 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                             **(undefined1 **)(lVar35 + -0x18) = 0;
                             *(undefined8 *)(lVar35 + -0x20) = 0;
                             if ((*(byte *)(lVar35 + -0x28) & 1) != 0) {
-                              FUN_00166120(*(undefined8 *)(lVar35 + -0x18));
+                              FUN_00166120(*(void **)(lVar35 + -0x18));
                               *(undefined8 *)(lVar35 + -0x28) = 0;
                             }
                           }
-                          *(ulong *)(lVar35 + -0x18) = uStack_c0;
+                          *(void **)(lVar35 + -0x18) = pvStack_c0;
                           *(ulong *)(lVar35 + -0x20) =
                                CONCAT17(uStack_c1,
                                         CONCAT16(uStack_c2,
@@ -1046,13 +1049,13 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_c2 = 0;
                         uStack_c1 = 0;
                         uStack_d0 = 0x12;
-                        uStack_c0 = 0;
+                        pvStack_c0 = (void *)0x0;
                         builtin_strncpy(pcVar33,"crossFade",9);
                         uStack_c6 = 0;
                     /* try { // try from 00341124 to 00341133 has its CatchHandler @ 003442b4 */
                         uVar15 = func_0x00171580(&bStack_200,&uStack_d0,&bStack_290);
                         if ((uStack_d0 & 1) != 0) {
-                          FUN_00166120(uStack_c0);
+                          FUN_00166120(pvStack_c0);
                         }
                         if ((uVar15 & 1) != 0) {
                     /* try { // try from 0034114c to 00341153 has its CatchHandler @ 00344388 */
@@ -1071,13 +1074,13 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_c2 = 0;
                         uStack_c1 = 0;
                         uStack_d0 = 10;
-                        uStack_c0 = 0;
+                        pvStack_c0 = (void *)0x0;
                         builtin_strncpy(pcVar33,"loops",5);
                         uStack_ca = 0;
                     /* try { // try from 00341188 to 00341197 has its CatchHandler @ 003442c4 */
                         uVar15 = func_0x00171580(&bStack_200,&uStack_d0,&bStack_290);
                         if ((uStack_d0 & 1) != 0) {
-                          FUN_00166120(uStack_c0);
+                          FUN_00166120(pvStack_c0);
                         }
                         if ((uVar15 & 1) != 0) {
                     /* try { // try from 003411b0 to 003411b7 has its CatchHandler @ 00344388 */
@@ -1096,13 +1099,13 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_c2 = 0;
                         uStack_c1 = 0;
                         uStack_d0 = 0x16;
-                        uStack_c0 = 0;
+                        pvStack_c0 = (void *)0x0;
                         builtin_strncpy(pcVar33,"probability",0xb);
                         uStack_c4 = 0;
                     /* try { // try from 003411f0 to 003411ff has its CatchHandler @ 003442c0 */
                         uVar15 = func_0x00171580(&bStack_200,&uStack_d0,&bStack_290);
                         if ((uStack_d0 & 1) != 0) {
-                          FUN_00166120(uStack_c0);
+                          FUN_00166120(pvStack_c0);
                         }
                         if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341218 to 0034121f has its CatchHandler @ 00344388 */
@@ -1146,34 +1149,33 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
             uStack_c6 = 0;
             uStack_c7 = 0;
             uStack_c8 = 0;
-            uStack_c0 = 0;
+            pvStack_c0 = (void *)0x0;
             uStack_b8 = 0;
                     /* try { // try from 003412d0 to 003412db has its CatchHandler @ 003443b8 */
-            auVar40 = func_0x00174010(param_1 + 0x158,&uStack_d0,&uStack_d0);
-            lVar17 = auVar40._0_8_;
-            lVar16 = CONCAT17(uStack_c1,
-                              CONCAT16(uStack_c2,
-                                       CONCAT15(uStack_c3,
-                                                CONCAT14(uStack_c4,
-                                                         CONCAT13(uStack_c5,
-                                                                  CONCAT12(uStack_c6,
-                                                                           CONCAT11(uStack_c7,
-                                                                                    uStack_c8)))))))
-            ;
-            if (lVar16 != 0) {
-              uStack_c0 = lVar16;
-              FUN_00166120();
+            auVar40 = func_0x00174010((long)p0 + 0x158,&uStack_d0,&uStack_d0);
+            lVar16 = auVar40._0_8_;
+            pvVar3 = (void *)CONCAT17(uStack_c1,
+                                      CONCAT16(uStack_c2,
+                                               CONCAT15(uStack_c3,
+                                                        CONCAT14(uStack_c4,
+                                                                 CONCAT13(uStack_c5,
+                                                                          CONCAT12(uStack_c6,
+                                                                                   CONCAT11(
+                                                  uStack_c7,uStack_c8)))))));
+            if (pvVar3 != (void *)0x0) {
+              pvStack_c0 = pvVar3;
+              FUN_00166120(pvVar3);
             }
             if ((auVar40._8_8_ & 0xff) != 0) {
-              lVar16 = *(long *)(pbVar23 + 0x28);
-              uVar15 = (*(long *)(pbVar23 + 0x30) - lVar16 >> 3) * -0x3333333333333333;
+              lVar17 = *(long *)(pbVar23 + 0x28);
+              uVar15 = (*(long *)(pbVar23 + 0x30) - lVar17 >> 3) * -0x3333333333333333;
               if ((int)uVar15 != 0) {
                 lVar35 = 0;
                 uVar37 = 1;
                 while( true ) {
                     /* try { // try from 0034133c to 00341343 has its CatchHandler @ 0034451c */
-                  lVar16 = func_0x001657e0(param_1 + 0xf8,lVar16 + lVar35);
-                  if (param_1 + 0x100 != lVar16) {
+                  lVar17 = func_0x001657e0((long)p0 + 0xf8,lVar17 + lVar35);
+                  if ((long)p0 + 0x100 != lVar17) {
                     uStack_d0 = 0;
                     uStack_cc = 0;
                     uStack_cb = 0;
@@ -1184,26 +1186,26 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                     uStack_c6 = 0;
                     uStack_c5 = 0;
                     uStack_c4 = 1;
-                    puVar18 = *(undefined8 **)(lVar17 + 0x30);
-                    if (puVar18 < *(undefined8 **)(lVar17 + 0x38)) {
+                    puVar18 = *(undefined8 **)(lVar16 + 0x30);
+                    if (puVar18 < *(undefined8 **)(lVar16 + 0x38)) {
                       puVar18[1] = CONCAT17(uStack_c1,
                                             CONCAT16(uStack_c2,CONCAT15(uStack_c3,0x100000001)));
                       *puVar18 = 0;
-                      lVar34 = *(long *)(lVar17 + 0x30) + 0x10;
-                      *(long *)(lVar17 + 0x30) = lVar34;
+                      lVar34 = *(long *)(lVar16 + 0x30) + 0x10;
+                      *(long *)(lVar16 + 0x30) = lVar34;
                     }
                     else {
                     /* try { // try from 00341380 to 0034138b has its CatchHandler @ 003444f4 */
-                      func_0x00163b60(lVar17 + 0x28,&uStack_d0);
-                      lVar34 = *(long *)(lVar17 + 0x30);
+                      func_0x00163b60(lVar16 + 0x28,&uStack_d0);
+                      lVar34 = *(long *)(lVar16 + 0x30);
                     }
-                    *(undefined4 *)(lVar34 + -0x10) = *(undefined4 *)(lVar16 + 0x38);
-                    lVar16 = *(long *)(pbVar23 + 0x28);
-                    *(undefined1 *)(lVar34 + -4) = *(undefined1 *)(lVar16 + lVar35 + 0x20);
-                    *(undefined8 *)(lVar34 + -0xc) = *(undefined8 *)(lVar16 + lVar35 + 0x18);
+                    *(undefined4 *)(lVar34 + -0x10) = *(undefined4 *)(lVar17 + 0x38);
+                    lVar17 = *(long *)(pbVar23 + 0x28);
+                    *(undefined1 *)(lVar34 + -4) = *(undefined1 *)(lVar17 + lVar35 + 0x20);
+                    *(undefined8 *)(lVar34 + -0xc) = *(undefined8 *)(lVar17 + lVar35 + 0x18);
                   }
                   if ((uVar15 & 0xffffffff) <= uVar37) break;
-                  lVar16 = *(long *)(pbVar23 + 0x28);
+                  lVar17 = *(long *)(pbVar23 + 0x28);
                   lVar35 = lVar35 + 0x28;
                   uVar37 = uVar37 + 1;
                 }
@@ -1236,7 +1238,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uStack_c3 = 0;
       uStack_c2 = 0;
       uStack_c1 = 0;
-      uStack_c0 = 0;
+      pvStack_c0 = (void *)0x0;
       uStack_c7 = 0x6e;
       uStack_c6 = 0x73;
       uStack_d0 = 0x696e4114;
@@ -1250,7 +1252,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
       uVar14 = func_0x0016e500(uStack_f0,&uStack_d0);
       func_0x001656f0(alStack_190,uVar14);
       if ((uStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
                     /* try { // try from 00341490 to 0034149b has its CatchHandler @ 003440cc */
       if ((alStack_190[0] != 0) &&
@@ -1297,58 +1299,58 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
             }
           }
           if (((ulong)pbStack_2b0 & 1) != 0) {
-            FUN_00166120(CONCAT44(uStack_29c,uStack_2a0));
+            FUN_00166120((void *)CONCAT44(uStack_29c,uStack_2a0));
           }
           if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341624 to 0034162f has its CatchHandler @ 003441bc */
             func_0x00162cf0(&pbStack_2b0,&bStack_290);
-            if (*(long *)(param_1 + 0xb8) == *(long *)(param_1 + 0xc0)) {
-              func_0x00168ed0(param_1 + 0xb0,&pbStack_2b0);
+            if (*(long *)((long)p0 + 0xb8) == *(long *)((long)p0 + 0xc0)) {
+              func_0x00168ed0((long)p0 + 0xb0,&pbStack_2b0);
             }
             else {
                     /* try { // try from 00341640 to 00341667 has its CatchHandler @ 003441e0 */
-              func_0x0016f720(*(long *)(param_1 + 0xb8),&pbStack_2b0);
-              *(long *)(param_1 + 0xb8) = *(long *)(param_1 + 0xb8) + 0x18;
+              func_0x0016f720(*(long *)((long)p0 + 0xb8),&pbStack_2b0);
+              *(long *)((long)p0 + 0xb8) = *(long *)((long)p0 + 0xb8) + 0x18;
             }
                     /* try { // try from 00341668 to 00341673 has its CatchHandler @ 003441b8 */
             func_0x00162cf0(&uStack_130,&uStack_d0);
-            lVar16 = *(long *)(param_1 + 0x98);
-            lVar17 = *(long *)(param_1 + 0xa0);
+            lVar16 = *(long *)((long)p0 + 0x98);
+            lVar17 = *(long *)((long)p0 + 0xa0);
             pqStack_148 = &uStack_130;
                     /* try { // try from 00341684 to 0034169b has its CatchHandler @ 00344368 */
-            lVar35 = func_0x001650e0(param_1 + 200,&uStack_130,&DAT_00628882,&pqStack_148,
+            lVar35 = func_0x001650e0((long)p0 + 200,&uStack_130,&DAT_00628882,&pqStack_148,
                                      &uStack_160);
             *(int *)(lVar35 + 0x38) = (int)((ulong)(lVar17 - lVar16) >> 3) * -0x55555555;
             uStack_160 = (byte *)CONCAT44(uStack_160._4_4_,
-                                          (int)((ulong)(*(long *)(param_1 + 0xa0) -
-                                                       *(long *)(param_1 + 0x98)) >> 3) *
+                                          (int)((ulong)(*(long *)((long)p0 + 0xa0) -
+                                                       *(long *)((long)p0 + 0x98)) >> 3) *
                                           -0x55555555);
             pqStack_148 = &uStack_160;
                     /* try { // try from 003416d4 to 003416f7 has its CatchHandler @ 00344378 */
-            lVar16 = func_0x0016f2e0(param_1 + 0xe0,&uStack_160,&DAT_00628882,&pqStack_148,
+            lVar16 = func_0x0016f2e0((long)p0 + 0xe0,&uStack_160,&DAT_00628882,&pqStack_148,
                                      &pbStack_1d8);
             func_0x00171ac0(lVar16 + 0x28,&uStack_130);
-            if (*(long *)(param_1 + 0xa0) == *(long *)(param_1 + 0xa8)) {
-              func_0x00168ed0(param_1 + 0x98,&uStack_130);
+            if (*(long *)((long)p0 + 0xa0) == *(long *)((long)p0 + 0xa8)) {
+              func_0x00168ed0((long)p0 + 0x98,&uStack_130);
             }
             else {
                     /* try { // try from 00341708 to 0034172f has its CatchHandler @ 00344368 */
-              func_0x0016f720(*(long *)(param_1 + 0xa0),&uStack_130);
-              *(long *)(param_1 + 0xa0) = *(long *)(param_1 + 0xa0) + 0x18;
+              func_0x0016f720(*(long *)((long)p0 + 0xa0),&uStack_130);
+              *(long *)((long)p0 + 0xa0) = *(long *)((long)p0 + 0xa0) + 0x18;
             }
             pqStack_148 = &uStack_130;
                     /* try { // try from 00341738 to 0034174f has its CatchHandler @ 003442b0 */
-            lVar16 = func_0x00168960(param_1 + 0x128,&uStack_130,&DAT_00628882,&pqStack_148,
+            lVar16 = func_0x00168960((long)p0 + 0x128,&uStack_130,&DAT_00628882,&pqStack_148,
                                      &uStack_160);
             *(undefined8 *)(lVar16 + 0x38) = 0xffffffff00000000;
-            uStack_138 = 0;
+            pvStack_138 = (void *)0x0;
             pqStack_148 = &Elf64_Ehdr_00000000.e_entry;
             builtin_strncpy((char *)((ulong)&pqStack_148 | 1),"canCrossFade",0xc);
             qStack_140 = 0;
                     /* try { // try from 0034178c to 0034179b has its CatchHandler @ 003441d0 */
             uVar15 = func_0x00171580(apbStack_1a0,&pqStack_148,&uStack_180);
             if (((ulong)pqStack_148 & 1) != 0) {
-              FUN_00166120(uStack_138);
+              FUN_00166120(pvStack_138);
             }
             if ((uVar15 & 1) != 0) {
                     /* try { // try from 003417b4 to 003417bb has its CatchHandler @ 003442b0 */
@@ -1378,7 +1380,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                   func_0x00169fe0(&pbStack_1d8,alStack_1b0);
                   while (pbStack_1d8 != (byte *)0x0) {
                     pbStack_158 = (byte *)0x0;
-                    puStack_150 = (undefined1 *)0x0;
+                    puStack_150 = (void *)0x0;
                     uStack_160 = (byte *)0x656d616e08;
                     /* try { // try from 00342c64 to 00342c73 has its CatchHandler @ 00344620 */
                     uVar15 = func_0x00171580(&pbStack_1d8,&uStack_160,&uStack_180);
@@ -1394,7 +1396,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_1fb = (undefined1)((ulong)&uStack_160 >> 0x28);
                         uStack_1fa = (undefined1)((ulong)&uStack_160 >> 0x30);
                         uStack_1f9 = (undefined1)((ulong)&uStack_160 >> 0x38);
-                        lVar35 = func_0x00169b40(param_1 + 0x110,&uStack_160,&DAT_00628882,
+                        lVar35 = func_0x00169b40((long)p0 + 0x110,&uStack_160,&DAT_00628882,
                                                  &bStack_200,&pcStack_230);
                         uVar32 = *(uint *)(lVar35 + 0x38);
                       }
@@ -1405,7 +1407,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(long param_1,long param_2)
                         uStack_1fa = (undefined1)((ulong)&uStack_160 >> 0x30);
                         uStack_1f9 = (undefined1)((ulong)&uStack_160 >> 0x38);
                     /* try { // try from 00342cb0 to 00342cfb has its CatchHandler @ 00344580 */
-                        lVar35 = func_0x00169b40(param_1 + 0x110,&uStack_160,&DAT_00628882,
+                        lVar35 = func_0x00169b40((long)p0 + 0x110,&uStack_160,&DAT_00628882,
                                                  &bStack_200,&pcStack_230);
                         uVar32 = *(uint *)(lVar16 + 0x3c) | *(uint *)(lVar35 + 0x38);
                       }
@@ -1433,7 +1435,7 @@ LAB_0034184c:
                       func_0x00169fe0(&pbStack_1d8,alStack_1b0);
                       while (pbStack_1d8 != (byte *)0x0) {
                         pbStack_158 = (byte *)0x0;
-                        puStack_150 = (undefined1 *)0x0;
+                        puStack_150 = (void *)0x0;
                         uStack_160 = (byte *)0x656d616e08;
                     /* try { // try from 00342d54 to 00342d63 has its CatchHandler @ 00344610 */
                         uVar15 = func_0x00171580(&pbStack_1d8,&uStack_160,&uStack_180);
@@ -1449,7 +1451,7 @@ LAB_0034184c:
                           uStack_1fa = (undefined1)((ulong)&uStack_160 >> 0x30);
                           uStack_1f9 = (undefined1)((ulong)&uStack_160 >> 0x38);
                     /* try { // try from 00342d90 to 00342e17 has its CatchHandler @ 00344630 */
-                          lVar35 = func_0x001650e0(param_1 + 0xf8,&uStack_160,&DAT_00628882,
+                          lVar35 = func_0x001650e0((long)p0 + 0xf8,&uStack_160,&DAT_00628882,
                                                    &bStack_200,alStack_1c0);
                           pcStack_230 = (code *)CONCAT44(pcStack_230._4_4_,*(uint *)(lVar35 + 0x38))
                           ;
@@ -1460,7 +1462,7 @@ LAB_0034184c:
                           uStack_1fb = (undefined1)((ulong)&pcStack_230 >> 0x28);
                           uStack_1fa = (undefined1)((ulong)&pcStack_230 >> 0x30);
                           uStack_1f9 = (undefined1)((ulong)&pcStack_230 >> 0x38);
-                          lVar35 = func_0x0016b370(param_1 + 0x140,&pcStack_230,&DAT_00628882,
+                          lVar35 = func_0x0016b370((long)p0 + 0x140,&pcStack_230,&DAT_00628882,
                                                    &bStack_200,alStack_1c0);
                           if (*(long *)(lVar35 + 0x30) == *(long *)(lVar35 + 0x38)) {
                             func_0x00168ed0(lVar35 + 0x28,&uStack_130);
@@ -1493,7 +1495,7 @@ LAB_0034184c:
                     iVar11 = 0;
                     while (alStack_1c0[0] != 0) {
                       pbStack_158 = (byte *)0x0;
-                      puStack_150 = (undefined1 *)0x0;
+                      puStack_150 = (void *)0x0;
                       uStack_160 = (byte *)0x6570797408;
                     /* try { // try from 003418f8 to 00341907 has its CatchHandler @ 003445d4 */
                       uVar15 = func_0x00171580(alStack_1c0,&uStack_160,&uStack_180);
@@ -1536,7 +1538,7 @@ LAB_0034184c:
                             bVar9 = false;
                           }
                           if ((bStack_200 & 1) != 0) {
-                            FUN_00166120(uStack_1f0);
+                            FUN_00166120(pvStack_1f0);
                           }
                           if (bVar9) {
                     /* try { // try from 003419dc to 003419e3 has its CatchHandler @ 00344724 */
@@ -1553,7 +1555,7 @@ LAB_0034184c:
                             uStack_1f3 = 0;
                             uStack_1f2 = 0;
                             uStack_1f1 = 0;
-                            uStack_1f0 = 0;
+                            pvStack_1f0 = (void *)0x0;
                             *puVar18 = &PTR__SoundActionData_0070e4d8;
                             bStack_200 = 10;
                             pcVar33[4] = 'd';
@@ -1575,7 +1577,7 @@ LAB_0034184c:
                     /* try { // try from 00341a34 to 00341a43 has its CatchHandler @ 003446ec */
                             uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                             if ((bStack_200 & 1) != 0) {
-                              FUN_00166120(uStack_1f0);
+                              FUN_00166120(pvStack_1f0);
                             }
                             if ((uVar15 & 1) == 0) {
                               uStack_1ff = 0;
@@ -1590,13 +1592,13 @@ LAB_0034184c:
                               uStack_1f2 = 0;
                               uStack_1f1 = 0;
                               bStack_200 = 0x12;
-                              uStack_1f0 = 0;
+                              pvStack_1f0 = (void *)0x0;
                               builtin_strncpy(pcVar33,"soundFile",9);
                               uStack_1f6 = 0;
                     /* try { // try from 00341c80 to 00341c8f has its CatchHandler @ 003446c0 */
                               uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                               if ((bStack_200 & 1) != 0) {
-                                FUN_00166120(uStack_1f0);
+                                FUN_00166120(pvStack_1f0);
                               }
                               if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341ca8 to 00341cb3 has its CatchHandler @ 00344678 */
@@ -1608,11 +1610,11 @@ LAB_0034184c:
                                   *(undefined1 *)puVar18[5] = 0;
                                   puVar18[4] = 0;
                                   if ((*(byte *)(puVar18 + 3) & 1) != 0) {
-                                    FUN_00166120(puVar18[5]);
+                                    FUN_00166120((void *)puVar18[5]);
                                     puVar18[3] = 0;
                                   }
                                 }
-                                uVar3 = uStack_1f0;
+                                pvVar3 = pvStack_1f0;
                                 uVar39 = CONCAT17(uStack_1f1,
                                                   CONCAT16(uStack_1f2,
                                                            CONCAT15(uStack_1f3,
@@ -1636,9 +1638,9 @@ LAB_0034184c:
                                 uStack_1f2 = 0;
                                 uStack_1f1 = 0;
                                 bStack_200 = 8;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 uStack_1ff = 0x4f567369;
-                                puVar18[5] = uVar3;
+                                puVar18[5] = pvVar3;
                                 puVar18[4] = uVar39;
                                 *(undefined8 *)pbVar23 = uVar14;
                                 *(undefined4 *)(puVar18 + 6) = 1;
@@ -1646,7 +1648,7 @@ LAB_0034184c:
                     /* try { // try from 00341fbc to 00341fcb has its CatchHandler @ 00344670 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341fe4 to 00341feb has its CatchHandler @ 00344724 */
@@ -1671,14 +1673,14 @@ LAB_0034184c:
                               uStack_1f4 = 0;
                               uStack_1f3 = 0;
                               uStack_1f1 = 0;
-                              uStack_1f0 = 0;
+                              pvStack_1f0 = (void *)0x0;
                               bStack_200 = 0x1a;
                               builtin_strncpy(pcVar33,"soundSpecific",0xd);
                               uStack_1f2 = 0;
                     /* try { // try from 00341a9c to 00341aab has its CatchHandler @ 003446c4 */
                               uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                               if ((bStack_200 & 1) != 0) {
-                                FUN_00166120(uStack_1f0);
+                                FUN_00166120(pvStack_1f0);
                               }
                               if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341ac4 to 00341acb has its CatchHandler @ 00344724 */
@@ -1739,7 +1741,7 @@ LAB_00342038:
                               bVar9 = false;
                             }
                             if ((bStack_200 & 1) != 0) {
-                              FUN_00166120(uStack_1f0);
+                              FUN_00166120(pvStack_1f0);
                             }
                             if (bVar9) {
                               uStack_1f6 = 0;
@@ -1749,7 +1751,7 @@ LAB_00342038:
                               uStack_1f2 = 0;
                               uStack_1f1 = 0;
                               bStack_200 = 0x10;
-                              uStack_1f0 = 0;
+                              pvStack_1f0 = (void *)0x0;
                               uStack_1ff = 0x706f7270;
                               uStack_1fb = 0x4e;
                               uStack_1fa = 0x61;
@@ -1759,7 +1761,7 @@ LAB_00342038:
                     /* try { // try from 00341b70 to 00341b7f has its CatchHandler @ 003446bc */
                               uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                               if ((bStack_200 & 1) != 0) {
-                                FUN_00166120(uStack_1f0);
+                                FUN_00166120(pvStack_1f0);
                               }
                               if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341b98 to 00341b9f has its CatchHandler @ 003446dc */
@@ -1793,11 +1795,11 @@ LAB_00342038:
                                   *(undefined1 *)puVar18[9] = 0;
                                   puVar18[8] = 0;
                                   if ((*(byte *)(puVar18 + 7) & 1) != 0) {
-                                    FUN_00166120(puVar18[9]);
+                                    FUN_00166120((void *)puVar18[9]);
                                     puVar18[7] = 0;
                                   }
                                 }
-                                uVar3 = uStack_1f0;
+                                pvVar3 = pvStack_1f0;
                                 uVar39 = CONCAT17(uStack_1f1,
                                                   CONCAT16(uStack_1f2,
                                                            CONCAT15(uStack_1f3,
@@ -1822,8 +1824,8 @@ LAB_00342038:
                                 uStack_1f3 = 0;
                                 uStack_1f1 = 0;
                                 bStack_200 = 0x1a;
-                                uStack_1f0 = 0;
-                                puVar18[9] = uVar3;
+                                pvStack_1f0 = (void *)0x0;
+                                puVar18[9] = pvVar3;
                                 puVar18[8] = uVar39;
                                 puVar18[7] = uVar14;
                                 builtin_strncpy(pcVar33,"animationName",0xd);
@@ -1831,7 +1833,7 @@ LAB_00342038:
                     /* try { // try from 003420ac to 003420bb has its CatchHandler @ 00344688 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                                   *(uint *)(puVar18 + 2) = *(uint *)(puVar18 + 2) | 4;
@@ -1844,11 +1846,11 @@ LAB_00342038:
                                     *(undefined1 *)puVar18[6] = 0;
                                     puVar18[5] = 0;
                                     if ((*(byte *)(puVar18 + 4) & 1) != 0) {
-                                      FUN_00166120(puVar18[6]);
+                                      FUN_00166120((void *)puVar18[6]);
                                       puVar18[4] = 0;
                                     }
                                   }
-                                  puVar18[6] = uStack_1f0;
+                                  puVar18[6] = pvStack_1f0;
                                   puVar18[5] = CONCAT17(uStack_1f1,
                                                         CONCAT16(uStack_1f2,
                                                                  CONCAT15(uStack_1f3,
@@ -1875,14 +1877,14 @@ LAB_00342038:
                                 uStack_1f4 = 0;
                                 uStack_1f2 = 0;
                                 uStack_1f1 = 0;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 bStack_200 = 0x18;
                                 builtin_strncpy(pcVar33,"playbackMode",0xc);
                                 uStack_1f3 = 0;
                     /* try { // try from 00342348 to 00342357 has its CatchHandler @ 00344690 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                     /* try { // try from 00342370 to 0034237b has its CatchHandler @ 003446dc */
@@ -1891,7 +1893,7 @@ LAB_00342038:
                                   uVar13 = func_0x00169d70(abStack_218);
                                   *(undefined4 *)((long)puVar18 + 0xc) = uVar13;
                                   if ((abStack_218[0] & 1) != 0) {
-                                    FUN_00166120(uStack_208);
+                                    FUN_00166120(pvStack_208);
                                   }
                                   uStack_1f6 = 0;
                                   uStack_1f5 = 0;
@@ -1900,7 +1902,7 @@ LAB_00342038:
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
                                   bStack_200 = 0x10;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   uStack_1ff = 0x4c6d756e;
                                   uStack_1fb = 0x6f;
                                   uStack_1fa = 0x6f;
@@ -1910,7 +1912,7 @@ LAB_00342038:
                     /* try { // try from 003423c0 to 003423cf has its CatchHandler @ 003445a8 */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 003423e8 to 003423ef has its CatchHandler @ 003446dc */
@@ -1930,13 +1932,13 @@ LAB_00342038:
                                 uStack_1f2 = 0;
                                 uStack_1f1 = 0;
                                 bStack_200 = 0x14;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 builtin_strncpy(pcVar33,"playOffset",10);
                                 uStack_1f5 = 0;
                     /* try { // try from 00342420 to 0034242f has its CatchHandler @ 0034468c */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                     /* try { // try from 00342448 to 0034244f has its CatchHandler @ 003446dc */
@@ -1955,13 +1957,13 @@ LAB_00342038:
                                 uStack_1f2 = 0;
                                 uStack_1f1 = 0;
                                 bStack_200 = 0xe;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 builtin_strncpy(pcVar33,"visible",7);
                                 uStack_1f8 = 0;
                     /* try { // try from 00342484 to 00342493 has its CatchHandler @ 00344684 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                                   *(uint *)(puVar18 + 2) = *(uint *)(puVar18 + 2) | 2;
@@ -1980,14 +1982,14 @@ LAB_00342038:
                                 uStack_1f4 = 0;
                                 uStack_1f3 = 0;
                                 uStack_1f1 = 0;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 bStack_200 = 0x1a;
                                 builtin_strncpy(pcVar33,"relativeLayer",0xd);
                                 uStack_1f2 = 0;
                     /* try { // try from 003424fc to 0034250b has its CatchHandler @ 00344680 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                                   *(uint *)(puVar18 + 2) = *(uint *)(puVar18 + 2) | 0x10;
@@ -2040,7 +2042,7 @@ LAB_00342038:
                                 bVar9 = false;
                               }
                               if ((bStack_200 & 1) != 0) {
-                                FUN_00166120(uStack_1f0);
+                                FUN_00166120(pvStack_1f0);
                               }
                               if (bVar9) {
                                 uStack_1ff = 0;
@@ -2055,13 +2057,13 @@ LAB_00342038:
                                 uStack_1f2 = 0;
                                 uStack_1f1 = 0;
                                 bStack_200 = 0x12;
-                                uStack_1f0 = 0;
+                                pvStack_1f0 = (void *)0x0;
                                 builtin_strncpy(pcVar33,"animation",9);
                                 uStack_1f6 = 0;
                     /* try { // try from 00341d08 to 00341d17 has its CatchHandler @ 00344668 */
                                 uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341d30 to 00341d37 has its CatchHandler @ 003446a0 */
@@ -2090,11 +2092,11 @@ LAB_00342038:
                                     *(undefined1 *)puVar18[4] = 0;
                                     puVar18[3] = 0;
                                     if ((*(byte *)(puVar18 + 2) & 1) != 0) {
-                                      FUN_00166120(puVar18[4]);
+                                      FUN_00166120((void *)puVar18[4]);
                                       puVar18[2] = 0;
                                     }
                                   }
-                                  uVar3 = uStack_1f0;
+                                  pvVar3 = pvStack_1f0;
                                   uVar39 = CONCAT17(uStack_1f1,
                                                     CONCAT16(uStack_1f2,
                                                              CONCAT15(uStack_1f3,
@@ -2119,10 +2121,10 @@ LAB_00342038:
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
                                   bStack_200 = 0x14;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   pcVar33[8] = 'i';
                                   pcVar33[9] = 'c';
-                                  puVar18[4] = uVar3;
+                                  puVar18[4] = pvVar3;
                                   puVar18[3] = uVar39;
                                   *(undefined8 *)pbVar23 = uVar14;
                                   builtin_strncpy(pcVar33,"isSpecif",8);
@@ -2130,7 +2132,7 @@ LAB_00342038:
                     /* try { // try from 0034215c to 0034216b has its CatchHandler @ 003445bc */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 00342184 to 0034218b has its CatchHandler @ 003446a0 */
@@ -2149,13 +2151,13 @@ LAB_00342038:
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
                                   bStack_200 = 0x12;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   builtin_strncpy(pcVar33,"crossFade",9);
                                   uStack_1f6 = 0;
                     /* try { // try from 003421c4 to 003421d3 has its CatchHandler @ 003445b8 */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 003421ec to 003421f3 has its CatchHandler @ 003446a0 */
@@ -2174,13 +2176,13 @@ LAB_00342038:
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
                                   bStack_200 = 10;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   builtin_strncpy(pcVar33,"loops",5);
                                   uStack_1fa = 0;
                     /* try { // try from 00342228 to 00342237 has its CatchHandler @ 003445c0 */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 00342250 to 00342257 has its CatchHandler @ 003446a0 */
@@ -2199,13 +2201,13 @@ LAB_00342038:
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
                                   bStack_200 = 0x14;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   builtin_strncpy(pcVar33,"playOffset",10);
                                   uStack_1f5 = 0;
                     /* try { // try from 00342288 to 00342297 has its CatchHandler @ 003445b0 */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 003422b0 to 003422b7 has its CatchHandler @ 003446a0 */
@@ -2257,7 +2259,7 @@ LAB_00342038:
                                   bVar9 = false;
                                 }
                                 if ((bStack_200 & 1) != 0) {
-                                  FUN_00166120(uStack_1f0);
+                                  FUN_00166120(pvStack_1f0);
                                 }
                                 if (bVar9) {
                                   uStack_1ff = 0;
@@ -2271,14 +2273,14 @@ LAB_00342038:
                                   uStack_1f4 = 0;
                                   uStack_1f2 = 0;
                                   uStack_1f1 = 0;
-                                  uStack_1f0 = 0;
+                                  pvStack_1f0 = (void *)0x0;
                                   bStack_200 = 0x18;
                                   builtin_strncpy(pcVar33,"emitterIndex",0xc);
                                   uStack_1f3 = 0;
                     /* try { // try from 00341e1c to 00341e2b has its CatchHandler @ 003445c4 */
                                   uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                   if ((bStack_200 & 1) != 0) {
-                                    FUN_00166120(uStack_1f0);
+                                    FUN_00166120(pvStack_1f0);
                                   }
                                   if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341e44 to 00341e6f has its CatchHandler @ 00344618 */
@@ -2297,14 +2299,14 @@ LAB_00342038:
                                     uStack_1f6 = 0;
                                     uStack_1f7 = 0;
                                     uStack_1f8 = 0;
-                                    uStack_1f0 = 0;
+                                    pvStack_1f0 = (void *)0x0;
                                     bStack_200 = 0xc;
                                     builtin_strncpy(pcVar33,"active",6);
                                     uStack_1f9 = 0;
                     /* try { // try from 00341e9c to 00341eab has its CatchHandler @ 00344534 */
                                     uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                     if ((bStack_200 & 1) != 0) {
-                                      FUN_00166120(uStack_1f0);
+                                      FUN_00166120(pvStack_1f0);
                                     }
                                     if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341ec4 to 00341ecb has its CatchHandler @ 00344618 */
@@ -2322,14 +2324,14 @@ LAB_00342038:
                                     uStack_1f4 = 0;
                                     uStack_1f2 = 0;
                                     uStack_1f1 = 0;
-                                    uStack_1f0 = 0;
+                                    pvStack_1f0 = (void *)0x0;
                                     bStack_200 = 0x18;
                                     builtin_strncpy(pcVar33,"numParticles",0xc);
                                     uStack_1f3 = 0;
                     /* try { // try from 00341f04 to 00341f13 has its CatchHandler @ 0034453c */
                                     uVar15 = func_0x00171580(alStack_1e8,&bStack_200,&uStack_180);
                                     if ((bStack_200 & 1) != 0) {
-                                      FUN_00166120(uStack_1f0);
+                                      FUN_00166120(pvStack_1f0);
                                     }
                                     if ((uVar15 & 1) != 0) {
                     /* try { // try from 00341f2c to 00341f33 has its CatchHandler @ 00344618 */
@@ -2397,18 +2399,18 @@ LAB_00342038:
                                 goto LAB_00342600;
                               }
                               uStack_228 = 0;
-                              uStack_220 = 0;
+                              pvStack_220 = (void *)0x0;
                               pcStack_230 = (code *)0x656d697408;
                     /* try { // try from 003427f8 to 00342807 has its CatchHandler @ 0034464c */
                               uVar36 = func_0x00171580(alStack_1c0,&pcStack_230,&uStack_180);
                               if (((ulong)pcStack_230 & 1) != 0) {
-                                FUN_00166120(uStack_220);
+                                FUN_00166120(pvStack_220);
                               }
                     /* try { // try from 00342820 to 00342827 has its CatchHandler @ 00344588 */
                     /* try { // try from 00342840 to 00342857 has its CatchHandler @ 0034458c */
                               if ((((uVar36 & 1) != 0) &&
                                   (uVar14 = func_0x00168f30(&uStack_180), (float)uVar14 != -1.0)) &&
-                                 (lVar35 = func_0x0016ffa0(*(long *)(param_1 + 8) + 0xe8,
+                                 (lVar35 = func_0x0016ffa0(*(long *)((long)p0 + 8) + 0xe8,
                                                            &pbStack_2b0), lVar35 != 0)) {
                                 func_0x00170840(uVar14,lVar35,iVar11);
                               }
@@ -2697,7 +2699,7 @@ LAB_00342600:
                             }
 LAB_00342bf8:
                             if ((bStack_200 & 1) != 0) {
-                              FUN_00166120(uStack_1f0);
+                              FUN_00166120(pvStack_1f0);
                             }
                             uVar37 = uVar37 + 1;
                           } while (uVar37 < (uVar15 & 0xffffffff));
@@ -2714,7 +2716,7 @@ LAB_00342e38:
                     /* try { // try from 00342e38 to 00342e3f has its CatchHandler @ 00344510 */
                 func_0x001716a0(alStack_1b0);
                 if (((ulong)pqStack_148 & 1) != 0) {
-                  FUN_00166120(uStack_138);
+                  FUN_00166120(pvStack_138);
                 }
               } while (alStack_1b0[0] != 0);
             }
@@ -2722,7 +2724,7 @@ LAB_00342e38:
               FUN_00166120(puStack_120);
             }
             if (((ulong)pbStack_2b0 & 1) != 0) {
-              FUN_00166120(CONCAT44(uStack_29c,uStack_2a0));
+              FUN_00166120((void *)CONCAT44(uStack_29c,uStack_2a0));
             }
           }
                     /* try { // try from 00342e78 to 00342e7f has its CatchHandler @ 00344360 */
@@ -2741,7 +2743,7 @@ LAB_00342e38:
       uStack_c3 = 0;
       uStack_c2 = 0;
       uStack_c1 = 0;
-      uStack_c0 = 0;
+      pvStack_c0 = (void *)0x0;
       uStack_d0 = 0x6f72500a;
       uStack_cc = 0x70;
       uStack_cb = 0x73;
@@ -2750,21 +2752,21 @@ LAB_00342e38:
       uVar14 = func_0x0016e500(uStack_f0,&uStack_d0);
       func_0x001656f0(&pcStack_230,uVar14);
       if ((uStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
       if (pcStack_230 != (code *)0x0) {
         uStack_28a = 0;
         uStack_288 = 0;
         uStack_287 = 0;
         uStack_286 = 0;
-        uStack_280 = 0;
+        pvStack_280 = (void *)0x0;
         bStack_290 = 8;
         uStack_28f = 0x706f7250;
         uStack_28b = 0;
                     /* try { // try from 00342f18 to 00342f27 has its CatchHandler @ 003440b8 */
         func_0x00170560(&uStack_d0,&pcStack_230,&bStack_290);
         if ((bStack_290 & 1) != 0) {
-          FUN_00166120(uStack_280);
+          FUN_00166120(pvStack_280);
         }
                     /* try { // try from 00342f38 to 00342f3f has its CatchHandler @ 003440b0 */
         func_0x001627a0(&bStack_290);
@@ -2855,9 +2857,9 @@ LAB_00342e38:
                 uStack_130._7_1_ = (undefined1)(uStack_180 >> 0x38);
               }
               uStack_178 = 0;
-              puStack_170 = (undefined1 *)0x0;
+              puStack_170 = (void *)0x0;
               qStack_140 = 0;
-              uStack_138 = 0;
+              pvStack_138 = (void *)0x0;
               uStack_180 = 0x6570797408;
                     /* try { // try from 00343120 to 0034312f has its CatchHandler @ 0034424c */
               pqStack_148 = &qStack_140;
@@ -2921,7 +2923,7 @@ LAB_00342e38:
                         uStack_1f2 = 0;
                         uStack_1f1 = 0;
                         bStack_200 = 8;
-                        uStack_1f0 = 0;
+                        pvStack_1f0 = (void *)0x0;
                         uStack_1ff = 0x656e6f62;
                         apbStack_1a0[0] = &bStack_200;
                         uStack_1fb = 0;
@@ -2937,7 +2939,7 @@ LAB_00342e38:
                           **(undefined1 **)(lVar16 + 0x48) = 0;
                           *(undefined8 *)(lVar16 + 0x40) = 0;
                           if ((*(byte *)(lVar16 + 0x38) & 1) != 0) {
-                            FUN_00166120(*(undefined8 *)(lVar16 + 0x48));
+                            FUN_00166120(*(void **)(lVar16 + 0x48));
                             *(undefined8 *)(lVar16 + 0x38) = 0;
                           }
                         }
@@ -2948,7 +2950,7 @@ LAB_00342e38:
                         puStack_1c8 = (undefined8 *)0x0;
                         pbStack_1d8 = (byte *)0x0;
                         if (((bStack_200 & 1) != 0) &&
-                           (FUN_00166120(uStack_1f0), ((ulong)pbStack_1d8 & 1) != 0)) {
+                           (FUN_00166120(pvStack_1f0), ((ulong)pbStack_1d8 & 1) != 0)) {
                           FUN_00166120(puStack_1c8);
                         }
                       }
@@ -2990,7 +2992,7 @@ LAB_00343470:
                           uStack_1f6 = 0;
                           uStack_1f7 = 0;
                           uStack_1f8 = 0;
-                          uStack_1f0 = 0;
+                          pvStack_1f0 = (void *)0x0;
                           bStack_200 = 0xc;
                           *(undefined2 *)((undefined4 *)((ulong)&bStack_200 | 1) + 1) = 0x7365;
                           *(undefined4 *)((ulong)&bStack_200 | 1) = 0x6e656373;
@@ -3008,7 +3010,7 @@ LAB_00343470:
                             **(undefined1 **)(lVar16 + 0x48) = 0;
                             *(undefined8 *)(lVar16 + 0x40) = 0;
                             if ((*(byte *)(lVar16 + 0x38) & 1) != 0) {
-                              FUN_00166120(*(undefined8 *)(lVar16 + 0x48));
+                              FUN_00166120(*(void **)(lVar16 + 0x48));
                               *(undefined8 *)(lVar16 + 0x38) = 0;
                             }
                           }
@@ -3019,7 +3021,7 @@ LAB_00343470:
                           puStack_1c8 = (undefined8 *)0x0;
                           pbStack_1d8 = (byte *)0x0;
                           if (((bStack_200 & 1) != 0) &&
-                             (FUN_00166120(uStack_1f0), ((ulong)pbStack_1d8 & 1) != 0)) {
+                             (FUN_00166120(pvStack_1f0), ((ulong)pbStack_1d8 & 1) != 0)) {
                             FUN_00166120(puStack_1c8);
                           }
                         }
@@ -3060,7 +3062,7 @@ LAB_00343470:
                 uStack_178 = (ulong)pbStack_158;
                 uStack_180 = (ulong)uStack_160;
               }
-              puStack_150 = (undefined1 *)0x0;
+              puStack_150 = (void *)0x0;
               uStack_160 = (byte *)0x1a;
               builtin_strncpy(pcVar33,"relativeLayer",0xd);
               pbStack_158 = (byte *)0x0;
@@ -3077,7 +3079,7 @@ LAB_00343470:
                 uVar13 = func_0x00166a80(&bStack_290);
               }
               uStack_160 = (byte *)((long)&Elf64_Ehdr_00000000.e_version + 2);
-              puStack_150 = (undefined1 *)0x0;
+              puStack_150 = (void *)0x0;
               builtin_strncpy(pcVar33,"relativePos",0xb);
               apbStack_1a0[0] = (byte *)0x0;
               pbStack_158 = (byte *)0x0;
@@ -3091,7 +3093,7 @@ LAB_00343470:
                 func_0x00166e60(&uStack_160,&bStack_290);
                 apbStack_1a0[0] = uStack_160;
               }
-              puStack_150 = (undefined1 *)0x0;
+              puStack_150 = (void *)0x0;
               fVar38 = 1.0;
               fVar31 = 1.0;
               uStack_160 = (byte *)0x1a;
@@ -3108,7 +3110,7 @@ LAB_00343470:
                 fVar38 = (float)uStack_160 * 1.0;
                 fVar31 = -(uStack_160._4_4_ * 1.0);
               }
-              puStack_150 = (undefined1 *)0x0;
+              puStack_150 = (void *)0x0;
               uStack_160 = (byte *)0x1a;
               builtin_strncpy(pcVar33,"relativeAngle",0xd);
               pbStack_158 = (byte *)0x0;
@@ -3138,7 +3140,7 @@ LAB_00343470:
               FUN_0016bb90(&uStack_258);
               FUN_0016bb90(&uStack_160);
               uStack_160 = Elf64_Ehdr_00000000.e_ident_pad + 5;
-              puStack_150 = (undefined1 *)0x0;
+              puStack_150 = (void *)0x0;
               builtin_strncpy(pcVar33,"visible",7);
               pbStack_158 = (byte *)0x0;
                     /* try { // try from 003437d0 to 003437df has its CatchHandler @ 003441fc */
@@ -3162,7 +3164,7 @@ LAB_00343470:
               plVar21[5] = 0;
               if ((uVar32 & 1) != 0) {
                 pbStack_158 = (byte *)0x0;
-                puStack_150 = (undefined1 *)0x0;
+                puStack_150 = (void *)0x0;
                 uStack_160 = (byte *)0x656e6f6208;
                     /* try { // try from 00343860 to 0034386b has its CatchHandler @ 00344120 */
                 puVar22 = (undefined1 *)func_0x0016cdd0(&pqStack_148,&uStack_160);
@@ -3170,16 +3172,16 @@ LAB_00343470:
                   FUN_00166120(puStack_150);
                 }
                 if (&qStack_140 == (qword *)puVar22) {
-                  lVar16 = *(long *)(param_1 + 8);
+                  lVar16 = *(long *)((long)p0 + 8);
                   lVar17 = *(long *)(lVar16 + 0x10);
                   plVar20[1] = lVar16;
                   plVar20[3] = lVar17;
                   *(long **)(lVar16 + 0x10) = plVar20;
                 }
                 else {
-                  uVar14 = *(undefined8 *)(param_1 + 8);
+                  uVar14 = *(undefined8 *)((long)p0 + 8);
                   pbStack_158 = (byte *)0x0;
-                  puStack_150 = (undefined1 *)0x0;
+                  puStack_150 = (void *)0x0;
                   pbStack_1d8 = (byte *)&uStack_160;
                   uStack_160 = (byte *)0x656e6f6208;
                     /* try { // try from 003438c0 to 003438e7 has its CatchHandler @ 00344178 */
@@ -3200,7 +3202,7 @@ LAB_00343470:
               if (uVar32 >> 1 != 0) {
                 pbStack_158 = (byte *)0x0;
                 uStack_160 = (byte *)0x0;
-                puStack_150 = (undefined1 *)0x0;
+                puStack_150 = (void *)0x0;
                 puStack_1d0 = (undefined8 *)0x0;
                 puStack_1c8 = (undefined8 *)0x0;
                 pbStack_1d8 = (byte *)CONCAT71(pbStack_1d8._1_7_,0xc);
@@ -3225,8 +3227,8 @@ LAB_00343470:
                   do {
                     pbStack_1d8 = uStack_160 + uVar15 * 0x18;
                     /* try { // try from 003439c8 to 003439df has its CatchHandler @ 003444a0 */
-                    lVar16 = func_0x00169b40(param_1 + 0x110,pbStack_1d8,&DAT_00628882,&pbStack_1d8,
-                                             &bStack_200);
+                    lVar16 = func_0x00169b40((long)p0 + 0x110,pbStack_1d8,&DAT_00628882,&pbStack_1d8
+                                             ,&bStack_200);
                     *(uint *)((long)plVar21 + 0xc) =
                          *(uint *)((long)plVar21 + 0xc) | *(uint *)(lVar16 + 0x38);
                     uVar15 = ((long)pbStack_158 - (long)uStack_160 >> 3) * -0x5555555555555555;
@@ -3240,9 +3242,9 @@ LAB_00343470:
               }
               if (uVar32 == 0) {
                     /* try { // try from 00343a2c to 00343a33 has its CatchHandler @ 0034411c */
-                func_0x00167d50(&uStack_160,*(undefined8 *)(param_1 + 8));
+                func_0x00167d50(&uStack_160,*(undefined8 *)((long)p0 + 8));
                     /* try { // try from 00343a38 to 00343a3f has its CatchHandler @ 00344118 */
-                func_0x00169f20(&pbStack_1d8,*(undefined8 *)(param_1 + 8));
+                func_0x00169f20(&pbStack_1d8,*(undefined8 *)((long)p0 + 8));
                 apbStack_1a0[0] =
                      (byte *)CONCAT44((float)((ulong)pbStack_1d8 >> 0x20) *
                                       (float)((ulong)apbStack_1a0[0] >> 0x20) +
@@ -3260,7 +3262,7 @@ LAB_00343470:
               }
               (**(code **)(*plVar20 + 0x10))(plVar20,apbStack_1a0);
               uStack_160 = (byte *)&uStack_130;
-              lVar16 = func_0x00166770(param_1 + 0x10,&uStack_130,&DAT_00628882,&uStack_160,
+              lVar16 = func_0x00166770((long)p0 + 0x10,&uStack_130,&DAT_00628882,&uStack_160,
                                        &pbStack_1d8);
               *(long **)(lVar16 + 0x38) = plVar21;
               if ((uStack_180 & 1) != 0) {
@@ -3271,7 +3273,7 @@ LAB_00343470:
                 FUN_00166120(puStack_120);
               }
               if (((ulong)pbStack_2b0 & 1) != 0) {
-                FUN_00166120(CONCAT44(uStack_29c,uStack_2a0));
+                FUN_00166120((void *)CONCAT44(uStack_29c,uStack_2a0));
               }
             }
                     /* try { // try from 00343b0c to 00343b13 has its CatchHandler @ 00344398 */
@@ -3282,8 +3284,8 @@ LAB_00343470:
                    != 0);
         }
         func_0x00167bf0(&bStack_290);
-        if ((uStack_c0 & 1) != 0) {
-          FUN_00166120(CONCAT71(uStack_af,uStack_b0));
+        if (((ulong)pvStack_c0 & 1) != 0) {
+          FUN_00166120((void *)CONCAT71(uStack_af,uStack_b0));
         }
       }
       uStack_c6 = 0;
@@ -3292,7 +3294,7 @@ LAB_00343470:
       uStack_c3 = 0;
       uStack_c2 = 0;
       uStack_c1 = 0;
-      uStack_c0 = 0;
+      pvStack_c0 = (void *)0x0;
       uStack_d0 = 0x696d4510;
       uStack_cc = 0x74;
       uStack_cb = 0x74;
@@ -3304,12 +3306,12 @@ LAB_00343470:
       uVar14 = func_0x0016e500(uStack_f0,&uStack_d0);
       func_0x001656f0(&pqStack_148,uVar14);
       if ((uStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
       if (pqStack_148 != (qword *)0x0) {
         uStack_287 = 0;
         uStack_286 = 0;
-        uStack_280 = 0;
+        pvStack_280 = (void *)0x0;
         bStack_290 = 0xe;
         uStack_28f = 0x74696d45;
         uStack_28b = 0x74;
@@ -3318,7 +3320,7 @@ LAB_00343470:
                     /* try { // try from 00343bb8 to 00343bc7 has its CatchHandler @ 003440ac */
         func_0x00170560(&uStack_d0,&pqStack_148,&bStack_290);
         if ((bStack_290 & 1) != 0) {
-          FUN_00166120(uStack_280);
+          FUN_00166120(pvStack_280);
         }
                     /* try { // try from 00343bd8 to 00343bdf has its CatchHandler @ 003440a8 */
         func_0x001627a0(&uStack_180);
@@ -3330,14 +3332,14 @@ LAB_00343470:
           uStack_288 = 0;
           uStack_287 = 0;
           uStack_286 = 0;
-          uStack_280 = 0;
+          pvStack_280 = (void *)0x0;
           bStack_290 = 8;
           uStack_28f = 0x68746170;
           uStack_28b = 0;
                     /* try { // try from 00343c54 to 00343c63 has its CatchHandler @ 00344428 */
           uVar15 = func_0x00171e50(&uStack_d0,&bStack_290,&uStack_180);
           if ((bStack_290 & 1) != 0) {
-            FUN_00166120(uStack_280);
+            FUN_00166120(pvStack_280);
           }
           if ((uVar15 & 1) != 0) {
                     /* try { // try from 00343c7c to 00343c83 has its CatchHandler @ 00344330 */
@@ -3357,10 +3359,10 @@ LAB_00343470:
             FUN_0016bb90(&uStack_268);
             FUN_0016bb90(&pbStack_2b0);
             if ((bStack_290 & 1) != 0) {
-              FUN_00166120(uStack_280);
+              FUN_00166120(pvStack_280);
             }
             uStack_286 = 0;
-            uStack_280 = 0;
+            pvStack_280 = (void *)0x0;
             bStack_290 = 0x10;
             uStack_28f = 0x65736162;
             uStack_28b = 0x4e;
@@ -3370,16 +3372,16 @@ LAB_00343470:
                     /* try { // try from 00343cfc to 00343d0b has its CatchHandler @ 00344328 */
             uVar15 = func_0x00171e50(&uStack_d0,&bStack_290,&uStack_180);
             if ((bStack_290 & 1) != 0) {
-              FUN_00166120(uStack_280);
+              FUN_00166120(pvStack_280);
             }
             if ((uVar15 & 1) != 0) {
-              uVar14 = *(undefined8 *)(param_1 + 8);
+              uVar14 = *(undefined8 *)((long)p0 + 8);
                     /* try { // try from 00343d2c to 00343d37 has its CatchHandler @ 003441b0 */
               func_0x00162cf0(&bStack_290,&uStack_180);
                     /* try { // try from 00343d38 to 00343d43 has its CatchHandler @ 003441ac */
               lVar16 = func_0x0016c8f0(uVar14,&bStack_290);
               if ((bStack_290 & 1) != 0) {
-                FUN_00166120(uStack_280);
+                FUN_00166120(pvStack_280);
               }
               if (lVar16 != 0) {
                 uVar14 = *(undefined8 *)(lVar16 + 0x10);
@@ -3397,7 +3399,7 @@ LAB_00343470:
                     /* try { // try from 00343da8 to 00343db7 has its CatchHandler @ 00344314 */
             func_0x00169500(&bStack_290,&uStack_d0,&pbStack_2b0);
             if (((ulong)pbStack_2b0 & 1) != 0) {
-              FUN_00166120(CONCAT44(uStack_29c,uStack_2a0));
+              FUN_00166120((void *)CONCAT44(uStack_29c,uStack_2a0));
             }
             while (CONCAT26(uStack_28a,CONCAT15(uStack_28b,CONCAT41(uStack_28f,bStack_290))) != 0) {
               pbStack_2b0 = (byte *)0x0;
@@ -3441,7 +3443,7 @@ LAB_00343470:
                 uStack_123 = 0;
                 uStack_122 = 0;
                 uStack_121 = 0;
-                puStack_120 = (undefined1 *)0x0;
+                puStack_120 = (void *)0x0;
                 uStack_130._0_1_ = 0xc;
                 builtin_strncpy(pcVar33,"radius",6);
                 uStack_130._7_1_ = 0;
@@ -3464,7 +3466,7 @@ LAB_00343470:
                 uStack_123 = 0;
                 uStack_122 = 0;
                 uStack_121 = 0;
-                puStack_120 = (undefined1 *)0x0;
+                puStack_120 = (void *)0x0;
                 uStack_130._0_1_ = 8;
                 uStack_130._1_4_ = 0x74636572;
                 uStack_130._5_1_ = 0;
@@ -3495,7 +3497,7 @@ LAB_00343470:
                 uStack_124 = 0;
                 uStack_123 = 0;
                 uStack_121 = 0;
-                puStack_120 = (undefined1 *)0x0;
+                puStack_120 = (void *)0x0;
                 uStack_130._0_1_ = 0x1a;
                 builtin_strncpy(pcVar33,"ringparticles",0xd);
                 uStack_122 = 0;
@@ -3536,36 +3538,36 @@ LAB_00343470:
               }
               func_0x0016b450(&bStack_290);
             }
-            if (*(long **)(param_1 + 0x48) == *(long **)(param_1 + 0x50)) {
+            if (*(long **)((long)p0 + 0x48) == *(long **)((long)p0 + 0x50)) {
                     /* try { // try from 00343fdc to 00343fe7 has its CatchHandler @ 0034416c */
-              func_0x00164ea0(param_1 + 0x40,&uStack_160);
+              func_0x00164ea0((long)p0 + 0x40,&uStack_160);
             }
             else {
-              **(long **)(param_1 + 0x48) = (long)uStack_160;
-              *(long *)(param_1 + 0x48) = *(long *)(param_1 + 0x48) + 8;
+              **(long **)((long)p0 + 0x48) = (long)uStack_160;
+              *(long *)((long)p0 + 0x48) = *(long *)((long)p0 + 0x48) + 8;
             }
-            if ((uStack_280 & 1) != 0) {
-              FUN_00166120(uStack_270);
+            if (((ulong)pvStack_280 & 1) != 0) {
+              FUN_00166120(pvStack_270);
             }
           }
                     /* try { // try from 00343ff8 to 00343fff has its CatchHandler @ 00344420 */
           func_0x0016b450(&uStack_d0);
         }
         func_0x00167bf0(&uStack_180);
-        if ((uStack_c0 & 1) != 0) {
-          FUN_00166120(CONCAT71(uStack_af,uStack_b0));
+        if (((ulong)pvStack_c0 & 1) != 0) {
+          FUN_00166120((void *)CONCAT71(uStack_af,uStack_b0));
         }
       }
     }
-    if (*(long *)(param_2 + 0x20) != 0) {
-      FUN_00166120();
+    if (*(void **)(in_x1 + 0x20) != (void *)0x0) {
+      FUN_00166120(*(void **)(in_x1 + 0x20));
     }
     func_0x00165880(&lStack_f8);
   }
-  *(undefined1 *)(param_1 + 0x170) = 1;
-  if (*(char *)(param_1 + 0x80) == '\0') {
-    func_0x00164f00(param_1,param_1 + 0x84,*(undefined4 *)(param_1 + 0x70),param_1 + 0x8c,
-                    *(undefined1 *)(param_1 + 0x94));
+  *(undefined1 *)((long)p0 + 0x170) = 1;
+  if (*(char *)((long)p0 + 0x80) == '\0') {
+    func_0x00164f00(p0,(long)p0 + 0x84,*(undefined4 *)((long)p0 + 0x70),(long)p0 + 0x8c,
+                    *(undefined1 *)((long)p0 + 0x94));
   }
   if (*(long *)(lVar2 + 0x28) == lVar24) {
     return;
@@ -3629,44 +3631,44 @@ void Walaber::SkeletonActor::init
 /* Walaber::SkeletonActor::init(Walaber::Vector2 const&, unsigned int, Walaber::Vector2 const&,
    bool) */
 
-void Walaber::SkeletonActor::init
-               (long param_1,undefined8 *param_2,undefined4 param_3,undefined8 *param_4,byte param_5
-               )
+void Walaber::SkeletonActor::init(Walaber__Vector2 *p0,uint p1,Walaber__Vector2 *p2,bool p3)
 
 {
-  byte bVar1;
+  Walaber__Vector2 WVar1;
   long lVar2;
   bool bVar3;
+  byte in_w4;
   long *plVar4;
-  undefined8 uVar5;
-  long lVar6;
-  long *plVar7;
+  Walaber__Vector2 *pWVar5;
+  undefined8 uVar6;
+  long lVar7;
+  Walaber__Vector2 *pWVar8;
   byte abStack_98 [16];
-  undefined8 uStack_88;
-  long lStack_80;
+  void *pvStack_88;
+  undefined8 uStack_80;
   undefined1 auStack_78 [16];
   long lStack_68;
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  bVar1 = param_5 & 1;
-  if (*(char *)(param_1 + 0x170) == '\0') {
-    *(undefined1 *)(param_1 + 0x80) = 0;
-    *(undefined8 *)(param_1 + 0x84) = *param_2;
-    uVar5 = *param_4;
-    *(byte *)(param_1 + 0x94) = bVar1;
-    *(undefined8 *)(param_1 + 0x8c) = uVar5;
+  WVar1 = (Walaber__Vector2)(in_w4 & 1);
+  if (p0[0x170] == (Walaber__Vector2)0x0) {
+    p0[0x80] = (Walaber__Vector2)0x0;
+    *(undefined8 *)(p0 + 0x84) = *(undefined8 *)(ulong)p1;
+    uVar6 = *(undefined8 *)(ulong)p3;
+    p0[0x94] = WVar1;
+    *(undefined8 *)(p0 + 0x8c) = uVar6;
   }
   else {
-    *(undefined4 *)(param_1 + 0x70) = param_3;
-    func_0x001690a0(param_1 + 0x28,*(undefined8 *)(param_1 + 0x30));
-    *(undefined8 **)(param_1 + 0x28) = (undefined8 *)(param_1 + 0x30);
-    *(undefined8 *)(param_1 + 0x30) = 0;
-    *(undefined8 *)(param_1 + 0x38) = 0;
-    plVar7 = *(long **)(param_1 + 0x10);
-    while (plVar7 != (long *)(param_1 + 0x18)) {
-      plVar4 = (long *)plVar7[7];
-      if ((*(uint *)(param_1 + 0x70) & *(uint *)((long)plVar4 + 0xc)) != 0) {
+    *(int *)(p0 + 0x70) = (int)p2;
+    func_0x001690a0(p0 + 0x28,*(undefined8 *)(p0 + 0x30));
+    *(Walaber__Vector2 **)(p0 + 0x28) = p0 + 0x30;
+    *(undefined8 *)(p0 + 0x30) = 0;
+    *(undefined8 *)(p0 + 0x38) = 0;
+    pWVar8 = *(Walaber__Vector2 **)(p0 + 0x10);
+    while (pWVar8 != p0 + 0x18) {
+      plVar4 = *(long **)(pWVar8 + 0x38);
+      if ((*(uint *)(p0 + 0x70) & *(uint *)((long)plVar4 + 0xc)) != 0) {
         if ((*(byte *)(plVar4 + 3) & 1) == 0) {
           if (*(byte *)(plVar4 + 3) >> 1 != 0) {
 LAB_00344928:
@@ -3675,46 +3677,46 @@ LAB_00344928:
           }
         }
         else if (plVar4[4] != 0) goto LAB_00344928;
-        func_0x0016f720(abStack_98,plVar7 + 4);
-        lStack_80 = plVar7[7];
+        func_0x0016f720(abStack_98,pWVar8 + 0x20);
+        uStack_80 = *(undefined8 *)(pWVar8 + 0x38);
                     /* try { // try from 00344950 to 0034495f has its CatchHandler @ 00344a8c */
-        func_0x00169a50(param_1 + 0x28,abStack_98,abStack_98);
+        func_0x00169a50(p0 + 0x28,abStack_98,abStack_98);
         if ((abStack_98[0] & 1) != 0) {
-          FUN_00166120(uStack_88);
+          FUN_00166120(pvStack_88);
         }
-        plVar4 = (long *)plVar7[7];
+        plVar4 = *(long **)(pWVar8 + 0x38);
       }
-      *(byte *)(*plVar4 + 0xc9) = bVar1;
-      plVar4 = (long *)plVar7[1];
-      if ((long *)plVar7[1] == (long *)0x0) {
-        plVar4 = plVar7 + 2;
-        bVar3 = *(long **)*plVar4 != plVar7;
-        plVar7 = (long *)*plVar4;
+      *(Walaber__Vector2 *)(*plVar4 + 0xc9) = WVar1;
+      pWVar5 = *(Walaber__Vector2 **)(pWVar8 + 8);
+      if (*(Walaber__Vector2 **)(pWVar8 + 8) == (Walaber__Vector2 *)0x0) {
+        pWVar5 = pWVar8 + 0x10;
+        bVar3 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar5 != pWVar8;
+        pWVar8 = *(Walaber__Vector2 **)pWVar5;
         if (bVar3) {
           do {
-            lVar6 = *plVar4;
-            plVar4 = (long *)(lVar6 + 0x10);
-            plVar7 = (long *)*plVar4;
-          } while (*plVar7 != lVar6);
+            lVar7 = *(long *)pWVar5;
+            pWVar5 = (Walaber__Vector2 *)(lVar7 + 0x10);
+            pWVar8 = *(Walaber__Vector2 **)pWVar5;
+          } while (*(long *)pWVar8 != lVar7);
         }
       }
       else {
         do {
-          plVar7 = plVar4;
-          plVar4 = (long *)*plVar7;
-        } while ((long *)*plVar7 != (long *)0x0);
+          pWVar8 = pWVar5;
+          pWVar5 = *(Walaber__Vector2 **)pWVar8;
+        } while (*(Walaber__Vector2 **)pWVar8 != (Walaber__Vector2 *)0x0);
       }
     }
-    *(undefined8 *)(param_1 + 0x58) = *param_2;
-    uVar5 = *param_4;
-    *(byte *)(param_1 + 0x74) = bVar1;
-    *(undefined8 *)(param_1 + 100) = uVar5;
-    if (*(long **)(param_1 + 8) != (long *)0x0) {
-      (**(code **)(**(long **)(param_1 + 8) + 0x10))();
-      (**(code **)(**(long **)(param_1 + 8) + 0x20))(*(long **)(param_1 + 8),param_1 + 0x60);
-      (**(code **)(**(long **)(param_1 + 8) + 0x18))(*(long **)(param_1 + 8),param_1 + 100);
-      func_0x0016c910(*(undefined8 *)(param_1 + 8),param_5 & 1);
-      *(undefined1 *)(param_1 + 0x75) = 1;
+    *(undefined8 *)(p0 + 0x58) = *(undefined8 *)(ulong)p1;
+    uVar6 = *(undefined8 *)(ulong)p3;
+    p0[0x74] = WVar1;
+    *(undefined8 *)(p0 + 100) = uVar6;
+    if (*(long **)(p0 + 8) != (long *)0x0) {
+      (**(code **)(**(long **)(p0 + 8) + 0x10))();
+      (**(code **)(**(long **)(p0 + 8) + 0x20))(*(long **)(p0 + 8),p0 + 0x60);
+      (**(code **)(**(long **)(p0 + 8) + 0x18))(*(long **)(p0 + 8),p0 + 100);
+      func_0x0016c910(*(undefined8 *)(p0 + 8),in_w4 & 1);
+      p0[0x75] = (Walaber__Vector2)0x1;
     }
   }
   if (*(long *)(lVar2 + 0x28) == lStack_68) {
@@ -3732,11 +3734,12 @@ LAB_00344928:
 
 /* Walaber::SkeletonActor::update(float) */
 
-void Walaber::SkeletonActor::update(undefined8 param_1,long param_2)
+void Walaber::SkeletonActor::update(float p0)
 
 {
   bool bVar1;
   int iVar2;
+  long in_x0;
   long *plVar3;
   long lVar4;
   ulong uVar5;
@@ -3747,14 +3750,17 @@ void Walaber::SkeletonActor::update(undefined8 param_1,long param_2)
   undefined8 *puVar10;
   undefined8 *puVar11;
   undefined8 *puVar12;
+  undefined4 in_register_00005004;
+  undefined8 uVar13;
   
-  if (*(long *)(param_2 + 8) != 0) {
-    func_0x0016fc30(param_1);
+  uVar13 = CONCAT44(in_register_00005004,p0);
+  if (*(long *)(in_x0 + 8) != 0) {
+    func_0x0016fc30(uVar13);
   }
-  plVar7 = *(long **)(param_2 + 0x10);
-  while (plVar7 != (long *)(param_2 + 0x18)) {
+  plVar7 = *(long **)(in_x0 + 0x10);
+  while (plVar7 != (long *)(in_x0 + 0x18)) {
     if (*(char *)(*(long *)plVar7[7] + 200) != '\0') {
-      func_0x0016ed00(param_1);
+      func_0x0016ed00(uVar13);
     }
     plVar3 = (long *)plVar7[1];
     if ((long *)plVar7[1] == (long *)0x0) {
@@ -3776,24 +3782,24 @@ void Walaber::SkeletonActor::update(undefined8 param_1,long param_2)
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
-  uVar5 = *(long *)(param_2 + 0x48) - (long)*(undefined8 **)(param_2 + 0x40);
+  uVar5 = *(long *)(in_x0 + 0x48) - (long)*(undefined8 **)(in_x0 + 0x40);
   if ((int)(uVar5 >> 3) != 0) {
     uVar5 = uVar5 >> 3 & 0xffffffff;
-    func_0x00169490(param_1,**(undefined8 **)(param_2 + 0x40));
+    func_0x00169490(uVar13,**(undefined8 **)(in_x0 + 0x40));
     if (uVar5 != 1) {
       uVar8 = 1;
       do {
-        func_0x00169490(param_1,*(undefined8 *)(*(long *)(param_2 + 0x40) + uVar8 * 8));
+        func_0x00169490(uVar13,*(undefined8 *)(*(long *)(in_x0 + 0x40) + uVar8 * 8));
         uVar8 = uVar8 + 1;
       } while (uVar5 != uVar8);
     }
   }
-  puVar11 = *(undefined8 **)(param_2 + 0x178);
-  if (*(undefined8 **)(param_2 + 0x180) != puVar11) {
+  puVar11 = *(undefined8 **)(in_x0 + 0x178);
+  if (*(undefined8 **)(in_x0 + 0x180) != puVar11) {
     do {
       iVar2 = func_0x0016a780(*puVar11);
       if (iVar2 == 2) {
-        puVar12 = *(undefined8 **)(param_2 + 0x180);
+        puVar12 = *(undefined8 **)(in_x0 + 0x180);
         puVar10 = puVar11 + 2;
         puVar6 = puVar11;
         puVar9 = puVar11;
@@ -3811,13 +3817,13 @@ LAB_00344c08:
             puVar10 = puVar9 + 4;
             puVar9 = puVar6;
           } while (puVar10 != puVar12);
-          puVar10 = *(undefined8 **)(param_2 + 0x180);
+          puVar10 = *(undefined8 **)(in_x0 + 0x180);
           if (puVar10 != puVar6) goto LAB_00344c08;
         }
-        *(undefined8 **)(param_2 + 0x180) = puVar6;
+        *(undefined8 **)(in_x0 + 0x180) = puVar6;
       }
       else {
-        puVar6 = *(undefined8 **)(param_2 + 0x180);
+        puVar6 = *(undefined8 **)(in_x0 + 0x180);
         puVar11 = puVar11 + 2;
       }
     } while (puVar6 != puVar11);
@@ -3833,10 +3839,10 @@ LAB_00344c08:
 
 /* Walaber::SkeletonActor::setColor(Walaber::Color const&) */
 
-void Walaber::SkeletonActor::setColor(long param_1)
+void Walaber::SkeletonActor::setColor(Walaber__Color *p0)
 
 {
-  func_0x0016f100(*(undefined8 *)(param_1 + 8));
+  func_0x0016f100(*(undefined8 *)(p0 + 8));
   return;
 }
 
@@ -3848,61 +3854,64 @@ void Walaber::SkeletonActor::setColor(long param_1)
 
 /* Walaber::SkeletonActor::draw(Walaber::SpriteBatch*, bool, bool) */
 
-void Walaber::SkeletonActor::draw(long param_1,undefined8 param_2,uint param_3,uint param_4)
+void Walaber::SkeletonActor::draw(Walaber__SpriteBatch *p0,bool p1,bool p2)
 
 {
   bool bVar1;
   long *plVar2;
-  long *plVar3;
+  uint in_w3;
+  Walaber__SpriteBatch *pWVar3;
   long lVar4;
   ulong uVar5;
   ulong uVar6;
   int iVar7;
+  Walaber__SpriteBatch *pWVar8;
   
-  plVar2 = *(long **)(param_1 + 8);
+  plVar2 = *(long **)(p0 + 8);
   if (plVar2 == (long *)0x0) {
     iVar7 = 0;
   }
   else {
-    (**(code **)(*plVar2 + 0x48))(plVar2,param_2);
-    iVar7 = *(int *)(*(long *)(param_1 + 8) + 0x80);
+    (**(code **)(*plVar2 + 0x48))(plVar2,p1);
+    iVar7 = *(int *)(*(long *)(p0 + 8) + 0x80);
   }
-  if ((param_3 & 1) != 0) {
-    plVar2 = *(long **)(param_1 + 0x28);
-    while (plVar2 != (long *)(param_1 + 0x30)) {
-      plVar3 = *(long **)plVar2[7];
-      (**(code **)(*plVar3 + 0x40))(plVar3,*(int *)((undefined8 *)plVar2[7] + 2) + iVar7);
-      (**(code **)(**(long **)plVar2[7] + 0x48))(*(long **)plVar2[7],param_2);
-      plVar3 = (long *)plVar2[1];
-      if ((long *)plVar2[1] == (long *)0x0) {
-        plVar3 = plVar2 + 2;
-        bVar1 = *(long **)*plVar3 != plVar2;
-        plVar2 = (long *)*plVar3;
+  if (p2) {
+    pWVar8 = *(Walaber__SpriteBatch **)(p0 + 0x28);
+    while (pWVar8 != p0 + 0x30) {
+      plVar2 = (long *)**(undefined8 **)(pWVar8 + 0x38);
+      (**(code **)(*plVar2 + 0x40))(plVar2,*(int *)(*(undefined8 **)(pWVar8 + 0x38) + 2) + iVar7);
+      (**(code **)(*(long *)**(undefined8 **)(pWVar8 + 0x38) + 0x48))
+                ((long *)**(undefined8 **)(pWVar8 + 0x38),p1);
+      pWVar3 = *(Walaber__SpriteBatch **)(pWVar8 + 8);
+      if (*(Walaber__SpriteBatch **)(pWVar8 + 8) == (Walaber__SpriteBatch *)0x0) {
+        pWVar3 = pWVar8 + 0x10;
+        bVar1 = *(Walaber__SpriteBatch **)*(Walaber__SpriteBatch **)pWVar3 != pWVar8;
+        pWVar8 = *(Walaber__SpriteBatch **)pWVar3;
         if (bVar1) {
           do {
-            lVar4 = *plVar3;
-            plVar3 = (long *)(lVar4 + 0x10);
-            plVar2 = (long *)*plVar3;
-          } while (*plVar2 != lVar4);
+            lVar4 = *(long *)pWVar3;
+            pWVar3 = (Walaber__SpriteBatch *)(lVar4 + 0x10);
+            pWVar8 = *(Walaber__SpriteBatch **)pWVar3;
+          } while (*(long *)pWVar8 != lVar4);
         }
       }
       else {
         do {
-          plVar2 = plVar3;
-          plVar3 = (long *)*plVar2;
-        } while ((long *)*plVar2 != (long *)0x0);
+          pWVar8 = pWVar3;
+          pWVar3 = *(Walaber__SpriteBatch **)pWVar8;
+        } while (*(Walaber__SpriteBatch **)pWVar8 != (Walaber__SpriteBatch *)0x0);
       }
     }
   }
-  if ((param_4 & 1) != 0) {
-    uVar5 = *(long *)(param_1 + 0x48) - (long)*(undefined8 **)(param_1 + 0x40);
+  if ((in_w3 & 1) != 0) {
+    uVar5 = *(long *)(p0 + 0x48) - (long)*(undefined8 **)(p0 + 0x40);
     if ((int)(uVar5 >> 3) != 0) {
       uVar5 = uVar5 >> 3 & 0xffffffff;
-      func_0x0016f020(**(undefined8 **)(param_1 + 0x40),param_2);
+      func_0x0016f020(**(undefined8 **)(p0 + 0x40),p1);
       if (uVar5 != 1) {
         uVar6 = 1;
         do {
-          func_0x0016f020(*(undefined8 *)(*(long *)(param_1 + 0x40) + uVar6 * 8),param_2);
+          func_0x0016f020(*(undefined8 *)(*(long *)(p0 + 0x40) + uVar6 * 8),p1);
           uVar6 = uVar6 + 1;
         } while (uVar5 != uVar6);
       }
@@ -3919,58 +3928,59 @@ void Walaber::SkeletonActor::draw(long param_1,undefined8 param_2,uint param_3,u
 
 /* Walaber::SkeletonActor::drawProps(Walaber::SpriteBatch*) */
 
-void Walaber::SkeletonActor::drawProps(long param_1,undefined8 param_2)
+void Walaber::SkeletonActor::drawProps(Walaber__SpriteBatch *p0)
 
 {
   bool bVar1;
   long *plVar2;
-  ulong uVar3;
-  long lVar4;
-  int iVar5;
-  ulong uVar6;
-  long *plVar7;
+  Walaber__SpriteBatch *pWVar3;
+  ulong uVar4;
+  long lVar5;
+  int iVar6;
+  ulong uVar7;
+  Walaber__SpriteBatch *pWVar8;
   
-  uVar3 = *(long *)(param_1 + 0x48) - (long)*(undefined8 **)(param_1 + 0x40);
-  if ((int)(uVar3 >> 3) != 0) {
-    uVar3 = uVar3 >> 3 & 0xffffffff;
-    func_0x0016f020(**(undefined8 **)(param_1 + 0x40),param_2);
-    if (uVar3 != 1) {
-      uVar6 = 1;
+  uVar4 = *(long *)(p0 + 0x48) - (long)*(undefined8 **)(p0 + 0x40);
+  if ((int)(uVar4 >> 3) != 0) {
+    uVar4 = uVar4 >> 3 & 0xffffffff;
+    func_0x0016f020(**(undefined8 **)(p0 + 0x40));
+    if (uVar4 != 1) {
+      uVar7 = 1;
       do {
-        func_0x0016f020(*(undefined8 *)(*(long *)(param_1 + 0x40) + uVar6 * 8),param_2);
-        uVar6 = uVar6 + 1;
-      } while (uVar3 != uVar6);
+        func_0x0016f020(*(undefined8 *)(*(long *)(p0 + 0x40) + uVar7 * 8));
+        uVar7 = uVar7 + 1;
+      } while (uVar4 != uVar7);
     }
   }
-  if (*(long *)(param_1 + 8) == 0) {
-    iVar5 = 0;
+  if (*(long *)(p0 + 8) == 0) {
+    iVar6 = 0;
   }
   else {
-    iVar5 = *(int *)(*(long *)(param_1 + 8) + 0x80);
+    iVar6 = *(int *)(*(long *)(p0 + 8) + 0x80);
   }
-  plVar7 = *(long **)(param_1 + 0x28);
-  while (plVar7 != (long *)(param_1 + 0x30)) {
-    plVar2 = *(long **)plVar7[7];
-    (**(code **)(*plVar2 + 0x40))(plVar2,*(int *)((undefined8 *)plVar7[7] + 2) + iVar5);
-    (**(code **)(**(long **)plVar7[7] + 0x48))(*(long **)plVar7[7],param_2);
-    plVar2 = (long *)plVar7[1];
-    if ((long *)plVar7[1] == (long *)0x0) {
-      plVar2 = plVar7 + 2;
-      bVar1 = *(long **)*plVar2 != plVar7;
-      plVar7 = (long *)*plVar2;
+  pWVar8 = *(Walaber__SpriteBatch **)(p0 + 0x28);
+  while (pWVar8 != p0 + 0x30) {
+    plVar2 = (long *)**(undefined8 **)(pWVar8 + 0x38);
+    (**(code **)(*plVar2 + 0x40))(plVar2,*(int *)(*(undefined8 **)(pWVar8 + 0x38) + 2) + iVar6);
+    (**(code **)(*(long *)**(undefined8 **)(pWVar8 + 0x38) + 0x48))();
+    pWVar3 = *(Walaber__SpriteBatch **)(pWVar8 + 8);
+    if (*(Walaber__SpriteBatch **)(pWVar8 + 8) == (Walaber__SpriteBatch *)0x0) {
+      pWVar3 = pWVar8 + 0x10;
+      bVar1 = *(Walaber__SpriteBatch **)*(Walaber__SpriteBatch **)pWVar3 != pWVar8;
+      pWVar8 = *(Walaber__SpriteBatch **)pWVar3;
       if (bVar1) {
         do {
-          lVar4 = *plVar2;
-          plVar2 = (long *)(lVar4 + 0x10);
-          plVar7 = (long *)*plVar2;
-        } while (*plVar7 != lVar4);
+          lVar5 = *(long *)pWVar3;
+          pWVar3 = (Walaber__SpriteBatch *)(lVar5 + 0x10);
+          pWVar8 = *(Walaber__SpriteBatch **)pWVar3;
+        } while (*(long *)pWVar8 != lVar5);
       }
     }
     else {
       do {
-        plVar7 = plVar2;
-        plVar2 = (long *)*plVar7;
-      } while ((long *)*plVar7 != (long *)0x0);
+        pWVar8 = pWVar3;
+        pWVar3 = *(Walaber__SpriteBatch **)pWVar8;
+      } while (*(Walaber__SpriteBatch **)pWVar8 != (Walaber__SpriteBatch *)0x0);
     }
   }
   return;
@@ -4250,7 +4260,7 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
   ulong uVar9;
   long lVar10;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar2 = tpidr_el0;
@@ -4299,7 +4309,7 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
                     /* try { // try from 0034543c to 00345457 has its CatchHandler @ 003454bc */
         func_0x0016a620(0,param_1,abStack_80,param_3,param_4,param_5,param_6 & 1);
         if ((abStack_80[0] & 1) != 0) {
-          FUN_00166120(uStack_70);
+          FUN_00166120(pvStack_70);
         }
       }
       else {
@@ -4437,18 +4447,19 @@ void Walaber::SkeletonActor::setPosition(long param_1,undefined8 *param_2)
 
 /* Walaber::SkeletonActor::setAngle(float) */
 
-void Walaber::SkeletonActor::setAngle(undefined4 param_1,long param_2)
+void Walaber::SkeletonActor::setAngle(float p0)
 
 {
   long lVar1;
-  undefined4 uStack_2c;
+  long in_x0;
+  float fStack_2c;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *(undefined4 *)(param_2 + 0x60) = param_1;
-  uStack_2c = param_1;
-  (**(code **)(**(long **)(param_2 + 8) + 0x20))(*(long **)(param_2 + 8),&uStack_2c);
+  *(float *)(in_x0 + 0x60) = p0;
+  fStack_2c = p0;
+  (**(code **)(**(long **)(in_x0 + 8) + 0x20))(*(long **)(in_x0 + 8),&fStack_2c);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -4464,7 +4475,7 @@ void Walaber::SkeletonActor::setAngle(undefined4 param_1,long param_2)
 
 /* Walaber::SkeletonActor::_animationEventCallback(void*) */
 
-void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *param_2)
+void Walaber::SkeletonActor::_animationEventCallback(void *p0)
 
 {
   int iVar1;
@@ -4472,6 +4483,7 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
   int iVar3;
   int iVar4;
   long lVar5;
+  undefined8 *in_x1;
   uint uVar6;
   long *plVar7;
   ulong uVar8;
@@ -4493,24 +4505,24 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
   long lStack_90;
   int *piStack_88;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  iVar3 = func_0x00170090(param_1,*param_2);
-  func_0x0016f720(abStack_80,*(long *)(param_1 + 0x98) + (long)iVar3 * 0x18);
+  iVar3 = func_0x00170090(p0,*in_x1);
+  func_0x0016f720(abStack_80,*(long *)((long)p0 + 0x98) + (long)iVar3 * 0x18);
                     /* try { // try from 0034574c to 00345753 has its CatchHandler @ 00345a50 */
-  lVar5 = func_0x00170a70(param_1 + 0x128,abStack_80);
-  if (param_1 + 0x130 != lVar5) {
-    iVar3 = *(int *)((long)param_2 + 0xc);
+  lVar5 = func_0x00170a70((long)p0 + 0x128,abStack_80);
+  if ((long)p0 + 0x130 != lVar5) {
+    iVar3 = *(int *)((long)in_x1 + 0xc);
     if (iVar3 != 0x20) {
-      *(int *)(param_1 + 0x78) = iVar3;
+      *(int *)((long)p0 + 0x78) = iVar3;
     }
     plVar7 = (long *)(lVar5 + 0x48);
     plVar15 = (long *)*plVar7;
     if (plVar15 != (long *)0x0) {
-      uVar11 = *(uint *)((long)param_2 + 0xc);
+      uVar11 = *(uint *)((long)in_x1 + 0xc);
       plVar13 = plVar7;
       do {
         if (*(uint *)(plVar15 + 4) >= uVar11) {
@@ -4529,14 +4541,14 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
             uVar11 = 0;
             do {
               lVar14 = *(long *)(lVar9 + lVar17);
-              if (*(int *)(param_2 + 1) == (int)*(short *)(lVar14 + 8)) {
+              if (*(int *)(in_x1 + 1) == (int)*(short *)(lVar14 + 8)) {
                 piStack_88 = *(int **)(lVar9 + lVar17 + 8);
                 if (lVar14 != 0) {
                   *piStack_88 = *piStack_88 + 1;
                 }
                     /* try { // try from 00345948 to 00345953 has its CatchHandler @ 00345a44 */
                 lStack_90 = lVar14;
-                func_0x00173220(param_1,&lStack_90);
+                func_0x00173220(p0,&lStack_90);
                 func_0x0016e700(&lStack_90);
                 lVar9 = plVar13[5];
                 uVar11 = (uint)(*(short *)(*(long *)(lVar9 + lVar17) + 10) == 3);
@@ -4556,7 +4568,7 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
               *piStack_98 = *piStack_98 + 1;
             }
                     /* try { // try from 003459b8 to 003459c3 has its CatchHandler @ 00345a54 */
-            func_0x00173220(param_1,&lStack_a0);
+            func_0x00173220(p0,&lStack_a0);
             func_0x0016e700(&lStack_a0);
             lVar9 = plVar13[5];
             uVar19 = uVar19 + 1;
@@ -4567,13 +4579,13 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
         if ((uVar11 & 1) != 0) goto LAB_003459fc;
       }
     }
-    if (*(int *)((long)param_2 + 0xc) == 0x10) {
-      if (*(long **)(param_1 + 0x158) != (long *)(param_1 + 0x160)) {
+    if (*(int *)((long)in_x1 + 0xc) == 0x10) {
+      if (*(long **)((long)p0 + 0x158) != (long *)((long)p0 + 0x160)) {
         uVar11 = *(uint *)(lVar5 + 0x38);
         iVar3 = 0;
         iVar16 = 0;
         cVar18 = '\x01';
-        plVar7 = *(long **)(param_1 + 0x158);
+        plVar7 = *(long **)((long)p0 + 0x158);
         do {
           if ((*(uint *)(plVar7 + 4) & uVar11) != 0) {
             uVar8 = plVar7[6] - plVar7[5];
@@ -4628,10 +4640,10 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
             } while ((long *)*plVar13 != (long *)0x0);
           }
           plVar7 = plVar13;
-        } while (plVar13 != (long *)(param_1 + 0x160));
+        } while (plVar13 != (long *)((long)p0 + 0x160));
         if (iVar3 != 0) {
                     /* try { // try from 003458d8 to 003458e7 has its CatchHandler @ 00345a40 */
-          func_0x00168510(param_1,iVar3,*(undefined4 *)(param_1 + 0x7c),iVar16 != 0,iVar16,
+          func_0x00168510(p0,iVar3,*(undefined4 *)((long)p0 + 0x7c),iVar16 != 0,iVar16,
                           cVar18 != '\0');
         }
       }
@@ -4639,7 +4651,7 @@ void Walaber::SkeletonActor::_animationEventCallback(long param_1,undefined8 *pa
   }
 LAB_003459fc:
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_68) {
     return;
@@ -4758,9 +4770,9 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
   byte *pbVar14;
   long lVar15;
   byte abStack_138 [16];
-  undefined8 uStack_128;
+  void *pvStack_128;
   byte abStack_120 [16];
-  undefined8 uStack_110;
+  void *pvStack_110;
   undefined1 auStack_108 [16];
   undefined8 *puStack_f8;
   int *piStack_f0;
@@ -4774,7 +4786,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
   int *piStack_b0;
   undefined8 *puStack_a8;
   int *piStack_a0;
-  undefined8 uStack_98;
+  void *pvStack_98;
   undefined8 uStack_90;
   byte bStack_88;
   undefined4 uStack_87;
@@ -4784,7 +4796,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
   undefined2 uStack_7f;
   undefined1 uStack_7d;
   undefined4 uStack_7c;
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined1 auStack_70 [32];
   
   lVar4 = tpidr_el0;
@@ -4807,7 +4819,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         uStack_7f = 0;
         uStack_7d = 0;
         uStack_7c = 0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         bStack_88 = 6;
         uStack_87 = 0x6c6f76;
                     /* try { // try from 00346230 to 0034623b has its CatchHandler @ 003465a0 */
@@ -4816,14 +4828,14 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         func_0x00165260(auStack_70,&bStack_88,&puStack_a8);
         func_0x00167bf0(&puStack_a8);
         if ((bStack_88 & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         uStack_81 = 0;
         uStack_80 = 0;
         uStack_7f = 0;
         uStack_7d = 0;
         uStack_7c = 0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         bStack_88 = 10;
         uStack_87 = 0x63746970;
         uStack_83 = 0x68;
@@ -4833,10 +4845,10 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         func_0x00165260(auStack_70,&bStack_88,&puStack_a8);
         func_0x00167bf0(&puStack_a8);
         if ((bStack_88 & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         uStack_7c = 0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         bStack_88 = 0x14;
         uStack_7f = 0x6461;
         uStack_87 = 0x79616c70;
@@ -4850,7 +4862,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         func_0x00165260(auStack_70,&bStack_88,&puStack_a8);
         func_0x00167bf0(&puStack_a8);
         if ((bStack_88 & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
                     /* try { // try from 0034631c to 0034635b has its CatchHandler @ 003465e4 */
         puVar6 = (undefined8 *)FUN_00164060(0x28);
@@ -4895,7 +4907,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         if (*(int *)(lVar15 + 0x10) == -1) {
           func_0x0016b220(auStack_70);
           uStack_7c = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           bStack_88 = 0x14;
           uStack_7f = 0x6461;
           uStack_87 = 0x79616c70;
@@ -4909,7 +4921,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
           func_0x00165260(auStack_70,&bStack_88,&puStack_a8);
           func_0x00167bf0(&puStack_a8);
           if ((bStack_88 & 1) != 0) {
-            FUN_00166120(uStack_78);
+            FUN_00166120(pvStack_78);
           }
                     /* try { // try from 00346430 to 0034646f has its CatchHandler @ 00346554 */
           puVar6 = (undefined8 *)FUN_00164060(0x28);
@@ -4952,7 +4964,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
         else {
           func_0x0016b220(auStack_70);
           uStack_7c = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           bStack_88 = 0x14;
           uStack_7f = 0x6461;
           uStack_87 = 0x79616c70;
@@ -4966,7 +4978,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
           func_0x00165260(auStack_70,&bStack_88,&puStack_a8);
           func_0x00167bf0(&puStack_a8);
           if ((bStack_88 & 1) != 0) {
-            FUN_00166120(uStack_78);
+            FUN_00166120(pvStack_78);
           }
                     /* try { // try from 00345f0c to 00345f4b has its CatchHandler @ 003465b8 */
           puVar6 = (undefined8 *)FUN_00164060(0x28);
@@ -5029,7 +5041,7 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
                     /* try { // try from 003460e4 to 003460f3 has its CatchHandler @ 003465c0 */
         func_0x00169a50(param_1 + 0x28,&puStack_a8,&puStack_a8);
         if (((byte)puStack_a8 & 1) != 0) {
-          FUN_00166120(uStack_98);
+          FUN_00166120(pvStack_98);
         }
         puStack_a8 = *(undefined8 **)(**(long **)(lVar13 + 0x38) + 0xa0);
         piStack_a0 = *(int **)(**(long **)(lVar13 + 0x38) + 0xa8);
@@ -5081,11 +5093,11 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
                     /* try { // try from 00346070 to 0034607f has its CatchHandler @ 0034660c */
       func_0x0016d530(*(undefined4 *)(lVar15 + 0x28),param_1,abStack_120,bVar5,
                       *(undefined4 *)(lVar15 + 0x2c),*(undefined1 *)(lVar15 + 0x30));
-      uStack_128 = uStack_110;
+      pvStack_128 = pvStack_110;
       abStack_138[0] = abStack_120[0];
     }
     if ((abStack_138[0] & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
     break;
   case 4:
@@ -5116,37 +5128,39 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
 
 /* Walaber::SkeletonActor::_soundLoaded(void*) */
 
-void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
+void Walaber::SkeletonActor::_soundLoaded(void *p0)
 
 {
-  long *plVar1;
-  long lVar2;
-  int iVar3;
-  ulong uVar4;
-  int *piVar5;
-  long *plVar6;
-  undefined8 uVar7;
+  long lVar1;
+  long *plVar2;
+  long lVar3;
+  int iVar4;
+  ulong uVar5;
+  long in_x1;
+  int *piVar6;
+  long *plVar7;
   undefined8 uVar8;
+  undefined8 uVar9;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
-  plVar6 = (long *)(param_2 + 8);
-  if (*plVar6 != 0) {
-    plVar1 = *(long **)(param_1 + 0x180);
-    if (plVar1 == *(long **)(param_1 + 0x188)) {
-      func_0x00167590(param_1 + 0x178,plVar6);
+  lVar3 = tpidr_el0;
+  lStack_58 = *(long *)(lVar3 + 0x28);
+  plVar7 = (long *)(in_x1 + 8);
+  if (*plVar7 != 0) {
+    plVar2 = *(long **)((long)p0 + 0x180);
+    if (plVar2 == *(long **)((long)p0 + 0x188)) {
+      func_0x00167590((long)p0 + 0x178,plVar7);
     }
     else {
-      *plVar1 = *plVar6;
-      piVar5 = *(int **)(param_2 + 0x10);
-      plVar1[1] = (long)piVar5;
-      *piVar5 = *piVar5 + 1;
-      *(long **)(param_1 + 0x180) = plVar1 + 2;
+      *plVar2 = *plVar7;
+      piVar6 = *(int **)(in_x1 + 0x10);
+      plVar2[1] = (long)piVar6;
+      *piVar6 = *piVar6 + 1;
+      *(long **)((long)p0 + 0x180) = plVar2 + 2;
     }
-    param_2 = param_2 + 0x18;
+    lVar1 = in_x1 + 0x18;
     abStack_70[5] = 0;
     abStack_70[6] = 0;
     abStack_70[7] = 0;
@@ -5158,19 +5172,19 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
     abStack_70[0xd] = 0;
     abStack_70[0xe] = 0;
     abStack_70[0xf] = 0;
-    uStack_60 = 0;
+    pvStack_60 = (void *)0x0;
     abStack_70[0] = 6;
     abStack_70[1] = 0x76;
     abStack_70[2] = 0x6f;
     abStack_70[3] = 0x6c;
     abStack_70[4] = 0;
                     /* try { // try from 003466b8 to 003466c3 has its CatchHandler @ 003468c0 */
-    uVar4 = func_0x00173810(param_2,abStack_70);
+    uVar5 = func_0x00173810(lVar1,abStack_70);
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
-    if ((uVar4 & 1) == 0) {
-      uVar7 = 0x3f800000;
+    if ((uVar5 & 1) == 0) {
+      uVar8 = 0x3f800000;
     }
     else {
       abStack_70[5] = 0;
@@ -5184,17 +5198,17 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 6;
       abStack_70[1] = 0x76;
       abStack_70[2] = 0x6f;
       abStack_70[3] = 0x6c;
       abStack_70[4] = 0;
                     /* try { // try from 003466f8 to 00346707 has its CatchHandler @ 003468bc */
-      func_0x0016d4e0(param_2,abStack_70);
-      uVar7 = func_0x00168f30();
+      func_0x0016d4e0(lVar1,abStack_70);
+      uVar8 = func_0x00168f30();
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
     }
     abStack_70[7] = 0;
@@ -5206,7 +5220,7 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
     abStack_70[0xd] = 0;
     abStack_70[0xe] = 0;
     abStack_70[0xf] = 0;
-    uStack_60 = 0;
+    pvStack_60 = (void *)0x0;
     abStack_70[0] = 10;
     abStack_70[1] = 0x70;
     abStack_70[2] = 0x69;
@@ -5215,11 +5229,11 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
     abStack_70[5] = 0x68;
     abStack_70[6] = 0;
                     /* try { // try from 00346748 to 00346753 has its CatchHandler @ 003468b8 */
-    uVar4 = func_0x00173810(param_2,abStack_70);
+    uVar5 = func_0x00173810(lVar1,abStack_70);
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
-    if ((uVar4 & 1) != 0) {
+    if ((uVar5 & 1) != 0) {
       abStack_70[7] = 0;
       abStack_70[8] = 0;
       abStack_70[9] = 0;
@@ -5229,7 +5243,7 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 10;
       abStack_70[1] = 0x70;
       abStack_70[2] = 0x69;
@@ -5238,21 +5252,21 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
       abStack_70[5] = 0x68;
       abStack_70[6] = 0;
                     /* try { // try from 00346790 to 0034679f has its CatchHandler @ 003468b4 */
-      func_0x0016d4e0(param_2,abStack_70);
-      uVar8 = func_0x00168f30();
+      func_0x0016d4e0(lVar1,abStack_70);
+      uVar9 = func_0x00168f30();
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
-      if ((float)uVar8 != 1.0) {
-        func_0x00171370(uVar8,*plVar6);
+      if ((float)uVar9 != 1.0) {
+        func_0x00171370(uVar9,*plVar7);
       }
     }
-    func_0x0016c9f0(uVar7,*plVar6);
+    func_0x0016c9f0(uVar8,*plVar7);
     abStack_70[0xc] = 0;
     abStack_70[0xd] = 0;
     abStack_70[0xe] = 0;
     abStack_70[0xf] = 0;
-    uStack_60 = 0;
+    pvStack_60 = (void *)0x0;
     abStack_70[0] = 0x14;
     abStack_70[9] = 0x61;
     abStack_70[10] = 100;
@@ -5266,16 +5280,16 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
     abStack_70[8] = 0x6f;
     abStack_70[0xb] = 0;
                     /* try { // try from 00346804 to 0034680f has its CatchHandler @ 003468b0 */
-    uVar4 = func_0x00173810(param_2,abStack_70);
+    uVar5 = func_0x00173810(lVar1,abStack_70);
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
-    if ((uVar4 & 1) != 0) {
+    if ((uVar5 & 1) != 0) {
       abStack_70[0xc] = 0;
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 0x14;
       abStack_70[9] = 0x61;
       abStack_70[10] = 100;
@@ -5289,17 +5303,17 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
       abStack_70[8] = 0x6f;
       abStack_70[0xb] = 0;
                     /* try { // try from 00346848 to 00346857 has its CatchHandler @ 003468ac */
-      func_0x0016d4e0(param_2,abStack_70);
-      iVar3 = func_0x00166a80();
+      func_0x0016d4e0(lVar1,abStack_70);
+      iVar4 = func_0x00166a80();
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
-      if (iVar3 != 0) {
-        func_0x00165e20(0x3f800000,*plVar6);
+      if (iVar4 != 0) {
+        func_0x00165e20(0x3f800000,*plVar7);
       }
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
+  if (*(long *)(lVar3 + 0x28) == lStack_58) {
     return;
   }
   FUN_00164ff0();
@@ -5314,13 +5328,14 @@ void Walaber::SkeletonActor::_soundLoaded(long param_1,long param_2)
 
 /* Walaber::SkeletonActor::_gotSoundFile(void*) */
 
-void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
+void Walaber::SkeletonActor::_gotSoundFile(void *p0)
 
 {
   long *plVar1;
   long lVar2;
   int iVar3;
   ulong uVar4;
+  int *in_x1;
   char *pcVar5;
   long lVar6;
   int *piVar7;
@@ -5328,26 +5343,26 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
   undefined8 uVar9;
   undefined8 uVar10;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  if (*param_2 == 1) {
-    plVar8 = (long *)(param_2 + 8);
+  if (*in_x1 == 1) {
+    plVar8 = (long *)(in_x1 + 8);
     if (*plVar8 != 0) {
-      plVar1 = *(long **)(param_1 + 0x180);
-      if (plVar1 == *(long **)(param_1 + 0x188)) {
-        func_0x00167590(param_1 + 0x178,plVar8);
+      plVar1 = *(long **)((long)p0 + 0x180);
+      if (plVar1 == *(long **)((long)p0 + 0x188)) {
+        func_0x00167590((long)p0 + 0x178,plVar8);
       }
       else {
         *plVar1 = *plVar8;
-        piVar7 = *(int **)(param_2 + 10);
+        piVar7 = *(int **)(in_x1 + 10);
         plVar1[1] = (long)piVar7;
         *piVar7 = *piVar7 + 1;
-        *(long **)(param_1 + 0x180) = plVar1 + 2;
+        *(long **)((long)p0 + 0x180) = plVar1 + 2;
       }
-      param_2 = param_2 + 0xc;
+      piVar7 = in_x1 + 0xc;
       abStack_70[5] = 0;
       abStack_70[6] = 0;
       abStack_70[7] = 0;
@@ -5359,16 +5374,16 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 6;
       abStack_70[1] = 0x76;
       abStack_70[2] = 0x6f;
       abStack_70[3] = 0x6c;
       abStack_70[4] = 0;
                     /* try { // try from 003469c0 to 003469cb has its CatchHandler @ 00346bc8 */
-      uVar4 = func_0x00173810(param_2,abStack_70);
+      uVar4 = func_0x00173810(piVar7,abStack_70);
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
       if ((uVar4 & 1) == 0) {
         uVar9 = 0x3f800000;
@@ -5385,17 +5400,17 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
         abStack_70[0xd] = 0;
         abStack_70[0xe] = 0;
         abStack_70[0xf] = 0;
-        uStack_60 = 0;
+        pvStack_60 = (void *)0x0;
         abStack_70[0] = 6;
         abStack_70[1] = 0x76;
         abStack_70[2] = 0x6f;
         abStack_70[3] = 0x6c;
         abStack_70[4] = 0;
                     /* try { // try from 00346a00 to 00346a0f has its CatchHandler @ 00346bc4 */
-        func_0x0016d4e0(param_2,abStack_70);
+        func_0x0016d4e0(piVar7,abStack_70);
         uVar9 = func_0x00168f30();
         if ((abStack_70[0] & 1) != 0) {
-          FUN_00166120(uStack_60);
+          FUN_00166120(pvStack_60);
         }
       }
       abStack_70[7] = 0;
@@ -5407,7 +5422,7 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 10;
       abStack_70[1] = 0x70;
       abStack_70[2] = 0x69;
@@ -5416,9 +5431,9 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
       abStack_70[5] = 0x68;
       abStack_70[6] = 0;
                     /* try { // try from 00346a50 to 00346a5b has its CatchHandler @ 00346bc0 */
-      uVar4 = func_0x00173810(param_2,abStack_70);
+      uVar4 = func_0x00173810(piVar7,abStack_70);
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
       if ((uVar4 & 1) != 0) {
         abStack_70[7] = 0;
@@ -5430,7 +5445,7 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
         abStack_70[0xd] = 0;
         abStack_70[0xe] = 0;
         abStack_70[0xf] = 0;
-        uStack_60 = 0;
+        pvStack_60 = (void *)0x0;
         abStack_70[0] = 10;
         abStack_70[1] = 0x70;
         abStack_70[2] = 0x69;
@@ -5439,10 +5454,10 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
         abStack_70[5] = 0x68;
         abStack_70[6] = 0;
                     /* try { // try from 00346a98 to 00346aa7 has its CatchHandler @ 00346bbc */
-        func_0x0016d4e0(param_2,abStack_70);
+        func_0x0016d4e0(piVar7,abStack_70);
         uVar10 = func_0x00168f30();
         if ((abStack_70[0] & 1) != 0) {
-          FUN_00166120(uStack_60);
+          FUN_00166120(pvStack_60);
         }
         if ((float)uVar10 != 1.0) {
           func_0x00171370(uVar10,*plVar8);
@@ -5453,7 +5468,7 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
       abStack_70[0xd] = 0;
       abStack_70[0xe] = 0;
       abStack_70[0xf] = 0;
-      uStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       abStack_70[0] = 0x14;
       abStack_70[9] = 0x61;
       abStack_70[10] = 100;
@@ -5467,16 +5482,16 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
       abStack_70[8] = 0x6f;
       abStack_70[0xb] = 0;
                     /* try { // try from 00346b0c to 00346b17 has its CatchHandler @ 00346bb8 */
-      uVar4 = func_0x00173810(param_2,abStack_70);
+      uVar4 = func_0x00173810(piVar7,abStack_70);
       if ((abStack_70[0] & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
       if ((uVar4 & 1) != 0) {
         abStack_70[0xc] = 0;
         abStack_70[0xd] = 0;
         abStack_70[0xe] = 0;
         abStack_70[0xf] = 0;
-        uStack_60 = 0;
+        pvStack_60 = (void *)0x0;
         abStack_70[0] = 0x14;
         abStack_70[9] = 0x61;
         abStack_70[10] = 100;
@@ -5490,10 +5505,10 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
         abStack_70[8] = 0x6f;
         abStack_70[0xb] = 0;
                     /* try { // try from 00346b50 to 00346b5f has its CatchHandler @ 00346bb4 */
-        func_0x0016d4e0(param_2,abStack_70);
+        func_0x0016d4e0(piVar7,abStack_70);
         iVar3 = func_0x00166a80();
         if ((abStack_70[0] & 1) != 0) {
-          FUN_00166120(uStack_60);
+          FUN_00166120(pvStack_60);
         }
         if (iVar3 != 0) {
           func_0x00165e20(0x3f800000,*plVar8);
@@ -5502,13 +5517,13 @@ void Walaber::SkeletonActor::_gotSoundFile(long param_1,int *param_2)
     }
   }
   else {
-    if ((*(byte *)(param_2 + 2) & 1) == 0) {
-      lVar6 = (long)param_2 + 9;
+    if ((*(byte *)(in_x1 + 2) & 1) == 0) {
+      lVar6 = (long)in_x1 + 9;
     }
     else {
-      lVar6 = *(long *)(param_2 + 6);
+      lVar6 = *(long *)(in_x1 + 6);
     }
-    if (*param_2 == 3) {
+    if (*in_x1 == 3) {
       pcVar5 = "Cannot find sound file: [ %s ]\n";
     }
     else {
@@ -5691,7 +5706,7 @@ undefined1  [16] Walaber::SkeletonActor::getAnimationLength(long param_1)
   undefined8 uVar7;
   byte abStack_50 [8];
   ulong uStack_48;
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
@@ -5711,7 +5726,7 @@ undefined1  [16] Walaber::SkeletonActor::getAnimationLength(long param_1)
   }
   uVar7 = 0;
   if (bVar4 != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     auVar5._8_8_ = uVar7;

@@ -71,7 +71,7 @@ void Walaber::Sprite::Sprite
   long lStack_c8;
   int *piStack_c0;
   byte abStack_b8 [16];
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   undefined8 uStack_a0;
   undefined4 *puStack_98;
   undefined8 uStack_90;
@@ -125,7 +125,7 @@ void Walaber::Sprite::Sprite
   func_0x0016d7e0(&uStack_a0);
   FUN_00166b20(&lStack_c8);
   if ((abStack_b8[0] & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
                     /* try { // try from 0035b9a8 to 0035b9b7 has its CatchHandler @ 0035ba60 */
   func_0x001685d0(auStack_e0,param_2,param_7);
@@ -154,9 +154,9 @@ void Walaber::Sprite::addAnimation(long *param_1,long param_2,long *param_3)
   long lVar3;
   undefined1 auStack_98 [16];
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined1 auStack_58 [8];
   byte *pbStack_50;
   long lStack_48;
@@ -171,7 +171,7 @@ void Walaber::Sprite::addAnimation(long *param_1,long param_2,long *param_3)
   lVar3 = func_0x0016fb80(param_2 + 0x88,abStack_88,&DAT_0062b342,&pbStack_50,auStack_58);
   func_0x00171ee0(lVar3 + 0x38,param_3);
   if ((abStack_88[0] & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
   if (*(long *)(param_2 + 0x98) == 1) {
                     /* try { // try from 0035bb34 to 0035bb3b has its CatchHandler @ 0035bbbc */
@@ -180,7 +180,7 @@ void Walaber::Sprite::addAnimation(long *param_1,long param_2,long *param_3)
     func_0x001685d0(auStack_98,param_2,abStack_88);
     func_0x0016d7e0(auStack_98);
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
   }
   lVar3 = *param_3;
@@ -191,7 +191,7 @@ void Walaber::Sprite::addAnimation(long *param_1,long param_2,long *param_3)
     *piVar1 = *piVar1 + 1;
   }
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
     return;
@@ -260,7 +260,7 @@ void Walaber::Sprite::Sprite
   long lStack_c8;
   int *piStack_c0;
   byte abStack_b8 [16];
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   undefined8 uStack_a0;
   undefined4 *puStack_98;
   undefined8 uStack_90;
@@ -314,7 +314,7 @@ void Walaber::Sprite::Sprite
   func_0x0016d7e0(&uStack_a0);
   FUN_00166b20(&lStack_c8);
   if ((abStack_b8[0] & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
                     /* try { // try from 0035be04 to 0035be13 has its CatchHandler @ 0035bebc */
   func_0x001685d0(auStack_e0,param_2,param_9);
@@ -652,60 +652,67 @@ void Walaber::Sprite::playAnimation
 
 /* Walaber::Sprite::_animationFileRead(void*) */
 
-void Walaber::Sprite::_animationFileRead(long param_1,int *param_2)
+void Walaber::Sprite::_animationFileRead(void *p0)
 
 {
   long lVar1;
   int iVar2;
-  long lVar3;
-  long *plVar4;
+  long *plVar3;
+  int *in_x1;
+  ulong extraout_x1;
+  ulong p1;
+  long lVar4;
   long lVar5;
+  undefined1 auVar6 [16];
   int iStack_70;
   undefined4 uStack_6c;
-  long lStack_68;
+  void *pvStack_68;
   byte bStack_60;
   undefined4 uStack_5f;
   undefined2 uStack_5b;
   undefined1 uStack_59;
   undefined8 uStack_58;
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*param_2 == 1) {
+  if (*in_x1 == 1) {
     bStack_60 = 0xc;
     uStack_58 = 0;
-    uStack_50 = 0;
+    pvStack_50 = (void *)0x0;
     uStack_5b = 0x6574;
     uStack_5f = 0x69727053;
     uStack_59 = 0;
                     /* try { // try from 0035c4cc to 0035c4d7 has its CatchHandler @ 0035c5d8 */
-    lVar3 = func_0x00161b90(*(undefined8 *)(param_2 + 8),*(undefined8 *)(param_2 + 10),&bStack_60,
-                            &iStack_70);
+    auVar6 = func_0x00161b90(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),&bStack_60,
+                             &iStack_70);
+    p1 = auVar6._8_8_;
+    lVar4 = auVar6._0_8_;
     if ((bStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
+      p1 = extraout_x1;
     }
-    if (*(long *)(param_2 + 8) != 0) {
-      FUN_001639e0();
+    if (*(void **)(in_x1 + 8) != (void *)0x0) {
+      FUN_001639e0(*(void **)(in_x1 + 8),p1);
     }
-    if (lVar3 == 0) {
+    if (lVar4 == 0) {
       iVar2 = 4;
     }
     else {
-      lVar5 = *(long *)(lVar3 + 0x18);
+      lVar5 = *(long *)(lVar4 + 0x18);
       if (lVar5 != 0) {
         do {
           iVar2 = FUN_00162900(*(undefined8 *)(lVar5 + 0x10),"Animation");
           if (iVar2 == 0) {
-            *(int *)(param_1 + 0xb0) = *(int *)(param_1 + 0xb0) + 1;
+            *(int *)((long)p0 + 0xb0) = *(int *)((long)p0 + 0xb0) + 1;
           }
           lVar5 = *(long *)(lVar5 + 0x30);
         } while (lVar5 != 0);
-        for (lVar3 = *(long *)(lVar3 + 0x18); lVar3 != 0; lVar3 = *(long *)(lVar3 + 0x30)) {
-          iVar2 = FUN_00162900(*(undefined8 *)(lVar3 + 0x10),"Animation");
+        for (lVar4 = *(long *)(lVar4 + 0x18); lVar4 != 0; lVar4 = *(long *)(lVar4 + 0x30)) {
+          iVar2 = FUN_00162900(*(undefined8 *)(lVar4 + 0x10),"Animation");
           if (iVar2 == 0) {
-            func_0x00168b00(param_1,lVar3);
+            func_0x00168b00(p0,lVar4);
           }
         }
       }
@@ -713,11 +720,11 @@ void Walaber::Sprite::_animationFileRead(long param_1,int *param_2)
     }
     FUN_00170230(CONCAT44(uStack_6c,iStack_70));
     func_0x0016b480();
-    if (((iVar2 != 1) && (*(int *)(param_1 + 0xb0) == 0)) &&
-       (plVar4 = *(long **)(param_1 + 0xb8), plVar4 != (long *)0x0)) {
+    if (((iVar2 != 1) && (*(int *)((long)p0 + 0xb0) == 0)) &&
+       (plVar3 = *(long **)((long)p0 + 0xb8), plVar3 != (long *)0x0)) {
       iStack_70 = iVar2;
-      lStack_68 = param_1;
-      (**(code **)(*plVar4 + 0x10))(plVar4,&iStack_70);
+      pvStack_68 = p0;
+      (**(code **)(*plVar3 + 0x10))(plVar3,&iStack_70);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
@@ -735,16 +742,18 @@ void Walaber::Sprite::_animationFileRead(long param_1,int *param_2)
 
 /* Walaber::Sprite::update(float) */
 
-void Walaber::Sprite::update(long param_1)
+void Walaber::Sprite::update(float p0)
 
 {
   long lVar1;
   int iVar2;
+  long in_x0;
+  float extraout_s0;
   long lStack_80;
   int *piStack_78;
   long lStack_70;
   int *piStack_68;
-  long lStack_60;
+  undefined1 auStack_60 [8];
   long lStack_58;
   int *piStack_50;
   int iStack_48;
@@ -754,48 +763,47 @@ void Walaber::Sprite::update(long param_1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  if ((*(long *)(param_1 + 0xa0) != 0) && (**(int **)(param_1 + 0xa8) != 0)) {
+  if ((*(long *)(in_x0 + 0xa0) != 0) && (**(int **)(in_x0 + 0xa8) != 0)) {
     uStack_3c = 0xffffffff;
-    iVar2 = func_0x0016d1e0(*(long *)(param_1 + 0xa0),&uStack_3c);
+    iVar2 = func_0x0016d1e0(*(long *)(in_x0 + 0xa0),&uStack_3c);
+    p0 = extraout_s0;
     if (iVar2 == 4) {
-      if (*(long *)(param_1 + 0xd0) == 0) goto LAB_0035c784;
-      lStack_80 = *(long *)(param_1 + 0xa0);
-      piStack_78 = *(int **)(param_1 + 0xa8);
+      if (*(long *)(in_x0 + 0xd0) == 0) goto LAB_0035c784;
+      lStack_80 = *(long *)(in_x0 + 0xa0);
+      piStack_78 = *(int **)(in_x0 + 0xa8);
       if (lStack_80 != 0) {
         *piStack_78 = *piStack_78 + 1;
         *piStack_78 = *piStack_78 + 1;
       }
       iStack_48 = 4;
       uStack_44 = uStack_3c;
-      lStack_60 = param_1;
       lStack_58 = lStack_80;
       piStack_50 = piStack_78;
       func_0x0016d7e0(&lStack_80);
                     /* try { // try from 0035c774 to 0035c77b has its CatchHandler @ 0035c7ac */
-      (**(code **)(**(long **)(param_1 + 0xd0) + 0x10))(*(long **)(param_1 + 0xd0),&lStack_60);
+      (**(code **)(**(long **)(in_x0 + 0xd0) + 0x10))(*(long **)(in_x0 + 0xd0),auStack_60);
     }
     else {
-      if (((iVar2 != 0x20) && (iVar2 != 8)) || (*(long *)(param_1 + 0xd0) == 0)) goto LAB_0035c784;
-      lStack_70 = *(long *)(param_1 + 0xa0);
-      piStack_68 = *(int **)(param_1 + 0xa8);
+      if (((iVar2 != 0x20) && (iVar2 != 8)) || (*(long *)(in_x0 + 0xd0) == 0)) goto LAB_0035c784;
+      lStack_70 = *(long *)(in_x0 + 0xa0);
+      piStack_68 = *(int **)(in_x0 + 0xa8);
       if (lStack_70 != 0) {
         *piStack_68 = *piStack_68 + 1;
         *piStack_68 = *piStack_68 + 1;
       }
       uStack_44 = uStack_3c;
-      lStack_60 = param_1;
       lStack_58 = lStack_70;
       piStack_50 = piStack_68;
       iStack_48 = iVar2;
       func_0x0016d7e0(&lStack_70);
                     /* try { // try from 0035c708 to 0035c70f has its CatchHandler @ 0035c7b0 */
-      (**(code **)(**(long **)(param_1 + 0xd0) + 0x10))(*(long **)(param_1 + 0xd0),&lStack_60);
+      (**(code **)(**(long **)(in_x0 + 0xd0) + 0x10))(*(long **)(in_x0 + 0xd0),auStack_60);
     }
-    func_0x0016d7e0(&lStack_58);
+    p0 = (float)func_0x0016d7e0(&lStack_58);
   }
 LAB_0035c784:
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    FUN_00164ff0();
+    FUN_00164ff0(p0);
     return;
   }
   return;
@@ -809,30 +817,29 @@ LAB_0035c784:
 
 /* Walaber::Sprite::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Sprite::draw(long param_1,undefined8 param_2)
+void Walaber::Sprite::draw(Walaber__SpriteBatch *p0)
 
 {
-  undefined4 uVar1;
-  long lVar2;
-  int iVar3;
-  long lVar4;
+  long lVar1;
+  int iVar2;
+  long lVar3;
+  byte *pbVar4;
   byte *pbVar5;
-  byte *pbVar6;
-  int iVar7;
-  byte *pbVar8;
-  int iVar9;
-  byte *pbVar10;
-  int iVar11;
-  long lVar12;
-  float fVar13;
-  undefined8 uVar14;
+  int iVar6;
+  byte *pbVar7;
+  int iVar8;
+  byte *pbVar9;
+  int iVar10;
+  long lVar11;
+  float fVar12;
+  undefined8 uVar13;
+  float fVar14;
   float fVar15;
   float fVar16;
   float fVar17;
   float fVar18;
   float fVar19;
   float fVar20;
-  float fVar21;
   long lStack_98;
   int *piStack_90;
   long lStack_88;
@@ -848,65 +855,64 @@ void Walaber::Sprite::draw(long param_1,undefined8 param_2)
   undefined8 uStack_50;
   long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
-  if (*(char *)(param_1 + 200) != '\0') {
+  lVar1 = tpidr_el0;
+  lStack_48 = *(long *)(lVar1 + 0x28);
+  if (p0[200] != (Walaber__SpriteBatch)0x0) {
     uStack_50 = 0;
     uStack_60 = 0;
     uStack_70 = 0;
-    lVar12 = *(long *)(param_1 + 0xa0);
+    lVar11 = *(long *)(p0 + 0xa0);
     uStack_68 = uStack_70;
-    if (lVar12 != 0) {
-      func_0x00167d50(&lStack_98,param_1);
-      uVar14 = func_0x00164d90(param_1);
-      func_0x00169f20(&bStack_78,param_1);
-      func_0x00172600(uVar14,lVar12,&lStack_98,&bStack_78,&uStack_50,&uStack_54,&uStack_60,
-                      &uStack_70,*(undefined1 *)(param_1 + 0xc9));
-      lVar12 = *(long *)(param_1 + 0xa0);
-      if (*(long *)(lVar12 + 0x28) == *(long *)(lVar12 + 0x30)) {
-        pbVar10 = &Color::White;
-        pbVar5 = &DAT_0062b203;
-        pbVar6 = &DAT_0062b202;
-        pbVar8 = &DAT_0062b201;
+    if (lVar11 != 0) {
+      func_0x00167d50(&lStack_98,p0);
+      uVar13 = func_0x00164d90(p0);
+      func_0x00169f20(&bStack_78,p0);
+      func_0x00172600(uVar13,lVar11,&lStack_98,&bStack_78,&uStack_50,&uStack_54,&uStack_60,
+                      &uStack_70,p0[0xc9]);
+      lVar11 = *(long *)(p0 + 0xa0);
+      if (*(long *)(lVar11 + 0x28) == *(long *)(lVar11 + 0x30)) {
+        pbVar9 = &Color::White;
+        pbVar4 = &DAT_0062b203;
+        pbVar5 = &DAT_0062b202;
+        pbVar7 = &DAT_0062b201;
       }
       else {
-        lVar4 = *(long *)(lVar12 + 0x28) + (ulong)*(uint *)(lVar12 + 0x40) * 0x28;
-        pbVar10 = (byte *)(lVar4 + 0x14);
-        pbVar8 = (byte *)(lVar4 + 0x15);
-        pbVar6 = (byte *)(lVar4 + 0x16);
-        pbVar5 = (byte *)(lVar4 + 0x17);
+        lVar3 = *(long *)(lVar11 + 0x28) + (ulong)*(uint *)(lVar11 + 0x40) * 0x28;
+        pbVar9 = (byte *)(lVar3 + 0x14);
+        pbVar7 = (byte *)(lVar3 + 0x15);
+        pbVar5 = (byte *)(lVar3 + 0x16);
+        pbVar4 = (byte *)(lVar3 + 0x17);
       }
-      fVar13 = (float)NEON_ucvtf((uint)*(byte *)(param_1 + 0xca));
-      fVar15 = (float)NEON_ucvtf((uint)*pbVar10);
-      fVar17 = (float)NEON_ucvtf((uint)*(byte *)(param_1 + 0xcb));
-      fVar18 = (float)NEON_ucvtf((uint)*pbVar8);
-      fVar20 = (float)NEON_ucvtf((uint)*(byte *)(param_1 + 0xcc));
-      fVar21 = (float)NEON_ucvtf((uint)*pbVar6);
-      fVar16 = (float)NEON_ucvtf((uint)*(byte *)(param_1 + 0xcd));
-      fVar19 = (float)NEON_ucvtf((uint)*pbVar5);
-      iVar3 = (int)((fVar15 / 255.0) * (fVar13 / 255.0) * 255.0);
-      iVar7 = (int)((fVar18 / 255.0) * (fVar17 / 255.0) * 255.0);
-      iVar9 = (int)((fVar21 / 255.0) * (fVar20 / 255.0) * 255.0);
-      if (0xfe < iVar3) {
-        iVar3 = 0xff;
+      fVar12 = (float)NEON_ucvtf((uint)(byte)p0[0xca]);
+      fVar14 = (float)NEON_ucvtf((uint)*pbVar9);
+      fVar16 = (float)NEON_ucvtf((uint)(byte)p0[0xcb]);
+      fVar17 = (float)NEON_ucvtf((uint)*pbVar7);
+      fVar19 = (float)NEON_ucvtf((uint)(byte)p0[0xcc]);
+      fVar20 = (float)NEON_ucvtf((uint)*pbVar5);
+      fVar15 = (float)NEON_ucvtf((uint)(byte)p0[0xcd]);
+      fVar18 = (float)NEON_ucvtf((uint)*pbVar4);
+      iVar2 = (int)((fVar14 / 255.0) * (fVar12 / 255.0) * 255.0);
+      iVar6 = (int)((fVar17 / 255.0) * (fVar16 / 255.0) * 255.0);
+      iVar8 = (int)((fVar20 / 255.0) * (fVar19 / 255.0) * 255.0);
+      if (0xfe < iVar2) {
+        iVar2 = 0xff;
       }
-      iVar11 = (int)((fVar19 / 255.0) * (fVar16 / 255.0) * 255.0);
-      if (0xfe < iVar7) {
-        iVar7 = 0xff;
+      iVar10 = (int)((fVar18 / 255.0) * (fVar15 / 255.0) * 255.0);
+      if (0xfe < iVar6) {
+        iVar6 = 0xff;
       }
-      if (0xfe < iVar9) {
-        iVar9 = 0xff;
+      if (0xfe < iVar8) {
+        iVar8 = 0xff;
       }
-      bStack_78 = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
-      if (0xfe < iVar11) {
-        iVar11 = 0xff;
+      bStack_78 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+      if (0xfe < iVar10) {
+        iVar10 = 0xff;
       }
-      bStack_77 = (byte)iVar7 & ((byte)(iVar7 >> 0x1f) ^ 0xff);
-      bStack_76 = (byte)iVar9 & ((byte)(iVar9 >> 0x1f) ^ 0xff);
-      bStack_75 = (byte)iVar11 & ((byte)(iVar11 >> 0x1f) ^ 0xff);
-      lStack_98 = *(long *)(lVar12 + 0x60);
-      uVar1 = *(undefined4 *)(param_1 + 0x80);
-      piStack_90 = *(int **)(lVar12 + 0x68);
+      bStack_77 = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
+      bStack_76 = (byte)iVar8 & ((byte)(iVar8 >> 0x1f) ^ 0xff);
+      bStack_75 = (byte)iVar10 & ((byte)(iVar10 >> 0x1f) ^ 0xff);
+      lStack_98 = *(long *)(lVar11 + 0x60);
+      piStack_90 = *(int **)(lVar11 + 0x68);
       if (lStack_98 == 0) {
         lStack_88 = 0;
       }
@@ -914,15 +920,14 @@ void Walaber::Sprite::draw(long param_1,undefined8 param_2)
         *piStack_90 = *piStack_90 + 2;
         lStack_88 = lStack_98;
       }
-                    /* try { // try from 0035c9c0 to 0035c9df has its CatchHandler @ 0035ca1c */
       piStack_80 = piStack_90;
-      func_0x00169c00(uStack_54,param_2,uVar1,&lStack_88,&uStack_50,&uStack_60,&uStack_70,&bStack_78
-                      ,0);
+                    /* try { // try from 0035c9c0 to 0035c9df has its CatchHandler @ 0035ca1c */
+      func_0x00169c00(uStack_54);
       FUN_00166b20(&lStack_88);
       FUN_00166b20(&lStack_98);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
+  if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
   FUN_00164ff0();
@@ -937,7 +942,7 @@ void Walaber::Sprite::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Sprite::_loadAnimation(_xmlNode*) */
 
-void Walaber::Sprite::_loadAnimation(undefined8 param_1,undefined8 param_2)
+void Walaber::Sprite::_loadAnimation(_xmlNode *p0)
 
 {
   long lVar1;
@@ -962,7 +967,7 @@ void Walaber::Sprite::_loadAnimation(undefined8 param_1,undefined8 param_2)
                     /* try { // try from 0035ca70 to 0035ca73 has its CatchHandler @ 0035cb70 */
   func_0x00173120();
   puVar3 = (undefined8 *)FUN_00164060(0x28);
-  puVar3[2] = param_1;
+  puVar3[2] = p0;
   *puVar3 = &PTR__Callback_0070ea58;
   puVar3[1] = 0;
   puVar3[4] = 0;
@@ -981,10 +986,10 @@ void Walaber::Sprite::_loadAnimation(undefined8 param_1,undefined8 param_2)
   piStack_70 = piVar4;
   FUN_0016bb90(&puStack_88);
   *piVar4 = *piVar4 + 1;
-                    /* try { // try from 0035cafc to 0035cb0b has its CatchHandler @ 0035cb50 */
   puStack_98 = puVar3;
   piStack_90 = piVar4;
-  func_0x00166040(uVar2,param_2,&puStack_98);
+                    /* try { // try from 0035cafc to 0035cb0b has its CatchHandler @ 0035cb50 */
+  func_0x00166040(uVar2);
   FUN_0016bb90(&puStack_98);
   FUN_0016bb90(&puStack_78);
   func_0x00169ad0(&puStack_68);
@@ -1003,12 +1008,13 @@ void Walaber::Sprite::_loadAnimation(undefined8 param_1,undefined8 param_2)
 
 /* Walaber::Sprite::_animationLoaded(void*) */
 
-void Walaber::Sprite::_animationLoaded(undefined4 *param_1,long param_2)
+void Walaber::Sprite::_animationLoaded(void *p0)
 
 {
   int iVar1;
   long lVar2;
   long *plVar3;
+  long in_x1;
   long lVar4;
   long lStack_68;
   undefined4 *puStack_60;
@@ -1019,7 +1025,7 @@ void Walaber::Sprite::_animationLoaded(undefined4 *param_1,long param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar4 = *(long *)(param_2 + 8);
+  lVar4 = *(long *)(in_x1 + 8);
   lStack_68 = lVar4;
   if (lVar4 == 0) {
     puStack_50 = (undefined4 *)0x0;
@@ -1032,15 +1038,15 @@ void Walaber::Sprite::_animationLoaded(undefined4 *param_1,long param_2)
                     /* try { // try from 0035cbe4 to 0035cbf3 has its CatchHandler @ 0035cc68 */
   puStack_60 = puStack_50;
   lStack_58 = lVar4;
-  func_0x00172a30(auStack_48,param_1,&lStack_58);
+  func_0x00172a30(auStack_48,p0,&lStack_58);
   func_0x0016d7e0(auStack_48);
   func_0x0016d7e0(&lStack_58);
   func_0x0016d7e0(&lStack_68);
-  iVar1 = param_1[0x2c];
-  param_1[0x2c] = iVar1 + -1;
-  if ((iVar1 + -1 == 0) && (plVar3 = *(long **)(param_1 + 0x2e), plVar3 != (long *)0x0)) {
+  iVar1 = *(int *)((long)p0 + 0xb0) + -1;
+  *(int *)((long)p0 + 0xb0) = iVar1;
+  if ((iVar1 == 0) && (plVar3 = *(long **)((long)p0 + 0xb8), plVar3 != (long *)0x0)) {
     lStack_68 = CONCAT44(lStack_68._4_4_,1);
-    puStack_60 = param_1;
+    puStack_60 = p0;
     (**(code **)(*plVar3 + 0x10))(plVar3,&lStack_68);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {

@@ -15,29 +15,31 @@ void std::__ndk1::
      ::~__vector_base(undefined8 *param_1)
 
 {
-  long *plVar1;
-  long *plVar2;
-  long *plVar3;
+  void *p0;
+  undefined8 *puVar1;
+  undefined8 *puVar2;
+  undefined8 *puVar3;
   
-  plVar3 = (long *)*param_1;
-  if (plVar3 == (long *)0x0) {
+  puVar3 = (undefined8 *)*param_1;
+  if (puVar3 == (undefined8 *)0x0) {
     return;
   }
-  plVar2 = (long *)param_1[1];
-  plVar1 = plVar3;
-  if (plVar2 != plVar3) {
+  puVar2 = (undefined8 *)param_1[1];
+  puVar1 = puVar3;
+  if (puVar2 != puVar3) {
     do {
-      plVar1 = plVar2 + -3;
-      if (*plVar1 != 0) {
-        plVar2[-2] = *plVar1;
-        FUN_00166120();
+      puVar1 = puVar2 + -3;
+      p0 = (void *)*puVar1;
+      if (p0 != (void *)0x0) {
+        puVar2[-2] = p0;
+        FUN_00166120(p0);
       }
-      plVar2 = plVar1;
-    } while (plVar3 != plVar1);
-    plVar1 = (long *)*param_1;
+      puVar2 = puVar1;
+    } while (puVar3 != puVar1);
+    puVar1 = (undefined8 *)*param_1;
   }
-  param_1[1] = plVar3;
-  FUN_00166120(plVar1);
+  param_1[1] = puVar3;
+  FUN_00166120(puVar1);
   return;
 }
 

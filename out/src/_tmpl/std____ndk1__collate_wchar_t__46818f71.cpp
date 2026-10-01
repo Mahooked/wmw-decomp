@@ -23,7 +23,7 @@ void std::__ndk1::collate<wchar_t>::~collate(void)
 
 /* std::__ndk1::collate<wchar_t>::~collate() */
 
-void std::__ndk1::collate<wchar_t>::~collate(undefined8 param_1)
+void std::__ndk1::collate<wchar_t>::~collate(void *param_1)
 
 {
   FUN_00172660();
@@ -40,23 +40,24 @@ void std::__ndk1::collate<wchar_t>::~collate(undefined8 param_1)
 /* std::__ndk1::collate<wchar_t>::do_compare(wchar_t const*, wchar_t const*, wchar_t const*, wchar_t
    const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_compare
-                (undefined8 param_1,uint *param_2,uint *param_3,uint *param_4,uint *param_5)
+ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
 
 {
+  wchar_t *in_x4;
+  
   while( true ) {
-    if (param_4 == param_5) {
-      return (ulong)(param_2 != param_3);
+    if (p3 == in_x4) {
+      return (ulong)(p1 != p2);
     }
-    if (param_3 == param_2) {
+    if (p2 == p1) {
       return 0xffffffff;
     }
-    if (*param_2 < *param_4) {
+    if ((uint)*p1 < (uint)*p3) {
       return 0xffffffff;
     }
-    if (*param_4 < *param_2) break;
-    param_4 = param_4 + 1;
-    param_2 = param_2 + 1;
+    if ((uint)*p3 < (uint)*p1) break;
+    p3 = p3 + 1;
+    p1 = p1 + 1;
   }
   return 1;
 }
@@ -69,13 +70,15 @@ ulong std::__ndk1::collate<wchar_t>::do_compare
 
 /* std::__ndk1::collate<wchar_t>::do_transform(wchar_t const*, wchar_t const*) const */
 
-void std::__ndk1::collate<wchar_t>::do_transform(undefined8 *param_1)
+void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  FUN_00163b90(param_1);
+  undefined8 *in_x8;
+  
+  *in_x8 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  FUN_00163b90();
   return;
 }
 
@@ -87,22 +90,23 @@ void std::__ndk1::collate<wchar_t>::do_transform(undefined8 *param_1)
 
 /* std::__ndk1::collate<wchar_t>::do_hash(wchar_t const*, wchar_t const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_hash(undefined8 param_1,uint *param_2,uint *param_3)
+ulong std::__ndk1::collate<wchar_t>::do_hash(wchar_t *p0,wchar_t *p1)
 
 {
   ulong uVar1;
-  uint *puVar2;
+  wchar_t *pwVar2;
+  wchar_t *in_x2;
   ulong uVar3;
   
-  if (param_2 != param_3) {
+  if (p1 != in_x2) {
     uVar1 = 0;
     do {
-      puVar2 = param_2 + 1;
-      uVar1 = (ulong)*param_2 + uVar1 * 0x10;
+      pwVar2 = p1 + 1;
+      uVar1 = (ulong)(uint)*p1 + uVar1 * 0x10;
       uVar3 = uVar1 & 0xf000000000000000;
       uVar1 = (uVar3 | uVar3 >> 0x38) ^ uVar1;
-      param_2 = puVar2;
-    } while (param_3 != puVar2);
+      p1 = pwVar2;
+    } while (in_x2 != pwVar2);
     return uVar1;
   }
   return 0;

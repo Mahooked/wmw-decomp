@@ -64,19 +64,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::__vallocate(long *param_1,ulong param_2)
+     ::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x492492492492493) {
-    lVar1 = FUN_00164060(param_2 * 0x38);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x38;
+  if (in_x1 < 0x492492492492493) {
+    lVar1 = FUN_00164060(in_x1 * 0x38);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x38;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -92,29 +93,29 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::__vdeallocate(long *param_1)
+     ::__vdeallocate(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar2 = *param_1;
-  if (lVar2 != 0) {
-    lVar3 = lVar2;
-    lVar1 = param_1[1];
-    if (param_1[1] != lVar2) {
+  pvVar2 = (void *)*param_1;
+  if (pvVar2 != (void *)0x0) {
+    pvVar3 = pvVar2;
+    pvVar1 = (void *)param_1[1];
+    if ((void *)param_1[1] != pvVar2) {
       do {
-        lVar3 = lVar1 + -0x38;
-        if ((*(byte *)(lVar1 + -0x30) & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(lVar1 + -0x20));
+        pvVar3 = (void *)((long)pvVar1 + -0x38);
+        if ((*(byte *)((long)pvVar1 + -0x30) & 1) != 0) {
+          FUN_00166120(*(void **)((long)pvVar1 + -0x20));
         }
-        lVar1 = lVar3;
-      } while (lVar2 != lVar3);
-      lVar3 = *param_1;
+        pvVar1 = pvVar3;
+      } while (pvVar2 != pvVar3);
+      pvVar3 = (void *)*param_1;
     }
-    param_1[1] = lVar2;
-    FUN_00166120(lVar3);
+    param_1[1] = pvVar2;
+    FUN_00166120(pvVar3);
     *param_1 = 0;
     param_1[1] = 0;
     param_1[2] = 0;

@@ -8,14 +8,16 @@
 
 /* Walaber::FluidParticleSet::initParticles(unsigned int) */
 
-void Walaber::FluidParticleSet::initParticles(undefined8 *param_1,int param_2)
+void Walaber::FluidParticleSet::initParticles(uint p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
-  int iVar4;
-  undefined8 uVar5;
+  undefined8 *puVar2;
+  long *plVar3;
+  int in_w1;
+  long lVar4;
+  int iVar5;
+  undefined8 uVar6;
   undefined8 uStack_d8;
   undefined8 uStack_d0;
   undefined8 uStack_c8;
@@ -27,9 +29,10 @@ void Walaber::FluidParticleSet::initParticles(undefined8 *param_1,int param_2)
   undefined1 auStack_a0 [88];
   long lStack_48;
   
+  puVar2 = (undefined8 *)(ulong)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uVar5 = *param_1;
+  uVar6 = *puVar2;
   uStack_b8 = 0x3f8000003f800000;
   uStack_b0 = 0;
   uStack_a8 = 0xbf800000;
@@ -40,22 +43,22 @@ void Walaber::FluidParticleSet::initParticles(undefined8 *param_1,int param_2)
   uStack_a4 = 0;
   FUN_0016b330(auStack_a0,0,0x58);
                     /* try { // try from 0038d97c to 0038d98f has its CatchHandler @ 0038da00 */
-  func_0x00166e90(param_1,uVar5,param_2,&uStack_d8);
-  if (param_2 != 0) {
-    iVar4 = 0;
+  func_0x00166e90(puVar2,uVar6,in_w1,&uStack_d8);
+  if (in_w1 != 0) {
+    iVar5 = 0;
     do {
-      plVar2 = (long *)FUN_00164060(0x18);
-      *(int *)(plVar2 + 2) = iVar4;
-      lVar3 = param_1[3];
-      iVar4 = iVar4 + 1;
-      *plVar2 = lVar3;
-      plVar2[1] = (long)(param_1 + 3);
-      *(long **)(lVar3 + 8) = plVar2;
-      param_1[3] = plVar2;
-      param_1[5] = param_1[5] + 1;
-    } while (param_2 != iVar4);
+      plVar3 = (long *)FUN_00164060(0x18);
+      *(int *)(plVar3 + 2) = iVar5;
+      lVar4 = puVar2[3];
+      iVar5 = iVar5 + 1;
+      *plVar3 = lVar4;
+      plVar3[1] = (long)(puVar2 + 3);
+      *(long **)(lVar4 + 8) = plVar3;
+      puVar2[3] = plVar3;
+      puVar2[5] = puVar2[5] + 1;
+    } while (in_w1 != iVar5);
   }
-  *(int *)(param_1 + 7) = param_2;
+  *(int *)(puVar2 + 7) = in_w1;
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -71,11 +74,12 @@ void Walaber::FluidParticleSet::initParticles(undefined8 *param_1,int param_2)
 
 /* Walaber::FluidParticleSet::updateParticles(float) */
 
-void Walaber::FluidParticleSet::updateParticles(float param_1,long *param_2)
+void Walaber::FluidParticleSet::updateParticles(float p0)
 
 {
   undefined8 *puVar1;
   long lVar2;
+  long *in_x0;
   long lVar3;
   long *plVar4;
   ulong uVar5;
@@ -85,7 +89,7 @@ void Walaber::FluidParticleSet::updateParticles(float param_1,long *param_2)
   float fVar9;
   undefined8 uVar10;
   float fVar11;
-  long *plStack_30;
+  undefined1 auStack_30 [8];
   long lStack_28;
   
   lVar2 = tpidr_el0;
@@ -93,7 +97,7 @@ void Walaber::FluidParticleSet::updateParticles(float param_1,long *param_2)
   lVar3 = 0;
   uVar5 = 0xffffffffffffffff;
   do {
-    puVar1 = (undefined8 *)(*param_2 + lVar3);
+    puVar1 = (undefined8 *)(*in_x0 + lVar3);
     if (*(char *)((long)puVar1 + 0x34) != '\0') {
       uVar10 = *puVar1;
       fVar6 = (float)puVar1[3] * *(float *)((long)puVar1 + 0x2c);
@@ -101,22 +105,20 @@ void Walaber::FluidParticleSet::updateParticles(float param_1,long *param_2)
       puVar1[3] = CONCAT44(fVar7,fVar6);
       fVar9 = (float)uVar10;
       fVar11 = (float)((ulong)uVar10 >> 0x20);
-      fVar8 = 1.0 - *(float *)((long)param_2 + 0x3c);
-      fVar6 = param_1 * param_1 * fVar6 + (fVar9 - (float)puVar1[1]) * fVar8 + fVar9;
-      fVar7 = param_1 * param_1 * fVar7 +
-              (fVar11 - (float)((ulong)puVar1[1] >> 0x20)) * fVar8 + fVar11;
+      fVar8 = 1.0 - *(float *)((long)in_x0 + 0x3c);
+      fVar6 = p0 * p0 * fVar6 + (fVar9 - (float)puVar1[1]) * fVar8 + fVar9;
+      fVar7 = p0 * p0 * fVar7 + (fVar11 - (float)((ulong)puVar1[1] >> 0x20)) * fVar8 + fVar11;
       *puVar1 = CONCAT44(fVar7,fVar6);
       puVar1[1] = uVar10;
-      puVar1[2] = CONCAT44((1.0 / param_1) * (fVar7 - fVar11),(1.0 / param_1) * (fVar6 - fVar9));
+      puVar1[2] = CONCAT44((1.0 / p0) * (fVar7 - fVar11),(1.0 / p0) * (fVar6 - fVar9));
       puVar1[3] = 0;
     }
     uVar5 = uVar5 + 1;
     lVar3 = lVar3 + 0x90;
-  } while (uVar5 < *(uint *)(param_2 + 6));
-  plVar4 = (long *)param_2[8];
+  } while (uVar5 < *(uint *)(in_x0 + 6));
+  plVar4 = (long *)in_x0[8];
   if (plVar4 != (long *)0x0) {
-    plStack_30 = param_2;
-    (**(code **)(*plVar4 + 0x10))(plVar4,&plStack_30);
+    (**(code **)(*plVar4 + 0x10))(plVar4,auStack_30);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_28) {
     return;
@@ -642,22 +644,24 @@ LAB_0038e980:
    float) */
 
 void Walaber::FluidParticleSet::_drawIntoVertBuffer
-               (float param_1,float param_2,undefined8 param_3,long param_4,uint *param_5,
-               float param_6,float *param_7,float *param_8,float *param_9)
+               (Walaber__PositionTextureColorVert *p0,uint *p1,uint p2,Walaber__Vector2 *p3,
+               Walaber__Vector2 *p4,Walaber__Vector2 *p5,float p6,float p7)
 
 {
   uint uVar1;
-  ulong uVar2;
-  undefined8 *puVar3;
+  uint *puVar2;
+  float *in_x6;
+  ulong uVar3;
   float *pfVar4;
-  undefined8 *puVar5;
-  float *pfVar6;
+  float *pfVar5;
+  ulong uVar6;
   float *pfVar7;
-  long lVar8;
-  float fVar9;
-  undefined8 uVar10;
+  uint *puVar8;
+  uint *puVar9;
+  float fVar10;
+  float extraout_s0;
   undefined8 uVar11;
-  float fVar12;
+  undefined8 uVar12;
   float fVar13;
   float fVar14;
   float fVar15;
@@ -665,82 +669,84 @@ void Walaber::FluidParticleSet::_drawIntoVertBuffer
   float fVar17;
   float fVar18;
   float fVar19;
+  float fVar20;
   
-  fVar17 = *param_9 - *param_7;
-  fVar18 = param_9[1] - param_7[1];
-  fVar12 = fVar17 * fVar17 + fVar18 * fVar18;
-  fVar9 = SQRT(fVar12);
-  if (NAN(fVar9)) {
-    fVar9 = (float)func_0x0016cd20(fVar12);
+  puVar2 = (uint *)(ulong)p2;
+  fVar18 = *in_x6 - *(float *)p4;
+  fVar19 = in_x6[1] - *(float *)(p4 + 4);
+  fVar13 = fVar18 * fVar18 + fVar19 * fVar19;
+  fVar10 = SQRT(fVar13);
+  if (NAN(fVar10)) {
+    p0 = (Walaber__PositionTextureColorVert *)func_0x0016cd20(fVar13);
+    fVar10 = extraout_s0;
   }
-  fVar9 = fVar9 / (param_1 * 3.0);
-  if (fVar9 <= 0.0) {
-    fVar9 = 0.0;
+  fVar10 = fVar10 / (p6 * 3.0);
+  if (fVar10 <= 0.0) {
+    fVar10 = 0.0;
   }
-  fVar19 = (param_1 * 0.3 - param_1) * fVar9 + param_1 + param_2;
-  fVar12 = (float)func_0x00164960(fVar18,fVar17);
-  fVar17 = (float)func_0x0016ee90(fVar12 + -1.5707964);
-  fVar12 = (float)func_0x00174170(fVar12 + -1.5707964);
+  fVar20 = (p6 * 0.3 - p6) * fVar10 + p6 + p7;
+  fVar13 = (float)func_0x00164960(fVar19,fVar18,p0);
+  fVar18 = (float)func_0x0016ee90(fVar13 + -1.5707964);
+  fVar13 = (float)func_0x00174170(fVar13 + -1.5707964);
   pfVar4 = (float *)&mTeardropUVs;
-  uVar2 = 0;
-  pfVar6 = (float *)&DAT_0062d144;
+  uVar3 = 0;
+  pfVar5 = (float *)&DAT_0062d144;
   do {
-    fVar13 = fVar17 * pfVar6[-1] - fVar12 * *pfVar6;
-    fVar18 = fVar12 * pfVar6[-1] + fVar17 * *pfVar6;
-    if (uVar2 == 0) {
-      uVar1 = *param_5;
-      *param_5 = uVar1 + 1;
-      fVar16 = param_9[1];
-      pfVar7 = (float *)(param_4 + (ulong)uVar1 * 0x14);
-      *pfVar7 = fVar19 * fVar13 + *param_9;
-      pfVar7[1] = fVar19 * fVar18 + fVar16;
-      fVar18 = *pfVar4;
+    fVar14 = fVar18 * pfVar5[-1] - fVar13 * *pfVar5;
+    fVar19 = fVar13 * pfVar5[-1] + fVar18 * *pfVar5;
+    if (uVar3 == 0) {
+      uVar1 = *puVar2;
+      *puVar2 = uVar1 + 1;
+      fVar17 = in_x6[1];
+      pfVar7 = (float *)(p1 + (ulong)uVar1 * 5);
+      *pfVar7 = fVar20 * fVar14 + *in_x6;
+      pfVar7[1] = fVar20 * fVar19 + fVar17;
+      fVar19 = *pfVar4;
       pfVar7[3] = 1.0;
-      pfVar7[4] = param_6;
-      pfVar7[2] = fVar18;
-      uVar1 = *param_5;
-      puVar5 = (undefined8 *)(param_4 + (ulong)(uVar1 - 1) * 0x14);
-      *param_5 = uVar1 + 1;
-      uVar11 = puVar5[1];
-      uVar10 = *puVar5;
-      puVar3 = (undefined8 *)(param_4 + (ulong)uVar1 * 0x14);
-      *(undefined4 *)(puVar3 + 2) = *(undefined4 *)(puVar5 + 2);
-      puVar3[1] = uVar11;
-      *puVar3 = uVar10;
+      pfVar7[4] = SUB84(p3,0);
+      pfVar7[2] = fVar19;
+      uVar1 = *puVar2;
+      puVar9 = p1 + (ulong)(uVar1 - 1) * 5;
+      *puVar2 = uVar1 + 1;
+      uVar12 = *(undefined8 *)(puVar9 + 2);
+      uVar11 = *(undefined8 *)puVar9;
+      puVar8 = p1 + (ulong)uVar1 * 5;
+      puVar8[4] = puVar9[4];
+      *(undefined8 *)(puVar8 + 2) = uVar12;
+      *(undefined8 *)puVar8 = uVar11;
     }
     else {
-      uVar1 = *param_5;
-      *param_5 = uVar1 + 1;
-      if (uVar2 < 3) {
-        fVar14 = *param_8;
-        fVar15 = param_8[1];
-        fVar16 = (param_1 * 0.5 - param_1) * fVar9 + param_1;
+      uVar6 = (ulong)*puVar2;
+      *puVar2 = *puVar2 + 1;
+      if (uVar3 < 3) {
+        fVar15 = *(float *)p5;
+        fVar16 = *(float *)(p5 + 4);
+        fVar17 = (p6 * 0.5 - p6) * fVar10 + p6;
       }
       else {
-        fVar14 = *param_7;
-        fVar15 = param_7[1];
-        fVar16 = param_1;
+        fVar15 = *(float *)p4;
+        fVar16 = *(float *)(p4 + 4);
+        fVar17 = p6;
       }
-      lVar8 = param_4 + (ulong)uVar1 * 0x14;
-      *(float *)(param_4 + (ulong)uVar1 * 0x14) = (fVar16 + param_2) * fVar13 + fVar14;
-      *(float *)(lVar8 + 4) = (fVar16 + param_2) * fVar18 + fVar15;
-      *(float *)(lVar8 + 8) = *pfVar4;
-      *(float *)(lVar8 + 0xc) = pfVar4[1];
-      *(float *)(lVar8 + 0x10) = param_6;
+      p1[uVar6 * 5] = (uint)((fVar17 + p7) * fVar14 + fVar15);
+      p1[uVar6 * 5 + 1] = (uint)((fVar17 + p7) * fVar19 + fVar16);
+      p1[uVar6 * 5 + 2] = (uint)*pfVar4;
+      p1[uVar6 * 5 + 3] = (uint)pfVar4[1];
+      p1[uVar6 * 5 + 4] = (uint)SUB84(p3,0);
     }
-    uVar2 = uVar2 + 1;
+    uVar3 = uVar3 + 1;
     pfVar4 = pfVar4 + 2;
-    pfVar6 = pfVar6 + 2;
-  } while (uVar2 != 8);
-  uVar1 = *param_5;
-  puVar5 = (undefined8 *)(param_4 + (ulong)(uVar1 - 1) * 0x14);
-  *param_5 = uVar1 + 1;
-  uVar11 = puVar5[1];
-  uVar10 = *puVar5;
-  puVar3 = (undefined8 *)(param_4 + (ulong)uVar1 * 0x14);
-  *(undefined4 *)(puVar3 + 2) = *(undefined4 *)(puVar5 + 2);
-  puVar3[1] = uVar11;
-  *puVar3 = uVar10;
+    pfVar5 = pfVar5 + 2;
+  } while (uVar3 != 8);
+  uVar1 = *puVar2;
+  puVar8 = p1 + (ulong)(uVar1 - 1) * 5;
+  *puVar2 = uVar1 + 1;
+  uVar12 = *(undefined8 *)(puVar8 + 2);
+  uVar11 = *(undefined8 *)puVar8;
+  puVar2 = p1 + (ulong)uVar1 * 5;
+  puVar2[4] = puVar8[4];
+  *(undefined8 *)(puVar2 + 2) = uVar12;
+  *(undefined8 *)puVar2 = uVar11;
   return;
 }
 
@@ -975,28 +981,28 @@ LAB_0038f1a0:
    float, float, int, bool, int, Walaber::Color const&, int) */
 
 uint Walaber::FluidParticleSet::writeIntoBuffer
-               (float param_1,float param_2,long *param_3,long param_4,byte *param_5,byte *param_6,
-               int param_7,ulong param_8,uint param_9,byte *param_10,float param_11)
+               (void *p0,Walaber__Color *p1,Walaber__Color *p2,float p3,float p4,int p5,bool p6,
+               int p7,Walaber__Color *p8,int p9)
 
 {
-  float *pfVar1;
+  Walaber__Color *pWVar1;
   uint uVar2;
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  float fVar6;
-  float fVar7;
+  undefined4 uVar6;
+  undefined4 uVar7;
   int iVar8;
   bool bVar9;
-  ulong uVar10;
-  float *pfVar11;
-  ulong uVar12;
+  byte *pbVar10;
+  uint uVar11;
+  byte *pbVar12;
   float *pfVar13;
-  float *pfVar14;
-  uint uVar15;
-  uint uVar16;
-  float fVar17;
-  float fVar18;
+  ulong uVar14;
+  undefined4 *puVar15;
+  float *pfVar16;
+  uint uVar17;
+  uint uVar18;
   float fVar19;
   float fVar20;
   float fVar21;
@@ -1006,162 +1012,164 @@ uint Walaber::FluidParticleSet::writeIntoBuffer
   float fVar25;
   float fVar26;
   float fVar27;
+  float fVar28;
+  float in_stack_00000000;
   
-  pfVar11 = (float *)*param_3;
-  param_9 = param_9 & ((int)param_9 >> 0x1f ^ 0xffffffffU);
-  uVar15 = 0;
-  uVar16 = 0;
-  uVar10 = param_8;
-  if (6 < (int)param_9) {
-    param_9 = 7;
+  pbVar12 = (byte *)(ulong)(uint)p9;
+  pbVar10 = (byte *)(ulong)(uint)p5;
+  pfVar13 = *(float **)p0;
+  uVar5 = (uint)p8 & ((int)(uint)p8 >> 0x1f ^ 0xffffffffU);
+  uVar17 = 0;
+  uVar18 = 0;
+  if (6 < (int)uVar5) {
+    uVar5 = 7;
   }
   do {
-    if ((*(char *)(pfVar11 + 0xd) != '\0') && (pfVar11[0x22] == param_11)) {
+    uVar11 = (uint)p6;
+    if ((*(char *)(pfVar13 + 0xd) != '\0') && (pfVar13[0x22] == in_stack_00000000)) {
       iVar8 = 0;
-      if (param_7 != 0) {
-        iVar8 = (int)uVar16 / param_7;
+      if (uVar11 != 0) {
+        iVar8 = (int)uVar18 / (int)uVar11;
       }
-      if ((uVar10 & 1) == 0) {
-        if (uVar16 != iVar8 * param_7) goto LAB_0038f328;
+      if ((p7 & 1U) == 0) {
+        if (uVar18 != iVar8 * uVar11) goto LAB_0038f328;
       }
-      else if (uVar16 == iVar8 * param_7) {
+      else if (uVar18 == iVar8 * uVar11) {
 LAB_0038f328:
-        fVar21 = (pfVar11[0x1e] - param_1) / (param_2 - param_1);
-        fVar26 = pfVar11[(ulong)param_9 * 2 + 0xe];
-        fVar22 = pfVar11[(ulong)param_9 * 2 + 0xf];
-        fVar24 = *pfVar11;
-        fVar25 = pfVar11[1];
-        fVar27 = fVar21;
-        if (1.0 < fVar21) {
-          fVar27 = 1.0;
+        fVar22 = (pfVar13[0x1e] - p3) / (p4 - p3);
+        fVar27 = pfVar13[(ulong)uVar5 * 2 + 0xe];
+        fVar23 = pfVar13[(ulong)uVar5 * 2 + 0xf];
+        fVar25 = *pfVar13;
+        fVar26 = pfVar13[1];
+        fVar28 = fVar22;
+        if (1.0 < fVar22) {
+          fVar28 = 1.0;
         }
-        if (fVar21 <= 0.0) {
-          fVar27 = 0.0;
+        if (fVar22 <= 0.0) {
+          fVar28 = 0.0;
         }
-        fVar21 = fVar27;
-        if (1.0 < fVar27) {
-          fVar21 = 1.0;
+        fVar22 = fVar28;
+        if (1.0 < fVar28) {
+          fVar22 = 1.0;
         }
-        if (fVar27 <= 0.0) {
-          fVar21 = 0.0;
+        if (fVar28 <= 0.0) {
+          fVar22 = 0.0;
         }
-        fVar27 = fVar26 - fVar24;
-        fVar23 = fVar22 - fVar25;
-        uVar2 = (int)(fVar21 * (float)(int)((uint)*param_6 - (uint)*param_5)) + (uint)*param_5;
-        fVar19 = pfVar11[0x21];
-        uVar3 = (int)(fVar21 * (float)(int)((uint)param_6[1] - (uint)param_5[1])) + (uint)param_5[1]
-        ;
-        uVar4 = (int)(fVar21 * (float)(int)((uint)param_6[2] - (uint)param_5[2])) + (uint)param_5[2]
-        ;
+        fVar28 = fVar27 - fVar25;
+        fVar24 = fVar23 - fVar26;
+        uVar11 = (int)(fVar22 * (float)(int)((uint)*pbVar10 - (uint)(byte)*p2)) + (uint)(byte)*p2;
+        fVar20 = pfVar13[0x21];
+        uVar2 = (int)(fVar22 * (float)(int)((uint)pbVar10[1] - (uint)(byte)p2[1])) +
+                (uint)(byte)p2[1];
+        uVar3 = (int)(fVar22 * (float)(int)((uint)pbVar10[2] - (uint)(byte)p2[2])) +
+                (uint)(byte)p2[2];
+        if (0xfe < (int)uVar11) {
+          uVar11 = 0xff;
+        }
+        uVar4 = (int)(fVar22 * (float)(int)((uint)pbVar10[3] - (uint)(byte)p2[3])) +
+                (uint)(byte)p2[3];
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
-        uVar5 = (int)(fVar21 * (float)(int)((uint)param_6[3] - (uint)param_5[3])) + (uint)param_5[3]
-        ;
+        uVar11 = uVar11 & ((int)uVar11 >> 0x1f ^ 0xffffffffU);
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
+        }
+        fVar22 = fVar20;
+        if (1.0 < fVar20) {
+          fVar22 = 1.0;
+        }
+        if (0xfe < (int)uVar4) {
+          uVar4 = 0xff;
         }
         uVar2 = uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU);
-        if (0xfe < (int)uVar4) {
-          uVar4 = 0xff;
-        }
-        fVar21 = fVar19;
-        if (1.0 < fVar19) {
-          fVar21 = 1.0;
-        }
-        if (0xfe < (int)uVar5) {
-          uVar5 = 0xff;
+        if (fVar20 <= 0.0) {
+          fVar22 = 0.0;
         }
         uVar3 = uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU);
-        if (fVar19 <= 0.0) {
-          fVar21 = 0.0;
-        }
         uVar4 = uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU);
-        uVar5 = uVar5 & ((int)uVar5 >> 0x1f ^ 0xffffffffU);
-        uVar2 = (int)(fVar21 * (float)(int)((uint)*param_10 - (uVar2 & 0xff))) + (uVar2 & 0xff);
-        uVar3 = (int)(fVar21 * (float)(int)((uint)param_10[1] - (uVar3 & 0xff))) + (uVar3 & 0xff);
-        uVar4 = (int)(fVar21 * (float)(int)((uint)param_10[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
+        uVar11 = (int)(fVar22 * (float)(int)((uint)*pbVar12 - (uVar11 & 0xff))) + (uVar11 & 0xff);
+        uVar2 = (int)(fVar22 * (float)(int)((uint)pbVar12[1] - (uVar2 & 0xff))) + (uVar2 & 0xff);
+        uVar3 = (int)(fVar22 * (float)(int)((uint)pbVar12[2] - (uVar3 & 0xff))) + (uVar3 & 0xff);
+        if (0xfe < (int)uVar11) {
+          uVar11 = 0xff;
+        }
+        uVar4 = (int)(fVar22 * (float)(int)((uint)pbVar12[3] - (uVar4 & 0xff))) + (uVar4 & 0xff);
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
-        uVar5 = (int)(fVar21 * (float)(int)((uint)param_10[3] - (uVar5 & 0xff))) + (uVar5 & 0xff);
+        fVar22 = SQRT(fVar28 * fVar28 + fVar24 * fVar24);
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
         }
-        fVar21 = SQRT(fVar27 * fVar27 + fVar23 * fVar23);
+        fVar20 = pfVar13[8] * 0.5;
         if (0xfe < (int)uVar4) {
           uVar4 = 0xff;
         }
-        fVar19 = pfVar11[8] * 0.5;
-        if (0xfe < (int)uVar5) {
-          uVar5 = 0xff;
+        if (NAN(fVar22)) {
+          fVar22 = (float)func_0x0016cd20();
         }
-        if (NAN(fVar21)) {
-          fVar21 = (float)func_0x0016cd20();
+        fVar19 = 0.0;
+        if (fVar20 * 0.7 < fVar22) {
+          fVar19 = (float)func_0x00164960(fVar24,fVar28);
+          fVar19 = fVar19 + -1.5707964;
         }
-        fVar17 = 0.0;
-        if (fVar19 * 0.7 < fVar21) {
-          fVar17 = (float)func_0x00164960(fVar23,fVar27);
-          fVar17 = fVar17 + -1.5707964;
-        }
-        fVar27 = (float)(uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU) & 0xff |
-                         (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
-                         (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
-                        (uVar5 & ((int)uVar5 >> 0x1f ^ 0xffffffffU)) << 0x18);
-        fVar23 = (float)func_0x0016ee90();
-        pfVar14 = (float *)&DAT_0062d144;
-        pfVar13 = (float *)&DAT_0062d184;
-        fVar17 = (float)func_0x00174170(fVar17);
-        uVar10 = param_8 & 0xffffffff;
-        uVar12 = 0;
+        uVar11 = uVar11 & ((int)uVar11 >> 0x1f ^ 0xffffffffU) & 0xff |
+                 (uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
+                 (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
+                 (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU)) << 0x18;
+        fVar28 = (float)func_0x0016ee90();
+        pfVar16 = (float *)&DAT_0062d144;
+        puVar15 = &DAT_0062d184;
+        fVar24 = (float)func_0x00174170(fVar19);
+        uVar14 = 0;
         do {
-          fVar18 = fVar19 * (fVar23 * pfVar14[-1] - fVar17 * *pfVar14);
-          fVar20 = fVar19 * (fVar17 * pfVar14[-1] + fVar23 * *pfVar14);
-          if ((fVar21 <= fVar19 * 0.7) || (2 < uVar12)) {
-            fVar18 = fVar24 + fVar18;
-            fVar20 = fVar25 + fVar20;
+          fVar19 = fVar20 * (fVar28 * pfVar16[-1] - fVar24 * *pfVar16);
+          fVar21 = fVar20 * (fVar24 * pfVar16[-1] + fVar28 * *pfVar16);
+          if ((fVar22 <= fVar20 * 0.7) || (2 < uVar14)) {
+            fVar19 = fVar25 + fVar19;
+            fVar21 = fVar26 + fVar21;
           }
           else {
-            fVar18 = fVar26 + fVar18 * 0.3;
-            fVar20 = fVar22 + fVar20 * 0.3;
+            fVar19 = fVar27 + fVar19 * 0.3;
+            fVar21 = fVar23 + fVar21 * 0.3;
           }
-          fVar6 = pfVar13[-1];
-          fVar7 = *pfVar13;
-          pfVar1 = (float *)(param_4 + (ulong)uVar15);
-          *pfVar1 = fVar18;
-          pfVar1[1] = fVar20;
-          pfVar1[3] = fVar7;
-          pfVar1[4] = fVar27;
-          pfVar1[2] = fVar6;
-          uVar2 = uVar15 + 0x14;
-          if (uVar12 == 0) {
-            pfVar1 = (float *)(param_4 + (ulong)(uVar15 + 0x14));
-            *pfVar1 = fVar18;
-            pfVar1[1] = fVar20;
-            pfVar1[2] = fVar6;
-            pfVar1[3] = fVar7;
-            pfVar1[4] = fVar27;
-            uVar2 = uVar15 + 0x28;
+          uVar6 = puVar15[-1];
+          uVar7 = *puVar15;
+          pWVar1 = p1 + uVar17;
+          *(float *)pWVar1 = fVar19;
+          *(float *)(pWVar1 + 4) = fVar21;
+          *(undefined4 *)(pWVar1 + 0xc) = uVar7;
+          *(uint *)(pWVar1 + 0x10) = uVar11;
+          *(undefined4 *)(pWVar1 + 8) = uVar6;
+          uVar2 = uVar17 + 0x14;
+          if (uVar14 == 0) {
+            pWVar1 = p1 + (uVar17 + 0x14);
+            *(float *)pWVar1 = fVar19;
+            *(float *)(pWVar1 + 4) = fVar21;
+            *(undefined4 *)(pWVar1 + 8) = uVar6;
+            *(undefined4 *)(pWVar1 + 0xc) = uVar7;
+            *(uint *)(pWVar1 + 0x10) = uVar11;
+            uVar2 = uVar17 + 0x28;
           }
-          uVar15 = uVar2;
-          uVar12 = uVar12 + 1;
-          pfVar14 = pfVar14 + 2;
-          pfVar13 = pfVar13 + 2;
-        } while (uVar12 != 8);
-        pfVar14 = (float *)(param_4 + (ulong)uVar15);
-        *pfVar14 = fVar18;
-        pfVar14[1] = fVar20;
-        uVar15 = uVar15 + 0x14;
-        pfVar14[4] = fVar27;
-        pfVar14[2] = 0.5;
-        pfVar14[3] = 0.0;
+          uVar17 = uVar2;
+          uVar14 = uVar14 + 1;
+          pfVar16 = pfVar16 + 2;
+          puVar15 = puVar15 + 2;
+        } while (uVar14 != 8);
+        pWVar1 = p1 + uVar17;
+        *(float *)pWVar1 = fVar19;
+        *(float *)(pWVar1 + 4) = fVar21;
+        uVar17 = uVar17 + 0x14;
+        *(uint *)(pWVar1 + 0x10) = uVar11;
+        *(undefined8 *)(pWVar1 + 8) = 0x3f000000;
       }
     }
-    bVar9 = *(uint *)(param_3 + 6) <= uVar16;
-    uVar16 = uVar16 + 1;
-    pfVar11 = pfVar11 + 0x24;
+    bVar9 = *(uint *)((long)p0 + 0x30) <= uVar18;
+    uVar18 = uVar18 + 1;
+    pfVar13 = pfVar13 + 0x24;
     if (bVar9) {
-      return uVar15;
+      return uVar17;
     }
   } while( true );
 }
@@ -1177,29 +1185,28 @@ LAB_0038f328:
    float, float, float, float, int, bool, int, Walaber::Color const&, int) */
 
 uint Walaber::FluidParticleSet::writeIntoBuffer
-               (float param_1,float param_2,float param_3,float param_4,long *param_5,long param_6,
-               byte *param_7,byte *param_8,int param_9,ulong param_10,uint param_11,byte *param_12,
-               float param_13)
+               (void *p0,Walaber__Color *p1,Walaber__Color *p2,float p3,float p4,float p5,float p6,
+               int p7,bool p8,int p9,Walaber__Color *p10,int p11)
 
 {
-  float *pfVar1;
+  Walaber__Color *pWVar1;
   uint uVar2;
   uint uVar3;
   uint uVar4;
   uint uVar5;
-  float fVar6;
-  float fVar7;
+  undefined4 uVar6;
+  undefined4 uVar7;
   int iVar8;
   bool bVar9;
-  ulong uVar10;
-  float *pfVar11;
-  ulong uVar12;
+  byte *pbVar10;
+  uint uVar11;
+  byte *pbVar12;
   float *pfVar13;
-  float *pfVar14;
-  uint uVar15;
-  uint uVar16;
-  float fVar17;
-  float fVar18;
+  ulong uVar14;
+  float *pfVar15;
+  undefined4 *puVar16;
+  uint uVar17;
+  uint uVar18;
   float fVar19;
   float fVar20;
   float fVar21;
@@ -1209,158 +1216,160 @@ uint Walaber::FluidParticleSet::writeIntoBuffer
   float fVar25;
   float fVar26;
   float fVar27;
+  float fVar28;
+  float in_stack_00000000;
   
-  pfVar11 = (float *)*param_5;
-  param_11 = param_11 & ((int)param_11 >> 0x1f ^ 0xffffffffU);
-  uVar15 = 0;
-  uVar16 = 0;
-  uVar10 = param_10;
-  if (6 < (int)param_11) {
-    param_11 = 7;
+  pbVar12 = (byte *)(ulong)(uint)p11;
+  pbVar10 = (byte *)(ulong)(uint)p7;
+  pfVar13 = *(float **)p0;
+  uVar5 = (uint)p10 & ((int)(uint)p10 >> 0x1f ^ 0xffffffffU);
+  uVar17 = 0;
+  uVar18 = 0;
+  if (6 < (int)uVar5) {
+    uVar5 = 7;
   }
   do {
-    if ((*(char *)(pfVar11 + 0xd) != '\0') && (pfVar11[0x22] == param_13)) {
+    uVar11 = (uint)p8;
+    if ((*(char *)(pfVar13 + 0xd) != '\0') && (pfVar13[0x22] == in_stack_00000000)) {
       iVar8 = 0;
-      if (param_9 != 0) {
-        iVar8 = (int)uVar16 / param_9;
+      if (uVar11 != 0) {
+        iVar8 = (int)uVar18 / (int)uVar11;
       }
-      if ((uVar10 & 1) == 0) {
-        if (uVar16 != iVar8 * param_9) goto LAB_0038f72c;
+      if ((p9 & 1U) == 0) {
+        if (uVar18 != iVar8 * uVar11) goto LAB_0038f72c;
       }
-      else if (uVar16 == iVar8 * param_9) {
+      else if (uVar18 == iVar8 * uVar11) {
 LAB_0038f72c:
-        fVar26 = *pfVar11;
-        fVar25 = pfVar11[1];
-        fVar22 = pfVar11[(ulong)param_11 * 2 + 0xe];
-        fVar23 = pfVar11[(ulong)param_11 * 2 + 0xf];
-        fVar17 = (pfVar11[0x1e] - param_1) / (param_2 - param_1);
-        fVar27 = fVar22 - fVar26;
-        fVar24 = fVar23 - fVar25;
-        if (fVar17 <= 0.0) {
-          fVar17 = 0.0;
+        fVar27 = *pfVar13;
+        fVar26 = pfVar13[1];
+        fVar23 = pfVar13[(ulong)uVar5 * 2 + 0xe];
+        fVar24 = pfVar13[(ulong)uVar5 * 2 + 0xf];
+        fVar19 = (pfVar13[0x1e] - p3) / (p4 - p3);
+        fVar28 = fVar23 - fVar27;
+        fVar25 = fVar24 - fVar26;
+        if (fVar19 <= 0.0) {
+          fVar19 = 0.0;
         }
-        fVar21 = fVar17;
-        if (1.0 < fVar17) {
-          fVar21 = 1.0;
+        fVar22 = fVar19;
+        if (1.0 < fVar19) {
+          fVar22 = 1.0;
         }
-        if (fVar17 <= 0.0) {
-          fVar21 = 0.0;
+        if (fVar19 <= 0.0) {
+          fVar22 = 0.0;
         }
-        uVar2 = (int)(fVar21 * (float)(int)((uint)*param_8 - (uint)*param_7)) + (uint)*param_7;
-        fVar18 = pfVar11[0x21];
-        uVar3 = (int)(fVar21 * (float)(int)((uint)param_8[1] - (uint)param_7[1])) + (uint)param_7[1]
-        ;
-        uVar4 = (int)(fVar21 * (float)(int)((uint)param_8[2] - (uint)param_7[2])) + (uint)param_7[2]
-        ;
+        uVar11 = (int)(fVar22 * (float)(int)((uint)*pbVar10 - (uint)(byte)*p2)) + (uint)(byte)*p2;
+        fVar20 = pfVar13[0x21];
+        uVar2 = (int)(fVar22 * (float)(int)((uint)pbVar10[1] - (uint)(byte)p2[1])) +
+                (uint)(byte)p2[1];
+        uVar3 = (int)(fVar22 * (float)(int)((uint)pbVar10[2] - (uint)(byte)p2[2])) +
+                (uint)(byte)p2[2];
+        if (0xfe < (int)uVar11) {
+          uVar11 = 0xff;
+        }
+        uVar4 = (int)(fVar22 * (float)(int)((uint)pbVar10[3] - (uint)(byte)p2[3])) +
+                (uint)(byte)p2[3];
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
-        uVar5 = (int)(fVar21 * (float)(int)((uint)param_8[3] - (uint)param_7[3])) + (uint)param_7[3]
-        ;
+        uVar11 = uVar11 & ((int)uVar11 >> 0x1f ^ 0xffffffffU);
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
+        }
+        fVar22 = fVar20;
+        if (1.0 < fVar20) {
+          fVar22 = 1.0;
+        }
+        if (0xfe < (int)uVar4) {
+          uVar4 = 0xff;
         }
         uVar2 = uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU);
-        if (0xfe < (int)uVar4) {
-          uVar4 = 0xff;
-        }
-        fVar21 = fVar18;
-        if (1.0 < fVar18) {
-          fVar21 = 1.0;
-        }
-        if (0xfe < (int)uVar5) {
-          uVar5 = 0xff;
+        if (fVar20 <= 0.0) {
+          fVar22 = 0.0;
         }
         uVar3 = uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU);
-        if (fVar18 <= 0.0) {
-          fVar21 = 0.0;
-        }
         uVar4 = uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU);
-        uVar5 = uVar5 & ((int)uVar5 >> 0x1f ^ 0xffffffffU);
-        uVar2 = (int)(fVar21 * (float)(int)((uint)*param_12 - (uVar2 & 0xff))) + (uVar2 & 0xff);
-        uVar3 = (int)(fVar21 * (float)(int)((uint)param_12[1] - (uVar3 & 0xff))) + (uVar3 & 0xff);
-        uVar4 = (int)(fVar21 * (float)(int)((uint)param_12[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
+        uVar11 = (int)(fVar22 * (float)(int)((uint)*pbVar12 - (uVar11 & 0xff))) + (uVar11 & 0xff);
+        uVar2 = (int)(fVar22 * (float)(int)((uint)pbVar12[1] - (uVar2 & 0xff))) + (uVar2 & 0xff);
+        uVar3 = (int)(fVar22 * (float)(int)((uint)pbVar12[2] - (uVar3 & 0xff))) + (uVar3 & 0xff);
+        if (0xfe < (int)uVar11) {
+          uVar11 = 0xff;
+        }
+        uVar4 = (int)(fVar22 * (float)(int)((uint)pbVar12[3] - (uVar4 & 0xff))) + (uVar4 & 0xff);
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
-        uVar5 = (int)(fVar21 * (float)(int)((uint)param_12[3] - (uVar5 & 0xff))) + (uVar5 & 0xff);
+        fVar22 = SQRT(fVar28 * fVar28 + fVar25 * fVar25);
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
         }
-        fVar21 = SQRT(fVar27 * fVar27 + fVar24 * fVar24);
+        fVar19 = (p6 - p5) * fVar19 + p5;
         if (0xfe < (int)uVar4) {
           uVar4 = 0xff;
         }
-        fVar17 = (param_4 - param_3) * fVar17 + param_3;
-        if (0xfe < (int)uVar5) {
-          uVar5 = 0xff;
+        if (NAN(fVar22)) {
+          fVar22 = (float)func_0x0016cd20();
         }
-        if (NAN(fVar21)) {
-          fVar21 = (float)func_0x0016cd20();
+        fVar20 = 0.0;
+        if (fVar19 * 0.7 < fVar22) {
+          fVar20 = (float)func_0x00164960(fVar25,fVar28);
+          fVar20 = fVar20 + -1.5707964;
         }
-        fVar18 = 0.0;
-        if (fVar17 * 0.7 < fVar21) {
-          fVar18 = (float)func_0x00164960(fVar24,fVar27);
-          fVar18 = fVar18 + -1.5707964;
-        }
-        fVar24 = (float)(uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU) & 0xff |
-                         (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
-                         (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
-                        (uVar5 & ((int)uVar5 >> 0x1f ^ 0xffffffffU)) << 0x18);
-        fVar27 = (float)func_0x0016ee90();
-        pfVar13 = (float *)&DAT_0062d144;
-        pfVar14 = (float *)&DAT_0062d184;
-        fVar18 = (float)func_0x00174170(fVar18);
-        uVar10 = param_10 & 0xffffffff;
-        uVar12 = 0;
+        uVar11 = uVar11 & ((int)uVar11 >> 0x1f ^ 0xffffffffU) & 0xff |
+                 (uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
+                 (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
+                 (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU)) << 0x18;
+        fVar25 = (float)func_0x0016ee90();
+        pfVar15 = (float *)&DAT_0062d144;
+        puVar16 = &DAT_0062d184;
+        fVar28 = (float)func_0x00174170(fVar20);
+        uVar14 = 0;
         do {
-          fVar19 = fVar17 * (fVar27 * pfVar13[-1] - fVar18 * *pfVar13);
-          fVar20 = fVar17 * (fVar18 * pfVar13[-1] + fVar27 * *pfVar13);
-          if ((fVar21 <= fVar17 * 0.7) || (2 < uVar12)) {
-            fVar19 = fVar26 + fVar19;
-            fVar20 = fVar25 + fVar20;
+          fVar20 = fVar19 * (fVar25 * pfVar15[-1] - fVar28 * *pfVar15);
+          fVar21 = fVar19 * (fVar28 * pfVar15[-1] + fVar25 * *pfVar15);
+          if ((fVar22 <= fVar19 * 0.7) || (2 < uVar14)) {
+            fVar20 = fVar27 + fVar20;
+            fVar21 = fVar26 + fVar21;
           }
           else {
-            fVar19 = fVar22 + fVar19 * 0.3;
             fVar20 = fVar23 + fVar20 * 0.3;
+            fVar21 = fVar24 + fVar21 * 0.3;
           }
-          fVar6 = pfVar14[-1];
-          fVar7 = *pfVar14;
-          pfVar1 = (float *)(param_6 + (ulong)uVar15);
-          *pfVar1 = fVar19;
-          pfVar1[1] = fVar20;
-          pfVar1[3] = fVar7;
-          pfVar1[4] = fVar24;
-          pfVar1[2] = fVar6;
-          uVar2 = uVar15 + 0x14;
-          if (uVar12 == 0) {
-            pfVar1 = (float *)(param_6 + (ulong)(uVar15 + 0x14));
-            *pfVar1 = fVar19;
-            pfVar1[1] = fVar20;
-            pfVar1[2] = fVar6;
-            pfVar1[3] = fVar7;
-            pfVar1[4] = fVar24;
-            uVar2 = uVar15 + 0x28;
+          uVar6 = puVar16[-1];
+          uVar7 = *puVar16;
+          pWVar1 = p1 + uVar17;
+          *(float *)pWVar1 = fVar20;
+          *(float *)(pWVar1 + 4) = fVar21;
+          *(undefined4 *)(pWVar1 + 0xc) = uVar7;
+          *(uint *)(pWVar1 + 0x10) = uVar11;
+          *(undefined4 *)(pWVar1 + 8) = uVar6;
+          uVar2 = uVar17 + 0x14;
+          if (uVar14 == 0) {
+            pWVar1 = p1 + (uVar17 + 0x14);
+            *(float *)pWVar1 = fVar20;
+            *(float *)(pWVar1 + 4) = fVar21;
+            *(undefined4 *)(pWVar1 + 8) = uVar6;
+            *(undefined4 *)(pWVar1 + 0xc) = uVar7;
+            *(uint *)(pWVar1 + 0x10) = uVar11;
+            uVar2 = uVar17 + 0x28;
           }
-          uVar15 = uVar2;
-          uVar12 = uVar12 + 1;
-          pfVar13 = pfVar13 + 2;
-          pfVar14 = pfVar14 + 2;
-        } while (uVar12 != 8);
-        pfVar13 = (float *)(param_6 + (ulong)uVar15);
-        uVar15 = uVar15 + 0x14;
-        *pfVar13 = fVar19;
-        pfVar13[1] = fVar20;
-        pfVar13[4] = fVar24;
-        pfVar13[2] = 0.5;
-        pfVar13[3] = 0.0;
+          uVar17 = uVar2;
+          uVar14 = uVar14 + 1;
+          pfVar15 = pfVar15 + 2;
+          puVar16 = puVar16 + 2;
+        } while (uVar14 != 8);
+        pWVar1 = p1 + uVar17;
+        uVar17 = uVar17 + 0x14;
+        *(float *)pWVar1 = fVar20;
+        *(float *)(pWVar1 + 4) = fVar21;
+        *(uint *)(pWVar1 + 0x10) = uVar11;
+        *(undefined8 *)(pWVar1 + 8) = 0x3f000000;
       }
     }
-    bVar9 = *(uint *)(param_5 + 6) <= uVar16;
-    uVar16 = uVar16 + 1;
-    pfVar11 = pfVar11 + 0x24;
+    bVar9 = *(uint *)((long)p0 + 0x30) <= uVar18;
+    uVar18 = uVar18 + 1;
+    pfVar13 = pfVar13 + 0x24;
     if (bVar9) {
-      return uVar15;
+      return uVar17;
     }
   } while( true );
 }
@@ -1375,25 +1384,25 @@ LAB_0038f72c:
    Walaber::Color const&, int, bool, int, int) */
 
 uint Walaber::FluidParticleSet::writeIntoBuffer
-               (long *param_1,long param_2,float *param_3,undefined8 param_4,undefined8 param_5,
-               int param_6,uint param_7,uint param_8,float param_9)
+               (void *p0,Walaber__Color *p1,Walaber__Color *p2,Walaber__Color *p3,int p4,bool p5,
+               int p6,int p7)
 
 {
-  float *pfVar1;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  undefined8 *puVar5;
-  uint uVar6;
-  bool bVar7;
-  float *pfVar8;
-  ulong uVar9;
+  Walaber__Color *pWVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  undefined4 uVar4;
+  undefined4 uVar5;
+  int iVar6;
+  Walaber__Color **ppWVar7;
+  uint uVar8;
+  bool bVar9;
   float *pfVar10;
-  float *pfVar11;
-  uint uVar12;
-  uint uVar13;
-  float fVar14;
-  float fVar15;
+  ulong uVar11;
+  undefined4 *puVar12;
+  float *pfVar13;
+  uint uVar14;
+  uint uVar15;
   float fVar16;
   float fVar17;
   float fVar18;
@@ -1402,114 +1411,115 @@ uint Walaber::FluidParticleSet::writeIntoBuffer
   float fVar21;
   float fVar22;
   float fVar23;
-  undefined8 uStack_c0;
-  undefined8 uStack_b8;
+  float fVar24;
+  float in_stack_00000000;
+  Walaber__Color *pWStack_c0;
+  Walaber__Color *pWStack_b8;
   uint uStack_ac;
   float fStack_a8;
   float fStack_a4;
   
-  uStack_c0 = param_4;
-  uStack_b8 = param_5;
-  pfVar8 = (float *)*param_1;
-  param_8 = param_8 & ((int)param_8 >> 0x1f ^ 0xffffffffU);
-  uVar12 = 0;
-  uVar13 = 0;
-  uStack_ac = param_7;
-  if (6 < (int)param_8) {
-    param_8 = 7;
+  pWStack_c0 = p3;
+  pWStack_b8 = (Walaber__Color *)(ulong)(uint)p4;
+  pfVar10 = *(float **)p0;
+  uVar2 = p7 & (p7 >> 0x1f ^ 0xffffffffU);
+  uVar14 = 0;
+  uVar15 = 0;
+  uStack_ac = p6;
+  if (6 < (int)uVar2) {
+    uVar2 = 7;
   }
   do {
-    if ((*(char *)(pfVar8 + 0xd) != '\0') && (pfVar8[0x22] == param_9)) {
-      iVar4 = 0;
-      if (param_6 != 0) {
-        iVar4 = (int)uVar13 / param_6;
+    if ((*(char *)(pfVar10 + 0xd) != '\0') && (pfVar10[0x22] == in_stack_00000000)) {
+      iVar6 = 0;
+      if (p5 != 0) {
+        iVar6 = (int)uVar15 / (int)(uint)p5;
       }
-      if ((param_7 & 1) == 0) {
-        if (uVar13 != iVar4 * param_6) goto LAB_0038fb38;
+      if ((p6 & 1U) == 0) {
+        if (uVar15 != iVar6 * (uint)p5) goto LAB_0038fb38;
       }
-      else if (uVar13 == iVar4 * param_6) {
+      else if (uVar15 == iVar6 * (uint)p5) {
 LAB_0038fb38:
-        fVar14 = pfVar8[0x20];
-        fStack_a4 = *pfVar8;
-        fVar22 = pfVar8[1];
-        fVar21 = pfVar8[(ulong)param_8 * 2 + 0xe];
-        fVar23 = pfVar8[(ulong)param_8 * 2 + 0xf];
-        fVar15 = fVar21 - fStack_a4;
-        puVar5 = &uStack_b8;
-        if (fVar14 == 0.0 || 0.0 > fVar14) {
-          puVar5 = &uStack_c0;
+        fVar16 = pfVar10[0x20];
+        fStack_a4 = *pfVar10;
+        fVar23 = pfVar10[1];
+        fVar22 = pfVar10[(ulong)uVar2 * 2 + 0xe];
+        fVar24 = pfVar10[(ulong)uVar2 * 2 + 0xf];
+        fVar17 = fVar22 - fStack_a4;
+        ppWVar7 = &pWStack_b8;
+        if (fVar16 == 0.0 || 0.0 > fVar16) {
+          ppWVar7 = &pWStack_c0;
         }
-        fVar19 = fVar23 - fVar22;
-        pfVar11 = param_3;
-        if (0.0 <= fVar14) {
-          pfVar11 = (float *)*puVar5;
+        fVar20 = fVar24 - fVar23;
+        pWVar1 = p2;
+        if (0.0 <= fVar16) {
+          pWVar1 = *ppWVar7;
         }
-        fVar14 = *pfVar11;
-        fVar18 = SQRT(fVar15 * fVar15 + fVar19 * fVar19);
-        fVar20 = pfVar8[8] * 0.5;
-        if (NAN(fVar18)) {
-          fVar18 = (float)func_0x0016cd20();
+        uVar5 = *(undefined4 *)pWVar1;
+        fVar16 = SQRT(fVar17 * fVar17 + fVar20 * fVar20);
+        fVar21 = pfVar10[8] * 0.5;
+        if (NAN(fVar16)) {
+          fVar16 = (float)func_0x0016cd20();
         }
-        fVar16 = 0.0;
-        if (fVar20 * 0.7 < fVar18) {
-          fVar15 = (float)func_0x00164960(fVar19,fVar15);
-          fVar16 = fVar15 + -1.5707964;
+        fVar18 = 0.0;
+        if (fVar21 * 0.7 < fVar16) {
+          fVar17 = (float)func_0x00164960(fVar20,fVar17);
+          fVar18 = fVar17 + -1.5707964;
         }
-        fStack_a8 = fVar16;
-        fVar15 = (float)func_0x0016ee90();
-        pfVar11 = (float *)&DAT_0062d144;
-        pfVar10 = (float *)&DAT_0062d184;
-        fVar19 = (float)func_0x00174170(fStack_a8);
-        uVar9 = 0;
+        fStack_a8 = fVar18;
+        fVar17 = (float)func_0x0016ee90();
+        pfVar13 = (float *)&DAT_0062d144;
+        puVar12 = &DAT_0062d184;
+        fVar20 = (float)func_0x00174170(fStack_a8);
+        uVar11 = 0;
         do {
-          fVar16 = fVar20 * (fVar15 * pfVar11[-1] - fVar19 * *pfVar11);
-          fVar17 = fVar20 * (fVar19 * pfVar11[-1] + fVar15 * *pfVar11);
-          if ((fVar18 <= fVar20 * 0.7) || (2 < uVar9)) {
-            fVar16 = fStack_a4 + fVar16;
-            fVar17 = fVar22 + fVar17;
+          fVar18 = fVar21 * (fVar17 * pfVar13[-1] - fVar20 * *pfVar13);
+          fVar19 = fVar21 * (fVar20 * pfVar13[-1] + fVar17 * *pfVar13);
+          if ((fVar16 <= fVar21 * 0.7) || (2 < uVar11)) {
+            fVar18 = fStack_a4 + fVar18;
+            fVar19 = fVar23 + fVar19;
           }
           else {
-            fVar16 = fVar21 + fVar16 * 0.3;
-            fVar17 = fVar23 + fVar17 * 0.3;
+            fVar18 = fVar22 + fVar18 * 0.3;
+            fVar19 = fVar24 + fVar19 * 0.3;
           }
-          fVar2 = pfVar10[-1];
-          fVar3 = *pfVar10;
-          pfVar1 = (float *)(param_2 + (ulong)uVar12);
-          *pfVar1 = fVar16;
-          pfVar1[1] = fVar17;
-          pfVar1[3] = fVar3;
-          pfVar1[4] = fVar14;
-          pfVar1[2] = fVar2;
-          uVar6 = uVar12 + 0x14;
-          if (uVar9 == 0) {
-            pfVar1 = (float *)(param_2 + (ulong)(uVar12 + 0x14));
-            *pfVar1 = fVar16;
-            pfVar1[1] = fVar17;
-            pfVar1[2] = fVar2;
-            pfVar1[3] = fVar3;
-            pfVar1[4] = fVar14;
-            uVar6 = uVar12 + 0x28;
+          uVar3 = puVar12[-1];
+          uVar4 = *puVar12;
+          pWVar1 = p1 + uVar14;
+          *(float *)pWVar1 = fVar18;
+          *(float *)(pWVar1 + 4) = fVar19;
+          *(undefined4 *)(pWVar1 + 0xc) = uVar4;
+          *(undefined4 *)(pWVar1 + 0x10) = uVar5;
+          *(undefined4 *)(pWVar1 + 8) = uVar3;
+          uVar8 = uVar14 + 0x14;
+          if (uVar11 == 0) {
+            pWVar1 = p1 + (uVar14 + 0x14);
+            *(float *)pWVar1 = fVar18;
+            *(float *)(pWVar1 + 4) = fVar19;
+            *(undefined4 *)(pWVar1 + 8) = uVar3;
+            *(undefined4 *)(pWVar1 + 0xc) = uVar4;
+            *(undefined4 *)(pWVar1 + 0x10) = uVar5;
+            uVar8 = uVar14 + 0x28;
           }
-          uVar12 = uVar6;
-          uVar9 = uVar9 + 1;
-          pfVar11 = pfVar11 + 2;
-          pfVar10 = pfVar10 + 2;
-        } while (uVar9 != 8);
-        pfVar11 = (float *)(param_2 + (ulong)uVar12);
-        *pfVar11 = fVar16;
-        pfVar11[1] = fVar17;
-        uVar12 = uVar12 + 0x14;
-        pfVar11[4] = fVar14;
-        pfVar11[2] = 0.5;
-        pfVar11[3] = 0.0;
-        param_7 = uStack_ac;
+          uVar14 = uVar8;
+          uVar11 = uVar11 + 1;
+          pfVar13 = pfVar13 + 2;
+          puVar12 = puVar12 + 2;
+        } while (uVar11 != 8);
+        pWVar1 = p1 + uVar14;
+        *(float *)pWVar1 = fVar18;
+        *(float *)(pWVar1 + 4) = fVar19;
+        uVar14 = uVar14 + 0x14;
+        *(undefined4 *)(pWVar1 + 0x10) = uVar5;
+        *(undefined8 *)(pWVar1 + 8) = 0x3f000000;
+        p6 = uStack_ac;
       }
     }
-    bVar7 = *(uint *)(param_1 + 6) <= uVar13;
-    uVar13 = uVar13 + 1;
-    pfVar8 = pfVar8 + 0x24;
-    if (bVar7) {
-      return uVar12;
+    bVar9 = *(uint *)((long)p0 + 0x30) <= uVar15;
+    uVar15 = uVar15 + 1;
+    pfVar10 = pfVar10 + 0x24;
+    if (bVar9) {
+      return uVar14;
     }
   } while( true );
 }
@@ -1595,15 +1605,18 @@ void Walaber::FluidParticleSet::FluidParticleSet(undefined8 *param_1)
 
 /* Walaber::FluidParticleSet::~FluidParticleSet() */
 
-void Walaber::FluidParticleSet::~FluidParticleSet(long *param_1)
+void Walaber::FluidParticleSet::~FluidParticleSet(undefined8 *param_1)
 
 {
+  void *p0;
+  
   FUN_0016bb90(param_1 + 8);
   func_0x00166070((long)param_1 + 0x3c);
   func_0x00167cb0(param_1 + 3);
-  if (*param_1 != 0) {
-    param_1[1] = *param_1;
-    FUN_00166120();
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    param_1[1] = p0;
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -1619,59 +1632,59 @@ void Walaber::FluidParticleSet::~FluidParticleSet(long *param_1)
    int&) */
 
 undefined8
-Walaber::FluidParticleSet::addParticle
-          (float param_1,long *param_2,undefined8 *param_3,undefined8 *param_4,uint *param_5)
+Walaber::FluidParticleSet::addParticle(float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,int *p3)
 
 {
-  long *plVar1;
+  long *p0_00;
+  uint *in_x3;
+  long lVar1;
   long lVar2;
-  long lVar3;
-  undefined8 *puVar4;
-  undefined8 uVar5;
-  uint uVar6;
+  undefined8 *puVar3;
+  undefined8 uVar4;
+  uint uVar5;
   
-  lVar2 = param_2[5];
-  if (lVar2 == 0) {
+  lVar1 = *(long *)(p1 + 0x28);
+  if (lVar1 == 0) {
     FUN_00166450("Walaber",2,"No more free particles!!!\n");
-    uVar5 = 0;
-    uVar6 = 0xffffffff;
+    uVar4 = 0;
+    uVar5 = 0xffffffff;
   }
   else {
-    plVar1 = (long *)param_2[4];
-    lVar3 = *plVar1;
-    uVar6 = *(uint *)(plVar1 + 2);
-    *(long *)(lVar3 + 8) = plVar1[1];
-    *(long *)plVar1[1] = lVar3;
-    param_2[5] = lVar2 + -1;
-    FUN_00166120();
-    lVar3 = *param_2;
-    puVar4 = (undefined8 *)(lVar3 + (long)(int)uVar6 * 0x90);
-    *(float *)(puVar4 + 5) = param_1;
-    *(float *)((long)puVar4 + 0x2c) = 1.0 / param_1;
-    lVar2 = 0;
-    *puVar4 = *param_3;
-    puVar4[1] = *param_3;
-    puVar4[2] = 0;
-    puVar4[3] = 0;
-    uVar5 = *param_4;
-    *(undefined4 *)(puVar4 + 6) = 0xbf800000;
-    puVar4[0xf] = 0;
-    *(undefined4 *)((long)puVar4 + 0x8c) = 0;
-    *(undefined4 *)(puVar4 + 0x10) = 0;
-    puVar4[4] = uVar5;
+    p0_00 = *(long **)(p1 + 0x20);
+    lVar2 = *p0_00;
+    uVar5 = *(uint *)(p0_00 + 2);
+    *(long *)(lVar2 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar2;
+    *(long *)(p1 + 0x28) = lVar1 + -1;
+    FUN_00166120(p0_00);
+    lVar2 = *(long *)p1;
+    puVar3 = (undefined8 *)(lVar2 + (long)(int)uVar5 * 0x90);
+    *(float *)(puVar3 + 5) = p0;
+    *(float *)((long)puVar3 + 0x2c) = 1.0 / p0;
+    lVar1 = 0;
+    *puVar3 = *(undefined8 *)p2;
+    puVar3[1] = *(undefined8 *)p2;
+    puVar3[2] = 0;
+    puVar3[3] = 0;
+    uVar4 = *(undefined8 *)p3;
+    *(undefined4 *)(puVar3 + 6) = 0xbf800000;
+    puVar3[0xf] = 0;
+    *(undefined4 *)((long)puVar3 + 0x8c) = 0;
+    *(undefined4 *)(puVar3 + 0x10) = 0;
+    puVar3[4] = uVar4;
     do {
-      *(undefined8 *)((long)puVar4 + lVar2 + 0x38) = *param_3;
-      lVar2 = lVar2 + 8;
-    } while (lVar2 != 0x40);
-    *(undefined2 *)(lVar3 + (long)(int)uVar6 * 0x90 + 0x34) = 0x101;
-    *(int *)((long)param_2 + 0x34) = *(int *)((long)param_2 + 0x34) + 1;
-    if (*(uint *)(param_2 + 6) < uVar6) {
-      *(uint *)(param_2 + 6) = uVar6;
+      *(undefined8 *)((long)puVar3 + lVar1 + 0x38) = *(undefined8 *)p2;
+      lVar1 = lVar1 + 8;
+    } while (lVar1 != 0x40);
+    *(undefined2 *)(lVar2 + (long)(int)uVar5 * 0x90 + 0x34) = 0x101;
+    *(int *)(p1 + 0x34) = *(int *)(p1 + 0x34) + 1;
+    if (*(uint *)(p1 + 0x30) < uVar5) {
+      *(uint *)(p1 + 0x30) = uVar5;
     }
-    uVar5 = 1;
+    uVar4 = 1;
   }
-  *param_5 = uVar6;
-  return uVar5;
+  *in_x3 = uVar5;
+  return uVar4;
 }
 
 
@@ -1685,59 +1698,60 @@ Walaber::FluidParticleSet::addParticle
 
 undefined8
 Walaber::FluidParticleSet::addParticle
-          (float param_1,long *param_2,undefined8 *param_3,undefined8 *param_4,undefined8 *param_5,
-          undefined8 *param_6,undefined8 *param_7,uint *param_8)
+          (float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+          Walaber__Vector2 *p4,Walaber__Vector2 *p5,int *p6)
 
 {
-  long *plVar1;
+  long *p0_00;
+  uint *in_x6;
+  long lVar1;
   long lVar2;
-  long lVar3;
-  undefined8 *puVar4;
-  undefined8 uVar5;
-  uint uVar6;
+  undefined8 *puVar3;
+  undefined8 uVar4;
+  uint uVar5;
   
-  lVar2 = param_2[5];
-  if (lVar2 == 0) {
+  lVar1 = *(long *)(p1 + 0x28);
+  if (lVar1 == 0) {
     FUN_00166450("Walaber",2,"No more free particles!!!\n");
-    uVar5 = 0;
-    uVar6 = 0xffffffff;
+    uVar4 = 0;
+    uVar5 = 0xffffffff;
   }
   else {
-    plVar1 = (long *)param_2[4];
-    lVar3 = *plVar1;
-    uVar6 = *(uint *)(plVar1 + 2);
-    *(long *)(lVar3 + 8) = plVar1[1];
-    *(long *)plVar1[1] = lVar3;
-    param_2[5] = lVar2 + -1;
-    FUN_00166120();
-    lVar3 = *param_2;
-    puVar4 = (undefined8 *)(lVar3 + (long)(int)uVar6 * 0x90);
-    *(float *)(puVar4 + 5) = param_1;
-    *(float *)((long)puVar4 + 0x2c) = 1.0 / param_1;
-    lVar2 = 0;
-    *puVar4 = *param_3;
-    puVar4[1] = *param_4;
-    puVar4[2] = *param_6;
-    puVar4[3] = *param_7;
-    uVar5 = *param_5;
-    *(undefined4 *)(puVar4 + 6) = 0xbf800000;
-    puVar4[0xf] = 0;
-    *(undefined4 *)((long)puVar4 + 0x8c) = 0;
-    *(undefined4 *)(puVar4 + 0x10) = 0;
-    puVar4[4] = uVar5;
+    p0_00 = *(long **)(p1 + 0x20);
+    lVar2 = *p0_00;
+    uVar5 = *(uint *)(p0_00 + 2);
+    *(long *)(lVar2 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar2;
+    *(long *)(p1 + 0x28) = lVar1 + -1;
+    FUN_00166120(p0_00);
+    lVar2 = *(long *)p1;
+    puVar3 = (undefined8 *)(lVar2 + (long)(int)uVar5 * 0x90);
+    *(float *)(puVar3 + 5) = p0;
+    *(float *)((long)puVar3 + 0x2c) = 1.0 / p0;
+    lVar1 = 0;
+    *puVar3 = *(undefined8 *)p2;
+    puVar3[1] = *(undefined8 *)p3;
+    puVar3[2] = *(undefined8 *)p5;
+    puVar3[3] = *(undefined8 *)p6;
+    uVar4 = *(undefined8 *)p4;
+    *(undefined4 *)(puVar3 + 6) = 0xbf800000;
+    puVar3[0xf] = 0;
+    *(undefined4 *)((long)puVar3 + 0x8c) = 0;
+    *(undefined4 *)(puVar3 + 0x10) = 0;
+    puVar3[4] = uVar4;
     do {
-      *(undefined8 *)((long)puVar4 + lVar2 + 0x38) = *param_3;
-      lVar2 = lVar2 + 8;
-    } while (lVar2 != 0x40);
-    *(undefined2 *)(lVar3 + (long)(int)uVar6 * 0x90 + 0x34) = 0x101;
-    *(int *)((long)param_2 + 0x34) = *(int *)((long)param_2 + 0x34) + 1;
-    if (*(uint *)(param_2 + 6) < uVar6) {
-      *(uint *)(param_2 + 6) = uVar6;
+      *(undefined8 *)((long)puVar3 + lVar1 + 0x38) = *(undefined8 *)p2;
+      lVar1 = lVar1 + 8;
+    } while (lVar1 != 0x40);
+    *(undefined2 *)(lVar2 + (long)(int)uVar5 * 0x90 + 0x34) = 0x101;
+    *(int *)(p1 + 0x34) = *(int *)(p1 + 0x34) + 1;
+    if (*(uint *)(p1 + 0x30) < uVar5) {
+      *(uint *)(p1 + 0x30) = uVar5;
     }
-    uVar5 = 1;
+    uVar4 = 1;
   }
-  *param_8 = uVar6;
-  return uVar5;
+  *in_x6 = uVar5;
+  return uVar4;
 }
 
 
@@ -1748,40 +1762,43 @@ Walaber::FluidParticleSet::addParticle
 
 /* Walaber::FluidParticleSet::removeParticle(int) */
 
-void Walaber::FluidParticleSet::removeParticle(long *param_1,int param_2)
+void Walaber::FluidParticleSet::removeParticle(int p0)
 
 {
   char cVar1;
   long *plVar2;
-  char *pcVar3;
-  undefined8 *puVar4;
-  long lVar5;
+  long *plVar3;
+  int in_w1;
+  char *pcVar4;
+  undefined8 *puVar5;
   long lVar6;
+  long lVar7;
   
-  lVar6 = *param_1;
-  pcVar3 = (char *)(lVar6 + (long)param_2 * 0x90 + 0x34);
-  if (*pcVar3 != '\0') {
-    *pcVar3 = '\0';
-    *(int *)((long)param_1 + 0x34) = *(int *)((long)param_1 + 0x34) + -1;
-    plVar2 = (long *)FUN_00164060(0x18);
-    *(int *)(plVar2 + 2) = param_2;
-    *plVar2 = (long)(param_1 + 3);
-    puVar4 = (undefined8 *)param_1[4];
-    plVar2[1] = (long)puVar4;
-    *puVar4 = plVar2;
-    param_1[4] = (long)plVar2;
-    param_1[5] = param_1[5] + 1;
-    if ((param_2 != 0) && ((int)param_1[6] == param_2)) {
-      lVar5 = (long)param_2;
-      pcVar3 = (char *)(lVar6 + lVar5 * 0x90 + -0x5c);
+  plVar2 = (long *)(ulong)(uint)p0;
+  lVar7 = *plVar2;
+  pcVar4 = (char *)(lVar7 + (long)in_w1 * 0x90 + 0x34);
+  if (*pcVar4 != '\0') {
+    *pcVar4 = '\0';
+    *(int *)((long)plVar2 + 0x34) = *(int *)((long)plVar2 + 0x34) + -1;
+    plVar3 = (long *)FUN_00164060(0x18);
+    *(int *)(plVar3 + 2) = in_w1;
+    *plVar3 = (long)(plVar2 + 3);
+    puVar5 = (undefined8 *)plVar2[4];
+    plVar3[1] = (long)puVar5;
+    *puVar5 = plVar3;
+    plVar2[4] = (long)plVar3;
+    plVar2[5] = plVar2[5] + 1;
+    if ((in_w1 != 0) && ((int)plVar2[6] == in_w1)) {
+      lVar6 = (long)in_w1;
+      pcVar4 = (char *)(lVar7 + lVar6 * 0x90 + -0x5c);
       do {
-        param_2 = param_2 + -1;
-        if (lVar5 < 2) break;
-        cVar1 = *pcVar3;
-        lVar5 = lVar5 + -1;
-        pcVar3 = pcVar3 + -0x90;
+        in_w1 = in_w1 + -1;
+        if (lVar6 < 2) break;
+        cVar1 = *pcVar4;
+        lVar6 = lVar6 + -1;
+        pcVar4 = pcVar4 + -0x90;
       } while (cVar1 == '\0');
-      *(int *)(param_1 + 6) = param_2;
+      *(int *)(plVar2 + 6) = in_w1;
     }
   }
   return;

@@ -41,7 +41,7 @@ void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(void)
 
 /* WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay() */
 
-void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(undefined8 param_1)
+void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(void *param_1)
 
 {
   FUN_0016d110();
@@ -55,78 +55,35 @@ void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(undefined8 param_1)
 /* mangled: _ZN12WaterConcept18Screen_MenuOverlay16loadPropertyListERKN7Walaber12PropertyListE */
 /* WaterConcept::Screen_MenuOverlay::loadPropertyList(Walaber::PropertyList const&) */
 
+/* WARNING: Removing unreachable block (ram,0x00530a00) */
+/* WARNING: Removing unreachable block (ram,0x00530a50) */
 /* WaterConcept::Screen_MenuOverlay::loadPropertyList(Walaber::PropertyList const&) */
 
-void WaterConcept::Screen_MenuOverlay::loadPropertyList(long param_1,undefined8 param_2)
+void WaterConcept::Screen_MenuOverlay::loadPropertyList(Walaber__PropertyList *p0)
 
 {
   long lVar1;
-  char cVar2;
-  int iVar3;
-  ulong uVar4;
-  byte abStack_60 [16];
-  undefined8 uStack_50;
-  long lStack_48;
+  int iVar2;
+  ulong uVar3;
+  long lVar4;
   
   lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
-  abStack_60[0xd] = 0;
-  abStack_60[0xe] = 0;
-  abStack_60[0xf] = 0;
-  uStack_50 = 0;
-  abStack_60[0] = 0x16;
-  abStack_60[9] = 0x6e;
-  abStack_60[10] = 0x74;
-  abStack_60[0xb] = 0x73;
-  abStack_60[0xc] = 0;
-  abStack_60[1] = 0x52;
-  abStack_60[2] = 0x65;
-  abStack_60[3] = 0x6c;
-  abStack_60[4] = 0x6f;
-  abStack_60[5] = 0x61;
-  abStack_60[6] = 100;
-  abStack_60[7] = 0x46;
-  abStack_60[8] = 0x6f;
+  lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 005309e8 to 005309f3 has its CatchHandler @ 00530a94 */
-  uVar4 = func_0x00173810(param_2,abStack_60);
-  if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
-  }
-  if ((uVar4 & 1) != 0) {
-    abStack_60[0xd] = 0;
-    abStack_60[0xe] = 0;
-    abStack_60[0xf] = 0;
-    uStack_50 = 0;
-    abStack_60[0] = 0x16;
-    abStack_60[9] = 0x6e;
-    abStack_60[10] = 0x74;
-    abStack_60[0xb] = 0x73;
-    abStack_60[0xc] = 0;
-    abStack_60[1] = 0x52;
-    abStack_60[2] = 0x65;
-    abStack_60[3] = 0x6c;
-    abStack_60[4] = 0x6f;
-    abStack_60[5] = 0x61;
-    abStack_60[6] = 100;
-    abStack_60[7] = 0x46;
-    abStack_60[8] = 0x6f;
+  uVar3 = func_0x00173810();
+  if ((uVar3 & 1) != 0) {
                     /* try { // try from 00530a2c to 00530a3b has its CatchHandler @ 00530a90 */
-    func_0x0016d4e0(param_2,abStack_60);
-    iVar3 = func_0x00166a80();
-    cVar2 = iVar3 == 1;
-    *(char *)(param_1 + 0x95) = cVar2;
-    if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
-      cVar2 = *(char *)(param_1 + 0x95);
-    }
-    if (cVar2 != '\0') {
+    func_0x0016d4e0();
+    iVar2 = func_0x00166a80();
+    p0[0x95] = (Walaber__PropertyList)(iVar2 == 1);
+    if (iVar2 == 1) {
       func_0x00169e40();
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
+  if (*(long *)(lVar1 + 0x28) != lVar4) {
+    FUN_00164ff0();
     return;
   }
-  FUN_00164ff0();
   return;
 }
 
@@ -148,7 +105,7 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   undefined3 uStack_9b;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
@@ -181,7 +138,7 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   abStack_b0[0xe] = 0;
   abStack_b0[0xf] = 0;
   abStack_b0[0] = 0x12;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   abStack_b0[0x10] = 0;
   uStack_9f = 0;
   uStack_9b = 0;
@@ -201,10 +158,10 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   func_0x00165260(auStack_50,abStack_78,auStack_98);
   func_0x00167bf0(auStack_98);
   if ((abStack_b0[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   abStack_78[0xb] = 0;
   abStack_78[0xc] = 0;
@@ -225,7 +182,7 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   abStack_b0[0xe] = 0;
   abStack_b0[0xf] = 0;
   abStack_b0[0] = 8;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   abStack_b0[0x10] = 0;
   uStack_9f = 0;
   uStack_9b = 0;
@@ -248,10 +205,10 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   func_0x00165260(auStack_50,abStack_78,auStack_98);
   func_0x00167bf0(auStack_98);
   if ((abStack_b0[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   abStack_78[10] = 0;
   abStack_78[0xb] = 0;
@@ -269,7 +226,7 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   abStack_78[7] = 0x6f;
   abStack_78[8] = 0x6e;
   abStack_b0[0] = 0x26;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   uStack_9b = 0;
   abStack_78[9] = 0;
   abStack_b0[9] = 0x65;
@@ -295,10 +252,10 @@ void WaterConcept::Screen_MenuOverlay::enter(long param_1)
   func_0x00165260(auStack_50,abStack_78,auStack_98);
   func_0x00167bf0(auStack_98);
   if ((abStack_b0[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
                     /* try { // try from 00530cb4 to 00530cbf has its CatchHandler @ 00530d4c */
   uVar2 = func_0x0016b4e0();
@@ -328,10 +285,10 @@ void WaterConcept::Screen_MenuOverlay::_buildUI(long param_1)
   long lVar1;
   int iVar2;
   bool bVar3;
-  char *pcVar4;
-  undefined8 *puVar5;
-  int *piVar6;
-  undefined8 uVar7;
+  char *p0;
+  undefined8 *puVar4;
+  int *piVar5;
+  undefined8 uVar6;
   undefined8 *puStack_b0;
   int *piStack_a8;
   undefined8 *puStack_a0;
@@ -350,13 +307,13 @@ void WaterConcept::Screen_MenuOverlay::_buildUI(long param_1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  pcVar4 = (char *)FUN_00164060(0x20);
+  p0 = (char *)FUN_00164060(0x20);
   iVar2 = GameSettings::currentStoryline;
   bVar3 = GameSettings::currentStoryline == 6;
   uStack_48 = 0x18;
   puStack_50 = (undefined8 *)0x21;
-  builtin_strncpy(pcVar4,"/Data/SN_MenuOverlay.xml",0x19);
-  pcStack_40 = pcVar4;
+  builtin_strncpy(p0,"/Data/SN_MenuOverlay.xml",0x19);
+  pcStack_40 = p0;
   if (bVar3) {
 LAB_00530df8:
     puStack_70 = (undefined8 *)0x0;
@@ -397,37 +354,37 @@ LAB_00530df8:
       puStack_70 = (undefined8 *)0x31;
     }
   }
-  FUN_00166120(pcVar4);
+  FUN_00166120(p0);
   pcStack_40 = pcStack_60;
   uStack_48 = piStack_68;
   puStack_50 = puStack_70;
 LAB_00530e4c:
                     /* try { // try from 00530e4c to 00530e8b has its CatchHandler @ 0053101c */
-  puVar5 = (undefined8 *)FUN_00164060(0x28);
-  puVar5[2] = param_1;
-  *puVar5 = &PTR__Callback_00714a58;
-  puVar5[1] = 0;
-  puVar5[4] = 0;
-  puVar5[3] = _finishedLoadingWidgets;
-  puStack_80 = puVar5;
-  piVar6 = (int *)FUN_00164060(4);
-  *piVar6 = 3;
-  puStack_a0 = puVar5;
-  piStack_98 = piVar6;
-  piStack_78 = piVar6;
-  puStack_70 = puVar5;
-  piStack_68 = piVar6;
+  puVar4 = (undefined8 *)FUN_00164060(0x28);
+  puVar4[2] = param_1;
+  *puVar4 = &PTR__Callback_00714a58;
+  puVar4[1] = 0;
+  puVar4[4] = 0;
+  puVar4[3] = _finishedLoadingWidgets;
+  puStack_80 = puVar4;
+  piVar5 = (int *)FUN_00164060(4);
+  *piVar5 = 3;
+  puStack_a0 = puVar4;
+  piStack_98 = piVar5;
+  piStack_78 = piVar5;
+  puStack_70 = puVar4;
+  piStack_68 = piVar5;
   FUN_0016bb90(&puStack_70);
-  *piVar6 = *piVar6 + 1;
-  puStack_90 = puVar5;
-  piStack_88 = piVar6;
+  *piVar5 = *piVar5 + 1;
+  puStack_90 = puVar4;
+  piStack_88 = piVar5;
   FUN_0016bb90(&puStack_a0);
-  uVar7 = *(undefined8 *)(param_1 + 0x10);
-  *piVar6 = *piVar6 + 1;
+  uVar6 = *(undefined8 *)(param_1 + 0x10);
+  *piVar5 = *piVar5 + 1;
                     /* try { // try from 00530ed8 to 00530ee3 has its CatchHandler @ 00530ffc */
-  puStack_b0 = puVar5;
-  piStack_a8 = piVar6;
-  func_0x001654d0(&puStack_50,uVar7,&puStack_b0);
+  puStack_b0 = puVar4;
+  piStack_a8 = piVar5;
+  func_0x001654d0(&puStack_50,uVar6,&puStack_b0);
   FUN_0016bb90(&puStack_b0);
   FUN_0016bb90(&puStack_90);
   func_0x0016c200(&puStack_80);
@@ -464,20 +421,22 @@ void WaterConcept::Screen_MenuOverlay::exit(void)
 
 /* WaterConcept::Screen_MenuOverlay::update(float, bool) */
 
-void WaterConcept::Screen_MenuOverlay::update(float param_1,long param_2)
+void WaterConcept::Screen_MenuOverlay::update(float p0,bool p1)
 
 {
   long lVar1;
+  ulong uVar2;
   undefined1 auStack_60 [32];
   undefined1 auStack_40 [24];
   long lStack_28;
   
+  uVar2 = (ulong)p1;
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *(float *)(param_2 + 0x98) = *(float *)(param_2 + 0x98) + param_1;
-  func_0x001706f0(*(undefined8 *)(param_2 + 0x10));
-  if (*(char *)(param_2 + 0x94) != '\0') {
-    *(undefined1 *)(param_2 + 0x94) = 0;
+  *(float *)(uVar2 + 0x98) = *(float *)(uVar2 + 0x98) + p0;
+  func_0x001706f0(*(undefined8 *)(uVar2 + 0x10));
+  if (*(char *)(uVar2 + 0x94) != '\0') {
+    *(undefined1 *)(uVar2 + 0x94) = 0;
     func_0x0016b220(auStack_40);
                     /* try { // try from 00531094 to 0053109b has its CatchHandler @ 00531114 */
     func_0x00165fe0(0x3dcccccd,auStack_60);
@@ -504,13 +463,14 @@ void WaterConcept::Screen_MenuOverlay::update(float param_1,long param_2)
 
 /* WaterConcept::Screen_MenuOverlay::draw(int) */
 
-void WaterConcept::Screen_MenuOverlay::draw(long param_1,int param_2)
+void WaterConcept::Screen_MenuOverlay::draw(int p0)
 
 {
   long lVar1;
+  int in_w1;
   
-  if (param_2 != 0) {
-    lVar1 = param_1 + 0x28;
+  if (in_w1 != 0) {
+    lVar1 = (ulong)(uint)p0 + 0x28;
     func_0x00171540(lVar1,3);
     func_0x001642a0(0x1701);
     func_0x00166f60();
@@ -518,7 +478,7 @@ void WaterConcept::Screen_MenuOverlay::draw(long param_1,int param_2)
     func_0x001642a0(0x1700);
     func_0x00166f60();
     func_0x0016b2a0(0,0,0xbde147ae);
-    func_0x00164990(*(undefined8 *)(param_1 + 0x10),lVar1);
+    func_0x00164990(*(undefined8 *)((ulong)(uint)p0 + 0x10),lVar1);
     func_0x00163aa0(lVar1);
     return;
   }
@@ -534,51 +494,55 @@ void WaterConcept::Screen_MenuOverlay::draw(long param_1,int param_2)
 /* WaterConcept::Screen_MenuOverlay::handleEvent(int, Walaber::Widget::WidgetActionRet const&,
    Walaber::Widget*) */
 
-void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
+void WaterConcept::Screen_MenuOverlay::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
   long lVar1;
   undefined4 *puVar2;
   undefined *puVar3;
   int iVar4;
-  ulong *puVar5;
-  ulong uVar6;
-  undefined8 uVar7;
-  ulong uVar8;
+  long *plVar5;
+  ulong *puVar6;
+  ulong uVar7;
+  undefined8 uVar8;
+  ulong uVar9;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   ulong uStack_50;
   ulong uStack_48;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
+  plVar5 = (long *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  if (0x1d < param_2) {
-    if (param_2 != 0x1e) {
-      if (param_2 == 0x28) {
+  iVar4 = (int)p1;
+  if (0x1d < iVar4) {
+    if (iVar4 != 0x1e) {
+      if (iVar4 == 0x28) {
         uStack_48 = 0;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_50 = 0x3d02;
-        uVar6 = DAT_007850e0;
+        uVar7 = DAT_007850e0;
         puVar2 = DAT_007850e8;
         if ((DAT_007850d8 & 1) == 0) {
-          uVar6 = (ulong)(DAT_007850d8 >> 1);
+          uVar7 = (ulong)(DAT_007850d8 >> 1);
           puVar2 = &DAT_007850d9;
         }
                     /* try { // try from 005314f0 to 005314fb has its CatchHandler @ 00531c14 */
-        puVar5 = (ulong *)FUN_00164fb0(&uStack_50,0,puVar2,uVar6);
-        uStack_60 = puVar5[2];
-        uStack_68 = puVar5[1];
-        uStack_70 = *puVar5;
-        puVar5[1] = 0;
-        puVar5[2] = 0;
-        *puVar5 = 0;
+        puVar6 = (ulong *)FUN_00164fb0(&uStack_50,0,puVar2,uVar7);
+        pvStack_60 = (void *)puVar6[2];
+        uStack_68 = puVar6[1];
+        uStack_70 = *puVar6;
+        puVar6[1] = 0;
+        puVar6[2] = 0;
+        *puVar6 = 0;
         if ((uStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
         abStack_88[0xc] = 0;
         abStack_88[0xd] = 0;
@@ -587,7 +551,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[0] = 0x14;
         abStack_88[9] = 0x6e;
         abStack_88[10] = 0x27;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         abStack_88[1] = 0x3d;
         abStack_88[2] = 0x27;
         abStack_88[3] = 0x4d;
@@ -597,22 +561,22 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[7] = 99;
         abStack_88[8] = 0x4f;
         abStack_88[0xb] = 0;
-        uVar6 = DAT_007850c8;
+        uVar7 = DAT_007850c8;
         puVar3 = DAT_007850d0;
         if ((DAT_007850c0 & 1) == 0) {
-          uVar6 = (ulong)(DAT_007850c0 >> 1);
+          uVar7 = (ulong)(DAT_007850c0 >> 1);
           puVar3 = &DAT_007850c1;
         }
                     /* try { // try from 00531570 to 0053157b has its CatchHandler @ 00531c10 */
-        puVar5 = (ulong *)FUN_00164fb0(abStack_88,0,puVar3,uVar6);
-        uStack_40 = puVar5[2];
-        uStack_48 = puVar5[1];
-        uStack_50 = *puVar5;
-        puVar5[1] = 0;
-        puVar5[2] = 0;
-        *puVar5 = 0;
+        puVar6 = (ulong *)FUN_00164fb0(abStack_88,0,puVar3,uVar7);
+        pvStack_40 = (void *)puVar6[2];
+        uStack_48 = puVar6[1];
+        uStack_50 = *puVar6;
+        puVar6[1] = 0;
+        puVar6[2] = 0;
+        *puVar6 = 0;
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         if (GameSettings::musicOn == '\0') {
                     /* try { // try from 00531768 to 00531773 has its CatchHandler @ 00531c70 */
@@ -631,7 +595,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           abStack_88[0xd] = 0;
           abStack_88[0xe] = 0;
           abStack_88[0xf] = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           GameSettings::musicOn = '\x01';
           abStack_88[0] = 2;
           abStack_88[1] = 0x31;
@@ -645,10 +609,10 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           func_0x0016aac0(0);
           GameSettings::musicOn = '\0';
                     /* try { // try from 005315c4 to 005315db has its CatchHandler @ 00531c64 */
-          uVar7 = func_0x00168cd0();
-          uVar6 = func_0x00167c60();
-          if ((uVar6 & 1) != 0) {
-            func_0x0016b2d0(uVar7);
+          uVar8 = func_0x00168cd0();
+          uVar7 = func_0x00167c60();
+          if ((uVar7 & 1) != 0) {
+            func_0x0016b2d0(uVar8);
           }
           abStack_88[3] = 0;
           abStack_88[4] = 0;
@@ -663,7 +627,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           abStack_88[0xd] = 0;
           abStack_88[0xe] = 0;
           abStack_88[0xf] = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           abStack_88[0] = 2;
           abStack_88[1] = 0x30;
           abStack_88[2] = 0;
@@ -671,7 +635,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           FUN_00167eb0(&uStack_70,(ulong)abStack_88 | 1,1);
         }
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         abStack_88[10] = 0;
         abStack_88[0xb] = 0;
@@ -679,7 +643,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[0xd] = 0;
         abStack_88[0xe] = 0;
         abStack_88[0xf] = 0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         abStack_88[0] = 0x10;
         abStack_88[1] = 0x53;
         abStack_88[2] = 0x65;
@@ -693,32 +657,32 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
                     /* try { // try from 005317dc to 005317eb has its CatchHandler @ 00531bd8 */
         func_0x001652c0(abStack_88,&uStack_70,&uStack_50);
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
                     /* try { // try from 005317fc to 00531803 has its CatchHandler @ 00531c70 */
-        func_0x00166b70(param_1);
+        func_0x00166b70(plVar5);
       }
       else {
-        if (param_2 != 0x29) goto switchD_00531208_default;
+        if (iVar4 != 0x29) goto switchD_00531208_default;
         uStack_48 = 0;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_50 = 0x3d02;
-        uVar6 = DAT_007850e0;
+        uVar7 = DAT_007850e0;
         puVar2 = DAT_007850e8;
         if ((DAT_007850d8 & 1) == 0) {
-          uVar6 = (ulong)(DAT_007850d8 >> 1);
+          uVar7 = (ulong)(DAT_007850d8 >> 1);
           puVar2 = &DAT_007850d9;
         }
                     /* try { // try from 0053126c to 00531277 has its CatchHandler @ 00531c50 */
-        puVar5 = (ulong *)FUN_00164fb0(&uStack_50,0,puVar2,uVar6);
-        uStack_60 = puVar5[2];
-        uStack_68 = puVar5[1];
-        uStack_70 = *puVar5;
-        puVar5[1] = 0;
-        puVar5[2] = 0;
-        *puVar5 = 0;
+        puVar6 = (ulong *)FUN_00164fb0(&uStack_50,0,puVar2,uVar7);
+        pvStack_60 = (void *)puVar6[2];
+        uStack_68 = puVar6[1];
+        uStack_70 = *puVar6;
+        puVar6[1] = 0;
+        puVar6[2] = 0;
+        *puVar6 = 0;
         if ((uStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
         abStack_88[0xc] = 0;
         abStack_88[0xd] = 0;
@@ -727,7 +691,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[0] = 0x14;
         abStack_88[9] = 0x6e;
         abStack_88[10] = 0x27;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         abStack_88[1] = 0x3d;
         abStack_88[2] = 0x27;
         abStack_88[3] = 0x41;
@@ -737,30 +701,30 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[7] = 0x6f;
         abStack_88[8] = 0x4f;
         abStack_88[0xb] = 0;
-        uVar6 = DAT_007850c8;
+        uVar7 = DAT_007850c8;
         puVar3 = DAT_007850d0;
         if ((DAT_007850c0 & 1) == 0) {
-          uVar6 = (ulong)(DAT_007850c0 >> 1);
+          uVar7 = (ulong)(DAT_007850c0 >> 1);
           puVar3 = &DAT_007850c1;
         }
                     /* try { // try from 005312ec to 005312f7 has its CatchHandler @ 00531c3c */
-        puVar5 = (ulong *)FUN_00164fb0(abStack_88,0,puVar3,uVar6);
-        uStack_40 = puVar5[2];
-        uStack_48 = puVar5[1];
-        uStack_50 = *puVar5;
-        puVar5[1] = 0;
-        puVar5[2] = 0;
-        *puVar5 = 0;
+        puVar6 = (ulong *)FUN_00164fb0(abStack_88,0,puVar3,uVar7);
+        pvStack_40 = (void *)puVar6[2];
+        uStack_48 = puVar6[1];
+        uStack_50 = *puVar6;
+        puVar6[1] = 0;
+        puVar6[2] = 0;
+        *puVar6 = 0;
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         if (GameSettings::soundOn == '\0') {
                     /* try { // try from 005316b4 to 005316db has its CatchHandler @ 00531c84 */
           func_0x00168cd0();
           func_0x00170e40(0x3f800000);
           GameSettings::soundOn = '\x01';
-          uVar7 = func_0x00168cd0();
-          func_0x0016e570(0x3f800000,0x3f800000,uVar7,10);
+          uVar8 = func_0x00168cd0();
+          func_0x0016e570(0x3f800000,0x3f800000,uVar8,10);
           abStack_88[3] = 0;
           abStack_88[4] = 0;
           abStack_88[5] = 0;
@@ -774,7 +738,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           abStack_88[0xd] = 0;
           abStack_88[0xe] = 0;
           abStack_88[0xf] = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           abStack_88[0] = 2;
           abStack_88[1] = 0x31;
           abStack_88[2] = 0;
@@ -799,7 +763,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           abStack_88[0xd] = 0;
           abStack_88[0xe] = 0;
           abStack_88[0xf] = 0;
-          uStack_78 = 0;
+          pvStack_78 = (void *)0x0;
           abStack_88[0] = 2;
           abStack_88[1] = 0x30;
           abStack_88[2] = 0;
@@ -807,7 +771,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
           FUN_00167eb0(&uStack_70,(ulong)abStack_88 | 1,1);
         }
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
         abStack_88[10] = 0;
         abStack_88[0xb] = 0;
@@ -815,7 +779,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
         abStack_88[0xd] = 0;
         abStack_88[0xe] = 0;
         abStack_88[0xf] = 0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         abStack_88[0] = 0x10;
         abStack_88[1] = 0x53;
         abStack_88[2] = 0x65;
@@ -829,23 +793,23 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
                     /* try { // try from 0053173c to 0053174b has its CatchHandler @ 00531bdc */
         func_0x001652c0(abStack_88,&uStack_70,&uStack_50);
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
                     /* try { // try from 0053175c to 00531763 has its CatchHandler @ 00531c84 */
-        func_0x00166b70(param_1);
+        func_0x00166b70(plVar5);
       }
       if ((uStack_50 & 1) != 0) {
-        FUN_00166120(uStack_40);
+        FUN_00166120(pvStack_40);
       }
       if ((uStack_70 & 1) != 0) {
-        FUN_00166120(uStack_60);
+        FUN_00166120(pvStack_60);
       }
       goto switchD_00531208_default;
     }
     func_0x0016fe20();
     func_0x0016b220(&uStack_50);
     abStack_88[0] = 0x16;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     abStack_88[9] = 0x6e;
     abStack_88[10] = 0x74;
     abStack_88[0xb] = 0x73;
@@ -867,7 +831,7 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
     func_0x00165260(&uStack_50,abStack_88,&uStack_70);
     func_0x00167bf0(&uStack_70);
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
                     /* try { // try from 005313d8 to 005313eb has its CatchHandler @ 00531c74 */
     func_0x00166ab0();
@@ -875,86 +839,86 @@ void WaterConcept::Screen_MenuOverlay::handleEvent(long *param_1,int param_2)
     func_0x0016c950();
     goto LAB_005319a4;
   }
-  switch(param_2) {
+  switch((ulong)p1 & 0xffffffff) {
   case 0:
-    (**(code **)(*param_1 + 0x70))(param_1);
+    (**(code **)(*plVar5 + 0x70))(plVar5);
     goto switchD_00531208_default;
   case 1:
-    if (*(char *)((long)param_1 + 0x95) == '\0') {
-      uVar7 = func_0x0016c970(1);
-      func_0x001691a0(uVar7,1);
+    if (*(char *)((long)plVar5 + 0x95) == '\0') {
+      uVar8 = func_0x0016c970(1);
+      func_0x001691a0(uVar8,1);
     }
     func_0x00166ab0();
     if (GameSettings::currentLevelIsBonus == '\0') {
       if (-1 < GameSettings::currentLevelChallengeID) {
         if (GameSettings::currentLevelIsAllie != '\0') {
-          uVar7 = 0x23;
+          uVar8 = 0x23;
           goto LAB_00531948;
         }
 LAB_005318f8:
-        uVar7 = 0x18;
+        uVar8 = 0x18;
         goto LAB_00531948;
       }
 LAB_005318f0:
-      uVar7 = 2;
+      uVar8 = 2;
     }
     else {
-      uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
-      uVar6 = uVar8;
+      uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
+      uVar7 = uVar9;
       if ((GameSettings::currentLevelPackName & 1) != 0) {
-        uVar6 = DAT_00735df0;
+        uVar7 = DAT_00735df0;
       }
-      if (uVar6 == 0xe) {
+      if (uVar7 == 0xe) {
                     /* try { // try from 00531460 to 00531483 has its CatchHandler @ 00531bc4 */
         iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_ALLIE",0xe);
         if (iVar4 != 0) {
-          uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+          uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
           goto LAB_0053182c;
         }
-        uVar7 = 0x22;
+        uVar8 = 0x22;
       }
       else {
 LAB_0053182c:
-        uVar6 = uVar8;
+        uVar7 = uVar9;
         if ((GameSettings::currentLevelPackName & 1) != 0) {
-          uVar6 = DAT_00735df0;
+          uVar7 = DAT_00735df0;
         }
-        if (uVar6 == 0xf) {
+        if (uVar7 == 0xf) {
                     /* try { // try from 0053183c to 0053185f has its CatchHandler @ 00531bc0 */
           iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_CRANKY",0xf);
           if (iVar4 == 0) goto LAB_005318f8;
-          uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+          uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
         }
-        uVar6 = uVar8;
+        uVar7 = uVar9;
         if ((GameSettings::currentLevelPackName & 1) != 0) {
-          uVar6 = DAT_00735df0;
+          uVar7 = DAT_00735df0;
         }
-        if (uVar6 == 8) {
+        if (uVar7 == 8) {
                     /* try { // try from 00531884 to 005318a7 has its CatchHandler @ 00531bbc */
           iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS",8);
           if (iVar4 != 0) {
-            uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+            uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
             goto LAB_005318bc;
           }
         }
         else {
 LAB_005318bc:
           if ((GameSettings::currentLevelPackName & 1) != 0) {
-            uVar8 = DAT_00735df0;
+            uVar9 = DAT_00735df0;
           }
                     /* try { // try from 005318cc to 005318eb has its CatchHandler @ 00531bb8 */
-          if ((uVar8 != 0x10) ||
+          if ((uVar9 != 0x10) ||
              (iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                       "LP_BONUS_FRANKEN",0x10), iVar4 != 0)) goto LAB_005318f0;
         }
-        uVar7 = 0xe;
+        uVar8 = 0xe;
       }
     }
 LAB_00531948:
-    func_0x00164370(uVar7);
+    func_0x00164370(uVar8);
     func_0x0016b220(&uStack_50);
                     /* try { // try from 00531960 to 00531967 has its CatchHandler @ 00531bf8 */
     func_0x00165fe0(0x3dcccccd,&uStack_70);
@@ -967,9 +931,9 @@ LAB_00531948:
     break;
   case 2:
     if (GameSettings::currentLevelChallengeID < 0) {
-      if (*(char *)((long)param_1 + 0x95) == '\0') {
-        uVar7 = func_0x0016c970(1);
-        func_0x001691a0(uVar7,1);
+      if (*(char *)((long)plVar5 + 0x95) == '\0') {
+        uVar8 = func_0x0016c970(1);
+        func_0x001691a0(uVar8,1);
       }
       func_0x001710f0(0);
       func_0x00164230(0);
@@ -989,89 +953,89 @@ LAB_00531948:
     func_0x00171c70(0x3f000000,1,&uStack_50);
     break;
   case 3:
-    if (*(char *)((long)param_1 + 0xc) != '\0') goto switchD_00531208_default;
-    *(undefined1 *)((long)param_1 + 0xc) = 1;
-    if (*(char *)((long)param_1 + 0x95) != '\0') {
+    if (*(char *)((long)plVar5 + 0xc) != '\0') goto switchD_00531208_default;
+    *(undefined1 *)((long)plVar5 + 0xc) = 1;
+    if (*(char *)((long)plVar5 + 0x95) != '\0') {
       func_0x00168ec0();
       goto switchD_00531208_default;
     }
-    uVar6 = func_0x00173750();
-    if ((uVar6 & 1) != 0) {
+    uVar7 = func_0x00173750();
+    if ((uVar7 & 1) != 0) {
       func_0x00168cd0();
       func_0x0016fcc0();
-      uVar7 = func_0x0016c970(1);
-      func_0x0016a280(uVar7,1,1);
+      uVar8 = func_0x0016c970(1);
+      func_0x0016a280(uVar8,1,1);
       func_0x0016f470(0,0);
-      *(undefined1 *)((long)param_1 + 0x94) = 1;
+      *(undefined1 *)((long)plVar5 + 0x94) = 1;
       goto switchD_00531208_default;
     }
-    uVar7 = func_0x0016c970(1);
-    func_0x001691a0(uVar7,1);
+    uVar8 = func_0x0016c970(1);
+    func_0x001691a0(uVar8,1);
     func_0x00166ab0();
     if (GameSettings::currentLevelIsBonus == '\0') {
 LAB_00531b1c:
-      uVar7 = 2;
+      uVar8 = 2;
     }
     else {
-      uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
-      uVar6 = uVar8;
+      uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
+      uVar7 = uVar9;
       if ((GameSettings::currentLevelPackName & 1) != 0) {
-        uVar6 = DAT_00735df0;
+        uVar7 = DAT_00735df0;
       }
-      if (uVar6 == 0xf) {
+      if (uVar7 == 0xf) {
                     /* try { // try from 00531a18 to 00531a3b has its CatchHandler @ 00531ba8 */
         iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_CRANKY",0xf);
         if (iVar4 != 0) {
-          uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+          uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
           goto LAB_00531a58;
         }
-        uVar7 = 0x18;
+        uVar8 = 0x18;
       }
       else {
 LAB_00531a58:
-        uVar6 = uVar8;
+        uVar7 = uVar9;
         if ((GameSettings::currentLevelPackName & 1) != 0) {
-          uVar6 = DAT_00735df0;
+          uVar7 = DAT_00735df0;
         }
-        if (uVar6 == 0xe) {
+        if (uVar7 == 0xe) {
                     /* try { // try from 00531a68 to 00531a8b has its CatchHandler @ 00531ba4 */
           iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_ALLIE",0xe);
           if (iVar4 == 0) {
-            uVar7 = 0x22;
+            uVar8 = 0x22;
             goto LAB_00531b20;
           }
-          uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+          uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
         }
-        uVar6 = uVar8;
+        uVar7 = uVar9;
         if ((GameSettings::currentLevelPackName & 1) != 0) {
-          uVar6 = DAT_00735df0;
+          uVar7 = DAT_00735df0;
         }
-        if (uVar6 == 8) {
+        if (uVar7 == 8) {
                     /* try { // try from 00531ab0 to 00531ad3 has its CatchHandler @ 00531ba0 */
           iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS",8);
           if (iVar4 != 0) {
-            uVar8 = (ulong)(GameSettings::currentLevelPackName >> 1);
+            uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
             goto LAB_00531ae8;
           }
         }
         else {
 LAB_00531ae8:
           if ((GameSettings::currentLevelPackName & 1) != 0) {
-            uVar8 = DAT_00735df0;
+            uVar9 = DAT_00735df0;
           }
                     /* try { // try from 00531af8 to 00531b17 has its CatchHandler @ 00531b9c */
-          if ((uVar8 != 0x10) ||
+          if ((uVar9 != 0x10) ||
              (iVar4 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                       "LP_BONUS_FRANKEN",0x10), iVar4 != 0)) goto LAB_00531b1c;
         }
-        uVar7 = 0xe;
+        uVar8 = 0xe;
       }
     }
 LAB_00531b20:
-    func_0x00164370(uVar7);
+    func_0x00164370(uVar8);
     func_0x0016b220(&uStack_50);
                     /* try { // try from 00531b38 to 00531b3f has its CatchHandler @ 00531bb0 */
     func_0x00165fe0(0x3dcccccd,&uStack_70);
@@ -1149,27 +1113,35 @@ void WaterConcept::Screen_MenuOverlay::_updateAudioButtons(long param_1)
   int *piStack_b0;
   long lStack_a8;
   int *piStack_a0;
-  ulong auStack_98 [13];
+  ulong auStack_98 [2];
+  void *pvStack_88;
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  ulong auStack_68 [2];
+  void *pvStack_58;
+  ulong auStack_50 [2];
+  void *pvStack_40;
+  long lStack_38;
   
   lVar2 = tpidr_el0;
-  auStack_98[0xc] = *(long *)(lVar2 + 0x28);
-  auStack_98[9] = 0;
-  auStack_98[10] = 0;
-  auStack_98[0xb] = 0;
-  auStack_98[6] = 0;
-  auStack_98[7] = 0;
+  lStack_38 = *(long *)(lVar2 + 0x28);
+  auStack_50[0] = 0;
+  auStack_50[1] = 0;
+  pvStack_40 = (void *)0x0;
+  auStack_68[0] = 0;
+  auStack_68[1] = 0;
   uVar7 = (ulong)(GameSettings::currentLevelPackName >> 1);
   uVar1 = uVar7;
   if ((GameSettings::currentLevelPackName & 1) != 0) {
     uVar1 = DAT_00735df0;
   }
-  auStack_98[8] = 0;
-  auStack_98[3] = 0;
-  auStack_98[4] = 0;
-  auStack_98[5] = 0;
+  pvStack_58 = (void *)0x0;
+  auStack_80[0] = 0;
+  auStack_80[1] = 0;
+  pvStack_70 = (void *)0x0;
   auStack_98[0] = 0;
   auStack_98[1] = 0;
-  auStack_98[2] = 0;
+  pvStack_88 = (void *)0x0;
   if (uVar1 == 10) {
                     /* try { // try from 00531d18 to 00531d3b has its CatchHandler @ 00532520 */
     iVar3 = func_0x001656c0(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_FRANKEN",10
@@ -1190,50 +1162,50 @@ LAB_00531d58:
                                 "LP_BONUS_FRANKEN",0x10), iVar3 != 0)) {
       if ((GameSettings::currentStoryline == 0) && (GameSettings::currentLevelChallengeID < 0)) {
                     /* try { // try from 00531dac to 00531edf has its CatchHandler @ 005325d0 */
-        FUN_00164170(auStack_98 + 3,"/Textures/owall_button_sound.png",0x20);
-        FUN_00164170(auStack_98 + 9,"/Textures/owall_button_music.png",0x20);
+        FUN_00164170(auStack_80,"/Textures/owall_button_sound.png",0x20);
+        FUN_00164170(auStack_50,"/Textures/owall_button_music.png",0x20);
         FUN_00164170(auStack_98,"/Textures/owall_button_sound_hit.png",0x24);
-        FUN_00164170(auStack_98 + 6,"/Textures/owall_button_music_hit.png",0x24);
+        FUN_00164170(auStack_68,"/Textures/owall_button_music_hit.png",0x24);
       }
       else if (((GameSettings::currentStoryline == 6) && (GameSettings::currentLevelChallengeID < 0)
                ) || ((-1 < GameSettings::currentLevelChallengeID &&
                      (GameSettings::currentLevelIsAllie != '\0')))) {
-        FUN_00164170(auStack_98 + 3,"/Textures/allie_owall_button_sound.png",0x26);
-        FUN_00164170(auStack_98 + 9,"/Textures/allie_owall_button_music.png",0x26);
+        FUN_00164170(auStack_80,"/Textures/allie_owall_button_sound.png",0x26);
+        FUN_00164170(auStack_50,"/Textures/allie_owall_button_music.png",0x26);
         FUN_00164170(auStack_98,"/Textures/allie_owall_button_sound_hit.png",0x2a);
-        FUN_00164170(auStack_98 + 6,"/Textures/allie_owall_button_music_hit.png",0x2a);
+        FUN_00164170(auStack_68,"/Textures/allie_owall_button_music_hit.png",0x2a);
       }
       else if (((GameSettings::currentStoryline == 1) && (GameSettings::currentLevelChallengeID < 0)
                ) || ((-1 < GameSettings::currentLevelChallengeID &&
                      (GameSettings::currentLevelIsMyst == '\0' &&
                       GameSettings::currentLevelIsAllie == '\0')))) {
                     /* try { // try from 00532354 to 00532473 has its CatchHandler @ 005325d0 */
-        FUN_00164170(auStack_98 + 3,"/Textures/cranky_owall_button_sound.png",0x27);
-        FUN_00164170(auStack_98 + 9,"/Textures/cranky_owall_button_music.png",0x27);
+        FUN_00164170(auStack_80,"/Textures/cranky_owall_button_sound.png",0x27);
+        FUN_00164170(auStack_50,"/Textures/cranky_owall_button_music.png",0x27);
         FUN_00164170(auStack_98,"/Textures/cranky_owall_button_sound_hit.png",0x2b);
-        FUN_00164170(auStack_98 + 6,"/Textures/cranky_owall_button_music_hit.png",0x2b);
+        FUN_00164170(auStack_68,"/Textures/cranky_owall_button_music_hit.png",0x2b);
       }
       else if ((GameSettings::currentStoryline == 3 && GameSettings::currentLevelChallengeID < 0) ==
                (GameSettings::currentLevelChallengeID < 0 ||
                GameSettings::currentLevelIsMyst == '\0')) {
-        FUN_00164170(auStack_98 + 3,"/Textures/md_owall_button_sound.png",0x23);
-        FUN_00164170(auStack_98 + 9,"/Textures/md_owall_button_music.png",0x23);
+        FUN_00164170(auStack_80,"/Textures/md_owall_button_sound.png",0x23);
+        FUN_00164170(auStack_50,"/Textures/md_owall_button_music.png",0x23);
         FUN_00164170(auStack_98,"/Textures/md_owall_button_sound_hit.png",0x27);
-        FUN_00164170(auStack_98 + 6,"/Textures/md_owall_button_music_hit.png",0x27);
+        FUN_00164170(auStack_68,"/Textures/md_owall_button_music_hit.png",0x27);
       }
       else {
-        FUN_00164170(auStack_98 + 3,"/Textures/owall_button_sound.png",0x20);
-        FUN_00164170(auStack_98 + 9,"/Textures/owall_button_music.png",0x20);
+        FUN_00164170(auStack_80,"/Textures/owall_button_sound.png",0x20);
+        FUN_00164170(auStack_50,"/Textures/owall_button_music.png",0x20);
         FUN_00164170(auStack_98,"/Textures/owall_button_sound_hit.png",0x24);
-        FUN_00164170(auStack_98 + 6,"/Textures/owall_button_music_hit.png",0x24);
+        FUN_00164170(auStack_68,"/Textures/owall_button_music_hit.png",0x24);
       }
       goto LAB_00531ec4;
     }
   }
-  FUN_00164170(auStack_98 + 3,"/Textures/Frankenweenie_UI_button_sfx_on.png",0x2c);
+  FUN_00164170(auStack_80,"/Textures/Frankenweenie_UI_button_sfx_on.png",0x2c);
   FUN_00164170(auStack_98,"/Textures/Frankenweenie_UI_button_sfx_off.png",0x2d);
-  FUN_00164170(auStack_98 + 9,"/Textures/Frankenweenie_UI_button_music_on.png",0x2e);
-  FUN_00164170(auStack_98 + 6,"/Textures/Frankenweenie_UI_button_music_off.png",0x2f);
+  FUN_00164170(auStack_50,"/Textures/Frankenweenie_UI_button_music_on.png",0x2e);
+  FUN_00164170(auStack_68,"/Textures/Frankenweenie_UI_button_music_off.png",0x2f);
 LAB_00531ec4:
   if (GameSettings::soundOn == '\0') {
                     /* try { // try from 00531fcc to 00531fd3 has its CatchHandler @ 005325d0 */
@@ -1289,7 +1261,7 @@ LAB_00531ec4:
     uStack_118 = 0;
     uStack_110 = 0;
                     /* try { // try from 00531ef0 to 00531f07 has its CatchHandler @ 005325b4 */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 3,&uStack_118,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_80,&uStack_118,0,0);
     lStack_108 = lStack_b8;
     piStack_100 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1311,7 +1283,7 @@ LAB_00531ec4:
     uStack_138 = 0;
     uStack_130 = 0;
                     /* try { // try from 00531f70 to 00531f87 has its CatchHandler @ 0053258c */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 3,&uStack_138,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_80,&uStack_138,0,0);
     lStack_128 = lStack_b8;
     piStack_120 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1336,7 +1308,7 @@ LAB_00531ec4:
     uStack_158 = 0;
     uStack_150 = 0;
                     /* try { // try from 005321e8 to 005321ff has its CatchHandler @ 005324bc */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 6,&uStack_158,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_68,&uStack_158,0,0);
     lStack_148 = lStack_b8;
     piStack_140 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1358,7 +1330,7 @@ LAB_00531ec4:
     uStack_178 = 0;
     uStack_170 = 0;
                     /* try { // try from 00532268 to 0053227f has its CatchHandler @ 00532494 */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 6,&uStack_178,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_68,&uStack_178,0,0);
     lStack_168 = lStack_b8;
     piStack_160 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1381,7 +1353,7 @@ LAB_00531ec4:
     uStack_198 = 0;
     uStack_190 = 0;
                     /* try { // try from 005320f4 to 0053210b has its CatchHandler @ 00532564 */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 9,&uStack_198,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_50,&uStack_198,0,0);
     lStack_188 = lStack_b8;
     piStack_180 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1403,7 +1375,7 @@ LAB_00531ec4:
     uStack_1b8 = 0;
     uStack_1b0 = 0;
                     /* try { // try from 00532174 to 0053218b has its CatchHandler @ 0053253c */
-    func_0x001644b0(&lStack_b8,uVar5,auStack_98 + 9,&uStack_1b8,0,0);
+    func_0x001644b0(&lStack_b8,uVar5,auStack_50,&uStack_1b8,0,0);
     lStack_1a8 = lStack_b8;
     piStack_1a0 = piStack_b0;
     if (lStack_b8 != 0) {
@@ -1419,18 +1391,18 @@ LAB_00531ec4:
   FUN_0016bb90(puVar6);
   FUN_0016bb90(&uStack_d8);
   if ((auStack_98[0] & 1) != 0) {
-    FUN_00166120(auStack_98[2]);
+    FUN_00166120(pvStack_88);
   }
-  if ((auStack_98[3] & 1) != 0) {
-    FUN_00166120(auStack_98[5]);
+  if ((auStack_80[0] & 1) != 0) {
+    FUN_00166120(pvStack_70);
   }
-  if ((auStack_98[6] & 1) != 0) {
-    FUN_00166120(auStack_98[8]);
+  if ((auStack_68[0] & 1) != 0) {
+    FUN_00166120(pvStack_58);
   }
-  if ((auStack_98[9] & 1) != 0) {
-    FUN_00166120(auStack_98[0xb]);
+  if ((auStack_50[0] & 1) != 0) {
+    FUN_00166120(pvStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) != auStack_98[0xc]) {
+  if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }
@@ -1445,7 +1417,7 @@ LAB_00531ec4:
 
 /* WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(long param_1,int *param_2)
+void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0)
 
 {
   undefined4 uVar1;
@@ -1456,17 +1428,18 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(long param_1,int 
   undefined8 uVar6;
   long lVar7;
   long *plVar8;
+  int *in_x1;
   undefined8 *puVar9;
   ulong uVar10;
   float fVar11;
   uint uStack_a8;
   float fStack_a4;
-  undefined8 uStack_98;
+  void *pvStack_98;
   ulong uStack_90;
   undefined8 uStack_88;
   undefined1 *puStack_80;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   ulong uStack_60;
   undefined8 uStack_58;
   undefined1 *puStack_50;
@@ -1474,13 +1447,13 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(long param_1,int 
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  if (*param_2 != 1) goto LAB_005329c0;
-  func_0x00166b70(param_1);
+  if (*in_x1 != 1) goto LAB_005329c0;
+  func_0x00166b70(p0);
   func_0x0016f720(abStack_78,&GameSettings::currentLevelName);
                     /* try { // try from 00532678 to 00532683 has its CatchHandler @ 00532a3c */
   func_0x0016e7e0(&uStack_60,abStack_78);
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   uVar10 = (ulong)(GameSettings::currentLevelName >> 1);
   if ((GameSettings::currentLevelName & 1) != 0) {
@@ -1509,13 +1482,13 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(long param_1,int 
     puStack_50 = puStack_80;
     puStack_80 = (undefined1 *)0x0;
     if ((uStack_a8 & 1) != 0) {
-      FUN_00166120(uStack_98);
+      FUN_00166120(pvStack_98);
     }
   }
                     /* try { // try from 0053279c to 005327a7 has its CatchHandler @ 00532a34 */
   func_0x00168a90(&uStack_90,GameSettings::currentLevelPackIndex,GameSettings::currentLevelIndex,
                   GameSettings::currentStoryline,GameSettings::currentLevelIsBonus,0);
-  puVar9 = (undefined8 *)(param_1 + 0x10);
+  puVar9 = (undefined8 *)((long)p0 + 0x10);
                     /* try { // try from 005327ac to 005327bb has its CatchHandler @ 00532a54 */
   uVar6 = func_0x001692e0(*puVar9,4);
   func_0x001678a0(uVar6,&uStack_90);
@@ -1589,7 +1562,7 @@ LAB_00532988:
   }
 LAB_005329c0:
   bVar4 = func_0x0016d140(6);
-  lVar7 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),100);
+  lVar7 = func_0x001692e0(*(undefined8 *)((long)p0 + 0x10),100);
   *(byte *)(lVar7 + 0x8c) = bVar4 & 1;
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     FUN_00164ff0();
@@ -1616,22 +1589,22 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
   ulong *puVar5;
   ulong uVar6;
   undefined8 uVar7;
-  long lStack_b8;
-  long lStack_b0;
+  void *pvStack_b8;
+  void *pvStack_b0;
   undefined1 auStack_a0 [8];
   uint auStack_98 [4];
-  undefined8 uStack_88;
+  void *pvStack_88;
   byte bStack_80;
   undefined7 uStack_7f;
   byte bStack_78;
   undefined2 uStack_77;
   undefined5 uStack_75;
-  undefined8 uStack_70;
+  void *pvStack_70;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -1654,7 +1627,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
       }
                     /* try { // try from 00532b78 to 00532b7f has its CatchHandler @ 00532da0 */
       puVar4 = (undefined8 *)FUN_00167eb0(auStack_98,puVar2,uVar6);
-      uStack_70 = puVar4[2];
+      pvStack_70 = (void *)puVar4[2];
       uVar7 = puVar4[1];
       bStack_78 = (byte)uVar7;
       uStack_77 = (undefined2)((ulong)uVar7 >> 8);
@@ -1666,28 +1639,28 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
       *puVar4 = 0;
                     /* try { // try from 00532b98 to 00532bab has its CatchHandler @ 00532d88 */
       puVar5 = (ulong *)FUN_00167eb0(&bStack_80,&DAT_006405c4,1);
-      uStack_50 = puVar5[2];
+      pvStack_50 = (void *)puVar5[2];
       uStack_58 = puVar5[1];
       uStack_60 = *puVar5;
       puVar5[1] = 0;
       puVar5[2] = 0;
       *puVar5 = 0;
       if ((bStack_80 & 1) != 0) {
-        FUN_00166120(uStack_70);
+        FUN_00166120(pvStack_70);
       }
       if ((auStack_98[0] & 1) != 0) {
-        FUN_00166120(uStack_88);
+        FUN_00166120(pvStack_88);
       }
       uStack_75 = 0;
       bStack_80 = 0x12;
-      uStack_70 = 0;
+      pvStack_70 = (void *)0x0;
       uStack_77 = 0x6f;
       uStack_7f = 0x6e496c6576654c;
       bStack_78 = 0x66;
                     /* try { // try from 00532c0c to 00532c23 has its CatchHandler @ 00532d70 */
       func_0x0016c010(auStack_a0,0,abStack_40,&bStack_80,&uStack_60);
       if ((bStack_80 & 1) != 0) {
-        FUN_00166120(uStack_70);
+        FUN_00166120(pvStack_70);
       }
                     /* try { // try from 00532c34 to 00532c3b has its CatchHandler @ 00532dbc */
       uVar6 = func_0x001651e0(auStack_a0);
@@ -1701,7 +1674,7 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
         bStack_78 = 0;
         uStack_77 = 0;
         uStack_75 = 0;
-        uStack_70 = 0;
+        pvStack_70 = (void *)0x0;
         auStack_98[0] = GameSettings::currentStoryline;
                     /* try { // try from 00532c58 to 00532c63 has its CatchHandler @ 00532d58 */
         func_0x00170200(&bStack_80,auStack_98);
@@ -1709,29 +1682,29 @@ void WaterConcept::Screen_MenuOverlay::backKeyPressed(long param_1)
         func_0x0016c5c0(auStack_98,auStack_a0,0);
         uVar3 = GameSettings::currentLevelChallengeID;
                     /* try { // try from 00532c80 to 00532c8b has its CatchHandler @ 00532d3c */
-        func_0x00164ec0(&lStack_b8,&bStack_80);
+        func_0x00164ec0(&pvStack_b8,&bStack_80);
                     /* try { // try from 00532c8c to 00532c9f has its CatchHandler @ 00532d20 */
-        func_0x00171780(auStack_98,uVar3,&lStack_b8,0);
-        if (lStack_b8 != 0) {
-          lStack_b0 = lStack_b8;
-          FUN_00166120();
+        func_0x00171780(auStack_98,uVar3,&pvStack_b8,0);
+        if (pvStack_b8 != (void *)0x0) {
+          pvStack_b0 = pvStack_b8;
+          FUN_00166120(pvStack_b8);
         }
         if ((auStack_98[0] & 1) != 0) {
-          FUN_00166120(uStack_88);
+          FUN_00166120(pvStack_88);
         }
-        if (CONCAT71(uStack_7f,bStack_80) != 0) {
+        if ((void *)CONCAT71(uStack_7f,bStack_80) != (void *)0x0) {
           bStack_78 = bStack_80;
           uStack_77 = (undefined2)uStack_7f;
           uStack_75 = (undefined5)((uint7)uStack_7f >> 0x10);
-          FUN_00166120();
+          FUN_00166120((void *)CONCAT71(uStack_7f,bStack_80));
         }
       }
       func_0x00169840(auStack_a0);
       if ((uStack_60 & 1) != 0) {
-        FUN_00166120(uStack_50);
+        FUN_00166120(pvStack_50);
       }
       if ((abStack_40[0] & 1) != 0) {
-        FUN_00166120(uStack_30);
+        FUN_00166120(pvStack_30);
       }
     }
   }

@@ -53,89 +53,91 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
    std::__ndk1::allocator<Walaber::PCSNode**>&>::push_back(Walaber::PCSNode**&&) */
 
 void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>&>::
-     push_back(ulong *param_1,undefined8 *param_2)
+     push_back(Walaber__PCSNode ****p0)
 
 {
   long lVar1;
   long lVar2;
-  ulong uVar3;
-  undefined8 *puVar4;
-  long lVar5;
-  undefined8 *puVar6;
-  undefined8 *puVar7;
-  ulong uVar8;
-  ulong uVar9;
-  ulong uStack_70;
-  undefined8 *puStack_68;
-  undefined8 *puStack_60;
-  ulong uStack_58;
+  Walaber__PCSNode ***pppWVar3;
+  undefined8 *in_x1;
+  ulong uVar4;
+  Walaber__PCSNode ***pppWVar5;
+  long lVar6;
+  Walaber__PCSNode ***pppWVar7;
+  Walaber__PCSNode ***pppWVar8;
+  Walaber__PCSNode ***pppWVar9;
+  Walaber__PCSNode ***pppWStack_70;
+  Walaber__PCSNode ***pppWStack_68;
+  Walaber__PCSNode ***pppWStack_60;
+  Walaber__PCSNode ***pppWStack_58;
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  puVar4 = (undefined8 *)param_1[2];
-  if (puVar4 == (undefined8 *)param_1[3]) {
-    uVar3 = *param_1;
-    uVar8 = param_1[1];
-    if (uVar8 < uVar3 || uVar8 - uVar3 == 0) {
-      lVar1 = (long)param_1[3] - uVar3;
-      uVar3 = lVar1 >> 2;
+  pppWVar5 = p0[2];
+  if (pppWVar5 == p0[3]) {
+    pppWVar7 = *p0;
+    pppWVar8 = p0[1];
+    if (pppWVar8 < pppWVar7 || (long)pppWVar8 - (long)pppWVar7 == 0) {
+      lVar1 = (long)p0[3] - (long)pppWVar7;
+      uVar4 = lVar1 >> 2;
       if (lVar1 == 0) {
-        uVar3 = 1;
+        uVar4 = 1;
       }
-      func_0x0016c6c0(&uStack_70,uVar3,uVar3 >> 2,param_1[4]);
-      puVar6 = (undefined8 *)param_1[1];
-      puVar7 = (undefined8 *)param_1[2];
-      puVar4 = puStack_60;
-      if (puVar6 != puVar7) {
+      func_0x0016c6c0(&pppWStack_70,uVar4,uVar4 >> 2,p0[4]);
+      pppWVar7 = p0[1];
+      pppWVar8 = p0[2];
+      pppWVar5 = pppWStack_60;
+      if (pppWVar7 != pppWVar8) {
         do {
-          puVar4 = puVar6 + 1;
-          *puStack_60 = *puVar6;
-          puStack_60 = puStack_60 + 1;
-          puVar6 = puVar4;
-        } while (puVar7 != puVar4);
-        puVar6 = (undefined8 *)param_1[1];
-        puVar7 = (undefined8 *)param_1[2];
-        puVar4 = puStack_60;
+          pppWVar5 = pppWVar7 + 1;
+          *pppWStack_60 = *pppWVar7;
+          pppWStack_60 = pppWStack_60 + 1;
+          pppWVar7 = pppWVar5;
+        } while (pppWVar8 != pppWVar5);
+        pppWVar7 = p0[1];
+        pppWVar8 = p0[2];
+        pppWVar5 = pppWStack_60;
       }
-      uVar3 = *param_1;
-      *param_1 = uStack_70;
-      param_1[1] = (ulong)puStack_68;
-      uVar8 = param_1[3];
-      param_1[2] = (ulong)puVar4;
-      param_1[3] = uStack_58;
-      puStack_60 = puVar7;
-      if (puVar7 != puVar6) {
-        puStack_60 = (undefined8 *)
-                     ((long)puVar7 + (~((long)puVar7 + (-8 - (long)puVar6)) & 0xfffffffffffffff8U));
+      pppWVar3 = *p0;
+      *p0 = pppWStack_70;
+      p0[1] = pppWStack_68;
+      pppWVar9 = p0[3];
+      p0[2] = pppWVar5;
+      p0[3] = pppWStack_58;
+      pppWStack_60 = pppWVar8;
+      if (pppWVar8 != pppWVar7) {
+        pppWStack_60 = (Walaber__PCSNode ***)
+                       ((long)pppWVar8 +
+                       (~((long)pppWVar8 + (-8 - (long)pppWVar7)) & 0xfffffffffffffff8U));
       }
-      uStack_70 = uVar3;
-      puStack_68 = puVar6;
-      uStack_58 = uVar8;
-      if (uVar3 != 0) {
-        FUN_00166120();
-        puVar4 = (undefined8 *)param_1[2];
+      pppWStack_70 = pppWVar3;
+      pppWStack_68 = pppWVar7;
+      pppWStack_58 = pppWVar9;
+      if (pppWVar3 != (Walaber__PCSNode ***)0x0) {
+        FUN_00166120(pppWVar3);
+        pppWVar5 = p0[2];
       }
     }
     else {
-      lVar5 = (long)(uVar8 - uVar3) >> 3;
-      lVar1 = lVar5 + 2;
-      if (-1 < lVar5 + 1) {
-        lVar1 = lVar5 + 1;
+      lVar6 = (long)pppWVar8 - (long)pppWVar7 >> 3;
+      lVar1 = lVar6 + 2;
+      if (-1 < lVar6 + 1) {
+        lVar1 = lVar6 + 1;
       }
-      uVar9 = uVar8 + (lVar1 >> 1) * -8;
-      uVar3 = uVar9;
-      if ((long)puVar4 - uVar8 != 0) {
-        FUN_0016b250(uVar9);
-        uVar3 = param_1[1] + (lVar1 >> 1) * -8;
+      pppWVar3 = pppWVar8 + -(lVar1 >> 1);
+      pppWVar7 = pppWVar3;
+      if ((long)pppWVar5 - (long)pppWVar8 != 0) {
+        FUN_0016b250(pppWVar3);
+        pppWVar7 = p0[1] + -(lVar1 >> 1);
       }
-      puVar4 = (undefined8 *)(uVar9 + ((long)((long)puVar4 - uVar8) >> 3) * 8);
-      param_1[1] = uVar3;
-      param_1[2] = (ulong)puVar4;
+      pppWVar5 = pppWVar3 + ((long)pppWVar5 - (long)pppWVar8 >> 3);
+      p0[1] = pppWVar7;
+      p0[2] = pppWVar5;
     }
   }
-  *puVar4 = *param_2;
-  param_1[2] = param_1[2] + 8;
+  *pppWVar5 = (Walaber__PCSNode **)*in_x1;
+  p0[2] = p0[2] + 1;
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
@@ -153,89 +155,90 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
    std::__ndk1::allocator<Walaber::PCSNode**>&>::push_front(Walaber::PCSNode** const&) */
 
 void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walaber::PCSNode**>&>::
-     push_front(long *param_1,undefined8 *param_2)
+     push_front(Walaber__PCSNode ***p0)
 
 {
-  ulong uVar1;
-  ulong uVar2;
-  long lVar3;
-  long lVar4;
-  undefined8 *puVar5;
-  undefined8 *puVar6;
-  long lVar7;
-  undefined8 *puVar8;
-  long lStack_70;
-  undefined8 *puStack_68;
-  undefined8 *puStack_60;
-  long lStack_58;
+  long lVar1;
+  undefined8 *in_x1;
+  long lVar2;
+  Walaber__PCSNode **ppWVar3;
+  Walaber__PCSNode **ppWVar4;
+  long lVar5;
+  Walaber__PCSNode **ppWVar6;
+  Walaber__PCSNode **ppWVar7;
+  Walaber__PCSNode **ppWStack_70;
+  Walaber__PCSNode **ppWStack_68;
+  Walaber__PCSNode **ppWStack_60;
+  Walaber__PCSNode **ppWStack_58;
   long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
-  puVar5 = (undefined8 *)param_1[1];
-  if (puVar5 == (undefined8 *)*param_1) {
-    uVar1 = param_1[2];
-    uVar2 = param_1[3];
-    if (uVar1 < uVar2) {
-      lVar7 = (long)(uVar2 - uVar1) >> 3;
-      lVar4 = lVar7 + 2;
-      if (-1 < lVar7 + 1) {
-        lVar4 = lVar7 + 1;
+  lVar1 = tpidr_el0;
+  lStack_48 = *(long *)(lVar1 + 0x28);
+  ppWVar3 = p0[1];
+  if (ppWVar3 == *p0) {
+    ppWVar4 = p0[2];
+    ppWVar7 = p0[3];
+    if (ppWVar4 < ppWVar7) {
+      lVar5 = (long)ppWVar7 - (long)ppWVar4 >> 3;
+      lVar2 = lVar5 + 2;
+      if (-1 < lVar5 + 1) {
+        lVar2 = lVar5 + 1;
       }
-      puVar8 = (undefined8 *)(uVar1 + (lVar4 >> 1) * 8);
-      puVar6 = puVar8;
-      if (uVar1 - (long)puVar5 != 0) {
-        puVar8 = (undefined8 *)((long)puVar8 - (uVar1 - (long)puVar5));
-        FUN_0016b250(puVar8,puVar5);
-        puVar6 = (undefined8 *)(param_1[2] + (lVar4 >> 1) * 8);
+      ppWVar7 = ppWVar4 + (lVar2 >> 1);
+      ppWVar6 = ppWVar7;
+      if ((long)ppWVar4 - (long)ppWVar3 != 0) {
+        ppWVar7 = (Walaber__PCSNode **)((long)ppWVar7 - ((long)ppWVar4 - (long)ppWVar3));
+        FUN_0016b250(ppWVar7,ppWVar3);
+        ppWVar6 = p0[2] + (lVar2 >> 1);
       }
-      param_1[1] = (long)puVar8;
-      param_1[2] = (long)puVar6;
-      puVar5 = puVar8;
+      p0[1] = ppWVar7;
+      p0[2] = ppWVar6;
+      ppWVar3 = ppWVar7;
     }
     else {
-      lVar7 = uVar2 - *param_1;
-      lVar4 = lVar7 >> 2;
-      if (lVar7 == 0) {
-        lVar4 = 1;
+      lVar5 = (long)ppWVar7 - (long)*p0;
+      lVar2 = lVar5 >> 2;
+      if (lVar5 == 0) {
+        lVar2 = 1;
       }
-      func_0x0016c6c0(&lStack_70,lVar4,lVar4 + 3U >> 2,param_1[4]);
-      puVar8 = (undefined8 *)param_1[1];
-      puVar5 = (undefined8 *)param_1[2];
-      if (puVar8 != puVar5) {
+      func_0x0016c6c0(&ppWStack_70,lVar2,lVar2 + 3U >> 2,p0[4]);
+      ppWVar4 = p0[1];
+      ppWVar3 = p0[2];
+      if (ppWVar4 != ppWVar3) {
         do {
-          puVar6 = puVar8 + 1;
-          *puStack_60 = *puVar8;
-          puStack_60 = puStack_60 + 1;
-          puVar8 = puVar6;
-        } while (puVar5 != puVar6);
-        puVar8 = (undefined8 *)param_1[1];
-        puVar5 = (undefined8 *)param_1[2];
+          ppWVar7 = ppWVar4 + 1;
+          *ppWStack_60 = *ppWVar4;
+          ppWStack_60 = ppWStack_60 + 1;
+          ppWVar4 = ppWVar7;
+        } while (ppWVar3 != ppWVar7);
+        ppWVar4 = p0[1];
+        ppWVar3 = p0[2];
       }
-      lVar4 = *param_1;
-      *param_1 = lStack_70;
-      param_1[1] = (long)puStack_68;
-      param_1[2] = (long)puStack_60;
-      lVar7 = param_1[3];
-      param_1[3] = lStack_58;
-      puStack_60 = puVar5;
-      if (puVar5 != puVar8) {
-        puStack_60 = (undefined8 *)
-                     ((long)puVar5 + (~((long)puVar5 + (-8 - (long)puVar8)) & 0xfffffffffffffff8U));
+      ppWVar7 = *p0;
+      *p0 = ppWStack_70;
+      p0[1] = ppWStack_68;
+      p0[2] = ppWStack_60;
+      ppWVar6 = p0[3];
+      p0[3] = ppWStack_58;
+      ppWStack_60 = ppWVar3;
+      if (ppWVar3 != ppWVar4) {
+        ppWStack_60 = (Walaber__PCSNode **)
+                      ((long)ppWVar3 +
+                      (~((long)ppWVar3 + (-8 - (long)ppWVar4)) & 0xfffffffffffffff8U));
       }
-      puVar5 = puStack_68;
-      lStack_70 = lVar4;
-      puStack_68 = puVar8;
-      lStack_58 = lVar7;
-      if (lVar4 != 0) {
-        FUN_00166120();
-        puVar5 = (undefined8 *)param_1[1];
+      ppWVar3 = ppWStack_68;
+      ppWStack_70 = ppWVar7;
+      ppWStack_68 = ppWVar4;
+      ppWStack_58 = ppWVar6;
+      if (ppWVar7 != (Walaber__PCSNode **)0x0) {
+        FUN_00166120(ppWVar7);
+        ppWVar3 = p0[1];
       }
     }
   }
-  puVar5[-1] = *param_2;
-  param_1[1] = param_1[1] + -8;
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
+  ppWVar3[-1] = (Walaber__PCSNode *)*in_x1;
+  p0[1] = p0[1] + -1;
+  if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
   }

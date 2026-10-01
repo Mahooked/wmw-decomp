@@ -29,17 +29,18 @@ re-inferred.
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
-| Struct/field layouts, signatures applied to bodies | not started | parameter types are exact but Ghidra has no storage to put them in (see "Function signatures") |
+| Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; field layouts still not recovered (see "Function signatures") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
-   in the manglings) and are now extracted and validated; struct/class field
-   layouts, enums and typedefs must still be read out of the code that uses them.
-   Those layouts are also what would let the signatures reach the decompiled
-   bodies — see "Function signatures".
+   in the manglings), validated against GCC, and now applied to 2,282 decompiled
+   bodies; struct/class field layouts, enums and typedefs must still be read out of
+   the code that uses them. The 202 class types applied so far are opaque
+   zero-length placeholders — a real layout is what turns `Walaber::Message *` into
+   a readable struct. See "Function signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped: if-converted branches, spill/reload noise, register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
@@ -285,10 +286,10 @@ and therefore only knows *polymorphic* classes, while the commonest parameter
 type in the game, `Walaber::Vector2` (366 parameters), has no vtable and is
 absent from it.
 
-**The signatures are not yet in the decompiled bodies.** Ghidra's functions,
-rebuilt from symbol extents, have no parameter storage at all: their parameter
-count never matches the ELF one, not even once across 8,092 functions. Pushing
-the recovered types in anyway made the output *worse*, not better:
+**The signatures now reach the decompiled bodies.** Ghidra's functions, rebuilt
+from symbol extents, have no parameter storage at all: their parameter count never
+matches the ELF one, not even once across 8,092 functions. Writing storage through
+Ghidra's own signature commands made the output *worse*:
 
 | Attempt | Applied | Result in `out/src` |
 |---|---|---|
@@ -297,24 +298,56 @@ the recovered types in anyway made the output *worse*, not better:
 | …plus `const`/reference fixes and 173 RTTI class types | 1,711 | 2,099 `Unknown calling convention -- yet parameter storage is locked` warnings, 110 return types corrupted to `undefined1 [16]`, parameter names renumbered |
 | …plus the 202 class names derived from parameter types | 2,221 | still zero project-class parameters visible in the output |
 | …restricted to functions whose arity already matches | **0** | warnings gone, benefit gone too |
+| …explicit AArch64 storage, types as `x0`/`w0`/`s0`/`d0` | 1,020 | correct scalars, but class types still invisible |
+| …opaque class types actually added to the DataType manager | 1,372 | 202 of 202 resolvable, still only scalars applied |
+| …`const` stripped and references passed as pointers | **2,282** | 1,037 functions with real `Walaber::Message *`-style parameters; 0 warnings |
 
-The last row is the honest summary: with no storage to write into, there is
-nothing to gain. `out/src` is therefore generated without signature application,
-and `out/symbols/signatures.tsv` carries the exact types for whoever re-shapes
-the output. Applying them needs the field-layout work first.
+So there were three separate faults, each of which had to be found by measurement
+rather than assumption:
 
-Ghidra's C parser, measured rather than assumed, for whoever retries this:
+- **Storage has to be assigned explicitly.** With no parameters and no storage,
+  Ghidra's commands have nothing to write into. `tools/ghidra/DecompileAll.java`
+  now allocates AAPCS64 registers itself — `x0`–`x7`/`w0`–`w7` for
+  integer-sized and pointer types, `s0`–`s7` for `float`, `d0`–`d7` for `double`
+  — and calls `replaceParameters` with `CUSTOM_STORAGE`. Ghidra's own
+  `PrototypeModel.getStorageLocations()` is not usable: asked for two `uint`s it
+  returns `x0` twice.
+- **A datatype is not a datatype until the manager holds it.** `new
+  StructureDataType(name, 0, dtm)` only *builds* the object; it is transient until
+  `dtm.addDataType` is called, so the first version "created" 202 class types and
+  every later lookup still failed. Compounding it, a type created under that name
+  is stored at `/Walaber::Message`, and `getDataType("Walaber::Message")` returns
+  null while `getDataType("/Walaber::Message")` succeeds — a silent miss that
+  looks exactly like a type that was never created. Both are now verified by a
+  post-condition count rather than assumed.
+- **Ghidra's C parser cannot express two of the things the ABI encodes.** `const`
+  is rejected in every position, including plain `const int` ("Can't resolve
+  datatype: const"), and a reference is silently degraded to a by-value type,
+  which under AArch64 is actively wrong. `tools/sigs.py` therefore writes a second
+  column, `gtype`, normalised for the parser — `const` stripped (2,593
+  parameters) and `T &` passed as `T *` (3,599) — alongside the exact `params`
+  column, and a `notes` column records which rewrite each parameter needed so the
+  loss is visible rather than silent. Template types are deliberately *not*
+  faked; they still fail, and inventing a stand-in would change their meaning.
 
-- `const` is not understood in any position — even `const int` returns
-  "Can't resolve datatype: const", so 1,598 const pointer/reference parameters
-  (16% of all parameters) cannot be expressed.
+The opaque class types are zero-length on purpose. Their real field layouts are
+not known yet, and a plausible-but-wrong size would be worse than none, so they
+carry the correct name and pointer-ness and nothing more.
+
+The 1,693 prototypes still unparsed are 96% `const`/reference/template
+parameters, and those are now handled; what remains is dominated by C++ templates
+like `std::__ndk1::basic_string<char, ...>`, where the mangling encodes
+instantiation arguments Ghidra cannot name. Ghidra renders a resolved `::` type as
+`Walaber__Message` in identifiers, which is a display detail, not a wrong type.
+
+For reference, the remaining parser limits, measured rather than assumed:
+
 - A `::`-qualified type resolves only if the type's *name* contains `::`.
   `Walaber::Vector2 *` works with a flat type of that name; `Vector2 *` under a
   `/Walaber` category path does not.
 - Given `undefined WaterConcept::Foo::bar(int)` the parser reads the return type
   greedily as `undefined WaterConcept::Foo::bar` and rejects the declaration.
-- A reference is silently degraded to a by-value type, which under AArch64 is
-  actively wrong rather than merely imprecise.
+- `getStorageLocations` does not allocate registers; explicit storage is required.
 
 A note on symbol counts, because the numbers above are easy to conflate.
 `.symtab` is **stripped**; every name comes from `.dynsym` (11,003 entries:

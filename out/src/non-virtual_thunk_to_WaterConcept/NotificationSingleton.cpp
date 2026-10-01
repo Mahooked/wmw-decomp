@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSing
 void non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(long param_1)
 
 {
-  func_0x00173d80(param_1 + -8);
-  FUN_00166120(param_1 + -8);
+  func_0x00173d80((void *)(param_1 + -8));
+  FUN_00166120((void *)(param_1 + -8));
   return;
 }
 
@@ -39,10 +39,10 @@ void non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSing
 
 /* non-virtual thunk to WaterConcept::NotificationSingleton::messageRx(Walaber::Message const&) */
 
-void non_virtual_thunk_to_WaterConcept::NotificationSingleton::messageRx(long param_1)
+void non_virtual_thunk_to_WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
 
 {
-  func_0x00170590(param_1 + -8);
+  func_0x00170590(p0 + -8);
   return;
 }
 

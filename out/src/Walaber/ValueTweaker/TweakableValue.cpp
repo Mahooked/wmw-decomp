@@ -25,10 +25,12 @@ void Walaber::ValueTweaker::TweakableValue::setValue(long param_1)
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(int) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 param_2)
+void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
 
 {
   long lVar1;
+  int *piVar2;
+  undefined4 in_w1;
   undefined **ppuStack_190;
   undefined8 uStack_188;
   undefined **ppuStack_180;
@@ -42,7 +44,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 par
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -50,9 +52,10 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 par
   undefined4 uStack_80;
   long lStack_70;
   
+  piVar2 = (int *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
-  if (*param_1 == 1) {
+  if (*piVar2 == 1) {
     appuStack_110[0] = &PTR__basic_istream_00711190;
     ppuStack_190 = &PTR__basic_istream_00711168;
     uStack_188 = 0;
@@ -73,21 +76,21 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 par
     uStack_160 = 0;
     uStack_168 = 0;
     uStack_120 = 0;
-    uStack_128 = 0;
+    pvStack_128 = (void *)0x0;
     uStack_130 = 0;
     uStack_138 = 0;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
     uStack_118 = 0x18;
                     /* try { // try from 00400d50 to 00400d6f has its CatchHandler @ 00400df8 */
-    func_0x0016f650(&ppuStack_180,param_2);
-    func_0x001741d0(&ppuStack_190,param_1 + 8);
-    func_0x001700b0(param_1);
+    func_0x0016f650(&ppuStack_180,in_w1);
+    func_0x001741d0(&ppuStack_190,piVar2 + 8);
+    func_0x001700b0(piVar2);
     ppuStack_190 = &PTR__basic_stringstream_007110f0;
     appuStack_110[0] = &PTR__basic_stringstream_00711140;
     ppuStack_180 = &PTR__basic_stringstream_00711118;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
     if ((uStack_138 & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
     FUN_0016e360(auStack_170);
@@ -108,10 +111,12 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 par
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(float) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(undefined8 param_1,int *param_2)
+void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
 
 {
   long lVar1;
+  int *in_x0;
+  undefined4 in_register_00005004;
   undefined **ppuStack_1a0;
   undefined8 uStack_198;
   undefined **ppuStack_190;
@@ -125,7 +130,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(undefined8 param_1,int *par
   undefined8 uStack_150;
   ulong uStack_148;
   undefined8 uStack_140;
-  undefined8 uStack_138;
+  void *pvStack_138;
   undefined8 uStack_130;
   undefined4 uStack_128;
   undefined **appuStack_120 [17];
@@ -135,7 +140,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(undefined8 param_1,int *par
   
   lVar1 = tpidr_el0;
   lStack_80 = *(long *)(lVar1 + 0x28);
-  if (*param_2 == 2) {
+  if (*in_x0 == 2) {
     appuStack_120[0] = &PTR__basic_istream_00711190;
     ppuStack_1a0 = &PTR__basic_istream_00711168;
     uStack_198 = 0;
@@ -156,21 +161,21 @@ void Walaber::ValueTweaker::TweakableValue::setValue(undefined8 param_1,int *par
     uStack_170 = 0;
     uStack_178 = 0;
     uStack_130 = 0;
-    uStack_138 = 0;
+    pvStack_138 = (void *)0x0;
     uStack_140 = 0;
     uStack_148 = 0;
     ppuStack_188 = &PTR__basic_stringbuf_007111c8;
     uStack_128 = 0x18;
                     /* try { // try from 0040109c to 004010bb has its CatchHandler @ 00401148 */
-    func_0x0016aaf0(param_1,&ppuStack_190);
-    func_0x001741d0(&ppuStack_1a0,param_2 + 8);
-    func_0x001700b0(param_2);
+    func_0x0016aaf0(CONCAT44(in_register_00005004,p0),&ppuStack_190);
+    func_0x001741d0(&ppuStack_1a0,in_x0 + 8);
+    func_0x001700b0();
     ppuStack_1a0 = &PTR__basic_stringstream_007110f0;
     appuStack_120[0] = &PTR__basic_stringstream_00711140;
     ppuStack_190 = &PTR__basic_stringstream_00711118;
     ppuStack_188 = &PTR__basic_stringbuf_007111c8;
     if ((uStack_148 & 1) != 0) {
-      FUN_00166120(uStack_138);
+      FUN_00166120(pvStack_138);
     }
     ppuStack_188 = &PTR__basic_streambuf_00710968;
     FUN_0016e360(auStack_180);
@@ -209,7 +214,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -240,7 +245,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     uStack_160 = 0;
     uStack_168 = 0;
     uStack_120 = 0;
-    uStack_128 = 0;
+    pvStack_128 = (void *)0x0;
     uStack_130 = 0;
     uStack_138 = 0;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
@@ -256,7 +261,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     ppuStack_180 = &PTR__basic_stringstream_00711118;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
     if ((uStack_138 & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
     FUN_0016e360(auStack_170);
@@ -295,7 +300,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -326,7 +331,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     uStack_160 = 0;
     uStack_168 = 0;
     uStack_120 = 0;
-    uStack_128 = 0;
+    pvStack_128 = (void *)0x0;
     uStack_130 = 0;
     uStack_138 = 0;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
@@ -346,7 +351,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     ppuStack_180 = &PTR__basic_stringstream_00711118;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
     if ((uStack_138 & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
     FUN_0016e360(auStack_170);
@@ -386,7 +391,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined1 *pa
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -417,7 +422,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined1 *pa
     uStack_160 = 0;
     uStack_168 = 0;
     uStack_120 = 0;
-    uStack_128 = 0;
+    pvStack_128 = (void *)0x0;
     uStack_130 = 0;
     uStack_138 = 0;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
@@ -441,7 +446,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined1 *pa
     ppuStack_180 = &PTR__basic_stringstream_00711118;
     ppuStack_178 = &PTR__basic_stringbuf_007111c8;
     if ((uStack_138 & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
     FUN_0016e360(auStack_170);
@@ -558,20 +563,21 @@ void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
 
 /* Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void*) */
 
-void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(long param_1,long param_2)
+void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void *p0)
 
 {
   bool bVar1;
+  long in_x1;
   long *plVar2;
   long *plVar3;
   long lVar4;
   
-  plVar2 = *(long **)(param_1 + 8);
+  plVar2 = *(long **)((long)p0 + 8);
   while( true ) {
-    if ((long *)(param_1 + 0x10) == plVar2) {
+    if ((long *)((long)p0 + 0x10) == plVar2) {
       return;
     }
-    if (plVar2[4] == param_2) break;
+    if (plVar2[4] == in_x1) break;
     plVar3 = (long *)plVar2[1];
     if ((long *)plVar2[1] == (long *)0x0) {
       plVar3 = plVar2 + 2;
@@ -592,7 +598,7 @@ void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(long param_1,l
       } while ((long *)*plVar2 != (long *)0x0);
     }
   }
-  func_0x00169d10((long *)(param_1 + 8),plVar2);
+  func_0x00169d10((long *)((long)p0 + 8),plVar2);
   return;
 }
 

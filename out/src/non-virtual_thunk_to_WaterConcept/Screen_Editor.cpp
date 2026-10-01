@@ -9,10 +9,11 @@
 /* non-virtual thunk to WaterConcept::Screen_Editor::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Editor::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Editor::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00169960(param_1 + -0x20);
+  func_0x00169960((ulong)(uint)p0 - 0x20);
   return;
 }
 

@@ -11,28 +11,28 @@
 
 void std::__ndk1::
      __vector_base<Walaber::SharedPtr<Walaber::Texture>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *p0;
+  void *pvVar1;
+  void *pvVar2;
   
-  lVar3 = *param_1;
-  if (lVar3 == 0) {
+  pvVar2 = (void *)*param_1;
+  if (pvVar2 == (void *)0x0) {
     return;
   }
-  lVar2 = param_1[1];
-  lVar1 = lVar3;
-  if (lVar2 != lVar3) {
+  pvVar1 = (void *)param_1[1];
+  p0 = pvVar2;
+  if (pvVar1 != pvVar2) {
     do {
-      lVar2 = lVar2 + -0x10;
-      FUN_00166b20(lVar2);
-    } while (lVar3 != lVar2);
-    lVar1 = *param_1;
+      pvVar1 = (void *)((long)pvVar1 + -0x10);
+      FUN_00166b20(pvVar1);
+    } while (pvVar2 != pvVar1);
+    p0 = (void *)*param_1;
   }
-  param_1[1] = lVar3;
-  FUN_00166120(lVar1);
+  param_1[1] = pvVar2;
+  FUN_00166120(p0);
   return;
 }
 

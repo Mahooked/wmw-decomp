@@ -173,12 +173,12 @@ LAB_005da1cc:
 /* std::__ndk1::__codecvt_utf8<char16_t>::do_unshift(mbstate_t&, char*, char*, char*&) const */
 
 undefined8
-std::__ndk1::__codecvt_utf8<char16_t>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::__codecvt_utf8<char16_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -219,37 +219,38 @@ undefined8 std::__ndk1::__codecvt_utf8<char16_t>::do_always_noconv(void)
 /* std::__ndk1::__codecvt_utf8<char16_t>::do_length(mbstate_t&, char const*, char const*, unsigned
    long) const */
 
-int std::__ndk1::__codecvt_utf8<char16_t>::do_length
-              (long param_1,undefined8 param_2,byte *param_3,byte *param_4,ulong param_5)
+int std::__ndk1::__codecvt_utf8<char16_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   byte bVar1;
   byte bVar2;
+  ulong in_x4;
   byte *pbVar3;
-  ulong uVar4;
+  mbstate_t mVar4;
   ulong uVar5;
-  ulong uVar6;
+  mbstate_t mVar6;
   
-  uVar4 = *(ulong *)(param_1 + 0x10);
-  pbVar3 = param_3;
-  if (((((*(byte *)(param_1 + 0x18) >> 2 & 1) != 0) && (2 < (long)param_4 - (long)param_3)) &&
-      (*param_3 == 0xef)) && ((param_3[1] == 0xbb && (pbVar3 = param_3 + 3, param_3[2] != 0xbf)))) {
-    pbVar3 = param_3;
+  mVar4 = p0[2];
+  pbVar3 = (byte *)p2;
+  if ((((((byte)p0[3].__count >> 2 & 1) != 0) && (2 < (long)(p3 - (long)p2))) && (*p2 == -0x11)) &&
+     ((p2[1] == -0x45 && (pbVar3 = (byte *)(p2 + 3), p2[2] != -0x41)))) {
+    pbVar3 = (byte *)p2;
   }
-  if ((param_5 != 0) && (pbVar3 < param_4)) {
+  if ((in_x4 != 0) && (pbVar3 < p3)) {
     uVar5 = 1;
     do {
       bVar2 = *pbVar3;
-      uVar6 = (ulong)bVar2;
+      mVar6._1_7_ = 0;
+      mVar6.__count._0_1_ = bVar2;
       if ((char)bVar2 < '\0') {
         if (bVar2 < 0xc2) break;
         if (bVar2 < 0xe0) {
-          if ((((long)param_4 - (long)pbVar3 < 2) || ((pbVar3[1] & 0xc0) != 0x80)) ||
-             (uVar4 < ((ulong)pbVar3[1] & 0x3f | (uVar6 & 0x1f) << 6))) break;
+          if ((((long)(p3 - (long)pbVar3) < 2) || ((pbVar3[1] & 0xc0) != 0x80)) ||
+             ((ulong)mVar4 < ((ulong)pbVar3[1] & 0x3f | ((ulong)mVar6 & 0x1f) << 6))) break;
           pbVar3 = pbVar3 + 2;
         }
         else {
-          if ((0xef < bVar2) || ((long)param_4 - (long)pbVar3 < 3)) break;
+          if ((0xef < bVar2) || ((long)(p3 - (long)pbVar3) < 3)) break;
           bVar1 = pbVar3[1];
           if (bVar2 == 0xed) {
             bVar2 = bVar1 & 0xe0;
@@ -264,19 +265,20 @@ joined_r0x005da330:
             if ((bVar1 & 0xe0) != 0xa0) break;
           }
           if (((pbVar3[2] & 0xc0) != 0x80) ||
-             (uVar4 < ((uVar6 & 0xf) << 0xc | ((ulong)bVar1 & 0x3f) << 6 | (ulong)pbVar3[2] & 0x3f))
-             ) break;
+             ((ulong)mVar4 <
+              (((ulong)mVar6 & 0xf) << 0xc | ((ulong)bVar1 & 0x3f) << 6 | (ulong)pbVar3[2] & 0x3f)))
+          break;
           pbVar3 = pbVar3 + 3;
         }
       }
       else {
-        if (uVar4 < uVar6) break;
+        if ((ulong)mVar4 < (ulong)mVar6) break;
         pbVar3 = pbVar3 + 1;
       }
-      if ((param_5 <= uVar5) || (uVar5 = uVar5 + 1, param_4 <= pbVar3)) break;
+      if ((in_x4 <= uVar5) || (uVar5 = uVar5 + 1, p3 <= pbVar3)) break;
     } while( true );
   }
-  return (int)pbVar3 - (int)param_3;
+  return (int)pbVar3 - (int)p2;
 }
 
 
@@ -307,7 +309,7 @@ undefined4 std::__ndk1::__codecvt_utf8<char16_t>::do_max_length(long param_1)
 
 /* std::__ndk1::__codecvt_utf8<char16_t>::~__codecvt_utf8() */
 
-void std::__ndk1::__codecvt_utf8<char16_t>::~__codecvt_utf8(undefined8 param_1)
+void std::__ndk1::__codecvt_utf8<char16_t>::~__codecvt_utf8(void *param_1)
 
 {
   FUN_00172660();

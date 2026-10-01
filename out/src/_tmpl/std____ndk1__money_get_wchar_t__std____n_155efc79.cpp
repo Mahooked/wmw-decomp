@@ -23,12 +23,12 @@ long * std::__ndk1::
   int iVar3;
   long *plVar4;
   ulong uVar5;
-  char *pcVar6;
-  undefined8 uVar7;
-  int *piVar8;
+  char *p0;
+  undefined8 uVar6;
+  int *piVar7;
+  char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  int *piVar11;
+  int *piVar10;
   char acStack_2cc [4];
   undefined8 uStack_2c8;
   int *piStack_2c0;
@@ -71,71 +71,71 @@ long * std::__ndk1::
     aiStack_210 = (int  [2])0x3736353433323130;
                     /* try { // try from 005c9808 to 005c9817 has its CatchHandler @ 005c9aa4 */
     (**(code **)(*plVar4 + 0x60))(plVar4,aiStack_210,auStack_206,&iStack_238);
-    piVar11 = piStack_2b8;
-    piVar8 = piStack_2c0;
+    piVar10 = piStack_2b8;
+    piVar7 = piStack_2c0;
     if ((long)piStack_2c0 - (long)piStack_2b8 < 0x189) {
-      pcVar6 = (char *)0x0;
-      pcVar10 = acStack_29c;
+      p0 = (char *)0x0;
+      pcVar9 = acStack_29c;
     }
     else {
-      pcVar6 = (char *)FUN_00164a70(((ulong)((long)piStack_2c0 - (long)piStack_2b8) >> 2) + 2);
-      pcVar10 = pcVar6;
-      if (pcVar6 == (char *)0x0) goto LAB_005c9a8c;
+      p0 = (char *)FUN_00164a70(((ulong)((long)piStack_2c0 - (long)piStack_2b8) >> 2) + 2);
+      pcVar9 = p0;
+      if (p0 == (char *)0x0) goto LAB_005c9a8c;
     }
     if (acStack_2cc[0] != '\0') {
-      *pcVar10 = '-';
-      pcVar10 = pcVar10 + 1;
+      *pcVar9 = '-';
+      pcVar9 = pcVar9 + 1;
     }
-    if (piVar11 < piVar8) {
-      pcVar9 = pcVar10;
+    if (piVar10 < piVar7) {
+      pcVar8 = pcVar9;
       do {
-        iVar3 = *piVar11;
+        iVar3 = *piVar10;
         if (iStack_238 == iVar3) {
-          piVar8 = &iStack_238;
+          piVar7 = &iStack_238;
         }
         else {
-          piVar8 = &iStack_234;
-          if ((((((iStack_234 != iVar3) && (piVar8 = &iStack_230, iStack_230 != iVar3)) &&
-                (piVar8 = &iStack_22c, iStack_22c != iVar3)) &&
-               ((piVar8 = &iStack_228, iStack_228 != iVar3 &&
-                (piVar8 = &iStack_224, iStack_224 != iVar3)))) &&
-              ((piVar8 = &iStack_220, iStack_220 != iVar3 &&
-               ((piVar8 = &iStack_21c, iStack_21c != iVar3 &&
-                (piVar8 = &iStack_218, iStack_218 != iVar3)))))) &&
-             (piVar8 = &iStack_214, iStack_214 != iVar3)) {
-            piVar8 = aiStack_210;
+          piVar7 = &iStack_234;
+          if ((((((iStack_234 != iVar3) && (piVar7 = &iStack_230, iStack_230 != iVar3)) &&
+                (piVar7 = &iStack_22c, iStack_22c != iVar3)) &&
+               ((piVar7 = &iStack_228, iStack_228 != iVar3 &&
+                (piVar7 = &iStack_224, iStack_224 != iVar3)))) &&
+              ((piVar7 = &iStack_220, iStack_220 != iVar3 &&
+               ((piVar7 = &iStack_21c, iStack_21c != iVar3 &&
+                (piVar7 = &iStack_218, iStack_218 != iVar3)))))) &&
+             (piVar7 = &iStack_214, iStack_214 != iVar3)) {
+            piVar7 = aiStack_210;
           }
         }
-        piVar11 = piVar11 + 1;
-        pcVar10 = pcVar9 + 1;
-        *pcVar9 = *(char *)((long)aiStack_210 + ((long)piVar8 - (long)&iStack_238 >> 2));
-        pcVar9 = pcVar10;
-      } while (piVar11 < piStack_2c0);
+        piVar10 = piVar10 + 1;
+        pcVar9 = pcVar8 + 1;
+        *pcVar8 = *(char *)((long)aiStack_210 + ((long)piVar7 - (long)&iStack_238 >> 2));
+        pcVar8 = pcVar9;
+      } while (piVar10 < piStack_2c0);
     }
-    *pcVar10 = '\0';
+    *pcVar9 = '\0';
     iVar3 = func_0x00170360(acStack_29c,&DAT_00641601,param_7);
     if (iVar3 != 1) {
                     /* try { // try from 005c9a80 to 005c9a8f has its CatchHandler @ 005c9a90 */
       FUN_00167030("money_get error");
 LAB_005c9a8c:
-      uVar7 = FUN_0016b440();
+      uVar6 = FUN_0016b440();
                     /* catch(type#1 @ 00000000) { ... } // from try @ 005c9a80 with catch @ 005c9a90
                         */
-      if (pcVar6 != (char *)0x0) {
-        FUN_00167af0(pcVar6);
+      if (p0 != (char *)0x0) {
+        FUN_00167af0(p0);
       }
       FUN_00166dc0(uStack_2c8);
-      piVar11 = piStack_2b8;
+      piVar10 = piStack_2b8;
       piStack_2b8 = (int *)0x0;
-      if (piVar11 != (int *)0x0) {
+      if (piVar10 != (int *)0x0) {
                     /* try { // try from 005c9ae4 to 005c9ae7 has its CatchHandler @ 005c9af0 */
         (*pcStack_2b0)();
       }
-      plVar4 = (long *)FUN_00169180(uVar7);
+      plVar4 = (long *)FUN_00169180(uVar6);
       return plVar4;
     }
-    if (pcVar6 != (char *)0x0) {
-      FUN_00167af0(pcVar6);
+    if (p0 != (char *)0x0) {
+      FUN_00167af0(p0);
     }
   }
   if (plStack_2a8 == (long *)0x0) {
@@ -172,9 +172,9 @@ LAB_005c99e8:
 LAB_005c9a28:
   plVar4 = plStack_2a8;
   FUN_00166dc0(uStack_2c8);
-  piVar11 = piStack_2b8;
+  piVar10 = piStack_2b8;
   piStack_2b8 = (int *)0x0;
-  if (piVar11 != (int *)0x0) {
+  if (piVar10 != (int *)0x0) {
                     /* try { // try from 005c9a44 to 005c9a47 has its CatchHandler @ 005c9aa8 */
     (*pcStack_2b0)();
   }
@@ -231,20 +231,22 @@ ulong std::__ndk1::
   int *piVar23;
   int *piVar24;
   ulong uVar25;
-  long lVar26;
-  int *piVar27;
-  uint *puVar28;
-  ulong uVar29;
-  int *piVar30;
+  void *pvVar26;
+  void *pvVar27;
+  int *piVar28;
+  long lVar29;
+  uint *puVar30;
   ulong uVar31;
-  uint *puVar32;
-  int *piVar33;
+  int *piVar32;
+  ulong uVar33;
+  uint *puVar34;
+  int *piVar35;
   ulong *puStack_2e0;
   code *pcStack_2c0;
   int iStack_28c;
   undefined8 uStack_288;
   ulong uStack_280;
-  long lStack_278;
+  void *pvStack_278;
   ulong uStack_270;
   ulong uStack_268;
   int *piStack_260;
@@ -279,16 +281,16 @@ ulong std::__ndk1::
   piStack_260 = (int *)0x0;
   uStack_288 = 0;
   uStack_280 = 0;
-  lStack_278 = 0;
+  pvStack_278 = (void *)0x0;
                     /* try { // try from 005c9b68 to 005c9b9f has its CatchHandler @ 005cadcc */
   func_0x0016e640(param_3 & 1,param_4,abStack_208,&iStack_20c,&iStack_210,&uStack_228,&uStack_240,
                   &uStack_258,&uStack_270,&iStack_28c);
   piVar23 = (int *)((ulong)&uStack_240 | 4);
   piVar24 = (int *)((ulong)&uStack_270 | 4);
   puStack_2e0 = (ulong *)0x0;
-  puVar32 = auStack_204 + 1;
-  uVar31 = 0;
-  puVar28 = auStack_70;
+  puVar34 = auStack_204 + 1;
+  uVar33 = 0;
+  puVar30 = auStack_70;
   puVar11 = auStack_204 + 1;
   pcStack_2c0 = __do_nothing;
   *param_10 = *param_9;
@@ -327,12 +329,12 @@ LAB_005c9c60:
     if (bVar4) goto LAB_005caa74;
   }
   puVar18 = puStack_2e0;
-  switch(abStack_208[uVar31]) {
+  switch(abStack_208[uVar33]) {
   case 0:
-    if (uVar31 != 3) goto LAB_005ca134;
+    if (uVar33 != 3) goto LAB_005ca134;
     goto LAB_005caa74;
   case 1:
-    if (uVar31 != 3) {
+    if (uVar33 != 3) {
       plVar7 = (long *)*param_1;
       if ((undefined4 *)plVar7[3] == (undefined4 *)plVar7[4]) {
                     /* try { // try from 005ca0dc to 005ca0f7 has its CatchHandler @ 005cae04 */
@@ -415,8 +417,8 @@ LAB_005ca1a0:
     }
     goto LAB_005caa74;
   case 2:
-    if ((1 < uVar31) && (puStack_2e0 == (ulong *)0x0)) {
-      if (((param_5 >> 9 & 1) == 0) && (uVar31 != 2 || abStack_208[3] == '\0')) {
+    if ((1 < uVar33) && (puStack_2e0 == (ulong *)0x0)) {
+      if (((param_5 >> 9 & 1) == 0) && (uVar33 != 2 || abStack_208[3] == '\0')) {
         puStack_2e0 = (ulong *)0x0;
         puVar18 = puStack_2e0;
         break;
@@ -424,62 +426,62 @@ LAB_005ca1a0:
     }
     uVar14 = uStack_240 & 0xff;
     bVar20 = (byte)uStack_240 & 1;
-    piVar30 = piVar23;
+    piVar32 = piVar23;
     if ((uStack_240 & 1) != 0) {
-      piVar30 = piStack_230;
+      piVar32 = piStack_230;
     }
-    piVar27 = piVar30;
-    if ((uVar31 != 0) && (abStack_208[(int)uVar31 - 1] < 2)) {
+    piVar28 = piVar32;
+    if ((uVar33 != 0) && (abStack_208[(int)uVar33 - 1] < 2)) {
       uVar12 = (ulong)((byte)uStack_240 >> 1);
       if ((uStack_240 & 1) != 0) {
         uVar12 = uStack_238;
       }
-      piVar33 = piVar30;
+      piVar35 = piVar32;
       if (uVar12 != 0) {
         do {
                     /* try { // try from 005ca094 to 005ca09f has its CatchHandler @ 005cadf8 */
-          uVar14 = (**(code **)(*param_8 + 0x18))(param_8,1,*piVar30);
+          uVar14 = (**(code **)(*param_8 + 0x18))(param_8,1,*piVar32);
           if ((uVar14 & 1) == 0) break;
-          piVar30 = piVar30 + 1;
+          piVar32 = piVar32 + 1;
           uVar14 = (ulong)((byte)uStack_240 >> 1);
-          piVar27 = piVar23;
+          piVar28 = piVar23;
           if ((uStack_240 & 1) != 0) {
             uVar14 = uStack_238;
-            piVar27 = piStack_230;
+            piVar28 = piStack_230;
           }
-        } while (piVar30 != piVar27 + uVar14);
+        } while (piVar32 != piVar28 + uVar14);
         uVar14 = uStack_240 & 0xff;
         bVar20 = (byte)uStack_240 & 1;
-        piVar33 = piVar30;
+        piVar35 = piVar32;
       }
-      piVar30 = piVar23;
+      piVar32 = piVar23;
       if (bVar20 != 0) {
-        piVar30 = piStack_230;
+        piVar32 = piStack_230;
       }
-      uVar29 = uStack_288 >> 1 & 0x7f;
-      uVar25 = (long)piVar33 - (long)piVar30 >> 2;
-      uVar12 = uVar29;
+      uVar31 = uStack_288 >> 1 & 0x7f;
+      uVar25 = (long)piVar35 - (long)piVar32 >> 2;
+      uVar12 = uVar31;
       if ((uStack_288 & 1) != 0) {
         uVar12 = uStack_280;
       }
-      piVar27 = piVar30;
+      piVar28 = piVar32;
       if (uVar25 <= uVar12) {
         if ((uStack_288 & 1) == 0) {
-          lVar26 = (long)&uStack_288 + uVar29 * 4 + 4;
+          pvVar27 = (void *)((long)&uStack_288 + uVar31 * 4 + 4);
         }
         else {
-          lVar26 = lStack_278 + uStack_280 * 4;
+          pvVar27 = (void *)((long)pvStack_278 + uStack_280 * 4);
         }
-        lVar9 = lVar26 + uVar25 * -4;
-        piVar27 = piVar33;
-        if (lVar9 != lVar26) {
-          lVar13 = 0;
+        pvVar26 = (void *)((long)pvVar27 + uVar25 * -4);
+        piVar28 = piVar35;
+        if (pvVar26 != pvVar27) {
+          lVar29 = 0;
           do {
-            piVar27 = piVar30;
-            if (*(int *)(lVar9 + lVar13) != *(int *)((long)piVar30 + lVar13)) break;
-            lVar13 = lVar13 + 4;
-            piVar27 = piVar33;
-          } while (lVar26 - lVar9 != lVar13);
+            piVar28 = piVar32;
+            if (*(int *)((long)pvVar26 + lVar29) != *(int *)((long)piVar32 + lVar29)) break;
+            lVar29 = lVar29 + 4;
+            piVar28 = piVar35;
+          } while ((long)pvVar27 - (long)pvVar26 != lVar29);
         }
       }
     }
@@ -487,7 +489,7 @@ LAB_005ca1a0:
     if (bVar20 != 0) {
       uVar14 = uStack_238;
     }
-    if (piVar30 + uVar14 != piVar27) {
+    if (piVar32 + uVar14 != piVar28) {
       do {
         plVar7 = (long *)*param_1;
         if (plVar7 == (long *)0x0) {
@@ -529,7 +531,7 @@ LAB_005ca820:
         else {
           iVar6 = *(int *)plVar7[3];
         }
-        if (iVar6 != *piVar27) break;
+        if (iVar6 != *piVar28) break;
         plVar7 = (long *)*param_1;
         if (plVar7[3] == plVar7[4]) {
                     /* try { // try from 005ca8a0 to 005ca8a3 has its CatchHandler @ 005cadf4 */
@@ -538,23 +540,23 @@ LAB_005ca820:
         else {
           plVar7[3] = plVar7[3] + 4;
         }
-        piVar27 = piVar27 + 1;
+        piVar28 = piVar28 + 1;
         uVar14 = uStack_240 >> 1 & 0x7f;
-        piVar30 = piVar23;
+        piVar32 = piVar23;
         if ((uStack_240 & 1) != 0) {
           uVar14 = uStack_238;
-          piVar30 = piStack_230;
+          piVar32 = piStack_230;
         }
-      } while (piVar27 != piVar30 + uVar14);
+      } while (piVar28 != piVar32 + uVar14);
     }
     if ((param_5 >> 9 & 1) != 0) {
       uVar14 = uStack_240 >> 1 & 0x7f;
-      piVar30 = piVar23;
+      piVar32 = piVar23;
       if ((uStack_240 & 1) != 0) {
         uVar14 = uStack_238;
-        piVar30 = piStack_230;
+        piVar32 = piStack_230;
       }
-      if (piVar27 == piVar30 + uVar14) break;
+      if (piVar28 == piVar32 + uVar14) break;
       goto LAB_005caccc;
     }
     break;
@@ -577,11 +579,11 @@ LAB_005ca820:
         else {
           iVar6 = *(int *)plVar7[3];
         }
-        piVar30 = piVar24;
+        piVar32 = piVar24;
         if (((byte)uStack_270 & 1) != 0) {
-          piVar30 = piStack_260;
+          piVar32 = piStack_260;
         }
-        if (iVar6 != *piVar30) break;
+        if (iVar6 != *piVar32) break;
         plVar7 = (long *)*param_1;
         if (plVar7[3] == plVar7[4]) {
           (**(code **)(*plVar7 + 0x50))();
@@ -603,23 +605,23 @@ LAB_005caa10:
         plVar7 = (long *)*param_1;
         bVar20 = (byte)uStack_258 & 1;
         plVar10 = plVar7 + 3;
-        piVar30 = (int *)*plVar10;
-        piVar27 = (int *)plVar7[4];
+        piVar32 = (int *)*plVar10;
+        piVar28 = (int *)plVar7[4];
         if (uVar25 == 0) {
-          if (piVar30 == piVar27) {
+          if (piVar32 == piVar28) {
                     /* try { // try from 005ca91c to 005caa3b has its CatchHandler @ 005cae04 */
             iVar6 = (**(code **)(*plVar7 + 0x48))();
             uVar12 = uStack_258 & 0xff;
             bVar20 = (byte)uStack_258 & 1;
           }
           else {
-            iVar6 = *piVar30;
+            iVar6 = *piVar32;
           }
-          piVar30 = (int *)((ulong)&uStack_258 | 4);
+          piVar32 = (int *)((ulong)&uStack_258 | 4);
           if (bVar20 != 0) {
-            piVar30 = piStack_248;
+            piVar32 = piStack_248;
           }
-          if (iVar6 != *piVar30) {
+          if (iVar6 != *piVar32) {
             *param_7 = 1;
             break;
           }
@@ -631,35 +633,35 @@ LAB_005caa10:
           plVar7[3] = plVar7[3] + 4;
         }
         else {
-          if (piVar30 == piVar27) {
+          if (piVar32 == piVar28) {
                     /* try { // try from 005ca6a8 to 005ca713 has its CatchHandler @ 005cae04 */
             iVar6 = (**(code **)(*plVar7 + 0x48))();
             plVar7 = (long *)*param_1;
             uVar12 = uStack_258 & 0xff;
             plVar10 = plVar7 + 3;
-            piVar30 = (int *)*plVar10;
-            piVar27 = (int *)plVar7[4];
+            piVar32 = (int *)*plVar10;
+            piVar28 = (int *)plVar7[4];
             bVar20 = (byte)uStack_258 & 1;
           }
           else {
-            iVar6 = *piVar30;
+            iVar6 = *piVar32;
           }
-          piVar33 = (int *)((ulong)&uStack_258 | 4);
+          piVar35 = (int *)((ulong)&uStack_258 | 4);
           if (bVar20 != 0) {
-            piVar33 = piStack_248;
+            piVar35 = piStack_248;
           }
-          if (iVar6 != *piVar33) {
-            if (piVar30 == piVar27) {
+          if (iVar6 != *piVar35) {
+            if (piVar32 == piVar28) {
               iVar6 = (**(code **)(*plVar7 + 0x48))();
             }
             else {
-              iVar6 = *piVar30;
+              iVar6 = *piVar32;
             }
-            piVar30 = piVar24;
+            piVar32 = piVar24;
             if ((uStack_270 & 1) != 0) {
-              piVar30 = piStack_260;
+              piVar32 = piStack_260;
             }
-            if (iVar6 == *piVar30) {
+            if (iVar6 == *piVar32) {
               plVar7 = (long *)*param_1;
               if (plVar7[3] == plVar7[4]) {
                 (**(code **)(*plVar7 + 0x50))();
@@ -673,14 +675,14 @@ LAB_005caa10:
             }
             goto LAB_005caccc;
           }
-          if (piVar30 == piVar27) {
+          if (piVar32 == piVar28) {
             (**(code **)(*plVar7 + 0x50))();
 LAB_005caa3c:
             uVar12 = uStack_258 & 0xff;
             bVar20 = (byte)uStack_258 & 1;
           }
           else {
-            *plVar10 = (long)(piVar30 + 1);
+            *plVar10 = (long)(piVar32 + 1);
           }
         }
         uVar14 = uVar12 >> 1;
@@ -739,16 +741,16 @@ LAB_005c9d38:
       iVar6 = *(int *)plVar7[3];
     }
     uVar14 = (**(code **)(*param_8 + 0x18))(param_8,0x40,iVar6);
-    puVar8 = puVar32;
+    puVar8 = puVar34;
     if ((uVar14 & 1) == 0) {
       uVar14 = uStack_228 >> 1 & 0x7f;
       if ((uStack_228 & 1) != 0) {
         uVar14 = uStack_220;
       }
       if (((iVar6 != iStack_210) || (uVar16 == 0)) || (uVar14 == 0)) goto LAB_005ca024;
-      if (puVar11 == puVar28) {
-        if ((ulong)((long)puVar28 - (long)puVar32) < 0x7fffffffffffffff) {
-          uVar12 = ((long)puVar28 - (long)puVar32) * 2;
+      if (puVar11 == puVar30) {
+        if ((ulong)((long)puVar30 - (long)puVar34) < 0x7fffffffffffffff) {
+          uVar12 = ((long)puVar30 - (long)puVar34) * 2;
           uVar14 = 4;
           if (uVar12 != 0) {
             uVar14 = uVar12;
@@ -757,31 +759,31 @@ LAB_005c9d38:
         else {
           uVar14 = 0xffffffffffffffff;
         }
-        puVar28 = (uint *)0x0;
+        puVar30 = (uint *)0x0;
         if (pcStack_2c0 != __do_nothing) {
-          puVar28 = puVar32;
+          puVar30 = puVar34;
         }
-        puVar8 = (uint *)FUN_00170800(puVar28,uVar14);
+        puVar8 = (uint *)FUN_00170800(puVar30,uVar14);
         if (puVar8 == (uint *)0x0) {
                     /* try { // try from 005cad94 to 005cad9f has its CatchHandler @ 005cadb8 */
           FUN_0016b440();
           goto LAB_005cad9c;
         }
-        puVar11 = (uint *)((long)puVar8 + ((long)puVar11 - (long)puVar32));
-        puVar28 = (uint *)((long)puVar8 + (uVar14 & 0xfffffffffffffffc));
+        puVar11 = (uint *)((long)puVar8 + ((long)puVar11 - (long)puVar34));
+        puVar30 = (uint *)((long)puVar8 + (uVar14 & 0xfffffffffffffffc));
         pcStack_2c0 = (code *)&SUB_007a83a8;
       }
-      puVar32 = puVar11 + 1;
+      puVar34 = puVar11 + 1;
       *puVar11 = uVar16;
       uVar16 = 0;
     }
     else {
-      piVar30 = (int *)*param_10;
-      if (piVar30 == param_11) {
-        lVar26 = *param_9;
+      piVar32 = (int *)*param_10;
+      if (piVar32 == param_11) {
+        lVar29 = *param_9;
         pcVar2 = (code *)param_9[1];
-        if ((ulong)((long)param_11 - lVar26) < 0x7fffffffffffffff) {
-          uVar12 = ((long)param_11 - lVar26) * 2;
+        if ((ulong)((long)param_11 - lVar29) < 0x7fffffffffffffff) {
+          uVar12 = ((long)param_11 - lVar29) * 2;
           uVar14 = 4;
           if (uVar12 != 0) {
             uVar14 = uVar12;
@@ -790,7 +792,7 @@ LAB_005c9d38:
         else {
           uVar14 = 0xffffffffffffffff;
         }
-        lVar9 = lVar26;
+        lVar9 = lVar29;
         if (pcVar2 == __do_nothing) {
           lVar9 = 0;
         }
@@ -812,19 +814,19 @@ LAB_005cad9c:
         else {
           *param_9 = lVar9;
         }
-        piVar30 = (int *)(lVar9 + ((long)piVar30 - lVar26 >> 2) * 4);
+        piVar32 = (int *)(lVar9 + ((long)piVar32 - lVar29 >> 2) * 4);
         param_9[1] = (long)&SUB_007a83a8;
-        *param_10 = (long)piVar30;
+        *param_10 = (long)piVar32;
         param_11 = (int *)(*param_9 + (uVar14 & 0xfffffffffffffffc));
       }
-      *param_10 = (long)(piVar30 + 1);
-      *piVar30 = iVar6;
+      *param_10 = (long)(piVar32 + 1);
+      *piVar32 = iVar6;
       uVar16 = uVar16 + 1;
-      puVar32 = puVar11;
+      puVar34 = puVar11;
     }
     plVar7 = (long *)*param_1;
-    puVar11 = puVar32;
-    puVar32 = puVar8;
+    puVar11 = puVar34;
+    puVar34 = puVar8;
     if (plVar7[3] == plVar7[4]) {
                     /* try { // try from 005c9f64 to 005c9f67 has its CatchHandler @ 005cae0c */
       (**(code **)(*plVar7 + 0x50))();
@@ -836,14 +838,14 @@ LAB_005cad9c:
   }
 switchD_005c9cac_default:
   puStack_2e0 = puVar18;
-  uVar31 = uVar31 + 1;
-  if (3 < uVar31) goto LAB_005caa74;
+  uVar33 = uVar33 + 1;
+  if (3 < uVar33) goto LAB_005caa74;
   goto LAB_005c9bf4;
 LAB_005ca024:
-  if ((puVar32 != puVar11) && (uVar16 != 0)) {
-    if (puVar11 == puVar28) {
-      if ((ulong)((long)puVar28 - (long)puVar32) < 0x7fffffffffffffff) {
-        uVar12 = ((long)puVar28 - (long)puVar32) * 2;
+  if ((puVar34 != puVar11) && (uVar16 != 0)) {
+    if (puVar11 == puVar30) {
+      if ((ulong)((long)puVar30 - (long)puVar34) < 0x7fffffffffffffff) {
+        uVar12 = ((long)puVar30 - (long)puVar34) * 2;
         uVar14 = 4;
         if (uVar12 != 0) {
           uVar14 = uVar12;
@@ -852,11 +854,11 @@ LAB_005ca024:
       else {
         uVar14 = 0xffffffffffffffff;
       }
-      puVar28 = (uint *)0x0;
+      puVar30 = (uint *)0x0;
       if (pcStack_2c0 != __do_nothing) {
-        puVar28 = puVar32;
+        puVar30 = puVar34;
       }
-      puVar8 = (uint *)FUN_00170800(puVar28,uVar14);
+      puVar8 = (uint *)FUN_00170800(puVar30,uVar14);
       if (puVar8 == (uint *)0x0) {
 LAB_005cada0:
                     /* try { // try from 005cada0 to 005cadab has its CatchHandler @ 005cadb0 */
@@ -865,10 +867,10 @@ LAB_005cada4:
         FUN_0016b440();
         goto LAB_005cadac;
       }
-      puVar11 = (uint *)((long)puVar8 + ((long)puVar11 - (long)puVar32));
-      puVar28 = (uint *)((long)puVar8 + (uVar14 & 0xfffffffffffffffc));
+      puVar11 = (uint *)((long)puVar8 + ((long)puVar11 - (long)puVar34));
+      puVar30 = (uint *)((long)puVar8 + (uVar14 & 0xfffffffffffffffc));
       pcStack_2c0 = (code *)&SUB_007a83a8;
-      puVar32 = puVar8;
+      puVar34 = puVar8;
     }
     *puVar11 = uVar16;
     puVar11 = puVar11 + 1;
@@ -977,12 +979,12 @@ LAB_005ca454:
         }
         uVar14 = (**(code **)(*param_8 + 0x18))(param_8,0x40,uVar5);
         if ((uVar14 & 1) == 0) goto LAB_005caccc;
-        piVar30 = (int *)*param_10;
-        if (piVar30 == param_11) {
-          lVar26 = *param_9;
+        piVar32 = (int *)*param_10;
+        if (piVar32 == param_11) {
+          lVar29 = *param_9;
           pcVar2 = (code *)param_9[1];
-          if ((ulong)((long)param_11 - lVar26) < 0x7fffffffffffffff) {
-            uVar12 = ((long)param_11 - lVar26) * 2;
+          if ((ulong)((long)param_11 - lVar29) < 0x7fffffffffffffff) {
+            uVar12 = ((long)param_11 - lVar29) * 2;
             uVar14 = 4;
             if (uVar12 != 0) {
               uVar14 = uVar12;
@@ -991,7 +993,7 @@ LAB_005ca454:
           else {
             uVar14 = 0xffffffffffffffff;
           }
-          lVar9 = lVar26;
+          lVar9 = lVar29;
           if (pcVar2 == __do_nothing) {
             lVar9 = 0;
           }
@@ -1009,22 +1011,22 @@ LAB_005ca454:
           else {
             *param_9 = lVar9;
           }
-          piVar30 = (int *)(lVar9 + ((long)piVar30 - lVar26 >> 2) * 4);
+          piVar32 = (int *)(lVar9 + ((long)piVar32 - lVar29 >> 2) * 4);
           param_9[1] = (long)&SUB_007a83a8;
-          *param_10 = (long)piVar30;
+          *param_10 = (long)piVar32;
           param_11 = (int *)(*param_9 + (uVar14 & 0xfffffffffffffffc));
         }
         plVar7 = (long *)*param_1;
         if ((int *)plVar7[3] == (int *)plVar7[4]) {
                     /* try { // try from 005ca5d0 to 005ca623 has its CatchHandler @ 005cae08 */
           iVar6 = (**(code **)(*plVar7 + 0x48))();
-          piVar30 = (int *)*param_10;
+          piVar32 = (int *)*param_10;
         }
         else {
           iVar6 = *(int *)plVar7[3];
         }
-        *param_10 = (long)(piVar30 + 1);
-        *piVar30 = iVar6;
+        *param_10 = (long)(piVar32 + 1);
+        *piVar32 = iVar6;
         iStack_28c = iStack_28c + -1;
         plVar7 = (long *)*param_1;
         if (plVar7[3] != plVar7[4]) goto code_r0x005ca604;
@@ -1041,7 +1043,7 @@ code_r0x005ca604:
   goto joined_r0x005ca3e8;
 LAB_005caa74:
   if (puStack_2e0 != (ulong *)0x0) {
-    uVar31 = 1;
+    uVar33 = 1;
 LAB_005caa98:
     if (((byte)*puStack_2e0 & 1) == 0) {
       uVar14 = (ulong)(byte)((byte)*puStack_2e0 >> 1);
@@ -1049,7 +1051,7 @@ LAB_005caa98:
     else {
       uVar14 = puStack_2e0[1];
     }
-    if (uVar14 <= uVar31) goto LAB_005cabc8;
+    if (uVar14 <= uVar33) goto LAB_005cabc8;
     plVar7 = (long *)*param_1;
     if (plVar7 == (long *)0x0) {
 LAB_005caad4:
@@ -1097,9 +1099,9 @@ LAB_005cab24:
     if ((*puStack_2e0 & 1) != 0) {
       pbVar15 = (byte *)puStack_2e0[2];
     }
-    if (iVar6 != *(int *)(pbVar15 + uVar31 * 4)) goto LAB_005caccc;
+    if (iVar6 != *(int *)(pbVar15 + uVar33 * 4)) goto LAB_005caccc;
     plVar10 = (long *)*param_1;
-    uVar31 = (ulong)((int)uVar31 + 1);
+    uVar33 = (ulong)((int)uVar33 + 1);
     param_2 = plVar7;
     if (plVar10[3] == plVar10[4]) {
       (**(code **)(*plVar10 + 0x50))();
@@ -1110,24 +1112,24 @@ LAB_005cab24:
     goto LAB_005caa98;
   }
 LAB_005cabc8:
-  if (puVar32 != puVar11) {
-    uVar31 = (ulong)((byte)uStack_228 >> 1);
+  if (puVar34 != puVar11) {
+    uVar33 = (ulong)((byte)uStack_228 >> 1);
     if ((uStack_228 & 1) != 0) {
-      uVar31 = uStack_220;
+      uVar33 = uStack_220;
     }
-    if (uVar31 != 0) {
+    if (uVar33 != 0) {
       puVar11 = puVar11 + -1;
       puVar8 = puVar11;
-      puVar28 = puVar32;
-      if (puVar32 < puVar11) {
+      puVar30 = puVar34;
+      if (puVar34 < puVar11) {
         do {
-          puVar19 = puVar28 + 1;
-          uVar16 = *puVar28;
-          *puVar28 = *puVar8;
+          puVar19 = puVar30 + 1;
+          uVar16 = *puVar30;
+          *puVar30 = *puVar8;
           puVar21 = puVar8 + -1;
           *puVar8 = uVar16;
           puVar8 = puVar21;
-          puVar28 = puVar19;
+          puVar30 = puVar19;
         } while (puVar19 < puVar21);
       }
       pbVar15 = (byte *)((ulong)&uStack_228 | 1);
@@ -1136,22 +1138,22 @@ LAB_005cabc8:
       }
       uVar16 = (uint)*pbVar15;
       bVar4 = 1 < (byte)(*pbVar15 + 1);
-      if (puVar32 < puVar11) {
+      if (puVar34 < puVar11) {
         pbVar22 = pbVar15;
-        puVar28 = puVar32;
-        uVar31 = (ulong)((byte)uStack_228 >> 1);
+        puVar30 = puVar34;
+        uVar33 = (ulong)((byte)uStack_228 >> 1);
         if ((uStack_228 & 1) != 0) {
-          uVar31 = uStack_220;
+          uVar33 = uStack_220;
         }
         do {
-          if ((bVar4) && (*puVar28 != uVar16)) goto LAB_005caccc;
-          if (1 < (long)(pbVar15 + (uVar31 - (long)pbVar22))) {
+          if ((bVar4) && (*puVar30 != uVar16)) goto LAB_005caccc;
+          if (1 < (long)(pbVar15 + (uVar33 - (long)pbVar22))) {
             pbVar22 = pbVar22 + 1;
           }
           uVar16 = (uint)*pbVar22;
-          puVar28 = puVar28 + 1;
+          puVar30 = puVar30 + 1;
           bVar4 = 1 < (uVar16 + 1 & 0xff);
-        } while (puVar28 < puVar11);
+        } while (puVar30 < puVar11);
       }
       if ((bVar4) && (uVar16 <= *puVar11 - 1)) {
 LAB_005caccc:
@@ -1164,7 +1166,7 @@ LAB_005caccc:
   uVar16 = 1;
 joined_r0x005cacc0:
   if ((uStack_288 & 1) != 0) {
-    FUN_00166120(lStack_278);
+    FUN_00166120(pvStack_278);
   }
   if ((uStack_270 & 1) != 0) {
     FUN_00166120(piStack_260);
@@ -1178,16 +1180,16 @@ joined_r0x005cacc0:
   if ((uStack_228 & 1) != 0) {
     FUN_00166120(pbStack_218);
   }
-  if (puVar32 != (uint *)0x0) {
+  if (puVar34 != (uint *)0x0) {
                     /* try { // try from 005cad50 to 005cad57 has its CatchHandler @ 005cadc4 */
-    (*pcStack_2c0)(puVar32);
+    (*pcStack_2c0)(puVar34);
   }
   if (*(long *)(lVar3 + 0x28) == lVar17) {
     return (ulong)uVar16;
   }
 LAB_005cadac:
-  uVar31 = FUN_00164ff0();
-  return uVar31;
+  uVar33 = FUN_00164ff0();
+  return uVar33;
 }
 
 

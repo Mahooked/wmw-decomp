@@ -14,22 +14,21 @@ void Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocato
 
 {
   int iVar1;
-  long *plVar2;
+  void *p0;
+  undefined8 *p0_00;
   
-  plVar2 = (long *)*param_1;
-  if (plVar2 != (long *)0x0) {
-    iVar1 = *(int *)param_1[1] + -1;
-    *(int *)param_1[1] = iVar1;
-    if (iVar1 == 0) {
-      if (*plVar2 != 0) {
-        plVar2[1] = *plVar2;
-        FUN_00166120();
-      }
-      FUN_00166120(plVar2);
-      if (param_1[1] != 0) {
-        FUN_00166120();
-        return;
-      }
+  p0_00 = (undefined8 *)*param_1;
+  if ((p0_00 != (undefined8 *)0x0) &&
+     (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+    p0 = (void *)*p0_00;
+    if (p0 != (void *)0x0) {
+      p0_00[1] = p0;
+      FUN_00166120(p0);
+    }
+    FUN_00166120(p0_00);
+    if ((void *)param_1[1] != (void *)0x0) {
+      FUN_00166120((void *)param_1[1]);
+      return;
     }
   }
   return;
@@ -51,24 +50,23 @@ long * Walaber::
 
 {
   int iVar1;
+  void *p0;
   int *piVar2;
   long lVar3;
-  long *plVar4;
+  undefined8 *p0_00;
   
-  plVar4 = (long *)*param_1;
-  if (plVar4 != (long *)*param_2) {
-    if (plVar4 != (long *)0x0) {
-      iVar1 = *(int *)param_1[1] + -1;
-      *(int *)param_1[1] = iVar1;
-      if (iVar1 == 0) {
-        if (*plVar4 != 0) {
-          plVar4[1] = *plVar4;
-          FUN_00166120();
-        }
-        FUN_00166120(plVar4);
-        if (param_1[1] != 0) {
-          FUN_00166120();
-        }
+  p0_00 = (undefined8 *)*param_1;
+  if (p0_00 != (undefined8 *)*param_2) {
+    if ((p0_00 != (undefined8 *)0x0) &&
+       (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+      p0 = (void *)*p0_00;
+      if (p0 != (void *)0x0) {
+        p0_00[1] = p0;
+        FUN_00166120(p0);
+      }
+      FUN_00166120(p0_00);
+      if ((void *)param_1[1] != (void *)0x0) {
+        FUN_00166120((void *)param_1[1]);
       }
     }
     lVar3 = *param_2;

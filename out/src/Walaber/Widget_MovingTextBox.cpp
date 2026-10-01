@@ -8,62 +8,64 @@
 
 /* Walaber::Widget_MovingTextBox::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_MovingTextBox const&) */
 
-long Walaber::Widget_MovingTextBox::operator=(long param_1,long param_2)
+Walaber__Widget_MovingTextBox *
+Walaber::Widget_MovingTextBox::operator=(Walaber__Widget_MovingTextBox *p0)
 
 {
   undefined4 uVar1;
-  undefined1 uVar2;
+  Walaber__Widget_MovingTextBox WVar2;
+  Walaber__Widget_MovingTextBox *in_x1;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   
   func_0x001711a0();
-  uVar3 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar3;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  func_0x00170aa0(param_1 + 0x100,param_2 + 0x100);
-  *(undefined1 *)(param_1 + 0x110) = *(undefined1 *)(param_2 + 0x110);
-  *(undefined1 *)(param_1 + 0x111) = *(undefined1 *)(param_2 + 0x111);
-  *(undefined1 *)(param_1 + 0x112) = *(undefined1 *)(param_2 + 0x112);
-  *(undefined1 *)(param_1 + 0x113) = *(undefined1 *)(param_2 + 0x113);
-  *(undefined8 *)(param_1 + 0x114) = *(undefined8 *)(param_2 + 0x114);
-  *(undefined8 *)(param_1 + 0x11c) = *(undefined8 *)(param_2 + 0x11c);
-  *(undefined8 *)(param_1 + 0x124) = *(undefined8 *)(param_2 + 0x124);
-  *(undefined8 *)(param_1 + 300) = *(undefined8 *)(param_2 + 300);
-  *(undefined8 *)(param_1 + 0x134) = *(undefined8 *)(param_2 + 0x134);
-  if (param_1 != param_2) {
-    func_0x0016f070(param_1 + 0x140,*(undefined8 *)(param_2 + 0x148),param_2 + 0x140,0);
+  uVar3 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar3;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = in_x1[0xb0];
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  func_0x00170aa0(p0 + 0x100,in_x1 + 0x100);
+  p0[0x110] = in_x1[0x110];
+  p0[0x111] = in_x1[0x111];
+  p0[0x112] = in_x1[0x112];
+  p0[0x113] = in_x1[0x113];
+  *(undefined8 *)(p0 + 0x114) = *(undefined8 *)(in_x1 + 0x114);
+  *(undefined8 *)(p0 + 0x11c) = *(undefined8 *)(in_x1 + 0x11c);
+  *(undefined8 *)(p0 + 0x124) = *(undefined8 *)(in_x1 + 0x124);
+  *(undefined8 *)(p0 + 300) = *(undefined8 *)(in_x1 + 300);
+  *(undefined8 *)(p0 + 0x134) = *(undefined8 *)(in_x1 + 0x134);
+  if (p0 != in_x1) {
+    func_0x0016f070(p0 + 0x140,*(undefined8 *)(in_x1 + 0x148),in_x1 + 0x140,0);
   }
-  *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_2 + 0x158);
-  *(undefined1 *)(param_1 + 0x160) = *(undefined1 *)(param_2 + 0x160);
-  *(undefined1 *)(param_1 + 0x161) = *(undefined1 *)(param_2 + 0x161);
-  *(undefined1 *)(param_1 + 0x162) = *(undefined1 *)(param_2 + 0x162);
-  *(undefined1 *)(param_1 + 0x163) = *(undefined1 *)(param_2 + 0x163);
-  uVar3 = *(undefined8 *)(param_2 + 0x174);
-  uVar2 = *(undefined1 *)(param_2 + 0x184);
-  uVar5 = *(undefined8 *)(param_2 + 0x16c);
-  uVar4 = *(undefined8 *)(param_2 + 0x164);
-  *(undefined8 *)(param_1 + 0x17c) = *(undefined8 *)(param_2 + 0x17c);
-  *(undefined8 *)(param_1 + 0x174) = uVar3;
-  *(undefined1 *)(param_1 + 0x184) = uVar2;
-  *(undefined8 *)(param_1 + 0x16c) = uVar5;
-  *(undefined8 *)(param_1 + 0x164) = uVar4;
-  return param_1;
+  *(undefined8 *)(p0 + 0x158) = *(undefined8 *)(in_x1 + 0x158);
+  p0[0x160] = in_x1[0x160];
+  p0[0x161] = in_x1[0x161];
+  p0[0x162] = in_x1[0x162];
+  p0[0x163] = in_x1[0x163];
+  uVar3 = *(undefined8 *)(in_x1 + 0x174);
+  WVar2 = in_x1[0x184];
+  uVar5 = *(undefined8 *)(in_x1 + 0x16c);
+  uVar4 = *(undefined8 *)(in_x1 + 0x164);
+  *(undefined8 *)(p0 + 0x17c) = *(undefined8 *)(in_x1 + 0x17c);
+  *(undefined8 *)(p0 + 0x174) = uVar3;
+  p0[0x184] = WVar2;
+  *(undefined8 *)(p0 + 0x16c) = uVar5;
+  *(undefined8 *)(p0 + 0x164) = uVar4;
+  return p0;
 }
 
 
@@ -76,34 +78,37 @@ long Walaber::Widget_MovingTextBox::operator=(long param_1,long param_2)
    Walaber::Vector2 const&) */
 
 void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
+               (int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
   long lVar1;
+  undefined8 *puVar2;
+  undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
   long lStack_28;
   
+  puVar2 = (undefined8 *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  uStack_30 = *param_3;
-  uStack_38 = *param_4;
-  func_0x00166d90(param_1,param_2,0xc,&uStack_30,&uStack_38,1,1);
-  param_1[0x20] = 0;
-  param_1[0x21] = 0;
-  *(undefined4 *)(param_1 + 0x22) = 0xff000000;
-  *param_1 = &PTR__Widget_MovingTextBox_0070f388;
-  *(undefined8 *)((long)param_1 + 0x11c) = 0;
-  *(undefined8 *)((long)param_1 + 0x114) = 0;
-  *(undefined8 *)((long)param_1 + 300) = 0;
-  *(undefined8 *)((long)param_1 + 0x124) = 0;
-  *(undefined4 *)((long)param_1 + 0x134) = 0;
-  *(undefined4 *)(param_1 + 0x27) = 0;
-  param_1[0x28] = param_1 + 0x28;
-  param_1[0x29] = param_1 + 0x28;
-  param_1[0x2a] = 0;
-  param_1[0x2b] = 0;
-  *(undefined4 *)(param_1 + 0x2c) = 0xff000000;
+  uStack_30 = *(undefined8 *)p2;
+  uStack_38 = *in_x3;
+  func_0x00166d90(puVar2,p1,0xc,&uStack_30,&uStack_38,1,1);
+  puVar2[0x20] = 0;
+  puVar2[0x21] = 0;
+  *(undefined4 *)(puVar2 + 0x22) = 0xff000000;
+  *puVar2 = &PTR__Widget_MovingTextBox_0070f388;
+  *(undefined8 *)((long)puVar2 + 0x11c) = 0;
+  *(undefined8 *)((long)puVar2 + 0x114) = 0;
+  *(undefined8 *)((long)puVar2 + 300) = 0;
+  *(undefined8 *)((long)puVar2 + 0x124) = 0;
+  *(undefined4 *)((long)puVar2 + 0x134) = 0;
+  *(undefined4 *)(puVar2 + 0x27) = 0;
+  puVar2[0x28] = puVar2 + 0x28;
+  puVar2[0x29] = puVar2 + 0x28;
+  puVar2[0x2a] = 0;
+  puVar2[0x2b] = 0;
+  *(undefined4 *)(puVar2 + 0x2c) = 0xff000000;
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -277,7 +282,7 @@ void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(undefined8 *param_1)
 
 /* Walaber::Widget_MovingTextBox::~Widget_MovingTextBox() */
 
-void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(undefined8 param_1)
+void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(void *param_1)
 
 {
   func_0x0016e610();
@@ -321,15 +326,15 @@ void Walaber::Widget_MovingTextBox::setBGTexture(long param_1,long *param_2)
 
 /* Walaber::Widget_MovingTextBox::setPadding(float, float, float, float) */
 
-void Walaber::Widget_MovingTextBox::setPadding
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               long param_5)
+void Walaber::Widget_MovingTextBox::setPadding(float p0,float p1,float p2,float p3)
 
 {
-  *(undefined4 *)(param_5 + 0x164) = param_1;
-  *(undefined4 *)(param_5 + 0x168) = param_2;
-  *(undefined4 *)(param_5 + 0x16c) = param_3;
-  *(undefined4 *)(param_5 + 0x170) = param_4;
+  long in_x0;
+  
+  *(float *)(in_x0 + 0x164) = p0;
+  *(float *)(in_x0 + 0x168) = p1;
+  *(float *)(in_x0 + 0x16c) = p2;
+  *(float *)(in_x0 + 0x170) = p3;
   func_0x0016d6a0();
   return;
 }
@@ -355,7 +360,7 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   undefined4 uStack_88;
   undefined4 uStack_84;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   long lStack_60;
   long lStack_58;
@@ -393,7 +398,7 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   *(long **)(param_1 + 0x140) = plVar4;
   *(long *)(param_1 + 0x150) = *(long *)(param_1 + 0x150) + 1;
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if (lVar6 == 0) {
     *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_1 + 0x148);
@@ -519,11 +524,12 @@ void Walaber::Widget_MovingTextBox::advanceToNextString(long param_1)
 
 /* Walaber::Widget_MovingTextBox::update(float, Walaber::Widget::WidgetActionRet&) */
 
-void Walaber::Widget_MovingTextBox::update(float param_1,long param_2,undefined1 *param_3)
+void Walaber::Widget_MovingTextBox::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  bool bVar1;
+  Walaber__Widget__WidgetActionRet WVar1;
   long lVar2;
+  undefined1 *in_x1;
   float fVar3;
   float fVar4;
   float fVar5;
@@ -534,42 +540,38 @@ void Walaber::Widget_MovingTextBox::update(float param_1,long param_2,undefined1
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  if (*(long *)(param_2 + 0x150) == 0) goto switchD_00381390_default;
-  switch(*(undefined4 *)(param_2 + 0x178)) {
+  if (*(long *)(p1 + 0x150) == 0) goto switchD_00381390_default;
+  switch(*(undefined4 *)(p1 + 0x178)) {
   case 0:
-    *(float *)(param_2 + 0x134) =
-         *(float *)(param_2 + 0x134) - *(float *)(param_2 + 0x17c) * param_1;
-    func_0x00167d50(&fStack_40,param_2);
-    fVar4 = *(float *)(*(long *)(param_2 + 0x158) + 0x28);
-    fStack_3c = fStack_40 + *(float *)(param_2 + 0x134);
-    fVar3 = *(float *)(param_2 + 0x124);
+    *(float *)(p1 + 0x134) = *(float *)(p1 + 0x134) - *(float *)(p1 + 0x17c) * p0;
+    func_0x00167d50(&fStack_40,p1);
+    fVar4 = *(float *)(*(long *)(p1 + 0x158) + 0x28);
+    fStack_3c = fStack_40 + *(float *)(p1 + 0x134);
+    fVar3 = *(float *)(p1 + 0x124);
     break;
   case 1:
-    *(float *)(param_2 + 0x134) =
-         *(float *)(param_2 + 0x134) + *(float *)(param_2 + 0x17c) * param_1;
-    func_0x00167d50(&fStack_40,param_2);
-    fVar3 = *(float *)(param_2 + 0x134);
-    fVar5 = *(float *)(param_2 + 0x124);
-    fVar4 = *(float *)(*(long *)(param_2 + 0x158) + 0x28);
-    fVar6 = *(float *)(param_2 + 300);
+    *(float *)(p1 + 0x134) = *(float *)(p1 + 0x134) + *(float *)(p1 + 0x17c) * p0;
+    func_0x00167d50(&fStack_40,p1);
+    fVar3 = *(float *)(p1 + 0x134);
+    fVar5 = *(float *)(p1 + 0x124);
+    fVar4 = *(float *)(*(long *)(p1 + 0x158) + 0x28);
+    fVar6 = *(float *)(p1 + 300);
     fStack_3c = fStack_40;
     goto LAB_003814e4;
   case 2:
-    *(float *)(param_2 + 0x138) =
-         *(float *)(param_2 + 0x138) - *(float *)(param_2 + 0x17c) * param_1;
-    func_0x00167d50(&fStack_40,param_2);
-    fVar4 = *(float *)(*(long *)(param_2 + 0x158) + 0x2c);
-    fStack_3c = fStack_3c + *(float *)(param_2 + 0x138);
-    fVar3 = *(float *)(param_2 + 0x128);
+    *(float *)(p1 + 0x138) = *(float *)(p1 + 0x138) - *(float *)(p1 + 0x17c) * p0;
+    func_0x00167d50(&fStack_40,p1);
+    fVar4 = *(float *)(*(long *)(p1 + 0x158) + 0x2c);
+    fStack_3c = fStack_3c + *(float *)(p1 + 0x138);
+    fVar3 = *(float *)(p1 + 0x128);
     break;
   case 3:
-    *(float *)(param_2 + 0x138) =
-         *(float *)(param_2 + 0x138) + *(float *)(param_2 + 0x17c) * param_1;
-    func_0x00167d50(&fStack_40,param_2);
-    fVar3 = *(float *)(param_2 + 0x138);
-    fVar5 = *(float *)(param_2 + 0x128);
-    fVar4 = *(float *)(*(long *)(param_2 + 0x158) + 0x2c);
-    fVar6 = *(float *)(param_2 + 0x130);
+    *(float *)(p1 + 0x138) = *(float *)(p1 + 0x138) + *(float *)(p1 + 0x17c) * p0;
+    func_0x00167d50(&fStack_40,p1);
+    fVar3 = *(float *)(p1 + 0x138);
+    fVar5 = *(float *)(p1 + 0x128);
+    fVar4 = *(float *)(*(long *)(p1 + 0x158) + 0x2c);
+    fVar6 = *(float *)(p1 + 0x130);
 LAB_003814e4:
     if (fStack_3c + fVar3 + fVar4 * -0.5 <= fVar5 + fVar6) goto switchD_00381390_default;
     goto LAB_0038141c;
@@ -578,19 +580,19 @@ LAB_003814e4:
   }
   if (fStack_3c + fVar4 * 0.5 < fVar3) {
 LAB_0038141c:
-    func_0x00169290(param_2);
+    func_0x00169290(p1);
   }
 switchD_00381390_default:
-  bVar1 = *(char *)(param_2 + 0x184) != '\0';
-  if (bVar1) {
+  WVar1 = p1[0x184];
+  if (WVar1 != (Walaber__Widget__WidgetActionRet)0x0) {
     FUN_00166b60("firing touch event");
-    *(undefined1 *)(param_2 + 0x184) = 0;
-    *param_3 = 1;
+    p1[0x184] = (Walaber__Widget__WidgetActionRet)0x0;
+    *in_x1 = 1;
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
   }
-  FUN_00164ff0(bVar1);
+  FUN_00164ff0(WVar1 != (Walaber__Widget__WidgetActionRet)0x0);
   return;
 }
 
@@ -602,22 +604,20 @@ switchD_00381390_default:
 
 /* Walaber::Widget_MovingTextBox::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_MovingTextBox::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
 
 {
   long lVar1;
   long lVar2;
   undefined8 uVar3;
-  undefined1 uVar4;
-  undefined1 uVar5;
-  undefined1 uVar6;
-  int iVar7;
-  long lVar8;
+  Walaber__SpriteBatch WVar4;
+  Walaber__SpriteBatch WVar5;
+  Walaber__SpriteBatch WVar6;
+  float fVar7;
+  undefined8 uVar8;
   float fVar9;
-  undefined8 uVar10;
-  float fVar11;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined8 uStack_70;
   undefined8 uStack_68;
   long lStack_60;
@@ -627,74 +627,70 @@ void Walaber::Widget_MovingTextBox::draw(long param_1,undefined8 param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uVar10 = func_0x00164620();
-  iVar7 = *(int *)(param_1 + 0x80);
-  if ((*(long *)(param_1 + 0x100) != 0) && (**(int **)(param_1 + 0x108) != 0)) {
-    func_0x00167d50(&uStack_50,param_1);
-    lStack_60 = *(long *)(param_1 + 0x100);
-    piStack_58 = *(int **)(param_1 + 0x108);
-    fVar9 = (float)*(undefined8 *)(param_1 + 0xf0);
-    fVar11 = (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20);
+  uVar8 = func_0x00164620();
+  if ((*(long *)(p0 + 0x100) != 0) && (**(int **)(p0 + 0x108) != 0)) {
+    func_0x00167d50(&uStack_50,p0);
+    lStack_60 = *(long *)(p0 + 0x100);
+    piStack_58 = *(int **)(p0 + 0x108);
+    fVar7 = (float)*(undefined8 *)(p0 + 0xf0);
+    fVar9 = (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20);
     if (lStack_60 != 0) {
       *piStack_58 = *piStack_58 + 1;
     }
-    uStack_68 = CONCAT44(fVar11 + (float)((ulong)uStack_50 >> 0x20) + fVar11,
-                         fVar9 + (float)uStack_50 + fVar9);
+    uStack_68 = CONCAT44(fVar9 + (float)((ulong)uStack_50 >> 0x20) + fVar9,
+                         fVar7 + (float)uStack_50 + fVar7);
                     /* try { // try from 00381590 to 0038159b has its CatchHandler @ 00381710 */
-    func_0x00169f20(&uStack_50,param_1);
-    uStack_70 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x90) >> 0x20) *
+    func_0x00169f20(&uStack_50,p0);
+    uStack_70 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x90) >> 0x20) *
                          (float)((ulong)uStack_50 >> 0x20),
-                         (float)*(undefined8 *)(param_1 + 0x90) * (float)uStack_50);
-    if (*(int *)(param_1 + 0x180) == -1) {
-      uStack_50 = CONCAT71(uStack_50._1_7_,*(undefined1 *)(param_1 + 0x110));
-      uVar5 = *(undefined1 *)(param_1 + 0x111);
-      uVar6 = *(undefined1 *)(param_1 + 0x112);
-      uVar4 = *(undefined1 *)(param_1 + 0x113);
+                         (float)*(undefined8 *)(p0 + 0x90) * (float)uStack_50);
+    if (*(int *)(p0 + 0x180) == -1) {
+      uStack_50 = CONCAT71(uStack_50._1_7_,p0[0x110]);
+      WVar5 = p0[0x111];
+      WVar6 = p0[0x112];
+      WVar4 = p0[0x113];
     }
     else {
-      uVar5 = 0x80;
-      uVar4 = 0xff;
+      WVar5 = (Walaber__SpriteBatch)0x80;
+      WVar4 = (Walaber__SpriteBatch)0xff;
       uStack_50 = CONCAT71(uStack_50._1_7_,0x80);
-      uVar6 = 0x80;
+      WVar6 = (Walaber__SpriteBatch)0x80;
     }
     uVar3 = uStack_50;
     uStack_50._4_4_ = SUB84(uVar3,4);
-    uStack_50._0_4_ = CONCAT13(uVar4,CONCAT12(uVar6,CONCAT11(uVar5,(undefined1)uStack_50)));
+    uStack_50._0_4_ = CONCAT13(WVar4,CONCAT12(WVar6,CONCAT11(WVar5,(undefined1)uStack_50)));
                     /* try { // try from 003815ec to 0038160f has its CatchHandler @ 0038170c */
-    func_0x00164580(uVar10,param_2,iVar7,&lStack_60,&uStack_68,&uStack_70,&uStack_50,0);
+    func_0x00164580(uVar8);
     FUN_00166b20(&lStack_60);
-    iVar7 = iVar7 + 1;
   }
-  lVar8 = *(long *)(param_1 + 0xe8);
-  if ((lVar8 != 0) && (*(long *)(param_1 + 0x150) != 0)) {
-    if (*(char *)(param_1 + 0x8d) == '\0') {
-      uVar5 = 0;
-      uVar6 = 0x60;
+  if ((*(long *)(p0 + 0xe8) != 0) && (*(long *)(p0 + 0x150) != 0)) {
+    if (p0[0x8d] == (Walaber__SpriteBatch)0x0) {
+      WVar5 = (Walaber__SpriteBatch)0x0;
+      WVar6 = (Walaber__SpriteBatch)0x60;
       uStack_70 = (ulong)uStack_70._1_7_ << 8;
-      uVar4 = 0;
+      WVar4 = (Walaber__SpriteBatch)0x0;
     }
     else {
-      uStack_70 = CONCAT71(uStack_70._1_7_,*(undefined1 *)(param_1 + 0x160));
-      uVar4 = *(undefined1 *)(param_1 + 0x161);
-      uVar5 = *(undefined1 *)(param_1 + 0x162);
-      uVar6 = *(undefined1 *)(param_1 + 0x163);
+      uStack_70 = CONCAT71(uStack_70._1_7_,p0[0x160]);
+      WVar4 = p0[0x161];
+      WVar5 = p0[0x162];
+      WVar6 = p0[0x163];
     }
     lVar2 = uStack_70;
     uStack_70._4_4_ = SUB84(lVar2,4);
-    uStack_70._0_4_ = CONCAT13(uVar6,CONCAT12(uVar5,CONCAT11(uVar4,(undefined1)uStack_70)));
-    func_0x0016f720(abStack_88,*(long *)(param_1 + 0x158) + 0x10);
+    uStack_70._0_4_ = CONCAT13(WVar6,CONCAT12(WVar5,CONCAT11(WVar4,(undefined1)uStack_70)));
+    func_0x0016f720(abStack_88,*(long *)(p0 + 0x158) + 0x10);
                     /* try { // try from 00381674 to 003816bf has its CatchHandler @ 00381720 */
-    func_0x00167d50(&uStack_68,param_1);
+    func_0x00167d50(&uStack_68,p0);
     uStack_50 = CONCAT44((float)((ulong)uStack_68 >> 0x20) +
-                         (float)((ulong)*(undefined8 *)(param_1 + 0x134) >> 0x20),
-                         (float)uStack_68 + (float)*(undefined8 *)(param_1 + 0x134));
-    func_0x00164490(uVar10,*(undefined4 *)(param_1 + 0x174),param_2,iVar7,lVar8,abStack_88,
-                    &uStack_50,param_1 + 0x124,&uStack_70,0);
+                         (float)((ulong)*(undefined8 *)(p0 + 0x134) >> 0x20),
+                         (float)uStack_68 + (float)*(undefined8 *)(p0 + 0x134));
+    func_0x00164490(uVar8,*(undefined4 *)(p0 + 0x174));
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
   }
-  FUN_001722b0(param_1,param_2);
+  FUN_001722b0(p0);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -710,17 +706,19 @@ void Walaber::Widget_MovingTextBox::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_MovingTextBox::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_MovingTextBox::acceptNewFingerDown(long param_1,undefined4 param_2)
+bool Walaber::Widget_MovingTextBox::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
   bool bVar1;
+  ulong uVar2;
   
-  FUN_0016ddd0("MovinxBox::acceptfinger( %d )  mFingerId[%d]\n",param_2,
-               *(undefined4 *)(param_1 + 0x180));
-  bVar1 = *(int *)(param_1 + 0x180) == -1;
+  uVar2 = (ulong)(uint)p0;
+  FUN_0016ddd0("MovinxBox::acceptfinger( %d )  mFingerId[%d]\n",(int)p1,
+               *(undefined4 *)(uVar2 + 0x180));
+  bVar1 = *(int *)(uVar2 + 0x180) == -1;
   if (bVar1) {
     FUN_00166b60("accepted.");
-    *(undefined4 *)(param_1 + 0x180) = param_2;
+    *(int *)(uVar2 + 0x180) = (int)p1;
   }
   return bVar1;
 }
@@ -733,15 +731,18 @@ bool Walaber::Widget_MovingTextBox::acceptNewFingerDown(long param_1,undefined4 
 
 /* Walaber::Widget_MovingTextBox::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_MovingTextBox::releaseFingerUp(long param_1,int param_2)
+void Walaber::Widget_MovingTextBox::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  FUN_0016ddd0("MovinxBox::releaseFingerUp( %d )  mFingerId[%d]\n",param_2,
-               *(undefined4 *)(param_1 + 0x180));
-  if (*(int *)(param_1 + 0x180) == param_2) {
+  ulong uVar1;
+  
+  uVar1 = (ulong)(uint)p0;
+  FUN_0016ddd0("MovinxBox::releaseFingerUp( %d )  mFingerId[%d]\n",(int)p1,
+               *(undefined4 *)(uVar1 + 0x180));
+  if (*(int *)(uVar1 + 0x180) == (int)p1) {
     FUN_00166b60("setting touched flag!");
-    *(undefined1 *)(param_1 + 0x184) = 1;
-    *(undefined4 *)(param_1 + 0x180) = 0xffffffff;
+    *(undefined1 *)(uVar1 + 0x184) = 1;
+    *(undefined4 *)(uVar1 + 0x180) = 0xffffffff;
   }
   return;
 }
@@ -754,17 +755,21 @@ void Walaber::Widget_MovingTextBox::releaseFingerUp(long param_1,int param_2)
 
 /* Walaber::Widget_MovingTextBox::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_MovingTextBox::releaseFingerLeft(long param_1,int param_2)
+bool Walaber::Widget_MovingTextBox::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   bool bVar1;
+  ulong uVar2;
+  int iVar3;
   
-  FUN_0016ddd0("MovinxBox::releaseFingerLeft( %d )  mFingerId[%d]\n",param_2,
-               *(undefined4 *)(param_1 + 0x180));
-  bVar1 = *(int *)(param_1 + 0x180) == param_2;
+  iVar3 = (int)p1;
+  uVar2 = (ulong)(uint)p0;
+  FUN_0016ddd0("MovinxBox::releaseFingerLeft( %d )  mFingerId[%d]\n",iVar3,
+               *(undefined4 *)(uVar2 + 0x180));
+  bVar1 = *(int *)(uVar2 + 0x180) == iVar3;
   if (bVar1) {
     FUN_00166b60("released!");
-    *(undefined4 *)(param_1 + 0x180) = 0xffffffff;
+    *(undefined4 *)(uVar2 + 0x180) = 0xffffffff;
   }
   return bVar1;
 }
@@ -777,11 +782,11 @@ bool Walaber::Widget_MovingTextBox::releaseFingerLeft(long param_1,int param_2)
 
 /* Walaber::Widget_MovingTextBox::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_MovingTextBox::notifyFingerLost(long param_1,int param_2)
+void Walaber::Widget_MovingTextBox::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(int *)(param_1 + 0x180) == param_2) {
-    *(undefined4 *)(param_1 + 0x180) = 0xffffffff;
+  if (*(int *)((ulong)(uint)p0 + 0x180) == (int)p1) {
+    *(undefined4 *)((ulong)(uint)p0 + 0x180) = 0xffffffff;
   }
   return;
 }
@@ -836,10 +841,10 @@ void Walaber::Widget_MovingTextBox::reset(long param_1)
 
 /* Walaber::Widget_MovingTextBox::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_MovingTextBox::releaseFingerMoved(long param_1,int param_2)
+bool Walaber::Widget_MovingTextBox::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  return *(int *)(param_1 + 0x180) != param_2;
+  return *(int *)((ulong)(uint)p0 + 0x180) != (int)p1;
 }
 
 
@@ -850,10 +855,10 @@ bool Walaber::Widget_MovingTextBox::releaseFingerMoved(long param_1,int param_2)
 
 /* Walaber::Widget_MovingTextBox::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_MovingTextBox::releaseFingerStayed(long param_1,int param_2)
+bool Walaber::Widget_MovingTextBox::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
-  return *(int *)(param_1 + 0x180) != param_2;
+  return *(int *)((ulong)(uint)p0 + 0x180) != (int)p1;
 }
 
 

@@ -8,55 +8,57 @@
 
 /* WaterConcept::GameState::GameState(WaterConcept::World*) */
 
-void WaterConcept::GameState::GameState(long param_1,long param_2)
+void WaterConcept::GameState::GameState(WaterConcept__World *p0)
 
 {
-  *(undefined1 *)(param_1 + 0x90) = 0;
-  FUN_0016b330(param_1,0,0x78);
-  *(undefined8 *)(param_1 + 0xb0) = 0;
-  *(undefined8 *)(param_1 + 0xa8) = 0;
-  *(undefined8 *)(param_1 + 0xdc) = 0xbf80000000000000;
-  *(undefined1 *)(param_1 + 0xd8) = 1;
-  *(undefined8 *)(param_1 + 0x9c) = 0;
-  *(undefined8 *)(param_1 + 0x94) = 0;
-  *(undefined8 *)(param_1 + 0xd0) = 0;
-  *(undefined8 *)(param_1 + 200) = 0;
-  *(undefined8 *)(param_1 + 0xc0) = 0;
-  *(undefined8 *)(param_1 + 0xb8) = 0;
-  *(undefined8 *)(param_1 + 0xe4) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0xf0) = 0;
-  *(long *)(param_1 + 0x108) = param_1 + 0x110;
-  *(undefined8 *)(param_1 + 0x130) = 0;
-  *(long *)(param_1 + 0x138) = param_1 + 0x140;
-  *(undefined4 *)(param_1 + 0x150) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x100) = 0;
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0x118) = 0;
-  *(undefined8 *)(param_1 + 0x110) = 0;
-  *(undefined8 *)(param_1 + 0x128) = 0;
-  *(undefined8 *)(param_1 + 0x120) = 0;
-  *(undefined8 *)(param_1 + 0x148) = 0;
-  *(undefined8 *)(param_1 + 0x140) = 0;
-  *(undefined8 *)(param_1 + 0x15a) = 0;
-  *(undefined8 *)(param_1 + 0x154) = 0;
-  *(undefined8 *)(param_1 + 0x164) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x180) = 0;
-  *(undefined8 *)(param_1 + 0x178) = 0;
-  *(undefined8 **)(param_1 + 0x170) = (undefined8 *)(param_1 + 0x178);
-  *(undefined8 *)(param_1 + 0x1c8) = 0;
-  *(undefined8 *)(param_1 + 0x1c0) = 0;
-  *(undefined8 *)(param_1 + 0x1b0) = 0;
-  *(undefined8 *)(param_1 + 0x1a8) = 0;
-  *(undefined8 *)(param_1 + 0x1a0) = 0;
-  *(undefined8 *)(param_1 + 0x198) = 0;
-  *(undefined8 *)(param_1 + 400) = 0;
-  *(undefined8 *)(param_1 + 0x188) = 0;
-  *(long *)(param_1 + 0x1b8) = param_1 + 0x1c0;
-  *(undefined4 *)(param_1 + 0x1d4) = 0;
-  *(long *)(param_1 + 0x78) = param_2;
-  *(undefined8 *)(param_1 + 0x80) = *(undefined8 *)(param_2 + 0x440);
+  long in_x1;
+  
+  p0[0x90] = (WaterConcept__World)0x0;
+  FUN_0016b330(p0,0,0x78);
+  *(undefined8 *)(p0 + 0xb0) = 0;
+  *(undefined8 *)(p0 + 0xa8) = 0;
+  *(undefined8 *)(p0 + 0xdc) = 0xbf80000000000000;
+  p0[0xd8] = (WaterConcept__World)0x1;
+  *(undefined8 *)(p0 + 0x9c) = 0;
+  *(undefined8 *)(p0 + 0x94) = 0;
+  *(undefined8 *)(p0 + 0xd0) = 0;
+  *(undefined8 *)(p0 + 200) = 0;
+  *(undefined8 *)(p0 + 0xc0) = 0;
+  *(undefined8 *)(p0 + 0xb8) = 0;
+  *(undefined8 *)(p0 + 0xe4) = 0xffffffff;
+  *(undefined8 *)(p0 + 0xf0) = 0;
+  *(WaterConcept__World **)(p0 + 0x108) = p0 + 0x110;
+  *(undefined8 *)(p0 + 0x130) = 0;
+  *(WaterConcept__World **)(p0 + 0x138) = p0 + 0x140;
+  *(undefined4 *)(p0 + 0x150) = 0xffffffff;
+  *(undefined8 *)(p0 + 0x100) = 0;
+  *(undefined8 *)(p0 + 0xf8) = 0;
+  *(undefined8 *)(p0 + 0x118) = 0;
+  *(undefined8 *)(p0 + 0x110) = 0;
+  *(undefined8 *)(p0 + 0x128) = 0;
+  *(undefined8 *)(p0 + 0x120) = 0;
+  *(undefined8 *)(p0 + 0x148) = 0;
+  *(undefined8 *)(p0 + 0x140) = 0;
+  *(undefined8 *)(p0 + 0x15a) = 0;
+  *(undefined8 *)(p0 + 0x154) = 0;
+  *(undefined8 *)(p0 + 0x164) = 0xffffffff;
+  *(undefined8 *)(p0 + 0x180) = 0;
+  *(undefined8 *)(p0 + 0x178) = 0;
+  *(WaterConcept__World **)(p0 + 0x170) = p0 + 0x178;
+  *(undefined8 *)(p0 + 0x1c8) = 0;
+  *(undefined8 *)(p0 + 0x1c0) = 0;
+  *(undefined8 *)(p0 + 0x1b0) = 0;
+  *(undefined8 *)(p0 + 0x1a8) = 0;
+  *(undefined8 *)(p0 + 0x1a0) = 0;
+  *(undefined8 *)(p0 + 0x198) = 0;
+  *(undefined8 *)(p0 + 400) = 0;
+  *(undefined8 *)(p0 + 0x188) = 0;
+  *(WaterConcept__World **)(p0 + 0x1b8) = p0 + 0x1c0;
+  *(undefined4 *)(p0 + 0x1d4) = 0;
+  *(long *)(p0 + 0x78) = in_x1;
+  *(undefined8 *)(p0 + 0x80) = *(undefined8 *)(in_x1 + 0x440);
                     /* try { // try from 00429950 to 00429957 has its CatchHandler @ 00429978 */
-  func_0x0016a0f0(param_1);
+  func_0x0016a0f0(p0);
   return;
 }
 
@@ -125,10 +127,10 @@ void WaterConcept::GameState::GameState
 {
   long lVar1;
   ulong uVar2;
-  long lStack_98;
-  long lStack_90;
-  long lStack_80;
-  long lStack_78;
+  void *pvStack_98;
+  void *pvStack_90;
+  void *pvStack_80;
+  void *pvStack_78;
   long lStack_68;
   
   lVar1 = tpidr_el0;
@@ -178,18 +180,18 @@ void WaterConcept::GameState::GameState
   *(long *)(param_1 + 0x78) = param_2;
   *(undefined8 *)(param_1 + 0x80) = *(undefined8 *)(param_2 + 0x440);
                     /* try { // try from 00429bec to 00429bf7 has its CatchHandler @ 00429d20 */
-  func_0x00173580(&lStack_80,param_4);
+  func_0x00173580(&pvStack_80,param_4);
                     /* try { // try from 00429bf8 to 00429c03 has its CatchHandler @ 00429d08 */
-  func_0x00161e60(&lStack_98,param_5);
+  func_0x00161e60(&pvStack_98,param_5);
                     /* try { // try from 00429c04 to 00429c17 has its CatchHandler @ 00429cec */
-  func_0x00173350(param_1,param_3,&lStack_80,&lStack_98);
-  if (lStack_98 != 0) {
-    lStack_90 = lStack_98;
-    FUN_00166120();
+  func_0x00173350(param_1,param_3,&pvStack_80,&pvStack_98);
+  if (pvStack_98 != (void *)0x0) {
+    pvStack_90 = pvStack_98;
+    FUN_00166120(pvStack_98);
   }
-  if (lStack_80 != 0) {
-    lStack_78 = lStack_80;
-    FUN_00166120();
+  if (pvStack_80 != (void *)0x0) {
+    pvStack_78 = pvStack_80;
+    FUN_00166120(pvStack_80);
   }
   uVar2 = 0;
   do {
@@ -1019,9 +1021,11 @@ void WaterConcept::GameState::GameState
 
 /* WaterConcept::GameState::~GameState() */
 
-void WaterConcept::GameState::~GameState(long *param_1)
+void WaterConcept::GameState::~GameState(undefined8 *param_1)
 
 {
+  void *pvVar1;
+  
   func_0x001694f0(param_1 + 0x37,param_1[0x38]);
   func_0x00167a70(param_1 + 0x34);
   func_0x00167a70(param_1 + 0x31);
@@ -1033,25 +1037,30 @@ void WaterConcept::GameState::~GameState(long *param_1)
   func_0x00164880(param_1 + 0x19);
   func_0x00164880(param_1 + 0x17);
   func_0x00164880(param_1 + 0x15);
-  if (param_1[0xc] != 0) {
-    param_1[0xd] = param_1[0xc];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0xc];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0xd] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[9] != 0) {
-    param_1[10] = param_1[9];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[9];
+  if (pvVar1 != (void *)0x0) {
+    param_1[10] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[6] != 0) {
-    param_1[7] = param_1[6];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[6];
+  if (pvVar1 != (void *)0x0) {
+    param_1[7] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[3] != 0) {
-    param_1[4] = param_1[3];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[3];
+  if (pvVar1 != (void *)0x0) {
+    param_1[4] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*param_1 != 0) {
-    param_1[1] = *param_1;
-    FUN_00166120();
+  pvVar1 = (void *)*param_1;
+  if (pvVar1 != (void *)0x0) {
+    param_1[1] = pvVar1;
+    FUN_00166120(pvVar1);
     return;
   }
   return;
@@ -1079,10 +1088,10 @@ void WaterConcept::GameState::init
   undefined4 uVar5;
   ulong uVar6;
   ulong uVar7;
-  long lStack_78;
-  long lStack_70;
-  long lStack_60;
-  long lStack_58;
+  void *pvStack_78;
+  void *pvStack_70;
+  void *pvStack_60;
+  void *pvStack_58;
   long lStack_48;
   
   lVar3 = tpidr_el0;
@@ -1136,18 +1145,18 @@ LAB_0042b3ac:
   }
   uVar5 = 1;
 LAB_0042b434:
-  func_0x00173580(&lStack_60,param_3);
+  func_0x00173580(&pvStack_60,param_3);
                     /* try { // try from 0042b440 to 0042b44b has its CatchHandler @ 0042b4d4 */
-  func_0x00161e60(&lStack_78,param_4);
+  func_0x00161e60(&pvStack_78,param_4);
                     /* try { // try from 0042b44c to 0042b45f has its CatchHandler @ 0042b4b8 */
-  func_0x00173350(param_1,uVar5,&lStack_60,&lStack_78);
-  if (lStack_78 != 0) {
-    lStack_70 = lStack_78;
-    FUN_00166120();
+  func_0x00173350(param_1,uVar5,&pvStack_60,&pvStack_78);
+  if (pvStack_78 != (void *)0x0) {
+    pvStack_70 = pvStack_78;
+    FUN_00166120(pvStack_78);
   }
-  if (lStack_60 != 0) {
-    lStack_58 = lStack_60;
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    pvStack_58 = pvStack_60;
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar3 + 0x28) != lStack_48) {
     FUN_00164ff0();
@@ -1164,48 +1173,52 @@ LAB_0042b434:
 
 /* WaterConcept::GameState::_gotSE(void*) */
 
-void WaterConcept::GameState::_gotSE(long param_1,int *param_2)
+void WaterConcept::GameState::_gotSE(void *p0)
 
 {
   int iVar1;
   long lVar2;
-  ulong uVar3;
-  ulong auStack_50 [4];
+  long lVar3;
+  ulong uVar4;
+  int *in_x1;
+  ulong auStack_50 [2];
+  void *pvStack_40;
+  long lStack_38;
   
   lVar2 = tpidr_el0;
-  auStack_50[3] = *(long *)(lVar2 + 0x28);
-  iVar1 = *param_2;
+  lStack_38 = *(long *)(lVar2 + 0x28);
+  iVar1 = *in_x1;
   if (iVar1 < 0xfdc) {
     if (iVar1 != 0x14) {
       if (iVar1 != 0x15) goto LAB_0042b570;
       goto LAB_0042b54c;
     }
 LAB_0042b558:
-    param_1 = param_1 + 0xb8;
+    lVar3 = (long)p0 + 0xb8;
   }
   else if (iVar1 == 0xfdc) {
-    param_1 = param_1 + 200;
+    lVar3 = (long)p0 + 200;
   }
   else {
     if (iVar1 == 0xfe4) goto LAB_0042b558;
     if (iVar1 != 0xfe9) goto LAB_0042b570;
 LAB_0042b54c:
-    param_1 = param_1 + 0xa8;
+    lVar3 = (long)p0 + 0xa8;
   }
-  func_0x00161db0(param_1,param_2 + 2);
+  func_0x00161db0(lVar3,in_x1 + 2);
 LAB_0042b570:
   auStack_50[1] = 0;
-  auStack_50[2] = 0;
+  pvStack_40 = (void *)0x0;
   auStack_50[0] = 0x79616c7008;
                     /* try { // try from 0042b594 to 0042b59b has its CatchHandler @ 0042b5e8 */
-  uVar3 = func_0x00173810(param_2 + 6,auStack_50);
+  uVar4 = func_0x00173810(in_x1 + 6,auStack_50);
   if ((auStack_50[0] & 1) != 0) {
-    FUN_00166120(auStack_50[2]);
+    FUN_00166120(pvStack_40);
   }
-  if ((uVar3 & 1) != 0) {
-    func_0x00165e20(0x3f800000,*(undefined8 *)(param_2 + 2));
+  if ((uVar4 & 1) != 0) {
+    func_0x00165e20(0x3f800000,*(undefined8 *)(in_x1 + 2));
   }
-  if (*(long *)(lVar2 + 0x28) != auStack_50[3]) {
+  if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }
@@ -1540,12 +1553,13 @@ LAB_0042be0c:
 
 /* WaterConcept::GameState::update(float) */
 
-void WaterConcept::GameState::update(undefined8 param_1,long *param_2)
+void WaterConcept::GameState::update(float p0)
 
 {
   char cVar1;
   long lVar2;
   int iVar3;
+  long *in_x0;
   long lVar4;
   ulong uVar5;
   int iVar6;
@@ -1557,18 +1571,19 @@ void WaterConcept::GameState::update(undefined8 param_1,long *param_2)
   long lVar12;
   long *plVar13;
   int iVar14;
+  undefined4 in_register_00005004;
   
-  lVar12 = param_2[7] - param_2[6];
-  if ((lVar12 == 0) && ((char)param_2[0x12] == '\0')) {
+  lVar12 = in_x0[7] - in_x0[6];
+  if ((lVar12 == 0) && ((char)in_x0[0x12] == '\0')) {
     return;
   }
-  plVar13 = (long *)param_2[0x10];
+  plVar13 = (long *)in_x0[0x10];
   if (plVar13 == (long *)0x0) {
     return;
   }
-  if (*(char *)((long)param_2 + 0x89) == '\0') {
-    if ((char)param_2[0x11] == '\0') {
-      cVar1 = (char)param_2[0x12];
+  if (*(char *)((long)in_x0 + 0x89) == '\0') {
+    if ((char)in_x0[0x11] == '\0') {
+      cVar1 = (char)in_x0[0x12];
       if (cVar1 == '\0') {
         uVar5 = (lVar12 >> 3) * -0x5555555555555555;
         if (lVar12 == 0) {
@@ -1579,7 +1594,7 @@ void WaterConcept::GameState::update(undefined8 param_1,long *param_2)
           uVar8 = 0;
           iVar14 = 0;
           iVar6 = 0;
-          pfVar9 = (float *)(param_2[6] + 0xc);
+          pfVar9 = (float *)(in_x0[6] + 0xc);
           do {
             if (*pfVar9 <= pfVar9[-1]) {
               iVar6 = iVar6 + 1;
@@ -1592,18 +1607,18 @@ void WaterConcept::GameState::update(undefined8 param_1,long *param_2)
           } while (uVar8 <= uVar5 && uVar5 - uVar8 != 0);
         }
         if (uVar5 < (ulong)(long)iVar6 || uVar5 - (long)iVar6 == 0) {
-          *(undefined1 *)(param_2 + 0x11) = 1;
+          *(undefined1 *)(in_x0 + 0x11) = 1;
         }
         if (uVar5 < (ulong)(long)iVar14 || uVar5 - (long)iVar14 == 0) {
-          *(undefined1 *)((long)param_2 + 0x89) = 1;
+          *(undefined1 *)((long)in_x0 + 0x89) = 1;
         }
       }
-      lVar12 = param_2[0xf];
+      lVar12 = in_x0[0xf];
       if ((((*(char *)(lVar12 + 0xa69) == '\0') && (GameSettings::currentStoryline != 3)) &&
           (*(char *)(lVar12 + 0xa6a) == '\0')) &&
          ((GameSettings::currentLevelIsAllie == '\0' || (GameSettings::currentLevelChallengeID < 0))
          )) {
-        lVar4 = param_2[10] - param_2[9];
+        lVar4 = in_x0[10] - in_x0[9];
         if (lVar4 == 0) {
 LAB_0042c06c:
           iVar6 = 0;
@@ -1614,7 +1629,7 @@ LAB_0042c06c:
           iVar14 = 0;
           iVar6 = 0;
           uVar8 = (lVar4 >> 3) * -0x5555555555555555;
-          pbVar7 = (byte *)(param_2[9] + 9);
+          pbVar7 = (byte *)(in_x0[9] + 9);
           do {
             if (pbVar7[-1] == 0) {
               iVar14 = iVar14 + (uint)*pbVar7;
@@ -1628,13 +1643,13 @@ LAB_0042c06c:
         }
       }
       else {
-        lVar4 = param_2[0xd] - param_2[0xc];
+        lVar4 = in_x0[0xd] - in_x0[0xc];
         if (lVar4 == 0) goto LAB_0042c06c;
         uVar5 = 0;
         iVar14 = 0;
         iVar6 = 0;
         uVar8 = (lVar4 >> 3) * -0x5555555555555555;
-        pbVar7 = (byte *)(param_2[0xc] + 9);
+        pbVar7 = (byte *)(in_x0[0xc] + 9);
         do {
           if (pbVar7[-1] == 0) {
             iVar14 = iVar14 + (uint)*pbVar7;
@@ -1646,55 +1661,55 @@ LAB_0042c06c:
           pbVar7 = pbVar7 + 0x18;
         } while (uVar5 <= uVar8 && uVar8 - uVar5 != 0);
       }
-      iVar3 = func_0x00161b30(param_2);
+      iVar3 = func_0x00161b30();
       if (iVar6 < iVar3) {
         if (iVar14 < iVar3) {
           if ((cVar1 != '\0') && (iVar3 <= iVar14 + iVar6)) goto LAB_0042c0fc;
         }
         else {
-          *(undefined1 *)((long)param_2 + 0x8b) = 1;
+          *(undefined1 *)((long)in_x0 + 0x8b) = 1;
           if (cVar1 != '\0') {
-            *(undefined1 *)((long)param_2 + 0x89) = 1;
+            *(undefined1 *)((long)in_x0 + 0x89) = 1;
           }
         }
       }
       else {
-        *(undefined1 *)((long)param_2 + 0x8a) = 1;
+        *(undefined1 *)((long)in_x0 + 0x8a) = 1;
         if (cVar1 != '\0') {
 LAB_0042c0fc:
-          *(undefined1 *)(param_2 + 0x11) = 1;
+          *(undefined1 *)(in_x0 + 0x11) = 1;
         }
       }
-      lVar4 = *param_2;
-      if (param_2[1] != lVar4) {
+      lVar4 = *in_x0;
+      if (in_x0[1] != lVar4) {
         uVar5 = 0;
         while( true ) {
           lVar4 = (long)*(int *)(lVar4 + uVar5 * 4);
           if (((*(char *)(*plVar13 + lVar4 * 0xf0 + 0xe8) != '\0') &&
               (0 < *(int *)(*(long *)(*plVar13 + lVar4 * 0xf0 + 0xe0) + 0x34))) ||
              (uVar8 = func_0x00171730(lVar12), (uVar8 & 1) != 0)) goto LAB_0042bf2c;
-          if (*(uint *)(*param_2 + uVar5 * 4) < 2) {
-            lVar12 = param_2[0xf];
+          if (*(uint *)(*in_x0 + uVar5 * 4) < 2) {
+            lVar12 = in_x0[0xf];
             if ((*(long *)(lVar12 + 0x670) != *(long *)(lVar12 + 0x668)) &&
                (*(long *)(lVar12 + 0x3f8) != 0)) {
               uVar8 = func_0x00171730(lVar12,1);
               if (((uVar8 & 1) != 0) ||
-                 ((uVar8 = func_0x00171730(param_2[0xf],3), (uVar8 & 1) != 0 ||
-                  (uVar8 = func_0x00171730(param_2[0xf],0), (uVar8 & 1) != 0)))) goto LAB_0042bf2c;
-              lVar12 = param_2[0xf];
+                 ((uVar8 = func_0x00171730(in_x0[0xf],3), (uVar8 & 1) != 0 ||
+                  (uVar8 = func_0x00171730(in_x0[0xf],0), (uVar8 & 1) != 0)))) goto LAB_0042bf2c;
+              lVar12 = in_x0[0xf];
             }
-            if ((*(long *)(lVar12 + 0x3f8) != 0) && (*(int *)(*param_2 + uVar5 * 4) == 0)) {
+            if ((*(long *)(lVar12 + 0x3f8) != 0) && (*(int *)(*in_x0 + uVar5 * 4) == 0)) {
               uVar8 = func_0x00171730(lVar12,1);
-              if (((uVar8 & 1) != 0) || (uVar8 = func_0x00171730(param_2[0xf],3), (uVar8 & 1) != 0))
+              if (((uVar8 & 1) != 0) || (uVar8 = func_0x00171730(in_x0[0xf],3), (uVar8 & 1) != 0))
               goto LAB_0042bf2c;
-              lVar12 = param_2[0xf];
+              lVar12 = in_x0[0xf];
             }
             if (((*(long *)(lVar12 + 0x670) != *(long *)(lVar12 + 0x668)) &&
-                (*(int *)(*param_2 + uVar5 * 4) == 1)) &&
+                (*(int *)(*in_x0 + uVar5 * 4) == 1)) &&
                (uVar8 = func_0x00171730(lVar12,0), (uVar8 & 1) != 0)) goto LAB_0042bf2c;
           }
-          lVar4 = *param_2;
-          lVar12 = param_2[0xf];
+          lVar4 = *in_x0;
+          lVar12 = in_x0[0xf];
           if (*(char *)(*(long *)(lVar12 + 0x510) + (long)*(int *)(lVar4 + uVar5 * 4)) != '\0') {
             uVar8 = 0;
             do {
@@ -1722,27 +1737,27 @@ LAB_0042c0fc:
             } while (uVar8 < 5);
           }
           uVar5 = uVar5 + 1;
-          if ((ulong)(param_2[1] - lVar4 >> 2) <= uVar5) break;
-          plVar13 = (long *)param_2[0x10];
+          if ((ulong)(in_x0[1] - lVar4 >> 2) <= uVar5) break;
+          plVar13 = (long *)in_x0[0x10];
         }
       }
-      *(undefined1 *)((long)param_2 + 0x89) = 1;
-      *(undefined4 *)((long)param_2 + 0x8c) = 1;
+      *(undefined1 *)((long)in_x0 + 0x89) = 1;
+      *(undefined4 *)((long)in_x0 + 0x8c) = 1;
       goto LAB_0042bf2c;
     }
   }
   else {
 LAB_0042bf2c:
-    if ((char)param_2[0x11] == '\0') goto LAB_0042bf54;
+    if ((char)in_x0[0x11] == '\0') goto LAB_0042bf54;
   }
-  if (*(float *)((long)param_2 + 0xdc) <= *(float *)(param_2 + 0x1c)) {
-    *(float *)((long)param_2 + 0xdc) = *(float *)((long)param_2 + 0xdc) + (float)param_1;
+  if (*(float *)((long)in_x0 + 0xdc) <= *(float *)(in_x0 + 0x1c)) {
+    *(float *)((long)in_x0 + 0xdc) = *(float *)((long)in_x0 + 0xdc) + p0;
   }
 LAB_0042bf54:
-  if ((char)param_2[0x12] != '\0') {
+  if ((char)in_x0[0x12] != '\0') {
     return;
   }
-  func_0x00167950(param_1,param_2,0);
+  func_0x00167950(CONCAT44(in_register_00005004,p0));
   return;
 }
 
@@ -1794,18 +1809,20 @@ int WaterConcept::GameState::getNumSecondaryGoals(long param_1)
 
 /* WaterConcept::GameState::audioUpdate(float, int) */
 
-void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3)
+void WaterConcept::GameState::audioUpdate(float p0,int p1)
 
 {
   long lVar1;
   int iVar2;
-  undefined8 *puVar3;
-  undefined8 uVar4;
-  undefined4 uVar5;
-  long lVar6;
-  float fVar7;
+  ulong uVar3;
+  undefined8 *puVar4;
+  undefined8 uVar5;
+  int in_w1;
+  undefined4 uVar6;
+  long lVar7;
   float fVar8;
   float fVar9;
+  float fVar10;
   undefined8 *puStack_e8;
   int *piStack_e0;
   undefined8 *puStack_d8;
@@ -1818,23 +1835,24 @@ void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3
   int *piStack_a0;
   undefined8 *puStack_88;
   int *piStack_80;
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined1 auStack_70 [24];
   long lStack_58;
   
+  uVar3 = (ulong)(uint)p1;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  if (0.0 < *(float *)(param_2 + 0x98)) {
-    *(float *)(param_2 + 0x98) = *(float *)(param_2 + 0x98) - param_1;
+  if (0.0 < *(float *)(uVar3 + 0x98)) {
+    *(float *)(uVar3 + 0x98) = *(float *)(uVar3 + 0x98) - p0;
     goto LAB_0042caac;
   }
-  if (*(int *)(param_2 + 0xa0) < 3) {
-    if (*(int *)(param_2 + 0xa0) != 0) {
-      if ((*(int *)(param_2 + 0x94) == 4) &&
-         ((*(long *)(param_2 + 200) == 0 || (iVar2 = func_0x0016a780(), iVar2 != 0)))) {
+  if (*(int *)(uVar3 + 0xa0) < 3) {
+    if (*(int *)(uVar3 + 0xa0) != 0) {
+      if ((*(int *)(uVar3 + 0x94) == 4) &&
+         ((*(long *)(uVar3 + 200) == 0 || (iVar2 = func_0x0016a780(), iVar2 != 0)))) {
         func_0x0016b220(auStack_70);
         piStack_80 = (int *)0x0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         puStack_88 = (undefined8 *)0x79616c7008;
                     /* try { // try from 0042c6e0 to 0042c6eb has its CatchHandler @ 0042cb40 */
         func_0x0016ae60(&puStack_a8,1);
@@ -1842,23 +1860,23 @@ void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3
         func_0x00165260(auStack_70,&puStack_88,&puStack_a8);
         func_0x00167bf0(&puStack_a8);
         if (((ulong)puStack_88 & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
-        lVar6 = *(long *)(param_2 + 0x30) + (long)param_3 * 0x18;
-        fVar8 = *(float *)(lVar6 + 8);
-        fVar9 = *(float *)(lVar6 + 0x10);
+        lVar7 = *(long *)(uVar3 + 0x30) + (long)in_w1 * 0x18;
+        fVar8 = *(float *)(lVar7 + 8);
+        fVar10 = *(float *)(lVar7 + 0x10);
                     /* try { // try from 0042c728 to 0042c767 has its CatchHandler @ 0042cb94 */
-        puVar3 = (undefined8 *)FUN_00164060(0x28);
-        puVar3[2] = param_2;
-        *puVar3 = &PTR__Callback_00711340;
-        puVar3[1] = 0;
-        puVar3[4] = 0;
-        puVar3[3] = _gotSE;
-        puStack_88 = puVar3;
+        puVar4 = (undefined8 *)FUN_00164060(0x28);
+        puVar4[2] = uVar3;
+        *puVar4 = &PTR__Callback_00711340;
+        puVar4[1] = 0;
+        puVar4[4] = 0;
+        puVar4[3] = _gotSE;
+        puStack_88 = puVar4;
         piStack_c0 = (int *)FUN_00164060(4);
         *piStack_c0 = 3;
-        puStack_c8 = puVar3;
-        puStack_a8 = puVar3;
+        puStack_c8 = puVar4;
+        puStack_a8 = puVar4;
         piStack_a0 = piStack_c0;
         piStack_80 = piStack_c0;
         FUN_0016bb90(&puStack_a8);
@@ -1869,25 +1887,25 @@ void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3
         }
         FUN_0016bb90(&puStack_c8);
                     /* try { // try from 0042c7a4 to 0042c7a7 has its CatchHandler @ 0042cb38 */
-        uVar4 = func_0x00168cd0();
+        uVar5 = func_0x00168cd0();
         puStack_d8 = puStack_b8;
         piStack_d0 = piStack_b0;
         if (puStack_b8 != (undefined8 *)0x0) {
           *piStack_b0 = *piStack_b0 + 1;
         }
                     /* try { // try from 0042c7e0 to 0042c7eb has its CatchHandler @ 0042cb2c */
-        func_0x0016a9f0(uVar4,(int)((float)(int)((fVar8 / fVar9) * 7.0) + 4060.0),&puStack_d8,
+        func_0x0016a9f0(uVar5,(int)((float)(int)((fVar8 / fVar10) * 7.0) + 4060.0),&puStack_d8,
                         auStack_70);
         FUN_0016bb90(&puStack_d8);
         FUN_0016bb90(&puStack_b8);
         func_0x00162320(&puStack_88);
         func_0x00164ba0(auStack_70);
       }
-      iVar2 = func_0x0016a780(*(undefined8 *)(param_2 + 0xa8));
+      iVar2 = func_0x0016a780(*(undefined8 *)(uVar3 + 0xa8));
       if (iVar2 != 0) {
         func_0x0016b220(auStack_70);
         piStack_80 = (int *)0x0;
-        uStack_78 = 0;
+        pvStack_78 = (void *)0x0;
         puStack_88 = (undefined8 *)0x79616c7008;
                     /* try { // try from 0042c838 to 0042c843 has its CatchHandler @ 0042cb7c */
         func_0x0016ae60(&puStack_a8,1);
@@ -1895,24 +1913,24 @@ void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3
         func_0x00165260(auStack_70,&puStack_88,&puStack_a8);
         func_0x00167bf0(&puStack_a8);
         if (((ulong)puStack_88 & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
-        uVar5 = 0xfe9;
-        if (*(int *)(param_2 + 0x94) != 4) {
-          uVar5 = 0x15;
+        uVar6 = 0xfe9;
+        if (*(int *)(uVar3 + 0x94) != 4) {
+          uVar6 = 0x15;
         }
                     /* try { // try from 0042c880 to 0042c8bf has its CatchHandler @ 0042cb98 */
-        puVar3 = (undefined8 *)FUN_00164060(0x28);
-        puVar3[2] = param_2;
-        *puVar3 = &PTR__Callback_00711340;
-        puVar3[1] = 0;
-        puVar3[4] = 0;
-        puVar3[3] = _gotSE;
-        puStack_88 = puVar3;
+        puVar4 = (undefined8 *)FUN_00164060(0x28);
+        puVar4[2] = uVar3;
+        *puVar4 = &PTR__Callback_00711340;
+        puVar4[1] = 0;
+        puVar4[4] = 0;
+        puVar4[3] = _gotSE;
+        puStack_88 = puVar4;
         piStack_c0 = (int *)FUN_00164060(4);
         *piStack_c0 = 3;
-        puStack_c8 = puVar3;
-        puStack_a8 = puVar3;
+        puStack_c8 = puVar4;
+        puStack_a8 = puVar4;
         piStack_a0 = piStack_c0;
         piStack_80 = piStack_c0;
         FUN_0016bb90(&puStack_a8);
@@ -1923,96 +1941,96 @@ void WaterConcept::GameState::audioUpdate(float param_1,long param_2,int param_3
         }
         FUN_0016bb90(&puStack_c8);
                     /* try { // try from 0042c8fc to 0042c8ff has its CatchHandler @ 0042cb54 */
-        uVar4 = func_0x00168cd0();
+        uVar5 = func_0x00168cd0();
         puStack_e8 = puStack_b8;
         piStack_e0 = piStack_b0;
         if (puStack_b8 != (undefined8 *)0x0) {
           *piStack_b0 = *piStack_b0 + 1;
         }
                     /* try { // try from 0042c918 to 0042c927 has its CatchHandler @ 0042cb44 */
-        func_0x0016a9f0(uVar4,uVar5,&puStack_e8,auStack_70);
+        func_0x0016a9f0(uVar5,uVar6,&puStack_e8,auStack_70);
         FUN_0016bb90(&puStack_e8);
         FUN_0016bb90(&puStack_b8);
         func_0x00162320(&puStack_88);
         func_0x00164ba0(auStack_70);
       }
-      lVar6 = *(long *)(param_2 + 0x30) + (long)param_3 * 0x18;
-      iVar2 = *(int *)(param_2 + 0x8c);
-      fVar8 = *(float *)(lVar6 + 8) / *(float *)(lVar6 + 0x10);
+      lVar7 = *(long *)(uVar3 + 0x30) + (long)in_w1 * 0x18;
+      iVar2 = *(int *)(uVar3 + 0x8c);
+      fVar8 = *(float *)(lVar7 + 8) / *(float *)(lVar7 + 0x10);
       if (iVar2 == 0) {
-        uVar4 = *(undefined8 *)(param_2 + 0xa8);
-        fVar9 = fVar8 + 1.0;
+        uVar5 = *(undefined8 *)(uVar3 + 0xa8);
+        fVar10 = fVar8 + 1.0;
 LAB_0042ca28:
-        func_0x00171370(fVar9,uVar4);
+        func_0x00171370(fVar10,uVar5);
       }
       else {
         if (iVar2 == 6) {
-          fVar7 = -0.100000024;
-          fVar9 = 0.85;
-          uVar4 = *(undefined8 *)(param_2 + 0xa8);
+          fVar9 = -0.100000024;
+          fVar10 = 0.85;
+          uVar5 = *(undefined8 *)(uVar3 + 0xa8);
 LAB_0042ca20:
-          fVar9 = fVar8 * fVar7 + fVar9;
+          fVar10 = fVar8 * fVar9 + fVar10;
           goto LAB_0042ca28;
         }
         if (iVar2 == 7) {
-          uVar4 = *(undefined8 *)(param_2 + 0xa8);
-          if (*(char *)(param_2 + 0x1d0) == '\0') {
-            fVar7 = -0.19999999;
-            fVar9 = 0.7;
+          uVar5 = *(undefined8 *)(uVar3 + 0xa8);
+          if (*(char *)(uVar3 + 0x1d0) == '\0') {
+            fVar9 = -0.19999999;
+            fVar10 = 0.7;
           }
           else {
-            fVar7 = -0.20000002;
-            fVar9 = 0.6;
+            fVar9 = -0.20000002;
+            fVar10 = 0.6;
           }
           goto LAB_0042ca20;
         }
       }
-      *(undefined4 *)(param_2 + 0x98) = 0x3dcccccd;
+      *(undefined4 *)(uVar3 + 0x98) = 0x3dcccccd;
       goto LAB_0042ca38;
     }
   }
   else {
-    if (*(long *)(param_2 + 0xb8) != 0) {
+    if (*(long *)(uVar3 + 0xb8) != 0) {
       iVar2 = func_0x0016a780();
       if (iVar2 == 2) {
-        func_0x00165e20(0x3f800000,*(undefined8 *)(param_2 + 0xb8));
+        func_0x00165e20(0x3f800000,*(undefined8 *)(uVar3 + 0xb8));
       }
       else {
-        iVar2 = func_0x0016a780(*(undefined8 *)(param_2 + 0xb8));
+        iVar2 = func_0x0016a780(*(undefined8 *)(uVar3 + 0xb8));
         if (iVar2 == 1) {
-          func_0x0016d440(*(undefined8 *)(param_2 + 0xb8));
+          func_0x0016d440(*(undefined8 *)(uVar3 + 0xb8));
         }
       }
-      lVar6 = *(long *)(param_2 + 0x30) + (long)param_3 * 0x18;
-      func_0x00171370(*(float *)(lVar6 + 8) / *(float *)(lVar6 + 0x10) + 1.0,
-                      *(undefined8 *)(param_2 + 0xb8));
+      lVar7 = *(long *)(uVar3 + 0x30) + (long)in_w1 * 0x18;
+      func_0x00171370(*(float *)(lVar7 + 8) / *(float *)(lVar7 + 0x10) + 1.0,
+                      *(undefined8 *)(uVar3 + 0xb8));
     }
-    *(undefined4 *)(param_2 + 0x9c) = 0x3e800000;
+    *(undefined4 *)(uVar3 + 0x9c) = 0x3e800000;
 LAB_0042ca38:
-    *(undefined4 *)(param_2 + 0xa0) = 0;
+    *(undefined4 *)(uVar3 + 0xa0) = 0;
   }
-  if ((((*(int *)(param_2 + 0x94) == 4) && (*(long *)(param_2 + 0xa8) != 0)) &&
-      (0.0 < *(float *)(*(long *)(param_2 + 0x30) + (long)param_3 * 0x18 + 8))) &&
+  if ((((*(int *)(uVar3 + 0x94) == 4) && (*(long *)(uVar3 + 0xa8) != 0)) &&
+      (0.0 < *(float *)(*(long *)(uVar3 + 0x30) + (long)in_w1 * 0x18 + 8))) &&
      (iVar2 = func_0x0016a780(), iVar2 != 0)) {
-    iVar2 = func_0x0016a780(*(undefined8 *)(param_2 + 0xa8));
+    iVar2 = func_0x0016a780(*(undefined8 *)(uVar3 + 0xa8));
     if (iVar2 == 2) {
-      func_0x00165e20(0x3f800000,*(undefined8 *)(param_2 + 0xa8));
+      func_0x00165e20(0x3f800000,*(undefined8 *)(uVar3 + 0xa8));
     }
     else {
-      iVar2 = func_0x0016a780(*(undefined8 *)(param_2 + 0xa8));
+      iVar2 = func_0x0016a780(*(undefined8 *)(uVar3 + 0xa8));
       if (iVar2 == 1) {
-        func_0x0016d440(*(undefined8 *)(param_2 + 0xa8));
+        func_0x0016d440(*(undefined8 *)(uVar3 + 0xa8));
       }
     }
   }
 LAB_0042caac:
-  if (((*(char *)(param_2 + 0x88) != '\0') || (*(char *)(param_2 + 0x89) != '\0')) &&
-     (iVar2 = func_0x0016a780(*(undefined8 *)(param_2 + 0xa8)), iVar2 == 0)) {
-    func_0x00164a00(*(undefined8 *)(param_2 + 0xa8));
+  if (((*(char *)(uVar3 + 0x88) != '\0') || (*(char *)(uVar3 + 0x89) != '\0')) &&
+     (iVar2 = func_0x0016a780(*(undefined8 *)(uVar3 + 0xa8)), iVar2 == 0)) {
+    func_0x00164a00(*(undefined8 *)(uVar3 + 0xa8));
   }
-  if (((0.0 < *(float *)(param_2 + 0x9c)) &&
-      (param_1 = *(float *)(param_2 + 0x9c) - param_1, *(float *)(param_2 + 0x9c) = param_1,
-      param_1 <= 0.0)) && (*(long *)(param_2 + 0xb8) != 0)) {
+  if (((0.0 < *(float *)(uVar3 + 0x9c)) &&
+      (fVar8 = *(float *)(uVar3 + 0x9c) - p0, *(float *)(uVar3 + 0x9c) = fVar8, fVar8 <= 0.0)) &&
+     (*(long *)(uVar3 + 0xb8) != 0)) {
     func_0x0016e050();
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
@@ -2030,7 +2048,7 @@ LAB_0042caac:
 
 /* WaterConcept::GameState::_addParticleCallback(void*) */
 
-void WaterConcept::GameState::_addParticleCallback(long *param_1,long *param_2)
+void WaterConcept::GameState::_addParticleCallback(void *p0)
 
 {
   int iVar1;
@@ -2038,6 +2056,7 @@ void WaterConcept::GameState::_addParticleCallback(long *param_1,long *param_2)
   long lVar3;
   bool bVar4;
   undefined8 uVar5;
+  long *in_x1;
   int iVar6;
   char *pcVar7;
   ulong uVar8;
@@ -2045,15 +2064,16 @@ void WaterConcept::GameState::_addParticleCallback(long *param_1,long *param_2)
   long *plVar10;
   float fVar11;
   
-  plVar2 = (long *)param_1[6];
-  if (param_1[7] - (long)plVar2 != 0) {
-    iVar6 = (int)param_2[1];
+  plVar2 = *(long **)((long)p0 + 0x30);
+  lVar3 = *(long *)((long)p0 + 0x38) - (long)plVar2;
+  if (lVar3 != 0) {
+    iVar6 = (int)in_x1[1];
     uVar8 = 0;
-    uVar9 = (param_1[7] - (long)plVar2 >> 3) * -0x5555555555555555;
+    uVar9 = (lVar3 >> 3) * -0x5555555555555555;
     plVar10 = plVar2;
     do {
-      if (*plVar10 == *param_2) {
-        lVar3 = param_1[1] - *param_1;
+      if (*plVar10 == *in_x1) {
+        lVar3 = *(long *)((long)p0 + 8) - *(long *)p0;
         if (lVar3 == 0) goto LAB_0042cc3c;
         uVar9 = 0;
         goto LAB_0042cc24;
@@ -2065,7 +2085,7 @@ void WaterConcept::GameState::_addParticleCallback(long *param_1,long *param_2)
   goto LAB_0042cd40;
   while (uVar9 = uVar9 + 1, uVar9 < (ulong)(lVar3 >> 2)) {
 LAB_0042cc24:
-    if (iVar6 == *(int *)(*param_1 + uVar9 * 4)) {
+    if (iVar6 == *(int *)(*(long *)p0 + uVar9 * 4)) {
       bVar4 = true;
       goto LAB_0042cc48;
     }
@@ -2073,30 +2093,29 @@ LAB_0042cc24:
 LAB_0042cc3c:
   bVar4 = false;
 LAB_0042cc48:
-  lVar3 = param_1[4] - param_1[3];
+  lVar3 = *(long *)((long)p0 + 0x20) - *(long *)((long)p0 + 0x18);
   if (lVar3 != 0) {
     uVar9 = 0;
     do {
-      if (iVar6 == *(int *)(param_1[3] + uVar9 * 4)) goto LAB_0042cca4;
+      if (iVar6 == *(int *)(*(long *)((long)p0 + 0x18) + uVar9 * 4)) goto LAB_0042cca4;
       uVar9 = uVar9 + 1;
     } while (uVar9 < (ulong)(lVar3 >> 2));
   }
-  if ((bVar4) && (*(char *)((long)param_1 + 0x89) == '\0')) {
-    fVar11 = *(float *)(plVar2 + (uVar8 & 0xffffffff) * 3 + 1) +
-             (float)*(int *)((long)param_2 + 0xc);
+  if ((bVar4) && (*(char *)((long)p0 + 0x89) == '\0')) {
+    fVar11 = *(float *)(plVar2 + (uVar8 & 0xffffffff) * 3 + 1) + (float)*(int *)((long)in_x1 + 0xc);
     if (fVar11 <= *(float *)(plVar2 + (uVar8 & 0xffffffff) * 3 + 2)) {
       *(float *)(plVar2 + (uVar8 & 0xffffffff) * 3 + 1) = fVar11;
     }
     else {
-      *(undefined4 *)((long)param_2 + 0xc) = 0;
+      *(undefined4 *)((long)in_x1 + 0xc) = 0;
     }
   }
   else {
     uVar8 = uVar8 & 0xffffffff;
     if (*(float *)((long)plVar2 + uVar8 * 0x18 + 0xc) <
-        *(float *)(plVar2 + uVar8 * 3 + 1) + (float)*(int *)((long)param_2 + 0xc)) {
+        *(float *)(plVar2 + uVar8 * 3 + 1) + (float)*(int *)((long)in_x1 + 0xc)) {
 LAB_0042cca4:
-      *(undefined4 *)((long)param_2 + 0xc) = 0;
+      *(undefined4 *)((long)in_x1 + 0xc) = 0;
       return;
     }
     pcVar7 = (char *)((long)plVar2 + uVar8 * 0x18 + 0x14);
@@ -2106,21 +2125,21 @@ LAB_0042cca4:
       if (iVar6 != 2) {
         iVar1 = iVar6 + 3;
       }
-      *(int *)((long)param_1 + 0x8c) = iVar1;
+      *(int *)((long)p0 + 0x8c) = iVar1;
     }
     uVar5 = func_0x00168cd0();
     func_0x0016e570(0x3f800000,0x3f800000,uVar5,iVar6 + 0x32);
     if (iVar6 == 1) {
-      iVar6 = *(int *)((long)param_2 + 0xc) + 5;
+      iVar6 = *(int *)((long)in_x1 + 0xc) + 5;
     }
     else {
-      iVar6 = *(int *)((long)param_2 + 0xc) + 2;
+      iVar6 = *(int *)((long)in_x1 + 0xc) + 2;
     }
-    *(int *)((long)param_2 + 0xc) = iVar6;
+    *(int *)((long)in_x1 + 0xc) = iVar6;
   }
 LAB_0042cd40:
-  if (0 < *(int *)((long)param_2 + 0xc)) {
-    *(int *)(param_1 + 0x14) = (int)param_1[0x14] + *(int *)((long)param_2 + 0xc);
+  if (0 < *(int *)((long)in_x1 + 0xc)) {
+    *(int *)((long)p0 + 0xa0) = *(int *)((long)p0 + 0xa0) + *(int *)((long)in_x1 + 0xc);
   }
   return;
 }
@@ -2133,12 +2152,13 @@ LAB_0042cd40:
 
 /* WaterConcept::GameState::_starChangeCallback(void*) */
 
-void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
+void WaterConcept::GameState::_starChangeCallback(void *p0)
 
 {
   char cVar1;
   undefined1 uVar2;
   long lVar3;
+  long *in_x1;
   long lVar4;
   long *plVar5;
   long lVar6;
@@ -2146,15 +2166,15 @@ void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
   ulong uVar8;
   long *plVar9;
   
-  lVar4 = *param_2;
-  cVar1 = (char)param_2[1];
-  uVar2 = *(undefined1 *)((long)param_2 + 9);
-  if ((*(char *)(*(long *)(param_1 + 0x78) + 0xa6a) == '\0') &&
+  lVar4 = *in_x1;
+  cVar1 = (char)in_x1[1];
+  uVar2 = *(undefined1 *)((long)in_x1 + 9);
+  if ((*(char *)(*(long *)((long)p0 + 0x78) + 0xa6a) == '\0') &&
      ((GameSettings::currentLevelIsAllie == '\0' || (GameSettings::currentLevelChallengeID < 0)))) {
-    if ((*(char *)(*(long *)(param_1 + 0x78) + 0xa69) == '\0') &&
+    if ((*(char *)(*(long *)((long)p0 + 0x78) + 0xa69) == '\0') &&
        (GameSettings::currentStoryline != 3)) {
-      plVar5 = *(long **)(param_1 + 0x48);
-      lVar6 = *(long *)(param_1 + 0x50) - (long)plVar5;
+      plVar5 = *(long **)((long)p0 + 0x48);
+      lVar6 = *(long *)((long)p0 + 0x50) - (long)plVar5;
       if (lVar6 != 0) {
         uVar7 = 0;
         uVar8 = (lVar6 >> 3) * -0x5555555555555555;
@@ -2167,8 +2187,8 @@ void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
       }
     }
     else {
-      plVar5 = *(long **)(param_1 + 0x60);
-      lVar6 = *(long *)(param_1 + 0x68) - (long)plVar5;
+      plVar5 = *(long **)((long)p0 + 0x60);
+      lVar6 = *(long *)((long)p0 + 0x68) - (long)plVar5;
       if (lVar6 != 0) {
         uVar7 = 0;
         uVar8 = (lVar6 >> 3) * -0x5555555555555555;
@@ -2182,8 +2202,8 @@ void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
     }
   }
   else {
-    plVar5 = *(long **)(param_1 + 0x60);
-    lVar6 = *(long *)(param_1 + 0x68);
+    plVar5 = *(long **)((long)p0 + 0x60);
+    lVar6 = *(long *)((long)p0 + 0x68);
     if (lVar6 - (long)plVar5 != 0) {
       uVar7 = 0;
       uVar8 = (lVar6 - (long)plVar5 >> 3) * -0x5555555555555555;
@@ -2195,14 +2215,14 @@ void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
           if (cVar1 != '\0') {
             lVar4 = 0;
             uVar7 = 0;
-            *(int *)(param_1 + 0x1d4) = *(int *)(param_1 + 0x1d4) + 1;
+            *(int *)((long)p0 + 0x1d4) = *(int *)((long)p0 + 0x1d4) + 1;
             do {
               lVar3 = *(long *)((long)plVar5 + lVar4);
               if (((lVar3 != 0) && (*(char *)((long)plVar5 + lVar4 + 9) == '\0')) &&
-                 (*(int *)(lVar3 + 0x62c) == *(int *)(param_1 + 0x1d4))) {
+                 (*(int *)(lVar3 + 0x62c) == *(int *)((long)p0 + 0x1d4))) {
                 func_0x00171850(lVar3,1);
-                plVar5 = *(long **)(param_1 + 0x60);
-                lVar6 = *(long *)(param_1 + 0x68);
+                plVar5 = *(long **)((long)p0 + 0x60);
+                lVar6 = *(long *)((long)p0 + 0x68);
               }
               uVar7 = uVar7 + 1;
               uVar8 = (lVar6 - (long)plVar5 >> 3) * -0x5555555555555555;
@@ -2217,8 +2237,8 @@ void WaterConcept::GameState::_starChangeCallback(long param_1,long *param_2)
     }
   }
 LAB_0042cf3c:
-  if ((-1 < *(int *)(param_1 + 0xe4)) && ((char)param_2[1] != '\0')) {
-    *(int *)(param_1 + 0xe8) = *(int *)(param_1 + 0xe8) + 1;
+  if ((-1 < *(int *)((long)p0 + 0xe4)) && ((char)in_x1[1] != '\0')) {
+    *(int *)((long)p0 + 0xe8) = *(int *)((long)p0 + 0xe8) + 1;
   }
   return;
 LAB_0042cf28:
@@ -2235,50 +2255,51 @@ LAB_0042cf28:
 
 /* WaterConcept::GameState::_switchChangeCallback(void*) */
 
-void WaterConcept::GameState::_switchChangeCallback(long param_1,long *param_2)
+void WaterConcept::GameState::_switchChangeCallback(void *p0)
 
 {
   long lVar1;
   long lVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  long *in_x1;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  if (*param_2 == 0) goto LAB_0042d030;
-  lVar1 = *param_2 + 0x24;
+  if (*in_x1 == 0) goto LAB_0042d030;
+  lVar1 = *in_x1 + 0x24;
   uStack_60 = 0;
   uStack_58 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   uVar3 = FUN_00173480(lVar1);
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_60);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_60 | 1;
+    pvVar4 = (void *)((ulong)&uStack_60 | 1);
     uStack_60 = CONCAT71(uStack_60._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 != 0) goto LAB_0042cffc;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_60 = uVar5 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_60 = p0_00 | 1;
     uStack_58 = uVar3;
-    uStack_50 = uVar4;
+    pvStack_50 = pvVar4;
 LAB_0042cffc:
-    FUN_001715e0(uVar4,lVar1,uVar3);
+    FUN_001715e0(pvVar4,lVar1,uVar3);
   }
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 0042d014 to 0042d01f has its CatchHandler @ 0042d064 */
-  func_0x0016dbc0(param_1 + 0x138,&uStack_60,&uStack_60);
+  func_0x0016dbc0((long)p0 + 0x138,&uStack_60,&uStack_60);
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
 LAB_0042d030:
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
@@ -2296,10 +2317,10 @@ LAB_0042d030:
 
 /* WaterConcept::GameState::_ySwitchFlipped(void*) */
 
-void WaterConcept::GameState::_ySwitchFlipped(long param_1)
+void WaterConcept::GameState::_ySwitchFlipped(void *p0)
 
 {
-  *(int *)(param_1 + 0x168) = *(int *)(param_1 + 0x168) + 1;
+  *(int *)((long)p0 + 0x168) = *(int *)((long)p0 + 0x168) + 1;
   return;
 }
 
@@ -2312,17 +2333,20 @@ void WaterConcept::GameState::_ySwitchFlipped(long param_1)
 /* WaterConcept::GameState::_notifyExplosion(Walaber::Vector2 const&,
    WaterConcept::InteractiveObject*) */
 
-void WaterConcept::GameState::_notifyExplosion(long param_1,undefined8 param_2,long param_3)
+void WaterConcept::GameState::_notifyExplosion
+               (Walaber__Vector2 *p0,WaterConcept__InteractiveObject *p1)
 
 {
-  if (param_3 == 0) {
-    if (*(char *)(param_1 + 0x15e) == '\0') {
-      *(int *)(param_1 + 0x158) = *(int *)(param_1 + 0x158) + 1;
+  long in_x2;
+  
+  if (in_x2 == 0) {
+    if (p0[0x15e] == (Walaber__Vector2)0x0) {
+      *(int *)(p0 + 0x158) = *(int *)(p0 + 0x158) + 1;
       return;
     }
   }
-  else if (*(char *)(param_1 + 0x15f) == '\0') {
-    *(int *)(param_1 + 0x154) = *(int *)(param_1 + 0x154) + 1;
+  else if (p0[0x15f] == (Walaber__Vector2)0x0) {
+    *(int *)(p0 + 0x154) = *(int *)(p0 + 0x154) + 1;
     return;
   }
   return;
@@ -2336,47 +2360,48 @@ void WaterConcept::GameState::_notifyExplosion(long param_1,undefined8 param_2,l
 
 /* WaterConcept::GameState::_notifySpoutActivity(WaterConcept::Spout*) */
 
-void WaterConcept::GameState::_notifySpoutActivity(long param_1,long param_2)
+void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
 
 {
   long lVar1;
   ulong uVar2;
-  ulong uVar3;
-  ulong uVar4;
+  long in_x1;
+  void *pvVar3;
+  ulong p0_00;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_60 = 0;
   uStack_58 = 0;
-  uStack_50 = 0;
-  uVar2 = FUN_00173480(param_2 + 0x24);
+  pvStack_50 = (void *)0x0;
+  uVar2 = FUN_00173480(in_x1 + 0x24);
   if (0xffffffffffffffef < uVar2) {
     FUN_00164180(&uStack_60);
     return;
   }
   if (uVar2 < 0x17) {
-    uVar3 = (ulong)&uStack_60 | 1;
+    pvVar3 = (void *)((ulong)&uStack_60 | 1);
     uStack_60 = CONCAT71(uStack_60._1_7_,(char)((int)uVar2 << 1));
     if (uVar2 == 0) goto LAB_0042d160;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar3 = FUN_00164060(uVar4);
-    uStack_60 = uVar4 | 1;
+    p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    pvVar3 = (void *)FUN_00164060(p0_00);
+    uStack_60 = p0_00 | 1;
     uStack_58 = uVar2;
-    uStack_50 = uVar3;
+    pvStack_50 = pvVar3;
   }
-  FUN_001715e0(uVar3,param_2 + 0x24,uVar2);
+  FUN_001715e0(pvVar3,in_x1 + 0x24,uVar2);
 LAB_0042d160:
-  *(undefined1 *)(uVar3 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 0042d168 to 0042d173 has its CatchHandler @ 0042d1b8 */
-  func_0x00163840(param_1 + 0x108,&uStack_60,&uStack_60);
+  func_0x00163840(p0 + 0x108,&uStack_60,&uStack_60);
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
@@ -2393,56 +2418,57 @@ LAB_0042d160:
 
 /* WaterConcept::GameState::_notifyBalloonCallback(void*) */
 
-void WaterConcept::GameState::_notifyBalloonCallback(long param_1,long *param_2)
+void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
 
 {
   uint uVar1;
   long lVar2;
   ulong uVar3;
+  long *in_x1;
   long lVar4;
-  ulong uVar5;
-  ulong uVar6;
+  void *pvVar5;
+  ulong p0_00;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   undefined1 auStack_68 [8];
   undefined1 *puStack_60;
   long lStack_58;
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  uVar1 = *(uint *)(param_2 + 1);
+  uVar1 = *(uint *)(in_x1 + 1);
   if ((8 < uVar1) || ((1 << (ulong)(uVar1 & 0x1f) & 0x1c7U) == 0)) goto LAB_0042d2d0;
-  lVar4 = *param_2;
+  lVar4 = *in_x1;
   uStack_80 = 0;
   uStack_78 = 0;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   uVar3 = FUN_00173480(lVar4 + 0x24);
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_80);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar5 = (ulong)&uStack_80 | 1;
+    pvVar5 = (void *)((ulong)&uStack_80 | 1);
     uStack_80 = CONCAT71(uStack_80._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 != 0) goto LAB_0042d284;
   }
   else {
-    uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar5 = FUN_00164060(uVar6);
-    uStack_80 = uVar6 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar5 = (void *)FUN_00164060(p0_00);
+    uStack_80 = p0_00 | 1;
     uStack_78 = uVar3;
-    uStack_70 = uVar5;
+    pvStack_70 = pvVar5;
 LAB_0042d284:
-    FUN_001715e0(uVar5,lVar4 + 0x24,uVar3);
+    FUN_001715e0(pvVar5,lVar4 + 0x24,uVar3);
   }
-  *(undefined1 *)(uVar5 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 0042d2a4 to 0042d2bb has its CatchHandler @ 0042d308 */
   puStack_60 = (undefined1 *)&uStack_80;
-  lVar4 = func_0x00167470(param_1 + 0x1b8,&uStack_80,&DAT_006363a7,&puStack_60,auStack_68);
+  lVar4 = func_0x00167470((long)p0 + 0x1b8,&uStack_80,&DAT_006363a7,&puStack_60,auStack_68);
   *(uint *)(lVar4 + 0x38) = uVar1;
   if ((uStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
 LAB_0042d2d0:
   if (*(long *)(lVar2 + 0x28) != lStack_58) {
@@ -3018,12 +3044,13 @@ int WaterConcept::GameState::getGoalOverflow(long param_1)
 
 /* WaterConcept::GameState::getNumSecondaryGoalsOfType(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalsOfType(long param_1,int param_2)
+int WaterConcept::GameState::getNumSecondaryGoalsOfType(int p0)
 
 {
   int iVar1;
   long lVar2;
   bool bVar3;
+  int in_w1;
   int iVar4;
   long lVar5;
   int iVar6;
@@ -3032,15 +3059,16 @@ int WaterConcept::GameState::getNumSecondaryGoalsOfType(long param_1,int param_2
   ulong uVar9;
   int *piVar10;
   
-  lVar5 = *(long *)(param_1 + 0x78);
+  uVar8 = (ulong)(uint)p0;
+  lVar5 = *(long *)(uVar8 + 0x78);
   bVar3 = *(char *)(lVar5 + 0xa69) != '\0';
   if (((bVar3 || GameSettings::currentStoryline == 3) || (*(char *)(lVar5 + 0xa6a) != '\0')) ||
      ((GameSettings::currentLevelIsAllie != '\0' &&
       (-1 < (int)GameSettings::currentLevelChallengeID)))) {
-    plVar7 = (long *)(param_1 + 0x60);
+    plVar7 = (long *)(uVar8 + 0x60);
   }
   else {
-    plVar7 = (long *)(param_1 + 0x48);
+    plVar7 = (long *)(uVar8 + 0x48);
   }
   lVar2 = plVar7[1] - *plVar7;
   if (lVar2 == 0) {
@@ -3052,7 +3080,7 @@ int WaterConcept::GameState::getNumSecondaryGoalsOfType(long param_1,int param_2
     uVar9 = (lVar2 >> 3) * -0x5555555555555555;
     piVar10 = (int *)(*plVar7 + 0x14);
     do {
-      if ((param_2 == -1) || (*piVar10 == param_2)) {
+      if ((in_w1 == -1) || (*piVar10 == in_w1)) {
         iVar6 = iVar6 + 1;
       }
       uVar8 = uVar8 + 1;
@@ -3089,25 +3117,27 @@ int WaterConcept::GameState::getNumSecondaryGoalsOfType(long param_1,int param_2
 
 /* WaterConcept::GameState::getNumSecondaryGoalSuccesses(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalSuccesses(long param_1,int param_2)
+int WaterConcept::GameState::getNumSecondaryGoalSuccesses(int p0)
 
 {
   int iVar1;
   long lVar2;
+  int in_w1;
   int iVar3;
   long *plVar4;
   long lVar5;
   ulong uVar6;
   ulong uVar7;
   
-  if ((((*(char *)(*(long *)(param_1 + 0x78) + 0xa69) == '\0') &&
+  uVar6 = (ulong)(uint)p0;
+  if ((((*(char *)(*(long *)(uVar6 + 0x78) + 0xa69) == '\0') &&
        (GameSettings::currentStoryline != 3)) &&
-      (*(char *)(*(long *)(param_1 + 0x78) + 0xa6a) == '\0')) &&
+      (*(char *)(*(long *)(uVar6 + 0x78) + 0xa6a) == '\0')) &&
      ((GameSettings::currentLevelIsAllie == '\0' || (GameSettings::currentLevelChallengeID < 0)))) {
-    plVar4 = (long *)(param_1 + 0x48);
+    plVar4 = (long *)(uVar6 + 0x48);
   }
   else {
-    plVar4 = (long *)(param_1 + 0x60);
+    plVar4 = (long *)(uVar6 + 0x60);
   }
   lVar2 = *plVar4;
   if (plVar4[1] - lVar2 != 0) {
@@ -3116,7 +3146,7 @@ int WaterConcept::GameState::getNumSecondaryGoalSuccesses(long param_1,int param
     iVar3 = 0;
     uVar7 = (plVar4[1] - lVar2 >> 3) * -0x5555555555555555;
     do {
-      if ((param_2 == -1) || (*(int *)(lVar2 + lVar5 + 0x14) == param_2)) {
+      if ((in_w1 == -1) || (*(int *)(lVar2 + lVar5 + 0x14) == in_w1)) {
         iVar3 = iVar3 + (uint)*(byte *)(lVar2 + lVar5 + 8);
       }
       uVar6 = uVar6 + 1;
@@ -3141,25 +3171,27 @@ int WaterConcept::GameState::getNumSecondaryGoalSuccesses(long param_1,int param
 
 /* WaterConcept::GameState::getNumSecondaryGoalFailures(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalFailures(long param_1,int param_2)
+int WaterConcept::GameState::getNumSecondaryGoalFailures(int p0)
 
 {
   int iVar1;
   long lVar2;
+  int in_w1;
   int iVar3;
   long *plVar4;
   ulong uVar5;
   ulong uVar6;
   int *piVar7;
   
-  if ((((*(char *)(*(long *)(param_1 + 0x78) + 0xa69) == '\0') &&
+  uVar5 = (ulong)(uint)p0;
+  if ((((*(char *)(*(long *)(uVar5 + 0x78) + 0xa69) == '\0') &&
        (GameSettings::currentStoryline != 3)) &&
-      (*(char *)(*(long *)(param_1 + 0x78) + 0xa6a) == '\0')) &&
+      (*(char *)(*(long *)(uVar5 + 0x78) + 0xa6a) == '\0')) &&
      ((GameSettings::currentLevelIsAllie == '\0' || (GameSettings::currentLevelChallengeID < 0)))) {
-    plVar4 = (long *)(param_1 + 0x48);
+    plVar4 = (long *)(uVar5 + 0x48);
   }
   else {
-    plVar4 = (long *)(param_1 + 0x60);
+    plVar4 = (long *)(uVar5 + 0x60);
   }
   lVar2 = plVar4[1] - *plVar4;
   if (lVar2 != 0) {
@@ -3168,7 +3200,7 @@ int WaterConcept::GameState::getNumSecondaryGoalFailures(long param_1,int param_
     uVar6 = (lVar2 >> 3) * -0x5555555555555555;
     piVar7 = (int *)(*plVar4 + 0x14);
     do {
-      if ((*(char *)((long)piVar7 + -0xb) != '\0') && ((param_2 == -1 || (*piVar7 == param_2)))) {
+      if ((*(char *)((long)piVar7 + -0xb) != '\0') && ((in_w1 == -1 || (*piVar7 == in_w1)))) {
         iVar3 = iVar3 + 1;
       }
       uVar5 = uVar5 + 1;

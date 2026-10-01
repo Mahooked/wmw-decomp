@@ -205,7 +205,7 @@ ulong std::__ndk1::__libcpp_asprintf_l
 
 /* std::__ndk1::__do_nothing(void*) */
 
-void std::__ndk1::__do_nothing(void)
+void std::__ndk1::__do_nothing(void *p0)
 
 {
   return;
@@ -219,14 +219,14 @@ void std::__ndk1::__do_nothing(void)
 
 /* std::__ndk1::__throw_runtime_error(char const*) */
 
-void std::__ndk1::__throw_runtime_error(undefined8 param_1)
+void std::__ndk1::__throw_runtime_error(char *p0)
 
 {
   undefined8 uVar1;
   
   uVar1 = FUN_00168670(0x10);
                     /* try { // try from 005c90e0 to 005c90e7 has its CatchHandler @ 005c9100 */
-  func_0x0016eb20(uVar1,param_1);
+  func_0x0016eb20(uVar1,p0);
   FUN_0016ab10(uVar1,&runtime_error::typeinfo,range_error::~range_error);
   return;
 }
@@ -316,14 +316,14 @@ LAB_005c96b4:
 
 /* std::__ndk1::__get_sp_mut(void const*) */
 
-int std::__ndk1::__get_sp_mut(ulong param_1)
+int std::__ndk1::__get_sp_mut(void *p0)
 
 {
   long lVar1;
   ulong uVar2;
   
-  uVar2 = ((param_1 & 0x1fffffff) * 8 + 8 ^ param_1 >> 0x20) * -0x622015f714c7d297;
-  lVar1 = (uVar2 ^ param_1 >> 0x20 ^ uVar2 >> 0x2f) * -0x622015f714c7d297;
+  uVar2 = (((ulong)p0 & 0x1fffffff) * 8 + 8 ^ (ulong)p0 >> 0x20) * -0x622015f714c7d297;
+  lVar1 = (uVar2 ^ (ulong)p0 >> 0x20 ^ uVar2 >> 0x2f) * -0x622015f714c7d297;
   return (((uint)((ulong)lVar1 >> 0x2f) ^ (uint)lVar1) * 0x2d69 & 0xf) * 8 + 0x72aa20;
 }
 
@@ -335,7 +335,7 @@ int std::__ndk1::__get_sp_mut(ulong param_1)
 
 /* std::__ndk1::declare_reachable(void*) */
 
-void std::__ndk1::declare_reachable(void)
+void std::__ndk1::declare_reachable(void *p0)
 
 {
   return;
@@ -349,7 +349,7 @@ void std::__ndk1::declare_reachable(void)
 
 /* std::__ndk1::declare_no_pointers(char*, unsigned long) */
 
-void std::__ndk1::declare_no_pointers(void)
+void std::__ndk1::declare_no_pointers(char *p0,ulong p1)
 
 {
   return;
@@ -363,7 +363,7 @@ void std::__ndk1::declare_no_pointers(void)
 
 /* std::__ndk1::undeclare_no_pointers(char*, unsigned long) */
 
-void std::__ndk1::undeclare_no_pointers(void)
+void std::__ndk1::undeclare_no_pointers(char *p0,ulong p1)
 
 {
   return;
@@ -391,7 +391,7 @@ undefined8 std::__ndk1::get_pointer_safety(void)
 
 /* std::__ndk1::__undeclare_reachable(void*) */
 
-void std::__ndk1::__undeclare_reachable(void)
+void std::__ndk1::__undeclare_reachable(void *p0)
 
 {
   return;
@@ -405,27 +405,27 @@ void std::__ndk1::__undeclare_reachable(void)
 
 /* std::__ndk1::align(unsigned long, unsigned long, void*&, unsigned long&) */
 
-ulong std::__ndk1::align(long param_1,ulong param_2,ulong *param_3,ulong *param_4)
+void * std::__ndk1::align(ulong p0,ulong p1,void **p2,ulong *p3)
 
 {
-  ulong uVar1;
+  void *pvVar1;
   ulong uVar2;
-  ulong uVar3;
+  void *pvVar3;
   ulong uVar4;
   
-  uVar2 = *param_4;
-  if (uVar2 < param_2) {
-    return 0;
+  uVar2 = *p3;
+  if (uVar2 < p1) {
+    return (void *)0x0;
   }
-  uVar3 = (*param_3 + param_1) - 1 & -param_1;
-  uVar4 = uVar3 - *param_3;
-  uVar1 = 0;
-  if (uVar4 <= uVar2 - param_2) {
-    *param_3 = uVar3;
-    *param_4 = uVar2 - uVar4;
-    uVar1 = uVar3;
+  pvVar3 = (void *)((long)*p2 + (p0 - 1) & -p0);
+  uVar4 = (long)pvVar3 - (long)*p2;
+  pvVar1 = (void *)0x0;
+  if (uVar4 <= uVar2 - p1) {
+    *p2 = pvVar3;
+    *p3 = uVar2 - uVar4;
+    pvVar1 = pvVar3;
   }
-  return uVar1;
+  return pvVar1;
 }
 
 
@@ -481,15 +481,17 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
   ulong uVar5;
   undefined8 *puVar6;
   byte *pbVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x696f747308;
   pbVar7 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -498,7 +500,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  uVar5 = FUN_0016f2a0(pbVar7,auStack_80 + 3,param_3);
+  uVar5 = FUN_0016f2a0(pbVar7,&lStack_68,param_3);
   iVar2 = *piVar4;
   *piVar4 = iVar1;
   if (iVar2 == 0x22) {
@@ -512,7 +514,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
     uVar5 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar5;
   }
-  if (auStack_80[3] - (long)pbVar7 == 0) {
+  if (lStack_68 - (long)pbVar7 == 0) {
                     /* try { // try from 005eae7c to 005eae8f has its CatchHandler @ 005eaf68 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -524,11 +526,11 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
     return uVar5;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar7;
+    *param_2 = lStack_68 - (long)pbVar7;
   }
   if ((long)(int)uVar5 == uVar5) {
     if ((auStack_80[0] & 1) != 0) {
-      FUN_00166120(auStack_80[2]);
+      FUN_00166120(pvStack_70);
     }
     if (*(long *)(lVar3 + 0x28) == lStack_48) {
       return uVar5 & 0xffffffff;
@@ -566,15 +568,17 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
   int *piVar5;
   ulong uVar6;
   undefined8 *puVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x696f747308;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -584,7 +588,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005eaffc to 005eb093 has its CatchHandler @ 005eb1bc */
-  uVar6 = func_0x001630d0(pbVar1,auStack_80 + 3,param_3);
+  uVar6 = func_0x001630d0(pbVar1,&lStack_68,param_3);
   iVar3 = *piVar5;
   *piVar5 = iVar2;
   if (iVar3 == 0x22) {
@@ -597,7 +601,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
     uVar6 = FUN_0016ab10(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar6;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005eb0d0 to 005eb0e3 has its CatchHandler @ 005eb1bc */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)FUN_00168670(0x10);
@@ -609,11 +613,11 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
     return uVar6;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((long)(int)uVar6 == uVar6) {
     if ((auStack_80[0] & 1) != 0) {
-      FUN_00166120(auStack_80[2]);
+      FUN_00166120(pvStack_70);
     }
     if (*(long *)(lVar4 + 0x28) == lStack_48) {
       return uVar6 & 0xffffffff;
@@ -651,15 +655,17 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
   undefined8 uVar5;
   undefined8 *puVar6;
   byte *pbVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c6f747308;
   pbVar7 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -668,7 +674,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  uVar5 = FUN_0016f2a0(pbVar7,auStack_80 + 3,param_3);
+  uVar5 = FUN_0016f2a0(pbVar7,&lStack_68,param_3);
   iVar2 = *piVar4;
   *piVar4 = iVar1;
   if (iVar2 == 0x22) {
@@ -682,7 +688,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
     uVar5 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar5;
   }
-  if (auStack_80[3] - (long)pbVar7 == 0) {
+  if (lStack_68 - (long)pbVar7 == 0) {
                     /* try { // try from 005eb310 to 005eb323 has its CatchHandler @ 005eb3a4 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -694,10 +700,10 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
     return uVar5;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar7;
+    *param_2 = lStack_68 - (long)pbVar7;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return uVar5;
@@ -725,15 +731,17 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c6f747308;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -743,7 +751,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005eb438 to 005eb4c3 has its CatchHandler @ 005eb594 */
-  uVar6 = func_0x001630d0(pbVar1,auStack_80 + 3,param_3);
+  uVar6 = func_0x001630d0(pbVar1,&lStack_68,param_3);
   iVar3 = *piVar5;
   *piVar5 = iVar2;
   if (iVar3 == 0x22) {
@@ -756,7 +764,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
     uVar6 = FUN_0016ab10(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar6;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005eb500 to 005eb513 has its CatchHandler @ 005eb594 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)FUN_00168670(0x10);
@@ -768,10 +776,10 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
     return uVar6;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return uVar6;
@@ -799,15 +807,17 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
   undefined8 uVar5;
   undefined8 *puVar6;
   byte *pbVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c756f74730a;
   pbVar7 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -816,7 +826,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  uVar5 = func_0x001715d0(pbVar7,auStack_80 + 3,param_3);
+  uVar5 = func_0x001715d0(pbVar7,&lStack_68,param_3);
   iVar2 = *piVar4;
   *piVar4 = iVar1;
   if (iVar2 == 0x22) {
@@ -830,7 +840,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
     uVar5 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar5;
   }
-  if (auStack_80[3] - (long)pbVar7 == 0) {
+  if (lStack_68 - (long)pbVar7 == 0) {
                     /* try { // try from 005eb6ec to 005eb6ff has its CatchHandler @ 005eb780 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -842,10 +852,10 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
     return uVar5;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar7;
+    *param_2 = lStack_68 - (long)pbVar7;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return uVar5;
@@ -873,15 +883,17 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c756f74730a;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -891,7 +903,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005eb818 to 005eb8a3 has its CatchHandler @ 005eb974 */
-  uVar6 = func_0x00163c60(pbVar1,auStack_80 + 3,param_3);
+  uVar6 = func_0x00163c60(pbVar1,&lStack_68,param_3);
   iVar3 = *piVar5;
   *piVar5 = iVar2;
   if (iVar3 == 0x22) {
@@ -904,7 +916,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
     uVar6 = FUN_0016ab10(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar6;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005eb8e0 to 005eb8f3 has its CatchHandler @ 005eb974 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)FUN_00168670(0x10);
@@ -916,10 +928,10 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
     return uVar6;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return uVar6;
@@ -947,15 +959,17 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
   undefined8 uVar5;
   undefined8 *puVar6;
   byte *pbVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c6c6f74730a;
   pbVar7 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -964,7 +978,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  uVar5 = func_0x0016e130(pbVar7,auStack_80 + 3,param_3);
+  uVar5 = func_0x0016e130(pbVar7,&lStack_68,param_3);
   iVar2 = *piVar4;
   *piVar4 = iVar1;
   if (iVar2 == 0x22) {
@@ -978,7 +992,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
     uVar5 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar5;
   }
-  if (auStack_80[3] - (long)pbVar7 == 0) {
+  if (lStack_68 - (long)pbVar7 == 0) {
                     /* try { // try from 005ebacc to 005ebadf has its CatchHandler @ 005ebb60 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -990,10 +1004,10 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
     return uVar5;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar7;
+    *param_2 = lStack_68 - (long)pbVar7;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return uVar5;
@@ -1021,15 +1035,17 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x6c6c6f74730a;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -1039,7 +1055,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005ebbf8 to 005ebc83 has its CatchHandler @ 005ebd54 */
-  uVar6 = func_0x00165700(pbVar1,auStack_80 + 3,param_3);
+  uVar6 = func_0x00165700(pbVar1,&lStack_68,param_3);
   iVar3 = *piVar5;
   *piVar5 = iVar2;
   if (iVar3 == 0x22) {
@@ -1052,7 +1068,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
     uVar6 = FUN_0016ab10(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
     return uVar6;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005ebcc0 to 005ebcd3 has its CatchHandler @ 005ebd54 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)FUN_00168670(0x10);
@@ -1064,10 +1080,10 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
     return uVar6;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return uVar6;
@@ -1096,7 +1112,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
   undefined8 *puVar6;
   byte *pbVar7;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
@@ -1112,7 +1128,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
   abStack_80[0xd] = 0;
   abStack_80[0xe] = 0;
   abStack_80[0xf] = 0;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   abStack_80[5] = 0x6c;
   abStack_80[6] = 0x6c;
   abStack_80[1] = 0x73;
@@ -1157,7 +1173,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
     *param_2 = lStack_68 - (long)pbVar7;
   }
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return uVar5;
@@ -1186,7 +1202,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
   undefined8 uVar6;
   undefined8 *puVar7;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
@@ -1202,7 +1218,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
   abStack_80[0xd] = 0;
   abStack_80[0xe] = 0;
   abStack_80[0xf] = 0;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   abStack_80[5] = 0x6c;
   abStack_80[6] = 0x6c;
   abStack_80[1] = 0x73;
@@ -1247,7 +1263,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
     *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return uVar6;
@@ -1276,15 +1292,17 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   byte *pbVar6;
   undefined1 auVar7 [16];
   undefined8 uVar8;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x666f747308;
   pbVar6 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -1293,7 +1311,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  auVar7 = FUN_00170680(pbVar6,auStack_80 + 3);
+  auVar7 = FUN_00170680(pbVar6,&lStack_68);
   uVar8 = auVar7._8_8_;
   iVar2 = *piVar4;
   *piVar4 = iVar1;
@@ -1308,7 +1326,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     auVar7 = FUN_0016ab10(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
     return auVar7;
   }
-  if (auStack_80[3] - (long)pbVar6 == 0) {
+  if (lStack_68 - (long)pbVar6 == 0) {
                     /* try { // try from 005ec290 to 005ec2a3 has its CatchHandler @ 005ec324 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)FUN_00168670(0x10);
@@ -1320,10 +1338,10 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     return auVar7;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar6;
+    *param_2 = lStack_68 - (long)pbVar6;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     auVar7._8_8_ = uVar8;
@@ -1353,15 +1371,17 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   undefined8 *puVar6;
   undefined1 auVar7 [16];
   undefined8 uVar8;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x666f747308;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -1371,7 +1391,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005ec3b8 to 005ec443 has its CatchHandler @ 005ec514 */
-  auVar7 = func_0x001648d0(pbVar1,auStack_80 + 3);
+  auVar7 = func_0x001648d0(pbVar1,&lStack_68);
   uVar8 = auVar7._8_8_;
   iVar3 = *piVar5;
   *piVar5 = iVar2;
@@ -1385,7 +1405,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     auVar7 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return auVar7;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005ec480 to 005ec493 has its CatchHandler @ 005ec514 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -1397,10 +1417,10 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     return auVar7;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     auVar7._8_8_ = uVar8;
@@ -1430,15 +1450,17 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   byte *pbVar6;
   undefined1 auVar7 [16];
   undefined8 uVar8;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x646f747308;
   pbVar6 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -1447,7 +1469,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  auVar7 = FUN_00163400(pbVar6,auStack_80 + 3);
+  auVar7 = FUN_00163400(pbVar6,&lStack_68);
   uVar8 = auVar7._8_8_;
   iVar2 = *piVar4;
   *piVar4 = iVar1;
@@ -1462,7 +1484,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     auVar7 = FUN_0016ab10(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
     return auVar7;
   }
-  if (auStack_80[3] - (long)pbVar6 == 0) {
+  if (lStack_68 - (long)pbVar6 == 0) {
                     /* try { // try from 005ec668 to 005ec67b has its CatchHandler @ 005ec6fc */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)FUN_00168670(0x10);
@@ -1474,10 +1496,10 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     return auVar7;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar6;
+    *param_2 = lStack_68 - (long)pbVar6;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     auVar7._8_8_ = uVar8;
@@ -1507,15 +1529,17 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   undefined8 *puVar6;
   undefined1 auVar7 [16];
   undefined8 uVar8;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x646f747308;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -1525,7 +1549,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005ec790 to 005ec81b has its CatchHandler @ 005ec8ec */
-  auVar7 = func_0x001632d0(pbVar1,auStack_80 + 3);
+  auVar7 = func_0x001632d0(pbVar1,&lStack_68);
   uVar8 = auVar7._8_8_;
   iVar3 = *piVar5;
   *piVar5 = iVar2;
@@ -1539,7 +1563,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     auVar7 = FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return auVar7;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005ec858 to 005ec86b has its CatchHandler @ 005ec8ec */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -1551,10 +1575,10 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     return auVar7;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     auVar7._8_8_ = uVar8;
@@ -1583,15 +1607,17 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   undefined8 *puVar5;
   byte *pbVar6;
   undefined8 uVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x646c6f74730a;
   pbVar6 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
@@ -1600,7 +1626,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   piVar4 = (int *)FUN_00168e70();
   iVar1 = *piVar4;
   *piVar4 = 0;
-  uVar7 = func_0x0016f000(pbVar6,auStack_80 + 3);
+  uVar7 = func_0x0016f000(pbVar6,&lStack_68);
   iVar2 = *piVar4;
   *piVar4 = iVar1;
   if (iVar2 == 0x22) {
@@ -1614,7 +1640,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     FUN_0016ab10(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
     return;
   }
-  if (auStack_80[3] - (long)pbVar6 == 0) {
+  if (lStack_68 - (long)pbVar6 == 0) {
                     /* try { // try from 005eca3c to 005eca4f has its CatchHandler @ 005ecad0 */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)FUN_00168670(0x10);
@@ -1626,10 +1652,10 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     return;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = auStack_80[3] - (long)pbVar6;
+    *param_2 = lStack_68 - (long)pbVar6;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return;
@@ -1657,15 +1683,17 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   int *piVar5;
   undefined8 *puVar6;
   undefined8 uVar7;
-  ulong auStack_80 [4];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  long lStack_68;
   undefined1 auStack_60 [24];
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
-  auStack_80[3] = 0;
+  pvStack_70 = (void *)0x0;
+  lStack_68 = 0;
   auStack_80[0] = 0x646c6f74730a;
   pbVar1 = param_1 + 4;
   if ((*param_1 & 1) != 0) {
@@ -1675,7 +1703,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   iVar2 = *piVar5;
   *piVar5 = 0;
                     /* try { // try from 005ecb64 to 005ecbeb has its CatchHandler @ 005eccbc */
-  uVar7 = func_0x00163a90(pbVar1,auStack_80 + 3);
+  uVar7 = func_0x00163a90(pbVar1,&lStack_68);
   iVar3 = *piVar5;
   *piVar5 = iVar2;
   if (iVar3 == 0x22) {
@@ -1688,7 +1716,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     FUN_0016ab10(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
     return;
   }
-  if (auStack_80[3] - (long)pbVar1 == 0) {
+  if (lStack_68 - (long)pbVar1 == 0) {
                     /* try { // try from 005ecc28 to 005ecc3b has its CatchHandler @ 005eccbc */
     func_0x00165800(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)FUN_00168670(0x10);
@@ -1700,10 +1728,10 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     return;
   }
   if (param_2 != (long *)0x0) {
-    *param_2 = (long)(auStack_80[3] - (long)pbVar1) >> 2;
+    *param_2 = lStack_68 - (long)pbVar1 >> 2;
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return;
@@ -1720,11 +1748,12 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
 
 /* std::__ndk1::to_string(int) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
+void std::__ndk1::to_string(int p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -1751,7 +1780,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%d",param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%d",p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -1774,9 +1803,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -1814,11 +1843,12 @@ LAB_005ecd50:
 
 /* std::__ndk1::to_string(unsigned int) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
+void std::__ndk1::to_string(uint p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -1845,7 +1875,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%u",param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%u",p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -1868,9 +1898,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined4 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -1908,11 +1938,12 @@ LAB_005ecf14:
 
 /* std::__ndk1::to_string(long) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(long p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -1939,7 +1970,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_00643879,param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_00643879,p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -1962,9 +1993,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2002,11 +2033,12 @@ LAB_005ed0d8:
 
 /* std::__ndk1::to_string(unsigned long) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(ulong p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2033,7 +2065,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_0064387d,param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_0064387d,p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2056,9 +2088,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2096,11 +2128,12 @@ LAB_005ed29c:
 
 /* std::__ndk1::to_string(long long) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(longlong p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2127,7 +2160,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%lld",param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,"%lld",p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2150,9 +2183,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2190,11 +2223,12 @@ LAB_005ed460:
 
 /* std::__ndk1::to_string(unsigned long long) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(ulonglong p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2221,7 +2255,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_00643881,param_2);
+      iVar2 = FUN_0016df60(uVar4,uVar5 + 1,&DAT_00643881,p0);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2244,9 +2278,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2284,11 +2318,12 @@ LAB_005ed624:
 
 /* std::__ndk1::to_string(float) */
 
-void std::__ndk1::to_string(ulong *param_1,float param_2)
+void std::__ndk1::to_string(float p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2315,7 +2350,7 @@ void std::__ndk1::to_string(ulong *param_1,float param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60((double)param_2,uVar4,uVar5 + 1,"%f");
+      iVar2 = FUN_0016df60((double)p0,uVar4,uVar5 + 1,"%f");
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2338,9 +2373,9 @@ void std::__ndk1::to_string(ulong *param_1,float param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2378,11 +2413,12 @@ LAB_005ed7ec:
 
 /* std::__ndk1::to_string(double) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(double p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2409,7 +2445,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_60;
       }
-      iVar2 = FUN_0016df60(param_2,uVar4,uVar5 + 1,"%f");
+      iVar2 = FUN_0016df60(p0,uVar4,uVar5 + 1,"%f");
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2432,9 +2468,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_60 + uVar4) = 0;
             uStack_68 = uVar4;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -2472,11 +2508,12 @@ LAB_005ed9b0:
 
 /* std::__ndk1::to_string(long double) */
 
-void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_string(longdouble p0)
 
 {
   long lVar1;
   int iVar2;
+  ulong *in_x8;
   ulong uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -2503,7 +2540,7 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
       if ((uVar3 & 1) != 0) {
         uVar4 = uStack_50;
       }
-      iVar2 = FUN_0016df60(param_2,uVar4,uVar5 + 1,&DAT_00641601);
+      iVar2 = FUN_0016df60(p0,uVar4,uVar5 + 1,&DAT_00641601);
       if (iVar2 < 0) {
         uVar4 = uVar5 << 1 | 1;
       }
@@ -2526,9 +2563,9 @@ void std::__ndk1::to_string(ulong *param_1,undefined8 param_2)
             *(undefined1 *)(uStack_50 + uVar4) = 0;
             uStack_58 = uVar4;
           }
-          param_1[2] = uStack_50;
-          param_1[1] = uStack_58;
-          *param_1 = uStack_60;
+          in_x8[2] = uStack_50;
+          in_x8[1] = uStack_58;
+          *in_x8 = uStack_60;
           if (*(long *)(lVar1 + 0x28) != lStack_48) {
             FUN_00164ff0();
             return;
@@ -2566,12 +2603,13 @@ LAB_005edb70:
 
 /* std::__ndk1::to_wstring(int) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
+void std::__ndk1::to_wstring(int p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -2598,7 +2636,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005edd50 to 005edda3 has its CatchHandler @ 005ede70 */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438d0,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438d0,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -2621,9 +2659,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -2662,12 +2700,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
 
 /* std::__ndk1::to_wstring(unsigned int) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
+void std::__ndk1::to_wstring(uint p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -2694,7 +2733,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005edf1c to 005edf6f has its CatchHandler @ 005ee03c */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438dc,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438dc,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -2717,9 +2756,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -2758,12 +2797,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined4 param_2)
 
 /* std::__ndk1::to_wstring(long) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(long p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -2790,7 +2830,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005ee0e8 to 005ee13b has its CatchHandler @ 005ee208 */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438e8,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438e8,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -2813,9 +2853,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -2854,12 +2894,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
 
 /* std::__ndk1::to_wstring(unsigned long) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(ulong p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -2886,7 +2927,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005ee2b4 to 005ee307 has its CatchHandler @ 005ee3d4 */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438f8,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_006438f8,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -2909,9 +2950,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -2950,12 +2991,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
 
 /* std::__ndk1::to_wstring(long long) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(longlong p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -2982,7 +3024,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005ee480 to 005ee4d3 has its CatchHandler @ 005ee5a0 */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_00643908,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_00643908,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -3005,9 +3047,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -3046,12 +3088,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
 
 /* std::__ndk1::to_wstring(unsigned long long) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(ulonglong p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -3078,7 +3121,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
       uVar5 = uVar3;
     }
                     /* try { // try from 005ee64c to 005ee69f has its CatchHandler @ 005ee76c */
-    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_0064391c,param_2);
+    iVar2 = func_0x00171e10(uVar5,uVar6 + 1,&DAT_0064391c,p0);
     if (iVar2 < 0) {
       uVar5 = uVar6 << 1 | 1;
     }
@@ -3101,9 +3144,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
           *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
           uStack_68 = uVar5;
         }
-        param_1[2] = uStack_60;
-        param_1[1] = uStack_68;
-        *param_1 = uStack_70;
+        in_x8[2] = uStack_60;
+        in_x8[1] = uStack_68;
+        *in_x8 = uStack_70;
         if (*(long *)(lVar1 + 0x28) == lStack_58) {
           return;
         }
@@ -3142,12 +3185,13 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
 
 /* std::__ndk1::to_wstring(float) */
 
-void std::__ndk1::to_wstring(ulong *param_1,float param_2)
+void std::__ndk1::to_wstring(float p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   undefined8 uStack_70;
@@ -3178,7 +3222,7 @@ void std::__ndk1::to_wstring(ulong *param_1,float param_2)
         uVar5 = uStack_60;
       }
                     /* try { // try from 005ee834 to 005ee887 has its CatchHandler @ 005ee95c */
-      iVar2 = func_0x00171e10((double)param_2,uVar5,uVar3 + 1,&DAT_00643930);
+      iVar2 = func_0x00171e10((double)p0,uVar5,uVar3 + 1,&DAT_00643930);
       if (iVar2 < 0) {
         uVar5 = uVar3 << 1 | 1;
       }
@@ -3201,9 +3245,9 @@ void std::__ndk1::to_wstring(ulong *param_1,float param_2)
             *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
             uStack_68 = uVar5;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -3240,12 +3284,13 @@ LAB_005ee820:
 
 /* std::__ndk1::to_wstring(double) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(double p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   undefined8 uStack_70;
@@ -3276,7 +3321,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
         uVar5 = uStack_60;
       }
                     /* try { // try from 005eea20 to 005eea73 has its CatchHandler @ 005eeb48 */
-      iVar2 = func_0x00171e10(param_2,uVar5,uVar3 + 1,&DAT_00643930);
+      iVar2 = func_0x00171e10(p0,uVar5,uVar3 + 1,&DAT_00643930);
       if (iVar2 < 0) {
         uVar5 = uVar3 << 1 | 1;
       }
@@ -3299,9 +3344,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
             *(undefined4 *)(uStack_60 + uVar5 * 4) = 0;
             uStack_68 = uVar5;
           }
-          param_1[2] = uStack_60;
-          param_1[1] = uStack_68;
-          *param_1 = uStack_70;
+          in_x8[2] = uStack_60;
+          in_x8[1] = uStack_68;
+          *in_x8 = uStack_70;
           if (*(long *)(lVar1 + 0x28) != lStack_58) {
             FUN_00164ff0();
             return;
@@ -3338,12 +3383,13 @@ LAB_005eea0c:
 
 /* std::__ndk1::to_wstring(long double) */
 
-void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
+void std::__ndk1::to_wstring(longdouble p0)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  ulong *in_x8;
   ulong uVar4;
   ulong uVar5;
   undefined8 uStack_60;
@@ -3374,7 +3420,7 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
         uVar5 = uStack_50;
       }
                     /* try { // try from 005eec08 to 005eec5b has its CatchHandler @ 005eed2c */
-      iVar2 = func_0x00171e10(param_2,uVar5,uVar3 + 1,&DAT_0064393c);
+      iVar2 = func_0x00171e10(p0,uVar5,uVar3 + 1,&DAT_0064393c);
       if (iVar2 < 0) {
         uVar5 = uVar3 << 1 | 1;
       }
@@ -3397,9 +3443,9 @@ void std::__ndk1::to_wstring(ulong *param_1,undefined8 param_2)
             *(undefined4 *)(uStack_50 + uVar5 * 4) = 0;
             uStack_58 = uVar5;
           }
-          param_1[2] = uStack_50;
-          param_1[1] = uStack_58;
-          *param_1 = uStack_60;
+          in_x8[2] = uStack_50;
+          in_x8[1] = uStack_58;
+          *in_x8 = uStack_60;
           if (*(long *)(lVar1 + 0x28) != lStack_48) {
             FUN_00164ff0();
             return;
@@ -3476,7 +3522,7 @@ undefined8 * std::__ndk1::system_category(void)
 
 /* std::__ndk1::__throw_system_error(int, char const*) */
 
-void std::__ndk1::__throw_system_error(undefined4 param_1,undefined8 param_2)
+void std::__ndk1::__throw_system_error(int p0,char *p1)
 
 {
   int iVar1;
@@ -3488,7 +3534,7 @@ void std::__ndk1::__throw_system_error(undefined4 param_1,undefined8 param_2)
     FUN_00165ea0(&DAT_007a5ef0);
   }
                     /* try { // try from 005efb78 to 005efb83 has its CatchHandler @ 005efb9c */
-  func_0x00173fd0(uVar2,param_1,&DAT_007a5ee8,param_2);
+  func_0x00173fd0(uVar2,p0,&DAT_007a5ee8,p1);
   FUN_0016ab10(uVar2,&system_error::typeinfo,system_error::~system_error);
   return;
 }
@@ -3564,28 +3610,31 @@ void std::__ndk1::__thread_local_data(long *param_1)
 
 {
   undefined8 *puVar1;
-  undefined8 *puVar2;
+  void *pvVar2;
+  undefined8 *puVar3;
   
   puVar1 = (undefined8 *)param_1[4];
-  for (puVar2 = (undefined8 *)param_1[3]; puVar2 != puVar1; puVar2 = puVar2 + 2) {
-    FUN_0016c930(puVar2[1]);
-    FUN_00167e00(*puVar2);
+  for (puVar3 = (undefined8 *)param_1[3]; puVar3 != puVar1; puVar3 = puVar3 + 2) {
+    FUN_0016c930(puVar3[1]);
+    FUN_00167e00(*puVar3);
   }
   puVar1 = (undefined8 *)param_1[1];
-  for (puVar2 = (undefined8 *)*param_1; puVar2 != puVar1; puVar2 = puVar2 + 1) {
+  for (puVar3 = (undefined8 *)*param_1; puVar3 != puVar1; puVar3 = puVar3 + 1) {
                     /* try { // try from 005effcc to 005effcf has its CatchHandler @ 005f001c */
-    FUN_0016bc40(*puVar2);
-    FUN_00166dc0(*puVar2);
+    FUN_0016bc40(*puVar3);
+    FUN_00166dc0(*puVar3);
   }
-  if (param_1[3] != 0) {
-    param_1[4] = param_1[3];
-    FUN_00166120();
+  pvVar2 = (void *)param_1[3];
+  if (pvVar2 != (void *)0x0) {
+    param_1[4] = (long)pvVar2;
+    FUN_00166120(pvVar2);
   }
-  if (*param_1 == 0) {
+  pvVar2 = (void *)*param_1;
+  if (pvVar2 == (void *)0x0) {
     return;
   }
-  param_1[1] = *param_1;
-  FUN_00166120();
+  param_1[1] = (long)pvVar2;
+  FUN_00166120(pvVar2);
   return;
 }
 

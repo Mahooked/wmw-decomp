@@ -14,11 +14,12 @@
 void std::__ndk1::
      vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
      ::__push_back_slow_path<Walaber::SpriteAnimation::FrameImport>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__SpriteAnimation__FrameImport **p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -31,37 +32,37 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
+  lVar3 = ((long)p0[1] - (long)*p0 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 4;
+  lVar6 = (long)p0[2] - (long)*p0 >> 4;
   uVar5 = 0x555555555555555;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x0016b7d0(auStack_60,uVar5,lVar3,param_1 + 2);
-  uVar8 = param_2[1];
-  uVar7 = *param_2;
-  puStack_50[2] = param_2[2];
+  func_0x0016b7d0(auStack_60,uVar5,lVar3,p0 + 2);
+  uVar8 = in_x1[1];
+  uVar7 = *in_x1;
+  puStack_50[2] = in_x1[2];
   puStack_50[1] = uVar8;
   *puStack_50 = uVar7;
-  param_2[1] = 0;
-  param_2[2] = 0;
-  *param_2 = 0;
-  puStack_50[3] = param_2[3];
-  puStack_50[4] = param_2[4];
-  *(undefined4 *)(puStack_50 + 5) = *(undefined4 *)(param_2 + 5);
-  *(undefined1 *)((long)puStack_50 + 0x2c) = *(undefined1 *)((long)param_2 + 0x2c);
-  *(undefined1 *)((long)puStack_50 + 0x2d) = *(undefined1 *)((long)param_2 + 0x2d);
-  *(undefined1 *)((long)puStack_50 + 0x2e) = *(undefined1 *)((long)param_2 + 0x2e);
-  *(undefined1 *)((long)puStack_50 + 0x2f) = *(undefined1 *)((long)param_2 + 0x2f);
+  in_x1[1] = 0;
+  in_x1[2] = 0;
+  *in_x1 = 0;
+  puStack_50[3] = in_x1[3];
+  puStack_50[4] = in_x1[4];
+  *(undefined4 *)(puStack_50 + 5) = *(undefined4 *)(in_x1 + 5);
+  *(undefined1 *)((long)puStack_50 + 0x2c) = *(undefined1 *)((long)in_x1 + 0x2c);
+  *(undefined1 *)((long)puStack_50 + 0x2d) = *(undefined1 *)((long)in_x1 + 0x2d);
+  *(undefined1 *)((long)puStack_50 + 0x2e) = *(undefined1 *)((long)in_x1 + 0x2e);
+  *(undefined1 *)((long)puStack_50 + 0x2f) = *(undefined1 *)((long)in_x1 + 0x2f);
   puStack_50 = puStack_50 + 6;
                     /* try { // try from 0035d2cc to 0035d2d7 has its CatchHandler @ 0035d310 */
-  func_0x0016a9b0(param_1,auStack_60);
+  func_0x0016a9b0(p0,auStack_60);
   func_0x00173040(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

@@ -195,19 +195,17 @@ long Walaber::FileManager::getInstancePtr(void)
 
 /* Walaber::FileManager::addFileHandler(int, Walaber::FileManager::FileHandler*) */
 
-void Walaber::FileManager::addFileHandler(undefined8 param_1,undefined4 param_2,undefined8 param_3)
+void Walaber::FileManager::addFileHandler(int p0,Walaber__FileManager__FileHandler *p1)
 
 {
   long lVar1;
-  undefined4 auStack_38 [2];
-  undefined8 uStack_30;
+  undefined4 auStack_38 [4];
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  auStack_38[0] = param_2;
-  uStack_30 = param_3;
-  func_0x0016a800(param_1,auStack_38);
+  auStack_38[0] = SUB84(p1,0);
+  func_0x0016a800(p0,auStack_38);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -223,41 +221,45 @@ void Walaber::FileManager::addFileHandler(undefined8 param_1,undefined4 param_2,
 
 /* Walaber::FileManager::removeFileHandler(Walaber::FileManager::FileHandler*) */
 
-void Walaber::FileManager::removeFileHandler(undefined8 *param_1,long param_2)
+void Walaber::FileManager::removeFileHandler(Walaber__FileManager__FileHandler *p0)
 
 {
   bool bVar1;
-  long *plVar2;
-  long *plVar3;
+  long in_x1;
+  Walaber__FileManager__FileHandler *pWVar2;
+  Walaber__FileManager__FileHandler *pWVar3;
   long lVar4;
   
-  plVar2 = (long *)*param_1;
+  pWVar2 = *(Walaber__FileManager__FileHandler **)p0;
   while( true ) {
-    if (param_1 + 1 == plVar2) {
+    if (p0 + 8 == pWVar2) {
       return;
     }
-    if (plVar2[5] == param_2) break;
-    plVar3 = (long *)plVar2[1];
-    if ((long *)plVar2[1] == (long *)0x0) {
-      plVar3 = plVar2 + 2;
-      bVar1 = *(long **)*plVar3 != plVar2;
-      plVar2 = (long *)*plVar3;
+    if (*(long *)(pWVar2 + 0x28) == in_x1) break;
+    pWVar3 = *(Walaber__FileManager__FileHandler **)(pWVar2 + 8);
+    if (*(Walaber__FileManager__FileHandler **)(pWVar2 + 8) ==
+        (Walaber__FileManager__FileHandler *)0x0) {
+      pWVar3 = pWVar2 + 0x10;
+      bVar1 = *(Walaber__FileManager__FileHandler **)*(Walaber__FileManager__FileHandler **)pWVar3
+              != pWVar2;
+      pWVar2 = *(Walaber__FileManager__FileHandler **)pWVar3;
       if (bVar1) {
         do {
-          lVar4 = *plVar3;
-          plVar3 = (long *)(lVar4 + 0x10);
-          plVar2 = (long *)*plVar3;
-        } while (*plVar2 != lVar4);
+          lVar4 = *(long *)pWVar3;
+          pWVar3 = (Walaber__FileManager__FileHandler *)(lVar4 + 0x10);
+          pWVar2 = *(Walaber__FileManager__FileHandler **)pWVar3;
+        } while (*(long *)pWVar2 != lVar4);
       }
     }
     else {
       do {
-        plVar2 = plVar3;
-        plVar3 = (long *)*plVar2;
-      } while ((long *)*plVar2 != (long *)0x0);
+        pWVar2 = pWVar3;
+        pWVar3 = *(Walaber__FileManager__FileHandler **)pWVar2;
+      } while (*(Walaber__FileManager__FileHandler **)pWVar2 !=
+               (Walaber__FileManager__FileHandler *)0x0);
     }
   }
-  func_0x0016b790(param_1,plVar2);
+  func_0x0016b790(p0,pWVar2);
   return;
 }
 
@@ -283,8 +285,9 @@ void Walaber::FileManager::fileExists
   long lStack_b0;
   int *piStack_a8;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
-  ulong auStack_88 [3];
+  void *pvStack_90;
+  ulong auStack_88 [2];
+  void *pvStack_78;
   int iStack_70;
   int iStack_6c;
   undefined1 auStack_68 [8];
@@ -299,7 +302,7 @@ void Walaber::FileManager::fileExists
     bVar2 = func_0x0016dd90(uVar3,param_2);
     auStack_88[0] = 0;
     auStack_88[1] = 0;
-    auStack_88[2] = 0;
+    pvStack_78 = (void *)0x0;
                     /* try { // try from 003d1bc4 to 003d1bcf has its CatchHandler @ 003d1d20 */
     func_0x00171ac0(auStack_88,param_2);
     if ((param_5 != 1 & (bVar2 ^ 1)) == 0) {
@@ -329,10 +332,10 @@ void Walaber::FileManager::fileExists
     (**(code **)(*plVar5 + 0x10))(plVar5,abStack_a0,&lStack_b0,param_4);
     FUN_0016bb90(&lStack_b0);
     if ((abStack_a0[0] & 1) != 0) {
-      FUN_00166120(uStack_90);
+      FUN_00166120(pvStack_90);
     }
     if ((auStack_88[0] & 1) != 0) {
-      FUN_00166120(auStack_88[2]);
+      FUN_00166120(pvStack_78);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
@@ -360,7 +363,7 @@ void Walaber::FileManager::_appendNextPlatformTag
   int iVar1;
   byte bVar2;
   long lVar3;
-  ulong uVar4;
+  void *pvVar4;
   ulong *puVar5;
   byte *pbVar6;
   undefined8 uVar7;
@@ -368,12 +371,12 @@ void Walaber::FileManager::_appendNextPlatformTag
   ulong uVar9;
   byte abStack_a0 [8];
   ulong uStack_98;
-  ulong uStack_90;
+  void *pvStack_90;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   undefined7 uStack_58;
   undefined1 uStack_51;
   undefined7 uStack_50;
@@ -403,7 +406,7 @@ void Walaber::FileManager::_appendNextPlatformTag
     }
                     /* try { // try from 003d1df4 to 003d1dfb has its CatchHandler @ 003d1f5c */
     puVar5 = (ulong *)FUN_00167eb0(abStack_88,pbVar6,uVar9);
-    uStack_60 = puVar5[2];
+    pvStack_60 = (void *)puVar5[2];
     uStack_68 = puVar5[1];
     uStack_70 = *puVar5;
     puVar5[1] = 0;
@@ -412,13 +415,13 @@ void Walaber::FileManager::_appendNextPlatformTag
                     /* try { // try from 003d1e14 to 003d1e23 has its CatchHandler @ 003d1f44 */
     func_0x001714f0(abStack_a0,param_2);
     uVar9 = (ulong)(abStack_a0[0] >> 1);
-    uVar4 = (ulong)abStack_a0 | 1;
+    pvVar4 = (void *)((ulong)abStack_a0 | 1);
     if ((abStack_a0[0] & 1) != 0) {
       uVar9 = uStack_98;
-      uVar4 = uStack_90;
+      pvVar4 = pvStack_90;
     }
                     /* try { // try from 003d1e40 to 003d1e47 has its CatchHandler @ 003d1f2c */
-    pbVar6 = (byte *)FUN_00167eb0(&uStack_70,uVar4,uVar9);
+    pbVar6 = (byte *)FUN_00167eb0(&uStack_70,pvVar4,uVar9);
     uVar7 = *(undefined8 *)(pbVar6 + 0x10);
     bVar2 = *pbVar6;
     uStack_50 = (undefined7)((ulong)*(undefined8 *)(pbVar6 + 8) >> 8);
@@ -463,7 +466,7 @@ void Walaber::FileManager::_appendNextPlatformTag
       param_3[0xe] = 0;
       param_3[0xf] = 0;
       if ((*param_3 & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(param_3 + 0x10));
+        FUN_00166120(*(void **)(param_3 + 0x10));
         param_3[0] = 0;
         param_3[1] = 0;
         param_3[2] = 0;
@@ -482,13 +485,13 @@ void Walaber::FileManager::_appendNextPlatformTag
     uStack_58 = 0;
     uStack_51 = 0;
     if ((abStack_a0[0] & 1) != 0) {
-      FUN_00166120(uStack_90);
+      FUN_00166120(pvStack_90);
     }
     if ((uStack_70 & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
     uVar7 = 1;
   }
@@ -521,8 +524,9 @@ void Walaber::FileManager::readFile
   long lStack_c0;
   int *piStack_b8;
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
-  ulong auStack_98 [3];
+  void *pvStack_a0;
+  ulong auStack_98 [2];
+  void *pvStack_88;
   uint uStack_80;
   int iStack_7c;
   undefined1 auStack_78 [8];
@@ -537,7 +541,7 @@ void Walaber::FileManager::readFile
     uVar2 = func_0x0016dd90(uVar3,param_2);
     auStack_98[0] = 0;
     auStack_98[1] = 0;
-    auStack_98[2] = 0;
+    pvStack_88 = (void *)0x0;
                     /* try { // try from 003d1fe0 to 003d1feb has its CatchHandler @ 003d214c */
     func_0x00171ac0(auStack_98,param_2);
     if (param_5 == 1 || (uVar2 & 1) != 0) {
@@ -568,10 +572,10 @@ void Walaber::FileManager::readFile
     (**(code **)(*plVar5 + 0x18))(plVar5,abStack_b0,&lStack_c0,param_4);
     FUN_0016bb90(&lStack_c0);
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
     if ((auStack_98[0] & 1) != 0) {
-      FUN_00166120(auStack_98[2]);
+      FUN_00166120(pvStack_88);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
@@ -717,20 +721,21 @@ void Walaber::FileManager::_existFail
   long *plVar8;
   long *plVar9;
   byte abStack_138 [16];
-  undefined8 uStack_128;
+  void *pvStack_128;
   ulong *apuStack_120 [2];
-  undefined8 uStack_110;
+  void *pvStack_110;
   byte bStack_100;
-  undefined8 uStack_f0;
+  void *pvStack_f0;
   byte bStack_e8;
-  undefined8 uStack_d8;
+  void *pvStack_d8;
   long lStack_c8;
   int *piStack_c0;
   long lStack_b8;
   int *piStack_b0;
-  ulong auStack_a8 [3];
+  ulong auStack_a8 [2];
+  void *pvStack_98;
   byte abStack_90 [16];
-  undefined8 uStack_80;
+  void *pvStack_80;
   undefined8 uStack_78;
   long lStack_70;
   
@@ -744,7 +749,7 @@ void Walaber::FileManager::_existFail
   func_0x00172710(plVar5,lVar3);
   auStack_a8[0] = 0;
   auStack_a8[1] = 0;
-  auStack_a8[2] = 0;
+  pvStack_98 = (void *)0x0;
                     /* try { // try from 003d23c4 to 003d240f has its CatchHandler @ 003d2754 */
   if ((uStack_78._4_4_ == 0) &&
      (uVar4 = func_0x0016d890(param_1,abStack_90,auStack_a8,uStack_78 & 0xffffffff,&uStack_78),
@@ -817,7 +822,7 @@ void Walaber::FileManager::_existFail
         abStack_138[0xe] = 0;
         abStack_138[0xf] = 0;
         abStack_138[0] = 0x12;
-        uStack_128 = 0;
+        pvStack_128 = (void *)0x0;
         abStack_138[9] = 0x44;
         abStack_138[10] = 0;
         abStack_138[1] = 0x4e;
@@ -831,18 +836,18 @@ void Walaber::FileManager::_existFail
                     /* try { // try from 003d2594 to 003d25af has its CatchHandler @ 003d272c */
         func_0x00161b20(apuStack_120,param_2,0,param_2,abStack_138,param_5);
         if ((abStack_138[0] & 1) != 0) {
-          FUN_00166120(uStack_128);
+          FUN_00166120(pvStack_128);
         }
                     /* try { // try from 003d25cc to 003d25d3 has its CatchHandler @ 003d26f8 */
         (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,apuStack_120);
         if ((bStack_e8 & 1) != 0) {
-          FUN_00166120(uStack_d8);
+          FUN_00166120(pvStack_d8);
         }
         if ((bStack_100 & 1) != 0) {
-          FUN_00166120(uStack_f0);
+          FUN_00166120(pvStack_f0);
         }
         if (((ulong)apuStack_120[0] & 1) != 0) {
-          FUN_00166120(uStack_110);
+          FUN_00166120(pvStack_110);
         }
       }
       goto LAB_003d2698;
@@ -873,10 +878,10 @@ void Walaber::FileManager::_existFail
   FUN_0016bb90(plVar5);
 LAB_003d2698:
   if ((auStack_a8[0] & 1) != 0) {
-    FUN_00166120(auStack_a8[2]);
+    FUN_00166120(pvStack_98);
   }
   if ((abStack_90[0] & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_70) {
     FUN_00164ff0();
@@ -914,28 +919,28 @@ void Walaber::FileManager::_readFail
   undefined1 uStack_140;
   undefined2 uStack_13f;
   undefined5 uStack_13d;
-  undefined8 uStack_138;
+  void *pvStack_138;
   long lStack_130;
   int *piStack_128;
   long lStack_120;
   int *piStack_118;
   ulong uStack_110;
   undefined8 uStack_108;
-  undefined8 uStack_100;
+  void *pvStack_100;
   byte bStack_f8;
   undefined7 uStack_f7;
   undefined1 uStack_f0;
   undefined2 uStack_ef;
   undefined5 uStack_ed;
-  undefined8 uStack_e8;
+  void *pvStack_e8;
   undefined8 uStack_e0;
   ulong *puStack_d8;
   byte bStack_d0;
-  undefined8 uStack_c0;
+  void *pvStack_c0;
   byte bStack_a8;
-  undefined8 uStack_98;
+  void *pvStack_98;
   byte bStack_90;
-  undefined8 uStack_80;
+  void *pvStack_80;
   long lStack_70;
   
   lVar1 = tpidr_el0;
@@ -946,23 +951,23 @@ void Walaber::FileManager::_readFail
     if (*param_4 == 0) goto LAB_003d2c78;
     uStack_ed = 0;
     bStack_f8 = 0x12;
-    uStack_e8 = 0;
+    pvStack_e8 = (void *)0x0;
     uStack_ef = 0x44;
     uStack_f7 = 0x554f465f544f4e;
     uStack_f0 = 0x4e;
                     /* try { // try from 003d29f4 to 003d2a13 has its CatchHandler @ 003d2d38 */
     func_0x0016e040(&puStack_d8,param_2,0,0,param_2,&bStack_f8,param_5);
     if ((bStack_f8 & 1) != 0) {
-      FUN_00166120(uStack_e8);
+      FUN_00166120(pvStack_e8);
     }
     puStack_d8 = (ulong *)CONCAT44(puStack_d8._4_4_,3);
                     /* try { // try from 003d2a38 to 003d2a3f has its CatchHandler @ 003d2d04 */
     (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&puStack_d8);
     if ((bStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
     if ((bStack_a8 & 1) != 0) {
-      FUN_00166120(uStack_98);
+      FUN_00166120(pvStack_98);
     }
   }
   else {
@@ -972,7 +977,7 @@ void Walaber::FileManager::_readFail
     func_0x00172710(plVar6,plVar3);
     uStack_110 = 0;
     uStack_108 = 0;
-    uStack_100 = 0;
+    pvStack_100 = (void *)0x0;
                     /* try { // try from 003d28bc to 003d2907 has its CatchHandler @ 003d2d58 */
     if ((uStack_e0._4_4_ == 0) &&
        (uVar4 = func_0x0016d890(param_1,&bStack_f8,&uStack_110,uStack_e0 & 0xffffffff,&uStack_e0),
@@ -1071,39 +1076,39 @@ LAB_003d2c54:
       if (*param_4 != 0) {
         uStack_13d = 0;
         bStack_148 = 0x12;
-        uStack_138 = 0;
+        pvStack_138 = (void *)0x0;
         uStack_13f = 0x44;
         uStack_147 = 0x554f465f544f4e;
         uStack_140 = 0x4e;
                     /* try { // try from 003d2b48 to 003d2b67 has its CatchHandler @ 003d2cec */
         func_0x0016e040(&puStack_d8,param_2,0,0,param_2,&bStack_148,param_5);
         if ((bStack_148 & 1) != 0) {
-          FUN_00166120(uStack_138);
+          FUN_00166120(pvStack_138);
         }
         puStack_d8 = (ulong *)CONCAT44(puStack_d8._4_4_,3);
                     /* try { // try from 003d2b8c to 003d2b93 has its CatchHandler @ 003d2cb8 */
         (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&puStack_d8);
         if ((bStack_90 & 1) != 0) {
-          FUN_00166120(uStack_80);
+          FUN_00166120(pvStack_80);
         }
         if ((bStack_a8 & 1) != 0) {
-          FUN_00166120(uStack_98);
+          FUN_00166120(pvStack_98);
         }
         if ((bStack_d0 & 1) != 0) {
-          FUN_00166120(uStack_c0);
+          FUN_00166120(pvStack_c0);
         }
       }
     }
-    uStack_c0 = uStack_e8;
+    pvStack_c0 = pvStack_e8;
     bStack_d0 = bStack_f8;
     if ((uStack_110 & 1) != 0) {
-      FUN_00166120(uStack_100);
-      uStack_c0 = uStack_e8;
+      FUN_00166120(pvStack_100);
+      pvStack_c0 = pvStack_e8;
       bStack_d0 = bStack_f8;
     }
   }
   if ((bStack_d0 & 1) != 0) {
-    FUN_00166120(uStack_c0);
+    FUN_00166120(pvStack_c0);
   }
 LAB_003d2c78:
   if (*(long *)(lVar1 + 0x28) != lStack_70) {

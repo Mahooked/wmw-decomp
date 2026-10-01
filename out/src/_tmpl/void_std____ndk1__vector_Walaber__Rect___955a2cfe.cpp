@@ -10,28 +10,29 @@
    >::__push_back_slow_path<Walaber::Rect>(Walaber::Rect&&) */
 
 void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
-     __push_back_slow_path<Walaber::Rect>(long *param_1,undefined8 *param_2)
+     __push_back_slow_path<Walaber::Rect>(Walaber__Rect **p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
   ulong uVar5;
-  long lStack_60;
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 4;
+  lVar3 = (long)p0[1] - (long)*p0 >> 4;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3c != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = (long)p0[2] - (long)*p0;
   if ((ulong)(lVar4 >> 4) < 0x7ffffffffffffff) {
     uVar5 = lVar4 >> 3;
     if (uVar2 <= uVar5) {
@@ -41,19 +42,19 @@ void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
   else {
     uVar2 = 0xfffffffffffffff;
   }
-  func_0x0016af20(&lStack_60,uVar2,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50[1] = param_2[1];
+  func_0x0016af20(&pvStack_60,uVar2,lVar3,p0 + 2);
+  *puStack_50 = *in_x1;
+  puStack_50[1] = in_x1[1];
   puStack_50 = puStack_50 + 2;
                     /* try { // try from 003efcf4 to 003efcff has its CatchHandler @ 003efd60 */
-  func_0x00174290(param_1,&lStack_60);
+  func_0x00174290(p0,&pvStack_60);
   if (puStack_50 != puStack_58) {
     puStack_50 = (undefined8 *)
                  ((long)puStack_50 +
                  (~((long)puStack_50 + (-0x10 - (long)puStack_58)) & 0xfffffffffffffff0U));
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

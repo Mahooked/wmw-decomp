@@ -9,31 +9,33 @@
 /* WaterConcept::PlayerDataSerializer::LevelInfo::merge(unsigned char, unsigned char, unsigned int,
    unsigned int, int) */
 
-bool WaterConcept::PlayerDataSerializer::LevelInfo::merge
-               (byte *param_1,byte param_2,char param_3,uint param_4,uint param_5,int param_6)
+bool WaterConcept::PlayerDataSerializer::LevelInfo::merge(uchar p0,uchar p1,uint p2,uint p3,int p4)
 
 {
   bool bVar1;
+  byte *pbVar2;
+  int in_w5;
   
-  bVar1 = *param_1 < param_2;
+  pbVar2 = (byte *)(ulong)p0;
+  bVar1 = *pbVar2 < p1;
   if (bVar1) {
-    *param_1 = param_2;
+    *pbVar2 = p1;
   }
-  if ((param_3 == '\x01') && (param_1[1] == 0)) {
+  if (((p2 & 0xff) == 1) && (pbVar2[1] == 0)) {
     bVar1 = true;
-    param_1[1] = 1;
+    pbVar2[1] = 1;
   }
-  if (*(uint *)(param_1 + 4) < param_4) {
+  if (*(uint *)(pbVar2 + 4) < p3) {
     bVar1 = true;
-    *(uint *)(param_1 + 4) = param_4;
+    *(uint *)(pbVar2 + 4) = p3;
   }
-  if (*(uint *)(param_1 + 8) < param_5) {
+  if (*(uint *)(pbVar2 + 8) < (uint)p4) {
     bVar1 = true;
-    *(uint *)(param_1 + 8) = param_5;
+    *(int *)(pbVar2 + 8) = p4;
   }
-  if ((-1 < param_6) && (*(int *)(param_1 + 0xc) == -1)) {
+  if ((-1 < in_w5) && (*(int *)(pbVar2 + 0xc) == -1)) {
     bVar1 = true;
-    *(int *)(param_1 + 0xc) = param_6;
+    *(int *)(pbVar2 + 0xc) = in_w5;
   }
   return bVar1;
 }

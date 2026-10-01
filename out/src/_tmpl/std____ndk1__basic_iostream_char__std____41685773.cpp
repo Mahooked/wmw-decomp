@@ -127,10 +127,11 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 
 /* std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char> >::~basic_iostream() */
 
-void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
+void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream
+               (void *param_1)
 
 {
-  FUN_00171f00(param_1 + 0x18);
+  FUN_00171f00((long)param_1 + 0x18);
   FUN_00166120(param_1);
   return;
 }

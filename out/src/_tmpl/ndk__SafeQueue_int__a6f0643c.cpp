@@ -44,27 +44,28 @@ void ndk::SafeQueue<int>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<int>::pop(int&) */
 
-bool ndk::SafeQueue<int>::pop(long param_1,undefined4 *param_2)
+bool ndk::SafeQueue<int>::pop(int *p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
+  long *p0_00;
+  undefined4 *in_x1;
+  long lVar2;
   
-  FUN_0016f820(param_1 + 0x20);
-  lVar3 = *(long *)(param_1 + 0x10);
-  if (lVar3 != 0) {
-    plVar2 = *(long **)(param_1 + 8);
-    *param_2 = (int)plVar2[2];
-    lVar1 = *plVar2;
-    *(long *)(lVar1 + 8) = plVar2[1];
-    *(long *)plVar2[1] = lVar1;
-    *(long *)(param_1 + 0x10) = lVar3 + -1;
-    FUN_00166120();
+  FUN_0016f820(p0 + 8);
+  lVar2 = *(long *)(p0 + 4);
+  if (lVar2 != 0) {
+    p0_00 = *(long **)(p0 + 2);
+    *in_x1 = (int)p0_00[2];
+    lVar1 = *p0_00;
+    *(long *)(lVar1 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar1;
+    *(long *)(p0 + 4) = lVar2 + -1;
+    FUN_00166120(p0_00);
   }
                     /* try { // try from 002c39ac to 002c39b3 has its CatchHandler @ 002c39c8 */
-  FUN_0016b1e0(param_1 + 0x20);
-  return lVar3 != 0;
+  FUN_0016b1e0(p0 + 8);
+  return lVar2 != 0;
 }
 
 
@@ -75,24 +76,25 @@ bool ndk::SafeQueue<int>::pop(long param_1,undefined4 *param_2)
 
 /* ndk::SafeQueue<int>::push(int const&) */
 
-void ndk::SafeQueue<int>::push(long *param_1,undefined4 *param_2)
+void ndk::SafeQueue<int>::push(int *p0)
 
 {
   long *plVar1;
+  undefined4 *in_x1;
   long lVar2;
   
-  FUN_0016f820(param_1 + 4);
+  FUN_0016f820(p0 + 8);
                     /* try { // try from 002c4e64 to 002c4e6b has its CatchHandler @ 002c4eac */
   plVar1 = (long *)FUN_00164060(0x18);
-  *(undefined4 *)(plVar1 + 2) = *param_2;
-  lVar2 = *param_1;
+  *(undefined4 *)(plVar1 + 2) = *in_x1;
+  lVar2 = *(long *)p0;
   *plVar1 = lVar2;
-  plVar1[1] = (long)param_1;
+  plVar1[1] = (long)p0;
   *(long **)(lVar2 + 8) = plVar1;
-  *param_1 = (long)plVar1;
-  param_1[2] = param_1[2] + 1;
+  *(long **)p0 = plVar1;
+  *(long *)(p0 + 4) = *(long *)(p0 + 4) + 1;
                     /* try { // try from 002c4e90 to 002c4e97 has its CatchHandler @ 002c4ea8 */
-  FUN_0016b1e0(param_1 + 4);
+  FUN_0016b1e0(p0 + 8);
   return;
 }
 

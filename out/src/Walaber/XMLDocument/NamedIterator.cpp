@@ -60,15 +60,16 @@ void Walaber::XMLDocument::NamedIterator::NamedIterator
 
 /* Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber::XMLDocument::NamedIterator const&) */
 
-void Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 *param_1,undefined8 *param_2)
+void Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber__XMLDocument__NamedIterator *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  func_0x0016f720(param_1 + 2,param_2 + 2);
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
+  func_0x0016f720(p0 + 0x10,in_x1 + 2);
   return;
 }
 
@@ -81,16 +82,18 @@ void Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 *param_1,unde
 /* Walaber::XMLDocument::NamedIterator::TEMPNAMEPLACEHOLDERVALUE(Walaber::XMLDocument::NamedIterator
    const&) */
 
-undefined8 * Walaber::XMLDocument::NamedIterator::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__XMLDocument__NamedIterator *
+Walaber::XMLDocument::NamedIterator::operator=(Walaber__XMLDocument__NamedIterator *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  func_0x00171ac0(param_1 + 2,param_2 + 2);
-  return param_1;
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
+  func_0x00171ac0(p0 + 0x10,in_x1 + 2);
+  return p0;
 }
 
 
@@ -200,11 +203,11 @@ void Walaber::XMLDocument::NamedIterator::getAttribute
   undefined8 uVar4;
   ulong uVar5;
   byte *pbVar6;
-  ulong uVar7;
-  ulong uVar8;
+  void *pvVar7;
+  ulong p0;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
@@ -227,7 +230,7 @@ void Walaber::XMLDocument::NamedIterator::getAttribute
   }
   uVar4 = FUN_00171ed0(*param_1,pbVar6);
   uStack_68 = 0;
-  uStack_60 = 0;
+  pvStack_60 = (void *)0x0;
   uStack_70 = 0;
   uVar5 = FUN_00173480();
   if (0xffffffffffffffef < uVar5) {
@@ -235,27 +238,27 @@ void Walaber::XMLDocument::NamedIterator::getAttribute
     return;
   }
   if (uVar5 < 0x17) {
-    uVar7 = (ulong)&uStack_70 | 1;
+    pvVar7 = (void *)((ulong)&uStack_70 | 1);
     uStack_70 = CONCAT71(uStack_70._1_7_,(char)((int)uVar5 << 1));
     if (uVar5 != 0) goto LAB_003d65c8;
   }
   else {
-    uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar7 = FUN_00164060(uVar8);
-    uStack_70 = uVar8 | 1;
+    p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
+    pvVar7 = (void *)FUN_00164060(p0);
+    uStack_70 = p0 | 1;
     uStack_68 = uVar5;
-    uStack_60 = uVar7;
+    pvStack_60 = pvVar7;
 LAB_003d65c8:
-    FUN_001715e0(uVar7,uVar4,uVar5);
+    FUN_001715e0(pvVar7,uVar4,uVar5);
   }
   puVar2 = xmlFree;
-  *(undefined1 *)(uVar7 + uVar5) = 0;
+  *(undefined1 *)((long)pvVar7 + uVar5) = 0;
                     /* try { // try from 003d65e0 to 003d65e7 has its CatchHandler @ 003d6644 */
   (*(code *)puVar2)(uVar4);
                     /* try { // try from 003d65e8 to 003d65f3 has its CatchHandler @ 003d6640 */
   func_0x0016ddc0(param_3,&uStack_70);
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   uVar4 = 1;
 LAB_003d6608:
@@ -274,7 +277,7 @@ LAB_003d6608:
 
 /* Walaber::XMLDocument::NamedIterator::getNodeValue(Walaber::Property&) */
 
-void Walaber::XMLDocument::NamedIterator::getNodeValue(long *param_1,undefined8 param_2)
+void Walaber::XMLDocument::NamedIterator::getNodeValue(Walaber__Property *p0)
 
 {
   long lVar1;
@@ -282,47 +285,47 @@ void Walaber::XMLDocument::NamedIterator::getNodeValue(long *param_1,undefined8 
   undefined8 uVar3;
   ulong uVar4;
   long lVar5;
-  ulong uVar6;
-  ulong uVar7;
+  void *pvVar6;
+  ulong p0_00;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*param_1 != 0) {
-    lVar5 = *(long *)(*param_1 + 0x30);
+  if (*(long *)p0 != 0) {
+    lVar5 = *(long *)(*(long *)p0 + 0x30);
     iVar2 = FUN_00162900(*(undefined8 *)(lVar5 + 0x10),"text");
     if (iVar2 == 0) {
       uVar3 = *(undefined8 *)(lVar5 + 0x50);
       uStack_60 = 0;
       uStack_58 = 0;
-      uStack_50 = 0;
+      pvStack_50 = (void *)0x0;
       uVar4 = FUN_00173480(uVar3);
       if (0xffffffffffffffef < uVar4) {
         FUN_00164180(&uStack_60);
         return;
       }
       if (uVar4 < 0x17) {
-        uVar6 = (ulong)&uStack_60 | 1;
+        pvVar6 = (void *)((ulong)&uStack_60 | 1);
         uStack_60 = CONCAT71(uStack_60._1_7_,(char)((int)uVar4 << 1));
         if (uVar4 != 0) goto LAB_003d6710;
       }
       else {
-        uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
-        uVar6 = FUN_00164060(uVar7);
-        uStack_60 = uVar7 | 1;
+        p0_00 = uVar4 + 0x10 & 0xfffffffffffffff0;
+        pvVar6 = (void *)FUN_00164060(p0_00);
+        uStack_60 = p0_00 | 1;
         uStack_58 = uVar4;
-        uStack_50 = uVar6;
+        pvStack_50 = pvVar6;
 LAB_003d6710:
-        FUN_001715e0(uVar6,uVar3,uVar4);
+        FUN_001715e0(pvVar6,uVar3,uVar4);
       }
-      *(undefined1 *)(uVar6 + uVar4) = 0;
+      *(undefined1 *)((long)pvVar6 + uVar4) = 0;
                     /* try { // try from 003d6724 to 003d672f has its CatchHandler @ 003d6778 */
-      func_0x0016ddc0(param_2,&uStack_60);
+      func_0x0016ddc0();
       if ((uStack_60 & 1) != 0) {
-        FUN_00166120(uStack_50);
+        FUN_00166120(pvStack_50);
       }
       uVar3 = 1;
       goto LAB_003d6744;
@@ -345,26 +348,28 @@ LAB_003d6744:
 
 /* Walaber::XMLDocument::NamedIterator::TEMPNAMEPLACEHOLDERVALUE(int) */
 
-void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
+void Walaber::XMLDocument::NamedIterator::operator++(int p0)
 
 {
   int iVar1;
-  long lVar2;
+  long *plVar2;
   long lVar3;
+  long lVar4;
   
-  if (*param_1 != 0) {
-    lVar2 = *(long *)(*param_1 + 0x30);
-    *param_1 = lVar2;
-    if ((*(byte *)(param_1 + 2) & 1) == 0) {
-      lVar3 = (long)param_1 + 0x11;
+  plVar2 = (long *)(ulong)(uint)p0;
+  if (*plVar2 != 0) {
+    lVar3 = *(long *)(*plVar2 + 0x30);
+    *plVar2 = lVar3;
+    if ((*(byte *)(plVar2 + 2) & 1) == 0) {
+      lVar4 = (long)plVar2 + 0x11;
     }
     else {
-      lVar3 = param_1[4];
+      lVar4 = plVar2[4];
     }
-    while ((lVar2 != 0 && (iVar1 = FUN_00162900(*(undefined8 *)(lVar2 + 0x10),lVar3), iVar1 != 0)))
+    while ((lVar3 != 0 && (iVar1 = FUN_00162900(*(undefined8 *)(lVar3 + 0x10),lVar4), iVar1 != 0)))
     {
-      lVar2 = *(long *)(*param_1 + 0x30);
-      *param_1 = lVar2;
+      lVar3 = *(long *)(*plVar2 + 0x30);
+      *plVar2 = lVar3;
     }
   }
   return;

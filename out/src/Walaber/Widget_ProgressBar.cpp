@@ -258,12 +258,16 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
 
 /* Walaber::Widget_ProgressBar::setPadding(float, float, float, float) */
 
-void Walaber::Widget_ProgressBar::setPadding
-               (float param_1,float param_2,float param_3,float param_4,long param_5)
+void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3)
 
 {
   long lVar1;
+  long in_x0;
   float fVar2;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float fVar6;
   float fStack_60;
   float fStack_5c;
   long lStack_58;
@@ -271,21 +275,20 @@ void Walaber::Widget_ProgressBar::setPadding
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   func_0x00169f20(&fStack_60);
-  param_1 = *(float *)(param_5 + 0x90) * fStack_60 * param_1;
-  func_0x00169f20(&fStack_60,param_5);
-  param_2 = *(float *)(param_5 + 0x90) * fStack_60 * param_2;
-  func_0x00169f20(&fStack_60,param_5);
-  param_3 = *(float *)(param_5 + 0x94) * fStack_5c * param_3;
-  func_0x00169f20(&fStack_60,param_5);
-  param_4 = *(float *)(param_5 + 0x94) * fStack_5c * param_4;
-  func_0x00169f20(&fStack_60,param_5);
-  fVar2 = *(float *)(param_5 + 0x90);
-  func_0x00169f20(&fStack_60,param_5);
-  *(float *)(param_5 + 0x140) = param_1 - param_2;
-  *(float *)(param_5 + 0x144) = param_3 - param_4;
-  *(float *)(param_5 + 0x150) = 1.0 - (param_1 + param_2) / (fVar2 * fStack_60);
-  *(float *)(param_5 + 0x154) = 1.0 - (param_3 + param_4) / (*(float *)(param_5 + 0x94) * fStack_5c)
-  ;
+  fVar6 = *(float *)(in_x0 + 0x90) * fStack_60 * p0;
+  func_0x00169f20(&fStack_60);
+  fVar5 = *(float *)(in_x0 + 0x90) * fStack_60 * p1;
+  func_0x00169f20(&fStack_60);
+  fVar4 = *(float *)(in_x0 + 0x94) * fStack_5c * p2;
+  func_0x00169f20(&fStack_60);
+  fVar3 = *(float *)(in_x0 + 0x94) * fStack_5c * p3;
+  func_0x00169f20(&fStack_60);
+  fVar2 = *(float *)(in_x0 + 0x90);
+  func_0x00169f20(&fStack_60);
+  *(float *)(in_x0 + 0x140) = fVar6 - fVar5;
+  *(float *)(in_x0 + 0x144) = fVar4 - fVar3;
+  *(float *)(in_x0 + 0x150) = 1.0 - (fVar6 + fVar5) / (fVar2 * fStack_60);
+  *(float *)(in_x0 + 0x154) = 1.0 - (fVar4 + fVar3) / (*(float *)(in_x0 + 0x94) * fStack_5c);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
   }
@@ -301,11 +304,12 @@ void Walaber::Widget_ProgressBar::setPadding
 
 /* Walaber::Widget_ProgressBar::updateValue(float) */
 
-void Walaber::Widget_ProgressBar::updateValue(float param_1,long param_2)
+void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 {
   long lVar1;
   bool bVar2;
+  long in_x0;
   float fVar3;
   float fVar4;
   float afStack_40 [2];
@@ -313,24 +317,24 @@ void Walaber::Widget_ProgressBar::updateValue(float param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  bVar2 = 0.0 <= param_1;
-  if (1.0 < param_1) {
-    param_1 = 1.0;
+  bVar2 = 0.0 <= p0;
+  if (1.0 < p0) {
+    p0 = 1.0;
   }
   fVar3 = 0.0;
   if (bVar2) {
-    fVar3 = param_1;
+    fVar3 = p0;
   }
-  *(float *)(param_2 + 0x160) = fVar3;
+  *(float *)(in_x0 + 0x160) = fVar3;
   func_0x00169f20(afStack_40);
-  fVar4 = *(float *)(param_2 + 0x150);
-  fVar3 = *(float *)(param_2 + 0x90) * afStack_40[0];
-  func_0x00169f20(afStack_40,param_2);
-  *(undefined1 *)(param_2 + 0x16c) = 1;
-  *(float *)(param_2 + 0x148) =
+  fVar4 = *(float *)(in_x0 + 0x150);
+  fVar3 = *(float *)(in_x0 + 0x90) * afStack_40[0];
+  func_0x00169f20(afStack_40);
+  *(undefined1 *)(in_x0 + 0x16c) = 1;
+  *(float *)(in_x0 + 0x148) =
        (fVar3 * fVar4 -
-       *(float *)(param_2 + 0x90) * afStack_40[0] * *(float *)(param_2 + 0x150) *
-       *(float *)(param_2 + 0x160)) * -0.5;
+       *(float *)(in_x0 + 0x90) * afStack_40[0] * *(float *)(in_x0 + 0x150) *
+       *(float *)(in_x0 + 0x160)) * -0.5;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -364,7 +368,7 @@ void Walaber::Widget_ProgressBar::~Widget_ProgressBar(undefined8 *param_1)
 
 /* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
 
-void Walaber::Widget_ProgressBar::~Widget_ProgressBar(undefined8 param_1)
+void Walaber::Widget_ProgressBar::~Widget_ProgressBar(void *param_1)
 
 {
   func_0x00167300();
@@ -380,12 +384,14 @@ void Walaber::Widget_ProgressBar::~Widget_ProgressBar(undefined8 param_1)
 
 /* Walaber::Widget_ProgressBar::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_ProgressBar::update(long param_1,long param_2)
+undefined8 Walaber::Widget_ProgressBar::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  if (*(char *)(param_1 + 0x16c) != '\0') {
-    *(undefined1 *)(param_1 + 0x16c) = 0;
-    *(undefined4 *)(param_2 + 4) = *(undefined4 *)(param_1 + 0x160);
+  long in_x1;
+  
+  if (p1[0x16c] != (Walaber__Widget__WidgetActionRet)0x0) {
+    p1[0x16c] = (Walaber__Widget__WidgetActionRet)0x0;
+    *(undefined4 *)(in_x1 + 4) = *(undefined4 *)(p1 + 0x160);
     return 1;
   }
   return 0;
@@ -413,19 +419,14 @@ undefined4 Walaber::Widget_ProgressBar::getValue(long param_1)
 
 /* Walaber::Widget_ProgressBar::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_ProgressBar::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_ProgressBar::draw(Walaber__SpriteBatch *p0)
 
 {
-  undefined4 uVar1;
-  int iVar2;
-  long lVar3;
-  ulong uVar4;
-  undefined8 uVar5;
-  float fVar6;
-  float fVar7;
-  float fVar8;
-  float fStack_b8;
-  float fStack_b4;
+  long lVar1;
+  ulong uVar2;
+  undefined8 uVar3;
+  float fVar4;
+  float fVar5;
   long lStack_b0;
   int *piStack_a8;
   undefined8 uStack_a0;
@@ -439,70 +440,61 @@ void Walaber::Widget_ProgressBar::draw(long param_1,undefined8 param_2)
   float fStack_6c;
   long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
-  uVar5 = func_0x00164620();
-  lStack_80 = *(long *)(param_1 + 0x100);
-  piStack_78 = *(int **)(param_1 + 0x108);
-  uVar1 = *(undefined4 *)(param_1 + 0x80);
+  lVar1 = tpidr_el0;
+  lStack_68 = *(long *)(lVar1 + 0x28);
+  uVar3 = func_0x00164620();
+  lStack_80 = *(long *)(p0 + 0x100);
+  piStack_78 = *(int **)(p0 + 0x108);
   if (lStack_80 != 0) {
     *piStack_78 = *piStack_78 + 1;
   }
                     /* try { // try from 00382ffc to 00383007 has its CatchHandler @ 003831c0 */
-  func_0x00167d50(&uStack_88,param_1);
-  fStack_70 = (float)uStack_88 + (float)*(undefined8 *)(param_1 + 0xf0);
-  fStack_6c = (float)((ulong)uStack_88 >> 0x20) +
-              (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20);
+  func_0x00167d50(&uStack_88,p0);
+  fStack_70 = (float)uStack_88 + (float)*(undefined8 *)(p0 + 0xf0);
+  fStack_6c = (float)((ulong)uStack_88 >> 0x20) + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20)
+  ;
                     /* try { // try from 00383018 to 00383023 has its CatchHandler @ 003831bc */
-  func_0x00169f20(&uStack_a0,param_1);
-  fVar7 = *(float *)(param_1 + 0x90);
-  fVar6 = (float)uStack_a0;
+  func_0x00169f20(&uStack_a0,p0);
+  fVar5 = *(float *)(p0 + 0x90);
+  fVar4 = (float)uStack_a0;
                     /* try { // try from 0038302c to 00383077 has its CatchHandler @ 003831d0 */
-  func_0x00169f20(&uStack_a0,param_1);
-  fStack_90 = fVar7 * fVar6;
-  fStack_8c = *(float *)(param_1 + 0x94) * uStack_a0._4_4_;
-  func_0x00169c00(uVar5,param_2,uVar1,&lStack_80,&fStack_70,&fStack_90,param_1 + 0x120,
-                  param_1 + 0x16d,0);
+  func_0x00169f20(&uStack_a0,p0);
+  fStack_90 = fVar5 * fVar4;
+  fStack_8c = *(float *)(p0 + 0x94) * uStack_a0._4_4_;
+  func_0x00169c00(uVar3);
   FUN_00166b20(&lStack_80);
-  uStack_98 = *(undefined8 *)(param_1 + 0x138);
-  uStack_a0 = *(undefined8 *)(param_1 + 0x130);
-  if (*(int *)(param_1 + 0x168) == 1) {
-    fVar6 = *(float *)(param_1 + 0x160);
+  uStack_98 = *(undefined8 *)(p0 + 0x138);
+  uStack_a0 = *(undefined8 *)(p0 + 0x130);
+  if (*(int *)(p0 + 0x168) == 1) {
+    fVar4 = *(float *)(p0 + 0x160);
   }
   else {
-    if (*(int *)(param_1 + 0x168) != 2) goto LAB_003830bc;
-    fVar6 = *(float *)(param_1 + 0x160) / *(float *)(param_1 + 0x164);
+    if (*(int *)(p0 + 0x168) != 2) goto LAB_003830bc;
+    fVar4 = *(float *)(p0 + 0x160) / *(float *)(p0 + 0x164);
   }
-  fVar7 = (float)uStack_98;
-  uVar4 = (ulong)uStack_98 >> 0x20;
-  uStack_98 = CONCAT44((int)uVar4,fVar6 * fVar7);
+  fVar5 = (float)uStack_98;
+  uVar2 = (ulong)uStack_98 >> 0x20;
+  uStack_98 = CONCAT44((int)uVar2,fVar4 * fVar5);
 LAB_003830bc:
-  lStack_b0 = *(long *)(param_1 + 0x110);
-  piStack_a8 = *(int **)(param_1 + 0x118);
-  iVar2 = *(int *)(param_1 + 0x80);
+  lStack_b0 = *(long *)(p0 + 0x110);
+  piStack_a8 = *(int **)(p0 + 0x118);
   if (lStack_b0 != 0) {
     *piStack_a8 = *piStack_a8 + 1;
   }
                     /* try { // try from 003830d8 to 003830e3 has its CatchHandler @ 003831b8 */
-  func_0x00167d50(&fStack_90,param_1);
-  uStack_88 = CONCAT44(fStack_8c + (float)((ulong)*(undefined8 *)(param_1 + 0x148) >> 0x20) +
-                       (float)((ulong)*(undefined8 *)(param_1 + 0x140) >> 0x20),
-                       fStack_90 + (float)*(undefined8 *)(param_1 + 0x148) +
-                       (float)*(undefined8 *)(param_1 + 0x140));
+  func_0x00167d50(&fStack_90,p0);
+  uStack_88 = CONCAT44(fStack_8c + (float)((ulong)*(undefined8 *)(p0 + 0x148) >> 0x20) +
+                       (float)((ulong)*(undefined8 *)(p0 + 0x140) >> 0x20),
+                       fStack_90 + (float)*(undefined8 *)(p0 + 0x148) +
+                       (float)*(undefined8 *)(p0 + 0x140));
                     /* try { // try from 003830f8 to 00383103 has its CatchHandler @ 003831b4 */
-  func_0x00169f20(&fStack_70,param_1);
-  fVar6 = fStack_70;
-  fVar8 = *(float *)(param_1 + 0x90);
-  fVar7 = *(float *)(param_1 + 0x160);
+  func_0x00169f20(&fStack_70,p0);
                     /* try { // try from 00383110 to 0038316b has its CatchHandler @ 003831c4 */
-  func_0x00169f20(&fStack_70,param_1);
-  fStack_b8 = fVar8 * fVar6 * fVar7 * *(float *)(param_1 + 0x150);
-  fStack_b4 = *(float *)(param_1 + 0x94) * fStack_6c * *(float *)(param_1 + 0x154);
-  func_0x00169c00(uVar5,param_2,iVar2 + 1,&lStack_b0,&uStack_88,&fStack_b8,&uStack_a0,
-                  param_1 + 0x16d,0);
+  func_0x00169f20(&fStack_70,p0);
+  func_0x00169c00(uVar3);
   FUN_00166b20(&lStack_b0);
-  FUN_001722b0(param_1,param_2);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
+  FUN_001722b0(p0);
+  if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return;
   }
   FUN_00164ff0();

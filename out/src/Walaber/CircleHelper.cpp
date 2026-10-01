@@ -10,21 +10,22 @@
    bool, Walaber::Color const&) */
 
 void Walaber::CircleHelper::drawFilledCircleSegment
-               (undefined8 param_1,undefined1 param_2 [16],float param_3,undefined4 *param_4,
-               ulong param_5,undefined8 param_6)
+               (Walaber__Vector2 *p0,float p1,float p2,float p3,bool p4,Walaber__Color *p5)
 
 {
   int iVar1;
   int iVar2;
   float fVar3;
+  undefined4 in_register_00005004;
+  undefined4 in_register_00005024;
   float fVar4;
   
-  func_0x0016fb60(param_6);
-  iVar1 = (int)((param_3 / 360.0) * 32.0);
+  func_0x0016fb60(p5);
+  iVar1 = (int)((p3 / 360.0) * 32.0);
   iVar2 = iVar1;
   if (iVar1 < 0x20) {
     iVar2 = iVar1 + 1;
-    fVar4 = (mSegStep * (float)iVar1 + ((param_3 / 360.0) * 32.0 - (float)iVar1) * mSegStep) *
+    fVar4 = (mSegStep * (float)iVar1 + ((p3 / 360.0) * 32.0 - (float)iVar1) * mSegStep) *
             0.017453292;
     fVar3 = (float)func_0x0016ee90(fVar4);
     fVar4 = (float)func_0x00174170(fVar4);
@@ -39,13 +40,13 @@ void Walaber::CircleHelper::drawFilledCircleSegment
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_4,param_4[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  fVar3 = param_2._0_4_;
-  if ((param_5 & 1) == 0) {
-    fVar3 = -param_2._0_4_;
+  func_0x0016b2a0(*(undefined4 *)p0,*(undefined4 *)(p0 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p1),0,0,0x3f800000);
+  fVar3 = p2;
+  if (!p4) {
+    fVar3 = -p2;
   }
-  func_0x0016d020(param_2._0_8_,fVar3,0x3f800000);
+  func_0x0016d020(CONCAT44(in_register_00005024,p2),fVar3,0x3f800000);
   func_0x0016eaf0(4,0,iVar2 * 3);
   func_0x00165200();
   func_0x0016c400();
@@ -61,7 +62,7 @@ void Walaber::CircleHelper::drawFilledCircleSegment
 
 /* Walaber::CircleHelper::_resetVerts(Walaber::Color const&) */
 
-void Walaber::CircleHelper::_resetVerts(undefined4 *param_1)
+void Walaber::CircleHelper::_resetVerts(Walaber__Color *p0)
 
 {
   undefined4 uVar1;
@@ -88,7 +89,7 @@ void Walaber::CircleHelper::_resetVerts(undefined4 *param_1)
     pfVar3[2] = fVar4 + fVar5 * 0.0;
     pfVar3 = pfVar3 + 6;
   } while (lVar2 != 0x20);
-  uVar1 = *param_1;
+  uVar1 = *(undefined4 *)p0;
   lVar2 = 0;
   do {
     *(ulong *)(mVertColors + lVar2 + 8) = CONCAT44(uVar1,uVar1);
@@ -108,23 +109,24 @@ void Walaber::CircleHelper::_resetVerts(undefined4 *param_1)
    Walaber::Color const&) */
 
 void Walaber::CircleHelper::drawCurvedArrow
-               (undefined8 param_1,undefined8 param_2,float param_3,undefined4 param_4,
-               undefined4 *param_5,ulong param_6,undefined8 param_7)
+               (Walaber__Vector2 *p0,float p1,float p2,float p3,bool p4,float p5,Walaber__Color *p6)
 
 {
   long lVar1;
   float *pfVar2;
   float fVar3;
   float fVar4;
+  undefined4 in_register_00005004;
+  undefined4 in_register_00005024;
   float fVar5;
   float fVar6;
   float fVar7;
   
-  func_0x0016fb60(param_7);
+  func_0x0016fb60(p6);
   lVar1 = 0;
   pfVar2 = (float *)&DAT_0072d900;
   do {
-    fVar7 = param_3 * 0.03125 * (float)(int)lVar1 * 0.017453292;
+    fVar7 = p3 * 0.03125 * (float)(int)lVar1 * 0.017453292;
     fVar3 = (float)func_0x0016ee90(fVar7);
     fVar7 = (float)func_0x00174170(fVar7);
     lVar1 = lVar1 + 1;
@@ -132,14 +134,14 @@ void Walaber::CircleHelper::drawCurvedArrow
     *pfVar2 = fVar3 + fVar7 * 0.0;
     pfVar2 = pfVar2 + 2;
   } while (lVar1 != 0x20);
-  fVar7 = (float)func_0x0016ee90(param_3 * 0.017453292);
-  fVar4 = (float)func_0x00174170(param_3 * 0.017453292);
+  fVar7 = (float)func_0x0016ee90(p3 * 0.017453292);
+  fVar4 = (float)func_0x00174170(p3 * 0.017453292);
   fVar3 = 10.0;
-  if (param_3 <= 0.0) {
+  if (p3 <= 0.0) {
     fVar3 = -10.0;
   }
   fVar5 = fVar7 * 0.0 - fVar4;
-  fVar6 = (param_3 - fVar3) * 0.017453292;
+  fVar6 = (p3 - fVar3) * 0.017453292;
   fVar7 = fVar7 + fVar4 * 0.0;
   DAT_0072d9fc = fVar5;
   DAT_0072da00 = fVar7;
@@ -160,14 +162,14 @@ void Walaber::CircleHelper::drawCurvedArrow
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_5,param_5[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  fVar3 = (float)param_2;
-  if ((param_6 & 1) == 0) {
-    fVar3 = -(float)param_2;
+  func_0x0016b2a0(*(undefined4 *)p0,*(undefined4 *)(p0 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p1),0,0,0x3f800000);
+  fVar3 = p2;
+  if (!p4) {
+    fVar3 = -p2;
   }
-  func_0x0016d020(fVar3,param_2,0x3f800000);
-  func_0x001630a0(param_4);
+  func_0x0016d020(fVar3,CONCAT44(in_register_00005024,p2),0x3f800000);
+  func_0x001630a0(p5);
   func_0x0016eaf0(3,0,0x24);
   func_0x00165200();
   func_0x0016c400();

@@ -8,10 +8,12 @@
 
 /* Walaber::Bone::setSkeleton(Walaber::Skeleton*) */
 
-void Walaber::Bone::setSkeleton(long param_1,undefined8 param_2)
+void Walaber::Bone::setSkeleton(Walaber__Skeleton *p0)
 
 {
-  *(undefined8 *)(param_1 + 0x80) = param_2;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x80) = in_x1;
   return;
 }
 
@@ -23,7 +25,7 @@ void Walaber::Bone::setSkeleton(long param_1,undefined8 param_2)
 
 /* Walaber::Bone::~Bone() */
 
-void Walaber::Bone::~Bone(undefined8 param_1)
+void Walaber::Bone::~Bone(void *param_1)
 
 {
   FUN_0016e800();

@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurch
 void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(long param_1)
 
 {
-  func_0x001720a0(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x001720a0((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -39,10 +39,10 @@ void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurch
 
 /* non-virtual thunk to WaterConcept::Screen_InAppPurchase::messageRx(Walaber::Message const&) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::messageRx(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
 
 {
-  func_0x00171f90(param_1 + -0x90);
+  func_0x00171f90(p0 + -0x90);
   return;
 }
 
@@ -55,10 +55,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::messageRx(long par
 /* non-virtual thunk to WaterConcept::Screen_InAppPurchase::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00171250(param_1 + -0x20);
+  func_0x00171250((ulong)(uint)p0 - 0x20);
   return;
 }
 

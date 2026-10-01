@@ -46,25 +46,26 @@ void Walaber::Transition_Fade::~Transition_Fade(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Fade::setup(float) */
 
-void Walaber::Transition_Fade::setup(undefined4 param_1,long param_2)
+void Walaber::Transition_Fade::setup(float p0)
 
 {
   undefined8 uVar1;
+  long in_x0;
   
-  *(undefined4 *)(param_2 + 0x70) = 0;
-  *(undefined1 *)(param_2 + 0xc4) = 0;
-  *(undefined4 *)(param_2 + 0x78) = 0;
-  *(undefined1 *)(param_2 + 0x7c) = 0;
-  *(undefined4 *)(param_2 + 0x74) = param_1;
-  *(undefined4 *)(param_2 + 200) = 0;
+  *(undefined4 *)(in_x0 + 0x70) = 0;
+  *(undefined1 *)(in_x0 + 0xc4) = 0;
+  *(undefined4 *)(in_x0 + 0x78) = 0;
+  *(undefined1 *)(in_x0 + 0x7c) = 0;
+  *(float *)(in_x0 + 0x74) = p0;
+  *(undefined4 *)(in_x0 + 200) = 0;
   uVar1 = _sScreenSize;
-  *(undefined8 *)(param_2 + 0xcc) = _sScreenSize;
-  *(undefined4 *)(param_2 + 0xe4) = 0xff000000;
-  *(undefined8 *)(param_2 + 0x90) = 0;
-  *(undefined4 *)(param_2 + 0xc0) = 0;
-  *(ulong *)(param_2 + 0xd4) =
+  *(undefined8 *)(in_x0 + 0xcc) = _sScreenSize;
+  *(undefined4 *)(in_x0 + 0xe4) = 0xff000000;
+  *(undefined8 *)(in_x0 + 0x90) = 0;
+  *(undefined4 *)(in_x0 + 0xc0) = 0;
+  *(ulong *)(in_x0 + 0xd4) =
        CONCAT44((float)((ulong)uVar1 >> 0x20) * 0.5 + 0.0,(float)uVar1 * 0.5 + 0.0);
-  *(undefined8 *)(param_2 + 0xdc) = 0;
+  *(undefined8 *)(in_x0 + 0xdc) = 0;
   return;
 }
 
@@ -76,29 +77,30 @@ void Walaber::Transition_Fade::setup(undefined4 param_1,long param_2)
 
 /* Walaber::Transition_Fade::setup(float, Walaber::PropertyList const&) */
 
-void Walaber::Transition_Fade::setup(undefined8 param_1,undefined8 *param_2,undefined8 param_3)
+void Walaber::Transition_Fade::setup(float p0,Walaber__PropertyList *p1)
 
 {
   int iVar1;
   ulong uVar2;
+  undefined4 in_register_00005004;
   
-  (**(code **)*param_2)();
-  func_0x0016b0c0(param_1,param_2,param_3);
-  *(undefined4 *)(param_2 + 0x1c) = 0;
-  *(undefined2 *)((long)param_2 + 0xe4) = *(undefined2 *)((long)param_2 + 0xdc);
-  *(undefined1 *)((long)param_2 + 0xe6) = *(undefined1 *)((long)param_2 + 0xde);
-  *(undefined1 *)((long)param_2 + 0xe7) = 0xff;
-  uVar2 = func_0x00173810(param_3,&Transition::tk_fadeIn);
+  (*(code *)**(undefined8 **)p1)();
+  func_0x0016b0c0(CONCAT44(in_register_00005004,p0),p1);
+  *(undefined4 *)(p1 + 0xe0) = 0;
+  *(undefined2 *)(p1 + 0xe4) = *(undefined2 *)(p1 + 0xdc);
+  p1[0xe6] = p1[0xde];
+  p1[0xe7] = (Walaber__PropertyList)0xff;
+  uVar2 = func_0x00173810();
   if ((uVar2 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_fadeIn);
+    func_0x00167060();
     iVar1 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x81) = iVar1 == 1;
+    p1[0x81] = (Walaber__PropertyList)(iVar1 == 1);
   }
-  uVar2 = func_0x00173810(param_3,&Transition::tk_fadeOut);
+  uVar2 = func_0x00173810();
   if ((uVar2 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_fadeOut);
+    func_0x00167060();
     iVar1 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x82) = iVar1 == 1;
+    p1[0x82] = (Walaber__PropertyList)(iVar1 == 1);
   }
   return;
 }
@@ -112,7 +114,7 @@ void Walaber::Transition_Fade::setup(undefined8 param_1,undefined8 *param_2,unde
 /* WARNING: Removing unreachable block (ram,0x003f4e10) */
 /* Walaber::Transition_Fade::update(float) */
 
-undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
+undefined4 Walaber::Transition_Fade::update(float p0)
 
 {
   int iVar1;
@@ -127,35 +129,37 @@ undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
   byte bVar10;
   byte bVar11;
   byte bVar12;
+  long in_x0;
   undefined4 uVar13;
   float fVar14;
   float fVar15;
+  float fVar16;
   
-  param_1 = *(float *)(param_2 + 0x70) + param_1;
-  fVar14 = *(float *)(param_2 + 0x74) * 0.5;
-  *(float *)(param_2 + 0x70) = param_1;
-  if (fVar14 <= param_1) {
-    if (*(char *)(param_2 + 0xc4) == '\0') {
-      *(undefined4 *)(param_2 + 0xdc) = *(undefined4 *)(param_2 + 0xe4);
+  fVar15 = *(float *)(in_x0 + 0x70) + p0;
+  fVar14 = *(float *)(in_x0 + 0x74) * 0.5;
+  *(float *)(in_x0 + 0x70) = fVar15;
+  if (fVar14 <= fVar15) {
+    if (*(char *)(in_x0 + 0xc4) == '\0') {
+      *(undefined4 *)(in_x0 + 0xdc) = *(undefined4 *)(in_x0 + 0xe4);
       uVar13 = 1;
-      *(undefined4 *)(param_2 + 0xc0) = *(undefined4 *)(param_2 + 0x87);
-      if (*(char *)(param_2 + 0x7c) == '\0') {
-        *(undefined1 *)(param_2 + 0x7c) = 1;
+      *(undefined4 *)(in_x0 + 0xc0) = *(undefined4 *)(in_x0 + 0x87);
+      if (*(char *)(in_x0 + 0x7c) == '\0') {
+        *(undefined1 *)(in_x0 + 0x7c) = 1;
       }
       else {
-        *(undefined1 *)(param_2 + 0xc4) = 1;
+        *(undefined1 *)(in_x0 + 0xc4) = 1;
         uVar13 = 2;
       }
     }
     else {
-      fVar15 = *(float *)(param_2 + 0x78);
-      if (*(float *)(param_2 + 0x74) + fVar15 <= param_1) {
-        *(undefined4 *)(param_2 + 0xdc) = *(undefined4 *)(param_2 + 0xe0);
+      fVar16 = *(float *)(in_x0 + 0x78);
+      if (*(float *)(in_x0 + 0x74) + fVar16 <= fVar15) {
+        *(undefined4 *)(in_x0 + 0xdc) = *(undefined4 *)(in_x0 + 0xe0);
         uVar13 = 4;
       }
       else {
-        if (fVar14 + fVar15 <= param_1) {
-          fVar14 = ((param_1 - fVar15) - fVar14) / fVar14;
+        if (fVar14 + fVar16 <= fVar15) {
+          fVar14 = ((fVar15 - fVar16) - fVar14) / fVar14;
           fVar15 = fVar14;
           if (1.0 < fVar14) {
             fVar15 = 1.0;
@@ -163,49 +167,49 @@ undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
           if (fVar14 <= 0.0) {
             fVar15 = 0.0;
           }
-          iVar1 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe0) -
-                                             (uint)*(byte *)(param_2 + 0xe4))) +
-                  (uint)*(byte *)(param_2 + 0xe4);
-          iVar2 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe1) -
-                                             (uint)*(byte *)(param_2 + 0xe5))) +
-                  (uint)*(byte *)(param_2 + 0xe5);
-          iVar3 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe2) -
-                                             (uint)*(byte *)(param_2 + 0xe6))) +
-                  (uint)*(byte *)(param_2 + 0xe6);
+          iVar1 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe0) -
+                                             (uint)*(byte *)(in_x0 + 0xe4))) +
+                  (uint)*(byte *)(in_x0 + 0xe4);
+          iVar2 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe1) -
+                                             (uint)*(byte *)(in_x0 + 0xe5))) +
+                  (uint)*(byte *)(in_x0 + 0xe5);
+          iVar3 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe2) -
+                                             (uint)*(byte *)(in_x0 + 0xe6))) +
+                  (uint)*(byte *)(in_x0 + 0xe6);
           if (0xfe < iVar1) {
             iVar1 = 0xff;
           }
-          iVar4 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe3) -
-                                             (uint)*(byte *)(param_2 + 0xe7))) +
-                  (uint)*(byte *)(param_2 + 0xe7);
+          iVar4 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe3) -
+                                             (uint)*(byte *)(in_x0 + 0xe7))) +
+                  (uint)*(byte *)(in_x0 + 0xe7);
           if (0xfe < iVar2) {
             iVar2 = 0xff;
           }
-          iVar5 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe0) -
-                                             (uint)*(byte *)(param_2 + 0x87))) +
-                  (uint)*(byte *)(param_2 + 0x87);
+          iVar5 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe0) -
+                                             (uint)*(byte *)(in_x0 + 0x87))) +
+                  (uint)*(byte *)(in_x0 + 0x87);
           if (0xfe < iVar3) {
             iVar3 = 0xff;
           }
-          iVar6 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe1) -
-                                             (uint)*(byte *)(param_2 + 0x88))) +
-                  (uint)*(byte *)(param_2 + 0x88);
-          *(byte *)(param_2 + 0xdc) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+          iVar6 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe1) -
+                                             (uint)*(byte *)(in_x0 + 0x88))) +
+                  (uint)*(byte *)(in_x0 + 0x88);
+          *(byte *)(in_x0 + 0xdc) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
           if (0xfe < iVar4) {
             iVar4 = 0xff;
           }
-          iVar1 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe2) -
-                                             (uint)*(byte *)(param_2 + 0x89))) +
-                  (uint)*(byte *)(param_2 + 0x89);
-          *(byte *)(param_2 + 0xdd) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xde) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+          iVar1 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe2) -
+                                             (uint)*(byte *)(in_x0 + 0x89))) +
+                  (uint)*(byte *)(in_x0 + 0x89);
+          *(byte *)(in_x0 + 0xdd) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xde) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
           if (0xfe < iVar5) {
             iVar5 = 0xff;
           }
-          iVar2 = (int)(fVar15 * (float)(int)((uint)*(byte *)(param_2 + 0xe3) -
-                                             (uint)*(byte *)(param_2 + 0x8a))) +
-                  (uint)*(byte *)(param_2 + 0x8a);
-          *(byte *)(param_2 + 0xdf) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+          iVar2 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe3) -
+                                             (uint)*(byte *)(in_x0 + 0x8a))) +
+                  (uint)*(byte *)(in_x0 + 0x8a);
+          *(byte *)(in_x0 + 0xdf) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
           if (0xfe < iVar6) {
             iVar6 = 0xff;
           }
@@ -215,37 +219,35 @@ undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
           if (0xfe < iVar2) {
             iVar2 = 0xff;
           }
-          *(byte *)(param_2 + 0xc0) = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xc1) = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xc2) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xc3) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc0) = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc1) = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc2) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc3) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
         }
         uVar13 = 3;
       }
     }
   }
   else {
-    bVar9 = *(byte *)(param_2 + 0xe0);
-    bVar10 = *(byte *)(param_2 + 0xe1);
-    bVar11 = *(byte *)(param_2 + 0xe2);
-    bVar12 = *(byte *)(param_2 + 0xe3);
-    param_1 = param_1 / fVar14;
-    if (param_1 <= 0.0) {
-      param_1 = 0.0;
+    bVar9 = *(byte *)(in_x0 + 0xe0);
+    bVar10 = *(byte *)(in_x0 + 0xe1);
+    bVar11 = *(byte *)(in_x0 + 0xe2);
+    bVar12 = *(byte *)(in_x0 + 0xe3);
+    fVar15 = fVar15 / fVar14;
+    if (fVar15 <= 0.0) {
+      fVar15 = 0.0;
     }
-    iVar1 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0xe4) - (uint)bVar9)) +
-            (uint)bVar9;
-    iVar2 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0x87) - (uint)bVar9)) +
-            (uint)bVar9;
-    iVar3 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0xe6) - (uint)bVar11)) +
+    iVar1 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe4) - (uint)bVar9)) + (uint)bVar9;
+    iVar2 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0x87) - (uint)bVar9)) + (uint)bVar9;
+    iVar3 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe6) - (uint)bVar11)) +
             (uint)bVar11;
-    iVar4 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0x89) - (uint)bVar11)) +
+    iVar4 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0x89) - (uint)bVar11)) +
             (uint)bVar11;
-    iVar5 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0xe5) - (uint)bVar10)) +
+    iVar5 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe5) - (uint)bVar10)) +
             (uint)bVar10;
-    iVar6 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0xe7) - (uint)bVar12)) +
+    iVar6 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0xe7) - (uint)bVar12)) +
             (uint)bVar12;
-    iVar7 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0x8a) - (uint)bVar12)) +
+    iVar7 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0x8a) - (uint)bVar12)) +
             (uint)bVar12;
     if (0xfe < iVar1) {
       iVar1 = 0xff;
@@ -256,9 +258,9 @@ undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
     if (0xfe < iVar3) {
       iVar3 = 0xff;
     }
-    iVar8 = (int)(param_1 * (float)(int)((uint)*(byte *)(param_2 + 0x88) - (uint)bVar10)) +
+    iVar8 = (int)(fVar15 * (float)(int)((uint)*(byte *)(in_x0 + 0x88) - (uint)bVar10)) +
             (uint)bVar10;
-    *(byte *)(param_2 + 0xdc) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xdc) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
     if (0xfe < iVar6) {
       iVar6 = 0xff;
     }
@@ -271,16 +273,16 @@ undefined4 Walaber::Transition_Fade::update(float param_1,long param_2)
     if (0xfe < iVar4) {
       iVar4 = 0xff;
     }
-    *(byte *)(param_2 + 0xc0) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc0) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
     if (0xfe < iVar7) {
       iVar7 = 0xff;
     }
-    *(byte *)(param_2 + 0xdd) = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xc1) = (byte)iVar8 & ((byte)(iVar8 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xde) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xdf) = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xc2) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xc3) = (byte)iVar7 & ((byte)(iVar7 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xdd) = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc1) = (byte)iVar8 & ((byte)(iVar8 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xde) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xdf) = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc2) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc3) = (byte)iVar7 & ((byte)(iVar7 >> 0x1f) ^ 0xff);
     uVar13 = 1;
   }
   return uVar13;

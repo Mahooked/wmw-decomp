@@ -8,11 +8,12 @@
 
 /* Walaber::Color::fromHSV(float, float, float) */
 
-void Walaber::Color::fromHSV(byte *param_1,float param_2,float param_3,float param_4)
+void Walaber::Color::fromHSV(float p0,float p1,float p2)
 
 {
   byte bVar1;
   byte bVar2;
+  byte *in_x8;
   byte bVar3;
   int iVar4;
   uint uVar5;
@@ -23,12 +24,12 @@ void Walaber::Color::fromHSV(byte *param_1,float param_2,float param_3,float par
   float fVar10;
   float fVar11;
   
-  param_1[0] = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  param_1[3] = 0xff;
-  if (param_3 == 0.0) {
-    iVar4 = (int)(param_4 * 255.0);
+  in_x8[0] = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  in_x8[3] = 0xff;
+  if (p1 == 0.0) {
+    iVar4 = (int)(p2 * 255.0);
     if (0xfe < iVar4) {
       iVar4 = 0xff;
     }
@@ -37,22 +38,22 @@ void Walaber::Color::fromHSV(byte *param_1,float param_2,float param_3,float par
     bVar2 = bVar3;
     goto LAB_00358df4;
   }
-  fVar10 = (1.0 - param_3) * param_4;
-  uVar5 = (uint)(param_2 / 60.0);
-  fVar11 = param_2 / 60.0 - (float)(int)uVar5;
-  fVar8 = (1.0 - fVar11 * param_3) * param_4;
+  fVar10 = (1.0 - p1) * p2;
+  uVar5 = (uint)(p0 / 60.0);
+  fVar11 = p0 / 60.0 - (float)(int)uVar5;
+  fVar8 = (1.0 - fVar11 * p1) * p2;
   if (4 < uVar5) {
 LAB_00358dc8:
     fVar9 = fVar8 * 255.0;
-    iVar4 = (int)(param_4 * 255.0);
+    iVar4 = (int)(p2 * 255.0);
     iVar6 = (int)(fVar10 * 255.0);
     goto LAB_00358dd0;
   }
-  fVar11 = (1.0 - (1.0 - fVar11) * param_3) * param_4;
+  fVar11 = (1.0 - (1.0 - fVar11) * p1) * p2;
   switch(uVar5) {
   case 0:
     fVar9 = fVar10 * 255.0;
-    iVar4 = (int)(param_4 * 255.0);
+    iVar4 = (int)(p2 * 255.0);
     iVar6 = (int)(fVar11 * 255.0);
     break;
   case 1:
@@ -62,19 +63,19 @@ LAB_00358dc8:
   case 2:
     fVar9 = fVar11 * 255.0;
     iVar4 = (int)(fVar10 * 255.0);
-    iVar6 = (int)(param_4 * 255.0);
+    iVar6 = (int)(p2 * 255.0);
     break;
   case 3:
-    fVar9 = param_4;
-    param_4 = fVar8;
+    fVar9 = p2;
+    p2 = fVar8;
 LAB_00358da4:
     fVar9 = fVar9 * 255.0;
-    iVar6 = (int)(param_4 * 255.0);
+    iVar6 = (int)(p2 * 255.0);
     iVar4 = (int)(fVar10 * 255.0);
     break;
   case 4:
-    fVar8 = param_4;
-    param_4 = fVar11;
+    fVar8 = p2;
+    p2 = fVar11;
     goto LAB_00358dc8;
   }
 LAB_00358dd0:
@@ -92,10 +93,10 @@ LAB_00358dd0:
   bVar1 = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
   bVar2 = (byte)iVar7 & ((byte)(iVar7 >> 0x1f) ^ 0xff);
 LAB_00358df4:
-  *param_1 = bVar3;
-  param_1[1] = bVar1;
-  param_1[2] = bVar2;
-  param_1[3] = 0xff;
+  *in_x8 = bVar3;
+  in_x8[1] = bVar1;
+  in_x8[2] = bVar2;
+  in_x8[3] = 0xff;
   return;
 }
 
@@ -107,12 +108,12 @@ LAB_00358df4:
 
 /* Walaber::Color::isCloseEnough(Walaber::Color const&, Walaber::Color const&) */
 
-bool Walaber::Color::isCloseEnough(byte *param_1,byte *param_2)
+bool Walaber::Color::isCloseEnough(Walaber__Color *p0,Walaber__Color *p1)
 
 {
-  return ((uint)param_2[1] - (uint)param_1[1]) * ((uint)param_2[1] - (uint)param_1[1]) +
-         ((uint)*param_2 - (uint)*param_1) * ((uint)*param_2 - (uint)*param_1) +
-         ((uint)param_2[2] - (uint)param_1[2]) * ((uint)param_2[2] - (uint)param_1[2]) < 0x4b;
+  return ((uint)(byte)p1[1] - (uint)(byte)p0[1]) * ((uint)(byte)p1[1] - (uint)(byte)p0[1]) +
+         ((uint)(byte)*p1 - (uint)(byte)*p0) * ((uint)(byte)*p1 - (uint)(byte)*p0) +
+         ((uint)(byte)p1[2] - (uint)(byte)p0[2]) * ((uint)(byte)p1[2] - (uint)(byte)p0[2]) < 0x4b;
 }
 
 
@@ -123,62 +124,60 @@ bool Walaber::Color::isCloseEnough(byte *param_1,byte *param_2)
 
 /* Walaber::Color::getClosestColor(Walaber::Color const&, int&, Walaber::Color const*, int) */
 
-void Walaber::Color::getClosestColor
-               (byte *param_1,byte *param_2,undefined4 *param_3,long param_4,int param_5)
+void Walaber::Color::getClosestColor(Walaber__Color *p0,int *p1,Walaber__Color *p2,int p3)
 
 {
+  Walaber__Color *in_x8;
   long lVar1;
-  byte *pbVar2;
-  byte bVar3;
+  Walaber__Color *pWVar2;
+  Walaber__Color WVar3;
   float fVar4;
-  byte bVar5;
+  Walaber__Color WVar5;
   float fVar6;
-  byte bVar7;
+  Walaber__Color WVar7;
   float fVar8;
   float fVar9;
   float fVar10;
   float fVar11;
   
-  bVar3 = *param_2;
-  bVar5 = param_2[1];
-  bVar7 = param_2[2];
-  param_1[0] = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  param_1[3] = 0xff;
-  if (0 < param_5) {
+  WVar3 = *p0;
+  WVar5 = p0[1];
+  WVar7 = p0[2];
+  *(undefined4 *)in_x8 = 0xff000000;
+  if (0 < p3) {
     fVar9 = 200000.0;
     lVar1 = 0;
-    fVar4 = (float)NEON_ucvtf((uint)bVar3);
-    fVar6 = (float)NEON_ucvtf((uint)bVar5);
-    fVar8 = (float)NEON_ucvtf((uint)bVar7);
-    pbVar2 = (byte *)(param_4 + 3);
+    fVar4 = (float)NEON_ucvtf((uint)(byte)WVar3);
+    fVar6 = (float)NEON_ucvtf((uint)(byte)WVar5);
+    fVar8 = (float)NEON_ucvtf((uint)(byte)WVar7);
+    pWVar2 = p2 + 3;
     do {
-      bVar3 = pbVar2[-3];
-      bVar5 = pbVar2[-2];
-      bVar7 = pbVar2[-1];
-      fVar10 = (float)bVar5 - fVar6;
-      fVar11 = (float)bVar7 - fVar8;
-      fVar10 = ((float)bVar3 - fVar4) * ((float)bVar3 - fVar4) + fVar10 * fVar10 + fVar11 * fVar11;
+      WVar3 = pWVar2[-3];
+      WVar5 = pWVar2[-2];
+      WVar7 = pWVar2[-1];
+      fVar10 = (float)(byte)WVar5 - fVar6;
+      fVar11 = (float)(byte)WVar7 - fVar8;
+      fVar10 = ((float)(byte)WVar3 - fVar4) * ((float)(byte)WVar3 - fVar4) + fVar10 * fVar10 +
+               fVar11 * fVar11;
       if (fVar10 == 0.0) {
-        *param_1 = bVar3;
-        param_1[1] = pbVar2[-2];
-        param_1[2] = pbVar2[-1];
-        param_1[3] = *pbVar2;
-        *param_3 = (int)lVar1;
+        *in_x8 = WVar3;
+        in_x8[1] = pWVar2[-2];
+        in_x8[2] = pWVar2[-1];
+        in_x8[3] = *pWVar2;
+        *p1 = (int)lVar1;
         return;
       }
       if (fVar10 < fVar9) {
-        *param_1 = bVar3;
-        param_1[1] = bVar5;
-        param_1[2] = bVar7;
-        param_1[3] = *pbVar2;
-        *param_3 = (int)lVar1;
+        *in_x8 = WVar3;
+        in_x8[1] = WVar5;
+        in_x8[2] = WVar7;
+        in_x8[3] = *pWVar2;
+        *p1 = (int)lVar1;
         fVar9 = fVar10;
       }
       lVar1 = lVar1 + 1;
-      pbVar2 = pbVar2 + 4;
-    } while (lVar1 < param_5);
+      pWVar2 = pWVar2 + 4;
+    } while (lVar1 < p3);
   }
   return;
 }

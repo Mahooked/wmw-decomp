@@ -8,81 +8,83 @@
 
 /* std::__ndk1::moneypunct_byname<char, true>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<char,true>::init(long param_1,undefined8 param_2)
+void std::__ndk1::moneypunct_byname<char,true>::init(char *p0)
 
 {
-  uint uVar1;
-  long lVar2;
+  char *pcVar1;
+  uint uVar2;
   long lVar3;
   long lVar4;
   long lVar5;
-  ulong uVar6;
-  ulong *puVar7;
-  undefined8 uVar8;
-  ulong uVar9;
-  ulong uVar10;
+  long lVar6;
+  ulong uVar7;
+  ulong *puVar8;
+  undefined8 uVar9;
+  undefined8 in_x1;
+  void *pvVar10;
+  ulong p0_00;
   ulong uStack_78;
   ulong uStack_70;
-  ulong uStack_68;
+  void *pvStack_68;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
-  lVar3 = FUN_00164730(0x1fbf,param_2,0);
-  if (lVar3 != 0) {
+  lVar3 = tpidr_el0;
+  lStack_48 = *(long *)(lVar3 + 0x28);
+  lVar4 = FUN_00164730(0x1fbf,in_x1,0);
+  if (lVar4 != 0) {
                     /* try { // try from 005c5e9c to 005c5e9f has its CatchHandler @ 005c612c */
-    lVar4 = FUN_0016a870();
+    lVar5 = FUN_0016a870();
                     /* try { // try from 005c5ea4 to 005c5ea7 has its CatchHandler @ 005c60fc */
-    lVar5 = func_0x0016e280();
-    if (lVar4 != 0) {
+    lVar6 = func_0x0016e280();
+    if (lVar5 != 0) {
                     /* try { // try from 005c5eb0 to 005c5eb7 has its CatchHandler @ 005c60f0 */
-      FUN_0016a870(lVar4);
+      FUN_0016a870(lVar5);
     }
                     /* try { // try from 005c5ec0 to 005c5f73 has its CatchHandler @ 005c612c */
-    uVar6 = func_0x005dc4f0((undefined1 *)(param_1 + 0x10),*(undefined8 *)(lVar5 + 0x28),lVar3);
-    if ((uVar6 & 1) == 0) {
-      *(undefined1 *)(param_1 + 0x10) = 0xff;
+    uVar7 = func_0x005dc4f0(p0 + 0x10,*(undefined8 *)(lVar6 + 0x28),lVar4);
+    if ((uVar7 & 1) == 0) {
+      p0[0x10] = -1;
     }
-    uVar6 = func_0x005dc4f0((undefined1 *)(param_1 + 0x11),*(undefined8 *)(lVar5 + 0x30),lVar3);
-    if ((uVar6 & 1) == 0) {
-      *(undefined1 *)(param_1 + 0x11) = 0xff;
+    uVar7 = func_0x005dc4f0(p0 + 0x11,*(undefined8 *)(lVar6 + 0x30),lVar4);
+    if ((uVar7 & 1) == 0) {
+      p0[0x11] = -1;
     }
-    func_0x00165980(param_1 + 0x18,*(undefined8 *)(lVar5 + 0x38));
-    lVar4 = param_1 + 0x30;
-    func_0x00165980(lVar4,*(undefined8 *)(lVar5 + 0x18));
-    uVar1 = 0;
-    if (*(byte *)(lVar5 + 0x50) != 0xff) {
-      uVar1 = (uint)*(byte *)(lVar5 + 0x50);
+    func_0x00165980(p0 + 0x18,*(undefined8 *)(lVar6 + 0x38));
+    pcVar1 = p0 + 0x30;
+    func_0x00165980(pcVar1,*(undefined8 *)(lVar6 + 0x18));
+    uVar2 = 0;
+    if (*(byte *)(lVar6 + 0x50) != 0xff) {
+      uVar2 = (uint)*(byte *)(lVar6 + 0x50);
     }
-    *(uint *)(param_1 + 0x78) = uVar1;
-    if (*(char *)(lVar5 + 0x5c) == '\0') {
-      func_0x00165980(param_1 + 0x48,"()");
-    }
-    else {
-      func_0x00165980(param_1 + 0x48,*(undefined8 *)(lVar5 + 0x40));
-    }
-    if (*(char *)(lVar5 + 0x5d) == '\0') {
-      func_0x00165980(param_1 + 0x60,"()");
+    *(uint *)(p0 + 0x78) = uVar2;
+    if (*(char *)(lVar6 + 0x5c) == '\0') {
+      func_0x00165980(p0 + 0x48,"()");
     }
     else {
-      func_0x00165980(param_1 + 0x60,*(undefined8 *)(lVar5 + 0x48));
+      func_0x00165980(p0 + 0x48,*(undefined8 *)(lVar6 + 0x40));
+    }
+    if (*(char *)(lVar6 + 0x5d) == '\0') {
+      func_0x00165980(p0 + 0x60,"()");
+    }
+    else {
+      func_0x00165980(p0 + 0x60,*(undefined8 *)(lVar6 + 0x48));
     }
                     /* try { // try from 005c5f74 to 005c5f7f has its CatchHandler @ 005c60f8 */
-    FUN_00172fe0(&uStack_60,lVar4);
+    FUN_00172fe0(&uStack_60,pcVar1);
                     /* try { // try from 005c5f90 to 005c5fb7 has its CatchHandler @ 005c6114 */
-    func_0x005e0250(param_1 + 0x7c,&uStack_60,1,*(undefined1 *)(lVar5 + 0x58),
-                    *(undefined1 *)(lVar5 + 0x59),*(undefined1 *)(lVar5 + 0x5c));
-    func_0x005e0250(param_1 + 0x80,lVar4,1,*(undefined1 *)(lVar5 + 0x5a),
-                    *(undefined1 *)(lVar5 + 0x5b),*(undefined1 *)(lVar5 + 0x5d));
+    func_0x005e0250(p0 + 0x7c,&uStack_60,1,*(undefined1 *)(lVar6 + 0x58),
+                    *(undefined1 *)(lVar6 + 0x59),*(undefined1 *)(lVar6 + 0x5c));
+    func_0x005e0250(p0 + 0x80,pcVar1,1,*(undefined1 *)(lVar6 + 0x5a),*(undefined1 *)(lVar6 + 0x5b),
+                    *(undefined1 *)(lVar6 + 0x5d));
     if (((byte)uStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
                     /* try { // try from 005c5fc8 to 005c5fcf has its CatchHandler @ 005c60f4 */
-    FUN_00173520(lVar3);
-    if (*(long *)(lVar2 + 0x28) != lStack_48) {
+    FUN_00173520(lVar4);
+    if (*(long *)(lVar3 + 0x28) != lStack_48) {
       FUN_00164ff0();
       return;
     }
@@ -90,50 +92,50 @@ void std::__ndk1::moneypunct_byname<char,true>::init(long param_1,undefined8 par
   }
   uStack_78 = 0;
   uStack_70 = 0;
-  uStack_68 = 0;
-  uVar6 = FUN_00173480(param_2);
-  if (0xffffffffffffffef < uVar6) {
+  pvStack_68 = (void *)0x0;
+  uVar7 = FUN_00173480();
+  if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 005c6010 to 005c6017 has its CatchHandler @ 005c60e4 */
     FUN_00164180(&uStack_78);
     return;
   }
-  if (uVar6 < 0x17) {
-    uVar9 = (ulong)&uStack_78 | 1;
-    uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar6 << 1));
-    if (uVar6 == 0) goto LAB_005c6070;
+  if (uVar7 < 0x17) {
+    pvVar10 = (void *)((ulong)&uStack_78 | 1);
+    uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar7 << 1));
+    if (uVar7 == 0) goto LAB_005c6070;
   }
   else {
-    uVar10 = uVar6 + 0x10 & 0xfffffffffffffff0;
+    p0_00 = uVar7 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005c6048 to 005c604f has its CatchHandler @ 005c60e4 */
-    uVar9 = FUN_00164060(uVar10);
-    uStack_78 = uVar10 | 1;
-    uStack_70 = uVar6;
-    uStack_68 = uVar9;
+    pvVar10 = (void *)FUN_00164060(p0_00);
+    uStack_78 = p0_00 | 1;
+    uStack_70 = uVar7;
+    pvStack_68 = pvVar10;
   }
-  FUN_001715e0(uVar9,param_2,uVar6);
+  FUN_001715e0(pvVar10);
 LAB_005c6070:
-  *(undefined1 *)(uVar9 + uVar6) = 0;
+  *(undefined1 *)((long)pvVar10 + uVar7) = 0;
                     /* try { // try from 005c6074 to 005c6087 has its CatchHandler @ 005c60c8 */
-  puVar7 = (ulong *)func_0x00161c30(&uStack_78,0,"moneypunct_byname failed to construct for ");
-  uStack_50 = puVar7[2];
-  uStack_58 = puVar7[1];
-  uStack_60 = *puVar7;
-  puVar7[1] = 0;
-  puVar7[2] = 0;
-  *puVar7 = 0;
+  puVar8 = (ulong *)func_0x00161c30(&uStack_78,0,"moneypunct_byname failed to construct for ");
+  pvStack_50 = (void *)puVar8[2];
+  uStack_58 = puVar8[1];
+  uStack_60 = *puVar8;
+  puVar8[1] = 0;
+  puVar8[2] = 0;
+  *puVar8 = 0;
                     /* try { // try from 005c60a0 to 005c60a7 has its CatchHandler @ 005c60a8 */
-  uVar8 = FUN_005d5db0(&uStack_60);
+  uVar9 = FUN_005d5db0(&uStack_60);
                     /* catch(type#1 @ 00000000) { ... } // from try @ 005c60a0 with catch @ 005c60a8
                         */
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
-    FUN_00169180(uVar8);
+    FUN_00166120(pvStack_68);
+    FUN_00169180(uVar9);
     return;
   }
-  FUN_00169180(uVar8);
+  FUN_00169180(uVar9);
   return;
 }
 

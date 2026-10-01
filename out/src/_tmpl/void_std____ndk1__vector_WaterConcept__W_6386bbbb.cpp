@@ -14,10 +14,11 @@
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
      ::__push_back_slow_path<WaterConcept::World::WorldSpoutConnection_const&>
-               (long *param_1,long param_2)
+               (WaterConcept__World__WorldSpoutConnection *p0)
 
 {
   long lVar1;
+  long in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
@@ -28,13 +29,13 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 5;
+  lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = *(long *)(p0 + 0x10) - *(long *)p0;
   if ((ulong)(lVar4 >> 5) < 0x3ffffffffffffff) {
     uVar5 = lVar4 >> 4;
     if (uVar2 <= uVar5) {
@@ -44,13 +45,13 @@ void std::__ndk1::
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  func_0x0016a2d0(auStack_60,uVar2,lVar3,param_1 + 2);
+  func_0x0016a2d0(auStack_60,uVar2,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 004cbe64 to 004cbe8f has its CatchHandler @ 004cbec8 */
-  func_0x0016f720(lStack_50,param_2);
-  *(undefined8 *)(lVar3 + 0x18) = *(undefined8 *)(param_2 + 0x18);
+  func_0x0016f720(lStack_50);
+  *(undefined8 *)(lVar3 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
   lStack_50 = lStack_50 + 0x20;
-  func_0x00163de0(param_1,auStack_60);
+  func_0x00163de0(p0,auStack_60);
   func_0x0016a510(auStack_60);
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

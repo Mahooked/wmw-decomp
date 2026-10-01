@@ -31,11 +31,11 @@ void WaterConcept::ShowerCurtain::ShowerCurtain(long param_1)
 
 /* WaterConcept::ShowerCurtain::~ShowerCurtain() */
 
-void WaterConcept::ShowerCurtain::~ShowerCurtain(long param_1)
+void WaterConcept::ShowerCurtain::~ShowerCurtain(long param_1,ulong param_2)
 
 {
-  if (*(long *)(param_1 + 0xa8) != 0) {
-    FUN_001639e0();
+  if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
+    FUN_001639e0(*(void **)(param_1 + 0xa8),param_2);
   }
                     /* try { // try from 00443b6c to 00443b73 has its CatchHandler @ 00443b8c */
   func_0x0016e950(param_1);
@@ -54,13 +54,13 @@ void WaterConcept::ShowerCurtain::~ShowerCurtain(long param_1)
     */
 
 void WaterConcept::ShowerCurtain::init
-               (float param_1,float param_2,undefined4 param_3,float param_4,float *param_5,
-               int param_6,int param_7,float *param_8)
+               (float p0,float p1,int p2,int p3,Walaber__Vector2 *p4,float p5,float p6)
 
 {
   undefined1 auVar1 [16];
   long lVar2;
-  undefined4 uVar3;
+  float *pfVar3;
+  float *in_x3;
   float fVar4;
   long lVar5;
   float fVar6;
@@ -75,50 +75,52 @@ void WaterConcept::ShowerCurtain::init
   undefined4 uStack_8c;
   long lStack_88;
   
-  fVar4 = DAT_0072d894;
+  fVar9 = DAT_0072d894;
+  pfVar3 = (float *)(ulong)(uint)p2;
   lVar2 = tpidr_el0;
   lStack_88 = *(long *)(lVar2 + 0x28);
-  *param_5 = param_1;
-  param_5[1] = param_2;
-  param_5[0x1e] = fVar4 * param_5[0x1e];
-  fVar9 = *param_8;
-  fVar10 = param_8[1];
-  param_5[5] = (float)(param_6 + 1);
-  param_5[6] = (float)(param_7 + 1);
-  param_5[2] = param_1 / (float)param_6;
-  param_5[3] = param_2 / (float)param_7;
-  func_0x00172b90(param_5 + 8,(param_7 + 1) * (param_6 + 1));
-  fVar4 = param_5[6];
+  *pfVar3 = p0;
+  pfVar3[1] = p1;
+  fVar4 = (float)((int)p4 + 1);
+  pfVar3[0x1e] = fVar9 * pfVar3[0x1e];
+  fVar9 = *in_x3;
+  fVar10 = in_x3[1];
+  pfVar3[5] = (float)(p3 + 1);
+  pfVar3[6] = fVar4;
+  pfVar3[2] = p0 / (float)p3;
+  pfVar3[3] = p1 / (float)(int)p4;
+  func_0x00172b90(pfVar3 + 8,(int)fVar4 * (p3 + 1));
+  fVar4 = pfVar3[6];
   if ((int)fVar4 < 1) {
-    fVar6 = param_5[5];
+    fVar6 = pfVar3[5];
   }
   else {
-    fVar6 = param_5[5];
+    fVar6 = pfVar3[5];
     iVar7 = 0;
     uVar11 = NEON_fmov(0x40a00000,4);
     do {
       if (0 < (int)fVar6) {
         iVar8 = 0;
-        uVar3 = 0;
+        fVar4 = 0.0;
         if (iVar7 != 0) {
-          uVar3 = param_3;
+          fVar4 = p5;
         }
         do {
           uStack_8c = 0;
-          fStack_94 = fVar10 + param_5[3] * (float)iVar7;
-          fStack_98 = fVar9 + param_5[2] * (float)iVar8 * param_4;
+          fStack_94 = fVar10 + pfVar3[3] * (float)iVar7;
+          fStack_98 = fVar9 + pfVar3[2] * (float)iVar8 * p6;
           uStack_a0 = uVar11;
-          func_0x0016c520(uVar3,0,param_5 + 8,&fStack_98,&uStack_a0,&uStack_8c);
-          fVar6 = param_5[5];
+          func_0x0016c520(fVar4,0,pfVar3 + 8,&fStack_98,&uStack_a0,&uStack_8c);
+          fVar6 = pfVar3[5];
           iVar8 = iVar8 + 1;
         } while (iVar8 < (int)fVar6);
-        fVar4 = param_5[6];
+        fVar4 = pfVar3[6];
       }
       iVar7 = iVar7 + 1;
     } while (iVar7 < (int)fVar4);
   }
   fVar4 = (float)(((int)fVar6 * 2 + 2) * ((int)fVar4 + -1));
-  param_5[0x28] = fVar4;
+  pfVar3[0x28] = fVar4;
   auVar1._8_8_ = 0;
   auVar1._0_8_ = (long)(int)fVar4;
   lVar5 = ((-(ulong)((uint)fVar4 >> 0x1f) & 0xfffffffc00000000 | (ulong)(uint)fVar4 << 2) +
@@ -127,7 +129,7 @@ void WaterConcept::ShowerCurtain::init
     lVar5 = -1;
   }
   uVar11 = FUN_00167620(lVar5);
-  *(undefined8 *)(param_5 + 0x2a) = uVar11;
+  *(undefined8 *)(pfVar3 + 0x2a) = uVar11;
   if (*(long *)(lVar2 + 0x28) != lStack_88) {
     FUN_00164ff0();
     return;
@@ -158,24 +160,25 @@ void WaterConcept::ShowerCurtain::setTexture(long param_1)
 
 /* WaterConcept::ShowerCurtain::setTopLeftPosition(Walaber::Vector2 const&, float) */
 
-void WaterConcept::ShowerCurtain::setTopLeftPosition(float param_1,long param_2,undefined8 *param_3)
+void WaterConcept::ShowerCurtain::setTopLeftPosition(Walaber__Vector2 *p0,float p1)
 
 {
   int iVar1;
+  undefined8 *in_x1;
   undefined8 *puVar2;
   long lVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   
-  iVar1 = *(int *)(param_2 + 0x14);
+  iVar1 = *(int *)(p0 + 0x14);
   if (0 < iVar1) {
-    fVar4 = *(float *)(param_2 + 8);
+    fVar4 = *(float *)(p0 + 8);
     lVar3 = 0;
-    puVar2 = *(undefined8 **)(param_2 + 0x20);
+    puVar2 = *(undefined8 **)(p0 + 0x20);
     do {
-      fVar5 = (float)*param_3 + fVar4 * (float)(int)lVar3 * param_1;
-      fVar6 = (float)((ulong)*param_3 >> 0x20) + 0.0;
+      fVar5 = (float)*in_x1 + fVar4 * (float)(int)lVar3 * p1;
+      fVar6 = (float)((ulong)*in_x1 >> 0x20) + 0.0;
       lVar3 = lVar3 + 1;
       puVar2[1] = CONCAT44(fVar6,fVar5);
       *puVar2 = CONCAT44(fVar6,fVar5);
@@ -193,18 +196,20 @@ void WaterConcept::ShowerCurtain::setTopLeftPosition(float param_1,long param_2,
 
 /* WaterConcept::ShowerCurtain::update(float) */
 
-void WaterConcept::ShowerCurtain::update(undefined8 param_1,long param_2)
+void WaterConcept::ShowerCurtain::update(float p0)
 
 {
+  long in_x0;
   int iVar1;
+  undefined4 in_register_00005004;
   
-  if (0 < *(int *)(param_2 + 0x9c)) {
+  if (0 < *(int *)(in_x0 + 0x9c)) {
     iVar1 = 0;
     do {
-      func_0x0016ab00(param_2);
-      func_0x00166b50(param_1,param_2 + 0x20);
+      func_0x0016ab00();
+      func_0x00166b50(CONCAT44(in_register_00005004,p0),in_x0 + 0x20);
       iVar1 = iVar1 + 1;
-    } while (iVar1 < *(int *)(param_2 + 0x9c));
+    } while (iVar1 < *(int *)(in_x0 + 0x9c));
   }
   return;
 }
@@ -450,7 +455,7 @@ void WaterConcept::ShowerCurtain::_applySpringForces(long param_1)
 
 /* WaterConcept::ShowerCurtain::draw(Walaber::SpriteBatch*) */
 
-void WaterConcept::ShowerCurtain::draw(long param_1)
+void WaterConcept::ShowerCurtain::draw(Walaber__SpriteBatch *p0)
 
 {
   int iVar1;
@@ -475,37 +480,37 @@ void WaterConcept::ShowerCurtain::draw(long param_1)
   
   lVar4 = tpidr_el0;
   lStack_a8 = *(long *)(lVar4 + 0x28);
-  iVar10 = *(int *)(param_1 + 0x18);
+  iVar10 = *(int *)(p0 + 0x18);
   if (1 < iVar10) {
-    lVar7 = *(long *)(param_1 + 0x88);
+    lVar7 = *(long *)(p0 + 0x88);
     fVar12 = *(float *)(lVar7 + 0x8c);
     fVar13 = *(float *)(lVar7 + 0x90);
-    iVar6 = *(int *)(param_1 + 0x14);
+    iVar6 = *(int *)(p0 + 0x14);
     iVar8 = 0;
     uVar11 = 0;
     fVar14 = *(float *)(lVar7 + 0x88) - fVar13;
-    fVar15 = (*(float *)(lVar7 + 0x84) - fVar12) * *(float *)(param_1 + 0x10);
+    fVar15 = (*(float *)(lVar7 + 0x84) - fVar12) * *(float *)(p0 + 0x10);
     do {
       if (0 < iVar6) {
         iVar1 = iVar8 + 1;
         iVar9 = 0;
         do {
-          puVar5 = (undefined4 *)(*(long *)(param_1 + 0x20) + (long)(iVar9 + iVar8 * iVar6) * 0x74);
+          puVar5 = (undefined4 *)(*(long *)(p0 + 0x20) + (long)(iVar9 + iVar8 * iVar6) * 0x74);
           uVar2 = *puVar5;
           uVar3 = puVar5[1];
           fVar17 = fVar12 + fVar15 * ((float)iVar9 / (float)(iVar6 + -1));
           fVar16 = fVar13 + fVar14 * ((float)iVar8 / (float)(iVar10 + -1));
-          func_0x0016f600(auStack_b0,param_1,iVar9,iVar8);
+          func_0x0016f600(auStack_b0,p0,iVar9,iVar8);
           iVar10 = (int)uVar11;
           uVar11 = (long)iVar10 + 1;
-          puVar5 = (undefined4 *)(*(long *)(param_1 + 0xa8) + (long)iVar10 * 0x14);
+          puVar5 = (undefined4 *)(*(long *)(p0 + 0xa8) + (long)iVar10 * 0x14);
           *puVar5 = uVar2;
           puVar5[1] = uVar3;
           puVar5[2] = fVar17;
           puVar5[3] = fVar16;
           puVar5[4] = auStack_b0[0];
           if (iVar9 == 0) {
-            puVar5 = (undefined4 *)(*(long *)(param_1 + 0xa8) + uVar11 * 0x14);
+            puVar5 = (undefined4 *)(*(long *)(p0 + 0xa8) + uVar11 * 0x14);
             uVar11 = (ulong)(iVar10 + 2);
             *puVar5 = uVar2;
             puVar5[1] = uVar3;
@@ -514,33 +519,32 @@ void WaterConcept::ShowerCurtain::draw(long param_1)
             puVar5[4] = auStack_b0[0];
           }
           puVar5 = (undefined4 *)
-                   (*(long *)(param_1 + 0x20) +
-                   (long)(iVar9 + iVar1 * *(int *)(param_1 + 0x14)) * 0x74);
+                   (*(long *)(p0 + 0x20) + (long)(iVar9 + iVar1 * *(int *)(p0 + 0x14)) * 0x74);
           uVar2 = *puVar5;
           uVar3 = puVar5[1];
-          fVar17 = fVar12 + fVar15 * ((float)iVar9 / (float)(*(int *)(param_1 + 0x14) + -1));
-          fVar16 = fVar13 + fVar14 * ((float)iVar1 / (float)(*(int *)(param_1 + 0x18) + -1));
-          func_0x0016f600(auStack_b0,param_1,iVar9,iVar1);
+          fVar17 = fVar12 + fVar15 * ((float)iVar9 / (float)(*(int *)(p0 + 0x14) + -1));
+          fVar16 = fVar13 + fVar14 * ((float)iVar1 / (float)(*(int *)(p0 + 0x18) + -1));
+          func_0x0016f600(auStack_b0,p0,iVar9,iVar1);
           iVar10 = (int)uVar11;
           uVar11 = (long)iVar10 + 1;
-          puVar5 = (undefined4 *)(*(long *)(param_1 + 0xa8) + (long)iVar10 * 0x14);
+          puVar5 = (undefined4 *)(*(long *)(p0 + 0xa8) + (long)iVar10 * 0x14);
           *puVar5 = uVar2;
           puVar5[1] = uVar3;
           puVar5[2] = fVar17;
           puVar5[3] = fVar16;
           puVar5[4] = auStack_b0[0];
-          iVar6 = *(int *)(param_1 + 0x14);
+          iVar6 = *(int *)(p0 + 0x14);
           if (iVar9 == iVar6 + -1) {
-            puVar5 = (undefined4 *)(*(long *)(param_1 + 0xa8) + uVar11 * 0x14);
+            puVar5 = (undefined4 *)(*(long *)(p0 + 0xa8) + uVar11 * 0x14);
             *puVar5 = uVar2;
             puVar5[1] = uVar3;
             puVar5[2] = fVar17;
             puVar5[3] = fVar16;
             puVar5[4] = auStack_b0[0];
-            iVar6 = *(int *)(param_1 + 0x14);
+            iVar6 = *(int *)(p0 + 0x14);
             uVar11 = (ulong)(iVar10 + 2);
           }
-          iVar10 = *(int *)(param_1 + 0x18);
+          iVar10 = *(int *)(p0 + 0x18);
           iVar9 = iVar9 + 1;
         } while (iVar9 < iVar6);
       }
@@ -548,14 +552,14 @@ void WaterConcept::ShowerCurtain::draw(long param_1)
     } while (iVar8 < iVar10 + -1);
   }
   func_0x00168480(1);
-  func_0x0016d560(*(undefined4 *)(*(long *)(param_1 + 0x88) + 0x78));
-  func_0x001716e0(2,0x1406,0x14,*(undefined8 *)(param_1 + 0xa8));
+  func_0x0016d560(*(undefined4 *)(*(long *)(p0 + 0x88) + 0x78));
+  func_0x001716e0(2,0x1406,0x14,*(undefined8 *)(p0 + 0xa8));
   func_0x0016c840();
-  func_0x00162680(2,0x1406,0x14,*(long *)(param_1 + 0xa8) + 8);
+  func_0x00162680(2,0x1406,0x14,*(long *)(p0 + 0xa8) + 8);
   func_0x00167fc0();
-  func_0x00172b40(4,0x1401,0x14,*(long *)(param_1 + 0xa8) + 0x10);
+  func_0x00172b40(4,0x1401,0x14,*(long *)(p0 + 0xa8) + 0x10);
   func_0x0016d300();
-  func_0x0016eaf0(5,0,*(undefined4 *)(param_1 + 0xa0));
+  func_0x0016eaf0(5,0,*(undefined4 *)(p0 + 0xa0));
   func_0x00165200();
   func_0x0016b690();
   func_0x0016c400();
@@ -574,79 +578,58 @@ void WaterConcept::ShowerCurtain::draw(long param_1)
 
 /* WaterConcept::ShowerCurtain::_getLightingForVert(int, int) */
 
-void WaterConcept::ShowerCurtain::_getLightingForVert
-               (byte *param_1,long param_2,int param_3,int param_4)
+void WaterConcept::ShowerCurtain::_getLightingForVert(int p0,int p1)
 
 {
   byte bVar1;
-  int iVar2;
-  float fVar3;
+  ulong uVar2;
+  int in_w2;
+  byte *in_x8;
+  int iVar3;
   float fVar4;
-  undefined8 uVar5;
-  float fVar6;
+  float fVar5;
+  undefined8 uVar6;
   float fVar7;
   float fVar8;
-  undefined8 uVar9;
+  float fVar9;
+  undefined8 uVar10;
   
-  fVar4 = 1.0;
-  fVar3 = fVar4;
-  if (param_3 < *(int *)(param_2 + 0x14) + -1) {
-    iVar2 = param_3 + *(int *)(param_2 + 0x14) * param_4;
-    uVar5 = *(undefined8 *)(*(long *)(param_2 + 0x20) + (long)iVar2 * 0x74);
-    uVar9 = *(undefined8 *)(*(long *)(param_2 + 0x20) + (long)(iVar2 + 1) * 0x74);
-    fVar3 = (float)uVar5 - (float)uVar9;
-    fVar6 = (float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar9 >> 0x20);
-    fVar3 = fVar3 * fVar3 + fVar6 * fVar6;
-    fVar6 = SQRT(fVar3);
-    if (NAN(fVar6)) {
-      fVar6 = (float)func_0x0016cd20(fVar3);
-    }
-    fVar6 = fVar6 / *(float *)(param_2 + 8);
-    fVar3 = fVar6;
-    if (1.0 < fVar6) {
-      fVar3 = 1.0;
-    }
-    if (fVar6 <= 0.6) {
-      fVar3 = 0.6;
-    }
-  }
-  fVar6 = fVar4;
-  if (0 < param_3) {
-    iVar2 = param_3 + *(int *)(param_2 + 0x14) * param_4;
-    uVar5 = *(undefined8 *)(*(long *)(param_2 + 0x20) + (long)iVar2 * 0x74);
-    uVar9 = *(undefined8 *)(*(long *)(param_2 + 0x20) + (long)(iVar2 + -1) * 0x74);
-    fVar6 = (float)uVar5 - (float)uVar9;
-    fVar7 = (float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar9 >> 0x20);
-    fVar6 = fVar6 * fVar6 + fVar7 * fVar7;
-    fVar7 = SQRT(fVar6);
+  uVar2 = (ulong)(uint)p0;
+  fVar5 = 1.0;
+  fVar4 = fVar5;
+  if (p1 < *(int *)(uVar2 + 0x14) + -1) {
+    iVar3 = p1 + *(int *)(uVar2 + 0x14) * in_w2;
+    uVar6 = *(undefined8 *)(*(long *)(uVar2 + 0x20) + (long)iVar3 * 0x74);
+    uVar10 = *(undefined8 *)(*(long *)(uVar2 + 0x20) + (long)(iVar3 + 1) * 0x74);
+    fVar4 = (float)uVar6 - (float)uVar10;
+    fVar7 = (float)((ulong)uVar6 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
+    fVar4 = fVar4 * fVar4 + fVar7 * fVar7;
+    fVar7 = SQRT(fVar4);
     if (NAN(fVar7)) {
-      fVar7 = (float)func_0x0016cd20(fVar6);
+      fVar7 = (float)func_0x0016cd20(fVar4);
     }
-    fVar7 = fVar7 / *(float *)(param_2 + 8);
-    fVar6 = fVar7;
+    fVar7 = fVar7 / *(float *)(uVar2 + 8);
+    fVar4 = fVar7;
     if (1.0 < fVar7) {
-      fVar6 = 1.0;
+      fVar4 = 1.0;
     }
     if (fVar7 <= 0.6) {
-      fVar6 = 0.6;
+      fVar4 = 0.6;
     }
   }
-  fVar7 = fVar4;
-  if (0 < param_4) {
-    uVar5 = *(undefined8 *)
-             (*(long *)(param_2 + 0x20) +
-             (long)(param_3 + *(int *)(param_2 + 0x14) * param_4) * 0x74);
-    uVar9 = *(undefined8 *)
-             (*(long *)(param_2 + 0x20) +
-             (long)(param_3 + *(int *)(param_2 + 0x14) * (param_4 + -1)) * 0x74);
-    fVar7 = (float)uVar5 - (float)uVar9;
-    fVar8 = (float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar9 >> 0x20);
+  fVar7 = fVar5;
+  if (0 < p1) {
+    iVar3 = p1 + *(int *)(uVar2 + 0x14) * in_w2;
+    uVar6 = *(undefined8 *)(*(long *)(uVar2 + 0x20) + (long)iVar3 * 0x74);
+    uVar10 = *(undefined8 *)(*(long *)(uVar2 + 0x20) + (long)(iVar3 + -1) * 0x74);
+    fVar7 = (float)uVar6 - (float)uVar10;
+    fVar8 = (float)((ulong)uVar6 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
     fVar7 = fVar7 * fVar7 + fVar8 * fVar8;
     fVar8 = SQRT(fVar7);
     if (NAN(fVar8)) {
       fVar8 = (float)func_0x0016cd20(fVar7);
     }
-    fVar8 = fVar8 / *(float *)(param_2 + 0xc);
+    fVar8 = fVar8 / *(float *)(uVar2 + 8);
     fVar7 = fVar8;
     if (1.0 < fVar8) {
       fVar7 = 1.0;
@@ -655,38 +638,58 @@ void WaterConcept::ShowerCurtain::_getLightingForVert
       fVar7 = 0.6;
     }
   }
-  if (param_4 < *(int *)(param_2 + 0x18) + -1) {
-    uVar5 = *(undefined8 *)
-             (*(long *)(param_2 + 0x20) +
-             (long)(param_3 + *(int *)(param_2 + 0x14) * param_4) * 0x74);
-    uVar9 = *(undefined8 *)
-             (*(long *)(param_2 + 0x20) +
-             (long)(param_3 + *(int *)(param_2 + 0x14) * (param_4 + 1)) * 0x74);
-    fVar4 = (float)uVar5 - (float)uVar9;
-    fVar8 = (float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar9 >> 0x20);
-    fVar4 = fVar4 * fVar4 + fVar8 * fVar8;
-    fVar8 = SQRT(fVar4);
-    if (NAN(fVar8)) {
-      fVar8 = (float)func_0x0016cd20(fVar4);
+  fVar8 = fVar5;
+  if (0 < in_w2) {
+    uVar6 = *(undefined8 *)
+             (*(long *)(uVar2 + 0x20) + (long)(p1 + *(int *)(uVar2 + 0x14) * in_w2) * 0x74);
+    uVar10 = *(undefined8 *)
+              (*(long *)(uVar2 + 0x20) + (long)(p1 + *(int *)(uVar2 + 0x14) * (in_w2 + -1)) * 0x74);
+    fVar8 = (float)uVar6 - (float)uVar10;
+    fVar9 = (float)((ulong)uVar6 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
+    fVar8 = fVar8 * fVar8 + fVar9 * fVar9;
+    fVar9 = SQRT(fVar8);
+    if (NAN(fVar9)) {
+      fVar9 = (float)func_0x0016cd20(fVar8);
     }
-    fVar8 = fVar8 / *(float *)(param_2 + 0xc);
-    fVar4 = fVar8;
-    if (1.0 < fVar8) {
-      fVar4 = 1.0;
+    fVar9 = fVar9 / *(float *)(uVar2 + 0xc);
+    fVar8 = fVar9;
+    if (1.0 < fVar9) {
+      fVar8 = 1.0;
     }
-    if (fVar8 <= 0.6) {
-      fVar4 = 0.6;
+    if (fVar9 <= 0.6) {
+      fVar8 = 0.6;
     }
   }
-  iVar2 = (int)((fVar3 + fVar6 + fVar7 + fVar4) * 0.25 * 255.0);
-  if (0xfe < iVar2) {
-    iVar2 = 0xff;
+  if (in_w2 < *(int *)(uVar2 + 0x18) + -1) {
+    uVar6 = *(undefined8 *)
+             (*(long *)(uVar2 + 0x20) + (long)(p1 + *(int *)(uVar2 + 0x14) * in_w2) * 0x74);
+    uVar10 = *(undefined8 *)
+              (*(long *)(uVar2 + 0x20) + (long)(p1 + *(int *)(uVar2 + 0x14) * (in_w2 + 1)) * 0x74);
+    fVar5 = (float)uVar6 - (float)uVar10;
+    fVar9 = (float)((ulong)uVar6 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
+    fVar5 = fVar5 * fVar5 + fVar9 * fVar9;
+    fVar9 = SQRT(fVar5);
+    if (NAN(fVar9)) {
+      fVar9 = (float)func_0x0016cd20(fVar5);
+    }
+    fVar9 = fVar9 / *(float *)(uVar2 + 0xc);
+    fVar5 = fVar9;
+    if (1.0 < fVar9) {
+      fVar5 = 1.0;
+    }
+    if (fVar9 <= 0.6) {
+      fVar5 = 0.6;
+    }
   }
-  bVar1 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-  *param_1 = bVar1;
-  param_1[1] = bVar1;
-  param_1[2] = bVar1;
-  param_1[3] = 0xff;
+  iVar3 = (int)((fVar4 + fVar7 + fVar8 + fVar5) * 0.25 * 255.0);
+  if (0xfe < iVar3) {
+    iVar3 = 0xff;
+  }
+  bVar1 = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+  *in_x8 = bVar1;
+  in_x8[1] = bVar1;
+  in_x8[2] = bVar1;
+  in_x8[3] = 0xff;
   return;
 }
 
@@ -699,10 +702,10 @@ void WaterConcept::ShowerCurtain::_getLightingForVert
 /* WaterConcept::ShowerCurtain::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&)
     */
 
-void WaterConcept::ShowerCurtain::handleTouchMoved
-               (float *param_1,undefined8 *param_2,undefined8 *param_3)
+void WaterConcept::ShowerCurtain::handleTouchMoved(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
+  undefined8 *in_x2;
   int iVar1;
   long lVar2;
   int iVar3;
@@ -715,29 +718,29 @@ void WaterConcept::ShowerCurtain::handleTouchMoved
   undefined8 uVar10;
   float fVar11;
   
-  fVar6 = param_1[6];
-  if (1 < (int)fVar6) {
-    uVar9 = *param_2;
-    uVar10 = *param_3;
-    fVar8 = param_1[5];
-    fVar11 = *param_1 * 0.2;
-    fVar5 = 1.0 / *param_1;
-    iVar3 = 1;
+  iVar1 = *(int *)(p0 + 0x18);
+  if (1 < iVar1) {
+    uVar9 = *(undefined8 *)p1;
+    uVar10 = *in_x2;
+    iVar3 = *(int *)(p0 + 0x14);
+    fVar11 = *(float *)p0 * 0.2;
+    fVar5 = 1.0 / *(float *)p0;
+    iVar4 = 1;
     do {
-      if (0 < (int)fVar8) {
-        iVar4 = 0;
+      if (0 < iVar3) {
+        iVar1 = 0;
         do {
-          iVar1 = iVar4 + iVar3 * (int)fVar8;
-          uVar7 = *(undefined8 *)(*(long *)(param_1 + 8) + (long)iVar1 * 0x74);
-          fVar6 = (float)uVar7 - (float)*param_2;
-          fVar8 = (float)((ulong)uVar7 >> 0x20) - (float)((ulong)*param_2 >> 0x20);
+          iVar3 = iVar1 + iVar4 * iVar3;
+          uVar7 = *(undefined8 *)(*(long *)(p0 + 0x20) + (long)iVar3 * 0x74);
+          fVar6 = (float)uVar7 - (float)*(undefined8 *)p1;
+          fVar8 = (float)((ulong)uVar7 >> 0x20) - (float)((ulong)*(undefined8 *)p1 >> 0x20);
           fVar8 = fVar6 * fVar6 + fVar8 * fVar8;
           fVar6 = SQRT(fVar8);
           if (NAN(fVar6)) {
             fVar6 = (float)func_0x0016cd20(fVar8);
           }
           if (fVar6 <= fVar11) {
-            lVar2 = *(long *)(param_1 + 8) + (long)iVar1 * 0x74;
+            lVar2 = *(long *)(p0 + 0x20) + (long)iVar3 * 0x74;
             fVar8 = 1.0 - fVar6 / fVar11;
             uVar7 = *(undefined8 *)(lVar2 + 8);
             fVar6 = fVar8;
@@ -750,17 +753,17 @@ void WaterConcept::ShowerCurtain::handleTouchMoved
             *(ulong *)(lVar2 + 8) =
                  CONCAT44((float)((ulong)uVar7 >> 0x20) -
                           ((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar10 >> 0x20)) * fVar5 *
-                          0.8 * *param_1 * fVar6,
+                          0.8 * *(float *)p0 * fVar6,
                           (float)uVar7 -
-                          ((float)uVar9 - (float)uVar10) * fVar5 * 0.8 * *param_1 * fVar6);
+                          ((float)uVar9 - (float)uVar10) * fVar5 * 0.8 * *(float *)p0 * fVar6);
           }
-          fVar8 = param_1[5];
-          iVar4 = iVar4 + 1;
-        } while (iVar4 < (int)fVar8);
-        fVar6 = param_1[6];
+          iVar3 = *(int *)(p0 + 0x14);
+          iVar1 = iVar1 + 1;
+        } while (iVar1 < iVar3);
+        iVar1 = *(int *)(p0 + 0x18);
       }
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < (int)fVar6);
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < iVar1);
   }
   return;
 }

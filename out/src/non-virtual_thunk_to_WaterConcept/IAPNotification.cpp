@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(long p
 void non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(long param_1)
 
 {
-  func_0x0016d050(param_1 + -0x1e8);
-  FUN_00166120(param_1 + -0x1e8);
+  func_0x0016d050((void *)(param_1 + -0x1e8));
+  FUN_00166120((void *)(param_1 + -0x1e8));
   return;
 }
 
@@ -39,7 +39,7 @@ void non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(long p
 
 /* non-virtual thunk to WaterConcept::IAPNotification::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::IAPNotification::messageRx(void)
+undefined8 non_virtual_thunk_to_WaterConcept::IAPNotification::messageRx(Walaber__Message *p0)
 
 {
   return 0;

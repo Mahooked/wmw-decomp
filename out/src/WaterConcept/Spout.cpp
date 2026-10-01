@@ -105,27 +105,33 @@ void WaterConcept::Spout::Spout
 void WaterConcept::Spout::~Spout(undefined8 *param_1)
 
 {
+  void *pvVar1;
+  ulong p1;
+  
   *param_1 = &PTR__Spout_00711f18;
   if ((*(byte *)(param_1 + 0x9b) & 1) != 0) {
-    FUN_00166120(param_1[0x9d]);
+    FUN_00166120((void *)param_1[0x9d]);
   }
-  if (param_1[0x94] != 0) {
-    param_1[0x95] = param_1[0x94];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x94];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x95] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   FUN_0016bb90(param_1 + 0x92);
   FUN_0016bb90(param_1 + 0x8f);
-  if (param_1[0x8a] != 0) {
-    param_1[0x8b] = param_1[0x8a];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x8a];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x8b] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x87] != 0) {
-    param_1[0x88] = param_1[0x87];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x87];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x88] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   func_0x0016ef00(param_1 + 0x80);
-  if (param_1[0x77] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[0x77] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[0x77],p1);
   }
   func_0x0016fb10(param_1);
   return;
@@ -139,7 +145,7 @@ void WaterConcept::Spout::~Spout(undefined8 *param_1)
 
 /* WaterConcept::Spout::~Spout() */
 
-void WaterConcept::Spout::~Spout(undefined8 param_1)
+void WaterConcept::Spout::~Spout(void *param_1)
 
 {
   func_0x0016ef70();
@@ -155,10 +161,10 @@ void WaterConcept::Spout::~Spout(undefined8 param_1)
 
 /* WaterConcept::Spout::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::Spout::setProperties(long *param_1,undefined8 param_2)
+void WaterConcept::Spout::setProperties(Walaber__PropertyList *p0)
 
 {
-  long *plVar1;
+  Walaber__PropertyList *pWVar1;
   byte bVar2;
   long lVar3;
   int iVar4;
@@ -166,14 +172,14 @@ void WaterConcept::Spout::setProperties(long *param_1,undefined8 param_2)
   long lVar6;
   char *pcVar7;
   ulong uVar8;
-  undefined1 uVar9;
+  Walaber__PropertyList WVar9;
   ulong uVar10;
-  undefined1 uVar11;
+  Walaber__PropertyList WVar11;
   ulong uVar12;
   float fVar13;
   undefined4 uVar14;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   uint uStack_60;
   undefined1 uStack_5c;
   undefined1 uStack_5b;
@@ -214,16 +220,16 @@ void WaterConcept::Spout::setProperties(long *param_1,undefined8 param_2)
   uStack_59 = 0x79;
   uStack_58 = 0x70;
                     /* try { // try from 0048ba8c to 0048ba97 has its CatchHandler @ 0048c69c */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 == 0) goto LAB_0048bbf4;
   func_0x00162cf0(abStack_78,lVar6);
                     /* try { // try from 0048babc to 0048bac7 has its CatchHandler @ 0048c624 */
   func_0x00171fd0(&uStack_60,abStack_78);
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   uVar10 = CONCAT17(uStack_51,
                     CONCAT16(uStack_52,
@@ -254,8 +260,8 @@ void WaterConcept::Spout::setProperties(long *param_1,undefined8 param_2)
       goto LAB_0048bb2c;
     }
     uVar14 = 0;
-    uVar9 = 0;
-    uVar11 = 1;
+    WVar9 = (Walaber__PropertyList)0x0;
+    WVar11 = (Walaber__PropertyList)0x1;
   }
   else {
 LAB_0048bb2c:
@@ -268,9 +274,9 @@ LAB_0048bb2c:
                     /* try { // try from 0048bb3c to 0048bb57 has its CatchHandler @ 0048c610 */
       iVar4 = func_0x001656c0(&uStack_60,0,0xffffffffffffffff,"touchspout",10);
       if (iVar4 == 0) {
-        uVar11 = 0;
+        WVar11 = (Walaber__PropertyList)0x0;
         uVar14 = 1;
-        uVar9 = 1;
+        WVar9 = (Walaber__PropertyList)0x1;
         goto LAB_0048bbd8;
       }
       uVar10 = CONCAT17(uStack_51,
@@ -290,22 +296,22 @@ LAB_0048bb2c:
                     /* try { // try from 0048bb7c to 0048bb97 has its CatchHandler @ 0048c60c */
     if ((uVar12 == 5) &&
        (iVar4 = func_0x001656c0(&uStack_60,0,0xffffffffffffffff,"drain",5), iVar4 == 0)) {
-      uVar9 = 0;
-      uVar11 = 1;
+      WVar9 = (Walaber__PropertyList)0x0;
+      WVar11 = (Walaber__PropertyList)0x1;
       uVar14 = 2;
     }
     else {
-      uVar9 = 0;
-      uVar11 = 1;
+      WVar9 = (Walaber__PropertyList)0x0;
+      WVar11 = (Walaber__PropertyList)0x1;
       uVar14 = 3;
     }
   }
 LAB_0048bbd8:
-  *(undefined4 *)((long)param_1 + 0x3d4) = uVar14;
-  *(undefined1 *)((long)param_1 + 0x112) = uVar11;
-  *(undefined1 *)((long)param_1 + 0x111) = uVar9;
+  *(undefined4 *)(p0 + 0x3d4) = uVar14;
+  p0[0x112] = WVar11;
+  p0[0x111] = WVar9;
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
 LAB_0048bbf4:
   uStack_50 = 0;
@@ -326,13 +332,13 @@ LAB_0048bbf4:
   uStack_58 = 0x6f;
   uStack_51 = 0;
                     /* try { // try from 0048bc1c to 0048bc27 has its CatchHandler @ 0048c698 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     fVar13 = (float)func_0x00168f30(lVar6);
-    *(float *)(param_1 + 0x7c) = fVar13 * 0.017453292;
+    *(float *)(p0 + 0x3e0) = fVar13 * 0.017453292;
   }
   pcVar7 = (char *)FUN_00164060(0x20);
   uStack_50 = SUB81(pcVar7,0);
@@ -354,13 +360,13 @@ LAB_0048bbf4:
   uStack_59 = 0;
   builtin_strncpy(pcVar7,"ExpulsionAngleVariation",0x18);
                     /* try { // try from 0048bc8c to 0048bc97 has its CatchHandler @ 0048c694 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     fVar13 = (float)func_0x00168f30(lVar6);
-    *(float *)((long)param_1 + 0x3e4) = fVar13 * 0.017453292;
+    *(float *)(p0 + 0x3e4) = fVar13 * 0.017453292;
   }
   uStack_51 = 0;
   uStack_50 = 0;
@@ -380,13 +386,13 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_52 = 0;
                     /* try { // try from 0048bcf4 to 0048bcff has its CatchHandler @ 0048c690 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00168f30(lVar6);
-    *(undefined4 *)(param_1 + 0x7d) = uVar14;
+    *(undefined4 *)(p0 + 1000) = uVar14;
   }
   uStack_51 = 0;
   uStack_50 = 0;
@@ -406,13 +412,13 @@ LAB_0048bbf4:
   uStack_58 = 0x6f;
   uStack_52 = 0;
                     /* try { // try from 0048bd50 to 0048bd5b has its CatchHandler @ 0048c68c */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     func_0x00166e60(&uStack_60,lVar6);
-    param_1[0x75] =
+    *(ulong *)(p0 + 0x3a8) =
          CONCAT17(uStack_59,CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT14(uStack_5c,uStack_60))));
   }
   uStack_51 = 0;
@@ -433,13 +439,13 @@ LAB_0048bbf4:
   uStack_58 = 0x6f;
   uStack_52 = 0;
                     /* try { // try from 0048bdb4 to 0048bdbf has its CatchHandler @ 0048c688 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     func_0x00166e60(&uStack_60,lVar6);
-    param_1[0x76] =
+    *(ulong *)(p0 + 0x3b0) =
          CONCAT17(uStack_59,CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT14(uStack_5c,uStack_60))));
   }
   uStack_50 = 0;
@@ -460,13 +466,13 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_51 = 0;
                     /* try { // try from 0048be14 to 0048be1f has its CatchHandler @ 0048c684 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00168f30(lVar6);
-    *(undefined4 *)(param_1 + 0x7e) = uVar14;
+    *(undefined4 *)(p0 + 0x3f0) = uVar14;
   }
   uStack_50 = 0;
   uStack_4f = 0;
@@ -486,13 +492,13 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_51 = 0;
                     /* try { // try from 0048be6c to 0048be77 has its CatchHandler @ 0048c680 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00166a80(lVar6);
-    *(undefined4 *)((long)param_1 + 0x3f4) = uVar14;
+    *(undefined4 *)(p0 + 0x3f4) = uVar14;
   }
   uStack_57 = 0x72;
   uStack_56 = 0x69;
@@ -512,9 +518,9 @@ LAB_0048bbf4:
   uStack_58 = 0x70;
   uStack_50 = 0;
                     /* try { // try from 0048bec4 to 0048becf has its CatchHandler @ 0048c67c */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_57 = 0x72;
@@ -535,11 +541,11 @@ LAB_0048bbf4:
     uStack_58 = 0x70;
     uStack_50 = 0;
                     /* try { // try from 0048bf00 to 0048bf0f has its CatchHandler @ 0048c678 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     iVar4 = func_0x00166a80();
-    *(bool *)((long)param_1 + 0x3fc) = iVar4 != 0;
+    p0[0x3fc] = (Walaber__PropertyList)(iVar4 != 0);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   uStack_57 = 0x72;
@@ -560,13 +566,13 @@ LAB_0048bbf4:
   uStack_58 = 0x61;
   uStack_50 = 0;
                     /* try { // try from 0048bf54 to 0048bf5f has its CatchHandler @ 0048c674 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00168f30(lVar6);
-    *(undefined4 *)(param_1 + 0x7a) = uVar14;
+    *(undefined4 *)(p0 + 0x3d0) = uVar14;
   }
   uStack_55 = 0;
   uStack_54 = 0;
@@ -586,13 +592,13 @@ LAB_0048bbf4:
   uStack_59 = 0x6f;
   uStack_58 = 0x6c;
                     /* try { // try from 0048bfac to 0048bfb7 has its CatchHandler @ 0048c670 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     iVar4 = func_0x00166a80(lVar6);
-    *(bool *)((long)param_1 + 0x4d5) = iVar4 == 0;
+    p0[0x4d5] = (Walaber__PropertyList)(iVar4 == 0);
   }
   uStack_57 = 0x44;
   uStack_56 = 0x72;
@@ -612,9 +618,9 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_50 = 0;
                     /* try { // try from 0048c00c to 0048c017 has its CatchHandler @ 0048c66c */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_57 = 0x44;
@@ -635,11 +641,11 @@ LAB_0048bbf4:
     uStack_58 = 0x65;
     uStack_50 = 0;
                     /* try { // try from 0048c048 to 0048c057 has its CatchHandler @ 0048c668 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     uVar14 = func_0x00168f30();
-    *(undefined4 *)((long)param_1 + 0x3ec) = uVar14;
+    *(undefined4 *)(p0 + 0x3ec) = uVar14;
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   uStack_55 = 0;
@@ -660,16 +666,16 @@ LAB_0048bbf4:
   uStack_59 = 0x79;
   uStack_58 = 0x70;
                     /* try { // try from 0048c094 to 0048c09f has its CatchHandler @ 0048c664 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     func_0x00162cf0(&uStack_60,lVar6);
                     /* try { // try from 0048c0c4 to 0048c0cb has its CatchHandler @ 0048c620 */
     uVar5 = func_0x0016a610(&uStack_60);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
     uStack_57 = 0x72;
     uStack_56 = 0x74;
@@ -689,12 +695,12 @@ LAB_0048bbf4:
     uStack_58 = 0x61;
     uStack_50 = 0;
                     /* try { // try from 0048c108 to 0048c113 has its CatchHandler @ 0048c61c */
-    lVar6 = func_0x00167060(param_2,&uStack_60);
+    lVar6 = func_0x00167060();
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
     if ((lVar6 == 0) || (iVar4 = func_0x00166a80(lVar6), iVar4 == -1)) {
-      func_0x0016e6b0(param_1,uVar5,1);
+      func_0x0016e6b0(p0,uVar5,1);
       iVar4 = -1;
     }
     else {
@@ -707,10 +713,10 @@ LAB_0048bbf4:
       uStack_56 = 0;
       uStack_55 = 0;
       uStack_60 = uVar5;
-      (**(code **)(*param_1 + 0xd0))(0,param_1,&uStack_60,iVar4,0,0xffffffff);
+      (**(code **)(*(long *)p0 + 0xd0))(0,p0,&uStack_60,iVar4,0,0xffffffff);
     }
     if (uVar5 < 2) {
-      *(int *)((long)param_1 + 0x46c) = iVar4;
+      *(int *)(p0 + 0x46c) = iVar4;
     }
   }
   uStack_4f = 0x7365;
@@ -731,13 +737,13 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_49 = 0;
                     /* try { // try from 0048c1b4 to 0048c1bf has its CatchHandler @ 0048c660 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00166a80(lVar6);
-    *(undefined4 *)(param_1 + 0x86) = uVar14;
+    *(undefined4 *)(p0 + 0x430) = uVar14;
   }
   uStack_49 = 0;
   uStack_4f = 0x646e;
@@ -757,13 +763,13 @@ LAB_0048bbf4:
   uStack_58 = 0x65;
   uStack_4d = 0;
                     /* try { // try from 0048c210 to 0048c21b has its CatchHandler @ 0048c65c */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     uVar14 = func_0x00166a80(lVar6);
-    *(undefined4 *)(param_1 + 0x8e) = uVar14;
+    *(undefined4 *)(p0 + 0x470) = uVar14;
   }
   uStack_5a = 0;
   uStack_59 = 0;
@@ -783,14 +789,14 @@ LAB_0048bbf4:
   uStack_5c = 0x6c;
   uStack_5b = 0;
                     /* try { // try from 0048c260 to 0048c26b has its CatchHandler @ 0048c658 */
-  lVar6 = func_0x00167060(param_2,&uStack_60);
+  lVar6 = func_0x00167060();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if (lVar6 != 0) {
     iVar4 = func_0x00166a80(lVar6);
     if (iVar4 != 0) {
-      *(undefined1 *)((long)param_1 + 0x4d6) = 1;
+      p0[0x4d6] = (Walaber__PropertyList)0x1;
     }
     uStack_54 = 0;
     uStack_53 = 0;
@@ -810,26 +816,27 @@ LAB_0048bbf4:
     uStack_58 = 0x73;
     uStack_55 = 0;
                     /* try { // try from 0048c2c4 to 0048c2cf has its CatchHandler @ 0048c618 */
-    lVar6 = func_0x00167060(param_2,&uStack_60);
+    lVar6 = func_0x00167060();
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
     if (lVar6 != 0) {
       func_0x00162cf0(&uStack_60,lVar6);
-      plVar1 = param_1 + 0x9b;
-      if ((*(byte *)(param_1 + 0x9b) & 1) == 0) {
-        *(undefined2 *)plVar1 = 0;
+      pWVar1 = p0 + 0x4d8;
+      if (((byte)p0[0x4d8] & 1) == 0) {
+        *(undefined2 *)pWVar1 = 0;
       }
       else {
-        *(undefined1 *)param_1[0x9d] = 0;
-        param_1[0x9c] = 0;
-        if ((*(byte *)(param_1 + 0x9b) & 1) != 0) {
-          FUN_00166120(param_1[0x9d]);
-          param_1[0x9b] = 0;
+        **(undefined1 **)(p0 + 0x4e8) = 0;
+        *(undefined8 *)(p0 + 0x4e0) = 0;
+        if (((byte)p0[0x4d8] & 1) != 0) {
+          FUN_00166120(*(void **)(p0 + 0x4e8));
+          *(undefined8 *)(p0 + 0x4d8) = 0;
         }
       }
-      param_1[0x9d] = CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50)));
-      param_1[0x9c] =
+      *(ulong *)(p0 + 0x4e8) = CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50)))
+      ;
+      *(ulong *)(p0 + 0x4e0) =
            CONCAT17(uStack_51,
                     CONCAT16(uStack_52,
                              CONCAT15(uStack_53,
@@ -838,16 +845,17 @@ LAB_0048bbf4:
                                                         CONCAT12(uStack_56,
                                                                  CONCAT11(uStack_57,uStack_58)))))))
       ;
-      *plVar1 = CONCAT17(uStack_59,
-                         CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT14(uStack_5c,uStack_60))));
-      uVar8 = (ulong)(*(byte *)(param_1 + 0x9b) >> 1);
-      if ((*(byte *)(param_1 + 0x9b) & 1) != 0) {
-        uVar8 = param_1[0x9c];
+      *(ulong *)pWVar1 =
+           CONCAT17(uStack_59,CONCAT16(uStack_5a,CONCAT15(uStack_5b,CONCAT14(uStack_5c,uStack_60))))
+      ;
+      uVar8 = (ulong)((byte)p0[0x4d8] >> 1);
+      if (((byte)p0[0x4d8] & 1) != 0) {
+        uVar8 = *(ulong *)(p0 + 0x4e0);
       }
                     /* try { // try from 0048c354 to 0048c36f has its CatchHandler @ 0048c608 */
       if ((uVar8 == 6) &&
-         (iVar4 = func_0x001656c0(plVar1,0,0xffffffffffffffff,"Cranky",6), iVar4 == 0)) {
-        *(undefined1 *)(*(long *)(param_1[0x32] + 0x28) + 200) = 0;
+         (iVar4 = func_0x001656c0(pWVar1,0,0xffffffffffffffff,"Cranky",6), iVar4 == 0)) {
+        *(undefined1 *)(*(long *)(*(long *)(p0 + 400) + 0x28) + 200) = 0;
       }
     }
   }
@@ -869,9 +877,9 @@ LAB_0048bbf4:
   uStack_59 = 0x62;
   uStack_58 = 0x6c;
                     /* try { // try from 0048c3a8 to 0048c3b3 has its CatchHandler @ 0048c654 */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_55 = 0;
@@ -892,11 +900,11 @@ LAB_0048bbf4:
     uStack_59 = 0x62;
     uStack_58 = 0x6c;
                     /* try { // try from 0048c3e8 to 0048c3f7 has its CatchHandler @ 0048c650 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     iVar4 = func_0x00166a80();
-    *(bool *)((long)param_1 + 0x3fd) = iVar4 == 1;
+    p0[0x3fd] = (Walaber__PropertyList)(iVar4 == 1);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   uStack_54 = 0;
@@ -917,9 +925,9 @@ LAB_0048bbf4:
   uStack_58 = 100;
   uStack_55 = 0;
                     /* try { // try from 0048c440 to 0048c44b has its CatchHandler @ 0048c64c */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_54 = 0;
@@ -940,11 +948,11 @@ LAB_0048bbf4:
     uStack_58 = 100;
     uStack_55 = 0;
                     /* try { // try from 0048c484 to 0048c493 has its CatchHandler @ 0048c648 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     uVar14 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x97) = uVar14;
+    *(undefined4 *)(p0 + 0x4b8) = uVar14;
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   uStack_52 = 0;
@@ -965,9 +973,9 @@ LAB_0048bbf4:
   uStack_58 = 0x72;
   uStack_53 = 0;
                     /* try { // try from 0048c4d8 to 0048c4e3 has its CatchHandler @ 0048c644 */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_52 = 0;
@@ -988,11 +996,11 @@ LAB_0048bbf4:
     uStack_58 = 0x72;
     uStack_53 = 0;
                     /* try { // try from 0048c520 to 0048c52f has its CatchHandler @ 0048c640 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     iVar4 = func_0x00166a80();
-    *(bool *)(param_1 + 0x9e) = iVar4 == 1;
+    p0[0x4f0] = (Walaber__PropertyList)(iVar4 == 1);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   uStack_56 = 0;
@@ -1013,9 +1021,9 @@ LAB_0048bbf4:
   uStack_58 = 0x72;
   uStack_57 = 0;
                     /* try { // try from 0048c574 to 0048c57f has its CatchHandler @ 0048c63c */
-  uVar8 = func_0x00173810(param_2,&uStack_60);
+  uVar8 = func_0x00173810();
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+    FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
   }
   if ((uVar8 & 1) != 0) {
     uStack_56 = 0;
@@ -1036,11 +1044,11 @@ LAB_0048bbf4:
     uStack_58 = 0x72;
     uStack_57 = 0;
                     /* try { // try from 0048c5b0 to 0048c5bf has its CatchHandler @ 0048c638 */
-    func_0x00167060(param_2,&uStack_60);
+    func_0x00167060();
     iVar4 = func_0x00166a80();
-    *(bool *)((long)param_1 + 0x504) = iVar4 == 1;
+    p0[0x504] = (Walaber__PropertyList)(iVar4 == 1);
     if ((uStack_60 & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
+      FUN_00166120((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
   if (*(long *)(lVar3 + 0x28) != lStack_48) {
@@ -1058,30 +1066,33 @@ LAB_0048bbf4:
 
 /* WaterConcept::Spout::setInfiniteParticles(int, bool) */
 
-void WaterConcept::Spout::setInfiniteParticles(long param_1,undefined4 param_2,byte param_3)
+void WaterConcept::Spout::setInfiniteParticles(int p0,bool p1)
 
 {
   long lVar1;
-  long lVar2;
-  undefined4 uStack_50;
+  ulong uVar2;
+  byte in_w2;
+  long lVar3;
+  uint uStack_50;
   float fStack_4c;
   long lStack_48;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  lVar2 = *(long *)(param_1 + 0x428);
-  *(byte *)(param_1 + 0x4d4) = param_3 & 1;
-  while (lVar2 != 0) {
-    func_0x00169b00(param_1 + 0x400);
-    lVar2 = *(long *)(param_1 + 0x428);
+  lVar3 = *(long *)(uVar2 + 0x428);
+  *(byte *)(uVar2 + 0x4d4) = in_w2 & 1;
+  while (lVar3 != 0) {
+    func_0x00169b00(uVar2 + 0x400);
+    lVar3 = *(long *)(uVar2 + 0x428);
   }
-  if ((param_3 & 1) != 0) {
-    fStack_4c = *(float *)(param_1 + 0x3ec);
+  if ((in_w2 & 1) != 0) {
+    fStack_4c = *(float *)(uVar2 + 0x3ec);
     if (fStack_4c < 0.0) {
       fStack_4c = 0.0;
     }
-    uStack_50 = param_2;
-    func_0x00162d30(param_1 + 0x400,&uStack_50);
+    uStack_50 = (uint)p1;
+    func_0x00162d30(uVar2 + 0x400,&uStack_50);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
@@ -1098,7 +1109,7 @@ void WaterConcept::Spout::setInfiniteParticles(long param_1,undefined4 param_2,b
 
 /* WaterConcept::Spout::update(float) */
 
-void WaterConcept::Spout::update(float param_1,long param_2)
+void WaterConcept::Spout::update(float p0)
 
 {
   bool bVar1;
@@ -1113,6 +1124,7 @@ void WaterConcept::Spout::update(float param_1,long param_2)
   bool bVar10;
   int iVar11;
   int iVar12;
+  long in_x0;
   long *plVar13;
   long lVar14;
   uint uVar15;
@@ -1154,42 +1166,40 @@ void WaterConcept::Spout::update(float param_1,long param_2)
   
   lVar8 = tpidr_el0;
   lStack_b0 = *(long *)(lVar8 + 0x28);
-  FUN_0016fc40();
-  fVar28 = *(float *)(param_2 + 0x468) - param_1;
+  FUN_0016fc40(p0);
+  fVar28 = *(float *)(in_x0 + 0x468) - p0;
   if (fVar28 <= 0.0) {
     fVar28 = 0.0;
   }
-  *(float *)(param_2 + 0x468) = fVar28;
-  if ((*(int *)(param_2 + 0x3d4) == 0) && (*(long *)(param_2 + 800) != *(long *)(param_2 + 0x328)))
-  {
-    *(undefined1 *)(param_2 + 0x112) =
-         *(undefined1 *)(*(long *)(param_2 + 800) + (long)*(int *)(param_2 + 0x338) * 8);
+  *(float *)(in_x0 + 0x468) = fVar28;
+  if ((*(int *)(in_x0 + 0x3d4) == 0) && (*(long *)(in_x0 + 800) != *(long *)(in_x0 + 0x328))) {
+    *(undefined1 *)(in_x0 + 0x112) =
+         *(undefined1 *)(*(long *)(in_x0 + 800) + (long)*(int *)(in_x0 + 0x338) * 8);
   }
-  fVar28 = *(float *)(param_2 + 0x4d0) - param_1;
-  *(float *)(param_2 + 0x4d0) = fVar28;
-  if ((0 < *(int *)(param_2 + 0x4f4)) &&
-     (fVar29 = *(float *)(param_2 + 0x4f8) + param_1, *(float *)(param_2 + 0x4f8) = fVar29,
-     3.0 <= fVar29)) {
-    if ((*(int *)(param_2 + 0x3d4) != 4) &&
-       (plVar13 = *(long **)(param_2 + 0x478), plVar13 != (long *)0x0)) {
+  fVar28 = *(float *)(in_x0 + 0x4d0) - p0;
+  *(float *)(in_x0 + 0x4d0) = fVar28;
+  if ((0 < *(int *)(in_x0 + 0x4f4)) &&
+     (fVar29 = *(float *)(in_x0 + 0x4f8) + p0, *(float *)(in_x0 + 0x4f8) = fVar29, 3.0 <= fVar29)) {
+    if ((*(int *)(in_x0 + 0x3d4) != 4) &&
+       (plVar13 = *(long **)(in_x0 + 0x478), plVar13 != (long *)0x0)) {
       fStack_d0 = 0.0;
       iStack_cc = 0;
       uStack_d8 = 2;
       fStack_d4 = 0.0;
-      uStack_c8 = *(undefined1 *)(param_2 + 0x3a0);
-      uStack_c0 = *(undefined8 *)(param_2 + 0x4c0);
-      bStack_b8 = (byte)((uint)*(undefined4 *)(param_2 + 0x2a8) >> 0x1f) ^ 1;
+      uStack_c8 = *(undefined1 *)(in_x0 + 0x3a0);
+      uStack_c0 = *(undefined8 *)(in_x0 + 0x4c0);
+      bStack_b8 = (byte)((uint)*(undefined4 *)(in_x0 + 0x2a8) >> 0x1f) ^ 1;
       uStack_b7 = 0.0 < fVar28;
-      lStack_e0 = param_2;
+      lStack_e0 = in_x0;
       (**(code **)(*plVar13 + 0x10))(plVar13,&lStack_e0);
     }
-    *(undefined4 *)(param_2 + 0x4f8) = 0xcb18967f;
+    *(undefined4 *)(in_x0 + 0x4f8) = 0xcb18967f;
   }
-  if ((*(char *)(param_2 + 0x3fd) != '\0') && (*(uint *)(param_2 + 0x3d4) < 2)) {
-    *(undefined1 *)(param_2 + 0x3fe) = 0;
-    func_0x0016ce00(&lStack_e0,0,param_2);
-    fVar28 = *(float *)(**(long **)(param_2 + 0xb8) + 0x20);
-    fVar29 = *(float *)(**(long **)(param_2 + 0xb8) + 0x24);
+  if ((*(char *)(in_x0 + 0x3fd) != '\0') && (*(uint *)(in_x0 + 0x3d4) < 2)) {
+    *(undefined1 *)(in_x0 + 0x3fe) = 0;
+    func_0x0016ce00(&lStack_e0,0);
+    fVar28 = *(float *)(**(long **)(in_x0 + 0xb8) + 0x20);
+    fVar29 = *(float *)(**(long **)(in_x0 + 0xb8) + 0x24);
     iVar22 = -1;
     do {
       iVar17 = -2;
@@ -1197,47 +1207,47 @@ void WaterConcept::Spout::update(float param_1,long param_2)
         iVar17 = iVar17 + 1;
         uStack_e8 = CONCAT44(fVar29 * (float)iVar22 + (float)((ulong)lStack_e0 >> 0x20),
                              fVar28 * (float)iVar17 + (float)lStack_e0);
-        iVar11 = func_0x00163ed0(*(undefined8 *)(param_2 + 0xb8),&uStack_e8);
+        iVar11 = func_0x00163ed0(*(undefined8 *)(in_x0 + 0xb8),&uStack_e8);
         if ((iVar11 != 0) && (iVar11 != 7)) {
-          *(undefined1 *)(param_2 + 0x3fe) = 1;
+          *(undefined1 *)(in_x0 + 0x3fe) = 1;
           goto LAB_0048c934;
         }
       } while (iVar17 < 1);
-    } while ((*(char *)(param_2 + 0x3fe) == '\0') &&
-            (bVar1 = iVar22 < 1, iVar22 = iVar22 + 1, bVar1));
+    } while ((*(char *)(in_x0 + 0x3fe) == '\0') && (bVar1 = iVar22 < 1, iVar22 = iVar22 + 1, bVar1))
+    ;
   }
 LAB_0048c934:
-  if ((((*(char *)(param_2 + 0x112) != '\0') ||
-       ((*(int *)(param_2 + 0x3d4) == 1 && (*(char *)(param_2 + 0x4d4) == '\0')))) &&
-      (*(char *)(param_2 + 0x3fe) == '\0')) &&
-     ((*(long *)(param_2 + 800) == *(long *)(param_2 + 0x328) ||
-      (*(char *)(*(long *)(param_2 + 800) + (long)*(int *)(param_2 + 0x338) * 8) != '\0')))) {
-    fVar28 = *(float *)(param_2 + 0x474) + (float)*(int *)(param_2 + 0x470) * param_1;
+  if ((((*(char *)(in_x0 + 0x112) != '\0') ||
+       ((*(int *)(in_x0 + 0x3d4) == 1 && (*(char *)(in_x0 + 0x4d4) == '\0')))) &&
+      (*(char *)(in_x0 + 0x3fe) == '\0')) &&
+     ((*(long *)(in_x0 + 800) == *(long *)(in_x0 + 0x328) ||
+      (*(char *)(*(long *)(in_x0 + 800) + (long)*(int *)(in_x0 + 0x338) * 8) != '\0')))) {
+    fVar28 = *(float *)(in_x0 + 0x474) + (float)*(int *)(in_x0 + 0x470) * p0;
     iVar22 = (int)fVar28;
-    *(float *)(param_2 + 0x474) = fVar28 - (float)iVar22;
-    if (*(long *)(param_2 + 0x428) != 0) {
+    *(float *)(in_x0 + 0x474) = fVar28 - (float)iVar22;
+    if (*(long *)(in_x0 + 0x428) != 0) {
       iVar17 = 0;
       do {
-        if ((iVar22 <= iVar17) || (*(int *)(param_2 + 0x3d4) == 3)) break;
-        func_0x00169f20(&lStack_e0,param_2);
-        fVar36 = (float)*(undefined8 *)(param_2 + 0x3a8) * (float)lStack_e0;
-        fVar37 = (float)((ulong)*(undefined8 *)(param_2 + 0x3a8) >> 0x20) *
+        if ((iVar22 <= iVar17) || (*(int *)(in_x0 + 0x3d4) == 3)) break;
+        func_0x00169f20(&lStack_e0);
+        fVar36 = (float)*(undefined8 *)(in_x0 + 0x3a8) * (float)lStack_e0;
+        fVar37 = (float)((ulong)*(undefined8 *)(in_x0 + 0x3a8) >> 0x20) *
                  (float)((ulong)lStack_e0 >> 0x20);
-        uVar27 = func_0x00164d90(param_2);
+        uVar27 = func_0x00164d90();
         fVar28 = (float)func_0x0016ee90();
         fVar29 = (float)func_0x00174170(uVar27);
         uVar27 = NEON_rev64(CONCAT44(fVar37,fVar36),4);
-        lVar16 = *(long *)(*(long *)(param_2 + 0x408) +
-                          (*(ulong *)(param_2 + 0x420) >> 6 & 0x3fffffffffffff8));
-        uVar18 = *(ulong *)(param_2 + 0x420) & 0x1ff;
-        lVar14 = *(long *)(param_2 + 0x4c8);
+        lVar16 = *(long *)(*(long *)(in_x0 + 0x408) +
+                          (*(ulong *)(in_x0 + 0x420) >> 6 & 0x3fffffffffffff8));
+        uVar18 = *(ulong *)(in_x0 + 0x420) & 0x1ff;
+        lVar14 = *(long *)(in_x0 + 0x4c8);
         iVar11 = *(int *)(lVar16 + uVar18 * 8);
         fVar36 = fVar36 * fVar28;
         fVar26 = (float)uVar27 * fVar29;
         fVar30 = fVar36 - fVar26;
         fVar28 = fVar37 * fVar28 + (float)((ulong)uVar27 >> 0x20) * fVar29;
         if (lVar14 == 0) {
-          fVar29 = *(float *)(param_2 + 0x3e4);
+          fVar29 = *(float *)(in_x0 + 0x3e4);
           if (fVar29 == 0.0) {
             fVar26 = 0.0;
           }
@@ -1249,12 +1259,12 @@ LAB_0048c934:
               fVar26 = fVar29 * (float)iVar35 * 4.656613e-10;
             }
           }
-          fVar29 = (float)func_0x00164d90(param_2);
-          fVar26 = fVar26 + fVar29 + *(float *)(param_2 + 0x3e0);
+          fVar29 = (float)func_0x00164d90();
+          fVar26 = fVar26 + fVar29 + *(float *)(in_x0 + 0x3e0);
           fVar29 = (float)func_0x0016ee90(fVar26);
           fVar26 = (float)func_0x00174170(fVar26);
-          fVar36 = (float)func_0x00164d90(param_2);
-          fVar36 = fVar36 + *(float *)(param_2 + 0x3e0);
+          fVar36 = (float)func_0x00164d90();
+          fVar36 = fVar36 + *(float *)(in_x0 + 0x3e0);
           fVar37 = (float)func_0x0016ee90(fVar36);
           fVar36 = (float)func_0x00174170(fVar36);
           fVar31 = fVar36 + fVar37 * 0.0;
@@ -1269,7 +1279,7 @@ LAB_0048c934:
             fVar34 = fVar34 * (1.0 / fVar36);
             fVar37 = fVar37 * (1.0 / fVar36);
           }
-          fVar36 = *(float *)(param_2 + 0x3d0);
+          fVar36 = *(float *)(in_x0 + 0x3d0);
           if (fVar36 == 0.0) {
             fVar31 = 0.0;
           }
@@ -1281,35 +1291,35 @@ LAB_0048c934:
               fVar31 = fVar36 * (float)iVar35 * 4.656613e-10;
             }
           }
-          if (*(float *)(param_2 + 0x3f0) != 0.0) {
-            iVar12 = *(int *)(param_2 + 0x3f4);
-            iVar35 = *(int *)(param_2 + 0x3f8) + 1;
+          if (*(float *)(in_x0 + 0x3f0) != 0.0) {
+            iVar12 = *(int *)(in_x0 + 0x3f4);
+            iVar35 = *(int *)(in_x0 + 0x3f8) + 1;
             iVar3 = 0;
             if (iVar12 != 0) {
               iVar3 = iVar35 / iVar12;
             }
-            fVar31 = *(float *)(param_2 + 0x3f0) *
-                     ((float)*(int *)(param_2 + 0x3f8) /
-                      (float)(int)(iVar12 + (uint)*(byte *)(param_2 + 0x3fc) + -1) + -0.5);
-            *(int *)(param_2 + 0x3f8) = iVar35 - iVar3 * iVar12;
+            fVar31 = *(float *)(in_x0 + 0x3f0) *
+                     ((float)*(int *)(in_x0 + 0x3f8) /
+                      (float)(int)(iVar12 + (uint)*(byte *)(in_x0 + 0x3fc) + -1) + -0.5);
+            *(int *)(in_x0 + 0x3f8) = iVar35 - iVar3 * iVar12;
           }
-          func_0x00167d50(&lStack_e0,param_2);
+          func_0x00167d50(&lStack_e0);
           uVar25 = 0;
           bVar10 = true;
           uStack_e8 = CONCAT44(fVar37 * fVar31 + fVar28 + (float)((ulong)lStack_e0 >> 0x20),
                                fVar34 * fVar31 + fVar30 + (float)lStack_e0);
-          uVar15 = *(uint *)(param_2 + 0x3c8);
+          uVar15 = *(uint *)(in_x0 + 0x3c8);
           bVar1 = true;
           do {
             if (uVar15 != 0) {
               uVar24 = 0;
               bVar1 = bVar10;
               do {
-                for (iVar35 = *(int *)(param_2 + 0x3c4) - uVar24; iVar35 < 0;
-                    iVar35 = iVar35 + uVar15) {
+                for (iVar35 = *(int *)(in_x0 + 0x3c4) - uVar24; iVar35 < 0; iVar35 = iVar35 + uVar15
+                    ) {
                 }
-                puVar23 = (undefined4 *)(*(long *)(param_2 + 0x3b8) + (long)iVar35 * 0xc);
-                plVar13 = (long *)func_0x001626a0(*(undefined8 *)(param_2 + 0x3d8),*puVar23);
+                puVar23 = (undefined4 *)(*(long *)(in_x0 + 0x3b8) + (long)iVar35 * 0xc);
+                plVar13 = (long *)func_0x001626a0(*(undefined8 *)(in_x0 + 0x3d8),*puVar23);
                 lVar14 = (long)(int)puVar23[1];
                 lVar16 = *plVar13;
                 puVar20 = (undefined8 *)(lVar16 + lVar14 * 0x90);
@@ -1332,7 +1342,7 @@ LAB_0048c934:
                   *(ulong *)(lVar16 + 8) =
                        CONCAT44((float)((ulong)uVar27 >> 0x20) - fVar32,(float)uVar27 - fVar31);
                 }
-                uVar15 = *(uint *)(param_2 + 0x3c8);
+                uVar15 = *(uint *)(in_x0 + 0x3c8);
                 uVar24 = uVar24 + 1;
               } while (uVar24 < uVar15);
             }
@@ -1342,7 +1352,7 @@ LAB_0048c934:
             bVar9 = !bVar1;
             bVar1 = false;
           } while (bVar9);
-          lVar14 = *(long *)(param_2 + 0x4c0);
+          lVar14 = *(long *)(in_x0 + 0x4c0);
           if (lVar14 != 0) {
             if (*(long *)(lVar14 + 0x3b0) == *(long *)(lVar14 + 0x3b8)) {
               iVar35 = 0;
@@ -1353,48 +1363,47 @@ LAB_0048c934:
               iVar11 = *piVar2;
               iVar35 = piVar2[1];
             }
-            *(int *)(*(long *)(*(long *)(param_2 + 0x408) +
-                              (*(ulong *)(param_2 + 0x420) >> 6 & 0x3fffffffffffff8)) +
-                     (*(ulong *)(param_2 + 0x420) & 0x1ff) * 8 + 4) = iVar35;
+            *(int *)(*(long *)(*(long *)(in_x0 + 0x408) +
+                              (*(ulong *)(in_x0 + 0x420) >> 6 & 0x3fffffffffffff8)) +
+                     (*(ulong *)(in_x0 + 0x420) & 0x1ff) * 8 + 4) = iVar35;
           }
           lStack_e0 = CONCAT44((float)((ulong)uStack_e8 >> 0x20) -
-                               param_1 * (fVar26 + fVar29 * 0.0) * *(float *)(param_2 + 1000),
+                               p0 * (fVar26 + fVar29 * 0.0) * *(float *)(in_x0 + 1000),
                                (float)uStack_e8 -
-                               param_1 * (fVar29 - fVar26 * 0.0) * *(float *)(param_2 + 1000));
-          fVar29 = *(float *)(param_2 + 0x3ec);
+                               p0 * (fVar29 - fVar26 * 0.0) * *(float *)(in_x0 + 1000));
+          fVar29 = *(float *)(in_x0 + 0x3ec);
           if (fVar29 < 0.0) {
-            fVar29 = *(float *)(*(long *)(*(long *)(param_2 + 0x408) +
-                                         (*(ulong *)(param_2 + 0x420) >> 6 & 0x3fffffffffffff8)) +
-                                (*(ulong *)(param_2 + 0x420) & 0x1ff) * 8 + 4);
+            fVar29 = *(float *)(*(long *)(*(long *)(in_x0 + 0x408) +
+                                         (*(ulong *)(in_x0 + 0x420) >> 6 & 0x3fffffffffffff8)) +
+                                (*(ulong *)(in_x0 + 0x420) & 0x1ff) * 8 + 4);
           }
           iVar35 = func_0x00169870(*(undefined4 *)(&DAT_00733f68 + (long)iVar11 * 0xe0),
                                    *(undefined4 *)(&DAT_00733fa4 + (long)iVar11 * 0xe0),fVar29,
-                                   *(undefined8 *)(param_2 + 0x3d8),iVar11,&uStack_e8,&lStack_e0);
+                                   *(undefined8 *)(in_x0 + 0x3d8),iVar11,&uStack_e8,&lStack_e0);
           if (iVar35 == -1) break;
-          plVar13 = (long *)func_0x001626a0(*(undefined8 *)(param_2 + 0x3d8),iVar11);
+          plVar13 = (long *)func_0x001626a0(*(undefined8 *)(in_x0 + 0x3d8),iVar11);
           unaff_x27 = unaff_x27 & 0xffffffff00000000 |
                       (ulong)*(byte *)(*plVar13 + (long)iVar35 * 0x90 + 0x34);
-          func_0x0016c270(param_2 + 0x3b8,CONCAT44(iVar35,iVar11),unaff_x27);
-          if ((*(long *)(param_2 + 0x478) != 0) && (*(int *)(param_2 + 0x3d4) != 4)) {
+          func_0x0016c270(in_x0 + 0x3b8,CONCAT44(iVar35,iVar11),unaff_x27);
+          if ((*(long *)(in_x0 + 0x478) != 0) && (*(int *)(in_x0 + 0x3d4) != 4)) {
             uStack_d8 = 1;
             fStack_d4 = 0.0;
             fStack_d0 = 0.0;
-            lStack_e0 = param_2;
-            func_0x00167d50(auStack_f0,param_2);
+            lStack_e0 = in_x0;
+            func_0x00167d50(auStack_f0);
             iStack_cc = (&WaterConceptConstants::FluidDescriptions)[(long)iVar11 * 0x38];
             fStack_d4 = fVar30 + auStack_f0._0_4_;
             fStack_d0 = fVar28 + auStack_f0._4_4_;
-            uStack_c8 = *(undefined1 *)(param_2 + 0x3a0);
-            uStack_c0 = *(undefined8 *)(param_2 + 0x4c0);
-            bStack_b8 = (byte)((uint)*(undefined4 *)(param_2 + 0x2a8) >> 0x1f) ^ 1;
-            uStack_b7 = 0.0 < *(float *)(param_2 + 0x4d0);
-            (**(code **)(**(long **)(param_2 + 0x478) + 0x10))
-                      (*(long **)(param_2 + 0x478),&lStack_e0);
+            uStack_c8 = *(undefined1 *)(in_x0 + 0x3a0);
+            uStack_c0 = *(undefined8 *)(in_x0 + 0x4c0);
+            bStack_b8 = (byte)((uint)*(undefined4 *)(in_x0 + 0x2a8) >> 0x1f) ^ 1;
+            uStack_b7 = 0.0 < *(float *)(in_x0 + 0x4d0);
+            (**(code **)(**(long **)(in_x0 + 0x478) + 0x10))(*(long **)(in_x0 + 0x478),&lStack_e0);
           }
-          *(undefined4 *)(param_2 + 0x4d0) = 0x3f000000;
+          *(undefined4 *)(in_x0 + 0x4d0) = 0x3f000000;
         }
         else {
-          lVar19 = *(long *)(param_2 + 0x4c0);
+          lVar19 = *(long *)(in_x0 + 0x4c0);
           if (lVar19 == 0) {
             iVar35 = *(int *)(lVar16 + uVar18 * 8 + 4);
           }
@@ -1407,48 +1416,47 @@ LAB_0048c934:
             iVar11 = *piVar2;
             iVar35 = piVar2[1];
           }
-          if ((*(long *)(param_2 + 0x478) != 0) && (*(int *)(param_2 + 0x3d4) != 4)) {
+          if ((*(long *)(in_x0 + 0x478) != 0) && (*(int *)(in_x0 + 0x3d4) != 4)) {
             uStack_d8 = 1;
             fStack_d4 = 0.0;
             fStack_d0 = 0.0;
-            lStack_e0 = param_2;
-            func_0x00167d50(&uStack_e8,param_2);
+            lStack_e0 = in_x0;
+            func_0x00167d50(&uStack_e8);
             fStack_d4 = fVar30 + (float)uStack_e8;
             fStack_d0 = fVar28 + (float)((ulong)uStack_e8 >> 0x20);
-            uStack_c8 = *(undefined1 *)(param_2 + 0x3a0);
-            uStack_c0 = *(undefined8 *)(param_2 + 0x4c0);
-            bStack_b8 = (byte)((uint)*(undefined4 *)(param_2 + 0x2a8) >> 0x1f) ^ 1;
-            uStack_b7 = 0.0 < *(float *)(param_2 + 0x4d0);
+            uStack_c8 = *(undefined1 *)(in_x0 + 0x3a0);
+            uStack_c0 = *(undefined8 *)(in_x0 + 0x4c0);
+            bStack_b8 = (byte)((uint)*(undefined4 *)(in_x0 + 0x2a8) >> 0x1f) ^ 1;
+            uStack_b7 = 0.0 < *(float *)(in_x0 + 0x4d0);
             iStack_cc = iVar11;
-            (**(code **)(**(long **)(param_2 + 0x478) + 0x10))
-                      (*(long **)(param_2 + 0x478),&lStack_e0);
-            lVar14 = *(long *)(param_2 + 0x4c8);
+            (**(code **)(**(long **)(in_x0 + 0x478) + 0x10))(*(long **)(in_x0 + 0x478),&lStack_e0);
+            lVar14 = *(long *)(in_x0 + 0x4c8);
           }
           func_0x001730e0(iVar35,lVar14,iVar11,1);
         }
         iVar17 = iVar17 + 1;
-        if (*(char *)(param_2 + 0x4d4) == '\0') {
-          if (*(int *)(*(long *)(*(long *)(param_2 + 0x408) +
-                                (*(ulong *)(param_2 + 0x420) >> 6 & 0x3fffffffffffff8)) +
-                      (*(ulong *)(param_2 + 0x420) & 0x1ff) * 8) == 1) {
-            *(int *)(param_2 + 0x46c) = *(int *)(param_2 + 0x46c) + -1;
+        if (*(char *)(in_x0 + 0x4d4) == '\0') {
+          if (*(int *)(*(long *)(*(long *)(in_x0 + 0x408) +
+                                (*(ulong *)(in_x0 + 0x420) >> 6 & 0x3fffffffffffff8)) +
+                      (*(ulong *)(in_x0 + 0x420) & 0x1ff) * 8) == 1) {
+            *(int *)(in_x0 + 0x46c) = *(int *)(in_x0 + 0x46c) + -1;
           }
-          func_0x00169b00(param_2 + 0x400);
+          func_0x00169b00(in_x0 + 0x400);
         }
-      } while (*(long *)(param_2 + 0x428) != 0);
+      } while (*(long *)(in_x0 + 0x428) != 0);
     }
   }
-  uVar18 = (ulong)*(int *)(param_2 + 0x4b8);
-  if ((*(int *)(param_2 + 0x4b8) < 0) ||
-     (uVar21 = (*(long *)(param_2 + 0x198) - *(long *)(param_2 + 400) >> 3) * -0x3333333333333333,
+  uVar18 = (ulong)*(int *)(in_x0 + 0x4b8);
+  if ((*(int *)(in_x0 + 0x4b8) < 0) ||
+     (uVar21 = (*(long *)(in_x0 + 0x198) - *(long *)(in_x0 + 400) >> 3) * -0x3333333333333333,
      uVar21 < uVar18 || uVar21 - uVar18 == 0)) goto LAB_0048d1a8;
-  plVar13 = *(long **)(*(long *)(param_2 + 400) + uVar18 * 0x28);
+  plVar13 = *(long **)(*(long *)(in_x0 + 400) + uVar18 * 0x28);
   fVar29 = *(float *)((long)plVar13 + 0x74);
   fVar28 = 0.0;
-  if (*(char *)(param_2 + 0x112) != '\0') {
+  if (*(char *)(in_x0 + 0x112) != '\0') {
     fVar28 = 3.1415927;
   }
-  fVar26 = param_1 * 180.0 * 0.017453292;
+  fVar26 = p0 * 180.0 * 0.017453292;
   if (fVar28 <= fVar29) {
     fVar29 = fVar29 - fVar26;
     lStack_e0 = CONCAT44(lStack_e0._4_4_,fVar29);
@@ -1464,11 +1472,11 @@ LAB_0048d194:
   }
   (**(code **)(*plVar13 + 0x20))(plVar13,&lStack_e0);
 LAB_0048d1a8:
-  if (*(char *)(param_2 + 0x4f0) != '\0') {
-    fVar28 = *(float *)(param_2 + 0x500);
-    if (*(char *)(param_2 + 0x4fc) != '\0') {
-      fVar28 = (float)NEON_fminnm(fVar28 + param_1,0x3f800000);
-      *(float *)(param_2 + 0x500) = fVar28;
+  if (*(char *)(in_x0 + 0x4f0) != '\0') {
+    fVar28 = *(float *)(in_x0 + 0x500);
+    if (*(char *)(in_x0 + 0x4fc) != '\0') {
+      fVar28 = (float)NEON_fminnm(fVar28 + p0,0x3f800000);
+      *(float *)(in_x0 + 0x500) = fVar28;
     }
     fVar29 = (float)NEON_ucvtf(0xff);
     fVar26 = (float)NEON_ucvtf(0xff);
@@ -1493,12 +1501,12 @@ LAB_0048d1a8:
     bVar4 = (byte)iVar22 & ((byte)(iVar22 >> 0x1f) ^ 0xff);
     bVar5 = (byte)iVar17 & ((byte)(iVar17 >> 0x1f) ^ 0xff);
     bVar6 = (byte)iVar11 & ((byte)(iVar11 >> 0x1f) ^ 0xff);
-    lVar14 = *(long *)(param_2 + 0x198) - (long)*(long **)(param_2 + 400);
+    lVar14 = *(long *)(in_x0 + 0x198) - (long)*(long **)(in_x0 + 400);
     bVar7 = (byte)iVar35 & ((byte)(iVar35 >> 0x1f) ^ 0xff);
     if (lVar14 != 0) {
       uVar18 = 0;
       uVar21 = (lVar14 >> 3) * -0x3333333333333333;
-      plVar13 = *(long **)(param_2 + 400);
+      plVar13 = *(long **)(in_x0 + 400);
       do {
         lVar14 = *plVar13;
         uVar18 = uVar18 + 1;
@@ -1509,11 +1517,11 @@ LAB_0048d1a8:
         plVar13 = plVar13 + 5;
       } while (uVar18 <= uVar21 && uVar21 - uVar18 != 0);
     }
-    lVar14 = *(long *)(param_2 + 0x180) - (long)*(long **)(param_2 + 0x178);
+    lVar14 = *(long *)(in_x0 + 0x180) - (long)*(long **)(in_x0 + 0x178);
     if (lVar14 != 0) {
       uVar18 = 0;
       uVar21 = (lVar14 >> 3) * -0x3333333333333333;
-      plVar13 = *(long **)(param_2 + 0x178);
+      plVar13 = *(long **)(in_x0 + 0x178);
       do {
         lVar14 = *plVar13;
         uVar18 = uVar18 + 1;
@@ -1540,10 +1548,12 @@ LAB_0048d1a8:
 
 /* WaterConcept::Spout::getWorldBlockPosition(float) */
 
-void WaterConcept::Spout::getWorldBlockPosition(undefined8 *param_1,float param_2,long param_3)
+void WaterConcept::Spout::getWorldBlockPosition(float p0)
 
 {
   long lVar1;
+  long in_x0;
+  undefined8 *in_x8;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -1556,12 +1566,12 @@ void WaterConcept::Spout::getWorldBlockPosition(undefined8 *param_1,float param_
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uVar4 = *(undefined8 *)(param_3 + 0x3a8);
-  uVar5 = *(undefined8 *)(param_3 + 0x3b0);
+  uVar4 = *(undefined8 *)(in_x0 + 0x3a8);
+  uVar5 = *(undefined8 *)(in_x0 + 0x3b0);
   func_0x00169f20(auStack_50);
   fVar7 = ((float)uVar4 + (float)uVar5) * auStack_50._0_4_;
   fVar8 = ((float)((ulong)uVar4 >> 0x20) + (float)((ulong)uVar5 >> 0x20)) * auStack_50._4_4_;
-  uVar4 = func_0x00164d90(param_3);
+  uVar4 = func_0x00164d90();
   fVar2 = (float)func_0x0016ee90();
   fVar3 = (float)func_0x00174170(uVar4);
   uVar4 = NEON_rev64(CONCAT44(fVar8,fVar7),4);
@@ -1578,9 +1588,8 @@ void WaterConcept::Spout::getWorldBlockPosition(undefined8 *param_1,float param_
     fVar7 = fVar6 * (1.0 / fVar2);
     fVar8 = fVar3 * (1.0 / fVar2);
   }
-  func_0x00167d50(auStack_50,param_3);
-  *param_1 = CONCAT44(fVar8 * param_2 + fVar3 + auStack_50._4_4_,
-                      fVar7 * param_2 + fVar6 + auStack_50._0_4_);
+  func_0x00167d50(auStack_50);
+  *in_x8 = CONCAT44(fVar8 * p0 + fVar3 + auStack_50._4_4_,fVar7 * p0 + fVar6 + auStack_50._0_4_);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
@@ -1598,42 +1607,43 @@ void WaterConcept::Spout::getWorldBlockPosition(undefined8 *param_1,float param_
    const&, int, bool&) */
 
 void WaterConcept::Spout::particleHasCollided
-               (long param_1,undefined8 param_2,int *param_3,int param_4,undefined1 *param_5)
+               (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
   bool bVar1;
   int iVar2;
   undefined8 uVar3;
+  undefined1 *in_x4;
   
-  *param_5 = 0;
-  if ((*(char *)(param_1 + 0x4f0) == '\0') || (*param_3 != 1)) {
-    if ((*(char *)(param_1 + 0x112) == '\0') || (*(int *)(param_1 + 0x2a8) == param_4)) {
+  *in_x4 = 0;
+  if ((p0[0x4f0] == (WaterConcept__Fluids)0x0) || (*(int *)(ulong)(uint)p2 != 1)) {
+    if ((p0[0x112] == (WaterConcept__Fluids)0x0) || (*(int *)(p0 + 0x2a8) == (int)p3)) {
 LAB_0048d4d4:
-      func_0x0016e9f0(param_1);
+      func_0x0016e9f0(p0);
       return;
     }
-    if (*(int *)(param_1 + 0x3d4) == 3) {
-      if (*(char *)(param_1 + 0x3fe) != '\0') goto LAB_0048d4d4;
-      iVar2 = func_0x00166240(0,param_1,param_3,param_1 + 0x4a0,0xffffffff);
+    if (*(int *)(p0 + 0x3d4) == 3) {
+      if (p0[0x3fe] != (WaterConcept__Fluids)0x0) goto LAB_0048d4d4;
+      iVar2 = func_0x00166240(0,p0,(int *)(ulong)(uint)p2,p0 + 0x4a0,0xffffffff);
       bVar1 = iVar2 == 0;
     }
     else {
-      if (*(int *)(param_1 + 0x3d4) != 2) goto LAB_0048d4d4;
+      if (*(int *)(p0 + 0x3d4) != 2) goto LAB_0048d4d4;
       bVar1 = true;
     }
-    *param_5 = bVar1;
+    *in_x4 = bVar1;
   }
   else {
-    iVar2 = *(int *)(param_1 + 0x4f4);
+    iVar2 = *(int *)(p0 + 0x4f4);
     if (iVar2 < 1) {
       func_0x00168cd0();
       func_0x0016fcc0();
       uVar3 = func_0x00168cd0();
       func_0x00164090(0x3f800000,uVar3,0x122,1);
-      iVar2 = *(int *)(param_1 + 0x4f4);
+      iVar2 = *(int *)(p0 + 0x4f4);
     }
-    *(int *)(param_1 + 0x4f4) = iVar2 + 1;
-    *param_5 = 1;
+    *(int *)(p0 + 0x4f4) = iVar2 + 1;
+    *in_x4 = 1;
   }
   return;
 }
@@ -1677,7 +1687,7 @@ WaterConcept::Spout::_addParticleToRandomSpout
   float fVar22;
   float fVar23;
   undefined1 auStack_f0 [8];
-  long alStack_e8 [3];
+  void *apvStack_e8 [3];
   long lStack_d0;
   undefined4 uStack_c8;
   undefined8 uStack_c4;
@@ -1693,7 +1703,7 @@ WaterConcept::Spout::_addParticleToRandomSpout
   uVar12 = param_4[1] - *param_4 >> 4;
   uVar11 = uVar12 & 0xffffffff;
   lStack_d0 = CONCAT71(lStack_d0._1_7_,1);
-  func_0x0016c500(alStack_e8,uVar11,&lStack_d0);
+  func_0x0016c500(apvStack_e8,uVar11,&lStack_d0);
 LAB_0048d6bc:
   fVar22 = 0.0;
   iVar4 = (int)uVar12;
@@ -1702,8 +1712,8 @@ LAB_0048d6bc:
     fVar22 = 0.0;
     pfVar9 = (float *)(*param_4 + 8);
     do {
-      if ((*(ulong *)(alStack_e8[0] + (uVar7 >> 3 & 0x1ffffffffffffff8)) & 1L << (uVar7 & 0x3f)) !=
-          0) {
+      if ((*(ulong *)((long)apvStack_e8[0] + (uVar7 >> 3 & 0x1ffffffffffffff8)) &
+          1L << (uVar7 & 0x3f)) != 0) {
         fVar22 = fVar22 + *pfVar9;
       }
       uVar7 = uVar7 + 1;
@@ -1716,8 +1726,8 @@ LAB_0048d6bc:
 LAB_0048d710:
     uVar10 = 2;
 LAB_0048d714:
-    if (alStack_e8[0] != 0) {
-      FUN_00166120();
+    if (apvStack_e8[0] != (void *)0x0) {
+      FUN_00166120(apvStack_e8[0]);
     }
     if (*(long *)(lVar3 + 0x28) == lStack_a0) {
       return uVar10;
@@ -1731,7 +1741,7 @@ LAB_0048d714:
   do {
     uVar13 = uVar7 >> 6;
     uVar14 = 1L << (uVar7 & 0x3f);
-    if ((*(ulong *)(alStack_e8[0] + uVar13 * 8) & uVar14) != 0) {
+    if ((*(ulong *)((long)apvStack_e8[0] + uVar13 * 8) & uVar14) != 0) {
       fVar16 = *(float *)(*param_4 + lVar15 + 8);
       fVar23 = fVar23 + fVar16;
       if ((fVar16 != 0.0) && ((fVar22 / 10000.0) * (float)(iVar5 % 0x2711) + 0.0 <= fVar23)) {
@@ -1831,8 +1841,8 @@ LAB_0048d714:
     lVar15 = lVar15 + 0x10;
     if (uVar11 <= uVar7) goto LAB_0048d710;
   } while( true );
-  *(ulong *)(alStack_e8[0] + uVar13 * 8) =
-       *(ulong *)(alStack_e8[0] + uVar13 * 8) & (uVar14 ^ 0xffffffffffffffff);
+  *(ulong *)((long)apvStack_e8[0] + uVar13 * 8) =
+       *(ulong *)((long)apvStack_e8[0] + uVar13 * 8) & (uVar14 ^ 0xffffffffffffffff);
   goto LAB_0048d6bc;
 }
 
@@ -1844,16 +1854,16 @@ LAB_0048d714:
 
 /* WaterConcept::Spout::handleTouchDown(Walaber::Vector2 const&) */
 
-void WaterConcept::Spout::handleTouchDown(long param_1)
+void WaterConcept::Spout::handleTouchDown(Walaber__Vector2 *p0)
 
 {
   undefined8 uVar1;
   
-  if (*(int *)(param_1 + 0x3d4) != 4) {
+  if (*(int *)(p0 + 0x3d4) != 4) {
     uVar1 = func_0x00168cd0();
     func_0x0016e570(0x3f800000,0x3f800000,uVar1,0x5a);
   }
-  *(undefined1 *)(param_1 + 0x112) = 1;
+  p0[0x112] = (Walaber__Vector2)0x1;
   return;
 }
 
@@ -1865,7 +1875,7 @@ void WaterConcept::Spout::handleTouchDown(long param_1)
 
 /* WaterConcept::Spout::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
-void WaterConcept::Spout::handleTouchMoved(void)
+void WaterConcept::Spout::handleTouchMoved(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
   return;
@@ -1879,16 +1889,16 @@ void WaterConcept::Spout::handleTouchMoved(void)
 
 /* WaterConcept::Spout::handleTouchUp(Walaber::Vector2 const&) */
 
-void WaterConcept::Spout::handleTouchUp(long param_1)
+void WaterConcept::Spout::handleTouchUp(Walaber__Vector2 *p0)
 
 {
   undefined8 uVar1;
   
-  if (*(int *)(param_1 + 0x3d4) != 4) {
+  if (*(int *)(p0 + 0x3d4) != 4) {
     uVar1 = func_0x00168cd0();
     func_0x0016e570(0x3f800000,0x3f800000,uVar1,0x5b);
   }
-  *(undefined1 *)(param_1 + 0x112) = 0;
+  p0[0x112] = (Walaber__Vector2)0x0;
   return;
 }
 
@@ -2273,10 +2283,12 @@ void WaterConcept::Spout::_initFinished(long param_1)
 
 /* WaterConcept::Spout::getWorldMouthPosition(float) */
 
-void WaterConcept::Spout::getWorldMouthPosition(undefined8 *param_1,float param_2,long param_3)
+void WaterConcept::Spout::getWorldMouthPosition(float p0)
 
 {
   long lVar1;
+  long in_x0;
+  undefined8 *in_x8;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -2289,9 +2301,9 @@ void WaterConcept::Spout::getWorldMouthPosition(undefined8 *param_1,float param_
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   func_0x00169f20(auStack_50);
-  fVar6 = (float)*(undefined8 *)(param_3 + 0x3a8) * auStack_50._0_4_;
-  fVar7 = (float)((ulong)*(undefined8 *)(param_3 + 0x3a8) >> 0x20) * auStack_50._4_4_;
-  uVar4 = func_0x00164d90(param_3);
+  fVar6 = (float)*(undefined8 *)(in_x0 + 0x3a8) * auStack_50._0_4_;
+  fVar7 = (float)((ulong)*(undefined8 *)(in_x0 + 0x3a8) >> 0x20) * auStack_50._4_4_;
+  uVar4 = func_0x00164d90();
   fVar2 = (float)func_0x0016ee90();
   fVar3 = (float)func_0x00174170(uVar4);
   uVar4 = NEON_rev64(CONCAT44(fVar7,fVar6),4);
@@ -2308,9 +2320,8 @@ void WaterConcept::Spout::getWorldMouthPosition(undefined8 *param_1,float param_
     fVar6 = fVar5 * (1.0 / fVar2);
     fVar7 = fVar3 * (1.0 / fVar2);
   }
-  func_0x00167d50(auStack_50,param_3);
-  *param_1 = CONCAT44(fVar7 * param_2 + fVar3 + auStack_50._4_4_,
-                      fVar6 * param_2 + fVar5 + auStack_50._0_4_);
+  func_0x00167d50(auStack_50);
+  *in_x8 = CONCAT44(fVar7 * p0 + fVar3 + auStack_50._4_4_,fVar6 * p0 + fVar5 + auStack_50._0_4_);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;

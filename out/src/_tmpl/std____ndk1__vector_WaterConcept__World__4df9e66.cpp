@@ -138,7 +138,7 @@ ulong std::__ndk1::
               pbVar1[0xe] = 0;
               pbVar1[0xf] = 0;
               if ((*pbVar1 & 1) != 0) {
-                FUN_00166120(*(undefined8 *)(pbVar1 + 0x10));
+                FUN_00166120(*(void **)(pbVar1 + 0x10));
                 puVar10[lVar7 * -4] = 0;
               }
             }
@@ -231,19 +231,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__vallocate(long *param_1,ulong param_2)
+     ::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 >> 0x3b == 0) {
-    lVar1 = FUN_00164060(param_2 << 5);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x20;
+  if (in_x1 >> 0x3b == 0) {
+    lVar1 = FUN_00164060(in_x1 << 5);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x20;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -332,7 +333,7 @@ void std::__ndk1::
       do {
         pbVar3 = pbVar1 + -0x20;
         if ((*pbVar3 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(pbVar1 + -0x10));
+          FUN_00166120(*(void **)(pbVar1 + -0x10));
         }
         pbVar1 = pbVar3;
       } while (pbVar2 != pbVar3);
@@ -360,64 +361,68 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__move_range(long param_1,long param_2,undefined8 *param_3,long param_4)
+     ::__move_range(WaterConcept__World__WorldSpoutConnection *p0,
+                   WaterConcept__World__WorldSpoutConnection *p1,
+                   WaterConcept__World__WorldSpoutConnection *p2)
 
 {
   undefined8 *puVar1;
-  undefined8 *puVar2;
-  undefined8 *puVar3;
-  undefined8 *puVar4;
-  long lVar5;
+  WaterConcept__World__WorldSpoutConnection *pWVar2;
+  long in_x3;
+  long lVar3;
+  WaterConcept__World__WorldSpoutConnection *pWVar4;
+  undefined8 *puVar5;
   long lVar6;
-  byte *pbVar7;
-  undefined8 uVar8;
+  long lVar7;
+  byte *pbVar8;
   undefined8 uVar9;
+  undefined8 uVar10;
   
-  puVar4 = *(undefined8 **)(param_1 + 8);
-  param_4 = (long)puVar4 - param_4;
-  puVar2 = (undefined8 *)(param_2 + param_4);
-  puVar1 = puVar4;
-  for (puVar3 = puVar2; puVar3 < param_3; puVar3 = puVar3 + 4) {
-    uVar9 = puVar3[1];
-    uVar8 = *puVar3;
-    puVar1[2] = puVar3[2];
-    puVar1[1] = uVar9;
-    *puVar1 = uVar8;
-    puVar3[1] = 0;
-    puVar3[2] = 0;
-    *puVar3 = 0;
-    puVar1[3] = puVar3[3];
-    puVar1 = (undefined8 *)(*(long *)(param_1 + 8) + 0x20);
-    *(undefined8 **)(param_1 + 8) = puVar1;
+  puVar5 = *(undefined8 **)(p0 + 8);
+  lVar3 = (long)puVar5 - in_x3;
+  pWVar2 = p1 + lVar3;
+  puVar1 = puVar5;
+  for (pWVar4 = pWVar2; pWVar4 < p2; pWVar4 = pWVar4 + 0x20) {
+    uVar10 = *(undefined8 *)(pWVar4 + 8);
+    uVar9 = *(undefined8 *)pWVar4;
+    puVar1[2] = *(undefined8 *)(pWVar4 + 0x10);
+    puVar1[1] = uVar10;
+    *puVar1 = uVar9;
+    *(undefined8 *)(pWVar4 + 8) = 0;
+    *(undefined8 *)(pWVar4 + 0x10) = 0;
+    *(undefined8 *)pWVar4 = 0;
+    puVar1[3] = *(undefined8 *)(pWVar4 + 0x18);
+    puVar1 = (undefined8 *)(*(long *)(p0 + 8) + 0x20);
+    *(undefined8 **)(p0 + 8) = puVar1;
   }
-  if (param_4 != 0) {
-    lVar5 = 0;
+  if (lVar3 != 0) {
+    lVar6 = 0;
     do {
-      pbVar7 = (byte *)((long)puVar4 + lVar5 + -0x20);
-      if ((*pbVar7 & 1) == 0) {
-        *(undefined1 *)((long)puVar4 + lVar5 + -0x1f) = 0;
-        *pbVar7 = 0;
+      pbVar8 = (byte *)((long)puVar5 + lVar6 + -0x20);
+      if ((*pbVar8 & 1) == 0) {
+        *(undefined1 *)((long)puVar5 + lVar6 + -0x1f) = 0;
+        *pbVar8 = 0;
       }
       else {
-        **(undefined1 **)((long)puVar4 + lVar5 + -0x10) = 0;
-        *(undefined8 *)((long)puVar4 + lVar5 + -0x18) = 0;
-        if ((*pbVar7 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)((long)puVar4 + lVar5 + -0x10));
-          *(undefined8 *)((long)puVar4 + lVar5 + -0x20) = 0;
+        **(undefined1 **)((long)puVar5 + lVar6 + -0x10) = 0;
+        *(undefined8 *)((long)puVar5 + lVar6 + -0x18) = 0;
+        if ((*pbVar8 & 1) != 0) {
+          FUN_00166120(*(void **)((long)puVar5 + lVar6 + -0x10));
+          *(undefined8 *)((long)puVar5 + lVar6 + -0x20) = 0;
         }
       }
-      uVar9 = *(undefined8 *)((long)puVar2 + lVar5 + -0x18);
-      uVar8 = *(undefined8 *)((long)puVar2 + lVar5 + -0x20);
-      *(undefined8 *)((long)puVar4 + lVar5 + -0x10) = *(undefined8 *)((long)puVar2 + lVar5 + -0x10);
-      *(undefined8 *)((long)puVar4 + lVar5 + -0x18) = uVar9;
-      *(undefined8 *)pbVar7 = uVar8;
-      *(undefined8 *)((long)puVar2 + lVar5 + -0x18) = 0;
-      *(undefined8 *)((long)puVar2 + lVar5 + -0x10) = 0;
-      *(undefined8 *)((long)puVar2 + lVar5 + -0x20) = 0;
-      lVar6 = lVar5 + -0x20;
-      *(undefined8 *)((long)puVar4 + lVar5 + -8) = *(undefined8 *)((long)puVar2 + lVar5 + -8);
-      lVar5 = lVar6;
-    } while (-lVar6 != (param_4 >> 5) * 0x20);
+      uVar10 = *(undefined8 *)(pWVar2 + lVar6 + -0x18);
+      uVar9 = *(undefined8 *)(pWVar2 + lVar6 + -0x20);
+      *(undefined8 *)((long)puVar5 + lVar6 + -0x10) = *(undefined8 *)(pWVar2 + lVar6 + -0x10);
+      *(undefined8 *)((long)puVar5 + lVar6 + -0x18) = uVar10;
+      *(undefined8 *)pbVar8 = uVar9;
+      *(undefined8 *)(pWVar2 + lVar6 + -0x18) = 0;
+      *(undefined8 *)(pWVar2 + lVar6 + -0x10) = 0;
+      *(undefined8 *)(pWVar2 + lVar6 + -0x20) = 0;
+      lVar7 = lVar6 + -0x20;
+      *(undefined8 *)((long)puVar5 + lVar6 + -8) = *(undefined8 *)(pWVar2 + lVar6 + -8);
+      lVar6 = lVar7;
+    } while (-lVar7 != (lVar3 >> 5) * 0x20);
   }
   return;
 }

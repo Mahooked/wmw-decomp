@@ -73,7 +73,7 @@ void Walaber::Widget_ClassicControls::~Widget_ClassicControls(void)
 
 /* Walaber::Widget_ClassicControls::~Widget_ClassicControls() */
 
-void Walaber::Widget_ClassicControls::~Widget_ClassicControls(undefined8 param_1)
+void Walaber::Widget_ClassicControls::~Widget_ClassicControls(void *param_1)
 
 {
   FUN_00168a50();
@@ -89,14 +89,16 @@ void Walaber::Widget_ClassicControls::~Widget_ClassicControls(undefined8 param_1
 
 /* Walaber::Widget_ClassicControls::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_ClassicControls::update(long param_1,long param_2)
+undefined8 Walaber::Widget_ClassicControls::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   uint uVar1;
   long lVar2;
   undefined8 uVar3;
+  long in_x1;
   long lVar4;
   float fVar5;
+  undefined4 in_register_00005004;
   float fVar6;
   float fVar7;
   float fStack_50;
@@ -105,22 +107,22 @@ undefined8 Walaber::Widget_ClassicControls::update(long param_1,long param_2)
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  lVar4 = *(long *)(param_1 + 0x100);
+  lVar4 = *(long *)(p1 + 0x100);
   if (lVar4 == 0) {
-    *(undefined4 *)(param_2 + 4) = 0;
+    *(undefined4 *)(in_x1 + 4) = 0;
   }
   else {
-    func_0x00167d50(&fStack_50);
-    uVar1 = *(uint *)(param_1 + 0x88);
+    func_0x00167d50(&fStack_50,CONCAT44(in_register_00005004,p0));
+    uVar1 = *(uint *)(p1 + 0x88);
     if ((uVar1 & 0xfffffffe) == 2) {
       fVar5 = 1.0;
       if (*(float *)(lVar4 + 8) - fStack_4c <= 0.0) {
         fVar5 = -1.0;
       }
-      *(float *)(param_2 + 4) = fVar5;
+      *(float *)(in_x1 + 4) = fVar5;
       if (uVar1 == 2) {
 LAB_0037acfc:
-        *(float *)(param_2 + 4) = -fVar5;
+        *(float *)(in_x1 + 4) = -fVar5;
       }
     }
     else {
@@ -128,21 +130,19 @@ LAB_0037acfc:
       if (*(float *)(lVar4 + 4) - fStack_50 <= 0.0) {
         fVar5 = -1.0;
       }
-      *(float *)(param_2 + 4) = fVar5;
+      *(float *)(in_x1 + 4) = fVar5;
       if (uVar1 == 0) goto LAB_0037acfc;
     }
-    lVar4 = *(long *)(param_1 + 0x108);
+    lVar4 = *(long *)(p1 + 0x108);
     if (lVar4 != 0) {
-      fVar5 = *(float *)(*(long *)(param_1 + 0x100) + 0xc) - *(float *)(lVar4 + 0xc);
-      fVar6 = *(float *)(*(long *)(param_1 + 0x100) + 0x10) - *(float *)(lVar4 + 0x10);
+      fVar5 = *(float *)(*(long *)(p1 + 0x100) + 0xc) - *(float *)(lVar4 + 0xc);
+      fVar6 = *(float *)(*(long *)(p1 + 0x100) + 0x10) - *(float *)(lVar4 + 0x10);
       fVar5 = SQRT(fVar5 * fVar5 + fVar6 * fVar6);
       if (NAN(fVar5)) {
         fVar5 = (float)func_0x0016cd20();
       }
-      fVar6 = *(float *)(*(long *)(param_1 + 0x100) + 4) -
-              *(float *)(*(long *)(param_1 + 0x108) + 4);
-      fVar7 = *(float *)(*(long *)(param_1 + 0x100) + 8) -
-              *(float *)(*(long *)(param_1 + 0x108) + 8);
+      fVar6 = *(float *)(*(long *)(p1 + 0x100) + 4) - *(float *)(*(long *)(p1 + 0x108) + 4);
+      fVar7 = *(float *)(*(long *)(p1 + 0x100) + 8) - *(float *)(*(long *)(p1 + 0x108) + 8);
       fVar7 = fVar6 * fVar6 + fVar7 * fVar7;
       fVar6 = SQRT(fVar7);
       if (NAN(fVar6)) {
@@ -154,7 +154,7 @@ LAB_0037acfc:
   }
   fVar6 = 0.0;
 LAB_0037ad84:
-  *(float *)(param_2 + 8) = fVar6;
+  *(float *)(in_x1 + 8) = fVar6;
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     uVar3 = FUN_00164ff0();
     return uVar3;
@@ -199,23 +199,24 @@ void Walaber::Widget_ClassicControls::getMainFingerPos(undefined4 *param_1,long 
 
 /* Walaber::Widget_ClassicControls::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ClassicControls::acceptNewFingerDown
-          (long param_1,undefined8 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ClassicControls::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  undefined8 *puVar1;
+  ulong uVar1;
+  undefined8 in_x2;
+  undefined8 *puVar2;
   
-  if (*(long *)(param_1 + 0x100) == 0) {
-    puVar1 = (undefined8 *)(param_1 + 0x100);
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    puVar2 = (undefined8 *)(uVar1 + 0x100);
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    puVar1 = (undefined8 *)(param_1 + 0x108);
+    puVar2 = (undefined8 *)(uVar1 + 0x108);
   }
-  *puVar1 = param_3;
+  *puVar2 = in_x2;
   return 1;
 }
 
@@ -227,22 +228,24 @@ Walaber::Widget_ClassicControls::acceptNewFingerDown
 
 /* Walaber::Widget_ClassicControls::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ClassicControls::_acceptFinger(long param_1,undefined8 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ClassicControls::_acceptFinger(int p0,Walaber__FingerInfo *p1)
 
 {
-  undefined8 *puVar1;
+  ulong uVar1;
+  undefined8 in_x2;
+  undefined8 *puVar2;
   
-  if (*(long *)(param_1 + 0x100) == 0) {
-    puVar1 = (undefined8 *)(param_1 + 0x100);
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    puVar2 = (undefined8 *)(uVar1 + 0x100);
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    puVar1 = (undefined8 *)(param_1 + 0x108);
+    puVar2 = (undefined8 *)(uVar1 + 0x108);
   }
-  *puVar1 = param_3;
+  *puVar2 = in_x2;
   return 1;
 }
 
@@ -254,23 +257,24 @@ Walaber::Widget_ClassicControls::_acceptFinger(long param_1,undefined8 param_2,u
 
 /* Walaber::Widget_ClassicControls::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ClassicControls::acceptNewFingerEntered
-          (long param_1,undefined8 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ClassicControls::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
-  undefined8 *puVar1;
+  ulong uVar1;
+  undefined8 in_x2;
+  undefined8 *puVar2;
   
-  if (*(long *)(param_1 + 0x100) == 0) {
-    puVar1 = (undefined8 *)(param_1 + 0x100);
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == 0) {
+    puVar2 = (undefined8 *)(uVar1 + 0x100);
   }
   else {
-    if (*(long *)(param_1 + 0x108) != 0) {
+    if (*(long *)(uVar1 + 0x108) != 0) {
       return 0;
     }
-    puVar1 = (undefined8 *)(param_1 + 0x108);
+    puVar2 = (undefined8 *)(uVar1 + 0x108);
   }
-  *puVar1 = param_3;
+  *puVar2 = in_x2;
   return 1;
 }
 
@@ -282,7 +286,7 @@ Walaber::Widget_ClassicControls::acceptNewFingerEntered
 
 /* Walaber::Widget_ClassicControls::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::releaseFingerStayed(void)
+undefined8 Walaber::Widget_ClassicControls::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -296,7 +300,7 @@ undefined8 Walaber::Widget_ClassicControls::releaseFingerStayed(void)
 
 /* Walaber::Widget_ClassicControls::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::releaseFingerMoved(void)
+undefined8 Walaber::Widget_ClassicControls::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -310,20 +314,24 @@ undefined8 Walaber::Widget_ClassicControls::releaseFingerMoved(void)
 
 /* Walaber::Widget_ClassicControls::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::releaseFingerUp(long param_1,undefined8 param_2,long param_3)
+void Walaber::Widget_ClassicControls::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == param_3) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
-    if (*(long *)(param_1 + 0x108) == 0) {
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == in_x2) {
+    *(undefined8 *)(uVar1 + 0x100) = 0;
+    if (*(long *)(uVar1 + 0x108) == 0) {
       return;
     }
-    *(long *)(param_1 + 0x100) = *(long *)(param_1 + 0x108);
+    *(long *)(uVar1 + 0x100) = *(long *)(uVar1 + 0x108);
   }
-  else if (*(long *)(param_1 + 0x108) != param_3) {
+  else if (*(long *)(uVar1 + 0x108) != in_x2) {
     return;
   }
-  *(undefined8 *)(param_1 + 0x108) = 0;
+  *(undefined8 *)(uVar1 + 0x108) = 0;
   return;
 }
 
@@ -335,20 +343,24 @@ void Walaber::Widget_ClassicControls::releaseFingerUp(long param_1,undefined8 pa
 
 /* Walaber::Widget_ClassicControls::_releaseFinger(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::_releaseFinger(long param_1,undefined8 param_2,long param_3)
+void Walaber::Widget_ClassicControls::_releaseFinger(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == param_3) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
-    if (*(long *)(param_1 + 0x108) == 0) {
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == in_x2) {
+    *(undefined8 *)(uVar1 + 0x100) = 0;
+    if (*(long *)(uVar1 + 0x108) == 0) {
       return;
     }
-    *(long *)(param_1 + 0x100) = *(long *)(param_1 + 0x108);
+    *(long *)(uVar1 + 0x100) = *(long *)(uVar1 + 0x108);
   }
-  else if (*(long *)(param_1 + 0x108) != param_3) {
+  else if (*(long *)(uVar1 + 0x108) != in_x2) {
     return;
   }
-  *(undefined8 *)(param_1 + 0x108) = 0;
+  *(undefined8 *)(uVar1 + 0x108) = 0;
   return;
 }
 
@@ -360,21 +372,24 @@ void Walaber::Widget_ClassicControls::_releaseFinger(long param_1,undefined8 par
 
 /* Walaber::Widget_ClassicControls::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ClassicControls::releaseFingerLeft(long param_1,undefined8 param_2,long param_3)
+undefined8 Walaber::Widget_ClassicControls::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == param_3) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
-    if (*(long *)(param_1 + 0x108) == 0) {
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == in_x2) {
+    *(undefined8 *)(uVar1 + 0x100) = 0;
+    if (*(long *)(uVar1 + 0x108) == 0) {
       return 1;
     }
-    *(long *)(param_1 + 0x100) = *(long *)(param_1 + 0x108);
+    *(long *)(uVar1 + 0x100) = *(long *)(uVar1 + 0x108);
   }
-  else if (*(long *)(param_1 + 0x108) != param_3) {
+  else if (*(long *)(uVar1 + 0x108) != in_x2) {
     return 1;
   }
-  *(undefined8 *)(param_1 + 0x108) = 0;
+  *(undefined8 *)(uVar1 + 0x108) = 0;
   return 1;
 }
 
@@ -386,20 +401,24 @@ Walaber::Widget_ClassicControls::releaseFingerLeft(long param_1,undefined8 param
 
 /* Walaber::Widget_ClassicControls::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::notifyFingerLost(long param_1,undefined8 param_2,long param_3)
+void Walaber::Widget_ClassicControls::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) == param_3) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
-    if (*(long *)(param_1 + 0x108) == 0) {
+  ulong uVar1;
+  long in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (*(long *)(uVar1 + 0x100) == in_x2) {
+    *(undefined8 *)(uVar1 + 0x100) = 0;
+    if (*(long *)(uVar1 + 0x108) == 0) {
       return;
     }
-    *(long *)(param_1 + 0x100) = *(long *)(param_1 + 0x108);
+    *(long *)(uVar1 + 0x100) = *(long *)(uVar1 + 0x108);
   }
-  else if (*(long *)(param_1 + 0x108) != param_3) {
+  else if (*(long *)(uVar1 + 0x108) != in_x2) {
     return;
   }
-  *(undefined8 *)(param_1 + 0x108) = 0;
+  *(undefined8 *)(uVar1 + 0x108) = 0;
   return;
 }
 

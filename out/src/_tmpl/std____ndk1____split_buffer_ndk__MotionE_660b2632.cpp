@@ -53,40 +53,46 @@ void std::__ndk1::__split_buffer<ndk::MotionEvent,std::__ndk1::allocator<ndk::Mo
    std::__ndk1::allocator<ndk::MotionEvent>&>::~__split_buffer() */
 
 void std::__ndk1::__split_buffer<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>&>::
-     ~__split_buffer(long *param_1)
+     ~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
-  long lVar2;
+  void *pvVar2;
+  long lVar3;
   
   lVar1 = param_1[1];
-  lVar2 = param_1[2];
-  while (lVar2 != lVar1) {
-    param_1[2] = lVar2 + -0x80;
-    if (*(long *)(lVar2 + -0x18) != 0) {
-      *(long *)(lVar2 + -0x10) = *(long *)(lVar2 + -0x18);
-      FUN_00166120();
+  lVar3 = param_1[2];
+  while (lVar3 != lVar1) {
+    param_1[2] = lVar3 + -0x80;
+    pvVar2 = *(void **)(lVar3 + -0x18);
+    if (pvVar2 != (void *)0x0) {
+      *(void **)(lVar3 + -0x10) = pvVar2;
+      FUN_00166120(pvVar2);
     }
-    if (*(long *)(lVar2 + -0x30) != 0) {
-      *(long *)(lVar2 + -0x28) = *(long *)(lVar2 + -0x30);
-      FUN_00166120();
+    pvVar2 = *(void **)(lVar3 + -0x30);
+    if (pvVar2 != (void *)0x0) {
+      *(void **)(lVar3 + -0x28) = pvVar2;
+      FUN_00166120(pvVar2);
     }
-    if (*(long *)(lVar2 + -0x48) != 0) {
-      *(long *)(lVar2 + -0x40) = *(long *)(lVar2 + -0x48);
-      FUN_00166120();
+    pvVar2 = *(void **)(lVar3 + -0x48);
+    if (pvVar2 != (void *)0x0) {
+      *(void **)(lVar3 + -0x40) = pvVar2;
+      FUN_00166120(pvVar2);
     }
-    if (*(long *)(lVar2 + -0x60) != 0) {
-      *(long *)(lVar2 + -0x58) = *(long *)(lVar2 + -0x60);
-      FUN_00166120();
+    pvVar2 = *(void **)(lVar3 + -0x60);
+    if (pvVar2 != (void *)0x0) {
+      *(void **)(lVar3 + -0x58) = pvVar2;
+      FUN_00166120(pvVar2);
     }
-    if (*(long *)(lVar2 + -0x78) != 0) {
-      *(long *)(lVar2 + -0x70) = *(long *)(lVar2 + -0x78);
-      FUN_00166120();
+    pvVar2 = *(void **)(lVar3 + -0x78);
+    if (pvVar2 != (void *)0x0) {
+      *(void **)(lVar3 + -0x70) = pvVar2;
+      FUN_00166120(pvVar2);
     }
-    lVar2 = param_1[2];
+    lVar3 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

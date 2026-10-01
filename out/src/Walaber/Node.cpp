@@ -13,7 +13,7 @@ void Walaber::Node::Node(undefined8 *param_1)
 {
   long lVar1;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -22,7 +22,7 @@ void Walaber::Node::Node(undefined8 *param_1)
   abStack_40[0xe] = 0;
   abStack_40[0xf] = 0;
   abStack_40[0] = 0x16;
-  uStack_30 = 0;
+  pvStack_30 = (void *)0x0;
   abStack_40[9] = 0x6f;
   abStack_40[10] = 100;
   abStack_40[0xb] = 0x65;
@@ -49,7 +49,7 @@ void Walaber::Node::Node(undefined8 *param_1)
                     /* try { // try from 003ea658 to 003ea65f has its CatchHandler @ 003ea6d4 */
   func_0x001660d0(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   *(undefined8 *)((long)param_1 + 0x54) = 0;
   *param_1 = &PTR__Node_00710e28;
@@ -113,29 +113,30 @@ void Walaber::Node::Node(undefined8 *param_1,undefined8 param_2,undefined4 param
 
 /* Walaber::Node::Node(Walaber::Node const&) */
 
-void Walaber::Node::Node(undefined8 *param_1,long param_2)
+void Walaber::Node::Node(Walaber__Node *p0)
 
 {
+  long in_x1;
   undefined8 uVar1;
   
-  uVar1 = *(undefined8 *)(param_2 + 8);
-  param_1[2] = *(undefined8 *)(param_2 + 0x10);
-  param_1[1] = uVar1;
-  param_1[3] = *(undefined8 *)(param_2 + 0x18);
-  *(undefined4 *)(param_1 + 4) = *(undefined4 *)(param_2 + 0x20);
-  *param_1 = &PTR__Node_00710e28;
-  *(undefined4 *)((long)param_1 + 0x54) = *(undefined4 *)(param_2 + 0x54);
-  *(undefined4 *)(param_1 + 0xb) = *(undefined4 *)(param_2 + 0x58);
-  *(undefined4 *)((long)param_1 + 0x5c) = *(undefined4 *)(param_2 + 0x5c);
-  *(undefined4 *)(param_1 + 0xc) = *(undefined4 *)(param_2 + 0x60);
-  *(undefined4 *)((long)param_1 + 100) = *(undefined4 *)(param_2 + 100);
-  *(undefined4 *)(param_1 + 0xd) = *(undefined4 *)(param_2 + 0x68);
-  uVar1 = *(undefined8 *)(param_2 + 0x6c);
-  *(undefined8 *)((long)param_1 + 0x74) = *(undefined8 *)(param_2 + 0x74);
-  *(undefined8 *)((long)param_1 + 0x6c) = uVar1;
-  *(undefined1 *)((long)param_1 + 0x7c) = *(undefined1 *)(param_2 + 0x7c);
-  *(undefined1 *)((long)param_1 + 0x7d) = *(undefined1 *)(param_2 + 0x7d);
-  *(undefined1 *)((long)param_1 + 0x7e) = *(undefined1 *)(param_2 + 0x7e);
+  uVar1 = *(undefined8 *)(in_x1 + 8);
+  *(undefined8 *)(p0 + 0x10) = *(undefined8 *)(in_x1 + 0x10);
+  *(undefined8 *)(p0 + 8) = uVar1;
+  *(undefined8 *)(p0 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
+  *(undefined4 *)(p0 + 0x20) = *(undefined4 *)(in_x1 + 0x20);
+  *(undefined ***)p0 = &PTR__Node_00710e28;
+  *(undefined4 *)(p0 + 0x54) = *(undefined4 *)(in_x1 + 0x54);
+  *(undefined4 *)(p0 + 0x58) = *(undefined4 *)(in_x1 + 0x58);
+  *(undefined4 *)(p0 + 0x5c) = *(undefined4 *)(in_x1 + 0x5c);
+  *(undefined4 *)(p0 + 0x60) = *(undefined4 *)(in_x1 + 0x60);
+  *(undefined4 *)(p0 + 100) = *(undefined4 *)(in_x1 + 100);
+  *(undefined4 *)(p0 + 0x68) = *(undefined4 *)(in_x1 + 0x68);
+  uVar1 = *(undefined8 *)(in_x1 + 0x6c);
+  *(undefined8 *)(p0 + 0x74) = *(undefined8 *)(in_x1 + 0x74);
+  *(undefined8 *)(p0 + 0x6c) = uVar1;
+  p0[0x7c] = *(Walaber__Node *)(in_x1 + 0x7c);
+  p0[0x7d] = *(Walaber__Node *)(in_x1 + 0x7d);
+  p0[0x7e] = *(Walaber__Node *)(in_x1 + 0x7e);
   return;
 }
 
@@ -147,28 +148,29 @@ void Walaber::Node::Node(undefined8 *param_1,long param_2)
 
 /* Walaber::Node::TEMPNAMEPLACEHOLDERVALUE(Walaber::Node const&) */
 
-void Walaber::Node::operator=(long param_1,long param_2)
+void Walaber::Node::operator=(Walaber__Node *p0)
 
 {
+  long in_x1;
   undefined8 uVar1;
   
-  uVar1 = *(undefined8 *)(param_2 + 8);
-  *(undefined8 *)(param_1 + 0x10) = *(undefined8 *)(param_2 + 0x10);
-  *(undefined8 *)(param_1 + 8) = uVar1;
-  *(undefined8 *)(param_1 + 0x18) = *(undefined8 *)(param_2 + 0x18);
-  *(undefined4 *)(param_1 + 0x20) = *(undefined4 *)(param_2 + 0x20);
-  *(undefined4 *)(param_1 + 0x54) = *(undefined4 *)(param_2 + 0x54);
-  *(undefined4 *)(param_1 + 0x58) = *(undefined4 *)(param_2 + 0x58);
-  *(undefined4 *)(param_1 + 0x5c) = *(undefined4 *)(param_2 + 0x5c);
-  *(undefined4 *)(param_1 + 0x60) = *(undefined4 *)(param_2 + 0x60);
-  *(undefined4 *)(param_1 + 100) = *(undefined4 *)(param_2 + 100);
-  *(undefined4 *)(param_1 + 0x68) = *(undefined4 *)(param_2 + 0x68);
-  uVar1 = *(undefined8 *)(param_2 + 0x6c);
-  *(undefined8 *)(param_1 + 0x74) = *(undefined8 *)(param_2 + 0x74);
-  *(undefined8 *)(param_1 + 0x6c) = uVar1;
-  *(undefined1 *)(param_1 + 0x7c) = *(undefined1 *)(param_2 + 0x7c);
-  *(undefined1 *)(param_1 + 0x7d) = *(undefined1 *)(param_2 + 0x7d);
-  *(undefined1 *)(param_1 + 0x7e) = *(undefined1 *)(param_2 + 0x7e);
+  uVar1 = *(undefined8 *)(in_x1 + 8);
+  *(undefined8 *)(p0 + 0x10) = *(undefined8 *)(in_x1 + 0x10);
+  *(undefined8 *)(p0 + 8) = uVar1;
+  *(undefined8 *)(p0 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
+  *(undefined4 *)(p0 + 0x20) = *(undefined4 *)(in_x1 + 0x20);
+  *(undefined4 *)(p0 + 0x54) = *(undefined4 *)(in_x1 + 0x54);
+  *(undefined4 *)(p0 + 0x58) = *(undefined4 *)(in_x1 + 0x58);
+  *(undefined4 *)(p0 + 0x5c) = *(undefined4 *)(in_x1 + 0x5c);
+  *(undefined4 *)(p0 + 0x60) = *(undefined4 *)(in_x1 + 0x60);
+  *(undefined4 *)(p0 + 100) = *(undefined4 *)(in_x1 + 100);
+  *(undefined4 *)(p0 + 0x68) = *(undefined4 *)(in_x1 + 0x68);
+  uVar1 = *(undefined8 *)(in_x1 + 0x6c);
+  *(undefined8 *)(p0 + 0x74) = *(undefined8 *)(in_x1 + 0x74);
+  *(undefined8 *)(p0 + 0x6c) = uVar1;
+  p0[0x7c] = *(Walaber__Node *)(in_x1 + 0x7c);
+  p0[0x7d] = *(Walaber__Node *)(in_x1 + 0x7d);
+  p0[0x7e] = *(Walaber__Node *)(in_x1 + 0x7e);
   return;
 }
 
@@ -194,10 +196,10 @@ void Walaber::Node::~Node(void)
 
 /* Walaber::Node::~Node() */
 
-void Walaber::Node::~Node(void)
+void Walaber::Node::~Node(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 
@@ -209,11 +211,13 @@ void Walaber::Node::~Node(void)
 
 /* Walaber::Node::setLocalPosition(Walaber::Vector2 const&) */
 
-void Walaber::Node::setLocalPosition(long param_1,undefined8 *param_2)
+void Walaber::Node::setLocalPosition(Walaber__Vector2 *p0)
 
 {
-  *(undefined8 *)(param_1 + 0x54) = *param_2;
-  func_0x00167720(param_1,1);
+  undefined8 *in_x1;
+  
+  *(undefined8 *)(p0 + 0x54) = *in_x1;
+  func_0x00167720(p0,1);
   return;
 }
 
@@ -225,15 +229,16 @@ void Walaber::Node::setLocalPosition(long param_1,undefined8 *param_2)
 
 /* Walaber::Node::setWorldPosDirty(bool) */
 
-void Walaber::Node::setWorldPosDirty(long param_1,byte param_2)
+void Walaber::Node::setWorldPosDirty(bool p0)
 
 {
+  byte in_w1;
   long lVar1;
   
-  lVar1 = *(long *)(param_1 + 0x10);
-  *(byte *)(param_1 + 0x7c) = param_2 & 1;
+  lVar1 = *(long *)((ulong)p0 + 0x10);
+  *(byte *)((ulong)p0 + 0x7c) = in_w1 & 1;
   for (; lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
-    setWorldPosDirty(lVar1,param_2 & 1);
+    setWorldPosDirty(SUB81(lVar1,0));
   }
   return;
 }
@@ -246,14 +251,15 @@ void Walaber::Node::setWorldPosDirty(long param_1,byte param_2)
 
 /* Walaber::Node::setLocalScale(Walaber::Vector2 const&) */
 
-void Walaber::Node::setLocalScale(long param_1,undefined8 *param_2)
+void Walaber::Node::setLocalScale(Walaber__Vector2 *p0)
 
 {
+  undefined8 *in_x1;
   long lVar1;
   
-  *(undefined8 *)(param_1 + 0x5c) = *param_2;
-  func_0x00165f50(param_1,1);
-  for (lVar1 = *(long *)(param_1 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
+  *(undefined8 *)(p0 + 0x5c) = *in_x1;
+  func_0x00165f50(p0,1);
+  for (lVar1 = *(long *)(p0 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
     func_0x00167720(lVar1,1);
   }
   return;
@@ -267,15 +273,16 @@ void Walaber::Node::setLocalScale(long param_1,undefined8 *param_2)
 
 /* Walaber::Node::setWorldScaleDirty(bool) */
 
-void Walaber::Node::setWorldScaleDirty(long param_1,byte param_2)
+void Walaber::Node::setWorldScaleDirty(bool p0)
 
 {
+  byte in_w1;
   long lVar1;
   
-  lVar1 = *(long *)(param_1 + 0x10);
-  *(byte *)(param_1 + 0x7d) = param_2 & 1;
+  lVar1 = *(long *)((ulong)p0 + 0x10);
+  *(byte *)((ulong)p0 + 0x7d) = in_w1 & 1;
   for (; lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
-    setWorldScaleDirty(lVar1,param_2 & 1);
+    setWorldScaleDirty(SUB81(lVar1,0));
   }
   return;
 }
@@ -288,14 +295,16 @@ void Walaber::Node::setWorldScaleDirty(long param_1,byte param_2)
 
 /* Walaber::Node::setLocalAngle(float const&) */
 
-void Walaber::Node::setLocalAngle(long param_1,undefined4 *param_2)
+void Walaber::Node::setLocalAngle(float *p0)
 
 {
+  long in_x0;
+  undefined4 *in_x1;
   long lVar1;
   
-  *(undefined4 *)(param_1 + 0x74) = *param_2;
-  func_0x00170db0(param_1,1);
-  for (lVar1 = *(long *)(param_1 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
+  *(undefined4 *)(in_x0 + 0x74) = *in_x1;
+  func_0x00170db0(in_x0,1);
+  for (lVar1 = *(long *)(in_x0 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
     func_0x00167720(lVar1,1);
   }
   return;
@@ -309,15 +318,16 @@ void Walaber::Node::setLocalAngle(long param_1,undefined4 *param_2)
 
 /* Walaber::Node::setWorldAngleDirty(bool) */
 
-void Walaber::Node::setWorldAngleDirty(long param_1,byte param_2)
+void Walaber::Node::setWorldAngleDirty(bool p0)
 
 {
+  byte in_w1;
   long lVar1;
   
-  lVar1 = *(long *)(param_1 + 0x10);
-  *(byte *)(param_1 + 0x7e) = param_2 & 1;
+  lVar1 = *(long *)((ulong)p0 + 0x10);
+  *(byte *)((ulong)p0 + 0x7e) = in_w1 & 1;
   for (; lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
-    setWorldAngleDirty(lVar1,param_2 & 1);
+    setWorldAngleDirty(SUB81(lVar1,0));
   }
   return;
 }
@@ -330,14 +340,15 @@ void Walaber::Node::setWorldAngleDirty(long param_1,byte param_2)
 
 /* Walaber::Node::applyPositionOffset(Walaber::Vector2 const&) */
 
-void Walaber::Node::applyPositionOffset(long param_1,undefined8 *param_2)
+void Walaber::Node::applyPositionOffset(Walaber__Vector2 *p0)
 
 {
-  *(ulong *)(param_1 + 0x54) =
-       CONCAT44((float)((ulong)*param_2 >> 0x20) +
-                (float)((ulong)*(undefined8 *)(param_1 + 0x54) >> 0x20),
-                (float)*param_2 + (float)*(undefined8 *)(param_1 + 0x54));
-  func_0x00167720(param_1,1);
+  undefined8 *in_x1;
+  
+  *(ulong *)(p0 + 0x54) =
+       CONCAT44((float)((ulong)*in_x1 >> 0x20) + (float)((ulong)*(undefined8 *)(p0 + 0x54) >> 0x20),
+                (float)*in_x1 + (float)*(undefined8 *)(p0 + 0x54));
+  func_0x00167720(p0,1);
   return;
 }
 
@@ -349,17 +360,17 @@ void Walaber::Node::applyPositionOffset(long param_1,undefined8 *param_2)
 
 /* Walaber::Node::applyScaleOffset(Walaber::Vector2 const&) */
 
-void Walaber::Node::applyScaleOffset(long param_1,undefined8 *param_2)
+void Walaber::Node::applyScaleOffset(Walaber__Vector2 *p0)
 
 {
+  undefined8 *in_x1;
   long lVar1;
   
-  *(ulong *)(param_1 + 0x5c) =
-       CONCAT44((float)((ulong)*param_2 >> 0x20) +
-                (float)((ulong)*(undefined8 *)(param_1 + 0x5c) >> 0x20),
-                (float)*param_2 + (float)*(undefined8 *)(param_1 + 0x5c));
-  func_0x00165f50(param_1,1);
-  for (lVar1 = *(long *)(param_1 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
+  *(ulong *)(p0 + 0x5c) =
+       CONCAT44((float)((ulong)*in_x1 >> 0x20) + (float)((ulong)*(undefined8 *)(p0 + 0x5c) >> 0x20),
+                (float)*in_x1 + (float)*(undefined8 *)(p0 + 0x5c));
+  func_0x00165f50(p0,1);
+  for (lVar1 = *(long *)(p0 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
     func_0x00167720(lVar1,1);
   }
   return;
@@ -373,14 +384,16 @@ void Walaber::Node::applyScaleOffset(long param_1,undefined8 *param_2)
 
 /* Walaber::Node::applyAngleOffset(float const&) */
 
-void Walaber::Node::applyAngleOffset(long param_1,float *param_2)
+void Walaber::Node::applyAngleOffset(float *p0)
 
 {
+  long in_x0;
+  float *in_x1;
   long lVar1;
   
-  *(float *)(param_1 + 0x74) = *param_2 + *(float *)(param_1 + 0x74);
-  func_0x00170db0(param_1,1);
-  for (lVar1 = *(long *)(param_1 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
+  *(float *)(in_x0 + 0x74) = *in_x1 + *(float *)(in_x0 + 0x74);
+  func_0x00170db0(in_x0,1);
+  for (lVar1 = *(long *)(in_x0 + 0x10); lVar1 != 0; lVar1 = *(long *)(lVar1 + 0x18)) {
     func_0x00167720(lVar1,1);
   }
   return;
@@ -524,10 +537,12 @@ float Walaber::Node::getWorldAngle(long param_1)
 
 /* Walaber::Node::transformVector(Walaber::Vector2 const&) */
 
-void Walaber::Node::transformVector(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
+void Walaber::Node::transformVector(Walaber__Vector2 *p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
+  undefined8 *in_x8;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -539,14 +554,14 @@ void Walaber::Node::transformVector(undefined8 *param_1,undefined8 param_2,undef
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   func_0x00169f20(auStack_50);
-  uVar4 = func_0x00164d90(param_2);
-  fVar5 = (float)*param_3 * auStack_50._0_4_;
-  fVar6 = (float)((ulong)*param_3 >> 0x20) * auStack_50._4_4_;
+  uVar4 = func_0x00164d90(p0);
+  fVar5 = (float)*in_x1 * auStack_50._0_4_;
+  fVar6 = (float)((ulong)*in_x1 >> 0x20) * auStack_50._4_4_;
   fVar2 = (float)func_0x0016ee90(uVar4);
   fVar3 = (float)func_0x00174170(uVar4);
   uVar4 = NEON_rev64(CONCAT44(fVar6,fVar5),4);
-  *param_1 = CONCAT44(fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3 + 0.0,
-                      (fVar5 * fVar2 - (float)uVar4 * fVar3) + 0.0);
+  *in_x8 = CONCAT44(fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3 + 0.0,
+                    (fVar5 * fVar2 - (float)uVar4 * fVar3) + 0.0);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -562,10 +577,12 @@ void Walaber::Node::transformVector(undefined8 *param_1,undefined8 param_2,undef
 
 /* Walaber::Node::transformPoint(Walaber::Vector2 const&) */
 
-void Walaber::Node::transformPoint(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
+void Walaber::Node::transformPoint(Walaber__Vector2 *p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
+  undefined8 *in_x8;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -578,15 +595,15 @@ void Walaber::Node::transformPoint(undefined8 *param_1,undefined8 param_2,undefi
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   func_0x00169f20(auStack_50);
-  uVar4 = func_0x00164d90(param_2);
-  func_0x00167d50(auStack_58,param_2);
-  fVar5 = (float)*param_3 * auStack_50._0_4_;
-  fVar6 = (float)((ulong)*param_3 >> 0x20) * auStack_50._4_4_;
+  uVar4 = func_0x00164d90(p0);
+  func_0x00167d50(auStack_58,p0);
+  fVar5 = (float)*in_x1 * auStack_50._0_4_;
+  fVar6 = (float)((ulong)*in_x1 >> 0x20) * auStack_50._4_4_;
   fVar2 = (float)func_0x0016ee90(uVar4);
   fVar3 = (float)func_0x00174170(uVar4);
   uVar4 = NEON_rev64(CONCAT44(fVar6,fVar5),4);
-  *param_1 = CONCAT44(auStack_58._4_4_ + fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3,
-                      auStack_58._0_4_ + (fVar5 * fVar2 - (float)uVar4 * fVar3));
+  *in_x8 = CONCAT44(auStack_58._4_4_ + fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3,
+                    auStack_58._0_4_ + (fVar5 * fVar2 - (float)uVar4 * fVar3));
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -602,10 +619,12 @@ void Walaber::Node::transformPoint(undefined8 *param_1,undefined8 param_2,undefi
 
 /* Walaber::Node::inverseTransformVector(Walaber::Vector2 const&) */
 
-void Walaber::Node::inverseTransformVector(float *param_1,undefined8 param_2,float *param_3)
+void Walaber::Node::inverseTransformVector(Walaber__Vector2 *p0)
 
 {
   long lVar1;
+  float *in_x1;
+  float *in_x8;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -639,13 +658,13 @@ void Walaber::Node::inverseTransformVector(float *param_1,undefined8 param_2,flo
 LAB_003eae90:
   fStack_60 = fVar6;
   fStack_5c = fVar7;
-  fVar2 = (float)func_0x00164d90(param_2);
-  fVar4 = *param_3;
-  fVar5 = param_3[1];
+  fVar2 = (float)func_0x00164d90(p0);
+  fVar4 = *in_x1;
+  fVar5 = in_x1[1];
   fVar3 = (float)func_0x0016ee90();
   fVar2 = (float)func_0x00174170(-fVar2);
-  *param_1 = (fVar4 * fVar6 * fVar3 - fVar5 * fVar7 * fVar2) + 0.0;
-  param_1[1] = fVar5 * fVar7 * fVar3 + fVar4 * fVar6 * fVar2 + 0.0;
+  *in_x8 = (fVar4 * fVar6 * fVar3 - fVar5 * fVar7 * fVar2) + 0.0;
+  in_x8[1] = fVar5 * fVar7 * fVar3 + fVar4 * fVar6 * fVar2 + 0.0;
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
   }
@@ -661,12 +680,13 @@ LAB_003eae90:
 
 /* Walaber::Node::inverseTransformPoint(Walaber::Vector2 const&) */
 
-void Walaber::Node::inverseTransformPoint
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
+void Walaber::Node::inverseTransformPoint(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   ulong uVar2;
+  undefined8 *in_x1;
+  undefined8 *in_x8;
   float fVar3;
   float fVar4;
   undefined8 uVar5;
@@ -679,10 +699,10 @@ void Walaber::Node::inverseTransformPoint
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   func_0x00167d50(&fStack_60);
-  uVar5 = *param_3;
+  uVar5 = *in_x1;
   fVar4 = (float)_fStack_60;
   uVar2 = (ulong)_fStack_60 >> 0x20;
-  func_0x00169f20(&fStack_60,param_2);
+  func_0x00169f20(&fStack_60,p0);
   fVar6 = fStack_60;
   if (fStack_60 < 0.0) {
     fVar6 = -fStack_60;
@@ -703,14 +723,14 @@ void Walaber::Node::inverseTransformPoint
 LAB_003eafc8:
   fStack_60 = fVar6;
   fStack_5c = fVar7;
-  fVar3 = (float)func_0x00164d90(param_2);
+  fVar3 = (float)func_0x00164d90(p0);
   fVar6 = ((float)uVar5 - fVar4) * fVar6;
   fVar7 = ((float)((ulong)uVar5 >> 0x20) - (float)uVar2) * fVar7;
   fVar4 = (float)func_0x0016ee90();
   fVar3 = (float)func_0x00174170(-fVar3);
   uVar5 = NEON_rev64(CONCAT44(fVar7,fVar6),4);
-  *param_1 = CONCAT44(fVar7 * fVar4 + (float)((ulong)uVar5 >> 0x20) * fVar3 + 0.0,
-                      (fVar6 * fVar4 - (float)uVar5 * fVar3) + 0.0);
+  *in_x8 = CONCAT44(fVar7 * fVar4 + (float)((ulong)uVar5 >> 0x20) * fVar3 + 0.0,
+                    (fVar6 * fVar4 - (float)uVar5 * fVar3) + 0.0);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
   }

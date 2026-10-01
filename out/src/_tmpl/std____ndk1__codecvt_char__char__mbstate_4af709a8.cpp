@@ -8,7 +8,7 @@
 
 /* std::__ndk1::codecvt<char, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt(undefined8 param_1)
+void std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt(void *param_1)
 
 {
   FUN_00172660();
@@ -27,12 +27,13 @@ void std::__ndk1::codecvt<char,char,mbstate_t>::~codecvt(undefined8 param_1)
 
 undefined8
 std::__ndk1::codecvt<char,char,mbstate_t>::do_out
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
+          (mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
 
 {
-  *param_5 = param_3;
-  *param_8 = param_6;
+  undefined8 *in_x7;
+  
+  *(char **)p4 = p2;
+  *in_x7 = p5;
   return 3;
 }
 
@@ -47,12 +48,13 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_out
 
 undefined8
 std::__ndk1::codecvt<char,char,mbstate_t>::do_in
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
+          (mbstate_t *p0,char *p1,char *p2,char **p3,char *p4,char *p5,char **p6)
 
 {
-  *param_5 = param_3;
-  *param_8 = param_6;
+  undefined8 *in_x7;
+  
+  *(char **)p4 = p2;
+  *in_x7 = p5;
   return 3;
 }
 
@@ -66,12 +68,12 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_in
     */
 
 undefined8
-std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -113,15 +115,16 @@ undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_always_noconv(void)
    unsigned long) const */
 
 undefined4
-std::__ndk1::codecvt<char,char,mbstate_t>::do_length
-          (undefined8 param_1,undefined8 param_2,long param_3,long param_4,ulong param_5)
+std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   undefined4 uVar1;
+  undefined4 in_w4;
+  undefined4 in_register_00004024;
   
-  uVar1 = (int)(param_4 - param_3);
-  if (param_5 <= (ulong)(param_4 - param_3)) {
-    uVar1 = (int)param_5;
+  uVar1 = (int)(p3 - (long)p2);
+  if (CONCAT44(in_register_00004024,in_w4) <= p3 - (long)p2) {
+    uVar1 = in_w4;
   }
   return uVar1;
 }

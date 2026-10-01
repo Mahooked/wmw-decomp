@@ -75,9 +75,12 @@ void Walaber::DeepLink::Initialise(void)
   long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
-  ulong auStack_a0 [6];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
+  ulong auStack_88 [2];
+  void *pvStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined4 *puStack_50;
   undefined8 *puStack_48;
@@ -102,11 +105,11 @@ void Walaber::DeepLink::Initialise(void)
   abStack_70[0xd] = 0;
   abStack_70[0xe] = 0;
   abStack_70[0xf] = 0;
-  uStack_60 = 0;
-  auStack_a0[4] = 0;
-  auStack_a0[5] = 0;
-  auStack_a0[2] = 0;
-  auStack_a0[3] = 0;
+  pvStack_60 = (void *)0x0;
+  auStack_88[1] = 0;
+  pvStack_78 = (void *)0x0;
+  pvStack_90 = (void *)0x0;
+  auStack_88[0] = 0;
   auStack_a0[0] = 0;
   auStack_a0[1] = 0;
   abStack_70[5] = 0x65;
@@ -119,15 +122,15 @@ void Walaber::DeepLink::Initialise(void)
                     /* try { // try from 003f0004 to 003f001b has its CatchHandler @ 003f0094 */
   puStack_48 = puVar3;
   puStack_40 = puStack_50;
-  func_0x00163100(uVar2,&puStack_48,abStack_70,auStack_a0 + 3,auStack_a0);
+  func_0x00163100(uVar2,&puStack_48,abStack_70,auStack_88,auStack_a0);
   if ((auStack_a0[0] & 1) != 0) {
-    FUN_00166120(auStack_a0[2]);
+    FUN_00166120(pvStack_90);
   }
-  if ((auStack_a0[3] & 1) != 0) {
-    FUN_00166120(auStack_a0[5]);
+  if ((auStack_88[0] & 1) != 0) {
+    FUN_00166120(pvStack_78);
   }
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   FUN_0016bb90(&puStack_48);
   FUN_0016bb90(&puStack_58);
@@ -147,7 +150,7 @@ void Walaber::DeepLink::Initialise(void)
 
 /* Walaber::DeepLink::UnregisterScreen(unsigned int) */
 
-void Walaber::DeepLink::UnregisterScreen(int param_1)
+void Walaber::DeepLink::UnregisterScreen(uint p0)
 
 {
   long *plVar1;
@@ -158,7 +161,7 @@ void Walaber::DeepLink::UnregisterScreen(int param_1)
   plVar1 = sm_mapDeepLinkedScreens;
   if (sm_mapDeepLinkedScreens != (long *)&DAT_00730480) {
     do {
-      if ((int)plVar1[7] == param_1) {
+      if (*(uint *)(plVar1 + 7) == p0) {
         func_0x001638b0(&sm_mapDeepLinkedScreens);
         return;
       }
@@ -210,7 +213,7 @@ void Walaber::DeepLink::UnregisterScreen(undefined8 param_1)
 
 /* Walaber::DeepLink::OnScreenCommand(void*) */
 
-void Walaber::DeepLink::OnScreenCommand(long param_1)
+void Walaber::DeepLink::OnScreenCommand(void *p0)
 
 {
   long lVar1;
@@ -222,22 +225,22 @@ void Walaber::DeepLink::OnScreenCommand(long param_1)
   long *plVar7;
   long *plVar8;
   byte abStack_90 [16];
-  undefined8 uStack_80;
+  void *pvStack_80;
   undefined1 *apuStack_70 [3];
   byte abStack_58 [16];
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined1 auStack_40 [8];
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  if ((((param_1 != 0) &&
-       (puVar3 = (undefined *)func_0x00171820(&sm_mapDeepLinkedScreens,param_1 + 0x18),
+  if ((((p0 != (void *)0x0) &&
+       (puVar3 = (undefined *)func_0x00171820(&sm_mapDeepLinkedScreens,(long)p0 + 0x18),
        puVar3 != &DAT_00730480)) && (lVar4 = func_0x00165c70(), lVar4 != 0)) &&
      (*(int *)(lVar4 + 8) != *(int *)(puVar3 + 0x38))) {
     uVar5 = func_0x00170020();
     abStack_90[0xf] = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     abStack_90[0] = 0x1a;
     abStack_90[9] = 0x72;
     abStack_90[10] = 0x65;
@@ -255,23 +258,23 @@ void Walaber::DeepLink::OnScreenCommand(long param_1)
     abStack_90[0xe] = 0;
                     /* try { // try from 003f0224 to 003f0247 has its CatchHandler @ 003f037c */
     apuStack_70[0] = abStack_90;
-    lVar4 = func_0x001717c0(param_1 + 0x48,abStack_90,"",apuStack_70,auStack_40);
+    lVar4 = func_0x001717c0((long)p0 + 0x48,abStack_90,"",apuStack_70,auStack_40);
     func_0x0016f720(abStack_58,lVar4 + 0x38);
                     /* try { // try from 003f0248 to 003f0253 has its CatchHandler @ 003f0360 */
     uVar6 = func_0x00169950(uVar5,abStack_58);
     if ((abStack_58[0] & 1) != 0) {
-      FUN_00166120(uStack_48);
+      FUN_00166120(pvStack_48);
     }
     if ((abStack_90[0] & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
     if ((uVar6 & 1) != 0) {
       func_0x0016f470(0,0);
       func_0x00166ab0();
     }
     func_0x0016b220(apuStack_70);
-    plVar8 = *(long **)(param_1 + 0x48);
-    while (plVar8 != (long *)(param_1 + 0x50)) {
+    plVar8 = *(long **)((long)p0 + 0x48);
+    while (plVar8 != (long *)((long)p0 + 0x50)) {
                     /* try { // try from 003f02a4 to 003f02ab has its CatchHandler @ 003f03a4 */
       func_0x0016af30(abStack_90,plVar8 + 7);
                     /* try { // try from 003f02b0 to 003f02bb has its CatchHandler @ 003f0394 */

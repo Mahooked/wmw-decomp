@@ -8,7 +8,7 @@
 
 /* std::__ndk1::__time_get::__time_get(char const*) */
 
-void std::__ndk1::__time_get::__time_get(long *param_1,undefined8 param_2)
+void std::__ndk1::__time_get::__time_get(char *p0)
 
 {
   long lVar1;
@@ -16,20 +16,21 @@ void std::__ndk1::__time_get::__time_get(long *param_1,undefined8 param_2)
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  ulong uVar6;
-  ulong uVar7;
+  undefined8 in_x1;
+  void *pvVar6;
+  ulong p0_00;
   ulong uStack_68;
   ulong uStack_60;
-  ulong uStack_58;
+  void *pvStack_58;
   ulong uStack_50;
   ulong uStack_48;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar2 = FUN_00164730(0x1fbf,param_2,0);
-  *param_1 = lVar2;
+  lVar2 = FUN_00164730(0x1fbf,in_x1,0);
+  *(long *)p0 = lVar2;
   if (lVar2 != 0) {
     if (*(long *)(lVar1 + 0x28) != lStack_38) {
       FUN_00164ff0();
@@ -39,30 +40,30 @@ void std::__ndk1::__time_get::__time_get(long *param_1,undefined8 param_2)
   }
   uStack_68 = 0;
   uStack_60 = 0;
-  uStack_58 = 0;
-  uVar3 = FUN_00173480(param_2);
+  pvStack_58 = (void *)0x0;
+  uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar6 = (ulong)&uStack_68 | 1;
+    pvVar6 = (void *)((ulong)&uStack_68 | 1);
     uStack_68 = CONCAT71(uStack_68._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005ddb10;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar6 = FUN_00164060(uVar7);
-    uStack_68 = uVar7 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar6 = (void *)FUN_00164060(p0_00);
+    uStack_68 = p0_00 | 1;
     uStack_60 = uVar3;
-    uStack_58 = uVar6;
+    pvStack_58 = pvVar6;
   }
-  FUN_001715e0(uVar6,param_2,uVar3);
+  FUN_001715e0(pvVar6);
 LAB_005ddb10:
-  *(undefined1 *)(uVar6 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar6 + uVar3) = 0;
                     /* try { // try from 005ddb14 to 005ddb27 has its CatchHandler @ 005ddb78 */
   puVar4 = (ulong *)func_0x00161c30(&uStack_68,0,"time_get_byname failed to construct for ");
-  uStack_40 = puVar4[2];
+  pvStack_40 = (void *)puVar4[2];
   uStack_48 = puVar4[1];
   uStack_50 = *puVar4;
   puVar4[1] = 0;
@@ -72,10 +73,10 @@ LAB_005ddb10:
   uVar5 = FUN_005d5db0(&uStack_50);
                     /* catch() { ... } // from try @ 005ddb40 with catch @ 005ddb48 */
   if ((uStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((uStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
     FUN_00169180(uVar5);
     return;
   }

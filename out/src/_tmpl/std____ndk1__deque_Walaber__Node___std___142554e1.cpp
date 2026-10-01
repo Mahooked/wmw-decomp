@@ -10,32 +10,31 @@
    >::push_back(Walaber::Node*&&) */
 
 void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::push_back
-               (long param_1,undefined8 *param_2)
+               (Walaber__Node ***p0)
 
 {
   ulong uVar1;
-  long lVar2;
-  long lVar3;
-  long lVar4;
-  ulong uVar5;
+  undefined8 *in_x1;
+  Walaber__Node **ppWVar2;
+  Walaber__Node **ppWVar3;
+  ulong uVar4;
   
-  lVar3 = *(long *)(param_1 + 8);
-  lVar4 = *(long *)(param_1 + 0x28);
-  lVar2 = *(long *)(param_1 + 0x10) - lVar3;
+  ppWVar2 = p0[1];
+  ppWVar3 = p0[5];
   uVar1 = 0;
-  if (lVar2 != 0) {
-    uVar1 = lVar2 * 0x40 - 1;
+  if ((long)p0[2] - (long)ppWVar2 != 0) {
+    uVar1 = ((long)p0[2] - (long)ppWVar2) * 0x40 - 1;
   }
-  uVar5 = lVar4 + *(long *)(param_1 + 0x20);
-  if (uVar1 == uVar5) {
-    func_0x0016b820(param_1);
-    lVar4 = *(long *)(param_1 + 0x28);
-    lVar3 = *(long *)(param_1 + 8);
-    uVar5 = *(long *)(param_1 + 0x20) + lVar4;
+  uVar4 = (long)ppWVar3 + (long)p0[4];
+  if (uVar1 == uVar4) {
+    func_0x0016b820(p0);
+    ppWVar3 = p0[5];
+    ppWVar2 = p0[1];
+    uVar4 = (long)p0[4] + (long)ppWVar3;
   }
-  *(undefined8 *)(*(long *)(lVar3 + (uVar5 >> 6 & 0x3fffffffffffff8)) + (uVar5 & 0x1ff) * 8) =
-       *param_2;
-  *(long *)(param_1 + 0x28) = lVar4 + 1;
+  *(undefined8 *)(*(long *)((long)ppWVar2 + (uVar4 >> 6 & 0x3fffffffffffff8)) + (uVar4 & 0x1ff) * 8)
+       = *in_x1;
+  p0[5] = (Walaber__Node **)((long)ppWVar3 + 1);
   return;
 }
 
@@ -53,17 +52,17 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
 
 {
   long lVar1;
-  long lVar2;
-  undefined8 *puVar3;
-  ulong uVar4;
-  undefined8 *puVar5;
-  long lVar6;
-  undefined8 *puVar7;
-  ulong uVar8;
+  void *pvVar2;
+  long lVar3;
+  undefined8 *puVar4;
+  ulong uVar5;
+  undefined8 *puVar6;
+  long lVar7;
+  undefined8 *puVar8;
   undefined8 *puVar9;
   undefined8 uVar10;
   undefined8 uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   undefined8 *puStack_68;
   undefined8 *puStack_60;
   ulong uStack_58;
@@ -72,82 +71,82 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1[4] < 0x200) {
-    uVar4 = (long)(param_1[2] - param_1[1]) >> 3;
-    lVar6 = param_1[3] - *param_1;
-    if ((ulong)(lVar6 >> 3) <= uVar4) {
-      lVar2 = lVar6 >> 2;
-      if (lVar6 == 0) {
-        lVar2 = 1;
+    uVar5 = (long)(param_1[2] - param_1[1]) >> 3;
+    lVar7 = param_1[3] - *param_1;
+    if ((ulong)(lVar7 >> 3) <= uVar5) {
+      lVar3 = lVar7 >> 2;
+      if (lVar7 == 0) {
+        lVar3 = 1;
       }
-      func_0x0016d6c0(&uStack_70,lVar2,uVar4,param_1 + 3);
+      func_0x0016d6c0(&pvStack_70,lVar3,uVar5,param_1 + 3);
                     /* try { // try from 0033f68c to 0033f693 has its CatchHandler @ 0033f864 */
       uStack_78 = FUN_00164060(0x1000);
                     /* try { // try from 0033f69c to 0033f6a7 has its CatchHandler @ 0033f854 */
-      func_0x0016ad50(&uStack_70,&uStack_78);
-      puVar5 = (undefined8 *)param_1[2];
-      while (puVar3 = (undefined8 *)param_1[1], puVar5 != puVar3) {
-        puVar5 = puVar5 + -1;
+      func_0x0016ad50(&pvStack_70,&uStack_78);
+      puVar6 = (undefined8 *)param_1[2];
+      while (puVar4 = (undefined8 *)param_1[1], puVar6 != puVar4) {
+        puVar6 = puVar6 + -1;
                     /* try { // try from 0033f6bc to 0033f6c7 has its CatchHandler @ 0033f868 */
-        func_0x001620d0(&uStack_70,puVar5);
+        func_0x001620d0(&pvStack_70,puVar6);
       }
-      uVar4 = *param_1;
-      uVar8 = param_1[3];
-      puVar7 = (undefined8 *)param_1[2];
+      pvVar2 = (void *)*param_1;
+      uVar5 = param_1[3];
+      puVar8 = (undefined8 *)param_1[2];
       param_1[1] = (ulong)puStack_68;
-      *param_1 = uStack_70;
+      *param_1 = (ulong)pvStack_70;
       param_1[3] = uStack_58;
       param_1[2] = (ulong)puStack_60;
-      puStack_60 = puVar7;
-      if (puVar7 != puVar5) {
+      puStack_60 = puVar8;
+      if (puVar8 != puVar6) {
         puStack_60 = (undefined8 *)
-                     ((long)puVar7 + (~((long)puVar7 + (-8 - (long)puVar3)) & 0xfffffffffffffff8U));
+                     ((long)puVar8 + (~((long)puVar8 + (-8 - (long)puVar4)) & 0xfffffffffffffff8U));
       }
-      uStack_70 = uVar4;
-      puStack_68 = puVar3;
-      uStack_58 = uVar8;
-      if (uVar4 != 0) {
-        FUN_00166120();
+      pvStack_70 = pvVar2;
+      puStack_68 = puVar4;
+      uStack_58 = uVar5;
+      if (pvVar2 != (void *)0x0) {
+        FUN_00166120(pvVar2);
       }
       goto LAB_0033f80c;
     }
     if (param_1[3] != param_1[2]) {
-      uStack_70 = FUN_00164060(0x1000);
-      func_0x001727b0(param_1,&uStack_70);
+      pvStack_70 = (void *)FUN_00164060(0x1000);
+      func_0x001727b0(param_1,&pvStack_70);
       goto LAB_0033f80c;
     }
-    uStack_70 = FUN_00164060(0x1000);
-    func_0x0016c1e0(param_1,&uStack_70);
-    puVar5 = (undefined8 *)param_1[2];
-    puVar3 = (undefined8 *)param_1[1] + 1;
+    pvStack_70 = (void *)FUN_00164060(0x1000);
+    func_0x0016c1e0(param_1,&pvStack_70);
+    puVar6 = (undefined8 *)param_1[2];
+    puVar4 = (undefined8 *)param_1[1] + 1;
     uVar10 = *(undefined8 *)param_1[1];
-    param_1[1] = (ulong)puVar3;
-    if (puVar5 == (undefined8 *)param_1[3]) {
-      puVar7 = (undefined8 *)*param_1;
-      lVar6 = (long)puVar3 - (long)puVar7;
-      if (puVar3 < puVar7 || lVar6 == 0) {
-        lVar6 = (long)param_1[3] - (long)puVar7;
-        uVar4 = lVar6 >> 2;
-        if (lVar6 == 0) {
-          uVar4 = 1;
+    param_1[1] = (ulong)puVar4;
+    if (puVar6 == (undefined8 *)param_1[3]) {
+      puVar8 = (undefined8 *)*param_1;
+      lVar7 = (long)puVar4 - (long)puVar8;
+      if (puVar4 < puVar8 || lVar7 == 0) {
+        lVar7 = (long)param_1[3] - (long)puVar8;
+        uVar5 = lVar7 >> 2;
+        if (lVar7 == 0) {
+          uVar5 = 1;
         }
-        func_0x0016d6c0(&uStack_70,uVar4,uVar4 >> 2,param_1 + 3);
-        puVar3 = (undefined8 *)param_1[1];
-        puVar5 = (undefined8 *)param_1[2];
-        puVar7 = puVar3;
-        if (puVar3 != puVar5) {
+        func_0x0016d6c0(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        puVar4 = (undefined8 *)param_1[1];
+        puVar6 = (undefined8 *)param_1[2];
+        puVar8 = puVar4;
+        if (puVar4 != puVar6) {
           do {
-            puVar7 = puVar3 + 1;
-            *puStack_60 = *puVar3;
+            puVar8 = puVar4 + 1;
+            *puStack_60 = *puVar4;
             puStack_60 = puStack_60 + 1;
-            puVar3 = puVar7;
-          } while (puVar5 != puVar7);
-          puVar3 = (undefined8 *)param_1[2];
-          puVar7 = (undefined8 *)param_1[1];
+            puVar4 = puVar8;
+          } while (puVar6 != puVar8);
+          puVar4 = (undefined8 *)param_1[2];
+          puVar8 = (undefined8 *)param_1[1];
         }
-        uVar4 = *param_1;
+        pvVar2 = (void *)*param_1;
         param_1[1] = (ulong)puStack_68;
-        *param_1 = uStack_70;
-        puVar5 = puStack_60;
+        *param_1 = (ulong)pvStack_70;
+        puVar6 = puStack_60;
         goto LAB_0033f7b4;
       }
       goto LAB_0033f580;
@@ -155,75 +154,75 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
   }
   else {
     param_1[4] = param_1[4] - 0x200;
-    puVar3 = (undefined8 *)param_1[1] + 1;
+    puVar4 = (undefined8 *)param_1[1] + 1;
     uVar10 = *(undefined8 *)param_1[1];
-    puVar5 = (undefined8 *)param_1[2];
-    param_1[1] = (ulong)puVar3;
-    if (puVar5 == (undefined8 *)param_1[3]) {
-      puVar7 = (undefined8 *)*param_1;
-      lVar6 = (long)puVar3 - (long)puVar7;
-      if (puVar3 < puVar7 || lVar6 == 0) {
-        lVar6 = (long)param_1[3] - (long)puVar7;
-        uVar4 = lVar6 >> 2;
-        if (lVar6 == 0) {
-          uVar4 = 1;
+    puVar6 = (undefined8 *)param_1[2];
+    param_1[1] = (ulong)puVar4;
+    if (puVar6 == (undefined8 *)param_1[3]) {
+      puVar8 = (undefined8 *)*param_1;
+      lVar7 = (long)puVar4 - (long)puVar8;
+      if (puVar4 < puVar8 || lVar7 == 0) {
+        lVar7 = (long)param_1[3] - (long)puVar8;
+        uVar5 = lVar7 >> 2;
+        if (lVar7 == 0) {
+          uVar5 = 1;
         }
-        func_0x0016d6c0(&uStack_70,uVar4,uVar4 >> 2,param_1 + 3);
-        puVar3 = (undefined8 *)param_1[1];
-        puVar5 = (undefined8 *)param_1[2];
-        puVar7 = puVar3;
-        if (puVar3 != puVar5) {
+        func_0x0016d6c0(&pvStack_70,uVar5,uVar5 >> 2,param_1 + 3);
+        puVar4 = (undefined8 *)param_1[1];
+        puVar6 = (undefined8 *)param_1[2];
+        puVar8 = puVar4;
+        if (puVar4 != puVar6) {
           do {
-            puVar7 = puVar3 + 1;
-            *puStack_60 = *puVar3;
+            puVar8 = puVar4 + 1;
+            *puStack_60 = *puVar4;
             puStack_60 = puStack_60 + 1;
-            puVar3 = puVar7;
-          } while (puVar5 != puVar7);
-          puVar3 = (undefined8 *)param_1[2];
-          puVar7 = (undefined8 *)param_1[1];
+            puVar4 = puVar8;
+          } while (puVar6 != puVar8);
+          puVar4 = (undefined8 *)param_1[2];
+          puVar8 = (undefined8 *)param_1[1];
         }
-        uVar4 = *param_1;
-        *param_1 = uStack_70;
+        pvVar2 = (void *)*param_1;
+        *param_1 = (ulong)pvStack_70;
         param_1[1] = (ulong)puStack_68;
-        puVar5 = puStack_60;
+        puVar6 = puStack_60;
 LAB_0033f7b4:
-        param_1[2] = (ulong)puVar5;
-        uVar8 = param_1[3];
+        param_1[2] = (ulong)puVar6;
+        uVar5 = param_1[3];
         param_1[3] = uStack_58;
-        puStack_60 = puVar3;
-        if (puVar3 != puVar7) {
+        puStack_60 = puVar4;
+        if (puVar4 != puVar8) {
           puStack_60 = (undefined8 *)
-                       ((long)puVar3 + (~((long)puVar3 + (-8 - (long)puVar7)) & 0xfffffffffffffff8U)
+                       ((long)puVar4 + (~((long)puVar4 + (-8 - (long)puVar8)) & 0xfffffffffffffff8U)
                        );
         }
-        uStack_70 = uVar4;
-        puStack_68 = puVar7;
-        uStack_58 = uVar8;
-        if (uVar4 != 0) {
-          FUN_00166120();
-          puVar5 = (undefined8 *)param_1[2];
+        pvStack_70 = pvVar2;
+        puStack_68 = puVar8;
+        uStack_58 = uVar5;
+        if (pvVar2 != (void *)0x0) {
+          FUN_00166120(pvVar2);
+          puVar6 = (undefined8 *)param_1[2];
         }
       }
       else {
 LAB_0033f580:
-        lVar6 = lVar6 >> 3;
-        lVar2 = lVar6 + 2;
-        if (-1 < lVar6 + 1) {
-          lVar2 = lVar6 + 1;
+        lVar7 = lVar7 >> 3;
+        lVar3 = lVar7 + 2;
+        if (-1 < lVar7 + 1) {
+          lVar3 = lVar7 + 1;
         }
-        puVar9 = puVar3 + -(lVar2 >> 1);
-        puVar7 = puVar9;
-        if ((long)puVar5 - (long)puVar3 != 0) {
+        puVar9 = puVar4 + -(lVar3 >> 1);
+        puVar8 = puVar9;
+        if ((long)puVar6 - (long)puVar4 != 0) {
           FUN_0016b250(puVar9);
-          puVar7 = (undefined8 *)(param_1[1] + (lVar2 >> 1) * -8);
+          puVar8 = (undefined8 *)(param_1[1] + (lVar3 >> 1) * -8);
         }
-        puVar5 = puVar9 + ((long)puVar5 - (long)puVar3 >> 3);
-        param_1[1] = (ulong)puVar7;
-        param_1[2] = (ulong)puVar5;
+        puVar6 = puVar9 + ((long)puVar6 - (long)puVar4 >> 3);
+        param_1[1] = (ulong)puVar8;
+        param_1[2] = (ulong)puVar6;
       }
     }
   }
-  *puVar5 = uVar10;
+  *puVar6 = uVar10;
   param_1[2] = param_1[2] + 8;
 LAB_0033f80c:
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -257,7 +256,7 @@ void std::__ndk1::deque<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>::
   }
   *(long *)(param_1 + 0x28) = lVar3;
   if (0x3ff < (ulong)(lVar1 - (lVar3 + *(long *)(param_1 + 0x20)))) {
-    FUN_00166120(*(undefined8 *)(*(long *)(param_1 + 0x10) + -8));
+    FUN_00166120(*(void **)(*(long *)(param_1 + 0x10) + -8));
     *(long *)(param_1 + 0x10) = *(long *)(param_1 + 0x10) + -8;
   }
   return;

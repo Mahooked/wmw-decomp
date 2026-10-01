@@ -62,7 +62,7 @@ void WaterConcept::AlgaeHider::~AlgaeHider(undefined8 *param_1)
 
 /* WaterConcept::AlgaeHider::~AlgaeHider() */
 
-void WaterConcept::AlgaeHider::~AlgaeHider(undefined8 param_1)
+void WaterConcept::AlgaeHider::~AlgaeHider(void *param_1)
 
 {
   func_0x001706d0();
@@ -76,73 +76,33 @@ void WaterConcept::AlgaeHider::~AlgaeHider(undefined8 param_1)
 /* mangled: _ZN12WaterConcept10AlgaeHider13setPropertiesERKN7Walaber12PropertyListE */
 /* WaterConcept::AlgaeHider::setProperties(Walaber::PropertyList const&) */
 
+/* WARNING: Removing unreachable block (ram,0x00477294) */
+/* WARNING: Removing unreachable block (ram,0x004772dc) */
 /* WaterConcept::AlgaeHider::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::AlgaeHider::setProperties(long param_1,undefined8 param_2)
+void WaterConcept::AlgaeHider::setProperties(Walaber__PropertyList *p0)
 
 {
   long lVar1;
   undefined4 uVar2;
   ulong uVar3;
-  byte abStack_60 [16];
-  undefined8 uStack_50;
-  long lStack_48;
+  long lVar4;
   
   lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
+  lVar4 = *(long *)(lVar1 + 0x28);
   func_0x00163180();
-  abStack_60[0xc] = 0;
-  abStack_60[0xd] = 0;
-  abStack_60[0xe] = 0;
-  abStack_60[0xf] = 0;
-  uStack_50 = 0;
-  abStack_60[0] = 0x14;
-  abStack_60[9] = 0x6e;
-  abStack_60[10] = 0x74;
-  abStack_60[1] = 0x41;
-  abStack_60[2] = 0x6c;
-  abStack_60[3] = 0x67;
-  abStack_60[4] = 0x61;
-  abStack_60[5] = 0x65;
-  abStack_60[6] = 0x43;
-  abStack_60[7] = 0x6f;
-  abStack_60[8] = 0x75;
-  abStack_60[0xb] = 0;
                     /* try { // try from 0047727c to 00477287 has its CatchHandler @ 00477314 */
-  uVar3 = func_0x00173810(param_2,abStack_60);
-  if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
-  }
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    abStack_60[0xc] = 0;
-    abStack_60[0xd] = 0;
-    abStack_60[0xe] = 0;
-    abStack_60[0xf] = 0;
-    uStack_50 = 0;
-    abStack_60[0] = 0x14;
-    abStack_60[9] = 0x6e;
-    abStack_60[10] = 0x74;
-    abStack_60[1] = 0x41;
-    abStack_60[2] = 0x6c;
-    abStack_60[3] = 0x67;
-    abStack_60[4] = 0x61;
-    abStack_60[5] = 0x65;
-    abStack_60[6] = 0x43;
-    abStack_60[7] = 0x6f;
-    abStack_60[8] = 0x75;
-    abStack_60[0xb] = 0;
                     /* try { // try from 004772c0 to 004772cf has its CatchHandler @ 00477310 */
-    func_0x0016d4e0(param_2,abStack_60);
+    func_0x0016d4e0();
     uVar2 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x3b8) = uVar2;
-    if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
-    }
+    *(undefined4 *)(p0 + 0x3b8) = uVar2;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
+  if (*(long *)(lVar1 + 0x28) != lVar4) {
+    FUN_00164ff0();
     return;
   }
-  FUN_00164ff0();
   return;
 }
 
@@ -154,10 +114,10 @@ void WaterConcept::AlgaeHider::setProperties(long param_1,undefined8 param_2)
 
 /* WaterConcept::AlgaeHider::update(float) */
 
-void WaterConcept::AlgaeHider::update(void)
+void WaterConcept::AlgaeHider::update(float p0)
 
 {
-  InteractiveObject::update();
+  InteractiveObject::update(p0);
   return;
 }
 
@@ -174,9 +134,9 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
 {
   long lVar1;
   long lVar2;
+  long *p0;
   long *plVar3;
-  long *plVar4;
-  long lVar5;
+  long lVar4;
   undefined4 auStack_60 [2];
   long lStack_58;
   undefined8 uStack_50;
@@ -187,27 +147,27 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar5 = *(long *)(param_1 + 0x3d0);
-  while (lVar5 != 0) {
-    plVar4 = *(long **)(param_1 + 0x3a8);
-    plVar3 = *(long **)(param_1 + 0x3c0);
-    if (plVar4 != (long *)0x0) {
+  lVar4 = *(long *)(param_1 + 0x3d0);
+  while (lVar4 != 0) {
+    plVar3 = *(long **)(param_1 + 0x3a8);
+    p0 = *(long **)(param_1 + 0x3c0);
+    if (plVar3 != (long *)0x0) {
       uStack_50 = 0;
       auStack_60[0] = 3;
       uStack_40 = 0;
-      uStack_48 = (undefined4)plVar3[2];
-      uStack_44 = (undefined4)((ulong)plVar3[2] >> 0x20);
+      uStack_48 = (undefined4)p0[2];
+      uStack_44 = (undefined4)((ulong)p0[2] >> 0x20);
       lStack_58 = param_1;
-      (**(code **)(*plVar4 + 0x10))(plVar4,auStack_60);
-      plVar3 = *(long **)(param_1 + 0x3c0);
-      lVar5 = *(long *)(param_1 + 0x3d0);
+      (**(code **)(*plVar3 + 0x10))(plVar3,auStack_60);
+      p0 = *(long **)(param_1 + 0x3c0);
+      lVar4 = *(long *)(param_1 + 0x3d0);
     }
-    lVar1 = *plVar3;
-    *(long *)(lVar1 + 8) = plVar3[1];
-    *(long *)plVar3[1] = lVar1;
-    *(long *)(param_1 + 0x3d0) = lVar5 + -1;
-    FUN_00166120();
-    lVar5 = *(long *)(param_1 + 0x3d0);
+    lVar1 = *p0;
+    *(long *)(lVar1 + 8) = p0[1];
+    *(long *)p0[1] = lVar1;
+    *(long *)(param_1 + 0x3d0) = lVar4 + -1;
+    FUN_00166120(p0);
+    lVar4 = *(long *)(param_1 + 0x3d0);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
@@ -226,75 +186,78 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
    WaterConcept::ParticleDescription const&, int, bool&) */
 
 void WaterConcept::AlgaeHider::particleHasCollided
-               (long param_1,undefined8 param_2,int *param_3,undefined8 param_4,undefined1 *param_5)
+               (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
-  int iVar4;
-  long lVar5;
-  int iVar6;
-  undefined8 uVar7;
-  long lVar8;
+  int *piVar4;
+  undefined1 *in_x4;
+  int iVar5;
+  long lVar6;
+  int iVar7;
+  undefined8 uVar8;
+  long lVar9;
   undefined4 auStack_80 [2];
-  long lStack_78;
+  WaterConcept__Fluids *pWStack_78;
   undefined8 uStack_70;
   long lStack_68;
   undefined1 uStack_60;
   long lStack_58;
   
+  piVar4 = (int *)(ulong)(uint)p2;
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  iVar4 = *param_3;
-  if (iVar4 - 3U < 2) {
-    *param_5 = 1;
-    plVar3 = (long *)func_0x001626a0(param_2,iVar4);
-    lVar5 = *(long *)(param_1 + 0x3d0);
-    if (lVar5 != 0) {
-      iVar6 = *param_3;
-      iVar4 = (int)lVar5;
-      if (iVar6 != 4) {
-        iVar4 = 1;
+  iVar5 = *piVar4;
+  if (iVar5 - 3U < 2) {
+    *in_x4 = 1;
+    plVar3 = (long *)func_0x001626a0(p1,iVar5);
+    lVar6 = *(long *)(p0 + 0x3d0);
+    if (lVar6 != 0) {
+      iVar7 = *piVar4;
+      iVar5 = (int)lVar6;
+      if (iVar7 != 4) {
+        iVar5 = 1;
       }
-      if (0 < iVar4) {
-        if (lVar5 != 0) {
-          iVar6 = iVar4 + 1;
-          uVar7 = *(undefined8 *)(*plVar3 + (long)param_3[1] * 0x90);
+      if (0 < iVar5) {
+        if (lVar6 != 0) {
+          iVar7 = iVar5 + 1;
+          uVar8 = *(undefined8 *)(*plVar3 + (long)piVar4[1] * 0x90);
           do {
-            plVar3 = *(long **)(param_1 + 0x3c0);
+            plVar3 = *(long **)(p0 + 0x3c0);
             lVar1 = *plVar3;
-            lVar8 = plVar3[2];
+            lVar9 = plVar3[2];
             *(long *)(lVar1 + 8) = plVar3[1];
             *(long *)plVar3[1] = lVar1;
-            *(long *)(param_1 + 0x3d0) = lVar5 + -1;
-            FUN_00166120();
-            plVar3 = *(long **)(param_1 + 0x3a8);
+            *(long *)(p0 + 0x3d0) = lVar6 + -1;
+            FUN_00166120(plVar3);
+            plVar3 = *(long **)(p0 + 0x3a8);
             if (plVar3 != (long *)0x0) {
               auStack_80[0] = 3;
-              lStack_78 = param_1;
-              uStack_70 = uVar7;
-              lStack_68 = lVar8;
-              uStack_60 = 1 < iVar4;
+              pWStack_78 = p0;
+              uStack_70 = uVar8;
+              lStack_68 = lVar9;
+              uStack_60 = 1 < iVar5;
               (**(code **)(*plVar3 + 0x10))(plVar3,auStack_80);
             }
-            iVar6 = iVar6 + -1;
-          } while ((1 < iVar6) && (lVar5 = *(long *)(param_1 + 0x3d0), lVar5 != 0));
+            iVar7 = iVar7 + -1;
+          } while ((1 < iVar7) && (lVar6 = *(long *)(p0 + 0x3d0), lVar6 != 0));
         }
-        iVar6 = *param_3;
+        iVar7 = *piVar4;
       }
-      if ((iVar6 == 4) && (plVar3 = *(long **)(param_1 + 0x3a8), plVar3 != (long *)0x0)) {
+      if ((iVar7 == 4) && (plVar3 = *(long **)(p0 + 0x3a8), plVar3 != (long *)0x0)) {
         uStack_70 = 0;
         lStack_68 = 0;
         auStack_80[0] = 4;
         uStack_60 = 1;
-        lStack_78 = param_1;
+        pWStack_78 = p0;
         (**(code **)(*plVar3 + 0x10))(plVar3,auStack_80);
       }
     }
   }
   else {
-    *param_5 = 0;
+    *in_x4 = 0;
   }
   if (*(long *)(lVar2 + 0x28) == lStack_58) {
     return;

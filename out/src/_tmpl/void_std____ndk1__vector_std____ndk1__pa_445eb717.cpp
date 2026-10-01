@@ -18,10 +18,11 @@ void std::__ndk1::
   long lVar1;
   ulong uVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  long lStack_60;
-  long lStack_58;
+  void *pvVar4;
+  long lVar5;
+  ulong uVar6;
+  void *pvStack_60;
+  void *pvStack_58;
   undefined8 *puStack_50;
   long lStack_48;
   long lStack_38;
@@ -34,39 +35,40 @@ void std::__ndk1::
     FUN_001705a0(param_1);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 3) < 0xfffffffffffffff) {
-    uVar5 = lVar4 >> 2;
-    if (uVar2 <= uVar5) {
-      uVar2 = uVar5;
+  lVar5 = param_1[2] - *param_1;
+  if ((ulong)(lVar5 >> 3) < 0xfffffffffffffff) {
+    uVar6 = lVar5 >> 2;
+    if (uVar2 <= uVar6) {
+      uVar2 = uVar6;
     }
   }
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  func_0x001739f0(&lStack_60,uVar2,lVar3,param_1 + 2);
+  func_0x001739f0(&pvStack_60,uVar2,lVar3,param_1 + 2);
   *puStack_50 = *param_2;
   puStack_50 = puStack_50 + 1;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lStack_58 = lStack_58 - (lVar3 - lStack_60);
-  if (0 < lVar3 - lStack_60) {
+  pvStack_60 = (void *)*param_1;
+  pvVar4 = (void *)param_1[1];
+  pvStack_58 = (void *)((long)pvStack_58 - ((long)pvVar4 - (long)pvStack_60));
+  if (0 < (long)pvVar4 - (long)pvStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    pvStack_60 = (void *)*param_1;
+    pvVar4 = (void *)param_1[1];
   }
-  *param_1 = lStack_58;
+  *param_1 = (long)pvStack_58;
   param_1[1] = (long)puStack_50;
-  lVar4 = param_1[2];
+  lVar3 = param_1[2];
   param_1[2] = lStack_48;
-  puStack_50 = (undefined8 *)lVar3;
-  if (lVar3 != lStack_60) {
-    puStack_50 = (undefined8 *)(lVar3 + (~((lVar3 + -8) - lStack_60) & 0xfffffffffffffff8U));
+  puStack_50 = pvVar4;
+  if (pvVar4 != pvStack_60) {
+    puStack_50 = (undefined8 *)
+                 ((long)pvVar4 + (~((long)pvVar4 + (-8 - (long)pvStack_60)) & 0xfffffffffffffff8U));
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar4;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  pvStack_58 = pvStack_60;
+  lStack_48 = lVar3;
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

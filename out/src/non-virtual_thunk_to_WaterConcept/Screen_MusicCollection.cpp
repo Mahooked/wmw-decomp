@@ -28,8 +28,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCol
                (long param_1)
 
 {
-  func_0x00166a00(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00166a00((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -42,10 +42,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCol
 /* non-virtual thunk to WaterConcept::Screen_MusicCollection::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x0016ffc0(param_1 + -0x20);
+  func_0x0016ffc0((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -57,10 +58,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::handleEvent(long
 
 /* non-virtual thunk to WaterConcept::Screen_MusicCollection::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::messageRx(long param_1)
+undefined8
+non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::messageRx(Walaber__Message *p0)
 
 {
-  func_0x0016db20(param_1 + -0x90);
+  func_0x0016db20(p0 + -0x90);
   return 0;
 }
 

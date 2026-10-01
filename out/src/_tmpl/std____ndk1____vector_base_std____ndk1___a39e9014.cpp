@@ -15,34 +15,34 @@
 
 void std::__ndk1::
      __vector_base<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar1 = *param_1;
-  if (lVar1 == 0) {
+  pvVar1 = (void *)*param_1;
+  if (pvVar1 == (void *)0x0) {
     return;
   }
-  lVar3 = lVar1;
-  lVar2 = param_1[1];
-  if (param_1[1] != lVar1) {
+  pvVar3 = pvVar1;
+  pvVar2 = (void *)param_1[1];
+  if ((void *)param_1[1] != pvVar1) {
     do {
-      if ((*(byte *)(lVar2 + -0x18) & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(lVar2 + -8));
+      if ((*(byte *)((long)pvVar2 + -0x18) & 1) != 0) {
+        FUN_00166120(*(void **)((long)pvVar2 + -8));
       }
-      lVar3 = lVar2 + -0x30;
-      if ((*(byte *)(lVar2 + -0x30) & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(lVar2 + -0x20));
+      pvVar3 = (void *)((long)pvVar2 + -0x30);
+      if ((*(byte *)((long)pvVar2 + -0x30) & 1) != 0) {
+        FUN_00166120(*(void **)((long)pvVar2 + -0x20));
       }
-      lVar2 = lVar3;
-    } while (lVar1 != lVar3);
-    lVar3 = *param_1;
+      pvVar2 = pvVar3;
+    } while (pvVar1 != pvVar3);
+    pvVar3 = (void *)*param_1;
   }
-  param_1[1] = lVar1;
-  FUN_00166120(lVar3);
+  param_1[1] = pvVar1;
+  FUN_00166120(pvVar3);
   return;
 }
 

@@ -38,28 +38,30 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData(undefined8 *param_1)
 /* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData
    const&) */
 
-void WaterConcept::Screen_Editor::ObjectData::ObjectData(long param_1,long param_2)
+void WaterConcept::Screen_Editor::ObjectData::ObjectData
+               (WaterConcept__Screen_Editor__ObjectData *p0)
 
 {
   bool bVar1;
+  long in_x1;
   undefined8 uVar2;
   long *plVar3;
   long *plVar4;
   long lVar5;
-  undefined8 *puVar6;
+  WaterConcept__Screen_Editor__ObjectData *pWVar6;
   long *plVar7;
   
   func_0x0016f720();
-  uVar2 = *(undefined8 *)(param_2 + 0x18);
-  puVar6 = (undefined8 *)(param_1 + 0x28);
-  *puVar6 = 0;
-  *(undefined8 *)(param_1 + 0x30) = 0;
-  *(undefined8 *)(param_1 + 0x18) = uVar2;
-  *(undefined8 **)(param_1 + 0x20) = puVar6;
-  plVar7 = *(long **)(param_2 + 0x20);
-  while (plVar7 != (long *)(param_2 + 0x28)) {
+  uVar2 = *(undefined8 *)(in_x1 + 0x18);
+  pWVar6 = p0 + 0x28;
+  *(undefined8 *)pWVar6 = 0;
+  *(undefined8 *)(p0 + 0x30) = 0;
+  *(undefined8 *)(p0 + 0x18) = uVar2;
+  *(WaterConcept__Screen_Editor__ObjectData **)(p0 + 0x20) = pWVar6;
+  plVar7 = *(long **)(in_x1 + 0x20);
+  while (plVar7 != (long *)(in_x1 + 0x28)) {
                     /* try { // try from 004c25d0 to 004c25df has its CatchHandler @ 004c27c4 */
-    func_0x0016d3f0(param_1 + 0x20,puVar6,plVar7 + 4,plVar7 + 4);
+    func_0x0016d3f0(p0 + 0x20,pWVar6,plVar7 + 4,plVar7 + 4);
     plVar3 = (long *)plVar7[1];
     if ((long *)plVar7[1] == (long *)0x0) {
       plVar3 = plVar7 + 2;
@@ -80,14 +82,14 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData(long param_1,long param
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
-  puVar6 = (undefined8 *)(param_1 + 0x40);
-  *puVar6 = 0;
-  *(undefined8 *)(param_1 + 0x48) = 0;
-  *(undefined8 **)(param_1 + 0x38) = puVar6;
-  plVar7 = *(long **)(param_2 + 0x38);
-  while (plVar7 != (long *)(param_2 + 0x40)) {
+  pWVar6 = p0 + 0x40;
+  *(undefined8 *)pWVar6 = 0;
+  *(undefined8 *)(p0 + 0x48) = 0;
+  *(WaterConcept__Screen_Editor__ObjectData **)(p0 + 0x38) = pWVar6;
+  plVar7 = *(long **)(in_x1 + 0x38);
+  while (plVar7 != (long *)(in_x1 + 0x40)) {
                     /* try { // try from 004c265c to 004c266b has its CatchHandler @ 004c27a8 */
-    func_0x0016d3f0(param_1 + 0x38,puVar6,plVar7 + 4,plVar7 + 4);
+    func_0x0016d3f0(p0 + 0x38,pWVar6,plVar7 + 4,plVar7 + 4);
     plVar3 = (long *)plVar7[1];
     if ((long *)plVar7[1] == (long *)0x0) {
       plVar3 = plVar7 + 2;
@@ -108,18 +110,18 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData(long param_1,long param
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
-  *(undefined1 *)(param_1 + 0x50) = *(undefined1 *)(param_2 + 0x50);
+  p0[0x50] = *(WaterConcept__Screen_Editor__ObjectData *)(in_x1 + 0x50);
                     /* try { // try from 004c26d0 to 004c26d7 has its CatchHandler @ 004c277c */
-  func_0x00171be0(param_1 + 0x58,param_2 + 0x58);
-  puVar6 = (undefined8 *)(param_1 + 0x78);
-  *puVar6 = 0;
-  *(undefined8 *)(param_1 + 0x80) = 0;
-  *(undefined8 **)(param_1 + 0x70) = puVar6;
-  if (*(long **)(param_2 + 0x70) != (long *)(param_2 + 0x78)) {
-    plVar7 = *(long **)(param_2 + 0x70);
+  func_0x00171be0(p0 + 0x58,in_x1 + 0x58);
+  pWVar6 = p0 + 0x78;
+  *(undefined8 *)pWVar6 = 0;
+  *(undefined8 *)(p0 + 0x80) = 0;
+  *(WaterConcept__Screen_Editor__ObjectData **)(p0 + 0x70) = pWVar6;
+  if (*(long **)(in_x1 + 0x70) != (long *)(in_x1 + 0x78)) {
+    plVar7 = *(long **)(in_x1 + 0x70);
     do {
                     /* try { // try from 004c2700 to 004c270f has its CatchHandler @ 004c2784 */
-      func_0x00170f60(param_1 + 0x70,puVar6,plVar7 + 4,plVar7 + 4);
+      func_0x00170f60(p0 + 0x70,pWVar6,plVar7 + 4,plVar7 + 4);
       plVar3 = (long *)plVar7[1];
       if ((long *)plVar7[1] == (long *)0x0) {
         plVar3 = plVar7 + 2;
@@ -139,7 +141,7 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData(long param_1,long param
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar7 = plVar4;
-    } while (plVar4 != (long *)(param_2 + 0x78));
+    } while (plVar4 != (long *)(in_x1 + 0x78));
   }
   return;
 }
@@ -152,113 +154,116 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData(long param_1,long param
 
 /* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData&&) */
 
-void WaterConcept::Screen_Editor::ObjectData::ObjectData(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::Screen_Editor::ObjectData::ObjectData
+               (WaterConcept__Screen_Editor__ObjectData **p0)
 
 {
   undefined1 uVar1;
   bool bVar2;
-  undefined8 uVar3;
+  undefined8 *in_x1;
+  WaterConcept__Screen_Editor__ObjectData *pWVar3;
   long *plVar4;
-  long lVar5;
-  long *plVar6;
-  long lVar7;
-  undefined8 *puVar8;
-  long *plVar9;
-  undefined8 uVar10;
+  long *plVar5;
+  long lVar6;
+  WaterConcept__Screen_Editor__ObjectData *pWVar7;
+  long *plVar8;
   
-  uVar10 = param_2[1];
-  uVar3 = *param_2;
-  param_1[2] = param_2[2];
-  param_1[1] = uVar10;
-  *param_1 = uVar3;
-  uVar3 = param_2[3];
-  param_2[1] = 0;
-  param_2[2] = 0;
-  *param_2 = 0;
-  puVar8 = param_1 + 5;
-  *puVar8 = 0;
-  param_1[6] = 0;
-  param_1[3] = uVar3;
-  param_1[4] = puVar8;
-  plVar9 = (long *)param_2[4];
-  while (plVar9 != param_2 + 5) {
+  pWVar7 = (WaterConcept__Screen_Editor__ObjectData *)in_x1[1];
+  pWVar3 = (WaterConcept__Screen_Editor__ObjectData *)*in_x1;
+  p0[2] = (WaterConcept__Screen_Editor__ObjectData *)in_x1[2];
+  p0[1] = pWVar7;
+  *p0 = pWVar3;
+  pWVar3 = (WaterConcept__Screen_Editor__ObjectData *)in_x1[3];
+  in_x1[1] = 0;
+  in_x1[2] = 0;
+  *in_x1 = 0;
+  pWVar7 = (WaterConcept__Screen_Editor__ObjectData *)(p0 + 5);
+  *(WaterConcept__Screen_Editor__ObjectData **)pWVar7 =
+       (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[6] = (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[3] = pWVar3;
+  p0[4] = pWVar7;
+  plVar8 = (long *)in_x1[4];
+  while (plVar8 != in_x1 + 5) {
                     /* try { // try from 004ccd8c to 004ccd9b has its CatchHandler @ 004ccf10 */
-    func_0x0016d3f0(param_1 + 4,puVar8,plVar9 + 4,plVar9 + 4);
-    plVar4 = (long *)plVar9[1];
-    if ((long *)plVar9[1] == (long *)0x0) {
-      plVar4 = plVar9 + 2;
-      bVar2 = *(long **)*plVar4 != plVar9;
-      plVar9 = (long *)*plVar4;
+    func_0x0016d3f0(p0 + 4,pWVar7,plVar8 + 4,plVar8 + 4);
+    plVar4 = (long *)plVar8[1];
+    if ((long *)plVar8[1] == (long *)0x0) {
+      plVar4 = plVar8 + 2;
+      bVar2 = *(long **)*plVar4 != plVar8;
+      plVar8 = (long *)*plVar4;
       if (bVar2) {
         do {
-          lVar5 = *plVar4;
-          plVar4 = (long *)(lVar5 + 0x10);
-          plVar9 = (long *)*plVar4;
-        } while (*plVar9 != lVar5);
+          lVar6 = *plVar4;
+          plVar4 = (long *)(lVar6 + 0x10);
+          plVar8 = (long *)*plVar4;
+        } while (*plVar8 != lVar6);
       }
     }
     else {
       do {
-        plVar9 = plVar4;
-        plVar4 = (long *)*plVar9;
-      } while ((long *)*plVar9 != (long *)0x0);
+        plVar8 = plVar4;
+        plVar4 = (long *)*plVar8;
+      } while ((long *)*plVar8 != (long *)0x0);
     }
   }
-  puVar8 = param_1 + 8;
-  *puVar8 = 0;
-  param_1[9] = 0;
-  param_1[7] = puVar8;
-  if ((long *)param_2[7] != param_2 + 8) {
-    plVar9 = (long *)param_2[7];
+  pWVar3 = (WaterConcept__Screen_Editor__ObjectData *)(p0 + 8);
+  *(WaterConcept__Screen_Editor__ObjectData **)pWVar3 =
+       (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[9] = (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[7] = pWVar3;
+  if ((long *)in_x1[7] != in_x1 + 8) {
+    plVar8 = (long *)in_x1[7];
     do {
                     /* try { // try from 004cce18 to 004cce27 has its CatchHandler @ 004ccef4 */
-      func_0x0016d3f0(param_1 + 7,puVar8,plVar9 + 4,plVar9 + 4);
-      plVar4 = (long *)plVar9[1];
-      if ((long *)plVar9[1] == (long *)0x0) {
-        plVar4 = plVar9 + 2;
-        plVar6 = (long *)*plVar4;
-        if ((long *)*plVar6 != plVar9) {
+      func_0x0016d3f0(p0 + 7,pWVar3,plVar8 + 4,plVar8 + 4);
+      plVar4 = (long *)plVar8[1];
+      if ((long *)plVar8[1] == (long *)0x0) {
+        plVar4 = plVar8 + 2;
+        plVar5 = (long *)*plVar4;
+        if ((long *)*plVar5 != plVar8) {
           do {
-            lVar5 = *plVar4;
-            plVar4 = (long *)(lVar5 + 0x10);
-            plVar6 = (long *)*plVar4;
-          } while (*plVar6 != lVar5);
+            lVar6 = *plVar4;
+            plVar4 = (long *)(lVar6 + 0x10);
+            plVar5 = (long *)*plVar4;
+          } while (*plVar5 != lVar6);
         }
       }
       else {
         do {
-          plVar6 = plVar4;
-          plVar4 = (long *)*plVar6;
-        } while ((long *)*plVar6 != (long *)0x0);
+          plVar5 = plVar4;
+          plVar4 = (long *)*plVar5;
+        } while ((long *)*plVar5 != (long *)0x0);
       }
-      plVar9 = plVar6;
-    } while (plVar6 != param_2 + 8);
+      plVar8 = plVar5;
+    } while (plVar5 != in_x1 + 8);
   }
-  uVar1 = *(undefined1 *)(param_2 + 10);
-  param_1[0xc] = 0;
-  param_1[0xd] = 0;
-  param_1[0xb] = 0;
-  *(undefined1 *)(param_1 + 10) = uVar1;
-  uVar3 = param_2[0xb];
-  param_1[0xc] = param_2[0xc];
-  param_1[0xb] = uVar3;
-  param_1[0xd] = param_2[0xd];
-  param_2[0xb] = 0;
-  param_2[0xc] = 0;
-  param_2[0xd] = 0;
-  param_1[0xe] = param_2[0xe];
-  lVar5 = param_2[0xf];
-  param_1[0xf] = lVar5;
-  lVar7 = param_2[0x10];
-  param_1[0x10] = lVar7;
-  if (lVar7 == 0) {
-    param_1[0xe] = param_1 + 0xf;
+  uVar1 = *(undefined1 *)(in_x1 + 10);
+  p0[0xc] = (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[0xd] = (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  p0[0xb] = (WaterConcept__Screen_Editor__ObjectData *)0x0;
+  *(undefined1 *)(p0 + 10) = uVar1;
+  pWVar3 = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0xb];
+  p0[0xc] = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0xc];
+  p0[0xb] = pWVar3;
+  p0[0xd] = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0xd];
+  in_x1[0xb] = 0;
+  in_x1[0xc] = 0;
+  in_x1[0xd] = 0;
+  p0[0xe] = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0xe];
+  pWVar3 = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0xf];
+  p0[0xf] = pWVar3;
+  pWVar7 = (WaterConcept__Screen_Editor__ObjectData *)in_x1[0x10];
+  p0[0x10] = pWVar7;
+  if (pWVar7 == (WaterConcept__Screen_Editor__ObjectData *)0x0) {
+    p0[0xe] = (WaterConcept__Screen_Editor__ObjectData *)(p0 + 0xf);
   }
   else {
-    *(undefined8 **)(lVar5 + 0x10) = param_1 + 0xf;
-    param_2[0xf] = 0;
-    param_2[0xe] = param_2 + 0xf;
-    param_2[0x10] = 0;
+    *(WaterConcept__Screen_Editor__ObjectData **)(pWVar3 + 0x10) =
+         (WaterConcept__Screen_Editor__ObjectData *)(p0 + 0xf);
+    in_x1[0xf] = 0;
+    in_x1[0xe] = in_x1 + 0xf;
+    in_x1[0x10] = 0;
   }
   return;
 }

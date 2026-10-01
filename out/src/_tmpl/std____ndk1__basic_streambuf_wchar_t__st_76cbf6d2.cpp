@@ -10,12 +10,12 @@
    >::pubimbue(std::__ndk1::locale const&) */
 
 void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubimbue
-               (undefined8 param_1,long *param_2,undefined8 param_3)
+               (std____ndk1__locale *p0)
 
 {
-  (**(code **)(*param_2 + 0x10))();
-  FUN_00169a70(param_1,param_2 + 1);
-  FUN_00167050(param_2 + 1,param_3);
+  (**(code **)(*(long *)p0 + 0x10))();
+  FUN_00169a70();
+  FUN_00167050(p0 + 8);
   return;
 }
 
@@ -80,12 +80,12 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::ge
    long) */
 
 void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pubsetbuf
-               (long *param_1)
+               (wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5a08. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(*param_1 + 0x18))();
+  (**(code **)(*(long *)p0 + 0x18))();
   return;
 }
 
@@ -259,12 +259,13 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sgetn(wchar_t*, long)
     */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetn(long *param_1)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sgetn
+               (wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5b24. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(*param_1 + 0x40))();
+  (**(code **)(*(long *)p0 + 0x40))();
   return;
 }
 
@@ -276,21 +277,23 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sg
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputbackc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc
-                (long *param_1,uint param_2)
+ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc(wchar_t p0)
 
 {
-  ulong uVar1;
-  uint *puVar2;
+  long *plVar1;
+  ulong uVar2;
+  uint in_w1;
+  uint *puVar3;
   
-  if ((param_1[2] != param_1[3]) && (puVar2 = (uint *)(param_1[3] + -4), *puVar2 == param_2)) {
-    param_1[3] = (long)puVar2;
-    return (ulong)param_2;
+  plVar1 = (long *)(ulong)(uint)p0;
+  if ((plVar1[2] != plVar1[3]) && (puVar3 = (uint *)(plVar1[3] + -4), *puVar3 == in_w1)) {
+    plVar1[3] = (long)puVar3;
+    return (ulong)in_w1;
   }
                     /* WARNING: Could not recover jumptable at 0x005a5b54. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  uVar1 = (**(code **)(*param_1 + 0x58))();
-  return uVar1;
+  uVar2 = (**(code **)(*plVar1 + 0x58))();
+  return uVar2;
 }
 
 
@@ -327,23 +330,25 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc
-                (long *param_1,uint param_2)
+ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t p0)
 
 {
   uint *puVar1;
-  ulong uVar2;
+  long *plVar2;
+  ulong uVar3;
+  uint in_w1;
   
-  puVar1 = (uint *)param_1[6];
-  if (puVar1 != (uint *)param_1[7]) {
-    param_1[6] = (long)(puVar1 + 1);
-    *puVar1 = param_2;
-    return (ulong)param_2;
+  plVar2 = (long *)(ulong)(uint)p0;
+  puVar1 = (uint *)plVar2[6];
+  if (puVar1 != (uint *)plVar2[7]) {
+    plVar2[6] = (long)(puVar1 + 1);
+    *puVar1 = in_w1;
+    return (ulong)in_w1;
   }
                     /* WARNING: Could not recover jumptable at 0x005a5bac. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  uVar2 = (**(code **)(*param_1 + 0x68))();
-  return uVar2;
+  uVar3 = (**(code **)(*plVar2 + 0x68))();
+  return uVar3;
 }
 
 
@@ -355,12 +360,13 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputn(wchar_t const*,
    long) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputn(long *param_1)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputn
+               (wchar_t *p0,long p1)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a5bb8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(*param_1 + 0x60))();
+  (**(code **)(*(long *)p0 + 0x60))();
   return;
 }
 
@@ -503,11 +509,12 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::gbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump
-               (long param_1,int param_2)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump(int p0)
 
 {
-  *(long *)(param_1 + 0x18) = *(long *)(param_1 + 0x18) + (long)param_2 * 4;
+  int in_w1;
+  
+  *(long *)((ulong)(uint)p0 + 0x18) = *(long *)((ulong)(uint)p0 + 0x18) + (long)in_w1 * 4;
   return;
 }
 
@@ -521,12 +528,14 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gb
    wchar_t*, wchar_t*) */
 
 void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setg
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+               (wchar_t *p0,wchar_t *p1,wchar_t *p2)
 
 {
-  *(undefined8 *)(param_1 + 0x10) = param_2;
-  *(undefined8 *)(param_1 + 0x18) = param_3;
-  *(undefined8 *)(param_1 + 0x20) = param_4;
+  undefined8 in_x3;
+  
+  *(wchar_t **)(p0 + 4) = p1;
+  *(wchar_t **)(p0 + 6) = p2;
+  *(undefined8 *)(p0 + 8) = in_x3;
   return;
 }
 
@@ -538,11 +547,12 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump
-               (long param_1,int param_2)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump(int p0)
 
 {
-  *(long *)(param_1 + 0x30) = *(long *)(param_1 + 0x30) + (long)param_2 * 4;
+  int in_w1;
+  
+  *(long *)((ulong)(uint)p0 + 0x30) = *(long *)((ulong)(uint)p0 + 0x30) + (long)in_w1 * 4;
   return;
 }
 
@@ -556,12 +566,14 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pb
    wchar_t*) */
 
 void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setp
-               (long param_1,undefined8 param_2,undefined8 param_3)
+               (wchar_t *p0,wchar_t *p1)
 
 {
-  *(undefined8 *)(param_1 + 0x28) = param_2;
-  *(undefined8 *)(param_1 + 0x30) = param_2;
-  *(undefined8 *)(param_1 + 0x38) = param_3;
+  undefined8 in_x2;
+  
+  *(wchar_t **)(p0 + 10) = p1;
+  *(wchar_t **)(p0 + 0xc) = p1;
+  *(undefined8 *)(p0 + 0xe) = in_x2;
   return;
 }
 
@@ -574,7 +586,8 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::imbue(std::__ndk1::locale const&) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::imbue(void)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::imbue
+               (std____ndk1__locale *p0)
 
 {
   return;
@@ -589,7 +602,8 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::im
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::setbuf(wchar_t*, long)
     */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setbuf(void)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::setbuf
+               (wchar_t *p0,long p1)
 
 {
   return;
@@ -665,27 +679,28 @@ undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t
     */
 
 long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsgetn
-               (long *param_1,int *param_2,long param_3)
+               (wchar_t *p0,long p1)
 
 {
   int iVar1;
   ulong uVar2;
+  long in_x2;
   long lVar3;
   long lVar4;
   int *piVar5;
   long lVar6;
   
-  if (param_3 < 1) {
+  if (in_x2 < 1) {
     lVar4 = 0;
   }
   else {
     lVar4 = 0;
     do {
-      uVar2 = param_1[3];
-      if (uVar2 < (ulong)param_1[4]) {
-        lVar3 = (long)(param_1[4] - uVar2) >> 2;
-        lVar6 = param_3 - lVar4;
-        if (lVar3 <= param_3 - lVar4) {
+      uVar2 = *(ulong *)(p0 + 6);
+      if (uVar2 < *(ulong *)(p0 + 8)) {
+        lVar3 = (long)(*(ulong *)(p0 + 8) - uVar2) >> 2;
+        lVar6 = in_x2 - lVar4;
+        if (lVar3 <= in_x2 - lVar4) {
           lVar6 = lVar3;
         }
         if (0x7ffffffe < lVar6) {
@@ -693,24 +708,24 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xs
         }
         if (lVar6 != 0) {
                     /* try { // try from 005a5e84 to 005a5e8f has its CatchHandler @ 005a5ef4 */
-          func_0x00173f40(param_2,uVar2,lVar6);
-          uVar2 = param_1[3];
+          func_0x00173f40(p1,uVar2,lVar6);
+          uVar2 = *(ulong *)(p0 + 6);
         }
-        piVar5 = param_2 + lVar6;
-        param_1[3] = uVar2 + ((lVar6 << 0x20) >> 0x1e);
+        piVar5 = (int *)(p1 + lVar6 * 4);
+        *(ulong *)(p0 + 6) = uVar2 + ((lVar6 << 0x20) >> 0x1e);
       }
       else {
-        iVar1 = (**(code **)(*param_1 + 0x50))(param_1);
+        iVar1 = (**(code **)(*(long *)p0 + 0x50))(p0);
         if (iVar1 == -1) {
           return lVar4;
         }
-        piVar5 = param_2 + 1;
-        *param_2 = iVar1;
+        piVar5 = (int *)(p1 + 4);
+        *(int *)p1 = iVar1;
         lVar6 = 1;
       }
       lVar4 = lVar6 + lVar4;
-      param_2 = piVar5;
-    } while (lVar4 < param_3);
+      p1 = (long)piVar5;
+    } while (lVar4 < in_x2);
   }
   return lVar4;
 }
@@ -761,7 +776,8 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::u
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pbackfail(unsigned
    int) */
 
-undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbackfail(void)
+undefined8
+std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbackfail(uint p0)
 
 {
   return 0xffffffff;
@@ -777,48 +793,49 @@ undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t
    long) */
 
 long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xsputn
-               (long *param_1,undefined4 *param_2,long param_3)
+               (wchar_t *p0,long p1)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
+  long in_x2;
   long lVar4;
   long lVar5;
   
-  if (param_3 < 1) {
+  if (in_x2 < 1) {
     lVar5 = 0;
   }
   else {
     lVar5 = 0;
     do {
       while( true ) {
-        uVar3 = param_1[6];
-        if ((ulong)param_1[7] <= uVar3) break;
-        lVar4 = (long)(param_1[7] - uVar3) >> 2;
-        lVar1 = param_3 - lVar5;
-        if (lVar4 <= param_3 - lVar5) {
+        uVar3 = *(ulong *)(p0 + 0xc);
+        if (*(ulong *)(p0 + 0xe) <= uVar3) break;
+        lVar4 = (long)(*(ulong *)(p0 + 0xe) - uVar3) >> 2;
+        lVar1 = in_x2 - lVar5;
+        if (lVar4 <= in_x2 - lVar5) {
           lVar1 = lVar4;
         }
         if (lVar1 != 0) {
                     /* try { // try from 005a5f98 to 005a5fa3 has its CatchHandler @ 005a6014 */
-          func_0x00173f40(uVar3,param_2,lVar1);
-          uVar3 = param_1[6];
+          func_0x00173f40(uVar3,p1,lVar1);
+          uVar3 = *(ulong *)(p0 + 0xc);
         }
-        param_2 = param_2 + lVar1;
+        p1 = p1 + lVar1 * 4;
         lVar5 = lVar1 + lVar5;
-        param_1[6] = uVar3 + lVar1 * 4;
-        if (param_3 <= lVar5) {
+        *(ulong *)(p0 + 0xc) = uVar3 + lVar1 * 4;
+        if (in_x2 <= lVar5) {
           return lVar5;
         }
       }
-      iVar2 = (**(code **)(*param_1 + 0x68))(param_1,*param_2);
+      iVar2 = (**(code **)(*(long *)p0 + 0x68))(p0,*(undefined4 *)p1);
       if (iVar2 == -1) {
         return lVar5;
       }
-      param_2 = param_2 + 1;
+      p1 = p1 + 4;
       lVar5 = lVar5 + 1;
-    } while (lVar5 < param_3);
+    } while (lVar5 < in_x2);
   }
   return lVar5;
 }
@@ -832,7 +849,8 @@ long std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::xs
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::overflow(unsigned int)
     */
 
-undefined8 std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::overflow(void)
+undefined8
+std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::overflow(uint p0)
 
 {
   return 0xffffffff;

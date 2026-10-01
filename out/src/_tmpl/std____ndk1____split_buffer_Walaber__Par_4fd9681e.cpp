@@ -54,34 +54,35 @@ void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walabe
    const&) */
 
 void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>&>::
-     __construct_at_end(long param_1,long param_2,long param_3)
+     __construct_at_end(ulong p0,Walaber__Particle *p1)
 
 {
+  long in_x2;
   long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   
-  lVar1 = *(long *)(param_1 + 0x10);
+  lVar1 = *(long *)(p0 + 0x10);
   do {
-    func_0x00162820(lVar1,param_3);
-    param_2 = param_2 + -1;
-    *(undefined8 *)(lVar1 + 0x38) = *(undefined8 *)(param_3 + 0x38);
-    *(undefined8 *)(lVar1 + 0x40) = *(undefined8 *)(param_3 + 0x40);
-    *(undefined8 *)(lVar1 + 0x48) = *(undefined8 *)(param_3 + 0x48);
-    uVar3 = *(undefined8 *)(param_3 + 0x58);
-    uVar2 = *(undefined8 *)(param_3 + 0x50);
-    uVar5 = *(undefined8 *)(param_3 + 0x68);
-    uVar4 = *(undefined8 *)(param_3 + 0x60);
-    *(undefined2 *)(lVar1 + 0x70) = *(undefined2 *)(param_3 + 0x70);
+    func_0x00162820(lVar1);
+    p1 = p1 + -1;
+    *(undefined8 *)(lVar1 + 0x38) = *(undefined8 *)(in_x2 + 0x38);
+    *(undefined8 *)(lVar1 + 0x40) = *(undefined8 *)(in_x2 + 0x40);
+    *(undefined8 *)(lVar1 + 0x48) = *(undefined8 *)(in_x2 + 0x48);
+    uVar3 = *(undefined8 *)(in_x2 + 0x58);
+    uVar2 = *(undefined8 *)(in_x2 + 0x50);
+    uVar5 = *(undefined8 *)(in_x2 + 0x68);
+    uVar4 = *(undefined8 *)(in_x2 + 0x60);
+    *(undefined2 *)(lVar1 + 0x70) = *(undefined2 *)(in_x2 + 0x70);
     *(undefined8 *)(lVar1 + 0x58) = uVar3;
     *(undefined8 *)(lVar1 + 0x50) = uVar2;
     *(undefined8 *)(lVar1 + 0x68) = uVar5;
     *(undefined8 *)(lVar1 + 0x60) = uVar4;
-    lVar1 = *(long *)(param_1 + 0x10) + 0x74;
-    *(long *)(param_1 + 0x10) = lVar1;
-  } while (param_2 != 0);
+    lVar1 = *(long *)(p0 + 0x10) + 0x74;
+    *(long *)(p0 + 0x10) = lVar1;
+  } while (p1 != (Walaber__Particle *)0x0);
   return;
 }
 

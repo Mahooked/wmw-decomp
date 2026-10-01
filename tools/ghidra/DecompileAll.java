@@ -53,12 +53,20 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.address.AddressSet;
 import ghidra.program.model.address.AddressSetView;
+import ghidra.program.model.data.DataType;
+import ghidra.program.model.data.DataTypeConflictHandler;
+import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.StructureDataType;
+import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
 import ghidra.program.model.listing.FunctionManager;
 import ghidra.program.model.listing.Instruction;
 import ghidra.program.model.listing.InstructionIterator;
 import ghidra.program.model.listing.Listing;
+import ghidra.program.model.listing.ParameterImpl;
+import ghidra.program.model.listing.Variable;
+import ghidra.program.model.listing.VariableStorage;
 import ghidra.program.model.mem.MemoryBlock;
 import ghidra.program.model.reloc.Relocation;
 import ghidra.program.model.symbol.Namespace;
@@ -77,6 +85,47 @@ public class DecompileAll extends GhidraScript {
     /** "symbol" (default) rebuilds boundaries from the ELF table; "ghidra"
      *  keeps Ghidra's own boundaries and binds names to them, for A/B runs. */
     private String mode = "symbol";
+    /** Prototype table produced by tools/sigs.py; empty disables signature
+     *  application entirely. */
+    private String sigPath = "C:/AIC/wmw-decomp/out/symbols/signatures.tsv";
+    /** Apply recovered parameter types + explicit AArch64 storage. */
+    private boolean applySigs = true;
+
+    // ---- AAPCS64 parameter storage ---------------------------------------
+    // Ghidra's own model cannot be asked for this: calling
+    // PrototypeModel.getStorageLocations with two uints returns the *same*
+    // register twice, and the functions this script builds from ELF symbol
+    // extents have no parameters at all, so the decompiler never allocates
+    // storage for itself. That is why an earlier attempt at applying recovered
+    // signatures produced "parameter storage is locked" warnings and corrupted
+    // return types: there was nothing valid to write into.
+    //
+    // AAPCS64 is simple enough to allocate directly. Integer and pointer
+    // arguments take x0..x7 in order; floating-point arguments take the vector
+    // file s0..s7 (float) or d0..d7 (double) in order, with an independent
+    // counter. A 4-byte integer uses the w view of the register, because
+    // handing the decompiler 8 bytes of storage for a 4-byte type makes it
+    // report an unknown calling convention instead of the real prototype.
+    private static final String[] X_REGS = {
+        "x0", "x1", "x2", "x3", "x4", "x5", "x6", "x7" };
+    private static final String[] W_REGS = {
+        "w0", "w1", "w2", "w3", "w4", "w5", "w6", "w7" };
+    private static final String[] S_REGS = {
+        "s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7" };
+    private static final String[] D_REGS = {
+        "d0", "d1", "d2", "d3", "d4", "d5", "d6", "d7" };
+
+    /** A recovered prototype: exact parameter types, '|'-separated. */
+    private static final class Sig {
+        final String address;
+        final String name;
+        final String[] params;
+        Sig(String address, String name, String[] params) {
+            this.address = address;
+            this.name = name;
+            this.params = params;
+        }
+    }
 
     private static final Pattern RE_MEMBER =
         Pattern.compile("^([A-Za-z_][A-Za-z0-9_]*)\\s*(\\([\\s\\S]*)?$");
@@ -107,6 +156,8 @@ public class DecompileAll extends GhidraScript {
         if (args.length > 2) timeoutSec = Integer.parseInt(args[2]);
         if (args.length > 3) maxFunctions = Integer.parseInt(args[3]);
         if (args.length > 4) mode = args[4];
+        if (args.length > 5) sigPath = args[5];
+        if (args.length > 6) applySigs = !args[6].equals("nosig");
 
         // addr -> every symbol at that address. Sorted so the pass order is
         // address order, which keeps the disassembly cache coherent.
@@ -136,7 +187,316 @@ public class DecompileAll extends GhidraScript {
             ? bindSymbols(nameMap, execSet)
             : bindNearestPreceding(nameMap);
 
+        if (applySigs) {
+            applySignatures(bound);
+        }
+
         decompileAndEmit(bound);
+    }
+
+    // ---- pass 3: recovered parameter types + explicit AArch64 storage -----
+
+    /**
+     * Give every function with a recovered prototype its exact parameter types,
+     * placed at explicitly computed AArch64 storage.
+     *
+     * <p>The return type is deliberately left alone: the Itanium ABI does not
+     * encode it, so anything written there would be a guess. Ghidra's own
+     * inference is kept, which is the honest option.
+     *
+     * <p>Conservative by construction. A prototype is only applied when every
+     * parameter resolves to a real DataType and fits a register; aggregates
+     * passed by value, variadics and anything the parser rejects are skipped
+     * rather than approximated, because a plausible-but-wrong signature is worse
+     * than none -- it mis-attributes every reference in the body.
+     */
+    private void applySignatures(Map<Long, List<Sym>> bound) {
+        Map<Long, Sig> sigs = loadSignatures(sigPath);
+        if (sigs.isEmpty()) {
+            println("DecompileAll: no signatures at " + sigPath + ", skipping");
+            return;
+        }
+        println("DecompileAll: loaded " + sigs.size() + " prototypes from " + sigPath);
+
+        createProjectClassTypes(sigs);
+
+        FunctionManager fm = currentProgram.getFunctionManager();
+        ghidra.app.util.parser.FunctionSignatureParser parser =
+            new ghidra.app.util.parser.FunctionSignatureParser(
+                currentProgram.getDataTypeManager(), null);
+        // The parser needs a FunctionSignature to hang the parsed types off and
+        // only reads back the types, so a throwaway definition is enough.
+        ghidra.program.model.data.FunctionDefinitionDataType parseHost =
+            new ghidra.program.model.data.FunctionDefinitionDataType("_wmw_sig");
+
+        String ccName = currentProgram.getCompilerSpec()
+            .getDefaultCallingConvention().getName();
+
+        int applied = 0, unparsed = 0, noFunction = 0, overEight = 0, threw = 0;
+        List<String> why = new ArrayList<>();
+        PrintWriter tsv = openWriter("_signatures.tsv",
+            "#\taddress\tname\tparams\tstatus\tdetail");
+
+        for (Map.Entry<Long, Sig> e : sigs.entrySet()) {
+            long addr = e.getKey();
+            Sig s = e.getValue();
+            if (s.params.length == 0) {
+                continue;
+            }
+            List<Sym> syms = bound.get(addr);
+            Function f = fm.getFunctionAt(toAddr(addr));
+            if (f == null && syms != null && !syms.isEmpty()) {
+                f = fm.getFunctionContaining(toAddr(addr));
+                if (f != null) {
+                    f = fm.getFunctionAt(f.getEntryPoint());
+                }
+            }
+            if (f == null) {
+                noFunction++;
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tno-function\t");
+                continue;
+            }
+
+            ghidra.program.model.data.ParameterDefinition[] defs;
+            try {
+                defs = parser.parse(parseHost, "void _wmw_sig(" +
+                    String.join(", ", s.params) + ")").getArguments();
+            } catch (Throwable t) {
+                unparsed++;
+                if (why.size() < 8) {
+                    why.add(s.name + "   [" + t.getMessage() + "]");
+                }
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tunparseable\t" + t.getMessage());
+                continue;
+            }
+            // A short parse would silently shift every later parameter.
+            if (defs.length != s.params.length) {
+                unparsed++;
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tarity\t" +
+                    defs.length + " of " + s.params.length);
+                continue;
+            }
+
+            // Allocate AAPCS64 storage, declining anything that does not fit a
+            // register. Nine or more integer (or vector) arguments spill to the
+            // stack, which needs the frame size and is out of scope here.
+            List<Variable> params = new ArrayList<>();
+            int intIdx = 0, vecIdx = 0;
+            boolean ok = true;
+            StringBuilder storage = new StringBuilder();
+            for (int i = 0; i < defs.length; i++) {
+                DataType dt = defs[i].getDataType();
+                if (dt == null || dt.isZeroLength()) {
+                    ok = false;
+                    break;
+                }
+                int len = dt.getLength();
+                Register reg;
+                if (isFloating(dt)) {
+                    if (vecIdx >= 8) {
+                        ok = false;
+                        break;
+                    }
+                    reg = currentProgram.getRegister(
+                        len == 4 ? S_REGS[vecIdx++] : D_REGS[vecIdx++]);
+                } else {
+                    if (intIdx >= 8) {
+                        ok = false;
+                        break;
+                    }
+                    // 4-byte integers take the w view; 8-byte types take x.
+                    reg = currentProgram.getRegister(
+                        len == 4 ? W_REGS[intIdx++] : X_REGS[intIdx++]);
+                }
+                if (reg == null) {
+                    ok = false;
+                    break;
+                }
+                try {
+                    params.add(new ParameterImpl("p" + i, dt,
+                        new VariableStorage(currentProgram, reg), currentProgram));
+                    storage.append(reg.getName()).append(':').append(len).append(' ');
+                } catch (Throwable t) {
+                    ok = false;
+                    break;
+                }
+            }
+            if (!ok) {
+                overEight++;
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tno-register-storage\t");
+                continue;
+            }
+
+            try {
+                // Name the convention explicitly. Left as the unknown
+                // placeholder, the decompiler prepends an "Unknown calling
+                // convention" warning to every one of these functions.
+                f.setCallingConvention(ccName);
+                f.setCustomVariableStorage(true);
+                f.replaceParameters(params,
+                    Function.FunctionUpdateType.CUSTOM_STORAGE, true,
+                    SourceType.USER_DEFINED);
+                applied++;
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tapplied\t" +
+                    storage.toString().trim());
+            } catch (Throwable t) {
+                threw++;
+                tsv.println(hex(addr) + "\t" + s.name + "\t" +
+                    String.join("|", s.params) + "\tfailed\t" + t);
+            }
+        }
+        tsv.close();
+
+        println("DecompileAll: parameter types + storage applied to " + applied +
+            " functions (" + unparsed + " unparseable, " + overEight +
+            " not register-allocatable, " + threw + " failed, " + noFunction +
+            " with no function)");
+        for (String s : why) {
+            println("DecompileAll:   skipped: " + s);
+        }
+    }
+
+    /** Read signatures.tsv, keyed by entry address. */
+    private Map<Long, Sig> loadSignatures(String path) {
+        Map<Long, Sig> out = new TreeMap<>();
+        Path p = Paths.get(path);
+        if (!Files.isRegularFile(p)) {
+            return out;
+        }
+        try (BufferedReader r = Files.newBufferedReader(p, StandardCharsets.UTF_8)) {
+            String line;
+            while ((line = r.readLine()) != null) {
+                if (line.startsWith("#") || line.startsWith("address")) {
+                    continue;
+                }
+                String[] f = line.split("\t", -1);
+                if (f.length < 5 || f[0].isEmpty() || f[4].isEmpty()) {
+                    continue;
+                }
+                try {
+                    long addr = Long.parseLong(f[0].trim().replaceFirst("^0x", ""), 16);
+                    // Column 5 (gtype) is the same list normalised for Ghidra's
+                    // C parser: const stripped, references turned into pointers.
+                    // Column 4 (params) is the exact recovered type list and is
+                    // only used to collect class names. Fall back to params so an
+                    // older signatures.tsv still works.
+                    String gtypeCol = f.length > 5 && !f[5].isEmpty() ? f[5] : f[4];
+                    out.put(addr, new Sig(f[0], f.length > 3 ? f[3] : "",
+                        gtypeCol.split("\\|", -1)));
+                } catch (NumberFormatException ignored) {
+                    // Not an address line; skip it.
+                }
+            }
+        } catch (IOException e) {
+            printerr("DecompileAll: cannot read " + path + ": " + e);
+        }
+        return out;
+    }
+
+    /**
+     * Create a zero-length opaque structure for every project class that occurs
+     * as a parameter type.
+     *
+     * <p>Ghidra's C parser resolves a {@code ::}-qualified type only when the
+     * type's <em>name</em> contains {@code ::}; a category path alone is not
+     * enough. So the name has to be the fully qualified one.
+     *
+     * <p>The list is derived from the parameter types themselves rather than
+     * from classes.tsv, because that file is built from RTTI and so only knows
+     * polymorphic classes -- {@code Walaber::Vector2}, the commonest parameter
+     * type in the game at 366 uses, has no vtable and never appears in it.
+     */
+    private void createProjectClassTypes(Map<Long, Sig> sigs) {
+        Set<String> names = new TreeSet<>();
+        for (Sig s : sigs.values()) {
+            for (String t : s.params) {
+                String base = t.replace("*", "").replace("&", "").trim();
+                // A plain qualified name only: no templates, arrays or spaces.
+                if (base.matches("^[A-Za-z_][A-Za-z0-9_]*(::[A-Za-z_][A-Za-z0-9_]*)+$")) {
+                    names.add(base);
+                }
+            }
+        }
+        if (names.isEmpty()) {
+            return;
+        }
+        DataTypeManager dtm = currentProgram.getDataTypeManager();
+        // KEEP_HANDLER: a re-run over a program that already has these types
+        // must reuse them rather than create duplicates or overwrite them.
+        DataTypeConflictHandler conflict = DataTypeConflictHandler.KEEP_HANDLER;
+
+        int created = 0, present = 0, failed = 0;
+        for (String n : names) {
+            if (findByQualifiedName(dtm, n) != null) {
+                present++;
+                continue;
+            }
+            try {
+                // new StructureDataType(...) only *builds* the object. Until it is
+                // handed to addDataType it is a transient value that the manager
+                // does not hold, and every later lookup of the name fails -- which
+                // is exactly what happened when this reported 202 types created
+                // and the parser then rejected 2,521 prototypes for not finding
+                // them.
+                //
+                // A zero-length structure is deliberate: the true field layout is
+                // not known yet, and a wrongly-sized one would be worse than none.
+                dtm.addDataType(new StructureDataType(n, 0, dtm), conflict);
+                // Count what actually landed, not what was attempted. A zero-length
+                // structure is the intended result, so it must not be read as a
+                // failure.
+                if (findByQualifiedName(dtm, n) != null) {
+                    created++;
+                } else {
+                    failed++;
+                }
+            } catch (Throwable t) {
+                // A name that cannot be created is simply not resolvable; the
+                // signature using it will then be skipped as unparseable.
+                failed++;
+            }
+        }
+        // Verify rather than assume: count how many are actually resolvable now,
+        // since that is what decides whether the parser can use them.
+        int resolvable = 0;
+        for (String n : names) {
+            if (findByQualifiedName(dtm, n) != null) {
+                resolvable++;
+            }
+        }
+        println("DecompileAll: " + created + " opaque class types added, " +
+            present + " already present, " + failed + " failed; " + resolvable +
+            " of " + names.size() + " now resolvable by name");
+    }
+
+    /**
+     * Look up a {@code ::}-qualified type by name.
+     *
+     * <p>The leading slash is load-bearing. A structure created as
+     * {@code new StructureDataType("Walaber::Vector2", 0, dtm)} is stored at path
+     * {@code /Walaber::Vector2}, and {@code getDataType("Walaber::Vector2")}
+     * returns null while {@code getDataType("/Walaber::Vector2")} succeeds. That
+     * asymmetry is silent -- it just looks like the type was never created.
+     */
+    private DataType findByQualifiedName(DataTypeManager dtm, String n) {
+        DataType dt = dtm.getDataType(n);
+        if (dt != null) {
+            return dt;
+        }
+        if (!n.startsWith("/")) {
+            return dtm.getDataType("/" + n);
+        }
+        return null;
+    }
+
+    private boolean isFloating(DataType dt) {
+        String n = dt.getName().toLowerCase();
+        return n.contains("float") || n.contains("double");
     }
 
     // ---- pass 1 + 2: rebuild boundaries from the symbol table -----------

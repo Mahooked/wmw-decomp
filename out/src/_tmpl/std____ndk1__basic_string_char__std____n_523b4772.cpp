@@ -16,7 +16,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   if ((*param_1 & 1) == 0) {
     return;
   }
-  FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+  FUN_00166120(*(void **)(param_1 + 0x10));
   return;
 }
 
@@ -66,7 +66,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   ulong uVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
+  ulong p0;
   
   param_1[1] = 0;
   param_1[2] = 0;
@@ -91,11 +91,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     if (uVar2 == 0) goto LAB_002b35a8;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar1 = FUN_00164060(uVar4);
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    uVar1 = FUN_00164060(p0);
     param_1[1] = uVar2;
     param_1[2] = uVar1;
-    *param_1 = uVar4 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar1,uVar3,uVar2);
 LAB_002b35a8:
@@ -112,45 +112,46 @@ LAB_002b35a8:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::append(char const*, unsigned long) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::append(ulong *param_1,undefined8 param_2,ulong param_3)
+char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+       append(char *p0,ulong p1)
 
 {
   byte bVar1;
   long lVar2;
+  ulong in_x2;
   ulong uVar3;
-  ulong uVar4;
+  char *pcVar4;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = *p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
     lVar2 = 0x16;
   }
   else {
-    uVar3 = param_1[1];
-    lVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar3 = *(ulong *)(p0 + 8);
+    lVar2 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if (lVar2 - uVar3 < param_3) {
-    func_0x0016f450(param_1,lVar2,(uVar3 + param_3) - lVar2,uVar3,uVar3,0,param_3);
+  if (lVar2 - uVar3 < in_x2) {
+    func_0x0016f450(p0,lVar2,(uVar3 + in_x2) - lVar2,uVar3,uVar3,0);
   }
-  else if (param_3 != 0) {
+  else if (in_x2 != 0) {
     if ((bVar1 & 1) == 0) {
-      uVar4 = (long)param_1 + 1;
+      pcVar4 = p0 + 1;
     }
     else {
-      uVar4 = param_1[2];
+      pcVar4 = *(char **)(p0 + 0x10);
     }
-    FUN_001715e0(uVar4 + uVar3,param_2,param_3);
-    uVar3 = uVar3 + param_3;
-    if ((*param_1 & 1) == 0) {
-      *(char *)param_1 = (char)((int)uVar3 << 1);
+    FUN_001715e0(pcVar4 + uVar3,p1);
+    lVar2 = uVar3 + in_x2;
+    if ((*p0 & 1U) == 0) {
+      *p0 = (char)((int)lVar2 << 1);
     }
     else {
-      param_1[1] = uVar3;
+      *(long *)(p0 + 8) = lVar2;
     }
-    *(undefined1 *)(uVar4 + uVar3) = 0;
+    pcVar4[lVar2] = '\0';
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -164,61 +165,57 @@ ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk
    long, unsigned long, char const*) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __grow_by_and_replace
-               (ulong *param_1,ulong param_2,ulong param_3,long param_4,long param_5,long param_6,
-               long param_7,undefined8 param_8)
+     __grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,char *p6)
 
 {
-  ulong uVar1;
+  long lVar1;
   long lVar2;
+  void *p0_00;
   ulong uVar3;
-  byte *pbVar4;
-  ulong uVar5;
   
-  if (param_3 <= -param_2 - 0x12) {
-    if ((*param_1 & 1) == 0) {
-      pbVar4 = (byte *)((long)param_1 + 1);
+  if (p2 <= -p1 - 0x12) {
+    if ((*(byte *)p0 & 1) == 0) {
+      p0_00 = (void *)(p0 + 1);
     }
     else {
-      pbVar4 = (byte *)param_1[2];
+      p0_00 = *(void **)(p0 + 0x10);
     }
-    if (param_2 < 0x7fffffffffffffe7) {
-      uVar5 = param_2 << 1;
-      if (param_2 << 1 <= param_3 + param_2) {
-        uVar5 = param_3 + param_2;
+    if (p1 < 0x7fffffffffffffe7) {
+      uVar3 = p1 << 1;
+      if (p1 << 1 <= p2 + p1) {
+        uVar3 = p2 + p1;
       }
-      if (uVar5 < 0x17) {
-        uVar5 = 0x17;
+      if (uVar3 < 0x17) {
+        uVar3 = 0x17;
       }
       else {
-        uVar5 = uVar5 + 0x10 & 0xfffffffffffffff0;
+        uVar3 = uVar3 + 0x10 & 0xfffffffffffffff0;
       }
     }
     else {
-      uVar5 = 0xffffffffffffffef;
+      uVar3 = 0xffffffffffffffef;
     }
-    uVar3 = FUN_00164060(uVar5);
-    if (param_5 != 0) {
-      FUN_001715e0(uVar3,pbVar4,param_5);
+    lVar2 = FUN_00164060(uVar3);
+    if (p4 != 0) {
+      FUN_001715e0(lVar2,p0_00,p4);
     }
-    if (param_7 != 0) {
-      FUN_001715e0(uVar3 + param_5,param_8,param_7);
+    if (p6 != (char *)0x0) {
+      FUN_001715e0(lVar2 + p4);
     }
-    lVar2 = (param_4 - param_6) - param_5;
-    if (lVar2 != 0) {
-      FUN_001715e0(uVar3 + param_5 + param_7,pbVar4 + param_6 + param_5,lVar2);
+    lVar1 = (p3 - p5) - p4;
+    if (lVar1 != 0) {
+      FUN_001715e0(p6 + lVar2 + p4,(long)p0_00 + p5 + p4,lVar1);
     }
-    if (param_2 != 0x16) {
-      FUN_00166120(pbVar4);
+    if (p1 != 0x16) {
+      FUN_00166120(p0_00);
     }
-    uVar1 = (param_4 - param_6) + param_7;
-    *param_1 = uVar5 | 1;
-    param_1[1] = uVar1;
-    param_1[2] = uVar3;
-    *(undefined1 *)(uVar3 + uVar1) = 0;
+    *(ulong *)p0 = uVar3 | 1;
+    *(char **)(p0 + 8) = p6 + (p3 - p5);
+    *(long *)(p0 + 0x10) = lVar2;
+    (p6 + (p3 - p5))[lVar2] = '\0';
     return;
   }
-  FUN_00164180(param_1);
+  FUN_00164180(p0);
   return;
 }
 
@@ -231,50 +228,51 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::assign(char const*, unsigned long) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::assign(ulong *param_1,undefined8 param_2,ulong param_3)
+char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+       assign(char *p0,ulong p1)
 
 {
   byte bVar1;
   ulong uVar2;
+  ulong in_x2;
   ulong uVar3;
-  byte *pbVar4;
+  char *pcVar4;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = *p0;
   if ((bVar1 & 1) == 0) {
     uVar2 = 0x16;
   }
   else {
-    uVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar2 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if (uVar2 < param_3) {
+  if (uVar2 < in_x2) {
     if ((bVar1 & 1) == 0) {
       uVar3 = (ulong)(bVar1 >> 1);
     }
     else {
-      uVar3 = param_1[1];
+      uVar3 = *(ulong *)(p0 + 8);
     }
-    func_0x0016f450(param_1,uVar2,param_3 - uVar2,uVar3,0,uVar3,param_3);
+    func_0x0016f450(p0,uVar2,in_x2 - uVar2,uVar3,0,uVar3);
   }
   else {
     if ((bVar1 & 1) == 0) {
-      pbVar4 = (byte *)((long)param_1 + 1);
+      pcVar4 = p0 + 1;
     }
     else {
-      pbVar4 = (byte *)param_1[2];
+      pcVar4 = *(char **)(p0 + 0x10);
     }
-    if (param_3 != 0) {
-      FUN_0016b250(pbVar4,param_2,param_3);
+    if (in_x2 != 0) {
+      FUN_0016b250(pcVar4,p1);
     }
-    pbVar4[param_3] = 0;
-    if ((*param_1 & 1) == 0) {
-      *(byte *)param_1 = (byte)((int)param_3 << 1);
+    pcVar4[in_x2] = '\0';
+    if ((*p0 & 1U) == 0) {
+      *p0 = (char)((int)in_x2 << 1);
     }
     else {
-      param_1[1] = param_3;
+      *(ulong *)(p0 + 8) = in_x2;
     }
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -287,47 +285,50 @@ ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk
    >::compare(unsigned long, unsigned long, char const*, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,undefined8 param_4,ulong param_5)
+      compare(ulong p0,ulong p1,char *p2,ulong p3)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  uint uVar3;
-  ulong uVar4;
+  char *pcVar1;
+  char *pcVar2;
+  byte bVar3;
+  char *in_x4;
+  uint uVar4;
+  long lVar5;
+  ulong uVar6;
   
-  bVar2 = *param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar4 = (ulong)(bVar2 >> 1);
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar6 = (ulong)(bVar3 >> 1);
   }
   else {
-    uVar4 = *(ulong *)(param_1 + 8);
+    uVar6 = *(ulong *)(p0 + 8);
   }
-  if ((param_5 != 0xffffffffffffffff) && (param_2 <= uVar4)) {
-    uVar1 = uVar4 - param_2;
-    if (param_3 <= uVar4 - param_2) {
-      uVar1 = param_3;
+  if ((in_x4 != (char *)0xffffffffffffffff) && (p1 <= uVar6)) {
+    pcVar1 = (char *)(uVar6 - p1);
+    if (p2 <= (char *)(uVar6 - p1)) {
+      pcVar1 = p2;
     }
-    if ((bVar2 & 1) == 0) {
-      param_1 = param_1 + 1;
+    if ((bVar3 & 1) == 0) {
+      lVar5 = p0 + 1;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      lVar5 = *(long *)(p0 + 0x10);
     }
-    uVar4 = param_5;
-    if (uVar1 <= param_5) {
-      uVar4 = uVar1;
+    pcVar2 = in_x4;
+    if (pcVar1 <= in_x4) {
+      pcVar2 = pcVar1;
     }
-    if ((uVar4 == 0) || (uVar4 = FUN_00163c10(param_1 + param_2,param_4), (int)uVar4 == 0)) {
-      uVar3 = (uint)(param_5 < uVar1);
-      if (uVar1 < param_5) {
-        uVar3 = 0xffffffff;
+    if ((pcVar2 == (char *)0x0) || (uVar6 = FUN_00163c10(lVar5 + p1,p3), (int)uVar6 == 0)) {
+      uVar4 = (uint)(in_x4 < pcVar1);
+      if (pcVar1 < in_x4) {
+        uVar4 = 0xffffffff;
       }
-      uVar4 = (ulong)uVar3;
+      uVar6 = (ulong)uVar4;
     }
-    return uVar4;
+    return uVar6;
   }
-  uVar4 = FUN_0016ec80();
-  return uVar4;
+  uVar6 = FUN_0016ec80();
+  return uVar6;
 }
 
 
@@ -339,65 +340,64 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(unsigned long, char const*, unsigned long) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::insert(ulong *param_1,ulong param_2,byte *param_3,ulong param_4)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      insert(ulong p0,char *p1,ulong p2)
 
 {
-  byte *pbVar1;
+  char *pcVar1;
   byte bVar2;
-  ulong *puVar3;
+  ulong uVar3;
   long lVar4;
-  byte *pbVar5;
-  ulong uVar6;
-  byte *pbVar7;
+  ulong in_x3;
+  char *pcVar5;
   
-  bVar2 = (byte)*param_1;
+  bVar2 = *(byte *)p0;
   if ((bVar2 & 1) == 0) {
-    uVar6 = (ulong)(bVar2 >> 1);
+    pcVar5 = (char *)(ulong)(bVar2 >> 1);
   }
   else {
-    uVar6 = param_1[1];
+    pcVar5 = *(char **)(p0 + 8);
   }
-  if (param_2 <= uVar6) {
+  if (p1 <= pcVar5) {
     if ((bVar2 & 1) == 0) {
       lVar4 = 0x16;
     }
     else {
-      lVar4 = (*param_1 & 0xfffffffffffffffe) - 1;
+      lVar4 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
     }
-    if (lVar4 - uVar6 < param_4) {
-      func_0x0016f450(param_1,lVar4,(uVar6 + param_4) - lVar4,uVar6,param_2,0,param_4,param_3);
+    if ((ulong)(lVar4 - (long)pcVar5) < in_x3) {
+      func_0x0016f450(p0,lVar4,pcVar5 + (in_x3 - lVar4),pcVar5,p1,0);
     }
-    else if (param_4 != 0) {
+    else if (in_x3 != 0) {
       if ((bVar2 & 1) == 0) {
-        pbVar7 = (byte *)((long)param_1 + 1);
+        lVar4 = p0 + 1;
       }
       else {
-        pbVar7 = (byte *)param_1[2];
+        lVar4 = *(long *)(p0 + 0x10);
       }
-      pbVar1 = pbVar7 + param_2;
-      pbVar5 = param_3;
-      if (uVar6 - param_2 != 0) {
-        pbVar5 = param_3 + param_4;
-        if (pbVar7 + uVar6 <= param_3 || param_3 < pbVar1) {
-          pbVar5 = param_3;
+      pcVar1 = p1 + lVar4;
+      uVar3 = p2;
+      if ((long)pcVar5 - (long)p1 != 0) {
+        uVar3 = p2 + in_x3;
+        if (pcVar5 + lVar4 <= p2 || p2 < pcVar1) {
+          uVar3 = p2;
         }
-        FUN_0016b250(pbVar1 + param_4,pbVar1,uVar6 - param_2);
+        FUN_0016b250(pcVar1 + in_x3,pcVar1,(long)pcVar5 - (long)p1);
       }
-      FUN_0016b250(pbVar1,pbVar5,param_4);
-      uVar6 = uVar6 + param_4;
-      if ((*param_1 & 1) == 0) {
-        *(byte *)param_1 = (byte)((int)uVar6 << 1);
+      FUN_0016b250(pcVar1,uVar3);
+      pcVar5 = pcVar5 + in_x3;
+      if ((*(byte *)p0 & 1) == 0) {
+        *(char *)p0 = (char)((int)pcVar5 << 1);
       }
       else {
-        param_1[1] = uVar6;
+        *(char **)(p0 + 8) = pcVar5;
       }
-      pbVar7[uVar6] = 0;
+      pcVar5[lVar4] = '\0';
     }
-    return param_1;
+    return p0;
   }
-  puVar3 = (ulong *)FUN_0016ec80(param_1);
-  return puVar3;
+  uVar3 = FUN_0016ec80(p0);
+  return uVar3;
 }
 
 
@@ -419,7 +419,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   byte bVar2;
   byte *pbVar3;
   ulong uVar4;
-  ulong uVar5;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -451,11 +451,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     if (uVar1 == 0) goto LAB_002c2ff0;
   }
   else {
-    uVar5 = uVar1 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
+    p0 = uVar1 + 0x10 & 0xfffffffffffffff0;
+    uVar4 = FUN_00164060(p0);
     param_1[1] = uVar1;
     param_1[2] = uVar4;
-    *param_1 = uVar5 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar4,pbVar3 + param_3,uVar1);
 LAB_002c2ff0:
@@ -473,39 +473,42 @@ LAB_002c2ff0:
    >::find(char, unsigned long) const */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find(byte *param_1,undefined1 param_2,ulong param_3)
+     find(char p0,ulong p1)
 
 {
-  long lVar1;
-  ulong uVar2;
-  long lVar3;
-  byte *pbVar4;
+  byte *pbVar1;
+  long lVar2;
+  ulong in_x2;
+  ulong uVar3;
+  long lVar4;
+  byte *pbVar5;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar4 = param_1 + 1;
-    uVar2 = (ulong)(*param_1 >> 1);
+  pbVar1 = (byte *)(ulong)(byte)p0;
+  if ((*pbVar1 & 1) == 0) {
+    pbVar5 = pbVar1 + 1;
+    uVar3 = (ulong)(*pbVar1 >> 1);
   }
   else {
-    uVar2 = *(ulong *)(param_1 + 8);
-    pbVar4 = *(byte **)(param_1 + 0x10);
+    uVar3 = *(ulong *)(pbVar1 + 8);
+    pbVar5 = *(byte **)(pbVar1 + 0x10);
   }
-  lVar3 = uVar2 - param_3;
-  if (uVar2 < param_3 || lVar3 == 0) {
-    lVar3 = -1;
+  lVar4 = uVar3 - in_x2;
+  if (uVar3 < in_x2 || lVar4 == 0) {
+    lVar4 = -1;
   }
   else {
-    if (lVar3 == 0) {
-      lVar1 = 0;
+    if (lVar4 == 0) {
+      lVar2 = 0;
     }
     else {
-      lVar1 = FUN_001730d0(pbVar4 + param_3,param_2,lVar3);
+      lVar2 = FUN_001730d0(pbVar5 + in_x2,(uint)p1 & 0xff,lVar4);
     }
-    lVar3 = lVar1 - (long)pbVar4;
-    if (lVar1 == 0) {
-      lVar3 = -1;
+    lVar4 = lVar2 - (long)pbVar5;
+    if (lVar2 == 0) {
+      lVar4 = -1;
     }
   }
-  return lVar3;
+  return lVar4;
 }
 
 
@@ -518,36 +521,39 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::push_back(char) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     push_back(ulong *param_1,undefined1 param_2)
+     push_back(char p0)
 
 {
   byte bVar1;
-  ulong uVar2;
+  ulong *puVar2;
+  undefined1 in_w1;
   ulong uVar3;
+  ulong uVar4;
   
-  bVar1 = (byte)*param_1;
+  puVar2 = (ulong *)(ulong)(byte)p0;
+  bVar1 = (byte)*puVar2;
   if ((bVar1 & 1) == 0) {
-    uVar3 = (ulong)(bVar1 >> 1);
-    uVar2 = 0x16;
+    uVar4 = (ulong)(bVar1 >> 1);
+    uVar3 = 0x16;
   }
   else {
-    uVar3 = param_1[1];
-    uVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar4 = puVar2[1];
+    uVar3 = (*puVar2 & 0xfffffffffffffffe) - 1;
   }
-  if (uVar3 == uVar2) {
-    func_0x0016fee0(param_1,uVar2,1,uVar2,uVar2,0,0);
-    bVar1 = (byte)*param_1;
+  if (uVar4 == uVar3) {
+    func_0x0016fee0(puVar2,uVar3,1,uVar3,uVar3,0,0);
+    bVar1 = (byte)*puVar2;
   }
   if ((bVar1 & 1) == 0) {
-    uVar2 = (long)param_1 + 1;
-    *(char *)param_1 = (char)uVar3 * '\x02' + '\x02';
+    uVar3 = (long)puVar2 + 1;
+    *(char *)puVar2 = (char)uVar4 * '\x02' + '\x02';
   }
   else {
-    uVar2 = param_1[2];
-    param_1[1] = uVar3 + 1;
+    uVar3 = puVar2[2];
+    puVar2[1] = uVar4 + 1;
   }
-  *(undefined1 *)(uVar2 + uVar3) = param_2;
-  ((undefined1 *)(uVar2 + uVar3))[1] = 0;
+  *(undefined1 *)(uVar3 + uVar4) = in_w1;
+  ((undefined1 *)(uVar3 + uVar4))[1] = 0;
   return;
 }
 
@@ -562,53 +568,53 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __grow_by(ulong *param_1,ulong param_2,ulong param_3,long param_4,long param_5,long param_6,
-              long param_7)
+     __grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
 
 {
   long lVar1;
-  ulong uVar2;
-  byte *pbVar3;
-  ulong uVar4;
+  long lVar2;
+  long in_x6;
+  void *p0_00;
+  ulong uVar3;
   
-  if (param_3 <= -param_2 - 0x11) {
-    if ((*param_1 & 1) == 0) {
-      pbVar3 = (byte *)((long)param_1 + 1);
+  if (p2 <= -p1 - 0x11) {
+    if ((*(byte *)p0 & 1) == 0) {
+      p0_00 = (void *)(p0 + 1);
     }
     else {
-      pbVar3 = (byte *)param_1[2];
+      p0_00 = *(void **)(p0 + 0x10);
     }
-    if (param_2 < 0x7fffffffffffffe7) {
-      uVar4 = param_2 << 1;
-      if (param_2 << 1 <= param_3 + param_2) {
-        uVar4 = param_3 + param_2;
+    if (p1 < 0x7fffffffffffffe7) {
+      uVar3 = p1 << 1;
+      if (p1 << 1 <= p2 + p1) {
+        uVar3 = p2 + p1;
       }
-      if (uVar4 < 0x17) {
-        uVar4 = 0x17;
+      if (uVar3 < 0x17) {
+        uVar3 = 0x17;
       }
       else {
-        uVar4 = uVar4 + 0x10 & 0xfffffffffffffff0;
+        uVar3 = uVar3 + 0x10 & 0xfffffffffffffff0;
       }
     }
     else {
-      uVar4 = 0xffffffffffffffef;
+      uVar3 = 0xffffffffffffffef;
     }
-    uVar2 = FUN_00164060(uVar4);
-    if (param_5 != 0) {
-      FUN_001715e0(uVar2,pbVar3,param_5);
+    lVar2 = FUN_00164060(uVar3);
+    if (p4 != 0) {
+      FUN_001715e0(lVar2,p0_00,p4);
     }
-    lVar1 = (param_4 - param_6) - param_5;
+    lVar1 = (p3 - p5) - p4;
     if (lVar1 != 0) {
-      FUN_001715e0(uVar2 + param_5 + param_7,pbVar3 + param_6 + param_5,lVar1);
+      FUN_001715e0(lVar2 + p4 + in_x6,(long)p0_00 + p5 + p4,lVar1);
     }
-    if (param_2 != 0x16) {
-      FUN_00166120(pbVar3);
+    if (p1 != 0x16) {
+      FUN_00166120(p0_00);
     }
-    param_1[2] = uVar2;
-    *param_1 = uVar4 | 1;
+    *(long *)(p0 + 0x10) = lVar2;
+    *(ulong *)p0 = uVar3 | 1;
     return;
   }
-  FUN_00164180(param_1);
+  FUN_00164180(p0);
   return;
 }
 
@@ -622,30 +628,32 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::resize(unsigned long, char) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     resize(byte *param_1,ulong param_2)
+     resize(ulong p0,char p1)
 
 {
   byte bVar1;
   ulong uVar2;
+  ulong uVar3;
   
-  bVar1 = *param_1;
+  uVar2 = (ulong)(byte)p1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
-    uVar2 = (ulong)(bVar1 >> 1);
+    uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar2 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (uVar2 < param_2) {
-    FUN_00165960(param_1,param_2 - uVar2);
+  if (uVar3 < uVar2) {
+    FUN_00165960(p0,uVar2 - uVar3);
     return;
   }
   if ((bVar1 & 1) == 0) {
-    param_1[param_2 + 1] = 0;
-    *param_1 = (byte)((int)param_2 << 1);
+    *(undefined1 *)(p0 + uVar2 + 1) = 0;
+    *(char *)p0 = p1 << 1;
     return;
   }
-  *(undefined1 *)(*(long *)(param_1 + 0x10) + param_2) = 0;
-  *(ulong *)(param_1 + 8) = param_2;
+  *(undefined1 *)(*(long *)(p0 + 0x10) + uVar2) = 0;
+  *(ulong *)(p0 + 8) = uVar2;
   return;
 }
 
@@ -658,48 +666,52 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::append(unsigned long, char) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::append(ulong *param_1,ulong param_2,undefined4 param_3)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      append(ulong p0,char p1)
 
 {
-  byte bVar1;
-  long lVar2;
+  long lVar1;
+  byte bVar2;
   ulong uVar3;
-  ulong uVar4;
+  long lVar4;
+  undefined4 in_w2;
+  ulong uVar5;
+  ulong uVar6;
   
-  if (param_2 != 0) {
-    bVar1 = (byte)*param_1;
-    uVar3 = (ulong)bVar1;
-    if ((bVar1 & 1) == 0) {
-      uVar4 = (ulong)(bVar1 >> 1);
-      lVar2 = 0x16;
+  uVar3 = (ulong)(byte)p1;
+  if (uVar3 != 0) {
+    bVar2 = *(byte *)p0;
+    uVar5 = (ulong)bVar2;
+    if ((bVar2 & 1) == 0) {
+      uVar6 = (ulong)(bVar2 >> 1);
+      lVar4 = 0x16;
     }
     else {
-      uVar3 = *param_1;
-      uVar4 = param_1[1];
-      lVar2 = (uVar3 & 0xfffffffffffffffe) - 1;
+      uVar5 = *(ulong *)p0;
+      uVar6 = *(ulong *)(p0 + 8);
+      lVar4 = (uVar5 & 0xfffffffffffffffe) - 1;
     }
-    if (lVar2 - uVar4 < param_2) {
-      func_0x0016fee0(param_1,lVar2,(uVar4 + param_2) - lVar2,uVar4,uVar4,0,0);
-      uVar3 = (ulong)(byte)*param_1;
+    if (lVar4 - uVar6 < uVar3) {
+      func_0x0016fee0(p0,lVar4,(uVar6 + uVar3) - lVar4,uVar6,uVar6,0,0);
+      uVar5 = (ulong)*(byte *)p0;
     }
-    if ((uVar3 & 1) == 0) {
-      uVar3 = (long)param_1 + 1;
-    }
-    else {
-      uVar3 = param_1[2];
-    }
-    FUN_0016b330(uVar3 + uVar4,param_3,param_2);
-    uVar4 = uVar4 + param_2;
-    if ((*param_1 & 1) == 0) {
-      *(char *)param_1 = (char)((int)uVar4 << 1);
+    if ((uVar5 & 1) == 0) {
+      lVar4 = p0 + 1;
     }
     else {
-      param_1[1] = uVar4;
+      lVar4 = *(long *)(p0 + 0x10);
     }
-    *(undefined1 *)(uVar3 + uVar4) = 0;
+    FUN_0016b330(lVar4 + uVar6,in_w2,uVar3);
+    lVar1 = uVar6 + uVar3;
+    if ((*(byte *)p0 & 1) == 0) {
+      *(char *)p0 = (char)((int)lVar1 << 1);
+    }
+    else {
+      *(long *)(p0 + 8) = lVar1;
+    }
+    *(undefined1 *)(lVar4 + lVar1) = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -711,54 +723,55 @@ ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::erase(unsigned long, unsigned long) */
 
-byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       erase(byte *param_1,ulong param_2,ulong param_3)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      erase(ulong p0,ulong p1)
 
 {
   ulong uVar1;
   byte bVar2;
   ulong uVar3;
+  ulong in_x2;
   long lVar4;
   ulong uVar5;
-  byte *pbVar6;
+  long lVar6;
   
-  bVar2 = *param_1;
+  bVar2 = *(byte *)p0;
   if ((bVar2 & 1) == 0) {
     uVar5 = (ulong)(bVar2 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 8);
+    uVar5 = *(ulong *)(p0 + 8);
   }
-  uVar3 = uVar5 - param_2;
-  if (param_2 <= uVar5) {
-    if (param_3 != 0) {
+  uVar3 = uVar5 - p1;
+  if (p1 <= uVar5) {
+    if (in_x2 != 0) {
       if ((bVar2 & 1) == 0) {
-        pbVar6 = param_1 + 1;
+        lVar6 = p0 + 1;
       }
       else {
-        pbVar6 = *(byte **)(param_1 + 0x10);
+        lVar6 = *(long *)(p0 + 0x10);
       }
       uVar1 = uVar3;
-      if (param_3 <= uVar3) {
-        uVar1 = param_3;
+      if (in_x2 <= uVar3) {
+        uVar1 = in_x2;
       }
       if (uVar3 - uVar1 != 0) {
-        FUN_0016b250(pbVar6 + param_2,pbVar6 + param_2 + uVar1,uVar3 - uVar1);
-        bVar2 = *param_1;
+        FUN_0016b250(lVar6 + p1,lVar6 + p1 + uVar1,uVar3 - uVar1);
+        bVar2 = *(byte *)p0;
       }
       lVar4 = uVar5 - uVar1;
       if ((bVar2 & 1) == 0) {
-        *param_1 = (byte)((int)lVar4 << 1);
+        *(char *)p0 = (char)((int)lVar4 << 1);
       }
       else {
-        *(long *)(param_1 + 8) = lVar4;
+        *(long *)(p0 + 8) = lVar4;
       }
-      pbVar6[lVar4] = 0;
+      *(undefined1 *)(lVar6 + lVar4) = 0;
     }
-    return param_1;
+    return p0;
   }
-  pbVar6 = (byte *)FUN_0016ec80(param_1);
-  return pbVar6;
+  uVar5 = FUN_0016ec80(p0);
+  return uVar5;
 }
 
 
@@ -778,7 +791,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   ulong uVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
+  ulong p0;
   
   param_1[1] = 0;
   param_1[2] = 0;
@@ -803,11 +816,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     if (uVar2 == 0) goto LAB_005e3748;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar1 = FUN_00164060(uVar4);
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    uVar1 = FUN_00164060(p0);
     param_1[1] = uVar2;
     param_1[2] = uVar1;
-    *param_1 = uVar4 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar1,uVar3,uVar2);
 LAB_005e3748:
@@ -825,31 +838,32 @@ LAB_005e3748:
    >::__init(char const*, unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(ulong *param_1,undefined8 param_2,ulong param_3)
+     __init(char *p0,ulong p1)
 
 {
-  undefined1 *puVar1;
-  ulong uVar2;
+  ulong in_x2;
+  char *pcVar1;
+  ulong p0_00;
   
-  if (0xffffffffffffffef < param_3) {
-    FUN_00164180(param_1);
+  if (0xffffffffffffffef < in_x2) {
+    FUN_00164180(p0);
     return;
   }
-  if (param_3 < 0x17) {
-    puVar1 = (undefined1 *)((long)param_1 + 1);
-    *(char *)param_1 = (char)((int)param_3 << 1);
-    if (param_3 == 0) goto LAB_005e37e0;
+  if (in_x2 < 0x17) {
+    pcVar1 = p0 + 1;
+    *p0 = (char)((int)in_x2 << 1);
+    if (in_x2 == 0) goto LAB_005e37e0;
   }
   else {
-    uVar2 = param_3 + 0x10 & 0xfffffffffffffff0;
-    puVar1 = (undefined1 *)FUN_00164060(uVar2);
-    param_1[1] = param_3;
-    param_1[2] = (ulong)puVar1;
-    *param_1 = uVar2 | 1;
+    p0_00 = in_x2 + 0x10 & 0xfffffffffffffff0;
+    pcVar1 = (char *)FUN_00164060(p0_00);
+    *(ulong *)(p0 + 8) = in_x2;
+    *(char **)(p0 + 0x10) = pcVar1;
+    *(ulong *)p0 = p0_00 | 1;
   }
-  FUN_001715e0(puVar1,param_2,param_3);
+  FUN_001715e0(pcVar1,p1);
 LAB_005e37e0:
-  puVar1[param_3] = 0;
+  pcVar1[in_x2] = '\0';
   return;
 }
 
@@ -870,7 +884,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   ulong uVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
+  ulong p0;
   
   param_1[1] = 0;
   param_1[2] = 0;
@@ -895,11 +909,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     if (uVar2 == 0) goto LAB_005e389c;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar1 = FUN_00164060(uVar4);
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    uVar1 = FUN_00164060(p0);
     param_1[1] = uVar2;
     param_1[2] = uVar1;
-    *param_1 = uVar4 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar1,uVar3,uVar2);
 LAB_005e389c:
@@ -917,31 +931,34 @@ LAB_005e389c:
    >::__init(unsigned long, char) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(ulong *param_1,ulong param_2,undefined4 param_3)
+     __init(ulong p0,char p1)
 
 {
-  undefined1 *puVar1;
-  ulong uVar2;
+  ulong uVar1;
+  undefined4 in_w2;
+  long lVar2;
+  ulong p0_00;
   
-  if (0xffffffffffffffef < param_2) {
-    FUN_00164180(param_1);
+  uVar1 = (ulong)(byte)p1;
+  if (0xffffffffffffffef < uVar1) {
+    FUN_00164180(p0);
     return;
   }
-  if (param_2 < 0x17) {
-    puVar1 = (undefined1 *)((long)param_1 + 1);
-    *(char *)param_1 = (char)((int)param_2 << 1);
-    if (param_2 == 0) goto LAB_005e3b18;
+  if (uVar1 < 0x17) {
+    lVar2 = p0 + 1;
+    *(char *)p0 = p1 << 1;
+    if (uVar1 == 0) goto LAB_005e3b18;
   }
   else {
-    uVar2 = param_2 + 0x10 & 0xfffffffffffffff0;
-    puVar1 = (undefined1 *)FUN_00164060(uVar2);
-    param_1[1] = param_2;
-    param_1[2] = (ulong)puVar1;
-    *param_1 = uVar2 | 1;
+    p0_00 = uVar1 + 0x10 & 0xfffffffffffffff0;
+    lVar2 = FUN_00164060(p0_00);
+    *(ulong *)(p0 + 8) = uVar1;
+    *(long *)(p0 + 0x10) = lVar2;
+    *(ulong *)p0 = p0_00 | 1;
   }
-  FUN_0016b330(puVar1,param_3,param_2);
+  FUN_0016b330(lVar2,in_w2,uVar1);
 LAB_005e3b18:
-  puVar1[param_2] = 0;
+  *(undefined1 *)(lVar2 + uVar1) = 0;
   return;
 }
 
@@ -964,7 +981,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   byte bVar2;
   byte *pbVar3;
   ulong uVar4;
-  ulong uVar5;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -996,11 +1013,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     if (uVar1 == 0) goto LAB_005e3bd8;
   }
   else {
-    uVar5 = uVar1 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
+    p0 = uVar1 + 0x10 & 0xfffffffffffffff0;
+    uVar4 = FUN_00164060(p0);
     param_1[1] = uVar1;
     param_1[2] = uVar4;
-    *param_1 = uVar5 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar4,pbVar3 + param_3,uVar1);
 LAB_005e3bd8:
@@ -1024,7 +1041,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   if ((*param_1 & 1) == 0) {
     return;
   }
-  FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+  FUN_00166120(*(void **)(param_1 + 0x10));
   return;
 }
 
@@ -1038,13 +1055,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::assign(char const*) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     assign(undefined8 param_1,undefined8 param_2)
+     assign(char *p0)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00173480(param_2);
-  FUN_00164170(param_1,param_2,uVar1);
+  FUN_00173480();
+  FUN_00164170(p0);
   return;
 }
 
@@ -1058,28 +1073,31 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::TEMPNAMEPLACEHOLDERVALUE(char) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     operator=(byte *param_1,byte param_2)
+     operator=(char p0)
 
 {
   byte *pbVar1;
+  byte in_w1;
+  byte *pbVar2;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    *param_1 = 2;
+  pbVar1 = (byte *)(ulong)(byte)p0;
+  if ((*pbVar1 & 1) == 0) {
+    pbVar2 = pbVar1 + 1;
+    *pbVar1 = 2;
   }
   else {
-    pbVar1 = *(byte **)(param_1 + 0x10);
-    param_1[8] = 1;
-    param_1[9] = 0;
-    param_1[10] = 0;
-    param_1[0xb] = 0;
-    param_1[0xc] = 0;
-    param_1[0xd] = 0;
-    param_1[0xe] = 0;
-    param_1[0xf] = 0;
+    pbVar2 = *(byte **)(pbVar1 + 0x10);
+    pbVar1[8] = 1;
+    pbVar1[9] = 0;
+    pbVar1[10] = 0;
+    pbVar1[0xb] = 0;
+    pbVar1[0xc] = 0;
+    pbVar1[0xd] = 0;
+    pbVar1[0xe] = 0;
+    pbVar1[0xf] = 0;
   }
-  *pbVar1 = param_2;
-  pbVar1[1] = 0;
+  *pbVar2 = in_w1;
+  pbVar2[1] = 0;
   return;
 }
 
@@ -1093,51 +1111,52 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::reserve(unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     reserve(ulong *param_1,ulong param_2)
+     reserve(ulong p0)
 
 {
   byte bVar1;
   bool bVar2;
   bool bVar3;
-  ulong uVar4;
+  long lVar4;
+  ulong in_x1;
   ulong uVar5;
+  void *p0_00;
   ulong uVar6;
   ulong uVar7;
-  ulong uVar8;
   
-  if (0xffffffffffffffef < param_2) {
-    FUN_00164180(param_1);
+  if (0xffffffffffffffef < in_x1) {
+    FUN_00164180(p0);
     return;
   }
-  bVar1 = (byte)*param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
-    uVar7 = (ulong)(bVar1 >> 1);
-    uVar4 = 0x16;
+    uVar6 = (ulong)(bVar1 >> 1);
+    uVar5 = 0x16;
   }
   else {
-    uVar7 = param_1[1];
-    uVar4 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar6 = *(ulong *)(p0 + 8);
+    uVar5 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  uVar8 = uVar7;
-  if (uVar7 <= param_2) {
-    uVar8 = param_2;
+  uVar7 = uVar6;
+  if (uVar6 <= in_x1) {
+    uVar7 = in_x1;
   }
-  if (uVar8 < 0x17) {
-    uVar8 = 0x16;
-    if (uVar4 == 0x16) {
+  if (uVar7 < 0x17) {
+    uVar7 = 0x16;
+    if (uVar5 == 0x16) {
       return;
     }
   }
   else {
-    uVar8 = (uVar8 + 0x10 & 0xfffffffffffffff0) - 1;
-    if (uVar8 == uVar4) {
+    uVar7 = (uVar7 + 0x10 & 0xfffffffffffffff0) - 1;
+    if (uVar7 == uVar5) {
       return;
     }
   }
-  if (uVar8 == 0x16) {
-    uVar6 = param_1[2];
+  if (uVar7 == 0x16) {
+    p0_00 = *(void **)(p0 + 0x10);
     bVar3 = false;
-    uVar4 = (long)param_1 + 1;
+    lVar4 = p0 + 1;
     if ((bVar1 & 1) == 0) {
       bVar2 = true;
 LAB_005e441c:
@@ -1146,38 +1165,38 @@ LAB_005e441c:
     }
   }
   else {
-    if (uVar4 < uVar8) {
-      uVar4 = FUN_00164060(uVar8 + 1);
+    if (uVar5 < uVar7) {
+      lVar4 = FUN_00164060(uVar7 + 1);
     }
     else {
                     /* try { // try from 005e4404 to 005e4407 has its CatchHandler @ 005e449c */
-      uVar4 = FUN_00164060(uVar8 + 1);
+      lVar4 = FUN_00164060(uVar7 + 1);
     }
     if ((bVar1 & 1) == 0) {
       bVar2 = false;
-      uVar6 = (long)param_1 + 1;
+      p0_00 = (void *)(p0 + 1);
       bVar3 = true;
       goto LAB_005e441c;
     }
-    uVar6 = param_1[2];
+    p0_00 = *(void **)(p0 + 0x10);
     bVar3 = true;
   }
-  uVar5 = param_1[1];
+  uVar5 = *(ulong *)(p0 + 8);
   bVar2 = true;
 joined_r0x005e4440:
   if (uVar5 + 1 != 0) {
-    FUN_001715e0(uVar4,uVar6,uVar5 + 1);
+    FUN_001715e0(lVar4,p0_00,uVar5 + 1);
   }
   if (bVar2) {
-    FUN_00166120(uVar6);
+    FUN_00166120(p0_00);
   }
   if (bVar3) {
-    *param_1 = uVar8 + 1 | 1;
-    param_1[1] = uVar7;
-    param_1[2] = uVar4;
+    *(ulong *)p0 = uVar7 + 1 | 1;
+    *(ulong *)(p0 + 8) = uVar6;
+    *(long *)(p0 + 0x10) = lVar4;
   }
   else {
-    *(char *)param_1 = (char)((int)uVar7 << 1);
+    *(char *)p0 = (char)((int)uVar6 << 1);
   }
   return;
 }
@@ -1191,29 +1210,30 @@ joined_r0x005e4440:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::at(unsigned long) const */
 
-byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       at(byte *param_1,ulong param_2)
+long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at
+               (ulong p0)
 
 {
   byte bVar1;
-  byte *pbVar2;
+  long lVar2;
+  ulong in_x1;
   ulong uVar3;
   
-  bVar1 = *param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (uVar3 <= param_2) {
-    pbVar2 = (byte *)FUN_0016ec80();
-    return pbVar2;
+  if (uVar3 <= in_x1) {
+    lVar2 = FUN_0016ec80();
+    return lVar2;
   }
   if ((bVar1 & 1) == 0) {
-    return param_1 + param_2 + 1;
+    return p0 + 1 + in_x1;
   }
-  return (byte *)(*(long *)(param_1 + 0x10) + param_2);
+  return *(long *)(p0 + 0x10) + in_x1;
 }
 
 
@@ -1225,29 +1245,30 @@ byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::at(unsigned long) */
 
-byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-       at(byte *param_1,ulong param_2)
+long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::at
+               (ulong p0)
 
 {
   byte bVar1;
-  byte *pbVar2;
+  long lVar2;
+  ulong in_x1;
   ulong uVar3;
   
-  bVar1 = *param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (uVar3 <= param_2) {
-    pbVar2 = (byte *)FUN_0016ec80();
-    return pbVar2;
+  if (uVar3 <= in_x1) {
+    lVar2 = FUN_0016ec80();
+    return lVar2;
   }
   if ((bVar1 & 1) == 0) {
-    return param_1 + param_2 + 1;
+    return p0 + 1 + in_x1;
   }
-  return (byte *)(*(long *)(param_1 + 0x10) + param_2);
+  return *(long *)(p0 + 0x10) + in_x1;
 }
 
 
@@ -1260,13 +1281,11 @@ byte * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
    >::append(char const*) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     append(undefined8 param_1,undefined8 param_2)
+     append(char *p0)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00173480(param_2);
-  FUN_00167eb0(param_1,param_2,uVar1);
+  FUN_00173480();
+  FUN_00167eb0(p0);
   return;
 }
 
@@ -1359,77 +1378,81 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::assign(unsigned long, char) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::assign(ulong *param_1,ulong param_2,undefined4 param_3)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      assign(ulong p0,char p1)
 
 {
   byte bVar1;
-  ulong *puVar2;
+  undefined8 uVar2;
   ulong uVar3;
+  undefined4 in_w2;
   ulong uVar4;
-  byte *pbVar5;
-  ulong uVar6;
+  ulong uVar5;
+  void *p0_00;
+  long lVar6;
+  ulong uVar7;
   
-  bVar1 = (byte)*param_1;
+  uVar3 = (ulong)(byte)p1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
-    uVar6 = 0x16;
-    uVar4 = (ulong)bVar1;
-    if (0x16 < param_2) goto LAB_005e495c;
+    uVar7 = 0x16;
+    uVar5 = (ulong)bVar1;
+    if (0x16 < uVar3) goto LAB_005e495c;
 LAB_005e4938:
-    if ((uVar4 & 1) == 0) {
-      pbVar5 = (byte *)((long)param_1 + 1);
+    if ((uVar5 & 1) == 0) {
+      lVar6 = p0 + 1;
       goto joined_r0x005e49f4;
     }
   }
   else {
-    uVar4 = *param_1;
-    uVar6 = (uVar4 & 0xfffffffffffffffe) - 1;
-    if (param_2 <= uVar6) goto LAB_005e4938;
+    uVar5 = *(ulong *)p0;
+    uVar7 = (uVar5 & 0xfffffffffffffffe) - 1;
+    if (uVar3 <= uVar7) goto LAB_005e4938;
 LAB_005e495c:
-    if (-uVar6 - 0x11 < param_2 - uVar6) {
-      puVar2 = (ulong *)FUN_00164180(param_1);
-      return puVar2;
+    if (-uVar7 - 0x11 < uVar3 - uVar7) {
+      uVar3 = FUN_00164180(p0);
+      return uVar3;
     }
     if ((bVar1 & 1) == 0) {
-      pbVar5 = (byte *)((long)param_1 + 1);
+      p0_00 = (void *)(p0 + 1);
     }
     else {
-      pbVar5 = (byte *)param_1[2];
+      p0_00 = *(void **)(p0 + 0x10);
     }
-    if (uVar6 < 0x7fffffffffffffe7) {
-      uVar3 = uVar6 * 2;
-      if (uVar3 < param_2 || uVar3 - param_2 == 0) {
-        uVar3 = param_2;
+    if (uVar7 < 0x7fffffffffffffe7) {
+      uVar4 = uVar7 * 2;
+      if (uVar4 < uVar3 || uVar4 - uVar3 == 0) {
+        uVar4 = uVar3;
       }
-      uVar4 = 0x17;
-      if (0x16 < uVar3) {
-        uVar4 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      uVar5 = 0x17;
+      if (0x16 < uVar4) {
+        uVar5 = uVar4 + 0x10 & 0xfffffffffffffff0;
       }
-      uVar3 = FUN_00164060(uVar4);
-      if (uVar6 != 0x16) goto LAB_005e49d8;
+      uVar2 = FUN_00164060(uVar5);
+      if (uVar7 != 0x16) goto LAB_005e49d8;
     }
     else {
-      uVar4 = 0xffffffffffffffef;
-      uVar3 = FUN_00164060(0xffffffffffffffef);
+      uVar5 = 0xffffffffffffffef;
+      uVar2 = FUN_00164060(0xffffffffffffffef);
 LAB_005e49d8:
-      FUN_00166120(pbVar5);
+      FUN_00166120(p0_00);
     }
-    param_1[2] = uVar3;
-    *param_1 = uVar4 | 1;
+    *(undefined8 *)(p0 + 0x10) = uVar2;
+    *(ulong *)p0 = uVar5 | 1;
   }
-  pbVar5 = (byte *)param_1[2];
+  lVar6 = *(long *)(p0 + 0x10);
 joined_r0x005e49f4:
-  if (param_2 != 0) {
-    FUN_0016b330(pbVar5,param_3,param_2);
+  if (uVar3 != 0) {
+    FUN_0016b330(lVar6,in_w2,uVar3);
   }
-  pbVar5[param_2] = 0;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)param_2 << 1);
+  *(undefined1 *)(lVar6 + uVar3) = 0;
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = p1 << 1;
   }
   else {
-    param_1[1] = param_2;
+    *(ulong *)(p0 + 8) = uVar3;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1482,13 +1505,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::insert(unsigned long, char const*) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+     insert(ulong p0,char *p1)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00173480(param_3);
-  FUN_00164fb0(param_1,param_2,param_3,uVar1);
+  FUN_00173480();
+  FUN_00164fb0(p0,p1);
   return;
 }
 
@@ -1501,99 +1522,102 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::insert(unsigned long, unsigned long, char) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::insert(ulong *param_1,ulong param_2,ulong param_3,undefined4 param_4)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      insert(ulong p0,ulong p1,char p2)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  byte *pbVar3;
-  ulong *puVar4;
-  byte *pbVar5;
+  long lVar1;
+  ulong uVar2;
+  byte bVar3;
+  long lVar4;
+  ulong uVar5;
+  undefined4 in_w3;
+  void *p0_00;
   ulong uVar6;
   ulong uVar7;
   ulong uVar8;
   
-  bVar2 = (byte)*param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar7 = (ulong)(bVar2 >> 1);
+  uVar5 = (ulong)(byte)p2;
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar7 = (ulong)(bVar3 >> 1);
   }
   else {
-    uVar7 = param_1[1];
+    uVar7 = *(ulong *)(p0 + 8);
   }
-  if (param_2 <= uVar7) {
-    if (param_3 != 0) {
-      if ((bVar2 & 1) == 0) {
+  if (p1 <= uVar7) {
+    if (uVar5 != 0) {
+      if ((bVar3 & 1) == 0) {
         uVar8 = 0x16;
       }
       else {
-        uVar8 = (*param_1 & 0xfffffffffffffffe) - 1;
+        uVar8 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
       }
-      if (uVar8 - uVar7 < param_3) {
-        uVar6 = uVar7 + param_3;
+      if (uVar8 - uVar7 < uVar5) {
+        uVar6 = uVar7 + uVar5;
         if (-uVar8 - 0x11 < uVar6 - uVar8) {
-          puVar4 = (ulong *)FUN_00164180(param_1);
-          return puVar4;
+          uVar5 = FUN_00164180(p0);
+          return uVar5;
         }
-        if ((bVar2 & 1) == 0) {
-          pbVar5 = (byte *)((long)param_1 + 1);
+        if ((bVar3 & 1) == 0) {
+          p0_00 = (void *)(p0 + 1);
         }
         else {
-          pbVar5 = (byte *)param_1[2];
+          p0_00 = *(void **)(p0 + 0x10);
         }
         if (uVar8 < 0x7fffffffffffffe7) {
-          uVar1 = uVar8 << 1;
+          uVar2 = uVar8 << 1;
           if (uVar8 << 1 <= uVar6) {
-            uVar1 = uVar6;
+            uVar2 = uVar6;
           }
-          if (uVar1 < 0x17) {
+          if (uVar2 < 0x17) {
             uVar6 = 0x17;
           }
           else {
-            uVar6 = uVar1 + 0x10 & 0xfffffffffffffff0;
+            uVar6 = uVar2 + 0x10 & 0xfffffffffffffff0;
           }
         }
         else {
           uVar6 = 0xffffffffffffffef;
         }
-        pbVar3 = (byte *)FUN_00164060(uVar6);
-        if (param_2 != 0) {
-          FUN_001715e0(pbVar3,pbVar5,param_2);
+        lVar4 = FUN_00164060(uVar6);
+        if (p1 != 0) {
+          FUN_001715e0(lVar4,p0_00,p1);
         }
-        if (uVar7 - param_2 != 0) {
-          FUN_001715e0(pbVar3 + param_3 + param_2,pbVar5 + param_2,uVar7 - param_2);
+        if (uVar7 - p1 != 0) {
+          FUN_001715e0(lVar4 + p1 + uVar5,(long)p0_00 + p1,uVar7 - p1);
         }
         if (uVar8 != 0x16) {
-          FUN_00166120(pbVar5);
+          FUN_00166120(p0_00);
         }
-        param_1[2] = (ulong)pbVar3;
-        *param_1 = uVar6 | 1;
+        *(long *)(p0 + 0x10) = lVar4;
+        *(ulong *)p0 = uVar6 | 1;
       }
       else {
-        if ((bVar2 & 1) == 0) {
-          pbVar3 = (byte *)((long)param_1 + 1);
+        if ((bVar3 & 1) == 0) {
+          lVar4 = p0 + 1;
         }
         else {
-          pbVar3 = (byte *)param_1[2];
+          lVar4 = *(long *)(p0 + 0x10);
         }
-        if (uVar7 - param_2 != 0) {
-          FUN_0016b250(pbVar3 + param_2 + param_3,pbVar3 + param_2,uVar7 - param_2);
+        if (uVar7 - p1 != 0) {
+          FUN_0016b250(lVar4 + p1 + uVar5,lVar4 + p1,uVar7 - p1);
         }
       }
-      FUN_0016b330(pbVar3 + param_2,param_4,param_3);
-      uVar7 = uVar7 + param_3;
-      if ((*param_1 & 1) == 0) {
-        *(byte *)param_1 = (byte)((int)uVar7 << 1);
+      FUN_0016b330(lVar4 + p1,in_w3,uVar5);
+      lVar1 = uVar7 + uVar5;
+      if ((*(byte *)p0 & 1) == 0) {
+        *(char *)p0 = (char)((int)lVar1 << 1);
       }
       else {
-        param_1[1] = uVar7;
+        *(long *)(p0 + 8) = lVar1;
       }
-      pbVar3[uVar7] = 0;
+      *(undefined1 *)(lVar4 + lVar1) = 0;
     }
-    return param_1;
+    return p0;
   }
-  puVar4 = (ulong *)FUN_0016ec80(param_1);
-  return puVar4;
+  uVar5 = FUN_0016ec80(p0);
+  return uVar5;
 }
 
 
@@ -1613,59 +1637,59 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   long lVar2;
   ulong uVar3;
   ulong uVar4;
+  void *p0;
   ulong uVar5;
-  ulong uVar6;
   
   bVar1 = (byte)*param_1;
   if ((bVar1 & 1) == 0) {
     uVar3 = (long)param_1 + 1;
-    uVar6 = (ulong)(bVar1 >> 1);
+    uVar5 = (ulong)(bVar1 >> 1);
     uVar4 = 0x16;
   }
   else {
-    uVar6 = param_1[1];
+    uVar5 = param_1[1];
     uVar3 = param_1[2];
     uVar4 = (*param_1 & 0xfffffffffffffffe) - 1;
   }
   param_2 = param_2 - uVar3;
-  if (uVar4 == uVar6) {
-    if (uVar6 == 0xffffffffffffffef) {
+  if (uVar4 == uVar5) {
+    if (uVar5 == 0xffffffffffffffef) {
       lVar2 = FUN_00164180(param_1);
       return lVar2;
     }
     if ((bVar1 & 1) == 0) {
-      uVar4 = (long)param_1 + 1;
+      p0 = (void *)((long)param_1 + 1);
     }
     else {
-      uVar4 = param_1[2];
+      p0 = (void *)param_1[2];
     }
-    if (uVar6 < 0x7fffffffffffffe7) {
-      uVar3 = uVar6 << 1;
-      if (uVar3 <= uVar6 + 1) {
-        uVar3 = uVar6 + 1;
+    if (uVar5 < 0x7fffffffffffffe7) {
+      uVar3 = uVar5 << 1;
+      if (uVar3 <= uVar5 + 1) {
+        uVar3 = uVar5 + 1;
       }
       if (uVar3 < 0x17) {
-        uVar5 = 0x17;
+        uVar4 = 0x17;
       }
       else {
-        uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
+        uVar4 = uVar3 + 0x10 & 0xfffffffffffffff0;
       }
     }
     else {
-      uVar5 = 0xffffffffffffffef;
+      uVar4 = 0xffffffffffffffef;
     }
-    uVar3 = FUN_00164060(uVar5);
+    uVar3 = FUN_00164060(uVar4);
     if (param_2 != 0) {
-      FUN_001715e0(uVar3,uVar4,param_2);
+      FUN_001715e0(uVar3,p0,param_2);
     }
-    if (uVar6 - param_2 != 0) {
-      FUN_001715e0(uVar3 + param_2 + 1,uVar4 + param_2,uVar6 - param_2);
+    if (uVar5 - param_2 != 0) {
+      FUN_001715e0(uVar3 + param_2 + 1,(long)p0 + param_2,uVar5 - param_2);
     }
-    if (uVar6 != 0x16) {
-      FUN_00166120(uVar4);
+    if (uVar5 != 0x16) {
+      FUN_00166120(p0);
     }
     param_1[2] = uVar3;
-    *param_1 = uVar5 | 1;
+    *param_1 = uVar4 | 1;
   }
   else {
     if ((bVar1 & 1) == 0) {
@@ -1674,18 +1698,18 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     else {
       uVar3 = param_1[2];
     }
-    if (uVar6 - param_2 != 0) {
-      FUN_0016b250(uVar3 + param_2 + 1,uVar3 + param_2,uVar6 - param_2);
+    if (uVar5 - param_2 != 0) {
+      FUN_0016b250(uVar3 + param_2 + 1,uVar3 + param_2,uVar5 - param_2);
     }
   }
-  uVar6 = uVar6 + 1;
+  uVar5 = uVar5 + 1;
   *(undefined1 *)(uVar3 + param_2) = param_3;
-  *(undefined1 *)(uVar3 + uVar6) = 0;
+  *(undefined1 *)(uVar3 + uVar5) = 0;
   if ((*param_1 & 1) == 0) {
-    *(char *)param_1 = (char)((int)uVar6 << 1);
+    *(char *)param_1 = (char)((int)uVar5 << 1);
   }
   else {
-    param_1[1] = uVar6;
+    param_1[1] = uVar5;
     if ((*param_1 & 1) != 0) {
       uVar3 = param_1[2];
       goto LAB_005e4e10;
@@ -1705,153 +1729,153 @@ LAB_005e4e10:
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::replace(unsigned long, unsigned long, char const*, unsigned long) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::replace(ulong *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      replace(ulong p0,ulong p1,char *p2,ulong p3)
 
 {
   byte bVar1;
   long lVar2;
-  byte *pbVar3;
-  ulong uVar4;
-  ulong *puVar5;
-  ulong uVar6;
-  byte *pbVar7;
+  char *pcVar3;
+  long lVar4;
+  char *pcVar5;
+  char *in_x4;
+  void *p0_00;
+  char *pcVar6;
+  ulong p0_01;
+  char *pcVar7;
   ulong uVar8;
   ulong uVar9;
-  byte *pbVar10;
-  ulong uVar11;
-  ulong uVar12;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
-    uVar11 = (ulong)(bVar1 >> 1);
-    uVar6 = uVar11 - param_2;
+    uVar8 = (ulong)(bVar1 >> 1);
+    pcVar5 = (char *)(uVar8 - p1);
   }
   else {
-    uVar11 = param_1[1];
-    uVar6 = uVar11 - param_2;
+    uVar8 = *(ulong *)(p0 + 8);
+    pcVar5 = (char *)(uVar8 - p1);
   }
-  if (uVar11 < param_2) {
-    puVar5 = (ulong *)FUN_0016ec80(param_1);
-    return puVar5;
+  if (uVar8 < p1) {
+    uVar8 = FUN_0016ec80(p0);
+    return uVar8;
   }
-  uVar8 = uVar6;
-  if (param_3 <= uVar6) {
-    uVar8 = param_3;
+  pcVar6 = pcVar5;
+  if (p2 <= pcVar5) {
+    pcVar6 = p2;
   }
   if ((bVar1 & 1) == 0) {
-    uVar12 = 0x16;
+    uVar9 = 0x16;
   }
   else {
-    uVar12 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar9 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if ((uVar8 - uVar11) + uVar12 < param_5) {
-    uVar6 = (uVar11 - uVar8) + param_5;
-    if (-uVar12 - 0x12 < uVar6 - uVar12) {
-      puVar5 = (ulong *)FUN_00164180(param_1);
-      return puVar5;
+  if (pcVar6 + (uVar9 - uVar8) < in_x4) {
+    pcVar7 = in_x4 + (uVar8 - (long)pcVar6);
+    if (-uVar9 - 0x12 < (long)pcVar7 - uVar9) {
+      uVar8 = FUN_00164180(p0);
+      return uVar8;
     }
     if ((bVar1 & 1) == 0) {
-      pbVar7 = (byte *)((long)param_1 + 1);
+      p0_00 = (void *)(p0 + 1);
     }
     else {
-      pbVar7 = (byte *)param_1[2];
+      p0_00 = *(void **)(p0 + 0x10);
     }
-    if (uVar12 < 0x7fffffffffffffe7) {
-      uVar9 = uVar12 << 1;
-      if (uVar12 << 1 <= uVar6) {
-        uVar9 = uVar6;
+    if (uVar9 < 0x7fffffffffffffe7) {
+      pcVar5 = (char *)(uVar9 << 1);
+      if ((char *)(uVar9 << 1) <= pcVar7) {
+        pcVar5 = pcVar7;
       }
-      if (uVar9 < 0x17) {
-        uVar9 = 0x17;
+      if ((char *)((long)&Elf64_Ehdr_00000000.e_version + 2) < pcVar5) {
+        p0_01 = (ulong)(pcVar5 + 0x10) & 0xfffffffffffffff0;
       }
       else {
-        uVar9 = uVar9 + 0x10 & 0xfffffffffffffff0;
+        p0_01 = 0x17;
       }
     }
     else {
-      uVar9 = 0xffffffffffffffef;
+      p0_01 = 0xffffffffffffffef;
     }
-    uVar4 = FUN_00164060(uVar9);
-    if (param_2 != 0) {
-      FUN_001715e0(uVar4,pbVar7,param_2);
+    lVar4 = FUN_00164060(p0_01);
+    if (p1 != 0) {
+      FUN_001715e0(lVar4,p0_00,p1);
     }
-    FUN_001715e0(uVar4 + param_2,param_4,param_5);
-    lVar2 = (uVar11 - uVar8) - param_2;
+    FUN_001715e0(lVar4 + p1,p3);
+    lVar2 = (uVar8 - (long)pcVar6) - p1;
     if (lVar2 != 0) {
-      FUN_001715e0(uVar4 + param_2 + param_5,pbVar7 + uVar8 + param_2,lVar2);
+      FUN_001715e0(in_x4 + lVar4 + p1,pcVar6 + (long)p0_00 + p1,lVar2);
     }
-    if (uVar12 != 0x16) {
-      FUN_00166120(pbVar7);
+    if (uVar9 != 0x16) {
+      FUN_00166120(p0_00);
     }
-    *param_1 = uVar9 | 1;
-    pbVar7 = (byte *)(uVar4 + uVar6);
-    param_1[1] = uVar6;
-    param_1[2] = uVar4;
+    *(ulong *)p0 = p0_01 | 1;
+    pcVar5 = pcVar7 + lVar4;
+    *(char **)(p0 + 8) = pcVar7;
+    *(long *)(p0 + 0x10) = lVar4;
     goto LAB_005e55dc;
   }
-  uVar12 = param_5;
+  pcVar7 = in_x4;
   if ((bVar1 & 1) == 0) {
-    pbVar7 = (byte *)((long)param_1 + 1);
-    if (uVar8 == param_5) goto joined_r0x005e54e8;
+    lVar4 = p0 + 1;
+    if (pcVar6 == in_x4) goto joined_r0x005e54e8;
 LAB_005e54a0:
-    uVar6 = uVar6 - uVar8;
-    uVar12 = uVar8;
-    if (uVar6 == 0) goto joined_r0x005e54e8;
-    pbVar10 = pbVar7 + param_2;
-    if (uVar8 <= param_5) {
-      if ((pbVar10 < param_4) && (param_4 < pbVar7 + uVar11)) {
-        if (param_4 < pbVar10 + uVar8) {
-          if (uVar8 != 0) {
-            FUN_0016b250(pbVar10,param_4,uVar8);
+    pcVar5 = pcVar5 + -(long)pcVar6;
+    pcVar7 = pcVar6;
+    if (pcVar5 == (char *)0x0) goto joined_r0x005e54e8;
+    pcVar7 = (char *)(lVar4 + p1);
+    if (pcVar6 <= in_x4) {
+      if ((pcVar7 < p3) && (p3 < lVar4 + uVar8)) {
+        if (p3 < pcVar7 + (long)pcVar6) {
+          if (pcVar6 != (char *)0x0) {
+            FUN_0016b250(pcVar7,p3,pcVar6);
           }
-          param_2 = uVar8 + param_2;
-          param_4 = param_4 + param_5;
-          param_5 = param_5 - uVar8;
-          pbVar10 = pbVar7 + param_2;
-          uVar8 = 0;
+          p1 = (ulong)(pcVar6 + p1);
+          p3 = (ulong)(in_x4 + p3);
+          in_x4 = in_x4 + -(long)pcVar6;
+          pcVar7 = (char *)(p1 + lVar4);
+          pcVar6 = (char *)0x0;
         }
         else {
-          param_4 = param_4 + (param_5 - uVar8);
+          p3 = (ulong)(in_x4 + (p3 - (long)pcVar6));
         }
       }
-      FUN_0016b250(pbVar10 + param_5,pbVar10 + uVar8,uVar6);
-      uVar12 = uVar8;
+      FUN_0016b250(pcVar7 + (long)in_x4,pcVar7 + (long)pcVar6,pcVar5);
+      pcVar7 = pcVar6;
       goto joined_r0x005e54e8;
     }
-    if (param_5 != 0) {
-      FUN_0016b250(pbVar10,param_4,param_5);
+    if (in_x4 != (char *)0x0) {
+      FUN_0016b250(pcVar7,p3);
     }
-    pbVar3 = pbVar10 + param_5;
-    param_4 = pbVar10 + uVar8;
+    pcVar3 = pcVar7 + (long)in_x4;
+    p3 = (ulong)(pcVar7 + (long)pcVar6);
 LAB_005e54f8:
-    FUN_0016b250(pbVar3,param_4,uVar6);
-    uVar6 = param_5;
+    FUN_0016b250(pcVar3,p3,pcVar5);
+    pcVar5 = in_x4;
   }
   else {
-    pbVar7 = (byte *)param_1[2];
-    if (uVar8 != param_5) goto LAB_005e54a0;
+    lVar4 = *(long *)(p0 + 0x10);
+    if (pcVar6 != in_x4) goto LAB_005e54a0;
 joined_r0x005e54e8:
-    uVar6 = param_5;
-    uVar8 = uVar12;
-    if (uVar6 != 0) {
-      pbVar3 = pbVar7 + param_2;
-      param_5 = uVar6;
+    pcVar5 = in_x4;
+    pcVar6 = pcVar7;
+    if (pcVar5 != (char *)0x0) {
+      pcVar3 = (char *)(p1 + lVar4);
+      in_x4 = pcVar5;
       goto LAB_005e54f8;
     }
   }
-  uVar11 = (uVar6 - uVar8) + uVar11;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)uVar11 << 1);
-    pbVar7 = pbVar7 + uVar11;
+  pcVar5 = pcVar5 + (uVar8 - (long)pcVar6);
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = (char)((int)pcVar5 << 1);
+    pcVar5 = pcVar5 + lVar4;
   }
   else {
-    param_1[1] = uVar11;
-    pbVar7 = pbVar7 + uVar11;
+    *(char **)(p0 + 8) = pcVar5;
+    pcVar5 = pcVar5 + lVar4;
   }
 LAB_005e55dc:
-  *pbVar7 = 0;
-  return param_1;
+  *pcVar5 = '\0';
+  return p0;
 }
 
 
@@ -1895,13 +1919,11 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    >::replace(unsigned long, unsigned long, char const*) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     replace(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+     replace(ulong p0,ulong p1,char *p2)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00173480(param_4);
-  FUN_00162000(param_1,param_2,param_3,param_4,uVar1);
+  FUN_00173480();
+  FUN_00162000(p0,p1,p2);
   return;
 }
 
@@ -1914,108 +1936,110 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
 /* std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>
    >::replace(unsigned long, unsigned long, unsigned long, char) */
 
-ulong * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-        ::replace(ulong *param_1,ulong param_2,ulong param_3,ulong param_4,undefined4 param_5)
+ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
+      replace(ulong p0,ulong p1,ulong p2,char p3)
 
 {
   ulong uVar1;
   ulong uVar2;
   byte bVar3;
   long lVar4;
-  byte *pbVar5;
-  ulong *puVar6;
-  byte *pbVar7;
+  long lVar5;
+  ulong uVar6;
+  undefined4 in_w4;
+  void *p0_00;
+  ulong uVar7;
   ulong uVar8;
   ulong uVar9;
-  ulong uVar10;
   
-  bVar3 = (byte)*param_1;
+  uVar6 = (ulong)(byte)p3;
+  bVar3 = *(byte *)p0;
   if ((bVar3 & 1) == 0) {
-    uVar9 = (ulong)(bVar3 >> 1);
-    uVar8 = uVar9 - param_2;
+    uVar8 = (ulong)(bVar3 >> 1);
+    uVar7 = uVar8 - p1;
   }
   else {
-    uVar9 = param_1[1];
-    uVar8 = uVar9 - param_2;
+    uVar8 = *(ulong *)(p0 + 8);
+    uVar7 = uVar8 - p1;
   }
-  if (uVar9 < param_2) {
-    puVar6 = (ulong *)FUN_0016ec80(param_1);
-    return puVar6;
+  if (uVar8 < p1) {
+    uVar6 = FUN_0016ec80(p0);
+    return uVar6;
   }
-  uVar1 = uVar8;
-  if (param_3 <= uVar8) {
-    uVar1 = param_3;
+  uVar1 = uVar7;
+  if (p2 <= uVar7) {
+    uVar1 = p2;
   }
   if ((bVar3 & 1) == 0) {
-    uVar10 = 0x16;
+    uVar9 = 0x16;
   }
   else {
-    uVar10 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar9 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if ((uVar1 - uVar9) + uVar10 < param_4) {
-    uVar8 = (uVar9 - uVar1) + param_4;
-    if (-uVar10 - 0x11 < uVar8 - uVar10) {
-      puVar6 = (ulong *)FUN_00164180(param_1);
-      return puVar6;
+  if ((uVar1 - uVar8) + uVar9 < uVar6) {
+    uVar7 = (uVar8 - uVar1) + uVar6;
+    if (-uVar9 - 0x11 < uVar7 - uVar9) {
+      uVar6 = FUN_00164180(p0);
+      return uVar6;
     }
     if ((bVar3 & 1) == 0) {
-      pbVar7 = (byte *)((long)param_1 + 1);
+      p0_00 = (void *)(p0 + 1);
     }
     else {
-      pbVar7 = (byte *)param_1[2];
+      p0_00 = *(void **)(p0 + 0x10);
     }
-    if (uVar10 < 0x7fffffffffffffe7) {
-      uVar2 = uVar10 << 1;
-      if (uVar10 << 1 <= uVar8) {
-        uVar2 = uVar8;
+    if (uVar9 < 0x7fffffffffffffe7) {
+      uVar2 = uVar9 << 1;
+      if (uVar9 << 1 <= uVar7) {
+        uVar2 = uVar7;
       }
       if (uVar2 < 0x17) {
-        uVar8 = 0x17;
+        uVar7 = 0x17;
       }
       else {
-        uVar8 = uVar2 + 0x10 & 0xfffffffffffffff0;
+        uVar7 = uVar2 + 0x10 & 0xfffffffffffffff0;
       }
     }
     else {
-      uVar8 = 0xffffffffffffffef;
+      uVar7 = 0xffffffffffffffef;
     }
-    pbVar5 = (byte *)FUN_00164060(uVar8);
-    if (param_2 != 0) {
-      FUN_001715e0(pbVar5,pbVar7,param_2);
+    lVar5 = FUN_00164060(uVar7);
+    if (p1 != 0) {
+      FUN_001715e0(lVar5,p0_00,p1);
     }
-    lVar4 = (uVar9 - uVar1) - param_2;
+    lVar4 = (uVar8 - uVar1) - p1;
     if (lVar4 != 0) {
-      FUN_001715e0(pbVar5 + param_4 + param_2,pbVar7 + uVar1 + param_2,lVar4);
+      FUN_001715e0(lVar5 + p1 + uVar6,(long)p0_00 + uVar1 + p1,lVar4);
     }
-    if (uVar10 != 0x16) {
-      FUN_00166120(pbVar7);
+    if (uVar9 != 0x16) {
+      FUN_00166120(p0_00);
     }
-    param_1[2] = (ulong)pbVar5;
-    *param_1 = uVar8 | 1;
+    *(long *)(p0 + 0x10) = lVar5;
+    *(ulong *)p0 = uVar7 | 1;
   }
   else {
     if ((bVar3 & 1) == 0) {
-      pbVar5 = (byte *)((long)param_1 + 1);
+      lVar5 = p0 + 1;
     }
     else {
-      pbVar5 = (byte *)param_1[2];
+      lVar5 = *(long *)(p0 + 0x10);
     }
-    if ((uVar1 != param_4) && (uVar8 - uVar1 != 0)) {
-      FUN_0016b250(pbVar5 + param_4 + param_2,pbVar5 + uVar1 + param_2,uVar8 - uVar1);
+    if ((uVar1 != uVar6) && (uVar7 - uVar1 != 0)) {
+      FUN_0016b250(lVar5 + p1 + uVar6,lVar5 + p1 + uVar1,uVar7 - uVar1);
     }
-    if (param_4 == 0) goto LAB_005e58b0;
+    if (uVar6 == 0) goto LAB_005e58b0;
   }
-  FUN_0016b330(pbVar5 + param_2,param_5,param_4);
+  FUN_0016b330(lVar5 + p1,in_w4,uVar6);
 LAB_005e58b0:
-  uVar9 = (param_4 - uVar1) + uVar9;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)uVar9 << 1);
+  lVar4 = (uVar6 - uVar1) + uVar8;
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = (char)((int)lVar4 << 1);
   }
   else {
-    param_1[1] = uVar9;
+    *(long *)(p0 + 8) = lVar4;
   }
-  pbVar5[uVar9] = 0;
-  return param_1;
+  *(undefined1 *)(lVar5 + lVar4) = 0;
+  return p0;
 }
 
 
@@ -2028,34 +2052,36 @@ LAB_005e58b0:
    >::copy(char*, unsigned long, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      copy(byte *param_1,undefined8 param_2,ulong param_3,ulong param_4)
+      copy(char *p0,ulong p1,ulong p2)
 
 {
   byte bVar1;
   ulong uVar2;
-  ulong uVar3;
+  ulong in_x3;
+  char *pcVar3;
+  ulong uVar4;
   
-  bVar1 = *param_1;
+  bVar1 = *p0;
   if ((bVar1 & 1) == 0) {
-    uVar3 = (ulong)(bVar1 >> 1);
-    uVar2 = uVar3 - param_4;
+    uVar4 = (ulong)(bVar1 >> 1);
+    uVar2 = uVar4 - in_x3;
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    uVar2 = uVar3 - param_4;
+    uVar4 = *(ulong *)(p0 + 8);
+    uVar2 = uVar4 - in_x3;
   }
-  if (param_4 <= uVar3) {
-    if (param_3 <= uVar2) {
-      uVar2 = param_3;
+  if (in_x3 <= uVar4) {
+    if (p2 <= uVar2) {
+      uVar2 = p2;
     }
     if ((bVar1 & 1) == 0) {
-      param_1 = param_1 + 1;
+      pcVar3 = p0 + 1;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      pcVar3 = *(char **)(p0 + 0x10);
     }
     if (uVar2 != 0) {
-      FUN_001715e0(param_2,param_1 + param_4,uVar2);
+      FUN_001715e0(p1,pcVar3 + in_x3,uVar2);
     }
     return uVar2;
   }
@@ -2073,53 +2099,54 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::find(char const*, unsigned long, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find(byte *param_1,undefined1 *param_2,ulong param_3,long param_4)
+      find(char *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
+  char *pcVar1;
+  char *pcVar2;
   undefined1 uVar3;
   int iVar4;
-  byte *pbVar5;
+  char *pcVar5;
+  long in_x3;
   ulong uVar6;
   long lVar7;
-  byte *pbVar8;
+  char *pcVar8;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    uVar6 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar1 = p0 + 1;
+    uVar6 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar6 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar6 = *(ulong *)(p0 + 8);
+    pcVar1 = *(char **)(p0 + 0x10);
   }
-  if (uVar6 < param_3) {
-    param_3 = 0xffffffffffffffff;
+  if (uVar6 < p2) {
+    p2 = 0xffffffffffffffff;
   }
-  else if (param_4 != 0) {
-    pbVar5 = pbVar1 + param_3;
-    pbVar2 = pbVar1 + uVar6;
-    lVar7 = (long)pbVar2 - (long)pbVar5;
-    pbVar8 = pbVar2;
-    if (param_4 <= lVar7) {
-      uVar3 = *param_2;
+  else if (in_x3 != 0) {
+    pcVar5 = pcVar1 + p2;
+    pcVar2 = pcVar1 + uVar6;
+    lVar7 = (long)pcVar2 - (long)pcVar5;
+    pcVar8 = pcVar2;
+    if (in_x3 <= lVar7) {
+      uVar3 = *(undefined1 *)p1;
       do {
-        lVar7 = (lVar7 - param_4) + 1;
-        pbVar8 = pbVar2;
+        lVar7 = (lVar7 - in_x3) + 1;
+        pcVar8 = pcVar2;
         if (((lVar7 == 0) ||
-            (pbVar5 = (byte *)FUN_001730d0(pbVar5,uVar3,lVar7), pbVar5 == (byte *)0x0)) ||
-           (iVar4 = FUN_00163c10(pbVar5,param_2,param_4), pbVar8 = pbVar5, iVar4 == 0)) break;
-        pbVar5 = pbVar5 + 1;
-        lVar7 = (long)pbVar2 - (long)pbVar5;
-        pbVar8 = pbVar2;
-      } while (param_4 <= lVar7);
+            (pcVar5 = (char *)FUN_001730d0(pcVar5,uVar3,lVar7), pcVar5 == (char *)0x0)) ||
+           (iVar4 = FUN_00163c10(pcVar5,p1), pcVar8 = pcVar5, iVar4 == 0)) break;
+        pcVar5 = pcVar5 + 1;
+        lVar7 = (long)pcVar2 - (long)pcVar5;
+        pcVar8 = pcVar2;
+      } while (in_x3 <= lVar7);
     }
-    param_3 = (long)pbVar8 - (long)pbVar1;
-    if (pbVar8 == pbVar2) {
-      param_3 = 0xffffffffffffffff;
+    p2 = (long)pcVar8 - (long)pcVar1;
+    if (pcVar8 == pcVar2) {
+      p2 = 0xffffffffffffffff;
     }
   }
-  return param_3;
+  return p2;
 }
 
 
@@ -2132,75 +2159,76 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::rfind(char const*, unsigned long, unsigned long) const */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     rfind(byte *param_1,long param_2,ulong param_3,ulong param_4)
+     rfind(char *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  char *pcVar1;
   ulong uVar2;
-  ulong uVar3;
-  byte bVar4;
-  byte *pbVar5;
-  long lVar6;
-  byte *pbVar7;
-  ulong uVar8;
-  byte *pbVar9;
-  byte *pbVar10;
-  byte *pbVar11;
+  char cVar3;
+  ulong in_x3;
+  char *pcVar4;
+  long lVar5;
+  char *pcVar6;
+  ulong uVar7;
+  char *pcVar8;
+  char *pcVar9;
+  char *pcVar10;
+  ulong uVar11;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar5 = param_1 + 1;
-    uVar8 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar4 = p0 + 1;
+    uVar7 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar8 = *(ulong *)(param_1 + 8);
-    pbVar5 = *(byte **)(param_1 + 0x10);
+    uVar7 = *(ulong *)(p0 + 8);
+    pcVar4 = *(char **)(p0 + 0x10);
   }
-  uVar2 = uVar8;
-  if (param_3 <= uVar8) {
-    uVar2 = param_3;
+  uVar11 = uVar7;
+  if (p2 <= uVar7) {
+    uVar11 = p2;
   }
-  uVar3 = uVar2 + param_4;
-  if (uVar8 - uVar2 <= param_4) {
-    uVar3 = uVar8;
+  uVar2 = uVar11 + in_x3;
+  if (uVar7 - uVar11 <= in_x3) {
+    uVar2 = uVar7;
   }
-  pbVar1 = pbVar5 + uVar3;
-  pbVar7 = pbVar1;
-  if ((param_4 != 0) && ((long)param_4 <= (long)uVar3)) {
-    param_3 = ~param_3;
-    if (param_3 < ~uVar8) {
-      param_3 = ~uVar8;
+  pcVar1 = pcVar4 + uVar2;
+  pcVar6 = pcVar1;
+  if ((in_x3 != 0) && ((long)in_x3 <= (long)uVar2)) {
+    uVar11 = ~p2;
+    if (uVar11 < ~uVar7) {
+      uVar11 = ~uVar7;
     }
-    uVar8 = (-2 - uVar8) - param_3;
-    if (uVar8 <= ~param_4) {
-      uVar8 = ~param_4;
+    uVar7 = (-2 - uVar7) - uVar11;
+    if (uVar7 <= ~in_x3) {
+      uVar7 = ~in_x3;
     }
-    pbVar9 = pbVar5 + ((-4 - uVar8) - param_3);
-    pbVar10 = pbVar1;
-    while (pbVar5 + (param_4 - 1) != pbVar10) {
-      pbVar10 = pbVar10 + -1;
-      pbVar11 = pbVar9;
-      uVar8 = param_4;
-      if (*pbVar10 == *(byte *)(param_2 + param_4 + -1)) {
+    pcVar8 = pcVar4 + ((-4 - uVar7) - uVar11);
+    pcVar9 = pcVar1;
+    while (pcVar4 + (in_x3 - 1) != pcVar9) {
+      pcVar9 = pcVar9 + -1;
+      pcVar10 = pcVar8;
+      uVar7 = in_x3;
+      if (*pcVar9 == *(char *)(p1 + in_x3 + -1)) {
         do {
-          if (uVar8 - 1 == 0) {
-            pbVar7 = pbVar11 + 1;
+          if (uVar7 - 1 == 0) {
+            pcVar6 = pcVar10 + 1;
             goto LAB_005e61d8;
           }
-          lVar6 = param_2 + uVar8;
-          bVar4 = *pbVar11;
-          pbVar11 = pbVar11 + -1;
-          uVar8 = uVar8 - 1;
-        } while (bVar4 == *(byte *)(lVar6 + -2));
+          lVar5 = p1 + uVar7;
+          cVar3 = *pcVar10;
+          pcVar10 = pcVar10 + -1;
+          uVar7 = uVar7 - 1;
+        } while (cVar3 == *(char *)(lVar5 + -2));
       }
-      pbVar9 = pbVar9 + -1;
+      pcVar8 = pcVar8 + -1;
     }
   }
 LAB_005e61d8:
-  lVar6 = (long)pbVar7 - (long)pbVar5;
-  if (pbVar7 == pbVar1 && param_4 != 0) {
-    lVar6 = -1;
+  lVar5 = (long)pcVar6 - (long)pcVar4;
+  if (pcVar6 == pcVar1 && in_x3 != 0) {
+    lVar5 = -1;
   }
-  return lVar6;
+  return lVar5;
 }
 
 
@@ -2213,35 +2241,38 @@ LAB_005e61d8:
    >::rfind(char, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      rfind(byte *param_1,byte param_2,ulong param_3)
+      rfind(char p0,ulong p1)
 
 {
   byte *pbVar1;
   long lVar2;
-  ulong uVar3;
+  byte *pbVar3;
+  ulong in_x2;
+  ulong uVar4;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    uVar3 = (ulong)(*param_1 >> 1);
+  pbVar3 = (byte *)(ulong)(byte)p0;
+  if ((*pbVar3 & 1) == 0) {
+    pbVar1 = pbVar3 + 1;
+    uVar4 = (ulong)(*pbVar3 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar4 = *(ulong *)(pbVar3 + 8);
+    pbVar1 = *(byte **)(pbVar3 + 0x10);
   }
-  if (uVar3 == 0) {
+  if (uVar4 == 0) {
     return 0xffffffffffffffff;
   }
-  if (param_3 < uVar3) {
-    uVar3 = param_3 + 1;
+  if (in_x2 < uVar4) {
+    uVar4 = in_x2 + 1;
   }
   do {
-    if (uVar3 == 0) {
+    if (uVar4 == 0) {
       return 0xffffffffffffffff;
     }
-    lVar2 = uVar3 - 1;
-    uVar3 = uVar3 - 1;
-  } while (pbVar1[lVar2] != param_2);
-  return uVar3;
+    lVar2 = uVar4 - 1;
+    uVar4 = uVar4 - 1;
+  } while ((uint)pbVar1[lVar2] != ((uint)p1 & 0xff));
+  return uVar4;
 }
 
 
@@ -2254,45 +2285,46 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::find_first_of(char const*, unsigned long, unsigned long) const */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find_first_of(byte *param_1,byte *param_2,ulong param_3,long param_4)
+     find_first_of(char *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
+  char *pcVar1;
+  char *pcVar2;
+  long in_x3;
   long lVar3;
-  byte *pbVar4;
-  byte *pbVar5;
+  char *pcVar4;
+  char *pcVar5;
   ulong uVar6;
-  byte *pbVar7;
+  char *pcVar7;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    uVar6 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar1 = p0 + 1;
+    uVar6 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar6 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar6 = *(ulong *)(p0 + 8);
+    pcVar1 = *(char **)(p0 + 0x10);
   }
-  if ((param_4 == 0) || (uVar6 <= param_3)) {
+  if ((in_x3 == 0) || (uVar6 <= p2)) {
     return -1;
   }
-  pbVar4 = pbVar1 + param_3;
-  pbVar2 = pbVar1 + uVar6;
+  pcVar4 = pcVar1 + p2;
+  pcVar2 = pcVar1 + uVar6;
   do {
-    lVar3 = param_4;
-    pbVar7 = param_2;
+    lVar3 = in_x3;
+    pcVar7 = (char *)p1;
     do {
-      pbVar5 = pbVar4;
-      if (*pbVar4 == *pbVar7) goto LAB_005e643c;
+      pcVar5 = pcVar4;
+      if (*pcVar4 == *pcVar7) goto LAB_005e643c;
       lVar3 = lVar3 + -1;
-      pbVar7 = pbVar7 + 1;
+      pcVar7 = pcVar7 + 1;
     } while (lVar3 != 0);
-    pbVar4 = pbVar4 + 1;
-    pbVar5 = pbVar2;
-  } while (pbVar4 != pbVar2);
+    pcVar4 = pcVar4 + 1;
+    pcVar5 = pcVar2;
+  } while (pcVar4 != pcVar2);
 LAB_005e643c:
-  lVar3 = (long)pbVar5 - (long)pbVar1;
-  if (pbVar5 == pbVar2) {
+  lVar3 = (long)pcVar5 - (long)pcVar1;
+  if (pcVar5 == pcVar2) {
     lVar3 = -1;
   }
   return lVar3;
@@ -2308,32 +2340,33 @@ LAB_005e643c:
    >::find_last_of(char const*, unsigned long, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find_last_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+      find_last_of(char *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  char *pcVar1;
   long lVar2;
+  long in_x3;
   ulong uVar3;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    uVar3 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar1 = p0 + 1;
+    uVar3 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar3 = *(ulong *)(p0 + 8);
+    pcVar1 = *(char **)(p0 + 0x10);
   }
-  if (param_4 == 0) {
+  if (in_x3 == 0) {
 LAB_005e6654:
     uVar3 = 0xffffffffffffffff;
   }
   else {
-    if (param_3 < uVar3) {
-      uVar3 = param_3 + 1;
+    if (p2 < uVar3) {
+      uVar3 = p2 + 1;
     }
     do {
       if (uVar3 == 0) goto LAB_005e6654;
-      lVar2 = FUN_001730d0(param_2,pbVar1[uVar3 - 1],param_4);
+      lVar2 = FUN_001730d0(p1,pcVar1[uVar3 - 1]);
       uVar3 = uVar3 - 1;
     } while (lVar2 == 0);
   }
@@ -2350,29 +2383,30 @@ LAB_005e6654:
    >::find_first_not_of(char const*, unsigned long, unsigned long) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      find_first_not_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+      find_first_not_of(char *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  char *pcVar1;
   long lVar2;
+  long in_x3;
   ulong uVar3;
   ulong uVar4;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 1;
-    uVar4 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar1 = p0 + 1;
+    uVar4 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar4 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar4 = *(ulong *)(p0 + 8);
+    pcVar1 = *(char **)(p0 + 0x10);
   }
-  uVar3 = param_3;
-  if (param_3 < uVar4) {
+  uVar3 = p2;
+  if (p2 < uVar4) {
     do {
-      if (param_4 == 0) {
-        return param_3;
+      if (in_x3 == 0) {
+        return p2;
       }
-      lVar2 = FUN_001730d0(param_2,pbVar1[uVar3],param_4);
+      lVar2 = FUN_001730d0(p1,pcVar1[uVar3]);
       if (lVar2 == 0) {
         return uVar3;
       }
@@ -2392,32 +2426,33 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::find_last_not_of(char const*, unsigned long, unsigned long) const */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     find_last_not_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+     find_last_not_of(char *p0,ulong p1,ulong p2)
 
 {
   long lVar1;
+  long in_x3;
   ulong uVar2;
-  byte *pbVar3;
+  char *pcVar3;
   ulong uVar4;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar3 = param_1 + 1;
-    uVar2 = (ulong)(*param_1 >> 1);
+  if ((*p0 & 1U) == 0) {
+    pcVar3 = p0 + 1;
+    uVar2 = (ulong)((byte)*p0 >> 1);
   }
   else {
-    uVar2 = *(ulong *)(param_1 + 8);
-    pbVar3 = *(byte **)(param_1 + 0x10);
+    uVar2 = *(ulong *)(p0 + 8);
+    pcVar3 = *(char **)(p0 + 0x10);
   }
-  if (param_3 < uVar2) {
-    uVar2 = param_3 + 1;
+  if (p2 < uVar2) {
+    uVar2 = p2 + 1;
   }
   do {
     uVar4 = uVar2;
     if (uVar4 == 0) {
       return -1;
     }
-    if (param_4 == 0) break;
-    lVar1 = FUN_001730d0(param_2,pbVar3[uVar4 - 1],param_4);
+    if (in_x3 == 0) break;
+    lVar1 = FUN_001730d0(p1,pcVar3[uVar4 - 1]);
     uVar2 = uVar4 - 1;
   } while (lVar1 != 0);
   return uVar4 - 1;
@@ -2514,46 +2549,47 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::compare(char const*) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(byte *param_1,undefined8 param_2)
+      compare(char *p0)
 
 {
   byte bVar1;
   ulong uVar2;
-  ulong uVar3;
-  uint uVar4;
-  ulong uVar5;
+  char *pcVar3;
+  ulong uVar4;
+  uint uVar5;
+  ulong uVar6;
   
-  uVar2 = FUN_00173480(param_2);
-  bVar1 = *param_1;
+  uVar2 = FUN_00173480();
+  bVar1 = *p0;
   if ((bVar1 & 1) == 0) {
-    uVar5 = (ulong)(bVar1 >> 1);
+    uVar6 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 8);
+    uVar6 = *(ulong *)(p0 + 8);
   }
   if (uVar2 == 0xffffffffffffffff) {
                     /* try { // try from 005e6df8 to 005e6dff has its CatchHandler @ 005e6e00 */
-    uVar2 = FUN_0016ec80(param_1);
+    uVar2 = FUN_0016ec80(p0);
     return uVar2;
   }
   if ((bVar1 & 1) == 0) {
-    param_1 = param_1 + 1;
+    pcVar3 = p0 + 1;
   }
   else {
-    param_1 = *(byte **)(param_1 + 0x10);
+    pcVar3 = *(char **)(p0 + 0x10);
   }
-  uVar3 = uVar2;
-  if (uVar5 <= uVar2) {
-    uVar3 = uVar5;
+  uVar4 = uVar2;
+  if (uVar6 <= uVar2) {
+    uVar4 = uVar6;
   }
-  if ((uVar3 == 0) || (uVar3 = FUN_00163c10(param_1,param_2), (int)uVar3 == 0)) {
-    uVar4 = (uint)(uVar2 < uVar5);
-    if (uVar5 < uVar2) {
-      uVar4 = 0xffffffff;
+  if ((uVar4 == 0) || (uVar4 = FUN_00163c10(pcVar3), (int)uVar4 == 0)) {
+    uVar5 = (uint)(uVar2 < uVar6);
+    if (uVar6 < uVar2) {
+      uVar5 = 0xffffffff;
     }
-    uVar3 = (ulong)uVar4;
+    uVar4 = (ulong)uVar5;
   }
-  return uVar3;
+  return uVar4;
 }
 
 
@@ -2566,49 +2602,51 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::compare(unsigned long, unsigned long, char const*) const */
 
 ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,undefined8 param_4)
+      compare(ulong p0,ulong p1,char *p2)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  ulong uVar3;
-  uint uVar4;
-  ulong uVar5;
+  char *pcVar1;
+  char *pcVar2;
+  byte bVar3;
+  char *pcVar4;
+  uint uVar5;
+  long lVar6;
+  ulong uVar7;
   
-  uVar3 = FUN_00173480(param_4);
-  bVar2 = *param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar5 = (ulong)(bVar2 >> 1);
+  pcVar4 = (char *)FUN_00173480();
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar7 = (ulong)(bVar3 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 8);
+    uVar7 = *(ulong *)(p0 + 8);
   }
-  if ((uVar3 != 0xffffffffffffffff) && (param_2 <= uVar5)) {
-    uVar1 = uVar5 - param_2;
-    if (param_3 <= uVar5 - param_2) {
-      uVar1 = param_3;
+  if ((pcVar4 != (char *)0xffffffffffffffff) && (p1 <= uVar7)) {
+    pcVar1 = (char *)(uVar7 - p1);
+    if (p2 <= (char *)(uVar7 - p1)) {
+      pcVar1 = p2;
     }
-    if ((bVar2 & 1) == 0) {
-      param_1 = param_1 + 1;
+    if ((bVar3 & 1) == 0) {
+      lVar6 = p0 + 1;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      lVar6 = *(long *)(p0 + 0x10);
     }
-    uVar5 = uVar3;
-    if (uVar1 <= uVar3) {
-      uVar5 = uVar1;
+    pcVar2 = pcVar4;
+    if (pcVar1 <= pcVar4) {
+      pcVar2 = pcVar1;
     }
-    if ((uVar5 == 0) || (uVar5 = FUN_00163c10(param_1 + param_2,param_4), (int)uVar5 == 0)) {
-      uVar4 = (uint)(uVar3 < uVar1);
-      if (uVar1 < uVar3) {
-        uVar4 = 0xffffffff;
+    if ((pcVar2 == (char *)0x0) || (uVar7 = FUN_00163c10(lVar6 + p1), (int)uVar7 == 0)) {
+      uVar5 = (uint)(pcVar4 < pcVar1);
+      if (pcVar1 < pcVar4) {
+        uVar5 = 0xffffffff;
       }
-      uVar5 = (ulong)uVar4;
+      uVar7 = (ulong)uVar5;
     }
-    return uVar5;
+    return uVar7;
   }
-  uVar3 = FUN_0016ec80(param_1);
-  return uVar3;
+  uVar7 = FUN_0016ec80(p0);
+  return uVar7;
 }
 
 
@@ -2621,31 +2659,32 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::__init(char const*, unsigned long, unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     __init(ulong *param_1,undefined8 param_2,ulong param_3,ulong param_4)
+     __init(char *p0,ulong p1,ulong p2)
 
 {
-  undefined1 *puVar1;
-  ulong uVar2;
+  ulong in_x3;
+  char *pcVar1;
+  ulong p0_00;
   
-  if (param_4 < 0xfffffffffffffff0) {
-    if (param_4 < 0x17) {
-      puVar1 = (undefined1 *)((long)param_1 + 1);
-      *(char *)param_1 = (char)((int)param_3 << 1);
+  if (in_x3 < 0xfffffffffffffff0) {
+    if (in_x3 < 0x17) {
+      pcVar1 = p0 + 1;
+      *p0 = (char)((int)p2 << 1);
     }
     else {
-      uVar2 = param_4 + 0x10 & 0xfffffffffffffff0;
-      puVar1 = (undefined1 *)FUN_00164060(uVar2);
-      param_1[1] = param_3;
-      param_1[2] = (ulong)puVar1;
-      *param_1 = uVar2 | 1;
+      p0_00 = in_x3 + 0x10 & 0xfffffffffffffff0;
+      pcVar1 = (char *)FUN_00164060(p0_00);
+      *(ulong *)(p0 + 8) = p2;
+      *(char **)(p0 + 0x10) = pcVar1;
+      *(ulong *)p0 = p0_00 | 1;
     }
-    if (param_3 != 0) {
-      FUN_001715e0(puVar1,param_2,param_3);
+    if (p2 != 0) {
+      FUN_001715e0(pcVar1,p1,p2);
     }
-    puVar1[param_3] = 0;
+    pcVar1[p2] = '\0';
     return;
   }
-  FUN_00164180(param_1);
+  FUN_00164180(p0);
   return;
 }
 

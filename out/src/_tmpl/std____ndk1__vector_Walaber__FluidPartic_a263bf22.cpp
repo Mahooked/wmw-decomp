@@ -27,7 +27,7 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
   undefined8 uVar10;
   long lVar11;
   undefined8 uVar12;
-  long lStack_90;
+  void *pvStack_90;
   long lStack_88;
   long lStack_80;
   long lStack_68;
@@ -49,17 +49,17 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
          (uVar3 = lVar6 * 0x1c71c71c71c71c72, uVar4 = uVar7, uVar7 <= uVar3)) {
         uVar4 = uVar3;
       }
-      func_0x00168a60(&lStack_90,uVar4,((long)param_2 - lVar9 >> 4) * -0x71c71c71c71c71c7,
+      func_0x00168a60(&pvStack_90,uVar4,((long)param_2 - lVar9 >> 4) * -0x71c71c71c71c71c7,
                       param_1 + 2);
                     /* try { // try from 0038daec to 0038db0b has its CatchHandler @ 0038dcdc */
-      func_0x001702d0(&lStack_90,param_3,param_4);
-      param_2 = (undefined8 *)func_0x001725d0(param_1,&lStack_90,param_2);
+      func_0x001702d0(&pvStack_90,param_3,param_4);
+      param_2 = (undefined8 *)func_0x001725d0(param_1,&pvStack_90,param_2);
       if (lStack_80 != lStack_88) {
         lStack_80 = lStack_80 +
                     ((ulong)((lStack_80 + -0x90) - lStack_88) / 0x90 ^ 0xffffffffffffffff) * 0x90;
       }
-      if (lStack_90 != 0) {
-        FUN_00166120();
+      if (pvStack_90 != (void *)0x0) {
+        FUN_00166120(pvStack_90);
       }
     }
     else {
@@ -137,59 +137,60 @@ LAB_0038dc9c:
    >::__move_range(Walaber::FluidParticle*, Walaber::FluidParticle*, Walaber::FluidParticle*) */
 
 void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __move_range(long param_1,undefined8 *param_2,undefined8 *param_3,long param_4)
+     __move_range(Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,Walaber__FluidParticle *p2)
 
 {
   undefined8 *puVar1;
+  long in_x3;
   long lVar2;
-  undefined8 *puVar3;
+  Walaber__FluidParticle *pWVar3;
   undefined8 uVar5;
   undefined8 *puVar6;
   undefined8 uVar7;
-  undefined8 *puVar4;
+  Walaber__FluidParticle *pWVar4;
   
-  puVar6 = *(undefined8 **)(param_1 + 8);
-  puVar3 = (undefined8 *)((long)param_2 + ((long)puVar6 - param_4));
+  puVar6 = *(undefined8 **)(p0 + 8);
+  pWVar4 = p1 + ((long)puVar6 - in_x3);
   puVar1 = puVar6;
-  for (puVar4 = puVar3; puVar4 < param_3; puVar4 = puVar4 + 0x12) {
-    func_0x00162820(puVar1,puVar4);
+  for (pWVar3 = pWVar4; pWVar3 < p2; pWVar3 = pWVar3 + 0x90) {
+    func_0x00162820(puVar1,pWVar3);
     lVar2 = 0x38;
     do {
-      *(undefined8 *)((long)puVar1 + lVar2) = *(undefined8 *)((long)puVar4 + lVar2);
+      *(undefined8 *)((long)puVar1 + lVar2) = *(undefined8 *)(pWVar3 + lVar2);
       lVar2 = lVar2 + 8;
     } while (lVar2 != 0x78);
-    uVar7 = puVar4[0x10];
-    uVar5 = puVar4[0xf];
-    puVar1[0x11] = puVar4[0x11];
+    uVar7 = *(undefined8 *)(pWVar3 + 0x80);
+    uVar5 = *(undefined8 *)(pWVar3 + 0x78);
+    puVar1[0x11] = *(undefined8 *)(pWVar3 + 0x88);
     puVar1[0x10] = uVar7;
     puVar1[0xf] = uVar5;
-    puVar1 = (undefined8 *)(*(long *)(param_1 + 8) + 0x90);
-    *(undefined8 **)(param_1 + 8) = puVar1;
+    puVar1 = (undefined8 *)(*(long *)(p0 + 8) + 0x90);
+    *(undefined8 **)(p0 + 8) = puVar1;
   }
-  if ((long)puVar6 - param_4 != 0) {
+  if ((long)puVar6 - in_x3 != 0) {
     do {
-      puVar4 = puVar3 + -0x12;
-      puVar6[-0x12] = *puVar4;
-      puVar6[-0x11] = puVar3[-0x11];
-      puVar6[-0x10] = puVar3[-0x10];
-      puVar6[-0xf] = puVar3[-0xf];
-      puVar6[-0xe] = puVar3[-0xe];
-      uVar5 = puVar3[-0xd];
-      *(undefined8 *)((long)puVar6 + -0x62) = *(undefined8 *)((long)puVar3 - 0x62);
+      pWVar3 = pWVar4 + -0x90;
+      puVar6[-0x12] = *(undefined8 *)pWVar3;
+      puVar6[-0x11] = *(undefined8 *)(pWVar4 + -0x88);
+      puVar6[-0x10] = *(undefined8 *)(pWVar4 + -0x80);
+      puVar6[-0xf] = *(undefined8 *)(pWVar4 + -0x78);
+      puVar6[-0xe] = *(undefined8 *)(pWVar4 + -0x70);
+      uVar5 = *(undefined8 *)(pWVar4 + -0x68);
+      *(undefined8 *)((long)puVar6 + -0x62) = *(undefined8 *)(pWVar4 + -0x62);
       lVar2 = -0x58;
       puVar6[-0xd] = uVar5;
       do {
-        *(undefined8 *)((long)puVar6 + lVar2) = *(undefined8 *)((long)puVar3 + lVar2);
+        *(undefined8 *)((long)puVar6 + lVar2) = *(undefined8 *)(pWVar4 + lVar2);
         lVar2 = lVar2 + 8;
       } while (lVar2 != -0x18);
-      uVar7 = puVar3[-2];
-      uVar5 = puVar3[-3];
-      puVar6[-1] = puVar3[-1];
+      uVar7 = *(undefined8 *)(pWVar4 + -0x10);
+      uVar5 = *(undefined8 *)(pWVar4 + -0x18);
+      puVar6[-1] = *(undefined8 *)(pWVar4 + -8);
       puVar6[-2] = uVar7;
       puVar6[-3] = uVar5;
-      puVar3 = puVar4;
+      pWVar4 = pWVar3;
       puVar6 = puVar6 + -0x12;
-    } while (puVar4 != param_2);
+    } while (pWVar3 != p1);
   }
   return;
 }
@@ -310,19 +311,20 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
    >::__vallocate(unsigned long) */
 
 void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __vallocate(long *param_1,ulong param_2)
+     __vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x1c71c71c71c71c8) {
-    lVar1 = FUN_00164060(param_2 * 0x90);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x90;
+  if (in_x1 < 0x1c71c71c71c71c8) {
+    lVar1 = FUN_00164060(in_x1 * 0x90);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x90;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

@@ -12,61 +12,67 @@
 
 void std::__ndk1::
      vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>
-     ::__push_back_slow_path<Walaber::NumericAnimationTrack*>(long *param_1,undefined8 *param_2)
+     ::__push_back_slow_path<Walaber::NumericAnimationTrack*>(Walaber__NumericAnimationTrack ***p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  long lStack_60;
-  long lStack_58;
-  undefined8 *puStack_50;
-  long lStack_48;
+  Walaber__NumericAnimationTrack **ppWVar4;
+  long lVar5;
+  ulong uVar6;
+  Walaber__NumericAnimationTrack **ppWVar7;
+  Walaber__NumericAnimationTrack **ppWStack_60;
+  Walaber__NumericAnimationTrack **ppWStack_58;
+  Walaber__NumericAnimationTrack **ppWStack_50;
+  Walaber__NumericAnimationTrack **ppWStack_48;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 3;
+  lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 3) < 0xfffffffffffffff) {
-    uVar5 = lVar4 >> 2;
-    if (uVar2 <= uVar5) {
-      uVar2 = uVar5;
+  lVar5 = (long)p0[2] - (long)*p0;
+  if ((ulong)(lVar5 >> 3) < 0xfffffffffffffff) {
+    uVar6 = lVar5 >> 2;
+    if (uVar2 <= uVar6) {
+      uVar2 = uVar6;
     }
   }
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  func_0x00166cc0(&lStack_60,uVar2,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50 = puStack_50 + 1;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lStack_58 = lStack_58 - (lVar3 - lStack_60);
-  if (0 < lVar3 - lStack_60) {
+  func_0x00166cc0(&ppWStack_60,uVar2,lVar3,p0 + 2);
+  *ppWStack_50 = (Walaber__NumericAnimationTrack *)*in_x1;
+  ppWStack_50 = ppWStack_50 + 1;
+  ppWStack_60 = *p0;
+  ppWVar4 = p0[1];
+  ppWStack_58 = (Walaber__NumericAnimationTrack **)
+                ((long)ppWStack_58 - ((long)ppWVar4 - (long)ppWStack_60));
+  if (0 < (long)ppWVar4 - (long)ppWStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    ppWStack_60 = *p0;
+    ppWVar4 = p0[1];
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puStack_50;
-  lVar4 = param_1[2];
-  param_1[2] = lStack_48;
-  puStack_50 = (undefined8 *)lVar3;
-  if (lVar3 != lStack_60) {
-    puStack_50 = (undefined8 *)(lVar3 + (~((lVar3 + -8) - lStack_60) & 0xfffffffffffffff8U));
+  *p0 = ppWStack_58;
+  p0[1] = ppWStack_50;
+  ppWVar7 = p0[2];
+  p0[2] = ppWStack_48;
+  ppWStack_50 = ppWVar4;
+  if (ppWVar4 != ppWStack_60) {
+    ppWStack_50 = (Walaber__NumericAnimationTrack **)
+                  ((long)ppWVar4 +
+                  (~((long)ppWVar4 + (-8 - (long)ppWStack_60)) & 0xfffffffffffffff8U));
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar4;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  ppWStack_58 = ppWStack_60;
+  ppWStack_48 = ppWVar7;
+  if (ppWStack_60 != (Walaber__NumericAnimationTrack **)0x0) {
+    FUN_00166120(ppWStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();
@@ -89,61 +95,65 @@ void std::__ndk1::
 void std::__ndk1::
      vector<Walaber::NumericAnimationTrack*,std::__ndk1::allocator<Walaber::NumericAnimationTrack*>>
      ::__push_back_slow_path<Walaber::NumericAnimationTrack*const&>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__NumericAnimationTrack **p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  long lStack_60;
-  long lStack_58;
-  undefined8 *puStack_50;
-  long lStack_48;
+  Walaber__NumericAnimationTrack *pWVar4;
+  long lVar5;
+  ulong uVar6;
+  Walaber__NumericAnimationTrack *pWVar7;
+  Walaber__NumericAnimationTrack *pWStack_60;
+  Walaber__NumericAnimationTrack *pWStack_58;
+  Walaber__NumericAnimationTrack *pWStack_50;
+  Walaber__NumericAnimationTrack *pWStack_48;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 3;
+  lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 3) < 0xfffffffffffffff) {
-    uVar5 = lVar4 >> 2;
-    if (uVar2 <= uVar5) {
-      uVar2 = uVar5;
+  lVar5 = (long)p0[2] - (long)*p0;
+  if ((ulong)(lVar5 >> 3) < 0xfffffffffffffff) {
+    uVar6 = lVar5 >> 2;
+    if (uVar2 <= uVar6) {
+      uVar2 = uVar6;
     }
   }
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  func_0x00166cc0(&lStack_60,uVar2,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50 = puStack_50 + 1;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lStack_58 = lStack_58 - (lVar3 - lStack_60);
-  if (0 < lVar3 - lStack_60) {
+  func_0x00166cc0(&pWStack_60,uVar2,lVar3,p0 + 2);
+  *(undefined8 *)pWStack_50 = *in_x1;
+  pWStack_50 = (Walaber__NumericAnimationTrack *)((long)pWStack_50 + 8);
+  pWStack_60 = *p0;
+  pWVar4 = p0[1];
+  pWStack_58 = (Walaber__NumericAnimationTrack *)
+               ((long)pWStack_58 - ((long)pWVar4 - (long)pWStack_60));
+  if (0 < (long)pWVar4 - (long)pWStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    pWStack_60 = *p0;
+    pWVar4 = p0[1];
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puStack_50;
-  lVar4 = param_1[2];
-  param_1[2] = lStack_48;
-  puStack_50 = (undefined8 *)lVar3;
-  if (lVar3 != lStack_60) {
-    puStack_50 = (undefined8 *)(lVar3 + (~((lVar3 + -8) - lStack_60) & 0xfffffffffffffff8U));
+  *p0 = pWStack_58;
+  p0[1] = pWStack_50;
+  pWVar7 = p0[2];
+  p0[2] = pWStack_48;
+  pWStack_50 = pWVar4;
+  if (pWVar4 != pWStack_60) {
+    pWStack_50 = pWVar4 + (~(ulong)(pWVar4 + (-8 - (long)pWStack_60)) & 0xfffffffffffffff8);
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar4;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  pWStack_58 = pWStack_60;
+  pWStack_48 = pWVar7;
+  if (pWStack_60 != (Walaber__NumericAnimationTrack *)0x0) {
+    FUN_00166120(pWStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

@@ -51,10 +51,13 @@ void WaterConcept::DirtyWall::DirtyWall
 void WaterConcept::DirtyWall::~DirtyWall(undefined8 *param_1)
 
 {
+  void *p0;
+  
+  p0 = (void *)param_1[0x7b];
   *param_1 = &PTR__DirtyWall_007117c8;
-  if (param_1[0x7b] != 0) {
-    param_1[0x7c] = param_1[0x7b];
-    FUN_00166120();
+  if (p0 != (void *)0x0) {
+    param_1[0x7c] = p0;
+    FUN_00166120(p0);
   }
   FUN_0016bb90(param_1 + 0x76);
   func_0x0016fb10(param_1);
@@ -69,7 +72,7 @@ void WaterConcept::DirtyWall::~DirtyWall(undefined8 *param_1)
 
 /* WaterConcept::DirtyWall::~DirtyWall() */
 
-void WaterConcept::DirtyWall::~DirtyWall(undefined8 param_1)
+void WaterConcept::DirtyWall::~DirtyWall(void *param_1)
 
 {
   func_0x00162bd0();
@@ -85,7 +88,7 @@ void WaterConcept::DirtyWall::~DirtyWall(undefined8 param_1)
 
 /* WaterConcept::DirtyWall::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::DirtyWall::setProperties(long param_1,undefined8 param_2)
+void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
 
 {
   long lVar1;
@@ -96,27 +99,27 @@ void WaterConcept::DirtyWall::setProperties(long param_1,undefined8 param_2)
   undefined4 uStack_47;
   undefined1 uStack_43;
   undefined2 uStack_42;
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   func_0x00163180();
   uStack_42 = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   bStack_50 = 0x18;
   uStack_47 = 0x61657241;
   uStack_4f = 0x6c636974726150;
   uStack_48 = 0x65;
   uStack_43 = 0;
                     /* try { // try from 004793a8 to 004793b3 has its CatchHandler @ 0047940c */
-  lVar2 = func_0x00167060(param_2,&bStack_50);
+  lVar2 = func_0x00167060();
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (lVar2 != 0) {
     func_0x00166e60(&bStack_50,lVar2);
-    *(ulong *)(param_1 + 0x3cc) = CONCAT71(uStack_4f,bStack_50);
+    *(ulong *)(p0 + 0x3cc) = CONCAT71(uStack_4f,bStack_50);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -134,10 +137,11 @@ void WaterConcept::DirtyWall::setProperties(long param_1,undefined8 param_2)
 /* WARNING: Removing unreachable block (ram,0x004795e8) */
 /* WaterConcept::DirtyWall::update(float) */
 
-void WaterConcept::DirtyWall::update(float param_1,long param_2)
+void WaterConcept::DirtyWall::update(float p0)
 
 {
   long lVar1;
+  long in_x0;
   long *plVar2;
   uint uVar3;
   undefined4 *puVar4;
@@ -151,46 +155,46 @@ void WaterConcept::DirtyWall::update(float param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  FUN_0016fc40();
-  puVar4 = *(undefined4 **)(param_2 + 0x3d8);
-  if (puVar4 != *(undefined4 **)(param_2 + 0x3e0)) {
+  FUN_0016fc40(p0);
+  puVar4 = *(undefined4 **)(in_x0 + 0x3d8);
+  if (puVar4 != *(undefined4 **)(in_x0 + 0x3e0)) {
     do {
-      plVar2 = (long *)func_0x001626a0(*(undefined8 *)(param_2 + 0x3a8),*puVar4);
+      plVar2 = (long *)func_0x001626a0(*(undefined8 *)(in_x0 + 0x3a8),*puVar4);
       if (*(char *)(*plVar2 + (long)(int)puVar4[1] * 0x90 + 0x34) != '\0') {
-        func_0x00172750(*(undefined8 *)(param_2 + 0x3a8),2,puVar4);
-        plVar2 = (long *)func_0x001626a0(*(undefined8 *)(param_2 + 0x3a8),*puVar4);
+        func_0x00172750(*(undefined8 *)(in_x0 + 0x3a8),2,puVar4);
+        plVar2 = (long *)func_0x001626a0(*(undefined8 *)(in_x0 + 0x3a8),*puVar4);
         *(undefined4 *)(*plVar2 + (long)(int)puVar4[1] * 0x90 + 0x84) = 0;
       }
       puVar4 = puVar4 + 3;
-    } while (puVar4 != *(undefined4 **)(param_2 + 0x3e0));
-    puVar4 = *(undefined4 **)(param_2 + 0x3d8);
+    } while (puVar4 != *(undefined4 **)(in_x0 + 0x3e0));
+    puVar4 = *(undefined4 **)(in_x0 + 0x3d8);
   }
-  *(undefined4 **)(param_2 + 0x3e0) = puVar4;
-  if (*(char *)(param_2 + 0x3c0) != '\0') {
-    if (*(long *)(param_2 + 0x3b0) != 0) {
-      func_0x00167d50(&uStack_78,param_2);
+  *(undefined4 **)(in_x0 + 0x3e0) = puVar4;
+  if (*(char *)(in_x0 + 0x3c0) != '\0') {
+    if (*(long *)(in_x0 + 0x3b0) != 0) {
+      func_0x00167d50(&uStack_78);
       uStack_70 = uStack_78;
-      uStack_64 = *(undefined8 *)(param_2 + 0x3cc);
-      uStack_68 = func_0x00164d90(param_2);
-      fVar5 = *(float *)(param_2 + 0x3c4);
+      uStack_64 = *(undefined8 *)(in_x0 + 0x3cc);
+      uStack_68 = func_0x00164d90();
+      fVar5 = *(float *)(in_x0 + 0x3c4);
       if (1.0 - fVar5 <= 0.5) {
         fVar5 = (float)func_0x0016ee90((1.0 - (fVar5 + fVar5)) * 1.5707964);
-        fVar5 = *(float *)(param_2 + 0x3c8) + ((1.0 - fVar5) * 150.0 + 0.0) * param_1;
-        *(float *)(param_2 + 0x3c8) = fVar5;
+        fVar5 = *(float *)(in_x0 + 0x3c8) + ((1.0 - fVar5) * 150.0 + 0.0) * p0;
+        *(float *)(in_x0 + 0x3c8) = fVar5;
       }
       else {
-        fVar5 = *(float *)(param_2 + 0x3c8);
+        fVar5 = *(float *)(in_x0 + 0x3c8);
       }
       while (1.0 <= fVar5) {
-        *(float *)(param_2 + 0x3c8) = fVar5 + -1.0;
-        (**(code **)(**(long **)(param_2 + 0x3b0) + 0x10))(*(long **)(param_2 + 0x3b0),&uStack_70);
-        fVar5 = *(float *)(param_2 + 0x3c8);
+        *(float *)(in_x0 + 0x3c8) = fVar5 + -1.0;
+        (**(code **)(**(long **)(in_x0 + 0x3b0) + 0x10))(*(long **)(in_x0 + 0x3b0),&uStack_70);
+        fVar5 = *(float *)(in_x0 + 0x3c8);
       }
     }
-    fVar5 = *(float *)(param_2 + 0x3c4) + param_1 * -0.5;
-    *(float *)(param_2 + 0x3c4) = fVar5;
+    fVar5 = *(float *)(in_x0 + 0x3c4) + p0 * -0.5;
+    *(float *)(in_x0 + 0x3c4) = fVar5;
     if (fVar5 <= 0.0) {
-      *(undefined1 *)(param_2 + 0xdc) = 1;
+      *(undefined1 *)(in_x0 + 0xdc) = 1;
     }
     else {
       fVar6 = (fVar5 / 0.75) * 255.0;
@@ -201,7 +205,7 @@ void WaterConcept::DirtyWall::update(float param_1,long param_2)
       if (0xfe < (int)uVar3) {
         uVar3 = 0xff;
       }
-      *(uint *)(**(long **)(param_2 + 400) + 0xca) =
+      *(uint *)(**(long **)(in_x0 + 400) + 0xca) =
            (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) * 0x1010101;
     }
   }
@@ -222,51 +226,53 @@ void WaterConcept::DirtyWall::update(float param_1,long param_2)
    WaterConcept::ParticleDescription const&, int, bool&) */
 
 void WaterConcept::DirtyWall::particleHasCollided
-               (long param_1,undefined8 param_2,undefined8 *param_3,undefined4 param_4,
-               undefined1 *param_5)
+               (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
   undefined8 uVar1;
-  undefined1 uVar2;
-  undefined8 *puVar3;
+  undefined8 *puVar2;
+  undefined1 *in_x4;
+  undefined1 uVar3;
+  undefined8 *puVar4;
   
-  switch(*(undefined4 *)param_3) {
+  puVar2 = (undefined8 *)(ulong)(uint)p2;
+  switch(*(undefined4 *)puVar2) {
   case 1:
   case 2:
   case 3:
-    if (*(char *)(param_1 + 0x3c0) == '\0') {
+    if (p0[0x3c0] == (WaterConcept__Fluids)0x0) {
       uVar1 = func_0x00168cd0();
       func_0x0016e570(0x3f800000,0x3f800000,uVar1,0x12e);
     }
-    puVar3 = *(undefined8 **)(param_1 + 0x3e0);
-    *(undefined1 *)(param_1 + 0x3c0) = 1;
-    if (puVar3 == *(undefined8 **)(param_1 + 1000)) {
-      func_0x00165fa0(param_1 + 0x3d8,param_3);
-      uVar2 = 0;
+    puVar4 = *(undefined8 **)(p0 + 0x3e0);
+    p0[0x3c0] = (WaterConcept__Fluids)0x1;
+    if (puVar4 == *(undefined8 **)(p0 + 1000)) {
+      func_0x00165fa0(p0 + 0x3d8,puVar2);
+      uVar3 = 0;
     }
     else {
-      uVar1 = *param_3;
-      uVar2 = 0;
-      *(undefined4 *)(puVar3 + 1) = *(undefined4 *)(param_3 + 1);
-      *puVar3 = uVar1;
-      *(long *)(param_1 + 0x3e0) = *(long *)(param_1 + 0x3e0) + 0xc;
+      uVar1 = *puVar2;
+      uVar3 = 0;
+      *(undefined4 *)(puVar4 + 1) = *(undefined4 *)(puVar2 + 1);
+      *puVar4 = uVar1;
+      *(long *)(p0 + 0x3e0) = *(long *)(p0 + 0x3e0) + 0xc;
     }
     break;
   case 4:
-    if (*(char *)(param_1 + 0x3c0) == '\0') {
+    if (p0[0x3c0] == (WaterConcept__Fluids)0x0) {
       uVar1 = func_0x00168cd0();
       func_0x0016e570(0x3f800000,0x3f800000,uVar1,0x12e);
     }
-    uVar2 = 1;
-    *(undefined1 *)(param_1 + 0x3c0) = 1;
+    uVar3 = 1;
+    p0[0x3c0] = (WaterConcept__Fluids)0x1;
     break;
   default:
     goto switchD_004796ac_default;
   }
-  *param_5 = uVar2;
+  *in_x4 = uVar3;
 switchD_004796ac_default:
-  *param_5 = 0;
-  func_0x0016e9f0(param_1,param_2,param_3,param_4);
+  *in_x4 = 0;
+  func_0x0016e9f0(p0,p1,puVar2,(ulong)p3 & 0xffffffff);
   return;
 }
 

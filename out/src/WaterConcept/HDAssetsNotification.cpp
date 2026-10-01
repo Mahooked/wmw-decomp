@@ -38,15 +38,18 @@ void WaterConcept::HDAssetsNotification::HDAssetsNotification(undefined8 *param_
 /* WaterConcept::HDAssetsNotification::HDAssetsNotification(WaterConcept::HDAssetsNotification
    const&) */
 
-void WaterConcept::HDAssetsNotification::HDAssetsNotification(undefined8 *param_1,long param_2)
+void WaterConcept::HDAssetsNotification::HDAssetsNotification
+               (WaterConcept__HDAssetsNotification *p0)
 
 {
+  long in_x1;
+  
   func_0x00165bf0();
-  *(undefined4 *)(param_1 + 0x3e) = *(undefined4 *)(param_2 + 0x1f0);
-  *param_1 = &PTR_handleEvent_007124a8;
-  param_1[0x3d] = &PTR__HDAssetsNotification_00712538;
-  *(undefined8 *)((long)param_1 + 500) = 0xff000000ff000000;
-  *(undefined1 *)((long)param_1 + 0x205) = 0;
+  *(undefined4 *)(p0 + 0x1f0) = *(undefined4 *)(in_x1 + 0x1f0);
+  *(undefined ***)p0 = &PTR_handleEvent_007124a8;
+  *(undefined ***)(p0 + 0x1e8) = &PTR__HDAssetsNotification_00712538;
+  *(undefined8 *)(p0 + 500) = 0xff000000ff000000;
+  p0[0x205] = (WaterConcept__HDAssetsNotification)0x0;
   return;
 }
 
@@ -59,11 +62,12 @@ void WaterConcept::HDAssetsNotification::HDAssetsNotification(undefined8 *param_
 /* WaterConcept::HDAssetsNotification::TEMPNAMEPLACEHOLDERVALUE(WaterConcept::HDAssetsNotification
    const&) */
 
-undefined8 WaterConcept::HDAssetsNotification::operator=(undefined8 param_1)
+WaterConcept__HDAssetsNotification *
+WaterConcept::HDAssetsNotification::operator=(WaterConcept__HDAssetsNotification *p0)
 
 {
   func_0x001678f0();
-  return param_1;
+  return p0;
 }
 
 
@@ -90,10 +94,10 @@ void WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
 
 /* WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
 
-void WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
+void WaterConcept::HDAssetsNotification::~HDAssetsNotification(void *param_1)
 
 {
-  func_0x001706b0(param_1 + 0x1e8);
+  func_0x001706b0((long)param_1 + 0x1e8);
   func_0x00172080(param_1);
   FUN_00166120(param_1);
   return;
@@ -109,7 +113,7 @@ void WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
 /* WARNING: Removing unreachable block (ram,0x00499bf4) */
 /* WaterConcept::HDAssetsNotification::update(float) */
 
-void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2)
+void WaterConcept::HDAssetsNotification::update(float p0)
 
 {
   long *plVar1;
@@ -118,6 +122,7 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
   byte bVar4;
   byte bVar5;
   byte bVar6;
+  long *in_x0;
   long lVar7;
   long lVar8;
   long lVar9;
@@ -130,19 +135,18 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
   int iVar16;
   int iVar17;
   float fVar18;
+  undefined4 in_register_00005004;
   float fVar19;
   float fVar20;
   float fVar21;
-  float fVar22;
   
-  iVar10 = *(int *)((long)param_2 + 0x1fc);
-  fVar21 = (float)param_1;
+  iVar10 = *(int *)((long)in_x0 + 0x1fc);
   if (iVar10 == 4) {
-    fVar19 = *(float *)(param_2 + 0x40);
-    *(float *)(param_2 + 0x40) = fVar19 + fVar21;
-    if (2.0 < fVar19 + fVar21) {
-      *(undefined4 *)((long)param_2 + 0x1fc) = 5;
-      (**(code **)(*param_2 + 0x40))(param_2);
+    fVar19 = *(float *)(in_x0 + 0x40);
+    *(float *)(in_x0 + 0x40) = fVar19 + p0;
+    if (2.0 < fVar19 + p0) {
+      *(undefined4 *)((long)in_x0 + 0x1fc) = 5;
+      (**(code **)(*in_x0 + 0x40))();
       lVar7 = func_0x00165c70();
       if (*(int *)(lVar7 + 8) == 0xd) {
         func_0x0016f470(0,0);
@@ -151,32 +155,32 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     }
   }
   else if (iVar10 == 2) {
-    fVar19 = *(float *)(param_2 + 0x40) + *(float *)(param_2 + 0x40);
+    fVar19 = *(float *)(in_x0 + 0x40) + *(float *)(in_x0 + 0x40);
     if (fVar19 <= 0.0) {
       fVar19 = 0.0;
     }
     fVar20 = (float)NEON_ucvtf(0xff);
-    fVar22 = (float)NEON_ucvtf(0xff);
+    fVar21 = (float)NEON_ucvtf(0xff);
     fVar18 = (float)NEON_ucvtf(0xff);
     iVar10 = (int)(fVar19 * fVar20);
     fVar20 = (float)NEON_ucvtf(0xff);
-    iVar11 = (int)(fVar19 * fVar22);
-    fVar22 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + 0x3f));
+    iVar11 = (int)(fVar19 * fVar21);
+    fVar21 = (float)NEON_ucvtf((uint)*(byte *)(in_x0 + 0x3f));
     iVar12 = (int)(fVar19 * fVar18);
     if (0xfe < iVar10) {
       iVar10 = 0xff;
     }
-    fVar18 = (float)NEON_ucvtf((uint)*(byte *)((long)param_2 + 0x1f9));
+    fVar18 = (float)NEON_ucvtf((uint)*(byte *)((long)in_x0 + 0x1f9));
     iVar13 = (int)(fVar19 * fVar20);
     if (0xfe < iVar11) {
       iVar11 = 0xff;
     }
-    fVar20 = (float)NEON_ucvtf((uint)*(byte *)((long)param_2 + 0x1fa));
-    iVar14 = (int)(fVar19 * fVar22);
+    fVar20 = (float)NEON_ucvtf((uint)*(byte *)((long)in_x0 + 0x1fa));
+    iVar14 = (int)(fVar19 * fVar21);
     if (0xfe < iVar12) {
       iVar12 = 0xff;
     }
-    fVar22 = (float)NEON_ucvtf((uint)*(byte *)((long)param_2 + 0x1fb));
+    fVar21 = (float)NEON_ucvtf((uint)*(byte *)((long)in_x0 + 0x1fb));
     iVar15 = (int)(fVar19 * fVar18);
     if (0xfe < iVar13) {
       iVar13 = 0xff;
@@ -185,7 +189,7 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     if (0xfe < iVar14) {
       iVar14 = 0xff;
     }
-    iVar17 = (int)(fVar19 * fVar22);
+    iVar17 = (int)(fVar19 * fVar21);
     if (0xfe < iVar15) {
       iVar15 = 0xff;
     }
@@ -195,24 +199,24 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     if (0xfe < iVar17) {
       iVar17 = 0xff;
     }
-    lVar7 = func_0x001692e0(param_2 + 1,5);
+    lVar7 = func_0x001692e0(in_x0 + 1,5);
     *(byte *)(lVar7 + 0x144) = (byte)iVar14 & ((byte)(iVar14 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x145) = (byte)iVar15 & ((byte)(iVar15 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x146) = (byte)iVar16 & ((byte)(iVar16 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x147) = (byte)iVar17 & ((byte)(iVar17 >> 0x1f) ^ 0xff);
-    lVar7 = func_0x001692e0(param_2 + 1,4);
+    lVar7 = func_0x001692e0(in_x0 + 1,4);
     *(byte *)(lVar7 + 0x16d) = (byte)iVar10 & ((byte)(iVar10 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x16e) = (byte)iVar11 & ((byte)(iVar11 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x16f) = (byte)iVar12 & ((byte)(iVar12 >> 0x1f) ^ 0xff);
     *(byte *)(lVar7 + 0x170) = (byte)iVar13 & ((byte)(iVar13 >> 0x1f) ^ 0xff);
-    fVar19 = *(float *)(param_2 + 0x40);
-    *(float *)(param_2 + 0x40) = fVar19 + fVar21;
-    if (0.5 <= fVar19 + fVar21) {
-      *(undefined8 *)((long)param_2 + 0x1fc) = 3;
+    fVar19 = *(float *)(in_x0 + 0x40);
+    *(float *)(in_x0 + 0x40) = fVar19 + p0;
+    if (0.5 <= fVar19 + p0) {
+      *(undefined8 *)((long)in_x0 + 0x1fc) = 3;
     }
   }
   else if (iVar10 == 1) {
-    fVar19 = *(float *)(param_2 + 0x40) + *(float *)(param_2 + 0x40);
+    fVar19 = *(float *)(in_x0 + 0x40) + *(float *)(in_x0 + 0x40);
     if (fVar19 <= 0.0) {
       fVar19 = 0.0;
     }
@@ -227,8 +231,8 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     if (0xfe < iVar11) {
       iVar11 = 0xff;
     }
-    iVar10 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 500)) +
-             (uint)*(byte *)((long)param_2 + 500);
+    iVar10 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 500)) +
+             (uint)*(byte *)((long)in_x0 + 500);
     bVar4 = (byte)iVar11 & ((byte)(iVar11 >> 0x1f) ^ 0xff);
     if (0xfe < iVar12) {
       iVar12 = 0xff;
@@ -236,46 +240,46 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     if (0xfe < iVar13) {
       iVar13 = 0xff;
     }
-    iVar11 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1f5)) +
-             (uint)*(byte *)((long)param_2 + 0x1f5);
+    iVar11 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1f5)) +
+             (uint)*(byte *)((long)in_x0 + 0x1f5);
     bVar5 = (byte)iVar13 & ((byte)(iVar13 >> 0x1f) ^ 0xff);
     if (0xfe < iVar10) {
       iVar10 = 0xff;
     }
-    iVar13 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1f6)) +
-             (uint)*(byte *)((long)param_2 + 0x1f6);
-    iVar14 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1f7)) +
-             (uint)*(byte *)((long)param_2 + 0x1f7);
+    iVar13 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1f6)) +
+             (uint)*(byte *)((long)in_x0 + 0x1f6);
+    iVar14 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1f7)) +
+             (uint)*(byte *)((long)in_x0 + 0x1f7);
     if (0xfe < iVar11) {
       iVar11 = 0xff;
     }
-    iVar15 = (int)(fVar19 * (float)(int)-(uint)*(byte *)(param_2 + 0x3f)) +
-             (uint)*(byte *)(param_2 + 0x3f);
+    iVar15 = (int)(fVar19 * (float)(int)-(uint)*(byte *)(in_x0 + 0x3f)) +
+             (uint)*(byte *)(in_x0 + 0x3f);
     if (0xfe < iVar13) {
       iVar13 = 0xff;
     }
     if (0xfe < iVar14) {
       iVar14 = 0xff;
     }
-    iVar16 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1f9)) +
-             (uint)*(byte *)((long)param_2 + 0x1f9);
+    iVar16 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1f9)) +
+             (uint)*(byte *)((long)in_x0 + 0x1f9);
     if (0xfe < iVar15) {
       iVar15 = 0xff;
     }
-    iVar17 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1fa)) +
-             (uint)*(byte *)((long)param_2 + 0x1fa);
+    iVar17 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1fa)) +
+             (uint)*(byte *)((long)in_x0 + 0x1fa);
     if (0xfe < iVar16) {
       iVar16 = 0xff;
     }
-    iVar2 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)param_2 + 0x1fb)) +
-            (uint)*(byte *)((long)param_2 + 0x1fb);
+    iVar2 = (int)(fVar19 * (float)(int)-(uint)*(byte *)((long)in_x0 + 0x1fb)) +
+            (uint)*(byte *)((long)in_x0 + 0x1fb);
     if (0xfe < iVar17) {
       iVar17 = 0xff;
     }
     if (0xfe < iVar2) {
       iVar2 = 0xff;
     }
-    plVar1 = param_2 + 1;
+    plVar1 = in_x0 + 1;
     bVar6 = (byte)iVar12 & ((byte)(iVar12 >> 0x1f) ^ 0xff);
     lVar7 = func_0x001692e0(plVar1,2);
     *(byte *)(lVar7 + 0x155) = bVar3;
@@ -296,10 +300,10 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
     *(byte *)(lVar9 + 0x145) = (byte)iVar16 & ((byte)(iVar16 >> 0x1f) ^ 0xff);
     *(byte *)(lVar9 + 0x146) = (byte)iVar17 & ((byte)(iVar17 >> 0x1f) ^ 0xff);
     *(byte *)(lVar9 + 0x147) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-    fVar19 = *(float *)(param_2 + 0x40);
-    *(float *)(param_2 + 0x40) = fVar19 + fVar21;
-    if (0.5 <= fVar19 + fVar21) {
-      *(undefined8 *)((long)param_2 + 0x1fc) = 2;
+    fVar19 = *(float *)(in_x0 + 0x40);
+    *(float *)(in_x0 + 0x40) = fVar19 + p0;
+    if (0.5 <= fVar19 + p0) {
+      *(undefined8 *)((long)in_x0 + 0x1fc) = 2;
       *(undefined1 *)(lVar7 + 0x8c) = 0;
       *(undefined1 *)(lVar8 + 0x8c) = 0;
       *(undefined1 *)(lVar9 + 0x8c) = 0;
@@ -311,7 +315,7 @@ void WaterConcept::HDAssetsNotification::update(undefined8 param_1,long *param_2
       *(undefined1 *)(lVar7 + 0x8c) = 1;
     }
   }
-  func_0x0016a590(param_1,param_2);
+  func_0x0016a590(CONCAT44(in_register_00005004,p0));
   return;
 }
 
@@ -408,7 +412,8 @@ void WaterConcept::HDAssetsNotification::widgetsLoaded(long param_1)
 /* WaterConcept::HDAssetsNotification::handleEvent(int, Walaber::Widget::WidgetActionRet const&,
    Walaber::Widget*) */
 
-void WaterConcept::HDAssetsNotification::handleEvent(long *param_1,int param_2)
+void WaterConcept::HDAssetsNotification::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
   long lVar1;
@@ -420,8 +425,8 @@ void WaterConcept::HDAssetsNotification::handleEvent(long *param_1,int param_2)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  if (param_2 == 2) {
-    *(undefined1 *)((long)param_1 + 0x204) = 1;
+  if ((int)p1 == 2) {
+    *(undefined1 *)((long)(ulong)(uint)p0 + 0x204) = 1;
     uVar2 = func_0x0016b4e0();
     uStack_58 = 0x1c00000010;
     ppuStack_60 = &PTR__Message_0070cdc8;
@@ -431,8 +436,8 @@ void WaterConcept::HDAssetsNotification::handleEvent(long *param_1,int param_2)
     ppuStack_60 = &PTR__Message_0070cdc8;
     func_0x00164ba0(auStack_50);
   }
-  else if (param_2 == 3) {
-    (**(code **)(*param_1 + 0x40))();
+  else if ((int)p1 == 3) {
+    (**(code **)(*(long *)(ulong)(uint)p0 + 0x40))();
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -449,7 +454,7 @@ void WaterConcept::HDAssetsNotification::handleEvent(long *param_1,int param_2)
 
 /* WaterConcept::HDAssetsNotification::messageRx(Walaber::Message const&) */
 
-void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
+void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
 
 {
   long lVar1;
@@ -458,14 +463,15 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
   int iVar4;
   undefined8 uVar5;
   undefined1 *puVar6;
+  long in_x1;
   byte abStack_e8 [16];
-  undefined8 uStack_d8;
+  void *pvStack_d8;
   byte abStack_d0 [16];
-  undefined8 uStack_c0;
+  void *pvStack_c0;
   byte abStack_b8 [16];
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   undefined1 auStack_88 [24];
   byte abStack_70 [13];
   undefined4 uStack_63;
@@ -476,11 +482,11 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
-  iVar4 = *(int *)(param_2 + 0xc);
+  iVar4 = *(int *)(in_x1 + 0xc);
   if (iVar4 < 0x27) {
     if (iVar4 == 0x1d) {
-      if (*(char *)(param_1 + 0x204) != '\0') {
-        *(undefined1 *)(param_1 + 0x204) = 0;
+      if (p0[0x204] != (Walaber__Message)0x0) {
+        p0[0x204] = (Walaber__Message)0x0;
         abStack_70[0] = 0x16;
         uStack_63 = 0;
         uStack_5f = 0;
@@ -498,10 +504,10 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
         abStack_70[7] = 0x65;
         abStack_70[8] = 99;
                     /* try { // try from 0049a120 to 0049a12b has its CatchHandler @ 0049a58c */
-        func_0x0016d4e0(param_2 + 0x10,abStack_70);
+        func_0x0016d4e0(in_x1 + 0x10,abStack_70);
         iVar4 = func_0x00166a80();
         if ((abStack_70[0] & 1) != 0) {
-          FUN_00166120(CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
+          FUN_00166120((void *)CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
         }
         if (iVar4 == 1) {
           uVar5 = func_0x0016b4e0();
@@ -532,7 +538,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           func_0x0016b220(auStack_88);
           abStack_a0[0xe] = 0;
           abStack_a0[0xf] = 0;
-          uStack_90 = 0;
+          pvStack_90 = (void *)0x0;
           abStack_a0[0] = 0x18;
           abStack_a0[9] = 0x54;
           abStack_a0[10] = 0x79;
@@ -553,7 +559,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           func_0x00165260(auStack_88,abStack_a0,abStack_70);
           func_0x00167bf0(abStack_70);
           if ((abStack_a0[0] & 1) != 0) {
-            FUN_00166120(uStack_90);
+            FUN_00166120(pvStack_90);
           }
           abStack_a0[5] = 0x65;
           abStack_a0[6] = 0x72;
@@ -571,7 +577,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           abStack_a0[0xd] = 0;
           abStack_a0[0xe] = 0;
           abStack_a0[0xf] = 0;
-          uStack_90 = 0;
+          pvStack_90 = (void *)0x0;
           abStack_d0[8] = 0;
           abStack_d0[9] = 0;
           abStack_d0[10] = 0;
@@ -580,7 +586,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           abStack_d0[0xd] = 0;
           abStack_d0[0xe] = 0;
           abStack_d0[0xf] = 0;
-          uStack_c0 = 0;
+          pvStack_c0 = (void *)0x0;
           abStack_a0[7] = 0;
           abStack_d0[5] = 0x50;
           abStack_d0[6] = 0x53;
@@ -597,13 +603,13 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           func_0x00165260(auStack_88,abStack_a0,abStack_70);
           func_0x00167bf0(abStack_70);
           if ((abStack_b8[0] & 1) != 0) {
-            FUN_00166120(uStack_a8);
+            FUN_00166120(pvStack_a8);
           }
           if ((abStack_d0[0] & 1) != 0) {
-            FUN_00166120(uStack_c0);
+            FUN_00166120(pvStack_c0);
           }
           if ((abStack_a0[0] & 1) != 0) {
-            FUN_00166120(uStack_90);
+            FUN_00166120(pvStack_90);
           }
           abStack_a0[6] = 0;
           abStack_a0[7] = 0;
@@ -622,8 +628,8 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           abStack_a0[0] = 8;
           abStack_e8[0xf] = 0;
           abStack_e8[0] = 0x1a;
-          uStack_90 = 0;
-          uStack_d8 = 0;
+          pvStack_90 = (void *)0x0;
+          pvStack_d8 = (void *)0x0;
           abStack_a0[5] = 0;
           abStack_e8[9] = 0x54;
           abStack_e8[10] = 0x57;
@@ -647,13 +653,13 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           func_0x00165260(auStack_88,abStack_a0,abStack_70);
           func_0x00167bf0(abStack_70);
           if ((abStack_b8[0] & 1) != 0) {
-            FUN_00166120(uStack_a8);
+            FUN_00166120(pvStack_a8);
           }
           if ((abStack_e8[0] & 1) != 0) {
-            FUN_00166120(uStack_d8);
+            FUN_00166120(pvStack_d8);
           }
           if ((abStack_a0[0] & 1) != 0) {
-            FUN_00166120(uStack_90);
+            FUN_00166120(pvStack_90);
           }
           abStack_a0[4] = 0;
           abStack_a0[5] = 0;
@@ -667,7 +673,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           abStack_a0[0xd] = 0;
           abStack_a0[0xe] = 0;
           abStack_a0[0xf] = 0;
-          uStack_90 = 0;
+          pvStack_90 = (void *)0x0;
           abStack_a0[0] = 4;
           abStack_a0[1] = 0x49;
           abStack_a0[2] = 0x44;
@@ -678,7 +684,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
           func_0x00165260(auStack_88,abStack_a0,abStack_70);
           func_0x00167bf0(abStack_70);
           if ((abStack_a0[0] & 1) != 0) {
-            FUN_00166120(uStack_90);
+            FUN_00166120(pvStack_90);
           }
                     /* try { // try from 0049a404 to 0049a427 has its CatchHandler @ 0049a57c */
           uVar5 = func_0x00168cd0();
@@ -693,7 +699,7 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
     }
     else if (iVar4 == 0x26) {
       uVar5 = 1;
-      *(undefined4 *)(param_1 + 0x1fc) = 1;
+      *(undefined4 *)(p0 + 0x1fc) = 1;
     }
   }
   else if (iVar4 == 0x27) {
@@ -714,17 +720,17 @@ void WaterConcept::HDAssetsNotification::messageRx(long param_1,long param_2)
     abStack_70[8] = 100;
     uStack_5f = 0;
                     /* try { // try from 0049a1bc to 0049a1c7 has its CatchHandler @ 0049a590 */
-    func_0x00167060(param_2 + 0x10,abStack_70);
+    func_0x00167060(in_x1 + 0x10,abStack_70);
     uVar5 = func_0x00168f30();
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
+      FUN_00166120((void *)CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
     }
-    func_0x001692e0(param_1 + 8,4);
+    func_0x001692e0(p0 + 8,4);
     func_0x00172ce0(uVar5);
     uVar5 = 1;
   }
   else if (iVar4 == 0x28) {
-    *(undefined8 *)(param_1 + 0x1fc) = 4;
+    *(undefined8 *)(p0 + 0x1fc) = 4;
     if (((NotificationSingleton::getInstancePtr()::instance & 1) == 0) &&
        (iVar4 = FUN_0016ceb0(&NotificationSingleton::getInstancePtr()::instance), iVar4 != 0)) {
                     /* try { // try from 0049a46c to 0049a477 has its CatchHandler @ 0049a4a8 */

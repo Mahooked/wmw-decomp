@@ -8,24 +8,31 @@
 
 /* Walaber::RibbonParticleSet<10>::~RibbonParticleSet() */
 
-void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(long *param_1)
+void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(undefined8 *param_1,ulong param_2)
 
 {
-  if (param_1[9] != 0) {
-    FUN_001639e0();
+  void *p0;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  
+  if ((void *)param_1[9] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[9],param_2);
+    param_2 = extraout_x1;
   }
-  if (param_1[10] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[10] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[10],param_2);
+    param_2 = extraout_x1_00;
   }
-  if (param_1[0xb] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[0xb] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[0xb],param_2);
   }
   FUN_0016bb90(param_1 + 0xc);
   func_0x00166070(param_1 + 8);
   func_0x00167cb0(param_1 + 3);
-  if (*param_1 != 0) {
-    param_1[1] = *param_1;
-    FUN_00166120();
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    param_1[1] = p0;
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -39,65 +46,68 @@ void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(long *param_1)
 
 /* Walaber::RibbonParticleSet<10>::RibbonParticleSet(unsigned int) */
 
-void Walaber::RibbonParticleSet<10>::RibbonParticleSet(long param_1,uint param_2)
+void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0)
 
 {
-  long *plVar1;
-  undefined8 uVar2;
-  undefined4 *puVar3;
-  long lVar4;
-  undefined4 *puVar5;
-  long *plVar7;
-  long *plVar8;
-  uint uVar9;
+  ulong uVar1;
+  long *plVar2;
+  undefined8 uVar3;
+  undefined4 *puVar4;
+  uint in_w1;
+  long lVar5;
   undefined4 *puVar6;
+  long *plVar8;
+  long *plVar9;
+  uint uVar10;
+  undefined4 *puVar7;
   
-  func_0x00171fb0(param_1,param_2);
-  plVar8 = (long *)(param_1 + 0x28);
-  *plVar8 = 0;
-  plVar7 = (long *)(param_1 + 0x18);
-  *(undefined8 *)(param_1 + 0x30) = 0;
-  *(uint *)(param_1 + 0x38) = param_2;
-  *(undefined4 *)(param_1 + 0x3c) = 0;
-  *(long **)(param_1 + 0x18) = plVar7;
-  *(long **)(param_1 + 0x20) = plVar7;
+  uVar1 = (ulong)p0;
+  func_0x00171fb0(uVar1,in_w1);
+  plVar9 = (long *)(uVar1 + 0x28);
+  *plVar9 = 0;
+  plVar8 = (long *)(uVar1 + 0x18);
+  *(undefined8 *)(uVar1 + 0x30) = 0;
+  *(uint *)(uVar1 + 0x38) = in_w1;
+  *(undefined4 *)(uVar1 + 0x3c) = 0;
+  *(long **)(uVar1 + 0x18) = plVar8;
+  *(long **)(uVar1 + 0x20) = plVar8;
                     /* try { // try from 0044b4b4 to 0044b4bb has its CatchHandler @ 0044b580 */
-  func_0x0016e9d0(param_1 + 0x40);
-  *(undefined8 *)(param_1 + 0x60) = 0;
-  *(undefined8 *)(param_1 + 0x68) = 0;
-  if (param_2 != 0) {
-    uVar9 = 0;
+  func_0x0016e9d0(uVar1 + 0x40);
+  *(undefined8 *)(uVar1 + 0x60) = 0;
+  *(undefined8 *)(uVar1 + 0x68) = 0;
+  if (in_w1 != 0) {
+    uVar10 = 0;
     do {
                     /* try { // try from 0044b4d0 to 0044b4d7 has its CatchHandler @ 0044b58c */
-      plVar1 = (long *)FUN_00164060(0x18);
-      *(uint *)(plVar1 + 2) = uVar9;
-      lVar4 = *plVar7;
-      uVar9 = uVar9 + 1;
-      *plVar1 = lVar4;
-      plVar1[1] = (long)plVar7;
-      *(long **)(lVar4 + 8) = plVar1;
-      *plVar7 = (long)plVar1;
-      *plVar8 = *plVar8 + 1;
-    } while (uVar9 < param_2);
+      plVar2 = (long *)FUN_00164060(0x18);
+      *(uint *)(plVar2 + 2) = uVar10;
+      lVar5 = *plVar8;
+      uVar10 = uVar10 + 1;
+      *plVar2 = lVar5;
+      plVar2[1] = (long)plVar8;
+      *(long **)(lVar5 + 8) = plVar2;
+      *plVar8 = (long)plVar2;
+      *plVar9 = *plVar9 + 1;
+    } while (uVar10 < in_w1);
   }
-  *(undefined4 *)(param_1 + 0x44) = 0x16;
+  *(undefined4 *)(uVar1 + 0x44) = 0x16;
                     /* try { // try from 0044b50c to 0044b513 has its CatchHandler @ 0044b588 */
-  uVar2 = FUN_00167620(0xb0);
-  FUN_0016b330(uVar2,0,0xb0);
-  *(undefined8 *)(param_1 + 0x48) = uVar2;
+  uVar3 = FUN_00167620(0xb0);
+  FUN_0016b330(uVar3,0,0xb0);
+  *(undefined8 *)(uVar1 + 0x48) = uVar3;
                     /* try { // try from 0044b528 to 0044b52f has its CatchHandler @ 0044b588 */
-  uVar2 = FUN_00167620(0xb0);
-  FUN_0016b330(uVar2,0,0xb0);
-  *(undefined8 *)(param_1 + 0x50) = uVar2;
+  uVar3 = FUN_00167620(0xb0);
+  FUN_0016b330(uVar3,0,0xb0);
+  *(undefined8 *)(uVar1 + 0x50) = uVar3;
                     /* try { // try from 0044b544 to 0044b54b has its CatchHandler @ 0044b588 */
-  puVar3 = (undefined4 *)FUN_00167620(0x58);
-  puVar5 = puVar3;
+  puVar4 = (undefined4 *)FUN_00167620(0x58);
+  puVar6 = puVar4;
   do {
-    puVar6 = puVar5 + 1;
-    *puVar5 = 0xff000000;
-    puVar5 = puVar6;
-  } while (puVar6 != puVar3 + 0x16);
-  *(undefined4 **)(param_1 + 0x58) = puVar3;
+    puVar7 = puVar6 + 1;
+    *puVar6 = 0xff000000;
+    puVar6 = puVar7;
+  } while (puVar7 != puVar4 + 0x16);
+  *(undefined4 **)(uVar1 + 0x58) = puVar4;
   return;
 }
 
@@ -109,12 +119,13 @@ void Walaber::RibbonParticleSet<10>::RibbonParticleSet(long param_1,uint param_2
 
 /* Walaber::RibbonParticleSet<10>::updateParticles(float) */
 
-void Walaber::RibbonParticleSet<10>::updateParticles(float param_1,long *param_2)
+void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
 
 {
   long lVar1;
   undefined8 *puVar2;
   long lVar3;
+  long *in_x0;
   long *plVar4;
   long lVar5;
   long lVar6;
@@ -124,7 +135,7 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float param_1,long *param_2
   float fVar10;
   undefined8 uVar11;
   float fVar12;
-  long *plStack_60;
+  undefined1 auStack_60 [8];
   long lStack_58;
   
   lVar3 = tpidr_el0;
@@ -132,12 +143,11 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float param_1,long *param_2
   lVar6 = 0;
   uVar7 = 0xffffffffffffffff;
   do {
-    lVar5 = *param_2;
+    lVar5 = *in_x0;
     lVar1 = lVar5 + lVar6;
     if (*(char *)(lVar1 + 0x34) != '\0') {
       if ((*(float *)(lVar1 + 0x30) <= 0.0) ||
-         (fVar8 = *(float *)(lVar1 + 0x30) - param_1, *(float *)(lVar1 + 0x30) = fVar8, 0.0 < fVar8)
-         ) {
+         (fVar8 = *(float *)(lVar1 + 0x30) - p0, *(float *)(lVar1 + 0x30) = fVar8, 0.0 < fVar8)) {
         puVar2 = (undefined8 *)(lVar5 + lVar6);
         uVar11 = *puVar2;
         fVar8 = (float)puVar2[3] * *(float *)((long)puVar2 + 0x2c);
@@ -145,27 +155,26 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float param_1,long *param_2
         puVar2[3] = CONCAT44(fVar9,fVar8);
         fVar10 = (float)uVar11;
         fVar12 = (float)((ulong)uVar11 >> 0x20);
-        fVar8 = param_1 * param_1 * fVar8 +
-                (fVar10 - (float)puVar2[1]) * (1.0 - *(float *)(param_2 + 8)) + fVar10;
-        fVar9 = param_1 * param_1 * fVar9 +
-                (fVar12 - (float)((ulong)puVar2[1] >> 0x20)) * (1.0 - *(float *)(param_2 + 8)) +
+        fVar8 = p0 * p0 * fVar8 +
+                (fVar10 - (float)puVar2[1]) * (1.0 - *(float *)(in_x0 + 8)) + fVar10;
+        fVar9 = p0 * p0 * fVar9 +
+                (fVar12 - (float)((ulong)puVar2[1] >> 0x20)) * (1.0 - *(float *)(in_x0 + 8)) +
                 fVar12;
         *puVar2 = CONCAT44(fVar9,fVar8);
         puVar2[1] = uVar11;
-        puVar2[2] = CONCAT44((1.0 / param_1) * (fVar9 - fVar12),(1.0 / param_1) * (fVar8 - fVar10));
+        puVar2[2] = CONCAT44((1.0 / p0) * (fVar9 - fVar12),(1.0 / p0) * (fVar8 - fVar10));
         puVar2[3] = 0;
       }
       else {
-        func_0x001713b0(param_2,(int)uVar7 + 1);
+        func_0x001713b0();
       }
     }
     uVar7 = uVar7 + 1;
     lVar6 = lVar6 + 0xd0;
-  } while (uVar7 < *(uint *)(param_2 + 6));
-  plVar4 = (long *)param_2[0xc];
+  } while (uVar7 < *(uint *)(in_x0 + 6));
+  plVar4 = (long *)in_x0[0xc];
   if (plVar4 != (long *)0x0) {
-    plStack_60 = param_2;
-    (**(code **)(*plVar4 + 0x10))(plVar4,&plStack_60);
+    (**(code **)(*plVar4 + 0x10))(plVar4,auStack_60);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_58) {
     return;
@@ -438,75 +447,75 @@ LAB_00453b08:
 
 undefined8
 Walaber::RibbonParticleSet<10>::addParticle
-          (float param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,long *param_5,
-          undefined8 *param_6,undefined8 *param_7,undefined4 *param_8,undefined8 *param_9,
-          undefined8 *param_10,undefined4 param_11,uint *param_12)
+          (float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float p3,Walaber__Vector2 *p4,
+          Walaber__Vector2 *p5,Walaber__Vector2 *p6,float p7,float p8,int p9,int *p10)
 
 {
   long lVar1;
   uint uVar2;
   undefined4 uVar3;
   undefined4 uVar4;
-  long *plVar5;
-  undefined8 uVar6;
-  long lVar7;
-  undefined8 *puVar8;
-  ulong uVar9;
-  uint uVar10;
+  long *p0_00;
+  undefined8 uVar5;
+  uint *in_x7;
+  long lVar6;
+  undefined8 *puVar7;
+  ulong uVar8;
+  uint uVar9;
   
-  lVar7 = param_5[5];
-  if (lVar7 == 0) {
+  lVar6 = *(long *)(p1 + 0x28);
+  if (lVar6 == 0) {
     FUN_00166450("Walaber",2,"No more free particles!!!\n");
-    uVar6 = 0;
-    uVar10 = 0xffffffff;
+    uVar5 = 0;
+    uVar9 = 0xffffffff;
   }
   else {
-    plVar5 = (long *)param_5[4];
-    lVar1 = *plVar5;
-    uVar10 = *(uint *)(plVar5 + 2);
-    *(long *)(lVar1 + 8) = plVar5[1];
-    *(long *)plVar5[1] = lVar1;
-    param_5[5] = lVar7 + -1;
-    FUN_00166120();
-    lVar7 = *param_5;
-    puVar8 = (undefined8 *)(lVar7 + (long)(int)uVar10 * 0xd0);
-    *(float *)(puVar8 + 5) = param_1;
-    *(float *)((long)puVar8 + 0x2c) = 1.0 / param_1;
-    *(undefined4 *)(puVar8 + 10) = param_2;
-    uVar2 = *(uint *)((long)puVar8 + 0x74);
-    *puVar8 = *param_6;
-    puVar8[1] = *param_7;
-    puVar8[2] = *param_9;
-    puVar8[3] = *param_10;
-    uVar3 = *param_8;
-    *(undefined4 *)(puVar8 + 4) = uVar3;
-    uVar4 = param_8[1];
-    *(undefined4 *)(puVar8 + 6) = param_3;
-    *(undefined4 *)((long)puVar8 + 0x54) = param_3;
-    *(undefined4 *)(puVar8 + 0xb) = param_4;
-    *(undefined4 *)((long)puVar8 + 100) = param_11;
-    *(undefined4 *)((long)puVar8 + 0x24) = uVar4;
+    p0_00 = *(long **)(p1 + 0x20);
+    lVar1 = *p0_00;
+    uVar9 = *(uint *)(p0_00 + 2);
+    *(long *)(lVar1 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar1;
+    *(long *)(p1 + 0x28) = lVar6 + -1;
+    FUN_00166120(p0_00);
+    lVar6 = *(long *)p1;
+    puVar7 = (undefined8 *)(lVar6 + (long)(int)uVar9 * 0xd0);
+    *(float *)(puVar7 + 5) = p0;
+    *(float *)((long)puVar7 + 0x2c) = 1.0 / p0;
+    *(float *)(puVar7 + 10) = p3;
+    uVar2 = *(uint *)((long)puVar7 + 0x74);
+    *puVar7 = *(undefined8 *)p2;
+    puVar7[1] = *(undefined8 *)p4;
+    puVar7[2] = *(undefined8 *)p6;
+    puVar7[3] = *(undefined8 *)(ulong)(uint)p9;
+    uVar3 = *(undefined4 *)p5;
+    *(undefined4 *)(puVar7 + 4) = uVar3;
+    uVar4 = *(undefined4 *)(p5 + 4);
+    *(float *)(puVar7 + 6) = p7;
+    *(float *)((long)puVar7 + 0x54) = p7;
+    *(float *)(puVar7 + 0xb) = p8;
+    *(int *)((long)puVar7 + 100) = (int)p10;
+    *(undefined4 *)((long)puVar7 + 0x24) = uVar4;
     if (uVar2 != 0) {
-      uVar9 = 0;
+      uVar8 = 0;
       do {
-        *(undefined8 *)(lVar7 + (long)(int)uVar10 * 0xd0 + 0x78 + uVar9 * 8) = *param_6;
-        uVar9 = uVar9 + 1;
-      } while (uVar9 < uVar2);
+        *(undefined8 *)(lVar6 + (long)(int)uVar9 * 0xd0 + 0x78 + uVar8 * 8) = *(undefined8 *)p2;
+        uVar8 = uVar8 + 1;
+      } while (uVar8 < uVar2);
     }
-    lVar7 = lVar7 + (long)(int)uVar10 * 0xd0;
-    *(undefined2 *)(lVar7 + 0x34) = 0x101;
-    *(undefined4 *)(lVar7 + 0x48) = uVar3;
-    *(undefined4 *)(lVar7 + 0x4c) = uVar4;
-    *(undefined4 *)(lVar7 + 0x5c) = 0x3f000000;
-    *(undefined4 *)(lVar7 + 200) = 0;
-    *(int *)((long)param_5 + 0x34) = *(int *)((long)param_5 + 0x34) + 1;
-    if (*(uint *)(param_5 + 6) < uVar10) {
-      *(uint *)(param_5 + 6) = uVar10;
+    lVar6 = lVar6 + (long)(int)uVar9 * 0xd0;
+    *(undefined2 *)(lVar6 + 0x34) = 0x101;
+    *(undefined4 *)(lVar6 + 0x48) = uVar3;
+    *(undefined4 *)(lVar6 + 0x4c) = uVar4;
+    *(undefined4 *)(lVar6 + 0x5c) = 0x3f000000;
+    *(undefined4 *)(lVar6 + 200) = 0;
+    *(int *)(p1 + 0x34) = *(int *)(p1 + 0x34) + 1;
+    if (*(uint *)(p1 + 0x30) < uVar9) {
+      *(uint *)(p1 + 0x30) = uVar9;
     }
-    uVar6 = 1;
+    uVar5 = 1;
   }
-  *param_12 = uVar10;
-  return uVar6;
+  *in_x7 = uVar9;
+  return uVar5;
 }
 
 
@@ -517,40 +526,43 @@ Walaber::RibbonParticleSet<10>::addParticle
 
 /* Walaber::RibbonParticleSet<10>::removeParticle(int) */
 
-void Walaber::RibbonParticleSet<10>::removeParticle(long *param_1,int param_2)
+void Walaber::RibbonParticleSet<10>::removeParticle(int p0)
 
 {
   char cVar1;
   long *plVar2;
-  char *pcVar3;
-  undefined8 *puVar4;
-  long lVar5;
+  long *plVar3;
+  int in_w1;
+  char *pcVar4;
+  undefined8 *puVar5;
   long lVar6;
+  long lVar7;
   
-  lVar6 = *param_1;
-  pcVar3 = (char *)(lVar6 + (long)param_2 * 0xd0 + 0x34);
-  if (*pcVar3 != '\0') {
-    *pcVar3 = '\0';
-    *(int *)((long)param_1 + 0x34) = *(int *)((long)param_1 + 0x34) + -1;
-    plVar2 = (long *)FUN_00164060(0x18);
-    *(int *)(plVar2 + 2) = param_2;
-    *plVar2 = (long)(param_1 + 3);
-    puVar4 = (undefined8 *)param_1[4];
-    plVar2[1] = (long)puVar4;
-    *puVar4 = plVar2;
-    param_1[4] = (long)plVar2;
-    param_1[5] = param_1[5] + 1;
-    if ((param_2 != 0) && ((int)param_1[6] == param_2)) {
-      lVar5 = (long)param_2;
-      pcVar3 = (char *)(lVar6 + lVar5 * 0xd0 + -0x9c);
+  plVar2 = (long *)(ulong)(uint)p0;
+  lVar7 = *plVar2;
+  pcVar4 = (char *)(lVar7 + (long)in_w1 * 0xd0 + 0x34);
+  if (*pcVar4 != '\0') {
+    *pcVar4 = '\0';
+    *(int *)((long)plVar2 + 0x34) = *(int *)((long)plVar2 + 0x34) + -1;
+    plVar3 = (long *)FUN_00164060(0x18);
+    *(int *)(plVar3 + 2) = in_w1;
+    *plVar3 = (long)(plVar2 + 3);
+    puVar5 = (undefined8 *)plVar2[4];
+    plVar3[1] = (long)puVar5;
+    *puVar5 = plVar3;
+    plVar2[4] = (long)plVar3;
+    plVar2[5] = plVar2[5] + 1;
+    if ((in_w1 != 0) && ((int)plVar2[6] == in_w1)) {
+      lVar6 = (long)in_w1;
+      pcVar4 = (char *)(lVar7 + lVar6 * 0xd0 + -0x9c);
       do {
-        param_2 = param_2 + -1;
-        if (lVar5 < 2) break;
-        cVar1 = *pcVar3;
-        lVar5 = lVar5 + -1;
-        pcVar3 = pcVar3 + -0xd0;
+        in_w1 = in_w1 + -1;
+        if (lVar6 < 2) break;
+        cVar1 = *pcVar4;
+        lVar6 = lVar6 + -1;
+        pcVar4 = pcVar4 + -0xd0;
       } while (cVar1 == '\0');
-      *(int *)(param_1 + 6) = param_2;
+      *(int *)(plVar2 + 6) = in_w1;
     }
   }
   return;

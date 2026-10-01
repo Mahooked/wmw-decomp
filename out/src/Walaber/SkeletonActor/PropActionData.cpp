@@ -13,12 +13,12 @@ void Walaber::SkeletonActor::PropActionData::~PropActionData(undefined8 *param_1
 {
   *param_1 = &PTR__PropActionData_0070e528;
   if ((*(byte *)(param_1 + 7) & 1) != 0) {
-    FUN_00166120(param_1[9]);
+    FUN_00166120((void *)param_1[9]);
   }
   if ((*(byte *)(param_1 + 4) & 1) == 0) {
     return;
   }
-  FUN_00166120(param_1[6]);
+  FUN_00166120((void *)param_1[6]);
   return;
 }
 
@@ -35,10 +35,10 @@ void Walaber::SkeletonActor::PropActionData::~PropActionData(undefined8 *param_1
 {
   *param_1 = &PTR__PropActionData_0070e528;
   if ((*(byte *)(param_1 + 7) & 1) != 0) {
-    FUN_00166120(param_1[9]);
+    FUN_00166120((void *)param_1[9]);
   }
   if ((*(byte *)(param_1 + 4) & 1) != 0) {
-    FUN_00166120(param_1[6]);
+    FUN_00166120((void *)param_1[6]);
   }
   FUN_00166120(param_1);
   return;

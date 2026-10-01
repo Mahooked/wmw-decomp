@@ -8,7 +8,7 @@
 
 /* std::__ndk1::ctype<wchar_t>::~ctype() */
 
-void std::__ndk1::ctype<wchar_t>::~ctype(undefined8 param_1)
+void std::__ndk1::ctype<wchar_t>::~ctype(void *param_1)
 
 {
   FUN_00172660();
@@ -24,11 +24,13 @@ void std::__ndk1::ctype<wchar_t>::~ctype(undefined8 param_1)
 
 /* std::__ndk1::ctype<wchar_t>::do_is(unsigned long, wchar_t) const */
 
-bool std::__ndk1::ctype<wchar_t>::do_is(undefined8 param_1,ulong param_2,uint param_3)
+bool std::__ndk1::ctype<wchar_t>::do_is(ulong p0,wchar_t p1)
 
 {
-  if (param_3 < 0x80) {
-    return (*(ulong *)(&DAT_00641af0 + (ulong)param_3 * 8) & param_2) != 0;
+  uint in_w2;
+  
+  if (in_w2 < 0x80) {
+    return (*(ulong *)(&DAT_00641af0 + (ulong)in_w2 * 8) & (ulong)(uint)p1) != 0;
   }
   return false;
 }
@@ -41,29 +43,29 @@ bool std::__ndk1::ctype<wchar_t>::do_is(undefined8 param_1,ulong param_2,uint pa
 
 /* std::__ndk1::ctype<wchar_t>::do_is(wchar_t const*, wchar_t const*, unsigned long*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_is
-                 (undefined8 param_1,uint *param_2,uint *param_3,undefined8 *param_4)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2)
 
 {
-  uint *puVar1;
+  undefined8 *in_x3;
+  wchar_t *pwVar1;
   undefined8 uVar2;
   
-  if (param_2 != param_3) {
-    puVar1 = param_2;
+  if (p1 != (wchar_t *)p2) {
+    pwVar1 = p1;
     do {
-      if (*puVar1 < 0x80) {
-        uVar2 = *(undefined8 *)(&DAT_00641af0 + (ulong)*puVar1 * 8);
+      if ((uint)*pwVar1 < 0x80) {
+        uVar2 = *(undefined8 *)(&DAT_00641af0 + (ulong)(uint)*pwVar1 * 8);
       }
       else {
         uVar2 = 0;
       }
-      puVar1 = puVar1 + 1;
-      *param_4 = uVar2;
-      param_4 = param_4 + 1;
-    } while (param_3 != puVar1);
-    param_2 = param_2 + ((ulong)((long)param_3 + (-4 - (long)param_2)) >> 2) + 1;
+      pwVar1 = pwVar1 + 1;
+      *in_x3 = uVar2;
+      in_x3 = in_x3 + 1;
+    } while ((wchar_t *)p2 != pwVar1);
+    p1 = p1 + ((ulong)((long)p2 + (-4 - (long)p1)) >> 2) + 1;
   }
-  return param_2;
+  return p1;
 }
 
 
@@ -74,20 +76,17 @@ uint * std::__ndk1::ctype<wchar_t>::do_is
 
 /* std::__ndk1::ctype<wchar_t>::do_scan_is(unsigned long, wchar_t const*, wchar_t const*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_scan_is
-                 (undefined8 param_1,ulong param_2,uint *param_3,uint *param_4)
+void std::__ndk1::ctype<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2)
 
 {
-  uint *puVar1;
+  wchar_t *in_x3;
   
-  puVar1 = param_3;
-  while ((param_3 != param_4 &&
-         ((0x7f < *param_3 ||
-          (puVar1 = param_3, (*(ulong *)(&DAT_00641af0 + (ulong)*param_3 * 8) & param_2) == 0))))) {
-    param_3 = param_3 + 1;
-    puVar1 = param_4;
+  while ((p2 != in_x3 &&
+         ((0x7f < (uint)*p2 || ((*(ulong *)(&DAT_00641af0 + (ulong)(uint)*p2 * 8) & (ulong)p1) == 0)
+          )))) {
+    p2 = p2 + 1;
   }
-  return puVar1;
+  return;
 }
 
 
@@ -98,19 +97,16 @@ uint * std::__ndk1::ctype<wchar_t>::do_scan_is
 
 /* std::__ndk1::ctype<wchar_t>::do_scan_not(unsigned long, wchar_t const*, wchar_t const*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_scan_not
-                 (undefined8 param_1,ulong param_2,uint *param_3,uint *param_4)
+void std::__ndk1::ctype<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2)
 
 {
-  uint *puVar1;
+  wchar_t *in_x3;
   
-  puVar1 = param_3;
-  while (((param_3 != param_4 && (puVar1 = param_3, *param_3 < 0x80)) &&
-         ((*(ulong *)(&DAT_00641af0 + (ulong)*param_3 * 8) & param_2) != 0))) {
-    param_3 = param_3 + 1;
-    puVar1 = param_4;
+  while (((p2 != in_x3 && ((uint)*p2 < 0x80)) &&
+         ((*(ulong *)(&DAT_00641af0 + (ulong)(uint)*p2 * 8) & (ulong)p1) != 0))) {
+    p2 = p2 + 1;
   }
-  return puVar1;
+  return;
 }
 
 
@@ -121,23 +117,24 @@ uint * std::__ndk1::ctype<wchar_t>::do_scan_not
 
 /* std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_toupper(undefined8 param_1,uint param_2)
+uint std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t p0)
 
 {
   int iVar1;
+  uint in_w1;
   
-  if (param_2 < 0x80) {
+  if (in_w1 < 0x80) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = FUN_0016ceb0(&DAT_007a4e90), iVar1 != 0)) {
                     /* try { // try from 005d6ab4 to 005d6ac7 has its CatchHandler @ 005d6ae0 */
       DAT_007a4e88 = FUN_00164730(0x1fbf,"C",0);
       FUN_00165ea0(&DAT_007a4e90);
     }
-    iVar1 = func_0x0016af00(param_2);
+    iVar1 = func_0x0016af00(in_w1);
     if (iVar1 != 0) {
-      param_2 = param_2 - 0x20;
+      in_w1 = in_w1 - 0x20;
     }
   }
-  return param_2;
+  return in_w1;
 }
 
 
@@ -148,32 +145,33 @@ uint std::__ndk1::ctype<wchar_t>::do_toupper(undefined8 param_1,uint param_2)
 
 /* std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t*, wchar_t const*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_toupper(undefined8 param_1,uint *param_2,uint *param_3)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1)
 
 {
-  uint *puVar1;
+  wchar_t *pwVar1;
   int iVar2;
-  uint uVar3;
+  wchar_t wVar3;
+  wchar_t *in_x2;
   
-  puVar1 = param_2;
-  for (; param_2 != param_3; param_2 = param_2 + 1) {
-    uVar3 = *param_2;
-    if (uVar3 < 0x80) {
+  pwVar1 = p1;
+  for (; p1 != in_x2; p1 = p1 + 1) {
+    wVar3 = *p1;
+    if ((uint)wVar3 < 0x80) {
       if (((DAT_007a4e90 & 1) == 0) && (iVar2 = FUN_0016ceb0(&DAT_007a4e90), iVar2 != 0)) {
                     /* try { // try from 005d6b50 to 005d6b5f has its CatchHandler @ 005d6bc4 */
         DAT_007a4e88 = FUN_00164730(0x1fbf,"C",0);
         FUN_00165ea0(&DAT_007a4e90);
       }
-      iVar2 = FUN_00172cc0(uVar3);
-      uVar3 = *param_2;
+      iVar2 = FUN_00172cc0(wVar3);
+      wVar3 = *p1;
       if (iVar2 != 0) {
-        uVar3 = *param_2 - 0x20;
+        wVar3 = *p1 + L'\xffffffe0';
       }
     }
-    *param_2 = uVar3;
-    puVar1 = param_3;
+    *p1 = wVar3;
+    pwVar1 = in_x2;
   }
-  return puVar1;
+  return pwVar1;
 }
 
 
@@ -184,23 +182,24 @@ uint * std::__ndk1::ctype<wchar_t>::do_toupper(undefined8 param_1,uint *param_2,
 
 /* std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_tolower(undefined8 param_1,uint param_2)
+uint std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t p0)
 
 {
   int iVar1;
+  uint in_w1;
   
-  if (param_2 < 0x80) {
+  if (in_w1 < 0x80) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = FUN_0016ceb0(&DAT_007a4e90), iVar1 != 0)) {
                     /* try { // try from 005d6c40 to 005d6c53 has its CatchHandler @ 005d6c6c */
       DAT_007a4e88 = FUN_00164730(0x1fbf,"C",0);
       FUN_00165ea0(&DAT_007a4e90);
     }
-    iVar1 = func_0x0016e320(param_2);
+    iVar1 = func_0x0016e320(in_w1);
     if (iVar1 != 0) {
-      param_2 = param_2 + 0x20;
+      in_w1 = in_w1 + 0x20;
     }
   }
-  return param_2;
+  return in_w1;
 }
 
 
@@ -211,32 +210,33 @@ uint std::__ndk1::ctype<wchar_t>::do_tolower(undefined8 param_1,uint param_2)
 
 /* std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t*, wchar_t const*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_tolower(undefined8 param_1,uint *param_2,uint *param_3)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1)
 
 {
-  uint *puVar1;
+  wchar_t *pwVar1;
   int iVar2;
-  uint uVar3;
+  wchar_t wVar3;
+  wchar_t *in_x2;
   
-  puVar1 = param_2;
-  for (; param_2 != param_3; param_2 = param_2 + 1) {
-    uVar3 = *param_2;
-    if (uVar3 < 0x80) {
+  pwVar1 = p1;
+  for (; p1 != in_x2; p1 = p1 + 1) {
+    wVar3 = *p1;
+    if ((uint)wVar3 < 0x80) {
       if (((DAT_007a4e90 & 1) == 0) && (iVar2 = FUN_0016ceb0(&DAT_007a4e90), iVar2 != 0)) {
                     /* try { // try from 005d6cdc to 005d6ceb has its CatchHandler @ 005d6d50 */
         DAT_007a4e88 = FUN_00164730(0x1fbf,"C",0);
         FUN_00165ea0(&DAT_007a4e90);
       }
-      iVar2 = func_0x0016e320(uVar3);
-      uVar3 = *param_2;
+      iVar2 = func_0x0016e320(wVar3);
+      wVar3 = *p1;
       if (iVar2 != 0) {
-        uVar3 = *param_2 + 0x20;
+        wVar3 = *p1 + L' ';
       }
     }
-    *param_2 = uVar3;
-    puVar1 = param_3;
+    *p1 = wVar3;
+    pwVar1 = in_x2;
   }
-  return puVar1;
+  return pwVar1;
 }
 
 
@@ -247,10 +247,12 @@ uint * std::__ndk1::ctype<wchar_t>::do_tolower(undefined8 param_1,uint *param_2,
 
 /* std::__ndk1::ctype<wchar_t>::do_widen(char) const */
 
-undefined1 std::__ndk1::ctype<wchar_t>::do_widen(undefined8 param_1,undefined1 param_2)
+undefined1 std::__ndk1::ctype<wchar_t>::do_widen(char p0)
 
 {
-  return param_2;
+  undefined1 in_w1;
+  
+  return in_w1;
 }
 
 
@@ -261,19 +263,19 @@ undefined1 std::__ndk1::ctype<wchar_t>::do_widen(undefined8 param_1,undefined1 p
 
 /* std::__ndk1::ctype<wchar_t>::do_widen(char const*, char const*, wchar_t*) const */
 
-byte * std::__ndk1::ctype<wchar_t>::do_widen
-                 (undefined8 param_1,byte *param_2,byte *param_3,uint *param_4)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2)
 
 {
-  byte *pbVar1;
+  wchar_t *pwVar1;
+  uint *in_x3;
   
-  pbVar1 = param_2;
-  for (; param_2 != param_3; param_2 = param_2 + 1) {
-    *param_4 = (uint)*param_2;
-    pbVar1 = param_3;
-    param_4 = param_4 + 1;
+  pwVar1 = (wchar_t *)p1;
+  for (; (wchar_t *)p1 != p2; p1 = (char *)((long)p1 + 1)) {
+    *in_x3 = (uint)(byte)*(wchar_t *)p1;
+    pwVar1 = p2;
+    in_x3 = in_x3 + 1;
   }
-  return pbVar1;
+  return pwVar1;
 }
 
 
@@ -284,13 +286,17 @@ byte * std::__ndk1::ctype<wchar_t>::do_widen
 
 /* std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t, char) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_narrow(undefined8 param_1,uint param_2,uint param_3)
+uint std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t p0,char p1)
 
 {
-  if (0x7f < param_2) {
-    param_2 = param_3;
+  uint uVar1;
+  uint in_w2;
+  
+  uVar1 = (uint)(byte)p1;
+  if (0x7f < (byte)p1) {
+    uVar1 = in_w2;
   }
-  return param_2;
+  return uVar1;
 }
 
 
@@ -301,85 +307,87 @@ uint std::__ndk1::ctype<wchar_t>::do_narrow(undefined8 param_1,uint param_2,uint
 
 /* std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t const*, wchar_t const*, char, char*) const */
 
-uint * std::__ndk1::ctype<wchar_t>::do_narrow
-                 (undefined8 param_1,uint *param_2,uint *param_3,uint param_4,uint *param_5)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3)
 
 {
   ulong uVar1;
-  uint uVar2;
-  undefined2 uVar3;
-  uint *puVar4;
-  ulong uVar5;
-  uint *puVar6;
-  ulong uVar7;
-  undefined8 uVar8;
+  wchar_t wVar2;
+  wchar_t *pwVar3;
+  ushort uVar4;
+  wchar_t *in_x4;
+  wchar_t *pwVar5;
+  ulong uVar6;
+  wchar_t *pwVar7;
+  ulong uVar8;
   undefined8 uVar9;
   undefined8 uVar10;
   undefined8 uVar11;
-  ulong uVar12;
+  undefined8 uVar12;
   ulong uVar13;
+  ulong uVar14;
   
-  if (param_2 == param_3) {
-    return param_2;
+  uVar4 = (ushort)p3;
+  pwVar3 = (wchar_t *)(ulong)(byte)p2;
+  if (p1 == pwVar3) {
+    return p1;
   }
-  uVar1 = ((ulong)((long)param_3 + (-4 - (long)param_2)) >> 2) + 1;
-  puVar4 = param_2;
-  if ((7 < uVar1) && ((param_2 + uVar1 <= param_5 || ((uint *)((long)param_5 + uVar1) <= param_2))))
-  {
-    uVar5 = uVar1 & 0x7ffffffffffffff8;
-    uVar3 = (undefined2)param_4;
-    puVar4 = param_2 + 4;
-    puVar6 = param_5 + 1;
-    param_5 = (uint *)((long)param_5 + uVar5);
-    uVar7 = uVar5;
+  uVar1 = ((ulong)((long)pwVar3 + (-4 - (long)p1)) >> 2) + 1;
+  pwVar5 = p1;
+  if ((7 < uVar1) && ((p1 + uVar1 <= in_x4 || ((wchar_t *)((long)in_x4 + uVar1) <= p1)))) {
+    uVar6 = uVar1 & 0x7ffffffffffffff8;
+    pwVar5 = p1 + 4;
+    pwVar7 = in_x4 + 1;
+    in_x4 = (wchar_t *)((long)in_x4 + uVar6);
+    uVar8 = uVar6;
     do {
-      uVar9 = *(undefined8 *)(puVar4 + -2);
-      uVar8 = *(undefined8 *)(puVar4 + -4);
-      uVar11 = *(undefined8 *)(puVar4 + 2);
-      uVar10 = *(undefined8 *)puVar4;
-      puVar4 = puVar4 + 8;
-      uVar7 = uVar7 - 8;
-      uVar12 = CONCAT26(uVar3,CONCAT24(uVar3,CONCAT22(uVar3,uVar3))) ^
-               (CONCAT26(uVar3,CONCAT24(uVar3,CONCAT22(uVar3,uVar3))) ^
-               CONCAT26((short)((ulong)uVar9 >> 0x20),
-                        CONCAT24((short)uVar9,CONCAT22((short)((ulong)uVar8 >> 0x20),(short)uVar8)))
-               ) & CONCAT26(-(ushort)((uint)((ulong)uVar9 >> 0x20) < 0x80),
-                            CONCAT24(-(ushort)((uint)uVar9 < 0x80),
-                                     CONCAT22(-(ushort)((uint)((ulong)uVar8 >> 0x20) < 0x80),
-                                              -(ushort)((uint)uVar8 < 0x80))));
-      uVar13 = CONCAT26(uVar3,CONCAT24(uVar3,CONCAT22(uVar3,uVar3))) ^
-               (CONCAT26(uVar3,CONCAT24(uVar3,CONCAT22(uVar3,uVar3))) ^
-               CONCAT26((short)((ulong)uVar11 >> 0x20),
-                        CONCAT24((short)uVar11,
-                                 CONCAT22((short)((ulong)uVar10 >> 0x20),(short)uVar10)))) &
-               CONCAT26(-(ushort)((uint)((ulong)uVar11 >> 0x20) < 0x80),
-                        CONCAT24(-(ushort)((uint)uVar11 < 0x80),
-                                 CONCAT22(-(ushort)((uint)((ulong)uVar10 >> 0x20) < 0x80),
-                                          -(ushort)((uint)uVar10 < 0x80))));
-      *(ulong *)(puVar6 + -1) =
-           CONCAT44(CONCAT13((char)(uVar13 >> 0x30),
+      uVar10 = *(undefined8 *)(pwVar5 + -2);
+      uVar9 = *(undefined8 *)(pwVar5 + -4);
+      uVar12 = *(undefined8 *)(pwVar5 + 2);
+      uVar11 = *(undefined8 *)pwVar5;
+      pwVar5 = pwVar5 + 8;
+      uVar8 = uVar8 - 8;
+      uVar13 = CONCAT26(uVar4,CONCAT24(uVar4,CONCAT22(uVar4,uVar4))) ^
+               (CONCAT26(uVar4,CONCAT24(uVar4,CONCAT22(uVar4,uVar4))) ^
+               CONCAT26((short)((ulong)uVar10 >> 0x20),
+                        CONCAT24((short)uVar10,CONCAT22((short)((ulong)uVar9 >> 0x20),(short)uVar9))
+                       )) &
+               CONCAT26(-(ushort)((uint)((ulong)uVar10 >> 0x20) < 0x80),
+                        CONCAT24(-(ushort)((uint)uVar10 < 0x80),
+                                 CONCAT22(-(ushort)((uint)((ulong)uVar9 >> 0x20) < 0x80),
+                                          -(ushort)((uint)uVar9 < 0x80))));
+      uVar14 = CONCAT26(uVar4,CONCAT24(uVar4,CONCAT22(uVar4,uVar4))) ^
+               (CONCAT26(uVar4,CONCAT24(uVar4,CONCAT22(uVar4,uVar4))) ^
+               CONCAT26((short)((ulong)uVar12 >> 0x20),
+                        CONCAT24((short)uVar12,
+                                 CONCAT22((short)((ulong)uVar11 >> 0x20),(short)uVar11)))) &
+               CONCAT26(-(ushort)((uint)((ulong)uVar12 >> 0x20) < 0x80),
+                        CONCAT24(-(ushort)((uint)uVar12 < 0x80),
+                                 CONCAT22(-(ushort)((uint)((ulong)uVar11 >> 0x20) < 0x80),
+                                          -(ushort)((uint)uVar11 < 0x80))));
+      *(ulong *)(pwVar7 + -1) =
+           CONCAT44(CONCAT13((char)(uVar14 >> 0x30),
+                             CONCAT12((char)(uVar14 >> 0x20),
+                                      CONCAT11((char)(uVar14 >> 0x10),(char)uVar14))),
+                    CONCAT13((char)(uVar13 >> 0x30),
                              CONCAT12((char)(uVar13 >> 0x20),
-                                      CONCAT11((char)(uVar13 >> 0x10),(char)uVar13))),
-                    CONCAT13((char)(uVar12 >> 0x30),
-                             CONCAT12((char)(uVar12 >> 0x20),
-                                      CONCAT11((char)(uVar12 >> 0x10),(char)uVar12))));
-      puVar6 = puVar6 + 2;
-    } while (uVar7 != 0);
-    puVar4 = param_2 + uVar5;
-    if (uVar1 == uVar5) goto LAB_005d6e70;
+                                      CONCAT11((char)(uVar13 >> 0x10),(char)uVar13))));
+      pwVar7 = pwVar7 + 2;
+    } while (uVar8 != 0);
+    pwVar5 = p1 + uVar6;
+    if (uVar1 == uVar6) goto LAB_005d6e70;
   }
   do {
-    puVar6 = puVar4 + 1;
-    uVar2 = *puVar4;
-    if (0x7f < *puVar4) {
-      uVar2 = param_4;
+    pwVar7 = pwVar5 + 1;
+    wVar2 = *pwVar5;
+    if (0x7f < (uint)wVar2) {
+      wVar2 = (wchar_t)uVar4;
     }
-    *(char *)param_5 = (char)uVar2;
-    param_5 = (uint *)((long)param_5 + 1);
-    puVar4 = puVar6;
-  } while (param_3 != puVar6);
+    *(char *)in_x4 = (char)wVar2;
+    in_x4 = (wchar_t *)((long)in_x4 + 1);
+    pwVar5 = pwVar7;
+  } while (pwVar3 != pwVar7);
 LAB_005d6e70:
-  return param_2 + uVar1;
+  return p1 + uVar1;
 }
 
 

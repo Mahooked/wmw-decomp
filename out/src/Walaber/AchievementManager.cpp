@@ -43,16 +43,19 @@ void Walaber::AchievementManager::AchievementManager(undefined8 *param_1)
 void Walaber::AchievementManager::~AchievementManager(long param_1)
 
 {
-  if (*(long *)(param_1 + 0x80) != 0) {
-    *(long *)(param_1 + 0x88) = *(long *)(param_1 + 0x80);
-    FUN_00166120();
+  void *p0;
+  
+  p0 = *(void **)(param_1 + 0x80);
+  if (p0 != (void *)0x0) {
+    *(void **)(param_1 + 0x88) = p0;
+    FUN_00166120(p0);
   }
   FUN_0016bb90(param_1 + 0x70);
   if ((*(byte *)(param_1 + 0x50) & 1) != 0) {
-    FUN_00166120(*(undefined8 *)(param_1 + 0x60));
+    FUN_00166120(*(void **)(param_1 + 0x60));
   }
   if ((*(byte *)(param_1 + 0x30) & 1) != 0) {
-    FUN_00166120(*(undefined8 *)(param_1 + 0x40));
+    FUN_00166120(*(void **)(param_1 + 0x40));
   }
   func_0x00172490(param_1 + 0x18);
   func_0x00162340(param_1,*(undefined8 *)(param_1 + 8));
@@ -74,7 +77,7 @@ void Walaber::AchievementManager::loadAchievements(undefined8 param_1,undefined8
   long lVar1;
   undefined4 uVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -84,7 +87,7 @@ void Walaber::AchievementManager::loadAchievements(undefined8 param_1,undefined8
                     /* try { // try from 0032f230 to 0032f23f has its CatchHandler @ 0032f278 */
   func_0x00166080(param_1,uVar2,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -124,45 +127,59 @@ void Walaber::AchievementManager::loadAchievements
   long lVar15;
   long lVar16;
   ulong uVar17;
-  ulong auStack_348 [22];
+  ulong auStack_348 [2];
+  void *pvStack_338;
+  ulong auStack_330 [2];
+  void *pvStack_320;
+  ulong auStack_318 [2];
+  void *pvStack_308;
+  ulong auStack_300 [2];
+  void *pvStack_2f0;
+  ulong auStack_2e8 [2];
+  void *pvStack_2d8;
+  ulong auStack_2d0 [2];
+  void *pvStack_2c0;
+  ulong auStack_2b8 [2];
+  void *pvStack_2a8;
+  ulong uStack_2a0;
   ulong uStack_298;
-  ulong uStack_290;
+  void *pvStack_290;
   ulong uStack_280;
   ulong uStack_278;
-  ulong uStack_270;
+  void *pvStack_270;
   ulong uStack_260;
   ulong uStack_258;
-  ulong uStack_250;
+  void *pvStack_250;
   ulong uStack_240;
   ulong uStack_238;
-  ulong uStack_230;
+  void *pvStack_230;
   ulong uStack_220;
   ulong uStack_218;
-  ulong uStack_210;
+  void *pvStack_210;
   ulong uStack_200;
   ulong uStack_1f8;
-  ulong uStack_1f0;
+  void *pvStack_1f0;
   ulong uStack_1e0;
   ulong uStack_1d8;
   undefined1 *puStack_1d0;
   ulong uStack_1c0;
   ulong uStack_1b8;
-  ulong uStack_1b0;
+  void *pvStack_1b0;
   ulong uStack_1a0;
   ulong uStack_198;
-  ulong uStack_190;
+  void *pvStack_190;
   ulong uStack_180;
   ulong uStack_178;
-  ulong uStack_170;
+  void *pvStack_170;
   ulong uStack_160;
   ulong uStack_158;
-  ulong uStack_150;
+  void *pvStack_150;
   ulong uStack_140;
   ulong uStack_138;
-  ulong uStack_130;
+  void *pvStack_130;
   ulong uStack_120;
   ulong uStack_118;
-  ulong uStack_110;
+  void *pvStack_110;
   ulong uStack_108;
   ulong uStack_100;
   undefined1 *puStack_f8;
@@ -186,15 +203,15 @@ void Walaber::AchievementManager::loadAchievements
   undefined1 uStack_89;
   undefined7 uStack_88;
   undefined1 uStack_81;
-  undefined8 uStack_80;
+  void *pvStack_80;
   
   lVar3 = tpidr_el0;
   lVar12 = *(long *)(lVar3 + 0x28);
   *(undefined4 *)(param_1 + 0x48) = param_2;
   func_0x00171ac0(param_1 + 0x50,param_3);
-  auStack_348[0x13] = 0;
-  auStack_348[0x14] = 0;
-  auStack_348[0x12] = 0x202c04;
+  auStack_2b8[1] = 0;
+  pvStack_2a8 = (void *)0x0;
+  auStack_2b8[0] = 0x202c04;
   uVar10 = DAT_0072d6d8;
   puVar4 = DAT_0072d6e0;
   if ((AchievementDBFieldNames & 1) == 0) {
@@ -202,10 +219,10 @@ void Walaber::AchievementManager::loadAchievements
     puVar4 = &DAT_0072d6d1;
   }
                     /* try { // try from 0032f31c to 0032f327 has its CatchHandler @ 0032fe58 */
-  puVar7 = (ulong *)FUN_00164fb0(auStack_348 + 0x12,0,puVar4,uVar10);
-  uStack_290 = puVar7[2];
+  puVar7 = (ulong *)FUN_00164fb0(auStack_2b8,0,puVar4,uVar10);
+  pvStack_290 = (void *)puVar7[2];
   uStack_298 = puVar7[1];
-  auStack_348[0x15] = *puVar7;
+  uStack_2a0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
@@ -216,19 +233,19 @@ void Walaber::AchievementManager::loadAchievements
     puVar5 = DAT_0072d6f8;
   }
                     /* try { // try from 0032f35c to 0032f363 has its CatchHandler @ 0032fe50 */
-  puVar7 = (ulong *)FUN_00167eb0(auStack_348 + 0x15,puVar5,uVar10);
-  uStack_270 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_2a0,puVar5,uVar10);
+  pvStack_270 = (void *)puVar7[2];
   uStack_278 = puVar7[1];
   uStack_280 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
-  auStack_348[0x10] = 0;
-  auStack_348[0x11] = 0;
-  auStack_348[0xf] = 0x202c04;
+  auStack_2d0[1] = 0;
+  pvStack_2c0 = (void *)0x0;
+  auStack_2d0[0] = 0x202c04;
                     /* try { // try from 0032f3a0 to 0032f3ab has its CatchHandler @ 0032fe48 */
-  puVar7 = (ulong *)FUN_00167eb0(&uStack_280,(ulong)(auStack_348 + 0xf) | 1,2);
-  uStack_250 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_280,(ulong)auStack_2d0 | 1,2);
+  pvStack_250 = (void *)puVar7[2];
   uStack_258 = puVar7[1];
   uStack_260 = *puVar7;
   puVar7[1] = 0;
@@ -242,18 +259,18 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f3e0 to 0032f3e7 has its CatchHandler @ 0032fe40 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_260,puVar6,uVar10);
-  uStack_230 = puVar7[2];
+  pvStack_230 = (void *)puVar7[2];
   uStack_238 = puVar7[1];
   uStack_240 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
-  auStack_348[0xd] = 0;
-  auStack_348[0xe] = 0;
-  auStack_348[0xc] = 0x202c04;
+  auStack_2e8[1] = 0;
+  pvStack_2d8 = (void *)0x0;
+  auStack_2e8[0] = 0x202c04;
                     /* try { // try from 0032f424 to 0032f42f has its CatchHandler @ 0032fe38 */
-  puVar7 = (ulong *)FUN_00167eb0(&uStack_240,(ulong)(auStack_348 + 0xc) | 1,2);
-  uStack_210 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_240,(ulong)auStack_2e8 | 1,2);
+  pvStack_210 = (void *)puVar7[2];
   uStack_218 = puVar7[1];
   uStack_220 = *puVar7;
   puVar7[1] = 0;
@@ -267,18 +284,18 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f464 to 0032f46b has its CatchHandler @ 0032fe30 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_220,puVar6,uVar10);
-  uStack_1f0 = puVar7[2];
+  pvStack_1f0 = (void *)puVar7[2];
   uStack_1f8 = puVar7[1];
   uStack_200 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
-  auStack_348[10] = 0;
-  auStack_348[0xb] = 0;
-  auStack_348[9] = 0x202c04;
+  auStack_300[1] = 0;
+  pvStack_2f0 = (void *)0x0;
+  auStack_300[0] = 0x202c04;
                     /* try { // try from 0032f4a8 to 0032f4b3 has its CatchHandler @ 0032fd8c */
-  puVar8 = (undefined8 *)FUN_00167eb0(&uStack_200,(ulong)(auStack_348 + 9) | 1,2);
-  uStack_80 = puVar8[2];
+  puVar8 = (undefined8 *)FUN_00167eb0(&uStack_200,(ulong)auStack_300 | 1,2);
+  pvStack_80 = (void *)puVar8[2];
   uVar13 = *puVar8;
   uStack_88 = (undefined7)puVar8[1];
   uStack_81 = (undefined1)((ulong)puVar8[1] >> 0x38);
@@ -302,12 +319,12 @@ void Walaber::AchievementManager::loadAchievements
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
-  auStack_348[7] = 0;
-  auStack_348[8] = 0;
-  auStack_348[6] = 0x202c04;
+  auStack_318[1] = 0;
+  pvStack_308 = (void *)0x0;
+  auStack_318[0] = 0x202c04;
                     /* try { // try from 0032f530 to 0032f53b has its CatchHandler @ 0032fd4c */
-  puVar7 = (ulong *)FUN_00167eb0(&uStack_1e0,(ulong)(auStack_348 + 6) | 1,2);
-  uStack_1b0 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_1e0,(ulong)auStack_318 | 1,2);
+  pvStack_1b0 = (void *)puVar7[2];
   uStack_1b8 = puVar7[1];
   uStack_1c0 = *puVar7;
   puVar7[1] = 0;
@@ -321,18 +338,18 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f570 to 0032f577 has its CatchHandler @ 0032fd34 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_1c0,puVar5,uVar10);
-  uStack_190 = puVar7[2];
+  pvStack_190 = (void *)puVar7[2];
   uStack_198 = puVar7[1];
   uStack_1a0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
-  auStack_348[4] = 0;
-  auStack_348[5] = 0;
-  auStack_348[3] = 0x202c04;
+  auStack_330[1] = 0;
+  pvStack_320 = (void *)0x0;
+  auStack_330[0] = 0x202c04;
                     /* try { // try from 0032f5b4 to 0032f5bf has its CatchHandler @ 0032fd0c */
-  puVar7 = (ulong *)FUN_00167eb0(&uStack_1a0,(ulong)(auStack_348 + 3) | 1,2);
-  uStack_170 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_1a0,(ulong)auStack_330 | 1,2);
+  pvStack_170 = (void *)puVar7[2];
   uStack_178 = puVar7[1];
   uStack_180 = *puVar7;
   puVar7[1] = 0;
@@ -346,18 +363,18 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f5f4 to 0032f5fb has its CatchHandler @ 0032fcf4 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_180,puVar5,uVar10);
-  uStack_150 = puVar7[2];
+  pvStack_150 = (void *)puVar7[2];
   uStack_158 = puVar7[1];
   uStack_160 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   auStack_348[1] = 0;
-  auStack_348[2] = 0;
+  pvStack_338 = (void *)0x0;
   auStack_348[0] = 0x202c04;
                     /* try { // try from 0032f638 to 0032f643 has its CatchHandler @ 0032fccc */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_160,(ulong)auStack_348 | 1,2);
-  uStack_110 = puVar7[2];
+  pvStack_110 = (void *)puVar7[2];
   uStack_118 = puVar7[1];
   uStack_120 = *puVar7;
   puVar7[1] = 0;
@@ -371,76 +388,76 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f678 to 0032f67f has its CatchHandler @ 0032fcb4 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_120,puVar8,uVar10);
-  uStack_130 = puVar7[2];
+  pvStack_130 = (void *)puVar7[2];
   uStack_138 = puVar7[1];
   uStack_140 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   if ((uStack_120 & 1) != 0) {
-    FUN_00166120(uStack_110);
+    FUN_00166120(pvStack_110);
   }
   if ((auStack_348[0] & 1) != 0) {
-    FUN_00166120(auStack_348[2]);
+    FUN_00166120(pvStack_338);
   }
   if ((uStack_160 & 1) != 0) {
-    FUN_00166120(uStack_150);
+    FUN_00166120(pvStack_150);
   }
   if ((uStack_180 & 1) != 0) {
-    FUN_00166120(uStack_170);
+    FUN_00166120(pvStack_170);
   }
-  if ((auStack_348[3] & 1) != 0) {
-    FUN_00166120(auStack_348[5]);
+  if ((auStack_330[0] & 1) != 0) {
+    FUN_00166120(pvStack_320);
   }
   if ((uStack_1a0 & 1) != 0) {
-    FUN_00166120(uStack_190);
+    FUN_00166120(pvStack_190);
   }
   if ((uStack_1c0 & 1) != 0) {
-    FUN_00166120(uStack_1b0);
+    FUN_00166120(pvStack_1b0);
   }
-  if ((auStack_348[6] & 1) != 0) {
-    FUN_00166120(auStack_348[8]);
+  if ((auStack_318[0] & 1) != 0) {
+    FUN_00166120(pvStack_308);
   }
   if ((uStack_1e0 & 1) != 0) {
     FUN_00166120(puStack_1d0);
   }
   if ((bStack_90 & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
-  if ((auStack_348[9] & 1) != 0) {
-    FUN_00166120(auStack_348[0xb]);
+  if ((auStack_300[0] & 1) != 0) {
+    FUN_00166120(pvStack_2f0);
   }
   if ((uStack_200 & 1) != 0) {
-    FUN_00166120(uStack_1f0);
+    FUN_00166120(pvStack_1f0);
   }
   if ((uStack_220 & 1) != 0) {
-    FUN_00166120(uStack_210);
+    FUN_00166120(pvStack_210);
   }
-  if ((auStack_348[0xc] & 1) != 0) {
-    FUN_00166120(auStack_348[0xe]);
+  if ((auStack_2e8[0] & 1) != 0) {
+    FUN_00166120(pvStack_2d8);
   }
   if ((uStack_240 & 1) != 0) {
-    FUN_00166120(uStack_230);
+    FUN_00166120(pvStack_230);
   }
   if ((uStack_260 & 1) != 0) {
-    FUN_00166120(uStack_250);
+    FUN_00166120(pvStack_250);
   }
-  if ((auStack_348[0xf] & 1) != 0) {
-    FUN_00166120(auStack_348[0x11]);
+  if ((auStack_2d0[0] & 1) != 0) {
+    FUN_00166120(pvStack_2c0);
   }
   if ((uStack_280 & 1) != 0) {
-    FUN_00166120(uStack_270);
+    FUN_00166120(pvStack_270);
   }
-  if ((auStack_348[0x15] & 1) != 0) {
-    FUN_00166120(uStack_290);
+  if ((uStack_2a0 & 1) != 0) {
+    FUN_00166120(pvStack_290);
   }
-  if ((auStack_348[0x12] & 1) != 0) {
-    FUN_00166120(auStack_348[0x14]);
+  if ((auStack_2b8[0] & 1) != 0) {
+    FUN_00166120(pvStack_2a8);
   }
                     /* try { // try from 0032f7d8 to 0032f7e3 has its CatchHandler @ 0032fcac */
   func_0x0016f720(&uStack_160,param_3);
   uStack_118 = 0;
-  uStack_110 = 0;
+  pvStack_110 = (void *)0x0;
   uStack_120 = 0x4353412008;
   uVar10 = (ulong)(DAT_0072d778 >> 1);
   puVar8 = &DAT_0072d779;
@@ -450,26 +467,26 @@ void Walaber::AchievementManager::loadAchievements
   }
                     /* try { // try from 0032f824 to 0032f82f has its CatchHandler @ 0032fc98 */
   puVar7 = (ulong *)FUN_00164fb0(&uStack_120,0,puVar8,uVar10);
-  uStack_170 = puVar7[2];
+  pvStack_170 = (void *)puVar7[2];
   uStack_178 = puVar7[1];
   uStack_180 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   if ((uStack_120 & 1) != 0) {
-    FUN_00166120(uStack_110);
+    FUN_00166120(pvStack_110);
   }
   uStack_118 = 0;
   uStack_120 = 0;
-  uStack_110 = 0;
+  pvStack_110 = (void *)0x0;
                     /* try { // try from 0032f864 to 0032f87f has its CatchHandler @ 0032fc80 */
   func_0x00164290(&uStack_200,param_2,&uStack_140,&uStack_160,&uStack_120,&uStack_180);
   if ((uStack_120 & 1) != 0) {
-    FUN_00166120(uStack_110);
+    FUN_00166120(pvStack_110);
   }
   uStack_1a0 = 0;
   uStack_198 = 0;
-  uStack_190 = 0;
+  pvStack_190 = (void *)0x0;
                     /* try { // try from 0032fb84 to 0032fb8b has its CatchHandler @ 0032fe94 */
   while (uVar10 = func_0x001651e0(&uStack_200), (uVar10 & 1) != 0) {
     FUN_0016b330(&uStack_120,0,0x81);
@@ -587,7 +604,7 @@ void Walaber::AchievementManager::loadAchievements
       func_0x0016a140(*(long *)(param_1 + 0x20),&uStack_120);
       *(long *)(param_1 + 0x20) = *(long *)(param_1 + 0x20) + 0x88;
     }
-    if (uStack_198 == uStack_190) {
+    if ((void *)uStack_198 == pvStack_190) {
       func_0x00168ed0(&uStack_1a0,&uStack_1c0);
     }
     else {
@@ -595,7 +612,7 @@ void Walaber::AchievementManager::loadAchievements
       uStack_198 = uStack_198 + 0x18;
     }
     if ((uStack_1c0 & 1) != 0) {
-      FUN_00166120(uStack_1b0);
+      FUN_00166120(pvStack_1b0);
     }
     if ((bStack_c0 & 1) != 0) {
       FUN_00166120(puStack_b0);
@@ -610,7 +627,7 @@ void Walaber::AchievementManager::loadAchievements
       FUN_00166120(puStack_f8);
     }
     if ((uStack_120 & 1) != 0) {
-      FUN_00166120(uStack_110);
+      FUN_00166120(pvStack_110);
     }
   }
   lVar14 = *(long *)(param_1 + 0x18);
@@ -634,13 +651,13 @@ void Walaber::AchievementManager::loadAchievements
   func_0x00167a70(&uStack_1a0);
   func_0x00169840(&uStack_200);
   if ((uStack_180 & 1) != 0) {
-    FUN_00166120(uStack_170);
+    FUN_00166120(pvStack_170);
   }
   if ((uStack_160 & 1) != 0) {
-    FUN_00166120(uStack_150);
+    FUN_00166120(pvStack_150);
   }
   if ((uStack_140 & 1) != 0) {
-    FUN_00166120(uStack_130);
+    FUN_00166120(pvStack_130);
   }
   if (*(long *)(lVar3 + 0x28) == lVar12) {
     return;
@@ -663,9 +680,9 @@ void Walaber::AchievementManager::reportAchievement
 
 {
   ulong uVar1;
-  byte bVar2;
-  long lVar3;
-  ulong uVar4;
+  void *pvVar2;
+  byte bVar3;
+  long lVar4;
   undefined7 uVar5;
   long lVar6;
   undefined8 uVar7;
@@ -674,23 +691,25 @@ void Walaber::AchievementManager::reportAchievement
   long lVar10;
   long *plVar11;
   byte abStack_188 [16];
-  undefined8 uStack_178;
+  void *pvStack_178;
   byte abStack_170 [8];
   ulong uStack_168;
-  ulong uStack_160;
-  ulong auStack_158 [5];
+  void *pvStack_160;
+  ulong auStack_158 [2];
+  void *pvStack_148;
+  ulong auStack_140 [2];
   char *pcStack_130;
   byte abStack_128 [16];
-  undefined8 uStack_118;
+  void *pvStack_118;
   ulong uStack_110;
   ulong uStack_108;
-  ulong uStack_100;
+  void *pvStack_100;
   byte abStack_f0 [16];
-  undefined8 uStack_e0;
+  void *pvStack_e0;
   undefined **appuStack_d8 [2];
   undefined1 auStack_c8 [24];
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
+  void *pvStack_a0;
   byte bStack_98;
   undefined1 uStack_97;
   undefined6 uStack_96;
@@ -702,8 +721,8 @@ void Walaber::AchievementManager::reportAchievement
   undefined1 uStack_71;
   undefined7 uStack_70;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
+  lVar4 = tpidr_el0;
+  lVar10 = *(long *)(lVar4 + 0x28);
   lVar6 = func_0x001635d0();
   if (param_2 + 8 != lVar6) {
     plVar11 = (long *)(lVar6 + 0x38);
@@ -713,13 +732,13 @@ void Walaber::AchievementManager::reportAchievement
                     /* try { // try from 0032ffb8 to 0032ffc7 has its CatchHandler @ 0033034c */
       func_0x00169ce0(param_1,param_2,abStack_b0);
       if ((abStack_b0[0] & 1) != 0) {
-        FUN_00166120(uStack_a0);
+        FUN_00166120(pvStack_a0);
       }
       func_0x0016f720(abStack_f0,param_3);
                     /* try { // try from 0032ffe4 to 0032fff7 has its CatchHandler @ 00330338 */
       func_0x00165e90(param_1,appuStack_d8,abStack_f0,1);
       if ((abStack_f0[0] & 1) != 0) {
-        FUN_00166120(uStack_e0);
+        FUN_00166120(pvStack_e0);
       }
                     /* try { // try from 00330008 to 00330013 has its CatchHandler @ 00330364 */
       uVar7 = func_0x0016b4e0();
@@ -732,22 +751,22 @@ void Walaber::AchievementManager::reportAchievement
         uStack_90 = 0;
         uStack_8f = 0;
         puStack_88 = (undefined1 *)0x0;
-        auStack_158[3] = 0;
-        auStack_158[4] = 0;
+        auStack_140[0] = 0;
+        auStack_140[1] = 0;
         pcStack_130 = (char *)0x0;
                     /* try { // try from 0033003c to 00330043 has its CatchHandler @ 00330320 */
         pcStack_130 = (char *)FUN_00164060(0x20);
-        auStack_158[4] = 0x1b;
-        auStack_158[3] = 0x21;
+        auStack_140[1] = 0x1b;
+        auStack_140[0] = 0x21;
         builtin_strncpy(pcStack_130,"ACHIEVEMENT_UNLOCKED_PREFIX",0x1c);
                     /* try { // try from 00330070 to 0033007b has its CatchHandler @ 00330308 */
-        func_0x0016e7e0(abStack_128,auStack_158 + 3);
+        func_0x0016e7e0(abStack_128,auStack_140);
         auStack_158[1] = 0;
-        auStack_158[2] = 0;
+        pvStack_148 = (void *)0x0;
         auStack_158[0] = 0x2002;
                     /* try { // try from 00330098 to 003300a3 has its CatchHandler @ 003302e0 */
         puVar8 = (ulong *)FUN_00167eb0(abStack_128,(ulong)auStack_158 | 1,1);
-        uStack_100 = puVar8[2];
+        pvStack_100 = (void *)puVar8[2];
         uStack_108 = puVar8[1];
         uStack_110 = *puVar8;
         puVar8[1] = 0;
@@ -758,15 +777,15 @@ void Walaber::AchievementManager::reportAchievement
                     /* try { // try from 003300c8 to 003300d7 has its CatchHandler @ 003302b0 */
         func_0x0016e7e0(abStack_170,abStack_188);
         uVar1 = (ulong)(abStack_170[0] >> 1);
-        uVar4 = (ulong)abStack_170 | 1;
+        pvVar2 = (void *)((ulong)abStack_170 | 1);
         if ((abStack_170[0] & 1) != 0) {
           uVar1 = uStack_168;
-          uVar4 = uStack_160;
+          pvVar2 = pvStack_160;
         }
                     /* try { // try from 003300f4 to 003300fb has its CatchHandler @ 00330298 */
-        pbVar9 = (byte *)FUN_00167eb0(&uStack_110,uVar4,uVar1);
-        uVar7 = *(undefined8 *)(pbVar9 + 0x10);
-        bVar2 = *pbVar9;
+        pbVar9 = (byte *)FUN_00167eb0(&uStack_110,pvVar2,uVar1);
+        pvVar2 = *(void **)(pbVar9 + 0x10);
+        bVar3 = *pbVar9;
         uStack_70 = (undefined7)((ulong)*(undefined8 *)(pbVar9 + 8) >> 8);
         uStack_78 = (undefined7)*(undefined8 *)(pbVar9 + 1);
         uStack_71 = (undefined1)((ulong)*(undefined8 *)(pbVar9 + 1) >> 0x38);
@@ -810,24 +829,24 @@ void Walaber::AchievementManager::reportAchievement
         uStack_90 = uStack_71;
         uStack_71 = 0;
         uStack_70 = 0;
-        bStack_98 = bVar2;
-        puStack_88 = (undefined1 *)uVar7;
+        bStack_98 = bVar3;
+        puStack_88 = pvVar2;
         if ((abStack_170[0] & 1) != 0) {
-          FUN_00166120(uStack_160);
+          FUN_00166120(pvStack_160);
         }
         if ((abStack_188[0] & 1) != 0) {
-          FUN_00166120(uStack_178);
+          FUN_00166120(pvStack_178);
         }
         if ((uStack_110 & 1) != 0) {
-          FUN_00166120(uStack_100);
+          FUN_00166120(pvStack_100);
         }
         if ((auStack_158[0] & 1) != 0) {
-          FUN_00166120(auStack_158[2]);
+          FUN_00166120(pvStack_148);
         }
         if ((abStack_128[0] & 1) != 0) {
-          FUN_00166120(uStack_118);
+          FUN_00166120(pvStack_118);
         }
-        if ((auStack_158[3] & 1) != 0) {
+        if ((auStack_140[0] & 1) != 0) {
           FUN_00166120(pcStack_130);
         }
         uStack_80 = *(undefined4 *)(param_2 + 0x68);
@@ -853,7 +872,7 @@ void Walaber::AchievementManager::reportAchievement
   }
   uVar7 = 0;
 LAB_00330260:
-  if (*(long *)(lVar3 + 0x28) != lVar10) {
+  if (*(long *)(lVar4 + 0x28) != lVar10) {
     FUN_00164ff0(uVar7);
     return;
   }
@@ -876,33 +895,37 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
   byte *pbVar1;
   long lVar2;
   undefined8 *puVar3;
-  ulong uVar4;
+  void *pvVar4;
   undefined2 *puVar5;
   uint uVar6;
   ulong *puVar7;
   ulong uVar8;
-  ulong auStack_110 [7];
+  ulong auStack_110 [2];
+  void *pvStack_100;
+  ulong auStack_f8 [2];
+  void *pvStack_e8;
+  ulong uStack_e0;
   ulong uStack_d8;
-  ulong uStack_d0;
+  void *pvStack_d0;
   ulong uStack_c0;
   ulong uStack_b8;
-  ulong uStack_b0;
+  void *pvStack_b0;
   ulong uStack_a0;
   ulong uStack_98;
-  ulong uStack_90;
+  void *pvStack_90;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   byte abStack_60 [8];
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
   func_0x0016d650(abStack_60,8);
   uStack_b8 = 0;
-  uStack_b0 = 0;
+  pvStack_b0 = (void *)0x0;
   uStack_c0 = 0x203d2006;
   uVar8 = (ulong)(DAT_0072d760 >> 1);
   puVar3 = &DAT_0072d761;
@@ -912,35 +935,35 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
   }
                     /* try { // try from 00330410 to 0033041b has its CatchHandler @ 003306ac */
   puVar7 = (ulong *)FUN_00164fb0(&uStack_c0,0,puVar3,uVar8);
-  uStack_90 = puVar7[2];
+  pvStack_90 = (void *)puVar7[2];
   uStack_98 = puVar7[1];
   uStack_a0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   uVar8 = (ulong)(abStack_60[0] >> 1);
-  uVar4 = (ulong)abStack_60 | 1;
+  pvVar4 = (void *)((ulong)abStack_60 | 1);
   if ((abStack_60[0] & 1) != 0) {
     uVar8 = uStack_58;
-    uVar4 = uStack_50;
+    pvVar4 = pvStack_50;
   }
                     /* try { // try from 00330450 to 00330457 has its CatchHandler @ 00330694 */
-  puVar7 = (ulong *)FUN_00167eb0(&uStack_a0,uVar4,uVar8);
-  uStack_70 = puVar7[2];
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_a0,pvVar4,uVar8);
+  pvStack_70 = (void *)puVar7[2];
   uStack_78 = puVar7[1];
   uStack_80 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   if ((uStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   if ((uStack_c0 & 1) != 0) {
-    FUN_00166120(uStack_b0);
+    FUN_00166120(pvStack_b0);
   }
-  auStack_110[4] = 0;
-  auStack_110[5] = 0;
-  auStack_110[3] = 0x27203d2008;
+  auStack_f8[1] = 0;
+  pvStack_e8 = (void *)0x0;
+  auStack_f8[0] = 0x27203d2008;
   uVar8 = DAT_0072d6d8;
   puVar5 = DAT_0072d6e0;
   if ((AchievementDBFieldNames & 1) == 0) {
@@ -948,10 +971,10 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
     puVar5 = &DAT_0072d6d1;
   }
                     /* try { // try from 003304c8 to 003304d3 has its CatchHandler @ 00330670 */
-  puVar7 = (ulong *)FUN_00164fb0(auStack_110 + 3,0,puVar5,uVar8);
-  uStack_d0 = puVar7[2];
+  puVar7 = (ulong *)FUN_00164fb0(auStack_f8,0,puVar5,uVar8);
+  pvStack_d0 = (void *)puVar7[2];
   uStack_d8 = puVar7[1];
-  auStack_110[6] = *puVar7;
+  uStack_e0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
@@ -962,46 +985,46 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
     uVar8 = (ulong)(*param_2 >> 1);
   }
                     /* try { // try from 00330504 to 0033050b has its CatchHandler @ 00330658 */
-  puVar7 = (ulong *)FUN_00167eb0(auStack_110 + 6,pbVar1,uVar8);
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_e0,pbVar1,uVar8);
   uStack_b8 = puVar7[1];
   uStack_c0 = *puVar7;
-  uStack_b0 = puVar7[2];
+  pvStack_b0 = (void *)puVar7[2];
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   auStack_110[1] = 0;
-  auStack_110[2] = 0;
+  pvStack_100 = (void *)0x0;
   auStack_110[0] = 0x2702;
                     /* try { // try from 00330540 to 0033054b has its CatchHandler @ 00330630 */
   puVar7 = (ulong *)FUN_00167eb0(&uStack_c0,(ulong)auStack_110 | 1,1);
-  uStack_90 = puVar7[2];
+  pvStack_90 = (void *)puVar7[2];
   uStack_98 = puVar7[1];
   uStack_a0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   if ((auStack_110[0] & 1) != 0) {
-    FUN_00166120(auStack_110[2]);
+    FUN_00166120(pvStack_100);
   }
   if ((uStack_c0 & 1) != 0) {
-    FUN_00166120(uStack_b0);
+    FUN_00166120(pvStack_b0);
   }
-  if ((auStack_110[6] & 1) != 0) {
-    FUN_00166120(uStack_d0);
+  if ((uStack_e0 & 1) != 0) {
+    FUN_00166120(pvStack_d0);
   }
-  if ((auStack_110[3] & 1) != 0) {
-    FUN_00166120(auStack_110[5]);
+  if ((auStack_f8[0] & 1) != 0) {
+    FUN_00166120(pvStack_e8);
   }
                     /* try { // try from 003305ac to 003305b7 has its CatchHandler @ 0033061c */
   uVar6 = func_0x00170b80(*(undefined4 *)(param_1 + 0x48),param_1 + 0x50,&uStack_80,&uStack_a0);
   if ((uStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   if ((uStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
     return (ulong)(uVar6 & 1);
@@ -1042,7 +1065,7 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
   long lVar4;
   long *plVar5;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -1054,7 +1077,7 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
                     /* try { // try from 00330880 to 0033088f has its CatchHandler @ 0033091c */
     func_0x00169ce0(0,param_1,abStack_50);
     if ((abStack_50[0] & 1) != 0) {
-      FUN_00166120(uStack_40);
+      FUN_00166120(pvStack_40);
     }
     plVar3 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
@@ -1101,7 +1124,7 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
   long lVar5;
   long *plVar6;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined **appuStack_70 [2];
   undefined1 auStack_60 [24];
   long lStack_48;
@@ -1116,7 +1139,7 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
                     /* try { // try from 003309a4 to 003309b3 has its CatchHandler @ 00330a5c */
         func_0x00165e90(*(undefined4 *)(plVar6[7] + 0x78),appuStack_70,abStack_88,0);
         if ((abStack_88[0] & 1) != 0) {
-          FUN_00166120(uStack_78);
+          FUN_00166120(pvStack_78);
         }
                     /* try { // try from 003309c4 to 003309cf has its CatchHandler @ 00330a74 */
         uVar2 = func_0x0016b4e0();

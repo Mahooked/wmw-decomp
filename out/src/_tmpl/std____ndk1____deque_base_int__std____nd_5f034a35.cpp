@@ -17,7 +17,7 @@ void std::__ndk1::__deque_base<int,std::__ndk1::allocator<int>>::~__deque_base(l
   func_0x00170a20();
   puVar1 = *(undefined8 **)(param_1 + 0x10);
   for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
-    FUN_00166120(*puVar2);
+    FUN_00166120((void *)*puVar2);
   }
   func_0x00163510(param_1);
   return;
@@ -60,7 +60,7 @@ void std::__ndk1::__deque_base<int,std::__ndk1::allocator<int>>::clear(long para
   }
   *(undefined8 *)(param_1 + 0x28) = 0;
   while (uVar1 = lVar4 >> 3, 2 < uVar1) {
-    FUN_00166120(*puVar2);
+    FUN_00166120((void *)*puVar2);
     puVar2 = (undefined8 *)(*(long *)(param_1 + 8) + 8);
     *(undefined8 **)(param_1 + 8) = puVar2;
     lVar4 = *(long *)(param_1 + 0x10) - (long)puVar2;

@@ -57,7 +57,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -70,8 +70,8 @@ void std::__ndk1::
     func_0x0016e700();
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

@@ -11,30 +11,32 @@
 
 void std::__ndk1::
      __vector_base<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
+  void *pvVar4;
   
-  lVar2 = *param_1;
-  if (lVar2 != 0) {
-    lVar3 = lVar2;
-    lVar1 = param_1[1];
-    if (param_1[1] != lVar2) {
+  pvVar3 = (void *)*param_1;
+  if (pvVar3 != (void *)0x0) {
+    pvVar1 = pvVar3;
+    pvVar2 = (void *)param_1[1];
+    if ((void *)param_1[1] != pvVar3) {
       do {
-        lVar3 = lVar1 + -0x20;
-        if (*(long *)(lVar1 + -0x18) != 0) {
-          *(long *)(lVar1 + -0x10) = *(long *)(lVar1 + -0x18);
-          FUN_00166120();
+        pvVar1 = *(void **)((long)pvVar2 + -0x18);
+        pvVar4 = (void *)((long)pvVar2 + -0x20);
+        if (pvVar1 != (void *)0x0) {
+          *(void **)((long)pvVar2 + -0x10) = pvVar1;
+          FUN_00166120(pvVar1);
         }
-        lVar1 = lVar3;
-      } while (lVar2 != lVar3);
-      lVar3 = *param_1;
+        pvVar2 = pvVar4;
+      } while (pvVar3 != pvVar4);
+      pvVar1 = (void *)*param_1;
     }
-    param_1[1] = lVar2;
-    FUN_00166120(lVar3);
+    param_1[1] = pvVar3;
+    FUN_00166120(pvVar1);
     return;
   }
   return;

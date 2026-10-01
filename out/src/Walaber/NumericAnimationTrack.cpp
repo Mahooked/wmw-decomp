@@ -81,32 +81,33 @@ void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *p
 
 /* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::NumericAnimationTrack const&) */
 
-void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2)
+void Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber__NumericAnimationTrack *p0)
 
 {
+  long *in_x1;
   int *piVar1;
   long lVar2;
   
-  lVar2 = *param_2;
-  *param_1 = lVar2;
-  piVar1 = (int *)param_2[1];
-  param_1[1] = (long)piVar1;
+  lVar2 = *in_x1;
+  *(long *)p0 = lVar2;
+  piVar1 = (int *)in_x1[1];
+  *(int **)(p0 + 8) = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_1[4] = 0;
-  if ((int)param_2[2] == 1) {
-    lVar2 = param_2[3];
-    *(undefined4 *)(param_1 + 2) = 1;
+  *(undefined8 *)(p0 + 0x20) = 0;
+  if ((int)in_x1[2] == 1) {
+    lVar2 = in_x1[3];
+    *(undefined4 *)(p0 + 0x10) = 1;
   }
   else {
-    if ((int)param_2[2] != 0) {
+    if ((int)in_x1[2] != 0) {
       return;
     }
-    lVar2 = param_2[3];
-    *(undefined4 *)(param_1 + 2) = 0;
+    lVar2 = in_x1[3];
+    *(undefined4 *)(p0 + 0x10) = 0;
   }
-  param_1[3] = lVar2;
+  *(long *)(p0 + 0x18) = lVar2;
   return;
 }
 
@@ -119,25 +120,27 @@ void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *p
 /* Walaber::NumericAnimationTrack::TEMPNAMEPLACEHOLDERVALUE(Walaber::NumericAnimationTrack const&)
     */
 
-long Walaber::NumericAnimationTrack::operator=(long param_1,long param_2)
+Walaber__NumericAnimationTrack *
+Walaber::NumericAnimationTrack::operator=(Walaber__NumericAnimationTrack *p0)
 
 {
+  long in_x1;
   undefined8 uVar1;
   
   func_0x00170b50();
-  if (*(int *)(param_2 + 0x10) == 1) {
-    uVar1 = *(undefined8 *)(param_2 + 0x18);
-    *(undefined4 *)(param_1 + 0x10) = 1;
+  if (*(int *)(in_x1 + 0x10) == 1) {
+    uVar1 = *(undefined8 *)(in_x1 + 0x18);
+    *(undefined4 *)(p0 + 0x10) = 1;
   }
   else {
-    if (*(int *)(param_2 + 0x10) != 0) {
-      return param_1;
+    if (*(int *)(in_x1 + 0x10) != 0) {
+      return p0;
     }
-    uVar1 = *(undefined8 *)(param_2 + 0x18);
-    *(undefined4 *)(param_1 + 0x10) = 0;
+    uVar1 = *(undefined8 *)(in_x1 + 0x18);
+    *(undefined4 *)(p0 + 0x10) = 0;
   }
-  *(undefined8 *)(param_1 + 0x18) = uVar1;
-  return param_1;
+  *(undefined8 *)(p0 + 0x18) = uVar1;
+  return p0;
 }
 
 
@@ -163,10 +166,12 @@ void Walaber::NumericAnimationTrack::~NumericAnimationTrack(void)
 
 /* Walaber::NumericAnimationTrack::setAnimation(Walaber::Animation*) */
 
-void Walaber::NumericAnimationTrack::setAnimation(long param_1,undefined8 param_2)
+void Walaber::NumericAnimationTrack::setAnimation(Walaber__Animation *p0)
 
 {
-  *(undefined8 *)(param_1 + 0x20) = param_2;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x20) = in_x1;
   return;
 }
 
@@ -246,21 +251,21 @@ void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 par
 
 /* Walaber::NumericAnimationTrack::_curveFinishedLoading(void*) */
 
-void Walaber::NumericAnimationTrack::_curveFinishedLoading(long *param_1)
+void Walaber::NumericAnimationTrack::_curveFinishedLoading(void *p0)
 
 {
   long lVar1;
   long lVar2;
   float fVar3;
   
-  lVar1 = param_1[4];
+  lVar1 = *(long *)((long)p0 + 0x20);
   if (lVar1 != 0) {
-    lVar2 = *(long *)(*param_1 + 8);
+    lVar2 = *(long *)(*(long *)p0 + 8);
     if (lVar2 == 0) {
       fVar3 = 0.0;
     }
     else {
-      fVar3 = *(float *)(*(long *)(*param_1 + 0x18) + lVar2 * 0x18 + -0x18);
+      fVar3 = *(float *)(*(long *)(*(long *)p0 + 0x18) + lVar2 * 0x18 + -0x18);
     }
     if (*(float *)(lVar1 + 200) < fVar3) {
       *(float *)(lVar1 + 200) = fVar3;

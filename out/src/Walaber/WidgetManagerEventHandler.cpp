@@ -23,10 +23,11 @@ void Walaber::WidgetManagerEventHandler::handleFocus(void)
 /* Walaber::WidgetManagerEventHandler::handleEvent(int, Walaber::Widget::WidgetActionRet const&,
    Walaber::Widget*) */
 
-void Walaber::WidgetManagerEventHandler::handleEvent(void)
+int Walaber::WidgetManagerEventHandler::handleEvent
+              (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  return;
+  return p0;
 }
 
 

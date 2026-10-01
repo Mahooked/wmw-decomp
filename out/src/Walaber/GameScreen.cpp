@@ -22,10 +22,10 @@ void Walaber::GameScreen::recreateGraphicsContext(void)
 
 /* Walaber::GameScreen::touchLost(int) */
 
-void Walaber::GameScreen::touchLost(void)
+int Walaber::GameScreen::touchLost(int p0)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -36,7 +36,7 @@ void Walaber::GameScreen::touchLost(void)
 
 /* Walaber::GameScreen::accelerometerChanged(float, float, float) */
 
-void Walaber::GameScreen::accelerometerChanged(void)
+void Walaber::GameScreen::accelerometerChanged(float p0,float p1,float p2)
 
 {
   return;
@@ -64,10 +64,10 @@ undefined8 Walaber::GameScreen::consumesInput(void)
 
 /* Walaber::GameScreen::notifyTransitionPhaseChange(unsigned int) */
 
-void Walaber::GameScreen::notifyTransitionPhaseChange(void)
+uint Walaber::GameScreen::notifyTransitionPhaseChange(uint p0)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -92,7 +92,7 @@ void Walaber::GameScreen::regainedTop(void)
 
 /* Walaber::GameScreen::loadPropertyList(Walaber::PropertyList const&) */
 
-void Walaber::GameScreen::loadPropertyList(void)
+void Walaber::GameScreen::loadPropertyList(Walaber__PropertyList *p0)
 
 {
   return;

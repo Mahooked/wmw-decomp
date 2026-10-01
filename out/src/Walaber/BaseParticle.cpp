@@ -8,25 +8,26 @@
 
 /* Walaber::BaseParticle::BaseParticle(Walaber::BaseParticle const&) */
 
-void Walaber::BaseParticle::BaseParticle(undefined4 *param_1,undefined4 *param_2)
+void Walaber::BaseParticle::BaseParticle(Walaber__BaseParticle *p0)
 
 {
+  undefined4 *in_x1;
   undefined8 uVar1;
   
-  *param_1 = *param_2;
-  param_1[1] = param_2[1];
-  param_1[2] = param_2[2];
-  param_1[3] = param_2[3];
-  param_1[4] = param_2[4];
-  param_1[5] = param_2[5];
-  param_1[6] = param_2[6];
-  param_1[7] = param_2[7];
-  uVar1 = *(undefined8 *)(param_2 + 8);
-  *(undefined8 *)(param_1 + 10) = *(undefined8 *)(param_2 + 10);
-  *(undefined8 *)(param_1 + 8) = uVar1;
-  param_1[0xc] = param_2[0xc];
-  *(undefined1 *)(param_1 + 0xd) = *(undefined1 *)(param_2 + 0xd);
-  *(undefined1 *)((long)param_1 + 0x35) = *(undefined1 *)((long)param_2 + 0x35);
+  *(undefined4 *)p0 = *in_x1;
+  *(undefined4 *)(p0 + 4) = in_x1[1];
+  *(undefined4 *)(p0 + 8) = in_x1[2];
+  *(undefined4 *)(p0 + 0xc) = in_x1[3];
+  *(undefined4 *)(p0 + 0x10) = in_x1[4];
+  *(undefined4 *)(p0 + 0x14) = in_x1[5];
+  *(undefined4 *)(p0 + 0x18) = in_x1[6];
+  *(undefined4 *)(p0 + 0x1c) = in_x1[7];
+  uVar1 = *(undefined8 *)(in_x1 + 8);
+  *(undefined8 *)(p0 + 0x28) = *(undefined8 *)(in_x1 + 10);
+  *(undefined8 *)(p0 + 0x20) = uVar1;
+  *(undefined4 *)(p0 + 0x30) = in_x1[0xc];
+  p0[0x34] = *(Walaber__BaseParticle *)(in_x1 + 0xd);
+  p0[0x35] = *(Walaber__BaseParticle *)((long)in_x1 + 0x35);
   return;
 }
 

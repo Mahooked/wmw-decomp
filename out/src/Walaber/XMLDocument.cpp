@@ -91,7 +91,7 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
 
 /* Walaber::XMLDocument::_readFileCallback(void*) */
 
-void Walaber::XMLDocument::_readFileCallback(long param_1,long param_2)
+void Walaber::XMLDocument::_readFileCallback(void *p0)
 
 {
   undefined8 uVar1;
@@ -99,35 +99,44 @@ void Walaber::XMLDocument::_readFileCallback(long param_1,long param_2)
   long lVar3;
   ulong uVar4;
   long *plVar5;
+  long in_x1;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong extraout_x1_01;
+  ulong extraout_x1_02;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
-  if (*(long *)(param_2 + 0x20) != 0) {
-    uVar4 = func_0x00173810(*(undefined8 *)(param_2 + 0x60),&ROOT_NODE_NAME_KEY);
-    uVar1 = *(undefined8 *)(param_2 + 0x20);
-    uVar2 = *(undefined8 *)(param_2 + 0x28);
+  if (*(long *)(in_x1 + 0x20) != 0) {
+    uVar4 = func_0x00173810(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
+    uVar1 = *(undefined8 *)(in_x1 + 0x20);
+    uVar2 = *(undefined8 *)(in_x1 + 0x28);
     if ((uVar4 & 1) == 0) {
-      func_0x00165ad0(param_1,uVar1,uVar2);
+      func_0x00165ad0(p0,uVar1,uVar2);
+      uVar4 = extraout_x1_01;
     }
     else {
-      func_0x00167060(*(undefined8 *)(param_2 + 0x60),&ROOT_NODE_NAME_KEY);
+      func_0x00167060(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
       func_0x00162cf0(abStack_60);
                     /* try { // try from 003d6d38 to 003d6d4b has its CatchHandler @ 003d6dd0 */
-      func_0x00166f50(param_1,uVar1,uVar2,abStack_60);
+      func_0x00166f50(p0,uVar1,uVar2,abStack_60);
+      uVar4 = extraout_x1;
       if ((abStack_60[0] & 1) != 0) {
-        FUN_00166120(uStack_50);
+        FUN_00166120(pvStack_50);
+        uVar4 = extraout_x1_00;
       }
     }
-    plVar5 = *(long **)(param_1 + 0x10);
+    plVar5 = *(long **)((long)p0 + 0x10);
     if (plVar5 != (long *)0x0) {
-      abStack_60[0] = *(long *)(param_1 + 8) != 0;
+      abStack_60[0] = *(long *)((long)p0 + 8) != 0;
       (**(code **)(*plVar5 + 0x10))(plVar5,abStack_60);
+      uVar4 = extraout_x1_02;
     }
-    if (*(long *)(param_2 + 0x20) != 0) {
-      FUN_001639e0();
+    if (*(void **)(in_x1 + 0x20) != (void *)0x0) {
+      FUN_001639e0(*(void **)(in_x1 + 0x20),uVar4);
     }
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
@@ -236,13 +245,41 @@ void Walaber::XMLDocument::XMLDocument
 
 /* Walaber::XMLDocument::XMLDocument(char*, unsigned long) */
 
-void Walaber::XMLDocument::XMLDocument(undefined8 *param_1)
+void Walaber::XMLDocument::XMLDocument(char *p0,ulong p1)
 
 {
-  param_1[1] = 0;
-  *param_1 = 0;
-  param_1[3] = 0;
-  param_1[2] = 0;
+  p0[8] = '\0';
+  p0[9] = '\0';
+  p0[10] = '\0';
+  p0[0xb] = '\0';
+  p0[0xc] = '\0';
+  p0[0xd] = '\0';
+  p0[0xe] = '\0';
+  p0[0xf] = '\0';
+  p0[0] = '\0';
+  p0[1] = '\0';
+  p0[2] = '\0';
+  p0[3] = '\0';
+  p0[4] = '\0';
+  p0[5] = '\0';
+  p0[6] = '\0';
+  p0[7] = '\0';
+  p0[0x18] = '\0';
+  p0[0x19] = '\0';
+  p0[0x1a] = '\0';
+  p0[0x1b] = '\0';
+  p0[0x1c] = '\0';
+  p0[0x1d] = '\0';
+  p0[0x1e] = '\0';
+  p0[0x1f] = '\0';
+  p0[0x10] = '\0';
+  p0[0x11] = '\0';
+  p0[0x12] = '\0';
+  p0[0x13] = '\0';
+  p0[0x14] = '\0';
+  p0[0x15] = '\0';
+  p0[0x16] = '\0';
+  p0[0x17] = '\0';
                     /* try { // try from 003d7034 to 003d7037 has its CatchHandler @ 003d7044 */
   func_0x00165ad0();
   return;
@@ -256,22 +293,22 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1)
 
 /* Walaber::XMLDocument::_buildXMLObject(char*, unsigned long) */
 
-void Walaber::XMLDocument::_buildXMLObject
-               (undefined8 *param_1,undefined8 param_2,undefined4 param_3)
+void Walaber::XMLDocument::_buildXMLObject(char *p0,ulong p1)
 
 {
   undefined8 uVar1;
   long lVar2;
+  undefined4 in_w2;
   
-  uVar1 = func_0x00169030(param_2,param_3,0,0,0);
-  *param_1 = uVar1;
+  uVar1 = func_0x00169030(p1,in_w2,0,0,0);
+  *(undefined8 *)p0 = uVar1;
   lVar2 = FUN_00163ef0();
   if (lVar2 == 0) {
     FUN_00166b60("ERROR! no root element in XML");
-    FUN_00170230(*param_1);
+    FUN_00170230(*(undefined8 *)p0);
     func_0x0016b480();
   }
-  param_1[1] = lVar2;
+  *(long *)(p0 + 8) = lVar2;
   return;
 }
 
@@ -312,7 +349,7 @@ void Walaber::XMLDocument::_buildXMLObject
   long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -322,7 +359,7 @@ void Walaber::XMLDocument::_buildXMLObject
   uVar2 = func_0x00161b90(param_2,param_3,abStack_50,param_1);
   *(undefined8 *)(param_1 + 8) = uVar2;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;

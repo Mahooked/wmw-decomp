@@ -8,18 +8,18 @@
 
 /* Walaber::SoundResource::SoundResource(FMOD::Sound*) */
 
-void Walaber::SoundResource::SoundResource(undefined8 *param_1,undefined8 param_2)
+void Walaber::SoundResource::SoundResource(FMOD__Sound *p0)
 
 {
   long lVar1;
-  undefined1 auStack_68 [64];
-  long lStack_28;
+  undefined8 in_x1;
+  long lVar2;
   
   lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
-  *param_1 = param_2;
-  func_0x00167df0(param_2,auStack_68,0x40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
+  lVar2 = *(long *)(lVar1 + 0x28);
+  *(undefined8 *)p0 = in_x1;
+  func_0x00167df0();
+  if (*(long *)(lVar1 + 0x28) == lVar2) {
     return;
   }
   FUN_00164ff0();

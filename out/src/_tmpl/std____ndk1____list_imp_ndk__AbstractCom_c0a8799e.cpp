@@ -14,19 +14,21 @@ void std::__ndk1::__list_imp<ndk::AbstractCommand*,std::__ndk1::allocator<ndk::A
 
 {
   long lVar1;
+  long *p0;
   long lVar2;
   long *plVar3;
   
   if (param_1[2] != 0) {
     lVar1 = *param_1;
-    plVar3 = (long *)param_1[1];
-    lVar2 = *plVar3;
+    p0 = (long *)param_1[1];
+    lVar2 = *p0;
     *(undefined8 *)(lVar2 + 8) = *(undefined8 *)(lVar1 + 8);
     **(long **)(lVar1 + 8) = lVar2;
     param_1[2] = 0;
-    while (plVar3 != param_1) {
-      plVar3 = (long *)plVar3[1];
-      FUN_00166120();
+    while (p0 != param_1) {
+      plVar3 = (long *)p0[1];
+      FUN_00166120(p0);
+      p0 = plVar3;
     }
   }
   return;

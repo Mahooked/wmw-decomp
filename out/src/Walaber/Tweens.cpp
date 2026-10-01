@@ -8,10 +8,10 @@
 
 /* Walaber::Tweens::linearTween(float, float, float, float) */
 
-float Walaber::Tweens::linearTween(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::linearTween(float p0,float p1,float p2,float p3)
 
 {
-  return (param_1 * param_3) / param_4 + param_2;
+  return (p0 * p2) / p3 + p1;
 }
 
 
@@ -201,10 +201,10 @@ LAB_003e7068:
 
 /* Walaber::Tweens::quadraticEaseIn(float, float, float, float) */
 
-float Walaber::Tweens::quadraticEaseIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quadraticEaseIn(float p0,float p1,float p2,float p3)
 
 {
-  return (param_1 / param_4) * (param_1 / param_4) * param_3 + param_2;
+  return (p0 / p3) * (p0 / p3) * p2 + p1;
 }
 
 
@@ -215,10 +215,10 @@ float Walaber::Tweens::quadraticEaseIn(float param_1,float param_2,float param_3
 
 /* Walaber::Tweens::quadraticEaseOut(float, float, float, float) */
 
-float Walaber::Tweens::quadraticEaseOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quadraticEaseOut(float p0,float p1,float p2,float p3)
 
 {
-  return param_2 - (param_1 / param_4) * param_3 * (param_1 / param_4 + -2.0);
+  return p1 - (p0 / p3) * p2 * (p0 / p3 + -2.0);
 }
 
 
@@ -229,11 +229,13 @@ float Walaber::Tweens::quadraticEaseOut(float param_1,float param_2,float param_
 
 /* Walaber::Tweens::cubicEaseIn(float, float, float, float) */
 
-float Walaber::Tweens::cubicEaseIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::cubicEaseIn(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / param_4;
-  return param_1 * param_1 * param_1 * param_3 + param_2;
+  float fVar1;
+  
+  fVar1 = p0 / p3;
+  return fVar1 * fVar1 * fVar1 * p2 + p1;
 }
 
 
@@ -244,13 +246,13 @@ float Walaber::Tweens::cubicEaseIn(float param_1,float param_2,float param_3,flo
 
 /* Walaber::Tweens::cubicEaseOut(float, float, float, float) */
 
-float Walaber::Tweens::cubicEaseOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::cubicEaseOut(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
   
-  fVar1 = param_1 / param_4 + -1.0;
-  return (fVar1 * fVar1 * fVar1 + 1.0) * param_3 + param_2;
+  fVar1 = p0 / p3 + -1.0;
+  return (fVar1 * fVar1 * fVar1 + 1.0) * p2 + p1;
 }
 
 
@@ -261,11 +263,13 @@ float Walaber::Tweens::cubicEaseOut(float param_1,float param_2,float param_3,fl
 
 /* Walaber::Tweens::quarticEaseIn(float, float, float, float) */
 
-float Walaber::Tweens::quarticEaseIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quarticEaseIn(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / param_4;
-  return param_1 * param_1 * param_1 * param_1 * param_3 + param_2;
+  float fVar1;
+  
+  fVar1 = p0 / p3;
+  return fVar1 * fVar1 * fVar1 * fVar1 * p2 + p1;
 }
 
 
@@ -276,13 +280,13 @@ float Walaber::Tweens::quarticEaseIn(float param_1,float param_2,float param_3,f
 
 /* Walaber::Tweens::quarticEaseOut(float, float, float, float) */
 
-float Walaber::Tweens::quarticEaseOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quarticEaseOut(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
   
-  fVar1 = param_1 / param_4 + -1.0;
-  return param_2 - (fVar1 * fVar1 * fVar1 * fVar1 + -1.0) * param_3;
+  fVar1 = p0 / p3 + -1.0;
+  return p1 - (fVar1 * fVar1 * fVar1 * fVar1 + -1.0) * p2;
 }
 
 
@@ -293,11 +297,13 @@ float Walaber::Tweens::quarticEaseOut(float param_1,float param_2,float param_3,
 
 /* Walaber::Tweens::quinticEaseIn(float, float, float, float) */
 
-float Walaber::Tweens::quinticEaseIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quinticEaseIn(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / param_4;
-  return param_1 * param_1 * param_1 * param_1 * param_1 * param_3 + param_2;
+  float fVar1;
+  
+  fVar1 = p0 / p3;
+  return fVar1 * fVar1 * fVar1 * fVar1 * fVar1 * p2 + p1;
 }
 
 
@@ -308,13 +314,13 @@ float Walaber::Tweens::quinticEaseIn(float param_1,float param_2,float param_3,f
 
 /* Walaber::Tweens::quinticEaseOut(float, float, float, float) */
 
-float Walaber::Tweens::quinticEaseOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quinticEaseOut(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
   
-  fVar1 = param_1 / param_4 + -1.0;
-  return (fVar1 * fVar1 * fVar1 * fVar1 * fVar1 + 1.0) * param_3 + param_2;
+  fVar1 = p0 / p3 + -1.0;
+  return (fVar1 * fVar1 * fVar1 * fVar1 * fVar1 + 1.0) * p2 + p1;
 }
 
 
@@ -325,17 +331,19 @@ float Walaber::Tweens::quinticEaseOut(float param_1,float param_2,float param_3,
 
 /* Walaber::Tweens::quadraticEaseInOut(float, float, float, float) */
 
-float Walaber::Tweens::quadraticEaseInOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quadraticEaseInOut(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / (param_4 * 0.5);
-  if (1.0 <= param_1) {
-    param_1 = param_3 * -0.5 * ((param_1 + -1.0) * (param_1 + -1.0 + -2.0) + -1.0);
+  float fVar1;
+  
+  fVar1 = p0 / (p3 * 0.5);
+  if (1.0 <= fVar1) {
+    fVar1 = p2 * -0.5 * ((fVar1 + -1.0) * (fVar1 + -1.0 + -2.0) + -1.0);
   }
   else {
-    param_1 = param_1 * param_3 * 0.5 * param_1;
+    fVar1 = fVar1 * p2 * 0.5 * fVar1;
   }
-  return param_1 + param_2;
+  return fVar1 + p1;
 }
 
 
@@ -346,19 +354,22 @@ float Walaber::Tweens::quadraticEaseInOut(float param_1,float param_2,float para
 
 /* Walaber::Tweens::quadraticEaseOutIn(float, float, float, float) */
 
-float Walaber::Tweens::quadraticEaseOutIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quadraticEaseOutIn(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / (param_4 * 0.5);
-  if (1.0 <= param_1) {
-    param_3 = param_3 * 0.5;
-    param_1 = (param_1 + -1.0) * (param_1 + -1.0) + 1.0;
+  float fVar1;
+  float fVar2;
+  
+  fVar1 = p0 / (p3 * 0.5);
+  if (1.0 <= fVar1) {
+    fVar2 = p2 * 0.5;
+    fVar1 = (fVar1 + -1.0) * (fVar1 + -1.0) + 1.0;
   }
   else {
-    param_3 = param_3 * -0.5;
-    param_1 = param_1 * (param_1 + -2.0);
+    fVar2 = p2 * -0.5;
+    fVar1 = fVar1 * (fVar1 + -2.0);
   }
-  return param_3 * param_1 + param_2;
+  return fVar2 * fVar1 + p1;
 }
 
 
@@ -369,18 +380,20 @@ float Walaber::Tweens::quadraticEaseOutIn(float param_1,float param_2,float para
 
 /* Walaber::Tweens::cubicEaseInOut(float, float, float, float) */
 
-float Walaber::Tweens::cubicEaseInOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::cubicEaseInOut(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / (param_4 * 0.5);
-  if (1.0 <= param_1) {
-    param_1 = param_1 + -2.0;
-    param_1 = param_1 * param_1 * param_1 + 2.0;
+  float fVar1;
+  
+  fVar1 = p0 / (p3 * 0.5);
+  if (1.0 <= fVar1) {
+    fVar1 = fVar1 + -2.0;
+    fVar1 = fVar1 * fVar1 * fVar1 + 2.0;
   }
   else {
-    param_1 = param_1 * param_1 * param_1;
+    fVar1 = fVar1 * fVar1 * fVar1;
   }
-  return param_3 * 0.5 * param_1 + param_2;
+  return p2 * 0.5 * fVar1 + p1;
 }
 
 
@@ -391,13 +404,13 @@ float Walaber::Tweens::cubicEaseInOut(float param_1,float param_2,float param_3,
 
 /* Walaber::Tweens::cubicEaseOutIn(float, float, float, float) */
 
-float Walaber::Tweens::cubicEaseOutIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::cubicEaseOutIn(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
   
-  fVar1 = param_1 / (param_4 * 0.5) + -1.0;
-  return param_3 * 0.5 * (fVar1 * fVar1 * fVar1 + 1.0) + param_2;
+  fVar1 = p0 / (p3 * 0.5) + -1.0;
+  return p2 * 0.5 * (fVar1 * fVar1 * fVar1 + 1.0) + p1;
 }
 
 
@@ -408,20 +421,23 @@ float Walaber::Tweens::cubicEaseOutIn(float param_1,float param_2,float param_3,
 
 /* Walaber::Tweens::quarticEaseInOut(float, float, float, float) */
 
-float Walaber::Tweens::quarticEaseInOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quarticEaseInOut(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / (param_4 * 0.5);
-  if (1.0 <= param_1) {
-    param_1 = param_1 + -2.0;
-    param_3 = param_3 * -0.5;
-    param_1 = param_1 * param_1 * param_1 * param_1 + -2.0;
+  float fVar1;
+  float fVar2;
+  
+  fVar1 = p0 / (p3 * 0.5);
+  if (1.0 <= fVar1) {
+    fVar1 = fVar1 + -2.0;
+    fVar2 = p2 * -0.5;
+    fVar1 = fVar1 * fVar1 * fVar1 * fVar1 + -2.0;
   }
   else {
-    param_3 = param_3 * 0.5;
-    param_1 = param_1 * param_1 * param_1 * param_1;
+    fVar2 = p2 * 0.5;
+    fVar1 = fVar1 * fVar1 * fVar1 * fVar1;
   }
-  return param_3 * param_1 + param_2;
+  return fVar2 * fVar1 + p1;
 }
 
 
@@ -432,22 +448,24 @@ float Walaber::Tweens::quarticEaseInOut(float param_1,float param_2,float param_
 
 /* Walaber::Tweens::quarticEaseOutIn(float, float, float, float) */
 
-float Walaber::Tweens::quarticEaseOutIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quarticEaseOutIn(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
+  float fVar2;
+  float fVar3;
   
-  param_1 = param_1 / (param_4 * 0.5);
+  fVar3 = p0 / (p3 * 0.5);
   fVar1 = 1.0;
-  if (1.0 <= param_1) {
-    param_3 = param_3 * 0.5;
+  if (1.0 <= fVar3) {
+    fVar2 = p2 * 0.5;
   }
   else {
     fVar1 = -1.0;
-    param_3 = param_3 * -0.5;
+    fVar2 = p2 * -0.5;
   }
-  param_1 = param_1 + -1.0;
-  return param_3 * (param_1 * param_1 * param_1 * param_1 + fVar1) + param_2;
+  fVar3 = fVar3 + -1.0;
+  return fVar2 * (fVar3 * fVar3 * fVar3 * fVar3 + fVar1) + p1;
 }
 
 
@@ -458,18 +476,20 @@ float Walaber::Tweens::quarticEaseOutIn(float param_1,float param_2,float param_
 
 /* Walaber::Tweens::quinticEaseInOut(float, float, float, float) */
 
-float Walaber::Tweens::quinticEaseInOut(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quinticEaseInOut(float p0,float p1,float p2,float p3)
 
 {
-  param_1 = param_1 / (param_4 * 0.5);
-  if (1.0 <= param_1) {
-    param_1 = param_1 + -2.0;
-    param_1 = param_1 * param_1 * param_1 * param_1 * param_1 + 2.0;
+  float fVar1;
+  
+  fVar1 = p0 / (p3 * 0.5);
+  if (1.0 <= fVar1) {
+    fVar1 = fVar1 + -2.0;
+    fVar1 = fVar1 * fVar1 * fVar1 * fVar1 * fVar1 + 2.0;
   }
   else {
-    param_1 = param_1 * param_1 * param_1 * param_1 * param_1;
+    fVar1 = fVar1 * fVar1 * fVar1 * fVar1 * fVar1;
   }
-  return param_3 * 0.5 * param_1 + param_2;
+  return p2 * 0.5 * fVar1 + p1;
 }
 
 
@@ -480,13 +500,13 @@ float Walaber::Tweens::quinticEaseInOut(float param_1,float param_2,float param_
 
 /* Walaber::Tweens::quinticEaseOutIn(float, float, float, float) */
 
-float Walaber::Tweens::quinticEaseOutIn(float param_1,float param_2,float param_3,float param_4)
+float Walaber::Tweens::quinticEaseOutIn(float p0,float p1,float p2,float p3)
 
 {
   float fVar1;
   
-  fVar1 = param_1 / (param_4 * 0.5) + -1.0;
-  return param_3 * 0.5 * (fVar1 * fVar1 * fVar1 * fVar1 * fVar1 + 1.0) + param_2;
+  fVar1 = p0 / (p3 * 0.5) + -1.0;
+  return p2 * 0.5 * (fVar1 * fVar1 * fVar1 * fVar1 * fVar1 + 1.0) + p1;
 }
 
 

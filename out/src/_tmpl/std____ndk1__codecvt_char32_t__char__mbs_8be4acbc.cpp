@@ -8,7 +8,7 @@
 
 /* std::__ndk1::codecvt<char32_t, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<char32_t,char,mbstate_t>::~codecvt(undefined8 param_1)
+void std::__ndk1::codecvt<char32_t,char,mbstate_t>::~codecvt(void *param_1)
 
 {
   FUN_00172660();
@@ -128,12 +128,12 @@ void std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_in
    const */
 
 undefined8
-std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -175,11 +175,10 @@ undefined8 std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_always_noconv(void)
    unsigned long) const */
 
 void std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_length
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5)
+               (mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
-  func_0x005d9c08(param_3,param_4,param_5,0x10ffff,0);
+  func_0x005d9c08(p2,p3);
   return;
 }
 

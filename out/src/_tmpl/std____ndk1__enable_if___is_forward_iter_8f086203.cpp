@@ -15,28 +15,31 @@
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::assign<WaterConcept::World::WorldSpoutConnection*>(long *param_1,long param_2,long param_3)
+     ::assign<WaterConcept::World::WorldSpoutConnection*>
+               (WaterConcept__World__WorldSpoutConnection *p0,
+               WaterConcept__World__WorldSpoutConnection *p1)
 
 {
-  undefined8 *puVar1;
+  WaterConcept__World__WorldSpoutConnection *pWVar1;
   byte *pbVar2;
+  WaterConcept__World__WorldSpoutConnection *in_x2;
   ulong uVar3;
   byte *pbVar4;
-  long lVar5;
-  byte *pbVar6;
-  long lVar7;
+  byte *pbVar5;
+  long lVar6;
+  WaterConcept__World__WorldSpoutConnection *pWVar7;
   ulong uVar8;
   
-  pbVar6 = (byte *)*param_1;
-  uVar8 = param_3 - param_2 >> 5;
-  if ((ulong)(param_1[2] - (long)pbVar6 >> 5) < uVar8) {
-    func_0x001691b0(param_1);
+  pbVar5 = *(byte **)p0;
+  uVar8 = (long)in_x2 - (long)p1 >> 5;
+  if ((ulong)(*(long *)(p0 + 0x10) - (long)pbVar5 >> 5) < uVar8) {
+    func_0x001691b0(p0);
     if (uVar8 >> 0x3b != 0) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
-    if ((ulong)(param_1[2] - *param_1 >> 5) < 0x3ffffffffffffff) {
-      uVar3 = param_1[2] - *param_1 >> 4;
+    if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 5) < 0x3ffffffffffffff) {
+      uVar3 = *(long *)(p0 + 0x10) - *(long *)p0 >> 4;
       if (uVar8 <= uVar3) {
         uVar8 = uVar3;
       }
@@ -44,53 +47,53 @@ void std::__ndk1::
     else {
       uVar8 = 0x7ffffffffffffff;
     }
-    func_0x00164a50(param_1,uVar8);
-    if (param_2 != param_3) {
-      lVar7 = param_1[1];
+    func_0x00164a50(p0,uVar8);
+    if (p1 != in_x2) {
+      lVar6 = *(long *)(p0 + 8);
       do {
-        func_0x0016f720(lVar7,param_2);
-        puVar1 = (undefined8 *)(param_2 + 0x18);
-        param_2 = param_2 + 0x20;
-        *(undefined8 *)(lVar7 + 0x18) = *puVar1;
-        lVar7 = param_1[1] + 0x20;
-        param_1[1] = lVar7;
-      } while (param_2 != param_3);
+        func_0x0016f720(lVar6,p1);
+        pWVar7 = p1 + 0x18;
+        p1 = p1 + 0x20;
+        *(undefined8 *)(lVar6 + 0x18) = *(undefined8 *)pWVar7;
+        lVar6 = *(long *)(p0 + 8) + 0x20;
+        *(long *)(p0 + 8) = lVar6;
+      } while (p1 != in_x2);
     }
   }
   else {
-    lVar7 = param_2 + (param_1[1] - (long)pbVar6);
-    uVar3 = param_1[1] - (long)pbVar6 >> 5;
-    lVar5 = lVar7;
+    pWVar7 = p1 + (*(long *)(p0 + 8) - (long)pbVar5);
+    uVar3 = *(long *)(p0 + 8) - (long)pbVar5 >> 5;
+    pWVar1 = pWVar7;
     if (uVar8 <= uVar3) {
-      lVar5 = param_3;
+      pWVar1 = in_x2;
     }
-    for (; lVar5 != param_2; param_2 = param_2 + 0x20) {
-      func_0x00171ac0(pbVar6,param_2);
-      *(undefined8 *)(pbVar6 + 0x18) = *(undefined8 *)(param_2 + 0x18);
-      pbVar6 = pbVar6 + 0x20;
+    for (; pWVar1 != p1; p1 = p1 + 0x20) {
+      func_0x00171ac0(pbVar5,p1);
+      *(undefined8 *)(pbVar5 + 0x18) = *(undefined8 *)(p1 + 0x18);
+      pbVar5 = pbVar5 + 0x20;
     }
     if (uVar3 < uVar8) {
-      if (lVar5 != param_3) {
-        lVar5 = param_1[1];
+      if (pWVar1 != in_x2) {
+        lVar6 = *(long *)(p0 + 8);
         do {
-          func_0x0016f720(lVar5,lVar7);
-          puVar1 = (undefined8 *)(lVar7 + 0x18);
-          lVar7 = lVar7 + 0x20;
-          *(undefined8 *)(lVar5 + 0x18) = *puVar1;
-          lVar5 = param_1[1] + 0x20;
-          param_1[1] = lVar5;
-        } while (lVar7 != param_3);
+          func_0x0016f720(lVar6,pWVar7);
+          pWVar1 = pWVar7 + 0x18;
+          pWVar7 = pWVar7 + 0x20;
+          *(undefined8 *)(lVar6 + 0x18) = *(undefined8 *)pWVar1;
+          lVar6 = *(long *)(p0 + 8) + 0x20;
+          *(long *)(p0 + 8) = lVar6;
+        } while (pWVar7 != in_x2);
       }
     }
     else {
-      pbVar4 = (byte *)param_1[1];
-      while (pbVar2 = pbVar4, pbVar2 != pbVar6) {
+      pbVar4 = *(byte **)(p0 + 8);
+      while (pbVar2 = pbVar4, pbVar2 != pbVar5) {
         pbVar4 = pbVar2 + -0x20;
         if ((*pbVar4 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(pbVar2 + -0x10));
+          FUN_00166120(*(void **)(pbVar2 + -0x10));
         }
       }
-      param_1[1] = (long)pbVar6;
+      *(byte **)(p0 + 8) = pbVar5;
     }
   }
   return;

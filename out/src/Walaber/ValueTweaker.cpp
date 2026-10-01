@@ -18,14 +18,15 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
   undefined8 *puVar2;
   long lVar3;
   byte abStack_c0 [16];
-  undefined8 uStack_b0;
+  void *pvStack_b0;
   int aiStack_a8 [2];
   undefined8 *puStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
-  ulong auStack_88 [3];
+  ulong auStack_88 [2];
+  void *pvStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
   long lStack_48;
@@ -37,7 +38,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     uStack_98 = 0;
     uStack_90 = 0;
     auStack_88[1] = 0;
-    auStack_88[2] = 0;
+    pvStack_78 = (void *)0x0;
     auStack_88[0] = 0;
     aiStack_a8[0] = param_3;
     puStack_a0 = &uStack_98;
@@ -47,7 +48,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     func_0x00171ac0(auStack_88,abStack_c0);
     func_0x001700b0(aiStack_a8);
     if ((abStack_c0[0] & 1) != 0) {
-      FUN_00166120(uStack_b0);
+      FUN_00166120(pvStack_b0);
     }
                     /* try { // try from 004009d4 to 00400a2b has its CatchHandler @ 00400aa8 */
     uStack_50 = param_1;
@@ -58,7 +59,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_88);
     if ((auStack_88[0] & 1) != 0) {
-      FUN_00166120(auStack_88[2]);
+      FUN_00166120(pvStack_78);
     }
     func_0x001626c0(&puStack_a0,uStack_98);
   }
@@ -68,7 +69,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     func_0x00171ac0(puVar2 + 0xb,abStack_70);
     func_0x001700b0(puVar2 + 7);
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
@@ -97,7 +98,8 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined4 para
   undefined8 *puStack_88;
   undefined8 uStack_80;
   undefined8 uStack_78;
-  ulong auStack_70 [3];
+  ulong auStack_70 [2];
+  void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
   long lStack_48;
@@ -109,7 +111,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined4 para
     uStack_80 = 0;
     uStack_78 = 0;
     auStack_70[1] = 0;
-    auStack_70[2] = 0;
+    pvStack_60 = (void *)0x0;
     auStack_70[0] = 0;
     auStack_90[0] = 1;
     puStack_88 = &uStack_80;
@@ -123,7 +125,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined4 para
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_70);
     if ((auStack_70[0] & 1) != 0) {
-      FUN_00166120(auStack_70[2]);
+      FUN_00166120(pvStack_60);
     }
     func_0x001626c0(&puStack_88,uStack_80);
   }
@@ -156,7 +158,8 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
   undefined8 *puStack_88;
   undefined8 uStack_80;
   undefined8 uStack_78;
-  ulong auStack_70 [3];
+  ulong auStack_70 [2];
+  void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
   long lStack_48;
@@ -168,7 +171,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     uStack_80 = 0;
     uStack_78 = 0;
     auStack_70[1] = 0;
-    auStack_70[2] = 0;
+    pvStack_60 = (void *)0x0;
     auStack_70[0] = 0;
     auStack_90[0] = 2;
     puStack_88 = &uStack_80;
@@ -182,7 +185,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_70);
     if ((auStack_70[0] & 1) != 0) {
-      FUN_00166120(auStack_70[2]);
+      FUN_00166120(pvStack_60);
     }
     func_0x001626c0(&puStack_88,uStack_80);
   }
@@ -216,7 +219,9 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
   undefined8 *puStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  ulong auStack_78 [4];
+  ulong auStack_78 [2];
+  void *pvStack_68;
+  undefined8 uStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
   long lStack_48;
@@ -228,7 +233,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
     uStack_88 = 0;
     uStack_80 = 0;
     auStack_78[1] = 0;
-    auStack_78[2] = 0;
+    pvStack_68 = (void *)0x0;
     auStack_78[0] = 0;
     auStack_98[0] = 3;
     uStack_a0 = *param_2;
@@ -243,13 +248,13 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_78);
     if ((auStack_78[0] & 1) != 0) {
-      FUN_00166120(auStack_78[2]);
+      FUN_00166120(pvStack_68);
     }
     func_0x001626c0(&puStack_90,uStack_88);
   }
   else {
-    auStack_78[3] = *param_2;
-    func_0x0016aae0(puVar2 + 7,auStack_78 + 3);
+    uStack_60 = *param_2;
+    func_0x0016aae0(puVar2 + 7,&uStack_60);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -279,7 +284,9 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
   undefined8 *puStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
-  ulong auStack_88 [4];
+  ulong auStack_88 [2];
+  void *pvStack_78;
+  undefined8 uStack_70;
   undefined8 uStack_68;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
@@ -292,7 +299,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
     uStack_98 = 0;
     uStack_90 = 0;
     auStack_88[1] = 0;
-    auStack_88[2] = 0;
+    pvStack_78 = (void *)0x0;
     auStack_88[0] = 0;
     auStack_a8[0] = 4;
     uStack_b8 = param_2[1];
@@ -308,14 +315,14 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 *par
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_88);
     if ((auStack_88[0] & 1) != 0) {
-      FUN_00166120(auStack_88[2]);
+      FUN_00166120(pvStack_78);
     }
     func_0x001626c0(&puStack_a0,uStack_98);
   }
   else {
     uStack_68 = param_2[1];
-    auStack_88[3] = *param_2;
-    func_0x0016ea50(puVar2 + 7,auStack_88 + 3);
+    uStack_70 = *param_2;
+    func_0x0016ea50(puVar2 + 7,&uStack_70);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -347,7 +354,8 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined1 *par
   undefined8 *puStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  ulong auStack_78 [3];
+  ulong auStack_78 [2];
+  void *pvStack_68;
   undefined1 uStack_60;
   undefined1 uStack_5f;
   undefined1 uStack_5e;
@@ -363,7 +371,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined1 *par
     uStack_88 = 0;
     uStack_80 = 0;
     auStack_78[1] = 0;
-    auStack_78[2] = 0;
+    pvStack_68 = (void *)0x0;
     auStack_78[0] = 0;
     auStack_98[0] = 5;
     uStack_a0 = *param_2;
@@ -381,7 +389,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined1 *par
     }
     func_0x00171ac0(lVar3 + 0x58,auStack_78);
     if ((auStack_78[0] & 1) != 0) {
-      FUN_00166120(auStack_78[2]);
+      FUN_00166120(pvStack_68);
     }
     func_0x001626c0(&puStack_90,uStack_88);
   }
@@ -702,7 +710,7 @@ void Walaber::ValueTweaker::mapTweakableValue(byte *param_1,undefined8 param_2,u
 
 /* Walaber::ValueTweaker::removeMappingsForOwner(void*) */
 
-void Walaber::ValueTweaker::removeMappingsForOwner(undefined8 param_1)
+void Walaber::ValueTweaker::removeMappingsForOwner(void *p0)
 
 {
   long *plVar1;
@@ -713,7 +721,7 @@ void Walaber::ValueTweaker::removeMappingsForOwner(undefined8 param_1)
   plVar4 = mTweakables;
   if (mTweakables != &DAT_00730910) {
     do {
-      func_0x00174360(plVar4 + 7,param_1);
+      func_0x00174360(plVar4 + 7,p0);
       plVar1 = (long *)plVar4[1];
       if ((long *)plVar4[1] == (long *)0x0) {
         plVar1 = plVar4 + 2;
@@ -910,14 +918,15 @@ void Walaber::ValueTweaker::loadFromFile(byte *param_1)
   byte *pbVar6;
   bool bVar7;
   byte abStack_238 [16];
-  undefined8 uStack_228;
+  void *pvStack_228;
   byte abStack_220 [16];
-  undefined8 uStack_210;
+  void *pvStack_210;
   byte abStack_208 [16];
-  undefined8 uStack_1f8;
+  void *pvStack_1f8;
   byte *pbStack_1f0;
   long lStack_1e8;
-  ulong auStack_1d8 [3];
+  ulong auStack_1d8 [2];
+  void *pvStack_1c8;
   undefined **ppuStack_1c0;
   undefined8 uStack_1b8;
   undefined1 auStack_1b0 [16];
@@ -964,7 +973,7 @@ LAB_00402a20:
     bVar7 = true;
     do {
       auStack_1d8[1] = 0;
-      auStack_1d8[2] = 0;
+      pvStack_1c8 = (void *)0x0;
       auStack_1d8[0] = 0;
                     /* try { // try from 00402aa4 to 00402aab has its CatchHandler @ 00402cb8 */
       func_0x00168710(&pbStack_1f0,(undefined *)((long)&ppuStack_1c0 + (long)ppuStack_1c0[-3]));
@@ -1007,19 +1016,19 @@ LAB_00402a20:
           uVar2 = func_0x00163790(abStack_238);
           func_0x00172760(abStack_208,abStack_220,uVar2);
           if ((abStack_238[0] & 1) != 0) {
-            FUN_00166120(uStack_228);
+            FUN_00166120(pvStack_228);
           }
           if ((abStack_220[0] & 1) != 0) {
-            FUN_00166120(uStack_210);
+            FUN_00166120(pvStack_210);
           }
           if ((abStack_208[0] & 1) != 0) {
-            FUN_00166120(uStack_1f8);
+            FUN_00166120(pvStack_1f8);
           }
         }
         func_0x00167a70(&pbStack_1f0);
       }
       if ((auStack_1d8[0] & 1) != 0) {
-        FUN_00166120(auStack_1d8[2]);
+        FUN_00166120(pvStack_1c8);
       }
       bVar7 = false;
     } while ((*(byte *)((long)auStack_1a0 + (long)ppuStack_1c0[-3]) >> 1 & 1) == 0);
@@ -1078,7 +1087,7 @@ void Walaber::ValueTweaker::_StringToValueType(byte *param_1)
     param_1[0xe] = 0;
     param_1[0xf] = 0;
     if ((*param_1 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+      FUN_00166120(*(void **)(param_1 + 0x10));
       param_1[0] = 0;
       param_1[1] = 0;
       param_1[2] = 0;

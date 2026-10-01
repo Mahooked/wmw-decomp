@@ -36,7 +36,7 @@ long Walaber::DateTime::getCurrentUnixLocalTime(void)
 
 /* Walaber::DateTime::hasDatePassedUnixTime(long) */
 
-void Walaber::DateTime::hasDatePassedUnixTime(long param_1)
+void Walaber::DateTime::hasDatePassedUnixTime(long p0)
 
 {
   long lVar1;
@@ -52,7 +52,7 @@ void Walaber::DateTime::hasDatePassedUnixTime(long param_1)
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
-  FUN_00164ff0(param_1 < lStack_30 * 2 - lVar2);
+  FUN_00164ff0(p0 < lStack_30 * 2 - lVar2);
   return;
 }
 

@@ -15,30 +15,30 @@
 
 void std::__ndk1::
      __vector_base<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
   undefined8 *puVar1;
-  long lVar2;
-  long lVar3;
-  long lVar4;
+  void *p0;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar4 = *param_1;
-  if (lVar4 == 0) {
+  pvVar3 = (void *)*param_1;
+  if (pvVar3 == (void *)0x0) {
     return;
   }
-  lVar3 = param_1[1];
-  lVar2 = lVar4;
-  if (lVar3 != lVar4) {
+  pvVar2 = (void *)param_1[1];
+  p0 = pvVar3;
+  if (pvVar2 != pvVar3) {
     do {
-      puVar1 = (undefined8 *)(lVar3 + -0x10);
-      lVar3 = lVar3 + -0x18;
-      func_0x00162730(lVar3,*puVar1);
-    } while (lVar4 != lVar3);
-    lVar2 = *param_1;
+      puVar1 = (undefined8 *)((long)pvVar2 + -0x10);
+      pvVar2 = (void *)((long)pvVar2 + -0x18);
+      func_0x00162730(pvVar2,*puVar1);
+    } while (pvVar3 != pvVar2);
+    p0 = (void *)*param_1;
   }
-  param_1[1] = lVar4;
-  FUN_00166120(lVar2);
+  param_1[1] = pvVar3;
+  FUN_00166120(p0);
   return;
 }
 

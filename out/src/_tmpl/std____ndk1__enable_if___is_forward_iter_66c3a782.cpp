@@ -10,31 +10,34 @@
    std::__ndk1::iterator_traits<int*>::reference>::value, void>::type std::__ndk1::vector<int,
    std::__ndk1::allocator<int> >::assign<int*>(int*, int*) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign<int*>
-               (long *param_1,long param_2,long param_3)
+void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign<int*>(int *p0,int *p1)
 
 {
   ulong uVar1;
+  long in_x2;
   long lVar2;
   long lVar3;
-  long lVar4;
+  void *pvVar4;
   ulong uVar5;
   
-  lVar2 = param_1[2];
-  lVar4 = *param_1;
-  lVar3 = param_3 - param_2;
+  lVar2 = *(long *)(p0 + 4);
+  pvVar4 = *(void **)p0;
+  lVar3 = in_x2 - (long)p1;
   uVar5 = lVar3 >> 2;
-  if ((ulong)(lVar2 - lVar4 >> 2) < uVar5) {
-    if (lVar4 != 0) {
-      param_1[1] = lVar4;
-      FUN_00166120(lVar4);
+  if ((ulong)(lVar2 - (long)pvVar4 >> 2) < uVar5) {
+    if (pvVar4 != (void *)0x0) {
+      *(void **)(p0 + 2) = pvVar4;
+      FUN_00166120(pvVar4);
       lVar2 = 0;
-      *param_1 = 0;
-      param_1[1] = 0;
-      param_1[2] = 0;
+      p0[0] = 0;
+      p0[1] = 0;
+      p0[2] = 0;
+      p0[3] = 0;
+      p0[4] = 0;
+      p0[5] = 0;
     }
     if (uVar5 >> 0x3e != 0) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
     if ((ulong)(lVar2 >> 2) < 0x1fffffffffffffff) {
@@ -45,36 +48,36 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign<int*>
     else {
       uVar5 = 0x3fffffffffffffff;
     }
-    func_0x00168930(param_1,uVar5);
+    func_0x00168930(p0,uVar5);
     if (lVar3 < 1) {
       return;
     }
-    FUN_001715e0(param_1[1],param_2,lVar3);
-    lVar3 = param_1[1] + lVar3;
+    FUN_001715e0(*(undefined8 *)(p0 + 2),p1,lVar3);
+    pvVar4 = (void *)(*(long *)(p0 + 2) + lVar3);
   }
   else {
-    uVar1 = param_1[1] - lVar4 >> 2;
-    lVar3 = param_2 + (param_1[1] - lVar4);
+    uVar1 = *(long *)(p0 + 2) - (long)pvVar4 >> 2;
+    lVar2 = (long)p1 + (*(long *)(p0 + 2) - (long)pvVar4);
     if (uVar5 <= uVar1) {
-      lVar3 = param_3;
+      lVar2 = in_x2;
     }
-    lVar2 = lVar3 - param_2;
-    if (lVar2 != 0) {
-      FUN_0016b250(lVar4,param_2,lVar2);
+    lVar3 = lVar2 - (long)p1;
+    if (lVar3 != 0) {
+      FUN_0016b250(pvVar4,p1,lVar3);
     }
     if (uVar1 < uVar5) {
-      param_3 = param_3 - lVar3;
-      if (param_3 < 1) {
+      lVar3 = in_x2 - lVar2;
+      if (lVar3 < 1) {
         return;
       }
-      FUN_001715e0(param_1[1],lVar3,param_3);
-      lVar3 = param_1[1] + param_3;
+      FUN_001715e0(*(undefined8 *)(p0 + 2),lVar2,lVar3);
+      pvVar4 = (void *)(*(long *)(p0 + 2) + lVar3);
     }
     else {
-      lVar3 = lVar4 + (lVar2 >> 2) * 4;
+      pvVar4 = (void *)((long)pvVar4 + (lVar3 >> 2) * 4);
     }
   }
-  param_1[1] = lVar3;
+  *(void **)(p0 + 2) = pvVar4;
   return;
 }
 

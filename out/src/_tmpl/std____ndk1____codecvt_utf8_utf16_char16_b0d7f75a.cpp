@@ -78,12 +78,12 @@ void std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_in
     */
 
 undefined8
-std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -125,12 +125,10 @@ undefined8 std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_always_noconv(void)
    unsigned long) const */
 
 void std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_length
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5)
+               (mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
-  func_0x005d93b8(param_3,param_4,param_5,*(undefined8 *)(param_1 + 0x10),
-                  *(undefined4 *)(param_1 + 0x18));
+  func_0x005d93b8(p2,p3);
   return;
 }
 
@@ -162,7 +160,7 @@ undefined4 std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_max_length(long param
 
 /* std::__ndk1::__codecvt_utf8_utf16<char16_t>::~__codecvt_utf8_utf16() */
 
-void std::__ndk1::__codecvt_utf8_utf16<char16_t>::~__codecvt_utf8_utf16(undefined8 param_1)
+void std::__ndk1::__codecvt_utf8_utf16<char16_t>::~__codecvt_utf8_utf16(void *param_1)
 
 {
   FUN_00172660();
@@ -266,64 +264,64 @@ void FUN_005e1128(long *param_1,ulong param_2)
 {
   ulong uVar1;
   long *plVar2;
-  long *plVar3;
-  long lVar4;
-  ulong uVar5;
-  undefined8 *puVar6;
-  long lVar7;
-  ulong uVar8;
+  long *p0;
+  long lVar3;
+  ulong uVar4;
+  undefined8 *puVar5;
+  long lVar6;
+  ulong uVar7;
   
-  puVar6 = (undefined8 *)param_1[1];
-  if (param_2 <= (ulong)(param_1[2] - (long)puVar6 >> 3)) {
+  puVar5 = (undefined8 *)param_1[1];
+  if (param_2 <= (ulong)(param_1[2] - (long)puVar5 >> 3)) {
     do {
-      *puVar6 = 0;
+      *puVar5 = 0;
       param_2 = param_2 - 1;
-      puVar6 = (undefined8 *)(param_1[1] + 8);
-      param_1[1] = (long)puVar6;
+      puVar5 = (undefined8 *)(param_1[1] + 8);
+      param_1[1] = (long)puVar5;
     } while (param_2 != 0);
     return;
   }
-  lVar7 = (long)puVar6 - *param_1 >> 3;
-  uVar1 = lVar7 + param_2;
+  lVar6 = (long)puVar5 - *param_1 >> 3;
+  uVar1 = lVar6 + param_2;
   if (uVar1 >> 0x3d != 0) {
     FUN_001705a0(param_1);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
-  if ((ulong)(lVar4 >> 3) < 0xfffffffffffffff) {
-    uVar5 = lVar4 >> 2;
-    uVar8 = uVar1;
-    if (uVar1 <= uVar5) {
-      uVar8 = uVar5;
+  lVar3 = param_1[2] - *param_1;
+  if ((ulong)(lVar3 >> 3) < 0xfffffffffffffff) {
+    uVar4 = lVar3 >> 2;
+    uVar7 = uVar1;
+    if (uVar1 <= uVar4) {
+      uVar7 = uVar4;
     }
-    if (uVar8 == 0) {
+    if (uVar7 == 0) {
       plVar2 = (long *)0x0;
       goto LAB_005e11f0;
     }
-    if ((uVar8 < 0x1d) && ((char)param_1[0x20] == '\0')) {
+    if ((uVar7 < 0x1d) && ((char)param_1[0x20] == '\0')) {
       *(undefined1 *)(param_1 + 0x20) = 1;
       plVar2 = param_1 + 4;
       goto LAB_005e11f0;
     }
   }
   else {
-    uVar8 = 0x1fffffffffffffff;
+    uVar7 = 0x1fffffffffffffff;
   }
-  plVar2 = (long *)FUN_00164060(uVar8 << 3);
+  plVar2 = (long *)FUN_00164060(uVar7 << 3);
 LAB_005e11f0:
-  FUN_0016b330(plVar2 + lVar7,0,param_2 << 3);
-  plVar3 = (long *)*param_1;
-  lVar7 = (long)(plVar2 + lVar7) - (param_1[1] - (long)plVar3);
-  if (0 < param_1[1] - (long)plVar3) {
-    FUN_001715e0(lVar7);
-    plVar3 = (long *)*param_1;
+  FUN_0016b330(plVar2 + lVar6,0,param_2 << 3);
+  p0 = (long *)*param_1;
+  lVar6 = (long)(plVar2 + lVar6) - (param_1[1] - (long)p0);
+  if (0 < param_1[1] - (long)p0) {
+    FUN_001715e0(lVar6);
+    p0 = (long *)*param_1;
   }
-  *param_1 = lVar7;
+  *param_1 = lVar6;
   param_1[1] = (long)(plVar2 + uVar1);
-  param_1[2] = (long)(plVar2 + uVar8);
-  if (plVar3 != (long *)0x0) {
-    if (plVar3 != param_1 + 4) {
-      FUN_00166120(plVar3);
+  param_1[2] = (long)(plVar2 + uVar7);
+  if (p0 != (long *)0x0) {
+    if (p0 != param_1 + 4) {
+      FUN_00166120(p0);
       return;
     }
     *(undefined1 *)(param_1 + 0x20) = 0;

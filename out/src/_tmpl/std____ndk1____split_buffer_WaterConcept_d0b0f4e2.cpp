@@ -55,7 +55,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -64,17 +64,17 @@ void std::__ndk1::
   lVar1 = param_1[1];
   lVar2 = param_1[2];
   while (lVar2 != lVar1) {
-    param_1[2] = lVar2 + -0x30;
+    param_1[2] = (byte *)(lVar2 + -0x30);
     if ((*(byte *)(lVar2 + -0x18) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -8));
+      FUN_00166120(*(void **)(lVar2 + -8));
     }
     if ((*(byte *)(lVar2 + -0x30) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x20));
+      FUN_00166120(*(void **)(lVar2 + -0x20));
     }
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

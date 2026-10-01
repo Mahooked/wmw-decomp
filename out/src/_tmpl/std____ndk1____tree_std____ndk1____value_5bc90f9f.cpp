@@ -32,7 +32,7 @@ void std::__ndk1::
     FUN_0016bb90(param_2 + 10);
     func_0x00164ba0(param_2 + 7);
     if ((*(byte *)(param_2 + 4) & 1) != 0) {
-      FUN_00166120(param_2[6]);
+      FUN_00166120((void *)param_2[6]);
     }
     FUN_00166120(param_2);
     return;
@@ -188,18 +188,18 @@ void std::__ndk1::
 
 long * std::__ndk1::
        __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>>>
-       ::erase(long *param_1,long param_2)
+       ::erase(undefined8 *param_1,void *param_2)
 
 {
   long *plVar1;
   long lVar2;
   long *plVar3;
   
-  plVar1 = *(long **)(param_2 + 8);
-  if (*(long **)(param_2 + 8) == (long *)0x0) {
-    plVar1 = (long *)(param_2 + 0x10);
+  plVar1 = *(long **)((long)param_2 + 8);
+  if (*(long **)((long)param_2 + 8) == (long *)0x0) {
+    plVar1 = (long *)((long)param_2 + 0x10);
     plVar3 = (long *)*plVar1;
-    if (*plVar3 != param_2) {
+    if ((void *)*plVar3 != param_2) {
       do {
         lVar2 = *plVar1;
         plVar1 = (long *)(lVar2 + 0x10);
@@ -213,15 +213,15 @@ long * std::__ndk1::
       plVar1 = (long *)*plVar3;
     } while ((long *)*plVar3 != (long *)0x0);
   }
-  if (*param_1 == param_2) {
-    *param_1 = (long)plVar3;
+  if ((void *)*param_1 == param_2) {
+    *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
   func_0x00170610(param_1[1],param_2);
-  FUN_0016bb90(param_2 + 0x50);
-  func_0x00164ba0(param_2 + 0x38);
-  if ((*(byte *)(param_2 + 0x20) & 1) != 0) {
-    FUN_00166120(*(undefined8 *)(param_2 + 0x30));
+  FUN_0016bb90((long)param_2 + 0x50);
+  func_0x00164ba0((long)param_2 + 0x38);
+  if ((*(byte *)((long)param_2 + 0x20) & 1) != 0) {
+    FUN_00166120(*(void **)((long)param_2 + 0x30));
   }
   FUN_00166120(param_2);
   return plVar3;

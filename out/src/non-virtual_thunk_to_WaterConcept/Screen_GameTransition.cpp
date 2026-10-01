@@ -28,8 +28,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTrans
 
 {
   func_0x001706b0();
-  FUN_0016d110(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  FUN_0016d110((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -42,10 +42,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTrans
 /* non-virtual thunk to WaterConcept::Screen_GameTransition::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::handleEvent(void)
+int non_virtual_thunk_to_WaterConcept::Screen_GameTransition::handleEvent
+              (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -56,7 +57,7 @@ void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::handleEvent(void)
 
 /* non-virtual thunk to WaterConcept::Screen_GameTransition::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_GameTransition::messageRx(void)
+undefined8 non_virtual_thunk_to_WaterConcept::Screen_GameTransition::messageRx(Walaber__Message *p0)
 
 {
   return 0;

@@ -8,40 +8,43 @@
 
 /* Walaber::ParticleSet::ParticleSet(unsigned int) */
 
-void Walaber::ParticleSet::ParticleSet(long param_1,uint param_2)
+void Walaber::ParticleSet::ParticleSet(uint p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
-  uint uVar4;
+  ulong uVar2;
+  long *plVar3;
+  uint in_w1;
+  long lVar4;
+  uint uVar5;
   
-  func_0x00172230(param_1,param_2);
-  lVar1 = param_1 + 0x18;
-  *(long *)(param_1 + 0x20) = lVar1;
-  *(undefined8 *)(param_1 + 0x28) = 0;
-  *(long *)(param_1 + 0x18) = lVar1;
-  *(undefined8 *)(param_1 + 0x30) = 0xffffffff;
-  *(uint *)(param_1 + 0x38) = param_2;
-  *(undefined4 *)(param_1 + 0x3c) = 0x3f800000;
+  uVar2 = (ulong)p0;
+  func_0x00172230(uVar2,in_w1);
+  lVar1 = uVar2 + 0x18;
+  *(long *)(uVar2 + 0x20) = lVar1;
+  *(undefined8 *)(uVar2 + 0x28) = 0;
+  *(long *)(uVar2 + 0x18) = lVar1;
+  *(undefined8 *)(uVar2 + 0x30) = 0xffffffff;
+  *(uint *)(uVar2 + 0x38) = in_w1;
+  *(undefined4 *)(uVar2 + 0x3c) = 0x3f800000;
                     /* try { // try from 00390750 to 00390757 has its CatchHandler @ 003907b4 */
-  func_0x0016e9d0(param_1 + 0x40);
-  *(undefined8 *)(param_1 + 0x48) = 0;
-  *(undefined8 *)(param_1 + 0x50) = 0;
-  if (param_2 != 0) {
-    uVar4 = 0;
+  func_0x0016e9d0(uVar2 + 0x40);
+  *(undefined8 *)(uVar2 + 0x48) = 0;
+  *(undefined8 *)(uVar2 + 0x50) = 0;
+  if (in_w1 != 0) {
+    uVar5 = 0;
     do {
                     /* try { // try from 0039076c to 00390773 has its CatchHandler @ 003907bc */
-      plVar2 = (long *)FUN_00164060(0x18);
-      *(uint *)(plVar2 + 2) = uVar4;
-      lVar3 = *(long *)(param_1 + 0x18);
-      uVar4 = uVar4 + 1;
-      *plVar2 = lVar3;
-      plVar2[1] = lVar1;
-      *(long **)(lVar3 + 8) = plVar2;
-      *(long **)(param_1 + 0x18) = plVar2;
-      *(long *)(param_1 + 0x28) = *(long *)(param_1 + 0x28) + 1;
-    } while (uVar4 < param_2);
+      plVar3 = (long *)FUN_00164060(0x18);
+      *(uint *)(plVar3 + 2) = uVar5;
+      lVar4 = *(long *)(uVar2 + 0x18);
+      uVar5 = uVar5 + 1;
+      *plVar3 = lVar4;
+      plVar3[1] = lVar1;
+      *(long **)(lVar4 + 8) = plVar3;
+      *(long **)(uVar2 + 0x18) = plVar3;
+      *(long *)(uVar2 + 0x28) = *(long *)(uVar2 + 0x28) + 1;
+    } while (uVar5 < in_w1);
   }
   return;
 }
@@ -54,15 +57,18 @@ void Walaber::ParticleSet::ParticleSet(long param_1,uint param_2)
 
 /* Walaber::ParticleSet::~ParticleSet() */
 
-void Walaber::ParticleSet::~ParticleSet(long *param_1)
+void Walaber::ParticleSet::~ParticleSet(undefined8 *param_1)
 
 {
+  void *p0;
+  
   FUN_0016bb90(param_1 + 9);
   func_0x00166070(param_1 + 8);
   func_0x00167cb0(param_1 + 3);
-  if (*param_1 != 0) {
-    param_1[1] = *param_1;
-    FUN_00166120();
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    param_1[1] = p0;
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -80,67 +86,67 @@ void Walaber::ParticleSet::~ParticleSet(long *param_1)
 
 undefined8
 Walaber::ParticleSet::addParticle
-          (float param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,long *param_5,
-          undefined8 *param_6,undefined8 *param_7,undefined4 *param_8,undefined8 *param_9,
-          undefined8 *param_10,undefined4 param_11,int *param_12)
+          (float p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float p3,Walaber__Vector2 *p4,
+          Walaber__Vector2 *p5,Walaber__Vector2 *p6,float p7,float p8,int p9,int *p10)
 
 {
   long lVar1;
   undefined4 uVar2;
   undefined4 uVar3;
-  long *plVar4;
-  undefined8 uVar5;
-  long lVar6;
-  undefined8 *puVar7;
-  int iVar8;
-  float fVar9;
+  long *p0_00;
+  undefined8 uVar4;
+  int *in_x7;
+  long lVar5;
+  undefined8 *puVar6;
+  int iVar7;
+  float fVar8;
   
-  lVar6 = param_5[5];
-  if (lVar6 == 0) {
+  lVar5 = *(long *)(p1 + 0x28);
+  if (lVar5 == 0) {
     FUN_00166450("Walaber",2,"No more free particles!!!\n");
-    uVar5 = 0;
-    iVar8 = -1;
+    uVar4 = 0;
+    iVar7 = -1;
   }
   else {
-    plVar4 = (long *)param_5[4];
-    lVar1 = *plVar4;
-    iVar8 = (int)plVar4[2];
-    *(long *)(lVar1 + 8) = plVar4[1];
-    *(long *)plVar4[1] = lVar1;
-    param_5[5] = lVar6 + -1;
-    FUN_00166120();
-    fVar9 = 1.0 / param_1;
-    if (param_1 == 0.0) {
-      fVar9 = 0.0;
+    p0_00 = *(long **)(p1 + 0x20);
+    lVar1 = *p0_00;
+    iVar7 = (int)p0_00[2];
+    *(long *)(lVar1 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar1;
+    *(long *)(p1 + 0x28) = lVar5 + -1;
+    FUN_00166120(p0_00);
+    fVar8 = 1.0 / p0;
+    if (p0 == 0.0) {
+      fVar8 = 0.0;
     }
-    puVar7 = (undefined8 *)(*param_5 + (long)iVar8 * 0x74);
-    *(float *)(puVar7 + 5) = param_1;
-    *(float *)((long)puVar7 + 0x2c) = fVar9;
-    *(undefined4 *)(puVar7 + 10) = param_2;
-    *puVar7 = *param_6;
-    puVar7[1] = *param_7;
-    puVar7[2] = *param_9;
-    puVar7[3] = *param_10;
-    uVar2 = *param_8;
-    *(undefined4 *)(puVar7 + 4) = uVar2;
-    uVar3 = param_8[1];
-    *(undefined4 *)(puVar7 + 6) = param_3;
-    *(undefined4 *)((long)puVar7 + 0x54) = param_3;
-    *(undefined4 *)(puVar7 + 0xb) = param_4;
-    *(undefined4 *)((long)puVar7 + 100) = param_11;
-    *(undefined2 *)((long)puVar7 + 0x34) = 0x101;
-    *(undefined4 *)((long)puVar7 + 0x5c) = 0x3f000000;
-    *(undefined4 *)((long)puVar7 + 0x24) = uVar3;
-    *(undefined4 *)(puVar7 + 9) = uVar2;
-    *(undefined4 *)((long)puVar7 + 0x4c) = uVar3;
-    *(int *)((long)param_5 + 0x34) = *(int *)((long)param_5 + 0x34) + 1;
-    if ((int)param_5[6] < iVar8) {
-      *(int *)(param_5 + 6) = iVar8;
+    puVar6 = (undefined8 *)(*(long *)p1 + (long)iVar7 * 0x74);
+    *(float *)(puVar6 + 5) = p0;
+    *(float *)((long)puVar6 + 0x2c) = fVar8;
+    *(float *)(puVar6 + 10) = p3;
+    *puVar6 = *(undefined8 *)p2;
+    puVar6[1] = *(undefined8 *)p4;
+    puVar6[2] = *(undefined8 *)p6;
+    puVar6[3] = *(undefined8 *)(ulong)(uint)p9;
+    uVar2 = *(undefined4 *)p5;
+    *(undefined4 *)(puVar6 + 4) = uVar2;
+    uVar3 = *(undefined4 *)(p5 + 4);
+    *(float *)(puVar6 + 6) = p7;
+    *(float *)((long)puVar6 + 0x54) = p7;
+    *(float *)(puVar6 + 0xb) = p8;
+    *(int *)((long)puVar6 + 100) = (int)p10;
+    *(undefined2 *)((long)puVar6 + 0x34) = 0x101;
+    *(undefined4 *)((long)puVar6 + 0x5c) = 0x3f000000;
+    *(undefined4 *)((long)puVar6 + 0x24) = uVar3;
+    *(undefined4 *)(puVar6 + 9) = uVar2;
+    *(undefined4 *)((long)puVar6 + 0x4c) = uVar3;
+    *(int *)(p1 + 0x34) = *(int *)(p1 + 0x34) + 1;
+    if (*(int *)(p1 + 0x30) < iVar7) {
+      *(int *)(p1 + 0x30) = iVar7;
     }
-    uVar5 = 1;
+    uVar4 = 1;
   }
-  *param_12 = iVar8;
-  return uVar5;
+  *in_x7 = iVar7;
+  return uVar4;
 }
 
 
@@ -151,13 +157,15 @@ Walaber::ParticleSet::addParticle
 
 /* Walaber::ParticleSet::initParticles(unsigned int) */
 
-void Walaber::ParticleSet::initParticles(undefined8 *param_1,int param_2)
+void Walaber::ParticleSet::initParticles(uint p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
-  int iVar4;
+  undefined8 *puVar2;
+  long *plVar3;
+  int in_w1;
+  long lVar4;
+  int iVar5;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -177,6 +185,7 @@ void Walaber::ParticleSet::initParticles(undefined8 *param_1,int param_2)
   undefined2 uStack_50;
   long lStack_48;
   
+  puVar2 = (undefined8 *)(ulong)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_a0 = 0x3f8000003f800000;
@@ -197,22 +206,22 @@ void Walaber::ParticleSet::initParticles(undefined8 *param_1,int param_2)
   uStack_58 = 0;
   uStack_50 = 0;
                     /* try { // try from 00393ac8 to 00393acf has its CatchHandler @ 00393b40 */
-  func_0x001706c0(param_1,*param_1,param_2,&uStack_c0);
-  if (param_2 != 0) {
-    iVar4 = 0;
+  func_0x001706c0(puVar2,*puVar2,in_w1,&uStack_c0);
+  if (in_w1 != 0) {
+    iVar5 = 0;
     do {
-      plVar2 = (long *)FUN_00164060(0x18);
-      *(int *)(plVar2 + 2) = iVar4;
-      lVar3 = param_1[3];
-      iVar4 = iVar4 + 1;
-      *plVar2 = lVar3;
-      plVar2[1] = (long)(param_1 + 3);
-      *(long **)(lVar3 + 8) = plVar2;
-      param_1[3] = plVar2;
-      param_1[5] = param_1[5] + 1;
-    } while (param_2 != iVar4);
+      plVar3 = (long *)FUN_00164060(0x18);
+      *(int *)(plVar3 + 2) = iVar5;
+      lVar4 = puVar2[3];
+      iVar5 = iVar5 + 1;
+      *plVar3 = lVar4;
+      plVar3[1] = (long)(puVar2 + 3);
+      *(long **)(lVar4 + 8) = plVar3;
+      puVar2[3] = plVar3;
+      puVar2[5] = puVar2[5] + 1;
+    } while (in_w1 != iVar5);
   }
-  *(int *)(param_1 + 7) = param_2;
+  *(int *)(puVar2 + 7) = in_w1;
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -228,12 +237,13 @@ void Walaber::ParticleSet::initParticles(undefined8 *param_1,int param_2)
 
 /* Walaber::ParticleSet::updateParticles(float) */
 
-void Walaber::ParticleSet::updateParticles(float param_1,long *param_2)
+void Walaber::ParticleSet::updateParticles(float p0)
 
 {
   long lVar1;
   undefined8 *puVar2;
   long lVar3;
+  long *in_x0;
   long *plVar4;
   long lVar5;
   long lVar6;
@@ -243,24 +253,23 @@ void Walaber::ParticleSet::updateParticles(float param_1,long *param_2)
   float fVar10;
   undefined8 uVar11;
   float fVar12;
-  long *plStack_60;
+  undefined1 auStack_60 [8];
   long lStack_58;
   
   lVar3 = tpidr_el0;
   lStack_58 = *(long *)(lVar3 + 0x28);
-  if (-1 < (int)param_2[6]) {
+  if (-1 < (int)in_x0[6]) {
     lVar6 = 0;
     lVar7 = -1;
     do {
-      lVar5 = *param_2;
+      lVar5 = *in_x0;
       lVar1 = lVar5 + lVar6;
       if (*(char *)(lVar1 + 0x34) != '\0') {
         if ((*(float *)(lVar1 + 0x30) <= 0.0) ||
-           (fVar8 = *(float *)(lVar1 + 0x30) - param_1, *(float *)(lVar1 + 0x30) = fVar8,
-           0.0 < fVar8)) {
+           (fVar8 = *(float *)(lVar1 + 0x30) - p0, *(float *)(lVar1 + 0x30) = fVar8, 0.0 < fVar8)) {
           puVar2 = (undefined8 *)(lVar5 + lVar6);
           if (*(float *)(puVar2 + 0xb) != 0.0) {
-            fVar8 = *(float *)(puVar2 + 0xb) * *(float *)((long)param_2 + 0x3c);
+            fVar8 = *(float *)(puVar2 + 0xb) * *(float *)((long)in_x0 + 0x3c);
             *(float *)(puVar2 + 0xb) = fVar8;
             *(float *)(puVar2 + 10) = fVar8 + *(float *)(puVar2 + 10);
           }
@@ -270,29 +279,27 @@ void Walaber::ParticleSet::updateParticles(float param_1,long *param_2)
           puVar2[3] = CONCAT44(fVar9,fVar8);
           fVar10 = (float)uVar11;
           fVar12 = (float)((ulong)uVar11 >> 0x20);
-          fVar8 = param_1 * param_1 * fVar8 +
-                  (fVar10 - (float)puVar2[1]) * (1.0 - *(float *)(param_2 + 8)) + fVar10;
-          fVar9 = param_1 * param_1 * fVar9 +
-                  (fVar12 - (float)((ulong)puVar2[1] >> 0x20)) * (1.0 - *(float *)(param_2 + 8)) +
+          fVar8 = p0 * p0 * fVar8 +
+                  (fVar10 - (float)puVar2[1]) * (1.0 - *(float *)(in_x0 + 8)) + fVar10;
+          fVar9 = p0 * p0 * fVar9 +
+                  (fVar12 - (float)((ulong)puVar2[1] >> 0x20)) * (1.0 - *(float *)(in_x0 + 8)) +
                   fVar12;
           *puVar2 = CONCAT44(fVar9,fVar8);
           puVar2[1] = uVar11;
-          puVar2[2] = CONCAT44((1.0 / param_1) * (fVar9 - fVar12),(1.0 / param_1) * (fVar8 - fVar10)
-                              );
+          puVar2[2] = CONCAT44((1.0 / p0) * (fVar9 - fVar12),(1.0 / p0) * (fVar8 - fVar10));
           puVar2[3] = 0;
         }
         else {
-          func_0x00167fb0(param_2,(int)lVar7 + 1);
+          func_0x00167fb0();
         }
       }
       lVar7 = lVar7 + 1;
       lVar6 = lVar6 + 0x74;
-    } while (lVar7 < (int)param_2[6]);
+    } while (lVar7 < (int)in_x0[6]);
   }
-  plVar4 = (long *)param_2[9];
+  plVar4 = (long *)in_x0[9];
   if (plVar4 != (long *)0x0) {
-    plStack_60 = param_2;
-    (**(code **)(*plVar4 + 0x10))(plVar4,&plStack_60);
+    (**(code **)(*plVar4 + 0x10))(plVar4,auStack_60);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_58) {
     return;
@@ -309,40 +316,43 @@ void Walaber::ParticleSet::updateParticles(float param_1,long *param_2)
 
 /* Walaber::ParticleSet::removeParticle(int) */
 
-void Walaber::ParticleSet::removeParticle(long *param_1,int param_2)
+void Walaber::ParticleSet::removeParticle(int p0)
 
 {
   char cVar1;
   long *plVar2;
-  char *pcVar3;
-  undefined8 *puVar4;
-  long lVar5;
+  long *plVar3;
+  int in_w1;
+  char *pcVar4;
+  undefined8 *puVar5;
   long lVar6;
+  long lVar7;
   
-  lVar6 = *param_1;
-  pcVar3 = (char *)(lVar6 + (long)param_2 * 0x74 + 0x34);
-  if (*pcVar3 != '\0') {
-    *pcVar3 = '\0';
-    *(int *)((long)param_1 + 0x34) = *(int *)((long)param_1 + 0x34) + -1;
-    plVar2 = (long *)FUN_00164060(0x18);
-    *(int *)(plVar2 + 2) = param_2;
-    *plVar2 = (long)(param_1 + 3);
-    puVar4 = (undefined8 *)param_1[4];
-    plVar2[1] = (long)puVar4;
-    *puVar4 = plVar2;
-    param_1[4] = (long)plVar2;
-    param_1[5] = param_1[5] + 1;
-    if ((param_2 != 0) && ((int)param_1[6] == param_2)) {
-      lVar5 = (long)param_2;
-      pcVar3 = (char *)(lVar6 + lVar5 * 0x74 + -0x40);
+  plVar2 = (long *)(ulong)(uint)p0;
+  lVar7 = *plVar2;
+  pcVar4 = (char *)(lVar7 + (long)in_w1 * 0x74 + 0x34);
+  if (*pcVar4 != '\0') {
+    *pcVar4 = '\0';
+    *(int *)((long)plVar2 + 0x34) = *(int *)((long)plVar2 + 0x34) + -1;
+    plVar3 = (long *)FUN_00164060(0x18);
+    *(int *)(plVar3 + 2) = in_w1;
+    *plVar3 = (long)(plVar2 + 3);
+    puVar5 = (undefined8 *)plVar2[4];
+    plVar3[1] = (long)puVar5;
+    *puVar5 = plVar3;
+    plVar2[4] = (long)plVar3;
+    plVar2[5] = plVar2[5] + 1;
+    if ((in_w1 != 0) && ((int)plVar2[6] == in_w1)) {
+      lVar6 = (long)in_w1;
+      pcVar4 = (char *)(lVar7 + lVar6 * 0x74 + -0x40);
       do {
-        param_2 = param_2 + -1;
-        if (lVar5 < 2) break;
-        cVar1 = *pcVar3;
-        lVar5 = lVar5 + -1;
-        pcVar3 = pcVar3 + -0x74;
+        in_w1 = in_w1 + -1;
+        if (lVar6 < 2) break;
+        cVar1 = *pcVar4;
+        lVar6 = lVar6 + -1;
+        pcVar4 = pcVar4 + -0x74;
       } while (cVar1 == '\0');
-      *(int *)(param_1 + 6) = param_2;
+      *(int *)(plVar2 + 6) = in_w1;
     }
   }
   return;
@@ -450,10 +460,11 @@ void Walaber::ParticleSet::drawParticles
 
 /* Walaber::ParticleSet::_getParticleColor(Walaber::Particle const*, Walaber::Color const&) */
 
-void Walaber::ParticleSet::_getParticleColor
-               (byte *param_1,undefined8 param_2,long param_3,byte *param_4)
+void Walaber::ParticleSet::_getParticleColor(Walaber__Particle *p0,Walaber__Color *p1)
 
 {
+  byte *in_x2;
+  byte *in_x8;
   byte bVar1;
   int iVar2;
   byte bVar3;
@@ -465,7 +476,7 @@ void Walaber::ParticleSet::_getParticleColor
   float fVar9;
   float fVar10;
   
-  fVar7 = (*(float *)(param_3 + 0x54) - *(float *)(param_3 + 0x30)) / *(float *)(param_3 + 0x60);
+  fVar7 = (*(float *)(p1 + 0x54) - *(float *)(p1 + 0x30)) / *(float *)(p1 + 0x60);
   fVar9 = fVar7;
   if (1.0 < fVar7) {
     fVar9 = 1.0;
@@ -474,20 +485,20 @@ void Walaber::ParticleSet::_getParticleColor
     fVar9 = 0.0;
   }
   if (1.0 <= fVar9) {
-    if (*(float *)(param_3 + 0x5c) == 0.0) {
-      *param_1 = *param_4;
-      param_1[1] = param_4[1];
-      param_1[2] = param_4[2];
-      param_1[3] = param_4[3];
+    if (*(float *)(p1 + 0x5c) == 0.0) {
+      *in_x8 = *in_x2;
+      in_x8[1] = in_x2[1];
+      in_x8[2] = in_x2[2];
+      in_x8[3] = in_x2[3];
       return;
     }
-    fVar9 = (float)NEON_fminnm(*(float *)(param_3 + 0x30) / *(float *)(param_3 + 0x5c),0x3f800000);
+    fVar9 = (float)NEON_fminnm(*(float *)(p1 + 0x30) / *(float *)(p1 + 0x5c),0x3f800000);
     fVar9 = fVar9 + 0.0;
-    fVar8 = (float)NEON_ucvtf((uint)*param_4);
-    fVar10 = (float)NEON_ucvtf((uint)param_4[1]);
-    fVar7 = (float)NEON_ucvtf((uint)param_4[2]);
+    fVar8 = (float)NEON_ucvtf((uint)*in_x2);
+    fVar10 = (float)NEON_ucvtf((uint)in_x2[1]);
+    fVar7 = (float)NEON_ucvtf((uint)in_x2[2]);
     iVar2 = (int)(fVar9 * fVar8);
-    fVar8 = (float)NEON_ucvtf((uint)param_4[3]);
+    fVar8 = (float)NEON_ucvtf((uint)in_x2[3]);
     iVar4 = (int)(fVar9 * fVar10);
     iVar5 = (int)(fVar9 * fVar7);
     if (0xfe < iVar2) {
@@ -503,17 +514,17 @@ void Walaber::ParticleSet::_getParticleColor
     if (0xfe < iVar6) {
       iVar6 = 0xff;
     }
-    *param_1 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+    *in_x8 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
     bVar1 = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
-    param_1[1] = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+    in_x8[1] = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
     bVar3 = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
   }
   else {
-    fVar7 = (float)NEON_ucvtf((uint)*param_4);
-    fVar8 = (float)NEON_ucvtf((uint)param_4[1]);
-    fVar10 = (float)NEON_ucvtf((uint)param_4[2]);
+    fVar7 = (float)NEON_ucvtf((uint)*in_x2);
+    fVar8 = (float)NEON_ucvtf((uint)in_x2[1]);
+    fVar10 = (float)NEON_ucvtf((uint)in_x2[2]);
     iVar2 = (int)(fVar9 * fVar7);
-    fVar7 = (float)NEON_ucvtf((uint)param_4[3]);
+    fVar7 = (float)NEON_ucvtf((uint)in_x2[3]);
     iVar4 = (int)(fVar9 * fVar8);
     iVar5 = (int)(fVar9 * fVar10);
     if (0xfe < iVar2) {
@@ -529,13 +540,13 @@ void Walaber::ParticleSet::_getParticleColor
     if (0xfe < iVar6) {
       iVar6 = 0xff;
     }
-    *param_1 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+    *in_x8 = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
     bVar1 = (byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff);
-    param_1[1] = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+    in_x8[1] = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
     bVar3 = (byte)iVar6 & ((byte)(iVar6 >> 0x1f) ^ 0xff);
   }
-  param_1[2] = bVar1;
-  param_1[3] = bVar3;
+  in_x8[2] = bVar1;
+  in_x8[3] = bVar3;
   return;
 }
 
@@ -547,9 +558,11 @@ void Walaber::ParticleSet::_getParticleColor
 
 /* Walaber::ParticleSet::getParticleSize(int) */
 
-void Walaber::ParticleSet::getParticleSize(undefined8 *param_1,long *param_2,int param_3)
+void Walaber::ParticleSet::getParticleSize(int p0)
 
 {
+  int in_w1;
+  undefined8 *in_x8;
   long lVar1;
   long lVar2;
   long lVar3;
@@ -560,15 +573,15 @@ void Walaber::ParticleSet::getParticleSize(undefined8 *param_1,long *param_2,int
   float fVar8;
   undefined8 uVar9;
   
-  lVar1 = *param_2;
-  lVar2 = lVar1 + (long)param_3 * 0x74;
-  lVar3 = (long)param_3;
+  lVar1 = *(long *)(ulong)(uint)p0;
+  lVar2 = lVar1 + (long)in_w1 * 0x74;
+  lVar3 = (long)in_w1;
   fVar6 = *(float *)(lVar2 + 0x54) - *(float *)(lVar2 + 0x30);
   if (*(float *)(lVar2 + 0x68) <= fVar6) {
     fVar8 = *(float *)(lVar1 + lVar3 * 0x74 + 0x6c);
     lVar1 = lVar1 + lVar3 * 0x74;
     if (fVar6 < fVar8) {
-      *param_1 = *(undefined8 *)(lVar1 + 0x20);
+      *in_x8 = *(undefined8 *)(lVar1 + 0x20);
       return;
     }
     puVar4 = (undefined8 *)(lVar1 + 0x20);
@@ -595,8 +608,8 @@ void Walaber::ParticleSet::getParticleSize(undefined8 *param_1,long *param_2,int
   uVar9 = *puVar4;
 LAB_00394558:
   fVar8 = (float)((ulong)uVar9 >> 0x20);
-  *param_1 = CONCAT44(fVar8 + ((float)((ulong)uVar7 >> 0x20) - fVar8) * fVar6,
-                      (float)uVar9 + ((float)uVar7 - (float)uVar9) * fVar6);
+  *in_x8 = CONCAT44(fVar8 + ((float)((ulong)uVar7 >> 0x20) - fVar8) * fVar6,
+                    (float)uVar9 + ((float)uVar7 - (float)uVar9) * fVar6);
   return;
 }
 
@@ -832,65 +845,65 @@ void Walaber::ParticleSet::ParticleSet(undefined8 *param_1)
 
 undefined8
 Walaber::ParticleSet::addParticle
-          (float param_1,undefined4 param_2,long *param_3,undefined8 *param_4,undefined4 *param_5,
-          int *param_6)
+          (float p0,Walaber__Vector2 *p1,float p2,Walaber__Vector2 *p3,int *p4)
 
 {
   long lVar1;
-  undefined4 uVar2;
-  undefined4 uVar3;
-  long *plVar4;
-  undefined8 uVar5;
-  long lVar6;
-  undefined8 *puVar7;
-  int iVar8;
-  float fVar9;
+  int iVar2;
+  int iVar3;
+  long *p0_00;
+  undefined8 uVar4;
+  int *in_x3;
+  long lVar5;
+  undefined8 *puVar6;
+  int iVar7;
+  float fVar8;
   
-  lVar6 = param_3[5];
-  if (lVar6 == 0) {
+  lVar5 = *(long *)(p1 + 0x28);
+  if (lVar5 == 0) {
     FUN_00166450("Walaber",2,"No more free particles!!!\n");
-    uVar5 = 0;
-    iVar8 = -1;
+    uVar4 = 0;
+    iVar7 = -1;
   }
   else {
-    plVar4 = (long *)param_3[4];
-    lVar1 = *plVar4;
-    iVar8 = (int)plVar4[2];
-    *(long *)(lVar1 + 8) = plVar4[1];
-    *(long *)plVar4[1] = lVar1;
-    param_3[5] = lVar6 + -1;
-    FUN_00166120();
-    fVar9 = 1.0 / param_1;
-    if (param_1 == 0.0) {
-      fVar9 = 0.0;
+    p0_00 = *(long **)(p1 + 0x20);
+    lVar1 = *p0_00;
+    iVar7 = (int)p0_00[2];
+    *(long *)(lVar1 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar1;
+    *(long *)(p1 + 0x28) = lVar5 + -1;
+    FUN_00166120(p0_00);
+    fVar8 = 1.0 / p0;
+    if (p0 == 0.0) {
+      fVar8 = 0.0;
     }
-    puVar7 = (undefined8 *)(*param_3 + (long)iVar8 * 0x74);
-    *(float *)(puVar7 + 5) = param_1;
-    *(float *)((long)puVar7 + 0x2c) = fVar9;
-    *(undefined4 *)(puVar7 + 10) = param_2;
-    *puVar7 = *param_4;
-    puVar7[1] = *param_4;
-    puVar7[2] = 0;
-    puVar7[3] = 0;
-    uVar2 = *param_5;
-    *(undefined4 *)(puVar7 + 4) = uVar2;
-    uVar3 = param_5[1];
-    *(undefined4 *)(puVar7 + 6) = 0xbf800000;
-    *(undefined2 *)((long)puVar7 + 0x34) = 0x101;
-    *(undefined8 *)((long)puVar7 + 0x54) = 0xbf800000;
-    *(undefined4 *)((long)puVar7 + 100) = 0;
-    *(undefined4 *)((long)puVar7 + 0x5c) = 0x3f000000;
-    *(undefined4 *)((long)puVar7 + 0x24) = uVar3;
-    *(undefined4 *)(puVar7 + 9) = uVar2;
-    *(undefined4 *)((long)puVar7 + 0x4c) = uVar3;
-    *(int *)((long)param_3 + 0x34) = *(int *)((long)param_3 + 0x34) + 1;
-    if ((int)param_3[6] < iVar8) {
-      *(int *)(param_3 + 6) = iVar8;
+    puVar6 = (undefined8 *)(*(long *)p1 + (long)iVar7 * 0x74);
+    *(float *)(puVar6 + 5) = p0;
+    *(float *)((long)puVar6 + 0x2c) = fVar8;
+    *(float *)(puVar6 + 10) = p2;
+    *puVar6 = *(undefined8 *)p3;
+    puVar6[1] = *(undefined8 *)p3;
+    puVar6[2] = 0;
+    puVar6[3] = 0;
+    iVar2 = *p4;
+    *(int *)(puVar6 + 4) = iVar2;
+    iVar3 = p4[1];
+    *(undefined4 *)(puVar6 + 6) = 0xbf800000;
+    *(undefined2 *)((long)puVar6 + 0x34) = 0x101;
+    *(undefined8 *)((long)puVar6 + 0x54) = 0xbf800000;
+    *(undefined4 *)((long)puVar6 + 100) = 0;
+    *(undefined4 *)((long)puVar6 + 0x5c) = 0x3f000000;
+    *(int *)((long)puVar6 + 0x24) = iVar3;
+    *(int *)(puVar6 + 9) = iVar2;
+    *(int *)((long)puVar6 + 0x4c) = iVar3;
+    *(int *)(p1 + 0x34) = *(int *)(p1 + 0x34) + 1;
+    if (*(int *)(p1 + 0x30) < iVar7) {
+      *(int *)(p1 + 0x30) = iVar7;
     }
-    uVar5 = 1;
+    uVar4 = 1;
   }
-  *param_6 = iVar8;
-  return uVar5;
+  *in_x3 = iVar7;
+  return uVar4;
 }
 
 

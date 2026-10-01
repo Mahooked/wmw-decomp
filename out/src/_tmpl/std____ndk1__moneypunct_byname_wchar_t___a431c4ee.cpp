@@ -6,50 +6,55 @@
 /* mangled: _ZNSt6__ndk117moneypunct_bynameIwLb1EE4initEPKc */
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::init(char const*) */
 
+/* WARNING: Type propagation algorithm not settling */
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::init(long param_1,long param_2)
+void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0)
 
 {
   uint uVar1;
   byte bVar2;
   char cVar3;
   long lVar4;
-  ulong *puVar5;
+  undefined8 *puVar5;
   long lVar6;
   long lVar7;
   ulong uVar8;
   long lVar9;
   undefined8 uVar10;
+  long in_x1;
   ulong uVar11;
-  undefined4 *puVar12;
+  char *pcVar12;
   ulong uVar13;
-  undefined4 *puVar14;
-  ulong *puVar15;
-  ulong *puVar16;
+  char *pcVar14;
+  void **ppvVar15;
   ulong uVar17;
-  ulong *puVar18;
-  ulong *puVar19;
-  ulong *puVar20;
-  ulong uVar21;
-  ulong uVar22;
-  ulong uVar23;
+  undefined8 *puVar18;
+  char *pcVar19;
+  void *pvVar20;
+  ulong *puVar21;
+  ulong *puVar22;
+  undefined8 uVar23;
+  undefined8 uVar24;
   undefined8 uStack_228;
   undefined8 uStack_220;
   ulong uStack_218;
   ulong uStack_210;
-  ulong uStack_208;
-  ulong auStack_200 [51];
+  void *pvStack_208;
+  void *pvStack_200;
+  ulong uStack_1f8;
+  void *apvStack_1f0 [49];
   long lStack_68;
+  void **ppvVar16;
   
   lVar4 = tpidr_el0;
   lStack_68 = *(long *)(lVar4 + 0x28);
-  lVar6 = FUN_00164730(0x1fbf,param_2,0);
+  lVar6 = FUN_00164730(0x1fbf,in_x1,0);
   if (lVar6 == 0) {
     uStack_218 = 0;
     uStack_210 = 0;
-    uStack_208 = 0;
-    uVar8 = FUN_00173480(param_2);
+    pvStack_208 = (void *)0x0;
+    uVar8 = FUN_00173480();
     if (0xffffffffffffffef < uVar8) {
                     /* try { // try from 005c75c8 to 005c75cf has its CatchHandler @ 005c76c0 */
       FUN_00164180(&uStack_218);
@@ -60,27 +65,35 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::init(long param_1,long param_
                     /* try { // try from 005c6fc4 to 005c6fc7 has its CatchHandler @ 005c775c */
     lVar7 = FUN_0016a870();
                     /* try { // try from 005c6fcc to 005c6fcf has its CatchHandler @ 005c7728 */
-    param_2 = func_0x0016e280();
+    in_x1 = func_0x0016e280();
     if (lVar7 != 0) {
                     /* try { // try from 005c6fd8 to 005c6fdf has its CatchHandler @ 005c7700 */
       FUN_0016a870(lVar7);
     }
+    pcVar12 = p0 + 0x10;
                     /* try { // try from 005c6fe8 to 005c702b has its CatchHandler @ 005c775c */
-    uVar8 = FUN_005dc92c((undefined4 *)(param_1 + 0x10),*(undefined8 *)(param_2 + 0x28),lVar6);
+    uVar8 = FUN_005dc92c(pcVar12,*(undefined8 *)(in_x1 + 0x28),lVar6);
     if ((uVar8 & 1) == 0) {
-      *(undefined4 *)(param_1 + 0x10) = 0xffffffff;
+      pcVar12[0] = -1;
+      pcVar12[1] = -1;
+      pcVar12[2] = -1;
+      pcVar12[3] = -1;
     }
-    uVar8 = FUN_005dc92c((undefined4 *)(param_1 + 0x14),*(undefined8 *)(param_2 + 0x30),lVar6);
+    pcVar12 = p0 + 0x14;
+    uVar8 = FUN_005dc92c(pcVar12,*(undefined8 *)(in_x1 + 0x30),lVar6);
     if ((uVar8 & 1) == 0) {
-      *(undefined4 *)(param_1 + 0x14) = 0xffffffff;
+      pcVar12[0] = -1;
+      pcVar12[1] = -1;
+      pcVar12[2] = -1;
+      pcVar12[3] = -1;
     }
-    func_0x00165980(param_1 + 0x18,*(undefined8 *)(param_2 + 0x38));
-    uStack_228 = *(undefined8 *)(param_2 + 0x18);
+    func_0x00165980(p0 + 0x18,*(undefined8 *)(in_x1 + 0x38));
+    uStack_228 = *(undefined8 *)(in_x1 + 0x18);
     uStack_220 = 0;
                     /* try { // try from 005c7034 to 005c703b has its CatchHandler @ 005c7724 */
     lVar7 = FUN_0016a870(lVar6);
                     /* try { // try from 005c7040 to 005c7053 has its CatchHandler @ 005c770c */
-    lVar9 = func_0x00173f30(auStack_200,&uStack_228,100,&uStack_220);
+    lVar9 = func_0x00173f30(&pvStack_200,&uStack_228,100,&uStack_220);
     if (lVar7 != 0) {
                     /* try { // try from 005c705c to 005c7063 has its CatchHandler @ 005c76fc */
       FUN_0016a870(lVar7);
@@ -90,8 +103,8 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::init(long param_1,long param_
       FUN_00167030("locale not supported");
       goto LAB_005c75dc;
     }
-    puVar19 = (ulong *)(param_1 + 0x30);
-    bVar2 = *(byte *)puVar19;
+    puVar21 = (ulong *)(p0 + 0x30);
+    bVar2 = (byte)*puVar21;
     uVar8 = (lVar9 << 2) >> 2;
     if ((bVar2 & 1) == 0) {
       uVar11 = 4;
@@ -103,99 +116,102 @@ LAB_005c70b0:
         uVar13 = (ulong)(bVar2 >> 1);
       }
       else {
-        uVar13 = *(ulong *)(param_1 + 0x38);
+        uVar13 = *(ulong *)(p0 + 0x38);
       }
                     /* try { // try from 005c70c0 to 005c71df has its CatchHandler @ 005c7758 */
-      FUN_00165770(puVar19,uVar11,lVar7,uVar13,0,uVar13,0);
-      if ((*(byte *)puVar19 & 1) != 0) goto LAB_005c70dc;
+      FUN_00165770(puVar21,uVar11,lVar7,uVar13,0,uVar13,0);
+      if ((*puVar21 & 1) != 0) goto LAB_005c70dc;
 LAB_005c7090:
-      puVar12 = (undefined4 *)(param_1 + 0x34);
+      pcVar12 = p0 + 0x34;
     }
     else {
-      uVar13 = *puVar19;
+      uVar13 = *puVar21;
       uVar11 = (uVar13 & 0xfffffffffffffffe) - 1;
       lVar7 = uVar8 - uVar11;
       if (uVar11 <= uVar8 && lVar7 != 0) goto LAB_005c70b0;
 LAB_005c708c:
       if ((uVar13 & 1) == 0) goto LAB_005c7090;
 LAB_005c70dc:
-      puVar12 = *(undefined4 **)(param_1 + 0x40);
+      pcVar12 = *(char **)(p0 + 0x40);
     }
     if (lVar9 != 0) {
       lVar7 = lVar9 * 4;
       uVar11 = (lVar7 - 4U >> 2) + 1;
-      puVar20 = auStack_200;
-      puVar14 = puVar12;
+      ppvVar16 = &pvStack_200;
+      pcVar14 = pcVar12;
       if ((uVar11 < 8) ||
-         ((puVar12 < (undefined4 *)((long)auStack_200 + lVar7) &&
-          (puVar20 = auStack_200, auStack_200 < puVar12 + lVar9)))) {
+         ((pcVar12 < (char *)((long)&pvStack_200 + lVar7) &&
+          (ppvVar16 = &pvStack_200, &pvStack_200 < pcVar12 + lVar7)))) {
 LAB_005c7180:
         do {
-          puVar15 = (ulong *)((long)puVar20 + 4);
-          *puVar14 = (int)*puVar20;
-          puVar14 = puVar14 + 1;
-          puVar20 = puVar15;
-        } while ((ulong *)((long)auStack_200 + lVar9 * 4) != puVar15);
+          ppvVar15 = (void **)((long)ppvVar16 + 4);
+          *(undefined4 *)pcVar14 = *(undefined4 *)ppvVar16;
+          pcVar14 = pcVar14 + 4;
+          ppvVar16 = ppvVar15;
+        } while ((void **)((long)&pvStack_200 + lVar9 * 4) != ppvVar15);
       }
       else {
         uVar17 = uVar11 & 0x7ffffffffffffff8;
-        puVar15 = auStack_200 + 2;
-        puVar14 = puVar12 + uVar17;
-        puVar20 = (ulong *)((long)auStack_200 + uVar17 * 4);
-        puVar16 = (ulong *)(puVar12 + 4);
+        puVar18 = apvStack_1f0;
+        pcVar14 = pcVar12 + uVar17 * 4;
+        ppvVar16 = (void **)((long)&pvStack_200 + uVar17 * 4);
+        pcVar19 = pcVar12 + 0x10;
         uVar13 = uVar17;
         do {
-          puVar18 = puVar15 + -1;
-          uVar21 = puVar15[-2];
-          uVar23 = puVar15[1];
-          uVar22 = *puVar15;
-          puVar15 = puVar15 + 4;
+          puVar5 = puVar18 + -1;
+          uVar10 = puVar18[-2];
+          uVar24 = puVar18[1];
+          uVar23 = *puVar18;
+          puVar18 = puVar18 + 4;
           uVar13 = uVar13 - 8;
-          puVar16[-1] = *puVar18;
-          puVar16[-2] = uVar21;
-          puVar16[1] = uVar23;
-          *puVar16 = uVar22;
-          puVar16 = puVar16 + 4;
+          *(undefined8 *)(pcVar19 + -8) = *puVar5;
+          *(undefined8 *)(pcVar19 + -0x10) = uVar10;
+          *(undefined8 *)(pcVar19 + 8) = uVar24;
+          *(undefined8 *)pcVar19 = uVar23;
+          pcVar19 = pcVar19 + 0x20;
         } while (uVar13 != 0);
         if (uVar11 != uVar17) goto LAB_005c7180;
       }
-      puVar12 = (undefined4 *)((long)puVar12 + (long)auStack_200 + (lVar7 - (long)auStack_200));
+      pcVar12 = pcVar12 + (long)&pvStack_200 + (lVar7 - (long)&pvStack_200);
     }
-    *puVar12 = 0;
-    if ((*(byte *)puVar19 & 1) == 0) {
-      *(byte *)puVar19 = (byte)((int)lVar9 << 1);
+    pcVar12[0] = '\0';
+    pcVar12[1] = '\0';
+    pcVar12[2] = '\0';
+    pcVar12[3] = '\0';
+    if ((*puVar21 & 1) == 0) {
+      *(byte *)puVar21 = (byte)((int)lVar9 << 1);
     }
     else {
-      *(ulong *)(param_1 + 0x38) = uVar8;
+      *(ulong *)(p0 + 0x38) = uVar8;
     }
     uVar1 = 0;
-    if (*(byte *)(param_2 + 0x50) != 0xff) {
-      uVar1 = (uint)*(byte *)(param_2 + 0x50);
+    if (*(byte *)(in_x1 + 0x50) != 0xff) {
+      uVar1 = (uint)*(byte *)(in_x1 + 0x50);
     }
-    *(uint *)(param_1 + 0x78) = uVar1;
-    if (*(char *)(param_2 + 0x5c) == '\0') {
+    *(uint *)(p0 + 0x78) = uVar1;
+    if (*(char *)(in_x1 + 0x5c) == '\0') {
                     /* try { // try from 005c7244 to 005c7267 has its CatchHandler @ 005c7758 */
-      func_0x00167cf0(param_1 + 0x48,&DAT_006423e8);
-      cVar3 = *(char *)(param_2 + 0x5d);
+      func_0x00167cf0(p0 + 0x48,&DAT_006423e8);
+      cVar3 = *(char *)(in_x1 + 0x5d);
 joined_r0x005c7254:
       if (cVar3 == '\0') {
 LAB_005c7414:
-        func_0x00167cf0(param_1 + 0x60,&DAT_006423e8);
+        func_0x00167cf0(p0 + 0x60,&DAT_006423e8);
       }
       else {
 LAB_005c7258:
-        uStack_228 = *(undefined8 *)(param_2 + 0x48);
+        uStack_228 = *(undefined8 *)(in_x1 + 0x48);
         uStack_220 = 0;
         lVar7 = FUN_0016a870(lVar6);
                     /* try { // try from 005c726c to 005c727f has its CatchHandler @ 005c76cc */
-        lVar9 = func_0x00173f30(auStack_200,&uStack_228,100,&uStack_220);
+        lVar9 = func_0x00173f30(&pvStack_200,&uStack_228,100,&uStack_220);
         if (lVar7 != 0) {
                     /* try { // try from 005c7288 to 005c728f has its CatchHandler @ 005c76c4 */
           FUN_0016a870(lVar7);
         }
         if (lVar9 == -1) goto LAB_005c75ec;
-        puVar20 = (ulong *)(param_1 + 0x60);
-        bVar2 = *(byte *)puVar20;
+        puVar22 = (ulong *)(p0 + 0x60);
+        bVar2 = (byte)*puVar22;
         uVar8 = (lVar9 << 2) >> 2;
         if ((bVar2 & 1) == 0) {
           uVar11 = 4;
@@ -207,80 +223,83 @@ LAB_005c72fc:
             uVar13 = (ulong)(bVar2 >> 1);
           }
           else {
-            uVar13 = *(ulong *)(param_1 + 0x68);
+            uVar13 = *(ulong *)(p0 + 0x68);
           }
-          FUN_00165770(puVar20,uVar11,lVar7,uVar13,0,uVar13,0);
-          if ((*(byte *)puVar20 & 1) != 0) goto LAB_005c7448;
+          FUN_00165770(puVar22,uVar11,lVar7,uVar13,0,uVar13,0);
+          if ((*puVar22 & 1) != 0) goto LAB_005c7448;
 LAB_005c72bc:
-          puVar12 = (undefined4 *)(param_1 + 100);
+          pcVar12 = p0 + 100;
         }
         else {
-          uVar13 = *puVar20;
+          uVar13 = *puVar22;
           uVar11 = (uVar13 & 0xfffffffffffffffe) - 1;
           lVar7 = uVar8 - uVar11;
           if (uVar11 <= uVar8 && lVar7 != 0) goto LAB_005c72fc;
 LAB_005c72b8:
           if ((uVar13 & 1) == 0) goto LAB_005c72bc;
 LAB_005c7448:
-          puVar12 = *(undefined4 **)(param_1 + 0x70);
+          pcVar12 = *(char **)(p0 + 0x70);
         }
         if (lVar9 != 0) {
           lVar7 = lVar9 * 4;
           uVar11 = (lVar7 - 4U >> 2) + 1;
-          puVar15 = auStack_200;
-          puVar14 = puVar12;
+          ppvVar16 = &pvStack_200;
+          pcVar14 = pcVar12;
           if ((uVar11 < 8) ||
-             ((puVar12 < (undefined4 *)((long)auStack_200 + lVar7) &&
-              (puVar15 = auStack_200, auStack_200 < puVar12 + lVar9)))) {
+             ((pcVar12 < (char *)((long)&pvStack_200 + lVar7) &&
+              (ppvVar16 = &pvStack_200, &pvStack_200 < pcVar12 + lVar7)))) {
 LAB_005c74ec:
             do {
-              puVar16 = (ulong *)((long)puVar15 + 4);
-              *puVar14 = (int)*puVar15;
-              puVar14 = puVar14 + 1;
-              puVar15 = puVar16;
-            } while ((ulong *)((long)auStack_200 + lVar9 * 4) != puVar16);
+              ppvVar15 = (void **)((long)ppvVar16 + 4);
+              *(undefined4 *)pcVar14 = *(undefined4 *)ppvVar16;
+              pcVar14 = pcVar14 + 4;
+              ppvVar16 = ppvVar15;
+            } while ((void **)((long)&pvStack_200 + lVar9 * 4) != ppvVar15);
           }
           else {
             uVar17 = uVar11 & 0x7ffffffffffffff8;
-            puVar16 = auStack_200 + 2;
-            puVar14 = puVar12 + uVar17;
-            puVar15 = (ulong *)((long)auStack_200 + uVar17 * 4);
-            puVar18 = (ulong *)(puVar12 + 4);
+            puVar18 = apvStack_1f0;
+            pcVar14 = pcVar12 + uVar17 * 4;
+            ppvVar16 = (void **)((long)&pvStack_200 + uVar17 * 4);
+            pcVar19 = pcVar12 + 0x10;
             uVar13 = uVar17;
             do {
-              puVar5 = puVar16 + -1;
-              uVar21 = puVar16[-2];
-              uVar23 = puVar16[1];
-              uVar22 = *puVar16;
-              puVar16 = puVar16 + 4;
-              uVar13 = uVar13 - 8;
-              puVar18[-1] = *puVar5;
-              puVar18[-2] = uVar21;
-              puVar18[1] = uVar23;
-              *puVar18 = uVar22;
+              puVar5 = puVar18 + -1;
+              uVar10 = puVar18[-2];
+              uVar24 = puVar18[1];
+              uVar23 = *puVar18;
               puVar18 = puVar18 + 4;
+              uVar13 = uVar13 - 8;
+              *(undefined8 *)(pcVar19 + -8) = *puVar5;
+              *(undefined8 *)(pcVar19 + -0x10) = uVar10;
+              *(undefined8 *)(pcVar19 + 8) = uVar24;
+              *(undefined8 *)pcVar19 = uVar23;
+              pcVar19 = pcVar19 + 0x20;
             } while (uVar13 != 0);
             if (uVar11 != uVar17) goto LAB_005c74ec;
           }
-          puVar12 = (undefined4 *)((long)puVar12 + (long)auStack_200 + (lVar7 - (long)auStack_200));
+          pcVar12 = pcVar12 + (long)&pvStack_200 + (lVar7 - (long)&pvStack_200);
         }
-        *puVar12 = 0;
-        if ((*(byte *)puVar20 & 1) == 0) {
-          *(byte *)puVar20 = (byte)((int)lVar9 << 1);
+        pcVar12[0] = '\0';
+        pcVar12[1] = '\0';
+        pcVar12[2] = '\0';
+        pcVar12[3] = '\0';
+        if ((*puVar22 & 1) == 0) {
+          *(byte *)puVar22 = (byte)((int)lVar9 << 1);
         }
         else {
-          *(ulong *)(param_1 + 0x68) = uVar8;
+          *(ulong *)(p0 + 0x68) = uVar8;
         }
       }
                     /* try { // try from 005c7524 to 005c752f has its CatchHandler @ 005c7708 */
-      func_0x0016efc0(&uStack_218,puVar19);
+      func_0x0016efc0(&uStack_218,puVar21);
                     /* try { // try from 005c7540 to 005c7567 has its CatchHandler @ 005c7740 */
-      func_0x005e07a0(param_1 + 0x7c,&uStack_218,1,*(undefined1 *)(param_2 + 0x58),
-                      *(undefined1 *)(param_2 + 0x59),*(undefined1 *)(param_2 + 0x5c));
-      func_0x005e07a0(param_1 + 0x80,puVar19,1,*(undefined1 *)(param_2 + 0x5a),
-                      *(undefined1 *)(param_2 + 0x5b),*(undefined1 *)(param_2 + 0x5d));
+      func_0x005e07a0(p0 + 0x7c,&uStack_218,1,*(undefined1 *)(in_x1 + 0x58),
+                      *(undefined1 *)(in_x1 + 0x59),*(undefined1 *)(in_x1 + 0x5c));
+      func_0x005e07a0(p0 + 0x80,puVar21,1,*(undefined1 *)(in_x1 + 0x5a),
+                      *(undefined1 *)(in_x1 + 0x5b),*(undefined1 *)(in_x1 + 0x5d));
       if (((byte)uStack_218 & 1) != 0) {
-        FUN_00166120(uStack_208);
+        FUN_00166120(pvStack_208);
       }
                     /* try { // try from 005c7578 to 005c757f has its CatchHandler @ 005c7704 */
       FUN_00173520(lVar6);
@@ -291,18 +310,18 @@ LAB_005c75dc:
       FUN_00164ff0();
       return;
     }
-    uStack_228 = *(undefined8 *)(param_2 + 0x40);
+    uStack_228 = *(undefined8 *)(in_x1 + 0x40);
     uStack_220 = 0;
     lVar7 = FUN_0016a870(lVar6);
                     /* try { // try from 005c71e4 to 005c71f7 has its CatchHandler @ 005c76e4 */
-    lVar9 = func_0x00173f30(auStack_200,&uStack_228,100,&uStack_220);
+    lVar9 = func_0x00173f30(&pvStack_200,&uStack_228,100,&uStack_220);
     if (lVar7 != 0) {
                     /* try { // try from 005c7200 to 005c7207 has its CatchHandler @ 005c76c8 */
       FUN_0016a870(lVar7);
     }
     if (lVar9 != -1) {
-      puVar20 = (ulong *)(param_1 + 0x48);
-      bVar2 = *(byte *)puVar20;
+      puVar22 = (ulong *)(p0 + 0x48);
+      bVar2 = (byte)*puVar22;
       uVar8 = (lVar9 << 2) >> 2;
       if ((bVar2 & 1) == 0) {
         uVar11 = 4;
@@ -314,72 +333,75 @@ LAB_005c72dc:
           uVar13 = (ulong)(bVar2 >> 1);
         }
         else {
-          uVar13 = *(ulong *)(param_1 + 0x50);
+          uVar13 = *(ulong *)(p0 + 0x50);
         }
                     /* try { // try from 005c730c to 005c743f has its CatchHandler @ 005c7758 */
-        FUN_00165770(puVar20,uVar11,lVar7,uVar13,0,uVar13,0);
-        if ((*(byte *)puVar20 & 1) != 0) goto LAB_005c7328;
+        FUN_00165770(puVar22,uVar11,lVar7,uVar13,0,uVar13,0);
+        if ((*puVar22 & 1) != 0) goto LAB_005c7328;
 LAB_005c7234:
-        puVar12 = (undefined4 *)(param_1 + 0x4c);
+        pcVar12 = p0 + 0x4c;
       }
       else {
-        uVar13 = *puVar20;
+        uVar13 = *puVar22;
         uVar11 = (uVar13 & 0xfffffffffffffffe) - 1;
         lVar7 = uVar8 - uVar11;
         if (uVar11 <= uVar8 && lVar7 != 0) goto LAB_005c72dc;
 LAB_005c7230:
         if ((uVar13 & 1) == 0) goto LAB_005c7234;
 LAB_005c7328:
-        puVar12 = *(undefined4 **)(param_1 + 0x58);
+        pcVar12 = *(char **)(p0 + 0x58);
       }
       if (lVar9 != 0) {
         lVar7 = lVar9 * 4;
         uVar11 = (lVar7 - 4U >> 2) + 1;
-        puVar15 = auStack_200;
-        puVar14 = puVar12;
+        ppvVar16 = &pvStack_200;
+        pcVar14 = pcVar12;
         if ((uVar11 < 8) ||
-           ((puVar12 < (undefined4 *)((long)auStack_200 + lVar7) &&
-            (puVar15 = auStack_200, auStack_200 < puVar12 + lVar9)))) {
+           ((pcVar12 < (char *)((long)&pvStack_200 + lVar7) &&
+            (ppvVar16 = &pvStack_200, &pvStack_200 < pcVar12 + lVar7)))) {
 LAB_005c73cc:
           do {
-            puVar16 = (ulong *)((long)puVar15 + 4);
-            *puVar14 = (int)*puVar15;
-            puVar14 = puVar14 + 1;
-            puVar15 = puVar16;
-          } while ((ulong *)((long)auStack_200 + lVar9 * 4) != puVar16);
+            ppvVar15 = (void **)((long)ppvVar16 + 4);
+            *(undefined4 *)pcVar14 = *(undefined4 *)ppvVar16;
+            pcVar14 = pcVar14 + 4;
+            ppvVar16 = ppvVar15;
+          } while ((void **)((long)&pvStack_200 + lVar9 * 4) != ppvVar15);
         }
         else {
           uVar17 = uVar11 & 0x7ffffffffffffff8;
-          puVar16 = auStack_200 + 2;
-          puVar14 = puVar12 + uVar17;
-          puVar15 = (ulong *)((long)auStack_200 + uVar17 * 4);
-          puVar18 = (ulong *)(puVar12 + 4);
+          puVar18 = apvStack_1f0;
+          pcVar14 = pcVar12 + uVar17 * 4;
+          ppvVar16 = (void **)((long)&pvStack_200 + uVar17 * 4);
+          pcVar19 = pcVar12 + 0x10;
           uVar13 = uVar17;
           do {
-            puVar5 = puVar16 + -1;
-            uVar21 = puVar16[-2];
-            uVar23 = puVar16[1];
-            uVar22 = *puVar16;
-            puVar16 = puVar16 + 4;
-            uVar13 = uVar13 - 8;
-            puVar18[-1] = *puVar5;
-            puVar18[-2] = uVar21;
-            puVar18[1] = uVar23;
-            *puVar18 = uVar22;
+            puVar5 = puVar18 + -1;
+            uVar10 = puVar18[-2];
+            uVar24 = puVar18[1];
+            uVar23 = *puVar18;
             puVar18 = puVar18 + 4;
+            uVar13 = uVar13 - 8;
+            *(undefined8 *)(pcVar19 + -8) = *puVar5;
+            *(undefined8 *)(pcVar19 + -0x10) = uVar10;
+            *(undefined8 *)(pcVar19 + 8) = uVar24;
+            *(undefined8 *)pcVar19 = uVar23;
+            pcVar19 = pcVar19 + 0x20;
           } while (uVar13 != 0);
           if (uVar11 != uVar17) goto LAB_005c73cc;
         }
-        puVar12 = (undefined4 *)((long)puVar12 + (long)auStack_200 + (lVar7 - (long)auStack_200));
+        pcVar12 = pcVar12 + (long)&pvStack_200 + (lVar7 - (long)&pvStack_200);
       }
-      *puVar12 = 0;
-      if ((*(byte *)puVar20 & 1) != 0) {
-        *(ulong *)(param_1 + 0x50) = uVar8;
-        cVar3 = *(char *)(param_2 + 0x5d);
+      pcVar12[0] = '\0';
+      pcVar12[1] = '\0';
+      pcVar12[2] = '\0';
+      pcVar12[3] = '\0';
+      if ((*puVar22 & 1) != 0) {
+        *(ulong *)(p0 + 0x50) = uVar8;
+        cVar3 = *(char *)(in_x1 + 0x5d);
         goto joined_r0x005c7254;
       }
-      *(byte *)puVar20 = (byte)((int)lVar9 << 1);
-      if (*(char *)(param_2 + 0x5d) == '\0') goto LAB_005c7414;
+      *(byte *)puVar22 = (byte)((int)lVar9 << 1);
+      if (*(char *)(in_x1 + 0x5d) == '\0') goto LAB_005c7414;
       goto LAB_005c7258;
     }
                     /* try { // try from 005c75e0 to 005c75f7 has its CatchHandler @ 005c7758 */
@@ -388,37 +410,37 @@ LAB_005c75ec:
     uVar8 = FUN_00167030("locale not supported");
   }
   if (uVar8 < 0x17) {
-    uVar11 = (ulong)&uStack_218 | 1;
+    pvVar20 = (void *)((ulong)&uStack_218 | 1);
     uStack_218 = CONCAT71(uStack_218._1_7_,(char)((int)uVar8 << 1));
     if (uVar8 == 0) goto LAB_005c764c;
   }
   else {
-    uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
+    uVar11 = uVar8 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005c7624 to 005c762b has its CatchHandler @ 005c76c0 */
-    uVar11 = FUN_00164060(uVar13);
-    uStack_218 = uVar13 | 1;
+    pvVar20 = (void *)FUN_00164060(uVar11);
+    uStack_218 = uVar11 | 1;
     uStack_210 = uVar8;
-    uStack_208 = uVar11;
+    pvStack_208 = pvVar20;
   }
-  FUN_001715e0(uVar11,param_2,uVar8);
+  FUN_001715e0(pvVar20,in_x1,uVar8);
 LAB_005c764c:
-  *(undefined1 *)(uVar11 + uVar8) = 0;
+  *(undefined1 *)((long)pvVar20 + uVar8) = 0;
                     /* try { // try from 005c7650 to 005c7663 has its CatchHandler @ 005c76a4 */
-  puVar19 = (ulong *)func_0x00161c30(&uStack_218,0,"moneypunct_byname failed to construct for ");
-  auStack_200[2] = puVar19[2];
-  auStack_200[1] = puVar19[1];
-  auStack_200[0] = *puVar19;
-  puVar19[1] = 0;
-  puVar19[2] = 0;
-  *puVar19 = 0;
+  puVar21 = (ulong *)func_0x00161c30(&uStack_218,0,"moneypunct_byname failed to construct for ");
+  apvStack_1f0[0] = (void *)puVar21[2];
+  uStack_1f8 = puVar21[1];
+  pvStack_200 = (void *)*puVar21;
+  puVar21[1] = 0;
+  puVar21[2] = 0;
+  *puVar21 = 0;
                     /* try { // try from 005c767c to 005c7683 has its CatchHandler @ 005c7684 */
-  uVar10 = FUN_005d5db0(auStack_200);
+  uVar10 = FUN_005d5db0(&pvStack_200);
                     /* catch() { ... } // from try @ 005c767c with catch @ 005c7684 */
-  if ((auStack_200[0] & 1) != 0) {
-    FUN_00166120(auStack_200[2]);
+  if (((ulong)pvStack_200 & 1) != 0) {
+    FUN_00166120(apvStack_1f0[0]);
   }
   if ((uStack_218 & 1) != 0) {
-    FUN_00166120(uStack_208);
+    FUN_00166120(pvStack_208);
     FUN_00169180(uVar10);
     return;
   }

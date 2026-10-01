@@ -16,80 +16,84 @@
 void std::__ndk1::
      vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
      ::assign<Walaber::SpriteAnimationTrack::SpriteAnimationEvent*>
-               (long *param_1,undefined8 *param_2,undefined8 *param_3)
+               (Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p0,
+               Walaber__SpriteAnimationTrack__SpriteAnimationEvent *p1)
 
 {
-  undefined8 *puVar1;
-  ulong uVar2;
-  long lVar3;
-  undefined8 *puVar4;
-  ulong uVar5;
+  Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar1;
+  undefined8 *puVar2;
+  undefined8 *puVar3;
+  Walaber__SpriteAnimationTrack__SpriteAnimationEvent *in_x2;
+  ulong uVar4;
+  long lVar5;
   undefined8 *puVar6;
   ulong uVar7;
+  Walaber__SpriteAnimationTrack__SpriteAnimationEvent *pWVar8;
+  ulong uVar9;
   
-  puVar4 = (undefined8 *)*param_1;
-  lVar3 = param_1[2] - (long)puVar4 >> 3;
-  uVar7 = ((long)param_3 - (long)param_2 >> 3) * -0x3333333333333333;
-  if (uVar7 < (ulong)(lVar3 * -0x3333333333333333) || uVar7 + lVar3 * 0x3333333333333333 == 0) {
-    lVar3 = param_1[1] - (long)puVar4 >> 3;
-    puVar6 = (undefined8 *)((long)param_2 + (param_1[1] - (long)puVar4));
-    puVar1 = puVar6;
-    if (uVar7 < (ulong)(lVar3 * -0x3333333333333333) || uVar7 + lVar3 * 0x3333333333333333 == 0) {
-      puVar1 = param_3;
+  puVar6 = *(undefined8 **)p0;
+  lVar5 = *(long *)(p0 + 0x10) - (long)puVar6 >> 3;
+  uVar9 = ((long)in_x2 - (long)p1 >> 3) * -0x3333333333333333;
+  if (uVar9 < (ulong)(lVar5 * -0x3333333333333333) || uVar9 + lVar5 * 0x3333333333333333 == 0) {
+    lVar5 = *(long *)(p0 + 8) - (long)puVar6 >> 3;
+    pWVar8 = p1 + (*(long *)(p0 + 8) - (long)puVar6);
+    pWVar1 = pWVar8;
+    if (uVar9 < (ulong)(lVar5 * -0x3333333333333333) || uVar9 + lVar5 * 0x3333333333333333 == 0) {
+      pWVar1 = in_x2;
     }
-    for (; puVar1 != param_2; param_2 = param_2 + 5) {
-      *puVar4 = *param_2;
-      func_0x00171ac0(puVar4 + 1,param_2 + 1);
-      *(undefined2 *)(puVar4 + 4) = *(undefined2 *)(param_2 + 4);
-      puVar4 = puVar4 + 5;
+    for (; pWVar1 != p1; p1 = p1 + 0x28) {
+      *puVar6 = *(undefined8 *)p1;
+      func_0x00171ac0(puVar6 + 1,p1 + 8);
+      *(undefined2 *)(puVar6 + 4) = *(undefined2 *)(p1 + 0x20);
+      puVar6 = puVar6 + 5;
     }
-    if (uVar7 < (ulong)(lVar3 * -0x3333333333333333) || uVar7 + lVar3 * 0x3333333333333333 == 0) {
-      puVar6 = (undefined8 *)param_1[1];
-      while (puVar1 = puVar6, puVar1 != puVar4) {
-        puVar6 = puVar1 + -5;
-        if ((*(byte *)(puVar1 + -4) & 1) != 0) {
-          FUN_00166120(puVar1[-2]);
+    if (uVar9 < (ulong)(lVar5 * -0x3333333333333333) || uVar9 + lVar5 * 0x3333333333333333 == 0) {
+      puVar3 = *(undefined8 **)(p0 + 8);
+      while (puVar2 = puVar3, puVar2 != puVar6) {
+        puVar3 = puVar2 + -5;
+        if ((*(byte *)(puVar2 + -4) & 1) != 0) {
+          FUN_00166120((void *)puVar2[-2]);
         }
       }
-      param_1[1] = (long)puVar4;
+      *(undefined8 **)(p0 + 8) = puVar6;
     }
-    else if (puVar1 != param_3) {
-      puVar4 = (undefined8 *)param_1[1];
+    else if (pWVar1 != in_x2) {
+      puVar6 = *(undefined8 **)(p0 + 8);
       do {
-        *puVar4 = *puVar6;
-        func_0x0016f720(puVar4 + 1,puVar6 + 1);
-        puVar1 = puVar6 + 4;
-        puVar6 = puVar6 + 5;
-        *(undefined2 *)(puVar4 + 4) = *(undefined2 *)puVar1;
-        puVar4 = (undefined8 *)(param_1[1] + 0x28);
-        param_1[1] = (long)puVar4;
-      } while (puVar6 != param_3);
+        *puVar6 = *(undefined8 *)pWVar8;
+        func_0x0016f720(puVar6 + 1,pWVar8 + 8);
+        pWVar1 = pWVar8 + 0x20;
+        pWVar8 = pWVar8 + 0x28;
+        *(undefined2 *)(puVar6 + 4) = *(undefined2 *)pWVar1;
+        puVar6 = (undefined8 *)(*(long *)(p0 + 8) + 0x28);
+        *(undefined8 **)(p0 + 8) = puVar6;
+      } while (pWVar8 != in_x2);
     }
   }
   else {
-    func_0x001734e0(param_1);
-    if (0x666666666666666 < uVar7) {
-      FUN_001705a0(param_1);
+    func_0x001734e0(p0);
+    if (0x666666666666666 < uVar9) {
+      FUN_001705a0(p0);
       return;
     }
-    lVar3 = param_1[2] - *param_1 >> 3;
-    uVar5 = 0x666666666666666;
-    if (((ulong)(lVar3 * -0x3333333333333333) < 0x333333333333333) &&
-       (uVar2 = lVar3 * -0x6666666666666666, uVar5 = uVar7, uVar7 <= uVar2)) {
-      uVar5 = uVar2;
+    lVar5 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
+    uVar7 = 0x666666666666666;
+    if (((ulong)(lVar5 * -0x3333333333333333) < 0x333333333333333) &&
+       (uVar4 = lVar5 * -0x6666666666666666, uVar7 = uVar9, uVar9 <= uVar4)) {
+      uVar7 = uVar4;
     }
-    func_0x0016dbe0(param_1,uVar5);
-    if (param_2 != param_3) {
-      puVar4 = (undefined8 *)param_1[1];
+    func_0x0016dbe0(p0,uVar7);
+    if (p1 != in_x2) {
+      puVar6 = *(undefined8 **)(p0 + 8);
       do {
-        *puVar4 = *param_2;
-        func_0x0016f720(puVar4 + 1,param_2 + 1);
-        puVar6 = param_2 + 4;
-        param_2 = param_2 + 5;
-        *(undefined2 *)(puVar4 + 4) = *(undefined2 *)puVar6;
-        puVar4 = (undefined8 *)(param_1[1] + 0x28);
-        param_1[1] = (long)puVar4;
-      } while (param_2 != param_3);
+        *puVar6 = *(undefined8 *)p1;
+        func_0x0016f720(puVar6 + 1,p1 + 8);
+        pWVar8 = p1 + 0x20;
+        p1 = p1 + 0x28;
+        *(undefined2 *)(puVar6 + 4) = *(undefined2 *)pWVar8;
+        puVar6 = (undefined8 *)(*(long *)(p0 + 8) + 0x28);
+        *(undefined8 **)(p0 + 8) = puVar6;
+      } while (p1 != in_x2);
     }
   }
   return;

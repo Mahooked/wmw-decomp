@@ -15,70 +15,73 @@
 
 void std::__ndk1::
      vector<Walaber::SpriteBatch::DrawAction*,std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>
-     ::assign<Walaber::SpriteBatch::DrawAction**>(long *param_1,long param_2,long param_3)
+     ::assign<Walaber::SpriteBatch::DrawAction**>
+               (Walaber__SpriteBatch__DrawAction **p0,Walaber__SpriteBatch__DrawAction **p1)
 
 {
   ulong uVar1;
-  long lVar2;
+  long in_x2;
+  Walaber__SpriteBatch__DrawAction *pWVar2;
   long lVar3;
   long lVar4;
-  ulong uVar5;
+  Walaber__SpriteBatch__DrawAction *pWVar5;
+  ulong uVar6;
   
-  lVar2 = param_1[2];
-  lVar4 = *param_1;
-  lVar3 = param_3 - param_2;
-  uVar5 = lVar3 >> 3;
-  if ((ulong)(lVar2 - lVar4 >> 3) < uVar5) {
-    if (lVar4 != 0) {
-      param_1[1] = lVar4;
-      FUN_00166120(lVar4);
-      lVar2 = 0;
-      *param_1 = 0;
-      param_1[1] = 0;
-      param_1[2] = 0;
+  pWVar2 = p0[2];
+  pWVar5 = *p0;
+  lVar4 = in_x2 - (long)p1;
+  uVar6 = lVar4 >> 3;
+  if ((ulong)((long)pWVar2 - (long)pWVar5 >> 3) < uVar6) {
+    if (pWVar5 != (Walaber__SpriteBatch__DrawAction *)0x0) {
+      p0[1] = pWVar5;
+      FUN_00166120(pWVar5);
+      pWVar2 = (Walaber__SpriteBatch__DrawAction *)0x0;
+      *p0 = (Walaber__SpriteBatch__DrawAction *)0x0;
+      p0[1] = (Walaber__SpriteBatch__DrawAction *)0x0;
+      p0[2] = (Walaber__SpriteBatch__DrawAction *)0x0;
     }
-    if (uVar5 >> 0x3d != 0) {
-      FUN_001705a0(param_1);
+    if (uVar6 >> 0x3d != 0) {
+      FUN_001705a0(p0);
       return;
     }
-    if ((ulong)(lVar2 >> 3) < 0xfffffffffffffff) {
-      if (uVar5 <= (ulong)(lVar2 >> 2)) {
-        uVar5 = lVar2 >> 2;
+    if ((ulong)((long)pWVar2 >> 3) < 0xfffffffffffffff) {
+      if (uVar6 <= (ulong)((long)pWVar2 >> 2)) {
+        uVar6 = (long)pWVar2 >> 2;
       }
     }
     else {
-      uVar5 = 0x1fffffffffffffff;
+      uVar6 = 0x1fffffffffffffff;
     }
-    func_0x00173ff0(param_1,uVar5);
-    if (lVar3 < 1) {
+    func_0x00173ff0(p0,uVar6);
+    if (lVar4 < 1) {
       return;
     }
-    FUN_001715e0(param_1[1],param_2,lVar3);
-    lVar3 = param_1[1] + lVar3;
+    FUN_001715e0(p0[1],p1,lVar4);
+    pWVar5 = p0[1] + lVar4;
   }
   else {
-    uVar1 = param_1[1] - lVar4 >> 3;
-    lVar3 = param_2 + (param_1[1] - lVar4);
-    if (uVar5 <= uVar1) {
-      lVar3 = param_3;
+    uVar1 = (long)p0[1] - (long)pWVar5 >> 3;
+    lVar4 = (long)p1 + ((long)p0[1] - (long)pWVar5);
+    if (uVar6 <= uVar1) {
+      lVar4 = in_x2;
     }
-    lVar2 = lVar3 - param_2;
-    if (lVar2 != 0) {
-      FUN_0016b250(lVar4,param_2,lVar2);
+    lVar3 = lVar4 - (long)p1;
+    if (lVar3 != 0) {
+      FUN_0016b250(pWVar5,p1,lVar3);
     }
-    if (uVar1 < uVar5) {
-      param_3 = param_3 - lVar3;
-      if (param_3 < 1) {
+    if (uVar1 < uVar6) {
+      lVar3 = in_x2 - lVar4;
+      if (lVar3 < 1) {
         return;
       }
-      FUN_001715e0(param_1[1],lVar3,param_3);
-      lVar3 = param_1[1] + param_3;
+      FUN_001715e0(p0[1],lVar4,lVar3);
+      pWVar5 = p0[1] + lVar3;
     }
     else {
-      lVar3 = lVar4 + (lVar2 >> 3) * 8;
+      pWVar5 = pWVar5 + (lVar3 >> 3) * 8;
     }
   }
-  param_1[1] = lVar3;
+  p0[1] = pWVar5;
   return;
 }
 

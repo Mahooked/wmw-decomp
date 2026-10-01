@@ -53,19 +53,21 @@ void Walaber::Transition_Widget_Slide::~Transition_Widget_Slide(undefined8 *para
 
 /* Walaber::Transition_Widget_Slide::setup(float) */
 
-void Walaber::Transition_Widget_Slide::setup(undefined4 param_1,long param_2)
+void Walaber::Transition_Widget_Slide::setup(float p0)
 
 {
+  long in_x0;
+  
   func_0x0016ad70();
-  *(undefined4 *)(param_2 + 0x70) = 0;
-  *(undefined4 *)(param_2 + 0x78) = 0;
-  *(undefined4 *)(param_2 + 0x74) = param_1;
-  *(undefined8 *)(param_2 + 0x10c) = 0xffffffffffffffff;
-  *(undefined1 *)(param_2 + 0xc6) = 0;
-  *(undefined2 *)(param_2 + 0xc4) = 1;
-  *(undefined8 *)(param_2 + 0xe8) = 0xbf80000000000000;
-  *(undefined8 *)(param_2 + 0xe0) = 0x3f80000000000000;
-  *(undefined1 *)(param_2 + 0x114) = 1;
+  *(undefined4 *)(in_x0 + 0x70) = 0;
+  *(undefined4 *)(in_x0 + 0x78) = 0;
+  *(float *)(in_x0 + 0x74) = p0;
+  *(undefined8 *)(in_x0 + 0x10c) = 0xffffffffffffffff;
+  *(undefined1 *)(in_x0 + 0xc6) = 0;
+  *(undefined2 *)(in_x0 + 0xc4) = 1;
+  *(undefined8 *)(in_x0 + 0xe8) = 0xbf80000000000000;
+  *(undefined8 *)(in_x0 + 0xe0) = 0x3f80000000000000;
+  *(undefined1 *)(in_x0 + 0x114) = 1;
   return;
 }
 
@@ -77,74 +79,74 @@ void Walaber::Transition_Widget_Slide::setup(undefined4 param_1,long param_2)
 
 /* Walaber::Transition_Widget_Slide::setup(float, Walaber::PropertyList const&) */
 
-void Walaber::Transition_Widget_Slide::setup
-               (undefined8 param_1,undefined8 *param_2,undefined8 param_3)
+void Walaber::Transition_Widget_Slide::setup(float p0,Walaber__PropertyList *p1)
 
 {
   long lVar1;
   undefined4 uVar2;
   int iVar3;
   ulong uVar4;
+  undefined4 in_register_00005004;
   undefined8 uStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  (**(code **)*param_2)();
-  func_0x0016b0c0(param_1,param_2,param_3);
-  uVar4 = func_0x00173810(param_3,&Transition::tk_highestWidgetIndex);
+  (*(code *)**(undefined8 **)p1)();
+  func_0x0016b0c0(CONCAT44(in_register_00005004,p0),p1);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_highestWidgetIndex);
+    func_0x0016d4e0();
     uVar2 = func_0x00166a80();
-    *(undefined4 *)((long)param_2 + 0x10c) = uVar2;
+    *(undefined4 *)(p1 + 0x10c) = uVar2;
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_numScreensInStack);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_numScreensInStack);
+    func_0x0016d4e0();
     uVar2 = func_0x00166a80();
-    *(undefined4 *)(param_2 + 0x22) = uVar2;
+    *(undefined4 *)(p1 + 0x110) = uVar2;
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_slideDirection);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_slideDirection);
+    func_0x0016d4e0();
     func_0x00166e60(&uStack_40);
-    param_2[0x1c] = uStack_40;
-    param_2[0x1d] = CONCAT44(-(float)((ulong)uStack_40 >> 0x20),-(float)uStack_40);
+    *(undefined8 *)(p1 + 0xe0) = uStack_40;
+    *(ulong *)(p1 + 0xe8) = CONCAT44(-(float)((ulong)uStack_40 >> 0x20),-(float)uStack_40);
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_slideDirectionIn);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_slideDirectionIn);
+    func_0x0016d4e0();
     func_0x00166e60(&uStack_40);
-    param_2[0x1c] = uStack_40;
+    *(undefined8 *)(p1 + 0xe0) = uStack_40;
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_slideDirectionOut);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_slideDirectionOut);
+    func_0x0016d4e0();
     func_0x00166e60(&uStack_40);
-    param_2[0x1d] = uStack_40;
+    *(undefined8 *)(p1 + 0xe8) = uStack_40;
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_slideStagger);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_slideStagger);
+    func_0x0016d4e0();
     iVar3 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x114) = iVar3 == 1;
+    p1[0x114] = (Walaber__PropertyList)(iVar3 == 1);
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_widgetSlideIn);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_widgetSlideIn);
+    func_0x00167060();
     iVar3 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x81) = iVar3 == 1;
+    p1[0x81] = (Walaber__PropertyList)(iVar3 == 1);
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_widgetSlideOut);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_widgetSlideOut);
+    func_0x00167060();
     iVar3 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x82) = iVar3 == 1;
+    p1[0x82] = (Walaber__PropertyList)(iVar3 == 1);
   }
-  if (*(char *)((long)param_2 + 0x81) != '\0') {
-    func_0x0016c060(param_2);
+  if (p1[0x81] != (Walaber__PropertyList)0x0) {
+    func_0x0016c060(p1);
   }
-  param_2[0x1e] = param_2[0x19];
+  *(undefined8 *)(p1 + 0xf0) = *(undefined8 *)(p1 + 200);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -259,7 +261,7 @@ void Walaber::Transition_Widget_Slide::_populateWidgetManagerMap(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Widget_Slide::update(float) */
 
-void Walaber::Transition_Widget_Slide::update(undefined8 param_1,long param_2)
+void Walaber::Transition_Widget_Slide::update(float p0)
 
 {
   int iVar1;
@@ -267,151 +269,154 @@ void Walaber::Transition_Widget_Slide::update(undefined8 param_1,long param_2)
   int iVar3;
   int iVar4;
   long lVar5;
-  float fVar6;
+  long in_x0;
+  undefined8 uVar6;
   float fVar7;
+  undefined4 in_register_00005004;
   float fVar8;
   float fVar9;
-  undefined8 uVar10;
-  float fVar11;
+  float fVar10;
+  undefined8 uVar11;
   float fVar12;
-  undefined8 uVar13;
+  float fVar13;
+  undefined8 uVar14;
   undefined8 uStack_98;
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined4 uStack_80;
   long lStack_78;
   
+  uVar6 = CONCAT44(in_register_00005004,p0);
   lVar5 = tpidr_el0;
   lStack_78 = *(long *)(lVar5 + 0x28);
-  fVar6 = *(float *)(param_2 + 0x74);
-  fVar8 = *(float *)(param_2 + 0x70) + (float)param_1;
-  fVar11 = fVar6 * 0.5;
-  *(float *)(param_2 + 0x70) = fVar8;
-  if (fVar11 <= fVar8) {
-    if (*(char *)(param_2 + 0xc5) == '\0') {
-      uVar13 = *(undefined8 *)(param_2 + 0xd0);
-      uVar10 = *(undefined8 *)(param_2 + 0xf0);
-      *(undefined8 *)(param_2 + 0xf0) = uVar13;
-      fVar8 = (float)uVar13 - (float)uVar10;
-      fVar6 = (float)((ulong)uVar13 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
-      *(ulong *)(param_2 + 0x100) =
-           CONCAT44(fVar6 + (float)((ulong)*(undefined8 *)(param_2 + 0x100) >> 0x20),
-                    fVar8 + (float)*(undefined8 *)(param_2 + 0x100));
-      *(ulong *)(param_2 + 0xf8) =
-           CONCAT44(fVar6 + (float)((ulong)*(undefined8 *)(param_2 + 0xf8) >> 0x20),
-                    fVar8 + (float)*(undefined8 *)(param_2 + 0xf8));
-      func_0x0016a530(param_2);
-      func_0x0016b720(param_1,param_2);
-      if (*(char *)(param_2 + 0x7c) == '\0') {
-        uVar13 = 1;
-        *(undefined1 *)(param_2 + 0x7c) = 1;
+  fVar7 = *(float *)(in_x0 + 0x74);
+  fVar9 = *(float *)(in_x0 + 0x70) + p0;
+  fVar12 = fVar7 * 0.5;
+  *(float *)(in_x0 + 0x70) = fVar9;
+  if (fVar12 <= fVar9) {
+    if (*(char *)(in_x0 + 0xc5) == '\0') {
+      uVar14 = *(undefined8 *)(in_x0 + 0xd0);
+      uVar11 = *(undefined8 *)(in_x0 + 0xf0);
+      *(undefined8 *)(in_x0 + 0xf0) = uVar14;
+      fVar9 = (float)uVar14 - (float)uVar11;
+      fVar7 = (float)((ulong)uVar14 >> 0x20) - (float)((ulong)uVar11 >> 0x20);
+      *(ulong *)(in_x0 + 0x100) =
+           CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(in_x0 + 0x100) >> 0x20),
+                    fVar9 + (float)*(undefined8 *)(in_x0 + 0x100));
+      *(ulong *)(in_x0 + 0xf8) =
+           CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(in_x0 + 0xf8) >> 0x20),
+                    fVar9 + (float)*(undefined8 *)(in_x0 + 0xf8));
+      func_0x0016a530();
+      func_0x0016b720(uVar6);
+      if (*(char *)(in_x0 + 0x7c) == '\0') {
+        uVar6 = 1;
+        *(undefined1 *)(in_x0 + 0x7c) = 1;
       }
       else {
-        *(undefined2 *)(param_2 + 0xc4) = 0x100;
-        uVar13 = 2;
+        *(undefined2 *)(in_x0 + 0xc4) = 0x100;
+        uVar6 = 2;
       }
     }
     else {
-      fVar7 = *(float *)(param_2 + 0x78);
-      if (fVar6 + fVar7 <= fVar8) {
-        if (*(char *)(param_2 + 0x82) != '\0') {
-          uVar13 = *(undefined8 *)(param_2 + 0xd8);
-          uVar10 = *(undefined8 *)(param_2 + 0xf0);
-          *(undefined8 *)(param_2 + 0xf0) = uVar13;
-          fVar8 = (float)uVar13 - (float)uVar10;
-          fVar6 = (float)((ulong)uVar13 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
-          *(ulong *)(param_2 + 0x100) =
-               CONCAT44(fVar6 + (float)((ulong)*(undefined8 *)(param_2 + 0x100) >> 0x20),
-                        fVar8 + (float)*(undefined8 *)(param_2 + 0x100));
-          *(ulong *)(param_2 + 0xf8) =
-               CONCAT44(fVar6 + (float)((ulong)*(undefined8 *)(param_2 + 0xf8) >> 0x20),
-                        fVar8 + (float)*(undefined8 *)(param_2 + 0xf8));
-          func_0x0016a530(param_2);
-          func_0x0016b720(param_1,param_2);
+      fVar8 = *(float *)(in_x0 + 0x78);
+      if (fVar7 + fVar8 <= fVar9) {
+        if (*(char *)(in_x0 + 0x82) != '\0') {
+          uVar14 = *(undefined8 *)(in_x0 + 0xd8);
+          uVar11 = *(undefined8 *)(in_x0 + 0xf0);
+          *(undefined8 *)(in_x0 + 0xf0) = uVar14;
+          fVar9 = (float)uVar14 - (float)uVar11;
+          fVar7 = (float)((ulong)uVar14 >> 0x20) - (float)((ulong)uVar11 >> 0x20);
+          *(ulong *)(in_x0 + 0x100) =
+               CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(in_x0 + 0x100) >> 0x20),
+                        fVar9 + (float)*(undefined8 *)(in_x0 + 0x100));
+          *(ulong *)(in_x0 + 0xf8) =
+               CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(in_x0 + 0xf8) >> 0x20),
+                        fVar9 + (float)*(undefined8 *)(in_x0 + 0xf8));
+          func_0x0016a530();
+          func_0x0016b720(uVar6);
         }
-        uVar13 = 4;
+        uVar6 = 4;
       }
       else {
-        if (*(char *)(param_2 + 0x82) != '\0') {
-          if (*(char *)(param_2 + 0xc6) == '\0') {
-            func_0x0016c060(param_2);
-            if (*(char *)(param_2 + 0x114) == '\0') {
-              uVar13 = *(undefined8 *)(param_2 + 0xd8);
-              fVar8 = (float)_sScreenSize * 0.5 + 0.0;
-              fVar6 = (float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0;
-              uStack_98 = CONCAT44(fVar6 + fVar6 + (float)((ulong)uVar13 >> 0x20),
-                                   fVar8 + fVar8 + (float)uVar13);
-              func_0x0016a380(&uStack_90,(undefined8 *)(param_2 + 0xd8),&uStack_98);
-              *(undefined8 *)(param_2 + 0x100) = uStack_88;
-              *(undefined8 *)(param_2 + 0xf8) = uStack_90;
-              *(undefined4 *)(param_2 + 0x108) = uStack_80;
+        if (*(char *)(in_x0 + 0x82) != '\0') {
+          if (*(char *)(in_x0 + 0xc6) == '\0') {
+            func_0x0016c060();
+            if (*(char *)(in_x0 + 0x114) == '\0') {
+              uVar14 = *(undefined8 *)(in_x0 + 0xd8);
+              fVar9 = (float)_sScreenSize * 0.5 + 0.0;
+              fVar7 = (float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0;
+              uStack_98 = CONCAT44(fVar7 + fVar7 + (float)((ulong)uVar14 >> 0x20),
+                                   fVar9 + fVar9 + (float)uVar14);
+              func_0x0016a380(&uStack_90,(undefined8 *)(in_x0 + 0xd8),&uStack_98);
+              *(undefined8 *)(in_x0 + 0x100) = uStack_88;
+              *(undefined8 *)(in_x0 + 0xf8) = uStack_90;
+              *(undefined4 *)(in_x0 + 0x108) = uStack_80;
             }
-            uStack_90 = CONCAT44(*(float *)(param_2 + 0xdc) -
-                                 (float)((ulong)*(undefined8 *)(param_2 + 0xd0) >> 0x20),
-                                 *(float *)(param_2 + 0xd8) - (float)*(undefined8 *)(param_2 + 0xd0)
-                                );
-            func_0x0016ae20(param_2,&uStack_90);
-            fVar8 = *(float *)(param_2 + 0x70);
-            fVar6 = *(float *)(param_2 + 0x74);
-            fVar7 = *(float *)(param_2 + 0x78);
-            *(undefined1 *)(param_2 + 0xc6) = 1;
-            fVar11 = fVar6 * 0.5;
+            uStack_90 = CONCAT44(*(float *)(in_x0 + 0xdc) -
+                                 (float)((ulong)*(undefined8 *)(in_x0 + 0xd0) >> 0x20),
+                                 *(float *)(in_x0 + 0xd8) - (float)*(undefined8 *)(in_x0 + 0xd0));
+            func_0x0016ae20();
+            fVar9 = *(float *)(in_x0 + 0x70);
+            fVar7 = *(float *)(in_x0 + 0x74);
+            fVar8 = *(float *)(in_x0 + 0x78);
+            *(undefined1 *)(in_x0 + 0xc6) = 1;
+            fVar12 = fVar7 * 0.5;
           }
-          fVar7 = (fVar8 - fVar11) - fVar7;
-          fVar6 = fVar7 / (fVar6 * 0.25);
-          fVar12 = *(float *)(param_2 + 0xf0);
-          fVar11 = *(float *)(param_2 + 0xf4);
-          fVar8 = fVar6;
-          if (1.0 < fVar6) {
-            fVar8 = 1.0;
-          }
-          fVar8 = fVar8 * 3.1415927;
-          if (fVar6 <= 0.0) {
-            fVar8 = 0.0;
-          }
-          fVar8 = (float)func_0x0016ee90(fVar8);
-          fVar8 = 0.5 - fVar8 * 0.5;
-          fVar9 = *(float *)(param_2 + 0xd0) +
-                  fVar8 * (*(float *)(param_2 + 0xd8) - *(float *)(param_2 + 0xd0));
-          fVar7 = fVar7 / (*(float *)(param_2 + 0x74) * 0.25);
-          fVar6 = *(float *)(param_2 + 0xd4) +
-                  fVar8 * (*(float *)(param_2 + 0xdc) - *(float *)(param_2 + 0xd4));
-          fVar8 = fVar7;
+          fVar8 = (fVar9 - fVar12) - fVar8;
+          fVar7 = fVar8 / (fVar7 * 0.25);
+          fVar13 = *(float *)(in_x0 + 0xf0);
+          fVar12 = *(float *)(in_x0 + 0xf4);
+          fVar9 = fVar7;
           if (1.0 < fVar7) {
-            fVar8 = 1.0;
+            fVar9 = 1.0;
           }
-          *(float *)(param_2 + 0xf0) = fVar9;
-          *(float *)(param_2 + 0xf4) = fVar6;
-          fVar6 = fVar6 - fVar11;
+          fVar9 = fVar9 * 3.1415927;
           if (fVar7 <= 0.0) {
-            fVar8 = 0.0;
+            fVar9 = 0.0;
           }
-          fVar9 = fVar9 - fVar12;
-          fVar11 = fVar8;
+          fVar9 = (float)func_0x0016ee90(fVar9);
+          fVar9 = 0.5 - fVar9 * 0.5;
+          fVar10 = *(float *)(in_x0 + 0xd0) +
+                   fVar9 * (*(float *)(in_x0 + 0xd8) - *(float *)(in_x0 + 0xd0));
+          fVar8 = fVar8 / (*(float *)(in_x0 + 0x74) * 0.25);
+          fVar7 = *(float *)(in_x0 + 0xd4) +
+                  fVar9 * (*(float *)(in_x0 + 0xdc) - *(float *)(in_x0 + 0xd4));
+          fVar9 = fVar8;
           if (1.0 < fVar8) {
-            fVar11 = 1.0;
+            fVar9 = 1.0;
           }
-          *(float *)(param_2 + 0x104) = fVar6 + *(float *)(param_2 + 0x104);
+          *(float *)(in_x0 + 0xf0) = fVar10;
+          *(float *)(in_x0 + 0xf4) = fVar7;
+          fVar7 = fVar7 - fVar12;
           if (fVar8 <= 0.0) {
-            fVar11 = 0.0;
+            fVar9 = 0.0;
           }
-          *(float *)(param_2 + 0xf8) = fVar9 + *(float *)(param_2 + 0xf8);
-          *(float *)(param_2 + 0xfc) = fVar6 + *(float *)(param_2 + 0xfc);
-          iVar1 = (int)(fVar11 * (float)(int)((uint)*(byte *)(param_2 + 0x83) -
-                                             (uint)*(byte *)(param_2 + 0x87))) +
-                  (uint)*(byte *)(param_2 + 0x87);
-          iVar2 = (int)(fVar11 * (float)(int)((uint)*(byte *)(param_2 + 0x84) -
-                                             (uint)*(byte *)(param_2 + 0x88))) +
-                  (uint)*(byte *)(param_2 + 0x88);
-          iVar3 = (int)(fVar11 * (float)(int)((uint)*(byte *)(param_2 + 0x85) -
-                                             (uint)*(byte *)(param_2 + 0x89))) +
-                  (uint)*(byte *)(param_2 + 0x89);
+          fVar10 = fVar10 - fVar13;
+          fVar12 = fVar9;
+          if (1.0 < fVar9) {
+            fVar12 = 1.0;
+          }
+          *(float *)(in_x0 + 0x104) = fVar7 + *(float *)(in_x0 + 0x104);
+          if (fVar9 <= 0.0) {
+            fVar12 = 0.0;
+          }
+          *(float *)(in_x0 + 0xf8) = fVar10 + *(float *)(in_x0 + 0xf8);
+          *(float *)(in_x0 + 0xfc) = fVar7 + *(float *)(in_x0 + 0xfc);
+          iVar1 = (int)(fVar12 * (float)(int)((uint)*(byte *)(in_x0 + 0x83) -
+                                             (uint)*(byte *)(in_x0 + 0x87))) +
+                  (uint)*(byte *)(in_x0 + 0x87);
+          iVar2 = (int)(fVar12 * (float)(int)((uint)*(byte *)(in_x0 + 0x84) -
+                                             (uint)*(byte *)(in_x0 + 0x88))) +
+                  (uint)*(byte *)(in_x0 + 0x88);
+          iVar3 = (int)(fVar12 * (float)(int)((uint)*(byte *)(in_x0 + 0x85) -
+                                             (uint)*(byte *)(in_x0 + 0x89))) +
+                  (uint)*(byte *)(in_x0 + 0x89);
           if (0xfe < iVar1) {
             iVar1 = 0xff;
           }
-          iVar4 = (int)(fVar11 * (float)(int)((uint)*(byte *)(param_2 + 0x86) -
-                                             (uint)*(byte *)(param_2 + 0x8a))) +
-                  (uint)*(byte *)(param_2 + 0x8a);
+          iVar4 = (int)(fVar12 * (float)(int)((uint)*(byte *)(in_x0 + 0x86) -
+                                             (uint)*(byte *)(in_x0 + 0x8a))) +
+                  (uint)*(byte *)(in_x0 + 0x8a);
           if (0xfe < iVar2) {
             iVar2 = 0xff;
           }
@@ -421,77 +426,77 @@ void Walaber::Transition_Widget_Slide::update(undefined8 param_1,long param_2)
           if (0xfe < iVar4) {
             iVar4 = 0xff;
           }
-          *(byte *)(param_2 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
-          *(float *)(param_2 + 0x100) = fVar9 + *(float *)(param_2 + 0x100);
-          *(byte *)(param_2 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
-          *(byte *)(param_2 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-          func_0x0016a530(param_2);
-          func_0x0016b720(param_1,param_2);
+          *(byte *)(in_x0 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+          *(float *)(in_x0 + 0x100) = fVar10 + *(float *)(in_x0 + 0x100);
+          *(byte *)(in_x0 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+          *(byte *)(in_x0 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+          func_0x0016a530();
+          func_0x0016b720(uVar6);
         }
-        uVar13 = 3;
+        uVar6 = 3;
       }
     }
   }
   else {
-    if (*(char *)(param_2 + 0x81) != '\0') {
-      fVar8 = fVar8 / (fVar6 * 0.25);
-      uVar13 = *(undefined8 *)(param_2 + 0xf0);
-      fVar6 = fVar8;
-      if (1.0 < fVar8) {
-        fVar6 = 1.0;
+    if (*(char *)(in_x0 + 0x81) != '\0') {
+      fVar9 = fVar9 / (fVar7 * 0.25);
+      uVar14 = *(undefined8 *)(in_x0 + 0xf0);
+      fVar7 = fVar9;
+      if (1.0 < fVar9) {
+        fVar7 = 1.0;
       }
-      fVar11 = 0.0;
-      fVar6 = fVar6 * 3.1415927;
-      if (fVar8 <= 0.0) {
-        fVar6 = fVar11;
+      fVar12 = 0.0;
+      fVar7 = fVar7 * 3.1415927;
+      if (fVar9 <= 0.0) {
+        fVar7 = fVar12;
       }
-      fVar8 = (float)func_0x0016ee90(fVar6);
-      fVar8 = 0.5 - fVar8 * 0.5;
-      fVar6 = (float)*(undefined8 *)(param_2 + 200);
-      fVar7 = (float)((ulong)*(undefined8 *)(param_2 + 200) >> 0x20);
-      fVar12 = *(float *)(param_2 + 0x74) * 0.25;
-      fVar6 = fVar6 + ((float)*(undefined8 *)(param_2 + 0xd0) - fVar6) * fVar8;
-      fVar7 = fVar7 + ((float)((ulong)*(undefined8 *)(param_2 + 0xd0) >> 0x20) - fVar7) * fVar8;
-      fVar12 = (*(float *)(param_2 + 0x70) - fVar12) / (*(float *)(param_2 + 0x74) * 0.5 - fVar12);
-      *(ulong *)(param_2 + 0xf0) = CONCAT44(fVar7,fVar6);
-      fVar6 = fVar6 - (float)uVar13;
-      fVar7 = fVar7 - (float)((ulong)uVar13 >> 0x20);
-      fVar8 = fVar12;
-      if (1.0 < fVar12) {
-        fVar8 = 1.0;
+      fVar9 = (float)func_0x0016ee90(fVar7);
+      fVar9 = 0.5 - fVar9 * 0.5;
+      fVar7 = (float)*(undefined8 *)(in_x0 + 200);
+      fVar8 = (float)((ulong)*(undefined8 *)(in_x0 + 200) >> 0x20);
+      fVar13 = *(float *)(in_x0 + 0x74) * 0.25;
+      fVar7 = fVar7 + ((float)*(undefined8 *)(in_x0 + 0xd0) - fVar7) * fVar9;
+      fVar8 = fVar8 + ((float)((ulong)*(undefined8 *)(in_x0 + 0xd0) >> 0x20) - fVar8) * fVar9;
+      fVar13 = (*(float *)(in_x0 + 0x70) - fVar13) / (*(float *)(in_x0 + 0x74) * 0.5 - fVar13);
+      *(ulong *)(in_x0 + 0xf0) = CONCAT44(fVar8,fVar7);
+      fVar7 = fVar7 - (float)uVar14;
+      fVar8 = fVar8 - (float)((ulong)uVar14 >> 0x20);
+      fVar9 = fVar13;
+      if (1.0 < fVar13) {
+        fVar9 = 1.0;
       }
-      if (fVar12 <= 0.0) {
-        fVar8 = fVar11;
+      if (fVar13 <= 0.0) {
+        fVar9 = fVar12;
       }
-      *(ulong *)(param_2 + 0xf8) =
-           CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(param_2 + 0xf8) >> 0x20),
-                    fVar6 + (float)*(undefined8 *)(param_2 + 0xf8));
-      *(ulong *)(param_2 + 0x100) =
-           CONCAT44(fVar7 + (float)((ulong)*(undefined8 *)(param_2 + 0x100) >> 0x20),
-                    fVar6 + (float)*(undefined8 *)(param_2 + 0x100));
-      fVar6 = fVar8;
-      if (1.0 < fVar8) {
-        fVar6 = 1.0;
+      *(ulong *)(in_x0 + 0xf8) =
+           CONCAT44(fVar8 + (float)((ulong)*(undefined8 *)(in_x0 + 0xf8) >> 0x20),
+                    fVar7 + (float)*(undefined8 *)(in_x0 + 0xf8));
+      *(ulong *)(in_x0 + 0x100) =
+           CONCAT44(fVar8 + (float)((ulong)*(undefined8 *)(in_x0 + 0x100) >> 0x20),
+                    fVar7 + (float)*(undefined8 *)(in_x0 + 0x100));
+      fVar7 = fVar9;
+      if (1.0 < fVar9) {
+        fVar7 = 1.0;
       }
-      if (fVar8 <= 0.0) {
-        fVar6 = fVar11;
+      if (fVar9 <= 0.0) {
+        fVar7 = fVar12;
       }
-      iVar1 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x87) -
-                                        (uint)*(byte *)(param_2 + 0x83))) +
-              (uint)*(byte *)(param_2 + 0x83);
-      iVar2 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x88) -
-                                        (uint)*(byte *)(param_2 + 0x84))) +
-              (uint)*(byte *)(param_2 + 0x84);
-      iVar3 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x89) -
-                                        (uint)*(byte *)(param_2 + 0x85))) +
-              (uint)*(byte *)(param_2 + 0x85);
+      iVar1 = (int)(fVar7 * (float)(int)((uint)*(byte *)(in_x0 + 0x87) -
+                                        (uint)*(byte *)(in_x0 + 0x83))) +
+              (uint)*(byte *)(in_x0 + 0x83);
+      iVar2 = (int)(fVar7 * (float)(int)((uint)*(byte *)(in_x0 + 0x88) -
+                                        (uint)*(byte *)(in_x0 + 0x84))) +
+              (uint)*(byte *)(in_x0 + 0x84);
+      iVar3 = (int)(fVar7 * (float)(int)((uint)*(byte *)(in_x0 + 0x89) -
+                                        (uint)*(byte *)(in_x0 + 0x85))) +
+              (uint)*(byte *)(in_x0 + 0x85);
       if (0xfe < iVar1) {
         iVar1 = 0xff;
       }
-      iVar4 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x8a) -
-                                        (uint)*(byte *)(param_2 + 0x86))) +
-              (uint)*(byte *)(param_2 + 0x86);
+      iVar4 = (int)(fVar7 * (float)(int)((uint)*(byte *)(in_x0 + 0x8a) -
+                                        (uint)*(byte *)(in_x0 + 0x86))) +
+              (uint)*(byte *)(in_x0 + 0x86);
       if (0xfe < iVar2) {
         iVar2 = 0xff;
       }
@@ -501,19 +506,19 @@ void Walaber::Transition_Widget_Slide::update(undefined8 param_1,long param_2)
       if (0xfe < iVar4) {
         iVar4 = 0xff;
       }
-      *(byte *)(param_2 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
-      *(byte *)(param_2 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-      *(byte *)(param_2 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
-      *(byte *)(param_2 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-      func_0x0016a530(param_2);
-      func_0x0016b720(param_1,param_2);
+      *(byte *)(in_x0 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+      func_0x0016a530();
+      func_0x0016b720(uVar6);
     }
-    uVar13 = 1;
+    uVar6 = 1;
   }
   if (*(long *)(lVar5 + 0x28) == lStack_78) {
     return;
   }
-  FUN_00164ff0(uVar13);
+  FUN_00164ff0(uVar6);
   return;
 }
 
@@ -590,12 +595,13 @@ void Walaber::Transition_Widget_Slide::_findWidgetsInAABB(long param_1)
 
 /* Walaber::Transition_Widget_Slide::_updateWidgetManagers(float) */
 
-void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float param_1,long param_2)
+void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float p0)
 
 {
   char cVar1;
   long lVar2;
   bool bVar3;
+  long in_x0;
   long *plVar4;
   long lVar5;
   long *plVar6;
@@ -612,13 +618,13 @@ void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float param_1,long 
   
   lVar2 = tpidr_el0;
   lStack_88 = *(long *)(lVar2 + 0x28);
-  plVar6 = *(long **)(param_2 + 0x118);
-  while (plVar6 != (long *)(param_2 + 0x120)) {
+  plVar6 = *(long **)(in_x0 + 0x118);
+  while (plVar6 != (long *)(in_x0 + 0x120)) {
     if (0.0 < *(float *)(plVar6 + 5)) {
-      cVar1 = *(char *)(param_2 + 0xc4);
-      fVar8 = *(float *)(param_2 + 0x74) * 0.25;
+      cVar1 = *(char *)(in_x0 + 0xc4);
+      fVar8 = *(float *)(in_x0 + 0x74) * 0.25;
       fVar9 = fVar8 + fVar8;
-      if (*(char *)(param_2 + 0x114) != '\0') {
+      if (*(char *)(in_x0 + 0x114) != '\0') {
         fVar9 = fVar8;
       }
       fVar7 = *(float *)(plVar6 + 5) / fVar9;
@@ -633,21 +639,21 @@ void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float param_1,long 
       fVar8 = (float)func_0x0016ee90(fVar8);
       fVar8 = 0.5 - fVar8 * 0.5;
       if (cVar1 == '\0') {
-        uVar10 = *(undefined8 *)(param_2 + 0xd0);
-        uVar13 = *(undefined8 *)(param_2 + 0xd8);
+        uVar10 = *(undefined8 *)(in_x0 + 0xd0);
+        uVar13 = *(undefined8 *)(in_x0 + 0xd8);
       }
       else {
-        uVar10 = *(undefined8 *)(param_2 + 200);
-        uVar13 = *(undefined8 *)(param_2 + 0xd0);
+        uVar10 = *(undefined8 *)(in_x0 + 200);
+        uVar13 = *(undefined8 *)(in_x0 + 0xd0);
       }
       fVar12 = (float)((ulong)uVar10 >> 0x20);
-      fVar7 = *(float *)(plVar6 + 5) - param_1;
+      fVar7 = *(float *)(plVar6 + 5) - p0;
       if (fVar7 <= 0.0) {
         fVar7 = 0.0;
       }
       *(float *)(plVar6 + 5) = fVar7;
       fVar7 = fVar7 / fVar9;
-      cVar1 = *(char *)(param_2 + 0xc4);
+      cVar1 = *(char *)(in_x0 + 0xc4);
       fVar9 = fVar7;
       if (1.0 < fVar7) {
         fVar9 = 1.0;
@@ -659,12 +665,12 @@ void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float param_1,long 
       fVar9 = (float)func_0x0016ee90(fVar9);
       fVar9 = 0.5 - fVar9 * 0.5;
       if (cVar1 == '\0') {
-        uVar11 = *(undefined8 *)(param_2 + 0xd0);
-        uVar14 = *(undefined8 *)(param_2 + 0xd8);
+        uVar11 = *(undefined8 *)(in_x0 + 0xd0);
+        uVar14 = *(undefined8 *)(in_x0 + 0xd8);
       }
       else {
-        uVar11 = *(undefined8 *)(param_2 + 200);
-        uVar14 = *(undefined8 *)(param_2 + 0xd0);
+        uVar11 = *(undefined8 *)(in_x0 + 200);
+        uVar14 = *(undefined8 *)(in_x0 + 0xd0);
       }
       fVar7 = (float)((ulong)uVar11 >> 0x20);
       uStack_90 = CONCAT44((fVar7 + ((float)((ulong)uVar14 >> 0x20) - fVar7) * fVar9) -
@@ -708,38 +714,37 @@ void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float param_1,long 
 
 /* Walaber::Transition_Widget_Slide::_offsetWidgetManagers(Walaber::Vector2 const&) */
 
-void Walaber::Transition_Widget_Slide::_offsetWidgetManagers(long param_1,undefined8 param_2)
+void Walaber::Transition_Widget_Slide::_offsetWidgetManagers(Walaber__Vector2 *p0)
 
 {
   bool bVar1;
-  long *plVar2;
+  Walaber__Vector2 *pWVar2;
   long lVar3;
-  long *plVar4;
+  Walaber__Vector2 *pWVar4;
   
-  plVar4 = *(long **)(param_1 + 0x118);
-  while (plVar4 != (long *)(param_1 + 0x120)) {
-    plVar2 = (long *)plVar4[4];
-    if (plVar2 != (long *)0x0) {
-      (**(code **)(*plVar2 + 0x28))(plVar2,param_2);
+  pWVar4 = *(Walaber__Vector2 **)(p0 + 0x118);
+  while (pWVar4 != p0 + 0x120) {
+    if (*(long **)(pWVar4 + 0x20) != (long *)0x0) {
+      (**(code **)(**(long **)(pWVar4 + 0x20) + 0x28))();
     }
-    plVar2 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar2 = plVar4 + 2;
-      bVar1 = *(long **)*plVar2 != plVar4;
-      plVar4 = (long *)*plVar2;
+    pWVar2 = *(Walaber__Vector2 **)(pWVar4 + 8);
+    if (*(Walaber__Vector2 **)(pWVar4 + 8) == (Walaber__Vector2 *)0x0) {
+      pWVar2 = pWVar4 + 0x10;
+      bVar1 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar2 != pWVar4;
+      pWVar4 = *(Walaber__Vector2 **)pWVar2;
       if (bVar1) {
         do {
-          lVar3 = *plVar2;
-          plVar2 = (long *)(lVar3 + 0x10);
-          plVar4 = (long *)*plVar2;
-        } while (*plVar4 != lVar3);
+          lVar3 = *(long *)pWVar2;
+          pWVar2 = (Walaber__Vector2 *)(lVar3 + 0x10);
+          pWVar4 = *(Walaber__Vector2 **)pWVar2;
+        } while (*(long *)pWVar4 != lVar3);
       }
     }
     else {
       do {
-        plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        pWVar4 = pWVar2;
+        pWVar2 = *(Walaber__Vector2 **)pWVar4;
+      } while (*(Walaber__Vector2 **)pWVar4 != (Walaber__Vector2 *)0x0);
     }
   }
   return;

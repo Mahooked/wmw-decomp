@@ -94,7 +94,7 @@ void Walaber::Subtexture::~Subtexture(undefined8 *param_1)
 {
   *param_1 = &PTR__Subtexture_00710208;
   if ((*(byte *)(param_1 + 0x1a) & 1) != 0) {
-    FUN_00166120(param_1[0x1c]);
+    FUN_00166120((void *)param_1[0x1c]);
   }
   FUN_00166b20(param_1 + 0x18);
   func_0x00166dd0(param_1);
@@ -109,7 +109,7 @@ void Walaber::Subtexture::~Subtexture(undefined8 *param_1)
 
 /* Walaber::Subtexture::~Subtexture() */
 
-void Walaber::Subtexture::~Subtexture(undefined8 param_1)
+void Walaber::Subtexture::~Subtexture(void *param_1)
 
 {
   func_0x00165fc0();

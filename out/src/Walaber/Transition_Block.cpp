@@ -33,8 +33,8 @@ void Walaber::Transition_Block::~Transition_Block(undefined8 *param_1)
 
 {
   *param_1 = &PTR_setup_00710f08;
-  if (param_1[0x1c] != 0) {
-    FUN_00166120();
+  if ((void *)param_1[0x1c] != (void *)0x0) {
+    FUN_00166120((void *)param_1[0x1c]);
   }
   FUN_00171ae0(param_1);
   return;
@@ -49,11 +49,12 @@ void Walaber::Transition_Block::~Transition_Block(undefined8 *param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Block::setup(float) */
 
-void Walaber::Transition_Block::setup(undefined4 param_1,long param_2)
+void Walaber::Transition_Block::setup(float p0)
 
 {
   long lVar1;
   ulong uVar2;
+  long in_x0;
   int iVar3;
   float fVar4;
   undefined1 auStack_3c [4];
@@ -61,23 +62,23 @@ void Walaber::Transition_Block::setup(undefined4 param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *(undefined4 *)(param_2 + 0x70) = 0;
-  *(undefined1 *)(param_2 + 0xc4) = 0;
-  *(undefined4 *)(param_2 + 0x78) = 0;
-  *(undefined4 *)(param_2 + 0x74) = param_1;
-  *(undefined4 *)(param_2 + 200) = 0;
+  *(undefined4 *)(in_x0 + 0x70) = 0;
+  *(undefined1 *)(in_x0 + 0xc4) = 0;
+  *(undefined4 *)(in_x0 + 0x78) = 0;
+  *(float *)(in_x0 + 0x74) = p0;
+  *(undefined4 *)(in_x0 + 200) = 0;
   iVar3 = 0;
   fVar4 = (float)_sScreenSize;
   uVar2 = (ulong)_sScreenSize >> 0x20;
-  *(undefined8 *)(param_2 + 0x100) = 0xf0000000a;
-  *(undefined8 *)(param_2 + 0xf8) = 0x96;
-  *(undefined4 *)(param_2 + 0x7d) = 0xff000000;
-  *(ulong *)(param_2 + 0xcc) = CONCAT44((float)uVar2 / 15.0,fVar4 / 10.0);
+  *(undefined8 *)(in_x0 + 0x100) = 0xf0000000a;
+  *(undefined8 *)(in_x0 + 0xf8) = 0x96;
+  *(undefined4 *)(in_x0 + 0x7d) = 0xff000000;
+  *(ulong *)(in_x0 + 0xcc) = CONCAT44((float)uVar2 / 15.0,fVar4 / 10.0);
   do {
     auStack_3c[0] = 0;
-    func_0x00169dd0(param_2 + 0xe0,auStack_3c);
+    func_0x00169dd0(in_x0 + 0xe0,auStack_3c);
     iVar3 = iVar3 + 1;
-  } while (iVar3 < *(int *)(param_2 + 0xf8));
+  } while (iVar3 < *(int *)(in_x0 + 0xf8));
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -94,7 +95,7 @@ void Walaber::Transition_Block::setup(undefined4 param_1,long param_2)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Block::setup(float, Walaber::PropertyList const&) */
 
-void Walaber::Transition_Block::setup(undefined8 param_1,undefined8 *param_2,undefined8 param_3)
+void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
 
 {
   long lVar1;
@@ -102,6 +103,7 @@ void Walaber::Transition_Block::setup(undefined8 param_1,undefined8 *param_2,und
   int iVar3;
   ulong uVar4;
   int iVar5;
+  undefined4 in_register_00005004;
   undefined8 uVar6;
   float fStack_50;
   float fStack_4c;
@@ -109,46 +111,46 @@ void Walaber::Transition_Block::setup(undefined8 param_1,undefined8 *param_2,und
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  (**(code **)*param_2)();
-  func_0x0016b0c0(param_1,param_2,param_3);
-  uVar4 = func_0x00173810(param_3,&Transition::tk_blockDimensions);
+  (*(code *)**(undefined8 **)p1)();
+  func_0x0016b0c0(CONCAT44(in_register_00005004,p0),p1);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x0016d4e0(param_3,&Transition::tk_blockDimensions);
+    func_0x0016d4e0();
     func_0x00166e60(&fStack_50);
-    *(int *)(param_2 + 0x20) = (int)fStack_50;
-    func_0x0016d4e0(param_3,&Transition::tk_blockDimensions);
+    *(int *)(p1 + 0x100) = (int)fStack_50;
+    func_0x0016d4e0();
     func_0x00166e60(&fStack_50);
     iVar5 = (int)fStack_4c;
-    iVar3 = *(int *)(param_2 + 0x20) * iVar5;
-    *(int *)((long)param_2 + 0x104) = iVar5;
+    iVar3 = *(int *)(p1 + 0x100) * iVar5;
+    *(int *)(p1 + 0x104) = iVar5;
     uVar2 = _sScreenSize;
-    uVar6 = NEON_scvtf(CONCAT44(iVar5,*(int *)(param_2 + 0x20)),4);
-    param_2[0x1d] = 0;
-    *(int *)(param_2 + 0x1f) = iVar3;
-    *(undefined4 *)((long)param_2 + 0xfc) = 0;
-    *(ulong *)((long)param_2 + 0xcc) =
+    uVar6 = NEON_scvtf(CONCAT44(iVar5,*(int *)(p1 + 0x100)),4);
+    *(undefined8 *)(p1 + 0xe8) = 0;
+    *(int *)(p1 + 0xf8) = iVar3;
+    *(undefined4 *)(p1 + 0xfc) = 0;
+    *(ulong *)(p1 + 0xcc) =
          CONCAT44((float)((ulong)uVar2 >> 0x20) / (float)((ulong)uVar6 >> 0x20),
                   (float)uVar2 / (float)uVar6);
     if (0 < iVar3) {
       iVar3 = 0;
       do {
         fStack_50 = (float)((uint)fStack_50 & 0xffffff00);
-        func_0x00169dd0(param_2 + 0x1c,&fStack_50);
+        func_0x00169dd0(p1 + 0xe0,&fStack_50);
         iVar3 = iVar3 + 1;
-      } while (iVar3 < *(int *)(param_2 + 0x1f));
+      } while (iVar3 < *(int *)(p1 + 0xf8));
     }
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_blockIn);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_blockIn);
+    func_0x00167060();
     iVar3 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x81) = iVar3 == 1;
+    p1[0x81] = (Walaber__PropertyList)(iVar3 == 1);
   }
-  uVar4 = func_0x00173810(param_3,&Transition::tk_blockOut);
+  uVar4 = func_0x00173810();
   if ((uVar4 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_blockOut);
+    func_0x00167060();
     iVar3 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x82) = iVar3 == 1;
+    p1[0x82] = (Walaber__PropertyList)(iVar3 == 1);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -165,12 +167,13 @@ void Walaber::Transition_Block::setup(undefined8 param_1,undefined8 *param_2,und
 
 /* Walaber::Transition_Block::update(float) */
 
-undefined8 Walaber::Transition_Block::update(float param_1,long param_2)
+undefined8 Walaber::Transition_Block::update(float p0)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
+  long in_x0;
   undefined8 uVar4;
   int iVar5;
   ulong uVar6;
@@ -179,15 +182,16 @@ undefined8 Walaber::Transition_Block::update(float param_1,long param_2)
   ulong uVar9;
   int iVar10;
   float fVar11;
+  float fVar12;
   
-  param_1 = *(float *)(param_2 + 0x70) + param_1;
-  fVar11 = *(float *)(param_2 + 0x74) * 0.5;
-  *(float *)(param_2 + 0x70) = param_1;
-  if (fVar11 <= param_1) {
-    if (*(char *)(param_2 + 0xc4) == '\0') {
-      iVar2 = *(int *)(param_2 + 0xf8);
+  fVar12 = *(float *)(in_x0 + 0x70) + p0;
+  fVar11 = *(float *)(in_x0 + 0x74) * 0.5;
+  *(float *)(in_x0 + 0x70) = fVar12;
+  if (fVar11 <= fVar12) {
+    if (*(char *)(in_x0 + 0xc4) == '\0') {
+      iVar2 = *(int *)(in_x0 + 0xf8);
       if (0 < iVar2) {
-        lVar8 = *(long *)(param_2 + 0xe0);
+        lVar8 = *(long *)(in_x0 + 0xe0);
         uVar6 = 0;
         do {
           uVar7 = *(ulong *)(lVar8 + (uVar6 >> 6) * 8);
@@ -198,21 +202,21 @@ undefined8 Walaber::Transition_Block::update(float param_1,long param_2)
           uVar6 = uVar6 + 1;
         } while ((long)uVar6 < (long)iVar2);
       }
-      *(undefined4 *)(param_2 + 0xfc) = 0;
-      if (*(char *)(param_2 + 0x7c) == '\0') {
+      *(undefined4 *)(in_x0 + 0xfc) = 0;
+      if (*(char *)(in_x0 + 0x7c) == '\0') {
         uVar4 = 1;
-        *(undefined1 *)(param_2 + 0x7c) = 1;
+        *(undefined1 *)(in_x0 + 0x7c) = 1;
       }
       else {
         uVar4 = 2;
-        *(undefined1 *)(param_2 + 0xc4) = 1;
+        *(undefined1 *)(in_x0 + 0xc4) = 1;
       }
     }
     else {
-      iVar2 = *(int *)(param_2 + 0xf8);
-      if (*(float *)(param_2 + 0x74) + *(float *)(param_2 + 0x78) <= param_1) {
+      iVar2 = *(int *)(in_x0 + 0xf8);
+      if (*(float *)(in_x0 + 0x74) + *(float *)(in_x0 + 0x78) <= fVar12) {
         if (0 < iVar2) {
-          lVar8 = *(long *)(param_2 + 0xe0);
+          lVar8 = *(long *)(in_x0 + 0xe0);
           uVar6 = 0;
           do {
             uVar7 = *(ulong *)(lVar8 + (uVar6 >> 6) * 8);
@@ -226,27 +230,27 @@ undefined8 Walaber::Transition_Block::update(float param_1,long param_2)
         uVar4 = 4;
       }
       else {
-        iVar5 = (int)((((param_1 - *(float *)(param_2 + 0x78)) - fVar11) / fVar11) * (float)iVar2 +
-                     0.0);
-        iVar2 = iVar5 - *(int *)(param_2 + 0xfc);
+        iVar5 = (int)((((fVar12 - *(float *)(in_x0 + 0x78)) - fVar11) / fVar11) * (float)iVar2 + 0.0
+                     );
+        iVar2 = iVar5 - *(int *)(in_x0 + 0xfc);
         if (0 < iVar2) {
           iVar10 = 0;
-          *(int *)(param_2 + 0xfc) = iVar5;
+          *(int *)(in_x0 + 0xfc) = iVar5;
           do {
             iVar3 = func_0x00172b70();
-            iVar5 = *(int *)(param_2 + 0xf8);
+            iVar5 = *(int *)(in_x0 + 0xf8);
             iVar1 = 0;
             if (iVar5 != 0) {
               iVar1 = iVar3 / iVar5;
             }
             uVar9 = (ulong)(iVar3 - iVar1 * iVar5);
             uVar6 = uVar9 >> 6;
-            uVar7 = *(ulong *)(*(long *)(param_2 + 0xe0) + uVar6 * 8);
+            uVar7 = *(ulong *)(*(long *)(in_x0 + 0xe0) + uVar6 * 8);
             uVar9 = 1L << (uVar9 & 0x3f);
             if ((uVar9 & uVar7) != 0) {
               iVar10 = iVar10 + 1;
-              *(ulong *)(*(long *)(param_2 + 0xe0) + uVar6 * 8) =
-                   uVar7 & (uVar9 ^ 0xffffffffffffffff);
+              *(ulong *)(*(long *)(in_x0 + 0xe0) + uVar6 * 8) = uVar7 & (uVar9 ^ 0xffffffffffffffff)
+              ;
             }
           } while (iVar10 < iVar2);
         }
@@ -255,25 +259,25 @@ undefined8 Walaber::Transition_Block::update(float param_1,long param_2)
     }
   }
   else {
-    iVar5 = (int)((param_1 / fVar11) * (float)*(int *)(param_2 + 0xf8) + 0.0);
-    iVar2 = iVar5 - *(int *)(param_2 + 0xfc);
+    iVar5 = (int)((fVar12 / fVar11) * (float)*(int *)(in_x0 + 0xf8) + 0.0);
+    iVar2 = iVar5 - *(int *)(in_x0 + 0xfc);
     if (0 < iVar2) {
       iVar10 = 0;
-      *(int *)(param_2 + 0xfc) = iVar5;
+      *(int *)(in_x0 + 0xfc) = iVar5;
       do {
         iVar3 = func_0x00172b70();
-        iVar5 = *(int *)(param_2 + 0xf8);
+        iVar5 = *(int *)(in_x0 + 0xf8);
         iVar1 = 0;
         if (iVar5 != 0) {
           iVar1 = iVar3 / iVar5;
         }
         uVar9 = (ulong)(iVar3 - iVar1 * iVar5);
         uVar6 = uVar9 >> 6;
-        uVar7 = *(ulong *)(*(long *)(param_2 + 0xe0) + uVar6 * 8);
+        uVar7 = *(ulong *)(*(long *)(in_x0 + 0xe0) + uVar6 * 8);
         uVar9 = 1L << (uVar9 & 0x3f);
         if ((uVar9 & uVar7) == 0) {
           iVar10 = iVar10 + 1;
-          *(ulong *)(*(long *)(param_2 + 0xe0) + uVar6 * 8) = uVar9 | uVar7;
+          *(ulong *)(*(long *)(in_x0 + 0xe0) + uVar6 * 8) = uVar9 | uVar7;
         }
       } while (iVar10 < iVar2);
     }

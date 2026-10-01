@@ -30,11 +30,11 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
                (long *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-  FUN_00171f00(lVar1 + 0x10);
-  FUN_00166120(lVar1);
+  p0 = (void *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  FUN_00171f00((long)p0 + 0x10);
+  FUN_00166120(p0);
   return;
 }
 

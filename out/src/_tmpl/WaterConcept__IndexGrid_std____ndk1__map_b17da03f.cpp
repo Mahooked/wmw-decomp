@@ -12,9 +12,10 @@
 
 void WaterConcept::
      IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>
-     ::~IndexGrid(long param_1)
+     ::~IndexGrid(long param_1,ulong param_2)
 
 {
+  ulong extraout_x1;
   long lVar1;
   long lVar2;
   
@@ -26,9 +27,10 @@ void WaterConcept::
       do {
         func_0x0016e5e0(lVar2 + lVar1 + -0x18,*(undefined8 *)(lVar2 + lVar1 + -0x10));
         lVar1 = lVar1 + -0x18;
+        param_2 = extraout_x1;
       } while (lVar1 != 0);
     }
-    FUN_001639e0((long *)(lVar2 + -8));
+    FUN_001639e0((long *)(lVar2 + -8),param_2);
     return;
   }
   return;
@@ -46,43 +48,46 @@ void WaterConcept::
 
 void WaterConcept::
      IndexGrid<std::__ndk1::map<int,WaterConcept::World::VBOData,std::__ndk1::less<int>,std::__ndk1::allocator<std::__ndk1::pair<int_const,WaterConcept::World::VBOData>>>>
-     ::IndexGrid(int *param_1,int param_2,int param_3)
+     ::IndexGrid(int p0,int p1)
 
 {
   uint uVar1;
   undefined1 auVar2 [16];
-  ulong *puVar3;
-  ulong uVar4;
-  ulong *puVar5;
-  long lVar6;
-  ulong uVar7;
+  int *piVar3;
+  ulong *puVar4;
+  int in_w2;
+  ulong uVar5;
+  ulong *puVar6;
+  long lVar7;
+  ulong uVar8;
   
-  uVar1 = param_3 * param_2;
-  uVar7 = (ulong)(int)uVar1;
+  piVar3 = (int *)(ulong)(uint)p0;
+  uVar1 = in_w2 * p1;
+  uVar8 = (ulong)(int)uVar1;
   auVar2._8_8_ = 0;
-  auVar2._0_8_ = uVar7;
-  uVar4 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar1 << 1) + (long)(int)uVar1) *
+  auVar2._0_8_ = uVar8;
+  uVar5 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar1 << 1) + (long)(int)uVar1) *
           8;
-  lVar6 = uVar4 + 8;
-  *param_1 = param_2;
-  param_1[1] = param_3;
-  if (SUB168(auVar2 * ZEXT816(0x18),8) != 0 || 0xfffffffffffffff7 < uVar4) {
-    lVar6 = -1;
+  lVar7 = uVar5 + 8;
+  *piVar3 = p1;
+  piVar3[1] = in_w2;
+  if (SUB168(auVar2 * ZEXT816(0x18),8) != 0 || 0xfffffffffffffff7 < uVar5) {
+    lVar7 = -1;
   }
-  puVar3 = (ulong *)FUN_00167620(lVar6);
-  *puVar3 = uVar7;
+  puVar4 = (ulong *)FUN_00167620(lVar7);
+  *puVar4 = uVar8;
   if (uVar1 != 0) {
-    puVar5 = puVar3 + 2;
-    lVar6 = uVar7 * 0x18;
+    puVar6 = puVar4 + 2;
+    lVar7 = uVar8 * 0x18;
     do {
-      *puVar5 = 0;
-      puVar5[1] = 0;
-      puVar5[-1] = (ulong)puVar5;
-      lVar6 = lVar6 + -0x18;
-      puVar5 = puVar5 + 3;
-    } while (lVar6 != 0);
+      *puVar6 = 0;
+      puVar6[1] = 0;
+      puVar6[-1] = (ulong)puVar6;
+      lVar7 = lVar7 + -0x18;
+      puVar6 = puVar6 + 3;
+    } while (lVar7 != 0);
   }
-  *(ulong **)(param_1 + 2) = puVar3 + 1;
+  *(ulong **)(piVar3 + 2) = puVar4 + 1;
   return;
 }
 

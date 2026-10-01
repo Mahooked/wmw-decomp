@@ -208,7 +208,7 @@ long std::__ndk1::__shared_weak_count::lock(long param_1)
 
 /* std::__ndk1::__shared_weak_count::__get_deleter(std::type_info const&) const */
 
-undefined8 std::__ndk1::__shared_weak_count::__get_deleter(void)
+undefined8 std::__ndk1::__shared_weak_count::__get_deleter(std__type_info *p0)
 
 {
   return 0;

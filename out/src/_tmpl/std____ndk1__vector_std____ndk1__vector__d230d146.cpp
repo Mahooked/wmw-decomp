@@ -13,20 +13,21 @@
 
 void std::__ndk1::
      vector<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>
-     ::reserve(long *param_1,ulong param_2)
+     ::reserve(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   undefined1 auStack_50 [40];
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if ((ulong)((param_1[2] - *param_1 >> 3) * -0x5555555555555555) < param_2) {
-    func_0x00167410(auStack_50,param_2,(param_1[1] - *param_1 >> 3) * -0x5555555555555555,
-                    param_1 + 2);
+  if ((ulong)((*(long *)(p0 + 0x10) - *(long *)p0 >> 3) * -0x5555555555555555) < in_x1) {
+    func_0x00167410(auStack_50,in_x1,(*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x5555555555555555,
+                    p0 + 0x10);
                     /* try { // try from 00365c48 to 00365c53 has its CatchHandler @ 00365c80 */
-    func_0x00170450(param_1,auStack_50);
+    func_0x00170450(p0,auStack_50);
     func_0x0016fcd0(auStack_50);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {

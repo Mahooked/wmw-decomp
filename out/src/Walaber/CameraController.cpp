@@ -31,28 +31,35 @@ void Walaber::CameraController::CameraController(undefined8 *param_1)
 void Walaber::CameraController::~CameraController(long param_1)
 
 {
-  if (*(long *)(param_1 + 0x90) != 0) {
-    FUN_00166120();
+  void *pvVar1;
+  
+  if (*(void **)(param_1 + 0x90) != (void *)0x0) {
+    FUN_00166120(*(void **)(param_1 + 0x90));
   }
-  if (*(long *)(param_1 + 0x78) != 0) {
-    *(long *)(param_1 + 0x80) = *(long *)(param_1 + 0x78);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x78);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x80) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x60) != 0) {
-    *(long *)(param_1 + 0x68) = *(long *)(param_1 + 0x60);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x60);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x68) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x48) != 0) {
-    *(long *)(param_1 + 0x50) = *(long *)(param_1 + 0x48);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x48);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x50) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x30) != 0) {
-    *(long *)(param_1 + 0x38) = *(long *)(param_1 + 0x30);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x30);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x38) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x18) != 0) {
-    *(long *)(param_1 + 0x20) = *(long *)(param_1 + 0x18);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x18);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x20) = pvVar1;
+    FUN_00166120(pvVar1);
     return;
   }
   return;
@@ -66,12 +73,14 @@ void Walaber::CameraController::~CameraController(long param_1)
 
 /* Walaber::CameraController::initCamera(Walaber::Camera*) */
 
-void Walaber::CameraController::initCamera(long *param_1,long *param_2)
+void Walaber::CameraController::initCamera(Walaber__Camera *p0)
 
 {
-  *param_1 = (long)param_2;
-  param_1[1] = *param_2;
-  param_1[2] = param_2[1];
+  undefined8 *in_x1;
+  
+  *(undefined8 **)p0 = in_x1;
+  *(undefined8 *)(p0 + 8) = *in_x1;
+  *(undefined8 *)(p0 + 0x10) = in_x1[1];
   return;
 }
 
@@ -85,7 +94,7 @@ void Walaber::CameraController::initCamera(long *param_1,long *param_2)
 /* WARNING: Removing unreachable block (ram,0x003ed63c) */
 /* Walaber::CameraController::update(float) */
 
-void Walaber::CameraController::update(float param_1,undefined8 *param_2)
+void Walaber::CameraController::update(float p0)
 
 {
   undefined8 *puVar1;
@@ -94,6 +103,7 @@ void Walaber::CameraController::update(float param_1,undefined8 *param_2)
   undefined4 uVar4;
   long lVar5;
   long lVar6;
+  undefined8 *in_x0;
   ulong uVar7;
   uint uVar8;
   long lVar9;
@@ -113,19 +123,18 @@ void Walaber::CameraController::update(float param_1,undefined8 *param_2)
   
   lVar6 = tpidr_el0;
   lStack_48 = *(long *)(lVar6 + 0x28);
-  if ((*(char *)(param_2 + 0x15) == '\0') && (uVar7 = func_0x0016fbe0(*param_2), (uVar7 & 1) == 0))
-  {
-    uVar7 = (ulong)*(uint *)(param_2 + 0x16);
-    lVar9 = param_2[0xc];
-    fVar13 = *(float *)((long)param_2 + 0xac);
+  if ((*(char *)(in_x0 + 0x15) == '\0') && (uVar7 = func_0x0016fbe0(*in_x0), (uVar7 & 1) == 0)) {
+    uVar7 = (ulong)*(uint *)(in_x0 + 0x16);
+    lVar9 = in_x0[0xc];
+    fVar13 = *(float *)((long)in_x0 + 0xac);
     fVar14 = *(float *)(lVar9 + uVar7 * 4);
     if ((fVar13 < fVar14) || (fVar14 == -1.0)) {
-      if ((fVar14 != -1.0) || (fVar13 < *(float *)(param_2[0xf] + uVar7 * 4))) {
-        *(float *)((long)param_2 + 0xac) = fVar13 + param_1;
+      if ((fVar14 != -1.0) || (fVar13 < *(float *)(in_x0[0xf] + uVar7 * 4))) {
+        *(float *)((long)in_x0 + 0xac) = fVar13 + p0;
       }
       else {
-        puVar3 = (undefined8 *)param_2[4];
-        lVar11 = param_2[3] + uVar7 * 8;
+        puVar3 = (undefined8 *)in_x0[4];
+        lVar11 = in_x0[3] + uVar7 * 8;
         puVar1 = (undefined8 *)(lVar11 + 8);
         puVar12 = puVar1;
         if (puVar1 != puVar3) {
@@ -135,9 +144,9 @@ void Walaber::CameraController::update(float param_1,undefined8 *param_2)
           } while (puVar3 != puVar12);
           lVar11 = lVar11 + ((long)puVar3 + (-8 - (long)puVar1) & 0xfffffffffffffff8U) + 8;
         }
-        puVar3 = (undefined8 *)param_2[7];
-        param_2[4] = lVar11;
-        lVar11 = param_2[6] + uVar7 * 8;
+        puVar3 = (undefined8 *)in_x0[7];
+        in_x0[4] = lVar11;
+        lVar11 = in_x0[6] + uVar7 * 8;
         puVar1 = (undefined8 *)(lVar11 + 8);
         puVar12 = puVar1;
         if (puVar1 != puVar3) {
@@ -147,32 +156,32 @@ void Walaber::CameraController::update(float param_1,undefined8 *param_2)
           } while (puVar3 != puVar12);
           lVar11 = lVar11 + ((long)puVar3 + (-8 - (long)puVar1) & 0xfffffffffffffff8U) + 8;
         }
-        param_2[7] = lVar11;
-        lVar11 = param_2[9] + uVar7 * 4;
-        lVar10 = param_2[10] - (lVar11 + 4);
+        in_x0[7] = lVar11;
+        lVar11 = in_x0[9] + uVar7 * 4;
+        lVar10 = in_x0[10] - (lVar11 + 4);
         if (lVar10 != 0) {
           FUN_0016b250(lVar11);
-          lVar9 = param_2[0xc];
-          uVar7 = (ulong)*(uint *)(param_2 + 0x16);
+          lVar9 = in_x0[0xc];
+          uVar7 = (ulong)*(uint *)(in_x0 + 0x16);
         }
         lVar9 = lVar9 + uVar7 * 4;
-        lVar5 = param_2[0xd] - (lVar9 + 4);
-        param_2[10] = lVar11 + (lVar10 >> 2) * 4;
+        lVar5 = in_x0[0xd] - (lVar9 + 4);
+        in_x0[10] = lVar11 + (lVar10 >> 2) * 4;
         if (lVar5 != 0) {
           FUN_0016b250(lVar9);
-          uVar7 = (ulong)*(uint *)(param_2 + 0x16);
+          uVar7 = (ulong)*(uint *)(in_x0 + 0x16);
         }
-        param_2[0xd] = lVar9 + (lVar5 >> 2) * 4;
-        lVar9 = param_2[0xf] + uVar7 * 4;
-        lVar11 = param_2[0x10] - (lVar9 + 4);
+        in_x0[0xd] = lVar9 + (lVar5 >> 2) * 4;
+        lVar9 = in_x0[0xf] + uVar7 * 4;
+        lVar11 = in_x0[0x10] - (lVar9 + 4);
         if (lVar11 != 0) {
           FUN_0016b250(lVar9);
-          uVar7 = (ulong)*(uint *)(param_2 + 0x16);
+          uVar7 = (ulong)*(uint *)(in_x0 + 0x16);
         }
-        lVar10 = param_2[0x12];
+        lVar10 = in_x0[0x12];
         uVar8 = (uint)uVar7;
         uStack_50 = uVar8 & 0x3f;
-        param_2[0x10] = lVar9 + (lVar11 >> 2) * 4;
+        in_x0[0x10] = lVar9 + (lVar11 >> 2) * 4;
         uVar2 = uVar8 + 1 & 0x3f;
         lStack_58 = lVar10 + (ulong)(uVar8 >> 6) * 8;
         if (uStack_50 == uVar2) {
@@ -181,34 +190,34 @@ void Walaber::CameraController::update(float param_1,undefined8 *param_2)
         else {
           func_0x00173c70(auStack_68,
                           lVar10 + (ulong)(uVar8 >> 6) * 8 + ((ulong)(uStack_50 + 1 >> 3) & 8),uVar2
-                          ,lVar10 + ((ulong)param_2[0x13] >> 3 & 0x1ffffffffffffff8),
-                          param_2[0x13] & 0x3f,&lStack_58);
+                          ,lVar10 + ((ulong)in_x0[0x13] >> 3 & 0x1ffffffffffffff8),
+                          in_x0[0x13] & 0x3f,&lStack_58);
         }
-        *(undefined4 *)((long)param_2 + 0xac) = 0;
-        param_2[0x13] = param_2[0x13] + -1;
-        if (param_2[4] == param_2[3]) {
-          *(undefined1 *)(param_2 + 0x15) = 1;
+        *(undefined4 *)((long)in_x0 + 0xac) = 0;
+        in_x0[0x13] = in_x0[0x13] + -1;
+        if (in_x0[4] == in_x0[3]) {
+          *(undefined1 *)(in_x0 + 0x15) = 1;
         }
       }
     }
     else {
-      lVar9 = param_2[3];
+      lVar9 = in_x0[3];
       uVar4 = *(undefined4 *)(lVar9 + uVar7 * 8);
-      if ((*(ulong *)(param_2[0x12] + ((ulong)(*(uint *)(param_2 + 0x16) >> 3) & 0x1ffffff8)) &
+      if ((*(ulong *)(in_x0[0x12] + ((ulong)(*(uint *)(in_x0 + 0x16) >> 3) & 0x1ffffff8)) &
           1L << (uVar7 & 0x3f)) == 0) {
         uStack_6c = *(undefined4 *)(lVar9 + uVar7 * 8 + 4);
         uStack_70 = uVar4;
-        func_0x0016a2e0(*(undefined4 *)(param_2[9] + uVar7 * 4),*param_2,&uStack_70);
+        func_0x0016a2e0(*(undefined4 *)(in_x0[9] + uVar7 * 4),*in_x0,&uStack_70);
       }
       else {
         uStack_74 = *(undefined4 *)(lVar9 + uVar7 * 8 + 4);
         uStack_78 = uVar4;
-        func_0x0016ec40(*(undefined4 *)(param_2[9] + uVar7 * 4),*param_2,&uStack_78);
+        func_0x0016ec40(*(undefined4 *)(in_x0[9] + uVar7 * 4),*in_x0,&uStack_78);
       }
-      func_0x00166e80(*(undefined4 *)(param_2[6] + (ulong)*(uint *)(param_2 + 0x16) * 8),
-                      *(undefined4 *)(param_2[9] + (ulong)*(uint *)(param_2 + 0x16) * 4),*param_2);
-      *(undefined4 *)((long)param_2 + 0xac) = 0;
-      *(undefined4 *)(param_2[0xc] + (ulong)*(uint *)(param_2 + 0x16) * 4) = 0xbf800000;
+      func_0x00166e80(*(undefined4 *)(in_x0[6] + (ulong)*(uint *)(in_x0 + 0x16) * 8),
+                      *(undefined4 *)(in_x0[9] + (ulong)*(uint *)(in_x0 + 0x16) * 4),*in_x0);
+      *(undefined4 *)((long)in_x0 + 0xac) = 0;
+      *(undefined4 *)(in_x0[0xc] + (ulong)*(uint *)(in_x0 + 0x16) * 4) = 0xbf800000;
     }
   }
   if (*(long *)(lVar6 + 0x28) == lStack_48) {
@@ -394,10 +403,12 @@ void Walaber::CameraController::clearQueue(undefined8 *param_1)
 
 /* Walaber::CameraController::endMovement(bool) */
 
-void Walaber::CameraController::endMovement(undefined8 *param_1,uint param_2)
+void Walaber::CameraController::endMovement(bool p0)
 
 {
-  func_0x00173a50(*param_1,param_2 & 1);
+  uint in_w1;
+  
+  func_0x00173a50(*(undefined8 *)(ulong)p0,in_w1 & 1);
   return;
 }
 

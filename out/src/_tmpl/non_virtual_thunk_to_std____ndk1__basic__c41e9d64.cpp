@@ -19,7 +19,7 @@ void std::__ndk1::
   *param_1 = &PTR__basic_stringstream_00711118;
   param_1[1] = &PTR__basic_stringbuf_007111c8;
   if ((*(byte *)(param_1 + 9) & 1) != 0) {
-    FUN_00166120(param_1[0xb]);
+    FUN_00166120((void *)param_1[0xb]);
   }
   param_1[1] = &PTR__basic_streambuf_00710968;
   FUN_0016e360(param_1 + 2);
@@ -46,7 +46,7 @@ void std::__ndk1::
   *param_1 = &PTR__basic_stringstream_00711118;
   param_1[1] = &PTR__basic_stringbuf_007111c8;
   if ((*(byte *)(param_1 + 9) & 1) != 0) {
-    FUN_00166120(param_1[0xb]);
+    FUN_00166120((void *)param_1[0xb]);
   }
   param_1[1] = &PTR__basic_streambuf_00710968;
   FUN_0016e360(param_1 + 2);

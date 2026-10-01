@@ -13,13 +13,15 @@
 
 void std::__ndk1::
      vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>
-     ::__push_back_slow_path<Walaber::SoundManager::SoundInfo_const&>(long *param_1,long param_2)
+     ::__push_back_slow_path<Walaber::SoundManager::SoundInfo_const&>
+               (Walaber__SoundManager__SoundInfo *p0)
 
 {
   ulong uVar1;
   undefined4 uVar2;
   undefined2 uVar3;
   long lVar4;
+  long in_x1;
   long lVar5;
   ulong uVar6;
   ulong uVar7;
@@ -31,39 +33,39 @@ void std::__ndk1::
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
-  lVar5 = (param_1[1] - *param_1 >> 3) * -0x71c71c71c71c71c7;
+  lVar5 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x71c71c71c71c71c7;
   uVar1 = lVar5 + 1;
   if (0x38e38e38e38e38e < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar9 = param_1[2] - *param_1 >> 3;
+  lVar9 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
   uVar7 = 0x38e38e38e38e38e;
   if (((ulong)(lVar9 * -0x71c71c71c71c71c7) < 0x1c71c71c71c71c7) &&
      (uVar6 = lVar9 * 0x1c71c71c71c71c72, uVar7 = uVar1, uVar1 <= uVar6)) {
     uVar7 = uVar6;
   }
-  func_0x00162960(auStack_70,uVar7,lVar5,param_1 + 2);
+  func_0x00162960(auStack_70,uVar7,lVar5,p0 + 0x10);
   lVar5 = lStack_60;
                     /* try { // try from 00356bb8 to 00356bc3 has its CatchHandler @ 00356c80 */
-  func_0x0016f720(lStack_60,param_2);
-  lVar9 = *(long *)(param_2 + 0x18);
+  func_0x0016f720(lStack_60);
+  lVar9 = *(long *)(in_x1 + 0x18);
   *(long *)(lVar5 + 0x18) = lVar9;
-  piVar8 = *(int **)(param_2 + 0x20);
+  piVar8 = *(int **)(in_x1 + 0x20);
   *(int **)(lVar5 + 0x20) = piVar8;
   if (lVar9 != 0) {
     *piVar8 = *piVar8 + 1;
   }
-  uVar3 = *(undefined2 *)(param_2 + 0x2c);
-  uVar2 = *(undefined4 *)(param_2 + 0x28);
-  *(undefined1 *)(lVar5 + 0x2e) = *(undefined1 *)(param_2 + 0x2e);
+  uVar3 = *(undefined2 *)(in_x1 + 0x2c);
+  uVar2 = *(undefined4 *)(in_x1 + 0x28);
+  *(undefined1 *)(lVar5 + 0x2e) = *(undefined1 *)(in_x1 + 0x2e);
   *(undefined2 *)(lVar5 + 0x2c) = uVar3;
   *(undefined4 *)(lVar5 + 0x28) = uVar2;
                     /* try { // try from 00356c08 to 00356c0b has its CatchHandler @ 00356c60 */
-  func_0x0016f720(lVar5 + 0x30,param_2 + 0x30);
+  func_0x0016f720(lVar5 + 0x30,in_x1 + 0x30);
   lStack_60 = lStack_60 + 0x48;
                     /* try { // try from 00356c18 to 00356c23 has its CatchHandler @ 00356c80 */
-  func_0x00168c40(param_1,auStack_70);
+  func_0x00168c40(p0,auStack_70);
   func_0x00167aa0(auStack_70);
   if (*(long *)(lVar4 + 0x28) != lStack_48) {
     FUN_00164ff0();

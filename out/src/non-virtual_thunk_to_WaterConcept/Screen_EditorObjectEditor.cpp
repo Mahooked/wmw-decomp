@@ -28,8 +28,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_Edito
                (long param_1)
 
 {
-  func_0x00169ed0(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00169ed0((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -42,10 +42,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_Edito
 /* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x0016d700(param_1 + -0x20);
+  func_0x0016d700((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -58,7 +59,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::handleEvent(l
 /* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::messageRx(Walaber::Message const&)
     */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::messageRx(void)
+undefined8
+non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::messageRx(Walaber__Message *p0)
 
 {
   return 0;

@@ -32,25 +32,26 @@ void Walaber::AnimationManager::AnimationManager(undefined8 *param_1)
 
 /* Walaber::AnimationManager::AnimationManager(Walaber::AnimationManager const&) */
 
-void Walaber::AnimationManager::AnimationManager(undefined8 *param_1,undefined8 *param_2)
+void Walaber::AnimationManager::AnimationManager(Walaber__AnimationManager *p0)
 
 {
   bool bVar1;
+  undefined8 *in_x1;
   long *plVar2;
   long lVar3;
-  undefined8 *puVar4;
+  Walaber__AnimationManager *pWVar4;
   long *plVar5;
   undefined8 uVar6;
   undefined8 uVar7;
   
-  puVar4 = param_1 + 1;
-  *puVar4 = 0;
-  param_1[2] = 0;
-  *param_1 = puVar4;
-  plVar5 = (long *)*param_2;
-  while (plVar5 != param_2 + 1) {
+  pWVar4 = p0 + 8;
+  *(undefined8 *)pWVar4 = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(Walaber__AnimationManager **)p0 = pWVar4;
+  plVar5 = (long *)*in_x1;
+  while (plVar5 != in_x1 + 1) {
                     /* try { // try from 00337810 to 0033781f has its CatchHandler @ 003378ac */
-    func_0x0016a5a0(param_1,puVar4,plVar5 + 4,plVar5 + 4);
+    func_0x0016a5a0(p0,pWVar4,plVar5 + 4,plVar5 + 4);
     plVar2 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
       plVar2 = plVar5 + 2;
@@ -71,15 +72,15 @@ void Walaber::AnimationManager::AnimationManager(undefined8 *param_1,undefined8 
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  uVar7 = param_2[4];
-  uVar6 = param_2[3];
-  param_1[6] = 0;
-  param_1[7] = 0;
-  param_1[5] = param_1 + 6;
-  param_1[4] = uVar7;
-  param_1[3] = uVar6;
-  param_1[8] = param_2[8];
-  *(undefined1 *)(param_1 + 9) = *(undefined1 *)(param_2 + 9);
+  uVar7 = in_x1[4];
+  uVar6 = in_x1[3];
+  *(undefined8 *)(p0 + 0x30) = 0;
+  *(undefined8 *)(p0 + 0x38) = 0;
+  *(Walaber__AnimationManager **)(p0 + 0x28) = p0 + 0x30;
+  *(undefined8 *)(p0 + 0x20) = uVar7;
+  *(undefined8 *)(p0 + 0x18) = uVar6;
+  *(undefined8 *)(p0 + 0x40) = in_x1[8];
+  p0[0x48] = *(Walaber__AnimationManager *)(in_x1 + 9);
   return;
 }
 
@@ -91,20 +92,21 @@ void Walaber::AnimationManager::AnimationManager(undefined8 *param_1,undefined8 
 
 /* Walaber::AnimationManager::TEMPNAMEPLACEHOLDERVALUE(Walaber::AnimationManager const&) */
 
-undefined8 * Walaber::AnimationManager::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__AnimationManager * Walaber::AnimationManager::operator=(Walaber__AnimationManager *p0)
 
 {
+  Walaber__AnimationManager *in_x1;
   undefined8 uVar1;
   
-  if (param_1 != param_2) {
-    func_0x0016e1e0(param_1,*param_2,param_2 + 1);
+  if (p0 != in_x1) {
+    func_0x0016e1e0(p0,*(undefined8 *)in_x1,in_x1 + 8);
   }
-  uVar1 = param_2[3];
-  param_1[4] = param_2[4];
-  param_1[3] = uVar1;
-  param_1[8] = param_2[8];
-  *(undefined1 *)(param_1 + 9) = *(undefined1 *)(param_2 + 9);
-  return param_1;
+  uVar1 = *(undefined8 *)(in_x1 + 0x18);
+  *(undefined8 *)(p0 + 0x20) = *(undefined8 *)(in_x1 + 0x20);
+  *(undefined8 *)(p0 + 0x18) = uVar1;
+  *(undefined8 *)(p0 + 0x40) = *(undefined8 *)(in_x1 + 0x40);
+  p0[0x48] = in_x1[0x48];
+  return p0;
 }
 
 
@@ -121,42 +123,43 @@ void Walaber::AnimationManager::~AnimationManager(undefined8 *param_1)
   bool bVar1;
   long *plVar2;
   long lVar3;
-  long *plVar4;
+  void *pvVar4;
+  long *plVar5;
   
-  plVar4 = (long *)*param_1;
-  while (param_1 + 1 != plVar4) {
-    lVar3 = plVar4[7];
-    if (lVar3 != 0) {
-      func_0x001728c0(lVar3);
-      FUN_00166120(lVar3);
+  plVar5 = (long *)*param_1;
+  while (param_1 + 1 != plVar5) {
+    pvVar4 = (void *)plVar5[7];
+    if (pvVar4 != (void *)0x0) {
+      func_0x001728c0(pvVar4);
+      FUN_00166120(pvVar4);
     }
-    plVar2 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar2 = plVar4 + 2;
-      bVar1 = *(long **)*plVar2 != plVar4;
-      plVar4 = (long *)*plVar2;
+    plVar2 = (long *)plVar5[1];
+    if ((long *)plVar5[1] == (long *)0x0) {
+      plVar2 = plVar5 + 2;
+      bVar1 = *(long **)*plVar2 != plVar5;
+      plVar5 = (long *)*plVar2;
       if (bVar1) {
         do {
           lVar3 = *plVar2;
           plVar2 = (long *)(lVar3 + 0x10);
-          plVar4 = (long *)*plVar2;
-        } while (*plVar4 != lVar3);
+          plVar5 = (long *)*plVar2;
+        } while (*plVar5 != lVar3);
       }
     }
     else {
       do {
-        plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        plVar5 = plVar2;
+        plVar2 = (long *)*plVar5;
+      } while ((long *)*plVar5 != (long *)0x0);
     }
   }
   func_0x0016b980(param_1,param_1[1]);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = param_1 + 1;
-  if ((*(char *)(param_1 + 9) != '\0') && (lVar3 = param_1[3], lVar3 != 0)) {
-    func_0x001728c0(lVar3);
-    FUN_00166120(lVar3);
+  if ((*(char *)(param_1 + 9) != '\0') && (pvVar4 = (void *)param_1[3], pvVar4 != (void *)0x0)) {
+    func_0x001728c0(pvVar4);
+    FUN_00166120(pvVar4);
   }
   func_0x00167700(param_1 + 5,param_1[6]);
   func_0x0016b980(param_1,param_1[1]);
@@ -171,51 +174,50 @@ void Walaber::AnimationManager::~AnimationManager(undefined8 *param_1)
 
 /* Walaber::AnimationManager::update(float) */
 
-void Walaber::AnimationManager::update(undefined8 param_1,long param_2)
+void Walaber::AnimationManager::update(float p0)
 
 {
+  void *p0_00;
   undefined1 uVar1;
-  undefined4 uVar2;
-  long lVar3;
-  float fVar4;
+  long in_x0;
+  long lVar2;
+  undefined4 in_register_00005004;
+  float fVar3;
   
-  lVar3 = *(long *)(param_2 + 0x20);
-  if (lVar3 == 0) {
-    lVar3 = *(long *)(param_2 + 0x18);
-    if (lVar3 == 0) {
-      uVar2 = 0;
-      goto LAB_00337ac4;
-    }
-    uVar1 = *(undefined1 *)(param_2 + 0x49);
-    fVar4 = 1.0;
+  lVar2 = *(long *)(in_x0 + 0x20);
+  if (lVar2 == 0) {
+    lVar2 = *(long *)(in_x0 + 0x18);
+    if (lVar2 == 0) goto LAB_00337ac4;
+    uVar1 = *(undefined1 *)(in_x0 + 0x49);
+    fVar3 = 1.0;
   }
   else {
-    fVar4 = *(float *)(param_2 + 0x40) + (float)param_1;
-    *(float *)(param_2 + 0x40) = fVar4;
-    if (*(float *)(param_2 + 0x44) < fVar4) {
-      if (*(char *)(param_2 + 0x48) != '\0') {
-        func_0x001645b0(lVar3,*(undefined8 *)(param_2 + 0x18));
-        lVar3 = *(long *)(param_2 + 0x18);
-        *(undefined8 *)(param_2 + 0x18) = *(undefined8 *)(param_2 + 0x20);
-        if (lVar3 != 0) {
-          func_0x001728c0(lVar3);
-          FUN_00166120(lVar3);
+    fVar3 = *(float *)(in_x0 + 0x40) + p0;
+    *(float *)(in_x0 + 0x40) = fVar3;
+    if (*(float *)(in_x0 + 0x44) < fVar3) {
+      if (*(char *)(in_x0 + 0x48) != '\0') {
+        func_0x001645b0(lVar2,*(undefined8 *)(in_x0 + 0x18));
+        p0_00 = *(void **)(in_x0 + 0x18);
+        *(undefined8 *)(in_x0 + 0x18) = *(undefined8 *)(in_x0 + 0x20);
+        if (p0_00 != (void *)0x0) {
+          func_0x001728c0(p0_00);
+          FUN_00166120(p0_00);
         }
-        *(undefined1 *)(param_2 + 0x48) = 0;
+        *(undefined1 *)(in_x0 + 0x48) = 0;
       }
-      uVar2 = 0;
-      *(undefined4 *)(*(long *)(param_2 + 0x18) + 0xc0) = 0;
-      *(undefined8 *)(param_2 + 0x20) = 0;
+      *(undefined4 *)(*(long *)(in_x0 + 0x18) + 0xc0) = 0;
+      *(undefined8 *)(in_x0 + 0x20) = 0;
       goto LAB_00337ac4;
     }
-    fVar4 = fVar4 / *(float *)(param_2 + 0x44);
-    func_0x00163240(param_1,1.0 - fVar4,lVar3,*(undefined1 *)(param_2 + 0x49));
-    lVar3 = *(long *)(param_2 + 0x18);
-    uVar1 = *(undefined1 *)(param_2 + 0x49);
+    fVar3 = fVar3 / *(float *)(in_x0 + 0x44);
+    func_0x00163240(CONCAT44(in_register_00005004,p0),1.0 - fVar3,lVar2,
+                    *(undefined1 *)(in_x0 + 0x49));
+    lVar2 = *(long *)(in_x0 + 0x18);
+    uVar1 = *(undefined1 *)(in_x0 + 0x49);
   }
-  uVar2 = func_0x00163240(param_1,fVar4,lVar3,uVar1);
+  func_0x00163240(CONCAT44(in_register_00005004,p0),fVar3,lVar2,uVar1);
 LAB_00337ac4:
-  func_0x0016e860(param_2,uVar2);
+  func_0x0016e860();
   return;
 }
 
@@ -227,38 +229,41 @@ LAB_00337ac4:
 
 /* Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(unsigned int) */
 
-void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(long param_1,uint param_2)
+void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(uint p0)
 
 {
   ulong uVar1;
-  long lVar2;
-  ulong uVar3;
-  long lVar4;
-  uint uVar5;
+  ulong uVar2;
+  uint in_w1;
+  long lVar3;
+  ulong uVar4;
+  long lVar5;
+  uint uVar6;
   
-  if ((param_2 != 0) && (*(long *)(param_1 + 0x38) != 0)) {
-    if ((param_2 >> 3 & 1) != 0) {
-      func_0x00169d60(param_1,*(undefined8 *)(param_1 + 0x18),8,0xffffffff);
+  uVar2 = (ulong)p0;
+  if ((in_w1 != 0) && (*(long *)(uVar2 + 0x38) != 0)) {
+    if ((in_w1 >> 3 & 1) != 0) {
+      func_0x00169d60(uVar2,*(undefined8 *)(uVar2 + 0x18),8,0xffffffff);
     }
-    if ((param_2 >> 4 & 1) != 0) {
-      func_0x00169d60(param_1,*(undefined8 *)(param_1 + 0x18),0x10,0xffffffff);
+    if ((in_w1 >> 4 & 1) != 0) {
+      func_0x00169d60(uVar2,*(undefined8 *)(uVar2 + 0x18),0x10,0xffffffff);
     }
-    if ((param_2 >> 5 & 1) != 0) {
-      lVar4 = *(long *)(param_1 + 0x18);
-      if (*(undefined4 **)(lVar4 + 0xf0) != *(undefined4 **)(lVar4 + 0xe8)) {
-        func_0x00169d60(param_1,lVar4,0x20,**(undefined4 **)(lVar4 + 0xe8));
-        lVar2 = *(long *)(lVar4 + 0xe8);
-        if (1 < (ulong)(*(long *)(lVar4 + 0xf0) - lVar2 >> 2)) {
-          uVar3 = 1;
-          uVar5 = 2;
+    if ((in_w1 >> 5 & 1) != 0) {
+      lVar5 = *(long *)(uVar2 + 0x18);
+      if (*(undefined4 **)(lVar5 + 0xf0) != *(undefined4 **)(lVar5 + 0xe8)) {
+        func_0x00169d60(uVar2,lVar5,0x20,**(undefined4 **)(lVar5 + 0xe8));
+        lVar3 = *(long *)(lVar5 + 0xe8);
+        if (1 < (ulong)(*(long *)(lVar5 + 0xf0) - lVar3 >> 2)) {
+          uVar4 = 1;
+          uVar6 = 2;
           do {
-            func_0x00169d60(param_1,*(undefined8 *)(param_1 + 0x18),0x20,
-                            *(undefined4 *)(lVar2 + uVar3 * 4));
-            lVar2 = *(long *)(lVar4 + 0xe8);
-            uVar1 = (ulong)uVar5;
-            uVar3 = (ulong)uVar5;
-            uVar5 = uVar5 + 1;
-          } while (uVar1 < (ulong)(*(long *)(lVar4 + 0xf0) - lVar2 >> 2));
+            func_0x00169d60(uVar2,*(undefined8 *)(uVar2 + 0x18),0x20,
+                            *(undefined4 *)(lVar3 + uVar4 * 4));
+            lVar3 = *(long *)(lVar5 + 0xe8);
+            uVar1 = (ulong)uVar6;
+            uVar4 = (ulong)uVar6;
+            uVar6 = uVar6 + 1;
+          } while (uVar1 < (ulong)(*(long *)(lVar5 + 0xf0) - lVar3 >> 2));
         }
       }
     }
@@ -274,21 +279,21 @@ void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(long pa
 
 /* Walaber::AnimationManager::addAnimation(Walaber::Animation*) */
 
-void Walaber::AnimationManager::addAnimation(undefined8 param_1,long param_2)
+void Walaber::AnimationManager::addAnimation(Walaber__Animation *p0)
 
 {
   long lVar1;
   long lVar2;
+  long in_x1;
   undefined1 auStack_38 [8];
-  long lStack_30;
+  undefined1 auStack_30 [8];
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *(undefined8 *)(param_2 + 0xb8) = param_1;
-  lStack_30 = param_2;
-  lVar2 = func_0x00171f50(param_1,param_2,&DAT_00628470,&lStack_30,auStack_38);
-  *(long *)(lVar2 + 0x38) = param_2;
+  *(Walaber__Animation **)(in_x1 + 0xb8) = p0;
+  lVar2 = func_0x00171f50(p0,in_x1,&DAT_00628470,auStack_30,auStack_38);
+  *(long *)(lVar2 + 0x38) = in_x1;
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -312,7 +317,7 @@ void Walaber::AnimationManager::createAnimation(undefined8 param_1,undefined8 pa
   undefined8 uVar2;
   long lVar3;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   undefined1 auStack_48 [8];
   undefined8 uStack_40;
   long lStack_38;
@@ -325,7 +330,7 @@ void Walaber::AnimationManager::createAnimation(undefined8 param_1,undefined8 pa
                     /* try { // try from 00337c64 to 00337c73 has its CatchHandler @ 00337cd0 */
   func_0x0016e660(uVar2,abStack_60,param_1);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   uStack_40 = param_2;
   lVar3 = func_0x00171f50(param_1,param_2,&DAT_00628470,&uStack_40,auStack_48);
@@ -419,15 +424,15 @@ void Walaber::AnimationManager::playAnimation
 {
   undefined4 uVar1;
   long lVar2;
-  long lVar3;
+  void *p0;
   
   lVar2 = func_0x0016d060();
   if (param_2 + 8 != lVar2) {
     if (*(char *)(param_2 + 0x48) != '\0') {
-      lVar3 = *(long *)(param_2 + 0x18);
-      if (lVar3 != 0) {
-        func_0x001728c0(lVar3);
-        FUN_00166120(lVar3);
+      p0 = *(void **)(param_2 + 0x18);
+      if (p0 != (void *)0x0) {
+        func_0x001728c0(p0);
+        FUN_00166120(p0);
       }
       *(undefined1 *)(param_2 + 0x48) = 0;
     }
@@ -544,11 +549,11 @@ void Walaber::AnimationManager::crossFade
   int iVar5;
   undefined4 uVar6;
   long lVar7;
-  byte *pbVar8;
-  long lVar9;
+  byte *p0;
+  long lVar8;
+  byte *pbVar9;
   byte *pbVar10;
   byte *pbVar11;
-  byte *pbVar12;
   
   if (*(long *)(param_3 + 0x18) == 0) {
     func_0x001668f0(0,param_3,param_4,param_5,param_6);
@@ -560,57 +565,57 @@ void Walaber::AnimationManager::crossFade
     return;
   }
   if (*(char *)(param_3 + 0x48) == '\0') {
-    pbVar8 = *(byte **)(param_3 + 0x18);
-    *(byte **)(param_3 + 0x20) = pbVar8;
-    pbVar12 = pbVar8;
+    p0 = *(byte **)(param_3 + 0x18);
+    *(byte **)(param_3 + 0x20) = p0;
+    pbVar11 = p0;
   }
   else {
     func_0x001645b0(*(undefined8 *)(param_3 + 0x20),*(undefined8 *)(param_3 + 0x18));
-    pbVar8 = *(byte **)(param_3 + 0x18);
-    pbVar12 = *(byte **)(param_3 + 0x20);
+    p0 = *(byte **)(param_3 + 0x18);
+    pbVar11 = *(byte **)(param_3 + 0x20);
   }
-  pbVar12[0xc0] = 0;
-  pbVar12[0xc1] = 0;
-  pbVar12[0xc2] = 0;
-  pbVar12[0xc3] = 0;
-  if (pbVar8 != (byte *)0x0) {
-    bVar3 = *pbVar8;
+  pbVar11[0xc0] = 0;
+  pbVar11[0xc1] = 0;
+  pbVar11[0xc2] = 0;
+  pbVar11[0xc3] = 0;
+  if (p0 != (byte *)0x0) {
+    bVar3 = *p0;
     bVar4 = *param_4;
     uVar1 = (ulong)(bVar3 >> 1);
     if ((bVar3 & 1) != 0) {
-      uVar1 = *(ulong *)(pbVar8 + 8);
+      uVar1 = *(ulong *)(p0 + 8);
     }
     uVar2 = (ulong)(bVar4 >> 1);
     if ((bVar4 & 1) != 0) {
       uVar2 = *(ulong *)(param_4 + 8);
     }
     if (uVar1 == uVar2) {
-      pbVar10 = *(byte **)(pbVar8 + 0x10);
-      pbVar11 = *(byte **)(param_4 + 0x10);
+      pbVar9 = *(byte **)(p0 + 0x10);
+      pbVar10 = *(byte **)(param_4 + 0x10);
       if ((bVar3 & 1) == 0) {
-        pbVar10 = pbVar8 + 1;
+        pbVar9 = p0 + 1;
       }
       if ((bVar4 & 1) == 0) {
-        pbVar11 = param_4 + 1;
+        pbVar10 = param_4 + 1;
       }
       if ((bVar3 & 1) == 0) {
         if (uVar1 != 0) {
-          lVar9 = -(ulong)(bVar3 >> 1);
-          pbVar10 = pbVar8;
+          lVar8 = -(ulong)(bVar3 >> 1);
+          pbVar9 = p0;
           do {
+            pbVar9 = pbVar9 + 1;
+            if (*pbVar9 != *pbVar10) goto LAB_00338164;
+            lVar8 = lVar8 + 1;
             pbVar10 = pbVar10 + 1;
-            if (*pbVar10 != *pbVar11) goto LAB_00338164;
-            lVar9 = lVar9 + 1;
-            pbVar11 = pbVar11 + 1;
-          } while (lVar9 != 0);
+          } while (lVar8 != 0);
         }
       }
-      else if ((uVar1 != 0) && (iVar5 = FUN_00163c10(pbVar10), iVar5 != 0)) goto LAB_00338164;
+      else if ((uVar1 != 0) && (iVar5 = FUN_00163c10(pbVar9), iVar5 != 0)) goto LAB_00338164;
       if (*(char *)(param_3 + 0x48) == '\0') {
-        pbVar8 = (byte *)FUN_00164060(0x108);
+        p0 = (byte *)FUN_00164060(0x108);
                     /* try { // try from 003381a4 to 003381ab has its CatchHandler @ 0033823c */
-        func_0x00162ce0(pbVar8,pbVar12);
-        *(byte **)(param_3 + 0x18) = pbVar8;
+        func_0x00162ce0(p0,pbVar11);
+        *(byte **)(param_3 + 0x18) = p0;
       }
       *(undefined1 *)(param_3 + 0x48) = 1;
       goto LAB_003381b8;
@@ -618,18 +623,18 @@ void Walaber::AnimationManager::crossFade
   }
 LAB_00338164:
   if (*(char *)(param_3 + 0x48) != '\0') {
-    if (pbVar8 != (byte *)0x0) {
-      func_0x001728c0(pbVar8);
-      FUN_00166120(pbVar8);
+    if (p0 != (byte *)0x0) {
+      func_0x001728c0(p0);
+      FUN_00166120(p0);
     }
     *(undefined1 *)(param_3 + 0x48) = 0;
   }
-  pbVar8 = *(byte **)(lVar7 + 0x38);
-  *(byte **)(param_3 + 0x18) = pbVar8;
+  p0 = *(byte **)(lVar7 + 0x38);
+  *(byte **)(param_3 + 0x18) = p0;
 LAB_003381b8:
   *(undefined1 *)(*(long *)(param_3 + 0x20) + 0x102) = 1;
-  pbVar8[0x102] = 0;
-  func_0x0016b540(param_1,pbVar8,param_5,param_6,1);
+  p0[0x102] = 0;
+  func_0x0016b540(param_1,p0,param_5,param_6,1);
   uVar6 = func_0x00163240(0,0,*(undefined8 *)(param_3 + 0x18),0);
   func_0x00169d60(param_3,*(undefined8 *)(param_3 + 0x18),1,0xffffffff);
   func_0x0016e860(param_3,uVar6);

@@ -8,10 +8,12 @@
 
 /* Walaber::DrawableNode::setLayer(int) */
 
-void Walaber::DrawableNode::setLayer(long param_1,undefined4 param_2)
+void Walaber::DrawableNode::setLayer(int p0)
 
 {
-  *(undefined4 *)(param_1 + 0x80) = param_2;
+  undefined4 in_w1;
+  
+  *(undefined4 *)((ulong)(uint)p0 + 0x80) = in_w1;
   return;
 }
 
@@ -28,7 +30,7 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
 {
   long lVar1;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -36,7 +38,7 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
   abStack_40[0xd] = 0;
   abStack_40[0xe] = 0;
   abStack_40[0xf] = 0;
-  uStack_30 = 0;
+  pvStack_30 = (void *)0x0;
   abStack_40[0] = 0x16;
   abStack_40[9] = 0x6f;
   abStack_40[10] = 100;
@@ -53,7 +55,7 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
                     /* try { // try from 003ea4c0 to 003ea4cb has its CatchHandler @ 003ea514 */
   func_0x0016a880(param_1,abStack_40,0xffffffff);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   *(undefined4 *)(param_1 + 0x10) = 0;
   *param_1 = &PTR__DrawableNode_00710da8;
@@ -90,12 +92,14 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
 
 /* Walaber::DrawableNode::DrawableNode(Walaber::DrawableNode const&) */
 
-void Walaber::DrawableNode::DrawableNode(undefined8 *param_1,long param_2)
+void Walaber::DrawableNode::DrawableNode(Walaber__DrawableNode *p0)
 
 {
+  long in_x1;
+  
   func_0x00172d10();
-  *param_1 = &PTR__DrawableNode_00710da8;
-  *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)(param_2 + 0x80);
+  *(undefined ***)p0 = &PTR__DrawableNode_00710da8;
+  *(undefined4 *)(p0 + 0x80) = *(undefined4 *)(in_x1 + 0x80);
   return;
 }
 
@@ -107,12 +111,14 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1,long param_2)
 
 /* Walaber::DrawableNode::TEMPNAMEPLACEHOLDERVALUE(Walaber::DrawableNode const&) */
 
-long Walaber::DrawableNode::operator=(long param_1,long param_2)
+Walaber__DrawableNode * Walaber::DrawableNode::operator=(Walaber__DrawableNode *p0)
 
 {
+  long in_x1;
+  
   func_0x00171790();
-  *(undefined4 *)(param_1 + 0x80) = *(undefined4 *)(param_2 + 0x80);
-  return param_1;
+  *(undefined4 *)(p0 + 0x80) = *(undefined4 *)(in_x1 + 0x80);
+  return p0;
 }
 
 

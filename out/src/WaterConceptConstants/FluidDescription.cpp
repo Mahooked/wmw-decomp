@@ -9,56 +9,58 @@
 /* WaterConceptConstants::FluidDescription::TEMPNAMEPLACEHOLDERVALUE(WaterConceptConstants::FluidDescription
    const&) */
 
-undefined4 *
-WaterConceptConstants::FluidDescription::operator=(undefined4 *param_1,undefined4 *param_2)
+WaterConceptConstants__FluidDescription *
+WaterConceptConstants::FluidDescription::operator=(WaterConceptConstants__FluidDescription *p0)
 
 {
-  *param_1 = *param_2;
-  func_0x00170aa0(param_1 + 2,param_2 + 2);
-  func_0x00170aa0(param_1 + 6,param_2 + 6);
-  func_0x00170aa0(param_1 + 10,param_2 + 10);
-  *(undefined1 *)(param_1 + 0xe) = *(undefined1 *)(param_2 + 0xe);
-  *(undefined1 *)((long)param_1 + 0x39) = *(undefined1 *)((long)param_2 + 0x39);
-  *(undefined1 *)((long)param_1 + 0x3a) = *(undefined1 *)((long)param_2 + 0x3a);
-  *(undefined1 *)((long)param_1 + 0x3b) = *(undefined1 *)((long)param_2 + 0x3b);
-  *(undefined1 *)(param_1 + 0xf) = *(undefined1 *)(param_2 + 0xf);
-  *(undefined1 *)((long)param_1 + 0x3d) = *(undefined1 *)((long)param_2 + 0x3d);
-  *(undefined1 *)((long)param_1 + 0x3e) = *(undefined1 *)((long)param_2 + 0x3e);
-  *(undefined1 *)((long)param_1 + 0x3f) = *(undefined1 *)((long)param_2 + 0x3f);
-  *(undefined1 *)(param_1 + 0x10) = *(undefined1 *)(param_2 + 0x10);
-  *(undefined1 *)((long)param_1 + 0x41) = *(undefined1 *)((long)param_2 + 0x41);
-  *(undefined1 *)((long)param_1 + 0x42) = *(undefined1 *)((long)param_2 + 0x42);
-  *(undefined1 *)((long)param_1 + 0x43) = *(undefined1 *)((long)param_2 + 0x43);
-  *(undefined1 *)(param_1 + 0x11) = *(undefined1 *)(param_2 + 0x11);
-  *(undefined1 *)((long)param_1 + 0x45) = *(undefined1 *)((long)param_2 + 0x45);
-  *(undefined1 *)((long)param_1 + 0x46) = *(undefined1 *)((long)param_2 + 0x46);
-  *(undefined1 *)((long)param_1 + 0x47) = *(undefined1 *)((long)param_2 + 0x47);
-  *(undefined1 *)(param_1 + 0x12) = *(undefined1 *)(param_2 + 0x12);
-  *(undefined1 *)((long)param_1 + 0x49) = *(undefined1 *)((long)param_2 + 0x49);
-  *(undefined1 *)((long)param_1 + 0x4a) = *(undefined1 *)((long)param_2 + 0x4a);
-  *(undefined1 *)((long)param_1 + 0x4b) = *(undefined1 *)((long)param_2 + 0x4b);
-  *(undefined1 *)(param_1 + 0x13) = *(undefined1 *)(param_2 + 0x13);
-  *(undefined1 *)((long)param_1 + 0x4d) = *(undefined1 *)((long)param_2 + 0x4d);
-  *(undefined1 *)((long)param_1 + 0x4e) = *(undefined1 *)((long)param_2 + 0x4e);
-  *(undefined1 *)((long)param_1 + 0x4f) = *(undefined1 *)((long)param_2 + 0x4f);
-  *(undefined1 *)(param_1 + 0x14) = *(undefined1 *)(param_2 + 0x14);
-  *(undefined1 *)((long)param_1 + 0x51) = *(undefined1 *)((long)param_2 + 0x51);
-  *(undefined1 *)((long)param_1 + 0x52) = *(undefined1 *)((long)param_2 + 0x52);
-  *(undefined1 *)((long)param_1 + 0x53) = *(undefined1 *)((long)param_2 + 0x53);
-  *(undefined1 *)(param_1 + 0x15) = *(undefined1 *)(param_2 + 0x15);
-  *(undefined1 *)((long)param_1 + 0x55) = *(undefined1 *)((long)param_2 + 0x55);
-  *(undefined1 *)((long)param_1 + 0x56) = *(undefined1 *)((long)param_2 + 0x56);
-  *(undefined1 *)((long)param_1 + 0x57) = *(undefined1 *)((long)param_2 + 0x57);
-  *(undefined1 *)(param_1 + 0x16) = *(undefined1 *)(param_2 + 0x16);
-  *(undefined1 *)((long)param_1 + 0x59) = *(undefined1 *)((long)param_2 + 0x59);
-  *(undefined1 *)((long)param_1 + 0x5a) = *(undefined1 *)((long)param_2 + 0x5a);
-  *(undefined1 *)((long)param_1 + 0x5b) = *(undefined1 *)((long)param_2 + 0x5b);
-  *(undefined1 *)(param_1 + 0x17) = *(undefined1 *)(param_2 + 0x17);
-  *(undefined1 *)((long)param_1 + 0x5d) = *(undefined1 *)((long)param_2 + 0x5d);
-  *(undefined1 *)((long)param_1 + 0x5e) = *(undefined1 *)((long)param_2 + 0x5e);
-  *(undefined1 *)((long)param_1 + 0x5f) = *(undefined1 *)((long)param_2 + 0x5f);
-  FUN_001715e0(param_1 + 0x18,param_2 + 0x18,0x7b);
-  return param_1;
+  undefined4 *in_x1;
+  
+  *(undefined4 *)p0 = *in_x1;
+  func_0x00170aa0(p0 + 8,in_x1 + 2);
+  func_0x00170aa0(p0 + 0x18,in_x1 + 6);
+  func_0x00170aa0(p0 + 0x28,in_x1 + 10);
+  p0[0x38] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0xe);
+  p0[0x39] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x39);
+  p0[0x3a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3a);
+  p0[0x3b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3b);
+  p0[0x3c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0xf);
+  p0[0x3d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3d);
+  p0[0x3e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3e);
+  p0[0x3f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3f);
+  p0[0x40] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x10);
+  p0[0x41] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x41);
+  p0[0x42] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x42);
+  p0[0x43] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x43);
+  p0[0x44] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x11);
+  p0[0x45] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x45);
+  p0[0x46] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x46);
+  p0[0x47] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x47);
+  p0[0x48] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x12);
+  p0[0x49] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x49);
+  p0[0x4a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4a);
+  p0[0x4b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4b);
+  p0[0x4c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x13);
+  p0[0x4d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4d);
+  p0[0x4e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4e);
+  p0[0x4f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4f);
+  p0[0x50] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x14);
+  p0[0x51] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x51);
+  p0[0x52] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x52);
+  p0[0x53] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x53);
+  p0[0x54] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x15);
+  p0[0x55] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x55);
+  p0[0x56] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x56);
+  p0[0x57] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x57);
+  p0[0x58] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x16);
+  p0[0x59] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x59);
+  p0[0x5a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5a);
+  p0[0x5b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5b);
+  p0[0x5c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x17);
+  p0[0x5d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5d);
+  p0[0x5e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5e);
+  p0[0x5f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5f);
+  FUN_001715e0(p0 + 0x60,in_x1 + 0x18,0x7b);
+  return p0;
 }
 
 
@@ -71,75 +73,76 @@ WaterConceptConstants::FluidDescription::operator=(undefined4 *param_1,undefined
    const&) */
 
 void WaterConceptConstants::FluidDescription::FluidDescription
-               (undefined4 *param_1,undefined4 *param_2)
+               (WaterConceptConstants__FluidDescription *p0)
 
 {
+  undefined4 *in_x1;
   int *piVar1;
   long lVar2;
   
-  *param_1 = *param_2;
-  lVar2 = *(long *)(param_2 + 2);
-  *(long *)(param_1 + 2) = lVar2;
-  piVar1 = *(int **)(param_2 + 4);
-  *(int **)(param_1 + 4) = piVar1;
+  *(undefined4 *)p0 = *in_x1;
+  lVar2 = *(long *)(in_x1 + 2);
+  *(long *)(p0 + 8) = lVar2;
+  piVar1 = *(int **)(in_x1 + 4);
+  *(int **)(p0 + 0x10) = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  lVar2 = *(long *)(param_2 + 6);
-  *(long *)(param_1 + 6) = lVar2;
-  piVar1 = *(int **)(param_2 + 8);
-  *(int **)(param_1 + 8) = piVar1;
+  lVar2 = *(long *)(in_x1 + 6);
+  *(long *)(p0 + 0x18) = lVar2;
+  piVar1 = *(int **)(in_x1 + 8);
+  *(int **)(p0 + 0x20) = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  lVar2 = *(long *)(param_2 + 10);
-  *(long *)(param_1 + 10) = lVar2;
-  piVar1 = *(int **)(param_2 + 0xc);
-  *(int **)(param_1 + 0xc) = piVar1;
+  lVar2 = *(long *)(in_x1 + 10);
+  *(long *)(p0 + 0x28) = lVar2;
+  piVar1 = *(int **)(in_x1 + 0xc);
+  *(int **)(p0 + 0x30) = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  *(undefined1 *)(param_1 + 0xe) = *(undefined1 *)(param_2 + 0xe);
-  *(undefined1 *)((long)param_1 + 0x39) = *(undefined1 *)((long)param_2 + 0x39);
-  *(undefined1 *)((long)param_1 + 0x3a) = *(undefined1 *)((long)param_2 + 0x3a);
-  *(undefined1 *)((long)param_1 + 0x3b) = *(undefined1 *)((long)param_2 + 0x3b);
-  *(undefined1 *)(param_1 + 0xf) = *(undefined1 *)(param_2 + 0xf);
-  *(undefined1 *)((long)param_1 + 0x3d) = *(undefined1 *)((long)param_2 + 0x3d);
-  *(undefined1 *)((long)param_1 + 0x3e) = *(undefined1 *)((long)param_2 + 0x3e);
-  *(undefined1 *)((long)param_1 + 0x3f) = *(undefined1 *)((long)param_2 + 0x3f);
-  *(undefined1 *)(param_1 + 0x10) = *(undefined1 *)(param_2 + 0x10);
-  *(undefined1 *)((long)param_1 + 0x41) = *(undefined1 *)((long)param_2 + 0x41);
-  *(undefined1 *)((long)param_1 + 0x42) = *(undefined1 *)((long)param_2 + 0x42);
-  *(undefined1 *)((long)param_1 + 0x43) = *(undefined1 *)((long)param_2 + 0x43);
-  *(undefined1 *)(param_1 + 0x11) = *(undefined1 *)(param_2 + 0x11);
-  *(undefined1 *)((long)param_1 + 0x45) = *(undefined1 *)((long)param_2 + 0x45);
-  *(undefined1 *)((long)param_1 + 0x46) = *(undefined1 *)((long)param_2 + 0x46);
-  *(undefined1 *)((long)param_1 + 0x47) = *(undefined1 *)((long)param_2 + 0x47);
-  *(undefined1 *)(param_1 + 0x12) = *(undefined1 *)(param_2 + 0x12);
-  *(undefined1 *)((long)param_1 + 0x49) = *(undefined1 *)((long)param_2 + 0x49);
-  *(undefined1 *)((long)param_1 + 0x4a) = *(undefined1 *)((long)param_2 + 0x4a);
-  *(undefined1 *)((long)param_1 + 0x4b) = *(undefined1 *)((long)param_2 + 0x4b);
-  *(undefined1 *)(param_1 + 0x13) = *(undefined1 *)(param_2 + 0x13);
-  *(undefined1 *)((long)param_1 + 0x4d) = *(undefined1 *)((long)param_2 + 0x4d);
-  *(undefined1 *)((long)param_1 + 0x4e) = *(undefined1 *)((long)param_2 + 0x4e);
-  *(undefined1 *)((long)param_1 + 0x4f) = *(undefined1 *)((long)param_2 + 0x4f);
-  *(undefined1 *)(param_1 + 0x14) = *(undefined1 *)(param_2 + 0x14);
-  *(undefined1 *)((long)param_1 + 0x51) = *(undefined1 *)((long)param_2 + 0x51);
-  *(undefined1 *)((long)param_1 + 0x52) = *(undefined1 *)((long)param_2 + 0x52);
-  *(undefined1 *)((long)param_1 + 0x53) = *(undefined1 *)((long)param_2 + 0x53);
-  *(undefined1 *)(param_1 + 0x15) = *(undefined1 *)(param_2 + 0x15);
-  *(undefined1 *)((long)param_1 + 0x55) = *(undefined1 *)((long)param_2 + 0x55);
-  *(undefined1 *)((long)param_1 + 0x56) = *(undefined1 *)((long)param_2 + 0x56);
-  *(undefined1 *)((long)param_1 + 0x57) = *(undefined1 *)((long)param_2 + 0x57);
-  *(undefined1 *)(param_1 + 0x16) = *(undefined1 *)(param_2 + 0x16);
-  *(undefined1 *)((long)param_1 + 0x59) = *(undefined1 *)((long)param_2 + 0x59);
-  *(undefined1 *)((long)param_1 + 0x5a) = *(undefined1 *)((long)param_2 + 0x5a);
-  *(undefined1 *)((long)param_1 + 0x5b) = *(undefined1 *)((long)param_2 + 0x5b);
-  *(undefined1 *)(param_1 + 0x17) = *(undefined1 *)(param_2 + 0x17);
-  *(undefined1 *)((long)param_1 + 0x5d) = *(undefined1 *)((long)param_2 + 0x5d);
-  *(undefined1 *)((long)param_1 + 0x5e) = *(undefined1 *)((long)param_2 + 0x5e);
-  *(undefined1 *)((long)param_1 + 0x5f) = *(undefined1 *)((long)param_2 + 0x5f);
-  FUN_001715e0(param_1 + 0x18,param_2 + 0x18,0x7b);
+  p0[0x38] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0xe);
+  p0[0x39] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x39);
+  p0[0x3a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3a);
+  p0[0x3b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3b);
+  p0[0x3c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0xf);
+  p0[0x3d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3d);
+  p0[0x3e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3e);
+  p0[0x3f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x3f);
+  p0[0x40] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x10);
+  p0[0x41] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x41);
+  p0[0x42] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x42);
+  p0[0x43] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x43);
+  p0[0x44] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x11);
+  p0[0x45] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x45);
+  p0[0x46] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x46);
+  p0[0x47] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x47);
+  p0[0x48] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x12);
+  p0[0x49] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x49);
+  p0[0x4a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4a);
+  p0[0x4b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4b);
+  p0[0x4c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x13);
+  p0[0x4d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4d);
+  p0[0x4e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4e);
+  p0[0x4f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x4f);
+  p0[0x50] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x14);
+  p0[0x51] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x51);
+  p0[0x52] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x52);
+  p0[0x53] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x53);
+  p0[0x54] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x15);
+  p0[0x55] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x55);
+  p0[0x56] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x56);
+  p0[0x57] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x57);
+  p0[0x58] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x16);
+  p0[0x59] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x59);
+  p0[0x5a] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5a);
+  p0[0x5b] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5b);
+  p0[0x5c] = *(WaterConceptConstants__FluidDescription *)(in_x1 + 0x17);
+  p0[0x5d] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5d);
+  p0[0x5e] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5e);
+  p0[0x5f] = *(WaterConceptConstants__FluidDescription *)((long)in_x1 + 0x5f);
+  FUN_001715e0(p0 + 0x60,in_x1 + 0x18,0x7b);
   return;
 }
 

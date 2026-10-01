@@ -19,7 +19,7 @@ ulong WaterConceptConstants::stringToFluidType(void)
   ulong uVar5;
   byte abStack_40 [8];
   ulong uStack_38;
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -134,7 +134,7 @@ LAB_0040b9bc:
   uVar4 = 1;
 LAB_0040ba5c:
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_28) {
     uVar3 = FUN_00164ff0();
@@ -163,7 +163,7 @@ undefined1  [16] WaterConceptConstants::stringToDryness(void)
   undefined8 uVar6;
   byte abStack_40 [8];
   ulong uStack_38;
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -188,7 +188,7 @@ undefined1  [16] WaterConceptConstants::stringToDryness(void)
   uVar6 = 0;
   if ((abStack_40[0] & 1) != 0) {
     uVar6 = 0;
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     auVar4._8_8_ = uVar6;
@@ -219,7 +219,7 @@ ulong WaterConceptConstants::strToStoryline(byte *param_1)
   ulong uVar6;
   ulong uVar7;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar2 = tpidr_el0;
@@ -290,7 +290,7 @@ LAB_0040bbf4:
   uVar5 = 0;
 LAB_0040bcc4:
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_28) {
     uVar4 = FUN_00164ff0();

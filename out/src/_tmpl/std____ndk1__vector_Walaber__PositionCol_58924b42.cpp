@@ -11,16 +11,18 @@
 
 void std::__ndk1::
      vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::vector
-               (undefined8 *param_1,long param_2)
+               (ulong p0)
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  long in_x1;
+  
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (in_x1 != 0) {
                     /* try { // try from 00446ea0 to 00446ea3 has its CatchHandler @ 00446ec0 */
     func_0x001643e0();
-    param_1[1] = param_1[1] + param_2 * 0xc;
+    *(long *)(p0 + 8) = *(long *)(p0 + 8) + in_x1 * 0xc;
   }
   return;
 }
@@ -36,19 +38,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>::
-     __vallocate(long *param_1,ulong param_2)
+     __vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x1555555555555556) {
-    lVar1 = FUN_00164060(param_2 * 0xc);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0xc;
+  if (in_x1 < 0x1555555555555556) {
+    lVar1 = FUN_00164060(in_x1 * 0xc);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0xc;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

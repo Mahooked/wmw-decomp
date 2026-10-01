@@ -8,14 +8,15 @@
 
 /* Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode*) */
 
-void Walaber::XMLDocument::AttributeIterator::AttributeIterator(undefined8 *param_1,long param_2)
+void Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode *p0)
 
 {
+  long in_x1;
   undefined8 uVar1;
   
-  uVar1 = *(undefined8 *)(param_2 + 0x58);
-  *param_1 = uVar1;
-  param_1[1] = uVar1;
+  uVar1 = *(undefined8 *)(in_x1 + 0x58);
+  *(undefined8 *)p0 = uVar1;
+  *(undefined8 *)(p0 + 8) = uVar1;
   return;
 }
 
@@ -29,14 +30,15 @@ void Walaber::XMLDocument::AttributeIterator::AttributeIterator(undefined8 *para
    const&) */
 
 void Walaber::XMLDocument::AttributeIterator::AttributeIterator
-               (undefined8 *param_1,undefined8 *param_2)
+               (Walaber__XMLDocument__AttributeIterator *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
   return;
 }
 
@@ -49,14 +51,15 @@ void Walaber::XMLDocument::AttributeIterator::AttributeIterator
 /* Walaber::XMLDocument::AttributeIterator::TEMPNAMEPLACEHOLDERVALUE(Walaber::XMLDocument::AttributeIterator
    const&) */
 
-void Walaber::XMLDocument::AttributeIterator::operator=(undefined8 *param_1,undefined8 *param_2)
+void Walaber::XMLDocument::AttributeIterator::operator=(Walaber__XMLDocument__AttributeIterator *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
   return;
 }
 
@@ -88,7 +91,7 @@ void Walaber::XMLDocument::AttributeIterator::getName(ulong *param_1,long *param
   ulong uVar1;
   ulong uVar2;
   undefined8 uVar3;
-  ulong uVar4;
+  ulong p0;
   
   uVar3 = *(undefined8 *)(*param_2 + 0x10);
   *param_1 = 0;
@@ -105,11 +108,11 @@ void Walaber::XMLDocument::AttributeIterator::getName(ulong *param_1,long *param
     if (uVar1 == 0) goto LAB_003d625c;
   }
   else {
-    uVar4 = uVar1 + 0x10 & 0xfffffffffffffff0;
-    uVar2 = FUN_00164060(uVar4);
+    p0 = uVar1 + 0x10 & 0xfffffffffffffff0;
+    uVar2 = FUN_00164060(p0);
     param_1[1] = uVar1;
     param_1[2] = uVar2;
-    *param_1 = uVar4 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar2,uVar3,uVar1);
 LAB_003d625c:
@@ -131,11 +134,11 @@ void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *
   long lVar1;
   ulong uVar2;
   undefined8 uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  void *pvVar4;
+  ulong p0;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
@@ -143,31 +146,31 @@ void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *
   uVar3 = *(undefined8 *)(*(long *)(*param_2 + 0x18) + 0x50);
   uStack_60 = 0;
   uStack_58 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   uVar2 = FUN_00173480(uVar3);
   if (0xffffffffffffffef < uVar2) {
     FUN_00164180(&uStack_60);
     return;
   }
   if (uVar2 < 0x17) {
-    uVar4 = (ulong)&uStack_60 | 1;
+    pvVar4 = (void *)((ulong)&uStack_60 | 1);
     uStack_60 = CONCAT71(uStack_60._1_7_,(char)((int)uVar2 << 1));
     if (uVar2 == 0) goto LAB_003d6318;
   }
   else {
-    uVar5 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_60 = uVar5 | 1;
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0);
+    uStack_60 = p0 | 1;
     uStack_58 = uVar2;
-    uStack_50 = uVar4;
+    pvStack_50 = pvVar4;
   }
-  FUN_001715e0(uVar4,uVar3,uVar2);
+  FUN_001715e0(pvVar4,uVar3,uVar2);
 LAB_003d6318:
-  *(undefined1 *)(uVar4 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 003d631c to 003d6327 has its CatchHandler @ 003d636c */
   func_0x0016af30(param_1,&uStack_60);
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();

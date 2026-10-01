@@ -49,7 +49,7 @@ void WaterConcept::Screen_Challenges::~Screen_Challenges(undefined8 *param_1)
   func_0x00164a20(param_1 + 0x1b,param_1[0x1c]);
   func_0x00171660(param_1 + 0x18,param_1[0x19]);
   if ((*(byte *)(param_1 + 0x14) & 1) != 0) {
-    FUN_00166120(param_1[0x16]);
+    FUN_00166120((void *)param_1[0x16]);
   }
   func_0x001706b0(param_1 + 0x12);
   FUN_0016d110(param_1);
@@ -64,7 +64,7 @@ void WaterConcept::Screen_Challenges::~Screen_Challenges(undefined8 *param_1)
 
 /* WaterConcept::Screen_Challenges::~Screen_Challenges() */
 
-void WaterConcept::Screen_Challenges::~Screen_Challenges(undefined8 param_1)
+void WaterConcept::Screen_Challenges::~Screen_Challenges(void *param_1)
 
 {
   func_0x00173c20();
@@ -80,7 +80,7 @@ void WaterConcept::Screen_Challenges::~Screen_Challenges(undefined8 param_1)
 
 /* WaterConcept::Screen_Challenges::loadPropertyList(Walaber::PropertyList const&) */
 
-void WaterConcept::Screen_Challenges::loadPropertyList(void)
+void WaterConcept::Screen_Challenges::loadPropertyList(Walaber__PropertyList *p0)
 
 {
   return;
@@ -108,7 +108,10 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   bool bVar9;
   undefined8 uVar10;
   undefined8 uVar11;
-  ulong auStack_f0 [6];
+  ulong auStack_f0 [2];
+  void *pvStack_e0;
+  ulong auStack_d8 [2];
+  void *pvStack_c8;
   byte bStack_c0;
   undefined4 uStack_bf;
   undefined1 uStack_bb;
@@ -121,7 +124,7 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   undefined5 uStack_ad;
   ulong uStack_a0;
   ulong uStack_98;
-  ulong uStack_90;
+  void *pvStack_90;
   byte bStack_80;
   undefined4 uStack_7f;
   undefined2 uStack_7b;
@@ -130,17 +133,17 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   undefined1 uStack_77;
   undefined1 uStack_76;
   undefined5 uStack_75;
-  undefined8 uStack_70;
+  void *pvStack_70;
   undefined **ppuStack_60;
   undefined8 uStack_58;
-  undefined8 auStack_50 [3];
+  void *apvStack_50 [3];
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0xa00000010;
-  func_0x0016b220(auStack_50);
+  func_0x0016b220(apvStack_50);
   uStack_79 = 0;
   uStack_78 = 0;
   uStack_77 = 0;
@@ -151,7 +154,7 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   uStack_7f = 0x6e657645;
   uStack_b5 = 0;
   bStack_c0 = 0x12;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   uStack_b0 = 0;
   uStack_af = 0;
   uStack_ad = 0;
@@ -163,13 +166,13 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
                     /* try { // try from 004a8754 to 004a875f has its CatchHandler @ 004a8c90 */
   func_0x0016af30(&uStack_a0,&bStack_c0);
                     /* try { // try from 004a8760 to 004a876f has its CatchHandler @ 004a8c80 */
-  func_0x00165260(auStack_50,&bStack_80,&uStack_a0);
+  func_0x00165260(apvStack_50,&bStack_80,&uStack_a0);
   func_0x00167bf0(&uStack_a0);
   if ((bStack_c0 & 1) != 0) {
-    FUN_00166120(CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
+    FUN_00166120((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   uStack_75 = 0;
   bStack_80 = 0x12;
@@ -180,7 +183,7 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   uStack_b7 = 0;
   uStack_b5 = 0;
   bStack_c0 = 8;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   uStack_b0 = 0;
   uStack_af = 0;
   uStack_ad = 0;
@@ -193,13 +196,13 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
                     /* try { // try from 004a87e0 to 004a87eb has its CatchHandler @ 004a8c7c */
   func_0x0016af30(&uStack_a0,&bStack_c0);
                     /* try { // try from 004a87ec to 004a87fb has its CatchHandler @ 004a8c78 */
-  func_0x00165260(auStack_50,&bStack_80,&uStack_a0);
+  func_0x00165260(apvStack_50,&bStack_80,&uStack_a0);
   func_0x00167bf0(&uStack_a0);
   if ((bStack_c0 & 1) != 0) {
-    FUN_00166120(CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
+    FUN_00166120((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   uStack_76 = 0;
   uStack_75 = 0;
@@ -209,7 +212,7 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
   uStack_79 = 0x6f;
   uStack_78 = 0x6e;
   bStack_c0 = 0x22;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   uStack_ad = 0;
   uStack_77 = 0;
   uStack_b7 = 0x6168;
@@ -223,19 +226,19 @@ void WaterConcept::Screen_Challenges::enter(long param_1)
                     /* try { // try from 004a8874 to 004a887f has its CatchHandler @ 004a8c74 */
   func_0x0016af30(&uStack_a0,&bStack_c0);
                     /* try { // try from 004a8880 to 004a888f has its CatchHandler @ 004a8c70 */
-  func_0x00165260(auStack_50,&bStack_80,&uStack_a0);
+  func_0x00165260(apvStack_50,&bStack_80,&uStack_a0);
   func_0x00167bf0(&uStack_a0);
   if ((bStack_c0 & 1) != 0) {
-    FUN_00166120(CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
+    FUN_00166120((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
                     /* try { // try from 004a88b8 to 004a88c3 has its CatchHandler @ 004a8ce8 */
   uVar4 = func_0x0016b4e0();
   func_0x00169c90(uVar4,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  func_0x00164ba0(auStack_50);
+  func_0x00164ba0(apvStack_50);
   if (GameSettings::currentLevelIsAllie == '\0') {
     GameSettings::currentStoryline = 3;
     if (GameSettings::currentLevelIsMyst == '\0') {
@@ -282,9 +285,9 @@ joined_r0x004a89a0:
     func_0x00162240(lVar5,iVar3 != 0,0);
   }
   func_0x0016f720(&ppuStack_60,&DAT_00764fc0);
-  auStack_f0[4] = 0;
-  auStack_f0[5] = 0;
-  auStack_f0[3] = 0x27203d2008;
+  auStack_d8[1] = 0;
+  pvStack_c8 = (void *)0x0;
+  auStack_d8[0] = 0x27203d2008;
   uVar8 = DAT_00764fb0;
   puVar2 = DAT_00764fb8;
   if ((DAT_00764fa8 & 1) == 0) {
@@ -292,7 +295,7 @@ joined_r0x004a89a0:
     puVar2 = &DAT_00764fa9;
   }
                     /* try { // try from 004a8a40 to 004a8a4b has its CatchHandler @ 004a8c5c */
-  puVar6 = (undefined8 *)FUN_00164fb0(auStack_f0 + 3,0,puVar2,uVar8);
+  puVar6 = (undefined8 *)FUN_00164fb0(auStack_d8,0,puVar2,uVar8);
   uVar4 = puVar6[2];
   uVar11 = puVar6[1];
   uVar10 = *puVar6;
@@ -313,7 +316,7 @@ joined_r0x004a89a0:
   puVar6 = (undefined8 *)FUN_00167eb0(&bStack_c0,"MusicOn",7);
   uVar10 = puVar6[1];
   uVar4 = *puVar6;
-  uStack_70 = puVar6[2];
+  pvStack_70 = (void *)puVar6[2];
   uStack_78 = (undefined1)uVar10;
   uStack_77 = (undefined1)((ulong)uVar10 >> 8);
   uStack_76 = (undefined1)((ulong)uVar10 >> 0x10);
@@ -326,31 +329,31 @@ joined_r0x004a89a0:
   puVar6[2] = 0;
   *puVar6 = 0;
   auStack_f0[1] = 0;
-  auStack_f0[2] = 0;
+  pvStack_e0 = (void *)0x0;
   auStack_f0[0] = 0x2702;
                     /* try { // try from 004a8aac to 004a8ab7 has its CatchHandler @ 004a8c1c */
   puVar7 = (ulong *)FUN_00167eb0(&bStack_80,(ulong)auStack_f0 | 1,1);
-  uStack_90 = puVar7[2];
+  pvStack_90 = (void *)puVar7[2];
   uStack_98 = puVar7[1];
   uStack_a0 = *puVar7;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
   if ((auStack_f0[0] & 1) != 0) {
-    FUN_00166120(auStack_f0[2]);
+    FUN_00166120(pvStack_e0);
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((bStack_c0 & 1) != 0) {
-    FUN_00166120(CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
+    FUN_00166120((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
   }
-  if ((auStack_f0[3] & 1) != 0) {
-    FUN_00166120(auStack_f0[5]);
+  if ((auStack_d8[0] & 1) != 0) {
+    FUN_00166120(pvStack_c8);
   }
   uStack_76 = 0;
   uStack_75 = 0;
-  uStack_70 = 0;
+  pvStack_70 = (void *)0x0;
   bStack_c0 = 0;
   uStack_bf = 0;
   uStack_bb = 0;
@@ -368,24 +371,24 @@ joined_r0x004a89a0:
   uStack_af = 0;
   uStack_ad = 0;
                     /* try { // try from 004a8b40 to 004a8b5b has its CatchHandler @ 004a8bf4 */
-  func_0x00164290(auStack_f0 + 3,0,&ppuStack_60,&bStack_80,&uStack_a0,&bStack_c0);
+  func_0x00164290(auStack_d8,0,&ppuStack_60,&bStack_80,&uStack_a0,&bStack_c0);
   if ((bStack_c0 & 1) != 0) {
-    FUN_00166120(CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
+    FUN_00166120((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,uStack_b0)));
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
                     /* try { // try from 004a8b7c to 004a8ba3 has its CatchHandler @ 004a8cb8 */
-  uVar8 = func_0x001651e0(auStack_f0 + 3);
-  if (((uVar8 & 1) != 0) && (uVar8 = func_0x00166c10(auStack_f0 + 3,0), (uVar8 & 1) != 0)) {
+  uVar8 = func_0x001651e0(auStack_d8);
+  if (((uVar8 & 1) != 0) && (uVar8 = func_0x00166c10(auStack_d8,0), (uVar8 & 1) != 0)) {
     func_0x0016aac0(0x3f800000,lVar5);
   }
-  func_0x00169840(auStack_f0 + 3);
+  func_0x00169840(auStack_d8);
   if ((uStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   if (((ulong)ppuStack_60 & 1) != 0) {
-    FUN_00166120(auStack_50[0]);
+    FUN_00166120(apvStack_50[0]);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();
@@ -491,7 +494,7 @@ void WaterConcept::Screen_Challenges::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *param_2)
+void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
 
 {
   uint uVar1;
@@ -522,25 +525,26 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   byte *pbVar26;
   ulong uVar27;
   long *plVar28;
-  long *plVar29;
+  void *pvVar29;
   long *plVar30;
   long *plVar31;
   long *plVar32;
   long *plVar33;
-  undefined8 *puVar34;
-  undefined8 uVar35;
-  long lVar36;
+  long *plVar34;
+  undefined8 *puVar35;
+  undefined8 uVar36;
+  int *in_x1;
   long lVar37;
-  char *pcVar38;
-  undefined4 *puVar39;
-  uint uVar40;
-  char *pcVar41;
-  undefined4 *puVar42;
-  uint uVar43;
-  byte *pbVar44;
-  ulong uVar45;
-  undefined8 *puVar46;
-  float fVar47;
+  long lVar38;
+  char *pcVar39;
+  undefined4 *puVar40;
+  uint uVar41;
+  char *pcVar42;
+  undefined4 *puVar43;
+  uint uVar44;
+  byte *pbVar45;
+  ulong uVar46;
+  undefined8 *puVar47;
   float fVar48;
   float fVar49;
   float fVar50;
@@ -548,6 +552,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   float fVar52;
   float fVar53;
   float fVar54;
+  float fVar55;
   float fStack_694;
   undefined8 uStack_640;
   undefined8 uStack_638;
@@ -568,36 +573,38 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   float fStack_5d0;
   float fStack_5cc;
   ulong uStack_5c8;
-  ulong uStack_5c0;
+  void *pvStack_5c0;
   undefined8 uStack_5b8;
-  undefined8 uStack_5a8;
+  void *pvStack_5a8;
   ulong uStack_5a0;
   ulong uStack_598;
-  ulong uStack_590;
+  void *pvStack_590;
   long lStack_588;
   int *piStack_580;
   byte abStack_578 [7];
   undefined1 uStack_571;
   undefined8 uStack_570;
-  undefined8 uStack_568;
+  void *pvStack_568;
   byte abStack_560 [7];
   undefined1 uStack_559;
   undefined8 uStack_558;
-  undefined8 uStack_550;
-  ulong auStack_548 [3];
+  void *pvStack_550;
+  ulong auStack_548 [2];
+  void *pvStack_538;
   undefined8 uStack_530;
   int *piStack_528;
-  undefined8 uStack_520;
+  void *pvStack_520;
   ulong uStack_510;
   ulong uStack_508;
-  ulong uStack_500;
+  void *pvStack_500;
   undefined8 uStack_4f0;
   undefined8 uStack_4e8;
   long lStack_4e0;
   int *piStack_4d8;
-  ulong auStack_4d0 [3];
+  ulong auStack_4d0 [2];
+  void *pvStack_4c0;
   byte abStack_4b8 [16];
-  undefined8 uStack_4a8;
+  void *pvStack_4a8;
   long lStack_4a0;
   int *piStack_498;
   undefined8 uStack_490;
@@ -608,7 +615,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   long lStack_470;
   int *piStack_468;
   byte abStack_460 [16];
-  undefined8 uStack_450;
+  void *pvStack_450;
   long lStack_448;
   int *piStack_440;
   undefined8 uStack_438;
@@ -617,14 +624,16 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   byte abStack_428 [7];
   undefined1 uStack_421;
   undefined8 uStack_420;
-  undefined8 uStack_418;
+  void *pvStack_418;
   byte abStack_410 [7];
   undefined1 uStack_409;
   undefined8 uStack_408;
-  undefined8 uStack_400;
+  void *pvStack_400;
   ulong uStack_3f8;
   int *piStack_3f0;
-  ulong auStack_3e8 [4];
+  ulong auStack_3e8 [2];
+  void *pvStack_3d8;
+  long lStack_3d0;
   int *piStack_3c8;
   byte *pbStack_3c0;
   int *piStack_3b8;
@@ -632,13 +641,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   byte abStack_3a8 [7];
   undefined1 uStack_3a1;
   undefined8 uStack_3a0;
-  undefined8 uStack_398;
+  void *pvStack_398;
   byte abStack_390 [7];
   undefined1 uStack_389;
   undefined8 uStack_388;
-  undefined8 uStack_380;
+  void *pvStack_380;
   byte abStack_378 [16];
-  undefined8 uStack_368;
+  void *pvStack_368;
   long lStack_360;
   int *piStack_358;
   undefined8 uStack_350;
@@ -647,15 +656,16 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   long lStack_340;
   int *piStack_338;
   byte abStack_330 [16];
-  undefined8 uStack_320;
-  ulong auStack_318 [3];
+  void *pvStack_320;
+  ulong auStack_318 [2];
+  void *pvStack_308;
   byte abStack_300 [16];
-  undefined8 uStack_2f0;
+  void *pvStack_2f0;
   ulong uStack_2e8;
   int *piStack_2e0;
   ulong uStack_2d8;
   long lStack_2d0;
-  ulong uStack_2c8;
+  void *pvStack_2c8;
   float fStack_2c0;
   float fStack_2bc;
   undefined1 uStack_2b8;
@@ -685,10 +695,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   undefined4 *puStack_230;
   undefined8 uStack_220;
   ulong uStack_218;
-  ulong uStack_210;
+  void *pvStack_210;
   undefined8 uStack_200;
   int *piStack_1f8;
-  ulong uStack_1f0;
+  void *pvStack_1f0;
   undefined8 uStack_1e0;
   ulong uStack_1d8;
   undefined1 *puStack_1d0;
@@ -697,8 +707,9 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   char *pcStack_1b0;
   ulong uStack_1a0;
   ulong uStack_198;
-  ulong uStack_190;
-  ulong auStack_180 [3];
+  void *pvStack_190;
+  ulong auStack_180 [2];
+  void *pvStack_170;
   byte bStack_168;
   undefined1 uStack_167;
   undefined6 uStack_166;
@@ -725,17 +736,17 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
   float fStack_cc;
   undefined7 uStack_c8;
   undefined1 uStack_c1;
-  undefined8 uStack_c0;
+  void *pvStack_c0;
   
   lVar6 = tpidr_el0;
-  lVar36 = *(long *)(lVar6 + 0x28);
-  if (*param_2 == 1) {
-    puVar46 = (undefined8 *)(param_1 + 0x10);
-    lVar15 = func_0x001692e0(*puVar46,100);
-    lVar16 = func_0x001692e0(*puVar46,200);
-    lVar17 = func_0x001692e0(*puVar46,400);
-    lVar18 = func_0x001692e0(*puVar46,700);
-    uVar40 = 0;
+  lVar37 = *(long *)(lVar6 + 0x28);
+  if (*in_x1 == 1) {
+    puVar47 = (undefined8 *)((long)p0 + 0x10);
+    lVar15 = func_0x001692e0(*puVar47,100);
+    lVar16 = func_0x001692e0(*puVar47,200);
+    lVar17 = func_0x001692e0(*puVar47,400);
+    lVar18 = func_0x001692e0(*puVar47,700);
+    uVar41 = 0;
     puStack_108 = (undefined8 *)0x0;
     puStack_100 = (undefined8 *)0x0;
     puStack_f8 = (undefined8 *)0x0;
@@ -747,7 +758,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
     puStack_128 = (undefined8 *)0x0;
     do {
                     /* try { // try from 004a8fb4 to 004a8fe7 has its CatchHandler @ 004ac7a4 */
-      uVar19 = func_0x001692e0(*puVar46,uVar40 + 300);
+      uVar19 = func_0x001692e0(*puVar47,uVar41 + 300);
       fStack_2c0 = (float)uVar19;
       fStack_2bc = (float)((ulong)uVar19 >> 0x20);
       if (puStack_100 < puStack_f8) {
@@ -758,7 +769,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         func_0x00163080(&puStack_108,&fStack_2c0);
       }
                     /* try { // try from 004a8ff0 to 004a9027 has its CatchHandler @ 004ac79c */
-      uVar19 = func_0x001692e0(*puVar46,uVar40 + 600);
+      uVar19 = func_0x001692e0(*puVar47,uVar41 + 600);
       fStack_2c0 = (float)uVar19;
       fStack_2bc = (float)((ulong)uVar19 >> 0x20);
       if (puStack_118 < puStack_110) {
@@ -769,7 +780,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         func_0x00161c50(&puStack_120,&fStack_2c0);
       }
                     /* try { // try from 004a9030 to 004a9067 has its CatchHandler @ 004ac7a0 */
-      uVar19 = func_0x001692e0(*puVar46,uVar40 + 0x44c);
+      uVar19 = func_0x001692e0(*puVar47,uVar41 + 0x44c);
       fStack_2c0 = (float)uVar19;
       fStack_2bc = (float)((ulong)uVar19 >> 0x20);
       if (puStack_130 < puStack_128) {
@@ -779,15 +790,15 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       else {
         func_0x00163080(&puStack_138,&fStack_2c0);
       }
-      uVar40 = uVar40 + 1;
-    } while (uVar40 < 3);
-    uVar40 = 0;
+      uVar41 = uVar41 + 1;
+    } while (uVar41 < 3);
+    uVar41 = 0;
     puStack_148 = (undefined8 *)0x0;
     puStack_150 = (undefined8 *)0x0;
     puStack_140 = (undefined8 *)0x0;
     do {
                     /* try { // try from 004a908c to 004a90c3 has its CatchHandler @ 004ac794 */
-      uVar19 = func_0x001692e0(*puVar46,uVar40 + 500);
+      uVar19 = func_0x001692e0(*puVar47,uVar41 + 500);
       fStack_2c0 = (float)uVar19;
       fStack_2bc = (float)((ulong)uVar19 >> 0x20);
       if (puStack_148 < puStack_140) {
@@ -797,16 +808,16 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       else {
         func_0x00163080(&puStack_150,&fStack_2c0);
       }
-      uVar40 = uVar40 + 1;
-    } while (uVar40 < 4);
+      uVar41 = uVar41 + 1;
+    } while (uVar41 < 4);
                     /* try { // try from 004a90d4 to 004a90df has its CatchHandler @ 004ac1a8 */
-    lVar20 = func_0x001692e0(*puVar46,800);
+    lVar20 = func_0x001692e0(*puVar47,800);
                     /* try { // try from 004a90e4 to 004a90ef has its CatchHandler @ 004ac1a4 */
-    lVar21 = func_0x001692e0(*puVar46,900);
+    lVar21 = func_0x001692e0(*puVar47,900);
                     /* try { // try from 004a90f4 to 004a90ff has its CatchHandler @ 004ac1a0 */
-    lVar22 = func_0x001692e0(*puVar46,1000);
+    lVar22 = func_0x001692e0(*puVar47,1000);
                     /* try { // try from 004a9104 to 004a910b has its CatchHandler @ 004ac19c */
-    lVar23 = func_0x001692e0(*puVar46,0x4b0);
+    lVar23 = func_0x001692e0(*puVar47,0x4b0);
     uStack_160 = 0;
     uStack_15f = 0;
     bStack_168 = 0;
@@ -815,19 +826,19 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
     puStack_158 = (undefined1 *)0x0;
     auStack_180[1] = 0;
     auStack_180[0] = 0;
-    auStack_180[2] = 0;
+    pvStack_170 = (void *)0x0;
     if (GameSettings::currentLevelIsAllie == '\0') {
       if (GameSettings::currentLevelIsMyst == '\0') {
                     /* try { // try from 004a94d8 to 004a94ef has its CatchHandler @ 004ac06c */
         func_0x00165800(&bStack_260,&DAT_00765080,&DAT_0063d328);
         uVar27 = DAT_00765148;
-        puVar39 = DAT_00765150;
+        puVar40 = DAT_00765150;
         if ((DAT_00765140 & 1) == 0) {
           uVar27 = (ulong)(DAT_00765140 >> 1);
-          puVar39 = &DAT_00765141;
+          puVar40 = &DAT_00765141;
         }
                     /* try { // try from 004a9510 to 004a9517 has its CatchHandler @ 004ac068 */
-        puVar24 = (ulong *)FUN_00167eb0(&bStack_260,puVar39,uVar27);
+        puVar24 = (ulong *)FUN_00167eb0(&bStack_260,puVar40,uVar27);
         puStack_230 = (undefined4 *)puVar24[2];
         piStack_238 = (int *)puVar24[1];
         uStack_240 = *puVar24;
@@ -836,7 +847,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         *puVar24 = 0;
                     /* try { // try from 004a9530 to 004a9543 has its CatchHandler @ 004ac064 */
         puVar24 = (ulong *)FUN_00167eb0(&uStack_240,&DAT_0063d328,1);
-        uStack_210 = puVar24[2];
+        pvStack_210 = (void *)puVar24[2];
         uStack_218 = puVar24[1];
         uStack_220 = *puVar24;
         puVar24[1] = 0;
@@ -850,7 +861,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         }
                     /* try { // try from 004a957c to 004a9583 has its CatchHandler @ 004ac060 */
         puVar24 = (ulong *)FUN_00167eb0(&uStack_220,puVar25,uVar27);
-        uStack_1f0 = puVar24[2];
+        pvStack_1f0 = (void *)puVar24[2];
         piStack_1f8 = (int *)puVar24[1];
         uStack_200 = *puVar24;
         puVar24[1] = 0;
@@ -880,7 +891,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         *puVar24 = 0;
                     /* try { // try from 004a9608 to 004a961b has its CatchHandler @ 004ac054 */
         puVar24 = (ulong *)FUN_00167eb0(&uStack_1c0,&DAT_0063d328,1);
-        uStack_190 = puVar24[2];
+        pvStack_190 = (void *)puVar24[2];
         uStack_198 = puVar24[1];
         uStack_1a0 = *puVar24;
         puVar24[1] = 0;
@@ -894,7 +905,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         }
                     /* try { // try from 004a9654 to 004a965b has its CatchHandler @ 004ac050 */
         puVar25 = (undefined8 *)FUN_00167eb0(&uStack_1a0,puVar7,uVar27);
-        uStack_c0 = puVar25[2];
+        pvStack_c0 = (void *)puVar25[2];
         uStack_c8 = (undefined7)puVar25[1];
         uStack_c1 = (undefined1)((ulong)puVar25[1] >> 0x38);
         fStack_d0 = (float)*puVar25;
@@ -923,7 +934,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         }
                     /* try { // try from 004a96c0 to 004a96c7 has its CatchHandler @ 004ac048 */
         pbVar26 = (byte *)FUN_00167eb0(&fStack_2c0,puVar25,uVar27);
-        uVar19 = *(undefined8 *)(pbVar26 + 0x10);
+        pvVar29 = *(void **)(pbVar26 + 0x10);
         bVar4 = *pbVar26;
         uStack_e8 = (undefined7)((ulong)*(undefined8 *)(pbVar26 + 8) >> 8);
         uStack_f0._0_4_ = (float)*(undefined8 *)(pbVar26 + 1);
@@ -961,24 +972,24 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           }
         }
         uVar13 = (float)uStack_f0;
-        uVar35 = CONCAT44(uStack_f0._4_4_,(float)uStack_f0);
+        uVar19 = CONCAT44(uStack_f0._4_4_,(float)uStack_f0);
         uStack_f0._0_4_ = 0.0;
         uStack_15f = uStack_e8;
         uStack_167 = (undefined1)uVar13;
-        uStack_166 = (undefined6)((ulong)uVar35 >> 8);
+        uStack_166 = (undefined6)((ulong)uVar19 >> 8);
         uStack_160 = (undefined1)((uint)uStack_f0._4_4_ >> 0x18);
         uStack_f0._4_4_ = 0.0;
         uStack_e8 = 0;
         bStack_168 = bVar4;
-        puStack_158 = (undefined1 *)uVar19;
+        puStack_158 = pvVar29;
         if (((uint)fStack_2c0 & 1) != 0) {
           FUN_00166120(pcStack_2b0);
         }
         if (((uint)fStack_d0 & 1) != 0) {
-          FUN_00166120(uStack_c0);
+          FUN_00166120(pvStack_c0);
         }
         if ((uStack_1a0 & 1) != 0) {
-          FUN_00166120(uStack_190);
+          FUN_00166120(pvStack_190);
         }
         if ((uStack_1c0 & 1) != 0) {
           FUN_00166120(pcStack_1b0);
@@ -987,10 +998,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           FUN_00166120(puStack_1d0);
         }
         if ((uStack_200 & 1) != 0) {
-          FUN_00166120(uStack_1f0);
+          FUN_00166120(pvStack_1f0);
         }
         if ((uStack_220 & 1) != 0) {
-          FUN_00166120(uStack_210);
+          FUN_00166120(pvStack_210);
         }
         if ((uStack_240 & 1) != 0) {
           FUN_00166120(puStack_230);
@@ -1011,7 +1022,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         }
                     /* try { // try from 004a93ac to 004a93b3 has its CatchHandler @ 004ac070 */
         pbVar26 = (byte *)FUN_00167eb0(&fStack_2c0,puVar8,uVar27);
-        uVar19 = *(undefined8 *)(pbVar26 + 0x10);
+        pvVar29 = *(void **)(pbVar26 + 0x10);
         bVar4 = *pbVar26;
         uStack_c8 = (undefined7)((ulong)*(undefined8 *)(pbVar26 + 8) >> 8);
         fStack_d0 = (float)*(undefined8 *)(pbVar26 + 1);
@@ -1048,17 +1059,17 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             FUN_00166120(puStack_158);
           }
         }
-        fVar52 = fStack_d0;
-        uVar35 = CONCAT44(fStack_cc,fStack_d0);
+        fVar53 = fStack_d0;
+        uVar19 = CONCAT44(fStack_cc,fStack_d0);
         fStack_d0 = 0.0;
         uStack_15f = uStack_c8;
-        uStack_167 = SUB41(fVar52,0);
-        uStack_166 = (undefined6)((ulong)uVar35 >> 8);
+        uStack_167 = SUB41(fVar53,0);
+        uStack_166 = (undefined6)((ulong)uVar19 >> 8);
         uStack_160 = (undefined1)((uint)fStack_cc >> 0x18);
         fStack_cc = 0.0;
         uStack_c8 = 0;
         bStack_168 = bVar4;
-        puStack_158 = (undefined1 *)uVar19;
+        puStack_158 = pvVar29;
         if (((uint)fStack_2c0 & 1) != 0) {
           FUN_00166120(pcStack_2b0);
         }
@@ -1070,13 +1081,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                     /* try { // try from 004a9140 to 004a9157 has its CatchHandler @ 004ac168 */
       func_0x00165800(&bStack_260,&DAT_00765080,&DAT_0063d328);
       uVar27 = DAT_00765148;
-      puVar39 = DAT_00765150;
+      puVar40 = DAT_00765150;
       if ((DAT_00765140 & 1) == 0) {
         uVar27 = (ulong)(DAT_00765140 >> 1);
-        puVar39 = &DAT_00765141;
+        puVar40 = &DAT_00765141;
       }
                     /* try { // try from 004a9178 to 004a917f has its CatchHandler @ 004ac150 */
-      puVar24 = (ulong *)FUN_00167eb0(&bStack_260,puVar39,uVar27);
+      puVar24 = (ulong *)FUN_00167eb0(&bStack_260,puVar40,uVar27);
       puStack_230 = (undefined4 *)puVar24[2];
       piStack_238 = (int *)puVar24[1];
       uStack_240 = *puVar24;
@@ -1085,7 +1096,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       *puVar24 = 0;
                     /* try { // try from 004a9198 to 004a91ab has its CatchHandler @ 004ac138 */
       puVar24 = (ulong *)FUN_00167eb0(&uStack_240,&DAT_0063d328,1);
-      uStack_210 = puVar24[2];
+      pvStack_210 = (void *)puVar24[2];
       uStack_218 = puVar24[1];
       uStack_220 = *puVar24;
       puVar24[1] = 0;
@@ -1099,7 +1110,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       }
                     /* try { // try from 004a91e4 to 004a91eb has its CatchHandler @ 004ac120 */
       puVar24 = (ulong *)FUN_00167eb0(&uStack_220,puVar25,uVar27);
-      uStack_1f0 = puVar24[2];
+      pvStack_1f0 = (void *)puVar24[2];
       piStack_1f8 = (int *)puVar24[1];
       uStack_200 = *puVar24;
       puVar24[1] = 0;
@@ -1129,7 +1140,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       *puVar24 = 0;
                     /* try { // try from 004a9270 to 004a9283 has its CatchHandler @ 004ac0d8 */
       puVar24 = (ulong *)FUN_00167eb0(&uStack_1c0,&DAT_0063d328,1);
-      uStack_190 = puVar24[2];
+      pvStack_190 = (void *)puVar24[2];
       uStack_198 = puVar24[1];
       uStack_1a0 = *puVar24;
       puVar24[1] = 0;
@@ -1143,7 +1154,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       }
                     /* try { // try from 004a92bc to 004a92c3 has its CatchHandler @ 004ac0c0 */
       puVar25 = (undefined8 *)FUN_00167eb0(&uStack_1a0,puVar7,uVar27);
-      uStack_c0 = puVar25[2];
+      pvStack_c0 = (void *)puVar25[2];
       uStack_c8 = (undefined7)puVar25[1];
       uStack_c1 = (undefined1)((ulong)puVar25[1] >> 0x38);
       fStack_d0 = (float)*puVar25;
@@ -1172,7 +1183,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       }
                     /* try { // try from 004a9328 to 004a932f has its CatchHandler @ 004ac090 */
       pbVar26 = (byte *)FUN_00167eb0(&fStack_2c0,puVar25,uVar27);
-      uVar19 = *(undefined8 *)(pbVar26 + 0x10);
+      pvVar29 = *(void **)(pbVar26 + 0x10);
       bVar4 = *pbVar26;
       uStack_e8 = (undefined7)((ulong)*(undefined8 *)(pbVar26 + 8) >> 8);
       uStack_f0._0_4_ = (float)*(undefined8 *)(pbVar26 + 1);
@@ -1210,24 +1221,24 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         }
       }
       uVar13 = (float)uStack_f0;
-      uVar35 = CONCAT44(uStack_f0._4_4_,(float)uStack_f0);
+      uVar19 = CONCAT44(uStack_f0._4_4_,(float)uStack_f0);
       uStack_f0._0_4_ = 0.0;
       uStack_15f = uStack_e8;
       uStack_167 = (undefined1)uVar13;
-      uStack_166 = (undefined6)((ulong)uVar35 >> 8);
+      uStack_166 = (undefined6)((ulong)uVar19 >> 8);
       uStack_160 = (undefined1)((uint)uStack_f0._4_4_ >> 0x18);
       uStack_f0._4_4_ = 0.0;
       uStack_e8 = 0;
       bStack_168 = bVar4;
-      puStack_158 = (undefined1 *)uVar19;
+      puStack_158 = pvVar29;
       if (((uint)fStack_2c0 & 1) != 0) {
         FUN_00166120(pcStack_2b0);
       }
       if (((uint)fStack_d0 & 1) != 0) {
-        FUN_00166120(uStack_c0);
+        FUN_00166120(pvStack_c0);
       }
       if ((uStack_1a0 & 1) != 0) {
-        FUN_00166120(uStack_190);
+        FUN_00166120(pvStack_190);
       }
       if ((uStack_1c0 & 1) != 0) {
         FUN_00166120(pcStack_1b0);
@@ -1236,10 +1247,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
         FUN_00166120(puStack_1d0);
       }
       if ((uStack_200 & 1) != 0) {
-        FUN_00166120(uStack_1f0);
+        FUN_00166120(pvStack_1f0);
       }
       if ((uStack_220 & 1) != 0) {
-        FUN_00166120(uStack_210);
+        FUN_00166120(pvStack_210);
       }
       if ((uStack_240 & 1) != 0) {
         FUN_00166120(puStack_230);
@@ -1263,32 +1274,32 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
       FUN_00166120(pcStack_2b0);
     }
     FUN_0016ddd0("challenge database returned %d rows.\n",iVar12);
-    puVar34 = puStack_100;
+    puVar35 = puStack_100;
     puVar25 = puStack_108;
                     /* try { // try from 004a98a0 to 004a98b3 has its CatchHandler @ 004ac17c */
     func_0x00167f50(auStack_268,0,&bStack_168,auStack_180);
                     /* try { // try from 004a98b4 to 004a98bb has its CatchHandler @ 004ac178 */
     uVar27 = func_0x001651e0(auStack_268);
     if ((uVar27 & 1) != 0) {
-      uVar27 = (long)puVar34 - (long)puVar25 >> 3;
+      uVar27 = (long)puVar35 - (long)puVar25 >> 3;
       iVar5 = 0;
       if (uVar27 != 0) {
         iVar5 = (int)((ulong)(long)iVar12 / uVar27);
       }
       if (0 < iVar5) {
-        pcVar38 = (char *)((ulong)&bStack_260 | 1);
+        pcVar39 = (char *)((ulong)&bStack_260 | 1);
         puVar25 = (undefined8 *)((ulong)auStack_3e8 | 1);
-        pcVar41 = (char *)((ulong)&fStack_2c0 | 1);
-        puVar39 = (undefined4 *)((ulong)auStack_4d0 | 1);
-        puVar42 = (undefined4 *)((ulong)&uStack_240 | 1);
+        pcVar42 = (char *)((ulong)&fStack_2c0 | 1);
+        puVar40 = (undefined4 *)((ulong)auStack_4d0 | 1);
+        puVar43 = (undefined4 *)((ulong)&uStack_240 | 1);
         fStack_694 = 0.6;
-        uVar40 = 0;
+        uVar41 = 0;
         do {
                     /* try { // try from 004a9c28 to 004a9c33 has its CatchHandler @ 004ac6f4 */
           func_0x00167d50(&fStack_2c0,lVar15);
-          fVar52 = fStack_2bc;
+          fVar53 = fStack_2bc;
           lStack_278 = *(long *)(lVar15 + 0x110);
-          fVar49 = *(float *)(lVar15 + 0x94);
+          fVar50 = *(float *)(lVar15 + 0x94);
           fStack_2c0 = (float)lStack_278;
           fStack_2bc = (float)((ulong)lStack_278 >> 0x20);
           piStack_270 = *(int **)(lVar15 + 0x118);
@@ -1303,7 +1314,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             *piStack_270 = *piStack_270 + 2;
           }
           FUN_00166b20(&fStack_2c0);
-          if ((uVar40 & 1) != 0) {
+          if ((uVar41 & 1) != 0) {
                     /* try { // try from 004a9c7c to 004a9c7f has its CatchHandler @ 004ac514 */
             uVar19 = FUN_001739b0();
             fStack_d0 = 0.0;
@@ -1313,7 +1324,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             uStack_280 = 0;
             uStack_288 = 0;
                     /* try { // try from 004a9c8c to 004a9ca3 has its CatchHandler @ 004ac4fc */
-            func_0x001644b0(&fStack_2c0,uVar19,param_1 + 0xa0,&uStack_288,0,0);
+            func_0x001644b0(&fStack_2c0,uVar19,(long)p0 + 0xa0,&uStack_288,0,0);
             func_0x00170aa0(&lStack_278,&fStack_2c0);
             FUN_00166b20(&fStack_2c0);
             FUN_0016bb90(&uStack_288);
@@ -1323,10 +1334,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           plVar28 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004a9cd4 to 004a9cdf has its CatchHandler @ 004ac6dc */
           func_0x00167d50(&fStack_d0,lVar15);
-          fVar52 = (fVar52 * 0.5 + fVar49) * (float)(int)uVar40;
-          fVar49 = (float)(int)uVar40 * 0.0;
-          fStack_2c0 = fVar49 + fStack_d0;
-          fStack_2bc = fVar52 + fStack_cc;
+          fVar53 = (fVar53 * 0.5 + fVar50) * (float)(int)uVar41;
+          fVar50 = (float)(int)uVar41 * 0.0;
+          fStack_2c0 = fVar50 + fStack_d0;
+          fStack_2bc = fVar53 + fStack_cc;
           uStack_1a0 = *(ulong *)(lVar15 + 0x90);
           lStack_298 = lStack_278;
           piStack_290 = piStack_270;
@@ -1334,13 +1345,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             *piStack_270 = *piStack_270 + 1;
           }
                     /* try { // try from 004a9d3c to 004a9d4f has its CatchHandler @ 004ac6cc */
-          func_0x0016aef0(plVar28,uVar40 + 100,&fStack_2c0,&uStack_1a0,&lStack_298);
+          func_0x0016aef0(plVar28,uVar41 + 100,&fStack_2c0,&uStack_1a0,&lStack_298);
           FUN_00166b20(&lStack_298);
                     /* try { // try from 004a9d58 to 004a9d5f has its CatchHandler @ 004ac6c8 */
           func_0x0016b220(&fStack_d0);
-          uVar1 = uVar40 + 1;
+          uVar1 = uVar41 + 1;
           uStack_198 = 0;
-          uStack_190 = 0;
+          pvStack_190 = (void *)0x0;
           uStack_1a0 = 0x6402;
                     /* try { // try from 004a9d7c to 004a9d87 has its CatchHandler @ 004ac6c0 */
           func_0x0016ae60(&fStack_2c0);
@@ -1348,32 +1359,32 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           func_0x00165260(&fStack_d0,&uStack_1a0,&fStack_2c0);
           func_0x00167bf0(&fStack_2c0);
           if ((uStack_1a0 & 1) != 0) {
-            FUN_00166120(uStack_190);
+            FUN_00166120(pvStack_190);
           }
-          uStack_2c8 = 0;
+          pvStack_2c8 = (void *)0x0;
           lStack_2d0 = 0;
           pcVar2 = "CRANKY_CHALLENGE_NUMBER";
           if (GameSettings::currentLevelIsAllie != '\0') {
             pcVar2 = "ALLIE_CHALLENGE_NUMBER";
           }
-          lVar37 = 0x16;
+          lVar38 = 0x16;
           if (GameSettings::currentLevelIsAllie == '\0') {
-            lVar37 = 0x17;
+            lVar38 = 0x17;
           }
           uStack_2d8 = 0;
           if (GameSettings::currentLevelIsAllie == '\0') {
                     /* try { // try from 004a9dfc to 004a9e03 has its CatchHandler @ 004ac234 */
-            uVar27 = FUN_00164060(0x20);
+            pvVar29 = (void *)FUN_00164060(0x20);
             uStack_2d8 = 0x21;
-            lStack_2d0 = lVar37;
-            uStack_2c8 = uVar27;
+            lStack_2d0 = lVar38;
+            pvStack_2c8 = pvVar29;
           }
           else {
-            uStack_2d8 = (ulong)(byte)((int)lVar37 << 1);
-            uVar27 = (ulong)&uStack_2d8 | 1;
+            uStack_2d8 = (ulong)(byte)((int)lVar38 << 1);
+            pvVar29 = (void *)((ulong)&uStack_2d8 | 1);
           }
-          FUN_001715e0(uVar27,pcVar2,lVar37);
-          *(undefined1 *)(uVar27 + lVar37) = 0;
+          FUN_001715e0(pvVar29,pcVar2,lVar38);
+          *(undefined1 *)((long)pvVar29 + lVar38) = 0;
                     /* try { // try from 004a9e2c to 004a9e37 has its CatchHandler @ 004ac69c */
           func_0x0016e7e0(&fStack_2c0,&uStack_2d8);
                     /* try { // try from 004a9e38 to 004a9e47 has its CatchHandler @ 004ac684 */
@@ -1382,13 +1393,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             FUN_00166120(pcStack_2b0);
           }
           if ((uStack_2d8 & 1) != 0) {
-            FUN_00166120(uStack_2c8);
+            FUN_00166120(pvStack_2c8);
           }
                     /* try { // try from 004a9e68 to 004a9e6f has its CatchHandler @ 004ac680 */
-          plVar29 = (long *)FUN_00164060(0x188);
+          plVar30 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004a9e74 to 004a9e83 has its CatchHandler @ 004ac674 */
           func_0x00167d50(&uStack_200,lVar16);
-          uStack_1e0 = CONCAT44(fVar52 + uStack_200._4_4_,fVar49 + (float)uStack_200);
+          uStack_1e0 = CONCAT44(fVar53 + uStack_200._4_4_,fVar50 + (float)uStack_200);
           uStack_220 = *(ulong *)(lVar16 + 0x90);
           uStack_1c0 = *(ulong *)(lVar16 + 0x110);
           piStack_2e0 = *(int **)(lVar16 + 0x118);
@@ -1405,11 +1416,11 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           uStack_2b8 = 0;
           pcStack_2b0 = (undefined1 *)0x0;
           fStack_2c0 = (float)CONCAT31(fStack_2c0._1_3_,0xc);
-          builtin_strncpy(pcVar41,"normal",6);
+          builtin_strncpy(pcVar42,"normal",6);
           fStack_2bc = (float)((uint)fStack_2bc & 0xffffff);
                     /* try { // try from 004a9f00 to 004a9f2b has its CatchHandler @ 004ac64c */
           piStack_1b8 = piStack_2e0;
-          func_0x00169340(0,plVar29,uVar40 + 200,&uStack_1e0,&uStack_220,&uStack_2e8,&uStack_1a0,
+          func_0x00169340(0,plVar30,uVar41 + 200,&uStack_1e0,&uStack_220,&uStack_2e8,&uStack_1a0,
                           &fStack_2c0,1,1);
           if (((uint)fStack_2c0 & 1) != 0) {
             FUN_00166120(pcStack_2b0);
@@ -1420,12 +1431,12 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           uStack_1c0 = 0;
           pcStack_1b0 = (char *)0x0;
           if (puStack_100 == puStack_108) {
-            uVar43 = 1;
+            uVar44 = 1;
             bVar10 = true;
           }
           else {
             uVar27 = 0;
-            uVar43 = 1;
+            uVar44 = 1;
             bVar10 = true;
             do {
               fStack_2bc = 0.0;
@@ -1434,21 +1445,21 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               uStack_2b8 = 0;
               uStack_2b7 = 0;
               uStack_2b5 = 0;
-              builtin_strncpy(pcVar41,"LevelInfo",9);
+              builtin_strncpy(pcVar42,"LevelInfo",9);
               uStack_2b6 = 0;
                     /* try { // try from 004a9fb8 to 004a9fcf has its CatchHandler @ 004ac93c */
               func_0x00165800(&uStack_220,&DAT_00764be8,"=\'");
                     /* try { // try from 004a9fd0 to 004a9fdf has its CatchHandler @ 004ac8c0 */
               func_0x0016c5c0(&uStack_240,auStack_268,2);
               piVar3 = (int *)(uStack_240 >> 1 & 0x7f);
-              puVar9 = puVar42;
+              puVar9 = puVar43;
               if ((uStack_240 & 1) != 0) {
                 piVar3 = piStack_238;
                 puVar9 = puStack_230;
               }
                     /* try { // try from 004a9ffc to 004aa003 has its CatchHandler @ 004ac914 */
               puVar24 = (ulong *)FUN_00167eb0(&uStack_220,puVar9,piVar3);
-              uStack_1f0 = puVar24[2];
+              pvStack_1f0 = (void *)puVar24[2];
               piStack_1f8 = (int *)puVar24[1];
               uStack_200 = *puVar24;
               puVar24[1] = 0;
@@ -1468,13 +1479,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 FUN_00166120(puStack_1d0);
               }
               if ((uStack_200 & 1) != 0) {
-                FUN_00166120(uStack_1f0);
+                FUN_00166120(pvStack_1f0);
               }
               if ((uStack_240 & 1) != 0) {
                 FUN_00166120(puStack_230);
               }
               if ((uStack_220 & 1) != 0) {
-                FUN_00166120(uStack_210);
+                FUN_00166120(pvStack_210);
               }
               if (((uint)fStack_2c0 & 1) != 0) {
                 FUN_00166120(pcStack_2b0);
@@ -1485,8 +1496,8 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               *(undefined2 *)((ulong)&uStack_1e0 | 1) = 0x5245;
               uStack_1e0 = 6;
                     /* try { // try from 004aa0e0 to 004aa0e7 has its CatchHandler @ 004ac9cc */
-              uVar45 = func_0x001651e0(&uStack_5a0);
-              if ((uVar45 & 1) != 0) {
+              uVar46 = func_0x001651e0(&uStack_5a0);
+              if ((uVar46 & 1) != 0) {
                     /* try { // try from 004aa0ec to 004aa0fb has its CatchHandler @ 004ac790 */
                 func_0x0016c5c0(abStack_300,&uStack_5a0,0);
                     /* try { // try from 004aa0fc to 004aa107 has its CatchHandler @ 004ac778 */
@@ -1510,13 +1521,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 puStack_1d0 = pcStack_2b0;
                 pcStack_2b0 = (undefined1 *)0x0;
                 if ((abStack_300[0] & 1) != 0) {
-                  FUN_00166120(uStack_2f0);
+                  FUN_00166120(pvStack_2f0);
                 }
               }
                     /* try { // try from 004aa164 to 004aa16b has its CatchHandler @ 004ac9c8 */
               func_0x0016b220(&uStack_200);
               uStack_218 = 0;
-              uStack_210 = 0;
+              pvStack_210 = (void *)0x0;
               uStack_220 = 0x4c02;
                     /* try { // try from 004aa184 to 004aa193 has its CatchHandler @ 004ac8e4 */
               func_0x0016c5c0(&bStack_260,auStack_268,2);
@@ -1534,10 +1545,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 FUN_00166120(pcStack_250);
               }
               if ((uStack_220 & 1) != 0) {
-                FUN_00166120(uStack_210);
+                FUN_00166120(pvStack_210);
               }
               uStack_218 = 0;
-              uStack_210 = 0;
+              pvStack_210 = (void *)0x0;
               uStack_220 = 0x4e02;
                     /* try { // try from 004aa210 to 004aa21b has its CatchHandler @ 004ac8d0 */
               func_0x0016af30(&fStack_2c0,&uStack_1e0);
@@ -1545,21 +1556,21 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               func_0x00165260(&uStack_200,&uStack_220,&fStack_2c0);
               func_0x00167bf0(&fStack_2c0);
               if ((uStack_220 & 1) != 0) {
-                FUN_00166120(uStack_210);
+                FUN_00166120(pvStack_210);
               }
               auStack_318[0] = 0x1e;
               auStack_318[1] = 0;
               builtin_strncpy((char *)((ulong)auStack_318 | 1),"CHALLENGE_TITLE",0xf);
-              auStack_318[2] = 0;
+              pvStack_308 = (void *)0x0;
                     /* try { // try from 004aa27c to 004aa287 has its CatchHandler @ 004ac8c8 */
               func_0x0016e7e0(&uStack_220,auStack_318);
                     /* try { // try from 004aa288 to 004aa297 has its CatchHandler @ 004ac950 */
               func_0x0016a680(&fStack_2c0,&uStack_220,&uStack_200);
               if ((uStack_220 & 1) != 0) {
-                FUN_00166120(uStack_210);
+                FUN_00166120(pvStack_210);
               }
               if ((auStack_318[0] & 1) != 0) {
-                FUN_00166120(auStack_318[2]);
+                FUN_00166120(pvStack_308);
               }
                     /* try { // try from 004aa2b8 to 004aa2cb has its CatchHandler @ 004ac8dc */
               func_0x00165800(&uStack_240,&fStack_2c0,&DAT_0061b9ce);
@@ -1567,15 +1578,15 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               func_0x0016c5c0(abStack_330,auStack_268,1);
                     /* try { // try from 004aa2dc to 004aa2e7 has its CatchHandler @ 004ac810 */
               func_0x0016e7e0(&bStack_260,abStack_330);
-              pcVar2 = pcVar38;
-              uVar45 = (ulong)(bStack_260 >> 1);
+              pcVar2 = pcVar39;
+              uVar46 = (ulong)(bStack_260 >> 1);
               if ((bStack_260 & 1) != 0) {
                 pcVar2 = pcStack_250;
-                uVar45 = CONCAT53(uStack_255,CONCAT12(uStack_256,CONCAT11(uStack_257,uStack_258)));
+                uVar46 = CONCAT53(uStack_255,CONCAT12(uStack_256,CONCAT11(uStack_257,uStack_258)));
               }
                     /* try { // try from 004aa308 to 004aa30f has its CatchHandler @ 004ac87c */
-              puVar24 = (ulong *)FUN_00167eb0(&uStack_240,pcVar2,uVar45);
-              uStack_210 = puVar24[2];
+              puVar24 = (ulong *)FUN_00167eb0(&uStack_240,pcVar2,uVar46);
+              pvStack_210 = (void *)puVar24[2];
               uStack_218 = puVar24[1];
               uStack_220 = *puVar24;
               puVar24[1] = 0;
@@ -1585,23 +1596,23 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 FUN_00166120(pcStack_250);
               }
               if ((abStack_330[0] & 1) != 0) {
-                FUN_00166120(uStack_320);
+                FUN_00166120(pvStack_320);
               }
               if ((uStack_240 & 1) != 0) {
                 FUN_00166120(puStack_230);
               }
                     /* try { // try from 004aa358 to 004aa35f has its CatchHandler @ 004ac80c */
-              plVar30 = (long *)FUN_00164060(0x188);
+              plVar31 = (long *)FUN_00164060(0x188);
               puVar11 = puStack_100;
-              puVar34 = puStack_108;
+              puVar35 = puStack_108;
                     /* try { // try from 004aa36c to 004aa373 has its CatchHandler @ 004ac870 */
               func_0x00167d50(&uStack_530,puStack_108[uVar27]);
-              uStack_f0._0_4_ = fVar49 + (float)uStack_530;
-              uStack_f0._4_4_ = fVar52 + uStack_530._4_4_;
-              lVar37 = puStack_108[uVar27];
-              uStack_5b8 = *(ulong *)(lVar37 + 0x90);
-              lStack_340 = *(long *)(lVar37 + 0x110);
-              piStack_338 = *(int **)(lVar37 + 0x118);
+              uStack_f0._0_4_ = fVar50 + (float)uStack_530;
+              uStack_f0._4_4_ = fVar53 + uStack_530._4_4_;
+              lVar38 = puStack_108[uVar27];
+              uStack_5b8 = *(ulong *)(lVar38 + 0x90);
+              lStack_340 = *(long *)(lVar38 + 0x110);
+              piStack_338 = *(int **)(lVar38 + 0x118);
               bStack_260 = (byte)lStack_340;
               uStack_25f = (undefined1)((ulong)lStack_340 >> 8);
               uStack_25e = (undefined1)((ulong)lStack_340 >> 0x10);
@@ -1620,12 +1631,12 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               piStack_238 = (int *)0x0;
               puStack_230 = (undefined4 *)0x0;
               uStack_240 = CONCAT71(uStack_240._1_7_,0xc);
-              *(undefined2 *)(puVar42 + 1) = 0x6c61;
-              *puVar42 = 0x6d726f6e;
+              *(undefined2 *)(puVar43 + 1) = 0x6c61;
+              *puVar43 = 0x6d726f6e;
               uStack_240 = uStack_240 & 0xffffffffffffff;
                     /* try { // try from 004aa400 to 004aa427 has its CatchHandler @ 004ac7e4 */
-              func_0x00169340(0,plVar30,
-                              uVar27 + uVar40 * (int)((ulong)((long)puVar11 - (long)puVar34) >> 3) +
+              func_0x00169340(0,plVar31,
+                              uVar27 + uVar41 * (int)((ulong)((long)puVar11 - (long)puVar35) >> 3) +
                               300,&uStack_f0,&uStack_5b8,&lStack_340,&uStack_220,&uStack_240,1,0);
               if ((uStack_240 & 1) != 0) {
                 FUN_00166120(puStack_230);
@@ -1633,17 +1644,17 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               FUN_00166b20(&lStack_340);
               FUN_00166b20(&bStack_260);
                     /* try { // try from 004aa448 to 004aa44f has its CatchHandler @ 004aca7c */
-              plVar31 = (long *)FUN_00164060(0x1c8);
+              plVar32 = (long *)FUN_00164060(0x1c8);
               puVar11 = puStack_100;
-              puVar34 = puStack_108;
+              puVar35 = puStack_108;
                     /* try { // try from 004aa460 to 004aa467 has its CatchHandler @ 004ac864 */
               func_0x00167d50(&uStack_530,puStack_120[uVar27]);
-              fStack_348 = fVar49 + (float)uStack_530;
-              fStack_344 = fVar52 + uStack_530._4_4_;
-              lVar37 = puStack_120[uVar27];
-              uStack_350 = *(undefined8 *)(lVar37 + 0x90);
-              lStack_360 = *(long *)(lVar37 + 0x100);
-              piStack_358 = *(int **)(lVar37 + 0x108);
+              fStack_348 = fVar50 + (float)uStack_530;
+              fStack_344 = fVar53 + uStack_530._4_4_;
+              lVar38 = puStack_120[uVar27];
+              uStack_350 = *(undefined8 *)(lVar38 + 0x90);
+              lStack_360 = *(long *)(lVar38 + 0x100);
+              piStack_358 = *(int **)(lVar38 + 0x108);
               uStack_f0._0_4_ = (float)lStack_360;
               uStack_f0._4_4_ = (float)((ulong)lStack_360 >> 0x20);
               uStack_e8 = SUB87(piStack_358,0);
@@ -1669,115 +1680,115 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               uStack_258 = 100;
               uStack_257 = 0;
                     /* try { // try from 004aa520 to 004aa53f has its CatchHandler @ 004ac7b4 */
-              func_0x00170660(plVar31,uVar27 + uVar40 * (int)((ulong)((long)puVar11 - (long)puVar34)
+              func_0x00170660(plVar32,uVar27 + uVar41 * (int)((ulong)((long)puVar11 - (long)puVar35)
                                                              >> 3) + 600,&fStack_348,&uStack_350,
                               &lStack_360,0,abStack_378,&bStack_260);
               if ((bStack_260 & 1) != 0) {
                 FUN_00166120(pcStack_250);
               }
               if ((abStack_378[0] & 1) != 0) {
-                FUN_00166120(uStack_368);
+                FUN_00166120(pvStack_368);
               }
               if ((uStack_240 & 1) != 0) {
                 FUN_00166120(puStack_230);
               }
               FUN_00166b20(&lStack_360);
               FUN_00166b20(&uStack_f0);
-              *(ulong *)((long)plVar31 + 0x16c) =
+              *(ulong *)((long)plVar32 + 0x16c) =
                    CONCAT44((float)((ulong)*(undefined8 *)(puStack_120[uVar27] + 0x90) >> 0x20) *
                             0.675,(float)*(undefined8 *)(puStack_120[uVar27] + 0x90) * 0.525);
                     /* try { // try from 004aa5a0 to 004aa5a7 has its CatchHandler @ 004ac838 */
-              func_0x0016e760(plVar31);
-              lVar37 = puStack_120[uVar27];
-              *(undefined8 *)((long)plVar31 + 0x15c) = *(undefined8 *)(lVar37 + 0x15c);
-              *(undefined8 *)((long)plVar31 + 0x164) = *(undefined8 *)(lVar37 + 0x164);
-              *(undefined4 *)(plVar31 + 0x32) = *(undefined4 *)(lVar37 + 400);
+              func_0x0016e760(plVar32);
+              lVar38 = puStack_120[uVar27];
+              *(undefined8 *)((long)plVar32 + 0x15c) = *(undefined8 *)(lVar38 + 0x15c);
+              *(undefined8 *)((long)plVar32 + 0x164) = *(undefined8 *)(lVar38 + 0x164);
+              *(undefined4 *)(plVar32 + 0x32) = *(undefined4 *)(lVar38 + 400);
                     /* try { // try from 004aa5ec to 004aa62f has its CatchHandler @ 004aca7c */
-              (**(code **)(*plVar30 + 0x40))(plVar30,*(undefined4 *)(puStack_108[uVar27] + 0x80));
-              (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(puStack_120[uVar27] + 0x80));
-              func_0x0016b660(*puVar46,plVar30,3);
-              func_0x0016b660(*puVar46,plVar31,1);
+              (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(puStack_108[uVar27] + 0x80));
+              (**(code **)(*plVar32 + 0x40))(plVar32,*(undefined4 *)(puStack_120[uVar27] + 0x80));
+              func_0x0016b660(*puVar47,plVar31,3);
+              func_0x0016b660(*puVar47,plVar32,1);
                     /* try { // try from 004aa630 to 004aa63b has its CatchHandler @ 004ac834 */
-              func_0x00169f20(&uStack_240,plVar30);
-              fVar53 = *(float *)(plVar30 + 0x12);
-              fVar51 = (float)uStack_240;
+              func_0x00169f20(&uStack_240,plVar31);
+              fVar54 = *(float *)(plVar31 + 0x12);
+              fVar52 = (float)uStack_240;
                     /* try { // try from 004aa644 to 004aa647 has its CatchHandler @ 004ac7b0 */
               uVar19 = func_0x0016d400();
               uStack_388 = 0;
-              uStack_380 = 0;
+              pvStack_380 = (void *)0x0;
               abStack_390[0] = 0xc;
               *(undefined2 *)((undefined4 *)((ulong)abStack_390 | 1) + 1) = 0x6c61;
               *(undefined4 *)((ulong)abStack_390 | 1) = 0x6d726f6e;
               uStack_389 = 0;
                     /* try { // try from 004aa670 to 004aa677 has its CatchHandler @ 004ac820 */
-              lVar37 = func_0x001694e0(uVar19,abStack_390);
-              fVar50 = *(float *)(lVar37 + 0x94);
+              lVar38 = func_0x001694e0(uVar19,abStack_390);
+              fVar51 = *(float *)(lVar38 + 0x94);
               if ((abStack_390[0] & 1) != 0) {
-                FUN_00166120(uStack_380);
+                FUN_00166120(pvStack_380);
               }
-              fVar47 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
-              fVar48 = fVar47;
-              if (1.0 < fVar47) {
-                fVar48 = 1.0;
+              fVar48 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
+              fVar49 = fVar48;
+              if (1.0 < fVar48) {
+                fVar49 = 1.0;
               }
-              fVar48 = fVar48 + 1.0;
-              fVar54 = fStack_694;
+              fVar49 = fVar49 + 1.0;
+              fVar55 = fStack_694;
               if (Walaber::TextManager::mCurrentLanguage != 9) {
-                fVar54 = *(float *)(&DAT_00639370 +
+                fVar55 = *(float *)(&DAT_00639370 +
                                    (ulong)(Walaber::TextManager::mCurrentLanguage == 0xd) * 4);
               }
-              if (fVar47 <= 0.0) {
-                fVar48 = 1.0;
+              if (fVar48 <= 0.0) {
+                fVar49 = 1.0;
               }
                     /* try { // try from 004aa6e4 to 004aa6e7 has its CatchHandler @ 004ac7ac */
               uVar19 = func_0x0016d400();
               uStack_3a0 = 0;
-              uStack_398 = 0;
+              pvStack_398 = (void *)0x0;
               abStack_3a8[0] = 0xc;
               *(undefined2 *)((undefined4 *)((ulong)abStack_3a8 | 1) + 1) = 0x6c61;
               *(undefined4 *)((ulong)abStack_3a8 | 1) = 0x6d726f6e;
               uStack_3a1 = 0;
                     /* try { // try from 004aa710 to 004aa73b has its CatchHandler @ 004aca0c */
               uVar19 = func_0x001694e0(uVar19,abStack_3a8);
-              fVar48 = (21.0 / fVar50) * fVar54 * fVar48;
-              func_0x0016b770(&uStack_240,fVar48,fVar53 * fVar51,uVar19,&uStack_220);
+              fVar49 = (21.0 / fVar51) * fVar55 * fVar49;
+              func_0x0016b770(&uStack_240,fVar49,fVar54 * fVar52,uVar19,&uStack_220);
               if ((abStack_3a8[0] & 1) != 0) {
-                FUN_00166120(uStack_398);
+                FUN_00166120(pvStack_398);
               }
                     /* try { // try from 004aa74c to 004aa773 has its CatchHandler @ 004aca84 */
-              func_0x001678a0(plVar30,&uStack_240);
-              *(float *)((long)plVar30 + 0x15c) = fVar48;
-              *(float *)(plVar30 + 0x2b) = fVar48;
-              func_0x0016a9a0(plVar30);
+              func_0x001678a0(plVar31,&uStack_240);
+              *(float *)((long)plVar31 + 0x15c) = fVar49;
+              *(float *)(plVar31 + 0x2b) = fVar49;
+              func_0x0016a9a0(plVar31);
               uVar13 = func_0x0016a720(auStack_268,0);
-              uStack_f0._0_4_ = SUB84(plVar31,0);
-              uStack_f0._4_4_ = (float)((ulong)plVar31 >> 0x20);
+              uStack_f0._0_4_ = SUB84(plVar32,0);
+              uStack_f0._4_4_ = (float)((ulong)plVar32 >> 0x20);
               bStack_260 = (byte)&uStack_f0;
               uStack_25f = (undefined1)((ulong)&uStack_f0 >> 8);
               uStack_25e = (undefined1)((ulong)&uStack_f0 >> 0x10);
               uStack_25d = (undefined1)((ulong)&uStack_f0 >> 0x18);
               fStack_25c = (float)((ulong)&uStack_f0 >> 0x20);
                     /* try { // try from 004aa784 to 004aa79f has its CatchHandler @ 004ac81c */
-              lVar37 = func_0x00170ea0(param_1 + 0xc0,&uStack_f0,&DAT_00639634,&bStack_260,
+              lVar38 = func_0x00170ea0((long)p0 + 0xc0,&uStack_f0,&DAT_00639634,&bStack_260,
                                        &uStack_530);
-              *(undefined4 *)(lVar37 + 0x28) = uVar13;
+              *(undefined4 *)(lVar38 + 0x28) = uVar13;
                     /* try { // try from 004aa7a4 to 004aa7af has its CatchHandler @ 004aca84 */
-              uVar45 = func_0x00166c10(auStack_268,3);
-              if ((uVar45 & 1) == 0) {
+              uVar46 = func_0x00166c10(auStack_268,3);
+              if ((uVar46 & 1) == 0) {
                 bVar10 = false;
               }
               else {
                     /* try { // try from 004aa7b4 to 004aa7bb has its CatchHandler @ 004aca08 */
-                plVar30 = (long *)FUN_00164060(0x188);
+                plVar31 = (long *)FUN_00164060(0x188);
                 puVar11 = puStack_100;
-                puVar34 = puStack_108;
+                puVar35 = puStack_108;
                     /* try { // try from 004aa7cc to 004aa7d3 has its CatchHandler @ 004ac730 */
                 func_0x00167d50(&fStack_5d0,puStack_138[uVar27]);
-                uStack_5b8 = CONCAT44(fVar52 + fStack_5cc,fVar49 + fStack_5d0);
-                lVar37 = puStack_138[uVar27];
-                uStack_3b0 = *(undefined8 *)(lVar37 + 0x90);
-                uStack_530 = *(byte **)(lVar37 + 0x110);
-                piStack_528 = *(int **)(lVar37 + 0x118);
+                uStack_5b8 = CONCAT44(fVar53 + fStack_5cc,fVar50 + fStack_5d0);
+                lVar38 = puStack_138[uVar27];
+                uStack_3b0 = *(undefined8 *)(lVar38 + 0x90);
+                uStack_530 = *(byte **)(lVar38 + 0x110);
+                piStack_528 = *(int **)(lVar38 + 0x118);
                 if (uStack_530 == (byte *)0x0) {
                   pbStack_3c0 = (byte *)0x0;
                 }
@@ -1796,8 +1807,8 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 *(undefined4 *)((ulong)&uStack_f0 | 1) = 0x6d726f6e;
                 uStack_f0._4_4_ = (float)((uint)uStack_f0._4_4_ & 0xffffff);
                     /* try { // try from 004aa87c to 004aa8a3 has its CatchHandler @ 004ac738 */
-                func_0x00169340(0,plVar30,
-                                uVar27 + uVar40 * (int)((ulong)((long)puVar11 - (long)puVar34) >> 3)
+                func_0x00169340(0,plVar31,
+                                uVar27 + uVar41 * (int)((ulong)((long)puVar11 - (long)puVar35) >> 3)
                                 + 0x44c,&uStack_5b8,&uStack_3b0,&pbStack_3c0,&bStack_260,&uStack_f0,
                                 1,0);
                 if (((uint)(float)uStack_f0 & 1) != 0) {
@@ -1809,8 +1820,8 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 FUN_00166b20(&pbStack_3c0);
                 FUN_00166b20(&uStack_530);
                     /* try { // try from 004aa8ec to 004aa903 has its CatchHandler @ 004aca08 */
-                (**(code **)(*plVar30 + 0x40))(plVar30,*(int *)(puStack_138[uVar27] + 0x80) + 1);
-                func_0x0016b660(*puVar46,plVar30,3);
+                (**(code **)(*plVar31 + 0x40))(plVar31,*(int *)(puStack_138[uVar27] + 0x80) + 1);
+                func_0x0016b660(*puVar47,plVar31,3);
               }
                     /* try { // try from 004aa904 to 004aa90f has its CatchHandler @ 004aca84 */
               uVar14 = func_0x00166c10(auStack_268,4);
@@ -1830,88 +1841,88 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                                              CONCAT12(uStack_25e,CONCAT11(uStack_25f,bStack_260))));
               pcStack_1b0 = pcStack_250;
                     /* try { // try from 004aa964 to 004aa96b has its CatchHandler @ 004aca84 */
-              uVar45 = func_0x001651e0(auStack_268);
+              uVar46 = func_0x001651e0(auStack_268);
               if ((uStack_240 & 1) != 0) {
                 FUN_00166120(puStack_230);
               }
               if ((uStack_220 & 1) != 0) {
-                FUN_00166120(uStack_210);
+                FUN_00166120(pvStack_210);
               }
               if (((uint)fStack_2c0 & 1) != 0) {
                 FUN_00166120(pcStack_2b0);
               }
-              uVar43 = uVar43 & uVar14;
+              uVar44 = uVar44 & uVar14;
               func_0x00164ba0(&uStack_200);
               if ((uStack_1e0 & 1) != 0) {
                 FUN_00166120(puStack_1d0);
               }
               func_0x00169840(&uStack_5a0);
-            } while (((uVar45 & 1) != 0) &&
+            } while (((uVar46 & 1) != 0) &&
                     (uVar27 = uVar27 + 1,
                     uVar27 < (ulong)((long)puStack_100 - (long)puStack_108 >> 3)));
           }
           if ((long)puStack_148 - (long)puStack_150 != 0) {
             uVar27 = 0;
-            uVar45 = (long)puStack_148 - (long)puStack_150 >> 3;
+            uVar46 = (long)puStack_148 - (long)puStack_150 >> 3;
             do {
                     /* try { // try from 004aa9f8 to 004aa9ff has its CatchHandler @ 004acb78 */
-              puVar34 = puStack_150;
-              plVar30 = (long *)FUN_00164060(0x188);
+              puVar35 = puStack_150;
+              plVar31 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004aaa08 to 004aaa0f has its CatchHandler @ 004aca6c */
-              func_0x00167d50(&uStack_200,puVar34[uVar27]);
-              uStack_1e0 = CONCAT44(fVar52 + uStack_200._4_4_,fVar49 + (float)uStack_200);
-              lVar37 = puStack_150[uVar27];
-              uStack_220 = *(ulong *)(lVar37 + 0x90);
-              auStack_3e8[3] = *(long *)(lVar37 + 0x110);
-              piStack_3c8 = *(int **)(lVar37 + 0x118);
-              fStack_2c0 = (float)auStack_3e8[3];
-              fStack_2bc = (float)(auStack_3e8[3] >> 0x20);
+              func_0x00167d50(&uStack_200,puVar35[uVar27]);
+              uStack_1e0 = CONCAT44(fVar53 + uStack_200._4_4_,fVar50 + (float)uStack_200);
+              lVar38 = puStack_150[uVar27];
+              uStack_220 = *(ulong *)(lVar38 + 0x90);
+              lStack_3d0 = *(long *)(lVar38 + 0x110);
+              piStack_3c8 = *(int **)(lVar38 + 0x118);
+              fStack_2c0 = (float)lStack_3d0;
+              fStack_2bc = (float)((ulong)lStack_3d0 >> 0x20);
               uStack_2b8 = SUB81(piStack_3c8,0);
               uStack_2b7 = (undefined1)((ulong)piStack_3c8 >> 8);
               uStack_2b6 = (undefined1)((ulong)piStack_3c8 >> 0x10);
               uStack_2b5 = (undefined5)((ulong)piStack_3c8 >> 0x18);
-              if (auStack_3e8[3] == 0) {
-                auStack_3e8[3] = 0;
+              if (lStack_3d0 == 0) {
+                lStack_3d0 = 0;
               }
               else {
                 *piStack_3c8 = *piStack_3c8 + 2;
               }
                     /* try { // try from 004aaa74 to 004aaa87 has its CatchHandler @ 004aca54 */
-              func_0x0016aef0(plVar30,uVar27 + uVar40 * (int)uVar45 + 500,&uStack_1e0,&uStack_220,
-                              auStack_3e8 + 3);
-              FUN_00166b20(auStack_3e8 + 3);
+              func_0x0016aef0(plVar31,uVar27 + uVar41 * (int)uVar46 + 500,&uStack_1e0,&uStack_220,
+                              &lStack_3d0);
+              FUN_00166b20(&lStack_3d0);
               FUN_00166b20(&fStack_2c0);
-              lVar37 = puStack_150[uVar27];
-              *(undefined4 *)(plVar30 + 0x28) = *(undefined4 *)(lVar37 + 0x140);
+              lVar38 = puStack_150[uVar27];
+              *(undefined4 *)(plVar31 + 0x28) = *(undefined4 *)(lVar38 + 0x140);
                     /* try { // try from 004aaab4 to 004aaacb has its CatchHandler @ 004acb78 */
-              (**(code **)(*plVar30 + 0x40))(plVar30,*(undefined4 *)(lVar37 + 0x80));
-              func_0x0016b660(*puVar46,plVar30,3);
+              (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(lVar38 + 0x80));
+              func_0x0016b660(*puVar47,plVar31,3);
               uVar27 = uVar27 + 1;
-              uVar45 = (long)puStack_148 - (long)puStack_150 >> 3;
-            } while (uVar27 < uVar45);
+              uVar46 = (long)puStack_148 - (long)puStack_150 >> 3;
+            } while (uVar27 < uVar46);
           }
           pcVar2 = "CHALLENGE_COMPLETE";
           if (!bVar10) {
             pcVar2 = "BONUS_LEVEL_LOCKED";
           }
-          uVar35 = *(undefined8 *)(pcVar2 + 8);
+          uVar36 = *(undefined8 *)(pcVar2 + 8);
           uVar19 = *(undefined8 *)pcVar2;
           auStack_3e8[0] = 0x24;
           auStack_3e8[1] = 0;
           *(undefined2 *)(puVar25 + 2) = *(undefined2 *)(pcVar2 + 0x10);
-          puVar25[1] = uVar35;
+          puVar25[1] = uVar36;
           *puVar25 = uVar19;
-          auStack_3e8[2] = 0;
+          pvStack_3d8 = (void *)0x0;
                     /* try { // try from 004aab30 to 004aab3b has its CatchHandler @ 004ac630 */
           func_0x0016e7e0(&uStack_1e0,auStack_3e8);
           if ((auStack_3e8[0] & 1) != 0) {
-            FUN_00166120(auStack_3e8[2]);
+            FUN_00166120(pvStack_3d8);
           }
                     /* try { // try from 004aab50 to 004aab57 has its CatchHandler @ 004ac644 */
-          plVar30 = (long *)FUN_00164060(0x188);
+          plVar31 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004aab5c to 004aab67 has its CatchHandler @ 004ac624 */
           func_0x00167d50(&uStack_240,lVar17);
-          uStack_220 = CONCAT44(fVar52 + uStack_240._4_4_,fVar49 + (float)uStack_240);
+          uStack_220 = CONCAT44(fVar53 + uStack_240._4_4_,fVar50 + (float)uStack_240);
           uVar19 = *(undefined8 *)(lVar17 + 0x90);
           bStack_260 = (byte)uVar19;
           uStack_25f = (undefined1)((ulong)uVar19 >> 8);
@@ -1931,13 +1942,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           uStack_2b6 = 0;
           uStack_2b7 = 0;
           uStack_2b8 = 0;
-          pcStack_2b0 = (char *)0x0;
+          pcStack_2b0 = (void *)0x0;
           fStack_2c0 = (float)CONCAT31(fStack_2c0._1_3_,0xc);
-          builtin_strncpy(pcVar41,"normal",6);
+          builtin_strncpy(pcVar42,"normal",6);
           fStack_2bc = (float)((uint)fStack_2bc & 0xffffff);
                     /* try { // try from 004aabe8 to 004aac13 has its CatchHandler @ 004ac5fc */
           piStack_1f8 = piStack_3f0;
-          func_0x00169340(0,plVar30,uVar40 + 400,&uStack_220,&bStack_260,&uStack_3f8,&uStack_1e0,
+          func_0x00169340(0,plVar31,uVar41 + 400,&uStack_220,&bStack_260,&uStack_3f8,&uStack_1e0,
                           &fStack_2c0,1,1);
           if (((uint)fStack_2c0 & 1) != 0) {
             FUN_00166120(pcStack_2b0);
@@ -1945,56 +1956,56 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           FUN_00166b20(&uStack_3f8);
           FUN_00166b20(&uStack_200);
                     /* try { // try from 004aac34 to 004aac3f has its CatchHandler @ 004ac5f8 */
-          func_0x00169f20(&fStack_2c0,plVar30);
-          fVar51 = fStack_2c0;
-          fVar50 = *(float *)(plVar30 + 0x12);
+          func_0x00169f20(&fStack_2c0,plVar31);
+          fVar52 = fStack_2c0;
+          fVar51 = *(float *)(plVar31 + 0x12);
                     /* try { // try from 004aac48 to 004aac4b has its CatchHandler @ 004ac5f4 */
           uVar19 = func_0x0016d400();
           uStack_408 = 0;
-          uStack_400 = 0;
+          pvStack_400 = (void *)0x0;
           abStack_410[0] = 0xc;
           *(undefined2 *)((undefined4 *)((ulong)abStack_410 | 1) + 1) = 0x6c61;
           *(undefined4 *)((ulong)abStack_410 | 1) = 0x6d726f6e;
           uStack_409 = 0;
                     /* try { // try from 004aac74 to 004aac7b has its CatchHandler @ 004ac5e0 */
-          lVar37 = func_0x001694e0(uVar19,abStack_410);
-          fVar53 = *(float *)(lVar37 + 0x94);
+          lVar38 = func_0x001694e0(uVar19,abStack_410);
+          fVar54 = *(float *)(lVar38 + 0x94);
           if ((abStack_410[0] & 1) != 0) {
-            FUN_00166120(uStack_400);
+            FUN_00166120(pvStack_400);
           }
-          fVar53 = 21.0 / fVar53;
+          fVar54 = 21.0 / fVar54;
           if (Walaber::TextManager::mCurrentLanguage != 0xd) {
-            fVar53 = fVar53 * 0.7;
+            fVar54 = fVar54 * 0.7;
           }
-          fVar47 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
-          fVar48 = fVar47;
-          if (1.0 < fVar47) {
-            fVar48 = 1.0;
+          fVar48 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
+          fVar49 = fVar48;
+          if (1.0 < fVar48) {
+            fVar49 = 1.0;
           }
-          fVar48 = fVar48 + 1.0;
-          if (fVar47 <= 0.0) {
-            fVar48 = 1.0;
+          fVar49 = fVar49 + 1.0;
+          if (fVar48 <= 0.0) {
+            fVar49 = 1.0;
           }
                     /* try { // try from 004aace0 to 004aace3 has its CatchHandler @ 004ac5dc */
           uVar19 = func_0x0016d400();
           uStack_420 = 0;
-          uStack_418 = 0;
+          pvStack_418 = (void *)0x0;
           abStack_428[0] = 0xc;
           *(undefined2 *)((undefined4 *)((ulong)abStack_428 | 1) + 1) = 0x6c61;
           *(undefined4 *)((ulong)abStack_428 | 1) = 0x6d726f6e;
           uStack_421 = 0;
                     /* try { // try from 004aad0c to 004aad2b has its CatchHandler @ 004ac700 */
           uVar19 = func_0x001694e0(uVar19,abStack_428);
-          fVar53 = fVar53 * fVar48;
-          func_0x0016b770(&uStack_200,fVar53,fVar50 * fVar51,uVar19,&uStack_1e0);
+          fVar54 = fVar54 * fVar49;
+          func_0x0016b770(&uStack_200,fVar54,fVar51 * fVar52,uVar19,&uStack_1e0);
           if ((abStack_428[0] & 1) != 0) {
-            FUN_00166120(uStack_418);
+            FUN_00166120(pvStack_418);
           }
                     /* try { // try from 004aad3c to 004aad57 has its CatchHandler @ 004ac714 */
-          func_0x001678a0(plVar30,&uStack_200);
-          *(float *)((long)plVar30 + 0x15c) = fVar53;
-          *(float *)(plVar30 + 0x2b) = fVar53;
-          func_0x0016a9a0(plVar30);
+          func_0x001678a0(plVar31,&uStack_200);
+          *(float *)((long)plVar31 + 0x15c) = fVar54;
+          *(float *)(plVar31 + 0x2b) = fVar54;
+          func_0x0016a9a0(plVar31);
                     /* try { // try from 004aad58 to 004aad63 has its CatchHandler @ 004ac5d8 */
           func_0x001636d0(&uStack_220,uVar1);
           if (!bVar10) {
@@ -2005,10 +2016,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           pbVar26 = (byte *)FUN_00164060(0x1c8);
                     /* try { // try from 004aad8c to 004aad97 has its CatchHandler @ 004ac5c8 */
           func_0x00167d50(&bStack_260,lVar18);
-          fStack_430 = fVar49 + (float)CONCAT13(uStack_25d,
+          fStack_430 = fVar50 + (float)CONCAT13(uStack_25d,
                                                 CONCAT12(uStack_25e,CONCAT11(uStack_25f,bStack_260))
                                                );
-          fStack_42c = fVar52 + fStack_25c;
+          fStack_42c = fVar53 + fStack_25c;
           uStack_438 = *(undefined8 *)(lVar18 + 0x90);
           uStack_240 = *(long *)(lVar18 + 0x100);
           piStack_440 = *(int **)(lVar18 + 0x108);
@@ -2030,13 +2041,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           uStack_2b8 = 100;
           uStack_2b7 = 0;
                     /* try { // try from 004aae2c to 004aae4b has its CatchHandler @ 004ac588 */
-          func_0x00170660(pbVar26,uVar40 + 700,&fStack_430,&uStack_438,&lStack_448,0,abStack_460,
+          func_0x00170660(pbVar26,uVar41 + 700,&fStack_430,&uStack_438,&lStack_448,0,abStack_460,
                           &fStack_2c0);
           if (((uint)fStack_2c0 & 1) != 0) {
             FUN_00166120(pcStack_2b0);
           }
           if ((abStack_460[0] & 1) != 0) {
-            FUN_00166120(uStack_450);
+            FUN_00166120(pvStack_450);
           }
           FUN_00166b20(&lStack_448);
           FUN_00166b20(&uStack_240);
@@ -2048,13 +2059,13 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
           *(undefined8 *)(pbVar26 + 0x15c) = *(undefined8 *)(lVar18 + 0x15c);
           *(undefined8 *)(pbVar26 + 0x164) = *(undefined8 *)(lVar18 + 0x164);
           *(undefined4 *)(pbVar26 + 400) = *(undefined4 *)(lVar18 + 400);
-          if (uVar43 == 0) {
+          if (uVar44 == 0) {
                     /* try { // try from 004aaec4 to 004aaecb has its CatchHandler @ 004ac4f4 */
-            plVar31 = (long *)FUN_00164060(0x188);
+            plVar32 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004aaed0 to 004aaedf has its CatchHandler @ 004ac4e8 */
             func_0x00167d50(&bStack_260,lVar20);
-            uStack_240 = CONCAT44(fVar52 + fStack_25c,
-                                  fVar49 + (float)CONCAT13(uStack_25d,
+            uStack_240 = CONCAT44(fVar53 + fStack_25c,
+                                  fVar50 + (float)CONCAT13(uStack_25d,
                                                            CONCAT12(uStack_25e,
                                                                     CONCAT11(uStack_25f,bStack_260))
                                                           ));
@@ -2075,15 +2086,15 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               *piStack_468 = *piStack_468 + 2;
             }
                     /* try { // try from 004aaf3c to 004aaf4f has its CatchHandler @ 004ac4d0 */
-            func_0x0016aef0(plVar31,uVar40 + 800,&uStack_240,&uStack_f0,&lStack_470);
+            func_0x0016aef0(plVar32,uVar41 + 800,&uStack_240,&uStack_f0,&lStack_470);
             FUN_00166b20(&lStack_470);
             FUN_00166b20(&fStack_2c0);
                     /* try { // try from 004aaf60 to 004aaf67 has its CatchHandler @ 004ac4cc */
-            plVar32 = (long *)FUN_00164060(0x188);
+            plVar33 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004aaf6c to 004aaf77 has its CatchHandler @ 004ac4c8 */
             func_0x00167d50(&uStack_530,lVar21);
-            uStack_f0._0_4_ = fVar49 + (float)uStack_530;
-            uStack_f0._4_4_ = fVar52 + uStack_530._4_4_;
+            uStack_f0._0_4_ = fVar50 + (float)uStack_530;
+            uStack_f0._4_4_ = fVar53 + uStack_530._4_4_;
             uStack_5a0 = *(ulong *)(lVar21 + 0x90);
             lStack_480 = *(long *)(lVar21 + 0x110);
             bStack_260 = (byte)lStack_480;
@@ -2107,11 +2118,11 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             piStack_238 = (int *)0x0;
             puStack_230 = (undefined4 *)0x0;
             uStack_240 = CONCAT71(uStack_240._1_7_,0xc);
-            *(undefined2 *)(puVar42 + 1) = 0x6c61;
-            *puVar42 = 0x6d726f6e;
+            *(undefined2 *)(puVar43 + 1) = 0x6c61;
+            *puVar43 = 0x6d726f6e;
             uStack_240 = uStack_240 & 0xffffffffffffff;
                     /* try { // try from 004aaffc to 004ab027 has its CatchHandler @ 004ac48c */
-            func_0x00169340(0,plVar32,uVar40 + 900,&uStack_f0,&uStack_5a0,&lStack_480,&fStack_2c0,
+            func_0x00169340(0,plVar33,uVar41 + 900,&uStack_f0,&uStack_5a0,&lStack_480,&fStack_2c0,
                             &uStack_240,1,1);
             if ((uStack_240 & 1) != 0) {
               FUN_00166120(puStack_230);
@@ -2121,15 +2132,15 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             }
             FUN_00166b20(&lStack_480);
             FUN_00166b20(&bStack_260);
-            *(undefined4 *)((long)plVar32 + 0x144) = *(undefined4 *)(lVar21 + 0x144);
+            *(undefined4 *)((long)plVar33 + 0x144) = *(undefined4 *)(lVar21 + 0x144);
                     /* try { // try from 004ab060 to 004ab067 has its CatchHandler @ 004ac724 */
-            plVar33 = (long *)FUN_00164060(0x1c8);
+            plVar34 = (long *)FUN_00164060(0x1c8);
                     /* try { // try from 004ab070 to 004ab07b has its CatchHandler @ 004ac480 */
             func_0x00167d50(&bStack_260,lVar22);
-            fStack_488 = fVar49 + (float)CONCAT13(uStack_25d,
+            fStack_488 = fVar50 + (float)CONCAT13(uStack_25d,
                                                   CONCAT12(uStack_25e,
                                                            CONCAT11(uStack_25f,bStack_260)));
-            fStack_484 = fVar52 + fStack_25c;
+            fStack_484 = fVar53 + fStack_25c;
             uStack_490 = *(undefined8 *)(lVar22 + 0x90);
             uStack_240 = *(long *)(lVar22 + 0x100);
             piStack_498 = *(int **)(lVar22 + 0x108);
@@ -2141,43 +2152,43 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               lStack_4a0 = uStack_240;
             }
             auStack_4d0[0] = 0xe;
-            auStack_4d0[2] = 0;
-            *(undefined1 *)((long)puVar39 + 6) = 0x54;
-            *(undefined2 *)(puVar39 + 1) = 0x4c41;
-            *puVar39 = 0x5f595542;
+            pvStack_4c0 = (void *)0x0;
+            *(undefined1 *)((long)puVar40 + 6) = 0x54;
+            *(undefined2 *)(puVar40 + 1) = 0x4c41;
+            *puVar40 = 0x5f595542;
             auStack_4d0[1] = 0;
                     /* try { // try from 004ab108 to 004ab113 has its CatchHandler @ 004ac458 */
             piStack_238 = piStack_498;
             func_0x0016e7e0(abStack_4b8,auStack_4d0);
             uStack_2b6 = 0;
             uStack_2b5 = 0;
-            pcStack_2b0 = (char *)0x0;
+            pcStack_2b0 = (void *)0x0;
             fStack_2c0 = 7.778109e+31;
             fStack_2bc = 7.0366745e+22;
             uStack_2b8 = 100;
             uStack_2b7 = 0;
                     /* try { // try from 004ab148 to 004ab167 has its CatchHandler @ 004ac430 */
-            func_0x00170660(plVar33,uVar40 + 1000,&fStack_488,&uStack_490,&lStack_4a0,0,abStack_4b8,
+            func_0x00170660(plVar34,uVar41 + 1000,&fStack_488,&uStack_490,&lStack_4a0,0,abStack_4b8,
                             &fStack_2c0);
             if (((uint)fStack_2c0 & 1) != 0) {
               FUN_00166120(pcStack_2b0);
             }
             if ((abStack_4b8[0] & 1) != 0) {
-              FUN_00166120(uStack_4a8);
+              FUN_00166120(pvStack_4a8);
             }
             if ((auStack_4d0[0] & 1) != 0) {
-              FUN_00166120(auStack_4d0[2]);
+              FUN_00166120(pvStack_4c0);
             }
             FUN_00166b20(&lStack_4a0);
             FUN_00166b20(&uStack_240);
-            *(ulong *)((long)plVar33 + 0x16c) =
+            *(ulong *)((long)plVar34 + 0x16c) =
                  CONCAT44((float)((ulong)*(undefined8 *)(lVar22 + 0x90) >> 0x20) * 0.525,
                           (float)*(undefined8 *)(lVar22 + 0x90) * 0.525);
                     /* try { // try from 004ab1bc to 004ab1c3 has its CatchHandler @ 004ac42c */
-            func_0x0016e760(plVar33);
-            *(undefined8 *)((long)plVar33 + 0x15c) = *(undefined8 *)(lVar22 + 0x15c);
-            *(undefined8 *)((long)plVar33 + 0x164) = *(undefined8 *)(lVar22 + 0x164);
-            *(undefined4 *)(plVar33 + 0x32) = *(undefined4 *)(lVar22 + 400);
+            func_0x0016e760(plVar34);
+            *(undefined8 *)((long)plVar34 + 0x15c) = *(undefined8 *)(lVar22 + 0x15c);
+            *(undefined8 *)((long)plVar34 + 0x164) = *(undefined8 *)(lVar22 + 0x164);
+            *(undefined4 *)(plVar34 + 0x32) = *(undefined4 *)(lVar22 + 400);
                     /* try { // try from 004ab1e8 to 004ab1eb has its CatchHandler @ 004ac428 */
             uVar19 = FUN_001739b0();
             uStack_2b8 = 0;
@@ -2214,9 +2225,9 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             if (uStack_240 != 0) {
               *piStack_238 = *piStack_238 + 1;
             }
-            func_0x00170aa0(plVar33 + 0x22,&lStack_4e0);
+            func_0x00170aa0(plVar34 + 0x22,&lStack_4e0);
                     /* try { // try from 004ab288 to 004ab28f has its CatchHandler @ 004ac3f4 */
-            func_0x001655e0(plVar33);
+            func_0x001655e0(plVar34);
             FUN_00166b20(&lStack_4e0);
             FUN_00166b20(&uStack_240);
             FUN_0016bb90(&uStack_4f0);
@@ -2225,23 +2236,23 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               FUN_00166120(pcStack_2b0);
             }
                     /* try { // try from 004ab2cc to 004ab32f has its CatchHandler @ 004ac724 */
-            (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(lVar20 + 0x80));
-            (**(code **)(*plVar32 + 0x40))(plVar32,*(undefined4 *)(lVar21 + 0x80));
-            (**(code **)(*plVar33 + 0x40))(plVar33,*(undefined4 *)(lVar22 + 0x80));
-            func_0x0016b660(*puVar46,plVar31,2);
-            func_0x0016b660(*puVar46,plVar32,2);
-            func_0x0016b660(*puVar46,plVar33,1);
+            (**(code **)(*plVar32 + 0x40))(plVar32,*(undefined4 *)(lVar20 + 0x80));
+            (**(code **)(*plVar33 + 0x40))(plVar33,*(undefined4 *)(lVar21 + 0x80));
+            (**(code **)(*plVar34 + 0x40))(plVar34,*(undefined4 *)(lVar22 + 0x80));
+            func_0x0016b660(*puVar47,plVar32,2);
+            func_0x0016b660(*puVar47,plVar33,2);
+            func_0x0016b660(*puVar47,plVar34,1);
             if ((long)puStack_100 - (long)puStack_108 != 0) {
               uVar27 = 0;
-              uVar45 = (long)puStack_100 - (long)puStack_108 >> 3;
+              uVar46 = (long)puStack_100 - (long)puStack_108 >> 3;
               do {
                     /* try { // try from 004ab350 to 004ab363 has its CatchHandler @ 004aca20 */
-                plVar31 = (long *)func_0x001692e0(*puVar46,(int)uVar27 + uVar40 * (int)uVar45 + 600)
+                plVar32 = (long *)func_0x001692e0(*puVar47,(int)uVar27 + uVar41 * (int)uVar46 + 600)
                 ;
-                (**(code **)(*plVar31 + 0x60))(plVar31,0);
+                (**(code **)(*plVar32 + 0x60))(plVar32,0);
                 uVar27 = uVar27 + 1;
-                uVar45 = (long)puStack_100 - (long)puStack_108 >> 3;
-              } while (uVar27 < uVar45);
+                uVar46 = (long)puStack_100 - (long)puStack_108 >> 3;
+              } while (uVar27 < uVar46);
             }
                     /* try { // try from 004ab384 to 004ab38f has its CatchHandler @ 004ac724 */
             (**(code **)(*(long *)pbVar26 + 0x60))(pbVar26,0);
@@ -2252,7 +2263,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             bStack_260 = 2;
             uStack_25f = 0x73;
             piStack_528 = (int *)0x0;
-            uStack_520 = 0;
+            pvStack_520 = (void *)0x0;
             *(undefined1 *)((undefined4 *)((ulong)&uStack_530 | 1) + 1) = 0x45;
             *(undefined4 *)((ulong)&uStack_530 | 1) = 0x4d414e5f;
             uStack_258 = 0;
@@ -2270,7 +2281,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             }
                     /* try { // try from 004ab400 to 004ab40b has its CatchHandler @ 004ac3cc */
             puVar24 = (ulong *)FUN_00164fb0(&uStack_530,0,pcVar2,piVar3);
-            uStack_500 = puVar24[2];
+            pvStack_500 = (void *)puVar24[2];
             uStack_508 = puVar24[1];
             uStack_510 = *puVar24;
             puVar24[1] = 0;
@@ -2287,10 +2298,10 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               FUN_00166120(pcStack_e0);
             }
             if ((uStack_510 & 1) != 0) {
-              FUN_00166120(uStack_500);
+              FUN_00166120(pvStack_500);
             }
             if (((ulong)uStack_530 & 1) != 0) {
-              FUN_00166120(uStack_520);
+              FUN_00166120(pvStack_520);
             }
             if ((bStack_260 & 1) != 0) {
               FUN_00166120(pcStack_250);
@@ -2298,7 +2309,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             auStack_548[0] = 0x26;
             auStack_548[1] = 0;
             builtin_strncpy((char *)((ulong)auStack_548 | 1),"PURCHASE_CHALLENGES",0x13);
-            auStack_548[2] = 0;
+            pvStack_538 = (void *)0x0;
                     /* try { // try from 004ab4d4 to 004ab4df has its CatchHandler @ 004ac378 */
             func_0x0016e7e0(&bStack_260,auStack_548);
                     /* try { // try from 004ab4e0 to 004ab4ef has its CatchHandler @ 004ac360 */
@@ -2307,35 +2318,35 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               FUN_00166120(pcStack_250);
             }
             if ((auStack_548[0] & 1) != 0) {
-              FUN_00166120(auStack_548[2]);
+              FUN_00166120(pvStack_538);
             }
                     /* try { // try from 004ab510 to 004ab513 has its CatchHandler @ 004ac358 */
             uVar19 = func_0x0016d400();
             uStack_558 = 0;
-            uStack_550 = 0;
+            pvStack_550 = (void *)0x0;
             abStack_560[0] = 0xc;
             *(undefined2 *)((undefined4 *)((ulong)abStack_560 | 1) + 1) = 0x6c61;
             *(undefined4 *)((ulong)abStack_560 | 1) = 0x6d726f6e;
             uStack_559 = 0;
                     /* try { // try from 004ab53c to 004ab543 has its CatchHandler @ 004ac2dc */
-            lVar37 = func_0x001694e0(uVar19,abStack_560);
-            fVar51 = *(float *)(lVar37 + 0x94);
+            lVar38 = func_0x001694e0(uVar19,abStack_560);
+            fVar52 = *(float *)(lVar38 + 0x94);
             if ((abStack_560[0] & 1) != 0) {
-              FUN_00166120(uStack_550);
+              FUN_00166120(pvStack_550);
             }
-            fVar50 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
-            fVar53 = fVar50;
-            if (1.0 < fVar50) {
-              fVar53 = 1.0;
+            fVar51 = (Walaber::ScreenCoord::sScreenSize + -320.0) / 448.0;
+            fVar54 = fVar51;
+            if (1.0 < fVar51) {
+              fVar54 = 1.0;
             }
-            fVar53 = fVar53 + 1.0;
-            if (fVar50 <= 0.0) {
-              fVar53 = 1.0;
+            fVar54 = fVar54 + 1.0;
+            if (fVar51 <= 0.0) {
+              fVar54 = 1.0;
             }
                     /* try { // try from 004ab584 to 004ab587 has its CatchHandler @ 004ac2d8 */
             uVar19 = func_0x0016d400();
             uStack_570 = 0;
-            uStack_568 = 0;
+            pvStack_568 = (void *)0x0;
             abStack_578[0] = 0xc;
             *(undefined2 *)((undefined4 *)((ulong)abStack_578 | 1) + 1) = 0x6c61;
             *(undefined4 *)((ulong)abStack_578 | 1) = 0x6d726f6e;
@@ -2343,18 +2354,18 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                     /* try { // try from 004ab5b0 to 004ab5b7 has its CatchHandler @ 004ac2d4 */
             uVar19 = func_0x001694e0(uVar19,abStack_578);
                     /* try { // try from 004ab5bc to 004ab5fb has its CatchHandler @ 004ac51c */
-            func_0x00169f20(&uStack_f0,plVar32);
-            fVar53 = (21.0 / fVar51) * fVar53;
-            func_0x0016b770(&bStack_260,fVar53,*(float *)(plVar32 + 0x12) * (float)uStack_f0 * 0.85,
+            func_0x00169f20(&uStack_f0,plVar33);
+            fVar54 = (21.0 / fVar52) * fVar54;
+            func_0x0016b770(&bStack_260,fVar54,*(float *)(plVar33 + 0x12) * (float)uStack_f0 * 0.85,
                             uVar19,&fStack_2c0);
             if ((abStack_578[0] & 1) != 0) {
-              FUN_00166120(uStack_568);
+              FUN_00166120(pvStack_568);
             }
                     /* try { // try from 004ab60c to 004ab62b has its CatchHandler @ 004ac530 */
-            func_0x001678a0(plVar32,&bStack_260);
-            *(float *)((long)plVar32 + 0x15c) = fVar53;
-            *(float *)(plVar32 + 0x2b) = fVar53;
-            func_0x0016a9a0(plVar32);
+            func_0x001678a0(plVar33,&bStack_260);
+            *(float *)((long)plVar33 + 0x15c) = fVar54;
+            *(float *)(plVar33 + 0x2b) = fVar54;
+            func_0x0016a9a0(plVar33);
             if ((bStack_260 & 1) != 0) {
               FUN_00166120(pcStack_250);
             }
@@ -2364,11 +2375,11 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             func_0x00164ba0(&uStack_240);
           }
                     /* try { // try from 004ab654 to 004ab65b has its CatchHandler @ 004aca04 */
-          plVar31 = (long *)FUN_00164060(0x188);
+          plVar32 = (long *)FUN_00164060(0x188);
                     /* try { // try from 004ab668 to 004ab677 has its CatchHandler @ 004ac578 */
           func_0x00167d50(&bStack_260,lVar23);
-          uStack_240 = CONCAT44(fVar52 + fStack_25c,
-                                fVar49 + (float)CONCAT13(uStack_25d,
+          uStack_240 = CONCAT44(fVar53 + fStack_25c,
+                                fVar50 + (float)CONCAT13(uStack_25d,
                                                          CONCAT12(uStack_25e,
                                                                   CONCAT11(uStack_25f,bStack_260))))
           ;
@@ -2389,21 +2400,21 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             *piStack_580 = *piStack_580 + 2;
           }
                     /* try { // try from 004ab6d0 to 004ab6e3 has its CatchHandler @ 004ac560 */
-          func_0x0016aef0(plVar31,uVar40 + 0x4b0,&uStack_240,&uStack_f0,&lStack_588);
+          func_0x0016aef0(plVar32,uVar41 + 0x4b0,&uStack_240,&uStack_f0,&lStack_588);
           FUN_00166b20(&lStack_588);
           FUN_00166b20(&fStack_2c0);
                     /* try { // try from 004ab704 to 004ab7cb has its CatchHandler @ 004aca04 */
-          (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(lVar23 + 0x80));
+          (**(code **)(*plVar32 + 0x40))(plVar32,*(undefined4 *)(lVar23 + 0x80));
           (**(code **)(*plVar28 + 0x40))(plVar28,*(undefined4 *)(lVar15 + 0x80));
-          (**(code **)(*plVar29 + 0x40))(plVar29,*(undefined4 *)(lVar16 + 0x80));
-          (**(code **)(*plVar30 + 0x40))(plVar30,*(undefined4 *)(lVar17 + 0x80));
+          (**(code **)(*plVar30 + 0x40))(plVar30,*(undefined4 *)(lVar16 + 0x80));
+          (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(lVar17 + 0x80));
           (**(code **)(*(long *)pbVar26 + 0x40))(pbVar26,*(undefined4 *)(lVar18 + 0x80));
-          (**(code **)(*plVar31 + 0x40))(plVar31,*(undefined4 *)(lVar23 + 0x80));
-          func_0x0016b660(*puVar46,plVar28,3);
-          func_0x0016b660(*puVar46,plVar29,3);
-          func_0x0016b660(*puVar46,plVar30,3);
-          func_0x0016b660(*puVar46,pbVar26,1);
-          func_0x0016b660(*puVar46,plVar31,2);
+          (**(code **)(*plVar32 + 0x40))(plVar32,*(undefined4 *)(lVar23 + 0x80));
+          func_0x0016b660(*puVar47,plVar28,3);
+          func_0x0016b660(*puVar47,plVar30,3);
+          func_0x0016b660(*puVar47,plVar31,3);
+          func_0x0016b660(*puVar47,pbVar26,1);
+          func_0x0016b660(*puVar47,plVar32,2);
           if (bVar10) {
                     /* try { // try from 004ab7d8 to 004ab7f3 has its CatchHandler @ 004ac354 */
             func_0x00165800(&uStack_f0,&DAT_00764c30,&DAT_0063d328);
@@ -2414,22 +2425,22 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
               puVar9 = &DAT_00764c19;
             }
                     /* try { // try from 004ab818 to 004ab81f has its CatchHandler @ 004ac340 */
-            puVar34 = (undefined8 *)FUN_00167eb0(&uStack_f0,puVar9,uVar27);
-            pcStack_250 = (char *)puVar34[2];
-            uVar35 = puVar34[1];
-            uVar19 = *puVar34;
-            uStack_258 = (undefined1)uVar35;
-            uStack_257 = (undefined1)((ulong)uVar35 >> 8);
-            uStack_256 = (undefined1)((ulong)uVar35 >> 0x10);
-            uStack_255 = (undefined5)((ulong)uVar35 >> 0x18);
+            puVar35 = (undefined8 *)FUN_00167eb0(&uStack_f0,puVar9,uVar27);
+            pcStack_250 = (char *)puVar35[2];
+            uVar36 = puVar35[1];
+            uVar19 = *puVar35;
+            uStack_258 = (undefined1)uVar36;
+            uStack_257 = (undefined1)((ulong)uVar36 >> 8);
+            uStack_256 = (undefined1)((ulong)uVar36 >> 0x10);
+            uStack_255 = (undefined5)((ulong)uVar36 >> 0x18);
             bStack_260 = (byte)uVar19;
             uStack_25f = (undefined1)((ulong)uVar19 >> 8);
             uStack_25e = (undefined1)((ulong)uVar19 >> 0x10);
             uStack_25d = (undefined1)((ulong)uVar19 >> 0x18);
             fStack_25c = (float)((ulong)uVar19 >> 0x20);
-            puVar34[1] = 0;
-            puVar34[2] = 0;
-            *puVar34 = 0;
+            puVar35[1] = 0;
+            puVar35[2] = 0;
+            *puVar35 = 0;
                     /* try { // try from 004ab838 to 004ab847 has its CatchHandler @ 004ac328 */
             puVar24 = (ulong *)FUN_00167eb0(&bStack_260,&DAT_0063d328,1);
             puStack_230 = (undefined4 *)puVar24[2];
@@ -2439,24 +2450,24 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             puVar24[2] = 0;
             *puVar24 = 0;
             uVar27 = ram0x00764bf0;
-            puVar34 = DAT_00764bf8;
+            puVar35 = DAT_00764bf8;
             if ((DAT_00764be8 & 1) == 0) {
               uVar27 = (ulong)(DAT_00764be8 >> 1);
-              puVar34 = &DAT_00764be9;
+              puVar35 = &DAT_00764be9;
             }
                     /* try { // try from 004ab884 to 004ab88b has its CatchHandler @ 004ac310 */
-            puVar34 = (undefined8 *)FUN_00167eb0(&uStack_240,puVar34,uVar27);
-            pcStack_2b0 = (char *)puVar34[2];
-            uVar19 = puVar34[1];
+            puVar35 = (undefined8 *)FUN_00167eb0(&uStack_240,puVar35,uVar27);
+            pcStack_2b0 = (char *)puVar35[2];
+            uVar19 = puVar35[1];
             uStack_2b8 = (undefined1)uVar19;
             uStack_2b7 = (undefined1)((ulong)uVar19 >> 8);
             uStack_2b6 = (undefined1)((ulong)uVar19 >> 0x10);
             uStack_2b5 = (undefined5)((ulong)uVar19 >> 0x18);
-            fStack_2c0 = (float)*puVar34;
-            fStack_2bc = (float)((ulong)*puVar34 >> 0x20);
-            puVar34[1] = 0;
-            puVar34[2] = 0;
-            *puVar34 = 0;
+            fStack_2c0 = (float)*puVar35;
+            fStack_2bc = (float)((ulong)*puVar35 >> 0x20);
+            puVar35[1] = 0;
+            puVar35[2] = 0;
+            *puVar35 = 0;
             if ((uStack_240 & 1) != 0) {
               FUN_00166120(puStack_230);
             }
@@ -2473,47 +2484,47 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
             uStack_25d = 0;
             fStack_25c = 0.0;
             bStack_260 = 0x12;
-            pcStack_250 = (char *)0x0;
+            pcStack_250 = (void *)0x0;
             uStack_258 = 0;
             uStack_257 = 0;
             uStack_255 = 0;
-            builtin_strncpy(pcVar38,"LevelInfo",9);
+            builtin_strncpy(pcVar39,"LevelInfo",9);
             uStack_256 = 0;
                     /* try { // try from 004ab920 to 004ab937 has its CatchHandler @ 004ac2f0 */
             func_0x0016c010(&uStack_3b0,0,&fStack_2c0,&bStack_260,&uStack_240);
             if ((bStack_260 & 1) != 0) {
               FUN_00166120(pcStack_250);
             }
-            uVar43 = 0;
+            uVar44 = 0;
             while( true ) {
                     /* try { // try from 004ab954 to 004ab95b has its CatchHandler @ 004ac9d4 */
               uVar27 = func_0x001651e0(&uStack_3b0);
               if ((uVar27 & 1) == 0) break;
-              if (uVar40 == uVar43) {
+              if (uVar41 == uVar44) {
                     /* try { // try from 004ab968 to 004ab977 has its CatchHandler @ 004ac228 */
                 func_0x0016c5c0(&bStack_260,&uStack_3b0,2);
                 uStack_f0 = &uStack_530;
                     /* try { // try from 004ab984 to 004ab99f has its CatchHandler @ 004ac218 */
                 uStack_530 = pbVar26;
-                lVar37 = func_0x0016e6a0(param_1 + 0xd8,&uStack_530,&DAT_00639634,&uStack_f0,
+                lVar38 = func_0x0016e6a0((long)p0 + 0xd8,&uStack_530,&DAT_00639634,&uStack_f0,
                                          &uStack_5a0);
-                pbVar44 = (byte *)(lVar37 + 0x28);
-                if ((*pbVar44 & 1) == 0) {
-                  pbVar44[0] = 0;
-                  pbVar44[1] = 0;
+                pbVar45 = (byte *)(lVar38 + 0x28);
+                if ((*pbVar45 & 1) == 0) {
+                  pbVar45[0] = 0;
+                  pbVar45[1] = 0;
                 }
                 else {
-                  **(undefined1 **)(lVar37 + 0x38) = 0;
-                  *(undefined8 *)(lVar37 + 0x30) = 0;
-                  if ((*(byte *)(lVar37 + 0x28) & 1) != 0) {
-                    FUN_00166120(*(undefined8 *)(lVar37 + 0x38));
-                    *(undefined8 *)(lVar37 + 0x28) = 0;
+                  **(undefined1 **)(lVar38 + 0x38) = 0;
+                  *(undefined8 *)(lVar38 + 0x30) = 0;
+                  if ((*(byte *)(lVar38 + 0x28) & 1) != 0) {
+                    FUN_00166120(*(void **)(lVar38 + 0x38));
+                    *(undefined8 *)(lVar38 + 0x28) = 0;
                   }
                 }
-                *(char **)(lVar37 + 0x38) = pcStack_250;
-                *(ulong *)(lVar37 + 0x30) =
+                *(char **)(lVar38 + 0x38) = pcStack_250;
+                *(ulong *)(lVar38 + 0x30) =
                      CONCAT53(uStack_255,CONCAT12(uStack_256,CONCAT11(uStack_257,uStack_258)));
-                *(ulong *)pbVar44 =
+                *(ulong *)pbVar45 =
                      CONCAT44(fStack_25c,
                               CONCAT13(uStack_25d,
                                        CONCAT12(uStack_25e,CONCAT11(uStack_25f,bStack_260))));
@@ -2526,11 +2537,11 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                   uStack_25d = 0;
                   fStack_25c = 0.0;
                   bStack_260 = 0x12;
-                  pcStack_250 = (char *)0x0;
+                  pcStack_250 = (void *)0x0;
                   uStack_258 = 0;
                   uStack_257 = 0;
                   uStack_255 = 0;
-                  builtin_strncpy(pcVar38,"LevelInfo",9);
+                  builtin_strncpy(pcVar39,"LevelInfo",9);
                   uStack_256 = 0;
                     /* try { // try from 004a9b00 to 004a9b17 has its CatchHandler @ 004ac214 */
                   func_0x00165800(&uStack_f0,&DAT_00764c30,&DAT_0061d431);
@@ -2538,41 +2549,41 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                   func_0x00165800(&uStack_5b8,&DAT_00764be8,"=\'");
                     /* try { // try from 004a9b30 to 004a9b3f has its CatchHandler @ 004ac1f4 */
                   func_0x0016c5c0(&fStack_5d0,&uStack_3b0,2);
-                  uVar27 = (ulong)&fStack_5d0 | 1;
-                  uVar45 = (ulong)(fStack_5d0._0_1_ >> 1);
+                  pvVar29 = (void *)((ulong)&fStack_5d0 | 1);
+                  uVar27 = (ulong)(fStack_5d0._0_1_ >> 1);
                   if (((uint)fStack_5d0 & 1) != 0) {
-                    uVar27 = uStack_5c0;
-                    uVar45 = uStack_5c8;
+                    pvVar29 = pvStack_5c0;
+                    uVar27 = uStack_5c8;
                   }
                     /* try { // try from 004a9b64 to 004a9b6b has its CatchHandler @ 004ac1dc */
-                  puVar24 = (ulong *)FUN_00167eb0(&uStack_5b8,uVar27,uVar45);
-                  uStack_590 = puVar24[2];
+                  puVar24 = (ulong *)FUN_00167eb0(&uStack_5b8,pvVar29,uVar27);
+                  pvStack_590 = (void *)puVar24[2];
                   uStack_598 = puVar24[1];
                   uStack_5a0 = *puVar24;
                   puVar24[1] = 0;
                   puVar24[2] = 0;
                   *puVar24 = 0;
                     /* try { // try from 004a9b84 to 004a9b97 has its CatchHandler @ 004ac1c4 */
-                  puVar34 = (undefined8 *)FUN_00167eb0(&uStack_5a0,&DAT_006405c4,1);
-                  uStack_520 = puVar34[2];
-                  piStack_528 = (int *)puVar34[1];
-                  uStack_530 = (byte *)*puVar34;
-                  puVar34[1] = 0;
-                  puVar34[2] = 0;
-                  *puVar34 = 0;
+                  puVar35 = (undefined8 *)FUN_00167eb0(&uStack_5a0,&DAT_006405c4,1);
+                  pvStack_520 = (void *)puVar35[2];
+                  piStack_528 = (int *)puVar35[1];
+                  uStack_530 = (byte *)*puVar35;
+                  puVar35[1] = 0;
+                  puVar35[2] = 0;
+                  *puVar35 = 0;
                     /* try { // try from 004a9bb0 to 004a9bc3 has its CatchHandler @ 004ac1ac */
                   func_0x00170b80(0,&bStack_260,&uStack_f0,&uStack_530);
                   if (((ulong)uStack_530 & 1) != 0) {
-                    FUN_00166120(uStack_520);
+                    FUN_00166120(pvStack_520);
                   }
                   if ((uStack_5a0 & 1) != 0) {
-                    FUN_00166120(uStack_590);
+                    FUN_00166120(pvStack_590);
                   }
                   if (((uint)fStack_5d0 & 1) != 0) {
-                    FUN_00166120(uStack_5c0);
+                    FUN_00166120(pvStack_5c0);
                   }
                   if ((uStack_5b8 & 1) != 0) {
-                    FUN_00166120(uStack_5a8);
+                    FUN_00166120(pvStack_5a8);
                   }
                   if (((ulong)uStack_f0 & 1) != 0) {
                     FUN_00166120(pcStack_e0);
@@ -2583,9 +2594,9 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(long param_1,int *
                 }
                 goto LAB_004aba28;
               }
-              uVar43 = uVar43 + 1;
+              uVar44 = uVar44 + 1;
             }
-            if (uVar43 < uVar40) {
+            if (uVar44 < uVar41) {
               iVar12 = 0;
               pbVar26[0x8c] = 0;
               uStack_f0 = (undefined8 *)CONCAT44(uStack_f0._4_4_,(float)uStack_f0);
@@ -2672,7 +2683,7 @@ LAB_004aba28:
               *piStack_528 = *piStack_528 + 1;
             }
                     /* try { // try from 004abbcc to 004abbd7 has its CatchHandler @ 004ac258 */
-            func_0x001681f0(plVar31,&pbStack_600);
+            func_0x001681f0(plVar32,&pbStack_600);
             FUN_00166b20(&pbStack_600);
             FUN_00166b20(&uStack_530);
             FUN_0016bb90(&uStack_610);
@@ -2692,10 +2703,10 @@ LAB_004aba28:
             }
           }
           if ((uStack_220 & 1) != 0) {
-            FUN_00166120(uStack_210);
+            FUN_00166120(pvStack_210);
           }
           if ((uStack_200 & 1) != 0) {
-            FUN_00166120(uStack_1f0);
+            FUN_00166120(pvStack_1f0);
           }
           if ((uStack_1e0 & 1) != 0) {
             FUN_00166120(puStack_1d0);
@@ -2704,78 +2715,78 @@ LAB_004aba28:
             FUN_00166120(pcStack_1b0);
           }
           if ((uStack_1a0 & 1) != 0) {
-            FUN_00166120(uStack_190);
+            FUN_00166120(pvStack_190);
           }
           func_0x00164ba0(&fStack_d0);
           FUN_00166b20(&lStack_278);
-          uVar40 = uVar1;
+          uVar41 = uVar1;
         } while ((int)uVar1 < iVar5);
       }
                     /* try { // try from 004abcb8 to 004abcc7 has its CatchHandler @ 004ac174 */
-      func_0x001692e0(*puVar46,10000);
+      func_0x001692e0(*puVar47,10000);
       func_0x00167d50(&fStack_2c0);
-      fVar52 = fStack_2bc;
+      fVar53 = fStack_2bc;
                     /* try { // try from 004abcd0 to 004abcd7 has its CatchHandler @ 004ac08c */
-      uVar19 = func_0x001692e0(*puVar46,5000);
-      fVar49 = 0.0;
-      uVar40 = 10;
+      uVar19 = func_0x001692e0(*puVar47,5000);
+      fVar50 = 0.0;
+      uVar41 = 10;
       do {
                     /* try { // try from 004abcf0 to 004abd13 has its CatchHandler @ 004ac71c */
-        lVar15 = func_0x001692e0(*puVar46,uVar40);
-        fVar51 = fVar49;
+        lVar15 = func_0x001692e0(*puVar47,uVar41);
+        fVar52 = fVar50;
         if (lVar15 != 0) {
-          uVar35 = func_0x001692e0(*puVar46,uVar40);
-          func_0x00174350(uVar19,uVar35);
-          if (uVar40 != 10) {
+          uVar36 = func_0x001692e0(*puVar47,uVar41);
+          func_0x00174350(uVar19,uVar36);
+          if (uVar41 != 10) {
                     /* try { // try from 004abd20 to 004abd2f has its CatchHandler @ 004ac6fc */
-            func_0x001692e0(*puVar46,uVar40);
+            func_0x001692e0(*puVar47,uVar41);
             func_0x00167d50(&fStack_2c0);
-            fVar51 = fStack_2bc;
+            fVar52 = fStack_2bc;
                     /* try { // try from 004abd38 to 004abd4b has its CatchHandler @ 004ac6f8 */
-            lVar15 = func_0x001692e0(*puVar46,uVar40);
+            lVar15 = func_0x001692e0(*puVar47,uVar41);
             func_0x00169f20(&fStack_2c0);
-            fVar51 = fVar51 + *(float *)(lVar15 + 0x94) * fStack_2bc * 0.5;
-            if (fVar51 <= fVar49) {
-              fVar51 = fVar49;
+            fVar52 = fVar52 + *(float *)(lVar15 + 0x94) * fStack_2bc * 0.5;
+            if (fVar52 <= fVar50) {
+              fVar52 = fVar50;
             }
           }
         }
-        fVar49 = fVar51;
-        uVar40 = uVar40 + 1;
-      } while (uVar40 < 0x514);
+        fVar50 = fVar52;
+        uVar41 = uVar41 + 1;
+      } while (uVar41 < 0x514);
       fStack_2c0 = Walaber::ScreenCoord::sScreenSize * 0.5 + 0.0;
-      fVar49 = fVar49 + DAT_0072d884 * 0.05 + 0.0;
-      fStack_2bc = (fVar52 + fVar49) * 0.5;
+      fVar50 = fVar50 + DAT_0072d884 * 0.05 + 0.0;
+      fStack_2bc = (fVar53 + fVar50) * 0.5;
                     /* try { // try from 004abdbc to 004abddf has its CatchHandler @ 004ac518 */
-      plVar28 = (long *)func_0x001692e0(*puVar46,5000);
+      plVar28 = (long *)func_0x001692e0(*puVar47,5000);
       (**(code **)(*plVar28 + 0x10))(plVar28,&fStack_2c0);
-      plVar28 = (long *)func_0x001692e0(*puVar46,5000);
+      plVar28 = (long *)func_0x001692e0(*puVar47,5000);
                     /* try { // try from 004abde8 to 004abe13 has its CatchHandler @ 004ac170 */
-      lVar15 = func_0x001692e0(*puVar46,5000);
+      lVar15 = func_0x001692e0(*puVar47,5000);
       uStack_618 = *(undefined4 *)(lVar15 + 0x90);
-      fVar49 = fVar49 - fVar52;
-      fStack_614 = fVar49;
+      fVar50 = fVar50 - fVar53;
+      fStack_614 = fVar50;
       (**(code **)(*plVar28 + 0x50))(plVar28,&uStack_618);
                     /* try { // try from 004abe18 to 004abe3b has its CatchHandler @ 004ac518 */
-      plVar28 = (long *)func_0x001692e0(*puVar46,10);
+      plVar28 = (long *)func_0x001692e0(*puVar47,10);
       (**(code **)(*plVar28 + 0x10))(plVar28,&fStack_2c0);
-      plVar28 = (long *)func_0x001692e0(*puVar46,10);
+      plVar28 = (long *)func_0x001692e0(*puVar47,10);
                     /* try { // try from 004abe44 to 004abe77 has its CatchHandler @ 004ac16c */
-      lVar15 = func_0x001692e0(*puVar46,5000);
+      lVar15 = func_0x001692e0(*puVar47,5000);
       uStack_620 = *(undefined4 *)(lVar15 + 0x90);
-      fStack_61c = fVar49 * 1.6;
+      fStack_61c = fVar50 * 1.6;
       (**(code **)(*plVar28 + 0x50))(plVar28,&uStack_620);
                     /* try { // try from 004abe7c to 004abe83 has its CatchHandler @ 004ac518 */
-      uVar35 = func_0x001692e0(*puVar46,10);
+      uVar36 = func_0x001692e0(*puVar47,10);
       fStack_d0 = 1.25;
       fStack_cc = 0.0;
                     /* try { // try from 004abe90 to 004abe9b has its CatchHandler @ 004ac088 */
-      func_0x001655a0(0x3f800000,uVar35,&fStack_d0);
+      func_0x001655a0(0x3f800000,uVar36,&fStack_d0);
                     /* try { // try from 004abea0 to 004abecb has its CatchHandler @ 004ac518 */
-      uVar35 = func_0x001692e0(*puVar46,10000);
-      func_0x00174350(uVar19,uVar35);
-      uVar35 = func_0x001692e0(*puVar46,0x2711);
-      func_0x00174350(uVar19,uVar35);
+      uVar36 = func_0x001692e0(*puVar47,10000);
+      func_0x00174350(uVar19,uVar36);
+      uVar36 = func_0x001692e0(*puVar47,0x2711);
+      func_0x00174350(uVar19,uVar36);
                     /* try { // try from 004abecc to 004abed3 has its CatchHandler @ 004ac22c */
       uVar19 = FUN_00164060(0x1a8);
       uStack_630 = CONCAT44(DAT_0072d884 + 0.0,Walaber::ScreenCoord::sScreenSize + 0.0);
@@ -2783,15 +2794,15 @@ LAB_004aba28:
                     /* try { // try from 004abef8 to 004abf07 has its CatchHandler @ 004ac078 */
       func_0x00167fd0(uVar19,0x1389,&uStack_628,&uStack_630);
                     /* try { // try from 004abf0c to 004abf9b has its CatchHandler @ 004ac22c */
-      uVar35 = func_0x001692e0(*puVar46,5000);
-      func_0x00171490(uVar19,uVar35);
+      uVar36 = func_0x001692e0(*puVar47,5000);
+      func_0x00171490(uVar19,uVar36);
       uStack_638 = 0x3f80000000000000;
       func_0x0016dea0(uVar19,&uStack_638);
       uStack_640 = 0xbf80000000000000;
       func_0x0016af10(uVar19,&uStack_640);
-      func_0x0016b660(*puVar46,uVar19,0);
+      func_0x0016b660(*puVar47,uVar19,0);
       if ((((GameSettings::lastChallengeAttempt != -1) &&
-           (lVar15 = func_0x001692e0(*puVar46), lVar15 != 0)) &&
+           (lVar15 = func_0x001692e0(*puVar47), lVar15 != 0)) &&
           (0x25a < GameSettings::lastChallengeAttempt)) &&
          (GameSettings::lastChallengeAttempt != 700)) {
         func_0x00171150(uVar19);
@@ -2799,29 +2810,29 @@ LAB_004aba28:
     }
     func_0x00169840(auStack_268);
     if ((auStack_180[0] & 1) != 0) {
-      FUN_00166120(auStack_180[2]);
+      FUN_00166120(pvStack_170);
     }
     if ((bStack_168 & 1) != 0) {
       FUN_00166120(puStack_158);
     }
     if (puStack_150 != (undefined8 *)0x0) {
       puStack_148 = puStack_150;
-      FUN_00166120();
+      FUN_00166120(puStack_150);
     }
     if (puStack_138 != (undefined8 *)0x0) {
       puStack_130 = puStack_138;
-      FUN_00166120();
+      FUN_00166120(puStack_138);
     }
     if (puStack_120 != (undefined8 *)0x0) {
       puStack_118 = puStack_120;
-      FUN_00166120();
+      FUN_00166120(puStack_120);
     }
     if (puStack_108 != (undefined8 *)0x0) {
       puStack_100 = puStack_108;
-      FUN_00166120();
+      FUN_00166120(puStack_108);
     }
   }
-  if (*(long *)(lVar6 + 0x28) != lVar36) {
+  if (*(long *)(lVar6 + 0x28) != lVar37) {
     FUN_00164ff0();
     return;
   }
@@ -2836,11 +2847,14 @@ LAB_004aba28:
 
 /* WaterConcept::Screen_Challenges::update(float, bool) */
 
-void WaterConcept::Screen_Challenges::update(float param_1,long param_2)
+void WaterConcept::Screen_Challenges::update(float p0,bool p1)
 
 {
-  *(float *)(param_2 + 0xbc) = *(float *)(param_2 + 0xbc) + param_1;
-  func_0x001706f0(*(undefined8 *)(param_2 + 0x10));
+  ulong uVar1;
+  
+  uVar1 = (ulong)p1;
+  *(float *)(uVar1 + 0xbc) = *(float *)(uVar1 + 0xbc) + p0;
+  func_0x001706f0(*(undefined8 *)(uVar1 + 0x10));
   return;
 }
 
@@ -2852,21 +2866,22 @@ void WaterConcept::Screen_Challenges::update(float param_1,long param_2)
 
 /* WaterConcept::Screen_Challenges::draw(int) */
 
-void WaterConcept::Screen_Challenges::draw(long param_1,int param_2)
+void WaterConcept::Screen_Challenges::draw(int p0)
 
 {
   long lVar1;
+  int in_w1;
   
-  lVar1 = param_1 + 0x28;
+  lVar1 = (ulong)(uint)p0 + 0x28;
   func_0x00171540(lVar1,3);
-  if (param_2 == 1) {
+  if (in_w1 == 1) {
     func_0x001642a0(0x1701);
     func_0x00166f60();
     func_0x0016e140(0,Walaber::ScreenCoord::sScreenSize,DAT_0072d884,0,0x3dcccccd,0x3f800000);
     func_0x001642a0(0x1700);
     func_0x00166f60();
     func_0x0016b2a0(0,0,0xbde147ae);
-    func_0x00164990(*(undefined8 *)(param_1 + 0x10),lVar1);
+    func_0x00164990(*(undefined8 *)((ulong)(uint)p0 + 0x10),lVar1);
   }
   func_0x00163aa0(lVar1);
   return;
@@ -2883,43 +2898,45 @@ void WaterConcept::Screen_Challenges::draw(long param_1,int param_2)
    Walaber::Widget*) */
 
 void WaterConcept::Screen_Challenges::handleEvent
-               (long *param_1,int param_2,undefined8 param_3,ulong param_4)
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
   long lVar1;
   undefined *puVar2;
-  ulong uVar3;
+  void *pvVar3;
   undefined4 *puVar4;
   long lVar5;
   int iVar6;
-  undefined8 *puVar7;
-  ulong *puVar8;
-  ulong uVar9;
-  long lVar10;
-  undefined8 uVar11;
-  undefined4 *puVar12;
-  long *plVar13;
+  long *plVar7;
+  undefined8 *puVar8;
+  ulong *puVar9;
+  ulong uVar10;
+  ulong in_x3;
+  long lVar11;
+  undefined8 uVar12;
+  undefined4 *puVar13;
   long *plVar14;
-  undefined4 *puVar15;
-  long *plVar16;
-  undefined8 uVar17;
-  long lStack_180;
-  long lStack_178;
+  long *plVar15;
+  undefined4 *puVar16;
+  long *plVar17;
+  undefined8 uVar18;
+  void *pvStack_180;
+  void *pvStack_178;
   undefined8 uStack_170;
   byte abStack_168 [16];
-  undefined8 uStack_158;
+  void *pvStack_158;
   byte abStack_150 [16];
-  undefined8 uStack_140;
-  long lStack_138;
-  long lStack_130;
+  void *pvStack_140;
+  void *pvStack_138;
+  void *pvStack_130;
   undefined1 auStack_120 [8];
   uint auStack_118 [2];
   ulong uStack_110;
-  ulong uStack_108;
+  void *pvStack_108;
   byte abStack_100 [18];
   undefined6 uStack_ee;
-  long lStack_e8;
-  long lStack_e0;
+  void *pvStack_e8;
+  void *pvStack_e0;
   undefined8 uStack_d8;
   byte bStack_d0;
   undefined7 uStack_cf;
@@ -2927,7 +2944,7 @@ void WaterConcept::Screen_Challenges::handleEvent
   undefined4 uStack_c7;
   undefined1 uStack_c3;
   undefined2 uStack_c2;
-  undefined8 uStack_c0;
+  void *pvStack_c0;
   byte bStack_b0;
   undefined7 uStack_af;
   byte bStack_a8;
@@ -2947,16 +2964,18 @@ void WaterConcept::Screen_Challenges::handleEvent
   undefined3 uStack_7b;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   
+  plVar7 = (long *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
-  lVar10 = *(long *)(lVar1 + 0x28);
-  if (param_2 == 0) {
-    (**(code **)(*param_1 + 0x70))(param_1);
+  lVar11 = *(long *)(lVar1 + 0x28);
+  iVar6 = (int)p1;
+  if (iVar6 == 0) {
+    (**(code **)(*plVar7 + 0x70))(plVar7);
     iVar6 = GameSettings::lastChallengeAttempt;
   }
-  else if (param_2 - 1000U < 100) {
-    GameSettings::lastChallengeAttempt = param_2 * 3 + -0x95f;
+  else if (iVar6 - 1000U < 100) {
+    GameSettings::lastChallengeAttempt = iVar6 * 3 + -0x95f;
     func_0x0016b220(&uStack_70);
     uStack_8c = 0;
     uStack_88 = 0;
@@ -2968,7 +2987,7 @@ void WaterConcept::Screen_Challenges::handleEvent
     uStack_8f = 0x6469;
     uStack_c2 = 0;
     bStack_d0 = 0x18;
-    uStack_c0 = 0;
+    pvStack_c0 = (void *)0x0;
     uStack_c7 = 0x31306b63;
     uStack_8d = 0;
     uStack_cf = 0x70796b6e617263;
@@ -2980,10 +2999,10 @@ void WaterConcept::Screen_Challenges::handleEvent
     func_0x00165260(&uStack_70,&bStack_90,&bStack_b0);
     func_0x00167bf0(&bStack_b0);
     if ((bStack_d0 & 1) != 0) {
-      FUN_00166120(uStack_c0);
+      FUN_00166120(pvStack_c0);
     }
     if ((bStack_90 & 1) != 0) {
-      FUN_00166120(CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
+      FUN_00166120((void *)CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
     }
                     /* try { // try from 004acd28 to 004acd37 has its CatchHandler @ 004ad608 */
     func_0x00166840(0x19,&uStack_70);
@@ -2991,9 +3010,9 @@ void WaterConcept::Screen_Challenges::handleEvent
     func_0x00164ba0(&uStack_70);
     iVar6 = GameSettings::lastChallengeAttempt;
   }
-  else if (param_2 == 0xb) {
+  else if (iVar6 == 0xb) {
     uStack_9a = 0;
-    lStack_e0 = 0;
+    pvStack_e0 = (void *)0x0;
     uStack_d8 = 0;
     bStack_b0 = 0x28;
     uStack_9f = 0x72657a61;
@@ -3002,15 +3021,15 @@ void WaterConcept::Screen_Challenges::handleEvent
     uStack_af = 0x736c6576654c2f;
     bStack_a8 = 0x2f;
     uStack_9b = 0;
-    lStack_e8 = 0;
+    pvStack_e8 = (void *)0x0;
                     /* try { // try from 004acd98 to 004acdab has its CatchHandler @ 004ad5a4 */
-    func_0x00171780(&bStack_b0,0xffffffff,&lStack_e8,0);
-    if (lStack_e8 != 0) {
-      lStack_e0 = lStack_e8;
-      FUN_00166120();
+    func_0x00171780(&bStack_b0,0xffffffff,&pvStack_e8,0);
+    if (pvStack_e8 != (void *)0x0) {
+      pvStack_e0 = pvStack_e8;
+      FUN_00166120(pvStack_e8);
     }
     if ((bStack_b0 & 1) != 0) {
-      FUN_00166120(CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0))));
+      FUN_00166120((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0))));
     }
     if (((Walaber::AchievementManager::getInstancePtr()::instance & 1) == 0) &&
        (iVar6 = FUN_0016ceb0(&Walaber::AchievementManager::getInstancePtr()::instance), iVar6 != 0))
@@ -3045,81 +3064,82 @@ void WaterConcept::Screen_Challenges::handleEvent
                     1);
     iVar6 = GameSettings::lastChallengeAttempt;
     if ((abStack_100[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_ee,CONCAT11(abStack_100[0x11],abStack_100[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_ee,CONCAT11(abStack_100[0x11],abStack_100[0x10])));
       iVar6 = GameSettings::lastChallengeAttempt;
     }
   }
   else {
-    plVar16 = param_1 + 0x19;
-    plVar14 = (long *)*plVar16;
-    plVar13 = plVar16;
-    if (plVar14 != (long *)0x0) {
+    plVar17 = plVar7 + 0x19;
+    plVar15 = (long *)*plVar17;
+    plVar14 = plVar17;
+    if (plVar15 != (long *)0x0) {
       do {
-        if ((ulong)plVar14[4] >= param_4) {
-          plVar13 = plVar14;
+        if ((ulong)plVar15[4] >= in_x3) {
+          plVar14 = plVar15;
         }
-        plVar14 = (long *)plVar14[(ulong)plVar14[4] < param_4];
-      } while (plVar14 != (long *)0x0);
-      if ((plVar13 != plVar16) && ((ulong)plVar13[4] <= param_4)) {
+        plVar15 = (long *)plVar15[(ulong)plVar15[4] < in_x3];
+      } while (plVar15 != (long *)0x0);
+      if ((plVar14 != plVar17) && ((ulong)plVar14[4] <= in_x3)) {
         func_0x00165800(&bStack_d0,&DAT_00765098,&DAT_0063d328);
-        uVar9 = (ulong)(DAT_007650e0 >> 1);
-        puVar7 = &DAT_007650e1;
+        uVar10 = (ulong)(DAT_007650e0 >> 1);
+        puVar8 = &DAT_007650e1;
         if ((DAT_007650e0 & 1) != 0) {
-          uVar9 = ram0x007650e8;
-          puVar7 = DAT_007650f0;
+          uVar10 = ram0x007650e8;
+          puVar8 = DAT_007650f0;
         }
                     /* try { // try from 004acea8 to 004aceaf has its CatchHandler @ 004ad57c */
-        puVar7 = (undefined8 *)func_0x00167eb0(&bStack_d0,puVar7,uVar9);
-        uVar11 = puVar7[2];
-        uVar17 = *puVar7;
-        uStack_80 = (undefined1)uVar11;
-        uStack_7f = (undefined4)((ulong)uVar11 >> 8);
-        uStack_7b = (undefined3)((ulong)uVar11 >> 0x28);
-        uStack_88 = (undefined1)puVar7[1];
-        uStack_87 = (undefined7)((ulong)puVar7[1] >> 8);
-        bStack_90 = (byte)uVar17;
-        uStack_8f = (undefined2)((ulong)uVar17 >> 8);
-        uStack_8d = (undefined1)((ulong)uVar17 >> 0x18);
-        uStack_8c = (undefined4)((ulong)uVar17 >> 0x20);
-        puVar7[1] = 0;
-        puVar7[2] = 0;
-        *puVar7 = 0;
-                    /* try { // try from 004acec8 to 004acedb has its CatchHandler @ 004ad564 */
-        puVar7 = (undefined8 *)func_0x00167eb0(&bStack_90,&DAT_0063d328,1);
-        uVar11 = puVar7[2];
-        uStack_a0 = (undefined1)uVar11;
-        uStack_9f = (undefined4)((ulong)uVar11 >> 8);
-        uStack_9b = (undefined1)((ulong)uVar11 >> 0x28);
-        uStack_9a = (undefined2)((ulong)uVar11 >> 0x30);
-        bStack_a8 = (byte)puVar7[1];
-        uStack_a7 = (undefined7)((ulong)puVar7[1] >> 8);
-        bStack_b0 = (byte)*puVar7;
-        uStack_af = (undefined7)((ulong)*puVar7 >> 8);
-        puVar7[1] = 0;
-        puVar7[2] = 0;
-        *puVar7 = 0;
-        uVar9 = DAT_00765100;
-        puVar2 = DAT_00765108;
-        if ((DAT_007650f8 & 1) == 0) {
-          uVar9 = (ulong)(DAT_007650f8 >> 1);
-          puVar2 = &DAT_007650f9;
-        }
-                    /* try { // try from 004acf14 to 004acf1b has its CatchHandler @ 004ad54c */
-        puVar8 = (ulong *)func_0x00167eb0(&bStack_b0,puVar2,uVar9);
-        uStack_60 = puVar8[2];
-        uStack_68 = puVar8[1];
-        uStack_70 = *puVar8;
+        puVar8 = (undefined8 *)func_0x00167eb0(&bStack_d0,puVar8,uVar10);
+        uVar12 = puVar8[2];
+        uVar18 = *puVar8;
+        uStack_80 = (undefined1)uVar12;
+        uStack_7f = (undefined4)((ulong)uVar12 >> 8);
+        uStack_7b = (undefined3)((ulong)uVar12 >> 0x28);
+        uStack_88 = (undefined1)puVar8[1];
+        uStack_87 = (undefined7)((ulong)puVar8[1] >> 8);
+        bStack_90 = (byte)uVar18;
+        uStack_8f = (undefined2)((ulong)uVar18 >> 8);
+        uStack_8d = (undefined1)((ulong)uVar18 >> 0x18);
+        uStack_8c = (undefined4)((ulong)uVar18 >> 0x20);
         puVar8[1] = 0;
         puVar8[2] = 0;
         *puVar8 = 0;
+                    /* try { // try from 004acec8 to 004acedb has its CatchHandler @ 004ad564 */
+        puVar8 = (undefined8 *)func_0x00167eb0(&bStack_90,&DAT_0063d328,1);
+        uVar12 = puVar8[2];
+        uStack_a0 = (undefined1)uVar12;
+        uStack_9f = (undefined4)((ulong)uVar12 >> 8);
+        uStack_9b = (undefined1)((ulong)uVar12 >> 0x28);
+        uStack_9a = (undefined2)((ulong)uVar12 >> 0x30);
+        bStack_a8 = (byte)puVar8[1];
+        uStack_a7 = (undefined7)((ulong)puVar8[1] >> 8);
+        bStack_b0 = (byte)*puVar8;
+        uStack_af = (undefined7)((ulong)*puVar8 >> 8);
+        puVar8[1] = 0;
+        puVar8[2] = 0;
+        *puVar8 = 0;
+        uVar10 = DAT_00765100;
+        puVar2 = DAT_00765108;
+        if ((DAT_007650f8 & 1) == 0) {
+          uVar10 = (ulong)(DAT_007650f8 >> 1);
+          puVar2 = &DAT_007650f9;
+        }
+                    /* try { // try from 004acf14 to 004acf1b has its CatchHandler @ 004ad54c */
+        puVar9 = (ulong *)func_0x00167eb0(&bStack_b0,puVar2,uVar10);
+        pvStack_60 = (void *)puVar9[2];
+        uStack_68 = puVar9[1];
+        uStack_70 = *puVar9;
+        puVar9[1] = 0;
+        puVar9[2] = 0;
+        *puVar9 = 0;
         if ((bStack_b0 & 1) != 0) {
-          FUN_00166120(CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0))));
+          FUN_00166120((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0)))
+                      );
         }
         if ((bStack_90 & 1) != 0) {
-          FUN_00166120(CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
+          FUN_00166120((void *)CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
         }
         if ((bStack_d0 & 1) != 0) {
-          FUN_00166120(uStack_c0);
+          FUN_00166120(pvStack_c0);
         }
         uStack_7b = 0;
         bStack_90 = 0x26;
@@ -3133,45 +3153,46 @@ void WaterConcept::Screen_Challenges::handleEvent
                     /* try { // try from 004acf90 to 004acfa7 has its CatchHandler @ 004ad510 */
         func_0x00165800(&bStack_b0,&DAT_00765080,"=");
                     /* try { // try from 004acfac to 004acfb7 has its CatchHandler @ 004ad4f8 */
-        func_0x001636d0(auStack_118,(int)plVar13[5]);
-        uVar9 = (ulong)((byte)auStack_118[0] >> 1);
-        uVar3 = (ulong)auStack_118 | 1;
+        func_0x001636d0(auStack_118,(int)plVar14[5]);
+        uVar10 = (ulong)((byte)auStack_118[0] >> 1);
+        pvVar3 = (void *)((ulong)auStack_118 | 1);
         if ((auStack_118[0] & 1) != 0) {
-          uVar9 = uStack_110;
-          uVar3 = uStack_108;
+          uVar10 = uStack_110;
+          pvVar3 = pvStack_108;
         }
                     /* try { // try from 004acfd4 to 004acfdb has its CatchHandler @ 004ad4e0 */
-        puVar7 = (undefined8 *)func_0x00167eb0(&bStack_b0,uVar3,uVar9);
-        uStack_c0 = puVar7[2];
-        uVar11 = puVar7[1];
-        uStack_c8 = (undefined1)uVar11;
-        uStack_c7 = (undefined4)((ulong)uVar11 >> 8);
-        uStack_c3 = (undefined1)((ulong)uVar11 >> 0x28);
-        uStack_c2 = (undefined2)((ulong)uVar11 >> 0x30);
-        bStack_d0 = (byte)*puVar7;
-        uStack_cf = (undefined7)((ulong)*puVar7 >> 8);
-        puVar7[1] = 0;
-        puVar7[2] = 0;
-        *puVar7 = 0;
+        puVar8 = (undefined8 *)func_0x00167eb0(&bStack_b0,pvVar3,uVar10);
+        pvStack_c0 = (void *)puVar8[2];
+        uVar12 = puVar8[1];
+        uStack_c8 = (undefined1)uVar12;
+        uStack_c7 = (undefined4)((ulong)uVar12 >> 8);
+        uStack_c3 = (undefined1)((ulong)uVar12 >> 0x28);
+        uStack_c2 = (undefined2)((ulong)uVar12 >> 0x30);
+        bStack_d0 = (byte)*puVar8;
+        uStack_cf = (undefined7)((ulong)*puVar8 >> 8);
+        puVar8[1] = 0;
+        puVar8[2] = 0;
+        *puVar8 = 0;
         if ((auStack_118[0] & 1) != 0) {
-          FUN_00166120(uStack_108);
+          FUN_00166120(pvStack_108);
         }
         if ((bStack_b0 & 1) != 0) {
-          FUN_00166120(CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0))));
+          FUN_00166120((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0)))
+                      );
         }
                     /* try { // try from 004ad014 to 004ad02b has its CatchHandler @ 004ad4d8 */
         func_0x0016c010(auStack_120,0,&uStack_70,&bStack_90,&bStack_d0);
                     /* try { // try from 004ad02c to 004ad033 has its CatchHandler @ 004ad4bc */
-        uVar9 = func_0x001651e0(auStack_120);
-        if ((uVar9 & 1) != 0) {
+        uVar10 = func_0x001651e0(auStack_120);
+        if ((uVar10 & 1) != 0) {
                     /* try { // try from 004ad038 to 004ad043 has its CatchHandler @ 004ad4b8 */
-          uVar9 = func_0x00166c10(auStack_120,0);
-          if ((uVar9 & 1) == 0) {
+          uVar10 = func_0x00166c10(auStack_120,0);
+          if ((uVar10 & 1) == 0) {
                     /* try { // try from 004ad080 to 004ad087 has its CatchHandler @ 004ad48c */
             func_0x0016b220(auStack_118);
             abStack_150[0xe] = 0;
             abStack_150[0xf] = 0;
-            uStack_140 = 0;
+            pvStack_140 = (void *)0x0;
             abStack_150[0] = 0x18;
             abStack_150[9] = 0x54;
             abStack_150[10] = 0x79;
@@ -3192,7 +3213,7 @@ void WaterConcept::Screen_Challenges::handleEvent
             func_0x00165260(auStack_118,abStack_150,&bStack_b0);
             func_0x00167bf0(&bStack_b0);
             if ((abStack_150[0] & 1) != 0) {
-              FUN_00166120(uStack_140);
+              FUN_00166120(pvStack_140);
             }
             abStack_150[0] = 0xc;
             abStack_150[1] = 0x48;
@@ -3211,8 +3232,8 @@ void WaterConcept::Screen_Challenges::handleEvent
             abStack_150[0xd] = 0;
             abStack_150[0xe] = 0;
             abStack_150[0xf] = 0;
-            uStack_140 = 0;
-            uStack_158 = 0;
+            pvStack_140 = (void *)0x0;
+            pvStack_158 = (void *)0x0;
             abStack_150[7] = 0;
             abStack_168[9] = 0x4c;
             abStack_168[10] = 0x41;
@@ -3234,10 +3255,10 @@ void WaterConcept::Screen_Challenges::handleEvent
             func_0x00165260(auStack_118,abStack_150,&bStack_b0);
             func_0x00167bf0(&bStack_b0);
             if ((abStack_168[0] & 1) != 0) {
-              FUN_00166120(uStack_158);
+              FUN_00166120(pvStack_158);
             }
             if ((abStack_150[0] & 1) != 0) {
-              FUN_00166120(uStack_140);
+              FUN_00166120(pvStack_140);
             }
             abStack_150[6] = 0;
             abStack_150[7] = 0;
@@ -3257,7 +3278,7 @@ void WaterConcept::Screen_Challenges::handleEvent
             abStack_168[0] = 0xc;
             abStack_168[5] = 0x4d;
             abStack_168[6] = 0x45;
-            uStack_140 = 0;
+            pvStack_140 = (void *)0x0;
             abStack_168[8] = 0;
             abStack_168[9] = 0;
             abStack_168[10] = 0;
@@ -3266,7 +3287,7 @@ void WaterConcept::Screen_Challenges::handleEvent
             abStack_168[0xd] = 0;
             abStack_168[0xe] = 0;
             abStack_168[0xf] = 0;
-            uStack_158 = 0;
+            pvStack_158 = (void *)0x0;
             abStack_150[5] = 0;
             abStack_168[1] = 0x42;
             abStack_168[2] = 0x55;
@@ -3279,10 +3300,10 @@ void WaterConcept::Screen_Challenges::handleEvent
             func_0x00165260(auStack_118,abStack_150,&bStack_b0);
             func_0x00167bf0(&bStack_b0);
             if ((abStack_168[0] & 1) != 0) {
-              FUN_00166120(uStack_158);
+              FUN_00166120(pvStack_158);
             }
             if ((abStack_150[0] & 1) != 0) {
-              FUN_00166120(uStack_140);
+              FUN_00166120(pvStack_140);
             }
                     /* try { // try from 004ad208 to 004ad217 has its CatchHandler @ 004ad4a8 */
             func_0x00166840(0xd,auStack_118);
@@ -3302,27 +3323,27 @@ void WaterConcept::Screen_Challenges::handleEvent
                     /* try { // try from 004ad054 to 004ad05f has its CatchHandler @ 004ad490 */
             func_0x00170200(&bStack_b0,auStack_118);
             puVar4 = (undefined4 *)CONCAT71(uStack_a7,bStack_a8);
-            puVar15 = (undefined4 *)
+            puVar16 = (undefined4 *)
                       CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0)));
             auStack_118[0] = 1;
-            if (puVar4 < puVar15) {
-              puVar12 = puVar4 + 1;
+            if (puVar4 < puVar16) {
+              puVar13 = puVar4 + 1;
               *puVar4 = 1;
-              bStack_a8 = (byte)puVar12;
-              uStack_a7 = (undefined7)((ulong)puVar12 >> 8);
+              bStack_a8 = (byte)puVar13;
+              uStack_a7 = (undefined7)((ulong)puVar13 >> 8);
             }
             else {
                     /* try { // try from 004ad224 to 004ad22f has its CatchHandler @ 004ad3f8 */
               func_0x00170200(&bStack_b0,auStack_118);
-              puVar12 = (undefined4 *)CONCAT71(uStack_a7,bStack_a8);
-              puVar15 = (undefined4 *)
+              puVar13 = (undefined4 *)CONCAT71(uStack_a7,bStack_a8);
+              puVar16 = (undefined4 *)
                         CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,uStack_a0)));
             }
             auStack_118[0] = 2;
-            if (puVar12 < puVar15) {
-              *puVar12 = 2;
-              bStack_a8 = (byte)(puVar12 + 1);
-              uStack_a7 = (undefined7)((ulong)(puVar12 + 1) >> 8);
+            if (puVar13 < puVar16) {
+              *puVar13 = 2;
+              bStack_a8 = (byte)(puVar13 + 1);
+              uStack_a7 = (undefined7)((ulong)(puVar13 + 1) >> 8);
             }
             else {
                     /* try { // try from 004ad250 to 004ad25b has its CatchHandler @ 004ad3f4 */
@@ -3330,66 +3351,62 @@ void WaterConcept::Screen_Challenges::handleEvent
             }
                     /* try { // try from 004ad25c to 004ad26b has its CatchHandler @ 004ad460 */
             func_0x0016c5c0(auStack_118,auStack_120,1);
-            lVar5 = plVar13[5];
+            lVar5 = plVar14[5];
                     /* try { // try from 004ad270 to 004ad27b has its CatchHandler @ 004ad420 */
-            func_0x00164ec0(&lStack_138,&bStack_b0);
+            func_0x00164ec0(&pvStack_138,&bStack_b0);
                     /* try { // try from 004ad27c to 004ad28f has its CatchHandler @ 004ad404 */
-            func_0x00171780(auStack_118,(int)lVar5,&lStack_138,0);
-            if (lStack_138 != 0) {
-              lStack_130 = lStack_138;
-              FUN_00166120();
+            func_0x00171780(auStack_118,(int)lVar5,&pvStack_138,0);
+            if (pvStack_138 != (void *)0x0) {
+              pvStack_130 = pvStack_138;
+              FUN_00166120(pvStack_138);
             }
             if ((auStack_118[0] & 1) != 0) {
-              FUN_00166120(uStack_108);
+              FUN_00166120(pvStack_108);
             }
-            if (CONCAT71(uStack_af,bStack_b0) != 0) {
+            if ((void *)CONCAT71(uStack_af,bStack_b0) != (void *)0x0) {
               bStack_a8 = bStack_b0;
               uStack_a7 = uStack_af;
-              FUN_00166120();
+              FUN_00166120((void *)CONCAT71(uStack_af,bStack_b0));
             }
           }
         }
         func_0x00169840(auStack_120);
         if ((bStack_d0 & 1) != 0) {
-          FUN_00166120(uStack_c0);
+          FUN_00166120(pvStack_c0);
         }
         if ((bStack_90 & 1) != 0) {
-          FUN_00166120(CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
+          FUN_00166120((void *)CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
         }
         if ((uStack_70 & 1) != 0) {
-          FUN_00166120(uStack_60);
+          FUN_00166120(pvStack_60);
         }
       }
     }
-    param_1 = param_1 + 0x1c;
-    plVar16 = (long *)*param_1;
-    plVar13 = param_1;
-    iVar6 = param_2;
-    if (plVar16 != (long *)0x0) {
+    plVar7 = plVar7 + 0x1c;
+    plVar17 = (long *)*plVar7;
+    plVar14 = plVar7;
+    if (plVar17 != (long *)0x0) {
       do {
-        if ((ulong)plVar16[4] >= param_4) {
-          plVar13 = plVar16;
+        if ((ulong)plVar17[4] >= in_x3) {
+          plVar14 = plVar17;
         }
-        plVar16 = (long *)plVar16[(ulong)plVar16[4] < param_4];
-      } while (plVar16 != (long *)0x0);
-      iVar6 = param_2;
-      if ((plVar13 != param_1) && (iVar6 = param_2, (ulong)plVar13[4] <= param_4)) {
-        lStack_180 = 0;
-        lStack_178 = 0;
+        plVar17 = (long *)plVar17[(ulong)plVar17[4] < in_x3];
+      } while (plVar17 != (long *)0x0);
+      if ((plVar14 != plVar7) && ((ulong)plVar14[4] <= in_x3)) {
+        pvStack_180 = (void *)0x0;
+        pvStack_178 = (void *)0x0;
         uStack_170 = 0;
                     /* try { // try from 004ad33c to 004ad34b has its CatchHandler @ 004ad534 */
-        func_0x00171780(plVar13 + 5,0xffffffff,&lStack_180,0);
-        iVar6 = param_2;
-        if (lStack_180 != 0) {
-          lStack_178 = lStack_180;
-          FUN_00166120();
-          iVar6 = param_2;
+        func_0x00171780(plVar14 + 5,0xffffffff,&pvStack_180,0);
+        if (pvStack_180 != (void *)0x0) {
+          pvStack_178 = pvStack_180;
+          FUN_00166120(pvStack_180);
         }
       }
     }
   }
   GameSettings::lastChallengeAttempt = iVar6;
-  if (*(long *)(lVar1 + 0x28) == lVar10) {
+  if (*(long *)(lVar1 + 0x28) == lVar11) {
     return;
   }
   FUN_00164ff0();
@@ -3446,31 +3463,32 @@ void WaterConcept::Screen_Challenges::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_Challenges::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long param_2)
+undefined8 WaterConcept::Screen_Challenges::messageRx(Walaber__Message *p0)
 
 {
   long lVar1;
-  ulong uVar2;
+  Walaber__Message *pWVar2;
   undefined8 uVar3;
+  long in_x1;
   byte abStack_90 [16];
-  undefined8 uStack_80;
+  void *pvStack_80;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte abStack_58 [16];
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined1 auStack_40 [24];
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if (*(int *)(param_2 + 0xc) == 0xd) {
+  if (*(int *)(in_x1 + 0xc) == 0xd) {
     abStack_78[10] = 0;
     abStack_78[0xb] = 0;
     abStack_78[0xc] = 0;
     abStack_78[0xd] = 0;
     abStack_78[0xe] = 0;
     abStack_78[0xf] = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     abStack_78[0] = 0x10;
     abStack_78[1] = 0x47;
     abStack_78[2] = 0x6f;
@@ -3482,11 +3500,12 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
     abStack_78[8] = 0x65;
     abStack_78[9] = 0;
                     /* try { // try from 004ad7f4 to 004ad7fb has its CatchHandler @ 004ada08 */
-    uVar2 = func_0x00173810(param_2 + 0x10,abStack_78);
+    pWVar2 = (Walaber__Message *)func_0x00173810(in_x1 + 0x10,abStack_78);
+    p0 = pWVar2;
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      p0 = (Walaber__Message *)FUN_00166120(pvStack_68);
     }
-    if ((uVar2 & 1) != 0) {
+    if (((ulong)pWVar2 & 1) != 0) {
       func_0x0016b220(auStack_40);
       abStack_58[4] = 0;
       abStack_58[5] = 0;
@@ -3506,8 +3525,8 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       abStack_90[0xe] = 0;
       abStack_90[0xf] = 0;
       abStack_90[0] = 0x18;
-      uStack_48 = 0;
-      uStack_80 = 0;
+      pvStack_48 = (void *)0x0;
+      pvStack_80 = (void *)0x0;
       abStack_90[9] = 0x6c;
       abStack_90[10] = 0x65;
       abStack_90[0xb] = 0x30;
@@ -3528,10 +3547,10 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       func_0x00165260(auStack_40,abStack_58,abStack_78);
       func_0x00167bf0(abStack_78);
       if ((abStack_90[0] & 1) != 0) {
-        FUN_00166120(uStack_80);
+        FUN_00166120(pvStack_80);
       }
       if ((abStack_58[0] & 1) != 0) {
-        FUN_00166120(uStack_48);
+        FUN_00166120(pvStack_48);
       }
       abStack_58[8] = 0;
       abStack_58[9] = 0;
@@ -3541,7 +3560,7 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       abStack_58[0xd] = 0;
       abStack_58[0xe] = 0;
       abStack_58[0xf] = 0;
-      uStack_48 = 0;
+      pvStack_48 = (void *)0x0;
       abStack_58[0] = 0xc;
       abStack_58[5] = 0x6c;
       abStack_58[6] = 0x65;
@@ -3556,7 +3575,7 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       func_0x00165260(auStack_40,abStack_58,abStack_78);
       func_0x00167bf0(abStack_78);
       if ((abStack_58[0] & 1) != 0) {
-        FUN_00166120(uStack_48);
+        FUN_00166120(pvStack_48);
       }
       abStack_58[10] = 0;
       abStack_58[0xb] = 0;
@@ -3564,7 +3583,7 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       abStack_58[0xd] = 0;
       abStack_58[0xe] = 0;
       abStack_58[0xf] = 0;
-      uStack_48 = 0;
+      pvStack_48 = (void *)0x0;
       abStack_58[0] = 0x10;
       abStack_58[1] = 0x44;
       abStack_58[2] = 0x65;
@@ -3581,23 +3600,23 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(undefined8 param_1,long pa
       func_0x00165260(auStack_40,abStack_58,abStack_78);
       func_0x00167bf0(abStack_78);
       if ((abStack_58[0] & 1) != 0) {
-        FUN_00166120(uStack_48);
+        FUN_00166120(pvStack_48);
       }
                     /* try { // try from 004ad960 to 004ad96f has its CatchHandler @ 004ad9f4 */
       func_0x00166840(0x19,auStack_40);
       func_0x0016c950();
-      func_0x00164ba0(auStack_40);
+      p0 = (Walaber__Message *)func_0x00164ba0(auStack_40);
     }
   }
-  else if (*(int *)(param_2 + 0xc) == 0x46) {
+  else if (*(int *)(in_x1 + 0xc) == 0x46) {
     func_0x00166ab0();
     func_0x00164370(0x18);
-    func_0x0016c950();
+    p0 = (Walaber__Message *)func_0x0016c950();
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return 0;
   }
-  uVar3 = FUN_00164ff0();
+  uVar3 = FUN_00164ff0(p0);
   return uVar3;
 }
 

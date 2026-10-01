@@ -63,19 +63,20 @@ void WaterConcept::WaterBalloon::WaterBalloon
 void WaterConcept::WaterBalloon::~WaterBalloon(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *pvVar1;
   
-  lVar1 = param_1[0x75];
+  pvVar1 = (void *)param_1[0x75];
   *param_1 = &PTR__WaterBalloon_00712298;
-  if (lVar1 != 0) {
-    func_0x00163740(lVar1);
-    FUN_00166120(lVar1);
+  if (pvVar1 != (void *)0x0) {
+    func_0x00163740(pvVar1);
+    FUN_00166120(pvVar1);
     param_1[0x75] = 0;
   }
   FUN_0016bb90(param_1 + 0x9d);
-  if (param_1[0x8b] != 0) {
-    param_1[0x8c] = param_1[0x8b];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x8b];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x8c] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   func_0x00163c50(param_1);
   return;
@@ -89,7 +90,7 @@ void WaterConcept::WaterBalloon::~WaterBalloon(undefined8 *param_1)
 
 /* WaterConcept::WaterBalloon::~WaterBalloon() */
 
-void WaterConcept::WaterBalloon::~WaterBalloon(undefined8 param_1)
+void WaterConcept::WaterBalloon::~WaterBalloon(void *param_1)
 
 {
   func_0x0016b800();
@@ -235,7 +236,7 @@ void WaterConcept::WaterBalloon::_updateMass(long param_1)
 
 /* WaterConcept::WaterBalloon::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
+void WaterConcept::WaterBalloon::setProperties(Walaber__PropertyList *p0)
 
 {
   long lVar1;
@@ -256,7 +257,7 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   lVar3 = tpidr_el0;
   lStack_58 = *(long *)(lVar3 + 0x28);
   func_0x0016e790();
-  *(undefined4 *)(param_1 + 0x4cc) = *(undefined4 *)(param_1 + 0x150);
+  *(undefined4 *)(p0 + 0x4cc) = *(undefined4 *)(p0 + 0x150);
   abStack_80[9] = 0x44;
   abStack_80[10] = 0x72;
   abStack_80[0xb] = 0x79;
@@ -278,10 +279,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x65;
   abStack_80[0x10] = 0;
                     /* try { // try from 004962f0 to 004962fb has its CatchHandler @ 00496c9c */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[9] = 0x44;
@@ -305,12 +306,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x65;
     abStack_80[0x10] = 0;
                     /* try { // try from 0049632c to 0049633b has its CatchHandler @ 00496c98 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0x478) = uVar7;
+    *(undefined4 *)(p0 + 0x478) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   uStack_6e = 0;
@@ -334,13 +336,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x50;
   abStack_80[0x11] = 0;
                     /* try { // try from 00496374 to 0049637f has its CatchHandler @ 00496c94 */
-  lVar5 = func_0x00167060(param_2,abStack_80);
+  lVar5 = func_0x00167060();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if (lVar5 != 0) {
-    *(undefined8 *)(param_1 + 0x460) = *(undefined8 *)(param_1 + 0x458);
+    *(undefined8 *)(p0 + 0x460) = *(undefined8 *)(p0 + 0x458);
     func_0x00162cf0(abStack_80,lVar5);
                     /* try { // try from 004963ac to 004963bb has its CatchHandler @ 00496c24 */
     func_0x00173780(&lStack_98,abStack_80,0x20);
@@ -358,15 +360,16 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
         }
         func_0x00170360(lVar2,"%i",&uStack_5c);
                     /* try { // try from 00496424 to 0049642f has its CatchHandler @ 00496cb8 */
-        func_0x001730e0(*(undefined4 *)(param_1 + 0x478),param_1,uVar7,uStack_5c);
+        func_0x001730e0(*(undefined4 *)(p0 + 0x478),p0,uVar7,uStack_5c);
         uVar4 = uVar4 + 2;
         lVar5 = lVar5 + 0x30;
       } while (uVar4 < (lStack_90 - lStack_98 >> 3) * -0x5555555555555555 - 1U);
     }
     func_0x00167a70(&lStack_98);
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0xe] = 0;
@@ -390,10 +393,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x69;
   abStack_80[0xd] = 0;
                     /* try { // try from 0049649c to 004964a7 has its CatchHandler @ 00496c90 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0xe] = 0;
@@ -417,12 +420,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x69;
     abStack_80[0xd] = 0;
                     /* try { // try from 004964e4 to 004964f3 has its CatchHandler @ 00496c8c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x470) = uVar7;
+    *(undefined4 *)(p0 + 0x470) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0xe] = 0;
@@ -446,10 +450,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x69;
   abStack_80[0xd] = 0;
                     /* try { // try from 00496538 to 00496543 has its CatchHandler @ 00496c88 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0xe] = 0;
@@ -473,12 +477,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x69;
     abStack_80[0xd] = 0;
                     /* try { // try from 00496580 to 0049658f has its CatchHandler @ 00496c84 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x474) = uVar7;
+    *(undefined4 *)(p0 + 0x474) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0xd] = 0;
@@ -502,10 +507,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[0xb] = 0;
   abStack_80[0xc] = 0;
                     /* try { // try from 004965cc to 004965d7 has its CatchHandler @ 00496c80 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0xd] = 0;
@@ -529,12 +534,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[0xb] = 0;
     abStack_80[0xc] = 0;
                     /* try { // try from 00496608 to 0049661b has its CatchHandler @ 00496c7c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     func_0x00166e60(&lStack_98);
-    *(long *)(param_1 + 0x47c) = lStack_98;
+    *(long *)(p0 + 0x47c) = lStack_98;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0xd] = 0;
@@ -558,10 +564,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[0xb] = 0;
   abStack_80[0xc] = 0;
                     /* try { // try from 00496660 to 0049666b has its CatchHandler @ 00496c78 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0xd] = 0;
@@ -585,12 +591,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[0xb] = 0;
     abStack_80[0xc] = 0;
                     /* try { // try from 0049669c to 004966af has its CatchHandler @ 00496c74 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     func_0x00166e60(&lStack_98);
-    *(long *)(param_1 + 0x484) = lStack_98;
+    *(long *)(p0 + 0x484) = lStack_98;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0] = 0x1e;
@@ -614,10 +621,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x65;
   abStack_80[0x10] = 0;
                     /* try { // try from 004966f4 to 004966ff has its CatchHandler @ 00496c70 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[9] = 0x72;
@@ -641,12 +648,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x65;
     abStack_80[0x10] = 0;
                     /* try { // try from 00496730 to 0049673f has its CatchHandler @ 00496c6c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4a0) = uVar7;
+    *(undefined4 *)(p0 + 0x4a0) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   uStack_6e = 0;
@@ -670,10 +678,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x72;
   abStack_80[0x11] = 0;
                     /* try { // try from 0049677c to 00496787 has its CatchHandler @ 00496c68 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     uStack_6e = 0;
@@ -697,12 +705,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x72;
     abStack_80[0x11] = 0;
                     /* try { // try from 004967bc to 004967cb has its CatchHandler @ 00496c64 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4a4) = uVar7;
+    *(undefined4 *)(p0 + 0x4a4) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   pcVar6 = (char *)FUN_00164060(0x20);
@@ -728,10 +737,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[7] = 0;
   builtin_strncpy(pcVar6,"MouthSpriteAttachScaleFactor",0x1d);
                     /* try { // try from 0049681c to 00496827 has its CatchHandler @ 00496c60 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     pcVar6 = (char *)FUN_00164060(0x20);
@@ -757,12 +766,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[6] = 0;
     abStack_80[7] = 0;
                     /* try { // try from 00496868 to 00496877 has its CatchHandler @ 00496c5c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0x4b0) = uVar7;
+    *(undefined4 *)(p0 + 0x4b0) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0] = 0x2c;
@@ -786,10 +796,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x50;
   uStack_69 = 0;
                     /* try { // try from 004968b4 to 004968bf has its CatchHandler @ 00496c58 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0] = 0x2c;
@@ -813,12 +823,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x50;
     uStack_69 = 0;
                     /* try { // try from 004968f0 to 004968ff has its CatchHandler @ 00496c54 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0x4bc) = uVar7;
+    *(undefined4 *)(p0 + 0x4bc) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0] = 0x2c;
@@ -842,10 +853,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x50;
   uStack_69 = 0;
                     /* try { // try from 0049693c to 00496947 has its CatchHandler @ 00496c50 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0] = 0x2c;
@@ -869,12 +880,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x50;
     uStack_69 = 0;
                     /* try { // try from 00496978 to 00496987 has its CatchHandler @ 00496c4c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0x4c0) = uVar7;
+    *(undefined4 *)(p0 + 0x4c0) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   pcVar6 = (char *)FUN_00164060(0x20);
@@ -900,10 +912,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[7] = 0;
   builtin_strncpy(pcVar6,"StretchPopVertThreshold",0x18);
                     /* try { // try from 004969d4 to 004969df has its CatchHandler @ 00496c48 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     pcVar6 = (char *)FUN_00164060(0x20);
@@ -929,12 +941,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[6] = 0;
     abStack_80[7] = 0;
                     /* try { // try from 00496a1c to 00496a2b has its CatchHandler @ 00496c44 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4c8) = uVar7;
+    *(undefined4 *)(p0 + 0x4c8) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   pcVar6 = (char *)FUN_00164060(0x20);
@@ -960,10 +973,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[6] = 0;
   abStack_80[7] = 0;
                     /* try { // try from 00496a74 to 00496a7f has its CatchHandler @ 00496c40 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     pcVar6 = (char *)FUN_00164060(0x20);
@@ -989,12 +1002,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[6] = 0;
     abStack_80[7] = 0;
                     /* try { // try from 00496abc to 00496acb has its CatchHandler @ 00496c3c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4d0) = uVar7;
+    *(undefined4 *)(p0 + 0x4d0) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   uStack_6e = 0;
@@ -1018,10 +1032,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x72;
   abStack_80[0x11] = 0;
                     /* try { // try from 00496b08 to 00496b13 has its CatchHandler @ 00496c38 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     uStack_6e = 0;
@@ -1045,12 +1059,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x72;
     abStack_80[0x11] = 0;
                     /* try { // try from 00496b48 to 00496b57 has its CatchHandler @ 00496c34 */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4d4) = uVar7;
+    *(undefined4 *)(p0 + 0x4d4) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   abStack_80[0x10] = 0;
@@ -1074,10 +1089,10 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
   abStack_80[8] = 0x74;
   abStack_80[0xf] = 0;
                     /* try { // try from 00496b94 to 00496b9f has its CatchHandler @ 00496c30 */
-  uVar4 = func_0x00173810(param_2,abStack_80);
+  uVar4 = func_0x00173810();
   if ((abStack_80[0] & 1) != 0) {
-    FUN_00166120(CONCAT17(uStack_69,CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
-                );
+    FUN_00166120((void *)CONCAT17(uStack_69,
+                                  CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
   }
   if ((uVar4 & 1) != 0) {
     abStack_80[0x10] = 0;
@@ -1101,12 +1116,13 @@ void WaterConcept::WaterBalloon::setProperties(long param_1,undefined8 param_2)
     abStack_80[8] = 0x74;
     abStack_80[0xf] = 0;
                     /* try { // try from 00496bd0 to 00496bdf has its CatchHandler @ 00496c2c */
-    func_0x0016d4e0(param_2,abStack_80);
+    func_0x0016d4e0();
     uVar7 = func_0x00166a80();
-    *(undefined4 *)(param_1 + 0x4d8) = uVar7;
+    *(undefined4 *)(p0 + 0x4d8) = uVar7;
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(CONCAT17(uStack_69,
-                            CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10]))));
+      FUN_00166120((void *)CONCAT17(uStack_69,
+                                    CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
+                  );
     }
   }
   if (*(long *)(lVar3 + 0x28) == lStack_58) {
@@ -1192,7 +1208,7 @@ void WaterConcept::WaterBalloon::addFluidParticles
         (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_88);
         if (puStack_78 != (undefined8 *)0x0) {
           puStack_70 = puStack_78;
-          FUN_00166120();
+          FUN_00166120(puStack_78);
         }
       }
       if (*(long *)(param_2 + 0x498) != 0) {
@@ -1258,7 +1274,7 @@ LAB_00496df0:
       (**(code **)(**(long **)(param_2 + 0x4e8) + 0x10))(*(long **)(param_2 + 0x4e8),&uStack_88);
       if (puStack_78 != (undefined8 *)0x0) {
         puStack_70 = puStack_78;
-        FUN_00166120();
+        FUN_00166120(puStack_78);
       }
     }
     lVar9 = *(long *)(param_2 + 0x460);
@@ -1311,10 +1327,11 @@ LAB_00496fe8:
 
 /* WaterConcept::WaterBalloon::update(float) */
 
-void WaterConcept::WaterBalloon::update(float param_1,long *param_2)
+void WaterConcept::WaterBalloon::update(float p0)
 
 {
   long lVar1;
+  long *in_x0;
   long *plVar2;
   undefined8 *puVar3;
   float *pfVar4;
@@ -1331,69 +1348,69 @@ void WaterConcept::WaterBalloon::update(float param_1,long *param_2)
   float fStack_9c;
   undefined8 uStack_98;
   undefined4 uStack_90;
-  long lStack_88;
-  long lStack_80;
+  void *pvStack_88;
+  void *pvStack_80;
   undefined8 uStack_78;
   long lStack_68;
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
   func_0x00170a10();
-  if (param_2[0x93] == 0) {
-    pfVar4 = (float *)(*(long *)param_2[0x75] + (ulong)*(uint *)(param_2 + 0x94) * 0x74);
+  if (in_x0[0x93] == 0) {
+    pfVar4 = (float *)(*(long *)in_x0[0x75] + (ulong)*(uint *)(in_x0 + 0x94) * 0x74);
     fStack_a0 = *pfVar4;
     fStack_9c = pfVar4[1];
   }
   else {
     func_0x00164e60(&uStack_98,0x3ecccccd);
-    puVar3 = (undefined8 *)(*(long *)param_2[0x75] + (ulong)*(uint *)(param_2 + 0x94) * 0x74);
+    puVar3 = (undefined8 *)(*(long *)in_x0[0x75] + (ulong)*(uint *)(in_x0 + 0x94) * 0x74);
     *puVar3 = uStack_98;
     puVar3[1] = uStack_98;
     puVar3[2] = 0;
-    func_0x00164e60(&fStack_a0,0,param_2[0x93]);
+    func_0x00164e60(&fStack_a0,0,in_x0[0x93]);
   }
-  func_0x00167d50(&uStack_98,param_2);
+  func_0x00167d50(&uStack_98);
   fVar11 = fStack_a0 - (float)uStack_98;
   fVar12 = fStack_9c - uStack_98._4_4_;
-  func_0x00169f20(&uStack_98,param_2);
+  func_0x00169f20(&uStack_98);
   fVar11 = fVar11 / (float)uStack_98;
   fVar12 = fVar12 / uStack_98._4_4_;
-  fVar7 = (float)func_0x00164d90(param_2);
+  fVar7 = (float)func_0x00164d90();
   fVar8 = (float)func_0x0016ee90();
   fVar7 = (float)func_0x00174170(-fVar7);
   fStack_a0 = fVar8 * fVar11 - fVar7 * fVar12;
   fStack_9c = fVar7 * fVar11 + fVar8 * fVar12;
-  if (param_2[0x93] == 0) {
+  if (in_x0[0x93] == 0) {
     fVar7 = 1.0;
   }
   else {
-    fVar7 = *(float *)(param_2 + 0x96);
+    fVar7 = *(float *)(in_x0 + 0x96);
   }
-  plVar2 = *(long **)(param_2[0x32] + (ulong)*(uint *)((long)param_2 + 0x4a4) * 0x28);
+  plVar2 = *(long **)(in_x0[0x32] + (ulong)*(uint *)((long)in_x0 + 0x4a4) * 0x28);
   (**(code **)(*plVar2 + 0x10))(plVar2,&fStack_a0);
-  lVar9 = param_2[0x95];
-  plVar2 = *(long **)(param_2[0x32] + (ulong)*(uint *)((long)param_2 + 0x4a4) * 0x28);
-  func_0x00169f20(auStack_a8,param_2);
+  lVar9 = in_x0[0x95];
+  plVar2 = *(long **)(in_x0[0x32] + (ulong)*(uint *)((long)in_x0 + 0x4a4) * 0x28);
+  func_0x00169f20(auStack_a8);
   uStack_98 = (long *)CONCAT44((float)((ulong)lVar9 >> 0x20) * fVar7 *
-                               ((float)((ulong)*(undefined8 *)((long)param_2 + 0x47c) >> 0x20) /
+                               ((float)((ulong)*(undefined8 *)((long)in_x0 + 0x47c) >> 0x20) /
                                auStack_a8._4_4_),
                                (float)lVar9 * fVar7 *
-                               ((float)*(undefined8 *)((long)param_2 + 0x47c) / auStack_a8._0_4_));
+                               ((float)*(undefined8 *)((long)in_x0 + 0x47c) / auStack_a8._0_4_));
   (**(code **)(*plVar2 + 0x18))(plVar2,&uStack_98);
-  if (param_2[0x93] != 0) {
+  if (in_x0[0x93] != 0) {
     fVar7 = (float)func_0x00164d90();
-    fVar8 = (float)func_0x00164d90(param_2);
-    for (fVar7 = (fVar7 - fVar8) + *(float *)((long)param_2 + 0x4b4) + 1.5707964; 3.1415927 < fVar7;
+    fVar8 = (float)func_0x00164d90();
+    for (fVar7 = (fVar7 - fVar8) + *(float *)((long)in_x0 + 0x4b4) + 1.5707964; 3.1415927 < fVar7;
         fVar7 = fVar7 + -6.2831855) {
     }
     for (; fVar7 <= -3.1415927; fVar7 = fVar7 + 6.2831855) {
     }
     uStack_98 = (long *)CONCAT44(uStack_98._4_4_,fVar7);
-    plVar2 = *(long **)(param_2[0x32] + (ulong)*(uint *)((long)param_2 + 0x4a4) * 0x28);
+    plVar2 = *(long **)(in_x0[0x32] + (ulong)*(uint *)((long)in_x0 + 0x4a4) * 0x28);
     (**(code **)(*plVar2 + 0x20))(plVar2,&uStack_98);
   }
-  (**(code **)(*param_2 + 200))(param_2,0);
-  plVar2 = (long *)param_2[0x75];
+  (**(code **)(*in_x0 + 200))();
+  plVar2 = (long *)in_x0[0x75];
   if (*(int *)((long)plVar2 + 0x34) == 0) {
     iVar5 = 0;
   }
@@ -1402,7 +1419,7 @@ void WaterConcept::WaterBalloon::update(float param_1,long *param_2)
     uVar6 = 0;
     iVar5 = 0;
     do {
-      uVar10 = *(undefined8 *)(param_2[0x7a] + uVar6 * 8);
+      uVar10 = *(undefined8 *)(in_x0[0x7a] + uVar6 * 8);
       fVar7 = (float)*(undefined8 *)(*plVar2 + lVar9) - (float)uVar10;
       fVar8 = (float)((ulong)*(undefined8 *)(*plVar2 + lVar9) >> 0x20) -
               (float)((ulong)uVar10 >> 0x20);
@@ -1411,36 +1428,35 @@ void WaterConcept::WaterBalloon::update(float param_1,long *param_2)
       if (NAN(fVar7)) {
         fVar7 = (float)func_0x0016cd20(fVar8);
       }
-      plVar2 = (long *)param_2[0x75];
+      plVar2 = (long *)in_x0[0x75];
       uVar6 = uVar6 + 1;
-      iVar5 = iVar5 + (uint)(*(float *)((long)param_2 + 0x4c4) <= fVar7 / *(float *)(param_2 + 0x97)
-                            );
+      iVar5 = iVar5 + (uint)(*(float *)((long)in_x0 + 0x4c4) <= fVar7 / *(float *)(in_x0 + 0x97));
       lVar9 = lVar9 + 0x74;
     } while (uVar6 < *(uint *)((long)plVar2 + 0x34));
   }
-  if ((int)param_2[0x99] <= iVar5) {
-    plVar2 = (long *)param_2[0x9d];
+  if ((int)in_x0[0x99] <= iVar5) {
+    plVar2 = (long *)in_x0[0x9d];
     if (plVar2 != (long *)0x0) {
-      lStack_88 = 0;
-      lStack_80 = 0;
+      pvStack_88 = (void *)0x0;
+      pvStack_80 = (void *)0x0;
       uStack_78 = 0;
       uStack_90 = 1;
-      uStack_98 = param_2;
-      if (&lStack_88 != param_2 + 0x8b) {
+      uStack_98 = in_x0;
+      if (&pvStack_88 != (void **)(in_x0 + 0x8b)) {
                     /* try { // try from 00497388 to 004973a3 has its CatchHandler @ 00497408 */
-        func_0x001721a0(&lStack_88,param_2[0x8b],param_2[0x8c]);
-        plVar2 = (long *)param_2[0x9d];
+        func_0x001721a0(&pvStack_88,in_x0[0x8b],in_x0[0x8c]);
+        plVar2 = (long *)in_x0[0x9d];
       }
       (**(code **)(*plVar2 + 0x10))(plVar2,&uStack_98);
-      if (lStack_88 != 0) {
-        lStack_80 = lStack_88;
-        FUN_00166120();
+      if (pvStack_88 != (void *)0x0) {
+        pvStack_80 = pvStack_88;
+        FUN_00166120(pvStack_88);
       }
     }
-    *(undefined1 *)((long)param_2 + 0xdc) = 1;
+    *(undefined1 *)((long)in_x0 + 0xdc) = 1;
   }
-  if (*(char *)((long)param_2 + 0x4dc) != '\0') {
-    *(float *)(param_2 + 0x9c) = *(float *)(param_2 + 0x9c) + param_1;
+  if (*(char *)((long)in_x0 + 0x4dc) != '\0') {
+    *(float *)(in_x0 + 0x9c) = *(float *)(in_x0 + 0x9c) + p0;
   }
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return;
@@ -1457,11 +1473,11 @@ void WaterConcept::WaterBalloon::update(float param_1,long *param_2)
 
 /* WaterConcept::WaterBalloon::draw(Walaber::SpriteBatch*, bool, float) */
 
-void WaterConcept::WaterBalloon::draw(long param_1)
+void WaterConcept::WaterBalloon::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
-  if (*(long *)(param_1 + 0x498) != 0) {
-    func_0x001696e0();
+  if (*(long *)(p0 + 0x498) != 0) {
+    func_0x001696e0(p0,p1);
     return;
   }
   return;
@@ -1475,11 +1491,11 @@ void WaterConcept::WaterBalloon::draw(long param_1)
 
 /* WaterConcept::WaterBalloon::_drawFG(Walaber::SpriteBatch*, bool, float) */
 
-void WaterConcept::WaterBalloon::_drawFG(long param_1)
+void WaterConcept::WaterBalloon::_drawFG(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
-  if (*(long *)(param_1 + 0x498) != 0) {
-    func_0x001696e0();
+  if (*(long *)(p0 + 0x498) != 0) {
+    func_0x001696e0(p0,p1);
     return;
   }
   return;
@@ -1493,14 +1509,14 @@ void WaterConcept::WaterBalloon::_drawFG(long param_1)
 
 /* WaterConcept::WaterBalloon::drawBackground(Walaber::SpriteBatch*, bool, float) */
 
-void WaterConcept::WaterBalloon::drawBackground
-               (undefined8 param_1,long *param_2,undefined8 param_3,uint param_4)
+void WaterConcept::WaterBalloon::drawBackground(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   ulong uVar4;
+  uint in_w2;
   undefined4 uVar5;
   int iVar6;
   int iVar7;
@@ -1510,10 +1526,11 @@ void WaterConcept::WaterBalloon::drawBackground
   ulong uVar11;
   int iVar12;
   int *piVar13;
+  undefined4 in_register_00005004;
   
-  (**(code **)(*param_2 + 0xd8))(param_2,param_3,param_4 & 1);
-  piVar8 = (int *)param_2[0x8b];
-  uVar4 = param_2[0x8c] - (long)piVar8;
+  (**(code **)(*(long *)p0 + 0xd8))(p0,p1,in_w2 & 1);
+  piVar8 = *(int **)(p0 + 0x458);
+  uVar4 = *(long *)(p0 + 0x460) - (long)piVar8;
   if (uVar4 == 0) {
     iVar9 = 0;
     iVar7 = 0;
@@ -1566,22 +1583,22 @@ void WaterConcept::WaterBalloon::drawBackground
   }
   if (iVar6 != 0) {
     if (iVar7 == iVar2) {
-      uVar5 = (undefined4)param_2[0x9a];
+      uVar5 = *(undefined4 *)(p0 + 0x4d0);
     }
     else if (iVar9 == iVar2) {
-      uVar5 = *(undefined4 *)((long)param_2 + 0x4d4);
+      uVar5 = *(undefined4 *)(p0 + 0x4d4);
     }
     else {
       if (iVar12 != iVar2) goto LAB_00497680;
-      uVar5 = (undefined4)param_2[0x9b];
+      uVar5 = *(undefined4 *)(p0 + 0x4d8);
     }
-    func_0x00164900(param_2,param_3,uVar5,10);
+    func_0x00164900(p0,p1,uVar5,10);
   }
 LAB_00497680:
-  if (param_2[0x93] != 0) {
+  if (*(long *)(p0 + 0x498) != 0) {
     return;
   }
-  func_0x001654a0(param_1,param_2,param_3,param_4 & 1);
+  func_0x001654a0(CONCAT44(in_register_00005004,p2),p0,p1,in_w2 & 1);
   return;
 }
 
@@ -1593,24 +1610,25 @@ LAB_00497680:
 
 /* WaterConcept::WaterBalloon::numParticlesOfFluidType(int) */
 
-int WaterConcept::WaterBalloon::numParticlesOfFluidType(long param_1,int param_2)
+int WaterConcept::WaterBalloon::numParticlesOfFluidType(int p0)
 
 {
   long lVar1;
   int iVar2;
+  int in_w1;
   int *piVar3;
   ulong uVar4;
   
-  lVar1 = *(long *)(param_1 + 0x460) - (long)*(int **)(param_1 + 0x458);
+  piVar3 = *(int **)((ulong)(uint)p0 + 0x458);
+  lVar1 = *(long *)((ulong)(uint)p0 + 0x460) - (long)piVar3;
   if (lVar1 == 0) {
     return 0;
   }
   uVar4 = 0;
   iVar2 = 0;
-  piVar3 = *(int **)(param_1 + 0x458);
   do {
     uVar4 = uVar4 + 1;
-    if (*piVar3 == param_2) {
+    if (*piVar3 == in_w1) {
       iVar2 = iVar2 + 1;
     }
     piVar3 = piVar3 + 2;
@@ -1626,7 +1644,7 @@ int WaterConcept::WaterBalloon::numParticlesOfFluidType(long param_1,int param_2
 
 /* WaterConcept::WaterBalloon::_drawAttachMouth(Walaber::SpriteBatch*) */
 
-void WaterConcept::WaterBalloon::_drawAttachMouth(long param_1,undefined8 param_2)
+void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
 
 {
   long lVar1;
@@ -1675,7 +1693,7 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(long param_1,undefined8 param_
   lVar1 = tpidr_el0;
   lVar2 = *(long *)(lVar1 + 0x28);
   uStack_f0 = 0;
-  lVar3 = *(long *)(*(long *)(param_1 + 400) + (ulong)*(uint *)(param_1 + 0x4a4) * 0x28);
+  lVar3 = *(long *)(*(long *)(p0 + 400) + (ulong)*(uint *)(p0 + 0x4a4) * 0x28);
   uStack_d0 = 0;
   uStack_e0 = 0;
   uStack_98 = *(long *)(lVar3 + 0xa0);
@@ -1700,13 +1718,13 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(long param_1,undefined8 param_
   uStack_b8 = 0;
   uStack_c0 = 0;
   uStack_c8 = 0;
-  func_0x00167d50(&lStack_120,param_1);
-  uVar9 = *(undefined8 *)(**(long **)(param_1 + 0x3a8) + (ulong)*(uint *)(param_1 + 0x4a0) * 0x74);
+  func_0x00167d50(&lStack_120,p0);
+  uVar9 = *(undefined8 *)(**(long **)(p0 + 0x3a8) + (ulong)*(uint *)(p0 + 0x4a0) * 0x74);
   fVar7 = (float)((ulong)lStack_120 >> 0x20);
   fVar4 = (float)lStack_120 + ((float)uVar9 - (float)lStack_120) * 0.4;
   fVar7 = fVar7 + ((float)((ulong)uVar9 >> 0x20) - fVar7) * 0.4;
-  func_0x00164e60(&fStack_f8,0x3e4ccccd,*(undefined8 *)(param_1 + 0x498));
-  func_0x00164e60(auStack_100,*(undefined8 *)(param_1 + 0x498));
+  func_0x00164e60(&fStack_f8,0x3e4ccccd,*(undefined8 *)(p0 + 0x498));
+  func_0x00164e60(auStack_100,*(undefined8 *)(p0 + 0x498));
   fVar11 = fStack_f8 - fVar4;
   fVar12 = fStack_f4 - fVar7;
   fVar8 = fVar11 * fVar11 + fVar12 * fVar12;
@@ -1790,9 +1808,9 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(long param_1,undefined8 param_
     *piStack_118 = *piStack_118 + 2;
     lStack_110 = lStack_120;
   }
-                    /* try { // try from 00497a44 to 00497a67 has its CatchHandler @ 00497ab4 */
   piStack_108 = piStack_118;
-  func_0x00166780(param_2,&lStack_110,6,1,&uStack_98,&uStack_c8,0,0);
+                    /* try { // try from 00497a44 to 00497a67 has its CatchHandler @ 00497ab4 */
+  func_0x00166780();
   FUN_00166b20(&lStack_110);
   FUN_00166b20(&lStack_120);
   func_0x0016d7e0(&lStack_130);
@@ -1811,11 +1829,11 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(long param_1,undefined8 param_
 
 /* WaterConcept::WaterBalloon::handleTouchDown(Walaber::Vector2 const&) */
 
-void WaterConcept::WaterBalloon::handleTouchDown(long param_1)
+void WaterConcept::WaterBalloon::handleTouchDown(Walaber__Vector2 *p0)
 
 {
-  *(undefined1 *)(param_1 + 0x4dc) = 1;
-  *(undefined4 *)(param_1 + 0x4e0) = 0;
+  p0[0x4dc] = (Walaber__Vector2)0x1;
+  *(undefined4 *)(p0 + 0x4e0) = 0;
   return;
 }
 
@@ -1827,7 +1845,7 @@ void WaterConcept::WaterBalloon::handleTouchDown(long param_1)
 
 /* WaterConcept::WaterBalloon::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
-void WaterConcept::WaterBalloon::handleTouchMoved(void)
+void WaterConcept::WaterBalloon::handleTouchMoved(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
   return;
@@ -1841,49 +1859,49 @@ void WaterConcept::WaterBalloon::handleTouchMoved(void)
 
 /* WaterConcept::WaterBalloon::handleTouchUp(Walaber::Vector2 const&) */
 
-void WaterConcept::WaterBalloon::handleTouchUp(long param_1)
+void WaterConcept::WaterBalloon::handleTouchUp(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   long *plVar2;
-  long lStack_58;
+  Walaber__Vector2 *pWStack_58;
   undefined4 uStack_50;
-  long lStack_48;
-  long lStack_40;
+  void *pvStack_48;
+  void *pvStack_40;
   undefined8 uStack_38;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if (*(float *)(param_1 + 0x4e0) < 0.5) {
-    if (*(long *)(param_1 + 0x498) == 0) {
-      plVar2 = *(long **)(param_1 + 0x4e8);
+  if (*(float *)(p0 + 0x4e0) < 0.5) {
+    if (*(long *)(p0 + 0x498) == 0) {
+      plVar2 = *(long **)(p0 + 0x4e8);
       if (plVar2 != (long *)0x0) {
-        lStack_48 = 0;
-        lStack_40 = 0;
+        pvStack_48 = (void *)0x0;
+        pvStack_40 = (void *)0x0;
         uStack_38 = 0;
         uStack_50 = 0;
-        lStack_58 = param_1;
-        if (&lStack_48 != (long *)(param_1 + 0x458)) {
+        pWStack_58 = p0;
+        if ((Walaber__Vector2 *)&pvStack_48 != p0 + 0x458) {
                     /* try { // try from 00497b70 to 00497b8b has its CatchHandler @ 00497bd4 */
-          func_0x001721a0(&lStack_48,*(undefined8 *)(param_1 + 0x458),
-                          *(undefined8 *)(param_1 + 0x460));
-          plVar2 = *(long **)(param_1 + 0x4e8);
+          func_0x001721a0((Walaber__Vector2 *)&pvStack_48,*(undefined8 *)(p0 + 0x458),
+                          *(undefined8 *)(p0 + 0x460));
+          plVar2 = *(long **)(p0 + 0x4e8);
         }
-        (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_58);
-        if (lStack_48 != 0) {
-          lStack_40 = lStack_48;
-          FUN_00166120();
+        (**(code **)(*plVar2 + 0x10))(plVar2,&pWStack_58);
+        if (pvStack_48 != (void *)0x0) {
+          pvStack_40 = pvStack_48;
+          FUN_00166120(pvStack_48);
         }
       }
-      *(undefined1 *)(param_1 + 0xdc) = 1;
+      p0[0xdc] = (Walaber__Vector2)0x1;
     }
     else {
-      func_0x0016f750(param_1);
+      func_0x0016f750(p0);
     }
   }
-  *(undefined1 *)(param_1 + 0x4dc) = 0;
-  *(undefined4 *)(param_1 + 0x4e0) = 0xbf800000;
+  p0[0x4dc] = (Walaber__Vector2)0x0;
+  *(undefined4 *)(p0 + 0x4e0) = 0xbf800000;
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -1905,21 +1923,22 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
   long lVar1;
   long lVar2;
   long *plVar3;
-  ulong auStack_80 [3];
+  ulong auStack_80 [2];
+  void *pvStack_70;
   undefined1 auStack_68 [16];
   long lStack_58;
   undefined4 uStack_50;
-  long lStack_48;
-  long lStack_40;
+  void *pvStack_48;
+  void *pvStack_40;
   undefined8 uStack_38;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   *(undefined8 *)(*(long *)(param_1 + 0x498) + 0x4c8) = 0;
-  lStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   uStack_38 = 0;
-  lStack_48 = 0;
+  pvStack_48 = (void *)0x0;
   uStack_50 = 5;
                     /* try { // try from 00497c3c to 00497c43 has its CatchHandler @ 00497d18 */
   lStack_58 = param_1;
@@ -1928,20 +1947,20 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
   lVar2 = *(long *)(*(long *)(param_1 + 400) + (ulong)*(uint *)(param_1 + 0x4a4) * 0x28);
   *(undefined1 *)(lVar2 + 200) = 1;
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
+  pvStack_70 = (void *)0x0;
   auStack_80[0] = 0x646e696208;
                     /* try { // try from 00497c84 to 00497c8f has its CatchHandler @ 00497d00 */
   func_0x001668e0(auStack_68,lVar2,auStack_80);
   func_0x0016d7e0(auStack_68);
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
   plVar3 = *(long **)(*(long *)(param_1 + 400) + (ulong)*(uint *)(param_1 + 0x4a4) * 0x28);
                     /* try { // try from 00497cc8 to 00497ccb has its CatchHandler @ 00497d18 */
   (**(code **)(*plVar3 + 0x20))(plVar3,param_1 + 0x4b4);
-  if (lStack_48 != 0) {
-    lStack_40 = lStack_48;
-    FUN_00166120();
+  if (pvStack_48 != (void *)0x0) {
+    pvStack_40 = pvStack_48;
+    FUN_00166120(pvStack_48);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -1960,53 +1979,66 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
    WaterConcept::ParticleDescription const&, int, bool&) */
 
 void WaterConcept::WaterBalloon::particleHasCollided
-               (long param_1,undefined8 param_2,int *param_3,undefined8 param_4,undefined1 *param_5)
+               (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
   long lVar1;
   long *plVar2;
-  long lStack_68;
+  undefined8 uVar3;
+  WaterConcept__ParticleDescription *extraout_x1;
+  undefined1 *in_x4;
+  undefined1 auVar4 [16];
+  WaterConcept__Fluids *pWStack_68;
   undefined4 uStack_60;
-  long lStack_58;
-  long lStack_50;
+  void *pvStack_58;
+  void *pvStack_50;
   undefined8 uStack_48;
   long lStack_38;
   
+  auVar4._8_8_ = p1;
+  auVar4._0_8_ = p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *param_5 = 0;
-  if (*(char *)(param_1 + 0xdc) == '\0') {
-    if (*param_3 == 4) {
-      plVar2 = *(long **)(param_1 + 0x4e8);
+  *in_x4 = 0;
+  if (p0[0xdc] == (WaterConcept__Fluids)0x0) {
+    if (*(int *)(ulong)(uint)p2 == 4) {
+      plVar2 = *(long **)(p0 + 0x4e8);
+      uVar3 = 0;
       if (plVar2 != (long *)0x0) {
-        lStack_58 = 0;
-        lStack_50 = 0;
+        pvStack_58 = (void *)0x0;
+        pvStack_50 = (void *)0x0;
         uStack_48 = 0;
         uStack_60 = 2;
-        lStack_68 = param_1;
-        if (&lStack_58 != (long *)(param_1 + 0x458)) {
+        pWStack_68 = p0;
+        if ((WaterConcept__Fluids *)&pvStack_58 != p0 + 0x458) {
                     /* try { // try from 00497dac to 00497dc7 has its CatchHandler @ 00497e18 */
-          func_0x001721a0(&lStack_58,*(undefined8 *)(param_1 + 0x458),
-                          *(undefined8 *)(param_1 + 0x460));
-          plVar2 = *(long **)(param_1 + 0x4e8);
+          func_0x001721a0((WaterConcept__Fluids *)&pvStack_58,*(undefined8 *)(p0 + 0x458),
+                          *(undefined8 *)(p0 + 0x460));
+          plVar2 = *(long **)(p0 + 0x4e8);
         }
-        (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_68);
-        if (lStack_58 != 0) {
-          lStack_50 = lStack_58;
-          FUN_00166120();
+        (**(code **)(*plVar2 + 0x10))(plVar2,&pWStack_68);
+        uVar3 = 0;
+        p1 = extraout_x1;
+        if (pvStack_58 != (void *)0x0) {
+          pvStack_50 = pvStack_58;
+          auVar4 = FUN_00166120(pvStack_58);
+          p1 = auVar4._8_8_;
+          uVar3 = auVar4._0_8_;
         }
       }
-      *(undefined1 *)(param_1 + 0xdc) = 1;
-      *param_5 = 1;
+      auVar4._8_8_ = p1;
+      auVar4._0_8_ = uVar3;
+      p0[0xdc] = (WaterConcept__Fluids)0x1;
+      *in_x4 = 1;
     }
     else {
-      func_0x001682c0(param_1);
+      auVar4 = func_0x001682c0(p0);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
-  FUN_00164ff0();
+  FUN_00164ff0(auVar4._0_8_,auVar4._8_8_);
   return;
 }
 
@@ -2018,19 +2050,20 @@ void WaterConcept::WaterBalloon::particleHasCollided
 
 /* WaterConcept::WaterBalloon::containsFluidType(int) */
 
-undefined8 WaterConcept::WaterBalloon::containsFluidType(long param_1,int param_2)
+undefined8 WaterConcept::WaterBalloon::containsFluidType(int p0)
 
 {
   long lVar1;
+  int in_w1;
   int *piVar2;
   ulong uVar3;
   
-  piVar2 = *(int **)(param_1 + 0x458);
-  lVar1 = *(long *)(param_1 + 0x460) - (long)piVar2;
+  piVar2 = *(int **)((ulong)(uint)p0 + 0x458);
+  lVar1 = *(long *)((ulong)(uint)p0 + 0x460) - (long)piVar2;
   if (lVar1 != 0) {
     uVar3 = 0;
     do {
-      if (*piVar2 == param_2) {
+      if (*piVar2 == in_w1) {
         return 1;
       }
       uVar3 = uVar3 + 1;
@@ -2048,7 +2081,7 @@ undefined8 WaterConcept::WaterBalloon::containsFluidType(long param_1,int param_
 
 /* WaterConcept::WaterBalloon::pop(WaterConcept::Fluids*) */
 
-void WaterConcept::WaterBalloon::pop(long param_1,long param_2)
+void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
 
 {
   long *plVar1;
@@ -2058,22 +2091,22 @@ void WaterConcept::WaterBalloon::pop(long param_1,long param_2)
   long lVar5;
   int iVar6;
   long *plVar7;
+  long in_x1;
   ulong uVar8;
   long lVar9;
   int iVar10;
-  ulong uVar11;
-  int iVar12;
-  ulong uVar13;
-  int iVar14;
+  int iVar11;
+  ulong uVar12;
+  int iVar13;
+  double dVar14;
   double dVar15;
-  double dVar16;
+  float fVar16;
   float fVar17;
   float fVar18;
-  float fVar19;
-  uint uVar20;
+  uint uVar19;
+  float fVar20;
   float fVar21;
   float fVar22;
-  float fVar23;
   undefined1 auStack_a8 [8];
   float fStack_a0;
   float fStack_9c;
@@ -2081,44 +2114,43 @@ void WaterConcept::WaterBalloon::pop(long param_1,long param_2)
   
   lVar5 = tpidr_el0;
   lStack_98 = *(long *)(lVar5 + 0x28);
-  fVar19 = *(float *)(param_1 + 0x164);
-  fVar22 = *(float *)(param_1 + 0x15c);
-  fVar21 = *(float *)(param_1 + 0x168);
-  fVar23 = *(float *)(param_1 + 0x160);
-  dVar16 = (double)(ulong)(*(long *)(param_1 + 0x460) - *(long *)(param_1 + 0x458) >> 3);
-  dVar15 = SQRT(dVar16);
-  if (NAN(dVar15)) {
-    dVar15 = (double)func_0x00169a30(dVar16);
+  fVar18 = *(float *)(p0 + 0x164);
+  fVar21 = *(float *)(p0 + 0x15c);
+  fVar20 = *(float *)(p0 + 0x168);
+  fVar22 = *(float *)(p0 + 0x160);
+  dVar15 = (double)(ulong)(*(long *)(p0 + 0x460) - *(long *)(p0 + 0x458) >> 3);
+  dVar14 = SQRT(dVar15);
+  if (NAN(dVar14)) {
+    dVar14 = (double)func_0x00169a30(dVar15);
   }
-  iVar12 = (int)dVar15;
-  func_0x00167d50(&fStack_a0,param_1);
-  if (0 < iVar12) {
-    fVar18 = 1.0 / (float)iVar12;
-    fVar17 = (float)iVar12 * 0.5;
-    fVar19 = (fVar19 - fVar22) * (float)0x3f733333 * fVar18;
-    fVar22 = fStack_a0 - fVar17 * fVar19;
-    fVar18 = (fVar21 - fVar23) * (float)0x3f733333 * fVar18;
+  iVar11 = (int)dVar14;
+  func_0x00167d50(&fStack_a0,p0);
+  if (0 < iVar11) {
+    fVar17 = 1.0 / (float)iVar11;
+    fVar16 = (float)iVar11 * 0.5;
+    fVar18 = (fVar18 - fVar21) * (float)0x3f733333 * fVar17;
+    fVar21 = fStack_a0 - fVar16 * fVar18;
+    fVar17 = (fVar20 - fVar22) * (float)0x3f733333 * fVar17;
     uVar8 = 0;
     iVar10 = 0;
-    plVar1 = (long *)((long)&__DT_SYMTAB[0x1c0f].st_size + param_2);
-    fVar21 = fStack_9c - fVar17 * fVar18;
+    plVar1 = (long *)((long)&__DT_SYMTAB[0x1c0f].st_size + in_x1);
+    fVar20 = fStack_9c - fVar16 * fVar17;
     do {
-      iVar14 = 0;
-      uVar13 = (ulong)(int)uVar8;
+      iVar13 = 0;
+      uVar12 = (ulong)(int)uVar8;
       uVar8 = -(uVar8 >> 0x1f) & 0xfffffff800000000 | uVar8 << 3;
       do {
-        if ((ulong)(*(long *)(param_1 + 0x460) - *(long *)(param_1 + 0x458) >> 3) <= uVar13) break;
-        puVar2 = (uint *)(*(long *)(param_1 + 0x458) + uVar8);
+        if ((ulong)(*(long *)(p0 + 0x460) - *(long *)(p0 + 0x458) >> 3) <= uVar12) break;
+        puVar2 = (uint *)(*(long *)(p0 + 0x458) + uVar8);
         uVar3 = *puVar2;
-        uVar11 = (ulong)uVar3;
-        uVar20 = puVar2[1];
-        fStack_a0 = fVar22 + fVar19 * (float)iVar14;
-        fStack_9c = fVar21 + fVar18 * (float)iVar10;
-        func_0x00167d50(auStack_a8,param_1);
-        iVar6 = func_0x00169870(*(undefined4 *)(&DAT_00733f68 + uVar11 * 0xe0),
-                                *(undefined4 *)(&DAT_00733fa4 + uVar11 * 0xe0),uVar20,param_2,uVar11
-                                ,&fStack_a0,&fStack_a0);
-        plVar7 = (long *)func_0x001626a0(param_2,uVar11);
+        uVar19 = puVar2[1];
+        fStack_a0 = fVar21 + fVar18 * (float)iVar13;
+        fStack_9c = fVar20 + fVar17 * (float)iVar10;
+        func_0x00167d50(auStack_a8,p0);
+        lVar9 = (ulong)uVar3 * 0xe0;
+        iVar6 = func_0x00169870(*(undefined4 *)(&DAT_00733f68 + lVar9),
+                                *(undefined4 *)(&DAT_00733fa4 + lVar9),uVar19);
+        plVar7 = (long *)func_0x001626a0();
         if (-1 < iVar6) {
           bVar4 = *(byte *)(*plVar7 + (long)iVar6 * 0x90 + 0x34);
           plVar7 = (long *)FUN_00164060(0x28);
@@ -2130,21 +2162,21 @@ void WaterConcept::WaterBalloon::pop(long param_1,long param_2)
           *plVar7 = lVar9;
           plVar7[1] = (long)plVar1;
           *(long **)(lVar9 + 8) = plVar7;
-          lVar9 = *(long *)((long)&__DT_SYMTAB[0x1c10].st_value + param_2);
+          lVar9 = *(long *)((long)&__DT_SYMTAB[0x1c10].st_value + in_x1);
           *plVar1 = (long)plVar7;
-          *(long *)((long)&__DT_SYMTAB[0x1c10].st_value + param_2) = lVar9 + 1;
+          *(long *)((long)&__DT_SYMTAB[0x1c10].st_value + in_x1) = lVar9 + 1;
         }
-        iVar14 = iVar14 + 1;
-        uVar13 = uVar13 + 1;
+        iVar13 = iVar13 + 1;
+        uVar12 = uVar12 + 1;
         uVar8 = uVar8 + 8;
-      } while (iVar14 < iVar12);
-      uVar8 = uVar13 & 0xffffffff;
+      } while (iVar13 < iVar11);
+      uVar8 = uVar12 & 0xffffffff;
       iVar10 = iVar10 + 1;
-    } while (iVar10 != iVar12);
+    } while (iVar10 != iVar11);
   }
-  *(undefined8 *)(param_1 + 0x460) = *(undefined8 *)(param_1 + 0x458);
-  if (*(long *)(param_1 + 0x498) != 0) {
-    func_0x0016f750(param_1);
+  *(undefined8 *)(p0 + 0x460) = *(undefined8 *)(p0 + 0x458);
+  if (*(long *)(p0 + 0x498) != 0) {
+    func_0x0016f750(p0);
   }
   if (*(long *)(lVar5 + 0x28) == lStack_98) {
     return;
@@ -2168,8 +2200,8 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
   long *plVar2;
   long lStack_58;
   undefined4 uStack_50;
-  long lStack_48;
-  long lStack_40;
+  void *pvStack_48;
+  void *pvStack_40;
   undefined8 uStack_38;
   long lStack_28;
   
@@ -2177,20 +2209,21 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
   lStack_28 = *(long *)(lVar1 + 0x28);
   plVar2 = *(long **)(param_1 + 0x4e8);
   if (plVar2 != (long *)0x0) {
-    lStack_48 = 0;
-    lStack_40 = 0;
+    pvStack_48 = (void *)0x0;
+    pvStack_40 = (void *)0x0;
     uStack_38 = 0;
     lStack_58 = param_1;
     uStack_50 = param_2;
-    if (&lStack_48 != (long *)(param_1 + 0x458)) {
+    if (&pvStack_48 != (void **)(param_1 + 0x458)) {
                     /* try { // try from 00498134 to 0049814f has its CatchHandler @ 0049818c */
-      func_0x001721a0(&lStack_48,*(undefined8 *)(param_1 + 0x458),*(undefined8 *)(param_1 + 0x460));
+      func_0x001721a0(&pvStack_48,*(undefined8 *)(param_1 + 0x458),*(undefined8 *)(param_1 + 0x460))
+      ;
       plVar2 = *(long **)(param_1 + 0x4e8);
     }
     (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_58);
-    if (lStack_48 != 0) {
-      lStack_40 = lStack_48;
-      FUN_00166120();
+    if (pvStack_48 != (void *)0x0) {
+      pvStack_40 = pvStack_48;
+      FUN_00166120(pvStack_48);
     }
   }
   *(undefined1 *)(param_1 + 0xdc) = 1;
@@ -2209,36 +2242,36 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
 
 /* WaterConcept::WaterBalloon::attachToSpout(WaterConcept::Spout*) */
 
-void WaterConcept::WaterBalloon::attachToSpout(long param_1,long param_2)
+void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0)
 
 {
   long lVar1;
-  ulong auStack_50 [3];
+  long in_x1;
+  ulong auStack_50 [2];
+  void *pvStack_40;
   undefined1 auStack_38 [16];
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if (param_2 == 0) {
-    func_0x0016f750(param_1);
+  if (in_x1 == 0) {
+    func_0x0016f750(p0);
   }
   else {
-    *(long *)(param_1 + 0x498) = param_2;
-    *(long *)(param_2 + 0x4c8) = param_1;
+    *(long *)(p0 + 0x498) = in_x1;
+    *(WaterConcept__Spout **)(in_x1 + 0x4c8) = p0;
     auStack_50[1] = 0;
-    auStack_50[2] = 0;
+    pvStack_40 = (void *)0x0;
     auStack_50[0] = 0x74756f70730a;
                     /* try { // try from 00498210 to 0049821b has its CatchHandler @ 0049827c */
     func_0x001668e0(auStack_38,
-                    *(undefined8 *)
-                     (*(long *)(param_1 + 400) + (ulong)*(uint *)(param_1 + 0x4a4) * 0x28),
+                    *(undefined8 *)(*(long *)(p0 + 400) + (ulong)*(uint *)(p0 + 0x4a4) * 0x28),
                     auStack_50);
     func_0x0016d7e0(auStack_38);
     if ((auStack_50[0] & 1) != 0) {
-      FUN_00166120(auStack_50[2]);
+      FUN_00166120(pvStack_40);
     }
-    *(undefined1 *)
-     (*(long *)(*(long *)(param_1 + 400) + (ulong)*(uint *)(param_1 + 0x4a4) * 0x28) + 200) = 0;
+    *(undefined1 *)(*(long *)(*(long *)(p0 + 400) + (ulong)*(uint *)(p0 + 0x4a4) * 0x28) + 200) = 0;
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;

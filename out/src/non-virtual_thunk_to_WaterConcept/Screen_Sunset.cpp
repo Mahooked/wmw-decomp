@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_Sunset::~Screen_Sunset(long param
 void non_virtual_thunk_to_WaterConcept::Screen_Sunset::~Screen_Sunset(long param_1)
 
 {
-  func_0x00171d70(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00171d70((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_Sunset::~Screen_Sunset(long param
 /* non-virtual thunk to WaterConcept::Screen_Sunset::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Sunset::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Sunset::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00164520(param_1 + -0x20);
+  func_0x00164520((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -55,7 +56,7 @@ void non_virtual_thunk_to_WaterConcept::Screen_Sunset::handleEvent(long param_1)
 
 /* non-virtual thunk to WaterConcept::Screen_Sunset::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_Sunset::messageRx(void)
+undefined8 non_virtual_thunk_to_WaterConcept::Screen_Sunset::messageRx(Walaber__Message *p0)
 
 {
   return 0;

@@ -12,70 +12,72 @@
    >::assign<Walaber::Language*>(Walaber::Language*, Walaber::Language*) */
 
 void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Language>>::
-     assign<Walaber::Language*>(long *param_1,long param_2,long param_3)
+     assign<Walaber::Language*>(Walaber__Language *p0,Walaber__Language *p1)
 
 {
   ulong uVar1;
-  long lVar2;
+  Walaber__Language *pWVar2;
+  Walaber__Language *in_x2;
   long lVar3;
   long lVar4;
-  ulong uVar5;
+  void *pvVar5;
+  ulong uVar6;
   
-  lVar2 = param_1[2];
-  lVar4 = *param_1;
-  lVar3 = param_3 - param_2;
-  uVar5 = lVar3 >> 2;
-  if ((ulong)(lVar2 - lVar4 >> 2) < uVar5) {
-    if (lVar4 != 0) {
-      param_1[1] = lVar4;
-      FUN_00166120(lVar4);
-      lVar2 = 0;
-      *param_1 = 0;
-      param_1[1] = 0;
-      param_1[2] = 0;
+  lVar3 = *(long *)(p0 + 0x10);
+  pvVar5 = *(void **)p0;
+  lVar4 = (long)in_x2 - (long)p1;
+  uVar6 = lVar4 >> 2;
+  if ((ulong)(lVar3 - (long)pvVar5 >> 2) < uVar6) {
+    if (pvVar5 != (void *)0x0) {
+      *(void **)(p0 + 8) = pvVar5;
+      FUN_00166120(pvVar5);
+      lVar3 = 0;
+      *(undefined8 *)p0 = 0;
+      *(undefined8 *)(p0 + 8) = 0;
+      *(undefined8 *)(p0 + 0x10) = 0;
     }
-    if (uVar5 >> 0x3e != 0) {
-      FUN_001705a0(param_1);
+    if (uVar6 >> 0x3e != 0) {
+      FUN_001705a0(p0);
       return;
     }
-    if ((ulong)(lVar2 >> 2) < 0x1fffffffffffffff) {
-      if (uVar5 <= (ulong)(lVar2 >> 1)) {
-        uVar5 = lVar2 >> 1;
+    if ((ulong)(lVar3 >> 2) < 0x1fffffffffffffff) {
+      if (uVar6 <= (ulong)(lVar3 >> 1)) {
+        uVar6 = lVar3 >> 1;
       }
     }
     else {
-      uVar5 = 0x3fffffffffffffff;
+      uVar6 = 0x3fffffffffffffff;
     }
-    func_0x0016feb0(param_1,uVar5);
-    if (lVar3 < 1) {
+    func_0x0016feb0(p0,uVar6);
+    if (lVar4 < 1) {
       return;
     }
-    FUN_001715e0(param_1[1],param_2,lVar3);
-    lVar3 = param_1[1] + lVar3;
+    FUN_001715e0(*(undefined8 *)(p0 + 8),p1,lVar4);
+    pvVar5 = (void *)(*(long *)(p0 + 8) + lVar4);
   }
   else {
-    uVar1 = param_1[1] - lVar4 >> 2;
-    lVar3 = param_2 + (param_1[1] - lVar4);
-    if (uVar5 <= uVar1) {
-      lVar3 = param_3;
+    uVar1 = *(long *)(p0 + 8) - (long)pvVar5 >> 2;
+    pWVar2 = p1 + (*(long *)(p0 + 8) - (long)pvVar5);
+    if (uVar6 <= uVar1) {
+      pWVar2 = in_x2;
     }
-    lVar2 = lVar3 - param_2;
-    if (lVar2 != 0) {
-      FUN_0016b250(lVar4,param_2,lVar2);
+    lVar3 = (long)pWVar2 - (long)p1;
+    if (lVar3 != 0) {
+      FUN_0016b250(pvVar5,p1,lVar3);
     }
-    if (uVar1 < uVar5) {
-      param_3 = param_3 - lVar3;
-      if (param_3 < 1) {
+    if (uVar1 < uVar6) {
+      lVar3 = (long)in_x2 - (long)pWVar2;
+      if (lVar3 < 1) {
         return;
       }
-      FUN_001715e0(param_1[1],lVar3,param_3);
-      lVar3 = param_1[1] + param_3;
+      FUN_001715e0(*(undefined8 *)(p0 + 8),pWVar2,lVar3);
+      pvVar5 = (void *)(*(long *)(p0 + 8) + lVar3);
     }
     else {
-      lVar3 = lVar4 + (lVar2 >> 2) * 4;
+      pvVar5 = (void *)((long)pvVar5 + (lVar3 >> 2) * 4);
     }
   }
-  param_1[1] = lVar3;
+  *(void **)(p0 + 8) = pvVar5;
   return;
 }
 

@@ -176,25 +176,27 @@ void WaterConcept::Notification::Notification(undefined8 *param_1)
 
 /* WaterConcept::Notification::Notification(WaterConcept::Notification const&) */
 
-void WaterConcept::Notification::Notification(undefined8 *param_1,long param_2)
+void WaterConcept::Notification::Notification(WaterConcept__Notification *p0)
 
 {
-  *param_1 = &PTR_handleEvent_007126c8;
-  func_0x001727c0(param_1 + 1,param_2 + 8);
-  param_1[0x14] = 0xff000000ff000000;
-  FUN_0016b330(param_1 + 0x15,0,0x73);
-  *(undefined4 *)((long)param_1 + 0x11b) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x11f) = 0xff;
-  *(undefined4 *)(param_1 + 0x24) = 0;
-  FUN_0016b330(param_1 + 0x25,0,0x73);
-  *(undefined4 *)((long)param_1 + 0x19b) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x19f) = 0xff;
-  *(undefined4 *)(param_1 + 0x34) = 0;
-  param_1[0x3a] = 0;
-  param_1[0x3b] = 0;
-  param_1[0x39] = 0;
-  param_1[0x35] = 0;
-  param_1[0x36] = 0;
+  long in_x1;
+  
+  *(undefined ***)p0 = &PTR_handleEvent_007126c8;
+  func_0x001727c0(p0 + 8,in_x1 + 8);
+  *(undefined8 *)(p0 + 0xa0) = 0xff000000ff000000;
+  FUN_0016b330(p0 + 0xa8,0,0x73);
+  *(undefined4 *)(p0 + 0x11b) = 0xff;
+  p0[0x11f] = (WaterConcept__Notification)0xff;
+  *(undefined4 *)(p0 + 0x120) = 0;
+  FUN_0016b330(p0 + 0x128,0,0x73);
+  *(undefined4 *)(p0 + 0x19b) = 0xff;
+  p0[0x19f] = (WaterConcept__Notification)0xff;
+  *(undefined4 *)(p0 + 0x1a0) = 0;
+  *(undefined8 *)(p0 + 0x1d0) = 0;
+  *(undefined8 *)(p0 + 0x1d8) = 0;
+  *(undefined8 *)(p0 + 0x1c8) = 0;
+  *(undefined8 *)(p0 + 0x1a8) = 0;
+  *(undefined8 *)(p0 + 0x1b0) = 0;
   return;
 }
 
@@ -206,7 +208,7 @@ void WaterConcept::Notification::Notification(undefined8 *param_1,long param_2)
 
 /* WaterConcept::Notification::TEMPNAMEPLACEHOLDERVALUE(WaterConcept::Notification const&) */
 
-void WaterConcept::Notification::operator=(void)
+void WaterConcept::Notification::operator=(WaterConcept__Notification *p0)
 
 {
   return;
@@ -225,7 +227,7 @@ void WaterConcept::Notification::~Notification(undefined8 *param_1)
 {
   *param_1 = &PTR_handleEvent_007126c8;
   if ((*(byte *)(param_1 + 0x39) & 1) != 0) {
-    FUN_00166120(param_1[0x3b]);
+    FUN_00166120((void *)param_1[0x3b]);
   }
   FUN_00172ab0(param_1 + 0x2f);
   FUN_00172ab0(param_1 + 0x2d);
@@ -251,7 +253,7 @@ void WaterConcept::Notification::~Notification(undefined8 *param_1)
 
 /* WaterConcept::Notification::~Notification() */
 
-void WaterConcept::Notification::~Notification(undefined8 param_1)
+void WaterConcept::Notification::~Notification(void *param_1)
 
 {
   func_0x00172080();
@@ -267,49 +269,50 @@ void WaterConcept::Notification::~Notification(undefined8 param_1)
 
 /* WaterConcept::Notification::update(float) */
 
-undefined4 WaterConcept::Notification::update(float param_1,long *param_2)
+undefined4 WaterConcept::Notification::update(float p0)
 
 {
   int iVar1;
+  long *in_x0;
   float fVar2;
   
-  func_0x001706f0(param_2 + 1);
-  iVar1 = (int)param_2[0x38];
+  func_0x001706f0(in_x0 + 1);
+  iVar1 = (int)in_x0[0x38];
   if (iVar1 == 2) {
-    fVar2 = *(float *)(param_2 + 0x37);
-    *(float *)(param_2 + 0x37) = fVar2 + param_1;
-    if ((*(float *)((long)param_2 + 0x1bc) < 0.0) ||
-       (fVar2 + param_1 <= *(float *)((long)param_2 + 0x1bc))) goto LAB_0049cdb4;
+    fVar2 = *(float *)(in_x0 + 0x37);
+    *(float *)(in_x0 + 0x37) = fVar2 + p0;
+    if ((*(float *)((long)in_x0 + 0x1bc) < 0.0) || (fVar2 + p0 <= *(float *)((long)in_x0 + 0x1bc)))
+    goto LAB_0049cdb4;
   }
   else if (iVar1 == 1) {
-    if (*(float *)(param_2 + 0x34) == 0.0) {
-      if (0.0 < *(float *)(param_2 + 0x37)) {
-        func_0x00171ff0(param_2,param_2 + 0x15,1);
-        fVar2 = *(float *)(param_2 + 0x37) - param_1;
+    if (*(float *)(in_x0 + 0x34) == 0.0) {
+      if (0.0 < *(float *)(in_x0 + 0x37)) {
+        func_0x00171ff0();
+        fVar2 = *(float *)(in_x0 + 0x37) - p0;
         goto LAB_0049cd9c;
       }
     }
-    else if (*(float *)(param_2 + 0x37) < *(float *)(param_2 + 0x34)) {
-      func_0x00171ff0(param_2,param_2 + 0x25,1);
-      fVar2 = *(float *)(param_2 + 0x37);
+    else if (*(float *)(in_x0 + 0x37) < *(float *)(in_x0 + 0x34)) {
+      func_0x00171ff0();
+      fVar2 = *(float *)(in_x0 + 0x37);
       goto LAB_0049cd74;
     }
   }
   else {
     if (iVar1 != 0) goto LAB_0049cdb4;
-    func_0x00171ff0(param_2,param_2 + 0x15,1);
-    fVar2 = *(float *)(param_2 + 0x37);
-    if (fVar2 < *(float *)(param_2 + 0x24)) {
+    func_0x00171ff0();
+    fVar2 = *(float *)(in_x0 + 0x37);
+    if (fVar2 < *(float *)(in_x0 + 0x24)) {
 LAB_0049cd74:
-      fVar2 = fVar2 + param_1;
+      fVar2 = fVar2 + p0;
 LAB_0049cd9c:
-      *(float *)(param_2 + 0x37) = fVar2;
+      *(float *)(in_x0 + 0x37) = fVar2;
       goto LAB_0049cdb4;
     }
   }
-  (**(code **)(*param_2 + 0x40))(param_2);
+  (**(code **)(*in_x0 + 0x40))();
 LAB_0049cdb4:
-  return (int)param_2[0x38];
+  return (int)in_x0[0x38];
 }
 
 
@@ -321,13 +324,16 @@ LAB_0049cdb4:
 /* WaterConcept::Notification::_applyTransitionBehavior(WaterConcept::Notification::NotificationTransitionBehavior
    const&, int) */
 
-void WaterConcept::Notification::_applyTransitionBehavior(long param_1,long *param_2,int param_3)
+void WaterConcept::Notification::_applyTransitionBehavior
+               (WaterConcept__Notification__NotificationTransitionBehavior *p0,int p1)
 
 {
   long lVar1;
   long *plVar2;
-  float fVar3;
+  long *plVar3;
+  int in_w2;
   float fVar4;
+  float fVar5;
   undefined8 uStack_80;
   float fStack_78;
   float fStack_74;
@@ -336,46 +342,46 @@ void WaterConcept::Notification::_applyTransitionBehavior(long param_1,long *par
   undefined8 uStack_60;
   long lStack_58;
   
+  plVar3 = (long *)(ulong)(uint)p1;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_60 = *(undefined8 *)(param_1 + 0x1b0);
-  func_0x001689d0(&fStack_78,(undefined8 *)(param_1 + 8));
-  if ((*param_2 != 0) && (*(int *)param_2[1] != 0)) {
-    fVar3 = (float)func_0x0016de00(*(undefined4 *)(param_1 + 0x1b8));
+  uStack_60 = *(undefined8 *)(p0 + 0x1b0);
+  func_0x001689d0(&fStack_78,p0 + 8);
+  if ((*plVar3 != 0) && (*(int *)plVar3[1] != 0)) {
+    fVar4 = (float)func_0x0016de00(*(undefined4 *)(p0 + 0x1b8));
     uStack_60 = CONCAT44(uStack_60._4_4_,
-                         *(float *)(param_1 + 0x1b0) +
-                         (fStack_70 - fStack_78) * fVar3 * (float)param_3);
+                         *(float *)(p0 + 0x1b0) + (fStack_70 - fStack_78) * fVar4 * (float)in_w2);
   }
-  if ((param_2[2] != 0) && (*(int *)param_2[3] != 0)) {
-    fVar3 = (float)func_0x0016de00(*(undefined4 *)(param_1 + 0x1b8));
-    uStack_60 = CONCAT44(*(float *)(param_1 + 0x1b4) +
-                         (fStack_6c - fStack_74) * fVar3 * (float)param_3,(undefined4)uStack_60);
+  if ((plVar3[2] != 0) && (*(int *)plVar3[3] != 0)) {
+    fVar4 = (float)func_0x0016de00(*(undefined4 *)(p0 + 0x1b8));
+    uStack_60 = CONCAT44(*(float *)(p0 + 0x1b4) + (fStack_6c - fStack_74) * fVar4 * (float)in_w2,
+                         (undefined4)uStack_60);
   }
-  plVar2 = *(long **)(param_1 + 8);
+  plVar2 = *(long **)(p0 + 8);
   (**(code **)(*plVar2 + 0x10))(plVar2,&uStack_60);
-  if ((param_2[4] != 0) && (*(int *)param_2[5] != 0)) {
-    fVar3 = (float)func_0x0016de00(*(undefined4 *)(param_1 + 0x1b8));
-    uStack_80 = CONCAT44(uStack_80._4_4_,fVar3 * (float)param_3 + 0.0);
-    (**(code **)(**(long **)(param_1 + 8) + 0x20))(*(long **)(param_1 + 8),&uStack_80);
+  if ((plVar3[4] != 0) && (*(int *)plVar3[5] != 0)) {
+    fVar4 = (float)func_0x0016de00(*(undefined4 *)(p0 + 0x1b8));
+    uStack_80 = CONCAT44(uStack_80._4_4_,fVar4 * (float)in_w2 + 0.0);
+    (**(code **)(**(long **)(p0 + 8) + 0x20))(*(long **)(p0 + 8),&uStack_80);
   }
-  fVar3 = *(float *)(param_1 + 0x1a8);
-  if ((param_2[6] != 0) && (*(int *)param_2[7] != 0)) {
-    fVar4 = *(float *)(param_1 + 0x1ac);
-    fVar3 = (float)func_0x0016de00(*(undefined4 *)(param_1 + 0x1b8));
-    if (param_3 < 0) {
-      fVar3 = (1.0 - fVar3) + 1.0;
-    }
-    uStack_80 = CONCAT44(fVar4 * *(float *)(param_1 + 0x1ac),fVar3 * *(float *)(param_1 + 0x1a8));
-    (**(code **)(**(long **)(param_1 + 8) + 0x18))(*(long **)(param_1 + 8),&uStack_80);
-  }
-  if ((param_2[8] != 0) && (*(int *)param_2[9] != 0)) {
-    fVar4 = (float)func_0x0016de00(*(undefined4 *)(param_1 + 0x1b8));
-    if (param_3 < 0) {
+  fVar4 = *(float *)(p0 + 0x1a8);
+  if ((plVar3[6] != 0) && (*(int *)plVar3[7] != 0)) {
+    fVar5 = *(float *)(p0 + 0x1ac);
+    fVar4 = (float)func_0x0016de00(*(undefined4 *)(p0 + 0x1b8));
+    if (in_w2 < 0) {
       fVar4 = (1.0 - fVar4) + 1.0;
     }
-    uStack_80 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x1a8) >> 0x20) * fVar4,
-                         (float)*(undefined8 *)(param_1 + 0x1a8) * fVar3);
-    (**(code **)(**(long **)(param_1 + 8) + 0x18))(*(long **)(param_1 + 8),&uStack_80);
+    uStack_80 = CONCAT44(fVar5 * *(float *)(p0 + 0x1ac),fVar4 * *(float *)(p0 + 0x1a8));
+    (**(code **)(**(long **)(p0 + 8) + 0x18))(*(long **)(p0 + 8),&uStack_80);
+  }
+  if ((plVar3[8] != 0) && (*(int *)plVar3[9] != 0)) {
+    fVar5 = (float)func_0x0016de00(*(undefined4 *)(p0 + 0x1b8));
+    if (in_w2 < 0) {
+      fVar5 = (1.0 - fVar5) + 1.0;
+    }
+    uStack_80 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x1a8) >> 0x20) * fVar5,
+                         (float)*(undefined8 *)(p0 + 0x1a8) * fVar4);
+    (**(code **)(**(long **)(p0 + 8) + 0x18))(*(long **)(p0 + 8),&uStack_80);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -429,10 +435,10 @@ void WaterConcept::Notification::goToNextState(long param_1)
 
 /* WaterConcept::Notification::draw(Walaber::SpriteBatch&) */
 
-void WaterConcept::Notification::draw(long param_1)
+void WaterConcept::Notification::draw(Walaber__SpriteBatch *p0)
 
 {
-  func_0x00164990(param_1 + 8);
+  func_0x00164990(p0 + 8);
   return;
 }
 
@@ -457,7 +463,7 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
   float fVar6;
   byte bStack_70;
   undefined7 uStack_6f;
-  undefined8 uStack_60;
+  void *pvStack_60;
   float fStack_54;
   undefined8 uStack_50;
   long lStack_48;
@@ -503,7 +509,7 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
     (**(code **)(**(long **)(param_2 + 8) + 0x10))(*(long **)(param_2 + 8),param_2 + 0x1b0);
     *(undefined4 *)(param_2 + 0x1c0) = 0;
     if ((bStack_70 & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -606,19 +612,20 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
 
 /* WaterConcept::Notification::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Notification::_finishedLoadingWidgets(long *param_1,int *param_2)
+void WaterConcept::Notification::_finishedLoadingWidgets(void *p0)
 
 {
   int iVar1;
+  int *in_x1;
   
-  if (*param_2 == 1) {
-    iVar1 = func_0x0016c3f0(param_1[1]);
+  if (*in_x1 == 1) {
+    iVar1 = func_0x0016c3f0(*(undefined8 *)((long)p0 + 8));
     if (iVar1 == 2) {
-      param_1[0x13] = *(long *)(param_1[1] + 0x10);
+      *(undefined8 *)((long)p0 + 0x98) = *(undefined8 *)(*(long *)((long)p0 + 8) + 0x10);
     }
                     /* WARNING: Could not recover jumptable at 0x0049d3f0. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (**(code **)(*param_1 + 0x70))(param_1);
+    (**(code **)(*(long *)p0 + 0x70))(p0);
     return;
   }
   return;

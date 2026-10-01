@@ -194,17 +194,18 @@ LAB_003472a0:
 
 /* Walaber::XML::parseColor8bit(_xmlNode*, char const*) */
 
-void Walaber::XML::parseColor8bit(undefined4 *param_1)
+void Walaber::XML::parseColor8bit(_xmlNode *p0,char *p1)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  undefined4 *in_x8;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_68;
   ulong uStack_60;
-  ulong uStack_58;
+  void *pvStack_58;
   undefined1 uStack_50;
   undefined1 uStack_4f;
   undefined1 uStack_4e;
@@ -213,39 +214,39 @@ void Walaber::XML::parseColor8bit(undefined4 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0xff000000;
+  *in_x8 = 0xff000000;
   uVar2 = FUN_00171ed0();
   uStack_68 = 0;
   uStack_60 = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_68 | 1;
+    pvVar4 = (void *)((ulong)&uStack_68 | 1);
     uStack_68 = CONCAT71(uStack_68._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_0035a9cc;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_68 = uVar5 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_68 = p0_00 | 1;
     uStack_60 = uVar3;
-    uStack_58 = uVar4;
+    pvStack_58 = pvVar4;
   }
-  FUN_001715e0(uVar4,uVar2,uVar3);
+  FUN_001715e0(pvVar4,uVar2,uVar3);
 LAB_0035a9cc:
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 0035a9d0 to 0035a9db has its CatchHandler @ 0035aa54 */
   func_0x001666e0(&uStack_50,&uStack_68);
-  *(undefined1 *)param_1 = uStack_50;
-  *(undefined1 *)((long)param_1 + 1) = uStack_4f;
-  *(undefined1 *)((long)param_1 + 2) = uStack_4e;
-  *(undefined1 *)((long)param_1 + 3) = uStack_4d;
+  *(undefined1 *)in_x8 = uStack_50;
+  *(undefined1 *)((long)in_x8 + 1) = uStack_4f;
+  *(undefined1 *)((long)in_x8 + 2) = uStack_4e;
+  *(undefined1 *)((long)in_x8 + 3) = uStack_4d;
   if ((uStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   (*(code *)xmlFree)(uVar2);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -263,91 +264,91 @@ LAB_0035a9cc:
 
 /* Walaber::XML::parseAspectRatio(_xmlNode*, char const*) */
 
-undefined1  [16] Walaber::XML::parseAspectRatio(undefined8 param_1,undefined8 param_2)
+undefined1  [16] Walaber::XML::parseAspectRatio(_xmlNode *p0,char *p1)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
-  undefined1 auVar6 [16];
-  float fVar7;
+  void *pvVar4;
+  ulong p0_00;
+  undefined1 auVar5 [16];
+  float fVar6;
   int iStack_8c;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  undefined8 uStack_78;
+  void *pvStack_78;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = FUN_00171ed0();
   uStack_68 = 0;
-  uStack_60 = 0;
+  pvStack_60 = (void *)0x0;
   uStack_70 = 0;
   uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
-    auVar6 = FUN_00164180(&uStack_70);
-    return auVar6;
+    auVar5 = FUN_00164180(&uStack_70);
+    return auVar5;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_70 | 1;
+    pvVar4 = (void *)((ulong)&uStack_70 | 1);
     uStack_70 = CONCAT71(uStack_70._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_00377a88;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_70 = uVar5 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_70 = p0_00 | 1;
     uStack_68 = uVar3;
-    uStack_60 = uVar4;
+    pvStack_60 = pvVar4;
   }
-  FUN_001715e0(uVar4,uVar2,uVar3);
+  FUN_001715e0(pvVar4,uVar2,uVar3);
 LAB_00377a88:
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 00377a98 to 00377a9f has its CatchHandler @ 00377bd8 */
   (*(code *)xmlFree)(uVar2);
   uStack_80 = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   uStack_88 = 0x3a02;
                     /* try { // try from 00377ab4 to 00377abf has its CatchHandler @ 00377bac */
   uVar3 = func_0x001660a0(&uStack_70,&uStack_88);
   if ((uStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
   if ((uVar3 & 1) == 0) {
     uStack_88 = (ulong)uStack_88._4_4_ << 0x20;
                     /* try { // try from 00377b24 to 00377b4f has its CatchHandler @ 00377ba4 */
-    uVar2 = FUN_00171ed0(param_1,param_2);
+    uVar2 = FUN_00171ed0(p0,p1);
     func_0x00170360(uVar2,"%f",&uStack_88);
     (*(code *)xmlFree)(uVar2);
-    fVar7 = (float)uStack_88;
+    fVar6 = (float)uStack_88;
   }
   else {
     iStack_8c = 1;
     uStack_88 = CONCAT44(uStack_88._4_4_,1);
-    uVar3 = (ulong)&uStack_70 | 1;
+    pvVar4 = (void *)((ulong)&uStack_70 | 1);
     if ((uStack_70 & 1) != 0) {
-      uVar3 = uStack_60;
+      pvVar4 = pvStack_60;
     }
-    func_0x00170360(uVar3,&DAT_0062c512,&uStack_88,&iStack_8c);
-    fVar7 = (float)(int)(float)uStack_88 / (float)iStack_8c;
+    func_0x00170360(pvVar4,&DAT_0062c512,&uStack_88,&iStack_8c);
+    fVar6 = (float)(int)(float)uStack_88 / (float)iStack_8c;
   }
   uVar2 = 0;
-  auVar6._4_4_ = 0;
-  auVar6._0_4_ = fVar7;
+  auVar5._4_4_ = 0;
+  auVar5._0_4_ = fVar6;
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    auVar6 = FUN_00164ff0();
-    return auVar6;
+    auVar5 = FUN_00164ff0();
+    return auVar5;
   }
-  auVar6._8_8_ = uVar2;
-  return auVar6;
+  auVar5._8_8_ = uVar2;
+  return auVar5;
 }
 
 
@@ -358,17 +359,18 @@ LAB_00377a88:
 
 /* Walaber::XML::parseColor8bitRGBA(_xmlNode*, char const*) */
 
-void Walaber::XML::parseColor8bitRGBA(undefined4 *param_1)
+void Walaber::XML::parseColor8bitRGBA(_xmlNode *p0,char *p1)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  undefined4 *in_x8;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_68;
   ulong uStack_60;
-  ulong uStack_58;
+  void *pvStack_58;
   undefined1 uStack_50;
   undefined1 uStack_4f;
   undefined1 uStack_4e;
@@ -377,39 +379,39 @@ void Walaber::XML::parseColor8bitRGBA(undefined4 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0xff000000;
+  *in_x8 = 0xff000000;
   uVar2 = FUN_00171ed0();
   uStack_68 = 0;
   uStack_60 = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_68 | 1;
+    pvVar4 = (void *)((ulong)&uStack_68 | 1);
     uStack_68 = CONCAT71(uStack_68._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_00377d78;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_68 = uVar5 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_68 = p0_00 | 1;
     uStack_60 = uVar3;
-    uStack_58 = uVar4;
+    pvStack_58 = pvVar4;
   }
-  FUN_001715e0(uVar4,uVar2,uVar3);
+  FUN_001715e0(pvVar4,uVar2,uVar3);
 LAB_00377d78:
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 00377d7c to 00377d87 has its CatchHandler @ 00377e00 */
   func_0x0016e9e0(&uStack_50,&uStack_68);
-  *(undefined1 *)param_1 = uStack_50;
-  *(undefined1 *)((long)param_1 + 1) = uStack_4f;
-  *(undefined1 *)((long)param_1 + 2) = uStack_4e;
-  *(undefined1 *)((long)param_1 + 3) = uStack_4d;
+  *(undefined1 *)in_x8 = uStack_50;
+  *(undefined1 *)((long)in_x8 + 1) = uStack_4f;
+  *(undefined1 *)((long)in_x8 + 2) = uStack_4e;
+  *(undefined1 *)((long)in_x8 + 3) = uStack_4d;
   if ((uStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   (*(code *)xmlFree)(uVar2);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -427,7 +429,7 @@ LAB_00377d78:
 
 /* Walaber::XML::parsePropertyList(_xmlNode*, Walaber::PropertyList&) */
 
-void Walaber::XML::parsePropertyList(long param_1,undefined8 param_2)
+void Walaber::XML::parsePropertyList(_xmlNode *p0,Walaber__PropertyList *p1)
 
 {
   long lVar1;
@@ -435,28 +437,28 @@ void Walaber::XML::parsePropertyList(long param_1,undefined8 param_2)
   int iVar3;
   undefined8 uVar4;
   ulong uVar5;
-  ulong uVar6;
+  void *pvVar6;
   long lVar7;
   ulong uVar8;
   ulong uStack_b8;
   ulong uStack_b0;
-  ulong uStack_a8;
+  void *pvStack_a8;
   undefined1 auStack_a0 [32];
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  lVar7 = *(long *)(param_1 + 0x18);
+  lVar7 = *(long *)(p0 + 0x18);
   if (lVar7 != 0) {
     do {
       iVar3 = FUN_00162900(*(undefined8 *)(lVar7 + 0x10),"Property");
       if (iVar3 == 0) {
         uVar4 = FUN_00171ed0(lVar7,"name");
         uStack_78 = 0;
-        uStack_70 = 0;
+        pvStack_70 = (void *)0x0;
         uStack_80 = 0;
         uVar5 = FUN_00173480();
         if (0xffffffffffffffef < uVar5) {
@@ -465,27 +467,27 @@ void Walaber::XML::parsePropertyList(long param_1,undefined8 param_2)
         }
         if (uVar5 < 0x17) {
           uStack_80 = CONCAT71(uStack_80._1_7_,(char)((int)uVar5 << 1));
-          uVar6 = (ulong)&uStack_80 | 1;
+          pvVar6 = (void *)((ulong)&uStack_80 | 1);
           if (uVar5 != 0) goto LAB_00433898;
         }
         else {
           uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-          uVar6 = FUN_00164060(uVar8);
+          pvVar6 = (void *)FUN_00164060(uVar8);
           uStack_80 = uVar8 | 1;
           uStack_78 = uVar5;
-          uStack_70 = uVar6;
+          pvStack_70 = pvVar6;
 LAB_00433898:
-          FUN_001715e0(uVar6,uVar4,uVar5);
+          FUN_001715e0(pvVar6,uVar4,uVar5);
         }
         puVar2 = xmlFree;
-        *(undefined1 *)(uVar6 + uVar5) = 0;
+        *(undefined1 *)((long)pvVar6 + uVar5) = 0;
                     /* try { // try from 004338b0 to 004338b7 has its CatchHandler @ 00433a10 */
         (*(code *)puVar2)(uVar4);
                     /* try { // try from 004338b8 to 0043390f has its CatchHandler @ 00433a20 */
         uVar4 = FUN_00171ed0(lVar7,"value");
         uStack_b8 = 0;
         uStack_b0 = 0;
-        uStack_a8 = 0;
+        pvStack_a8 = (void *)0x0;
         uVar5 = FUN_00173480();
         if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 004339c8 to 004339cf has its CatchHandler @ 004339d4 */
@@ -494,32 +496,32 @@ LAB_00433898:
         }
         if (uVar5 < 0x17) {
           uStack_b8 = CONCAT71(uStack_b8._1_7_,(char)((int)uVar5 << 1));
-          uVar6 = (ulong)&uStack_b8 | 1;
+          pvVar6 = (void *)((ulong)&uStack_b8 | 1);
           if (uVar5 != 0) goto LAB_00433920;
         }
         else {
           uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-          uVar6 = FUN_00164060(uVar8);
+          pvVar6 = (void *)FUN_00164060(uVar8);
           uStack_b8 = uVar8 | 1;
           uStack_b0 = uVar5;
-          uStack_a8 = uVar6;
+          pvStack_a8 = pvVar6;
 LAB_00433920:
-          FUN_001715e0(uVar6,uVar4,uVar5);
+          FUN_001715e0(pvVar6,uVar4,uVar5);
         }
         puVar2 = xmlFree;
-        *(undefined1 *)(uVar6 + uVar5) = 0;
+        *(undefined1 *)((long)pvVar6 + uVar5) = 0;
                     /* try { // try from 00433938 to 0043393f has its CatchHandler @ 004339e0 */
         (*(code *)puVar2)(uVar4);
                     /* try { // try from 00433940 to 0043394b has its CatchHandler @ 004339d8 */
         func_0x0016af30(auStack_a0,&uStack_b8);
                     /* try { // try from 0043394c to 0043395b has its CatchHandler @ 004339f0 */
-        func_0x00165260(param_2,&uStack_80,auStack_a0);
+        func_0x00165260(p1,&uStack_80,auStack_a0);
         func_0x00167bf0(auStack_a0);
         if ((uStack_b8 & 1) != 0) {
-          FUN_00166120(uStack_a8);
+          FUN_00166120(pvStack_a8);
         }
         if ((uStack_80 & 1) != 0) {
-          FUN_00166120(uStack_70);
+          FUN_00166120(pvStack_70);
         }
       }
       lVar7 = *(long *)(lVar7 + 0x30);
@@ -545,7 +547,7 @@ LAB_00433920:
 void Walaber::XML::newPropertyList(undefined8 param_1,undefined8 *param_2,byte *param_3)
 
 {
-  ulong uVar1;
+  void *pvVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -554,7 +556,7 @@ void Walaber::XML::newPropertyList(undefined8 param_1,undefined8 *param_2,byte *
   long lVar7;
   long *plVar8;
   byte abStack_80 [16];
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar2 = tpidr_el0;
@@ -578,14 +580,14 @@ void Walaber::XML::newPropertyList(undefined8 param_1,undefined8 *param_2,byte *
       }
       func_0x0016c7d0(uVar4,"name",lVar7);
       func_0x00162cf0(abStack_80,plVar8 + 7);
-      uVar1 = (ulong)abStack_80 | 1;
+      pvVar1 = (void *)((ulong)abStack_80 | 1);
       if ((abStack_80[0] & 1) != 0) {
-        uVar1 = uStack_70;
+        pvVar1 = pvStack_70;
       }
                     /* try { // try from 004c3fb8 to 004c3fc3 has its CatchHandler @ 004c405c */
-      func_0x0016c7d0(uVar4,"value",uVar1);
+      func_0x0016c7d0(uVar4,"value",pvVar1);
       if ((abStack_80[0] & 1) != 0) {
-        FUN_00166120(uStack_70);
+        FUN_00166120(pvStack_70);
       }
       plVar5 = (long *)plVar8[1];
       if ((long *)plVar8[1] == (long *)0x0) {

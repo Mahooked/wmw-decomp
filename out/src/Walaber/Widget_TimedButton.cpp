@@ -163,7 +163,7 @@ void Walaber::Widget_TimedButton::~Widget_TimedButton(undefined8 *param_1)
 
 /* Walaber::Widget_TimedButton::~Widget_TimedButton() */
 
-void Walaber::Widget_TimedButton::~Widget_TimedButton(undefined8 param_1)
+void Walaber::Widget_TimedButton::~Widget_TimedButton(void *param_1)
 
 {
   func_0x0016e7d0();
@@ -235,22 +235,23 @@ void Walaber::Widget_TimedButton::setInactiveTexture(long param_1,long *param_2)
 
 /* Walaber::Widget_TimedButton::setTimeRemaining(float) */
 
-void Walaber::Widget_TimedButton::setTimeRemaining(float param_1,long param_2)
+void Walaber::Widget_TimedButton::setTimeRemaining(float p0)
 
 {
+  long in_x0;
   float fVar1;
   
-  fVar1 = *(float *)(param_2 + 0x148);
-  *(float *)(param_2 + 0x144) = param_1;
-  if (fVar1 < param_1) {
-    *(float *)(param_2 + 0x144) = fVar1;
-    param_1 = fVar1;
+  fVar1 = *(float *)(in_x0 + 0x148);
+  *(float *)(in_x0 + 0x144) = p0;
+  if (fVar1 < p0) {
+    *(float *)(in_x0 + 0x144) = fVar1;
+    p0 = fVar1;
   }
-  if (param_1 <= 0.0) {
-    *(undefined4 *)(param_2 + 0x144) = 0;
-    *(undefined1 *)(param_2 + 0x141) = 0;
+  if (p0 <= 0.0) {
+    *(undefined4 *)(in_x0 + 0x144) = 0;
+    *(undefined1 *)(in_x0 + 0x141) = 0;
   }
-  *(bool *)(param_2 + 0x140) = 0.0 < param_1;
+  *(bool *)(in_x0 + 0x140) = 0.0 < p0;
   return;
 }
 
@@ -262,39 +263,41 @@ void Walaber::Widget_TimedButton::setTimeRemaining(float param_1,long param_2)
 
 /* Walaber::Widget_TimedButton::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_TimedButton::update(float param_1,long param_2,char *param_3)
+undefined8 Walaber::Widget_TimedButton::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   int iVar1;
+  Walaber__Widget__WidgetActionRet *in_x1;
   uint uVar2;
-  char cVar3;
+  Walaber__Widget__WidgetActionRet WVar3;
+  float fVar4;
   
-  uVar2 = (uint)*(byte *)(param_2 + 0x141);
-  cVar3 = *(char *)(param_2 + 0x158);
-  if (*(byte *)(param_2 + 0x141) == 0) {
-    if (cVar3 == '\0') {
+  uVar2 = (uint)(byte)p1[0x141];
+  WVar3 = p1[0x158];
+  if (p1[0x141] == (Walaber__Widget__WidgetActionRet)0x0) {
+    if (WVar3 == (Walaber__Widget__WidgetActionRet)0x0) {
       return 0;
     }
-    cVar3 = '\x01';
+    WVar3 = (Walaber__Widget__WidgetActionRet)0x1;
   }
-  *param_3 = cVar3;
-  *(undefined1 *)(param_2 + 0x158) = 0;
-  param_1 = *(float *)(param_2 + 0x144) - param_1;
-  *(float *)(param_2 + 0x144) = param_1;
-  if (param_1 <= 0.0) {
+  *in_x1 = WVar3;
+  p1[0x158] = (Walaber__Widget__WidgetActionRet)0x0;
+  fVar4 = *(float *)(p1 + 0x144) - p0;
+  *(float *)(p1 + 0x144) = fVar4;
+  if (fVar4 <= 0.0) {
     uVar2 = 0;
-    param_1 = 0.0;
-    *(undefined4 *)(param_2 + 0x144) = 0;
-    *(undefined2 *)(param_2 + 0x140) = 0;
+    fVar4 = 0.0;
+    *(undefined4 *)(p1 + 0x144) = 0;
+    *(undefined2 *)(p1 + 0x140) = 0;
   }
   iVar1 = 0;
-  if (*(int *)(param_2 + 0x154) < 0xf) {
-    iVar1 = *(int *)(param_2 + 0x154) + 1;
+  if (*(int *)(p1 + 0x154) < 0xf) {
+    iVar1 = *(int *)(p1 + 0x154) + 1;
   }
-  *(int *)(param_2 + 0x154) = iVar1;
-  *(uint *)(param_3 + 0xc) = uVar2;
-  *(float *)(param_3 + 4) = param_1;
-  *(float *)(param_3 + 8) = param_1 / *(float *)(param_2 + 0x148);
+  *(int *)(p1 + 0x154) = iVar1;
+  *(uint *)(in_x1 + 0xc) = uVar2;
+  *(float *)(in_x1 + 4) = fVar4;
+  *(float *)(in_x1 + 8) = fVar4 / *(float *)(p1 + 0x148);
   return 1;
 }
 
@@ -306,111 +309,93 @@ undefined8 Walaber::Widget_TimedButton::update(float param_1,long param_2,char *
 
 /* Walaber::Widget_TimedButton::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_TimedButton::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
 
 {
-  long *plVar1;
+  Walaber__SpriteBatch *pWVar1;
   long lVar2;
-  undefined4 uVar3;
-  long lVar4;
-  float fVar5;
-  undefined8 uVar6;
-  float fVar7;
-  float fStack_98;
-  float fStack_94;
+  float fVar3;
+  undefined8 uVar4;
   long lStack_90;
   int *piStack_88;
   undefined1 auStack_80 [8];
   undefined8 uStack_78;
   long lStack_70;
   int *piStack_68;
-  float fStack_60;
-  float fStack_5c;
+  float afStack_60 [2];
   long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
-  plVar1 = (long *)(param_1 + 0x110);
-  if (*(char *)(param_1 + 0x140) != '\0') {
-    plVar1 = (long *)(param_1 + 0x100);
+  lVar2 = tpidr_el0;
+  lStack_58 = *(long *)(lVar2 + 0x28);
+  pWVar1 = p0 + 0x110;
+  if (p0[0x140] != (Walaber__SpriteBatch)0x0) {
+    pWVar1 = p0 + 0x100;
   }
-  lStack_70 = *plVar1;
-  piStack_68 = (int *)plVar1[1];
+  lStack_70 = *(long *)pWVar1;
+  piStack_68 = *(int **)(pWVar1 + 8);
   if (lStack_70 != 0) {
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 0038ac60 to 0038ac67 has its CatchHandler @ 0038af2c */
-  uVar6 = func_0x00164620(param_1);
+  uVar4 = func_0x00164620(p0);
   if ((lStack_70 != 0) && (*piStack_68 != 0)) {
-    if (*(char *)(param_1 + 0x140) != '\0') {
+    if (p0[0x140] != (Walaber__SpriteBatch)0x0) {
                     /* try { // try from 0038ac88 to 0038ac93 has its CatchHandler @ 0038af04 */
-      func_0x00167d50(auStack_80,param_1);
-      uStack_78 = CONCAT44(auStack_80._4_4_ +
-                           (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                           auStack_80._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+      func_0x00167d50(auStack_80,p0);
+      uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                           auStack_80._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038aca4 to 0038acf7 has its CatchHandler @ 0038af10 */
-      func_0x00169f20(&fStack_60,param_1);
-      func_0x00164be0(uVar6,*(float *)(param_1 + 0x90) * fStack_60 * 0.5 + 4.0,
-                      (*(float *)(param_1 + 0x144) / *(float *)(param_1 + 0x148)) * 360.0,&uStack_78
-                      ,0,param_1 + 0x150);
+      func_0x00169f20(afStack_60,p0);
+      func_0x00164be0(uVar4,*(float *)(p0 + 0x90) * afStack_60[0] * 0.5 + 4.0,
+                      (*(float *)(p0 + 0x144) / *(float *)(p0 + 0x148)) * 360.0,&uStack_78,0,
+                      p0 + 0x150);
     }
-    uVar3 = *(undefined4 *)(param_1 + 0x80);
     lStack_90 = lStack_70;
     piStack_88 = piStack_68;
     if (lStack_70 != 0) {
       *piStack_68 = *piStack_68 + 1;
     }
                     /* try { // try from 0038ad14 to 0038ad1f has its CatchHandler @ 0038af0c */
-    func_0x00167d50(auStack_80,param_1);
-    uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         auStack_80._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+    func_0x00167d50(auStack_80,p0);
+    uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         auStack_80._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038ad30 to 0038ad3b has its CatchHandler @ 0038af08 */
-    func_0x00169f20(&fStack_60,param_1);
-    fVar5 = fStack_60;
-    fVar7 = *(float *)(param_1 + 0x90);
+    func_0x00169f20(afStack_60,p0);
                     /* try { // try from 0038ad44 to 0038ad9f has its CatchHandler @ 0038af18 */
-    func_0x00169f20(&fStack_60,param_1);
-    fStack_98 = fVar7 * fVar5;
-    fStack_94 = *(float *)(param_1 + 0x94) * fStack_5c;
-    lVar2 = param_1 + 0x130;
-    if (*(char *)(param_1 + 0x140) != '\0') {
-      lVar2 = param_1 + 0x120;
-    }
-    func_0x00169c00(uVar6,param_2,uVar3,&lStack_90,&uStack_78,&fStack_98,lVar2,&Color::White,0);
+    func_0x00169f20(afStack_60,p0);
+    func_0x00169c00(uVar4);
     FUN_00166b20(&lStack_90);
                     /* try { // try from 0038ada8 to 0038adbb has its CatchHandler @ 0038af2c */
-    func_0x00163aa0(param_2);
-    func_0x00171540(param_2,3);
+    func_0x00163aa0();
+    func_0x00171540();
   }
-  if (*(char *)(param_1 + 0x140) != '\0') {
-    if ((*(char *)(param_1 + 0x141) != '\0') && (*(int *)(param_1 + 0x154) < 3)) {
+  if (p0[0x140] != (Walaber__SpriteBatch)0x0) {
+    if ((p0[0x141] != (Walaber__SpriteBatch)0x0) && (*(int *)(p0 + 0x154) < 3)) {
                     /* try { // try from 0038add8 to 0038ade3 has its CatchHandler @ 0038af00 */
-      func_0x00167d50(auStack_80,param_1);
-      uStack_78 = CONCAT44(auStack_80._4_4_ +
-                           (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                           auStack_80._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+      func_0x00167d50(auStack_80,p0);
+      uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                           auStack_80._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038adf4 to 0038adff has its CatchHandler @ 0038aefc */
-      func_0x00169f20(&fStack_60,param_1);
-      fVar5 = fStack_60;
-      fStack_60 = 1.5158796e+23;
+      func_0x00169f20(afStack_60,p0);
+      fVar3 = afStack_60[0];
+      afStack_60[0] = 1.5158796e+23;
                     /* try { // try from 0038ae20 to 0038ae3b has its CatchHandler @ 0038aef8 */
-      func_0x00164be0(uVar6,*(float *)(param_1 + 0x90) * fVar5 * 0.5,0x43b40000,&uStack_78,1,
-                      &fStack_60);
+      func_0x00164be0(uVar4,*(float *)(p0 + 0x90) * fVar3 * 0.5,0x43b40000,&uStack_78,1,afStack_60);
     }
                     /* try { // try from 0038ae3c to 0038ae47 has its CatchHandler @ 0038af14 */
-    func_0x00167d50(auStack_80,param_1);
-    uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         auStack_80._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+    func_0x00167d50(auStack_80,p0);
+    uStack_78 = CONCAT44(auStack_80._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         auStack_80._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038ae58 to 0038aeb3 has its CatchHandler @ 0038af28 */
-    func_0x00169f20(&fStack_60,param_1);
-    func_0x00164be0((float)uVar6 + 180.0,*(float *)(param_1 + 0x90) * fStack_60 * 0.5,
-                    (1.0 - *(float *)(param_1 + 0x144) / *(float *)(param_1 + 0x148)) * 360.0,
-                    &uStack_78,1,param_1 + 0x14c);
+    func_0x00169f20(afStack_60,p0);
+    func_0x00164be0((float)uVar4 + 180.0,*(float *)(p0 + 0x90) * afStack_60[0] * 0.5,
+                    (1.0 - *(float *)(p0 + 0x144) / *(float *)(p0 + 0x148)) * 360.0,&uStack_78,1,
+                    p0 + 0x14c);
   }
                     /* try { // try from 0038aeb4 to 0038aebf has its CatchHandler @ 0038af2c */
-  FUN_001722b0(param_1,param_2);
+  FUN_001722b0(p0);
   FUN_00166b20(&lStack_70);
-  if (*(long *)(lVar4 + 0x28) == lStack_58) {
+  if (*(long *)(lVar2 + 0x28) == lStack_58) {
     return;
   }
   FUN_00164ff0();
@@ -425,26 +410,28 @@ void Walaber::Widget_TimedButton::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_TimedButton::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined1 Walaber::Widget_TimedButton::acceptNewFingerDown(long param_1)
+undefined1 Walaber::Widget_TimedButton::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  undefined1 uVar1;
+  ulong uVar1;
+  undefined1 uVar2;
   
-  uVar1 = 0;
-  if (*(char *)(param_1 + 0x140) != '\0') {
-    if (*(char *)(param_1 + 0x141) == '\0') {
-      if (*(float *)(param_1 + 0x144) <= 0.0) {
+  uVar1 = (ulong)(uint)p0;
+  uVar2 = 0;
+  if (*(char *)(uVar1 + 0x140) != '\0') {
+    if (*(char *)(uVar1 + 0x141) == '\0') {
+      if (*(float *)(uVar1 + 0x144) <= 0.0) {
         return 1;
       }
-      *(undefined1 *)(param_1 + 0x141) = 1;
+      *(undefined1 *)(uVar1 + 0x141) = 1;
     }
     else {
-      *(undefined1 *)(param_1 + 0x141) = 0;
+      *(undefined1 *)(uVar1 + 0x141) = 0;
     }
-    uVar1 = 1;
-    *(undefined1 *)(param_1 + 0x158) = 1;
+    uVar2 = 1;
+    *(undefined1 *)(uVar1 + 0x158) = 1;
   }
-  return uVar1;
+  return uVar2;
 }
 
 
@@ -455,12 +442,14 @@ undefined1 Walaber::Widget_TimedButton::acceptNewFingerDown(long param_1)
 
 /* Walaber::Widget_TimedButton::setEnabled(bool) */
 
-void Walaber::Widget_TimedButton::setEnabled(long param_1,byte param_2)
+void Walaber::Widget_TimedButton::setEnabled(bool p0)
 
 {
-  *(byte *)(param_1 + 0x140) = param_2 & 1;
-  if ((param_2 & 1) == 0) {
-    *(undefined1 *)(param_1 + 0x141) = 0;
+  byte in_w1;
+  
+  *(byte *)((ulong)p0 + 0x140) = in_w1 & 1;
+  if ((in_w1 & 1) == 0) {
+    *(undefined1 *)((ulong)p0 + 0x141) = 0;
   }
   return;
 }

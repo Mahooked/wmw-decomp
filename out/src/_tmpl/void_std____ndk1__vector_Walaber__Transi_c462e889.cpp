@@ -14,47 +14,48 @@
 void std::__ndk1::
      vector<Walaber::Transition_Iris::BladeInfo,std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>>
      ::__push_back_slow_path<Walaber::Transition_Iris::BladeInfo_const&>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__Transition_Iris__BladeInfo *p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
   long lVar6;
-  long lStack_60;
+  void *pvStack_60;
   long lStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 2) * -0x5555555555555555;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 2) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x1555555555555555 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 2;
+  lVar6 = *(long *)(p0 + 0x10) - *(long *)p0 >> 2;
   uVar5 = 0x1555555555555555;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0xaaaaaaaaaaaaaaa) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x001670c0(&lStack_60,uVar5,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  *(undefined4 *)(puStack_50 + 1) = *(undefined4 *)(param_2 + 1);
+  func_0x001670c0(&pvStack_60,uVar5,lVar3,p0 + 0x10);
+  *puStack_50 = *in_x1;
+  *(undefined4 *)(puStack_50 + 1) = *(undefined4 *)(in_x1 + 1);
   puStack_50 = (undefined8 *)((long)puStack_50 + 0xc);
                     /* try { // try from 003f5bf8 to 003f5c03 has its CatchHandler @ 003f5c74 */
-  func_0x00173190(param_1,&lStack_60);
+  func_0x00173190(p0,&pvStack_60);
   if (puStack_50 != (undefined8 *)lStack_58) {
     puStack_50 = (undefined8 *)
                  ((long)puStack_50 +
                  ((ulong)(((long)puStack_50 + -0xc) - lStack_58) / 0xc ^ 0xffffffffffffffff) * 0xc);
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

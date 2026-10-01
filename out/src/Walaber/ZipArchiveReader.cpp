@@ -16,13 +16,13 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
   int iVar2;
   long lVar3;
   ulong uVar4;
-  ulong uVar5;
+  void *pvVar5;
   byte *pbVar6;
-  ulong uVar7;
-  long *plVar8;
+  ulong p0;
+  long *plVar7;
   ulong uStack_238;
   ulong uStack_230;
-  ulong uStack_228;
+  void *pvStack_228;
   undefined1 auStack_220 [136];
   undefined1 auStack_198 [8];
   undefined1 auStack_190 [8];
@@ -34,10 +34,10 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
   
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
-  plVar8 = param_1 + 2;
-  *plVar8 = 0;
+  plVar7 = param_1 + 2;
+  *plVar7 = 0;
   param_1[3] = 0;
-  param_1[1] = (long)plVar8;
+  param_1[1] = (long)plVar7;
   pbVar6 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar6 = param_2 + 1;
@@ -49,10 +49,10 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
     do {
                     /* try { // try from 003d72a4 to 003d72cb has its CatchHandler @ 003d73d0 */
       func_0x00173860(*param_1,auStack_220,auStack_198,auStack_170,0x100,0,0,0,0,auStack_190,
-                      auStack_188,plVar8);
+                      auStack_188,plVar7);
       uStack_238 = 0;
       uStack_230 = 0;
-      uStack_228 = 0;
+      pvStack_228 = (void *)0x0;
       uVar4 = FUN_00173480(auStack_170);
       if (0xffffffffffffffef < uVar4) {
                     /* try { // try from 003d73b8 to 003d73bf has its CatchHandler @ 003d73c4 */
@@ -61,26 +61,26 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
       }
       if (uVar4 < 0x17) {
         uStack_238 = CONCAT71(uStack_238._1_7_,(char)((int)uVar4 << 1));
-        uVar5 = (ulong)&uStack_238 | 1;
+        pvVar5 = (void *)((ulong)&uStack_238 | 1);
         if (uVar4 != 0) goto LAB_003d7328;
       }
       else {
-        uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
+        p0 = uVar4 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 003d730c to 003d7313 has its CatchHandler @ 003d73cc */
-        uVar5 = FUN_00164060(uVar7);
-        uStack_238 = uVar7 | 1;
+        pvVar5 = (void *)FUN_00164060(p0);
+        uStack_238 = p0 | 1;
         uStack_230 = uVar4;
-        uStack_228 = uVar5;
+        pvStack_228 = pvVar5;
 LAB_003d7328:
-        FUN_001715e0(uVar5,auStack_170,uVar4);
+        FUN_001715e0(pvVar5,auStack_170,uVar4);
       }
       puStack_178 = &uStack_238;
-      *(undefined1 *)(uVar5 + uVar4) = 0;
+      *(undefined1 *)((long)pvVar5 + uVar4) = 0;
                     /* try { // try from 003d7340 to 003d7357 has its CatchHandler @ 003d73d4 */
       lVar3 = func_0x00166830(param_1 + 1,&uStack_238,&DAT_006335a2,&puStack_178,auStack_180);
       FUN_001715e0(lVar3 + 0x38,auStack_220,0xa0);
       if ((uStack_238 & 1) != 0) {
-        FUN_00166120(uStack_228);
+        FUN_00166120(pvStack_228);
       }
                     /* try { // try from 003d737c to 003d737f has its CatchHandler @ 003d73ec */
       iVar2 = func_0x00163320(*param_1);
@@ -240,12 +240,13 @@ undefined8 Walaber::ZipArchiveReader::getCurrentFileSize(long param_1)
 
 /* Walaber::ZipArchiveReader::readCurrentFile(void*) */
 
-void Walaber::ZipArchiveReader::readCurrentFile(undefined8 *param_1,undefined8 param_2)
+void Walaber::ZipArchiveReader::readCurrentFile(void *p0)
 
 {
   undefined4 uVar1;
+  undefined8 in_x1;
   
-  uVar1 = func_0x00171a30(*param_1,param_2,*(undefined4 *)(param_1 + 0xb));
+  uVar1 = func_0x00171a30(*(undefined8 *)p0,in_x1,*(undefined4 *)((long)p0 + 0x58));
   FUN_00166450("Walaber",2,"ZipArchiveReader::readCurrentFile() read %d bytes",uVar1);
   return;
 }

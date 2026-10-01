@@ -136,12 +136,12 @@ LAB_005db3e0:
     */
 
 undefined8
-std::__ndk1::__codecvt_utf16<char32_t,true>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::__codecvt_utf16<char32_t,true>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -182,40 +182,41 @@ undefined8 std::__ndk1::__codecvt_utf16<char32_t,true>::do_always_noconv(void)
 /* std::__ndk1::__codecvt_utf16<char32_t, true>::do_length(mbstate_t&, char const*, char const*,
    unsigned long) const */
 
-int std::__ndk1::__codecvt_utf16<char32_t,true>::do_length
-              (long param_1,undefined8 param_2,ushort *param_3,long param_4,ulong param_5)
+int std::__ndk1::__codecvt_utf16<char32_t,true>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   byte bVar1;
+  ulong in_x4;
   ushort *puVar2;
   ulong uVar3;
-  ulong uVar4;
+  mbstate_t mVar4;
   
-  puVar2 = param_3;
-  if (((((*(byte *)(param_1 + 0x18) >> 2 & 1) != 0) && (1 < param_4 - (long)param_3)) &&
-      ((char)*param_3 == -1)) && (puVar2 = param_3 + 1, *(char *)((long)param_3 + 1) != -2)) {
-    puVar2 = param_3;
+  puVar2 = (ushort *)p2;
+  if ((((((byte)p0[3].__count >> 2 & 1) != 0) && (1 < (long)(p3 - (long)p2))) && (*p2 == -1)) &&
+     (puVar2 = (ushort *)(p2 + 2), p2[1] != -2)) {
+    puVar2 = (ushort *)p2;
   }
-  if ((param_5 != 0) && (puVar2 < (ushort *)(param_4 + -1))) {
+  if ((in_x4 != 0) && (puVar2 < (ushort *)(p3 - 1))) {
     uVar3 = 1;
     do {
       bVar1 = *(byte *)((long)puVar2 + 1) & 0xfc;
-      uVar4 = (ulong)*puVar2;
+      mVar4._2_6_ = 0;
+      mVar4.__count._0_2_ = *puVar2;
       if (bVar1 == 0xd8) {
-        if (((param_4 - (long)puVar2 < 4) || ((*(byte *)((long)puVar2 + 3) & 0xfc) != 0xdc)) ||
-           (*(ulong *)(param_1 + 0x10) <
-            ((uVar4 & 0x3c0) * 0x400 + 0x10000 | (uVar4 & 0x3f) << 10 |
+        if ((((long)(p3 - (long)puVar2) < 4) || ((*(byte *)((long)puVar2 + 3) & 0xfc) != 0xdc)) ||
+           ((ulong)p0[2] <
+            (((ulong)mVar4 & 0x3c0) * 0x400 + 0x10000 | ((ulong)mVar4 & 0x3f) << 10 |
              ((ulong)*(byte *)((long)puVar2 + 3) & 3) << 8 | (ulong)(byte)puVar2[1]))) break;
         puVar2 = puVar2 + 2;
       }
       else {
-        if ((bVar1 == 0xdc) || (*(ulong *)(param_1 + 0x10) < uVar4)) break;
+        if ((bVar1 == 0xdc) || ((ulong)p0[2] < (ulong)mVar4)) break;
         puVar2 = puVar2 + 1;
       }
-      if ((param_5 <= uVar3) || (uVar3 = uVar3 + 1, (ushort *)(param_4 + -1) <= puVar2)) break;
+      if ((in_x4 <= uVar3) || (uVar3 = uVar3 + 1, (ushort *)(p3 - 1) <= puVar2)) break;
     } while( true );
   }
-  return (int)puVar2 - (int)param_3;
+  return (int)puVar2 - (int)p2;
 }
 
 
@@ -246,7 +247,7 @@ undefined4 std::__ndk1::__codecvt_utf16<char32_t,true>::do_max_length(long param
 
 /* std::__ndk1::__codecvt_utf16<char32_t, true>::~__codecvt_utf16() */
 
-void std::__ndk1::__codecvt_utf16<char32_t,true>::~__codecvt_utf16(undefined8 param_1)
+void std::__ndk1::__codecvt_utf16<char32_t,true>::~__codecvt_utf16(void *param_1)
 
 {
   FUN_00172660();

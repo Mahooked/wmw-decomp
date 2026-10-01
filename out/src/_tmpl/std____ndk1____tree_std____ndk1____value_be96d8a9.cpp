@@ -31,7 +31,7 @@ void std::__ndk1::
     func_0x00167160(param_1,param_2[1]);
     func_0x00163110(param_2 + 8,param_2[9]);
     if ((*(byte *)(param_2 + 4) & 1) != 0) {
-      FUN_00166120(param_2[6]);
+      FUN_00166120((void *)param_2[6]);
     }
     FUN_00166120(param_2);
     return;

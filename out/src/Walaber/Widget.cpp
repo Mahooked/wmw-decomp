@@ -16,7 +16,7 @@ void Walaber::Widget::Widget
 {
   long lVar1;
   undefined8 auStack_70 [2];
-  undefined8 uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
@@ -26,7 +26,7 @@ void Walaber::Widget::Widget
                     /* try { // try from 0036a7ac to 0036a7bb has its CatchHandler @ 0036a8c8 */
   func_0x00170640(param_1,auStack_70,0xffffffff);
   if (((byte)auStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   *(undefined4 *)((long)param_1 + 0x84) = param_3;
   *(undefined4 *)(param_1 + 0x11) = param_6;
@@ -69,10 +69,12 @@ void Walaber::Widget::Widget
 
 /* Walaber::Widget::_generateWidgetName(int) */
 
-void Walaber::Widget::_generateWidgetName(undefined8 param_1,undefined4 param_2)
+void Walaber::Widget::_generateWidgetName(int p0)
 
 {
-  func_0x001636d0(param_2);
+  undefined4 in_w1;
+  
+  func_0x001636d0(in_w1);
   return;
 }
 
@@ -105,15 +107,16 @@ bool Walaber::Widget::getWidgetTypeFromString(undefined8 param_1,undefined4 *par
 
 /* Walaber::Widget::setLayer(int) */
 
-void Walaber::Widget::setLayer(long param_1,int param_2)
+void Walaber::Widget::setLayer(int p0)
 
 {
+  int in_w1;
   long lVar1;
   
-  lVar1 = *(long *)(param_1 + 200);
-  *(int *)(param_1 + 0x80) = param_2;
-  if ((lVar1 != 0) && (*(int *)(lVar1 + 0x74) <= param_2)) {
-    *(int *)(lVar1 + 0x74) = param_2 + 1;
+  lVar1 = *(long *)((ulong)(uint)p0 + 200);
+  *(int *)((ulong)(uint)p0 + 0x80) = in_w1;
+  if ((lVar1 != 0) && (*(int *)(lVar1 + 0x74) <= in_w1)) {
+    *(int *)(lVar1 + 0x74) = in_w1 + 1;
   }
   return;
 }
@@ -126,11 +129,11 @@ void Walaber::Widget::setLayer(long param_1,int param_2)
 
 /* Walaber::Widget::setLocalPosition(Walaber::Vector2 const&) */
 
-void Walaber::Widget::setLocalPosition(undefined8 param_1)
+void Walaber::Widget::setLocalPosition(Walaber__Vector2 *p0)
 
 {
   func_0x0016f3a0();
-  func_0x001717b0(param_1);
+  func_0x001717b0(p0);
   return;
 }
 
@@ -196,11 +199,11 @@ void Walaber::Widget::_updateAABB(long param_1)
 
 /* Walaber::Widget::applyPositionOffset(Walaber::Vector2 const&) */
 
-void Walaber::Widget::applyPositionOffset(undefined8 param_1)
+void Walaber::Widget::applyPositionOffset(Walaber__Vector2 *p0)
 
 {
   func_0x0016df50();
-  func_0x001717b0(param_1);
+  func_0x001717b0(p0);
   return;
 }
 
@@ -212,11 +215,11 @@ void Walaber::Widget::applyPositionOffset(undefined8 param_1)
 
 /* Walaber::Widget::setLocalScale(Walaber::Vector2 const&) */
 
-void Walaber::Widget::setLocalScale(undefined8 param_1)
+void Walaber::Widget::setLocalScale(Walaber__Vector2 *p0)
 
 {
   func_0x0016de30();
-  func_0x001717b0(param_1);
+  func_0x001717b0(p0);
   return;
 }
 
@@ -244,10 +247,12 @@ void Walaber::Widget::setBaseSize(long param_1,undefined8 *param_2)
 
 /* Walaber::Widget::setWidgetMgr(Walaber::WidgetManager*) */
 
-void Walaber::Widget::setWidgetMgr(long param_1,undefined8 param_2)
+void Walaber::Widget::setWidgetMgr(Walaber__WidgetManager *p0)
 
 {
-  *(undefined8 *)(param_1 + 200) = param_2;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 200) = in_x1;
   return;
 }
 
@@ -259,7 +264,7 @@ void Walaber::Widget::setWidgetMgr(long param_1,undefined8 param_2)
 
 /* Walaber::Widget::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget::draw(void)
+void Walaber::Widget::draw(Walaber__SpriteBatch *p0)
 
 {
   return;
@@ -332,11 +337,12 @@ ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
   long lVar1;
   uint uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  void *pvVar4;
+  ulong p0;
+  void *pvVar5;
   ulong uStack_68;
   ulong uStack_60;
-  ulong uStack_58;
+  void *pvStack_58;
   uint uStack_4c;
   long lStack_48;
   
@@ -344,37 +350,37 @@ ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   uVar3 = FUN_00173480(param_1 + 0x24);
   if (0xffffffffffffffef < uVar3) {
     uVar3 = FUN_00164180(&uStack_68);
     return uVar3;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_68 | 1;
+    pvVar4 = (void *)((ulong)&uStack_68 | 1);
     uStack_68 = CONCAT71(uStack_68._1_7_,(char)((int)uVar3 << 1));
-    uVar5 = uVar4;
+    pvVar5 = pvVar4;
     if (uVar3 == 0) goto LAB_0036af30;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_68 = uVar5 | 1;
-    uVar5 = (ulong)&uStack_68 | 1;
+    p0 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0);
+    uStack_68 = p0 | 1;
+    pvVar5 = (void *)((ulong)&uStack_68 | 1);
     uStack_60 = uVar3;
-    uStack_58 = uVar4;
+    pvStack_58 = pvVar4;
   }
-  FUN_001715e0(uVar4,param_1 + 0x24,uVar3);
+  FUN_001715e0(pvVar4,param_1 + 0x24,uVar3);
 LAB_0036af30:
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
   if ((uStack_68 & 1) != 0) {
-    uVar5 = uStack_58;
+    pvVar5 = pvStack_58;
   }
   uStack_4c = 0;
-  func_0x00170360(uVar5,"%i",&uStack_4c);
+  func_0x00170360(pvVar5,"%i",&uStack_4c);
   uVar2 = uStack_4c;
   if ((uStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     uVar3 = FUN_00164ff0();
@@ -396,7 +402,7 @@ void Walaber::Widget::~Widget(undefined8 *param_1)
 {
   *param_1 = &PTR__Widget_0070eb18;
   if ((*(byte *)(param_1 + 0x1a) & 1) != 0) {
-    FUN_00166120(param_1[0x1c]);
+    FUN_00166120((void *)param_1[0x1c]);
   }
   func_0x00170150(param_1);
   return;
@@ -410,7 +416,7 @@ void Walaber::Widget::~Widget(undefined8 *param_1)
 
 /* Walaber::Widget::~Widget() */
 
-void Walaber::Widget::~Widget(undefined8 param_1)
+void Walaber::Widget::~Widget(void *param_1)
 
 {
   FUN_00168a50();
@@ -426,17 +432,18 @@ void Walaber::Widget::~Widget(undefined8 param_1)
 
 /* Walaber::Widget::setRotation(float) */
 
-void Walaber::Widget::setRotation(float param_1,long *param_2)
+void Walaber::Widget::setRotation(float p0)
 
 {
   long lVar1;
+  long *in_x0;
   float fStack_2c;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  fStack_2c = param_1 * 0.017453292;
-  (**(code **)(*param_2 + 0x20))(param_2,&fStack_2c);
+  fStack_2c = p0 * 0.017453292;
+  (**(code **)(*in_x0 + 0x20))(in_x0,&fStack_2c);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -452,10 +459,12 @@ void Walaber::Widget::setRotation(float param_1,long *param_2)
 
 /* Walaber::Widget::setEnabled(bool) */
 
-void Walaber::Widget::setEnabled(long param_1,byte param_2)
+void Walaber::Widget::setEnabled(bool p0)
 
 {
-  *(byte *)(param_1 + 0x8d) = param_2 & 1;
+  byte in_w1;
+  
+  *(byte *)((ulong)p0 + 0x8d) = in_w1 & 1;
   return;
 }
 
@@ -506,7 +515,7 @@ void Walaber::Widget::reloadFont(long param_1)
   long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -517,7 +526,7 @@ void Walaber::Widget::reloadFont(long param_1)
   uVar2 = func_0x001694e0(uVar2,abStack_50);
   *(undefined8 *)(param_1 + 0xe8) = uVar2;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -534,7 +543,7 @@ void Walaber::Widget::reloadFont(long param_1)
 
 /* Walaber::Widget::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget::update(void)
+undefined8 Walaber::Widget::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   return 0;
@@ -548,7 +557,7 @@ undefined8 Walaber::Widget::update(void)
 
 /* Walaber::Widget::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget::acceptNewFingerDown(void)
+undefined8 Walaber::Widget::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -562,7 +571,7 @@ undefined8 Walaber::Widget::acceptNewFingerDown(void)
 
 /* Walaber::Widget::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget::acceptNewFingerEntered(void)
+undefined8 Walaber::Widget::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -576,7 +585,7 @@ undefined8 Walaber::Widget::acceptNewFingerEntered(void)
 
 /* Walaber::Widget::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget::releaseFingerMoved(void)
+undefined8 Walaber::Widget::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
   return 1;
@@ -590,7 +599,7 @@ undefined8 Walaber::Widget::releaseFingerMoved(void)
 
 /* Walaber::Widget::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget::releaseFingerStayed(void)
+undefined8 Walaber::Widget::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   return 1;
@@ -604,10 +613,10 @@ undefined8 Walaber::Widget::releaseFingerStayed(void)
 
 /* Walaber::Widget::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget::releaseFingerUp(void)
+int Walaber::Widget::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -618,7 +627,7 @@ void Walaber::Widget::releaseFingerUp(void)
 
 /* Walaber::Widget::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget::releaseFingerLeft(void)
+undefined8 Walaber::Widget::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   return 1;
@@ -632,10 +641,10 @@ undefined8 Walaber::Widget::releaseFingerLeft(void)
 
 /* Walaber::Widget::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget::notifyFingerLost(void)
+int Walaber::Widget::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -651,7 +660,7 @@ void Walaber::Widget::getWidgetName(ulong *param_1,long param_2)
 {
   ulong uVar1;
   ulong uVar2;
-  ulong uVar3;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -667,11 +676,11 @@ void Walaber::Widget::getWidgetName(ulong *param_1,long param_2)
     if (uVar1 == 0) goto LAB_003701a8;
   }
   else {
-    uVar3 = uVar1 + 0x10 & 0xfffffffffffffff0;
-    uVar2 = FUN_00164060(uVar3);
+    p0 = uVar1 + 0x10 & 0xfffffffffffffff0;
+    uVar2 = FUN_00164060(p0);
     param_1[1] = uVar1;
     param_1[2] = uVar2;
-    *param_1 = uVar3 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar2,param_2 + 0x24,uVar1);
 LAB_003701a8:

@@ -27,12 +27,13 @@ void std::__ndk1::ios_base::failure::failure
 
 /* std::__ndk1::ios_base::failure::failure(char const*, std::__ndk1::error_code const&) */
 
-void std::__ndk1::ios_base::failure::failure
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
+void std::__ndk1::ios_base::failure::failure(char *p0,std____ndk1__error_code *p1)
 
 {
-  func_0x00173fd0(param_1,*param_3,param_3[1],param_2);
-  *param_1 = &PTR__failure_00716538;
+  undefined8 *in_x2;
+  
+  func_0x00173fd0(p0,*in_x2,in_x2[1],p1);
+  *(undefined ***)p0 = &PTR__failure_00716538;
   return;
 }
 
@@ -59,7 +60,7 @@ void std::__ndk1::ios_base::failure::~failure(void)
 
 /* std::__ndk1::ios_base::failure::~failure() */
 
-void std::__ndk1::ios_base::failure::~failure(undefined8 param_1)
+void std::__ndk1::ios_base::failure::~failure(void *param_1)
 
 {
   FUN_00166110();

@@ -8,31 +8,32 @@
 
 /* Walaber::SkeletonActorCueAnimationTrack::apply(float) */
 
-void Walaber::SkeletonActorCueAnimationTrack::apply(float param_1,long *param_2)
+void Walaber::SkeletonActorCueAnimationTrack::apply(float p0)
 
 {
   int iVar1;
   long lVar2;
+  long *in_x0;
   long lVar3;
   long lVar4;
   long lVar5;
   long lVar6;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  if ((int)param_2[4] != *(int *)((long)param_2 + 0x24) + -1) {
-    lVar4 = param_2[1];
-    iVar1 = (int)param_2[4] + 1;
-    if (*(float *)(lVar4 + (long)iVar1 * 0x38 + 4) < param_1) {
+  if ((int)in_x0[4] != *(int *)((long)in_x0 + 0x24) + -1) {
+    lVar4 = in_x0[1];
+    iVar1 = (int)in_x0[4] + 1;
+    if (*(float *)(lVar4 + (long)iVar1 * 0x38 + 4) < p0) {
       lVar5 = (long)iVar1;
-      *(int *)(param_2 + 4) = iVar1;
+      *(int *)(in_x0 + 4) = iVar1;
       iVar1 = *(int *)(lVar4 + lVar5 * 0x38);
       if (iVar1 != 1) {
         if (iVar1 != 0) goto LAB_00334a48;
-        lVar3 = *param_2;
+        lVar3 = *in_x0;
         lVar6 = lVar4 + lVar5 * 0x38;
         func_0x0016f720(abStack_60,lVar6 + 8);
                     /* try { // try from 00334a0c to 00334a17 has its CatchHandler @ 00334a74 */
@@ -40,11 +41,11 @@ void Walaber::SkeletonActorCueAnimationTrack::apply(float param_1,long *param_2)
                         ,*(undefined4 *)(lVar6 + 0x20),*(undefined4 *)(lVar6 + 0x24),
                         *(undefined1 *)(lVar6 + 0x31));
         if ((abStack_60[0] & 1) != 0) {
-          FUN_00166120(uStack_50);
+          FUN_00166120(pvStack_50);
         }
         if (*(char *)(lVar4 + lVar5 * 0x38 + 0x30) == '\0') goto LAB_00334a48;
       }
-      func_0x00168af0(*(long *)(*param_2 + 8) + 0xe8);
+      func_0x00168af0(*(long *)(*in_x0 + 8) + 0xe8);
     }
   }
 LAB_00334a48:
@@ -84,14 +85,16 @@ void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(und
     */
 
 void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
-               (undefined8 *param_1,undefined8 param_2)
+               (Walaber__SkeletonActor *p0)
 
 {
-  param_1[2] = 0;
-  param_1[3] = 0;
-  *param_1 = param_2;
-  param_1[1] = 0;
-  param_1[4] = 0xffffffff;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
+  *(undefined8 *)p0 = in_x1;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x20) = 0xffffffff;
   return;
 }
 
@@ -105,12 +108,14 @@ void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
    const&) */
 
 void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
-               (undefined8 *param_1,undefined8 *param_2)
+               (Walaber__SkeletonActorCueAnimationTrack *p0)
 
 {
-  *param_1 = *param_2;
-  func_0x00173400(param_1 + 1,param_2 + 1);
-  param_1[4] = param_2[4];
+  undefined8 *in_x1;
+  
+  *(undefined8 *)p0 = *in_x1;
+  func_0x00173400(p0 + 8,in_x1 + 1);
+  *(undefined8 *)(p0 + 0x20) = in_x1[4];
   return;
 }
 
@@ -123,16 +128,18 @@ void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
 /* Walaber::SkeletonActorCueAnimationTrack::TEMPNAMEPLACEHOLDERVALUE(Walaber::SkeletonActorCueAnimationTrack
    const&) */
 
-undefined8 *
-Walaber::SkeletonActorCueAnimationTrack::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__SkeletonActorCueAnimationTrack *
+Walaber::SkeletonActorCueAnimationTrack::operator=(Walaber__SkeletonActorCueAnimationTrack *p0)
 
 {
-  *param_1 = *param_2;
-  if (param_1 != param_2) {
-    func_0x0016dab0(param_1 + 1,param_2[1],param_2[2]);
+  Walaber__SkeletonActorCueAnimationTrack *in_x1;
+  
+  *(undefined8 *)p0 = *(undefined8 *)in_x1;
+  if (p0 != in_x1) {
+    func_0x0016dab0(p0 + 8,*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 0x10));
   }
-  param_1[4] = param_2[4];
-  return param_1;
+  *(undefined8 *)(p0 + 0x20) = *(undefined8 *)(in_x1 + 0x20);
+  return p0;
 }
 
 

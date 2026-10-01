@@ -42,7 +42,7 @@ void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore
 
 /* WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore() */
 
-void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(undefined8 param_1)
+void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(void *param_1)
 
 {
   FUN_0016d110();
@@ -58,7 +58,7 @@ void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore
 
 /* WaterConcept::Screen_GraphicsContextRestore::loadPropertyList(Walaber::PropertyList const&) */
 
-void WaterConcept::Screen_GraphicsContextRestore::loadPropertyList(void)
+void WaterConcept::Screen_GraphicsContextRestore::loadPropertyList(Walaber__PropertyList *p0)
 
 {
   return;
@@ -116,9 +116,9 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
   undefined1 uStack_218;
   undefined1 uStack_217;
   undefined6 uStack_216;
-  undefined8 uStack_210;
+  void *pvStack_210;
   byte abStack_208 [16];
-  undefined8 uStack_1f8;
+  void *pvStack_1f8;
   undefined8 uStack_1f0;
   undefined8 uStack_1e8;
   float fStack_1e0;
@@ -128,7 +128,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
   undefined8 uStack_1d0;
   undefined8 uStack_1c8;
   byte abStack_1c0 [16];
-  undefined8 uStack_1b0;
+  void *pvStack_1b0;
   long *plStack_1a8;
   int *piStack_1a0;
   long *plStack_198;
@@ -369,7 +369,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
   abStack_1c0[0xd] = 0;
   abStack_1c0[0xe] = 0;
   abStack_1c0[0xf] = 0;
-  uStack_1b0 = 0;
+  pvStack_1b0 = (void *)0x0;
   abStack_1c0[0] = 0x10;
   abStack_1c0[1] = 0x6f;
   abStack_1c0[2] = 0x75;
@@ -383,7 +383,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
                     /* try { // try from 004db328 to 004db32f has its CatchHandler @ 004db5d4 */
   lVar5 = func_0x001694e0(uVar2,abStack_1c0);
   if ((abStack_1c0[0] & 1) != 0) {
-    FUN_00166120(uStack_1b0);
+    FUN_00166120(pvStack_1b0);
   }
   if (lVar5 != 0) {
     iVar7 = (int)(*(long *)(lVar5 + 0x68) - *(long *)(lVar5 + 0x60) >> 3) * -0x55555555;
@@ -421,7 +421,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
     abStack_208[0xd] = 0;
     abStack_208[0xe] = 0;
     abStack_208[0xf] = 0;
-    uStack_1f8 = 0;
+    pvStack_1f8 = (void *)0x0;
     abStack_208[0] = 0xe;
     abStack_208[1] = 0x4c;
     abStack_208[2] = 0x4f;
@@ -434,7 +434,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
                     /* try { // try from 004db408 to 004db413 has its CatchHandler @ 004db5a8 */
     func_0x0016e7e0(auStack_b0,abStack_208);
     uStack_216 = 0;
-    uStack_210 = 0;
+    pvStack_210 = (void *)0x0;
     bStack_220 = 0x10;
     uStack_21f = 0x656e696c74756f;
     uStack_218 = 100;
@@ -442,13 +442,13 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
                     /* try { // try from 004db42c to 004db45b has its CatchHandler @ 004db580 */
     func_0x00169340(0,plVar6,2,&fStack_1d8,&fStack_1e0,&uStack_1f0,auStack_b0,&bStack_220,1,1);
     if ((bStack_220 & 1) != 0) {
-      FUN_00166120(uStack_210);
+      FUN_00166120(pvStack_210);
     }
     if ((auStack_b0[0] & 1) != 0) {
       FUN_00166120(pcStack_a0);
     }
     if ((abStack_208[0] & 1) != 0) {
-      FUN_00166120(uStack_1f8);
+      FUN_00166120(pvStack_1f8);
     }
     FUN_00166b20(&uStack_1f0);
     FUN_00166b20(&uStack_110);
@@ -511,34 +511,37 @@ void WaterConcept::Screen_GraphicsContextRestore::recreateGraphicsContext(long *
 /* WARNING: Removing unreachable block (ram,0x004db7cc) */
 /* WaterConcept::Screen_GraphicsContextRestore::update(float, bool) */
 
-void WaterConcept::Screen_GraphicsContextRestore::update(undefined8 param_1,long param_2)
+void WaterConcept::Screen_GraphicsContextRestore::update(float p0,bool p1)
 
 {
   long lVar1;
   ulong uVar2;
-  long lVar3;
-  undefined8 uVar4;
-  float fVar5;
+  ulong uVar3;
+  long lVar4;
+  undefined8 uVar5;
+  undefined4 in_register_00005004;
+  float fVar6;
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
   long lStack_58;
   
+  uVar2 = (ulong)p1;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   func_0x001731e0(1);
-  func_0x001706f0(param_1,*(undefined8 *)(param_2 + 0x10));
+  func_0x001706f0(CONCAT44(in_register_00005004,p0),*(undefined8 *)(uVar2 + 0x10));
   FUN_001739b0();
-  uVar2 = func_0x00173dd0();
-  if ((uVar2 & 1) == 0) {
-    if (*(char *)(param_2 + 0xa0) == '\0') {
+  uVar3 = func_0x00173dd0();
+  if ((uVar3 & 1) == 0) {
+    if (*(char *)(uVar2 + 0xa0) == '\0') {
       FUN_001739b0();
       func_0x0016f8b0();
-      lVar3 = func_0x001692e0(*(undefined8 *)(param_2 + 0x10),1);
-      if (lVar3 != 0) {
+      lVar4 = func_0x001692e0(*(undefined8 *)(uVar2 + 0x10),1);
+      if (lVar4 != 0) {
         func_0x00172ce0(0x3f800000);
       }
-      *(undefined1 *)(param_2 + 0xd) = 1;
+      *(undefined1 *)(uVar2 + 0xd) = 1;
       func_0x0016f470(0,1);
       func_0x0016c950();
       GameSettings::mAllowNotifications = 1;
@@ -546,32 +549,32 @@ void WaterConcept::Screen_GraphicsContextRestore::update(undefined8 param_1,long
       uStack_78 = 0x7600000010;
       func_0x0016b220(auStack_70);
                     /* try { // try from 004db880 to 004db8a7 has its CatchHandler @ 004db8ec */
-      uVar4 = func_0x0016b4e0();
-      func_0x00169c90(uVar4,&ppuStack_80);
+      uVar5 = func_0x0016b4e0();
+      func_0x00169c90(uVar5,&ppuStack_80);
       FUN_00166450(&DAT_0061d37e,1,"All textures loaded");
       ppuStack_80 = &PTR__Message_0070cdc8;
-      *(undefined1 *)(param_2 + 0xa0) = 1;
+      *(undefined1 *)(uVar2 + 0xa0) = 1;
       func_0x00164ba0(auStack_70);
     }
     else {
-      lVar3 = func_0x00165c70();
-      if (*(int *)(lVar3 + 8) == 0x15) {
+      lVar4 = func_0x00165c70();
+      if (*(int *)(lVar4 + 8) == 0x15) {
         func_0x0016f470(0,1);
       }
       func_0x0016c950();
     }
   }
   else {
-    lVar3 = *(long *)(param_2 + 0x98) + 1;
-    *(long *)(param_2 + 0x98) = lVar3;
-    FUN_00166450(&DAT_0061d37e,1,"Loaded texture %d/%d",lVar3,*(undefined8 *)(param_2 + 0x90));
-    lVar3 = func_0x001692e0(*(undefined8 *)(param_2 + 0x10),1);
-    if (lVar3 != 0) {
-      fVar5 = (float)*(ulong *)(param_2 + 0x98) / (float)*(ulong *)(param_2 + 0x90);
-      if (fVar5 <= 0.0) {
-        fVar5 = 0.0;
+    lVar4 = *(long *)(uVar2 + 0x98) + 1;
+    *(long *)(uVar2 + 0x98) = lVar4;
+    FUN_00166450(&DAT_0061d37e,1,"Loaded texture %d/%d",lVar4,*(undefined8 *)(uVar2 + 0x90));
+    lVar4 = func_0x001692e0(*(undefined8 *)(uVar2 + 0x10),1);
+    if (lVar4 != 0) {
+      fVar6 = (float)*(ulong *)(uVar2 + 0x98) / (float)*(ulong *)(uVar2 + 0x90);
+      if (fVar6 <= 0.0) {
+        fVar6 = 0.0;
       }
-      func_0x00172ce0(fVar5);
+      func_0x00172ce0(fVar6);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
@@ -589,11 +592,12 @@ void WaterConcept::Screen_GraphicsContextRestore::update(undefined8 param_1,long
 
 /* WaterConcept::Screen_GraphicsContextRestore::draw(int) */
 
-void WaterConcept::Screen_GraphicsContextRestore::draw(long param_1,int param_2)
+void WaterConcept::Screen_GraphicsContextRestore::draw(int p0)
 
 {
   long lVar1;
   long lVar2;
+  int in_w1;
   undefined4 auStack_50 [2];
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -601,9 +605,9 @@ void WaterConcept::Screen_GraphicsContextRestore::draw(long param_1,int param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar1 = param_1 + 0x28;
+  lVar1 = (ulong)(uint)p0 + 0x28;
   func_0x00171540(lVar1,3);
-  if (param_2 == 1) {
+  if (in_w1 == 1) {
     uStack_48 = CONCAT44(DAT_0072d884,Walaber::ScreenCoord::sScreenSize);
     uStack_40 = CONCAT44(DAT_0072d884 * 0.5,Walaber::ScreenCoord::sScreenSize * 0.5);
     auStack_50[0] = 0xff000000;
@@ -614,7 +618,7 @@ void WaterConcept::Screen_GraphicsContextRestore::draw(long param_1,int param_2)
     func_0x001642a0(0x1700);
     func_0x00166f60();
     func_0x0016c350(1,1,0x303);
-    func_0x00164990(*(undefined8 *)(param_1 + 0x10),lVar1);
+    func_0x00164990(*(undefined8 *)((ulong)(uint)p0 + 0x10),lVar1);
   }
   func_0x00163aa0(lVar1);
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
@@ -633,10 +637,11 @@ void WaterConcept::Screen_GraphicsContextRestore::draw(long param_1,int param_2)
 /* WaterConcept::Screen_GraphicsContextRestore::handleEvent(int, Walaber::Widget::WidgetActionRet
    const&, Walaber::Widget*) */
 
-void WaterConcept::Screen_GraphicsContextRestore::handleEvent(void)
+int WaterConcept::Screen_GraphicsContextRestore::handleEvent
+              (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  return;
+  return p0;
 }
 
 

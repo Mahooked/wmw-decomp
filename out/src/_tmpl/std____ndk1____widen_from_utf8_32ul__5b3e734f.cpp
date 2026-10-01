@@ -8,7 +8,7 @@
 
 /* std::__ndk1::__widen_from_utf8<32ul>::~__widen_from_utf8() */
 
-void std::__ndk1::__widen_from_utf8<32ul>::~__widen_from_utf8(undefined8 param_1)
+void std::__ndk1::__widen_from_utf8<32ul>::~__widen_from_utf8(void *param_1)
 
 {
   FUN_00172660();

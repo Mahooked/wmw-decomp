@@ -13,7 +13,7 @@
         gh.ps1 script  <so-name> <symbolTsv> <outDir> <timeoutSec> <maxFunctions>
 #>
 param(
-    [Parameter(Mandatory = $true)][ValidateSet('import', 'script')][string]$Mode,
+    [Parameter(Mandatory = $true)][ValidateSet('import', 'script', 'probe')][string]$Mode,
     [Parameter(Mandatory = $true)][string[]]$Rest,
     [string]$Script = 'DecompileAll.java',
     # Appended after the standard postScript arguments, so a script can take
@@ -57,6 +57,17 @@ if ($Mode -eq 'import') {
         '-loader-dataImageBase', '0x0',
         '-analysisTimeoutPerFile', '1800', '-log', (Join-Path $LogDir "$tag.log"))
 }
+elseif ($Mode -eq 'probe') {
+    # A reporting script: no rebuild, no writes to out/src. Arguments are
+    # passed through verbatim, so a probe can take whatever its own signature
+    # declares. Cheaper than decompiling the whole binary for a model question.
+    $soName = $Rest[0]
+    $tag = 'probe'
+    $postArgs = if ($Rest.Count -gt 1) { $Rest[1..($Rest.Count - 1)] } else { @($Temp) }
+    $gargs = @($Project, $ProjectName, '-process', $soName, '-noanalysis',
+        '-scriptPath', $ScriptDir, '-postScript', $Script) + $postArgs + @(
+        '-log', (Join-Path $LogDir "$tag.log"))
+}
 else {
     $soName = $Rest[0]
     $symTsv = $Rest[1]
@@ -76,11 +87,23 @@ else {
 $quoted = ($gargs | ForEach-Object { '"' + $_ + '"' }) -join ' '
 $shim = Join-Path $Temp ("gh_run_" + [guid]::NewGuid().ToString('N').Substring(0, 8) + '.cmd')
 $exitFile = Join-Path $Temp ("gh_exit_" + [guid]::NewGuid().ToString('N').Substring(0, 8) + '.txt')
+# `echo %ERRORLEVEL%>` would print "ECHO is off." when cmd has echo disabled
+# and the variable is empty, and the caller then fails to parse that as an exit
+# code. `call echo` re-enables echo for one line, and the `>NUL` guard keeps the
+# stray "ECHO is on." line out of stdout.
 @(
     '@echo off'
+    # Delayed expansion is required, not stylistic: cmd expands an entire line
+    # before executing any of it, so a plain `%ERRORLEVEL%` on the same line as
+    # the command that sets it would read the *previous* value. `!ERRORLEVEL!`
+    # is expanded at execution time and is the callee's real code here.
+    'setlocal enabledelayedexpansion'
     ('call "{0}" {1} < nul' -f $Bat, $quoted)
-    ('echo %ERRORLEVEL%> "{0}"' -f $exitFile)
-    'exit /b %ERRORLEVEL%'
+    ('set "_ghrc=!ERRORLEVEL!"')
+    # Written to a file rather than relying on `exit /b`, and quoted so a path
+    # with spaces in it still works.
+    ('> "{0}" echo !_ghrc!' -f $exitFile)
+    'endlocal & exit /b %_ghrc%'
 ) | Set-Content -Path $shim -Encoding ASCII
 
 Write-Host "[gh] $Mode"
@@ -96,6 +119,10 @@ $GhidraLog = Join-Path $LogDir "$tag.log"
 Remove-Item -Force $GhidraLog, $Console, "$Console.err" -ErrorAction SilentlyContinue
 $p = Start-Process -FilePath 'cmd.exe' -ArgumentList '/c', "`"$shim`"" -NoNewWindow `
     -RedirectStandardOutput $Console -RedirectStandardError "$Console.err" -PassThru
+# Touching .Handle makes the runtime cache the process handle, without which
+# .ExitCode comes back empty once the process is gone and has to be guessed at
+# from the shim's file. This is the documented workaround for that .NET quirk.
+$null = $p.Handle
 $sw = [Diagnostics.Stopwatch]::StartNew()
 $lastLine = ''
 while (-not $p.HasExited) {
@@ -119,12 +146,19 @@ while (-not $p.HasExited) {
 $p.WaitForExit()
 $sw.Stop()
 Remove-Item -Force $shim -ErrorAction SilentlyContinue
-# $p.ExitCode comes back empty from Start-Process -PassThru when stdout is
-# redirected, so the shim writes the real code out for us to read.
 $code = $p.ExitCode
 if ($null -eq $code -or $code -eq '') {
-    if (Test-Path $exitFile) { $code = [int](Get-Content $exitFile | Select-Object -First 1) }
-    else { $code = -1 }
+    # Fall back to the shim's file. Take the first line that is actually an
+    # integer: cmd can prepend noise depending on shell state, and casting
+    # "ECHO is off." to [int] would throw out of this script before it could
+    # report anything.
+    $code = -1
+    if (Test-Path $exitFile) {
+        foreach ($line in (Get-Content $exitFile)) {
+            $t = ($line | Out-String).Trim()
+            if ($t -match '^-?\d+$') { $code = [int]$t; break }
+        }
+    }
 }
 Remove-Item -Force $exitFile -ErrorAction SilentlyContinue
 Write-Host "[gh] exit=$code after $([int]$sw.Elapsed.TotalSeconds)s"

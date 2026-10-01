@@ -8,38 +8,41 @@
 
 /* Walaber::TextureSettings::TextureSettings(unsigned int) */
 
-void Walaber::TextureSettings::TextureSettings(undefined2 *param_1,uint param_2)
+void Walaber::TextureSettings::TextureSettings(uint p0)
 
 {
-  undefined4 uVar1;
+  undefined2 *puVar1;
+  uint in_w1;
   undefined4 uVar2;
+  undefined4 uVar3;
   
-  *(byte *)((long)param_1 + 3) = (byte)param_2 & 1;
-  *(undefined8 *)(param_1 + 4) = 0xff00000000000000;
-  uVar2 = 0x2600;
-  if ((param_2 & 2) != 0) {
-    uVar2 = 0x2601;
+  puVar1 = (undefined2 *)(ulong)p0;
+  *(byte *)((long)puVar1 + 3) = (byte)in_w1 & 1;
+  *(undefined8 *)(puVar1 + 4) = 0xff00000000000000;
+  uVar3 = 0x2600;
+  if ((in_w1 & 2) != 0) {
+    uVar3 = 0x2601;
   }
-  *(byte *)(param_1 + 2) = (byte)((param_2 & 0xff) >> 3) & 1;
-  *(byte *)(param_1 + 0x20) = (byte)((param_2 & 0xff) >> 4) & 1;
-  *(undefined8 *)(param_1 + 0x18) = 0;
-  *(undefined8 *)(param_1 + 0x1c) = 0;
-  *(undefined8 *)(param_1 + 0x14) = 0;
-  *(undefined1 *)(param_1 + 1) = 0;
-  uVar1 = 0x2901;
-  if ((param_2 & 4) != 0) {
-    uVar1 = 0x812f;
+  *(byte *)(puVar1 + 2) = (byte)((in_w1 & 0xff) >> 3) & 1;
+  *(byte *)(puVar1 + 0x20) = (byte)((in_w1 & 0xff) >> 4) & 1;
+  *(undefined8 *)(puVar1 + 0x18) = 0;
+  *(undefined8 *)(puVar1 + 0x1c) = 0;
+  *(undefined8 *)(puVar1 + 0x14) = 0;
+  *(undefined1 *)(puVar1 + 1) = 0;
+  uVar2 = 0x2901;
+  if ((in_w1 & 4) != 0) {
+    uVar2 = 0x812f;
   }
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined4 *)(param_1 + 0xc) = uVar2;
-  *(undefined4 *)(param_1 + 0xe) = uVar2;
-  *(undefined4 *)(param_1 + 0x10) = uVar1;
-  *(undefined4 *)(param_1 + 0x12) = uVar1;
-  *(undefined1 *)(param_1 + 6) = 0;
-  *(undefined1 *)((long)param_1 + 0xd) = 0;
-  *(undefined1 *)(param_1 + 7) = 0;
-  *param_1 = 0;
-  *(undefined1 *)((long)param_1 + 0xf) = 0xff;
+  *(undefined8 *)(puVar1 + 8) = 0;
+  *(undefined4 *)(puVar1 + 0xc) = uVar3;
+  *(undefined4 *)(puVar1 + 0xe) = uVar3;
+  *(undefined4 *)(puVar1 + 0x10) = uVar2;
+  *(undefined4 *)(puVar1 + 0x12) = uVar2;
+  *(undefined1 *)(puVar1 + 6) = 0;
+  *(undefined1 *)((long)puVar1 + 0xd) = 0;
+  *(undefined1 *)(puVar1 + 7) = 0;
+  *puVar1 = 0;
+  *(undefined1 *)((long)puVar1 + 0xf) = 0xff;
   return;
 }
 

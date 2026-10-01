@@ -53,10 +53,10 @@ void Walaber::PCSNode::~PCSNode(void)
 
 /* Walaber::PCSNode::~PCSNode() */
 
-void Walaber::PCSNode::~PCSNode(void)
+void Walaber::PCSNode::~PCSNode(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 
@@ -332,10 +332,10 @@ LAB_003eb380:
 
 /* Walaber::PCSNode::getNodeFromTree(Walaber::PCSNode*, int) */
 
-void Walaber::PCSNode::getNodeFromTree(void)
+void Walaber::PCSNode::getNodeFromTree(Walaber__PCSNode *p0,int p1)
 
 {
-  _depthFirstGroupIDSearch();
+  _depthFirstGroupIDSearch(p0,p1);
   return;
 }
 
@@ -347,7 +347,7 @@ void Walaber::PCSNode::getNodeFromTree(void)
 
 /* Walaber::PCSNode::_depthFirstGroupIDSearch(Walaber::PCSNode*, int) */
 
-long Walaber::PCSNode::_depthFirstGroupIDSearch(undefined8 param_1,int param_2)
+long Walaber::PCSNode::_depthFirstGroupIDSearch(Walaber__PCSNode *p0,int p1)
 
 {
   long lVar1;
@@ -359,7 +359,7 @@ long Walaber::PCSNode::_depthFirstGroupIDSearch(undefined8 param_1,int param_2)
   undefined8 uStack_58;
   long lStack_50;
   long lStack_48;
-  undefined8 uStack_40;
+  Walaber__PCSNode *pWStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -371,15 +371,15 @@ long Walaber::PCSNode::_depthFirstGroupIDSearch(undefined8 param_1,int param_2)
   lStack_68 = 0;
   uStack_70 = 0;
                     /* try { // try from 003eb40c to 003eb417 has its CatchHandler @ 003eb4bc */
-  uStack_40 = param_1;
-  func_0x00171ba0(&uStack_70,&uStack_40);
+  pWStack_40 = p0;
+  func_0x00171ba0(&uStack_70,&pWStack_40);
   while (lStack_48 != 0) {
     uVar2 = (lStack_48 + lStack_50) - 1;
     lVar3 = *(long *)(*(long *)(lStack_68 + (uVar2 >> 6 & 0x3fffffffffffff8)) + (uVar2 & 0x1ff) * 8)
     ;
                     /* try { // try from 003eb444 to 003eb47f has its CatchHandler @ 003eb4c0 */
     func_0x00168030(&uStack_70);
-    if (*(int *)(lVar3 + 0x20) == param_2) goto LAB_003eb488;
+    if (*(int *)(lVar3 + 0x20) == p1) goto LAB_003eb488;
     if (*(long *)(lVar3 + 0x18) != 0) {
       func_0x00171ba0(&uStack_70);
     }
@@ -490,35 +490,35 @@ void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
 
 /* Walaber::PCSNode::deleteNodeAndChildrenFromTree(Walaber::PCSNode*) */
 
-void Walaber::PCSNode::deleteNodeAndChildrenFromTree(long *param_1)
+void Walaber::PCSNode::deleteNodeAndChildrenFromTree(Walaber__PCSNode *p0)
 
 {
-  long *plVar1;
-  long *plVar2;
+  Walaber__PCSNode *pWVar1;
+  Walaber__PCSNode *pWVar2;
   long lVar3;
   
-  lVar3 = param_1[1];
+  lVar3 = *(long *)(p0 + 8);
   if (lVar3 != 0) {
-    plVar2 = *(long **)(lVar3 + 0x10);
-    if (*(long **)(lVar3 + 0x10) == param_1) {
-      *(long *)(lVar3 + 0x10) = param_1[3];
+    pWVar2 = *(Walaber__PCSNode **)(lVar3 + 0x10);
+    if (*(Walaber__PCSNode **)(lVar3 + 0x10) == p0) {
+      *(undefined8 *)(lVar3 + 0x10) = *(undefined8 *)(p0 + 0x18);
     }
     else {
       do {
-        plVar1 = plVar2;
-        plVar2 = (long *)plVar1[3];
-      } while (plVar2 != param_1);
-      plVar1[3] = param_1[3];
-      param_1[3] = 0;
+        pWVar1 = pWVar2;
+        pWVar2 = *(Walaber__PCSNode **)(pWVar1 + 0x18);
+      } while (pWVar2 != p0);
+      *(undefined8 *)(pWVar1 + 0x18) = *(undefined8 *)(p0 + 0x18);
+      *(undefined8 *)(p0 + 0x18) = 0;
     }
-    param_1[1] = 0;
+    *(undefined8 *)(p0 + 8) = 0;
   }
-  if (param_1[2] != 0) {
+  if (*(long *)(p0 + 0x10) != 0) {
     func_0x00165850();
   }
                     /* WARNING: Could not recover jumptable at 0x003eb684. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(*param_1 + 8))(param_1);
+  (**(code **)(*(long *)p0 + 8))(p0);
   return;
 }
 
@@ -530,18 +530,18 @@ void Walaber::PCSNode::deleteNodeAndChildrenFromTree(long *param_1)
 
 /* Walaber::PCSNode::_recursiveDelete(Walaber::PCSNode*) */
 
-void Walaber::PCSNode::_recursiveDelete(long *param_1)
+void Walaber::PCSNode::_recursiveDelete(Walaber__PCSNode *p0)
 
 {
-  if (param_1[2] != 0) {
-    _recursiveDelete();
+  if (*(Walaber__PCSNode **)(p0 + 0x10) != (Walaber__PCSNode *)0x0) {
+    _recursiveDelete(*(Walaber__PCSNode **)(p0 + 0x10));
   }
-  if (param_1[3] != 0) {
-    _recursiveDelete();
+  if (*(Walaber__PCSNode **)(p0 + 0x18) != (Walaber__PCSNode *)0x0) {
+    _recursiveDelete(*(Walaber__PCSNode **)(p0 + 0x18));
   }
                     /* WARNING: Could not recover jumptable at 0x003eb6c4. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-  (**(code **)(*param_1 + 8))(param_1);
+  (**(code **)(*(long *)p0 + 8))(p0);
   return;
 }
 
@@ -554,7 +554,7 @@ void Walaber::PCSNode::_recursiveDelete(long *param_1)
 /* WARNING: Type propagation algorithm not settling */
 /* Walaber::PCSNode::getTreeSize(Walaber::PCSNode*) */
 
-ulong Walaber::PCSNode::getTreeSize(undefined8 param_1)
+ulong Walaber::PCSNode::getTreeSize(Walaber__PCSNode *p0)
 
 {
   long lVar1;
@@ -567,7 +567,7 @@ ulong Walaber::PCSNode::getTreeSize(undefined8 param_1)
   undefined8 uStack_58;
   ulong uStack_50;
   long lStack_48;
-  undefined8 uStack_40;
+  Walaber__PCSNode *pWStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -579,8 +579,8 @@ ulong Walaber::PCSNode::getTreeSize(undefined8 param_1)
   puStack_68 = (undefined8 *)0x0;
   alStack_78[1] = 0;
                     /* try { // try from 003eb6f8 to 003eb703 has its CatchHandler @ 003eb7d0 */
-  uStack_40 = param_1;
-  func_0x00171ba0(alStack_78 + 1,&uStack_40);
+  pWStack_40 = p0;
+  func_0x00171ba0(alStack_78 + 1,&pWStack_40);
   if (lStack_48 == 0) {
     uVar3 = 0;
   }
@@ -592,7 +592,7 @@ ulong Walaber::PCSNode::getTreeSize(undefined8 param_1)
                        (uStack_50 & 0x1ff) * 8);
       uStack_50 = uStack_50 + 1;
       if (0x3ff < uStack_50) {
-        FUN_00166120(*puStack_68);
+        FUN_00166120((void *)*puStack_68);
         puStack_68 = puStack_68 + 1;
         uStack_50 = uStack_50 - 0x200;
       }
@@ -622,7 +622,7 @@ ulong Walaber::PCSNode::getTreeSize(undefined8 param_1)
 
 /* Walaber::PCSNode::printTree(Walaber::PCSNode*) */
 
-void Walaber::PCSNode::printTree(undefined8 param_1)
+void Walaber::PCSNode::printTree(Walaber__PCSNode *p0)
 
 {
   long lVar1;
@@ -634,7 +634,7 @@ void Walaber::PCSNode::printTree(undefined8 param_1)
   undefined8 uStack_78;
   ulong uStack_70;
   long lStack_68;
-  undefined8 uStack_60;
+  Walaber__PCSNode *pWStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
@@ -646,15 +646,15 @@ void Walaber::PCSNode::printTree(undefined8 param_1)
   puStack_88 = (undefined8 *)0x0;
   uStack_90 = 0;
                     /* try { // try from 003eb820 to 003eb82b has its CatchHandler @ 003eb96c */
-  uStack_60 = param_1;
-  func_0x00171ba0(&uStack_90,&uStack_60);
+  pWStack_60 = p0;
+  func_0x00171ba0(&uStack_90,&pWStack_60);
   while (lStack_68 != 0) {
     lStack_68 = lStack_68 + -1;
     lVar2 = *(long *)(*(long *)((long)puStack_88 + (uStack_70 >> 6 & 0x3fffffffffffff8)) +
                      (uStack_70 & 0x1ff) * 8);
     uStack_70 = uStack_70 + 1;
     if (0x3ff < uStack_70) {
-      FUN_00166120(*puStack_88);
+      FUN_00166120((void *)*puStack_88);
       puStack_88 = puStack_88 + 1;
       uStack_70 = uStack_70 - 0x200;
     }

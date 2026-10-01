@@ -23,10 +23,12 @@ void Walaber::VerletIntegrator::VerletIntegrator(undefined4 *param_1)
 
 /* Walaber::VerletIntegrator::VerletIntegrator(Walaber::VerletIntegrator const&) */
 
-void Walaber::VerletIntegrator::VerletIntegrator(undefined4 *param_1,undefined4 *param_2)
+void Walaber::VerletIntegrator::VerletIntegrator(Walaber__VerletIntegrator *p0)
 
 {
-  *param_1 = *param_2;
+  undefined4 *in_x1;
+  
+  *(undefined4 *)p0 = *in_x1;
   return;
 }
 
@@ -38,10 +40,12 @@ void Walaber::VerletIntegrator::VerletIntegrator(undefined4 *param_1,undefined4 
 
 /* Walaber::VerletIntegrator::TEMPNAMEPLACEHOLDERVALUE(Walaber::VerletIntegrator const&) */
 
-void Walaber::VerletIntegrator::operator=(undefined4 *param_1,undefined4 *param_2)
+void Walaber::VerletIntegrator::operator=(Walaber__VerletIntegrator *p0)
 
 {
-  *param_1 = *param_2;
+  undefined4 *in_x1;
+  
+  *(undefined4 *)p0 = *in_x1;
   return;
 }
 
@@ -69,34 +73,38 @@ void Walaber::VerletIntegrator::~VerletIntegrator(void)
    Walaber::Vector2*, Walaber::Vector2*, float, int) const */
 
 void Walaber::VerletIntegrator::integrateParticles
-               (float param_1,float *param_2,undefined8 *param_3,undefined8 *param_4,
-               undefined8 param_5,undefined8 *param_6,uint param_7)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+               float p4,int p5)
 
 {
-  ulong uVar1;
-  float fVar2;
-  undefined8 uVar3;
-  float fVar4;
-  undefined8 uVar5;
+  undefined8 *puVar1;
+  uint in_w5;
+  ulong uVar2;
+  float fVar3;
+  undefined8 uVar4;
+  float fVar5;
+  undefined8 uVar6;
   
-  if (param_7 != 0) {
-    fVar2 = *param_2;
-    uVar1 = (ulong)param_7;
+  if (in_w5 != 0) {
+    fVar3 = *(float *)p0;
+    uVar2 = (ulong)in_w5;
+    puVar1 = (undefined8 *)(ulong)(uint)p5;
     do {
-      uVar3 = *param_3;
-      uVar5 = *param_6;
-      uVar1 = uVar1 - 1;
-      fVar4 = (float)((ulong)uVar3 >> 0x20);
-      *param_3 = CONCAT44((1.0 - fVar2) * (fVar4 - (float)((ulong)*param_4 >> 0x20)) + fVar4,
-                          (1.0 - fVar2) * ((float)uVar3 - (float)*param_4) + (float)uVar3);
-      *param_4 = uVar3;
-      *param_3 = CONCAT44(param_1 * param_1 * (float)((ulong)uVar5 >> 0x20) +
-                          (float)((ulong)*param_3 >> 0x20),
-                          param_1 * param_1 * (float)uVar5 + (float)*param_3);
-      param_6 = param_6 + 1;
-      param_4 = param_4 + 1;
-      param_3 = param_3 + 1;
-    } while (uVar1 != 0);
+      uVar4 = *(undefined8 *)p1;
+      uVar6 = *puVar1;
+      uVar2 = uVar2 - 1;
+      fVar5 = (float)((ulong)uVar4 >> 0x20);
+      *(ulong *)p1 = CONCAT44((1.0 - fVar3) * (fVar5 - (float)((ulong)*(undefined8 *)p2 >> 0x20)) +
+                              fVar5,(1.0 - fVar3) * ((float)uVar4 - (float)*(undefined8 *)p2) +
+                                    (float)uVar4);
+      *(undefined8 *)p2 = uVar4;
+      *(ulong *)p1 = CONCAT44(p4 * p4 * (float)((ulong)uVar6 >> 0x20) +
+                              (float)((ulong)*(undefined8 *)p1 >> 0x20),
+                              p4 * p4 * (float)uVar6 + (float)*(undefined8 *)p1);
+      puVar1 = puVar1 + 1;
+      p2 = p2 + 8;
+      p1 = p1 + 8;
+    } while (uVar2 != 0);
   }
   func_0x001693b0();
   return;
@@ -112,23 +120,26 @@ void Walaber::VerletIntegrator::integrateParticles
    Walaber::Vector2*, float, int) const */
 
 void Walaber::VerletIntegrator::integrateVelocities
-               (float param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               undefined8 *param_5,uint param_6)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float p3,int p4)
 
 {
-  ulong uVar1;
+  undefined8 *puVar1;
+  uint in_w4;
+  ulong uVar2;
   
-  if (param_6 != 0) {
-    uVar1 = (ulong)param_6;
+  if (in_w4 != 0) {
+    uVar2 = (ulong)in_w4;
+    puVar1 = (undefined8 *)(ulong)(uint)p4;
     do {
-      uVar1 = uVar1 - 1;
-      *param_5 = CONCAT44((1.0 / param_1) *
-                          ((float)((ulong)*param_3 >> 0x20) - (float)((ulong)*param_4 >> 0x20)),
-                          (1.0 / param_1) * ((float)*param_3 - (float)*param_4));
-      param_3 = param_3 + 1;
-      param_4 = param_4 + 1;
-      param_5 = param_5 + 1;
-    } while (uVar1 != 0);
+      uVar2 = uVar2 - 1;
+      *puVar1 = CONCAT44((1.0 / p3) *
+                         ((float)((ulong)*(undefined8 *)p1 >> 0x20) -
+                         (float)((ulong)*(undefined8 *)p2 >> 0x20)),
+                         (1.0 / p3) * ((float)*(undefined8 *)p1 - (float)*(undefined8 *)p2));
+      p1 = p1 + 8;
+      p2 = p2 + 8;
+      puVar1 = puVar1 + 1;
+    } while (uVar2 != 0);
   }
   return;
 }

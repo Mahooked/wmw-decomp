@@ -49,7 +49,7 @@ void Walaber::MessageReceiver::~MessageReceiver(undefined8 *param_1)
 
 /* Walaber::MessageReceiver::~MessageReceiver() */
 
-void Walaber::MessageReceiver::~MessageReceiver(undefined8 param_1)
+void Walaber::MessageReceiver::~MessageReceiver(void *param_1)
 
 {
   func_0x001706b0();
@@ -65,7 +65,7 @@ void Walaber::MessageReceiver::~MessageReceiver(undefined8 param_1)
 
 /* Walaber::MessageReceiver::messageRx(Walaber::Message const&) */
 
-undefined8 Walaber::MessageReceiver::messageRx(void)
+undefined8 Walaber::MessageReceiver::messageRx(Walaber__Message *p0)
 
 {
   return 0;

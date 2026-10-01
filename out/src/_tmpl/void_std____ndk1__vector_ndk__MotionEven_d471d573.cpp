@@ -10,10 +10,11 @@
    >::__push_back_slow_path<ndk::MotionEvent>(ndk::MotionEvent&&) */
 
 void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     __push_back_slow_path<ndk::MotionEvent>(long *param_1,undefined8 *param_2)
+     __push_back_slow_path<ndk::MotionEvent>(ndk__MotionEvent **p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
@@ -25,13 +26,13 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 7;
+  lVar3 = (long)p0[1] - (long)*p0 >> 7;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x39 != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = (long)p0[2] - (long)*p0;
   if ((ulong)(lVar4 >> 7) < 0xffffffffffffff) {
     uVar5 = lVar4 >> 6;
     if (uVar2 <= uVar5) {
@@ -41,62 +42,62 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   else {
     uVar2 = 0x1ffffffffffffff;
   }
-  func_0x00173e80(auStack_60,uVar2,lVar3,param_1 + 2);
-  uVar6 = *param_2;
+  func_0x00173e80(auStack_60,uVar2,lVar3,p0 + 2);
+  uVar6 = *in_x1;
   puStack_50[2] = 0;
   puStack_50[3] = 0;
   *puStack_50 = uVar6;
   puStack_50[1] = 0;
-  uVar6 = param_2[1];
-  puStack_50[2] = param_2[2];
+  uVar6 = in_x1[1];
+  puStack_50[2] = in_x1[2];
   puStack_50[1] = uVar6;
-  puStack_50[3] = param_2[3];
-  param_2[2] = 0;
-  param_2[3] = 0;
-  param_2[1] = 0;
+  puStack_50[3] = in_x1[3];
+  in_x1[2] = 0;
+  in_x1[3] = 0;
+  in_x1[1] = 0;
   puStack_50[5] = 0;
   puStack_50[6] = 0;
   puStack_50[4] = 0;
-  uVar6 = param_2[4];
-  puStack_50[5] = param_2[5];
+  uVar6 = in_x1[4];
+  puStack_50[5] = in_x1[5];
   puStack_50[4] = uVar6;
-  puStack_50[6] = param_2[6];
-  param_2[5] = 0;
-  param_2[6] = 0;
-  param_2[4] = 0;
+  puStack_50[6] = in_x1[6];
+  in_x1[5] = 0;
+  in_x1[6] = 0;
+  in_x1[4] = 0;
   puStack_50[8] = 0;
   puStack_50[9] = 0;
   puStack_50[7] = 0;
-  uVar6 = param_2[7];
-  puStack_50[8] = param_2[8];
+  uVar6 = in_x1[7];
+  puStack_50[8] = in_x1[8];
   puStack_50[7] = uVar6;
-  puStack_50[9] = param_2[9];
-  param_2[8] = 0;
-  param_2[9] = 0;
-  param_2[7] = 0;
+  puStack_50[9] = in_x1[9];
+  in_x1[8] = 0;
+  in_x1[9] = 0;
+  in_x1[7] = 0;
   puStack_50[0xb] = 0;
   puStack_50[0xc] = 0;
   puStack_50[10] = 0;
-  uVar6 = param_2[10];
-  puStack_50[0xb] = param_2[0xb];
+  uVar6 = in_x1[10];
+  puStack_50[0xb] = in_x1[0xb];
   puStack_50[10] = uVar6;
-  puStack_50[0xc] = param_2[0xc];
-  param_2[0xb] = 0;
-  param_2[0xc] = 0;
-  param_2[10] = 0;
+  puStack_50[0xc] = in_x1[0xc];
+  in_x1[0xb] = 0;
+  in_x1[0xc] = 0;
+  in_x1[10] = 0;
   puStack_50[0xe] = 0;
   puStack_50[0xf] = 0;
   puStack_50[0xd] = 0;
-  uVar6 = param_2[0xd];
-  puStack_50[0xe] = param_2[0xe];
+  uVar6 = in_x1[0xd];
+  puStack_50[0xe] = in_x1[0xe];
   puStack_50[0xd] = uVar6;
-  puStack_50[0xf] = param_2[0xf];
-  param_2[0xe] = 0;
-  param_2[0xf] = 0;
-  param_2[0xd] = 0;
+  puStack_50[0xf] = in_x1[0xf];
+  in_x1[0xe] = 0;
+  in_x1[0xf] = 0;
+  in_x1[0xd] = 0;
   puStack_50 = puStack_50 + 0x10;
                     /* try { // try from 002c6d04 to 002c6d0f has its CatchHandler @ 002c6d48 */
-  func_0x00163bb0(param_1,auStack_60);
+  func_0x00163bb0(p0,auStack_60);
   func_0x001684f0(auStack_60);
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

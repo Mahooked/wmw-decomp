@@ -8,52 +8,53 @@
 
 /* Walaber::Widget_Toggle::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_Toggle const&) */
 
-long Walaber::Widget_Toggle::operator=(long param_1,long param_2)
+Walaber__Widget_Toggle * Walaber::Widget_Toggle::operator=(Walaber__Widget_Toggle *p0)
 
 {
   undefined4 uVar1;
+  long in_x1;
   undefined8 uVar2;
   
   func_0x001711a0();
-  uVar2 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar2;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  func_0x00170aa0(param_1 + 0x100,param_2 + 0x100);
-  func_0x00170aa0(param_1 + 0x110,param_2 + 0x110);
-  *(undefined8 *)(param_1 + 0x120) = *(undefined8 *)(param_2 + 0x120);
-  *(undefined8 *)(param_1 + 0x128) = *(undefined8 *)(param_2 + 0x128);
-  *(undefined8 *)(param_1 + 0x130) = *(undefined8 *)(param_2 + 0x130);
-  *(undefined8 *)(param_1 + 0x138) = *(undefined8 *)(param_2 + 0x138);
-  func_0x00170aa0(param_1 + 0x140,param_2 + 0x140);
-  *(undefined8 *)(param_1 + 0x150) = *(undefined8 *)(param_2 + 0x150);
-  *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_2 + 0x158);
-  *(undefined8 *)(param_1 + 0x160) = *(undefined8 *)(param_2 + 0x160);
-  func_0x00171ac0(param_1 + 0x168,param_2 + 0x168);
-  func_0x00171ac0(param_1 + 0x180,param_2 + 0x180);
-  *(undefined4 *)(param_1 + 0x198) = *(undefined4 *)(param_2 + 0x198);
-  *(undefined1 *)(param_1 + 0x19c) = *(undefined1 *)(param_2 + 0x19c);
-  *(undefined1 *)(param_1 + 0x19d) = *(undefined1 *)(param_2 + 0x19d);
-  *(undefined1 *)(param_1 + 0x19e) = *(undefined1 *)(param_2 + 0x19e);
-  *(undefined1 *)(param_1 + 0x19f) = *(undefined1 *)(param_2 + 0x19f);
-  uVar1 = *(undefined4 *)(param_2 + 0x1a0);
-  *(undefined2 *)(param_1 + 0x1a4) = *(undefined2 *)(param_2 + 0x1a4);
-  *(undefined4 *)(param_1 + 0x1a0) = uVar1;
-  return param_1;
+  uVar2 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar2;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = *(Walaber__Widget_Toggle *)(in_x1 + 0xb0);
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  func_0x00170aa0(p0 + 0x100,in_x1 + 0x100);
+  func_0x00170aa0(p0 + 0x110,in_x1 + 0x110);
+  *(undefined8 *)(p0 + 0x120) = *(undefined8 *)(in_x1 + 0x120);
+  *(undefined8 *)(p0 + 0x128) = *(undefined8 *)(in_x1 + 0x128);
+  *(undefined8 *)(p0 + 0x130) = *(undefined8 *)(in_x1 + 0x130);
+  *(undefined8 *)(p0 + 0x138) = *(undefined8 *)(in_x1 + 0x138);
+  func_0x00170aa0(p0 + 0x140,in_x1 + 0x140);
+  *(undefined8 *)(p0 + 0x150) = *(undefined8 *)(in_x1 + 0x150);
+  *(undefined8 *)(p0 + 0x158) = *(undefined8 *)(in_x1 + 0x158);
+  *(undefined8 *)(p0 + 0x160) = *(undefined8 *)(in_x1 + 0x160);
+  func_0x00171ac0(p0 + 0x168,in_x1 + 0x168);
+  func_0x00171ac0(p0 + 0x180,in_x1 + 0x180);
+  *(undefined4 *)(p0 + 0x198) = *(undefined4 *)(in_x1 + 0x198);
+  p0[0x19c] = *(Walaber__Widget_Toggle *)(in_x1 + 0x19c);
+  p0[0x19d] = *(Walaber__Widget_Toggle *)(in_x1 + 0x19d);
+  p0[0x19e] = *(Walaber__Widget_Toggle *)(in_x1 + 0x19e);
+  p0[0x19f] = *(Walaber__Widget_Toggle *)(in_x1 + 0x19f);
+  uVar1 = *(undefined4 *)(in_x1 + 0x1a0);
+  *(undefined2 *)(p0 + 0x1a4) = *(undefined2 *)(in_x1 + 0x1a4);
+  *(undefined4 *)(p0 + 0x1a0) = uVar1;
+  return p0;
 }
 
 
@@ -226,10 +227,10 @@ void Walaber::Widget_Toggle::~Widget_Toggle(undefined8 *param_1)
 {
   *param_1 = &PTR__Widget_Toggle_0070fec8;
   if ((*(byte *)(param_1 + 0x30) & 1) != 0) {
-    FUN_00166120(param_1[0x32]);
+    FUN_00166120((void *)param_1[0x32]);
   }
   if ((*(byte *)(param_1 + 0x2d) & 1) != 0) {
-    FUN_00166120(param_1[0x2f]);
+    FUN_00166120((void *)param_1[0x2f]);
   }
   FUN_00166b20(param_1 + 0x28);
   FUN_00166b20(param_1 + 0x22);
@@ -246,7 +247,7 @@ void Walaber::Widget_Toggle::~Widget_Toggle(undefined8 *param_1)
 
 /* Walaber::Widget_Toggle::~Widget_Toggle() */
 
-void Walaber::Widget_Toggle::~Widget_Toggle(undefined8 param_1)
+void Walaber::Widget_Toggle::~Widget_Toggle(void *param_1)
 
 {
   func_0x00168e00();
@@ -347,12 +348,14 @@ void Walaber::Widget_Toggle::setIcon(long param_1,long *param_2,undefined8 *para
 
 /* Walaber::Widget_Toggle::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_Toggle::update(long param_1,undefined1 *param_2)
+undefined8 Walaber::Widget_Toggle::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  if (*(char *)(param_1 + 0x1a5) != '\0') {
-    *(undefined1 *)(param_1 + 0x1a5) = 0;
-    *param_2 = *(undefined1 *)(param_1 + 0x1a4);
+  Walaber__Widget__WidgetActionRet *in_x1;
+  
+  if (p1[0x1a5] != (Walaber__Widget__WidgetActionRet)0x0) {
+    p1[0x1a5] = (Walaber__Widget__WidgetActionRet)0x0;
+    *in_x1 = p1[0x1a4];
     return 1;
   }
   return 0;
@@ -366,36 +369,34 @@ undefined8 Walaber::Widget_Toggle::update(long param_1,undefined1 *param_2)
 
 /* Walaber::Widget_Toggle::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_Toggle::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
 
 {
-  long *plVar1;
-  undefined4 uVar2;
-  long lVar3;
-  long lVar4;
-  ulong uVar5;
-  undefined8 uVar6;
-  ulong uVar7;
-  ulong uVar8;
+  long lVar1;
+  long lVar2;
+  ulong uVar3;
+  Walaber__SpriteBatch *pWVar4;
+  void *pvVar5;
+  ulong uVar6;
+  float fVar7;
+  undefined8 uVar8;
   float fVar9;
-  undefined8 uVar10;
+  float fVar10;
   float fVar11;
   float fVar12;
   float fVar13;
-  float fVar14;
-  float fVar15;
   ulong uStack_150;
   ulong uStack_148;
-  ulong uStack_140;
+  void *pvStack_140;
   ulong uStack_138;
   ulong uStack_130;
-  ulong uStack_128;
+  void *pvStack_128;
   ulong uStack_120;
   ulong uStack_118;
-  ulong uStack_110;
+  void *pvStack_110;
   ulong uStack_108;
   ulong uStack_100;
-  ulong uStack_f8;
+  void *pvStack_f8;
   long lStack_f0;
   int *piStack_e8;
   float fStack_e0;
@@ -408,265 +409,246 @@ void Walaber::Widget_Toggle::draw(long param_1,undefined8 param_2)
   float fStack_b4;
   long lStack_b0;
   
-  lVar3 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar3 + 0x28);
-  uVar10 = func_0x00164620();
-  if ((((*(long *)(param_1 + 0x100) != 0) && (**(int **)(param_1 + 0x108) != 0)) &&
-      (*(long *)(param_1 + 0x110) != 0)) && (**(int **)(param_1 + 0x118) != 0)) {
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
-    plVar1 = (long *)(param_1 + 0x110);
-    if (*(char *)(param_1 + 0x1a4) != '\0') {
-      plVar1 = (long *)(param_1 + 0x100);
+  lVar1 = tpidr_el0;
+  lStack_b0 = *(long *)(lVar1 + 0x28);
+  uVar8 = func_0x00164620();
+  if ((((*(long *)(p0 + 0x100) != 0) && (**(int **)(p0 + 0x108) != 0)) &&
+      (*(long *)(p0 + 0x110) != 0)) && (**(int **)(p0 + 0x118) != 0)) {
+    pWVar4 = p0 + 0x110;
+    if (p0[0x1a4] != (Walaber__SpriteBatch)0x0) {
+      pWVar4 = p0 + 0x100;
     }
-    lStack_c8 = *plVar1;
-    piStack_c0 = (int *)plVar1[1];
+    lStack_c8 = *(long *)pWVar4;
+    piStack_c0 = *(int **)(pWVar4 + 8);
     if (lStack_c8 != 0) {
       *piStack_c0 = *piStack_c0 + 1;
     }
                     /* try { // try from 0038c4b0 to 0038c4bb has its CatchHandler @ 0038cbc8 */
-    func_0x00167d50(auStack_d8,param_1);
-    uStack_d0 = CONCAT44(auStack_d8._4_4_ + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         auStack_d8._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+    func_0x00167d50(auStack_d8,p0);
+    uStack_d0 = CONCAT44(auStack_d8._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         auStack_d8._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038c4cc to 0038c4d7 has its CatchHandler @ 0038cbc4 */
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar9 = fStack_b8;
-    fVar11 = *(float *)(param_1 + 0x90);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar7 = fStack_b8;
+    fVar9 = *(float *)(p0 + 0x90);
                     /* try { // try from 0038c4e0 to 0038c53b has its CatchHandler @ 0038cbcc */
-    func_0x00169f20(&fStack_b8,param_1);
-    fStack_e0 = fVar11 * fVar9;
-    fStack_dc = *(float *)(param_1 + 0x94) * fStack_b4;
-    lVar4 = param_1 + 0x130;
-    if (*(char *)(param_1 + 0x1a4) != '\0') {
-      lVar4 = param_1 + 0x120;
-    }
-    func_0x00169c00(uVar10,param_2,uVar2,&lStack_c8,&uStack_d0,&fStack_e0,lVar4,&Color::White,0);
+    func_0x00169f20(&fStack_b8,p0);
+    fStack_e0 = fVar9 * fVar7;
+    fStack_dc = *(float *)(p0 + 0x94) * fStack_b4;
+    func_0x00169c00(uVar8);
     FUN_00166b20(&lStack_c8);
   }
-  if ((*(long *)(param_1 + 0x140) != 0) && (**(int **)(param_1 + 0x148) != 0)) {
-    fVar12 = *(float *)(param_1 + 0x150);
-    fVar11 = (float)uVar10 * 0.017453292;
-    fVar9 = (float)func_0x0016ee90(fVar11);
-    fVar11 = (float)func_0x00174170(fVar11);
-    lStack_f0 = *(long *)(param_1 + 0x140);
-    piStack_e8 = *(int **)(param_1 + 0x148);
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
+  if ((*(long *)(p0 + 0x140) != 0) && (**(int **)(p0 + 0x148) != 0)) {
+    fVar10 = *(float *)(p0 + 0x150);
+    fVar9 = (float)uVar8 * 0.017453292;
+    fVar7 = (float)func_0x0016ee90(fVar9);
+    fVar9 = (float)func_0x00174170(fVar9);
+    lStack_f0 = *(long *)(p0 + 0x140);
+    piStack_e8 = *(int **)(p0 + 0x148);
     if (lStack_f0 != 0) {
       *piStack_e8 = *piStack_e8 + 1;
     }
                     /* try { // try from 0038c59c to 0038c5a7 has its CatchHandler @ 0038cbdc */
-    func_0x00167d50(auStack_d8,param_1);
-    uStack_d0 = CONCAT44(fVar9 * 0.0 + -fVar12 * fVar11 +
-                         auStack_d8._4_4_ + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         (-fVar12 * fVar9 - fVar11 * 0.0) +
-                         auStack_d8._0_4_ + (float)*(undefined8 *)(param_1 + 0xf0));
+    func_0x00167d50(auStack_d8,p0);
+    uStack_d0 = CONCAT44(fVar7 * 0.0 + -fVar10 * fVar9 +
+                         auStack_d8._4_4_ + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         (-fVar10 * fVar7 - fVar9 * 0.0) +
+                         auStack_d8._0_4_ + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0038c5ec to 0038c5f7 has its CatchHandler @ 0038cbd8 */
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar9 = fStack_b8;
-    fVar11 = *(float *)(param_1 + 0x90);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar7 = fStack_b8;
+    fVar9 = *(float *)(p0 + 0x90);
                     /* try { // try from 0038c600 to 0038c64b has its CatchHandler @ 0038cc34 */
-    func_0x00169f20(&fStack_b8,param_1);
-    fStack_e0 = fVar11 * fVar9;
-    fStack_dc = -(*(float *)(param_1 + 0x94) * fStack_b4);
-    func_0x00169c00(uVar10,param_2,uVar2,&lStack_f0,&uStack_d0,&fStack_e0,param_1 + 0x158,
-                    &Color::White,0);
+    func_0x00169f20(&fStack_b8,p0);
+    fStack_e0 = fVar9 * fVar7;
+    fStack_dc = -(*(float *)(p0 + 0x94) * fStack_b4);
+    func_0x00169c00(uVar8);
     FUN_00166b20(&lStack_f0);
   }
-  lVar4 = *(long *)(param_1 + 0xe8);
-  if (lVar4 == 0) goto LAB_0038cb54;
-  if (*(int *)(param_1 + 0x1a0) == 1) {
-    func_0x00166790(&fStack_b8,0x3f800000,lVar4,param_1 + 0x168);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar9 = *(float *)(param_1 + 0x90);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar11 = *(float *)(param_1 + 0x94);
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
-    uVar6 = *(undefined8 *)(param_1 + 0xe8);
-    if ((*(byte *)(param_1 + 0x168) & 1) == 0) {
-      lVar4 = param_1 + 0x169;
+  lVar2 = *(long *)(p0 + 0xe8);
+  if (lVar2 == 0) goto LAB_0038cb54;
+  if (*(int *)(p0 + 0x1a0) == 1) {
+    func_0x00166790(&fStack_b8,0x3f800000,lVar2,p0 + 0x168);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar7 = *(float *)(p0 + 0x90);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar9 = *(float *)(p0 + 0x94);
+    if (((byte)p0[0x168] & 1) == 0) {
+      pWVar4 = p0 + 0x169;
     }
     else {
-      lVar4 = *(long *)(param_1 + 0x178);
+      pWVar4 = *(Walaber__SpriteBatch **)(p0 + 0x178);
     }
     uStack_138 = 0;
     uStack_130 = 0;
-    uStack_128 = 0;
-    uVar5 = FUN_00173480(lVar4);
-    if (0xffffffffffffffef < uVar5) {
+    pvStack_128 = (void *)0x0;
+    uVar3 = FUN_00173480(pWVar4);
+    if (0xffffffffffffffef < uVar3) {
       FUN_00164180(&uStack_138);
       return;
     }
-    if (uVar5 < 0x17) {
-      uVar7 = (ulong)&uStack_138 | 1;
-      uStack_138 = CONCAT71(uStack_138._1_7_,(char)((int)uVar5 << 1));
-      if (uVar5 != 0) goto LAB_0038c89c;
+    if (uVar3 < 0x17) {
+      pvVar5 = (void *)((ulong)&uStack_138 | 1);
+      uStack_138 = CONCAT71(uStack_138._1_7_,(char)((int)uVar3 << 1));
+      if (uVar3 != 0) goto LAB_0038c89c;
     }
     else {
-      uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
-      uStack_138 = uVar8 | 1;
-      uStack_130 = uVar5;
-      uStack_128 = uVar7;
+      uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      pvVar5 = (void *)FUN_00164060(uVar6);
+      uStack_138 = uVar6 | 1;
+      uStack_130 = uVar3;
+      pvStack_128 = pvVar5;
 LAB_0038c89c:
-      FUN_001715e0(uVar7,lVar4,uVar5);
+      FUN_001715e0(pvVar5,pWVar4,uVar3);
     }
-    *(undefined1 *)(uVar7 + uVar5) = 0;
+    *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 0038c8b0 to 0038c913 has its CatchHandler @ 0038cc08 */
-    func_0x00167d50(&uStack_d0,param_1);
-    fStack_b4 = uStack_d0._4_4_ - fVar11 * fStack_b4 * 0.5;
-    fStack_b8 = fVar9 * fStack_b8 * 0.51 + (float)uStack_d0;
-    func_0x0016a490(uVar10,*(undefined4 *)(param_1 + 0x198),param_2,uVar2,uVar6,&uStack_138,
-                    &fStack_b8,param_1 + 0x19c,2);
+    func_0x00167d50(&uStack_d0,p0);
+    fStack_b4 = uStack_d0._4_4_ - fVar9 * fStack_b4 * 0.5;
+    fStack_b8 = fVar7 * fStack_b8 * 0.51 + (float)uStack_d0;
+    func_0x0016a490(uVar8,*(undefined4 *)(p0 + 0x198));
     if ((uStack_138 & 1) != 0) {
-      FUN_00166120(uStack_128);
+      FUN_00166120(pvStack_128);
     }
-    func_0x00166790(&fStack_b8,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x180);
-    fVar11 = fStack_b4;
-    fVar13 = *(float *)(param_1 + 0x198);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar9 = fStack_b8;
-    fVar14 = *(float *)(param_1 + 0x90);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar12 = fStack_b4;
-    fVar15 = *(float *)(param_1 + 0x94);
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
-    uVar6 = *(undefined8 *)(param_1 + 0xe8);
-    if ((*(byte *)(param_1 + 0x180) & 1) == 0) {
-      lVar4 = param_1 + 0x181;
+    func_0x00166790(&fStack_b8,0x3f800000,*(undefined8 *)(p0 + 0xe8),p0 + 0x180);
+    fVar9 = fStack_b4;
+    fVar11 = *(float *)(p0 + 0x198);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar7 = fStack_b8;
+    fVar12 = *(float *)(p0 + 0x90);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar10 = fStack_b4;
+    fVar13 = *(float *)(p0 + 0x94);
+    if (((byte)p0[0x180] & 1) == 0) {
+      pWVar4 = p0 + 0x181;
     }
     else {
-      lVar4 = *(long *)(param_1 + 400);
+      pWVar4 = *(Walaber__SpriteBatch **)(p0 + 400);
     }
     uStack_150 = 0;
     uStack_148 = 0;
-    uStack_140 = 0;
-    uVar5 = FUN_00173480(lVar4);
-    if (0xffffffffffffffef < uVar5) {
+    pvStack_140 = (void *)0x0;
+    uVar3 = FUN_00173480(pWVar4);
+    if (0xffffffffffffffef < uVar3) {
       FUN_00164180(&uStack_150);
       return;
     }
-    if (uVar5 < 0x17) {
-      uVar7 = (ulong)&uStack_150 | 1;
-      uStack_150 = CONCAT71(uStack_150._1_7_,(char)((int)uVar5 << 1));
-      if (uVar5 != 0) goto LAB_0038cad0;
+    if (uVar3 < 0x17) {
+      pvVar5 = (void *)((ulong)&uStack_150 | 1);
+      uStack_150 = CONCAT71(uStack_150._1_7_,(char)((int)uVar3 << 1));
+      if (uVar3 != 0) goto LAB_0038cad0;
     }
     else {
-      uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
-      uStack_150 = uVar8 | 1;
-      uStack_148 = uVar5;
-      uStack_140 = uVar7;
+      uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      pvVar5 = (void *)FUN_00164060(uVar6);
+      uStack_150 = uVar6 | 1;
+      uStack_148 = uVar3;
+      pvStack_140 = pvVar5;
 LAB_0038cad0:
-      FUN_001715e0(uVar7,lVar4,uVar5);
+      FUN_001715e0(pvVar5,pWVar4,uVar3);
     }
-    *(undefined1 *)(uVar7 + uVar5) = 0;
+    *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 0038cae4 to 0038cb43 has its CatchHandler @ 0038cbe0 */
-    func_0x00167d50(&uStack_d0,param_1);
-    fStack_b8 = fVar14 * fVar9 * 0.51 + (float)uStack_d0;
-    fStack_b4 = (fVar15 * fVar12 * 0.5 - fVar13 * fVar11) + uStack_d0._4_4_;
-    func_0x0016a490(uVar10,*(undefined4 *)(param_1 + 0x198),param_2,uVar2,uVar6,&uStack_150,
-                    &fStack_b8,param_1 + 0x19c,2);
-    uVar5 = uStack_140;
-    uVar7 = uStack_150;
+    func_0x00167d50(&uStack_d0,p0);
+    fStack_b8 = fVar12 * fVar7 * 0.51 + (float)uStack_d0;
+    fStack_b4 = (fVar13 * fVar10 * 0.5 - fVar11 * fVar9) + uStack_d0._4_4_;
+    func_0x0016a490(uVar8,*(undefined4 *)(p0 + 0x198));
+    pvVar5 = pvStack_140;
+    uVar3 = uStack_150;
   }
   else {
-    if (*(int *)(param_1 + 0x1a0) != 0) goto LAB_0038cb54;
-    func_0x00166790(&fStack_b8,0x3f800000,lVar4,param_1 + 0x168);
-    fVar11 = *(float *)(param_1 + 0x198);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar9 = *(float *)(param_1 + 0x90);
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
-    uVar6 = *(undefined8 *)(param_1 + 0xe8);
-    if ((*(byte *)(param_1 + 0x168) & 1) == 0) {
-      lVar4 = param_1 + 0x169;
+    if (*(int *)(p0 + 0x1a0) != 0) goto LAB_0038cb54;
+    func_0x00166790(&fStack_b8,0x3f800000,lVar2,p0 + 0x168);
+    fVar9 = *(float *)(p0 + 0x198);
+    func_0x00169f20(&fStack_b8,p0);
+    fVar7 = *(float *)(p0 + 0x90);
+    if (((byte)p0[0x168] & 1) == 0) {
+      pWVar4 = p0 + 0x169;
     }
     else {
-      lVar4 = *(long *)(param_1 + 0x178);
+      pWVar4 = *(Walaber__SpriteBatch **)(p0 + 0x178);
     }
     uStack_108 = 0;
     uStack_100 = 0;
-    uStack_f8 = 0;
-    uVar5 = FUN_00173480(lVar4);
-    if (0xffffffffffffffef < uVar5) {
+    pvStack_f8 = (void *)0x0;
+    uVar3 = FUN_00173480(pWVar4);
+    if (0xffffffffffffffef < uVar3) {
       FUN_00164180(&uStack_108);
       return;
     }
-    if (uVar5 < 0x17) {
-      uVar7 = (ulong)&uStack_108 | 1;
-      uStack_108 = CONCAT71(uStack_108._1_7_,(char)((int)uVar5 << 1));
-      if (uVar5 != 0) goto LAB_0038c7a8;
+    if (uVar3 < 0x17) {
+      pvVar5 = (void *)((ulong)&uStack_108 | 1);
+      uStack_108 = CONCAT71(uStack_108._1_7_,(char)((int)uVar3 << 1));
+      if (uVar3 != 0) goto LAB_0038c7a8;
     }
     else {
-      uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
-      uStack_108 = uVar8 | 1;
-      uStack_100 = uVar5;
-      uStack_f8 = uVar7;
+      uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      pvVar5 = (void *)FUN_00164060(uVar6);
+      uStack_108 = uVar6 | 1;
+      uStack_100 = uVar3;
+      pvStack_f8 = pvVar5;
 LAB_0038c7a8:
-      FUN_001715e0(uVar7,lVar4,uVar5);
+      FUN_001715e0(pvVar5,pWVar4,uVar3);
     }
-    *(undefined1 *)(uVar7 + uVar5) = 0;
+    *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 0038c7bc to 0038c81f has its CatchHandler @ 0038cc1c */
-    func_0x00167d50(&uStack_d0,param_1);
-    fStack_b8 = fVar9 * fStack_b8 * 0.5 + 16.0 + (float)uStack_d0;
-    fStack_b4 = fVar11 * fStack_b4 * 0.5 + uStack_d0._4_4_;
-    func_0x0016a490(uVar10,*(undefined4 *)(param_1 + 0x198),param_2,uVar2,uVar6,&uStack_108,
-                    &fStack_b8,param_1 + 0x19c,2);
+    func_0x00167d50(&uStack_d0,p0);
+    fStack_b8 = fVar7 * fStack_b8 * 0.5 + 16.0 + (float)uStack_d0;
+    fStack_b4 = fVar9 * fStack_b4 * 0.5 + uStack_d0._4_4_;
+    func_0x0016a490(uVar8,*(undefined4 *)(p0 + 0x198));
     if ((uStack_108 & 1) != 0) {
-      FUN_00166120(uStack_f8);
+      FUN_00166120(pvStack_f8);
     }
-    func_0x00166790(&fStack_b8,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x180);
-    fVar12 = fStack_b4;
+    func_0x00166790(&fStack_b8,0x3f800000,*(undefined8 *)(p0 + 0xe8),p0 + 0x180);
+    fVar10 = fStack_b4;
+    fVar7 = fStack_b8;
+    fVar11 = *(float *)(p0 + 0x198);
+    func_0x00169f20(&fStack_b8,p0);
     fVar9 = fStack_b8;
-    fVar13 = *(float *)(param_1 + 0x198);
-    func_0x00169f20(&fStack_b8,param_1);
-    fVar11 = fStack_b8;
-    fVar14 = *(float *)(param_1 + 0x90);
-    uVar2 = *(undefined4 *)(param_1 + 0x80);
-    uVar6 = *(undefined8 *)(param_1 + 0xe8);
-    if ((*(byte *)(param_1 + 0x180) & 1) == 0) {
-      lVar4 = param_1 + 0x181;
+    fVar12 = *(float *)(p0 + 0x90);
+    if (((byte)p0[0x180] & 1) == 0) {
+      pWVar4 = p0 + 0x181;
     }
     else {
-      lVar4 = *(long *)(param_1 + 400);
+      pWVar4 = *(Walaber__SpriteBatch **)(p0 + 400);
     }
     uStack_120 = 0;
     uStack_118 = 0;
-    uStack_110 = 0;
-    uVar5 = FUN_00173480(lVar4);
-    if (0xffffffffffffffef < uVar5) {
+    pvStack_110 = (void *)0x0;
+    uVar3 = FUN_00173480(pWVar4);
+    if (0xffffffffffffffef < uVar3) {
       FUN_00164180(&uStack_120);
       return;
     }
-    if (uVar5 < 0x17) {
-      uVar7 = (ulong)&uStack_120 | 1;
-      uStack_120 = CONCAT71(uStack_120._1_7_,(char)((int)uVar5 << 1));
-      if (uVar5 != 0) goto LAB_0038ca24;
+    if (uVar3 < 0x17) {
+      pvVar5 = (void *)((ulong)&uStack_120 | 1);
+      uStack_120 = CONCAT71(uStack_120._1_7_,(char)((int)uVar3 << 1));
+      if (uVar3 != 0) goto LAB_0038ca24;
     }
     else {
-      uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
-      uStack_120 = uVar8 | 1;
-      uStack_118 = uVar5;
-      uStack_110 = uVar7;
+      uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      pvVar5 = (void *)FUN_00164060(uVar6);
+      uStack_120 = uVar6 | 1;
+      uStack_118 = uVar3;
+      pvStack_110 = pvVar5;
 LAB_0038ca24:
-      FUN_001715e0(uVar7,lVar4,uVar5);
+      FUN_001715e0(pvVar5,pWVar4,uVar3);
     }
-    *(undefined1 *)(uVar7 + uVar5) = 0;
+    *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 0038ca38 to 0038ca9f has its CatchHandler @ 0038cbf4 */
-    func_0x00167d50(&uStack_d0,param_1);
-    fStack_b8 = (fVar14 * fVar11 * -0.5 - fVar13 * fVar9) + -16.0 + (float)uStack_d0;
-    fStack_b4 = fVar13 * fVar12 * 0.5 + uStack_d0._4_4_;
-    func_0x0016a490(uVar10,*(undefined4 *)(param_1 + 0x198),param_2,uVar2,uVar6,&uStack_120,
-                    &fStack_b8,param_1 + 0x19c,2);
-    uVar5 = uStack_110;
-    uVar7 = uStack_120;
+    func_0x00167d50(&uStack_d0,p0);
+    fStack_b8 = (fVar12 * fVar9 * -0.5 - fVar11 * fVar7) + -16.0 + (float)uStack_d0;
+    fStack_b4 = fVar11 * fVar10 * 0.5 + uStack_d0._4_4_;
+    func_0x0016a490(uVar8,*(undefined4 *)(p0 + 0x198));
+    pvVar5 = pvStack_110;
+    uVar3 = uStack_120;
   }
-  if ((uVar7 & 1) != 0) {
-    FUN_00166120(uVar5);
+  if ((uVar3 & 1) != 0) {
+    FUN_00166120(pvVar5);
   }
 LAB_0038cb54:
-  FUN_001722b0(param_1,param_2);
-  if (*(long *)(lVar3 + 0x28) == lStack_b0) {
+  FUN_001722b0(p0);
+  if (*(long *)(lVar1 + 0x28) == lStack_b0) {
     return;
   }
   FUN_00164ff0();
@@ -681,15 +663,17 @@ LAB_0038cb54:
 
 /* Walaber::Widget_Toggle::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_Toggle::acceptNewFingerDown(long param_1)
+bool Walaber::Widget_Toggle::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
   bool bVar1;
+  ulong uVar2;
   
-  bVar1 = *(char *)(param_1 + 0x8d) != '\0';
+  uVar2 = (ulong)(uint)p0;
+  bVar1 = *(char *)(uVar2 + 0x8d) != '\0';
   if (bVar1) {
-    *(undefined1 *)(param_1 + 0x1a5) = 1;
-    *(byte *)(param_1 + 0x1a4) = *(byte *)(param_1 + 0x1a4) ^ 1;
+    *(undefined1 *)(uVar2 + 0x1a5) = 1;
+    *(byte *)(uVar2 + 0x1a4) = *(byte *)(uVar2 + 0x1a4) ^ 1;
   }
   return bVar1;
 }
@@ -702,7 +686,7 @@ bool Walaber::Widget_Toggle::acceptNewFingerDown(long param_1)
 
 /* Walaber::Widget_Toggle::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Toggle::acceptNewFingerEntered(void)
+undefined8 Walaber::Widget_Toggle::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -716,7 +700,7 @@ undefined8 Walaber::Widget_Toggle::acceptNewFingerEntered(void)
 
 /* Walaber::Widget_Toggle::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Toggle::releaseFingerStayed(void)
+undefined8 Walaber::Widget_Toggle::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -730,7 +714,7 @@ undefined8 Walaber::Widget_Toggle::releaseFingerStayed(void)
 
 /* Walaber::Widget_Toggle::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Toggle::releaseFingerMoved(void)
+undefined8 Walaber::Widget_Toggle::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -744,10 +728,10 @@ undefined8 Walaber::Widget_Toggle::releaseFingerMoved(void)
 
 /* Walaber::Widget_Toggle::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Toggle::releaseFingerUp(void)
+int Walaber::Widget_Toggle::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -758,7 +742,7 @@ void Walaber::Widget_Toggle::releaseFingerUp(void)
 
 /* Walaber::Widget_Toggle::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Toggle::releaseFingerLeft(void)
+undefined8 Walaber::Widget_Toggle::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   return 1;
@@ -772,10 +756,10 @@ undefined8 Walaber::Widget_Toggle::releaseFingerLeft(void)
 
 /* Walaber::Widget_Toggle::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Toggle::notifyFingerLost(void)
+int Walaber::Widget_Toggle::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  return;
+  return p0;
 }
 
 

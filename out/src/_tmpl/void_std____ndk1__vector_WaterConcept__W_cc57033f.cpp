@@ -12,48 +12,49 @@
 
 void std::__ndk1::
      vector<WaterConcept::World::TouchEvent,std::__ndk1::allocator<WaterConcept::World::TouchEvent>>
-     ::__push_back_slow_path<WaterConcept::World::TouchEvent>(long *param_1,undefined8 *param_2)
+     ::__push_back_slow_path<WaterConcept::World::TouchEvent>(WaterConcept__World__TouchEvent **p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
   long lVar6;
-  long lStack_60;
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
+  lVar3 = ((long)p0[1] - (long)*p0 >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar6 = (long)p0[2] - (long)*p0 >> 3;
   uVar5 = 0xaaaaaaaaaaaaaaa;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x555555555555555) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x00168230(&lStack_60,uVar5,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50[1] = param_2[1];
-  puStack_50[2] = param_2[2];
+  func_0x00168230(&pvStack_60,uVar5,lVar3,p0 + 2);
+  *puStack_50 = *in_x1;
+  puStack_50[1] = in_x1[1];
+  puStack_50[2] = in_x1[2];
   puStack_50 = puStack_50 + 3;
                     /* try { // try from 0046f0c0 to 0046f0cb has its CatchHandler @ 0046f13c */
-  func_0x00166a40(param_1,&lStack_60);
+  func_0x00166a40(p0,&pvStack_60);
   if (puStack_50 != puStack_58) {
     puStack_50 = puStack_50 +
                  ((ulong)((long)puStack_50 + (-0x18 - (long)puStack_58)) / 0x18 ^ 0xffffffffffffffff
                  ) * 3;
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

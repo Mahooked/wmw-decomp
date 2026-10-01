@@ -11,28 +11,30 @@
 
 void WaterConcept::
      IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::~IndexGrid(long param_1)
+     ::~IndexGrid(long param_1,ulong param_2)
 
 {
+  void *p0;
+  ulong extraout_x1;
   long lVar1;
   long lVar2;
-  long lVar3;
   
-  lVar3 = *(long *)(param_1 + 8);
-  if (lVar3 != 0) {
-    lVar2 = *(long *)(lVar3 + -8);
-    if (lVar2 != 0) {
-      lVar2 = lVar2 * 0x18;
+  lVar2 = *(long *)(param_1 + 8);
+  if (lVar2 != 0) {
+    lVar1 = *(long *)(lVar2 + -8);
+    if (lVar1 != 0) {
+      lVar1 = lVar1 * 0x18;
       do {
-        lVar1 = *(long *)(lVar3 + lVar2 + -0x18);
-        if (lVar1 != 0) {
-          *(long *)(lVar3 + lVar2 + -0x10) = lVar1;
-          FUN_00166120();
+        p0 = *(void **)(lVar2 + lVar1 + -0x18);
+        if (p0 != (void *)0x0) {
+          *(void **)(lVar2 + lVar1 + -0x10) = p0;
+          FUN_00166120(p0);
+          param_2 = extraout_x1;
         }
-        lVar2 = lVar2 + -0x18;
-      } while (lVar2 != 0);
+        lVar1 = lVar1 + -0x18;
+      } while (lVar1 != 0);
     }
-    FUN_001639e0((long *)(lVar3 + -8));
+    FUN_001639e0((long *)(lVar2 + -8),param_2);
     return;
   }
   return;
@@ -49,32 +51,35 @@ void WaterConcept::
 
 void WaterConcept::
      IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::IndexGrid(int *param_1,int param_2,int param_3)
+     ::IndexGrid(int p0,int p1)
 
 {
   long lVar1;
   uint uVar2;
   undefined1 auVar3 [16];
-  ulong *puVar4;
-  ulong uVar5;
+  int *piVar4;
+  ulong *puVar5;
+  int in_w2;
+  ulong uVar6;
   
-  uVar2 = param_3 * param_2;
+  piVar4 = (int *)(ulong)(uint)p0;
+  uVar2 = in_w2 * p1;
   auVar3._8_8_ = 0;
   auVar3._0_8_ = (long)(int)uVar2;
-  uVar5 = ((-(ulong)(uVar2 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar2 << 1) + (long)(int)uVar2) *
+  uVar6 = ((-(ulong)(uVar2 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar2 << 1) + (long)(int)uVar2) *
           8;
-  lVar1 = uVar5 + 8;
-  *param_1 = param_2;
-  param_1[1] = param_3;
-  if (SUB168(auVar3 * ZEXT816(0x18),8) != 0 || 0xfffffffffffffff7 < uVar5) {
+  lVar1 = uVar6 + 8;
+  *piVar4 = p1;
+  piVar4[1] = in_w2;
+  if (SUB168(auVar3 * ZEXT816(0x18),8) != 0 || 0xfffffffffffffff7 < uVar6) {
     lVar1 = -1;
   }
-  puVar4 = (ulong *)FUN_00167620(lVar1);
-  *puVar4 = (long)(int)uVar2;
+  puVar5 = (ulong *)FUN_00167620(lVar1);
+  *puVar5 = (long)(int)uVar2;
   if (uVar2 != 0) {
-    FUN_0016b330(puVar4 + 1,0,((uVar5 - 0x18) / 0x18) * 0x18 + 0x18);
+    FUN_0016b330(puVar5 + 1,0,((uVar6 - 0x18) / 0x18) * 0x18 + 0x18);
   }
-  *(ulong **)(param_1 + 2) = puVar4 + 1;
+  *(ulong **)(piVar4 + 2) = puVar5 + 1;
   return;
 }
 
@@ -89,36 +94,42 @@ void WaterConcept::
 
 void WaterConcept::
      IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>>
-     ::resize(int *param_1,int param_2,int param_3)
+     ::resize(int p0,int p1)
 
 {
   uint uVar1;
   undefined1 auVar2 [16];
-  long lVar3;
+  int *piVar3;
+  void *p0_00;
   ulong *puVar4;
+  ulong extraout_x1;
+  int in_w2;
   long lVar5;
   ulong uVar6;
   long lVar7;
   
-  lVar7 = *(long *)(param_1 + 2);
-  *param_1 = param_2;
-  param_1[1] = param_3;
+  uVar6 = (ulong)(uint)p1;
+  piVar3 = (int *)(ulong)(uint)p0;
+  lVar7 = *(long *)(piVar3 + 2);
+  *piVar3 = p1;
+  piVar3[1] = in_w2;
   if (lVar7 != 0) {
     lVar5 = *(long *)(lVar7 + -8);
     if (lVar5 != 0) {
       lVar5 = lVar5 * 0x18;
       do {
-        lVar3 = *(long *)(lVar7 + lVar5 + -0x18);
-        if (lVar3 != 0) {
-          *(long *)(lVar7 + lVar5 + -0x10) = lVar3;
-          FUN_00166120();
+        p0_00 = *(void **)(lVar7 + lVar5 + -0x18);
+        if (p0_00 != (void *)0x0) {
+          *(void **)(lVar7 + lVar5 + -0x10) = p0_00;
+          FUN_00166120(p0_00);
+          uVar6 = extraout_x1;
         }
         lVar5 = lVar5 + -0x18;
       } while (lVar5 != 0);
     }
-    FUN_001639e0((long *)(lVar7 + -8));
+    FUN_001639e0((long *)(lVar7 + -8),uVar6);
   }
-  uVar1 = param_3 * param_2;
+  uVar1 = in_w2 * p1;
   auVar2._8_8_ = 0;
   auVar2._0_8_ = (long)(int)uVar1;
   uVar6 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffe00000000 | (ulong)uVar1 << 1) + (long)(int)uVar1) *
@@ -132,7 +143,7 @@ void WaterConcept::
   if (uVar1 != 0) {
     FUN_0016b330(puVar4 + 1,0,((uVar6 - 0x18) / 0x18) * 0x18 + 0x18);
   }
-  *(ulong **)(param_1 + 2) = puVar4 + 1;
+  *(ulong **)(piVar3 + 2) = puVar4 + 1;
   return;
 }
 

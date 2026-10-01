@@ -37,7 +37,7 @@ long std::__ndk1::
   undefined8 *puVar12;
   undefined8 uVar13;
   undefined8 uVar14;
-  long lStack_70;
+  void *pvStack_70;
   undefined8 *puStack_68;
   undefined8 *puStack_60;
   long lStack_48;
@@ -100,7 +100,7 @@ long std::__ndk1::
          (uVar5 = lVar8 * -0x6666666666666666, uVar3 = uVar4, uVar4 <= uVar5)) {
         uVar3 = uVar5;
       }
-      func_0x00164480(&lStack_70,uVar3,(param_2 - lVar7 >> 2) * -0x3333333333333333,param_1 + 2);
+      func_0x00164480(&pvStack_70,uVar3,(param_2 - lVar7 >> 2) * -0x3333333333333333,param_1 + 2);
       for (; param_3 != param_4; param_3 = (undefined8 *)((long)param_3 + 0x14)) {
         uVar14 = param_3[1];
         uVar13 = *param_3;
@@ -110,15 +110,15 @@ long std::__ndk1::
         puStack_60 = (undefined8 *)((long)puStack_60 + 0x14);
       }
                     /* try { // try from 00363524 to 00363533 has its CatchHandler @ 00363698 */
-      param_2 = func_0x00173b80(param_1,&lStack_70,param_2);
+      param_2 = func_0x00173b80(param_1,&pvStack_70,param_2);
       if (puStack_60 != puStack_68) {
         puStack_60 = (undefined8 *)
                      ((long)puStack_60 +
                      ((ulong)((long)puStack_60 + (-0x14 - (long)puStack_68)) / 0x14 ^
                      0xffffffffffffffff) * 0x14);
       }
-      if (lStack_70 != 0) {
-        FUN_00166120();
+      if (pvStack_70 != (void *)0x0) {
+        FUN_00166120(pvStack_70);
       }
     }
   }

@@ -64,12 +64,15 @@ void Walaber::Property::setValue(undefined4 *param_1)
 
 /* Walaber::Property::Property(int) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(int p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  ulong uVar1;
+  
+  uVar1 = (ulong)(uint)p0;
+  *(undefined8 *)(uVar1 + 8) = 0;
+  *(undefined8 *)(uVar1 + 0x10) = 0;
+  *(undefined8 *)(uVar1 + 0x18) = 0;
                     /* try { // try from 003fe13c to 003fe13f has its CatchHandler @ 003fe14c */
   func_0x00169260();
   return;
@@ -83,11 +86,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(int) */
 
-void Walaber::Property::setValue(undefined4 *param_1,undefined4 param_2)
+void Walaber::Property::setValue(int p0)
 
 {
   long lVar1;
-  byte *pbVar2;
+  undefined4 *puVar2;
+  undefined4 in_w1;
+  byte *pbVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -104,7 +109,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 param_2)
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -112,11 +117,12 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 param_2)
   undefined4 uStack_80;
   long lStack_70;
   
+  puVar2 = (undefined4 *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
-  *param_1 = 1;
+  *puVar2 = 1;
   uStack_188 = 0;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003fe1e0 to 003fe1eb has its CatchHandler @ 003fe380 */
@@ -135,37 +141,37 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 param_2)
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   uStack_118 = 0x18;
                     /* try { // try from 003fe260 to 003fe26b has its CatchHandler @ 003fe33c */
-  func_0x0016f650(&ppuStack_180,param_2);
+  func_0x0016f650(&ppuStack_180,in_w1);
                     /* try { // try from 003fe26c to 003fe277 has its CatchHandler @ 003fe338 */
   func_0x00165eb0(&uStack_1a8,&ppuStack_178);
-  pbVar2 = (byte *)(param_1 + 2);
-  if ((*pbVar2 & 1) == 0) {
-    pbVar2[0] = 0;
-    pbVar2[1] = 0;
+  pbVar3 = (byte *)(puVar2 + 2);
+  if ((*pbVar3 & 1) == 0) {
+    pbVar3[0] = 0;
+    pbVar3[1] = 0;
   }
   else {
-    **(undefined1 **)(param_1 + 6) = 0;
-    *(undefined8 *)(param_1 + 4) = 0;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 6));
-      *(undefined8 *)(param_1 + 2) = 0;
+    **(undefined1 **)(puVar2 + 6) = 0;
+    *(undefined8 *)(puVar2 + 4) = 0;
+    if ((*(byte *)(puVar2 + 2) & 1) != 0) {
+      FUN_00166120(*(void **)(puVar2 + 6));
+      *(undefined8 *)(puVar2 + 2) = 0;
     }
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_1 + 6) = uStack_198;
-  *(undefined8 *)(param_1 + 4) = uStack_1a0;
-  *(undefined8 *)pbVar2 = uStack_1a8;
+  *(undefined8 *)(puVar2 + 6) = uStack_198;
+  *(undefined8 *)(puVar2 + 4) = uStack_1a0;
+  *(undefined8 *)pbVar3 = uStack_1a8;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -185,12 +191,14 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 param_2)
 
 /* Walaber::Property::Property(float) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(float p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  long in_x0;
+  
+  *(undefined8 *)(in_x0 + 8) = 0;
+  *(undefined8 *)(in_x0 + 0x10) = 0;
+  *(undefined8 *)(in_x0 + 0x18) = 0;
                     /* try { // try from 003fe3b0 to 003fe3b3 has its CatchHandler @ 003fe3c0 */
   func_0x0016db00();
   return;
@@ -204,11 +212,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(float) */
 
-void Walaber::Property::setValue(undefined8 param_1,undefined4 *param_2)
+void Walaber::Property::setValue(float p0)
 
 {
   long lVar1;
+  undefined4 *in_x0;
   byte *pbVar2;
+  undefined4 in_register_00005004;
   undefined8 uStack_1b8;
   undefined8 uStack_1b0;
   undefined8 uStack_1a8;
@@ -225,7 +235,7 @@ void Walaber::Property::setValue(undefined8 param_1,undefined4 *param_2)
   undefined8 uStack_150;
   ulong uStack_148;
   undefined8 uStack_140;
-  undefined8 uStack_138;
+  void *pvStack_138;
   undefined8 uStack_130;
   undefined4 uStack_128;
   undefined **appuStack_120 [17];
@@ -237,7 +247,7 @@ void Walaber::Property::setValue(undefined8 param_1,undefined4 *param_2)
   lStack_80 = *(long *)(lVar1 + 0x28);
   ppuStack_1a0 = &PTR__basic_istream_00711168;
   appuStack_120[0] = &PTR__basic_istream_00711190;
-  *param_2 = 2;
+  *in_x0 = 2;
   uStack_198 = 0;
   ppuStack_190 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003fe458 to 003fe463 has its CatchHandler @ 003fe5fc */
@@ -256,37 +266,37 @@ void Walaber::Property::setValue(undefined8 param_1,undefined4 *param_2)
   uStack_170 = 0;
   uStack_178 = 0;
   uStack_130 = 0;
-  uStack_138 = 0;
+  pvStack_138 = (void *)0x0;
   uStack_140 = 0;
   uStack_148 = 0;
   ppuStack_188 = &PTR__basic_stringbuf_007111c8;
   uStack_128 = 0x18;
                     /* try { // try from 003fe4d8 to 003fe4e3 has its CatchHandler @ 003fe5b8 */
-  func_0x0016aaf0(param_1,&ppuStack_190);
+  func_0x0016aaf0(CONCAT44(in_register_00005004,p0),&ppuStack_190);
                     /* try { // try from 003fe4e4 to 003fe4ef has its CatchHandler @ 003fe5b4 */
   func_0x00165eb0(&uStack_1b8,&ppuStack_188);
-  pbVar2 = (byte *)(param_2 + 2);
+  pbVar2 = (byte *)(in_x0 + 2);
   if ((*pbVar2 & 1) == 0) {
     pbVar2[0] = 0;
     pbVar2[1] = 0;
   }
   else {
-    **(undefined1 **)(param_2 + 6) = 0;
-    *(undefined8 *)(param_2 + 4) = 0;
-    if ((*(byte *)(param_2 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_2 + 6));
-      *(undefined8 *)(param_2 + 2) = 0;
+    **(undefined1 **)(in_x0 + 6) = 0;
+    *(undefined8 *)(in_x0 + 4) = 0;
+    if ((*(byte *)(in_x0 + 2) & 1) != 0) {
+      FUN_00166120(*(void **)(in_x0 + 6));
+      *(undefined8 *)(in_x0 + 2) = 0;
     }
   }
   ppuStack_1a0 = &PTR__basic_stringstream_007110f0;
   appuStack_120[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_2 + 6) = uStack_1a8;
-  *(undefined8 *)(param_2 + 4) = uStack_1b0;
+  *(undefined8 *)(in_x0 + 6) = uStack_1a8;
+  *(undefined8 *)(in_x0 + 4) = uStack_1b0;
   *(undefined8 *)pbVar2 = uStack_1b8;
   ppuStack_190 = &PTR__basic_stringstream_00711118;
   ppuStack_188 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_148 & 1) != 0) {
-    FUN_00166120(uStack_138);
+    FUN_00166120(pvStack_138);
   }
   ppuStack_188 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_180);
@@ -306,12 +316,12 @@ void Walaber::Property::setValue(undefined8 param_1,undefined4 *param_2)
 
 /* Walaber::Property::Property(Walaber::Vector2 const&) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(Walaber__Vector2 *p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
                     /* try { // try from 003fe62c to 003fe62f has its CatchHandler @ 003fe63c */
   func_0x0016f570();
   return;
@@ -325,12 +335,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(Walaber::Vector2 const&) */
 
-void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
+void Walaber::Property::setValue(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
-  byte *pbVar3;
+  undefined4 *in_x1;
+  Walaber__Vector2 *pWVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -347,7 +358,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -359,7 +370,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
-  *param_1 = 3;
+  *(undefined4 *)p0 = 3;
   uStack_188 = 0;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003fe6d0 to 003fe6db has its CatchHandler @ 003fe844 */
@@ -378,39 +389,38 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   uStack_118 = 0x18;
                     /* try { // try from 003fe754 to 003fe773 has its CatchHandler @ 003fe84c */
-  uVar2 = func_0x0016aaf0(*param_2,&ppuStack_180);
+  uVar2 = func_0x0016aaf0(*in_x1,&ppuStack_180);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  func_0x0016aaf0(param_2[1]);
+  func_0x0016aaf0(in_x1[1]);
                     /* try { // try from 003fe774 to 003fe77f has its CatchHandler @ 003fe840 */
   func_0x00165eb0(&uStack_1a8,&ppuStack_178);
-  pbVar3 = (byte *)(param_1 + 2);
-  if ((*pbVar3 & 1) == 0) {
-    pbVar3[0] = 0;
-    pbVar3[1] = 0;
+  pWVar3 = p0 + 8;
+  if (((byte)*pWVar3 & 1) == 0) {
+    *(undefined2 *)pWVar3 = 0;
   }
   else {
-    **(undefined1 **)(param_1 + 6) = 0;
-    *(undefined8 *)(param_1 + 4) = 0;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 6));
-      *(undefined8 *)(param_1 + 2) = 0;
+    **(undefined1 **)(p0 + 0x18) = 0;
+    *(undefined8 *)(p0 + 0x10) = 0;
+    if (((byte)p0[8] & 1) != 0) {
+      FUN_00166120(*(void **)(p0 + 0x18));
+      *(undefined8 *)(p0 + 8) = 0;
     }
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_1 + 6) = uStack_198;
-  *(undefined8 *)(param_1 + 4) = uStack_1a0;
-  *(undefined8 *)pbVar3 = uStack_1a8;
+  *(undefined8 *)(p0 + 0x18) = uStack_198;
+  *(undefined8 *)(p0 + 0x10) = uStack_1a0;
+  *(undefined8 *)pWVar3 = uStack_1a8;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -430,12 +440,12 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
 
 /* Walaber::Property::Property(Walaber::Rect const&) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(Walaber__Rect *p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
                     /* try { // try from 003fe8b8 to 003fe8bb has its CatchHandler @ 003fe8c8 */
   func_0x00174380();
   return;
@@ -449,12 +459,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(Walaber::Rect const&) */
 
-void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
+void Walaber::Property::setValue(Walaber__Rect *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
-  byte *pbVar3;
+  undefined4 *in_x1;
+  Walaber__Rect *pWVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -471,7 +482,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -483,7 +494,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
-  *param_1 = 4;
+  *(undefined4 *)p0 = 4;
   uStack_188 = 0;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003fe95c to 003fe967 has its CatchHandler @ 003feb00 */
@@ -502,43 +513,42 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   uStack_118 = 0x18;
                     /* try { // try from 003fe9e0 to 003fea2f has its CatchHandler @ 003feb08 */
-  uVar2 = func_0x0016aaf0(*param_2,&ppuStack_180);
+  uVar2 = func_0x0016aaf0(*in_x1,&ppuStack_180);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016aaf0(param_2[1]);
+  uVar2 = func_0x0016aaf0(in_x1[1]);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016aaf0(param_2[2]);
+  uVar2 = func_0x0016aaf0(in_x1[2]);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  func_0x0016aaf0(param_2[3]);
+  func_0x0016aaf0(in_x1[3]);
                     /* try { // try from 003fea30 to 003fea3b has its CatchHandler @ 003feafc */
   func_0x00165eb0(&uStack_1a8,&ppuStack_178);
-  pbVar3 = (byte *)(param_1 + 2);
-  if ((*pbVar3 & 1) == 0) {
-    pbVar3[0] = 0;
-    pbVar3[1] = 0;
+  pWVar3 = p0 + 8;
+  if (((byte)*pWVar3 & 1) == 0) {
+    *(undefined2 *)pWVar3 = 0;
   }
   else {
-    **(undefined1 **)(param_1 + 6) = 0;
-    *(undefined8 *)(param_1 + 4) = 0;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 6));
-      *(undefined8 *)(param_1 + 2) = 0;
+    **(undefined1 **)(p0 + 0x18) = 0;
+    *(undefined8 *)(p0 + 0x10) = 0;
+    if (((byte)p0[8] & 1) != 0) {
+      FUN_00166120(*(void **)(p0 + 0x18));
+      *(undefined8 *)(p0 + 8) = 0;
     }
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_1 + 6) = uStack_198;
-  *(undefined8 *)(param_1 + 4) = uStack_1a0;
-  *(undefined8 *)pbVar3 = uStack_1a8;
+  *(undefined8 *)(p0 + 0x18) = uStack_198;
+  *(undefined8 *)(p0 + 0x10) = uStack_1a0;
+  *(undefined8 *)pWVar3 = uStack_1a8;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -558,12 +568,12 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
 
 /* Walaber::Property::Property(Walaber::Color const&) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(Walaber__Color *p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
                     /* try { // try from 003feb74 to 003feb77 has its CatchHandler @ 003feb84 */
   func_0x00172c20();
   return;
@@ -577,12 +587,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(Walaber::Color const&) */
 
-void Walaber::Property::setValue(undefined4 *param_1,undefined1 *param_2)
+void Walaber::Property::setValue(Walaber__Color *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
-  byte *pbVar3;
+  undefined1 *in_x1;
+  Walaber__Color *pWVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -599,7 +610,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined1 *param_2)
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -611,7 +622,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined1 *param_2)
   lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
-  *param_1 = 5;
+  *(undefined4 *)p0 = 5;
   uStack_188 = 0;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003fec18 to 003fec23 has its CatchHandler @ 003fedbc */
@@ -630,43 +641,42 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined1 *param_2)
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   uStack_118 = 0x18;
                     /* try { // try from 003fec9c to 003feceb has its CatchHandler @ 003fedc4 */
-  uVar2 = func_0x0016f650(&ppuStack_180,*param_2);
+  uVar2 = func_0x0016f650(&ppuStack_180,*in_x1);
   uVar2 = func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016f650(uVar2,param_2[1]);
+  uVar2 = func_0x0016f650(uVar2,in_x1[1]);
   uVar2 = func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016f650(uVar2,param_2[2]);
+  uVar2 = func_0x0016f650(uVar2,in_x1[2]);
   uVar2 = func_0x00162210(uVar2,&DAT_0062359c,1);
-  func_0x0016f650(uVar2,param_2[3]);
+  func_0x0016f650(uVar2,in_x1[3]);
                     /* try { // try from 003fecec to 003fecf7 has its CatchHandler @ 003fedb8 */
   func_0x00165eb0(&uStack_1a8,&ppuStack_178);
-  pbVar3 = (byte *)(param_1 + 2);
-  if ((*pbVar3 & 1) == 0) {
-    pbVar3[0] = 0;
-    pbVar3[1] = 0;
+  pWVar3 = p0 + 8;
+  if (((byte)*pWVar3 & 1) == 0) {
+    *(undefined2 *)pWVar3 = 0;
   }
   else {
-    **(undefined1 **)(param_1 + 6) = 0;
-    *(undefined8 *)(param_1 + 4) = 0;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 6));
-      *(undefined8 *)(param_1 + 2) = 0;
+    **(undefined1 **)(p0 + 0x18) = 0;
+    *(undefined8 *)(p0 + 0x10) = 0;
+    if (((byte)p0[8] & 1) != 0) {
+      FUN_00166120(*(void **)(p0 + 0x18));
+      *(undefined8 *)(p0 + 8) = 0;
     }
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_1 + 6) = uStack_198;
-  *(undefined8 *)(param_1 + 4) = uStack_1a0;
-  *(undefined8 *)pbVar3 = uStack_1a8;
+  *(undefined8 *)(p0 + 0x18) = uStack_198;
+  *(undefined8 *)(p0 + 0x10) = uStack_1a0;
+  *(undefined8 *)pWVar3 = uStack_1a8;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -686,12 +696,12 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined1 *param_2)
 
 /* Walaber::Property::Property(Walaber::AABB const&) */
 
-void Walaber::Property::Property(long param_1)
+void Walaber::Property::Property(Walaber__AABB *p0)
 
 {
-  *(undefined8 *)(param_1 + 8) = 0;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(undefined8 *)(param_1 + 0x18) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
                     /* try { // try from 003fee30 to 003fee33 has its CatchHandler @ 003fee40 */
   func_0x00167f20();
   return;
@@ -705,12 +715,13 @@ void Walaber::Property::Property(long param_1)
 
 /* Walaber::Property::setValue(Walaber::AABB const&) */
 
-void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
+void Walaber::Property::setValue(Walaber__AABB *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
-  byte *pbVar3;
+  undefined4 *in_x1;
+  Walaber__AABB *pWVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -727,7 +738,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -739,7 +750,7 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
-  *param_1 = 6;
+  *(undefined4 *)p0 = 6;
   uStack_188 = 0;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
                     /* try { // try from 003feed4 to 003feedf has its CatchHandler @ 003ff078 */
@@ -758,43 +769,42 @@ void Walaber::Property::setValue(undefined4 *param_1,undefined4 *param_2)
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   uStack_118 = 0x18;
                     /* try { // try from 003fef58 to 003fefa7 has its CatchHandler @ 003ff080 */
-  uVar2 = func_0x0016aaf0(*param_2,&ppuStack_180);
+  uVar2 = func_0x0016aaf0(*in_x1,&ppuStack_180);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016aaf0(param_2[1]);
+  uVar2 = func_0x0016aaf0(in_x1[1]);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  uVar2 = func_0x0016aaf0(param_2[2]);
+  uVar2 = func_0x0016aaf0(in_x1[2]);
   func_0x00162210(uVar2,&DAT_0062359c,1);
-  func_0x0016aaf0(param_2[3]);
+  func_0x0016aaf0(in_x1[3]);
                     /* try { // try from 003fefa8 to 003fefb3 has its CatchHandler @ 003ff074 */
   func_0x00165eb0(&uStack_1a8,&ppuStack_178);
-  pbVar3 = (byte *)(param_1 + 2);
-  if ((*pbVar3 & 1) == 0) {
-    pbVar3[0] = 0;
-    pbVar3[1] = 0;
+  pWVar3 = p0 + 8;
+  if (((byte)*pWVar3 & 1) == 0) {
+    *(undefined2 *)pWVar3 = 0;
   }
   else {
-    **(undefined1 **)(param_1 + 6) = 0;
-    *(undefined8 *)(param_1 + 4) = 0;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 6));
-      *(undefined8 *)(param_1 + 2) = 0;
+    **(undefined1 **)(p0 + 0x18) = 0;
+    *(undefined8 *)(p0 + 0x10) = 0;
+    if (((byte)p0[8] & 1) != 0) {
+      FUN_00166120(*(void **)(p0 + 0x18));
+      *(undefined8 *)(p0 + 8) = 0;
     }
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
-  *(undefined8 *)(param_1 + 6) = uStack_198;
-  *(undefined8 *)(param_1 + 4) = uStack_1a0;
-  *(undefined8 *)pbVar3 = uStack_1a8;
+  *(undefined8 *)(p0 + 0x18) = uStack_198;
+  *(undefined8 *)(p0 + 0x10) = uStack_1a0;
+  *(undefined8 *)pWVar3 = uStack_1a8;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -820,7 +830,7 @@ void Walaber::Property::~Property(long param_1)
   if ((*(byte *)(param_1 + 8) & 1) == 0) {
     return;
   }
-  FUN_00166120(*(undefined8 *)(param_1 + 0x18));
+  FUN_00166120(*(void **)(param_1 + 0x18));
   return;
 }
 

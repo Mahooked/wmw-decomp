@@ -196,7 +196,7 @@ void std::__ndk1::
             in_x7[0xe] = 0;
             in_x7[0xf] = 0;
             if ((*in_x7 & 1) != 0) {
-              FUN_00166120(*(undefined8 *)(in_x7 + 0x10));
+              FUN_00166120(*(void **)(in_x7 + 0x10));
               in_x7[0] = 0;
               in_x7[1] = 0;
               in_x7[2] = 0;
@@ -254,7 +254,7 @@ void std::__ndk1::
             in_x7[0x2e] = 0;
             in_x7[0x2f] = 0;
             if ((in_x7[0x20] & 1) != 0) {
-              FUN_00166120(*(undefined8 *)(in_x7 + 0x30));
+              FUN_00166120(*(void **)(in_x7 + 0x30));
               in_x7[0x20] = 0;
               in_x7[0x21] = 0;
               in_x7[0x22] = 0;
@@ -350,7 +350,7 @@ void std::__ndk1::
           pbVar12[0xe] = 0;
           pbVar12[0xf] = 0;
           if ((*pbVar12 & 1) != 0) {
-            FUN_00166120(*(undefined8 *)(pbVar12 + 0x10));
+            FUN_00166120(*(void **)(pbVar12 + 0x10));
             pbVar12[0] = 0;
             pbVar12[1] = 0;
             pbVar12[2] = 0;
@@ -381,7 +381,7 @@ void std::__ndk1::
           pbVar12[0x2e] = 0;
           pbVar12[0x2f] = 0;
           if ((pbVar12[0x20] & 1) != 0) {
-            FUN_00166120(*(undefined8 *)(pbVar12 + 0x30));
+            FUN_00166120(*(void **)(pbVar12 + 0x30));
             pbVar1[0] = 0;
             pbVar1[1] = 0;
             pbVar1[2] = 0;

@@ -60,11 +60,14 @@ void Walaber::Transition_Iris::Transition_Iris(undefined8 *param_1)
 void Walaber::Transition_Iris::~Transition_Iris(undefined8 *param_1)
 
 {
+  void *p0;
+  
   *param_1 = &PTR_setup_00710fa8;
   FUN_00166b20(param_1 + 0x1f);
-  if (param_1[0x1c] != 0) {
-    param_1[0x1d] = param_1[0x1c];
-    FUN_00166120();
+  p0 = (void *)param_1[0x1c];
+  if (p0 != (void *)0x0) {
+    param_1[0x1d] = p0;
+    FUN_00166120(p0);
   }
   FUN_00171ae0(param_1);
   return;
@@ -78,14 +81,16 @@ void Walaber::Transition_Iris::~Transition_Iris(undefined8 *param_1)
 
 /* Walaber::Transition_Iris::setup(float) */
 
-void Walaber::Transition_Iris::setup(undefined4 param_1,long param_2)
+void Walaber::Transition_Iris::setup(float p0)
 
 {
-  *(undefined4 *)(param_2 + 0x70) = 0;
-  *(undefined1 *)(param_2 + 0xc4) = 0;
-  *(undefined4 *)(param_2 + 0x78) = 0;
-  *(undefined1 *)(param_2 + 0x7c) = 0;
-  *(undefined4 *)(param_2 + 0x74) = param_1;
+  long in_x0;
+  
+  *(undefined4 *)(in_x0 + 0x70) = 0;
+  *(undefined1 *)(in_x0 + 0xc4) = 0;
+  *(undefined4 *)(in_x0 + 0x78) = 0;
+  *(undefined1 *)(in_x0 + 0x7c) = 0;
+  *(float *)(in_x0 + 0x74) = p0;
   func_0x00164fc0();
   return;
 }
@@ -160,7 +165,7 @@ void Walaber::Transition_Iris::_initBladeAnchors(long param_1)
 
 /* Walaber::Transition_Iris::setup(float, Walaber::PropertyList const&) */
 
-void Walaber::Transition_Iris::setup(undefined8 param_1,undefined8 *param_2,undefined8 param_3)
+void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
 
 {
   long lVar1;
@@ -169,31 +174,32 @@ void Walaber::Transition_Iris::setup(undefined8 param_1,undefined8 *param_2,unde
   undefined8 uVar4;
   ulong uVar5;
   undefined4 uVar6;
+  undefined4 in_register_00005004;
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
   undefined8 uStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined1 auStack_58 [16];
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  (**(code **)*param_2)();
-  func_0x0016b0c0(param_1,param_2,param_3);
-  lVar3 = func_0x00167060(param_3,&Transition::tk_pauseLength);
+  (*(code *)**(undefined8 **)p1)();
+  func_0x0016b0c0(CONCAT44(in_register_00005004,p0),p1);
+  lVar3 = func_0x00167060();
   if (lVar3 != 0) {
     uVar6 = func_0x00168f30();
-    *(undefined4 *)(param_2 + 0xf) = uVar6;
+    *(undefined4 *)(p1 + 0x78) = uVar6;
   }
-  lVar3 = func_0x00167060(param_3,&Transition::tk_irisBladeCount);
+  lVar3 = func_0x00167060();
   if (lVar3 != 0) {
     uVar6 = func_0x00166a80();
-    *(undefined4 *)(param_2 + 0x19) = uVar6;
-    func_0x00164fc0(param_2);
+    *(undefined4 *)(p1 + 200) = uVar6;
+    func_0x00164fc0(p1);
   }
-  lVar3 = func_0x00167060(param_3,&Transition::tk_irisTextureName);
+  lVar3 = func_0x00167060();
   if (lVar3 != 0) {
     uVar4 = FUN_001739b0();
     func_0x00162cf0(abStack_70,lVar3);
@@ -203,30 +209,30 @@ void Walaber::Transition_Iris::setup(undefined8 param_1,undefined8 *param_2,unde
     uStack_78 = 0;
                     /* try { // try from 003f551c to 003f5537 has its CatchHandler @ 003f5620 */
     func_0x001644b0(auStack_58,uVar4,abStack_70,&uStack_80,0,0);
-    func_0x00170aa0(param_2 + 0x1f,auStack_58);
+    func_0x00170aa0(p1 + 0xf8,auStack_58);
     FUN_00166b20(auStack_58);
     FUN_0016bb90(&uStack_80);
     FUN_0016bb90(&uStack_90);
     if ((abStack_70[0] & 1) != 0) {
-      FUN_00166120(uStack_60);
+      FUN_00166120(pvStack_60);
     }
   }
-  lVar3 = func_0x00167060(param_3,&Transition::tk_irisMaxAngle);
+  lVar3 = func_0x00167060();
   if (lVar3 != 0) {
     uVar6 = func_0x00168f30();
-    *(undefined4 *)(param_2 + 0x1a) = uVar6;
+    *(undefined4 *)(p1 + 0xd0) = uVar6;
   }
-  uVar5 = func_0x00173810(param_3,&Transition::tk_irisIn);
+  uVar5 = func_0x00173810();
   if ((uVar5 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_irisIn);
+    func_0x00167060();
     iVar2 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x81) = iVar2 == 1;
+    p1[0x81] = (Walaber__PropertyList)(iVar2 == 1);
   }
-  uVar5 = func_0x00173810(param_3,&Transition::tk_irisOut);
+  uVar5 = func_0x00173810();
   if ((uVar5 & 1) != 0) {
-    func_0x00167060(param_3,&Transition::tk_irisOut);
+    func_0x00167060();
     iVar2 = func_0x00166a80();
-    *(bool *)((long)param_2 + 0x82) = iVar2 == 1;
+    p1[0x82] = (Walaber__PropertyList)(iVar2 == 1);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -245,46 +251,47 @@ void Walaber::Transition_Iris::setup(undefined8 param_1,undefined8 *param_2,unde
 /* WARNING: Removing unreachable block (ram,0x003f57f0) */
 /* Walaber::Transition_Iris::update(float) */
 
-undefined4 Walaber::Transition_Iris::update(float param_1,long param_2)
+undefined4 Walaber::Transition_Iris::update(float p0)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
+  long in_x0;
   undefined4 uVar5;
   float fVar6;
   float fVar7;
   float fVar8;
   
-  fVar6 = param_1;
-  if (0.033333335 < param_1) {
+  fVar6 = p0;
+  if (0.033333335 < p0) {
     fVar6 = 0.033333335;
   }
-  if (param_1 <= 0.0) {
+  if (p0 <= 0.0) {
     fVar6 = 0.0;
   }
-  fVar6 = fVar6 + *(float *)(param_2 + 0x70);
-  fVar7 = *(float *)(param_2 + 0x74) * 0.5;
-  *(float *)(param_2 + 0x70) = fVar6;
+  fVar6 = fVar6 + *(float *)(in_x0 + 0x70);
+  fVar7 = *(float *)(in_x0 + 0x74) * 0.5;
+  *(float *)(in_x0 + 0x70) = fVar6;
   if (fVar7 <= fVar6) {
-    if (*(char *)(param_2 + 0xc4) == '\0') {
-      *(undefined4 *)(param_2 + 0xcc) = *(undefined4 *)(param_2 + 0xd0);
+    if (*(char *)(in_x0 + 0xc4) == '\0') {
+      *(undefined4 *)(in_x0 + 0xcc) = *(undefined4 *)(in_x0 + 0xd0);
       uVar5 = 1;
-      *(undefined4 *)(param_2 + 0xdc) = *(undefined4 *)(param_2 + 0xd8);
-      if (*(char *)(param_2 + 0x7c) == '\0') {
-        *(undefined1 *)(param_2 + 0x7c) = 1;
+      *(undefined4 *)(in_x0 + 0xdc) = *(undefined4 *)(in_x0 + 0xd8);
+      if (*(char *)(in_x0 + 0x7c) == '\0') {
+        *(undefined1 *)(in_x0 + 0x7c) = 1;
       }
       else {
-        *(undefined1 *)(param_2 + 0xc4) = 1;
+        *(undefined1 *)(in_x0 + 0xc4) = 1;
         uVar5 = 2;
       }
     }
-    else if (*(float *)(param_2 + 0x74) + *(float *)(param_2 + 0x78) <= fVar6) {
+    else if (*(float *)(in_x0 + 0x74) + *(float *)(in_x0 + 0x78) <= fVar6) {
       uVar5 = 4;
     }
     else {
-      fVar7 = ((fVar6 - *(float *)(param_2 + 0x78)) - fVar7) / fVar7;
+      fVar7 = ((fVar6 - *(float *)(in_x0 + 0x78)) - fVar7) / fVar7;
       fVar6 = fVar7;
       if (1.0 < fVar7) {
         fVar6 = 1.0;
@@ -292,28 +299,28 @@ undefined4 Walaber::Transition_Iris::update(float param_1,long param_2)
       if (fVar7 <= 0.0) {
         fVar6 = 0.0;
       }
-      fVar7 = fVar6 * (0.0 - *(float *)(param_2 + 0xd0));
-      fVar8 = fVar6 * (*(float *)(param_2 + 0xd4) - *(float *)(param_2 + 0xd8));
+      fVar7 = fVar6 * (0.0 - *(float *)(in_x0 + 0xd0));
+      fVar8 = fVar6 * (*(float *)(in_x0 + 0xd4) - *(float *)(in_x0 + 0xd8));
       if (fVar6 <= 0.0) {
         fVar6 = 0.0;
       }
-      *(float *)(param_2 + 0xcc) = *(float *)(param_2 + 0xd0) + fVar7;
-      *(float *)(param_2 + 0xdc) = *(float *)(param_2 + 0xd8) + fVar8;
-      iVar1 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x83) -
-                                        (uint)*(byte *)(param_2 + 0x87))) +
-              (uint)*(byte *)(param_2 + 0x87);
-      iVar2 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x84) -
-                                        (uint)*(byte *)(param_2 + 0x88))) +
-              (uint)*(byte *)(param_2 + 0x88);
-      iVar3 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x85) -
-                                        (uint)*(byte *)(param_2 + 0x89))) +
-              (uint)*(byte *)(param_2 + 0x89);
+      *(float *)(in_x0 + 0xcc) = *(float *)(in_x0 + 0xd0) + fVar7;
+      *(float *)(in_x0 + 0xdc) = *(float *)(in_x0 + 0xd8) + fVar8;
+      iVar1 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x83) -
+                                        (uint)*(byte *)(in_x0 + 0x87))) +
+              (uint)*(byte *)(in_x0 + 0x87);
+      iVar2 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x84) -
+                                        (uint)*(byte *)(in_x0 + 0x88))) +
+              (uint)*(byte *)(in_x0 + 0x88);
+      iVar3 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x85) -
+                                        (uint)*(byte *)(in_x0 + 0x89))) +
+              (uint)*(byte *)(in_x0 + 0x89);
       if (0xfe < iVar1) {
         iVar1 = 0xff;
       }
-      iVar4 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x86) -
-                                        (uint)*(byte *)(param_2 + 0x8a))) +
-              (uint)*(byte *)(param_2 + 0x8a);
+      iVar4 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x86) -
+                                        (uint)*(byte *)(in_x0 + 0x8a))) +
+              (uint)*(byte *)(in_x0 + 0x8a);
       if (0xfe < iVar2) {
         iVar2 = 0xff;
       }
@@ -323,11 +330,11 @@ undefined4 Walaber::Transition_Iris::update(float param_1,long param_2)
       if (0xfe < iVar4) {
         iVar4 = 0xff;
       }
-      *(byte *)(param_2 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
-      *(byte *)(param_2 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
       uVar5 = 3;
-      *(byte *)(param_2 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-      *(byte *)(param_2 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+      *(byte *)(in_x0 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
     }
   }
   else {
@@ -343,22 +350,18 @@ undefined4 Walaber::Transition_Iris::update(float param_1,long param_2)
     if (fVar7 <= 0.0) {
       fVar6 = 0.0;
     }
-    *(float *)(param_2 + 0xcc) = fVar7 * *(float *)(param_2 + 0xd0) + 0.0;
-    iVar1 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x87) -
-                                      (uint)*(byte *)(param_2 + 0x83))) +
-            (uint)*(byte *)(param_2 + 0x83);
-    iVar2 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x88) -
-                                      (uint)*(byte *)(param_2 + 0x84))) +
-            (uint)*(byte *)(param_2 + 0x84);
-    iVar3 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x89) -
-                                      (uint)*(byte *)(param_2 + 0x85))) +
-            (uint)*(byte *)(param_2 + 0x85);
+    *(float *)(in_x0 + 0xcc) = fVar7 * *(float *)(in_x0 + 0xd0) + 0.0;
+    iVar1 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x87) - (uint)*(byte *)(in_x0 + 0x83)
+                                      )) + (uint)*(byte *)(in_x0 + 0x83);
+    iVar2 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x88) - (uint)*(byte *)(in_x0 + 0x84)
+                                      )) + (uint)*(byte *)(in_x0 + 0x84);
+    iVar3 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x89) - (uint)*(byte *)(in_x0 + 0x85)
+                                      )) + (uint)*(byte *)(in_x0 + 0x85);
     if (0xfe < iVar1) {
       iVar1 = 0xff;
     }
-    iVar4 = (int)(fVar6 * (float)(int)((uint)*(byte *)(param_2 + 0x8a) -
-                                      (uint)*(byte *)(param_2 + 0x86))) +
-            (uint)*(byte *)(param_2 + 0x86);
+    iVar4 = (int)(fVar6 * (float)(int)((uint)*(byte *)(in_x0 + 0x8a) - (uint)*(byte *)(in_x0 + 0x86)
+                                      )) + (uint)*(byte *)(in_x0 + 0x86);
     if (0xfe < iVar2) {
       iVar2 = 0xff;
     }
@@ -368,13 +371,12 @@ undefined4 Walaber::Transition_Iris::update(float param_1,long param_2)
     if (0xfe < iVar4) {
       iVar4 = 0xff;
     }
-    *(byte *)(param_2 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
-    *(float *)(param_2 + 0xdc) =
-         *(float *)(param_2 + 0xd4) +
-         fVar7 * (*(float *)(param_2 + 0xd8) - *(float *)(param_2 + 0xd4));
-    *(byte *)(param_2 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
-    *(byte *)(param_2 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc0) = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
+    *(float *)(in_x0 + 0xdc) =
+         *(float *)(in_x0 + 0xd4) + fVar7 * (*(float *)(in_x0 + 0xd8) - *(float *)(in_x0 + 0xd4));
+    *(byte *)(in_x0 + 0xc1) = (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc2) = (byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff);
+    *(byte *)(in_x0 + 0xc3) = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
     uVar5 = 1;
   }
   return uVar5;

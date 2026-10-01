@@ -16,7 +16,7 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   long lVar1;
   undefined4 auStack_48 [2];
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -26,7 +26,7 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
   func_0x00165190(param_1 + 8,auStack_48);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -59,14 +59,14 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
   long lStack_f0;
   int *piStack_e8;
   byte abStack_e0 [16];
-  undefined8 uStack_d0;
+  void *pvStack_d0;
   byte abStack_c8 [8];
   undefined8 uStack_c0;
   undefined1 *puStack_b8;
   byte bStack_a8;
-  undefined8 uStack_98;
+  void *pvStack_98;
   byte bStack_90;
-  undefined8 uStack_80;
+  void *pvStack_80;
   ulong uStack_70;
   undefined8 uStack_68;
   undefined1 *puStack_60;
@@ -88,15 +88,15 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
                     /* try { // try from 003d2f64 to 003d2f7f has its CatchHandler @ 003d3098 */
       func_0x00161b20(abStack_c8,param_2,1,&uStack_70,abStack_e0,param_4);
       if ((abStack_e0[0] & 1) != 0) {
-        FUN_00166120(uStack_d0);
+        FUN_00166120(pvStack_d0);
       }
                     /* try { // try from 003d2f9c to 003d2fa3 has its CatchHandler @ 003d3064 */
       (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,abStack_c8);
       if ((bStack_90 & 1) != 0) {
-        FUN_00166120(uStack_80);
+        FUN_00166120(pvStack_80);
       }
       if ((bStack_a8 & 1) != 0) {
-        FUN_00166120(uStack_98);
+        FUN_00166120(pvStack_98);
       }
       if ((abStack_c8[0] & 1) != 0) {
         FUN_00166120(puStack_b8);
@@ -185,15 +185,15 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
   long lStack_280;
   int *piStack_278;
   byte abStack_270 [16];
-  undefined8 uStack_260;
+  void *pvStack_260;
   ulong uStack_258;
   byte bStack_250;
   undefined1 *puStack_248;
-  undefined8 uStack_240;
+  void *pvStack_240;
   byte bStack_228;
-  undefined8 uStack_218;
+  void *pvStack_218;
   byte bStack_210;
-  undefined8 uStack_200;
+  void *pvStack_200;
   ulong auStack_1f0 [2];
   undefined1 *puStack_1e0;
   undefined **ppuStack_1d0;
@@ -256,18 +256,18 @@ LAB_003d3234:
                     /* try { // try from 003d32c4 to 003d32e3 has its CatchHandler @ 003d34d4 */
       func_0x0016e040(&uStack_258,param_2,uVar4,extraout_x1,auStack_1f0,abStack_270,param_4);
       if ((abStack_270[0] & 1) != 0) {
-        FUN_00166120(uStack_260);
+        FUN_00166120(pvStack_260);
       }
                     /* try { // try from 003d3304 to 003d330b has its CatchHandler @ 003d34a0 */
       (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,&uStack_258);
       if ((bStack_210 & 1) != 0) {
-        FUN_00166120(uStack_200);
+        FUN_00166120(pvStack_200);
       }
       if ((bStack_228 & 1) != 0) {
-        FUN_00166120(uStack_218);
+        FUN_00166120(pvStack_218);
       }
       if ((bStack_250 & 1) != 0) {
-        FUN_00166120(uStack_240);
+        FUN_00166120(pvStack_240);
       }
       iVar9 = 1;
     }

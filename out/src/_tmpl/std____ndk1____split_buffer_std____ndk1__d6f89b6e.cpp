@@ -70,7 +70,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>,std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -83,8 +83,8 @@ void std::__ndk1::
     func_0x00167a70();
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

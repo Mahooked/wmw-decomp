@@ -15,7 +15,7 @@ void Walaber::SkeletonActor::SoundActionData::~SoundActionData(undefined8 *param
   if ((*(byte *)(param_1 + 3) & 1) == 0) {
     return;
   }
-  FUN_00166120(param_1[5]);
+  FUN_00166120((void *)param_1[5]);
   return;
 }
 
@@ -32,7 +32,7 @@ void Walaber::SkeletonActor::SoundActionData::~SoundActionData(undefined8 *param
 {
   *param_1 = &PTR__SoundActionData_0070e4d8;
   if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    FUN_00166120(param_1[5]);
+    FUN_00166120((void *)param_1[5]);
   }
   FUN_00166120(param_1);
   return;

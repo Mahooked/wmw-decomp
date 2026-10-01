@@ -55,7 +55,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<WaterConcept::InteractiveObject::SpriteInfo,std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -68,12 +68,12 @@ void std::__ndk1::
     param_1[2] = lVar2 + -0x28;
     lVar3 = lVar2 + -0x28;
     if ((*(byte *)(lVar2 + -0x18) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -8));
+      FUN_00166120(*(void **)(lVar2 + -8));
       lVar3 = param_1[2];
     }
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

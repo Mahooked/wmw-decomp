@@ -11,16 +11,18 @@
 
 void std::__ndk1::
      vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::vector
-               (undefined8 *param_1,long param_2)
+               (ulong p0)
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  long in_x1;
+  
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (in_x1 != 0) {
                     /* try { // try from 0046cb54 to 0046cb63 has its CatchHandler @ 0046cb70 */
     func_0x001652b0();
-    func_0x00167e80(param_1,param_2);
+    func_0x00167e80(p0);
   }
   return;
 }
@@ -36,19 +38,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::
-     __vallocate(long *param_1,ulong param_2)
+     __vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x13b13b13b13b13c) {
-    lVar1 = FUN_00164060(param_2 * 0xd0);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0xd0;
+  if (in_x1 < 0x13b13b13b13b13c) {
+    lVar1 = FUN_00164060(in_x1 * 0xd0);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0xd0;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -63,12 +66,13 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::RibbonParticle<10>,std::__ndk1::allocator<Walaber::RibbonParticle<10>>>::
-     __construct_at_end(long param_1,long param_2)
+     __construct_at_end(ulong p0)
 
 {
+  long in_x1;
   undefined8 *puVar1;
   
-  puVar1 = *(undefined8 **)(param_1 + 8);
+  puVar1 = *(undefined8 **)(p0 + 8);
   do {
     puVar1[1] = 0;
     *puVar1 = 0;
@@ -90,10 +94,10 @@ void std::__ndk1::
     *(undefined4 *)((long)puVar1 + 0x74) = 10;
     FUN_0016b330(puVar1 + 0xf,0,0x54);
     *(undefined4 *)((long)puVar1 + 0xcc) = 1;
-    param_2 = param_2 + -1;
-    puVar1 = (undefined8 *)(*(long *)(param_1 + 8) + 0xd0);
-    *(undefined8 **)(param_1 + 8) = puVar1;
-  } while (param_2 != 0);
+    in_x1 = in_x1 + -1;
+    puVar1 = (undefined8 *)(*(long *)(p0 + 8) + 0xd0);
+    *(undefined8 **)(p0 + 8) = puVar1;
+  } while (in_x1 != 0);
   return;
 }
 

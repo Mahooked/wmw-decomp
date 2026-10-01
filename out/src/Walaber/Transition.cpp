@@ -40,7 +40,7 @@ void Walaber::Transition::~Transition(undefined8 *param_1)
 {
   *param_1 = &PTR_setup_00710ec8;
   if ((*(byte *)(param_1 + 0x13) & 1) != 0) {
-    FUN_00166120(param_1[0x15]);
+    FUN_00166120((void *)param_1[0x15]);
   }
   func_0x00168d60(param_1 + 1);
   return;
@@ -54,7 +54,7 @@ void Walaber::Transition::~Transition(undefined8 *param_1)
 
 /* Walaber::Transition::setup(float) */
 
-void Walaber::Transition::setup(void)
+void Walaber::Transition::setup(float p0)
 
 {
   return;
@@ -69,7 +69,7 @@ void Walaber::Transition::setup(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition::setup(float, Walaber::PropertyList const&) */
 
-void Walaber::Transition::setup(undefined8 *param_1,undefined8 param_2)
+void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
 
 {
   long lVar1;
@@ -77,143 +77,143 @@ void Walaber::Transition::setup(undefined8 *param_1,undefined8 param_2)
   ulong uVar3;
   undefined8 uVar4;
   ulong uVar5;
-  byte *pbVar6;
+  Walaber__PropertyList *pWVar6;
   undefined4 uVar7;
+  undefined4 in_register_00005004;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   undefined1 auStack_80 [8];
-  byte bStack_78;
-  undefined1 uStack_77;
-  undefined1 uStack_76;
-  undefined1 uStack_75;
+  Walaber__PropertyList WStack_78;
+  Walaber__PropertyList WStack_77;
+  Walaber__PropertyList WStack_76;
+  Walaber__PropertyList WStack_75;
   undefined4 uStack_74;
   ulong uStack_70;
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  (**(code **)*param_1)();
-  uVar3 = func_0x00173810(param_2,&tk_pauseLength);
+  (*(code *)**(undefined8 **)p1)(CONCAT44(in_register_00005004,p0));
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_pauseLength);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0xf) = uVar7;
+    *(undefined4 *)(p1 + 0x78) = uVar7;
   }
-  uVar3 = func_0x00173810(param_2,&tk_color);
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_color);
-    func_0x00169230(&bStack_78);
-    *(byte *)((long)param_1 + 0x7d) = bStack_78;
-    *(undefined1 *)((long)param_1 + 0x7e) = uStack_77;
-    *(undefined1 *)((long)param_1 + 0x7f) = uStack_76;
-    *(undefined1 *)(param_1 + 0x10) = uStack_75;
+    func_0x0016d4e0();
+    func_0x00169230(&WStack_78);
+    p1[0x7d] = WStack_78;
+    p1[0x7e] = WStack_77;
+    p1[0x7f] = WStack_76;
+    p1[0x80] = WStack_75;
   }
-  uVar3 = func_0x00173810(param_2,&tk_fontName);
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) == 0) goto LAB_003f44a8;
   uVar4 = func_0x0016d400();
-  func_0x0016d4e0(param_2,&tk_fontName);
+  func_0x0016d4e0();
   func_0x00162cf0(abStack_60);
                     /* try { // try from 003f4220 to 003f422b has its CatchHandler @ 003f44f0 */
   uVar4 = func_0x001694e0(uVar4,abStack_60);
-  param_1[0x12] = uVar4;
+  *(undefined8 *)(p1 + 0x90) = uVar4;
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
-  func_0x0016d4e0(param_2,&tk_fontText);
-  func_0x00162cf0(&bStack_78);
-  pbVar6 = (byte *)(param_1 + 0x13);
-  if ((*pbVar6 & 1) == 0) {
-    pbVar6[0] = 0;
-    pbVar6[1] = 0;
+  func_0x0016d4e0();
+  func_0x00162cf0(&WStack_78);
+  pWVar6 = p1 + 0x98;
+  if (((byte)*pWVar6 & 1) == 0) {
+    *(undefined2 *)pWVar6 = 0;
   }
   else {
-    *(undefined1 *)param_1[0x15] = 0;
-    param_1[0x14] = 0;
-    if ((*(byte *)(param_1 + 0x13) & 1) != 0) {
-      FUN_00166120(param_1[0x15]);
-      param_1[0x13] = 0;
+    **(undefined1 **)(p1 + 0xa8) = 0;
+    *(undefined8 *)(p1 + 0xa0) = 0;
+    if (((byte)p1[0x98] & 1) != 0) {
+      FUN_00166120(*(void **)(p1 + 0xa8));
+      *(undefined8 *)(p1 + 0x98) = 0;
     }
   }
-  param_1[0x15] = uStack_68;
-  param_1[0x14] = uStack_70;
-  *(ulong *)pbVar6 =
-       CONCAT44(uStack_74,CONCAT13(uStack_75,CONCAT12(uStack_76,CONCAT11(uStack_77,bStack_78))));
-  param_1[0x16] =
+  *(void **)(p1 + 0xa8) = pvStack_68;
+  *(ulong *)(p1 + 0xa0) = uStack_70;
+  *(ulong *)pWVar6 =
+       CONCAT44(uStack_74,CONCAT13(WStack_75,CONCAT12(WStack_76,CONCAT11(WStack_77,WStack_78))));
+  *(ulong *)(p1 + 0xb0) =
        CONCAT44((float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0,(float)_sScreenSize * 0.5 + 0.0);
-  uVar3 = func_0x00173810(param_2,&tk_fontPos);
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_fontPos);
+    func_0x0016d4e0();
     func_0x00166e60(auStack_80);
-    param_1[0x16] =
+    *(ulong *)(p1 + 0xb0) =
          CONCAT44(auStack_80._4_4_ * (float)((ulong)_sScreenSize >> 0x20) + 0.0,
                   auStack_80._0_4_ * (float)_sScreenSize + 0.0);
   }
-  *(undefined4 *)(param_1 + 0x17) = 0x3f800000;
-  uVar3 = func_0x00173810(param_2,&tk_fontScale);
+  *(undefined4 *)(p1 + 0xb8) = 0x3f800000;
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_fontScale);
+    func_0x0016d4e0();
     uVar7 = func_0x00168f30();
-    *(undefined4 *)(param_1 + 0x17) = uVar7;
+    *(undefined4 *)(p1 + 0xb8) = uVar7;
   }
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
-  uVar3 = func_0x00173810(param_2,&tk_fontJustification);
+  *(undefined4 *)(p1 + 0xbc) = 0;
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_fontJustification);
+    func_0x0016d4e0();
     func_0x00162cf0(abStack_98);
                     /* try { // try from 003f436c to 003f4377 has its CatchHandler @ 003f44dc */
-    func_0x00171fd0(&bStack_78,abStack_98);
+    func_0x00171fd0(&WStack_78,abStack_98);
     if ((abStack_98[0] & 1) != 0) {
-      FUN_00166120(uStack_88);
+      FUN_00166120(pvStack_88);
     }
-    uVar5 = (ulong)(bStack_78 >> 1);
+    uVar5 = (ulong)((byte)WStack_78 >> 1);
     uVar3 = uVar5;
-    if ((bStack_78 & 1) != 0) {
+    if (((byte)WStack_78 & 1) != 0) {
       uVar3 = uStack_70;
     }
     if (uVar3 == 4) {
                     /* try { // try from 003f43a4 to 003f43bf has its CatchHandler @ 003f44d8 */
-      iVar2 = func_0x001656c0(&bStack_78,0,0xffffffffffffffff,"left",4);
+      iVar2 = func_0x001656c0(&WStack_78,0,0xffffffffffffffff,"left",4);
       if (iVar2 != 0) {
-        uVar5 = (ulong)(bStack_78 >> 1);
+        uVar5 = (ulong)((byte)WStack_78 >> 1);
         goto LAB_003f43dc;
       }
       uVar7 = 2;
 LAB_003f4418:
-      *(undefined4 *)((long)param_1 + 0xbc) = uVar7;
+      *(undefined4 *)(p1 + 0xbc) = uVar7;
     }
     else {
 LAB_003f43dc:
-      if ((bStack_78 & 1) != 0) {
+      if (((byte)WStack_78 & 1) != 0) {
         uVar5 = uStack_70;
       }
                     /* try { // try from 003f43ec to 003f4407 has its CatchHandler @ 003f44d4 */
       if ((uVar5 == 5) &&
-         (iVar2 = func_0x001656c0(&bStack_78,0,0xffffffffffffffff,"right",5), iVar2 == 0)) {
+         (iVar2 = func_0x001656c0(&WStack_78,0,0xffffffffffffffff,"right",5), iVar2 == 0)) {
         uVar7 = 1;
         goto LAB_003f4418;
       }
     }
-    if ((bStack_78 & 1) != 0) {
-      FUN_00166120(uStack_68);
+    if (((byte)WStack_78 & 1) != 0) {
+      FUN_00166120(pvStack_68);
     }
   }
-  *(undefined4 *)((long)param_1 + 0x83) = 0;
-  *(undefined1 *)((long)param_1 + 0x87) = 0xff;
-  *(undefined1 *)(param_1 + 0x11) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x89) = 0xff;
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  *(undefined1 *)((long)param_1 + 0x8a) = 0xff;
-  uVar3 = func_0x00173810(param_2,&tk_fontColor);
+  *(undefined4 *)(p1 + 0x83) = 0;
+  p1[0x87] = (Walaber__PropertyList)0xff;
+  p1[0x88] = (Walaber__PropertyList)0xff;
+  p1[0x89] = (Walaber__PropertyList)0xff;
+  *(undefined4 *)(p1 + 0xc0) = 0;
+  p1[0x8a] = (Walaber__PropertyList)0xff;
+  uVar3 = func_0x00173810();
   if ((uVar3 & 1) != 0) {
-    func_0x0016d4e0(param_2,&tk_fontColor);
-    func_0x00169230(&bStack_78);
-    *(byte *)((long)param_1 + 0x87) = bStack_78;
-    *(undefined1 *)(param_1 + 0x11) = uStack_77;
-    *(undefined1 *)((long)param_1 + 0x89) = uStack_76;
-    *(undefined1 *)((long)param_1 + 0x8a) = uStack_75;
+    func_0x0016d4e0();
+    func_0x00169230(&WStack_78);
+    p1[0x87] = WStack_78;
+    p1[0x88] = WStack_77;
+    p1[0x89] = WStack_76;
+    p1[0x8a] = WStack_75;
   }
 LAB_003f44a8:
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -231,7 +231,7 @@ LAB_003f44a8:
 
 /* Walaber::Transition::update(float) */
 
-undefined8 Walaber::Transition::update(void)
+undefined8 Walaber::Transition::update(float p0)
 
 {
   return 4;
@@ -265,7 +265,7 @@ void Walaber::Transition::_drawFont(long param_1)
   long lVar1;
   long lVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -277,7 +277,7 @@ void Walaber::Transition::_drawFont(long param_1)
     func_0x0016daa0(0,*(undefined4 *)(param_1 + 0xb8),param_1 + 8,lVar2,abStack_50,param_1 + 0xb0,
                     param_1 + 0xc0,*(undefined4 *)(param_1 + 0xbc));
     if ((abStack_50[0] & 1) != 0) {
-      FUN_00166120(uStack_40);
+      FUN_00166120(pvStack_40);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {

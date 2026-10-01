@@ -42,7 +42,7 @@ void std::__ndk1::messages<wchar_t>::do_get(undefined8 param_1)
 
 /* std::__ndk1::messages<wchar_t>::do_close(long) const */
 
-void std::__ndk1::messages<wchar_t>::do_close(void)
+void std::__ndk1::messages<wchar_t>::do_close(long p0)
 
 {
   return;

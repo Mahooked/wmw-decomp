@@ -10,23 +10,22 @@
    const*&, char*, char*, char*&) const */
 
 void std::__ndk1::__codecvt_utf8<wchar_t>::do_out
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
+               (mbstate_t *p0,wchar_t *p1,wchar_t *p2,wchar_t **p3,char *p4,char *p5,char **p6)
 
 {
   long lVar1;
-  undefined8 uStack_48;
-  undefined8 uStack_40;
+  undefined8 *in_x7;
+  char *pcStack_48;
+  wchar_t *pwStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_48 = param_6;
-  uStack_40 = param_3;
-  func_0x005d9704(param_3,param_4,&uStack_40,param_6,param_7,&uStack_48,
-                  *(undefined8 *)(param_1 + 0x18),*(undefined4 *)(param_1 + 0x20));
-  *param_5 = uStack_40;
-  *param_8 = uStack_48;
+  pcStack_48 = p5;
+  pwStack_40 = p2;
+  func_0x005d9704(p2,p3,&pwStack_40,p5,p6,&pcStack_48,p0[3],p0[4].__count);
+  *(wchar_t **)p4 = pwStack_40;
+  *in_x7 = pcStack_48;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -44,23 +43,22 @@ void std::__ndk1::__codecvt_utf8<wchar_t>::do_out
    wchar_t*, wchar_t*, wchar_t*&) const */
 
 void std::__ndk1::__codecvt_utf8<wchar_t>::do_in
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
+               (mbstate_t *p0,char *p1,char *p2,char **p3,wchar_t *p4,wchar_t *p5,wchar_t **p6)
 
 {
   long lVar1;
-  undefined8 uStack_48;
-  undefined8 uStack_40;
+  undefined8 *in_x7;
+  wchar_t *pwStack_48;
+  char *pcStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_48 = param_6;
-  uStack_40 = param_3;
-  func_0x005d9930(param_3,param_4,&uStack_40,param_6,param_7,&uStack_48,
-                  *(undefined8 *)(param_1 + 0x18),*(undefined4 *)(param_1 + 0x20));
-  *param_5 = uStack_40;
-  *param_8 = uStack_48;
+  pwStack_48 = p5;
+  pcStack_40 = p2;
+  func_0x005d9930(p2,p3,&pcStack_40,p5,p6,&pwStack_48,p0[3],p0[4].__count);
+  *(char **)p4 = pcStack_40;
+  *in_x7 = pwStack_48;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -77,12 +75,12 @@ void std::__ndk1::__codecvt_utf8<wchar_t>::do_in
 /* std::__ndk1::__codecvt_utf8<wchar_t>::do_unshift(mbstate_t&, char*, char*, char*&) const */
 
 undefined8
-std::__ndk1::__codecvt_utf8<wchar_t>::do_unshift
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-          undefined8 *param_5)
+std::__ndk1::__codecvt_utf8<wchar_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
-  *param_5 = param_3;
+  undefined8 *in_x4;
+  
+  *in_x4 = p2;
   return 3;
 }
 
@@ -123,13 +121,10 @@ undefined8 std::__ndk1::__codecvt_utf8<wchar_t>::do_always_noconv(void)
 /* std::__ndk1::__codecvt_utf8<wchar_t>::do_length(mbstate_t&, char const*, char const*, unsigned
    long) const */
 
-void std::__ndk1::__codecvt_utf8<wchar_t>::do_length
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5)
+void std::__ndk1::__codecvt_utf8<wchar_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
-  func_0x005d9c08(param_3,param_4,param_5,*(undefined8 *)(param_1 + 0x18),
-                  *(undefined4 *)(param_1 + 0x20));
+  func_0x005d9c08(p2,p3);
   return;
 }
 
@@ -161,7 +156,7 @@ undefined4 std::__ndk1::__codecvt_utf8<wchar_t>::do_max_length(long param_1)
 
 /* std::__ndk1::__codecvt_utf8<wchar_t>::~__codecvt_utf8() */
 
-void std::__ndk1::__codecvt_utf8<wchar_t>::~__codecvt_utf8(undefined8 param_1)
+void std::__ndk1::__codecvt_utf8<wchar_t>::~__codecvt_utf8(void *param_1)
 
 {
   FUN_00163bf0();

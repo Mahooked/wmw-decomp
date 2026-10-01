@@ -25,7 +25,7 @@ void ndk::Mutex::~Mutex(undefined8 *param_1)
 
 /* ndk::Mutex::~Mutex() */
 
-void ndk::Mutex::~Mutex(undefined8 param_1)
+void ndk::Mutex::~Mutex(void *param_1)
 
 {
   func_0x0016be40();

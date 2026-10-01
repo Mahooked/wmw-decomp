@@ -47,7 +47,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   undefined1 uStack_60;
   undefined4 uStack_5f;
   undefined3 uStack_5b;
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined1 auStack_50 [24];
   long lStack_38;
   
@@ -55,7 +55,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   lStack_38 = *(long *)(lVar1 + 0x28);
   func_0x0016b220(auStack_50);
   uStack_5b = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   bStack_68 = 0x10;
   uStack_67 = 0x65745f74696e69;
   uStack_60 = 0x78;
@@ -66,11 +66,11 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   func_0x00165260(auStack_50,&bStack_68,&puStack_88);
   func_0x00167bf0(&puStack_88);
   if ((bStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   uStack_5b = 0;
   bStack_68 = 0x16;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   uStack_5f = 0x726566;
   uStack_67 = 0x75625f7065656b;
   uStack_60 = 0x66;
@@ -80,7 +80,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   func_0x00165260(auStack_50,&bStack_68,&puStack_88);
   func_0x00167bf0(&puStack_88);
   if ((bStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
                     /* try { // try from 00397bdc to 00397c1b has its CatchHandler @ 00397d20 */
   puVar2 = (undefined8 *)FUN_00164060(0x28);
@@ -156,7 +156,7 @@ void Walaber::Texture2D::_getData(undefined8 *param_1,long *param_2)
   undefined1 uStack_60;
   undefined4 uStack_5f;
   undefined3 uStack_5b;
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined1 auStack_50 [24];
   long lStack_38;
   
@@ -179,7 +179,7 @@ void Walaber::Texture2D::_getData(undefined8 *param_1,long *param_2)
     func_0x0016aa60(param_1 + 0x18,param_2);
     func_0x0016b220(auStack_50);
     uStack_5b = 0;
-    uStack_58 = 0;
+    pvStack_58 = (void *)0x0;
     bStack_68 = 0x10;
     uStack_67 = 0x65745f74696e69;
     uStack_60 = 0x78;
@@ -190,11 +190,11 @@ void Walaber::Texture2D::_getData(undefined8 *param_1,long *param_2)
     func_0x00165260(auStack_50,&bStack_68,&puStack_88);
     func_0x00167bf0(&puStack_88);
     if ((bStack_68 & 1) != 0) {
-      FUN_00166120(uStack_58);
+      FUN_00166120(pvStack_58);
     }
     uStack_5b = 0;
     bStack_68 = 0x16;
-    uStack_58 = 0;
+    pvStack_58 = (void *)0x0;
     uStack_5f = 0x726566;
     uStack_67 = 0x75625f7065656b;
     uStack_60 = 0x66;
@@ -204,7 +204,7 @@ void Walaber::Texture2D::_getData(undefined8 *param_1,long *param_2)
     func_0x00165260(auStack_50,&bStack_68,&puStack_88);
     func_0x00167bf0(&puStack_88);
     if ((bStack_68 & 1) != 0) {
-      FUN_00166120(uStack_58);
+      FUN_00166120(pvStack_58);
     }
                     /* try { // try from 00397ee4 to 00397f23 has its CatchHandler @ 00398090 */
     puVar2 = (undefined8 *)FUN_00164060(0x28);
@@ -278,46 +278,53 @@ void Walaber::Texture2D::_getData(undefined8 *param_1,long *param_2)
 
 /* Walaber::Texture2D::_fileLoaded(void*) */
 
-void Walaber::Texture2D::_fileLoaded(long *param_1,int *param_2)
+void Walaber::Texture2D::_fileLoaded(void *p0)
 
 {
   byte *pbVar1;
   long lVar2;
   bool bVar3;
-  undefined8 *puVar4;
-  bool bVar5;
-  int iVar6;
-  int *piVar7;
-  ulong uVar8;
-  undefined8 *puVar9;
-  long lVar10;
-  undefined4 uVar11;
-  long lVar12;
-  long *plVar13;
-  long lVar14;
-  ulong uVar15;
-  byte *pbVar16;
-  long *plVar17;
-  undefined8 *puVar18;
-  byte bVar19;
+  undefined8 *p0_00;
+  bool bVar4;
+  int iVar5;
+  int *piVar6;
+  ulong uVar7;
+  undefined8 *puVar8;
+  long lVar9;
+  int *in_x1;
+  ulong p1;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  undefined4 uVar10;
+  long lVar11;
+  long *plVar12;
+  long lVar13;
+  ulong uVar14;
+  byte *pbVar15;
+  long *plVar16;
+  undefined8 *puVar17;
+  byte bVar18;
+  byte bVar23;
   byte bVar24;
+  float fVar19;
+  uint uVar20;
   byte bVar25;
-  float fVar20;
-  uint uVar21;
   byte bVar26;
+  int iVar21;
   byte bVar27;
-  int iVar22;
-  byte bVar28;
+  byte bVar30;
   byte bVar31;
+  uint uVar28;
   byte bVar32;
-  uint uVar29;
   byte bVar33;
-  byte bVar34;
-  int iVar30;
-  undefined8 uVar23;
-  undefined8 uVar35;
+  int iVar29;
+  undefined8 uVar22;
+  undefined8 uVar34;
+  uint uVar35;
   uint uVar36;
-  uint uVar37;
+  undefined1 auVar37 [16];
+  undefined1 auVar38 [16];
+  undefined1 auVar39 [16];
   long lStack_130;
   int *piStack_128;
   undefined1 uStack_120;
@@ -341,9 +348,8 @@ void Walaber::Texture2D::_fileLoaded(long *param_1,int *param_2)
   int *piStack_c0;
   ulong *puStack_b8;
   ulong uStack_b0;
-  undefined8 uStack_a8;
-  uint uStack_a0;
-  undefined4 uStack_9c;
+  void *pvStack_a8;
+  undefined8 uStack_a0;
   undefined1 uStack_98;
   undefined4 uStack_97;
   undefined3 uStack_93;
@@ -351,46 +357,46 @@ void Walaber::Texture2D::_fileLoaded(long *param_1,int *param_2)
   undefined4 uStack_88;
   
   lVar2 = tpidr_el0;
-  lVar12 = *(long *)(lVar2 + 0x28);
-  pbVar16 = (byte *)(param_1 + 1);
-  if ((*pbVar16 & 1) == 0) {
-    lVar14 = (long)param_1 + 9;
+  lVar11 = *(long *)(lVar2 + 0x28);
+  pbVar15 = (byte *)((long)p0 + 8);
+  if ((*pbVar15 & 1) == 0) {
+    lVar13 = (long)p0 + 9;
   }
   else {
-    lVar14 = param_1[3];
+    lVar13 = *(long *)((long)p0 + 0x18);
   }
-  FUN_00166450("Walaber",1,"texture file loaded (%s)\n",lVar14);
-  if (*param_2 != 1) {
-    lVar14 = func_0x001722d0();
-    if (((*(int *)(lVar14 + 0x1c) == 0x800) && (*(int *)(lVar14 + 0x20) == 0x2000)) &&
-       (uVar8 = func_0x00173810(*(undefined8 *)(param_2 + 0x18),&TEXTURE_SCALE_KEY),
-       (uVar8 & 1) == 0)) {
-      puVar9 = *(undefined8 **)(param_2 + 0x18);
+  FUN_00166450("Walaber",1,"texture file loaded (%s)\n",lVar13);
+  if (*in_x1 != 1) {
+    lVar13 = func_0x001722d0();
+    if (((*(int *)(lVar13 + 0x1c) == 0x800) && (*(int *)(lVar13 + 0x20) == 0x2000)) &&
+       (uVar7 = func_0x00173810(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY), (uVar7 & 1) == 0)
+       ) {
+      puVar17 = *(undefined8 **)(in_x1 + 0x18);
       uStack_b0 = 0;
-      uStack_a8 = 0;
-      plVar17 = (long *)*puVar9;
+      pvStack_a8 = (void *)0x0;
+      plVar16 = (long *)*puVar17;
       puStack_b8 = &uStack_b0;
-      while (plVar17 != puVar9 + 1) {
+      while (plVar16 != puVar17 + 1) {
                     /* try { // try from 003981c8 to 003981d7 has its CatchHandler @ 00398cb4 */
-        func_0x0016d3f0(&puStack_b8,&uStack_b0,plVar17 + 4,plVar17 + 4);
-        plVar13 = (long *)plVar17[1];
-        if ((long *)plVar17[1] == (long *)0x0) {
-          plVar13 = plVar17 + 2;
-          bVar5 = *(long **)*plVar13 != plVar17;
-          plVar17 = (long *)*plVar13;
-          if (bVar5) {
+        func_0x0016d3f0(&puStack_b8,&uStack_b0,plVar16 + 4,plVar16 + 4);
+        plVar12 = (long *)plVar16[1];
+        if ((long *)plVar16[1] == (long *)0x0) {
+          plVar12 = plVar16 + 2;
+          bVar4 = *(long **)*plVar12 != plVar16;
+          plVar16 = (long *)*plVar12;
+          if (bVar4) {
             do {
-              lVar14 = *plVar13;
-              plVar13 = (long *)(lVar14 + 0x10);
-              plVar17 = (long *)*plVar13;
-            } while (*plVar17 != lVar14);
+              lVar13 = *plVar12;
+              plVar12 = (long *)(lVar13 + 0x10);
+              plVar16 = (long *)*plVar12;
+            } while (*plVar16 != lVar13);
           }
         }
         else {
           do {
-            plVar17 = plVar13;
-            plVar13 = (long *)*plVar17;
-          } while ((long *)*plVar17 != (long *)0x0);
+            plVar16 = plVar12;
+            plVar12 = (long *)*plVar16;
+          } while ((long *)*plVar16 != (long *)0x0);
         }
       }
                     /* try { // try from 0039822c to 00398237 has its CatchHandler @ 00398c24 */
@@ -399,419 +405,422 @@ void Walaber::Texture2D::_fileLoaded(long *param_1,int *param_2)
       func_0x00165260(&puStack_b8,&TEXTURE_SCALE_KEY,&uStack_a0);
       func_0x00167bf0(&uStack_a0);
                     /* try { // try from 00398254 to 00398267 has its CatchHandler @ 00398c54 */
-      uVar23 = func_0x001722d0();
-      func_0x00161bd0(&uStack_a0,uVar23,param_2 + 2,1);
+      uVar22 = func_0x001722d0();
+      func_0x00161bd0(&uStack_a0,uVar22,in_x1 + 2,1);
                     /* try { // try from 00398268 to 003982a7 has its CatchHandler @ 00398c3c */
-      puVar9 = (undefined8 *)FUN_00164060(0x28);
-      puVar9[2] = param_1;
-      *puVar9 = &PTR__Callback_00710308;
-      puVar9[1] = 0;
-      puVar9[4] = 0;
-      puVar9[3] = _fileLoaded;
-      puStack_c8 = puVar9;
-      piVar7 = (int *)FUN_00164060(4);
-      *piVar7 = 3;
-      puStack_110 = puVar9;
-      piStack_108 = piVar7;
-      puStack_e8 = puVar9;
-      piStack_e0 = piVar7;
-      piStack_c0 = piVar7;
+      puVar17 = (undefined8 *)FUN_00164060(0x28);
+      puVar17[2] = p0;
+      *puVar17 = &PTR__Callback_00710308;
+      puVar17[1] = 0;
+      puVar17[4] = 0;
+      puVar17[3] = _fileLoaded;
+      puStack_c8 = puVar17;
+      piVar6 = (int *)FUN_00164060(4);
+      *piVar6 = 3;
+      puStack_110 = puVar17;
+      piStack_108 = piVar6;
+      puStack_e8 = puVar17;
+      piStack_e0 = piVar6;
+      piStack_c0 = piVar6;
       FUN_0016bb90(&puStack_110);
-      *piVar7 = *piVar7 + 1;
-      puStack_d8 = puVar9;
-      piStack_d0 = piVar7;
+      *piVar6 = *piVar6 + 1;
+      puStack_d8 = puVar17;
+      piStack_d0 = piVar6;
       FUN_0016bb90(&puStack_e8);
                     /* try { // try from 003982e0 to 003982e3 has its CatchHandler @ 00398bfc */
-      uVar23 = func_0x00162510();
+      uVar22 = func_0x00162510();
       puStack_f8 = puStack_d8;
       piStack_f0 = piStack_d0;
       if (puStack_d8 != (undefined8 *)0x0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
                     /* try { // try from 003982fc to 0039830f has its CatchHandler @ 00398bec */
-      func_0x00171410(uVar23,&uStack_a0,&puStack_f8,&puStack_b8,1);
+      func_0x00171410(uVar22,&uStack_a0,&puStack_f8,&puStack_b8,1);
       FUN_0016bb90(&puStack_f8);
       FUN_0016bb90(&puStack_d8);
       func_0x0016da00(&puStack_c8);
-      if ((uStack_a0 & 1) != 0) {
+      if (((uint)uStack_a0 & 1) != 0) {
         FUN_00166120(piStack_90);
       }
       func_0x00164ba0(&puStack_b8);
     }
-    func_0x00162230(param_1,param_2 + 2);
+    func_0x00162230(p0,in_x1 + 2);
     goto LAB_00398b90;
   }
-  pbVar1 = (byte *)(param_2 + 2);
+  pbVar1 = (byte *)(in_x1 + 2);
   func_0x001714f0(&puStack_b8,pbVar1);
-  uVar15 = (ulong)((byte)puStack_b8 >> 1);
-  uVar8 = uVar15;
+  uVar14 = (ulong)((byte)puStack_b8 >> 1);
+  uVar7 = uVar14;
   if (((ulong)puStack_b8 & 1) != 0) {
-    uVar8 = uStack_b0;
+    uVar7 = uStack_b0;
   }
-  if (uVar8 == 7) {
+  if (uVar7 == 7) {
                     /* try { // try from 00398144 to 0039815f has its CatchHandler @ 00398c78 */
-    iVar6 = func_0x001656c0(&puStack_b8,0,0xffffffffffffffff,".waltex",7);
-    if (iVar6 != 0) {
-      uVar15 = (ulong)((byte)puStack_b8 >> 1);
+    iVar5 = func_0x001656c0(&puStack_b8,0,0xffffffffffffffff,".waltex",7);
+    if (iVar5 != 0) {
+      uVar14 = (ulong)((byte)puStack_b8 >> 1);
       goto LAB_00398354;
     }
-    uVar11 = 2;
+    uVar10 = 2;
 LAB_00398390:
-    *(undefined4 *)((long)param_1 + 0xe4) = uVar11;
+    *(undefined4 *)((long)p0 + 0xe4) = uVar10;
   }
   else {
 LAB_00398354:
     if (((byte)puStack_b8 & 1) != 0) {
-      uVar15 = uStack_b0;
+      uVar14 = uStack_b0;
     }
                     /* try { // try from 00398364 to 0039837f has its CatchHandler @ 00398c70 */
-    if ((uVar15 == 5) &&
-       (iVar6 = func_0x001656c0(&puStack_b8,0,0xffffffffffffffff,".webp",5), iVar6 == 0)) {
-      uVar11 = 3;
+    if ((uVar14 == 5) &&
+       (iVar5 = func_0x001656c0(&puStack_b8,0,0xffffffffffffffff,".webp",5), iVar5 == 0)) {
+      uVar10 = 3;
       goto LAB_00398390;
     }
   }
                     /* try { // try from 00398398 to 003983bf has its CatchHandler @ 00398c7c */
-  uVar8 = func_0x00173810(*(undefined8 *)(param_2 + 0x18),&TEXTURE_SCALE_KEY);
-  if (((uVar8 & 1) != 0) && (*(int *)((long)param_1 + 0xe4) != 3)) {
-    func_0x00162230(param_1,pbVar1);
+  uVar7 = func_0x00173810(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+  if (((uVar7 & 1) != 0) && (*(int *)((long)p0 + 0xe4) != 3)) {
+    func_0x00162230(p0,pbVar1);
   }
   uStack_93 = 0;
-  piStack_90 = (int *)0x0;
-  uStack_a0 = 0x696e6910;
-  uStack_9c = 0x65745f74;
+  piStack_90 = (void *)0x0;
+  uStack_a0._0_4_ = 0x696e6910;
+  uStack_a0._4_4_ = 0x65745f74;
   uStack_98 = 0x78;
   uStack_97 = 0;
                     /* try { // try from 003983f0 to 003983fb has its CatchHandler @ 00398c8c */
-  func_0x0016d4e0(*(undefined8 *)(param_2 + 0x18),&uStack_a0);
-  iVar6 = func_0x00166a80();
-  if ((uStack_a0 & 1) != 0) {
+  func_0x0016d4e0(*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
+  iVar5 = func_0x00166a80();
+  if (((uint)uStack_a0 & 1) != 0) {
     FUN_00166120(piStack_90);
   }
   uStack_93 = 0;
   piStack_90 = (int *)0x0;
   uStack_97 = 0x726566;
-  uStack_a0 = 0x65656b16;
-  uStack_9c = 0x75625f70;
+  uStack_a0._0_4_ = 0x65656b16;
+  uStack_a0._4_4_ = 0x75625f70;
   uStack_98 = 0x66;
                     /* try { // try from 00398440 to 0039844b has its CatchHandler @ 00398c88 */
-  func_0x0016d4e0(*(undefined8 *)(param_2 + 0x18),&uStack_a0);
-  puVar9 = (undefined8 *)func_0x00166a80();
-  iVar30 = (int)puVar9;
-  bVar5 = iVar30 == 1;
-  if ((uStack_a0 & 1) != 0) {
-    puVar9 = (undefined8 *)FUN_00166120(piStack_90);
+  func_0x0016d4e0(*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
+  auVar37 = func_0x00166a80();
+  iVar29 = auVar37._0_4_;
+  bVar4 = iVar29 == 1;
+  if (((uint)uStack_a0 & 1) != 0) {
+    auVar37 = FUN_00166120(piStack_90);
   }
-  if (*(int *)((long)param_1 + 0x34) == 0) {
-    if ((*(int *)((long)param_1 + 0xe4) == 1) && (iVar30 == 1)) goto LAB_00398490;
+  if (*(int *)((long)p0 + 0x34) == 0) {
+    if ((*(int *)((long)p0 + 0xe4) == 1) && (iVar29 == 1)) goto LAB_00398490;
   }
   else {
-    if (iVar30 == 1) {
+    if (iVar29 == 1) {
 LAB_00398490:
-      puVar9 = (undefined8 *)
-               FUN_00166b60(
-                           "ERROR!  cannot keep buffer on image with colorspace that is not R8G8B8A8!"
-                           );
+      auVar37 = FUN_00166b60(
+                            "ERROR!  cannot keep buffer on image with colorspace that is not R8G8B8A8!"
+                            );
     }
-    bVar5 = false;
+    bVar4 = false;
   }
   puStack_110 = (undefined8 *)0x0;
   uStack_100 = 0;
   piStack_108 = (int *)0x100000000;
-  iVar30 = *(int *)((long)param_1 + 0xe4);
-  lVar14 = (long)&uStack_100 + 4;
-  if (iVar30 == 3) {
+  iVar29 = *(int *)((long)p0 + 0xe4);
+  lVar13 = (long)&uStack_100 + 4;
+  if (iVar29 == 3) {
                     /* try { // try from 00398554 to 0039855b has its CatchHandler @ 00398c64 */
-    puVar18 = (undefined8 *)FUN_00164060(0xf0);
+    puVar17 = (undefined8 *)FUN_00164060(0xf0);
                     /* try { // try from 00398560 to 00398583 has its CatchHandler @ 00398c74 */
-    func_0x0016da20(puVar18,0x200);
-    *(undefined4 *)(puVar18 + 5) = 1;
+    func_0x0016da20(puVar17,0x200);
+    *(undefined4 *)(puVar17 + 5) = 1;
     piStack_108 = (int *)((ulong)piStack_108 & 0xffffffff00000000);
-    uVar8 = func_0x00173810(*(undefined8 *)(param_2 + 0x18),&TEXTURE_SCALE_KEY);
-    if ((uVar8 & 1) != 0) {
+    uVar7 = func_0x00173810(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+    if ((uVar7 & 1) != 0) {
                     /* try { // try from 0039858c to 00398597 has its CatchHandler @ 00398be8 */
-      FUN_001654c0(*(undefined8 *)(param_2 + 8),*(undefined8 *)(param_2 + 10),&uStack_100,lVar14);
+      FUN_001654c0(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),&uStack_100,lVar13);
                     /* try { // try from 0039859c to 003985ab has its CatchHandler @ 00398c38 */
-      func_0x00167060(*(undefined8 *)(param_2 + 0x18),&TEXTURE_SCALE_KEY);
-      fVar20 = (float)func_0x00168f30();
-      *(undefined4 *)((long)puVar18 + 0xbc) = 1;
-      uVar23 = NEON_rev64(uStack_100,4);
-      uVar23 = NEON_scvtf(uVar23,4);
-      uStack_100 = CONCAT44((int)((float)((ulong)uVar23 >> 0x20) * fVar20),
-                            (int)((float)uVar23 * fVar20));
-      puVar18[0x18] = uStack_100;
+      func_0x00167060(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+      fVar19 = (float)func_0x00168f30();
+      *(undefined4 *)((long)puVar17 + 0xbc) = 1;
+      uVar22 = NEON_rev64(uStack_100,4);
+      uVar22 = NEON_scvtf(uVar22,4);
+      uStack_100 = CONCAT44((int)((float)((ulong)uVar22 >> 0x20) * fVar19),
+                            (int)((float)uVar22 * fVar19));
+      puVar17[0x18] = uStack_100;
     }
                     /* try { // try from 003985d4 to 003985db has its CatchHandler @ 00398c34 */
-    func_0x00162b10(*(undefined8 *)(param_2 + 8),*(undefined8 *)(param_2 + 10),puVar18);
-    puStack_110 = (undefined8 *)puVar18[7];
+    func_0x00162b10(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),puVar17);
+    puStack_110 = (undefined8 *)puVar17[7];
     if (uStack_100._4_4_ == 0 && (int)uStack_100 == 0) {
-      uStack_100 = *puVar18;
+      uStack_100 = *puVar17;
     }
-    puVar9 = (undefined8 *)0x0;
-    if (*(long *)(param_2 + 8) != 0) {
-      puVar9 = (undefined8 *)FUN_001639e0();
+    auVar37._8_8_ = 0;
+    auVar37._0_8_ = p1;
+    auVar37 = auVar37 << 0x40;
+    if (*(void **)(in_x1 + 8) != (void *)0x0) {
+      auVar37 = FUN_001639e0(*(void **)(in_x1 + 8),p1);
     }
 LAB_00398608:
+    puVar8 = auVar37._0_8_;
+    auVar38._8_8_ = auVar37._8_8_;
+    auVar38._0_8_ = puStack_110;
     if (puStack_110 != (undefined8 *)0x0) goto LAB_00398610;
 LAB_00398660:
-    iVar6 = *(int *)((long)param_1 + 0xe4);
-    if (iVar6 == 1) {
+    iVar5 = *(int *)((long)p0 + 0xe4);
+    if (iVar5 == 1) {
       if ((*pbVar1 & 1) == 0) {
-        lVar14 = (long)param_2 + 9;
+        lVar13 = (long)in_x1 + 9;
       }
       else {
-        lVar14 = *(long *)(param_2 + 6);
+        lVar13 = *(long *)(in_x1 + 6);
       }
-      FUN_00166450("Walaber",4,"error loading compressed image! --> filename:%s\n",lVar14);
+      FUN_00166450("Walaber",4,"error loading compressed image! --> filename:%s\n",lVar13);
     }
-    else if (iVar6 == 0) {
+    else if (iVar5 == 0) {
                     /* try { // try from 00398670 to 00398673 has its CatchHandler @ 00398c80 */
-      uVar23 = func_0x0016a5e0();
+      uVar22 = func_0x0016a5e0();
       if ((*pbVar1 & 1) == 0) {
-        lVar14 = (long)param_2 + 9;
+        lVar13 = (long)in_x1 + 9;
       }
       else {
-        lVar14 = *(long *)(param_2 + 6);
+        lVar13 = *(long *)(in_x1 + 6);
       }
-      FUN_00166450("Walaber",4,"error loading image!  reason: %s\n  --> filename:%s\n",uVar23,lVar14
+      FUN_00166450("Walaber",4,"error loading image!  reason: %s\n  --> filename:%s\n",uVar22,lVar13
                   );
     }
     else {
       if ((*pbVar1 & 1) == 0) {
-        lVar14 = (long)param_2 + 9;
+        lVar13 = (long)in_x1 + 9;
       }
       else {
-        lVar14 = *(long *)(param_2 + 6);
+        lVar13 = *(long *)(in_x1 + 6);
       }
-      if (iVar6 == 3) {
-        FUN_00166450("Walaber",4,"error loading webp image! --> filename:%s\n",lVar14);
+      if (iVar5 == 3) {
+        FUN_00166450("Walaber",4,"error loading webp image! --> filename:%s\n",lVar13);
       }
       else {
-        FUN_00166450("Walaber",4,"error loading walaber raw texture --> filename:%s\n",lVar14);
+        FUN_00166450("Walaber",4,"error loading walaber raw texture --> filename:%s\n",lVar13);
       }
     }
   }
   else {
-    if (iVar30 == 2) {
-      uStack_a0 = 0;
+    if (iVar29 == 2) {
+      uStack_a0._0_4_ = 0;
                     /* try { // try from 00398518 to 00398527 has its CatchHandler @ 00398c68 */
-      puVar9 = (undefined8 *)
-               func_0x00173a40(*(undefined8 *)(param_2 + 8),param_2[10],&uStack_100,lVar14,
-                               &uStack_a0);
-      puStack_110 = puVar9;
-      if (*(uint *)((long)param_1 + 0x34) != uStack_a0) {
-        *(uint *)((long)param_1 + 0x34) = uStack_a0;
-        *(undefined1 *)(param_1 + 4) = 1;
+      auVar37 = func_0x00173a40(*(undefined8 *)(in_x1 + 8),in_x1[10],&uStack_100,lVar13,&uStack_a0);
+      puStack_110 = auVar37._0_8_;
+      if (*(uint *)((long)p0 + 0x34) != (uint)uStack_a0) {
+        *(uint *)((long)p0 + 0x34) = (uint)uStack_a0;
+        *(undefined1 *)((long)p0 + 0x20) = 1;
       }
 LAB_00398548:
-      puVar18 = (undefined8 *)0x0;
+      puVar17 = (undefined8 *)0x0;
       goto LAB_00398608;
     }
-    if (iVar30 != 0) goto LAB_00398548;
+    if (iVar29 != 0) goto LAB_00398548;
                     /* try { // try from 003984dc to 003984ef has its CatchHandler @ 00398c80 */
-    puStack_110 = (undefined8 *)
-                  func_0x00163ba0(*(undefined8 *)(param_2 + 8),param_2[10],&uStack_100,lVar14,
-                                  &puStack_c8,4);
+    auVar38 = func_0x00163ba0(*(undefined8 *)(in_x1 + 8),in_x1[10],&uStack_100,lVar13,&puStack_c8,4)
+    ;
+    puStack_110 = auVar38._0_8_;
     piStack_108 = (int *)((ulong)piStack_108 & 0xffffffff00000000);
-    if (*(long *)(param_2 + 8) != 0) {
-      puVar9 = (undefined8 *)FUN_001639e0();
+    if (*(void **)(in_x1 + 8) != (void *)0x0) {
+      auVar37 = FUN_001639e0(*(void **)(in_x1 + 8),auVar38._8_8_);
       goto LAB_00398548;
     }
-    puVar18 = (undefined8 *)0x0;
-    puVar9 = (undefined8 *)0x0;
+    puVar17 = (undefined8 *)0x0;
+    puVar8 = (undefined8 *)0x0;
     if (puStack_110 == (undefined8 *)0x0) goto LAB_00398660;
 LAB_00398610:
-    uVar23 = uStack_100;
-    puVar4 = puStack_110;
-    if (*(int *)((long)param_1 + 0xe4) == 3) {
-      if (*(char *)((long)param_1 + 0x24) == '\0') {
-        uVar11 = 0;
-        if ((char)param_1[0xc] != '\0') {
-          uVar11 = 2;
+    uVar22 = uStack_100;
+    puStack_110 = auVar38._0_8_;
+    p0_00 = puStack_110;
+    if (*(int *)((long)p0 + 0xe4) == 3) {
+      if (*(char *)((long)p0 + 0x24) == '\0') {
+        uVar10 = 0;
+        if (*(char *)((long)p0 + 0x60) != '\0') {
+          uVar10 = 2;
         }
       }
       else {
-        uVar11 = 1;
+        uVar10 = 1;
       }
-      uStack_120 = *(undefined1 *)((long)param_1 + 0x2c);
-      uStack_11f = *(undefined1 *)((long)param_1 + 0x2d);
-      uStack_11e = *(undefined1 *)((long)param_1 + 0x2e);
-      uStack_11d = *(undefined1 *)((long)param_1 + 0x2f);
+      uStack_120 = *(undefined1 *)((long)p0 + 0x2c);
+      uStack_11f = *(undefined1 *)((long)p0 + 0x2d);
+      uStack_11e = *(undefined1 *)((long)p0 + 0x2e);
+      uStack_11d = *(undefined1 *)((long)p0 + 0x2f);
                     /* try { // try from 00398760 to 0039876f has its CatchHandler @ 00398c30 */
-      puVar9 = (undefined8 *)
-               func_0x0016d940((int)param_1[5],(int)param_1[6],*(undefined4 *)((long)param_1 + 100),
-                               (int)param_1[0xd],*(undefined4 *)((long)param_1 + 0x6c),
-                               (int)param_1[0xe],*(undefined4 *)((long)param_1 + 0x74),&puStack_110,
-                               *(undefined4 *)((long)param_1 + 0x34),0,uVar11,
-                               *(byte *)((long)param_1 + 0x23) ^ 1,&uStack_120);
-      puStack_110 = puVar9;
-      if (puVar9 == puVar4) goto LAB_0039878c;
-      puVar9 = (undefined8 *)FUN_00167af0(puVar4);
+      auVar38 = func_0x0016d940(*(undefined4 *)((long)p0 + 0x28),*(undefined4 *)((long)p0 + 0x30),
+                                *(undefined4 *)((long)p0 + 100),*(undefined4 *)((long)p0 + 0x68),
+                                *(undefined4 *)((long)p0 + 0x6c),*(undefined4 *)((long)p0 + 0x70),
+                                *(undefined4 *)((long)p0 + 0x74),&puStack_110,
+                                *(undefined4 *)((long)p0 + 0x34),0,uVar10,
+                                *(byte *)((long)p0 + 0x23) ^ 1,&uStack_120);
+      puVar8 = auVar38._0_8_;
+      if (puVar8 == p0_00) goto LAB_0039878c;
+      puStack_110 = puVar8;
+      auVar39 = FUN_00167af0(p0_00);
 LAB_00398784:
       bVar3 = true;
     }
     else {
-      if (*(int *)((long)param_1 + 0xe4) == 0) {
-        if (*(char *)((long)param_1 + 0x24) == '\0') {
-          uVar11 = 0;
-          if ((char)param_1[0xc] != '\0') {
-            uVar11 = 2;
+      if (*(int *)((long)p0 + 0xe4) == 0) {
+        if (*(char *)((long)p0 + 0x24) == '\0') {
+          uVar10 = 0;
+          if (*(char *)((long)p0 + 0x60) != '\0') {
+            uVar10 = 2;
           }
         }
         else {
-          uVar11 = 1;
+          uVar10 = 1;
         }
-        uStack_118 = *(undefined1 *)((long)param_1 + 0x2c);
-        uStack_117 = *(undefined1 *)((long)param_1 + 0x2d);
-        uStack_116 = *(undefined1 *)((long)param_1 + 0x2e);
-        uStack_115 = *(undefined1 *)((long)param_1 + 0x2f);
+        uStack_118 = *(undefined1 *)((long)p0 + 0x2c);
+        uStack_117 = *(undefined1 *)((long)p0 + 0x2d);
+        uStack_116 = *(undefined1 *)((long)p0 + 0x2e);
+        uStack_115 = *(undefined1 *)((long)p0 + 0x2f);
                     /* try { // try from 003986f0 to 00398713 has its CatchHandler @ 00398c6c */
-        puVar9 = (undefined8 *)
-                 func_0x0016d940((int)param_1[5],(int)param_1[6],
-                                 *(undefined4 *)((long)param_1 + 100),(int)param_1[0xd],
-                                 *(undefined4 *)((long)param_1 + 0x6c),(int)param_1[0xe],
-                                 *(undefined4 *)((long)param_1 + 0x74),&puStack_110,
-                                 *(undefined4 *)((long)param_1 + 0x34),0,uVar11,
-                                 *(byte *)((long)param_1 + 0x23) ^ 1,&uStack_118);
-        puStack_110 = puVar9;
-        if (puVar9 != puVar4) {
-          puVar9 = (undefined8 *)func_0x00169920(puVar4);
+        auVar38 = func_0x0016d940(*(undefined4 *)((long)p0 + 0x28),*(undefined4 *)((long)p0 + 0x30),
+                                  *(undefined4 *)((long)p0 + 100),*(undefined4 *)((long)p0 + 0x68),
+                                  *(undefined4 *)((long)p0 + 0x6c),*(undefined4 *)((long)p0 + 0x70),
+                                  *(undefined4 *)((long)p0 + 0x74),&puStack_110,
+                                  *(undefined4 *)((long)p0 + 0x34),0,uVar10,
+                                  *(byte *)((long)p0 + 0x23) ^ 1,&uStack_118);
+        puVar8 = auVar38._0_8_;
+        if (puVar8 != p0_00) {
+          puStack_110 = puVar8;
+          auVar39 = func_0x00169920(p0_00);
           goto LAB_00398784;
         }
       }
 LAB_0039878c:
+      auVar39._8_8_ = auVar38._8_8_;
+      auVar39._0_8_ = puVar8;
+      puStack_110 = auVar38._0_8_;
       bVar3 = false;
     }
-    uVar21 = (int)uVar23 - 1;
-    uVar29 = (int)((ulong)uVar23 >> 0x20) - 1;
-    uVar36 = uVar21 >> 1;
-    uVar37 = uVar29 >> 1;
-    bVar19 = (byte)uVar36 | (byte)uVar21;
-    bVar24 = (byte)(uVar36 >> 8) | (byte)(uVar21 >> 8);
-    bVar25 = (byte)(uVar36 >> 0x10) | (byte)(uVar21 >> 0x10);
-    bVar27 = (byte)(uVar21 >> 0x18);
-    bVar27 = bVar27 >> 1 | bVar27;
-    uVar21 = CONCAT13(bVar27,CONCAT12(bVar25,CONCAT11(bVar24,bVar19)));
-    bVar28 = (byte)uVar37 | (byte)uVar29;
-    bVar31 = (byte)(uVar37 >> 8) | (byte)(uVar29 >> 8);
-    bVar34 = (byte)(uVar29 >> 0x18);
-    bVar32 = (byte)(uVar37 >> 0x10) | (byte)(uVar29 >> 0x10);
-    bVar34 = bVar34 >> 1 | bVar34;
-    uVar29 = uVar21 >> 2;
-    uVar36 = (uint)(CONCAT17(bVar34,CONCAT16(bVar32,CONCAT15(bVar31,CONCAT14(bVar28,uVar21)))) >>
+    uVar20 = (int)uVar22 - 1;
+    uVar28 = (int)((ulong)uVar22 >> 0x20) - 1;
+    uVar35 = uVar20 >> 1;
+    uVar36 = uVar28 >> 1;
+    bVar18 = (byte)uVar35 | (byte)uVar20;
+    bVar23 = (byte)(uVar35 >> 8) | (byte)(uVar20 >> 8);
+    bVar24 = (byte)(uVar35 >> 0x10) | (byte)(uVar20 >> 0x10);
+    bVar26 = (byte)(uVar20 >> 0x18);
+    bVar26 = bVar26 >> 1 | bVar26;
+    uVar20 = CONCAT13(bVar26,CONCAT12(bVar24,CONCAT11(bVar23,bVar18)));
+    bVar27 = (byte)uVar36 | (byte)uVar28;
+    bVar30 = (byte)(uVar36 >> 8) | (byte)(uVar28 >> 8);
+    bVar33 = (byte)(uVar28 >> 0x18);
+    bVar31 = (byte)(uVar36 >> 0x10) | (byte)(uVar28 >> 0x10);
+    bVar33 = bVar33 >> 1 | bVar33;
+    uVar28 = uVar20 >> 2;
+    uVar35 = (uint)(CONCAT17(bVar33,CONCAT16(bVar31,CONCAT15(bVar30,CONCAT14(bVar27,uVar20)))) >>
                    0x22);
-    bVar19 = (byte)uVar29 | bVar19;
-    bVar24 = (byte)(uVar29 >> 8) | bVar24;
-    bVar25 = (byte)(uVar29 >> 0x10) | bVar25;
-    bVar27 = bVar27 >> 2 | bVar27;
-    uVar21 = CONCAT13(bVar27,CONCAT12(bVar25,CONCAT11(bVar24,bVar19)));
-    bVar28 = (byte)uVar36 | bVar28;
-    bVar31 = (byte)(uVar36 >> 8) | bVar31;
-    bVar32 = (byte)(uVar36 >> 0x10) | bVar32;
-    bVar34 = bVar34 >> 2 | bVar34;
-    uVar29 = uVar21 >> 4;
-    uVar21 = (uint)(CONCAT17(bVar34,CONCAT16(bVar32,CONCAT15(bVar31,CONCAT14(bVar28,uVar21)))) >>
+    bVar18 = (byte)uVar28 | bVar18;
+    bVar23 = (byte)(uVar28 >> 8) | bVar23;
+    bVar24 = (byte)(uVar28 >> 0x10) | bVar24;
+    bVar26 = bVar26 >> 2 | bVar26;
+    uVar20 = CONCAT13(bVar26,CONCAT12(bVar24,CONCAT11(bVar23,bVar18)));
+    bVar27 = (byte)uVar35 | bVar27;
+    bVar30 = (byte)(uVar35 >> 8) | bVar30;
+    bVar31 = (byte)(uVar35 >> 0x10) | bVar31;
+    bVar33 = bVar33 >> 2 | bVar33;
+    uVar28 = uVar20 >> 4;
+    uVar20 = (uint)(CONCAT17(bVar33,CONCAT16(bVar31,CONCAT15(bVar30,CONCAT14(bVar27,uVar20)))) >>
                    0x24);
-    bVar24 = (byte)(uVar29 >> 8) | bVar24;
-    bVar25 = (byte)(uVar29 >> 0x10) | bVar25;
-    bVar27 = bVar27 >> 4 | bVar27;
-    bVar31 = (byte)(uVar21 >> 8) | bVar31;
-    bVar32 = (byte)(uVar21 >> 0x10) | bVar32;
-    bVar34 = bVar34 >> 4 | bVar34;
-    bVar26 = bVar27 | bVar25;
-    bVar33 = bVar34 | bVar32;
-    iVar30 = CONCAT13(bVar27,CONCAT12(bVar26,CONCAT11(bVar27 | bVar25 | bVar24,
-                                                      bVar26 | bVar24 | (byte)uVar29 | bVar19)));
-    iVar22 = iVar30 + 1;
-    iVar30 = (int)(CONCAT17(bVar34,CONCAT16(bVar33,CONCAT15(bVar34 | bVar32 | bVar31,
-                                                            CONCAT14(bVar33 | bVar31 | (byte)uVar21
-                                                                                       | bVar28,
-                                                                     iVar30)))) >> 0x20) + 1;
-    if (iVar6 == 1) {
+    bVar23 = (byte)(uVar28 >> 8) | bVar23;
+    bVar24 = (byte)(uVar28 >> 0x10) | bVar24;
+    bVar26 = bVar26 >> 4 | bVar26;
+    bVar30 = (byte)(uVar20 >> 8) | bVar30;
+    bVar31 = (byte)(uVar20 >> 0x10) | bVar31;
+    bVar33 = bVar33 >> 4 | bVar33;
+    bVar25 = bVar26 | bVar24;
+    bVar32 = bVar33 | bVar31;
+    iVar29 = CONCAT13(bVar26,CONCAT12(bVar25,CONCAT11(bVar26 | bVar24 | bVar23,
+                                                      bVar25 | bVar23 | (byte)uVar28 | bVar18)));
+    iVar21 = iVar29 + 1;
+    iVar29 = (int)(CONCAT17(bVar33,CONCAT16(bVar32,CONCAT15(bVar33 | bVar31 | bVar30,
+                                                            CONCAT14(bVar32 | bVar30 | (byte)uVar20
+                                                                                       | bVar27,
+                                                                     iVar29)))) >> 0x20) + 1;
+    if (iVar5 == 1) {
                     /* try { // try from 003987d8 to 00398927 has its CatchHandler @ 00398c80 */
-      func_0x00173d30(1,param_1 + 0xf);
-      lVar10 = func_0x00166000();
-      lVar14 = 0;
+      func_0x00173d30(1,(long)p0 + 0x78);
+      lVar9 = func_0x00166000();
+      lVar13 = 0;
       do {
-        *(undefined4 *)(lVar10 + 0x18 + lVar14) = 0;
-        lVar14 = lVar14 + 0xc;
-      } while (lVar14 != 0x18);
-      *(undefined4 *)(lVar10 + 0x10) = 0;
-      puVar9 = (undefined8 *)(**(code **)(*param_1 + 0x48))(param_1);
-      iVar6 = *(int *)((long)param_1 + 0xe4);
-      if (iVar6 - 2U < 2) {
+        *(undefined4 *)(lVar9 + 0x18 + lVar13) = 0;
+        lVar13 = lVar13 + 0xc;
+      } while (lVar13 != 0x18);
+      *(undefined4 *)(lVar9 + 0x10) = 0;
+      auVar39 = (**(code **)(*(long *)p0 + 0x48))(p0);
+      iVar5 = *(int *)((long)p0 + 0xe4);
+      if (iVar5 - 2U < 2) {
 LAB_0039882c:
-        iVar6 = *(int *)((long)param_1 + 0x34);
-        if (iVar6 == 1) {
-          puVar9 = (undefined8 *)
-                   func_0x0016e270(0xde1,0,0x1907,iVar22,iVar30,0,0x1907,0x8363,puStack_110);
+        iVar5 = *(int *)((long)p0 + 0x34);
+        if (iVar5 == 1) {
+          auVar39 = func_0x0016e270(0xde1,0,0x1907,iVar21,iVar29,0,0x1907,0x8363,puStack_110);
         }
-        else if (iVar6 == 2) {
+        else if (iVar5 == 2) {
                     /* try { // try from 00398998 to 00398a1f has its CatchHandler @ 00398c80 */
-          puVar9 = (undefined8 *)
-                   func_0x0016e270(0xde1,0,0x1908,iVar22,iVar30,0,0x1908,0x8034,puStack_110);
+          auVar39 = func_0x0016e270(0xde1,0,0x1908,iVar21,iVar29,0,0x1908,0x8034,puStack_110);
         }
-        else if (iVar6 == 3) {
-          puVar9 = (undefined8 *)
-                   func_0x0016e270(0xde1,0,0x1908,iVar22,iVar30,0,0x1908,0x8033,puStack_110);
+        else if (iVar5 == 3) {
+          auVar39 = func_0x0016e270(0xde1,0,0x1908,iVar21,iVar29,0,0x1908,0x8033,puStack_110);
         }
         else {
-          puVar9 = (undefined8 *)
-                   func_0x0016e270(0xde1,0,0x1908,iVar22,iVar30,0,0x1908,0x1401,puStack_110);
+          auVar39 = func_0x0016e270(0xde1,0,0x1908,iVar21,iVar29,0,0x1908,0x1401,puStack_110);
         }
       }
-      else if (iVar6 == 1) {
-        func_0x00166a50(0xde1,0,0,iVar22,iVar30,0,0,puStack_110);
+      else if (iVar5 == 1) {
+        func_0x00166a50(0xde1,0,0,iVar21,iVar29,0,0,puStack_110);
                     /* try { // try from 00398928 to 0039892b has its CatchHandler @ 00398bd0 */
-        puVar9 = (undefined8 *)FUN_00165530();
-        if ((int)puVar9 != 0) {
+        auVar39 = FUN_00165530();
+        if (auVar39._0_4_ != 0) {
                     /* try { // try from 00398934 to 00398943 has its CatchHandler @ 00398bcc */
-          func_0x0016f720(&uStack_a0,pbVar16);
-          piVar7 = (int *)((ulong)&uStack_a0 | 1);
-          if ((uStack_a0 & 1) != 0) {
-            piVar7 = piStack_90;
+          func_0x0016f720(&uStack_a0,pbVar15);
+          piVar6 = (int *)((ulong)&uStack_a0 | 1);
+          if (((uint)uStack_a0 & 1) != 0) {
+            piVar6 = piStack_90;
           }
                     /* try { // try from 00398958 to 00398973 has its CatchHandler @ 00398bc8 */
-          puVar9 = (undefined8 *)
-                   FUN_00166450("Walaber",4,
-                                "Error creating gl texture from compressed data for file \'%s\' --> 0x%04X\n"
-                                ,piVar7,(ulong)puVar9 & 0xffffffff);
-          if ((uStack_a0 & 1) != 0) {
-            puVar9 = (undefined8 *)FUN_00166120(piStack_90);
+          auVar39 = FUN_00166450("Walaber",4,
+                                 "Error creating gl texture from compressed data for file \'%s\' --> 0x%04X\n"
+                                 ,piVar6,auVar39._0_8_ & 0xffffffff);
+          if (((uint)uStack_a0 & 1) != 0) {
+            auVar39 = FUN_00166120(piStack_90);
           }
         }
       }
-      else if (iVar6 == 0) goto LAB_0039882c;
-      uVar23 = NEON_scvtf(uStack_100,4);
-      *(ulong *)((long)param_1 + 0x7c) = CONCAT44(iVar30,iVar22);
-      uVar35 = NEON_scvtf(CONCAT44(iVar30,iVar22),4);
-      *(undefined8 *)((long)param_1 + 0x94) = uVar23;
-      *(ulong *)((long)param_1 + 0x84) =
-           CONCAT44((float)((ulong)uVar23 >> 0x20) / (float)((ulong)uVar35 >> 0x20),
-                    (float)uVar23 / (float)uVar35);
-      if (param_1[0x1a] != 0) {
+      else if (iVar5 == 0) goto LAB_0039882c;
+      uVar22 = NEON_scvtf(uStack_100,4);
+      *(ulong *)((long)p0 + 0x7c) = CONCAT44(iVar29,iVar21);
+      uVar34 = NEON_scvtf(CONCAT44(iVar29,iVar21),4);
+      *(undefined8 *)((long)p0 + 0x94) = uVar22;
+      *(ulong *)((long)p0 + 0x84) =
+           CONCAT44((float)((ulong)uVar22 >> 0x20) / (float)((ulong)uVar34 >> 0x20),
+                    (float)uVar22 / (float)uVar34);
+      if (*(long *)((long)p0 + 0xd0) != 0) {
                     /* try { // try from 00398a48 to 00398a53 has its CatchHandler @ 00398c2c */
-        func_0x0016f720(&uStack_a0,pbVar16);
+        func_0x0016f720(&uStack_a0,pbVar15);
         uStack_88 = 1;
                     /* try { // try from 00398a68 to 00398a6f has its CatchHandler @ 00398c28 */
-        puVar9 = (undefined8 *)
-                 (**(code **)(*(long *)param_1[0x1a] + 0x10))((long *)param_1[0x1a],&uStack_a0);
-        if ((uStack_a0 & 1) != 0) {
-          puVar9 = (undefined8 *)FUN_00166120(piStack_90);
+        auVar39 = (**(code **)(**(long **)((long)p0 + 0xd0) + 0x10))
+                            (*(long **)((long)p0 + 0xd0),&uStack_a0);
+        if (((uint)uStack_a0 & 1) != 0) {
+          auVar39 = FUN_00166120(piStack_90);
         }
       }
     }
-    if (bVar5) {
-      iVar6 = *(int *)((long)param_1 + 0xe4);
-      if (iVar6 == 0) {
+    uVar7 = auVar39._8_8_;
+    if (bVar4) {
+      iVar5 = *(int *)((long)p0 + 0xe4);
+      if (iVar5 == 0) {
                     /* try { // try from 00398a9c to 00398aa3 has its CatchHandler @ 00398be4 */
-        func_0x001708c0(&uStack_a0,puVar9,puStack_110,iVar22,iVar30);
-        func_0x00161a70(param_1 + 0x15,&uStack_a0);
+        func_0x001708c0(&uStack_a0,auVar39._0_8_,puStack_110,iVar21,iVar29);
+        func_0x00161a70((long)p0 + 0xa8,&uStack_a0);
         func_0x00168180(&uStack_a0);
-        if (param_1[0x18] != 0) {
-          lStack_130 = param_1[0x15];
-          piStack_128 = (int *)param_1[0x16];
-          uStack_9c = (undefined4)((ulong)param_1 >> 0x20);
+        uVar7 = extraout_x1;
+        if (*(long *)((long)p0 + 0xc0) != 0) {
+          lStack_130 = *(long *)((long)p0 + 0xa8);
+          piStack_128 = *(int **)((long)p0 + 0xb0);
           if (lStack_130 == 0) {
             uStack_98 = 0;
             uStack_97 = 0;
@@ -823,52 +832,54 @@ LAB_0039882c:
             uStack_93 = (undefined3)((ulong)lStack_130 >> 0x28);
             *piStack_128 = *piStack_128 + 2;
           }
-          uStack_a0 = (uint)param_1;
           piStack_90 = piStack_128;
+          uStack_a0 = p0;
           func_0x00168180(&lStack_130);
                     /* try { // try from 00398b0c to 00398b13 has its CatchHandler @ 00398bd4 */
-          (**(code **)(*(long *)param_1[0x18] + 0x10))((long *)param_1[0x18],&uStack_a0);
+          (**(code **)(**(long **)((long)p0 + 0xc0) + 0x10))(*(long **)((long)p0 + 0xc0),&uStack_a0)
+          ;
           func_0x00168180(&uStack_98);
+          uVar7 = extraout_x1_00;
         }
         goto LAB_00398b1c;
       }
     }
     else {
 LAB_00398b1c:
-      iVar6 = *(int *)((long)param_1 + 0xe4);
+      iVar5 = *(int *)((long)p0 + 0xe4);
     }
-    if (iVar6 - 1U < 2) {
-      puVar9 = *(undefined8 **)(param_2 + 8);
+    if (iVar5 - 1U < 2) {
+      puVar17 = *(undefined8 **)(in_x1 + 8);
 LAB_00398b4c:
-      if (puVar9 != (undefined8 *)0x0) {
-        FUN_001639e0();
+      if (puVar17 != (undefined8 *)0x0) {
+        FUN_001639e0(puVar17,uVar7);
       }
     }
-    else if (iVar6 == 3) {
+    else if (iVar5 == 3) {
       if (bVar3) {
         if (puStack_110 != (undefined8 *)0x0) {
-          FUN_001639e0();
+          FUN_001639e0(puStack_110,uVar7);
         }
       }
       else {
-        FUN_00167af0();
+        FUN_00167af0(puStack_110);
       }
-      if (puVar18 != (undefined8 *)0x0) {
-        FUN_00166120(puVar18);
+      if (puVar17 != (undefined8 *)0x0) {
+        FUN_00166120(puVar17);
       }
     }
-    else if (iVar6 == 0) {
-      puVar9 = puStack_110;
+    else if (iVar5 == 0) {
+      puVar17 = puStack_110;
       if (bVar3) goto LAB_00398b4c;
                     /* try { // try from 00398b40 to 00398b43 has its CatchHandler @ 00398c80 */
       func_0x00169920();
     }
   }
   if (((ulong)puStack_b8 & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
 LAB_00398b90:
-  if (*(long *)(lVar2 + 0x28) != lVar12) {
+  if (*(long *)(lVar2 + 0x28) != lVar11) {
     FUN_00164ff0();
     return;
   }
@@ -887,27 +898,27 @@ LAB_00398b90:
 void Walaber::Texture2D::setData(long param_1,undefined8 *param_2)
 
 {
-  ulong uVar1;
+  void *pvVar1;
   long lVar2;
   long lVar3;
   long lVar4;
   long *plVar5;
   byte abStack_40 [16];
-  ulong uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar4 = tpidr_el0;
   lStack_28 = *(long *)(lVar4 + 0x28);
   if (*(int *)(param_1 + 0xe4) == 1) {
     func_0x0016f720(abStack_40,param_1 + 8);
-    uVar1 = (ulong)abStack_40 | 1;
+    pvVar1 = (void *)((ulong)abStack_40 | 1);
     if ((abStack_40[0] & 1) != 0) {
-      uVar1 = uStack_30;
+      pvVar1 = pvStack_30;
     }
                     /* try { // try from 00398d74 to 00398d8b has its CatchHandler @ 00398e34 */
-    FUN_00166450("Walaber",4,"Cannot set data on compressed texture \'%s\'!\n",uVar1);
+    FUN_00166450("Walaber",4,"Cannot set data on compressed texture \'%s\'!\n",pvVar1);
     if ((abStack_40[0] & 1) != 0) {
-      FUN_00166120(uStack_30);
+      FUN_00166120(pvStack_30);
     }
     goto LAB_00398e08;
   }
@@ -953,64 +964,65 @@ void Walaber::Texture2D::setData
                ulong param_7,int param_8,uint param_9)
 
 {
-  long lVar1;
+  void *pvVar1;
   long lVar2;
-  int iVar3;
-  long lVar4;
+  long lVar3;
+  int iVar4;
   long lVar5;
   long lVar6;
-  ulong uVar7;
+  long lVar7;
+  ulong uVar8;
   byte abStack_80 [16];
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
+  lVar5 = tpidr_el0;
+  lStack_68 = *(long *)(lVar5 + 0x28);
   if (*(int *)(param_1 + 0xe4) == 1) {
     func_0x0016f720(abStack_80,param_1 + 8);
-    uVar7 = (ulong)abStack_80 | 1;
+    pvVar1 = (void *)((ulong)abStack_80 | 1);
     if ((abStack_80[0] & 1) != 0) {
-      uVar7 = uStack_70;
+      pvVar1 = pvStack_70;
     }
                     /* try { // try from 00398eb4 to 00398ecb has its CatchHandler @ 00399014 */
-    FUN_00166450("Walaber",4,"Cannot set data on compressed texture \'%s\'!\n",uVar7);
+    FUN_00166450("Walaber",4,"Cannot set data on compressed texture \'%s\'!\n",pvVar1);
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(uStack_70);
+      FUN_00166120(pvStack_70);
     }
   }
   else {
     if (0 < param_8) {
-      lVar6 = 0;
-      lVar5 = ((long)param_3 + (long)(int)param_9 * (long)param_4) * 4;
-      uVar7 = ((long)param_4 + -1) * (long)(int)param_9 + (long)param_3;
+      lVar7 = 0;
+      lVar6 = ((long)param_3 + (long)(int)param_9 * (long)param_4) * 4;
+      uVar8 = ((long)param_4 + -1) * (long)(int)param_9 + (long)param_3;
       do {
-        lVar1 = **(long **)(param_1 + 0xa8);
-        iVar3 = param_5 + *(int *)(param_1 + 0x7c) * (param_6 + (int)lVar6);
-        if ((ulong)((*(long **)(param_1 + 0xa8))[1] - lVar1 >> 2) <= (ulong)(long)iVar3)
+        lVar2 = **(long **)(param_1 + 0xa8);
+        iVar4 = param_5 + *(int *)(param_1 + 0x7c) * (param_6 + (int)lVar7);
+        if ((ulong)((*(long **)(param_1 + 0xa8))[1] - lVar2 >> 2) <= (ulong)(long)iVar4)
         goto LAB_0039900c;
-        uVar7 = uVar7 + (long)(int)param_9;
-        lVar2 = *(long *)*param_2;
-        if ((ulong)(((long *)*param_2)[1] - lVar2 >> 2) <= uVar7) goto LAB_0039900c;
-        lVar2 = lVar2 + lVar5;
-        lVar6 = lVar6 + 1;
-        lVar5 = lVar5 + (-(ulong)(param_9 >> 0x1f) & 0xfffffffc00000000 | (ulong)param_9 << 2);
-        FUN_001715e0(lVar1 + (long)iVar3 * 4,lVar2,
+        uVar8 = uVar8 + (long)(int)param_9;
+        lVar3 = *(long *)*param_2;
+        if ((ulong)(((long *)*param_2)[1] - lVar3 >> 2) <= uVar8) goto LAB_0039900c;
+        lVar3 = lVar3 + lVar6;
+        lVar7 = lVar7 + 1;
+        lVar6 = lVar6 + (-(ulong)(param_9 >> 0x1f) & 0xfffffffc00000000 | (ulong)param_9 << 2);
+        FUN_001715e0(lVar2 + (long)iVar4 * 4,lVar3,
                      -(param_7 >> 0x1f & 1) & 0xfffffffc00000000 | (param_7 & 0xffffffff) << 2);
-      } while (lVar6 < param_8);
+      } while (lVar7 < param_8);
     }
     if (*(int *)(param_1 + 0x78) != -1) {
       func_0x0016d560();
-      lVar6 = **(long **)(param_1 + 0xa8);
-      if ((*(long **)(param_1 + 0xa8))[1] == lVar6) {
+      lVar7 = **(long **)(param_1 + 0xa8);
+      if ((*(long **)(param_1 + 0xa8))[1] == lVar7) {
 LAB_0039900c:
         func_0x0016c9b0();
         goto LAB_00399010;
       }
       func_0x0016e270(0xde1,0,0x1908,*(undefined4 *)(param_1 + 0x7c),*(undefined4 *)(param_1 + 0x80)
-                      ,0,0x1908,0x1401,lVar6);
+                      ,0,0x1908,0x1401,lVar7);
     }
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
+  if (*(long *)(lVar5 + 0x28) == lStack_68) {
     return;
   }
 LAB_00399010:
@@ -1060,7 +1072,7 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
   int *piStack_60;
   ulong uStack_58;
   int *piStack_50;
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined4 uStack_40;
   long lStack_38;
   
@@ -1097,7 +1109,7 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
                     /* try { // try from 00399180 to 00399187 has its CatchHandler @ 003991c8 */
     (**(code **)(**(long **)(param_1 + 0xd0) + 0x10))(*(long **)(param_1 + 0xd0),&uStack_58);
     if ((uStack_58 & 1) != 0) {
-      FUN_00166120(uStack_48);
+      FUN_00166120(pvStack_48);
     }
   }
   func_0x00168380(&uStack_68);
@@ -1116,12 +1128,13 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
 
 /* Walaber::Texture2D::bufferFromImageData(unsigned char*, int, int) */
 
-void Walaber::Texture2D::bufferFromImageData
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,int param_4,int param_5)
+void Walaber::Texture2D::bufferFromImageData(uchar *p0,int p1,int p2)
 
 {
   long lVar1;
   long *plVar2;
+  int in_w3;
+  undefined8 *in_x8;
   long *plStack_58;
   undefined4 *puStack_50;
   long lStack_48;
@@ -1130,11 +1143,11 @@ void Walaber::Texture2D::bufferFromImageData
   lStack_48 = *(long *)(lVar1 + 0x28);
   plVar2 = (long *)FUN_00164060(0x18);
                     /* try { // try from 00399240 to 00399243 has its CatchHandler @ 003992c8 */
-  func_0x00165dd0(plVar2,(long)(param_5 * param_4));
+  func_0x00165dd0(plVar2,(long)(in_w3 * p2));
   plStack_58 = plVar2;
   puStack_50 = (undefined4 *)FUN_00164060(4);
-  *param_1 = plVar2;
-  param_1[1] = puStack_50;
+  *in_x8 = plVar2;
+  in_x8[1] = puStack_50;
   *puStack_50 = 2;
   func_0x00168180(&plStack_58);
   if (plVar2[1] == *plVar2) {
@@ -1142,7 +1155,7 @@ void Walaber::Texture2D::bufferFromImageData
     func_0x0016c9b0(plVar2);
   }
   else {
-    FUN_001715e0(*plVar2,param_3,(long)(param_5 * param_4 * 4));
+    FUN_001715e0(*plVar2,p1,(long)(in_w3 * p2 * 4));
     if (*(long *)(lVar1 + 0x28) == lStack_48) {
       return;
     }
@@ -1225,7 +1238,7 @@ void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefi
   undefined8 uStack_78;
   undefined8 uStack_70;
   byte abStack_68 [16];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -1249,7 +1262,7 @@ void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefi
                     /* try { // try from 003996b8 to 003996cb has its CatchHandler @ 00399720 */
   func_0x001737e0(param_1,param_2,&uStack_90,0);
   if ((abStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   param_1[0x1b] = 0;
   param_1[0x1c] = 0;
@@ -1352,7 +1365,7 @@ LAB_00399834:
 
 /* Walaber::Texture2D::~Texture2D() */
 
-void Walaber::Texture2D::~Texture2D(undefined8 param_1)
+void Walaber::Texture2D::~Texture2D(void *param_1)
 
 {
   func_0x0016a7b0();

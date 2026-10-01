@@ -10,53 +10,59 @@
    long) */
 
 void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::resize
-               (long *param_1,ulong param_2)
+               (ulong p0)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
-  ulong uVar4;
-  long lVar5;
+  void *pvVar4;
+  ulong in_x1;
+  ulong uVar5;
+  long lVar6;
   
-  lVar2 = param_1[1];
-  uVar4 = lVar2 - *param_1 >> 7;
-  if (uVar4 < param_2) {
-    func_0x001630e0(param_1,param_2 - uVar4);
+  lVar3 = *(long *)(p0 + 8);
+  uVar5 = lVar3 - *(long *)p0 >> 7;
+  if (uVar5 < in_x1) {
+    func_0x001630e0(p0,in_x1 - uVar5);
     return;
   }
-  if (uVar4 != param_2) {
-    lVar1 = *param_1 + param_2 * 0x80;
-    if (lVar1 != lVar2) {
-      lVar5 = 0;
+  if (uVar5 != in_x1) {
+    lVar1 = *(long *)p0 + in_x1 * 0x80;
+    if (lVar1 != lVar3) {
+      lVar6 = 0;
       do {
-        lVar3 = lVar2 + lVar5;
-        if (*(long *)(lVar3 + -0x18) != 0) {
-          *(long *)(lVar3 + -0x10) = *(long *)(lVar3 + -0x18);
-          FUN_00166120();
+        lVar2 = lVar3 + lVar6;
+        pvVar4 = *(void **)(lVar2 + -0x18);
+        if (pvVar4 != (void *)0x0) {
+          *(void **)(lVar2 + -0x10) = pvVar4;
+          FUN_00166120(pvVar4);
         }
-        if (*(long *)(lVar3 + -0x30) != 0) {
-          *(long *)(lVar2 + lVar5 + -0x28) = *(long *)(lVar3 + -0x30);
-          FUN_00166120();
+        pvVar4 = *(void **)(lVar2 + -0x30);
+        if (pvVar4 != (void *)0x0) {
+          *(void **)(lVar3 + lVar6 + -0x28) = pvVar4;
+          FUN_00166120(pvVar4);
         }
-        lVar3 = lVar2 + lVar5;
-        if (*(long *)(lVar3 + -0x48) != 0) {
-          *(long *)(lVar3 + -0x40) = *(long *)(lVar3 + -0x48);
-          FUN_00166120();
+        lVar2 = lVar3 + lVar6;
+        pvVar4 = *(void **)(lVar2 + -0x48);
+        if (pvVar4 != (void *)0x0) {
+          *(void **)(lVar2 + -0x40) = pvVar4;
+          FUN_00166120(pvVar4);
         }
-        if (*(long *)(lVar3 + -0x60) != 0) {
-          *(long *)(lVar2 + lVar5 + -0x58) = *(long *)(lVar3 + -0x60);
-          FUN_00166120();
+        pvVar4 = *(void **)(lVar2 + -0x60);
+        if (pvVar4 != (void *)0x0) {
+          *(void **)(lVar3 + lVar6 + -0x58) = pvVar4;
+          FUN_00166120(pvVar4);
         }
-        lVar3 = *(long *)(lVar2 + lVar5 + -0x78);
-        if (lVar3 != 0) {
-          *(long *)(lVar2 + lVar5 + -0x70) = lVar3;
-          FUN_00166120();
+        pvVar4 = *(void **)(lVar3 + lVar6 + -0x78);
+        if (pvVar4 != (void *)0x0) {
+          *(void **)(lVar3 + lVar6 + -0x70) = pvVar4;
+          FUN_00166120(pvVar4);
         }
-        lVar5 = lVar5 + -0x80;
-      } while (lVar1 - lVar2 != lVar5);
+        lVar6 = lVar6 + -0x80;
+      } while (lVar1 - lVar3 != lVar6);
     }
-    param_1[1] = lVar1;
+    *(long *)(p0 + 8) = lVar1;
   }
   return;
 }
@@ -71,12 +77,14 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
    >::__append(unsigned long) */
 
 void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::__append
-               (long *param_1,ulong param_2,undefined8 param_3)
+               (ulong p0)
 
 {
   long lVar1;
   long lVar2;
+  ulong in_x1;
   ulong uVar3;
+  undefined8 in_x2;
   long lVar4;
   ulong uVar5;
   undefined1 auStack_60 [16];
@@ -85,14 +93,14 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  if ((ulong)(param_1[2] - param_1[1] >> 7) < param_2) {
-    lVar1 = param_1[1] - *param_1 >> 7;
-    uVar3 = param_2 + lVar1;
+  if ((ulong)(*(long *)(p0 + 0x10) - *(long *)(p0 + 8) >> 7) < in_x1) {
+    lVar1 = *(long *)(p0 + 8) - *(long *)p0 >> 7;
+    uVar3 = in_x1 + lVar1;
     if (uVar3 >> 0x39 != 0) {
-      FUN_001705a0(param_1,param_2,param_3,param_1 + 2);
+      FUN_001705a0(p0,in_x1,in_x2,p0 + 0x10);
       return;
     }
-    lVar4 = param_1[2] - *param_1;
+    lVar4 = *(long *)(p0 + 0x10) - *(long *)p0;
     if ((ulong)(lVar4 >> 7) < 0xffffffffffffff) {
       uVar5 = lVar4 >> 6;
       if (uVar3 <= uVar5) {
@@ -106,19 +114,19 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
     do {
                     /* try { // try from 002c663c to 002c663f has its CatchHandler @ 002c669c */
       func_0x001620e0(lStack_50);
-      param_2 = param_2 - 1;
+      in_x1 = in_x1 - 1;
       lStack_50 = lStack_50 + 0x80;
-    } while (param_2 != 0);
+    } while (in_x1 != 0);
                     /* try { // try from 002c6654 to 002c665f has its CatchHandler @ 002c6698 */
-    func_0x00163bb0(param_1,auStack_60);
+    func_0x00163bb0(p0,auStack_60);
     func_0x001684f0(auStack_60);
   }
   else {
     do {
       func_0x001620e0();
-      param_2 = param_2 - 1;
-      param_1[1] = param_1[1] + 0x80;
-    } while (param_2 != 0);
+      in_x1 = in_x1 - 1;
+      *(long *)(p0 + 8) = *(long *)(p0 + 8) + 0x80;
+    } while (in_x1 != 0);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

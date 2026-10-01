@@ -12,19 +12,20 @@
 
 void std::__ndk1::
      vector<WaterConcept::Screen_UpsellWater2::TransitionType,std::__ndk1::allocator<WaterConcept::Screen_UpsellWater2::TransitionType>>
-     ::__vallocate(long *param_1,ulong param_2)
+     ::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 >> 0x3e == 0) {
-    lVar1 = FUN_00164060(param_2 << 2);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 4;
+  if (in_x1 >> 0x3e == 0) {
+    lVar1 = FUN_00164060(in_x1 << 2);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 4;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

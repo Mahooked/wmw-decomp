@@ -25,7 +25,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
       do {
         pbVar3 = pbVar1 + -0x20;
         if ((*pbVar3 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(pbVar1 + -0x10));
+          FUN_00166120(*(void **)(pbVar1 + -0x10));
         }
         pbVar1 = pbVar3;
       } while (pbVar2 != pbVar3);
@@ -50,19 +50,20 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
    >::__vallocate(unsigned long) */
 
 void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __vallocate(long *param_1,ulong param_2)
+     __vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 >> 0x3b == 0) {
-    lVar1 = FUN_00164060(param_2 << 5);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x20;
+  if (in_x1 >> 0x3b == 0) {
+    lVar1 = FUN_00164060(in_x1 << 5);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x20;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

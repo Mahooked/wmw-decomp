@@ -8,7 +8,7 @@
 
 /* std::__ndk1::locale::facet::~facet() */
 
-void std::__ndk1::locale::facet::~facet(undefined8 param_1)
+void std::__ndk1::locale::facet::~facet(void *param_1)
 
 {
   FUN_00172660();

@@ -12,34 +12,35 @@
    >::assign<Walaber::Vector2*>(Walaber::Vector2*, Walaber::Vector2*) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     assign<Walaber::Vector2*>(long *param_1,undefined8 *param_2,undefined8 *param_3)
+     assign<Walaber::Vector2*>(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
   ulong uVar1;
   undefined8 *puVar2;
+  Walaber__Vector2 *in_x2;
   long lVar3;
   undefined8 *puVar4;
-  undefined8 *puVar5;
-  undefined8 *puVar6;
+  Walaber__Vector2 *pWVar5;
   undefined8 *puVar7;
-  undefined8 *puVar9;
+  Walaber__Vector2 *pWVar8;
+  Walaber__Vector2 *pWVar9;
   ulong uVar10;
-  undefined8 *puVar8;
+  Walaber__Vector2 *pWVar6;
   
-  lVar3 = param_1[2];
-  puVar2 = (undefined8 *)*param_1;
-  uVar10 = (long)param_3 - (long)param_2 >> 3;
+  lVar3 = *(long *)(p0 + 0x10);
+  puVar2 = *(undefined8 **)p0;
+  uVar10 = (long)in_x2 - (long)p1 >> 3;
   if ((ulong)(lVar3 - (long)puVar2 >> 3) < uVar10) {
     if (puVar2 != (undefined8 *)0x0) {
-      param_1[1] = (long)puVar2;
-      FUN_00166120();
+      *(undefined8 **)(p0 + 8) = puVar2;
+      FUN_00166120(puVar2);
       lVar3 = 0;
-      *param_1 = 0;
-      param_1[1] = 0;
-      param_1[2] = 0;
+      *(undefined8 *)p0 = 0;
+      *(undefined8 *)(p0 + 8) = 0;
+      *(undefined8 *)(p0 + 0x10) = 0;
     }
     if (uVar10 >> 0x3d != 0) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
     if ((ulong)(lVar3 >> 3) < 0xfffffffffffffff) {
@@ -50,57 +51,57 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
     else {
       uVar10 = 0x1fffffffffffffff;
     }
-    func_0x0016aff0(param_1,uVar10);
-    if (param_2 == param_3) {
+    func_0x0016aff0(p0,uVar10);
+    if (p1 == in_x2) {
       return;
     }
-    puVar4 = (undefined8 *)param_1[1];
+    puVar4 = *(undefined8 **)(p0 + 8);
     puVar2 = puVar4;
-    puVar5 = param_2;
+    pWVar6 = p1;
     do {
-      puVar9 = puVar5 + 1;
-      *puVar2 = *puVar5;
+      pWVar9 = pWVar6 + 8;
+      *puVar2 = *(undefined8 *)pWVar6;
       puVar2 = puVar2 + 1;
-      puVar5 = puVar9;
-    } while (param_3 != puVar9);
+      pWVar6 = pWVar9;
+    } while (in_x2 != pWVar9);
   }
   else {
-    puVar4 = (undefined8 *)param_1[1];
-    puVar5 = (undefined8 *)((long)param_2 + ((long)puVar4 - (long)puVar2));
+    puVar4 = *(undefined8 **)(p0 + 8);
+    pWVar6 = p1 + ((long)puVar4 - (long)puVar2);
     uVar1 = (long)puVar4 - (long)puVar2 >> 3;
-    puVar9 = puVar5;
+    pWVar9 = pWVar6;
     if (uVar10 <= uVar1) {
-      puVar9 = param_3;
+      pWVar9 = in_x2;
     }
-    if (puVar9 != param_2) {
-      puVar6 = puVar2;
-      puVar7 = param_2;
+    if (pWVar9 != p1) {
+      puVar7 = puVar2;
+      pWVar5 = p1;
       do {
-        puVar8 = puVar7 + 1;
-        *puVar6 = *puVar7;
-        puVar6 = puVar6 + 1;
-        puVar7 = puVar8;
-      } while (puVar9 != puVar8);
+        pWVar8 = pWVar5 + 8;
+        *puVar7 = *(undefined8 *)pWVar5;
+        puVar7 = puVar7 + 1;
+        pWVar5 = pWVar8;
+      } while (pWVar9 != pWVar8);
       puVar2 = (undefined8 *)
-               ((long)puVar2 + ((long)puVar9 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8);
+               ((long)puVar2 + ((ulong)(pWVar9 + (-8 - (long)p1)) & 0xfffffffffffffff8) + 8);
     }
     if (uVar10 <= uVar1) {
-      param_1[1] = (long)puVar2;
+      *(undefined8 **)(p0 + 8) = puVar2;
       return;
     }
     puVar2 = puVar4;
-    if (puVar9 == param_3) {
+    if (pWVar9 == in_x2) {
       return;
     }
     do {
-      puVar6 = puVar5 + 1;
-      *puVar2 = *puVar5;
-      puVar5 = puVar6;
+      pWVar5 = pWVar6 + 8;
+      *puVar2 = *(undefined8 *)pWVar6;
+      pWVar6 = pWVar5;
       puVar2 = puVar2 + 1;
-      param_2 = puVar9;
-    } while (param_3 != puVar6);
+      p1 = pWVar9;
+    } while (in_x2 != pWVar5);
   }
-  param_1[1] = (long)puVar4 + ((long)param_3 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8;
+  *(ulong *)(p0 + 8) = (long)puVar4 + ((ulong)(in_x2 + (-8 - (long)p1)) & 0xfffffffffffffff8) + 8;
   return;
 }
 

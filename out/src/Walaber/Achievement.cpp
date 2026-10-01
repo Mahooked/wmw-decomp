@@ -8,20 +8,22 @@
 
 /* Walaber::Achievement::Achievement(Walaber::Achievement const&) */
 
-void Walaber::Achievement::Achievement(long param_1,long param_2)
+void Walaber::Achievement::Achievement(Walaber__Achievement *p0)
 
 {
+  long in_x1;
+  
   func_0x0016f720();
                     /* try { // try from 00330ffc to 00331003 has its CatchHandler @ 0033109c */
-  func_0x0016f720(param_1 + 0x18,param_2 + 0x18);
+  func_0x0016f720(p0 + 0x18,in_x1 + 0x18);
                     /* try { // try from 0033100c to 00331013 has its CatchHandler @ 00331084 */
-  func_0x0016f720(param_1 + 0x30,param_2 + 0x30);
+  func_0x0016f720(p0 + 0x30,in_x1 + 0x30);
                     /* try { // try from 0033101c to 00331023 has its CatchHandler @ 0033106c */
-  func_0x0016f720(param_1 + 0x48,param_2 + 0x48);
+  func_0x0016f720(p0 + 0x48,in_x1 + 0x48);
                     /* try { // try from 0033102c to 0033102f has its CatchHandler @ 00331054 */
-  func_0x0016f720(param_1 + 0x60,param_2 + 0x60);
-  *(undefined8 *)(param_1 + 0x78) = *(undefined8 *)(param_2 + 0x78);
-  *(undefined1 *)(param_1 + 0x80) = *(undefined1 *)(param_2 + 0x80);
+  func_0x0016f720(p0 + 0x60,in_x1 + 0x60);
+  *(undefined8 *)(p0 + 0x78) = *(undefined8 *)(in_x1 + 0x78);
+  p0[0x80] = *(Walaber__Achievement *)(in_x1 + 0x80);
   return;
 }
 

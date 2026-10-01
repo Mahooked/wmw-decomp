@@ -10,7 +10,7 @@
    >::__push_back_slow_path<Walaber::Achievement const&>(Walaber::Achievement const&) */
 
 void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     __push_back_slow_path<Walaber::Achievement_const&>(long *param_1,undefined8 param_2)
+     __push_back_slow_path<Walaber::Achievement_const&>(Walaber__Achievement *p0)
 
 {
   ulong uVar1;
@@ -25,23 +25,23 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0xf0f0f0f0f0f0f0f;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0xf0f0f0f0f0f0f0f;
   uVar1 = lVar3 + 1;
   if (0x1e1e1e1e1e1e1e1 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar6 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
   uVar5 = 0x1e1e1e1e1e1e1e1;
   if (((ulong)(lVar6 * -0xf0f0f0f0f0f0f0f) < 0xf0f0f0f0f0f0f0) &&
      (uVar4 = lVar6 * -0x1e1e1e1e1e1e1e1e, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x00163140(auStack_60,uVar5,lVar3,param_1 + 2);
+  func_0x00163140(auStack_60,uVar5,lVar3,p0 + 0x10);
                     /* try { // try from 00330f68 to 00330f87 has its CatchHandler @ 00330fc0 */
-  func_0x0016a140(lStack_50,param_2);
+  func_0x0016a140(lStack_50);
   lStack_50 = lStack_50 + 0x88;
-  func_0x001735c0(param_1,auStack_60);
+  func_0x001735c0(p0,auStack_60);
   func_0x001623e0(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

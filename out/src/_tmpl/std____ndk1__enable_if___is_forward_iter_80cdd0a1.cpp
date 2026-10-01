@@ -12,34 +12,35 @@
    unsigned long) */
 
 void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __construct_at_end<Walaber::FluidParticle*>(long param_1,long param_2,long param_3)
+     __construct_at_end<Walaber::FluidParticle*>
+               (Walaber__FluidParticle *p0,Walaber__FluidParticle *p1,ulong p2)
 
 {
-  undefined8 *puVar1;
+  Walaber__FluidParticle *pWVar1;
   long lVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   
-  if (param_2 != param_3) {
-    lVar3 = *(long *)(param_1 + 8);
+  if (p1 != (Walaber__FluidParticle *)p2) {
+    lVar3 = *(long *)(p0 + 8);
     do {
-      func_0x00162820(lVar3,param_2);
+      func_0x00162820(lVar3,p1);
       lVar2 = 0x38;
       do {
-        *(undefined8 *)(lVar3 + lVar2) = *(undefined8 *)(param_2 + lVar2);
+        *(undefined8 *)(lVar3 + lVar2) = *(undefined8 *)(p1 + lVar2);
         lVar2 = lVar2 + 8;
       } while (lVar2 != 0x78);
-      puVar1 = (undefined8 *)(param_2 + 0x88);
-      uVar5 = *(undefined8 *)(param_2 + 0x80);
-      uVar4 = *(undefined8 *)(param_2 + 0x78);
-      param_2 = param_2 + 0x90;
-      *(undefined8 *)(lVar3 + 0x88) = *puVar1;
+      pWVar1 = p1 + 0x88;
+      uVar5 = *(undefined8 *)(p1 + 0x80);
+      uVar4 = *(undefined8 *)(p1 + 0x78);
+      p1 = p1 + 0x90;
+      *(undefined8 *)(lVar3 + 0x88) = *(undefined8 *)pWVar1;
       *(undefined8 *)(lVar3 + 0x80) = uVar5;
       *(undefined8 *)(lVar3 + 0x78) = uVar4;
-      lVar3 = *(long *)(param_1 + 8) + 0x90;
-      *(long *)(param_1 + 8) = lVar3;
-    } while (param_2 != param_3);
+      lVar3 = *(long *)(p0 + 8) + 0x90;
+      *(long *)(p0 + 8) = lVar3;
+    } while (p1 != (Walaber__FluidParticle *)p2);
   }
   return;
 }

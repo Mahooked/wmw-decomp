@@ -10,13 +10,13 @@
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
 void non_virtual_thunk_to_WaterConcept::Screen_FullScreenAlert::handleEvent
-               (long param_1,int param_2)
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  if (param_2 == 200) {
+  if ((int)p1 == 200) {
                     /* WARNING: Could not recover jumptable at 0x004d95f8. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (**(code **)(*(long *)(param_1 + -0x20) + 0x70))();
+    (**(code **)(*(long *)((ulong)(uint)p0 - 0x20) + 0x70))();
     return;
   }
   return;

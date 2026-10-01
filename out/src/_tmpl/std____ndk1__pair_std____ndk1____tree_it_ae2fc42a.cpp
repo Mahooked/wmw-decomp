@@ -16,25 +16,26 @@
 long std::__ndk1::
      __tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>
      ::__emplace_unique_key_args<WaterConcept::GridCell,WaterConcept::GridCell_const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 *param_3)
+               (WaterConcept__GridCell *p0,WaterConcept__GridCell *p1)
 
 {
   bool bVar1;
   long *plVar2;
   long lVar3;
+  undefined8 *in_x2;
   long lVar4;
   undefined8 uStack_50;
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
-  plVar2 = (long *)func_0x00170c70(param_1,&uStack_50,param_2);
+  plVar2 = (long *)func_0x00170c70(p0,&uStack_50,p1);
   lVar4 = *plVar2;
   bVar1 = lVar4 == 0;
   if (bVar1) {
     lVar4 = FUN_00164060(0x28);
-    *(undefined8 *)(lVar4 + 0x1c) = *param_3;
-    plVar2 = (long *)func_0x00171460(param_1,uStack_50,plVar2,lVar4);
+    *(undefined8 *)(lVar4 + 0x1c) = *in_x2;
+    plVar2 = (long *)func_0x00171460(p0,uStack_50,plVar2,lVar4);
   }
   if (*(long *)(lVar3 + 0x28) != lStack_48) {
     lVar3 = FUN_00164ff0(plVar2,bVar1);

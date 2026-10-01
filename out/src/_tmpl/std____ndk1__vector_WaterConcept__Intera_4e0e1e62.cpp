@@ -118,7 +118,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
         }
         puStack_98 = puVar7;
         if (puVar9 != (undefined8 *)0x0) {
-          FUN_00166120();
+          FUN_00166120(puVar9);
         }
       }
       else {
@@ -147,7 +147,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
                    (~((long)puStack_98 + (-8 - (long)puStack_a0)) & 0xfffffffffffffff8U));
     }
     if (puStack_a8 != (undefined8 *)0x0) {
-      FUN_00166120();
+      FUN_00166120(puStack_a8);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {

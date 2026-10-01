@@ -33,31 +33,32 @@ undefined8 * Walaber::CharacterManager::getInstancePtr(void)
 
 /* Walaber::CharacterManager::removeSkeletonActorWithID(int) */
 
-undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(long param_1,int param_2)
+undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0)
 
 {
+  int in_w1;
   long *plVar1;
   long *plVar2;
   long *plVar3;
-  long lVar4;
+  void *p0_00;
   
-  plVar1 = (long *)(param_1 + 8);
+  plVar1 = (long *)((ulong)(uint)p0 + 8);
   plVar2 = (long *)*plVar1;
   plVar3 = plVar1;
   if (plVar2 != (long *)0x0) {
     do {
-      if (param_2 <= (int)plVar2[4]) {
+      if (in_w1 <= (int)plVar2[4]) {
         plVar3 = plVar2;
       }
-      plVar2 = (long *)plVar2[(int)plVar2[4] < param_2];
+      plVar2 = (long *)plVar2[(int)plVar2[4] < in_w1];
     } while (plVar2 != (long *)0x0);
-    if ((plVar3 != plVar1) && ((int)plVar3[4] <= param_2)) {
-      lVar4 = plVar3[5];
-      if (lVar4 != 0) {
-        func_0x00168e30(lVar4);
-        FUN_00166120(lVar4);
+    if ((plVar3 != plVar1) && ((int)plVar3[4] <= in_w1)) {
+      p0_00 = (void *)plVar3[5];
+      if (p0_00 != (void *)0x0) {
+        func_0x00168e30(p0_00);
+        FUN_00166120(p0_00);
       }
-      func_0x00167ce0(param_1,plVar3);
+      func_0x00167ce0((ulong)(uint)p0,plVar3);
       return 1;
     }
   }
@@ -72,34 +73,34 @@ undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(long param_1,int
 
 /* Walaber::CharacterManager::createSkeletonActorWithID(int) */
 
-undefined8 Walaber::CharacterManager::createSkeletonActorWithID(long param_1,int param_2)
+undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0)
 
 {
   long lVar1;
   undefined8 uVar2;
   long lVar3;
+  int in_w1;
   long *plVar4;
   long *plVar5;
   long *plVar6;
-  int iStack_4c;
+  undefined1 auStack_4c [4];
   undefined1 auStack_48 [8];
-  int *piStack_40;
+  undefined1 *puStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  plVar4 = (long *)(param_1 + 8);
+  plVar4 = (long *)((ulong)(uint)p0 + 8);
   plVar5 = (long *)*plVar4;
   plVar6 = plVar4;
-  iStack_4c = param_2;
   if (plVar5 != (long *)0x0) {
     do {
-      if (param_2 <= (int)plVar5[4]) {
+      if (in_w1 <= (int)plVar5[4]) {
         plVar6 = plVar5;
       }
-      plVar5 = (long *)plVar5[(int)plVar5[4] < param_2];
+      plVar5 = (long *)plVar5[(int)plVar5[4] < in_w1];
     } while (plVar5 != (long *)0x0);
-    if ((plVar6 != plVar4) && ((int)plVar6[4] <= param_2)) {
+    if ((plVar6 != plVar4) && ((int)plVar6[4] <= in_w1)) {
       uVar2 = 0;
       goto LAB_004623dc;
     }
@@ -107,8 +108,8 @@ undefined8 Walaber::CharacterManager::createSkeletonActorWithID(long param_1,int
   uVar2 = FUN_00164060(400);
                     /* try { // try from 004623b0 to 004623b3 has its CatchHandler @ 00462410 */
   func_0x0016efe0();
-  piStack_40 = &iStack_4c;
-  lVar3 = func_0x00166ef0(param_1,&iStack_4c,&DAT_006377d4,&piStack_40,auStack_48);
+  puStack_40 = auStack_4c;
+  lVar3 = func_0x00166ef0((ulong)(uint)p0,auStack_4c,&DAT_006377d4,&puStack_40,auStack_48);
   *(undefined8 *)(lVar3 + 0x28) = uVar2;
 LAB_004623dc:
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
@@ -132,14 +133,15 @@ void Walaber::CharacterManager::~CharacterManager(undefined8 *param_1)
   bool bVar1;
   long *plVar2;
   long lVar3;
+  void *p0;
   long *plVar4;
   
   plVar4 = (long *)*param_1;
   while (plVar4 != param_1 + 1) {
-    lVar3 = plVar4[5];
-    if (lVar3 != 0) {
-      func_0x00168e30(lVar3);
-      FUN_00166120(lVar3);
+    p0 = (void *)plVar4[5];
+    if (p0 != (void *)0x0) {
+      func_0x00168e30(p0);
+      FUN_00166120(p0);
     }
     plVar2 = (long *)plVar4[1];
     if ((long *)plVar4[1] == (long *)0x0) {

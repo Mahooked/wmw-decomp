@@ -65,7 +65,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -78,8 +78,8 @@ void std::__ndk1::
     func_0x00162730(lVar2 + -0x18,*(undefined8 *)(lVar2 + -0x10));
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

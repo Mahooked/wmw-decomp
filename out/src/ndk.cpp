@@ -8,12 +8,12 @@
 
 /* ndk::file_exists(char const*) */
 
-bool ndk::file_exists(undefined8 param_1)
+bool ndk::file_exists(char *p0)
 
 {
   long lVar1;
   
-  lVar1 = FUN_00171000(param_1,"r");
+  lVar1 = FUN_00171000(p0,"r");
   if (lVar1 != 0) {
     FUN_0016d5d0();
   }

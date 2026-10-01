@@ -26,7 +26,7 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
   uint *puVar13;
   ulong uVar14;
   ulong uVar15;
-  ulong uVar16;
+  ulong p0;
   undefined1 auStack_88 [8];
   undefined1 auStack_80 [40];
   long lStack_58;
@@ -64,11 +64,11 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
     if (uVar14 == 0) goto LAB_004008a8;
   }
   else {
-    uVar16 = uVar14 + 0x10 & 0xfffffffffffffff0;
-    uVar15 = FUN_00164060(uVar16);
+    p0 = uVar14 + 0x10 & 0xfffffffffffffff0;
+    uVar15 = FUN_00164060(p0);
     param_1[1] = uVar14;
     param_1[2] = uVar15;
-    *param_1 = uVar16 | 1;
+    *param_1 = p0 | 1;
   }
   FUN_001715e0(uVar15,auStack_80,uVar14);
 LAB_004008a8:

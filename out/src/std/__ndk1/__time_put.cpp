@@ -38,13 +38,12 @@ void std::__ndk1::__time_put::~__time_put(long *param_1)
 
 /* std::__ndk1::__time_put::__do_put(char*, char*&, tm const*, char, char) const */
 
-void std::__ndk1::__time_put::__do_put
-               (undefined8 param_1,long param_2,long *param_3,undefined8 param_4,char param_5,
-               char param_6)
+void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4)
 
 {
   long lVar1;
   long lVar2;
+  char in_w5;
   undefined1 uStack_3c;
   char cStack_3b;
   char cStack_3a;
@@ -55,14 +54,14 @@ void std::__ndk1::__time_put::__do_put
   lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_3c = 0x25;
   uStack_39 = 0;
-  cStack_3b = param_5;
-  cStack_3a = param_6;
-  if (param_6 != '\0') {
-    cStack_3b = param_6;
-    cStack_3a = param_5;
+  cStack_3b = p4;
+  cStack_3a = in_w5;
+  if (in_w5 != '\0') {
+    cStack_3b = in_w5;
+    cStack_3a = p4;
   }
-  lVar2 = func_0x0016aa00(param_2,*param_3 - param_2,&uStack_3c);
-  *param_3 = param_2 + lVar2;
+  lVar2 = func_0x0016aa00(p1,*(long *)p2 - (long)p1,&uStack_3c,p3);
+  *(long *)p2 = (long)p1 + lVar2;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -78,7 +77,7 @@ void std::__ndk1::__time_put::__do_put
 
 /* std::__ndk1::__time_put::__time_put(char const*) */
 
-void std::__ndk1::__time_put::__time_put(long *param_1,undefined8 param_2)
+void std::__ndk1::__time_put::__time_put(char *p0)
 
 {
   long lVar1;
@@ -86,20 +85,21 @@ void std::__ndk1::__time_put::__time_put(long *param_1,undefined8 param_2)
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  ulong uVar6;
-  ulong uVar7;
+  undefined8 in_x1;
+  void *pvVar6;
+  ulong p0_00;
   ulong uStack_68;
   ulong uStack_60;
-  ulong uStack_58;
+  void *pvStack_58;
   ulong uStack_50;
   ulong uStack_48;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar2 = FUN_00164730(0x1fbf,param_2,0);
-  *param_1 = lVar2;
+  lVar2 = FUN_00164730(0x1fbf,in_x1,0);
+  *(long *)p0 = lVar2;
   if (lVar2 != 0) {
     if (*(long *)(lVar1 + 0x28) != lStack_38) {
       FUN_00164ff0();
@@ -109,30 +109,30 @@ void std::__ndk1::__time_put::__time_put(long *param_1,undefined8 param_2)
   }
   uStack_68 = 0;
   uStack_60 = 0;
-  uStack_58 = 0;
-  uVar3 = FUN_00173480(param_2);
+  pvStack_58 = (void *)0x0;
+  uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar6 = (ulong)&uStack_68 | 1;
+    pvVar6 = (void *)((ulong)&uStack_68 | 1);
     uStack_68 = CONCAT71(uStack_68._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005c45dc;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar6 = FUN_00164060(uVar7);
-    uStack_68 = uVar7 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar6 = (void *)FUN_00164060(p0_00);
+    uStack_68 = p0_00 | 1;
     uStack_60 = uVar3;
-    uStack_58 = uVar6;
+    pvStack_58 = pvVar6;
   }
-  FUN_001715e0(uVar6,param_2,uVar3);
+  FUN_001715e0(pvVar6);
 LAB_005c45dc:
-  *(undefined1 *)(uVar6 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar6 + uVar3) = 0;
                     /* try { // try from 005c45e0 to 005c45f3 has its CatchHandler @ 005c4644 */
   puVar4 = (ulong *)func_0x00161c30(&uStack_68,0,"time_put_byname failed to construct for ");
-  uStack_40 = puVar4[2];
+  pvStack_40 = (void *)puVar4[2];
   uStack_48 = puVar4[1];
   uStack_50 = *puVar4;
   puVar4[1] = 0;
@@ -142,10 +142,10 @@ LAB_005c45dc:
   uVar5 = FUN_005d5db0(&uStack_50);
                     /* catch() { ... } // from try @ 005c460c with catch @ 005c4614 */
   if ((uStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((uStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
     FUN_00169180(uVar5);
     return;
   }
@@ -199,14 +199,13 @@ void std::__ndk1::__time_put::__time_put(long *param_1,byte *param_2)
 
 /* std::__ndk1::__time_put::__do_put(wchar_t*, wchar_t*&, tm const*, char, char) const */
 
-void std::__ndk1::__time_put::__do_put
-               (undefined8 *param_1,long param_2,long *param_3,undefined8 param_4,undefined1 param_5
-               ,char param_6)
+void std::__ndk1::__time_put::__do_put(wchar_t *p0,wchar_t **p1,tm *p2,char p3,char p4)
 
 {
   long lVar1;
   undefined8 uVar2;
   long lVar3;
+  char in_w5;
   long lVar4;
   undefined1 *puStack_c0;
   undefined8 uStack_b8;
@@ -216,23 +215,23 @@ void std::__ndk1::__time_put::__do_put
   uVar2 = uStack_b8;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_b8._0_2_ = CONCAT11(param_5,0x25);
-  uStack_b8._0_3_ = CONCAT12(param_6,(undefined2)uStack_b8);
+  uStack_b8._0_2_ = CONCAT11(p4,0x25);
+  uStack_b8._0_3_ = CONCAT12(in_w5,(undefined2)uStack_b8);
   uStack_b8._4_4_ = SUB84(uVar2,4);
   uStack_b8._0_4_ = (uint)(uint3)uStack_b8;
   uVar2 = uStack_b8;
-  if (param_6 != '\0') {
-    uStack_b8._0_2_ = CONCAT11(param_6,0x25);
+  if (in_w5 != '\0') {
+    uStack_b8._0_2_ = CONCAT11(in_w5,0x25);
     uStack_b8._3_5_ = SUB85(uVar2,3);
-    uStack_b8._0_3_ = CONCAT12(param_5,(undefined2)uStack_b8);
+    uStack_b8._0_3_ = CONCAT12(p4,(undefined2)uStack_b8);
   }
-  func_0x0016aa00(auStack_ac,100,&uStack_b8);
+  func_0x0016aa00(auStack_ac,100,&uStack_b8,p3);
   uStack_b8 = 0;
-  lVar4 = *param_3;
+  lVar4 = *(long *)p2;
   puStack_c0 = auStack_ac;
-  lVar3 = FUN_0016a870(*param_1);
+  lVar3 = FUN_0016a870(*(undefined8 *)p0);
                     /* try { // try from 005c4d4c to 005c4d5f has its CatchHandler @ 005c4dbc */
-  lVar4 = func_0x00173f30(param_2,&puStack_c0,lVar4 - param_2 >> 2,&uStack_b8);
+  lVar4 = func_0x00173f30(p1,&puStack_c0,lVar4 - (long)p1 >> 2,&uStack_b8);
   if (lVar3 != 0) {
                     /* try { // try from 005c4d68 to 005c4d6f has its CatchHandler @ 005c4db8 */
     FUN_0016a870(lVar3);
@@ -241,7 +240,7 @@ void std::__ndk1::__time_put::__do_put
     FUN_00167030("locale not supported");
   }
   else {
-    *param_3 = param_2 + lVar4 * 4;
+    *(long *)p2 = (long)p1 + lVar4 * 4;
     if (*(long *)(lVar1 + 0x28) == lStack_48) {
       return;
     }

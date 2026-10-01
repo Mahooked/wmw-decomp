@@ -11,37 +11,36 @@
 
 void std::__ndk1::
      __vector_base<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
+  void *p0;
+  void *pvVar1;
+  void *pvVar2;
   long lVar3;
-  long lVar4;
   
-  lVar2 = *param_1;
-  if (lVar2 == 0) {
+  pvVar1 = (void *)*param_1;
+  if (pvVar1 == (void *)0x0) {
     return;
   }
-  lVar3 = param_1[1];
-  lVar4 = lVar2;
-  if (lVar3 != lVar2) {
-    lVar4 = 0;
+  pvVar2 = (void *)param_1[1];
+  p0 = pvVar1;
+  if (pvVar2 != pvVar1) {
+    lVar3 = 0;
     do {
-      lVar1 = lVar3 + lVar4;
-      func_0x001710e0(lVar1 + -0x18,*(undefined8 *)(lVar1 + -0x10));
-      func_0x00164530(lVar1 + -0x30);
-      func_0x00164ba0(lVar1 + -0x50);
-      func_0x00164ba0(lVar1 + -0x68);
-      if ((*(byte *)(lVar1 + -0x88) & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(lVar1 + -0x78));
+      func_0x001710e0((long)pvVar2 + lVar3 + -0x18,*(undefined8 *)((long)pvVar2 + lVar3 + -0x10));
+      func_0x00164530((long)pvVar2 + lVar3 + -0x30);
+      func_0x00164ba0((long)pvVar2 + lVar3 + -0x50);
+      func_0x00164ba0((long)pvVar2 + lVar3 + -0x68);
+      if ((*(byte *)((long)pvVar2 + lVar3 + -0x88) & 1) != 0) {
+        FUN_00166120(*(void **)((long)pvVar2 + lVar3 + -0x78));
       }
-      lVar4 = lVar4 + -0x88;
-    } while (lVar2 - lVar3 != lVar4);
-    lVar4 = *param_1;
+      lVar3 = lVar3 + -0x88;
+    } while ((long)pvVar1 - (long)pvVar2 != lVar3);
+    p0 = (void *)*param_1;
   }
-  param_1[1] = lVar2;
-  FUN_00166120(lVar4);
+  param_1[1] = pvVar1;
+  FUN_00166120(p0);
   return;
 }
 

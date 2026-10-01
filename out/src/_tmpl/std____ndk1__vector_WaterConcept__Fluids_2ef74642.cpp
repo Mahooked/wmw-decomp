@@ -11,26 +11,27 @@
 
 void std::__ndk1::
      vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::reserve(long *param_1,ulong param_2)
+     ::reserve(ulong p0)
 
 {
   long lVar1;
-  long lStack_50;
+  ulong in_x1;
+  void *pvStack_50;
   long lStack_48;
   long lStack_40;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if ((ulong)(param_1[2] - *param_1 >> 5) < param_2) {
-    func_0x00162ab0(&lStack_50,param_2,param_1[1] - *param_1 >> 5,param_1 + 2);
+  if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 5) < in_x1) {
+    func_0x00162ab0(&pvStack_50,in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 5,p0 + 0x10);
                     /* try { // try from 00404cc0 to 00404ccb has its CatchHandler @ 00404d20 */
-    func_0x00172b80(param_1,&lStack_50);
+    func_0x00172b80(p0,&pvStack_50);
     if (lStack_40 != lStack_48) {
       lStack_40 = lStack_40 + (~((lStack_40 + -0x20) - lStack_48) & 0xffffffffffffffe0U);
     }
-    if (lStack_50 != 0) {
-      FUN_00166120();
+    if (pvStack_50 != (void *)0x0) {
+      FUN_00166120(pvStack_50);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
@@ -108,19 +109,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
-     ::__vallocate(long *param_1,ulong param_2)
+     ::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 >> 0x3b == 0) {
-    lVar1 = FUN_00164060(param_2 << 5);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x20;
+  if (in_x1 >> 0x3b == 0) {
+    lVar1 = FUN_00164060(in_x1 << 5);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x20;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

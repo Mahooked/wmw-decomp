@@ -11,10 +11,12 @@
 
 undefined4
 Walaber::VectorTools::lineIntersect
-          (float *param_1,float *param_2,float *param_3,float *param_4,undefined8 *param_5,
-          float *param_6,float *param_7)
+          (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+          Walaber__Vector2 *p4,float *p5,float *p6)
 
 {
+  float *in_x5;
+  float *in_x6;
   undefined4 uVar1;
   float fVar2;
   float fVar3;
@@ -25,33 +27,32 @@ Walaber::VectorTools::lineIntersect
   float fVar8;
   float fVar9;
   
-  *param_5 = 0;
-  *param_6 = 0.0;
-  *param_7 = 0.0;
+  *(undefined8 *)p4 = 0;
+  *in_x5 = 0.0;
+  *in_x6 = 0.0;
   uVar1 = 0;
-  fVar2 = param_4[1] - param_3[1];
-  fVar7 = *param_4 - *param_3;
-  fVar4 = *param_2 - *param_1;
-  fVar6 = param_2[1] - param_1[1];
+  fVar2 = *(float *)(p3 + 4) - *(float *)(p2 + 4);
+  fVar7 = *(float *)p3 - *(float *)p2;
+  fVar4 = *(float *)p1 - *(float *)p0;
+  fVar6 = *(float *)(p1 + 4) - *(float *)(p0 + 4);
   fVar5 = fVar2 * fVar4 - fVar7 * fVar6;
   fVar3 = fVar5;
   if (fVar5 < 0.0) {
     fVar3 = -fVar5;
   }
   if (1e-06 <= fVar3) {
-    fVar9 = param_1[1] - param_3[1];
-    fVar8 = *param_1 - *param_3;
+    fVar9 = *(float *)(p0 + 4) - *(float *)(p2 + 4);
+    fVar8 = *(float *)p0 - *(float *)p2;
     fVar3 = (fVar4 * fVar9 - fVar8 * fVar6) / fVar5;
     uVar1 = 0;
-    *param_6 = (fVar7 * fVar9 - fVar2 * fVar8) / fVar5;
-    *param_7 = fVar3;
-    if ((((fVar3 <= 1.0) && (0.0 <= fVar3)) && (fVar3 = *param_6, 0.0 <= fVar3)) && (fVar3 <= 1.0))
-    {
+    *in_x5 = (fVar7 * fVar9 - fVar2 * fVar8) / fVar5;
+    *in_x6 = fVar3;
+    if ((((fVar3 <= 1.0) && (0.0 <= fVar3)) && (fVar3 = *in_x5, 0.0 <= fVar3)) && (fVar3 <= 1.0)) {
       uVar1 = 1;
-      fVar2 = (float)*(undefined8 *)param_1;
-      fVar4 = (float)((ulong)*(undefined8 *)param_1 >> 0x20);
-      *param_5 = CONCAT44(fVar4 + ((float)((ulong)*(undefined8 *)param_2 >> 0x20) - fVar4) * fVar3,
-                          fVar2 + ((float)*(undefined8 *)param_2 - fVar2) * fVar3);
+      fVar2 = (float)*(undefined8 *)p0;
+      fVar4 = (float)((ulong)*(undefined8 *)p0 >> 0x20);
+      *(ulong *)p4 = CONCAT44(fVar4 + ((float)((ulong)*(undefined8 *)p1 >> 0x20) - fVar4) * fVar3,
+                              fVar2 + ((float)*(undefined8 *)p1 - fVar2) * fVar3);
     }
   }
   return uVar1;
@@ -66,7 +67,9 @@ Walaber::VectorTools::lineIntersect
 /* Walaber::VectorTools::lineIntersect(Walaber::Vector2 const&, Walaber::Vector2 const&,
    Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2&) */
 
-ulong Walaber::VectorTools::lineIntersect(void)
+ulong Walaber::VectorTools::lineIntersect
+                (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3
+                ,Walaber__Vector2 *p4)
 
 {
   long lVar1;
@@ -94,18 +97,19 @@ ulong Walaber::VectorTools::lineIntersect(void)
    Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::closestPointOnLineSegment
-               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3,undefined8 *param_4,
-               float *param_5)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float *p3)
 
 {
+  float *in_x3;
+  undefined8 *in_x8;
   undefined8 uVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   
-  fVar4 = (float)*param_3 - (float)*param_2;
-  fVar5 = (float)((ulong)*param_3 >> 0x20) - (float)((ulong)*param_2 >> 0x20);
+  fVar4 = (float)*(undefined8 *)p1 - (float)*(undefined8 *)p0;
+  fVar5 = (float)((ulong)*(undefined8 *)p1 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
   fVar3 = fVar4 * fVar4 + fVar5 * fVar5;
   fVar2 = SQRT(fVar3);
   if (NAN(fVar2)) {
@@ -115,23 +119,24 @@ void Walaber::VectorTools::closestPointOnLineSegment
     fVar4 = fVar4 * (1.0 / fVar2);
     fVar5 = fVar5 * (1.0 / fVar2);
   }
-  fVar3 = fVar4 * ((float)*param_4 - (float)*param_2) +
-          fVar5 * ((float)((ulong)*param_4 >> 0x20) - (float)((ulong)*param_2 >> 0x20));
+  fVar3 = fVar4 * ((float)*(undefined8 *)p2 - (float)*(undefined8 *)p0) +
+          fVar5 * ((float)((ulong)*(undefined8 *)p2 >> 0x20) -
+                  (float)((ulong)*(undefined8 *)p0 >> 0x20));
   if (fVar3 <= 0.0) {
-    *param_5 = 0.0;
-    uVar1 = *param_2;
+    *in_x3 = 0.0;
+    uVar1 = *(undefined8 *)p0;
   }
   else {
     if (fVar3 < fVar2) {
-      *param_5 = fVar3 / fVar2;
-      *param_1 = CONCAT44(fVar5 * fVar3 + (float)((ulong)*param_2 >> 0x20),
-                          fVar4 * fVar3 + (float)*param_2);
+      *in_x3 = fVar3 / fVar2;
+      *in_x8 = CONCAT44(fVar5 * fVar3 + (float)((ulong)*(undefined8 *)p0 >> 0x20),
+                        fVar4 * fVar3 + (float)*(undefined8 *)p0);
       return;
     }
-    *param_5 = 1.0;
-    uVar1 = *param_3;
+    *in_x3 = 1.0;
+    uVar1 = *(undefined8 *)p1;
   }
-  *param_1 = uVar1;
+  *in_x8 = uVar1;
   return;
 }
 
@@ -145,7 +150,7 @@ void Walaber::VectorTools::closestPointOnLineSegment
    const&, Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 void Walaber::VectorTools::distanceBetweenLineSegments
-               (float *param_1,undefined8 *param_2,float *param_3,undefined8 *param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3)
 
 {
   long lVar1;
@@ -173,8 +178,8 @@ void Walaber::VectorTools::distanceBetweenLineSegments
   uStack_70 = 0;
   uVar2 = func_0x0016e100();
   if ((uVar2 & 1) == 0) {
-    fVar4 = (*param_3 - *param_1) * (*param_3 - *param_1) +
-            (param_3[1] - param_1[1]) * (param_3[1] - param_1[1]);
+    fVar4 = (*(float *)p2 - *(float *)p0) * (*(float *)p2 - *(float *)p0) +
+            (*(float *)(p2 + 4) - *(float *)(p0 + 4)) * (*(float *)(p2 + 4) - *(float *)(p0 + 4));
     fVar6 = SQRT(fVar4);
     uVar2 = (ulong)(uint)fVar6;
     if (NAN(fVar6)) {
@@ -183,8 +188,8 @@ void Walaber::VectorTools::distanceBetweenLineSegments
   }
   else if ((((fStack_74 <= 0.0) || (1.0 <= fStack_74)) || (fStack_78 <= 0.0)) ||
           (uVar2 = 0, 1.0 <= fStack_78)) {
-    fVar4 = (float)*param_2 - (float)*(undefined8 *)param_1;
-    fVar6 = (float)((ulong)*param_2 >> 0x20) - (float)((ulong)*(undefined8 *)param_1 >> 0x20);
+    fVar4 = (float)*(undefined8 *)p1 - (float)*(undefined8 *)p0;
+    fVar6 = (float)((ulong)*(undefined8 *)p1 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
     uVar3 = CONCAT44(fVar6,fVar4);
     fVar7 = SQRT(fVar4 * fVar4 + fVar6 * fVar6);
     uVar2 = (ulong)(uint)fVar7;
@@ -201,8 +206,8 @@ void Walaber::VectorTools::distanceBetweenLineSegments
     }
     fVar6 = -fVar6;
     uVar5 = (undefined4)uVar3;
-    fVar7 = (float)*param_4 - (float)*(undefined8 *)param_3;
-    fVar8 = (float)((ulong)*param_4 >> 0x20) - (float)((ulong)*(undefined8 *)param_3 >> 0x20);
+    fVar7 = (float)*(undefined8 *)p3 - (float)*(undefined8 *)p2;
+    fVar8 = (float)((ulong)*(undefined8 *)p3 >> 0x20) - (float)((ulong)*(undefined8 *)p2 >> 0x20);
     uStack_98 = CONCAT44(fVar8,fVar7);
     fVar4 = SQRT(fVar7 * fVar7 + fVar8 * fVar8);
     uVar3 = (ulong)(uint)fVar4;
@@ -217,16 +222,16 @@ void Walaber::VectorTools::distanceBetweenLineSegments
     }
     fStack_a0 = fVar6;
     uStack_9c = uVar5;
-    fVar6 = (float)func_0x0016d840(uVar2,param_1,param_2,&uStack_88,&fStack_90,param_3,auStack_7c);
-    fVar4 = (float)func_0x0016d840(uVar2,param_1,param_2,&uStack_88,&fStack_90,param_4,auStack_7c);
+    fVar6 = (float)func_0x0016d840(uVar2,p0,p1,&uStack_88,&fStack_90,p2,auStack_7c);
+    fVar4 = (float)func_0x0016d840(uVar2,p0,p1,&uStack_88,&fStack_90,p3,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
-    fVar4 = (float)func_0x0016d840(uVar3,param_3,param_4,&uStack_98,&fStack_a0,param_1,auStack_7c);
+    fVar4 = (float)func_0x0016d840(uVar3,p2,p3,&uStack_98,&fStack_a0,p0,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
-    fVar4 = (float)func_0x0016d840(uVar3,param_3,param_4,&uStack_98,&fStack_a0,param_2,auStack_7c);
+    fVar4 = (float)func_0x0016d840(uVar3,p2,p3,&uStack_98,&fStack_a0,p1,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
@@ -250,30 +255,31 @@ void Walaber::VectorTools::distanceBetweenLineSegments
 
 undefined1  [16]
 Walaber::VectorTools::distToLineSegment
-          (float param_1,undefined8 *param_2,float *param_3,undefined8 *param_4,float *param_5,
-          float *param_6,float *param_7)
+          (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+          float p4,Walaber__Vector2 *p5,float *p6)
 
 {
+  float *in_x5;
   undefined1 auVar1 [16];
   float fVar2;
   float fVar3;
   float fVar4;
   
-  fVar2 = (float)*(undefined8 *)param_6 - (float)*param_2;
-  fVar3 = (float)((ulong)*(undefined8 *)param_6 >> 0x20) - (float)((ulong)*param_2 >> 0x20);
-  fVar4 = fVar2 * (float)*param_4 + fVar3 * (float)((ulong)*param_4 >> 0x20);
+  fVar2 = (float)*(undefined8 *)p5 - (float)*(undefined8 *)p0;
+  fVar3 = (float)((ulong)*(undefined8 *)p5 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
+  fVar4 = fVar2 * (float)*(undefined8 *)p2 + fVar3 * (float)((ulong)*(undefined8 *)p2 >> 0x20);
   if (fVar4 <= 0.0) {
     fVar2 = fVar2 * fVar2 + fVar3 * fVar3;
-    *param_7 = 0.0;
+    *in_x5 = 0.0;
   }
   else {
-    if (fVar4 < param_1) {
-      *param_7 = fVar4 / param_1;
-      return ZEXT416((uint)(*param_5 * fVar2 + param_5[1] * fVar3));
+    if (fVar4 < p4) {
+      *in_x5 = fVar4 / p4;
+      return ZEXT416((uint)(*(float *)p3 * fVar2 + *(float *)(p3 + 4) * fVar3));
     }
-    *param_7 = 1.0;
-    fVar2 = (*param_6 - *param_3) * (*param_6 - *param_3) +
-            (param_6[1] - param_3[1]) * (param_6[1] - param_3[1]);
+    *in_x5 = 1.0;
+    fVar2 = (*(float *)p5 - *(float *)p1) * (*(float *)p5 - *(float *)p1) +
+            (*(float *)(p5 + 4) - *(float *)(p1 + 4)) * (*(float *)(p5 + 4) - *(float *)(p1 + 4));
   }
   if (NAN(SQRT(fVar2))) {
     auVar1 = func_0x0016cd20(fVar2);
@@ -292,7 +298,7 @@ Walaber::VectorTools::distToLineSegment
    Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
 void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
-               (float *param_1,undefined8 *param_2,float *param_3,undefined8 *param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3)
 
 {
   long lVar1;
@@ -320,13 +326,13 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
   uStack_70 = 0;
   uVar2 = func_0x0016e100();
   if ((uVar2 & 1) == 0) {
-    fVar6 = (*param_3 - *param_1) * (*param_3 - *param_1) +
-            (param_3[1] - param_1[1]) * (param_3[1] - param_1[1]);
+    fVar6 = (*(float *)p2 - *(float *)p0) * (*(float *)p2 - *(float *)p0) +
+            (*(float *)(p2 + 4) - *(float *)(p0 + 4)) * (*(float *)(p2 + 4) - *(float *)(p0 + 4));
   }
   else if ((((fStack_74 <= 0.0) || (1.0 <= fStack_74)) || (fStack_78 <= 0.0)) ||
           (fVar6 = 0.0, 1.0 <= fStack_78)) {
-    fVar4 = (float)*param_2 - (float)*(undefined8 *)param_1;
-    fVar6 = (float)((ulong)*param_2 >> 0x20) - (float)((ulong)*(undefined8 *)param_1 >> 0x20);
+    fVar4 = (float)*(undefined8 *)p1 - (float)*(undefined8 *)p0;
+    fVar6 = (float)((ulong)*(undefined8 *)p1 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
     uVar3 = CONCAT44(fVar6,fVar4);
     fVar7 = SQRT(fVar4 * fVar4 + fVar6 * fVar6);
     uVar2 = (ulong)(uint)fVar7;
@@ -343,8 +349,8 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
     }
     fVar6 = -fVar6;
     uVar5 = (undefined4)uVar3;
-    fVar7 = (float)*param_4 - (float)*(undefined8 *)param_3;
-    fVar8 = (float)((ulong)*param_4 >> 0x20) - (float)((ulong)*(undefined8 *)param_3 >> 0x20);
+    fVar7 = (float)*(undefined8 *)p3 - (float)*(undefined8 *)p2;
+    fVar8 = (float)((ulong)*(undefined8 *)p3 >> 0x20) - (float)((ulong)*(undefined8 *)p2 >> 0x20);
     uStack_98 = CONCAT44(fVar8,fVar7);
     fVar4 = SQRT(fVar7 * fVar7 + fVar8 * fVar8);
     uVar3 = (ulong)(uint)fVar4;
@@ -359,16 +365,16 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
     }
     fStack_a0 = fVar6;
     uStack_9c = uVar5;
-    fVar6 = (float)func_0x00168430(uVar2,param_1,param_2,&uStack_88,&fStack_90,param_3,auStack_7c);
-    fVar4 = (float)func_0x00168430(uVar2,param_1,param_2,&uStack_88,&fStack_90,param_4,auStack_7c);
+    fVar6 = (float)func_0x00168430(uVar2,p0,p1,&uStack_88,&fStack_90,p2,auStack_7c);
+    fVar4 = (float)func_0x00168430(uVar2,p0,p1,&uStack_88,&fStack_90,p3,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
-    fVar4 = (float)func_0x00168430(uVar3,param_3,param_4,&uStack_98,&fStack_a0,param_1,auStack_7c);
+    fVar4 = (float)func_0x00168430(uVar3,p2,p3,&uStack_98,&fStack_a0,p0,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
-    fVar4 = (float)func_0x00168430(uVar3,param_3,param_4,&uStack_98,&fStack_a0,param_2,auStack_7c);
+    fVar4 = (float)func_0x00168430(uVar3,p2,p3,&uStack_98,&fStack_a0,p1,auStack_7c);
     if (fVar4 <= fVar6) {
       fVar6 = fVar4;
     }
@@ -390,29 +396,30 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
    Walaber::Vector2 const&, Walaber::Vector2 const&, float, Walaber::Vector2 const&, float&) */
 
 float Walaber::VectorTools::distToLineSegmentSquared
-                (float param_1,undefined8 *param_2,float *param_3,undefined8 *param_4,float *param_5
-                ,float *param_6,float *param_7)
+                (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3
+                ,float p4,Walaber__Vector2 *p5,float *p6)
 
 {
+  float *in_x5;
   float fVar1;
   float fVar2;
   float fVar3;
   
-  fVar1 = (float)*(undefined8 *)param_6 - (float)*param_2;
-  fVar2 = (float)((ulong)*(undefined8 *)param_6 >> 0x20) - (float)((ulong)*param_2 >> 0x20);
-  fVar3 = fVar1 * (float)*param_4 + fVar2 * (float)((ulong)*param_4 >> 0x20);
+  fVar1 = (float)*(undefined8 *)p5 - (float)*(undefined8 *)p0;
+  fVar2 = (float)((ulong)*(undefined8 *)p5 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
+  fVar3 = fVar1 * (float)*(undefined8 *)p2 + fVar2 * (float)((ulong)*(undefined8 *)p2 >> 0x20);
   if (fVar3 <= 0.0) {
-    *param_7 = 0.0;
+    *in_x5 = 0.0;
     return fVar1 * fVar1 + fVar2 * fVar2;
   }
-  if (fVar3 < param_1) {
-    *param_7 = fVar3 / param_1;
-    fVar1 = *param_5 * fVar1 + param_5[1] * fVar2;
+  if (fVar3 < p4) {
+    *in_x5 = fVar3 / p4;
+    fVar1 = *(float *)p3 * fVar1 + *(float *)(p3 + 4) * fVar2;
     return fVar1 * fVar1;
   }
-  *param_7 = 1.0;
-  return (*param_6 - *param_3) * (*param_6 - *param_3) +
-         (param_6[1] - param_3[1]) * (param_6[1] - param_3[1]);
+  *in_x5 = 1.0;
+  return (*(float *)p5 - *(float *)p1) * (*(float *)p5 - *(float *)p1) +
+         (*(float *)(p5 + 4) - *(float *)(p1 + 4)) * (*(float *)(p5 + 4) - *(float *)(p1 + 4));
 }
 
 
@@ -425,7 +432,7 @@ float Walaber::VectorTools::distToLineSegmentSquared
    Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::distToLineSegment
-               (undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined8 param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float *p3)
 
 {
   long lVar1;
@@ -441,8 +448,8 @@ void Walaber::VectorTools::distToLineSegment
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  fVar4 = (float)*param_2 - (float)*param_1;
-  fVar6 = (float)((ulong)*param_2 >> 0x20) - (float)((ulong)*param_1 >> 0x20);
+  fVar4 = (float)*(undefined8 *)p1 - (float)*(undefined8 *)p0;
+  fVar6 = (float)((ulong)*(undefined8 *)p1 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
   uVar5 = CONCAT44(fVar6,fVar4);
   fVar3 = fVar4 * fVar4 + fVar6 * fVar6;
   fVar2 = SQRT(fVar3);
@@ -458,7 +465,7 @@ void Walaber::VectorTools::distToLineSegment
   }
   fStack_58 = -fVar6;
   uStack_54 = (undefined4)uVar5;
-  func_0x0016d840(param_1,param_2,&uStack_50,&fStack_58,param_3,param_4);
+  func_0x0016d840(p0,p1,&uStack_50,&fStack_58,p2);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
@@ -476,7 +483,7 @@ void Walaber::VectorTools::distToLineSegment
    Walaber::Vector2 const&, float&) */
 
 void Walaber::VectorTools::distToLineSegmentSquared
-               (undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined8 param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,float *p3)
 
 {
   long lVar1;
@@ -492,8 +499,8 @@ void Walaber::VectorTools::distToLineSegmentSquared
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  fVar4 = (float)*param_2 - (float)*param_1;
-  fVar6 = (float)((ulong)*param_2 >> 0x20) - (float)((ulong)*param_1 >> 0x20);
+  fVar4 = (float)*(undefined8 *)p1 - (float)*(undefined8 *)p0;
+  fVar6 = (float)((ulong)*(undefined8 *)p1 >> 0x20) - (float)((ulong)*(undefined8 *)p0 >> 0x20);
   uVar5 = CONCAT44(fVar6,fVar4);
   fVar3 = fVar4 * fVar4 + fVar6 * fVar6;
   fVar2 = SQRT(fVar3);
@@ -509,7 +516,7 @@ void Walaber::VectorTools::distToLineSegmentSquared
   }
   fStack_58 = -fVar6;
   uStack_54 = (undefined4)uVar5;
-  func_0x00168430(param_1,param_2,&uStack_50,&fStack_58,param_3,param_4);
+  func_0x00168430(p0,p1,&uStack_50,&fStack_58,p2);
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
@@ -527,17 +534,18 @@ void Walaber::VectorTools::distToLineSegmentSquared
    Walaber::Vector2 const&, Walaber::Vector2 const&, float, float, float) */
 
 void Walaber::VectorTools::calculateSpringForce
-               (undefined8 *param_1,float param_2,float param_3,float param_4,undefined8 *param_5,
-               float *param_6,undefined8 *param_7,float *param_8)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+               float p4,float p5,float p6)
 
 {
+  undefined8 *in_x8;
   float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   
-  fVar3 = (float)*param_5 - (float)*param_7;
-  fVar4 = (float)((ulong)*param_5 >> 0x20) - (float)((ulong)*param_7 >> 0x20);
+  fVar3 = (float)*(undefined8 *)p0 - (float)*(undefined8 *)p2;
+  fVar4 = (float)((ulong)*(undefined8 *)p0 >> 0x20) - (float)((ulong)*(undefined8 *)p2 >> 0x20);
   fVar2 = fVar3 * fVar3 + fVar4 * fVar4;
   fVar1 = SQRT(fVar2);
   if (NAN(fVar1)) {
@@ -551,9 +559,10 @@ void Walaber::VectorTools::calculateSpringForce
     fVar3 = fVar3 * (1.0 / fVar1);
     fVar4 = fVar4 * (1.0 / fVar1);
   }
-  fVar1 = (param_2 - fVar1) * param_3 -
-          ((*param_6 - *param_8) * fVar3 + (param_6[1] - param_8[1]) * fVar4) * param_4;
-  *param_1 = CONCAT44(fVar4 * fVar1,fVar3 * fVar1);
+  fVar1 = (p4 - fVar1) * p5 -
+          ((*(float *)p1 - *(float *)p3) * fVar3 + (*(float *)(p1 + 4) - *(float *)(p3 + 4)) * fVar4
+          ) * p6;
+  *in_x8 = CONCAT44(fVar4 * fVar1,fVar3 * fVar1);
   return;
 }
 
@@ -567,18 +576,20 @@ void Walaber::VectorTools::calculateSpringForce
    const&, Walaber::Vector2 const&, float, float, float) */
 
 void Walaber::VectorTools::calculateSpringForce
-               (float *param_1,float param_2,float param_3,float param_4,float param_5,
-               float *param_6,float *param_7,float *param_8)
+               (Walaber__Vector2 *p0,float p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,float p4,
+               float p5,float p6)
 
 {
+  float *in_x8;
   float fVar1;
   float fVar2;
   
-  fVar2 = param_6[1];
-  fVar1 = (param_3 - param_2) * param_4 -
-          ((*param_7 - *param_8) * *param_6 + (param_7[1] - param_8[1]) * fVar2) * param_5;
-  *param_1 = *param_6 * fVar1;
-  param_1[1] = fVar2 * fVar1;
+  fVar2 = *(float *)(p0 + 4);
+  fVar1 = (p4 - p1) * p5 -
+          ((*(float *)p2 - *(float *)p3) * *(float *)p0 +
+          (*(float *)(p2 + 4) - *(float *)(p3 + 4)) * fVar2) * p6;
+  *in_x8 = *(float *)p0 * fVar1;
+  in_x8[1] = fVar2 * fVar1;
   return;
 }
 
@@ -592,17 +603,18 @@ void Walaber::VectorTools::calculateSpringForce
    const&, Walaber::Vector2 const&, Walaber::Vector2 const&, float, float, float) */
 
 void Walaber::VectorTools::calculateSpringForceAllowSlack
-               (undefined8 *param_1,float param_2,float param_3,float param_4,undefined8 *param_5,
-               float *param_6,undefined8 *param_7,float *param_8)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+               float p4,float p5,float p6)
 
 {
+  undefined8 *in_x8;
   float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   
-  fVar3 = (float)*param_5 - (float)*param_7;
-  fVar4 = (float)((ulong)*param_5 >> 0x20) - (float)((ulong)*param_7 >> 0x20);
+  fVar3 = (float)*(undefined8 *)p0 - (float)*(undefined8 *)p2;
+  fVar4 = (float)((ulong)*(undefined8 *)p0 >> 0x20) - (float)((ulong)*(undefined8 *)p2 >> 0x20);
   fVar2 = fVar3 * fVar3 + fVar4 * fVar4;
   fVar1 = SQRT(fVar2);
   if (NAN(fVar1)) {
@@ -616,13 +628,14 @@ void Walaber::VectorTools::calculateSpringForceAllowSlack
     fVar3 = fVar3 * (1.0 / fVar1);
     fVar4 = fVar4 * (1.0 / fVar1);
   }
-  if (param_2 - fVar1 <= 0.0) {
-    fVar1 = (param_2 - fVar1) * param_3 -
-            ((*param_6 - *param_8) * fVar3 + (param_6[1] - param_8[1]) * fVar4) * param_4;
-    *param_1 = CONCAT44(fVar4 * fVar1,fVar3 * fVar1);
+  if (p4 - fVar1 <= 0.0) {
+    fVar1 = (p4 - fVar1) * p5 -
+            ((*(float *)p1 - *(float *)p3) * fVar3 +
+            (*(float *)(p1 + 4) - *(float *)(p3 + 4)) * fVar4) * p6;
+    *in_x8 = CONCAT44(fVar4 * fVar1,fVar3 * fVar1);
   }
   else {
-    *param_1 = 0;
+    *in_x8 = 0;
   }
   return;
 }
@@ -637,26 +650,27 @@ void Walaber::VectorTools::calculateSpringForceAllowSlack
    Walaber::Vector2 const&, Walaber::Vector2 const&, float) */
 
 void Walaber::VectorTools::bezierInterp
-               (undefined8 *param_1,float param_2,undefined8 *param_3,undefined8 *param_4,
-               undefined8 *param_5,undefined8 *param_6)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2,Walaber__Vector2 *p3,
+               float p4)
 
 {
+  undefined8 *in_x8;
   float fVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   
-  fVar2 = 1.0 - param_2;
+  fVar2 = 1.0 - p4;
   fVar3 = fVar2 * fVar2 * fVar2;
-  fVar4 = param_2 * param_2 * fVar2 * 3.0;
-  fVar1 = param_2 * param_2 * param_2;
-  param_2 = fVar2 * fVar2 * 3.0 * param_2;
-  *param_1 = CONCAT44((float)((ulong)*param_3 >> 0x20) * fVar3 +
-                      (float)((ulong)*param_4 >> 0x20) * param_2 +
-                      (float)((ulong)*param_6 >> 0x20) * fVar4 +
-                      (float)((ulong)*param_5 >> 0x20) * fVar1,
-                      (float)*param_3 * fVar3 + (float)*param_4 * param_2 + (float)*param_6 * fVar4
-                      + (float)*param_5 * fVar1);
+  fVar4 = p4 * p4 * fVar2 * 3.0;
+  fVar1 = p4 * p4 * p4;
+  fVar2 = fVar2 * fVar2 * 3.0 * p4;
+  *in_x8 = CONCAT44((float)((ulong)*(undefined8 *)p0 >> 0x20) * fVar3 +
+                    (float)((ulong)*(undefined8 *)p1 >> 0x20) * fVar2 +
+                    (float)((ulong)*(undefined8 *)p3 >> 0x20) * fVar4 +
+                    (float)((ulong)*(undefined8 *)p2 >> 0x20) * fVar1,
+                    (float)*(undefined8 *)p0 * fVar3 + (float)*(undefined8 *)p1 * fVar2 +
+                    (float)*(undefined8 *)p3 * fVar4 + (float)*(undefined8 *)p2 * fVar1);
   return;
 }
 

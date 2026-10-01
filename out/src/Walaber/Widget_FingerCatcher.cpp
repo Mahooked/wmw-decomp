@@ -8,38 +8,40 @@
 
 /* Walaber::Widget_FingerCatcher::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_FingerCatcher const&) */
 
-long Walaber::Widget_FingerCatcher::operator=(long param_1,long param_2)
+Walaber__Widget_FingerCatcher *
+Walaber::Widget_FingerCatcher::operator=(Walaber__Widget_FingerCatcher *p0)
 
 {
   undefined4 uVar1;
+  Walaber__Widget_FingerCatcher *in_x1;
   undefined8 uVar2;
   
   func_0x001711a0();
-  uVar2 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar2;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  if (param_1 != param_2) {
-    func_0x001636f0(param_1 + 0x100,*(undefined8 *)(param_2 + 0x100),param_2 + 0x108);
-    func_0x0016e750(param_1 + 0x118,*(undefined8 *)(param_2 + 0x118),param_2 + 0x120);
-    func_0x00165270(param_1 + 0x130,*(undefined8 *)(param_2 + 0x138),param_2 + 0x130,0);
+  uVar2 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar2;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = in_x1[0xb0];
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  if (p0 != in_x1) {
+    func_0x001636f0(p0 + 0x100,*(undefined8 *)(in_x1 + 0x100),in_x1 + 0x108);
+    func_0x0016e750(p0 + 0x118,*(undefined8 *)(in_x1 + 0x118),in_x1 + 0x120);
+    func_0x00165270(p0 + 0x130,*(undefined8 *)(in_x1 + 0x138),in_x1 + 0x130,0);
   }
-  *(undefined1 *)(param_1 + 0x148) = *(undefined1 *)(param_2 + 0x148);
-  return param_1;
+  p0[0x148] = in_x1[0x148];
+  return p0;
 }
 
 
@@ -108,7 +110,7 @@ void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(undefined8 *param_1)
 
 /* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
 
-void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(undefined8 param_1)
+void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(void *param_1)
 
 {
   func_0x00164f80();
@@ -139,11 +141,13 @@ void Walaber::Widget_FingerCatcher::init(long param_1)
 
 /* Walaber::Widget_FingerCatcher::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_FingerCatcher::update(long param_1,long param_2)
+undefined8 Walaber::Widget_FingerCatcher::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  *(int *)(param_2 + 0xc) = (int)*(undefined8 *)(param_1 + 0x110);
-  *(int *)(param_2 + 0x10) = (int)*(undefined8 *)(param_1 + 0x140);
+  long in_x1;
+  
+  *(int *)(in_x1 + 0xc) = (int)*(undefined8 *)(p1 + 0x110);
+  *(int *)(in_x1 + 0x10) = (int)*(undefined8 *)(p1 + 0x140);
   return 1;
 }
 
@@ -155,10 +159,10 @@ undefined8 Walaber::Widget_FingerCatcher::update(long param_1,long param_2)
 
 /* Walaber::Widget_FingerCatcher::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerDown(void)
+undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  func_0x00163cd0();
+  func_0x00163cd0(p0);
   return 1;
 }
 
@@ -170,13 +174,13 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerDown(void)
 
 /* Walaber::Widget_FingerCatcher::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_FingerCatcher::_acceptFinger(long param_1,undefined4 param_2,long param_3)
+undefined8 Walaber::Widget_FingerCatcher::_acceptFinger(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
   long lVar2;
   undefined8 uVar3;
+  long in_x2;
   undefined4 uStack_5c;
   undefined1 auStack_58 [8];
   undefined4 *puStack_50;
@@ -184,14 +188,14 @@ Walaber::Widget_FingerCatcher::_acceptFinger(long param_1,undefined4 param_2,lon
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_5c = param_2;
+  uStack_5c = SUB84(p1,0);
   puStack_50 = &uStack_5c;
-  lVar2 = func_0x00161fd0(param_1 + 0x100,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
+  lVar2 = func_0x00161fd0((ulong)(uint)p0 + 0x100,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
   *(undefined4 *)(lVar2 + 0x28) = 0;
-  *(long *)(lVar2 + 0x30) = param_3;
+  *(long *)(lVar2 + 0x30) = in_x2;
   puStack_50 = &uStack_5c;
-  lVar2 = func_0x00162050(param_1 + 0x118,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
-  *(undefined8 *)(lVar2 + 0x20) = *(undefined8 *)(param_3 + 4);
+  lVar2 = func_0x00162050((ulong)(uint)p0 + 0x118,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
+  *(undefined8 *)(lVar2 + 0x20) = *(undefined8 *)(in_x2 + 4);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return 1;
   }
@@ -207,10 +211,10 @@ Walaber::Widget_FingerCatcher::_acceptFinger(long param_1,undefined4 param_2,lon
 
 /* Walaber::Widget_FingerCatcher::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerEntered(long param_1)
+undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(char *)(param_1 + 0x148) != '\0') {
+  if (*(char *)((ulong)(uint)p0 + 0x148) != '\0') {
     func_0x00163cd0();
     return 1;
   }
@@ -225,42 +229,45 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerEntered(long param_1)
 
 /* Walaber::Widget_FingerCatcher::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(long param_1,int param_2,long param_3)
+undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
-  long lVar2;
-  undefined8 uVar3;
-  long lVar4;
+  ulong uVar2;
+  long lVar3;
+  undefined8 uVar4;
+  long in_x2;
+  long lVar5;
   int iStack_4c;
   undefined1 auStack_48 [8];
   int *piStack_40;
   long lStack_38;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   piStack_40 = &iStack_4c;
-  iStack_4c = param_2;
-  lVar2 = func_0x00162050(param_1 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
-  *(undefined8 *)(lVar2 + 0x20) = *(undefined8 *)(param_3 + 4);
-  lVar2 = *(long *)(param_1 + 0x108);
-  if (lVar2 != 0) {
-    lVar4 = param_1 + 0x108;
+  iStack_4c = (int)p1;
+  lVar3 = func_0x00162050(uVar2 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
+  *(undefined8 *)(lVar3 + 0x20) = *(undefined8 *)(in_x2 + 4);
+  lVar3 = *(long *)(uVar2 + 0x108);
+  if (lVar3 != 0) {
+    lVar5 = uVar2 + 0x108;
     do {
-      if (iStack_4c <= *(int *)(lVar2 + 0x20)) {
-        lVar4 = lVar2;
+      if (iStack_4c <= *(int *)(lVar3 + 0x20)) {
+        lVar5 = lVar3;
       }
-      lVar2 = *(long *)(lVar2 + (ulong)(*(int *)(lVar2 + 0x20) < iStack_4c) * 8);
-    } while (lVar2 != 0);
-    if ((lVar4 != param_1 + 0x108) && (*(int *)(lVar4 + 0x20) <= iStack_4c)) {
-      *(int *)(lVar4 + 0x28) = *(int *)(lVar4 + 0x28) + 1;
+      lVar3 = *(long *)(lVar3 + (ulong)(*(int *)(lVar3 + 0x20) < iStack_4c) * 8);
+    } while (lVar3 != 0);
+    if ((lVar5 != uVar2 + 0x108) && (*(int *)(lVar5 + 0x20) <= iStack_4c)) {
+      *(int *)(lVar5 + 0x28) = *(int *)(lVar5 + 0x28) + 1;
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return 0;
   }
-  uVar3 = FUN_00164ff0();
-  return uVar3;
+  uVar4 = FUN_00164ff0();
+  return uVar4;
 }
 
 
@@ -271,42 +278,45 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(long param_1,int p
 
 /* Walaber::Widget_FingerCatcher::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(long param_1,int param_2,long param_3)
+undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
-  long lVar2;
-  undefined8 uVar3;
-  long lVar4;
+  ulong uVar2;
+  long lVar3;
+  undefined8 uVar4;
+  long in_x2;
+  long lVar5;
   int iStack_4c;
   undefined1 auStack_48 [8];
   int *piStack_40;
   long lStack_38;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   piStack_40 = &iStack_4c;
-  iStack_4c = param_2;
-  lVar2 = func_0x00162050(param_1 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
-  *(undefined8 *)(lVar2 + 0x20) = *(undefined8 *)(param_3 + 4);
-  lVar2 = *(long *)(param_1 + 0x108);
-  if (lVar2 != 0) {
-    lVar4 = param_1 + 0x108;
+  iStack_4c = (int)p1;
+  lVar3 = func_0x00162050(uVar2 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
+  *(undefined8 *)(lVar3 + 0x20) = *(undefined8 *)(in_x2 + 4);
+  lVar3 = *(long *)(uVar2 + 0x108);
+  if (lVar3 != 0) {
+    lVar5 = uVar2 + 0x108;
     do {
-      if (iStack_4c <= *(int *)(lVar2 + 0x20)) {
-        lVar4 = lVar2;
+      if (iStack_4c <= *(int *)(lVar3 + 0x20)) {
+        lVar5 = lVar3;
       }
-      lVar2 = *(long *)(lVar2 + (ulong)(*(int *)(lVar2 + 0x20) < iStack_4c) * 8);
-    } while (lVar2 != 0);
-    if ((lVar4 != param_1 + 0x108) && (*(int *)(lVar4 + 0x20) <= iStack_4c)) {
-      *(int *)(lVar4 + 0x28) = *(int *)(lVar4 + 0x28) + 1;
+      lVar3 = *(long *)(lVar3 + (ulong)(*(int *)(lVar3 + 0x20) < iStack_4c) * 8);
+    } while (lVar3 != 0);
+    if ((lVar5 != uVar2 + 0x108) && (*(int *)(lVar5 + 0x20) <= iStack_4c)) {
+      *(int *)(lVar5 + 0x28) = *(int *)(lVar5 + 0x28) + 1;
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return 0;
   }
-  uVar3 = FUN_00164ff0();
-  return uVar3;
+  uVar4 = FUN_00164ff0();
+  return uVar4;
 }
 
 
@@ -317,10 +327,10 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(long param_1,int pa
 
 /* Walaber::Widget_FingerCatcher::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_FingerCatcher::releaseFingerUp(void)
+void Walaber::Widget_FingerCatcher::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  _releaseFinger();
+  _releaseFinger(p0,p1);
   return;
 }
 
@@ -332,51 +342,56 @@ void Walaber::Widget_FingerCatcher::releaseFingerUp(void)
 
 /* Walaber::Widget_FingerCatcher::_releaseFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(long param_1,int param_2,long param_3)
+undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
-  long *plVar2;
-  undefined8 uVar3;
-  long lVar4;
-  long lVar5;
+  ulong uVar2;
+  long *plVar3;
+  undefined8 uVar4;
+  int iVar5;
+  long lVar6;
+  long in_x2;
+  long lVar7;
   int iStack_5c;
   undefined1 auStack_58 [8];
   int *piStack_50;
   long lStack_48;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  lVar5 = *(long *)(param_1 + 0x108);
-  iStack_5c = param_2;
-  if (lVar5 != 0) {
-    lVar4 = param_1 + 0x108;
+  iVar5 = (int)p1;
+  lVar7 = *(long *)(uVar2 + 0x108);
+  iStack_5c = iVar5;
+  if (lVar7 != 0) {
+    lVar6 = uVar2 + 0x108;
     do {
-      if (param_2 <= *(int *)(lVar5 + 0x20)) {
-        lVar4 = lVar5;
+      if (iVar5 <= *(int *)(lVar7 + 0x20)) {
+        lVar6 = lVar7;
       }
-      lVar5 = *(long *)(lVar5 + (ulong)(*(int *)(lVar5 + 0x20) < param_2) * 8);
-    } while (lVar5 != 0);
-    if ((lVar4 != param_1 + 0x108) && (*(int *)(lVar4 + 0x20) <= param_2)) {
-      func_0x00172ec0(param_1 + 0x100);
-      plVar2 = (long *)FUN_00164060(0x18);
-      *(int *)(plVar2 + 2) = param_2;
-      lVar5 = *(long *)(param_1 + 0x130);
-      *plVar2 = lVar5;
-      plVar2[1] = param_1 + 0x130;
-      *(long **)(lVar5 + 8) = plVar2;
-      *(long **)(param_1 + 0x130) = plVar2;
-      *(long *)(param_1 + 0x140) = *(long *)(param_1 + 0x140) + 1;
+      lVar7 = *(long *)(lVar7 + (ulong)(*(int *)(lVar7 + 0x20) < iVar5) * 8);
+    } while (lVar7 != 0);
+    if ((lVar6 != uVar2 + 0x108) && (*(int *)(lVar6 + 0x20) <= iVar5)) {
+      func_0x00172ec0(uVar2 + 0x100);
+      plVar3 = (long *)FUN_00164060(0x18);
+      *(int *)(plVar3 + 2) = iVar5;
+      lVar7 = *(long *)(uVar2 + 0x130);
+      *plVar3 = lVar7;
+      plVar3[1] = uVar2 + 0x130;
+      *(long **)(lVar7 + 8) = plVar3;
+      *(long **)(uVar2 + 0x130) = plVar3;
+      *(long *)(uVar2 + 0x140) = *(long *)(uVar2 + 0x140) + 1;
     }
   }
   piStack_50 = &iStack_5c;
-  lVar5 = func_0x00162050(param_1 + 0x118,&iStack_5c,&DAT_0062c631,&piStack_50,auStack_58);
-  *(undefined8 *)(lVar5 + 0x20) = *(undefined8 *)(param_3 + 4);
+  lVar7 = func_0x00162050(uVar2 + 0x118,&iStack_5c,&DAT_0062c631,&piStack_50,auStack_58);
+  *(undefined8 *)(lVar7 + 0x20) = *(undefined8 *)(in_x2 + 4);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return 1;
   }
-  uVar3 = FUN_00164ff0();
-  return uVar3;
+  uVar4 = FUN_00164ff0();
+  return uVar4;
 }
 
 
@@ -387,10 +402,10 @@ undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(long param_1,int param_
 
 /* Walaber::Widget_FingerCatcher::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::releaseFingerLeft(void)
+undefined8 Walaber::Widget_FingerCatcher::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
-  FUN_00170bc0();
+  FUN_00170bc0(p0,p1);
   return 1;
 }
 
@@ -402,10 +417,10 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerLeft(void)
 
 /* Walaber::Widget_FingerCatcher::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_FingerCatcher::notifyFingerLost(void)
+void Walaber::Widget_FingerCatcher::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  _releaseFinger();
+  _releaseFinger(p0,p1);
   return;
 }
 
@@ -417,35 +432,38 @@ void Walaber::Widget_FingerCatcher::notifyFingerLost(void)
 
 /* Walaber::Widget_FingerCatcher::getLostFingerPosition(int) */
 
-void Walaber::Widget_FingerCatcher::getLostFingerPosition
-               (undefined4 *param_1,long param_2,int param_3)
+void Walaber::Widget_FingerCatcher::getLostFingerPosition(int p0)
 
 {
   long lVar1;
-  undefined4 *puVar2;
-  undefined4 uVar3;
-  long lVar4;
+  int in_w1;
+  undefined4 *in_x8;
+  long lVar2;
+  undefined4 *puVar3;
+  undefined4 uVar4;
+  long lVar5;
   
-  lVar4 = *(long *)(param_2 + 0x120);
-  if (lVar4 != 0) {
-    lVar1 = param_2 + 0x120;
+  lVar5 = *(long *)((ulong)(uint)p0 + 0x120);
+  if (lVar5 != 0) {
+    lVar1 = (ulong)(uint)p0 + 0x120;
+    lVar2 = lVar1;
     do {
-      if (param_3 <= *(int *)(lVar4 + 0x1c)) {
-        lVar1 = lVar4;
+      if (in_w1 <= *(int *)(lVar5 + 0x1c)) {
+        lVar2 = lVar5;
       }
-      lVar4 = *(long *)(lVar4 + (ulong)(*(int *)(lVar4 + 0x1c) < param_3) * 8);
-    } while (lVar4 != 0);
-    if ((lVar1 != param_2 + 0x120) && (*(int *)(lVar1 + 0x1c) <= param_3)) {
-      uVar3 = *(undefined4 *)(lVar1 + 0x20);
-      puVar2 = (undefined4 *)(lVar1 + 0x24);
+      lVar5 = *(long *)(lVar5 + (ulong)(*(int *)(lVar5 + 0x1c) < in_w1) * 8);
+    } while (lVar5 != 0);
+    if ((lVar2 != lVar1) && (*(int *)(lVar2 + 0x1c) <= in_w1)) {
+      uVar4 = *(undefined4 *)(lVar2 + 0x20);
+      puVar3 = (undefined4 *)(lVar2 + 0x24);
       goto LAB_0037c548;
     }
   }
-  puVar2 = (undefined4 *)((long)&Vector2::Zero + 4);
-  uVar3 = 0;
+  puVar3 = (undefined4 *)((long)&Vector2::Zero + 4);
+  uVar4 = 0;
 LAB_0037c548:
-  *param_1 = uVar3;
-  param_1[1] = *puVar2;
+  *in_x8 = uVar4;
+  in_x8[1] = *puVar3;
   return;
 }
 
@@ -457,26 +475,29 @@ LAB_0037c548:
 
 /* Walaber::Widget_FingerCatcher::lostFingerHandled(int) */
 
-void Walaber::Widget_FingerCatcher::lostFingerHandled(long param_1,int param_2)
+void Walaber::Widget_FingerCatcher::lostFingerHandled(int p0)
 
 {
   long *plVar1;
-  long lVar2;
-  long *plVar3;
+  ulong uVar2;
+  int in_w1;
+  long lVar3;
+  long *p0_00;
   
-  plVar1 = *(long **)(param_1 + 0x138);
+  uVar2 = (ulong)(uint)p0;
+  plVar1 = *(long **)(uVar2 + 0x138);
   do {
-    plVar3 = plVar1;
-    if ((long *)(param_1 + 0x130) == plVar3) {
+    p0_00 = plVar1;
+    if ((long *)(uVar2 + 0x130) == p0_00) {
       return;
     }
-    plVar1 = (long *)plVar3[1];
-  } while ((int)plVar3[2] != param_2);
-  lVar2 = *plVar3;
-  *(long **)(lVar2 + 8) = (long *)plVar3[1];
-  *(long *)plVar3[1] = lVar2;
-  *(long *)(param_1 + 0x140) = *(long *)(param_1 + 0x140) + -1;
-  FUN_00166120(plVar3);
+    plVar1 = (long *)p0_00[1];
+  } while ((int)p0_00[2] != in_w1);
+  lVar3 = *p0_00;
+  *(long **)(lVar3 + 8) = (long *)p0_00[1];
+  *(long *)p0_00[1] = lVar3;
+  *(long *)(uVar2 + 0x140) = *(long *)(uVar2 + 0x140) + -1;
+  FUN_00166120(p0_00);
   return;
 }
 

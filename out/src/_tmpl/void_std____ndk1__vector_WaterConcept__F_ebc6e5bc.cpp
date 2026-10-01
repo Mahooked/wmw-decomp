@@ -14,30 +14,31 @@
 void std::__ndk1::
      vector<WaterConcept::Fluids::FluidCollisionRecord,std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>
      ::__push_back_slow_path<WaterConcept::Fluids::FluidCollisionRecord_const&>
-               (long *param_1,undefined8 *param_2)
+               (WaterConcept__Fluids__FluidCollisionRecord *p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
   ulong uVar5;
   undefined8 uVar6;
   undefined8 uVar7;
-  long lStack_60;
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 5;
+  lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = *(long *)(p0 + 0x10) - *(long *)p0;
   if ((ulong)(lVar4 >> 5) < 0x3ffffffffffffff) {
     uVar5 = lVar4 >> 4;
     if (uVar2 <= uVar5) {
@@ -47,23 +48,23 @@ void std::__ndk1::
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  func_0x00162ab0(&lStack_60,uVar2,lVar3,param_1 + 2);
-  uVar7 = param_2[1];
-  uVar6 = *param_2;
-  puStack_50[2] = param_2[2];
+  func_0x00162ab0(&pvStack_60,uVar2,lVar3,p0 + 0x10);
+  uVar7 = in_x1[1];
+  uVar6 = *in_x1;
+  puStack_50[2] = in_x1[2];
   puStack_50[1] = uVar7;
   *puStack_50 = uVar6;
-  puStack_50[3] = param_2[3];
+  puStack_50[3] = in_x1[3];
   puStack_50 = puStack_50 + 4;
                     /* try { // try from 0040b590 to 0040b59b has its CatchHandler @ 0040b5fc */
-  func_0x00172b80(param_1,&lStack_60);
+  func_0x00172b80(p0,&pvStack_60);
   if (puStack_50 != puStack_58) {
     puStack_50 = (undefined8 *)
                  ((long)puStack_50 +
                  (~((long)puStack_50 + (-0x20 - (long)puStack_58)) & 0xffffffffffffffe0U));
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

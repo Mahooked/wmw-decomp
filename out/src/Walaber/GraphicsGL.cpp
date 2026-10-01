@@ -8,17 +8,17 @@
 
 /* Walaber::GraphicsGL::bindFramebuffer(int) */
 
-void Walaber::GraphicsGL::bindFramebuffer(int param_1)
+void Walaber::GraphicsGL::bindFramebuffer(int p0)
 
 {
   long lVar1;
   
   lVar1 = func_0x00166000();
-  if (*(int *)(lVar1 + 0x3c) == param_1) {
+  if (*(int *)(lVar1 + 0x3c) == p0) {
     return;
   }
-  *(int *)(lVar1 + 0x3c) = param_1;
-  func_0x00167520(0x8d40,param_1);
+  *(int *)(lVar1 + 0x3c) = p0;
+  func_0x00167520(0x8d40,p0);
   return;
 }
 
@@ -30,22 +30,22 @@ void Walaber::GraphicsGL::bindFramebuffer(int param_1)
 
 /* Walaber::GraphicsGL::setViewport(int, int, int, int) */
 
-void Walaber::GraphicsGL::setViewport(int param_1,int param_2,int param_3,int param_4)
+void Walaber::GraphicsGL::setViewport(int p0,int p1,int p2,int p3)
 
 {
   long lVar1;
   
   lVar1 = func_0x00166000();
-  if ((((*(int *)(lVar1 + 0x2c) == param_1) && (*(int *)(lVar1 + 0x30) == param_2)) &&
-      (*(int *)(lVar1 + 0x34) == param_3)) && (*(int *)(lVar1 + 0x38) == param_4)) {
+  if ((((*(int *)(lVar1 + 0x2c) == p0) && (*(int *)(lVar1 + 0x30) == p1)) &&
+      (*(int *)(lVar1 + 0x34) == p2)) && (*(int *)(lVar1 + 0x38) == p3)) {
     return;
   }
-  *(int *)(lVar1 + 0x2c) = param_1;
-  *(int *)(lVar1 + 0x30) = param_2;
-  *(int *)(lVar1 + 0x34) = param_3;
-  *(int *)(lVar1 + 0x38) = param_4;
-  func_0x00171df0(param_1,param_2,param_3,param_4);
-  FUN_00166450("Walaber",1,"viewport %d,%d %d,%d\n",param_1,param_2,param_3,param_4);
+  *(int *)(lVar1 + 0x2c) = p0;
+  *(int *)(lVar1 + 0x30) = p1;
+  *(int *)(lVar1 + 0x34) = p2;
+  *(int *)(lVar1 + 0x38) = p3;
+  func_0x00171df0(p0,p1,p2,p3);
+  FUN_00166450("Walaber",1,"viewport %d,%d %d,%d\n",p0,p1,p2,p3);
   return;
 }
 
@@ -78,17 +78,17 @@ undefined1 * Walaber::GraphicsGL::getState(void)
 
 /* Walaber::GraphicsGL::setBlending(bool) */
 
-void Walaber::GraphicsGL::setBlending(byte param_1)
+void Walaber::GraphicsGL::setBlending(bool p0)
 
 {
   long lVar1;
   
   lVar1 = func_0x00166000();
-  if ((param_1 & 1) == *(byte *)(lVar1 + 4)) {
+  if (p0 == (bool)*(char *)(lVar1 + 4)) {
     return;
   }
-  *(byte *)(lVar1 + 4) = param_1 & 1;
-  if ((param_1 & 1) != 0) {
+  *(bool *)(lVar1 + 4) = p0;
+  if (p0) {
     func_0x00162400();
     return;
   }
@@ -104,19 +104,19 @@ void Walaber::GraphicsGL::setBlending(byte param_1)
 
 /* Walaber::GraphicsGL::setTextureEnabled(bool) */
 
-void Walaber::GraphicsGL::setTextureEnabled(byte param_1)
+void Walaber::GraphicsGL::setTextureEnabled(bool p0)
 
 {
   long lVar1;
-  byte *pbVar2;
+  char *pcVar2;
   
   lVar1 = func_0x00166000();
-  pbVar2 = (byte *)(lVar1 + (long)*(int *)(lVar1 + 0x10) * 0xc + 0x14);
-  if ((param_1 & 1) == *pbVar2) {
+  pcVar2 = (char *)(lVar1 + (long)*(int *)(lVar1 + 0x10) * 0xc + 0x14);
+  if (p0 == (bool)*pcVar2) {
     return;
   }
-  *pbVar2 = param_1 & 1;
-  if ((param_1 & 1) != 0) {
+  *pcVar2 = p0;
+  if (p0) {
     func_0x00162400();
     return;
   }
@@ -132,19 +132,19 @@ void Walaber::GraphicsGL::setTextureEnabled(byte param_1)
 
 /* Walaber::GraphicsGL::bindTexture(unsigned int) */
 
-void Walaber::GraphicsGL::bindTexture(int param_1)
+void Walaber::GraphicsGL::bindTexture(uint p0)
 
 {
   long lVar1;
-  int *piVar2;
+  uint *puVar2;
   
   lVar1 = func_0x00166000();
-  piVar2 = (int *)(lVar1 + (long)*(int *)(lVar1 + 0x10) * 0xc + 0x18);
-  if (*piVar2 == param_1) {
+  puVar2 = (uint *)(lVar1 + (long)*(int *)(lVar1 + 0x10) * 0xc + 0x18);
+  if (*puVar2 == p0) {
     return;
   }
-  *piVar2 = param_1;
-  func_0x0016a5b0(0xde1,param_1);
+  *puVar2 = p0;
+  func_0x0016a5b0(0xde1,p0);
   return;
 }
 
@@ -284,20 +284,18 @@ void Walaber::GraphicsGL::setTextureEnvironmentMode(int param_1)
 
 /* Walaber::GraphicsGL::setAlphaBlending(bool, unsigned int, unsigned int) */
 
-void Walaber::GraphicsGL::setAlphaBlending(uint param_1,int param_2,int param_3)
+void Walaber::GraphicsGL::setAlphaBlending(bool p0,uint p1,uint p2)
 
 {
   long lVar1;
   
   lVar1 = func_0x00166000();
-  func_0x00173240(param_1 & 1);
-  if ((param_1 & 1) != 0) {
-    if ((*(int *)(lVar1 + 8) != param_2) || (*(int *)(lVar1 + 0xc) != param_3)) {
-      *(int *)(lVar1 + 8) = param_2;
-      *(int *)(lVar1 + 0xc) = param_3;
-      func_0x00169900(param_2,param_3);
-      return;
-    }
+  func_0x00173240(p0);
+  if ((p0) && ((*(uint *)(lVar1 + 8) != p1 || (*(uint *)(lVar1 + 0xc) != p2)))) {
+    *(uint *)(lVar1 + 8) = p1;
+    *(uint *)(lVar1 + 0xc) = p2;
+    func_0x00169900(p1,p2);
+    return;
   }
   return;
 }
@@ -420,16 +418,16 @@ undefined2 * Walaber::GraphicsGL::getExtensions(void)
 
 /* Walaber::GraphicsGL::setActiveTexture(int) */
 
-void Walaber::GraphicsGL::setActiveTexture(int param_1)
+void Walaber::GraphicsGL::setActiveTexture(int p0)
 
 {
   long lVar1;
   
   lVar1 = func_0x00166000();
-  if (*(int *)(lVar1 + 0x10) != param_1) {
-    func_0x00168910(param_1 + 0x84c0);
-    func_0x00172620(param_1 + 0x84c0);
-    *(int *)(lVar1 + 0x10) = param_1;
+  if (*(int *)(lVar1 + 0x10) != p0) {
+    func_0x00168910(p0 + 0x84c0);
+    func_0x00172620(p0 + 0x84c0);
+    *(int *)(lVar1 + 0x10) = p0;
   }
   return;
 }

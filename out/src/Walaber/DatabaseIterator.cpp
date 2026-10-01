@@ -25,12 +25,12 @@ bool Walaber::DatabaseIterator::next(undefined8 *param_1)
 
 /* Walaber::DatabaseIterator::getIntAtIndex(int) */
 
-undefined8 Walaber::DatabaseIterator::getIntAtIndex(long *param_1)
+undefined8 Walaber::DatabaseIterator::getIntAtIndex(int p0)
 
 {
   undefined8 uVar1;
   
-  if (*param_1 != 0) {
+  if (*(long *)(ulong)(uint)p0 != 0) {
     uVar1 = func_0x00162780();
     return uVar1;
   }
@@ -45,12 +45,12 @@ undefined8 Walaber::DatabaseIterator::getIntAtIndex(long *param_1)
 
 /* Walaber::DatabaseIterator::getFloatAtIndex(int) */
 
-float Walaber::DatabaseIterator::getFloatAtIndex(long *param_1)
+float Walaber::DatabaseIterator::getFloatAtIndex(int p0)
 
 {
   double dVar1;
   
-  if (*param_1 != 0) {
+  if (*(long *)(ulong)(uint)p0 != 0) {
     dVar1 = (double)func_0x00172c80();
     return (float)dVar1;
   }
@@ -137,22 +137,25 @@ void Walaber::DatabaseIterator::DatabaseIterator
   long lVar1;
   undefined8 uVar2;
   undefined4 uVar3;
-  ulong auStack_70 [6];
+  ulong auStack_70 [2];
+  void *pvStack_60;
+  ulong auStack_58 [2];
+  void *pvStack_48;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
-  auStack_70[3] = 0;
-  auStack_70[4] = 0;
-  auStack_70[5] = 0;
+  auStack_58[0] = 0;
+  auStack_58[1] = 0;
+  pvStack_48 = (void *)0x0;
   auStack_70[0] = 0;
   auStack_70[1] = 0;
-  auStack_70[2] = 0;
+  pvStack_60 = (void *)0x0;
                     /* try { // try from 0032dc7c to 0032dc93 has its CatchHandler @ 0032dd2c */
-  uVar2 = func_0x001675e0(abStack_40,param_2,param_3,auStack_70 + 3,auStack_70);
+  uVar2 = func_0x001675e0(abStack_40,param_2,param_3,auStack_58,auStack_70);
   if (DAT_0072d698 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -163,13 +166,13 @@ void Walaber::DatabaseIterator::DatabaseIterator
   uVar2 = func_0x00166930(uVar2,uVar3,abStack_40);
   *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if ((auStack_70[0] & 1) != 0) {
-    FUN_00166120(auStack_70[2]);
+    FUN_00166120(pvStack_60);
   }
-  if ((auStack_70[3] & 1) != 0) {
-    FUN_00166120(auStack_70[5]);
+  if ((auStack_58[0] & 1) != 0) {
+    FUN_00166120(pvStack_48);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -197,9 +200,10 @@ void Walaber::DatabaseIterator::DatabaseIterator
   long lVar1;
   undefined8 uVar2;
   undefined4 uVar3;
-  ulong auStack_58 [3];
+  ulong auStack_58 [2];
+  void *pvStack_48;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -207,7 +211,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   *param_1 = 0;
   auStack_58[0] = 0;
   auStack_58[1] = 0;
-  auStack_58[2] = 0;
+  pvStack_48 = (void *)0x0;
                     /* try { // try from 0032dd88 to 0032dd9f has its CatchHandler @ 0032de28 */
   uVar2 = func_0x001675e0(abStack_40,param_2,param_3,param_4,auStack_58);
   if (DAT_0072d698 == 0) {
@@ -220,10 +224,10 @@ void Walaber::DatabaseIterator::DatabaseIterator
   uVar2 = func_0x00166930(uVar2,uVar3,abStack_40);
   *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if ((auStack_58[0] & 1) != 0) {
-    FUN_00166120(auStack_58[2]);
+    FUN_00166120(pvStack_48);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -254,7 +258,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   undefined8 uVar2;
   undefined4 uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -271,7 +275,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   uVar2 = func_0x00166930(uVar2,uVar3,abStack_40);
   *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -374,33 +378,36 @@ void Walaber::DatabaseIterator::DatabaseIterator
 {
   long lVar1;
   undefined8 uVar2;
-  ulong auStack_80 [6];
+  ulong auStack_80 [2];
+  void *pvStack_70;
+  ulong auStack_68 [2];
+  void *pvStack_58;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
-  auStack_80[3] = 0;
-  auStack_80[4] = 0;
-  auStack_80[5] = 0;
+  auStack_68[0] = 0;
+  auStack_68[1] = 0;
+  pvStack_58 = (void *)0x0;
   auStack_80[0] = 0;
   auStack_80[1] = 0;
-  auStack_80[2] = 0;
+  pvStack_70 = (void *)0x0;
                     /* try { // try from 0032e054 to 0032e06b has its CatchHandler @ 0032e0ec */
-  uVar2 = func_0x001675e0(abStack_50,param_3,param_4,auStack_80 + 3,auStack_80);
+  uVar2 = func_0x001675e0(abStack_50,param_3,param_4,auStack_68,auStack_80);
                     /* try { // try from 0032e06c to 0032e077 has its CatchHandler @ 0032e0d4 */
   uVar2 = func_0x00166930(uVar2,param_2,abStack_50);
   *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_80[0] & 1) != 0) {
-    FUN_00166120(auStack_80[2]);
+    FUN_00166120(pvStack_70);
   }
-  if ((auStack_80[3] & 1) != 0) {
-    FUN_00166120(auStack_80[5]);
+  if ((auStack_68[0] & 1) != 0) {
+    FUN_00166120(pvStack_58);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -428,9 +435,10 @@ void Walaber::DatabaseIterator::DatabaseIterator
 {
   long lVar1;
   undefined8 uVar2;
-  ulong auStack_68 [3];
+  ulong auStack_68 [2];
+  void *pvStack_58;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -438,17 +446,17 @@ void Walaber::DatabaseIterator::DatabaseIterator
   *param_1 = 0;
   auStack_68[0] = 0;
   auStack_68[1] = 0;
-  auStack_68[2] = 0;
+  pvStack_58 = (void *)0x0;
                     /* try { // try from 0032e150 to 0032e167 has its CatchHandler @ 0032e1d8 */
   uVar2 = func_0x001675e0(abStack_50,param_3,param_4,param_5,auStack_68);
                     /* try { // try from 0032e168 to 0032e173 has its CatchHandler @ 0032e1c0 */
   uVar2 = func_0x00166930(uVar2,param_2,abStack_50);
   *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_68[0] & 1) != 0) {
-    FUN_00166120(auStack_68[2]);
+    FUN_00166120(pvStack_58);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -478,7 +486,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -489,7 +497,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   uVar2 = func_0x00166930(uVar2,param_2,abStack_50);
   *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -541,12 +549,12 @@ bool Walaber::DatabaseIterator::reset(undefined8 *param_1)
 
 /* Walaber::DatabaseIterator::getLongAtIndex(int) */
 
-undefined8 Walaber::DatabaseIterator::getLongAtIndex(long *param_1)
+undefined8 Walaber::DatabaseIterator::getLongAtIndex(int p0)
 
 {
   undefined8 uVar1;
   
-  if (*param_1 != 0) {
+  if (*(long *)(ulong)(uint)p0 != 0) {
     uVar1 = func_0x00168b10();
     return uVar1;
   }
@@ -561,14 +569,14 @@ undefined8 Walaber::DatabaseIterator::getLongAtIndex(long *param_1)
 
 /* Walaber::DatabaseIterator::getBoolAtIndex(int) */
 
-bool Walaber::DatabaseIterator::getBoolAtIndex(long *param_1)
+bool Walaber::DatabaseIterator::getBoolAtIndex(int p0)
 
 {
   bool bVar1;
   int iVar2;
   
   bVar1 = false;
-  if (*param_1 != 0) {
+  if (*(long *)(ulong)(uint)p0 != 0) {
     iVar2 = func_0x00162780();
     bVar1 = iVar2 != 0;
   }
@@ -583,40 +591,41 @@ bool Walaber::DatabaseIterator::getBoolAtIndex(long *param_1)
 
 /* Walaber::DatabaseIterator::getStringAtIndex(int) */
 
-void Walaber::DatabaseIterator::getStringAtIndex(ulong *param_1,long *param_2)
+void Walaber::DatabaseIterator::getStringAtIndex(int p0)
 
 {
   undefined8 uVar1;
   ulong uVar2;
+  ulong *in_x8;
   ulong uVar3;
-  ulong uVar4;
+  ulong p0_00;
   
-  if (*param_2 == 0) {
-    *param_1 = 0;
-    param_1[1] = 0;
-    param_1[2] = 0;
+  if (*(long *)(ulong)(uint)p0 == 0) {
+    *in_x8 = 0;
+    in_x8[1] = 0;
+    in_x8[2] = 0;
     return;
   }
   uVar1 = FUN_00161ab0();
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  *in_x8 = 0;
   uVar2 = FUN_00173480();
   if (0xffffffffffffffef < uVar2) {
-    FUN_00164180(param_1);
+    FUN_00164180();
     return;
   }
   if (uVar2 < 0x17) {
-    uVar3 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar2 << 1);
+    uVar3 = (long)in_x8 + 1;
+    *(char *)in_x8 = (char)((int)uVar2 << 1);
     if (uVar2 == 0) goto LAB_0032e3a4;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar3 = FUN_00164060(uVar4);
-    param_1[1] = uVar2;
-    param_1[2] = uVar3;
-    *param_1 = uVar4 | 1;
+    p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    uVar3 = FUN_00164060(p0_00);
+    in_x8[1] = uVar2;
+    in_x8[2] = uVar3;
+    *in_x8 = p0_00 | 1;
   }
   FUN_001715e0(uVar3,uVar1,uVar2);
 LAB_0032e3a4:
@@ -632,31 +641,32 @@ LAB_0032e3a4:
 
 /* Walaber::DatabaseIterator::getColorAtIndex(int) */
 
-void Walaber::DatabaseIterator::getColorAtIndex(undefined1 *param_1,long *param_2)
+void Walaber::DatabaseIterator::getColorAtIndex(int p0)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  undefined1 *in_x8;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*param_2 == 0) {
-    *param_1 = 0xff;
-    param_1[1] = 0xff;
-    param_1[2] = 0xff;
-    param_1[3] = 0xff;
+  if (*(long *)(ulong)(uint)p0 == 0) {
+    *in_x8 = 0xff;
+    in_x8[1] = 0xff;
+    in_x8[2] = 0xff;
+    in_x8[3] = 0xff;
     goto LAB_0032e4ac;
   }
   uVar2 = FUN_00161ab0();
   uStack_58 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   uStack_60 = 0;
   uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
@@ -664,24 +674,24 @@ void Walaber::DatabaseIterator::getColorAtIndex(undefined1 *param_1,long *param_
     return;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_60 | 1;
+    pvVar4 = (void *)((ulong)&uStack_60 | 1);
     uStack_60 = CONCAT71(uStack_60._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 != 0) goto LAB_0032e47c;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_60 = uVar5 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_60 = p0_00 | 1;
     uStack_58 = uVar3;
-    uStack_50 = uVar4;
+    pvStack_50 = pvVar4;
 LAB_0032e47c:
-    FUN_001715e0(uVar4,uVar2,uVar3);
+    FUN_001715e0(pvVar4,uVar2,uVar3);
   }
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 0032e490 to 0032e49b has its CatchHandler @ 0032e4e0 */
-  func_0x001666e0(param_1,&uStack_60);
+  func_0x001666e0(&uStack_60);
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
 LAB_0032e4ac:
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -699,12 +709,12 @@ LAB_0032e4ac:
 
 /* Walaber::DatabaseIterator::isNullAtIndex(int) */
 
-bool Walaber::DatabaseIterator::isNullAtIndex(undefined8 *param_1)
+bool Walaber::DatabaseIterator::isNullAtIndex(int p0)
 
 {
   int iVar1;
   
-  iVar1 = FUN_00169f40(*param_1);
+  iVar1 = FUN_00169f40(*(undefined8 *)(ulong)(uint)p0);
   return iVar1 == 5;
 }
 

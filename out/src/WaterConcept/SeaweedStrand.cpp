@@ -34,11 +34,11 @@ void WaterConcept::SeaweedStrand::SeaweedStrand(undefined8 *param_1)
 
 /* WaterConcept::SeaweedStrand::~SeaweedStrand() */
 
-void WaterConcept::SeaweedStrand::~SeaweedStrand(long param_1)
+void WaterConcept::SeaweedStrand::~SeaweedStrand(long param_1,ulong param_2)
 
 {
-  if (*(long *)(param_1 + 0xa8) != 0) {
-    FUN_001639e0();
+  if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
+    FUN_001639e0(*(void **)(param_1 + 0xa8),param_2);
   }
   FUN_00166b20(param_1 + 0x88);
   func_0x00163740(param_1 + 0x20);
@@ -54,67 +54,68 @@ void WaterConcept::SeaweedStrand::~SeaweedStrand(long param_1)
 /* WaterConcept::SeaweedStrand::init(float, float, int, Walaber::Vector2 const&, float, float) */
 
 void WaterConcept::SeaweedStrand::init
-               (undefined4 param_1,float param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 *param_5,int param_6,undefined8 *param_7)
+               (float p0,float p1,int p2,Walaber__Vector2 *p3,float p4,float p5)
 
 {
-  uint uVar1;
-  undefined1 auVar2 [16];
-  long lVar3;
+  undefined1 auVar1 [16];
+  long lVar2;
+  float *pfVar3;
   float fVar4;
-  int iVar5;
-  long lVar6;
+  undefined8 *in_x2;
+  long lVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  undefined4 uVar9;
-  undefined8 uVar10;
+  float fVar8;
+  undefined8 uVar9;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined4 uStack_6c;
   long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
-  param_5[4] = param_4;
-  fVar4 = DAT_0072d894;
-  *param_5 = param_1;
-  param_5[1] = param_6;
-  param_5[2] = param_2 / (float)param_6;
-  param_5[0x1e] = fVar4 * (float)param_5[0x1e];
-  *(undefined8 *)(param_5 + 5) = *param_7;
-  func_0x00172b90(param_5 + 8,param_6 + 1);
-  iVar5 = param_5[1];
-  if (-1 < iVar5) {
-    iVar7 = 0;
-    iVar8 = -1;
-    uVar10 = NEON_fmov(0x40a00000,4);
+  pfVar3 = (float *)(ulong)(uint)p2;
+  lVar2 = tpidr_el0;
+  lStack_68 = *(long *)(lVar2 + 0x28);
+  fVar4 = SUB84(p3,0);
+  pfVar3[4] = p5;
+  fVar8 = DAT_0072d894;
+  *pfVar3 = p0;
+  pfVar3[1] = fVar4;
+  pfVar3[2] = p1 / (float)(int)fVar4;
+  pfVar3[0x1e] = fVar8 * pfVar3[0x1e];
+  *(undefined8 *)(pfVar3 + 5) = *in_x2;
+  func_0x00172b90(pfVar3 + 8,(int)fVar4 + 1);
+  fVar8 = pfVar3[1];
+  if (-1 < (int)fVar8) {
+    iVar6 = 0;
+    iVar7 = -1;
+    uVar9 = NEON_fmov(0x40a00000,4);
     do {
       uStack_6c = 0;
-      uVar9 = 0;
-      if (iVar8 != -1) {
-        uVar9 = param_3;
+      fVar8 = 0.0;
+      if (iVar7 != -1) {
+        fVar8 = p4;
       }
-      uStack_78 = CONCAT44((float)param_5[2] * (float)iVar7 + (float)((ulong)*param_7 >> 0x20),
-                           (float)*param_7 + 0.0);
-      uStack_80 = uVar10;
-      func_0x0016c520(uVar9,0,param_5 + 8,&uStack_78,&uStack_80,&uStack_6c);
-      iVar5 = param_5[1];
-      iVar8 = iVar8 + 1;
-      iVar7 = iVar7 + -1;
-    } while (iVar8 < iVar5);
+      uStack_78 = CONCAT44(pfVar3[2] * (float)iVar6 + (float)((ulong)*in_x2 >> 0x20),
+                           (float)*in_x2 + 0.0);
+      uStack_80 = uVar9;
+      func_0x0016c520(fVar8,0,pfVar3 + 8,&uStack_78,&uStack_80,&uStack_6c);
+      fVar8 = pfVar3[1];
+      iVar7 = iVar7 + 1;
+      iVar6 = iVar6 + -1;
+    } while (iVar7 < (int)fVar8);
   }
-  uVar1 = iVar5 * 2 + 4;
-  param_5[0x29] = uVar1;
-  auVar2._8_8_ = 0;
-  auVar2._0_8_ = (long)(int)uVar1;
-  lVar6 = ((-(ulong)(uVar1 >> 0x1f) & 0xfffffffc00000000 | (ulong)uVar1 << 2) + (long)(int)uVar1) *
-          4;
-  if (SUB168(auVar2 * ZEXT816(0x14),8) != 0) {
-    lVar6 = -1;
+  fVar8 = (float)((int)fVar8 * 2 + 4);
+  pfVar3[0x29] = fVar8;
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = (long)(int)fVar8;
+  lVar5 = ((-(ulong)((uint)fVar8 >> 0x1f) & 0xfffffffc00000000 | (ulong)(uint)fVar8 << 2) +
+          (long)(int)fVar8) * 4;
+  if (SUB168(auVar1 * ZEXT816(0x14),8) != 0) {
+    lVar5 = -1;
   }
-  uVar10 = FUN_00167620(lVar6);
-  *(undefined8 *)(param_5 + 0x2a) = uVar10;
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
+  uVar9 = FUN_00167620(lVar5);
+  *(undefined8 *)(pfVar3 + 0x2a) = uVar9;
+  if (*(long *)(lVar2 + 0x28) == lStack_68) {
     return;
   }
   FUN_00164ff0();
@@ -144,15 +145,16 @@ void WaterConcept::SeaweedStrand::setTexture(long param_1)
 
 /* WaterConcept::SeaweedStrand::setBottomPosition(Walaber::Vector2 const&) */
 
-void WaterConcept::SeaweedStrand::setBottomPosition(long param_1,undefined8 *param_2)
+void WaterConcept::SeaweedStrand::setBottomPosition(Walaber__Vector2 *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 *puVar1;
   
-  *(undefined8 *)(param_1 + 0x14) = *param_2;
-  puVar1 = *(undefined8 **)(param_1 + 0x20);
-  *puVar1 = *param_2;
-  puVar1[1] = *param_2;
+  *(undefined8 *)(p0 + 0x14) = *in_x1;
+  puVar1 = *(undefined8 **)(p0 + 0x20);
+  *puVar1 = *in_x1;
+  puVar1[1] = *in_x1;
   return;
 }
 
@@ -164,32 +166,34 @@ void WaterConcept::SeaweedStrand::setBottomPosition(long param_1,undefined8 *par
 
 /* WaterConcept::SeaweedStrand::update(float) */
 
-void WaterConcept::SeaweedStrand::update(undefined8 param_1,long param_2)
+void WaterConcept::SeaweedStrand::update(float p0)
 
 {
+  long in_x0;
   undefined8 *puVar1;
   int iVar2;
   int iVar3;
+  undefined4 in_register_00005004;
   
-  *(float *)(param_2 + 0x10) = *(float *)(param_2 + 0x10) + (float)param_1;
-  if (0 < *(int *)(param_2 + 0x9c)) {
+  *(float *)(in_x0 + 0x10) = *(float *)(in_x0 + 0x10) + p0;
+  if (0 < *(int *)(in_x0 + 0x9c)) {
     iVar2 = 0;
     do {
-      func_0x0016fa80(param_2);
-      func_0x00166b50(param_1,param_2 + 0x20);
-      if (0 < *(int *)(param_2 + 0x98)) {
+      func_0x0016fa80();
+      func_0x00166b50(CONCAT44(in_register_00005004,p0),in_x0 + 0x20);
+      if (0 < *(int *)(in_x0 + 0x98)) {
         iVar3 = 0;
         do {
-          func_0x0016c990(param_2);
+          func_0x0016c990();
           iVar3 = iVar3 + 1;
-        } while (iVar3 < *(int *)(param_2 + 0x98));
+        } while (iVar3 < *(int *)(in_x0 + 0x98));
       }
       iVar2 = iVar2 + 1;
-    } while (iVar2 < *(int *)(param_2 + 0x9c));
+    } while (iVar2 < *(int *)(in_x0 + 0x9c));
   }
-  puVar1 = *(undefined8 **)(param_2 + 0x20);
-  *puVar1 = *(undefined8 *)(param_2 + 0x14);
-  puVar1[1] = *(undefined8 *)(param_2 + 0x14);
+  puVar1 = *(undefined8 **)(in_x0 + 0x20);
+  *puVar1 = *(undefined8 *)(in_x0 + 0x14);
+  puVar1[1] = *(undefined8 *)(in_x0 + 0x14);
   return;
 }
 
@@ -323,7 +327,7 @@ void WaterConcept::SeaweedStrand::_applyPositionConstraints(long param_1)
 
 /* WaterConcept::SeaweedStrand::draw(Walaber::SpriteBatch*) */
 
-void WaterConcept::SeaweedStrand::draw(float *param_1)
+void WaterConcept::SeaweedStrand::draw(Walaber__SpriteBatch *p0)
 
 {
   bool bVar1;
@@ -347,9 +351,9 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
   float fVar19;
   float fVar20;
   
-  uVar2 = (ulong)(uint)param_1[1];
-  if (-1 < (int)param_1[1]) {
-    lVar5 = *(long *)(param_1 + 0x22);
+  uVar2 = (ulong)*(uint *)(p0 + 4);
+  if (-1 < (int)*(uint *)(p0 + 4)) {
+    lVar5 = *(long *)(p0 + 0x88);
     fVar13 = *(float *)(lVar5 + 0x8c);
     fVar16 = *(float *)(lVar5 + 0x90);
     lVar6 = 0;
@@ -358,7 +362,7 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
     fVar18 = *(float *)(lVar5 + 0x88) - fVar16;
     uVar7 = 0;
     do {
-      lVar5 = *(long *)(param_1 + 8);
+      lVar5 = *(long *)(p0 + 0x20);
       fVar14 = (float)*(undefined8 *)(lVar5 + lVar6);
       fVar10 = (float)((ulong)*(undefined8 *)(lVar5 + lVar6) >> 0x20);
       if ((long)uVar7 < (long)(int)uVar2) {
@@ -382,17 +386,17 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
       }
       iVar4 = (int)uVar8;
       uVar2 = (long)iVar4 + 1;
-      pfVar3 = (float *)(*(long *)(param_1 + 0x2a) + (long)iVar4 * 0x14);
-      fVar12 = fVar14 - *param_1 * fVar20 * 0.5;
-      fVar9 = fVar19 * *param_1 * 0.5 + fVar10;
-      fVar15 = fVar16 + (fVar18 - fVar18 * ((float)(int)uVar7 / (float)(int)param_1[1]));
+      pfVar3 = (float *)(*(long *)(p0 + 0xa8) + (long)iVar4 * 0x14);
+      fVar12 = fVar14 - *(float *)p0 * fVar20 * 0.5;
+      fVar9 = fVar19 * *(float *)p0 * 0.5 + fVar10;
+      fVar15 = fVar16 + (fVar18 - fVar18 * ((float)(int)uVar7 / (float)*(int *)(p0 + 4)));
       *pfVar3 = fVar12;
       pfVar3[1] = fVar9;
       pfVar3[2] = fVar13 + 0.0;
       pfVar3[3] = fVar15;
       pfVar3[4] = -NAN;
       if (lVar6 == 0) {
-        pfVar3 = (float *)(*(long *)(param_1 + 0x2a) + uVar2 * 0x14);
+        pfVar3 = (float *)(*(long *)(p0 + 0xa8) + uVar2 * 0x14);
         uVar2 = (ulong)(iVar4 + 2);
         *pfVar3 = fVar12;
         pfVar3[1] = fVar9;
@@ -402,24 +406,24 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
       }
       iVar4 = (int)uVar2;
       uVar8 = (long)iVar4 + 1;
-      fVar14 = fVar14 - *param_1 * -fVar20 * 0.5;
-      fVar10 = fVar10 - fVar19 * *param_1 * 0.5;
-      pfVar3 = (float *)(*(long *)(param_1 + 0x2a) + (long)iVar4 * 0x14);
-      fVar20 = fVar16 + (fVar18 - fVar18 * ((float)(int)uVar7 / (float)(int)param_1[1]));
+      fVar14 = fVar14 - *(float *)p0 * -fVar20 * 0.5;
+      fVar10 = fVar10 - fVar19 * *(float *)p0 * 0.5;
+      pfVar3 = (float *)(*(long *)(p0 + 0xa8) + (long)iVar4 * 0x14);
+      fVar20 = fVar16 + (fVar18 - fVar18 * ((float)(int)uVar7 / (float)*(int *)(p0 + 4)));
       *pfVar3 = fVar14;
       pfVar3[1] = fVar10;
       pfVar3[2] = fVar17;
       pfVar3[3] = fVar20;
       pfVar3[4] = -NAN;
-      uVar2 = (ulong)(uint)param_1[1];
+      uVar2 = (ulong)*(uint *)(p0 + 4);
       if (uVar7 == uVar2) {
-        pfVar3 = (float *)(*(long *)(param_1 + 0x2a) + uVar8 * 0x14);
+        pfVar3 = (float *)(*(long *)(p0 + 0xa8) + uVar8 * 0x14);
         *pfVar3 = fVar14;
         pfVar3[1] = fVar10;
         pfVar3[2] = fVar17;
         pfVar3[3] = fVar20;
         pfVar3[4] = -NAN;
-        uVar2 = (ulong)(uint)param_1[1];
+        uVar2 = (ulong)*(uint *)(p0 + 4);
         uVar8 = (ulong)(iVar4 + 2);
       }
       lVar6 = lVar6 + 0x74;
@@ -428,14 +432,14 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
     } while (bVar1);
   }
   func_0x00168480(1);
-  func_0x0016d560(*(undefined4 *)(*(long *)(param_1 + 0x22) + 0x78));
-  func_0x001716e0(2,0x1406,0x14,*(undefined8 *)(param_1 + 0x2a));
+  func_0x0016d560(*(undefined4 *)(*(long *)(p0 + 0x88) + 0x78));
+  func_0x001716e0(2,0x1406,0x14,*(undefined8 *)(p0 + 0xa8));
   func_0x0016c840();
-  func_0x00162680(2,0x1406,0x14,*(long *)(param_1 + 0x2a) + 8);
+  func_0x00162680(2,0x1406,0x14,*(long *)(p0 + 0xa8) + 8);
   func_0x00167fc0();
-  func_0x00172b40(4,0x1401,0x14,*(long *)(param_1 + 0x2a) + 0x10);
+  func_0x00172b40(4,0x1401,0x14,*(long *)(p0 + 0xa8) + 0x10);
   func_0x0016d300();
-  func_0x0016eaf0(5,0,param_1[0x29]);
+  func_0x0016eaf0(5,0,*(undefined4 *)(p0 + 0xa4));
   func_0x00165200();
   func_0x0016b690();
   func_0x0016c400();
@@ -452,13 +456,14 @@ void WaterConcept::SeaweedStrand::draw(float *param_1)
    float) */
 
 void WaterConcept::SeaweedStrand::handleTouchMoved
-               (float param_1,float *param_2,undefined8 *param_3,undefined8 *param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,float p2)
 
 {
   ulong uVar1;
-  long lVar2;
+  undefined8 *in_x2;
+  int iVar2;
   long lVar3;
-  float fVar4;
+  long lVar4;
   float fVar5;
   float fVar6;
   undefined8 uVar7;
@@ -469,52 +474,51 @@ void WaterConcept::SeaweedStrand::handleTouchMoved
   float fVar12;
   float fVar13;
   
-  if (0 < (int)param_2[1]) {
-    uVar10 = *param_3;
-    uVar11 = *param_4;
-    fVar12 = *param_2;
+  if (0 < *(int *)(p0 + 4)) {
+    uVar10 = *(undefined8 *)p1;
+    uVar11 = *in_x2;
+    fVar12 = *(float *)p0;
     fVar9 = (float)uVar10;
     uVar1 = (ulong)uVar10 >> 0x20;
-    lVar2 = 0;
-    fVar13 = param_2[2] + param_2[2];
-    lVar3 = 1;
+    lVar3 = 0;
+    fVar13 = *(float *)(p0 + 8) + *(float *)(p0 + 8);
+    lVar4 = 1;
     while( true ) {
-      uVar7 = *(undefined8 *)(*(long *)(param_2 + 8) + lVar2 + 0x74);
-      fVar4 = (float)uVar7 - (float)uVar10;
+      uVar7 = *(undefined8 *)(*(long *)(p0 + 0x20) + lVar3 + 0x74);
+      fVar5 = (float)uVar7 - (float)uVar10;
       fVar8 = (float)((ulong)uVar7 >> 0x20) - (float)((ulong)uVar10 >> 0x20);
-      fVar8 = fVar4 * fVar4 + fVar8 * fVar8;
-      fVar4 = SQRT(fVar8);
-      if (NAN(fVar4)) {
-        fVar4 = (float)func_0x0016cd20(fVar8);
+      fVar8 = fVar5 * fVar5 + fVar8 * fVar8;
+      fVar5 = SQRT(fVar8);
+      if (NAN(fVar5)) {
+        fVar5 = (float)func_0x0016cd20(fVar8);
       }
-      if (fVar4 <= fVar13) {
-        fVar5 = 1.0 - fVar4 / fVar13;
-        fVar4 = param_2[1];
-        fVar8 = fVar5;
-        if (1.0 < fVar5) {
-          fVar8 = 1.0;
+      if (fVar5 <= fVar13) {
+        fVar8 = 1.0 - fVar5 / fVar13;
+        iVar2 = *(int *)(p0 + 4);
+        fVar5 = fVar8;
+        if (1.0 < fVar8) {
+          fVar5 = 1.0;
         }
-        uVar10 = *(undefined8 *)(*(long *)(param_2 + 8) + lVar2 + 0x7c);
-        fVar6 = ((float)(int)lVar3 / (float)(int)fVar4) * 0.11 + 0.01;
-        if (fVar5 <= 0.3) {
-          fVar8 = 0.3;
+        uVar10 = *(undefined8 *)(*(long *)(p0 + 0x20) + lVar3 + 0x7c);
+        fVar6 = ((float)(int)lVar4 / (float)iVar2) * 0.11 + 0.01;
+        if (fVar8 <= 0.3) {
+          fVar5 = 0.3;
         }
-        *(ulong *)(*(long *)(param_2 + 8) + lVar2 + 0x7c) =
+        *(ulong *)(*(long *)(p0 + 0x20) + lVar3 + 0x7c) =
              CONCAT44((float)((ulong)uVar10 >> 0x20) -
-                      *param_2 *
-                      ((float)uVar1 - (float)((ulong)uVar11 >> 0x20)) * (1.0 / fVar12) * param_1 *
-                      fVar6 * fVar8,
-                      (float)uVar10 -
-                      *param_2 * (fVar9 - (float)uVar11) * (1.0 / fVar12) * param_1 * fVar6 * fVar8)
-        ;
+                      *(float *)p0 *
+                      ((float)uVar1 - (float)((ulong)uVar11 >> 0x20)) * (1.0 / fVar12) * p2 * fVar6
+                      * fVar5,(float)uVar10 -
+                              *(float *)p0 * (fVar9 - (float)uVar11) * (1.0 / fVar12) * p2 * fVar6 *
+                              fVar5);
       }
       else {
-        fVar4 = param_2[1];
+        iVar2 = *(int *)(p0 + 4);
       }
-      if ((int)fVar4 <= lVar3) break;
-      uVar10 = *param_3;
-      lVar3 = lVar3 + 1;
-      lVar2 = lVar2 + 0x74;
+      if (iVar2 <= lVar4) break;
+      uVar10 = *(undefined8 *)p1;
+      lVar4 = lVar4 + 1;
+      lVar3 = lVar3 + 0x74;
     }
   }
   return;

@@ -53,7 +53,7 @@ void std::__ndk1::__split_buffer<Walaber::Achievement,std::__ndk1::allocator<Wal
    std::__ndk1::allocator<Walaber::Achievement>&>::~__split_buffer() */
 
 void std::__ndk1::__split_buffer<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -62,26 +62,26 @@ void std::__ndk1::__split_buffer<Walaber::Achievement,std::__ndk1::allocator<Wal
   lVar1 = param_1[1];
   lVar2 = param_1[2];
   while (lVar2 != lVar1) {
-    param_1[2] = lVar2 + -0x88;
+    param_1[2] = (byte *)(lVar2 + -0x88);
     if ((*(byte *)(lVar2 + -0x28) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x18));
+      FUN_00166120(*(void **)(lVar2 + -0x18));
     }
     if ((*(byte *)(lVar2 + -0x40) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x30));
+      FUN_00166120(*(void **)(lVar2 + -0x30));
     }
     if ((*(byte *)(lVar2 + -0x58) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x48));
+      FUN_00166120(*(void **)(lVar2 + -0x48));
     }
     if ((*(byte *)(lVar2 + -0x70) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x60));
+      FUN_00166120(*(void **)(lVar2 + -0x60));
     }
     if ((*(byte *)(lVar2 + -0x88) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x78));
+      FUN_00166120(*(void **)(lVar2 + -0x78));
     }
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

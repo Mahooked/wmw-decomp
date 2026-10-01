@@ -22,10 +22,10 @@ void std::__ndk1::
     func_0x00167db0(param_1,*param_2);
     func_0x00167db0(param_1,param_2[1]);
     if ((*(byte *)(param_2 + 9) & 1) != 0) {
-      FUN_00166120(param_2[0xb]);
+      FUN_00166120((void *)param_2[0xb]);
     }
     if ((*(byte *)(param_2 + 6) & 1) != 0) {
-      FUN_00166120(param_2[8]);
+      FUN_00166120((void *)param_2[8]);
     }
     FUN_00166120(param_2);
     return;

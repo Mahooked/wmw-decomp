@@ -14,12 +14,13 @@
 void std::__ndk1::
      vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
      ::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails_const&>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__ScreenManager__ScreenOperationDetails *p0)
 
 {
   ulong uVar1;
   undefined8 *puVar2;
   long lVar3;
+  undefined8 *in_x1;
   long lVar4;
   ulong uVar5;
   ulong uVar6;
@@ -35,29 +36,29 @@ void std::__ndk1::
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
-  lVar4 = (param_1[1] - *param_1 >> 3) * -0x3333333333333333;
+  lVar4 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar4 + 1;
   if (0x666666666666666 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar9 = param_1[2] - *param_1 >> 3;
+  lVar9 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
   uVar6 = 0x666666666666666;
   if (((ulong)(lVar9 * -0x3333333333333333) < 0x333333333333333) &&
      (uVar5 = lVar9 * -0x6666666666666666, uVar6 = uVar1, uVar1 <= uVar5)) {
     uVar6 = uVar5;
   }
-  func_0x0016e540(auStack_70,uVar6,lVar4,param_1 + 2);
-  uVar10 = *param_2;
-  *(undefined4 *)(puStack_60 + 1) = *(undefined4 *)(param_2 + 1);
+  func_0x0016e540(auStack_70,uVar6,lVar4,p0 + 0x10);
+  uVar10 = *in_x1;
+  *(undefined4 *)(puStack_60 + 1) = *(undefined4 *)(in_x1 + 1);
   *puStack_60 = uVar10;
   puVar11 = puStack_60 + 3;
   *puVar11 = 0;
   puStack_60[4] = 0;
   puStack_60[2] = puVar11;
-  if ((long *)param_2[2] != param_2 + 3) {
+  if ((long *)in_x1[2] != in_x1 + 3) {
     puVar2 = puStack_60 + 2;
-    plVar12 = (long *)param_2[2];
+    plVar12 = (long *)in_x1[2];
     do {
                     /* try { // try from 003f2cb8 to 003f2cc7 has its CatchHandler @ 003f2d78 */
       func_0x0016d3f0(puVar2,puVar11,plVar12 + 4,plVar12 + 4);
@@ -80,11 +81,11 @@ void std::__ndk1::
         } while ((long *)*plVar8 != (long *)0x0);
       }
       plVar12 = plVar8;
-    } while (plVar8 != param_2 + 3);
+    } while (plVar8 != in_x1 + 3);
   }
   puStack_60 = puStack_60 + 5;
                     /* try { // try from 003f2d28 to 003f2d33 has its CatchHandler @ 003f2d70 */
-  func_0x0016db60(param_1,auStack_70);
+  func_0x0016db60(p0,auStack_70);
   func_0x00162b90(auStack_70);
   if (*(long *)(lVar3 + 0x28) != lStack_48) {
     FUN_00164ff0();

@@ -15,30 +15,31 @@
 void std::__ndk1::
      vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
      ::__construct_at_end<Walaber::TextureManager::SubTexInfo*>
-               (long param_1,long param_2,long param_3)
+               (Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1,
+               ulong p2)
 
 {
-  undefined4 *puVar1;
+  Walaber__TextureManager__SubTexInfo *pWVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   
-  if (param_2 != param_3) {
-    lVar2 = *(long *)(param_1 + 8);
+  if (p1 != (Walaber__TextureManager__SubTexInfo *)p2) {
+    lVar2 = *(long *)(p0 + 8);
     do {
-      func_0x0016f720(lVar2,param_2);
-      uVar4 = *(undefined8 *)(param_2 + 0x20);
-      uVar3 = *(undefined8 *)(param_2 + 0x18);
-      *(undefined8 *)(lVar2 + 0x28) = *(undefined8 *)(param_2 + 0x28);
+      func_0x0016f720(lVar2,p1);
+      uVar4 = *(undefined8 *)(p1 + 0x20);
+      uVar3 = *(undefined8 *)(p1 + 0x18);
+      *(undefined8 *)(lVar2 + 0x28) = *(undefined8 *)(p1 + 0x28);
       *(undefined8 *)(lVar2 + 0x20) = uVar4;
       *(undefined8 *)(lVar2 + 0x18) = uVar3;
-      *(undefined8 *)(lVar2 + 0x30) = *(undefined8 *)(param_2 + 0x30);
-      puVar1 = (undefined4 *)(param_2 + 0x38);
-      param_2 = param_2 + 0x40;
-      *(undefined4 *)(lVar2 + 0x38) = *puVar1;
-      lVar2 = *(long *)(param_1 + 8) + 0x40;
-      *(long *)(param_1 + 8) = lVar2;
-    } while (param_2 != param_3);
+      *(undefined8 *)(lVar2 + 0x30) = *(undefined8 *)(p1 + 0x30);
+      pWVar1 = p1 + 0x38;
+      p1 = p1 + 0x40;
+      *(undefined4 *)(lVar2 + 0x38) = *(undefined4 *)pWVar1;
+      lVar2 = *(long *)(p0 + 8) + 0x40;
+      *(long *)(p0 + 8) = lVar2;
+    } while (p1 != (Walaber__TextureManager__SubTexInfo *)p2);
   }
   return;
 }

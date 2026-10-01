@@ -8,21 +8,22 @@
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::push_back(bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(long *param_1,char *param_2)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0)
 
 {
+  char *in_x1;
   ulong uVar1;
   ulong uVar2;
   long lVar3;
   
-  uVar1 = param_1[1];
-  if (uVar1 == param_1[2] * 0x40) {
+  uVar1 = *(ulong *)(p0 + 8);
+  if (uVar1 == *(long *)(p0 + 0x10) * 0x40) {
     if ((long)(uVar1 + 1) < 0) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
     if (uVar1 < 0x3fffffffffffffff) {
-      uVar2 = param_1[2] << 7;
+      uVar2 = *(long *)(p0 + 0x10) << 7;
       uVar1 = uVar1 + 0x40 & 0xffffffffffffffc0;
       if (uVar1 <= uVar2) {
         uVar1 = uVar2;
@@ -31,14 +32,14 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(long *par
     else {
       uVar1 = 0x7fffffffffffffff;
     }
-    func_0x00165c00(param_1,uVar1);
-    uVar1 = param_1[1];
+    func_0x00165c00(p0,uVar1);
+    uVar1 = *(ulong *)(p0 + 8);
   }
-  param_1[1] = uVar1 + 1;
-  lVar3 = *param_1;
+  *(ulong *)(p0 + 8) = uVar1 + 1;
+  lVar3 = *(long *)p0;
   uVar2 = uVar1 >> 6;
   uVar1 = 1L << (uVar1 & 0x3f);
-  if (*param_2 == '\0') {
+  if (*in_x1 == '\0') {
     uVar1 = *(ulong *)(lVar3 + uVar2 * 8) & (uVar1 ^ 0xffffffffffffffff);
   }
   else {
@@ -56,16 +57,17 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(long *par
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(long *param_1,ulong param_2)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
 
 {
   long lVar1;
-  long lVar2;
-  long lVar3;
-  long lVar4;
-  long lStack_60;
-  long lStack_58;
-  long lStack_50;
+  ulong in_x1;
+  undefined8 uVar2;
+  void *p0_00;
+  undefined8 uVar3;
+  void *pvStack_60;
+  undefined8 uStack_58;
+  undefined8 uStack_50;
   long lStack_48;
   uint uStack_40;
   long lStack_38;
@@ -74,28 +76,28 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(long *param
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if ((ulong)(param_1[2] << 6) < param_2) {
-    lStack_60 = 0;
-    lStack_58 = 0;
-    lStack_50 = 0;
+  if ((ulong)(*(long *)(p0 + 0x10) << 6) < in_x1) {
+    pvStack_60 = (void *)0x0;
+    uStack_58 = 0;
+    uStack_50 = 0;
                     /* try { // try from 003ede74 to 003edeaf has its CatchHandler @ 003edf00 */
-    func_0x00165890(&lStack_60);
-    lStack_38 = *param_1;
+    func_0x00165890(&pvStack_60);
+    lStack_38 = *(long *)p0;
     uStack_30 = 0;
-    uStack_40 = (uint)param_1[1] & 0x3f;
-    lStack_48 = lStack_38 + ((ulong)param_1[1] >> 3 & 0x1ffffffffffffff8);
-    func_0x0016da30(&lStack_60,&lStack_38,&lStack_48);
-    lVar4 = param_1[1];
-    lVar3 = *param_1;
-    param_1[1] = lStack_58;
-    *param_1 = lStack_60;
-    lVar2 = param_1[2];
-    param_1[2] = lStack_50;
-    lStack_60 = lVar3;
-    lStack_58 = lVar4;
-    lStack_50 = lVar2;
-    if (lVar3 != 0) {
-      FUN_00166120();
+    uStack_40 = (uint)*(ulong *)(p0 + 8) & 0x3f;
+    lStack_48 = lStack_38 + (*(ulong *)(p0 + 8) >> 3 & 0x1ffffffffffffff8);
+    func_0x0016da30(&pvStack_60,&lStack_38,&lStack_48);
+    uVar3 = *(undefined8 *)(p0 + 8);
+    p0_00 = *(void **)p0;
+    *(undefined8 *)(p0 + 8) = uStack_58;
+    *(void **)p0 = pvStack_60;
+    uVar2 = *(undefined8 *)(p0 + 0x10);
+    *(undefined8 *)(p0 + 0x10) = uStack_50;
+    pvStack_60 = p0_00;
+    uStack_58 = uVar3;
+    uStack_50 = uVar2;
+    if (p0_00 != (void *)0x0) {
+      FUN_00166120(p0_00);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
@@ -113,22 +115,22 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(long *param
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate
-               (undefined8 *param_1,long param_2)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p0)
 
 {
   long lVar1;
   undefined8 uVar2;
+  long in_x1;
   
-  if (-1 < param_2) {
-    lVar1 = (param_2 - 1U >> 6) + 1;
+  if (-1 < in_x1) {
+    lVar1 = (in_x1 - 1U >> 6) + 1;
     uVar2 = FUN_00164060(lVar1 * 8);
-    *param_1 = uVar2;
-    param_1[1] = 0;
-    param_1[2] = lVar1;
+    *(undefined8 *)p0 = uVar2;
+    *(undefined8 *)(p0 + 8) = 0;
+    *(long *)(p0 + 0x10) = lVar1;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -140,48 +142,50 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::vector(unsigned long, bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector
-               (undefined8 *param_1,long param_2,char *param_3)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,bool *p1)
 
 {
-  ulong uVar1;
+  Elf64_Phdr *pEVar1;
   char cVar2;
   long lVar3;
+  char *in_x2;
   ulong uVar4;
+  undefined8 *puVar5;
   long lStack_48;
   uint uStack_40;
   long lStack_38;
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (p1 != (bool *)0x0) {
     func_0x00165890();
-    uVar4 = param_1[1];
-    cVar2 = *param_3;
-    uVar1 = uVar4 + param_2;
-    param_1[1] = uVar1;
-    if ((uVar4 == 0) || (0x3f < (uVar1 - 1 ^ uVar4 - 1))) {
-      param_1 = (undefined8 *)*param_1;
-      if (uVar1 < 0x41) {
-        *param_1 = 0;
+    uVar4 = *(ulong *)(p0 + 8);
+    cVar2 = *in_x2;
+    pEVar1 = (Elf64_Phdr *)(p1 + uVar4);
+    *(Elf64_Phdr **)(p0 + 8) = pEVar1;
+    if ((uVar4 == 0) || (0x3f < ((ulong)((long)&pEVar1[-1].p_align + 7) ^ uVar4 - 1))) {
+      puVar5 = *(undefined8 **)p0;
+      if (Elf64_Phdr_ARRAY_00000040 < pEVar1) {
+        *(undefined8 *)
+         ((long)puVar5 + ((ulong)((long)&pEVar1[-1].p_align + 7) >> 3 & 0x1ffffffffffffff8)) = 0;
       }
       else {
-        *(undefined8 *)((long)param_1 + (uVar1 - 1 >> 3 & 0x1ffffffffffffff8)) = 0;
+        *puVar5 = 0;
       }
     }
     else {
-      param_1 = (undefined8 *)*param_1;
+      puVar5 = *(undefined8 **)p0;
     }
-    lStack_48 = (long)param_1 + (uVar4 >> 3 & 0x1ffffffffffffff8);
+    lStack_48 = (long)puVar5 + (uVar4 >> 3 & 0x1ffffffffffffff8);
     uStack_40 = (uint)uVar4 & 0x3f;
     if (cVar2 == '\0') {
-      func_0x001679b0(&lStack_48,param_2);
+      func_0x001679b0(&lStack_48,p1);
     }
     else {
-      func_0x00172480(&lStack_48,param_2);
+      func_0x00172480(&lStack_48,p1);
     }
   }
   if (*(long *)(lVar3 + 0x28) == lStack_38) {

@@ -8,58 +8,59 @@
 
 /* Walaber::StringHelper::intToStr(int) */
 
-void Walaber::StringHelper::intToStr(ulong *param_1,int param_2)
+void Walaber::StringHelper::intToStr(int p0)
 
 {
   int iVar1;
   long lVar2;
   ulong uVar3;
   uint uVar4;
+  ulong *in_x8;
   ulong uVar5;
   undefined1 *puVar6;
-  ulong uVar7;
+  ulong p0_00;
   undefined1 auStack_50 [8];
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  iVar1 = -param_2;
-  if (-1 < param_2) {
-    iVar1 = param_2;
+  iVar1 = -p0;
+  if (-1 < p0) {
+    iVar1 = p0;
   }
   uVar4 = 1;
-  if (-1 >= param_2) {
+  if (-1 >= p0) {
     uVar4 = 2;
   }
   while (9 < iVar1) {
-    param_2 = param_2 / 10;
-    iVar1 = -param_2;
-    if (-1 < param_2) {
-      iVar1 = param_2;
+    p0 = p0 / 10;
+    iVar1 = -p0;
+    if (-1 < p0) {
+      iVar1 = p0;
     }
     uVar4 = uVar4 + 1;
   }
   puVar6 = auStack_50 + -((ulong)uVar4 + 0xf & 0x1fffffff0);
   func_0x001734a0(puVar6,"%i");
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  *in_x8 = 0;
   uVar3 = FUN_00173480(puVar6);
   if (0xffffffffffffffef < uVar3) {
-    FUN_00164180(param_1);
+    FUN_00164180();
     return;
   }
   if (uVar3 < 0x17) {
-    uVar5 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar3 << 1);
+    uVar5 = (long)in_x8 + 1;
+    *(char *)in_x8 = (char)((int)uVar3 << 1);
     if (uVar3 == 0) goto LAB_002b53e0;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar5 = FUN_00164060(uVar7);
-    param_1[1] = uVar3;
-    param_1[2] = uVar5;
-    *param_1 = uVar7 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    uVar5 = FUN_00164060(p0_00);
+    in_x8[1] = uVar3;
+    in_x8[2] = uVar5;
+    *in_x8 = p0_00 | 1;
   }
   FUN_001715e0(uVar5,puVar6,uVar3);
 LAB_002b53e0:
@@ -79,58 +80,59 @@ LAB_002b53e0:
 
 /* Walaber::StringHelper::longToStr(long) */
 
-void Walaber::StringHelper::longToStr(ulong *param_1,long param_2)
+void Walaber::StringHelper::longToStr(long p0)
 
 {
   long lVar1;
   long lVar2;
   ulong uVar3;
   uint uVar4;
+  ulong *in_x8;
   ulong uVar5;
   undefined1 *puVar6;
-  ulong uVar7;
+  ulong p0_00;
   undefined1 auStack_50 [8];
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  lVar1 = -param_2;
-  if (-1 < param_2) {
-    lVar1 = param_2;
+  lVar1 = -p0;
+  if (-1 < p0) {
+    lVar1 = p0;
   }
   uVar4 = 1;
-  if (-1 >= param_2) {
+  if (-1 >= p0) {
     uVar4 = 2;
   }
   while (9 < lVar1) {
-    param_2 = param_2 / 10;
-    lVar1 = -param_2;
-    if (-1 < param_2) {
-      lVar1 = param_2;
+    p0 = p0 / 10;
+    lVar1 = -p0;
+    if (-1 < p0) {
+      lVar1 = p0;
     }
     uVar4 = uVar4 + 1;
   }
   puVar6 = auStack_50 + -((ulong)uVar4 + 0xf & 0x1fffffff0);
   func_0x001734a0(puVar6,&DAT_0061e711);
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  *in_x8 = 0;
   uVar3 = FUN_00173480(puVar6);
   if (0xffffffffffffffef < uVar3) {
-    FUN_00164180(param_1);
+    FUN_00164180();
     return;
   }
   if (uVar3 < 0x17) {
-    uVar5 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar3 << 1);
+    uVar5 = (long)in_x8 + 1;
+    *(char *)in_x8 = (char)((int)uVar3 << 1);
     if (uVar3 == 0) goto LAB_002bed90;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar5 = FUN_00164060(uVar7);
-    param_1[1] = uVar3;
-    param_1[2] = uVar5;
-    *param_1 = uVar7 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    uVar5 = FUN_00164060(p0_00);
+    in_x8[1] = uVar3;
+    in_x8[2] = uVar5;
+    *in_x8 = p0_00 | 1;
   }
   FUN_001715e0(uVar5,puVar6,uVar3);
 LAB_002bed90:
@@ -150,23 +152,24 @@ LAB_002bed90:
 
 /* Walaber::StringHelper::floatToStr(float, int) */
 
-void Walaber::StringHelper::floatToStr(ulong *param_1,float param_2,int param_3)
+void Walaber::StringHelper::floatToStr(float p0,int p1)
 
 {
   int iVar1;
   long lVar2;
   ulong uVar3;
   int iVar4;
+  ulong *in_x8;
   int iVar5;
   ulong uVar6;
   undefined1 *puVar7;
-  ulong uVar8;
+  ulong p0_00;
   undefined1 auStack_60 [8];
   undefined1 auStack_58 [16];
   long lStack_48;
   
   lVar2 = tpidr_el0;
-  iVar5 = (int)param_2;
+  iVar5 = (int)p0;
   lStack_48 = *(long *)(lVar2 + 0x28);
   iVar1 = -iVar5;
   if (-1 < iVar5) {
@@ -184,28 +187,28 @@ void Walaber::StringHelper::floatToStr(ulong *param_1,float param_2,int param_3)
     }
     iVar4 = iVar4 + 1;
   }
-  puVar7 = auStack_60 + -((ulong)(param_3 + iVar4 + 1) + 0xf & 0x1fffffff0);
+  puVar7 = auStack_60 + -((ulong)(p1 + iVar4 + 1) + 0xf & 0x1fffffff0);
   func_0x001734a0(auStack_58,"%%.%if");
-  func_0x001734a0((double)param_2,puVar7,auStack_58);
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  func_0x001734a0((double)p0,puVar7,auStack_58);
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  *in_x8 = 0;
   uVar3 = FUN_00173480(puVar7);
   if (0xffffffffffffffef < uVar3) {
-    FUN_00164180(param_1);
+    FUN_00164180();
     return;
   }
   if (uVar3 < 0x17) {
-    uVar6 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar3 << 1);
+    uVar6 = (long)in_x8 + 1;
+    *(char *)in_x8 = (char)((int)uVar3 << 1);
     if (uVar3 == 0) goto LAB_00330ba8;
   }
   else {
-    uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar6 = FUN_00164060(uVar8);
-    param_1[1] = uVar3;
-    param_1[2] = uVar6;
-    *param_1 = uVar8 | 1;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    uVar6 = FUN_00164060(p0_00);
+    in_x8[1] = uVar3;
+    in_x8[2] = uVar6;
+    *in_x8 = p0_00 | 1;
   }
   FUN_001715e0(uVar6,puVar7,uVar3);
 LAB_00330ba8:
@@ -234,7 +237,8 @@ long Walaber::StringHelper::split(undefined8 param_1,undefined4 param_2,long par
 {
   long *plVar1;
   long lVar2;
-  ulong auStack_1a8 [3];
+  ulong auStack_1a8 [2];
+  void *pvStack_198;
   undefined **ppuStack_190;
   undefined8 uStack_188;
   undefined **ppuStack_180;
@@ -248,7 +252,7 @@ long Walaber::StringHelper::split(undefined8 param_1,undefined4 param_2,long par
   undefined8 uStack_140;
   ulong uStack_138;
   undefined8 uStack_130;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   undefined4 uStack_118;
   undefined **appuStack_110 [17];
@@ -278,7 +282,7 @@ long Walaber::StringHelper::split(undefined8 param_1,undefined4 param_2,long par
   uStack_160 = 0;
   uStack_168 = 0;
   uStack_120 = 0;
-  uStack_128 = 0;
+  pvStack_128 = (void *)0x0;
   uStack_130 = 0;
   uStack_138 = 0;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
@@ -287,9 +291,9 @@ long Walaber::StringHelper::split(undefined8 param_1,undefined4 param_2,long par
   func_0x00162770(&ppuStack_178,param_1);
   auStack_1a8[0] = 0;
   auStack_1a8[1] = 0;
-  auStack_1a8[2] = 0;
+  pvStack_198 = (void *)0x0;
                     /* try { // try from 003f8208 to 003f825f has its CatchHandler @ 003f8308 */
-  while (plVar1 = (long *)func_0x00168500(auStack_1a8 + 3,auStack_1a8,param_2),
+  while (plVar1 = (long *)func_0x00168500(&ppuStack_190,auStack_1a8,param_2),
         (*(byte *)((long)plVar1 + *(long *)(*plVar1 + -0x18) + 0x20) & 5) == 0) {
     if (*(long *)(param_3 + 8) == *(long *)(param_3 + 0x10)) {
       func_0x00168ed0(param_3,auStack_1a8);
@@ -300,14 +304,14 @@ long Walaber::StringHelper::split(undefined8 param_1,undefined4 param_2,long par
     }
   }
   if ((auStack_1a8[0] & 1) != 0) {
-    FUN_00166120(auStack_1a8[2]);
+    FUN_00166120(pvStack_198);
   }
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
   ppuStack_178 = &PTR__basic_stringbuf_007111c8;
   if ((uStack_138 & 1) != 0) {
-    FUN_00166120(uStack_128);
+    FUN_00166120(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(auStack_170);
@@ -498,7 +502,7 @@ void Walaber::StringHelper::changeExtension(undefined8 *param_1,undefined8 param
   undefined8 uVar5;
   undefined8 uVar6;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar3 = tpidr_el0;
@@ -521,7 +525,7 @@ void Walaber::StringHelper::changeExtension(undefined8 *param_1,undefined8 param
   puVar4[2] = 0;
   *puVar4 = 0;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
     return;
@@ -692,7 +696,7 @@ void Walaber::StringHelper::removeLastPathComponent(undefined8 param_1,byte *par
   ulong uVar4;
   ulong uVar5;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar3 = tpidr_el0;
@@ -719,7 +723,7 @@ void Walaber::StringHelper::removeLastPathComponent(undefined8 param_1,byte *par
                     /* try { // try from 003f8a4c to 003f8a57 has its CatchHandler @ 003f8a70 */
         removeLastPathComponent(param_1,abStack_40);
         if ((abStack_40[0] & 1) != 0) {
-          FUN_00166120(uStack_30);
+          FUN_00166120(pvStack_30);
         }
       }
       goto LAB_003f8a1c;
@@ -766,7 +770,7 @@ void Walaber::StringHelper::appendPath(undefined8 *param_1,byte *param_2,undefin
   ulong uStack_68;
   undefined1 *puStack_60;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar5 = tpidr_el0;
@@ -840,7 +844,7 @@ LAB_003f8af4:
     FUN_00166120(puStack_60);
   }
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar5 + 0x28) == lStack_38) {
     return;
@@ -862,12 +866,14 @@ void Walaber::StringHelper::toLower(ulong *param_1,byte *param_2)
 
 {
   undefined1 uVar1;
-  undefined1 *puVar2;
+  undefined1 *p0;
+  ulong extraout_x1;
+  ulong uVar2;
   byte *pbVar3;
   ulong uVar4;
   ulong uVar5;
-  ulong uVar6;
-  undefined1 *puVar7;
+  undefined1 *puVar6;
+  undefined1 auVar7 [16];
   
   if ((*param_2 & 1) == 0) {
     pbVar3 = param_2 + 1;
@@ -877,47 +883,50 @@ void Walaber::StringHelper::toLower(ulong *param_1,byte *param_2)
     uVar4 = *(ulong *)(param_2 + 8);
     pbVar3 = *(byte **)(param_2 + 0x10);
   }
-  puVar2 = (undefined1 *)FUN_00167620(uVar4 + 1);
+  p0 = (undefined1 *)FUN_00167620(uVar4 + 1);
   if ((int)uVar4 < 1) {
     uVar4 = 0;
   }
   else {
-    uVar6 = uVar4 & 0xffffffff;
-    puVar7 = puVar2;
+    uVar5 = uVar4 & 0xffffffff;
+    puVar6 = p0;
     do {
       uVar1 = FUN_00172400(*pbVar3);
-      uVar6 = uVar6 - 1;
-      *puVar7 = uVar1;
+      uVar5 = uVar5 - 1;
+      *puVar6 = uVar1;
       pbVar3 = pbVar3 + 1;
-      puVar7 = puVar7 + 1;
-    } while (uVar6 != 0);
+      puVar6 = puVar6 + 1;
+    } while (uVar5 != 0);
     uVar4 = uVar4 & 0xffffffff;
   }
-  puVar2[uVar4] = 0;
+  p0[uVar4] = 0;
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;
-  uVar4 = FUN_00173480(puVar2);
-  if (0xffffffffffffffef < uVar4) {
+  auVar7 = FUN_00173480(p0);
+  uVar4 = auVar7._8_8_;
+  uVar5 = auVar7._0_8_;
+  if (0xffffffffffffffef < uVar5) {
     FUN_00164180(param_1);
     return;
   }
-  if (uVar4 < 0x17) {
-    uVar6 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar4 << 1);
-    if (uVar4 == 0) goto LAB_003f8d64;
+  if (uVar5 < 0x17) {
+    uVar2 = (long)param_1 + 1;
+    *(char *)param_1 = (char)(auVar7._0_4_ << 1);
+    if (uVar5 == 0) goto LAB_003f8d64;
   }
   else {
-    uVar5 = uVar4 + 0x10 & 0xfffffffffffffff0;
-    uVar6 = FUN_00164060(uVar5);
-    param_1[1] = uVar4;
-    param_1[2] = uVar6;
-    *param_1 = uVar5 | 1;
+    uVar4 = uVar5 + 0x10 & 0xfffffffffffffff0;
+    uVar2 = FUN_00164060(uVar4);
+    param_1[1] = uVar5;
+    param_1[2] = uVar2;
+    *param_1 = uVar4 | 1;
   }
-  FUN_001715e0(uVar6,puVar2,uVar4);
+  FUN_001715e0(uVar2,p0,uVar5);
+  uVar4 = extraout_x1;
 LAB_003f8d64:
-  *(undefined1 *)(uVar6 + uVar4) = 0;
-  FUN_001639e0(puVar2);
+  *(undefined1 *)(uVar2 + uVar5) = 0;
+  FUN_001639e0(p0,uVar4);
   return;
 }
 
@@ -1090,24 +1099,25 @@ LAB_003f8fdc:
 
 /* Walaber::StringHelper::uIntToStr(unsigned int) */
 
-void Walaber::StringHelper::uIntToStr(ulong *param_1,uint param_2)
+void Walaber::StringHelper::uIntToStr(uint p0)
 
 {
   long lVar1;
   ulong uVar2;
+  ulong *in_x8;
   long lVar3;
   uint uVar4;
   ulong uVar5;
   undefined1 *puVar6;
-  ulong uVar7;
+  ulong p0_00;
   undefined1 auStack_50 [8];
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uVar2 = (ulong)param_2;
+  uVar2 = (ulong)p0;
   lVar3 = 1;
-  if (9 < param_2) {
+  if (9 < p0) {
     do {
       uVar4 = (uint)uVar2;
       uVar2 = uVar2 / 10;
@@ -1116,25 +1126,25 @@ void Walaber::StringHelper::uIntToStr(ulong *param_1,uint param_2)
   }
   puVar6 = auStack_50 + -(lVar3 + 0xfU & 0xfffffffffffffff0);
   func_0x001734a0(puVar6,"%u");
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  *in_x8 = 0;
   uVar2 = FUN_00173480(puVar6);
   if (0xffffffffffffffef < uVar2) {
-    FUN_00164180(param_1);
+    FUN_00164180();
     return;
   }
   if (uVar2 < 0x17) {
-    uVar5 = (long)param_1 + 1;
-    *(char *)param_1 = (char)((int)uVar2 << 1);
+    uVar5 = (long)in_x8 + 1;
+    *(char *)in_x8 = (char)((int)uVar2 << 1);
     if (uVar2 == 0) goto LAB_0045cae0;
   }
   else {
-    uVar7 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar5 = FUN_00164060(uVar7);
-    param_1[1] = uVar2;
-    param_1[2] = uVar5;
-    *param_1 = uVar7 | 1;
+    p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    uVar5 = FUN_00164060(p0_00);
+    in_x8[1] = uVar2;
+    in_x8[2] = uVar5;
+    *in_x8 = p0_00 | 1;
   }
   FUN_001715e0(uVar5,puVar6,uVar2);
 LAB_0045cae0:

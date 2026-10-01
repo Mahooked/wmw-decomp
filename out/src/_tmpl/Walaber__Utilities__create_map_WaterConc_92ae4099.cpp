@@ -12,25 +12,26 @@
 
 void Walaber::Utilities::
      create_map<WaterConcept::Screen_Hub::HubAction,WaterConcept::Screen_Hub::WidgetName>::
-     create_map(undefined8 *param_1,undefined8 param_2,undefined4 *param_3)
+     create_map(WaterConcept__Screen_Hub__HubAction *p0,WaterConcept__Screen_Hub__WidgetName *p1)
 
 {
   undefined4 uVar1;
   long lVar2;
   long lVar3;
+  undefined4 *in_x2;
   undefined1 auStack_48 [8];
-  undefined8 uStack_40;
+  WaterConcept__Screen_Hub__WidgetName *pWStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = param_1 + 1;
-  uVar1 = *param_3;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(WaterConcept__Screen_Hub__HubAction **)p0 = p0 + 8;
+  uVar1 = *in_x2;
                     /* try { // try from 004dbb40 to 004dbb53 has its CatchHandler @ 004dbb80 */
-  uStack_40 = param_2;
-  lVar3 = FUN_001622e0(param_1,param_2,&DAT_0063b06d,&uStack_40,auStack_48);
+  pWStack_40 = p1;
+  lVar3 = FUN_001622e0(p0,p1,&DAT_0063b06d,&pWStack_40,auStack_48);
   *(undefined4 *)(lVar3 + 0x20) = uVar1;
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;

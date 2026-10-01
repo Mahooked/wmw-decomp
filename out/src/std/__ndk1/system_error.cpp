@@ -14,13 +14,13 @@ void std::__ndk1::system_error::__init(undefined8 *param_1,int *param_2,byte *pa
 {
   ulong uVar1;
   long lVar2;
-  ulong uVar3;
+  void *pvVar3;
   int iVar4;
   undefined8 uVar5;
   undefined8 uVar6;
   byte abStack_50 [8];
   ulong uStack_48;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
@@ -37,15 +37,15 @@ LAB_005ef210:
   else if (*(long *)(param_3 + 8) != 0) goto LAB_005ef210;
   (**(code **)(**(long **)(param_2 + 2) + 0x30))(abStack_50,*(long **)(param_2 + 2),iVar4);
   uVar1 = (ulong)(abStack_50[0] >> 1);
-  uVar3 = (ulong)abStack_50 | 1;
+  pvVar3 = (void *)((ulong)abStack_50 | 1);
   if ((abStack_50[0] & 1) != 0) {
     uVar1 = uStack_48;
-    uVar3 = uStack_40;
+    pvVar3 = pvStack_40;
   }
                     /* try { // try from 005ef25c to 005ef263 has its CatchHandler @ 005ef2b4 */
-  FUN_00167eb0(param_3,uVar3,uVar1);
+  FUN_00167eb0(param_3,pvVar3,uVar1);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
 LAB_005ef274:
   uVar6 = *(undefined8 *)(param_3 + 8);
@@ -100,13 +100,13 @@ void std::__ndk1::system_error::system_error
   long lVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  void *pvVar4;
+  ulong p0;
   ulong uStack_90;
   ulong uStack_88;
-  ulong uStack_80;
+  void *pvStack_80;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   long lStack_48;
@@ -114,12 +114,12 @@ void std::__ndk1::system_error::system_error
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_88 = 0;
-  uStack_80 = 0;
+  pvStack_80 = (void *)0x0;
   uStack_90 = 0;
   uStack_58 = param_2;
   uStack_50 = param_3;
   if ((*param_4 & 1) == 0) {
-    uStack_80 = param_4[2];
+    pvStack_80 = (void *)param_4[2];
     uStack_88 = param_4[1];
     uStack_90 = *param_4;
     goto LAB_005ef384;
@@ -131,30 +131,30 @@ void std::__ndk1::system_error::system_error
   }
   uVar3 = param_4[2];
   if (uVar2 < 0x17) {
-    uVar4 = (ulong)&uStack_90 | 1;
+    pvVar4 = (void *)((ulong)&uStack_90 | 1);
     uStack_90 = (ulong)(byte)((int)uVar2 << 1);
     if (uVar2 != 0) goto LAB_005ef370;
   }
   else {
-    uVar5 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_90 = uVar5 | 1;
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0);
+    uStack_90 = p0 | 1;
     uStack_88 = uVar2;
-    uStack_80 = uVar4;
+    pvStack_80 = pvVar4;
 LAB_005ef370:
-    FUN_001715e0(uVar4,uVar3,uVar2);
+    FUN_001715e0(pvVar4,uVar3,uVar2);
   }
-  *(undefined1 *)(uVar4 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar2) = 0;
 LAB_005ef384:
                     /* try { // try from 005ef384 to 005ef393 has its CatchHandler @ 005ef43c */
   func_0x00165360(abStack_70,&uStack_58,&uStack_90);
                     /* try { // try from 005ef394 to 005ef39f has its CatchHandler @ 005ef40c */
   func_0x0016d390(param_1,abStack_70);
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((uStack_90 & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
   *param_1 = &PTR__system_error_00719200;
   param_1[3] = uStack_50;
@@ -180,13 +180,13 @@ void std::__ndk1::system_error::system_error
 {
   long lVar1;
   ulong uVar2;
-  ulong uVar3;
-  ulong uVar4;
+  void *pvVar3;
+  ulong p0;
   ulong uStack_88;
   ulong uStack_80;
-  ulong uStack_78;
+  void *pvStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   long lStack_48;
@@ -195,7 +195,7 @@ void std::__ndk1::system_error::system_error
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_88 = 0;
   uStack_80 = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   uStack_58 = param_2;
   uStack_50 = param_3;
   uVar2 = FUN_00173480(param_4);
@@ -204,29 +204,29 @@ void std::__ndk1::system_error::system_error
     return;
   }
   if (uVar2 < 0x17) {
-    uVar3 = (ulong)&uStack_88 | 1;
+    pvVar3 = (void *)((ulong)&uStack_88 | 1);
     uStack_88 = CONCAT71(uStack_88._1_7_,(char)((int)uVar2 << 1));
     if (uVar2 == 0) goto LAB_005ef4f4;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar3 = FUN_00164060(uVar4);
-    uStack_88 = uVar4 | 1;
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    pvVar3 = (void *)FUN_00164060(p0);
+    uStack_88 = p0 | 1;
     uStack_80 = uVar2;
-    uStack_78 = uVar3;
+    pvStack_78 = pvVar3;
   }
-  FUN_001715e0(uVar3,param_4,uVar2);
+  FUN_001715e0(pvVar3,param_4,uVar2);
 LAB_005ef4f4:
-  *(undefined1 *)(uVar3 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 005ef4f8 to 005ef507 has its CatchHandler @ 005ef5b0 */
   func_0x00165360(abStack_70,&uStack_58,&uStack_88);
                     /* try { // try from 005ef508 to 005ef513 has its CatchHandler @ 005ef580 */
   func_0x0016d390(param_1,abStack_70);
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((uStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
   *param_1 = &PTR__system_error_00719200;
   param_1[3] = uStack_50;
@@ -251,9 +251,10 @@ void std::__ndk1::system_error::system_error
 
 {
   long lVar1;
-  ulong auStack_68 [3];
+  ulong auStack_68 [2];
+  void *pvStack_58;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
   long lStack_28;
@@ -262,7 +263,7 @@ void std::__ndk1::system_error::system_error
   lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_68[0] = 0;
   auStack_68[1] = 0;
-  auStack_68[2] = 0;
+  pvStack_58 = (void *)0x0;
                     /* try { // try from 005ef5f8 to 005ef607 has its CatchHandler @ 005ef6a0 */
   uStack_38 = param_2;
   uStack_30 = param_3;
@@ -270,10 +271,10 @@ void std::__ndk1::system_error::system_error
                     /* try { // try from 005ef608 to 005ef613 has its CatchHandler @ 005ef670 */
   func_0x0016d390(param_1,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_68[0] & 1) != 0) {
-    FUN_00166120(auStack_68[2]);
+    FUN_00166120(pvStack_58);
   }
   *param_1 = &PTR__system_error_00719200;
   param_1[3] = uStack_30;
@@ -302,26 +303,26 @@ void std::__ndk1::system_error::system_error
   long lVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  void *pvVar4;
+  ulong p0;
   ulong uStack_a0;
   ulong uStack_98;
-  ulong uStack_90;
+  void *pvStack_90;
   undefined4 auStack_80 [2];
   undefined8 uStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_98 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   uStack_a0 = 0;
   auStack_80[0] = param_2;
   uStack_78 = param_3;
   if ((*param_4 & 1) == 0) {
-    uStack_90 = param_4[2];
+    pvStack_90 = (void *)param_4[2];
     uStack_98 = param_4[1];
     uStack_a0 = *param_4;
     goto LAB_005ef780;
@@ -333,30 +334,30 @@ void std::__ndk1::system_error::system_error
   }
   uVar3 = param_4[2];
   if (uVar2 < 0x17) {
-    uVar4 = (ulong)&uStack_a0 | 1;
+    pvVar4 = (void *)((ulong)&uStack_a0 | 1);
     uStack_a0 = (ulong)(byte)((int)uVar2 << 1);
     if (uVar2 != 0) goto LAB_005ef76c;
   }
   else {
-    uVar5 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar4 = FUN_00164060(uVar5);
-    uStack_a0 = uVar5 | 1;
+    p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0);
+    uStack_a0 = p0 | 1;
     uStack_98 = uVar2;
-    uStack_90 = uVar4;
+    pvStack_90 = pvVar4;
 LAB_005ef76c:
-    FUN_001715e0(uVar4,uVar3,uVar2);
+    FUN_001715e0(pvVar4,uVar3,uVar2);
   }
-  *(undefined1 *)(uVar4 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar2) = 0;
 LAB_005ef780:
                     /* try { // try from 005ef780 to 005ef78f has its CatchHandler @ 005ef83c */
   func_0x00165360(abStack_70,auStack_80,&uStack_a0);
                     /* try { // try from 005ef790 to 005ef79b has its CatchHandler @ 005ef80c */
   func_0x0016d390(param_1,abStack_70);
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((uStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   *(undefined4 *)(param_1 + 2) = param_2;
   param_1[3] = param_3;
@@ -376,63 +377,64 @@ LAB_005ef780:
 
 /* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&, char const*) */
 
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
+void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1,char *p2)
 
 {
   long lVar1;
-  ulong uVar2;
+  undefined8 *puVar2;
   ulong uVar3;
-  ulong uVar4;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_98;
   ulong uStack_90;
-  ulong uStack_88;
+  void *pvStack_88;
   undefined4 auStack_80 [2];
-  undefined8 uStack_78;
+  char *pcStack_78;
   byte abStack_70 [16];
-  undefined8 uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
+  puVar2 = (undefined8 *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_90 = 0;
-  uStack_88 = 0;
+  pvStack_88 = (void *)0x0;
   uStack_98 = 0;
-  auStack_80[0] = param_2;
-  uStack_78 = param_3;
-  uVar2 = FUN_00173480(param_4);
-  if (0xffffffffffffffef < uVar2) {
+  auStack_80[0] = (int)p1;
+  pcStack_78 = p2;
+  uVar3 = FUN_00173480();
+  if (0xffffffffffffffef < uVar3) {
     FUN_00164180(&uStack_98);
     return;
   }
-  if (uVar2 < 0x17) {
-    uVar3 = (ulong)&uStack_98 | 1;
-    uStack_98 = CONCAT71(uStack_98._1_7_,(char)((int)uVar2 << 1));
-    if (uVar2 == 0) goto LAB_005ef904;
+  if (uVar3 < 0x17) {
+    pvVar4 = (void *)((ulong)&uStack_98 | 1);
+    uStack_98 = CONCAT71(uStack_98._1_7_,(char)((int)uVar3 << 1));
+    if (uVar3 == 0) goto LAB_005ef904;
   }
   else {
-    uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar3 = FUN_00164060(uVar4);
-    uStack_98 = uVar4 | 1;
-    uStack_90 = uVar2;
-    uStack_88 = uVar3;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_98 = p0_00 | 1;
+    uStack_90 = uVar3;
+    pvStack_88 = pvVar4;
   }
-  FUN_001715e0(uVar3,param_4,uVar2);
+  FUN_001715e0(pvVar4);
 LAB_005ef904:
-  *(undefined1 *)(uVar3 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 005ef908 to 005ef917 has its CatchHandler @ 005ef9c4 */
   func_0x00165360(abStack_70,auStack_80,&uStack_98);
                     /* try { // try from 005ef918 to 005ef923 has its CatchHandler @ 005ef994 */
-  func_0x0016d390(param_1,abStack_70);
+  func_0x0016d390(puVar2,abStack_70);
   if ((abStack_70[0] & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((uStack_98 & 1) != 0) {
-    FUN_00166120(uStack_88);
+    FUN_00166120(pvStack_88);
   }
-  *(undefined4 *)(param_1 + 2) = param_2;
-  param_1[3] = param_3;
-  *param_1 = &PTR__system_error_00719200;
+  *(int *)(puVar2 + 2) = (int)p1;
+  puVar2[3] = p2;
+  *puVar2 = &PTR__system_error_00719200;
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     FUN_00164ff0();
     return;
@@ -448,38 +450,39 @@ LAB_005ef904:
 
 /* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&) */
 
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3)
+void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1)
 
 {
   long lVar1;
-  ulong auStack_78 [3];
-  undefined4 auStack_60 [2];
-  undefined8 uStack_58;
+  undefined8 *puVar2;
+  undefined8 in_x2;
+  ulong auStack_78 [2];
+  void *pvStack_68;
+  undefined4 auStack_60 [4];
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
+  puVar2 = (undefined8 *)(ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_78[1] = 0;
-  auStack_78[2] = 0;
+  pvStack_68 = (void *)0x0;
   auStack_78[0] = 0;
                     /* try { // try from 005efa1c to 005efa2b has its CatchHandler @ 005efac8 */
-  auStack_60[0] = param_2;
-  uStack_58 = param_3;
+  auStack_60[0] = (int)p1;
   func_0x00165360(abStack_50,auStack_60,auStack_78);
                     /* try { // try from 005efa2c to 005efa37 has its CatchHandler @ 005efa98 */
-  func_0x0016d390(param_1,abStack_50);
+  func_0x0016d390(puVar2,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_78[0] & 1) != 0) {
-    FUN_00166120(auStack_78[2]);
+    FUN_00166120(pvStack_68);
   }
-  *(undefined4 *)(param_1 + 2) = param_2;
-  param_1[3] = param_3;
-  *param_1 = &PTR__system_error_00719200;
+  *(int *)(puVar2 + 2) = (int)p1;
+  puVar2[3] = in_x2;
+  *puVar2 = &PTR__system_error_00719200;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -510,7 +513,7 @@ void std::__ndk1::system_error::~system_error(void)
 
 /* std::__ndk1::system_error::~system_error() */
 
-void std::__ndk1::system_error::~system_error(undefined8 param_1)
+void std::__ndk1::system_error::~system_error(void *param_1)
 
 {
   FUN_001654b0();

@@ -8,19 +8,19 @@
 
 /* ndk::SafePool<ndk::MotionEvent>::SafePool(unsigned long) */
 
-void ndk::SafePool<ndk::MotionEvent>::SafePool(undefined8 *param_1,undefined8 param_2)
+void ndk::SafePool<ndk::MotionEvent>::SafePool(ulong p0)
 
 {
-  *param_1 = &PTR__Mutex_0070ce88;
-  FUN_0016d1a0(param_1 + 1,0);
-  param_1[10] = 0;
-  param_1[0xb] = 0;
-  param_1[8] = 0;
-  param_1[9] = 0;
-  param_1[6] = 0;
-  param_1[7] = 0;
+  *(undefined ***)p0 = &PTR__Mutex_0070ce88;
+  FUN_0016d1a0(p0 + 8,0);
+  *(undefined8 *)(p0 + 0x50) = 0;
+  *(undefined8 *)(p0 + 0x58) = 0;
+  *(undefined8 *)(p0 + 0x40) = 0;
+  *(undefined8 *)(p0 + 0x48) = 0;
+  *(undefined8 *)(p0 + 0x30) = 0;
+  *(undefined8 *)(p0 + 0x38) = 0;
                     /* try { // try from 002c34f8 to 002c3503 has its CatchHandler @ 002c3514 */
-  func_0x00169660(param_1,param_2);
+  func_0x00169660(p0);
   return;
 }
 
@@ -35,9 +35,12 @@ void ndk::SafePool<ndk::MotionEvent>::SafePool(undefined8 *param_1,undefined8 pa
 void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
 
 {
-  if (*(long *)(param_1 + 0x48) != 0) {
-    *(long *)(param_1 + 0x50) = *(long *)(param_1 + 0x48);
-    FUN_00166120();
+  void *p0;
+  
+  p0 = *(void **)(param_1 + 0x48);
+  if (p0 != (void *)0x0) {
+    *(void **)(param_1 + 0x50) = p0;
+    FUN_00166120(p0);
   }
   func_0x0016b060(param_1 + 0x30);
   func_0x0016be40(param_1);
@@ -52,16 +55,19 @@ void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
 
 /* ndk::SafePool<ndk::MotionEvent>::getItem(int) */
 
-long ndk::SafePool<ndk::MotionEvent>::getItem(long param_1,int param_2)
+long ndk::SafePool<ndk::MotionEvent>::getItem(int p0)
 
 {
   long lVar1;
+  int in_w1;
+  long lVar2;
   
-  FUN_0016f820(param_1 + 8);
-  lVar1 = *(long *)(param_1 + 0x30);
+  lVar1 = (ulong)(uint)p0 + 8;
+  FUN_0016f820(lVar1);
+  lVar2 = *(long *)((ulong)(uint)p0 + 0x30);
                     /* try { // try from 002c39f4 to 002c39fb has its CatchHandler @ 002c3a14 */
-  FUN_0016b1e0(param_1 + 8);
-  return lVar1 + (long)param_2 * 0x80;
+  FUN_0016b1e0(lVar1);
+  return lVar2 + (long)in_w1 * 0x80;
 }
 
 
@@ -72,29 +78,31 @@ long ndk::SafePool<ndk::MotionEvent>::getItem(long param_1,int param_2)
 
 /* ndk::SafePool<ndk::MotionEvent>::freeItem(int) */
 
-void ndk::SafePool<ndk::MotionEvent>::freeItem(long param_1,undefined4 param_2)
+void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0)
 
 {
   undefined4 *puVar1;
   long lVar2;
-  undefined4 uStack_3c;
+  ulong uVar3;
+  undefined4 in_w1;
+  undefined1 auStack_3c [4];
   long lStack_38;
   
+  uVar3 = (ulong)(uint)p0;
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  uStack_3c = param_2;
-  FUN_0016f820(param_1 + 8);
-  puVar1 = *(undefined4 **)(param_1 + 0x50);
-  if (puVar1 == *(undefined4 **)(param_1 + 0x58)) {
+  FUN_0016f820(uVar3 + 8);
+  puVar1 = *(undefined4 **)(uVar3 + 0x50);
+  if (puVar1 == *(undefined4 **)(uVar3 + 0x58)) {
                     /* try { // try from 002c3afc to 002c3b03 has its CatchHandler @ 002c3b34 */
-    func_0x00164e90(param_1 + 0x48,&uStack_3c);
+    func_0x00164e90(uVar3 + 0x48,auStack_3c);
   }
   else {
-    *puVar1 = param_2;
-    *(undefined4 **)(param_1 + 0x50) = puVar1 + 1;
+    *puVar1 = in_w1;
+    *(undefined4 **)(uVar3 + 0x50) = puVar1 + 1;
   }
                     /* try { // try from 002c3b04 to 002c3b0b has its CatchHandler @ 002c3b4c */
-  FUN_0016b1e0(param_1 + 8);
+  FUN_0016b1e0(uVar3 + 8);
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
   }
@@ -119,20 +127,20 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
   uint *puVar4;
   uint uVar5;
   undefined8 uStack_b8;
-  long lStack_b0;
-  long lStack_a8;
+  void *pvStack_b0;
+  void *pvStack_a8;
   undefined8 uStack_a0;
-  long lStack_98;
-  long lStack_90;
+  void *pvStack_98;
+  void *pvStack_90;
   undefined8 uStack_88;
-  long lStack_80;
-  long lStack_78;
+  void *pvStack_80;
+  void *pvStack_78;
   undefined8 uStack_70;
-  long lStack_68;
-  long lStack_60;
+  void *pvStack_68;
+  void *pvStack_60;
   undefined8 uStack_58;
-  long lStack_50;
-  long lStack_48;
+  void *pvStack_50;
+  void *pvStack_48;
   undefined8 uStack_40;
   long lStack_38;
   
@@ -148,73 +156,73 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
       puVar1[3] = 0;
       *puVar1 = uStack_b8;
       puVar1[1] = 0;
-      puVar1[2] = lStack_a8;
-      puVar1[1] = lStack_b0;
+      puVar1[2] = pvStack_a8;
+      puVar1[1] = pvStack_b0;
       puVar1[3] = uStack_a0;
       puVar1[4] = 0;
-      lStack_a8 = 0;
+      pvStack_a8 = (void *)0x0;
       uStack_a0 = 0;
-      lStack_b0 = 0;
+      pvStack_b0 = (void *)0x0;
       puVar1[5] = 0;
       puVar1[6] = 0;
-      puVar1[5] = lStack_90;
-      puVar1[4] = lStack_98;
+      puVar1[5] = pvStack_90;
+      puVar1[4] = pvStack_98;
       puVar1[6] = uStack_88;
       puVar1[7] = 0;
-      lStack_90 = 0;
+      pvStack_90 = (void *)0x0;
       uStack_88 = 0;
-      lStack_98 = 0;
+      pvStack_98 = (void *)0x0;
       puVar1[8] = 0;
       puVar1[9] = 0;
-      puVar1[8] = lStack_78;
-      puVar1[7] = lStack_80;
+      puVar1[8] = pvStack_78;
+      puVar1[7] = pvStack_80;
       puVar1[9] = uStack_70;
       puVar1[10] = 0;
-      lStack_78 = 0;
+      pvStack_78 = (void *)0x0;
       uStack_70 = 0;
-      lStack_80 = 0;
+      pvStack_80 = (void *)0x0;
       puVar1[0xb] = 0;
       puVar1[0xc] = 0;
-      puVar1[0xb] = lStack_60;
-      puVar1[10] = lStack_68;
+      puVar1[0xb] = pvStack_60;
+      puVar1[10] = pvStack_68;
       puVar1[0xc] = uStack_58;
       puVar1[0xd] = 0;
-      lStack_60 = 0;
+      pvStack_60 = (void *)0x0;
       uStack_58 = 0;
-      lStack_68 = 0;
+      pvStack_68 = (void *)0x0;
       puVar1[0xe] = 0;
       puVar1[0xf] = 0;
-      puVar1[0xe] = lStack_48;
-      puVar1[0xd] = lStack_50;
+      puVar1[0xe] = pvStack_48;
+      puVar1[0xd] = pvStack_50;
       puVar1[0xf] = uStack_40;
-      lStack_48 = 0;
+      pvStack_48 = (void *)0x0;
       uStack_40 = 0;
-      lStack_50 = 0;
+      pvStack_50 = (void *)0x0;
       *(long *)(param_1 + 0x38) = *(long *)(param_1 + 0x38) + 0x80;
     }
     else {
                     /* try { // try from 002c4bac to 002c4bb3 has its CatchHandler @ 002c4c48 */
       func_0x00171590(param_1 + 0x30,&uStack_b8);
-      if (lStack_50 != 0) {
-        lStack_48 = lStack_50;
-        FUN_00166120();
+      if (pvStack_50 != (void *)0x0) {
+        pvStack_48 = pvStack_50;
+        FUN_00166120(pvStack_50);
       }
     }
-    if (lStack_68 != 0) {
-      lStack_60 = lStack_68;
-      FUN_00166120();
+    if (pvStack_68 != (void *)0x0) {
+      pvStack_60 = pvStack_68;
+      FUN_00166120(pvStack_68);
     }
-    if (lStack_80 != 0) {
-      lStack_78 = lStack_80;
-      FUN_00166120();
+    if (pvStack_80 != (void *)0x0) {
+      pvStack_78 = pvStack_80;
+      FUN_00166120(pvStack_80);
     }
-    if (lStack_98 != 0) {
-      lStack_90 = lStack_98;
-      FUN_00166120();
+    if (pvStack_98 != (void *)0x0) {
+      pvStack_90 = pvStack_98;
+      FUN_00166120(pvStack_98);
     }
-    if (lStack_b0 != 0) {
-      lStack_a8 = lStack_b0;
-      FUN_00166120();
+    if (pvStack_b0 != (void *)0x0) {
+      pvStack_a8 = pvStack_b0;
+      FUN_00166120(pvStack_b0);
     }
     uVar5 = (int)((ulong)(*(long *)(param_1 + 0x38) - *(long *)(param_1 + 0x30)) >> 7) - 1;
   }
@@ -240,7 +248,7 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
 
 /* ndk::SafePool<ndk::MotionEvent>::reserve(unsigned long) */
 
-void ndk::SafePool<ndk::MotionEvent>::reserve(long param_1,undefined8 param_2)
+void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
 
 {
   undefined4 *puVar1;
@@ -253,23 +261,23 @@ void ndk::SafePool<ndk::MotionEvent>::reserve(long param_1,undefined8 param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  func_0x00167450(param_1 + 0x30);
-  func_0x00174140(param_1 + 0x48,param_2);
-  lVar3 = *(long *)(param_1 + 0x30);
-  lVar4 = *(long *)(param_1 + 0x38);
+  func_0x00167450(p0 + 0x30);
+  func_0x00174140(p0 + 0x48);
+  lVar3 = *(long *)(p0 + 0x30);
+  lVar4 = *(long *)(p0 + 0x38);
   if (lVar4 != lVar3) {
     uVar5 = 0;
     do {
       uStack_3c = (undefined4)uVar5;
-      puVar1 = *(undefined4 **)(param_1 + 0x50);
-      if (puVar1 < *(undefined4 **)(param_1 + 0x58)) {
+      puVar1 = *(undefined4 **)(p0 + 0x50);
+      if (puVar1 < *(undefined4 **)(p0 + 0x58)) {
         *puVar1 = uStack_3c;
-        *(undefined4 **)(param_1 + 0x50) = puVar1 + 1;
+        *(undefined4 **)(p0 + 0x50) = puVar1 + 1;
       }
       else {
-        func_0x00170200(param_1 + 0x48,&uStack_3c);
-        lVar3 = *(long *)(param_1 + 0x30);
-        lVar4 = *(long *)(param_1 + 0x38);
+        func_0x00170200(p0 + 0x48,&uStack_3c);
+        lVar3 = *(long *)(p0 + 0x30);
+        lVar4 = *(long *)(p0 + 0x38);
       }
       uVar5 = uVar5 + 1;
     } while (uVar5 < (ulong)(lVar4 - lVar3 >> 7));

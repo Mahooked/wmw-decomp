@@ -22,7 +22,7 @@ void std::__ndk1::
   puVar1[2] = &PTR__basic_stringstream_00711118;
   puVar1[3] = &PTR__basic_stringbuf_007111c8;
   if ((*(byte *)(puVar1 + 0xb) & 1) != 0) {
-    FUN_00166120(puVar1[0xd]);
+    FUN_00166120((void *)puVar1[0xd]);
   }
   puVar1[3] = &PTR__basic_streambuf_00710968;
   FUN_0016e360(puVar1 + 4);
@@ -44,20 +44,20 @@ void std::__ndk1::
      ~basic_stringstream(long *param_1)
 
 {
-  undefined8 *puVar1;
+  undefined8 *p0;
   
-  puVar1 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
-  *puVar1 = &PTR__basic_stringstream_007110f0;
-  puVar1[0x10] = &PTR__basic_stringstream_00711140;
-  puVar1[2] = &PTR__basic_stringstream_00711118;
-  puVar1[3] = &PTR__basic_stringbuf_007111c8;
-  if ((*(byte *)(puVar1 + 0xb) & 1) != 0) {
-    FUN_00166120(puVar1[0xd]);
+  p0 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  *p0 = &PTR__basic_stringstream_007110f0;
+  p0[0x10] = &PTR__basic_stringstream_00711140;
+  p0[2] = &PTR__basic_stringstream_00711118;
+  p0[3] = &PTR__basic_stringbuf_007111c8;
+  if ((*(byte *)(p0 + 0xb) & 1) != 0) {
+    FUN_00166120((void *)p0[0xd]);
   }
-  puVar1[3] = &PTR__basic_streambuf_00710968;
-  FUN_0016e360(puVar1 + 4);
-  FUN_00171f00(puVar1 + 0x10);
-  FUN_00166120(puVar1);
+  p0[3] = &PTR__basic_streambuf_00710968;
+  FUN_0016e360(p0 + 4);
+  FUN_00171f00(p0 + 0x10);
+  FUN_00166120(p0);
   return;
 }
 

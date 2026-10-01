@@ -61,28 +61,29 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    long, Walaber::Vector2 const&) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector
-               (undefined8 *param_1,long param_2,undefined8 *param_3)
+               (ulong p0,Walaber__Vector2 *p1)
 
 {
+  undefined8 *in_x2;
   undefined8 *puVar1;
   undefined8 *puVar2;
-  long lVar3;
+  Walaber__Vector2 *pWVar3;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (p1 != (Walaber__Vector2 *)0x0) {
                     /* try { // try from 0047aea4 to 0047aea7 has its CatchHandler @ 0047aedc */
     func_0x0016aff0();
-    puVar1 = (undefined8 *)param_1[1];
+    puVar1 = *(undefined8 **)(p0 + 8);
     puVar2 = puVar1;
-    lVar3 = param_2;
+    pWVar3 = p1;
     do {
-      lVar3 = lVar3 + -1;
-      *puVar2 = *param_3;
+      pWVar3 = pWVar3 + -1;
+      *puVar2 = *in_x2;
       puVar2 = puVar2 + 1;
-    } while (lVar3 != 0);
-    param_1[1] = puVar1 + param_2;
+    } while (pWVar3 != (Walaber__Vector2 *)0x0);
+    *(undefined8 **)(p0 + 8) = puVar1 + (long)p1;
   }
   return;
 }
@@ -97,19 +98,20 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    >::__vallocate(unsigned long) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__vallocate
-               (long *param_1,ulong param_2)
+               (ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 >> 0x3d == 0) {
-    lVar1 = FUN_00164060(param_2 << 3);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 8;
+  if (in_x1 >> 0x3d == 0) {
+    lVar1 = FUN_00164060(in_x1 << 3);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 8;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -276,7 +278,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
         puVar11 = puStack_88;
         if (puVar12 != (undefined8 *)0x0) {
           puStack_80 = puVar6;
-          FUN_00166120();
+          FUN_00166120(puVar12);
           puVar6 = puStack_80;
           puVar11 = puStack_88;
         }
@@ -311,7 +313,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
                    (~((long)puStack_80 + (-8 - (long)puStack_88)) & 0xfffffffffffffff8U));
     }
     if (puStack_90 != (undefined8 *)0x0) {
-      FUN_00166120();
+      FUN_00166120(puStack_90);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
@@ -332,12 +334,15 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
    >&, std::__ndk1::integral_constant<bool, true>) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_assign
-               (long *param_1,long *param_2)
+               (undefined8 *param_1,undefined8 *param_2)
 
 {
-  if (*param_1 != 0) {
-    param_1[1] = *param_1;
-    FUN_00166120();
+  void *p0;
+  
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    param_1[1] = p0;
+    FUN_00166120(p0);
     *param_1 = 0;
     param_1[1] = 0;
     param_1[2] = 0;
@@ -361,37 +366,37 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    >::__move_range(Walaber::Vector2*, Walaber::Vector2*, Walaber::Vector2*) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_range
-               (long param_1,ulong param_2,undefined8 *param_3,long param_4)
+               (Walaber__Vector2 *p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
   long lVar1;
+  long in_x3;
   undefined8 *puVar2;
   long lVar3;
-  undefined8 *puVar4;
+  Walaber__Vector2 *pWVar4;
   undefined8 *puVar6;
-  undefined8 *puVar5;
+  Walaber__Vector2 *pWVar5;
   
-  puVar2 = *(undefined8 **)(param_1 + 8);
-  param_4 = (long)puVar2 - param_4;
-  if ((undefined8 *)(param_2 + param_4) < param_3) {
-    puVar4 = (undefined8 *)(param_2 + param_4);
+  puVar2 = *(undefined8 **)(p0 + 8);
+  lVar3 = (long)puVar2 - in_x3;
+  if (p1 + lVar3 < p2) {
+    pWVar5 = p1 + lVar3;
     puVar6 = puVar2;
     do {
-      puVar5 = puVar4 + 1;
-      *puVar6 = *puVar4;
-      puVar4 = puVar5;
+      pWVar4 = pWVar5 + 8;
+      *puVar6 = *(undefined8 *)pWVar5;
+      pWVar5 = pWVar4;
       puVar6 = puVar6 + 1;
-    } while (puVar5 < param_3);
-    *(undefined8 **)(param_1 + 8) =
-         puVar2 + ((long)param_3 + ~param_2 + (param_4 >> 3) * -8 >> 3) + 1;
+    } while (pWVar4 < p2);
+    *(undefined8 **)(p0 + 8) = puVar2 + ((ulong)(p2 + ~(ulong)p1 + (lVar3 >> 3) * -8) >> 3) + 1;
   }
-  if (param_4 != 0) {
-    lVar3 = (param_4 >> 3) << 3;
+  if (lVar3 != 0) {
+    lVar3 = (lVar3 >> 3) << 3;
     do {
       puVar2 = puVar2 + -1;
-      lVar1 = param_2 + lVar3;
+      lVar1 = lVar3 + -8;
       lVar3 = lVar3 + -8;
-      *puVar2 = *(undefined8 *)(lVar1 + -8);
+      *puVar2 = *(undefined8 *)(p1 + lVar1);
     } while (lVar3 != 0);
   }
   return;

@@ -15,31 +15,31 @@ void std::__ndk1::
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
-  long *plVar4;
+  long *p0;
+  long lVar2;
+  long *plVar3;
   
   if (param_1[2] != 0) {
     lVar1 = *param_1;
-    plVar2 = (long *)param_1[1];
-    lVar3 = *plVar2;
-    *(undefined8 *)(lVar3 + 8) = *(undefined8 *)(lVar1 + 8);
-    **(long **)(lVar1 + 8) = lVar3;
+    p0 = (long *)param_1[1];
+    lVar2 = *p0;
+    *(undefined8 *)(lVar2 + 8) = *(undefined8 *)(lVar1 + 8);
+    **(long **)(lVar1 + 8) = lVar2;
     param_1[2] = 0;
-    while (plVar2 != param_1) {
-      plVar4 = (long *)plVar2[1];
-      FUN_0016bb90(plVar2 + 0xb);
-      if ((*(byte *)(plVar2 + 8) & 1) != 0) {
-        FUN_00166120(plVar2[10]);
+    while (p0 != param_1) {
+      plVar3 = (long *)p0[1];
+      FUN_0016bb90(p0 + 0xb);
+      if ((*(byte *)(p0 + 8) & 1) != 0) {
+        FUN_00166120((void *)p0[10]);
       }
-      if ((*(byte *)(plVar2 + 5) & 1) != 0) {
-        FUN_00166120(plVar2[7]);
+      if ((*(byte *)(p0 + 5) & 1) != 0) {
+        FUN_00166120((void *)p0[7]);
       }
-      if ((*(byte *)(plVar2 + 2) & 1) != 0) {
-        FUN_00166120(plVar2[4]);
+      if ((*(byte *)(p0 + 2) & 1) != 0) {
+        FUN_00166120((void *)p0[4]);
       }
-      FUN_00166120(plVar2);
-      plVar2 = plVar4;
+      FUN_00166120(p0);
+      p0 = plVar3;
     }
   }
   return;

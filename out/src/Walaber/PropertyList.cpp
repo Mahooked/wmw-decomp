@@ -40,13 +40,15 @@ void Walaber::PropertyList::~PropertyList(long param_1)
 
 /* Walaber::PropertyList::TEMPNAMEPLACEHOLDERVALUE(Walaber::PropertyList const&) */
 
-undefined8 * Walaber::PropertyList::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__PropertyList * Walaber::PropertyList::operator=(Walaber__PropertyList *p0)
 
 {
-  if (param_1 != param_2) {
-    func_0x00165950(param_1,*param_2,param_2 + 1);
+  Walaber__PropertyList *in_x1;
+  
+  if (p0 != in_x1) {
+    func_0x00165950(p0,*(undefined8 *)in_x1,in_x1 + 8);
   }
-  return param_1;
+  return p0;
 }
 
 

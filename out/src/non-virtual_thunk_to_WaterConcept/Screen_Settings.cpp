@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_Settings::~Screen_Settings(long p
 void non_virtual_thunk_to_WaterConcept::Screen_Settings::~Screen_Settings(long param_1)
 
 {
-  func_0x0016e260(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x0016e260((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_Settings::~Screen_Settings(long p
 /* non-virtual thunk to WaterConcept::Screen_Settings::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Settings::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Settings::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x0016bd40(param_1 + -0x20);
+  func_0x0016bd40((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -55,10 +56,10 @@ void non_virtual_thunk_to_WaterConcept::Screen_Settings::handleEvent(long param_
 
 /* non-virtual thunk to WaterConcept::Screen_Settings::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_Settings::messageRx(long param_1)
+undefined8 non_virtual_thunk_to_WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0)
 
 {
-  func_0x0016ed50(param_1 + -0x90);
+  func_0x0016ed50(p0 + -0x90);
   return 0;
 }
 

@@ -55,7 +55,7 @@ void std::__ndk1::
       while (pbVar1 = pbVar6, pbVar1 != pbVar7) {
         pbVar6 = pbVar1 + -0x18;
         if ((*pbVar6 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(pbVar1 + -8));
+          FUN_00166120(*(void **)(pbVar1 + -8));
         }
       }
       param_1[1] = (long)pbVar7;

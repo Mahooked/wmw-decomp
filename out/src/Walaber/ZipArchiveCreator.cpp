@@ -58,12 +58,14 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
 {
   long lVar1;
   int iVar2;
-  undefined8 uVar3;
-  long lVar4;
-  ulong uVar5;
+  void *p0;
+  long lVar3;
+  ulong uVar4;
   ulong extraout_x1;
-  byte *pbVar6;
-  uint uVar7;
+  ulong p1;
+  ulong p1_00;
+  byte *pbVar5;
+  uint uVar6;
   undefined1 auStack_1f0 [48];
   undefined **ppuStack_1c0;
   undefined8 uStack_1b8;
@@ -80,14 +82,14 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
   if (*param_1 == 0) {
-    uVar7 = 0;
+    uVar6 = 0;
     goto LAB_003d7900;
   }
-  pbVar6 = *(byte **)(param_2 + 0x10);
+  pbVar5 = *(byte **)(param_2 + 0x10);
   appuStack_100[0] = &PTR__basic_istream_00710880;
   ppuStack_1c0 = &PTR__basic_istream_00710858;
   if ((*param_2 & 1) == 0) {
-    pbVar6 = param_2 + 1;
+    pbVar5 = param_2 + 1;
   }
   uStack_1b8 = 0;
   ppuStack_1b0 = &PTR__basic_fstream_00710748;
@@ -101,16 +103,16 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
                     /* try { // try from 003d7778 to 003d777f has its CatchHandler @ 003d797c */
   func_0x0016b680(auStack_1a8);
   if (lStack_130 == 0) {
-    lStack_130 = FUN_00171000(pbVar6,&DAT_0061ee22);
+    lStack_130 = FUN_00171000(pbVar5,&DAT_0061ee22);
     if (lStack_130 == 0) goto LAB_003d7788;
     uStack_110 = 0xc;
 LAB_003d77d8:
-    pbVar6 = *(byte **)(param_3 + 0x10);
+    pbVar5 = *(byte **)(param_3 + 0x10);
     if ((*param_3 & 1) == 0) {
-      pbVar6 = param_3 + 1;
+      pbVar5 = param_3 + 1;
     }
                     /* try { // try from 003d77ec to 003d7817 has its CatchHandler @ 003d7970 */
-    iVar2 = func_0x00170fd0(*param_1,pbVar6,auStack_1f0,0,0,0,0,0,8,0xffffffff);
+    iVar2 = func_0x00170fd0(*param_1,pbVar5,auStack_1f0,0,0,0,0,0,8,0xffffffff);
     FUN_0016ddd0("openNewFileInZip... ret[%d]\n",iVar2);
     if (iVar2 != 0) goto LAB_003d78d4;
                     /* try { // try from 003d7830 to 003d783f has its CatchHandler @ 003d796c */
@@ -120,23 +122,23 @@ LAB_003d77d8:
                     /* try { // try from 003d784c to 003d785b has its CatchHandler @ 003d796c */
     func_0x00169830(&ppuStack_1c0,0,0);
                     /* try { // try from 003d7860 to 003d793b has its CatchHandler @ 003d7988 */
-    uVar3 = FUN_00167620(extraout_x1 & 0xffffffff);
-    func_0x0016d880(&ppuStack_1c0,uVar3,extraout_x1 & 0xffffffff);
-    lVar4 = func_0x0016e060(auStack_1a8);
-    if (lVar4 == 0) {
+    p0 = (void *)FUN_00167620(extraout_x1 & 0xffffffff);
+    func_0x0016d880(&ppuStack_1c0,p0,extraout_x1 & 0xffffffff);
+    lVar3 = func_0x0016e060(auStack_1a8);
+    if (lVar3 == 0) {
       FUN_0016fe80((undefined *)((long)&ppuStack_1c0 + (long)ppuStack_1c0[-3]),
                    *(uint *)((long)auStack_1a0 + (long)ppuStack_1c0[-3]) | 4);
     }
-    iVar2 = func_0x0016bc30(*param_1,uVar3,extraout_x1 & 0xffffffff);
+    iVar2 = func_0x0016bc30(*param_1,p0,extraout_x1 & 0xffffffff);
     FUN_0016ddd0("WriteInFileInZip... ret[%d]\n",iVar2);
     if (iVar2 != 0) {
-      FUN_001639e0(uVar3);
+      FUN_001639e0(p0,p1);
       goto LAB_003d78d4;
     }
     iVar2 = func_0x00169a20(*param_1);
     FUN_0016ddd0("CloseFileInZip... ret[%d]\n",iVar2);
-    FUN_001639e0(uVar3);
-    uVar7 = (uint)(iVar2 == 0);
+    FUN_001639e0(p0,p1_00);
+    uVar6 = (uint)(iVar2 == 0);
   }
   else {
 LAB_003d7788:
@@ -145,7 +147,7 @@ LAB_003d7788:
                  *(uint *)((long)auStack_1a0 + (long)ppuStack_1c0[-3]) | 4);
     if (lStack_130 != 0) goto LAB_003d77d8;
 LAB_003d78d4:
-    uVar7 = 0;
+    uVar6 = 0;
   }
   ppuStack_1c0 = &PTR__basic_fstream_00710720;
   appuStack_100[0] = &PTR__basic_fstream_00710770;
@@ -154,10 +156,10 @@ LAB_003d78d4:
   FUN_00171f00(appuStack_100);
 LAB_003d7900:
   if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    uVar5 = FUN_00164ff0();
-    return uVar5;
+    uVar4 = FUN_00164ff0();
+    return uVar4;
   }
-  return (ulong)uVar7;
+  return (ulong)uVar6;
 }
 
 

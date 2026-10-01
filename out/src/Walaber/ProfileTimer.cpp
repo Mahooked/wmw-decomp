@@ -8,10 +8,10 @@
 
 /* Walaber::ProfileTimer::reserve(unsigned int) */
 
-void Walaber::ProfileTimer::reserve(void)
+uint Walaber::ProfileTimer::reserve(uint p0)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -22,10 +22,10 @@ void Walaber::ProfileTimer::reserve(void)
 
 /* Walaber::ProfileTimer::startSection(unsigned int) */
 
-void Walaber::ProfileTimer::startSection(void)
+uint Walaber::ProfileTimer::startSection(uint p0)
 
 {
-  return;
+  return p0;
 }
 
 
@@ -36,10 +36,10 @@ void Walaber::ProfileTimer::startSection(void)
 
 /* Walaber::ProfileTimer::stopSection(unsigned int) */
 
-void Walaber::ProfileTimer::stopSection(void)
+uint Walaber::ProfileTimer::stopSection(uint p0)
 
 {
-  return;
+  return p0;
 }
 
 

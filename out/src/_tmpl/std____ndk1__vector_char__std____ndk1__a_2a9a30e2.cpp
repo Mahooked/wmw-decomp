@@ -8,25 +8,25 @@
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::vector(unsigned long, char const&) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector
-               (undefined8 *param_1,long param_2,undefined1 *param_3)
+void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,char *p1)
 
 {
+  undefined1 *in_x2;
   undefined1 *puVar1;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (p1 != (char *)0x0) {
                     /* try { // try from 00465418 to 0046541b has its CatchHandler @ 0046544c */
     func_0x00165240();
-    puVar1 = (undefined1 *)param_1[1];
+    puVar1 = *(undefined1 **)(p0 + 8);
     do {
-      param_2 = param_2 + -1;
-      *puVar1 = *param_3;
-      puVar1 = (undefined1 *)(param_1[1] + 1);
-      param_1[1] = puVar1;
-    } while (param_2 != 0);
+      p1 = p1 + -1;
+      *puVar1 = *in_x2;
+      puVar1 = (undefined1 *)(*(long *)(p0 + 8) + 1);
+      *(undefined1 **)(p0 + 8) = puVar1;
+    } while (p1 != (char *)0x0);
   }
   return;
 }
@@ -39,19 +39,20 @@ void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(long *param_1,long param_2)
+void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (-1 < param_2) {
-    lVar1 = FUN_00164060(param_2);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2;
+  if (-1 < (long)in_x1) {
+    lVar1 = FUN_00164060(in_x1);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 

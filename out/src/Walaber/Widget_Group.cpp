@@ -76,7 +76,7 @@ void Walaber::Widget_Group::~Widget_Group(undefined8 *param_1)
 
 /* Walaber::Widget_Group::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_Group::update(void)
+undefined8 Walaber::Widget_Group::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   return 0;
@@ -90,10 +90,10 @@ undefined8 Walaber::Widget_Group::update(void)
 
 /* Walaber::Widget_Group::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_Group::draw(void)
+void Walaber::Widget_Group::draw(Walaber__SpriteBatch *p0)
 
 {
-  Widget::draw();
+  Widget::draw(p0);
   return;
 }
 
@@ -105,22 +105,21 @@ void Walaber::Widget_Group::draw(void)
 
 /* Walaber::Widget_Group::addWidget(Walaber::Widget*) */
 
-void Walaber::Widget_Group::addWidget(long param_1,long param_2)
+void Walaber::Widget_Group::addWidget(Walaber__Widget *p0)
 
 {
   long lVar1;
-  long lStack_38;
+  long in_x1;
+  undefined1 auStack_38 [8];
   undefined8 uStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  uStack_30 = CONCAT44((float)((ulong)*(undefined8 *)(param_2 + 0x54) >> 0x20) -
-                       (float)((ulong)*(undefined8 *)(param_1 + 0x54) >> 0x20),
-                       (float)*(undefined8 *)(param_2 + 0x54) -
-                       (float)*(undefined8 *)(param_1 + 0x54));
-  lStack_38 = param_2;
-  func_0x00165870(param_1 + 0x108,&lStack_38,&lStack_38);
+  uStack_30 = CONCAT44((float)((ulong)*(undefined8 *)(in_x1 + 0x54) >> 0x20) -
+                       (float)((ulong)*(undefined8 *)(p0 + 0x54) >> 0x20),
+                       (float)*(undefined8 *)(in_x1 + 0x54) - (float)*(undefined8 *)(p0 + 0x54));
+  func_0x00165870(p0 + 0x108,auStack_38,auStack_38);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -136,21 +135,23 @@ void Walaber::Widget_Group::addWidget(long param_1,long param_2)
 
 /* Walaber::Widget_Group::getWidget(int) */
 
-long Walaber::Widget_Group::getWidget(long param_1,undefined4 param_2)
+long Walaber::Widget_Group::getWidget(int p0)
 
 {
-  ulong uVar1;
+  long *plVar1;
   ulong uVar2;
-  char *pcVar3;
-  bool bVar4;
-  int iVar5;
-  long lVar6;
-  char *pcVar7;
-  long *plVar8;
-  long lVar9;
-  long *plVar10;
-  char *pcVar11;
-  long *plVar12;
+  ulong uVar3;
+  char *pcVar4;
+  bool bVar5;
+  int iVar6;
+  long lVar7;
+  undefined4 in_w1;
+  char *pcVar8;
+  long *plVar9;
+  long lVar10;
+  long *plVar11;
+  char *pcVar12;
+  long *plVar13;
   byte abStack_88 [8];
   ulong uStack_80;
   char *pcStack_78;
@@ -159,97 +160,98 @@ long Walaber::Widget_Group::getWidget(long param_1,undefined4 param_2)
   char *pcStack_60;
   long lStack_58;
   
-  lVar6 = tpidr_el0;
-  lStack_58 = *(long *)(lVar6 + 0x28);
-  func_0x001636d0(abStack_70,param_2);
-  if (*(long **)(param_1 + 0x108) != (long *)(param_1 + 0x110)) {
-    plVar12 = *(long **)(param_1 + 0x108);
+  lVar7 = tpidr_el0;
+  lStack_58 = *(long *)(lVar7 + 0x28);
+  func_0x001636d0(abStack_70,in_w1);
+  plVar13 = *(long **)((ulong)(uint)p0 + 0x108);
+  plVar1 = (long *)((ulong)(uint)p0 + 0x110);
+  if (plVar13 != plVar1) {
     do {
                     /* try { // try from 0037c9e8 to 0037c9ef has its CatchHandler @ 0037cb50 */
-      func_0x0016e210(abStack_88,plVar12[4]);
-      pcVar11 = pcStack_78;
-      uVar1 = (ulong)(abStack_88[0] >> 1);
+      func_0x0016e210(abStack_88,plVar13[4]);
+      pcVar12 = pcStack_78;
+      uVar2 = (ulong)(abStack_88[0] >> 1);
       if ((abStack_88[0] & 1) != 0) {
-        uVar1 = uStack_80;
+        uVar2 = uStack_80;
       }
-      uVar2 = (ulong)(abStack_70[0] >> 1);
+      uVar3 = (ulong)(abStack_70[0] >> 1);
       if ((abStack_70[0] & 1) != 0) {
-        uVar2 = uStack_68;
+        uVar3 = uStack_68;
       }
-      if (uVar1 == uVar2) {
-        pcVar3 = (char *)((ulong)abStack_88 | 1);
+      if (uVar2 == uVar3) {
+        pcVar4 = (char *)((ulong)abStack_88 | 1);
         if ((abStack_88[0] & 1) != 0) {
-          pcVar3 = pcStack_78;
+          pcVar4 = pcStack_78;
         }
-        pcVar7 = (char *)((ulong)abStack_70 | 1);
+        pcVar8 = (char *)((ulong)abStack_70 | 1);
         if ((abStack_70[0] & 1) != 0) {
-          pcVar7 = pcStack_60;
+          pcVar8 = pcStack_60;
         }
         if ((abStack_88[0] & 1) == 0) {
-          if (uVar1 != 0) {
-            lVar9 = -(ulong)(abStack_88[0] >> 1);
-            pcVar11 = (char *)((ulong)abStack_88 | 1);
+          if (uVar2 != 0) {
+            lVar10 = -(ulong)(abStack_88[0] >> 1);
+            pcVar12 = (char *)((ulong)abStack_88 | 1);
             do {
-              if (*pcVar11 != *pcVar7) goto LAB_0037ca74;
-              pcVar11 = pcVar11 + 1;
-              lVar9 = lVar9 + 1;
-              pcVar7 = pcVar7 + 1;
-            } while (lVar9 != 0);
-            bVar4 = true;
+              if (*pcVar12 != *pcVar8) goto LAB_0037ca74;
+              pcVar12 = pcVar12 + 1;
+              lVar10 = lVar10 + 1;
+              pcVar8 = pcVar8 + 1;
+            } while (lVar10 != 0);
+            bVar5 = true;
             goto joined_r0x0037ca6c;
           }
         }
-        else if (uVar1 == 0) {
+        else if (uVar2 == 0) {
           FUN_00166120(pcStack_78);
         }
         else {
-          iVar5 = FUN_00163c10(pcVar3);
-          FUN_00166120(pcVar11);
-          if (iVar5 != 0) goto LAB_0037caa4;
+          iVar6 = FUN_00163c10(pcVar4);
+          FUN_00166120(pcVar12);
+          if (iVar6 != 0) goto LAB_0037caa4;
         }
 LAB_0037cb08:
-        lVar9 = plVar12[4];
+        lVar10 = plVar13[4];
         goto LAB_0037cb0c;
       }
 LAB_0037ca74:
-      bVar4 = false;
+      bVar5 = false;
 joined_r0x0037ca6c:
       if ((abStack_88[0] & 1) != 0) {
         FUN_00166120(pcStack_78);
       }
-      if (bVar4) goto LAB_0037cb08;
+      if (bVar5) goto LAB_0037cb08;
 LAB_0037caa4:
-      plVar8 = (long *)plVar12[1];
-      if ((long *)plVar12[1] == (long *)0x0) {
-        plVar8 = plVar12 + 2;
-        plVar10 = (long *)*plVar8;
-        if ((long *)*plVar10 != plVar12) {
+      plVar9 = (long *)plVar13[1];
+      if ((long *)plVar13[1] == (long *)0x0) {
+        plVar9 = plVar13 + 2;
+        plVar11 = (long *)*plVar9;
+        if ((long *)*plVar11 != plVar13) {
           do {
-            lVar9 = *plVar8;
-            plVar8 = (long *)(lVar9 + 0x10);
-            plVar10 = (long *)*plVar8;
-          } while (*plVar10 != lVar9);
+            lVar10 = *plVar9;
+            plVar9 = (long *)(lVar10 + 0x10);
+            plVar11 = (long *)*plVar9;
+          } while (*plVar11 != lVar10);
         }
       }
       else {
         do {
-          plVar10 = plVar8;
-          plVar8 = (long *)*plVar10;
-        } while ((long *)*plVar10 != (long *)0x0);
+          plVar11 = plVar9;
+          plVar9 = (long *)*plVar11;
+        } while ((long *)*plVar11 != (long *)0x0);
       }
-      plVar12 = plVar10;
-    } while (plVar10 != (long *)(param_1 + 0x110));
+      plVar13 = plVar11;
+    } while (plVar11 != plVar1);
   }
-  lVar9 = 0;
+  lVar10 = 0;
 LAB_0037cb0c:
   if ((abStack_70[0] & 1) != 0) {
     FUN_00166120(pcStack_60);
   }
-  if (*(long *)(lVar6 + 0x28) == lStack_58) {
-    return lVar9;
+  if (*(long *)(lVar7 + 0x28) == lStack_58) {
+    return lVar10;
   }
-  lVar6 = FUN_00164ff0();
-  return lVar6;
+  lVar7 = FUN_00164ff0();
+  return lVar7;
 }
 
 
@@ -328,38 +330,38 @@ void Walaber::Widget_Group::setLocalPosition(long param_1,undefined8 *param_2)
 
 /* Walaber::Widget_Group::applyPositionOffset(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Group::applyPositionOffset(long param_1,undefined8 param_2)
+void Walaber::Widget_Group::applyPositionOffset(Walaber__Vector2 *p0)
 
 {
   bool bVar1;
-  long *plVar2;
+  Walaber__Vector2 *pWVar2;
   long lVar3;
-  long *plVar4;
+  Walaber__Vector2 *pWVar4;
   
-  plVar4 = *(long **)(param_1 + 0x108);
-  while (plVar4 != (long *)(param_1 + 0x110)) {
-    (**(code **)(*(long *)plVar4[4] + 0x28))((long *)plVar4[4],param_2);
-    plVar2 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar2 = plVar4 + 2;
-      bVar1 = *(long **)*plVar2 != plVar4;
-      plVar4 = (long *)*plVar2;
+  pWVar4 = *(Walaber__Vector2 **)(p0 + 0x108);
+  while (pWVar4 != p0 + 0x110) {
+    (**(code **)(**(long **)(pWVar4 + 0x20) + 0x28))();
+    pWVar2 = *(Walaber__Vector2 **)(pWVar4 + 8);
+    if (*(Walaber__Vector2 **)(pWVar4 + 8) == (Walaber__Vector2 *)0x0) {
+      pWVar2 = pWVar4 + 0x10;
+      bVar1 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar2 != pWVar4;
+      pWVar4 = *(Walaber__Vector2 **)pWVar2;
       if (bVar1) {
         do {
-          lVar3 = *plVar2;
-          plVar2 = (long *)(lVar3 + 0x10);
-          plVar4 = (long *)*plVar2;
-        } while (*plVar4 != lVar3);
+          lVar3 = *(long *)pWVar2;
+          pWVar2 = (Walaber__Vector2 *)(lVar3 + 0x10);
+          pWVar4 = *(Walaber__Vector2 **)pWVar2;
+        } while (*(long *)pWVar4 != lVar3);
       }
     }
     else {
       do {
-        plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        pWVar4 = pWVar2;
+        pWVar2 = *(Walaber__Vector2 **)pWVar4;
+      } while (*(Walaber__Vector2 **)pWVar4 != (Walaber__Vector2 *)0x0);
     }
   }
-  func_0x0016dad0(param_1,param_2);
+  func_0x0016dad0(p0);
   return;
 }
 
@@ -371,47 +373,47 @@ void Walaber::Widget_Group::applyPositionOffset(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Group::setLocalScale(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Group::setLocalScale(long param_1,undefined8 param_2)
+void Walaber::Widget_Group::setLocalScale(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   bool bVar2;
-  long *plVar3;
+  Walaber__Vector2 *pWVar3;
   long lVar4;
-  long *plVar5;
+  Walaber__Vector2 *pWVar5;
   undefined8 uStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   func_0x00173ba0();
-  plVar5 = *(long **)(param_1 + 0x108);
-  while (plVar5 != (long *)(param_1 + 0x110)) {
-    uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x54) >> 0x20) +
-                         (float)((ulong)*(undefined8 *)(param_1 + 0x5c) >> 0x20) *
-                         (float)((ulong)plVar5[5] >> 0x20),
-                         (float)*(undefined8 *)(param_1 + 0x54) +
-                         (float)*(undefined8 *)(param_1 + 0x5c) * (float)plVar5[5]);
-    (**(code **)(*(long *)plVar5[4] + 0x10))((long *)plVar5[4],&uStack_50);
-    (**(code **)(*(long *)plVar5[4] + 0x18))((long *)plVar5[4],param_2);
-    plVar3 = (long *)plVar5[1];
-    if ((long *)plVar5[1] == (long *)0x0) {
-      plVar3 = plVar5 + 2;
-      bVar2 = *(long **)*plVar3 != plVar5;
-      plVar5 = (long *)*plVar3;
+  pWVar5 = *(Walaber__Vector2 **)(p0 + 0x108);
+  while (pWVar5 != p0 + 0x110) {
+    uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x54) >> 0x20) +
+                         (float)((ulong)*(undefined8 *)(p0 + 0x5c) >> 0x20) *
+                         (float)((ulong)*(undefined8 *)(pWVar5 + 0x28) >> 0x20),
+                         (float)*(undefined8 *)(p0 + 0x54) +
+                         (float)*(undefined8 *)(p0 + 0x5c) * (float)*(undefined8 *)(pWVar5 + 0x28));
+    (**(code **)(**(long **)(pWVar5 + 0x20) + 0x10))(*(long **)(pWVar5 + 0x20),&uStack_50);
+    (**(code **)(**(long **)(pWVar5 + 0x20) + 0x18))();
+    pWVar3 = *(Walaber__Vector2 **)(pWVar5 + 8);
+    if (*(Walaber__Vector2 **)(pWVar5 + 8) == (Walaber__Vector2 *)0x0) {
+      pWVar3 = pWVar5 + 0x10;
+      bVar2 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar3 != pWVar5;
+      pWVar5 = *(Walaber__Vector2 **)pWVar3;
       if (bVar2) {
         do {
-          lVar4 = *plVar3;
-          plVar3 = (long *)(lVar4 + 0x10);
-          plVar5 = (long *)*plVar3;
-        } while (*plVar5 != lVar4);
+          lVar4 = *(long *)pWVar3;
+          pWVar3 = (Walaber__Vector2 *)(lVar4 + 0x10);
+          pWVar5 = *(Walaber__Vector2 **)pWVar3;
+        } while (*(long *)pWVar5 != lVar4);
       }
     }
     else {
       do {
-        plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
-      } while ((long *)*plVar5 != (long *)0x0);
+        pWVar5 = pWVar3;
+        pWVar3 = *(Walaber__Vector2 **)pWVar5;
+      } while (*(Walaber__Vector2 **)pWVar5 != (Walaber__Vector2 *)0x0);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -429,47 +431,47 @@ void Walaber::Widget_Group::setLocalScale(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Group::applyScaleOffset(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Group::applyScaleOffset(long param_1,undefined8 param_2)
+void Walaber::Widget_Group::applyScaleOffset(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   bool bVar2;
-  long *plVar3;
+  Walaber__Vector2 *pWVar3;
   long lVar4;
-  long *plVar5;
+  Walaber__Vector2 *pWVar5;
   undefined8 uStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   func_0x00165060();
-  plVar5 = *(long **)(param_1 + 0x108);
-  while (plVar5 != (long *)(param_1 + 0x110)) {
-    uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x54) >> 0x20) +
-                         (float)((ulong)*(undefined8 *)(param_1 + 0x5c) >> 0x20) *
-                         (float)((ulong)plVar5[5] >> 0x20),
-                         (float)*(undefined8 *)(param_1 + 0x54) +
-                         (float)*(undefined8 *)(param_1 + 0x5c) * (float)plVar5[5]);
-    (**(code **)(*(long *)plVar5[4] + 0x10))((long *)plVar5[4],&uStack_50);
-    (**(code **)(*(long *)plVar5[4] + 0x30))((long *)plVar5[4],param_2);
-    plVar3 = (long *)plVar5[1];
-    if ((long *)plVar5[1] == (long *)0x0) {
-      plVar3 = plVar5 + 2;
-      bVar2 = *(long **)*plVar3 != plVar5;
-      plVar5 = (long *)*plVar3;
+  pWVar5 = *(Walaber__Vector2 **)(p0 + 0x108);
+  while (pWVar5 != p0 + 0x110) {
+    uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x54) >> 0x20) +
+                         (float)((ulong)*(undefined8 *)(p0 + 0x5c) >> 0x20) *
+                         (float)((ulong)*(undefined8 *)(pWVar5 + 0x28) >> 0x20),
+                         (float)*(undefined8 *)(p0 + 0x54) +
+                         (float)*(undefined8 *)(p0 + 0x5c) * (float)*(undefined8 *)(pWVar5 + 0x28));
+    (**(code **)(**(long **)(pWVar5 + 0x20) + 0x10))(*(long **)(pWVar5 + 0x20),&uStack_50);
+    (**(code **)(**(long **)(pWVar5 + 0x20) + 0x30))();
+    pWVar3 = *(Walaber__Vector2 **)(pWVar5 + 8);
+    if (*(Walaber__Vector2 **)(pWVar5 + 8) == (Walaber__Vector2 *)0x0) {
+      pWVar3 = pWVar5 + 0x10;
+      bVar2 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar3 != pWVar5;
+      pWVar5 = *(Walaber__Vector2 **)pWVar3;
       if (bVar2) {
         do {
-          lVar4 = *plVar3;
-          plVar3 = (long *)(lVar4 + 0x10);
-          plVar5 = (long *)*plVar3;
-        } while (*plVar5 != lVar4);
+          lVar4 = *(long *)pWVar3;
+          pWVar3 = (Walaber__Vector2 *)(lVar4 + 0x10);
+          pWVar5 = *(Walaber__Vector2 **)pWVar3;
+        } while (*(long *)pWVar5 != lVar4);
       }
     }
     else {
       do {
-        plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
-      } while ((long *)*plVar5 != (long *)0x0);
+        pWVar5 = pWVar3;
+        pWVar3 = *(Walaber__Vector2 **)pWVar5;
+      } while (*(Walaber__Vector2 **)pWVar5 != (Walaber__Vector2 *)0x0);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
@@ -487,38 +489,41 @@ void Walaber::Widget_Group::applyScaleOffset(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Group::setVisible(bool) */
 
-void Walaber::Widget_Group::setVisible(long param_1,byte param_2)
+void Walaber::Widget_Group::setVisible(bool p0)
 
 {
   bool bVar1;
-  long *plVar2;
+  ulong uVar2;
+  byte in_w1;
   long *plVar3;
-  long lVar4;
+  long *plVar4;
+  long lVar5;
   
-  plVar2 = *(long **)(param_1 + 0x108);
-  while (plVar2 != (long *)(param_1 + 0x110)) {
-    *(byte *)(plVar2[4] + 0x8c) = param_2 & 1;
-    plVar3 = (long *)plVar2[1];
-    if ((long *)plVar2[1] == (long *)0x0) {
-      plVar3 = plVar2 + 2;
-      bVar1 = *(long **)*plVar3 != plVar2;
-      plVar2 = (long *)*plVar3;
+  uVar2 = (ulong)p0;
+  plVar3 = *(long **)(uVar2 + 0x108);
+  while (plVar3 != (long *)(uVar2 + 0x110)) {
+    *(byte *)(plVar3[4] + 0x8c) = in_w1 & 1;
+    plVar4 = (long *)plVar3[1];
+    if ((long *)plVar3[1] == (long *)0x0) {
+      plVar4 = plVar3 + 2;
+      bVar1 = *(long **)*plVar4 != plVar3;
+      plVar3 = (long *)*plVar4;
       if (bVar1) {
         do {
-          lVar4 = *plVar3;
-          plVar3 = (long *)(lVar4 + 0x10);
-          plVar2 = (long *)*plVar3;
-        } while (*plVar2 != lVar4);
+          lVar5 = *plVar4;
+          plVar4 = (long *)(lVar5 + 0x10);
+          plVar3 = (long *)*plVar4;
+        } while (*plVar3 != lVar5);
       }
     }
     else {
       do {
-        plVar2 = plVar3;
-        plVar3 = (long *)*plVar2;
-      } while ((long *)*plVar2 != (long *)0x0);
+        plVar3 = plVar4;
+        plVar4 = (long *)*plVar3;
+      } while ((long *)*plVar3 != (long *)0x0);
     }
   }
-  *(byte *)(param_1 + 0x8c) = param_2 & 1;
+  *(byte *)(uVar2 + 0x8c) = in_w1 & 1;
   return;
 }
 
@@ -530,70 +535,70 @@ void Walaber::Widget_Group::setVisible(long param_1,byte param_2)
 
 /* Walaber::Widget_Group::setColor(Walaber::Color const&) */
 
-void Walaber::Widget_Group::setColor(long param_1,undefined4 *param_2)
+void Walaber::Widget_Group::setColor(Walaber__Color *p0)
 
 {
   int iVar1;
   long lVar2;
   bool bVar3;
-  long *plVar4;
-  long lVar5;
-  long *plVar6;
-  long lVar7;
+  Walaber__Color *in_x1;
+  Walaber__Color *pWVar4;
+  Walaber__Color *pWVar5;
+  long lVar6;
   long lStack_58;
   int *piStack_50;
   long lStack_48;
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar6 = *(long **)(param_1 + 0x108);
-  while (plVar6 != (long *)(param_1 + 0x110)) {
-    lVar5 = plVar6[4];
-    iVar1 = *(int *)(lVar5 + 0x84);
+  pWVar5 = *(Walaber__Color **)(p0 + 0x108);
+  while (pWVar5 != p0 + 0x110) {
+    pWVar4 = *(Walaber__Color **)(pWVar5 + 0x20);
+    iVar1 = *(int *)(pWVar4 + 0x84);
     if (iVar1 == 1) {
-      *(undefined4 *)(lVar5 + 0x155) = *param_2;
-      *(undefined1 *)(lVar5 + 400) = *(undefined1 *)param_2;
-      *(undefined1 *)(lVar5 + 0x191) = *(undefined1 *)((long)param_2 + 1);
-      *(undefined1 *)(lVar5 + 0x192) = *(undefined1 *)((long)param_2 + 2);
-      *(undefined1 *)(lVar5 + 0x193) = *(undefined1 *)((long)param_2 + 3);
+      *(undefined4 *)(pWVar4 + 0x155) = *(undefined4 *)in_x1;
+      pWVar4[400] = *in_x1;
+      pWVar4[0x191] = in_x1[1];
+      pWVar4[0x192] = in_x1[2];
+      pWVar4[0x193] = in_x1[3];
     }
     else if (iVar1 == 0x10) {
-      setColor(lVar5,param_2);
+      setColor(pWVar4);
     }
     else if (iVar1 == 10) {
-      lVar7 = *(long *)(lVar5 + 0x110);
-      *(undefined4 *)(lVar5 + 0x144) = *param_2;
-      piStack_50 = *(int **)(lVar5 + 0x118);
-      if (lVar7 != 0) {
+      lVar6 = *(long *)(pWVar4 + 0x110);
+      *(undefined4 *)(pWVar4 + 0x144) = *(undefined4 *)in_x1;
+      piStack_50 = *(int **)(pWVar4 + 0x118);
+      if (lVar6 != 0) {
         *piStack_50 = *piStack_50 + 1;
       }
-      lStack_58 = lVar7;
+      lStack_58 = lVar6;
       FUN_00166b20(&lStack_58);
-      if (lVar7 != 0) {
-        *(undefined1 *)(lVar5 + 0x140) = *(undefined1 *)param_2;
-        *(undefined1 *)(lVar5 + 0x141) = *(undefined1 *)((long)param_2 + 1);
-        *(undefined1 *)(lVar5 + 0x142) = *(undefined1 *)((long)param_2 + 2);
-        *(undefined1 *)(lVar5 + 0x143) = *(undefined1 *)((long)param_2 + 3);
+      if (lVar6 != 0) {
+        pWVar4[0x140] = *in_x1;
+        pWVar4[0x141] = in_x1[1];
+        pWVar4[0x142] = in_x1[2];
+        pWVar4[0x143] = in_x1[3];
       }
     }
-    plVar4 = (long *)plVar6[1];
-    if ((long *)plVar6[1] == (long *)0x0) {
-      plVar4 = plVar6 + 2;
-      bVar3 = *(long **)*plVar4 != plVar6;
-      plVar6 = (long *)*plVar4;
+    pWVar4 = *(Walaber__Color **)(pWVar5 + 8);
+    if (*(Walaber__Color **)(pWVar5 + 8) == (Walaber__Color *)0x0) {
+      pWVar4 = pWVar5 + 0x10;
+      bVar3 = *(Walaber__Color **)*(Walaber__Color **)pWVar4 != pWVar5;
+      pWVar5 = *(Walaber__Color **)pWVar4;
       if (bVar3) {
         do {
-          lVar5 = *plVar4;
-          plVar4 = (long *)(lVar5 + 0x10);
-          plVar6 = (long *)*plVar4;
-        } while (*plVar6 != lVar5);
+          lVar6 = *(long *)pWVar4;
+          pWVar4 = (Walaber__Color *)(lVar6 + 0x10);
+          pWVar5 = *(Walaber__Color **)pWVar4;
+        } while (*(long *)pWVar5 != lVar6);
       }
     }
     else {
       do {
-        plVar6 = plVar4;
-        plVar4 = (long *)*plVar6;
-      } while ((long *)*plVar6 != (long *)0x0);
+        pWVar5 = pWVar4;
+        pWVar4 = *(Walaber__Color **)pWVar5;
+      } while (*(Walaber__Color **)pWVar5 != (Walaber__Color *)0x0);
     }
   }
   if (*(long *)(lVar2 + 0x28) != lStack_48) {

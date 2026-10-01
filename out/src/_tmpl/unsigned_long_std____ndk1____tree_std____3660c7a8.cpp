@@ -15,26 +15,27 @@
 undefined8
 std::__ndk1::
 __tree<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::TouchOwner>>>
-::__erase_unique<int>(long param_1,int *param_2)
+::__erase_unique<int>(int *p0)
 
 {
   int iVar1;
-  long *plVar2;
-  long *plVar3;
-  long *plVar4;
+  int *in_x1;
+  int *piVar2;
+  int *piVar3;
+  int *piVar4;
   
-  plVar3 = (long *)(param_1 + 8);
-  plVar4 = (long *)*plVar3;
-  if (plVar4 != (long *)0x0) {
-    iVar1 = *param_2;
-    plVar2 = plVar3;
+  piVar3 = p0 + 2;
+  piVar4 = *(int **)piVar3;
+  if (piVar4 != (int *)0x0) {
+    iVar1 = *in_x1;
+    piVar2 = piVar3;
     do {
-      if (iVar1 <= (int)plVar4[4]) {
-        plVar2 = plVar4;
+      if (iVar1 <= piVar4[8]) {
+        piVar2 = piVar4;
       }
-      plVar4 = (long *)plVar4[(int)plVar4[4] < iVar1];
-    } while (plVar4 != (long *)0x0);
-    if ((plVar2 != plVar3) && ((int)plVar2[4] <= iVar1)) {
+      piVar4 = *(int **)(piVar4 + (ulong)(piVar4[8] < iVar1) * 2);
+    } while (piVar4 != (int *)0x0);
+    if ((piVar2 != piVar3) && (piVar2[8] <= iVar1)) {
       func_0x00168110();
       return 1;
     }

@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_Languages::~Screen_Languages(long
 void non_virtual_thunk_to_WaterConcept::Screen_Languages::~Screen_Languages(long param_1)
 
 {
-  func_0x00163350(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00163350((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_Languages::~Screen_Languages(long
 /* non-virtual thunk to WaterConcept::Screen_Languages::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Languages::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Languages::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00173d90(param_1 + -0x20);
+  func_0x00173d90((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -55,7 +56,7 @@ void non_virtual_thunk_to_WaterConcept::Screen_Languages::handleEvent(long param
 
 /* non-virtual thunk to WaterConcept::Screen_Languages::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_Languages::messageRx(void)
+undefined8 non_virtual_thunk_to_WaterConcept::Screen_Languages::messageRx(Walaber__Message *p0)
 
 {
   return 0;

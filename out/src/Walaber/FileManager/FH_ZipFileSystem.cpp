@@ -83,20 +83,20 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
 void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = param_1[1];
+  p0 = (void *)param_1[1];
   *param_1 = &PTR__FH_ZipFileSystem_00710658;
-  if (lVar1 != 0) {
-    func_0x00164250(lVar1);
-    FUN_00166120(lVar1);
+  if (p0 != (void *)0x0) {
+    func_0x00164250(p0);
+    FUN_00166120(p0);
   }
   param_1[1] = 0;
   func_0x00167a70(param_1 + 5);
   if ((*(byte *)(param_1 + 2) & 1) == 0) {
     return;
   }
-  FUN_00166120(param_1[4]);
+  FUN_00166120((void *)param_1[4]);
   return;
 }
 
@@ -108,7 +108,7 @@ void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(undefined8 *param
 
 /* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
 
-void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(undefined8 param_1)
+void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(void *param_1)
 
 {
   func_0x00166fb0();
@@ -319,13 +319,13 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
   long lVar1;
   long lVar2;
   byte abStack_b8 [16];
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   byte bStack_80;
-  undefined8 uStack_70;
+  void *pvStack_70;
   byte bStack_68;
-  undefined8 uStack_58;
+  void *pvStack_58;
   long lStack_48;
   
   lVar1 = tpidr_el0;
@@ -336,18 +336,18 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
                     /* try { // try from 003d3e44 to 003d3e5f has its CatchHandler @ 003d3f14 */
   func_0x00161b20(abStack_a0,param_2,1,param_3,abStack_b8,param_5);
   if ((abStack_b8[0] & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
                     /* try { // try from 003d3e7c to 003d3e83 has its CatchHandler @ 003d3ee0 */
   (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,abStack_a0);
   if ((bStack_68 & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   if ((bStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((abStack_a0[0] & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -561,14 +561,14 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
   undefined8 uVar3;
   undefined8 uVar4;
   byte abStack_d8 [16];
-  undefined8 uStack_c8;
+  void *pvStack_c8;
   undefined1 auStack_c0 [8];
   byte bStack_b8;
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   byte bStack_90;
-  undefined8 uStack_80;
+  void *pvStack_80;
   byte bStack_78;
-  undefined8 uStack_68;
+  void *pvStack_68;
   long lStack_58;
   
   lVar1 = tpidr_el0;
@@ -583,18 +583,18 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
                     /* try { // try from 003d431c to 003d433b has its CatchHandler @ 003d43f4 */
   func_0x0016e040(auStack_c0,param_2,uVar3,uVar2,param_3,abStack_d8,param_5);
   if ((abStack_d8[0] & 1) != 0) {
-    FUN_00166120(uStack_c8);
+    FUN_00166120(pvStack_c8);
   }
                     /* try { // try from 003d4358 to 003d435f has its CatchHandler @ 003d43c0 */
   (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,auStack_c0);
   if ((bStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   if ((bStack_90 & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
   if ((bStack_b8 & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;

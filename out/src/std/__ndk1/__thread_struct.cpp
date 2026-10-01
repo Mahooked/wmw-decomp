@@ -32,15 +32,15 @@ void std::__ndk1::__thread_struct::__thread_struct(undefined8 *param_1)
 
 /* std::__ndk1::__thread_struct::~__thread_struct() */
 
-void std::__ndk1::__thread_struct::~__thread_struct(long *param_1)
+void std::__ndk1::__thread_struct::~__thread_struct(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = *param_1;
-  if (lVar1 != 0) {
-    __thread_local_data(lVar1);
-    FUN_00166120(lVar1);
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    __thread_local_data(p0);
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -56,29 +56,28 @@ void std::__ndk1::__thread_struct::~__thread_struct(long *param_1)
    std::__ndk1::mutex*) */
 
 void std::__ndk1::__thread_struct::notify_all_at_thread_exit
-               (long *param_1,undefined8 param_2,undefined8 param_3)
+               (std____ndk1__condition_variable *p0,std____ndk1__mutex *p1)
 
 {
   undefined8 *puVar1;
   long lVar2;
+  undefined8 in_x2;
   long lVar3;
-  undefined8 uStack_38;
-  undefined8 uStack_30;
+  std____ndk1__mutex *apsStack_38 [2];
   long lStack_28;
   
   lVar2 = tpidr_el0;
   lStack_28 = *(long *)(lVar2 + 0x28);
-  lVar3 = *param_1;
+  lVar3 = *(long *)p0;
   puVar1 = *(undefined8 **)(lVar3 + 0x20);
-  uStack_38 = param_2;
-  uStack_30 = param_3;
+  apsStack_38[0] = p1;
   if (puVar1 < *(undefined8 **)(lVar3 + 0x28)) {
-    puVar1[1] = param_3;
-    *puVar1 = param_2;
+    puVar1[1] = in_x2;
+    *puVar1 = p1;
     *(long *)(lVar3 + 0x20) = *(long *)(lVar3 + 0x20) + 0x10;
   }
   else {
-    __make_ready_at_thread_exit(lVar3 + 0x18,&uStack_38);
+    __make_ready_at_thread_exit(lVar3 + 0x18,apsStack_38);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_28) {
     return;
@@ -95,23 +94,24 @@ void std::__ndk1::__thread_struct::notify_all_at_thread_exit
 
 /* std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std::__ndk1::__assoc_sub_state*) */
 
-void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(long *param_1,undefined8 param_2)
+void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std____ndk1____assoc_sub_state *p0)
 
 {
   long lVar1;
   long lVar2;
+  undefined8 in_x1;
   undefined8 uStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  lVar2 = *param_1;
-  uStack_30 = param_2;
+  lVar2 = *(long *)p0;
+  uStack_30 = in_x1;
   if (*(undefined8 **)(lVar2 + 8) == *(undefined8 **)(lVar2 + 0x10)) {
     __make_ready_at_thread_exit(lVar2,&uStack_30);
   }
   else {
-    **(undefined8 **)(lVar2 + 8) = param_2;
+    **(undefined8 **)(lVar2 + 8) = in_x1;
     *(long *)(lVar2 + 8) = *(long *)(lVar2 + 8) + 8;
   }
   FUN_0016cae0(uStack_30);
@@ -135,49 +135,49 @@ void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(long *param_1,und
   long lVar2;
   long lVar3;
   ulong uVar4;
+  void *p0;
   long lVar5;
-  long lVar6;
-  ulong uVar7;
-  undefined8 uVar8;
+  ulong uVar6;
+  undefined8 uVar7;
   
-  lVar5 = *param_1;
+  p0 = (void *)*param_1;
   lVar3 = param_1[1];
-  lVar6 = lVar3 - lVar5 >> 4;
-  uVar7 = lVar6 + 1;
-  if (uVar7 >> 0x3c != 0) {
+  lVar5 = lVar3 - (long)p0 >> 4;
+  uVar6 = lVar5 + 1;
+  if (uVar6 >> 0x3c != 0) {
     FUN_001705a0(param_1);
     return;
   }
-  if ((ulong)(param_1[2] - lVar5 >> 4) < 0x7ffffffffffffff) {
-    uVar4 = param_1[2] - lVar5 >> 3;
-    if (uVar7 <= uVar4) {
-      uVar7 = uVar4;
+  if ((ulong)(param_1[2] - (long)p0 >> 4) < 0x7ffffffffffffff) {
+    uVar4 = param_1[2] - (long)p0 >> 3;
+    if (uVar6 <= uVar4) {
+      uVar6 = uVar4;
     }
-    if (uVar7 == 0) {
+    if (uVar6 == 0) {
       lVar2 = 0;
       goto LAB_005f0354;
     }
   }
   else {
-    uVar7 = 0xfffffffffffffff;
+    uVar6 = 0xfffffffffffffff;
   }
-  lVar2 = FUN_00164060(uVar7 << 4);
-  lVar5 = *param_1;
+  lVar2 = FUN_00164060(uVar6 << 4);
+  p0 = (void *)*param_1;
   lVar3 = param_1[1];
 LAB_005f0354:
-  uVar8 = *param_2;
-  puVar1 = (undefined8 *)(lVar2 + lVar6 * 0x10);
-  lVar6 = (long)puVar1 - (lVar3 - lVar5);
+  uVar7 = *param_2;
+  puVar1 = (undefined8 *)(lVar2 + lVar5 * 0x10);
+  lVar5 = (long)puVar1 - (lVar3 - (long)p0);
   puVar1[1] = param_2[1];
-  *puVar1 = uVar8;
-  if (0 < lVar3 - lVar5) {
-    FUN_001715e0(lVar6,lVar5);
+  *puVar1 = uVar7;
+  if (0 < lVar3 - (long)p0) {
+    FUN_001715e0(lVar5,p0);
   }
-  *param_1 = lVar6;
+  *param_1 = lVar5;
   param_1[1] = (long)(puVar1 + 2);
-  param_1[2] = lVar2 + uVar7 * 0x10;
-  if (lVar5 != 0) {
-    FUN_00166120(lVar5);
+  param_1[2] = lVar2 + uVar6 * 0x10;
+  if (p0 != (void *)0x0) {
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -196,46 +196,46 @@ void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(long *param_1,und
   long lVar2;
   long lVar3;
   ulong uVar4;
+  void *p0;
   long lVar5;
-  long lVar6;
-  ulong uVar7;
+  ulong uVar6;
   
-  lVar5 = *param_1;
+  p0 = (void *)*param_1;
   lVar3 = param_1[1];
-  lVar6 = lVar3 - lVar5 >> 3;
-  uVar7 = lVar6 + 1;
-  if (uVar7 >> 0x3d != 0) {
+  lVar5 = lVar3 - (long)p0 >> 3;
+  uVar6 = lVar5 + 1;
+  if (uVar6 >> 0x3d != 0) {
     FUN_001705a0(param_1);
     return;
   }
-  if ((ulong)(param_1[2] - lVar5 >> 3) < 0xfffffffffffffff) {
-    uVar4 = param_1[2] - lVar5 >> 2;
-    if (uVar7 <= uVar4) {
-      uVar7 = uVar4;
+  if ((ulong)(param_1[2] - (long)p0 >> 3) < 0xfffffffffffffff) {
+    uVar4 = param_1[2] - (long)p0 >> 2;
+    if (uVar6 <= uVar4) {
+      uVar6 = uVar4;
     }
-    if (uVar7 == 0) {
+    if (uVar6 == 0) {
       lVar2 = 0;
       goto LAB_005f0438;
     }
   }
   else {
-    uVar7 = 0x1fffffffffffffff;
+    uVar6 = 0x1fffffffffffffff;
   }
-  lVar2 = FUN_00164060(uVar7 << 3);
-  lVar5 = *param_1;
+  lVar2 = FUN_00164060(uVar6 << 3);
+  p0 = (void *)*param_1;
   lVar3 = param_1[1];
 LAB_005f0438:
-  puVar1 = (undefined8 *)(lVar2 + lVar6 * 8);
-  lVar6 = (long)puVar1 - (lVar3 - lVar5);
+  puVar1 = (undefined8 *)(lVar2 + lVar5 * 8);
+  lVar5 = (long)puVar1 - (lVar3 - (long)p0);
   *puVar1 = *param_2;
-  if (0 < lVar3 - lVar5) {
-    FUN_001715e0(lVar6,lVar5);
+  if (0 < lVar3 - (long)p0) {
+    FUN_001715e0(lVar5,p0);
   }
-  *param_1 = lVar6;
+  *param_1 = lVar5;
   param_1[1] = (long)(puVar1 + 1);
-  param_1[2] = lVar2 + uVar7 * 8;
-  if (lVar5 != 0) {
-    FUN_00166120(lVar5);
+  param_1[2] = lVar2 + uVar6 * 8;
+  if (p0 != (void *)0x0) {
+    FUN_00166120(p0);
     return;
   }
   return;

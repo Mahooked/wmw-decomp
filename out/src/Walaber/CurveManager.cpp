@@ -122,7 +122,7 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
   undefined8 *puStack_d0;
   int *piStack_c8;
   byte abStack_c0 [16];
-  undefined8 uStack_b0;
+  void *pvStack_b0;
   long *plStack_a8;
   int *piStack_a0;
   int *piStack_98;
@@ -155,7 +155,7 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
     func_0x00166a30(param_1 + 0x48,abStack_c0);
     FUN_0016bb90(&piStack_a0);
     if ((abStack_c0[0] & 1) != 0) {
-      FUN_00166120(uStack_b0);
+      FUN_00166120(pvStack_b0);
     }
     func_0x00170b50(param_2,param_1);
     if (param_1 + 0x50 == lVar2) {
@@ -214,7 +214,7 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
       (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,abStack_c0);
       FUN_00172ab0(&plStack_a8);
       if ((abStack_c0[0] & 1) != 0) {
-        FUN_00166120(uStack_b0);
+        FUN_00166120(pvStack_b0);
       }
     }
   }
@@ -233,7 +233,7 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
 
 /* Walaber::CurveManager::_initCurveFileLoaded(void*) */
 
-void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
+void Walaber::CurveManager::_initCurveFileLoaded(void *p0)
 
 {
   long lVar1;
@@ -241,18 +241,18 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
   bool bVar3;
   long lVar4;
   undefined8 uVar5;
-  ulong uVar6;
-  long *plVar7;
-  long *plVar8;
-  long *plVar9;
-  long *plVar10;
-  long *plVar11;
+  long in_x1;
+  undefined8 extraout_x1;
+  ulong *puVar8;
+  ulong *puVar9;
+  ulong *puVar10;
+  ulong uVar11;
   undefined1 auVar12 [16];
   ulong uStack_f0;
   int *piStack_e8;
   ulong uStack_e0;
   int *piStack_d8;
-  long lStack_d0;
+  ulong uStack_d0;
   long *plStack_c8;
   int *piStack_c0;
   ulong uStack_b8;
@@ -266,19 +266,20 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
   ulong uStack_80;
   int *piStack_78;
   long lStack_70;
+  ulong *puVar6;
+  ulong *puVar7;
   
   lVar2 = tpidr_el0;
   lStack_70 = *(long *)(lVar2 + 0x28);
-  if (*(long *)(param_2 + 0x20) != 0) {
-    lVar1 = param_2 + 8;
+  if (*(long *)(in_x1 + 0x20) != 0) {
+    lVar1 = in_x1 + 8;
     uStack_b8 = 0;
     piStack_b0 = (int *)0x0;
                     /* try { // try from 003e1c80 to 003e1c8b has its CatchHandler @ 003e1f58 */
-    lVar4 = func_0x00172450(param_1 + 0x10,lVar1);
-    if (param_1 + 0x18 == lVar4) {
+    lVar4 = func_0x00172450((long)p0 + 0x10,lVar1);
+    if ((long)p0 + 0x18 == lVar4) {
                     /* try { // try from 003e1cb0 to 003e1ce7 has its CatchHandler @ 003e1f5c */
-      uVar5 = func_0x00169030(*(undefined8 *)(param_2 + 0x20),*(undefined4 *)(param_2 + 0x28),0,0,0)
-      ;
+      uVar5 = func_0x00169030(*(undefined8 *)(in_x1 + 0x20),*(undefined4 *)(in_x1 + 0x28),0,0,0);
       lVar4 = FUN_00163ef0();
       if (lVar4 == 0) {
         FUN_00166b60("ERROR! no root element in XML");
@@ -286,9 +287,9 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
         func_0x0016b480();
       }
                     /* try { // try from 003e1ce8 to 003e1cef has its CatchHandler @ 003e1f60 */
-      uVar6 = func_0x0016b850(lVar4);
-      if (uVar6 != 0) {
-        uStack_98 = uVar6;
+      uVar11 = func_0x0016b850(lVar4);
+      if (uVar11 != 0) {
+        uStack_98 = uVar11;
                     /* try { // try from 003e1cf8 to 003e1cff has its CatchHandler @ 003e1f50 */
         piStack_90 = (int *)FUN_00164060(4);
         *piStack_90 = 1;
@@ -303,20 +304,21 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
       func_0x00170b50(&uStack_b8,lVar4 + 0x38);
     }
                     /* try { // try from 003e1d30 to 003e1d3b has its CatchHandler @ 003e1f54 */
-    auVar12 = func_0x0016ff50(param_1 + 0x48,lVar1);
-    plVar8 = auVar12._8_8_;
-    plVar7 = auVar12._0_8_;
-    if (plVar7 != plVar8) {
+    auVar12 = func_0x0016ff50((long)p0 + 0x48,lVar1);
+    puVar7 = auVar12._8_8_;
+    puVar6 = auVar12._0_8_;
+    puVar8 = puVar7;
+    if (puVar6 != puVar7) {
       bVar3 = false;
-      plVar11 = plVar7;
+      puVar8 = puVar6;
       do {
-        lStack_d0 = plVar11[7];
-        plStack_c8 = (long *)plVar11[8];
-        piStack_c0 = (int *)plVar11[9];
+        uStack_d0 = puVar8[7];
+        plStack_c8 = (long *)puVar8[8];
+        piStack_c0 = (int *)puVar8[9];
         if (plStack_c8 != (long *)0x0) {
           *piStack_c0 = *piStack_c0 + 1;
         }
-        func_0x00170b50(lStack_d0,&uStack_b8);
+        func_0x00170b50(uStack_d0,&uStack_b8);
         if (!bVar3) {
           uStack_e0 = uStack_b8;
           piStack_d8 = piStack_b0;
@@ -331,7 +333,7 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
           uStack_88 = 0xffffffff;
                     /* try { // try from 003e1dcc to 003e1de3 has its CatchHandler @ 003e1f64 */
           lStack_a0 = lVar1;
-          lVar4 = func_0x001645f0(param_1 + 0x10,lVar1,&DAT_00633a6f,&lStack_a0,auStack_a8);
+          lVar4 = func_0x001645f0((long)p0 + 0x10,lVar1,&DAT_00633a6f,&lStack_a0,auStack_a8);
           func_0x00170b50(lVar4 + 0x38,&uStack_98);
           *(undefined4 *)(lVar4 + 0x48) = uStack_88;
           FUN_00172ab0(&uStack_98);
@@ -355,37 +357,42 @@ void Walaber::CurveManager::_initCurveFileLoaded(long param_1,long param_2)
           (**(code **)(*plStack_c8 + 0x10))(plStack_c8,&uStack_98);
           FUN_00172ab0(&uStack_80);
           if ((uStack_98 & 1) != 0) {
-            FUN_00166120(CONCAT44(uStack_84,uStack_88));
+            FUN_00166120((void *)CONCAT44(uStack_84,uStack_88));
           }
         }
         FUN_0016bb90(&plStack_c8);
-        plVar9 = (long *)plVar11[1];
-        if ((long *)plVar11[1] == (long *)0x0) {
-          plVar9 = plVar11 + 2;
-          plVar10 = (long *)*plVar9;
-          if ((long *)*plVar10 != plVar11) {
+        auVar12._8_8_ = extraout_x1;
+        auVar12._0_8_ = puVar6;
+        puVar9 = (ulong *)puVar8[1];
+        if ((ulong *)puVar8[1] == (ulong *)0x0) {
+          puVar9 = puVar8 + 2;
+          puVar10 = (ulong *)*puVar9;
+          if ((ulong *)*puVar10 != puVar8) {
             do {
-              lVar4 = *plVar9;
-              plVar9 = (long *)(lVar4 + 0x10);
-              plVar10 = (long *)*plVar9;
-            } while (*plVar10 != lVar4);
+              uVar11 = *puVar9;
+              puVar9 = (ulong *)(uVar11 + 0x10);
+              puVar10 = (ulong *)*puVar9;
+            } while (*puVar10 != uVar11);
           }
         }
         else {
           do {
-            plVar10 = plVar9;
-            plVar9 = (long *)*plVar10;
-          } while ((long *)*plVar10 != (long *)0x0);
+            puVar10 = puVar9;
+            puVar9 = (ulong *)*puVar10;
+          } while ((ulong *)*puVar10 != (ulong *)0x0);
         }
         bVar3 = true;
-        plVar11 = plVar10;
-      } while (plVar10 != plVar8);
-      for (; plVar7 != plVar8; plVar7 = (long *)func_0x0016cad0(param_1 + 0x48,plVar7)) {
+        puVar8 = puVar10;
+      } while (puVar10 != puVar7);
+      while( true ) {
+        puVar8 = auVar12._8_8_;
+        if (auVar12._0_8_ == puVar7) break;
                     /* try { // try from 003e1ef0 to 003e1efb has its CatchHandler @ 003e1f78 */
+        auVar12 = func_0x0016cad0((long)p0 + 0x48,auVar12._0_8_);
       }
     }
-    if (*(long *)(param_2 + 0x20) != 0) {
-      FUN_001639e0();
+    if (*(void **)(in_x1 + 0x20) != (void *)0x0) {
+      FUN_001639e0(*(void **)(in_x1 + 0x20),(ulong)puVar8);
     }
     FUN_00172ab0(&uStack_b8);
   }
@@ -435,7 +442,7 @@ void Walaber::CurveManager::loadCurveCollection(long param_1,byte *param_2,long 
   undefined8 *puStack_90;
   int *piStack_88;
   byte abStack_80 [16];
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   int *piStack_60;
   long lStack_58;
@@ -494,7 +501,7 @@ LAB_003e20f8:
     func_0x00172a20(param_1 + 0x60,abStack_80);
     FUN_0016bb90(&lStack_68);
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(uStack_70);
+      FUN_00166120(pvStack_70);
     }
     if (param_1 + 0x68 == lVar12) {
       func_0x0016b220(abStack_80);
@@ -536,7 +543,7 @@ LAB_003e20f8:
                     /* try { // try from 003e2128 to 003e212f has its CatchHandler @ 003e22f4 */
     (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,abStack_80);
     if ((abStack_80[0] & 1) != 0) {
-      FUN_00166120(uStack_70);
+      FUN_00166120(pvStack_70);
     }
   }
   if (*(long *)(lVar6 + 0x28) == lStack_58) {
@@ -554,82 +561,89 @@ LAB_003e20f8:
 
 /* Walaber::CurveManager::_initCurveCollectionLoaded(void*) */
 
-void Walaber::CurveManager::_initCurveCollectionLoaded(long param_1,long param_2)
+void Walaber::CurveManager::_initCurveCollectionLoaded(void *p0)
 
 {
   long lVar1;
   byte bVar2;
   long *plVar3;
+  ulong in_x1;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong p1;
   long *plVar4;
-  int *piVar5;
+  int *p0_00;
+  long *plVar5;
   long *plVar6;
-  long *plVar7;
-  long lVar8;
-  long *plVar9;
-  undefined1 auVar10 [16];
+  long lVar7;
+  long *plVar8;
+  undefined1 auVar9 [16];
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte bStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  piVar5 = *(int **)(param_2 + 0x20);
-  if (piVar5 == (int *)0x0) {
+  p0_00 = *(int **)(in_x1 + 0x20);
+  if (p0_00 == (int *)0x0) {
     bVar2 = 0;
     goto LAB_003e23ac;
   }
-  if (*piVar5 == -0x3f7e13ac) {
-    bVar2 = func_0x00170e70(param_1,param_2 + 8);
+  if (*p0_00 == -0x3f7e13ac) {
+    bVar2 = func_0x00170e70(p0,in_x1 + 8);
+    p1 = extraout_x1_00;
 LAB_003e2390:
-    piVar5 = *(int **)(param_2 + 0x20);
-    if (piVar5 == (int *)0x0) goto LAB_003e23ac;
+    p0_00 = *(int **)(in_x1 + 0x20);
+    if (p0_00 == (int *)0x0) goto LAB_003e23ac;
   }
   else {
-    if (*piVar5 == -0x3f7e13ab) {
-      bVar2 = func_0x0016d820(param_1,param_2 + 8);
+    if (*p0_00 == -0x3f7e13ab) {
+      bVar2 = func_0x0016d820(p0,in_x1 + 8);
+      p1 = extraout_x1;
       goto LAB_003e2390;
     }
     bVar2 = 0;
+    p1 = in_x1;
   }
-  FUN_001639e0(piVar5);
+  FUN_001639e0(p0_00,p1);
 LAB_003e23ac:
-  auVar10 = func_0x0016b870(param_1 + 0x60,param_2 + 8);
-  plVar4 = auVar10._8_8_;
-  plVar3 = auVar10._0_8_;
+  auVar9 = func_0x0016b870((long)p0 + 0x60,in_x1 + 8);
+  plVar4 = auVar9._8_8_;
+  plVar3 = auVar9._0_8_;
   if (plVar3 != plVar4) {
-    plVar9 = plVar3;
+    plVar8 = plVar3;
     do {
-      if (plVar9[7] != 0) {
-        func_0x0016f720(abStack_78,param_2 + 8);
+      if (plVar8[7] != 0) {
+        func_0x0016f720(abStack_78,in_x1 + 8);
                     /* try { // try from 003e23fc to 003e2403 has its CatchHandler @ 003e24b8 */
         bStack_60 = bVar2 & 1;
-        (**(code **)(*(long *)plVar9[7] + 0x10))((long *)plVar9[7],abStack_78);
+        (**(code **)(*(long *)plVar8[7] + 0x10))((long *)plVar8[7],abStack_78);
         if ((abStack_78[0] & 1) != 0) {
-          FUN_00166120(uStack_68);
+          FUN_00166120(pvStack_68);
         }
       }
-      plVar6 = (long *)plVar9[1];
-      if ((long *)plVar9[1] == (long *)0x0) {
-        plVar6 = plVar9 + 2;
-        plVar7 = (long *)*plVar6;
-        if ((long *)*plVar7 != plVar9) {
+      plVar5 = (long *)plVar8[1];
+      if ((long *)plVar8[1] == (long *)0x0) {
+        plVar5 = plVar8 + 2;
+        plVar6 = (long *)*plVar5;
+        if ((long *)*plVar6 != plVar8) {
           do {
-            lVar8 = *plVar6;
-            plVar6 = (long *)(lVar8 + 0x10);
-            plVar7 = (long *)*plVar6;
-          } while (*plVar7 != lVar8);
+            lVar7 = *plVar5;
+            plVar5 = (long *)(lVar7 + 0x10);
+            plVar6 = (long *)*plVar5;
+          } while (*plVar6 != lVar7);
         }
       }
       else {
         do {
-          plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
-        } while ((long *)*plVar7 != (long *)0x0);
+          plVar6 = plVar5;
+          plVar5 = (long *)*plVar6;
+        } while ((long *)*plVar6 != (long *)0x0);
       }
-      plVar9 = plVar7;
-    } while (plVar7 != plVar4);
-    for (; plVar3 != plVar4; plVar3 = (long *)func_0x0016ef60(param_1 + 0x60,plVar3)) {
+      plVar8 = plVar6;
+    } while (plVar6 != plVar4);
+    for (; plVar3 != plVar4; plVar3 = (long *)func_0x0016ef60((long)p0 + 0x60,plVar3)) {
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
@@ -840,7 +854,7 @@ void Walaber::CurveManager::unloadCurveCollection(long param_1,byte *param_2)
                 pbVar14[0xe] = 0;
                 pbVar14[0xf] = 0;
                 if ((*pbVar14 & 1) != 0) {
-                  FUN_00166120(*(undefined8 *)(pbVar14 + 0x10));
+                  FUN_00166120(*(void **)(pbVar14 + 0x10));
                   pbVar14[0] = 0;
                   pbVar14[1] = 0;
                   pbVar14[2] = 0;
@@ -891,7 +905,7 @@ void Walaber::CurveManager::unloadCurveCollection(long param_1,byte *param_2)
           do {
             pbVar14 = pbVar17 + -0x20;
             if ((*pbVar14 & 1) != 0) {
-              FUN_00166120(*(undefined8 *)(pbVar17 + -0x10));
+              FUN_00166120(*(void **)(pbVar17 + -0x10));
             }
             pbVar17 = pbVar14;
           } while (pbVar13 != pbVar14);
@@ -978,18 +992,18 @@ void Walaber::CurveManager::_loadV2Collection(long param_1,undefined8 param_2,lo
   uint uVar8;
   long lVar9;
   bool bVar10;
-  ulong uVar11;
+  void *pvVar11;
   ulong **ppuVar12;
   long lVar13;
-  long lVar14;
-  undefined8 uVar15;
+  void *pvVar14;
+  long lVar15;
+  undefined8 uVar16;
   ulong extraout_x1;
-  undefined **ppuVar16;
-  uint uVar17;
-  ulong uVar18;
+  undefined **ppuVar17;
+  uint uVar18;
   ulong uVar19;
-  uint uVar20;
-  ulong uVar21;
+  ulong uVar20;
+  uint uVar21;
   ulong **ppuStack_120;
   undefined4 *puStack_118;
   ulong **ppuStack_110;
@@ -1009,10 +1023,10 @@ void Walaber::CurveManager::_loadV2Collection(long param_1,undefined8 param_2,lo
   undefined4 uStack_a4;
   int iStack_a0;
   undefined4 uStack_9c;
-  ulong uStack_98;
+  void *pvStack_98;
   ulong *puStack_90;
   ulong uStack_88;
-  ulong uStack_80;
+  void *pvStack_80;
   undefined1 uStack_78;
   long lStack_70;
   
@@ -1021,14 +1035,14 @@ void Walaber::CurveManager::_loadV2Collection(long param_1,undefined8 param_2,lo
   puStack_90 = (ulong *)0x0;
   uStack_88 = 0;
   uStack_78 = 0;
-  uStack_80 = 0;
+  pvStack_80 = (void *)0x0;
   puVar2 = *(undefined8 **)(param_1 + 0x30);
   if (puVar2 < *(undefined8 **)(param_1 + 0x38)) {
     puVar2[2] = 0;
     puVar2[1] = 0;
     *puVar2 = 0;
     uStack_88 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     puStack_90 = (ulong *)0x0;
     *(undefined1 *)(puVar2 + 3) = 0;
     *(long *)(param_1 + 0x30) = *(long *)(param_1 + 0x30) + 0x20;
@@ -1037,7 +1051,7 @@ void Walaber::CurveManager::_loadV2Collection(long param_1,undefined8 param_2,lo
                     /* try { // try from 003e2978 to 003e297f has its CatchHandler @ 003e3394 */
     func_0x00166600(param_1 + 0x28,&puStack_90);
     if (((ulong)puStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
   }
   lVar3 = *(long *)(param_1 + 0x28);
@@ -1046,69 +1060,69 @@ void Walaber::CurveManager::_loadV2Collection(long param_1,undefined8 param_2,lo
   if ((*(uint *)(param_3 + 0xc) >> 2 & 1) == 0) {
     if ((*(uint *)(param_3 + 0xc) & 3) == 0) {
       if (*(int *)(param_3 + 8) != 0) {
-        uVar20 = 0;
-        uVar18 = 0x10;
+        uVar21 = 0;
+        uVar19 = 0x10;
         do {
-          iVar5 = *(int *)(param_3 + uVar18);
-          uVar17 = (int)uVar18 + 4;
-          lVar13 = param_3 + (ulong)uVar17;
+          iVar5 = *(int *)(param_3 + uVar19);
+          uVar18 = (int)uVar19 + 4;
+          lVar13 = param_3 + (ulong)uVar18;
           puStack_90 = (ulong *)0x0;
           uStack_88 = 0;
-          uStack_80 = 0;
-          uVar18 = FUN_00173480(lVar13);
-          if (0xffffffffffffffef < uVar18) goto LAB_003e3358;
-          if (uVar18 < 0x17) {
-            puStack_90 = (ulong *)CONCAT71(puStack_90._1_7_,(char)((int)uVar18 << 1));
-            uVar11 = (ulong)&puStack_90 | 1;
-            if (uVar18 != 0) goto LAB_003e2d5c;
+          pvStack_80 = (void *)0x0;
+          uVar19 = FUN_00173480(lVar13);
+          if (0xffffffffffffffef < uVar19) goto LAB_003e3358;
+          if (uVar19 < 0x17) {
+            puStack_90 = (ulong *)CONCAT71(puStack_90._1_7_,(char)((int)uVar19 << 1));
+            pvVar11 = (void *)((ulong)&puStack_90 | 1);
+            if (uVar19 != 0) goto LAB_003e2d5c;
           }
           else {
-            uVar19 = uVar18 + 0x10 & 0xfffffffffffffff0;
-            uVar11 = FUN_00164060(uVar19);
-            puStack_90 = (ulong *)(uVar19 | 1);
-            uStack_88 = uVar18;
-            uStack_80 = uVar11;
+            uVar20 = uVar19 + 0x10 & 0xfffffffffffffff0;
+            pvVar11 = (void *)FUN_00164060(uVar20);
+            puStack_90 = (ulong *)(uVar20 | 1);
+            uStack_88 = uVar19;
+            pvStack_80 = pvVar11;
 LAB_003e2d5c:
-            FUN_001715e0(uVar11,lVar13,uVar18);
+            FUN_001715e0(pvVar11,lVar13,uVar19);
           }
-          *(undefined1 *)(uVar11 + uVar18) = 0;
-          uVar17 = iVar5 + uVar17;
-          uVar1 = uVar17 + 2;
-          uVar18 = (ulong)uVar1;
+          *(undefined1 *)((long)pvVar11 + uVar19) = 0;
+          uVar18 = iVar5 + uVar18;
+          uVar1 = uVar18 + 2;
+          uVar19 = (ulong)uVar1;
           puStack_d0 = (uint *)((ulong)puStack_d0 & 0xffffffff00000000);
-          switch(*(undefined1 *)(param_3 + (ulong)uVar17)) {
+          switch(*(undefined1 *)(param_3 + (ulong)uVar18)) {
           case 0:
                     /* try { // try from 003e2d94 to 003e2d9b has its CatchHandler @ 003e3404 */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2da4 to 003e2dab has its CatchHandler @ 003e3384 */
-            func_0x00163310(ppuVar12,param_3 + uVar18,&puStack_d0);
-            ppuVar16 = &PTR__Curve_00710b68;
+            func_0x00163310(ppuVar12,param_3 + uVar19,&puStack_d0);
+            ppuVar17 = &PTR__Curve_00710b68;
             break;
           case 1:
                     /* try { // try from 003e2df0 to 003e2df7 has its CatchHandler @ 003e3404 */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2e00 to 003e2e07 has its CatchHandler @ 003e3388 */
-            func_0x00163310(ppuVar12,param_3 + uVar18,&puStack_d0);
-            ppuVar16 = &PTR__Curve_00710a28;
+            func_0x00163310(ppuVar12,param_3 + uVar19,&puStack_d0);
+            ppuVar17 = &PTR__Curve_00710a28;
             break;
           case 2:
                     /* try { // try from 003e2db4 to 003e2dbb has its CatchHandler @ 003e3404 */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2dc4 to 003e2dcb has its CatchHandler @ 003e338c */
-            func_0x00163310(ppuVar12,param_3 + uVar18,&puStack_d0);
-            ppuVar16 = &PTR__Curve_00710be8;
+            func_0x00163310(ppuVar12,param_3 + uVar19,&puStack_d0);
+            ppuVar17 = &PTR__Curve_00710be8;
             break;
           case 3:
                     /* try { // try from 003e2dd4 to 003e2ddb has its CatchHandler @ 003e3404 */
             ppuVar12 = (ulong **)FUN_00164060(0x60);
                     /* try { // try from 003e2de4 to 003e2deb has its CatchHandler @ 003e3390 */
-            func_0x0016b290(ppuVar12,param_3 + uVar18,&puStack_d0);
+            func_0x0016b290(ppuVar12,param_3 + uVar19,&puStack_d0);
             goto LAB_003e2e10;
           default:
             bVar10 = true;
             goto LAB_003e2ea0;
           }
-          *ppuVar12 = (ulong *)ppuVar16;
+          *ppuVar12 = (ulong *)ppuVar17;
 LAB_003e2e10:
           iVar5 = (int)puStack_d0;
           ppuStack_c0 = ppuVar12;
@@ -1119,104 +1133,104 @@ LAB_003e2e10:
           uStack_a4 = (undefined4)((ulong)ppuVar12 >> 0x20);
           iStack_a0 = (int)puStack_118;
           uStack_9c = (undefined4)((ulong)puStack_118 >> 0x20);
-          uStack_98 = CONCAT44(uStack_98._4_4_,uVar7);
+          pvStack_98 = (void *)CONCAT44(pvStack_98._4_4_,uVar7);
           ppuStack_e0 = &puStack_90;
                     /* try { // try from 003e2e44 to 003e2e5f has its CatchHandler @ 003e3408 */
           ppuStack_120 = ppuVar12;
           puStack_b8 = puStack_118;
           lVar13 = func_0x001645f0(param_1 + 0x10,&puStack_90,&DAT_00633a6f,&ppuStack_e0,&uStack_f8)
           ;
-          uVar18 = (ulong)(iVar5 + uVar1);
+          uVar19 = (ulong)(iVar5 + uVar1);
           func_0x00170b50(lVar13 + 0x38,&uStack_a8);
-          *(undefined4 *)(lVar13 + 0x48) = (undefined4)uStack_98;
+          *(undefined4 *)(lVar13 + 0x48) = pvStack_98._0_4_;
           FUN_00172ab0(&uStack_a8);
           FUN_00172ab0(&ppuStack_120);
           FUN_00172ab0(&ppuStack_c0);
           bVar10 = false;
 LAB_003e2ea0:
           if (((ulong)puStack_90 & 1) != 0) {
-            FUN_00166120(uStack_80);
+            FUN_00166120(pvStack_80);
           }
           if (bVar10) goto LAB_003e3320;
-          uVar20 = uVar20 + 1;
-        } while (uVar20 < *(uint *)(param_3 + 8));
+          uVar21 = uVar21 + 1;
+        } while (uVar21 < *(uint *)(param_3 + 8));
       }
     }
     else {
       uStack_f8 = *(ulong *)(param_3 + 0x10);
       puStack_d0 = *(uint **)(param_3 + 0x18);
       if (*(int *)(param_3 + 8) != 0) {
-        uVar20 = 0;
-        uVar18 = 0x20;
+        uVar21 = 0;
+        uVar19 = 0x20;
         do {
-          iVar5 = *(int *)(param_3 + uVar18);
-          uVar17 = (int)uVar18 + 4;
-          lVar13 = param_3 + (ulong)uVar17;
+          iVar5 = *(int *)(param_3 + uVar19);
+          uVar18 = (int)uVar19 + 4;
+          lVar13 = param_3 + (ulong)uVar18;
           puStack_90 = (ulong *)0x0;
           uStack_88 = 0;
-          uStack_80 = 0;
-          uVar18 = FUN_00173480(lVar13);
-          if (0xffffffffffffffef < uVar18) {
+          pvStack_80 = (void *)0x0;
+          uVar19 = FUN_00173480(lVar13);
+          if (0xffffffffffffffef < uVar19) {
 LAB_003e3358:
             FUN_00164180(&puStack_90);
             return;
           }
-          if (uVar18 < 0x17) {
-            puStack_90 = (ulong *)CONCAT71(puStack_90._1_7_,(char)((int)uVar18 << 1));
-            uVar11 = (ulong)&puStack_90 | 1;
-            if (uVar18 != 0) goto LAB_003e2a90;
+          if (uVar19 < 0x17) {
+            puStack_90 = (ulong *)CONCAT71(puStack_90._1_7_,(char)((int)uVar19 << 1));
+            pvVar11 = (void *)((ulong)&puStack_90 | 1);
+            if (uVar19 != 0) goto LAB_003e2a90;
           }
           else {
-            uVar19 = uVar18 + 0x10 & 0xfffffffffffffff0;
-            uVar11 = FUN_00164060(uVar19);
-            puStack_90 = (ulong *)(uVar19 | 1);
-            uStack_88 = uVar18;
-            uStack_80 = uVar11;
+            uVar20 = uVar19 + 0x10 & 0xfffffffffffffff0;
+            pvVar11 = (void *)FUN_00164060(uVar20);
+            puStack_90 = (ulong *)(uVar20 | 1);
+            uStack_88 = uVar19;
+            pvStack_80 = pvVar11;
 LAB_003e2a90:
-            FUN_001715e0(uVar11,lVar13,uVar18);
+            FUN_001715e0(pvVar11,lVar13,uVar19);
           }
-          *(undefined1 *)(uVar11 + uVar18) = 0;
-          uVar17 = iVar5 + uVar17;
-          uVar1 = uVar17 + 2;
-          uVar18 = (ulong)uVar1;
+          *(undefined1 *)((long)pvVar11 + uVar19) = 0;
+          uVar18 = iVar5 + uVar18;
+          uVar1 = uVar18 + 2;
+          uVar19 = (ulong)uVar1;
           puStack_100._0_4_ = 0;
-          switch(*(undefined1 *)(param_3 + (ulong)uVar17)) {
+          switch(*(undefined1 *)(param_3 + (ulong)uVar18)) {
           case 0:
                     /* try { // try from 003e2ac8 to 003e2acf has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2adc to 003e2aeb has its CatchHandler @ 003e33a4 */
-            func_0x0016bed0(ppuVar12,param_3 + uVar18,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            func_0x0016bed0(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
-            ppuVar16 = &PTR__Curve_00710b68;
+            ppuVar17 = &PTR__Curve_00710b68;
             break;
           case 1:
                     /* try { // try from 003e2b48 to 003e2b4f has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2b5c to 003e2b6b has its CatchHandler @ 003e33a8 */
-            func_0x0016bed0(ppuVar12,param_3 + uVar18,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            func_0x0016bed0(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
-            ppuVar16 = &PTR__Curve_00710a28;
+            ppuVar17 = &PTR__Curve_00710a28;
             break;
           case 2:
                     /* try { // try from 003e2af4 to 003e2afb has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)FUN_00164060(0x30);
                     /* try { // try from 003e2b08 to 003e2b17 has its CatchHandler @ 003e33ac */
-            func_0x0016bed0(ppuVar12,param_3 + uVar18,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            func_0x0016bed0(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
-            ppuVar16 = &PTR__Curve_00710be8;
+            ppuVar17 = &PTR__Curve_00710be8;
             break;
           case 3:
                     /* try { // try from 003e2b20 to 003e2b27 has its CatchHandler @ 003e343c */
             ppuVar12 = (ulong **)FUN_00164060(0x60);
                     /* try { // try from 003e2b34 to 003e2b43 has its CatchHandler @ 003e33b0 */
-            func_0x001672f0(ppuVar12,param_3 + uVar18,&puStack_100,*(undefined4 *)(param_3 + 0xc),
+            func_0x001672f0(ppuVar12,param_3 + uVar19,&puStack_100,*(undefined4 *)(param_3 + 0xc),
                             &puStack_d0,&uStack_f8);
             goto LAB_003e2b74;
           default:
             bVar10 = true;
             goto LAB_003e2c04;
           }
-          *ppuVar12 = (ulong *)ppuVar16;
+          *ppuVar12 = (ulong *)ppuVar17;
 LAB_003e2b74:
           iVar5 = (int)puStack_100;
           ppuStack_c0 = ppuVar12;
@@ -1227,46 +1241,46 @@ LAB_003e2b74:
           uStack_a4 = (undefined4)((ulong)ppuVar12 >> 0x20);
           iStack_a0 = (int)puStack_108;
           uStack_9c = (undefined4)((ulong)puStack_108 >> 0x20);
-          uStack_98 = CONCAT44(uStack_98._4_4_,uVar7);
+          pvStack_98 = (void *)CONCAT44(pvStack_98._4_4_,uVar7);
           ppuStack_e0 = &puStack_90;
                     /* try { // try from 003e2ba8 to 003e2bc3 has its CatchHandler @ 003e3440 */
           ppuStack_110 = ppuVar12;
           puStack_b8 = puStack_108;
           lVar13 = func_0x001645f0(param_1 + 0x10,&puStack_90,&DAT_00633a6f,&ppuStack_e0,auStack_c8)
           ;
-          uVar18 = (ulong)(iVar5 + uVar1);
+          uVar19 = (ulong)(iVar5 + uVar1);
           func_0x00170b50(lVar13 + 0x38,&uStack_a8);
-          *(undefined4 *)(lVar13 + 0x48) = (undefined4)uStack_98;
+          *(undefined4 *)(lVar13 + 0x48) = pvStack_98._0_4_;
           FUN_00172ab0(&uStack_a8);
           FUN_00172ab0(&ppuStack_110);
           FUN_00172ab0(&ppuStack_c0);
           bVar10 = false;
 LAB_003e2c04:
           if (((ulong)puStack_90 & 1) != 0) {
-            FUN_00166120(uStack_80);
+            FUN_00166120(pvStack_80);
           }
           if (bVar10) goto LAB_003e3320;
-          uVar20 = uVar20 + 1;
-        } while (uVar20 < *(uint *)(param_3 + 8));
+          uVar21 = uVar21 + 1;
+        } while (uVar21 < *(uint *)(param_3 + 8));
       }
     }
   }
   else {
     puStack_90 = &uStack_88;
     uStack_88 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     if (*(int *)(param_3 + 0x10) == 0) {
-      uVar20 = 0x14;
+      uVar21 = 0x14;
     }
     else {
-      uVar17 = 0;
-      uVar20 = 0x14;
+      uVar18 = 0;
+      uVar21 = 0x14;
       do {
-        puVar2 = (undefined8 *)(param_3 + (ulong)(uVar20 + 1));
-        uVar15 = *puVar2;
-        uStack_a8 = CONCAT31(uStack_a8._1_3_,*(undefined1 *)(param_3 + (ulong)uVar20));
-        uStack_a4 = (undefined4)uVar15;
-        iStack_a0 = (int)((ulong)uVar15 >> 0x20);
+        puVar2 = (undefined8 *)(param_3 + (ulong)(uVar21 + 1));
+        uVar16 = *puVar2;
+        uStack_a8 = CONCAT31(uStack_a8._1_3_,*(undefined1 *)(param_3 + (ulong)uVar21));
+        uStack_a4 = (undefined4)uVar16;
+        iStack_a0 = (int)((ulong)uVar16 >> 0x20);
         ppuStack_c0 = (ulong **)CONCAT44(uStack_a4,uStack_a8);
         puStack_b8 = (undefined4 *)CONCAT44(puStack_b8._4_4_,*(undefined4 *)((long)puVar2 + 4));
                     /* try { // try from 003e2c74 to 003e2c83 has its CatchHandler @ 003e3478 */
@@ -1274,52 +1288,52 @@ LAB_003e2c04:
         if ((extraout_x1 & 1) == 0) {
                     /* try { // try from 003e32e8 to 003e32ff has its CatchHandler @ 003e3370 */
           FUN_00166450("Walaber",4,"ERROR: Two compression records have the same id: [%d]\n",
-                       *(undefined1 *)(param_3 + (ulong)uVar20));
+                       *(undefined1 *)(param_3 + (ulong)uVar21));
           func_0x00173e40(&puStack_90,uStack_88);
-          uVar15 = 0;
+          uVar16 = 0;
           goto LAB_003e3328;
         }
-        uVar17 = uVar17 + 1;
-        uVar20 = uVar20 + 9;
-      } while (uVar17 < *(uint *)(param_3 + 0x10));
+        uVar18 = uVar18 + 1;
+        uVar21 = uVar21 + 9;
+      } while (uVar18 < *(uint *)(param_3 + 0x10));
     }
     if (*(int *)(param_3 + 8) != 0) {
-      uVar17 = 0;
-      uVar18 = (ulong)&uStack_a8 | 1;
+      uVar18 = 0;
+      pvVar11 = (void *)((ulong)&uStack_a8 | 1);
       do {
-        iVar5 = *(int *)(param_3 + (ulong)uVar20);
-        lVar13 = param_3 + (ulong)(uVar20 + 4);
+        iVar5 = *(int *)(param_3 + (ulong)uVar21);
+        lVar13 = param_3 + (ulong)(uVar21 + 4);
         uStack_a8 = 0;
         uStack_a4 = 0;
         iStack_a0 = 0;
         uStack_9c = 0;
-        uStack_98 = 0;
-        uVar11 = FUN_00173480(lVar13);
-        if (0xffffffffffffffef < uVar11) {
+        pvStack_98 = (void *)0x0;
+        uVar19 = FUN_00173480(lVar13);
+        if (0xffffffffffffffef < uVar19) {
                     /* try { // try from 003e3360 to 003e3367 has its CatchHandler @ 003e336c */
           FUN_00164180(&uStack_a8);
           return;
         }
-        if (uVar11 < 0x17) {
-          uStack_a8 = CONCAT31(uStack_a8._1_3_,(char)((int)uVar11 << 1));
-          uVar19 = uVar18;
-          if (uVar11 != 0) goto LAB_003e2f88;
+        if (uVar19 < 0x17) {
+          uStack_a8 = CONCAT31(uStack_a8._1_3_,(char)((int)uVar19 << 1));
+          pvVar14 = pvVar11;
+          if (uVar19 != 0) goto LAB_003e2f88;
         }
         else {
-          uVar21 = uVar11 + 0x10 & 0xfffffffffffffff0;
+          uVar20 = uVar19 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 003e2f70 to 003e2f77 has its CatchHandler @ 003e3438 */
-          uVar19 = FUN_00164060(uVar21);
-          uStack_a8 = (uint)uVar21 | 1;
-          uStack_9c = (undefined4)(uVar11 >> 0x20);
-          uStack_a4 = (undefined4)(uVar21 >> 0x20);
-          iStack_a0 = (int)uVar11;
-          uStack_98 = uVar19;
+          pvVar14 = (void *)FUN_00164060(uVar20);
+          uStack_a8 = (uint)uVar20 | 1;
+          uStack_9c = (undefined4)(uVar19 >> 0x20);
+          uStack_a4 = (undefined4)(uVar20 >> 0x20);
+          iStack_a0 = (int)uVar19;
+          pvStack_98 = pvVar14;
 LAB_003e2f88:
-          FUN_001715e0(uVar19,lVar13,uVar11);
+          FUN_001715e0(pvVar14,lVar13,uVar19);
         }
-        uVar1 = iVar5 + uVar20 + 4;
-        *(undefined1 *)(uVar19 + uVar11) = 0;
-        uVar20 = uVar1 + 2;
+        uVar1 = iVar5 + uVar21 + 4;
+        *(undefined1 *)((long)pvVar14 + uVar19) = 0;
+        uVar21 = uVar1 + 2;
         uVar8 = *(byte *)(param_3 + (ulong)(uVar1 + 1)) - 1;
         if (uVar8 < 3) {
           uStack_f8 = uStack_f8 & 0xffffffff00000000;
@@ -1337,11 +1351,11 @@ LAB_003e2f88:
             ppuStack_c0 = &puStack_100;
             puStack_100._0_4_ = CONCAT31(puStack_100._1_3_,uVar6);
                     /* try { // try from 003e3028 to 003e305b has its CatchHandler @ 003e33c0 */
-            lVar14 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
+            lVar15 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
                                      &ppuStack_e0);
-            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar20,&uStack_f8,uVar4,lVar13 + 0x20,
-                            lVar14 + 0x20);
-            ppuVar16 = &PTR__Curve_00710b68;
+            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar21,&uStack_f8,uVar4,lVar13 + 0x20,
+                            lVar15 + 0x20);
+            ppuVar17 = &PTR__Curve_00710b68;
             break;
           case 1:
                     /* try { // try from 003e3198 to 003e319f has its CatchHandler @ 003e3400 */
@@ -1355,11 +1369,11 @@ LAB_003e2f88:
             ppuStack_c0 = &puStack_100;
             puStack_100._0_4_ = CONCAT31(puStack_100._1_3_,uVar6);
                     /* try { // try from 003e31e0 to 003e3213 has its CatchHandler @ 003e33c4 */
-            lVar14 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
+            lVar15 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
                                      &ppuStack_e0);
-            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar20,&uStack_f8,uVar4,lVar13 + 0x20,
-                            lVar14 + 0x20);
-            ppuVar16 = &PTR__Curve_00710a28;
+            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar21,&uStack_f8,uVar4,lVar13 + 0x20,
+                            lVar15 + 0x20);
+            ppuVar17 = &PTR__Curve_00710a28;
             break;
           case 2:
                     /* try { // try from 003e3094 to 003e309b has its CatchHandler @ 003e3400 */
@@ -1373,11 +1387,11 @@ LAB_003e2f88:
             ppuStack_c0 = &puStack_100;
             puStack_100._0_4_ = CONCAT31(puStack_100._1_3_,uVar6);
                     /* try { // try from 003e30dc to 003e310f has its CatchHandler @ 003e33c8 */
-            lVar14 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
+            lVar15 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
                                      &ppuStack_e0);
-            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar20,&uStack_f8,uVar4,lVar13 + 0x20,
-                            lVar14 + 0x20);
-            ppuVar16 = &PTR__Curve_00710be8;
+            func_0x0016bed0(ppuVar12,param_3 + (ulong)uVar21,&uStack_f8,uVar4,lVar13 + 0x20,
+                            lVar15 + 0x20);
+            ppuVar17 = &PTR__Curve_00710be8;
             break;
           case 3:
                     /* try { // try from 003e3118 to 003e311f has its CatchHandler @ 003e3400 */
@@ -1391,15 +1405,15 @@ LAB_003e2f88:
             ppuStack_c0 = &puStack_100;
             puStack_100._0_4_ = CONCAT31(puStack_100._1_3_,uVar6);
                     /* try { // try from 003e3160 to 003e3193 has its CatchHandler @ 003e33cc */
-            lVar14 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
+            lVar15 = func_0x00167930(&puStack_90,&puStack_100,&DAT_00633a6f,&ppuStack_c0,
                                      &ppuStack_e0);
-            func_0x001672f0(ppuVar12,param_3 + (ulong)uVar20,&uStack_f8,uVar4,lVar13 + 0x20,
-                            lVar14 + 0x20);
+            func_0x001672f0(ppuVar12,param_3 + (ulong)uVar21,&uStack_f8,uVar4,lVar13 + 0x20,
+                            lVar15 + 0x20);
             goto LAB_003e321c;
           default:
             goto switchD_003e2fdc_default;
           }
-          *ppuVar12 = (ulong *)ppuVar16;
+          *ppuVar12 = (ulong *)ppuVar17;
 LAB_003e321c:
           iVar5 = (int)uStack_f8;
           ppuStack_e0 = ppuVar12;
@@ -1415,7 +1429,7 @@ LAB_003e321c:
           uStack_b0 = uVar7;
           lVar13 = func_0x001645f0(param_1 + 0x10,&uStack_a8,&DAT_00633a6f,&puStack_d0,&puStack_100)
           ;
-          uVar20 = iVar5 + uVar20;
+          uVar21 = iVar5 + uVar21;
           func_0x00170b50(lVar13 + 0x38,&ppuStack_c0);
           *(uint *)(lVar13 + 0x48) = uStack_b0;
           FUN_00172ab0(&ppuStack_c0);
@@ -1424,39 +1438,39 @@ LAB_003e321c:
           bVar10 = false;
         }
         else {
-          uVar11 = uVar18;
+          pvVar14 = pvVar11;
           if ((uStack_a8 & 1) != 0) {
-            uVar11 = uStack_98;
+            pvVar14 = pvStack_98;
           }
                     /* try { // try from 003e3074 to 003e308b has its CatchHandler @ 003e3420 */
           FUN_00166450("Walaber",3,
                        "Curve type [%d] for curve [%s] cannot be used in a Skeletal Animation Collection!!\n"
-                       ,*(undefined1 *)(param_3 + (ulong)uVar1),uVar11);
+                       ,*(undefined1 *)(param_3 + (ulong)uVar1),pvVar14);
 switchD_003e2fdc_default:
           bVar10 = true;
         }
         if ((uStack_a8 & 1) != 0) {
-          FUN_00166120(uStack_98);
+          FUN_00166120(pvStack_98);
         }
         if (bVar10) {
           func_0x00173e40(&puStack_90,uStack_88);
           goto LAB_003e3320;
         }
-        uVar17 = uVar17 + 1;
-      } while (uVar17 < *(uint *)(param_3 + 8));
+        uVar18 = uVar18 + 1;
+      } while (uVar18 < *(uint *)(param_3 + 8));
     }
     func_0x00173e40(&puStack_90,uStack_88);
   }
-  uVar15 = 1;
+  uVar16 = 1;
   *(undefined1 *)(lVar3 + (ulong)uVar7 * 0x20 + 0x18) = 1;
 LAB_003e3328:
   if (*(long *)(lVar9 + 0x28) != lStack_70) {
-    FUN_00164ff0(uVar15);
+    FUN_00164ff0(uVar16);
     return;
   }
   return;
 LAB_003e3320:
-  uVar15 = 0;
+  uVar16 = 0;
   goto LAB_003e3328;
 }
 
@@ -1479,14 +1493,14 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
   uint uVar5;
   long lVar6;
   bool bVar7;
-  ulong uVar8;
+  void *pvVar8;
   undefined8 *puVar9;
   long lVar10;
   undefined8 uVar11;
   undefined **ppuVar12;
   ulong uVar13;
-  ulong uVar14;
-  uint uVar15;
+  ulong p0;
+  uint uVar14;
   undefined8 *puStack_e0;
   undefined4 *puStack_d8;
   undefined8 *puStack_d0;
@@ -1499,7 +1513,7 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
   uint uStack_98;
   ulong uStack_90;
   ulong uStack_88;
-  ulong uStack_80;
+  void *pvStack_80;
   undefined1 uStack_78;
   long lStack_70;
   
@@ -1508,14 +1522,14 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
   uStack_90 = 0;
   uStack_88 = 0;
   uStack_78 = 0;
-  uStack_80 = 0;
+  pvStack_80 = (void *)0x0;
   puVar9 = *(undefined8 **)(param_1 + 0x30);
   if (puVar9 < *(undefined8 **)(param_1 + 0x38)) {
     puVar9[2] = 0;
     puVar9[1] = 0;
     *puVar9 = 0;
     uStack_88 = 0;
-    uStack_80 = 0;
+    pvStack_80 = (void *)0x0;
     uStack_90 = 0;
     *(undefined1 *)(puVar9 + 3) = 0;
     *(long *)(param_1 + 0x30) = *(long *)(param_1 + 0x30) + 0x20;
@@ -1524,14 +1538,14 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
                     /* try { // try from 003e3518 to 003e351f has its CatchHandler @ 003e37c4 */
     func_0x00166600(param_1 + 0x28,&uStack_90);
     if ((uStack_90 & 1) != 0) {
-      FUN_00166120(uStack_80);
+      FUN_00166120(pvStack_80);
     }
   }
   uVar5 = (int)((ulong)(*(long *)(param_1 + 0x30) - *(long *)(param_1 + 0x28)) >> 5) - 1;
   lVar3 = *(long *)(param_1 + 0x28) + (ulong)uVar5 * 0x20;
   func_0x00171ac0(lVar3,param_2);
   if (*(int *)(param_3 + 4) != 0) {
-    uVar15 = 0;
+    uVar14 = 0;
     uVar13 = 8;
     do {
       iVar4 = *(int *)(param_3 + uVar13);
@@ -1539,7 +1553,7 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
       lVar10 = param_3 + (ulong)uVar1;
       uStack_90 = 0;
       uStack_88 = 0;
-      uStack_80 = 0;
+      pvStack_80 = (void *)0x0;
       uVar13 = FUN_00173480(lVar10);
       if (0xffffffffffffffef < uVar13) {
         FUN_00164180(&uStack_90);
@@ -1547,19 +1561,19 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
       }
       if (uVar13 < 0x17) {
         uStack_90 = CONCAT71(uStack_90._1_7_,(char)((int)uVar13 << 1));
-        uVar8 = (ulong)&uStack_90 | 1;
+        pvVar8 = (void *)((ulong)&uStack_90 | 1);
         if (uVar13 != 0) goto LAB_003e3600;
       }
       else {
-        uVar14 = uVar13 + 0x10 & 0xfffffffffffffff0;
-        uVar8 = FUN_00164060(uVar14);
-        uStack_90 = uVar14 | 1;
+        p0 = uVar13 + 0x10 & 0xfffffffffffffff0;
+        pvVar8 = (void *)FUN_00164060(p0);
+        uStack_90 = p0 | 1;
         uStack_88 = uVar13;
-        uStack_80 = uVar8;
+        pvStack_80 = pvVar8;
 LAB_003e3600:
-        FUN_001715e0(uVar8,lVar10,uVar13);
+        FUN_001715e0(pvVar8,lVar10,uVar13);
       }
-      *(undefined1 *)(uVar8 + uVar13) = 0;
+      *(undefined1 *)((long)pvVar8 + uVar13) = 0;
       uVar1 = iVar4 + uVar1;
       uVar2 = uVar1 + 4;
       uVar13 = (ulong)uVar2;
@@ -1620,14 +1634,14 @@ LAB_003e36c0:
       bVar7 = false;
 LAB_003e374c:
       if ((uStack_90 & 1) != 0) {
-        FUN_00166120(uStack_80);
+        FUN_00166120(pvStack_80);
       }
       if (bVar7) {
         uVar11 = 0;
         goto LAB_003e3784;
       }
-      uVar15 = uVar15 + 1;
-    } while (uVar15 < *(uint *)(param_3 + 4));
+      uVar14 = uVar14 + 1;
+    } while (uVar14 < *(uint *)(param_3 + 4));
   }
   uVar11 = 1;
   *(undefined1 *)(lVar3 + 0x18) = 1;

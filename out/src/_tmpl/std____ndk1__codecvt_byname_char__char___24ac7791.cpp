@@ -23,7 +23,7 @@ void std::__ndk1::codecvt_byname<char,char,mbstate_t>::~codecvt_byname(void)
 
 /* std::__ndk1::codecvt_byname<char, char, mbstate_t>::~codecvt_byname() */
 
-void std::__ndk1::codecvt_byname<char,char,mbstate_t>::~codecvt_byname(undefined8 param_1)
+void std::__ndk1::codecvt_byname<char,char,mbstate_t>::~codecvt_byname(void *param_1)
 
 {
   FUN_00172660();

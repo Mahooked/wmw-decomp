@@ -8,8 +8,7 @@
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(char const*, unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt
-               (undefined8 *param_1,undefined8 param_2,long param_3)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1)
 
 {
   long lVar1;
@@ -17,23 +16,24 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  ulong uVar6;
-  ulong uVar7;
+  long in_x2;
+  void *pvVar6;
+  ulong p0_00;
   ulong uStack_78;
   ulong uStack_70;
-  ulong uStack_68;
+  void *pvStack_68;
   ulong uStack_60;
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = &PTR__codecvt_007178c8;
-  param_1[1] = param_3 + -1;
+  *(undefined ***)p0 = &PTR__codecvt_007178c8;
+  *(long *)(p0 + 8) = in_x2 + -1;
                     /* try { // try from 005cd618 to 005cd623 has its CatchHandler @ 005cd740 */
-  lVar2 = FUN_00164730(0x1fbf,param_2,0);
-  param_1[2] = lVar2;
+  lVar2 = FUN_00164730(0x1fbf,p1,0);
+  *(long *)(p0 + 0x10) = lVar2;
   if (lVar2 != 0) {
     if (*(long *)(lVar1 + 0x28) != lStack_48) {
       FUN_00164ff0();
@@ -43,34 +43,34 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt
   }
   uStack_78 = 0;
   uStack_70 = 0;
-  uStack_68 = 0;
-  uVar3 = FUN_00173480(param_2);
+  pvStack_68 = (void *)0x0;
+  uVar3 = FUN_00173480(p1);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005cd66c to 005cd673 has its CatchHandler @ 005cd73c */
     FUN_00164180(&uStack_78);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar6 = (ulong)&uStack_78 | 1;
+    pvVar6 = (void *)((ulong)&uStack_78 | 1);
     uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005cd6cc;
   }
   else {
-    uVar7 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005cd6a4 to 005cd6ab has its CatchHandler @ 005cd73c */
-    uVar6 = FUN_00164060(uVar7);
-    uStack_78 = uVar7 | 1;
+    pvVar6 = (void *)FUN_00164060(p0_00);
+    uStack_78 = p0_00 | 1;
     uStack_70 = uVar3;
-    uStack_68 = uVar6;
+    pvStack_68 = pvVar6;
   }
-  FUN_001715e0(uVar6,param_2,uVar3);
+  FUN_001715e0(pvVar6,p1,uVar3);
 LAB_005cd6cc:
-  *(undefined1 *)(uVar6 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar6 + uVar3) = 0;
                     /* try { // try from 005cd6d0 to 005cd6e3 has its CatchHandler @ 005cd724 */
   puVar4 = (ulong *)func_0x00161c30(&uStack_78,0,
                                     "codecvt_byname<wchar_t, char, mbstate_t>::codecvt_byname failed to construct for "
                                    );
-  uStack_50 = puVar4[2];
+  pvStack_50 = (void *)puVar4[2];
   uStack_58 = puVar4[1];
   uStack_60 = *puVar4;
   puVar4[1] = 0;
@@ -80,12 +80,12 @@ LAB_005cd6cc:
   uVar5 = FUN_005d5db0(&uStack_60);
                     /* catch() { ... } // from try @ 005cd6fc with catch @ 005cd704 */
   if ((uStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((uStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
-  FUN_00172660(param_1);
+  FUN_00172660(p0);
   FUN_00169180(uVar5);
   return;
 }
@@ -98,13 +98,14 @@ LAB_005cd6cc:
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(undefined8 *param_1,long param_2)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0)
 
 {
   int iVar1;
+  long in_x1;
   
-  *param_1 = &PTR__codecvt_007178c8;
-  param_1[1] = param_2 + -1;
+  *(undefined ***)p0 = &PTR__codecvt_007178c8;
+  *(long *)(p0 + 8) = in_x1 + -1;
   if ((DAT_007a4e90 & 1) == 0) {
     iVar1 = FUN_0016ceb0(&DAT_007a4e90);
     if (iVar1 != 0) {
@@ -113,7 +114,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(undefined8 *param_1,l
       FUN_00165ea0(&DAT_007a4e90);
     }
   }
-  param_1[2] = DAT_007a4e88;
+  *(undefined8 *)(p0 + 0x10) = DAT_007a4e88;
   return;
 }
 
@@ -125,7 +126,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(undefined8 *param_1,l
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(undefined8 param_1)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(void *param_1)
 
 {
   FUN_00163bf0();
@@ -143,47 +144,46 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(undefined8 param_1)
    const*, wchar_t const*&, char*, char*, char*&) const */
 
 void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_out
-               (long param_1,undefined8 *param_2,int *param_3,int *param_4,long *param_5,
-               long param_6,long param_7,long *param_8)
+               (mbstate_t *p0,wchar_t *p1,wchar_t *p2,wchar_t **p3,char *p4,char *p5,char **p6)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   long lVar2;
   undefined1 uVar3;
   long lVar4;
   long lVar5;
   ulong uVar6;
+  long *in_x7;
   undefined1 *puVar7;
   undefined1 *puVar8;
-  int *piVar9;
-  int *piVar10;
+  wchar_t **ppwVar9;
+  wchar_t **ppwVar10;
   undefined8 uStack_78;
   undefined1 auStack_6c [4];
   long lStack_68;
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  piVar9 = param_3;
-  if (param_3 == param_4) {
-    *param_8 = param_6;
-    *param_5 = (long)param_3;
+  ppwVar9 = (wchar_t **)p2;
+  if ((wchar_t **)p2 == p3) {
+    *in_x7 = (long)p5;
+    *(wchar_t **)p4 = p2;
   }
   else {
     do {
-      piVar10 = piVar9;
-      if (*piVar9 == 0) break;
-      piVar9 = piVar9 + 1;
-      piVar10 = param_4;
-    } while (param_4 != piVar9);
-    *param_8 = param_6;
-    *param_5 = (long)param_3;
-    if ((param_6 != param_7) && (param_3 != param_4)) {
+      ppwVar10 = ppwVar9;
+      if (*(wchar_t *)ppwVar9 == L'\0') break;
+      ppwVar9 = (wchar_t **)((long)ppwVar9 + 4);
+      ppwVar10 = p3;
+    } while (p3 != ppwVar9);
+    *in_x7 = (long)p5;
+    *(wchar_t **)p4 = p2;
+    if (((char **)p5 != p6) && ((wchar_t **)p2 != p3)) {
       do {
-        uStack_78 = *param_2;
-        lVar4 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+        uStack_78 = *(undefined8 *)p1;
+        lVar4 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d8390 to 005d83ab has its CatchHandler @ 005d85fc */
-        lVar5 = func_0x0016a130(param_6,param_5,(long)piVar10 - (long)param_3 >> 2,param_7 - param_6
-                                ,param_2);
+        lVar5 = func_0x0016a130(p5,p4,(long)ppwVar10 - (long)p2 >> 2,(long)p6 - (long)p5,p1);
         if (lVar4 != 0) {
                     /* try { // try from 005d83b4 to 005d83bb has its CatchHandler @ 005d85f8 */
           FUN_0016a870(lVar4);
@@ -194,24 +194,24 @@ LAB_005d852c:
           goto LAB_005d84f8;
         }
         if (lVar5 == -1) {
-          *param_8 = param_6;
-          if (param_3 != (int *)*param_5) goto LAB_005d855c;
+          *in_x7 = (long)p5;
+          if ((wchar_t **)p2 != *(wchar_t ***)p4) goto LAB_005d855c;
           goto LAB_005d85b0;
         }
-        param_6 = *param_8 + lVar5;
-        *param_8 = param_6;
-        if (param_6 == param_7) {
-          param_3 = (int *)*param_5;
+        p5 = (char *)(*in_x7 + lVar5);
+        *in_x7 = (long)p5;
+        if ((char **)p5 == p6) {
+          p2 = *(wchar_t **)p4;
           break;
         }
-        if (piVar10 == param_4) {
-          param_3 = (int *)*param_5;
-          piVar10 = param_4;
+        if (ppwVar10 == p3) {
+          p2 = *(wchar_t **)p4;
+          ppwVar10 = p3;
         }
         else {
-          lVar4 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+          lVar4 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d8400 to 005d840f has its CatchHandler @ 005d85e0 */
-          uVar6 = func_0x00173680(auStack_6c,0,param_2);
+          uVar6 = func_0x00173680(auStack_6c,0,p1);
           if (lVar4 != 0) {
                     /* try { // try from 005d8418 to 005d841f has its CatchHandler @ 005d85dc */
             FUN_0016a870(lVar4);
@@ -220,56 +220,56 @@ LAB_005d852c:
             uVar3 = 2;
             goto LAB_005d84f8;
           }
-          puVar7 = (undefined1 *)*param_8;
-          if ((ulong)(param_7 - (long)puVar7) < uVar6) goto LAB_005d852c;
+          puVar7 = (undefined1 *)*in_x7;
+          if ((ulong)((long)p6 - (long)puVar7) < uVar6) goto LAB_005d852c;
           if (uVar6 != 0) {
-            *param_8 = (long)(puVar7 + 1);
+            *in_x7 = (long)(puVar7 + 1);
             *puVar7 = auStack_6c[0];
             if (uVar6 != 1) {
               lVar4 = 1 - uVar6;
               puVar7 = (undefined1 *)((ulong)auStack_6c | 1);
               do {
-                puVar8 = (undefined1 *)*param_8;
+                puVar8 = (undefined1 *)*in_x7;
                 uVar3 = *puVar7;
                 lVar4 = lVar4 + 1;
-                *param_8 = (long)(puVar8 + 1);
+                *in_x7 = (long)(puVar8 + 1);
                 *puVar8 = uVar3;
                 puVar7 = puVar7 + 1;
               } while (lVar4 != 0);
             }
           }
-          param_3 = (int *)(*param_5 + 4);
-          *param_5 = (long)param_3;
-          for (piVar9 = param_3;
-              (piVar10 = param_4, piVar9 != param_4 && (piVar10 = piVar9, *piVar9 != 0));
-              piVar9 = piVar9 + 1) {
+          p2 = (wchar_t *)(*(long *)p4 + 4);
+          *(wchar_t **)p4 = p2;
+          for (ppwVar9 = (wchar_t **)p2;
+              (ppwVar10 = p3, ppwVar9 != p3 && (ppwVar10 = ppwVar9, *(wchar_t *)ppwVar9 != L'\0'));
+              ppwVar9 = (wchar_t **)((long)ppwVar9 + 4)) {
           }
-          param_6 = *param_8;
+          p5 = (char *)*in_x7;
         }
-        if ((param_6 == param_7) || (param_3 == param_4)) break;
+        if (((char **)p5 == p6) || ((wchar_t **)p2 == p3)) break;
       } while( true );
     }
   }
-  uVar3 = param_3 != param_4;
+  uVar3 = (wchar_t **)p2 != p3;
   goto LAB_005d84f8;
   while( true ) {
-    param_3 = param_3 + 1;
-    param_6 = *param_8 + param_6;
-    *param_8 = param_6;
-    if (param_3 == (int *)*param_5) break;
+    p2 = (wchar_t *)((long)p2 + 4);
+    p5 = (char *)(*in_x7 + lVar5);
+    *in_x7 = (long)p5;
+    if ((wchar_t **)p2 == *(wchar_t ***)p4) break;
 LAB_005d855c:
-    iVar1 = *param_3;
-    lVar4 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+    wVar1 = *p2;
+    lVar4 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d856c to 005d857b has its CatchHandler @ 005d85c4 */
-    param_6 = func_0x00173680(param_6,iVar1,&uStack_78);
+    lVar5 = func_0x00173680(p5,wVar1,&uStack_78);
     if (lVar4 != 0) {
                     /* try { // try from 005d8584 to 005d858b has its CatchHandler @ 005d85c0 */
       FUN_0016a870(lVar4);
     }
-    if (param_6 == -1) break;
+    if (lVar5 == -1) break;
   }
 LAB_005d85b0:
-  *param_5 = (long)param_3;
+  *(wchar_t **)p4 = p2;
   uVar3 = 2;
 LAB_005d84f8:
   if (*(long *)(lVar2 + 0x28) == lStack_68) {
@@ -289,129 +289,129 @@ LAB_005d84f8:
    const*&, wchar_t*, wchar_t*, wchar_t*&) const */
 
 void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_in
-               (long param_1,undefined8 *param_2,char *param_3,char *param_4,long *param_5,
-               long param_6,long param_7,long *param_8)
+               (mbstate_t *p0,char *p1,char *p2,char **p3,wchar_t *p4,wchar_t *p5,wchar_t **p6)
 
 {
-  long lVar1;
-  char *pcVar2;
-  undefined1 uVar3;
-  bool bVar4;
-  long lVar5;
+  wchar_t **ppwVar1;
+  long lVar2;
+  char **ppcVar3;
+  undefined1 uVar4;
+  bool bVar5;
   long lVar6;
-  char *pcVar7;
-  char *pcVar8;
+  long lVar7;
+  long *in_x7;
+  char **ppcVar8;
+  char **ppcVar9;
   undefined8 uStack_70;
   long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
-  pcVar7 = param_3;
-  pcVar2 = param_3;
-  if (param_3 == param_4) {
-    *param_8 = param_6;
-    *param_5 = (long)param_3;
+  lVar2 = tpidr_el0;
+  lStack_68 = *(long *)(lVar2 + 0x28);
+  ppcVar8 = (char **)p2;
+  ppcVar3 = (char **)p2;
+  if ((char **)p2 == p3) {
+    *in_x7 = (long)p5;
+    *(char **)p4 = p2;
   }
   else {
     do {
-      pcVar8 = pcVar7;
-      if (*pcVar7 == '\0') break;
-      pcVar7 = pcVar7 + 1;
-      pcVar8 = param_4;
-    } while (param_4 != pcVar7);
-    *param_8 = param_6;
-    *param_5 = (long)param_3;
-    if ((param_6 != param_7) && (param_3 != param_4)) {
+      ppcVar9 = ppcVar8;
+      if (*(char *)ppcVar8 == '\0') break;
+      ppcVar8 = (char **)((long)ppcVar8 + 1);
+      ppcVar9 = p3;
+    } while (p3 != ppcVar8);
+    *in_x7 = (long)p5;
+    *(char **)p4 = p2;
+    if (((wchar_t **)p5 != p6) && ((char **)p2 != p3)) {
       while( true ) {
-        uStack_70 = *param_2;
-        lVar5 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+        uStack_70 = *(undefined8 *)p1;
+        lVar6 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d86d0 to 005d86eb has its CatchHandler @ 005d8930 */
-        lVar6 = func_0x0016ee70(param_6,param_5,(long)pcVar8 - (long)param_3,param_7 - param_6 >> 2,
-                                param_2);
-        if (lVar5 != 0) {
+        lVar7 = func_0x0016ee70(p5,p4,(long)ppcVar9 - (long)p2,(long)p6 - (long)p5 >> 2,p1);
+        if (lVar6 != 0) {
                     /* try { // try from 005d86f8 to 005d86ff has its CatchHandler @ 005d892c */
-          FUN_0016a870(lVar5);
+          FUN_0016a870(lVar6);
         }
-        if (lVar6 == -1) {
-          *param_8 = param_6;
-          if (param_3 == (char *)*param_5) goto LAB_005d88cc;
+        if (lVar7 == -1) {
+          *in_x7 = (long)p5;
+          if ((char **)p2 == *(char ***)p4) goto LAB_005d88cc;
           goto LAB_005d8830;
         }
-        lVar5 = *param_8 + lVar6 * 4;
-        *param_8 = lVar5;
-        if (lVar5 == param_7) break;
-        param_3 = (char *)*param_5;
-        bVar4 = pcVar8 != param_4;
-        pcVar8 = param_4;
-        if (bVar4) {
-          lVar6 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+        ppwVar1 = (wchar_t **)(*in_x7 + lVar7 * 4);
+        *in_x7 = (long)ppwVar1;
+        if (ppwVar1 == p6) break;
+        p2 = *(char **)p4;
+        bVar5 = ppcVar9 != p3;
+        ppcVar9 = p3;
+        if (bVar5) {
+          lVar6 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d8740 to 005d8753 has its CatchHandler @ 005d8914 */
-          lVar5 = FUN_0016afb0(lVar5,param_3,1,param_2);
+          lVar7 = FUN_0016afb0(ppwVar1,p2,1,p1);
           if (lVar6 != 0) {
                     /* try { // try from 005d875c to 005d8763 has its CatchHandler @ 005d8910 */
             FUN_0016a870(lVar6);
           }
-          if (lVar5 != 0) {
-            uVar3 = 2;
+          if (lVar7 != 0) {
+            uVar4 = 2;
             goto LAB_005d87dc;
           }
-          *param_8 = *param_8 + 4;
-          param_3 = (char *)(*param_5 + 1);
-          *param_5 = (long)param_3;
-          pcVar7 = param_3;
-          pcVar2 = param_4;
-          if (param_3 == param_4) goto LAB_005d87d8;
+          *in_x7 = *in_x7 + 4;
+          p2 = (char *)(*(long *)p4 + 1);
+          *(char **)p4 = p2;
+          ppcVar8 = (char **)p2;
+          ppcVar3 = p3;
+          if ((char **)p2 == p3) goto LAB_005d87d8;
           do {
-            pcVar8 = pcVar7;
-            if (*pcVar7 == '\0') break;
-            pcVar7 = pcVar7 + 1;
-            pcVar8 = param_4;
-          } while (param_4 != pcVar7);
+            ppcVar9 = ppcVar8;
+            if (*(char *)ppcVar8 == '\0') break;
+            ppcVar8 = (char **)((long)ppcVar8 + 1);
+            ppcVar9 = p3;
+          } while (p3 != ppcVar8);
         }
-        param_6 = *param_8;
-        pcVar2 = param_3;
-        if ((param_6 == param_7) || (param_3 == param_4)) goto LAB_005d87d8;
+        p5 = (wchar_t *)*in_x7;
+        ppcVar3 = (char **)p2;
+        if (((wchar_t **)p5 == p6) || ((char **)p2 == p3)) goto LAB_005d87d8;
       }
-      pcVar2 = (char *)*param_5;
+      ppcVar3 = *(char ***)p4;
     }
   }
   goto LAB_005d87d8;
 LAB_005d8830:
   do {
-    lVar5 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+    lVar6 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d8840 to 005d8857 has its CatchHandler @ 005d88f8 */
-    lVar6 = FUN_0016afb0(param_6,param_3,(long)pcVar8 - (long)param_3,&uStack_70);
-    if (lVar5 != 0) {
+    lVar7 = FUN_0016afb0(p5,p2,(long)ppcVar9 - (long)p2,&uStack_70);
+    if (lVar6 != 0) {
                     /* try { // try from 005d8860 to 005d8867 has its CatchHandler @ 005d88f4 */
-      FUN_0016a870(lVar5);
+      FUN_0016a870(lVar6);
     }
-    if (lVar6 == 0) {
-      lVar6 = 1;
+    if (lVar7 == 0) {
+      lVar7 = 1;
     }
     else {
-      if (lVar6 == -2) {
-        *param_5 = (long)param_3;
-        uVar3 = 1;
+      if (lVar7 == -2) {
+        *(char **)p4 = p2;
+        uVar4 = 1;
         goto LAB_005d87dc;
       }
-      if (lVar6 == -1) {
-        *param_5 = (long)param_3;
-        uVar3 = 2;
+      if (lVar7 == -1) {
+        *(char **)p4 = p2;
+        uVar4 = 2;
         goto LAB_005d87dc;
       }
     }
-    param_3 = param_3 + lVar6;
-    param_6 = *param_8 + 4;
-    *param_8 = param_6;
-  } while (param_3 != (char *)*param_5);
+    p2 = (char *)((long)p2 + lVar7);
+    p5 = (wchar_t *)(*in_x7 + 4);
+    *in_x7 = (long)p5;
+  } while ((char **)p2 != *(char ***)p4);
 LAB_005d88cc:
-  *param_5 = (long)param_3;
-  pcVar2 = param_3;
+  *(char **)p4 = p2;
+  ppcVar3 = (char **)p2;
 LAB_005d87d8:
-  uVar3 = pcVar2 != param_4;
+  uVar4 = ppcVar3 != p3;
 LAB_005d87dc:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    FUN_00164ff0(uVar3);
+  if (*(long *)(lVar2 + 0x28) != lStack_68) {
+    FUN_00164ff0(uVar4);
     return;
   }
   return;
@@ -427,7 +427,7 @@ LAB_005d87dc:
    const */
 
 void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
-               (long param_1,undefined8 param_2,long param_3,long param_4,long *param_5)
+               (mbstate_t *p0,char *p1,char *p2,char **p3)
 
 {
   undefined1 uVar1;
@@ -435,6 +435,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
   long lVar3;
   long lVar4;
   undefined8 uVar5;
+  long *in_x4;
   undefined1 *puVar6;
   undefined1 *puVar7;
   undefined1 auStack_4c [4];
@@ -442,10 +443,10 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  *param_5 = param_3;
-  lVar3 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+  *in_x4 = (long)p2;
+  lVar3 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d898c to 005d899b has its CatchHandler @ 005d8a58 */
-  lVar4 = func_0x00173680(auStack_4c,0,param_2);
+  lVar4 = func_0x00173680(auStack_4c,0,p1);
   if (lVar3 != 0) {
                     /* try { // try from 005d89a4 to 005d89ab has its CatchHandler @ 005d8a54 */
     FUN_0016a870(lVar3);
@@ -454,22 +455,22 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
     uVar5 = 2;
   }
   else {
-    puVar6 = (undefined1 *)*param_5;
-    if ((ulong)(param_4 - (long)puVar6) < lVar4 - 1U) {
+    puVar6 = (undefined1 *)*in_x4;
+    if ((ulong)((long)p3 - (long)puVar6) < lVar4 - 1U) {
       uVar5 = 1;
     }
     else {
       if (lVar4 != 1) {
-        *param_5 = (long)(puVar6 + 1);
+        *in_x4 = (long)(puVar6 + 1);
         *puVar6 = auStack_4c[0];
         if (lVar4 != 2) {
           lVar4 = 2 - lVar4;
           puVar6 = (undefined1 *)((ulong)auStack_4c | 1);
           do {
-            puVar7 = (undefined1 *)*param_5;
+            puVar7 = (undefined1 *)*in_x4;
             uVar1 = *puVar6;
             lVar4 = lVar4 + 1;
-            *param_5 = (long)(puVar7 + 1);
+            *in_x4 = (long)(puVar7 + 1);
             *puVar7 = uVar1;
             puVar6 = puVar6 + 1;
           } while (lVar4 != 0);
@@ -555,23 +556,24 @@ undefined8 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_always_noconv(void)
    unsigned long) const */
 
 int std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_length
-              (long param_1,undefined8 param_2,long param_3,long param_4,ulong param_5)
+              (mbstate_t *p0,char *p1,char *p2,ulong p3)
 
 {
   bool bVar1;
   long lVar2;
   long lVar3;
+  ulong in_x4;
   int iVar4;
   int iVar5;
   ulong uVar6;
   
-  if ((param_3 != param_4) && (param_5 != 0)) {
+  if ((p2 != (char *)p3) && (in_x4 != 0)) {
     iVar5 = 0;
     uVar6 = 1;
     while( true ) {
-      lVar2 = FUN_0016a870(*(undefined8 *)(param_1 + 0x10));
+      lVar2 = FUN_0016a870(p0[2]);
                     /* try { // try from 005d8ba8 to 005d8bb7 has its CatchHandler @ 005d8c28 */
-      lVar3 = func_0x00165180(param_3,param_4 - param_3,param_2);
+      lVar3 = func_0x00165180(p2,p3 - (long)p2,p1);
       if (lVar2 != 0) {
                     /* try { // try from 005d8bc0 to 005d8bc7 has its CatchHandler @ 005d8c24 */
         FUN_0016a870(lVar2);
@@ -586,10 +588,10 @@ int std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_length
         }
         iVar4 = (int)lVar3;
       }
-      param_3 = param_3 + lVar3;
+      p2 = p2 + lVar3;
       iVar5 = iVar4 + iVar5;
-      if (param_3 == param_4) break;
-      bVar1 = param_5 <= uVar6;
+      if (p2 == (char *)p3) break;
+      bVar1 = in_x4 <= uVar6;
       uVar6 = uVar6 + 1;
       if (bVar1) {
         return iVar5;

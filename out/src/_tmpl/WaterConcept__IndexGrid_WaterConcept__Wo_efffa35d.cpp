@@ -8,39 +8,41 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid
-               (int *param_1,int param_2,int param_3)
+void WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int p0,int p1)
 
 {
   int iVar1;
   undefined1 auVar2 [16];
-  undefined8 *puVar3;
-  long lVar4;
-  undefined8 *puVar5;
+  int *piVar3;
+  undefined8 *puVar4;
+  int in_w2;
+  long lVar5;
+  undefined8 *puVar6;
   
-  iVar1 = param_3 * param_2;
-  lVar4 = (long)iVar1 * 0x1c;
+  piVar3 = (int *)(ulong)(uint)p0;
+  iVar1 = in_w2 * p1;
+  lVar5 = (long)iVar1 * 0x1c;
   auVar2._8_8_ = 0;
   auVar2._0_8_ = (long)iVar1;
-  *param_1 = param_2;
-  param_1[1] = param_3;
+  *piVar3 = p1;
+  piVar3[1] = in_w2;
   if (SUB168(auVar2 * ZEXT816(0x1c),8) != 0) {
-    lVar4 = -1;
+    lVar5 = -1;
   }
-  puVar3 = (undefined8 *)FUN_00167620(lVar4);
+  puVar4 = (undefined8 *)FUN_00167620(lVar5);
   if (iVar1 != 0) {
-    lVar4 = (long)iVar1 * 0x1c;
-    puVar5 = puVar3;
+    lVar5 = (long)iVar1 * 0x1c;
+    puVar6 = puVar4;
     do {
-      *puVar5 = 0;
-      puVar5[1] = 0;
-      *(undefined4 *)(puVar5 + 3) = 0;
-      lVar4 = lVar4 + -0x1c;
-      puVar5[2] = 0;
-      puVar5 = (undefined8 *)((long)puVar5 + 0x1c);
-    } while (lVar4 != 0);
+      *puVar6 = 0;
+      puVar6[1] = 0;
+      *(undefined4 *)(puVar6 + 3) = 0;
+      lVar5 = lVar5 + -0x1c;
+      puVar6[2] = 0;
+      puVar6 = (undefined8 *)((long)puVar6 + 0x1c);
+    } while (lVar5 != 0);
   }
-  *(undefined8 **)(param_1 + 2) = puVar3;
+  *(undefined8 **)(piVar3 + 2) = puVar4;
   return;
 }
 

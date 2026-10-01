@@ -14,29 +14,30 @@
 void std::__ndk1::
      vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
      ::__push_back_slow_path<WaterConcept::Screen_MainMenu_v2::DuckInfo_const&>
-               (long *param_1,undefined8 *param_2)
+               (WaterConcept__Screen_MainMenu_v2__DuckInfo *p0)
 
 {
   undefined4 uVar1;
   long lVar2;
+  undefined8 *in_x1;
   ulong uVar3;
   long lVar4;
   long lVar5;
   ulong uVar6;
-  long lStack_60;
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar4 = param_1[1] - *param_1 >> 5;
+  lVar4 = *(long *)(p0 + 8) - *(long *)p0 >> 5;
   uVar3 = lVar4 + 1;
   if (uVar3 >> 0x3b != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar5 = param_1[2] - *param_1;
+  lVar5 = *(long *)(p0 + 0x10) - *(long *)p0;
   if ((ulong)(lVar5 >> 5) < 0x3ffffffffffffff) {
     uVar6 = lVar5 >> 4;
     if (uVar3 <= uVar6) {
@@ -46,23 +47,23 @@ void std::__ndk1::
   else {
     uVar3 = 0x7ffffffffffffff;
   }
-  func_0x0016ad20(&lStack_60,uVar3,lVar4,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50[1] = param_2[1];
-  puStack_50[2] = param_2[2];
-  uVar1 = *(undefined4 *)(param_2 + 3);
-  *(undefined1 *)((long)puStack_50 + 0x1c) = *(undefined1 *)((long)param_2 + 0x1c);
+  func_0x0016ad20(&pvStack_60,uVar3,lVar4,p0 + 0x10);
+  *puStack_50 = *in_x1;
+  puStack_50[1] = in_x1[1];
+  puStack_50[2] = in_x1[2];
+  uVar1 = *(undefined4 *)(in_x1 + 3);
+  *(undefined1 *)((long)puStack_50 + 0x1c) = *(undefined1 *)((long)in_x1 + 0x1c);
   *(undefined4 *)(puStack_50 + 3) = uVar1;
   puStack_50 = puStack_50 + 4;
                     /* try { // try from 00530744 to 0053074f has its CatchHandler @ 005307b0 */
-  func_0x00167280(param_1,&lStack_60);
+  func_0x00167280(p0,&pvStack_60);
   if (puStack_50 != puStack_58) {
     puStack_50 = (undefined8 *)
                  ((long)puStack_50 +
                  (~((long)puStack_50 + (-0x20 - (long)puStack_58)) & 0xffffffffffffffe0U));
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

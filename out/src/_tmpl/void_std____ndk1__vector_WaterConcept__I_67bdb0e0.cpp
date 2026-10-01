@@ -14,13 +14,14 @@
 void std::__ndk1::
      vector<WaterConcept::InteractiveObject::SpriteInfo,std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>
      ::__push_back_slow_path<WaterConcept::InteractiveObject::SpriteInfo_const&>
-               (long *param_1,undefined8 *param_2)
+               (WaterConcept__InteractiveObject__SpriteInfo *p0)
 
 {
   ulong uVar1;
   undefined8 *puVar2;
   undefined1 uVar3;
   long lVar4;
+  undefined8 *in_x1;
   long lVar5;
   ulong uVar6;
   ulong uVar7;
@@ -31,32 +32,32 @@ void std::__ndk1::
   undefined8 *puStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
-  long lStack_48;
+  undefined8 uStack_48;
   long lStack_38;
   
   lVar4 = tpidr_el0;
   lStack_38 = *(long *)(lVar4 + 0x28);
-  lVar5 = (param_1[1] - *param_1 >> 3) * -0x3333333333333333;
+  lVar5 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar5 + 1;
   if (0x666666666666666 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar9 = param_1[2] - *param_1 >> 3;
+  lVar9 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
   uVar7 = 0x666666666666666;
   if (((ulong)(lVar9 * -0x3333333333333333) < 0x333333333333333) &&
      (uVar6 = lVar9 * -0x6666666666666666, uVar7 = uVar1, uVar1 <= uVar6)) {
     uVar7 = uVar6;
   }
-  func_0x00168b30(&puStack_60,uVar7,lVar5,param_1 + 2);
-  uVar10 = *param_2;
-  *(undefined1 *)(puStack_50 + 1) = *(undefined1 *)(param_2 + 1);
+  func_0x00168b30(&puStack_60,uVar7,lVar5,p0 + 0x10);
+  uVar10 = *in_x1;
+  *(undefined1 *)(puStack_50 + 1) = *(undefined1 *)(in_x1 + 1);
   *puStack_50 = uVar10;
                     /* try { // try from 0048a774 to 0048a777 has its CatchHandler @ 0048a834 */
-  func_0x0016f720(puStack_50 + 2,param_2 + 2);
+  func_0x0016f720(puStack_50 + 2,in_x1 + 2);
   puVar2 = puStack_50 + 5;
-  puStack_60 = (undefined8 *)*param_1;
-  puStack_50 = (undefined8 *)param_1[1];
+  puStack_60 = *(undefined8 **)p0;
+  puStack_50 = *(undefined8 **)(p0 + 8);
   if (puStack_50 != puStack_60) {
     do {
       puVar8 = puStack_50 + -5;
@@ -74,15 +75,15 @@ void std::__ndk1::
       puStack_58 = (undefined8 *)((long)puStack_58 + -0x28);
       puStack_50 = puVar8;
     } while (puStack_60 != puVar8);
-    puStack_60 = (undefined8 *)*param_1;
-    puStack_50 = (undefined8 *)param_1[1];
+    puStack_60 = *(undefined8 **)p0;
+    puStack_50 = *(undefined8 **)(p0 + 8);
   }
-  *param_1 = (long)puStack_58;
-  param_1[1] = (long)puVar2;
-  lVar5 = param_1[2];
-  param_1[2] = lStack_48;
+  *(undefined8 **)p0 = puStack_58;
+  *(undefined8 **)(p0 + 8) = puVar2;
+  uVar10 = *(undefined8 *)(p0 + 0x10);
+  *(undefined8 *)(p0 + 0x10) = uStack_48;
   puStack_58 = puStack_60;
-  lStack_48 = lVar5;
+  uStack_48 = uVar10;
   func_0x0016ee20(&puStack_60);
   if (*(long *)(lVar4 + 0x28) != lStack_38) {
     FUN_00164ff0();

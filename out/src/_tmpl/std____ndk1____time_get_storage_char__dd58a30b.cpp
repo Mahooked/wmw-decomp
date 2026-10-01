@@ -8,13 +8,14 @@
 
 /* std::__ndk1::__time_get_storage<char>::__time_get_storage(char const*) */
 
-void std::__ndk1::__time_get_storage<char>::__time_get_storage(long param_1,undefined8 param_2)
+void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
 
 {
   long lVar1;
   undefined **ppuVar2;
+  ulong p1;
   undefined **appuStack_60 [2];
-  long lStack_50;
+  void *pvStack_50;
   char cStack_48;
   undefined8 uStack_40;
   long lStack_38;
@@ -22,20 +23,20 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long param_1,unde
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   func_0x00164190();
-  FUN_0016b330(param_1 + 8,0,0x420);
+  FUN_0016b330(p0 + 8,0,0x420);
                     /* try { // try from 005c1f80 to 005c1f8f has its CatchHandler @ 005c2084 */
-  func_0x001650d0(appuStack_60,param_2,1);
+  func_0x001650d0(appuStack_60);
   appuStack_60[0] = &PTR__ctype_byname_00718fb8;
                     /* try { // try from 005c1f9c to 005c1fa7 has its CatchHandler @ 005c2028 */
-  func_0x00170ce0(param_1,appuStack_60);
+  func_0x00170ce0(p0,appuStack_60);
   appuStack_60[0] = &PTR__ctype_byname_007177d8;
                     /* try { // try from 005c1fbc to 005c1fbf has its CatchHandler @ 005c2014 */
   FUN_00173520(uStack_40);
   appuStack_60[0] = &PTR__ctype_00717770;
   ppuVar2 = &PTR__ctype_00717770;
-  if ((lStack_50 != 0) && (ppuVar2 = appuStack_60[0], cStack_48 != '\0')) {
+  if ((pvStack_50 != (void *)0x0) && (ppuVar2 = appuStack_60[0], cStack_48 != '\0')) {
     appuStack_60[0] = &PTR__ctype_00717770;
-    FUN_001639e0();
+    FUN_001639e0(pvStack_50,p1);
     ppuVar2 = appuStack_60[0];
   }
   appuStack_60[0] = ppuVar2;
@@ -62,9 +63,10 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
   long lVar1;
   undefined **ppuVar2;
   long lVar3;
+  ulong p1;
   byte *pbVar4;
   undefined **appuStack_60 [2];
-  long lStack_50;
+  void *pvStack_50;
   char cStack_48;
   undefined8 uStack_40;
   long lStack_38;
@@ -94,9 +96,9 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
     FUN_00173520(uStack_40);
     appuStack_60[0] = &PTR__ctype_00717770;
     ppuVar2 = &PTR__ctype_00717770;
-    if ((lStack_50 != 0) && (ppuVar2 = appuStack_60[0], cStack_48 != '\0')) {
+    if ((pvStack_50 != (void *)0x0) && (ppuVar2 = appuStack_60[0], cStack_48 != '\0')) {
       appuStack_60[0] = &PTR__ctype_00717770;
-      FUN_001639e0();
+      FUN_001639e0(pvStack_50,p1);
       ppuVar2 = appuStack_60[0];
     }
     appuStack_60[0] = ppuVar2;
@@ -780,7 +782,7 @@ void std::__ndk1::__time_get_storage<char>::init(long param_1,undefined8 param_2
     **(undefined1 **)(param_1 + 0x3d8) = 0;
     *(undefined8 *)(param_1 + 0x3d0) = 0;
     if ((*(byte *)(param_1 + 0x3c8) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x3d8));
+      FUN_00166120(*(void **)(param_1 + 0x3d8));
       *(undefined8 *)(param_1 + 0x3c8) = 0;
     }
   }
@@ -795,7 +797,7 @@ void std::__ndk1::__time_get_storage<char>::init(long param_1,undefined8 param_2
     **(undefined1 **)(param_1 + 0x3f0) = 0;
     *(undefined8 *)(param_1 + 1000) = 0;
     if ((*(byte *)(param_1 + 0x3e0) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x3f0));
+      FUN_00166120(*(void **)(param_1 + 0x3f0));
       *(undefined8 *)(param_1 + 0x3e0) = 0;
     }
   }
@@ -810,7 +812,7 @@ void std::__ndk1::__time_get_storage<char>::init(long param_1,undefined8 param_2
     **(undefined1 **)(param_1 + 0x408) = 0;
     *(undefined8 *)(param_1 + 0x400) = 0;
     if ((*(byte *)(param_1 + 0x3f8) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x408));
+      FUN_00166120(*(void **)(param_1 + 0x408));
       *(undefined8 *)(param_1 + 0x3f8) = 0;
     }
   }
@@ -825,7 +827,7 @@ void std::__ndk1::__time_get_storage<char>::init(long param_1,undefined8 param_2
     **(undefined1 **)(param_1 + 0x420) = 0;
     *(undefined8 *)(param_1 + 0x418) = 0;
     if ((*(byte *)(param_1 + 0x410) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x420));
+      FUN_00166120(*(void **)(param_1 + 0x420));
       *(undefined8 *)(param_1 + 0x410) = 0;
     }
   }

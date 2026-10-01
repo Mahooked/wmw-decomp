@@ -23,7 +23,7 @@ void std::__ndk1::bad_weak_ptr::~bad_weak_ptr(void)
 
 /* std::__ndk1::bad_weak_ptr::~bad_weak_ptr() */
 
-void std::__ndk1::bad_weak_ptr::~bad_weak_ptr(undefined8 param_1)
+void std::__ndk1::bad_weak_ptr::~bad_weak_ptr(void *param_1)
 
 {
   FUN_0016fe40();

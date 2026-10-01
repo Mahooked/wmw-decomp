@@ -10,11 +10,12 @@
    >::__push_back_slow_path<WaterConcept::Fluid const&>(WaterConcept::Fluid const&) */
 
 void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __push_back_slow_path<WaterConcept::Fluid_const&>(long *param_1,long param_2)
+     __push_back_slow_path<WaterConcept::Fluid_const&>(WaterConcept__Fluid *p0)
 
 {
   ulong uVar1;
   long lVar2;
+  long in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -26,27 +27,27 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 4) * -0x1111111111111111;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 4) * -0x1111111111111111;
   uVar1 = lVar3 + 1;
   if (0x111111111111111 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar7 = param_1[2] - *param_1 >> 4;
+  lVar7 = *(long *)(p0 + 0x10) - *(long *)p0 >> 4;
   uVar5 = 0x111111111111111;
   if (((ulong)(lVar7 * -0x1111111111111111) < 0x88888888888888) &&
      (uVar4 = lVar7 * -0x2222222222222222, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x00168b50(auStack_60,uVar5,lVar3,param_1 + 2);
+  func_0x00168b50(auStack_60,uVar5,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 0040abd8 to 0040ac0b has its CatchHandler @ 0040ac44 */
-  func_0x00161d40(lStack_50,param_2);
-  uVar6 = *(undefined8 *)(param_2 + 0xe0);
-  *(undefined1 *)(lVar3 + 0xe8) = *(undefined1 *)(param_2 + 0xe8);
+  func_0x00161d40(lStack_50);
+  uVar6 = *(undefined8 *)(in_x1 + 0xe0);
+  *(undefined1 *)(lVar3 + 0xe8) = *(undefined1 *)(in_x1 + 0xe8);
   *(undefined8 *)(lVar3 + 0xe0) = uVar6;
   lStack_50 = lStack_50 + 0xf0;
-  func_0x0016aa30(param_1,auStack_60);
+  func_0x0016aa30(p0,auStack_60);
   func_0x001677d0(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

@@ -8,23 +8,24 @@
 
 /* std::__ndk1::future<void>::future(std::__ndk1::__assoc_sub_state*) */
 
-void std::__ndk1::future<void>::future(long *param_1,long param_2)
+void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
 
 {
   long lVar1;
   int iVar2;
   undefined8 *puVar3;
+  long in_x1;
   byte abStack_68 [16];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *param_1 = param_2;
-  func_0x0016f0c0(param_2 + 0x18);
-  if ((*(byte *)(param_2 + 0x70) >> 1 & 1) != 0) {
+  *(long *)p0 = in_x1;
+  func_0x0016f0c0(in_x1 + 0x18);
+  if ((*(byte *)(in_x1 + 0x70) >> 1 & 1) != 0) {
     puVar3 = (undefined8 *)FUN_00168670(0x20);
     if (((DAT_007a5f10 & 1) == 0) && (iVar2 = FUN_0016ceb0(&DAT_007a5f10), iVar2 != 0)) {
       func_0x00165b10(&DAT_007a5f08);
@@ -39,7 +40,7 @@ void std::__ndk1::future<void>::future(long *param_1,long param_2)
                     /* try { // try from 005f1324 to 005f132f has its CatchHandler @ 005f137c */
     func_0x0016c1f0(puVar3,abStack_68);
     if ((abStack_68[0] & 1) != 0) {
-      FUN_00166120(uStack_58);
+      FUN_00166120(pvStack_58);
     }
     *puVar3 = &PTR__future_error_00719378;
     puVar3[3] = puStack_48;
@@ -48,9 +49,9 @@ void std::__ndk1::future<void>::future(long *param_1,long param_2)
     FUN_0016ab10(puVar3,&future_error::typeinfo,future_error::~future_error);
     return;
   }
-  FUN_0016cae0(param_2);
-  *(uint *)(param_2 + 0x70) = *(uint *)(param_2 + 0x70) | 2;
-  FUN_0016c930(param_2 + 0x18);
+  FUN_0016cae0();
+  *(uint *)(in_x1 + 0x70) = *(uint *)(in_x1 + 0x70) | 2;
+  FUN_0016c930(in_x1 + 0x18);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

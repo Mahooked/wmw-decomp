@@ -28,7 +28,7 @@ void std::__ndk1::
     do {
       pbVar3 = pbVar1 + -0x28;
       if ((*pbVar3 & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(pbVar1 + -0x18));
+        FUN_00166120(*(void **)(pbVar1 + -0x18));
       }
       pbVar1 = pbVar3;
     } while (pbVar2 != pbVar3);

@@ -21,7 +21,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   int *piStack_a0;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -40,7 +40,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   abStack_78[0xd] = 0;
   abStack_78[0xe] = 0;
   abStack_78[0xf] = 0;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   abStack_78[0] = 0x16;
   abStack_78[9] = 0x69;
   abStack_78[10] = 0x6c;
@@ -60,7 +60,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   func_0x00165260(auStack_60,abStack_78,auStack_98);
   func_0x00167bf0(auStack_98);
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
                     /* try { // try from 003d7e94 to 003d7e97 has its CatchHandler @ 003d7f14 */
   uVar2 = func_0x00162510();
@@ -89,15 +89,24 @@ void Walaber::ZipUtilities::LoadArchiveDescription
 
 /* Walaber::ZipUtilities::_xmlFileRead(void*) */
 
-void Walaber::ZipUtilities::_xmlFileRead(long param_1)
+void Walaber::ZipUtilities::_xmlFileRead(void *p0)
 
 {
   undefined1 *puVar1;
   long lVar2;
+  void *p0_00;
   byte bVar3;
   int iVar4;
   undefined8 uVar5;
   ulong uVar6;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong extraout_x1_01;
+  ulong extraout_x1_02;
+  ulong extraout_x1_03;
+  ulong extraout_x1_04;
+  ulong extraout_x1_05;
+  ulong extraout_x1_06;
   long lVar7;
   ulong uVar8;
   ulong uVar9;
@@ -114,7 +123,7 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
   undefined1 *puStack_210;
   undefined8 *puStack_200;
   int *piStack_1f8;
-  undefined8 uStack_1f0;
+  void *pvStack_1f0;
   undefined1 auStack_1e8 [24];
   ulong uStack_1d0;
   undefined8 uStack_1c8;
@@ -127,7 +136,7 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
   undefined2 uStack_1af;
   undefined1 uStack_1ad;
   undefined4 uStack_1ac;
-  undefined8 uStack_1a8;
+  void *pvStack_1a8;
   byte bStack_198;
   undefined4 uStack_197;
   undefined2 uStack_193;
@@ -138,29 +147,29 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
   undefined2 uStack_187;
   undefined1 uStack_185;
   undefined4 uStack_184;
-  undefined8 uStack_178;
+  void *pvStack_178;
   undefined1 auStack_170 [16];
   byte bStack_160;
-  undefined8 uStack_150;
+  void *pvStack_150;
   undefined1 auStack_148 [16];
   byte bStack_138;
-  undefined8 uStack_128;
+  void *pvStack_128;
   undefined1 auStack_120 [16];
   byte bStack_110;
-  undefined8 uStack_100;
+  void *pvStack_100;
   undefined1 auStack_f8 [16];
   byte bStack_e8;
-  undefined8 uStack_d8;
+  void *pvStack_d8;
   undefined1 auStack_d0 [16];
   byte bStack_c0;
-  undefined8 uStack_b0;
+  void *pvStack_b0;
   long alStack_a8 [2];
   long lStack_98;
   undefined8 uStack_90;
   
   lVar2 = tpidr_el0;
   lVar7 = *(long *)(lVar2 + 0x28);
-  if (*(long *)(param_1 + 0x20) != 0) {
+  if (*(long *)((long)p0 + 0x20) != 0) {
     uStack_184 = 0;
     bStack_198 = 0x24;
     uStack_187 = 0x6e6f;
@@ -172,10 +181,13 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
     uStack_190 = 0x44;
     uStack_185 = 0;
                     /* try { // try from 003d7fc8 to 003d7fd3 has its CatchHandler @ 003d8910 */
-    func_0x00169040(&lStack_98,*(long *)(param_1 + 0x20),*(undefined8 *)(param_1 + 0x28),&bStack_198
-                   );
+    func_0x00169040(&lStack_98,*(long *)((long)p0 + 0x20),*(undefined8 *)((long)p0 + 0x28),
+                    &bStack_198);
+    uVar6 = extraout_x1;
     if ((bStack_198 & 1) != 0) {
-      FUN_00166120(CONCAT44(uStack_184,CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
+      FUN_00166120((void *)CONCAT44(uStack_184,
+                                    CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
+      uVar6 = extraout_x1_00;
     }
     if (lStack_98 != 0) {
       uStack_191 = 0;
@@ -193,8 +205,8 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
       uVar5 = func_0x0016e500(uStack_90,&bStack_198);
       func_0x001656f0(alStack_a8,uVar5);
       if ((bStack_198 & 1) != 0) {
-        FUN_00166120(CONCAT44(uStack_184,CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_)))
-                    );
+        FUN_00166120((void *)CONCAT44(uStack_184,
+                                      CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
       }
                     /* try { // try from 003d8040 to 003d804b has its CatchHandler @ 003d88bc */
       if ((alStack_a8[0] != 0) &&
@@ -224,7 +236,7 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
             uStack_1af = 0;
             uStack_1ad = 0;
             uStack_1ac = 0;
-            uStack_1a8 = 0;
+            pvStack_1a8 = (void *)0x0;
             bStack_1b8 = 10;
             *(undefined1 *)(puVar10 + 1) = 100;
             *puVar10 = 0x6e756f53;
@@ -233,14 +245,14 @@ void Walaber::ZipUtilities::_xmlFileRead(long param_1)
             func_0x00170560(auStack_d0,&bStack_220,&bStack_1b8);
                     /* try { // try from 003d8244 to 003d824b has its CatchHandler @ 003d8948 */
             func_0x00164140(auStack_d0);
-            uVar5 = uStack_b0;
+            p0_00 = pvStack_b0;
             bVar3 = bStack_c0;
 joined_r0x003d82a8:
             if ((bVar3 & 1) != 0) {
-              FUN_00166120(uVar5);
+              FUN_00166120(p0_00);
             }
             if ((bStack_1b8 & 1) != 0) {
-              FUN_00166120(uStack_1a8);
+              FUN_00166120(pvStack_1a8);
             }
           }
           else {
@@ -260,7 +272,7 @@ LAB_003d80e0:
                 uStack_1ad = 0;
                 uStack_1ac = 0;
                 bStack_1b8 = 0xe;
-                uStack_1a8 = 0;
+                pvStack_1a8 = (void *)0x0;
                 *(undefined1 *)((long)puVar10 + 6) = 0x65;
                 *(undefined2 *)(puVar10 + 1) = 0x7275;
                 *puVar10 = 0x74786554;
@@ -269,7 +281,7 @@ LAB_003d80e0:
                 func_0x00170560(auStack_f8,&bStack_220,&bStack_1b8);
                     /* try { // try from 003d829c to 003d82a3 has its CatchHandler @ 003d8928 */
                 func_0x001739c0(auStack_f8);
-                uVar5 = uStack_d8;
+                p0_00 = pvStack_d8;
                 bVar3 = bStack_e8;
                 goto joined_r0x003d82a8;
               }
@@ -290,7 +302,7 @@ LAB_003d80e0:
                 uStack_1af = 0;
                 uStack_1ad = 0;
                 uStack_1ac = 0;
-                uStack_1a8 = 0;
+                pvStack_1a8 = (void *)0x0;
                 bStack_1b8 = 10;
                 *(undefined1 *)(puVar10 + 1) = 0x73;
                 *puVar10 = 0x616c7441;
@@ -299,7 +311,7 @@ LAB_003d80e0:
                 func_0x00170560(auStack_120,&bStack_220,&bStack_1b8);
                     /* try { // try from 003d82e8 to 003d82ef has its CatchHandler @ 003d88f8 */
                 func_0x0016ecd0(auStack_120);
-                uVar5 = uStack_100;
+                p0_00 = pvStack_100;
                 bVar3 = bStack_110;
                 goto joined_r0x003d82a8;
               }
@@ -320,7 +332,7 @@ LAB_003d80e0:
                 uStack_1af = 0;
                 uStack_1ad = 0;
                 uStack_1ac = 0;
-                uStack_1a8 = 0;
+                pvStack_1a8 = (void *)0x0;
                 bStack_1b8 = 10;
                 *(undefined1 *)(puVar10 + 1) = 0x6b;
                 *puVar10 = 0x63617254;
@@ -329,7 +341,7 @@ LAB_003d80e0:
                 func_0x00170560(auStack_148,&bStack_220,&bStack_1b8);
                     /* try { // try from 003d8334 to 003d833b has its CatchHandler @ 003d88e0 */
                 func_0x00167f70(auStack_148);
-                uVar5 = uStack_128;
+                p0_00 = pvStack_128;
                 bVar3 = bStack_138;
                 goto joined_r0x003d82a8;
               }
@@ -347,7 +359,7 @@ LAB_003d80e0:
               uStack_1af = 0;
               uStack_1ad = 0;
               uStack_1ac = 0;
-              uStack_1a8 = 0;
+              pvStack_1a8 = (void *)0x0;
               bStack_1b8 = 0xc;
               *(undefined2 *)(puVar10 + 1) = 0x7470;
               *puVar10 = 0x69726353;
@@ -356,7 +368,7 @@ LAB_003d80e0:
               func_0x00170560(auStack_170,&bStack_220,&bStack_1b8);
                     /* try { // try from 003d81f8 to 003d81ff has its CatchHandler @ 003d88c8 */
               func_0x00167fe0(auStack_170);
-              uVar5 = uStack_150;
+              p0_00 = pvStack_150;
               bVar3 = bStack_160;
               goto joined_r0x003d82a8;
             }
@@ -364,8 +376,9 @@ LAB_003d80e0:
                     /* try { // try from 003d835c to 003d8363 has its CatchHandler @ 003d8aa4 */
           func_0x001716a0(&bStack_220);
           if ((bStack_198 & 1) != 0) {
-            FUN_00166120(CONCAT44(uStack_184,
-                                  CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
+            FUN_00166120((void *)CONCAT44(uStack_184,
+                                          CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))
+                                         ));
           }
         } while (CONCAT26(uStack_21a,CONCAT15(uStack_21b,CONCAT41(uStack_21f,bStack_220))) != 0);
       }
@@ -384,13 +397,15 @@ LAB_003d80e0:
       func_0x001656f0(&bStack_1b8,uVar5);
                     /* try { // try from 003d83c0 to 003d83cb has its CatchHandler @ 003d88c4 */
       func_0x00167330(alStack_a8,&bStack_1b8);
+      uVar6 = extraout_x1_01;
       if ((bStack_198 & 1) != 0) {
-        FUN_00166120(CONCAT44(uStack_184,CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_)))
-                    );
+        FUN_00166120((void *)CONCAT44(uStack_184,
+                                      CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
+        uVar6 = extraout_x1_02;
       }
       if (alStack_a8[0] != 0) {
         uStack_1ac = 0;
-        uStack_1a8 = 0;
+        pvStack_1a8 = (void *)0x0;
         bStack_1b8 = 0x14;
         uStack_1af = 0x656c;
         uStack_1b7 = 0x74656c6544;
@@ -400,8 +415,10 @@ LAB_003d80e0:
         uStack_1ad = 0;
                     /* try { // try from 003d8410 to 003d841f has its CatchHandler @ 003d88a8 */
         func_0x00170560(&bStack_198,alStack_a8,&bStack_1b8);
+        uVar6 = extraout_x1_03;
         if ((bStack_1b8 & 1) != 0) {
-          FUN_00166120(uStack_1a8);
+          FUN_00166120(pvStack_1a8);
+          uVar6 = extraout_x1_04;
         }
         if (CONCAT17(uStack_191,CONCAT25(uStack_193,CONCAT41(uStack_197,bStack_198))) != 0) {
           puVar10 = (undefined4 *)((ulong)&bStack_220 | 1);
@@ -412,7 +429,7 @@ LAB_003d80e0:
             uStack_218 = 0;
             uStack_217 = 0;
             uStack_216 = 0;
-            puStack_210 = (undefined1 *)0x0;
+            puStack_210 = (void *)0x0;
             bStack_220 = 8;
             uStack_21f = 0x68746170;
             uStack_21b = 0;
@@ -457,7 +474,7 @@ LAB_003d80e0:
               uStack_21a = 0;
               uStack_217 = 0;
               uStack_216 = 0;
-              puStack_210 = (undefined1 *)0x0;
+              puStack_210 = (void *)0x0;
               bStack_220 = 0xe;
               *(undefined1 *)((long)puVar10 + 6) = 0x6e;
               *(undefined2 *)(puVar10 + 1) = 0x6f69;
@@ -483,7 +500,7 @@ LAB_003d80e0:
                     /* try { // try from 003d85c0 to 003d85c7 has its CatchHandler @ 003d89ec */
                 func_0x0016b220(auStack_1e8);
                 puStack_200 = (undefined8 *)0x12;
-                uStack_1f0 = 0;
+                pvStack_1f0 = (void *)0x0;
                 builtin_strncpy((char *)((ulong)&puStack_200 | 1),"file_path",9);
                 piStack_1f8 = (int *)0x0;
                     /* try { // try from 003d85f4 to 003d85ff has its CatchHandler @ 003d89a0 */
@@ -492,14 +509,14 @@ LAB_003d80e0:
                 func_0x00165260(auStack_1e8,&puStack_200,&bStack_220);
                 func_0x00167bf0(&bStack_220);
                 if (((ulong)puStack_200 & 1) != 0) {
-                  FUN_00166120(uStack_1f0);
+                  FUN_00166120(pvStack_1f0);
                 }
                 uStack_21f = 0;
                 uStack_21b = 0;
                 uStack_21a = 0;
                 uStack_217 = 0;
                 uStack_216 = 0;
-                puStack_210 = (undefined1 *)0x0;
+                puStack_210 = (void *)0x0;
                 bStack_220 = 0xe;
                 *(undefined1 *)((long)puVar10 + 6) = 0x6e;
                 *(undefined2 *)(puVar10 + 1) = 0x6f69;
@@ -511,7 +528,7 @@ LAB_003d80e0:
                   FUN_00166120(puStack_210);
                 }
                 puStack_200 = (undefined8 *)0x16;
-                uStack_1f0 = 0;
+                pvStack_1f0 = (void *)0x0;
                 builtin_strncpy((char *)((ulong)&puStack_200 | 1),"delete_file",0xb);
                 piStack_1f8 = (int *)0x0;
                     /* try { // try from 003d8698 to 003d86a3 has its CatchHandler @ 003d89c8 */
@@ -520,15 +537,15 @@ LAB_003d80e0:
                 func_0x00165260(auStack_1e8,&puStack_200,&bStack_220);
                 func_0x00167bf0(&bStack_220);
                 if (((ulong)puStack_200 & 1) != 0) {
-                  FUN_00166120(uStack_1f0);
+                  FUN_00166120(pvStack_1f0);
                 }
                 piStack_1f8 = (int *)0x0;
-                uStack_1f0 = 0;
+                pvStack_1f0 = (void *)0x0;
                 puStack_200 = (undefined8 *)0x7265762e08;
                     /* try { // try from 003d86e8 to 003d86f7 has its CatchHandler @ 003d89a8 */
                 func_0x0016f0b0(&bStack_220,&uStack_1d0,&puStack_200);
                 if (((ulong)puStack_200 & 1) != 0) {
-                  FUN_00166120(uStack_1f0);
+                  FUN_00166120(pvStack_1f0);
                 }
                     /* try { // try from 003d8708 to 003d872f has its CatchHandler @ 003d8a14 */
                 puStack_200 = (undefined8 *)FUN_00164060(0x10);
@@ -559,15 +576,17 @@ LAB_003d80e0:
                     /* try { // try from 003d87d4 to 003d87db has its CatchHandler @ 003d8a68 */
             func_0x0016b450(&bStack_198);
             func_0x00167bf0(&bStack_1b8);
+            uVar6 = extraout_x1_05;
           } while (CONCAT17(uStack_191,CONCAT25(uStack_193,CONCAT41(uStack_197,bStack_198))) != 0);
         }
         if ((uStack_18b & 0x1000000) != 0) {
-          FUN_00166120(uStack_178);
+          FUN_00166120(pvStack_178);
+          uVar6 = extraout_x1_06;
         }
       }
     }
-    if (*(long *)(param_1 + 0x20) != 0) {
-      FUN_001639e0();
+    if (*(void **)((long)p0 + 0x20) != (void *)0x0) {
+      FUN_001639e0(*(void **)((long)p0 + 0x20),uVar6);
     }
     bStack_198 = 0x16;
     uStack_18b = 0;
@@ -580,14 +599,15 @@ LAB_003d80e0:
     uStack_191 = 0x5f;
     uStack_190 = 0x66;
                     /* try { // try from 003d8840 to 003d884b has its CatchHandler @ 003d89f8 */
-    func_0x00167060(*(undefined8 *)(param_1 + 0x60),&bStack_198);
+    func_0x00167060(*(undefined8 *)((long)p0 + 0x60),&bStack_198);
     iVar4 = func_0x00166a80();
     if ((bStack_198 & 1) != 0) {
-      FUN_00166120(CONCAT44(uStack_184,CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
+      FUN_00166120((void *)CONCAT44(uStack_184,
+                                    CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
     }
     if (iVar4 != 0) {
                     /* try { // try from 003d8868 to 003d886b has its CatchHandler @ 003d88c0 */
-      func_0x00171cf0(param_1 + 0x30);
+      func_0x00171cf0((long)p0 + 0x30);
     }
     func_0x00165880(&lStack_98);
   }
@@ -614,7 +634,8 @@ void Walaber::ZipUtilities::_handleSounds(long *param_1)
   int iVar3;
   ulong uVar4;
   undefined8 uVar5;
-  ulong auStack_a0 [3];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
   undefined1 auStack_88 [32];
   long lStack_68;
   
@@ -623,7 +644,7 @@ void Walaber::ZipUtilities::_handleSounds(long *param_1)
   func_0x001627a0(auStack_88);
   while (*param_1 != 0) {
     auStack_a0[1] = 0;
-    auStack_a0[2] = 0;
+    pvStack_90 = (void *)0x0;
     auStack_a0[0] = CONCAT71(auStack_a0[0]._1_7_,0xc);
     *(undefined2 *)((undefined4 *)((ulong)auStack_a0 | 1) + 1) = 0x6461;
     *(undefined4 *)((ulong)auStack_a0 | 1) = 0x6f6c6572;
@@ -631,7 +652,7 @@ void Walaber::ZipUtilities::_handleSounds(long *param_1)
                     /* try { // try from 003d8b50 to 003d8b5f has its CatchHandler @ 003d8c5c */
     uVar4 = func_0x00171e50(param_1,auStack_a0,auStack_88);
     if ((auStack_a0[0] & 1) != 0) {
-      FUN_00166120(auStack_a0[2]);
+      FUN_00166120(pvStack_90);
     }
     if ((uVar4 & 1) == 0) {
       bVar2 = false;
@@ -642,12 +663,12 @@ void Walaber::ZipUtilities::_handleSounds(long *param_1)
       bVar2 = iVar3 != 0;
     }
     auStack_a0[1] = 0;
-    auStack_a0[2] = 0;
+    pvStack_90 = (void *)0x0;
     auStack_a0[0] = 0x6874617008;
                     /* try { // try from 003d8ba4 to 003d8bb3 has its CatchHandler @ 003d8c58 */
     uVar4 = func_0x00171e50(param_1,auStack_a0,auStack_88);
     if ((auStack_a0[0] & 1) != 0) {
-      FUN_00166120(auStack_a0[2]);
+      FUN_00166120(pvStack_90);
     }
     if ((uVar4 & 1) != 0) {
                     /* try { // try from 003d8bcc to 003d8bcf has its CatchHandler @ 003d8c74 */
@@ -657,7 +678,7 @@ void Walaber::ZipUtilities::_handleSounds(long *param_1)
                     /* try { // try from 003d8be0 to 003d8bf3 has its CatchHandler @ 003d8c54 */
       func_0x00163060(uVar5,auStack_a0,bVar2,0xffffffff);
       if ((auStack_a0[0] & 1) != 0) {
-        FUN_00166120(auStack_a0[2]);
+        FUN_00166120(pvStack_90);
       }
     }
                     /* try { // try from 003d8c04 to 003d8c0b has its CatchHandler @ 003d8c74 */
@@ -690,7 +711,8 @@ void Walaber::ZipUtilities::_handleTextures(long *param_1)
   undefined8 uStack_b8;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
-  ulong auStack_a0 [3];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
   undefined1 auStack_88 [32];
   long lStack_68;
   
@@ -699,7 +721,7 @@ void Walaber::ZipUtilities::_handleTextures(long *param_1)
   func_0x001627a0(auStack_88);
   while (*param_1 != 0) {
     auStack_a0[1] = 0;
-    auStack_a0[2] = 0;
+    pvStack_90 = (void *)0x0;
     auStack_a0[0] = CONCAT71(auStack_a0[0]._1_7_,0xc);
     *(undefined2 *)((undefined4 *)((ulong)auStack_a0 | 1) + 1) = 0x6461;
     *(undefined4 *)((ulong)auStack_a0 | 1) = 0x6f6c6572;
@@ -707,17 +729,17 @@ void Walaber::ZipUtilities::_handleTextures(long *param_1)
                     /* try { // try from 003d8d04 to 003d8d13 has its CatchHandler @ 003d8e30 */
     uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
     if ((auStack_a0[0] & 1) != 0) {
-      FUN_00166120(auStack_a0[2]);
+      FUN_00166120(pvStack_90);
     }
                     /* try { // try from 003d8d2c to 003d8d33 has its CatchHandler @ 003d8e48 */
     if (((uVar3 & 1) != 0) && (iVar2 = func_0x00166a80(auStack_88), iVar2 != 0)) {
       auStack_a0[1] = 0;
-      auStack_a0[2] = 0;
+      pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
                     /* try { // try from 003d8d4c to 003d8d5b has its CatchHandler @ 003d8e2c */
       uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
       if ((auStack_a0[0] & 1) != 0) {
-        FUN_00166120(auStack_a0[2]);
+        FUN_00166120(pvStack_90);
       }
       if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d8d74 to 003d8d7f has its CatchHandler @ 003d8e08 */
@@ -733,7 +755,7 @@ void Walaber::ZipUtilities::_handleTextures(long *param_1)
         FUN_0016bb90(&uStack_b0);
         FUN_0016bb90(&uStack_c0);
         if ((auStack_a0[0] & 1) != 0) {
-          FUN_00166120(auStack_a0[2]);
+          FUN_00166120(pvStack_90);
         }
       }
     }
@@ -767,7 +789,8 @@ void Walaber::ZipUtilities::_handleAtlases(long *param_1)
   undefined8 uStack_b8;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
-  ulong auStack_a0 [3];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
   undefined1 auStack_88 [32];
   long lStack_68;
   
@@ -776,7 +799,7 @@ void Walaber::ZipUtilities::_handleAtlases(long *param_1)
   func_0x001627a0(auStack_88);
   while (*param_1 != 0) {
     auStack_a0[1] = 0;
-    auStack_a0[2] = 0;
+    pvStack_90 = (void *)0x0;
     auStack_a0[0] = CONCAT71(auStack_a0[0]._1_7_,0xc);
     *(undefined2 *)((undefined4 *)((ulong)auStack_a0 | 1) + 1) = 0x6461;
     *(undefined4 *)((ulong)auStack_a0 | 1) = 0x6f6c6572;
@@ -784,17 +807,17 @@ void Walaber::ZipUtilities::_handleAtlases(long *param_1)
                     /* try { // try from 003d8ed8 to 003d8ee7 has its CatchHandler @ 003d9004 */
     uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
     if ((auStack_a0[0] & 1) != 0) {
-      FUN_00166120(auStack_a0[2]);
+      FUN_00166120(pvStack_90);
     }
                     /* try { // try from 003d8f00 to 003d8f07 has its CatchHandler @ 003d901c */
     if (((uVar3 & 1) == 0) || (iVar2 = func_0x00166a80(auStack_88), iVar2 != 0)) {
       auStack_a0[1] = 0;
-      auStack_a0[2] = 0;
+      pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
                     /* try { // try from 003d8f20 to 003d8f2f has its CatchHandler @ 003d9000 */
       uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
       if ((auStack_a0[0] & 1) != 0) {
-        FUN_00166120(auStack_a0[2]);
+        FUN_00166120(pvStack_90);
       }
       if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d8f48 to 003d8f4b has its CatchHandler @ 003d901c */
@@ -810,7 +833,7 @@ void Walaber::ZipUtilities::_handleAtlases(long *param_1)
         FUN_0016bb90(&uStack_b0);
         FUN_0016bb90(&uStack_c0);
         if ((auStack_a0[0] & 1) != 0) {
-          FUN_00166120(auStack_a0[2]);
+          FUN_00166120(pvStack_90);
         }
       }
     }
@@ -842,10 +865,10 @@ void Walaber::ZipUtilities::_handleStreamedTracks(long *param_1)
   undefined8 uVar4;
   ulong *puVar5;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   undefined1 auStack_68 [32];
   long lStack_48;
   
@@ -854,12 +877,12 @@ void Walaber::ZipUtilities::_handleStreamedTracks(long *param_1)
   func_0x001627a0(auStack_68);
   while (*param_1 != 0) {
     uStack_78 = 0;
-    uStack_70 = 0;
+    pvStack_70 = (void *)0x0;
     uStack_80 = 0x6874617008;
                     /* try { // try from 003d9090 to 003d909f has its CatchHandler @ 003d91a8 */
     uVar3 = func_0x00171e50(param_1,&uStack_80,auStack_68);
     if ((uStack_80 & 1) != 0) {
-      FUN_00166120(uStack_70);
+      FUN_00166120(pvStack_70);
     }
     if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d90b8 to 003d90bb has its CatchHandler @ 003d91c0 */
@@ -874,7 +897,7 @@ void Walaber::ZipUtilities::_handleStreamedTracks(long *param_1)
       }
                     /* try { // try from 003d90e4 to 003d90ef has its CatchHandler @ 003d9194 */
       puVar5 = (ulong *)FUN_00164fb0(abStack_98,0,uVar2,uVar3);
-      uStack_70 = puVar5[2];
+      pvStack_70 = (void *)puVar5[2];
       uStack_78 = puVar5[1];
       uStack_80 = *puVar5;
       puVar5[1] = 0;
@@ -883,10 +906,10 @@ void Walaber::ZipUtilities::_handleStreamedTracks(long *param_1)
                     /* try { // try from 003d9108 to 003d9117 has its CatchHandler @ 003d917c */
       func_0x0016c4b0(uVar4,&uStack_80,0xffffffff);
       if ((uStack_80 & 1) != 0) {
-        FUN_00166120(uStack_70);
+        FUN_00166120(pvStack_70);
       }
       if ((abStack_98[0] & 1) != 0) {
-        FUN_00166120(uStack_88);
+        FUN_00166120(pvStack_88);
       }
     }
                     /* try { // try from 003d9138 to 003d913f has its CatchHandler @ 003d91c0 */
@@ -923,7 +946,8 @@ void Walaber::ZipUtilities::_handleSQLFile(long *param_1)
   undefined4 *puStack_b8;
   undefined8 *puStack_b0;
   undefined4 *puStack_a8;
-  ulong auStack_a0 [3];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
   undefined1 auStack_88 [32];
   long lStack_68;
   
@@ -931,25 +955,25 @@ void Walaber::ZipUtilities::_handleSQLFile(long *param_1)
   lStack_68 = *(long *)(lVar1 + 0x28);
   func_0x001627a0(auStack_88);
   while (*param_1 != 0) {
-    auStack_a0[2] = 0;
+    pvStack_90 = (void *)0x0;
     auStack_a0[0] = 0x16;
     builtin_strncpy((char *)((ulong)auStack_a0 | 1),"databaseKey",0xb);
     auStack_a0[1] = 0;
                     /* try { // try from 003d9268 to 003d9277 has its CatchHandler @ 003d93fc */
     uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
     if ((auStack_a0[0] & 1) != 0) {
-      FUN_00166120(auStack_a0[2]);
+      FUN_00166120(pvStack_90);
     }
     if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d9290 to 003d9297 has its CatchHandler @ 003d93f4 */
       uVar2 = func_0x00166a80(auStack_88);
       auStack_a0[1] = 0;
-      auStack_a0[2] = 0;
+      pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
                     /* try { // try from 003d92b4 to 003d92c3 has its CatchHandler @ 003d93f8 */
       uVar3 = func_0x00171e50(param_1,auStack_a0,auStack_88);
       if ((auStack_a0[0] & 1) != 0) {
-        FUN_00166120(auStack_a0[2]);
+        FUN_00166120(pvStack_90);
       }
       if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d92dc to 003d92e7 has its CatchHandler @ 003d93e0 */
@@ -974,7 +998,7 @@ void Walaber::ZipUtilities::_handleSQLFile(long *param_1)
         FUN_0016bb90(&puStack_b0);
         FUN_0016bb90(&puStack_c0);
         if ((auStack_a0[0] & 1) != 0) {
-          FUN_00166120(auStack_a0[2]);
+          FUN_00166120(pvStack_90);
         }
       }
     }
@@ -997,47 +1021,53 @@ void Walaber::ZipUtilities::_handleSQLFile(long *param_1)
 
 /* Walaber::ZipUtilities::_fileReadCallback(void*) */
 
-void Walaber::ZipUtilities::_fileReadCallback(long param_1)
+void Walaber::ZipUtilities::_fileReadCallback(void *p0)
 
 {
-  long lVar1;
-  byte bVar2;
-  int iVar3;
+  void *pvVar1;
+  long lVar2;
+  byte bVar3;
   int iVar4;
-  ulong uVar5;
-  bool bVar6;
+  int iVar5;
+  ulong uVar6;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  bool bVar7;
+  undefined1 auVar8 [16];
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined1 auStack_68 [16];
   byte bStack_58;
   undefined7 uStack_57;
   undefined1 uStack_50;
   undefined4 uStack_4f;
   undefined3 uStack_4b;
-  ulong uStack_48;
+  void *pvStack_48;
   long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
-  if (*(long *)(param_1 + 0x20) == 0) {
-    bVar6 = true;
+  lVar2 = tpidr_el0;
+  lStack_38 = *(long *)(lVar2 + 0x28);
+  if (*(long *)((long)p0 + 0x20) == 0) {
+    bVar7 = true;
     goto LAB_003d9634;
   }
   uStack_4b = 0;
   bStack_58 = 0x16;
-  uStack_48 = 0;
+  pvStack_48 = (void *)0x0;
   uStack_4f = 0x656c69;
   uStack_57 = 0x5f6574656c6564;
   uStack_50 = 0x66;
                     /* try { // try from 003d9484 to 003d948b has its CatchHandler @ 003d978c */
-  uVar5 = func_0x00173810(*(undefined8 *)(param_1 + 0x60),&bStack_58);
+  auVar8 = func_0x00173810(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
+  uVar6 = auVar8._8_8_;
   if ((bStack_58 & 1) != 0) {
-    FUN_00166120(uStack_48);
+    FUN_00166120(pvStack_48);
+    uVar6 = extraout_x1;
   }
-  if ((uVar5 & 1) == 0) {
-    bVar6 = true;
+  if ((auVar8._0_8_ & 1) == 0) {
+    bVar7 = true;
   }
   else {
     abStack_88[9] = 0;
@@ -1048,7 +1078,7 @@ void Walaber::ZipUtilities::_fileReadCallback(long param_1)
     abStack_88[0xe] = 0;
     abStack_88[0xf] = 0;
     abStack_88[0] = 0xe;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     abStack_88[1] = 0x56;
     abStack_88[2] = 0x65;
     abStack_88[3] = 0x72;
@@ -1058,13 +1088,13 @@ void Walaber::ZipUtilities::_fileReadCallback(long param_1)
     abStack_88[7] = 0x6e;
     abStack_88[8] = 0;
                     /* try { // try from 003d94cc to 003d94d7 has its CatchHandler @ 003d9784 */
-    func_0x00169040(&bStack_58,*(undefined8 *)(param_1 + 0x20),*(undefined8 *)(param_1 + 0x28),
+    func_0x00169040(&bStack_58,*(undefined8 *)((long)p0 + 0x20),*(undefined8 *)((long)p0 + 0x28),
                     abStack_88);
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
     if (CONCAT71(uStack_57,bStack_58) == 0) {
-      bVar6 = true;
+      bVar7 = true;
     }
     else {
                     /* try { // try from 003d94f4 to 003d94fb has its CatchHandler @ 003d9774 */
@@ -1079,7 +1109,7 @@ void Walaber::ZipUtilities::_fileReadCallback(long param_1)
       abStack_a0[0xd] = 0;
       abStack_a0[0xe] = 0;
       abStack_a0[0xf] = 0;
-      uStack_90 = 0;
+      pvStack_90 = (void *)0x0;
       abStack_a0[0] = 0xc;
       abStack_a0[5] = 0x65;
       abStack_a0[6] = 0x72;
@@ -1089,13 +1119,13 @@ void Walaber::ZipUtilities::_fileReadCallback(long param_1)
       abStack_a0[4] = 0x62;
       abStack_a0[7] = 0;
                     /* try { // try from 003d9528 to 003d9537 has its CatchHandler @ 003d9750 */
-      uVar5 = func_0x00171580(auStack_68,abStack_a0,abStack_88);
+      uVar6 = func_0x00171580(auStack_68,abStack_a0,abStack_88);
       if ((abStack_a0[0] & 1) != 0) {
-        FUN_00166120(uStack_90);
+        FUN_00166120(pvStack_90);
       }
-      if ((uVar5 & 1) == 0) {
+      if ((uVar6 & 1) == 0) {
 LAB_003d9604:
-        bVar6 = true;
+        bVar7 = true;
       }
       else {
         abStack_a0[9] = 0;
@@ -1106,7 +1136,7 @@ LAB_003d9604:
         abStack_a0[0xe] = 0;
         abStack_a0[0xf] = 0;
         abStack_a0[0] = 0xe;
-        uStack_90 = 0;
+        pvStack_90 = (void *)0x0;
         abStack_a0[1] = 0x76;
         abStack_a0[2] = 0x65;
         abStack_a0[3] = 0x72;
@@ -1116,11 +1146,11 @@ LAB_003d9604:
         abStack_a0[7] = 0x6e;
         abStack_a0[8] = 0;
                     /* try { // try from 003d9578 to 003d957f has its CatchHandler @ 003d974c */
-        uVar5 = func_0x00173810(*(undefined8 *)(param_1 + 0x60),abStack_a0);
+        uVar6 = func_0x00173810(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
         if ((abStack_a0[0] & 1) != 0) {
-          FUN_00166120(uStack_90);
+          FUN_00166120(pvStack_90);
         }
-        if ((uVar5 & 1) == 0) goto LAB_003d9604;
+        if ((uVar6 & 1) == 0) goto LAB_003d9604;
         abStack_a0[9] = 0;
         abStack_a0[10] = 0;
         abStack_a0[0xb] = 0;
@@ -1129,7 +1159,7 @@ LAB_003d9604:
         abStack_a0[0xe] = 0;
         abStack_a0[0xf] = 0;
         abStack_a0[0] = 0xe;
-        uStack_90 = 0;
+        pvStack_90 = (void *)0x0;
         abStack_a0[1] = 0x76;
         abStack_a0[2] = 0x65;
         abStack_a0[3] = 0x72;
@@ -1139,42 +1169,43 @@ LAB_003d9604:
         abStack_a0[7] = 0x6e;
         abStack_a0[8] = 0;
                     /* try { // try from 003d95c0 to 003d95cb has its CatchHandler @ 003d9748 */
-        func_0x00167060(*(undefined8 *)(param_1 + 0x60),abStack_a0);
-        iVar3 = func_0x00166a80();
+        func_0x00167060(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
+        iVar4 = func_0x00166a80();
         if ((abStack_a0[0] & 1) != 0) {
-          FUN_00166120(uStack_90);
+          FUN_00166120(pvStack_90);
         }
                     /* try { // try from 003d95e0 to 003d95e7 has its CatchHandler @ 003d9740 */
-        iVar4 = func_0x00166a80(abStack_88);
-        bVar6 = iVar4 < iVar3;
+        iVar5 = func_0x00166a80(abStack_88);
+        bVar7 = iVar5 < iVar4;
       }
       func_0x00167bf0(abStack_88);
     }
     func_0x00165880(&bStack_58);
+    uVar6 = extraout_x1_00;
   }
-  if (*(long *)(param_1 + 0x20) != 0) {
-    FUN_001639e0();
+  if (*(void **)((long)p0 + 0x20) != (void *)0x0) {
+    FUN_001639e0(*(void **)((long)p0 + 0x20),uVar6);
   }
 LAB_003d9634:
   uStack_4b = 0;
   bStack_58 = 0x16;
-  uStack_48 = 0;
+  pvStack_48 = (void *)0x0;
   uStack_4f = 0x656c69;
   uStack_57 = 0x5f6574656c6564;
   uStack_50 = 0x66;
                     /* try { // try from 003d9664 to 003d966b has its CatchHandler @ 003d97a4 */
-  bVar2 = func_0x00173810(*(undefined8 *)(param_1 + 0x60),&bStack_58);
+  bVar3 = func_0x00173810(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
   if ((bStack_58 & 1) != 0) {
-    FUN_00166120(uStack_48);
+    FUN_00166120(pvStack_48);
   }
-  if ((bVar6 & bVar2) == 1) {
+  if ((bVar7 & bVar3) == 1) {
     abStack_88[0xb] = 0;
     abStack_88[0xc] = 0;
     abStack_88[0xd] = 0;
     abStack_88[0xe] = 0;
     abStack_88[0xf] = 0;
     abStack_88[0] = 0x12;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     abStack_88[9] = 0x68;
     abStack_88[10] = 0;
     abStack_88[1] = 0x66;
@@ -1186,25 +1217,25 @@ LAB_003d9634:
     abStack_88[7] = 0x61;
     abStack_88[8] = 0x74;
                     /* try { // try from 003d96b8 to 003d96c7 has its CatchHandler @ 003d9790 */
-    func_0x00167060(*(undefined8 *)(param_1 + 0x60),abStack_88);
+    func_0x00167060(*(undefined8 *)((long)p0 + 0x60),abStack_88);
     func_0x00162cf0(&bStack_58);
     if ((abStack_88[0] & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
                     /* try { // try from 003d96d8 to 003d96df has its CatchHandler @ 003d9788 */
-    uVar5 = func_0x00171cf0(&bStack_58);
-    if ((uVar5 & 1) == 0) {
-      uVar5 = (ulong)&bStack_58 | 1;
+    uVar6 = func_0x00171cf0(&bStack_58);
+    if ((uVar6 & 1) == 0) {
+      pvVar1 = (void *)((ulong)&bStack_58 | 1);
       if ((bStack_58 & 1) != 0) {
-        uVar5 = uStack_48;
+        pvVar1 = pvStack_48;
       }
-      FUN_0016ddd0("Delete failed for file at path: %s",uVar5);
+      FUN_0016ddd0("Delete failed for file at path: %s",pvVar1);
     }
     if ((bStack_58 & 1) != 0) {
-      FUN_00166120(uStack_48);
+      FUN_00166120(pvStack_48);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
+  if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
   }
   FUN_00164ff0();
@@ -1219,13 +1250,13 @@ LAB_003d9634:
 
 /* Walaber::ZipUtilities::_sqlScriptRead(void*) */
 
-void Walaber::ZipUtilities::_sqlScriptRead(long param_1)
+void Walaber::ZipUtilities::_sqlScriptRead(void *p0)
 
 {
-  if (*(int *)(param_1 + 0x34) != 0) {
+  if (*(int *)((long)p0 + 0x34) != 0) {
     return;
   }
-  func_0x00171cf0(param_1 + 0x18);
+  func_0x00171cf0((long)p0 + 0x18);
   return;
 }
 

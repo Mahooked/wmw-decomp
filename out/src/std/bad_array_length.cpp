@@ -23,10 +23,10 @@ void std::bad_array_length::bad_array_length(undefined8 *param_1)
 
 /* std::bad_array_length::~bad_array_length() */
 
-void std::bad_array_length::~bad_array_length(void)
+void std::bad_array_length::~bad_array_length(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 

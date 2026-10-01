@@ -8,219 +8,220 @@
 
 /* WaterConcept::ScreenLoader::screenFromName(void*) */
 
-void WaterConcept::ScreenLoader::screenFromName(undefined8 param_1,undefined4 *param_2)
+void * WaterConcept::ScreenLoader::screenFromName(void *p0)
 
 {
   undefined8 uVar1;
+  undefined4 *in_x1;
   
-  *(undefined8 *)(param_2 + 2) = 0;
-  switch(*param_2) {
+  *(undefined8 *)(in_x1 + 2) = 0;
+  switch(*in_x1) {
   case 1:
     uVar1 = FUN_00164060(0x478);
                     /* try { // try from 005a2ef0 to 005a2ef3 has its CatchHandler @ 005a32ac */
-    func_0x001622c0();
+    p0 = (void *)func_0x001622c0();
     break;
   case 2:
     uVar1 = FUN_00164060(0x2e8);
                     /* try { // try from 005a2f04 to 005a2f07 has its CatchHandler @ 005a32a8 */
-    func_0x00169710();
+    p0 = (void *)func_0x00169710();
     break;
   case 3:
     uVar1 = FUN_00164060(0x2c8);
                     /* try { // try from 005a2f18 to 005a2f1b has its CatchHandler @ 005a32a4 */
-    func_0x00167680();
+    p0 = (void *)func_0x00167680();
     break;
   case 4:
     uVar1 = FUN_00164060(0x450);
                     /* try { // try from 005a2f2c to 005a2f2f has its CatchHandler @ 005a32a0 */
-    func_0x00162a50();
+    p0 = (void *)func_0x00162a50();
     break;
   case 5:
     uVar1 = FUN_00164060(0x240);
                     /* try { // try from 005a2f40 to 005a2f43 has its CatchHandler @ 005a329c */
-    func_0x00167420();
+    p0 = (void *)func_0x00167420();
     break;
   case 6:
     uVar1 = FUN_00164060(0xa0);
                     /* try { // try from 005a2f54 to 005a2f57 has its CatchHandler @ 005a3298 */
-    func_0x00168650();
+    p0 = (void *)func_0x00168650();
     break;
   case 7:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a2f68 to 005a2f6b has its CatchHandler @ 005a3294 */
-    func_0x001621b0();
+    p0 = (void *)func_0x001621b0();
     break;
   case 8:
     uVar1 = FUN_00164060(0x5b0);
                     /* try { // try from 005a2f7c to 005a2f7f has its CatchHandler @ 005a3290 */
-    func_0x00173bf0();
+    p0 = (void *)func_0x00173bf0();
     break;
   case 9:
     uVar1 = FUN_00164060(0x238);
                     /* try { // try from 005a2f90 to 005a2f93 has its CatchHandler @ 005a328c */
-    func_0x001646b0();
+    p0 = (void *)func_0x001646b0();
     break;
   case 10:
     uVar1 = FUN_00164060(0xd0);
                     /* try { // try from 005a2fa4 to 005a2fa7 has its CatchHandler @ 005a3288 */
-    func_0x00174220();
+    p0 = (void *)func_0x00174220();
     break;
   case 0xb:
     uVar1 = FUN_00164060(0x158);
                     /* try { // try from 005a2fb8 to 005a2fbb has its CatchHandler @ 005a3284 */
-    func_0x00169cf0();
+    p0 = (void *)func_0x00169cf0();
     break;
   case 0xc:
     uVar1 = FUN_00164060(0xa8);
                     /* try { // try from 005a2fcc to 005a2fcf has its CatchHandler @ 005a3280 */
-    func_0x0016f530();
+    p0 = (void *)func_0x0016f530();
     break;
   case 0xd:
     uVar1 = FUN_00164060(0x198);
                     /* try { // try from 005a2fe0 to 005a2fe3 has its CatchHandler @ 005a327c */
-    func_0x0016cfb0();
+    p0 = (void *)func_0x0016cfb0();
     break;
   case 0xe:
     uVar1 = FUN_00164060(0x198);
                     /* try { // try from 005a2ff4 to 005a2ff7 has its CatchHandler @ 005a3278 */
-    func_0x0016dd80();
+    p0 = (void *)func_0x0016dd80();
     break;
   case 0xf:
     uVar1 = FUN_00164060(0x370);
                     /* try { // try from 005a3008 to 005a300b has its CatchHandler @ 005a3274 */
-    func_0x0016e170();
+    p0 = (void *)func_0x0016e170();
     break;
   case 0x10:
     uVar1 = FUN_00164060(0x120);
                     /* try { // try from 005a301c to 005a301f has its CatchHandler @ 005a3270 */
-    func_0x0016f870();
+    p0 = (void *)func_0x0016f870();
     break;
   case 0x11:
     uVar1 = FUN_00164060(0xd8);
                     /* try { // try from 005a3030 to 005a3033 has its CatchHandler @ 005a326c */
-    func_0x0016f8c0();
+    p0 = (void *)func_0x0016f8c0();
     break;
   case 0x12:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a3044 to 005a3047 has its CatchHandler @ 005a3268 */
-    func_0x00164cc0();
+    p0 = (void *)func_0x00164cc0();
     break;
   case 0x13:
     uVar1 = FUN_00164060(0xd0);
                     /* try { // try from 005a3058 to 005a305b has its CatchHandler @ 005a3264 */
-    func_0x0016a4a0();
+    p0 = (void *)func_0x0016a4a0();
     break;
   case 0x14:
     uVar1 = FUN_00164060(0xc0);
                     /* try { // try from 005a306c to 005a306f has its CatchHandler @ 005a3260 */
-    func_0x00168aa0();
+    p0 = (void *)func_0x00168aa0();
     break;
   case 0x15:
     uVar1 = FUN_00164060(0xa8);
                     /* try { // try from 005a3080 to 005a3083 has its CatchHandler @ 005a325c */
-    func_0x00167c90();
+    p0 = (void *)func_0x00167c90();
     break;
   case 0x16:
     uVar1 = FUN_00164060(0xb0);
                     /* try { // try from 005a3094 to 005a3097 has its CatchHandler @ 005a3258 */
-    func_0x00162100();
+    p0 = (void *)func_0x00162100();
     break;
   case 0x17:
     uVar1 = FUN_00164060(0x168);
                     /* try { // try from 005a30a8 to 005a30ab has its CatchHandler @ 005a3254 */
-    func_0x00164600();
+    p0 = (void *)func_0x00164600();
     break;
   case 0x18:
     uVar1 = FUN_00164060(0xf0);
                     /* try { // try from 005a30bc to 005a30bf has its CatchHandler @ 005a3250 */
-    func_0x0016e3f0();
+    p0 = (void *)func_0x0016e3f0();
     break;
   case 0x19:
     uVar1 = FUN_00164060(0x260);
                     /* try { // try from 005a30d0 to 005a30d3 has its CatchHandler @ 005a324c */
-    func_0x00165f70();
+    p0 = (void *)func_0x00165f70();
     break;
   case 0x1a:
     uVar1 = FUN_00164060(0xf8);
                     /* try { // try from 005a30e4 to 005a30e7 has its CatchHandler @ 005a3248 */
-    func_0x0016f510();
+    p0 = (void *)func_0x0016f510();
     break;
   case 0x1b:
     uVar1 = FUN_00164060(0x118);
                     /* try { // try from 005a31fc to 005a31ff has its CatchHandler @ 005a3210 */
-    func_0x00162f10();
+    p0 = (void *)func_0x00162f10();
     break;
   case 0x1c:
     uVar1 = FUN_00164060(0xf8);
                     /* try { // try from 005a30f8 to 005a30fb has its CatchHandler @ 005a3244 */
-    func_0x0016ad00();
+    p0 = (void *)func_0x0016ad00();
     break;
   case 0x1d:
     uVar1 = FUN_00164060(0x450);
                     /* try { // try from 005a310c to 005a310f has its CatchHandler @ 005a3240 */
-    func_0x00162a50();
+    p0 = (void *)func_0x00162a50();
     break;
   case 0x1e:
     uVar1 = FUN_00164060(0xd8);
                     /* try { // try from 005a3120 to 005a3123 has its CatchHandler @ 005a323c */
-    func_0x001634f0();
+    p0 = (void *)func_0x001634f0();
     break;
   case 0x1f:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a3134 to 005a3137 has its CatchHandler @ 005a3238 */
-    func_0x00168200();
+    p0 = (void *)func_0x00168200();
     break;
   case 0x20:
     uVar1 = FUN_00164060(0xa8);
                     /* try { // try from 005a3148 to 005a314b has its CatchHandler @ 005a3234 */
-    func_0x00172240();
+    p0 = (void *)func_0x00172240();
     break;
   case 0x21:
     uVar1 = FUN_00164060(0xd0);
                     /* try { // try from 005a315c to 005a315f has its CatchHandler @ 005a3230 */
-    func_0x0016e020();
+    p0 = (void *)func_0x0016e020();
     break;
   case 0x22:
     uVar1 = FUN_00164060(0x140);
                     /* try { // try from 005a3170 to 005a3173 has its CatchHandler @ 005a322c */
-    func_0x00162530();
+    p0 = (void *)func_0x00162530();
     break;
   case 0x23:
     uVar1 = FUN_00164060(0x100);
                     /* try { // try from 005a3184 to 005a3187 has its CatchHandler @ 005a3228 */
-    func_0x00161cd0();
+    p0 = (void *)func_0x00161cd0();
     break;
   case 0x24:
     uVar1 = FUN_00164060(0xd8);
                     /* try { // try from 005a3198 to 005a319b has its CatchHandler @ 005a3224 */
-    func_0x00163420();
+    p0 = (void *)func_0x00163420();
     break;
   case 0x25:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a31ac to 005a31af has its CatchHandler @ 005a3220 */
-    func_0x0016d570();
+    p0 = (void *)func_0x0016d570();
     break;
   case 0x26:
     uVar1 = FUN_00164060(0xc0);
                     /* try { // try from 005a31c0 to 005a31c3 has its CatchHandler @ 005a321c */
-    func_0x00171bc0();
+    p0 = (void *)func_0x00171bc0();
     break;
   case 0x27:
     uVar1 = FUN_00164060(0x120);
                     /* try { // try from 005a31d4 to 005a31d7 has its CatchHandler @ 005a3218 */
-    func_0x00165e40();
+    p0 = (void *)func_0x00165e40();
     break;
   case 0x28:
     uVar1 = FUN_00164060(0x108);
                     /* try { // try from 005a31e8 to 005a31eb has its CatchHandler @ 005a3214 */
-    func_0x001635c0();
+    p0 = (void *)func_0x001635c0();
     break;
   default:
     goto switchD_005a2ee0_default;
   }
-  *(undefined8 *)(param_2 + 2) = uVar1;
+  *(undefined8 *)(in_x1 + 2) = uVar1;
 switchD_005a2ee0_default:
-  return;
+  return p0;
 }
 
 

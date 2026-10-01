@@ -12,11 +12,12 @@
 
 void std::__ndk1::
      vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __push_back_slow_path<Walaber::Widget_IconList::Icon>(long *param_1,long *param_2)
+     __push_back_slow_path<Walaber::Widget_IconList::Icon>(Walaber__Widget_IconList__Icon **p0)
 
 {
   ulong uVar1;
   long lVar2;
+  long *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -28,38 +29,38 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
+  lVar3 = ((long)p0[1] - (long)*p0 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar7 = param_1[2] - *param_1 >> 4;
+  lVar7 = (long)p0[2] - (long)*p0 >> 4;
   uVar5 = 0x555555555555555;
   if (((ulong)(lVar7 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
      (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x00168190(auStack_60,uVar5,lVar3,param_1 + 2);
-  lVar3 = *param_2;
+  func_0x00168190(auStack_60,uVar5,lVar3,p0 + 2);
+  lVar3 = *in_x1;
   *plStack_50 = lVar3;
-  piVar6 = (int *)param_2[1];
+  piVar6 = (int *)in_x1[1];
   plStack_50[1] = (long)piVar6;
   if (lVar3 != 0) {
     *piVar6 = *piVar6 + 1;
   }
-  lVar7 = param_2[3];
-  lVar3 = param_2[2];
-  plStack_50[4] = param_2[4];
+  lVar7 = in_x1[3];
+  lVar3 = in_x1[2];
+  plStack_50[4] = in_x1[4];
   plStack_50[3] = lVar7;
   plStack_50[2] = lVar3;
-  param_2[3] = 0;
-  param_2[4] = 0;
-  param_2[2] = 0;
-  *(int *)(plStack_50 + 5) = (int)param_2[5];
+  in_x1[3] = 0;
+  in_x1[4] = 0;
+  in_x1[2] = 0;
+  *(int *)(plStack_50 + 5) = (int)in_x1[5];
   plStack_50 = plStack_50 + 6;
                     /* try { // try from 0037eea8 to 0037eeb3 has its CatchHandler @ 0037eeec */
-  func_0x00172d50(param_1,auStack_60);
+  func_0x00172d50(p0,auStack_60);
   func_0x0016f0a0(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

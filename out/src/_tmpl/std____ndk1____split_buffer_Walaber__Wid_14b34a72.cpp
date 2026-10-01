@@ -55,7 +55,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -66,13 +66,13 @@ void std::__ndk1::
   while (lVar2 != lVar1) {
     param_1[2] = lVar2 + -0x30;
     if ((*(byte *)(lVar2 + -0x20) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x10));
+      FUN_00166120(*(void **)(lVar2 + -0x10));
     }
     FUN_00166b20(lVar2 + -0x30);
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

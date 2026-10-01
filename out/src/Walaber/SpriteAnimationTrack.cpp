@@ -21,7 +21,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
   undefined8 uStack_80;
   ulong uStack_78;
   undefined8 uStack_70;
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined2 uStack_60;
   long lStack_58;
   
@@ -32,7 +32,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
     uStack_60 = 0;
     uStack_78 = 0;
     uStack_80 = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     uStack_70 = 0;
     puVar2 = *(undefined8 **)(param_3 + 0x28);
     if (puVar2 < *(undefined8 **)(param_3 + 0x30)) {
@@ -41,7 +41,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
       puVar2[2] = 0;
       puVar2[1] = 0;
       uStack_70 = 0;
-      uStack_68 = 0;
+      pvStack_68 = (void *)0x0;
       uStack_78 = 0;
       *(undefined2 *)(puVar2 + 4) = 0;
       *(long *)(param_3 + 0x28) = *(long *)(param_3 + 0x28) + 0x28;
@@ -50,7 +50,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
                     /* try { // try from 00333d58 to 00333d63 has its CatchHandler @ 00333dd4 */
       func_0x00171e00(plVar1,&uStack_80);
       if ((uStack_78 & 1) != 0) {
-        FUN_00166120(uStack_68);
+        FUN_00166120(pvStack_68);
       }
     }
     puVar4 = (undefined4 *)*plVar1;
@@ -59,12 +59,12 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
     uStack_60 = 0;
     uStack_78 = 0;
     uStack_80 = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     uStack_70 = 0;
                     /* try { // try from 00333ce8 to 00333cf3 has its CatchHandler @ 00333dd8 */
     puVar4 = (undefined4 *)func_0x0016fac0(plVar1,*(undefined8 *)(param_3 + 0x28),&uStack_80);
     if ((uStack_78 & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
   }
   *puVar4 = param_1;
@@ -88,12 +88,13 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
 
 /* Walaber::SpriteAnimationTrack::apply(float) */
 
-void Walaber::SpriteAnimationTrack::apply(float param_1,long *param_2)
+void Walaber::SpriteAnimationTrack::apply(float p0)
 
 {
   long *plVar1;
   long lVar2;
   long lVar3;
+  long *in_x0;
   int iVar4;
   long lVar5;
   byte *pbVar6;
@@ -105,57 +106,57 @@ void Walaber::SpriteAnimationTrack::apply(float param_1,long *param_2)
   
   lVar3 = tpidr_el0;
   lStack_78 = *(long *)(lVar3 + 0x28);
-  iVar4 = *(int *)((long)param_2 + 0x3c);
-  if (iVar4 != (int)param_2[8] + -1) {
-    lVar8 = param_2[4];
-    plVar1 = param_2 + 1;
+  iVar4 = *(int *)((long)in_x0 + 0x3c);
+  if (iVar4 != (int)in_x0[8] + -1) {
+    lVar8 = in_x0[4];
+    plVar1 = in_x0 + 1;
     pfVar7 = (float *)(lVar8 + (long)(iVar4 + 1) * 0x28);
     while( true ) {
-      fVar9 = param_1 - *pfVar7;
+      fVar9 = p0 - *pfVar7;
       if (fVar9 < 0.0) {
         fVar9 = -fVar9;
       }
-      if ((1e-05 <= fVar9) && (param_1 <= *(float *)(lVar8 + (long)iVar4 * 0x28 + 0x28))) break;
-      if ((*plVar1 != 0) && (*(int *)param_2[2] != 0)) {
+      if ((1e-05 <= fVar9) && (p0 <= *(float *)(lVar8 + (long)iVar4 * 0x28 + 0x28))) break;
+      if ((*plVar1 != 0) && (*(int *)in_x0[2] != 0)) {
         func_0x001655f0();
-        iVar4 = *(int *)((long)param_2 + 0x3c);
+        iVar4 = *(int *)((long)in_x0 + 0x3c);
         if (iVar4 < 1) {
-          lVar8 = param_2[4];
+          lVar8 = in_x0[4];
         }
         else {
-          lVar8 = param_2[4];
+          lVar8 = in_x0[4];
           if (*(char *)(lVar8 + (long)iVar4 * 0x28 + 0x20) != '\0') {
-            *(int *)(param_2[1] + 0x1c) = (int)param_2[7];
+            *(int *)(in_x0[1] + 0x1c) = (int)in_x0[7];
           }
         }
       }
       lVar2 = (long)iVar4 + 1;
-      *(int *)((long)param_2 + 0x3c) = (int)lVar2;
+      *(int *)((long)in_x0 + 0x3c) = (int)lVar2;
       if (*(char *)(lVar8 + lVar2 * 0x28 + 0x21) == '\0') {
         pfVar7 = (float *)(lVar8 + lVar2 * 0x28);
-        func_0x00168410(auStack_88,(param_1 - *pfVar7) + pfVar7[1],*param_2,pfVar7 + 2);
+        func_0x00168410(auStack_88,(p0 - *pfVar7) + pfVar7[1],*in_x0,pfVar7 + 2);
         func_0x00171ee0(plVar1,auStack_88);
         func_0x0016d7e0(auStack_88);
-        lVar5 = param_2[1];
-        if (((lVar5 != 0) && (*(int *)param_2[2] != 0)) &&
+        lVar5 = in_x0[1];
+        if (((lVar5 != 0) && (*(int *)in_x0[2] != 0)) &&
            (*(char *)(lVar8 + lVar2 * 0x28 + 0x20) != '\0')) {
-          *(undefined4 *)(param_2 + 7) = *(undefined4 *)(lVar5 + 0x1c);
+          *(undefined4 *)(in_x0 + 7) = *(undefined4 *)(lVar5 + 0x1c);
           *(undefined4 *)(lVar5 + 0x1c) = 1;
         }
       }
       else {
         lVar5 = lVar8 + lVar2 * 0x28;
-        func_0x00168410(auStack_88,*(undefined4 *)(lVar5 + 4),*param_2,(byte *)(lVar5 + 8));
+        func_0x00168410(auStack_88,*(undefined4 *)(lVar5 + 4),*in_x0,(byte *)(lVar5 + 8));
         func_0x00171ee0(plVar1,auStack_88);
         func_0x0016d7e0(auStack_88);
-        if ((param_2[1] == 0) || (*(int *)param_2[2] == 0)) {
+        if ((in_x0[1] == 0) || (*(int *)in_x0[2] == 0)) {
           if ((*(byte *)(lVar5 + 8) & 1) == 0) {
             lVar5 = lVar5 + 9;
           }
           else {
             lVar5 = *(long *)(lVar8 + lVar2 * 0x28 + 0x18);
           }
-          pbVar6 = (byte *)param_2[3];
+          pbVar6 = (byte *)in_x0[3];
           if ((*pbVar6 & 1) == 0) {
             pbVar6 = pbVar6 + 1;
           }
@@ -163,15 +164,15 @@ void Walaber::SpriteAnimationTrack::apply(float param_1,long *param_2)
             pbVar6 = *(byte **)(pbVar6 + 0x10);
           }
           FUN_0016ddd0("MISSING SYMBOL ANIMATION: %s in Sprite \'%s\' in Animation \'%s\'\n",lVar5,
-                       *param_2 + 0x24,pbVar6);
+                       *in_x0 + 0x24,pbVar6);
         }
         else {
           func_0x00161e80();
         }
       }
-      iVar4 = *(int *)((long)param_2 + 0x3c);
-      if (iVar4 == (int)param_2[8] + -1) break;
-      lVar8 = param_2[4];
+      iVar4 = *(int *)((long)in_x0 + 0x3c);
+      if (iVar4 == (int)in_x0[8] + -1) break;
+      lVar8 = in_x0[4];
       pfVar7 = (float *)(lVar8 + (long)(iVar4 + 1) * 0x28);
     }
   }
@@ -213,18 +214,20 @@ void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(undefined8 *param_1)
 
 /* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::Sprite*) */
 
-void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(undefined8 *param_1,undefined8 param_2)
+void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__Sprite *p0)
 
 {
-  param_1[5] = 0;
-  param_1[6] = 0;
-  param_1[3] = 0;
-  param_1[4] = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = param_2;
-  *(undefined4 *)(param_1 + 7) = 0;
-  *(undefined8 *)((long)param_1 + 0x3c) = 0xffffffff;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x28) = 0;
+  *(undefined8 *)(p0 + 0x30) = 0;
+  *(undefined8 *)(p0 + 0x18) = 0;
+  *(undefined8 *)(p0 + 0x20) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)p0 = in_x1;
+  *(undefined4 *)(p0 + 0x38) = 0;
+  *(undefined8 *)(p0 + 0x3c) = 0xffffffff;
   return;
 }
 
@@ -236,25 +239,26 @@ void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(undefined8 *param_1,und
 
 /* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::SpriteAnimationTrack const&) */
 
-void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(undefined8 *param_1,undefined8 *param_2)
+void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__SpriteAnimationTrack *p0)
 
 {
+  undefined8 *in_x1;
   int *piVar1;
   long lVar2;
   
-  *param_1 = *param_2;
-  lVar2 = param_2[1];
-  param_1[1] = lVar2;
-  piVar1 = (int *)param_2[2];
-  param_1[2] = piVar1;
+  *(undefined8 *)p0 = *in_x1;
+  lVar2 = in_x1[1];
+  *(long *)(p0 + 8) = lVar2;
+  piVar1 = (int *)in_x1[2];
+  *(int **)(p0 + 0x10) = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_1[3] = param_2[3];
+  *(undefined8 *)(p0 + 0x18) = in_x1[3];
                     /* try { // try from 0033a5c4 to 0033a5c7 has its CatchHandler @ 0033a5e8 */
-  func_0x0016ff70(param_1 + 4,param_2 + 4);
-  param_1[7] = param_2[7];
-  *(undefined4 *)(param_1 + 8) = *(undefined4 *)(param_2 + 8);
+  func_0x0016ff70(p0 + 0x20,in_x1 + 4);
+  *(undefined8 *)(p0 + 0x38) = in_x1[7];
+  *(undefined4 *)(p0 + 0x40) = *(undefined4 *)(in_x1 + 8);
   return;
 }
 
@@ -266,18 +270,21 @@ void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(undefined8 *param_1,und
 
 /* Walaber::SpriteAnimationTrack::TEMPNAMEPLACEHOLDERVALUE(Walaber::SpriteAnimationTrack const&) */
 
-undefined8 * Walaber::SpriteAnimationTrack::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__SpriteAnimationTrack *
+Walaber::SpriteAnimationTrack::operator=(Walaber__SpriteAnimationTrack *p0)
 
 {
-  *param_1 = *param_2;
-  func_0x00171ee0(param_1 + 1,param_2 + 1);
-  param_1[3] = param_2[3];
-  if (param_1 != param_2) {
-    func_0x001633f0(param_1 + 4,param_2[4],param_2[5]);
+  Walaber__SpriteAnimationTrack *in_x1;
+  
+  *(undefined8 *)p0 = *(undefined8 *)in_x1;
+  func_0x00171ee0(p0 + 8,in_x1 + 8);
+  *(undefined8 *)(p0 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
+  if (p0 != in_x1) {
+    func_0x001633f0(p0 + 0x20,*(undefined8 *)(in_x1 + 0x20),*(undefined8 *)(in_x1 + 0x28));
   }
-  param_1[7] = param_2[7];
-  *(undefined4 *)(param_1 + 8) = *(undefined4 *)(param_2 + 8);
-  return param_1;
+  *(undefined8 *)(p0 + 0x38) = *(undefined8 *)(in_x1 + 0x38);
+  *(undefined4 *)(p0 + 0x40) = *(undefined4 *)(in_x1 + 0x40);
+  return p0;
 }
 
 

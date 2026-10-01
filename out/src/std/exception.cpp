@@ -8,10 +8,10 @@
 
 /* std::exception::~exception() */
 
-void std::exception::~exception(void)
+void std::exception::~exception(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 

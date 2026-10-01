@@ -25,11 +25,11 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
   undefined8 uVar11;
   ulong uVar12;
   ulong uVar13;
-  ulong uVar14;
+  ulong p0;
+  int iVar14;
   int iVar15;
-  int iVar16;
+  float fVar16;
   float fVar17;
-  float fVar18;
   undefined8 uStack_108;
   undefined8 uStack_100;
   undefined8 uStack_f8;
@@ -43,9 +43,9 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
   uint auStack_d0 [4];
   undefined8 uStack_c0;
   byte abStack_b8 [16];
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   undefined8 uStack_88;
   long lStack_80;
   
@@ -66,7 +66,7 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
   abStack_b8[0xd] = 0;
   abStack_b8[0xe] = 0;
   abStack_b8[0xf] = 0;
-  uStack_a8 = 0;
+  pvStack_a8 = (void *)0x0;
   abStack_b8[0] = 0x10;
   abStack_b8[1] = 0x46;
   abStack_b8[2] = 0x6c;
@@ -80,10 +80,10 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
                     /* try { // try from 00359114 to 00359123 has its CatchHandler @ 003594e8 */
   lVar7 = func_0x00164c30(abStack_a0,abStack_b8,&uStack_88);
   if ((abStack_b8[0] & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
   if ((abStack_a0[0] & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   if (lVar7 == 0) goto LAB_0035946c;
                     /* try { // try from 0035914c to 003591a7 has its CatchHandler @ 00359518 */
@@ -127,13 +127,13 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
     if (uVar12 != 0) goto LAB_00359270;
   }
   else {
-    uVar14 = uVar12 + 0x10 & 0xfffffffffffffff0;
-    uVar13 = FUN_00164060(uVar14);
-    uStack_e8 = (uint)uVar14 | 1;
+    p0 = uVar12 + 0x10 & 0xfffffffffffffff0;
+    uVar13 = FUN_00164060(p0);
+    uStack_e8 = (uint)p0 | 1;
     fStack_dc = (float)(uVar12 >> 0x20);
     fStack_d8 = (float)uVar13;
     uStack_d4 = (undefined4)(uVar13 >> 0x20);
-    fStack_e4 = (float)(uVar14 >> 0x20);
+    fStack_e4 = (float)(p0 >> 0x20);
     fStack_e0 = (float)uVar12;
 LAB_00359270:
     FUN_001715e0(uVar13,uVar11,uVar12);
@@ -153,15 +153,15 @@ LAB_00359270:
   FUN_0016bb90(&uStack_f8);
   FUN_0016bb90(&uStack_108);
   if ((uStack_e8 & 1) != 0) {
-    FUN_00166120(CONCAT44(uStack_d4,fStack_d8));
+    FUN_00166120((void *)CONCAT44(uStack_d4,fStack_d8));
   }
   lVar7 = *(long *)(lVar7 + 0x18);
   if (lVar7 != 0) {
-    iVar16 = (int)(float)uVar9;
+    iVar15 = (int)(float)uVar9;
     uVar10 = NEON_fmov(0x3f800000,4);
-    uVar9 = NEON_scvtf(CONCAT44((int)(float)((ulong)uVar9 >> 0x20),iVar16),4);
-    fVar17 = (float)uVar10 / (float)uVar9;
-    fVar18 = (float)((ulong)uVar10 >> 0x20) / (float)((ulong)uVar9 >> 0x20);
+    uVar9 = NEON_scvtf(CONCAT44((int)(float)((ulong)uVar9 >> 0x20),iVar15),4);
+    fVar16 = (float)uVar10 / (float)uVar9;
+    fVar17 = (float)((ulong)uVar10 >> 0x20) / (float)((ulong)uVar9 >> 0x20);
     do {
                     /* try { // try from 0035932c to 00359333 has its CatchHandler @ 00359520 */
       iVar6 = FUN_00162900(*(undefined8 *)(lVar7 + 0x10),"Frame");
@@ -176,18 +176,18 @@ LAB_00359270:
         func_0x00170360(uVar9,"%d",auStack_d0);
         (*(code *)xmlFree)(uVar9);
         iVar6 = -1;
-        iVar15 = iVar16 + auStack_d0[0];
+        iVar14 = iVar15 + auStack_d0[0];
         do {
-          iVar15 = iVar15 - iVar16;
+          iVar14 = iVar14 - iVar15;
           iVar6 = iVar6 + 1;
-        } while (iVar16 <= iVar15);
+        } while (iVar15 <= iVar14);
                     /* try { // try from 0035939c to 0035945f has its CatchHandler @ 00359524 */
-        FUN_00166450("Walaber",1,"id[%d] maps to [%d][%d]\n",auStack_d0[0],iVar15,iVar6);
-        uVar9 = NEON_scvtf(CONCAT44(iVar6,iVar15),4);
-        fStack_e4 = fVar17 * (float)uVar9;
-        fStack_e0 = fVar18 * (float)((ulong)uVar9 >> 0x20);
-        fStack_dc = fVar17;
-        fStack_d8 = fVar18;
+        FUN_00166450("Walaber",1,"id[%d] maps to [%d][%d]\n",auStack_d0[0],iVar14,iVar6);
+        uVar9 = NEON_scvtf(CONCAT44(iVar6,iVar14),4);
+        fStack_e4 = fVar16 * (float)uVar9;
+        fStack_e0 = fVar17 * (float)((ulong)uVar9 >> 0x20);
+        fStack_dc = fVar16;
+        fStack_d8 = fVar17;
         lVar8 = FUN_00171ed0(lVar7,"duration");
         (*(code *)xmlFree)();
         uVar2 = uVar3;
@@ -229,34 +229,35 @@ LAB_0035946c:
 
 /* Walaber::Flipbook::update(float) */
 
-void Walaber::Flipbook::update(float param_1,long param_2)
+void Walaber::Flipbook::update(float p0)
 
 {
   int iVar1;
+  long in_x0;
   int iVar2;
   ulong uVar3;
   float fVar4;
   float fVar5;
   
-  fVar4 = *(float *)(param_2 + 0x2c);
-  if (fVar4 < param_1) {
-    uVar3 = (*(long *)(param_2 + 0x18) - *(long *)(param_2 + 0x10) >> 2) * -0x3333333333333333;
+  fVar4 = *(float *)(in_x0 + 0x2c);
+  if (fVar4 < p0) {
+    uVar3 = (*(long *)(in_x0 + 0x18) - *(long *)(in_x0 + 0x10) >> 2) * -0x3333333333333333;
     fVar5 = fVar4;
-    iVar2 = *(int *)(param_2 + 0x28);
+    iVar2 = *(int *)(in_x0 + 0x28);
     do {
       iVar1 = 0;
       if ((ulong)(long)(iVar2 + 1) <= uVar3 && uVar3 - (long)(iVar2 + 1) != 0) {
         iVar1 = iVar2 + 1;
       }
-      fVar4 = *(float *)(*(long *)(param_2 + 0x10) + (long)iVar1 * 0x14);
-      param_1 = param_1 - fVar5;
+      fVar4 = *(float *)(*(long *)(in_x0 + 0x10) + (long)iVar1 * 0x14);
+      p0 = p0 - fVar5;
       fVar5 = fVar4;
       iVar2 = iVar1;
-    } while (fVar4 < param_1);
-    *(int *)(param_2 + 0x28) = iVar1;
-    *(float *)(param_2 + 0x2c) = fVar4;
+    } while (fVar4 < p0);
+    *(int *)(in_x0 + 0x28) = iVar1;
+    *(float *)(in_x0 + 0x2c) = fVar4;
   }
-  *(float *)(param_2 + 0x2c) = fVar4 - param_1;
+  *(float *)(in_x0 + 0x2c) = fVar4 - p0;
   return;
 }
 

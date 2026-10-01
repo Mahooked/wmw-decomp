@@ -18,39 +18,41 @@ undefined1  [16]
 std::__ndk1::
 __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
 ::__emplace_unique_key_args<WaterConcept::InteractiveObject*,WaterConcept::InteractiveObject*const&>
-          (long param_1,ulong *param_2,undefined8 *param_3)
+          (WaterConcept__InteractiveObject **p0,WaterConcept__InteractiveObject **p1)
 
 {
   bool bVar1;
-  long *plVar2;
-  long *plVar3;
-  long *plVar4;
+  WaterConcept__InteractiveObject *pWVar2;
+  undefined8 *in_x2;
+  WaterConcept__InteractiveObject *pWVar3;
+  WaterConcept__InteractiveObject *pWVar4;
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
-  plVar4 = plVar3;
-  if ((long *)*plVar3 != (long *)0x0) {
-    plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+  pWVar3 = (WaterConcept__InteractiveObject *)(p0 + 1);
+  pWVar4 = pWVar3;
+  if (*(WaterConcept__InteractiveObject **)pWVar3 != (WaterConcept__InteractiveObject *)0x0) {
+    pWVar2 = *(WaterConcept__InteractiveObject **)pWVar3;
+    pWVar4 = (WaterConcept__InteractiveObject *)(p0 + 1);
     do {
-      while (plVar3 = plVar2, *param_2 < (ulong)plVar3[4]) {
-        plVar2 = (long *)*plVar3;
-        plVar4 = plVar3;
-        if ((long *)*plVar3 == (long *)0x0) goto LAB_00495da8;
+      while (pWVar3 = pWVar2, *p1 < *(WaterConcept__InteractiveObject **)(pWVar3 + 0x20)) {
+        pWVar2 = *(WaterConcept__InteractiveObject **)pWVar3;
+        pWVar4 = pWVar3;
+        if (*(WaterConcept__InteractiveObject **)pWVar3 == (WaterConcept__InteractiveObject *)0x0)
+        goto LAB_00495da8;
       }
-      if (*param_2 <= (ulong)plVar3[4]) break;
-      plVar4 = plVar3 + 1;
-      plVar2 = (long *)*plVar4;
-    } while ((long *)*plVar4 != (long *)0x0);
+      if (*p1 <= *(WaterConcept__InteractiveObject **)(pWVar3 + 0x20)) break;
+      pWVar4 = pWVar3 + 8;
+      pWVar2 = *(WaterConcept__InteractiveObject **)pWVar4;
+    } while (*(WaterConcept__InteractiveObject **)pWVar4 != (WaterConcept__InteractiveObject *)0x0);
   }
 LAB_00495da8:
-  lVar5 = *plVar4;
+  lVar5 = *(long *)pWVar4;
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = FUN_00164060(0x28);
-    *(undefined8 *)(lVar5 + 0x20) = *param_3;
-    func_0x00172ba0(param_1,plVar3,plVar4,lVar5);
+    *(undefined8 *)(lVar5 + 0x20) = *in_x2;
+    func_0x00172ba0(p0,pWVar3,pWVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;

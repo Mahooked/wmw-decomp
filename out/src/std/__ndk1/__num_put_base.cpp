@@ -8,43 +8,42 @@
 
 /* std::__ndk1::__num_put_base::__format_int(char*, char const*, bool, unsigned int) */
 
-void std::__ndk1::__num_put_base::__format_int
-               (char *param_1,char *param_2,uint param_3,uint param_4)
+void std::__ndk1::__num_put_base::__format_int(char *p0,char *p1,bool p2,uint p3)
 
 {
   char *pcVar1;
   char cVar2;
   
-  if ((param_4 >> 0xb & 1) != 0) {
-    *param_1 = '+';
-    param_1 = param_1 + 1;
+  if ((p3 >> 0xb & 1) != 0) {
+    *p0 = '+';
+    p0 = p0 + 1;
   }
-  if ((param_4 >> 9 & 1) == 0) {
-    cVar2 = *param_2;
-    pcVar1 = param_1;
+  if ((p3 >> 9 & 1) == 0) {
+    cVar2 = *p1;
+    pcVar1 = p0;
   }
   else {
-    pcVar1 = param_1 + 1;
-    *param_1 = '#';
-    cVar2 = *param_2;
+    pcVar1 = p0 + 1;
+    *p0 = '#';
+    cVar2 = *p1;
   }
   while (cVar2 != '\0') {
-    param_2 = param_2 + 1;
+    p1 = p1 + 1;
     *pcVar1 = cVar2;
     pcVar1 = pcVar1 + 1;
-    cVar2 = *param_2;
+    cVar2 = *p1;
   }
-  if ((param_4 & 0x4a) != 0x40) {
-    if ((param_4 & 0x4a) == 8) {
+  if ((p3 & 0x4a) != 0x40) {
+    if ((p3 & 0x4a) == 8) {
       cVar2 = 'x';
-      if ((param_4 & 0x4000) != 0) {
+      if ((p3 & 0x4000) != 0) {
         cVar2 = 'X';
       }
       *pcVar1 = cVar2;
       return;
     }
     cVar2 = 'd';
-    if ((param_3 & 1) == 0) {
+    if (!p2) {
       cVar2 = 'u';
     }
     *pcVar1 = cVar2;
@@ -62,27 +61,24 @@ void std::__ndk1::__num_put_base::__format_int
 
 /* std::__ndk1::__num_put_base::__identify_padding(char*, char*, std::__ndk1::ios_base const&) */
 
-char * std::__ndk1::__num_put_base::__identify_padding(char *param_1,char *param_2,long param_3)
+char * std::__ndk1::__num_put_base::__identify_padding(char *p0,char *p1,std____ndk1__ios_base *p2)
 
 {
-  uint uVar1;
-  char cVar2;
+  char cVar1;
   
-  uVar1 = *(uint *)(param_3 + 8) & 0xb0;
-  if (uVar1 == 0x20) {
-    return param_2;
+  if ((*(uint *)(p2 + 8) & 0xb0) == 0x20) {
+    return p1;
   }
-  if (uVar1 == 0x10) {
-    cVar2 = *param_1;
-    if ((cVar2 == '-') || (cVar2 == '+')) {
-      return param_1 + 1;
+  if ((*(uint *)(p2 + 8) & 0xb0) == 0x10) {
+    cVar1 = *p0;
+    if ((cVar1 == '-') || (cVar1 == '+')) {
+      return p0 + 1;
     }
-    if ((1 < (long)param_2 - (long)param_1) &&
-       ((cVar2 == '0' && ((byte)(param_1[1] | 0x20U) == 0x78)))) {
-      param_1 = param_1 + 2;
+    if ((1 < (long)p1 - (long)p0) && ((cVar1 == '0' && ((byte)(p0[1] | 0x20U) == 0x78)))) {
+      p0 = p0 + 2;
     }
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -93,7 +89,7 @@ char * std::__ndk1::__num_put_base::__identify_padding(char *param_1,char *param
 
 /* std::__ndk1::__num_put_base::__format_float(char*, char const*, unsigned int) */
 
-bool std::__ndk1::__num_put_base::__format_float(char *param_1,char *param_2,uint param_3)
+bool std::__ndk1::__num_put_base::__format_float(char *p0,char *p1,uint p2)
 
 {
   uint uVar1;
@@ -103,49 +99,49 @@ bool std::__ndk1::__num_put_base::__format_float(char *param_1,char *param_2,uin
   char cVar5;
   char cVar6;
   
-  pcVar3 = param_1;
-  if ((param_3 >> 0xb & 1) != 0) {
-    pcVar3 = param_1 + 1;
-    *param_1 = '+';
+  pcVar3 = p0;
+  if ((p2 >> 0xb & 1) != 0) {
+    pcVar3 = p0 + 1;
+    *p0 = '+';
   }
   pcVar4 = pcVar3;
-  if ((param_3 >> 10 & 1) != 0) {
+  if ((p2 >> 10 & 1) != 0) {
     pcVar4 = pcVar3 + 1;
     *pcVar3 = '#';
   }
-  uVar1 = param_3 & 0x104;
+  uVar1 = p2 & 0x104;
   if (uVar1 != 0x104) {
     pcVar4[0] = '.';
     pcVar4[1] = '*';
-    cVar6 = *param_2;
+    cVar6 = *p1;
     pcVar4 = pcVar4 + 2;
   }
   else {
-    cVar6 = *param_2;
+    cVar6 = *p1;
   }
   while (cVar6 != '\0') {
-    param_2 = param_2 + 1;
+    p1 = p1 + 1;
     *pcVar4 = cVar6;
     pcVar4 = pcVar4 + 1;
-    cVar6 = *param_2;
+    cVar6 = *p1;
   }
   if (uVar1 == 0x100) {
-    bVar2 = (param_3 & 0x4000) == 0;
+    bVar2 = (p2 & 0x4000) == 0;
     cVar5 = 'e';
     cVar6 = 'E';
   }
   else if (uVar1 == 4) {
-    bVar2 = (param_3 & 0x4000) == 0;
+    bVar2 = (p2 & 0x4000) == 0;
     cVar5 = 'f';
     cVar6 = 'F';
   }
   else if (uVar1 == 0x104) {
-    bVar2 = (param_3 & 0x4000) == 0;
+    bVar2 = (p2 & 0x4000) == 0;
     cVar5 = 'a';
     cVar6 = 'A';
   }
   else {
-    bVar2 = (param_3 & 0x4000) == 0;
+    bVar2 = (p2 & 0x4000) == 0;
     cVar5 = 'g';
     cVar6 = 'G';
   }

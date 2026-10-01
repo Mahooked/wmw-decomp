@@ -16,7 +16,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
   long lVar1;
   ulong uVar2;
   ulong uVar3;
-  ulong uVar4;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -38,11 +38,11 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
       *(char *)param_1 = (char)((int)uVar2 << 1);
     }
     else {
-      uVar4 = uVar3 + 0x10 & 0xfffffffffffffff0;
-      uVar3 = FUN_00164060(uVar4);
+      p0 = uVar3 + 0x10 & 0xfffffffffffffff0;
+      uVar3 = FUN_00164060(p0);
       param_1[1] = uVar2;
       param_1[2] = uVar3;
-      *param_1 = uVar4 | 1;
+      *param_1 = p0 | 1;
     }
     if (uVar2 != 0) {
       FUN_001715e0(uVar3,param_2,uVar2);
@@ -74,7 +74,7 @@ void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
   ulong uVar3;
   byte *pbVar4;
   ulong uVar5;
-  ulong uVar6;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -92,11 +92,11 @@ void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
       *(char *)param_1 = (char)((int)uVar3 << 1);
     }
     else {
-      uVar6 = uVar5 + 0x10 & 0xfffffffffffffff0;
-      uVar5 = FUN_00164060(uVar6);
+      p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
+      uVar5 = FUN_00164060(p0);
       param_1[1] = uVar3;
       param_1[2] = uVar5;
-      *param_1 = uVar6 | 1;
+      *param_1 = p0 | 1;
     }
     if (uVar3 != 0) {
       FUN_001715e0(uVar5,param_2,uVar3);
@@ -135,7 +135,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,byte *param_3)
   bool bVar4;
   byte *pbVar5;
   ulong uVar6;
-  ulong uVar7;
+  ulong p0;
   
   *param_1 = 0;
   param_1[1] = 0;
@@ -161,11 +161,11 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,byte *param_3)
       *(char *)param_1 = (char)((int)uVar2 << 1);
     }
     else {
-      uVar7 = uVar6 + 0x10 & 0xfffffffffffffff0;
-      uVar6 = FUN_00164060(uVar7);
+      p0 = uVar6 + 0x10 & 0xfffffffffffffff0;
+      uVar6 = FUN_00164060(p0);
       param_1[1] = uVar2;
       param_1[2] = uVar6;
-      *param_1 = uVar7 | 1;
+      *param_1 = p0 | 1;
     }
     if (uVar2 != 0) {
       FUN_001715e0(uVar6,pbVar5,uVar2);

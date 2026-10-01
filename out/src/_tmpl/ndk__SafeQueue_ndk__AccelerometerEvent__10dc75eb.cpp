@@ -44,28 +44,29 @@ void ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk::AccelerometerEvent&) */
 
-bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(long param_1,long *param_2)
+bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
+  long *p0_00;
+  long *in_x1;
+  long lVar2;
   
-  FUN_0016f820(param_1 + 0x20);
-  lVar3 = *(long *)(param_1 + 0x10);
-  if (lVar3 != 0) {
-    plVar2 = *(long **)(param_1 + 8);
-    *param_2 = plVar2[2];
-    *(int *)(param_2 + 1) = (int)plVar2[3];
-    lVar1 = *plVar2;
-    *(long *)(lVar1 + 8) = plVar2[1];
-    *(long *)plVar2[1] = lVar1;
-    *(long *)(param_1 + 0x10) = lVar3 + -1;
-    FUN_00166120();
+  FUN_0016f820(p0 + 0x20);
+  lVar2 = *(long *)(p0 + 0x10);
+  if (lVar2 != 0) {
+    p0_00 = *(long **)(p0 + 8);
+    *in_x1 = p0_00[2];
+    *(int *)(in_x1 + 1) = (int)p0_00[3];
+    lVar1 = *p0_00;
+    *(long *)(lVar1 + 8) = p0_00[1];
+    *(long *)p0_00[1] = lVar1;
+    *(long *)(p0 + 0x10) = lVar2 + -1;
+    FUN_00166120(p0_00);
   }
                     /* try { // try from 002c3bb8 to 002c3bbf has its CatchHandler @ 002c3bd4 */
-  FUN_0016b1e0(param_1 + 0x20);
-  return lVar3 != 0;
+  FUN_0016b1e0(p0 + 0x20);
+  return lVar2 != 0;
 }
 
 
@@ -76,26 +77,27 @@ bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(long param_1,long *param_2)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk::AccelerometerEvent const&) */
 
-void ndk::SafeQueue<ndk::AccelerometerEvent>::push(long *param_1,long *param_2)
+void ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk__AccelerometerEvent *p0)
 
 {
   long *plVar1;
+  long *in_x1;
   long lVar2;
   
-  FUN_0016f820(param_1 + 4);
+  FUN_0016f820(p0 + 0x20);
                     /* try { // try from 002c54a0 to 002c54a7 has its CatchHandler @ 002c54f0 */
   plVar1 = (long *)FUN_00164060(0x20);
-  lVar2 = *param_2;
-  plVar1[1] = (long)param_1;
+  lVar2 = *in_x1;
+  plVar1[1] = (long)p0;
   plVar1[2] = lVar2;
-  *(int *)(plVar1 + 3) = (int)param_2[1];
-  lVar2 = *param_1;
+  *(int *)(plVar1 + 3) = (int)in_x1[1];
+  lVar2 = *(long *)p0;
   *plVar1 = lVar2;
   *(long **)(lVar2 + 8) = plVar1;
-  *param_1 = (long)plVar1;
-  param_1[2] = param_1[2] + 1;
+  *(long **)p0 = plVar1;
+  *(long *)(p0 + 0x10) = *(long *)(p0 + 0x10) + 1;
                     /* try { // try from 002c54d4 to 002c54db has its CatchHandler @ 002c54ec */
-  FUN_0016b1e0(param_1 + 4);
+  FUN_0016b1e0(p0 + 0x20);
   return;
 }
 

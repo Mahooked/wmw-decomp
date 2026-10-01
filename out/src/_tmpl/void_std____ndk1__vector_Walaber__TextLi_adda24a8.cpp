@@ -10,10 +10,11 @@
    >::__push_back_slow_path<Walaber::TextLineInfo>(Walaber::TextLineInfo&&) */
 
 void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __push_back_slow_path<Walaber::TextLineInfo>(long *param_1,undefined8 *param_2)
+     __push_back_slow_path<Walaber::TextLineInfo>(Walaber__TextLineInfo **p0)
 
 {
   long lVar1;
+  undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
   long lVar4;
@@ -26,13 +27,13 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = param_1[1] - *param_1 >> 5;
+  lVar3 = (long)p0[1] - (long)*p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar4 = param_1[2] - *param_1;
+  lVar4 = (long)p0[2] - (long)*p0;
   if ((ulong)(lVar4 >> 5) < 0x3ffffffffffffff) {
     uVar5 = lVar4 >> 4;
     if (uVar2 <= uVar5) {
@@ -42,19 +43,19 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   else {
     uVar2 = 0x7ffffffffffffff;
   }
-  func_0x00170d80(auStack_60,uVar2,lVar3,param_1 + 2);
-  uVar7 = param_2[1];
-  uVar6 = *param_2;
-  puStack_50[2] = param_2[2];
+  func_0x00170d80(auStack_60,uVar2,lVar3,p0 + 2);
+  uVar7 = in_x1[1];
+  uVar6 = *in_x1;
+  puStack_50[2] = in_x1[2];
   puStack_50[1] = uVar7;
   *puStack_50 = uVar6;
-  param_2[1] = 0;
-  param_2[2] = 0;
-  *param_2 = 0;
-  puStack_50[3] = param_2[3];
+  in_x1[1] = 0;
+  in_x1[2] = 0;
+  *in_x1 = 0;
+  puStack_50[3] = in_x1[3];
   puStack_50 = puStack_50 + 4;
                     /* try { // try from 00385d68 to 00385d73 has its CatchHandler @ 00385dac */
-  func_0x00171980(param_1,auStack_60);
+  func_0x00171980(p0,auStack_60);
   func_0x00164690(auStack_60);
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();

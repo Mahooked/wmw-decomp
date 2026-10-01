@@ -122,12 +122,14 @@ void Walaber::Widget_Manipulator::~Widget_Manipulator(undefined8 *param_1)
 
 /* Walaber::Widget_Manipulator::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_Manipulator::update(long param_1,long param_2)
+undefined8 Walaber::Widget_Manipulator::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  if (*(char *)(param_1 + 0x124) != '\0') {
-    *(undefined1 *)(param_1 + 0x124) = 0;
-    *(undefined8 *)(param_2 + 4) = *(undefined8 *)(param_1 + 0x128);
+  long in_x1;
+  
+  if (p1[0x124] != (Walaber__Widget__WidgetActionRet)0x0) {
+    p1[0x124] = (Walaber__Widget__WidgetActionRet)0x0;
+    *(undefined8 *)(in_x1 + 4) = *(undefined8 *)(p1 + 0x128);
     return 1;
   }
   return 0;
@@ -141,55 +143,47 @@ undefined8 Walaber::Widget_Manipulator::update(long param_1,long param_2)
 
 /* Walaber::Widget_Manipulator::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_Manipulator::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
 
 {
-  undefined1 uVar1;
-  undefined4 uVar2;
-  long lVar3;
+  Walaber__SpriteBatch WVar1;
+  long lVar2;
+  float fVar3;
   float fVar4;
-  float fVar5;
-  float fVar6;
-  float fStack_80;
-  float fStack_7c;
   undefined1 auStack_78 [8];
   long lStack_70;
   int *piStack_68;
-  undefined4 uStack_60;
-  float fStack_5c;
+  Walaber__SpriteBatch WStack_60;
+  Walaber__SpriteBatch WStack_5f;
+  Walaber__SpriteBatch WStack_5e;
+  Walaber__SpriteBatch WStack_5d;
   long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
-  fVar4 = (float)func_0x00164620();
-  lStack_70 = *(long *)(param_1 + 0x100);
-  piStack_68 = *(int **)(param_1 + 0x108);
-  uVar2 = *(undefined4 *)(param_1 + 0x80);
+  lVar2 = tpidr_el0;
+  lStack_58 = *(long *)(lVar2 + 0x28);
+  fVar3 = (float)func_0x00164620();
+  lStack_70 = *(long *)(p0 + 0x100);
+  piStack_68 = *(int **)(p0 + 0x108);
   if (lStack_70 != 0) {
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 00380940 to 0038094b has its CatchHandler @ 00380a2c */
-  func_0x00167d50(auStack_78,param_1);
-  fVar5 = *(float *)(param_1 + 0x120);
+  func_0x00167d50(auStack_78,p0);
+  fVar4 = *(float *)(p0 + 0x120);
                     /* try { // try from 00380950 to 0038095b has its CatchHandler @ 00380a28 */
-  func_0x00169f20(&uStack_60,param_1);
-  fVar6 = *(float *)(param_1 + 0x90);
+  func_0x00169f20(&WStack_60,p0);
                     /* try { // try from 00380964 to 0038096f has its CatchHandler @ 00380a24 */
-  func_0x00169f20(&uStack_60,param_1);
-  fStack_80 = fVar6 * uStack_60;
-  fStack_7c = *(float *)(param_1 + 0x94) * fStack_5c;
-  uVar1 = *(undefined1 *)(param_1 + 0x139);
-  if (*(char *)(param_1 + 0x138) != '\0') {
-    uVar1 = 0;
+  func_0x00169f20(&WStack_60,p0);
+  WVar1 = p0[0x139];
+  if (p0[0x138] != (Walaber__SpriteBatch)0x0) {
+    WVar1 = (Walaber__SpriteBatch)0x0;
   }
-  uStack_60 = (float)CONCAT13(*(undefined1 *)(param_1 + 0x139),CONCAT12(uVar1,CONCAT11(uVar1,uVar1))
-                             );
+  _WStack_60 = CONCAT13(p0[0x139],CONCAT12(WVar1,CONCAT11(WVar1,WVar1)));
                     /* try { // try from 003809bc to 003809db has its CatchHandler @ 00380a20 */
-  func_0x00169c00(fVar4 + fVar5 * 57.295776,param_2,uVar2,&lStack_70,auStack_78,&fStack_80,
-                  param_1 + 0x110,&uStack_60,0);
+  func_0x00169c00(fVar3 + fVar4 * 57.295776);
   FUN_00166b20(&lStack_70);
-  FUN_001722b0(param_1,param_2);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
+  FUN_001722b0(p0);
+  if (*(long *)(lVar2 + 0x28) == lStack_58) {
     return;
   }
   FUN_00164ff0();
@@ -204,31 +198,33 @@ void Walaber::Widget_Manipulator::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Manipulator::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_Manipulator::acceptNewFingerDown(long param_1,undefined8 param_2,long param_3)
+undefined8 Walaber::Widget_Manipulator::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
-  undefined8 uVar2;
+  ulong uVar2;
+  undefined8 uVar3;
+  long in_x2;
   undefined8 uStack_40;
   long lStack_38;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *(undefined1 *)(param_1 + 0x124) = 1;
+  *(undefined1 *)(uVar2 + 0x124) = 1;
   func_0x00167d50(&uStack_40);
-  *(ulong *)(param_1 + 0x130) =
-       CONCAT44((float)((ulong)*(undefined8 *)(param_3 + 4) >> 0x20) -
+  *(ulong *)(uVar2 + 0x130) =
+       CONCAT44((float)((ulong)*(undefined8 *)(in_x2 + 4) >> 0x20) -
                 (float)((ulong)uStack_40 >> 0x20),
-                (float)*(undefined8 *)(param_3 + 4) - (float)uStack_40);
-  func_0x00167d50(&uStack_40,param_1);
-  *(undefined8 *)(param_1 + 0x128) = uStack_40;
-  *(byte *)(param_1 + 0x138) = *(byte *)(param_1 + 0x13a) ^ 1;
+                (float)*(undefined8 *)(in_x2 + 4) - (float)uStack_40);
+  func_0x00167d50(&uStack_40,uVar2);
+  *(undefined8 *)(uVar2 + 0x128) = uStack_40;
+  *(byte *)(uVar2 + 0x138) = *(byte *)(uVar2 + 0x13a) ^ 1;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return 1;
   }
-  uVar2 = FUN_00164ff0();
-  return uVar2;
+  uVar3 = FUN_00164ff0();
+  return uVar3;
 }
 
 
@@ -239,7 +235,7 @@ Walaber::Widget_Manipulator::acceptNewFingerDown(long param_1,undefined8 param_2
 
 /* Walaber::Widget_Manipulator::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Manipulator::acceptNewFingerEntered(void)
+undefined8 Walaber::Widget_Manipulator::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -253,7 +249,7 @@ undefined8 Walaber::Widget_Manipulator::acceptNewFingerEntered(void)
 
 /* Walaber::Widget_Manipulator::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Manipulator::releaseFingerStayed(void)
+undefined8 Walaber::Widget_Manipulator::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -267,18 +263,21 @@ undefined8 Walaber::Widget_Manipulator::releaseFingerStayed(void)
 
 /* Walaber::Widget_Manipulator::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_Manipulator::releaseFingerMoved(long param_1,undefined8 param_2,long param_3)
+bool Walaber::Widget_Manipulator::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
   bool bVar1;
+  ulong uVar2;
+  long in_x2;
   
-  bVar1 = *(char *)(param_1 + 0x13a) != '\0';
+  uVar2 = (ulong)(uint)p0;
+  bVar1 = *(char *)(uVar2 + 0x13a) != '\0';
   if (!bVar1) {
-    *(undefined1 *)(param_1 + 0x124) = 1;
-    *(ulong *)(param_1 + 0x128) =
-         CONCAT44((float)((ulong)*(undefined8 *)(param_3 + 4) >> 0x20) -
-                  (float)((ulong)*(undefined8 *)(param_1 + 0x130) >> 0x20),
-                  (float)*(undefined8 *)(param_3 + 4) - (float)*(undefined8 *)(param_1 + 0x130));
+    *(undefined1 *)(uVar2 + 0x124) = 1;
+    *(ulong *)(uVar2 + 0x128) =
+         CONCAT44((float)((ulong)*(undefined8 *)(in_x2 + 4) >> 0x20) -
+                  (float)((ulong)*(undefined8 *)(uVar2 + 0x130) >> 0x20),
+                  (float)*(undefined8 *)(in_x2 + 4) - (float)*(undefined8 *)(uVar2 + 0x130));
   }
   return bVar1;
 }
@@ -291,11 +290,11 @@ bool Walaber::Widget_Manipulator::releaseFingerMoved(long param_1,undefined8 par
 
 /* Walaber::Widget_Manipulator::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Manipulator::releaseFingerUp(long param_1)
+void Walaber::Widget_Manipulator::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  *(undefined1 *)(param_1 + 0x138) = 0;
-  *(undefined8 *)(param_1 + 0x130) = 0;
+  *(undefined1 *)((ulong)(uint)p0 + 0x138) = 0;
+  *(undefined8 *)((ulong)(uint)p0 + 0x130) = 0;
   return;
 }
 
@@ -307,18 +306,21 @@ void Walaber::Widget_Manipulator::releaseFingerUp(long param_1)
 
 /* Walaber::Widget_Manipulator::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_Manipulator::releaseFingerLeft(long param_1,undefined8 param_2,long param_3)
+bool Walaber::Widget_Manipulator::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   bool bVar1;
+  ulong uVar2;
+  long in_x2;
   
-  bVar1 = *(char *)(param_1 + 0x13a) != '\0';
+  uVar2 = (ulong)(uint)p0;
+  bVar1 = *(char *)(uVar2 + 0x13a) != '\0';
   if (!bVar1) {
-    *(undefined1 *)(param_1 + 0x124) = 1;
-    *(ulong *)(param_1 + 0x128) =
-         CONCAT44((float)((ulong)*(undefined8 *)(param_3 + 4) >> 0x20) -
-                  (float)((ulong)*(undefined8 *)(param_1 + 0x130) >> 0x20),
-                  (float)*(undefined8 *)(param_3 + 4) - (float)*(undefined8 *)(param_1 + 0x130));
+    *(undefined1 *)(uVar2 + 0x124) = 1;
+    *(ulong *)(uVar2 + 0x128) =
+         CONCAT44((float)((ulong)*(undefined8 *)(in_x2 + 4) >> 0x20) -
+                  (float)((ulong)*(undefined8 *)(uVar2 + 0x130) >> 0x20),
+                  (float)*(undefined8 *)(in_x2 + 4) - (float)*(undefined8 *)(uVar2 + 0x130));
   }
   return bVar1;
 }
@@ -331,11 +333,11 @@ bool Walaber::Widget_Manipulator::releaseFingerLeft(long param_1,undefined8 para
 
 /* Walaber::Widget_Manipulator::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Manipulator::notifyFingerLost(long param_1)
+void Walaber::Widget_Manipulator::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  *(undefined1 *)(param_1 + 0x138) = 0;
-  *(undefined8 *)(param_1 + 0x130) = 0;
+  *(undefined1 *)((ulong)(uint)p0 + 0x138) = 0;
+  *(undefined8 *)((ulong)(uint)p0 + 0x130) = 0;
   return;
 }
 

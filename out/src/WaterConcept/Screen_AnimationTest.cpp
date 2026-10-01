@@ -54,19 +54,19 @@ void WaterConcept::Screen_AnimationTest::Screen_AnimationTest(undefined8 *param_
 void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *pvVar1;
   
-  lVar1 = param_1[0x12];
+  pvVar1 = (void *)param_1[0x12];
   *param_1 = &PTR__Screen_AnimationTest_00712dc8;
   param_1[4] = &PTR_handleEvent_00712e78;
-  if (lVar1 != 0) {
-    func_0x0016ecc0(lVar1);
-    FUN_00166120(lVar1);
+  if (pvVar1 != (void *)0x0) {
+    func_0x0016ecc0(pvVar1);
+    FUN_00166120(pvVar1);
   }
-  lVar1 = param_1[0x13];
-  if (lVar1 != 0) {
-    func_0x0016f2d0(lVar1);
-    FUN_00166120(lVar1);
+  pvVar1 = (void *)param_1[0x13];
+  if (pvVar1 != (void *)0x0) {
+    func_0x0016f2d0(pvVar1);
+    FUN_00166120(pvVar1);
   }
   FUN_0016d110(param_1);
   return;
@@ -80,7 +80,7 @@ void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(undefined8 *param
 
 /* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
 
-void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(undefined8 param_1)
+void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(void *param_1)
 
 {
   func_0x0016a960();
@@ -96,7 +96,7 @@ void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(undefined8 param_
 
 /* WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber::PropertyList const&) */
 
-void WaterConcept::Screen_AnimationTest::loadPropertyList(long param_1,undefined8 param_2)
+void WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber__PropertyList *p0)
 
 {
   long lVar1;
@@ -107,113 +107,78 @@ void WaterConcept::Screen_AnimationTest::loadPropertyList(long param_1,undefined
   float fStack_6c;
   float fStack_68;
   float fStack_64;
-  byte abStack_60 [16];
-  undefined8 uStack_50;
+  byte bStack_60;
+  undefined7 uStack_5f;
+  undefined1 uStack_58;
+  undefined2 uStack_57;
+  undefined1 uStack_55;
+  undefined4 uStack_54;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  abStack_60[0xc] = 0;
-  abStack_60[0xd] = 0;
-  abStack_60[0xe] = 0;
-  abStack_60[0xf] = 0;
-  abStack_60[0] = 0x14;
-  uStack_50 = 0;
-  abStack_60[9] = 0x7a;
-  abStack_60[10] = 0x65;
-  abStack_60[1] = 0x43;
-  abStack_60[2] = 0x61;
-  abStack_60[3] = 0x6d;
-  abStack_60[4] = 0x65;
-  abStack_60[5] = 0x72;
-  abStack_60[6] = 0x61;
-  abStack_60[7] = 0x53;
-  abStack_60[8] = 0x69;
-  abStack_60[0xb] = 0;
+  uStack_54 = 0;
+  bStack_60 = 0x14;
+  pvStack_50 = (void *)0x0;
+  uStack_57 = 0x657a;
+  uStack_5f = 0x536172656d6143;
+  uStack_58 = 0x69;
+  uStack_55 = 0;
                     /* try { // try from 004a6da8 to 004a6db3 has its CatchHandler @ 004a6f14 */
-  uVar2 = func_0x00173810(param_2,abStack_60);
-  if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+  uVar2 = func_0x00173810();
+  if ((bStack_60 & 1) != 0) {
+    FUN_00166120(pvStack_50);
   }
   if ((uVar2 & 1) != 0) {
-    abStack_60[0xc] = 0;
-    abStack_60[0xd] = 0;
-    abStack_60[0xe] = 0;
-    abStack_60[0xf] = 0;
-    uStack_50 = 0;
-    abStack_60[0] = 0x14;
-    abStack_60[9] = 0x7a;
-    abStack_60[10] = 0x65;
-    abStack_60[1] = 0x43;
-    abStack_60[2] = 0x61;
-    abStack_60[3] = 0x6d;
-    abStack_60[4] = 0x65;
-    abStack_60[5] = 0x72;
-    abStack_60[6] = 0x61;
-    abStack_60[7] = 0x53;
-    abStack_60[8] = 0x69;
-    abStack_60[0xb] = 0;
+    uStack_54 = 0;
+    pvStack_50 = (void *)0x0;
+    bStack_60 = 0x14;
+    uStack_57 = 0x657a;
+    uStack_5f = 0x536172656d6143;
+    uStack_58 = 0x69;
+    uStack_55 = 0;
                     /* try { // try from 004a6dec to 004a6dff has its CatchHandler @ 004a6f10 */
-    func_0x0016d4e0(param_2,abStack_60);
+    func_0x0016d4e0();
     func_0x00166e60(&fStack_68);
-    if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
+    if ((bStack_60 & 1) != 0) {
+      FUN_00166120(pvStack_50);
     }
     fStack_70 = (Walaber::ScreenCoord::sScreenSize / DAT_0072d884) * fStack_64;
     fStack_6c = fStack_64;
     fStack_68 = fStack_70;
-    func_0x0016be20(*(undefined8 *)(param_1 + 0x90),&fStack_70);
+    func_0x0016be20(*(undefined8 *)(p0 + 0x90),&fStack_70);
   }
-  abStack_60[0xb] = 0;
-  abStack_60[0xc] = 0;
-  abStack_60[0xd] = 0;
-  abStack_60[0xe] = 0;
-  abStack_60[0xf] = 0;
-  abStack_60[0] = 0x12;
-  uStack_50 = 0;
-  abStack_60[9] = 0x73;
-  abStack_60[10] = 0;
-  abStack_60[1] = 0x43;
-  abStack_60[2] = 0x61;
-  abStack_60[3] = 0x6d;
-  abStack_60[4] = 0x65;
-  abStack_60[5] = 0x72;
-  abStack_60[6] = 0x61;
-  abStack_60[7] = 0x50;
-  abStack_60[8] = 0x6f;
+  uStack_55 = 0;
+  uStack_54 = 0;
+  bStack_60 = 0x12;
+  pvStack_50 = (void *)0x0;
+  uStack_57 = 0x73;
+  uStack_5f = 0x506172656d6143;
+  uStack_58 = 0x6f;
                     /* try { // try from 004a6e64 to 004a6e6f has its CatchHandler @ 004a6f0c */
-  uVar2 = func_0x00173810(param_2,abStack_60);
-  if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+  uVar2 = func_0x00173810();
+  if ((bStack_60 & 1) != 0) {
+    FUN_00166120(pvStack_50);
   }
   if ((uVar2 & 1) != 0) {
-    uVar3 = *(undefined8 *)(param_1 + 0x90);
-    abStack_60[0xb] = 0;
-    abStack_60[0xc] = 0;
-    abStack_60[0xd] = 0;
-    abStack_60[0xe] = 0;
-    abStack_60[0xf] = 0;
-    abStack_60[0] = 0x12;
-    uStack_50 = 0;
-    abStack_60[9] = 0x73;
-    abStack_60[10] = 0;
-    abStack_60[1] = 0x43;
-    abStack_60[2] = 0x61;
-    abStack_60[3] = 0x6d;
-    abStack_60[4] = 0x65;
-    abStack_60[5] = 0x72;
-    abStack_60[6] = 0x61;
-    abStack_60[7] = 0x50;
-    abStack_60[8] = 0x6f;
+    uVar3 = *(undefined8 *)(p0 + 0x90);
+    uStack_55 = 0;
+    uStack_54 = 0;
+    bStack_60 = 0x12;
+    pvStack_50 = (void *)0x0;
+    uStack_57 = 0x73;
+    uStack_5f = 0x506172656d6143;
+    uStack_58 = 0x6f;
                     /* try { // try from 004a6ea8 to 004a6ec7 has its CatchHandler @ 004a6f18 */
-    func_0x0016d4e0(param_2,abStack_60);
+    func_0x0016d4e0();
     func_0x00166e60(auStack_78);
     func_0x001729b0(uVar3,auStack_78);
-    if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
+    if ((bStack_60 & 1) != 0) {
+      FUN_00166120(pvStack_50);
     }
   }
-  func_0x0016eda0(*(undefined8 *)(param_1 + 0x98),*(undefined8 *)(param_1 + 0x90));
+  func_0x0016eda0(*(undefined8 *)(p0 + 0x98),*(undefined8 *)(p0 + 0x90));
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -236,7 +201,7 @@ void WaterConcept::Screen_AnimationTest::enter(long param_1)
   ulong uVar1;
   long lVar2;
   long lVar3;
-  ulong uVar4;
+  void *pvVar4;
   undefined8 uVar5;
   ulong *puVar6;
   long *plVar7;
@@ -250,45 +215,50 @@ void WaterConcept::Screen_AnimationTest::enter(long param_1)
   byte bStack_90;
   undefined7 uStack_8f;
   ulong uStack_88;
-  ulong uStack_80;
-  ulong auStack_78 [7];
+  void *pvStack_80;
+  ulong auStack_78 [2];
+  void *pvStack_68;
+  ulong uStack_60;
+  ulong uStack_58;
+  void *pvStack_50;
+  long lStack_48;
   
   lVar3 = tpidr_el0;
-  auStack_78[6] = *(long *)(lVar3 + 0x28);
+  lStack_48 = *(long *)(lVar3 + 0x28);
   uVar5 = FUN_00164060(400);
                     /* try { // try from 004a6f68 to 004a6f6b has its CatchHandler @ 004a71b0 */
   func_0x0016efe0();
   *(undefined8 *)(param_1 + 0xb8) = uVar5;
   auStack_78[1] = 0;
-  auStack_78[2] = 0;
+  pvStack_68 = (void *)0x0;
   auStack_78[0] = 0x726f7463410a;
                     /* try { // try from 004a6f98 to 004a6fa3 has its CatchHandler @ 004a719c */
   func_0x001631a0(&bStack_90,*(undefined4 *)(param_1 + 0xc0));
   uVar1 = (ulong)(bStack_90 >> 1);
-  uVar4 = (ulong)&bStack_90 | 1;
+  pvVar4 = (void *)((ulong)&bStack_90 | 1);
   if ((bStack_90 & 1) != 0) {
     uVar1 = uStack_88;
-    uVar4 = uStack_80;
+    pvVar4 = pvStack_80;
   }
                     /* try { // try from 004a6fc0 to 004a6fc7 has its CatchHandler @ 004a7184 */
-  puVar6 = (ulong *)FUN_00167eb0(auStack_78,uVar4,uVar1);
-  auStack_78[5] = puVar6[2];
-  auStack_78[4] = puVar6[1];
-  auStack_78[3] = *puVar6;
+  puVar6 = (ulong *)FUN_00167eb0(auStack_78,pvVar4,uVar1);
+  pvStack_50 = (void *)puVar6[2];
+  uStack_58 = puVar6[1];
+  uStack_60 = *puVar6;
   puVar6[1] = 0;
   puVar6[2] = 0;
   *puVar6 = 0;
   lVar2 = (ulong)*(uint *)(param_1 + 0xc0) * 0x30;
                     /* try { // try from 004a6ffc to 004a7007 has its CatchHandler @ 004a716c */
-  func_0x00163fc0(uVar5,auStack_78 + 3,SKELETON_ACTORS + lVar2,lVar2 + 0x764a68);
-  if ((auStack_78[3] & 1) != 0) {
-    FUN_00166120(auStack_78[5]);
+  func_0x00163fc0(uVar5,&uStack_60,SKELETON_ACTORS + lVar2,lVar2 + 0x764a68);
+  if ((uStack_60 & 1) != 0) {
+    FUN_00166120(pvStack_50);
   }
   if ((bStack_90 & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
   if ((auStack_78[0] & 1) != 0) {
-    FUN_00166120(auStack_78[2]);
+    FUN_00166120(pvStack_68);
   }
   uVar5 = *(undefined8 *)(param_1 + 0xb8);
   uStack_98 = (undefined4)WaterConceptConstants::SWAMPY_OFFSET;
@@ -296,18 +266,18 @@ void WaterConcept::Screen_AnimationTest::enter(long param_1)
   uVar1 = (ulong)_sScreenSize >> 0x20;
   fStack_94 = -WaterConceptConstants::SWAMPY_OFFSET._4_4_;
   func_0x00173c00(&bStack_90,*(undefined8 *)(param_1 + 0x90),&uStack_98);
-  auStack_78[3] = 0;
-  auStack_78[4] = 0;
-  auStack_78[5] = 0;
+  uStack_60 = 0;
+  uStack_58 = 0;
+  pvStack_50 = (void *)0x0;
   auStack_78[0] =
        CONCAT44((float)uVar1 * 0.5 + 0.0 + (float)((uint7)uStack_8f >> 0x18),
                 fVar10 * 0.5 + 0.0 + (float)CONCAT71(uStack_8f,bStack_90));
   uStack_a8 = 0x3db851ec3db851ec;
                     /* try { // try from 004a70b4 to 004a70d7 has its CatchHandler @ 004a71bc */
   func_0x00173c00(auStack_a0,*(undefined8 *)(param_1 + 0x90),&uStack_a8);
-  func_0x0016a9d0(uVar5,auStack_78,auStack_78 + 3,auStack_a0,1);
-  if ((auStack_78[3] & 1) != 0) {
-    FUN_00166120(auStack_78[5]);
+  func_0x0016a9d0(uVar5,auStack_78,&uStack_60,auStack_a0,1);
+  if ((uStack_60 & 1) != 0) {
+    FUN_00166120(pvStack_50);
   }
   puVar8 = *(undefined4 **)(param_1 + 0xb8);
   *puVar8 = 0x1ffff;
@@ -321,7 +291,7 @@ void WaterConcept::Screen_AnimationTest::enter(long param_1)
   uVar5 = func_0x00168cd0();
   func_0x00162240(uVar5,2,0);
   func_0x00170730(param_1);
-  if (*(long *)(lVar3 + 0x28) != auStack_78[6]) {
+  if (*(long *)(lVar3 + 0x28) != lStack_48) {
     FUN_00164ff0();
     return;
   }
@@ -413,12 +383,12 @@ void WaterConcept::Screen_AnimationTest::_buildUI(long param_1)
 void WaterConcept::Screen_AnimationTest::exit(long param_1)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = *(long *)(param_1 + 0xb8);
-  if (lVar1 != 0) {
-    func_0x00168e30(lVar1);
-    FUN_00166120(lVar1);
+  p0 = *(void **)(param_1 + 0xb8);
+  if (p0 != (void *)0x0) {
+    func_0x00168e30(p0);
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -432,11 +402,13 @@ void WaterConcept::Screen_AnimationTest::exit(long param_1)
 
 /* WaterConcept::Screen_AnimationTest::update(float, bool) */
 
-void WaterConcept::Screen_AnimationTest::update(undefined8 param_1,long param_2)
+void WaterConcept::Screen_AnimationTest::update(float p0,bool p1)
 
 {
-  func_0x00164120(*(undefined8 *)(param_2 + 0xb8));
-  func_0x001706f0(param_1,*(undefined8 *)(param_2 + 0x10));
+  undefined4 in_register_00005004;
+  
+  func_0x00164120(*(undefined8 *)((ulong)p1 + 0xb8));
+  func_0x001706f0(CONCAT44(in_register_00005004,p0),*(undefined8 *)((ulong)p1 + 0x10));
   return;
 }
 
@@ -448,13 +420,16 @@ void WaterConcept::Screen_AnimationTest::update(undefined8 param_1,long param_2)
 
 /* WaterConcept::Screen_AnimationTest::draw(int) */
 
-void WaterConcept::Screen_AnimationTest::draw(long param_1,int param_2)
+void WaterConcept::Screen_AnimationTest::draw(int p0)
 
 {
   long lVar1;
+  ulong uVar2;
+  int in_w1;
   
-  if (param_2 != 0) {
-    lVar1 = param_1 + 0x28;
+  uVar2 = (ulong)(uint)p0;
+  if (in_w1 != 0) {
+    lVar1 = uVar2 + 0x28;
     func_0x00171540(lVar1,3);
     func_0x001642a0(0x1701);
     func_0x00166f60();
@@ -463,12 +438,12 @@ void WaterConcept::Screen_AnimationTest::draw(long param_1,int param_2)
     func_0x00166f60();
     func_0x0016b2a0(0,0,0xbde147ae);
     func_0x0016c350(1,1,0x303);
-    func_0x001622f0(*(undefined8 *)(param_1 + 0x10),lVar1,0xffffffff,9);
-    func_0x00168640(*(undefined8 *)(param_1 + 0xb8),lVar1,1,0);
-    func_0x001622f0(*(undefined8 *)(param_1 + 0x10),lVar1,10,0xffffffff);
-    func_0x00163770(*(undefined8 *)(param_1 + 0xb8),lVar1);
-    if (*(long **)(param_1 + 200) != (long *)0x0) {
-      (**(code **)(**(long **)(param_1 + 200) + 0x18))();
+    func_0x001622f0(*(undefined8 *)(uVar2 + 0x10),lVar1,0xffffffff,9);
+    func_0x00168640(*(undefined8 *)(uVar2 + 0xb8),lVar1,1,0);
+    func_0x001622f0(*(undefined8 *)(uVar2 + 0x10),lVar1,10,0xffffffff);
+    func_0x00163770(*(undefined8 *)(uVar2 + 0xb8),lVar1);
+    if (*(long **)(uVar2 + 200) != (long *)0x0) {
+      (**(code **)(**(long **)(uVar2 + 200) + 0x18))();
     }
     func_0x00163aa0(lVar1);
     return;
@@ -485,12 +460,15 @@ void WaterConcept::Screen_AnimationTest::draw(long param_1,int param_2)
 /* WaterConcept::Screen_AnimationTest::handleEvent(int, Walaber::Widget::WidgetActionRet const&,
    Walaber::Widget*) */
 
-void WaterConcept::Screen_AnimationTest::handleEvent(long *param_1,undefined4 param_2)
+void WaterConcept::Screen_AnimationTest::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
   int iVar1;
+  long *plVar2;
   
-  switch(param_2) {
+  plVar2 = (long *)(ulong)(uint)p0;
+  switch((ulong)p1 & 0xffffffff) {
   case 0:
   case 1:
   case 6:
@@ -499,26 +477,26 @@ void WaterConcept::Screen_AnimationTest::handleEvent(long *param_1,undefined4 pa
   case 2:
                     /* WARNING: Could not recover jumptable at 0x004a74e4. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (**(code **)(*param_1 + 0x70))();
+    (**(code **)(*plVar2 + 0x70))();
     return;
   default:
     return;
   case 7:
     iVar1 = 3;
-    if ((int)param_1[0x18] != 0) {
-      iVar1 = (int)param_1[0x18] + -1;
+    if ((int)plVar2[0x18] != 0) {
+      iVar1 = (int)plVar2[0x18] + -1;
     }
     break;
   case 8:
     iVar1 = 0;
-    if ((int)param_1[0x18] != 3) {
-      iVar1 = (int)param_1[0x18] + 1;
+    if ((int)plVar2[0x18] != 3) {
+      iVar1 = (int)plVar2[0x18] + 1;
     }
-    *(int *)(param_1 + 0x18) = iVar1;
+    *(int *)(plVar2 + 0x18) = iVar1;
     func_0x0016a340();
     return;
   }
-  *(int *)(param_1 + 0x18) = iVar1;
+  *(int *)(plVar2 + 0x18) = iVar1;
   func_0x0016a340();
   return;
 }
@@ -531,40 +509,43 @@ void WaterConcept::Screen_AnimationTest::handleEvent(long *param_1,undefined4 pa
 
 /* WaterConcept::Screen_AnimationTest::_playAnimation(int) */
 
-void WaterConcept::Screen_AnimationTest::_playAnimation(long param_1,int param_2)
+void WaterConcept::Screen_AnimationTest::_playAnimation(int p0)
 
 {
   char cVar1;
   undefined1 uVar2;
   long lVar3;
-  undefined8 uVar4;
+  ulong uVar4;
+  int in_w1;
+  undefined8 uVar5;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
+  uVar4 = (ulong)(uint)p0;
   lVar3 = tpidr_el0;
   lStack_28 = *(long *)(lVar3 + 0x28);
-  cVar1 = *(char *)(*(long *)(param_1 + 0xb0) + 0x1a4);
-  uVar2 = *(undefined1 *)(*(long *)(param_1 + 0xa8) + 0x1a4);
-  if (param_2 == 1) {
-    uVar4 = *(undefined8 *)(param_1 + 0xa0);
-    func_0x00162200(abStack_40,*(undefined8 *)(param_1 + 0xb8),0,uVar2,cVar1 != '\0');
+  cVar1 = *(char *)(*(long *)(uVar4 + 0xb0) + 0x1a4);
+  uVar2 = *(undefined1 *)(*(long *)(uVar4 + 0xa8) + 0x1a4);
+  if (in_w1 == 1) {
+    uVar5 = *(undefined8 *)(uVar4 + 0xa0);
+    func_0x00162200(abStack_40,*(undefined8 *)(uVar4 + 0xb8),0,uVar2,cVar1 != '\0');
                     /* try { // try from 004a75a0 to 004a75ab has its CatchHandler @ 004a7608 */
-    func_0x001678a0(uVar4,abStack_40);
+    func_0x001678a0(uVar5,abStack_40);
   }
   else {
-    if (param_2 != 0) {
-      func_0x0016bc10(0,*(short **)(param_1 + 0xb8),(long)**(short **)(param_1 + 0xb8),0,uVar2,
+    if (in_w1 != 0) {
+      func_0x0016bc10(0,*(short **)(uVar4 + 0xb8),(long)**(short **)(uVar4 + 0xb8),0,uVar2,
                       0xffffffff,cVar1 != '\0');
       goto LAB_004a75e4;
     }
-    uVar4 = *(undefined8 *)(param_1 + 0xa0);
-    func_0x00162200(abStack_40,*(undefined8 *)(param_1 + 0xb8),1,uVar2,cVar1 != '\0');
+    uVar5 = *(undefined8 *)(uVar4 + 0xa0);
+    func_0x00162200(abStack_40,*(undefined8 *)(uVar4 + 0xb8),1,uVar2,cVar1 != '\0');
                     /* try { // try from 004a7570 to 004a757b has its CatchHandler @ 004a760c */
-    func_0x001678a0(uVar4,abStack_40);
+    func_0x001678a0(uVar5,abStack_40);
   }
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
 LAB_004a75e4:
   if (*(long *)(lVar3 + 0x28) == lStack_28) {
@@ -593,17 +574,18 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   undefined8 *puVar6;
   long lVar7;
   long lVar8;
-  char *pcVar9;
-  long *plVar10;
-  long lVar11;
-  undefined8 uVar12;
-  ulong uVar13;
-  long lVar14;
-  undefined4 *puVar15;
-  ulong uVar16;
-  float fVar17;
+  long lVar9;
+  char *pcVar10;
+  long *plVar11;
+  long lVar12;
+  undefined8 uVar13;
+  ulong uVar14;
+  void *pvVar15;
+  undefined4 *puVar16;
+  ulong uVar17;
   float fVar18;
   float fVar19;
+  float fVar20;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   ulong uStack_198;
@@ -634,10 +616,10 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   int *piStack_d8;
   ulong uStack_d0;
   ulong uStack_c8;
-  ulong uStack_c0;
+  void *pvStack_c0;
   ulong uStack_b8;
   int *piStack_b0;
-  undefined8 uStack_a8;
+  void *pvStack_a8;
   byte bStack_a0;
   undefined7 uStack_9f;
   undefined1 uStack_98;
@@ -647,33 +629,33 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   undefined3 uStack_8b;
   
   lVar3 = tpidr_el0;
-  lVar11 = *(long *)(lVar3 + 0x28);
-  lVar14 = *(long *)(param_1 + 0xb8);
-  if (lVar14 != 0) {
-    func_0x00168e30(lVar14);
-    FUN_00166120(lVar14);
+  lVar12 = *(long *)(lVar3 + 0x28);
+  pvVar15 = *(void **)(param_1 + 0xb8);
+  if (pvVar15 != (void *)0x0) {
+    func_0x00168e30(pvVar15);
+    FUN_00166120(pvVar15);
   }
   uVar5 = FUN_00164060(400);
                     /* try { // try from 004a7684 to 004a7687 has its CatchHandler @ 004a81d0 */
   func_0x0016efe0();
   *(undefined8 *)(param_1 + 0xb8) = uVar5;
   piStack_b0 = (int *)0x0;
-  uStack_a8 = 0;
+  pvStack_a8 = (void *)0x0;
   uStack_b8 = 0x726f7463410a;
                     /* try { // try from 004a76b8 to 004a76c3 has its CatchHandler @ 004a81bc */
   func_0x001631a0(&uStack_d0,*(undefined4 *)(param_1 + 0xc0));
-  uVar16 = uStack_d0 >> 1 & 0x7f;
-  uVar13 = (ulong)&uStack_d0 | 1;
+  uVar17 = uStack_d0 >> 1 & 0x7f;
+  pvVar15 = (void *)((ulong)&uStack_d0 | 1);
   if ((uStack_d0 & 1) != 0) {
-    uVar16 = uStack_c8;
-    uVar13 = uStack_c0;
+    uVar17 = uStack_c8;
+    pvVar15 = pvStack_c0;
   }
                     /* try { // try from 004a76e0 to 004a76e7 has its CatchHandler @ 004a81a4 */
-  puVar6 = (undefined8 *)FUN_00167eb0(&uStack_b8,uVar13,uVar16);
-  uVar12 = puVar6[2];
-  uStack_90 = (undefined1)uVar12;
-  uStack_8f = (undefined4)((ulong)uVar12 >> 8);
-  uStack_8b = (undefined3)((ulong)uVar12 >> 0x28);
+  puVar6 = (undefined8 *)FUN_00167eb0(&uStack_b8,pvVar15,uVar17);
+  uVar13 = puVar6[2];
+  uStack_90 = (undefined1)uVar13;
+  uStack_8f = (undefined4)((ulong)uVar13 >> 8);
+  uStack_8b = (undefined3)((ulong)uVar13 >> 0x28);
   uStack_98 = (undefined1)puVar6[1];
   uStack_97 = (undefined7)((ulong)puVar6[1] >> 8);
   bStack_a0 = (byte)*puVar6;
@@ -681,39 +663,39 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   puVar6[1] = 0;
   puVar6[2] = 0;
   *puVar6 = 0;
-  lVar14 = (ulong)*(uint *)(param_1 + 0xc0) * 0x30;
+  lVar9 = (ulong)*(uint *)(param_1 + 0xc0) * 0x30;
                     /* try { // try from 004a771c to 004a7727 has its CatchHandler @ 004a818c */
-  func_0x00163fc0(uVar5,&bStack_a0,SKELETON_ACTORS + lVar14,lVar14 + 0x764a68);
+  func_0x00163fc0(uVar5,&bStack_a0,SKELETON_ACTORS + lVar9,lVar9 + 0x764a68);
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+    FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
   }
   if ((uStack_d0 & 1) != 0) {
-    FUN_00166120(uStack_c0);
+    FUN_00166120(pvStack_c0);
   }
   if ((uStack_b8 & 1) != 0) {
-    FUN_00166120(uStack_a8);
+    FUN_00166120(pvStack_a8);
   }
-  uVar16 = (ulong)*(uint *)(param_1 + 0xc0);
-  lVar14 = uVar16 * 0x30;
-  bVar2 = SKELETON_ACTORS[lVar14];
+  uVar17 = (ulong)*(uint *)(param_1 + 0xc0);
+  lVar9 = uVar17 * 0x30;
+  bVar2 = SKELETON_ACTORS[lVar9];
   if ((bVar2 & 1) == 0) {
-    lVar8 = lVar14 + 0x764a51;
-    uVar13 = (ulong)(bVar2 >> 1);
+    lVar8 = lVar9 + 0x764a51;
+    uVar14 = (ulong)(bVar2 >> 1);
   }
   else {
-    uVar13 = *(ulong *)(SKELETON_ACTORS + uVar16 * 0x30 + 8);
-    lVar8 = *(long *)(SKELETON_ACTORS + uVar16 * 0x30 + 0x10);
+    uVar14 = *(ulong *)(SKELETON_ACTORS + uVar17 * 0x30 + 8);
+    lVar8 = *(long *)(SKELETON_ACTORS + uVar17 * 0x30 + 0x10);
   }
-  if (5 < (long)uVar13) {
-    lVar1 = lVar8 + uVar13;
+  if (5 < (long)uVar14) {
+    lVar1 = lVar8 + uVar14;
     lVar7 = lVar8;
     do {
-      if ((uVar13 - 5 == 0) || (lVar7 = FUN_001730d0(lVar7,0x73,uVar13 - 5), lVar7 == 0)) break;
+      if ((uVar14 - 5 == 0) || (lVar7 = FUN_001730d0(lVar7,0x73,uVar14 - 5), lVar7 == 0)) break;
       iVar4 = FUN_00163c10(lVar7,"swampy",6);
       if (iVar4 == 0) {
         if ((lVar7 != lVar1) && (lVar7 - lVar8 != -1)) {
           uVar5 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),0x1f6);
-          uVar12 = FUN_001739b0();
+          uVar13 = FUN_001739b0();
           uStack_8b = 0;
           uStack_d0 = 0;
           uStack_c8 = 0;
@@ -726,7 +708,7 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           uStack_9f = 0x7275747865542f;
           uStack_98 = 0x65;
                     /* try { // try from 004a7834 to 004a784b has its CatchHandler @ 004a811c */
-          func_0x001644b0(&uStack_b8,uVar12,&bStack_a0,&uStack_f0,0,0);
+          func_0x001644b0(&uStack_b8,uVar13,&bStack_a0,&uStack_f0,0,0);
           uStack_e0 = uStack_b8;
           piStack_d8 = piStack_b0;
           if (uStack_b8 != 0) {
@@ -739,15 +721,15 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           FUN_0016bb90(&uStack_f0);
           FUN_0016bb90(&uStack_d0);
           if ((bStack_a0 & 1) != 0) {
-            FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+            FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
           uVar5 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),999);
-          uVar12 = FUN_001739b0();
-          pcVar9 = (char *)FUN_00164060(0x20);
-          uStack_90 = SUB81(pcVar9,0);
-          uStack_8f = (undefined4)((ulong)pcVar9 >> 8);
-          uStack_8b = (undefined3)((ulong)pcVar9 >> 0x28);
-          builtin_strncpy(pcVar9,"/Textures/room_overlay.webp",0x1c);
+          uVar13 = FUN_001739b0();
+          pcVar10 = (char *)FUN_00164060(0x20);
+          uStack_90 = SUB81(pcVar10,0);
+          uStack_8f = (undefined4)((ulong)pcVar10 >> 8);
+          uStack_8b = (undefined3)((ulong)pcVar10 >> 0x28);
+          builtin_strncpy(pcVar10,"/Textures/room_overlay.webp",0x1c);
           uStack_d0 = 0;
           uStack_c8 = 0;
           uStack_110 = 0;
@@ -757,7 +739,7 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           bStack_a0 = 0x21;
           uStack_9f = 0;
                     /* try { // try from 004a78f4 to 004a790f has its CatchHandler @ 004a80f8 */
-          func_0x001644b0(&uStack_b8,uVar12,&bStack_a0,&uStack_110,0,0);
+          func_0x001644b0(&uStack_b8,uVar13,&bStack_a0,&uStack_110,0,0);
           uStack_100 = uStack_b8;
           piStack_f8 = piStack_b0;
           if (uStack_b8 != 0) {
@@ -770,11 +752,11 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           FUN_0016bb90(&uStack_110);
           FUN_0016bb90(&uStack_d0);
           if ((bStack_a0 & 1) != 0) {
-            FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+            FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
           uVar5 = *(undefined8 *)(param_1 + 0xb8);
-          fVar17 = Walaber::ScreenCoord::sScreenSize * 0.5;
-          fVar18 = DAT_0072d884 * 0.5;
+          fVar18 = Walaber::ScreenCoord::sScreenSize * 0.5;
+          fVar19 = DAT_0072d884 * 0.5;
           uStack_118 = CONCAT44(-WaterConceptConstants::SWAMPY_OFFSET._4_4_,
                                 (undefined4)WaterConceptConstants::SWAMPY_OFFSET);
           func_0x00173c00(&uStack_d0,*(undefined8 *)(param_1 + 0x90),&uStack_118);
@@ -785,8 +767,8 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           uStack_90 = 0;
           uStack_8f = 0;
           uStack_8b = 0;
-          uStack_b8 = CONCAT44(fVar18 + 0.0 + (float)(uStack_d0 >> 0x20),
-                               fVar17 + 0.0 + (float)uStack_d0);
+          uStack_b8 = CONCAT44(fVar19 + 0.0 + (float)(uStack_d0 >> 0x20),
+                               fVar18 + 0.0 + (float)uStack_d0);
           uStack_128 = 0x3db851ec3db851ec;
                     /* try { // try from 004a79e0 to 004a7a03 has its CatchHandler @ 004a8128 */
           func_0x00173c00(&fStack_120,*(undefined8 *)(param_1 + 0x90),&uStack_128);
@@ -796,32 +778,32 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
         break;
       }
       lVar7 = lVar7 + 1;
-      uVar13 = lVar1 - lVar7;
-    } while (5 < (long)uVar13);
+      uVar14 = lVar1 - lVar7;
+    } while (5 < (long)uVar14);
   }
   if ((bVar2 & 1) == 0) {
-    lVar8 = lVar14 + 0x764a51;
-    uVar13 = (ulong)(bVar2 >> 1);
+    lVar8 = lVar9 + 0x764a51;
+    uVar14 = (ulong)(bVar2 >> 1);
   }
   else {
-    uVar13 = *(ulong *)(SKELETON_ACTORS + uVar16 * 0x30 + 8);
-    lVar8 = *(long *)(SKELETON_ACTORS + uVar16 * 0x30 + 0x10);
+    uVar14 = *(ulong *)(SKELETON_ACTORS + uVar17 * 0x30 + 8);
+    lVar8 = *(long *)(SKELETON_ACTORS + uVar17 * 0x30 + 0x10);
   }
-  if (8 < (long)uVar13) {
-    lVar1 = lVar8 + uVar13;
+  if (8 < (long)uVar14) {
+    lVar1 = lVar8 + uVar14;
     lVar7 = lVar8;
     do {
-      if ((uVar13 - 8 == 0) || (lVar7 = FUN_001730d0(lVar7,99,uVar13 - 8), lVar7 == 0)) break;
+      if ((uVar14 - 8 == 0) || (lVar7 = FUN_001730d0(lVar7,99,uVar14 - 8), lVar7 == 0)) break;
       iVar4 = FUN_00163c10(lVar7,"crankyNew",9);
       if (iVar4 == 0) {
         if ((lVar7 != lVar1) && (lVar7 - lVar8 != -1)) {
           uVar5 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),0x1f6);
-          uVar12 = FUN_001739b0();
-          pcVar9 = (char *)FUN_00164060(0x20);
-          uStack_90 = SUB81(pcVar9,0);
-          uStack_8f = (undefined4)((ulong)pcVar9 >> 8);
-          uStack_8b = (undefined3)((ulong)pcVar9 >> 0x28);
-          builtin_strncpy(pcVar9,"/Textures/Cranky_Room.webp",0x1b);
+          uVar13 = FUN_001739b0();
+          pcVar10 = (char *)FUN_00164060(0x20);
+          uStack_90 = SUB81(pcVar10,0);
+          uStack_8f = (undefined4)((ulong)pcVar10 >> 8);
+          uStack_8b = (undefined3)((ulong)pcVar10 >> 0x28);
+          builtin_strncpy(pcVar10,"/Textures/Cranky_Room.webp",0x1b);
           uStack_d0 = 0;
           uStack_c8 = 0;
           uStack_148 = 0;
@@ -831,7 +813,7 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           bStack_a0 = 0x21;
           uStack_9f = 0;
                     /* try { // try from 004a7ae0 to 004a7afb has its CatchHandler @ 004a80d4 */
-          func_0x001644b0(&uStack_b8,uVar12,&bStack_a0,&uStack_148,0,0);
+          func_0x001644b0(&uStack_b8,uVar13,&bStack_a0,&uStack_148,0,0);
           uStack_138 = uStack_b8;
           piStack_130 = piStack_b0;
           if (uStack_b8 != 0) {
@@ -844,25 +826,25 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           FUN_0016bb90(&uStack_148);
           FUN_0016bb90(&uStack_d0);
           if ((bStack_a0 & 1) != 0) {
-            FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+            FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
           uVar5 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),999);
-          uVar12 = FUN_001739b0();
-          pcVar9 = (char *)FUN_00164060(0x30);
-          uStack_90 = SUB81(pcVar9,0);
-          uStack_8f = (undefined4)((ulong)pcVar9 >> 8);
-          uStack_8b = (undefined3)((ulong)pcVar9 >> 0x28);
+          uVar13 = FUN_001739b0();
+          pcVar10 = (char *)FUN_00164060(0x30);
+          uStack_90 = SUB81(pcVar10,0);
+          uStack_8f = (undefined4)((ulong)pcVar10 >> 8);
+          uStack_8b = (undefined3)((ulong)pcVar10 >> 0x28);
           uStack_98 = 0x22;
           uStack_97 = 0;
           bStack_a0 = 0x31;
           uStack_9f = 0;
-          builtin_strncpy(pcVar9,"/Textures/Cranky_Room_Overlay.webp",0x23);
+          builtin_strncpy(pcVar10,"/Textures/Cranky_Room_Overlay.webp",0x23);
           uStack_d0 = 0;
           uStack_c8 = 0;
           uStack_168 = 0;
           uStack_160 = 0;
                     /* try { // try from 004a7ba4 to 004a7bbf has its CatchHandler @ 004a80b0 */
-          func_0x001644b0(&uStack_b8,uVar12,&bStack_a0,&uStack_168,0,0);
+          func_0x001644b0(&uStack_b8,uVar13,&bStack_a0,&uStack_168,0,0);
           uStack_158 = uStack_b8;
           piStack_150 = piStack_b0;
           if (uStack_b8 != 0) {
@@ -875,18 +857,18 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           FUN_0016bb90(&uStack_168);
           FUN_0016bb90(&uStack_d0);
           if ((bStack_a0 & 1) != 0) {
-            FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+            FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
-          fVar18 = Walaber::ScreenCoord::sScreenSize * Walaber::ScreenCoord::sScreenSize +
+          fVar19 = Walaber::ScreenCoord::sScreenSize * Walaber::ScreenCoord::sScreenSize +
                    DAT_0072d884 * DAT_0072d884;
-          fVar17 = SQRT(fVar18);
-          if (NAN(fVar17)) {
-            fVar17 = (float)func_0x0016cd20(fVar18);
+          fVar18 = SQRT(fVar19);
+          if (NAN(fVar18)) {
+            fVar18 = (float)func_0x0016cd20(fVar19);
           }
           uVar5 = *(undefined8 *)(param_1 + 0xb8);
-          fVar18 = Walaber::ScreenCoord::sScreenSize * 0.5;
-          fVar19 = DAT_0072d884 * 0.5;
-          fVar17 = (fVar17 / 576.8882) * 0.9;
+          fVar19 = Walaber::ScreenCoord::sScreenSize * 0.5;
+          fVar20 = DAT_0072d884 * 0.5;
+          fVar18 = (fVar18 / 576.8882) * 0.9;
           uStack_118 = CONCAT44(-WaterConceptConstants::CRANKY_OFFSET._4_4_,
                                 (undefined4)WaterConceptConstants::CRANKY_OFFSET);
           func_0x00173c00(&uStack_d0,*(undefined8 *)(param_1 + 0x90),&uStack_118);
@@ -897,52 +879,52 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           uStack_90 = 0;
           uStack_8f = 0;
           uStack_8b = 0;
-          uStack_b8 = CONCAT44(fVar19 + 0.0 + (float)(uStack_d0 >> 0x20),
-                               fVar18 + 0.0 + (float)uStack_d0);
+          uStack_b8 = CONCAT44(fVar20 + 0.0 + (float)(uStack_d0 >> 0x20),
+                               fVar19 + 0.0 + (float)uStack_d0);
                     /* try { // try from 004a7cbc to 004a7cd3 has its CatchHandler @ 004a8094 */
-          fStack_120 = fVar17;
-          fStack_11c = fVar17;
+          fStack_120 = fVar18;
+          fStack_11c = fVar18;
           func_0x0016a9d0(uVar5,&uStack_b8,&bStack_a0,&fStack_120,1);
           goto LAB_004a8008;
         }
         break;
       }
       lVar7 = lVar7 + 1;
-      uVar13 = lVar1 - lVar7;
-    } while (8 < (long)uVar13);
+      uVar14 = lVar1 - lVar7;
+    } while (8 < (long)uVar14);
   }
   if ((bVar2 & 1) == 0) {
-    lVar14 = lVar14 + 0x764a51;
-    uVar13 = (ulong)(bVar2 >> 1);
+    lVar9 = lVar9 + 0x764a51;
+    uVar14 = (ulong)(bVar2 >> 1);
   }
   else {
-    uVar13 = *(ulong *)(SKELETON_ACTORS + uVar16 * 0x30 + 8);
-    lVar14 = *(long *)(SKELETON_ACTORS + uVar16 * 0x30 + 0x10);
+    uVar14 = *(ulong *)(SKELETON_ACTORS + uVar17 * 0x30 + 8);
+    lVar9 = *(long *)(SKELETON_ACTORS + uVar17 * 0x30 + 0x10);
   }
-  if (4 < (long)uVar13) {
-    lVar7 = lVar14 + uVar13;
-    lVar8 = lVar14;
+  if (4 < (long)uVar14) {
+    lVar7 = lVar9 + uVar14;
+    lVar8 = lVar9;
     do {
-      if ((uVar13 - 4 == 0) || (lVar8 = FUN_001730d0(lVar8,0x61,uVar13 - 4), lVar8 == 0)) break;
+      if ((uVar14 - 4 == 0) || (lVar8 = FUN_001730d0(lVar8,0x61,uVar14 - 4), lVar8 == 0)) break;
       iVar4 = FUN_00163c10(lVar8,"allie",5);
       if (iVar4 == 0) {
         if (lVar8 != lVar7) {
-          lVar8 = lVar8 - lVar14;
+          lVar8 = lVar8 - lVar9;
           goto LAB_004a7d5c;
         }
         break;
       }
       lVar8 = lVar8 + 1;
-      uVar13 = lVar7 - lVar8;
-    } while (4 < (long)uVar13);
+      uVar14 = lVar7 - lVar8;
+    } while (4 < (long)uVar14);
   }
   lVar8 = -1;
 LAB_004a7d5c:
-  lVar14 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),0x1f6);
+  lVar9 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),0x1f6);
   if (lVar8 == -1) {
-    *(undefined1 *)(lVar14 + 0x8c) = 0;
-    lVar14 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),999);
-    *(undefined1 *)(lVar14 + 0x8c) = 0;
+    *(undefined1 *)(lVar9 + 0x8c) = 0;
+    lVar9 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),999);
+    *(undefined1 *)(lVar9 + 0x8c) = 0;
     uVar5 = *(undefined8 *)(param_1 + 0xb8);
     bStack_a0 = 0;
     uStack_9f = 0;
@@ -959,11 +941,11 @@ LAB_004a7d5c:
   }
   else {
     uVar5 = FUN_001739b0();
-    pcVar9 = (char *)FUN_00164060(0x20);
-    uStack_90 = SUB81(pcVar9,0);
-    uStack_8f = (undefined4)((ulong)pcVar9 >> 8);
-    uStack_8b = (undefined3)((ulong)pcVar9 >> 0x28);
-    builtin_strncpy(pcVar9,"/Textures/Allie_Room.webp",0x1a);
+    pcVar10 = (char *)FUN_00164060(0x20);
+    uStack_90 = SUB81(pcVar10,0);
+    uStack_8f = (undefined4)((ulong)pcVar10 >> 8);
+    uStack_8b = (undefined3)((ulong)pcVar10 >> 0x28);
+    builtin_strncpy(pcVar10,"/Textures/Allie_Room.webp",0x1a);
     uStack_d0 = 0;
     uStack_c8 = 0;
     uStack_188 = 0;
@@ -980,31 +962,31 @@ LAB_004a7d5c:
       *piStack_b0 = *piStack_b0 + 1;
     }
                     /* try { // try from 004a7dec to 004a7df7 has its CatchHandler @ 004a8150 */
-    func_0x001681f0(lVar14,&uStack_178);
+    func_0x001681f0(lVar9,&uStack_178);
     FUN_00166b20(&uStack_178);
     FUN_00166b20(&uStack_b8);
     FUN_0016bb90(&uStack_188);
     FUN_0016bb90(&uStack_d0);
     if ((bStack_a0 & 1) != 0) {
-      FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+      FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
     }
     uVar5 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),999);
-    uVar12 = FUN_001739b0();
-    pcVar9 = (char *)FUN_00164060(0x30);
-    uStack_90 = SUB81(pcVar9,0);
-    uStack_8f = (undefined4)((ulong)pcVar9 >> 8);
-    uStack_8b = (undefined3)((ulong)pcVar9 >> 0x28);
+    uVar13 = FUN_001739b0();
+    pcVar10 = (char *)FUN_00164060(0x30);
+    uStack_90 = SUB81(pcVar10,0);
+    uStack_8f = (undefined4)((ulong)pcVar10 >> 8);
+    uStack_8b = (undefined3)((ulong)pcVar10 >> 0x28);
     uStack_98 = 0x21;
     uStack_97 = 0;
     bStack_a0 = 0x31;
     uStack_9f = 0;
-    builtin_strncpy(pcVar9,"/Textures/Allie_Room_Overlay.webp",0x22);
+    builtin_strncpy(pcVar10,"/Textures/Allie_Room_Overlay.webp",0x22);
     uStack_d0 = 0;
     uStack_c8 = 0;
     uStack_1a8 = 0;
     uStack_1a0 = 0;
                     /* try { // try from 004a7e7c to 004a7e97 has its CatchHandler @ 004a8144 */
-    func_0x001644b0(&uStack_b8,uVar12,&bStack_a0,&uStack_1a8,0,0);
+    func_0x001644b0(&uStack_b8,uVar13,&bStack_a0,&uStack_1a8,0,0);
     uStack_198 = uStack_b8;
     piStack_190 = piStack_b0;
     if (uStack_b8 != 0) {
@@ -1017,11 +999,11 @@ LAB_004a7d5c:
     FUN_0016bb90(&uStack_1a8);
     FUN_0016bb90(&uStack_d0);
     if ((bStack_a0 & 1) != 0) {
-      FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+      FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
     }
     uVar5 = *(undefined8 *)(param_1 + 0xb8);
-    fVar17 = Walaber::ScreenCoord::sScreenSize * 0.5;
-    fVar18 = DAT_0072d884 * 0.5;
+    fVar18 = Walaber::ScreenCoord::sScreenSize * 0.5;
+    fVar19 = DAT_0072d884 * 0.5;
     uStack_118 = CONCAT44(-WaterConceptConstants::ALLIE_OFFSET._4_4_,
                           (undefined4)WaterConceptConstants::ALLIE_OFFSET);
     func_0x00173c00(&uStack_d0,*(undefined8 *)(param_1 + 0x90),&uStack_118);
@@ -1032,7 +1014,7 @@ LAB_004a7d5c:
     uStack_90 = 0;
     uStack_8f = 0;
     uStack_8b = 0;
-    uStack_b8 = CONCAT44(fVar18 + 0.0 + (float)(uStack_d0 >> 0x20),fVar17 + 0.0 + (float)uStack_d0);
+    uStack_b8 = CONCAT44(fVar19 + 0.0 + (float)(uStack_d0 >> 0x20),fVar18 + 0.0 + (float)uStack_d0);
     uStack_128 = 0x3dcccccd3dcccccd;
                     /* try { // try from 004a7f68 to 004a7f8b has its CatchHandler @ 004a81dc */
     func_0x00173c00(&fStack_120,*(undefined8 *)(param_1 + 0x90),&uStack_128);
@@ -1040,18 +1022,18 @@ LAB_004a7d5c:
   }
 LAB_004a8008:
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
+    FUN_00166120((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
   }
-  puVar15 = *(undefined4 **)(param_1 + 0xb8);
-  *puVar15 = 0x1ffff;
-  puVar6 = (undefined8 *)(puVar15 + 0xc);
-  func_0x001690a0(puVar15 + 10,*puVar6);
-  *(undefined8 **)(puVar15 + 10) = puVar6;
-  *(undefined8 *)(puVar15 + 0xe) = 0;
+  puVar16 = *(undefined4 **)(param_1 + 0xb8);
+  *puVar16 = 0x1ffff;
+  puVar6 = (undefined8 *)(puVar16 + 0xc);
+  func_0x001690a0(puVar16 + 10,*puVar6);
+  *(undefined8 **)(puVar16 + 10) = puVar6;
+  *(undefined8 *)(puVar16 + 0xe) = 0;
   *puVar6 = 0;
-  plVar10 = *(long **)(*(long *)(param_1 + 0xb8) + 8);
-  (**(code **)(*plVar10 + 0x40))(plVar10,100);
-  if (*(long *)(lVar3 + 0x28) == lVar11) {
+  plVar11 = *(long **)(*(long *)(param_1 + 0xb8) + 8);
+  (**(code **)(*plVar11 + 0x40))(plVar11,100);
+  if (*(long *)(lVar3 + 0x28) == lVar12) {
     return;
   }
   FUN_00164ff0();
@@ -1066,19 +1048,20 @@ LAB_004a8008:
 
 /* WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(long param_1,int *param_2)
+void WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(void *p0)
 
 {
   undefined8 uVar1;
+  int *in_x1;
   
-  if (*param_2 == 1) {
-    uVar1 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),5);
-    *(undefined8 *)(param_1 + 0xa0) = uVar1;
-    uVar1 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),3);
-    *(undefined8 *)(param_1 + 0xa8) = uVar1;
-    uVar1 = func_0x001692e0(*(undefined8 *)(param_1 + 0x10),4);
-    *(undefined8 *)(param_1 + 0xb0) = uVar1;
-    func_0x0016d950(param_1,0);
+  if (*in_x1 == 1) {
+    uVar1 = func_0x001692e0(*(undefined8 *)((long)p0 + 0x10),5);
+    *(undefined8 *)((long)p0 + 0xa0) = uVar1;
+    uVar1 = func_0x001692e0(*(undefined8 *)((long)p0 + 0x10),3);
+    *(undefined8 *)((long)p0 + 0xa8) = uVar1;
+    uVar1 = func_0x001692e0(*(undefined8 *)((long)p0 + 0x10),4);
+    *(undefined8 *)((long)p0 + 0xb0) = uVar1;
+    func_0x0016d950(p0,0);
     return;
   }
   return;
@@ -1092,17 +1075,18 @@ void WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(long param_1,in
 
 /* WaterConcept::Screen_AnimationTest::_worldToScreen(Walaber::Vector2 const&) */
 
-void WaterConcept::Screen_AnimationTest::_worldToScreen(float *param_1,long param_2,float *param_3)
+void WaterConcept::Screen_AnimationTest::_worldToScreen(Walaber__Vector2 *p0)
 
 {
+  float *in_x1;
+  float *in_x8;
   float *pfVar1;
   float fVar2;
   
-  pfVar1 = *(float **)(param_2 + 0x90);
-  fVar2 = (-(param_3[1] - (pfVar1[1] + pfVar1[3] * 0.5)) / pfVar1[3]) * DAT_0072d884;
-  *param_1 = ((*param_3 - (*pfVar1 - pfVar1[2] * 0.5)) / pfVar1[2]) *
-             Walaber::ScreenCoord::sScreenSize;
-  param_1[1] = fVar2;
+  pfVar1 = *(float **)(p0 + 0x90);
+  fVar2 = (-(in_x1[1] - (pfVar1[1] + pfVar1[3] * 0.5)) / pfVar1[3]) * DAT_0072d884;
+  *in_x8 = ((*in_x1 - (*pfVar1 - pfVar1[2] * 0.5)) / pfVar1[2]) * Walaber::ScreenCoord::sScreenSize;
+  in_x8[1] = fVar2;
   return;
 }
 
@@ -1114,21 +1098,22 @@ void WaterConcept::Screen_AnimationTest::_worldToScreen(float *param_1,long para
 
 /* WaterConcept::Screen_AnimationTest::_screenToWorld(Walaber::Vector2 const&) */
 
-void WaterConcept::Screen_AnimationTest::_screenToWorld(float *param_1,long param_2,float *param_3)
+void WaterConcept::Screen_AnimationTest::_screenToWorld(Walaber__Vector2 *p0)
 
 {
+  float *in_x1;
+  float *in_x8;
   float *pfVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   
-  pfVar1 = *(float **)(param_2 + 0x90);
+  pfVar1 = *(float **)(p0 + 0x90);
   fVar3 = pfVar1[3];
   fVar4 = pfVar1[1];
-  fVar2 = param_3[1] / DAT_0072d884;
-  *param_1 = (*param_3 / Walaber::ScreenCoord::sScreenSize) * pfVar1[2] +
-             (*pfVar1 - pfVar1[2] * 0.5);
-  param_1[1] = (fVar4 + fVar3 * 0.5) - fVar2 * fVar3;
+  fVar2 = in_x1[1] / DAT_0072d884;
+  *in_x8 = (*in_x1 / Walaber::ScreenCoord::sScreenSize) * pfVar1[2] + (*pfVar1 - pfVar1[2] * 0.5);
+  in_x8[1] = (fVar4 + fVar3 * 0.5) - fVar2 * fVar3;
   return;
 }
 

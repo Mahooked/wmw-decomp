@@ -19,7 +19,7 @@ void std::__ndk1::__deque_base<Walaber::PCSNode*,std::__ndk1::allocator<Walaber:
   func_0x0016a990();
   puVar1 = *(undefined8 **)(param_1 + 0x10);
   for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
-    FUN_00166120(*puVar2);
+    FUN_00166120((void *)*puVar2);
   }
   func_0x00162e20(param_1);
   return;
@@ -64,7 +64,7 @@ void std::__ndk1::__deque_base<Walaber::PCSNode*,std::__ndk1::allocator<Walaber:
   }
   *(undefined8 *)(param_1 + 0x28) = 0;
   while (uVar1 = lVar4 >> 3, 2 < uVar1) {
-    FUN_00166120(*puVar2);
+    FUN_00166120((void *)*puVar2);
     puVar2 = (undefined8 *)(*(long *)(param_1 + 8) + 8);
     *(undefined8 **)(param_1 + 8) = puVar2;
     lVar4 = *(long *)(param_1 + 0x10) - (long)puVar2;

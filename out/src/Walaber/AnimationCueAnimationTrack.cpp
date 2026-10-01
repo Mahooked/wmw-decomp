@@ -8,19 +8,19 @@
 
 /* Walaber::AnimationCueAnimationTrack::apply(float) */
 
-void Walaber::AnimationCueAnimationTrack::apply(float param_1,undefined8 *param_2)
+void Walaber::AnimationCueAnimationTrack::apply(float p0)
 
 {
   int iVar1;
+  undefined8 *in_x0;
   long lVar2;
   
-  if (*(int *)(param_2 + 5) != *(int *)((long)param_2 + 0x2c) + -1) {
-    iVar1 = *(int *)(param_2 + 5) + 1;
-    if (*(float *)(param_2[2] + (long)iVar1 * 0x28) < param_1) {
-      *(int *)(param_2 + 5) = iVar1;
-      lVar2 = param_2[2] + (long)iVar1 * 0x28;
-      func_0x0016c550(*param_2,lVar2 + 8,*(undefined4 *)(lVar2 + 0x20),*(undefined4 *)(lVar2 + 0x24)
-                     );
+  if (*(int *)(in_x0 + 5) != *(int *)((long)in_x0 + 0x2c) + -1) {
+    iVar1 = *(int *)(in_x0 + 5) + 1;
+    if (*(float *)(in_x0[2] + (long)iVar1 * 0x28) < p0) {
+      *(int *)(in_x0 + 5) = iVar1;
+      lVar2 = in_x0[2] + (long)iVar1 * 0x28;
+      func_0x0016c550(*in_x0,lVar2 + 8,*(undefined4 *)(lVar2 + 0x20),*(undefined4 *)(lVar2 + 0x24));
       return;
     }
   }
@@ -55,16 +55,17 @@ void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(undefined8 
 
 /* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber::AnimationManager*) */
 
-void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack
-               (undefined8 *param_1,undefined8 param_2)
+void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber__AnimationManager *p0)
 
 {
-  param_1[3] = 0;
-  param_1[4] = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = param_2;
-  param_1[5] = 0xffffffff;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x18) = 0;
+  *(undefined8 *)(p0 + 0x20) = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  *(undefined8 *)p0 = in_x1;
+  *(undefined8 *)(p0 + 0x28) = 0xffffffff;
   return;
 }
 
@@ -78,16 +79,17 @@ void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack
    const&) */
 
 void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack
-               (undefined8 *param_1,undefined8 *param_2)
+               (Walaber__AnimationCueAnimationTrack *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  func_0x0016e870(param_1 + 2,param_2 + 2);
-  param_1[5] = param_2[5];
+  uVar1 = *in_x1;
+  *(undefined8 *)(p0 + 8) = in_x1[1];
+  *(undefined8 *)p0 = uVar1;
+  func_0x0016e870(p0 + 0x10,in_x1 + 2);
+  *(undefined8 *)(p0 + 0x28) = in_x1[5];
   return;
 }
 
@@ -100,19 +102,21 @@ void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack
 /* Walaber::AnimationCueAnimationTrack::TEMPNAMEPLACEHOLDERVALUE(Walaber::AnimationCueAnimationTrack
    const&) */
 
-undefined8 * Walaber::AnimationCueAnimationTrack::operator=(undefined8 *param_1,undefined8 *param_2)
+Walaber__AnimationCueAnimationTrack *
+Walaber::AnimationCueAnimationTrack::operator=(Walaber__AnimationCueAnimationTrack *p0)
 
 {
+  Walaber__AnimationCueAnimationTrack *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  param_1[1] = param_2[1];
-  *param_1 = uVar1;
-  if (param_1 != param_2) {
-    func_0x0016c7b0(param_1 + 2,param_2[2],param_2[3]);
+  uVar1 = *(undefined8 *)in_x1;
+  *(undefined8 *)(p0 + 8) = *(undefined8 *)(in_x1 + 8);
+  *(undefined8 *)p0 = uVar1;
+  if (p0 != in_x1) {
+    func_0x0016c7b0(p0 + 0x10,*(undefined8 *)(in_x1 + 0x10),*(undefined8 *)(in_x1 + 0x18));
   }
-  param_1[5] = param_2[5];
-  return param_1;
+  *(undefined8 *)(p0 + 0x28) = *(undefined8 *)(in_x1 + 0x28);
+  return p0;
 }
 
 
@@ -151,7 +155,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
   undefined8 uStack_80;
   ulong uStack_78;
   undefined8 uStack_70;
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined8 uStack_60;
   long lStack_58;
   
@@ -162,7 +166,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
     uStack_60 = 0;
     uStack_78 = 0;
     uStack_80 = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     uStack_70 = 0;
     puVar3 = *(undefined4 **)(param_2 + 0x18);
     if (puVar3 < *(undefined4 **)(param_2 + 0x20)) {
@@ -171,7 +175,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
       *(undefined8 *)(puVar3 + 4) = 0;
       *(undefined8 *)(puVar3 + 2) = 0;
       uStack_70 = 0;
-      uStack_68 = 0;
+      pvStack_68 = (void *)0x0;
       uStack_78 = 0;
       *(undefined8 *)(puVar3 + 8) = 0;
       *(long *)(param_2 + 0x18) = *(long *)(param_2 + 0x18) + 0x28;
@@ -180,7 +184,7 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
                     /* try { // try from 00433b0c to 00433b17 has its CatchHandler @ 00433b7c */
       func_0x00168a80(plVar1,&uStack_80);
       if ((uStack_78 & 1) != 0) {
-        FUN_00166120(uStack_68);
+        FUN_00166120(pvStack_68);
       }
     }
     puVar3 = (undefined4 *)*plVar1;
@@ -189,12 +193,12 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
     uStack_60 = 0;
     uStack_78 = 0;
     uStack_80 = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     uStack_70 = 0;
                     /* try { // try from 00433a94 to 00433a9f has its CatchHandler @ 00433b80 */
     puVar3 = (undefined4 *)func_0x00168330(plVar1,*(undefined8 *)(param_2 + 0x18),&uStack_80);
     if ((uStack_78 & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
   }
   *puVar3 = param_1;

@@ -58,7 +58,7 @@ void std::__ndk1::__money_get<char>::__gather_info
     param_9[0xe] = 0;
     param_9[0xf] = 0;
     if ((bVar1 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_9 + 0x10));
+      FUN_00166120(*(void **)(param_9 + 0x10));
       param_9[0] = 0;
       param_9[1] = 0;
       param_9[2] = 0;
@@ -88,7 +88,7 @@ void std::__ndk1::__money_get<char>::__gather_info
     param_8[0xe] = 0;
     param_8[0xf] = 0;
     if ((*param_8 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_8 + 0x10));
+      FUN_00166120(*(void **)(param_8 + 0x10));
       param_8[0] = 0;
       param_8[1] = 0;
       param_8[2] = 0;
@@ -122,7 +122,7 @@ void std::__ndk1::__money_get<char>::__gather_info
     param_6[0xe] = 0;
     param_6[0xf] = 0;
     if ((*param_6 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_6 + 0x10));
+      FUN_00166120(*(void **)(param_6 + 0x10));
       param_6[0] = 0;
       param_6[1] = 0;
       param_6[2] = 0;
@@ -152,7 +152,7 @@ void std::__ndk1::__money_get<char>::__gather_info
     param_7[0xe] = 0;
     param_7[0xf] = 0;
     if ((*param_7 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_7 + 0x10));
+      FUN_00166120(*(void **)(param_7 + 0x10));
       param_7[0] = 0;
       param_7[1] = 0;
       param_7[2] = 0;

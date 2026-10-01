@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_Challenges::~Screen_Challenges(lo
 void non_virtual_thunk_to_WaterConcept::Screen_Challenges::~Screen_Challenges(long param_1)
 
 {
-  func_0x00173c20(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00173c20((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_Challenges::~Screen_Challenges(lo
 /* non-virtual thunk to WaterConcept::Screen_Challenges::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Challenges::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Challenges::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x0016d970(param_1 + -0x20);
+  func_0x0016d970((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -55,7 +56,7 @@ void non_virtual_thunk_to_WaterConcept::Screen_Challenges::handleEvent(long para
 
 /* non-virtual thunk to WaterConcept::Screen_Challenges::messageRx(Walaber::Message const&) */
 
-undefined8 non_virtual_thunk_to_WaterConcept::Screen_Challenges::messageRx(void)
+undefined8 non_virtual_thunk_to_WaterConcept::Screen_Challenges::messageRx(Walaber__Message *p0)
 
 {
   func_0x0016d910();

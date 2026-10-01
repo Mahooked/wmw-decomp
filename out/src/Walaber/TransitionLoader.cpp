@@ -8,13 +8,13 @@
 
 /* Walaber::TransitionLoader::transitionFromNameDefault(void*) */
 
-void Walaber::TransitionLoader::transitionFromNameDefault(undefined4 *param_1)
+void Walaber::TransitionLoader::transitionFromNameDefault(void *p0)
 
 {
   undefined8 uVar1;
   
-  *(undefined8 *)(param_1 + 2) = 0;
-  switch(*param_1) {
+  *(undefined8 *)((long)p0 + 8) = 0;
+  switch(*(undefined4 *)p0) {
   case 0:
     uVar1 = FUN_00164060(0xf8);
                     /* try { // try from 003f3e1c to 003f3e1f has its CatchHandler @ 003f3ea8 */
@@ -48,7 +48,7 @@ void Walaber::TransitionLoader::transitionFromNameDefault(undefined4 *param_1)
   default:
     goto switchD_003f3e0c_default;
   }
-  *(undefined8 *)(param_1 + 2) = uVar1;
+  *(undefined8 *)((long)p0 + 8) = uVar1;
 switchD_003f3e0c_default:
   return;
 }
@@ -61,14 +61,14 @@ switchD_003f3e0c_default:
 
 /* Walaber::TransitionLoader::createTransition(unsigned int) */
 
-void Walaber::TransitionLoader::createTransition(undefined4 param_1)
+void Walaber::TransitionLoader::createTransition(uint p0)
 
 {
   long lVar1;
   long lVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
-  undefined4 auStack_48 [2];
+  uint auStack_48 [2];
   long lStack_40;
   long lStack_38;
   
@@ -79,7 +79,7 @@ void Walaber::TransitionLoader::createTransition(undefined4 param_1)
     do {
       lStack_40 = 0;
       puVar4 = puVar3 + 2;
-      auStack_48[0] = param_1;
+      auStack_48[0] = p0;
       (**(code **)(*(long *)*puVar3 + 0x10))((long *)*puVar3,auStack_48);
       lVar2 = lStack_40;
       if (lStack_40 != 0) goto LAB_003f3fbc;

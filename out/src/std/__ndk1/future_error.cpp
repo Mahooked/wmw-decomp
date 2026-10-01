@@ -14,7 +14,7 @@ void std::__ndk1::future_error::future_error
 {
   long lVar1;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
   long lStack_28;
@@ -27,7 +27,7 @@ void std::__ndk1::future_error::future_error
                     /* try { // try from 005f0704 to 005f070f has its CatchHandler @ 005f075c */
   func_0x0016c1f0(param_1,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   *param_1 = &PTR__future_error_00719378;
   param_1[3] = uStack_30;
@@ -62,7 +62,7 @@ void std::__ndk1::future_error::~future_error(void)
 
 /* std::__ndk1::future_error::~future_error() */
 
-void std::__ndk1::future_error::~future_error(undefined8 param_1)
+void std::__ndk1::future_error::~future_error(void *param_1)
 
 {
   FUN_00172d60();

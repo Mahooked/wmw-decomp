@@ -38,7 +38,7 @@ void std::bad_typeid::~bad_typeid(void)
 
 /* std::bad_typeid::~bad_typeid() */
 
-void std::bad_typeid::~bad_typeid(undefined8 param_1)
+void std::bad_typeid::~bad_typeid(void *param_1)
 
 {
   FUN_0016fe40();

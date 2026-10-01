@@ -23,8 +23,8 @@ void Walaber::GraphicsGL::Extensions::Extensions(undefined2 *param_1)
   byte *pbVar10;
   ulong uVar11;
   byte *pbVar12;
-  ulong uVar13;
-  byte *pbVar14;
+  ulong p0;
+  byte *pbVar13;
   byte bStack_98;
   undefined7 uStack_97;
   undefined1 uStack_90;
@@ -63,16 +63,16 @@ void Walaber::GraphicsGL::Extensions::Extensions(undefined2 *param_1)
     if (uVar5 == 0) goto LAB_0040a5f8;
   }
   else {
-    uVar13 = uVar5 + 0x10 & 0xfffffffffffffff0;
+    p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 0040a5d0 to 0040a5d7 has its CatchHandler @ 0040a89c */
-    uVar11 = FUN_00164060(uVar13);
-    bStack_98 = (byte)uVar13 | 1;
+    uVar11 = FUN_00164060(p0);
+    bStack_98 = (byte)p0 | 1;
     uStack_90 = (undefined1)uVar5;
     uStack_8f = (undefined7)(uVar5 >> 8);
     uStack_88 = (undefined1)uVar11;
     uStack_87 = (undefined1)(uVar11 >> 8);
     uStack_86 = (undefined6)(uVar11 >> 0x10);
-    uStack_97 = (undefined7)(uVar13 >> 8);
+    uStack_97 = (undefined7)(p0 >> 8);
   }
   FUN_001715e0(uVar11,uVar4,uVar5);
 LAB_0040a5f8:
@@ -80,7 +80,7 @@ LAB_0040a5f8:
                     /* try { // try from 0040a5fc to 0040a60b has its CatchHandler @ 0040a8a4 */
   func_0x001652f0(&bStack_98,0x20,&pbStack_80);
   if ((bStack_98 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_86,CONCAT11(uStack_87,uStack_88)));
+    FUN_00166120((void *)CONCAT62(uStack_86,CONCAT11(uStack_87,uStack_88)));
   }
   pbVar7 = pbStack_78;
   if (pbStack_78 != pbStack_80) {
@@ -101,7 +101,7 @@ LAB_0040a5f8:
       pbVar7 = pbStack_80;
     } while (uVar5 <= uVar11 && uVar11 - uVar5 != 0);
   }
-  pbVar14 = pbStack_78;
+  pbVar13 = pbStack_78;
   uStack_86 = 0;
   bStack_98 = 0x20;
   uStack_8f = 0x65666675627061;
@@ -136,16 +136,16 @@ LAB_0040a5f8:
         }
       }
       pbVar6 = pbVar6 + 0x18;
-      pbVar12 = pbVar14;
-    } while (pbVar6 != pbVar14);
+      pbVar12 = pbVar13;
+    } while (pbVar6 != pbVar13);
   }
 LAB_0040a758:
-  if (pbVar14 != pbVar12) {
+  if (pbVar13 != pbVar12) {
     *(undefined1 *)param_1 = 1;
                     /* try { // try from 0040a768 to 0040a77f has its CatchHandler @ 0040a8bc */
     FUN_00166450("Walaber",1,"got mapped buffers.\n");
     pbVar7 = pbStack_80;
-    pbVar14 = pbStack_78;
+    pbVar13 = pbStack_78;
   }
                     /* try { // try from 0040a784 to 0040a78b has its CatchHandler @ 0040a8a0 */
   pbVar6 = (byte *)FUN_00164060(0x20);
@@ -183,7 +183,7 @@ LAB_0040a758:
   pbVar6[7] = 'f';
   pbVar6[0x19] = 0;
   pbVar12 = pbVar7;
-  for (; pbVar7 != pbVar14; pbVar7 = pbVar7 + 0x18) {
+  for (; pbVar7 != pbVar13; pbVar7 = pbVar7 + 0x18) {
     bVar1 = *pbVar7;
     uVar5 = (ulong)(bVar1 >> 1);
     if ((bVar1 & 1) != 0) {
@@ -206,11 +206,11 @@ LAB_0040a758:
         if (iVar3 == 0) break;
       }
     }
-    pbVar12 = pbVar14;
+    pbVar12 = pbVar13;
   }
 LAB_0040a828:
   FUN_00166120(pbVar6);
-  if (pbVar14 != pbVar12) {
+  if (pbVar13 != pbVar12) {
     *(undefined1 *)((long)param_1 + 1) = 1;
                     /* try { // try from 0040a840 to 0040a857 has its CatchHandler @ 0040a8bc */
     FUN_00166450("Walaber",1,"got RTT support.\n");

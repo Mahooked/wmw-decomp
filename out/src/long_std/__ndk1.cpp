@@ -9,8 +9,7 @@
 /* long std::__ndk1::__num_get_signed_integral<long>(char const*, char const*, unsigned int&, int)
     */
 
-void std::__ndk1::__num_get_signed_integral<long>
-               (long param_1,long param_2,undefined4 *param_3,undefined4 param_4)
+void std::__ndk1::__num_get_signed_integral<long>(char *p0,char *p1,uint *p2,int p3)
 
 {
   int iVar1;
@@ -19,12 +18,12 @@ void std::__ndk1::__num_get_signed_integral<long>
   int *piVar4;
   long lVar5;
   long lVar6;
-  long lStack_60;
+  char *pcStack_60;
   long lStack_58;
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  if (param_1 != param_2) {
+  if (p0 != p1) {
     piVar4 = (int *)FUN_00168e70();
     iVar1 = *piVar4;
     *piVar4 = 0;
@@ -33,15 +32,15 @@ void std::__ndk1::__num_get_signed_integral<long>
       DAT_007a4e88 = FUN_00164730(0x1fbf,"C",0);
       FUN_00165ea0(&DAT_007a4e90);
     }
-    lVar5 = func_0x0016a260(param_1,&lStack_60,param_4,DAT_007a4e88);
+    lVar5 = func_0x0016a260(p0,&pcStack_60,p3,DAT_007a4e88);
     iVar3 = *piVar4;
     if (iVar3 == 0) {
       *piVar4 = iVar1;
     }
-    if (lStack_60 == param_2) {
+    if (pcStack_60 == p1) {
       lVar6 = lVar5;
       if (iVar3 == 0x22) {
-        *param_3 = 4;
+        *p2 = 4;
         lVar6 = 0x7fffffffffffffff;
         if (lVar5 < 1) {
           lVar6 = -0x8000000000000000;
@@ -50,7 +49,7 @@ void std::__ndk1::__num_get_signed_integral<long>
       goto LAB_005e1594;
     }
   }
-  *param_3 = 4;
+  *p2 = 4;
   lVar6 = 0;
 LAB_005e1594:
   if (*(long *)(lVar2 + 0x28) != lStack_58) {

@@ -8,24 +8,28 @@
 
 /* Walaber::RingBuffer<int>::setCapacity(int) */
 
-void Walaber::RingBuffer<int>::setCapacity(long *param_1,uint param_2)
+void Walaber::RingBuffer<int>::setCapacity(int p0)
 
 {
-  long lVar1;
-  ulong uVar2;
+  undefined8 *puVar1;
+  undefined8 uVar2;
+  uint in_w1;
+  undefined4 in_register_0000400c;
+  ulong uVar3;
   
-  if (*param_1 != 0) {
-    FUN_001639e0();
+  puVar1 = (undefined8 *)(ulong)(uint)p0;
+  if ((void *)*puVar1 != (void *)0x0) {
+    FUN_001639e0((void *)*puVar1,CONCAT44(in_register_0000400c,in_w1));
   }
-  uVar2 = -(ulong)(param_2 >> 0x1f) & 0xfffffffc00000000 | (ulong)param_2 << 2;
-  if ((ulong)(long)(int)param_2 >> 0x3e != 0) {
-    uVar2 = 0xffffffffffffffff;
+  uVar3 = -(ulong)(in_w1 >> 0x1f) & 0xfffffffc00000000 | (ulong)in_w1 << 2;
+  if ((ulong)(long)(int)in_w1 >> 0x3e != 0) {
+    uVar3 = 0xffffffffffffffff;
   }
-  *(uint *)(param_1 + 1) = param_2;
-  lVar1 = FUN_00167620(uVar2);
-  *param_1 = lVar1;
-  *(undefined4 *)((long)param_1 + 0xc) = 0;
-  *(undefined4 *)(param_1 + 2) = 0;
+  *(uint *)(puVar1 + 1) = in_w1;
+  uVar2 = FUN_00167620(uVar3);
+  *puVar1 = uVar2;
+  *(undefined4 *)((long)puVar1 + 0xc) = 0;
+  *(undefined4 *)(puVar1 + 2) = 0;
   return;
 }
 

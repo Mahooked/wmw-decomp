@@ -11,32 +11,32 @@
 
 void std::__ndk1::
      __vector_base<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
-  long lVar1;
-  long lVar2;
-  long lVar3;
+  void *pvVar1;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar3 = *param_1;
-  if (lVar3 == 0) {
+  pvVar3 = (void *)*param_1;
+  if (pvVar3 == (void *)0x0) {
     return;
   }
-  lVar2 = lVar3;
-  lVar1 = param_1[1];
-  if (param_1[1] != lVar3) {
+  pvVar2 = pvVar3;
+  pvVar1 = (void *)param_1[1];
+  if ((void *)param_1[1] != pvVar3) {
     do {
-      lVar2 = lVar1 + -0x30;
-      if ((*(byte *)(lVar1 + -0x20) & 1) != 0) {
-        FUN_00166120(*(undefined8 *)(lVar1 + -0x10));
+      pvVar2 = (void *)((long)pvVar1 + -0x30);
+      if ((*(byte *)((long)pvVar1 + -0x20) & 1) != 0) {
+        FUN_00166120(*(void **)((long)pvVar1 + -0x10));
       }
-      FUN_00166b20(lVar2);
-      lVar1 = lVar2;
-    } while (lVar3 != lVar2);
-    lVar2 = *param_1;
+      FUN_00166b20(pvVar2);
+      pvVar1 = pvVar2;
+    } while (pvVar3 != pvVar2);
+    pvVar2 = (void *)*param_1;
   }
-  param_1[1] = lVar3;
-  FUN_00166120(lVar2);
+  param_1[1] = pvVar3;
+  FUN_00166120(pvVar2);
   return;
 }
 

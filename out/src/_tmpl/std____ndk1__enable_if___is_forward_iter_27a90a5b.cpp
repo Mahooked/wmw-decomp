@@ -15,83 +15,84 @@
 
 void std::__ndk1::
      vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
-     assign<std::__ndk1::pair<float,int>*>(long *param_1,undefined8 *param_2,undefined8 *param_3)
+     assign<std::__ndk1::pair<float,int>*>
+               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   ulong uVar1;
   undefined8 *puVar2;
-  undefined8 *puVar3;
-  long lVar4;
+  undefined8 *p0;
+  long lVar3;
+  undefined8 *puVar4;
   undefined8 *puVar5;
+  long lVar7;
+  ulong uVar8;
   undefined8 *puVar6;
-  long lVar8;
-  ulong uVar9;
-  undefined8 *puVar7;
   
-  lVar4 = param_1[2];
-  puVar3 = (undefined8 *)*param_1;
-  lVar8 = (long)param_3 - (long)param_2;
-  uVar9 = lVar8 >> 3;
-  if ((ulong)(lVar4 - (long)puVar3 >> 3) < uVar9) {
-    if (puVar3 != (undefined8 *)0x0) {
-      param_1[1] = (long)puVar3;
-      FUN_00166120();
-      lVar4 = 0;
+  lVar3 = param_1[2];
+  p0 = (undefined8 *)*param_1;
+  lVar7 = (long)param_3 - (long)param_2;
+  uVar8 = lVar7 >> 3;
+  if ((ulong)(lVar3 - (long)p0 >> 3) < uVar8) {
+    if (p0 != (undefined8 *)0x0) {
+      param_1[1] = p0;
+      FUN_00166120(p0);
+      lVar3 = 0;
       *param_1 = 0;
       param_1[1] = 0;
       param_1[2] = 0;
     }
-    if (uVar9 >> 0x3d != 0) {
+    if (uVar8 >> 0x3d != 0) {
       FUN_001705a0(param_1);
       return;
     }
-    if ((ulong)(lVar4 >> 3) < 0xfffffffffffffff) {
-      if (uVar9 <= (ulong)(lVar4 >> 2)) {
-        uVar9 = lVar4 >> 2;
+    if ((ulong)(lVar3 >> 3) < 0xfffffffffffffff) {
+      if (uVar8 <= (ulong)(lVar3 >> 2)) {
+        uVar8 = lVar3 >> 2;
       }
     }
     else {
-      uVar9 = 0x1fffffffffffffff;
+      uVar8 = 0x1fffffffffffffff;
     }
-    func_0x0016cca0(param_1,uVar9);
-    if (lVar8 < 1) {
+    func_0x0016cca0(param_1,uVar8);
+    if (lVar7 < 1) {
       return;
     }
-    FUN_001715e0(param_1[1],param_2,lVar8);
-    lVar8 = param_1[1] + lVar8;
+    FUN_001715e0(param_1[1],param_2,lVar7);
+    lVar7 = param_1[1] + lVar7;
   }
   else {
-    lVar4 = param_1[1];
-    lVar8 = lVar4 - (long)puVar3;
-    uVar1 = lVar8 >> 3;
-    puVar2 = (undefined8 *)((long)param_2 + lVar8);
-    if (uVar9 <= uVar1) {
+    lVar3 = param_1[1];
+    lVar7 = lVar3 - (long)p0;
+    uVar1 = lVar7 >> 3;
+    puVar2 = (undefined8 *)((long)param_2 + lVar7);
+    if (uVar8 <= uVar1) {
       puVar2 = param_3;
     }
     if (puVar2 != param_2) {
-      puVar5 = puVar3;
-      puVar6 = param_2;
+      puVar4 = p0;
+      puVar5 = param_2;
       do {
-        puVar7 = puVar6 + 1;
-        *puVar5 = *puVar6;
-        puVar5 = puVar5 + 1;
-        puVar6 = puVar7;
-      } while (puVar2 != puVar7);
-      puVar3 = (undefined8 *)
-               ((long)puVar3 + ((long)puVar2 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8);
+        puVar6 = puVar5 + 1;
+        *puVar4 = *puVar5;
+        puVar4 = puVar4 + 1;
+        puVar5 = puVar6;
+      } while (puVar2 != puVar6);
+      p0 = (undefined8 *)
+           ((long)p0 + ((long)puVar2 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8);
     }
-    if (uVar9 <= uVar1) {
-      param_1[1] = (long)puVar3;
+    if (uVar8 <= uVar1) {
+      param_1[1] = p0;
       return;
     }
-    lVar8 = (long)param_3 - (long)puVar2;
-    if (lVar8 < 1) {
+    lVar7 = (long)param_3 - (long)puVar2;
+    if (lVar7 < 1) {
       return;
     }
-    FUN_001715e0(lVar4,puVar2,lVar8);
-    lVar8 = param_1[1] + lVar8;
+    FUN_001715e0(lVar3,puVar2,lVar7);
+    lVar7 = param_1[1] + lVar7;
   }
-  param_1[1] = lVar8;
+  param_1[1] = lVar7;
   return;
 }
 

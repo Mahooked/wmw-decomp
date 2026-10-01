@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievement
 void non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(long param_1)
 
 {
-  func_0x0016f320(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x0016f320((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievement
 /* non-virtual thunk to WaterConcept::Screen_Achievements::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Achievements::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Achievements::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00162710(param_1 + -0x20);
+  func_0x00162710((ulong)(uint)p0 - 0x20);
   return;
 }
 
@@ -55,10 +56,10 @@ void non_virtual_thunk_to_WaterConcept::Screen_Achievements::handleEvent(long pa
 
 /* non-virtual thunk to WaterConcept::Screen_Achievements::messageRx(Walaber::Message const&) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_Achievements::messageRx(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_Achievements::messageRx(Walaber__Message *p0)
 
 {
-  func_0x00167140(param_1 + -0x90);
+  func_0x00167140(p0 + -0x90);
   return;
 }
 

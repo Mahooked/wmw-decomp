@@ -14,81 +14,82 @@
 void std::__ndk1::
      vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>
      ::__push_back_slow_path<Walaber::SkeletonActor::AnimationGroupDataAux>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__SkeletonActor__AnimationGroupDataAux **p0)
 
 {
   ulong uVar1;
-  undefined8 *puVar2;
-  undefined1 uVar3;
+  undefined1 uVar2;
+  long lVar3;
+  undefined8 *in_x1;
   long lVar4;
-  long lVar5;
+  ulong uVar5;
   ulong uVar6;
-  ulong uVar7;
-  long lVar8;
+  long lVar7;
+  Walaber__SkeletonActor__AnimationGroupDataAux *pWVar8;
   undefined8 uVar9;
   undefined8 uVar10;
-  long lStack_60;
-  long lStack_58;
-  undefined8 *puStack_50;
-  long lStack_48;
+  Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_60;
+  Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_58;
+  Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_50;
+  Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_48;
   long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
-  lVar5 = (param_1[1] - *param_1 >> 3) * -0x3333333333333333;
-  uVar1 = lVar5 + 1;
+  lVar3 = tpidr_el0;
+  lStack_38 = *(long *)(lVar3 + 0x28);
+  lVar4 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
+  uVar1 = lVar4 + 1;
   if (0x666666666666666 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar8 = param_1[2] - *param_1 >> 3;
-  uVar7 = 0x666666666666666;
-  if (((ulong)(lVar8 * -0x3333333333333333) < 0x333333333333333) &&
-     (uVar6 = lVar8 * -0x6666666666666666, uVar7 = uVar1, uVar1 <= uVar6)) {
-    uVar7 = uVar6;
+  lVar7 = (long)p0[2] - (long)*p0 >> 3;
+  uVar6 = 0x666666666666666;
+  if (((ulong)(lVar7 * -0x3333333333333333) < 0x333333333333333) &&
+     (uVar5 = lVar7 * -0x6666666666666666, uVar6 = uVar1, uVar1 <= uVar5)) {
+    uVar6 = uVar5;
   }
-  func_0x0016ce90(&lStack_60,uVar7,lVar5,param_1 + 2);
-  uVar10 = param_2[1];
-  uVar9 = *param_2;
-  puStack_50[2] = param_2[2];
-  puStack_50[1] = uVar10;
-  *puStack_50 = uVar9;
-  uVar3 = *(undefined1 *)(param_2 + 4);
-  param_2[1] = 0;
-  param_2[2] = 0;
-  *param_2 = 0;
-  puStack_50[3] = param_2[3];
-  *(undefined1 *)(puStack_50 + 4) = uVar3;
-  puVar2 = puStack_50 + 5;
-  lStack_60 = *param_1;
-  puStack_50 = (undefined8 *)param_1[1];
-  if (puStack_50 != (undefined8 *)lStack_60) {
+  func_0x0016ce90(&pWStack_60,uVar6,lVar4,p0 + 2);
+  uVar10 = in_x1[1];
+  uVar9 = *in_x1;
+  *(undefined8 *)((long)pWStack_50 + 0x10) = in_x1[2];
+  *(undefined8 *)((long)pWStack_50 + 8) = uVar10;
+  *(undefined8 *)pWStack_50 = uVar9;
+  uVar2 = *(undefined1 *)(in_x1 + 4);
+  in_x1[1] = 0;
+  in_x1[2] = 0;
+  *in_x1 = 0;
+  *(undefined8 *)((long)pWStack_50 + 0x18) = in_x1[3];
+  *(undefined1 *)((long)pWStack_50 + 0x20) = uVar2;
+  pWVar8 = (Walaber__SkeletonActor__AnimationGroupDataAux *)((long)pWStack_50 + 0x28);
+  pWStack_60 = *p0;
+  pWStack_50 = p0[1];
+  if (pWStack_50 != pWStack_60) {
     do {
-      uVar10 = *(undefined8 *)((long)puStack_50 + -0x20);
-      uVar9 = *(undefined8 *)((long)puStack_50 + -0x28);
-      *(undefined8 *)(lStack_58 + -0x18) = *(undefined8 *)((long)puStack_50 + -0x18);
-      *(undefined8 *)(lStack_58 + -0x20) = uVar10;
-      *(undefined8 *)(lStack_58 + -0x28) = uVar9;
-      uVar9 = *(undefined8 *)((long)puStack_50 + -0x10);
-      *(undefined8 *)((long)puStack_50 + -0x20) = 0;
-      *(undefined8 *)((long)puStack_50 + -0x18) = 0;
-      *(undefined8 *)((long)puStack_50 + -0x28) = 0;
-      *(undefined1 *)(lStack_58 + -8) = *(undefined1 *)((long)puStack_50 + -8);
-      *(undefined8 *)(lStack_58 + -0x10) = uVar9;
-      puStack_50 = (undefined8 *)((long)puStack_50 + -0x28);
-      lStack_58 = lStack_58 + -0x28;
-    } while ((undefined8 *)lStack_60 != puStack_50);
-    lStack_60 = *param_1;
-    puStack_50 = (undefined8 *)param_1[1];
+      uVar10 = *(undefined8 *)(pWStack_50 + -0x20);
+      uVar9 = *(undefined8 *)(pWStack_50 + -0x28);
+      *(undefined8 *)(pWStack_58 + -0x18) = *(undefined8 *)(pWStack_50 + -0x18);
+      *(undefined8 *)(pWStack_58 + -0x20) = uVar10;
+      *(undefined8 *)(pWStack_58 + -0x28) = uVar9;
+      uVar9 = *(undefined8 *)(pWStack_50 + -0x10);
+      *(undefined8 *)(pWStack_50 + -0x20) = 0;
+      *(undefined8 *)(pWStack_50 + -0x18) = 0;
+      *(undefined8 *)(pWStack_50 + -0x28) = 0;
+      pWStack_58[-8] = pWStack_50[-8];
+      *(undefined8 *)(pWStack_58 + -0x10) = uVar9;
+      pWStack_50 = pWStack_50 + -0x28;
+      pWStack_58 = pWStack_58 + -0x28;
+    } while (pWStack_60 != pWStack_50);
+    pWStack_60 = *p0;
+    pWStack_50 = p0[1];
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puVar2;
-  lVar5 = param_1[2];
-  param_1[2] = lStack_48;
-  lStack_58 = lStack_60;
-  lStack_48 = lVar5;
-  func_0x00165b30(&lStack_60);
-  if (*(long *)(lVar4 + 0x28) != lStack_38) {
+  *p0 = pWStack_58;
+  p0[1] = pWVar8;
+  pWVar8 = p0[2];
+  p0[2] = pWStack_48;
+  pWStack_58 = pWStack_60;
+  pWStack_48 = pWVar8;
+  func_0x00165b30(&pWStack_60);
+  if (*(long *)(lVar3 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }

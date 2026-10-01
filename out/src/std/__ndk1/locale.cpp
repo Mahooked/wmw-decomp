@@ -208,13 +208,14 @@ void std::__ndk1::locale::locale(undefined8 *param_1)
 
 /* std::__ndk1::locale::locale(std::__ndk1::locale const&) */
 
-void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 *param_2)
+void std::__ndk1::locale::locale(std____ndk1__locale *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  *param_1 = uVar1;
+  uVar1 = *in_x1;
+  *(undefined8 *)p0 = uVar1;
   FUN_0016cae0(uVar1);
   return;
 }
@@ -242,13 +243,15 @@ void std::__ndk1::locale::~locale(undefined8 *param_1)
 
 /* std::__ndk1::locale::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::locale const&) */
 
-undefined8 * std::__ndk1::locale::operator=(undefined8 *param_1,undefined8 *param_2)
+std____ndk1__locale * std::__ndk1::locale::operator=(std____ndk1__locale *p0)
 
 {
-  FUN_0016cae0(*param_2);
-  FUN_00166dc0(*param_1);
-  *param_1 = *param_2;
-  return param_1;
+  undefined8 *in_x1;
+  
+  FUN_0016cae0(*in_x1);
+  FUN_00166dc0(*(undefined8 *)p0);
+  *(undefined8 *)p0 = *in_x1;
+  return p0;
 }
 
 
@@ -259,22 +262,23 @@ undefined8 * std::__ndk1::locale::operator=(undefined8 *param_1,undefined8 *para
 
 /* std::__ndk1::locale::locale(char const*) */
 
-void std::__ndk1::locale::locale(undefined8 *param_1,long param_2)
+void std::__ndk1::locale::locale(char *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
-  ulong uVar4;
-  ulong uVar5;
+  long in_x1;
+  void *pvVar4;
+  ulong p0_00;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  if (param_2 == 0) {
+  if (in_x1 == 0) {
     uVar2 = FUN_00168670(0x10);
                     /* try { // try from 005d5358 to 005d5363 has its CatchHandler @ 005d538c */
     func_0x0016eb20(uVar2,"locale constructed with null");
@@ -285,35 +289,35 @@ void std::__ndk1::locale::locale(undefined8 *param_1,long param_2)
   uVar2 = FUN_00164060(0x140);
   uStack_70 = 0;
   uStack_68 = 0;
-  uStack_60 = 0;
-  uVar3 = FUN_00173480(param_2);
+  pvStack_60 = (void *)0x0;
+  uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d537c to 005d5383 has its CatchHandler @ 005d53a0 */
     FUN_00164180(&uStack_70);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar4 = (ulong)&uStack_70 | 1;
+    pvVar4 = (void *)((ulong)&uStack_70 | 1);
     uStack_70 = CONCAT71(uStack_70._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005d52f0;
   }
   else {
-    uVar5 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005d52c8 to 005d52cf has its CatchHandler @ 005d53a0 */
-    uVar4 = FUN_00164060(uVar5);
-    uStack_70 = uVar5 | 1;
+    pvVar4 = (void *)FUN_00164060(p0_00);
+    uStack_70 = p0_00 | 1;
     uStack_68 = uVar3;
-    uStack_60 = uVar4;
+    pvStack_60 = pvVar4;
   }
-  FUN_001715e0(uVar4,param_2,uVar3);
+  FUN_001715e0(pvVar4);
 LAB_005d52f0:
-  *(undefined1 *)(uVar4 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar4 + uVar3) = 0;
                     /* try { // try from 005d52f4 to 005d5303 has its CatchHandler @ 005d53a8 */
   func_0x005cf4bc(uVar2,&uStack_70,0);
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
-  *param_1 = uVar2;
+  *(undefined8 *)p0 = uVar2;
   FUN_0016cae0(uVar2);
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     FUN_00164ff0();
@@ -352,24 +356,24 @@ void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2)
 
 /* std::__ndk1::locale::locale(std::__ndk1::locale const&, char const*, int) */
 
-void std::__ndk1::locale::locale
-               (undefined8 *param_1,undefined8 *param_2,long param_3,undefined4 param_4)
+void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
 
 {
   long lVar1;
   undefined8 uVar2;
   ulong uVar3;
+  undefined4 in_w3;
   undefined8 uVar4;
-  ulong uVar5;
-  ulong uVar6;
+  void *pvVar5;
+  ulong p0_00;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  if (param_3 == 0) {
+  if (p2 == 0) {
     uVar2 = FUN_00168670(0x10);
                     /* try { // try from 005d5554 to 005d555f has its CatchHandler @ 005d5588 */
     func_0x0016eb20(uVar2,"locale constructed with null");
@@ -378,38 +382,38 @@ void std::__ndk1::locale::locale
     return;
   }
   uVar2 = FUN_00164060(0x140);
-  uVar4 = *param_2;
+  uVar4 = *(undefined8 *)p1;
   uStack_80 = 0;
   uStack_78 = 0;
-  uStack_70 = 0;
-  uVar3 = FUN_00173480(param_3);
+  pvStack_70 = (void *)0x0;
+  uVar3 = FUN_00173480(p2);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d5578 to 005d557f has its CatchHandler @ 005d559c */
     FUN_00164180(&uStack_80);
     return;
   }
   if (uVar3 < 0x17) {
-    uVar5 = (ulong)&uStack_80 | 1;
+    pvVar5 = (void *)((ulong)&uStack_80 | 1);
     uStack_80 = CONCAT71(uStack_80._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 == 0) goto LAB_005d54e4;
   }
   else {
-    uVar6 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005d54bc to 005d54c3 has its CatchHandler @ 005d559c */
-    uVar5 = FUN_00164060(uVar6);
-    uStack_80 = uVar6 | 1;
+    pvVar5 = (void *)FUN_00164060(p0_00);
+    uStack_80 = p0_00 | 1;
     uStack_78 = uVar3;
-    uStack_70 = uVar5;
+    pvStack_70 = pvVar5;
   }
-  FUN_001715e0(uVar5,param_3,uVar3);
+  FUN_001715e0(pvVar5,p2,uVar3);
 LAB_005d54e4:
-  *(undefined1 *)(uVar5 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 005d54e8 to 005d54fb has its CatchHandler @ 005d55a4 */
-  func_0x005d17a0(uVar2,uVar4,&uStack_80,param_4);
+  func_0x005d17a0(uVar2,uVar4,&uStack_80,in_w3);
   if ((uStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
-  *param_1 = uVar2;
+  *(undefined8 *)p0 = uVar2;
   FUN_0016cae0(uVar2);
   if (*(long *)(lVar1 + 0x28) != lStack_68) {
     FUN_00164ff0();
@@ -449,16 +453,16 @@ void std::__ndk1::locale::locale
 
 /* std::__ndk1::locale::locale(std::__ndk1::locale const&, std::__ndk1::locale const&, int) */
 
-void std::__ndk1::locale::locale
-               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3,undefined4 param_4)
+void std::__ndk1::locale::locale(std____ndk1__locale *p0,std____ndk1__locale *p1,int p2)
 
 {
   undefined8 uVar1;
+  undefined4 in_w3;
   
   uVar1 = FUN_00164060(0x140);
                     /* try { // try from 005d5664 to 005d566b has its CatchHandler @ 005d5684 */
-  func_0x005d2070(uVar1,*param_2,*param_3,param_4);
-  *param_1 = uVar1;
+  func_0x005d2070(uVar1,*(undefined8 *)p1,*(undefined8 *)(ulong)(uint)p2,in_w3);
+  *(undefined8 *)p0 = uVar1;
   FUN_0016cae0(uVar1);
   return;
 }
@@ -488,20 +492,20 @@ void std::__ndk1::locale::name(undefined8 param_1,long *param_2)
    long) */
 
 void std::__ndk1::locale::__install_ctor
-               (undefined8 *param_1,undefined8 *param_2,long param_3,undefined8 param_4)
+               (std____ndk1__locale *p0,std____ndk1__locale__facet *p1,long p2)
 
 {
   undefined8 uVar1;
   
-  if (param_3 == 0) {
-    uVar1 = *param_2;
+  if (p2 == 0) {
+    uVar1 = *(undefined8 *)p1;
   }
   else {
     uVar1 = FUN_00164060(0x140);
                     /* try { // try from 005d56dc to 005d56e7 has its CatchHandler @ 005d5708 */
-    func_0x005d4bd8(uVar1,*param_2,param_3,param_4);
+    func_0x005d4bd8(uVar1,*(undefined8 *)p1,p2);
   }
-  *param_1 = uVar1;
+  *(undefined8 *)p0 = uVar1;
   FUN_0016cae0(uVar1);
   return;
 }
@@ -514,61 +518,63 @@ void std::__ndk1::locale::__install_ctor
 
 /* std::__ndk1::locale::global(std::__ndk1::locale const&) */
 
-void std::__ndk1::locale::global(long *param_1,long *param_2)
+void std::__ndk1::locale::global(std____ndk1__locale *p0)
 
 {
   ulong uVar1;
-  long lVar2;
-  bool bVar3;
-  int iVar4;
-  long *plVar5;
-  long lVar6;
+  void *pvVar2;
+  long lVar3;
+  bool bVar4;
+  int iVar5;
+  long *plVar6;
+  long *in_x8;
+  long lVar7;
   byte abStack_60 [8];
   ulong uStack_58;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar5 = (long *)func_0x00169280();
-  lVar6 = *plVar5;
-  *param_1 = lVar6;
-  FUN_0016cae0(lVar6);
-  FUN_0016cae0(*param_2);
-  FUN_00166dc0(*plVar5);
-  lVar6 = *param_2;
-  *plVar5 = lVar6;
+  lVar3 = tpidr_el0;
+  lStack_48 = *(long *)(lVar3 + 0x28);
+  plVar6 = (long *)func_0x00169280();
+  lVar7 = *plVar6;
+  *in_x8 = lVar7;
+  FUN_0016cae0(lVar7);
+  FUN_0016cae0(*(undefined8 *)p0);
+  FUN_00166dc0(*plVar6);
+  lVar7 = *(long *)p0;
+  *plVar6 = lVar7;
                     /* try { // try from 005d577c to 005d5783 has its CatchHandler @ 005d5878 */
-  FUN_00172fe0(abStack_60,lVar6 + 0x120);
+  FUN_00172fe0(abStack_60,lVar7 + 0x120);
   uVar1 = (ulong)(abStack_60[0] >> 1);
   if ((abStack_60[0] & 1) != 0) {
     uVar1 = uStack_58;
   }
   if (uVar1 == 1) {
                     /* try { // try from 005d57a0 to 005d57bb has its CatchHandler @ 005d5874 */
-    iVar4 = func_0x001656c0(abStack_60,0,0xffffffffffffffff,&DAT_00645814,1);
-    bVar3 = iVar4 != 0;
+    iVar5 = func_0x001656c0(abStack_60,0,0xffffffffffffffff,&DAT_00645814,1);
+    bVar4 = iVar5 != 0;
   }
   else {
-    bVar3 = true;
+    bVar4 = true;
   }
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
-  if (bVar3) {
+  if (bVar4) {
                     /* try { // try from 005d57f4 to 005d57ff has its CatchHandler @ 005d5870 */
-    FUN_00172fe0(abStack_60,*plVar5 + 0x120);
-    uVar1 = (ulong)abStack_60 | 1;
+    FUN_00172fe0(abStack_60,*plVar6 + 0x120);
+    pvVar2 = (void *)((ulong)abStack_60 | 1);
     if ((abStack_60[0] & 1) != 0) {
-      uVar1 = uStack_50;
+      pvVar2 = pvStack_50;
     }
                     /* try { // try from 005d5814 to 005d581b has its CatchHandler @ 005d5858 */
-    func_0x0016b3b0(6,uVar1);
+    func_0x0016b3b0(6,pvVar2);
     if ((abStack_60[0] & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
+  if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return;
   }
   FUN_00164ff0();
@@ -583,15 +589,16 @@ void std::__ndk1::locale::global(long *param_1,long *param_2)
 
 /* std::__ndk1::locale::has_facet(std::__ndk1::locale::id&) const */
 
-void std::__ndk1::locale::has_facet(long *param_1,long *param_2)
+void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
 
 {
   long lVar1;
   long lVar2;
   bool bVar3;
+  long *in_x1;
   ulong uVar4;
   long lVar5;
-  long *plStack_60;
+  undefined1 auStack_60 [8];
   code *pcStack_58;
   undefined8 uStack_50;
   undefined1 **ppuStack_48;
@@ -600,17 +607,16 @@ void std::__ndk1::locale::has_facet(long *param_1,long *param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar5 = *param_1;
+  lVar5 = *(long *)p0;
   uStack_50 = 0;
   pcStack_58 = id::__init;
-  plStack_60 = param_2;
-  if (*param_2 != -1) {
+  if (*in_x1 != -1) {
     ppuStack_48 = &puStack_40;
-    puStack_40 = (undefined1 *)&plStack_60;
-    FUN_001709c0(param_2,&ppuStack_48,0x5e1280);
+    puStack_40 = auStack_60;
+    FUN_001709c0();
   }
   lVar1 = *(long *)(lVar5 + 0x10);
-  uVar4 = (long)(int)param_2[1] - 1;
+  uVar4 = (long)(int)in_x1[1] - 1;
   if (uVar4 < (ulong)(*(long *)(lVar5 + 0x18) - lVar1 >> 3)) {
     bVar3 = *(long *)(lVar1 + uVar4 * 8) != 0;
   }
@@ -632,15 +638,16 @@ void std::__ndk1::locale::has_facet(long *param_1,long *param_2)
 
 /* std::__ndk1::locale::use_facet(std::__ndk1::locale::id&) const */
 
-void std::__ndk1::locale::use_facet(long *param_1,long *param_2)
+void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0)
 
 {
   long lVar1;
   long lVar2;
   undefined8 uVar3;
+  long *in_x1;
   ulong uVar4;
   long lVar5;
-  long *plStack_60;
+  undefined1 auStack_60 [8];
   code *pcStack_58;
   undefined8 uStack_50;
   undefined1 **ppuStack_48;
@@ -649,17 +656,16 @@ void std::__ndk1::locale::use_facet(long *param_1,long *param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar5 = *param_1;
+  lVar5 = *(long *)p0;
   uStack_50 = 0;
   pcStack_58 = id::__init;
-  plStack_60 = param_2;
-  if (*param_2 != -1) {
+  if (*in_x1 != -1) {
     ppuStack_48 = &puStack_40;
-    puStack_40 = (undefined1 *)&plStack_60;
-    FUN_001709c0(param_2,&ppuStack_48,0x5e1280);
+    puStack_40 = auStack_60;
+    FUN_001709c0();
   }
   lVar1 = *(long *)(lVar5 + 0x10);
-  uVar4 = (long)(int)param_2[1] - 1;
+  uVar4 = (long)(int)in_x1[1] - 1;
   if ((uVar4 < (ulong)(*(long *)(lVar5 + 0x18) - lVar1 >> 3)) && (*(long *)(lVar1 + uVar4 * 8) != 0)
      ) {
     if (*(long *)(lVar2 + 0x28) == lStack_38) {
@@ -682,13 +688,14 @@ void std::__ndk1::locale::use_facet(long *param_1,long *param_2)
 
 /* std::__ndk1::locale::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::locale const&) const */
 
-ulong std::__ndk1::locale::operator==(long *param_1,long *param_2)
+ulong std::__ndk1::locale::operator==(std____ndk1__locale *p0)
 
 {
   byte bVar1;
   byte bVar2;
   int iVar3;
   ulong uVar4;
+  long *in_x1;
   long lVar5;
   char *pcVar6;
   ulong uVar7;
@@ -697,8 +704,8 @@ ulong std::__ndk1::locale::operator==(long *param_1,long *param_2)
   ulong uVar10;
   char *pcVar11;
   
-  lVar8 = *param_1;
-  lVar5 = *param_2;
+  lVar8 = *(long *)p0;
+  lVar5 = *in_x1;
   if (lVar8 != lVar5) {
     bVar1 = *(byte *)(lVar8 + 0x120);
     uVar10 = *(ulong *)(lVar8 + 0x128);
@@ -714,8 +721,8 @@ ulong std::__ndk1::locale::operator==(long *param_1,long *param_2)
       if ((int)uVar4 == 0) {
         return uVar4;
       }
-      lVar8 = *param_1;
-      lVar5 = *param_2;
+      lVar8 = *(long *)p0;
+      lVar5 = *in_x1;
       bVar1 = *(byte *)(lVar8 + 0x120);
       uVar10 = *(ulong *)(lVar8 + 0x128);
       pcVar6 = (char *)(lVar8 + 0x120);

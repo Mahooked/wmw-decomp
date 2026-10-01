@@ -15,12 +15,14 @@
 
 void std::__ndk1::
      vector<Walaber::TextureManager::SubTexInfo,std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>
-     ::assign<Walaber::TextureManager::SubTexInfo*>(long *param_1,long param_2,long param_3)
+     ::assign<Walaber::TextureManager::SubTexInfo*>
+               (Walaber__TextureManager__SubTexInfo *p0,Walaber__TextureManager__SubTexInfo *p1)
 
 {
-  long lVar1;
+  Walaber__TextureManager__SubTexInfo *pWVar1;
   byte *pbVar2;
-  ulong uVar3;
+  Walaber__TextureManager__SubTexInfo *pWVar3;
+  Walaber__TextureManager__SubTexInfo *in_x2;
   ulong uVar4;
   byte *pbVar5;
   ulong uVar6;
@@ -28,58 +30,57 @@ void std::__ndk1::
   undefined8 uVar8;
   undefined8 uVar9;
   
-  pbVar7 = (byte *)*param_1;
-  uVar6 = param_3 - param_2 >> 6;
-  if ((ulong)(param_1[2] - (long)pbVar7 >> 6) < uVar6) {
-    func_0x0016d660(param_1);
+  pbVar7 = *(byte **)p0;
+  uVar6 = (long)in_x2 - (long)p1 >> 6;
+  if ((ulong)(*(long *)(p0 + 0x10) - (long)pbVar7 >> 6) < uVar6) {
+    func_0x0016d660(p0);
     if (uVar6 >> 0x3a != 0) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
-    if ((ulong)(param_1[2] - *param_1 >> 6) < 0x1ffffffffffffff) {
-      uVar4 = param_1[2] - *param_1 >> 5;
-      uVar3 = uVar6;
+    if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 6) < 0x1ffffffffffffff) {
+      uVar4 = *(long *)(p0 + 0x10) - *(long *)p0 >> 5;
       if (uVar6 <= uVar4) {
-        uVar3 = uVar4;
+        uVar6 = uVar4;
       }
     }
     else {
-      uVar3 = 0x3ffffffffffffff;
+      uVar6 = 0x3ffffffffffffff;
     }
-    func_0x0016f500(param_1,uVar3);
+    func_0x0016f500(p0,uVar6);
   }
   else {
-    uVar3 = param_1[1] - (long)pbVar7 >> 6;
-    lVar1 = param_2;
-    param_2 = param_2 + (param_1[1] - (long)pbVar7);
-    if (uVar6 <= uVar3) {
-      param_2 = param_3;
+    uVar4 = *(long *)(p0 + 8) - (long)pbVar7 >> 6;
+    pWVar1 = p1;
+    pWVar3 = p1 + (*(long *)(p0 + 8) - (long)pbVar7);
+    if (uVar6 <= uVar4) {
+      pWVar3 = in_x2;
     }
-    for (; param_2 != lVar1; lVar1 = lVar1 + 0x40) {
-      func_0x00171ac0(pbVar7,lVar1);
-      uVar9 = *(undefined8 *)(lVar1 + 0x20);
-      uVar8 = *(undefined8 *)(lVar1 + 0x18);
-      *(undefined8 *)(pbVar7 + 0x28) = *(undefined8 *)(lVar1 + 0x28);
+    for (; p1 = pWVar3, p1 != pWVar1; pWVar1 = pWVar1 + 0x40) {
+      func_0x00171ac0(pbVar7,pWVar1);
+      uVar9 = *(undefined8 *)(pWVar1 + 0x20);
+      uVar8 = *(undefined8 *)(pWVar1 + 0x18);
+      *(undefined8 *)(pbVar7 + 0x28) = *(undefined8 *)(pWVar1 + 0x28);
       *(undefined8 *)(pbVar7 + 0x20) = uVar9;
       *(undefined8 *)(pbVar7 + 0x18) = uVar8;
-      *(undefined8 *)(pbVar7 + 0x30) = *(undefined8 *)(lVar1 + 0x30);
-      *(undefined4 *)(pbVar7 + 0x38) = *(undefined4 *)(lVar1 + 0x38);
+      *(undefined8 *)(pbVar7 + 0x30) = *(undefined8 *)(pWVar1 + 0x30);
+      *(undefined4 *)(pbVar7 + 0x38) = *(undefined4 *)(pWVar1 + 0x38);
       pbVar7 = pbVar7 + 0x40;
+      pWVar3 = p1;
     }
-    if (uVar6 <= uVar3) {
-      pbVar5 = (byte *)param_1[1];
+    if (uVar6 <= uVar4) {
+      pbVar5 = *(byte **)(p0 + 8);
       while (pbVar2 = pbVar5, pbVar2 != pbVar7) {
         pbVar5 = pbVar2 + -0x40;
         if ((*pbVar5 & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(pbVar2 + -0x30));
+          FUN_00166120(*(void **)(pbVar2 + -0x30));
         }
       }
-      param_1[1] = (long)pbVar7;
+      *(byte **)(p0 + 8) = pbVar7;
       return;
     }
-    uVar6 = uVar6 - (param_1[1] - *param_1 >> 6);
   }
-  func_0x001664f0(param_1,param_2,param_3,uVar6);
+  func_0x001664f0(p0,p1);
   return;
 }
 

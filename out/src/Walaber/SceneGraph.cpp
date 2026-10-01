@@ -14,7 +14,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
   long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -30,7 +30,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
   abStack_50[0xd] = 0;
   abStack_50[0xe] = 0;
   abStack_50[0xf] = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   abStack_50[0] = 8;
   abStack_50[1] = 0x52;
   abStack_50[2] = 0x6f;
@@ -40,14 +40,14 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
                     /* try { // try from 003ebc38 to 003ebc43 has its CatchHandler @ 003ebcc0 */
   func_0x00171ea0(uVar2,abStack_50,0xffffffff);
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   *param_1 = uVar2;
   abStack_50[0xd] = 0;
   abStack_50[0xe] = 0;
   abStack_50[0xf] = 0;
   abStack_50[0] = 0x16;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   abStack_50[9] = 0x61;
   abStack_50[10] = 0x70;
   abStack_50[0xb] = 0x68;
@@ -83,18 +83,20 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
   long lVar1;
   undefined8 uVar2;
   byte *pbVar3;
-  ulong auStack_50 [4];
+  ulong auStack_50 [2];
+  void *pvStack_40;
+  long lStack_38;
   
   lVar1 = tpidr_el0;
-  auStack_50[3] = *(long *)(lVar1 + 0x28);
+  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = FUN_00164060(0x80);
   auStack_50[1] = 0;
-  auStack_50[2] = 0;
+  pvStack_40 = (void *)0x0;
   auStack_50[0] = 0x746f6f5208;
                     /* try { // try from 003ebd38 to 003ebd43 has its CatchHandler @ 003ebd9c */
   func_0x00171ea0(uVar2,auStack_50,0xffffffff);
   if ((auStack_50[0] & 1) != 0) {
-    FUN_00166120(auStack_50[2]);
+    FUN_00166120(pvStack_40);
   }
   *param_1 = uVar2;
   pbVar3 = *(byte **)(param_2 + 0x10);
@@ -102,7 +104,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
     pbVar3 = param_2 + 1;
   }
   FUN_00162880(param_1 + 1,pbVar3,0x1b);
-  if (*(long *)(lVar1 + 0x28) == auStack_50[3]) {
+  if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
   FUN_00164ff0();
@@ -117,7 +119,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
 
 /* Walaber::SceneGraph::SceneGraph(Walaber::SceneGraph const&) */
 
-void Walaber::SceneGraph::SceneGraph(void)
+void Walaber::SceneGraph::SceneGraph(Walaber__SceneGraph *p0)
 
 {
   return;
@@ -131,7 +133,7 @@ void Walaber::SceneGraph::SceneGraph(void)
 
 /* Walaber::SceneGraph::TEMPNAMEPLACEHOLDERVALUE(Walaber::SceneGraph const&) */
 
-void Walaber::SceneGraph::operator=(void)
+void Walaber::SceneGraph::operator=(Walaber__SceneGraph *p0)
 
 {
   return;
@@ -193,10 +195,10 @@ void Walaber::SceneGraph::getNodeByNameAndGroupID(undefined8 *param_1)
 
 /* Walaber::SceneGraph::getFirstNodeWithGroupID(int) */
 
-void Walaber::SceneGraph::getFirstNodeWithGroupID(undefined8 *param_1)
+void Walaber::SceneGraph::getFirstNodeWithGroupID(int p0)
 
 {
-  func_0x001728b0(*param_1);
+  func_0x001728b0(*(undefined8 *)(ulong)(uint)p0);
   return;
 }
 

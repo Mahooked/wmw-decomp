@@ -8,17 +8,18 @@
 
 /* Walaber::AABB::AABB(Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
-void Walaber::AABB::AABB(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
+void Walaber::AABB::AABB(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
 
 {
+  undefined8 *in_x2;
   undefined8 uVar1;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  *param_1 = *param_2;
-  uVar1 = *param_3;
-  *(undefined4 *)(param_1 + 2) = 1;
-  param_1[1] = uVar1;
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)p0 = *(undefined8 *)p1;
+  uVar1 = *in_x2;
+  *(undefined4 *)(p0 + 0x10) = 1;
+  *(undefined8 *)(p0 + 8) = uVar1;
   return;
 }
 
@@ -47,38 +48,39 @@ void Walaber::AABB::clear(undefined8 *param_1)
 
 /* Walaber::AABB::expandToInclude(Walaber::Vector2 const&) */
 
-void Walaber::AABB::expandToInclude(float *param_1,float *param_2)
+void Walaber::AABB::expandToInclude(Walaber__Vector2 *p0)
 
 {
-  float *pfVar1;
+  float *in_x1;
+  Walaber__Vector2 *pWVar1;
   float fVar2;
   undefined8 uVar3;
   
-  if (param_1[4] == 1.4013e-45) {
-    fVar2 = *param_2;
-    pfVar1 = param_1;
-    if ((fVar2 < *param_1) || (pfVar1 = param_1 + 2, *pfVar1 < fVar2)) {
-      *pfVar1 = fVar2;
+  if (*(int *)(p0 + 0x10) == 1) {
+    fVar2 = *in_x1;
+    pWVar1 = p0;
+    if ((fVar2 < *(float *)p0) || (pWVar1 = p0 + 8, *(float *)pWVar1 < fVar2)) {
+      *(float *)pWVar1 = fVar2;
     }
-    fVar2 = param_2[1];
-    if (fVar2 < param_1[1]) {
-      param_1[1] = fVar2;
+    fVar2 = in_x1[1];
+    if (fVar2 < *(float *)(p0 + 4)) {
+      *(float *)(p0 + 4) = fVar2;
       return;
     }
-    if (param_1[3] < fVar2) {
-      param_1[3] = fVar2;
+    if (*(float *)(p0 + 0xc) < fVar2) {
+      *(float *)(p0 + 0xc) = fVar2;
       return;
     }
   }
   else {
-    uVar3 = *(undefined8 *)param_2;
-    *(undefined8 *)(param_1 + 2) = uVar3;
-    *(undefined8 *)param_1 = uVar3;
+    uVar3 = *(undefined8 *)in_x1;
+    *(undefined8 *)(p0 + 8) = uVar3;
+    *(undefined8 *)p0 = uVar3;
     if (NAN((float)uVar3) || NAN((float)((ulong)uVar3 >> 0x20))) {
-      param_1[4] = 0.0;
+      *(undefined4 *)(p0 + 0x10) = 0;
       return;
     }
-    param_1[4] = 1.4013e-45;
+    *(undefined4 *)(p0 + 0x10) = 1;
   }
   return;
 }
@@ -91,11 +93,13 @@ void Walaber::AABB::expandToInclude(float *param_1,float *param_2)
 
 /* Walaber::AABB::expandToInclude(Walaber::AABB const&) */
 
-void Walaber::AABB::expandToInclude(undefined8 param_1,long param_2)
+void Walaber::AABB::expandToInclude(Walaber__AABB *p0)
 
 {
+  long in_x1;
+  
   func_0x0016d6d0();
-  func_0x0016d6d0(param_1,param_2 + 8);
+  func_0x0016d6d0(p0,in_x1 + 8);
   return;
 }
 
@@ -107,12 +111,14 @@ void Walaber::AABB::expandToInclude(undefined8 param_1,long param_2)
 
 /* Walaber::AABB::contains(Walaber::Vector2 const&) const */
 
-bool Walaber::AABB::contains(float *param_1,float *param_2)
+bool Walaber::AABB::contains(Walaber__Vector2 *p0)
 
 {
-  if ((((param_1[4] != 0.0) && (*param_1 <= *param_2)) && (*param_2 <= param_1[2])) &&
-     (param_1[1] <= param_2[1])) {
-    return param_2[1] <= param_1[3];
+  float *in_x1;
+  
+  if ((((*(int *)(p0 + 0x10) != 0) && (*(float *)p0 <= *in_x1)) && (*in_x1 <= *(float *)(p0 + 8)))
+     && (*(float *)(p0 + 4) <= in_x1[1])) {
+    return in_x1[1] <= *(float *)(p0 + 0xc);
   }
   return false;
 }
@@ -125,20 +131,21 @@ bool Walaber::AABB::contains(float *param_1,float *param_2)
 
 /* Walaber::AABB::intersects(Walaber::AABB const&) const */
 
-byte Walaber::AABB::intersects(float *param_1,float *param_2)
+byte Walaber::AABB::intersects(Walaber__AABB *p0)
 
 {
   bool bVar1;
   bool bVar2;
+  float *in_x1;
   
-  if (*param_1 <= param_2[2]) {
-    bVar1 = *param_2 <= param_1[2];
+  if (*(float *)p0 <= in_x1[2]) {
+    bVar1 = *in_x1 <= *(float *)(p0 + 8);
   }
   else {
     bVar1 = false;
   }
-  if (param_1[1] <= param_2[3]) {
-    bVar2 = param_2[1] <= param_1[3];
+  if (*(float *)(p0 + 4) <= in_x1[3]) {
+    bVar2 = in_x1[1] <= *(float *)(p0 + 0xc);
   }
   else {
     bVar2 = false;

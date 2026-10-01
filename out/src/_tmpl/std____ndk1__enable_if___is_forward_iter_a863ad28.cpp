@@ -15,21 +15,22 @@
 void std::__ndk1::
      vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
      ::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>
-               (long param_1,long param_2,long param_3)
+               (WaterConcept__Screen_InAppPurchase__product *p0,
+               WaterConcept__Screen_InAppPurchase__product *p1,ulong p2)
 
 {
   long lVar1;
   
-  if (param_2 != param_3) {
-    lVar1 = *(long *)(param_1 + 8);
+  if (p1 != (WaterConcept__Screen_InAppPurchase__product *)p2) {
+    lVar1 = *(long *)(p0 + 8);
     do {
-      func_0x0016f720(lVar1,param_2);
+      func_0x0016f720(lVar1,p1);
                     /* try { // try from 004ec9bc to 004ec9c3 has its CatchHandler @ 004ec9ec */
-      func_0x0016f720(lVar1 + 0x18,param_2 + 0x18);
-      param_2 = param_2 + 0x30;
-      lVar1 = *(long *)(param_1 + 8) + 0x30;
-      *(long *)(param_1 + 8) = lVar1;
-    } while (param_2 != param_3);
+      func_0x0016f720(lVar1 + 0x18,p1 + 0x18);
+      p1 = p1 + 0x30;
+      lVar1 = *(long *)(p0 + 8) + 0x30;
+      *(long *)(p0 + 8) = lVar1;
+    } while (p1 != (WaterConcept__Screen_InAppPurchase__product *)p2);
   }
   return;
 }

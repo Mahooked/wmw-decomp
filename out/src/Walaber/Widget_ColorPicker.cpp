@@ -8,59 +8,61 @@
 
 /* Walaber::Widget_ColorPicker::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_ColorPicker const&) */
 
-long Walaber::Widget_ColorPicker::operator=(long param_1,long param_2)
+Walaber__Widget_ColorPicker *
+Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
 
 {
   undefined4 uVar1;
+  long in_x1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   
   func_0x001711a0();
-  uVar2 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar2;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  uVar2 = *(undefined8 *)(param_2 + 0x108);
-  uVar4 = *(undefined8 *)(param_2 + 0x104);
-  uVar3 = *(undefined8 *)(param_2 + 0xfc);
-  *(undefined8 *)(param_1 + 0x110) = *(undefined8 *)(param_2 + 0x110);
-  *(undefined8 *)(param_1 + 0x108) = uVar2;
-  *(undefined8 *)(param_1 + 0x104) = uVar4;
-  *(undefined8 *)(param_1 + 0xfc) = uVar3;
-  *(undefined8 *)(param_1 + 0x118) = *(undefined8 *)(param_2 + 0x118);
-  uVar2 = *(undefined8 *)(param_2 + 0x120);
-  *(undefined8 *)(param_1 + 0x126) = *(undefined8 *)(param_2 + 0x126);
-  *(undefined8 *)(param_1 + 0x120) = uVar2;
-  func_0x00170aa0(param_1 + 0x130,param_2 + 0x130);
-  func_0x00170aa0(param_1 + 0x140,param_2 + 0x140);
-  func_0x00170aa0(param_1 + 0x150,param_2 + 0x150);
-  *(undefined8 *)(param_1 + 0x160) = *(undefined8 *)(param_2 + 0x160);
-  *(undefined8 *)(param_1 + 0x168) = *(undefined8 *)(param_2 + 0x168);
-  *(undefined8 *)(param_1 + 0x170) = *(undefined8 *)(param_2 + 0x170);
-  *(undefined8 *)(param_1 + 0x178) = *(undefined8 *)(param_2 + 0x178);
-  *(undefined8 *)(param_1 + 0x180) = *(undefined8 *)(param_2 + 0x180);
-  *(undefined8 *)(param_1 + 0x188) = *(undefined8 *)(param_2 + 0x188);
-  func_0x00170aa0(param_1 + 400,param_2 + 400);
-  *(undefined4 *)(param_1 + 0x1a0) = *(undefined4 *)(param_2 + 0x1a0);
-  *(undefined8 *)(param_1 + 0x1a4) = *(undefined8 *)(param_2 + 0x1a4);
-  *(undefined8 *)(param_1 + 0x1ac) = *(undefined8 *)(param_2 + 0x1ac);
-  *(undefined4 *)(param_1 + 0x1b4) = *(undefined4 *)(param_2 + 0x1b4);
-  return param_1;
+  uVar2 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar2;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = *(Walaber__Widget_ColorPicker *)(in_x1 + 0xb0);
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  uVar2 = *(undefined8 *)(in_x1 + 0x108);
+  uVar4 = *(undefined8 *)(in_x1 + 0x104);
+  uVar3 = *(undefined8 *)(in_x1 + 0xfc);
+  *(undefined8 *)(p0 + 0x110) = *(undefined8 *)(in_x1 + 0x110);
+  *(undefined8 *)(p0 + 0x108) = uVar2;
+  *(undefined8 *)(p0 + 0x104) = uVar4;
+  *(undefined8 *)(p0 + 0xfc) = uVar3;
+  *(undefined8 *)(p0 + 0x118) = *(undefined8 *)(in_x1 + 0x118);
+  uVar2 = *(undefined8 *)(in_x1 + 0x120);
+  *(undefined8 *)(p0 + 0x126) = *(undefined8 *)(in_x1 + 0x126);
+  *(undefined8 *)(p0 + 0x120) = uVar2;
+  func_0x00170aa0(p0 + 0x130,in_x1 + 0x130);
+  func_0x00170aa0(p0 + 0x140,in_x1 + 0x140);
+  func_0x00170aa0(p0 + 0x150,in_x1 + 0x150);
+  *(undefined8 *)(p0 + 0x160) = *(undefined8 *)(in_x1 + 0x160);
+  *(undefined8 *)(p0 + 0x168) = *(undefined8 *)(in_x1 + 0x168);
+  *(undefined8 *)(p0 + 0x170) = *(undefined8 *)(in_x1 + 0x170);
+  *(undefined8 *)(p0 + 0x178) = *(undefined8 *)(in_x1 + 0x178);
+  *(undefined8 *)(p0 + 0x180) = *(undefined8 *)(in_x1 + 0x180);
+  *(undefined8 *)(p0 + 0x188) = *(undefined8 *)(in_x1 + 0x188);
+  func_0x00170aa0(p0 + 400,in_x1 + 400);
+  *(undefined4 *)(p0 + 0x1a0) = *(undefined4 *)(in_x1 + 0x1a0);
+  *(undefined8 *)(p0 + 0x1a4) = *(undefined8 *)(in_x1 + 0x1a4);
+  *(undefined8 *)(p0 + 0x1ac) = *(undefined8 *)(in_x1 + 0x1ac);
+  *(undefined4 *)(p0 + 0x1b4) = *(undefined4 *)(in_x1 + 0x1b4);
+  return p0;
 }
 
 
@@ -434,12 +436,12 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
 
 /* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
 
-void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 *param_1)
+void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 *param_1,ulong param_2)
 
 {
   *param_1 = &PTR__Widget_ColorPicker_0070ede8;
-  if (param_1[0x21] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[0x21] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[0x21],param_2);
   }
   FUN_00166b20(param_1 + 0x32);
   FUN_00166b20(param_1 + 0x2a);
@@ -457,7 +459,7 @@ void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 *param_1)
 
 /* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
 
-void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 param_1)
+void Walaber::Widget_ColorPicker::~Widget_ColorPicker(void *param_1)
 
 {
   func_0x0016bfa0();
@@ -586,7 +588,7 @@ void Walaber::Widget_ColorPicker::setIcon(long param_1,undefined8 param_2,undefi
 
 /* Walaber::Widget_ColorPicker::setSelection(Walaber::Color const&, bool) */
 
-void Walaber::Widget_ColorPicker::setSelection(long param_1,byte *param_2,uint param_3)
+void Walaber::Widget_ColorPicker::setSelection(Walaber__Color *p0,bool p1)
 
 {
   byte *pbVar1;
@@ -595,60 +597,63 @@ void Walaber::Widget_ColorPicker::setSelection(long param_1,byte *param_2,uint p
   int iVar4;
   undefined4 uVar5;
   undefined4 uVar6;
-  long lVar7;
-  undefined4 uVar8;
+  byte *pbVar7;
+  uint in_w2;
+  long lVar8;
   undefined4 uVar9;
-  long lVar10;
-  byte *pbVar11;
-  float fVar12;
+  undefined4 uVar10;
+  long lVar11;
+  byte *pbVar12;
   float fVar13;
+  float fVar14;
   
-  iVar4 = *(int *)(param_1 + 0x100);
+  pbVar7 = (byte *)(ulong)p1;
+  iVar4 = *(int *)(p0 + 0x100);
   if (iVar4 < 1) {
+    uVar10 = 0xffffffff;
     uVar9 = 0xffffffff;
-    uVar8 = 0xffffffff;
   }
   else {
-    fVar12 = 1000.0;
-    lVar7 = 0;
-    uVar8 = 0xffffffff;
+    fVar13 = 1000.0;
+    lVar8 = 0;
     uVar9 = 0xffffffff;
+    uVar10 = 0xffffffff;
     do {
-      if (0 < *(int *)(param_1 + 0xfc)) {
-        lVar10 = 0;
-        pbVar11 = (byte *)(*(long *)(param_1 + 0x108) + lVar7 * 4 + 1);
-        fVar13 = fVar12;
+      if (0 < *(int *)(p0 + 0xfc)) {
+        lVar11 = 0;
+        pbVar12 = (byte *)(*(long *)(p0 + 0x108) + lVar8 * 4 + 1);
+        fVar14 = fVar13;
         do {
-          pbVar2 = pbVar11 + -1;
-          bVar3 = *pbVar11;
-          pbVar1 = pbVar11 + 1;
-          pbVar11 = pbVar11 + (long)iVar4 * 4;
-          fVar12 = (float)(int)((uint)*pbVar2 - (uint)*param_2) *
-                   (float)(int)((uint)*pbVar2 - (uint)*param_2) +
-                   (float)(int)((uint)bVar3 - (uint)param_2[1]) *
-                   (float)(int)((uint)bVar3 - (uint)param_2[1]) +
-                   (float)(int)((uint)*pbVar1 - (uint)param_2[2]) *
-                   (float)(int)((uint)*pbVar1 - (uint)param_2[2]);
-          uVar5 = (int)lVar7;
-          uVar6 = (int)lVar10;
-          if (fVar13 <= fVar12) {
-            fVar12 = fVar13;
-            uVar5 = uVar8;
-            uVar6 = uVar9;
+          pbVar2 = pbVar12 + -1;
+          bVar3 = *pbVar12;
+          pbVar1 = pbVar12 + 1;
+          pbVar12 = pbVar12 + (long)iVar4 * 4;
+          fVar13 = (float)(int)((uint)*pbVar2 - (uint)*pbVar7) *
+                   (float)(int)((uint)*pbVar2 - (uint)*pbVar7) +
+                   (float)(int)((uint)bVar3 - (uint)pbVar7[1]) *
+                   (float)(int)((uint)bVar3 - (uint)pbVar7[1]) +
+                   (float)(int)((uint)*pbVar1 - (uint)pbVar7[2]) *
+                   (float)(int)((uint)*pbVar1 - (uint)pbVar7[2]);
+          uVar5 = (int)lVar8;
+          uVar6 = (int)lVar11;
+          if (fVar14 <= fVar13) {
+            fVar13 = fVar14;
+            uVar5 = uVar9;
+            uVar6 = uVar10;
           }
-          uVar9 = uVar6;
-          uVar8 = uVar5;
-          lVar10 = lVar10 + 1;
-          fVar13 = fVar12;
-        } while (lVar10 < *(int *)(param_1 + 0xfc));
+          uVar10 = uVar6;
+          uVar9 = uVar5;
+          lVar11 = lVar11 + 1;
+          fVar14 = fVar13;
+        } while (lVar11 < *(int *)(p0 + 0xfc));
       }
-      lVar7 = lVar7 + 1;
-    } while (lVar7 < iVar4);
+      lVar8 = lVar8 + 1;
+    } while (lVar8 < iVar4);
   }
-  *(undefined4 *)(param_1 + 0x128) = uVar9;
-  *(undefined4 *)(param_1 + 0x124) = uVar8;
-  if ((param_3 & 1) != 0) {
-    *(undefined1 *)(param_1 + 0x120) = 1;
+  *(undefined4 *)(p0 + 0x128) = uVar10;
+  *(undefined4 *)(p0 + 0x124) = uVar9;
+  if ((in_w2 & 1) != 0) {
+    p0[0x120] = (Walaber__Color)0x1;
   }
   return;
 }
@@ -661,23 +666,23 @@ void Walaber::Widget_ColorPicker::setSelection(long param_1,byte *param_2,uint p
 
 /* Walaber::Widget_ColorPicker::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_ColorPicker::update(long param_1,char *param_2)
+undefined8 Walaber::Widget_ColorPicker::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  char cVar1;
+  Walaber__Widget__WidgetActionRet *in_x1;
+  Walaber__Widget__WidgetActionRet WVar1;
   
-  cVar1 = *(char *)(param_1 + 0x12d);
-  if (*(char *)(param_1 + 0x120) == '\0') {
-    if (cVar1 == '\0') {
+  WVar1 = p1[0x12d];
+  if (p1[0x120] == (Walaber__Widget__WidgetActionRet)0x0) {
+    if (WVar1 == (Walaber__Widget__WidgetActionRet)0x0) {
       return 0;
     }
-    cVar1 = '\x01';
+    WVar1 = (Walaber__Widget__WidgetActionRet)0x1;
   }
-  *param_2 = cVar1;
-  *(int *)(param_2 + 0xc) =
-       *(int *)(param_1 + 0x124) + *(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x128);
-  *(undefined1 *)(param_1 + 0x12d) = 0;
-  *(undefined1 *)(param_1 + 0x120) = 0;
+  *in_x1 = WVar1;
+  *(int *)(in_x1 + 0xc) = *(int *)(p1 + 0x124) + *(int *)(p1 + 0x100) * *(int *)(p1 + 0x128);
+  p1[0x12d] = (Walaber__Widget__WidgetActionRet)0x0;
+  p1[0x120] = (Walaber__Widget__WidgetActionRet)0x0;
   return 1;
 }
 
@@ -689,28 +694,27 @@ undefined8 Walaber::Widget_ColorPicker::update(long param_1,char *param_2)
 
 /* Walaber::Widget_ColorPicker::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_ColorPicker::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_ColorPicker::draw(Walaber__SpriteBatch *p0)
 
 {
-  undefined4 uVar1;
-  long lVar2;
-  ulong uVar3;
-  long lVar4;
-  int *piVar5;
+  long lVar1;
+  ulong uVar2;
+  long lVar3;
+  int *piVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
-  float fVar9;
-  undefined8 uVar10;
+  float fVar8;
+  undefined8 uVar9;
+  float fVar10;
   float fVar11;
-  float fVar12;
-  undefined8 uVar13;
+  undefined8 uVar12;
+  float fVar13;
   float fVar14;
-  float fVar15;
-  int iVar16;
+  int iVar15;
+  float fVar16;
   float fVar17;
   float fVar18;
-  float fVar19;
   long lStack_f8;
   int *piStack_f0;
   long lStack_e8;
@@ -725,166 +729,154 @@ void Walaber::Widget_ColorPicker::draw(long param_1,undefined8 param_2)
   undefined8 uStack_a0;
   long lStack_98;
   
-  lVar2 = tpidr_el0;
-  lStack_98 = *(long *)(lVar2 + 0x28);
-  uVar10 = func_0x00164620();
-  lVar4 = *(long *)(param_1 + 0x130);
-  if (lVar4 == 0) {
+  lVar1 = tpidr_el0;
+  lStack_98 = *(long *)(lVar1 + 0x28);
+  uVar9 = func_0x00164620();
+  lVar3 = *(long *)(p0 + 0x130);
+  if (lVar3 == 0) {
 LAB_0037b98c:
-    func_0x00167d50(&uStack_c0,param_1);
+    func_0x00167d50(&uStack_c0,p0);
     uStack_b8 = CONCAT44((float)((ulong)uStack_c0 >> 0x20) +
-                         (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         (float)uStack_c0 + (float)*(undefined8 *)(param_1 + 0xf0));
-    func_0x00169f20(&uStack_a0,param_1);
-    fVar12 = (float)((ulong)uStack_a0 >> 0x20);
-    uStack_c8 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x90) >> 0x20) * fVar12,
-                         (float)*(undefined8 *)(param_1 + 0x90) * (float)uStack_a0);
-    uStack_a0 = CONCAT44(fVar12,0x99000000);
-    func_0x00165de0(uVar10,&uStack_b8,&uStack_c8,&uStack_a0);
+                         (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         (float)uStack_c0 + (float)*(undefined8 *)(p0 + 0xf0));
+    func_0x00169f20(&uStack_a0,p0);
+    fVar11 = (float)((ulong)uStack_a0 >> 0x20);
+    uStack_c8 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x90) >> 0x20) * fVar11,
+                         (float)*(undefined8 *)(p0 + 0x90) * (float)uStack_a0);
+    uStack_a0 = CONCAT44(fVar11,0x99000000);
+    func_0x00165de0(uVar9,&uStack_b8,&uStack_c8,&uStack_a0);
   }
   else {
-    piVar5 = *(int **)(param_1 + 0x138);
-    if (*piVar5 < 1) goto LAB_0037b98c;
-    uVar1 = *(undefined4 *)(param_1 + 0x80);
-    *piVar5 = *piVar5 + 1;
+    piVar4 = *(int **)(p0 + 0x138);
+    if (*piVar4 < 1) goto LAB_0037b98c;
+    *piVar4 = *piVar4 + 1;
                     /* try { // try from 0037b904 to 0037b90f has its CatchHandler @ 0037be34 */
-    lStack_b0 = lVar4;
-    piStack_a8 = piVar5;
-    func_0x00167d50(&uStack_c0,param_1);
+    lStack_b0 = lVar3;
+    piStack_a8 = piVar4;
+    func_0x00167d50(&uStack_c0,p0);
     uStack_b8 = CONCAT44((float)((ulong)uStack_c0 >> 0x20) +
-                         (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                         (float)uStack_c0 + (float)*(undefined8 *)(param_1 + 0xf0));
+                         (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                         (float)uStack_c0 + (float)*(undefined8 *)(p0 + 0xf0));
                     /* try { // try from 0037b920 to 0037b92b has its CatchHandler @ 0037be30 */
-    func_0x00169f20(&uStack_a0,param_1);
-    fVar18 = *(float *)(param_1 + 0x90);
-    fVar12 = (float)uStack_a0;
+    func_0x00169f20(&uStack_a0,p0);
+    fVar17 = *(float *)(p0 + 0x90);
+    fVar11 = (float)uStack_a0;
                     /* try { // try from 0037b934 to 0037b97f has its CatchHandler @ 0037be38 */
-    func_0x00169f20(&uStack_a0,param_1);
-    uStack_c8 = CONCAT44(*(float *)(param_1 + 0x94) * uStack_a0._4_4_,fVar18 * fVar12);
-    func_0x00169c00(uVar10,param_2,uVar1,&lStack_b0,&uStack_b8,&uStack_c8,param_1 + 0x160,
-                    &Color::White,0);
+    func_0x00169f20(&uStack_a0,p0);
+    uStack_c8 = CONCAT44(*(float *)(p0 + 0x94) * uStack_a0._4_4_,fVar17 * fVar11);
+    func_0x00169c00(uVar9);
     FUN_00166b20(&lStack_b0);
   }
-  func_0x00169f20(&uStack_a0,param_1);
-  iVar16 = *(int *)(param_1 + 0x110);
-  fVar9 = *(float *)(param_1 + 0x118);
-  fVar11 = *(float *)(param_1 + 0x11c);
+  func_0x00169f20(&uStack_a0,p0);
+  iVar15 = *(int *)(p0 + 0x110);
+  fVar8 = *(float *)(p0 + 0x118);
+  fVar10 = *(float *)(p0 + 0x11c);
   uStack_b8 = 0;
-  iVar7 = *(int *)(param_1 + 0xfc);
-  fVar12 = fVar11;
-  fVar18 = fVar9;
-  if (0 < iVar7) {
-    fVar15 = *(float *)(param_1 + 0x90) * (float)uStack_a0;
-    iVar6 = *(int *)(param_1 + 0x100);
-    fVar17 = fVar9 * 0.5;
-    iVar8 = 0;
-    fVar14 = ((float)iVar16 - *(float *)(param_1 + 0x94) * uStack_a0._4_4_ * 0.5) + fVar11 * 0.5;
-    fVar19 = (float)uVar10 * 0.017453292;
+  iVar6 = *(int *)(p0 + 0xfc);
+  fVar11 = fVar10;
+  fVar17 = fVar8;
+  if (0 < iVar6) {
+    fVar14 = *(float *)(p0 + 0x90) * (float)uStack_a0;
+    iVar5 = *(int *)(p0 + 0x100);
+    fVar16 = fVar8 * 0.5;
+    iVar7 = 0;
+    fVar13 = ((float)iVar15 - *(float *)(p0 + 0x94) * uStack_a0._4_4_ * 0.5) + fVar10 * 0.5;
+    fVar18 = (float)uVar9 * 0.017453292;
     do {
-      if (0 < iVar6) {
-        iVar7 = 0;
-        fVar12 = ((float)iVar16 - fVar15 * 0.5) + fVar17;
+      if (0 < iVar5) {
+        iVar6 = 0;
+        fVar11 = ((float)iVar15 - fVar14 * 0.5) + fVar16;
         do {
           uStack_c8 = CONCAT44(uStack_c8._4_4_,
                                *(undefined4 *)
-                                (*(long *)(param_1 + 0x108) + (long)(iVar7 + iVar8 * iVar6) * 4));
-          func_0x00167d50(&uStack_c0,param_1);
-          uVar13 = *(undefined8 *)(param_1 + 0xf0);
-          fVar18 = (float)uStack_c0;
-          uVar3 = (ulong)uStack_c0 >> 0x20;
-          fVar11 = (float)func_0x0016ee90(fVar19);
-          fVar9 = (float)func_0x00174170(fVar19);
-          uStack_a0 = CONCAT44((float)uVar3 + (float)((ulong)uVar13 >> 0x20) +
-                               fVar14 * fVar11 + fVar12 * fVar9,
-                               fVar18 + (float)uVar13 + (fVar12 * fVar11 - fVar14 * fVar9));
-          lVar4 = *(long *)(param_1 + 0x140);
-          if (lVar4 == 0) {
+                                (*(long *)(p0 + 0x108) + (long)(iVar6 + iVar7 * iVar5) * 4));
+          func_0x00167d50(&uStack_c0,p0);
+          uVar12 = *(undefined8 *)(p0 + 0xf0);
+          fVar17 = (float)uStack_c0;
+          uVar2 = (ulong)uStack_c0 >> 0x20;
+          fVar10 = (float)func_0x0016ee90(fVar18);
+          fVar8 = (float)func_0x00174170(fVar18);
+          uStack_a0 = CONCAT44((float)uVar2 + (float)((ulong)uVar12 >> 0x20) +
+                               fVar13 * fVar10 + fVar11 * fVar8,
+                               fVar17 + (float)uVar12 + (fVar11 * fVar10 - fVar13 * fVar8));
+          lVar3 = *(long *)(p0 + 0x140);
+          if (lVar3 == 0) {
 LAB_0037bb78:
-            func_0x00165de0(uVar10,&uStack_a0,param_1 + 0x118,&uStack_c8);
+            func_0x00165de0(uVar9,&uStack_a0,p0 + 0x118,&uStack_c8);
           }
           else {
-            piVar5 = *(int **)(param_1 + 0x148);
-            if (*piVar5 < 1) goto LAB_0037bb78;
-            uVar1 = *(undefined4 *)(param_1 + 0x80);
-            *piVar5 = *piVar5 + 1;
-            uStack_c0 = *(undefined8 *)(param_1 + 0x118);
+            piVar4 = *(int **)(p0 + 0x148);
+            if (*piVar4 < 1) goto LAB_0037bb78;
+            *piVar4 = *piVar4 + 1;
+            uStack_c0 = *(undefined8 *)(p0 + 0x118);
+            lStack_d8 = lVar3;
+            piStack_d0 = piVar4;
                     /* try { // try from 0037bb48 to 0037bb6b has its CatchHandler @ 0037be44 */
-            lStack_d8 = lVar4;
-            piStack_d0 = piVar5;
-            func_0x00169c00(uVar10,param_2,uVar1,&lStack_d8,&uStack_a0,&uStack_c0,param_1 + 0x170,
-                            &uStack_c8,0);
+            func_0x00169c00(uVar9);
             FUN_00166b20(&lStack_d8);
           }
-          fVar9 = *(float *)(param_1 + 0x118);
-          if ((*(int *)(param_1 + 0x128) == iVar8) && (iVar7 == *(int *)(param_1 + 0x124))) {
+          fVar8 = *(float *)(p0 + 0x118);
+          if ((*(int *)(p0 + 0x128) == iVar7) && (iVar6 == *(int *)(p0 + 0x124))) {
             uStack_b8 = uStack_a0;
           }
-          iVar6 = *(int *)(param_1 + 0x100);
-          iVar7 = iVar7 + 1;
-          fVar12 = fVar12 + fVar9;
-        } while (iVar7 < iVar6);
-        fVar11 = *(float *)(param_1 + 0x11c);
-        iVar7 = *(int *)(param_1 + 0xfc);
-        fVar12 = fVar11;
-        fVar18 = fVar9;
+          iVar5 = *(int *)(p0 + 0x100);
+          iVar6 = iVar6 + 1;
+          fVar11 = fVar11 + fVar8;
+        } while (iVar6 < iVar5);
+        fVar10 = *(float *)(p0 + 0x11c);
+        iVar6 = *(int *)(p0 + 0xfc);
+        fVar11 = fVar10;
+        fVar17 = fVar8;
       }
-      iVar8 = iVar8 + 1;
-      fVar14 = fVar14 + fVar12;
-    } while (iVar8 < iVar7);
+      iVar7 = iVar7 + 1;
+      fVar13 = fVar13 + fVar11;
+    } while (iVar7 < iVar6);
   }
-  lVar4 = *(long *)(param_1 + 0x150);
-  if (lVar4 != 0) {
-    piVar5 = *(int **)(param_1 + 0x158);
-    if (0 < *piVar5) {
-      uVar1 = *(undefined4 *)(param_1 + 0x80);
-      *piVar5 = *piVar5 + 1;
-      uStack_a0 = CONCAT44(fVar11,fVar18);
+  lVar3 = *(long *)(p0 + 0x150);
+  if (lVar3 != 0) {
+    piVar4 = *(int **)(p0 + 0x158);
+    if (0 < *piVar4) {
+      *piVar4 = *piVar4 + 1;
+      uStack_a0 = CONCAT44(fVar10,fVar17);
+      lStack_e8 = lVar3;
+      piStack_e0 = piVar4;
                     /* try { // try from 0037bc38 to 0037bc53 has its CatchHandler @ 0037be24 */
-      lStack_e8 = lVar4;
-      piStack_e0 = piVar5;
-      func_0x00169c00(uVar10,param_2,uVar1,&lStack_e8,&uStack_b8,&uStack_a0,param_1 + 0x180,
-                      *(long *)(param_1 + 0x108) +
-                      (long)(*(int *)(param_1 + 0x124) +
-                            *(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x128)) * 4,0);
+      func_0x00169c00(uVar9);
       FUN_00166b20(&lStack_e8);
       goto LAB_0037bcb0;
     }
   }
-  uStack_a0 = CONCAT44(fVar12 + 4.0,fVar9 + 4.0);
-  func_0x00165de0(uVar10,&uStack_b8,&uStack_a0,&Color::White);
-  func_0x00165de0(uVar10,&uStack_b8,param_1 + 0x118,
-                  *(long *)(param_1 + 0x108) +
-                  (long)(*(int *)(param_1 + 0x124) +
-                        *(int *)(param_1 + 0x100) * *(int *)(param_1 + 0x128)) * 4);
+  uStack_a0 = CONCAT44(fVar11 + 4.0,fVar8 + 4.0);
+  func_0x00165de0(uVar9,&uStack_b8,&uStack_a0,&Color::White);
+  func_0x00165de0(uVar9,&uStack_b8,p0 + 0x118,
+                  *(long *)(p0 + 0x108) +
+                  (long)(*(int *)(p0 + 0x124) + *(int *)(p0 + 0x100) * *(int *)(p0 + 0x128)) * 4);
 LAB_0037bcb0:
-  if ((*(long *)(param_1 + 400) != 0) && (**(int **)(param_1 + 0x198) != 0)) {
-    func_0x00169f20(&uStack_a0,param_1);
-    fVar11 = *(float *)(param_1 + 0x90) * (float)uStack_a0 * 0.5 + *(float *)(param_1 + 0x1a0) * 0.5
-             + 0.0;
-    fVar9 = (*(float *)(param_1 + 0x94) * uStack_a0._4_4_ * 0.5 - *(float *)(param_1 + 0x1a4) * 0.5)
-            + (float)*(int *)(param_1 + 0x110) * 0.5;
-    func_0x00167d50(&uStack_c0,param_1);
-    fVar18 = (float)uVar10 * 0.017453292;
-    fVar14 = (float)uStack_c0 + *(float *)(param_1 + 0xf0);
-    fVar15 = uStack_c0._4_4_ + *(float *)(param_1 + 0xf4);
-    fVar12 = (float)func_0x0016ee90(fVar18);
-    fVar18 = (float)func_0x00174170(fVar18);
-    uStack_a0 = CONCAT44(fVar15 + fVar9 * fVar12 + fVar11 * fVar18,
-                         fVar14 + (fVar11 * fVar12 - fVar9 * fVar18));
-    lStack_f8 = *(long *)(param_1 + 400);
-    piStack_f0 = *(int **)(param_1 + 0x198);
-    uVar1 = *(undefined4 *)(param_1 + 0x80);
+  if ((*(long *)(p0 + 400) != 0) && (**(int **)(p0 + 0x198) != 0)) {
+    func_0x00169f20(&uStack_a0,p0);
+    fVar10 = *(float *)(p0 + 0x90) * (float)uStack_a0 * 0.5 + *(float *)(p0 + 0x1a0) * 0.5 + 0.0;
+    fVar8 = (*(float *)(p0 + 0x94) * uStack_a0._4_4_ * 0.5 - *(float *)(p0 + 0x1a4) * 0.5) +
+            (float)*(int *)(p0 + 0x110) * 0.5;
+    func_0x00167d50(&uStack_c0,p0);
+    fVar17 = (float)uVar9 * 0.017453292;
+    fVar13 = (float)uStack_c0 + *(float *)(p0 + 0xf0);
+    fVar14 = uStack_c0._4_4_ + *(float *)(p0 + 0xf4);
+    fVar11 = (float)func_0x0016ee90(fVar17);
+    fVar17 = (float)func_0x00174170(fVar17);
+    uStack_a0 = CONCAT44(fVar14 + fVar8 * fVar11 + fVar10 * fVar17,
+                         fVar13 + (fVar10 * fVar11 - fVar8 * fVar17));
+    lStack_f8 = *(long *)(p0 + 400);
+    piStack_f0 = *(int **)(p0 + 0x198);
     if (lStack_f8 != 0) {
       *piStack_f0 = *piStack_f0 + 1;
     }
-    uStack_c0 = *(undefined8 *)(param_1 + 0x1a0);
+    uStack_c0 = *(undefined8 *)(p0 + 0x1a0);
                     /* try { // try from 0037bda0 to 0037bdc3 has its CatchHandler @ 0037be18 */
-    func_0x00169c00(uVar10,param_2,uVar1,&lStack_f8,&uStack_a0,&uStack_c0,param_1 + 0x1a8,
-                    &Color::White,0);
+    func_0x00169c00(uVar9);
     FUN_00166b20(&lStack_f8);
   }
-  FUN_001722b0(param_1,param_2);
-  if (*(long *)(lVar2 + 0x28) == lStack_98) {
+  FUN_001722b0(p0);
+  if (*(long *)(lVar1 + 0x28) == lStack_98) {
     return;
   }
   FUN_00164ff0();
@@ -899,12 +891,10 @@ LAB_0037bcb0:
 
 /* Walaber::Widget_ColorPicker::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ColorPicker::acceptNewFingerDown
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ColorPicker::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  func_0x0016d6b0(param_1,param_3);
+  func_0x0016d6b0(p0);
   return 1;
 }
 
@@ -916,10 +906,11 @@ Walaber::Widget_ColorPicker::acceptNewFingerDown
 
 /* Walaber::Widget_ColorPicker::_updateFinger(Walaber::FingerInfo*) */
 
-void Walaber::Widget_ColorPicker::_updateFinger(long param_1,long param_2)
+void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0)
 
 {
   long lVar1;
+  long in_x1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -934,35 +925,35 @@ void Walaber::Widget_ColorPicker::_updateFinger(long param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*(uint *)(param_1 + 0x88) < 3) {
-    uVar8 = *(undefined4 *)(&DAT_0062c600 + (long)(int)*(uint *)(param_1 + 0x88) * 4);
+  if (*(uint *)(p0 + 0x88) < 3) {
+    uVar8 = *(undefined4 *)(&DAT_0062c600 + (long)(int)*(uint *)(p0 + 0x88) * 4);
   }
   else {
     uVar8 = 0xbfc90fdb;
   }
-  func_0x00167d50(auStack_50,param_1);
-  fVar9 = (float)*(undefined8 *)(param_2 + 4) - auStack_50._0_4_;
-  fVar10 = (float)((ulong)*(undefined8 *)(param_2 + 4) >> 0x20) - auStack_50._4_4_;
+  func_0x00167d50(auStack_50,p0);
+  fVar9 = (float)*(undefined8 *)(in_x1 + 4) - auStack_50._0_4_;
+  fVar10 = (float)((ulong)*(undefined8 *)(in_x1 + 4) >> 0x20) - auStack_50._4_4_;
   fVar2 = (float)func_0x0016ee90(uVar8);
   fVar3 = (float)func_0x00174170(uVar8);
   uVar7 = NEON_rev64(CONCAT44(fVar10,fVar9),4);
   fVar4 = (float)uVar7 * fVar3;
   fVar9 = fVar9 * fVar2;
   fVar2 = fVar10 * fVar2 + (float)((ulong)uVar7 >> 0x20) * fVar3;
-  func_0x00169f20(auStack_50,CONCAT44(fVar2,fVar9 + fVar4),param_1);
-  uVar7 = NEON_scvtf(CONCAT44(*(undefined4 *)(param_1 + 0x110),*(undefined4 *)(param_1 + 0x110)),4);
+  func_0x00169f20(auStack_50,CONCAT44(fVar2,fVar9 + fVar4),p0);
+  uVar7 = NEON_scvtf(CONCAT44(*(undefined4 *)(p0 + 0x110),*(undefined4 *)(p0 + 0x110)),4);
   iVar5 = (int)(((fVar9 - fVar4) -
-                ((float)uVar7 - (float)*(undefined8 *)(param_1 + 0x90) * auStack_50._0_4_ * 0.5)) /
-               (float)*(undefined8 *)(param_1 + 0x118));
+                ((float)uVar7 - (float)*(undefined8 *)(p0 + 0x90) * auStack_50._0_4_ * 0.5)) /
+               (float)*(undefined8 *)(p0 + 0x118));
   iVar6 = (int)((fVar2 - ((float)((ulong)uVar7 >> 0x20) -
-                         (float)((ulong)*(undefined8 *)(param_1 + 0x90) >> 0x20) * auStack_50._4_4_
-                         * 0.5)) / (float)((ulong)*(undefined8 *)(param_1 + 0x118) >> 0x20));
-  if ((((-1 < iVar6) && (-1 < iVar5)) && (iVar6 < *(int *)(param_1 + 0xfc))) &&
-     (iVar5 < *(int *)(param_1 + 0x100))) {
-    *(ulong *)(param_1 + 0x124) = CONCAT44(iVar6,iVar5);
-    *(undefined1 *)(param_1 + 0x120) = 1;
-    if (*(char *)(param_1 + 300) == '\0') {
-      *(undefined1 *)(param_1 + 0x12d) = 1;
+                         (float)((ulong)*(undefined8 *)(p0 + 0x90) >> 0x20) * auStack_50._4_4_ * 0.5
+                         )) / (float)((ulong)*(undefined8 *)(p0 + 0x118) >> 0x20));
+  if ((((-1 < iVar6) && (-1 < iVar5)) && (iVar6 < *(int *)(p0 + 0xfc))) &&
+     (iVar5 < *(int *)(p0 + 0x100))) {
+    *(ulong *)(p0 + 0x124) = CONCAT44(iVar6,iVar5);
+    p0[0x120] = (Walaber__FingerInfo)0x1;
+    if (p0[300] == (Walaber__FingerInfo)0x0) {
+      p0[0x12d] = (Walaber__FingerInfo)0x1;
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
@@ -980,7 +971,7 @@ void Walaber::Widget_ColorPicker::_updateFinger(long param_1,long param_2)
 
 /* Walaber::Widget_ColorPicker::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ColorPicker::acceptNewFingerEntered(void)
+undefined8 Walaber::Widget_ColorPicker::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -994,7 +985,7 @@ undefined8 Walaber::Widget_ColorPicker::acceptNewFingerEntered(void)
 
 /* Walaber::Widget_ColorPicker::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ColorPicker::releaseFingerStayed(void)
+undefined8 Walaber::Widget_ColorPicker::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -1008,12 +999,10 @@ undefined8 Walaber::Widget_ColorPicker::releaseFingerStayed(void)
 
 /* Walaber::Widget_ColorPicker::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ColorPicker::releaseFingerMoved
-          (undefined8 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ColorPicker::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  func_0x0016d6b0(param_1,param_3);
+  func_0x0016d6b0(p0);
   return 0;
 }
 
@@ -1025,11 +1014,11 @@ Walaber::Widget_ColorPicker::releaseFingerMoved
 
 /* Walaber::Widget_ColorPicker::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ColorPicker::releaseFingerUp(long param_1)
+void Walaber::Widget_ColorPicker::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(char *)(param_1 + 300) != '\0') {
-    *(undefined1 *)(param_1 + 0x12d) = 1;
+  if (*(char *)((ulong)(uint)p0 + 300) != '\0') {
+    *(undefined1 *)((ulong)(uint)p0 + 0x12d) = 1;
   }
   return;
 }
@@ -1042,7 +1031,7 @@ void Walaber::Widget_ColorPicker::releaseFingerUp(long param_1)
 
 /* Walaber::Widget_ColorPicker::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ColorPicker::releaseFingerLeft(void)
+undefined8 Walaber::Widget_ColorPicker::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   return 1;
@@ -1056,10 +1045,10 @@ undefined8 Walaber::Widget_ColorPicker::releaseFingerLeft(void)
 
 /* Walaber::Widget_ColorPicker::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ColorPicker::notifyFingerLost(void)
+int Walaber::Widget_ColorPicker::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  return;
+  return p0;
 }
 
 

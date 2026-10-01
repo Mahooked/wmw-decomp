@@ -23,13 +23,14 @@ void std::exception_ptr::~exception_ptr(undefined8 *param_1)
 
 /* std::exception_ptr::exception_ptr(std::exception_ptr const&) */
 
-void std::exception_ptr::exception_ptr(undefined8 *param_1,undefined8 *param_2)
+void std::exception_ptr::exception_ptr(std__exception_ptr *p0)
 
 {
+  undefined8 *in_x1;
   undefined8 uVar1;
   
-  uVar1 = *param_2;
-  *param_1 = uVar1;
+  uVar1 = *in_x1;
+  *(undefined8 *)p0 = uVar1;
   func_0x00168cf0(uVar1);
   return;
 }
@@ -42,15 +43,17 @@ void std::exception_ptr::exception_ptr(undefined8 *param_1,undefined8 *param_2)
 
 /* std::exception_ptr::TEMPNAMEPLACEHOLDERVALUE(std::exception_ptr const&) */
 
-long * std::exception_ptr::operator=(long *param_1,long *param_2)
+std__exception_ptr * std::exception_ptr::operator=(std__exception_ptr *p0)
 
 {
-  if (*param_1 != *param_2) {
+  long *in_x1;
+  
+  if (*(long *)p0 != *in_x1) {
     func_0x00168cf0();
-    func_0x00172640(*param_1);
-    *param_1 = *param_2;
+    func_0x00172640(*(undefined8 *)p0);
+    *(long *)p0 = *in_x1;
   }
-  return param_1;
+  return p0;
 }
 
 

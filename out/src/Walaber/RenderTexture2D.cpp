@@ -435,7 +435,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
                     /* try { // try from 00396660 to 0039666b has its CatchHandler @ 003966f8 */
   func_0x00170eb0(param_1,abStack_60,2);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
   *(undefined4 *)((long)param_1 + 0xbc) = 0;
   *(undefined4 *)(param_1 + 0x18) = 0;
@@ -477,7 +477,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
   undefined8 uStack_a0;
   undefined8 uStack_98;
   byte abStack_90 [16];
-  undefined8 uStack_80;
+  void *pvStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
   undefined8 uStack_68;
@@ -524,10 +524,10 @@ void Walaber::RenderTexture2D::RenderTexture2D
                     /* try { // try from 00396930 to 00396943 has its CatchHandler @ 003969e0 */
   func_0x001737e0(param_1,abStack_60,&uStack_b8,2);
   if ((abStack_90[0] & 1) != 0) {
-    FUN_00166120(uStack_80);
+    FUN_00166120(pvStack_80);
   }
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
   *(undefined4 *)((long)param_1 + 0xbc) = 0;
   *(undefined4 *)(param_1 + 0x18) = 0;
@@ -590,7 +590,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
                     /* try { // try from 00396b10 to 00396b1b has its CatchHandler @ 00396bac */
   func_0x00170eb0(param_1,abStack_60,2);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
+    FUN_00166120((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
   *(undefined4 *)((long)param_1 + 0xbc) = 0;
   *(undefined4 *)(param_1 + 0x18) = 0;
@@ -616,27 +616,25 @@ void Walaber::RenderTexture2D::RenderTexture2D
 
 /* Walaber::RenderTexture2D::createScreenGrab(unsigned int*, unsigned int*, unsigned int*) */
 
-undefined8
-Walaber::RenderTexture2D::createScreenGrab
-          (long param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+undefined8 Walaber::RenderTexture2D::createScreenGrab(uint *p0,uint *p1,uint *p2)
 
 {
   undefined8 uVar1;
+  uint *in_x3;
   int iVar2;
   
-  *param_2 = *(undefined4 *)(param_1 + 0x7c);
-  *param_3 = *(undefined4 *)(param_1 + 0x80);
-  *param_4 = *(undefined4 *)(param_1 + 0x158);
+  *p1 = p0[0x1f];
+  *p2 = p0[0x20];
+  *in_x3 = p0[0x56];
   iVar2 = 4;
-  if (*(int *)(param_1 + 0x158) != 0x1401) {
+  if (p0[0x56] != 0x1401) {
     iVar2 = 2;
   }
-  uVar1 = FUN_00167620((long)(*(int *)(param_1 + 0x80) * *(int *)(param_1 + 0x7c) * iVar2));
+  uVar1 = FUN_00167620((long)(int)(p0[0x20] * p0[0x1f] * iVar2));
   func_0x00174030();
-  func_0x00161ae0(param_1);
-  func_0x00167a40(0,0,*(undefined4 *)(param_1 + 0x7c),*(undefined4 *)(param_1 + 0x80),
-                  *(undefined4 *)(param_1 + 0x154),*(undefined4 *)(param_1 + 0x158),uVar1);
-  func_0x0016c760(param_1);
+  func_0x00161ae0(p0);
+  func_0x00167a40(0,0,p0[0x1f],p0[0x20],p0[0x55],p0[0x56],uVar1);
+  func_0x0016c760(p0);
   return uVar1;
 }
 
@@ -678,7 +676,7 @@ void Walaber::RenderTexture2D::~RenderTexture2D(undefined8 *param_1)
 
 /* Walaber::RenderTexture2D::~RenderTexture2D() */
 
-void Walaber::RenderTexture2D::~RenderTexture2D(undefined8 param_1)
+void Walaber::RenderTexture2D::~RenderTexture2D(void *param_1)
 
 {
   func_0x0016b400();

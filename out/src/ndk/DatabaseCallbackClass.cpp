@@ -8,10 +8,12 @@
 
 /* ndk::DatabaseCallbackClass::databaseCompletedCallback(void*) */
 
-void ndk::DatabaseCallbackClass::databaseCompletedCallback(undefined4 *param_1,long param_2)
+void ndk::DatabaseCallbackClass::databaseCompletedCallback(void *p0)
 
 {
-  *param_1 = *(undefined4 *)(param_2 + 0x34);
+  long in_x1;
+  
+  *(undefined4 *)p0 = *(undefined4 *)(in_x1 + 0x34);
   return;
 }
 
@@ -23,31 +25,32 @@ void ndk::DatabaseCallbackClass::databaseCompletedCallback(undefined4 *param_1,l
 
 /* ndk::DatabaseCallbackClass::databaseErrorCallback(void*) */
 
-void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2)
+void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
 
 {
   long lVar1;
   ulong uVar2;
   undefined8 uVar3;
+  int *in_x1;
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
+  void *pvStack_a0;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   byte abStack_78 [18];
   undefined6 uStack_66;
   undefined **ppuStack_60;
   undefined8 uStack_58;
-  undefined **appuStack_50 [3];
+  void *apvStack_50 [3];
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  if (*param_2 == 1) {
+  if (*in_x1 == 1) {
     uStack_58 = 0;
-    appuStack_50[0] = (undefined **)0x0;
+    apvStack_50[0] = (void *)0x0;
     ppuStack_60 = (undefined **)0x5245544c410a;
                     /* try { // try from 002b5480 to 002b548b has its CatchHandler @ 002b5834 */
-    uVar2 = func_0x001660a0(param_2 + 2,&ppuStack_60);
+    uVar2 = func_0x001660a0(in_x1 + 2,&ppuStack_60);
     if ((uVar2 & 1) == 0) {
       abStack_98[8] = 0;
       abStack_98[9] = 0;
@@ -57,7 +60,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
       abStack_98[0xd] = 0;
       abStack_98[0xe] = 0;
       abStack_98[0xf] = 0;
-      uStack_88 = 0;
+      pvStack_88 = (void *)0x0;
       abStack_98[0] = 0xc;
       abStack_98[5] = 0x54;
       abStack_98[6] = 0x45;
@@ -67,27 +70,27 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
       abStack_98[4] = 0x41;
       abStack_98[7] = 0;
                     /* try { // try from 002b54bc to 002b54c7 has its CatchHandler @ 002b57b4 */
-      uVar2 = func_0x001660a0(param_2 + 2,abStack_98);
+      uVar2 = func_0x001660a0(in_x1 + 2,abStack_98);
       uVar2 = uVar2 & 0xffffffff;
       if ((abStack_98[0] & 1) != 0) {
-        FUN_00166120(uStack_88);
+        FUN_00166120(pvStack_88);
       }
     }
     else {
       uVar2 = 1;
     }
     if (((ulong)ppuStack_60 & 1) != 0) {
-      FUN_00166120(appuStack_50[0]);
+      FUN_00166120(apvStack_50[0]);
     }
     if ((uVar2 & 1) != 0) {
-      *(undefined1 *)((long)param_2 + 0x39) = 1;
-      *(int *)(param_1 + 4) = *(int *)(param_1 + 4) + 1;
+      *(undefined1 *)((long)in_x1 + 0x39) = 1;
+      *(int *)((long)p0 + 4) = *(int *)((long)p0 + 4) + 1;
     }
   }
-  if (*(char *)((long)param_2 + 0x39) == '\0') {
+  if (*(char *)((long)in_x1 + 0x39) == '\0') {
     ppuStack_60 = &PTR__Message_0070cdc8;
     uStack_58 = 0xa00000010;
-    func_0x0016b220(appuStack_50);
+    func_0x0016b220(apvStack_50);
     abStack_78[7] = 0;
     abStack_78[8] = 0;
     abStack_78[9] = 0;
@@ -113,7 +116,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
     uStack_66 = 0;
     abStack_78[5] = 0x74;
     abStack_78[6] = 0;
-    uStack_a0 = 0;
+    pvStack_a0 = (void *)0x0;
     abStack_b0[9] = 0x74;
     abStack_b0[10] = 0;
     abStack_b0[1] = 0x4d;
@@ -127,13 +130,13 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
                     /* try { // try from 002b5580 to 002b558b has its CatchHandler @ 002b580c */
     func_0x0016af30(abStack_98,abStack_b0);
                     /* try { // try from 002b558c to 002b559b has its CatchHandler @ 002b57fc */
-    func_0x00165260(appuStack_50,abStack_78,abStack_98);
+    func_0x00165260(apvStack_50,abStack_78,abStack_98);
     func_0x00167bf0(abStack_98);
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
     abStack_78[7] = 0;
     abStack_78[8] = 0;
@@ -157,7 +160,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
     abStack_78[0x10] = 0;
     abStack_78[0x11] = 0;
     uStack_66 = 0;
-    uStack_a0 = 0;
+    pvStack_a0 = (void *)0x0;
     abStack_b0[9] = 0x72;
     abStack_b0[10] = 0x69;
     abStack_b0[0xb] = 0x70;
@@ -174,13 +177,13 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
                     /* try { // try from 002b5618 to 002b5623 has its CatchHandler @ 002b57f8 */
     func_0x0016af30(abStack_98,abStack_b0);
                     /* try { // try from 002b5624 to 002b5633 has its CatchHandler @ 002b57f4 */
-    func_0x00165260(appuStack_50,abStack_78,abStack_98);
+    func_0x00165260(apvStack_50,abStack_78,abStack_98);
     func_0x00167bf0(abStack_98);
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
     abStack_78[0xb] = 0;
     abStack_78[0xc] = 0;
@@ -202,12 +205,12 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
     abStack_78[7] = 0x6f;
     abStack_78[8] = 100;
                     /* try { // try from 002b5688 to 002b568f has its CatchHandler @ 002b57ec */
-    func_0x0016ae60(abStack_98,*param_2);
+    func_0x0016ae60(abStack_98,*in_x1);
                     /* try { // try from 002b5690 to 002b569f has its CatchHandler @ 002b57dc */
-    func_0x00165260(appuStack_50,abStack_78,abStack_98);
+    func_0x00165260(apvStack_50,abStack_78,abStack_98);
     func_0x00167bf0(abStack_98);
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
     abStack_78[7] = 0;
     abStack_78[8] = 0;
@@ -229,12 +232,12 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
     abStack_78[5] = 0x79;
     abStack_78[6] = 0;
                     /* try { // try from 002b56e0 to 002b56e7 has its CatchHandler @ 002b57d8 */
-    func_0x0016af30(abStack_98,param_2 + 2);
+    func_0x0016af30(abStack_98,in_x1 + 2);
                     /* try { // try from 002b56e8 to 002b56f7 has its CatchHandler @ 002b57d4 */
-    func_0x00165260(appuStack_50,abStack_78,abStack_98);
+    func_0x00165260(apvStack_50,abStack_78,abStack_98);
     func_0x00167bf0(abStack_98);
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
     uStack_66 = 0;
     abStack_78[0] = 0x20;
@@ -256,20 +259,20 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(long param_1,int *param_2
     abStack_78[8] = 0x73;
     abStack_78[0x11] = 0;
                     /* try { // try from 002b5738 to 002b573f has its CatchHandler @ 002b57d0 */
-    func_0x0016af30(abStack_98,param_2 + 8);
+    func_0x0016af30(abStack_98,in_x1 + 8);
                     /* try { // try from 002b5740 to 002b574f has its CatchHandler @ 002b57cc */
-    func_0x00165260(appuStack_50,abStack_78,abStack_98);
+    func_0x00165260(apvStack_50,abStack_78,abStack_98);
     func_0x00167bf0(abStack_98);
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
+      FUN_00166120((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
                     /* try { // try from 002b5768 to 002b5773 has its CatchHandler @ 002b584c */
     uVar3 = func_0x0016b4e0();
     func_0x00169c90(uVar3,&ppuStack_60);
     ppuStack_60 = &PTR__Message_0070cdc8;
-    func_0x00164ba0(appuStack_50);
+    func_0x00164ba0(apvStack_50);
   }
-  *(undefined1 *)(param_2 + 0xe) = 1;
+  *(undefined1 *)(in_x1 + 0xe) = 1;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

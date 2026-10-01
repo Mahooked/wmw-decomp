@@ -106,69 +106,71 @@ void ndk::MotionEvent::set
 
 /* ndk::MotionEvent::addEvent(float, float, float, float, int) */
 
-void ndk::MotionEvent::addEvent
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               int *param_5,undefined4 param_6)
+void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
 
 {
-  undefined4 *puVar1;
-  long lVar2;
+  float *pfVar1;
+  undefined4 *puVar2;
+  long lVar3;
+  int *piVar4;
+  undefined4 in_w1;
   undefined4 uStack_3c;
-  undefined4 uStack_38;
-  undefined4 uStack_34;
-  undefined4 uStack_30;
-  undefined4 uStack_2c;
+  float fStack_38;
+  float fStack_34;
+  float fStack_30;
+  float fStack_2c;
   long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
-  puVar1 = *(undefined4 **)(param_5 + 4);
-  uStack_3c = param_6;
-  uStack_38 = param_4;
-  uStack_34 = param_3;
-  uStack_30 = param_2;
-  uStack_2c = param_1;
-  if (puVar1 == *(undefined4 **)(param_5 + 6)) {
-    func_0x00165ca0(param_5 + 2,&uStack_2c);
+  piVar4 = (int *)(ulong)(uint)p4;
+  lVar3 = tpidr_el0;
+  lStack_28 = *(long *)(lVar3 + 0x28);
+  pfVar1 = *(float **)(piVar4 + 4);
+  uStack_3c = in_w1;
+  fStack_38 = p3;
+  fStack_34 = p2;
+  fStack_30 = p1;
+  fStack_2c = p0;
+  if (pfVar1 == *(float **)(piVar4 + 6)) {
+    func_0x00165ca0(piVar4 + 2,&fStack_2c);
   }
   else {
-    *puVar1 = param_1;
-    *(undefined4 **)(param_5 + 4) = puVar1 + 1;
+    *pfVar1 = p0;
+    *(float **)(piVar4 + 4) = pfVar1 + 1;
   }
-  puVar1 = *(undefined4 **)(param_5 + 10);
-  if (puVar1 == *(undefined4 **)(param_5 + 0xc)) {
-    func_0x00165ca0(param_5 + 8,&uStack_30);
-  }
-  else {
-    *puVar1 = uStack_30;
-    *(undefined4 **)(param_5 + 10) = puVar1 + 1;
-  }
-  puVar1 = *(undefined4 **)(param_5 + 0x1c);
-  if (puVar1 == *(undefined4 **)(param_5 + 0x1e)) {
-    func_0x00164e90(param_5 + 0x1a,&uStack_3c);
+  pfVar1 = *(float **)(piVar4 + 10);
+  if (pfVar1 == *(float **)(piVar4 + 0xc)) {
+    func_0x00165ca0(piVar4 + 8,&fStack_30);
   }
   else {
-    *puVar1 = uStack_3c;
-    *(undefined4 **)(param_5 + 0x1c) = puVar1 + 1;
+    *pfVar1 = fStack_30;
+    *(float **)(piVar4 + 10) = pfVar1 + 1;
   }
-  puVar1 = *(undefined4 **)(param_5 + 0x10);
-  if (puVar1 == *(undefined4 **)(param_5 + 0x12)) {
-    func_0x00165ca0(param_5 + 0xe,&uStack_34);
-  }
-  else {
-    *puVar1 = uStack_34;
-    *(undefined4 **)(param_5 + 0x10) = puVar1 + 1;
-  }
-  puVar1 = *(undefined4 **)(param_5 + 0x16);
-  if (puVar1 == *(undefined4 **)(param_5 + 0x18)) {
-    func_0x00165ca0(param_5 + 0x14,&uStack_38);
+  puVar2 = *(undefined4 **)(piVar4 + 0x1c);
+  if (puVar2 == *(undefined4 **)(piVar4 + 0x1e)) {
+    func_0x00164e90(piVar4 + 0x1a,&uStack_3c);
   }
   else {
-    *puVar1 = uStack_38;
-    *(undefined4 **)(param_5 + 0x16) = puVar1 + 1;
+    *puVar2 = uStack_3c;
+    *(undefined4 **)(piVar4 + 0x1c) = puVar2 + 1;
   }
-  *param_5 = *param_5 + 1;
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
+  pfVar1 = *(float **)(piVar4 + 0x10);
+  if (pfVar1 == *(float **)(piVar4 + 0x12)) {
+    func_0x00165ca0(piVar4 + 0xe,&fStack_34);
+  }
+  else {
+    *pfVar1 = fStack_34;
+    *(float **)(piVar4 + 0x10) = pfVar1 + 1;
+  }
+  pfVar1 = *(float **)(piVar4 + 0x16);
+  if (pfVar1 == *(float **)(piVar4 + 0x18)) {
+    func_0x00165ca0(piVar4 + 0x14,&fStack_38);
+  }
+  else {
+    *pfVar1 = fStack_38;
+    *(float **)(piVar4 + 0x16) = pfVar1 + 1;
+  }
+  *piVar4 = *piVar4 + 1;
+  if (*(long *)(lVar3 + 0x28) == lStack_28) {
     return;
   }
   FUN_00164ff0();

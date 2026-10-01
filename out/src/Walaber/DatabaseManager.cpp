@@ -110,7 +110,7 @@ void Walaber::DatabaseManager::closeDatabase(void)
 
 /* Walaber::DatabaseManager::closeDatabase(int) */
 
-void Walaber::DatabaseManager::closeDatabase(int param_1)
+void Walaber::DatabaseManager::closeDatabase(int p0)
 
 {
   undefined8 *puVar1;
@@ -120,12 +120,12 @@ void Walaber::DatabaseManager::closeDatabase(int param_1)
     puVar2 = &DAT_0072d690;
     puVar1 = DAT_0072d690;
     do {
-      if (param_1 <= *(int *)(puVar1 + 4)) {
+      if (p0 <= *(int *)(puVar1 + 4)) {
         puVar2 = puVar1;
       }
-      puVar1 = (undefined8 *)puVar1[*(int *)(puVar1 + 4) < param_1];
+      puVar1 = (undefined8 *)puVar1[*(int *)(puVar1 + 4) < p0];
     } while (puVar1 != (undefined8 *)0x0);
-    if (((undefined8 **)puVar2 != &DAT_0072d690) && (*(int *)(puVar2 + 4) <= param_1)) {
+    if (((undefined8 **)puVar2 != &DAT_0072d690) && (*(int *)(puVar2 + 4) <= p0)) {
       FUN_00162070(puVar2[5]);
       func_0x0016f560(&databaseMap,puVar2);
       return;
@@ -168,19 +168,21 @@ ulong Walaber::DatabaseManager::insertEntry(undefined8 param_1,undefined8 param_
   long lVar1;
   uint uVar2;
   ulong uVar3;
-  ulong auStack_40 [4];
+  ulong auStack_40 [2];
+  void *pvStack_30;
+  long lStack_28;
   
   lVar1 = tpidr_el0;
-  auStack_40[3] = *(long *)(lVar1 + 0x28);
+  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_40[0] = 0;
   auStack_40[1] = 0;
-  auStack_40[2] = 0;
+  pvStack_30 = (void *)0x0;
                     /* try { // try from 0032b250 to 0032b257 has its CatchHandler @ 0032b294 */
   uVar2 = func_0x0016f7f0(param_1,auStack_40,param_2);
   if ((auStack_40[0] & 1) != 0) {
-    FUN_00166120(auStack_40[2]);
+    FUN_00166120(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == auStack_40[3]) {
+  if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
   }
   uVar3 = FUN_00164ff0();
@@ -207,7 +209,7 @@ ulong Walaber::DatabaseManager::insertEntry(void)
   uint uVar3;
   ulong uVar4;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -222,7 +224,7 @@ ulong Walaber::DatabaseManager::insertEntry(void)
                     /* try { // try from 0032b2f4 to 0032b2fb has its CatchHandler @ 0032b338 */
   uVar3 = func_0x0016e550(uVar2,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar3 & 1);
@@ -270,72 +272,73 @@ void Walaber::DatabaseManager::constructInsertQuery
   ulong uVar1;
   byte bVar2;
   long lVar3;
-  int iVar4;
-  undefined8 *puVar5;
-  ulong *puVar6;
-  ulong uVar7;
+  void *pvVar4;
+  int iVar5;
+  undefined8 *puVar6;
+  ulong *puVar7;
   ulong uVar8;
-  byte *pbVar9;
-  undefined8 uVar10;
+  ulong uVar9;
+  byte *pbVar10;
   undefined8 uVar11;
-  ulong uVar12;
-  ulong auStack_a0 [3];
+  undefined8 uVar12;
+  ulong auStack_a0 [2];
+  void *pvStack_90;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   byte bStack_50;
   undefined7 uStack_4f;
   undefined1 uStack_48;
   undefined4 uStack_47;
   undefined1 uStack_43;
   undefined2 uStack_42;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_42 = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   bStack_50 = 0x18;
   uStack_47 = 0x204f544e;
   uStack_4f = 0x20545245534e49;
   uStack_48 = 0x49;
   uStack_43 = 0;
   uVar1 = *(ulong *)(param_2 + 8);
-  pbVar9 = *(byte **)(param_2 + 0x10);
+  pbVar10 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
-    pbVar9 = param_2 + 1;
+    pbVar10 = param_2 + 1;
     uVar1 = (ulong)(*param_2 >> 1);
   }
                     /* try { // try from 0032b3f0 to 0032b3f7 has its CatchHandler @ 0032b710 */
-  puVar5 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar9,uVar1);
-  uVar11 = puVar5[1];
-  uVar10 = *puVar5;
-  param_1[2] = puVar5[2];
-  param_1[1] = uVar11;
-  *param_1 = uVar10;
-  puVar5[1] = 0;
-  puVar5[2] = 0;
-  *puVar5 = 0;
+  puVar6 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar10,uVar1);
+  uVar12 = puVar6[1];
+  uVar11 = *puVar6;
+  param_1[2] = puVar6[2];
+  param_1[1] = uVar12;
+  *param_1 = uVar11;
+  puVar6[1] = 0;
+  puVar6[2] = 0;
+  *puVar6 = 0;
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   bVar2 = *param_3;
-  uVar7 = *(ulong *)(param_3 + 8);
-  uVar8 = (ulong)(bVar2 >> 1);
-  uVar1 = uVar8;
+  uVar8 = *(ulong *)(param_3 + 8);
+  uVar9 = (ulong)(bVar2 >> 1);
+  uVar1 = uVar9;
   if ((bVar2 & 1) != 0) {
-    uVar1 = uVar7;
+    uVar1 = uVar8;
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032b440 to 0032b45b has its CatchHandler @ 0032b694 */
-    iVar4 = func_0x001656c0(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
-    if (iVar4 == 0) goto LAB_0032b564;
+    iVar5 = func_0x001656c0(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
+    if (iVar5 == 0) goto LAB_0032b564;
     bVar2 = *param_3;
-    uVar7 = *(ulong *)(param_3 + 8);
-    uVar8 = (ulong)(bVar2 >> 1);
+    uVar8 = *(ulong *)(param_3 + 8);
+    uVar9 = (ulong)(bVar2 >> 1);
   }
   abStack_88[4] = 0;
   abStack_88[5] = 0;
@@ -349,60 +352,60 @@ void Walaber::DatabaseManager::constructInsertQuery
   abStack_88[0xd] = 0;
   abStack_88[0xe] = 0;
   abStack_88[0xf] = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   abStack_88[0] = 4;
   abStack_88[1] = 0x20;
   abStack_88[2] = 0x28;
   abStack_88[3] = 0;
-  pbVar9 = *(byte **)(param_3 + 0x10);
+  pbVar10 = *(byte **)(param_3 + 0x10);
   if ((bVar2 & 1) == 0) {
-    pbVar9 = param_3 + 1;
-    uVar7 = uVar8;
+    pbVar10 = param_3 + 1;
+    uVar8 = uVar9;
   }
                     /* try { // try from 0032b49c to 0032b4a3 has its CatchHandler @ 0032b6a0 */
-  puVar6 = (ulong *)FUN_00167eb0(abStack_88,pbVar9,uVar7);
-  uStack_68 = puVar6[1];
-  uStack_70 = *puVar6;
-  uStack_60 = puVar6[2];
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7 = (ulong *)FUN_00167eb0(abStack_88,pbVar10,uVar8);
+  uStack_68 = puVar7[1];
+  uStack_70 = *puVar7;
+  pvStack_60 = (void *)puVar7[2];
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   auStack_a0[1] = 0;
-  auStack_a0[2] = 0;
+  pvStack_90 = (void *)0x0;
   auStack_a0[0] = 0x2902;
                     /* try { // try from 0032b4d8 to 0032b4e3 has its CatchHandler @ 0032b69c */
-  puVar6 = (ulong *)FUN_00167eb0(&uStack_70,(ulong)auStack_a0 | 1,1);
-  uStack_40 = puVar6[2];
-  uVar12 = puVar6[1];
-  uVar8 = *puVar6;
-  uStack_48 = (undefined1)uVar12;
-  uStack_47 = (undefined4)(uVar12 >> 8);
-  uStack_43 = (undefined1)(uVar12 >> 0x28);
-  uStack_42 = (undefined2)(uVar12 >> 0x30);
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_70,(ulong)auStack_a0 | 1,1);
+  pvStack_40 = (void *)puVar7[2];
+  uVar9 = puVar7[1];
+  uVar8 = *puVar7;
+  uStack_48 = (undefined1)uVar9;
+  uStack_47 = (undefined4)(uVar9 >> 8);
+  uStack_43 = (undefined1)(uVar9 >> 0x28);
+  uStack_42 = (undefined2)(uVar9 >> 0x30);
   bStack_50 = (byte)uVar8;
   uStack_4f = (undefined7)(uVar8 >> 8);
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   uVar1 = (ulong)(bStack_50 >> 1);
-  uVar7 = (ulong)&bStack_50 | 1;
+  pvVar4 = (void *)((ulong)&bStack_50 | 1);
   if ((uVar8 & 1) != 0) {
-    uVar1 = uVar12;
-    uVar7 = uStack_40;
+    uVar1 = uVar9;
+    pvVar4 = pvStack_40;
   }
                     /* try { // try from 0032b51c to 0032b523 has its CatchHandler @ 0032b698 */
-  FUN_00167eb0(param_1,uVar7,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_a0[0] & 1) != 0) {
-    FUN_00166120(auStack_a0[2]);
+    FUN_00166120(pvStack_90);
   }
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((abStack_88[0] & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
 LAB_0032b564:
   abStack_88[0xb] = 0;
@@ -410,7 +413,7 @@ LAB_0032b564:
   abStack_88[0xd] = 0;
   abStack_88[0xe] = 0;
   abStack_88[0xf] = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   abStack_88[0] = 0x12;
   abStack_88[9] = 0x28;
   abStack_88[10] = 0;
@@ -423,55 +426,55 @@ LAB_0032b564:
   abStack_88[7] = 0x53;
   abStack_88[8] = 0x20;
   uVar1 = *(ulong *)(param_4 + 8);
-  pbVar9 = *(byte **)(param_4 + 0x10);
+  pbVar10 = *(byte **)(param_4 + 0x10);
   if ((*param_4 & 1) == 0) {
-    pbVar9 = param_4 + 1;
+    pbVar10 = param_4 + 1;
     uVar1 = (ulong)(*param_4 >> 1);
   }
                     /* try { // try from 0032b5a4 to 0032b5ab has its CatchHandler @ 0032b6e4 */
-  puVar6 = (ulong *)FUN_00167eb0(abStack_88,pbVar9,uVar1);
-  uStack_68 = puVar6[1];
-  uStack_70 = *puVar6;
-  uStack_60 = puVar6[2];
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7 = (ulong *)FUN_00167eb0(abStack_88,pbVar10,uVar1);
+  uStack_68 = puVar7[1];
+  uStack_70 = *puVar7;
+  pvStack_60 = (void *)puVar7[2];
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   auStack_a0[1] = 0;
-  auStack_a0[2] = 0;
+  pvStack_90 = (void *)0x0;
   auStack_a0[0] = 0x2902;
                     /* try { // try from 0032b5e0 to 0032b5eb has its CatchHandler @ 0032b6bc */
-  puVar6 = (ulong *)FUN_00167eb0(&uStack_70,(ulong)auStack_a0 | 1,1);
-  uStack_40 = puVar6[2];
-  uVar12 = puVar6[1];
-  uVar8 = *puVar6;
-  uStack_48 = (undefined1)uVar12;
-  uStack_47 = (undefined4)(uVar12 >> 8);
-  uStack_43 = (undefined1)(uVar12 >> 0x28);
-  uStack_42 = (undefined2)(uVar12 >> 0x30);
+  puVar7 = (ulong *)FUN_00167eb0(&uStack_70,(ulong)auStack_a0 | 1,1);
+  pvStack_40 = (void *)puVar7[2];
+  uVar9 = puVar7[1];
+  uVar8 = *puVar7;
+  uStack_48 = (undefined1)uVar9;
+  uStack_47 = (undefined4)(uVar9 >> 8);
+  uStack_43 = (undefined1)(uVar9 >> 0x28);
+  uStack_42 = (undefined2)(uVar9 >> 0x30);
   bStack_50 = (byte)uVar8;
   uStack_4f = (undefined7)(uVar8 >> 8);
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   uVar1 = (ulong)(bStack_50 >> 1);
-  uVar7 = (ulong)&bStack_50 | 1;
+  pvVar4 = (void *)((ulong)&bStack_50 | 1);
   if ((uVar8 & 1) != 0) {
-    uVar1 = uVar12;
-    uVar7 = uStack_40;
+    uVar1 = uVar9;
+    pvVar4 = pvStack_40;
   }
                     /* try { // try from 0032b624 to 0032b62b has its CatchHandler @ 0032b6a4 */
-  FUN_00167eb0(param_1,uVar7,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((auStack_a0[0] & 1) != 0) {
-    FUN_00166120(auStack_a0[2]);
+    FUN_00166120(pvStack_90);
   }
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
   if ((abStack_88[0] & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
     return;
@@ -498,19 +501,21 @@ ulong Walaber::DatabaseManager::insertEntry
   long lVar1;
   uint uVar2;
   ulong uVar3;
-  ulong auStack_40 [4];
+  ulong auStack_40 [2];
+  void *pvStack_30;
+  long lStack_28;
   
   lVar1 = tpidr_el0;
-  auStack_40[3] = *(long *)(lVar1 + 0x28);
+  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_40[0] = 0;
   auStack_40[1] = 0;
-  auStack_40[2] = 0;
+  pvStack_30 = (void *)0x0;
                     /* try { // try from 0032b74c to 0032b753 has its CatchHandler @ 0032b790 */
   uVar2 = func_0x00168ac0(param_1,param_2,auStack_40,param_3);
   if ((auStack_40[0] & 1) != 0) {
-    FUN_00166120(auStack_40[2]);
+    FUN_00166120(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == auStack_40[3]) {
+  if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
   }
   uVar3 = FUN_00164ff0();
@@ -537,7 +542,7 @@ ulong Walaber::DatabaseManager::insertEntry
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -546,7 +551,7 @@ ulong Walaber::DatabaseManager::insertEntry
                     /* try { // try from 0032b7e0 to 0032b7eb has its CatchHandler @ 0032b828 */
   uVar2 = func_0x0016e550(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -644,7 +649,7 @@ ulong Walaber::DatabaseManager::updateEntry(void)
   ulong uVar3;
   undefined4 uVar4;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -659,7 +664,7 @@ ulong Walaber::DatabaseManager::updateEntry(void)
                     /* try { // try from 0032b9ec to 0032b9f7 has its CatchHandler @ 0032ba34 */
   uVar2 = func_0x0016e550(uVar4,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -687,49 +692,49 @@ void Walaber::DatabaseManager::constructUpdateQuery
   ulong uVar1;
   byte bVar2;
   long lVar3;
-  int iVar4;
-  undefined8 *puVar5;
-  ulong *puVar6;
-  ulong uVar7;
+  void *pvVar4;
+  int iVar5;
+  undefined8 *puVar6;
+  ulong *puVar7;
   ulong uVar8;
-  byte *pbVar9;
-  undefined8 uVar10;
+  ulong uVar9;
+  byte *pbVar10;
   undefined8 uVar11;
-  ulong uVar12;
+  undefined8 uVar12;
   byte abStack_68 [16];
-  undefined8 uStack_58;
+  void *pvStack_58;
   byte bStack_50;
   undefined7 uStack_4f;
   undefined1 uStack_48;
   undefined7 uStack_47;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_47 = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   bStack_50 = 0xe;
   uStack_4f = 0x20455441445055;
   uStack_48 = 0;
   uVar1 = *(ulong *)(param_2 + 8);
-  pbVar9 = *(byte **)(param_2 + 0x10);
+  pbVar10 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
-    pbVar9 = param_2 + 1;
+    pbVar10 = param_2 + 1;
     uVar1 = (ulong)(*param_2 >> 1);
   }
                     /* try { // try from 0032bab8 to 0032babf has its CatchHandler @ 0032bce8 */
-  puVar5 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar9,uVar1);
-  uVar11 = puVar5[1];
-  uVar10 = *puVar5;
-  param_1[2] = puVar5[2];
-  param_1[1] = uVar11;
-  *param_1 = uVar10;
-  puVar5[1] = 0;
-  puVar5[2] = 0;
-  *puVar5 = 0;
+  puVar6 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar10,uVar1);
+  uVar12 = puVar6[1];
+  uVar11 = *puVar6;
+  param_1[2] = puVar6[2];
+  param_1[1] = uVar12;
+  *param_1 = uVar11;
+  puVar6[1] = 0;
+  puVar6[2] = 0;
+  *puVar6 = 0;
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   abStack_68[7] = 0;
   abStack_68[8] = 0;
@@ -740,7 +745,7 @@ void Walaber::DatabaseManager::constructUpdateQuery
   abStack_68[0xd] = 0;
   abStack_68[0xe] = 0;
   abStack_68[0xf] = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   abStack_68[0] = 10;
   abStack_68[1] = 0x20;
   abStack_68[2] = 0x53;
@@ -749,51 +754,51 @@ void Walaber::DatabaseManager::constructUpdateQuery
   abStack_68[5] = 0x20;
   abStack_68[6] = 0;
   uVar1 = *(ulong *)(param_3 + 8);
-  pbVar9 = *(byte **)(param_3 + 0x10);
+  pbVar10 = *(byte **)(param_3 + 0x10);
   if ((*param_3 & 1) == 0) {
-    pbVar9 = param_3 + 1;
+    pbVar10 = param_3 + 1;
     uVar1 = (ulong)(*param_3 >> 1);
   }
                     /* try { // try from 0032bb24 to 0032bb2b has its CatchHandler @ 0032bcc4 */
-  puVar6 = (ulong *)FUN_00167eb0(abStack_68,pbVar9,uVar1);
-  uStack_40 = puVar6[2];
-  uVar12 = puVar6[1];
-  uVar8 = *puVar6;
-  uStack_48 = (undefined1)uVar12;
-  uStack_47 = (undefined7)(uVar12 >> 8);
+  puVar7 = (ulong *)FUN_00167eb0(abStack_68,pbVar10,uVar1);
+  pvStack_40 = (void *)puVar7[2];
+  uVar9 = puVar7[1];
+  uVar8 = *puVar7;
+  uStack_48 = (undefined1)uVar9;
+  uStack_47 = (undefined7)(uVar9 >> 8);
   bStack_50 = (byte)uVar8;
   uStack_4f = (undefined7)(uVar8 >> 8);
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   uVar1 = (ulong)(bStack_50 >> 1);
-  uVar7 = (ulong)&bStack_50 | 1;
+  pvVar4 = (void *)((ulong)&bStack_50 | 1);
   if ((uVar8 & 1) != 0) {
-    uVar1 = uVar12;
-    uVar7 = uStack_40;
+    uVar1 = uVar9;
+    pvVar4 = pvStack_40;
   }
                     /* try { // try from 0032bb64 to 0032bb6b has its CatchHandler @ 0032bcac */
-  FUN_00167eb0(param_1,uVar7,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((abStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   bVar2 = *param_4;
-  uVar7 = *(ulong *)(param_4 + 8);
-  uVar8 = (ulong)(bVar2 >> 1);
-  uVar1 = uVar8;
+  uVar8 = *(ulong *)(param_4 + 8);
+  uVar9 = (ulong)(bVar2 >> 1);
+  uVar1 = uVar9;
   if ((bVar2 & 1) != 0) {
-    uVar1 = uVar7;
+    uVar1 = uVar8;
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032bbac to 0032bbc7 has its CatchHandler @ 0032bca0 */
-    iVar4 = func_0x001656c0(param_4,0,0xffffffffffffffff,&DAT_0063306f,0);
-    if (iVar4 == 0) goto LAB_0032bc78;
+    iVar5 = func_0x001656c0(param_4,0,0xffffffffffffffff,&DAT_0063306f,0);
+    if (iVar5 == 0) goto LAB_0032bc78;
     bVar2 = *param_4;
-    uVar7 = *(ulong *)(param_4 + 8);
-    uVar8 = (ulong)(bVar2 >> 1);
+    uVar8 = *(ulong *)(param_4 + 8);
+    uVar9 = (ulong)(bVar2 >> 1);
   }
   abStack_68[9] = 0;
   abStack_68[10] = 0;
@@ -802,7 +807,7 @@ void Walaber::DatabaseManager::constructUpdateQuery
   abStack_68[0xd] = 0;
   abStack_68[0xe] = 0;
   abStack_68[0xf] = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   abStack_68[0] = 0xe;
   abStack_68[1] = 0x20;
   abStack_68[2] = 0x57;
@@ -812,36 +817,36 @@ void Walaber::DatabaseManager::constructUpdateQuery
   abStack_68[6] = 0x45;
   abStack_68[7] = 0x20;
   abStack_68[8] = 0;
-  pbVar9 = *(byte **)(param_4 + 0x10);
+  pbVar10 = *(byte **)(param_4 + 0x10);
   if ((bVar2 & 1) == 0) {
-    pbVar9 = param_4 + 1;
-    uVar7 = uVar8;
+    pbVar10 = param_4 + 1;
+    uVar8 = uVar9;
   }
                     /* try { // try from 0032bc10 to 0032bc17 has its CatchHandler @ 0032bca8 */
-  puVar6 = (ulong *)FUN_00167eb0(abStack_68,pbVar9,uVar7);
-  uStack_40 = puVar6[2];
-  uVar12 = puVar6[1];
-  uVar8 = *puVar6;
-  uStack_48 = (undefined1)uVar12;
-  uStack_47 = (undefined7)(uVar12 >> 8);
+  puVar7 = (ulong *)FUN_00167eb0(abStack_68,pbVar10,uVar8);
+  pvStack_40 = (void *)puVar7[2];
+  uVar9 = puVar7[1];
+  uVar8 = *puVar7;
+  uStack_48 = (undefined1)uVar9;
+  uStack_47 = (undefined7)(uVar9 >> 8);
   bStack_50 = (byte)uVar8;
   uStack_4f = (undefined7)(uVar8 >> 8);
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   uVar1 = (ulong)(bStack_50 >> 1);
-  uVar7 = (ulong)&bStack_50 | 1;
+  pvVar4 = (void *)((ulong)&bStack_50 | 1);
   if ((uVar8 & 1) != 0) {
-    uVar1 = uVar12;
-    uVar7 = uStack_40;
+    uVar1 = uVar9;
+    pvVar4 = pvStack_40;
   }
                     /* try { // try from 0032bc50 to 0032bc57 has its CatchHandler @ 0032bca4 */
-  FUN_00167eb0(param_1,uVar7,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((abStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
 LAB_0032bc78:
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
@@ -896,16 +901,16 @@ ulong Walaber::DatabaseManager::incrementValue
   uint uVar3;
   ulong uVar4;
   ulong *puVar5;
-  ulong uVar6;
-  ulong uVar7;
+  void *pvVar6;
+  ulong p0;
   ulong uStack_b0;
   ulong uStack_a8;
-  ulong uStack_a0;
+  void *pvStack_a0;
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [8];
   long lStack_58;
@@ -927,7 +932,7 @@ ulong Walaber::DatabaseManager::incrementValue
   func_0x00165800(abStack_98,param_3,"=");
   uStack_b0 = 0;
   uStack_a8 = 0;
-  uStack_a0 = 0;
+  pvStack_a0 = (void *)0x0;
   uVar4 = FUN_00173480(auStack_60);
   if (0xffffffffffffffef < uVar4) {
                     /* try { // try from 0032bf1c to 0032bf23 has its CatchHandler @ 0032bf24 */
@@ -935,30 +940,30 @@ ulong Walaber::DatabaseManager::incrementValue
     return uVar4;
   }
   if (uVar4 < 0x17) {
-    uVar6 = (ulong)&uStack_b0 | 1;
+    pvVar6 = (void *)((ulong)&uStack_b0 | 1);
     uStack_b0 = CONCAT71(uStack_b0._1_7_,(char)((int)uVar4 << 1));
     if (uVar4 != 0) goto LAB_0032be4c;
   }
   else {
-    uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    p0 = uVar4 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 0032be2c to 0032be33 has its CatchHandler @ 0032bf24 */
-    uVar6 = FUN_00164060(uVar7);
-    uStack_b0 = uVar7 | 1;
+    pvVar6 = (void *)FUN_00164060(p0);
+    uStack_b0 = p0 | 1;
     uStack_a8 = uVar4;
-    uStack_a0 = uVar6;
+    pvStack_a0 = pvVar6;
 LAB_0032be4c:
-    FUN_001715e0(uVar6,auStack_60,uVar4);
+    FUN_001715e0(pvVar6,auStack_60,uVar4);
   }
-  *(undefined1 *)(uVar6 + uVar4) = 0;
+  *(undefined1 *)((long)pvVar6 + uVar4) = 0;
   uVar4 = uStack_b0 >> 1 & 0x7f;
-  uVar6 = (ulong)&uStack_b0 | 1;
+  pvVar6 = (void *)((ulong)&uStack_b0 | 1);
   if ((uStack_b0 & 1) != 0) {
     uVar4 = uStack_a8;
-    uVar6 = uStack_a0;
+    pvVar6 = pvStack_a0;
   }
                     /* try { // try from 0032be78 to 0032be7f has its CatchHandler @ 0032bf44 */
-  puVar5 = (ulong *)FUN_00167eb0(abStack_98,uVar6,uVar4);
-  uStack_70 = puVar5[2];
+  puVar5 = (ulong *)FUN_00167eb0(abStack_98,pvVar6,uVar4);
+  pvStack_70 = (void *)puVar5[2];
   uStack_78 = puVar5[1];
   uStack_80 = *puVar5;
   puVar5[1] = 0;
@@ -967,13 +972,13 @@ LAB_0032be4c:
                     /* try { // try from 0032be98 to 0032beab has its CatchHandler @ 0032bf2c */
   uVar3 = func_0x00170b80(param_1,param_2,&uStack_80,param_4);
   if ((uStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if ((uStack_b0 & 1) != 0) {
-    FUN_00166120(uStack_a0);
+    FUN_00166120(pvStack_a0);
   }
   if ((abStack_98[0] & 1) != 0) {
-    FUN_00166120(uStack_88);
+    FUN_00166120(pvStack_88);
   }
 LAB_0032bee0:
   func_0x00162850(&lStack_68);
@@ -1004,7 +1009,7 @@ ulong Walaber::DatabaseManager::updateEntry
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -1013,7 +1018,7 @@ ulong Walaber::DatabaseManager::updateEntry
                     /* try { // try from 0032bfb8 to 0032bfc3 has its CatchHandler @ 0032c000 */
   uVar2 = func_0x0016e550(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -1094,11 +1099,11 @@ void Walaber::DatabaseManager::runSQL
   undefined8 *puStack_c0;
   undefined4 *puStack_b8;
   byte abStack_b0 [16];
-  undefined8 uStack_a0;
+  void *pvStack_a0;
   undefined1 auStack_98 [24];
   undefined8 *puStack_80;
   undefined4 *puStack_78;
-  undefined8 uStack_70;
+  void *pvStack_70;
   long lStack_68;
   int *piStack_60;
   long lStack_58;
@@ -1123,7 +1128,7 @@ void Walaber::DatabaseManager::runSQL
   func_0x00172a20(&mSqlScriptCallbacks,&puStack_80);
   FUN_0016bb90(&lStack_68);
   if (((ulong)puStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   func_0x0016f720(&puStack_80,param_2);
   lStack_68 = *param_4;
@@ -1135,7 +1140,7 @@ void Walaber::DatabaseManager::runSQL
   func_0x00172a20(&mSqlScriptErrorCallbacks,&puStack_80);
   FUN_0016bb90(&lStack_68);
   if (((ulong)puStack_80 & 1) != 0) {
-    FUN_00166120(uStack_70);
+    FUN_00166120(pvStack_70);
   }
   if (bVar2) {
     func_0x0016b220(auStack_98);
@@ -1143,7 +1148,7 @@ void Walaber::DatabaseManager::runSQL
     abStack_b0[0xe] = 0;
     abStack_b0[0xf] = 0;
     abStack_b0[0] = 0x16;
-    uStack_a0 = 0;
+    pvStack_a0 = (void *)0x0;
     abStack_b0[9] = 0x4b;
     abStack_b0[10] = 0x65;
     abStack_b0[0xb] = 0x79;
@@ -1162,7 +1167,7 @@ void Walaber::DatabaseManager::runSQL
     func_0x00165260(auStack_98,abStack_b0,&puStack_80);
     func_0x00167bf0(&puStack_80);
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
                     /* try { // try from 0032c2a4 to 0032c2a7 has its CatchHandler @ 0032c364 */
     uVar4 = func_0x00162510();
@@ -1197,7 +1202,7 @@ LAB_0032c31c:
 
 /* Walaber::DatabaseManager::_readSQL(void*) */
 
-void Walaber::DatabaseManager::_readSQL(long param_1)
+void Walaber::DatabaseManager::_readSQL(void *p0)
 
 {
   undefined1 *puVar1;
@@ -1206,45 +1211,55 @@ void Walaber::DatabaseManager::_readSQL(long param_1)
   int iVar4;
   uint uVar5;
   ulong uVar6;
-  ulong uVar7;
+  long *plVar7;
   long *plVar8;
-  long *plVar9;
-  byte *pbVar10;
-  long lVar11;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong extraout_x1_01;
+  ulong extraout_x1_02;
+  ulong extraout_x1_03;
+  ulong extraout_x1_04;
+  ulong extraout_x1_05;
+  ulong extraout_x1_06;
+  ulong extraout_x1_07;
+  ulong extraout_x1_08;
+  byte *pbVar9;
+  long lVar10;
+  ulong uVar11;
   long *plVar12;
   undefined8 *puVar13;
   long lVar14;
   long lVar15;
-  ulong uVar16;
-  undefined8 uVar17;
-  byte *pbVar18;
+  undefined8 uVar16;
+  byte *pbVar17;
+  void *pvVar18;
   ulong uVar19;
   undefined8 *puVar20;
   undefined1 auVar21 [16];
   undefined1 auVar22 [16];
   ulong uStack_138;
   ulong uStack_130;
-  ulong uStack_128;
+  void *pvStack_128;
   undefined8 uStack_120;
   long lStack_118;
   long lStack_110;
   ulong uStack_100;
   ulong uStack_f8;
-  ulong uStack_f0;
+  void *pvStack_f0;
   ulong uStack_e8;
   undefined8 uStack_e0;
-  undefined8 uStack_d8;
+  void *pvStack_d8;
   ulong uStack_d0;
   undefined8 uStack_c8;
-  undefined8 uStack_c0;
+  void *pvStack_c0;
   int iStack_b4;
   uint uStack_b0;
   undefined4 uStack_ac;
   byte bStack_a8;
   undefined4 uStack_a7;
   undefined3 uStack_a3;
-  undefined8 uStack_a0;
-  undefined8 uStack_98;
+  void *pvStack_a0;
+  void *pvStack_98;
   byte bStack_90;
   undefined1 auStack_8f [7];
   undefined8 uStack_88;
@@ -1252,33 +1267,33 @@ void Walaber::DatabaseManager::_readSQL(long param_1)
   undefined2 uStack_78;
   
   lVar2 = tpidr_el0;
-  lVar11 = *(long *)(lVar2 + 0x28);
+  lVar10 = *(long *)(lVar2 + 0x28);
   uStack_a3 = 0;
-  uStack_a0 = 0;
+  pvStack_a0 = (void *)0x0;
   uStack_a7 = 0x79654b;
   uStack_b0 = 0x74614416;
   uStack_ac = 0x73616261;
   bStack_a8 = 0x65;
                     /* try { // try from 0032c430 to 0032c437 has its CatchHandler @ 0032cb04 */
-  uVar6 = func_0x00173810(*(undefined8 *)(param_1 + 0x60),&uStack_b0);
+  uVar6 = func_0x00173810(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
   if ((uStack_b0 & 1) != 0) {
-    FUN_00166120(uStack_a0);
+    FUN_00166120(pvStack_a0);
   }
   if ((uVar6 & 1) == 0) {
     iVar4 = -1;
   }
   else {
     uStack_a3 = 0;
-    uStack_a0 = 0;
+    pvStack_a0 = (void *)0x0;
     uStack_a7 = 0x79654b;
     uStack_b0 = 0x74614416;
     uStack_ac = 0x73616261;
     bStack_a8 = 0x65;
                     /* try { // try from 0032c474 to 0032c47f has its CatchHandler @ 0032cb00 */
-    func_0x00167060(*(undefined8 *)(param_1 + 0x60),&uStack_b0);
+    func_0x00167060(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
     iVar4 = func_0x00166a80();
     if ((uStack_b0 & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
   }
   if (DAT_0072d690 == (undefined8 *)0x0) goto LAB_0032ca94;
@@ -1292,79 +1307,80 @@ void Walaber::DatabaseManager::_readSQL(long param_1)
   } while (puVar13 != (undefined8 *)0x0);
   if (((undefined8 **)puVar20 == &DAT_0072d690) || (iVar4 < *(int *)(puVar20 + 4)))
   goto LAB_0032ca94;
-  lVar15 = param_1 + 8;
+  lVar15 = (long)p0 + 8;
   auVar21 = func_0x0016b870(&mSqlScriptErrorCallbacks,lVar15);
-  uStack_c0 = 0;
+  pvStack_c0 = (void *)0x0;
   uStack_c8 = 0;
   uStack_d0 = 0;
-  uStack_d8 = 0;
+  pvStack_d8 = (void *)0x0;
   uStack_e0 = 0;
   uStack_e8 = 0;
   iStack_b4 = 0;
                     /* try { // try from 0032c514 to 0032c537 has its CatchHandler @ 0032caf0 */
   func_0x00171ac0(&uStack_e8,lVar15);
-  func_0x00171ac0(&uStack_d0,param_1 + 0x30);
-  uVar6 = *(ulong *)(param_1 + 0x28);
-  uVar17 = *(undefined8 *)(param_1 + 0x20);
+  func_0x00171ac0(&uStack_d0,(long)p0 + 0x30);
+  uVar6 = *(ulong *)((long)p0 + 0x28);
+  uVar16 = *(undefined8 *)((long)p0 + 0x20);
   uStack_100 = 0;
   uStack_f8 = 0;
-  uStack_f0 = 0;
+  pvStack_f0 = (void *)0x0;
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0032cad0 to 0032cad7 has its CatchHandler @ 0032cadc */
     FUN_00164180(&uStack_100);
     return;
   }
   if (uVar6 < 0x17) {
-    uVar19 = (ulong)&uStack_100 | 1;
+    pvVar18 = (void *)((ulong)&uStack_100 | 1);
     uStack_100 = (ulong)(byte)((int)uVar6 << 1);
     if (uVar6 != 0) goto LAB_0032c598;
   }
   else {
-    uVar7 = uVar6 + 0x10 & 0xfffffffffffffff0;
+    uVar19 = uVar6 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 0032c580 to 0032c587 has its CatchHandler @ 0032cadc */
-    uVar19 = FUN_00164060(uVar7);
-    uStack_100 = uVar7 | 1;
+    pvVar18 = (void *)FUN_00164060(uVar19);
+    uStack_100 = uVar19 | 1;
     uStack_f8 = uVar6;
-    uStack_f0 = uVar19;
+    pvStack_f0 = pvVar18;
 LAB_0032c598:
-    FUN_001715e0(uVar19,uVar17,uVar6);
+    FUN_001715e0(pvVar18,uVar16,uVar6);
   }
-  *(undefined1 *)(uVar19 + uVar6) = 0;
+  *(undefined1 *)((long)pvVar18 + uVar6) = 0;
                     /* try { // try from 0032c5ac to 0032c5bb has its CatchHandler @ 0032cae8 */
   func_0x00173780(&lStack_118,&uStack_100,0x3b);
+  uVar6 = extraout_x1;
   if (lStack_110 != lStack_118) {
-    uVar6 = 0;
+    uVar19 = 0;
     do {
       lVar14 = lStack_118;
-      pbVar18 = (byte *)(lStack_118 + uVar6 * 0x18);
-      if ((*pbVar18 & 1) == 0) {
-        pbVar10 = pbVar18 + 1;
+      pbVar17 = (byte *)(lStack_118 + uVar19 * 0x18);
+      if ((*pbVar17 & 1) == 0) {
+        pbVar9 = pbVar17 + 1;
       }
       else {
-        pbVar10 = *(byte **)(lStack_118 + uVar6 * 0x18 + 0x10);
+        pbVar9 = *(byte **)(lStack_118 + uVar19 * 0x18 + 0x10);
       }
                     /* try { // try from 0032c630 to 0032c673 has its CatchHandler @ 0032cb38 */
-      FUN_00166450("Walaber",1,"got query: %s",pbVar10);
-      if ((*pbVar18 & 1) == 0) {
-        uVar19 = (ulong)(*pbVar18 >> 1);
+      FUN_00166450("Walaber",1,"got query: %s",pbVar9);
+      if ((*pbVar17 & 1) == 0) {
+        uVar6 = (ulong)(*pbVar17 >> 1);
       }
       else {
-        uVar19 = *(ulong *)(lVar14 + uVar6 * 0x18 + 8);
+        uVar6 = *(ulong *)(lVar14 + uVar19 * 0x18 + 8);
       }
-      if (5 < uVar19) {
+      if (5 < uVar6) {
         FUN_00166450("Walaber",1,"...executing...");
         uStack_120 = 0;
-        if ((*pbVar18 & 1) == 0) {
-          pbVar10 = pbVar18 + 1;
-          uVar5 = (uint)(*pbVar18 >> 1);
+        if ((*pbVar17 & 1) == 0) {
+          pbVar9 = pbVar17 + 1;
+          uVar5 = (uint)(*pbVar17 >> 1);
         }
         else {
-          lVar14 = lVar14 + uVar6 * 0x18;
+          lVar14 = lVar14 + uVar19 * 0x18;
           uVar5 = (uint)*(undefined8 *)(lVar14 + 8);
-          pbVar10 = *(byte **)(lVar14 + 0x10);
+          pbVar9 = *(byte **)(lVar14 + 0x10);
         }
                     /* try { // try from 0032c6a4 to 0032c6af has its CatchHandler @ 0032cb20 */
-        uVar5 = FUN_00172160(puVar20[5],pbVar10,uVar5 + 1,&uStack_120,0);
+        uVar5 = FUN_00172160(puVar20[5],pbVar9,uVar5 + 1,&uStack_120,0);
         if (uVar5 == 0) {
                     /* try { // try from 0032c6c8 to 0032c6eb has its CatchHandler @ 0032cb74 */
           while (uVar5 = FUN_0016c170(uStack_120), uVar5 == 100) {
@@ -1378,45 +1394,46 @@ LAB_0032c6b8:
           bVar3 = true;
         }
                     /* try { // try from 0032c704 to 0032c74f has its CatchHandler @ 0032cb24 */
-        uVar17 = FUN_0016f660(puVar20[5]);
+        uVar16 = FUN_0016f660(puVar20[5]);
         uStack_138 = 0;
         uStack_130 = 0;
-        uStack_128 = 0;
-        uVar19 = FUN_00173480();
-        if (0xffffffffffffffef < uVar19) {
+        pvStack_128 = (void *)0x0;
+        uVar6 = FUN_00173480();
+        if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0032cac4 to 0032cacb has its CatchHandler @ 0032cad8 */
           FUN_00164180(&uStack_138);
           return;
         }
-        if (uVar19 < 0x17) {
-          uStack_138 = CONCAT71(uStack_138._1_7_,(char)((int)uVar19 << 1));
-          uVar7 = (ulong)&uStack_138 | 1;
-          if (uVar19 != 0) goto LAB_0032c760;
+        if (uVar6 < 0x17) {
+          uStack_138 = CONCAT71(uStack_138._1_7_,(char)((int)uVar6 << 1));
+          pvVar18 = (void *)((ulong)&uStack_138 | 1);
+          if (uVar6 != 0) goto LAB_0032c760;
         }
         else {
-          uVar16 = uVar19 + 0x10 & 0xfffffffffffffff0;
-          uVar7 = FUN_00164060(uVar16);
-          uStack_138 = uVar16 | 1;
-          uStack_130 = uVar19;
-          uStack_128 = uVar7;
+          uVar11 = uVar6 + 0x10 & 0xfffffffffffffff0;
+          pvVar18 = (void *)FUN_00164060(uVar11);
+          uStack_138 = uVar11 | 1;
+          uStack_130 = uVar6;
+          pvStack_128 = pvVar18;
 LAB_0032c760:
-          FUN_001715e0(uVar7,uVar17,uVar19);
+          FUN_001715e0(pvVar18,uVar16,uVar6);
         }
-        *(undefined1 *)(uVar7 + uVar19) = 0;
+        *(undefined1 *)((long)pvVar18 + uVar6) = 0;
                     /* try { // try from 0032c778 to 0032c77b has its CatchHandler @ 0032cb18 */
         FUN_00169f00(uStack_120);
+        uVar6 = extraout_x1_00;
         if (bVar3) {
           bStack_90 = 0;
-          uStack_98 = 0;
+          pvStack_98 = (void *)0x0;
           puStack_80 = (undefined1 *)0x0;
           uStack_88 = 0;
-          uStack_a0 = 0;
+          pvStack_a0 = (void *)0x0;
           uStack_a3 = 0;
           uStack_a7 = 0;
           bStack_a8 = 0;
           uStack_b0 = uVar5;
                     /* try { // try from 0032c7ac to 0032c7eb has its CatchHandler @ 0032cb28 */
-          func_0x00171ac0(&bStack_a8,pbVar18);
+          func_0x00171ac0(&bStack_a8,pbVar17);
           func_0x00171ac0(&bStack_90,&uStack_138);
           uStack_78 = 0;
           puVar1 = auStack_8f;
@@ -1424,31 +1441,33 @@ LAB_0032c760:
             puVar1 = puStack_80;
           }
           FUN_00166450("Walaber",1,"ERROR! [%s]",puVar1);
-          plVar9 = auVar21._0_8_;
-          while (plVar9 != auVar21._8_8_) {
-            plVar8 = (long *)plVar9[7];
-            if (plVar8 != (long *)0x0) {
+          plVar8 = auVar21._0_8_;
+          uVar6 = extraout_x1_01;
+          while (plVar8 != auVar21._8_8_) {
+            plVar7 = (long *)plVar8[7];
+            if (plVar7 != (long *)0x0) {
                     /* try { // try from 0032c808 to 0032c80f has its CatchHandler @ 0032cb3c */
-              (**(code **)(*plVar8 + 0x10))(plVar8,&uStack_b0);
+              (**(code **)(*plVar7 + 0x10))(plVar7,&uStack_b0);
+              uVar6 = extraout_x1_02;
             }
-            plVar8 = (long *)plVar9[1];
-            if ((long *)plVar9[1] == (long *)0x0) {
-              plVar8 = plVar9 + 2;
-              bVar3 = *(long **)*plVar8 != plVar9;
-              plVar9 = (long *)*plVar8;
+            plVar7 = (long *)plVar8[1];
+            if ((long *)plVar8[1] == (long *)0x0) {
+              plVar7 = plVar8 + 2;
+              bVar3 = *(long **)*plVar7 != plVar8;
+              plVar8 = (long *)*plVar7;
               if (bVar3) {
                 do {
-                  lVar14 = *plVar8;
-                  plVar8 = (long *)(lVar14 + 0x10);
-                  plVar9 = (long *)*plVar8;
-                } while (*plVar9 != lVar14);
+                  lVar14 = *plVar7;
+                  plVar7 = (long *)(lVar14 + 0x10);
+                  plVar8 = (long *)*plVar7;
+                } while (*plVar8 != lVar14);
               }
             }
             else {
               do {
-                plVar9 = plVar8;
-                plVar8 = (long *)*plVar9;
-              } while ((long *)*plVar9 != (long *)0x0);
+                plVar8 = plVar7;
+                plVar7 = (long *)*plVar8;
+              } while ((long *)*plVar8 != (long *)0x0);
             }
           }
           uStack_78._1_1_ = (char)((ushort)uStack_78 >> 8);
@@ -1457,16 +1476,20 @@ LAB_0032c760:
                     /* try { // try from 0032c86c to 0032c8af has its CatchHandler @ 0032cb28 */
             FUN_00166450("Walaber",1,"\n ignoring error\n");
             iStack_b4 = iStack_b4 + 1;
+            uVar6 = extraout_x1_03;
           }
           bVar3 = (char)uStack_78 == '\0';
           if (bVar3) {
             FUN_00166450("Walaber",1,"\n not continuing after error, aborting!\n");
+            uVar6 = extraout_x1_04;
           }
           if ((bStack_90 & 1) != 0) {
             FUN_00166120(puStack_80);
+            uVar6 = extraout_x1_05;
           }
           if ((bStack_a8 & 1) != 0) {
-            FUN_00166120(uStack_98);
+            FUN_00166120(pvStack_98);
+            uVar6 = extraout_x1_06;
           }
           if (!bVar3) goto LAB_0032c8d8;
         }
@@ -1475,87 +1498,89 @@ LAB_0032c8d8:
           bVar3 = false;
         }
         if ((uStack_138 & 1) != 0) {
-          FUN_00166120(uStack_128);
+          FUN_00166120(pvStack_128);
+          uVar6 = extraout_x1_07;
         }
         if (bVar3) break;
       }
                     /* try { // try from 0032c8f8 to 0032c907 has its CatchHandler @ 0032cb38 */
       FUN_00166450("Walaber",1,&DAT_0061b9ce);
-      uVar6 = (ulong)((int)uVar6 + 1);
-      uVar19 = (lStack_110 - lStack_118 >> 3) * -0x5555555555555555;
-    } while (uVar6 <= uVar19 && uVar19 - uVar6 != 0);
+      uVar19 = (ulong)((int)uVar19 + 1);
+      uVar11 = (lStack_110 - lStack_118 >> 3) * -0x5555555555555555;
+      uVar6 = extraout_x1_08;
+    } while (uVar19 <= uVar11 && uVar11 - uVar19 != 0);
   }
-  if (*(long *)(param_1 + 0x20) != 0) {
-    FUN_001639e0();
+  if (*(void **)((long)p0 + 0x20) != (void *)0x0) {
+    FUN_001639e0(*(void **)((long)p0 + 0x20),uVar6);
   }
                     /* try { // try from 0032c93c to 0032c94f has its CatchHandler @ 0032cae4 */
   auVar22 = func_0x0016b870(&mSqlScriptCallbacks,lVar15);
-  plVar9 = auVar22._0_8_;
-  while (plVar8 = plVar9, plVar9 = auVar21._0_8_, plVar8 != auVar22._8_8_) {
-    plVar9 = (long *)plVar8[7];
-    if (plVar9 != (long *)0x0) {
+  plVar8 = auVar22._0_8_;
+  while (plVar7 = plVar8, plVar8 = auVar21._0_8_, plVar7 != auVar22._8_8_) {
+    plVar8 = (long *)plVar7[7];
+    if (plVar8 != (long *)0x0) {
                     /* try { // try from 0032c974 to 0032c97b has its CatchHandler @ 0032cb2c */
-      (**(code **)(*plVar9 + 0x10))(plVar9,&uStack_e8);
+      (**(code **)(*plVar8 + 0x10))(plVar8,&uStack_e8);
     }
-    plVar12 = (long *)plVar8[1];
-    if ((long *)plVar8[1] == (long *)0x0) {
-      plVar12 = plVar8 + 2;
-      plVar9 = (long *)*plVar12;
-      if ((long *)*plVar9 != plVar8) {
+    plVar12 = (long *)plVar7[1];
+    if ((long *)plVar7[1] == (long *)0x0) {
+      plVar12 = plVar7 + 2;
+      plVar8 = (long *)*plVar12;
+      if ((long *)*plVar8 != plVar7) {
         do {
           lVar15 = *plVar12;
           plVar12 = (long *)(lVar15 + 0x10);
-          plVar9 = (long *)*plVar12;
-        } while (*plVar9 != lVar15);
+          plVar8 = (long *)*plVar12;
+        } while (*plVar8 != lVar15);
       }
     }
     else {
       do {
-        plVar9 = plVar12;
-        plVar12 = (long *)*plVar9;
-      } while ((long *)*plVar9 != (long *)0x0);
+        plVar8 = plVar12;
+        plVar12 = (long *)*plVar8;
+      } while ((long *)*plVar8 != (long *)0x0);
     }
-    if (plVar8 != (long *)&DAT_0072d6a8) {
+    if (plVar7 != (long *)&DAT_0072d6a8) {
                     /* try { // try from 0032c9c8 to 0032c9d3 has its CatchHandler @ 0032cb34 */
-      func_0x0016ef60(&mSqlScriptCallbacks,plVar8);
+      func_0x0016ef60(&mSqlScriptCallbacks,plVar7);
     }
   }
-  while (plVar8 = plVar9, plVar8 != auVar21._8_8_) {
-    plVar12 = (long *)plVar8[1];
-    if ((long *)plVar8[1] == (long *)0x0) {
-      plVar12 = plVar8 + 2;
-      plVar9 = (long *)*plVar12;
-      if ((long *)*plVar9 != plVar8) {
+  while (plVar7 = plVar8, plVar7 != auVar21._8_8_) {
+    plVar12 = (long *)plVar7[1];
+    if ((long *)plVar7[1] == (long *)0x0) {
+      plVar12 = plVar7 + 2;
+      plVar8 = (long *)*plVar12;
+      if ((long *)*plVar8 != plVar7) {
         do {
           lVar15 = *plVar12;
           plVar12 = (long *)(lVar15 + 0x10);
-          plVar9 = (long *)*plVar12;
-        } while (*plVar9 != lVar15);
+          plVar8 = (long *)*plVar12;
+        } while (*plVar8 != lVar15);
       }
     }
     else {
       do {
-        plVar9 = plVar12;
-        plVar12 = (long *)*plVar9;
-      } while ((long *)*plVar9 != (long *)0x0);
+        plVar8 = plVar12;
+        plVar12 = (long *)*plVar8;
+      } while ((long *)*plVar8 != (long *)0x0);
     }
-    if (plVar8 != (long *)&DAT_0072d6a8) {
+    if (plVar7 != (long *)&DAT_0072d6a8) {
                     /* try { // try from 0032ca40 to 0032ca4b has its CatchHandler @ 0032cb30 */
-      func_0x0016ef60(&mSqlScriptErrorCallbacks,plVar8);
+      func_0x0016ef60(&mSqlScriptErrorCallbacks,plVar7);
     }
   }
   func_0x00167a70(&lStack_118);
   if ((uStack_100 & 1) != 0) {
-    FUN_00166120(uStack_f0);
+    FUN_00166120(pvStack_f0);
   }
   if ((uStack_d0 & 1) != 0) {
-    FUN_00166120(uStack_c0);
+    FUN_00166120(pvStack_c0);
   }
   if ((uStack_e8 & 1) != 0) {
-    FUN_00166120(uStack_d8);
+    FUN_00166120(pvStack_d8);
   }
 LAB_0032ca94:
-  if (*(long *)(lVar2 + 0x28) == lVar11) {
+  if (*(long *)(lVar2 + 0x28) == lVar10) {
     return;
   }
   FUN_00164ff0();
@@ -1603,7 +1628,7 @@ ulong Walaber::DatabaseManager::deleteEntry
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -1612,7 +1637,7 @@ ulong Walaber::DatabaseManager::deleteEntry
                     /* try { // try from 0032cc18 to 0032cc23 has its CatchHandler @ 0032cc60 */
   uVar2 = func_0x0016e550(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -1656,25 +1681,26 @@ ulong Walaber::DatabaseManager::clearTable(undefined4 param_1,undefined8 param_2
   long lVar1;
   uint uVar2;
   ulong uVar3;
-  ulong auStack_58 [3];
+  ulong auStack_58 [2];
+  void *pvStack_48;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_58[0] = 0;
   auStack_58[1] = 0;
-  auStack_58[2] = 0;
+  pvStack_48 = (void *)0x0;
                     /* try { // try from 0032ccd0 to 0032ccdf has its CatchHandler @ 0032cd50 */
   func_0x0016b240(abStack_40,param_2,auStack_58);
                     /* try { // try from 0032cce0 to 0032cceb has its CatchHandler @ 0032cd38 */
   uVar2 = func_0x0016e550(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if ((auStack_58[0] & 1) != 0) {
-    FUN_00166120(auStack_58[2]);
+    FUN_00166120(pvStack_48);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -1700,68 +1726,68 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
   ulong uVar1;
   byte bVar2;
   long lVar3;
-  int iVar4;
-  undefined8 *puVar5;
-  ulong *puVar6;
-  ulong uVar7;
+  void *pvVar4;
+  int iVar5;
+  undefined8 *puVar6;
+  ulong *puVar7;
   ulong uVar8;
-  byte *pbVar9;
-  undefined8 uVar10;
+  ulong uVar9;
+  byte *pbVar10;
   undefined8 uVar11;
-  ulong uVar12;
+  undefined8 uVar12;
   byte abStack_68 [16];
-  undefined8 uStack_58;
+  void *pvStack_58;
   byte bStack_50;
   undefined7 uStack_4f;
   undefined1 uStack_48;
   undefined4 uStack_47;
   undefined1 uStack_43;
   undefined2 uStack_42;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_42 = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   bStack_50 = 0x18;
   uStack_47 = 0x204d4f52;
   uStack_4f = 0x204554454c4544;
   uStack_48 = 0x46;
   uStack_43 = 0;
   uVar1 = *(ulong *)(param_2 + 8);
-  pbVar9 = *(byte **)(param_2 + 0x10);
+  pbVar10 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
-    pbVar9 = param_2 + 1;
+    pbVar10 = param_2 + 1;
     uVar1 = (ulong)(*param_2 >> 1);
   }
                     /* try { // try from 0032cddc to 0032cde3 has its CatchHandler @ 0032cf60 */
-  puVar5 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar9,uVar1);
-  uVar11 = puVar5[1];
-  uVar10 = *puVar5;
-  param_1[2] = puVar5[2];
-  param_1[1] = uVar11;
-  *param_1 = uVar10;
-  puVar5[1] = 0;
-  puVar5[2] = 0;
-  *puVar5 = 0;
+  puVar6 = (undefined8 *)FUN_00167eb0(&bStack_50,pbVar10,uVar1);
+  uVar12 = puVar6[1];
+  uVar11 = *puVar6;
+  param_1[2] = puVar6[2];
+  param_1[1] = uVar12;
+  *param_1 = uVar11;
+  puVar6[1] = 0;
+  puVar6[2] = 0;
+  *puVar6 = 0;
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   bVar2 = *param_3;
-  uVar7 = *(ulong *)(param_3 + 8);
-  uVar8 = (ulong)(bVar2 >> 1);
-  uVar1 = uVar8;
+  uVar8 = *(ulong *)(param_3 + 8);
+  uVar9 = (ulong)(bVar2 >> 1);
+  uVar1 = uVar9;
   if ((bVar2 & 1) != 0) {
-    uVar1 = uVar7;
+    uVar1 = uVar8;
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032ce2c to 0032ce47 has its CatchHandler @ 0032cf20 */
-    iVar4 = func_0x001656c0(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
-    if (iVar4 == 0) goto LAB_0032cef8;
+    iVar5 = func_0x001656c0(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
+    if (iVar5 == 0) goto LAB_0032cef8;
     bVar2 = *param_3;
-    uVar7 = *(ulong *)(param_3 + 8);
-    uVar8 = (ulong)(bVar2 >> 1);
+    uVar8 = *(ulong *)(param_3 + 8);
+    uVar9 = (ulong)(bVar2 >> 1);
   }
   abStack_68[9] = 0;
   abStack_68[10] = 0;
@@ -1770,7 +1796,7 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
   abStack_68[0xd] = 0;
   abStack_68[0xe] = 0;
   abStack_68[0xf] = 0;
-  uStack_58 = 0;
+  pvStack_58 = (void *)0x0;
   abStack_68[0] = 0xe;
   abStack_68[1] = 0x20;
   abStack_68[2] = 0x57;
@@ -1780,38 +1806,38 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
   abStack_68[6] = 0x45;
   abStack_68[7] = 0x20;
   abStack_68[8] = 0;
-  pbVar9 = *(byte **)(param_3 + 0x10);
+  pbVar10 = *(byte **)(param_3 + 0x10);
   if ((bVar2 & 1) == 0) {
-    pbVar9 = param_3 + 1;
-    uVar7 = uVar8;
+    pbVar10 = param_3 + 1;
+    uVar8 = uVar9;
   }
                     /* try { // try from 0032ce90 to 0032ce97 has its CatchHandler @ 0032cf3c */
-  puVar6 = (ulong *)FUN_00167eb0(abStack_68,pbVar9,uVar7);
-  uStack_40 = puVar6[2];
-  uVar12 = puVar6[1];
-  uVar8 = *puVar6;
-  uStack_48 = (undefined1)uVar12;
-  uStack_47 = (undefined4)(uVar12 >> 8);
-  uStack_43 = (undefined1)(uVar12 >> 0x28);
-  uStack_42 = (undefined2)(uVar12 >> 0x30);
+  puVar7 = (ulong *)FUN_00167eb0(abStack_68,pbVar10,uVar8);
+  pvStack_40 = (void *)puVar7[2];
+  uVar9 = puVar7[1];
+  uVar8 = *puVar7;
+  uStack_48 = (undefined1)uVar9;
+  uStack_47 = (undefined4)(uVar9 >> 8);
+  uStack_43 = (undefined1)(uVar9 >> 0x28);
+  uStack_42 = (undefined2)(uVar9 >> 0x30);
   bStack_50 = (byte)uVar8;
   uStack_4f = (undefined7)(uVar8 >> 8);
-  puVar6[1] = 0;
-  puVar6[2] = 0;
-  *puVar6 = 0;
+  puVar7[1] = 0;
+  puVar7[2] = 0;
+  *puVar7 = 0;
   uVar1 = (ulong)(bStack_50 >> 1);
-  uVar7 = (ulong)&bStack_50 | 1;
+  pvVar4 = (void *)((ulong)&bStack_50 | 1);
   if ((uVar8 & 1) != 0) {
-    uVar1 = uVar12;
-    uVar7 = uStack_40;
+    uVar1 = uVar9;
+    pvVar4 = pvStack_40;
   }
                     /* try { // try from 0032ced0 to 0032ced7 has its CatchHandler @ 0032cf24 */
-  FUN_00167eb0(param_1,uVar7,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if ((abStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
 LAB_0032cef8:
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
@@ -1841,7 +1867,7 @@ void Walaber::DatabaseManager::constructQuery
   ulong uVar1;
   byte bVar2;
   long lVar3;
-  ulong uVar4;
+  void *pvVar4;
   undefined8 *puVar5;
   ulong *puVar6;
   byte *pbVar7;
@@ -1850,18 +1876,18 @@ void Walaber::DatabaseManager::constructQuery
   undefined8 uVar10;
   ulong uVar11;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   byte bStack_60;
   undefined7 uStack_5f;
   undefined1 uStack_58;
   undefined7 uStack_57;
-  ulong uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   uStack_57 = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   bStack_60 = 0xe;
   uStack_5f = 0x205443454c4553;
   uStack_58 = 0;
@@ -1882,7 +1908,7 @@ void Walaber::DatabaseManager::constructQuery
   puVar5[2] = 0;
   *puVar5 = 0;
   if ((bStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   abStack_78[8] = 0;
   abStack_78[9] = 0;
@@ -1892,7 +1918,7 @@ void Walaber::DatabaseManager::constructQuery
   abStack_78[0xd] = 0;
   abStack_78[0xe] = 0;
   abStack_78[0xf] = 0;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   abStack_78[0] = 0xc;
   abStack_78[5] = 0x4d;
   abStack_78[6] = 0x20;
@@ -1909,7 +1935,7 @@ void Walaber::DatabaseManager::constructQuery
   }
                     /* try { // try from 0032d058 to 0032d05f has its CatchHandler @ 0032d27c */
   puVar6 = (ulong *)FUN_00167eb0(abStack_78,pbVar7,uVar1);
-  uStack_50 = puVar6[2];
+  pvStack_50 = (void *)puVar6[2];
   uVar11 = puVar6[1];
   uVar9 = *puVar6;
   uStack_58 = (undefined1)uVar11;
@@ -1920,18 +1946,18 @@ void Walaber::DatabaseManager::constructQuery
   puVar6[2] = 0;
   *puVar6 = 0;
   uVar1 = (ulong)(bStack_60 >> 1);
-  uVar4 = (ulong)&bStack_60 | 1;
+  pvVar4 = (void *)((ulong)&bStack_60 | 1);
   if ((uVar9 & 1) != 0) {
     uVar1 = uVar11;
-    uVar4 = uStack_50;
+    pvVar4 = pvStack_50;
   }
                     /* try { // try from 0032d098 to 0032d09f has its CatchHandler @ 0032d264 */
-  FUN_00167eb0(param_1,uVar4,uVar1);
+  FUN_00167eb0(param_1,pvVar4,uVar1);
   if ((bStack_60 & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   bVar2 = *param_4;
   uVar1 = (ulong)(bVar2 >> 1);
@@ -1946,7 +1972,7 @@ void Walaber::DatabaseManager::constructQuery
     abStack_78[0xd] = 0;
     abStack_78[0xe] = 0;
     abStack_78[0xf] = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     abStack_78[0] = 0xe;
     abStack_78[1] = 0x20;
     abStack_78[2] = 0x57;
@@ -1962,7 +1988,7 @@ void Walaber::DatabaseManager::constructQuery
     }
                     /* try { // try from 0032d108 to 0032d10f has its CatchHandler @ 0032d260 */
     puVar6 = (ulong *)FUN_00167eb0(abStack_78,pbVar7);
-    uStack_50 = puVar6[2];
+    pvStack_50 = (void *)puVar6[2];
     uVar11 = puVar6[1];
     uVar9 = *puVar6;
     uStack_58 = (undefined1)uVar11;
@@ -1973,18 +1999,18 @@ void Walaber::DatabaseManager::constructQuery
     puVar6[2] = 0;
     *puVar6 = 0;
     uVar1 = (ulong)(bStack_60 >> 1);
-    uVar4 = (ulong)&bStack_60 | 1;
+    pvVar4 = (void *)((ulong)&bStack_60 | 1);
     if ((uVar9 & 1) != 0) {
       uVar1 = uVar11;
-      uVar4 = uStack_50;
+      pvVar4 = pvStack_50;
     }
                     /* try { // try from 0032d148 to 0032d14f has its CatchHandler @ 0032d25c */
-    FUN_00167eb0(param_1,uVar4,uVar1);
+    FUN_00167eb0(param_1,pvVar4,uVar1);
     if ((bStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
   }
   bVar2 = *param_5;
@@ -1997,7 +2023,7 @@ void Walaber::DatabaseManager::constructQuery
     abStack_78[0xd] = 0;
     abStack_78[0xe] = 0;
     abStack_78[0xf] = 0;
-    uStack_68 = 0;
+    pvStack_68 = (void *)0x0;
     abStack_78[0] = 0x14;
     abStack_78[9] = 0x59;
     abStack_78[10] = 0x20;
@@ -2016,7 +2042,7 @@ void Walaber::DatabaseManager::constructQuery
     }
                     /* try { // try from 0032d1c0 to 0032d1c7 has its CatchHandler @ 0032d258 */
     puVar6 = (ulong *)FUN_00167eb0(abStack_78,pbVar7);
-    uStack_50 = puVar6[2];
+    pvStack_50 = (void *)puVar6[2];
     uVar11 = puVar6[1];
     uVar9 = *puVar6;
     uStack_58 = (undefined1)uVar11;
@@ -2027,18 +2053,18 @@ void Walaber::DatabaseManager::constructQuery
     puVar6[2] = 0;
     *puVar6 = 0;
     uVar1 = (ulong)(bStack_60 >> 1);
-    uVar4 = (ulong)&bStack_60 | 1;
+    pvVar4 = (void *)((ulong)&bStack_60 | 1);
     if ((uVar9 & 1) != 0) {
       uVar1 = uVar11;
-      uVar4 = uStack_50;
+      pvVar4 = pvStack_50;
     }
                     /* try { // try from 0032d200 to 0032d207 has its CatchHandler @ 0032d254 */
-    FUN_00167eb0(param_1,uVar4,uVar1);
+    FUN_00167eb0(param_1,pvVar4,uVar1);
     if ((bStack_60 & 1) != 0) {
-      FUN_00166120(uStack_50);
+      FUN_00166120(pvStack_50);
     }
     if ((abStack_78[0] & 1) != 0) {
-      FUN_00166120(uStack_68);
+      FUN_00166120(pvStack_68);
     }
   }
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
@@ -2089,25 +2115,26 @@ ulong Walaber::DatabaseManager::sumColAsInt
 {
   long lVar1;
   ulong uVar2;
-  ulong auStack_58 [3];
+  ulong auStack_58 [2];
+  void *pvStack_48;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_58[0] = 0;
   auStack_58[1] = 0;
-  auStack_58[2] = 0;
+  pvStack_48 = (void *)0x0;
                     /* try { // try from 0032d318 to 0032d32f has its CatchHandler @ 0032d3a0 */
   func_0x001675e0(abStack_40,param_2,param_3,param_4,auStack_58);
                     /* try { // try from 0032d330 to 0032d33b has its CatchHandler @ 0032d388 */
   uVar2 = func_0x00168830(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if ((auStack_58[0] & 1) != 0) {
-    FUN_00166120(auStack_58[2]);
+    FUN_00166120(pvStack_48);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return uVar2 & 0xffffffff;
@@ -2297,9 +2324,10 @@ ulong Walaber::DatabaseManager::numResults
   undefined8 uVar3;
   ulong uVar4;
   uint uVar5;
-  ulong auStack_70 [3];
+  ulong auStack_70 [2];
+  void *pvStack_60;
   byte abStack_58 [16];
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined8 uStack_40;
   long lStack_38;
   
@@ -2307,7 +2335,7 @@ ulong Walaber::DatabaseManager::numResults
   lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   auStack_70[1] = 0;
-  auStack_70[2] = 0;
+  pvStack_60 = (void *)0x0;
                     /* try { // try from 0032d600 to 0032d617 has its CatchHandler @ 0032d6b8 */
   uVar3 = func_0x001675e0(abStack_58,param_2,param_3,param_4,auStack_70);
   uStack_40 = 0;
@@ -2315,10 +2343,10 @@ ulong Walaber::DatabaseManager::numResults
   uVar3 = func_0x00166930(uVar3,param_1,abStack_58);
   uStack_40 = uVar3;
   if ((abStack_58[0] & 1) != 0) {
-    FUN_00166120(uStack_48);
+    FUN_00166120(pvStack_48);
   }
   if ((auStack_70[0] & 1) != 0) {
-    FUN_00166120(auStack_70[2]);
+    FUN_00166120(pvStack_60);
   }
   uVar5 = 0;
                     /* try { // try from 0032d65c to 0032d663 has its CatchHandler @ 0032d6d0 */
@@ -2375,7 +2403,7 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
 
 {
   long lVar1;
-  ulong uVar2;
+  void *pvVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
@@ -2384,10 +2412,12 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
   uint uVar8;
   byte abStack_b0 [8];
   ulong uStack_a8;
-  ulong uStack_a0;
-  ulong auStack_98 [4];
+  void *pvStack_a0;
+  ulong auStack_98 [2];
+  void *pvStack_88;
+  ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_60;
   long lStack_58;
   
@@ -2395,18 +2425,18 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
   lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_98[0] = 0;
   auStack_98[1] = 0;
-  auStack_98[2] = 0;
+  pvStack_88 = (void *)0x0;
                     /* try { // try from 0032d75c to 0032d76f has its CatchHandler @ 0032d938 */
-  uVar4 = func_0x001675e0(auStack_98 + 3,param_3,param_2,param_5,auStack_98);
+  uVar4 = func_0x001675e0(&uStack_80,param_3,param_2,param_5,auStack_98);
   lStack_60 = 0;
                     /* try { // try from 0032d774 to 0032d77f has its CatchHandler @ 0032d920 */
-  lVar5 = func_0x00166930(uVar4,param_1,auStack_98 + 3);
+  lVar5 = func_0x00166930(uVar4,param_1,&uStack_80);
   lStack_60 = lVar5;
-  if ((auStack_98[3] & 1) != 0) {
-    FUN_00166120(uStack_70);
+  if ((uStack_80 & 1) != 0) {
+    FUN_00166120(pvStack_70);
   }
   if ((auStack_98[0] & 1) != 0) {
-    FUN_00166120(auStack_98[2]);
+    FUN_00166120(pvStack_88);
   }
                     /* try { // try from 0032d7a8 to 0032d7af has its CatchHandler @ 0032d910 */
   iVar3 = FUN_0016c170(lVar5);
@@ -2423,29 +2453,29 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
                     /* try { // try from 0032d7f8 to 0032d803 has its CatchHandler @ 0032d8f4 */
     func_0x001636d0(abStack_b0,*param_4 + iVar3);
     uVar7 = (ulong)(abStack_b0[0] >> 1);
-    uVar2 = (ulong)abStack_b0 | 1;
+    pvVar2 = (void *)((ulong)abStack_b0 | 1);
     if ((abStack_b0[0] & 1) != 0) {
       uVar7 = uStack_a8;
-      uVar2 = uStack_a0;
+      pvVar2 = pvStack_a0;
     }
                     /* try { // try from 0032d820 to 0032d827 has its CatchHandler @ 0032d8dc */
-    puVar6 = (ulong *)FUN_00167eb0(auStack_98,uVar2,uVar7);
-    uStack_70 = puVar6[2];
+    puVar6 = (ulong *)FUN_00167eb0(auStack_98,pvVar2,uVar7);
+    pvStack_70 = (void *)puVar6[2];
     uStack_78 = puVar6[1];
-    auStack_98[3] = *puVar6;
+    uStack_80 = *puVar6;
     puVar6[1] = 0;
     puVar6[2] = 0;
     *puVar6 = 0;
     if ((abStack_b0[0] & 1) != 0) {
-      FUN_00166120(uStack_a0);
+      FUN_00166120(pvStack_a0);
     }
     if ((auStack_98[0] & 1) != 0) {
-      FUN_00166120(auStack_98[2]);
+      FUN_00166120(pvStack_88);
     }
                     /* try { // try from 0032d860 to 0032d873 has its CatchHandler @ 0032d8c8 */
-    func_0x00170b80(param_1,param_2,auStack_98 + 3,param_5);
-    if ((auStack_98[3] & 1) != 0) {
-      FUN_00166120(uStack_70);
+    func_0x00170b80(param_1,param_2,&uStack_80,param_5);
+    if ((uStack_80 & 1) != 0) {
+      FUN_00166120(pvStack_70);
     }
     uVar8 = 1;
   }
@@ -2502,7 +2532,7 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
 
 {
   long lVar1;
-  ulong uVar2;
+  void *pvVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
@@ -2511,10 +2541,12 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
   uint uVar8;
   byte abStack_b0 [8];
   ulong uStack_a8;
-  ulong uStack_a0;
-  ulong auStack_98 [4];
+  void *pvStack_a0;
+  ulong auStack_98 [2];
+  void *pvStack_88;
+  ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_60;
   long lStack_58;
   
@@ -2522,18 +2554,18 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
   lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_98[0] = 0;
   auStack_98[1] = 0;
-  auStack_98[2] = 0;
+  pvStack_88 = (void *)0x0;
                     /* try { // try from 0032d9cc to 0032d9df has its CatchHandler @ 0032dbac */
-  uVar4 = func_0x001675e0(auStack_98 + 3,param_3,param_2,param_5,auStack_98);
+  uVar4 = func_0x001675e0(&uStack_80,param_3,param_2,param_5,auStack_98);
   lStack_60 = 0;
                     /* try { // try from 0032d9e4 to 0032d9ef has its CatchHandler @ 0032db94 */
-  lVar5 = func_0x00166930(uVar4,param_1,auStack_98 + 3);
+  lVar5 = func_0x00166930(uVar4,param_1,&uStack_80);
   lStack_60 = lVar5;
-  if ((auStack_98[3] & 1) != 0) {
-    FUN_00166120(uStack_70);
+  if ((uStack_80 & 1) != 0) {
+    FUN_00166120(pvStack_70);
   }
   if ((auStack_98[0] & 1) != 0) {
-    FUN_00166120(auStack_98[2]);
+    FUN_00166120(pvStack_88);
   }
                     /* try { // try from 0032da18 to 0032da1f has its CatchHandler @ 0032db84 */
   iVar3 = FUN_0016c170(lVar5);
@@ -2551,29 +2583,29 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
                     /* try { // try from 0032da64 to 0032da6f has its CatchHandler @ 0032db64 */
       func_0x001636d0(abStack_b0,*param_4);
       uVar7 = (ulong)(abStack_b0[0] >> 1);
-      uVar2 = (ulong)abStack_b0 | 1;
+      pvVar2 = (void *)((ulong)abStack_b0 | 1);
       if ((abStack_b0[0] & 1) != 0) {
         uVar7 = uStack_a8;
-        uVar2 = uStack_a0;
+        pvVar2 = pvStack_a0;
       }
                     /* try { // try from 0032da8c to 0032da93 has its CatchHandler @ 0032db4c */
-      puVar6 = (ulong *)FUN_00167eb0(auStack_98,uVar2,uVar7);
-      uStack_70 = puVar6[2];
+      puVar6 = (ulong *)FUN_00167eb0(auStack_98,pvVar2,uVar7);
+      pvStack_70 = (void *)puVar6[2];
       uStack_78 = puVar6[1];
-      auStack_98[3] = *puVar6;
+      uStack_80 = *puVar6;
       puVar6[1] = 0;
       puVar6[2] = 0;
       *puVar6 = 0;
       if ((abStack_b0[0] & 1) != 0) {
-        FUN_00166120(uStack_a0);
+        FUN_00166120(pvStack_a0);
       }
       if ((auStack_98[0] & 1) != 0) {
-        FUN_00166120(auStack_98[2]);
+        FUN_00166120(pvStack_88);
       }
                     /* try { // try from 0032dacc to 0032dadf has its CatchHandler @ 0032db38 */
-      func_0x00170b80(param_1,param_2,auStack_98 + 3,param_5);
-      if ((auStack_98[3] & 1) != 0) {
-        FUN_00166120(uStack_70);
+      func_0x00170b80(param_1,param_2,&uStack_80,param_5);
+      if ((uStack_80 & 1) != 0) {
+        FUN_00166120(pvStack_70);
       }
       uVar8 = 1;
       goto LAB_0032dafc;

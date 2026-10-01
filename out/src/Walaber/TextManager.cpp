@@ -108,7 +108,7 @@ LAB_003f9c6c:
     param_1[0xe] = 0;
     param_1[0xf] = 0;
     if ((*param_1 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+      FUN_00166120(*(void **)(param_1 + 0x10));
       param_1[0] = 0;
       param_1[1] = 0;
       param_1[2] = 0;
@@ -144,7 +144,7 @@ void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
 {
   long lVar1;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -153,7 +153,7 @@ void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
                     /* try { // try from 003f9d84 to 003f9d8f has its CatchHandler @ 003f9dc4 */
   func_0x001639a0(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -217,7 +217,7 @@ ulong Walaber::TextManager::stringExists(undefined8 param_1)
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -226,7 +226,7 @@ ulong Walaber::TextManager::stringExists(undefined8 param_1)
                     /* try { // try from 003f9eb0 to 003f9eb7 has its CatchHandler @ 003f9ef4 */
   uVar2 = func_0x0016ab50(abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -339,7 +339,7 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
           param_1[0xe] = 0;
           param_1[0xf] = 0;
           if ((*param_1 & 1) != 0) {
-            FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+            FUN_00166120(*(void **)(param_1 + 0x10));
             param_1[0] = 0;
             param_1[1] = 0;
             param_1[2] = 0;
@@ -380,7 +380,7 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
     param_1[0xe] = 0;
     param_1[0xf] = 0;
     if ((*param_1 & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+      FUN_00166120(*(void **)(param_1 + 0x10));
       param_1[0] = 0;
       param_1[1] = 0;
       param_1[2] = 0;
@@ -418,7 +418,7 @@ void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
 {
   long lVar1;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -427,7 +427,7 @@ void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
                     /* try { // try from 003fa150 to 003fa15b has its CatchHandler @ 003fa190 */
   func_0x0016e7f0(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -491,7 +491,7 @@ ulong Walaber::TextManager::subtitleExists(undefined8 param_1)
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -500,7 +500,7 @@ ulong Walaber::TextManager::subtitleExists(undefined8 param_1)
                     /* try { // try from 003fa27c to 003fa283 has its CatchHandler @ 003fa2c0 */
   uVar2 = func_0x00169910(abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return (ulong)(uVar2 & 1);
@@ -569,7 +569,7 @@ void Walaber::TextManager::loadScriptFromTSV(undefined8 param_1,undefined8 *para
 
 /* Walaber::TextManager::loadedScriptFile(void*) */
 
-void Walaber::TextManager::loadedScriptFile(long param_1)
+void Walaber::TextManager::loadedScriptFile(void *p0)
 
 {
   undefined1 *puVar1;
@@ -579,14 +579,25 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
   int iVar5;
   long lVar6;
   ulong uVar7;
-  int iVar8;
-  long lVar9;
+  long lVar8;
+  void *p0_00;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong extraout_x1_01;
+  ulong extraout_x1_02;
+  ulong extraout_x1_03;
+  ulong extraout_x1_04;
+  ulong extraout_x1_05;
+  ulong extraout_x1_06;
+  ulong extraout_x1_07;
+  int iVar9;
   long lVar10;
-  long *plVar11;
+  long lVar11;
   long *plVar12;
-  long lVar13;
+  long *plVar13;
   uint uVar14;
   long *plVar15;
+  undefined1 auVar16 [16];
   undefined8 ****ppppuStack_168;
   undefined8 uStack_160;
   char *pcStack_158;
@@ -601,7 +612,7 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
   undefined8 uStack_108;
   undefined1 *puStack_100;
   byte abStack_f8 [16];
-  undefined8 uStack_e8;
+  void *pvStack_e8;
   byte *pbStack_e0;
   long lStack_d8;
   undefined1 *puStack_d0;
@@ -616,9 +627,9 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
   undefined8 ****appppuStack_80 [4];
   
   lVar6 = tpidr_el0;
-  lVar9 = *(long *)(lVar6 + 0x28);
-  lVar10 = *(long *)(param_1 + 0x20);
-  if (lVar10 != 0) {
+  lVar10 = *(long *)(lVar6 + 0x28);
+  lVar11 = *(long *)((long)p0 + 0x20);
+  if (lVar11 != 0) {
     lStack_98 = 0;
     uStack_90 = 0;
     pbStack_c0 = (byte *)0x0;
@@ -627,13 +638,13 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
     uVar14 = 0;
     plStack_a0 = &lStack_98;
     while( true ) {
-      acStack_c4[0] = *(char *)(lVar10 + (ulong)uVar14);
+      acStack_c4[0] = *(char *)(lVar11 + (ulong)uVar14);
       uVar14 = uVar14 + 1;
       if ((acStack_c4[0] == '\n') || (acStack_c4[0] == '\r')) break;
                     /* try { // try from 003fa468 to 003fa477 has its CatchHandler @ 003fac60 */
       FUN_00167eb0(&pbStack_c0,acStack_c4,1);
       if ((acStack_c4[0] == '\n') || (acStack_c4[0] == '\r')) break;
-      lVar10 = *(long *)(param_1 + 0x20);
+      lVar11 = *(long *)((long)p0 + 0x20);
     }
     lStack_d8 = 0;
     puStack_d0 = (undefined1 *)0x0;
@@ -682,35 +693,36 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
     iVar5 = (int)((ulong)(lStack_d8 - (long)pbStack_e0) >> 3) * -0x55555555;
     ppppuStack_130 = (undefined8 ****)CONCAT44(ppppuStack_130._4_4_,1);
     if (1 < iVar5) {
-      iVar8 = 1;
+      iVar9 = 1;
       do {
                     /* try { // try from 003fa624 to 003fa62b has its CatchHandler @ 003fac94 */
-        func_0x0016f720(abStack_f8,pbStack_e0 + (long)iVar8 * 0x18);
+        func_0x0016f720(abStack_f8,pbStack_e0 + (long)iVar9 * 0x18);
                     /* try { // try from 003fa62c to 003fa637 has its CatchHandler @ 003fac68 */
         uVar7 = func_0x00167b60(abStack_f8,&ppppuStack_150);
         if ((abStack_f8[0] & 1) != 0) {
-          FUN_00166120(uStack_e8);
+          FUN_00166120(pvStack_e8);
         }
         ppppuStack_110 = &ppppuStack_130;
         if ((uVar7 & 1) == 0) {
-          lVar10 = func_0x001653f0(&plStack_a0,&ppppuStack_130,&DAT_0063488d,&ppppuStack_110,
+          lVar11 = func_0x001653f0(&plStack_a0,&ppppuStack_130,&DAT_0063488d,&ppppuStack_110,
                                    &ppppuStack_168);
-          *(undefined4 *)(lVar10 + 0x20) = 0x12;
+          *(undefined4 *)(lVar11 + 0x20) = 0x12;
         }
         else {
           uVar4 = ppppuStack_150._0_4_;
                     /* try { // try from 003fa658 to 003fa693 has its CatchHandler @ 003fac94 */
-          lVar10 = func_0x001653f0(&plStack_a0,&ppppuStack_130,&DAT_0063488d,&ppppuStack_110,
+          lVar11 = func_0x001653f0(&plStack_a0,&ppppuStack_130,&DAT_0063488d,&ppppuStack_110,
                                    &ppppuStack_168);
-          *(undefined4 *)(lVar10 + 0x20) = uVar4;
+          *(undefined4 *)(lVar11 + 0x20) = uVar4;
         }
-        iVar8 = (int)ppppuStack_130 + 1;
-        ppppuStack_130 = (undefined8 ****)CONCAT44(ppppuStack_130._4_4_,iVar8);
-      } while (iVar8 < iVar5);
+        iVar9 = (int)ppppuStack_130 + 1;
+        ppppuStack_130 = (undefined8 ****)CONCAT44(ppppuStack_130._4_4_,iVar9);
+      } while (iVar9 < iVar5);
     }
     iVar5 = (int)uStack_90;
                     /* try { // try from 003fa6b4 to 003fa6cb has its CatchHandler @ 003fac14 */
     FUN_00166450("Walaber",1,"===PARSED COLUMNS===\n");
+    uVar7 = extraout_x1;
     if (plStack_a0 != &lStack_98) {
       plVar15 = plStack_a0;
       do {
@@ -728,26 +740,27 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
         }
                     /* try { // try from 003fa738 to 003fa747 has its CatchHandler @ 003fac7c */
         FUN_00166450("Walaber",1,"====================\n");
-        plVar11 = (long *)plVar15[1];
+        plVar12 = (long *)plVar15[1];
         if ((long *)plVar15[1] == (long *)0x0) {
-          plVar11 = plVar15 + 2;
-          plVar12 = (long *)*plVar11;
-          if ((long *)*plVar12 != plVar15) {
+          plVar12 = plVar15 + 2;
+          plVar13 = (long *)*plVar12;
+          if ((long *)*plVar13 != plVar15) {
             do {
-              lVar10 = *plVar11;
-              plVar11 = (long *)(lVar10 + 0x10);
-              plVar12 = (long *)*plVar11;
-            } while (*plVar12 != lVar10);
+              lVar11 = *plVar12;
+              plVar12 = (long *)(lVar11 + 0x10);
+              plVar13 = (long *)*plVar12;
+            } while (*plVar13 != lVar11);
           }
         }
         else {
           do {
-            plVar12 = plVar11;
-            plVar11 = (long *)*plVar12;
-          } while ((long *)*plVar12 != (long *)0x0);
+            plVar13 = plVar12;
+            plVar12 = (long *)*plVar13;
+          } while ((long *)*plVar13 != (long *)0x0);
         }
-        plVar15 = plVar12;
-      } while (plVar12 != &lStack_98);
+        uVar7 = extraout_x1_00;
+        plVar15 = plVar13;
+      } while (plVar13 != &lStack_98);
     }
     uStack_128 = 0;
     auStack_114 = (undefined1  [4])0x0;
@@ -756,14 +769,15 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
     puStack_100 = (undefined1 *)0x0;
     pcStack_120 = (char *)0x0;
     ppppuStack_130 = (undefined8 *****)0x524f5252450a;
-    lVar10 = *(long *)(param_1 + 0x20);
-    if ((ulong)uVar14 < *(ulong *)(param_1 + 0x28)) {
+    p0_00 = *(void **)((long)p0 + 0x20);
+    if ((ulong)uVar14 < *(ulong *)((long)p0 + 0x28)) {
       do {
-        if (*(char *)(lVar10 + (ulong)uVar14) != '\r') {
-          if (*(char *)(lVar10 + (ulong)uVar14) == '\t') {
+        if (*(char *)((long)p0_00 + (ulong)uVar14) != '\r') {
+          if (*(char *)((long)p0_00 + (ulong)uVar14) == '\t') {
             if (auStack_114 == (undefined1  [4])0x0) {
                     /* try { // try from 003faa00 to 003faa0b has its CatchHandler @ 003fac58 */
               func_0x00171ac0(&ppppuStack_130,&ppppuStack_110);
+              uVar7 = extraout_x1_02;
               while( true ) {
                 pcVar2 = (char *)((ulong)&ppppuStack_130 | 1);
                 if (((ulong)ppppuStack_130 & 1) != 0) {
@@ -773,11 +787,13 @@ void Walaber::TextManager::loadedScriptFile(long param_1)
                     /* try { // try from 003faa10 to 003faa27 has its CatchHandler @ 003fac9c */
                 func_0x00164360(&ppppuStack_150,&ppppuStack_130,1,0xffffffffffffffff,&ppppuStack_130
                                );
+                uVar7 = extraout_x1_03;
                 if (((ulong)ppppuStack_130 & 1) != 0) {
                   *pcStack_120 = '\0';
                   uStack_128 = 0;
                   if (((ulong)ppppuStack_130 & 1) != 0) {
                     FUN_00166120(pcStack_120);
+                    uVar7 = extraout_x1_04;
                   }
                 }
                 pcStack_120 = pcStack_140;
@@ -811,35 +827,35 @@ LAB_003fa8a8:
               }
                     /* try { // try from 003fa934 to 003fa9eb has its CatchHandler @ 003fac5c */
               ppppuStack_168 = (undefined8 ****)auStack_114;
-              lVar10 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_168,
+              lVar11 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
-              ppppuStack_168 = (undefined8 ****)(lVar10 + 0x20);
-              lVar10 = func_0x001731d0(&mDictionary,ppppuStack_168,&DAT_0063488d,&ppppuStack_168,
+              ppppuStack_168 = (undefined8 ****)(lVar11 + 0x20);
+              lVar11 = func_0x001731d0(&mDictionary,ppppuStack_168,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
               ppppuStack_168 = &ppppuStack_130;
-              lVar10 = func_0x00163e20(lVar10 + 0x28,&ppppuStack_130,&DAT_0063488d,&ppppuStack_168,
+              lVar11 = func_0x00163e20(lVar11 + 0x28,&ppppuStack_130,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
-              func_0x00171ac0(lVar10 + 0x38,&ppppuStack_150);
+              func_0x00171ac0(lVar11 + 0x38,&ppppuStack_150);
               ppppuStack_168 = (undefined8 ****)auStack_114;
-              lVar10 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_168,
+              lVar11 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
-              ppppuStack_168 = (undefined8 ****)(lVar10 + 0x20);
-              lVar10 = func_0x001731d0(&mDictionary,ppppuStack_168,&DAT_0063488d,&ppppuStack_168,
+              ppppuStack_168 = (undefined8 ****)(lVar11 + 0x20);
+              lVar11 = func_0x001731d0(&mDictionary,ppppuStack_168,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
               ppppuStack_168 = &ppppuStack_130;
-              lVar10 = func_0x00163e20(lVar10 + 0x28,&ppppuStack_130,&DAT_0063488d,&ppppuStack_168,
+              lVar11 = func_0x00163e20(lVar11 + 0x28,&ppppuStack_130,&DAT_0063488d,&ppppuStack_168,
                                        appppuStack_80);
-              if ((*(byte *)(lVar10 + 0x38) & 1) == 0) {
-                lVar10 = lVar10 + 0x39;
+              if ((*(byte *)(lVar11 + 0x38) & 1) == 0) {
+                lVar11 = lVar11 + 0x39;
               }
               else {
-                lVar10 = *(long *)(lVar10 + 0x48);
+                lVar11 = *(long *)(lVar11 + 0x48);
               }
                     /* try { // try from 003faa94 to 003faab7 has its CatchHandler @ 003fac54 */
               appppuStack_80[0] = (undefined8 ****)auStack_114;
-              lVar13 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,appppuStack_80,
-                                       auStack_88);
-              func_0x0016df20(&ppppuStack_168,*(undefined4 *)(lVar13 + 0x20));
+              lVar8 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,appppuStack_80,
+                                      auStack_88);
+              func_0x0016df20(&ppppuStack_168,*(undefined4 *)(lVar8 + 0x20));
               pcVar2 = (char *)((ulong)&ppppuStack_168 | 1);
               if (((ulong)ppppuStack_168 & 1) != 0) {
                 pcVar2 = pcStack_158;
@@ -849,33 +865,37 @@ LAB_003fa8a8:
                 pcVar3 = pcStack_120;
               }
                     /* try { // try from 003faadc to 003faaf7 has its CatchHandler @ 003fac3c */
-              FUN_00166450("Walaber",1,"Inserted \"%s\" into %s at key %s\n",lVar10,pcVar2,pcVar3);
+              FUN_00166450("Walaber",1,"Inserted \"%s\" into %s at key %s\n",lVar11,pcVar2,pcVar3);
+              uVar7 = extraout_x1_05;
               if (((ulong)ppppuStack_168 & 1) != 0) {
                 FUN_00166120(pcStack_158);
+                uVar7 = extraout_x1_06;
               }
               if (((ulong)ppppuStack_150 & 1) != 0) {
                 FUN_00166120(pcStack_140);
+                uVar7 = extraout_x1_07;
               }
             }
             else {
                     /* try { // try from 003fa844 to 003fa8a3 has its CatchHandler @ 003fac58 */
               ppppuStack_150 = (undefined8 ****)auStack_114;
-              lVar10 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_150,
-                                       &ppppuStack_168);
+              auVar16 = func_0x001653f0(&plStack_a0,auStack_114,&DAT_0063488d,&ppppuStack_150,
+                                        &ppppuStack_168);
+              uVar7 = auVar16._8_8_;
               if (0 < (int)((ulong)((long)DAT_007308f0 - (long)mLanguagesToLoad) >> 2)) {
-                lVar13 = 0;
+                lVar11 = 0;
                 do {
-                  if (mLanguagesToLoad[lVar13] == *(int *)(lVar10 + 0x20)) goto LAB_003fa8a8;
-                  lVar13 = lVar13 + 1;
-                } while (lVar13 < ((long)DAT_007308f0 - (long)mLanguagesToLoad) * 0x40000000 >> 0x20
+                  if (mLanguagesToLoad[lVar11] == *(int *)(auVar16._0_8_ + 0x20)) goto LAB_003fa8a8;
+                  lVar11 = lVar11 + 1;
+                } while (lVar11 < ((long)DAT_007308f0 - (long)mLanguagesToLoad) * 0x40000000 >> 0x20
                         );
               }
             }
-            iVar8 = 0;
+            iVar9 = 0;
             if ((int)auStack_114 + 1 < iVar5 + 1) {
-              iVar8 = (int)auStack_114 + 1;
+              iVar9 = (int)auStack_114 + 1;
             }
-            auStack_114 = (undefined1  [4])iVar8;
+            auStack_114 = (undefined1  [4])iVar9;
             if (((ulong)ppppuStack_110 & 1) == 0) {
               ppppuStack_110 = (undefined8 ****)((ulong)ppppuStack_110 & 0xffffffffffff0000);
             }
@@ -886,17 +906,18 @@ LAB_003fa8a8:
           }
           else {
             FUN_00165960(&ppppuStack_110,1);
+            uVar7 = extraout_x1_01;
           }
         }
         uVar14 = uVar14 + 1;
         if ((long)DAT_007308f0 - (long)mLanguagesToLoad == 4) {
           mCurrentLanguage = *mLanguagesToLoad;
         }
-        lVar10 = *(long *)(param_1 + 0x20);
-      } while ((ulong)uVar14 < *(ulong *)(param_1 + 0x28));
+        p0_00 = *(void **)((long)p0 + 0x20);
+      } while ((ulong)uVar14 < *(ulong *)((long)p0 + 0x28));
     }
-    if (lVar10 != 0) {
-      FUN_001639e0();
+    if (p0_00 != (void *)0x0) {
+      FUN_001639e0(p0_00,uVar7);
     }
     DAT_007308f0 = mLanguagesToLoad;
     if (((ulong)ppppuStack_130 & 1) != 0) {
@@ -911,7 +932,7 @@ LAB_003fa8a8:
     }
     func_0x00162040(&plStack_a0,lStack_98);
   }
-  if (*(long *)(lVar6 + 0x28) == lVar9) {
+  if (*(long *)(lVar6 + 0x28) == lVar10) {
     return;
   }
   FUN_00164ff0();
@@ -938,7 +959,7 @@ ulong Walaber::TextManager::stringToLanguage(undefined8 param_1,undefined4 *para
   uint uVar6;
   byte abStack_50 [8];
   ulong uStack_48;
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
@@ -1312,7 +1333,7 @@ LAB_003fb3c4:
 LAB_003fb408:
   *param_2 = uVar4;
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     uVar3 = FUN_00164ff0();
@@ -1486,7 +1507,7 @@ void Walaber::TextManager::loadSubtitlesFromTSV(undefined8 param_1,undefined8 *p
 /* WARNING: Type propagation algorithm not settling */
 /* Walaber::TextManager::loadedSubtitleFile(void*) */
 
-void Walaber::TextManager::loadedSubtitleFile(long param_1)
+void Walaber::TextManager::loadedSubtitleFile(void *p0)
 
 {
   char *pcVar1;
@@ -1498,13 +1519,24 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
   bool bVar7;
   int iVar8;
   ulong uVar9;
+  void *p0_00;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong extraout_x1_01;
+  ulong extraout_x1_02;
+  ulong extraout_x1_03;
+  ulong extraout_x1_04;
+  ulong extraout_x1_05;
+  ulong extraout_x1_06;
+  ulong extraout_x1_07;
+  ulong extraout_x1_08;
   long lVar10;
   long lVar11;
   long *plVar12;
   long *plVar13;
-  long lVar14;
-  uint uVar15;
-  long *plVar16;
+  uint uVar14;
+  long *plVar15;
+  undefined1 auVar16 [16];
   int iStack_184;
   undefined8 *******pppppppuStack_178;
   undefined8 uStack_170;
@@ -1523,7 +1555,7 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
   undefined1 *puStack_f8;
   int iStack_ec;
   byte abStack_e8 [16];
-  undefined8 uStack_d8;
+  void *pvStack_d8;
   byte *pbStack_d0;
   long lStack_c8;
   char acStack_b4 [4];
@@ -1537,23 +1569,23 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
   
   lVar6 = tpidr_el0;
   lVar10 = *(long *)(lVar6 + 0x28);
-  lVar11 = *(long *)(param_1 + 0x20);
+  lVar11 = *(long *)((long)p0 + 0x20);
   if (lVar11 != 0) {
     lStack_90 = 0;
     uStack_88 = 0;
     ppppppuStack_b0 = (undefined8 ******)0x0;
     uStack_a8 = 0;
     puStack_a0 = (undefined1 *)0x0;
-    uVar15 = 0;
+    uVar14 = 0;
     plStack_98 = &lStack_90;
     while( true ) {
-      acStack_b4[0] = *(char *)(lVar11 + (ulong)uVar15);
-      uVar15 = uVar15 + 1;
+      acStack_b4[0] = *(char *)(lVar11 + (ulong)uVar14);
+      uVar14 = uVar14 + 1;
       if ((acStack_b4[0] == '\n') || (acStack_b4[0] == '\r')) break;
                     /* try { // try from 003fb970 to 003fb97f has its CatchHandler @ 003fc204 */
       FUN_00167eb0(&ppppppuStack_b0,acStack_b4,1);
       if ((acStack_b4[0] == '\n') || (acStack_b4[0] == '\r')) break;
-      lVar11 = *(long *)(param_1 + 0x20);
+      lVar11 = *(long *)((long)p0 + 0x20);
     }
     uStack_138 = 0;
     pcStack_130 = (undefined1 *)0x0;
@@ -1609,7 +1641,7 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
                     /* try { // try from 003fbb40 to 003fbb4b has its CatchHandler @ 003fc20c */
         uVar9 = func_0x00167b60(abStack_e8,&pppppppuStack_160);
         if ((abStack_e8[0] & 1) != 0) {
-          FUN_00166120(uStack_d8);
+          FUN_00166120(pvStack_d8);
         }
         if ((uVar9 & 1) == 0) {
                     /* try { // try from 003fbb9c to 003fbba3 has its CatchHandler @ 003fc200 */
@@ -1655,12 +1687,13 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
     iVar5 = (int)uStack_88;
                     /* try { // try from 003fbc4c to 003fbc63 has its CatchHandler @ 003fc1d8 */
     FUN_00166450("Walaber",1,"===PARSED COLUMNS===\n");
+    uVar9 = extraout_x1;
     if (plStack_98 != &lStack_90) {
-      plVar16 = plStack_98;
+      plVar15 = plStack_98;
       do {
-        uVar4 = *(undefined4 *)((long)plVar16 + 0x1c);
+        uVar4 = *(undefined4 *)((long)plVar15 + 0x1c);
                     /* try { // try from 003fbc94 to 003fbc9b has its CatchHandler @ 003fc23c */
-        func_0x0016df20(&pppppppuStack_140,(int)plVar16[4]);
+        func_0x0016df20(&pppppppuStack_140,(int)plVar15[4]);
         pcVar1 = (undefined1 *)((ulong)&pppppppuStack_140 | 1);
         if (((ulong)pppppppuStack_140 & 1) != 0) {
           pcVar1 = pcStack_130;
@@ -1672,11 +1705,11 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
         }
                     /* try { // try from 003fbcd0 to 003fbcdf has its CatchHandler @ 003fc224 */
         FUN_00166450("Walaber",1,"====================\n");
-        plVar12 = (long *)plVar16[1];
-        if ((long *)plVar16[1] == (long *)0x0) {
-          plVar12 = plVar16 + 2;
+        plVar12 = (long *)plVar15[1];
+        if ((long *)plVar15[1] == (long *)0x0) {
+          plVar12 = plVar15 + 2;
           plVar13 = (long *)*plVar12;
-          if ((long *)*plVar13 != plVar16) {
+          if ((long *)*plVar13 != plVar15) {
             do {
               lVar11 = *plVar12;
               plVar12 = (long *)(lVar11 + 0x10);
@@ -1690,7 +1723,8 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
             plVar12 = (long *)*plVar13;
           } while ((long *)*plVar13 != (long *)0x0);
         }
-        plVar16 = plVar13;
+        uVar9 = extraout_x1_00;
+        plVar15 = plVar13;
       } while (plVar13 != &lStack_90);
     }
     uStack_158 = 0;
@@ -1706,13 +1740,14 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
     uStack_138 = 0;
     pppppppuStack_140 = (undefined8 *******)0x0;
     pppppppuStack_160 = (undefined8 *******)0x524f5252450a;
-    lVar11 = *(long *)(param_1 + 0x20);
-    if ((ulong)uVar15 < *(ulong *)(param_1 + 0x28)) {
+    p0_00 = *(void **)((long)p0 + 0x20);
+    if ((ulong)uVar14 < *(ulong *)((long)p0 + 0x28)) {
       do {
-        if (*(char *)(lVar11 + (ulong)uVar15) != '\r') {
-          if (*(char *)(lVar11 + (ulong)uVar15) == '\t') {
+        if (*(char *)((long)p0_00 + (ulong)uVar14) != '\r') {
+          if (*(char *)((long)p0_00 + (ulong)uVar14) == '\t') {
             if (iStack_ec == 0) {
               func_0x00171ac0(&pppppppuStack_160,&pppppuStack_108);
+              uVar9 = extraout_x1_05;
               while( true ) {
                 pcVar1 = (char *)((ulong)&pppppppuStack_160 | 1);
                 if (((ulong)pppppppuStack_160 & 1) != 0) {
@@ -1722,11 +1757,13 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
                     /* try { // try from 003fbe80 to 003fbe97 has its CatchHandler @ 003fc250 */
                 func_0x00164360(&pppppppuStack_178,&pppppppuStack_160,1,0xffffffffffffffff,
                                 &pppppppuStack_160);
+                uVar9 = extraout_x1_06;
                 if (((ulong)pppppppuStack_160 & 1) != 0) {
                   *pcStack_150 = '\0';
                   uStack_158 = 0;
                   if (((ulong)pppppppuStack_160 & 1) != 0) {
                     FUN_00166120(pcStack_150);
+                    uVar9 = extraout_x1_07;
                   }
                 }
                 pcStack_150 = pcStack_168;
@@ -1737,6 +1774,7 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
             else if (iStack_ec == iStack_184) {
                     /* try { // try from 003fbdd4 to 003fbddf has its CatchHandler @ 003fc220 */
               func_0x00171ac0(&uStack_128,&pppppuStack_108);
+              uVar9 = extraout_x1_01;
               while( true ) {
                 pcVar1 = (char *)((long)&uStack_128 + 1);
                 if (((ulong)uStack_128 & 1) != 0) {
@@ -1745,11 +1783,13 @@ void Walaber::TextManager::loadedSubtitleFile(long param_1)
                 if (*pcVar1 != '\r' && *pcVar1 != '\n') break;
                     /* try { // try from 003fbde4 to 003fbdfb has its CatchHandler @ 003fc24c */
                 func_0x00164360(&pppppppuStack_178,&uStack_128,1,0xffffffffffffffff,&uStack_128);
+                uVar9 = extraout_x1_02;
                 if (((ulong)uStack_128 & 1) != 0) {
                   *pcStack_118 = '\0';
                   uStack_120 = 0;
                   if (((ulong)uStack_128 & 1) != 0) {
                     FUN_00166120(pcStack_118);
+                    uVar9 = extraout_x1_03;
                   }
                 }
                 pcStack_118 = pcStack_168;
@@ -1806,18 +1846,20 @@ LAB_003fbf68:
               }
               FUN_00166450("Walaber",1,"Got subtitle for %s [\'%s\'] spoken by %s\n",pcVar1,pcVar2,
                            pcVar3);
+              uVar9 = extraout_x1_08;
             }
             else {
               pppppppuStack_178 = (undefined8 *******)&iStack_ec;
                     /* try { // try from 003fbf10 to 003fbf73 has its CatchHandler @ 003fc220 */
-              lVar11 = func_0x001653f0(&plStack_98,&iStack_ec,&DAT_0063488d,&pppppppuStack_178,
-                                       auStack_80);
+              auVar16 = func_0x001653f0(&plStack_98,&iStack_ec,&DAT_0063488d,&pppppppuStack_178,
+                                        auStack_80);
+              uVar9 = auVar16._8_8_;
               if (0 < (int)((ulong)((long)DAT_007308f0 - (long)mLanguagesToLoad) >> 2)) {
-                lVar14 = 0;
+                lVar11 = 0;
                 do {
-                  if (mLanguagesToLoad[lVar14] == *(int *)(lVar11 + 0x20)) goto LAB_003fbf68;
-                  lVar14 = lVar14 + 1;
-                } while (lVar14 < ((long)DAT_007308f0 - (long)mLanguagesToLoad) * 0x40000000 >> 0x20
+                  if (mLanguagesToLoad[lVar11] == *(int *)(auVar16._0_8_ + 0x20)) goto LAB_003fbf68;
+                  lVar11 = lVar11 + 1;
+                } while (lVar11 < ((long)DAT_007308f0 - (long)mLanguagesToLoad) * 0x40000000 >> 0x20
                         );
               }
             }
@@ -1837,17 +1879,18 @@ LAB_003fbf68:
           else {
                     /* try { // try from 003fbe60 to 003fbe7b has its CatchHandler @ 003fc220 */
             FUN_00165960(&pppppuStack_108,1);
+            uVar9 = extraout_x1_04;
           }
         }
-        uVar15 = uVar15 + 1;
+        uVar14 = uVar14 + 1;
         if ((long)DAT_007308f0 - (long)mLanguagesToLoad == 4) {
           mCurrentLanguage = *mLanguagesToLoad;
         }
-        lVar11 = *(long *)(param_1 + 0x20);
-      } while ((ulong)uVar15 < *(ulong *)(param_1 + 0x28));
+        p0_00 = *(void **)((long)p0 + 0x20);
+      } while ((ulong)uVar14 < *(ulong *)((long)p0 + 0x28));
     }
-    if (lVar11 != 0) {
-      FUN_001639e0();
+    if (p0_00 != (void *)0x0) {
+      FUN_001639e0(p0_00,uVar9);
     }
     DAT_007308f0 = mLanguagesToLoad;
     if (((ulong)pppppppuStack_160 & 1) != 0) {
@@ -1890,256 +1933,256 @@ ulong Walaber::TextManager::CountryInfoToLanguage(void)
 {
   short *psVar1;
   long lVar2;
-  ulong uVar3;
+  void *pvVar3;
   ulong uVar4;
-  ulong uVar5;
+  void *pvVar5;
   int iVar6;
   short *psVar7;
-  ulong uVar8;
+  void *pvVar8;
   ulong uVar9;
   uint uVar10;
   ulong uVar11;
   byte abStack_70 [8];
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
   func_0x00171fd0(abStack_70);
   uVar11 = (ulong)(abStack_70[0] >> 1);
-  uVar3 = (ulong)abStack_70 | 1;
+  pvVar3 = (void *)((ulong)abStack_70 | 1);
   if ((abStack_70[0] & 1) != 0) {
     uVar11 = uStack_68;
-    uVar3 = uStack_60;
+    pvVar3 = pvStack_60;
   }
-  psVar1 = (short *)(uVar3 + uVar11);
-  uVar8 = uVar3;
+  psVar1 = (short *)((long)pvVar3 + uVar11);
+  pvVar8 = pvVar3;
   uVar9 = uVar11;
   if (4 < (long)uVar11) {
     do {
       if ((uVar9 - 4 == 0) ||
-         (psVar7 = (short *)FUN_001730d0(uVar8,0x65,uVar9 - 4), psVar7 == (short *)0x0)) break;
+         (psVar7 = (short *)FUN_001730d0(pvVar8,0x65,uVar9 - 4), psVar7 == (short *)0x0)) break;
       iVar6 = FUN_00163c10(psVar7,"es-sp",5);
       if (iVar6 == 0) {
-        if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+        if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
           uVar10 = 7;
           goto joined_r0x003fc380;
         }
         break;
       }
-      uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-      uVar8 = (long)psVar7 + 1U;
+      uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+      pvVar8 = (void *)((long)psVar7 + 1U);
     } while (4 < (long)uVar9);
-    uVar8 = uVar3;
+    pvVar8 = pvVar3;
     uVar9 = uVar11;
     if (6 < (long)uVar11) {
       do {
         uVar4 = uVar11;
-        uVar5 = uVar3;
+        pvVar5 = pvVar3;
         if ((uVar9 - 6 == 0) ||
-           (psVar7 = (short *)FUN_001730d0(uVar8,0x7a,uVar9 - 6), psVar7 == (short *)0x0)) break;
+           (psVar7 = (short *)FUN_001730d0(pvVar8,0x7a,uVar9 - 6), psVar7 == (short *)0x0)) break;
         iVar6 = FUN_00163c10(psVar7,"zh-hans",7);
         if (iVar6 == 0) {
-          if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+          if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
             uVar10 = 0xb;
             goto joined_r0x003fc5a0;
           }
           break;
         }
-        uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-        uVar8 = (long)psVar7 + 1U;
+        uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+        pvVar8 = (void *)((long)psVar7 + 1U);
       } while (6 < (long)uVar9);
       do {
         if ((((long)uVar4 < 7) || (uVar4 - 6 == 0)) ||
-           (psVar7 = (short *)FUN_001730d0(uVar5,0x7a,uVar4 - 6), psVar7 == (short *)0x0)) break;
+           (psVar7 = (short *)FUN_001730d0(pvVar5,0x7a,uVar4 - 6), psVar7 == (short *)0x0)) break;
         iVar6 = FUN_00163c10(psVar7,"zh-hant",7);
         if (iVar6 == 0) {
-          if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+          if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
             uVar10 = 0xc;
             goto joined_r0x003fc5a0;
           }
           break;
         }
-        uVar4 = (long)psVar1 - ((long)psVar7 + 1U);
-        uVar5 = (long)psVar7 + 1U;
+        uVar4 = (long)psVar1 - (long)((long)psVar7 + 1U);
+        pvVar5 = (void *)((long)psVar7 + 1U);
       } while( true );
     }
   }
-  uVar8 = uVar3;
+  pvVar8 = pvVar3;
   uVar9 = uVar11;
   if (1 < (long)uVar11) {
     do {
       if ((uVar9 - 1 == 0) ||
-         (psVar7 = (short *)FUN_001730d0(uVar8,0x65,uVar9 - 1), psVar7 == (short *)0x0)) break;
+         (psVar7 = (short *)FUN_001730d0(pvVar8,0x65,uVar9 - 1), psVar7 == (short *)0x0)) break;
       if (*psVar7 == 0x7365) {
-        if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+        if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
           uVar10 = 6;
           goto joined_r0x003fc5a0;
         }
         break;
       }
-      uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-      uVar8 = (long)psVar7 + 1U;
+      uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+      pvVar8 = (void *)((long)psVar7 + 1U);
     } while (1 < (long)uVar9);
-    uVar8 = uVar3;
+    pvVar8 = pvVar3;
     uVar9 = uVar11;
     if (1 < (long)uVar11) {
       do {
         if ((uVar9 - 1 == 0) ||
-           (psVar7 = (short *)FUN_001730d0(uVar8,0x66,uVar9 - 1), psVar7 == (short *)0x0)) break;
+           (psVar7 = (short *)FUN_001730d0(pvVar8,0x66,uVar9 - 1), psVar7 == (short *)0x0)) break;
         if (*psVar7 == 0x7266) {
-          if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+          if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
             uVar10 = 2;
             goto joined_r0x003fc5a0;
           }
           break;
         }
-        uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-        uVar8 = (long)psVar7 + 1U;
+        uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+        pvVar8 = (void *)((long)psVar7 + 1U);
       } while (1 < (long)uVar9);
-      uVar8 = uVar3;
+      pvVar8 = pvVar3;
       uVar9 = uVar11;
       if (1 < (long)uVar11) {
         do {
           if ((uVar9 - 1 == 0) ||
-             (psVar7 = (short *)FUN_001730d0(uVar8,100,uVar9 - 1), psVar7 == (short *)0x0)) break;
+             (psVar7 = (short *)FUN_001730d0(pvVar8,100,uVar9 - 1), psVar7 == (short *)0x0)) break;
           if (*psVar7 == 0x6564) {
-            if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+            if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
               uVar10 = 5;
               goto joined_r0x003fc5a0;
             }
             break;
           }
-          uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-          uVar8 = (long)psVar7 + 1U;
+          uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+          pvVar8 = (void *)((long)psVar7 + 1U);
         } while (1 < (long)uVar9);
-        uVar8 = uVar3;
+        pvVar8 = pvVar3;
         uVar9 = uVar11;
         if (1 < (long)uVar11) {
           do {
             if ((uVar9 - 1 == 0) ||
-               (psVar7 = (short *)FUN_001730d0(uVar8,0x69,uVar9 - 1), psVar7 == (short *)0x0))
+               (psVar7 = (short *)FUN_001730d0(pvVar8,0x69,uVar9 - 1), psVar7 == (short *)0x0))
             break;
             if (*psVar7 == 0x7469) {
-              if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+              if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                 uVar10 = 4;
                 goto joined_r0x003fc5a0;
               }
               break;
             }
-            uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-            uVar8 = (long)psVar7 + 1U;
+            uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+            pvVar8 = (void *)((long)psVar7 + 1U);
           } while (1 < (long)uVar9);
-          uVar8 = uVar3;
+          pvVar8 = pvVar3;
           uVar9 = uVar11;
           if (1 < (long)uVar11) {
             do {
               if ((uVar9 - 1 == 0) ||
-                 (psVar7 = (short *)FUN_001730d0(uVar8,0x6a,uVar9 - 1), psVar7 == (short *)0x0))
+                 (psVar7 = (short *)FUN_001730d0(pvVar8,0x6a,uVar9 - 1), psVar7 == (short *)0x0))
               break;
               if (*psVar7 == 0x616a) {
-                if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                   uVar10 = 9;
                   goto joined_r0x003fc5a0;
                 }
                 break;
               }
-              uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-              uVar8 = (long)psVar7 + 1U;
+              uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+              pvVar8 = (void *)((long)psVar7 + 1U);
             } while (1 < (long)uVar9);
-            uVar8 = uVar3;
+            pvVar8 = pvVar3;
             uVar9 = uVar11;
             if (1 < (long)uVar11) {
               do {
                 if ((uVar9 - 1 == 0) ||
-                   (psVar7 = (short *)FUN_001730d0(uVar8,0x6b,uVar9 - 1), psVar7 == (short *)0x0))
+                   (psVar7 = (short *)FUN_001730d0(pvVar8,0x6b,uVar9 - 1), psVar7 == (short *)0x0))
                 break;
                 if (*psVar7 == 0x6f6b) {
-                  if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                  if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                     uVar10 = 10;
                     goto joined_r0x003fc5a0;
                   }
                   break;
                 }
-                uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-                uVar8 = (long)psVar7 + 1U;
+                uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+                pvVar8 = (void *)((long)psVar7 + 1U);
               } while (1 < (long)uVar9);
-              uVar8 = uVar3;
+              pvVar8 = pvVar3;
               uVar9 = uVar11;
               if (1 < (long)uVar11) {
                 do {
                   if ((uVar9 - 1 == 0) ||
-                     (psVar7 = (short *)FUN_001730d0(uVar8,0x72,uVar9 - 1), psVar7 == (short *)0x0))
-                  break;
+                     (psVar7 = (short *)FUN_001730d0(pvVar8,0x72,uVar9 - 1), psVar7 == (short *)0x0)
+                     ) break;
                   if (*psVar7 == 0x7572) {
-                    if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                    if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                       uVar10 = 0xd;
                       goto joined_r0x003fc5a0;
                     }
                     break;
                   }
-                  uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-                  uVar8 = (long)psVar7 + 1U;
+                  uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+                  pvVar8 = (void *)((long)psVar7 + 1U);
                 } while (1 < (long)uVar9);
-                uVar8 = uVar3;
+                pvVar8 = pvVar3;
                 uVar9 = uVar11;
                 if (1 < (long)uVar11) {
                   do {
                     if ((uVar9 - 1 == 0) ||
-                       (psVar7 = (short *)FUN_001730d0(uVar8,0x6e,uVar9 - 1), psVar7 == (short *)0x0
-                       )) break;
+                       (psVar7 = (short *)FUN_001730d0(pvVar8,0x6e,uVar9 - 1),
+                       psVar7 == (short *)0x0)) break;
                     if (*psVar7 == 0x6c6e) {
-                      if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                      if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                         uVar10 = 0xe;
                         goto joined_r0x003fc5a0;
                       }
                       break;
                     }
-                    uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-                    uVar8 = (long)psVar7 + 1U;
+                    uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+                    pvVar8 = (void *)((long)psVar7 + 1U);
                   } while (1 < (long)uVar9);
-                  uVar8 = uVar3;
+                  pvVar8 = pvVar3;
                   uVar9 = uVar11;
                   if (1 < (long)uVar11) {
                     do {
                       if ((uVar9 - 1 == 0) ||
-                         (psVar7 = (short *)FUN_001730d0(uVar8,99,uVar9 - 1), psVar7 == (short *)0x0
-                         )) break;
+                         (psVar7 = (short *)FUN_001730d0(pvVar8,99,uVar9 - 1),
+                         psVar7 == (short *)0x0)) break;
                       if (*psVar7 == 0x7363) {
-                        if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                        if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                           uVar10 = 0xf;
                           goto joined_r0x003fc5a0;
                         }
                         break;
                       }
-                      uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-                      uVar8 = (long)psVar7 + 1U;
+                      uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+                      pvVar8 = (void *)((long)psVar7 + 1U);
                     } while (1 < (long)uVar9);
-                    uVar8 = uVar3;
+                    pvVar8 = pvVar3;
                     uVar9 = uVar11;
                     if (1 < (long)uVar11) {
                       do {
-                        uVar4 = uVar3;
+                        pvVar5 = pvVar3;
                         if ((uVar9 - 1 == 0) ||
-                           (psVar7 = (short *)FUN_001730d0(uVar8,0x70,uVar9 - 1),
+                           (psVar7 = (short *)FUN_001730d0(pvVar8,0x70,uVar9 - 1),
                            psVar7 == (short *)0x0)) break;
                         if (*psVar7 == 0x6c70) {
-                          if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                          if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                             uVar10 = 0x10;
                             goto joined_r0x003fc5a0;
                           }
                           break;
                         }
-                        uVar9 = (long)psVar1 - ((long)psVar7 + 1U);
-                        uVar8 = (long)psVar7 + 1U;
+                        uVar9 = (long)psVar1 - (long)((long)psVar7 + 1U);
+                        pvVar8 = (void *)((long)psVar7 + 1U);
                       } while (1 < (long)uVar9);
 joined_r0x003fc884:
                       if (((1 < (long)uVar11) && (uVar11 - 1 != 0)) &&
-                         (psVar7 = (short *)FUN_001730d0(uVar4,0x70,uVar11 - 1),
+                         (psVar7 = (short *)FUN_001730d0(pvVar5,0x70,uVar11 - 1),
                          psVar7 != (short *)0x0)) {
                         if (*psVar7 != 0x7470) goto code_r0x003fc8b0;
-                        if ((psVar7 != psVar1) && ((long)psVar7 - uVar3 != -1)) {
+                        if ((psVar7 != psVar1) && ((long)psVar7 - (long)pvVar3 != -1)) {
                           uVar10 = 0x11;
 joined_r0x003fc5a0:
                           if ((abStack_70[0] & 1) == 0) goto LAB_003fc8f4;
@@ -2160,7 +2203,7 @@ joined_r0x003fc5a0:
 joined_r0x003fc380:
   if ((abStack_70[0] & 1) != 0) {
 LAB_003fc8ec:
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
 LAB_003fc8f4:
   if (*(long *)(lVar2 + 0x28) == lStack_58) {
@@ -2169,8 +2212,8 @@ LAB_003fc8f4:
   uVar11 = FUN_00164ff0();
   return uVar11;
 code_r0x003fc8b0:
-  uVar11 = (long)psVar1 - ((long)psVar7 + 1U);
-  uVar4 = (long)psVar7 + 1U;
+  uVar11 = (long)psVar1 - (long)((long)psVar7 + 1U);
+  pvVar5 = (void *)((long)psVar7 + 1U);
   goto joined_r0x003fc884;
 }
 
@@ -2508,7 +2551,7 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
   long *plVar6;
   ulong uStack_50;
   ulong uStack_48;
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
@@ -2519,11 +2562,11 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
       func_0x0016df20(&uStack_50,(int)plVar6[4]);
       puVar1 = *(ulong **)(param_1 + 8);
       if (puVar1 < *(ulong **)(param_1 + 0x10)) {
-        puVar1[2] = uStack_40;
+        puVar1[2] = (ulong)pvStack_40;
         puVar1[1] = uStack_48;
         *puVar1 = uStack_50;
         uStack_48 = 0;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_50 = 0;
         *(long *)(param_1 + 8) = *(long *)(param_1 + 8) + 0x18;
       }
@@ -2531,7 +2574,7 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
                     /* try { // try from 003fd0f8 to 003fd103 has its CatchHandler @ 003fd190 */
         func_0x00173c40(param_1,&uStack_50);
         if ((uStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
       }
       plVar3 = (long *)plVar6[1];

@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater
 void non_virtual_thunk_to_WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2(long param_1)
 
 {
-  func_0x00168d40(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x00168d40((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,10 +40,11 @@ void non_virtual_thunk_to_WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater
 /* non-virtual thunk to WaterConcept::Screen_UpsellWater2::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_UpsellWater2::handleEvent(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_UpsellWater2::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  func_0x00165810(param_1 + -0x20);
+  func_0x00165810((ulong)(uint)p0 - 0x20);
   return;
 }
 

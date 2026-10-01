@@ -8,12 +8,12 @@
 
 /* std::__ndk1::__num_get_base::__get_base(std::__ndk1::ios_base&) */
 
-undefined8 std::__ndk1::__num_get_base::__get_base(long param_1)
+undefined8 std::__ndk1::__num_get_base::__get_base(std____ndk1__ios_base *p0)
 
 {
   uint uVar1;
   
-  uVar1 = *(uint *)(param_1 + 8) & 0x4a;
+  uVar1 = *(uint *)(p0 + 8) & 0x4a;
   if (uVar1 == 0) {
     return 0;
   }

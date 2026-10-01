@@ -143,12 +143,12 @@ void Walaber::Texture::~Texture(undefined8 *param_1)
   *param_1 = &PTR__Texture_00710128;
   func_0x00168180(param_1 + 0x15);
   if ((*(byte *)(param_1 + 9) & 1) != 0) {
-    FUN_00166120(param_1[0xb]);
+    FUN_00166120((void *)param_1[0xb]);
   }
   if ((*(byte *)(param_1 + 1) & 1) == 0) {
     return;
   }
-  FUN_00166120(param_1[3]);
+  FUN_00166120((void *)param_1[3]);
   return;
 }
 
@@ -160,7 +160,7 @@ void Walaber::Texture::~Texture(undefined8 *param_1)
 
 /* Walaber::Texture::~Texture() */
 
-void Walaber::Texture::~Texture(undefined8 param_1)
+void Walaber::Texture::~Texture(void *param_1)
 
 {
   func_0x00166dd0();

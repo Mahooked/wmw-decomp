@@ -519,14 +519,14 @@ num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_trait
   bool bVar7;
   bool bVar8;
   int iVar9;
-  undefined1 *puVar10;
-  undefined8 uVar11;
-  undefined2 *puVar12;
+  undefined1 *p0;
+  undefined8 uVar10;
+  undefined2 *puVar11;
+  undefined1 uVar12;
   undefined1 uVar13;
-  undefined1 uVar14;
-  char *pcVar15;
-  char *pcVar16;
-  undefined1 *puVar17;
+  char *p0_00;
+  char *pcVar14;
+  undefined1 *puVar15;
   undefined8 uStack_1b0;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
@@ -541,46 +541,46 @@ num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_trait
   uStack_190 = 0x25;
   uVar3 = *(uint *)(param_4 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
-    puVar12 = (undefined2 *)((ulong)&uStack_190 | 1);
+    puVar11 = (undefined2 *)((ulong)&uStack_190 | 1);
   }
   else {
-    puVar12 = (undefined2 *)((ulong)&uStack_190 | 2);
+    puVar11 = (undefined2 *)((ulong)&uStack_190 | 2);
     uStack_190 = 0x2b25;
   }
   if ((uVar3 >> 10 & 1) != 0) {
-    *(undefined1 *)puVar12 = 0x23;
-    puVar12 = (undefined2 *)((long)puVar12 + 1);
+    *(undefined1 *)puVar11 = 0x23;
+    puVar11 = (undefined2 *)((long)puVar11 + 1);
   }
   uVar2 = uVar3 & 0x104;
   bVar7 = uVar2 != 0x104;
   if (bVar7) {
-    *puVar12 = 0x2a2e;
-    puVar12 = puVar12 + 1;
+    *puVar11 = 0x2a2e;
+    puVar11 = puVar11 + 1;
   }
   if (uVar2 == 0x100) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x65;
-    uVar14 = 0x45;
+    uVar12 = 0x65;
+    uVar13 = 0x45;
   }
   else if (uVar2 == 4) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x66;
-    uVar14 = 0x46;
+    uVar12 = 0x66;
+    uVar13 = 0x46;
   }
   else if (uVar2 == 0x104) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x61;
-    uVar14 = 0x41;
+    uVar12 = 0x61;
+    uVar13 = 0x41;
   }
   else {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x67;
-    uVar14 = 0x47;
+    uVar12 = 0x67;
+    uVar13 = 0x47;
   }
   if (bVar8) {
-    uVar14 = uVar13;
+    uVar13 = uVar12;
   }
-  *(undefined1 *)puVar12 = uVar14;
+  *(undefined1 *)puVar11 = uVar13;
   pcStack_198 = acStack_a0;
   if (((DAT_007a4e90 & 1) == 0) && (iVar9 = FUN_0016ceb0(&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bda38 to 005bda4b has its CatchHandler @ 005bdb00 */
@@ -610,69 +610,69 @@ LAB_005bd898:
       }
       iVar9 = func_0x00174070(param_1,&pcStack_198,DAT_007a4e88,&uStack_190);
     }
-    pcVar15 = pcStack_198;
+    p0_00 = pcStack_198;
     if (pcStack_198 == (char *)0x0) goto LAB_005bdadc;
   }
   else {
     iVar9 = func_0x0016af90(param_1,acStack_a0,0x1e,DAT_007a4e88,&uStack_190);
     if (0x1d < iVar9) goto LAB_005bd898;
 LAB_005bd870:
-    pcVar15 = (char *)0x0;
+    p0_00 = (char *)0x0;
   }
   pcVar6 = pcStack_198;
   pcVar1 = pcStack_198 + iVar9;
   uVar3 = *(uint *)(param_4 + 8) & 0xb0;
-  pcVar16 = pcVar1;
-  if ((uVar3 != 0x20) && (pcVar16 = pcStack_198, uVar3 == 0x10)) {
+  pcVar14 = pcVar1;
+  if ((uVar3 != 0x20) && (pcVar14 = pcStack_198, uVar3 == 0x10)) {
     cVar4 = *pcStack_198;
     if ((cVar4 == '-') || (cVar4 == '+')) {
-      pcVar16 = pcStack_198 + 1;
+      pcVar14 = pcStack_198 + 1;
     }
     else if (((1 < iVar9) && (cVar4 == '0')) && ((byte)(pcStack_198[1] | 0x20U) == 0x78)) {
-      pcVar16 = pcStack_198 + 2;
+      pcVar14 = pcStack_198 + 2;
     }
   }
   if (pcStack_198 == acStack_a0) {
-    puVar10 = (undefined1 *)0x0;
-    puVar17 = auStack_184;
+    p0 = (undefined1 *)0x0;
+    puVar15 = auStack_184;
   }
   else {
-    puVar10 = (undefined1 *)FUN_00164a70((long)iVar9 << 3);
-    puVar17 = puVar10;
-    if (puVar10 == (undefined1 *)0x0) {
+    p0 = (undefined1 *)FUN_00164a70((long)iVar9 << 3);
+    puVar15 = p0;
+    if (p0 == (undefined1 *)0x0) {
                     /* try { // try from 005bdad8 to 005bdadb has its CatchHandler @ 005bdae0 */
       FUN_0016b440();
 LAB_005bdadc:
                     /* try { // try from 005bdadc to 005bdadf has its CatchHandler @ 005bdb18 */
-      uVar11 = FUN_0016b440();
+      uVar10 = FUN_0016b440();
                     /* catch() { ... } // from try @ 005bdad8 with catch @ 005bdae0 */
-      if (pcVar15 != (char *)0x0) {
-        FUN_00167af0(pcVar15);
-        uVar11 = FUN_00169180(uVar11);
-        return uVar11;
+      if (p0_00 != (char *)0x0) {
+        FUN_00167af0(p0_00);
+        uVar10 = FUN_00169180(uVar10);
+        return uVar10;
       }
-      uVar11 = FUN_00169180(uVar11);
-      return uVar11;
+      uVar10 = FUN_00169180(uVar10);
+      return uVar10;
     }
   }
                     /* try { // try from 005bd988 to 005bd993 has its CatchHandler @ 005bdb40 */
   func_0x00168710(&uStack_1b0,param_4);
                     /* try { // try from 005bd994 to 005bd9b3 has its CatchHandler @ 005bdb28 */
-  func_0x00161c90(pcVar6,pcVar16,pcVar1,puVar17,&uStack_1a0,&uStack_1a8,&uStack_1b0);
+  func_0x00161c90(pcVar6,pcVar14,pcVar1,puVar15,&uStack_1a0,&uStack_1a8,&uStack_1b0);
   FUN_00166dc0(uStack_1b0);
                     /* try { // try from 005bd9c0 to 005bd9d3 has its CatchHandler @ 005bdb1c */
-  uVar11 = func_0x005bce18(param_3,puVar17,uStack_1a0,uStack_1a8,param_4,param_5);
-  if (puVar10 != (undefined1 *)0x0) {
-    FUN_00167af0(puVar10);
+  uVar10 = func_0x005bce18(param_3,puVar15,uStack_1a0,uStack_1a8,param_4,param_5);
+  if (p0 != (undefined1 *)0x0) {
+    FUN_00167af0(p0);
   }
-  if (pcVar15 != (char *)0x0) {
-    FUN_00167af0(pcVar15);
+  if (p0_00 != (char *)0x0) {
+    FUN_00167af0(p0_00);
   }
   if (*(long *)(lVar5 + 0x28) == lStack_80) {
-    return uVar11;
+    return uVar10;
   }
-  uVar11 = FUN_00164ff0();
-  return uVar11;
+  uVar10 = FUN_00164ff0();
+  return uVar10;
 }
 
 
@@ -700,14 +700,14 @@ num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_trait
   bool bVar7;
   bool bVar8;
   int iVar9;
-  undefined1 *puVar10;
-  undefined8 uVar11;
-  undefined2 *puVar12;
+  undefined1 *p0;
+  undefined8 uVar10;
+  undefined2 *puVar11;
+  undefined1 uVar12;
   undefined1 uVar13;
-  undefined1 uVar14;
-  char *pcVar15;
-  char *pcVar16;
-  undefined1 *puVar17;
+  char *p0_00;
+  char *pcVar14;
+  undefined1 *puVar15;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
   undefined8 uStack_190;
@@ -722,47 +722,47 @@ num_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_trait
   uStack_180 = 0x25;
   uVar3 = *(uint *)(param_4 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
-    puVar12 = (undefined2 *)((ulong)&uStack_180 | 1);
+    puVar11 = (undefined2 *)((ulong)&uStack_180 | 1);
   }
   else {
-    puVar12 = (undefined2 *)((ulong)&uStack_180 | 2);
+    puVar11 = (undefined2 *)((ulong)&uStack_180 | 2);
     uStack_180 = 0x2b25;
   }
   if ((uVar3 >> 10 & 1) != 0) {
-    *(undefined1 *)puVar12 = 0x23;
-    puVar12 = (undefined2 *)((long)puVar12 + 1);
+    *(undefined1 *)puVar11 = 0x23;
+    puVar11 = (undefined2 *)((long)puVar11 + 1);
   }
   uVar2 = uVar3 & 0x104;
   bVar7 = uVar2 != 0x104;
   if (bVar7) {
-    *puVar12 = 0x2a2e;
-    puVar12 = puVar12 + 1;
+    *puVar11 = 0x2a2e;
+    puVar11 = puVar11 + 1;
   }
-  *(undefined1 *)puVar12 = 0x4c;
+  *(undefined1 *)puVar11 = 0x4c;
   if (uVar2 == 0x100) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x65;
-    uVar14 = 0x45;
+    uVar12 = 0x65;
+    uVar13 = 0x45;
   }
   else if (uVar2 == 4) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x66;
-    uVar14 = 0x46;
+    uVar12 = 0x66;
+    uVar13 = 0x46;
   }
   else if (uVar2 == 0x104) {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x61;
-    uVar14 = 0x41;
+    uVar12 = 0x61;
+    uVar13 = 0x41;
   }
   else {
     bVar8 = (uVar3 & 0x4000) == 0;
-    uVar13 = 0x67;
-    uVar14 = 0x47;
+    uVar12 = 0x67;
+    uVar13 = 0x47;
   }
   if (bVar8) {
-    uVar14 = uVar13;
+    uVar13 = uVar12;
   }
-  *(undefined1 *)((long)puVar12 + 1) = uVar14;
+  *(undefined1 *)((long)puVar11 + 1) = uVar13;
   pcStack_188 = acStack_90;
   if (((DAT_007a4e90 & 1) == 0) && (iVar9 = FUN_0016ceb0(&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005be388 to 005be39b has its CatchHandler @ 005be464 */
@@ -792,69 +792,69 @@ LAB_005be1e8:
       }
       iVar9 = func_0x00174070(param_1,&pcStack_188,DAT_007a4e88,&uStack_180);
     }
-    pcVar15 = pcStack_188;
+    p0_00 = pcStack_188;
     if (pcStack_188 == (char *)0x0) goto LAB_005be440;
   }
   else {
     iVar9 = func_0x0016af90(param_1,acStack_90,0x1e,DAT_007a4e88,&uStack_180);
     if (0x1d < iVar9) goto LAB_005be1e8;
 LAB_005be1c4:
-    pcVar15 = (char *)0x0;
+    p0_00 = (char *)0x0;
   }
   pcVar6 = pcStack_188;
   pcVar1 = pcStack_188 + iVar9;
   uVar3 = *(uint *)(param_4 + 8) & 0xb0;
-  pcVar16 = pcVar1;
-  if ((uVar3 != 0x20) && (pcVar16 = pcStack_188, uVar3 == 0x10)) {
+  pcVar14 = pcVar1;
+  if ((uVar3 != 0x20) && (pcVar14 = pcStack_188, uVar3 == 0x10)) {
     cVar4 = *pcStack_188;
     if ((cVar4 == '-') || (cVar4 == '+')) {
-      pcVar16 = pcStack_188 + 1;
+      pcVar14 = pcStack_188 + 1;
     }
     else if (((1 < iVar9) && (cVar4 == '0')) && ((byte)(pcStack_188[1] | 0x20U) == 0x78)) {
-      pcVar16 = pcStack_188 + 2;
+      pcVar14 = pcStack_188 + 2;
     }
   }
   if (pcStack_188 == acStack_90) {
-    puVar10 = (undefined1 *)0x0;
-    puVar17 = auStack_174;
+    p0 = (undefined1 *)0x0;
+    puVar15 = auStack_174;
   }
   else {
-    puVar10 = (undefined1 *)FUN_00164a70((long)iVar9 << 3);
-    puVar17 = puVar10;
-    if (puVar10 == (undefined1 *)0x0) {
+    p0 = (undefined1 *)FUN_00164a70((long)iVar9 << 3);
+    puVar15 = p0;
+    if (p0 == (undefined1 *)0x0) {
                     /* try { // try from 005be43c to 005be43f has its CatchHandler @ 005be444 */
       FUN_0016b440();
 LAB_005be440:
                     /* try { // try from 005be440 to 005be443 has its CatchHandler @ 005be47c */
-      uVar11 = FUN_0016b440();
+      uVar10 = FUN_0016b440();
                     /* catch() { ... } // from try @ 005be43c with catch @ 005be444 */
-      if (pcVar15 != (char *)0x0) {
-        FUN_00167af0(pcVar15);
-        uVar11 = FUN_00169180(uVar11);
-        return uVar11;
+      if (p0_00 != (char *)0x0) {
+        FUN_00167af0(p0_00);
+        uVar10 = FUN_00169180(uVar10);
+        return uVar10;
       }
-      uVar11 = FUN_00169180(uVar11);
-      return uVar11;
+      uVar10 = FUN_00169180(uVar10);
+      return uVar10;
     }
   }
                     /* try { // try from 005be2d8 to 005be2e3 has its CatchHandler @ 005be4a4 */
   func_0x00168710(&uStack_1a0,param_4);
                     /* try { // try from 005be2e4 to 005be303 has its CatchHandler @ 005be48c */
-  func_0x00161c90(pcVar6,pcVar16,pcVar1,puVar17,&uStack_190,&uStack_198,&uStack_1a0);
+  func_0x00161c90(pcVar6,pcVar14,pcVar1,puVar15,&uStack_190,&uStack_198,&uStack_1a0);
   FUN_00166dc0(uStack_1a0);
                     /* try { // try from 005be310 to 005be323 has its CatchHandler @ 005be480 */
-  uVar11 = func_0x005bce18(param_3,puVar17,uStack_190,uStack_198,param_4,param_5);
-  if (puVar10 != (undefined1 *)0x0) {
-    FUN_00167af0(puVar10);
+  uVar10 = func_0x005bce18(param_3,puVar15,uStack_190,uStack_198,param_4,param_5);
+  if (p0 != (undefined1 *)0x0) {
+    FUN_00167af0(p0);
   }
-  if (pcVar15 != (char *)0x0) {
-    FUN_00167af0(pcVar15);
+  if (p0_00 != (char *)0x0) {
+    FUN_00167af0(p0_00);
   }
   if (*(long *)(lVar5 + 0x28) == lStack_70) {
-    return uVar11;
+    return uVar10;
   }
-  uVar11 = FUN_00164ff0();
-  return uVar11;
+  uVar10 = FUN_00164ff0();
+  return uVar10;
 }
 
 

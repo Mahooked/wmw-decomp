@@ -18,12 +18,15 @@ void std::__ndk1::
      ::destroy(undefined8 param_1,undefined8 *param_2)
 
 {
+  void *p0;
+  
   if (param_2 != (undefined8 *)0x0) {
     func_0x00167da0(param_1,*param_2);
     func_0x00167da0(param_1,param_2[1]);
-    if (param_2[6] != 0) {
-      param_2[7] = param_2[6];
-      FUN_00166120();
+    p0 = (void *)param_2[6];
+    if (p0 != (void *)0x0) {
+      param_2[7] = p0;
+      FUN_00166120(p0);
     }
     FUN_00166120(param_2);
     return;

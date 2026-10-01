@@ -11,29 +11,30 @@
 
 void std::__ndk1::
      __vector_base<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>
-     ::~__vector_base(long *param_1)
+     ::~__vector_base(undefined8 *param_1)
 
 {
   long lVar1;
-  long lVar2;
-  long lVar3;
+  void *p0;
+  void *pvVar2;
+  void *pvVar3;
   
-  lVar3 = *param_1;
-  if (lVar3 == 0) {
+  pvVar3 = (void *)*param_1;
+  if (pvVar3 == (void *)0x0) {
     return;
   }
-  lVar2 = param_1[1];
-  lVar1 = lVar3;
-  if (lVar2 != lVar3) {
+  pvVar2 = (void *)param_1[1];
+  p0 = pvVar3;
+  if (pvVar2 != pvVar3) {
     do {
-      lVar1 = lVar2 + -0x10;
-      lVar2 = lVar2 + -0x28;
+      lVar1 = (long)pvVar2 + -0x10;
+      pvVar2 = (void *)((long)pvVar2 + -0x28);
       FUN_00166b20(lVar1);
-    } while (lVar3 != lVar2);
-    lVar1 = *param_1;
+    } while (pvVar3 != pvVar2);
+    p0 = (void *)*param_1;
   }
-  param_1[1] = lVar3;
-  FUN_00166120(lVar1);
+  param_1[1] = pvVar3;
+  FUN_00166120(p0);
   return;
 }
 

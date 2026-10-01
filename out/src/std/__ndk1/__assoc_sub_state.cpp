@@ -36,7 +36,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
   undefined8 *puVar3;
   long lVar4;
   ulong auStack_68 [2];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
   long lStack_38;
@@ -73,7 +73,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
                     /* try { // try from 005f08d4 to 005f08df has its CatchHandler @ 005f092c */
   func_0x0016c1f0(puVar3,auStack_68);
   if ((auStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   *puVar3 = &PTR__future_error_00719378;
   puVar3[3] = puStack_48;
@@ -101,7 +101,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
   undefined8 *puVar5;
   long lVar6;
   ulong auStack_68 [2];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
   long lStack_38;
@@ -141,7 +141,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
                     /* try { // try from 005f0a88 to 005f0a93 has its CatchHandler @ 005f0ad8 */
   func_0x0016c1f0(puVar5,auStack_68);
   if ((auStack_68[0] & 1) != 0) {
-    FUN_00166120(uStack_58);
+    FUN_00166120(pvStack_58);
   }
   *puVar5 = &PTR__future_error_00719378;
   puVar5[3] = puStack_48;
@@ -167,7 +167,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(long param_1,undefined8 param
   undefined8 *puVar3;
   long lVar4;
   ulong auStack_78 [2];
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined8 uStack_60;
   undefined8 *puStack_58;
   long lStack_48;
@@ -205,7 +205,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(long param_1,undefined8 param
                     /* try { // try from 005f0c48 to 005f0c53 has its CatchHandler @ 005f0ca0 */
   func_0x0016c1f0(puVar3,auStack_78);
   if ((auStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   *puVar3 = &PTR__future_error_00719378;
   puVar3[3] = puStack_58;
@@ -233,7 +233,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(long param_1,u
   undefined8 *puVar5;
   long lVar6;
   ulong auStack_78 [2];
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined8 uStack_60;
   undefined8 *puStack_58;
   long lStack_48;
@@ -273,7 +273,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(long param_1,u
                     /* try { // try from 005f0e08 to 005f0e13 has its CatchHandler @ 005f0e58 */
   func_0x0016c1f0(puVar5,auStack_78);
   if ((auStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   *puVar5 = &PTR__future_error_00719378;
   puVar5[3] = puStack_58;

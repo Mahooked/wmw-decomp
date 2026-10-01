@@ -30,24 +30,23 @@ long Walaber::BroadcastManager::getInstancePtr(void)
 
 /* Walaber::BroadcastManager::_addReceiver(Walaber::MessageReceiver*) */
 
-void Walaber::BroadcastManager::_addReceiver(long *param_1,undefined8 param_2)
+void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0)
 
 {
   long lVar1;
-  undefined8 uStack_40;
+  undefined8 in_x1;
+  undefined1 auStack_40 [8];
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = param_2;
-  FUN_00166450("Walaber",1,"BroadcastManager::_addReceiver( %p ) count %d\n",param_2,
-               (ulong)(param_1[1] - *param_1) >> 3);
-  if ((undefined8 *)param_1[1] == (undefined8 *)param_1[2]) {
-    func_0x00165990(param_1,&uStack_40);
+  FUN_00166450("Walaber",1,"BroadcastManager::_addReceiver( %p ) count %d\n");
+  if (*(undefined8 **)(p0 + 8) == *(undefined8 **)(p0 + 0x10)) {
+    func_0x00165990(p0,auStack_40);
   }
   else {
-    *(undefined8 *)param_1[1] = param_2;
-    param_1[1] = param_1[1] + 8;
+    **(undefined8 **)(p0 + 8) = in_x1;
+    *(long *)(p0 + 8) = *(long *)(p0 + 8) + 8;
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -64,29 +63,30 @@ void Walaber::BroadcastManager::_addReceiver(long *param_1,undefined8 param_2)
 
 /* Walaber::BroadcastManager::_removeReceiver(Walaber::MessageReceiver*) */
 
-void Walaber::BroadcastManager::_removeReceiver(long *param_1,long param_2)
+void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0)
 
 {
   long *plVar1;
   long *plVar2;
+  long in_x1;
   long lVar3;
   long *plVar4;
   
-  FUN_00166450("Walaber",1,"BroadcastManager::_removeReceiver( %p )...",param_2);
-  plVar1 = (long *)*param_1;
-  plVar2 = (long *)param_1[1];
+  FUN_00166450("Walaber",1,"BroadcastManager::_removeReceiver( %p )...");
+  plVar1 = *(long **)p0;
+  plVar2 = *(long **)(p0 + 8);
   if (plVar1 != plVar2) {
     lVar3 = *plVar1;
     plVar4 = plVar1;
     while( true ) {
-      if (lVar3 == param_2) {
+      if (lVar3 == in_x1) {
         FUN_00166450("Walaber",1,"found.  new count %d\n",(ulong)((long)plVar2 - (long)plVar1) >> 3)
         ;
-        lVar3 = param_1[1];
+        lVar3 = *(long *)(p0 + 8);
         if (lVar3 - (long)(plVar4 + 1) != 0) {
           FUN_0016b250(plVar4);
         }
-        param_1[1] = (long)(plVar4 + (lVar3 - (long)(plVar4 + 1) >> 3));
+        *(long **)(p0 + 8) = plVar4 + (lVar3 - (long)(plVar4 + 1) >> 3);
         return;
       }
       plVar4 = plVar4 + 1;
@@ -125,16 +125,16 @@ void Walaber::BroadcastManager::BroadcastManager(undefined8 *param_1)
 
 /* Walaber::BroadcastManager::~BroadcastManager() */
 
-void Walaber::BroadcastManager::~BroadcastManager(long *param_1)
+void Walaber::BroadcastManager::~BroadcastManager(undefined8 *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
   mInstancePtr = 0;
-  lVar1 = *param_1;
-  if (lVar1 != 0) {
-    param_1[1] = lVar1;
-    FUN_00166120(lVar1);
+  p0 = (void *)*param_1;
+  if (p0 != (void *)0x0) {
+    param_1[1] = p0;
+    FUN_00166120(p0);
     return;
   }
   return;
@@ -148,31 +148,30 @@ void Walaber::BroadcastManager::~BroadcastManager(long *param_1)
 
 /* Walaber::BroadcastManager::messageTx(Walaber::Message const&) */
 
-void Walaber::BroadcastManager::messageTx(undefined8 *param_1,long param_2)
+void Walaber::BroadcastManager::messageTx(Walaber__Message *p0)
 
 {
-  long *plVar1;
-  ulong uVar2;
+  ulong uVar1;
+  long in_x1;
+  long *plVar2;
   long *plVar3;
-  long *plVar4;
   
   FUN_00166450("Walaber",1,"BroadcastManager::messageTx( cat:%d, id:%d )...\n",
-               *(undefined4 *)(param_2 + 8),*(undefined4 *)(param_2 + 0xc));
-  plVar4 = (long *)*param_1;
-  plVar3 = (long *)param_1[1];
+               *(undefined4 *)(in_x1 + 8),*(undefined4 *)(in_x1 + 0xc));
+  plVar3 = *(long **)p0;
+  plVar2 = *(long **)(p0 + 8);
   do {
-    if (plVar4 == plVar3) {
+    if (plVar3 == plVar2) {
       return;
     }
-    plVar1 = (long *)*plVar4;
-    if ((*(uint *)(param_2 + 8) & *(uint *)(plVar1 + 1)) != 0) {
-      uVar2 = (**(code **)(*plVar1 + 0x10))(plVar1,param_2);
-      if ((uVar2 & 1) != 0) {
+    if ((*(uint *)(in_x1 + 8) & *(uint *)((long *)*plVar3 + 1)) != 0) {
+      uVar1 = (**(code **)(*(long *)*plVar3 + 0x10))();
+      if ((uVar1 & 1) != 0) {
         return;
       }
-      plVar3 = (long *)param_1[1];
+      plVar2 = *(long **)(p0 + 8);
     }
-    plVar4 = plVar4 + 1;
+    plVar3 = plVar3 + 1;
   } while( true );
 }
 

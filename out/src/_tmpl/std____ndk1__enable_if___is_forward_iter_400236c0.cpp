@@ -12,88 +12,88 @@
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __init<wchar_t*>(ulong *param_1,undefined4 *param_2,undefined4 *param_3)
+     __init<wchar_t*>(wchar_t *p0,wchar_t *p1)
 
 {
   long lVar1;
-  undefined8 *puVar2;
-  undefined8 *puVar3;
-  ulong uVar4;
-  undefined4 *puVar5;
-  undefined4 *puVar6;
+  wchar_t *pwVar2;
+  wchar_t *pwVar3;
+  undefined8 *puVar4;
+  wchar_t *in_x2;
+  ulong uVar5;
+  wchar_t *pwVar6;
   ulong uVar7;
-  undefined8 *puVar8;
-  undefined4 *puVar9;
-  ulong uVar10;
+  wchar_t *pwVar8;
+  ulong uVar9;
+  undefined8 uVar10;
   undefined8 uVar11;
   undefined8 uVar12;
-  undefined8 uVar13;
   
-  uVar10 = (long)param_3 - (long)param_2 >> 2;
-  if (0x3fffffffffffffef < uVar10) {
-    FUN_00164180(param_1);
+  uVar9 = (long)in_x2 - (long)p1 >> 2;
+  if (0x3fffffffffffffef < uVar9) {
+    FUN_00164180(p0);
     return;
   }
-  if (uVar10 < 5) {
-    puVar9 = (undefined4 *)((long)param_1 + 4);
-    *(char *)param_1 = (char)((ulong)((long)param_3 - (long)param_2) >> 1);
+  if (uVar9 < 5) {
+    pwVar3 = p0 + 1;
+    *(char *)p0 = (char)((ulong)((long)in_x2 - (long)p1) >> 1);
   }
   else {
-    if (uVar10 + 4 >> 0x3e != 0) {
-      puVar3 = (undefined8 *)FUN_00168670(0x10);
+    if (uVar9 + 4 >> 0x3e != 0) {
+      puVar4 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e26a0 to 005e26ab has its CatchHandler @ 005e26d4 */
-      func_0x00162cd0(puVar3,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
+      func_0x00162cd0(puVar4,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
                      );
-      *puVar3 = &PTR__logic_error_0071a298;
-      FUN_0016ab10(puVar3,&length_error::typeinfo,logic_error::~logic_error);
+      *puVar4 = &PTR__logic_error_0071a298;
+      FUN_0016ab10(puVar4,&length_error::typeinfo,logic_error::~logic_error);
       return;
     }
-    uVar4 = uVar10 + 4 & 0xfffffffffffffffc;
-    puVar9 = (undefined4 *)FUN_00164060(uVar4 << 2);
-    param_1[1] = uVar10;
-    param_1[2] = (ulong)puVar9;
-    *param_1 = uVar4 | 1;
+    uVar5 = uVar9 + 4 & 0xfffffffffffffffc;
+    pwVar3 = (wchar_t *)FUN_00164060(uVar5 << 2);
+    *(ulong *)(p0 + 2) = uVar9;
+    *(wchar_t **)(p0 + 4) = pwVar3;
+    *(ulong *)p0 = uVar5 | 1;
   }
-  if (param_2 == param_3) goto LAB_005e2634;
-  uVar4 = (long)param_3 + (-4 - (long)param_2);
-  uVar10 = (uVar4 >> 2) + 1;
-  puVar6 = puVar9;
-  if ((uVar10 < 8) ||
-     ((lVar1 = (uVar4 & 0xfffffffffffffffc) + 4, puVar9 < (undefined4 *)((long)param_2 + lVar1) &&
-      (param_2 < (undefined4 *)((long)puVar9 + lVar1))))) {
+  if (p1 == in_x2) goto LAB_005e2634;
+  uVar5 = (long)in_x2 + (-4 - (long)p1);
+  uVar9 = (uVar5 >> 2) + 1;
+  pwVar6 = pwVar3;
+  if ((uVar9 < 8) ||
+     ((lVar1 = (uVar5 & 0xfffffffffffffffc) + 4, pwVar3 < (wchar_t *)((long)p1 + lVar1) &&
+      (p1 < (wchar_t *)((long)pwVar3 + lVar1))))) {
 LAB_005e2620:
     do {
-      puVar5 = param_2 + 1;
-      *puVar6 = *param_2;
-      param_2 = puVar5;
-      puVar6 = puVar6 + 1;
-    } while (param_3 != puVar5);
+      pwVar8 = p1 + 1;
+      *pwVar6 = *p1;
+      p1 = pwVar8;
+      pwVar6 = pwVar6 + 1;
+    } while (in_x2 != pwVar8);
   }
   else {
-    uVar7 = uVar10 & 0x7ffffffffffffff8;
-    puVar3 = (undefined8 *)(puVar9 + 4);
-    puVar8 = (undefined8 *)(param_2 + 4);
-    uVar4 = uVar7;
+    uVar7 = uVar9 & 0x7ffffffffffffff8;
+    pwVar6 = pwVar3 + 4;
+    pwVar8 = p1 + 4;
+    uVar5 = uVar7;
     do {
-      puVar2 = puVar8 + -1;
-      uVar11 = puVar8[-2];
-      uVar13 = puVar8[1];
-      uVar12 = *puVar8;
-      uVar4 = uVar4 - 8;
-      puVar8 = puVar8 + 4;
-      puVar3[-1] = *puVar2;
-      puVar3[-2] = uVar11;
-      puVar3[1] = uVar13;
-      *puVar3 = uVar12;
-      puVar3 = puVar3 + 4;
-    } while (uVar4 != 0);
-    param_2 = param_2 + uVar7;
-    puVar6 = puVar9 + uVar7;
-    if (uVar10 != uVar7) goto LAB_005e2620;
+      pwVar2 = pwVar8 + -2;
+      uVar10 = *(undefined8 *)(pwVar8 + -4);
+      uVar12 = *(undefined8 *)(pwVar8 + 2);
+      uVar11 = *(undefined8 *)pwVar8;
+      uVar5 = uVar5 - 8;
+      pwVar8 = pwVar8 + 8;
+      *(undefined8 *)(pwVar6 + -2) = *(undefined8 *)pwVar2;
+      *(undefined8 *)(pwVar6 + -4) = uVar10;
+      *(undefined8 *)(pwVar6 + 2) = uVar12;
+      *(undefined8 *)pwVar6 = uVar11;
+      pwVar6 = pwVar6 + 8;
+    } while (uVar5 != 0);
+    p1 = p1 + uVar7;
+    pwVar6 = pwVar3 + uVar7;
+    if (uVar9 != uVar7) goto LAB_005e2620;
   }
-  puVar9 = puVar9 + uVar10;
+  pwVar3 = pwVar3 + uVar9;
 LAB_005e2634:
-  *puVar9 = 0;
+  *pwVar3 = L'\0';
   return;
 }
 

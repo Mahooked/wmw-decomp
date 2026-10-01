@@ -19,8 +19,8 @@ void Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_InAppPurcha
   if ((plVar2 != (long *)0x0) &&
      (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
     (**(code **)(*plVar2 + 8))();
-    if (param_1[1] != 0) {
-      FUN_00166120();
+    if ((void *)param_1[1] != (void *)0x0) {
+      FUN_00166120((void *)param_1[1]);
       return;
     }
   }

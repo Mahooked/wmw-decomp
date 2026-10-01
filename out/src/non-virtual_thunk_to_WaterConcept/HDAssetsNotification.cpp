@@ -28,8 +28,8 @@ void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotificat
 
 {
   func_0x001706b0();
-  func_0x00172080(param_1 + -0x1e8);
-  FUN_00166120(param_1 + -0x1e8);
+  func_0x00172080((void *)(param_1 + -0x1e8));
+  FUN_00166120((void *)(param_1 + -0x1e8));
   return;
 }
 
@@ -41,10 +41,10 @@ void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotificat
 
 /* non-virtual thunk to WaterConcept::HDAssetsNotification::messageRx(Walaber::Message const&) */
 
-void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::messageRx(long param_1)
+void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
 
 {
-  func_0x0016fbf0(param_1 + -0x1e8);
+  func_0x0016fbf0(p0 + -0x1e8);
   return;
 }
 

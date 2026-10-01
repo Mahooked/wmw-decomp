@@ -16,37 +16,41 @@
 
 long std::__ndk1::
      __tree<Walaber::Widget_Group::WidgetInfo,std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>,std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>
-     ::__emplace_multi<Walaber::Widget_Group::WidgetInfo_const&>(long param_1,ulong *param_2)
+     ::__emplace_multi<Walaber::Widget_Group::WidgetInfo_const&>
+               (Walaber__Widget_Group__WidgetInfo *p0)
 
 {
   ulong uVar1;
   ulong uVar2;
-  long *plVar3;
+  Walaber__Widget_Group__WidgetInfo *pWVar3;
   long lVar4;
-  long *plVar5;
-  long *plVar6;
+  ulong *in_x1;
+  Walaber__Widget_Group__WidgetInfo *pWVar5;
+  Walaber__Widget_Group__WidgetInfo *pWVar6;
   
   lVar4 = FUN_00164060(0x30);
-  uVar1 = *param_2;
-  uVar2 = param_2[1];
+  uVar1 = *in_x1;
+  uVar2 = in_x1[1];
   *(ulong *)(lVar4 + 0x20) = uVar1;
   *(ulong *)(lVar4 + 0x28) = uVar2;
-  plVar5 = (long *)(param_1 + 8);
-  plVar3 = (long *)*plVar5;
-  plVar6 = plVar5;
-  if ((long *)*plVar5 != (long *)0x0) {
+  pWVar5 = p0 + 8;
+  pWVar3 = *(Walaber__Widget_Group__WidgetInfo **)pWVar5;
+  pWVar6 = pWVar5;
+  if (*(Walaber__Widget_Group__WidgetInfo **)pWVar5 != (Walaber__Widget_Group__WidgetInfo *)0x0) {
     do {
-      while (plVar5 = plVar3, uVar1 < (ulong)plVar5[4]) {
-        plVar3 = (long *)*plVar5;
-        plVar6 = plVar5;
-        if ((long *)*plVar5 == (long *)0x0) goto LAB_00379908;
+      while (pWVar5 = pWVar3, uVar1 < *(ulong *)(pWVar5 + 0x20)) {
+        pWVar3 = *(Walaber__Widget_Group__WidgetInfo **)pWVar5;
+        pWVar6 = pWVar5;
+        if (*(Walaber__Widget_Group__WidgetInfo **)pWVar5 ==
+            (Walaber__Widget_Group__WidgetInfo *)0x0) goto LAB_00379908;
       }
-      plVar3 = (long *)plVar5[1];
-    } while ((long *)plVar5[1] != (long *)0x0);
-    plVar6 = plVar5 + 1;
+      pWVar3 = *(Walaber__Widget_Group__WidgetInfo **)(pWVar5 + 8);
+    } while (*(Walaber__Widget_Group__WidgetInfo **)(pWVar5 + 8) !=
+             (Walaber__Widget_Group__WidgetInfo *)0x0);
+    pWVar6 = pWVar5 + 8;
   }
 LAB_00379908:
-  func_0x00168b40(param_1,plVar5,plVar6,lVar4);
+  func_0x00168b40(p0,pWVar5,pWVar6,lVar4);
   return lVar4;
 }
 

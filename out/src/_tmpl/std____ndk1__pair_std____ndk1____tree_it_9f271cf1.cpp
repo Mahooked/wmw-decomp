@@ -19,39 +19,42 @@ undefined1  [16]
 std::__ndk1::
 __tree<WaterConceptConstants::FluidType,std::__ndk1::less<WaterConceptConstants::FluidType>,std::__ndk1::allocator<WaterConceptConstants::FluidType>>
 ::__emplace_unique_key_args<WaterConceptConstants::FluidType,WaterConceptConstants::FluidType>
-          (long param_1,int *param_2,undefined4 *param_3)
+          (WaterConceptConstants__FluidType *p0,WaterConceptConstants__FluidType **p1)
 
 {
   bool bVar1;
-  long *plVar2;
-  long *plVar3;
-  long *plVar4;
+  WaterConceptConstants__FluidType *pWVar2;
+  undefined4 *in_x2;
+  WaterConceptConstants__FluidType *pWVar3;
+  WaterConceptConstants__FluidType *pWVar4;
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
-  plVar4 = plVar3;
-  if ((long *)*plVar3 != (long *)0x0) {
-    plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+  pWVar3 = p0 + 8;
+  pWVar4 = pWVar3;
+  if (*(WaterConceptConstants__FluidType **)pWVar3 != (WaterConceptConstants__FluidType *)0x0) {
+    pWVar2 = *(WaterConceptConstants__FluidType **)pWVar3;
+    pWVar4 = p0 + 8;
     do {
-      while (plVar3 = plVar2, *param_2 < *(int *)((long)plVar3 + 0x1c)) {
-        plVar2 = (long *)*plVar3;
-        plVar4 = plVar3;
-        if ((long *)*plVar3 == (long *)0x0) goto LAB_0042ec60;
+      while (pWVar3 = pWVar2, *(int *)p1 < *(int *)(pWVar3 + 0x1c)) {
+        pWVar2 = *(WaterConceptConstants__FluidType **)pWVar3;
+        pWVar4 = pWVar3;
+        if (*(WaterConceptConstants__FluidType **)pWVar3 == (WaterConceptConstants__FluidType *)0x0)
+        goto LAB_0042ec60;
       }
-      if (*param_2 <= *(int *)((long)plVar3 + 0x1c)) break;
-      plVar4 = plVar3 + 1;
-      plVar2 = (long *)*plVar4;
-    } while ((long *)*plVar4 != (long *)0x0);
+      if (*(int *)p1 <= *(int *)(pWVar3 + 0x1c)) break;
+      pWVar4 = pWVar3 + 8;
+      pWVar2 = *(WaterConceptConstants__FluidType **)pWVar4;
+    } while (*(WaterConceptConstants__FluidType **)pWVar4 != (WaterConceptConstants__FluidType *)0x0
+            );
   }
 LAB_0042ec60:
-  lVar5 = *plVar4;
+  lVar5 = *(long *)pWVar4;
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = FUN_00164060(0x20);
-    *(undefined4 *)(lVar5 + 0x1c) = *param_3;
-    func_0x00171340(param_1,plVar3,plVar4,lVar5);
+    *(undefined4 *)(lVar5 + 0x1c) = *in_x2;
+    func_0x00171340(p0,pWVar3,pWVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;

@@ -13,67 +13,70 @@
 
 void std::__ndk1::
      vector<WaterConcept::GameState::Goal,std::__ndk1::allocator<WaterConcept::GameState::Goal>>::
-     __push_back_slow_path<WaterConcept::GameState::Goal_const&>(long *param_1,undefined8 *param_2)
+     __push_back_slow_path<WaterConcept::GameState::Goal_const&>(WaterConcept__GameState__Goal *p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
-  long lVar6;
-  undefined8 uVar7;
+  void *pvVar6;
+  long lVar7;
   undefined8 uVar8;
-  long lStack_60;
-  long lStack_58;
+  undefined8 uVar9;
+  void *pvStack_60;
+  void *pvStack_58;
   undefined8 *puStack_50;
-  long lStack_48;
+  undefined8 uStack_48;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar7 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;
   uVar5 = 0xaaaaaaaaaaaaaaa;
-  if (((ulong)(lVar6 * -0x5555555555555555) < 0x555555555555555) &&
-     (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
+  if (((ulong)(lVar7 * -0x5555555555555555) < 0x555555555555555) &&
+     (uVar4 = lVar7 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x0016bdf0(&lStack_60,uVar5,lVar3,param_1 + 2);
-  uVar8 = param_2[1];
-  uVar7 = *param_2;
-  puStack_50[2] = param_2[2];
-  puStack_50[1] = uVar8;
-  *puStack_50 = uVar7;
+  func_0x0016bdf0(&pvStack_60,uVar5,lVar3,p0 + 0x10);
+  uVar9 = in_x1[1];
+  uVar8 = *in_x1;
+  puStack_50[2] = in_x1[2];
+  puStack_50[1] = uVar9;
+  *puStack_50 = uVar8;
   puStack_50 = puStack_50 + 3;
-  lStack_60 = *param_1;
-  lVar3 = param_1[1];
-  lVar6 = SUB168(SEXT816(lVar3 - lStack_60) * SEXT816(-0x2aaaaaaaaaaaaaab),8);
-  lStack_58 = lStack_58 + ((lVar6 >> 2) - (lVar6 >> 0x3f)) * 0x18;
-  if (0 < lVar3 - lStack_60) {
+  pvStack_60 = *(void **)p0;
+  pvVar6 = *(void **)(p0 + 8);
+  lVar3 = SUB168(SEXT816((long)pvVar6 - (long)pvStack_60) * SEXT816(-0x2aaaaaaaaaaaaaab),8);
+  pvStack_58 = (void *)((long)pvStack_58 + ((lVar3 >> 2) - (lVar3 >> 0x3f)) * 0x18);
+  if (0 < (long)pvVar6 - (long)pvStack_60) {
     FUN_001715e0();
-    lStack_60 = *param_1;
-    lVar3 = param_1[1];
+    pvStack_60 = *(void **)p0;
+    pvVar6 = *(void **)(p0 + 8);
   }
-  *param_1 = lStack_58;
-  param_1[1] = (long)puStack_50;
-  lVar6 = param_1[2];
-  param_1[2] = lStack_48;
-  puStack_50 = (undefined8 *)lVar3;
-  if (lVar3 != lStack_60) {
+  *(void **)p0 = pvStack_58;
+  *(undefined8 **)(p0 + 8) = puStack_50;
+  uVar8 = *(undefined8 *)(p0 + 0x10);
+  *(undefined8 *)(p0 + 0x10) = uStack_48;
+  puStack_50 = pvVar6;
+  if (pvVar6 != pvStack_60) {
     puStack_50 = (undefined8 *)
-                 (lVar3 + ((ulong)((lVar3 + -0x18) - lStack_60) / 0x18 ^ 0xffffffffffffffff) * 0x18)
-    ;
+                 ((long)pvVar6 +
+                 ((ulong)((long)pvVar6 + (-0x18 - (long)pvStack_60)) / 0x18 ^ 0xffffffffffffffff) *
+                 0x18);
   }
-  lStack_58 = lStack_60;
-  lStack_48 = lVar6;
-  if (lStack_60 != 0) {
-    FUN_00166120(lStack_60);
+  pvStack_58 = pvStack_60;
+  uStack_48 = uVar8;
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

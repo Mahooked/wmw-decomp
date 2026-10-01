@@ -26,8 +26,8 @@ void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(long
 void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(long param_1)
 
 {
-  func_0x0016d3c0(param_1 + -0x90);
-  FUN_00166120(param_1 + -0x90);
+  func_0x0016d3c0((void *)(param_1 + -0x90));
+  FUN_00166120((void *)(param_1 + -0x90));
   return;
 }
 
@@ -40,14 +40,15 @@ void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(long
 /* non-virtual thunk to WaterConcept::Screen_PerryDemo::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::handleEvent(long param_1,int param_2)
+void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::handleEvent
+               (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  if (param_2 == 5) {
-    FUN_00165a20(param_1 + -0x20);
+  if ((int)p1 == 5) {
+    FUN_00165a20((ulong)(uint)p0 - 0x20);
     return;
   }
-  if (param_2 == 4) {
+  if ((int)p1 == 4) {
     func_0x001644e0();
     return;
   }
@@ -62,10 +63,10 @@ void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::handleEvent(long param
 
 /* non-virtual thunk to WaterConcept::Screen_PerryDemo::messageRx(Walaber::Message const&) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::messageRx(long param_1)
+void non_virtual_thunk_to_WaterConcept::Screen_PerryDemo::messageRx(Walaber__Message *p0)
 
 {
-  func_0x00174260(param_1 + -0x90);
+  func_0x00174260(p0 + -0x90);
   return;
 }
 

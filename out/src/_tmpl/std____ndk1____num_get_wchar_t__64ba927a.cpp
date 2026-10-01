@@ -206,12 +206,11 @@ LAB_005b95d4:
    wchar_t&) */
 
 void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined4 *param_4,
-               undefined4 *param_5)
+               (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
 
 {
   long lVar1;
-  undefined4 uVar2;
+  wchar_t wVar2;
   long *plVar3;
   undefined8 uStack_50;
   long lStack_48;
@@ -221,14 +220,14 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
   func_0x00168710(&uStack_50);
                     /* try { // try from 005b9d0c to 005b9d37 has its CatchHandler @ 005b9db8 */
   plVar3 = (long *)FUN_001661d0(&uStack_50,&ctype<wchar_t>::id);
-  (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","",param_3);
+  (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","",p1);
                     /* try { // try from 005b9d38 to 005b9d83 has its CatchHandler @ 005b9dbc */
   plVar3 = (long *)FUN_001661d0(&uStack_50,&numpunct<wchar_t>::id);
-  uVar2 = (**(code **)(*plVar3 + 0x18))();
-  *param_4 = uVar2;
-  uVar2 = (**(code **)(*plVar3 + 0x20))(plVar3);
-  *param_5 = uVar2;
-  (**(code **)(*plVar3 + 0x28))(param_1,plVar3);
+  wVar2 = (**(code **)(*plVar3 + 0x18))();
+  *p2 = wVar2;
+  wVar2 = (**(code **)(*plVar3 + 0x20))(plVar3);
+  *p3 = wVar2;
+  (**(code **)(*plVar3 + 0x28))(plVar3);
   FUN_00166dc0(uStack_50);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -455,11 +454,11 @@ LAB_005ba144:
 /* std::__ndk1::__num_get<wchar_t>::__stage2_int_prep(std::__ndk1::ios_base&, wchar_t*, wchar_t&) */
 
 void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined4 *param_4)
+               (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2)
 
 {
   long lVar1;
-  undefined4 uVar2;
+  wchar_t wVar2;
   long *plVar3;
   undefined8 uStack_40;
   long lStack_38;
@@ -469,12 +468,12 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
   func_0x00168710(&uStack_40);
                     /* try { // try from 005ba290 to 005ba2bb has its CatchHandler @ 005ba324 */
   plVar3 = (long *)FUN_001661d0(&uStack_40,&ctype<wchar_t>::id);
-  (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",param_3);
+  (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",p1);
                     /* try { // try from 005ba2bc to 005ba2f3 has its CatchHandler @ 005ba328 */
   plVar3 = (long *)FUN_001661d0(&uStack_40,&numpunct<wchar_t>::id);
-  uVar2 = (**(code **)(*plVar3 + 0x20))();
-  *param_4 = uVar2;
-  (**(code **)(*plVar3 + 0x28))(param_1,plVar3);
+  wVar2 = (**(code **)(*plVar3 + 0x20))();
+  *p2 = wVar2;
+  (**(code **)(*plVar3 + 0x28))(plVar3);
   FUN_00166dc0(uStack_40);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;

@@ -14,11 +14,12 @@
 void std::__ndk1::
      vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
      ::__push_back_slow_path<WaterConcept::Screen_InAppPurchase::product_const&>
-               (long *param_1,long param_2)
+               (WaterConcept__Screen_InAppPurchase__product *p0)
 
 {
   ulong uVar1;
   long lVar2;
+  long in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -29,27 +30,27 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 4;
+  lVar6 = *(long *)(p0 + 0x10) - *(long *)p0 >> 4;
   uVar5 = 0x555555555555555;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x001640f0(auStack_60,uVar5,lVar3,param_1 + 2);
+  func_0x001640f0(auStack_60,uVar5,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 004ecaa0 to 004ecaab has its CatchHandler @ 004ecb20 */
-  func_0x0016f720(lStack_50,param_2);
+  func_0x0016f720(lStack_50);
                     /* try { // try from 004ecab4 to 004ecab7 has its CatchHandler @ 004ecb08 */
-  func_0x0016f720(lVar3 + 0x18,param_2 + 0x18);
+  func_0x0016f720(lVar3 + 0x18,in_x1 + 0x18);
   lStack_50 = lStack_50 + 0x30;
                     /* try { // try from 004ecac4 to 004ecacf has its CatchHandler @ 004ecb20 */
-  func_0x00163920(param_1,auStack_60);
+  func_0x00163920(p0,auStack_60);
   func_0x00173100(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

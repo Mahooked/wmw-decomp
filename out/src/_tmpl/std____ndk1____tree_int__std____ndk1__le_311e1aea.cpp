@@ -59,18 +59,18 @@ void std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>
    >::erase(std::__ndk1::__tree_const_iterator<int, std::__ndk1::__tree_node<int, void*>*, long>) */
 
 long * std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int>>::erase
-                 (long *param_1,long param_2)
+                 (undefined8 *param_1,void *param_2)
 
 {
   long *plVar1;
   long lVar2;
   long *plVar3;
   
-  plVar1 = *(long **)(param_2 + 8);
-  if (*(long **)(param_2 + 8) == (long *)0x0) {
-    plVar1 = (long *)(param_2 + 0x10);
+  plVar1 = *(long **)((long)param_2 + 8);
+  if (*(long **)((long)param_2 + 8) == (long *)0x0) {
+    plVar1 = (long *)((long)param_2 + 0x10);
     plVar3 = (long *)*plVar1;
-    if (*plVar3 != param_2) {
+    if ((void *)*plVar3 != param_2) {
       do {
         lVar2 = *plVar1;
         plVar1 = (long *)(lVar2 + 0x10);
@@ -84,8 +84,8 @@ long * std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int
       plVar1 = (long *)*plVar3;
     } while ((long *)*plVar3 != (long *)0x0);
   }
-  if (*param_1 == param_2) {
-    *param_1 = (long)plVar3;
+  if ((void *)*param_1 == param_2) {
+    *param_1 = plVar3;
   }
   param_1[2] = param_1[2] + -1;
   func_0x00170610(param_1[1],param_2);

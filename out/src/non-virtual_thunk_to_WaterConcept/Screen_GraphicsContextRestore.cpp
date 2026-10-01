@@ -9,10 +9,11 @@
 /* non-virtual thunk to WaterConcept::Screen_GraphicsContextRestore::handleEvent(int,
    Walaber::Widget::WidgetActionRet const&, Walaber::Widget*) */
 
-void non_virtual_thunk_to_WaterConcept::Screen_GraphicsContextRestore::handleEvent(void)
+int non_virtual_thunk_to_WaterConcept::Screen_GraphicsContextRestore::handleEvent
+              (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  return;
+  return p0;
 }
 
 

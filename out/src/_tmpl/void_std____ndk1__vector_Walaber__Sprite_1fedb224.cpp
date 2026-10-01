@@ -14,11 +14,12 @@
 void std::__ndk1::
      vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>
      ::__push_back_slow_path<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__SpriteAnimationTrack__SpriteAnimationEvent **p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -31,32 +32,32 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0x3333333333333333;
+  lVar3 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0x666666666666666 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar6 = (long)p0[2] - (long)*p0 >> 3;
   uVar5 = 0x666666666666666;
   if (((ulong)(lVar6 * -0x3333333333333333) < 0x333333333333333) &&
      (uVar4 = lVar6 * -0x6666666666666666, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x0016afe0(auStack_60,uVar5,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  uVar8 = param_2[2];
-  uVar7 = param_2[1];
-  puStack_50[3] = param_2[3];
+  func_0x0016afe0(auStack_60,uVar5,lVar3,p0 + 2);
+  *puStack_50 = *in_x1;
+  uVar8 = in_x1[2];
+  uVar7 = in_x1[1];
+  puStack_50[3] = in_x1[3];
   puStack_50[2] = uVar8;
   puStack_50[1] = uVar7;
-  param_2[2] = 0;
-  param_2[3] = 0;
-  param_2[1] = 0;
-  *(undefined2 *)(puStack_50 + 4) = *(undefined2 *)(param_2 + 4);
+  in_x1[2] = 0;
+  in_x1[3] = 0;
+  in_x1[1] = 0;
+  *(undefined2 *)(puStack_50 + 4) = *(undefined2 *)(in_x1 + 4);
   puStack_50 = puStack_50 + 5;
                     /* try { // try from 00335534 to 0033553f has its CatchHandler @ 00335578 */
-  func_0x00170210(param_1,auStack_60);
+  func_0x00170210(p0,auStack_60);
   func_0x00162d00(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

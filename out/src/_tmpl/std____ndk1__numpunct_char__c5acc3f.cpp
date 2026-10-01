@@ -8,15 +8,17 @@
 
 /* std::__ndk1::numpunct<char>::numpunct(unsigned long) */
 
-void std::__ndk1::numpunct<char>::numpunct(undefined8 *param_1,long param_2)
+void std::__ndk1::numpunct<char>::numpunct(ulong p0)
 
 {
-  param_1[4] = 0;
-  param_1[5] = 0;
-  *(undefined2 *)(param_1 + 2) = 0x2c2e;
-  *param_1 = &PTR__numpunct_byname_00717928;
-  param_1[1] = param_2 + -1;
-  param_1[3] = 0;
+  long in_x1;
+  
+  *(undefined8 *)(p0 + 0x20) = 0;
+  *(undefined8 *)(p0 + 0x28) = 0;
+  *(undefined2 *)(p0 + 0x10) = 0x2c2e;
+  *(undefined ***)p0 = &PTR__numpunct_byname_00717928;
+  *(long *)(p0 + 8) = in_x1 + -1;
+  *(undefined8 *)(p0 + 0x18) = 0;
   return;
 }
 
@@ -33,7 +35,7 @@ void std::__ndk1::numpunct<char>::~numpunct(undefined8 *param_1)
 {
   *param_1 = &PTR__numpunct_byname_00717928;
   if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    FUN_00166120(param_1[5]);
+    FUN_00166120((void *)param_1[5]);
   }
   FUN_00172660(param_1);
   FUN_00166120(param_1);

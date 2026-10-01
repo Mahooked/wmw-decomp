@@ -44,42 +44,43 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (ulong *param_1,undefined8 param_2,ulong param_3)
+               (wchar_t *p0,ulong p1)
 
 {
-  undefined8 *puVar1;
-  undefined1 *puVar2;
+  wchar_t *pwVar1;
+  undefined8 *puVar2;
+  ulong in_x2;
   ulong uVar3;
   
-  if (0x3fffffffffffffef < param_3) {
-    FUN_00164180(param_1);
+  if (0x3fffffffffffffef < in_x2) {
+    FUN_00164180(p0);
     return;
   }
-  if (param_3 < 5) {
-    puVar2 = (undefined1 *)((long)param_1 + 4);
-    *(char *)param_1 = (char)((int)param_3 << 1);
-    if (param_3 == 0) goto LAB_005e7174;
+  if (in_x2 < 5) {
+    pwVar1 = p0 + 1;
+    *(char *)p0 = (char)((int)in_x2 << 1);
+    if (in_x2 == 0) goto LAB_005e7174;
   }
   else {
-    if (param_3 + 4 >> 0x3e != 0) {
-      puVar1 = (undefined8 *)FUN_00168670(0x10);
+    if (in_x2 + 4 >> 0x3e != 0) {
+      puVar2 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e719c to 005e71a7 has its CatchHandler @ 005e71d0 */
-      func_0x00162cd0(puVar1,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
+      func_0x00162cd0(puVar2,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
                      );
-      *puVar1 = &PTR__logic_error_0071a298;
-      FUN_0016ab10(puVar1,&length_error::typeinfo,logic_error::~logic_error);
+      *puVar2 = &PTR__logic_error_0071a298;
+      FUN_0016ab10(puVar2,&length_error::typeinfo,logic_error::~logic_error);
       return;
     }
-    uVar3 = param_3 + 4 & 0xfffffffffffffffc;
-    puVar2 = (undefined1 *)FUN_00164060(uVar3 << 2);
-    param_1[1] = param_3;
-    param_1[2] = (ulong)puVar2;
-    *param_1 = uVar3 | 1;
+    uVar3 = in_x2 + 4 & 0xfffffffffffffffc;
+    pwVar1 = (wchar_t *)FUN_00164060(uVar3 << 2);
+    *(ulong *)(p0 + 2) = in_x2;
+    *(wchar_t **)(p0 + 4) = pwVar1;
+    *(ulong *)p0 = uVar3 | 1;
   }
                     /* try { // try from 005e7164 to 005e7173 has its CatchHandler @ 005e71e4 */
-  func_0x00173f40(puVar2,param_2,param_3);
+  func_0x00173f40(pwVar1,p1);
 LAB_005e7174:
-  *(undefined4 *)(puVar2 + param_3 * 4) = 0;
+  pwVar1[in_x2] = L'\0';
   return;
 }
 
@@ -123,47 +124,41 @@ void std::__ndk1::
 /* mangled: _ZNSt6__ndk112basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEE6__initEmw */
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(unsigned long, wchar_t) */
 
+/* WARNING: Removing unreachable block (ram,0x005e7320) */
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::__init(unsigned long, wchar_t) */
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (ulong *param_1,ulong param_2,undefined4 param_3)
+               (ulong p0,wchar_t p1)
 
 {
-  undefined8 *puVar1;
-  undefined1 *puVar2;
+  ulong uVar1;
+  undefined4 in_w2;
+  long lVar2;
   ulong uVar3;
   
-  if (0x3fffffffffffffef < param_2) {
-    FUN_00164180(param_1);
+  uVar1 = (ulong)(uint)p1;
+  if (0x3fffffffffffffef < uVar1) {
+    FUN_00164180(p0);
     return;
   }
-  if (param_2 < 5) {
-    puVar2 = (undefined1 *)((long)param_1 + 4);
-    *(char *)param_1 = (char)((int)param_2 << 1);
-    if (param_2 == 0) goto LAB_005e7304;
+  if (uVar1 < 5) {
+    lVar2 = p0 + 4;
+    *(char *)p0 = (char)(p1 << 1);
+    if (uVar1 == 0) goto LAB_005e7304;
   }
   else {
-    if (param_2 + 4 >> 0x3e != 0) {
-      puVar1 = (undefined8 *)FUN_00168670(0x10);
-                    /* try { // try from 005e732c to 005e7337 has its CatchHandler @ 005e7360 */
-      func_0x00162cd0(puVar1,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
-                     );
-      *puVar1 = &PTR__logic_error_0071a298;
-      FUN_0016ab10(puVar1,&length_error::typeinfo,logic_error::~logic_error);
-      return;
-    }
-    uVar3 = param_2 + 4 & 0xfffffffffffffffc;
-    puVar2 = (undefined1 *)FUN_00164060(uVar3 << 2);
-    param_1[1] = param_2;
-    param_1[2] = (ulong)puVar2;
-    *param_1 = uVar3 | 1;
+    uVar3 = uVar1 + 4 & 0xfffffffffffffffc;
+    lVar2 = FUN_00164060(uVar3 << 2);
+    *(ulong *)(p0 + 8) = uVar1;
+    *(long *)(p0 + 0x10) = lVar2;
+    *(ulong *)p0 = uVar3 | 1;
   }
                     /* try { // try from 005e72f4 to 005e7303 has its CatchHandler @ 005e7374 */
-  func_0x00165860(puVar2,param_3,param_2);
+  func_0x00165860(lVar2,in_w2,uVar1);
 LAB_005e7304:
-  *(undefined4 *)(puVar2 + param_2 * 4) = 0;
+  *(undefined4 *)(lVar2 + uVar1 * 4) = 0;
   return;
 }
 
@@ -229,7 +224,7 @@ void std::__ndk1::
   if ((*param_1 & 1) == 0) {
     return;
   }
-  FUN_00166120(*(undefined8 *)(param_1 + 0x10));
+  FUN_00166120(*(void **)(param_1 + 0x10));
   return;
 }
 
@@ -272,57 +267,54 @@ byte * std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::assign(wchar_t const*, unsigned long) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        assign(ulong *param_1,undefined8 param_2,ulong param_3)
+wchar_t * std::__ndk1::
+          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+          assign(wchar_t *p0,ulong p1)
 
 {
   byte bVar1;
   ulong uVar2;
+  ulong in_x2;
   ulong uVar3;
-  byte *pbVar4;
+  wchar_t *pwVar4;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = (byte)*p0;
   if ((bVar1 & 1) == 0) {
     uVar2 = 4;
-    if (4 < param_3) {
+    if (4 < in_x2) {
 LAB_005e7544:
       if ((bVar1 & 1) == 0) {
         uVar3 = (ulong)(bVar1 >> 1);
       }
       else {
-        uVar3 = param_1[1];
+        uVar3 = *(ulong *)(p0 + 2);
       }
-      func_0x001737c0(param_1,uVar2,param_3 - uVar2,uVar3,0,uVar3,param_3);
-      return param_1;
+      func_0x001737c0(p0,uVar2,in_x2 - uVar2,uVar3,0,uVar3);
+      return p0;
     }
   }
   else {
-    uVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
-    if (uVar2 < param_3) goto LAB_005e7544;
+    uVar2 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
+    if (uVar2 < in_x2) goto LAB_005e7544;
   }
   if ((bVar1 & 1) == 0) {
-    pbVar4 = (byte *)((long)param_1 + 4);
+    pwVar4 = p0 + 1;
   }
   else {
-    pbVar4 = (byte *)param_1[2];
+    pwVar4 = *(wchar_t **)(p0 + 4);
   }
-  if (param_3 != 0) {
+  if (in_x2 != 0) {
                     /* try { // try from 005e7558 to 005e7567 has its CatchHandler @ 005e75b8 */
-    FUN_00165710(pbVar4,param_2,param_3);
+    FUN_00165710(pwVar4,p1);
   }
-  pbVar4 = pbVar4 + param_3 * 4;
-  pbVar4[0] = 0;
-  pbVar4[1] = 0;
-  pbVar4[2] = 0;
-  pbVar4[3] = 0;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)param_3 << 1);
+  pwVar4[in_x2] = L'\0';
+  if ((*p0 & L'\x01') == L'\0') {
+    *(char *)p0 = (char)((int)in_x2 << 1);
   }
   else {
-    param_1[1] = param_3;
+    *(ulong *)(p0 + 2) = in_x2;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -336,13 +328,11 @@ LAB_005e7544:
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign
-               (undefined8 param_1,undefined8 param_2)
+               (wchar_t *p0)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00172dd0(param_2);
-  FUN_0016fd50(param_1,param_2,uVar1);
+  FUN_00172dd0();
+  FUN_0016fd50(p0);
   return;
 }
 
@@ -357,31 +347,34 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     operator=(byte *param_1,undefined4 param_2)
+     operator=(wchar_t p0)
 
 {
-  undefined4 *puVar1;
+  byte *pbVar1;
+  undefined4 in_w1;
+  undefined4 *puVar2;
   
-  if ((*param_1 & 1) == 0) {
-    *param_1 = 2;
-    *(undefined4 *)(param_1 + 4) = param_2;
-    param_1[8] = 0;
-    param_1[9] = 0;
-    param_1[10] = 0;
-    param_1[0xb] = 0;
+  pbVar1 = (byte *)(ulong)(uint)p0;
+  if ((*pbVar1 & 1) == 0) {
+    *pbVar1 = 2;
+    *(undefined4 *)(pbVar1 + 4) = in_w1;
+    pbVar1[8] = 0;
+    pbVar1[9] = 0;
+    pbVar1[10] = 0;
+    pbVar1[0xb] = 0;
     return;
   }
-  puVar1 = *(undefined4 **)(param_1 + 0x10);
-  param_1[8] = 1;
-  param_1[9] = 0;
-  param_1[10] = 0;
-  param_1[0xb] = 0;
-  param_1[0xc] = 0;
-  param_1[0xd] = 0;
-  param_1[0xe] = 0;
-  param_1[0xf] = 0;
-  *puVar1 = param_2;
-  puVar1[1] = 0;
+  puVar2 = *(undefined4 **)(pbVar1 + 0x10);
+  pbVar1[8] = 1;
+  pbVar1[9] = 0;
+  pbVar1[10] = 0;
+  pbVar1[0xb] = 0;
+  pbVar1[0xc] = 0;
+  pbVar1[0xd] = 0;
+  pbVar1[0xe] = 0;
+  pbVar1[0xf] = 0;
+  *puVar2 = in_w1;
+  puVar2[1] = 0;
   return;
 }
 
@@ -396,35 +389,32 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::resize
-               (byte *param_1,ulong param_2)
+               (ulong p0,wchar_t p1)
 
 {
-  byte *pbVar1;
-  byte bVar2;
+  byte bVar1;
+  ulong uVar2;
   ulong uVar3;
   
-  bVar2 = *param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar3 = (ulong)(bVar2 >> 1);
+  uVar2 = (ulong)(uint)p1;
+  bVar1 = *(byte *)p0;
+  if ((bVar1 & 1) == 0) {
+    uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (param_2 <= uVar3) {
-    if ((bVar2 & 1) != 0) {
-      *(undefined4 *)(*(long *)(param_1 + 0x10) + param_2 * 4) = 0;
-      *(ulong *)(param_1 + 8) = param_2;
+  if (uVar2 <= uVar3) {
+    if ((bVar1 & 1) != 0) {
+      *(undefined4 *)(*(long *)(p0 + 0x10) + uVar2 * 4) = 0;
+      *(ulong *)(p0 + 8) = uVar2;
       return;
     }
-    pbVar1 = param_1 + param_2 * 4 + 4;
-    pbVar1[0] = 0;
-    pbVar1[1] = 0;
-    pbVar1[2] = 0;
-    pbVar1[3] = 0;
-    *param_1 = (byte)((int)param_2 << 1);
+    *(undefined4 *)(p0 + uVar2 * 4 + 4) = 0;
+    *(char *)p0 = (char)(p1 << 1);
     return;
   }
-  FUN_0016ef80(param_1,param_2 - uVar3);
+  FUN_0016ef80(p0,uVar2 - uVar3);
   return;
 }
 
@@ -437,50 +427,54 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::append(unsigned long, wchar_t) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        append(ulong *param_1,ulong param_2,undefined4 param_3)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      append(ulong p0,wchar_t p1)
 
 {
-  byte bVar1;
-  long lVar2;
+  long lVar1;
+  byte bVar2;
   ulong uVar3;
-  ulong uVar4;
+  long lVar4;
+  undefined4 in_w2;
+  ulong uVar5;
+  ulong uVar6;
   
-  if (param_2 != 0) {
-    bVar1 = (byte)*param_1;
-    uVar3 = (ulong)bVar1;
-    if ((bVar1 & 1) == 0) {
-      uVar4 = (ulong)(bVar1 >> 1);
-      lVar2 = 4;
+  uVar3 = (ulong)(uint)p1;
+  if (uVar3 != 0) {
+    bVar2 = *(byte *)p0;
+    uVar5 = (ulong)bVar2;
+    if ((bVar2 & 1) == 0) {
+      uVar6 = (ulong)(bVar2 >> 1);
+      lVar4 = 4;
     }
     else {
-      uVar3 = *param_1;
-      uVar4 = param_1[1];
-      lVar2 = (uVar3 & 0xfffffffffffffffe) - 1;
+      uVar5 = *(ulong *)p0;
+      uVar6 = *(ulong *)(p0 + 8);
+      lVar4 = (uVar5 & 0xfffffffffffffffe) - 1;
     }
-    if (lVar2 - uVar4 < param_2) {
-      FUN_00165770(param_1,lVar2,(uVar4 + param_2) - lVar2,uVar4,uVar4,0,0);
-      uVar3 = (ulong)(byte)*param_1;
+    if (lVar4 - uVar6 < uVar3) {
+      FUN_00165770(p0,lVar4,(uVar6 + uVar3) - lVar4,uVar6,uVar6,0,0);
+      uVar5 = (ulong)*(byte *)p0;
     }
-    if ((uVar3 & 1) == 0) {
-      uVar3 = (long)param_1 + 4;
+    if ((uVar5 & 1) == 0) {
+      lVar4 = p0 + 4;
     }
     else {
-      uVar3 = param_1[2];
+      lVar4 = *(long *)(p0 + 0x10);
     }
                     /* try { // try from 005e7a3c to 005e7a47 has its CatchHandler @ 005e7a80 */
-    func_0x00165860(uVar3 + uVar4 * 4,param_3,param_2);
-    uVar4 = uVar4 + param_2;
-    if ((*param_1 & 1) == 0) {
-      *(char *)param_1 = (char)((int)uVar4 << 1);
+    func_0x00165860(lVar4 + uVar6 * 4,in_w2,uVar3);
+    lVar1 = uVar6 + uVar3;
+    if ((*(byte *)p0 & 1) == 0) {
+      *(char *)p0 = (char)((int)lVar1 << 1);
     }
     else {
-      param_1[1] = uVar4;
+      *(long *)(p0 + 8) = lVar1;
     }
-    *(undefined4 *)(uVar3 + uVar4 * 4) = 0;
+    *(undefined4 *)(lVar4 + lVar1 * 4) = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -494,113 +488,115 @@ ulong * std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     reserve(ulong *param_1,ulong param_2)
+     reserve(ulong p0)
 
 {
-  byte bVar1;
-  bool bVar2;
+  ulong uVar1;
+  byte bVar2;
   bool bVar3;
-  undefined8 *puVar4;
-  ulong uVar5;
-  ulong uVar6;
+  bool bVar4;
+  long lVar5;
+  undefined8 *puVar6;
+  ulong in_x1;
   ulong uVar7;
+  void *p0_00;
   ulong uVar8;
   ulong uVar9;
   
-  if (0x3fffffffffffffef < param_2) {
-    FUN_00164180(param_1);
+  if (0x3fffffffffffffef < in_x1) {
+    FUN_00164180(p0);
     return;
   }
-  bVar1 = (byte)*param_1;
-  if ((bVar1 & 1) == 0) {
-    uVar8 = (ulong)(bVar1 >> 1);
-    uVar5 = 4;
+  bVar2 = *(byte *)p0;
+  if ((bVar2 & 1) == 0) {
+    uVar8 = (ulong)(bVar2 >> 1);
+    uVar7 = 4;
   }
   else {
-    uVar8 = param_1[1];
-    uVar5 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar8 = *(ulong *)(p0 + 8);
+    uVar7 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
   uVar9 = uVar8;
-  if (uVar8 <= param_2) {
-    uVar9 = param_2;
+  if (uVar8 <= in_x1) {
+    uVar9 = in_x1;
   }
   if (uVar9 < 5) {
     uVar9 = 4;
-    if (uVar5 == 4) {
+    if (uVar7 == 4) {
       return;
     }
   }
   else {
     uVar9 = (uVar9 + 4 & 0xfffffffffffffffc) - 1;
-    if (uVar9 == uVar5) {
+    if (uVar9 == uVar7) {
       return;
     }
   }
   if (uVar9 == 4) {
-    uVar7 = param_1[2];
-    bVar3 = false;
-    uVar5 = (long)param_1 + 4;
-    if ((bVar1 & 1) == 0) {
-      bVar2 = true;
+    p0_00 = *(void **)(p0 + 0x10);
+    bVar4 = false;
+    lVar5 = p0 + 4;
+    if ((bVar2 & 1) == 0) {
+      bVar3 = true;
 LAB_005e7bf8:
-      uVar6 = (ulong)(bVar1 >> 1);
+      uVar7 = (ulong)(bVar2 >> 1);
       goto joined_r0x005e7c1c;
     }
   }
   else {
-    uVar7 = uVar9 + 1;
-    if (uVar5 < uVar9) {
-      if (uVar7 >> 0x3e != 0) {
-        puVar4 = (undefined8 *)FUN_00168670(0x10);
+    uVar1 = uVar9 + 1;
+    if (uVar7 < uVar9) {
+      if (uVar1 >> 0x3e != 0) {
+        puVar6 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e7c84 to 005e7c8f has its CatchHandler @ 005e7d08 */
-        func_0x00162cd0(puVar4,
+        func_0x00162cd0(puVar6,
                         "allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size");
-        *puVar4 = &PTR__logic_error_0071a298;
-        FUN_0016ab10(puVar4,&length_error::typeinfo,logic_error::~logic_error);
+        *puVar6 = &PTR__logic_error_0071a298;
+        FUN_0016ab10(puVar6,&length_error::typeinfo,logic_error::~logic_error);
         return;
       }
-      uVar5 = FUN_00164060(uVar7 * 4);
+      lVar5 = FUN_00164060(uVar1 * 4);
     }
     else {
-      if (uVar7 >> 0x3e != 0) {
-        puVar4 = (undefined8 *)FUN_00168670(0x10);
+      if (uVar1 >> 0x3e != 0) {
+        puVar6 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e7cc4 to 005e7ccf has its CatchHandler @ 005e7cf8 */
-        func_0x00162cd0(puVar4,
+        func_0x00162cd0(puVar6,
                         "allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size");
-        *puVar4 = &PTR__logic_error_0071a298;
+        *puVar6 = &PTR__logic_error_0071a298;
                     /* try { // try from 005e7ce0 to 005e7cf7 has its CatchHandler @ 005e7d1c */
-        FUN_0016ab10(puVar4,&length_error::typeinfo,logic_error::~logic_error);
+        FUN_0016ab10(puVar6,&length_error::typeinfo,logic_error::~logic_error);
         return;
       }
                     /* try { // try from 005e7be0 to 005e7be3 has its CatchHandler @ 005e7d1c */
-      uVar5 = FUN_00164060(uVar7 * 4);
+      lVar5 = FUN_00164060(uVar1 * 4);
     }
-    if ((bVar1 & 1) == 0) {
-      bVar2 = false;
-      uVar7 = (long)param_1 + 4;
-      bVar3 = true;
+    if ((bVar2 & 1) == 0) {
+      bVar3 = false;
+      p0_00 = (void *)(p0 + 4);
+      bVar4 = true;
       goto LAB_005e7bf8;
     }
-    uVar7 = param_1[2];
-    bVar3 = true;
+    p0_00 = *(void **)(p0 + 0x10);
+    bVar4 = true;
   }
-  uVar6 = param_1[1];
-  bVar2 = true;
+  uVar7 = *(ulong *)(p0 + 8);
+  bVar3 = true;
 joined_r0x005e7c1c:
-  if (uVar6 + 1 != 0) {
+  if (uVar7 + 1 != 0) {
                     /* try { // try from 005e7c20 to 005e7c2b has its CatchHandler @ 005e7d40 */
-    func_0x00173f40(uVar5,uVar7,uVar6 + 1);
-  }
-  if (bVar2) {
-    FUN_00166120(uVar7);
+    func_0x00173f40(lVar5,p0_00,uVar7 + 1);
   }
   if (bVar3) {
-    *param_1 = uVar9 + 1 | 1;
-    param_1[1] = uVar8;
-    param_1[2] = uVar5;
+    FUN_00166120(p0_00);
+  }
+  if (bVar4) {
+    *(ulong *)p0 = uVar9 + 1 | 1;
+    *(ulong *)(p0 + 8) = uVar8;
+    *(long *)(p0 + 0x10) = lVar5;
   }
   else {
-    *(char *)param_1 = (char)((int)uVar8 << 1);
+    *(char *)p0 = (char)((int)uVar8 << 1);
   }
   return;
 }
@@ -614,30 +610,31 @@ joined_r0x005e7c1c:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::at(unsigned long) const */
 
-byte * std::__ndk1::
-       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
-                 (byte *param_1,ulong param_2)
+long std::__ndk1::
+     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
+               (ulong p0)
 
 {
   byte bVar1;
-  byte *pbVar2;
+  long lVar2;
+  ulong in_x1;
   ulong uVar3;
   
-  bVar1 = *param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (uVar3 <= param_2) {
-    pbVar2 = (byte *)FUN_0016ec80();
-    return pbVar2;
+  if (uVar3 <= in_x1) {
+    lVar2 = FUN_0016ec80();
+    return lVar2;
   }
   if ((bVar1 & 1) == 0) {
-    return param_1 + param_2 * 4 + 4;
+    return p0 + 4 + in_x1 * 4;
   }
-  return (byte *)(*(long *)(param_1 + 0x10) + param_2 * 4);
+  return *(long *)(p0 + 0x10) + in_x1 * 4;
 }
 
 
@@ -649,30 +646,31 @@ byte * std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::at(unsigned long) */
 
-byte * std::__ndk1::
-       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
-                 (byte *param_1,ulong param_2)
+long std::__ndk1::
+     basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::at
+               (ulong p0)
 
 {
   byte bVar1;
-  byte *pbVar2;
+  long lVar2;
+  ulong in_x1;
   ulong uVar3;
   
-  bVar1 = *param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
+    uVar3 = *(ulong *)(p0 + 8);
   }
-  if (uVar3 <= param_2) {
-    pbVar2 = (byte *)FUN_0016ec80();
-    return pbVar2;
+  if (uVar3 <= in_x1) {
+    lVar2 = FUN_0016ec80();
+    return lVar2;
   }
   if ((bVar1 & 1) == 0) {
-    return param_1 + param_2 * 4 + 4;
+    return p0 + 4 + in_x1 * 4;
   }
-  return (byte *)(*(long *)(param_1 + 0x10) + param_2 * 4);
+  return *(long *)(p0 + 0x10) + in_x1 * 4;
 }
 
 
@@ -686,13 +684,11 @@ byte * std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append
-               (undefined8 param_1,undefined8 param_2)
+               (wchar_t *p0)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00172dd0(param_2);
-  FUN_00170940(param_1,param_2,uVar1);
+  FUN_00172dd0();
+  FUN_00170940(p0);
   return;
 }
 
@@ -707,38 +703,41 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     push_back(ulong *param_1,undefined4 param_2)
+     push_back(wchar_t p0)
 
 {
   undefined4 *puVar1;
-  ulong uVar2;
-  byte bVar3;
-  ulong uVar4;
+  ulong *puVar2;
+  undefined4 in_w1;
+  ulong uVar3;
+  byte bVar4;
+  ulong uVar5;
   
-  bVar3 = (byte)*param_1;
-  if ((bVar3 & 1) == 0) {
-    uVar4 = (ulong)(bVar3 >> 1);
-    uVar2 = 4;
-    if (uVar4 != 4) goto LAB_005e806c;
+  puVar2 = (ulong *)(ulong)(uint)p0;
+  bVar4 = (byte)*puVar2;
+  if ((bVar4 & 1) == 0) {
+    uVar5 = (ulong)(bVar4 >> 1);
+    uVar3 = 4;
+    if (uVar5 != 4) goto LAB_005e806c;
   }
   else {
-    uVar4 = param_1[1];
-    uVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
-    if (uVar4 != uVar2) goto LAB_005e806c;
+    uVar5 = puVar2[1];
+    uVar3 = (*puVar2 & 0xfffffffffffffffe) - 1;
+    if (uVar5 != uVar3) goto LAB_005e806c;
   }
-  FUN_00165770(param_1,uVar2,1,uVar2,uVar2,0,0);
-  bVar3 = (byte)*param_1;
+  FUN_00165770(puVar2,uVar3,1,uVar3,uVar3,0,0);
+  bVar4 = (byte)*puVar2;
 LAB_005e806c:
-  if ((bVar3 & 1) == 0) {
-    uVar2 = (long)param_1 + 4;
-    *(char *)param_1 = (char)uVar4 * '\x02' + '\x02';
+  if ((bVar4 & 1) == 0) {
+    uVar3 = (long)puVar2 + 4;
+    *(char *)puVar2 = (char)uVar5 * '\x02' + '\x02';
   }
   else {
-    uVar2 = param_1[2];
-    param_1[1] = uVar4 + 1;
+    uVar3 = puVar2[2];
+    puVar2[1] = uVar5 + 1;
   }
-  puVar1 = (undefined4 *)(uVar2 + uVar4 * 4);
-  *puVar1 = param_2;
+  puVar1 = (undefined4 *)(uVar3 + uVar5 * 4);
+  *puVar1 = in_w1;
   puVar1[1] = 0;
   return;
 }
@@ -752,47 +751,48 @@ LAB_005e806c:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::append(wchar_t const*, unsigned long) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        append(ulong *param_1,undefined8 param_2,ulong param_3)
+wchar_t * std::__ndk1::
+          basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+          append(wchar_t *p0,ulong p1)
 
 {
   byte bVar1;
   long lVar2;
+  ulong in_x2;
   ulong uVar3;
-  ulong uVar4;
+  wchar_t *pwVar4;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = (byte)*p0;
   if ((bVar1 & 1) == 0) {
     uVar3 = (ulong)(bVar1 >> 1);
     lVar2 = 4;
   }
   else {
-    uVar3 = param_1[1];
-    lVar2 = (*param_1 & 0xfffffffffffffffe) - 1;
+    uVar3 = *(ulong *)(p0 + 2);
+    lVar2 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if (lVar2 - uVar3 < param_3) {
-    func_0x001737c0(param_1,lVar2,(uVar3 + param_3) - lVar2,uVar3,uVar3,0,param_3);
+  if (lVar2 - uVar3 < in_x2) {
+    func_0x001737c0(p0,lVar2,(uVar3 + in_x2) - lVar2,uVar3,uVar3,0);
   }
-  else if (param_3 != 0) {
+  else if (in_x2 != 0) {
     if ((bVar1 & 1) == 0) {
-      uVar4 = (long)param_1 + 4;
+      pwVar4 = p0 + 1;
     }
     else {
-      uVar4 = param_1[2];
+      pwVar4 = *(wchar_t **)(p0 + 4);
     }
                     /* try { // try from 005e8134 to 005e813f has its CatchHandler @ 005e8174 */
-    func_0x00173f40(uVar4 + uVar3 * 4,param_2,param_3);
-    uVar3 = uVar3 + param_3;
-    if ((*param_1 & 1) == 0) {
-      *(char *)param_1 = (char)((int)uVar3 << 1);
+    func_0x00173f40(pwVar4 + uVar3,p1);
+    lVar2 = uVar3 + in_x2;
+    if ((*p0 & L'\x01') == L'\0') {
+      *(char *)p0 = (char)((int)lVar2 << 1);
     }
     else {
-      param_1[1] = uVar3;
+      *(long *)(p0 + 2) = lVar2;
     }
-    *(undefined4 *)(uVar4 + uVar3 * 4) = 0;
+    pwVar4[lVar2] = L'\0';
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -849,74 +849,71 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __grow_by_and_replace
-               (ulong *param_1,ulong param_2,ulong param_3,long param_4,long param_5,long param_6,
-               long param_7,undefined8 param_8)
+     __grow_by_and_replace(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5,wchar_t *p6)
 
 {
-  ulong uVar1;
+  long lVar1;
   long lVar2;
-  ulong uVar3;
-  undefined8 *puVar4;
-  byte *pbVar5;
-  ulong uVar6;
+  undefined8 *puVar3;
+  void *p0_00;
+  ulong uVar4;
   
-  if (0x3fffffffffffffee - param_2 < param_3) {
-    FUN_00164180(param_1);
+  if (0x3fffffffffffffee - p1 < p2) {
+    FUN_00164180(p0);
     return;
   }
-  if ((*param_1 & 1) == 0) {
-    pbVar5 = (byte *)((long)param_1 + 4);
+  if ((*(byte *)p0 & 1) == 0) {
+    p0_00 = (void *)(p0 + 4);
   }
   else {
-    pbVar5 = (byte *)param_1[2];
+    p0_00 = *(void **)(p0 + 0x10);
   }
-  if (param_2 < 0x1fffffffffffffe7) {
-    uVar6 = param_2 << 1;
-    if (param_2 << 1 <= param_3 + param_2) {
-      uVar6 = param_3 + param_2;
+  if (p1 < 0x1fffffffffffffe7) {
+    uVar4 = p1 << 1;
+    if (p1 << 1 <= p2 + p1) {
+      uVar4 = p2 + p1;
     }
-    if (uVar6 < 5) {
-      uVar6 = 5;
+    if (uVar4 < 5) {
+      uVar4 = 5;
     }
     else {
-      if (uVar6 + 4 >> 0x3e != 0) {
-        puVar4 = (undefined8 *)FUN_00168670(0x10);
+      if (uVar4 + 4 >> 0x3e != 0) {
+        puVar3 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e8330 to 005e833b has its CatchHandler @ 005e8364 */
-        func_0x00162cd0(puVar4,
+        func_0x00162cd0(puVar3,
                         "allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size");
-        *puVar4 = &PTR__logic_error_0071a298;
-        FUN_0016ab10(puVar4,&length_error::typeinfo,logic_error::~logic_error);
+        *puVar3 = &PTR__logic_error_0071a298;
+        FUN_0016ab10(puVar3,&length_error::typeinfo,logic_error::~logic_error);
         return;
       }
-      uVar6 = uVar6 + 4 & 0xfffffffffffffffc;
+      uVar4 = uVar4 + 4 & 0xfffffffffffffffc;
     }
   }
   else {
-    uVar6 = 0x3fffffffffffffef;
+    uVar4 = 0x3fffffffffffffef;
   }
-  uVar3 = FUN_00164060(uVar6 << 2);
-  if (param_5 != 0) {
+  lVar2 = FUN_00164060(uVar4 << 2);
+  if (p4 != 0) {
                     /* try { // try from 005e8294 to 005e82a3 has its CatchHandler @ 005e8380 */
-    func_0x00173f40(uVar3,pbVar5,param_5);
+    func_0x00173f40(lVar2,p0_00,p4);
   }
-  if (param_7 != 0) {
+  if (p6 != (wchar_t *)0x0) {
                     /* try { // try from 005e82ac to 005e82b7 has its CatchHandler @ 005e837c */
-    func_0x00173f40(uVar3 + param_5 * 4,param_8,param_7);
+    func_0x00173f40(lVar2 + p4 * 4);
   }
-  lVar2 = (param_4 - param_6) - param_5;
-  if (lVar2 != 0) {
+  lVar1 = (p3 - p5) - p4;
+  if (lVar1 != 0) {
                     /* try { // try from 005e82d8 to 005e82db has its CatchHandler @ 005e8378 */
-    func_0x00173f40(uVar3 + param_5 * 4 + param_7 * 4,pbVar5 + param_6 * 4 + param_5 * 4,lVar2);
+    func_0x00173f40(lVar2 + p4 * 4 + (long)p6 * 4,(long)p0_00 + p5 * 4 + p4 * 4,lVar1);
   }
-  if (param_2 != 4) {
-    FUN_00166120(pbVar5);
+  if (p1 != 4) {
+    FUN_00166120(p0_00);
   }
-  uVar1 = (param_4 - param_6) + param_7;
-  *param_1 = uVar6 | 1;
-  param_1[1] = uVar1;
-  param_1[2] = uVar3;
-  *(undefined4 *)(uVar3 + uVar1 * 4) = 0;
+  lVar1 = (p3 - p5) + (long)p6;
+  *(ulong *)p0 = uVar4 | 1;
+  *(long *)(p0 + 8) = lVar1;
+  *(long *)(p0 + 0x10) = lVar2;
+  *(undefined4 *)(lVar2 + lVar1 * 4) = 0;
   return;
 }
 
@@ -932,37 +929,37 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     __grow_by(ulong *param_1,ulong param_2,ulong param_3,long param_4,long param_5,long param_6,
-              long param_7)
+     __grow_by(ulong p0,ulong p1,ulong p2,ulong p3,ulong p4,ulong p5)
 
 {
   long lVar1;
-  ulong uVar2;
+  long lVar2;
   undefined8 *puVar3;
-  byte *pbVar4;
-  ulong uVar5;
+  long in_x6;
+  void *p0_00;
+  ulong uVar4;
   
-  uVar5 = 0x3fffffffffffffef;
-  if (0x3fffffffffffffef - param_2 < param_3) {
-    FUN_00164180(param_1);
+  uVar4 = 0x3fffffffffffffef;
+  if (0x3fffffffffffffef - p1 < p2) {
+    FUN_00164180(p0);
     return;
   }
-  if ((*param_1 & 1) == 0) {
-    pbVar4 = (byte *)((long)param_1 + 4);
+  if ((*(byte *)p0 & 1) == 0) {
+    p0_00 = (void *)(p0 + 4);
   }
   else {
-    pbVar4 = (byte *)param_1[2];
+    p0_00 = *(void **)(p0 + 0x10);
   }
-  if (param_2 < 0x1fffffffffffffe7) {
-    uVar5 = param_2 << 1;
-    if (param_2 << 1 <= param_3 + param_2) {
-      uVar5 = param_3 + param_2;
+  if (p1 < 0x1fffffffffffffe7) {
+    uVar4 = p1 << 1;
+    if (p1 << 1 <= p2 + p1) {
+      uVar4 = p2 + p1;
     }
-    if (uVar5 < 5) {
-      uVar5 = 5;
+    if (uVar4 < 5) {
+      uVar4 = 5;
     }
     else {
-      if (uVar5 + 4 >> 0x3e != 0) {
+      if (uVar4 + 4 >> 0x3e != 0) {
         puVar3 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005e84b0 to 005e84bb has its CatchHandler @ 005e84e4 */
         func_0x00162cd0(puVar3,
@@ -971,24 +968,24 @@ void std::__ndk1::
         FUN_0016ab10(puVar3,&length_error::typeinfo,logic_error::~logic_error);
         return;
       }
-      uVar5 = uVar5 + 4 & 0xfffffffffffffffc;
+      uVar4 = uVar4 + 4 & 0xfffffffffffffffc;
     }
   }
-  uVar2 = FUN_00164060(uVar5 << 2);
-  if (param_5 != 0) {
+  lVar2 = FUN_00164060(uVar4 << 2);
+  if (p4 != 0) {
                     /* try { // try from 005e8430 to 005e843f has its CatchHandler @ 005e84fc */
-    func_0x00173f40(uVar2,pbVar4,param_5);
+    func_0x00173f40(lVar2,p0_00,p4);
   }
-  lVar1 = (param_4 - param_6) - param_5;
+  lVar1 = (p3 - p5) - p4;
   if (lVar1 != 0) {
                     /* try { // try from 005e8460 to 005e8463 has its CatchHandler @ 005e84f8 */
-    func_0x00173f40(uVar2 + param_5 * 4 + param_7 * 4,pbVar4 + param_6 * 4 + param_5 * 4,lVar1);
+    func_0x00173f40(lVar2 + p4 * 4 + in_x6 * 4,(long)p0_00 + p5 * 4 + p4 * 4,lVar1);
   }
-  if (param_2 != 4) {
-    FUN_00166120(pbVar4);
+  if (p1 != 4) {
+    FUN_00166120(p0_00);
   }
-  param_1[2] = uVar2;
-  *param_1 = uVar5 | 1;
+  *(long *)(p0 + 0x10) = lVar2;
+  *(ulong *)p0 = uVar4 | 1;
   return;
 }
 
@@ -1043,60 +1040,59 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::assign(unsigned long, wchar_t) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        assign(ulong *param_1,ulong param_2,undefined4 param_3)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      assign(ulong p0,wchar_t p1)
 
 {
   byte bVar1;
   ulong uVar2;
   ulong uVar3;
-  byte *pbVar4;
+  undefined4 in_w2;
+  ulong uVar4;
+  long lVar5;
   
-  bVar1 = (byte)*param_1;
+  uVar2 = (ulong)(uint)p1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
-    uVar2 = 4;
-    uVar3 = (ulong)bVar1;
-    if (4 < param_2) goto LAB_005e86f0;
+    uVar3 = 4;
+    uVar4 = (ulong)bVar1;
+    if (4 < uVar2) goto LAB_005e86f0;
 LAB_005e8710:
-    if ((uVar3 & 1) == 0) goto LAB_005e8714;
+    if ((uVar4 & 1) == 0) goto LAB_005e8714;
   }
   else {
-    uVar3 = *param_1;
-    uVar2 = (uVar3 & 0xfffffffffffffffe) - 1;
-    if (param_2 <= uVar2) goto LAB_005e8710;
+    uVar4 = *(ulong *)p0;
+    uVar3 = (uVar4 & 0xfffffffffffffffe) - 1;
+    if (uVar2 <= uVar3) goto LAB_005e8710;
 LAB_005e86f0:
     if ((bVar1 & 1) == 0) {
-      uVar3 = (ulong)(bVar1 >> 1);
+      uVar4 = (ulong)(bVar1 >> 1);
     }
     else {
-      uVar3 = param_1[1];
+      uVar4 = *(ulong *)(p0 + 8);
     }
-    FUN_00165770(param_1,uVar2,param_2 - uVar2,uVar3,0,uVar3,0);
-    if ((*param_1 & 1) == 0) {
+    FUN_00165770(p0,uVar3,uVar2 - uVar3,uVar4,0,uVar4,0);
+    if ((*(byte *)p0 & 1) == 0) {
 LAB_005e8714:
-      pbVar4 = (byte *)((long)param_1 + 4);
+      lVar5 = p0 + 4;
       goto joined_r0x005e8718;
     }
   }
-  pbVar4 = (byte *)param_1[2];
+  lVar5 = *(long *)(p0 + 0x10);
 joined_r0x005e8718:
-  if (param_2 != 0) {
+  if (uVar2 != 0) {
                     /* try { // try from 005e874c to 005e875b has its CatchHandler @ 005e878c */
-    func_0x00165860(pbVar4,param_3,param_2);
+    func_0x00165860(lVar5,in_w2,uVar2);
   }
-  pbVar4 = pbVar4 + param_2 * 4;
-  pbVar4[0] = 0;
-  pbVar4[1] = 0;
-  pbVar4[2] = 0;
-  pbVar4[3] = 0;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)param_2 << 1);
+  *(undefined4 *)(lVar5 + uVar2 * 4) = 0;
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = (char)(p1 << 1);
   }
   else {
-    param_1[1] = param_2;
+    *(ulong *)(p0 + 8) = uVar2;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1108,72 +1104,68 @@ joined_r0x005e8718:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(unsigned long, wchar_t const*, unsigned long) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        insert(ulong *param_1,ulong param_2,byte *param_3,ulong param_4)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      insert(ulong p0,wchar_t *p1,ulong p2)
 
 {
-  byte *pbVar1;
+  long lVar1;
   byte bVar2;
-  ulong *puVar3;
+  ulong uVar3;
   long lVar4;
-  byte *pbVar5;
-  ulong uVar6;
-  byte *pbVar7;
+  ulong in_x3;
+  ulong uVar5;
+  wchar_t *pwVar6;
   
-  bVar2 = (byte)*param_1;
+  bVar2 = *(byte *)p0;
   if ((bVar2 & 1) == 0) {
-    uVar6 = (ulong)(bVar2 >> 1);
+    pwVar6 = (wchar_t *)(ulong)(bVar2 >> 1);
   }
   else {
-    uVar6 = param_1[1];
+    pwVar6 = *(wchar_t **)(p0 + 8);
   }
-  if (uVar6 < param_2) {
-    puVar3 = (ulong *)FUN_0016ec80(param_1);
-    return puVar3;
+  if (pwVar6 < p1) {
+    uVar3 = FUN_0016ec80(p0);
+    return uVar3;
   }
   if ((bVar2 & 1) == 0) {
     lVar4 = 4;
   }
   else {
-    lVar4 = (*param_1 & 0xfffffffffffffffe) - 1;
+    lVar4 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if (lVar4 - uVar6 < param_4) {
-    func_0x001737c0(param_1,lVar4,(uVar6 + param_4) - lVar4,uVar6,param_2,0,param_4,param_3);
+  if ((ulong)(lVar4 - (long)pwVar6) < in_x3) {
+    func_0x001737c0(p0,lVar4,(long)pwVar6 + (in_x3 - lVar4),pwVar6,p1,0);
   }
-  else if (param_4 != 0) {
+  else if (in_x3 != 0) {
     if ((bVar2 & 1) == 0) {
-      pbVar7 = (byte *)((long)param_1 + 4);
+      lVar4 = p0 + 4;
     }
     else {
-      pbVar7 = (byte *)param_1[2];
+      lVar4 = *(long *)(p0 + 0x10);
     }
-    pbVar1 = pbVar7 + param_2 * 4;
-    pbVar5 = param_3;
-    if (uVar6 - param_2 != 0) {
-      pbVar5 = param_3 + param_4 * 4;
-      if (pbVar7 + uVar6 * 4 <= param_3 || param_3 < pbVar1) {
-        pbVar5 = param_3;
+    uVar3 = lVar4 + (long)p1 * 4;
+    uVar5 = p2;
+    if ((long)pwVar6 - (long)p1 != 0) {
+      uVar5 = p2 + in_x3 * 4;
+      if ((ulong)(lVar4 + (long)pwVar6 * 4) <= p2 || p2 < uVar3) {
+        uVar5 = p2;
       }
                     /* try { // try from 005e8884 to 005e888b has its CatchHandler @ 005e88d4 */
-      FUN_00165710(pbVar1 + param_4 * 4,pbVar1,uVar6 - param_2);
+      FUN_00165710(uVar3 + in_x3 * 4,uVar3,(long)pwVar6 - (long)p1);
     }
                     /* try { // try from 005e888c to 005e889b has its CatchHandler @ 005e88d8 */
-    FUN_00165710(pbVar1,pbVar5,param_4);
-    uVar6 = uVar6 + param_4;
-    if ((*param_1 & 1) == 0) {
-      *(byte *)param_1 = (byte)((int)uVar6 << 1);
+    FUN_00165710(uVar3,uVar5);
+    lVar1 = (long)pwVar6 + in_x3;
+    if ((*(byte *)p0 & 1) == 0) {
+      *(char *)p0 = (char)((int)lVar1 << 1);
     }
     else {
-      param_1[1] = uVar6;
+      *(long *)(p0 + 8) = lVar1;
     }
-    pbVar7 = pbVar7 + uVar6 * 4;
-    pbVar7[0] = 0;
-    pbVar7[1] = 0;
-    pbVar7[2] = 0;
-    pbVar7[3] = 0;
+    *(undefined4 *)(lVar4 + lVar1 * 4) = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1229,13 +1221,11 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3)
+               (ulong p0,wchar_t *p1)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00172dd0(param_3);
-  FUN_0016b5c0(param_1,param_2,param_3,uVar1);
+  FUN_00172dd0();
+  FUN_0016b5c0(p0,p1);
   return;
 }
 
@@ -1248,67 +1238,66 @@ void std::__ndk1::
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::insert(unsigned long, unsigned long, wchar_t) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        insert(ulong *param_1,ulong param_2,ulong param_3,undefined4 param_4)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      insert(ulong p0,ulong p1,wchar_t p2)
 
 {
-  byte bVar1;
-  ulong *puVar2;
-  long lVar3;
-  ulong uVar4;
-  byte *pbVar5;
+  long lVar1;
+  byte bVar2;
+  ulong uVar3;
+  long lVar4;
+  undefined4 in_w3;
+  ulong uVar5;
   
-  bVar1 = (byte)*param_1;
-  if ((bVar1 & 1) == 0) {
-    uVar4 = (ulong)(bVar1 >> 1);
+  uVar3 = (ulong)(uint)p2;
+  bVar2 = *(byte *)p0;
+  if ((bVar2 & 1) == 0) {
+    uVar5 = (ulong)(bVar2 >> 1);
   }
   else {
-    uVar4 = param_1[1];
+    uVar5 = *(ulong *)(p0 + 8);
   }
-  if (param_2 <= uVar4) {
-    if (param_3 != 0) {
-      if ((bVar1 & 1) == 0) {
-        lVar3 = 4;
+  if (p1 <= uVar5) {
+    if (uVar3 != 0) {
+      if ((bVar2 & 1) == 0) {
+        lVar4 = 4;
       }
       else {
-        lVar3 = (*param_1 & 0xfffffffffffffffe) - 1;
+        lVar4 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
       }
-      if (lVar3 - uVar4 < param_3) {
-        FUN_00165770(param_1,lVar3,(uVar4 + param_3) - lVar3,uVar4,param_2,0,param_3);
-        pbVar5 = (byte *)param_1[2];
+      if (lVar4 - uVar5 < uVar3) {
+        FUN_00165770(p0,lVar4,(uVar5 + uVar3) - lVar4,uVar5,p1,0,uVar3);
+        lVar4 = *(long *)(p0 + 0x10);
       }
       else {
-        if ((bVar1 & 1) == 0) {
-          pbVar5 = (byte *)((long)param_1 + 4);
+        if ((bVar2 & 1) == 0) {
+          lVar4 = p0 + 4;
         }
         else {
-          pbVar5 = (byte *)param_1[2];
+          lVar4 = *(long *)(p0 + 0x10);
         }
-        if (uVar4 - param_2 != 0) {
+        if (uVar5 - p1 != 0) {
+          lVar1 = lVar4 + p1 * 4;
                     /* try { // try from 005e8a28 to 005e8a2b has its CatchHandler @ 005e8a7c */
-          FUN_00165710(pbVar5 + param_2 * 4 + param_3 * 4,pbVar5 + param_2 * 4,uVar4 - param_2);
+          FUN_00165710(lVar1 + uVar3 * 4,lVar1,uVar5 - p1);
         }
       }
                     /* try { // try from 005e8a30 to 005e8a3b has its CatchHandler @ 005e8a80 */
-      func_0x00165860(pbVar5 + param_2 * 4,param_4,param_3);
-      uVar4 = uVar4 + param_3;
-      if ((*param_1 & 1) == 0) {
-        *(byte *)param_1 = (byte)((int)uVar4 << 1);
+      func_0x00165860(lVar4 + p1 * 4,in_w3,uVar3);
+      lVar1 = uVar5 + uVar3;
+      if ((*(byte *)p0 & 1) == 0) {
+        *(char *)p0 = (char)((int)lVar1 << 1);
       }
       else {
-        param_1[1] = uVar4;
+        *(long *)(p0 + 8) = lVar1;
       }
-      pbVar5 = pbVar5 + uVar4 * 4;
-      pbVar5[0] = 0;
-      pbVar5[1] = 0;
-      pbVar5[2] = 0;
-      pbVar5[3] = 0;
+      *(undefined4 *)(lVar4 + lVar1 * 4) = 0;
     }
-    return param_1;
+    return p0;
   }
-  puVar2 = (ulong *)FUN_0016ec80(param_1);
-  return puVar2;
+  uVar3 = FUN_0016ec80(p0);
+  return uVar3;
 }
 
 
@@ -1388,61 +1377,59 @@ LAB_005e8b60:
 /* std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> >::erase(unsigned long, unsigned long) */
 
-byte * std::__ndk1::
-       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-       erase(byte *param_1,ulong param_2,ulong param_3)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::erase
+                (ulong p0,ulong p1)
 
 {
   ulong uVar1;
   byte bVar2;
   ulong uVar3;
-  byte *pbVar4;
-  long lVar5;
-  ulong uVar6;
+  ulong in_x2;
+  long lVar4;
+  ulong uVar5;
+  long lVar6;
   
-  bVar2 = *param_1;
+  bVar2 = *(byte *)p0;
   if ((bVar2 & 1) == 0) {
-    uVar6 = (ulong)(bVar2 >> 1);
-    uVar3 = uVar6 - param_2;
+    uVar5 = (ulong)(bVar2 >> 1);
+    uVar3 = uVar5 - p1;
   }
   else {
-    uVar6 = *(ulong *)(param_1 + 8);
-    uVar3 = uVar6 - param_2;
+    uVar5 = *(ulong *)(p0 + 8);
+    uVar3 = uVar5 - p1;
   }
-  if (uVar6 < param_2) {
-    pbVar4 = (byte *)FUN_0016ec80(param_1);
-    return pbVar4;
+  if (uVar5 < p1) {
+    uVar3 = FUN_0016ec80(p0);
+    return uVar3;
   }
-  if (param_3 != 0) {
+  if (in_x2 != 0) {
     if ((bVar2 & 1) == 0) {
-      pbVar4 = param_1 + 4;
+      lVar6 = p0 + 4;
     }
     else {
-      pbVar4 = *(byte **)(param_1 + 0x10);
+      lVar6 = *(long *)(p0 + 0x10);
     }
     uVar1 = uVar3;
-    if (param_3 <= uVar3) {
-      uVar1 = param_3;
+    if (in_x2 <= uVar3) {
+      uVar1 = in_x2;
     }
     if (uVar3 - uVar1 != 0) {
+      lVar4 = lVar6 + p1 * 4;
                     /* try { // try from 005e8ed4 to 005e8ed7 has its CatchHandler @ 005e8f14 */
-      FUN_00165710(pbVar4 + param_2 * 4,pbVar4 + param_2 * 4 + uVar1 * 4,uVar3 - uVar1);
-      bVar2 = *param_1;
+      FUN_00165710(lVar4,lVar4 + uVar1 * 4,uVar3 - uVar1);
+      bVar2 = *(byte *)p0;
     }
-    lVar5 = uVar6 - uVar1;
+    lVar4 = uVar5 - uVar1;
     if ((bVar2 & 1) == 0) {
-      *param_1 = (byte)((int)lVar5 << 1);
+      *(char *)p0 = (char)((int)lVar4 << 1);
     }
     else {
-      *(long *)(param_1 + 8) = lVar5;
+      *(long *)(p0 + 8) = lVar4;
     }
-    pbVar4 = pbVar4 + lVar5 * 4;
-    pbVar4[0] = 0;
-    pbVar4[1] = 0;
-    pbVar4[2] = 0;
-    pbVar4[3] = 0;
+    *(undefined4 *)(lVar6 + lVar4 * 4) = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1455,106 +1442,101 @@ byte * std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::replace(unsigned long, unsigned long, wchar_t const*, unsigned
    long) */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        replace(ulong *param_1,ulong param_2,ulong param_3,byte *param_4,ulong param_5)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      replace(ulong p0,ulong p1,wchar_t *p2,ulong p3)
 
 {
   byte bVar1;
-  ulong uVar2;
-  ulong uVar3;
-  ulong *puVar4;
+  wchar_t *pwVar2;
+  long lVar3;
+  wchar_t *pwVar4;
   long lVar5;
+  wchar_t *in_x4;
   ulong uVar6;
-  ulong uVar7;
-  byte *pbVar8;
-  byte *pbVar9;
+  wchar_t *pwVar7;
+  ulong uVar8;
   
-  bVar1 = (byte)*param_1;
+  bVar1 = *(byte *)p0;
   if ((bVar1 & 1) == 0) {
     uVar6 = (ulong)(bVar1 >> 1);
-    uVar2 = uVar6 - param_2;
+    pwVar2 = (wchar_t *)(uVar6 - p1);
   }
   else {
-    uVar6 = param_1[1];
-    uVar2 = uVar6 - param_2;
+    uVar6 = *(ulong *)(p0 + 8);
+    pwVar2 = (wchar_t *)(uVar6 - p1);
   }
-  if (uVar6 < param_2) {
-    puVar4 = (ulong *)FUN_0016ec80(param_1);
-    return puVar4;
+  if (uVar6 < p1) {
+    uVar6 = FUN_0016ec80(p0);
+    return uVar6;
   }
-  uVar7 = uVar2;
-  if (param_3 <= uVar2) {
-    uVar7 = param_3;
+  pwVar7 = pwVar2;
+  if (p2 <= pwVar2) {
+    pwVar7 = p2;
   }
   if ((bVar1 & 1) == 0) {
     lVar5 = 4;
   }
   else {
-    lVar5 = (*param_1 & 0xfffffffffffffffe) - 1;
+    lVar5 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
   }
-  if ((uVar7 - uVar6) + lVar5 < param_5) {
-    func_0x001737c0(param_1,lVar5,((uVar6 + param_5) - uVar7) - lVar5,uVar6,param_2,uVar7,param_5,
-                    param_4);
-    return param_1;
+  if ((wchar_t *)((long)pwVar7 + (lVar5 - uVar6)) < in_x4) {
+    func_0x001737c0(p0,lVar5,(long)in_x4 + ((uVar6 - (long)pwVar7) - lVar5),uVar6,p1,pwVar7);
+    return p0;
   }
   if ((bVar1 & 1) == 0) {
-    pbVar9 = (byte *)((long)param_1 + 4);
+    lVar5 = p0 + 4;
   }
   else {
-    pbVar9 = (byte *)param_1[2];
+    lVar5 = *(long *)(p0 + 0x10);
   }
-  uVar3 = param_5;
-  if ((uVar7 != param_5) && (lVar5 = uVar2 - uVar7, uVar3 = uVar7, lVar5 != 0)) {
-    pbVar8 = pbVar9 + param_2 * 4;
-    if (param_5 < uVar7) {
-      if (param_5 != 0) {
+  pwVar4 = in_x4;
+  if ((pwVar7 != in_x4) && (lVar3 = (long)pwVar2 - (long)pwVar7, pwVar4 = pwVar7, lVar3 != 0)) {
+    uVar8 = lVar5 + p1 * 4;
+    if (in_x4 < pwVar7) {
+      if (in_x4 != (wchar_t *)0x0) {
                     /* try { // try from 005e917c to 005e918b has its CatchHandler @ 005e9278 */
-        FUN_00165710(pbVar8,param_4,param_5);
+        FUN_00165710(uVar8,p3);
       }
                     /* try { // try from 005e9194 to 005e919b has its CatchHandler @ 005e9280 */
-      FUN_00165710(pbVar8 + param_5 * 4,pbVar8 + uVar7 * 4,lVar5);
+      FUN_00165710(uVar8 + (long)in_x4 * 4,uVar8 + (long)pwVar7 * 4,lVar3);
       goto LAB_005e9230;
     }
-    if ((pbVar8 < param_4) && (param_4 < pbVar9 + uVar6 * 4)) {
-      if (param_4 < pbVar8 + uVar7 * 4) {
-        if (uVar7 != 0) {
+    if ((uVar8 < p3) && (p3 < lVar5 + uVar6 * 4)) {
+      if (p3 < uVar8 + (long)pwVar7 * 4) {
+        if (pwVar7 != (wchar_t *)0x0) {
                     /* try { // try from 005e91dc to 005e91eb has its CatchHandler @ 005e9274 */
-          FUN_00165710(pbVar8,param_4,uVar7);
+          FUN_00165710(uVar8,p3,pwVar7);
         }
-        param_2 = uVar7 + param_2;
-        param_4 = param_4 + param_5 * 4;
-        param_5 = param_5 - uVar7;
-        pbVar8 = pbVar9 + param_2 * 4;
-        uVar7 = 0;
+        p1 = (long)pwVar7 + p1;
+        p3 = p3 + (long)in_x4 * 4;
+        in_x4 = (wchar_t *)((long)in_x4 - (long)pwVar7);
+        uVar8 = lVar5 + p1 * 4;
+        pwVar7 = (wchar_t *)0x0;
       }
       else {
-        param_4 = param_4 + (param_5 - uVar7) * 4;
+        p3 = p3 + ((long)in_x4 - (long)pwVar7) * 4;
       }
     }
                     /* try { // try from 005e9214 to 005e921b has its CatchHandler @ 005e927c */
-    FUN_00165710(pbVar8 + param_5 * 4,pbVar8 + uVar7 * 4,lVar5);
-    uVar3 = uVar7;
+    FUN_00165710(uVar8 + (long)in_x4 * 4,uVar8 + (long)pwVar7 * 4,lVar3);
+    pwVar4 = pwVar7;
   }
-  uVar7 = uVar3;
-  if (param_5 != 0) {
+  pwVar7 = pwVar4;
+  if (in_x4 != (wchar_t *)0x0) {
                     /* try { // try from 005e9224 to 005e922f has its CatchHandler @ 005e9284 */
-    FUN_00165710(pbVar9 + param_2 * 4,param_4,param_5);
+    FUN_00165710(lVar5 + p1 * 4,p3,in_x4);
   }
 LAB_005e9230:
-  uVar6 = (param_5 - uVar7) + uVar6;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)uVar6 << 1);
+  lVar3 = (long)in_x4 + (uVar6 - (long)pwVar7);
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = (char)((int)lVar3 << 1);
   }
   else {
-    param_1[1] = uVar6;
+    *(long *)(p0 + 8) = lVar3;
   }
-  pbVar9 = pbVar9 + uVar6 * 4;
-  pbVar9[0] = 0;
-  pbVar9[1] = 0;
-  pbVar9[2] = 0;
-  pbVar9[3] = 0;
-  return param_1;
+  *(undefined4 *)(lVar5 + lVar3 * 4) = 0;
+  return p0;
 }
 
 
@@ -1600,13 +1582,11 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     replace(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+     replace(ulong p0,ulong p1,wchar_t *p2)
 
 {
-  undefined8 uVar1;
-  
-  uVar1 = FUN_00172dd0(param_4);
-  FUN_00173c50(param_1,param_2,param_3,param_4,uVar1);
+  FUN_00172dd0();
+  FUN_00173c50(p0,p1,p2);
   return;
 }
 
@@ -1620,76 +1600,74 @@ void std::__ndk1::
    std::__ndk1::allocator<wchar_t> >::replace(unsigned long, unsigned long, unsigned long, wchar_t)
     */
 
-ulong * std::__ndk1::
-        basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-        replace(ulong *param_1,ulong param_2,ulong param_3,ulong param_4,undefined4 param_5)
+ulong std::__ndk1::
+      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
+      replace(ulong p0,ulong p1,ulong p2,wchar_t p3)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  ulong uVar3;
-  ulong *puVar4;
-  long lVar5;
-  ulong uVar6;
-  byte *pbVar7;
+  long lVar1;
+  ulong uVar2;
+  byte bVar3;
+  ulong uVar4;
+  ulong uVar5;
+  long lVar6;
+  undefined4 in_w4;
+  ulong uVar7;
   
-  bVar2 = (byte)*param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar6 = (ulong)(bVar2 >> 1);
-    uVar3 = uVar6 - param_2;
+  uVar5 = (ulong)(uint)p3;
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar7 = (ulong)(bVar3 >> 1);
+    uVar4 = uVar7 - p1;
   }
   else {
-    uVar6 = param_1[1];
-    uVar3 = uVar6 - param_2;
+    uVar7 = *(ulong *)(p0 + 8);
+    uVar4 = uVar7 - p1;
   }
-  if (uVar6 < param_2) {
-    puVar4 = (ulong *)FUN_0016ec80(param_1);
-    return puVar4;
+  if (uVar7 < p1) {
+    uVar5 = FUN_0016ec80(p0);
+    return uVar5;
   }
-  uVar1 = uVar3;
-  if (param_3 <= uVar3) {
-    uVar1 = param_3;
+  uVar2 = uVar4;
+  if (p2 <= uVar4) {
+    uVar2 = p2;
   }
-  if ((bVar2 & 1) == 0) {
-    lVar5 = 4;
-  }
-  else {
-    lVar5 = (*param_1 & 0xfffffffffffffffe) - 1;
-  }
-  if ((uVar1 - uVar6) + lVar5 < param_4) {
-    FUN_00165770(param_1,lVar5,((uVar6 + param_4) - uVar1) - lVar5,uVar6,param_2,uVar1,param_4);
-    pbVar7 = (byte *)param_1[2];
+  if ((bVar3 & 1) == 0) {
+    lVar6 = 4;
   }
   else {
-    if ((bVar2 & 1) == 0) {
-      pbVar7 = (byte *)((long)param_1 + 4);
+    lVar6 = (*(ulong *)p0 & 0xfffffffffffffffe) - 1;
+  }
+  if ((uVar2 - uVar7) + lVar6 < uVar5) {
+    FUN_00165770(p0,lVar6,((uVar7 + uVar5) - uVar2) - lVar6,uVar7,p1,uVar2,uVar5);
+    lVar6 = *(long *)(p0 + 0x10);
+  }
+  else {
+    if ((bVar3 & 1) == 0) {
+      lVar6 = p0 + 4;
     }
     else {
-      pbVar7 = (byte *)param_1[2];
+      lVar6 = *(long *)(p0 + 0x10);
     }
-    if ((uVar1 != param_4) && (uVar3 - uVar1 != 0)) {
+    if ((uVar2 != uVar5) && (uVar4 - uVar2 != 0)) {
+      lVar1 = lVar6 + p1 * 4;
                     /* try { // try from 005e93e8 to 005e93eb has its CatchHandler @ 005e9458 */
-      FUN_00165710(pbVar7 + param_4 * 4 + param_2 * 4,pbVar7 + uVar1 * 4 + param_2 * 4,uVar3 - uVar1
-                  );
+      FUN_00165710(lVar1 + uVar5 * 4,lVar1 + uVar2 * 4,uVar4 - uVar2);
     }
-    if (param_4 == 0) goto LAB_005e9410;
+    if (uVar5 == 0) goto LAB_005e9410;
   }
                     /* try { // try from 005e9404 to 005e940f has its CatchHandler @ 005e945c */
-  func_0x00165860(pbVar7 + param_2 * 4,param_5,param_4);
+  func_0x00165860(lVar6 + p1 * 4,in_w4,uVar5);
 LAB_005e9410:
-  uVar6 = (param_4 - uVar1) + uVar6;
-  if ((*param_1 & 1) == 0) {
-    *(byte *)param_1 = (byte)((int)uVar6 << 1);
+  lVar1 = (uVar5 - uVar2) + uVar7;
+  if ((*(byte *)p0 & 1) == 0) {
+    *(char *)p0 = (char)((int)lVar1 << 1);
   }
   else {
-    param_1[1] = uVar6;
+    *(long *)(p0 + 8) = lVar1;
   }
-  pbVar7 = pbVar7 + uVar6 * 4;
-  pbVar7[0] = 0;
-  pbVar7[1] = 0;
-  pbVar7[2] = 0;
-  pbVar7[3] = 0;
-  return param_1;
+  *(undefined4 *)(lVar6 + lVar1 * 4) = 0;
+  return p0;
 }
 
 
@@ -1703,35 +1681,37 @@ LAB_005e9410:
 
 ulong std::__ndk1::
       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::copy
-                (byte *param_1,undefined8 param_2,ulong param_3,ulong param_4)
+                (wchar_t *p0,ulong p1,ulong p2)
 
 {
   byte bVar1;
   ulong uVar2;
-  ulong uVar3;
+  ulong in_x3;
+  wchar_t *pwVar3;
+  ulong uVar4;
   
-  bVar1 = *param_1;
+  bVar1 = (byte)*p0;
   if ((bVar1 & 1) == 0) {
-    uVar3 = (ulong)(bVar1 >> 1);
-    uVar2 = uVar3 - param_4;
+    uVar4 = (ulong)(bVar1 >> 1);
+    uVar2 = uVar4 - in_x3;
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    uVar2 = uVar3 - param_4;
+    uVar4 = *(ulong *)(p0 + 2);
+    uVar2 = uVar4 - in_x3;
   }
-  if (param_4 <= uVar3) {
-    if (param_3 <= uVar2) {
-      uVar2 = param_3;
+  if (in_x3 <= uVar4) {
+    if (p2 <= uVar2) {
+      uVar2 = p2;
     }
     if ((bVar1 & 1) == 0) {
-      param_1 = param_1 + 4;
+      pwVar3 = p0 + 1;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      pwVar3 = *(wchar_t **)(p0 + 4);
     }
     if (uVar2 != 0) {
                     /* try { // try from 005e969c to 005e96ab has its CatchHandler @ 005e96c0 */
-      func_0x00173f40(param_2,param_1 + param_4 * 4,uVar2);
+      func_0x00173f40(p1,pwVar3 + in_x3,uVar2);
     }
     return uVar2;
   }
@@ -1750,55 +1730,56 @@ ulong std::__ndk1::
 
 ulong std::__ndk1::
       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find
-                (byte *param_1,undefined4 *param_2,ulong param_3,long param_4)
+                (wchar_t *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
+  wchar_t *pwVar1;
+  wchar_t *pwVar2;
   undefined4 uVar3;
   long lVar4;
   int iVar5;
-  byte *pbVar6;
+  wchar_t *pwVar6;
+  long in_x3;
   ulong uVar7;
   long lVar8;
-  byte *pbVar9;
+  wchar_t *pwVar9;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 4;
-    uVar7 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar2 = p0 + 1;
+    uVar7 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar7 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar7 = *(ulong *)(p0 + 2);
+    pwVar2 = *(wchar_t **)(p0 + 4);
   }
-  if (uVar7 < param_3) {
-    param_3 = 0xffffffffffffffff;
+  if (uVar7 < p2) {
+    p2 = 0xffffffffffffffff;
   }
-  else if (param_4 != 0) {
-    pbVar6 = pbVar1 + param_3 * 4;
-    pbVar2 = pbVar1 + uVar7 * 4;
-    lVar4 = (param_4 << 2) >> 2;
-    lVar8 = (long)pbVar2 - (long)pbVar6 >> 2;
-    pbVar9 = pbVar2;
+  else if (in_x3 != 0) {
+    pwVar6 = pwVar2 + p2;
+    pwVar1 = pwVar2 + uVar7;
+    lVar4 = (in_x3 << 2) >> 2;
+    lVar8 = (long)pwVar1 - (long)pwVar6 >> 2;
+    pwVar9 = pwVar1;
     if (lVar4 <= lVar8) {
-      uVar3 = *param_2;
+      uVar3 = *(undefined4 *)p1;
       do {
         lVar8 = (lVar8 - lVar4) + 1;
-        pbVar9 = pbVar2;
+        pwVar9 = pwVar1;
         if (((lVar8 == 0) ||
-            (pbVar6 = (byte *)FUN_00170580(pbVar6,uVar3,lVar8), pbVar6 == (byte *)0x0)) ||
-           (iVar5 = FUN_00162ec0(pbVar6,param_2,lVar4), pbVar9 = pbVar6, iVar5 == 0)) break;
-        pbVar6 = pbVar6 + 4;
-        lVar8 = (long)pbVar2 - (long)pbVar6 >> 2;
-        pbVar9 = pbVar2;
+            (pwVar6 = (wchar_t *)FUN_00170580(pwVar6,uVar3,lVar8), pwVar6 == (wchar_t *)0x0)) ||
+           (iVar5 = FUN_00162ec0(pwVar6,p1,lVar4), pwVar9 = pwVar6, iVar5 == 0)) break;
+        pwVar6 = pwVar6 + 1;
+        lVar8 = (long)pwVar1 - (long)pwVar6 >> 2;
+        pwVar9 = pwVar1;
       } while (lVar4 <= lVar8);
     }
-    param_3 = (long)pbVar9 - (long)pbVar1 >> 2;
-    if (pbVar9 == pbVar2) {
-      param_3 = 0xffffffffffffffff;
+    p2 = (long)pwVar9 - (long)pwVar2 >> 2;
+    if (pwVar9 == pwVar1) {
+      p2 = 0xffffffffffffffff;
     }
   }
-  return param_3;
+  return p2;
 }
 
 
@@ -1812,38 +1793,41 @@ ulong std::__ndk1::
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::find
-               (byte *param_1,undefined8 param_2,ulong param_3)
+               (wchar_t p0,ulong p1)
 
 {
   bool bVar1;
-  long lVar2;
-  ulong uVar3;
-  byte *pbVar4;
+  byte *pbVar2;
+  long lVar3;
+  ulong in_x2;
+  ulong uVar4;
+  byte *pbVar5;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar4 = param_1 + 4;
-    uVar3 = (ulong)(*param_1 >> 1);
-    lVar2 = uVar3 - param_3;
-    bVar1 = lVar2 == 0;
-    if (param_3 <= uVar3 && !bVar1) {
+  pbVar2 = (byte *)(ulong)(uint)p0;
+  if ((*pbVar2 & 1) == 0) {
+    pbVar5 = pbVar2 + 4;
+    uVar4 = (ulong)(*pbVar2 >> 1);
+    lVar3 = uVar4 - in_x2;
+    bVar1 = lVar3 == 0;
+    if (in_x2 <= uVar4 && !bVar1) {
 LAB_005e9a8c:
       if (bVar1) {
-        lVar2 = 0;
+        lVar3 = 0;
       }
       else {
-        lVar2 = FUN_00170580(pbVar4 + param_3 * 4,param_2,lVar2);
+        lVar3 = FUN_00170580(pbVar5 + in_x2 * 4,p1,lVar3);
       }
-      if (lVar2 != 0) {
-        return lVar2 - (long)pbVar4 >> 2;
+      if (lVar3 != 0) {
+        return lVar3 - (long)pbVar5 >> 2;
       }
       return -1;
     }
   }
   else {
-    pbVar4 = *(byte **)(param_1 + 0x10);
-    lVar2 = *(ulong *)(param_1 + 8) - param_3;
-    bVar1 = lVar2 == 0;
-    if (param_3 <= *(ulong *)(param_1 + 8) && !bVar1) goto LAB_005e9a8c;
+    pbVar5 = *(byte **)(pbVar2 + 0x10);
+    lVar3 = *(ulong *)(pbVar2 + 8) - in_x2;
+    bVar1 = lVar3 == 0;
+    if (in_x2 <= *(ulong *)(pbVar2 + 8) && !bVar1) goto LAB_005e9a8c;
   }
   return -1;
 }
@@ -1859,77 +1843,78 @@ LAB_005e9a8c:
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind
-               (byte *param_1,long param_2,ulong param_3,ulong param_4)
+               (wchar_t *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  wchar_t *pwVar1;
   long lVar2;
   ulong uVar3;
-  ulong uVar4;
-  int iVar5;
-  byte *pbVar6;
-  long lVar7;
-  byte *pbVar8;
-  ulong uVar9;
-  byte *pbVar10;
-  byte *pbVar11;
-  byte *pbVar12;
+  wchar_t wVar4;
+  ulong in_x3;
+  wchar_t *pwVar5;
+  long lVar6;
+  wchar_t *pwVar7;
+  ulong uVar8;
+  wchar_t *pwVar9;
+  wchar_t *pwVar10;
+  ulong uVar11;
+  wchar_t *pwVar12;
   long lVar13;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar6 = param_1 + 4;
-    uVar9 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar5 = p0 + 1;
+    uVar8 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar9 = *(ulong *)(param_1 + 8);
-    pbVar6 = *(byte **)(param_1 + 0x10);
+    uVar8 = *(ulong *)(p0 + 2);
+    pwVar5 = *(wchar_t **)(p0 + 4);
   }
-  uVar3 = uVar9;
-  if (param_3 <= uVar9) {
-    uVar3 = param_3;
+  uVar11 = uVar8;
+  if (p2 <= uVar8) {
+    uVar11 = p2;
   }
-  uVar4 = uVar3 + param_4;
-  if (uVar9 - uVar3 <= param_4) {
-    uVar4 = uVar9;
+  uVar3 = uVar11 + in_x3;
+  if (uVar8 - uVar11 <= in_x3) {
+    uVar3 = uVar8;
   }
-  pbVar1 = pbVar6 + uVar4 * 4;
-  pbVar8 = pbVar1;
-  if ((param_4 != 0) && (lVar7 = (long)(param_4 << 2) >> 2, lVar7 <= (long)(uVar4 << 2) >> 2)) {
-    param_3 = ~param_3;
-    if (param_3 < ~uVar9) {
-      param_3 = ~uVar9;
+  pwVar1 = pwVar5 + uVar3;
+  pwVar7 = pwVar1;
+  if ((in_x3 != 0) && (lVar6 = (long)(in_x3 << 2) >> 2, lVar6 <= (long)(uVar3 << 2) >> 2)) {
+    uVar11 = ~p2;
+    if (uVar11 < ~uVar8) {
+      uVar11 = ~uVar8;
     }
-    uVar9 = (-2 - uVar9) - param_3;
-    if (uVar9 <= ~param_4) {
-      uVar9 = ~param_4;
+    uVar8 = (-2 - uVar8) - uVar11;
+    if (uVar8 <= ~in_x3) {
+      uVar8 = ~in_x3;
     }
-    pbVar10 = pbVar6 + (-4 - (uVar9 + param_3)) * 4;
-    pbVar11 = pbVar1;
-    while (pbVar6 + lVar7 * 4 + -4 != pbVar11) {
-      pbVar11 = pbVar11 + -4;
-      pbVar12 = pbVar10;
-      lVar13 = param_4 * 4;
-      if (*(int *)pbVar11 == *(int *)(param_2 + param_4 * 4 + -4)) {
+    pwVar9 = pwVar5 + (-4 - (uVar8 + uVar11));
+    pwVar10 = pwVar1;
+    while (pwVar5 + lVar6 + -1 != pwVar10) {
+      pwVar10 = pwVar10 + -1;
+      pwVar12 = pwVar9;
+      lVar13 = in_x3 * 4;
+      if (*pwVar10 == *(wchar_t *)(p1 + in_x3 * 4 + -4)) {
         do {
           if (lVar13 + -4 == 0) {
-            pbVar8 = pbVar12 + 4;
+            pwVar7 = pwVar12 + 1;
             goto LAB_005e9cd4;
           }
-          lVar2 = param_2 + lVar13;
-          iVar5 = *(int *)pbVar12;
-          pbVar12 = pbVar12 + -4;
+          lVar2 = p1 + lVar13;
+          wVar4 = *pwVar12;
+          pwVar12 = pwVar12 + -1;
           lVar13 = lVar13 + -4;
-        } while (iVar5 == *(int *)(lVar2 + -8));
+        } while (wVar4 == *(wchar_t *)(lVar2 + -8));
       }
-      pbVar10 = pbVar10 + -4;
+      pwVar9 = pwVar9 + -1;
     }
   }
 LAB_005e9cd4:
-  lVar7 = (long)pbVar8 - (long)pbVar6 >> 2;
-  if (pbVar8 == pbVar1 && param_4 != 0) {
-    lVar7 = -1;
+  lVar6 = (long)pwVar7 - (long)pwVar5 >> 2;
+  if (pwVar7 == pwVar1 && in_x3 != 0) {
+    lVar6 = -1;
   }
-  return lVar7;
+  return lVar6;
 }
 
 
@@ -1943,35 +1928,38 @@ LAB_005e9cd4:
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::rfind
-               (byte *param_1,int param_2,ulong param_3)
+               (wchar_t p0,ulong p1)
 
 {
   byte *pbVar1;
   long lVar2;
-  ulong uVar3;
-  long lVar4;
+  byte *pbVar3;
+  ulong in_x2;
+  ulong uVar4;
+  long lVar5;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 4;
-    uVar3 = (ulong)(*param_1 >> 1);
+  pbVar3 = (byte *)(ulong)(uint)p0;
+  if ((*pbVar3 & 1) == 0) {
+    pbVar1 = pbVar3 + 4;
+    uVar4 = (ulong)(*pbVar3 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar4 = *(ulong *)(pbVar3 + 8);
+    pbVar1 = *(byte **)(pbVar3 + 0x10);
   }
-  if (uVar3 != 0) {
-    if (param_3 < uVar3) {
-      uVar3 = param_3 + 1;
+  if (uVar4 != 0) {
+    if (in_x2 < uVar4) {
+      uVar4 = in_x2 + 1;
     }
-    lVar4 = uVar3 << 2;
+    lVar5 = uVar4 << 2;
     do {
-      if (lVar4 == 0) {
+      if (lVar5 == 0) {
         return -1;
       }
-      lVar2 = lVar4 + -4;
-      lVar4 = lVar4 + -4;
-    } while (*(int *)(pbVar1 + lVar2) != param_2);
-    return lVar4 >> 2;
+      lVar2 = lVar5 + -4;
+      lVar5 = lVar5 + -4;
+    } while (*(int *)(pbVar1 + lVar2) != (int)p1);
+    return lVar5 >> 2;
   }
   return -1;
 }
@@ -1988,45 +1976,46 @@ long std::__ndk1::
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_first_of(byte *param_1,int *param_2,ulong param_3,long param_4)
+     find_first_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
-  byte *pbVar2;
+  wchar_t *pwVar1;
+  wchar_t *pwVar2;
+  long in_x3;
   long lVar3;
-  byte *pbVar4;
-  byte *pbVar5;
+  wchar_t *pwVar4;
+  wchar_t *pwVar5;
   ulong uVar6;
-  int *piVar7;
+  wchar_t *pwVar7;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 4;
-    uVar6 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar2 = p0 + 1;
+    uVar6 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar6 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar6 = *(ulong *)(p0 + 2);
+    pwVar2 = *(wchar_t **)(p0 + 4);
   }
-  if ((param_4 == 0) || (uVar6 <= param_3)) {
+  if ((in_x3 == 0) || (uVar6 <= p2)) {
     return -1;
   }
-  pbVar4 = pbVar1 + param_3 * 4;
-  pbVar2 = pbVar1 + uVar6 * 4;
+  pwVar4 = pwVar2 + p2;
+  pwVar1 = pwVar2 + uVar6;
   do {
-    lVar3 = param_4 << 2;
-    piVar7 = param_2;
+    lVar3 = in_x3 << 2;
+    pwVar7 = (wchar_t *)p1;
     do {
-      pbVar5 = pbVar4;
-      if (*(int *)pbVar4 == *piVar7) goto LAB_005e9f68;
+      pwVar5 = pwVar4;
+      if (*pwVar4 == *pwVar7) goto LAB_005e9f68;
       lVar3 = lVar3 + -4;
-      piVar7 = piVar7 + 1;
+      pwVar7 = pwVar7 + 1;
     } while (lVar3 != 0);
-    pbVar4 = pbVar4 + 4;
-    pbVar5 = pbVar2;
-  } while (pbVar4 != pbVar2);
+    pwVar4 = pwVar4 + 1;
+    pwVar5 = pwVar1;
+  } while (pwVar4 != pwVar1);
 LAB_005e9f68:
-  lVar3 = (long)pbVar5 - (long)pbVar1 >> 2;
-  if (pbVar5 == pbVar2) {
+  lVar3 = (long)pwVar5 - (long)pwVar2 >> 2;
+  if (pwVar5 == pwVar1) {
     lVar3 = -1;
   }
   return lVar3;
@@ -2044,34 +2033,35 @@ LAB_005e9f68:
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_last_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+     find_last_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  wchar_t *pwVar1;
   long lVar2;
   long lVar3;
+  long in_x3;
   ulong uVar4;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 4;
-    uVar4 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar1 = p0 + 1;
+    uVar4 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar4 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar4 = *(ulong *)(p0 + 2);
+    pwVar1 = *(wchar_t **)(p0 + 4);
   }
-  if (param_4 == 0) {
+  if (in_x3 == 0) {
 LAB_005ea19c:
     lVar3 = -1;
   }
   else {
-    if (param_3 < uVar4) {
-      uVar4 = param_3 + 1;
+    if (p2 < uVar4) {
+      uVar4 = p2 + 1;
     }
     lVar3 = uVar4 << 2;
     do {
       if (lVar3 == 0) goto LAB_005ea19c;
-      lVar2 = FUN_00170580(param_2,*(undefined4 *)(pbVar1 + lVar3 + -4),param_4);
+      lVar2 = FUN_00170580(p1,*(undefined4 *)((long)pwVar1 + lVar3 + -4));
       lVar3 = lVar3 + -4;
     } while (lVar2 == 0);
     lVar3 = lVar3 >> 2;
@@ -2091,30 +2081,31 @@ LAB_005ea19c:
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_first_not_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+     find_first_not_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
-  byte *pbVar1;
+  wchar_t *pwVar1;
   long lVar2;
+  long in_x3;
   ulong uVar3;
   long lVar4;
   long lVar5;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar1 = param_1 + 4;
-    uVar3 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar1 = p0 + 1;
+    uVar3 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar1 = *(byte **)(param_1 + 0x10);
+    uVar3 = *(ulong *)(p0 + 2);
+    pwVar1 = *(wchar_t **)(p0 + 4);
   }
-  if (param_3 < uVar3) {
-    lVar4 = param_3 * 4;
+  if (p2 < uVar3) {
+    lVar4 = p2 * 4;
     do {
-      lVar5 = param_3 * 4;
-      if ((param_4 == 0) ||
-         (lVar2 = FUN_00170580(param_2,*(undefined4 *)(pbVar1 + lVar4),param_4), lVar5 = lVar4,
-         lVar2 == 0)) {
+      lVar5 = p2 * 4;
+      if ((in_x3 == 0) ||
+         (lVar2 = FUN_00170580(p1,*(undefined4 *)((long)pwVar1 + lVar4)), lVar5 = lVar4, lVar2 == 0)
+         ) {
         return lVar5 >> 2;
       }
       lVar4 = lVar4 + 4;
@@ -2135,25 +2126,26 @@ long std::__ndk1::
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     find_last_not_of(byte *param_1,undefined8 param_2,ulong param_3,long param_4)
+     find_last_not_of(wchar_t *p0,ulong p1,ulong p2)
 
 {
   long lVar1;
   long lVar2;
+  long in_x3;
   ulong uVar3;
-  byte *pbVar4;
+  wchar_t *pwVar4;
   long lVar5;
   
-  if ((*param_1 & 1) == 0) {
-    pbVar4 = param_1 + 4;
-    uVar3 = (ulong)(*param_1 >> 1);
+  if (((byte)*p0 & 1) == 0) {
+    pwVar4 = p0 + 1;
+    uVar3 = (ulong)(byte)((byte)*p0 >> 1);
   }
   else {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar4 = *(byte **)(param_1 + 0x10);
+    uVar3 = *(ulong *)(p0 + 2);
+    pwVar4 = *(wchar_t **)(p0 + 4);
   }
-  if (param_3 < uVar3) {
-    uVar3 = param_3 + 1;
+  if (p2 < uVar3) {
+    uVar3 = p2 + 1;
   }
   lVar1 = uVar3 << 2;
   do {
@@ -2161,8 +2153,8 @@ long std::__ndk1::
     if (lVar5 == 0) {
       return -1;
     }
-    if (param_4 == 0) break;
-    lVar2 = FUN_00170580(param_2,*(undefined4 *)(pbVar4 + lVar5 + -4),param_4);
+    if (in_x3 == 0) break;
+    lVar2 = FUN_00170580(p1,*(undefined4 *)((long)pwVar4 + lVar5 + -4));
     lVar1 = lVar5 + -4;
   } while (lVar2 != 0);
   return lVar5 + -4 >> 2;
@@ -2180,47 +2172,50 @@ long std::__ndk1::
 
 ulong std::__ndk1::
       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,undefined8 param_4,ulong param_5)
+      compare(ulong p0,ulong p1,wchar_t *p2,ulong p3)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  uint uVar3;
-  ulong uVar4;
+  wchar_t *pwVar1;
+  wchar_t *pwVar2;
+  byte bVar3;
+  wchar_t *in_x4;
+  uint uVar4;
+  long lVar5;
+  ulong uVar6;
   
-  bVar2 = *param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar4 = (ulong)(bVar2 >> 1);
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar6 = (ulong)(bVar3 >> 1);
   }
   else {
-    uVar4 = *(ulong *)(param_1 + 8);
+    uVar6 = *(ulong *)(p0 + 8);
   }
-  if ((param_5 != 0xffffffffffffffff) && (param_2 <= uVar4)) {
-    uVar1 = uVar4 - param_2;
-    if (param_3 <= uVar4 - param_2) {
-      uVar1 = param_3;
+  if ((in_x4 != (wchar_t *)0xffffffffffffffff) && (p1 <= uVar6)) {
+    pwVar1 = (wchar_t *)(uVar6 - p1);
+    if (p2 <= (wchar_t *)(uVar6 - p1)) {
+      pwVar1 = p2;
     }
-    if ((bVar2 & 1) == 0) {
-      param_1 = param_1 + 4;
+    if ((bVar3 & 1) == 0) {
+      lVar5 = p0 + 4;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      lVar5 = *(long *)(p0 + 0x10);
     }
-    uVar4 = param_5;
-    if (uVar1 <= param_5) {
-      uVar4 = uVar1;
+    pwVar2 = in_x4;
+    if (pwVar1 <= in_x4) {
+      pwVar2 = pwVar1;
     }
-    if ((uVar4 == 0) || (uVar4 = FUN_00162ec0(param_1 + param_2 * 4,param_4), (int)uVar4 == 0)) {
-      uVar3 = (uint)(param_5 < uVar1);
-      if (uVar1 < param_5) {
-        uVar3 = 0xffffffff;
+    if ((pwVar2 == (wchar_t *)0x0) || (uVar6 = FUN_00162ec0(lVar5 + p1 * 4,p3), (int)uVar6 == 0)) {
+      uVar4 = (uint)(in_x4 < pwVar1);
+      if (pwVar1 < in_x4) {
+        uVar4 = 0xffffffff;
       }
-      uVar4 = (ulong)uVar3;
+      uVar6 = (ulong)uVar4;
     }
-    return uVar4;
+    return uVar6;
   }
-  uVar4 = FUN_0016ec80();
-  return uVar4;
+  uVar6 = FUN_0016ec80();
+  return uVar6;
 }
 
 
@@ -2316,46 +2311,47 @@ ulong std::__ndk1::
 
 ulong std::__ndk1::
       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(byte *param_1,undefined8 param_2)
+      compare(wchar_t *p0)
 
 {
   byte bVar1;
   ulong uVar2;
-  ulong uVar3;
-  uint uVar4;
-  ulong uVar5;
+  wchar_t *pwVar3;
+  ulong uVar4;
+  uint uVar5;
+  ulong uVar6;
   
-  uVar2 = FUN_00172dd0(param_2);
-  bVar1 = *param_1;
+  uVar2 = FUN_00172dd0();
+  bVar1 = (byte)*p0;
   if ((bVar1 & 1) == 0) {
-    uVar5 = (ulong)(bVar1 >> 1);
+    uVar6 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 8);
+    uVar6 = *(ulong *)(p0 + 2);
   }
   if (uVar2 == 0xffffffffffffffff) {
                     /* try { // try from 005eaa30 to 005eaa37 has its CatchHandler @ 005eaa38 */
-    uVar2 = FUN_0016ec80(param_1);
+    uVar2 = FUN_0016ec80(p0);
     return uVar2;
   }
   if ((bVar1 & 1) == 0) {
-    param_1 = param_1 + 4;
+    pwVar3 = p0 + 1;
   }
   else {
-    param_1 = *(byte **)(param_1 + 0x10);
+    pwVar3 = *(wchar_t **)(p0 + 4);
   }
-  uVar3 = uVar2;
-  if (uVar5 <= uVar2) {
-    uVar3 = uVar5;
+  uVar4 = uVar2;
+  if (uVar6 <= uVar2) {
+    uVar4 = uVar6;
   }
-  if ((uVar3 == 0) || (uVar3 = FUN_00162ec0(param_1,param_2), (int)uVar3 == 0)) {
-    uVar4 = (uint)(uVar2 < uVar5);
-    if (uVar5 < uVar2) {
-      uVar4 = 0xffffffff;
+  if ((uVar4 == 0) || (uVar4 = FUN_00162ec0(pwVar3), (int)uVar4 == 0)) {
+    uVar5 = (uint)(uVar2 < uVar6);
+    if (uVar6 < uVar2) {
+      uVar5 = 0xffffffff;
     }
-    uVar3 = (ulong)uVar4;
+    uVar4 = (ulong)uVar5;
   }
-  return uVar3;
+  return uVar4;
 }
 
 
@@ -2369,49 +2365,51 @@ ulong std::__ndk1::
 
 ulong std::__ndk1::
       basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-      compare(byte *param_1,ulong param_2,ulong param_3,undefined8 param_4)
+      compare(ulong p0,ulong p1,wchar_t *p2)
 
 {
-  ulong uVar1;
-  byte bVar2;
-  ulong uVar3;
-  uint uVar4;
-  ulong uVar5;
+  wchar_t *pwVar1;
+  wchar_t *pwVar2;
+  byte bVar3;
+  wchar_t *pwVar4;
+  uint uVar5;
+  long lVar6;
+  ulong uVar7;
   
-  uVar3 = FUN_00172dd0(param_4);
-  bVar2 = *param_1;
-  if ((bVar2 & 1) == 0) {
-    uVar5 = (ulong)(bVar2 >> 1);
+  pwVar4 = (wchar_t *)FUN_00172dd0();
+  bVar3 = *(byte *)p0;
+  if ((bVar3 & 1) == 0) {
+    uVar7 = (ulong)(bVar3 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 8);
+    uVar7 = *(ulong *)(p0 + 8);
   }
-  if ((uVar3 != 0xffffffffffffffff) && (param_2 <= uVar5)) {
-    uVar1 = uVar5 - param_2;
-    if (param_3 <= uVar5 - param_2) {
-      uVar1 = param_3;
+  if ((pwVar4 != (wchar_t *)0xffffffffffffffff) && (p1 <= uVar7)) {
+    pwVar1 = (wchar_t *)(uVar7 - p1);
+    if (p2 <= (wchar_t *)(uVar7 - p1)) {
+      pwVar1 = p2;
     }
-    if ((bVar2 & 1) == 0) {
-      param_1 = param_1 + 4;
+    if ((bVar3 & 1) == 0) {
+      lVar6 = p0 + 4;
     }
     else {
-      param_1 = *(byte **)(param_1 + 0x10);
+      lVar6 = *(long *)(p0 + 0x10);
     }
-    uVar5 = uVar3;
-    if (uVar1 <= uVar3) {
-      uVar5 = uVar1;
+    pwVar2 = pwVar4;
+    if (pwVar1 <= pwVar4) {
+      pwVar2 = pwVar1;
     }
-    if ((uVar5 == 0) || (uVar5 = FUN_00162ec0(param_1 + param_2 * 4,param_4), (int)uVar5 == 0)) {
-      uVar4 = (uint)(uVar3 < uVar1);
-      if (uVar1 < uVar3) {
-        uVar4 = 0xffffffff;
+    if ((pwVar2 == (wchar_t *)0x0) || (uVar7 = FUN_00162ec0(lVar6 + p1 * 4), (int)uVar7 == 0)) {
+      uVar5 = (uint)(pwVar4 < pwVar1);
+      if (pwVar1 < pwVar4) {
+        uVar5 = 0xffffffff;
       }
-      uVar5 = (ulong)uVar4;
+      uVar7 = (ulong)uVar5;
     }
-    return uVar5;
+    return uVar7;
   }
-  uVar3 = FUN_0016ec80(param_1);
-  return uVar3;
+  uVar7 = FUN_0016ec80(p0);
+  return uVar7;
 }
 
 
@@ -2425,42 +2423,43 @@ ulong std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::__init
-               (ulong *param_1,undefined8 param_2,ulong param_3,ulong param_4)
+               (wchar_t *p0,ulong p1,ulong p2)
 
 {
-  undefined8 *puVar1;
-  undefined1 *puVar2;
+  wchar_t *pwVar1;
+  undefined8 *puVar2;
+  ulong in_x3;
   ulong uVar3;
   
-  if (0x3fffffffffffffef < param_4) {
-    FUN_00164180(param_1);
+  if (0x3fffffffffffffef < in_x3) {
+    FUN_00164180(p0);
     return;
   }
-  if (param_4 < 5) {
-    puVar2 = (undefined1 *)((long)param_1 + 4);
-    *(char *)param_1 = (char)((int)param_3 << 1);
+  if (in_x3 < 5) {
+    pwVar1 = p0 + 1;
+    *(char *)p0 = (char)((int)p2 << 1);
   }
   else {
-    if (param_4 + 4 >> 0x3e != 0) {
-      puVar1 = (undefined8 *)FUN_00168670(0x10);
+    if (in_x3 + 4 >> 0x3e != 0) {
+      puVar2 = (undefined8 *)FUN_00168670(0x10);
                     /* try { // try from 005eac74 to 005eac7f has its CatchHandler @ 005eaca8 */
-      func_0x00162cd0(puVar1,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
+      func_0x00162cd0(puVar2,"allocator<T>::allocate(size_t n) \'n\' exceeds maximum supported size"
                      );
-      *puVar1 = &PTR__logic_error_0071a298;
-      FUN_0016ab10(puVar1,&length_error::typeinfo,logic_error::~logic_error);
+      *puVar2 = &PTR__logic_error_0071a298;
+      FUN_0016ab10(puVar2,&length_error::typeinfo,logic_error::~logic_error);
       return;
     }
-    uVar3 = param_4 + 4 & 0xfffffffffffffffc;
-    puVar2 = (undefined1 *)FUN_00164060(uVar3 << 2);
-    param_1[1] = param_3;
-    param_1[2] = (ulong)puVar2;
-    *param_1 = uVar3 | 1;
+    uVar3 = in_x3 + 4 & 0xfffffffffffffffc;
+    pwVar1 = (wchar_t *)FUN_00164060(uVar3 << 2);
+    *(ulong *)(p0 + 2) = p2;
+    *(wchar_t **)(p0 + 4) = pwVar1;
+    *(ulong *)p0 = uVar3 | 1;
   }
-  if (param_3 != 0) {
+  if (p2 != 0) {
                     /* try { // try from 005eac3c to 005eac4b has its CatchHandler @ 005eacbc */
-    func_0x00173f40(puVar2,param_2,param_3);
+    func_0x00173f40(pwVar1,p1,p2);
   }
-  *(undefined4 *)(puVar2 + param_3 * 4) = 0;
+  pwVar1[p2] = L'\0';
   return;
 }
 

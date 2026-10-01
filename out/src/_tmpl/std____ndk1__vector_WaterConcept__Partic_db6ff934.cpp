@@ -130,7 +130,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
         }
         puStack_98 = puVar7;
         if (puVar11 != (undefined8 *)0x0) {
-          FUN_00166120();
+          FUN_00166120(puVar11);
         }
       }
       else {
@@ -162,7 +162,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
                    ) * 0xc);
     }
     if (puStack_a8 != (undefined8 *)0x0) {
-      FUN_00166120();
+      FUN_00166120(puStack_a8);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {

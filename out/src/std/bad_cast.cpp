@@ -38,7 +38,7 @@ void std::bad_cast::~bad_cast(void)
 
 /* std::bad_cast::~bad_cast() */
 
-void std::bad_cast::~bad_cast(undefined8 param_1)
+void std::bad_cast::~bad_cast(void *param_1)
 
 {
   FUN_0016fe40();

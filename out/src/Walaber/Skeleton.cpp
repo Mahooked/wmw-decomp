@@ -80,28 +80,29 @@ void Walaber::Skeleton::Skeleton(undefined8 *param_1)
 
 /* Walaber::Skeleton::Skeleton(Walaber::Skeleton const&) */
 
-void Walaber::Skeleton::Skeleton(undefined8 *param_1,long param_2)
+void Walaber::Skeleton::Skeleton(Walaber__Skeleton *p0)
 
 {
   bool bVar1;
+  long in_x1;
   long *plVar2;
   long lVar3;
-  undefined8 *puVar4;
+  Walaber__Skeleton *pWVar4;
   long *plVar5;
   
   func_0x0016f330();
-  *param_1 = &PTR__Skeleton_0070e3a8;
-  param_1[0x12] = 0;
-  param_1[0x11] = param_1 + 0x12;
-  puVar4 = param_1 + 0x15;
-  *puVar4 = 0;
-  param_1[0x16] = 0;
-  param_1[0x13] = 0;
-  param_1[0x14] = puVar4;
-  plVar5 = *(long **)(param_2 + 0xa0);
-  while (plVar5 != (long *)(param_2 + 0xa8)) {
+  *(undefined ***)p0 = &PTR__Skeleton_0070e3a8;
+  *(undefined8 *)(p0 + 0x90) = 0;
+  *(Walaber__Skeleton **)(p0 + 0x88) = p0 + 0x90;
+  pWVar4 = p0 + 0xa8;
+  *(undefined8 *)pWVar4 = 0;
+  *(undefined8 *)(p0 + 0xb0) = 0;
+  *(undefined8 *)(p0 + 0x98) = 0;
+  *(Walaber__Skeleton **)(p0 + 0xa0) = pWVar4;
+  plVar5 = *(long **)(in_x1 + 0xa0);
+  while (plVar5 != (long *)(in_x1 + 0xa8)) {
                     /* try { // try from 0033acac to 0033acbb has its CatchHandler @ 0033ae30 */
-    func_0x00171f10(param_1 + 0x14,puVar4,plVar5 + 4,plVar5 + 4);
+    func_0x00171f10(p0 + 0xa0,pWVar4,plVar5 + 4,plVar5 + 4);
     plVar2 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
       plVar2 = plVar5 + 2;
@@ -122,14 +123,14 @@ void Walaber::Skeleton::Skeleton(undefined8 *param_1,long param_2)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  puVar4 = param_1 + 0x18;
-  *puVar4 = 0;
-  param_1[0x19] = 0;
-  param_1[0x17] = puVar4;
-  plVar5 = *(long **)(param_2 + 0xb8);
-  while (plVar5 != (long *)(param_2 + 0xc0)) {
+  pWVar4 = p0 + 0xc0;
+  *(undefined8 *)pWVar4 = 0;
+  *(undefined8 *)(p0 + 200) = 0;
+  *(Walaber__Skeleton **)(p0 + 0xb8) = pWVar4;
+  plVar5 = *(long **)(in_x1 + 0xb8);
+  while (plVar5 != (long *)(in_x1 + 0xc0)) {
                     /* try { // try from 0033ad38 to 0033ad47 has its CatchHandler @ 0033ae18 */
-    func_0x00167790(param_1 + 0x17,puVar4,plVar5 + 4,plVar5 + 4);
+    func_0x00167790(p0 + 0xb8,pWVar4,plVar5 + 4,plVar5 + 4);
     plVar2 = (long *)plVar5[1];
     if ((long *)plVar5[1] == (long *)0x0) {
       plVar2 = plVar5 + 2;
@@ -150,15 +151,15 @@ void Walaber::Skeleton::Skeleton(undefined8 *param_1,long param_2)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  param_1[0x1b] = 0;
-  param_1[0x1c] = 0;
-  param_1[0x1a] = param_1 + 0x1b;
+  *(undefined8 *)(p0 + 0xd8) = 0;
+  *(undefined8 *)(p0 + 0xe0) = 0;
+  *(Walaber__Skeleton **)(p0 + 0xd0) = p0 + 0xd8;
                     /* try { // try from 0033adb4 to 0033adbb has its CatchHandler @ 0033ae00 */
-  func_0x00162810(param_1 + 0x1d,param_2 + 0xe8);
-  *(undefined4 *)(param_1 + 0x27) = 0xff000000;
+  func_0x00162810(p0 + 0xe8,in_x1 + 0xe8);
+  *(undefined4 *)(p0 + 0x138) = 0xff000000;
                     /* try { // try from 0033adcc to 0033adcf has its CatchHandler @ 0033adf0 */
-  func_0x0016f720(param_1 + 0x28,param_2 + 0x140);
-  *(undefined1 *)(param_1 + 0x2b) = *(undefined1 *)(param_2 + 0x158);
+  func_0x0016f720(p0 + 0x140,in_x1 + 0x140);
+  p0[0x158] = *(Walaber__Skeleton *)(in_x1 + 0x158);
   return;
 }
 
@@ -170,18 +171,20 @@ void Walaber::Skeleton::Skeleton(undefined8 *param_1,long param_2)
 
 /* Walaber::Skeleton::TEMPNAMEPLACEHOLDERVALUE(Walaber::Skeleton const&) */
 
-long Walaber::Skeleton::operator=(long param_1,long param_2)
+Walaber__Skeleton * Walaber::Skeleton::operator=(Walaber__Skeleton *p0)
 
 {
+  Walaber__Skeleton *in_x1;
+  
   func_0x001711a0();
-  if (param_1 != param_2) {
-    func_0x00161a10(param_1 + 0xa0,*(undefined8 *)(param_2 + 0xa0),param_2 + 0xa8);
-    func_0x0016dce0(param_1 + 0xb8,*(undefined8 *)(param_2 + 0xb8),param_2 + 0xc0);
+  if (p0 != in_x1) {
+    func_0x00161a10(p0 + 0xa0,*(undefined8 *)(in_x1 + 0xa0),in_x1 + 0xa8);
+    func_0x0016dce0(p0 + 0xb8,*(undefined8 *)(in_x1 + 0xb8),in_x1 + 0xc0);
   }
-  func_0x001704d0(param_1 + 0xe8,param_2 + 0xe8);
-  func_0x00171ac0(param_1 + 0x140,param_2 + 0x140);
-  *(undefined1 *)(param_1 + 0x158) = *(undefined1 *)(param_2 + 0x158);
-  return param_1;
+  func_0x001704d0(p0 + 0xe8,in_x1 + 0xe8);
+  func_0x00171ac0(p0 + 0x140,in_x1 + 0x140);
+  p0[0x158] = in_x1[0x158];
+  return p0;
 }
 
 
@@ -264,7 +267,7 @@ void Walaber::Skeleton::~Skeleton(undefined8 *param_1)
   bVar1 = *(byte *)(param_1 + 0x28);
 joined_r0x0033b00c:
   if ((bVar1 & 1) != 0) {
-    FUN_00166120(param_1[0x2a]);
+    FUN_00166120((void *)param_1[0x2a]);
   }
   func_0x00171910(param_1 + 0x1d);
   func_0x00164b10(param_1 + 0x1a,param_1[0x1b]);
@@ -283,7 +286,7 @@ joined_r0x0033b00c:
 
 /* Walaber::Skeleton::~Skeleton() */
 
-void Walaber::Skeleton::~Skeleton(undefined8 param_1)
+void Walaber::Skeleton::~Skeleton(void *param_1)
 
 {
   func_0x0016c790();
@@ -307,9 +310,9 @@ undefined8 Walaber::Skeleton::createFromXml(undefined8 param_1)
   long lVar2;
   undefined8 uVar3;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   byte abStack_48 [16];
-  undefined8 uStack_38;
+  void *pvStack_38;
   undefined8 uStack_30;
   long lStack_28;
   
@@ -322,7 +325,7 @@ undefined8 Walaber::Skeleton::createFromXml(undefined8 param_1)
   abStack_60[0xd] = 0;
   abStack_60[0xe] = 0;
   abStack_60[0xf] = 0;
-  uStack_50 = 0;
+  pvStack_50 = (void *)0x0;
   abStack_60[0] = 0x10;
   abStack_60[1] = 0x53;
   abStack_60[2] = 0x6b;
@@ -336,10 +339,10 @@ undefined8 Walaber::Skeleton::createFromXml(undefined8 param_1)
                     /* try { // try from 0033b134 to 0033b143 has its CatchHandler @ 0033b1b0 */
   lVar2 = func_0x00164c30(abStack_48,abStack_60,&uStack_30);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if ((abStack_48[0] & 1) != 0) {
-    FUN_00166120(uStack_38);
+    FUN_00166120(pvStack_38);
   }
   uVar3 = 0;
   if (lVar2 != 0) {
@@ -362,7 +365,7 @@ undefined8 Walaber::Skeleton::createFromXml(undefined8 param_1)
 
 /* Walaber::Skeleton::createFromXmlNode(_xmlNode*) */
 
-long Walaber::Skeleton::createFromXmlNode(long param_1)
+long Walaber::Skeleton::createFromXmlNode(_xmlNode *p0)
 
 {
   undefined *puVar1;
@@ -371,7 +374,7 @@ long Walaber::Skeleton::createFromXmlNode(long param_1)
   long lVar4;
   long lVar5;
   long lVar6;
-  ulong uVar7;
+  void *pvVar7;
   ulong uVar8;
   undefined8 uStack_a8;
   undefined8 uStack_a0;
@@ -379,21 +382,21 @@ long Walaber::Skeleton::createFromXmlNode(long param_1)
   undefined8 uStack_90;
   ulong uStack_88;
   ulong uStack_80;
-  ulong uStack_78;
+  void *pvStack_78;
   ulong uStack_70;
   ulong uStack_68;
-  ulong uStack_60;
+  void *pvStack_60;
   long lStack_58;
   
   lVar6 = tpidr_el0;
   lStack_58 = *(long *)(lVar6 + 0x28);
-  if (param_1 == 0) {
+  if (p0 == (_xmlNode *)0x0) {
     lVar4 = 0;
     goto LAB_0033b4bc;
   }
-  uVar2 = FUN_00171ed0(param_1,"name");
+  uVar2 = FUN_00171ed0(p0,"name");
   uStack_68 = 0;
-  uStack_60 = 0;
+  pvStack_60 = (void *)0x0;
   uStack_70 = 0;
   uVar3 = FUN_00173480();
   if (0xffffffffffffffef < uVar3) {
@@ -401,20 +404,20 @@ long Walaber::Skeleton::createFromXmlNode(long param_1)
     return lVar6;
   }
   if (uVar3 < 0x17) {
-    uVar7 = (ulong)&uStack_70 | 1;
+    pvVar7 = (void *)((ulong)&uStack_70 | 1);
     uStack_70 = CONCAT71(uStack_70._1_7_,(char)((int)uVar3 << 1));
     if (uVar3 != 0) goto LAB_0033b27c;
   }
   else {
     uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
-    uVar7 = FUN_00164060(uVar8);
+    pvVar7 = (void *)FUN_00164060(uVar8);
     uStack_70 = uVar8 | 1;
     uStack_68 = uVar3;
-    uStack_60 = uVar7;
+    pvStack_60 = pvVar7;
 LAB_0033b27c:
-    FUN_001715e0(uVar7,uVar2,uVar3);
+    FUN_001715e0(pvVar7,uVar2,uVar3);
   }
-  *(undefined1 *)(uVar7 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar7 + uVar3) = 0;
                     /* try { // try from 0033b29c to 0033b2a3 has its CatchHandler @ 0033b564 */
   (*(code *)xmlFree)(uVar2);
                     /* try { // try from 0033b2a4 to 0033b2ab has its CatchHandler @ 0033b574 */
@@ -422,14 +425,14 @@ LAB_0033b27c:
                     /* try { // try from 0033b2b0 to 0033b2bb has its CatchHandler @ 0033b554 */
   func_0x00165330(lVar4,&uStack_70,1);
                     /* try { // try from 0033b2bc to 0033b2d7 has its CatchHandler @ 0033b574 */
-  lVar5 = FUN_00171ed0(param_1,"curveCollection");
+  lVar5 = FUN_00171ed0(p0,"curveCollection");
   (*(code *)xmlFree)();
   if (lVar5 != 0) {
                     /* try { // try from 0033b2dc to 0033b337 has its CatchHandler @ 0033b550 */
-    uVar2 = FUN_00171ed0(param_1,"curveCollection");
+    uVar2 = FUN_00171ed0(p0,"curveCollection");
     uStack_88 = 0;
     uStack_80 = 0;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     uVar3 = FUN_00173480();
     if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033b4f8 to 0033b4ff has its CatchHandler @ 0033b550 */
@@ -437,27 +440,27 @@ LAB_0033b27c:
       return lVar6;
     }
     if (uVar3 < 0x17) {
-      uVar7 = (ulong)&uStack_88 | 1;
+      pvVar7 = (void *)((ulong)&uStack_88 | 1);
       uStack_88 = CONCAT71(uStack_88._1_7_,(char)((int)uVar3 << 1));
       if (uVar3 != 0) goto LAB_0033b348;
     }
     else {
       uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
+      pvVar7 = (void *)FUN_00164060(uVar8);
       uStack_88 = uVar8 | 1;
       uStack_80 = uVar3;
-      uStack_78 = uVar7;
+      pvStack_78 = pvVar7;
 LAB_0033b348:
-      FUN_001715e0(uVar7,uVar2,uVar3);
+      FUN_001715e0(pvVar7,uVar2,uVar3);
     }
     puVar1 = xmlFree;
-    *(undefined1 *)(uVar7 + uVar3) = 0;
+    *(undefined1 *)((long)pvVar7 + uVar3) = 0;
                     /* try { // try from 0033b360 to 0033b367 has its CatchHandler @ 0033b538 */
     (*(code *)puVar1)(uVar2);
                     /* try { // try from 0033b36c to 0033b377 has its CatchHandler @ 0033b534 */
     func_0x00171ac0(lVar4 + 0x140,&uStack_88);
     if ((uStack_88 & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
                     /* try { // try from 0033b388 to 0033b38b has its CatchHandler @ 0033b574 */
     uVar2 = func_0x0016fd30();
@@ -472,19 +475,19 @@ LAB_0033b348:
     FUN_0016bb90(&uStack_98);
     FUN_0016bb90(&uStack_a8);
     if ((uStack_88 & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
   }
                     /* try { // try from 0033b3d4 to 0033b3ff has its CatchHandler @ 0033b574 */
-  func_0x001673a0(param_1,lVar4,0);
-  lVar5 = FUN_00171ed0(param_1,"animations");
+  func_0x001673a0(p0,lVar4,0);
+  lVar5 = FUN_00171ed0(p0,"animations");
   (*(code *)xmlFree)();
   if (lVar5 != 0) {
                     /* try { // try from 0033b404 to 0033b45f has its CatchHandler @ 0033b54c */
-    uVar2 = FUN_00171ed0(param_1,"animations");
+    uVar2 = FUN_00171ed0(p0,"animations");
     uStack_88 = 0;
     uStack_80 = 0;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     uVar3 = FUN_00173480();
     if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033b500 to 0033b507 has its CatchHandler @ 0033b54c */
@@ -492,31 +495,31 @@ LAB_0033b348:
       return lVar6;
     }
     if (uVar3 < 0x17) {
-      uVar7 = (ulong)&uStack_88 | 1;
+      pvVar7 = (void *)((ulong)&uStack_88 | 1);
       uStack_88 = CONCAT71(uStack_88._1_7_,(char)((int)uVar3 << 1));
       if (uVar3 != 0) goto LAB_0033b470;
     }
     else {
       uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
-      uVar7 = FUN_00164060(uVar8);
+      pvVar7 = (void *)FUN_00164060(uVar8);
       uStack_88 = uVar8 | 1;
       uStack_80 = uVar3;
-      uStack_78 = uVar7;
+      pvStack_78 = pvVar7;
 LAB_0033b470:
-      FUN_001715e0(uVar7,uVar2,uVar3);
+      FUN_001715e0(pvVar7,uVar2,uVar3);
     }
     puVar1 = xmlFree;
-    *(undefined1 *)(uVar7 + uVar3) = 0;
+    *(undefined1 *)((long)pvVar7 + uVar3) = 0;
                     /* try { // try from 0033b488 to 0033b48f has its CatchHandler @ 0033b50c */
     (*(code *)puVar1)(uVar2);
                     /* try { // try from 0033b490 to 0033b49b has its CatchHandler @ 0033b508 */
     func_0x001662e0(lVar4,&uStack_88);
     if ((uStack_88 & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
   }
   if ((uStack_70 & 1) != 0) {
-    FUN_00166120(uStack_60);
+    FUN_00166120(pvStack_60);
   }
 LAB_0033b4bc:
   if (*(long *)(lVar6 + 0x28) != lStack_58) {
@@ -534,40 +537,41 @@ LAB_0033b4bc:
 
 /* Walaber::Skeleton::_recursiveBuildSkeleton(_xmlNode*, Walaber::Skeleton*, Walaber::Node*) */
 
-void Walaber::Skeleton::_recursiveBuildSkeleton(long param_1,undefined8 param_2,long param_3)
+void Walaber::Skeleton::_recursiveBuildSkeleton
+               (_xmlNode *p0,Walaber__Skeleton *p1,Walaber__Node *p2)
 
 {
   long lVar1;
   undefined *puVar2;
   int iVar3;
-  ulong uVar4;
+  void *pvVar4;
   undefined8 uVar5;
   ulong uVar6;
-  undefined8 *puVar7;
+  Walaber__Node *p2_00;
+  void *pvVar7;
+  _xmlNode *p0_00;
   ulong uVar8;
-  long lVar9;
-  ulong uVar10;
   ulong auStack_c8 [5];
   undefined8 uStack_a0;
   ulong uStack_98;
   ulong uStack_90;
-  ulong uStack_88;
+  void *pvStack_88;
   ulong uStack_80;
   ulong uStack_78;
-  ulong uStack_70;
+  void *pvStack_70;
   long lStack_68;
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  lVar9 = *(long *)(param_1 + 0x18);
-  if (lVar9 != 0) {
-    uVar8 = (ulong)&uStack_80 | 1;
+  p0_00 = *(_xmlNode **)(p0 + 0x18);
+  if (p0_00 != (_xmlNode *)0x0) {
+    pvVar7 = (void *)((ulong)&uStack_80 | 1);
     do {
-      iVar3 = FUN_00162900(*(undefined8 *)(lVar9 + 0x10),&DAT_0062852d);
+      iVar3 = FUN_00162900(*(undefined8 *)(p0_00 + 0x10),&DAT_0062852d);
       if (iVar3 == 0) {
-        uVar5 = FUN_00171ed0(lVar9,"name");
+        uVar5 = FUN_00171ed0(p0_00,"name");
         uStack_78 = 0;
-        uStack_70 = 0;
+        pvStack_70 = (void *)0x0;
         uStack_80 = 0;
         uVar6 = FUN_00173480();
         if (0xffffffffffffffef < uVar6) {
@@ -577,73 +581,73 @@ LAB_0033b950:
         }
         if (uVar6 < 0x17) {
           uStack_80 = CONCAT71(uStack_80._1_7_,(char)((int)uVar6 << 1));
-          uVar4 = uVar8;
+          pvVar4 = pvVar7;
           if (uVar6 != 0) goto LAB_0033b888;
         }
         else {
-          uVar10 = uVar6 + 0x10 & 0xfffffffffffffff0;
-          uVar4 = FUN_00164060(uVar10);
-          uStack_80 = uVar10 | 1;
+          uVar8 = uVar6 + 0x10 & 0xfffffffffffffff0;
+          pvVar4 = (void *)FUN_00164060(uVar8);
+          uStack_80 = uVar8 | 1;
           uStack_78 = uVar6;
-          uStack_70 = uVar4;
+          pvStack_70 = pvVar4;
 LAB_0033b888:
-          FUN_001715e0(uVar4,uVar5,uVar6);
+          FUN_001715e0(pvVar4,uVar5,uVar6);
         }
         puVar2 = xmlFree;
-        *(undefined1 *)(uVar4 + uVar6) = 0;
+        *(undefined1 *)((long)pvVar4 + uVar6) = 0;
                     /* try { // try from 0033b8a0 to 0033b8a7 has its CatchHandler @ 0033b9ac */
         (*(code *)puVar2)(uVar5);
                     /* try { // try from 0033b8a8 to 0033b8af has its CatchHandler @ 0033b9e0 */
-        puVar7 = (undefined8 *)FUN_00164060(0x88);
+        p2_00 = (Walaber__Node *)FUN_00164060(0x88);
                     /* try { // try from 0033b8b4 to 0033b8bf has its CatchHandler @ 0033b9bc */
-        func_0x0016a880(puVar7,&uStack_80,2);
-        *puVar7 = &PTR__Node_0070e428;
-        if (param_3 == 0) {
-          func_0x0016ac20(param_2,puVar7);
+        func_0x0016a880(p2_00,&uStack_80,2);
+        *(undefined ***)p2_00 = &PTR__Node_0070e428;
+        if (p2 == (Walaber__Node *)0x0) {
+          func_0x0016ac20(p1,p2_00);
         }
         else {
                     /* try { // try from 0033b8c8 to 0033b903 has its CatchHandler @ 0033b9e0 */
-          func_0x0016c260(param_2,param_3,puVar7);
+          func_0x0016c260(p1,p2,p2_00);
         }
-        _recursiveBuildSkeleton(lVar9,param_2,puVar7);
-        func_0x00173330(lVar9,puVar7);
+        _recursiveBuildSkeleton(p0_00,p1,p2_00);
+        func_0x00173330(p0_00,p2_00);
 LAB_0033b904:
         if ((uStack_80 & 1) != 0) {
-          FUN_00166120(uStack_70);
+          FUN_00166120(pvStack_70);
         }
       }
       else {
-        iVar3 = FUN_00162900(*(undefined8 *)(lVar9 + 0x10),"Sprite");
-        if (((param_3 != 0) && (iVar3 == 0)) && (*(int *)(param_3 + 0x20) == 2)) {
-          uVar5 = FUN_00171ed0(lVar9,"name");
+        iVar3 = FUN_00162900(*(undefined8 *)(p0_00 + 0x10),"Sprite");
+        if (((p2 != (Walaber__Node *)0x0) && (iVar3 == 0)) && (*(int *)(p2 + 0x20) == 2)) {
+          uVar5 = FUN_00171ed0(p0_00,"name");
           uStack_78 = 0;
-          uStack_70 = 0;
+          pvStack_70 = (void *)0x0;
           uStack_80 = 0;
           uVar6 = FUN_00173480();
           if (0xffffffffffffffef < uVar6) goto LAB_0033b950;
           if (uVar6 < 0x17) {
             uStack_80 = CONCAT71(uStack_80._1_7_,(char)((int)uVar6 << 1));
-            uVar4 = uVar8;
+            pvVar4 = pvVar7;
             if (uVar6 != 0) goto LAB_0033b628;
           }
           else {
-            uVar10 = uVar6 + 0x10 & 0xfffffffffffffff0;
-            uVar4 = FUN_00164060(uVar10);
-            uStack_80 = uVar10 | 1;
+            uVar8 = uVar6 + 0x10 & 0xfffffffffffffff0;
+            pvVar4 = (void *)FUN_00164060(uVar8);
+            uStack_80 = uVar8 | 1;
             uStack_78 = uVar6;
-            uStack_70 = uVar4;
+            pvStack_70 = pvVar4;
 LAB_0033b628:
-            FUN_001715e0(uVar4,uVar5,uVar6);
+            FUN_001715e0(pvVar4,uVar5,uVar6);
           }
           puVar2 = xmlFree;
-          *(undefined1 *)(uVar4 + uVar6) = 0;
+          *(undefined1 *)((long)pvVar4 + uVar6) = 0;
                     /* try { // try from 0033b640 to 0033b647 has its CatchHandler @ 0033b9a0 */
           (*(code *)puVar2)(uVar5);
                     /* try { // try from 0033b648 to 0033b69f has its CatchHandler @ 0033b9a4 */
-          uVar5 = FUN_00171ed0(lVar9,"relativePath");
+          uVar5 = FUN_00171ed0(p0_00,"relativePath");
           uStack_98 = 0;
           uStack_90 = 0;
-          uStack_88 = 0;
+          pvStack_88 = (void *)0x0;
           uVar6 = FUN_00173480();
           if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0033b958 to 0033b95f has its CatchHandler @ 0033b964 */
@@ -652,25 +656,25 @@ LAB_0033b628:
           }
           if (uVar6 < 0x17) {
             uStack_98 = CONCAT71(uStack_98._1_7_,(char)((int)uVar6 << 1));
-            uVar4 = (ulong)&uStack_98 | 1;
+            pvVar4 = (void *)((ulong)&uStack_98 | 1);
             if (uVar6 != 0) goto LAB_0033b6b0;
           }
           else {
-            uVar10 = uVar6 + 0x10 & 0xfffffffffffffff0;
-            uVar4 = FUN_00164060(uVar10);
-            uStack_98 = uVar10 | 1;
+            uVar8 = uVar6 + 0x10 & 0xfffffffffffffff0;
+            pvVar4 = (void *)FUN_00164060(uVar8);
+            uStack_98 = uVar8 | 1;
             uStack_90 = uVar6;
-            uStack_88 = uVar4;
+            pvStack_88 = pvVar4;
 LAB_0033b6b0:
-            FUN_001715e0(uVar4,uVar5,uVar6);
+            FUN_001715e0(pvVar4,uVar5,uVar6);
           }
           puVar2 = xmlFree;
-          *(undefined1 *)(uVar4 + uVar6) = 0;
+          *(undefined1 *)((long)pvVar4 + uVar6) = 0;
                     /* try { // try from 0033b6c8 to 0033b6cf has its CatchHandler @ 0033b990 */
           (*(code *)puVar2)(uVar5);
           auStack_c8[0] = auStack_c8[0] & 0xffffffff00000000;
                     /* try { // try from 0033b6d4 to 0033b703 has its CatchHandler @ 0033b9a8 */
-          uVar5 = FUN_00171ed0(lVar9,"localLayer");
+          uVar5 = FUN_00171ed0(p0_00,"localLayer");
           func_0x00170360(uVar5,"%d",auStack_c8);
           (*(code *)xmlFree)(uVar5);
           uVar6 = auStack_c8[0];
@@ -689,16 +693,16 @@ LAB_0033b6b0:
           FUN_0016bb90(auStack_c8 + 2);
           FUN_0016bb90(auStack_c8);
                     /* try { // try from 0033b770 to 0033b78f has its CatchHandler @ 0033b9c8 */
-          func_0x0016d260(param_2,param_3,uVar5,uVar6 & 0xffffffff);
-          func_0x00173330(lVar9,uVar5);
+          func_0x0016d260(p1,p2,uVar5,uVar6 & 0xffffffff);
+          func_0x00173330(p0_00,uVar5);
           if ((uStack_98 & 1) != 0) {
-            FUN_00166120(uStack_88);
+            FUN_00166120(pvStack_88);
           }
           goto LAB_0033b904;
         }
       }
-      lVar9 = *(long *)(lVar9 + 0x30);
-    } while (lVar9 != 0);
+      p0_00 = *(_xmlNode **)(p0_00 + 0x30);
+    } while (p0_00 != (_xmlNode *)0x0);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_68) {
     FUN_00164ff0();
@@ -805,17 +809,17 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   long *plVar7;
   long lVar8;
   undefined8 uVar9;
-  ulong uVar10;
-  ulong uVar11;
-  int iVar12;
-  undefined1 auVar13 [16];
+  void *pvVar10;
+  ulong p0;
+  int iVar11;
+  undefined1 auVar12 [16];
   undefined8 *puStack_d8;
   undefined4 *puStack_d0;
   byte bStack_c8;
   undefined7 uStack_c7;
   undefined1 uStack_c0;
   undefined7 uStack_bf;
-  undefined8 uStack_b8;
+  void *pvStack_b8;
   long lStack_b0;
   int *piStack_a8;
   byte bStack_a0;
@@ -826,7 +830,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   undefined1 uStack_98;
   undefined1 uStack_97;
   undefined6 uStack_96;
-  ulong uStack_90;
+  void *pvStack_90;
   undefined1 auStack_88 [28];
   undefined4 uStack_6c;
   undefined7 uStack_68;
@@ -836,15 +840,15 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  auVar13 = func_0x0016b870(&mCallbackMap,param_2);
-  if (auVar13._0_8_ == auVar13._8_8_) {
-    iVar12 = 0;
+  auVar12 = func_0x0016b870(&mCallbackMap,param_2);
+  if (auVar12._0_8_ == auVar12._8_8_) {
+    iVar11 = 0;
   }
   else {
-    iVar12 = 0;
-    plVar2 = auVar13._0_8_;
+    iVar11 = 0;
+    plVar2 = auVar12._0_8_;
     do {
-      iVar12 = iVar12 + 1;
+      iVar11 = iVar11 + 1;
       plVar6 = (long *)plVar2[1];
       if ((long *)plVar2[1] == (long *)0x0) {
         plVar6 = plVar2 + 2;
@@ -864,14 +868,14 @@ void Walaber::Skeleton::loadSkeletonWithCallback
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar2 = plVar7;
-    } while (plVar7 != auVar13._8_8_);
+    } while (plVar7 != auVar12._8_8_);
   }
   uStack_6c = 0;
   func_0x0016b220(auStack_88);
-  if (iVar12 != 0) {
-    FUN_0016df60(&uStack_6c,4,"%i",iVar12);
+  if (iVar11 != 0) {
+    FUN_0016df60(&uStack_6c,4,"%i",iVar11);
     uStack_96 = 0;
-    uStack_90 = 0;
+    pvStack_90 = (void *)0x0;
     bStack_a0 = 0x10;
     uStack_9f = 0x656c6966;
     uStack_9b = 0x5f;
@@ -880,12 +884,12 @@ void Walaber::Skeleton::loadSkeletonWithCallback
     uStack_98 = 0x6d;
     uStack_97 = 0;
                     /* try { // try from 0033bc68 to 0033bc73 has its CatchHandler @ 0033bfd4 */
-    func_0x0016ae60(&bStack_c8,iVar12);
+    func_0x0016ae60(&bStack_c8,iVar11);
                     /* try { // try from 0033bc74 to 0033bc83 has its CatchHandler @ 0033bfd0 */
     func_0x00165260(auStack_88,&bStack_a0,&bStack_c8);
     func_0x00167bf0(&bStack_c8);
     if ((bStack_a0 & 1) != 0) {
-      FUN_00166120(uStack_90);
+      FUN_00166120(pvStack_90);
     }
   }
   uStack_9b = 0;
@@ -894,7 +898,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   uStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   bStack_a0 = 6;
   uStack_9f = 0x736f70;
                     /* try { // try from 0033bcb8 to 0033bcc3 has its CatchHandler @ 0033c040 */
@@ -903,13 +907,13 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   func_0x00165260(auStack_88,&bStack_a0,&bStack_c8);
   func_0x00167bf0(&bStack_c8);
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   uStack_99 = 0;
   uStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   bStack_a0 = 10;
   uStack_9f = 0x6c676e61;
   uStack_9b = 0x65;
@@ -920,14 +924,14 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   func_0x00165260(auStack_88,&bStack_a0,&bStack_c8);
   func_0x00167bf0(&bStack_c8);
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   uStack_9a = 0;
   uStack_99 = 0;
   uStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   bStack_a0 = 8;
   uStack_9f = 0x656d616e;
   uStack_9b = 0;
@@ -937,13 +941,13 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   func_0x00165260(auStack_88,&bStack_a0,&bStack_c8);
   func_0x00167bf0(&bStack_c8);
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   uStack_99 = 0;
   uStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   bStack_a0 = 10;
   uStack_9f = 0x6c616373;
   uStack_9b = 0x65;
@@ -954,7 +958,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   func_0x00165260(auStack_88,&bStack_a0,&bStack_c8);
   func_0x00167bf0(&bStack_c8);
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   bStack_a0 = 0;
   uStack_9f = 0;
@@ -964,7 +968,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   uStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
-  uStack_90 = 0;
+  pvStack_90 = (void *)0x0;
   uVar3 = FUN_00173480(&uStack_6c);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033bfc0 to 0033bfc7 has its CatchHandler @ 0033bfcc */
@@ -972,27 +976,27 @@ void Walaber::Skeleton::loadSkeletonWithCallback
     return;
   }
   if (uVar3 < 0x17) {
-    uVar10 = (ulong)&bStack_a0 | 1;
+    pvVar10 = (void *)((ulong)&bStack_a0 | 1);
     bStack_a0 = (byte)((int)uVar3 << 1);
     if (uVar3 == 0) goto LAB_0033be5c;
   }
   else {
-    uVar11 = uVar3 + 0x10 & 0xfffffffffffffff0;
+    p0 = uVar3 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 0033be34 to 0033be3b has its CatchHandler @ 0033bfcc */
-    uVar10 = FUN_00164060(uVar11);
-    bStack_a0 = (byte)uVar11 | 1;
+    pvVar10 = (void *)FUN_00164060(p0);
+    bStack_a0 = (byte)p0 | 1;
     uStack_98 = (undefined1)uVar3;
     uStack_97 = (undefined1)(uVar3 >> 8);
     uStack_96 = (undefined6)(uVar3 >> 0x10);
-    uStack_9f = (undefined4)(uVar11 >> 8);
-    uStack_9b = (undefined1)(uVar11 >> 0x28);
-    uStack_9a = (undefined1)(uVar11 >> 0x30);
-    uStack_99 = (undefined1)(uVar11 >> 0x38);
-    uStack_90 = uVar10;
+    uStack_9f = (undefined4)(p0 >> 8);
+    uStack_9b = (undefined1)(p0 >> 0x28);
+    uStack_9a = (undefined1)(p0 >> 0x30);
+    uStack_99 = (undefined1)(p0 >> 0x38);
+    pvStack_90 = pvVar10;
   }
-  FUN_001715e0(uVar10,&uStack_6c,uVar3);
+  FUN_001715e0(pvVar10,&uStack_6c,uVar3);
 LAB_0033be5c:
-  *(undefined1 *)(uVar10 + uVar3) = 0;
+  *(undefined1 *)((long)pvVar10 + uVar3) = 0;
   uVar3 = *(ulong *)(param_2 + 8);
   pbVar4 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
@@ -1023,7 +1027,7 @@ LAB_0033be5c:
   pbVar4[0xd] = 0;
   pbVar4[0xe] = 0;
   pbVar4[0xf] = 0;
-  uStack_b8 = *(undefined8 *)(pbVar4 + 0x10);
+  pvStack_b8 = *(void **)(pbVar4 + 0x10);
   pbVar4[0x10] = 0;
   pbVar4[0x11] = 0;
   pbVar4[0x12] = 0;
@@ -1045,10 +1049,10 @@ LAB_0033be5c:
   func_0x00172a20(&mCallbackMap,&bStack_c8);
   FUN_0016bb90(&lStack_b0);
   if ((bStack_c8 & 1) != 0) {
-    FUN_00166120(uStack_b8);
+    FUN_00166120(pvStack_b8);
   }
   if ((bStack_a0 & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
                     /* try { // try from 0033bf18 to 0033bf1b has its CatchHandler @ 0033bff0 */
   uVar9 = func_0x00162510();
@@ -1083,24 +1087,28 @@ LAB_0033be5c:
 
 /* Walaber::Skeleton::_skeletonHasLoaded(void*) */
 
-void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
+void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
 
 {
-  ulong uVar1;
+  long lVar1;
   long lVar2;
-  long lVar3;
-  undefined8 *puVar4;
-  undefined *puVar5;
-  long *plVar6;
+  undefined8 *puVar3;
+  undefined *puVar4;
+  long *plVar5;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong uVar6;
   undefined4 uVar7;
   undefined8 uVar8;
   undefined8 uVar9;
+  undefined1 auVar10 [16];
   byte abStack_98 [16];
-  undefined8 uStack_88;
+  void *pvStack_88;
   undefined8 uStack_80;
   undefined4 auStack_78 [2];
   long *plStack_70;
-  ulong auStack_68 [3];
+  ulong auStack_68 [2];
+  void *pvStack_58;
   byte bStack_50;
   undefined4 uStack_4f;
   undefined2 uStack_4b;
@@ -1108,13 +1116,13 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
   undefined1 uStack_48;
   undefined1 uStack_47;
   undefined6 uStack_46;
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
+  lVar1 = tpidr_el0;
+  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_46 = 0;
-  uStack_40 = 0;
+  pvStack_40 = (void *)0x0;
   bStack_50 = 0x10;
   uStack_4f = 0x656c6966;
   uStack_4b = 0x6e5f;
@@ -1122,26 +1130,26 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
   uStack_48 = 0x6d;
   uStack_47 = 0;
                     /* try { // try from 0033c0bc to 0033c0c3 has its CatchHandler @ 0033c430 */
-  lVar3 = func_0x00167060(*(undefined8 *)(param_1 + 0x18),&bStack_50);
+  lVar2 = func_0x00167060(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
   if ((bStack_50 & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
-  if (lVar3 == 0) {
-    puVar5 = (undefined *)func_0x001713c0(&mCallbackMap,param_1 + 2);
+  if (lVar2 == 0) {
+    puVar4 = (undefined *)func_0x001713c0(&mCallbackMap,(long)p0 + 8);
   }
   else {
-    func_0x00162cf0(auStack_68,lVar3);
-    uVar1 = (ulong)(*(byte *)(param_1 + 2) >> 1);
-    lVar3 = (long)param_1 + 9;
-    if ((*(byte *)(param_1 + 2) & 1) != 0) {
-      uVar1 = *(ulong *)(param_1 + 4);
-      lVar3 = *(long *)(param_1 + 6);
+    func_0x00162cf0(auStack_68,lVar2);
+    uVar6 = (ulong)(*(byte *)((long)p0 + 8) >> 1);
+    lVar2 = (long)p0 + 9;
+    if ((*(byte *)((long)p0 + 8) & 1) != 0) {
+      uVar6 = *(ulong *)((long)p0 + 0x10);
+      lVar2 = *(long *)((long)p0 + 0x18);
     }
                     /* try { // try from 0033c104 to 0033c10f has its CatchHandler @ 0033c41c */
-    puVar4 = (undefined8 *)FUN_00164fb0(auStack_68,0,lVar3,uVar1);
-    uStack_40 = puVar4[2];
-    uVar9 = puVar4[1];
-    uVar8 = *puVar4;
+    puVar3 = (undefined8 *)FUN_00164fb0(auStack_68,0,lVar2,uVar6);
+    pvStack_40 = (void *)puVar3[2];
+    uVar9 = puVar3[1];
+    uVar8 = *puVar3;
     uStack_48 = (undefined1)uVar9;
     uStack_47 = (undefined1)((ulong)uVar9 >> 8);
     uStack_46 = (undefined6)((ulong)uVar9 >> 0x10);
@@ -1149,22 +1157,22 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
     uStack_4f = (undefined4)((ulong)uVar8 >> 8);
     uStack_4b = (undefined2)((ulong)uVar8 >> 0x28);
     uStack_49 = (undefined1)((ulong)uVar8 >> 0x38);
-    puVar4[1] = 0;
-    puVar4[2] = 0;
-    *puVar4 = 0;
+    puVar3[1] = 0;
+    puVar3[2] = 0;
+    *puVar3 = 0;
                     /* try { // try from 0033c128 to 0033c137 has its CatchHandler @ 0033c404 */
-    puVar5 = (undefined *)func_0x001713c0(&mCallbackMap,&bStack_50);
+    puVar4 = (undefined *)func_0x001713c0(&mCallbackMap,&bStack_50);
     if ((bStack_50 & 1) != 0) {
-      FUN_00166120(uStack_40);
+      FUN_00166120(pvStack_40);
     }
     if ((auStack_68[0] & 1) != 0) {
-      FUN_00166120(auStack_68[2]);
+      FUN_00166120(pvStack_58);
     }
   }
-  if (puVar5 != &DAT_0072d7b0) {
+  if (puVar4 != &DAT_0072d7b0) {
     auStack_78[0] = 1;
     plStack_70 = (long *)0x0;
-    if (*param_1 == 1) {
+    if (*(int *)p0 == 1) {
       abStack_98[10] = 0;
       abStack_98[0xb] = 0;
       abStack_98[0xc] = 0;
@@ -1172,7 +1180,7 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
       abStack_98[0xe] = 0;
       abStack_98[0xf] = 0;
       abStack_98[0] = 0x10;
-      uStack_88 = 0;
+      pvStack_88 = (void *)0x0;
       abStack_98[1] = 0x53;
       abStack_98[2] = 0x6b;
       abStack_98[3] = 0x65;
@@ -1183,26 +1191,28 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
       abStack_98[8] = 0x6e;
       abStack_98[9] = 0;
                     /* try { // try from 0033c1cc to 0033c1d7 has its CatchHandler @ 0033c3e0 */
-      lVar3 = func_0x00161b90(*(undefined8 *)(param_1 + 8),*(undefined8 *)(param_1 + 10),abStack_98,
-                              &uStack_80);
+      auVar10 = func_0x00161b90(*(undefined8 *)((long)p0 + 0x20),*(undefined8 *)((long)p0 + 0x28),
+                                abStack_98,&uStack_80);
+      uVar6 = auVar10._8_8_;
       if ((abStack_98[0] & 1) != 0) {
-        FUN_00166120(uStack_88);
+        FUN_00166120(pvStack_88);
+        uVar6 = extraout_x1;
       }
-      if (lVar3 != 0) {
-        plVar6 = (long *)func_0x00162520(lVar3);
+      if (auVar10._0_8_ != 0) {
+        plVar5 = (long *)func_0x00162520(auVar10._0_8_);
         auStack_68[1] = 0;
-        auStack_68[2] = 0;
+        pvStack_58 = (void *)0x0;
         auStack_68[0] = 0x656d616e08;
                     /* try { // try from 0033c220 to 0033c22f has its CatchHandler @ 0033c3f4 */
-        func_0x0016d4e0(*(undefined8 *)(param_1 + 0x18),auStack_68);
+        func_0x0016d4e0(*(undefined8 *)((long)p0 + 0x60),auStack_68);
         func_0x00162cf0(&bStack_50);
                     /* try { // try from 0033c230 to 0033c23b has its CatchHandler @ 0033c3dc */
-        func_0x001660d0(plVar6,&bStack_50);
+        func_0x001660d0(plVar5,&bStack_50);
         if ((bStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
         if ((auStack_68[0] & 1) != 0) {
-          FUN_00166120(auStack_68[2]);
+          FUN_00166120(pvStack_58);
         }
         uStack_4b = 0;
         uStack_49 = 0;
@@ -1210,61 +1220,62 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
         uStack_47 = 0;
         uStack_46 = 0;
         bStack_50 = 6;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_4f = 0x736f70;
                     /* try { // try from 0033c27c to 0033c29f has its CatchHandler @ 0033c400 */
-        func_0x0016d4e0(*(undefined8 *)(param_1 + 0x18),&bStack_50);
+        func_0x0016d4e0(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
         func_0x00166e60(auStack_68);
-        (**(code **)(*plVar6 + 0x10))(plVar6,auStack_68);
+        (**(code **)(*plVar5 + 0x10))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
         uStack_49 = 0;
         uStack_48 = 0;
         uStack_47 = 0;
         uStack_46 = 0;
         bStack_50 = 10;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_4f = 0x6c676e61;
         uStack_4b = 0x65;
                     /* try { // try from 0033c2d8 to 0033c2fb has its CatchHandler @ 0033c3fc */
-        func_0x0016d4e0(*(undefined8 *)(param_1 + 0x18),&bStack_50);
+        func_0x0016d4e0(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
         uVar7 = func_0x00168f30();
         auStack_68[0] = CONCAT44(auStack_68[0]._4_4_,uVar7);
-        (**(code **)(*plVar6 + 0x20))(plVar6,auStack_68);
+        (**(code **)(*plVar5 + 0x20))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
         uStack_49 = 0;
         uStack_48 = 0;
         uStack_47 = 0;
         uStack_46 = 0;
         bStack_50 = 10;
-        uStack_40 = 0;
+        pvStack_40 = (void *)0x0;
         uStack_4f = 0x6c616373;
         uStack_4b = 0x65;
                     /* try { // try from 0033c334 to 0033c357 has its CatchHandler @ 0033c3f8 */
-        func_0x0016d4e0(*(undefined8 *)(param_1 + 0x18),&bStack_50);
+        func_0x0016d4e0(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
         func_0x00166e60(auStack_68);
-        (**(code **)(*plVar6 + 0x18))(plVar6,auStack_68);
+        (**(code **)(*plVar5 + 0x18))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
-          FUN_00166120(uStack_40);
+          FUN_00166120(pvStack_40);
         }
-        plStack_70 = plVar6;
+        plStack_70 = plVar5;
         FUN_00170230(uStack_80);
         func_0x0016b480();
+        uVar6 = extraout_x1_00;
       }
-      if (*(long *)(param_1 + 8) != 0) {
-        FUN_001639e0();
+      if (*(void **)((long)p0 + 0x20) != (void *)0x0) {
+        FUN_001639e0(*(void **)((long)p0 + 0x20),uVar6);
       }
     }
     else {
       auStack_78[0] = 3;
     }
-    (**(code **)(**(long **)(puVar5 + 0x38) + 0x10))(*(long **)(puVar5 + 0x38),auStack_78);
-    func_0x0016ef60(&mCallbackMap,puVar5);
+    (**(code **)(**(long **)(puVar4 + 0x38) + 0x10))(*(long **)(puVar4 + 0x38),auStack_78);
+    func_0x0016ef60(&mCallbackMap,puVar4);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
+  if (*(long *)(lVar1 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }
@@ -1279,36 +1290,39 @@ void Walaber::Skeleton::_skeletonHasLoaded(int *param_1)
 
 /* Walaber::Skeleton::setLayer(int) */
 
-void Walaber::Skeleton::setLayer(long param_1,undefined4 param_2)
+void Walaber::Skeleton::setLayer(int p0)
 
 {
   bool bVar1;
-  long *plVar2;
-  long lVar3;
-  long *plVar4;
+  ulong uVar2;
+  undefined4 in_w1;
+  long *plVar3;
+  long lVar4;
+  long *plVar5;
   
-  *(undefined4 *)(param_1 + 0x80) = param_2;
-  plVar4 = *(long **)(param_1 + 0xd0);
-  while (plVar4 != (long *)(param_1 + 0xd8)) {
-    (**(code **)(*(long *)plVar4[5] + 0x40))((long *)plVar4[5],param_2);
-    plVar2 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar2 = plVar4 + 2;
-      bVar1 = *(long **)*plVar2 != plVar4;
-      plVar4 = (long *)*plVar2;
+  uVar2 = (ulong)(uint)p0;
+  *(undefined4 *)(uVar2 + 0x80) = in_w1;
+  plVar5 = *(long **)(uVar2 + 0xd0);
+  while (plVar5 != (long *)(uVar2 + 0xd8)) {
+    (**(code **)(*(long *)plVar5[5] + 0x40))((long *)plVar5[5],in_w1);
+    plVar3 = (long *)plVar5[1];
+    if ((long *)plVar5[1] == (long *)0x0) {
+      plVar3 = plVar5 + 2;
+      bVar1 = *(long **)*plVar3 != plVar5;
+      plVar5 = (long *)*plVar3;
       if (bVar1) {
         do {
-          lVar3 = *plVar2;
-          plVar2 = (long *)(lVar3 + 0x10);
-          plVar4 = (long *)*plVar2;
-        } while (*plVar4 != lVar3);
+          lVar4 = *plVar3;
+          plVar3 = (long *)(lVar4 + 0x10);
+          plVar5 = (long *)*plVar3;
+        } while (*plVar5 != lVar4);
       }
     }
     else {
       do {
-        plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        plVar5 = plVar3;
+        plVar3 = (long *)*plVar5;
+      } while ((long *)*plVar5 != (long *)0x0);
     }
   }
   return;
@@ -1322,17 +1336,19 @@ void Walaber::Skeleton::setLayer(long param_1,undefined4 param_2)
 
 /* Walaber::Skeleton::update(float) */
 
-void Walaber::Skeleton::update(undefined8 param_1,long param_2)
+void Walaber::Skeleton::update(float p0)
 
 {
   bool bVar1;
+  long in_x0;
   long *plVar2;
   long lVar3;
   long *plVar4;
+  undefined4 in_register_00005004;
   
-  plVar4 = *(long **)(param_2 + 0xb8);
-  while (plVar4 != (long *)(param_2 + 0xc0)) {
-    func_0x0016ed00(param_1,plVar4[7]);
+  plVar4 = *(long **)(in_x0 + 0xb8);
+  while (plVar4 != (long *)(in_x0 + 0xc0)) {
+    func_0x0016ed00(CONCAT44(in_register_00005004,p0),plVar4[7]);
     plVar2 = (long *)plVar4[1];
     if ((long *)plVar4[1] == (long *)0x0) {
       plVar2 = plVar4 + 2;
@@ -1353,7 +1369,7 @@ void Walaber::Skeleton::update(undefined8 param_1,long param_2)
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
-  func_0x0016ba00(param_1,param_2 + 0xe8);
+  func_0x0016ba00(CONCAT44(in_register_00005004,p0),in_x0 + 0xe8);
   return;
 }
 
@@ -1365,35 +1381,35 @@ void Walaber::Skeleton::update(undefined8 param_1,long param_2)
 
 /* Walaber::Skeleton::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Skeleton::draw(long param_1,undefined8 param_2)
+void Walaber::Skeleton::draw(Walaber__SpriteBatch *p0)
 
 {
   bool bVar1;
-  long *plVar2;
+  Walaber__SpriteBatch *pWVar2;
   long lVar3;
-  long *plVar4;
+  Walaber__SpriteBatch *pWVar4;
   
-  plVar4 = *(long **)(param_1 + 0xd0);
-  while (plVar4 != (long *)(param_1 + 0xd8)) {
-    (**(code **)(*(long *)plVar4[5] + 0x48))((long *)plVar4[5],param_2);
-    plVar2 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar2 = plVar4 + 2;
-      bVar1 = *(long **)*plVar2 != plVar4;
-      plVar4 = (long *)*plVar2;
+  pWVar4 = *(Walaber__SpriteBatch **)(p0 + 0xd0);
+  while (pWVar4 != p0 + 0xd8) {
+    (**(code **)(**(long **)(pWVar4 + 0x28) + 0x48))();
+    pWVar2 = *(Walaber__SpriteBatch **)(pWVar4 + 8);
+    if (*(Walaber__SpriteBatch **)(pWVar4 + 8) == (Walaber__SpriteBatch *)0x0) {
+      pWVar2 = pWVar4 + 0x10;
+      bVar1 = *(Walaber__SpriteBatch **)*(Walaber__SpriteBatch **)pWVar2 != pWVar4;
+      pWVar4 = *(Walaber__SpriteBatch **)pWVar2;
       if (bVar1) {
         do {
-          lVar3 = *plVar2;
-          plVar2 = (long *)(lVar3 + 0x10);
-          plVar4 = (long *)*plVar2;
-        } while (*plVar4 != lVar3);
+          lVar3 = *(long *)pWVar2;
+          pWVar2 = (Walaber__SpriteBatch *)(lVar3 + 0x10);
+          pWVar4 = *(Walaber__SpriteBatch **)pWVar2;
+        } while (*(long *)pWVar4 != lVar3);
       }
     }
     else {
       do {
-        plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        pWVar4 = pWVar2;
+        pWVar2 = *(Walaber__SpriteBatch **)pWVar4;
+      } while (*(Walaber__SpriteBatch **)pWVar4 != (Walaber__SpriteBatch *)0x0);
     }
   }
   return;
@@ -1407,64 +1423,66 @@ void Walaber::Skeleton::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Skeleton::addSpriteAsChildToBone(Walaber::Bone*, Walaber::Sprite*, int) */
 
-void Walaber::Skeleton::addSpriteAsChildToBone(long param_1,long param_2,long param_3,int param_4)
+void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite *p1,int p2)
 
 {
   long lVar1;
   ulong uVar2;
-  long lVar3;
+  Walaber__Bone *pWVar3;
   long lVar4;
-  undefined8 uVar5;
-  long *plVar6;
-  long *plVar7;
-  long *plVar8;
-  ulong uVar9;
+  ulong uVar5;
+  int in_w3;
+  undefined8 uVar6;
+  Walaber__Bone *pWVar7;
+  Walaber__Bone *pWVar8;
+  void *pvVar9;
   ulong uVar10;
   int *piStack_88;
   ulong uStack_80;
-  ulong uStack_78;
+  void *pvStack_78;
   int iStack_6c;
   undefined1 auStack_68 [8];
   int **ppiStack_60;
   long lStack_58;
   
+  uVar5 = (ulong)(uint)p2;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  lVar4 = param_3 + 0x24;
-  uVar5 = *(undefined8 *)(param_2 + 0x10);
-  *(long *)(param_3 + 8) = param_2;
-  *(undefined8 *)(param_3 + 0x18) = uVar5;
-  *(long *)(param_2 + 0x10) = param_3;
+  lVar4 = uVar5 + 0x24;
+  uVar6 = *(undefined8 *)(p1 + 0x10);
+  *(Walaber__Sprite **)(uVar5 + 8) = p1;
+  *(undefined8 *)(uVar5 + 0x18) = uVar6;
+  *(ulong *)(p1 + 0x10) = uVar5;
   piStack_88 = (int *)0x0;
   uStack_80 = 0;
-  uStack_78 = 0;
-  iStack_6c = param_4;
+  pvStack_78 = (void *)0x0;
+  iStack_6c = in_w3;
   uVar2 = FUN_00173480(lVar4);
   if (0xffffffffffffffef < uVar2) goto LAB_0033c854;
   if (uVar2 < 0x17) {
-    uVar9 = (ulong)&piStack_88 | 1;
+    pvVar9 = (void *)((ulong)&piStack_88 | 1);
     piStack_88 = (int *)CONCAT71(piStack_88._1_7_,(char)((int)uVar2 << 1));
     if (uVar2 != 0) goto LAB_0033c6d4;
   }
   else {
     uVar10 = uVar2 + 0x10 & 0xfffffffffffffff0;
-    uVar9 = FUN_00164060(uVar10);
+    pvVar9 = (void *)FUN_00164060(uVar10);
     piStack_88 = (int *)(uVar10 | 1);
     uStack_80 = uVar2;
-    uStack_78 = uVar9;
+    pvStack_78 = pvVar9;
 LAB_0033c6d4:
-    FUN_001715e0(uVar9,lVar4,uVar2);
+    FUN_001715e0(pvVar9,lVar4,uVar2);
   }
-  *(undefined1 *)(uVar9 + uVar2) = 0;
+  *(undefined1 *)((long)pvVar9 + uVar2) = 0;
                     /* try { // try from 0033c6ec to 0033c6f7 has its CatchHandler @ 0033c864 */
-  lVar3 = func_0x00166390(param_1 + 0xb8,&piStack_88);
+  pWVar3 = (Walaber__Bone *)func_0x00166390(p0 + 0xb8,&piStack_88);
   if (((ulong)piStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
-  if (param_1 + 0xc0 == lVar3) {
+  if (p0 + 0xc0 == pWVar3) {
     piStack_88 = (int *)0x0;
     uStack_80 = 0;
-    uStack_78 = 0;
+    pvStack_78 = (void *)0x0;
     uVar2 = FUN_00173480(lVar4);
     if (0xffffffffffffffef < uVar2) {
 LAB_0033c854:
@@ -1472,43 +1490,43 @@ LAB_0033c854:
       return;
     }
     if (uVar2 < 0x17) {
-      uVar9 = (ulong)&piStack_88 | 1;
+      pvVar9 = (void *)((ulong)&piStack_88 | 1);
       piStack_88 = (int *)CONCAT71(piStack_88._1_7_,(char)((int)uVar2 << 1));
       if (uVar2 != 0) goto LAB_0033c774;
     }
     else {
       uVar10 = uVar2 + 0x10 & 0xfffffffffffffff0;
-      uVar9 = FUN_00164060(uVar10);
+      pvVar9 = (void *)FUN_00164060(uVar10);
       piStack_88 = (int *)(uVar10 | 1);
       uStack_80 = uVar2;
-      uStack_78 = uVar9;
+      pvStack_78 = pvVar9;
 LAB_0033c774:
-      FUN_001715e0(uVar9,lVar4,uVar2);
+      FUN_001715e0(pvVar9,lVar4,uVar2);
     }
     ppiStack_60 = &piStack_88;
-    *(undefined1 *)(uVar9 + uVar2) = 0;
+    *(undefined1 *)((long)pvVar9 + uVar2) = 0;
                     /* try { // try from 0033c790 to 0033c7ab has its CatchHandler @ 0033c860 */
-    lVar4 = func_0x00164570(param_1 + 0xb8,&piStack_88,&DAT_006285d4,&ppiStack_60,auStack_68);
-    *(long *)(lVar4 + 0x38) = param_3;
+    lVar4 = func_0x00164570(p0 + 0xb8,&piStack_88,&DAT_006285d4,&ppiStack_60,auStack_68);
+    *(ulong *)(lVar4 + 0x38) = uVar5;
     if (((ulong)piStack_88 & 1) != 0) {
-      FUN_00166120(uStack_78);
+      FUN_00166120(pvStack_78);
     }
   }
-  plVar6 = (long *)(param_1 + 0xd8);
-  plVar7 = (long *)*plVar6;
-  plVar8 = plVar6;
-  if (plVar7 != (long *)0x0) {
+  pWVar7 = p0 + 0xd8;
+  pWVar8 = *(Walaber__Bone **)pWVar7;
+  pWVar3 = pWVar7;
+  if (pWVar8 != (Walaber__Bone *)0x0) {
     do {
-      if (iStack_6c <= (int)plVar7[4]) {
-        plVar8 = plVar7;
+      if (iStack_6c <= *(int *)(pWVar8 + 0x20)) {
+        pWVar3 = pWVar8;
       }
-      plVar7 = (long *)plVar7[(int)plVar7[4] < iStack_6c];
-    } while (plVar7 != (long *)0x0);
-    if ((plVar8 != plVar6) && ((int)plVar8[4] <= iStack_6c)) goto LAB_0033c828;
+      pWVar8 = *(Walaber__Bone **)(pWVar8 + (ulong)(*(int *)(pWVar8 + 0x20) < iStack_6c) * 8);
+    } while (pWVar8 != (Walaber__Bone *)0x0);
+    if ((pWVar3 != pWVar7) && (*(int *)(pWVar3 + 0x20) <= iStack_6c)) goto LAB_0033c828;
   }
   piStack_88 = &iStack_6c;
-  lVar4 = func_0x00162f50(param_1 + 0xd0,&iStack_6c,&DAT_006285d4,&piStack_88,&ppiStack_60);
-  *(long *)(lVar4 + 0x28) = param_3;
+  lVar4 = func_0x00162f50(p0 + 0xd0,&iStack_6c,&DAT_006285d4,&piStack_88,&ppiStack_60);
+  *(ulong *)(lVar4 + 0x28) = uVar5;
 LAB_0033c828:
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     FUN_00164ff0();
@@ -1525,21 +1543,22 @@ LAB_0033c828:
 
 /* Walaber::Skeleton::addRootBone(Walaber::Bone*) */
 
-void Walaber::Skeleton::addRootBone(long param_1,long param_2)
+void Walaber::Skeleton::addRootBone(Walaber__Bone *p0)
 
 {
   undefined4 uVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
+  ulong uVar4;
+  Walaber__Bone *pWVar5;
+  long in_x1;
   undefined8 uVar6;
   undefined8 uVar7;
-  ulong uVar8;
+  void *pvVar8;
   ulong uVar9;
   long *plStack_88;
   ulong uStack_80;
-  ulong uStack_78;
+  void *pvStack_78;
   long lStack_70;
   undefined1 auStack_68 [8];
   long **pplStack_60;
@@ -1547,79 +1566,77 @@ void Walaber::Skeleton::addRootBone(long param_1,long param_2)
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  uVar6 = *(undefined8 *)(param_1 + 0x10);
-  *(long *)(param_2 + 8) = param_1;
-  *(undefined8 *)(param_2 + 0x18) = uVar6;
-  *(long *)(param_1 + 0x10) = param_2;
-  uVar6 = *(undefined8 *)(param_2 + 0x54);
-  uVar7 = *(undefined8 *)(param_2 + 0x5c);
-  uVar1 = *(undefined4 *)(param_2 + 0x74);
+  uVar6 = *(undefined8 *)(p0 + 0x10);
+  *(Walaber__Bone **)(in_x1 + 8) = p0;
+  *(undefined8 *)(in_x1 + 0x18) = uVar6;
+  *(long *)(p0 + 0x10) = in_x1;
+  uVar6 = *(undefined8 *)(in_x1 + 0x54);
+  uVar7 = *(undefined8 *)(in_x1 + 0x5c);
+  uVar1 = *(undefined4 *)(in_x1 + 0x74);
   plStack_88 = &lStack_70;
-  lStack_70 = param_2;
-  lVar4 = func_0x0016f7e0(param_1 + 0x88,&lStack_70,&DAT_006285d4,&plStack_88,&pplStack_60);
-  *(undefined8 *)(lVar4 + 0x28) = uVar6;
-  *(undefined8 *)(lVar4 + 0x30) = uVar7;
-  *(undefined4 *)(lVar4 + 0x38) = uVar1;
-  func_0x0016b8f0(lStack_70,param_1);
+  lStack_70 = in_x1;
+  lVar3 = func_0x0016f7e0(p0 + 0x88,&lStack_70,&DAT_006285d4,&plStack_88,&pplStack_60);
+  *(undefined8 *)(lVar3 + 0x28) = uVar6;
+  *(undefined8 *)(lVar3 + 0x30) = uVar7;
+  *(undefined4 *)(lVar3 + 0x38) = uVar1;
+  func_0x0016b8f0(lStack_70,p0);
   uStack_80 = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   plStack_88 = (long *)0x0;
-  lVar4 = lStack_70 + 0x24;
-  uVar5 = FUN_00173480(lVar4);
-  if (0xffffffffffffffef < uVar5) goto LAB_0033ca88;
-  if (uVar5 < 0x17) {
-    uVar8 = (ulong)&plStack_88 | 1;
-    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar5 << 1));
-    if (uVar5 != 0) goto LAB_0033c968;
+  lVar3 = lStack_70 + 0x24;
+  uVar4 = FUN_00173480(lVar3);
+  if (0xffffffffffffffef < uVar4) goto LAB_0033ca88;
+  if (uVar4 < 0x17) {
+    pvVar8 = (void *)((ulong)&plStack_88 | 1);
+    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar4 << 1));
+    if (uVar4 != 0) goto LAB_0033c968;
   }
   else {
-    uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar8 = FUN_00164060(uVar9);
+    uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    pvVar8 = (void *)FUN_00164060(uVar9);
     plStack_88 = (long *)(uVar9 | 1);
-    uStack_80 = uVar5;
-    uStack_78 = uVar8;
+    uStack_80 = uVar4;
+    pvStack_78 = pvVar8;
 LAB_0033c968:
-    FUN_001715e0(uVar8,lVar4,uVar5);
+    FUN_001715e0(pvVar8,lVar3,uVar4);
   }
-  *(undefined1 *)(uVar8 + uVar5) = 0;
+  *(undefined1 *)((long)pvVar8 + uVar4) = 0;
                     /* try { // try from 0033c980 to 0033c98b has its CatchHandler @ 0033ca98 */
-  lVar4 = func_0x00169190(param_1 + 0xa0,&plStack_88);
+  pWVar5 = (Walaber__Bone *)func_0x00169190(p0 + 0xa0,&plStack_88);
   if (((ulong)plStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
-  lVar3 = lStack_70;
-  if (param_1 + 0xa8 != lVar4) goto LAB_0033ca5c;
+  if (p0 + 0xa8 != pWVar5) goto LAB_0033ca5c;
   plStack_88 = (long *)0x0;
   uStack_80 = 0;
-  uStack_78 = 0;
-  lVar4 = lStack_70 + 0x24;
-  uVar5 = FUN_00173480(lVar4);
-  if (0xffffffffffffffef < uVar5) {
+  pvStack_78 = (void *)0x0;
+  uVar4 = FUN_00173480(lStack_70 + 0x24);
+  if (0xffffffffffffffef < uVar4) {
 LAB_0033ca88:
     FUN_00164180(&plStack_88);
     return;
   }
-  if (uVar5 < 0x17) {
-    uVar8 = (ulong)&plStack_88 | 1;
-    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar5 << 1));
-    if (uVar5 != 0) goto LAB_0033ca10;
+  if (uVar4 < 0x17) {
+    pvVar8 = (void *)((ulong)&plStack_88 | 1);
+    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar4 << 1));
+    if (uVar4 != 0) goto LAB_0033ca10;
   }
   else {
-    uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar8 = FUN_00164060(uVar9);
+    uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    pvVar8 = (void *)FUN_00164060(uVar9);
     plStack_88 = (long *)(uVar9 | 1);
-    uStack_80 = uVar5;
-    uStack_78 = uVar8;
+    uStack_80 = uVar4;
+    pvStack_78 = pvVar8;
 LAB_0033ca10:
-    FUN_001715e0(uVar8,lVar4,uVar5);
+    FUN_001715e0(pvVar8,lStack_70 + 0x24,uVar4);
   }
   pplStack_60 = &plStack_88;
-  *(undefined1 *)(uVar8 + uVar5) = 0;
+  *(undefined1 *)((long)pvVar8 + uVar4) = 0;
                     /* try { // try from 0033ca2c to 0033ca47 has its CatchHandler @ 0033ca94 */
-  lVar4 = func_0x0016d810(param_1 + 0xa0,&plStack_88,&DAT_006285d4,&pplStack_60,auStack_68);
-  *(long *)(lVar4 + 0x38) = lVar3;
+  lVar3 = func_0x0016d810(p0 + 0xa0,&plStack_88,&DAT_006285d4,&pplStack_60,auStack_68);
+  *(long *)(lVar3 + 0x38) = lStack_70;
   if (((ulong)plStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
 LAB_0033ca5c:
   if (*(long *)(lVar2 + 0x28) != lStack_58) {
@@ -1637,21 +1654,22 @@ LAB_0033ca5c:
 
 /* Walaber::Skeleton::addChildBone(Walaber::Bone*, Walaber::Bone*) */
 
-void Walaber::Skeleton::addChildBone(long param_1,long param_2,long param_3)
+void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1)
 
 {
   undefined4 uVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
+  ulong uVar4;
+  Walaber__Bone *pWVar5;
+  long in_x2;
   undefined8 uVar6;
   undefined8 uVar7;
-  ulong uVar8;
+  void *pvVar8;
   ulong uVar9;
   long *plStack_88;
   ulong uStack_80;
-  ulong uStack_78;
+  void *pvStack_78;
   long lStack_70;
   undefined1 auStack_68 [8];
   long **pplStack_60;
@@ -1659,79 +1677,77 @@ void Walaber::Skeleton::addChildBone(long param_1,long param_2,long param_3)
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  uVar6 = *(undefined8 *)(param_2 + 0x10);
-  *(long *)(param_3 + 8) = param_2;
-  *(undefined8 *)(param_3 + 0x18) = uVar6;
-  *(long *)(param_2 + 0x10) = param_3;
-  uVar6 = *(undefined8 *)(param_3 + 0x54);
-  uVar7 = *(undefined8 *)(param_3 + 0x5c);
-  uVar1 = *(undefined4 *)(param_3 + 0x74);
+  uVar6 = *(undefined8 *)(p1 + 0x10);
+  *(Walaber__Bone **)(in_x2 + 8) = p1;
+  *(undefined8 *)(in_x2 + 0x18) = uVar6;
+  *(long *)(p1 + 0x10) = in_x2;
+  uVar6 = *(undefined8 *)(in_x2 + 0x54);
+  uVar7 = *(undefined8 *)(in_x2 + 0x5c);
+  uVar1 = *(undefined4 *)(in_x2 + 0x74);
   plStack_88 = &lStack_70;
-  lStack_70 = param_3;
-  lVar4 = func_0x0016f7e0(param_1 + 0x88,&lStack_70,&DAT_006285d4,&plStack_88,&pplStack_60);
-  *(undefined8 *)(lVar4 + 0x28) = uVar6;
-  *(undefined8 *)(lVar4 + 0x30) = uVar7;
-  *(undefined4 *)(lVar4 + 0x38) = uVar1;
-  func_0x0016b8f0(lStack_70,param_1);
+  lStack_70 = in_x2;
+  lVar3 = func_0x0016f7e0(p0 + 0x88,&lStack_70,&DAT_006285d4,&plStack_88,&pplStack_60);
+  *(undefined8 *)(lVar3 + 0x28) = uVar6;
+  *(undefined8 *)(lVar3 + 0x30) = uVar7;
+  *(undefined4 *)(lVar3 + 0x38) = uVar1;
+  func_0x0016b8f0(lStack_70,p0);
   uStack_80 = 0;
-  uStack_78 = 0;
+  pvStack_78 = (void *)0x0;
   plStack_88 = (long *)0x0;
-  lVar4 = lStack_70 + 0x24;
-  uVar5 = FUN_00173480(lVar4);
-  if (0xffffffffffffffef < uVar5) goto LAB_0033ccbc;
-  if (uVar5 < 0x17) {
-    uVar8 = (ulong)&plStack_88 | 1;
-    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar5 << 1));
-    if (uVar5 != 0) goto LAB_0033cb9c;
+  lVar3 = lStack_70 + 0x24;
+  uVar4 = FUN_00173480(lVar3);
+  if (0xffffffffffffffef < uVar4) goto LAB_0033ccbc;
+  if (uVar4 < 0x17) {
+    pvVar8 = (void *)((ulong)&plStack_88 | 1);
+    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar4 << 1));
+    if (uVar4 != 0) goto LAB_0033cb9c;
   }
   else {
-    uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar8 = FUN_00164060(uVar9);
+    uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    pvVar8 = (void *)FUN_00164060(uVar9);
     plStack_88 = (long *)(uVar9 | 1);
-    uStack_80 = uVar5;
-    uStack_78 = uVar8;
+    uStack_80 = uVar4;
+    pvStack_78 = pvVar8;
 LAB_0033cb9c:
-    FUN_001715e0(uVar8,lVar4,uVar5);
+    FUN_001715e0(pvVar8,lVar3,uVar4);
   }
-  *(undefined1 *)(uVar8 + uVar5) = 0;
+  *(undefined1 *)((long)pvVar8 + uVar4) = 0;
                     /* try { // try from 0033cbb4 to 0033cbbf has its CatchHandler @ 0033cccc */
-  lVar4 = func_0x00169190(param_1 + 0xa0,&plStack_88);
+  pWVar5 = (Walaber__Bone *)func_0x00169190(p0 + 0xa0,&plStack_88);
   if (((ulong)plStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
-  lVar3 = lStack_70;
-  if (param_1 + 0xa8 != lVar4) goto LAB_0033cc90;
+  if (p0 + 0xa8 != pWVar5) goto LAB_0033cc90;
   plStack_88 = (long *)0x0;
   uStack_80 = 0;
-  uStack_78 = 0;
-  lVar4 = lStack_70 + 0x24;
-  uVar5 = FUN_00173480(lVar4);
-  if (0xffffffffffffffef < uVar5) {
+  pvStack_78 = (void *)0x0;
+  uVar4 = FUN_00173480(lStack_70 + 0x24);
+  if (0xffffffffffffffef < uVar4) {
 LAB_0033ccbc:
     FUN_00164180(&plStack_88);
     return;
   }
-  if (uVar5 < 0x17) {
-    uVar8 = (ulong)&plStack_88 | 1;
-    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar5 << 1));
-    if (uVar5 != 0) goto LAB_0033cc44;
+  if (uVar4 < 0x17) {
+    pvVar8 = (void *)((ulong)&plStack_88 | 1);
+    plStack_88 = (long *)CONCAT71(plStack_88._1_7_,(char)((int)uVar4 << 1));
+    if (uVar4 != 0) goto LAB_0033cc44;
   }
   else {
-    uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
-    uVar8 = FUN_00164060(uVar9);
+    uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    pvVar8 = (void *)FUN_00164060(uVar9);
     plStack_88 = (long *)(uVar9 | 1);
-    uStack_80 = uVar5;
-    uStack_78 = uVar8;
+    uStack_80 = uVar4;
+    pvStack_78 = pvVar8;
 LAB_0033cc44:
-    FUN_001715e0(uVar8,lVar4,uVar5);
+    FUN_001715e0(pvVar8,lStack_70 + 0x24,uVar4);
   }
   pplStack_60 = &plStack_88;
-  *(undefined1 *)(uVar8 + uVar5) = 0;
+  *(undefined1 *)((long)pvVar8 + uVar4) = 0;
                     /* try { // try from 0033cc60 to 0033cc7b has its CatchHandler @ 0033ccc8 */
-  lVar4 = func_0x0016d810(param_1 + 0xa0,&plStack_88,&DAT_006285d4,&pplStack_60,auStack_68);
-  *(long *)(lVar4 + 0x38) = lVar3;
+  lVar3 = func_0x0016d810(p0 + 0xa0,&plStack_88,&DAT_006285d4,&pplStack_60,auStack_68);
+  *(long *)(lVar3 + 0x38) = lStack_70;
   if (((ulong)plStack_88 & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
 LAB_0033cc90:
   if (*(long *)(lVar2 + 0x28) != lStack_58) {
@@ -1826,26 +1842,31 @@ long Walaber::Skeleton::getNode(long param_1,undefined8 param_2)
 
 /* Walaber::Skeleton::_animationsHaveLoaded(void*) */
 
-void Walaber::Skeleton::_animationsHaveLoaded(long param_1,int *param_2)
+void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
 
 {
   long lVar1;
   int iVar2;
-  long lVar3;
-  undefined8 uVar4;
+  undefined8 uVar3;
+  int *in_x1;
+  ulong extraout_x1;
+  ulong extraout_x1_00;
+  ulong p1;
+  long lVar4;
+  undefined1 auVar5 [16];
   byte abStack_68 [16];
-  undefined8 uStack_58;
+  void *pvStack_58;
   undefined8 uStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*param_2 == 1) {
+  if (*in_x1 == 1) {
     abStack_68[0xc] = 0;
     abStack_68[0xd] = 0;
     abStack_68[0xe] = 0;
     abStack_68[0xf] = 0;
-    uStack_58 = 0;
+    pvStack_58 = (void *)0x0;
     abStack_68[0] = 0x14;
     abStack_68[9] = 0x6e;
     abStack_68[10] = 0x73;
@@ -1859,28 +1880,31 @@ void Walaber::Skeleton::_animationsHaveLoaded(long param_1,int *param_2)
     abStack_68[8] = 0x6f;
     abStack_68[0xb] = 0;
                     /* try { // try from 0033ce28 to 0033ce33 has its CatchHandler @ 0033ced4 */
-    lVar3 = func_0x00161b90(*(undefined8 *)(param_2 + 8),*(undefined8 *)(param_2 + 10),abStack_68,
-                            &uStack_50);
+    auVar5 = func_0x00161b90(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),abStack_68,
+                             &uStack_50);
+    p1 = auVar5._8_8_;
     if ((abStack_68[0] & 1) != 0) {
-      FUN_00166120(uStack_58);
+      FUN_00166120(pvStack_58);
+      p1 = extraout_x1;
     }
-    if (lVar3 != 0) {
-      lVar3 = *(long *)(lVar3 + 0x18);
-      if (lVar3 != 0) {
+    if (auVar5._0_8_ != 0) {
+      lVar4 = *(long *)(auVar5._0_8_ + 0x18);
+      if (lVar4 != 0) {
         do {
-          iVar2 = FUN_00162900(*(undefined8 *)(lVar3 + 0x10),"Animation");
+          iVar2 = FUN_00162900(*(undefined8 *)(lVar4 + 0x10),"Animation");
           if (iVar2 == 0) {
-            uVar4 = func_0x0016cc00(lVar3,param_1);
-            func_0x001663d0(param_1 + 0xe8,uVar4);
+            uVar3 = func_0x0016cc00(lVar4,p0);
+            func_0x001663d0((long)p0 + 0xe8,uVar3);
           }
-          lVar3 = *(long *)(lVar3 + 0x30);
-        } while (lVar3 != 0);
+          lVar4 = *(long *)(lVar4 + 0x30);
+        } while (lVar4 != 0);
       }
       FUN_00170230(uStack_50);
       func_0x0016b480();
+      p1 = extraout_x1_00;
     }
-    if (*(long *)(param_2 + 8) != 0) {
-      FUN_001639e0();
+    if (*(void **)(in_x1 + 8) != (void *)0x0) {
+      FUN_001639e0(*(void **)(in_x1 + 8),p1);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
@@ -1898,7 +1922,7 @@ void Walaber::Skeleton::_animationsHaveLoaded(long param_1,int *param_2)
 
 /* Walaber::Skeleton::_setNodeProperties(_xmlNode*, Walaber::Node*) */
 
-void Walaber::Skeleton::_setNodeProperties(undefined8 param_1,long *param_2)
+void Walaber::Skeleton::_setNodeProperties(_xmlNode *p0,Walaber__Node *p1)
 
 {
   long lVar1;
@@ -1909,43 +1933,43 @@ void Walaber::Skeleton::_setNodeProperties(undefined8 param_1,long *param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  lVar2 = FUN_00171ed0(param_1,"localPos");
+  lVar2 = FUN_00171ed0(p0,"localPos");
   (*(code *)xmlFree)();
   if (lVar2 != 0) {
     uStack_50 = 0;
-    uVar3 = FUN_00171ed0(param_1,"localPos");
+    uVar3 = FUN_00171ed0(p0,"localPos");
     func_0x00170360(uVar3,"%f %f",&uStack_50,(ulong)&uStack_50 | 4);
     (*(code *)xmlFree)(uVar3);
-    (**(code **)(*param_2 + 0x10))(param_2,&uStack_50);
+    (**(code **)(*(long *)p1 + 0x10))(p1,&uStack_50);
   }
-  lVar2 = FUN_00171ed0(param_1,"localScale");
+  lVar2 = FUN_00171ed0(p0,"localScale");
   (*(code *)xmlFree)();
   if (lVar2 != 0) {
     uStack_50 = 0;
-    uVar3 = FUN_00171ed0(param_1,"localScale");
+    uVar3 = FUN_00171ed0(p0,"localScale");
     func_0x00170360(uVar3,"%f %f",&uStack_50,(ulong)&uStack_50 | 4);
     (*(code *)xmlFree)(uVar3);
-    (**(code **)(*param_2 + 0x18))(param_2,&uStack_50);
+    (**(code **)(*(long *)p1 + 0x18))(p1,&uStack_50);
   }
-  lVar2 = FUN_00171ed0(param_1,"localAngleDeg");
+  lVar2 = FUN_00171ed0(p0,"localAngleDeg");
   (*(code *)xmlFree)();
   if (lVar2 == 0) {
-    lVar2 = FUN_00171ed0(param_1,"localAngleRad");
+    lVar2 = FUN_00171ed0(p0,"localAngleRad");
     (*(code *)xmlFree)();
     if (lVar2 == 0) goto LAB_0033d13c;
     uStack_50 = uStack_50 & 0xffffffff00000000;
-    uVar3 = FUN_00171ed0(param_1,"localAngleRad");
+    uVar3 = FUN_00171ed0(p0,"localAngleRad");
     func_0x00170360(uVar3,"%f",&uStack_50);
     (*(code *)xmlFree)(uVar3);
   }
   else {
     uStack_50 = uStack_50 & 0xffffffff00000000;
-    uVar3 = FUN_00171ed0(param_1,"localAngleDeg");
+    uVar3 = FUN_00171ed0(p0,"localAngleDeg");
     func_0x00170360(uVar3,"%f",&uStack_50);
     (*(code *)xmlFree)(uVar3);
     uStack_50 = CONCAT44(uStack_50._4_4_,(float)uStack_50 * 0.017453292);
   }
-  (**(code **)(*param_2 + 0x20))(param_2,&uStack_50);
+  (**(code **)(*(long *)p1 + 0x20))(p1,&uStack_50);
 LAB_0033d13c:
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -2106,27 +2130,29 @@ void Walaber::Skeleton::setSkeletonToBindPose(long param_1)
 
 /* Walaber::Skeleton::getBindPoseDataForBone(Walaber::Bone*, Walaber::Skeleton::BoneLocalData&) */
 
-undefined8 Walaber::Skeleton::getBindPoseDataForBone(long param_1,long *param_2)
+undefined8
+Walaber::Skeleton::getBindPoseDataForBone(Walaber__Bone *p0,Walaber__Skeleton__BoneLocalData *p1)
 
 {
-  long *plVar1;
-  long *plVar2;
-  long *plVar3;
+  Walaber__Bone *pWVar1;
+  Walaber__Bone *pWVar2;
+  Walaber__Bone *pWVar3;
   
-  plVar1 = (long *)(param_1 + 0x90);
-  plVar2 = (long *)*plVar1;
-  plVar3 = plVar1;
-  if (plVar2 != (long *)0x0) {
+  pWVar1 = p0 + 0x90;
+  pWVar2 = *(Walaber__Bone **)pWVar1;
+  pWVar3 = pWVar1;
+  if (pWVar2 != (Walaber__Bone *)0x0) {
     do {
-      if ((long *)plVar2[4] >= param_2) {
-        plVar3 = plVar2;
+      if (*(Walaber__Skeleton__BoneLocalData **)(pWVar2 + 0x20) >= p1) {
+        pWVar3 = pWVar2;
       }
-      plVar2 = (long *)plVar2[(long *)plVar2[4] < param_2];
-    } while (plVar2 != (long *)0x0);
-    if ((plVar3 != plVar1) && ((long *)plVar3[4] <= param_2)) {
-      (**(code **)(*param_2 + 0x10))(param_2,plVar3 + 5);
-      (**(code **)(*param_2 + 0x18))(param_2,plVar3 + 6);
-      (**(code **)(*param_2 + 0x20))(param_2,plVar3 + 7);
+      pWVar2 = *(Walaber__Bone **)
+                (pWVar2 + (ulong)(*(Walaber__Skeleton__BoneLocalData **)(pWVar2 + 0x20) < p1) * 8);
+    } while (pWVar2 != (Walaber__Bone *)0x0);
+    if ((pWVar3 != pWVar1) && (*(Walaber__Skeleton__BoneLocalData **)(pWVar3 + 0x20) <= p1)) {
+      (**(code **)(*(long *)p1 + 0x10))(p1,pWVar3 + 0x28);
+      (**(code **)(*(long *)p1 + 0x18))(p1,pWVar3 + 0x30);
+      (**(code **)(*(long *)p1 + 0x20))(p1,pWVar3 + 0x38);
     }
   }
   return 1;
@@ -2140,58 +2166,59 @@ undefined8 Walaber::Skeleton::getBindPoseDataForBone(long param_1,long *param_2)
 
 /* Walaber::Skeleton::setColor(Walaber::Color const&) */
 
-void Walaber::Skeleton::setColor(long param_1,undefined1 *param_2)
+void Walaber::Skeleton::setColor(Walaber__Color *p0)
 
 {
-  undefined1 uVar1;
-  undefined1 uVar2;
-  undefined1 uVar3;
-  undefined1 uVar4;
-  long *plVar5;
-  long *plVar6;
-  long *plVar7;
+  Walaber__Color WVar1;
+  Walaber__Color WVar2;
+  Walaber__Color WVar3;
+  Walaber__Color WVar4;
+  Walaber__Color *in_x1;
+  Walaber__Color *pWVar5;
+  Walaber__Color *pWVar6;
+  Walaber__Color *pWVar7;
   long lVar8;
   
-  uVar1 = *param_2;
-  *(undefined1 *)(param_1 + 0x138) = uVar1;
-  uVar2 = param_2[1];
-  *(undefined1 *)(param_1 + 0x139) = uVar2;
-  uVar3 = param_2[2];
-  *(undefined1 *)(param_1 + 0x13a) = uVar3;
-  uVar4 = param_2[3];
-  *(undefined1 *)(param_1 + 0x13b) = uVar4;
-  plVar5 = *(long **)(param_1 + 0xb8);
-  if (*(long **)(param_1 + 0xb8) != (long *)(param_1 + 0xc0)) {
+  WVar1 = *in_x1;
+  p0[0x138] = WVar1;
+  WVar2 = in_x1[1];
+  p0[0x139] = WVar2;
+  WVar3 = in_x1[2];
+  p0[0x13a] = WVar3;
+  WVar4 = in_x1[3];
+  p0[0x13b] = WVar4;
+  pWVar5 = *(Walaber__Color **)(p0 + 0xb8);
+  if (*(Walaber__Color **)(p0 + 0xb8) != p0 + 0xc0) {
     while( true ) {
-      lVar8 = plVar5[7];
-      *(undefined1 *)(lVar8 + 0xca) = uVar1;
-      *(undefined1 *)(lVar8 + 0xcb) = uVar2;
-      *(undefined1 *)(lVar8 + 0xcc) = uVar3;
-      *(undefined1 *)(lVar8 + 0xcd) = uVar4;
-      plVar6 = (long *)plVar5[1];
-      if ((long *)plVar5[1] == (long *)0x0) {
-        plVar6 = plVar5 + 2;
-        plVar7 = (long *)*plVar6;
-        if ((long *)*plVar7 != plVar5) {
+      lVar8 = *(long *)(pWVar5 + 0x38);
+      *(Walaber__Color *)(lVar8 + 0xca) = WVar1;
+      *(Walaber__Color *)(lVar8 + 0xcb) = WVar2;
+      *(Walaber__Color *)(lVar8 + 0xcc) = WVar3;
+      *(Walaber__Color *)(lVar8 + 0xcd) = WVar4;
+      pWVar6 = *(Walaber__Color **)(pWVar5 + 8);
+      if (*(Walaber__Color **)(pWVar5 + 8) == (Walaber__Color *)0x0) {
+        pWVar6 = pWVar5 + 0x10;
+        pWVar7 = *(Walaber__Color **)pWVar6;
+        if (*(Walaber__Color **)pWVar7 != pWVar5) {
           do {
-            lVar8 = *plVar6;
-            plVar6 = (long *)(lVar8 + 0x10);
-            plVar7 = (long *)*plVar6;
-          } while (*plVar7 != lVar8);
+            lVar8 = *(long *)pWVar6;
+            pWVar6 = (Walaber__Color *)(lVar8 + 0x10);
+            pWVar7 = *(Walaber__Color **)pWVar6;
+          } while (*(long *)pWVar7 != lVar8);
         }
       }
       else {
         do {
-          plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
-        } while ((long *)*plVar7 != (long *)0x0);
+          pWVar7 = pWVar6;
+          pWVar6 = *(Walaber__Color **)pWVar7;
+        } while (*(Walaber__Color **)pWVar7 != (Walaber__Color *)0x0);
       }
-      if (plVar7 == (long *)(param_1 + 0xc0)) break;
-      uVar1 = *(undefined1 *)(param_1 + 0x138);
-      uVar2 = *(undefined1 *)(param_1 + 0x139);
-      uVar3 = *(undefined1 *)(param_1 + 0x13a);
-      uVar4 = *(undefined1 *)(param_1 + 0x13b);
-      plVar5 = plVar7;
+      if (pWVar7 == p0 + 0xc0) break;
+      WVar1 = p0[0x138];
+      WVar2 = p0[0x139];
+      WVar3 = p0[0x13a];
+      WVar4 = p0[0x13b];
+      pWVar5 = pWVar7;
     }
   }
   return;
@@ -2205,44 +2232,46 @@ void Walaber::Skeleton::setColor(long param_1,undefined1 *param_2)
 
 /* Walaber::Skeleton::scaleSpriteScale(Walaber::Vector2 const&) */
 
-void Walaber::Skeleton::scaleSpriteScale(long param_1,undefined8 *param_2)
+void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
 
 {
   long lVar1;
   bool bVar2;
   long *plVar3;
-  long lVar4;
-  long *plVar5;
+  undefined8 *in_x1;
+  Walaber__Vector2 *pWVar4;
+  long lVar5;
+  Walaber__Vector2 *pWVar6;
   undefined8 uStack_40;
   long lStack_38;
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  plVar5 = *(long **)(param_1 + 0xb8);
-  while (plVar5 != (long *)(param_1 + 0xc0)) {
-    plVar3 = (long *)plVar5[7];
-    uStack_40 = CONCAT44((float)((ulong)*param_2 >> 0x20) *
+  pWVar6 = *(Walaber__Vector2 **)(p0 + 0xb8);
+  while (pWVar6 != p0 + 0xc0) {
+    plVar3 = *(long **)(pWVar6 + 0x38);
+    uStack_40 = CONCAT44((float)((ulong)*in_x1 >> 0x20) *
                          (float)((ulong)*(undefined8 *)((long)plVar3 + 0x5c) >> 0x20),
-                         (float)*param_2 * (float)*(undefined8 *)((long)plVar3 + 0x5c));
+                         (float)*in_x1 * (float)*(undefined8 *)((long)plVar3 + 0x5c));
     (**(code **)(*plVar3 + 0x18))(plVar3,&uStack_40);
-    plVar3 = (long *)plVar5[1];
-    if ((long *)plVar5[1] == (long *)0x0) {
-      plVar3 = plVar5 + 2;
-      bVar2 = *(long **)*plVar3 != plVar5;
-      plVar5 = (long *)*plVar3;
+    pWVar4 = *(Walaber__Vector2 **)(pWVar6 + 8);
+    if (*(Walaber__Vector2 **)(pWVar6 + 8) == (Walaber__Vector2 *)0x0) {
+      pWVar4 = pWVar6 + 0x10;
+      bVar2 = *(Walaber__Vector2 **)*(Walaber__Vector2 **)pWVar4 != pWVar6;
+      pWVar6 = *(Walaber__Vector2 **)pWVar4;
       if (bVar2) {
         do {
-          lVar4 = *plVar3;
-          plVar3 = (long *)(lVar4 + 0x10);
-          plVar5 = (long *)*plVar3;
-        } while (*plVar5 != lVar4);
+          lVar5 = *(long *)pWVar4;
+          pWVar4 = (Walaber__Vector2 *)(lVar5 + 0x10);
+          pWVar6 = *(Walaber__Vector2 **)pWVar4;
+        } while (*(long *)pWVar6 != lVar5);
       }
     }
     else {
       do {
-        plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
-      } while ((long *)*plVar5 != (long *)0x0);
+        pWVar6 = pWVar4;
+        pWVar4 = *(Walaber__Vector2 **)pWVar6;
+      } while (*(Walaber__Vector2 **)pWVar6 != (Walaber__Vector2 *)0x0);
     }
   }
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
@@ -2260,50 +2289,53 @@ void Walaber::Skeleton::scaleSpriteScale(long param_1,undefined8 *param_2)
 
 /* Walaber::Skeleton::setScreenSpace(bool) */
 
-void Walaber::Skeleton::setScreenSpace(long *param_1,byte param_2)
+void Walaber::Skeleton::setScreenSpace(bool p0)
 
 {
   byte bVar1;
   long lVar2;
   bool bVar3;
   long *plVar4;
+  byte in_w1;
   long *plVar5;
-  long lVar6;
+  long *plVar6;
+  long lVar7;
   undefined4 uStack_40;
   float fStack_3c;
   long lStack_38;
   
+  plVar4 = (long *)(ulong)p0;
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  bVar1 = param_2 & 1;
-  if (((param_2 & 1) != 0) && (0.0 < *(float *)(param_1 + 0xc))) {
-    uStack_40 = *(undefined4 *)((long)param_1 + 0x5c);
-    fStack_3c = -*(float *)(param_1 + 0xc);
-    (**(code **)(*param_1 + 0x18))(param_1,&uStack_40);
+  bVar1 = in_w1 & 1;
+  if (((in_w1 & 1) != 0) && (0.0 < *(float *)(plVar4 + 0xc))) {
+    uStack_40 = *(undefined4 *)((long)plVar4 + 0x5c);
+    fStack_3c = -*(float *)(plVar4 + 0xc);
+    (**(code **)(*plVar4 + 0x18))(plVar4,&uStack_40);
   }
-  *(byte *)(param_1 + 0x2b) = bVar1;
-  *(byte *)((long)param_1 + 0x131) = bVar1;
-  plVar4 = (long *)param_1[0x17];
-  while (plVar4 != param_1 + 0x18) {
-    *(byte *)(plVar4[7] + 0xc9) = bVar1;
-    plVar5 = (long *)plVar4[1];
-    if ((long *)plVar4[1] == (long *)0x0) {
-      plVar5 = plVar4 + 2;
-      bVar3 = *(long **)*plVar5 != plVar4;
-      plVar4 = (long *)*plVar5;
+  *(byte *)(plVar4 + 0x2b) = bVar1;
+  *(byte *)((long)plVar4 + 0x131) = bVar1;
+  plVar5 = (long *)plVar4[0x17];
+  while (plVar5 != plVar4 + 0x18) {
+    *(byte *)(plVar5[7] + 0xc9) = bVar1;
+    plVar6 = (long *)plVar5[1];
+    if ((long *)plVar5[1] == (long *)0x0) {
+      plVar6 = plVar5 + 2;
+      bVar3 = *(long **)*plVar6 != plVar5;
+      plVar5 = (long *)*plVar6;
       if (bVar3) {
         do {
-          lVar6 = *plVar5;
-          plVar5 = (long *)(lVar6 + 0x10);
-          plVar4 = (long *)*plVar5;
-        } while (*plVar4 != lVar6);
+          lVar7 = *plVar6;
+          plVar6 = (long *)(lVar7 + 0x10);
+          plVar5 = (long *)*plVar6;
+        } while (*plVar5 != lVar7);
       }
     }
     else {
       do {
-        plVar4 = plVar5;
-        plVar5 = (long *)*plVar4;
-      } while ((long *)*plVar4 != (long *)0x0);
+        plVar5 = plVar6;
+        plVar6 = (long *)*plVar5;
+      } while ((long *)*plVar5 != (long *)0x0);
     }
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {

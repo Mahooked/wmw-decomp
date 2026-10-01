@@ -111,132 +111,132 @@ void Walaber::GraphicsGL::DumpedGLState::print(char *param_1)
 
 /* Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber::GraphicsGL::DumpedGLState const&) */
 
-void Walaber::GraphicsGL::DumpedGLState::printDiffs(char *param_1,char *param_2)
+void Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber__GraphicsGL__DumpedGLState *p0)
 
 {
   char *pcVar1;
   int iVar2;
+  Walaber__GraphicsGL__DumpedGLState *in_x1;
   long lVar3;
   long lVar4;
   
-  if (*param_1 != *param_2) {
+  if (*p0 != *in_x1) {
     pcVar1 = "NO";
-    if (*param_1 != '\0') {
+    if (*p0 != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","A GL_BLEND",pcVar1);
     pcVar1 = "NO";
-    if (*param_2 != '\0') {
+    if (*in_x1 != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","B GL_BLEND",pcVar1);
   }
-  if (*(int *)(param_1 + 4) != *(int *)(param_2 + 4)) {
+  if (*(int *)(p0 + 4) != *(int *)(in_x1 + 4)) {
     FUN_00166450("Walaber",1,"%s: %d","A GL_BLEND_SRC");
-    FUN_00166450("Walaber",1,"%s: %d","B GL_BLEND_SRC",*(undefined4 *)(param_2 + 4));
+    FUN_00166450("Walaber",1,"%s: %d","B GL_BLEND_SRC",*(undefined4 *)(in_x1 + 4));
   }
-  if (*(int *)(param_1 + 8) != *(int *)(param_2 + 8)) {
+  if (*(int *)(p0 + 8) != *(int *)(in_x1 + 8)) {
     FUN_00166450("Walaber",1,"%s: %d","A GL_BLEND_DST");
-    FUN_00166450("Walaber",1,"%s: %d","B GL_BLEND_DST",*(undefined4 *)(param_2 + 8));
+    FUN_00166450("Walaber",1,"%s: %d","B GL_BLEND_DST",*(undefined4 *)(in_x1 + 8));
   }
-  if (*(int *)(param_1 + 0xc) != *(int *)(param_2 + 0xc)) {
+  if (*(int *)(p0 + 0xc) != *(int *)(in_x1 + 0xc)) {
     FUN_00166450("Walaber",1,"%s: %d","A GL_ACTIVE_TEXTURE");
-    FUN_00166450("Walaber",1,"%s: %d","B GL_ACTIVE_TEXTURE",*(undefined4 *)(param_2 + 0xc));
+    FUN_00166450("Walaber",1,"%s: %d","B GL_ACTIVE_TEXTURE",*(undefined4 *)(in_x1 + 0xc));
   }
   lVar3 = 0x18;
   lVar4 = 0x10;
   do {
-    if (param_1[lVar3] != param_2[lVar3]) {
+    if (p0[lVar3] != in_x1[lVar3]) {
       pcVar1 = "NO";
-      if (param_1[lVar3] != '\0') {
+      if (p0[lVar3] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
         pcVar1 = "YES";
       }
       FUN_00166450("Walaber",1,"%s: %s","A GL_TEXTURE_2D",pcVar1);
       pcVar1 = "NO";
-      if (param_2[lVar3] != '\0') {
+      if (in_x1[lVar3] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
         pcVar1 = "YES";
       }
       FUN_00166450("Walaber",1,"%s: %s","B GL_TEXTURE_2D",pcVar1);
     }
-    if (*(int *)(param_1 + lVar4 + 0xc) != *(int *)(param_2 + lVar4 + 0xc)) {
+    if (*(int *)(p0 + lVar4 + 0xc) != *(int *)(in_x1 + lVar4 + 0xc)) {
       func_0x0038d068("A GL_TEXTURE_BIDING_2D");
-      func_0x0038d068("B GL_TEXTURE_BIDING_2D",*(undefined4 *)(param_2 + lVar4 + 0xc));
+      func_0x0038d068("B GL_TEXTURE_BIDING_2D",*(undefined4 *)(in_x1 + lVar4 + 0xc));
     }
-    if (*(int *)(param_1 + lVar4) != *(int *)(param_2 + lVar4)) {
+    if (*(int *)(p0 + lVar4) != *(int *)(in_x1 + lVar4)) {
       FUN_00166450("Walaber",1,"%s: %d","A GL_TEXTURE_ENV_MODE");
-      FUN_00166450("Walaber",1,"%s: %d","B GL_TEXTURE_ENV_MODE",*(undefined4 *)(param_2 + lVar4));
+      FUN_00166450("Walaber",1,"%s: %d","B GL_TEXTURE_ENV_MODE",*(undefined4 *)(in_x1 + lVar4));
     }
     lVar3 = lVar3 + 1;
     lVar4 = lVar4 + 4;
   } while (lVar3 != 0x1a);
-  if (*(int *)(param_1 + 0x24) != *(int *)(param_2 + 0x24)) {
+  if (*(int *)(p0 + 0x24) != *(int *)(in_x1 + 0x24)) {
     FUN_00166450("Walaber",1,"%s: %u","A GL_ARRAY_BUFFER_BINDING");
-    FUN_00166450("Walaber",1,"%s: %u","B GL_ARRAY_BUFFER_BINDING",*(undefined4 *)(param_2 + 0x24));
+    FUN_00166450("Walaber",1,"%s: %u","B GL_ARRAY_BUFFER_BINDING",*(undefined4 *)(in_x1 + 0x24));
   }
-  iVar2 = FUN_00163c10(param_1 + 0x28,param_2 + 0x28,0x10);
+  iVar2 = FUN_00163c10(p0 + 0x28,in_x1 + 0x28,0x10);
   if (iVar2 != 0) {
-    FUN_00166450("Walaber",1,"%s: %d %d %d %d","A GL_VIEWPORT",*(undefined4 *)(param_1 + 0x28),
-                 *(undefined4 *)(param_1 + 0x2c),*(undefined4 *)(param_1 + 0x30),
-                 *(undefined4 *)(param_1 + 0x34));
-    FUN_00166450("Walaber",1,"%s: %d %d %d %d","B GL_VIEWPORT",*(undefined4 *)(param_2 + 0x28),
-                 *(undefined4 *)(param_2 + 0x2c),*(undefined4 *)(param_2 + 0x30),
-                 *(undefined4 *)(param_2 + 0x34));
+    FUN_00166450("Walaber",1,"%s: %d %d %d %d","A GL_VIEWPORT",*(undefined4 *)(p0 + 0x28),
+                 *(undefined4 *)(p0 + 0x2c),*(undefined4 *)(p0 + 0x30),*(undefined4 *)(p0 + 0x34));
+    FUN_00166450("Walaber",1,"%s: %d %d %d %d","B GL_VIEWPORT",*(undefined4 *)(in_x1 + 0x28),
+                 *(undefined4 *)(in_x1 + 0x2c),*(undefined4 *)(in_x1 + 0x30),
+                 *(undefined4 *)(in_x1 + 0x34));
   }
-  iVar2 = FUN_00163c10(param_1 + 0x38,param_2 + 0x38,0x10);
+  iVar2 = FUN_00163c10(p0 + 0x38,in_x1 + 0x38,0x10);
   if (iVar2 != 0) {
-    FUN_00166450((double)*(float *)(param_1 + 0x38),(double)*(float *)(param_1 + 0x3c),
-                 (double)*(float *)(param_1 + 0x40),(double)*(float *)(param_1 + 0x44),"Walaber",1,
+    FUN_00166450((double)*(float *)(p0 + 0x38),(double)*(float *)(p0 + 0x3c),
+                 (double)*(float *)(p0 + 0x40),(double)*(float *)(p0 + 0x44),"Walaber",1,
                  "%s: %f %f %f %f","A GL_CURRNET_COLOR");
-    FUN_00166450((double)*(float *)(param_2 + 0x38),(double)*(float *)(param_2 + 0x3c),
-                 (double)*(float *)(param_2 + 0x40),(double)*(float *)(param_2 + 0x44),"Walaber",1,
+    FUN_00166450((double)*(float *)(in_x1 + 0x38),(double)*(float *)(in_x1 + 0x3c),
+                 (double)*(float *)(in_x1 + 0x40),(double)*(float *)(in_x1 + 0x44),"Walaber",1,
                  "%s: %f %f %f %f","B GL_CURRNET_COLOR");
   }
-  if (param_1[0x48] != param_2[0x48]) {
+  if (p0[0x48] != in_x1[0x48]) {
     pcVar1 = "NO";
-    if (param_1[0x48] != '\0') {
+    if (p0[0x48] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","A GL_DEPTH_TEST",pcVar1);
     pcVar1 = "NO";
-    if (param_2[0x48] != '\0') {
+    if (in_x1[0x48] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","B GL_DEPTH_TEST",pcVar1);
   }
-  if (*(int *)(param_1 + 0x4c) != *(int *)(param_2 + 0x4c)) {
+  if (*(int *)(p0 + 0x4c) != *(int *)(in_x1 + 0x4c)) {
     FUN_00166450("Walaber",1,"%s: %d","A GL_DEPTH_FUNC");
-    FUN_00166450("Walaber",1,"%s: %d","B GL_DEPTH_FUNC",*(undefined4 *)(param_2 + 0x4c));
+    FUN_00166450("Walaber",1,"%s: %d","B GL_DEPTH_FUNC",*(undefined4 *)(in_x1 + 0x4c));
   }
-  if (param_1[0x50] != param_2[0x50]) {
+  if (p0[0x50] != in_x1[0x50]) {
     pcVar1 = "NO";
-    if (param_1[0x50] != '\0') {
+    if (p0[0x50] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","A GL_LINE_SMOOTH",pcVar1);
     pcVar1 = "NO";
-    if (param_2[0x50] != '\0') {
+    if (in_x1[0x50] != (Walaber__GraphicsGL__DumpedGLState)0x0) {
       pcVar1 = "YES";
     }
     FUN_00166450("Walaber",1,"%s: %s","B GL_LINE_SMOOTH",pcVar1);
   }
-  if (*(float *)(param_1 + 0x54) != *(float *)(param_2 + 0x54)) {
-    FUN_00166450((double)*(float *)(param_1 + 0x54),"Walaber",1,"%s: %f","A GL_LINE_WIDTH");
-    FUN_00166450((double)*(float *)(param_2 + 0x54),"Walaber",1,"%s: %f","B GL_LINE_WIDTH");
+  if (*(float *)(p0 + 0x54) != *(float *)(in_x1 + 0x54)) {
+    FUN_00166450((double)*(float *)(p0 + 0x54),"Walaber",1,"%s: %f","A GL_LINE_WIDTH");
+    FUN_00166450((double)*(float *)(in_x1 + 0x54),"Walaber",1,"%s: %f","B GL_LINE_WIDTH");
   }
-  iVar2 = FUN_00163c10(param_1 + 0x58,param_2 + 0x58,0x40);
+  iVar2 = FUN_00163c10(p0 + 0x58,in_x1 + 0x58,0x40);
   if (iVar2 != 0) {
-    func_0x0038d12c("A GL_MODELVIEW_MATRIX",param_1 + 0x58);
-    func_0x0038d12c("B GL_MODELVIEW_MATRIX",param_2 + 0x58);
+    func_0x0038d12c("A GL_MODELVIEW_MATRIX",p0 + 0x58);
+    func_0x0038d12c("B GL_MODELVIEW_MATRIX",in_x1 + 0x58);
   }
-  iVar2 = FUN_00163c10(param_1 + 0x98,param_2 + 0x98,0x40);
+  iVar2 = FUN_00163c10(p0 + 0x98,in_x1 + 0x98,0x40);
   if (iVar2 != 0) {
-    func_0x0038d12c("A GL_PROJECTION_MATRIX",param_1 + 0x98);
-    func_0x0038d12c("B GL_PROJECTION_MATRIX",param_2 + 0x98);
+    func_0x0038d12c("A GL_PROJECTION_MATRIX",p0 + 0x98);
+    func_0x0038d12c("B GL_PROJECTION_MATRIX",in_x1 + 0x98);
   }
-  iVar2 = FUN_00163c10(param_1 + 0xd8,param_2 + 0xd8,0x40);
+  iVar2 = FUN_00163c10(p0 + 0xd8,in_x1 + 0xd8,0x40);
   if (iVar2 != 0) {
-    func_0x0038d12c("A GL_TEXTURE_MATRIX",param_1 + 0xd8);
-    func_0x0038d12c("B GL_TEXTURE_MATRIX",param_2 + 0xd8);
+    func_0x0038d12c("A GL_TEXTURE_MATRIX",p0 + 0xd8);
+    func_0x0038d12c("B GL_TEXTURE_MATRIX",in_x1 + 0xd8);
     return;
   }
   return;

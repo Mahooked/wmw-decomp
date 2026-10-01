@@ -40,21 +40,21 @@ void std::logic_error::logic_error(undefined8 *param_1,byte *param_2)
 
 /* std::logic_error::logic_error(char const*) */
 
-void std::logic_error::logic_error(undefined8 *param_1,undefined8 param_2)
+void std::logic_error::logic_error(char *p0)
 
 {
   long lVar1;
   long *plVar2;
   
-  *param_1 = &PTR__logic_error_0071a1a8;
-  lVar1 = FUN_00173480(param_2);
+  *(undefined ***)p0 = &PTR__logic_error_0071a1a8;
+  lVar1 = FUN_00173480();
                     /* try { // try from 005e3420 to 005e3423 has its CatchHandler @ 005e3454 */
   plVar2 = (long *)FUN_00164060(lVar1 + 0x19);
   *plVar2 = lVar1;
   plVar2[1] = lVar1;
   *(undefined4 *)(plVar2 + 2) = 0;
-  FUN_001715e0(plVar2 + 3,param_2,lVar1 + 1);
-  param_1[1] = plVar2 + 3;
+  FUN_001715e0(plVar2 + 3);
+  *(long **)(p0 + 8) = plVar2 + 3;
   return;
 }
 
@@ -66,17 +66,18 @@ void std::logic_error::logic_error(undefined8 *param_1,undefined8 param_2)
 
 /* std::logic_error::logic_error(std::logic_error const&) */
 
-void std::logic_error::logic_error(undefined8 *param_1,long param_2)
+void std::logic_error::logic_error(std__logic_error *p0)
 
 {
   char cVar1;
   bool bVar2;
+  long in_x1;
   long lVar3;
   int *piVar4;
   
-  *param_1 = &PTR__logic_error_0071a1a8;
-  lVar3 = *(long *)(param_2 + 8);
-  param_1[1] = lVar3;
+  *(undefined ***)p0 = &PTR__logic_error_0071a1a8;
+  lVar3 = *(long *)(in_x1 + 8);
+  *(long *)(p0 + 8) = lVar3;
   piVar4 = (int *)(lVar3 + -8);
   do {
     cVar1 = '\x01';
@@ -97,19 +98,20 @@ void std::logic_error::logic_error(undefined8 *param_1,long param_2)
 
 /* std::logic_error::TEMPNAMEPLACEHOLDERVALUE(std::logic_error const&) */
 
-long std::logic_error::operator=(long param_1,long param_2)
+std__logic_error * std::logic_error::operator=(std__logic_error *p0)
 
 {
   int iVar1;
   char cVar2;
   bool bVar3;
+  long in_x1;
   long lVar4;
   long lVar5;
   int *piVar6;
   
-  lVar5 = *(long *)(param_2 + 8);
-  lVar4 = *(long *)(param_1 + 8);
-  *(long *)(param_1 + 8) = lVar5;
+  lVar5 = *(long *)(in_x1 + 8);
+  lVar4 = *(long *)(p0 + 8);
+  *(long *)(p0 + 8) = lVar5;
   piVar6 = (int *)(lVar5 + -8);
   do {
     cVar2 = '\x01';
@@ -130,9 +132,9 @@ long std::logic_error::operator=(long param_1,long param_2)
     }
   } while (cVar2 != '\0');
   if (iVar1 + -1 < 0) {
-    FUN_00166120(lVar4 + -0x18);
+    FUN_00166120((void *)(lVar4 + -0x18));
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -166,7 +168,7 @@ void std::logic_error::~logic_error(undefined8 *param_1)
     }
   } while (cVar2 != '\0');
   if (iVar1 + -1 < 0) {
-    FUN_00166120(lVar4 + -0x18);
+    FUN_00166120((void *)(lVar4 + -0x18));
   }
   FUN_0016fe40(param_1);
   return;
@@ -202,7 +204,7 @@ void std::logic_error::~logic_error(undefined8 *param_1)
     }
   } while (cVar2 != '\0');
   if (iVar1 + -1 < 0) {
-    FUN_00166120(lVar4 + -0x18);
+    FUN_00166120((void *)(lVar4 + -0x18));
   }
   FUN_0016fe40(param_1);
   FUN_00166120(param_1);

@@ -56,31 +56,32 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>&>::
-     __construct_at_end(long param_1,long param_2,long param_3)
+     __construct_at_end(ulong p0,Walaber__FluidParticle *p1)
 
 {
+  long in_x2;
   long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   
-  lVar2 = *(long *)(param_1 + 0x10);
+  lVar2 = *(long *)(p0 + 0x10);
   do {
-    func_0x00162820(lVar2,param_3);
+    func_0x00162820(lVar2);
     lVar1 = 0;
     do {
-      *(undefined8 *)(lVar2 + 0x38 + lVar1) = *(undefined8 *)(param_3 + 0x38 + lVar1);
+      *(undefined8 *)(lVar2 + 0x38 + lVar1) = *(undefined8 *)(in_x2 + 0x38 + lVar1);
       lVar1 = lVar1 + 8;
     } while (lVar1 != 0x40);
-    uVar4 = *(undefined8 *)(param_3 + 0x80);
-    uVar3 = *(undefined8 *)(param_3 + 0x78);
-    param_2 = param_2 + -1;
-    *(undefined8 *)(lVar2 + 0x88) = *(undefined8 *)(param_3 + 0x88);
+    uVar4 = *(undefined8 *)(in_x2 + 0x80);
+    uVar3 = *(undefined8 *)(in_x2 + 0x78);
+    p1 = p1 + -1;
+    *(undefined8 *)(lVar2 + 0x88) = *(undefined8 *)(in_x2 + 0x88);
     *(undefined8 *)(lVar2 + 0x80) = uVar4;
     *(undefined8 *)(lVar2 + 0x78) = uVar3;
-    lVar2 = *(long *)(param_1 + 0x10) + 0x90;
-    *(long *)(param_1 + 0x10) = lVar2;
-  } while (param_2 != 0);
+    lVar2 = *(long *)(p0 + 0x10) + 0x90;
+    *(long *)(p0 + 0x10) = lVar2;
+  } while (p1 != (Walaber__FluidParticle *)0x0);
   return;
 }
 

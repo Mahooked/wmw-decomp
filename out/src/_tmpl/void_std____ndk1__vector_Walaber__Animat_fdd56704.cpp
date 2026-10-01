@@ -14,11 +14,12 @@
 void std::__ndk1::
      vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
      ::__push_back_slow_path<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>
-               (long *param_1,undefined4 *param_2)
+               (Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined4 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -31,32 +32,32 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0x3333333333333333;
+  lVar3 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0x666666666666666 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar6 = (long)p0[2] - (long)*p0 >> 3;
   uVar5 = 0x666666666666666;
   if (((ulong)(lVar6 * -0x3333333333333333) < 0x333333333333333) &&
      (uVar4 = lVar6 * -0x6666666666666666, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x001625c0(auStack_60,uVar5,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  uVar8 = *(undefined8 *)(param_2 + 4);
-  uVar7 = *(undefined8 *)(param_2 + 2);
-  *(undefined8 *)(puStack_50 + 6) = *(undefined8 *)(param_2 + 6);
+  func_0x001625c0(auStack_60,uVar5,lVar3,p0 + 2);
+  *puStack_50 = *in_x1;
+  uVar8 = *(undefined8 *)(in_x1 + 4);
+  uVar7 = *(undefined8 *)(in_x1 + 2);
+  *(undefined8 *)(puStack_50 + 6) = *(undefined8 *)(in_x1 + 6);
   *(undefined8 *)(puStack_50 + 4) = uVar8;
   *(undefined8 *)(puStack_50 + 2) = uVar7;
-  *(undefined8 *)(param_2 + 4) = 0;
-  *(undefined8 *)(param_2 + 6) = 0;
-  *(undefined8 *)(param_2 + 2) = 0;
-  *(undefined8 *)(puStack_50 + 8) = *(undefined8 *)(param_2 + 8);
+  *(undefined8 *)(in_x1 + 4) = 0;
+  *(undefined8 *)(in_x1 + 6) = 0;
+  *(undefined8 *)(in_x1 + 2) = 0;
+  *(undefined8 *)(puStack_50 + 8) = *(undefined8 *)(in_x1 + 8);
   puStack_50 = puStack_50 + 10;
                     /* try { // try from 0043461c to 00434627 has its CatchHandler @ 00434660 */
-  func_0x00162d20(param_1,auStack_60);
+  func_0x00162d20(p0,auStack_60);
   func_0x00172da0(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

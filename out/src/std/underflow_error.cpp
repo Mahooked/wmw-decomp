@@ -30,7 +30,7 @@ void std::underflow_error::~underflow_error(undefined8 *param_1)
     }
   } while (cVar2 != '\0');
   if (iVar1 + -1 < 0) {
-    FUN_00166120(lVar4 + -0x18);
+    FUN_00166120((void *)(lVar4 + -0x18));
   }
   FUN_0016fe40(param_1);
   FUN_00166120(param_1);

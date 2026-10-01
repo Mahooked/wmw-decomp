@@ -23,7 +23,7 @@ void std::__ndk1::collate<char>::~collate(void)
 
 /* std::__ndk1::collate<char>::~collate() */
 
-void std::__ndk1::collate<char>::~collate(undefined8 param_1)
+void std::__ndk1::collate<char>::~collate(void *param_1)
 
 {
   FUN_00172660();
@@ -40,23 +40,24 @@ void std::__ndk1::collate<char>::~collate(undefined8 param_1)
 /* std::__ndk1::collate<char>::do_compare(char const*, char const*, char const*, char const*) const
     */
 
-ulong std::__ndk1::collate<char>::do_compare
-                (undefined8 param_1,byte *param_2,byte *param_3,byte *param_4,byte *param_5)
+ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3)
 
 {
+  byte *in_x4;
+  
   while( true ) {
-    if (param_4 == param_5) {
-      return (ulong)(param_2 != param_3);
+    if ((byte *)p3 == in_x4) {
+      return (ulong)(p1 != p2);
     }
-    if (param_3 == param_2) {
+    if (p2 == p1) {
       return 0xffffffff;
     }
-    if (*param_2 < *param_4) {
+    if ((byte)*p1 < (byte)*p3) {
       return 0xffffffff;
     }
-    if (*param_4 < *param_2) break;
-    param_4 = param_4 + 1;
-    param_2 = param_2 + 1;
+    if ((byte)*p3 < (byte)*p1) break;
+    p3 = p3 + 1;
+    p1 = p1 + 1;
   }
   return 1;
 }
@@ -69,79 +70,79 @@ ulong std::__ndk1::collate<char>::do_compare
 
 /* std::__ndk1::collate<char>::do_transform(char const*, char const*) const */
 
-void std::__ndk1::collate<char>::do_transform
-               (ulong *param_1,undefined8 param_2,undefined1 *param_3,undefined1 *param_4)
+char * std::__ndk1::collate<char>::do_transform(char *p0,char *p1)
 
 {
-  undefined8 *puVar1;
-  undefined1 *puVar2;
-  undefined1 *puVar3;
+  char *pcVar1;
+  char *in_x2;
+  ulong *in_x8;
+  char *pcVar2;
+  char *pcVar3;
   ulong uVar4;
-  undefined8 *puVar5;
-  undefined8 *puVar6;
-  undefined1 *puVar7;
-  ulong uVar8;
-  ulong uVar9;
+  char *pcVar5;
+  ulong uVar6;
+  ulong uVar7;
+  undefined8 uVar8;
+  undefined8 uVar9;
   undefined8 uVar10;
-  undefined8 uVar11;
-  undefined8 uVar12;
   
-  uVar9 = (long)param_4 - (long)param_3;
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (0xffffffffffffffef < uVar9) {
-    FUN_00164180(param_1);
-    return;
+  uVar7 = (long)in_x2 - (long)p1;
+  *in_x8 = 0;
+  in_x8[1] = 0;
+  in_x8[2] = 0;
+  if (0xffffffffffffffef < uVar7) {
+    pcVar5 = (char *)FUN_00164180();
+    return pcVar5;
   }
-  if (uVar9 < 0x17) {
-    puVar7 = (undefined1 *)((long)param_1 + 1);
-    *(char *)param_1 = (char)((int)uVar9 << 1);
+  if (uVar7 < 0x17) {
+    pcVar5 = (char *)((long)in_x8 + 1);
+    *(char *)in_x8 = (char)((int)uVar7 << 1);
   }
   else {
-    uVar8 = uVar9 + 0x10 & 0xfffffffffffffff0;
-    puVar7 = (undefined1 *)FUN_00164060(uVar8);
-    param_1[1] = uVar9;
-    param_1[2] = (ulong)puVar7;
-    *param_1 = uVar8 | 1;
+    uVar6 = uVar7 + 0x10 & 0xfffffffffffffff0;
+    pcVar5 = (char *)FUN_00164060(uVar6);
+    in_x8[1] = uVar7;
+    in_x8[2] = (ulong)pcVar5;
+    *in_x8 = uVar6 | 1;
+    p0 = pcVar5;
   }
-  if (param_3 == param_4) goto LAB_005b2010;
-  puVar3 = puVar7;
-  if (uVar9 < 0x20) {
+  if (p1 == in_x2) goto LAB_005b2010;
+  pcVar3 = pcVar5;
+  if (uVar7 < 0x20) {
 LAB_005b1ffc:
     do {
-      puVar2 = param_3 + 1;
-      *puVar3 = *param_3;
-      param_3 = puVar2;
-      puVar3 = puVar3 + 1;
-    } while (param_4 != puVar2);
+      pcVar2 = p1 + 1;
+      *pcVar3 = *p1;
+      p1 = pcVar2;
+      pcVar3 = pcVar3 + 1;
+    } while (in_x2 != pcVar2);
   }
   else {
-    uVar4 = uVar9 & 0xffffffffffffffe0;
-    puVar5 = (undefined8 *)(puVar7 + 0x10);
-    puVar6 = (undefined8 *)(param_3 + 0x10);
-    uVar8 = uVar4;
+    uVar4 = uVar7 & 0xffffffffffffffe0;
+    pcVar3 = pcVar5 + 0x10;
+    pcVar2 = p1 + 0x10;
+    uVar6 = uVar4;
     do {
-      puVar1 = puVar6 + -1;
-      uVar10 = puVar6[-2];
-      uVar12 = puVar6[1];
-      uVar11 = *puVar6;
-      uVar8 = uVar8 - 0x20;
-      puVar6 = puVar6 + 4;
-      puVar5[-1] = *puVar1;
-      puVar5[-2] = uVar10;
-      puVar5[1] = uVar12;
-      *puVar5 = uVar11;
-      puVar5 = puVar5 + 4;
-    } while (uVar8 != 0);
-    param_3 = param_3 + uVar4;
-    puVar3 = puVar7 + uVar4;
-    if (uVar9 != uVar4) goto LAB_005b1ffc;
+      pcVar1 = pcVar2 + -8;
+      uVar8 = *(undefined8 *)(pcVar2 + -0x10);
+      uVar10 = *(undefined8 *)(pcVar2 + 8);
+      uVar9 = *(undefined8 *)pcVar2;
+      uVar6 = uVar6 - 0x20;
+      pcVar2 = pcVar2 + 0x20;
+      *(undefined8 *)(pcVar3 + -8) = *(undefined8 *)pcVar1;
+      *(undefined8 *)(pcVar3 + -0x10) = uVar8;
+      *(undefined8 *)(pcVar3 + 8) = uVar10;
+      *(undefined8 *)pcVar3 = uVar9;
+      pcVar3 = pcVar3 + 0x20;
+    } while (uVar6 != 0);
+    p1 = p1 + uVar4;
+    pcVar3 = pcVar5 + uVar4;
+    if (uVar7 != uVar4) goto LAB_005b1ffc;
   }
-  puVar7 = puVar7 + uVar9;
+  pcVar5 = pcVar5 + uVar7;
 LAB_005b2010:
-  *puVar7 = 0;
-  return;
+  *pcVar5 = '\0';
+  return p0;
 }
 
 
@@ -152,22 +153,23 @@ LAB_005b2010:
 
 /* std::__ndk1::collate<char>::do_hash(char const*, char const*) const */
 
-ulong std::__ndk1::collate<char>::do_hash(undefined8 param_1,byte *param_2,byte *param_3)
+ulong std::__ndk1::collate<char>::do_hash(char *p0,char *p1)
 
 {
   ulong uVar1;
   byte *pbVar2;
+  byte *in_x2;
   ulong uVar3;
   
-  if (param_2 != param_3) {
+  if ((byte *)p1 != in_x2) {
     uVar1 = 0;
     do {
-      pbVar2 = param_2 + 1;
-      uVar1 = (ulong)*param_2 + uVar1 * 0x10;
+      pbVar2 = (byte *)(p1 + 1);
+      uVar1 = (ulong)(byte)*p1 + uVar1 * 0x10;
       uVar3 = uVar1 & 0xf000000000000000;
       uVar1 = (uVar3 | uVar3 >> 0x38) ^ uVar1;
-      param_2 = pbVar2;
-    } while (param_3 != pbVar2);
+      p1 = (char *)pbVar2;
+    } while (in_x2 != pbVar2);
     return uVar1;
   }
   return 0;

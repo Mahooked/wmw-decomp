@@ -15,55 +15,58 @@
 
 void std::__ndk1::
      vector<WaterConcept::GameState::SecondaryGoal,std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>
-     ::assign<WaterConcept::GameState::SecondaryGoal*>(long *param_1,long param_2,long param_3)
+     ::assign<WaterConcept::GameState::SecondaryGoal*>
+               (WaterConcept__GameState__SecondaryGoal *p0,
+               WaterConcept__GameState__SecondaryGoal *p1)
 
 {
-  long lVar1;
+  WaterConcept__GameState__SecondaryGoal *pWVar1;
   ulong uVar2;
+  WaterConcept__GameState__SecondaryGoal *in_x2;
   long lVar3;
   ulong uVar4;
   long lVar5;
   ulong uVar6;
-  long lVar7;
+  void *pvVar7;
   ulong uVar8;
   
-  lVar3 = param_1[2];
-  lVar7 = *param_1;
-  uVar6 = param_3 - param_2;
+  lVar3 = *(long *)(p0 + 0x10);
+  pvVar7 = *(void **)p0;
+  uVar6 = (long)in_x2 - (long)p1;
   uVar8 = ((long)uVar6 >> 3) * -0x5555555555555555;
-  lVar5 = lVar3 - lVar7 >> 3;
+  lVar5 = lVar3 - (long)pvVar7 >> 3;
   if (uVar8 < (ulong)(lVar5 * -0x5555555555555555) || uVar8 + lVar5 * 0x5555555555555555 == 0) {
-    lVar5 = param_1[1] - lVar7 >> 3;
-    lVar3 = param_2 + (param_1[1] - lVar7);
-    if (uVar8 < (ulong)(lVar5 * -0x5555555555555555) || uVar8 + lVar5 * 0x5555555555555555 == 0) {
-      lVar3 = param_3;
+    lVar3 = *(long *)(p0 + 8) - (long)pvVar7 >> 3;
+    pWVar1 = p1 + (*(long *)(p0 + 8) - (long)pvVar7);
+    if (uVar8 < (ulong)(lVar3 * -0x5555555555555555) || uVar8 + lVar3 * 0x5555555555555555 == 0) {
+      pWVar1 = in_x2;
     }
-    lVar1 = lVar3 - param_2;
-    if (lVar1 != 0) {
-      FUN_0016b250(lVar7,param_2,lVar1);
+    lVar5 = (long)pWVar1 - (long)p1;
+    if (lVar5 != 0) {
+      FUN_0016b250(pvVar7,p1,lVar5);
     }
-    if (uVar8 < (ulong)(lVar5 * -0x5555555555555555) || uVar8 + lVar5 * 0x5555555555555555 == 0) {
-      lVar7 = lVar7 + (lVar1 >> 3) * 8;
+    if (uVar8 < (ulong)(lVar3 * -0x5555555555555555) || uVar8 + lVar3 * 0x5555555555555555 == 0) {
+      pvVar7 = (void *)((long)pvVar7 + (lVar5 >> 3) * 8);
     }
     else {
-      if (param_3 - lVar3 < 1) {
+      if ((long)in_x2 - (long)pWVar1 < 1) {
         return;
       }
-      FUN_001715e0(param_1[1],lVar3);
-      lVar7 = param_1[1] + ((ulong)(param_3 - lVar3) / 0x18) * 0x18;
+      FUN_001715e0(*(undefined8 *)(p0 + 8),pWVar1);
+      pvVar7 = (void *)(*(long *)(p0 + 8) + ((ulong)((long)in_x2 - (long)pWVar1) / 0x18) * 0x18);
     }
   }
   else {
-    if (lVar7 != 0) {
-      param_1[1] = lVar7;
-      FUN_00166120(lVar7);
+    if (pvVar7 != (void *)0x0) {
+      *(void **)(p0 + 8) = pvVar7;
+      FUN_00166120(pvVar7);
       lVar3 = 0;
-      *param_1 = 0;
-      param_1[1] = 0;
-      param_1[2] = 0;
+      *(undefined8 *)p0 = 0;
+      *(undefined8 *)(p0 + 8) = 0;
+      *(undefined8 *)(p0 + 0x10) = 0;
     }
     if (0xaaaaaaaaaaaaaaa < uVar8) {
-      FUN_001705a0(param_1);
+      FUN_001705a0(p0);
       return;
     }
     uVar2 = 0xaaaaaaaaaaaaaaa;
@@ -71,14 +74,14 @@ void std::__ndk1::
        (uVar4 = (lVar3 >> 3) * 0x5555555555555556, uVar2 = uVar8, uVar8 <= uVar4)) {
       uVar2 = uVar4;
     }
-    func_0x0016ca00(param_1,uVar2);
+    func_0x0016ca00(p0,uVar2);
     if ((long)uVar6 < 1) {
       return;
     }
-    FUN_001715e0(param_1[1],param_2,uVar6);
-    lVar7 = param_1[1] + (uVar6 / 0x18) * 0x18;
+    FUN_001715e0(*(undefined8 *)(p0 + 8),p1,uVar6);
+    pvVar7 = (void *)(*(long *)(p0 + 8) + (uVar6 / 0x18) * 0x18);
   }
-  param_1[1] = lVar7;
+  *(void **)(p0 + 8) = pvVar7;
   return;
 }
 

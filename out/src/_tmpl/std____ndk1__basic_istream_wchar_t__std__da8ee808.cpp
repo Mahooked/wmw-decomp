@@ -119,10 +119,10 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::~basic_istream() */
 
 void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~basic_istream
-               (long param_1)
+               (void *param_1)
 
 {
-  FUN_00171f00(param_1 + 0x10);
+  FUN_00171f00((long)param_1 + 0x10);
   FUN_00166120(param_1);
   return;
 }
@@ -313,41 +313,41 @@ LAB_005a93d4:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(bool&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+bool * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(bool *p0)
 
 {
   long lVar1;
-  long lVar2;
-  long *plVar3;
+  long *plVar2;
+  bool *pbVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
   long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
+  lVar1 = tpidr_el0;
+  lStack_38 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 005a94b8 to 005a94c7 has its CatchHandler @ 005a9578 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a94ec to 005a9523 has its CatchHandler @ 005a9580 */
-    plVar3 = (long *)FUN_001661d0(auStack_50,
+    plVar2 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x18))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    (**(code **)(*plVar2 + 0x18))
+              (plVar2,*(undefined8 *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x28),0,
+               p0 + *(long *)(*(long *)p0 + -0x18),&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 005a9544 to 005a9547 has its CatchHandler @ 005a9574 */
-    FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
+    FUN_0016fe80(p0 + *(long *)(*(long *)p0 + -0x18),
+                 *(uint *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+  if (*(long *)(lVar1 + 0x28) == lStack_38) {
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  pbVar3 = (bool *)FUN_00164ff0();
+  return pbVar3;
 }
 
 
@@ -359,14 +359,15 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(short&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined2 *param_2)
+short * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(short *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
-  undefined2 uVar4;
+  short *psVar4;
+  undefined2 *in_x1;
+  undefined2 uVar5;
   undefined1 auStack_58 [8];
   long lStack_50;
   uint uStack_44;
@@ -376,39 +377,39 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a95fc to 005a960b has its CatchHandler @ 005a96fc */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] == '\0') goto LAB_005a96cc;
   uStack_44 = 0;
-  FUN_00169a70(auStack_58,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+  FUN_00169a70(auStack_58,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a9630 to 005a9667 has its CatchHandler @ 005a9704 */
   plVar3 = (long *)FUN_001661d0(auStack_58,
                                 &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                  ::id);
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
   (**(code **)(*plVar3 + 0x20))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,&lStack_50);
   FUN_0016e360(auStack_58);
   if (lStack_50 < -0x8000) {
-    uVar4 = 0x8000;
+    uVar5 = 0x8000;
 LAB_005a969c:
     uStack_44 = uStack_44 | 4;
-    *param_2 = uVar4;
+    *in_x1 = uVar5;
   }
   else {
     if (0x7fff < lStack_50) {
-      uVar4 = 0x7fff;
+      uVar5 = 0x7fff;
       goto LAB_005a969c;
     }
-    *param_2 = (short)lStack_50;
+    *in_x1 = (short)lStack_50;
   }
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005a96c8 to 005a96cb has its CatchHandler @ 005a96f8 */
   FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
 LAB_005a96cc:
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  psVar4 = (short *)FUN_00164ff0();
+  return psVar4;
 }
 
 
@@ -420,13 +421,14 @@ LAB_005a96cc:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned short&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+ushort * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
+                   (ushort *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  ushort *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -435,26 +437,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9780 to 005a978f has its CatchHandler @ 005a9840 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a97b4 to 005a97eb has its CatchHandler @ 005a9848 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x30))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
+    (**(code **)(*plVar3 + 0x30))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005a980c to 005a980f has its CatchHandler @ 005a983c */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  puVar4 = (ushort *)FUN_00164ff0();
+  return puVar4;
 }
 
 
@@ -466,14 +468,15 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(int&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined4 *param_2)
+int * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(int *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
-  undefined4 uVar4;
+  int *piVar4;
+  undefined4 *in_x1;
+  undefined4 uVar5;
   undefined1 auStack_58 [8];
   long lStack_50;
   uint uStack_44;
@@ -483,39 +486,39 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a98c4 to 005a98d3 has its CatchHandler @ 005a99c8 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] == '\0') goto LAB_005a9998;
   uStack_44 = 0;
-  FUN_00169a70(auStack_58,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+  FUN_00169a70(auStack_58,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a98f8 to 005a992f has its CatchHandler @ 005a99d0 */
   plVar3 = (long *)FUN_001661d0(auStack_58,
                                 &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                  ::id);
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
   (**(code **)(*plVar3 + 0x20))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,&lStack_50);
   FUN_0016e360(auStack_58);
   if (lStack_50 < -0x80000000) {
-    uVar4 = 0x80000000;
+    uVar5 = 0x80000000;
 LAB_005a9968:
     uStack_44 = uStack_44 | 4;
-    *param_2 = uVar4;
+    *in_x1 = uVar5;
   }
   else {
     if (0x7fffffff < lStack_50) {
-      uVar4 = 0x7fffffff;
+      uVar5 = 0x7fffffff;
       goto LAB_005a9968;
     }
-    *param_2 = (int)lStack_50;
+    *in_x1 = (int)lStack_50;
   }
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005a9994 to 005a9997 has its CatchHandler @ 005a99c4 */
   FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
 LAB_005a9998:
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  piVar4 = (int *)FUN_00164ff0();
+  return piVar4;
 }
 
 
@@ -527,13 +530,13 @@ LAB_005a9998:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned int&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+uint * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(uint *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  uint *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -542,26 +545,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9a4c to 005a9a5b has its CatchHandler @ 005a9b0c */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a9a80 to 005a9ab7 has its CatchHandler @ 005a9b14 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x38))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
+    (**(code **)(*plVar3 + 0x38))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005a9ad8 to 005a9adb has its CatchHandler @ 005a9b08 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  puVar4 = (uint *)FUN_00164ff0();
+  return puVar4;
 }
 
 
@@ -573,8 +576,7 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(long *p0)
 
 {
   long lVar1;
@@ -588,23 +590,23 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9b90 to 005a9b9f has its CatchHandler @ 005a9c50 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*p0 + -0x18) + 0x30);
                     /* try { // try from 005a9bc4 to 005a9bfb has its CatchHandler @ 005a9c58 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x20))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*p0 + -0x18);
+    (**(code **)(*plVar3 + 0x20))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*p0 + -0x18);
                     /* try { // try from 005a9c1c to 005a9c1f has its CatchHandler @ 005a9c4c */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
   plVar3 = (long *)FUN_00164ff0();
   return plVar3;
@@ -619,13 +621,13 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+ulong * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulong *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  ulong *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -634,26 +636,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9cd4 to 005a9ce3 has its CatchHandler @ 005a9d94 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*p0 - 0x18) + 0x30);
                     /* try { // try from 005a9d08 to 005a9d3f has its CatchHandler @ 005a9d9c */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x40))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*p0 - 0x18);
+    (**(code **)(*plVar3 + 0x40))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*p0 - 0x18);
                     /* try { // try from 005a9d60 to 005a9d63 has its CatchHandler @ 005a9d90 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  puVar4 = (ulong *)FUN_00164ff0();
+  return puVar4;
 }
 
 
@@ -665,13 +667,14 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long long&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+longlong *
+std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(longlong *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  longlong *plVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -680,26 +683,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9e18 to 005a9e27 has its CatchHandler @ 005a9ed8 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*p0 + -0x18) + 0x30);
                     /* try { // try from 005a9e4c to 005a9e83 has its CatchHandler @ 005a9ee0 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x28))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*p0 + -0x18);
+    (**(code **)(*plVar3 + 0x28))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*p0 + -0x18);
                     /* try { // try from 005a9ea4 to 005a9ea7 has its CatchHandler @ 005a9ed4 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  plVar4 = (longlong *)FUN_00164ff0();
+  return plVar4;
 }
 
 
@@ -711,13 +714,14 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(unsigned long long&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+ulonglong *
+std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(ulonglong *p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  ulonglong *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -726,26 +730,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a9f5c to 005a9f6b has its CatchHandler @ 005aa01c */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)(*p0 - 0x18) + 0x30);
                     /* try { // try from 005a9f90 to 005a9fc7 has its CatchHandler @ 005aa024 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x48))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)(*p0 - 0x18);
+    (**(code **)(*plVar3 + 0x48))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)(*p0 - 0x18);
                     /* try { // try from 005a9fe8 to 005a9feb has its CatchHandler @ 005aa018 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  puVar4 = (ulonglong *)FUN_00164ff0();
+  return puVar4;
 }
 
 
@@ -757,12 +761,12 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(float&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(float *p0)
 
 {
   long lVar1;
   long lVar2;
+  long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
@@ -772,26 +776,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005aa0a0 to 005aa0af has its CatchHandler @ 005aa160 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)in_x0 + *(long *)(*in_x0 + -0x18) + 0x30);
                     /* try { // try from 005aa0d4 to 005aa10b has its CatchHandler @ 005aa168 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x50))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
+    (**(code **)(*plVar3 + 0x50))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
                     /* try { // try from 005aa12c to 005aa12f has its CatchHandler @ 005aa15c */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  FUN_00164ff0();
+  return;
 }
 
 
@@ -803,12 +807,12 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(double&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(double *p0)
 
 {
   long lVar1;
   long lVar2;
+  long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
@@ -818,26 +822,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005aa1e4 to 005aa1f3 has its CatchHandler @ 005aa2a4 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)in_x0 + *(long *)(*in_x0 + -0x18) + 0x30);
                     /* try { // try from 005aa218 to 005aa24f has its CatchHandler @ 005aa2ac */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x58))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
+    (**(code **)(*plVar3 + 0x58))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
                     /* try { // try from 005aa270 to 005aa273 has its CatchHandler @ 005aa2a0 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  FUN_00164ff0();
+  return;
 }
 
 
@@ -849,12 +853,13 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(long double&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
+               (longdouble *p0)
 
 {
   long lVar1;
   long lVar2;
+  long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
@@ -864,26 +869,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005aa328 to 005aa337 has its CatchHandler @ 005aa3e8 */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)in_x0 + *(long *)(*in_x0 + -0x18) + 0x30);
                     /* try { // try from 005aa35c to 005aa393 has its CatchHandler @ 005aa3f0 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x60))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
+    (**(code **)(*plVar3 + 0x60))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
                     /* try { // try from 005aa3b4 to 005aa3b7 has its CatchHandler @ 005aa3e4 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  FUN_00164ff0();
+  return;
 }
 
 
@@ -895,13 +900,13 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>
    >::TEMPNAMEPLACEHOLDERVALUE(void*&) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>
-                 (long *param_1,undefined8 param_2)
+void ** std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator>>(void **p0)
 
 {
   long lVar1;
   long lVar2;
   long *plVar3;
+  void **ppvVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
@@ -910,26 +915,26 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005aa46c to 005aa47b has its CatchHandler @ 005aa52c */
-  func_0x001716c0(acStack_40,param_1,0);
+  func_0x001716c0(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
     uStack_44 = 0;
-    FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+    FUN_00169a70(auStack_50,(long)p0 + *(long *)((long)*p0 + -0x18) + 0x30);
                     /* try { // try from 005aa4a0 to 005aa4d7 has its CatchHandler @ 005aa534 */
     plVar3 = (long *)FUN_001661d0(auStack_50,
                                   &num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
                                    ::id);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    (**(code **)(*plVar3 + 0x68))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44,param_2);
+    lVar1 = (long)p0 + *(long *)((long)*p0 + -0x18);
+    (**(code **)(*plVar3 + 0x68))(plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_44);
     FUN_0016e360(auStack_50);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar1 = (long)p0 + *(long *)((long)*p0 + -0x18);
                     /* try { // try from 005aa4f8 to 005aa4fb has its CatchHandler @ 005aa528 */
     FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
+    return p0;
   }
-  plVar3 = (long *)FUN_00164ff0();
-  return plVar3;
+  ppvVar4 = (void **)FUN_00164ff0();
+  return ppvVar4;
 }
 
 
@@ -994,18 +999,17 @@ ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t&) */
 
-undefined8
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-          (undefined8 param_1,int *param_2)
+wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0)
 
 {
   int iVar1;
+  int *in_x1;
   
   iVar1 = func_0x0016d540();
   if (iVar1 != -1) {
-    *param_2 = iVar1;
+    *in_x1 = iVar1;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1016,24 +1020,22 @@ std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t*, long) */
 
-void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-               (long *param_1,undefined8 param_2,undefined8 param_3)
+void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0,long p1)
 
 {
   long lVar1;
-  undefined4 uVar2;
-  long *plVar3;
+  long *plVar2;
   undefined1 auStack_50 [8];
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+  FUN_00169a70(auStack_50,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005aa718 to 005aa737 has its CatchHandler @ 005aa784 */
-  plVar3 = (long *)FUN_001661d0(auStack_50,&ctype<wchar_t>::id);
-  uVar2 = (**(code **)(*plVar3 + 0x58))(plVar3,10);
+  plVar2 = (long *)FUN_001661d0(auStack_50,&ctype<wchar_t>::id);
+  (**(code **)(*plVar2 + 0x58))(plVar2,10);
   FUN_0016e360(auStack_50);
-  func_0x0016a3a0(param_1,param_2,param_3,uVar2);
+  func_0x0016a3a0(p0,p1);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -1050,38 +1052,42 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t*, long,
    wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
-                 (long *param_1,int *param_2,long param_3,int param_4)
+wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
+                    (wchar_t *p0,long p1,wchar_t p2)
 
 {
   uint uVar1;
   int iVar2;
   long *plVar3;
-  uint uVar4;
-  long lVar5;
-  uint uVar6;
-  long lVar7;
+  ulong uVar4;
+  int in_w3;
+  uint uVar5;
+  long lVar6;
+  uint uVar7;
   long lVar8;
+  long lVar9;
   
-  param_1[1] = 0;
-  lVar7 = *(long *)(*param_1 + -0x18);
-  lVar5 = (long)param_1 + lVar7;
-  if (*(uint *)(lVar5 + 0x20) == 0) {
-    if (*(long *)(lVar5 + 0x88) != 0) {
-      func_0x0016fc00(*(long *)(lVar5 + 0x88));
-      lVar7 = *(long *)(*param_1 + -0x18);
-      lVar5 = (long)param_1 + lVar7;
-      if (*(int *)(lVar5 + 0x20) != 0) goto LAB_005aa7dc;
+  uVar4 = (ulong)(uint)p2;
+  p0[2] = L'\0';
+  p0[3] = L'\0';
+  lVar8 = *(long *)(*(long *)p0 + -0x18);
+  lVar6 = (long)p0 + lVar8;
+  if (*(uint *)(lVar6 + 0x20) == 0) {
+    if (*(long *)(lVar6 + 0x88) != 0) {
+      func_0x0016fc00(*(long *)(lVar6 + 0x88));
+      lVar8 = *(long *)(*(long *)p0 + -0x18);
+      lVar6 = (long)p0 + lVar8;
+      if (*(int *)(lVar6 + 0x20) != 0) goto LAB_005aa7dc;
     }
-    if (param_3 < 1) {
+    if (uVar4 == 0) {
                     /* try { // try from 005aa8f0 to 005aa8f7 has its CatchHandler @ 005aa94c */
-      FUN_0016fe80(lVar5,4);
-      return param_1;
+      FUN_0016fe80(lVar6,4);
+      return p0;
     }
-    lVar8 = param_1[1];
-    if (lVar8 < param_3 + -1) {
+    lVar9 = *(long *)(p0 + 2);
+    if (lVar9 < (long)(uVar4 - 1)) {
       while( true ) {
-        plVar3 = *(long **)((long)param_1 + lVar7 + 0x28);
+        plVar3 = *(long **)((long)p0 + lVar8 + 0x28);
         if ((int *)plVar3[3] == (int *)plVar3[4]) {
                     /* try { // try from 005aa87c to 005aa87f has its CatchHandler @ 005aa948 */
           iVar2 = (**(code **)(*plVar3 + 0x48))();
@@ -1090,56 +1096,56 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ge
           iVar2 = *(int *)plVar3[3];
         }
         if (iVar2 == -1) {
-          uVar4 = 2;
+          uVar5 = 2;
           goto LAB_005aa914;
         }
-        if (iVar2 == param_4) {
-          uVar4 = 0;
+        if (iVar2 == in_w3) {
+          uVar5 = 0;
           goto LAB_005aa914;
         }
-        *param_2 = iVar2;
-        lVar5 = param_1[1] + 1;
-        param_1[1] = lVar5;
-        plVar3 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
+        *(int *)p1 = iVar2;
+        lVar6 = *(long *)(p0 + 2) + 1;
+        *(long *)(p0 + 2) = lVar6;
+        plVar3 = *(long **)((long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x28);
         if (plVar3[3] == plVar3[4]) {
                     /* try { // try from 005aa8d4 to 005aa8d7 has its CatchHandler @ 005aa940 */
           (**(code **)(*plVar3 + 0x50))();
-          lVar5 = param_1[1];
+          lVar6 = *(long *)(p0 + 2);
         }
         else {
           plVar3[3] = plVar3[3] + 4;
         }
-        if (param_3 + -1 <= lVar5) break;
-        lVar7 = *(long *)(*param_1 + -0x18);
-        param_2 = param_2 + 1;
+        if ((long)(uVar4 - 1) <= lVar6) break;
+        lVar8 = *(long *)(*(long *)p0 + -0x18);
+        p1 = (long)(p1 + 4);
       }
-      uVar4 = 0;
-      param_2 = param_2 + 1;
+      uVar5 = 0;
+      p1 = p1 + 4;
 LAB_005aa914:
-      lVar8 = param_1[1];
-      lVar5 = (long)param_1 + *(long *)(*param_1 + -0x18);
-      uVar6 = *(uint *)(lVar5 + 0x20);
+      lVar9 = *(long *)(p0 + 2);
+      lVar6 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
+      uVar7 = *(uint *)(lVar6 + 0x20);
     }
     else {
-      uVar6 = 0;
-      uVar4 = 0;
+      uVar7 = 0;
+      uVar5 = 0;
     }
-    uVar1 = uVar4 | 4;
-    if (lVar8 != 0) {
-      uVar1 = uVar4;
+    uVar1 = uVar5 | 4;
+    if (lVar9 != 0) {
+      uVar1 = uVar5;
     }
                     /* try { // try from 005aa934 to 005aa937 has its CatchHandler @ 005aa93c */
-    FUN_0016fe80(lVar5,uVar6 | uVar1);
+    FUN_0016fe80(lVar6,uVar7 | uVar1);
   }
   else {
                     /* try { // try from 005aa7d8 to 005aa817 has its CatchHandler @ 005aa94c */
-    FUN_0016fe80(lVar5,*(uint *)(lVar5 + 0x20) | 4);
+    FUN_0016fe80(lVar6,*(uint *)(lVar6 + 0x20) | 4);
   }
 LAB_005aa7dc:
-  if (0 < param_3) {
-    *param_2 = 0;
+  if (uVar4 != 0) {
+    *(int *)p1 = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1270,23 +1276,22 @@ LAB_005aab94:
     */
 
 void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline
-               (long *param_1,undefined8 param_2,undefined8 param_3)
+               (wchar_t *p0,long p1)
 
 {
   long lVar1;
-  undefined4 uVar2;
-  long *plVar3;
+  long *plVar2;
   undefined1 auStack_50 [8];
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  FUN_00169a70(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
+  FUN_00169a70(auStack_50,(long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005aac58 to 005aac77 has its CatchHandler @ 005aacc4 */
-  plVar3 = (long *)FUN_001661d0(auStack_50,&ctype<wchar_t>::id);
-  uVar2 = (**(code **)(*plVar3 + 0x58))(plVar3,10);
+  plVar2 = (long *)FUN_001661d0(auStack_50,&ctype<wchar_t>::id);
+  (**(code **)(*plVar2 + 0x58))(plVar2,10);
   FUN_0016e360(auStack_50);
-  func_0x0016a4b0(param_1,param_2,param_3,uVar2);
+  func_0x0016a4b0(p0,p1);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -1303,29 +1308,31 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getl
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::getline(wchar_t*, long,
    wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline
-                 (long *param_1,int *param_2,long param_3,int param_4)
+wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::getline
+                    (wchar_t *p0,long p1,wchar_t p2)
 
 {
   uint uVar1;
   int iVar2;
   long *plVar3;
+  int in_w3;
   long lVar4;
   long lVar5;
   uint uVar6;
   long *plVar7;
   
-  param_1[1] = 0;
-  lVar4 = *(long *)(*param_1 + -0x18);
-  lVar5 = (long)param_1 + lVar4;
+  p0[2] = L'\0';
+  p0[3] = L'\0';
+  lVar4 = *(long *)(*(long *)p0 + -0x18);
+  lVar5 = (long)p0 + lVar4;
   if (*(uint *)(lVar5 + 0x20) == 0) {
     if (*(long *)(lVar5 + 0x88) != 0) {
       func_0x0016fc00();
-      lVar4 = *(long *)(*param_1 + -0x18);
-      if (*(int *)((long)param_1 + lVar4 + 0x20) != 0) goto LAB_005aae68;
+      lVar4 = *(long *)(*(long *)p0 + -0x18);
+      if (*(int *)((long)p0 + lVar4 + 0x20) != 0) goto LAB_005aae68;
     }
     while( true ) {
-      plVar3 = *(long **)((long)param_1 + lVar4 + 0x28);
+      plVar3 = *(long **)((long)p0 + lVar4 + 0x28);
       if ((int *)plVar3[3] == (int *)plVar3[4]) {
                     /* try { // try from 005aad88 to 005aad8b has its CatchHandler @ 005aaea4 */
         iVar2 = (**(code **)(*plVar3 + 0x48))();
@@ -1334,12 +1341,12 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ge
         iVar2 = *(int *)plVar3[3];
       }
       if (iVar2 == -1) {
-        lVar5 = param_1[1];
+        lVar5 = *(long *)(p0 + 2);
         uVar6 = 2;
         goto LAB_005aae44;
       }
-      if (iVar2 == param_4) {
-        plVar3 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
+      if (iVar2 == in_w3) {
+        plVar3 = *(long **)((long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x28);
         if (plVar3[3] == plVar3[4]) {
                     /* try { // try from 005aae30 to 005aae33 has its CatchHandler @ 005aae90 */
           (**(code **)(*plVar3 + 0x50))();
@@ -1348,27 +1355,27 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ge
           plVar3[3] = plVar3[3] + 4;
         }
         uVar6 = 0;
-        lVar5 = param_1[1] + 1;
-        param_1[1] = lVar5;
+        lVar5 = *(long *)(p0 + 2) + 1;
+        *(long *)(p0 + 2) = lVar5;
         goto LAB_005aae44;
       }
-      lVar5 = param_1[1];
-      if (param_3 + -1 <= lVar5) break;
-      *param_2 = iVar2;
-      plVar7 = (long *)(*param_1 + -0x18);
-      plVar3 = *(long **)((long)param_1 + *plVar7 + 0x28);
+      lVar5 = *(long *)(p0 + 2);
+      if ((long)((ulong)(uint)p2 - 1) <= lVar5) break;
+      *(int *)p1 = iVar2;
+      plVar7 = (long *)(*(long *)p0 + -0x18);
+      plVar3 = *(long **)((long)p0 + *plVar7 + 0x28);
       if (plVar3[3] == plVar3[4]) {
                     /* try { // try from 005aaddc to 005aaddf has its CatchHandler @ 005aae98 */
         (**(code **)(*plVar3 + 0x50))();
-        lVar5 = param_1[1];
-        plVar7 = (long *)(*param_1 + -0x18);
+        lVar5 = *(long *)(p0 + 2);
+        plVar7 = (long *)(*(long *)p0 + -0x18);
       }
       else {
         plVar3[3] = plVar3[3] + 4;
       }
-      param_1[1] = lVar5 + 1;
+      *(long *)(p0 + 2) = lVar5 + 1;
       lVar4 = *plVar7;
-      param_2 = param_2 + 1;
+      p1 = (long)(p1 + 4);
     }
     uVar6 = 4;
 LAB_005aae44:
@@ -1376,7 +1383,7 @@ LAB_005aae44:
     if (lVar5 != 0) {
       uVar1 = uVar6;
     }
-    lVar5 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar5 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005aae64 to 005aae67 has its CatchHandler @ 005aae94 */
     FUN_0016fe80(lVar5,*(uint *)(lVar5 + 0x20) | uVar1);
   }
@@ -1385,10 +1392,10 @@ LAB_005aae44:
     FUN_0016fe80(lVar5,*(uint *)(lVar5 + 0x20) | 4);
   }
 LAB_005aae68:
-  if (0 < param_3) {
-    *param_2 = 0;
+  if ((ulong)(uint)p2 != 0) {
+    *(int *)p1 = 0;
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1400,35 +1407,35 @@ LAB_005aae68:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::ignore(long, unsigned
    int) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore
-                 (long *param_1,long param_2,int param_3)
+long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore(long p0,uint p1)
 
 {
   int *piVar1;
   int iVar2;
   long *plVar3;
+  int in_w2;
   uint uVar4;
   long lVar5;
   long lVar6;
   
-  param_1[1] = 0;
-  lVar5 = *(long *)(*param_1 + -0x18);
-  lVar6 = (long)param_1 + lVar5;
+  *(undefined8 *)(p0 + 8) = 0;
+  lVar5 = *(long *)(*(long *)p0 + -0x18);
+  lVar6 = p0 + lVar5;
   if (*(uint *)(lVar6 + 0x20) != 0) {
                     /* try { // try from 005aaf24 to 005aaf3f has its CatchHandler @ 005ab068 */
     FUN_0016fe80(lVar6,*(uint *)(lVar6 + 0x20) | 4);
-    return param_1;
+    return p0;
   }
   if (*(long *)(lVar6 + 0x88) != 0) {
     func_0x0016fc00();
-    lVar5 = *(long *)(*param_1 + -0x18);
-    if (*(int *)((long)param_1 + lVar5 + 0x20) != 0) {
-      return param_1;
+    lVar5 = *(long *)(*(long *)p0 + -0x18);
+    if (*(int *)(p0 + lVar5 + 0x20) != 0) {
+      return p0;
     }
   }
-  if (param_2 == 0x7fffffffffffffff) {
+  if ((ulong)p1 == 0x7fffffffffffffff) {
     while( true ) {
-      plVar3 = *(long **)((long)param_1 + lVar5 + 0x28);
+      plVar3 = *(long **)(p0 + 0x28 + lVar5);
       piVar1 = (int *)plVar3[3];
       if (piVar1 == (int *)plVar3[4]) {
                     /* try { // try from 005ab004 to 005ab007 has its CatchHandler @ 005ab064 */
@@ -1439,16 +1446,16 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ig
         iVar2 = *piVar1;
       }
       if (iVar2 == -1) goto LAB_005ab02c;
-      param_1[1] = param_1[1] + 1;
-      if (iVar2 == param_3) break;
-      lVar5 = *(long *)(*param_1 + -0x18);
+      *(long *)(p0 + 8) = *(long *)(p0 + 8) + 1;
+      if (iVar2 == in_w2) break;
+      lVar5 = *(long *)(*(long *)p0 + -0x18);
     }
   }
   else {
-    lVar6 = param_1[1];
+    lVar6 = *(long *)(p0 + 8);
     do {
-      if (param_2 <= lVar6) break;
-      plVar3 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
+      if ((long)(ulong)p1 <= lVar6) break;
+      plVar3 = *(long **)(p0 + 0x28 + *(long *)(*(long *)p0 + -0x18));
       piVar1 = (int *)plVar3[3];
       if (piVar1 == (int *)plVar3[4]) {
                     /* try { // try from 005aafa8 to 005aafab has its CatchHandler @ 005ab060 */
@@ -1459,16 +1466,16 @@ long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ig
         iVar2 = *piVar1;
       }
       if (iVar2 == -1) goto LAB_005ab02c;
-      lVar6 = param_1[1] + 1;
-      param_1[1] = lVar6;
-    } while (iVar2 != param_3);
+      lVar6 = *(long *)(p0 + 8) + 1;
+      *(long *)(p0 + 8) = lVar6;
+    } while (iVar2 != in_w2);
   }
   uVar4 = 0;
 LAB_005ab030:
-  lVar6 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  lVar6 = p0 + *(long *)(*(long *)p0 + -0x18);
                     /* try { // try from 005ab044 to 005ab047 has its CatchHandler @ 005ab05c */
   FUN_0016fe80(lVar6,*(uint *)(lVar6 + 0x20) | uVar4);
-  return param_1;
+  return p0;
 LAB_005ab02c:
   uVar4 = 2;
   goto LAB_005ab030;
@@ -1532,43 +1539,45 @@ ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::pee
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::read(wchar_t*, long) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::read
-                 (long *param_1,undefined8 param_2,long param_3)
+wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::read
+                    (wchar_t *p0,long p1)
 
 {
   long *plVar1;
   long lVar2;
+  long in_x2;
   long lVar3;
   uint uVar4;
   
-  param_1[1] = 0;
-  lVar3 = *(long *)(*param_1 + -0x18);
-  lVar2 = (long)param_1 + lVar3;
+  p0[2] = L'\0';
+  p0[3] = L'\0';
+  lVar3 = *(long *)(*(long *)p0 + -0x18);
+  lVar2 = (long)p0 + lVar3;
   if (*(uint *)(lVar2 + 0x20) == 0) {
     if (*(long *)(lVar2 + 0x88) != 0) {
       func_0x0016fc00();
-      lVar3 = *(long *)(*param_1 + -0x18);
-      lVar2 = (long)param_1 + lVar3;
+      lVar3 = *(long *)(*(long *)p0 + -0x18);
+      lVar2 = (long)p0 + lVar3;
       uVar4 = *(uint *)(lVar2 + 0x20);
       if (uVar4 != 0) goto LAB_005ab1e8;
     }
-    plVar1 = *(long **)((long)param_1 + lVar3 + 0x28);
-    lVar2 = (**(code **)(*plVar1 + 0x40))(plVar1,param_2,param_3);
-    param_1[1] = lVar2;
-    if (lVar2 != param_3) {
-      lVar2 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    plVar1 = *(long **)((long)p0 + lVar3 + 0x28);
+    lVar2 = (**(code **)(*plVar1 + 0x40))(plVar1,p1);
+    *(long *)(p0 + 2) = lVar2;
+    if (lVar2 != in_x2) {
+      lVar2 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
       FUN_0016fe80(lVar2,*(uint *)(lVar2 + 0x20) | 6);
     }
   }
   else {
                     /* try { // try from 005ab1d4 to 005ab26b has its CatchHandler @ 005ab270 */
     FUN_0016fe80(lVar2,*(uint *)(lVar2 + 0x20) | 4);
-    lVar2 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar2 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
     uVar4 = *(uint *)(lVar2 + 0x20);
 LAB_005ab1e8:
     FUN_0016fe80(lVar2,uVar4 | 4);
   }
-  return param_1;
+  return p0;
 }
 
 
@@ -1580,27 +1589,29 @@ LAB_005ab1e8:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::readsome(wchar_t*, long)
     */
 
-long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome
-               (long *param_1,undefined8 param_2,long param_3)
+undefined8
+std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome(wchar_t *p0,long p1)
 
 {
   long *plVar1;
+  long in_x2;
   long lVar2;
   long lVar3;
   uint uVar4;
   
-  param_1[1] = 0;
-  lVar2 = *(long *)(*param_1 + -0x18);
-  lVar3 = (long)param_1 + lVar2;
+  p0[2] = L'\0';
+  p0[3] = L'\0';
+  lVar2 = *(long *)(*(long *)p0 + -0x18);
+  lVar3 = (long)p0 + lVar2;
   if (*(uint *)(lVar3 + 0x20) == 0) {
     if (*(long *)(lVar3 + 0x88) != 0) {
       func_0x0016fc00();
-      lVar2 = *(long *)(*param_1 + -0x18);
-      lVar3 = (long)param_1 + lVar2;
+      lVar2 = *(long *)(*(long *)p0 + -0x18);
+      lVar3 = (long)p0 + lVar2;
       uVar4 = *(uint *)(lVar3 + 0x20);
       if (uVar4 != 0) goto LAB_005ab2f8;
     }
-    plVar1 = *(long **)((long)param_1 + lVar2 + 0x28);
+    plVar1 = *(long **)((long)p0 + lVar2 + 0x28);
     if ((ulong)plVar1[3] < (ulong)plVar1[4]) {
       lVar3 = plVar1[4] - plVar1[3] >> 2;
     }
@@ -1608,26 +1619,26 @@ long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::read
       lVar3 = (**(code **)(*plVar1 + 0x38))();
     }
     if (lVar3 == -1) {
-      lVar3 = (long)param_1 + *(long *)(*param_1 + -0x18);
+      lVar3 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
       FUN_0016fe80(lVar3,*(uint *)(lVar3 + 0x20) | 2);
     }
     else if (lVar3 != 0) {
-      if (lVar3 <= param_3) {
-        param_3 = lVar3;
+      if (lVar3 <= in_x2) {
+        in_x2 = lVar3;
       }
                     /* try { // try from 005ab36c to 005ab3ab has its CatchHandler @ 005ab3b0 */
-      func_0x001721d0(param_1,param_2,param_3);
+      func_0x001721d0(p0,p1,in_x2);
     }
   }
   else {
                     /* try { // try from 005ab2e4 to 005ab327 has its CatchHandler @ 005ab3b4 */
     FUN_0016fe80(lVar3,*(uint *)(lVar3 + 0x20) | 4);
-    lVar3 = (long)param_1 + *(long *)(*param_1 + -0x18);
+    lVar3 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
     uVar4 = *(uint *)(lVar3 + 0x20);
 LAB_005ab2f8:
     FUN_0016fe80(lVar3,uVar4 | 4);
   }
-  return param_1[1];
+  return *(undefined8 *)(p0 + 2);
 }
 
 
@@ -1638,55 +1649,57 @@ LAB_005ab2f8:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::putback(wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback
-                 (long *param_1,int param_2)
+long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback(wchar_t p0)
 
 {
-  long lVar1;
-  uint uVar2;
-  long *plVar3;
-  int *piVar4;
+  long *plVar1;
+  long lVar2;
+  int in_w1;
+  uint uVar3;
+  long *plVar4;
+  int *piVar5;
   
-  param_1[1] = 0;
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
+  plVar1 = (long *)(ulong)(uint)p0;
+  plVar1[1] = 0;
+  lVar2 = (long)plVar1 + *(long *)(*plVar1 + -0x18);
                     /* try { // try from 005ab424 to 005ab427 has its CatchHandler @ 005ab504 */
-  FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) & 0xfffffffd);
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-  if (*(uint *)(lVar1 + 0x20) == 0) {
-    if (*(long *)(lVar1 + 0x88) != 0) {
-      func_0x0016fc00(*(long *)(lVar1 + 0x88));
-      lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-      uVar2 = *(uint *)(lVar1 + 0x20);
-      if (uVar2 != 0) goto LAB_005ab454;
+  FUN_0016fe80(lVar2,*(uint *)(lVar2 + 0x20) & 0xfffffffd);
+  lVar2 = (long)plVar1 + *(long *)(*plVar1 + -0x18);
+  if (*(uint *)(lVar2 + 0x20) == 0) {
+    if (*(long *)(lVar2 + 0x88) != 0) {
+      func_0x0016fc00(*(long *)(lVar2 + 0x88));
+      lVar2 = (long)plVar1 + *(long *)(*plVar1 + -0x18);
+      uVar3 = *(uint *)(lVar2 + 0x20);
+      if (uVar3 != 0) goto LAB_005ab454;
     }
-    plVar3 = *(long **)(lVar1 + 0x28);
-    if (plVar3 == (long *)0x0) {
-      uVar2 = 1;
+    plVar4 = *(long **)(lVar2 + 0x28);
+    if (plVar4 == (long *)0x0) {
+      uVar3 = 1;
     }
     else {
-      if ((plVar3[2] == plVar3[3]) || (piVar4 = (int *)(plVar3[3] + -4), *piVar4 != param_2)) {
-        param_2 = (**(code **)(*plVar3 + 0x58))(plVar3,param_2);
+      if ((plVar4[2] == plVar4[3]) || (piVar5 = (int *)(plVar4[3] + -4), *piVar5 != in_w1)) {
+        in_w1 = (**(code **)(*plVar4 + 0x58))(plVar4,in_w1);
       }
       else {
-        plVar3[3] = (long)piVar4;
+        plVar4[3] = (long)piVar5;
       }
-      if (param_2 != -1) {
-        return param_1;
+      if (in_w1 != -1) {
+        return plVar1;
       }
-      lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-      uVar2 = *(uint *)(lVar1 + 0x20) | 1;
+      lVar2 = (long)plVar1 + *(long *)(*plVar1 + -0x18);
+      uVar3 = *(uint *)(lVar2 + 0x20) | 1;
     }
-    FUN_0016fe80(lVar1,uVar2);
+    FUN_0016fe80(lVar2,uVar3);
   }
   else {
                     /* try { // try from 005ab440 to 005ab4ff has its CatchHandler @ 005ab508 */
-    FUN_0016fe80(lVar1,*(uint *)(lVar1 + 0x20) | 4);
-    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-    uVar2 = *(uint *)(lVar1 + 0x20);
+    FUN_0016fe80(lVar2,*(uint *)(lVar2 + 0x20) | 4);
+    lVar2 = (long)plVar1 + *(long *)(*plVar1 + -0x18);
+    uVar3 = *(uint *)(lVar2 + 0x20);
 LAB_005ab454:
-    FUN_0016fe80(lVar1,uVar2 | 4);
+    FUN_0016fe80(lVar2,uVar3 | 4);
   }
-  return param_1;
+  return plVar1;
 }
 
 

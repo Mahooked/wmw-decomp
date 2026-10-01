@@ -29,7 +29,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 
 {
   FUN_00171f00(param_1 + 8);
-  FUN_00166120(param_1 + -0x10);
+  FUN_00166120((void *)(param_1 + -0x10));
   return;
 }
 

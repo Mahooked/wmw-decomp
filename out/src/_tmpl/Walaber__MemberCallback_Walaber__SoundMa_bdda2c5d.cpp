@@ -8,10 +8,10 @@
 
 /* Walaber::MemberCallback<Walaber::SoundManager>::~MemberCallback() */
 
-void Walaber::MemberCallback<Walaber::SoundManager>::~MemberCallback(void)
+void Walaber::MemberCallback<Walaber::SoundManager>::~MemberCallback(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 
@@ -23,20 +23,20 @@ void Walaber::MemberCallback<Walaber::SoundManager>::~MemberCallback(void)
 
 /* Walaber::MemberCallback<Walaber::SoundManager>::invoke(void*) */
 
-void Walaber::MemberCallback<Walaber::SoundManager>::invoke(long param_1)
+void Walaber::MemberCallback<Walaber::SoundManager>::invoke(void *p0)
 
 {
   code *UNRECOVERED_JUMPTABLE;
   ulong uVar1;
   
-  UNRECOVERED_JUMPTABLE = *(code **)(param_1 + 0x18);
-  uVar1 = *(ulong *)(param_1 + 0x20) & 1;
-  if ((uVar1 != 0 || UNRECOVERED_JUMPTABLE != (code *)0x0) && (*(long *)(param_1 + 0x10) != 0)) {
+  UNRECOVERED_JUMPTABLE = *(code **)((long)p0 + 0x18);
+  uVar1 = *(ulong *)((long)p0 + 0x20) & 1;
+  if ((uVar1 != 0 || UNRECOVERED_JUMPTABLE != (code *)0x0) && (*(long *)((long)p0 + 0x10) != 0)) {
     if (uVar1 != 0) {
       UNRECOVERED_JUMPTABLE =
            *(code **)(UNRECOVERED_JUMPTABLE +
-                     *(long *)(*(long *)(param_1 + 0x10) + ((long)*(ulong *)(param_1 + 0x20) >> 1)))
-      ;
+                     *(long *)(*(long *)((long)p0 + 0x10) + ((long)*(ulong *)((long)p0 + 0x20) >> 1)
+                              ));
     }
                     /* WARNING: Could not recover jumptable at 0x003568b4. Too many branches */
                     /* WARNING: Treating indirect jump as call */

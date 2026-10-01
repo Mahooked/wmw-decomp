@@ -28,11 +28,11 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ost
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ostream(long *param_1)
 
 {
-  long lVar1;
+  void *p0;
   
-  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
-  FUN_00171f00(lVar1 + 8);
-  FUN_00166120(lVar1);
+  p0 = (void *)((long)param_1 + *(long *)(*param_1 + -0x18));
+  FUN_00171f00((long)p0 + 8);
+  FUN_00166120(p0);
   return;
 }
 

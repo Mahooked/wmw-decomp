@@ -10,14 +10,14 @@
    const&, Walaber::Color const&) */
 
 void Walaber::QuadHelper::drawQuad
-               (undefined8 param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4,
-               undefined4 *param_5)
+               (uint p0,Walaber__Vector2 *p1,float p2,Walaber__Vector2 *p3,Walaber__Color *p4)
 
 {
   undefined4 uVar1;
   long lVar2;
+  undefined4 in_register_00005004;
   
-  uVar1 = *param_5;
+  uVar1 = *(undefined4 *)p4;
   lVar2 = 0;
   do {
     *(ulong *)(mColors + lVar2 + 8) = CONCAT44(uVar1,uVar1);
@@ -26,7 +26,7 @@ void Walaber::QuadHelper::drawQuad
   } while (lVar2 != 0x10);
   func_0x00173240(1);
   func_0x00168480(1);
-  func_0x0016d560(param_2);
+  func_0x0016d560(p0);
   func_0x00162680(2,0x1406,8,mTexCoords);
   func_0x00167fc0();
   func_0x001716e0(2,0x1406,8,mVerts);
@@ -35,9 +35,9 @@ void Walaber::QuadHelper::drawQuad
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_3,param_3[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  func_0x0016d020(*param_4,param_4[1],0x3f800000);
+  func_0x0016b2a0(*(undefined4 *)p1,*(undefined4 *)(p1 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p2),0,0,0x3f800000);
+  func_0x0016d020(*(undefined4 *)p3,*(undefined4 *)(p3 + 4),0x3f800000);
   func_0x0016eaf0(5,0,4);
   func_0x001716f0();
   return;
@@ -53,23 +53,24 @@ void Walaber::QuadHelper::drawQuad
    const&, Walaber::Rect const&, unsigned int, unsigned int, Walaber::Color const&, bool) */
 
 void Walaber::QuadHelper::drawQuad
-               (undefined8 param_1,undefined4 param_2,undefined4 *param_3,undefined4 *param_4,
-               float *param_5,undefined8 param_6,undefined8 param_7,undefined4 *param_8)
+               (uint p0,Walaber__Vector2 *p1,float p2,Walaber__Vector2 *p3,Walaber__Rect *p4,uint p5
+               ,uint p6,Walaber__Color *p7,bool p8)
 
 {
   undefined4 uVar1;
   long lVar2;
+  undefined4 in_register_00005004;
   
-  mCustomTexCoords = *param_5;
+  mCustomTexCoords = *(undefined4 *)p4;
   lVar2 = 0;
-  DAT_0072a7f8 = param_5[1] + param_5[3];
-  DAT_0072a7fc = param_5[2] + *param_5;
-  DAT_0072a800 = param_5[3] + param_5[1];
-  DAT_0072a804 = *param_5;
-  DAT_0072a808 = param_5[1];
-  DAT_0072a80c = *param_5 + param_5[2];
-  DAT_0072a810 = param_5[1];
-  uVar1 = *param_8;
+  DAT_0072a7f8 = *(float *)(p4 + 4) + *(float *)(p4 + 0xc);
+  DAT_0072a7fc = *(float *)(p4 + 8) + *(float *)p4;
+  DAT_0072a800 = *(float *)(p4 + 0xc) + *(float *)(p4 + 4);
+  DAT_0072a804 = *(undefined4 *)p4;
+  DAT_0072a808 = *(undefined4 *)(p4 + 4);
+  DAT_0072a80c = *(float *)p4 + *(float *)(p4 + 8);
+  DAT_0072a810 = *(undefined4 *)(p4 + 4);
+  uVar1 = *(undefined4 *)p7;
   do {
     *(ulong *)(mColors + lVar2 + 8) = CONCAT44(uVar1,uVar1);
     *(ulong *)(mColors + lVar2) = CONCAT44(uVar1,uVar1);
@@ -77,7 +78,7 @@ void Walaber::QuadHelper::drawQuad
   } while (lVar2 != 0x10);
   func_0x00173240(1);
   func_0x00168480(1);
-  func_0x0016d560(param_2);
+  func_0x0016d560(p0);
   func_0x00162680(2,0x1406,8,&mCustomTexCoords);
   func_0x00167fc0();
   func_0x001716e0(2,0x1406,8,mVerts);
@@ -86,9 +87,9 @@ void Walaber::QuadHelper::drawQuad
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_3,param_3[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  func_0x0016d020(*param_4,param_4[1],0x3f800000);
+  func_0x0016b2a0(*(undefined4 *)p1,*(undefined4 *)(p1 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p2),0,0,0x3f800000);
+  func_0x0016d020(*(undefined4 *)p3,*(undefined4 *)(p3 + 4),0x3f800000);
   func_0x0016eaf0(5,0,4);
   func_0x001716f0();
   return;
@@ -103,10 +104,12 @@ void Walaber::QuadHelper::drawQuad
 /* Walaber::QuadHelper::drawQuad(unsigned int, Walaber::Vector2 const&, float, Walaber::Vector2
    const&, Walaber::Rect const&, Walaber::Color const&) */
 
-void Walaber::QuadHelper::drawQuad(void)
+void Walaber::QuadHelper::drawQuad
+               (uint p0,Walaber__Vector2 *p1,float p2,Walaber__Vector2 *p3,Walaber__Rect *p4,
+               Walaber__Color *p5)
 
 {
-  func_0x0016fca0();
+  func_0x0016fca0(p0);
   return;
 }
 
@@ -120,13 +123,14 @@ void Walaber::QuadHelper::drawQuad(void)
    Walaber::Color const&) */
 
 void Walaber::QuadHelper::drawQuad
-               (undefined8 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+               (Walaber__Vector2 *p0,float p1,Walaber__Vector2 *p2,Walaber__Color *p3)
 
 {
   undefined4 uVar1;
   long lVar2;
+  undefined4 in_register_00005004;
   
-  uVar1 = *param_4;
+  uVar1 = *(undefined4 *)p3;
   lVar2 = 0;
   do {
     *(ulong *)(mColors + lVar2 + 8) = CONCAT44(uVar1,uVar1);
@@ -143,9 +147,9 @@ void Walaber::QuadHelper::drawQuad
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_2,param_2[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  func_0x0016d020(*param_3,param_3[1],0x3f800000);
+  func_0x0016b2a0(*(undefined4 *)p0,*(undefined4 *)(p0 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p1),0,0,0x3f800000);
+  func_0x0016d020(*(undefined4 *)p2,*(undefined4 *)(p2 + 4),0x3f800000);
   func_0x0016eaf0(5,0,4);
   func_0x001716f0();
   return;
@@ -161,13 +165,14 @@ void Walaber::QuadHelper::drawQuad
    Walaber::Color const&) */
 
 void Walaber::QuadHelper::drawQuadColored
-               (undefined8 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+               (Walaber__Vector2 *p0,float p1,Walaber__Vector2 *p2,Walaber__Color *p3)
 
 {
   undefined4 uVar1;
   long lVar2;
+  undefined4 in_register_00005004;
   
-  uVar1 = *param_4;
+  uVar1 = *(undefined4 *)p3;
   lVar2 = 0;
   do {
     *(ulong *)(mColors + lVar2 + 8) = CONCAT44(uVar1,uVar1);
@@ -183,9 +188,9 @@ void Walaber::QuadHelper::drawQuadColored
   func_0x0016d300();
   func_0x001642a0(0x1700);
   func_0x001703b0();
-  func_0x0016b2a0(*param_2,param_2[1],0);
-  func_0x0016e300(param_1,0,0,0x3f800000);
-  func_0x0016d020(*param_3,param_3[1],0x3f800000);
+  func_0x0016b2a0(*(undefined4 *)p0,*(undefined4 *)(p0 + 4),0);
+  func_0x0016e300(CONCAT44(in_register_00005004,p1),0,0,0x3f800000);
+  func_0x0016d020(*(undefined4 *)p2,*(undefined4 *)(p2 + 4),0x3f800000);
   func_0x0016eaf0(5,0,4);
   func_0x001716f0();
   return;
@@ -201,14 +206,16 @@ void Walaber::QuadHelper::drawQuadColored
    float, Walaber::Color const&) */
 
 void Walaber::QuadHelper::drawQuadOutline
-               (undefined8 param_1,float param_2,float *param_3,float *param_4,undefined8 param_5)
+               (Walaber__Vector2 *p0,float p1,Walaber__Vector2 *p2,float p3,Walaber__Color *p4)
 
 {
   long lVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
+  undefined4 in_register_00005004;
+  undefined8 uVar4;
   float fVar5;
+  float fVar6;
   float fStack_90;
   float fStack_8c;
   float fStack_88;
@@ -217,37 +224,38 @@ void Walaber::QuadHelper::drawQuadOutline
   float fStack_7c;
   long lStack_78;
   
+  uVar4 = CONCAT44(in_register_00005004,p1);
   lVar1 = tpidr_el0;
   lStack_78 = *(long *)(lVar1 + 0x28);
-  fStack_80 = *param_4 - param_2;
-  fVar4 = (float)param_1 * 0.017453292;
-  fStack_84 = param_4[1] + param_2;
-  fVar5 = param_4[1] * 0.5;
-  fStack_88 = param_2;
-  fStack_7c = param_2;
-  fVar2 = (float)func_0x0016ee90(fVar4);
-  fVar3 = (float)func_0x00174170(fVar4);
-  fStack_90 = *param_3 + (fVar2 * 0.0 - fVar5 * fVar3);
-  fStack_8c = param_3[1] + fVar5 * fVar2 + fVar3 * 0.0;
-  func_0x00165de0(param_1,&fStack_90,&fStack_80,param_5);
-  fVar2 = param_4[1];
-  fVar3 = (float)func_0x0016ee90(fVar4);
-  fVar5 = (float)func_0x00174170(fVar4);
-  fStack_90 = *param_3 + (fVar3 * 0.0 - fVar2 * -0.5 * fVar5);
-  fStack_8c = param_3[1] + fVar3 * fVar2 * -0.5 + fVar5 * 0.0;
-  func_0x00165de0(param_1,&fStack_90,&fStack_80,param_5);
-  fVar2 = *param_4;
-  fVar3 = (float)func_0x0016ee90(fVar4);
-  fVar5 = (float)func_0x00174170(fVar4);
-  fStack_90 = *param_3 + (fVar3 * fVar2 * -0.5 - fVar5 * 0.0);
-  fStack_8c = param_3[1] + fVar3 * 0.0 + fVar2 * -0.5 * fVar5;
-  func_0x00165de0(param_1,&fStack_90,&fStack_88,param_5);
-  fVar2 = *param_4;
-  fVar3 = (float)func_0x0016ee90(fVar4);
-  fVar5 = (float)func_0x00174170(fVar4);
-  fStack_90 = *param_3 + (fVar3 * fVar2 * 0.5 - fVar5 * 0.0);
-  fStack_8c = param_3[1] + fVar3 * 0.0 + fVar2 * 0.5 * fVar5;
-  func_0x00165de0(param_1,&fStack_90,&fStack_88,param_5);
+  fStack_80 = *(float *)p2 - p3;
+  fVar5 = p1 * 0.017453292;
+  fStack_84 = *(float *)(p2 + 4) + p3;
+  fVar6 = *(float *)(p2 + 4) * 0.5;
+  fStack_88 = p3;
+  fStack_7c = p3;
+  fVar2 = (float)func_0x0016ee90(fVar5);
+  fVar3 = (float)func_0x00174170(fVar5);
+  fStack_90 = *(float *)p0 + (fVar2 * 0.0 - fVar6 * fVar3);
+  fStack_8c = *(float *)(p0 + 4) + fVar6 * fVar2 + fVar3 * 0.0;
+  func_0x00165de0(uVar4,&fStack_90,&fStack_80,p4);
+  fVar2 = *(float *)(p2 + 4);
+  fVar3 = (float)func_0x0016ee90(fVar5);
+  fVar6 = (float)func_0x00174170(fVar5);
+  fStack_90 = *(float *)p0 + (fVar3 * 0.0 - fVar2 * -0.5 * fVar6);
+  fStack_8c = *(float *)(p0 + 4) + fVar3 * fVar2 * -0.5 + fVar6 * 0.0;
+  func_0x00165de0(uVar4,&fStack_90,&fStack_80,p4);
+  fVar2 = *(float *)p2;
+  fVar3 = (float)func_0x0016ee90(fVar5);
+  fVar6 = (float)func_0x00174170(fVar5);
+  fStack_90 = *(float *)p0 + (fVar3 * fVar2 * -0.5 - fVar6 * 0.0);
+  fStack_8c = *(float *)(p0 + 4) + fVar3 * 0.0 + fVar2 * -0.5 * fVar6;
+  func_0x00165de0(uVar4,&fStack_90,&fStack_88,p4);
+  fVar2 = *(float *)p2;
+  fVar3 = (float)func_0x0016ee90(fVar5);
+  fVar6 = (float)func_0x00174170(fVar5);
+  fStack_90 = *(float *)p0 + (fVar3 * fVar2 * 0.5 - fVar6 * 0.0);
+  fStack_8c = *(float *)(p0 + 4) + fVar3 * 0.0 + fVar2 * 0.5 * fVar6;
+  func_0x00165de0(uVar4,&fStack_90,&fStack_88,p4);
   if (*(long *)(lVar1 + 0x28) == lStack_78) {
     return;
   }

@@ -8,7 +8,7 @@
 
 /* std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char const*) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long param_1,undefined8 param_2)
+void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
 
 {
   long lVar1;
@@ -19,12 +19,12 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long param_1,u
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   func_0x00164190();
-  FUN_0016b330(param_1 + 8,0,0x420);
+  FUN_0016b330(p0 + 8,0,0x420);
                     /* try { // try from 005c2fb0 to 005c2fbf has its CatchHandler @ 005c306c */
-  func_0x001635f0(appuStack_50,param_2,1);
+  func_0x001635f0(appuStack_50);
   appuStack_50[0] = &PTR__ctype_byname_00719038;
                     /* try { // try from 005c2fcc to 005c2fd7 has its CatchHandler @ 005c3034 */
-  func_0x00171e30(param_1,appuStack_50);
+  func_0x00171e30(p0,appuStack_50);
   appuStack_50[0] = &PTR__ctype_byname_00717840;
                     /* try { // try from 005c2fec to 005c2fef has its CatchHandler @ 005c3020 */
   FUN_00173520(uStack_40);
@@ -1294,7 +1294,7 @@ LAB_005dfefc:
         *(undefined4 *)param_1[0x7b] = 0;
         param_1[0x7a] = 0;
         if ((*(byte *)(param_1 + 0x79) & 1) != 0) {
-          FUN_00166120(param_1[0x7b]);
+          FUN_00166120((void *)param_1[0x7b]);
           param_1[0x79] = 0;
         }
       }
@@ -1310,7 +1310,7 @@ LAB_005dfefc:
         *(undefined4 *)param_1[0x7e] = 0;
         param_1[0x7d] = 0;
         if ((*(byte *)(param_1 + 0x7c) & 1) != 0) {
-          FUN_00166120(param_1[0x7e]);
+          FUN_00166120((void *)param_1[0x7e]);
           param_1[0x7c] = 0;
         }
       }
@@ -1326,7 +1326,7 @@ LAB_005dfefc:
         *(undefined4 *)param_1[0x81] = 0;
         param_1[0x80] = 0;
         if ((*(byte *)(param_1 + 0x7f) & 1) != 0) {
-          FUN_00166120(param_1[0x81]);
+          FUN_00166120((void *)param_1[0x81]);
           param_1[0x7f] = 0;
         }
       }
@@ -1342,7 +1342,7 @@ LAB_005dfefc:
         *(undefined4 *)param_1[0x84] = 0;
         param_1[0x83] = 0;
         if ((*(byte *)(param_1 + 0x82) & 1) != 0) {
-          FUN_00166120(param_1[0x84]);
+          FUN_00166120((void *)param_1[0x84]);
           param_1[0x82] = 0;
         }
       }

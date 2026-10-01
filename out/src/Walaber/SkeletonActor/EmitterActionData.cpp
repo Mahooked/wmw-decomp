@@ -8,10 +8,10 @@
 
 /* Walaber::SkeletonActor::EmitterActionData::~EmitterActionData() */
 
-void Walaber::SkeletonActor::EmitterActionData::~EmitterActionData(void)
+void Walaber::SkeletonActor::EmitterActionData::~EmitterActionData(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 

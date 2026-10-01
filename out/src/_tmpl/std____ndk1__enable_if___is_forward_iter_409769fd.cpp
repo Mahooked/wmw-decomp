@@ -15,61 +15,64 @@
 
 void std::__ndk1::
      vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     assign<Walaber::Widget_IconList::Icon*>(long *param_1,long param_2,long param_3)
+     assign<Walaber::Widget_IconList::Icon*>
+               (Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1)
 
 {
-  ulong uVar1;
-  long lVar2;
-  long lVar3;
-  ulong uVar4;
-  long lVar5;
-  ulong uVar6;
+  Walaber__Widget_IconList__Icon *pWVar1;
+  Walaber__Widget_IconList__Icon *pWVar2;
+  Walaber__Widget_IconList__Icon *in_x2;
+  ulong uVar3;
+  long lVar4;
+  ulong uVar5;
+  long lVar6;
+  ulong uVar7;
   
-  lVar5 = *param_1;
-  lVar2 = param_1[2] - lVar5 >> 4;
-  uVar4 = (param_3 - param_2 >> 4) * -0x5555555555555555;
-  if (uVar4 < (ulong)(lVar2 * -0x5555555555555555) || uVar4 + lVar2 * 0x5555555555555555 == 0) {
-    lVar3 = param_1[1] - lVar5 >> 4;
-    lVar2 = param_2;
-    param_2 = param_2 + (param_1[1] - lVar5);
-    if (uVar4 < (ulong)(lVar3 * -0x5555555555555555) || uVar4 + lVar3 * 0x5555555555555555 == 0) {
-      param_2 = param_3;
+  lVar6 = *(long *)p0;
+  lVar4 = *(long *)(p0 + 0x10) - lVar6 >> 4;
+  uVar5 = ((long)in_x2 - (long)p1 >> 4) * -0x5555555555555555;
+  if (uVar5 < (ulong)(lVar4 * -0x5555555555555555) || uVar5 + lVar4 * 0x5555555555555555 == 0) {
+    lVar4 = *(long *)(p0 + 8) - lVar6 >> 4;
+    pWVar1 = p1;
+    pWVar2 = p1 + (*(long *)(p0 + 8) - lVar6);
+    if (uVar5 < (ulong)(lVar4 * -0x5555555555555555) || uVar5 + lVar4 * 0x5555555555555555 == 0) {
+      pWVar2 = in_x2;
     }
-    for (; param_2 != lVar2; lVar2 = lVar2 + 0x30) {
-      func_0x00170aa0(lVar5,lVar2);
-      func_0x00171ac0(lVar5 + 0x10,lVar2 + 0x10);
-      *(undefined4 *)(lVar5 + 0x28) = *(undefined4 *)(lVar2 + 0x28);
-      lVar5 = lVar5 + 0x30;
+    for (; p1 = pWVar2, p1 != pWVar1; pWVar1 = pWVar1 + 0x30) {
+      func_0x00170aa0(lVar6,pWVar1);
+      func_0x00171ac0(lVar6 + 0x10,pWVar1 + 0x10);
+      *(undefined4 *)(lVar6 + 0x28) = *(undefined4 *)(pWVar1 + 0x28);
+      lVar6 = lVar6 + 0x30;
+      pWVar2 = p1;
     }
-    if (uVar4 < (ulong)(lVar3 * -0x5555555555555555) || uVar4 + lVar3 * 0x5555555555555555 == 0) {
-      lVar2 = param_1[1];
-      while (lVar2 != lVar5) {
-        if ((*(byte *)(lVar2 + -0x20) & 1) != 0) {
-          FUN_00166120(*(undefined8 *)(lVar2 + -0x10));
+    if (uVar5 < (ulong)(lVar4 * -0x5555555555555555) || uVar5 + lVar4 * 0x5555555555555555 == 0) {
+      lVar4 = *(long *)(p0 + 8);
+      while (lVar4 != lVar6) {
+        if ((*(byte *)(lVar4 + -0x20) & 1) != 0) {
+          FUN_00166120(*(void **)(lVar4 + -0x10));
         }
-        FUN_00166b20(lVar2 + -0x30);
-        lVar2 = lVar2 + -0x30;
+        FUN_00166b20(lVar4 + -0x30);
+        lVar4 = lVar4 + -0x30;
       }
-      param_1[1] = lVar5;
+      *(long *)(p0 + 8) = lVar6;
       return;
     }
-    uVar4 = uVar4 + (param_1[1] - *param_1 >> 4) * 0x5555555555555555;
   }
   else {
-    func_0x00173500(param_1);
-    if (0x555555555555555 < uVar4) {
-      FUN_001705a0(param_1);
+    func_0x00173500(p0);
+    if (0x555555555555555 < uVar5) {
+      FUN_001705a0(p0);
       return;
     }
-    lVar5 = param_1[2] - *param_1 >> 4;
-    uVar6 = 0x555555555555555;
-    if (((ulong)(lVar5 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
-       (uVar1 = lVar5 * 0x5555555555555556, uVar6 = uVar4, uVar4 <= uVar1)) {
-      uVar6 = uVar1;
+    lVar6 = *(long *)(p0 + 0x10) - *(long *)p0 >> 4;
+    uVar7 = 0x555555555555555;
+    if (((ulong)(lVar6 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
+       (uVar3 = lVar6 * 0x5555555555555556, uVar7 = uVar5, uVar5 <= uVar3)) {
+      uVar7 = uVar3;
     }
-    func_0x00165e50(param_1,uVar6);
+    func_0x00165e50(p0,uVar7);
   }
-  func_0x00171dc0(param_1,param_2,param_3,uVar4);
+  func_0x00171dc0(p0,p1);
   return;
 }
 

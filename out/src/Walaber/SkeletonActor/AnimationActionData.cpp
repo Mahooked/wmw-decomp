@@ -15,7 +15,7 @@ void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData(undefined
   if ((*(byte *)(param_1 + 2) & 1) == 0) {
     return;
   }
-  FUN_00166120(param_1[4]);
+  FUN_00166120((void *)param_1[4]);
   return;
 }
 
@@ -32,7 +32,7 @@ void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData(undefined
 {
   *param_1 = &PTR__AnimationActionData_0070e568;
   if ((*(byte *)(param_1 + 2) & 1) != 0) {
-    FUN_00166120(param_1[4]);
+    FUN_00166120((void *)param_1[4]);
   }
   FUN_00166120(param_1);
   return;

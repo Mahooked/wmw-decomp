@@ -53,7 +53,7 @@ void std::__ndk1::__split_buffer<WaterConcept::Fluid,std::__ndk1::allocator<Wate
    std::__ndk1::allocator<WaterConcept::Fluid>&>::~__split_buffer() */
 
 void std::__ndk1::__split_buffer<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>&>::
-     ~__split_buffer(long *param_1)
+     ~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -68,8 +68,8 @@ void std::__ndk1::__split_buffer<WaterConcept::Fluid,std::__ndk1::allocator<Wate
     FUN_00166b20(lVar2 + -0xe8);
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

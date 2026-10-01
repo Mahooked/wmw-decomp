@@ -168,10 +168,10 @@ void Walaber::createProgrammaticSolidColorTexture2D
 
 /* Walaber::loadPVR(unsigned char*, unsigned int, int&, int&, unsigned int&, unsigned int&) */
 
-undefined8 Walaber::loadPVR(void)
+undefined1  [16] Walaber::loadPVR(uchar *p0,uint p1,int *p2,int *p3,uint *p4,uint *p5)
 
 {
-  return 0;
+  return ZEXT416(p1) << 0x40;
 }
 
 
@@ -226,7 +226,7 @@ void Walaber::createRenderTexture2D
   undefined8 uStack_98;
   undefined8 uStack_90;
   byte abStack_88 [16];
-  undefined8 uStack_78;
+  void *pvStack_78;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
@@ -256,7 +256,7 @@ void Walaber::createRenderTexture2D
   *puVar3 = 1;
   param_1[1] = puVar3;
   if ((abStack_88[0] & 1) != 0) {
-    FUN_00166120(uStack_78);
+    FUN_00166120(pvStack_78);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -312,7 +312,7 @@ void Walaber::createSubtexture
   long lStack_70;
   int *piStack_68;
   byte abStack_60 [16];
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
@@ -333,7 +333,7 @@ void Walaber::createSubtexture
   param_1[1] = puVar3;
   FUN_00166b20(&lStack_70);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -655,7 +655,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   ulong uVar5;
   byte abStack_40 [8];
   ulong uStack_38;
-  undefined8 uStack_30;
+  void *pvStack_30;
   long lStack_28;
   
   lVar1 = tpidr_el0;
@@ -704,7 +704,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   }
 LAB_003979b0:
   if ((abStack_40[0] & 1) != 0) {
-    FUN_00166120(uStack_30);
+    FUN_00166120(pvStack_30);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_28) {
     uVar3 = FUN_00164ff0();
@@ -819,7 +819,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   undefined8 uStack_88;
   undefined8 uStack_80;
   byte abStack_78 [16];
-  undefined8 uStack_68;
+  void *pvStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
@@ -849,7 +849,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   *puVar3 = 1;
   param_1[1] = puVar3;
   if ((abStack_78[0] & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -867,20 +867,25 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
 /* Walaber::loadWALT(unsigned char*, unsigned int, int&, int&, Walaber::TextureInMemoryColorspace&)
     */
 
-char * Walaber::loadWALT(char *param_1,undefined8 param_2,uint *param_3,uint *param_4,uint *param_5)
+undefined1  [16]
+Walaber::loadWALT(uchar *p0,uint p1,int *p2,int *p3,Walaber__TextureInMemoryColorspace *p4)
 
 {
   ushort uVar1;
+  undefined1 auVar2 [16];
   
-  if ((((*param_1 == 'W') && (param_1[1] == 'A')) && (param_1[2] == 'L')) &&
-     ((param_1[3] == 'T' && (param_1[4] == '\x01')))) {
-    *param_5 = (uint)(byte)param_1[5];
-    uVar1 = *(ushort *)(param_1 + 8);
-    *param_3 = (uint)*(ushort *)(param_1 + 6);
-    *param_4 = (uint)uVar1;
-    return param_1 + 0x10;
+  if ((((*p0 == 'W') && (p0[1] == 'A')) && (p0[2] == 'L')) && ((p0[3] == 'T' && (p0[4] == '\x01'))))
+  {
+    *(uint *)p4 = (uint)p0[5];
+    uVar1 = *(ushort *)(p0 + 8);
+    *p2 = (uint)*(ushort *)(p0 + 6);
+    *p3 = (uint)uVar1;
+    auVar2._8_4_ = p1;
+    auVar2._0_8_ = p0 + 0x10;
+    auVar2._12_4_ = 0;
+    return auVar2;
   }
-  return (char *)0x0;
+  return ZEXT416(p1) << 0x40;
 }
 
 

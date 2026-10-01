@@ -69,7 +69,7 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   undefined8 *puStack_b0;
   int *piStack_a8;
   byte abStack_a0 [16];
-  undefined8 uStack_90;
+  void *pvStack_90;
   undefined8 *puStack_88;
   int *piStack_80;
   undefined8 *puStack_78;
@@ -118,7 +118,7 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   func_0x00173cd0(uVar2,abStack_a0,&puStack_b0);
   FUN_0016bb90(&puStack_b0);
   if ((abStack_a0[0] & 1) != 0) {
-    FUN_00166120(uStack_90);
+    FUN_00166120(pvStack_90);
   }
   FUN_0016bb90(&puStack_78);
   func_0x00163490(&puStack_68);
@@ -137,12 +137,13 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
 
 /* Walaber::FontManager::_fontLoaded(void*) */
 
-void Walaber::FontManager::_fontLoaded(undefined8 param_1,int *param_2)
+void Walaber::FontManager::_fontLoaded(void *p0)
 
 {
   long lVar1;
   long lVar2;
   undefined8 uVar3;
+  int *in_x1;
   undefined1 *puVar4;
   int iVar5;
   long lVar6;
@@ -164,8 +165,8 @@ void Walaber::FontManager::_fontLoaded(undefined8 param_1,int *param_2)
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  if (*param_2 == 1) {
-    lVar6 = *(long *)(param_2 + 2);
+  if (*in_x1 == 1) {
+    lVar6 = *(long *)(in_x1 + 2);
     lVar8 = *(long *)(lVar6 + 0x60);
     lVar7 = *(long *)(lVar6 + 0x68);
     uStack_80 = 0;
@@ -189,7 +190,7 @@ void Walaber::FontManager::_fontLoaded(undefined8 param_1,int *param_2)
           }
         }
                     /* try { // try from 00369ff4 to 00369fff has its CatchHandler @ 0036a154 */
-        func_0x00165800(&uStack_98,param_1,puVar4);
+        func_0x00165800(&uStack_98,p0,puVar4);
         if ((uStack_80 & 1) != 0) {
           *puStack_70 = 0;
           piStack_78 = (int *)0x0;
@@ -252,14 +253,15 @@ void Walaber::FontManager::removeAllFonts(long param_1)
   bool bVar1;
   long *plVar2;
   long lVar3;
+  void *p0;
   long *plVar4;
   
   plVar4 = *(long **)(param_1 + 0x18);
   while ((long *)(param_1 + 0x20) != plVar4) {
-    lVar3 = plVar4[7];
-    if (lVar3 != 0) {
-      func_0x001719d0(lVar3);
-      FUN_00166120(lVar3);
+    p0 = (void *)plVar4[7];
+    if (p0 != (void *)0x0) {
+      func_0x001719d0(p0);
+      FUN_00166120(p0);
     }
     plVar2 = (long *)plVar4[1];
     if ((long *)plVar4[1] == (long *)0x0) {

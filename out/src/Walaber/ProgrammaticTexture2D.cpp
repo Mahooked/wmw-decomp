@@ -109,12 +109,13 @@ void Walaber::ProgrammaticTexture2D::initWithSize(long param_1,int param_2,int p
 void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
 
 {
-  long lVar1;
-  long lVar2;
+  void *pvVar1;
+  void *pvVar2;
   int iVar3;
   uint uVar4;
   uint uVar5;
   long lVar6;
+  ulong p1;
   undefined8 uVar7;
   undefined8 uVar8;
   undefined8 uVar9;
@@ -123,17 +124,21 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
   undefined1 uStack_57;
   undefined1 uStack_56;
   undefined1 uStack_55;
-  long alStack_50 [4];
+  void *pvStack_50;
+  undefined8 uStack_48;
+  undefined8 uStack_40;
+  long lStack_38;
   
   lVar6 = tpidr_el0;
-  alStack_50[3] = *(long *)(lVar6 + 0x28);
-  lVar1 = *(long *)*param_2;
-  lVar2 = ((long *)*param_2)[1];
-  if (lVar2 - lVar1 >> 2 == (ulong)(uint)(*(int *)(param_1 + 0x80) * *(int *)(param_1 + 0x7c))) {
-    alStack_50[0] = 0;
-    alStack_50[2] = 0;
-    alStack_50[1] = 0x100000000;
-    if (lVar2 == lVar1) {
+  lStack_38 = *(long *)(lVar6 + 0x28);
+  pvVar1 = *(void **)*param_2;
+  pvVar2 = (void *)((long *)*param_2)[1];
+  if ((long)pvVar2 - (long)pvVar1 >> 2 ==
+      (ulong)(uint)(*(int *)(param_1 + 0x80) * *(int *)(param_1 + 0x7c))) {
+    pvStack_50 = (void *)0x0;
+    uStack_40 = 0;
+    uStack_48 = 0x100000000;
+    if (pvVar2 == pvVar1) {
       func_0x0016c9b0();
       FUN_00166450("Walaber",4,
                    "ProgrammaticTexture::setData override for specific region not currently supported!\n"
@@ -153,13 +158,16 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
     uStack_57 = *(undefined1 *)(param_1 + 0x2d);
     uStack_56 = *(undefined1 *)(param_1 + 0x2e);
     uStack_55 = *(undefined1 *)(param_1 + 0x2f);
-    alStack_50[0] = lVar1;
-    alStack_50[0] =
-         func_0x0016d940(*(undefined4 *)(param_1 + 0x28),*(undefined4 *)(param_1 + 0x30),
-                         *(undefined4 *)(param_1 + 100),*(undefined4 *)(param_1 + 0x68),
-                         *(undefined4 *)(param_1 + 0x6c),*(undefined4 *)(param_1 + 0x70),
-                         *(undefined4 *)(param_1 + 0x74),alStack_50,*(undefined4 *)(param_1 + 0x34),
-                         0,uVar10,*(byte *)(param_1 + 0x23) ^ 1,&uStack_58);
+    pvStack_50 = pvVar1;
+    pvStack_50 = (void *)func_0x0016d940(*(undefined4 *)(param_1 + 0x28),
+                                         *(undefined4 *)(param_1 + 0x30),
+                                         *(undefined4 *)(param_1 + 100),
+                                         *(undefined4 *)(param_1 + 0x68),
+                                         *(undefined4 *)(param_1 + 0x6c),
+                                         *(undefined4 *)(param_1 + 0x70),
+                                         *(undefined4 *)(param_1 + 0x74),&pvStack_50,
+                                         *(undefined4 *)(param_1 + 0x34),0,uVar10,
+                                         *(byte *)(param_1 + 0x23) ^ 1,&uStack_58);
     iVar3 = *(int *)(param_1 + 0x34);
     uVar4 = *(int *)(param_1 + 0x7c) - 1;
     uVar5 = *(int *)(param_1 + 0x80) - 1;
@@ -190,9 +198,9 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
       }
     }
     func_0x0016e270(0xde1,0,uVar7,(uVar4 | uVar4 >> 0x10) + 1,(uVar5 | uVar5 >> 0x10) + 1,0,uVar8,
-                    uVar9,alStack_50[0]);
-    if ((alStack_50[0] != lVar1) && (alStack_50[0] != 0)) {
-      FUN_001639e0();
+                    uVar9,pvStack_50);
+    if ((pvStack_50 != pvVar1) && (pvStack_50 != (void *)0x0)) {
+      FUN_001639e0(pvStack_50,p1);
     }
   }
   else {
@@ -200,7 +208,7 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
                  "ProgrammaticTexture::setData ERROR - source data size does not match texture size %dx%d"
                 );
   }
-  if (*(long *)(lVar6 + 0x28) != alStack_50[3]) {
+  if (*(long *)(lVar6 + 0x28) != lStack_38) {
     FUN_00164ff0();
     return;
   }
@@ -263,7 +271,7 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
   long lStack_68;
   int *piStack_60;
   byte abStack_58 [16];
-  undefined8 uStack_48;
+  void *pvStack_48;
   undefined4 uStack_40;
   long lStack_38;
   
@@ -287,7 +295,7 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
                     /* try { // try from 0039537c to 00395383 has its CatchHandler @ 003953cc */
     (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,abStack_58);
     if ((abStack_58[0] & 1) != 0) {
-      FUN_00166120(uStack_48);
+      FUN_00166120(pvStack_48);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
@@ -390,7 +398,7 @@ void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(undefined8 *param_1)
 
 /* Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D() */
 
-void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(undefined8 param_1)
+void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(void *param_1)
 
 {
   func_0x0016bef0();

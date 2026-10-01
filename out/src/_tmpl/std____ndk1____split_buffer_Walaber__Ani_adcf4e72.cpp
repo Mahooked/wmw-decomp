@@ -57,132 +57,132 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>
-     ::push_back(ulong *param_1,undefined4 *param_2)
+     ::push_back(Walaber__AnimationCueAnimationTrack__CueAnimationEvent **p0)
 
 {
-  undefined8 *puVar1;
+  long lVar1;
   long lVar2;
+  undefined4 *in_x1;
   long lVar3;
-  long lVar4;
-  ulong uVar5;
-  ulong uVar6;
-  undefined4 *puVar7;
-  undefined4 *puVar8;
-  undefined4 *puVar9;
-  byte *pbVar10;
-  undefined8 uVar11;
-  undefined8 uVar12;
-  ulong uStack_80;
-  undefined4 *puStack_78;
-  undefined4 *puStack_70;
-  ulong uStack_68;
+  ulong uVar4;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar5;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar6;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar7;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWVar8;
+  undefined8 uVar9;
+  undefined8 uVar10;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_80;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_78;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_70;
+  Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_68;
   long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
-  puVar7 = (undefined4 *)param_1[2];
-  puVar8 = puVar7;
-  if (puVar7 == (undefined4 *)param_1[3]) {
-    puVar8 = (undefined4 *)*param_1;
-    puVar9 = (undefined4 *)param_1[1];
-    if (puVar9 < puVar8 || (long)puVar9 - (long)puVar8 == 0) {
-      lVar2 = (long)param_1[3] - (long)puVar8;
-      uVar5 = (lVar2 >> 3) * -0x6666666666666666;
-      if (lVar2 == 0) {
-        uVar5 = 1;
+  lVar2 = tpidr_el0;
+  lStack_58 = *(long *)(lVar2 + 0x28);
+  pWVar7 = p0[2];
+  pWVar8 = pWVar7;
+  if (pWVar7 == p0[3]) {
+    pWVar8 = *p0;
+    pWVar5 = p0[1];
+    if (pWVar5 < pWVar8 || (long)pWVar5 - (long)pWVar8 == 0) {
+      lVar1 = (long)p0[3] - (long)pWVar8;
+      uVar4 = (lVar1 >> 3) * -0x6666666666666666;
+      if (lVar1 == 0) {
+        uVar4 = 1;
       }
-      func_0x001625c0(&uStack_80,uVar5,uVar5 >> 2,param_1[4]);
-      puVar8 = (undefined4 *)param_1[1];
-      puVar7 = (undefined4 *)param_1[2];
-      if (puVar8 != puVar7) {
+      func_0x001625c0(&pWStack_80,uVar4,uVar4 >> 2,p0[4]);
+      pWVar8 = p0[1];
+      pWVar7 = p0[2];
+      if (pWVar8 != pWVar7) {
         do {
-          *puStack_70 = *puVar8;
-          uVar12 = *(undefined8 *)(puVar8 + 4);
-          uVar11 = *(undefined8 *)(puVar8 + 2);
-          *(undefined8 *)(puStack_70 + 6) = *(undefined8 *)(puVar8 + 6);
-          *(undefined8 *)(puStack_70 + 4) = uVar12;
-          *(undefined8 *)(puStack_70 + 2) = uVar11;
-          puVar1 = (undefined8 *)(puVar8 + 8);
-          *(undefined8 *)(puVar8 + 4) = 0;
-          *(undefined8 *)(puVar8 + 6) = 0;
-          *(undefined8 *)(puVar8 + 2) = 0;
-          puVar8 = puVar8 + 10;
-          *(undefined8 *)(puStack_70 + 8) = *puVar1;
-          puStack_70 = puStack_70 + 10;
-        } while (puVar8 != puVar7);
-        puVar8 = (undefined4 *)param_1[1];
-        puVar7 = (undefined4 *)param_1[2];
+          *(undefined4 *)pWStack_70 = *(undefined4 *)pWVar8;
+          uVar10 = *(undefined8 *)(pWVar8 + 0x10);
+          uVar9 = *(undefined8 *)(pWVar8 + 8);
+          *(undefined8 *)(pWStack_70 + 0x18) = *(undefined8 *)(pWVar8 + 0x18);
+          *(undefined8 *)(pWStack_70 + 0x10) = uVar10;
+          *(undefined8 *)(pWStack_70 + 8) = uVar9;
+          pWVar5 = pWVar8 + 0x20;
+          *(undefined8 *)(pWVar8 + 0x10) = 0;
+          *(undefined8 *)(pWVar8 + 0x18) = 0;
+          *(undefined8 *)(pWVar8 + 8) = 0;
+          pWVar8 = pWVar8 + 0x28;
+          *(undefined8 *)(pWStack_70 + 0x20) = *(undefined8 *)pWVar5;
+          pWStack_70 = pWStack_70 + 0x28;
+        } while (pWVar8 != pWVar7);
+        pWVar8 = p0[1];
+        pWVar7 = p0[2];
       }
-      uVar6 = *param_1;
-      *param_1 = uStack_80;
-      param_1[1] = (ulong)puStack_78;
-      uVar5 = param_1[3];
-      param_1[2] = (ulong)puStack_70;
-      param_1[3] = uStack_68;
-      uStack_80 = uVar6;
-      puStack_78 = puVar8;
-      puStack_70 = puVar7;
-      uStack_68 = uVar5;
-      func_0x00172da0(&uStack_80);
-      puVar8 = (undefined4 *)param_1[2];
+      pWVar6 = *p0;
+      *p0 = pWStack_80;
+      p0[1] = pWStack_78;
+      pWVar5 = p0[3];
+      p0[2] = pWStack_70;
+      p0[3] = pWStack_68;
+      pWStack_80 = pWVar6;
+      pWStack_78 = pWVar8;
+      pWStack_70 = pWVar7;
+      pWStack_68 = pWVar5;
+      func_0x00172da0(&pWStack_80);
+      pWVar8 = p0[2];
     }
     else {
-      lVar4 = ((long)puVar9 - (long)puVar8 >> 3) * -0x3333333333333333;
-      lVar2 = lVar4 + 2;
-      if (-1 < lVar4 + 1) {
-        lVar2 = lVar4 + 1;
+      lVar3 = ((long)pWVar5 - (long)pWVar8 >> 3) * -0x3333333333333333;
+      lVar1 = lVar3 + 2;
+      if (-1 < lVar3 + 1) {
+        lVar1 = lVar3 + 1;
       }
-      lVar2 = lVar2 >> 1;
-      if (puVar9 == puVar7) {
-        puVar8 = puVar9 + lVar2 * -10;
+      lVar1 = lVar1 >> 1;
+      if (pWVar5 == pWVar7) {
+        pWVar8 = pWVar5 + lVar1 * -0x28;
       }
       else {
+        lVar3 = lVar1 * -0x28;
         do {
-          puVar9[lVar2 * -10] = *puVar9;
-          pbVar10 = (byte *)(puVar9 + lVar2 * -10 + 2);
-          if ((*pbVar10 & 1) == 0) {
-            *(undefined1 *)((long)puVar9 + lVar2 * -0x28 + 9) = 0;
-            *pbVar10 = 0;
+          *(undefined4 *)(pWVar5 + lVar3) = *(undefined4 *)pWVar5;
+          pWVar8 = pWVar5 + lVar3 + 8;
+          if (((byte)*pWVar8 & 1) == 0) {
+            pWVar5[lVar3 + 9] = (Walaber__AnimationCueAnimationTrack__CueAnimationEvent)0x0;
+            *pWVar8 = (Walaber__AnimationCueAnimationTrack__CueAnimationEvent)0x0;
           }
           else {
-            **(undefined1 **)(puVar9 + lVar2 * -10 + 6) = 0;
-            *(undefined8 *)(puVar9 + lVar2 * -10 + 4) = 0;
-            if ((*pbVar10 & 1) != 0) {
-              FUN_00166120(*(undefined8 *)(puVar9 + lVar2 * -10 + 6));
-              *(undefined8 *)(puVar9 + lVar2 * -10 + 2) = 0;
+            **(undefined1 **)(pWVar5 + lVar3 + 0x18) = 0;
+            *(undefined8 *)(pWVar5 + lVar3 + 0x10) = 0;
+            if (((byte)*pWVar8 & 1) != 0) {
+              FUN_00166120(*(void **)(pWVar5 + lVar3 + 0x18));
+              *(undefined8 *)(pWVar5 + lVar3 + 8) = 0;
             }
           }
-          uVar12 = *(undefined8 *)(puVar9 + 4);
-          uVar11 = *(undefined8 *)(puVar9 + 2);
-          *(undefined8 *)(puVar9 + lVar2 * -10 + 6) = *(undefined8 *)(puVar9 + 6);
-          *(undefined8 *)(puVar9 + lVar2 * -10 + 4) = uVar12;
-          *(undefined8 *)pbVar10 = uVar11;
-          *(undefined8 *)(puVar9 + 4) = 0;
-          *(undefined8 *)(puVar9 + 6) = 0;
-          *(undefined8 *)(puVar9 + 2) = 0;
-          puVar8 = puVar9 + 10;
-          *(undefined8 *)(puVar9 + lVar2 * -10 + 8) = *(undefined8 *)(puVar9 + 8);
-          puVar9 = puVar8;
-        } while (puVar7 != puVar8);
-        puVar7 = (undefined4 *)param_1[1];
-        puVar8 = puVar8 + lVar2 * -10;
+          uVar10 = *(undefined8 *)(pWVar5 + 0x10);
+          uVar9 = *(undefined8 *)(pWVar5 + 8);
+          *(undefined8 *)(pWVar5 + lVar3 + 0x18) = *(undefined8 *)(pWVar5 + 0x18);
+          *(undefined8 *)(pWVar5 + lVar3 + 0x10) = uVar10;
+          *(undefined8 *)pWVar8 = uVar9;
+          *(undefined8 *)(pWVar5 + 0x10) = 0;
+          *(undefined8 *)(pWVar5 + 0x18) = 0;
+          *(undefined8 *)(pWVar5 + 8) = 0;
+          pWVar8 = pWVar5 + 0x28;
+          *(undefined8 *)(pWVar5 + lVar3 + 0x20) = *(undefined8 *)(pWVar5 + 0x20);
+          pWVar5 = pWVar8;
+        } while (pWVar7 != pWVar8);
+        pWVar7 = p0[1];
+        pWVar8 = pWVar8 + lVar1 * -0x28;
       }
-      param_1[1] = (ulong)(puVar7 + lVar2 * -10);
-      param_1[2] = (ulong)puVar8;
+      p0[1] = pWVar7 + lVar1 * -0x28;
+      p0[2] = pWVar8;
     }
   }
-  *puVar8 = *param_2;
-  uVar12 = *(undefined8 *)(param_2 + 4);
-  uVar11 = *(undefined8 *)(param_2 + 2);
-  *(undefined8 *)(puVar8 + 6) = *(undefined8 *)(param_2 + 6);
-  *(undefined8 *)(puVar8 + 4) = uVar12;
-  *(undefined8 *)(puVar8 + 2) = uVar11;
-  *(undefined8 *)(param_2 + 4) = 0;
-  *(undefined8 *)(param_2 + 6) = 0;
-  *(undefined8 *)(param_2 + 2) = 0;
-  *(undefined8 *)(puVar8 + 8) = *(undefined8 *)(param_2 + 8);
-  param_1[2] = param_1[2] + 0x28;
-  if (*(long *)(lVar3 + 0x28) != lStack_58) {
+  *(undefined4 *)pWVar8 = *in_x1;
+  uVar10 = *(undefined8 *)(in_x1 + 4);
+  uVar9 = *(undefined8 *)(in_x1 + 2);
+  *(undefined8 *)(pWVar8 + 0x18) = *(undefined8 *)(in_x1 + 6);
+  *(undefined8 *)(pWVar8 + 0x10) = uVar10;
+  *(undefined8 *)(pWVar8 + 8) = uVar9;
+  *(undefined8 *)(in_x1 + 4) = 0;
+  *(undefined8 *)(in_x1 + 6) = 0;
+  *(undefined8 *)(in_x1 + 2) = 0;
+  *(undefined8 *)(pWVar8 + 0x20) = *(undefined8 *)(in_x1 + 8);
+  p0[2] = p0[2] + 0x28;
+  if (*(long *)(lVar2 + 0x28) != lStack_58) {
     FUN_00164ff0();
     return;
   }
@@ -201,7 +201,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -214,12 +214,12 @@ void std::__ndk1::
     param_1[2] = lVar2 + -0x28;
     lVar3 = lVar2 + -0x28;
     if ((*(byte *)(lVar2 + -0x20) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x10));
+      FUN_00166120(*(void **)(lVar2 + -0x10));
       lVar3 = param_1[2];
     }
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

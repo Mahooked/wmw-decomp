@@ -42,7 +42,12 @@ void WaterConcept::PushLevelHandler::Initialise(void)
   long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
-  ulong auStack_a0 [9];
+  ulong auStack_a0 [2];
+  void *pvStack_90;
+  ulong auStack_88 [2];
+  void *pvStack_78;
+  ulong auStack_70 [2];
+  void *pvStack_60;
   undefined8 *puStack_58;
   undefined4 *puStack_50;
   undefined8 *puStack_48;
@@ -58,27 +63,27 @@ void WaterConcept::PushLevelHandler::Initialise(void)
   puStack_58 = puVar3;
   puStack_50 = (undefined4 *)FUN_00164060(4);
   *puStack_50 = 2;
-  auStack_a0[7] = 0;
-  auStack_a0[8] = 0;
-  auStack_a0[4] = 0;
-  auStack_a0[5] = 0;
-  auStack_a0[2] = 0;
-  auStack_a0[3] = 0;
+  auStack_70[1] = 0;
+  pvStack_60 = (void *)0x0;
+  auStack_88[1] = 0;
+  pvStack_78 = (void *)0x0;
+  pvStack_90 = (void *)0x0;
+  auStack_88[0] = 0;
   auStack_a0[0] = 0;
   auStack_a0[1] = 0;
-  auStack_a0[6] = 0x6c6576656c0a;
+  auStack_70[0] = 0x6c6576656c0a;
                     /* try { // try from 00442ea8 to 00442ebf has its CatchHandler @ 00442f28 */
   puStack_48 = puVar3;
   puStack_40 = puStack_50;
-  func_0x00163100(uVar2,&puStack_48,auStack_a0 + 6,auStack_a0 + 3,auStack_a0);
+  func_0x00163100(uVar2,&puStack_48,auStack_70,auStack_88,auStack_a0);
   if ((auStack_a0[0] & 1) != 0) {
-    FUN_00166120(auStack_a0[2]);
+    FUN_00166120(pvStack_90);
   }
-  if ((auStack_a0[3] & 1) != 0) {
-    FUN_00166120(auStack_a0[5]);
+  if ((auStack_88[0] & 1) != 0) {
+    FUN_00166120(pvStack_78);
   }
-  if ((auStack_a0[6] & 1) != 0) {
-    FUN_00166120(auStack_a0[8]);
+  if ((auStack_70[0] & 1) != 0) {
+    FUN_00166120(pvStack_60);
   }
   FUN_0016bb90(&puStack_48);
   FUN_0016bb90(&puStack_58);
@@ -97,40 +102,40 @@ void WaterConcept::PushLevelHandler::Initialise(void)
 
 /* WaterConcept::PushLevelHandler::OnLevelCommand(void*) */
 
-void WaterConcept::PushLevelHandler::OnLevelCommand(long param_1)
+void WaterConcept::PushLevelHandler::OnLevelCommand(void *p0)
 
 {
   int iVar1;
   long lVar2;
   long lVar3;
-  long lStack_68;
-  long lStack_60;
+  void *pvStack_68;
+  void *pvStack_60;
   undefined8 uStack_58;
   byte abStack_50 [16];
-  undefined8 uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  if (param_1 != 0) {
+  if (p0 != (void *)0x0) {
     lVar3 = func_0x00165c70();
     if (((lVar3 != 0) &&
         (((iVar1 = *(int *)(lVar3 + 8), iVar1 == 6 || (iVar1 == 0)) &&
          (func_0x0016f470(0,0), iVar1 == 6)))) && (lVar3 = func_0x00165c70(), lVar3 != 0)) {
       func_0x0016f470(0,0);
     }
-    FUN_00164850(abStack_50,"/Levels/",param_1 + 0x18);
-    lStack_68 = 0;
-    lStack_60 = 0;
+    FUN_00164850(abStack_50,"/Levels/",(long)p0 + 0x18);
+    pvStack_68 = (void *)0x0;
+    pvStack_60 = (void *)0x0;
     uStack_58 = 0;
                     /* try { // try from 00442ff8 to 0044300b has its CatchHandler @ 00443054 */
-    func_0x00171780(abStack_50,1,&lStack_68,0);
-    if (lStack_68 != 0) {
-      lStack_60 = lStack_68;
-      FUN_00166120();
+    func_0x00171780(abStack_50,1,&pvStack_68,0);
+    if (pvStack_68 != (void *)0x0) {
+      pvStack_60 = pvStack_68;
+      FUN_00166120(pvStack_68);
     }
     if ((abStack_50[0] & 1) != 0) {
-      FUN_00166120(uStack_40);
+      FUN_00166120(pvStack_40);
     }
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {

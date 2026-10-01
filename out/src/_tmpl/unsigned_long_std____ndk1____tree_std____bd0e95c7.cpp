@@ -16,18 +16,16 @@
 
 bool std::__ndk1::
      __tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>>>
-     ::__erase_unique<WaterConcept::GridCell>(long param_1)
+     ::__erase_unique<WaterConcept::GridCell>(WaterConcept__GridCell *p0)
 
 {
-  bool bVar1;
-  long lVar2;
+  WaterConcept__GridCell *pWVar1;
   
-  lVar2 = func_0x00165230();
-  bVar1 = param_1 + 8 != lVar2;
-  if (bVar1) {
-    func_0x00173960(param_1,lVar2);
+  pWVar1 = (WaterConcept__GridCell *)func_0x00165230();
+  if (p0 + 8 != pWVar1) {
+    func_0x00173960(p0,pWVar1);
   }
-  return bVar1;
+  return p0 + 8 != pWVar1;
 }
 
 

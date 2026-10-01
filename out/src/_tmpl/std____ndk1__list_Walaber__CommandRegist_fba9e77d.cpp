@@ -10,34 +10,35 @@
    >::push_back(Walaber::CommandRegister const&) */
 
 void std::__ndk1::list<Walaber::CommandRegister,std::__ndk1::allocator<Walaber::CommandRegister>>::
-     push_back(long *param_1,long param_2)
+     push_back(Walaber__CommandRegister *p0)
 
 {
   int *piVar1;
   long *plVar2;
+  long in_x1;
   long lVar3;
   
   plVar2 = (long *)FUN_00164060(0x68);
   *plVar2 = 0;
                     /* try { // try from 003e9f20 to 003e9f2b has its CatchHandler @ 003e9fc0 */
-  func_0x0016f720(plVar2 + 2,param_2);
+  func_0x0016f720(plVar2 + 2);
                     /* try { // try from 003e9f34 to 003e9f3b has its CatchHandler @ 003e9fa8 */
-  func_0x0016f720(plVar2 + 5,param_2 + 0x18);
+  func_0x0016f720(plVar2 + 5,in_x1 + 0x18);
                     /* try { // try from 003e9f44 to 003e9f47 has its CatchHandler @ 003e9f90 */
-  func_0x0016f720(plVar2 + 8,param_2 + 0x30);
-  lVar3 = *(long *)(param_2 + 0x48);
-  piVar1 = *(int **)(param_2 + 0x50);
+  func_0x0016f720(plVar2 + 8,in_x1 + 0x30);
+  lVar3 = *(long *)(in_x1 + 0x48);
+  piVar1 = *(int **)(in_x1 + 0x50);
   plVar2[0xb] = lVar3;
   plVar2[0xc] = (long)piVar1;
   if (lVar3 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  lVar3 = *param_1;
+  lVar3 = *(long *)p0;
   *plVar2 = lVar3;
-  plVar2[1] = (long)param_1;
+  plVar2[1] = (long)p0;
   *(long **)(lVar3 + 8) = plVar2;
-  *param_1 = (long)plVar2;
-  param_1[2] = param_1[2] + 1;
+  *(long **)p0 = plVar2;
+  *(long *)(p0 + 0x10) = *(long *)(p0 + 0x10) + 1;
   return;
 }
 

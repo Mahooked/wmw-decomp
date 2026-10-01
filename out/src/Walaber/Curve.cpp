@@ -8,34 +8,36 @@
 
 /* Walaber::Curve::getWriteSize(unsigned int) */
 
-ulong Walaber::Curve::getWriteSize(long param_1,uint param_2)
+ulong Walaber::Curve::getWriteSize(uint p0)
 
 {
+  uint in_w1;
   ulong uVar1;
   
-  if (param_2 == 0) {
-    return (ulong)(*(int *)(param_1 + 8) * 0x18 + 8) + 0x10;
+  uVar1 = (ulong)p0;
+  if (in_w1 == 0) {
+    return (ulong)(*(int *)(uVar1 + 8) * 0x18 + 8) + 0x10;
   }
-  if ((param_2 >> 2 & 1) == 0) {
-    if ((param_2 & 1) == 0) {
-      if ((param_2 >> 1 & 1) == 0) {
+  if ((in_w1 >> 2 & 1) == 0) {
+    if ((in_w1 & 1) == 0) {
+      if ((in_w1 >> 1 & 1) == 0) {
         return 0;
       }
-      uVar1 = (ulong)(uint)(*(int *)(param_1 + 8) * 9);
+      uVar1 = (ulong)(uint)(*(int *)(uVar1 + 8) * 9);
     }
     else {
-      uVar1 = (ulong)(uint)(*(int *)(param_1 + 8) * 5);
+      uVar1 = (ulong)(uint)(*(int *)(uVar1 + 8) * 5);
     }
   }
-  else if ((param_2 & 1) == 0) {
-    uVar1 = *(ulong *)(param_1 + 8) & 0xffffffff;
-    if ((param_2 >> 1 & 1) == 0) {
+  else if ((in_w1 & 1) == 0) {
+    uVar1 = *(ulong *)(uVar1 + 8) & 0xffffffff;
+    if ((in_w1 >> 1 & 1) == 0) {
       return uVar1 << 3 | 4;
     }
     uVar1 = uVar1 << 2;
   }
   else {
-    uVar1 = (*(ulong *)(param_1 + 8) & 0xffffffff) << 1;
+    uVar1 = (*(ulong *)(uVar1 + 8) & 0xffffffff) << 1;
   }
   return uVar1 + 4;
 }
@@ -124,18 +126,19 @@ void Walaber::Curve::getMinMaxKeyPosition(long param_1)
 
 /* Walaber::Curve::writeToBuffer(char*) */
 
-int Walaber::Curve::writeToBuffer(long param_1,undefined8 *param_2)
+int Walaber::Curve::writeToBuffer(char *p0)
 
 {
   int iVar1;
+  undefined8 *in_x1;
   
-  *param_2 = *(undefined8 *)(param_1 + 8);
-  FUN_001715e0(param_2 + 1,*(undefined8 *)(param_1 + 0x18),*(long *)(param_1 + 8) * 0x18);
-  iVar1 = *(int *)(param_1 + 8) * 0x18;
-  *(undefined4 *)((long)param_2 + (ulong)(iVar1 + 8)) = *(undefined4 *)(param_1 + 0x20);
-  *(undefined4 *)((long)param_2 + (ulong)(iVar1 + 0xc)) = *(undefined4 *)(param_1 + 0x24);
-  *(undefined4 *)((long)param_2 + (ulong)(iVar1 + 0x10)) = *(undefined4 *)(param_1 + 0x28);
-  *(undefined4 *)((long)param_2 + (ulong)(iVar1 + 0x14)) = *(undefined4 *)(param_1 + 0x2c);
+  *in_x1 = *(undefined8 *)(p0 + 8);
+  FUN_001715e0(in_x1 + 1,*(undefined8 *)(p0 + 0x18),*(long *)(p0 + 8) * 0x18);
+  iVar1 = *(int *)(p0 + 8) * 0x18;
+  *(undefined4 *)((long)in_x1 + (ulong)(iVar1 + 8)) = *(undefined4 *)(p0 + 0x20);
+  *(undefined4 *)((long)in_x1 + (ulong)(iVar1 + 0xc)) = *(undefined4 *)(p0 + 0x24);
+  *(undefined4 *)((long)in_x1 + (ulong)(iVar1 + 0x10)) = *(undefined4 *)(p0 + 0x28);
+  *(undefined4 *)((long)in_x1 + (ulong)(iVar1 + 0x14)) = *(undefined4 *)(p0 + 0x2c);
   return iVar1 + 0x18;
 }
 
@@ -161,12 +164,12 @@ void Walaber::Curve::computeTangents(void)
 
 /* Walaber::Curve::~Curve() */
 
-void Walaber::Curve::~Curve(undefined8 *param_1)
+void Walaber::Curve::~Curve(undefined8 *param_1,ulong param_2)
 
 {
   *param_1 = &PTR__Curve_00710ab8;
-  if (param_1[3] != 0) {
-    FUN_001639e0();
+  if ((void *)param_1[3] != (void *)0x0) {
+    FUN_001639e0((void *)param_1[3],param_2);
   }
   param_1[1] = 0;
   param_1[2] = 0;
@@ -254,203 +257,210 @@ void Walaber::Curve::getMinMaxNonTimeValue(long param_1)
    Walaber::CompressionRecord const&) */
 
 ulong Walaber::Curve::writeToBuffer
-                (float param_1,float param_2,long *param_3,int *param_4,uint param_5,float *param_6,
-                float *param_7)
+                (char *p0,uint p1,Walaber__CompressionRecord *p2,Walaber__CompressionRecord *p3)
 
 {
   undefined1 uVar1;
   undefined2 uVar2;
-  int iVar3;
-  long lVar4;
-  ulong uVar5;
-  int iVar6;
-  uint uVar7;
-  ulong uVar8;
-  int iVar9;
-  long lVar10;
-  float fVar11;
+  int *piVar3;
+  uint uVar4;
+  float *in_x4;
+  int iVar5;
+  long lVar6;
+  ulong uVar7;
+  int iVar8;
+  ulong uVar9;
+  int iVar10;
+  long lVar11;
+  float in_s0;
+  float in_s1;
   float fVar12;
   float fVar13;
+  float fVar14;
   
-  if ((param_5 & 1) != 0) {
-    param_2 = (param_6[1] - *param_6) / 255.0;
-    param_1 = (param_7[1] - *param_7) / 255.0;
+  piVar3 = (int *)(ulong)p1;
+  uVar4 = (uint)p2;
+  if (((ulong)p2 & 1) != 0) {
+    in_s1 = (*(float *)(p3 + 4) - *(float *)p3) / 255.0;
+    in_s0 = (in_x4[1] - *in_x4) / 255.0;
   }
-  if ((param_5 >> 1 & 1) != 0) {
-    param_2 = (param_6[1] - *param_6) / 65535.0;
-    param_1 = (param_7[1] - *param_7) / 65535.0;
+  if ((uVar4 >> 1 & 1) != 0) {
+    in_s1 = (*(float *)(p3 + 4) - *(float *)p3) / 65535.0;
+    in_s0 = (in_x4[1] - *in_x4) / 65535.0;
   }
-  if (param_5 == 0) {
+  if (uVar4 == 0) {
                     /* WARNING: Could not recover jumptable at 0x003e0978. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    uVar5 = (**(code **)(*param_3 + 0x38))();
-    return uVar5;
+    uVar7 = (**(code **)(*(long *)p0 + 0x38))();
+    return uVar7;
   }
-  if ((param_5 >> 2 & 1) == 0) {
-    if ((param_5 & 1) == 0) {
-      if ((param_5 >> 1 & 1) == 0) {
+  if ((uVar4 >> 2 & 1) == 0) {
+    if (((ulong)p2 & 1) == 0) {
+      if ((uVar4 >> 1 & 1) == 0) {
         return 0;
       }
-      uVar5 = param_3[1];
-      iVar3 = (int)uVar5;
-      *param_4 = iVar3;
-      if (iVar3 == 0) goto LAB_003e0bf0;
-      lVar4 = 0;
-      iVar3 = iVar3 * 9;
-      uVar7 = 0xc;
+      uVar7 = *(ulong *)(p0 + 8);
+      iVar5 = (int)uVar7;
+      *piVar3 = iVar5;
+      if (iVar5 == 0) goto LAB_003e0bf0;
+      lVar6 = 0;
+      iVar5 = iVar5 * 9;
+      uVar4 = 0xc;
       do {
-        fVar11 = *(float *)(param_3[3] + lVar4);
-        fVar13 = ((float *)(param_3[3] + lVar4))[1];
+        fVar12 = *(float *)(*(long *)(p0 + 0x18) + lVar6);
+        fVar14 = ((float *)(*(long *)(p0 + 0x18) + lVar6))[1];
+        fVar13 = 0.5;
+        if (fVar12 < 0.0) {
+          fVar13 = -0.5;
+        }
+        *(short *)((long)piVar3 + (ulong)(uVar4 - 8)) =
+             (short)(int)(fVar13 + (fVar12 - *(float *)p3) / in_s1);
         fVar12 = 0.5;
-        if (fVar11 < 0.0) {
+        if (fVar14 < 0.0) {
           fVar12 = -0.5;
         }
-        *(short *)((long)param_4 + (ulong)(uVar7 - 8)) =
-             (short)(int)(fVar12 + (fVar11 - *param_6) / param_2);
-        fVar11 = 0.5;
-        if (fVar13 < 0.0) {
-          fVar11 = -0.5;
-        }
-        *(short *)((long)param_4 + (ulong)(uVar7 - 6)) =
-             (short)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 4) - *param_7) / param_1);
-        *(short *)((long)param_4 + (ulong)(uVar7 - 4)) =
-             (short)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 8) - *param_7) / param_1);
-        *(short *)((long)param_4 + (ulong)(uVar7 - 2)) =
-             (short)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 0xc) - *param_7) / param_1);
-        lVar10 = param_3[3] + lVar4;
-        lVar4 = lVar4 + 0x18;
-        *(char *)((long)param_4 + (ulong)uVar7) = (char)*(undefined4 *)(lVar10 + 0x10);
-        uVar7 = uVar7 + 9;
-      } while ((uVar5 & 0xffffffff) * 0x18 - lVar4 != 0);
+        *(short *)((long)piVar3 + (ulong)(uVar4 - 6)) =
+             (short)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 4) - *in_x4) / in_s0);
+        *(short *)((long)piVar3 + (ulong)(uVar4 - 4)) =
+             (short)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 8) - *in_x4) / in_s0);
+        *(short *)((long)piVar3 + (ulong)(uVar4 - 2)) =
+             (short)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 0xc) - *in_x4) / in_s0
+                         );
+        lVar11 = *(long *)(p0 + 0x18) + lVar6;
+        lVar6 = lVar6 + 0x18;
+        *(char *)((long)piVar3 + (ulong)uVar4) = (char)*(undefined4 *)(lVar11 + 0x10);
+        uVar4 = uVar4 + 9;
+      } while ((uVar7 & 0xffffffff) * 0x18 - lVar6 != 0);
     }
     else {
-      uVar5 = param_3[1];
-      iVar3 = (int)uVar5;
-      *param_4 = iVar3;
-      if (iVar3 == 0) goto LAB_003e0bf0;
-      lVar4 = 0;
-      iVar3 = iVar3 * 5;
-      uVar8 = 4;
+      uVar7 = *(ulong *)(p0 + 8);
+      iVar5 = (int)uVar7;
+      *piVar3 = iVar5;
+      if (iVar5 == 0) goto LAB_003e0bf0;
+      lVar6 = 0;
+      iVar5 = iVar5 * 5;
+      uVar9 = 4;
       do {
-        fVar11 = *(float *)(param_3[3] + lVar4);
-        fVar13 = ((float *)(param_3[3] + lVar4))[1];
+        fVar12 = *(float *)(*(long *)(p0 + 0x18) + lVar6);
+        fVar14 = ((float *)(*(long *)(p0 + 0x18) + lVar6))[1];
+        fVar13 = 0.5;
+        if (fVar12 < 0.0) {
+          fVar13 = -0.5;
+        }
+        *(char *)((long)piVar3 + uVar9) = (char)(int)(fVar13 + (fVar12 - *(float *)p3) / in_s1);
         fVar12 = 0.5;
-        if (fVar11 < 0.0) {
+        if (fVar14 < 0.0) {
           fVar12 = -0.5;
         }
-        *(char *)((long)param_4 + uVar8) = (char)(int)(fVar12 + (fVar11 - *param_6) / param_2);
-        fVar11 = 0.5;
-        if (fVar13 < 0.0) {
-          fVar11 = -0.5;
-        }
-        iVar6 = (int)uVar8;
-        *(char *)((long)param_4 + (ulong)(iVar6 + 1)) =
-             (char)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 4) - *param_7) / param_1);
-        *(char *)((long)param_4 + (ulong)(iVar6 + 2)) =
-             (char)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 8) - *param_7) / param_1);
-        *(char *)((long)param_4 + (ulong)(iVar6 + 3)) =
-             (char)(int)(fVar11 + (*(float *)(param_3[3] + lVar4 + 0xc) - *param_7) / param_1);
-        uVar8 = (ulong)(iVar6 + 5);
-        lVar10 = param_3[3] + lVar4;
-        lVar4 = lVar4 + 0x18;
-        *(char *)((long)param_4 + (ulong)(iVar6 + 4)) = (char)*(undefined4 *)(lVar10 + 0x10);
-      } while ((uVar5 & 0xffffffff) * 0x18 - lVar4 != 0);
+        iVar8 = (int)uVar9;
+        *(char *)((long)piVar3 + (ulong)(iVar8 + 1)) =
+             (char)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 4) - *in_x4) / in_s0);
+        *(char *)((long)piVar3 + (ulong)(iVar8 + 2)) =
+             (char)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 8) - *in_x4) / in_s0);
+        *(char *)((long)piVar3 + (ulong)(iVar8 + 3)) =
+             (char)(int)(fVar12 + (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 0xc) - *in_x4) / in_s0)
+        ;
+        uVar9 = (ulong)(iVar8 + 5);
+        lVar11 = *(long *)(p0 + 0x18) + lVar6;
+        lVar6 = lVar6 + 0x18;
+        *(char *)((long)piVar3 + (ulong)(iVar8 + 4)) = (char)*(undefined4 *)(lVar11 + 0x10);
+      } while ((uVar7 & 0xffffffff) * 0x18 - lVar6 != 0);
     }
-    uVar5 = (ulong)(iVar3 + 4);
+    uVar7 = (ulong)(iVar5 + 4);
   }
   else {
-    uVar5 = param_3[1];
-    iVar3 = (int)uVar5;
-    *param_4 = iVar3;
-    if (iVar3 != 0) {
-      lVar4 = 0;
-      uVar8 = 4;
+    uVar7 = *(ulong *)(p0 + 8);
+    iVar5 = (int)uVar7;
+    *piVar3 = iVar5;
+    if (iVar5 != 0) {
+      lVar6 = 0;
+      uVar9 = 4;
       do {
-        lVar10 = param_3[3];
-        iVar3 = (int)uVar8;
-        if ((param_5 & 1) == 0) {
-          if ((param_5 >> 1 & 1) == 0) {
-            *(undefined4 *)((long)param_4 + uVar8) = *(undefined4 *)(lVar10 + lVar4);
-            *(undefined4 *)((long)param_4 + (ulong)(iVar3 + 4)) =
-                 *(undefined4 *)(param_3[3] + lVar4 + 4);
-            iVar6 = 8;
+        lVar11 = *(long *)(p0 + 0x18);
+        iVar5 = (int)uVar9;
+        if (((ulong)p2 & 1) == 0) {
+          if ((uVar4 >> 1 & 1) == 0) {
+            *(undefined4 *)((long)piVar3 + uVar9) = *(undefined4 *)(lVar11 + lVar6);
+            *(undefined4 *)((long)piVar3 + (ulong)(iVar5 + 4)) =
+                 *(undefined4 *)(*(long *)(p0 + 0x18) + lVar6 + 4);
+            iVar8 = 8;
           }
           else {
-            fVar11 = (*(float *)(lVar10 + lVar4) - *param_6) / param_2;
-            fVar12 = 0.5;
-            if (fVar11 < 0.0) {
-              fVar12 = -0.5;
+            fVar12 = (*(float *)(lVar11 + lVar6) - *(float *)p3) / in_s1;
+            fVar13 = 0.5;
+            if (fVar12 < 0.0) {
+              fVar13 = -0.5;
             }
-            iVar9 = (int)(fVar11 + fVar12);
-            iVar6 = iVar9;
-            if (0xfffe < iVar9) {
-              iVar6 = 0xffff;
-            }
-            uVar2 = 0;
-            if (0 < iVar9) {
-              uVar2 = (short)iVar6;
-            }
-            *(undefined2 *)((long)param_4 + uVar8) = uVar2;
-            fVar11 = (*(float *)(param_3[3] + lVar4 + 4) - *param_7) / param_1;
-            fVar12 = 0.5;
-            if (fVar11 < 0.0) {
-              fVar12 = -0.5;
-            }
-            iVar9 = (int)(fVar11 + fVar12);
-            iVar6 = iVar9;
-            if (0xfffe < iVar9) {
-              iVar6 = 0xffff;
+            iVar10 = (int)(fVar12 + fVar13);
+            iVar8 = iVar10;
+            if (0xfffe < iVar10) {
+              iVar8 = 0xffff;
             }
             uVar2 = 0;
-            if (0 < iVar9) {
-              uVar2 = (short)iVar6;
+            if (0 < iVar10) {
+              uVar2 = (short)iVar8;
             }
-            *(undefined2 *)((long)param_4 + (ulong)(iVar3 + 2)) = uVar2;
-            iVar6 = 4;
+            *(undefined2 *)((long)piVar3 + uVar9) = uVar2;
+            fVar12 = (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 4) - *in_x4) / in_s0;
+            fVar13 = 0.5;
+            if (fVar12 < 0.0) {
+              fVar13 = -0.5;
+            }
+            iVar10 = (int)(fVar12 + fVar13);
+            iVar8 = iVar10;
+            if (0xfffe < iVar10) {
+              iVar8 = 0xffff;
+            }
+            uVar2 = 0;
+            if (0 < iVar10) {
+              uVar2 = (short)iVar8;
+            }
+            *(undefined2 *)((long)piVar3 + (ulong)(iVar5 + 2)) = uVar2;
+            iVar8 = 4;
           }
         }
         else {
-          fVar11 = (*(float *)(lVar10 + lVar4) - *param_6) / param_2;
-          fVar12 = 0.5;
-          if (fVar11 < 0.0) {
-            fVar12 = -0.5;
+          fVar12 = (*(float *)(lVar11 + lVar6) - *(float *)p3) / in_s1;
+          fVar13 = 0.5;
+          if (fVar12 < 0.0) {
+            fVar13 = -0.5;
           }
-          iVar9 = (int)(fVar11 + fVar12);
-          iVar6 = iVar9;
-          if (0xfe < iVar9) {
-            iVar6 = 0xff;
-          }
-          uVar1 = 0;
-          if (0 < iVar9) {
-            uVar1 = (char)iVar6;
-          }
-          *(undefined1 *)((long)param_4 + uVar8) = uVar1;
-          fVar11 = (*(float *)(param_3[3] + lVar4 + 4) - *param_7) / param_1;
-          fVar12 = 0.5;
-          if (fVar11 < 0.0) {
-            fVar12 = -0.5;
-          }
-          iVar9 = (int)(fVar11 + fVar12);
-          iVar6 = iVar9;
-          if (0xfe < iVar9) {
-            iVar6 = 0xff;
+          iVar10 = (int)(fVar12 + fVar13);
+          iVar8 = iVar10;
+          if (0xfe < iVar10) {
+            iVar8 = 0xff;
           }
           uVar1 = 0;
-          if (0 < iVar9) {
-            uVar1 = (char)iVar6;
+          if (0 < iVar10) {
+            uVar1 = (char)iVar8;
           }
-          *(undefined1 *)((long)param_4 + (uVar8 | 1)) = uVar1;
-          iVar6 = 2;
+          *(undefined1 *)((long)piVar3 + uVar9) = uVar1;
+          fVar12 = (*(float *)(*(long *)(p0 + 0x18) + lVar6 + 4) - *in_x4) / in_s0;
+          fVar13 = 0.5;
+          if (fVar12 < 0.0) {
+            fVar13 = -0.5;
+          }
+          iVar10 = (int)(fVar12 + fVar13);
+          iVar8 = iVar10;
+          if (0xfe < iVar10) {
+            iVar8 = 0xff;
+          }
+          uVar1 = 0;
+          if (0 < iVar10) {
+            uVar1 = (char)iVar8;
+          }
+          *(undefined1 *)((long)piVar3 + (uVar9 | 1)) = uVar1;
+          iVar8 = 2;
         }
-        lVar4 = lVar4 + 0x18;
-        uVar8 = (ulong)(uint)(iVar3 + iVar6);
-      } while ((uVar5 & 0xffffffff) * 0x18 - lVar4 != 0);
-      return uVar8;
+        lVar6 = lVar6 + 0x18;
+        uVar9 = (ulong)(uint)(iVar5 + iVar8);
+      } while ((uVar7 & 0xffffffff) * 0x18 - lVar6 != 0);
+      return uVar9;
     }
 LAB_003e0bf0:
-    uVar5 = 4;
+    uVar7 = 4;
   }
-  return uVar5;
+  return uVar7;
 }
 
 
@@ -465,36 +475,36 @@ LAB_003e0bf0:
 undefined8 Walaber::Curve::loadFromXml(undefined8 param_1)
 
 {
-  ulong uVar1;
+  void *pvVar1;
   long lVar2;
   undefined8 uVar3;
   long lVar4;
   undefined8 uVar5;
   byte abStack_50 [16];
-  ulong uStack_40;
+  void *pvStack_40;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
   func_0x0016f720(abStack_50,param_1);
-  uVar1 = (ulong)abStack_50 | 1;
+  pvVar1 = (void *)((ulong)abStack_50 | 1);
   if ((abStack_50[0] & 1) != 0) {
-    uVar1 = uStack_40;
+    pvVar1 = pvStack_40;
   }
                     /* try { // try from 003e0ca4 to 003e0ce7 has its CatchHandler @ 003e0d40 */
-  uVar3 = func_0x0016fc50(uVar1,0,0);
+  uVar3 = func_0x0016fc50(pvVar1,0,0);
   lVar4 = FUN_00163ef0();
   if (lVar4 == 0) {
-    uVar1 = (ulong)abStack_50 | 1;
+    pvVar1 = (void *)((ulong)abStack_50 | 1);
     if ((abStack_50[0] & 1) != 0) {
-      uVar1 = uStack_40;
+      pvVar1 = pvStack_40;
     }
-    FUN_0016ddd0("ERROR! no root element in XML file:%s\n",uVar1);
+    FUN_0016ddd0("ERROR! no root element in XML file:%s\n",pvVar1);
     FUN_00170230(uVar3);
     func_0x0016b480();
   }
   if ((abStack_50[0] & 1) != 0) {
-    FUN_00166120(uStack_40);
+    FUN_00166120(pvStack_40);
   }
   uVar5 = 0;
   if (lVar4 != 0) {
@@ -517,83 +527,82 @@ undefined8 Walaber::Curve::loadFromXml(undefined8 param_1)
 
 /* Walaber::Curve::loadFromXml(_xmlNode*) */
 
-long * Walaber::Curve::loadFromXml(long param_1)
+_xmlNode * Walaber::Curve::loadFromXml(_xmlNode *p0)
 
 {
   long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
-  long lVar5;
-  undefined *puVar6;
-  long *plVar7;
-  ulong uVar8;
-  ulong uVar9;
+  undefined *puVar5;
+  ulong uVar6;
+  _xmlNode *p_Var7;
+  void *pvVar8;
   ulong uStack_78;
   ulong uStack_70;
-  ulong uStack_68;
+  void *pvStack_68;
   byte abStack_60 [8];
   ulong uStack_58;
-  undefined8 uStack_50;
+  void *pvStack_50;
   long lStack_48;
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (param_1 == 0) {
+  if (p0 == (_xmlNode *)0x0) {
 LAB_003e0db0:
-    plVar7 = (long *)0x0;
+    p_Var7 = (_xmlNode *)0x0;
     goto LAB_003e1028;
   }
-  iVar2 = FUN_00162900(*(undefined8 *)(param_1 + 0x10),"XnaContent");
+  iVar2 = FUN_00162900(*(undefined8 *)(p0 + 0x10),"XnaContent");
   if (iVar2 == 0) {
-    plVar7 = (long *)FUN_00164060(0x30);
-    plVar7[2] = 4;
-    plVar7[1] = 0;
-    *plVar7 = (long)&PTR__Curve_00710ab8;
+    p_Var7 = (_xmlNode *)FUN_00164060(0x30);
+    *(undefined8 *)(p_Var7 + 0x10) = 4;
+    *(undefined8 *)(p_Var7 + 8) = 0;
+    *(undefined ***)p_Var7 = &PTR__Curve_00710ab8;
                     /* try { // try from 003e0de0 to 003e0de7 has its CatchHandler @ 003e10f8 */
-    lVar5 = FUN_00167620(0x60);
-    plVar7[5] = 0;
-    plVar7[3] = lVar5;
-    plVar7[4] = 0;
-    *plVar7 = (long)&PTR__Curve_00710b68;
-    HermiteCurve::loadFromXmlNode(plVar7,param_1);
+    uVar3 = FUN_00167620(0x60);
+    *(undefined8 *)(p_Var7 + 0x28) = 0;
+    *(undefined8 *)(p_Var7 + 0x18) = uVar3;
+    *(undefined8 *)(p_Var7 + 0x20) = 0;
+    *(undefined ***)p_Var7 = &PTR__Curve_00710b68;
+    HermiteCurve::loadFromXmlNode(p_Var7);
     goto LAB_003e1028;
   }
-  iVar2 = FUN_00162900(*(undefined8 *)(param_1 + 0x10),"Curve");
+  iVar2 = FUN_00162900(*(undefined8 *)(p0 + 0x10),"Curve");
   if (iVar2 != 0) goto LAB_003e0db0;
-  uVar3 = FUN_00171ed0(param_1,"type");
+  uVar3 = FUN_00171ed0(p0,"type");
   uStack_70 = 0;
-  uStack_68 = 0;
+  pvStack_68 = (void *)0x0;
   uStack_78 = 0;
   uVar4 = FUN_00173480();
   if (0xffffffffffffffef < uVar4) {
-    plVar7 = (long *)FUN_00164180(&uStack_78);
-    return plVar7;
+    p_Var7 = (_xmlNode *)FUN_00164180(&uStack_78);
+    return p_Var7;
   }
   if (uVar4 < 0x17) {
-    uVar8 = (ulong)&uStack_78 | 1;
+    pvVar8 = (void *)((ulong)&uStack_78 | 1);
     uStack_78 = CONCAT71(uStack_78._1_7_,(char)((int)uVar4 << 1));
     if (uVar4 != 0) goto LAB_003e0e80;
   }
   else {
-    uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
-    uVar8 = FUN_00164060(uVar9);
-    uStack_78 = uVar9 | 1;
+    uVar6 = uVar4 + 0x10 & 0xfffffffffffffff0;
+    pvVar8 = (void *)FUN_00164060(uVar6);
+    uStack_78 = uVar6 | 1;
     uStack_70 = uVar4;
-    uStack_68 = uVar8;
+    pvStack_68 = pvVar8;
 LAB_003e0e80:
-    FUN_001715e0(uVar8,uVar3,uVar4);
+    FUN_001715e0(pvVar8,uVar3,uVar4);
   }
-  *(undefined1 *)(uVar8 + uVar4) = 0;
+  *(undefined1 *)((long)pvVar8 + uVar4) = 0;
                     /* try { // try from 003e0ea0 to 003e0ea7 has its CatchHandler @ 003e10e4 */
   (*(code *)xmlFree)(uVar3);
                     /* try { // try from 003e0ea8 to 003e0eb3 has its CatchHandler @ 003e10e0 */
   func_0x00171fd0(abStack_60,&uStack_78);
   if ((uStack_78 & 1) != 0) {
-    FUN_00166120(uStack_68);
+    FUN_00166120(pvStack_68);
   }
-  uVar8 = (ulong)(abStack_60[0] >> 1);
-  uVar4 = uVar8;
+  uVar6 = (ulong)(abStack_60[0] >> 1);
+  uVar4 = uVar6;
   if ((abStack_60[0] & 1) != 0) {
     uVar4 = uStack_58;
   }
@@ -601,81 +610,81 @@ LAB_003e0e80:
                     /* try { // try from 003e0ee0 to 003e0efb has its CatchHandler @ 003e10cc */
     iVar2 = func_0x001656c0(abStack_60,0,0xffffffffffffffff,"linear",6);
     if (iVar2 != 0) {
-      uVar8 = (ulong)(abStack_60[0] >> 1);
+      uVar6 = (ulong)(abStack_60[0] >> 1);
       goto LAB_003e0f18;
     }
                     /* try { // try from 003e0fbc to 003e0fc3 has its CatchHandler @ 003e1104 */
-    plVar7 = (long *)FUN_00164060(0x30);
-    plVar7[2] = 4;
-    plVar7[1] = 0;
-    *plVar7 = (long)&PTR__Curve_00710ab8;
+    p_Var7 = (_xmlNode *)FUN_00164060(0x30);
+    *(undefined8 *)(p_Var7 + 0x10) = 4;
+    *(undefined8 *)(p_Var7 + 8) = 0;
+    *(undefined ***)p_Var7 = &PTR__Curve_00710ab8;
                     /* try { // try from 003e0fe4 to 003e0feb has its CatchHandler @ 003e10c0 */
-    lVar5 = FUN_00167620(0x60);
+    uVar3 = FUN_00167620(0x60);
 LAB_003e0fec:
-    plVar7[4] = 0;
-    plVar7[5] = 0;
-    plVar7[3] = lVar5;
-    puVar6 = &LinearCurve::vtable;
+    *(undefined8 *)(p_Var7 + 0x20) = 0;
+    *(undefined8 *)(p_Var7 + 0x28) = 0;
+    *(undefined8 *)(p_Var7 + 0x18) = uVar3;
+    puVar5 = &LinearCurve::vtable;
 LAB_003e0ffc:
-    *plVar7 = (long)(puVar6 + 0x10);
+    *(undefined **)p_Var7 = puVar5 + 0x10;
   }
   else {
 LAB_003e0f18:
-    uVar4 = uVar8;
+    uVar4 = uVar6;
     if ((abStack_60[0] & 1) != 0) {
       uVar4 = uStack_58;
     }
     if (uVar4 != 0xd) {
 LAB_003e0f58:
       if ((abStack_60[0] & 1) != 0) {
-        uVar8 = uStack_58;
+        uVar6 = uStack_58;
       }
                     /* try { // try from 003e0f68 to 003e0f83 has its CatchHandler @ 003e10c4 */
-      if ((uVar8 != 6) ||
+      if ((uVar6 != 6) ||
          (iVar2 = func_0x001656c0(abStack_60,0,0xffffffffffffffff,"bezier",6), iVar2 != 0)) {
                     /* try { // try from 003e0f88 to 003e0f8f has its CatchHandler @ 003e1104 */
-        plVar7 = (long *)FUN_00164060(0x30);
-        plVar7[2] = 4;
-        plVar7[1] = 0;
-        *plVar7 = (long)&PTR__Curve_00710ab8;
+        p_Var7 = (_xmlNode *)FUN_00164060(0x30);
+        *(undefined8 *)(p_Var7 + 0x10) = 4;
+        *(undefined8 *)(p_Var7 + 8) = 0;
+        *(undefined ***)p_Var7 = &PTR__Curve_00710ab8;
                     /* try { // try from 003e0fb0 to 003e0fb7 has its CatchHandler @ 003e10d0 */
-        lVar5 = FUN_00167620(0x60);
+        uVar3 = FUN_00167620(0x60);
         goto LAB_003e0fec;
       }
                     /* try { // try from 003e1068 to 003e106f has its CatchHandler @ 003e1104 */
-      plVar7 = (long *)FUN_00164060(0x30);
-      plVar7[2] = 4;
-      plVar7[1] = 0;
-      *plVar7 = (long)&PTR__Curve_00710ab8;
+      p_Var7 = (_xmlNode *)FUN_00164060(0x30);
+      *(undefined8 *)(p_Var7 + 0x10) = 4;
+      *(undefined8 *)(p_Var7 + 8) = 0;
+      *(undefined ***)p_Var7 = &PTR__Curve_00710ab8;
                     /* try { // try from 003e1090 to 003e1097 has its CatchHandler @ 003e10b8 */
-      lVar5 = FUN_00167620(0x60);
-      plVar7[4] = 0;
-      plVar7[5] = 0;
-      plVar7[3] = lVar5;
-      puVar6 = &BezierCurve::vtable;
+      uVar3 = FUN_00167620(0x60);
+      *(undefined8 *)(p_Var7 + 0x20) = 0;
+      *(undefined8 *)(p_Var7 + 0x28) = 0;
+      *(undefined8 *)(p_Var7 + 0x18) = uVar3;
+      puVar5 = &BezierCurve::vtable;
       goto LAB_003e0ffc;
     }
                     /* try { // try from 003e0f28 to 003e0f43 has its CatchHandler @ 003e10c8 */
     iVar2 = func_0x001656c0(abStack_60,0,0xffffffffffffffff,"tweenedlinear",0xd);
     if (iVar2 != 0) {
-      uVar8 = (ulong)(abStack_60[0] >> 1);
+      uVar6 = (ulong)(abStack_60[0] >> 1);
       goto LAB_003e0f58;
     }
-    plVar7 = (long *)FUN_00164060(0x60);
+    p_Var7 = (_xmlNode *)FUN_00164060(0x60);
                     /* try { // try from 003e1060 to 003e1063 has its CatchHandler @ 003e10bc */
     func_0x001696f0();
   }
                     /* try { // try from 003e100c to 003e105b has its CatchHandler @ 003e1104 */
-  (**(code **)(*plVar7 + 0x10))(plVar7,param_1);
+  (**(code **)(*(long *)p_Var7 + 0x10))(p_Var7,p0);
   if ((abStack_60[0] & 1) != 0) {
-    FUN_00166120(uStack_50);
+    FUN_00166120(pvStack_50);
   }
 LAB_003e1028:
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    plVar7 = (long *)FUN_00164ff0();
-    return plVar7;
+    p_Var7 = (_xmlNode *)FUN_00164ff0();
+    return p_Var7;
   }
-  return plVar7;
+  return p_Var7;
 }
 
 
@@ -778,13 +787,15 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
 
 /* Walaber::Curve::evaluate(float) const */
 
-undefined1  [16] Walaber::Curve::evaluate(ulong param_1,long *param_2)
+undefined1  [16] Walaber::Curve::evaluate(float p0)
 
 {
   int iVar1;
+  long *in_x0;
   long lVar2;
   float *pfVar3;
-  float fVar4;
+  undefined4 in_register_00005004;
+  ulong uVar4;
   undefined1 auVar5 [16];
   float fVar6;
   float fVar7;
@@ -795,86 +806,86 @@ undefined1  [16] Walaber::Curve::evaluate(ulong param_1,long *param_2)
   float fVar12;
   float fVar13;
   
-  lVar2 = param_2[1];
+  uVar4 = CONCAT44(in_register_00005004,p0);
+  lVar2 = in_x0[1];
   if (lVar2 == 0) {
     uVar9 = 0;
   }
   else if (lVar2 == 1) {
-    uVar9 = (ulong)*(uint *)(param_2[3] + 4);
+    uVar9 = (ulong)*(uint *)(in_x0[3] + 4);
   }
   else {
-    pfVar3 = (float *)param_2[3];
+    pfVar3 = (float *)in_x0[3];
     fVar10 = *pfVar3;
     fVar12 = pfVar3[1];
     fVar11 = pfVar3[lVar2 * 6 + -6];
     fVar8 = pfVar3[lVar2 * 6 + -5];
     uVar9 = (ulong)(uint)fVar8;
-    fVar4 = (float)param_1;
-    if (fVar10 <= fVar4) {
+    if (fVar10 <= p0) {
       fVar7 = 0.0;
-      if (fVar4 <= fVar11) {
+      if (p0 <= fVar11) {
 LAB_003e1510:
                     /* WARNING: Could not recover jumptable at 0x003e1518. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        auVar5 = (**(code **)(*param_2 + 0x50))(param_1,fVar7);
+        auVar5 = (**(code **)(*in_x0 + 0x50))(uVar4,fVar7);
         return auVar5;
       }
-      iVar1 = *(int *)((long)param_2 + 0x24);
+      iVar1 = *(int *)((long)in_x0 + 0x24);
       if (iVar1 != 0) {
         if (iVar1 != 4) {
-          fVar13 = (fVar4 - fVar10) * *(float *)((long)param_2 + 0x2c);
+          fVar13 = (p0 - fVar10) * *(float *)((long)in_x0 + 0x2c);
           fVar6 = fVar13 + -1.0;
           if (0.0 <= fVar13) {
             fVar6 = fVar13;
           }
-          fVar6 = (float)(int)fVar6;
-          fVar4 = fVar4 - (fVar10 + *(float *)(param_2 + 5) * fVar6);
+          fVar13 = (float)(int)fVar6;
+          fVar6 = p0 - (fVar10 + *(float *)(in_x0 + 5) * fVar13);
           if (iVar1 == 2) {
-            param_1 = (ulong)(uint)(fVar10 + fVar4);
-            fVar7 = (fVar8 - fVar12) * fVar6;
+            uVar4 = (ulong)(uint)(fVar10 + fVar6);
+            fVar7 = (fVar8 - fVar12) * fVar13;
           }
-          else if ((iVar1 == 1) || (((int)fVar6 & 1U) == 0)) {
-            param_1 = (ulong)(uint)(fVar10 + fVar4);
+          else if ((iVar1 == 1) || (((int)fVar13 & 1U) == 0)) {
+            uVar4 = (ulong)(uint)(fVar10 + fVar6);
           }
           else {
-            param_1 = (ulong)(uint)(fVar11 - fVar4);
+            uVar4 = (ulong)(uint)(fVar11 - fVar6);
           }
           goto LAB_003e1510;
         }
-        uVar9 = (ulong)(uint)(fVar8 - (fVar11 - fVar4) * pfVar3[lVar2 * 6 + -3]);
+        uVar9 = (ulong)(uint)(fVar8 - (fVar11 - p0) * pfVar3[lVar2 * 6 + -3]);
       }
     }
     else {
-      iVar1 = (int)param_2[4];
+      iVar1 = (int)in_x0[4];
       if (iVar1 == 0) {
         uVar9 = (ulong)(uint)fVar12;
       }
       else {
         if (iVar1 != 4) {
-          fVar6 = (fVar4 - fVar10) * *(float *)((long)param_2 + 0x2c);
+          fVar6 = (p0 - fVar10) * *(float *)((long)in_x0 + 0x2c);
           fVar7 = fVar6 + -1.0;
           if (0.0 <= fVar6) {
             fVar7 = fVar6;
           }
           fVar7 = (float)(int)fVar7;
-          fVar4 = fVar4 - (fVar10 + *(float *)(param_2 + 5) * fVar7);
+          fVar6 = p0 - (fVar10 + *(float *)(in_x0 + 5) * fVar7);
           if (iVar1 == 2) {
-            param_1 = (ulong)(uint)(fVar10 + fVar4);
+            uVar4 = (ulong)(uint)(fVar10 + fVar6);
             fVar7 = (fVar8 - fVar12) * fVar7;
           }
           else {
             if ((iVar1 == 1) || (((int)fVar7 & 1U) == 0)) {
-              fVar10 = fVar10 + fVar4;
+              fVar10 = fVar10 + fVar6;
             }
             else {
-              fVar10 = fVar11 - fVar4;
+              fVar10 = fVar11 - fVar6;
             }
-            param_1 = (ulong)(uint)fVar10;
+            uVar4 = (ulong)(uint)fVar10;
             fVar7 = 0.0;
           }
           goto LAB_003e1510;
         }
-        uVar9 = (ulong)(uint)(fVar12 - (fVar10 - fVar4) * pfVar3[2]);
+        uVar9 = (ulong)(uint)(fVar12 - (fVar10 - p0) * pfVar3[2]);
       }
     }
   }
@@ -891,13 +902,14 @@ LAB_003e1510:
 
 /* Walaber::Curve::calcCycle(float) const */
 
-float Walaber::Curve::calcCycle(float param_1,long param_2)
+float Walaber::Curve::calcCycle(float p0)
 
 {
+  long in_x0;
   float fVar1;
   float fVar2;
   
-  fVar1 = (param_1 - **(float **)(param_2 + 0x18)) * *(float *)(param_2 + 0x2c);
+  fVar1 = (p0 - **(float **)(in_x0 + 0x18)) * *(float *)(in_x0 + 0x2c);
   fVar2 = fVar1 + -1.0;
   if (0.0 <= fVar1) {
     fVar2 = fVar1;
@@ -913,57 +925,55 @@ float Walaber::Curve::calcCycle(float param_1,long param_2)
 
 /* Walaber::Curve::findSegment(float, int&, int&) const */
 
-undefined1  [16]
-Walaber::Curve::findSegment(undefined1 param_1 [16],long param_2,int *param_3,uint *param_4)
+undefined1  [16] Walaber::Curve::findSegment(float p0,int *p1,int *p2)
 
 {
   uint uVar1;
   float *pfVar2;
+  uint *in_x2;
   ulong uVar3;
   float *pfVar4;
   ulong uVar5;
   float *pfVar6;
-  float fVar7;
+  undefined4 in_register_00005004;
+  ulong uVar7;
+  undefined8 in_register_00005008;
   undefined1 auVar8 [16];
   float fVar9;
-  ulong uVar10;
-  undefined8 uVar11;
   
-  uVar11 = param_1._8_8_;
-  uVar10 = param_1._0_8_;
-  *param_3 = 0;
-  uVar3 = *(ulong *)(param_2 + 8);
+  uVar7 = CONCAT44(in_register_00005004,p0);
+  *p2 = 0;
+  uVar3 = *(ulong *)(p1 + 2);
   if (1 < uVar3) {
-    pfVar4 = *(float **)(param_2 + 0x18);
-    *param_4 = 1;
+    pfVar4 = *(float **)(p1 + 6);
+    *in_x2 = 1;
     fVar9 = pfVar4[6];
-    fVar7 = param_1._0_4_;
     pfVar6 = pfVar4;
-    if (fVar9 < fVar7) {
+    if (fVar9 < p0) {
       uVar5 = 1;
       pfVar2 = pfVar4 + 6;
       do {
         pfVar6 = pfVar2;
-        *param_3 = (int)uVar5;
+        *p2 = (int)uVar5;
         uVar1 = (int)uVar5 + 1;
         uVar5 = (ulong)uVar1;
         if (uVar3 <= uVar5) goto LAB_003e15f8;
-        *param_4 = uVar1;
+        *in_x2 = uVar1;
         fVar9 = pfVar4[(long)(int)uVar1 * 6];
         pfVar2 = pfVar4 + (long)(int)uVar1 * 6;
-      } while (fVar9 < fVar7);
+      } while (fVar9 < p0);
     }
     fVar9 = fVar9 - *pfVar6;
-    uVar10 = 0;
-    uVar11 = 0;
+    uVar7 = 0;
+    in_register_00005008 = 0;
     if (1e-10 < fVar9) {
-      uVar10 = (ulong)(uint)((fVar7 - *pfVar6) / fVar9);
-      uVar11 = 0;
+      uVar7 = (ulong)(uint)((p0 - *pfVar6) / fVar9);
+      in_register_00005008 = 0;
     }
   }
 LAB_003e15f8:
-  auVar8._8_8_ = uVar11;
-  auVar8._0_8_ = uVar10;
+  auVar8._8_8_ = in_register_00005008;
+  auVar8._0_8_ = uVar7;
   return auVar8;
 }
 
@@ -979,9 +989,11 @@ void Walaber::Curve::addCurveKey(long param_1,float *param_2)
 
 {
   undefined8 uVar1;
+  ulong p1;
   ulong uVar2;
   float *pfVar3;
   long lVar4;
+  void *p0;
   long lVar5;
   float fVar6;
   float fVar7;
@@ -999,11 +1011,11 @@ void Walaber::Curve::addCurveKey(long param_1,float *param_2)
   if (uVar2 < lVar5 + 1U) {
     *(ulong *)(param_1 + 0x10) = uVar2 << 1;
     uVar1 = FUN_00167620(uVar2 * 0x30);
-    lVar4 = *(long *)(param_1 + 0x18);
-    FUN_001715e0(uVar1,lVar4,lVar5 * 0x18);
+    p0 = *(void **)(param_1 + 0x18);
+    FUN_001715e0(uVar1,p0,lVar5 * 0x18);
     *(undefined8 *)(param_1 + 0x18) = uVar1;
-    if (lVar4 != 0) {
-      FUN_001639e0(lVar4);
+    if (p0 != (void *)0x0) {
+      FUN_001639e0(p0,p1);
       lVar5 = *(long *)(param_1 + 8);
     }
   }
@@ -1041,37 +1053,52 @@ void Walaber::Curve::addCurveKey(long param_1,float *param_2)
 
 /* Walaber::Curve::Curve(char*, unsigned int&) */
 
-void Walaber::Curve::Curve(undefined8 *param_1,long *param_2,uint *param_3)
+void Walaber::Curve::Curve(char *p0,uint *p1)
 
 {
   uint uVar1;
   undefined8 uVar2;
+  uint *in_x2;
   long lVar3;
   
-  *param_1 = &PTR__Curve_00710ab8;
-  lVar3 = *param_2;
-  param_1[1] = lVar3;
-  param_1[2] = *param_2;
-  uVar2 = FUN_00167620(*param_2 * 0x18);
-  param_1[3] = uVar2;
-  uVar1 = *param_3 + 4;
-  *param_3 = uVar1;
-  FUN_001715e0(uVar2,(long)param_2 + (ulong)uVar1,lVar3 * 0x18);
+  *(undefined ***)p0 = &PTR__Curve_00710ab8;
+  lVar3 = *(long *)p1;
+  *(long *)(p0 + 8) = lVar3;
+  *(undefined8 *)(p0 + 0x10) = *(undefined8 *)p1;
+  uVar2 = FUN_00167620(*(long *)p1 * 0x18);
+  *(undefined8 *)(p0 + 0x18) = uVar2;
+  uVar1 = *in_x2 + 4;
+  *in_x2 = uVar1;
+  FUN_001715e0(uVar2,(long)p1 + (ulong)uVar1,lVar3 * 0x18);
   uVar1 = uVar1 + (int)lVar3 * 0x18;
-  *param_3 = uVar1;
-  param_1[4] = 0;
-  param_1[5] = 0;
-  *(undefined4 *)(param_1 + 4) = *(undefined4 *)((long)param_2 + (ulong)uVar1);
-  uVar1 = *param_3;
-  *param_3 = uVar1 + 4;
-  *(undefined4 *)((long)param_1 + 0x24) = *(undefined4 *)((long)param_2 + (ulong)(uVar1 + 4));
-  uVar1 = *param_3;
-  *param_3 = uVar1 + 4;
-  *(undefined4 *)(param_1 + 5) = *(undefined4 *)((long)param_2 + (ulong)(uVar1 + 4));
-  uVar1 = *param_3;
-  *param_3 = uVar1 + 4;
-  *(undefined4 *)((long)param_1 + 0x2c) = *(undefined4 *)((long)param_2 + (ulong)(uVar1 + 4));
-  *param_3 = *param_3 + 4;
+  *in_x2 = uVar1;
+  p0[0x20] = '\0';
+  p0[0x21] = '\0';
+  p0[0x22] = '\0';
+  p0[0x23] = '\0';
+  p0[0x24] = '\0';
+  p0[0x25] = '\0';
+  p0[0x26] = '\0';
+  p0[0x27] = '\0';
+  p0[0x28] = '\0';
+  p0[0x29] = '\0';
+  p0[0x2a] = '\0';
+  p0[0x2b] = '\0';
+  p0[0x2c] = '\0';
+  p0[0x2d] = '\0';
+  p0[0x2e] = '\0';
+  p0[0x2f] = '\0';
+  *(undefined4 *)(p0 + 0x20) = *(undefined4 *)((long)p1 + (ulong)uVar1);
+  uVar1 = *in_x2;
+  *in_x2 = uVar1 + 4;
+  *(undefined4 *)(p0 + 0x24) = *(undefined4 *)((long)p1 + (ulong)(uVar1 + 4));
+  uVar1 = *in_x2;
+  *in_x2 = uVar1 + 4;
+  *(undefined4 *)(p0 + 0x28) = *(undefined4 *)((long)p1 + (ulong)(uVar1 + 4));
+  uVar1 = *in_x2;
+  *in_x2 = uVar1 + 4;
+  *(undefined4 *)(p0 + 0x2c) = *(undefined4 *)((long)p1 + (ulong)(uVar1 + 4));
+  *in_x2 = *in_x2 + 4;
   return;
 }
 
@@ -1085,7 +1112,8 @@ void Walaber::Curve::Curve(undefined8 *param_1,long *param_2,uint *param_3)
    Walaber::CompressionRecord const&) */
 
 void Walaber::Curve::Curve
-               (long *param_1,long param_2,uint *param_3,uint param_4,float *param_5,float *param_6)
+               (char *p0,uint *p1,uint p2,Walaber__CompressionRecord *p3,
+               Walaber__CompressionRecord *p4)
 
 {
   long *plVar1;
@@ -1094,255 +1122,286 @@ void Walaber::Curve::Curve
   uint uVar4;
   undefined4 uVar5;
   undefined4 uVar6;
-  long lVar7;
+  void *pvVar7;
   long lVar8;
-  long lVar9;
-  undefined8 *puVar10;
-  undefined4 *puVar11;
-  long *plVar12;
-  ulong uVar13;
-  uint uVar14;
+  ulong p1_00;
+  ulong p1_01;
+  ulong p1_02;
+  ulong p1_03;
+  ulong p1_04;
+  uint *puVar9;
+  uint uVar10;
+  float *in_x5;
+  undefined8 *puVar11;
+  undefined4 *puVar12;
+  long *plVar13;
+  ulong uVar14;
   long lVar15;
-  ulong uVar16;
-  float fVar17;
+  long lVar16;
+  ulong uVar17;
   float fVar18;
   float fVar19;
   float fVar20;
   float fVar21;
+  float fVar22;
+  undefined1 auVar23 [16];
   
-  plVar1 = param_1 + 3;
-  *param_1 = (long)&PTR__Curve_00710ab8;
-  plVar12 = param_1 + 1;
-  param_1[2] = 4;
-  *plVar12 = 0;
-  lVar7 = FUN_00167620(0x60);
-  param_1[4] = 0;
-  param_1[5] = 0;
-  param_1[3] = lVar7;
-  uVar4 = *(uint *)(param_2 + (ulong)*param_3);
-  uVar13 = (ulong)uVar4;
-  *param_3 = *param_3 + 4;
+  uVar10 = (uint)p3;
+  puVar9 = (uint *)(ulong)p2;
+  plVar1 = (long *)(p0 + 0x18);
+  *(undefined ***)p0 = &PTR__Curve_00710ab8;
+  plVar13 = (long *)(p0 + 8);
+  p0[0x10] = '\x04';
+  p0[0x11] = '\0';
+  p0[0x12] = '\0';
+  p0[0x13] = '\0';
+  p0[0x14] = '\0';
+  p0[0x15] = '\0';
+  p0[0x16] = '\0';
+  p0[0x17] = '\0';
+  *plVar13 = 0;
+  pvVar7 = (void *)FUN_00167620(0x60);
+  p0[0x20] = '\0';
+  p0[0x21] = '\0';
+  p0[0x22] = '\0';
+  p0[0x23] = '\0';
+  p0[0x24] = '\0';
+  p0[0x25] = '\0';
+  p0[0x26] = '\0';
+  p0[0x27] = '\0';
+  p0[0x28] = '\0';
+  p0[0x29] = '\0';
+  p0[0x2a] = '\0';
+  p0[0x2b] = '\0';
+  p0[0x2c] = '\0';
+  p0[0x2d] = '\0';
+  p0[0x2e] = '\0';
+  p0[0x2f] = '\0';
+  *(void **)(p0 + 0x18) = pvVar7;
+  uVar4 = *(uint *)((long)p1 + (ulong)*puVar9);
+  uVar14 = (ulong)uVar4;
+  *puVar9 = *puVar9 + 4;
   if (4 < uVar4) {
-    param_1[2] = uVar13;
+    *(ulong *)(p0 + 0x10) = uVar14;
                     /* try { // try from 003e40b4 to 003e40b7 has its CatchHandler @ 003e4748 */
-    lVar8 = FUN_00167620(uVar13 * 0x18);
-    *plVar1 = lVar8;
-    FUN_001639e0(lVar7);
+    auVar23 = FUN_00167620(uVar14 * 0x18);
+    *plVar1 = auVar23._0_8_;
+    FUN_001639e0(pvVar7,auVar23._8_8_);
   }
-  if ((param_4 >> 2 & 1) == 0) {
-    if ((param_4 & 1) == 0) {
-      if (((param_4 >> 1 & 1) != 0) && (uVar4 != 0)) {
-        lVar7 = 0;
-        uVar16 = 0;
-        fVar17 = *param_5;
-        fVar20 = param_5[1];
-        fVar21 = (param_6[1] - *param_6) / 65535.0;
+  if ((uVar10 >> 2 & 1) == 0) {
+    if (((ulong)p3 & 1) == 0) {
+      if (((uVar10 >> 1 & 1) != 0) && (uVar4 != 0)) {
+        lVar15 = 0;
+        uVar17 = 0;
+        fVar18 = *(float *)p4;
+        fVar21 = *(float *)(p4 + 4);
+        fVar22 = (in_x5[1] - *in_x5) / 65535.0;
         do {
-          lVar8 = param_1[1];
-          uVar2 = param_1[2];
-          if (uVar2 < lVar8 + 1U) {
-            param_1[2] = uVar2 << 1;
+          lVar16 = *(long *)(p0 + 8);
+          uVar2 = *(ulong *)(p0 + 0x10);
+          if (uVar2 < lVar16 + 1U) {
+            *(ulong *)(p0 + 0x10) = uVar2 << 1;
                     /* try { // try from 003e43e4 to 003e43e7 has its CatchHandler @ 003e4744 */
-            lVar9 = FUN_00167620(uVar2 * 0x30);
-            lVar15 = *plVar1;
-            FUN_001715e0(lVar9,lVar15,lVar8 * 0x18);
-            *plVar1 = lVar9;
-            if (lVar15 != 0) {
-              FUN_001639e0(lVar15);
-              lVar8 = *plVar12;
+            lVar8 = FUN_00167620(uVar2 * 0x30);
+            pvVar7 = (void *)*plVar1;
+            FUN_001715e0(lVar8,pvVar7,lVar16 * 0x18);
+            *plVar1 = lVar8;
+            if (pvVar7 != (void *)0x0) {
+              FUN_001639e0(pvVar7,p1_02);
+              lVar16 = *plVar13;
             }
           }
-          uVar16 = uVar16 + 1;
-          puVar10 = (undefined8 *)(*plVar1 + lVar8 * 0x18);
-          *puVar10 = 0;
-          puVar10[1] = 0;
-          *(undefined4 *)(puVar10 + 2) = 0;
-          *plVar12 = *plVar12 + 1;
-          fVar18 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)*param_3));
-          *(float *)(*plVar1 + lVar7) = *param_5 + ((fVar20 - fVar17) / 65535.0) * fVar18;
-          uVar4 = *param_3;
-          *param_3 = uVar4 + 2;
-          fVar18 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)(uVar4 + 2)));
-          *(float *)(*plVar1 + lVar7 + 4) = *param_6 + fVar21 * fVar18;
-          uVar4 = *param_3;
-          *param_3 = uVar4 + 2;
-          fVar18 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)(uVar4 + 2)));
-          *(float *)(*plVar1 + lVar7 + 8) = *param_6 + fVar21 * fVar18;
-          uVar4 = *param_3;
-          *param_3 = uVar4 + 2;
-          fVar18 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)(uVar4 + 2)));
-          *(float *)(*plVar1 + lVar7 + 0xc) = *param_6 + fVar21 * fVar18;
-          uVar4 = *param_3;
-          *param_3 = uVar4 + 2;
-          *(uint *)(*plVar1 + lVar7 + 0x10) = (uint)*(byte *)(param_2 + (ulong)(uVar4 + 2));
-          lVar7 = lVar7 + 0x18;
-          *param_3 = *param_3 + 1;
-        } while (uVar16 < uVar13);
+          uVar17 = uVar17 + 1;
+          puVar11 = (undefined8 *)(*plVar1 + lVar16 * 0x18);
+          *puVar11 = 0;
+          puVar11[1] = 0;
+          *(undefined4 *)(puVar11 + 2) = 0;
+          *plVar13 = *plVar13 + 1;
+          fVar19 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)*puVar9));
+          *(float *)(*plVar1 + lVar15) = *(float *)p4 + ((fVar21 - fVar18) / 65535.0) * fVar19;
+          uVar4 = *puVar9;
+          *puVar9 = uVar4 + 2;
+          fVar19 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)(uVar4 + 2)));
+          *(float *)(*plVar1 + lVar15 + 4) = *in_x5 + fVar22 * fVar19;
+          uVar4 = *puVar9;
+          *puVar9 = uVar4 + 2;
+          fVar19 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)(uVar4 + 2)));
+          *(float *)(*plVar1 + lVar15 + 8) = *in_x5 + fVar22 * fVar19;
+          uVar4 = *puVar9;
+          *puVar9 = uVar4 + 2;
+          fVar19 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)(uVar4 + 2)));
+          *(float *)(*plVar1 + lVar15 + 0xc) = *in_x5 + fVar22 * fVar19;
+          uVar4 = *puVar9;
+          *puVar9 = uVar4 + 2;
+          *(uint *)(*plVar1 + lVar15 + 0x10) = (uint)*(byte *)((long)p1 + (ulong)(uVar4 + 2));
+          lVar15 = lVar15 + 0x18;
+          *puVar9 = *puVar9 + 1;
+        } while (uVar17 < uVar14);
       }
     }
     else if (uVar4 != 0) {
-      lVar7 = 0;
-      uVar16 = 0;
-      fVar17 = *param_5;
-      fVar20 = param_5[1];
-      fVar21 = (param_6[1] - *param_6) / 255.0;
+      lVar15 = 0;
+      uVar17 = 0;
+      fVar18 = *(float *)p4;
+      fVar21 = *(float *)(p4 + 4);
+      fVar22 = (in_x5[1] - *in_x5) / 255.0;
       do {
-        lVar8 = param_1[1];
-        uVar2 = param_1[2];
-        if (uVar2 < lVar8 + 1U) {
-          param_1[2] = uVar2 << 1;
+        lVar16 = *(long *)(p0 + 8);
+        uVar2 = *(ulong *)(p0 + 0x10);
+        if (uVar2 < lVar16 + 1U) {
+          *(ulong *)(p0 + 0x10) = uVar2 << 1;
                     /* try { // try from 003e4124 to 003e4127 has its CatchHandler @ 003e4750 */
-          lVar9 = FUN_00167620(uVar2 * 0x30);
-          lVar15 = *plVar1;
-          FUN_001715e0(lVar9,lVar15,lVar8 * 0x18);
-          *plVar1 = lVar9;
-          if (lVar15 != 0) {
-            FUN_001639e0(lVar15);
-            lVar8 = *plVar12;
+          lVar8 = FUN_00167620(uVar2 * 0x30);
+          pvVar7 = (void *)*plVar1;
+          FUN_001715e0(lVar8,pvVar7,lVar16 * 0x18);
+          *plVar1 = lVar8;
+          if (pvVar7 != (void *)0x0) {
+            FUN_001639e0(pvVar7,p1_00);
+            lVar16 = *plVar13;
           }
         }
-        uVar16 = uVar16 + 1;
-        puVar10 = (undefined8 *)(*plVar1 + lVar8 * 0x18);
-        *puVar10 = 0;
-        puVar10[1] = 0;
-        *(undefined4 *)(puVar10 + 2) = 0;
-        *plVar12 = *plVar12 + 1;
-        fVar18 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)*param_3));
-        *(float *)(*plVar1 + lVar7) = *param_5 + ((fVar20 - fVar17) / 255.0) * fVar18;
-        uVar4 = *param_3;
-        *param_3 = uVar4 + 1;
-        fVar18 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)(uVar4 + 1)));
-        *(float *)(*plVar1 + lVar7 + 4) = *param_6 + fVar21 * fVar18;
-        uVar4 = *param_3;
-        *param_3 = uVar4 + 1;
-        fVar18 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)(uVar4 + 1)));
-        *(float *)(*plVar1 + lVar7 + 8) = *param_6 + fVar21 * fVar18;
-        uVar4 = *param_3;
-        *param_3 = uVar4 + 1;
-        fVar18 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)(uVar4 + 1)));
-        *(float *)(*plVar1 + lVar7 + 0xc) = *param_6 + fVar21 * fVar18;
-        uVar4 = *param_3;
-        *param_3 = uVar4 + 1;
-        *(uint *)(*plVar1 + lVar7 + 0x10) = (uint)*(byte *)(param_2 + (ulong)(uVar4 + 1));
-        lVar7 = lVar7 + 0x18;
-        *param_3 = *param_3 + 1;
-      } while (uVar16 < uVar13);
+        uVar17 = uVar17 + 1;
+        puVar11 = (undefined8 *)(*plVar1 + lVar16 * 0x18);
+        *puVar11 = 0;
+        puVar11[1] = 0;
+        *(undefined4 *)(puVar11 + 2) = 0;
+        *plVar13 = *plVar13 + 1;
+        fVar19 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)*puVar9));
+        *(float *)(*plVar1 + lVar15) = *(float *)p4 + ((fVar21 - fVar18) / 255.0) * fVar19;
+        uVar4 = *puVar9;
+        *puVar9 = uVar4 + 1;
+        fVar19 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)(uVar4 + 1)));
+        *(float *)(*plVar1 + lVar15 + 4) = *in_x5 + fVar22 * fVar19;
+        uVar4 = *puVar9;
+        *puVar9 = uVar4 + 1;
+        fVar19 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)(uVar4 + 1)));
+        *(float *)(*plVar1 + lVar15 + 8) = *in_x5 + fVar22 * fVar19;
+        uVar4 = *puVar9;
+        *puVar9 = uVar4 + 1;
+        fVar19 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)(uVar4 + 1)));
+        *(float *)(*plVar1 + lVar15 + 0xc) = *in_x5 + fVar22 * fVar19;
+        uVar4 = *puVar9;
+        *puVar9 = uVar4 + 1;
+        *(uint *)(*plVar1 + lVar15 + 0x10) = (uint)*(byte *)((long)p1 + (ulong)(uVar4 + 1));
+        lVar15 = lVar15 + 0x18;
+        *puVar9 = *puVar9 + 1;
+      } while (uVar17 < uVar14);
     }
   }
-  else if ((param_4 & 1) == 0) {
-    if ((param_4 >> 1 & 1) == 0) {
+  else if (((ulong)p3 & 1) == 0) {
+    if ((uVar10 >> 1 & 1) == 0) {
       if (uVar4 != 0) {
-        uVar14 = 0;
-        lVar7 = *plVar12;
+        uVar10 = 0;
+        lVar15 = *plVar13;
         do {
-          uVar3 = *param_3;
-          uVar5 = *(undefined4 *)(param_2 + (ulong)uVar3);
-          *param_3 = uVar3 + 4;
-          uVar6 = *(undefined4 *)(param_2 + (ulong)(uVar3 + 4));
-          *param_3 = uVar3 + 8;
-          uVar13 = param_1[2];
-          if (uVar13 < lVar7 + 1U) {
-            param_1[2] = uVar13 << 1;
+          uVar3 = *puVar9;
+          uVar5 = *(undefined4 *)((long)p1 + (ulong)uVar3);
+          *puVar9 = uVar3 + 4;
+          uVar6 = *(undefined4 *)((long)p1 + (ulong)(uVar3 + 4));
+          *puVar9 = uVar3 + 8;
+          uVar14 = *(ulong *)(p0 + 0x10);
+          if (uVar14 < lVar15 + 1U) {
+            *(ulong *)(p0 + 0x10) = uVar14 << 1;
                     /* try { // try from 003e457c to 003e457f has its CatchHandler @ 003e4740 */
-            lVar8 = FUN_00167620(uVar13 * 0x30);
-            lVar9 = *plVar1;
-            FUN_001715e0(lVar8,lVar9,lVar7 * 0x18);
-            *plVar1 = lVar8;
-            if (lVar9 != 0) {
-              FUN_001639e0(lVar9);
-              lVar7 = *plVar12;
+            lVar16 = FUN_00167620(uVar14 * 0x30);
+            pvVar7 = (void *)*plVar1;
+            FUN_001715e0(lVar16,pvVar7,lVar15 * 0x18);
+            *plVar1 = lVar16;
+            if (pvVar7 != (void *)0x0) {
+              FUN_001639e0(pvVar7,p1_03);
+              lVar15 = *plVar13;
             }
           }
-          uVar14 = uVar14 + 1;
-          puVar11 = (undefined4 *)(*plVar1 + lVar7 * 0x18);
-          *puVar11 = uVar5;
-          puVar11[1] = uVar6;
-          *(undefined8 *)(puVar11 + 2) = 0;
-          puVar11[4] = 0;
-          lVar7 = *plVar12 + 1;
-          *plVar12 = lVar7;
-        } while (uVar14 < uVar4);
+          uVar10 = uVar10 + 1;
+          puVar12 = (undefined4 *)(*plVar1 + lVar15 * 0x18);
+          *puVar12 = uVar5;
+          puVar12[1] = uVar6;
+          *(undefined8 *)(puVar12 + 2) = 0;
+          puVar12[4] = 0;
+          lVar15 = *plVar13 + 1;
+          *plVar13 = lVar15;
+        } while (uVar10 < uVar4);
       }
     }
     else if (uVar4 != 0) {
-      fVar21 = *param_6;
-      fVar18 = param_6[1];
-      lVar7 = 0;
-      uVar16 = 0;
-      fVar17 = *param_5;
-      fVar20 = param_5[1];
+      fVar22 = *in_x5;
+      fVar19 = in_x5[1];
+      lVar15 = 0;
+      uVar17 = 0;
+      fVar18 = *(float *)p4;
+      fVar21 = *(float *)(p4 + 4);
       do {
-        lVar8 = param_1[1];
-        uVar2 = param_1[2];
-        if (uVar2 < lVar8 + 1U) {
-          param_1[2] = uVar2 << 1;
+        lVar16 = *(long *)(p0 + 8);
+        uVar2 = *(ulong *)(p0 + 0x10);
+        if (uVar2 < lVar16 + 1U) {
+          *(ulong *)(p0 + 0x10) = uVar2 << 1;
                     /* try { // try from 003e4644 to 003e4647 has its CatchHandler @ 003e473c */
-          lVar9 = FUN_00167620(uVar2 * 0x30);
-          lVar15 = *plVar1;
-          FUN_001715e0(lVar9,lVar15,lVar8 * 0x18);
-          *plVar1 = lVar9;
-          if (lVar15 != 0) {
-            FUN_001639e0(lVar15);
-            lVar8 = *plVar12;
+          lVar8 = FUN_00167620(uVar2 * 0x30);
+          pvVar7 = (void *)*plVar1;
+          FUN_001715e0(lVar8,pvVar7,lVar16 * 0x18);
+          *plVar1 = lVar8;
+          if (pvVar7 != (void *)0x0) {
+            FUN_001639e0(pvVar7,p1_04);
+            lVar16 = *plVar13;
           }
         }
-        uVar16 = uVar16 + 1;
-        puVar10 = (undefined8 *)(*plVar1 + lVar8 * 0x18);
-        *puVar10 = 0;
-        puVar10[1] = 0;
-        *(undefined4 *)(puVar10 + 2) = 0;
-        *plVar12 = *plVar12 + 1;
-        fVar19 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)*param_3));
-        *(float *)(*plVar1 + lVar7) = *param_5 + ((fVar20 - fVar17) / 65535.0) * fVar19;
-        uVar4 = *param_3;
-        *param_3 = uVar4 + 2;
-        fVar19 = (float)NEON_ucvtf((uint)*(ushort *)(param_2 + (ulong)(uVar4 + 2)));
-        *(float *)(*plVar1 + lVar7 + 4) = *param_6 + ((fVar18 - fVar21) / 65535.0) * fVar19;
-        lVar7 = lVar7 + 0x18;
-        *param_3 = *param_3 + 2;
-      } while (uVar16 < uVar13);
+        uVar17 = uVar17 + 1;
+        puVar11 = (undefined8 *)(*plVar1 + lVar16 * 0x18);
+        *puVar11 = 0;
+        puVar11[1] = 0;
+        *(undefined4 *)(puVar11 + 2) = 0;
+        *plVar13 = *plVar13 + 1;
+        fVar20 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)*puVar9));
+        *(float *)(*plVar1 + lVar15) = *(float *)p4 + ((fVar21 - fVar18) / 65535.0) * fVar20;
+        uVar4 = *puVar9;
+        *puVar9 = uVar4 + 2;
+        fVar20 = (float)NEON_ucvtf((uint)*(ushort *)((long)p1 + (ulong)(uVar4 + 2)));
+        *(float *)(*plVar1 + lVar15 + 4) = *in_x5 + ((fVar19 - fVar22) / 65535.0) * fVar20;
+        lVar15 = lVar15 + 0x18;
+        *puVar9 = *puVar9 + 2;
+      } while (uVar17 < uVar14);
     }
   }
   else if (uVar4 != 0) {
-    fVar21 = *param_6;
-    fVar18 = param_6[1];
-    lVar7 = 0;
-    uVar16 = 0;
-    fVar17 = *param_5;
-    fVar20 = param_5[1];
+    fVar22 = *in_x5;
+    fVar19 = in_x5[1];
+    lVar15 = 0;
+    uVar17 = 0;
+    fVar18 = *(float *)p4;
+    fVar21 = *(float *)(p4 + 4);
     do {
-      lVar8 = param_1[1];
-      uVar2 = param_1[2];
-      if (uVar2 < lVar8 + 1U) {
-        param_1[2] = uVar2 << 1;
+      lVar16 = *(long *)(p0 + 8);
+      uVar2 = *(ulong *)(p0 + 0x10);
+      if (uVar2 < lVar16 + 1U) {
+        *(ulong *)(p0 + 0x10) = uVar2 << 1;
                     /* try { // try from 003e42c0 to 003e42c3 has its CatchHandler @ 003e474c */
-        lVar9 = FUN_00167620(uVar2 * 0x30);
-        lVar15 = *plVar1;
-        FUN_001715e0(lVar9,lVar15,lVar8 * 0x18);
-        *plVar1 = lVar9;
-        if (lVar15 != 0) {
-          FUN_001639e0(lVar15);
-          lVar8 = *plVar12;
+        lVar8 = FUN_00167620(uVar2 * 0x30);
+        pvVar7 = (void *)*plVar1;
+        FUN_001715e0(lVar8,pvVar7,lVar16 * 0x18);
+        *plVar1 = lVar8;
+        if (pvVar7 != (void *)0x0) {
+          FUN_001639e0(pvVar7,p1_01);
+          lVar16 = *plVar13;
         }
       }
-      uVar16 = uVar16 + 1;
-      puVar10 = (undefined8 *)(*plVar1 + lVar8 * 0x18);
-      *puVar10 = 0;
-      puVar10[1] = 0;
-      *(undefined4 *)(puVar10 + 2) = 0;
-      *plVar12 = *plVar12 + 1;
-      fVar19 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)*param_3));
-      *(float *)(*plVar1 + lVar7) = *param_5 + ((fVar20 - fVar17) / 255.0) * fVar19;
-      uVar4 = *param_3;
-      *param_3 = uVar4 + 1;
-      fVar19 = (float)NEON_ucvtf((uint)*(byte *)(param_2 + (ulong)(uVar4 + 1)));
-      *(float *)(*plVar1 + lVar7 + 4) = *param_6 + ((fVar18 - fVar21) / 255.0) * fVar19;
-      lVar7 = lVar7 + 0x18;
-      *param_3 = *param_3 + 1;
-    } while (uVar16 < uVar13);
+      uVar17 = uVar17 + 1;
+      puVar11 = (undefined8 *)(*plVar1 + lVar16 * 0x18);
+      *puVar11 = 0;
+      puVar11[1] = 0;
+      *(undefined4 *)(puVar11 + 2) = 0;
+      *plVar13 = *plVar13 + 1;
+      fVar20 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)*puVar9));
+      *(float *)(*plVar1 + lVar15) = *(float *)p4 + ((fVar21 - fVar18) / 255.0) * fVar20;
+      uVar4 = *puVar9;
+      *puVar9 = uVar4 + 1;
+      fVar20 = (float)NEON_ucvtf((uint)*(byte *)((long)p1 + (ulong)(uVar4 + 1)));
+      *(float *)(*plVar1 + lVar15 + 4) = *in_x5 + ((fVar19 - fVar22) / 255.0) * fVar20;
+      lVar15 = lVar15 + 0x18;
+      *puVar9 = *puVar9 + 1;
+    } while (uVar17 < uVar14);
   }
                     /* try { // try from 003e4710 to 003e4717 has its CatchHandler @ 003e4748 */
-  (**(code **)(*param_1 + 0x48))(param_1);
+  (**(code **)(*(long *)p0 + 0x48))(p0);
   return;
 }
 

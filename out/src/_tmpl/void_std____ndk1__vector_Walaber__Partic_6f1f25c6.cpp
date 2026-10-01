@@ -14,50 +14,51 @@
 void std::__ndk1::
      vector<Walaber::ParticleEmitter::EmitterZone,std::__ndk1::allocator<Walaber::ParticleEmitter::EmitterZone>>
      ::__push_back_slow_path<Walaber::ParticleEmitter::EmitterZone_const&>
-               (long *param_1,undefined8 *param_2)
+               (Walaber__ParticleEmitter__EmitterZone *p0)
 
 {
   ulong uVar1;
   long lVar2;
+  undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
   long lVar6;
-  long lStack_60;
+  void *pvStack_60;
   long lStack_58;
   undefined8 *puStack_50;
   long lStack_38;
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 2) * 0x6db6db6db6db6db7;
+  lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 2) * 0x6db6db6db6db6db7;
   uVar1 = lVar3 + 1;
   if (0x924924924924924 < uVar1) {
-    FUN_001705a0(param_1);
+    FUN_001705a0(p0);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 2;
+  lVar6 = *(long *)(p0 + 0x10) - *(long *)p0 >> 2;
   uVar5 = 0x924924924924924;
   if (((ulong)(lVar6 * 0x6db6db6db6db6db7) < 0x492492492492492) &&
      (uVar4 = lVar6 * -0x2492492492492492, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  func_0x00168270(&lStack_60,uVar5,lVar3,param_1 + 2);
-  *puStack_50 = *param_2;
-  puStack_50[1] = param_2[1];
-  *(undefined4 *)(puStack_50 + 2) = *(undefined4 *)(param_2 + 2);
-  *(undefined8 *)((long)puStack_50 + 0x14) = *(undefined8 *)((long)param_2 + 0x14);
+  func_0x00168270(&pvStack_60,uVar5,lVar3,p0 + 0x10);
+  *puStack_50 = *in_x1;
+  puStack_50[1] = in_x1[1];
+  *(undefined4 *)(puStack_50 + 2) = *(undefined4 *)(in_x1 + 2);
+  *(undefined8 *)((long)puStack_50 + 0x14) = *(undefined8 *)((long)in_x1 + 0x14);
   puStack_50 = (undefined8 *)((long)puStack_50 + 0x1c);
                     /* try { // try from 00348270 to 0034827b has its CatchHandler @ 003482f8 */
-  func_0x00170700(param_1,&lStack_60);
+  func_0x00170700(p0,&pvStack_60);
   if (puStack_50 != (undefined8 *)lStack_58) {
     puStack_50 = (undefined8 *)
                  ((long)puStack_50 +
                  ((ulong)(((long)puStack_50 + -0x1c) - lStack_58) / 0x1c ^ 0xffffffffffffffff) *
                  0x1c);
   }
-  if (lStack_60 != 0) {
-    FUN_00166120();
+  if (pvStack_60 != (void *)0x0) {
+    FUN_00166120(pvStack_60);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     FUN_00164ff0();

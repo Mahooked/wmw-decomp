@@ -55,7 +55,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>
-     ::~__split_buffer(long *param_1)
+     ::~__split_buffer(undefined8 *param_1)
 
 {
   long lVar1;
@@ -70,12 +70,12 @@ void std::__ndk1::
     func_0x00164ba0(lVar2 + -0x50);
     func_0x00164ba0(lVar2 + -0x68);
     if ((*(byte *)(lVar2 + -0x88) & 1) != 0) {
-      FUN_00166120(*(undefined8 *)(lVar2 + -0x78));
+      FUN_00166120(*(void **)(lVar2 + -0x78));
     }
     lVar2 = param_1[2];
   }
-  if (*param_1 != 0) {
-    FUN_00166120();
+  if ((void *)*param_1 != (void *)0x0) {
+    FUN_00166120((void *)*param_1);
     return;
   }
   return;

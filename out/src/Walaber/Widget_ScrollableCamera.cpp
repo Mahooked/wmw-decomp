@@ -9,10 +9,12 @@
 /* Walaber::Widget_ScrollableCamera::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_ScrollableCamera
    const&) */
 
-long Walaber::Widget_ScrollableCamera::operator=(long param_1,long param_2)
+Walaber__Widget_ScrollableCamera *
+Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0)
 
 {
   undefined4 uVar1;
+  Walaber__Widget_ScrollableCamera *in_x1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -22,58 +24,53 @@ long Walaber::Widget_ScrollableCamera::operator=(long param_1,long param_2)
   undefined8 uVar8;
   
   func_0x001711a0();
-  uVar2 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar2;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  uVar2 = *(undefined8 *)(param_2 + 0x120);
-  uVar4 = *(undefined8 *)(param_2 + 0x138);
-  uVar3 = *(undefined8 *)(param_2 + 0x130);
-  uVar6 = *(undefined8 *)(param_2 + 0x108);
-  uVar5 = *(undefined8 *)(param_2 + 0x100);
-  uVar8 = *(undefined8 *)(param_2 + 0x118);
-  uVar7 = *(undefined8 *)(param_2 + 0x110);
-  *(undefined8 *)(param_1 + 0x128) = *(undefined8 *)(param_2 + 0x128);
-  *(undefined8 *)(param_1 + 0x120) = uVar2;
-  *(undefined8 *)(param_1 + 0x138) = uVar4;
-  *(undefined8 *)(param_1 + 0x130) = uVar3;
-  *(undefined8 *)(param_1 + 0x108) = uVar6;
-  *(undefined8 *)(param_1 + 0x100) = uVar5;
-  *(undefined8 *)(param_1 + 0x118) = uVar8;
-  *(undefined8 *)(param_1 + 0x110) = uVar7;
-  if (param_1 != param_2) {
-    func_0x00170b30(param_1 + 0x140,*(undefined8 *)(param_2 + 0x140),
-                    *(undefined8 *)(param_2 + 0x148));
-    func_0x00170b30(param_1 + 0x158,*(undefined8 *)(param_2 + 0x158),
-                    *(undefined8 *)(param_2 + 0x160));
-    func_0x00173970(param_1 + 0x170,*(undefined8 *)(param_2 + 0x170),
-                    *(undefined8 *)(param_2 + 0x178));
-    func_0x001711b0(param_1 + 0x188,*(undefined8 *)(param_2 + 0x188),*(undefined8 *)(param_2 + 400))
-    ;
-    func_0x001711b0(param_1 + 0x1a0,*(undefined8 *)(param_2 + 0x1a0),
-                    *(undefined8 *)(param_2 + 0x1a8));
+  uVar2 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar2;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = in_x1[0xb0];
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  uVar2 = *(undefined8 *)(in_x1 + 0x120);
+  uVar4 = *(undefined8 *)(in_x1 + 0x138);
+  uVar3 = *(undefined8 *)(in_x1 + 0x130);
+  uVar6 = *(undefined8 *)(in_x1 + 0x108);
+  uVar5 = *(undefined8 *)(in_x1 + 0x100);
+  uVar8 = *(undefined8 *)(in_x1 + 0x118);
+  uVar7 = *(undefined8 *)(in_x1 + 0x110);
+  *(undefined8 *)(p0 + 0x128) = *(undefined8 *)(in_x1 + 0x128);
+  *(undefined8 *)(p0 + 0x120) = uVar2;
+  *(undefined8 *)(p0 + 0x138) = uVar4;
+  *(undefined8 *)(p0 + 0x130) = uVar3;
+  *(undefined8 *)(p0 + 0x108) = uVar6;
+  *(undefined8 *)(p0 + 0x100) = uVar5;
+  *(undefined8 *)(p0 + 0x118) = uVar8;
+  *(undefined8 *)(p0 + 0x110) = uVar7;
+  if (p0 != in_x1) {
+    func_0x00170b30(p0 + 0x140,*(undefined8 *)(in_x1 + 0x140),*(undefined8 *)(in_x1 + 0x148));
+    func_0x00170b30(p0 + 0x158,*(undefined8 *)(in_x1 + 0x158),*(undefined8 *)(in_x1 + 0x160));
+    func_0x00173970(p0 + 0x170,*(undefined8 *)(in_x1 + 0x170),*(undefined8 *)(in_x1 + 0x178));
+    func_0x001711b0(p0 + 0x188,*(undefined8 *)(in_x1 + 0x188),*(undefined8 *)(in_x1 + 400));
+    func_0x001711b0(p0 + 0x1a0,*(undefined8 *)(in_x1 + 0x1a0),*(undefined8 *)(in_x1 + 0x1a8));
   }
-  uVar2 = *(undefined8 *)(param_2 + 0x1b8);
-  *(undefined8 *)(param_1 + 0x1c0) = *(undefined8 *)(param_2 + 0x1c0);
-  *(undefined8 *)(param_1 + 0x1b8) = uVar2;
-  func_0x00170aa0(param_1 + 0x1c8,param_2 + 0x1c8);
-  func_0x00170aa0(param_1 + 0x1d8,param_2 + 0x1d8);
-  func_0x00170b50(param_1 + 0x1e8,param_2 + 0x1e8);
-  return param_1;
+  uVar2 = *(undefined8 *)(in_x1 + 0x1b8);
+  *(undefined8 *)(p0 + 0x1c0) = *(undefined8 *)(in_x1 + 0x1c0);
+  *(undefined8 *)(p0 + 0x1b8) = uVar2;
+  func_0x00170aa0(p0 + 0x1c8,in_x1 + 0x1c8);
+  func_0x00170aa0(p0 + 0x1d8,in_x1 + 0x1d8);
+  func_0x00170b50(p0 + 0x1e8,in_x1 + 0x1e8);
+  return p0;
 }
 
 
@@ -177,31 +174,38 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
 void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(undefined8 *param_1)
 
 {
+  void *pvVar1;
+  
   *param_1 = &PTR__Widget_ScrollableCamera_0070f838;
   param_1[0x29] = param_1[0x28];
   param_1[0x2f] = param_1[0x2e];
   FUN_00172ab0(param_1 + 0x3d);
   FUN_00166b20(param_1 + 0x3b);
   FUN_00166b20(param_1 + 0x39);
-  if (param_1[0x34] != 0) {
-    param_1[0x35] = param_1[0x34];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x34];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x35] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x31] != 0) {
-    param_1[0x32] = param_1[0x31];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x31];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x32] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x2e] != 0) {
-    param_1[0x2f] = param_1[0x2e];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x2e];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x2f] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x2b] != 0) {
-    param_1[0x2c] = param_1[0x2b];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x2b];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x2c] = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (param_1[0x28] != 0) {
-    param_1[0x29] = param_1[0x28];
-    FUN_00166120();
+  pvVar1 = (void *)param_1[0x28];
+  if (pvVar1 != (void *)0x0) {
+    param_1[0x29] = pvVar1;
+    FUN_00166120(pvVar1);
   }
   FUN_00168a50(param_1);
   return;
@@ -215,7 +219,7 @@ void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(undefined8 *para
 
 /* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
 
-void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(undefined8 param_1)
+void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(void *param_1)
 
 {
   func_0x00170350();
@@ -231,11 +235,12 @@ void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(undefined8 param
 
 /* Walaber::Widget_ScrollableCamera::initCamera(Walaber::Camera*) */
 
-void Walaber::Widget_ScrollableCamera::initCamera(long param_1,undefined8 param_2)
+void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0)
 
 {
   long lVar1;
   undefined8 uVar2;
+  undefined8 in_x1;
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -249,9 +254,9 @@ void Walaber::Widget_ScrollableCamera::initCamera(long param_1,undefined8 param_
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *(undefined8 *)(param_1 + 0x1b8) = param_2;
+  *(undefined8 *)(p0 + 0x1b8) = in_x1;
   uVar2 = FUN_001739b0();
-  *(undefined8 *)(param_1 + 0x1c0) = uVar2;
+  *(undefined8 *)(p0 + 0x1c0) = uVar2;
   pcStack_50 = (char *)FUN_00164060(0x30);
   auStack_60[1] = 0x26;
   auStack_60[0] = 0x31;
@@ -262,14 +267,14 @@ void Walaber::Widget_ScrollableCamera::initCamera(long param_1,undefined8 param_
   uStack_68 = 0;
                     /* try { // try from 0038625c to 00386277 has its CatchHandler @ 00386370 */
   func_0x001644b0(auStack_48,uVar2,auStack_60,&uStack_70,0,0);
-  func_0x00170aa0(param_1 + 0x1d8,auStack_48);
+  func_0x00170aa0(p0 + 0x1d8,auStack_48);
   FUN_00166b20(auStack_48);
   FUN_0016bb90(&uStack_70);
   FUN_0016bb90(&uStack_80);
   if ((auStack_60[0] & 1) != 0) {
     FUN_00166120(pcStack_50);
   }
-  uVar2 = *(undefined8 *)(param_1 + 0x1c0);
+  uVar2 = *(undefined8 *)(p0 + 0x1c0);
   pcStack_50 = (char *)FUN_00164060(0x30);
   auStack_60[1] = 0x28;
   auStack_60[0] = 0x31;
@@ -280,7 +285,7 @@ void Walaber::Widget_ScrollableCamera::initCamera(long param_1,undefined8 param_
   uStack_88 = 0;
                     /* try { // try from 003862ec to 00386307 has its CatchHandler @ 00386364 */
   func_0x001644b0(auStack_48,uVar2,auStack_60,&uStack_90,0,0);
-  func_0x00170aa0(param_1 + 0x1c8,auStack_48);
+  func_0x00170aa0(p0 + 0x1c8,auStack_48);
   FUN_00166b20(auStack_48);
   FUN_0016bb90(&uStack_90);
   FUN_0016bb90(&uStack_80);
@@ -302,7 +307,7 @@ void Walaber::Widget_ScrollableCamera::initCamera(long param_1,undefined8 param_
 
 /* Walaber::Widget_ScrollableCamera::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_ScrollableCamera::update(float param_1,long param_2)
+undefined8 Walaber::Widget_ScrollableCamera::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
   long lVar1;
@@ -329,19 +334,18 @@ undefined8 Walaber::Widget_ScrollableCamera::update(float param_1,long param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  switch(*(undefined4 *)(param_2 + 0x118)) {
+  switch(*(undefined4 *)(p1 + 0x118)) {
   case 1:
     bVar3 = false;
-    *(float *)(param_2 + 0x128) = *(float *)(param_2 + 0x124) / param_1;
+    *(float *)(p1 + 0x128) = *(float *)(p1 + 0x124) / p0;
     goto LAB_00386544;
   case 2:
-    iVar10 = *(int *)(param_2 + 0x114);
-    fVar11 = *(float *)(param_2 + 300) * *(float *)(param_2 + 0x128);
-    fVar9 = *(float *)(param_2 + 0x120) + fVar11 * param_1;
-    *(float *)(param_2 + 0x128) = fVar11;
-    *(float *)(param_2 + 0x120) = fVar9;
-    if ((iVar10 == 0) || (iVar10 == *(int *)(param_2 + 0x11c) + -1)) {
-      fVar11 = fVar9 + *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)iVar10 * 8) + 0x54);
+    iVar10 = *(int *)(p1 + 0x114);
+    fVar9 = *(float *)(p1 + 0x120) + *(float *)(p1 + 300) * *(float *)(p1 + 0x128) * p0;
+    *(float *)(p1 + 0x128) = *(float *)(p1 + 300) * *(float *)(p1 + 0x128);
+    *(float *)(p1 + 0x120) = fVar9;
+    if ((iVar10 == 0) || (iVar10 == *(int *)(p1 + 0x11c) + -1)) {
+      fVar11 = fVar9 + *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)iVar10 * 8) + 0x54);
       if (3.0 < ABS(fVar11)) {
         fVar12 = -0.5;
         goto LAB_0038652c;
@@ -349,7 +353,7 @@ undefined8 Walaber::Widget_ScrollableCamera::update(float param_1,long param_2)
       fVar11 = -fVar11;
     }
     else {
-      fVar12 = -*(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)iVar10 * 8) + 0x54);
+      fVar12 = -*(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)iVar10 * 8) + 0x54);
       fVar11 = fVar12 - fVar9;
       if (1.0 < ABS(fVar12 - fVar9)) {
         fVar12 = 0.25;
@@ -359,38 +363,35 @@ LAB_0038652c:
     }
     if (fVar11 != 0.0) {
       bVar3 = false;
-      *(float *)(param_2 + 0x120) = fVar9 + fVar11;
+      *(float *)(p1 + 0x120) = fVar9 + fVar11;
       goto LAB_00386544;
     }
-    *(undefined4 *)(param_2 + 0x118) = 0;
-    *(int *)(param_2 + 0x10c) = iVar10;
+    *(undefined4 *)(p1 + 0x118) = 0;
+    *(int *)(p1 + 0x10c) = iVar10;
     goto LAB_00386540;
   case 3:
-    fVar11 = *(float *)(param_2 + 0x138) + param_1;
-    *(float *)(param_2 + 0x138) = fVar11;
-    if (*(float *)(param_2 + 0x13c) < fVar11) {
-      fVar9 = *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)*(int *)(param_2 + 0x134) * 8)
-                        + 0x54);
-      *(undefined4 *)(param_2 + 0x118) = 0;
+    fVar11 = *(float *)(p1 + 0x138) + p0;
+    *(float *)(p1 + 0x138) = fVar11;
+    if (*(float *)(p1 + 0x13c) < fVar11) {
+      fVar9 = *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)*(int *)(p1 + 0x134) * 8) + 0x54);
+      *(undefined4 *)(p1 + 0x118) = 0;
       goto LAB_00386444;
     }
-    if (*(long *)(param_2 + 0x1e8) == 0) {
-      fVar9 = *(float *)(param_2 + 0x120) + *(float *)(param_2 + 0x128) * param_1;
+    if (*(long *)(p1 + 0x1e8) == 0) {
+      fVar9 = *(float *)(p1 + 0x120) + *(float *)(p1 + 0x128) * p0;
     }
     else {
-      fVar9 = *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)*(int *)(param_2 + 0x130) * 8)
-                        + 0x54);
-      fVar11 = (float)func_0x0016de00(fVar11 / *(float *)(param_2 + 0x13c));
-      fVar9 = fVar11 * (fVar9 - *(float *)(*(long *)(*(long *)(param_2 + 0x140) +
-                                                    (long)*(int *)(param_2 + 0x134) * 8) + 0x54)) -
-              fVar9;
+      fVar9 = *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)*(int *)(p1 + 0x130) * 8) + 0x54);
+      fVar11 = (float)func_0x0016de00(fVar11 / *(float *)(p1 + 0x13c));
+      fVar9 = fVar11 * (fVar9 - *(float *)(*(long *)(*(long *)(p1 + 0x140) +
+                                                    (long)*(int *)(p1 + 0x134) * 8) + 0x54)) - fVar9
+      ;
     }
     break;
   case 4:
-    fVar9 = *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)*(int *)(param_2 + 0x114) * 8) +
-                      0x54);
-    *(undefined4 *)(param_2 + 0x118) = 0;
-    *(int *)(param_2 + 0x10c) = *(int *)(param_2 + 0x114);
+    fVar9 = *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)*(int *)(p1 + 0x114) * 8) + 0x54);
+    *(undefined4 *)(p1 + 0x118) = 0;
+    *(int *)(p1 + 0x10c) = *(int *)(p1 + 0x114);
 LAB_00386444:
     fVar9 = -fVar9;
     break;
@@ -398,21 +399,21 @@ LAB_00386444:
     bVar3 = false;
     goto LAB_00386544;
   }
-  *(float *)(param_2 + 0x120) = fVar9;
+  *(float *)(p1 + 0x120) = fVar9;
 LAB_00386540:
   bVar3 = true;
 LAB_00386544:
-  iVar10 = *(int *)(param_2 + 0x11c);
+  iVar10 = *(int *)(p1 + 0x11c);
   if (iVar10 < 1) {
 LAB_003865d4:
-    fVar9 = -(*(float *)(param_2 + 0x120) + *(float *)(**(long **)(param_2 + 0x140) + 0x54)) /
+    fVar9 = -(*(float *)(p1 + 0x120) + *(float *)(**(long **)(p1 + 0x140) + 0x54)) /
             (ScreenCoord::sScreenSize * 0.5 + 0.0);
   }
   else {
     uVar6 = 0;
     do {
-      if (-*(float *)(*(long *)(*(long *)(param_2 + 0x140) + uVar6 * 8) + 0x54) <
-          *(float *)(param_2 + 0x120)) {
+      if (-*(float *)(*(long *)(*(long *)(p1 + 0x140) + uVar6 * 8) + 0x54) < *(float *)(p1 + 0x120))
+      {
         if ((int)uVar6 == 0) goto LAB_003865d4;
         break;
       }
@@ -421,67 +422,67 @@ LAB_003865d4:
     iVar5 = (int)uVar6;
     if (iVar5 == iVar10) {
       iVar5 = iVar10 + -1;
-      fVar9 = (*(float *)(param_2 + 0x120) +
-              *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)iVar5 * 8) + 0x54)) /
+      fVar9 = (*(float *)(p1 + 0x120) +
+              *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)iVar5 * 8) + 0x54)) /
               (ScreenCoord::sScreenSize * 0.5 + 0.0);
     }
     else {
-      fVar9 = *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (uVar6 & 0xffffffff) * 8) + 0x54);
-      fVar9 = (*(float *)(param_2 + 0x120) + fVar9) /
-              (fVar9 - *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)(iVar5 + -1) * 8) +
-                                 0x54));
+      fVar9 = *(float *)(*(long *)(*(long *)(p1 + 0x140) + (uVar6 & 0xffffffff) * 8) + 0x54);
+      fVar9 = (*(float *)(p1 + 0x120) + fVar9) /
+              (fVar9 - *(float *)(*(long *)(*(long *)(p1 + 0x140) + (long)(iVar5 + -1) * 8) + 0x54))
+      ;
     }
     fVar9 = (float)iVar5 - fVar9;
   }
-  *(float *)(param_2 + 0x110) = fVar9;
+  *(float *)(p1 + 0x110) = fVar9;
   iVar5 = (int)(fVar9 + 0.5);
   if (iVar10 <= (int)(fVar9 + 0.5)) {
     iVar5 = iVar10 + -1;
   }
-  *(int *)(param_2 + 0x10c) = iVar5;
+  *(int *)(p1 + 0x10c) = iVar5;
   if (bVar3) {
-    func_0x001621a0(param_2);
+    func_0x001621a0(p1);
   }
-  lVar2 = *(long *)(param_2 + 0x1b8);
+  lVar2 = *(long *)(p1 + 0x1b8);
   if (lVar2 != 0) {
     uStack_4c = *(undefined4 *)(lVar2 + 4);
-    fStack_50 = -*(float *)(param_2 + 0x120);
+    fStack_50 = -*(float *)(p1 + 0x120);
     func_0x001729b0(lVar2,&fStack_50);
   }
-  lVar2 = *(long *)(param_2 + 0x170);
-  lVar4 = *(long *)(param_2 + 0x178);
+  lVar2 = *(long *)(p1 + 0x170);
+  lVar4 = *(long *)(p1 + 0x178);
   if (lVar4 != lVar2) {
     uVar6 = 0;
     do {
       lVar7 = *(long *)(lVar2 + uVar6 * 8);
       if (lVar7 != 0) {
-        fVar9 = *(float *)(param_2 + 0x120);
-        iVar10 = *(int *)(*(long *)(param_2 + 0x188) + uVar6 * 4);
+        fVar9 = *(float *)(p1 + 0x120);
+        iVar10 = *(int *)(*(long *)(p1 + 0x188) + uVar6 * 4);
         func_0x00167d50(auStack_60,lVar7);
         uStack_54 = uStack_5c;
         fStack_58 = (float)iVar10 - fVar9;
         func_0x001743c0(lVar7,&fStack_58);
         func_0x0016a9a0(lVar7);
-        lVar2 = *(long *)(param_2 + 0x170);
-        lVar4 = *(long *)(param_2 + 0x178);
+        lVar2 = *(long *)(p1 + 0x170);
+        lVar4 = *(long *)(p1 + 0x178);
       }
       uVar6 = uVar6 + 1;
     } while (uVar6 < (ulong)(lVar4 - lVar2 >> 3));
   }
-  lVar2 = *(long *)(param_2 + 0x158);
-  if (*(long *)(param_2 + 0x160) != lVar2) {
+  lVar2 = *(long *)(p1 + 0x158);
+  if (*(long *)(p1 + 0x160) != lVar2) {
     uVar6 = 0;
     do {
       uVar8 = *(undefined8 *)(lVar2 + uVar6 * 8);
-      fVar9 = *(float *)(param_2 + 0x120);
-      iVar10 = *(int *)(*(long *)(param_2 + 0x1a0) + uVar6 * 4);
+      fVar9 = *(float *)(p1 + 0x120);
+      iVar10 = *(int *)(*(long *)(p1 + 0x1a0) + uVar6 * 4);
       func_0x00167d50(auStack_60,uVar8);
       uStack_64 = uStack_5c;
       fStack_68 = (float)iVar10 - fVar9;
       func_0x00169b80(uVar8,&fStack_68);
-      lVar2 = *(long *)(param_2 + 0x158);
+      lVar2 = *(long *)(p1 + 0x158);
       uVar6 = uVar6 + 1;
-    } while (uVar6 < (ulong)(*(long *)(param_2 + 0x160) - lVar2 >> 3));
+    } while (uVar6 < (ulong)(*(long *)(p1 + 0x160) - lVar2 >> 3));
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return 0;
@@ -560,23 +561,21 @@ void Walaber::Widget_ScrollableCamera::_updateSlider(long param_1)
 
 /* Walaber::Widget_ScrollableCamera::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_ScrollableCamera::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_ScrollableCamera::draw(Walaber__SpriteBatch *p0)
 
 {
-  long *plVar1;
-  long lVar2;
-  ulong uVar3;
+  long lVar1;
+  ulong uVar2;
   
-  FUN_001722b0();
-  lVar2 = *(long *)(param_1 + 0x170);
-  if (*(long *)(param_1 + 0x178) != lVar2) {
-    uVar3 = 0;
+  FUN_001722b0(p0);
+  lVar1 = *(long *)(p0 + 0x170);
+  if (*(long *)(p0 + 0x178) != lVar1) {
+    uVar2 = 0;
     do {
-      plVar1 = *(long **)(lVar2 + uVar3 * 8);
-      (**(code **)(*plVar1 + 0x48))(plVar1,param_2);
-      lVar2 = *(long *)(param_1 + 0x170);
-      uVar3 = uVar3 + 1;
-    } while (uVar3 < (ulong)(*(long *)(param_1 + 0x178) - lVar2 >> 3));
+      (**(code **)(**(long **)(lVar1 + uVar2 * 8) + 0x48))();
+      lVar1 = *(long *)(p0 + 0x170);
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < (ulong)(*(long *)(p0 + 0x178) - lVar1 >> 3));
   }
   return;
 }
@@ -589,27 +588,28 @@ void Walaber::Widget_ScrollableCamera::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_ScrollableCamera::addGroup(Walaber::Widget_Group*, bool) */
 
-void Walaber::Widget_ScrollableCamera::addGroup(long param_1,undefined8 param_2,uint param_3)
+void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p1)
 
 {
   long lVar1;
-  undefined8 uStack_40;
+  uint in_w2;
+  ulong uStack_40;
   long lStack_38;
   
+  uStack_40 = (ulong)p1;
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = param_2;
-  if (*(undefined8 **)(param_1 + 0x148) == *(undefined8 **)(param_1 + 0x150)) {
-    func_0x00171500(param_1 + 0x140,&uStack_40);
+  if (*(ulong **)(p0 + 0x148) == *(ulong **)(p0 + 0x150)) {
+    func_0x00171500(p0 + 0x140,&uStack_40);
   }
   else {
-    **(undefined8 **)(param_1 + 0x148) = param_2;
-    *(long *)(param_1 + 0x148) = *(long *)(param_1 + 0x148) + 8;
+    **(ulong **)(p0 + 0x148) = uStack_40;
+    *(long *)(p0 + 0x148) = *(long *)(p0 + 0x148) + 8;
   }
-  if ((param_3 & 1) != 0) {
-    func_0x0016ec90(param_1,*(undefined4 *)(param_1 + 0x11c));
+  if ((in_w2 & 1) != 0) {
+    func_0x0016ec90(p0,*(undefined4 *)(p0 + 0x11c));
   }
-  *(int *)(param_1 + 0x11c) = *(int *)(param_1 + 0x11c) + 1;
+  *(int *)(p0 + 0x11c) = *(int *)(p0 + 0x11c) + 1;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -626,13 +626,15 @@ void Walaber::Widget_ScrollableCamera::addGroup(long param_1,undefined8 param_2,
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int) */
 
-void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(long param_1,int param_2)
+void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
 
 {
   int *piVar1;
   long lVar2;
-  long *plVar3;
-  float fVar4;
+  ulong uVar3;
+  long *plVar4;
+  int in_w1;
+  float fVar5;
   int iStack_6c;
   float fStack_68;
   float fStack_64;
@@ -645,53 +647,54 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(long param_1,int pa
   float fStack_3c;
   long lStack_38;
   
+  uVar3 = (ulong)(uint)p0;
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  plVar3 = (long *)FUN_00164060(0x188);
-  fVar4 = (float)((ulong)_sScreenSize >> 0x20);
+  plVar4 = (long *)FUN_00164060(0x188);
+  fVar5 = (float)((ulong)_sScreenSize >> 0x20);
   fStack_40 = (float)_sScreenSize * -0.068 + 0.0;
-  fStack_3c = fVar4 * 0.965 + 0.0;
+  fStack_3c = fVar5 * 0.965 + 0.0;
   fStack_50 = (float)_sScreenSize * 0.013 + 0.0;
-  fStack_4c = fVar4 * 0.009 + 0.0;
-  lStack_60 = *(long *)(param_1 + 0x1c8);
-  piStack_58 = *(int **)(param_1 + 0x1d0);
+  fStack_4c = fVar5 * 0.009 + 0.0;
+  lStack_60 = *(long *)(uVar3 + 0x1c8);
+  piStack_58 = *(int **)(uVar3 + 0x1d0);
   if (lStack_60 != 0) {
     *piStack_58 = *piStack_58 + 1;
   }
                     /* try { // try from 00386a6c to 00386a7f has its CatchHandler @ 00386bd8 */
-  func_0x0016aef0(plVar3,param_2 + 5000,&fStack_40,&fStack_50,&lStack_60);
+  func_0x0016aef0(plVar4,in_w1 + 5000,&fStack_40,&fStack_50,&lStack_60);
   FUN_00166b20(&lStack_60);
-  plStack_48 = plVar3;
-  func_0x0016c5f0(0,0,0,0,plVar3);
-  func_0x00167d50(&fStack_50,plVar3);
-  func_0x00169f20(&fStack_40,plVar3);
-  fStack_68 = fStack_50 + *(float *)(plVar3 + 0x12) * fStack_40 * (float)param_2 * 2.5;
+  plStack_48 = plVar4;
+  func_0x0016c5f0(0,0,0,0,plVar4);
+  func_0x00167d50(&fStack_50,plVar4);
+  func_0x00169f20(&fStack_40,plVar4);
+  fStack_68 = fStack_50 + *(float *)(plVar4 + 0x12) * fStack_40 * (float)in_w1 * 2.5;
   _fStack_50 = CONCAT44(fStack_4c,fStack_68);
-  *(undefined1 *)(plVar3 + 0x16) = 1;
+  *(undefined1 *)(plVar4 + 0x16) = 1;
   fStack_64 = fStack_4c;
-  func_0x001743c0(plVar3,&fStack_68);
-  func_0x0016a9a0(plVar3);
-  (**(code **)(*plVar3 + 0x40))(plVar3,10);
-  *(undefined4 *)((long)plVar3 + 0x144) = 0xffffffff;
-  func_0x0016b660(*(undefined8 *)(param_1 + 200),plVar3,0);
-  if (*(long **)(param_1 + 0x178) == *(long **)(param_1 + 0x180)) {
-    func_0x001661f0(param_1 + 0x170,&plStack_48);
+  func_0x001743c0(plVar4,&fStack_68);
+  func_0x0016a9a0(plVar4);
+  (**(code **)(*plVar4 + 0x40))(plVar4,10);
+  *(undefined4 *)((long)plVar4 + 0x144) = 0xffffffff;
+  func_0x0016b660(*(undefined8 *)(uVar3 + 200),plVar4,0);
+  if (*(long **)(uVar3 + 0x178) == *(long **)(uVar3 + 0x180)) {
+    func_0x001661f0(uVar3 + 0x170,&plStack_48);
   }
   else {
-    **(long **)(param_1 + 0x178) = (long)plVar3;
-    *(long *)(param_1 + 0x178) = *(long *)(param_1 + 0x178) + 8;
+    **(long **)(uVar3 + 0x178) = (long)plVar4;
+    *(long *)(uVar3 + 0x178) = *(long *)(uVar3 + 0x178) + 8;
   }
   func_0x00167d50(&fStack_40,plStack_48);
   iStack_6c = (int)fStack_40;
-  piVar1 = *(int **)(param_1 + 400);
-  if (piVar1 < *(int **)(param_1 + 0x198)) {
+  piVar1 = *(int **)(uVar3 + 400);
+  if (piVar1 < *(int **)(uVar3 + 0x198)) {
     *piVar1 = iStack_6c;
-    *(int **)(param_1 + 400) = piVar1 + 1;
+    *(int **)(uVar3 + 400) = piVar1 + 1;
   }
   else {
-    func_0x00170200(param_1 + 0x188,&iStack_6c);
+    func_0x00170200(uVar3 + 0x188,&iStack_6c);
   }
-  func_0x001621a0(param_1);
+  func_0x001621a0(uVar3);
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
   }
@@ -707,11 +710,12 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(long param_1,int pa
 
 /* Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber::Widget_Group*) */
 
-void Walaber::Widget_ScrollableCamera::addMovableGroup(long param_1,undefined8 param_2)
+void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0)
 
 {
   int *piVar1;
   long lVar2;
+  undefined8 in_x1;
   float afStack_40 [3];
   int iStack_34;
   undefined8 uStack_30;
@@ -719,23 +723,23 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(long param_1,undefined8 p
   
   lVar2 = tpidr_el0;
   lStack_28 = *(long *)(lVar2 + 0x28);
-  uStack_30 = param_2;
-  if (*(undefined8 **)(param_1 + 0x160) == *(undefined8 **)(param_1 + 0x168)) {
-    func_0x00171500(param_1 + 0x158,&uStack_30);
+  uStack_30 = in_x1;
+  if (*(undefined8 **)(p0 + 0x160) == *(undefined8 **)(p0 + 0x168)) {
+    func_0x00171500(p0 + 0x158,&uStack_30);
   }
   else {
-    **(undefined8 **)(param_1 + 0x160) = param_2;
-    *(long *)(param_1 + 0x160) = *(long *)(param_1 + 0x160) + 8;
+    **(undefined8 **)(p0 + 0x160) = in_x1;
+    *(long *)(p0 + 0x160) = *(long *)(p0 + 0x160) + 8;
   }
   func_0x00167d50(afStack_40,uStack_30);
   iStack_34 = (int)afStack_40[0];
-  piVar1 = *(int **)(param_1 + 0x1a8);
-  if (piVar1 < *(int **)(param_1 + 0x1b0)) {
+  piVar1 = *(int **)(p0 + 0x1a8);
+  if (piVar1 < *(int **)(p0 + 0x1b0)) {
     *piVar1 = iStack_34;
-    *(int **)(param_1 + 0x1a8) = piVar1 + 1;
+    *(int **)(p0 + 0x1a8) = piVar1 + 1;
   }
   else {
-    func_0x00170200(param_1 + 0x1a0,&iStack_34);
+    func_0x00170200(p0 + 0x1a0,&iStack_34);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_28) {
     return;
@@ -752,46 +756,49 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(long param_1,undefined8 p
 
 /* Walaber::Widget_ScrollableCamera::setIndex(int, float) */
 
-void Walaber::Widget_ScrollableCamera::setIndex(float param_1,long param_2,int param_3)
+void Walaber::Widget_ScrollableCamera::setIndex(int p0,float p1)
 
 {
   int iVar1;
   int iVar2;
-  float fVar3;
+  ulong uVar3;
+  int in_w1;
+  float fVar4;
   
-  if (param_1 != 0.0) {
-    *(undefined4 *)(param_2 + 0x118) = 3;
-    iVar2 = *(int *)(param_2 + 0x11c) + -1;
-    *(undefined4 *)(param_2 + 0x130) = *(undefined4 *)(param_2 + 0x10c);
-    iVar1 = param_3;
-    if (iVar2 <= param_3) {
+  uVar3 = (ulong)(uint)p0;
+  if (p1 != 0.0) {
+    *(undefined4 *)(uVar3 + 0x118) = 3;
+    iVar2 = *(int *)(uVar3 + 0x11c) + -1;
+    *(undefined4 *)(uVar3 + 0x130) = *(undefined4 *)(uVar3 + 0x10c);
+    iVar1 = in_w1;
+    if (iVar2 <= in_w1) {
       iVar1 = iVar2;
     }
     iVar2 = 0;
-    if (0 < param_3) {
+    if (0 < in_w1) {
       iVar2 = iVar1;
     }
-    *(int *)(param_2 + 0x134) = iVar2;
-    fVar3 = *(float *)(*(long *)(*(long *)(param_2 + 0x140) + (long)iVar2 * 8) + 0x54);
-    *(undefined4 *)(param_2 + 0x138) = 0;
-    *(float *)(param_2 + 0x13c) = param_1;
-    *(float *)(param_2 + 0x128) = -(fVar3 + *(float *)(param_2 + 0x120)) / param_1;
+    *(int *)(uVar3 + 0x134) = iVar2;
+    fVar4 = *(float *)(*(long *)(*(long *)(uVar3 + 0x140) + (long)iVar2 * 8) + 0x54);
+    *(undefined4 *)(uVar3 + 0x138) = 0;
+    *(float *)(uVar3 + 0x13c) = p1;
+    *(float *)(uVar3 + 0x128) = -(fVar4 + *(float *)(uVar3 + 0x120)) / p1;
     return;
   }
-  if (*(int *)(param_2 + 0x118) != 0) {
+  if (*(int *)(uVar3 + 0x118) != 0) {
     return;
   }
-  *(undefined4 *)(param_2 + 0x118) = 4;
-  iVar2 = *(int *)(param_2 + 0x11c) + -1;
-  iVar1 = param_3;
-  if (iVar2 <= param_3) {
+  *(undefined4 *)(uVar3 + 0x118) = 4;
+  iVar2 = *(int *)(uVar3 + 0x11c) + -1;
+  iVar1 = in_w1;
+  if (iVar2 <= in_w1) {
     iVar1 = iVar2;
   }
   iVar2 = 0;
-  if (0 < param_3) {
+  if (0 < in_w1) {
     iVar2 = iVar1;
   }
-  *(int *)(param_2 + 0x114) = iVar2;
+  *(int *)(uVar3 + 0x114) = iVar2;
   return;
 }
 
@@ -817,16 +824,19 @@ undefined4 Walaber::Widget_ScrollableCamera::getCurrentIndex(long param_1)
 
 /* Walaber::Widget_ScrollableCamera::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableCamera::acceptNewFingerDown(long param_1,undefined4 param_2)
+undefined8 Walaber::Widget_ScrollableCamera::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(char *)(param_1 + 0x8d) != '\0') {
-    FUN_00166450("Walaber",1,"Widget_ScrollableCamera::acceptNewFingerDown(%d)\n",param_2);
-    if ((*(int *)(param_1 + 0x108) == -1) && (*(int *)(param_1 + 0x118) != 3)) {
-      *(undefined4 *)(param_1 + 0x108) = param_2;
-      func_0x0016aca0(param_1,1);
-      *(undefined4 *)(param_1 + 0x118) = 1;
-    }
+  ulong uVar1;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (((*(char *)(uVar1 + 0x8d) != '\0') &&
+      (FUN_00166450("Walaber",1,"Widget_ScrollableCamera::acceptNewFingerDown(%d)\n",
+                    (ulong)p1 & 0xffffffff), *(int *)(uVar1 + 0x108) == -1)) &&
+     (*(int *)(uVar1 + 0x118) != 3)) {
+    *(int *)(uVar1 + 0x108) = (int)p1;
+    func_0x0016aca0(uVar1,1);
+    *(undefined4 *)(uVar1 + 0x118) = 1;
   }
   return 0;
 }
@@ -839,28 +849,30 @@ undefined8 Walaber::Widget_ScrollableCamera::acceptNewFingerDown(long param_1,un
 
 /* Walaber::Widget_ScrollableCamera::_updateFinger(bool) */
 
-void Walaber::Widget_ScrollableCamera::_updateFinger(long param_1,uint param_2)
+void Walaber::Widget_ScrollableCamera::_updateFinger(bool p0)
 
 {
-  float fVar1;
+  ulong uVar1;
+  uint in_w1;
   float fVar2;
+  float fVar3;
   
-  if ((param_2 & 1) == 0) {
-    fVar1 = *(float *)(*(long *)(param_1 + 0x100) + 4) -
-            *(float *)(*(long *)(param_1 + 0x100) + 0xc);
+  uVar1 = (ulong)p0;
+  if ((in_w1 & 1) == 0) {
+    fVar2 = *(float *)(*(long *)(uVar1 + 0x100) + 4) - *(float *)(*(long *)(uVar1 + 0x100) + 0xc);
   }
   else {
-    *(undefined4 *)(param_1 + 0x128) = 0;
-    fVar1 = 0.0;
+    *(undefined4 *)(uVar1 + 0x128) = 0;
+    fVar2 = 0.0;
   }
-  *(float *)(param_1 + 0x124) = fVar1;
-  fVar2 = *(float *)(param_1 + 0x120) + fVar1;
-  if ((-*(float *)(**(long **)(param_1 + 0x140) + 0x54) < fVar2) ||
-     (fVar2 < -*(float *)((*(long **)(param_1 + 0x140))[(long)*(int *)(param_1 + 0x11c) + -1] + 0x54
-                         ))) {
-    fVar2 = *(float *)(param_1 + 0x120) + fVar1 * 0.5;
+  *(float *)(uVar1 + 0x124) = fVar2;
+  fVar3 = *(float *)(uVar1 + 0x120) + fVar2;
+  if ((-*(float *)(**(long **)(uVar1 + 0x140) + 0x54) < fVar3) ||
+     (fVar3 < -*(float *)((*(long **)(uVar1 + 0x140))[(long)*(int *)(uVar1 + 0x11c) + -1] + 0x54)))
+  {
+    fVar3 = *(float *)(uVar1 + 0x120) + fVar2 * 0.5;
   }
-  *(float *)(param_1 + 0x120) = fVar2;
+  *(float *)(uVar1 + 0x120) = fVar3;
   return;
 }
 
@@ -872,21 +884,28 @@ void Walaber::Widget_ScrollableCamera::_updateFinger(long param_1,uint param_2)
 
 /* Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined4
-Walaber::Widget_ScrollableCamera::acceptNewFingerEntered
-          (long param_1,undefined4 param_2,undefined8 param_3)
+undefined4 Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (((*(char *)(param_1 + 0x8d) != '\0') &&
-      (FUN_00166450("Walaber",1,"Widget_ScrollableCamera::acceptNewFingerEntered(%d)\n",param_2),
-      *(long *)(param_1 + 0x100) == 0)) && (*(int *)(param_1 + 0x118) != 3)) {
-    *(undefined4 *)(param_1 + 0x108) = param_2;
-    *(undefined8 *)(param_1 + 0x100) = param_3;
-    func_0x0016aca0(param_1,1);
-    *(undefined4 *)(param_1 + 0x118) = 1;
-    return 1;
+  ulong uVar1;
+  undefined8 in_x2;
+  undefined4 uVar2;
+  
+  uVar1 = (ulong)(uint)p0;
+  if (((*(char *)(uVar1 + 0x8d) == '\0') ||
+      (FUN_00166450("Walaber",1,"Widget_ScrollableCamera::acceptNewFingerEntered(%d)\n",
+                    (ulong)p1 & 0xffffffff), *(long *)(uVar1 + 0x100) != 0)) ||
+     (*(int *)(uVar1 + 0x118) == 3)) {
+    uVar2 = 0;
   }
-  return 0;
+  else {
+    *(int *)(uVar1 + 0x108) = (int)p1;
+    *(undefined8 *)(uVar1 + 0x100) = in_x2;
+    uVar2 = 1;
+    func_0x0016aca0(uVar1,1);
+    *(undefined4 *)(uVar1 + 0x118) = 1;
+  }
+  return uVar2;
 }
 
 
@@ -897,13 +916,14 @@ Walaber::Widget_ScrollableCamera::acceptNewFingerEntered
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ScrollableCamera::releaseFingerStayed
-          (long param_1,undefined4 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ScrollableCamera::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
-  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerStayed(%d)\n",param_2);
-  *(undefined8 *)(param_1 + 0x100) = param_3;
+  undefined8 in_x2;
+  
+  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerStayed(%d)\n",
+               (ulong)p1 & 0xffffffff);
+  *(undefined8 *)((ulong)(uint)p0 + 0x100) = in_x2;
   return 0;
 }
 
@@ -915,16 +935,19 @@ Walaber::Widget_ScrollableCamera::releaseFingerStayed
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8
-Walaber::Widget_ScrollableCamera::releaseFingerMoved
-          (long param_1,undefined4 param_2,undefined8 param_3)
+undefined8 Walaber::Widget_ScrollableCamera::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerMoved(%d)\n",param_2);
-  *(undefined8 *)(param_1 + 0x100) = param_3;
-  if (*(int *)(param_1 + 0x118) != 3) {
-    func_0x0016aca0(param_1,0);
-    *(undefined4 *)(param_1 + 0x118) = 1;
+  ulong uVar1;
+  undefined8 in_x2;
+  
+  uVar1 = (ulong)(uint)p0;
+  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerMoved(%d)\n",
+               (ulong)p1 & 0xffffffff);
+  *(undefined8 *)(uVar1 + 0x100) = in_x2;
+  if (*(int *)(uVar1 + 0x118) != 3) {
+    func_0x0016aca0(uVar1,0);
+    *(undefined4 *)(uVar1 + 0x118) = 1;
   }
   return 0;
 }
@@ -937,41 +960,43 @@ Walaber::Widget_ScrollableCamera::releaseFingerMoved
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ScrollableCamera::releaseFingerUp(long param_1,undefined4 param_2)
+void Walaber::Widget_ScrollableCamera::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  ulong uVar3;
+  int iVar4;
   
-  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerUp(%d)\n",param_2);
-  *(undefined4 *)(param_1 + 0x108) = 0xffffffff;
-  if (*(int *)(param_1 + 0x118) == 1) {
-    if (0.0 <= *(float *)(param_1 + 0x128)) {
-      if (*(float *)(param_1 + 0x128) <= 0.0) {
-        iVar3 = (int)(*(float *)(param_1 + 0x110) + 0.5);
+  uVar3 = (ulong)(uint)p0;
+  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerUp(%d)\n",(ulong)p1 & 0xffffffff);
+  *(undefined4 *)(uVar3 + 0x108) = 0xffffffff;
+  if (*(int *)(uVar3 + 0x118) == 1) {
+    if (0.0 <= *(float *)(uVar3 + 0x128)) {
+      if (*(float *)(uVar3 + 0x128) <= 0.0) {
+        iVar4 = (int)(*(float *)(uVar3 + 0x110) + 0.5);
       }
       else {
-        iVar3 = (int)*(float *)(param_1 + 0x110);
+        iVar4 = (int)*(float *)(uVar3 + 0x110);
       }
     }
     else {
-      iVar3 = (int)*(float *)(param_1 + 0x110) + 1;
+      iVar4 = (int)*(float *)(uVar3 + 0x110) + 1;
     }
-    *(int *)(param_1 + 0x114) = iVar3;
-    *(undefined4 *)(param_1 + 0x118) = 2;
-    iVar2 = *(int *)(param_1 + 0x11c) + -1;
-    iVar1 = iVar3;
-    if (iVar2 <= iVar3) {
+    *(int *)(uVar3 + 0x114) = iVar4;
+    *(undefined4 *)(uVar3 + 0x118) = 2;
+    iVar2 = *(int *)(uVar3 + 0x11c) + -1;
+    iVar1 = iVar4;
+    if (iVar2 <= iVar4) {
       iVar1 = iVar2;
     }
     iVar2 = 0;
-    if (0 < iVar3) {
+    if (0 < iVar4) {
       iVar2 = iVar1;
     }
-    *(int *)(param_1 + 0x114) = iVar2;
+    *(int *)(uVar3 + 0x114) = iVar2;
   }
-  *(undefined8 *)(param_1 + 0x100) = 0;
+  *(undefined8 *)(uVar3 + 0x100) = 0;
   return;
 }
 
@@ -983,41 +1008,44 @@ void Walaber::Widget_ScrollableCamera::releaseFingerUp(long param_1,undefined4 p
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableCamera::releaseFingerLeft(long param_1,undefined4 param_2)
+undefined8 Walaber::Widget_ScrollableCamera::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  ulong uVar3;
+  int iVar4;
   
-  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerLeft(%d)\n",param_2);
-  *(undefined4 *)(param_1 + 0x108) = 0xffffffff;
-  if (*(int *)(param_1 + 0x118) == 1) {
-    if (0.0 <= *(float *)(param_1 + 0x128)) {
-      if (*(float *)(param_1 + 0x128) <= 0.0) {
-        iVar3 = (int)(*(float *)(param_1 + 0x110) + 0.5);
+  uVar3 = (ulong)(uint)p0;
+  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::releaseFingerLeft(%d)\n",(ulong)p1 & 0xffffffff
+              );
+  *(undefined4 *)(uVar3 + 0x108) = 0xffffffff;
+  if (*(int *)(uVar3 + 0x118) == 1) {
+    if (0.0 <= *(float *)(uVar3 + 0x128)) {
+      if (*(float *)(uVar3 + 0x128) <= 0.0) {
+        iVar4 = (int)(*(float *)(uVar3 + 0x110) + 0.5);
       }
       else {
-        iVar3 = (int)*(float *)(param_1 + 0x110);
+        iVar4 = (int)*(float *)(uVar3 + 0x110);
       }
     }
     else {
-      iVar3 = (int)*(float *)(param_1 + 0x110) + 1;
+      iVar4 = (int)*(float *)(uVar3 + 0x110) + 1;
     }
-    *(int *)(param_1 + 0x114) = iVar3;
-    *(undefined4 *)(param_1 + 0x118) = 2;
-    iVar2 = *(int *)(param_1 + 0x11c) + -1;
-    iVar1 = iVar3;
-    if (iVar2 <= iVar3) {
+    *(int *)(uVar3 + 0x114) = iVar4;
+    *(undefined4 *)(uVar3 + 0x118) = 2;
+    iVar2 = *(int *)(uVar3 + 0x11c) + -1;
+    iVar1 = iVar4;
+    if (iVar2 <= iVar4) {
       iVar1 = iVar2;
     }
     iVar2 = 0;
-    if (0 < iVar3) {
+    if (0 < iVar4) {
       iVar2 = iVar1;
     }
-    *(int *)(param_1 + 0x114) = iVar2;
+    *(int *)(uVar3 + 0x114) = iVar2;
   }
-  *(undefined8 *)(param_1 + 0x100) = 0;
+  *(undefined8 *)(uVar3 + 0x100) = 0;
   return 1;
 }
 
@@ -1029,41 +1057,44 @@ undefined8 Walaber::Widget_ScrollableCamera::releaseFingerLeft(long param_1,unde
 
 /* Walaber::Widget_ScrollableCamera::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ScrollableCamera::notifyFingerLost(long param_1,undefined4 param_2)
+void Walaber::Widget_ScrollableCamera::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  ulong uVar3;
+  int iVar4;
   
-  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::notifyFingerLost(%d)\n",param_2);
-  *(undefined4 *)(param_1 + 0x108) = 0xffffffff;
-  if (*(int *)(param_1 + 0x118) == 1) {
-    if (0.0 <= *(float *)(param_1 + 0x128)) {
-      if (*(float *)(param_1 + 0x128) <= 0.0) {
-        iVar3 = (int)(*(float *)(param_1 + 0x110) + 0.5);
+  uVar3 = (ulong)(uint)p0;
+  FUN_00166450("Walaber",1,"Widget_ScrollableCamera::notifyFingerLost(%d)\n",(ulong)p1 & 0xffffffff)
+  ;
+  *(undefined4 *)(uVar3 + 0x108) = 0xffffffff;
+  if (*(int *)(uVar3 + 0x118) == 1) {
+    if (0.0 <= *(float *)(uVar3 + 0x128)) {
+      if (*(float *)(uVar3 + 0x128) <= 0.0) {
+        iVar4 = (int)(*(float *)(uVar3 + 0x110) + 0.5);
       }
       else {
-        iVar3 = (int)*(float *)(param_1 + 0x110);
+        iVar4 = (int)*(float *)(uVar3 + 0x110);
       }
     }
     else {
-      iVar3 = (int)*(float *)(param_1 + 0x110) + 1;
+      iVar4 = (int)*(float *)(uVar3 + 0x110) + 1;
     }
-    *(int *)(param_1 + 0x114) = iVar3;
-    *(undefined4 *)(param_1 + 0x118) = 2;
-    iVar2 = *(int *)(param_1 + 0x11c) + -1;
-    iVar1 = iVar3;
-    if (iVar2 <= iVar3) {
+    *(int *)(uVar3 + 0x114) = iVar4;
+    *(undefined4 *)(uVar3 + 0x118) = 2;
+    iVar2 = *(int *)(uVar3 + 0x11c) + -1;
+    iVar1 = iVar4;
+    if (iVar2 <= iVar4) {
       iVar1 = iVar2;
     }
     iVar2 = 0;
-    if (0 < iVar3) {
+    if (0 < iVar4) {
       iVar2 = iVar1;
     }
-    *(int *)(param_1 + 0x114) = iVar2;
+    *(int *)(uVar3 + 0x114) = iVar2;
   }
-  *(undefined8 *)(param_1 + 0x100) = 0;
+  *(undefined8 *)(uVar3 + 0x100) = 0;
   return;
 }
 

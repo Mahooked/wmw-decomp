@@ -8,61 +8,62 @@
 
 /* Walaber::Widget_Slider::TEMPNAMEPLACEHOLDERVALUE(Walaber::Widget_Slider const&) */
 
-long Walaber::Widget_Slider::operator=(long param_1,long param_2)
+Walaber__Widget_Slider * Walaber::Widget_Slider::operator=(Walaber__Widget_Slider *p0)
 
 {
   undefined4 uVar1;
+  long in_x1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   
   func_0x001711a0();
-  uVar2 = *(undefined8 *)(param_2 + 0x84);
-  *(undefined2 *)(param_1 + 0x8c) = *(undefined2 *)(param_2 + 0x8c);
-  *(undefined8 *)(param_1 + 0x84) = uVar2;
-  *(undefined8 *)(param_1 + 0x90) = *(undefined8 *)(param_2 + 0x90);
-  *(undefined8 *)(param_1 + 0x98) = *(undefined8 *)(param_2 + 0x98);
-  *(undefined8 *)(param_1 + 0xa0) = *(undefined8 *)(param_2 + 0xa0);
-  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xa8);
-  uVar1 = *(undefined4 *)(param_2 + 0xac);
-  *(undefined1 *)(param_1 + 0xb0) = *(undefined1 *)(param_2 + 0xb0);
-  *(undefined4 *)(param_1 + 0xac) = uVar1;
-  *(undefined8 *)(param_1 + 0xb4) = *(undefined8 *)(param_2 + 0xb4);
-  *(undefined8 *)(param_1 + 0xbc) = *(undefined8 *)(param_2 + 0xbc);
-  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0xc4);
-  *(undefined8 *)(param_1 + 200) = *(undefined8 *)(param_2 + 200);
-  func_0x00171ac0(param_1 + 0xd0,param_2 + 0xd0);
-  *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_2 + 0xe8);
-  *(undefined8 *)(param_1 + 0xf0) = *(undefined8 *)(param_2 + 0xf0);
-  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0xf8);
-  *(undefined8 *)(param_1 + 0x100) = *(undefined8 *)(param_2 + 0x100);
-  func_0x00170aa0(param_1 + 0x108,param_2 + 0x108);
-  func_0x00170aa0(param_1 + 0x118,param_2 + 0x118);
-  func_0x00170aa0(param_1 + 0x128,param_2 + 0x128);
-  func_0x00170aa0(param_1 + 0x138,param_2 + 0x138);
-  *(undefined8 *)(param_1 + 0x148) = *(undefined8 *)(param_2 + 0x148);
-  *(undefined8 *)(param_1 + 0x150) = *(undefined8 *)(param_2 + 0x150);
-  *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_2 + 0x158);
-  *(undefined8 *)(param_1 + 0x160) = *(undefined8 *)(param_2 + 0x160);
-  *(undefined8 *)(param_1 + 0x168) = *(undefined8 *)(param_2 + 0x168);
-  uVar3 = *(undefined8 *)(param_2 + 0x178);
-  uVar2 = *(undefined8 *)(param_2 + 0x170);
-  uVar5 = *(undefined8 *)(param_2 + 0x188);
-  uVar4 = *(undefined8 *)(param_2 + 0x180);
-  *(undefined8 *)(param_1 + 400) = *(undefined8 *)(param_2 + 400);
-  *(undefined8 *)(param_1 + 0x178) = uVar3;
-  *(undefined8 *)(param_1 + 0x170) = uVar2;
-  *(undefined8 *)(param_1 + 0x188) = uVar5;
-  *(undefined8 *)(param_1 + 0x180) = uVar4;
-  *(undefined1 *)(param_1 + 0x198) = *(undefined1 *)(param_2 + 0x198);
-  *(undefined1 *)(param_1 + 0x199) = *(undefined1 *)(param_2 + 0x199);
-  *(undefined1 *)(param_1 + 0x19a) = *(undefined1 *)(param_2 + 0x19a);
-  *(undefined1 *)(param_1 + 0x19b) = *(undefined1 *)(param_2 + 0x19b);
-  uVar2 = *(undefined8 *)(param_2 + 0x19c);
-  *(undefined4 *)(param_1 + 0x1a4) = *(undefined4 *)(param_2 + 0x1a4);
-  *(undefined8 *)(param_1 + 0x19c) = uVar2;
-  return param_1;
+  uVar2 = *(undefined8 *)(in_x1 + 0x84);
+  *(undefined2 *)(p0 + 0x8c) = *(undefined2 *)(in_x1 + 0x8c);
+  *(undefined8 *)(p0 + 0x84) = uVar2;
+  *(undefined8 *)(p0 + 0x90) = *(undefined8 *)(in_x1 + 0x90);
+  *(undefined8 *)(p0 + 0x98) = *(undefined8 *)(in_x1 + 0x98);
+  *(undefined8 *)(p0 + 0xa0) = *(undefined8 *)(in_x1 + 0xa0);
+  *(undefined4 *)(p0 + 0xa8) = *(undefined4 *)(in_x1 + 0xa8);
+  uVar1 = *(undefined4 *)(in_x1 + 0xac);
+  p0[0xb0] = *(Walaber__Widget_Slider *)(in_x1 + 0xb0);
+  *(undefined4 *)(p0 + 0xac) = uVar1;
+  *(undefined8 *)(p0 + 0xb4) = *(undefined8 *)(in_x1 + 0xb4);
+  *(undefined8 *)(p0 + 0xbc) = *(undefined8 *)(in_x1 + 0xbc);
+  *(undefined4 *)(p0 + 0xc4) = *(undefined4 *)(in_x1 + 0xc4);
+  *(undefined8 *)(p0 + 200) = *(undefined8 *)(in_x1 + 200);
+  func_0x00171ac0(p0 + 0xd0,in_x1 + 0xd0);
+  *(undefined8 *)(p0 + 0xe8) = *(undefined8 *)(in_x1 + 0xe8);
+  *(undefined8 *)(p0 + 0xf0) = *(undefined8 *)(in_x1 + 0xf0);
+  *(undefined4 *)(p0 + 0xf8) = *(undefined4 *)(in_x1 + 0xf8);
+  *(undefined8 *)(p0 + 0x100) = *(undefined8 *)(in_x1 + 0x100);
+  func_0x00170aa0(p0 + 0x108,in_x1 + 0x108);
+  func_0x00170aa0(p0 + 0x118,in_x1 + 0x118);
+  func_0x00170aa0(p0 + 0x128,in_x1 + 0x128);
+  func_0x00170aa0(p0 + 0x138,in_x1 + 0x138);
+  *(undefined8 *)(p0 + 0x148) = *(undefined8 *)(in_x1 + 0x148);
+  *(undefined8 *)(p0 + 0x150) = *(undefined8 *)(in_x1 + 0x150);
+  *(undefined8 *)(p0 + 0x158) = *(undefined8 *)(in_x1 + 0x158);
+  *(undefined8 *)(p0 + 0x160) = *(undefined8 *)(in_x1 + 0x160);
+  *(undefined8 *)(p0 + 0x168) = *(undefined8 *)(in_x1 + 0x168);
+  uVar3 = *(undefined8 *)(in_x1 + 0x178);
+  uVar2 = *(undefined8 *)(in_x1 + 0x170);
+  uVar5 = *(undefined8 *)(in_x1 + 0x188);
+  uVar4 = *(undefined8 *)(in_x1 + 0x180);
+  *(undefined8 *)(p0 + 400) = *(undefined8 *)(in_x1 + 400);
+  *(undefined8 *)(p0 + 0x178) = uVar3;
+  *(undefined8 *)(p0 + 0x170) = uVar2;
+  *(undefined8 *)(p0 + 0x188) = uVar5;
+  *(undefined8 *)(p0 + 0x180) = uVar4;
+  p0[0x198] = *(Walaber__Widget_Slider *)(in_x1 + 0x198);
+  p0[0x199] = *(Walaber__Widget_Slider *)(in_x1 + 0x199);
+  p0[0x19a] = *(Walaber__Widget_Slider *)(in_x1 + 0x19a);
+  p0[0x19b] = *(Walaber__Widget_Slider *)(in_x1 + 0x19b);
+  uVar2 = *(undefined8 *)(in_x1 + 0x19c);
+  *(undefined4 *)(p0 + 0x1a4) = *(undefined4 *)(in_x1 + 0x1a4);
+  *(undefined8 *)(p0 + 0x19c) = uVar2;
+  return p0;
 }
 
 
@@ -227,7 +228,7 @@ void Walaber::Widget_Slider::~Widget_Slider(undefined8 *param_1)
 
 /* Walaber::Widget_Slider::~Widget_Slider() */
 
-void Walaber::Widget_Slider::~Widget_Slider(undefined8 param_1)
+void Walaber::Widget_Slider::~Widget_Slider(void *param_1)
 
 {
   func_0x001715b0();
@@ -319,21 +320,23 @@ void Walaber::Widget_Slider::setBaseSize(long param_1,float *param_2)
 
 /* Walaber::Widget_Slider::update(float, Walaber::Widget::WidgetActionRet&) */
 
-undefined8 Walaber::Widget_Slider::update(float param_1,long param_2,long param_3)
+undefined8 Walaber::Widget_Slider::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  if (-1 < *(int *)(param_2 + 0x194)) {
-    *(float *)(param_2 + 0x19c) = *(float *)(param_2 + 0x19c) + param_1;
+  long in_x1;
+  
+  if (-1 < *(int *)(p1 + 0x194)) {
+    *(float *)(p1 + 0x19c) = *(float *)(p1 + 0x19c) + p0;
   }
-  if (*(char *)(param_2 + 0x184) != '\0') {
-    *(undefined1 *)(param_2 + 0x184) = 0;
-    *(float *)(param_3 + 4) =
-         *(float *)(param_2 + 0x178) *
-         (float)(int)((*(float *)(param_2 + 0x170) +
-                      (*(float *)(param_2 + 0x174) - *(float *)(param_2 + 0x170)) *
-                      *(float *)(param_2 + 0x17c)) / *(float *)(param_2 + 0x178));
-    if (*(long *)(param_2 + 0x1a0) != 0) {
-      func_0x00170420(*(long *)(param_2 + 0x1a0),param_2);
+  if (p1[0x184] != (Walaber__Widget__WidgetActionRet)0x0) {
+    p1[0x184] = (Walaber__Widget__WidgetActionRet)0x0;
+    *(float *)(in_x1 + 4) =
+         *(float *)(p1 + 0x178) *
+         (float)(int)((*(float *)(p1 + 0x170) +
+                      (*(float *)(p1 + 0x174) - *(float *)(p1 + 0x170)) * *(float *)(p1 + 0x17c)) /
+                     *(float *)(p1 + 0x178));
+    if (*(long *)(p1 + 0x1a0) != 0) {
+      func_0x00170420(*(long *)(p1 + 0x1a0),p1);
       return 1;
     }
     return 1;
@@ -366,7 +369,7 @@ float Walaber::Widget_Slider::getValue(long param_1)
 
 /* Walaber::Widget_Slider::draw(Walaber::SpriteBatch*) */
 
-void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
+void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
 
 {
   bool bVar1;
@@ -374,25 +377,24 @@ void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
   int iVar3;
   int iVar4;
   int iVar5;
-  undefined4 uVar6;
-  int iVar7;
-  undefined1 uVar8;
-  long lVar9;
+  int iVar6;
+  undefined1 uVar7;
+  long lVar8;
+  undefined1 uVar9;
   undefined1 uVar10;
   undefined1 uVar11;
-  undefined1 uVar12;
+  uint uVar12;
   uint uVar13;
-  uint uVar14;
-  int iVar15;
+  int iVar14;
+  float fVar15;
   float fVar16;
-  float fVar17;
+  undefined8 uVar17;
   undefined8 uVar18;
-  undefined8 uVar19;
+  float fVar19;
   float fVar20;
   float fVar21;
   float fVar22;
   float fVar23;
-  float fVar24;
   long lStack_128;
   int *piStack_120;
   undefined8 uStack_118;
@@ -416,54 +418,52 @@ void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
   undefined4 uStack_a0;
   long lStack_98;
   
-  lVar9 = tpidr_el0;
-  lStack_98 = *(long *)(lVar9 + 0x28);
-  uVar18 = func_0x00164620();
-  if (*(char *)(param_1 + 0x8d) == '\0') {
+  lVar8 = tpidr_el0;
+  lStack_98 = *(long *)(lVar8 + 0x28);
+  uVar17 = func_0x00164620();
+  if (p0[0x8d] == (Walaber__SpriteBatch)0x0) {
+    uVar9 = 0x60;
     uVar10 = 0x60;
     uVar11 = 0x60;
-    uVar12 = 0x60;
-    uVar8 = 0x60;
+    uVar7 = 0x60;
   }
   else {
-    uVar8 = 0xff;
+    uVar7 = 0xff;
+    uVar9 = 0xff;
     uVar10 = 0xff;
     uVar11 = 0xff;
-    uVar12 = 0xff;
   }
-  uStack_a0 = CONCAT13(uVar12,CONCAT12(uVar11,CONCAT11(uVar10,uVar8)));
-  lStack_b0 = *(long *)(param_1 + 0x108);
-  piStack_a8 = *(int **)(param_1 + 0x110);
-  uVar6 = *(undefined4 *)(param_1 + 0x80);
+  uStack_a0 = CONCAT13(uVar11,CONCAT12(uVar10,CONCAT11(uVar9,uVar7)));
+  lStack_b0 = *(long *)(p0 + 0x108);
+  piStack_a8 = *(int **)(p0 + 0x110);
   if (lStack_b0 != 0) {
     *piStack_a8 = *piStack_a8 + 1;
   }
                     /* try { // try from 00388f98 to 00388fa3 has its CatchHandler @ 003894b4 */
-  func_0x00167d50(&fStack_c0,param_1);
-  uStack_b8._0_4_ = fStack_c0 + (float)*(undefined8 *)(param_1 + 0xf0);
-  uStack_b8._4_4_ = fStack_bc + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20);
+  func_0x00167d50(&fStack_c0,p0);
+  uStack_b8._0_4_ = fStack_c0 + (float)*(undefined8 *)(p0 + 0xf0);
+  uStack_b8._4_4_ = fStack_bc + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20);
                     /* try { // try from 00388fb4 to 00388fbf has its CatchHandler @ 003894b0 */
-  func_0x00169f20(&uStack_d8,param_1);
-  fVar20 = *(float *)(param_1 + 0x90);
-  fVar16 = (float)uStack_d8;
+  func_0x00169f20(&uStack_d8,p0);
+  fVar19 = *(float *)(p0 + 0x90);
+  fVar15 = (float)uStack_d8;
                     /* try { // try from 00388fc8 to 00388fd3 has its CatchHandler @ 003894ac */
-  func_0x00169f20(&uStack_d8,param_1);
-  uStack_c8 = CONCAT44(*(float *)(param_1 + 0x94) * uStack_d8._4_4_,fVar20 * fVar16);
-  uStack_d8 = *(undefined8 *)(*(long *)(param_1 + 0x108) + 0x8c);
-  uVar19 = *(undefined8 *)(*(long *)(param_1 + 0x108) + 0x84);
-  uStack_d0 = CONCAT44((float)((ulong)uVar19 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
-                       (float)uVar19 - (float)uStack_d8);
+  func_0x00169f20(&uStack_d8,p0);
+  uStack_c8 = CONCAT44(*(float *)(p0 + 0x94) * uStack_d8._4_4_,fVar19 * fVar15);
+  uStack_d8 = *(undefined8 *)(*(long *)(p0 + 0x108) + 0x8c);
+  uVar18 = *(undefined8 *)(*(long *)(p0 + 0x108) + 0x84);
+  uStack_d0 = CONCAT44((float)((ulong)uVar18 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
+                       (float)uVar18 - (float)uStack_d8);
                     /* try { // try from 00388ffc to 00389023 has its CatchHandler @ 003894a8 */
-  func_0x00169c00(uVar18,param_2,uVar6,&lStack_b0,&uStack_b8,&uStack_c8,&uStack_d8,&uStack_a0,0);
+  func_0x00169c00(uVar17);
   FUN_00166b20(&lStack_b0);
-  if (*(char *)(param_1 + 0x18c) != '\0') {
-    iVar7 = *(int *)(param_1 + 400);
-    func_0x00167d50(&uStack_b8,param_1);
-    func_0x00167d50(&fStack_c0,param_1);
-    uStack_c8 = CONCAT44(*(float *)(param_1 + 0x15c) / 3.0,fStack_c0 - (float)uStack_b8);
-    lStack_e8 = *(long *)(param_1 + 0x138);
-    piStack_e0 = *(int **)(param_1 + 0x140);
-    uVar6 = *(undefined4 *)(param_1 + 0x80);
+  if (p0[0x18c] != (Walaber__SpriteBatch)0x0) {
+    iVar6 = *(int *)(p0 + 400);
+    func_0x00167d50(&uStack_b8,p0);
+    func_0x00167d50(&fStack_c0,p0);
+    uStack_c8 = CONCAT44(*(float *)(p0 + 0x15c) / 3.0,fStack_c0 - (float)uStack_b8);
+    lStack_e8 = *(long *)(p0 + 0x138);
+    piStack_e0 = *(int **)(p0 + 0x140);
     if (lStack_e8 != 0) {
       *piStack_e0 = *piStack_e0 + 1;
     }
@@ -474,36 +474,36 @@ void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
                          (float)((ulong)uStack_d8 >> 0x20),
                          (float)*(undefined8 *)(lStack_e8 + 0x84) - (float)uStack_d8);
                     /* try { // try from 003890bc to 003890df has its CatchHandler @ 0038948c */
-    func_0x00169c00(uVar18,param_2,uVar6,&lStack_e8,&fStack_f0,&uStack_c8,&uStack_d8,&uStack_a0,0);
+    func_0x00169c00(uVar17);
     FUN_00166b20(&lStack_e8);
-    if (-1 < iVar7) {
-      iVar15 = 0;
+    if (-1 < iVar6) {
+      iVar14 = 0;
       do {
         uStack_f8 = uStack_a0;
-        fVar16 = 1.0;
-        if (iVar15 == *(int *)(param_1 + 0x194)) {
-          fVar16 = (float)func_0x00174170(*(float *)(param_1 + 0x19c) * 3.0);
-          if (fVar16 < 0.0) {
-            fVar16 = -fVar16;
+        fVar15 = 1.0;
+        if (iVar14 == *(int *)(p0 + 0x194)) {
+          fVar15 = (float)func_0x00174170(*(float *)(p0 + 0x19c) * 3.0);
+          if (fVar15 < 0.0) {
+            fVar15 = -fVar15;
           }
-          fVar20 = fVar16;
-          if (1.0 < fVar16) {
-            fVar20 = 1.0;
+          fVar19 = fVar15;
+          if (1.0 < fVar15) {
+            fVar19 = 1.0;
           }
-          if (fVar16 <= 0.0) {
-            fVar20 = 0.0;
+          if (fVar15 <= 0.0) {
+            fVar19 = 0.0;
           }
-          uVar13 = uStack_a0 >> 8 & 0xff;
-          uVar14 = uStack_a0 >> 0x10 & 0xff;
-          iVar2 = (int)(fVar20 * (float)(int)((uint)*(byte *)(param_1 + 0x198) - (uStack_a0 & 0xff))
-                       ) + (uStack_a0 & 0xff);
-          iVar3 = (int)(fVar20 * (float)(int)(*(byte *)(param_1 + 0x199) - uVar13)) + uVar13;
-          iVar4 = (int)(fVar20 * (float)(int)(*(byte *)(param_1 + 0x19a) - uVar14)) + uVar14;
+          uVar12 = uStack_a0 >> 8 & 0xff;
+          uVar13 = uStack_a0 >> 0x10 & 0xff;
+          iVar2 = (int)(fVar19 * (float)(int)((uint)(byte)p0[0x198] - (uStack_a0 & 0xff))) +
+                  (uStack_a0 & 0xff);
+          iVar3 = (int)(fVar19 * (float)(int)((byte)p0[0x199] - uVar12)) + uVar12;
+          iVar4 = (int)(fVar19 * (float)(int)((byte)p0[0x19a] - uVar13)) + uVar13;
           if (0xfe < iVar2) {
             iVar2 = 0xff;
           }
-          iVar5 = (int)(fVar20 * (float)(int)((uint)*(byte *)(param_1 + 0x19b) - (uStack_a0 >> 0x18)
-                                             )) + (uStack_a0 >> 0x18);
+          iVar5 = (int)(fVar19 * (float)(int)((uint)(byte)p0[0x19b] - (uStack_a0 >> 0x18))) +
+                  (uStack_a0 >> 0x18);
           if (0xfe < iVar3) {
             iVar3 = 0xff;
           }
@@ -513,86 +513,81 @@ void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
           if (0xfe < iVar5) {
             iVar5 = 0xff;
           }
-          fVar16 = fVar16 * 0.3 + 1.0;
+          fVar15 = fVar15 * 0.3 + 1.0;
           uStack_f8 = CONCAT13((byte)iVar5 & ((byte)(iVar5 >> 0x1f) ^ 0xff),
                                CONCAT12((byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff),
                                         CONCAT11((byte)iVar3 & ((byte)(iVar3 >> 0x1f) ^ 0xff),
                                                  (byte)iVar2 & ((byte)(iVar2 >> 0x1f) ^ 0xff))));
         }
-        fVar22 = *(float *)(param_1 + 0x150);
-        fVar20 = (float)func_0x0016ee90(uVar18);
-        fVar17 = (float)func_0x00174170(uVar18);
-        lStack_108 = *(long *)(param_1 + 0x128);
-        piStack_100 = *(int **)(param_1 + 0x130);
-        uVar6 = *(undefined4 *)(param_1 + 0x80);
+        fVar21 = *(float *)(p0 + 0x150);
+        fVar19 = (float)func_0x0016ee90(uVar17);
+        fVar16 = (float)func_0x00174170(uVar17);
+        lStack_108 = *(long *)(p0 + 0x128);
+        piStack_100 = *(int **)(p0 + 0x130);
         if (lStack_108 != 0) {
           *piStack_100 = *piStack_100 + 1;
         }
                     /* try { // try from 0038923c to 00389247 has its CatchHandler @ 003894c4 */
-        func_0x00167d50(&fStack_110,param_1);
-        fVar22 = ((float)iVar15 / (float)iVar7 + -0.5) * fVar22;
-        fVar21 = fVar20 * fVar22 - fVar17 * 0.0;
-        fVar20 = fVar20 * 0.0 + fVar22 * fVar17;
-        fStack_f0 = fVar21 + fStack_110;
-        fStack_ec = fVar20 + fStack_10c;
-        uStack_118 = CONCAT44((float)((ulong)*(undefined8 *)(param_1 + 0x158) >> 0x20) * fVar16,
-                              (float)*(undefined8 *)(param_1 + 0x158) * fVar16);
-        uStack_d8 = *(undefined8 *)(*(long *)(param_1 + 0x128) + 0x8c);
-        uVar19 = *(undefined8 *)(*(long *)(param_1 + 0x128) + 0x84);
-        uStack_d0 = CONCAT44((float)((ulong)uVar19 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
-                             (float)uVar19 - (float)uStack_d8);
+        func_0x00167d50(&fStack_110,p0);
+        fVar21 = ((float)iVar14 / (float)iVar6 + -0.5) * fVar21;
+        fVar20 = fVar19 * fVar21 - fVar16 * 0.0;
+        fVar19 = fVar19 * 0.0 + fVar21 * fVar16;
+        fStack_f0 = fVar20 + fStack_110;
+        fStack_ec = fVar19 + fStack_10c;
+        uStack_118 = CONCAT44((float)((ulong)*(undefined8 *)(p0 + 0x158) >> 0x20) * fVar15,
+                              (float)*(undefined8 *)(p0 + 0x158) * fVar15);
+        uStack_d8 = *(undefined8 *)(*(long *)(p0 + 0x128) + 0x8c);
+        uVar18 = *(undefined8 *)(*(long *)(p0 + 0x128) + 0x84);
+        uStack_d0 = CONCAT44((float)((ulong)uVar18 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
+                             (float)uVar18 - (float)uStack_d8);
                     /* try { // try from 003892a8 to 003892cf has its CatchHandler @ 003894c0 */
-        func_0x00169c00(uVar18,param_2,uVar6,&lStack_108,&fStack_f0,&uStack_118,&uStack_d8,
-                        &uStack_f8,0);
+        func_0x00169c00(uVar17);
         FUN_00166b20(&lStack_108);
-        if (iVar15 == 0) {
-          func_0x00167d50(&uStack_d8,param_1);
-          uStack_b8._0_4_ = fVar21 + (float)uStack_d8;
-          uStack_b8._4_4_ = fVar20 + uStack_d8._4_4_;
+        if (iVar14 == 0) {
+          func_0x00167d50(&uStack_d8,p0);
+          uStack_b8._0_4_ = fVar20 + (float)uStack_d8;
+          uStack_b8._4_4_ = fVar19 + uStack_d8._4_4_;
         }
-        else if (iVar7 == iVar15) {
-          func_0x00167d50(&uStack_d8,param_1);
-          fStack_c0 = fVar21 + (float)uStack_d8;
-          fStack_bc = fVar20 + uStack_d8._4_4_;
+        else if (iVar6 == iVar14) {
+          func_0x00167d50(&uStack_d8,p0);
+          fStack_c0 = fVar20 + (float)uStack_d8;
+          fStack_bc = fVar19 + uStack_d8._4_4_;
         }
-        bVar1 = iVar15 < iVar7;
-        iVar15 = iVar15 + 1;
+        bVar1 = iVar14 < iVar6;
+        iVar14 = iVar14 + 1;
       } while (bVar1);
     }
   }
-  fVar21 = *(float *)(param_1 + 0x170);
-  fVar17 = *(float *)(param_1 + 0x174);
-  fVar24 = *(float *)(param_1 + 0x17c);
-  fVar23 = *(float *)(param_1 + 0x178);
-  fVar22 = *(float *)(param_1 + 0x150);
-  fVar16 = (float)func_0x0016ee90(uVar18);
-  fVar20 = (float)func_0x00174170(uVar18);
-  lStack_128 = *(long *)(param_1 + 0x118);
-  piStack_120 = *(int **)(param_1 + 0x120);
-  uVar6 = *(undefined4 *)(param_1 + 0x80);
+  fVar21 = *(float *)(p0 + 0x170);
+  fVar23 = *(float *)(p0 + 0x174);
+  fVar22 = *(float *)(p0 + 0x17c);
+  fVar20 = *(float *)(p0 + 0x178);
+  fVar16 = *(float *)(p0 + 0x150);
+  fVar15 = (float)func_0x0016ee90(uVar17);
+  fVar19 = (float)func_0x00174170(uVar17);
+  lStack_128 = *(long *)(p0 + 0x118);
+  piStack_120 = *(int **)(p0 + 0x120);
   if (lStack_128 != 0) {
     *piStack_120 = *piStack_120 + 1;
   }
                     /* try { // try from 00389374 to 0038937f has its CatchHandler @ 0038949c */
-  func_0x00167d50(&fStack_c0,param_1);
-  fVar17 = fVar17 - fVar21;
-  fVar22 = fVar22 * ((fVar23 * (float)(int)((fVar21 + fVar17 * fVar24) / fVar23) - fVar21) / fVar17
-                    + -0.5);
-  uStack_b8 = CONCAT44(fVar16 * 0.0 + fVar22 * fVar20 +
-                       fStack_bc + (float)((ulong)*(undefined8 *)(param_1 + 0xf0) >> 0x20),
-                       (fVar22 * fVar16 - fVar20 * 0.0) +
-                       fStack_c0 + (float)*(undefined8 *)(param_1 + 0xf0));
-  uStack_c8 = *(undefined8 *)(param_1 + 0x148);
-  uStack_d8 = *(undefined8 *)(*(long *)(param_1 + 0x118) + 0x8c);
-  uVar19 = *(undefined8 *)(*(long *)(param_1 + 0x118) + 0x84);
-  uStack_d0 = CONCAT44((float)((ulong)uVar19 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
-                       (float)uVar19 - (float)uStack_d8);
+  func_0x00167d50(&fStack_c0,p0);
+  fVar16 = fVar16 * ((fVar20 * (float)(int)((fVar21 + (fVar23 - fVar21) * fVar22) / fVar20) - fVar21
+                     ) / (fVar23 - fVar21) + -0.5);
+  uStack_b8 = CONCAT44(fVar15 * 0.0 + fVar16 * fVar19 +
+                       fStack_bc + (float)((ulong)*(undefined8 *)(p0 + 0xf0) >> 0x20),
+                       (fVar16 * fVar15 - fVar19 * 0.0) +
+                       fStack_c0 + (float)*(undefined8 *)(p0 + 0xf0));
+  uStack_c8 = *(undefined8 *)(p0 + 0x148);
+  uStack_d8 = *(undefined8 *)(*(long *)(p0 + 0x118) + 0x8c);
+  uVar18 = *(undefined8 *)(*(long *)(p0 + 0x118) + 0x84);
+  uStack_d0 = CONCAT44((float)((ulong)uVar18 >> 0x20) - (float)((ulong)uStack_d8 >> 0x20),
+                       (float)uVar18 - (float)uStack_d8);
                     /* try { // try from 00389414 to 00389437 has its CatchHandler @ 00389498 */
-  func_0x00169c00((float)uVar18 + *(float *)(param_1 + 0x188),param_2,uVar6,&lStack_128,&uStack_b8,
-                  &uStack_c8,&uStack_d8,&uStack_a0,0);
+  func_0x00169c00((float)uVar17 + *(float *)(p0 + 0x188));
   FUN_00166b20(&lStack_128);
-  FUN_001722b0(param_1,param_2);
-  if (*(long *)(lVar9 + 0x28) == lStack_98) {
+  FUN_001722b0(p0);
+  if (*(long *)(lVar8 + 0x28) == lStack_98) {
     return;
   }
   FUN_00164ff0();
@@ -607,10 +602,12 @@ void Walaber::Widget_Slider::draw(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Slider::linkScrollSet(Walaber::Widget_ScrollableSet*) */
 
-void Walaber::Widget_Slider::linkScrollSet(long param_1,undefined8 param_2)
+void Walaber::Widget_Slider::linkScrollSet(Walaber__Widget_ScrollableSet *p0)
 
 {
-  *(undefined8 *)(param_1 + 0x1a0) = param_2;
+  undefined8 in_x1;
+  
+  *(undefined8 *)(p0 + 0x1a0) = in_x1;
   return;
 }
 
@@ -622,12 +619,14 @@ void Walaber::Widget_Slider::linkScrollSet(long param_1,undefined8 param_2)
 
 /* Walaber::Widget_Slider::setValue(float) */
 
-void Walaber::Widget_Slider::setValue(float param_1,long param_2)
+void Walaber::Widget_Slider::setValue(float p0)
 
 {
-  *(float *)(param_2 + 0x17c) =
-       (*(float *)(param_2 + 0x178) * (float)(int)(param_1 / *(float *)(param_2 + 0x178)) -
-       *(float *)(param_2 + 0x170)) / (*(float *)(param_2 + 0x174) - *(float *)(param_2 + 0x170));
+  long in_x0;
+  
+  *(float *)(in_x0 + 0x17c) =
+       (*(float *)(in_x0 + 0x178) * (float)(int)(p0 / *(float *)(in_x0 + 0x178)) -
+       *(float *)(in_x0 + 0x170)) / (*(float *)(in_x0 + 0x174) - *(float *)(in_x0 + 0x170));
   return;
 }
 
@@ -639,61 +638,66 @@ void Walaber::Widget_Slider::setValue(float param_1,long param_2)
 
 /* Walaber::Widget_Slider::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Slider::acceptNewFingerDown(long param_1,undefined8 param_2,long param_3)
+void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
   long lVar1;
-  undefined8 uVar2;
-  float fVar3;
+  ulong uVar2;
+  undefined8 uVar3;
+  Walaber__FingerInfo *extraout_x1;
+  long in_x2;
   float fVar4;
   float fVar5;
   float fVar6;
+  float fVar7;
   float fStack_50;
   float fStack_4c;
   long lStack_48;
   
+  uVar2 = (ulong)(uint)p0;
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if ((*(char *)(param_1 + 0x8d) == '\0') || (*(long *)(param_1 + 0x100) != 0)) {
-    uVar2 = 0;
+  if ((*(char *)(uVar2 + 0x8d) == '\0') || (*(long *)(uVar2 + 0x100) != 0)) {
+    uVar3 = 0;
     goto LAB_00389654;
   }
-  *(long *)(param_1 + 0x100) = param_3;
-  uVar2 = func_0x00164620(param_1);
-  fVar3 = *(float *)(param_1 + 0x170);
-  fVar4 = *(float *)(param_1 + 0x174) - fVar3;
-  fVar6 = *(float *)(param_1 + 0x150) *
-          ((*(float *)(param_1 + 0x178) *
-            (float)(int)((fVar3 + fVar4 * *(float *)(param_1 + 0x17c)) / *(float *)(param_1 + 0x178)
-                        ) - fVar3) / fVar4 + -0.5);
-  fVar3 = (float)func_0x0016ee90(uVar2);
-  fVar4 = (float)func_0x00174170(uVar2);
-  func_0x00167d50(&fStack_50,param_1);
-  fVar5 = *(float *)(param_3 + 4) - (fStack_50 + (fVar3 * fVar6 - fVar4 * 0.0));
-  fVar3 = *(float *)(param_3 + 8) - (fStack_4c + fVar3 * 0.0 + fVar4 * fVar6);
-  fVar4 = fVar5;
-  if (fVar5 < 0.0) {
-    fVar4 = -fVar5;
+  *(long *)(uVar2 + 0x100) = in_x2;
+  uVar3 = func_0x00164620(uVar2);
+  fVar4 = *(float *)(uVar2 + 0x170);
+  fVar5 = *(float *)(uVar2 + 0x174) - fVar4;
+  fVar7 = *(float *)(uVar2 + 0x150) *
+          ((*(float *)(uVar2 + 0x178) *
+            (float)(int)((fVar4 + fVar5 * *(float *)(uVar2 + 0x17c)) / *(float *)(uVar2 + 0x178)) -
+           fVar4) / fVar5 + -0.5);
+  fVar4 = (float)func_0x0016ee90(uVar3);
+  fVar5 = (float)func_0x00174170(uVar3);
+  func_0x00167d50(&fStack_50,uVar2);
+  fVar6 = *(float *)(in_x2 + 4) - (fStack_50 + (fVar4 * fVar7 - fVar5 * 0.0));
+  fVar4 = *(float *)(in_x2 + 8) - (fStack_4c + fVar4 * 0.0 + fVar5 * fVar7);
+  fVar5 = fVar6;
+  if (fVar6 < 0.0) {
+    fVar5 = -fVar6;
   }
-  *(float *)(param_1 + 0x168) = fVar5;
-  *(float *)(param_1 + 0x16c) = fVar3;
-  if (*(float *)(param_1 + 0x148) < fVar4) {
+  *(float *)(uVar2 + 0x168) = fVar6;
+  *(float *)(uVar2 + 0x16c) = fVar4;
+  if (*(float *)(uVar2 + 0x148) < fVar5) {
 LAB_00389638:
-    *(undefined8 *)(param_1 + 0x168) = 0;
+    *(undefined8 *)(uVar2 + 0x168) = 0;
   }
   else {
-    if (fVar3 < 0.0) {
-      fVar3 = -fVar3;
+    if (fVar4 < 0.0) {
+      fVar4 = -fVar4;
     }
-    if (*(float *)(param_1 + 0x14c) < fVar3) goto LAB_00389638;
+    if (*(float *)(uVar2 + 0x14c) < fVar4) goto LAB_00389638;
   }
-  func_0x0016d350(param_1);
-  uVar2 = 1;
+  func_0x0016d350(uVar2);
+  uVar3 = 1;
+  p1 = extraout_x1;
 LAB_00389654:
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
-  FUN_00164ff0(uVar2);
+  FUN_00164ff0(uVar3,p1);
   return;
 }
 
@@ -778,7 +782,7 @@ void Walaber::Widget_Slider::_setValue(long param_1)
 
 /* Walaber::Widget_Slider::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Slider::acceptNewFingerEntered(void)
+undefined8 Walaber::Widget_Slider::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
   return 0;
@@ -792,10 +796,10 @@ undefined8 Walaber::Widget_Slider::acceptNewFingerEntered(void)
 
 /* Walaber::Widget_Slider::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Slider::releaseFingerStayed(long param_1)
+undefined8 Walaber::Widget_Slider::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) != 0) {
+  if (*(long *)((ulong)(uint)p0 + 0x100) != 0) {
     func_0x0016d350();
   }
   return 0;
@@ -809,10 +813,10 @@ undefined8 Walaber::Widget_Slider::releaseFingerStayed(long param_1)
 
 /* Walaber::Widget_Slider::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Slider::releaseFingerMoved(long param_1)
+undefined8 Walaber::Widget_Slider::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) != 0) {
+  if (*(long *)((ulong)(uint)p0 + 0x100) != 0) {
     func_0x0016d350();
   }
   return 0;
@@ -826,11 +830,11 @@ undefined8 Walaber::Widget_Slider::releaseFingerMoved(long param_1)
 
 /* Walaber::Widget_Slider::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Slider::releaseFingerUp(long param_1)
+void Walaber::Widget_Slider::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) != 0) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
+  if (*(long *)((ulong)(uint)p0 + 0x100) != 0) {
+    *(undefined8 *)((ulong)(uint)p0 + 0x100) = 0;
   }
   return;
 }
@@ -843,10 +847,10 @@ void Walaber::Widget_Slider::releaseFingerUp(long param_1)
 
 /* Walaber::Widget_Slider::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Slider::releaseFingerLeft(long param_1)
+undefined8 Walaber::Widget_Slider::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) != 0) {
+  if (*(long *)((ulong)(uint)p0 + 0x100) != 0) {
     func_0x0016d350();
     return 0;
   }
@@ -861,11 +865,11 @@ undefined8 Walaber::Widget_Slider::releaseFingerLeft(long param_1)
 
 /* Walaber::Widget_Slider::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Slider::notifyFingerLost(long param_1)
+void Walaber::Widget_Slider::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 {
-  if (*(long *)(param_1 + 0x100) != 0) {
-    *(undefined8 *)(param_1 + 0x100) = 0;
+  if (*(long *)((ulong)(uint)p0 + 0x100) != 0) {
+    *(undefined8 *)((ulong)(uint)p0 + 0x100) = 0;
   }
   return;
 }

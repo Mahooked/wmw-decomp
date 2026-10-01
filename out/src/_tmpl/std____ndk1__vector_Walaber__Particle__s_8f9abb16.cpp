@@ -10,16 +10,18 @@
    >::vector(unsigned long) */
 
 void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::vector
-               (undefined8 *param_1,long param_2)
+               (ulong p0)
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if (param_2 != 0) {
+  long in_x1;
+  
+  *(undefined8 *)p0 = 0;
+  *(undefined8 *)(p0 + 8) = 0;
+  *(undefined8 *)(p0 + 0x10) = 0;
+  if (in_x1 != 0) {
                     /* try { // try from 003936f4 to 00393703 has its CatchHandler @ 00393710 */
     func_0x0016d2c0();
-    func_0x0016ae50(param_1,param_2);
+    func_0x0016ae50(p0);
   }
   return;
 }
@@ -34,19 +36,20 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
    >::__vallocate(unsigned long) */
 
 void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__vallocate
-               (long *param_1,ulong param_2)
+               (ulong p0)
 
 {
   long lVar1;
+  ulong in_x1;
   
-  if (param_2 < 0x234f72c234f72c3) {
-    lVar1 = FUN_00164060(param_2 * 0x74);
-    *param_1 = lVar1;
-    param_1[1] = lVar1;
-    param_1[2] = lVar1 + param_2 * 0x74;
+  if (in_x1 < 0x234f72c234f72c3) {
+    lVar1 = FUN_00164060(in_x1 * 0x74);
+    *(long *)p0 = lVar1;
+    *(long *)(p0 + 8) = lVar1;
+    *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x74;
     return;
   }
-  FUN_001705a0(param_1);
+  FUN_001705a0(p0);
   return;
 }
 
@@ -60,12 +63,13 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
    >::__construct_at_end(unsigned long) */
 
 void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::
-     __construct_at_end(long param_1,long param_2)
+     __construct_at_end(ulong p0)
 
 {
+  long in_x1;
   undefined8 *puVar1;
   
-  puVar1 = *(undefined8 **)(param_1 + 8);
+  puVar1 = *(undefined8 **)(p0 + 8);
   do {
     puVar1[1] = 0;
     *puVar1 = 0;
@@ -84,10 +88,10 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
     *(undefined2 *)(puVar1 + 0xe) = 0;
     puVar1[0xc] = 0;
     puVar1[0xd] = 0;
-    param_2 = param_2 + -1;
-    puVar1 = (undefined8 *)(*(long *)(param_1 + 8) + 0x74);
-    *(undefined8 **)(param_1 + 8) = puVar1;
-  } while (param_2 != 0);
+    in_x1 = in_x1 + -1;
+    puVar1 = (undefined8 *)(*(long *)(p0 + 8) + 0x74);
+    *(undefined8 **)(p0 + 8) = puVar1;
+  } while (in_x1 != 0);
   return;
 }
 
@@ -119,7 +123,7 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
   undefined8 uVar11;
   undefined8 uVar12;
   undefined8 uVar13;
-  long lStack_90;
+  void *pvStack_90;
   long lStack_88;
   long lStack_80;
   long lStack_68;
@@ -141,17 +145,17 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
          (uVar4 = lVar5 * 0x69ee58469ee5846a, uVar3 = uVar6, uVar6 <= uVar4)) {
         uVar3 = uVar4;
       }
-      func_0x0016bb30(&lStack_90,uVar3,((long)param_2 - lVar7 >> 2) * 0x34f72c234f72c235,param_1 + 2
-                     );
+      func_0x0016bb30(&pvStack_90,uVar3,((long)param_2 - lVar7 >> 2) * 0x34f72c234f72c235,
+                      param_1 + 2);
                     /* try { // try from 00393c2c to 00393c4b has its CatchHandler @ 00393e20 */
-      func_0x001677b0(&lStack_90,param_3,param_4);
-      param_2 = (undefined8 *)func_0x0016a550(param_1,&lStack_90,param_2);
+      func_0x001677b0(&pvStack_90,param_3,param_4);
+      param_2 = (undefined8 *)func_0x0016a550(param_1,&pvStack_90,param_2);
       if (lStack_80 != lStack_88) {
         lStack_80 = lStack_80 +
                     ((ulong)((lStack_80 + -0x74) - lStack_88) / 0x74 ^ 0xffffffffffffffff) * 0x74;
       }
-      if (lStack_90 != 0) {
-        FUN_00166120();
+      if (pvStack_90 != (void *)0x0) {
+        FUN_00166120(pvStack_90);
       }
     }
     else {
@@ -236,66 +240,70 @@ LAB_00393de0:
    >::__move_range(Walaber::Particle*, Walaber::Particle*, Walaber::Particle*) */
 
 void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::__move_range
-               (long param_1,long param_2,ulong param_3,long param_4)
+               (Walaber__Particle *p0,Walaber__Particle *p1,Walaber__Particle *p2)
 
 {
-  ulong uVar1;
-  long lVar2;
+  Walaber__Particle *pWVar1;
+  Walaber__Particle *pWVar2;
   long lVar3;
+  long in_x3;
   long lVar4;
-  undefined8 uVar5;
-  long lVar6;
-  undefined8 uVar7;
-  undefined8 uVar8;
+  long lVar5;
+  undefined8 uVar6;
+  long lVar7;
+  long lVar8;
   undefined8 uVar9;
+  undefined8 uVar10;
+  undefined8 uVar11;
   
-  lVar6 = *(long *)(param_1 + 8);
-  param_4 = lVar6 - param_4;
-  lVar4 = lVar6;
-  for (uVar1 = param_2 + param_4; uVar1 < param_3; uVar1 = uVar1 + 0x74) {
-    func_0x00162820(lVar4,uVar1);
-    *(undefined8 *)(lVar4 + 0x38) = *(undefined8 *)(uVar1 + 0x38);
-    *(undefined8 *)(lVar4 + 0x40) = *(undefined8 *)(uVar1 + 0x40);
-    *(undefined8 *)(lVar4 + 0x48) = *(undefined8 *)(uVar1 + 0x48);
-    uVar7 = *(undefined8 *)(uVar1 + 0x58);
-    uVar5 = *(undefined8 *)(uVar1 + 0x50);
-    uVar9 = *(undefined8 *)(uVar1 + 0x68);
-    uVar8 = *(undefined8 *)(uVar1 + 0x60);
-    *(undefined2 *)(lVar4 + 0x70) = *(undefined2 *)(uVar1 + 0x70);
-    *(undefined8 *)(lVar4 + 0x58) = uVar7;
-    *(undefined8 *)(lVar4 + 0x50) = uVar5;
-    *(undefined8 *)(lVar4 + 0x68) = uVar9;
-    *(undefined8 *)(lVar4 + 0x60) = uVar8;
-    lVar4 = *(long *)(param_1 + 8) + 0x74;
-    *(long *)(param_1 + 8) = lVar4;
+  lVar7 = *(long *)(p0 + 8);
+  lVar8 = lVar7 - in_x3;
+  pWVar2 = p1 + lVar8;
+  lVar4 = lVar7;
+  for (pWVar1 = pWVar2; pWVar1 < p2; pWVar1 = pWVar1 + 0x74) {
+    func_0x00162820(lVar4,pWVar1);
+    *(undefined8 *)(lVar4 + 0x38) = *(undefined8 *)(pWVar1 + 0x38);
+    *(undefined8 *)(lVar4 + 0x40) = *(undefined8 *)(pWVar1 + 0x40);
+    *(undefined8 *)(lVar4 + 0x48) = *(undefined8 *)(pWVar1 + 0x48);
+    uVar9 = *(undefined8 *)(pWVar1 + 0x58);
+    uVar6 = *(undefined8 *)(pWVar1 + 0x50);
+    uVar11 = *(undefined8 *)(pWVar1 + 0x68);
+    uVar10 = *(undefined8 *)(pWVar1 + 0x60);
+    *(undefined2 *)(lVar4 + 0x70) = *(undefined2 *)(pWVar1 + 0x70);
+    *(undefined8 *)(lVar4 + 0x58) = uVar9;
+    *(undefined8 *)(lVar4 + 0x50) = uVar6;
+    *(undefined8 *)(lVar4 + 0x68) = uVar11;
+    *(undefined8 *)(lVar4 + 0x60) = uVar10;
+    lVar4 = *(long *)(p0 + 8) + 0x74;
+    *(long *)(p0 + 8) = lVar4;
   }
-  if (param_4 != 0) {
+  if (lVar8 != 0) {
     lVar4 = 0;
     do {
-      lVar2 = param_2 + param_4 + lVar4;
-      lVar3 = lVar6 + lVar4;
-      lVar4 = lVar4 + -0x74;
-      *(undefined8 *)(lVar3 + -0x74) = *(undefined8 *)(lVar2 + -0x74);
-      *(undefined8 *)(lVar3 + -0x6c) = *(undefined8 *)(lVar2 + -0x6c);
-      *(undefined8 *)(lVar3 + -100) = *(undefined8 *)(lVar2 + -100);
-      *(undefined8 *)(lVar3 + -0x5c) = *(undefined8 *)(lVar2 + -0x5c);
-      *(undefined8 *)(lVar3 + -0x54) = *(undefined8 *)(lVar2 + -0x54);
-      uVar5 = *(undefined8 *)(lVar2 + -0x4c);
-      *(undefined8 *)(lVar3 + -0x46) = *(undefined8 *)(lVar2 + -0x46);
-      *(undefined8 *)(lVar3 + -0x4c) = uVar5;
-      *(undefined8 *)(lVar3 + -0x3c) = *(undefined8 *)(lVar2 + -0x3c);
-      *(undefined8 *)(lVar3 + -0x34) = *(undefined8 *)(lVar2 + -0x34);
-      *(undefined8 *)(lVar3 + -0x2c) = *(undefined8 *)(lVar2 + -0x2c);
-      uVar7 = *(undefined8 *)(lVar2 + -0xc);
-      uVar5 = *(undefined8 *)(lVar2 + -0x14);
-      uVar9 = *(undefined8 *)(lVar2 + -0x1c);
-      uVar8 = *(undefined8 *)(lVar2 + -0x24);
-      *(undefined2 *)(lVar3 + -4) = *(undefined2 *)(lVar2 + -4);
-      *(undefined8 *)(lVar3 + -0xc) = uVar7;
-      *(undefined8 *)(lVar3 + -0x14) = uVar5;
-      *(undefined8 *)(lVar3 + -0x1c) = uVar9;
-      *(undefined8 *)(lVar3 + -0x24) = uVar8;
-    } while ((param_4 >> 2) * -4 - lVar4 != 0);
+      lVar3 = lVar7 + lVar4;
+      lVar5 = lVar4 + -0x74;
+      *(undefined8 *)(lVar3 + -0x74) = *(undefined8 *)(pWVar2 + lVar4 + -0x74);
+      *(undefined8 *)(lVar3 + -0x6c) = *(undefined8 *)(pWVar2 + lVar4 + -0x6c);
+      *(undefined8 *)(lVar3 + -100) = *(undefined8 *)(pWVar2 + lVar4 + -100);
+      *(undefined8 *)(lVar3 + -0x5c) = *(undefined8 *)(pWVar2 + lVar4 + -0x5c);
+      *(undefined8 *)(lVar3 + -0x54) = *(undefined8 *)(pWVar2 + lVar4 + -0x54);
+      uVar6 = *(undefined8 *)(pWVar2 + lVar4 + -0x4c);
+      *(undefined8 *)(lVar3 + -0x46) = *(undefined8 *)(pWVar2 + lVar4 + -0x46);
+      *(undefined8 *)(lVar3 + -0x4c) = uVar6;
+      *(undefined8 *)(lVar3 + -0x3c) = *(undefined8 *)(pWVar2 + lVar4 + -0x3c);
+      *(undefined8 *)(lVar3 + -0x34) = *(undefined8 *)(pWVar2 + lVar4 + -0x34);
+      *(undefined8 *)(lVar3 + -0x2c) = *(undefined8 *)(pWVar2 + lVar4 + -0x2c);
+      uVar9 = *(undefined8 *)(pWVar2 + lVar4 + -0xc);
+      uVar6 = *(undefined8 *)(pWVar2 + lVar4 + -0x14);
+      uVar11 = *(undefined8 *)(pWVar2 + lVar4 + -0x1c);
+      uVar10 = *(undefined8 *)(pWVar2 + lVar4 + -0x24);
+      *(undefined2 *)(lVar3 + -4) = *(undefined2 *)(pWVar2 + lVar4 + -4);
+      *(undefined8 *)(lVar3 + -0xc) = uVar9;
+      *(undefined8 *)(lVar3 + -0x14) = uVar6;
+      *(undefined8 *)(lVar3 + -0x1c) = uVar11;
+      *(undefined8 *)(lVar3 + -0x24) = uVar10;
+      lVar4 = lVar5;
+    } while ((lVar8 >> 2) * -4 - lVar5 != 0);
   }
   return;
 }

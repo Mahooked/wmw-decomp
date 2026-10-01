@@ -15,7 +15,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 {
   *param_1 = &PTR__basic_stringbuf_007111c8;
   if ((*(byte *)(param_1 + 8) & 1) != 0) {
-    FUN_00166120(param_1[10]);
+    FUN_00166120((void *)param_1[10]);
   }
   *param_1 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(param_1 + 1);
@@ -37,7 +37,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
 {
   *param_1 = &PTR__basic_stringbuf_007111c8;
   if ((*(byte *)(param_1 + 8) & 1) != 0) {
-    FUN_00166120(param_1[10]);
+    FUN_00166120((void *)param_1[10]);
   }
   *param_1 = &PTR__basic_streambuf_00710968;
   FUN_0016e360(param_1 + 1);
@@ -171,31 +171,34 @@ ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__nd
    >::pbackfail(int) */
 
 uint std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::pbackfail(long param_1,uint param_2)
+     ::pbackfail(int p0)
 
 {
   ulong uVar1;
+  uint in_w1;
   ulong uVar2;
+  ulong uVar3;
   
-  uVar2 = *(ulong *)(param_1 + 0x30);
-  uVar1 = *(ulong *)(param_1 + 0x58);
-  if (*(ulong *)(param_1 + 0x58) < uVar2) {
-    *(ulong *)(param_1 + 0x58) = uVar2;
-    uVar1 = uVar2;
+  uVar1 = (ulong)(uint)p0;
+  uVar3 = *(ulong *)(uVar1 + 0x30);
+  uVar2 = *(ulong *)(uVar1 + 0x58);
+  if (*(ulong *)(uVar1 + 0x58) < uVar3) {
+    *(ulong *)(uVar1 + 0x58) = uVar3;
+    uVar2 = uVar3;
   }
-  uVar2 = *(ulong *)(param_1 + 0x18);
-  if (*(ulong *)(param_1 + 0x10) < uVar2) {
-    if (param_2 == 0xffffffff) {
-      *(ulong *)(param_1 + 0x18) = uVar2 - 1;
-      *(ulong *)(param_1 + 0x20) = uVar1;
+  uVar3 = *(ulong *)(uVar1 + 0x18);
+  if (*(ulong *)(uVar1 + 0x10) < uVar3) {
+    if (in_w1 == 0xffffffff) {
+      *(ulong *)(uVar1 + 0x18) = uVar3 - 1;
+      *(ulong *)(uVar1 + 0x20) = uVar2;
       return 0;
     }
-    if (((*(byte *)(param_1 + 0x60) >> 4 & 1) != 0) ||
-       ((uint)*(byte *)(uVar2 - 1) == (param_2 & 0xff))) {
-      *(undefined1 **)(param_1 + 0x18) = (undefined1 *)(uVar2 - 1);
-      *(ulong *)(param_1 + 0x20) = uVar1;
-      *(undefined1 *)(uVar2 - 1) = (char)param_2;
-      return param_2;
+    if (((*(byte *)(uVar1 + 0x60) >> 4 & 1) != 0) || ((uint)*(byte *)(uVar3 - 1) == (in_w1 & 0xff)))
+    {
+      *(undefined1 **)(uVar1 + 0x18) = (undefined1 *)(uVar3 - 1);
+      *(ulong *)(uVar1 + 0x20) = uVar2;
+      *(undefined1 *)(uVar3 - 1) = (char)in_w1;
+      return in_w1;
     }
   }
   return 0xffffffff;
@@ -211,94 +214,97 @@ uint std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
    >::overflow(int) */
 
 ulong std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-      ::overflow(long *param_1,uint param_2)
+      ::overflow(int p0)
 
 {
   undefined1 **ppuVar1;
   long lVar2;
   long lVar3;
-  ulong uVar4;
-  long lVar5;
-  undefined1 *puVar6;
+  long *plVar4;
+  ulong uVar5;
+  uint in_w1;
+  long lVar6;
   undefined1 *puVar7;
-  long lVar8;
-  ulong *puVar9;
-  undefined1 *puVar10;
-  long lVar11;
+  undefined1 *puVar8;
+  long lVar9;
+  ulong *puVar10;
+  undefined1 *puVar11;
+  long lVar12;
   undefined1 *puStack_68;
   
-  if (param_2 == 0xffffffff) {
-    uVar4 = 0;
+  plVar4 = (long *)(ulong)(uint)p0;
+  if (in_w1 == 0xffffffff) {
+    uVar5 = 0;
   }
   else {
-    puVar10 = (undefined1 *)param_1[6];
-    puVar6 = (undefined1 *)param_1[7];
-    lVar2 = param_1[2];
-    lVar3 = param_1[3];
-    if (puVar10 == puVar6) {
-      if ((*(byte *)(param_1 + 0xc) >> 4 & 1) == 0) {
+    puVar11 = (undefined1 *)plVar4[6];
+    puVar7 = (undefined1 *)plVar4[7];
+    lVar2 = plVar4[2];
+    lVar3 = plVar4[3];
+    if (puVar11 == puVar7) {
+      if ((*(byte *)(plVar4 + 0xc) >> 4 & 1) == 0) {
         return 0xffffffff;
       }
-      lVar8 = param_1[0xb];
-      lVar11 = param_1[5];
-      puVar9 = (ulong *)(param_1 + 8);
+      lVar9 = plVar4[0xb];
+      lVar12 = plVar4[5];
+      puVar10 = (ulong *)(plVar4 + 8);
                     /* try { // try from 003f963c to 003f966f has its CatchHandler @ 003f9758 */
-      FUN_001639b0(puVar9,0);
-      if ((*puVar9 & 1) == 0) {
-        lVar5 = 0x16;
+      FUN_001639b0(puVar10,0);
+      if ((*puVar10 & 1) == 0) {
+        lVar6 = 0x16;
       }
       else {
-        lVar5 = (*puVar9 & 0xfffffffffffffffe) - 1;
+        lVar6 = (*puVar10 & 0xfffffffffffffffe) - 1;
       }
-      func_0x0016d610(puVar9,lVar5,0);
-      if (((byte)*puVar9 & 1) == 0) {
-        lVar5 = (long)param_1 + 0x41;
-        uVar4 = (ulong)(byte)((byte)*puVar9 >> 1);
+      func_0x0016d610(puVar10,lVar6,0);
+      if (((byte)*puVar10 & 1) == 0) {
+        lVar6 = (long)plVar4 + 0x41;
+        uVar5 = (ulong)(byte)((byte)*puVar10 >> 1);
       }
       else {
-        uVar4 = param_1[9];
-        lVar5 = param_1[10];
+        uVar5 = plVar4[9];
+        lVar6 = plVar4[10];
       }
-      puVar6 = (undefined1 *)(lVar5 + uVar4);
-      puVar10 = puVar10 + (lVar5 - lVar11);
-      puVar7 = (undefined1 *)(lVar5 + (lVar8 - lVar11));
-      param_1[6] = (long)puVar10;
-      param_1[7] = (long)puVar6;
-      param_1[5] = lVar5;
-      param_1[0xb] = (long)puVar7;
+      puVar7 = (undefined1 *)(lVar6 + uVar5);
+      puVar11 = puVar11 + (lVar6 - lVar12);
+      puVar8 = (undefined1 *)(lVar6 + (lVar9 - lVar12));
+      plVar4[6] = (long)puVar11;
+      plVar4[7] = (long)puVar7;
+      plVar4[5] = lVar6;
+      plVar4[0xb] = (long)puVar8;
     }
     else {
-      puVar7 = (undefined1 *)param_1[0xb];
+      puVar8 = (undefined1 *)plVar4[0xb];
     }
-    puStack_68 = puVar10 + 1;
-    ppuVar1 = (undefined1 **)(param_1 + 0xb);
-    if (puVar7 <= puStack_68) {
+    puStack_68 = puVar11 + 1;
+    ppuVar1 = (undefined1 **)(plVar4 + 0xb);
+    if (puVar8 <= puStack_68) {
       ppuVar1 = &puStack_68;
     }
-    puVar7 = *ppuVar1;
-    param_1[0xb] = (long)puVar7;
-    if ((*(byte *)(param_1 + 0xc) >> 3 & 1) != 0) {
-      if ((*(byte *)(param_1 + 8) & 1) == 0) {
-        lVar8 = (long)param_1 + 0x41;
+    puVar8 = *ppuVar1;
+    plVar4[0xb] = (long)puVar8;
+    if ((*(byte *)(plVar4 + 0xc) >> 3 & 1) != 0) {
+      if ((*(byte *)(plVar4 + 8) & 1) == 0) {
+        lVar9 = (long)plVar4 + 0x41;
       }
       else {
-        lVar8 = param_1[10];
+        lVar9 = plVar4[10];
       }
-      param_1[2] = lVar8;
-      param_1[3] = lVar8 + (lVar3 - lVar2);
-      param_1[4] = (long)puVar7;
+      plVar4[2] = lVar9;
+      plVar4[3] = lVar9 + (lVar3 - lVar2);
+      plVar4[4] = (long)puVar8;
     }
-    if (puVar10 == puVar6) {
+    if (puVar11 == puVar7) {
                     /* WARNING: Could not recover jumptable at 0x003f9754. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-      uVar4 = (**(code **)(*param_1 + 0x68))(param_1,param_2 & 0xff);
-      return uVar4;
+      uVar5 = (**(code **)(*plVar4 + 0x68))(plVar4,in_w1 & 0xff);
+      return uVar5;
     }
-    uVar4 = (ulong)(param_2 & 0xff);
-    param_1[6] = (long)puStack_68;
-    *puVar10 = (char)param_2;
+    uVar5 = (ulong)(in_w1 & 0xff);
+    plVar4[6] = (long)puStack_68;
+    *puVar11 = (char)in_w1;
   }
-  return uVar4;
+  return uVar5;
 }
 
 

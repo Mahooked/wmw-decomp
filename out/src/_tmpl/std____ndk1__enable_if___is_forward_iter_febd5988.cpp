@@ -15,59 +15,62 @@
 void std::__ndk1::
      vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
      ::__construct_at_end<Walaber::ScreenManager::ScreenOperationDetails*>
-               (long param_1,undefined8 *param_2,undefined8 *param_3)
+               (Walaber__ScreenManager__ScreenOperationDetails *p0,
+               Walaber__ScreenManager__ScreenOperationDetails *p1,ulong p2)
 
 {
   undefined4 uVar1;
   undefined8 *puVar2;
-  long *plVar3;
-  long *plVar4;
+  Walaber__ScreenManager__ScreenOperationDetails *pWVar3;
+  Walaber__ScreenManager__ScreenOperationDetails *pWVar4;
   long lVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
-  long *plVar8;
+  Walaber__ScreenManager__ScreenOperationDetails *pWVar8;
   
-  if (param_2 != param_3) {
-    puVar2 = *(undefined8 **)(param_1 + 8);
+  if (p1 != (Walaber__ScreenManager__ScreenOperationDetails *)p2) {
+    puVar2 = *(undefined8 **)(p0 + 8);
     do {
-      uVar1 = *(undefined4 *)(param_2 + 1);
-      uVar6 = *param_2;
+      uVar1 = *(undefined4 *)(p1 + 8);
+      uVar6 = *(undefined8 *)p1;
       puVar2[4] = 0;
       *(undefined4 *)(puVar2 + 1) = uVar1;
       *puVar2 = uVar6;
       puVar7 = puVar2 + 3;
       *puVar7 = 0;
       puVar2[2] = puVar7;
-      if ((long *)param_2[2] != param_2 + 3) {
-        plVar8 = (long *)param_2[2];
+      if (*(Walaber__ScreenManager__ScreenOperationDetails **)(p1 + 0x10) != p1 + 0x18) {
+        pWVar8 = *(Walaber__ScreenManager__ScreenOperationDetails **)(p1 + 0x10);
         do {
                     /* try { // try from 003f3c74 to 003f3c83 has its CatchHandler @ 003f3d08 */
-          func_0x0016d3f0(puVar2 + 2,puVar7,plVar8 + 4,plVar8 + 4);
-          plVar3 = (long *)plVar8[1];
-          if ((long *)plVar8[1] == (long *)0x0) {
-            plVar3 = plVar8 + 2;
-            plVar4 = (long *)*plVar3;
-            if ((long *)*plVar4 != plVar8) {
+          func_0x0016d3f0(puVar2 + 2,puVar7,pWVar8 + 0x20,pWVar8 + 0x20);
+          pWVar3 = *(Walaber__ScreenManager__ScreenOperationDetails **)(pWVar8 + 8);
+          if (*(Walaber__ScreenManager__ScreenOperationDetails **)(pWVar8 + 8) ==
+              (Walaber__ScreenManager__ScreenOperationDetails *)0x0) {
+            pWVar3 = pWVar8 + 0x10;
+            pWVar4 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar3;
+            if (*(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4 != pWVar8) {
               do {
-                lVar5 = *plVar3;
-                plVar3 = (long *)(lVar5 + 0x10);
-                plVar4 = (long *)*plVar3;
-              } while (*plVar4 != lVar5);
+                lVar5 = *(long *)pWVar3;
+                pWVar3 = (Walaber__ScreenManager__ScreenOperationDetails *)(lVar5 + 0x10);
+                pWVar4 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar3;
+              } while (*(long *)pWVar4 != lVar5);
             }
           }
           else {
             do {
-              plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
-            } while ((long *)*plVar4 != (long *)0x0);
+              pWVar4 = pWVar3;
+              pWVar3 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4;
+            } while (*(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4 !=
+                     (Walaber__ScreenManager__ScreenOperationDetails *)0x0);
           }
-          plVar8 = plVar4;
-        } while (plVar4 != param_2 + 3);
+          pWVar8 = pWVar4;
+        } while (pWVar4 != p1 + 0x18);
       }
-      param_2 = param_2 + 5;
-      puVar2 = (undefined8 *)(*(long *)(param_1 + 8) + 0x28);
-      *(undefined8 **)(param_1 + 8) = puVar2;
-    } while (param_2 != param_3);
+      p1 = p1 + 0x28;
+      puVar2 = (undefined8 *)(*(long *)(p0 + 8) + 0x28);
+      *(undefined8 **)(p0 + 8) = puVar2;
+    } while (p1 != (Walaber__ScreenManager__ScreenOperationDetails *)p2);
   }
   return;
 }

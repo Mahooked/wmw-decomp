@@ -44,27 +44,28 @@ void ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk::AbstractCommand*&) */
 
-bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(long param_1,undefined8 *param_2)
+bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk__AbstractCommand **p0)
 
 {
   long lVar1;
-  long *plVar2;
-  long lVar3;
+  ndk__AbstractCommand *p0_00;
+  undefined8 *in_x1;
+  ndk__AbstractCommand *pnVar2;
   
-  FUN_0016f820(param_1 + 0x20);
-  lVar3 = *(long *)(param_1 + 0x10);
-  if (lVar3 != 0) {
-    *param_2 = *(undefined8 *)(*(long *)(param_1 + 8) + 0x10);
-    plVar2 = *(long **)(param_1 + 8);
-    lVar1 = *plVar2;
-    *(long *)(lVar1 + 8) = plVar2[1];
-    *(long *)plVar2[1] = lVar1;
-    *(long *)(param_1 + 0x10) = lVar3 + -1;
-    FUN_00166120();
+  FUN_0016f820(p0 + 4);
+  pnVar2 = p0[2];
+  if (pnVar2 != (ndk__AbstractCommand *)0x0) {
+    *in_x1 = *(undefined8 *)(p0[1] + 0x10);
+    p0_00 = p0[1];
+    lVar1 = *(long *)p0_00;
+    *(long *)(lVar1 + 8) = *(long *)(p0_00 + 8);
+    **(long **)(p0_00 + 8) = lVar1;
+    p0[2] = pnVar2 + -1;
+    FUN_00166120(p0_00);
   }
                     /* try { // try from 002c3cc4 to 002c3ccb has its CatchHandler @ 002c3ce0 */
-  FUN_0016b1e0(param_1 + 0x20);
-  return lVar3 != 0;
+  FUN_0016b1e0(p0 + 4);
+  return pnVar2 != (ndk__AbstractCommand *)0x0;
 }
 
 

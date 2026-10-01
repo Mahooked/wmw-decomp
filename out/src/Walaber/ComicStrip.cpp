@@ -57,62 +57,78 @@ void Walaber::ComicStrip::ComicStrip(undefined8 *param_1)
 void Walaber::ComicStrip::~ComicStrip(long param_1)
 
 {
-  if (*(long *)(param_1 + 0x168) != 0) {
-    *(long *)(param_1 + 0x170) = *(long *)(param_1 + 0x168);
-    FUN_00166120();
+  void *pvVar1;
+  
+  pvVar1 = *(void **)(param_1 + 0x168);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x170) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x150) != 0) {
-    *(long *)(param_1 + 0x158) = *(long *)(param_1 + 0x150);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x150);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x158) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x138) != 0) {
-    *(long *)(param_1 + 0x140) = *(long *)(param_1 + 0x138);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x138);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x140) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x120) != 0) {
-    *(long *)(param_1 + 0x128) = *(long *)(param_1 + 0x120);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x120);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x128) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x108) != 0) {
-    *(long *)(param_1 + 0x110) = *(long *)(param_1 + 0x108);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x108);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x110) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0xf0) != 0) {
-    *(long *)(param_1 + 0xf8) = *(long *)(param_1 + 0xf0);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0xf0);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0xf8) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0xd8) != 0) {
-    *(long *)(param_1 + 0xe0) = *(long *)(param_1 + 0xd8);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0xd8);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0xe0) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0xc0) != 0) {
-    *(long *)(param_1 + 200) = *(long *)(param_1 + 0xc0);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0xc0);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 200) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0xa8) != 0) {
-    *(long *)(param_1 + 0xb0) = *(long *)(param_1 + 0xa8);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0xa8);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0xb0) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x88) != 0) {
-    *(long *)(param_1 + 0x90) = *(long *)(param_1 + 0x88);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x88);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x90) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x70) != 0) {
-    *(long *)(param_1 + 0x78) = *(long *)(param_1 + 0x70);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x70);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x78) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x58) != 0) {
-    *(long *)(param_1 + 0x60) = *(long *)(param_1 + 0x58);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x58);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x60) = pvVar1;
+    FUN_00166120(pvVar1);
   }
   func_0x0016e470(param_1 + 0x40);
-  if (*(long *)(param_1 + 0x28) != 0) {
-    *(long *)(param_1 + 0x30) = *(long *)(param_1 + 0x28);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x28);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x30) = pvVar1;
+    FUN_00166120(pvVar1);
   }
-  if (*(long *)(param_1 + 0x10) != 0) {
-    *(long *)(param_1 + 0x18) = *(long *)(param_1 + 0x10);
-    FUN_00166120();
+  pvVar1 = *(void **)(param_1 + 0x10);
+  if (pvVar1 != (void *)0x0) {
+    *(void **)(param_1 + 0x18) = pvVar1;
+    FUN_00166120(pvVar1);
     return;
   }
   return;
@@ -126,31 +142,36 @@ void Walaber::ComicStrip::~ComicStrip(long param_1)
 
 /* Walaber::ComicStrip::update(float) */
 
-void Walaber::ComicStrip::update(undefined8 param_1,int *param_2)
+void Walaber::ComicStrip::update(float p0)
 
 {
   long lVar1;
   int iVar2;
+  int *in_x0;
   ulong uVar3;
   long *plVar4;
   undefined8 uVar5;
   long lVar6;
+  void *p0_00;
+  int *piVar7;
+  undefined4 in_register_00005004;
   int aiStack_58 [2];
   undefined8 *puStack_50;
   long lStack_48;
   
+  uVar5 = CONCAT44(in_register_00005004,p0);
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  param_2[2] = (int)((float)param_2[2] + (float)param_1);
-  func_0x00168070(param_1,*(undefined8 *)(param_2 + 0x60));
-  func_0x0016c0b0(param_1,*(undefined8 *)(param_2 + 0x62));
-  uVar3 = func_0x0016f480(*(undefined8 *)(param_2 + 0x62));
+  in_x0[2] = (int)((float)in_x0[2] + p0);
+  func_0x00168070(uVar5,*(undefined8 *)(in_x0 + 0x60));
+  func_0x0016c0b0(uVar5,*(undefined8 *)(in_x0 + 0x62));
+  uVar3 = func_0x0016f480(*(undefined8 *)(in_x0 + 0x62));
   if ((uVar3 & 1) == 0) {
-    plVar4 = *(long **)(param_2 + 100);
-    iVar2 = *(int *)(*(long *)(param_2 + 0x48) + (long)*param_2 * 4 + -4);
+    plVar4 = *(long **)(in_x0 + 100);
+    iVar2 = *(int *)(*(long *)(in_x0 + 0x48) + (long)*in_x0 * 4 + -4);
     if (iVar2 == -1) {
       if (plVar4 == (long *)0x0) {
-        func_0x0016bcc0(param_2);
+        func_0x0016bcc0();
         goto LAB_003ee780;
       }
     }
@@ -158,50 +179,51 @@ void Walaber::ComicStrip::update(undefined8 param_1,int *param_2)
       puStack_50 = (undefined8 *)0x0;
       aiStack_58[0] = iVar2;
       func_0x0016f540(aiStack_58);
-      *(undefined8 **)(param_2 + 100) = puStack_50;
-      (**(code **)*puStack_50)(*(undefined4 *)(*(long *)(param_2 + 0x4e) + (long)*param_2 * 4 + -4))
-      ;
+      *(undefined8 **)(in_x0 + 100) = puStack_50;
+      (**(code **)*puStack_50)(*(undefined4 *)(*(long *)(in_x0 + 0x4e) + (long)*in_x0 * 4 + -4));
       goto LAB_003ee780;
     }
   }
   else {
 LAB_003ee780:
-    plVar4 = *(long **)(param_2 + 100);
+    plVar4 = *(long **)(in_x0 + 100);
     if (plVar4 == (long *)0x0) goto LAB_003ee834;
   }
-  iVar2 = (**(code **)(*plVar4 + 0x10))(param_1);
+  piVar7 = in_x0 + 100;
+  iVar2 = (**(code **)(*plVar4 + 0x10))(uVar5);
   if (iVar2 == 4) {
-    lVar6 = *(long *)(param_2 + 100);
-    if (lVar6 != 0) {
-      func_0x00166ac0(lVar6);
-      FUN_00166120(lVar6);
+    p0_00 = *(void **)piVar7;
+    if (p0_00 != (void *)0x0) {
+      func_0x00166ac0(p0_00);
+      FUN_00166120(p0_00);
     }
-    *(long *)(param_2 + 100) = 0;
+    piVar7[0] = 0;
+    piVar7[1] = 0;
   }
   else if (iVar2 == 2) {
-    func_0x0016bcc0(param_2);
+    func_0x0016bcc0();
   }
 LAB_003ee834:
-  lVar6 = (long)*param_2 + -1;
-  if ((param_2[0x28] < *(int *)(*(long *)(param_2 + 0x22) + lVar6 * 4)) &&
-     (*(float *)(*(long *)(param_2 + 0x1c) + (long)(param_2[0x29] + param_2[0x28]) * 4) <=
-      (float)param_2[2])) {
+  lVar6 = (long)*in_x0 + -1;
+  if ((in_x0[0x28] < *(int *)(*(long *)(in_x0 + 0x22) + lVar6 * 4)) &&
+     (*(float *)(*(long *)(in_x0 + 0x1c) + (long)(in_x0[0x29] + in_x0[0x28]) * 4) <= (float)in_x0[2]
+     )) {
     uVar5 = func_0x00168cd0();
     func_0x0016e570(0x3f800000,0x3f800000,uVar5,
-                    *(undefined4 *)
-                     (*(long *)(param_2 + 0x16) + (long)(param_2[0x28] + param_2[0x29]) * 4));
-    param_2[0x28] = param_2[0x28] + 1;
-    lVar6 = (long)*param_2 + -1;
+                    *(undefined4 *)(*(long *)(in_x0 + 0x16) + (long)(in_x0[0x28] + in_x0[0x29]) * 4)
+                   );
+    in_x0[0x28] = in_x0[0x28] + 1;
+    lVar6 = (long)*in_x0 + -1;
   }
-  iVar2 = *(int *)(*(long *)(param_2 + 0x54) + lVar6 * 4);
-  if ((iVar2 != 0) && ((float)param_2[2] <= *(float *)(*(long *)(param_2 + 0x5a) + lVar6 * 4))) {
+  iVar2 = *(int *)(*(long *)(in_x0 + 0x54) + lVar6 * 4);
+  if ((iVar2 != 0) && ((float)in_x0[2] <= *(float *)(*(long *)(in_x0 + 0x5a) + lVar6 * 4))) {
     if ((iVar2 == 1) || (iVar2 == 2)) {
-      func_0x00165b50(0x3fc00000,0x40800000,0x3f000000,*(undefined8 *)(param_2 + 0x60));
+      func_0x00165b50(0x3fc00000,0x40800000,0x3f000000,*(undefined8 *)(in_x0 + 0x60));
     }
-    *(undefined4 *)(*(long *)(param_2 + 0x54) + (long)*param_2 * 4 + -4) = 0;
+    *(undefined4 *)(*(long *)(in_x0 + 0x54) + (long)*in_x0 * 4 + -4) = 0;
   }
-  uVar3 = func_0x0016f480(*(undefined8 *)(param_2 + 0x62));
-  if (((uVar3 & 1) == 0) && (param_2[1] <= *param_2)) {
+  uVar3 = func_0x0016f480(*(undefined8 *)(in_x0 + 0x62));
+  if (((uVar3 & 1) == 0) && (in_x0[1] <= *in_x0)) {
     uVar5 = 1;
   }
   else {
@@ -286,57 +308,43 @@ void Walaber::ComicStrip::advancePanel(int *param_1)
 
 /* Walaber::ComicStrip::draw(Walaber::SpriteBatch&) */
 
-void Walaber::ComicStrip::draw(int *param_1,undefined8 param_2)
+void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
 
 {
   bool bVar1;
   long *plVar2;
-  undefined4 *puVar3;
+  int iVar3;
   long lVar4;
   int iVar5;
-  int iVar6;
-  undefined4 uStack_6c;
-  undefined4 uStack_68;
-  float fStack_64;
-  undefined4 uStack_60;
-  float fStack_5c;
   long lStack_58;
   int *piStack_50;
   long lStack_48;
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
-  func_0x00172ff0(*(undefined8 *)(param_1 + 0x60));
-  iVar6 = -1;
+  func_0x00172ff0(*(undefined8 *)(p0 + 0x180));
+  iVar5 = -1;
   do {
-    iVar5 = iVar6 + *param_1;
-    if ((-1 < iVar5) && (iVar5 < param_1[1])) {
-      plVar2 = (long *)(*(long *)(param_1 + 0x10) + (long)iVar5 * 0x10);
+    iVar3 = iVar5 + *(int *)p0;
+    if ((-1 < iVar3) && (iVar3 < *(int *)(p0 + 4))) {
+      plVar2 = (long *)(*(long *)(p0 + 0x40) + (long)iVar3 * 0x10);
       lStack_58 = *plVar2;
       piStack_50 = (int *)plVar2[1];
       if (lStack_58 != 0) {
         *piStack_50 = *piStack_50 + 1;
-        iVar5 = iVar6 + *param_1;
       }
-      puVar3 = (undefined4 *)(*(long *)(param_1 + 4) + (long)iVar5 * 8);
-      uStack_60 = *puVar3;
-      fStack_5c = -(float)puVar3[1];
-      puVar3 = (undefined4 *)(*(long *)(param_1 + 10) + (long)iVar5 * 8);
-      uStack_68 = *puVar3;
-      fStack_64 = -(float)puVar3[1];
-      uStack_6c = 0xffffffff;
                     /* try { // try from 003eeb28 to 003eeb4b has its CatchHandler @ 003eebc0 */
-      func_0x00164580(0,param_2,1,&lStack_58,&uStack_60,&uStack_68,&uStack_6c,0);
+      func_0x00164580(0);
       FUN_00166b20(&lStack_58);
     }
-    bVar1 = iVar6 < 1;
-    iVar6 = iVar6 + 1;
+    bVar1 = iVar5 < 1;
+    iVar5 = iVar5 + 1;
   } while (bVar1);
-  if (*(long *)(param_1 + 100) != 0) {
-    func_0x00163aa0(param_2);
-    func_0x00171540(param_2,3);
-    func_0x00165280(*(undefined8 *)(param_1 + 0x60));
-    (**(code **)(**(long **)(param_1 + 100) + 0x18))();
+  if (*(long *)(p0 + 400) != 0) {
+    func_0x00163aa0();
+    func_0x00171540();
+    func_0x00165280(*(undefined8 *)(p0 + 0x180));
+    (**(code **)(**(long **)(p0 + 400) + 0x18))();
   }
   if (*(long *)(lVar4 + 0x28) == lStack_48) {
     return;
@@ -444,7 +452,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uint uStack_a0;
   undefined4 uStack_9c;
   undefined8 uStack_98;
-  undefined8 uStack_90;
+  void *pvStack_90;
   int iStack_84;
   float fStack_80;
   undefined1 uStack_7c;
@@ -504,7 +512,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003eee2c to 003eee37 has its CatchHandler @ 003ef9d4 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   fVar12 = DAT_0072d884;
   if ((uVar6 & 1) == 0) {
@@ -548,7 +556,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00173170(param_1 + 0x28,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_75 = 0;
@@ -566,7 +574,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003eef14 to 003eef1f has its CatchHandler @ 003ef9d0 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     uVar7 = CONCAT44(DAT_0072d884,ScreenCoord::sScreenSize);
@@ -616,7 +624,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00161f30(param_1 + 0xa8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_77 = 0;
@@ -634,7 +642,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef010 to 003ef01b has its CatchHandler @ 003ef9cc */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     uVar7 = CONCAT44(DAT_0072d884,ScreenCoord::sScreenSize);
@@ -684,7 +692,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00161f30(param_1 + 0xc0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_76 = 0;
@@ -702,7 +710,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef118 to 003ef123 has its CatchHandler @ 003ef9c8 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
@@ -741,7 +749,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00167040(param_1 + 0xd8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_75 = 0;
@@ -759,7 +767,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef1f4 to 003ef1ff has its CatchHandler @ 003ef9c4 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
@@ -798,7 +806,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00167040(param_1 + 0x108,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_76 = 0;
@@ -816,7 +824,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef2d4 to 003ef2df has its CatchHandler @ 003ef9c0 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 5.0;
@@ -855,7 +863,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00167040(param_1 + 0xf0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   fStack_74 = 0.0;
@@ -873,7 +881,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef3b8 to 003ef3c3 has its CatchHandler @ 003ef9bc */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = -NAN;
@@ -912,7 +920,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00170200(param_1 + 0x120,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_6e = 0;
@@ -930,7 +938,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef4a0 to 003ef4ab has its CatchHandler @ 003ef9b8 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 1.0;
@@ -969,7 +977,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       func_0x00167040(param_1 + 0x138,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_70 = 0;
@@ -987,7 +995,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef588 to 003ef593 has its CatchHandler @ 003ef9b4 */
   lVar10 = func_0x0016b8b0(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   uStack_70 = 0;
   uStack_6f = 0;
@@ -1004,7 +1012,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef5d4 to 003ef5df has its CatchHandler @ 003ef9b0 */
   uVar7 = func_0x0016b8b0(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if (lVar10 == 0) {
     fStack_80 = 0.0;
@@ -1061,10 +1069,10 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef6b4 to 003ef6bf has its CatchHandler @ 003efa18 */
       lVar10 = func_0x0016b8b0(param_3,&fStack_80);
       if (((uint)fStack_80 & 1) != 0) {
-        FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+        FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
       }
       if ((uStack_a0 & 1) != 0) {
-        FUN_00166120(uStack_90);
+        FUN_00166120(pvStack_90);
       }
       func_0x001636d0(&uStack_a0,iStack_84);
                     /* try { // try from 003ef6f0 to 003ef703 has its CatchHandler @ 003efa14 */
@@ -1090,10 +1098,10 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
                     /* try { // try from 003ef71c to 003ef727 has its CatchHandler @ 003efa10 */
       uVar7 = func_0x0016b8b0(param_3,&fStack_80);
       if (((uint)fStack_80 & 1) != 0) {
-        FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+        FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
       }
       if ((uStack_a0 & 1) != 0) {
-        FUN_00166120(uStack_90);
+        FUN_00166120(pvStack_90);
       }
     } while (lVar10 != 0);
     piVar9 = *(int **)(param_1 + 0x90);
@@ -1120,7 +1128,7 @@ LAB_003ef7a0:
                     /* try { // try from 003ef7cc to 003ef7d7 has its CatchHandler @ 003ef9ac */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
@@ -1159,7 +1167,7 @@ LAB_003ef7a0:
       func_0x00170200(param_1 + 0x150,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   uStack_6e = 0;
@@ -1177,7 +1185,7 @@ LAB_003ef7a0:
                     /* try { // try from 003ef8b0 to 003ef8bb has its CatchHandler @ 003ef9a8 */
   uVar6 = func_0x00173810(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
-    FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+    FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
@@ -1216,7 +1224,7 @@ LAB_003ef7a0:
       func_0x00167040(param_1 + 0x168,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
-      FUN_00166120(CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+      FUN_00166120((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
   *(int *)(param_1 + 4) = *(int *)(param_1 + 4) + 1;

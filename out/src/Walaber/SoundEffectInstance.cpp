@@ -65,7 +65,7 @@ void Walaber::SoundEffectInstance::~SoundEffectInstance(undefined8 *param_1)
     }
   }
   if ((*(byte *)(param_1 + 6) & 1) != 0) {
-    FUN_00166120(param_1[8]);
+    FUN_00166120((void *)param_1[8]);
   }
   func_0x00170080(param_1 + 1);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
@@ -101,7 +101,7 @@ void Walaber::SoundEffectInstance::stop(long param_1)
 
 /* Walaber::SoundEffectInstance::~SoundEffectInstance() */
 
-void Walaber::SoundEffectInstance::~SoundEffectInstance(undefined8 param_1)
+void Walaber::SoundEffectInstance::~SoundEffectInstance(void *param_1)
 
 {
   func_0x0016a320();
@@ -117,38 +117,39 @@ void Walaber::SoundEffectInstance::~SoundEffectInstance(undefined8 param_1)
 
 /* Walaber::SoundEffectInstance::play(float) */
 
-void Walaber::SoundEffectInstance::play(float param_1,long param_2)
+void Walaber::SoundEffectInstance::play(float p0)
 
 {
   byte bVar1;
   int iVar2;
+  long in_x0;
   undefined8 uVar3;
   
-  *(undefined1 *)(param_2 + 0x48) = 0;
-  if (param_1 == 0.0) {
-    if (*(long *)(param_2 + 0x18) != 0) {
+  *(undefined1 *)(in_x0 + 0x48) = 0;
+  if (p0 == 0.0) {
+    if (*(long *)(in_x0 + 0x18) != 0) {
       func_0x00166d80();
-      *(undefined8 *)(param_2 + 0x18) = 0;
+      *(undefined8 *)(in_x0 + 0x18) = 0;
     }
   }
   else {
-    iVar2 = func_0x0016a780(param_2);
+    iVar2 = func_0x0016a780();
     if (iVar2 != 0) {
-      func_0x001703d0(param_2);
-      func_0x00165a40(*(undefined8 *)(param_2 + 0x18),0);
-      func_0x00165570(*(float *)(param_2 + 0x2c) * param_1,*(undefined8 *)(param_2 + 0x18));
+      func_0x001703d0();
+      func_0x00165a40(*(undefined8 *)(in_x0 + 0x18),0);
+      func_0x00165570(*(float *)(in_x0 + 0x2c) * p0,*(undefined8 *)(in_x0 + 0x18));
     }
-    bVar1 = *(byte *)(param_2 + 0x30);
+    bVar1 = *(byte *)(in_x0 + 0x30);
     if ((bVar1 & 1) == 0) {
       if (bVar1 >> 1 != 0) {
 LAB_0034cb08:
         uVar3 = func_0x00168cd0();
-        func_0x00167560(param_2);
-        func_0x00165b00(uVar3,(byte *)(param_2 + 0x30));
+        func_0x00167560();
+        func_0x00165b00(uVar3,(byte *)(in_x0 + 0x30));
         return;
       }
     }
-    else if (*(long *)(param_2 + 0x38) != 0) goto LAB_0034cb08;
+    else if (*(long *)(in_x0 + 0x38) != 0) goto LAB_0034cb08;
   }
   return;
 }
@@ -334,11 +335,13 @@ void Walaber::SoundEffectInstance::resume(long param_1)
 
 /* Walaber::SoundEffectInstance::setVolume(float) */
 
-void Walaber::SoundEffectInstance::setVolume(float param_1,long param_2)
+void Walaber::SoundEffectInstance::setVolume(float p0)
 
 {
-  if (*(long *)(param_2 + 0x18) != 0) {
-    func_0x00165570(*(float *)(param_2 + 0x2c) * param_1);
+  long in_x0;
+  
+  if (*(long *)(in_x0 + 0x18) != 0) {
+    func_0x00165570(*(float *)(in_x0 + 0x2c) * p0);
     return;
   }
   return;
@@ -352,11 +355,13 @@ void Walaber::SoundEffectInstance::setVolume(float param_1,long param_2)
 
 /* Walaber::SoundEffectInstance::setPitch(float) */
 
-void Walaber::SoundEffectInstance::setPitch(float param_1,long param_2)
+void Walaber::SoundEffectInstance::setPitch(float p0)
 
 {
-  if (*(long *)(param_2 + 0x18) != 0) {
-    func_0x00167500(*(float *)(param_2 + 0x28) * param_1);
+  long in_x0;
+  
+  if (*(long *)(in_x0 + 0x18) != 0) {
+    func_0x00167500(*(float *)(in_x0 + 0x28) * p0);
     return;
   }
   return;
@@ -384,7 +389,7 @@ void Walaber::SoundEffectInstance::setPosition(void)
 
 /* Walaber::SoundEffectInstance::setPosition(float, float, float) */
 
-void Walaber::SoundEffectInstance::setPosition(void)
+void Walaber::SoundEffectInstance::setPosition(float p0,float p1,float p2)
 
 {
   return;
@@ -398,14 +403,15 @@ void Walaber::SoundEffectInstance::setPosition(void)
 
 /* Walaber::SoundEffectInstance::setPlaybackPosition(float) */
 
-void Walaber::SoundEffectInstance::setPlaybackPosition(float param_1,long param_2)
+void Walaber::SoundEffectInstance::setPlaybackPosition(float p0)
 
 {
   int iVar1;
+  long in_x0;
   undefined8 uVar2;
   
-  if ((*(long *)(param_2 + 0x18) != 0) &&
-     (iVar1 = func_0x001730a0(*(long *)(param_2 + 0x18),(int)(param_1 * 1000.0),1), iVar1 != 0)) {
+  if ((*(long *)(in_x0 + 0x18) != 0) &&
+     (iVar1 = func_0x001730a0(*(long *)(in_x0 + 0x18),(int)(p0 * 1000.0),1), iVar1 != 0)) {
     uVar2 = func_0x0034cf84();
     FUN_00166450("Walaber-Sound",4,"ERROR setting position on sound [%s]\n",uVar2);
     return;
@@ -421,14 +427,15 @@ void Walaber::SoundEffectInstance::setPlaybackPosition(float param_1,long param_
 
 /* Walaber::SoundEffectInstance::setPlaybackPosition(unsigned int) */
 
-void Walaber::SoundEffectInstance::setPlaybackPosition(long param_1,undefined8 param_2)
+void Walaber::SoundEffectInstance::setPlaybackPosition(uint p0)
 
 {
   int iVar1;
   undefined8 uVar2;
+  undefined8 in_x1;
   
-  if ((*(long *)(param_1 + 0x18) != 0) &&
-     (iVar1 = func_0x001730a0(*(long *)(param_1 + 0x18),param_2,2), iVar1 != 0)) {
+  if ((*(long *)((ulong)p0 + 0x18) != 0) &&
+     (iVar1 = func_0x001730a0(*(long *)((ulong)p0 + 0x18),in_x1,2), iVar1 != 0)) {
     uVar2 = func_0x0034cf84();
     FUN_00166450("Walaber-Sound",4,"ERROR setting position on sound [%s]\n",uVar2);
     return;
@@ -511,16 +518,18 @@ void Walaber::SoundEffectInstance::getLength(long param_1)
 
 /* Walaber::SoundEffectInstance::getData(unsigned int, unsigned int, unsigned char*) */
 
-void Walaber::SoundEffectInstance::getData(long param_1,int param_2,int param_3,long param_4)
+void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2)
 
 {
   long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   int iVar4;
-  undefined8 uVar5;
-  char *pcVar6;
-  ulong uVar7;
+  ulong uVar5;
+  undefined8 uVar6;
+  char *pcVar7;
+  long in_x3;
+  ulong uVar8;
   undefined1 auStack_80 [4];
   int iStack_7c;
   int iStack_78;
@@ -530,53 +539,53 @@ void Walaber::SoundEffectInstance::getData(long param_1,int param_2,int param_3,
   undefined8 uStack_60;
   long lStack_58;
   
+  uVar5 = (ulong)p0;
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
-  iVar4 = func_0x0016deb0(**(undefined8 **)(param_1 + 8),auStack_74,&iStack_78,&iStack_7c,auStack_80
-                         );
+  iVar4 = func_0x0016deb0(**(undefined8 **)(uVar5 + 8),auStack_74,&iStack_78,&iStack_7c,auStack_80);
   if (iVar4 == 0) {
     if (iStack_78 == 2) {
       if (iStack_7c < 2) {
-        iVar4 = func_0x00165ae0(**(undefined8 **)(param_1 + 8),param_2 << 1,param_3 << 1,&uStack_60,
+        iVar4 = func_0x00165ae0(**(undefined8 **)(uVar5 + 8),p1 << 1,(int)p2 << 1,&uStack_60,
                                 &uStack_68,(long)&uStack_70 + 4,&uStack_70);
         if (iVar4 == 0) {
           FUN_00166450("Walaber-Sound",1,"len1[%d] len2[%d]\n",uStack_70._4_4_,
                        uStack_70 & 0xffffffff);
           uVar3 = uStack_60;
           uVar2 = uStack_70 >> 0x20;
-          FUN_001715e0(param_4,uStack_60,uVar2);
-          uVar5 = uStack_68;
-          uVar7 = uStack_70 & 0xffffffff;
-          FUN_001715e0(param_4 + uVar2,uStack_68,uVar7);
-          iVar4 = func_0x00171a40(**(undefined8 **)(param_1 + 8),uVar3,uVar5,uVar2,uVar7);
+          FUN_001715e0();
+          uVar6 = uStack_68;
+          uVar8 = uStack_70 & 0xffffffff;
+          FUN_001715e0(in_x3 + uVar2,uStack_68,uVar8);
+          iVar4 = func_0x00171a40(**(undefined8 **)(uVar5 + 8),uVar3,uVar6,uVar2,uVar8);
           if (iVar4 == 0) {
             iVar4 = (int)uStack_70 + uStack_70._4_4_;
             goto LAB_0034d1c8;
           }
-          uVar5 = func_0x0034cf84();
-          pcVar6 = "ERROR unlocking sound! [%s]\n";
+          uVar6 = func_0x0034cf84();
+          pcVar7 = "ERROR unlocking sound! [%s]\n";
         }
         else {
-          uVar5 = func_0x0034cf84();
-          pcVar6 = "ERROR locking sound! [%s]\n";
+          uVar6 = func_0x0034cf84();
+          pcVar7 = "ERROR locking sound! [%s]\n";
         }
         goto LAB_0034d174;
       }
-      pcVar6 = "ERROR!  only single channel sound is supported for getData at this time!\n";
+      pcVar7 = "ERROR!  only single channel sound is supported for getData at this time!\n";
     }
     else {
-      pcVar6 = "ERROR! Only PCM16 is supported for getData at this time!\n";
+      pcVar7 = "ERROR! Only PCM16 is supported for getData at this time!\n";
     }
-    FUN_00166450("Walaber-Sound",4,pcVar6);
+    FUN_00166450("Walaber-Sound",4,pcVar7);
   }
   else {
-    uVar5 = func_0x0034cf84();
-    pcVar6 = "ERROR getting sound format! [%s]\n";
+    uVar6 = func_0x0034cf84();
+    pcVar7 = "ERROR getting sound format! [%s]\n";
 LAB_0034d174:
-    FUN_00166450("Walaber-Sound",4,pcVar6,uVar5);
+    FUN_00166450("Walaber-Sound",4,pcVar7,uVar6);
   }
   iVar4 = 0;
 LAB_0034d1c8:
@@ -699,19 +708,19 @@ LAB_0034d38c:
 /* WARNING: Type propagation algorithm not settling */
 /* Walaber::SoundEffectInstance::_writeWavHeader(__sFILE*, int) */
 
-void Walaber::SoundEffectInstance::_writeWavHeader(long param_1,undefined8 param_2,int param_3)
+void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1)
 
 {
   uint uVar1;
   uint uVar2;
   long lVar3;
+  int in_w2;
   int iStack_78;
   float fStack_74;
   int iStack_70;
   int aiStack_6c [3];
   undefined4 uStack_60;
-  undefined4 uStack_58;
-  int iStack_54;
+  undefined4 auStack_58 [2];
   undefined8 uStack_50;
   undefined2 uStack_48;
   undefined2 uStack_46;
@@ -723,10 +732,10 @@ void Walaber::SoundEffectInstance::_writeWavHeader(long param_1,undefined8 param
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
-  if (*(long *)(param_1 + 8) != 0) {
-    FUN_00164b80(param_2,0,0);
-    func_0x0016deb0(**(undefined8 **)(param_1 + 8),0,&iStack_78,aiStack_6c,&iStack_70);
-    func_0x00165a70(**(undefined8 **)(param_1 + 8),&fStack_74,0,0,0);
+  if (*(long *)(p0 + 8) != 0) {
+    FUN_00164b80(p1,0,0);
+    func_0x0016deb0(**(undefined8 **)(p0 + 8),0,&iStack_78,aiStack_6c,&iStack_70);
+    func_0x00165a70(**(undefined8 **)(p0 + 8),&fStack_74,0,0,0);
     uStack_50 = 0x1020746d66;
     uStack_48 = 1;
     uStack_46 = (undefined2)aiStack_6c[0];
@@ -742,14 +751,13 @@ void Walaber::SoundEffectInstance::_writeWavHeader(long param_1,undefined8 param
     if (iStack_78 == 5) {
       uStack_48 = 3;
     }
-    aiStack_6c[2] = param_3 + 0x20;
-    uStack_58 = 0x61746164;
+    aiStack_6c[2] = in_w2 + 0x20;
+    auStack_58[0] = 0x61746164;
     aiStack_6c[1] = 0x46464952;
     uStack_60 = 0x45564157;
-    iStack_54 = param_3;
-    FUN_00165350(aiStack_6c + 1,0xc,1,param_2);
-    FUN_00165350(&uStack_50,0x18,1,param_2);
-    FUN_00165350(&uStack_58,8,1,param_2);
+    FUN_00165350(aiStack_6c + 1,0xc,1,p1);
+    FUN_00165350(&uStack_50,0x18,1,p1);
+    FUN_00165350(auStack_58,8,1,p1);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
     return;

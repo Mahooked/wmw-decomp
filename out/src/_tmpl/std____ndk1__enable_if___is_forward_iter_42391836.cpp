@@ -14,32 +14,33 @@
 
 void std::__ndk1::
      vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __construct_at_end<Walaber::Widget_IconList::Icon*>(long param_1,long *param_2,long *param_3)
+     __construct_at_end<Walaber::Widget_IconList::Icon*>
+               (Walaber__Widget_IconList__Icon *p0,Walaber__Widget_IconList__Icon *p1,ulong p2)
 
 {
-  long *plVar1;
+  Walaber__Widget_IconList__Icon *pWVar1;
   int *piVar2;
   long lVar3;
   long *plVar4;
   
-  if (param_2 != param_3) {
-    plVar4 = *(long **)(param_1 + 8);
+  if (p1 != (Walaber__Widget_IconList__Icon *)p2) {
+    plVar4 = *(long **)(p0 + 8);
     do {
-      lVar3 = *param_2;
+      lVar3 = *(long *)p1;
       *plVar4 = lVar3;
-      piVar2 = (int *)param_2[1];
+      piVar2 = *(int **)(p1 + 8);
       plVar4[1] = (long)piVar2;
       if (lVar3 != 0) {
         *piVar2 = *piVar2 + 1;
       }
                     /* try { // try from 003789a4 to 003789ab has its CatchHandler @ 003789dc */
-      func_0x0016f720(plVar4 + 2,param_2 + 2);
-      plVar1 = param_2 + 5;
-      param_2 = param_2 + 6;
-      *(int *)(plVar4 + 5) = (int)*plVar1;
-      plVar4 = (long *)(*(long *)(param_1 + 8) + 0x30);
-      *(long **)(param_1 + 8) = plVar4;
-    } while (param_2 != param_3);
+      func_0x0016f720(plVar4 + 2,p1 + 0x10);
+      pWVar1 = p1 + 0x28;
+      p1 = p1 + 0x30;
+      *(undefined4 *)(plVar4 + 5) = *(undefined4 *)pWVar1;
+      plVar4 = (long *)(*(long *)(p0 + 8) + 0x30);
+      *(long **)(p0 + 8) = plVar4;
+    } while (p1 != (Walaber__Widget_IconList__Icon *)p2);
   }
   return;
 }

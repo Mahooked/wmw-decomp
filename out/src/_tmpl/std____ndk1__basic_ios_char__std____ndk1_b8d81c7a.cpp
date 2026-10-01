@@ -23,7 +23,7 @@ void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(voi
 
 /* std::__ndk1::basic_ios<char, std::__ndk1::char_traits<char> >::~basic_ios() */
 
-void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(undefined8 param_1)
+void std::__ndk1::basic_ios<char,std::__ndk1::char_traits<char>>::~basic_ios(void *param_1)
 
 {
   FUN_00171f00();

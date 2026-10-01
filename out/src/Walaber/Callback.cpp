@@ -22,10 +22,10 @@ void Walaber::Callback::~Callback(void)
 
 /* Walaber::Callback::~Callback() */
 
-void Walaber::Callback::~Callback(void)
+void Walaber::Callback::~Callback(void *p0)
 
 {
-  operator_delete();
+  operator_delete(p0);
   return;
 }
 
@@ -37,13 +37,13 @@ void Walaber::Callback::~Callback(void)
 
 /* Walaber::Callback::invoke(void*) */
 
-void Walaber::Callback::invoke(long param_1,undefined8 param_2)
+void Walaber::Callback::invoke(void *p0)
 
 {
-  if (*(code **)(param_1 + 8) != (code *)0x0) {
+  if (*(code **)((long)p0 + 8) != (code *)0x0) {
                     /* WARNING: Could not recover jumptable at 0x0032e5c4. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (**(code **)(param_1 + 8))(param_2);
+    (**(code **)((long)p0 + 8))();
     return;
   }
   return;
