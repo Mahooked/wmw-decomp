@@ -28,15 +28,18 @@ re-inferred.
 | Class hierarchy + vtables (RTTI) | **done** | 317 classes, 343 base edges, 284 polymorphic, 3,003 virtual slots, 184 headers |
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
-| Struct/field layouts, trustworthy body signatures | not started | exact function signatures are already in the manglings; layouts are not |
+| Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
+| Struct/field layouts, signatures applied to bodies | not started | parameter types are exact but Ghidra has no storage to put them in (see "Function signatures") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
-   in the manglings); struct/class field layouts, enums and typedefs must be
-   read out of the code that uses them.
+   in the manglings) and are now extracted and validated; struct/class field
+   layouts, enums and typedefs must still be read out of the code that uses them.
+   Those layouts are also what would let the signatures reach the decompiled
+   bodies — see "Function signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped: if-converted branches, spill/reload noise, register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
@@ -54,6 +57,9 @@ re-inferred.
 - `0d307ad` — `out/src` regenerated with the final names, README stats refreshed.
 - Function boundaries rebuilt from the ELF symbol table: 2,131 → **8,618
   symbols bound (100%)**, 641 → 1,467 files. See "Function boundaries".
+- Exact function prototypes recovered and validated against GCC's own rendering
+  (6,769/6,769). Applying them to the decompiled bodies is blocked on field
+  layouts; see "Function signatures".
 
 ## What the game turned out to be
 
@@ -160,10 +166,16 @@ tools/
                       per-class source tree
     ExportSymbols.java exports Ghidra's own demangled symbol names, for
                       cross-checking the local demangler
+  wmwtools/
+    cxxfilt.py         Itanium demangler, 100% parity with GCC on 6,769 names
+    elf.py             ELF reader (sections, symbols, relocations)
+    signature.py       exact prototypes recovered from a mangled name
   run_ghidra.ps1      driver for import -> analyse -> decompile
 out/
   symbols/
     functions.tsv     address, size, mangled, demangled
+    signatures.tsv    address, size, mangled, name, params, kind
+    classnames.txt    project class names occurring as parameter types
     reference.tsv     the 6,769-name GCC oracle
     classes.tsv       RTTI class inventory
     gnu_symbols.tsv   Ghidra's demangled names, as a cross-check oracle
@@ -242,6 +254,67 @@ Two details that cost real time to find:
 Symbols sharing an address — the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
 526 of them — collapse to a single body carrying the complete-object name, with
 the alias recorded alongside it where the two demangle differently.
+
+### Function signatures
+
+The Itanium ABI encodes every parameter type in the symbol, and the demangler
+already prints it. `tools/wmwtools/signature.py` recovers that parameter list as
+structured data and `tools/sigs.py` writes it to `out/symbols/signatures.tsv`,
+along with `out/symbols/classnames.txt` (the 202 project class names that occur
+as parameter types).
+
+The parser is reused rather than rewritten: `_parse_params` already walks a
+bare-function-type one `<type>` at a time, so subclassing it to record each
+top-level type yields exact types with no second grammar to keep in sync. A
+capture has to be gated on *type* depth, not on being inside a parameter list —
+`_parse_type` recurses to parse a pointee, and without the gate
+`P7_JavaVM` comes out as two parameters, `(_JavaVM, _JavaVM*)`.
+
+Because GCC's own rendering of the name is an independent statement of the same
+parameter list, it serves as the oracle. `tools/test_sigs.py` checks every C++
+symbol in the binary against it:
+
+```
+test_cxxfilt: 6769/6769 match
+test_sigs: 6769 C++ symbols, 6769 compared, 6769 agree, 0 unparsed (100.000%)
+```
+
+So the prototypes are exact, not inferred. The class-name list has to come from
+the parameter types rather than from `classes.tsv`: that file is built from RTTI
+and therefore only knows *polymorphic* classes, while the commonest parameter
+type in the game, `Walaber::Vector2` (366 parameters), has no vtable and is
+absent from it.
+
+**The signatures are not yet in the decompiled bodies.** Ghidra's functions,
+rebuilt from symbol extents, have no parameter storage at all: their parameter
+count never matches the ELF one, not even once across 8,092 functions. Pushing
+the recovered types in anyway made the output *worse*, not better:
+
+| Attempt | Applied | Result in `out/src` |
+|---|---|---|
+| `ApplyFunctionSignatureCmd` with the real declaration | 792 | parser merges the return type with the `::`-qualified name; almost everything rejected |
+| …parameters only, under a throwaway name | 1,032 | works, but types that Ghidra cannot resolve abort the whole signature |
+| …plus `const`/reference fixes and 173 RTTI class types | 1,711 | 2,099 `Unknown calling convention -- yet parameter storage is locked` warnings, 110 return types corrupted to `undefined1 [16]`, parameter names renumbered |
+| …plus the 202 class names derived from parameter types | 2,221 | still zero project-class parameters visible in the output |
+| …restricted to functions whose arity already matches | **0** | warnings gone, benefit gone too |
+
+The last row is the honest summary: with no storage to write into, there is
+nothing to gain. `out/src` is therefore generated without signature application,
+and `out/symbols/signatures.tsv` carries the exact types for whoever re-shapes
+the output. Applying them needs the field-layout work first.
+
+Ghidra's C parser, measured rather than assumed, for whoever retries this:
+
+- `const` is not understood in any position — even `const int` returns
+  "Can't resolve datatype: const", so 1,598 const pointer/reference parameters
+  (16% of all parameters) cannot be expressed.
+- A `::`-qualified type resolves only if the type's *name* contains `::`.
+  `Walaber::Vector2 *` works with a flat type of that name; `Vector2 *` under a
+  `/Walaber` category path does not.
+- Given `undefined WaterConcept::Foo::bar(int)` the parser reads the return type
+  greedily as `undefined WaterConcept::Foo::bar` and rejects the declaration.
+- A reference is silently degraded to a by-value type, which under AArch64 is
+  actively wrong rather than merely imprecise.
 
 A note on symbol counts, because the numbers above are easy to conflate.
 `.symtab` is **stripped**; every name comes from `.dynsym` (11,003 entries:
