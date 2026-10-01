@@ -27,24 +27,21 @@ re-inferred.
 | Itanium demangler at GCC parity | **done** | 6,769/6,769 reference names (100%, 0 diffs), regression-tested |
 | Class hierarchy + vtables (RTTI) | **done** | 317 classes, 343 base edges, 284 polymorphic, 3,003 virtual slots, 184 headers |
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
-| Decompiled, named function bodies | **in progress** | 2,131 / 8,618 symbols (~25%), 641 files |
+| Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Struct/field layouts, trustworthy body signatures | not started | exact function signatures are already in the manglings; layouts are not |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
 
-1. **Bind the rest of the symbol table to bodies.** 2,131 of 8,618 symbols are
-   bound today. The rest never start a Ghidra function — 91% land *inside* one —
-   so binding needs finer-grained splitting, not just a better lookup.
-2. **Recover type definitions.** Function signatures are exact (they are encoded
+1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings); struct/class field layouts, enums and typedefs must be
    read out of the code that uses them.
-3. **Re-shape decompiler output into source-shaped code.** The emitted C is
+2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped: if-converted branches, spill/reload noise, register aliases.
-4. **Re-infer local identifiers and file organisation.** These were never in the
+3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
-5. **Verify by recompilation.** Rebuilding and comparing against the shipped
+4. **Verify by recompilation.** Rebuilding and comparing against the shipped
    binary is the only honest completion test.
 
 ### Milestones (20 commits)
@@ -55,6 +52,8 @@ re-inferred.
   to **100% parity** (substitutions, templates, expressions, thunks) plus a
   regression gate.
 - `0d307ad` — `out/src` regenerated with the final names, README stats refreshed.
+- Function boundaries rebuilt from the ELF symbol table: 2,131 → **8,618
+  symbols bound (100%)**, 641 → 1,467 files. See "Function boundaries".
 
 ## What the game turned out to be
 
@@ -96,10 +95,11 @@ section further down:
 - **The class hierarchy is read, not guessed.** RTTI survived: 317 classes,
   281 with recorded bases, 284 polymorphic, 3,003 primary-vtable slots; 184
   per-class headers generated.
-- **Decompiled output:** 2,131 functions decompiled and named (median 148
-  instructions) across 641 per-class files — bound by 102 exact addresses plus
-  2,029 nearest-preceding-symbol matches; 15,244 Ghidra functions carry no ELF
-  symbol at all (roughly 9,300 of them are 16-byte thunks).
+- **Decompiled output:** all 8,618 function symbols are bound to a body (median
+  144 bytes, p90 740) across 1,467 per-class files. Function boundaries come
+  from the ELF symbol table rather than from Ghidra's auto-analysis — see
+  "Function boundaries" below. 1,516 further functions exist in the gaps that no
+  symbol covers; they keep Ghidra's name.
 - **Levels are XML scene graphs**, not a binary format: 636 level files, a
   12-element vocabulary, ~42 objects per level; plus 345 reusable `.hs`
   object prototypes.
@@ -123,7 +123,8 @@ From a single `libwmw.so` (arm64-v8a):
 | RTTI typeinfo objects (`_ZTI`) | 403 |
 | Virtual tables (`_ZTV`) | 303 |
 | Data symbols | 2,058 |
-| Functions Ghidra identifies | 17,375 |
+| Functions Ghidra's auto-analysis identifies | 17,375 (superseded; see "Function boundaries") |
+| Functions after rebuilding from the symbol table | 9,680 |
 
 Of the mangled function symbols that land in `.text`, 3,351 mention `Walaber`
 and 2,356 mention `WaterConcept`. The remainder is libc++, SQLite, libxml2,
@@ -154,8 +155,9 @@ tools/
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
-    DecompileAll.java headless Ghidra script: bulk-decompiles functions and
-                      emits a per-class source tree
+    DecompileAll.java headless Ghidra script: rebuilds function boundaries from
+                      the ELF symbol table, then bulk-decompiles and emits a
+                      per-class source tree
     ExportSymbols.java exports Ghidra's own demangled symbol names, for
                       cross-checking the local demangler
   run_ghidra.ps1      driver for import -> analyse -> decompile
@@ -179,28 +181,67 @@ out/
 
 ## Recovered source
 
-`out/src/` holds the decompiler output, organised by owning class. 2,131 of the
-8,618 function symbols (~25%) were named and decompiled across 641 groups:
+`out/src/` holds the decompiler output, organised by owning class. **All 8,618
+function symbols are bound to a body**, across 1,467 groups:
 
 | | |
 |---|---|
-| Functions decompiled | 2,131 (2,129 clean, 2 failed) — ~25% of 8,618 symbols |
-| Named by exact address | 102 |
-| Named by nearest preceding symbol | 2,029 |
-| Functions moved into C++ namespaces | 1,159 |
-| Real class files | 165 (`Walaber` 94, `WaterConcept` 71) |
-| Median function body | 148 instructions |
+| Functions decompiled | 8,230 (8,229 clean, 1 failed) |
+| Symbols bound | 8,618 of 8,618 (100%) |
+| Bound at their own symbol address | 8,092 addresses |
+| Bound by nearest preceding symbol | 138 |
+| Symbols unclaimed | 0 |
+| Functions moved into C++ namespaces | 3,257 |
+| Median function body | 144 bytes (p90 740, max 46,040) |
+| Body size identical to ELF `st_size` | 8,089 of 8,092 (99.94%) |
 
-The symbol table is larger than 2,131 because Ghidra's function boundaries
-only coincide with the ELF symbol table at 102 addresses. That is inherent to
-the binary rather than a defect in this pipeline: Ghidra derives functions from
-call targets and jump tables, so it reports 17,375 functions, of which roughly
-9,300 are 16-byte thunks, and 91% of real ELF symbols land *inside* a Ghidra
-function body rather than at its start. Binding each function to the nearest
-preceding unclaimed symbol recovers 20x more names than exact matching, and
-claiming each symbol at most once keeps two functions from sharing a name.
-`_unclaimed.tsv` lists what did not bind, so the gap is explicit rather than
-silent.
+### Function boundaries
+
+The obvious pipeline is to let Ghidra's auto-analysis decide where functions
+begin and then attach an ELF symbol to each function it created. That was the
+first implementation here, and it recovered only 2,131 of 8,618 symbols. Its
+premise turned out to be backwards. Measured on the real data:
+
+| | |
+|---|---|
+| `.dynsym` symbols with a nonzero `st_size` | 8,616 of 8,618 |
+| Symbols that are 4-byte aligned | 8,618 of 8,618 |
+| Symbols starting *inside* another symbol's body | **0** |
+| Distinct symbol addresses | 8,092 (526 are C1/C2 and D1/D2 alias pairs) |
+| `.text` bytes covered by symbols | 3,124,540 of 4,828,328 (64.7%) |
+| Ghidra functions starting *inside* a real function | **11,547 of 17,375** |
+| Ghidra functions starting on an ELF symbol | 102 |
+
+So the ELF symbol table is the clean, unambiguous oracle, and Ghidra's
+boundaries are the unreliable ones — it promotes switch-case targets and
+jump-table landings into functions of their own. The fix was to invert the
+direction of the mapping: use the symbols to *define* the functions, and keep
+Ghidra's analysis only for the parts worth keeping (disassembled bytes, jump
+tables, string references). `DecompileAll.java` therefore deletes every
+auto-analysis function and rebuilds from `[addr, addr + st_size)`.
+
+That the rebuilt extents agree with the linker's own is the check that matters:
+8,089 of 8,092 bodies are byte-identical in length to `st_size`. The three that
+differ are a large `update()` that Ghidra stops 560 bytes short of and one 4-byte
+body where the address is not an entry point at all.
+
+Two details that cost real time to find:
+
+- **Ghidra rebases a PIE `.so` to `0x100000`.** Every address is then 1 MB above
+  the ELF vaddr the symbol table uses. Functions still "work" — the addresses
+  land in memory, disassembly succeeds — but they are built over entirely wrong
+  bytes and the C looks perfectly plausible. Import with
+  `-loader ElfLoader -loader-imagebase 0x0`, and `DecompileAll` refuses to run if
+  the executable blocks do not cover the symbol table's whole span.
+- **Bound the gap sweep by the next entry, not by the end of the section.** With
+  ~1,600 candidates, letting `followFlow` run to the end of `.text` from each
+  one takes hours. And only *call* targets are entries: a loop header and every
+  switch case are flows too, and treating them as entries shatters one function
+  into dozens of stubs.
+
+Symbols sharing an address — the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
+526 of them — collapse to a single body carrying the complete-object name, with
+the alias recorded alongside it where the two demangle differently.
 
 A note on symbol counts, because the numbers above are easy to conflate.
 `.symtab` is **stripped**; every name comes from `.dynsym` (11,003 entries:
@@ -220,10 +261,14 @@ Read this before treating `out/src/` as source.
 - **Local variable names, comments and macros never survive compilation.**
   Everything inside a function body must be re-inferred; see the goal above.
 - **Prototype comments can be misattributed** to an unrelated function.
-- **Bodies are frequently incomplete.** 1.8% of functions decompile to 4
-  instructions or fewer (median 148, but the long tail reaches 16,148). Small
-  bodies are usually thunks, wrappers, or template instantiations the
-  optimiser folded away.
+- **Bodies are complete but types are still inferred.** Every symbol-bound body
+  now spans its full `st_size` (8,089 of 8,092 exactly), so truncation is no
+  longer a concern. 1,129 bodies are 16 bytes or shorter; those are the AArch64
+  veneer thunks and small wrappers, which is what they are in the original.
+- **1,516 functions have no ELF symbol** and appear as `FUN_...`/`func_0x...`
+  calls inside other bodies. They live in the 35% of `.text` no symbol covers
+  and are reachable only through call sites and relocation targets. They are
+  inventoried in `out/src/_unsymbolized.tsv`.
 - **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
   include 75 pointer/fundamental typeinfos (`char*`, `bool`, …) that are RTTI
   objects, not classes — the real class count is 317 (filter pending).
@@ -428,11 +473,13 @@ py tools\test_cxxfilt.py
 # 1. survey the binary -> out/symbols/
 py tools\survey_native.py $so
 
-# 2. import + analyse into a Ghidra project (run once, ~6 min)
-.\tools\ghidra.ps1 -Mode import -Rest @($so)
+# 2. import + analyse into a Ghidra project (run once, ~4 min)
+#    -ProjectName picks a scratch project; use a fresh one, because headless
+#    runs save the program and stale functions persist.
+.\tools\ghidra.ps1 -Mode import -Rest @($so) -ProjectName 'wmwb'
 
-# 3. decompile -> out/src/
-.\tools\ghidra.ps1 -Mode script -Rest @('libwmw.so', "$PWD/out/symbols/functions.tsv", "$PWD/out/src", '60', '0')
+# 3. decompile -> out/src/ (uses the same project)
+.\tools\ghidra.ps1 -Mode script -Rest @('libwmw.so', "$PWD/out/symbols/functions.tsv", "$PWD/out/src", '60', '0') -ProjectName 'wmwb'
 
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti
@@ -455,12 +502,17 @@ cross-check.
 `tools/ghidra.ps1` exists because `analyzeHeadless.bat` ends with a `pause` on
 error, which blocks forever in a non-interactive shell and looks exactly like a
 hang. The wrapper feeds the batch file an empty stdin so `pause` returns
-immediately, and always surfaces the exit code.
+immediately, and always surfaces the exit code. It also redirects Ghidra's
+stdout to `out/ghidra/<tag>.console.txt`: the analyzers are extremely chatty on
+an AArch64 shared library (the GCC exception-table analyzer alone emits tens of
+thousands of `Failed to disassemble` lines), and unfiltered that reads like a
+frozen process. Progress is echoed from the Ghidra log instead.
 
 Do not re-import into a project that a previous decompile run has touched:
 headless runs save the program, so any functions created by an earlier run
-persist and block recovery of the real ones. Re-import into a fresh project when
-in doubt.
+persist. Re-import into a fresh project when in doubt — although
+`DecompileAll` now deletes every function before rebuilding, so it is
+effectively idempotent.
 
 ## What is not in this repository
 
