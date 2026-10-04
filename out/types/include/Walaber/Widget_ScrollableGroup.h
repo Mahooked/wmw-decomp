@@ -1,6 +1,7 @@
-// Recovered from Walaber::Widget_ScrollableGroup. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Widget_ScrollableGroup. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__WIDGET_SCROLLABLEGROUP_H
 #define WMW_WALABER__WIDGET_SCROLLABLEGROUP_H
 
@@ -16,7 +17,7 @@ struct Widget_ScrollableGroup {
     uint64_t f_0x100;
     int32_t f_0x108;
     uint8_t _pad272[4];
-    uint64_t f_0x110;
+    uint64_t group;  // named from setGroup
     double f_0x118;
     float f_0x120;
     float f_0x124;
@@ -29,7 +30,7 @@ struct Widget_ScrollableGroup {
     uint8_t _pad336[4];
     int32_t f_0x150;
     uint8_t _pad344[4];
-    double f_0x158;
+    double directionMask;  // named from setDirectionMask
     int32_t f_0x160;
     uint8_t _pad360[4];
     float f_0x168;

@@ -517,10 +517,17 @@ public class DecompileAll extends GhidraScript {
      * not be shown to be a type at all has had its evidence withheld, and
      * structures with a negative or overrunning offset were rejected as
      * internally inconsistent. Neither should reach the program.
+     *
+     * <p>Components are named {@code f_0x<offset>} unless fieldnames.tsv supplies
+     * a name for that exact class and offset, in which case the accessor-derived
+     * name is used instead so the decompiled source reads in the original terms.
+     * The file is optional: without it every component keeps its offset name and
+     * nothing else changes.
      */
     private void applyRecoveredLayouts() throws IOException {
         Path layoutsFile = Paths.get(typesDir, "layouts.tsv");
         Path fieldsFile = Paths.get(typesDir, "fields.tsv");
+        Path namesFile = Paths.get(typesDir, "fieldnames.tsv");
         if (!Files.isRegularFile(layoutsFile) || !Files.isRegularFile(fieldsFile)) {
             println("DecompileAll: no layouts at " + layoutsFile + ", keeping opaque types");
             return;
@@ -541,10 +548,26 @@ public class DecompileAll extends GhidraScript {
                    .add(new String[] { row[1], row[2], row[3], row[4] });
         }
 
+        // class -> offset -> name, from tools/fieldnames.py. Only names for
+        // offsets that actually have a field are used; the rest cannot be placed.
+        Map<String, Map<Integer, String>> namesByClass = new TreeMap<>();
+        int nameRows = 0;
+        if (Files.isRegularFile(namesFile)) {
+            for (String[] row : readTsv(namesFile, 3)) {
+                try {
+                    namesByClass.computeIfAbsent(row[0], k -> new HashMap<>())
+                               .put(Integer.valueOf(row[1]), row[2]);
+                    nameRows++;
+                } catch (NumberFormatException e) {
+                    // A name row without a usable offset cannot address a field.
+                }
+            }
+        }
+
         DataTypeManager dtm = currentProgram.getDataTypeManager();
         DataTypeConflictHandler conflict = DataTypeConflictHandler.KEEP_HANDLER;
         int built = 0, replaced = 0, skipped = 0, noFields = 0, failed = 0;
-        int components = 0;
+        int components = 0, named = 0;
 
         for (Map.Entry<String, List<String[]>> e : byClass.entrySet()) {
             String name = e.getKey();
@@ -558,6 +581,12 @@ public class DecompileAll extends GhidraScript {
                 skipped++;
                 continue;
             }
+            Map<Integer, String> forClass = namesByClass.get(name);
+            // Unconditional: a class with no recovered names must see an empty
+            // map, not the previous class's, or it inherits names by offset
+            // collision and gets fields named after unrelated members.
+            Map<Integer, String> classNames =
+                forClass == null ? Collections.<Integer, String>emptyMap() : forClass;
             try {
                 DataType existing = findByQualifiedName(dtm, name);
                 // Populate the existing structure in place rather than swapping in
@@ -596,8 +625,13 @@ public class DecompileAll extends GhidraScript {
                     // insertAtOffset rather than add(), so a field the binary
                     // placed before the natural alignment of its type still
                     // lands where the binary addressed it.
-                    s.insertAtOffset(off, cdt, width, "f_0x" + Integer.toHexString(off),
-                        null);
+                    String fieldName = classNames.get(off);
+                    if (fieldName == null) {
+                        fieldName = "f_0x" + Integer.toHexString(off);
+                    } else {
+                        named++;
+                    }
+                    s.insertAtOffset(off, cdt, width, fieldName, null);
                     placed++;
                 }
                 if (placed == 0) {
@@ -661,7 +695,8 @@ public class DecompileAll extends GhidraScript {
         }
         println("DecompileAll: layouts -- " + built + " added, " + replaced +
             " replaced, " + noFields + " empty, " + skipped + " not proven, " +
-            failed + " failed; " + components + " field components");
+            failed + " failed; " + components + " field components, " + named +
+            " of them named from accessors (" + nameRows + " names offered)");
         println("DecompileAll: " + proven + " proven layouts, " + withheld +
             " withheld; " + correct + " structures now measure their recovered " +
             "sizeof, " + wrongSize + " do not, " + lost + " lost their name");

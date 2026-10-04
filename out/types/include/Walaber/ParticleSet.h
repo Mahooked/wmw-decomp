@@ -1,6 +1,7 @@
-// Recovered from Walaber::ParticleSet. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::ParticleSet. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__PARTICLESET_H
 #define WMW_WALABER__PARTICLESET_H
 
@@ -9,7 +10,7 @@
 namespace Walaber {
 struct ParticleSet {
     // size 80, align 8, confidence high
-    uint64_t f_0x0;
+    uint64_t particleSize;  // named from getParticleSize
     uint64_t f_0x8;
     uint8_t _pad24[8];
     uint64_t f_0x18;

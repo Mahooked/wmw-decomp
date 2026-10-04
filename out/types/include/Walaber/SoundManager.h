@@ -1,6 +1,7 @@
-// Recovered from Walaber::SoundManager. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::SoundManager. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__SOUNDMANAGER_H
 #define WMW_WALABER__SOUNDMANAGER_H
 
@@ -19,7 +20,7 @@ struct SoundManager {
     uint8_t _pad80[16];
     uint64_t f_0x50;
     uint8_t _pad104[16];
-    uint64_t f_0x68;
+    uint64_t liveTracksInGroup;  // named from getLiveTracksInGroup
     uint64_t f_0x70;
     uint8_t _pad160[40];
     uint64_t f_0xa0;
@@ -29,7 +30,7 @@ struct SoundManager {
     uint8_t _pad208[16];
     uint64_t f_0xd0;
     uint8_t _pad240[24];
-    int32_t f_0xf0;
+    int32_t currentMusicTrack;  // named from getCurrentMusicTrack
     uint8_t _pad312[68];
     uint64_t f_0x138;
     uint64_t f_0x140;

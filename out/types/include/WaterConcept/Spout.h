@@ -1,6 +1,7 @@
-// Recovered from WaterConcept::Spout. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from WaterConcept::Spout. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WATERCONCEPT__SPOUT_H
 #define WMW_WATERCONCEPT__SPOUT_H
 
@@ -39,7 +40,7 @@ struct Spout {
     uint8_t _pad1020[4];
     uint8_t f_0x3fc;
     uint8_t f_0x3fd;
-    uint8_t f_0x3fe;
+    uint8_t isLowTouchPriority;  // named from isLowTouchPriority
     uint8_t _pad1056[33];
     uint64_t f_0x420;
     uint64_t f_0x428;

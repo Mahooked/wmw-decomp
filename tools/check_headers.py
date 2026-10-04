@@ -6,7 +6,14 @@ its own, and a struct whose declared offsets cannot be rebuilt is a struct that
 will not compile to the layout it claims.  So for each header this walks the
 declarations in order, applying the same alignment rules a compiler would,
 advancing over the explicit `_pad` arrays the generator emitted, and compares
-the position each field lands at against the offset encoded in its name.
+the position each field lands at against the offset it claims.
+
+Most fields claim their offset by encoding it -- `f_0x88`.  Fields named from an
+accessor do not, so their offset comes from `fieldnames.tsv` instead: the
+generator writes `visible` at the offset `fieldnames.tsv` records for
+`visible`, and this checks that it landed exactly there.  That keeps the
+invariant the offset names exist to carry, namely that a field never claims a
+position it does not occupy.
 
 It also checks the struct's total size against the recovered `sizeof`.
 """
@@ -33,8 +40,13 @@ def align_up(cursor: int, align: int) -> int:
     return (cursor + align - 1) // align * align
 
 
-def check_file(path: str):
-    """Return (fields, max_end, problems) for one header."""
+def check_file(path: str, named=None):
+    """Return (fields, max_end, problems) for one header.
+
+    `named` maps offset -> recovered field name for this struct; a declaration
+    whose name is not an `f_0x<offset>` must appear there at the offset it
+    actually landed on.
+    """
     cursor = 0
     fields = []
     max_end = 0
@@ -56,6 +68,9 @@ def check_file(path: str):
         fields.append((name, cursor, lineno))
         max_end = max(max_end, end)
         if "_0x" not in name:
+            if named is not None and named.get(cursor) == name:
+                cursor = end
+                continue
             problems.append((lineno, name, cursor, "field name carries no offset"))
             continue
         want = int(name.split("_0x", 1)[1], 16)
@@ -68,34 +83,55 @@ def check_file(path: str):
 
 
 def load_index(path: str):
-    """Header path -> recovered sizeof, from the type index.
+    """Header path -> (class, recovered sizeof), from the type index.
 
     Keyed by path rather than by class name: the generator folds over-long
     template names into a single hashed directory, so a name cannot be
     recovered from the path it was written to.
     """
-    sizes = {}
+    out = {}
     if not os.path.exists(path):
-        return sizes
+        return out
     for line in open(path, encoding="utf-8"):
         if line.startswith("#") or not line.strip():
             continue
         f = line.split("\t")
         if len(f) > 2 and f[2].strip().isdigit():
-            sizes[f[1].replace("\\", "/")] = int(f[2])
-    return sizes
+            out[f[1].replace("\\", "/")] = (f[0], int(f[2]))
+    return out
+
+
+def load_fieldnames(path: str):
+    """Header path -> {offset: name}, for the accessor-named fields."""
+    by_class = collections.defaultdict(dict)
+    if not os.path.exists(path):
+        return by_class
+    for line in open(path, encoding="utf-8"):
+        if line.startswith("#") or not line.strip():
+            continue
+        f = line.rstrip("\n").split("\t")
+        if len(f) < 3:
+            continue
+        try:
+            by_class[f[0]][int(f[1])] = f[2]
+        except ValueError:
+            continue
+    return by_class
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--include", default="out/types/include")
     ap.add_argument("--index", default="out/types/typeindex.tsv")
+    ap.add_argument("--names", default="out/types/fieldnames.tsv")
     ap.add_argument("--limit", type=int, default=25)
     args = ap.parse_args(argv)
 
-    sizes = load_index(args.index)
+    index = load_index(args.index)
+    by_class = load_fieldnames(args.names)
     headers = 0
     checked = 0
+    named_checked = 0
     bad_headers = 0
     short_headers = 0
     kinds = collections.Counter()
@@ -107,8 +143,13 @@ def main(argv=None) -> int:
                 continue
             path = os.path.join(dirpath, fn)
             headers += 1
-            fields, max_end, problems = check_file(path)
+            rel = os.path.relpath(path, args.include).replace(os.sep, "/")
+            entry = index.get(rel)
+            named = by_class.get(entry[0]) if entry else None
+            fields, max_end, problems = check_file(path, named)
             checked += len(fields)
+            named_checked += sum(1 for name, _, _ in fields
+                                 if "_0x" not in name)
             for _, _, _, why in problems:
                 kinds[why.split(" but ")[0].split(" carries ")[-1]] += 1
             if problems:
@@ -117,8 +158,7 @@ def main(argv=None) -> int:
                     examples.append((path, problems[0]))
             # A struct may be smaller than its recovered sizeof only if trailing
             # padding accounts for the difference.
-            rel = os.path.relpath(path, args.include).replace(os.sep, "/")
-            want = sizes.get(rel)
+            want = entry[1] if entry else None
             if want is not None and max_end > want:
                 short_headers += 1
                 if len(examples) < args.limit:
@@ -129,6 +169,7 @@ def main(argv=None) -> int:
 
     print("headers:                %d" % headers)
     print("field declarations:     %d" % checked)
+    print("accessor-named fields:  %d" % named_checked)
     print("headers with a bad offset: %d" % bad_headers)
     print("headers overrunning sizeof: %d" % short_headers)
     for path, (lineno, name, got, why) in examples:

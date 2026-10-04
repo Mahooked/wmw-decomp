@@ -1,6 +1,7 @@
-// Recovered from WaterConcept::Screen_PuppetShow. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from WaterConcept::Screen_PuppetShow. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WATERCONCEPT__SCREEN_PUPPETSHOW_H
 #define WMW_WATERCONCEPT__SCREEN_PUPPETSHOW_H
 
@@ -30,7 +31,7 @@ struct Screen_PuppetShow {
     uint64_t f_0x358;
     uint64_t f_0x360;
     float f_0x368;
-    uint8_t f_0x36c;
+    uint8_t focused;  // named from setFocused
     uint8_t _tail[3];
 };
 

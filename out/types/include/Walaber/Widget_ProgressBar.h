@@ -1,6 +1,7 @@
-// Recovered from Walaber::Widget_ProgressBar. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Widget_ProgressBar. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__WIDGET_PROGRESSBAR_H
 #define WMW_WALABER__WIDGET_PROGRESSBAR_H
 
@@ -29,7 +30,7 @@ struct Widget_ProgressBar {
     float f_0x150;
     float f_0x154;
     uint8_t _pad352[8];
-    float f_0x160;
+    float value;  // named from getValue
     uint8_t _pad360[4];
     int32_t f_0x168;
     uint8_t f_0x16c;

@@ -1,6 +1,7 @@
-// Recovered from WaterConcept::Fluids. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from WaterConcept::Fluids. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WATERCONCEPT__FLUIDS_H
 #define WMW_WATERCONCEPT__FLUIDS_H
 
@@ -9,7 +10,7 @@
 namespace WaterConcept {
 struct Fluids {
     // size 4, align 4, confidence high
-    float f_0x0;  // indexed, stride 1
+    float particlesForFluid;  // indexed, stride 1  // named from getParticlesForFluid
 };
 
 }  // namespace WaterConcept

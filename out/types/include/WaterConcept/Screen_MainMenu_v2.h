@@ -1,6 +1,7 @@
-// Recovered from WaterConcept::Screen_MainMenu_v2. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from WaterConcept::Screen_MainMenu_v2. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WATERCONCEPT__SCREEN_MAINMENU_V2_H
 #define WMW_WATERCONCEPT__SCREEN_MAINMENU_V2_H
 
@@ -19,7 +20,7 @@ struct Screen_MainMenu_v2 {
     uint8_t _pad180[3];
     int32_t f_0xb4;
     uint8_t _pad224[40];
-    uint8_t f_0xe0;
+    uint8_t subscreenIDForCurrentIndex;  // named from _getSubscreenIDForCurrentIndex
     uint8_t _pad440[215];
     uint64_t f_0x1b8;
     uint8_t _pad520[72];

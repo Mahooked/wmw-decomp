@@ -17,11 +17,14 @@ never be wrong because some *other* header is missing.  The bases are recorded
 as a comment instead, and inheritance can be reintroduced once coverage is
 complete.
 
-Fields are named `f_<offset>` because the binary does not record their names.
-That is a real limitation, not a placeholder to be filled in later: the mangling
-carries types but never identifiers, and the 458 `get*`/`set*` accessor symbols
-are the only naming evidence available and are not yet mapped onto offsets.  The
-offsets, widths and element types are what this pass establishes.
+Field names come from the accessor symbols -- `getVisible` implies a field called
+`visible` -- via `tools/fieldnames.py`, which is deliberately conservative and
+leaves `f_0x<offset>` in place wherever the evidence does not single out one
+field.  A wrong name is worse than no name: it reads as knowledge, so the offset
+name stays as the fallback and `--names` records the choice.  Pass `--no-names`
+to suppress them and diff against a layout-only run.
+
+The offsets, widths and element types are what this pass establishes.
 
 Gaps are filled with explicit padding so that every later field keeps its true
 offset, and any overlap between two accepted fields is resolved in favour of the
@@ -53,6 +56,20 @@ _CTYPES = {
 }
 
 _IDENT = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+
+#: A recovered name must not shadow these; `headers.py` invents `_pad*`/`_tail`
+#: itself and a collision would not compile.
+_RESERVED = frozenset("""
+alignas alignof and and_eq asm auto bitand bitor bool break case catch char
+char8_t char16_t char32_t class compl concept const consteval constexpr
+constinit const_cast continue decltype default delete do double dynamic_cast
+else enum explicit export extern false float for friend goto if inline int long
+mutable namespace new noexcept not not_eq nullptr operator or or_eq private
+protected public register reinterpret_cast requires return short signed sizeof
+static static_assert static_cast struct switch template this thread_local throw
+true try typedef typeid typename union unsigned using virtual void volatile
+wchar_t while xor xor_eq
+""".split())
 
 
 def ctype(kind: str, signed: str, width: int) -> str:
@@ -160,11 +177,40 @@ def load_hierarchy(path: str) -> dict:
     return out
 
 
+def load_fieldnames(path: str) -> dict:
+    """(class, offset) -> (name, accessor), from `tools/fieldnames.py`."""
+    out = {}
+    if not os.path.exists(path):
+        return out
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            if line.startswith("#") or not line.strip():
+                continue
+            f = line.rstrip("\n").split("\t")
+            if len(f) < 3:
+                continue
+            name = f[2].strip()
+            if not _IDENT.match(name):
+                continue
+            try:
+                off = int(f[1])
+            except ValueError:
+                continue
+            # fieldnames.tsv carries the accessor list after the vote count.
+            accessors = f[4].strip() if len(f) > 4 else ""
+            out[(f[0], off)] = (name, accessors)
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--fields", default="out/types/fields.tsv")
     ap.add_argument("--layouts", default="out/types/layouts.tsv")
     ap.add_argument("--hierarchy", default="out/rtti/hierarchy.tsv")
+    ap.add_argument("--names", default="out/types/fieldnames.tsv",
+                    help="accessor-derived names; missing file means no names")
+    ap.add_argument("--no-names", dest="names", action="store_const",
+                    const=None, help="ignore fieldnames.tsv entirely")
     ap.add_argument("--out", default="out/types/include")
     args = ap.parse_args(argv)
 
@@ -197,6 +243,7 @@ def main(argv=None) -> int:
             }
 
     hierarchy = load_hierarchy(args.hierarchy)
+    fieldnames = load_fieldnames(args.names) if args.names else {}
 
     stats = collections.Counter()
     index = []
@@ -234,6 +281,7 @@ def main(argv=None) -> int:
         if kept and kept[0]["offset"] < 0:
             body.append("    uint8_t _pre[%d];" % (-kept[0]["offset"]))
             cursor = -kept[0]["offset"]
+        taken = set()
         for it in kept:
             if it["offset"] > cursor:
                 body.append("    uint8_t _pad%d[%d];" %
@@ -242,21 +290,34 @@ def main(argv=None) -> int:
             want = ctype(it["kind"], it["signed"], it["width"])
             if it["width"] == 16:
                 want = "uint64_t"
+            fname, accessor = fieldnames.get((cls, it["offset"]), ("", ""))
+            if fname and (fname in taken or fname in _RESERVED):
+                # fieldnames.py already refuses these; re-checked here because a
+                # duplicate member name would make the header uncompilable, and
+                # this is the last point where that can be caught.
+                stats["names_rejected"] += 1
+                fname = ""
+            if fname:
+                taken.add(fname)
+                stats["fields_named"] += 1
             note = ""
             if it["stride"]:
                 note = "  // indexed, stride %d" % it["stride"]
+            if accessor:
+                note += "  // named from %s" % accessor
             chosen, exact = fit(cursor, it["offset"], want)
             if chosen is None:
                 # Nothing aligns here; fall back to bytes so the offset survives.
                 chosen = "uint8_t"
-                body.append("    uint8_t f_0x%x[%d];%s  // type unplaced" %
-                            (it["offset"], it["width"], note))
+                body.append("    uint8_t %s[%d];%s  // type unplaced" %
+                            (fname or "f_0x%x" % it["offset"], it["width"], note))
                 cursor = it["offset"] + it["width"]
                 stats["unplaced"] += 1
                 continue
             if not exact:
                 stats["type_narrowed"] += 1
-            body.append("    %s f_0x%x;%s" % (chosen, it["offset"], note))
+            body.append("    %s %s;%s" %
+                        (chosen, fname or "f_0x%x" % it["offset"], note))
             cursor = it["offset"] + _SIZEOF[chosen]
 
         size = layouts[cls]["size"]
@@ -287,10 +348,17 @@ def main(argv=None) -> int:
             close_ns = ""
             decl = "struct %s {" % cls
 
+        named = sum(1 for it in kept if fieldnames.get((cls, it["offset"])))
         with open(hpath, "w", encoding="utf-8", newline="\n") as fh:
-            fh.write("// Recovered from %s. Offsets and element types are derived\n"
-                     "// from load/store evidence in the binary; field names are not\n"
-                     "// recorded anywhere in it.\n" % cls)
+            if named:
+                fh.write("// Recovered from %s. Offsets and element types come from load/store\n"
+                         "// evidence in the binary; the names do not, and are inferred\n"
+                         "// from the accessor symbols noted against them. Everything else\n"
+                         "// is named after the offset it sits at.\n" % cls)
+            else:
+                fh.write("// Recovered from %s. Offsets and element types are derived\n"
+                         "// from load/store evidence in the binary; field names are not\n"
+                         "// recorded anywhere in it.\n" % cls)
             fh.write("#ifndef %s\n#define %s\n\n#include <stdint.h>\n\n"
                      % (guard, guard))
             fh.write(open_ns)

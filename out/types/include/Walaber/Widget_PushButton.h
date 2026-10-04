@@ -1,6 +1,7 @@
-// Recovered from Walaber::Widget_PushButton. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Widget_PushButton. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__WIDGET_PUSHBUTTON_H
 #define WMW_WALABER__WIDGET_PUSHBUTTON_H
 
@@ -42,8 +43,8 @@ struct Widget_PushButton {
     double f_0x128;
     uint64_t f_0x130;
     uint64_t f_0x138;
-    uint64_t f_0x140;
-    uint64_t f_0x148;
+    uint64_t tile;  // named from setTile
+    uint64_t tileAnimation;  // named from setTileAnimation
     uint8_t f_0x150;
     uint8_t f_0x151;
     uint8_t f_0x152;

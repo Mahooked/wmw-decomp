@@ -1,6 +1,7 @@
-// Recovered from Walaber::Widget_Slider. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Widget_Slider. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__WIDGET_SLIDER_H
 #define WMW_WALABER__WIDGET_SLIDER_H
 
@@ -15,11 +16,11 @@ struct Widget_Slider {
     uint8_t _pad256[108];
     uint64_t f_0x100;
     uint8_t _pad328[64];
-    float f_0x148;
+    float handleSize;  // named from setHandleSize
     uint8_t _pad336[4];
     float f_0x150;
     int32_t f_0x154;
-    uint64_t f_0x158;
+    uint64_t stepSize;  // named from setStepSize
     uint8_t _pad360[8];
     float f_0x168;
     uint8_t _pad368[4];

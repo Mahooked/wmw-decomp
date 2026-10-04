@@ -1,6 +1,7 @@
-// Recovered from ndk::ApplicationContext. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from ndk::ApplicationContext. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_NDK__APPLICATIONCONTEXT_H
 #define WMW_NDK__APPLICATIONCONTEXT_H
 
@@ -12,7 +13,7 @@ struct ApplicationContext {
     uint64_t f_0x0;
     uint8_t _pad16[8];
     uint64_t f_0x10;
-    uint64_t f_0x18;
+    uint64_t activity;  // named from setActivity
     uint8_t f_0x20;
     uint8_t _pad41[8];
     uint8_t f_0x29;
@@ -42,7 +43,7 @@ struct ApplicationContext {
     uint64_t f_0xc0;
     uint8_t f_0xc8;
     uint8_t _pad204[3];
-    float f_0xcc;
+    float displayDensity;  // named from setDisplayDensity
     uint8_t f_0xd0;
     uint8_t _pad224[15];
     uint64_t f_0xe0;

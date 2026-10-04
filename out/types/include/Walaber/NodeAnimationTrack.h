@@ -1,6 +1,7 @@
-// Recovered from Walaber::NodeAnimationTrack. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::NodeAnimationTrack. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__NODEANIMATIONTRACK_H
 #define WMW_WALABER__NODEANIMATIONTRACK_H
 
@@ -21,7 +22,7 @@ struct NodeAnimationTrack {
     uint8_t _pad72[8];
     uint64_t f_0x48;
     uint8_t _pad88[8];
-    uint64_t f_0x58;
+    uint64_t animation;  // named from setAnimation
     uint64_t f_0x60;
 };
 

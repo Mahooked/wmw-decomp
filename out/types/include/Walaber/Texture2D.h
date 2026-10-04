@@ -1,6 +1,7 @@
-// Recovered from Walaber::Texture2D. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Texture2D. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__TEXTURE2D_H
 #define WMW_WALABER__TEXTURE2D_H
 
@@ -28,7 +29,7 @@ struct Texture2D {
     uint64_t f_0xd0;
     uint8_t _pad224[8];
     int32_t f_0xe0;
-    int32_t f_0xe4;
+    int32_t data;  // named from _getData
 };
 
 }  // namespace Walaber

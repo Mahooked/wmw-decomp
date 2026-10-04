@@ -1,6 +1,7 @@
-// Recovered from WaterConcept::Screen_Popup. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from WaterConcept::Screen_Popup. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WATERCONCEPT__SCREEN_POPUP_H
 #define WMW_WATERCONCEPT__SCREEN_POPUP_H
 
@@ -11,7 +12,7 @@ struct Screen_Popup {
     // size 1440, align 8, confidence high
     uint8_t f_0x0;
     uint8_t _pad16[15];
-    uint64_t f_0x10;
+    uint64_t stageTranslation;  // named from getStageTranslation
     uint8_t _pad188[164];
     int32_t f_0xbc;
     uint8_t _pad228[36];

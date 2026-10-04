@@ -1,6 +1,7 @@
-// Recovered from Walaber::CameraController. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::CameraController. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__CAMERACONTROLLER_H
 #define WMW_WALABER__CAMERACONTROLLER_H
 
@@ -9,7 +10,7 @@
 namespace Walaber {
 struct CameraController {
     // size 176, align 8, confidence high
-    uint64_t f_0x0;
+    uint64_t isAnimating;  // named from isAnimating
     uint64_t f_0x8;
     uint64_t f_0x10;
     uint64_t f_0x18;

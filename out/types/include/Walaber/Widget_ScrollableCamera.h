@@ -1,6 +1,7 @@
-// Recovered from Walaber::Widget_ScrollableCamera. Offsets and element types are derived
-// from load/store evidence in the binary; field names are not
-// recorded anywhere in it.
+// Recovered from Walaber::Widget_ScrollableCamera. Offsets and element types come from load/store
+// evidence in the binary; the names do not, and are inferred
+// from the accessor symbols noted against them. Everything else
+// is named after the offset it sits at.
 #ifndef WMW_WALABER__WIDGET_SCROLLABLECAMERA_H
 #define WMW_WALABER__WIDGET_SCROLLABLECAMERA_H
 
@@ -13,8 +14,8 @@ struct Widget_ScrollableCamera {
     uint8_t _pad256[248];
     uint64_t f_0x100;
     int32_t f_0x108;
-    int32_t f_0x10c;
-    float f_0x110;
+    int32_t currentIndex;  // named from getCurrentIndex
+    float currentIndexPercentage;  // named from getCurrentIndexPercentage
     int32_t f_0x114;
     int32_t f_0x118;
     int32_t f_0x11c;
