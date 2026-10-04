@@ -20,3 +20,10 @@ Thumbs.db
 out/smoke_src/
 out/valid/
 
+# Compiled Ghidra scripts (rebuilt from tools/ghidra on demand).
+out/build/
+
+# Raw pre-filter field-access dump (~8 MB, 39,348 rows). Regenerate with
+# tools/ghidra/FieldScan.java; only the filtered out/types/fields.tsv is tracked.
+out/types/_fieldraw.tsv
+

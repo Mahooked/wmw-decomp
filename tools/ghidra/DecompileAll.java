@@ -53,10 +53,22 @@ import ghidra.app.script.GhidraScript;
 import ghidra.program.model.address.Address;
 import ghidra.program.model.address.AddressSet;
 import ghidra.program.model.address.AddressSetView;
+import ghidra.program.model.data.ArrayDataType;
 import ghidra.program.model.data.DataType;
 import ghidra.program.model.data.DataTypeConflictHandler;
 import ghidra.program.model.data.DataTypeManager;
+import ghidra.program.model.data.DoubleDataType;
+import ghidra.program.model.data.FloatDataType;
+import ghidra.program.model.data.IntegerDataType;
+import ghidra.program.model.data.LongDataType;
+import ghidra.program.model.data.ShortDataType;
+import ghidra.program.model.data.SignedCharDataType;
+import ghidra.program.model.data.Structure;
 import ghidra.program.model.data.StructureDataType;
+import ghidra.program.model.data.UnsignedCharDataType;
+import ghidra.program.model.data.UnsignedIntegerDataType;
+import ghidra.program.model.data.UnsignedLongDataType;
+import ghidra.program.model.data.UnsignedShortDataType;
 import ghidra.program.model.lang.Register;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.FunctionIterator;
@@ -90,6 +102,11 @@ public class DecompileAll extends GhidraScript {
     private String sigPath = "C:/AIC/wmw-decomp/out/symbols/signatures.tsv";
     /** Apply recovered parameter types + explicit AArch64 storage. */
     private boolean applySigs = true;
+    /** Directory holding layouts.tsv and fields.tsv from tools/layout.py.
+     *  Empty, or a directory without them, skips structure import. */
+    private String typesDir = "C:/AIC/wmw-decomp/out/types";
+    /** Import recovered field layouts, replacing the opaque placeholders. */
+    private boolean applyLayouts = true;
 
     // ---- AAPCS64 parameter storage ---------------------------------------
     // Ghidra's own model cannot be asked for this: calling
@@ -158,6 +175,8 @@ public class DecompileAll extends GhidraScript {
         if (args.length > 4) mode = args[4];
         if (args.length > 5) sigPath = args[5];
         if (args.length > 6) applySigs = !args[6].equals("nosig");
+        if (args.length > 7) typesDir = args[7];
+        if (args.length > 8) applyLayouts = !args[8].equals("nolayout");
 
         // addr -> every symbol at that address. Sorted so the pass order is
         // address order, which keeps the disassembly cache coherent.
@@ -210,7 +229,7 @@ public class DecompileAll extends GhidraScript {
      * rather than approximated, because a plausible-but-wrong signature is worse
      * than none -- it mis-attributes every reference in the body.
      */
-    private void applySignatures(Map<Long, List<Sym>> bound) {
+    private void applySignatures(Map<Long, List<Sym>> bound) throws IOException {
         Map<Long, Sig> sigs = loadSignatures(sigPath);
         if (sigs.isEmpty()) {
             println("DecompileAll: no signatures at " + sigPath + ", skipping");
@@ -219,6 +238,10 @@ public class DecompileAll extends GhidraScript {
         println("DecompileAll: loaded " + sigs.size() + " prototypes from " + sigPath);
 
         createProjectClassTypes(sigs);
+
+        if (applyLayouts) {
+            applyRecoveredLayouts();
+        }
 
         FunctionManager fm = currentProgram.getFunctionManager();
         ghidra.app.util.parser.FunctionSignatureParser parser =
@@ -472,6 +495,243 @@ public class DecompileAll extends GhidraScript {
         println("DecompileAll: " + created + " opaque class types added, " +
             present + " already present, " + failed + " failed; " + resolvable +
             " of " + names.size() + " now resolvable by name");
+    }
+
+    /**
+     * Replace the opaque zero-length placeholders with the field layouts
+     * recovered by tools/layout.py, so that decompiled field accesses resolve to
+     * {@code this->f_0x1c} rather than a bare offset.
+     *
+     * <p>The structures are built directly from fields.tsv rather than parsed
+     * from the generated headers. tools/check_headers.py already proves that
+     * each header's declared offsets rebuild exactly under the C++ ABI, so the
+     * data here is the same data with the alignment questions already settled;
+     * handing it to Ghidra as components at explicit offsets keeps that
+     * guarantee instead of asking a second parser to rediscover it.
+     *
+     * <p>Packing is switched off first. With Ghidra's default packing enabled it
+     * would re-insert its own padding between components and silently shift
+     * every field that the binary placed at an odd offset.
+     *
+     * <p>Only rows layouts.tsv marks {@code proven} are read: a name that could
+     * not be shown to be a type at all has had its evidence withheld, and
+     * structures with a negative or overrunning offset were rejected as
+     * internally inconsistent. Neither should reach the program.
+     */
+    private void applyRecoveredLayouts() throws IOException {
+        Path layoutsFile = Paths.get(typesDir, "layouts.tsv");
+        Path fieldsFile = Paths.get(typesDir, "fields.tsv");
+        if (!Files.isRegularFile(layoutsFile) || !Files.isRegularFile(fieldsFile)) {
+            println("DecompileAll: no layouts at " + layoutsFile + ", keeping opaque types");
+            return;
+        }
+
+        // class -> (offset, width, kind, signed), offset ascending.
+        Map<String, List<String[]>> byClass = new TreeMap<>();
+        int proven = 0, withheld = 0;
+        for (String[] row : readTsv(layoutsFile, 9)) {
+            if ("1".equals(row[8])) {
+                proven++;
+            } else {
+                withheld++;
+            }
+        }
+        for (String[] row : readTsv(fieldsFile, 11)) {
+            byClass.computeIfAbsent(row[0], k -> new ArrayList<>())
+                   .add(new String[] { row[1], row[2], row[3], row[4] });
+        }
+
+        DataTypeManager dtm = currentProgram.getDataTypeManager();
+        DataTypeConflictHandler conflict = DataTypeConflictHandler.KEEP_HANDLER;
+        int built = 0, replaced = 0, skipped = 0, noFields = 0, failed = 0;
+        int components = 0;
+
+        for (Map.Entry<String, List<String[]>> e : byClass.entrySet()) {
+            String name = e.getKey();
+            List<String[]> rows = e.getValue();
+            if (rows.isEmpty()) {
+                noFields++;
+                continue;
+            }
+            Integer size = recoveredSize(layoutsFile, name);
+            if (size == null) {
+                skipped++;
+                continue;
+            }
+            try {
+                DataType existing = findByQualifiedName(dtm, name);
+                // Populate the existing structure in place rather than swapping in
+                // a new DataType. replaceDataType() was tried first and is wrong
+                // here: the replacement is an unmanaged StructureDataType carrying
+                // the same name, and forcing the swap left `Walaber::Color` no
+                // longer resolvable by name, so every later prototype mentioning it
+                // failed to parse -- 1,401 signatures had applied before this ran and
+                // all of them silently degraded to `byte *` on the next pass.
+                // Editing the placeholder keeps its identity, so the pointers
+                // already handed out by applied signatures stay valid.
+                Structure s;
+                boolean isNew = existing == null || !(existing instanceof Structure);
+                if (isNew) {
+                    s = new StructureDataType(name, 0, dtm);
+                } else {
+                    s = (Structure) existing;
+                    // A re-run must not stack a second copy of every component.
+                    while (s.getNumComponents() > 0) {
+                        s.delete(0);
+                    }
+                    s.setLength(0);
+                }
+                // Offsets come from the binary and are authoritative; Ghidra must
+                // not second-guess them with its own packing rules.
+                s.setPackingEnabled(false);
+
+                int placed = 0;
+                for (String[] f : rows) {
+                    int off = Integer.parseInt(f[0]);
+                    int width = Integer.parseInt(f[1]);
+                    DataType cdt = componentType(dtm, f[2], f[3], width);
+                    if (cdt == null) {
+                        continue;
+                    }
+                    // insertAtOffset rather than add(), so a field the binary
+                    // placed before the natural alignment of its type still
+                    // lands where the binary addressed it.
+                    s.insertAtOffset(off, cdt, width, "f_0x" + Integer.toHexString(off),
+                        null);
+                    placed++;
+                }
+                if (placed == 0) {
+                    failed++;
+                    continue;
+                }
+                // A structure's length in Ghidra is the end of its last
+                // component, so without explicit tail padding a class whose
+                // recovered sizeof is rounded past its final field -- Vector2 is
+                // 8 bytes of two floats, but a class of one float at offset 0
+                // with sizeof 8 -- would measure short and mis-decompile every
+                // allocation of it. The recovered size, not the last field, is
+                // what the binary allocates.
+                if (size > s.getLength()) {
+                    s.add(UnsignedCharDataType.dataType, (int) (size - s.getLength()),
+                        "_tail", "trailing padding to the recovered sizeof");
+                }
+                s.setDescription("recovered layout, " + placed + " fields, size " + size);
+                components += placed;
+
+                if (isNew) {
+                    dtm.addDataType(s, conflict);
+                    built++;
+                } else {
+                    replaced++;
+                }
+            } catch (Throwable t) {
+                failed++;
+                println("DecompileAll: layout for " + name + " rejected: " + t);
+            }
+        }
+
+        // Prove the import landed rather than counting attempts: a structure's
+        // length is its recovered sizeof only if the offsets were accepted.
+        int correct = 0, wrongSize = 0, lost = 0;
+        List<String> wrong = new ArrayList<>();
+        for (Map.Entry<String, List<String[]>> e : byClass.entrySet()) {
+            Integer size = recoveredSize(layoutsFile, e.getKey());
+            if (size == null) {
+                // layout.py withheld this one, so its opaque placeholder is
+                // still the right thing to have and there is nothing to compare.
+                continue;
+            }
+            DataType dt = findByQualifiedName(dtm, e.getKey());
+            if (!(dt instanceof Structure)) {
+                // The failure that motivated this check: the type stopped being
+                // resolvable by name, so every prototype using it stopped parsing
+                // and silently degraded. Counted separately because it is worse
+                // than a wrong size.
+                lost++;
+                wrong.add(e.getKey() + " (NO LONGER RESOLVABLE)");
+                continue;
+            }
+            if (dt.getLength() == size.longValue()) {
+                correct++;
+            } else {
+                wrongSize++;
+                wrong.add(e.getKey() + " (recovered " + size + ", Ghidra " +
+                    dt.getLength() + ")");
+            }
+        }
+        println("DecompileAll: layouts -- " + built + " added, " + replaced +
+            " replaced, " + noFields + " empty, " + skipped + " not proven, " +
+            failed + " failed; " + components + " field components");
+        println("DecompileAll: " + proven + " proven layouts, " + withheld +
+            " withheld; " + correct + " structures now measure their recovered " +
+            "sizeof, " + wrongSize + " do not, " + lost + " lost their name");
+        for (String w : wrong) {
+            println("DecompileAll:   layout problem: " + w);
+        }
+        if (lost > 0) {
+            // Continuing would apply signatures that cannot resolve these types,
+            // which is worse than stopping: the run reports success while quietly
+            // replacing every `Walaber::Color *` with `byte *`.
+            throw new IllegalStateException(lost + " recovered layouts stopped being "
+                + "resolvable by name; refusing to apply prototypes that use them");
+        }
+    }
+
+    /** Read a tab-separated file, skipping the leading {@code #} header. */
+    private List<String[]> readTsv(Path path, int columns) throws IOException {
+        List<String[]> out = new ArrayList<>();
+        for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
+            if (line.isEmpty() || line.startsWith("#")) {
+                continue;
+            }
+            String[] f = line.split("\t", -1);
+            if (f.length >= columns) {
+                out.add(f);
+            }
+        }
+        return out;
+    }
+
+    /** The recovered sizeof for one class, or null if it was not proven. */
+    private Integer recoveredSize(Path layoutsFile, String name) throws IOException {
+        for (String[] row : readTsv(layoutsFile, 9)) {
+            if (row[0].equals(name) && "1".equals(row[8])) {
+                return Integer.valueOf(row[1]);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Map a recovered field kind and width onto a Ghidra data type.
+     *
+     * <p>A field recovered at 16 bytes is two consecutive 64-bit halves with no
+     * evidence separating them, so it is emitted as an array rather than guessed
+     * at as a struct or a single 128-bit value.
+     */
+    private DataType componentType(DataTypeManager dtm, String kind, String signed, int width) {
+        if (width <= 0) {
+            return null;
+        }
+        if (width == 16) {
+            return new ArrayDataType(UnsignedLongDataType.dataType, 2, 8);
+        }
+        if (width != 1 && width != 2 && width != 4 && width != 8) {
+            return null;
+        }
+        if ("float".equals(kind) && width == 4) {
+            return FloatDataType.dataType;
+        }
+        if ("float".equals(kind) && width == 8) {
+            return DoubleDataType.dataType;
+        }
+        boolean s = "1".equals(signed);
+        switch (width) {
+            case 1: return s ? SignedCharDataType.dataType : UnsignedCharDataType.dataType;
+            case 2: return s ? ShortDataType.dataType : UnsignedShortDataType.dataType;
+            case 4: return s ? IntegerDataType.dataType : UnsignedIntegerDataType.dataType;
+            default: return s ? LongDataType.dataType : UnsignedLongDataType.dataType;
+        }
     }
 
     /**

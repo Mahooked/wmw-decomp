@@ -29,7 +29,7 @@ re-inferred.
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
-| Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; field layouts still not recovered (see "Function signatures") |
+| Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; 325 class layouts recovered from p-code field-access evidence and imported into Ghidra (see "Function signatures") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
@@ -37,10 +37,11 @@ re-inferred.
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,282 decompiled
-   bodies; struct/class field layouts, enums and typedefs must still be read out of
-   the code that uses them. The 202 class types applied so far are opaque
-   zero-length placeholders — a real layout is what turns `Walaber::Message *` into
-   a readable struct. See "Function signatures".
+   bodies. Class field layouts are now recovered too — 325 of them, each proven
+   to rebuild to its recovered `sizeof` under the C++ ABI — but enums, typedefs
+   and the remaining field names still have to be read out of the code that uses
+   them, and fields are currently named `f_0x<offset>` because the binary never
+   recorded their names. See "Function signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped: if-converted branches, spill/reload noise, register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
@@ -157,14 +158,23 @@ tools/
   refdemangle.py      builds the GCC oracle (out/symbols/reference.tsv)
   refdiff.py          localises the first divergence against the oracle
   refprobe.py         asks the oracle about synthetic names
+  members.py          classifies every mangled member function, recovers its exact
+                      parameter list and the register/offset seeds it implies
+  layout.py           raw field-access evidence -> verified class layouts
+  headers.py          verified layouts -> C++ headers + a type index
+  check_headers.py    proves each generated header rebuilds to its recovered
+                      offsets and sizeof under the C++ ABI (exit != 0 otherwise)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
     DecompileAll.java headless Ghidra script: rebuilds function boundaries from
-                      the ELF symbol table, then bulk-decompiles and emits a
-                      per-class source tree
+                      the ELF symbol table, import the verified layouts, then
+                      bulk-decompile and emit a per-class source tree
+    FieldScan.java    p-code dataflow over every function, recording each field
+                      access with the class, offset and access width
+    PcodeProbe.java    verifies the p-code API assumptions FieldScan relies on
     ExportSymbols.java exports Ghidra's own demangled symbol names, for
                       cross-checking the local demangler
   wmwtools/
@@ -354,6 +364,82 @@ A note on symbol counts, because the numbers above are easy to conflate.
 8,618 `STT_FUNC`, 2,062 `STT_OBJECT`, plus a handful of `STT_NOTYPE`). Of those,
 8,162 are mangled C++ symbols, and all 8,162 were independently confirmed to
 agree with Ghidra in both address and spelling.
+
+### Field layouts
+
+Class layouts are recovered from the code that *uses* them, since the binary
+records no field table. `tools/ghidra/FieldScan.java` runs a forward dataflow
+pass over each function's p-code, tracking affine offsets from `x0` and from each
+parameter register, through `LOAD`/`STORE` and stack spills, invalidating
+AAPCS64 caller-saved registers at calls. That yields 39,348 tagged accesses, which
+`tools/layout.py` turns into 3,048 fields across 450 classes.
+
+Three things had to be got right, and each is a place a plausible-looking method
+gives the wrong answer:
+
+- **Static and non-static cannot be told apart from a mangling.** `FieldScan`
+  therefore seeds `x0` under *both* hypotheses and tags every access `this` or
+  `static`, rather than picking one. `layout.py` keeps the `this` reads as
+  establishing evidence and uses `static` reads only to corroborate a field
+  another function already established. Getting this backwards silently
+  reconstructs every class in the binary with the layout of whatever it was
+  handed.
+- **A name is not automatically a class.** Owner extraction attributes a
+  namespace's free functions to the namespace, so bare `Walaber` accumulated a
+  "layout" that was really whatever those read from their first argument. A
+  layout is emitted only for a name with positive evidence of being a type: a
+  typeinfo in the RTTI, a constructor or destructor, or use as a parameter. 125
+  names were withheld on this ground and are listed in the run output rather than
+  silently dropped. Note that the two obvious tests both fail: real classes have
+  nested classes, and plenty of real classes are static-only.
+- **A recovered offset is authoritative; the inferred type is not.** If the
+  binary addressed offset 1, the field is a byte, whatever the access width
+  suggested. `headers.py` narrows 32 such types rather than bending the offset to
+  fit them.
+
+A layout is emitted only if it is internally consistent. A negative offset means
+the evidence points into the middle of the object — a base subobject, or a
+pointer to a member — which no flat struct can express; fields reaching past an
+independently recovered `sizeof` means the two disagree about which object this
+is. 8 classes were withheld for these reasons.
+
+The result is checked rather than assumed. `tools/check_headers.py` walks every
+generated header, applies the alignment rules a real compiler would, and confirms
+each field lands at the offset encoded in its name and each struct measures its
+recovered `sizeof`: **325 headers, 2,616 field declarations, 0 disagreements.**
+`DecompileAll.java` then rebuilds the same structures in Ghidra at explicit
+offsets with packing disabled, and verifies all 325 measure their recovered size
+before decompiling.
+
+The payoff is visible in the output. `Walaber::Color`, recovered as four bytes at
+offsets 0-3, decompiles as the channel arithmetic it is:
+
+```c
+in_s1 = (p3->f_0x4 - p3->f_0x0) / 255.0;
+```
+
+Those numbers are measured against a no-layout control run of the same pipeline,
+not asserted:
+
+| | no layouts | layouts |
+| --- | --- | --- |
+| signatures applied | 2,282 | 2,450 |
+| signatures unparseable | 1,684 | 1,567 |
+| field accesses rendered as `f_0x` | 0 | 16,718 |
+| `DAT_` placeholders | 6,087 | 6,077 |
+| generic `param_N` parameters | 4,296 | 4,171 |
+
+The control run is what makes this readable. Re-importing the binary into a fresh
+project also repairs call targets that the previous, repeatedly-patched project had
+left as `func_0x0016ace0`, which is why the committed tree differs so widely from a
+clean run. Against the control — where the layouts are the only variable — 168 more
+signatures resolve and no category regresses. A separate audit confirms all 15,222
+lines mentioning a field reference a *proven* class: none of the 125 withheld
+layouts leak into the output.
+
+Field *names* are the main thing still missing: the binary never recorded them,
+so fields are called `f_0x<offset>`. The 458 surviving `get*`/`set*`/`is*`/`has*`
+accessors are the obvious route to recovering them.
 
 ### Quality caveats
 

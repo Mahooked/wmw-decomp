@@ -1,0 +1,451 @@
+# class	size	align	fields	confidence	sizeof_cap	support_cut	anchored	proven
+Walaber	16	8	2	med	0	2.0	0	0
+Walaber::AABB	20	4	5	high	0	2.2	1	1
+Walaber::AchievementManager	152	8	17	high	0	2.0	1	1
+Walaber::Animation	264	8	37	high	0	2.2	1	1
+Walaber::AnimationCueAnimationTrack	48	8	6	high	0	2.0	1	1
+Walaber::AnimationEventType	8	8	1	med	0	2.0	1	1
+Walaber::AnimationManager	80	8	6	high	0	2.8	1	1
+Walaber::BaseParticle	28	4	5	high	0	2.0	1	1
+Walaber::BezierCurve	40	8	5	high	0	2.0	1	1
+Walaber::BitmapFont	168	8	13	high	0	2.0	1	1
+Walaber::BitmapFont::GlyphInfo	40	4	8	med	0	2.0	1	1
+Walaber::Bone	120	8	6	med	0	2.0	1	1
+Walaber::BroadcastManager	24	8	3	high	0	2.0	1	1
+Walaber::Camera	144	8	15	high	0	4.0	1	1
+Walaber::CameraController	176	8	17	high	0	2.0	1	1
+Walaber::CharacterManager	16	8	1	high	0	2.0	1	1
+Walaber::CircleHelper	8	4	2	med	0	2.0	0	0
+Walaber::Color	4	1	4	high	0	7.0	1	1
+Walaber::ComicStrip	408	8	36	high	0	2.0	1	1
+Walaber::CompressionRecord	8	4	2	high	0	2.0	1	1
+Walaber::Curve	48	8	8	high	0	2.5	1	1
+Walaber::CurveKey	12	4	3	high	0	2.0	1	1
+Walaber::CurveManager	136	8	10	high	0	2.0	1	1
+Walaber::DatabaseIterator	8	8	1	high	0	2.8	1	1
+Walaber::DatabaseManager	24	8	3	high	0	2.0	0	0
+Walaber::DrawableNode	132	4	1	high	0	2.0	1	1
+Walaber::FileHelper	24	8	2	med	0	2.0	0	0
+Walaber::FileManager	128	8	11	high	0	2.0	1	1
+Walaber::FileManager::FH_StandardFileSystem	16	8	2	high	0	2.0	1	1
+Walaber::FileManager::FH_ZipFileSystem	56	8	4	high	0	2.0	1	1
+Walaber::FileManager::FileHandler	8	8	1	med	0	2.0	1	1
+Walaber::FileManager::ReadFileCallbackParameters	48	8	2	high	0	2.0	1	1
+Walaber::FingerInfo	12	4	1	high	0	2.0	1	1
+Walaber::Flipbook	32	8	2	high	0	2.0	1	1
+Walaber::FluidParticleSet	56	8	5	high	0	2.8	1	1
+Walaber::GraphicsGL::DumpedGLState	1	1	1	med	4	2.0	1	1
+Walaber::HermiteCurve	32	8	2	high	0	2.0	1	1
+Walaber::Language	4	4	1	high	0	2.0	1	1
+Walaber::LinearCurve	32	8	2	high	0	2.0	1	1
+Walaber::Message	16	4	1	high	0	2.0	1	1
+Walaber::MessageReceiver	8	8	1	high	0	2.0	1	1
+Walaber::Message_AchievementUnlocked	8	8	1	high	0	2.0	1	1
+Walaber::Node	128	8	15	high	0	2.0	1	1
+Walaber::NodeAnimationTrack	104	8	9	high	0	2.0	1	1
+Walaber::NumericAnimationTrack	40	8	4	high	0	2.0	1	1
+Walaber::PCSNode	32	8	4	high	0	2.0	1	1
+Walaber::ParticleEmitter	464	8	47	high	0	2.0	1	1
+Walaber::ParticleEmitter::EmitterZone	32	8	4	med	0	2.0	1	1
+Walaber::ParticleSet	80	8	10	high	0	2.0	1	1
+Walaber::PlatformManager	56	4	2	high	0	2.0	1	1
+Walaber::PositionTextureColorVert	20	4	2	high	0	2.0	1	1
+Walaber::ProgrammaticTexture2D	136	8	5	high	0	2.0	1	1
+Walaber::Property	40	8	4	high	0	2.2	1	1
+Walaber::PropertyList	24	8	3	high	0	2.0	1	1
+Walaber::PushCommand	56	8	4	high	0	2.0	1	1
+Walaber::QuadHelper	8	4	2	med	0	2.0	0	0
+Walaber::Rect	16	4	4	high	0	2.2	1	1
+Walaber::RenderTexture2D	216	8	15	high	0	2.0	1	1
+Walaber::RibbonParticleSet<10>	104	8	10	high	0	2.0	1	1
+Walaber::SceneGraph	8	8	1	high	0	2.0	1	1
+Walaber::ScreenManager	16	8	2	high	0	2.0	0	0
+Walaber::SharedPtr<Walaber::Callback>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::Curve>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::RenderTexture2D>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::SoundEffectInstance>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::SoundResource>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::SpriteAnimation>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::Texture2D>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<Walaber::Texture>	16	8	2	high	0	2.0	1	1
+Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>	16	8	2	high	0	2.0	1	1
+Walaber::Skeleton	352	8	17	high	0	2.0	1	1
+Walaber::SkeletonActor	392	8	13	high	0	3.2	1	1
+Walaber::SkeletonActorCueAnimationTrack	40	8	4	high	0	2.0	1	1
+Walaber::SoundEffectInstance	80	8	4	high	0	2.8	1	1
+Walaber::SoundManager	408	8	19	high	0	4.0	1	1
+Walaber::SoundResource	8	8	1	high	0	2.0	1	1
+Walaber::Sprite	216	8	13	high	0	2.0	1	1
+Walaber::SpriteAnimation	192	8	24	high	0	2.0	1	1
+Walaber::SpriteAnimationTrack	72	8	10	high	0	2.0	1	1
+Walaber::SpriteBatch	56	8	7	high	0	4.0	1	1
+Walaber::StringHelper	24	8	3	high	0	2.5	0	0
+Walaber::Subtexture	232	8	5	high	0	2.0	1	1
+Walaber::TextManager	48	8	5	high	0	2.0	0	0
+Walaber::Texture	128	16	13	high	0	2.0	1	1
+Walaber::Texture2D	232	8	13	high	0	2.0	1	1
+Walaber::TextureManager	8	8	1	high	0	3.8	1	1
+Walaber::TextureManager::SubTexInfo	64	16	4	med	0	2.0	1	1
+Walaber::TextureSettings	88	8	12	high	0	2.0	1	1
+Walaber::Transition	200	8	12	high	0	2.0	1	1
+Walaber::TransitionLoader	16	8	2	med	0	2.0	0	0
+Walaber::Transition_Block	264	8	14	high	0	2.0	1	1
+Walaber::Transition_Fade	232	8	17	high	0	2.0	1	1
+Walaber::Transition_Iris	264	8	15	high	0	2.0	1	1
+Walaber::Transition_Slide	296	8	20	high	0	2.0	1	1
+Walaber::Transition_Widget_Slide	304	8	24	high	0	2.0	1	1
+Walaber::Transition_Wipe	248	8	12	high	0	2.0	1	1
+Walaber::TweenedLinearCurve	96	8	12	high	0	2.0	1	1
+Walaber::ValueTweaker	24	8	2	high	0	2.0	0	0
+Walaber::ValueTweaker::TweakableValue	88	8	4	high	0	2.0	0	0
+Walaber::Vector2	8	4	2	high	8	44.0	1	1
+Walaber::VectorTools	8	4	1	high	0	2.2	0	0
+Walaber::VerletIntegrator	4	4	1	high	0	2.0	1	1
+Walaber::VertexArraysObject	208	8	20	med	0	2.0	0	0
+Walaber::VertexColorBlendMode	4	4	1	med	0	2.0	1	1
+Walaber::Widget	344	8	21	high	0	2.0	1	1
+Walaber::Widget::WidgetActionRet	20	4	3	high	0	2.0	1	1
+Walaber::WidgetHelper	48	8	3	high	0	2.0	0	0
+Walaber::WidgetManager	144	8	13	high	0	2.5	1	1
+Walaber::Widget_Canvas	304	8	8	high	0	2.8	1	1
+Walaber::Widget_ClassicControls	272	8	2	high	0	3.0	1	1
+Walaber::Widget_ColorPicker	424	8	28	high	0	2.0	1	1
+Walaber::Widget_FingerCatcher	336	8	10	high	0	2.0	1	1
+Walaber::Widget_Group	280	8	5	high	0	2.0	1	1
+Walaber::Widget_Group::WidgetInfo	16	8	2	high	0	2.0	1	1
+Walaber::Widget_IconList	440	8	27	high	0	2.5	1	1
+Walaber::Widget_IconList::Icon	48	8	2	high	0	2.0	1	1
+Walaber::Widget_Label	392	8	34	high	0	3.0	1	1
+Walaber::Widget_Manipulator	320	8	9	high	0	2.0	1	1
+Walaber::Widget_MovingTextBox	392	8	20	high	0	2.2	1	1
+Walaber::Widget_NumberSpinner	8	4	1	high	16	2.0	1	1
+Walaber::Widget_ProgressBar	376	8	22	high	0	2.0	1	1
+Walaber::Widget_PushButton	456	8	65	high	0	2.0	1	1
+Walaber::Widget_ScoreCounter	440	8	28	high	0	2.2	1	1
+Walaber::Widget_ScrollableCamera	472	8	24	high	0	2.2	1	1
+Walaber::Widget_ScrollableGroup	400	8	22	high	0	2.5	1	1
+Walaber::Widget_ScrollableSet	392	8	20	high	0	2.8	1	1
+Walaber::Widget_SlideWheel	328	8	5	high	0	2.8	1	1
+Walaber::Widget_Slider	424	8	15	high	0	2.5	1	1
+Walaber::Widget_Spinner	312	8	2	high	0	3.2	1	1
+Walaber::Widget_TimedButton	352	8	11	high	0	2.0	1	1
+Walaber::Widget_Toggle	424	8	26	high	0	2.0	1	1
+Walaber::XML	32	8	1	med	0	2.0	0	0
+Walaber::XMLDocument	24	8	3	high	0	2.0	1	1
+Walaber::XMLDocument::AttributeIterator	8	8	1	high	0	2.0	1	1
+Walaber::XMLDocument::Iterator	8	8	1	high	0	2.0	1	1
+Walaber::XMLDocument::NamedIterator	8	8	1	high	0	2.0	1	1
+Walaber::ZipArchiveCreator	8	8	1	high	0	2.0	1	1
+Walaber::ZipArchiveReader	96	8	4	high	0	2.0	1	1
+Walaber::ZipUtilities	104	8	4	high	0	2.0	0	0
+WaterConcept::AlgaeHider	984	8	5	high	0	2.0	1	1
+WaterConcept::Bomb	976	8	7	high	0	2.0	1	1
+WaterConcept::Collectible	1008	8	15	high	0	2.0	1	1
+WaterConcept::DirtyWall	1008	8	7	high	0	2.0	1	1
+WaterConcept::Fan	1096	8	18	high	0	2.0	1	1
+WaterConcept::Floater	1112	8	17	high	0	2.5	1	1
+WaterConcept::FluidConverter	8	8	1	high	16	2.0	1	1
+WaterConcept::Fluids	4	4	1	high	4	7.0	1	1
+WaterConcept::Fluids::FluidCollisionRecord	32	16	3	high	0	2.0	1	1
+WaterConcept::GameSettings	24	8	3	high	0	3.8	0	0
+WaterConcept::GameState	472	8	41	high	0	2.2	1	1
+WaterConcept::Grid	48	4	11	high	0	2.0	1	1
+WaterConcept::GridCell	8	4	2	high	0	3.8	1	1
+WaterConcept::HDAssetsNotification	520	8	12	high	0	2.0	1	1
+WaterConcept::IAPNotification	632	8	17	high	0	2.0	1	1
+WaterConcept::IcyHot	1136	8	23	high	0	2.0	1	1
+WaterConcept::IndexGrid<std::__ndk1::map<int, WaterConcept::World::VBOData, std::__ndk1::less<int>, std::__ndk1::allocator<std::__ndk1::pair<int const, WaterConcept::World::VBOData>>>>	16	8	1	high	0	2.0	1	1
+WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>	16	8	3	high	0	2.0	1	1
+WaterConcept::InteractiveObject	712	8	14	high	0	6.5	1	1
+WaterConcept::MysteryCave	976	8	8	high	0	2.0	1	1
+WaterConcept::Notification	480	8	12	high	0	2.0	1	1
+WaterConcept::Notification::NotificationTransitionBehavior	80	8	10	med	0	2.0	1	1
+WaterConcept::NotificationSingleton	320	8	24	high	0	2.0	1	1
+WaterConcept::ParallaxPuppetShow	640	8	21	high	0	2.0	1	1
+WaterConcept::ParticleDescription	12	4	3	high	0	3.0	1	1
+WaterConcept::PlayerDataSerializer	24	8	3	high	0	2.0	0	0
+WaterConcept::PurchaseHandler	40	8	3	high	0	2.0	1	1
+WaterConcept::Screen_Achievements	264	8	5	high	0	2.0	1	1
+WaterConcept::Screen_AchievementsTest	208	8	10	high	0	2.0	1	1
+WaterConcept::Screen_AgeGate	264	8	16	high	0	2.0	1	1
+WaterConcept::Screen_AnimationTest	208	8	11	high	0	2.0	1	1
+WaterConcept::Screen_Challenges	232	8	9	high	0	2.0	1	1
+WaterConcept::Screen_Collectibles	408	8	22	high	0	2.0	1	1
+WaterConcept::Screen_ComicStrip	168	8	3	high	0	2.0	1	1
+WaterConcept::Screen_Credits	288	8	21	high	0	2.0	1	1
+WaterConcept::Screen_Dialogue	400	8	34	high	0	2.0	1	1
+WaterConcept::Screen_Editor	536	8	16	high	0	4.8	1	1
+WaterConcept::Screen_Editor::ObjectData	120	8	5	high	0	2.0	1	1
+WaterConcept::Screen_EditorObjectEditor	344	8	22	high	0	2.0	1	1
+WaterConcept::Screen_EditorObjectSelect	208	8	12	high	0	2.0	1	1
+WaterConcept::Screen_FoodPyramid	248	8	12	high	0	2.0	1	1
+WaterConcept::Screen_FullScreenAlert	360	8	31	high	0	2.0	1	1
+WaterConcept::Screen_GameTransition	168	8	4	high	0	2.0	1	1
+WaterConcept::Screen_GraphicsContextRestore	168	8	6	high	0	2.0	1	1
+WaterConcept::Screen_Hub	272	8	15	high	0	2.0	1	1
+WaterConcept::Screen_Hub::HubAction	8	8	1	med	0	2.0	1	1
+WaterConcept::Screen_InAppPurchase	608	8	57	high	0	2.0	1	1
+WaterConcept::Screen_Languages	216	8	12	high	0	2.0	1	1
+WaterConcept::Screen_LevelSelect	744	8	55	high	0	2.0	1	1
+WaterConcept::Screen_Loading	24	8	3	high	0	3.5	1	1
+WaterConcept::Screen_MainMenu	712	8	25	high	0	2.8	1	1
+WaterConcept::Screen_MainMenu_v2	1080	8	16	high	0	6.0	1	1
+WaterConcept::Screen_MenuOverlay	160	8	5	high	0	2.0	1	1
+WaterConcept::Screen_MusicCollection	256	8	13	high	0	2.0	1	1
+WaterConcept::Screen_MysteryShow	216	8	14	high	0	2.0	1	1
+WaterConcept::Screen_NoteChallenges	248	8	10	high	0	2.0	1	1
+WaterConcept::Screen_PerformanceTest	168	8	3	high	0	2.0	1	1
+WaterConcept::Screen_PerryDemo	264	8	14	high	0	2.0	1	1
+WaterConcept::Screen_Popup	1440	8	17	high	0	4.5	1	1
+WaterConcept::Screen_Processing	256	8	12	high	0	2.0	1	1
+WaterConcept::Screen_PuppetShow	880	8	14	high	0	2.0	1	1
+WaterConcept::Screen_Settings	264	8	18	high	0	2.0	1	1
+WaterConcept::Screen_SettingsProfile	248	8	15	high	0	2.0	1	1
+WaterConcept::Screen_SettingsReset	280	8	21	high	0	2.0	1	1
+WaterConcept::Screen_Sunset	192	8	5	high	0	2.0	1	1
+WaterConcept::Screen_Upsell	192	8	5	high	0	2.0	1	1
+WaterConcept::Screen_UpsellWater2	288	8	10	high	0	2.0	1	1
+WaterConcept::Screen_WaterTest	680	8	14	high	0	6.0	1	1
+WaterConcept::Screen_WaterTest::FingerStamp	24	8	3	high	0	2.0	1	1
+WaterConcept::Screen_WaterTest::PhotoFinishSnapshot	24	8	1	med	0	2.0	0	0
+WaterConcept::Screen_WorldSelect	536	8	22	high	0	2.5	1	1
+WaterConcept::SeaweedStrand	176	8	12	high	0	2.0	1	1
+WaterConcept::ShowerCurtain	176	8	12	high	0	2.0	1	1
+WaterConcept::Spout	1288	8	50	high	0	2.0	1	1
+WaterConcept::StarSeed	8	8	1	high	8	2.5	1	1
+WaterConcept::Switch	1048	8	18	high	0	2.0	1	1
+WaterConcept::WCScreen	40	8	3	high	0	2.0	1	1
+WaterConcept::WaterBalloon	1264	8	14	high	0	3.8	1	1
+WaterConcept::World	2520	8	8	high	0	9.0	1	1
+WaterConcept::YSwitch	1352	8	17	high	0	2.0	1	1
+WaterConceptConstants::FluidDescription	96	4	41	high	0	2.0	1	1
+WaterConceptConstants::FluidType	8	8	1	med	0	2.0	1	1
+WaterConceptConstants::MaterialType	4	4	1	high	0	2.0	1	1
+_JNIEnv	8	8	1	high	0	2.0	0	0
+ndk::AccelerometerEvent	12	4	2	med	0	2.0	1	1
+ndk::ApplicationContext	232	8	25	high	0	2.0	1	1
+ndk::DatabaseCallbackClass	4	4	1	high	0	2.0	1	1
+ndk::MotionEvent	128	8	16	high	0	2.0	1	1
+ndk::SafePool<ndk::MotionEvent>	96	8	6	high	0	2.0	1	1
+ndk::SafeQueue<int>	24	8	3	med	0	2.0	0	0
+ndk::SafeQueue<ndk::AbstractCommand*>	24	8	2	med	0	2.0	0	0
+ndk::SafeQueue<ndk::AccelerometerEvent>	24	8	3	med	0	2.0	0	0
+std::__ndk1	24	8	2	high	0	2.5	0	0
+std::__ndk1::__assoc_sub_state	120	8	3	high	0	2.2	1	1
+std::__ndk1::__codecvt_utf16<char16_t, false>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf16<char16_t, true>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf16<char32_t, false>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf16<char32_t, true>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf16<wchar_t, false>	40	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf16<wchar_t, true>	40	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8<char16_t>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8<char32_t>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8<wchar_t>	40	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8_utf16<char16_t>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8_utf16<char32_t>	32	8	2	high	0	2.0	1	1
+std::__ndk1::__codecvt_utf8_utf16<wchar_t>	40	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<_xmlNode*, std::__ndk1::allocator<_xmlNode*>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>>	24	8	2	high	0	2.0	1	1
+std::__ndk1::__num_put_base	3	1	3	med	0	2.0	0	1
+std::__ndk1::__shared_count	8	8	1	med	0	2.0	0	1
+std::__ndk1::__shared_weak_count	8	8	1	high	0	2.0	0	1
+std::__ndk1::__sp_mut	8	8	1	med	0	2.0	0	0
+std::__ndk1::__split_buffer<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>	40	8	5	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>	24	8	1	med	0	2.0	0	0
+std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>	24	8	1	med	0	2.0	0	0
+std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>	40	8	5	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>&>	40	8	5	med	0	2.0	0	0
+std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>>	32	8	4	high	0	2.0	1	1
+std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__split_buffer<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>&>	24	8	3	high	0	2.0	1	1
+std::__ndk1::__thread_struct	8	8	1	high	0	2.0	1	1
+std::__ndk1::__time_get	8	8	1	high	0	2.0	1	1
+std::__ndk1::__time_get_storage<char>	1040	8	4	med	0	2.0	0	1
+std::__ndk1::__time_get_storage<wchar_t>	1040	8	4	med	0	2.0	0	1
+std::__ndk1::__time_put	8	8	1	high	0	2.0	1	1
+std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>	24	8	1	med	0	2.0	0	0
+std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::AlgaeDot>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::__map_value_compare<WaterConcept::InteractiveObject*, std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>, std::__ndk1::less<WaterConcept::InteractiveObject*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::InteractiveObject*, WaterConcept::Screen_Editor::SelectedObjData>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::__map_value_compare<WaterConcept::Switch*, std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>, std::__ndk1::less<WaterConcept::Switch*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Switch*, WaterConcept::World::SwitchAnimInfo>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FileManager::FileHandler*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>	24	8	1	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::TouchOwner>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, float>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, float>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, float>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, sqlite3*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, sqlite3*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>	24	8	1	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>	24	8	2	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>>>	24	8	2	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>>>	24	8	2	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::WidgetHelper::LoadPassThroughParams>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>>>	16	8	1	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::__value_type<void*, void*>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, void*>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, void*>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>	168	8	21	high	0	2.0	1	1
+std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>	152	8	4	high	0	2.0	1	1
+std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>	144	8	5	high	0	3.8	1	1
+std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>	144	8	5	high	0	3.8	1	1
+std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>	152	8	5	high	0	2.2	1	1
+std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry	16	8	1	high	0	2.0	1	1
+std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>	152	8	5	high	0	2.2	1	1
+std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry	16	8	1	high	0	2.0	1	1
+std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>	64	8	6	high	0	3.2	1	1
+std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>	64	8	6	high	0	3.2	1	1
+std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	24	8	3	high	0	5.8	1	1
+std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>	1	1	1	high	4	5.8	1	1
+std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	104	8	12	high	0	2.0	1	1
+std::__ndk1::codecvt<wchar_t, char, mbstate_t>	24	8	2	high	0	2.0	1	1
+std::__ndk1::collate_byname<char>	24	8	2	high	0	2.0	1	1
+std::__ndk1::collate_byname<wchar_t>	24	8	2	high	0	2.0	1	1
+std::__ndk1::ctype<char>	32	8	3	high	0	2.0	1	1
+std::__ndk1::ctype<wchar_t>	8	8	1	high	0	2.0	1	1
+std::__ndk1::ctype_byname<char>	40	8	4	high	0	2.0	1	1
+std::__ndk1::ctype_byname<wchar_t>	24	8	2	high	0	2.0	1	1
+std::__ndk1::deque<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>	48	8	4	med	0	2.0	0	0
+std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>	48	8	4	med	0	2.0	0	0
+std::__ndk1::deque<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>	48	8	4	med	0	2.0	0	0
+std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>	40	8	3	med	0	2.0	0	0
+std::__ndk1::deque<_xmlNode*, std::__ndk1::allocator<_xmlNode*>>	48	8	4	med	0	2.0	0	0
+std::__ndk1::deque<int, std::__ndk1::allocator<int>>	40	8	3	med	0	2.0	0	0
+std::__ndk1::error_category	8	8	1	high	0	2.0	1	1
+std::__ndk1::error_code	16	8	2	high	0	2.0	1	1
+std::__ndk1::error_condition	16	8	2	high	0	2.0	1	1
+std::__ndk1::future<void>	8	8	1	high	0	2.0	1	1
+std::__ndk1::ios_base	136	8	15	high	0	3.0	1	1
+std::__ndk1::list<int, std::__ndk1::allocator<int>>	24	8	1	med	0	2.0	0	0
+std::__ndk1::list<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>	24	8	1	med	0	2.0	0	0
+std::__ndk1::locale	8	8	1	high	0	2.5	1	1
+std::__ndk1::locale::facet	8	8	1	med	0	2.0	1	1
+std::__ndk1::locale::id	16	8	2	high	0	2.0	1	1
+std::__ndk1::moneypunct_byname<char, false>	124	4	1	high	0	2.0	1	1
+std::__ndk1::moneypunct_byname<char, true>	124	4	1	high	0	2.0	1	1
+std::__ndk1::moneypunct_byname<wchar_t, false>	124	4	1	high	0	2.0	1	1
+std::__ndk1::moneypunct_byname<wchar_t, true>	124	4	1	high	0	2.0	1	1
+std::__ndk1::numpunct<char>	48	8	4	high	0	2.0	1	1
+std::__ndk1::numpunct<wchar_t>	48	8	4	high	0	2.0	1	1
+std::__ndk1::numpunct_byname<char>	48	8	3	high	0	2.0	1	1
+std::__ndk1::numpunct_byname<wchar_t>	48	8	3	high	0	2.0	1	1
+std::__ndk1::piecewise_construct_t	4	4	1	med	0	2.0	1	1
+std::__ndk1::promise<void>	8	8	1	high	0	2.0	1	1
+std::__ndk1::recursive_timed_mutex	104	8	2	high	0	2.0	1	1
+std::__ndk1::shared_future<void>	8	8	1	high	0	2.0	1	1
+std::__ndk1::system_error	8	8	1	high	0	2.0	1	1
+std::__ndk1::thread	8	8	1	high	0	2.0	1	1
+std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	24	8	1	high	0	2.0	1	1
+std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	24	8	1	high	0	2.0	1	1
+std::__ndk1::timed_mutex	89	1	1	high	0	2.0	1	1
+std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::RibbonParticle<10>, std::__ndk1::allocator<Walaber::RibbonParticle<10>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<Walaber::Widget_Label*, std::__ndk1::allocator<Walaber::Widget_Label*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>	24	8	3	high	0	2.0	0	0
+std::__ndk1::vector<char, std::__ndk1::allocator<char>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<int, std::__ndk1::allocator<int>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>	24	8	3	med	0	2.0	0	0
+std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>	24	8	3	med	0	2.0	0	0
+std::exception_ptr	8	8	1	high	0	2.0	1	1
+std::logic_error	16	8	2	high	0	2.0	1	1
+std::nested_exception	16	8	2	high	0	2.0	1	1
+std::runtime_error	16	8	2	high	0	2.0	1	1

@@ -1,0 +1,326 @@
+# class	header	size	align	confidence	fields
+Walaber::AABB	Walaber/AABB.h	20	4	high	5
+Walaber::AchievementManager	Walaber/AchievementManager.h	152	8	high	17
+Walaber::Animation	Walaber/Animation.h	264	8	high	37
+Walaber::AnimationCueAnimationTrack	Walaber/AnimationCueAnimationTrack.h	48	8	high	6
+Walaber::AnimationEventType	Walaber/AnimationEventType.h	8	8	med	1
+Walaber::AnimationManager	Walaber/AnimationManager.h	80	8	high	6
+Walaber::BaseParticle	Walaber/BaseParticle.h	28	4	high	5
+Walaber::BezierCurve	Walaber/BezierCurve.h	40	8	high	5
+Walaber::BitmapFont	Walaber/BitmapFont.h	168	8	high	13
+Walaber::BitmapFont::GlyphInfo	Walaber/BitmapFont/GlyphInfo.h	40	4	med	8
+Walaber::Bone	Walaber/Bone.h	120	8	med	6
+Walaber::BroadcastManager	Walaber/BroadcastManager.h	24	8	high	3
+Walaber::Camera	Walaber/Camera.h	144	8	high	15
+Walaber::CameraController	Walaber/CameraController.h	176	8	high	17
+Walaber::CharacterManager	Walaber/CharacterManager.h	16	8	high	1
+Walaber::Color	Walaber/Color.h	4	1	high	4
+Walaber::ComicStrip	Walaber/ComicStrip.h	408	8	high	36
+Walaber::CompressionRecord	Walaber/CompressionRecord.h	8	4	high	2
+Walaber::Curve	Walaber/Curve.h	48	8	high	8
+Walaber::CurveKey	Walaber/CurveKey.h	12	4	high	3
+Walaber::CurveManager	Walaber/CurveManager.h	136	8	high	10
+Walaber::DatabaseIterator	Walaber/DatabaseIterator.h	8	8	high	1
+Walaber::DrawableNode	Walaber/DrawableNode.h	132	4	high	1
+Walaber::FileManager	Walaber/FileManager.h	128	8	high	11
+Walaber::FileManager::FH_StandardFileSystem	Walaber/FileManager/FH_StandardFileSystem.h	16	8	high	2
+Walaber::FileManager::FH_ZipFileSystem	Walaber/FileManager/FH_ZipFileSystem.h	56	8	high	4
+Walaber::FileManager::FileHandler	Walaber/FileManager/FileHandler.h	8	8	med	1
+Walaber::FileManager::ReadFileCallbackParameters	Walaber/FileManager/ReadFileCallbackParameters.h	48	8	high	2
+Walaber::FingerInfo	Walaber/FingerInfo.h	12	4	high	1
+Walaber::Flipbook	Walaber/Flipbook.h	32	8	high	2
+Walaber::FluidParticleSet	Walaber/FluidParticleSet.h	56	8	high	5
+Walaber::GraphicsGL::DumpedGLState	Walaber/GraphicsGL/DumpedGLState.h	1	1	med	1
+Walaber::HermiteCurve	Walaber/HermiteCurve.h	32	8	high	2
+Walaber::Language	Walaber/Language.h	4	4	high	1
+Walaber::LinearCurve	Walaber/LinearCurve.h	32	8	high	2
+Walaber::Message	Walaber/Message.h	16	4	high	1
+Walaber::MessageReceiver	Walaber/MessageReceiver.h	8	8	high	1
+Walaber::Message_AchievementUnlocked	Walaber/Message_AchievementUnlocked.h	8	8	high	1
+Walaber::Node	Walaber/Node.h	128	8	high	15
+Walaber::NodeAnimationTrack	Walaber/NodeAnimationTrack.h	104	8	high	9
+Walaber::NumericAnimationTrack	Walaber/NumericAnimationTrack.h	40	8	high	4
+Walaber::PCSNode	Walaber/PCSNode.h	32	8	high	4
+Walaber::ParticleEmitter	Walaber/ParticleEmitter.h	464	8	high	47
+Walaber::ParticleEmitter::EmitterZone	Walaber/ParticleEmitter/EmitterZone.h	32	8	med	4
+Walaber::ParticleSet	Walaber/ParticleSet.h	80	8	high	10
+Walaber::PlatformManager	Walaber/PlatformManager.h	56	4	high	2
+Walaber::PositionTextureColorVert	Walaber/PositionTextureColorVert.h	20	4	high	2
+Walaber::ProgrammaticTexture2D	Walaber/ProgrammaticTexture2D.h	136	8	high	5
+Walaber::Property	Walaber/Property.h	40	8	high	4
+Walaber::PropertyList	Walaber/PropertyList.h	24	8	high	3
+Walaber::PushCommand	Walaber/PushCommand.h	56	8	high	4
+Walaber::Rect	Walaber/Rect.h	16	4	high	4
+Walaber::RenderTexture2D	Walaber/RenderTexture2D.h	216	8	high	15
+Walaber::RibbonParticleSet<10>	Walaber/RibbonParticleSet_10_.h	104	8	high	10
+Walaber::SceneGraph	Walaber/SceneGraph.h	8	8	high	1
+Walaber::SharedPtr<Walaber::Callback>	Walaber/SharedPtr_Walaber/Callback_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::Curve>	Walaber/SharedPtr_Walaber/Curve_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>	Walaber/SharedPtr_Walaber/ProgrammaticTexture2D_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::RenderTexture2D>	Walaber/SharedPtr_Walaber/RenderTexture2D_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>	Walaber/SharedPtr_Walaber/SkeletonActor/EventActionData_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::SoundEffectInstance>	Walaber/SharedPtr_Walaber/SoundEffectInstance_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::SoundResource>	Walaber/SharedPtr_Walaber/SoundResource_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::SpriteAnimation>	Walaber/SharedPtr_Walaber/SpriteAnimation_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::Texture2D>	Walaber/SharedPtr_Walaber/Texture2D_.h	16	8	high	2
+Walaber::SharedPtr<Walaber::Texture>	Walaber/SharedPtr_Walaber/Texture_.h	16	8	high	2
+Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>	Walaber/SharedPtr_std/__ndk1/vector_Walaber/Color__std/__ndk1/allocator_Walaber/Color___.h	16	8	high	2
+Walaber::Skeleton	Walaber/Skeleton.h	352	8	high	17
+Walaber::SkeletonActor	Walaber/SkeletonActor.h	392	8	high	13
+Walaber::SkeletonActorCueAnimationTrack	Walaber/SkeletonActorCueAnimationTrack.h	40	8	high	4
+Walaber::SoundEffectInstance	Walaber/SoundEffectInstance.h	80	8	high	4
+Walaber::SoundManager	Walaber/SoundManager.h	408	8	high	19
+Walaber::SoundResource	Walaber/SoundResource.h	8	8	high	1
+Walaber::Sprite	Walaber/Sprite.h	216	8	high	13
+Walaber::SpriteAnimation	Walaber/SpriteAnimation.h	192	8	high	24
+Walaber::SpriteAnimationTrack	Walaber/SpriteAnimationTrack.h	72	8	high	10
+Walaber::SpriteBatch	Walaber/SpriteBatch.h	56	8	high	7
+Walaber::Subtexture	Walaber/Subtexture.h	232	8	high	5
+Walaber::Texture	Walaber/Texture.h	128	16	high	13
+Walaber::Texture2D	Walaber/Texture2D.h	232	8	high	13
+Walaber::TextureManager	Walaber/TextureManager.h	8	8	high	1
+Walaber::TextureManager::SubTexInfo	Walaber/TextureManager/SubTexInfo.h	64	16	med	4
+Walaber::TextureSettings	Walaber/TextureSettings.h	88	8	high	12
+Walaber::Transition	Walaber/Transition.h	200	8	high	12
+Walaber::Transition_Block	Walaber/Transition_Block.h	264	8	high	14
+Walaber::Transition_Fade	Walaber/Transition_Fade.h	232	8	high	17
+Walaber::Transition_Iris	Walaber/Transition_Iris.h	264	8	high	15
+Walaber::Transition_Slide	Walaber/Transition_Slide.h	296	8	high	20
+Walaber::Transition_Widget_Slide	Walaber/Transition_Widget_Slide.h	304	8	high	24
+Walaber::Transition_Wipe	Walaber/Transition_Wipe.h	248	8	high	12
+Walaber::TweenedLinearCurve	Walaber/TweenedLinearCurve.h	96	8	high	12
+Walaber::Vector2	Walaber/Vector2.h	8	4	high	2
+Walaber::VerletIntegrator	Walaber/VerletIntegrator.h	4	4	high	1
+Walaber::VertexColorBlendMode	Walaber/VertexColorBlendMode.h	4	4	med	1
+Walaber::Widget	Walaber/Widget.h	344	8	high	21
+Walaber::Widget::WidgetActionRet	Walaber/Widget/WidgetActionRet.h	20	4	high	3
+Walaber::WidgetManager	Walaber/WidgetManager.h	144	8	high	13
+Walaber::Widget_Canvas	Walaber/Widget_Canvas.h	304	8	high	8
+Walaber::Widget_ClassicControls	Walaber/Widget_ClassicControls.h	272	8	high	2
+Walaber::Widget_ColorPicker	Walaber/Widget_ColorPicker.h	424	8	high	28
+Walaber::Widget_FingerCatcher	Walaber/Widget_FingerCatcher.h	336	8	high	10
+Walaber::Widget_Group	Walaber/Widget_Group.h	280	8	high	5
+Walaber::Widget_Group::WidgetInfo	Walaber/Widget_Group/WidgetInfo.h	16	8	high	2
+Walaber::Widget_IconList	Walaber/Widget_IconList.h	440	8	high	27
+Walaber::Widget_IconList::Icon	Walaber/Widget_IconList/Icon.h	48	8	high	2
+Walaber::Widget_Label	Walaber/Widget_Label.h	392	8	high	34
+Walaber::Widget_Manipulator	Walaber/Widget_Manipulator.h	320	8	high	9
+Walaber::Widget_MovingTextBox	Walaber/Widget_MovingTextBox.h	392	8	high	20
+Walaber::Widget_NumberSpinner	Walaber/Widget_NumberSpinner.h	8	4	high	1
+Walaber::Widget_ProgressBar	Walaber/Widget_ProgressBar.h	376	8	high	22
+Walaber::Widget_PushButton	Walaber/Widget_PushButton.h	456	8	high	65
+Walaber::Widget_ScoreCounter	Walaber/Widget_ScoreCounter.h	440	8	high	28
+Walaber::Widget_ScrollableCamera	Walaber/Widget_ScrollableCamera.h	472	8	high	24
+Walaber::Widget_ScrollableGroup	Walaber/Widget_ScrollableGroup.h	400	8	high	22
+Walaber::Widget_ScrollableSet	Walaber/Widget_ScrollableSet.h	392	8	high	20
+Walaber::Widget_SlideWheel	Walaber/Widget_SlideWheel.h	328	8	high	5
+Walaber::Widget_Slider	Walaber/Widget_Slider.h	424	8	high	15
+Walaber::Widget_Spinner	Walaber/Widget_Spinner.h	312	8	high	2
+Walaber::Widget_TimedButton	Walaber/Widget_TimedButton.h	352	8	high	11
+Walaber::Widget_Toggle	Walaber/Widget_Toggle.h	424	8	high	26
+Walaber::XMLDocument	Walaber/XMLDocument.h	24	8	high	3
+Walaber::XMLDocument::AttributeIterator	Walaber/XMLDocument/AttributeIterator.h	8	8	high	1
+Walaber::XMLDocument::Iterator	Walaber/XMLDocument/Iterator.h	8	8	high	1
+Walaber::XMLDocument::NamedIterator	Walaber/XMLDocument/NamedIterator.h	8	8	high	1
+Walaber::ZipArchiveCreator	Walaber/ZipArchiveCreator.h	8	8	high	1
+Walaber::ZipArchiveReader	Walaber/ZipArchiveReader.h	96	8	high	4
+WaterConcept::AlgaeHider	WaterConcept/AlgaeHider.h	984	8	high	5
+WaterConcept::Bomb	WaterConcept/Bomb.h	976	8	high	7
+WaterConcept::Collectible	WaterConcept/Collectible.h	1008	8	high	15
+WaterConcept::DirtyWall	WaterConcept/DirtyWall.h	1008	8	high	7
+WaterConcept::Fan	WaterConcept/Fan.h	1096	8	high	18
+WaterConcept::Floater	WaterConcept/Floater.h	1112	8	high	17
+WaterConcept::FluidConverter	WaterConcept/FluidConverter.h	8	8	high	1
+WaterConcept::Fluids	WaterConcept/Fluids.h	4	4	high	1
+WaterConcept::Fluids::FluidCollisionRecord	WaterConcept/Fluids/FluidCollisionRecord.h	32	16	high	3
+WaterConcept::GameState	WaterConcept/GameState.h	472	8	high	41
+WaterConcept::Grid	WaterConcept/Grid.h	48	4	high	11
+WaterConcept::GridCell	WaterConcept/GridCell.h	8	4	high	2
+WaterConcept::HDAssetsNotification	WaterConcept/HDAssetsNotification.h	520	8	high	12
+WaterConcept::IAPNotification	WaterConcept/IAPNotification.h	632	8	high	17
+WaterConcept::IcyHot	WaterConcept/IcyHot.h	1136	8	high	23
+WaterConcept::IndexGrid<std::__ndk1::map<int, WaterConcept::World::VBOData, std::__ndk1::less<int>, std::__ndk1::allocator<std::__ndk1::pair<int const, WaterConcept::World::VBOData>>>>	WaterConcept/IndexGrid_std/__ndk1/map_int__WaterConcept/World/VBOData__std/__ndk1/less_int___std/__ndk1/allocator_std/__ndk1/pair_int_const__WaterConcept/World/VBOData____.h	16	8	high	1
+WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>	WaterConcept/IndexGrid_std/__ndk1/vector_WaterConcept/ParticleDescription__std/__ndk1/allocator_WaterConcept/ParticleDescription___.h	16	8	high	3
+WaterConcept::InteractiveObject	WaterConcept/InteractiveObject.h	712	8	high	14
+WaterConcept::MysteryCave	WaterConcept/MysteryCave.h	976	8	high	8
+WaterConcept::Notification	WaterConcept/Notification.h	480	8	high	12
+WaterConcept::Notification::NotificationTransitionBehavior	WaterConcept/Notification/NotificationTransitionBehavior.h	80	8	med	10
+WaterConcept::NotificationSingleton	WaterConcept/NotificationSingleton.h	320	8	high	24
+WaterConcept::ParallaxPuppetShow	WaterConcept/ParallaxPuppetShow.h	640	8	high	21
+WaterConcept::ParticleDescription	WaterConcept/ParticleDescription.h	12	4	high	3
+WaterConcept::PurchaseHandler	WaterConcept/PurchaseHandler.h	40	8	high	3
+WaterConcept::Screen_Achievements	WaterConcept/Screen_Achievements.h	264	8	high	5
+WaterConcept::Screen_AchievementsTest	WaterConcept/Screen_AchievementsTest.h	208	8	high	10
+WaterConcept::Screen_AgeGate	WaterConcept/Screen_AgeGate.h	264	8	high	16
+WaterConcept::Screen_AnimationTest	WaterConcept/Screen_AnimationTest.h	208	8	high	11
+WaterConcept::Screen_Challenges	WaterConcept/Screen_Challenges.h	232	8	high	9
+WaterConcept::Screen_Collectibles	WaterConcept/Screen_Collectibles.h	408	8	high	22
+WaterConcept::Screen_ComicStrip	WaterConcept/Screen_ComicStrip.h	168	8	high	3
+WaterConcept::Screen_Credits	WaterConcept/Screen_Credits.h	288	8	high	21
+WaterConcept::Screen_Dialogue	WaterConcept/Screen_Dialogue.h	400	8	high	34
+WaterConcept::Screen_Editor	WaterConcept/Screen_Editor.h	536	8	high	16
+WaterConcept::Screen_Editor::ObjectData	WaterConcept/Screen_Editor/ObjectData.h	120	8	high	5
+WaterConcept::Screen_EditorObjectEditor	WaterConcept/Screen_EditorObjectEditor.h	344	8	high	22
+WaterConcept::Screen_EditorObjectSelect	WaterConcept/Screen_EditorObjectSelect.h	208	8	high	12
+WaterConcept::Screen_FoodPyramid	WaterConcept/Screen_FoodPyramid.h	248	8	high	12
+WaterConcept::Screen_FullScreenAlert	WaterConcept/Screen_FullScreenAlert.h	360	8	high	31
+WaterConcept::Screen_GameTransition	WaterConcept/Screen_GameTransition.h	168	8	high	4
+WaterConcept::Screen_GraphicsContextRestore	WaterConcept/Screen_GraphicsContextRestore.h	168	8	high	6
+WaterConcept::Screen_Hub	WaterConcept/Screen_Hub.h	272	8	high	15
+WaterConcept::Screen_Hub::HubAction	WaterConcept/Screen_Hub/HubAction.h	8	8	med	1
+WaterConcept::Screen_InAppPurchase	WaterConcept/Screen_InAppPurchase.h	608	8	high	57
+WaterConcept::Screen_Languages	WaterConcept/Screen_Languages.h	216	8	high	12
+WaterConcept::Screen_LevelSelect	WaterConcept/Screen_LevelSelect.h	744	8	high	55
+WaterConcept::Screen_Loading	WaterConcept/Screen_Loading.h	24	8	high	3
+WaterConcept::Screen_MainMenu	WaterConcept/Screen_MainMenu.h	712	8	high	25
+WaterConcept::Screen_MainMenu_v2	WaterConcept/Screen_MainMenu_v2.h	1080	8	high	16
+WaterConcept::Screen_MenuOverlay	WaterConcept/Screen_MenuOverlay.h	160	8	high	5
+WaterConcept::Screen_MusicCollection	WaterConcept/Screen_MusicCollection.h	256	8	high	13
+WaterConcept::Screen_MysteryShow	WaterConcept/Screen_MysteryShow.h	216	8	high	14
+WaterConcept::Screen_NoteChallenges	WaterConcept/Screen_NoteChallenges.h	248	8	high	10
+WaterConcept::Screen_PerformanceTest	WaterConcept/Screen_PerformanceTest.h	168	8	high	3
+WaterConcept::Screen_PerryDemo	WaterConcept/Screen_PerryDemo.h	264	8	high	14
+WaterConcept::Screen_Popup	WaterConcept/Screen_Popup.h	1440	8	high	17
+WaterConcept::Screen_Processing	WaterConcept/Screen_Processing.h	256	8	high	12
+WaterConcept::Screen_PuppetShow	WaterConcept/Screen_PuppetShow.h	880	8	high	14
+WaterConcept::Screen_Settings	WaterConcept/Screen_Settings.h	264	8	high	18
+WaterConcept::Screen_SettingsProfile	WaterConcept/Screen_SettingsProfile.h	248	8	high	15
+WaterConcept::Screen_SettingsReset	WaterConcept/Screen_SettingsReset.h	280	8	high	21
+WaterConcept::Screen_Sunset	WaterConcept/Screen_Sunset.h	192	8	high	5
+WaterConcept::Screen_Upsell	WaterConcept/Screen_Upsell.h	192	8	high	5
+WaterConcept::Screen_UpsellWater2	WaterConcept/Screen_UpsellWater2.h	288	8	high	10
+WaterConcept::Screen_WaterTest	WaterConcept/Screen_WaterTest.h	680	8	high	14
+WaterConcept::Screen_WaterTest::FingerStamp	WaterConcept/Screen_WaterTest/FingerStamp.h	24	8	high	3
+WaterConcept::Screen_WorldSelect	WaterConcept/Screen_WorldSelect.h	536	8	high	22
+WaterConcept::SeaweedStrand	WaterConcept/SeaweedStrand.h	176	8	high	12
+WaterConcept::ShowerCurtain	WaterConcept/ShowerCurtain.h	176	8	high	12
+WaterConcept::Spout	WaterConcept/Spout.h	1288	8	high	50
+WaterConcept::StarSeed	WaterConcept/StarSeed.h	8	8	high	1
+WaterConcept::Switch	WaterConcept/Switch.h	1048	8	high	18
+WaterConcept::WCScreen	WaterConcept/WCScreen.h	40	8	high	3
+WaterConcept::WaterBalloon	WaterConcept/WaterBalloon.h	1264	8	high	14
+WaterConcept::World	WaterConcept/World.h	2520	8	high	8
+WaterConcept::YSwitch	WaterConcept/YSwitch.h	1352	8	high	17
+WaterConceptConstants::FluidDescription	WaterConceptConstants/FluidDescription.h	96	4	high	41
+WaterConceptConstants::FluidType	WaterConceptConstants/FluidType.h	8	8	med	1
+WaterConceptConstants::MaterialType	WaterConceptConstants/MaterialType.h	4	4	high	1
+ndk::AccelerometerEvent	ndk/AccelerometerEvent.h	12	4	med	2
+ndk::ApplicationContext	ndk/ApplicationContext.h	232	8	high	25
+ndk::DatabaseCallbackClass	ndk/DatabaseCallbackClass.h	4	4	high	1
+ndk::MotionEvent	ndk/MotionEvent.h	128	8	high	16
+ndk::SafePool<ndk::MotionEvent>	ndk/SafePool_ndk/MotionEvent_.h	96	8	high	6
+std::__ndk1::__assoc_sub_state	std/__ndk1/__assoc_sub_state.h	120	8	high	3
+std::__ndk1::__codecvt_utf16<char16_t, false>	std/__ndk1/__codecvt_utf16_char16_t__false_.h	32	8	high	2
+std::__ndk1::__codecvt_utf16<char16_t, true>	std/__ndk1/__codecvt_utf16_char16_t__true_.h	32	8	high	2
+std::__ndk1::__codecvt_utf16<char32_t, false>	std/__ndk1/__codecvt_utf16_char32_t__false_.h	32	8	high	2
+std::__ndk1::__codecvt_utf16<char32_t, true>	std/__ndk1/__codecvt_utf16_char32_t__true_.h	32	8	high	2
+std::__ndk1::__codecvt_utf16<wchar_t, false>	std/__ndk1/__codecvt_utf16_wchar_t__false_.h	40	8	high	2
+std::__ndk1::__codecvt_utf16<wchar_t, true>	std/__ndk1/__codecvt_utf16_wchar_t__true_.h	40	8	high	2
+std::__ndk1::__codecvt_utf8<char16_t>	std/__ndk1/__codecvt_utf8_char16_t_.h	32	8	high	2
+std::__ndk1::__codecvt_utf8<char32_t>	std/__ndk1/__codecvt_utf8_char32_t_.h	32	8	high	2
+std::__ndk1::__codecvt_utf8<wchar_t>	std/__ndk1/__codecvt_utf8_wchar_t_.h	40	8	high	2
+std::__ndk1::__codecvt_utf8_utf16<char16_t>	std/__ndk1/__codecvt_utf8_utf16_char16_t_.h	32	8	high	2
+std::__ndk1::__codecvt_utf8_utf16<char32_t>	std/__ndk1/__codecvt_utf8_utf16_char32_t_.h	32	8	high	2
+std::__ndk1::__codecvt_utf8_utf16<wchar_t>	std/__ndk1/__codecvt_utf8_utf16_wchar_t_.h	40	8	high	2
+std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>	std/__ndk1/__deque_base_Walaber/Node___std/__ndk1/allocator_Walaber/Node___.h	24	8	high	2
+std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>	std/__ndk1/__deque_base_Walaber/PCSNode___std/__ndk1/allocator_Walaber/PCSNode___.h	24	8	high	2
+std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>	std/__ndk1/__deque_base_WaterConcept/NotificationSingleton/NotificationData__std/__ndk1/allocator_WaterConcept/NotificationSingleton/NotificationData__.h	24	8	high	2
+std::__ndk1::__deque_base<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>	std/__ndk1/__deque_base_WaterConcept/Spout/QueuedParticle__std/__ndk1/allocator_WaterConcept/Spout/QueuedParticle__.h	24	8	high	2
+std::__ndk1::__deque_base<_xmlNode*, std::__ndk1::allocator<_xmlNode*>>	std/__ndk1/__deque_base__xmlNode___std/__ndk1/allocator__xmlNode___.h	24	8	high	2
+std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>>	std/__ndk1/__deque_base_int__std/__ndk1/allocator_int__.h	24	8	high	2
+std::__ndk1::__num_put_base	std/__ndk1/__num_put_base.h	3	1	med	3
+std::__ndk1::__shared_count	std/__ndk1/__shared_count.h	8	8	med	1
+std::__ndk1::__shared_weak_count	std/__ndk1/__shared_weak_count.h	8	8	high	1
+std::__ndk1::__split_buffer<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>&>	std/__ndk1/__split_buffer_Walaber/Achievement__std/__ndk1/allocator_Walaber/Achievement___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>	std/__ndk1/__split_buffer_Walaber/AnimationCueAnimationTrack/CueAnimationEvent__std/__ndk1/allocator_Walaber/AnimationCueAnimationTrack/CueAnimationEvent___.h	40	8	high	5
+std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>	std/__ndk1/__split_buffer_Walaber/CurveManager/CurveCollection__std/__ndk1/allocator_Walaber/CurveManager/CurveCollection___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>	std/__ndk1/__split_buffer_Walaber/Node____std/__ndk1/allocator_Walaber/Node____.h	32	8	high	4
+std::__ndk1::__split_buffer<Walaber::PCSNode**, std::__ndk1::allocator<Walaber::PCSNode**>>	std/__ndk1/__split_buffer_Walaber/PCSNode____std/__ndk1/allocator_Walaber/PCSNode____.h	32	8	high	4
+std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>	std/__ndk1/__split_buffer_Walaber/ScreenManager/ScreenOperationDetails__std/__ndk1/allocator_Walaber/ScreenManager/ScreenOperationDetails___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>	std/__ndk1/__split_buffer_Walaber/SharedPtr_Walaber/Callback___std/__ndk1/allocator_Walaber/SharedPtr_Walaber/Callback____.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>	std/__ndk1/__split_buffer_Walaber/SharedPtr_Walaber/SkeletonActor/EventActionData___std/__ndk1/allocator_Walaber/SharedPtr_Walaber/SkeletonActor/EventActionData____.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>	std/__ndk1/__split_buffer_Walaber/SharedPtr_Walaber/SoundEffectInstance___std/__ndk1/allocator_Walaber/SharedPtr_Walaber/SoundEffectInstance____.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>	std/__ndk1/__split_buffer_Walaber/SharedPtr_Walaber/Texture___std/__ndk1/allocator_Walaber/SharedPtr_Walaber/Texture____.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&>	std/__ndk1/__split_buffer_Walaber/SkeletonActor/AnimationGroupDataAux__std/__ndk1/allocator_Walaber/SkeletonActor/AnimationGroupDataAux___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>	std/__ndk1/__split_buffer_Walaber/SoundManager/SoundInfo__std/__ndk1/allocator_Walaber/SoundManager/SoundInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>	std/__ndk1/__split_buffer_Walaber/SpriteAnimation/AnimationFrame__std/__ndk1/allocator_Walaber/SpriteAnimation/AnimationFrame___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>	std/__ndk1/__split_buffer_Walaber/SpriteAnimation/FrameImport__std/__ndk1/allocator_Walaber/SpriteAnimation/FrameImport___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>	std/__ndk1/__split_buffer_Walaber/SpriteAnimationTrack/SpriteAnimationEvent__std/__ndk1/allocator_Walaber/SpriteAnimationTrack/SpriteAnimationEvent___.h	40	8	high	5
+std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>	std/__ndk1/__split_buffer_Walaber/TextLineInfo__std/__ndk1/allocator_Walaber/TextLineInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>	std/__ndk1/__split_buffer_Walaber/TextureManager/SubTexInfo__std/__ndk1/allocator_Walaber/TextureManager/SubTexInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>	std/__ndk1/__split_buffer_Walaber/Widget_IconList/Icon__std/__ndk1/allocator_Walaber/Widget_IconList/Icon___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>	std/__ndk1/__split_buffer_WaterConcept/Fluid__std/__ndk1/allocator_WaterConcept/Fluid___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>	std/__ndk1/__split_buffer_WaterConcept/InteractiveObject/SpriteInfo__std/__ndk1/allocator_WaterConcept/InteractiveObject/SpriteInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>	std/__ndk1/__split_buffer_WaterConcept/NotificationSingleton/NotificationData___std/__ndk1/allocator_WaterConcept/NotificationSingleton/NotificationData___.h	32	8	high	4
+std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>	std/__ndk1/__split_buffer_WaterConcept/Screen_Editor/ObjectData__std/__ndk1/allocator_WaterConcept/Screen_Editor/ObjectData___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>	std/__ndk1/__split_buffer_WaterConcept/Screen_InAppPurchase/product__std/__ndk1/allocator_WaterConcept/Screen_InAppPurchase/product___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>	std/__ndk1/__split_buffer_WaterConcept/Screen_WaterTest/StrokeInfo__std/__ndk1/allocator_WaterConcept/Screen_WaterTest/StrokeInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::Spout::QueuedParticle*, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle*>>	std/__ndk1/__split_buffer_WaterConcept/Spout/QueuedParticle___std/__ndk1/allocator_WaterConcept/Spout/QueuedParticle___.h	32	8	high	4
+std::__ndk1::__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&>	std/__ndk1/__split_buffer_WaterConcept/World/RegionInfo__std/__ndk1/allocator_WaterConcept/World/RegionInfo___.h	24	8	high	3
+std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>	std/__ndk1/__split_buffer_WaterConcept/World/WorldSpoutConnection__std/__ndk1/allocator_WaterConcept/World/WorldSpoutConnection___.h	24	8	high	3
+std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>>	std/__ndk1/__split_buffer__xmlNode____std/__ndk1/allocator__xmlNode____.h	32	8	high	4
+std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*>>	std/__ndk1/__split_buffer_int___std/__ndk1/allocator_int___.h	32	8	high	4
+std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>	std/__ndk1/__split_buffer_ndk/MotionEvent__std/__ndk1/allocator_ndk/MotionEvent___.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>	_long/char___std____ndk1__allocator_char______c94f08e4ad81.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>	_long/char___std____ndk1__allocator_char_______7b200617b404.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>	_long/or_WaterConcept__InteractiveObject_______a8de19fb73d2.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>	_long/r_Walaber__PositionTextureColorVert______760e6ccda6ba.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>	std/__ndk1/__split_buffer_std/__ndk1/vector_Walaber/Vector2__std/__ndk1/allocator_Walaber/Vector2____std/__ndk1/allocator_std/__ndk1/vector_Walaber/Vector2__std/__ndk1/allocator_Walaber/Vector2_____.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>&>	std/__ndk1/__split_buffer_std/__ndk1/vector_Walaber/Widget___std/__ndk1/allocator_Walaber/Widget_____std/__ndk1/allocator_std/__ndk1/vector_Walaber/Widget___std/__ndk1/allocator_Walaber/Widget______.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>	_long/ncept__Screen_MainMenu_v2__DuckInfo______ced552527d22.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>&>	_long/har___std____ndk1__allocator_char________919a518b0f61.h	24	8	high	3
+std::__ndk1::__split_buffer<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>&>	_long/ar___std____ndk1__allocator_char_________e2ffd44ba4f3.h	24	8	high	3
+std::__ndk1::__thread_struct	std/__ndk1/__thread_struct.h	8	8	high	1
+std::__ndk1::__time_get	std/__ndk1/__time_get.h	8	8	high	1
+std::__ndk1::__time_get_storage<char>	std/__ndk1/__time_get_storage_char_.h	1040	8	med	4
+std::__ndk1::__time_get_storage<wchar_t>	std/__ndk1/__time_get_storage_wchar_t_.h	1040	8	med	4
+std::__ndk1::__time_put	std/__ndk1/__time_put.h	8	8	high	1
+std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>	std/__ndk1/basic_filebuf_char__std/__ndk1/char_traits_char__.h	168	8	high	21
+std::__ndk1::basic_iostream<char, std::__ndk1::char_traits<char>>	std/__ndk1/basic_iostream_char__std/__ndk1/char_traits_char__.h	152	8	high	4
+std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>	std/__ndk1/basic_istream_char__std/__ndk1/char_traits_char__.h	144	8	high	5
+std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>	std/__ndk1/basic_istream_wchar_t__std/__ndk1/char_traits_wchar_t__.h	144	8	high	5
+std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>	std/__ndk1/basic_ostream_char__std/__ndk1/char_traits_char__.h	152	8	high	5
+std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry	std/__ndk1/basic_ostream_char__std/__ndk1/char_traits_char__/sentry.h	16	8	high	1
+std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>	std/__ndk1/basic_ostream_wchar_t__std/__ndk1/char_traits_wchar_t__.h	152	8	high	5
+std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry	std/__ndk1/basic_ostream_wchar_t__std/__ndk1/char_traits_wchar_t__/sentry.h	16	8	high	1
+std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>	std/__ndk1/basic_streambuf_char__std/__ndk1/char_traits_char__.h	64	8	high	6
+std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>>	std/__ndk1/basic_streambuf_wchar_t__std/__ndk1/char_traits_wchar_t__.h	64	8	high	6
+std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	std/__ndk1/basic_string_char__std/__ndk1/char_traits_char___std/__ndk1/allocator_char__.h	24	8	high	3
+std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>	std/__ndk1/basic_string_wchar_t__std/__ndk1/char_traits_wchar_t___std/__ndk1/allocator_wchar_t__.h	1	1	high	1
+std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>	std/__ndk1/basic_stringbuf_char__std/__ndk1/char_traits_char___std/__ndk1/allocator_char__.h	104	8	high	12
+std::__ndk1::codecvt<wchar_t, char, mbstate_t>	std/__ndk1/codecvt_wchar_t__char__mbstate_t_.h	24	8	high	2
+std::__ndk1::collate_byname<char>	std/__ndk1/collate_byname_char_.h	24	8	high	2
+std::__ndk1::collate_byname<wchar_t>	std/__ndk1/collate_byname_wchar_t_.h	24	8	high	2
+std::__ndk1::ctype<char>	std/__ndk1/ctype_char_.h	32	8	high	3
+std::__ndk1::ctype<wchar_t>	std/__ndk1/ctype_wchar_t_.h	8	8	high	1
+std::__ndk1::ctype_byname<char>	std/__ndk1/ctype_byname_char_.h	40	8	high	4
+std::__ndk1::ctype_byname<wchar_t>	std/__ndk1/ctype_byname_wchar_t_.h	24	8	high	2
+std::__ndk1::error_category	std/__ndk1/error_category.h	8	8	high	1
+std::__ndk1::error_code	std/__ndk1/error_code.h	16	8	high	2
+std::__ndk1::error_condition	std/__ndk1/error_condition.h	16	8	high	2
+std::__ndk1::future<void>	std/__ndk1/future_void_.h	8	8	high	1
+std::__ndk1::ios_base	std/__ndk1/ios_base.h	136	8	high	15
+std::__ndk1::locale	std/__ndk1/locale.h	8	8	high	1
+std::__ndk1::locale::facet	std/__ndk1/locale/facet.h	8	8	med	1
+std::__ndk1::locale::id	std/__ndk1/locale/id.h	16	8	high	2
+std::__ndk1::moneypunct_byname<char, false>	std/__ndk1/moneypunct_byname_char__false_.h	124	4	high	1
+std::__ndk1::moneypunct_byname<char, true>	std/__ndk1/moneypunct_byname_char__true_.h	124	4	high	1
+std::__ndk1::moneypunct_byname<wchar_t, false>	std/__ndk1/moneypunct_byname_wchar_t__false_.h	124	4	high	1
+std::__ndk1::moneypunct_byname<wchar_t, true>	std/__ndk1/moneypunct_byname_wchar_t__true_.h	124	4	high	1
+std::__ndk1::numpunct<char>	std/__ndk1/numpunct_char_.h	48	8	high	4
+std::__ndk1::numpunct<wchar_t>	std/__ndk1/numpunct_wchar_t_.h	48	8	high	4
+std::__ndk1::numpunct_byname<char>	std/__ndk1/numpunct_byname_char_.h	48	8	high	3
+std::__ndk1::numpunct_byname<wchar_t>	std/__ndk1/numpunct_byname_wchar_t_.h	48	8	high	3
+std::__ndk1::piecewise_construct_t	std/__ndk1/piecewise_construct_t.h	4	4	med	1
+std::__ndk1::promise<void>	std/__ndk1/promise_void_.h	8	8	high	1
+std::__ndk1::recursive_timed_mutex	std/__ndk1/recursive_timed_mutex.h	104	8	high	2
+std::__ndk1::shared_future<void>	std/__ndk1/shared_future_void_.h	8	8	high	1
+std::__ndk1::system_error	std/__ndk1/system_error.h	8	8	high	1
+std::__ndk1::thread	std/__ndk1/thread.h	8	8	high	1
+std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>	std/__ndk1/time_get_char__std/__ndk1/istreambuf_iterator_char__std/__ndk1/char_traits_char___.h	24	8	high	1
+std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>	std/__ndk1/time_get_wchar_t__std/__ndk1/istreambuf_iterator_wchar_t__std/__ndk1/char_traits_wchar_t___.h	24	8	high	1
+std::__ndk1::timed_mutex	std/__ndk1/timed_mutex.h	89	1	high	1
+std::exception_ptr	std/exception_ptr.h	8	8	high	1
+std::logic_error	std/logic_error.h	16	8	high	2
+std::nested_exception	std/nested_exception.h	16	8	high	2
+std::runtime_error	std/runtime_error.h	16	8	high	2

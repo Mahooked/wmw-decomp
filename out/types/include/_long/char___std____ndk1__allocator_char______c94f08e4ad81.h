@@ -1,0 +1,19 @@
+// Recovered from std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>. Offsets and element types are derived
+// from load/store evidence in the binary; field names are not
+// recorded anywhere in it.
+#ifndef WMW_STD____NDK1____SPLIT_BUFFER_STD____NDK1__BASIC_STRING_CHAR__STD____NDK1__CHAR_TRAITS_CHAR___STD____NDK1__ALLOCATOR_CHAR____STD____NDK1__ALLOCATOR_STD____NDK1__BASIC_STRING_CHAR__STD____NDK1__CHAR_TRAITS_CHAR___STD____NDK1__ALLOCATOR_CHAR______H
+#define WMW_STD____NDK1____SPLIT_BUFFER_STD____NDK1__BASIC_STRING_CHAR__STD____NDK1__CHAR_TRAITS_CHAR___STD____NDK1__ALLOCATOR_CHAR____STD____NDK1__ALLOCATOR_STD____NDK1__BASIC_STRING_CHAR__STD____NDK1__CHAR_TRAITS_CHAR___STD____NDK1__ALLOCATOR_CHAR______H
+
+#include <stdint.h>
+
+namespace _long {
+namespace ndk1__char_traits_char___std____ndk1_df140941835e {
+struct allocator<char>>>&> {
+    // size 24, align 8, confidence high
+    uint64_t f_0x0;
+    uint64_t f_0x8;
+    uint64_t f_0x10;
+};
+
+}  // namespace std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1
+#endif
