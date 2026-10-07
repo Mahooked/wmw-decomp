@@ -1,11 +1,11 @@
-# Where's My Water? GÇö full decompilation
+# Where's My Water? Gï¿½ï¿½ full decompilation
 
 Reverse-engineering notes, tooling, and recovered C++ for **Where's My Water? 1.18.9**
 (Android, `com.disney.WMW`).
 
 ## The goal
 
-**The full source code, exactly as the developers had it** GÇö every function in
+**The full source code, exactly as the developers had it** Gï¿½ï¿½ every function in
 compilable C++ with its original names, types and file organisation, verified by
 rebuilding against the shipped `libwmw.so`. A symbol map or a folder of
 decompiler pseudocode is a milestone, not the destination.
@@ -16,7 +16,7 @@ real class, method, and RTTI names survive in `.dynsym`. That turns "decompiling
 closed-source app" into something much closer to "reading a disassembly with the
 original identifier table attached". Names are the easy half: bodies still have to
 be lifted out of AArch64 machine code, and everything the compiler did not encode
-GÇö local variable names, comments, macros, original file layout GÇö has to be
+Gï¿½ï¿½ local variable names, comments, macros, original file layout Gï¿½ï¿½ has to be
 re-inferred.
 
 ## Where we are
@@ -30,6 +30,7 @@ re-inferred.
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; 325 class layouts recovered from p-code field-access evidence and imported into Ghidra (see "Function signatures") |
+| Enum definitions | **partly done** | first 8 value-typed enums recovered from constant-compare/store/mask evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
@@ -37,11 +38,13 @@ re-inferred.
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,282 decompiled
-   bodies. Class field layouts are now recovered too GÇö 325 of them, each proven
-   to rebuild to its recovered `sizeof` under the C++ ABI GÇö but enums, typedefs
-   and the remaining field names still have to be read out of the code that uses
-   them, and fields are currently named `f_0x<offset>` because the binary never
-   recorded their names. See "Function signatures".
+   bodies. Class field layouts are now recovered too Gï¿½ï¿½ 325 of them, each proven
+   to rebuild to its recovered `sizeof` under the C++ ABI Gï¿½ï¿½ and the first 8
+   enums have been lifted out of the constant compares the binary performs on
+   them (see "Enums"). Typedefs and the remaining field names still have to be
+   read out of the code that uses them, and fields are currently named
+   `f_0x<offset>` because the binary never recorded their names. See "Function
+   signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped: if-converted branches, spill/reload noise, register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
@@ -51,14 +54,14 @@ re-inferred.
 
 ### Milestones (20 commits)
 
-- `5defcdf`GÇô`febcf71` GÇö ELF tooling, decompiled source tree, class model, data
+- `5defcdf`Gï¿½ï¿½`febcf71` Gï¿½ï¿½ ELF tooling, decompiled source tree, class model, data
   formats, JNI bridge.
-- `c77d06c`GÇô`e49d4fc` GÇö demangler iterated against a GCC oracle from first cut
+- `c77d06c`Gï¿½ï¿½`e49d4fc` Gï¿½ï¿½ demangler iterated against a GCC oracle from first cut
   to **100% parity** (substitutions, templates, expressions, thunks) plus a
   regression gate.
-- `0d307ad` GÇö `out/src` regenerated with the final names, README stats refreshed.
-- Function boundaries rebuilt from the ELF symbol table: 2,131 GåÆ **8,618
-  symbols bound (100%)**, 641 GåÆ 1,467 files. See "Function boundaries".
+- `0d307ad` Gï¿½ï¿½ `out/src` regenerated with the final names, README stats refreshed.
+- Function boundaries rebuilt from the ELF symbol table: 2,131 Gï¿½ï¿½ **8,618
+  symbols bound (100%)**, 641 Gï¿½ï¿½ 1,467 files. See "Function boundaries".
 - Exact function prototypes recovered and validated against GCC's own rendering
   (6,769/6,769). Applying them to the decompiled bodies is blocked on field
   layouts; see "Function signatures".
@@ -74,7 +77,7 @@ APK. `assets/Script/WC.txt` is a localization table, not a script.
 |---|---|
 | Language | C++ (AArch64) + a thin Java shell |
 | Engine namespaces | `Walaber` (engine), `WaterConcept` (game) |
-| Java layer | one thin `classes.dex` (165 KB) GÇö `com.disney.WMW.WMWActivity` |
+| Java layer | one thin `classes.dex` (165 KB) Gï¿½ï¿½ `com.disney.WMW.WMWActivity` |
 | Level data | XML scene definitions + SQLite (`water.db`) |
 | Vendored in-binary | libc++, SQLite, libxml2, libwebp, minizip |
 
@@ -93,7 +96,7 @@ section further down:
   and 303 vtable (`_ZTV`) objects in `.dynsym`; `.symtab` is stripped but
   `.dynsym` alone carries the developers' own identifiers.
 - **Two game namespaces:** `Walaber` (engine) 3,351 symbols,
-  `WaterConcept` (game) 2,356 GÇö the rest is statically linked third-party code.
+  `WaterConcept` (game) 2,356 Gï¿½ï¿½ the rest is statically linked third-party code.
 - **Vendored libraries:** libc++ (spelled `std::__ndk1`, i.e. the NDK build),
   SQLite, libxml2, libwebp, minizip.
 - **The demangler is finished.** A from-scratch Itanium C++ demangler that
@@ -105,16 +108,16 @@ section further down:
   per-class headers generated.
 - **Decompiled output:** all 8,618 function symbols are bound to a body (median
   144 bytes, p90 740) across 1,467 per-class files. Function boundaries come
-  from the ELF symbol table rather than from Ghidra's auto-analysis GÇö see
+  from the ELF symbol table rather than from Ghidra's auto-analysis Gï¿½ï¿½ see
   "Function boundaries" below. 1,516 further functions exist in the gaps that no
   symbol covers; they keep Ghidra's name.
 - **Levels are XML scene graphs**, not a binary format: 636 level files, a
   12-element vocabulary, ~42 objects per level; plus 345 reusable `.hs`
   object prototypes.
 - **`water.db` is a real database** (19 tables, 1,014 rows: 671 levels, 46 packs,
-  IAP SKUs, achievements) GÇö and partly a program: `DuckSQL1/2` columns store SQL
+  IAP SKUs, achievements) Gï¿½ï¿½ and partly a program: `DuckSQL1/2` columns store SQL
   text inside the save file.
-- **The JavaGåönative bridge is fully accounted for:** all 44 game-owned native
+- **The JavaGï¿½ï¿½native bridge is fully accounted for:** all 44 game-owned native
   methods resolve to `libwmw.so` exports; the 11 unresolved belong to Play
   Billing (9) and FMOD (2), which ship their own libraries.
 - **Assets are inventoried without redistribution:** textures, audio and XML
@@ -139,7 +142,7 @@ and 2,356 mention `WaterConcept`. The remainder is libc++, SQLite, libxml2,
 libwebp, and minizip, all statically linked into the same object.
 
 Because RTTI survived, the class hierarchy and virtual method layout are directly
-recoverable rather than inferred GÇö see `out/symbols/classes.tsv`.
+recoverable rather than inferred Gï¿½ï¿½ see `out/symbols/classes.tsv`.
 
 ## Repository layout
 
@@ -166,6 +169,12 @@ tools/
   headers.py          verified layouts -> C++ headers + a type index
   check_headers.py    proves each generated header rebuilds to its recovered
                       offsets and sizeof under the C++ ABI (exit != 0 otherwise)
+  enumparams.py       scan signatures.tsv for by-value/by-ref candidates whose
+                      register word is really an enum, and seed the evidence pass
+  enums.py            aggregate EnumScan's constant-compare/store/mask evidence
+                      into verified enum headers + out/types/enums.tsv
+  check_enums.py      proves each recovered enum is attested by >= 2 distinct
+                      values from >= 2 evidence functions (exit != 0 otherwise)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
@@ -176,6 +185,9 @@ tools/
                       bulk-decompile and emit a per-class source tree
     FieldScan.java    p-code dataflow over every function, recording each field
                       access with the class, offset and access width
+    EnumScan.java     p-code dataflow over every function, recording the
+                      constants each enum-typed register is compared against,
+                      AND-masked with, or stored through
     PcodeProbe.java    verifies the p-code API assumptions FieldScan relies on
     ExportSymbols.java exports Ghidra's own demangled symbol names, for
                       cross-checking the local demangler
@@ -193,6 +205,13 @@ out/
     classes.tsv       RTTI class inventory
     gnu_symbols.tsv   Ghidra's demangled names, as a cross-check oracle
     summary.json      section table + namespace histogram
+  types/
+    enums.tsv         recovered enum definitions with their evidence
+    layouts.tsv       verified class layouts
+    typeindex.tsv     header path -> (class, sizeof)
+    anchor_classes.txt classes proven by RTTI/constructor/destructor
+    _enumparams.tsv   raw enum candidate/seed table (regenerated, not committed)
+    _enumraw.tsv      raw constant-compare evidence (regenerated, not committed)
   src/                generated decompiler output, one .cpp per class
     _index.tsv        every recovered function: file, address, size, mangled,
                       demangled, status
@@ -238,7 +257,7 @@ premise turned out to be backwards. Measured on the real data:
 | Ghidra functions starting on an ELF symbol | 102 |
 
 So the ELF symbol table is the clean, unambiguous oracle, and Ghidra's
-boundaries are the unreliable ones GÇö it promotes switch-case targets and
+boundaries are the unreliable ones Gï¿½ï¿½ it promotes switch-case targets and
 jump-table landings into functions of their own. The fix was to invert the
 direction of the mapping: use the symbols to *define* the functions, and keep
 Ghidra's analysis only for the parts worth keeping (disassembled bytes, jump
@@ -253,8 +272,8 @@ body where the address is not an entry point at all.
 Two details that cost real time to find:
 
 - **Ghidra rebases a PIE `.so` to `0x100000`.** Every address is then 1 MB above
-  the ELF vaddr the symbol table uses. Functions still "work" GÇö the addresses
-  land in memory, disassembly succeeds GÇö but they are built over entirely wrong
+  the ELF vaddr the symbol table uses. Functions still "work" Gï¿½ï¿½ the addresses
+  land in memory, disassembly succeeds Gï¿½ï¿½ but they are built over entirely wrong
   bytes and the C looks perfectly plausible. Import with
   `-loader ElfLoader -loader-imagebase 0x0`, and `DecompileAll` refuses to run if
   the executable blocks do not cover the symbol table's whole span.
@@ -264,8 +283,8 @@ Two details that cost real time to find:
   switch case are flows too, and treating them as entries shatters one function
   into dozens of stubs.
 
-Symbols sharing an address GÇö the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
-526 of them GÇö collapse to a single body carrying the complete-object name, with
+Symbols sharing an address Gï¿½ï¿½ the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
+526 of them Gï¿½ï¿½ collapse to a single body carrying the complete-object name, with
 the alias recorded alongside it where the two demangle differently.
 
 ### Function signatures
@@ -279,7 +298,7 @@ as parameter types).
 The parser is reused rather than rewritten: `_parse_params` already walks a
 bare-function-type one `<type>` at a time, so subclassing it to record each
 top-level type yields exact types with no second grammar to keep in sync. A
-capture has to be gated on *type* depth, not on being inside a parameter list GÇö
+capture has to be gated on *type* depth, not on being inside a parameter list Gï¿½ï¿½
 `_parse_type` recurses to parse a pointee, and without the gate
 `P7_JavaVM` comes out as two parameters, `(_JavaVM, _JavaVM*)`.
 
@@ -319,9 +338,9 @@ rather than assumption:
 
 - **Storage has to be assigned explicitly.** With no parameters and no storage,
   Ghidra's commands have nothing to write into. `tools/ghidra/DecompileAll.java`
-  now allocates AAPCS64 registers itself GÇö `x0`GÇô`x7`/`w0`GÇô`w7` for
-  integer-sized and pointer types, `s0`GÇô`s7` for `float`, `d0`GÇô`d7` for `double`
-  GÇö and calls `replaceParameters` with `CUSTOM_STORAGE`. Ghidra's own
+  now allocates AAPCS64 registers itself Gï¿½ï¿½ `x0`Gï¿½ï¿½`x7`/`w0`Gï¿½ï¿½`w7` for
+  integer-sized and pointer types, `s0`Gï¿½ï¿½`s7` for `float`, `d0`Gï¿½ï¿½`d7` for `double`
+  Gï¿½ï¿½ and calls `replaceParameters` with `CUSTOM_STORAGE`. Ghidra's own
   `PrototypeModel.getStorageLocations()` is not usable: asked for two `uint`s it
   returns `x0` twice.
 - **A datatype is not a datatype until the manager holds it.** `new
@@ -329,15 +348,15 @@ rather than assumption:
   `dtm.addDataType` is called, so the first version "created" 202 class types and
   every later lookup still failed. Compounding it, a type created under that name
   is stored at `/Walaber::Message`, and `getDataType("Walaber::Message")` returns
-  null while `getDataType("/Walaber::Message")` succeeds GÇö a silent miss that
+  null while `getDataType("/Walaber::Message")` succeeds Gï¿½ï¿½ a silent miss that
   looks exactly like a type that was never created. Both are now verified by a
   post-condition count rather than assumed.
 - **Ghidra's C parser cannot express two of the things the ABI encodes.** `const`
   is rejected in every position, including plain `const int` ("Can't resolve
   datatype: const"), and a reference is silently degraded to a by-value type,
   which under AArch64 is actively wrong. `tools/sigs.py` therefore writes a second
-  column, `gtype`, normalised for the parser GÇö `const` stripped (2,593
-  parameters) and `T &` passed as `T *` (3,599) GÇö alongside the exact `params`
+  column, `gtype`, normalised for the parser Gï¿½ï¿½ `const` stripped (2,593
+  parameters) and `T &` passed as `T *` (3,599) Gï¿½ï¿½ alongside the exact `params`
   column, and a `notes` column records which rewrite each parameter needed so the
   loss is visible rather than silent. Template types are deliberately *not*
   faked; they still fail, and inventing a stand-in would change their meaning.
@@ -400,8 +419,8 @@ gives the wrong answer:
   fit them.
 
 A layout is emitted only if it is internally consistent. A negative offset means
-the evidence points into the middle of the object GÇö a base subobject, or a
-pointer to a member GÇö which no flat struct can express; fields reaching past an
+the evidence points into the middle of the object Gï¿½ï¿½ a base subobject, or a
+pointer to a member Gï¿½ï¿½ which no flat struct can express; fields reaching past an
 independently recovered `sizeof` means the two disagree about which object this
 is. 8 classes were withheld for these reasons.
 
@@ -434,7 +453,7 @@ not asserted:
 The control run is what makes this readable. Re-importing the binary into a fresh
 project also repairs call targets that the previous, repeatedly-patched project had
 left as `func_0x0016ace0`, which is why the committed tree differs so widely from a
-clean run. Against the control GÇö where the layouts are the only variable GÇö 168 more
+clean run. Against the control Gï¿½ï¿½ where the layouts are the only variable Gï¿½ï¿½ 168 more
 signatures resolve and no category regresses. A separate audit confirms all 15,222
 lines mentioning a field reference a *proven* class: none of the 125 withheld
 Field *names* are now partially recovered from accessor methods (`get*`/`set*`/`is*`/`has*`) when they unambiguously identify a single (class, offset) with consistent verb/direction and cross-accessor agreement. `tools/fieldnames.py` produces `out/types/fieldnames.tsv` (class, offset, name, votes, accessors) and filters to proven layouts; ambiguous or conflicting cases fall back to `f_0x<offset>`. `headers.py` and Ghidra import apply these names with provenance.
@@ -443,13 +462,72 @@ Field *names* are now partially recovered from accessor methods (`get*`/`set*`/`
  
 accessors are the obvious route to recovering them.
 
+### Enums
+
+Enumerations are recovered the same way field layouts are: read what the machine
+code *does* with the type, and declare only what the evidence supports.
+`tools/enumparams.py` walks the validated signatures for parameters whose word
+is a value type -- an enum reaches the AArch64 ABI exactly like an `int` or a
+flag field, so a by-value parameter of one of the 208 known class names is either
+a small struct or an enum. It emits a candidate table (`out/types/_enumparams.tsv`:
+524 such parameters across 456 functions), and `tools/ghidra/EnumScan.java` runs
+the same forward dataflow as `FieldScan` over every function, tracking which
+parameters are value-typed and recording the constants they are compared
+against, stored through a reference, or AND-masked with. That yields 150
+evidence rows for 54 distinct types.
+
+`tools/enums.py` turns the evidence into verdicts, with the repo's usual
+two-independent-observations rule:
+
+- **cmp/store** constants are candidate enumerators, kept only if
+  `0 <= v <= 0x7fffffff`. Addresses and the `-1` sentinel (0xffffffff) are not
+  enumerators, and a lone `cmp e, #0` is a null/boolean test that proves nothing.
+- **and masks** are candidate flag members, kept only if a power of two.
+  Byte-rounding masks like `0xff`/`0xff00` are the saved-game serializer's
+  bit-pack parsing and are dropped.
+- A **values** enum is proven with >= 2 distinct values from >= 2 distinct
+  functions; a **flags** enum with >= 2 power-of-two masks.
+
+The 8 that clear the bar:
+
+| enum | kind | recovered members | evidence |
+|---|---|---|---|
+| `Walaber::TextureInMemoryColorspace` | values | `0 1 2 3` | 5 functions |
+| `Walaber::VertexColorBlendMode` | values | `0 1` | 5 functions |
+| `Walaber::Language` | values | `0 17` | 6 functions |
+| `Walaber::UTF8Helper::Shift_Key` | values | `0 1` | 2 functions |
+| `WaterConcept::ConsiderSameAll` | values | `1 4 7` | 2 functions |
+| `WaterConcept::ConsiderSameAlgae` | values | `1 4 5` | 2 functions |
+| `WaterConcept::ConsiderSameRockOutline` | values | `1 4` | 3 functions |
+| `WaterConceptConstants::StorylineType` | values | `3 6` | 2 functions |
+
+`out/types/enums.tsv` records each definition with its evidence, and
+`tools/check_enums.py` is the gate: it re-derives the verdicts from the raw
+evidence and fails if `enums.tsv`, the header set, or any member value
+disagrees. Headers whose class was previously mis-filed as a one-`int` struct
+(a value-typed enum read through a reference is `*(int*)p`, indistinguishable
+from a 4-byte field) are retracted and rewritten as the enum they really are --
+`Walaber/Language.h` and `Walaber/VertexColorBlendMode.h` here.
+
+What is still thin, honestly. Most of the 54 candidates never get proven, and
+the reasons are visible in the evidence rather than assumed: enum-typed
+parameters are usually *forwarded* to a virtual or function-pointer call within
+a few instructions, so the constant compare happens in a callee this pass does
+not follow; switch dispatch over a wide enum uses jump tables instead of `cmp`
+chains (AArch64 `cmp` against an immediate also decodes to a flagged subtract,
+which is captured but fires rarely); and by-ref enums -- the
+`PlayerDataSerializer::*Info` tags -- are only ever compared through their
+pointer, which stays unproven. The enumerator *names* themselves are not encoded
+anywhere in the binary; `E_<Name>_<ord>` placeholders stand in until the
+re-inference step (README item 3).
+
 ### Quality caveats
 
 Read this before treating `out/src/` as source.
 
 - **Parameter and return types are inferred, not recovered.** Function names,
   arity and class membership come from the symbol table and are trustworthy.
-  Ghidra's type propagation frequently mis-identifies them GÇö a method taking
+  Ghidra's type propagation frequently mis-identifies them Gï¿½ï¿½ a method taking
   `(Fluids*, ParticleDescription const&, int, bool&)` is emitted as taking
   `(_xmlNode*, char*)`. Trust the mangled comment, not the C signature.
 - **Local variable names, comments and macros never survive compilation.**
@@ -465,7 +543,7 @@ Read this before treating `out/src/` as source.
   inventoried in `out/src/_unsymbolized.tsv`.
 - **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
   include 75 pointer/fundamental typeinfos (`char*`, `bool`, GÇª) that are RTTI
-  objects, not classes GÇö the real class count is 317 (filter pending).
+  objects, not classes Gï¿½ï¿½ the real class count is 317 (filter pending).
 - This is decompiled machine code, not the original source. It does not
   compile as-is and never will without hand-reconstruction.
 
@@ -489,11 +567,11 @@ By namespace: `Walaber` 127 classes / 944 slots, `WaterConcept` 61 / 1,298,
 
 Output lands in `out/rtti/`:
 
-- `hierarchy.tsv` GÇö every class with its bases, offsets and virtual-inheritance flags
-- `vtables.tsv` GÇö every primary-vtable slot with its owning symbol
-- `headers/` GÇö a compilable-looking `.hpp` per game class: base list, then
+- `hierarchy.tsv` Gï¿½ï¿½ every class with its bases, offsets and virtual-inheritance flags
+- `vtables.tsv` Gï¿½ï¿½ every primary-vtable slot with its owning symbol
+- `headers/` Gï¿½ï¿½ a compilable-looking `.hpp` per game class: base list, then
   virtual methods in slot order, annotated with the target address
-- `summary.json` GÇö the metrics above, plus the demangler coverage figures
+- `summary.json` Gï¿½ï¿½ the metrics above, plus the demangler coverage figures
 
 Two things make this non-trivial and are worth knowing if you extend it:
 
@@ -501,7 +579,7 @@ Two things make this non-trivial and are worth knowing if you extend it:
   that must be resolved through `.rela.dyn` (`R_AARCH64_RELATIVE` is an addend;
   `ABS64` and `GLOB_DAT` are `dynsym[symidx].value + addend`). Reading the raw
   file offset instead yields garbage.
-- A vtable must be anchored at a **fixed position** GÇö offset-to-top, then the
+- A vtable must be anchored at a **fixed position** Gï¿½ï¿½ offset-to-top, then the
   typeinfo pointer, then the slots. Scanning forward for typeinfo pointers runs
   straight into the neighbouring class's vtable, because they are laid out back
   to back, and silently attributes another class's methods to this one. This was
@@ -516,7 +594,7 @@ inheritance graph already records the bases.
 
 The game is mostly data-driven, and all of it is recoverable.
 
-### `water.db` and friends GÇö SQLite
+### `water.db` and friends Gï¿½ï¿½ SQLite
 
 Three databases ship under `assets/Data`. `tools/dbschema.py` dumps their
 structure (`out/db/*.schema.md`); no row *contents* are recorded.
@@ -527,7 +605,7 @@ structure (`out/db/*.schema.md`); no row *contents* are recorded.
 | `water-Lite.db` | 8 | 732 | reduced build |
 | `water-demo.db` | 7 | 41 | demo build |
 
-The schema is plain, unindexed SQLite GÇö no views, no triggers, no explicit
+The schema is plain, unindexed SQLite Gï¿½ï¿½ no views, no triggers, no explicit
 indexes, `journal_mode=delete`. The interesting tables:
 
 | Table | Rows | Notes |
@@ -539,8 +617,8 @@ indexes, `journal_mode=delete`. The interesting tables:
 | `IAPInfo` | 13 | per-store SKU ids: `Internal`, `iOS`, `Google`, `Amazon` |
 | `Achievements` | 45 | points, hidden flag, localized description pairs |
 | `HubInfo` | 5 | world-map nodes; note `DuckSQL1/2` and `ItemSQL1/2` columns that hold **SQL text** |
-| `ADSettings`, `Settings`, `PlayerData`, `AllieSongs`, `MusicCollectInfo`, `LOWInfo` | 3GÇô24 | settings, event counters, music unlocks, letter-of-the-week content |
-| `AllieChallengeInfo`, `CrankyChallengeInfo`, `MysteryChallengeInfo` | 12GÇô24 | challenge metadata |
+| `ADSettings`, `Settings`, `PlayerData`, `AllieSongs`, `MusicCollectInfo`, `LOWInfo` | 3Gï¿½ï¿½24 | settings, event counters, music unlocks, letter-of-the-week content |
+| `AllieChallengeInfo`, `CrankyChallengeInfo`, `MysteryChallengeInfo` | 12Gï¿½ï¿½24 | challenge metadata |
 
 The `DuckSQL1`/`ItemSQL1` columns are worth flagging: the database stores
 queries inside itself, so the save file is partly a program, not just data.
@@ -566,7 +644,7 @@ than values, so the format is documented without redistributing level layouts.
 ```
 
 The 345 `assets/Objects/*.hs` files share the same shape but describe reusable
-`InteractiveObject` prototypes rather than level instances GÇö collision
+`InteractiveObject` prototypes rather than level instances Gï¿½ï¿½ collision
 `Shapes`/`Shape`/`Point` polygons (2,096 points), `Sprites` with `gridSize`,
 `angle`, `isBackground`, and `DefaultProperties` name/value pairs. Two files
 additionally carry `UVs`/`VertIndices`, i.e. custom mesh geometry.
@@ -591,7 +669,7 @@ environment.
 
 That last row is the useful one: the Java layer is genuinely thin. Every
 `com.disney.*` native method is bound by ordinary static JNI name mangling
-(`Java_com_disney_common_BaseActivity_notifyProductInfo`, and so on GÇö JNI
+(`Java_com_disney_common_BaseActivity_notifyProductInfo`, and so on Gï¿½ï¿½ JNI
 escapes `_` as `_1` and `/` as `_`). The 11 unresolved natives belong to
 bundled third-party SDKs that ship their own libraries: Play Billing
 (`com.android.billingclient.api.zzah`, 9) and FMOD audio
@@ -611,11 +689,11 @@ It covers nested names, function and data manglings, template parameter and
 argument lists, substitution-compressed back-references, builtin types, CV
 qualifiers, ref qualifiers, operator overloads, converting constructors, the
 destructor's `D0`/`D1`/`D2` encodings, non-virtual and virtual thunks, and
-`J` argument packs GÇö stored as a single template argument exactly as GCC
+`J` argument packs Gï¿½ï¿½ stored as a single template argument exactly as GCC
 numbers them, then expanded element-by-element (with reference collapsing) by
-`Dp` pack expansions. Template arguments that are full C++ expressions GÇö
+`Dp` pack expansions. Template arguments that are full C++ expressions Gï¿½ï¿½
 `enable_if` conditions built from `sr` qualified names, binary operators,
-casts, `sizeof` and call expressions GÇö are parsed and rendered the way
+casts, `sizeof` and call expressions Gï¿½ï¿½ are parsed and rendered the way
 cp-demangle.c prints them, including GCC's operand-parenthesisation rules.
 It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
 `_ZTS`), which is what makes the class inventory possible.
@@ -628,7 +706,7 @@ bundled GCC 4.1 `c++filt`, which resolves all 6,769 mangled names in the binary
 and agrees with GCC 2.24 on every one. `tools/refdemangle.py` builds that oracle,
 `tools/refdiff.py` localises the first divergence, and `tools/refprobe.py`
 asks it about synthetic names. `tools/test_cxxfilt.py` runs the whole comparison
-as a regression gate and exits non-zero on any mismatch GÇö run it before touching
+as a regression gate and exits non-zero on any mismatch Gï¿½ï¿½ run it before touching
 `cxxfilt.py`.
 
 | Reference set (6,769 names) | |
@@ -648,8 +726,8 @@ symbol table, the local demangler's name agrees on 464, differs on 0, and
 leaves 0 unparsed. The comparison runs both names through a normaliser that
 folds presentation differences (Ghidra's `std::__ndk1::` inline spelling,
 `unsigned_int` for `unsigned int`, `Language_const` for `Language const`); the
-sample itself is biased toward `std::__ndk1` internals GÇö precisely the hardest
-substitution cases GÇö and excludes every ordinary `Walaber`/`WaterConcept`
+sample itself is biased toward `std::__ndk1` internals Gï¿½ï¿½ precisely the hardest
+substitution cases Gï¿½ï¿½ and excludes every ordinary `Walaber`/`WaterConcept`
 method, so the absolute numbers understate the demangler on game code.
 
 For anything load-bearing, prefer the mangled name in the source comments over
@@ -688,7 +766,7 @@ py tools\apkindex.py $apk --out out\apk
 py tools\assetdoc.py $apk --out out\assets
 ```
 
-Steps 4GÇô7 need only Python and run in seconds; only steps 2GÇô3 need Ghidra.
+Steps 4Gï¿½ï¿½7 need only Python and run in seconds; only steps 2Gï¿½ï¿½3 need Ghidra.
 `tools/ghidra.ps1 -Mode script -Script ExportSymbols.java ...` regenerates
 `out/symbols/gnu_symbols.tsv`, which step 4 consumes as a demangler
 cross-check.
@@ -704,7 +782,7 @@ frozen process. Progress is echoed from the Ghidra log instead.
 
 Do not re-import into a project that a previous decompile run has touched:
 headless runs save the program, so any functions created by an earlier run
-persist. Re-import into a fresh project when in doubt GÇö although
+persist. Re-import into a fresh project when in doubt Gï¿½ï¿½ although
 `DecompileAll` now deletes every function before rebuilding, so it is
 effectively idempotent.
 

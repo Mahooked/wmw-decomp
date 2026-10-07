@@ -27,3 +27,9 @@ out/build/
 # tools/ghidra/FieldScan.java; only the filtered out/types/fields.tsv is tracked.
 out/types/_fieldraw.tsv
 
+# Raw enum-parameter seed table and enum-evidence dump. Regenerate with
+# tools/enumparams.py + tools/ghidra/EnumScan.java; only the aggregated
+# out/types/enums.tsv is tracked.
+out/types/_enumparams.tsv
+out/types/_enumraw.tsv
+
