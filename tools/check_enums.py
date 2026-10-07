@@ -14,8 +14,11 @@ same rules `enums.py` applies, stated so the two agree -- and then checks that
 
 A value enum is proven when it has >= 2 distinct values and >= 2 distinct
 evidence functions; a flags enum when its AND masks are >= 2 distinct powers of
-two.  This is the two-independent-agreeing-readings rule the rest of the repo
-uses, applied to constant compares instead of field offsets.
+two.  A single function's jump table over >= 3 distinct indices also proves a
+value enum (the `switch` channel of EnumScan.java only emits a row after
+verifying the entry branches to a resolved flow, on a contiguous index run).
+This is the two-independent-agreeing-readings rule the rest of the repo uses,
+applied to constant compares instead of field offsets.
 """
 
 from __future__ import annotations
@@ -42,16 +45,20 @@ def load_evidence(path: str):
 
 def derive(name: str, rows):
     """Same verdict rules as tools/enums.py, so the gate cannot drift."""
-    cmp_vals, cmp_funcs, and_masks = set(), set(), set()
+    cmp_vals, cmp_funcs, switch_vals, and_masks = set(), set(), set(), set()
     for value, kind, func in rows:
-        if kind in ("cmp", "store") and 0 <= value <= MAX_VALUE:
+        if kind in ("cmp", "store", "switch") and 0 <= value <= MAX_VALUE:
             cmp_vals.add(value)
             cmp_funcs.add(func)
+            if kind == "switch":
+                switch_vals.add(value)
         elif kind == "and" and value > 0 and (value & (value - 1)) == 0:
             and_masks.add(value)
     if len(and_masks) >= 2:
         return ("flags", sorted(and_masks))
     if len(cmp_vals) >= 2 and len(cmp_funcs) >= 2:
+        return ("values", sorted(cmp_vals))
+    if len(switch_vals) >= 3:
         return ("values", sorted(cmp_vals))
     return None
 

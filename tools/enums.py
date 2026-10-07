@@ -10,12 +10,16 @@ guessed.
 Rules (the verification gate in `tools/check_enums.py` enforces exactly these):
 
   - "values" enums: the members are the constants the binary compares the type
-    against (`cmp`) or stores into enum-typed slots (`store`).  A value must be
-    a plausible enumerator (`0 <= v <= 0x7fffffff`; larger values are absolute
-    addresses or -1 sentinels and are dropped).  A values enum is *proven* when
-    it has both >= 2 distinct values and >= 2 distinct evidence functions --
-    the same two-independent-agreeing-readings rule that rejects stray false
-    positives elsewhere in the repo.
+    against (`cmp`), stores into enum-typed slots (`store`) or dispatches on
+    through a jump table (`switch`).  A value must be a plausible enumerator
+    (`0 <= v <= 0x7fffffff`; larger values are absolute addresses or -1
+    sentinels and are dropped).  A values enum is *proven* when it has both
+    >= 2 distinct values and >= 2 distinct evidence functions -- the same
+    two-independent-agreeing-readings rule that rejects stray false positives
+    elsewhere in the repo -- or when ONE function switch-provides >= 3 values
+    (EnumScan only records a `switch` row after verifying the jump-table entry
+    actually branches to Ghidra's resolved flow, on a contiguous index run, so
+    a single switch is proof enough).
   - "flags" enums: members are the AND masks (`and`) the binary tests the type
     with.  A mask must be a power of two (a real bit flag); masks like
     `0xff`/`0xff00`/`0xff000000` are byte-rounding of unrelated data and are
@@ -101,11 +105,14 @@ def evaluate(name: str, rows, layout_fields: dict):
     """Verdict for one enum: members, kind, and an explainer string."""
     cmp_vals = set()
     cmp_funcs = set()
+    switch_vals = set()
     and_masks = set()
     for value, kind, func in rows:
-        if kind in ("cmp", "store") and 0 <= value <= MAX_VALUE:
+        if kind in ("cmp", "store", "switch") and 0 <= value <= MAX_VALUE:
             cmp_vals.add(value)
             cmp_funcs.add(func)
+            if kind == "switch":
+                switch_vals.add(value)
         elif kind == "and" and value > 0 and (value & (value - 1)) == 0:
             and_masks.add(value)
 
@@ -124,13 +131,23 @@ def evaluate(name: str, rows, layout_fields: dict):
         )
 
     if len(cmp_vals) >= 2 and len(cmp_funcs) >= 2:
+        if len(switch_vals) >= 2:
+            note.append("switch: %d members" % len(switch_vals))
         return ("values", sorted(cmp_vals)), "; ".join(
             note + ["values: %d from %d funcs" % (len(cmp_vals), len(cmp_funcs))]
         )
 
+    # A single function jumping over >= 3 distinct table indices is itself a
+    # proof (see the header docstring); such a dispatch also counts as a value
+    # reading for the >= 2 functions rule when a second function exists.
+    if len(switch_vals) >= 3:
+        return ("values", sorted(cmp_vals)), "; ".join(
+            note + ["switch: %d members jumping on 1 func" % len(switch_vals)]
+        )
+
     return None, "; ".join(
-        note + ["insufficient: values=%d funcs=%d masks=%d" % (
-            len(cmp_vals), len(cmp_funcs), len(and_masks))]
+        note + ["insufficient: values=%d funcs=%d masks=%d switch=%d" % (
+            len(cmp_vals), len(cmp_funcs), len(and_masks), len(switch_vals))]
     )
 
 
@@ -145,7 +162,7 @@ def emit_header(path: Path, name: str, kind: str, members):
     guard = "WMW_" + ns.upper().replace("::", "__") + "__" + base.upper() + "_H"
     lines = [
         "// Recovered from %s by tools/enums.py; the values are the compile-time" % name,
-        "// constants the binary compares/stores against this type.",
+        "// constants the binary compares/stores against this type or indexes a jump table with.",
         "//",
         "// Enumerator names are not encoded in the binary; E_<> = value is a",
         "// placeholder for the re-inference step.",

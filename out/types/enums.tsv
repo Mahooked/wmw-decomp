@@ -1,9 +1,10 @@
 # enum	kind	members	values	funcs	head	note
-Walaber::Language	values	2	0x0 0x11	6	Walaber/Language.h	supersedes 1-field layout; values: 2 from 6 funcs
+Walaber::Language	values	18	0x0 0x1 0x2 0x3 0x4 0x5 0x6 0x7 0x8 0x9 0xa 0xb 0xc 0xd 0xe 0xf 0x10 0x11	6	Walaber/Language.h	supersedes 1-field layout; switch: 18 members; values: 18 from 6 funcs
 Walaber::TextureInMemoryColorspace	values	4	0x0 0x1 0x2 0x3	5	Walaber/TextureInMemoryColorspace.h	values: 4 from 5 funcs
 Walaber::UTF8Helper::Shift_Key	values	2	0x0 0x1	2	Walaber/UTF8Helper/Shift_Key.h	values: 2 from 2 funcs
+Walaber::ValueTweaker::ValueDataType	values	6	0x0 0x1 0x2 0x3 0x4 0x5	1	Walaber/ValueTweaker/ValueDataType.h	switch: 6 members jumping on 1 func
 Walaber::VertexColorBlendMode	values	2	0x0 0x1	5	Walaber/VertexColorBlendMode.h	supersedes 1-field layout; values: 2 from 4 funcs
 WaterConcept::ConsiderSameAlgae	values	3	0x1 0x4 0x5	2	WaterConcept/ConsiderSameAlgae.h	values: 3 from 2 funcs
 WaterConcept::ConsiderSameAll	values	3	0x1 0x4 0x7	2	WaterConcept/ConsiderSameAll.h	values: 3 from 2 funcs
 WaterConcept::ConsiderSameRockOutline	values	2	0x1 0x4	3	WaterConcept/ConsiderSameRockOutline.h	values: 2 from 3 funcs
-WaterConceptConstants::StorylineType	values	2	0x3 0x6	2	WaterConceptConstants/StorylineType.h	values: 2 from 2 funcs
+WaterConceptConstants::StorylineType	values	6	0x0 0x1 0x2 0x3 0x4 0x6	2	WaterConceptConstants/StorylineType.h	switch: 5 members; values: 6 from 2 funcs

@@ -1,5 +1,5 @@
 // Recovered from Walaber::TextureInMemoryColorspace by tools/enums.py; the values are the compile-time
-// constants the binary compares/stores against this type.
+// constants the binary compares/stores against this type or indexes a jump table with.
 //
 // Enumerator names are not encoded in the binary; E_<> = value is a
 // placeholder for the re-inference step.

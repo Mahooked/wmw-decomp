@@ -25,10 +25,14 @@
 //                 enums, comparison results, post-call garbage).
 //
 // A comparison against K_ENUM records `cmp`, an AND with a mask records `and`
-// (flag enums), a store of a constant through K_ENUMREF records `store`, and a
+// (flag enums), a store of a constant through K_ENUMREF records `store`, a
 // direct call to an enum-parameter function with a K_CONST in the argument
-// register records `call`.  Only CALL/simd widths and the false-positive guards
-// differ from FieldScan's honest-evidence policy:
+// register records `call`, and a computed jump whose index register descends
+// from a by-value seed enum records `switch`: the jump-table bytes are read and
+// every recovered case constant is verified against the flows Ghidra resolved
+// for the jump, so a `switch` row is an enumerator of the switched enum.  Only
+// CALL/simd widths and the false-positive guards differ from FieldScan's
+// honest-evidence policy:
 //   * constants for `cmp` are capped at 0xffff and `call` too -- a real
 //     absolute address is a register larger than that, and AArch64 comparison
 //     immediates are 12-bit scaled, so smaller than 0xffff anyway;
@@ -43,7 +47,7 @@
 // Inputs: out/types/_enumparams.tsv   (address func reg enum byval)
 // Output: <outDir>/_enumraw.tsv
 //
-// Columns: enum, value (hex), kind (cmp/and/store/call), addr (scanning
+// Columns: enum, value (hex), kind (cmp/and/store/call/switch), addr (scanning
 //          function's entry, hex), fn, reg (base register the value was in).
 //
 // Usage: EnumScan.java <enumparams.tsv> <outDir>
@@ -54,7 +58,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -151,7 +157,7 @@ public class EnumScan extends GhidraScript {
 	private int functionsScanned;
 	private int byValueSeeds;
 	private int byRefSeeds;
-	private final int[] byKind = new int[4]; // cmp and store call
+	private final int[] byKind = new int[5]; // cmp and store call switch
 	private int callsSeen;
 	private int callsConst;
 	private int callsMatched;
@@ -164,6 +170,18 @@ public class EnumScan extends GhidraScript {
 	private Map<Long, Val> frame = new HashMap<>();
 	private long spOff;
 	private boolean spValid;
+
+	// Recent p-code ops of the current function (a ring), so a computed jump
+	// can be sliced backwards to the table-load/index expression that feeds it.
+	private final Deque<PcodeOp> funcOps = new ArrayDeque<>();
+	// Monotonic per-function program position of each op in the ring, used to
+	// bound `findDef` to writes that precede a given use.
+	private final Map<PcodeOp, Integer> opIdx = new HashMap<>();
+	private int opSeq = 0;
+	// by-value seed registers of the current function: base-register offset ->
+	// enum name.  Only a switch *index* that traces back to one of these is a
+	// jump-table dispatch over a recovered enum.
+	private final Map<Long, String> seedByReg = new HashMap<>();
 
 	@Override
 	public void run() throws Exception {
@@ -203,7 +221,8 @@ public class EnumScan extends GhidraScript {
 		out.close();
 		println("EnumScan: done. functions=" + functionsScanned + " evidence=" + emitted +
 			" (cmp=" + byKind[0] + " and=" + byKind[1] + " store=" + byKind[2] +
-			" call=" + byKind[3] + ") -> " + args[1] + "/_enumraw.tsv");
+			" call=" + byKind[3] + " switch=" + byKind[4] + ") -> " +
+			args[1] + "/_enumraw.tsv");
 		println("EnumScan: calls=" + callsSeen + " const=" + callsConst +
 			" matched=" + callsMatched + " call-evidence=" + callsEmitted);
 	}
@@ -285,10 +304,20 @@ public class EnumScan extends GhidraScript {
 		frame = new HashMap<>();
 		spOff = 0;
 		spValid = true;
+		funcOps.clear();
+		opIdx.clear();
+		opSeq = 0;
+		seedByReg.clear();
 
 		if (seeds != null) {
 			for (Seed s : seeds) {
 				valReg(s.reg, s.byval ? en(s.e) : enref(s.e));
+				if (s.byval) {
+					long key = regKey(s.reg);
+					if (key >= 0) {
+						seedByReg.put(key, s.e);
+					}
+				}
 			}
 		}
 
@@ -313,6 +342,12 @@ public class EnumScan extends GhidraScript {
 		for (PcodeOp op : in.getPcode()) {
 			int code = op.getOpcode();
 			Varnode outv = op.getOutput();
+			funcOps.addLast(op);
+			opIdx.put(op, opSeq);
+			opSeq++;
+			if (funcOps.size() > 8192) {
+				funcOps.removeFirst();
+			}
 
 			switch (code) {
 				case PcodeOp.LOAD: {
@@ -432,6 +467,17 @@ public class EnumScan extends GhidraScript {
 					setOp(outv, Val.NONE, written);
 					break;
 				}
+				case PcodeOp.BRANCHIND: {
+					// A computed jump whose index register traces back to a
+					// by-value seed enum is a table dispatch over that enum:
+					// recover the case constants from the jump-table bytes and
+					// verify them against Ghidra's own resolved flows.
+					if (op.getNumInputs() >= 1) {
+						resolveSwitch(in, fnName, op.getInput(0));
+					}
+					setOp(outv, Val.NONE, written);
+					break;
+				}
 				case PcodeOp.CALL: {
 					callsSeen++;
 					if (debug && debugCallsShown < 4) {
@@ -498,6 +544,311 @@ public class EnumScan extends GhidraScript {
 		}
 	}
 
+	// ------------------------------------------------------- switch resolution
+
+	// Recovered state of the current computed-jump site (reset per site).
+	private long minConst = 0;
+	private boolean haveMin = false;
+	private int entrySize = 0;
+	private long leftShift = NA;
+	private long multBy = NA;
+	private boolean sextEntry = false;
+	private long tableBase = NA;
+	private long caseBase = NA;
+	private String seedEnum = null;
+	private String seedReg = null;
+	private int sliceDepth = 0;
+
+	/**
+	 * If the computed jump is a table dispatch whose index register derives
+	 * from a by-value seed enum, verify the table and emit the constants.
+	 *
+	 * The AArch64 switch idiom is `adrp/add` the table base into a register
+	 * (folds to a constant), `sub w<idx>, w<seed>[, #min]`, an address
+	 * expression `INT_ADD(base, INT_LEFT(index, shift))`, a LOAD (the entry,
+	 * sign-extended), an optional `INT_ADD(entry, caseBase)`, and the computed
+	 * jump itself.  The enum value stored in the seed register is
+	 * `tableIndex + min`; the table's own contents fix the case target so the
+	 * recovered value can be checked against Ghidra's resolved flows.
+	 */
+	private void resolveSwitch(Instruction in, String fnName, Varnode tgt) {
+		minConst = 0;
+		haveMin = false;
+		entrySize = 0;
+		leftShift = NA;
+		multBy = NA;
+		sextEntry = false;
+		tableBase = NA;
+		caseBase = NA;
+		seedEnum = null;
+		seedReg = null;
+		sliceDepth = 0;
+		matchExpr(tgt, false, fnName, opSeq);
+		if (seedEnum == null || tableBase == NA || entrySize <= 0) {
+			if (debug && seedEnum != null) {
+				println("SWITCH-DBG " + fnName + " " + in.getAddress() + " seed=" + seedEnum +
+					" fail=seed/env tableBase=" + (tableBase == NA ? "NA" : Long.toHexString(tableBase)) +
+					" entrySize=" + entrySize);
+			}
+			return;
+		}
+		long stride = leftShift != NA ? (1L << leftShift) : multBy;
+		if (stride == NA || stride <= 0 || stride != entrySize) {
+			if (debug) {
+				println("SWITCH-DBG " + fnName + " " + in.getAddress() + " seed=" + seedEnum +
+					" fail=stride stride=" + (stride == NA ? "NA" : stride) + " entrySize=" + entrySize);
+			}
+			return;
+		}
+		Address[] flows = in.getFlows();
+		if (flows == null || flows.length < 3) {
+			if (debug) {
+				println("SWITCH-DBG " + fnName + " " + in.getAddress() + " seed=" + seedEnum +
+					" fail=flows n=" + (flows == null ? -1 : flows.length));
+			}
+			return;
+		}
+		Set<Long> flowSet = new HashSet<>();
+		for (Address a : flows) {
+			flowSet.add(a.getOffset());
+		}
+		int n = flows.length;
+		int maxEntries = Math.min(n + 1, 128);
+		byte[] buf;
+		try {
+			buf = new byte[maxEntries * entrySize];
+			currentProgram.getMemory().getBytes(toAddr(tableBase), buf);
+		}
+		catch (Exception e) {
+			return;
+		}
+		List<Long> values = new ArrayList<>();
+		String dbgFirst = "";
+		for (int i = 0; i < maxEntries; i++) {
+			long raw = 0;
+			for (int b = 0; b < entrySize; b++) {
+				raw |= (long) (buf[i * entrySize + b] & 0xFF) << (8 * b);
+			}
+			long entry = sextEntry ? signExtend(raw, entrySize) : raw;
+			long target = caseBase != NA ? caseBase + entry : entry;
+			if (debug && i < 3) {
+				dbgFirst += " e" + i + "=" + Long.toHexString(entry);
+				dbgFirst += " tgt=" + Long.toHexString(target);
+				dbgFirst += " inFlows=" + flowSet.contains(target);
+			}
+			if (flowSet.contains(target)) {
+				values.add((long) i + minConst);
+			}
+			if (values.size() >= n) {
+				break;
+			}
+		}
+		// Every flow must be reached, landing on a contiguous index run, so the
+		// value `i + min` is the table index, not a lucky coincidence.
+		if (values.size() != n) {
+			if (debug) {
+				println("SWITCH-DBG " + fnName + " " + in.getAddress() + " seed=" + seedEnum +
+					" fail=count got=" + values.size() + "/" + n +
+					" tableBase=" + Long.toHexString(tableBase) +
+					" caseBase=" + (caseBase == NA ? "NA" : Long.toHexString(caseBase)) +
+					" entrySize=" + entrySize + " min=" + minConst + " sext=" + sextEntry +
+					" flowsN=" + flows.length + " " + dbgFirst);
+			}
+			return;
+		}
+		for (int i = 0; i < n; i++) {
+			if (values.get(i) != (long) i + minConst) {
+				if (debug) {
+					println("SWITCH-DBG " + fnName + " " + in.getAddress() + " seed=" + seedEnum +
+						" fail=contig at " + i + " got=" + values.get(i) + " want=" + ((long) i + minConst));
+				}
+				return;
+			}
+		}
+		for (long v : values) {
+			emit(seedEnum, v, "switch", in.getAddress(), fnName, seedReg);
+		}
+	}
+
+	/** Backward one-expressions slice over the current function's p-code.
+	 *  `pos` is the program position of the consuming op; definitions are
+	 *  only searched strictly before it, so register reuse (e.g. an index
+	 *  register rewritten into a case address) resolves to the right write. */
+	private void matchExpr(Varnode v, boolean inAddr, String fnName, int pos) {
+		if (v == null || sliceDepth > 10) {
+			return;
+		}
+		sliceDepth++;
+		Val c = eval(v);
+		if (c != null && c.kind == K_CONST) {
+			// An address-sized constant is a base (table or case); anything
+			// smaller is an index adjustment we do not model and must reject.
+			if (c.c >= 0x10000L) {
+				if (inAddr && tableBase == NA) {
+					tableBase = c.c;
+				}
+				else if (!inAddr && caseBase == NA) {
+					caseBase = c.c;
+				}
+			}
+			sliceDepth--;
+			return;
+		}
+		if (v.isConstant()) {
+			sliceDepth--;
+			return;
+		}
+		if (!v.isUnique()) {
+			Register r = currentProgram.getRegister(v);
+			if (r != null) {
+				Register base = r.getBaseRegister();
+				String baseName = base == null ? r.getName() : base.getName();
+				if (baseName != null && baseName.startsWith("sp")) {
+					sliceDepth--;
+					return;
+				}
+			}
+			// Registers are identified by their register-space offset alone:
+			// the classifier's branch target is a copy-in register Ghidra does
+			// not expose through getRegister(), and w0/x0 share the offset.
+			String e = seedByReg.get(v.getAddress().getOffset());
+			if (e != null) {
+				seedEnum = e;
+				seedReg = seedName(v);
+				sliceDepth--;
+				return;
+			}
+		}
+		PcodeOp d = findDef(v, pos);
+		if (d == null) {
+			sliceDepth--;
+			return;
+		}
+		int oc = d.getOpcode();
+		switch (oc) {
+			case PcodeOp.COPY:
+			case PcodeOp.CAST:
+			case PcodeOp.INT_ZEXT:
+			case PcodeOp.INT_SEXT:
+				if (oc == PcodeOp.INT_SEXT) {
+					sextEntry = true;
+				}
+				matchExpr(d.getInput(0), inAddr, fnName, idxOf(d));
+				break;
+			case PcodeOp.INT_SUB:
+			case PcodeOp.INT_ADD: {
+				long c2 = constVal(d.getInput(1));
+				if (oc == PcodeOp.INT_SUB && c2 != NA && !haveMin) {
+					minConst = c2;
+					haveMin = true;
+				}
+				int p = idxOf(d);
+				if (oc == PcodeOp.INT_ADD && !inAddr && c2 != NA) {
+					// `add x, seed, #k`: constant index adjustment.
+					matchExpr(d.getInput(0), inAddr, fnName, p);
+				}
+				else {
+					matchExpr(d.getInput(0), inAddr, fnName, p);
+					matchExpr(d.getInput(1), inAddr, fnName, p);
+				}
+				break;
+			}
+			case PcodeOp.INT_LEFT: {
+				long c2 = constVal(d.getInput(1));
+				if (c2 != NA && leftShift == NA) {
+					leftShift = c2;
+				}
+				matchExpr(d.getInput(0), inAddr, fnName, idxOf(d));
+				break;
+			}
+			case PcodeOp.INT_MULT: {
+				long c2 = constVal(d.getInput(1));
+				if (c2 != NA && multBy == NA) {
+					multBy = c2;
+				}
+				matchExpr(d.getInput(0), inAddr, fnName, idxOf(d));
+				break;
+			}
+			case PcodeOp.LOAD: {
+				Varnode o = d.getOutput();
+				if (o != null && entrySize == 0) {
+					entrySize = o.getSize();
+				}
+				matchExpr(d.getInput(1), true, fnName, idxOf(d));
+				break;
+			}
+			default:
+				break;
+		}
+		sliceDepth--;
+	}
+
+	private int idxOf(PcodeOp d) {
+		Integer i = opIdx.get(d);
+		return i == null ? 0 : i;
+	}
+
+	private PcodeOp findDef(Varnode v, int pos) {
+		PcodeOp found = null;
+		int best = -1;
+		for (PcodeOp d : funcOps) {
+			Integer i = opIdx.get(d);
+			if (i == null || i >= pos) {
+				continue;
+			}
+			Varnode o = d.getOutput();
+			if (o != null && sameVarnode(o, v) && i > best) {
+				found = d;
+				best = i;
+			}
+		}
+		return found;
+	}
+
+	private boolean sameVarnode(Varnode a, Varnode b) {
+		if (a.isUnique() != b.isUnique() || a.isConstant() != b.isConstant()) {
+			return false;
+		}
+		if (a.isUnique()) {
+			return a.getOffset() == b.getOffset() && a.getSize() == b.getSize();
+		}
+		if (a.isConstant()) {
+			return false;
+		}
+		// Registers live in the "register" space; pairs of sub-registers
+		// (w0/x0 etc.) share the same address offset, which is all the
+		// backward slice needs. getRegister() is not consulted because the
+		// classifier inserts its own copy-in register at an offset Ghidra
+		// does not expose as a named register.
+		if (a.getAddress().getAddressSpace().getSpaceID() !=
+			b.getAddress().getAddressSpace().getSpaceID()) {
+			return false;
+		}
+		return a.getAddress().getOffset() == b.getAddress().getOffset();
+	}
+
+	private long regKey(int regIndex) {
+		Register r = currentProgram.getRegister("x" + regIndex);
+		return r == null ? -1 : r.getBaseRegister().getAddress().getOffset();
+	}
+
+	private String seedName(Varnode v) {
+		Register r = currentProgram.getRegister(v);
+		Register base = r == null ? null : r.getBaseRegister();
+		return base == null ? ("off" + v.getAddress().getOffset()) : base.getName();
+	}
+
+	private static long signExtend(long raw, int size) {
+		if (size >= 8) {
+			return raw;
+		}
+		int bits = size * 8;
+		long m = 1L << (bits - 1);
+		long mask = (1L << bits) - 1;
+		long x = raw & mask;
+		return (x ^ m) - m;
+	}
+
 	// --------------------------------------------------------------- plumbing
 
 	private void emit(String e, long value, String kind, Address addr, String fn, String reg) {
@@ -505,7 +856,7 @@ public class EnumScan extends GhidraScript {
 			addr.getOffset() + "\t" + fn + "\t" + reg);
 		emitted++;
 		int ki = "cmp".equals(kind) ? 0 : "and".equals(kind) ? 1
-			: "store".equals(kind) ? 2 : 3;
+			: "store".equals(kind) ? 2 : "switch".equals(kind) ? 4 : 3;
 		byKind[ki]++;
 	}
 

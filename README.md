@@ -30,7 +30,7 @@ re-inferred.
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; 325 class layouts recovered from p-code field-access evidence and imported into Ghidra (see "Function signatures") |
-| Enum definitions | **partly done** | first 8 value-typed enums recovered from constant-compare/store/mask evidence, verified by a gate (see "Enums") |
+| Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
@@ -39,9 +39,9 @@ re-inferred.
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,282 decompiled
    bodies. Class field layouts are now recovered too G�� 325 of them, each proven
-   to rebuild to its recovered `sizeof` under the C++ ABI G�� and the first 8
-   enums have been lifted out of the constant compares the binary performs on
-   them (see "Enums"). Typedefs and the remaining field names still have to be
+   to rebuild to its recovered `sizeof` under the C++ ABI G�� and 9 enums have
+   been lifted out of the constant compares, masks and jump tables the binary
+   performs on them (see "Enums"). Typedefs and the remaining field names still have to be
    read out of the code that uses them, and fields are currently named
    `f_0x<offset>` because the binary never recorded their names. See "Function
    signatures".
@@ -171,10 +171,11 @@ tools/
                       offsets and sizeof under the C++ ABI (exit != 0 otherwise)
   enumparams.py       scan signatures.tsv for by-value/by-ref candidates whose
                       register word is really an enum, and seed the evidence pass
-  enums.py            aggregate EnumScan's constant-compare/store/mask evidence
-                      into verified enum headers + out/types/enums.tsv
+  enums.py            aggregate EnumScan's constant-compare/store/mask/jump-table
+                      evidence into verified enum headers + out/types/enums.tsv
   check_enums.py      proves each recovered enum is attested by >= 2 distinct
-                      values from >= 2 evidence functions (exit != 0 otherwise)
+                      values from >= 2 evidence functions, or one verified jump
+                      table over >= 3 indices (exit != 0 otherwise)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
@@ -187,7 +188,10 @@ tools/
                       access with the class, offset and access width
     EnumScan.java     p-code dataflow over every function, recording the
                       constants each enum-typed register is compared against,
-                      AND-masked with, or stored through
+                      AND-masked with, stored through, or used to index a
+                      jump table
+    ProbeSwitch.java  recognize computed-jump sites and dump their p-code, the
+                      basis of EnumScan's `switch` evidence channel
     PcodeProbe.java    verifies the p-code API assumptions FieldScan relies on
     ExportSymbols.java exports Ghidra's own demangled symbol names, for
                       cross-checking the local demangler
@@ -473,8 +477,10 @@ a small struct or an enum. It emits a candidate table (`out/types/_enumparams.ts
 524 such parameters across 456 functions), and `tools/ghidra/EnumScan.java` runs
 the same forward dataflow as `FieldScan` over every function, tracking which
 parameters are value-typed and recording the constants they are compared
-against, stored through a reference, or AND-masked with. That yields 150
-evidence rows for 54 distinct types.
+against, stored through a reference, AND-masked with, or used to index a
+jump table. That yields 215 evidence rows for 54 distinct types -- 65 of them
+`switch` rows recovered from the 36 computed-jump sites ProbeSwitch found in
+the seed functions.
 
 `tools/enums.py` turns the evidence into verdicts, with the repo's usual
 two-independent-observations rule:
@@ -485,21 +491,30 @@ two-independent-observations rule:
 - **and masks** are candidate flag members, kept only if a power of two.
   Byte-rounding masks like `0xff`/`0xff00` are the saved-game serializer's
   bit-pack parsing and are dropped.
+- **switch** rows come from jump-table dispatch. A backward slice on the
+  computed-jump site recognizes the AArch64 switch idiom
+  (`adrp`+`add`-on the table base, a bounds check, `ldrsw` the entry, `add`
+  the case address, indirect branch) and only emits a row when the table's
+  entry for index `i` branches to one of Ghidra's resolved flows on a
+  contiguous run -- so a *single* function dispatching over >= 3 indices is
+  proof by itself.
 - A **values** enum is proven with >= 2 distinct values from >= 2 distinct
-  functions; a **flags** enum with >= 2 power-of-two masks.
+  functions, *or* one function's verified switch over >= 3 distinct indices;
+  a **flags** enum with >= 2 power-of-two masks.
 
-The 8 that clear the bar:
+The 9 that clear the bar:
 
 | enum | kind | recovered members | evidence |
 |---|---|---|---|
 | `Walaber::TextureInMemoryColorspace` | values | `0 1 2 3` | 5 functions |
 | `Walaber::VertexColorBlendMode` | values | `0 1` | 5 functions |
-| `Walaber::Language` | values | `0 17` | 6 functions |
+| `Walaber::Language` | values | `0..17` | 3 jump tables + 6 functions |
 | `Walaber::UTF8Helper::Shift_Key` | values | `0 1` | 2 functions |
 | `WaterConcept::ConsiderSameAll` | values | `1 4 7` | 2 functions |
 | `WaterConcept::ConsiderSameAlgae` | values | `1 4 5` | 2 functions |
 | `WaterConcept::ConsiderSameRockOutline` | values | `1 4` | 3 functions |
-| `WaterConceptConstants::StorylineType` | values | `3 6` | 2 functions |
+| `WaterConceptConstants::StorylineType` | values | `0 1 2 3 4 6` | jump table + 2 functions |
+| `Walaber::ValueTweaker::ValueDataType` | values | `0..5` | 1 jump table |
 
 `out/types/enums.tsv` records each definition with its evidence, and
 `tools/check_enums.py` is the gate: it re-derives the verdicts from the raw
@@ -513,9 +528,9 @@ What is still thin, honestly. Most of the 54 candidates never get proven, and
 the reasons are visible in the evidence rather than assumed: enum-typed
 parameters are usually *forwarded* to a virtual or function-pointer call within
 a few instructions, so the constant compare happens in a callee this pass does
-not follow; switch dispatch over a wide enum uses jump tables instead of `cmp`
-chains (AArch64 `cmp` against an immediate also decodes to a flagged subtract,
-which is captured but fires rarely); and by-ref enums -- the
+not follow; jump tables are only reachable when the switch index derives from a
+by-value seed *parameter* -- three of the five inlined draw routines dispatch on
+a struct field and correctly yield nothing; and by-ref enums -- the
 `PlayerDataSerializer::*Info` tags -- are only ever compared through their
 pointer, which stays unproven. The enumerator *names* themselves are not encoded
 anywhere in the binary; `E_<Name>_<ord>` placeholders stand in until the
