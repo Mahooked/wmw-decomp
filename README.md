@@ -1,11 +1,11 @@
-# Where's My Water? G�� full decompilation
+# Where's My Water? — full decompilation
 
 Reverse-engineering notes, tooling, and recovered C++ for **Where's My Water? 1.18.9**
 (Android, `com.disney.WMW`).
 
 ## The goal
 
-**The full source code, exactly as the developers had it** G�� every function in
+**The full source code, exactly as the developers had it** — every function in
 compilable C++ with its original names, types and file organisation, verified by
 rebuilding against the shipped `libwmw.so`. A symbol map or a folder of
 decompiler pseudocode is a milestone, not the destination.
@@ -16,7 +16,7 @@ real class, method, and RTTI names survive in `.dynsym`. That turns "decompiling
 closed-source app" into something much closer to "reading a disassembly with the
 original identifier table attached". Names are the easy half: bodies still have to
 be lifted out of AArch64 machine code, and everything the compiler did not encode
-G�� local variable names, comments, macros, original file layout G�� has to be
+— local variable names, comments, macros, original file layout — has to be
 re-inferred.
 
 ## Where we are
@@ -38,8 +38,8 @@ re-inferred.
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,450 decompiled
-   bodies. Class field layouts are now recovered too G�� 325 of them, each proven
-   to rebuild to its recovered `sizeof` under the C++ ABI G�� and 9 enums have
+   bodies. Class field layouts are now recovered too — 325 of them, each proven
+   to rebuild to its recovered `sizeof` under the C++ ABI — and 9 enums have
    been lifted out of the constant compares, masks and jump tables the binary
    performs on them (see "Enums"). Typedefs and the remaining field names still have to be
    read out of the code that uses them, and fields are currently named
@@ -85,7 +85,7 @@ APK. `assets/Script/WC.txt` is a localization table, not a script.
 |---|---|
 | Language | C++ (AArch64) + a thin Java shell |
 | Engine namespaces | `Walaber` (engine), `WaterConcept` (game) |
-| Java layer | one thin `classes.dex` (165 KB) G�� `com.disney.WMW.WMWActivity` |
+| Java layer | one thin `classes.dex` (165 KB) — `com.disney.WMW.WMWActivity` |
 | Level data | XML scene definitions + SQLite (`water.db`) |
 | Vendored in-binary | libc++, SQLite, libxml2, libwebp, minizip |
 
@@ -104,7 +104,7 @@ section further down:
   and 303 vtable (`_ZTV`) objects in `.dynsym`; `.symtab` is stripped but
   `.dynsym` alone carries the developers' own identifiers.
 - **Two game namespaces:** `Walaber` (engine) 3,351 symbols,
-  `WaterConcept` (game) 2,356 G�� the rest is statically linked third-party code.
+  `WaterConcept` (game) 2,356 — the rest is statically linked third-party code.
 - **Vendored libraries:** libc++ (spelled `std::__ndk1`, i.e. the NDK build),
   SQLite, libxml2, libwebp, minizip.
 - **The demangler is finished.** A from-scratch Itanium C++ demangler that
@@ -116,16 +116,16 @@ section further down:
   per-class headers generated.
 - **Decompiled output:** all 8,618 function symbols are bound to a body (median
   144 bytes, p90 740) across 1,467 per-class files. Function boundaries come
-  from the ELF symbol table rather than from Ghidra's auto-analysis G�� see
+  from the ELF symbol table rather than from Ghidra's auto-analysis — see
   "Function boundaries" below. 1,516 further functions exist in the gaps that no
   symbol covers; they keep Ghidra's name.
 - **Levels are XML scene graphs**, not a binary format: 636 level files, a
   12-element vocabulary, ~42 objects per level; plus 345 reusable `.hs`
   object prototypes.
 - **`water.db` is a real database** (19 tables, 1,014 rows: 671 levels, 46 packs,
-  IAP SKUs, achievements) G�� and partly a program: `DuckSQL1/2` columns store SQL
+  IAP SKUs, achievements) — and partly a program: `DuckSQL1/2` columns store SQL
   text inside the save file.
-- **The JavaG��native bridge is fully accounted for:** all 44 game-owned native
+- **The Java↔native bridge is fully accounted for:** all 44 game-owned native
   methods resolve to `libwmw.so` exports; the 11 unresolved belong to Play
   Billing (9) and FMOD (2), which ship their own libraries.
 - **Assets are inventoried without redistribution:** textures, audio and XML
@@ -150,7 +150,7 @@ and 2,356 mention `WaterConcept`. The remainder is libc++, SQLite, libxml2,
 libwebp, and minizip, all statically linked into the same object.
 
 Because RTTI survived, the class hierarchy and virtual method layout are directly
-recoverable rather than inferred G�� see `out/symbols/classes.tsv`.
+recoverable rather than inferred — see `out/symbols/classes.tsv`.
 
 ## Repository layout
 
@@ -269,7 +269,7 @@ premise turned out to be backwards. Measured on the real data:
 | Ghidra functions starting on an ELF symbol | 102 |
 
 So the ELF symbol table is the clean, unambiguous oracle, and Ghidra's
-boundaries are the unreliable ones G�� it promotes switch-case targets and
+boundaries are the unreliable ones — it promotes switch-case targets and
 jump-table landings into functions of their own. The fix was to invert the
 direction of the mapping: use the symbols to *define* the functions, and keep
 Ghidra's analysis only for the parts worth keeping (disassembled bytes, jump
@@ -284,8 +284,8 @@ body where the address is not an entry point at all.
 Two details that cost real time to find:
 
 - **Ghidra rebases a PIE `.so` to `0x100000`.** Every address is then 1 MB above
-  the ELF vaddr the symbol table uses. Functions still "work" G�� the addresses
-  land in memory, disassembly succeeds G�� but they are built over entirely wrong
+  the ELF vaddr the symbol table uses. Functions still "work" — the addresses
+  land in memory, disassembly succeeds — but they are built over entirely wrong
   bytes and the C looks perfectly plausible. Import with
   `-loader ElfLoader -loader-imagebase 0x0`, and `DecompileAll` refuses to run if
   the executable blocks do not cover the symbol table's whole span.
@@ -295,8 +295,8 @@ Two details that cost real time to find:
   switch case are flows too, and treating them as entries shatters one function
   into dozens of stubs.
 
-Symbols sharing an address G�� the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
-526 of them G�� collapse to a single body carrying the complete-object name, with
+Symbols sharing an address — the Itanium ABI's `C1`/`C2` and `D1`/`D2` pairs,
+526 of them — collapse to a single body carrying the complete-object name, with
 the alias recorded alongside it where the two demangle differently.
 
 ### Function signatures
@@ -310,7 +310,7 @@ as parameter types).
 The parser is reused rather than rewritten: `_parse_params` already walks a
 bare-function-type one `<type>` at a time, so subclassing it to record each
 top-level type yields exact types with no second grammar to keep in sync. A
-capture has to be gated on *type* depth, not on being inside a parameter list G��
+capture has to be gated on *type* depth, not on being inside a parameter list —
 `_parse_type` recurses to parse a pointee, and without the gate
 `P7_JavaVM` comes out as two parameters, `(_JavaVM, _JavaVM*)`.
 
@@ -337,22 +337,22 @@ Ghidra's own signature commands made the output *worse*:
 | Attempt | Applied | Result in `out/src` |
 |---|---|---|
 | `ApplyFunctionSignatureCmd` with the real declaration | 792 | parser merges the return type with the `::`-qualified name; almost everything rejected |
-| GǪparameters only, under a throwaway name | 1,032 | works, but types that Ghidra cannot resolve abort the whole signature |
-| GǪplus `const`/reference fixes and 173 RTTI class types | 1,711 | 2,099 `Unknown calling convention -- yet parameter storage is locked` warnings, 110 return types corrupted to `undefined1 [16]`, parameter names renumbered |
-| GǪplus the 202 class names derived from parameter types | 2,221 | still zero project-class parameters visible in the output |
-| GǪrestricted to functions whose arity already matches | **0** | warnings gone, benefit gone too |
-| GǪexplicit AArch64 storage, types as `x0`/`w0`/`s0`/`d0` | 1,020 | correct scalars, but class types still invisible |
-| GǪopaque class types actually added to the DataType manager | 1,372 | 202 of 202 resolvable, still only scalars applied |
-| GǪ`const` stripped and references passed as pointers | **2,282** | 1,037 functions with real `Walaber::Message *`-style parameters; 0 warnings |
+| …parameters only, under a throwaway name | 1,032 | works, but types that Ghidra cannot resolve abort the whole signature |
+| …plus `const`/reference fixes and 173 RTTI class types | 1,711 | 2,099 `Unknown calling convention -- yet parameter storage is locked` warnings, 110 return types corrupted to `undefined1 [16]`, parameter names renumbered |
+| …plus the 202 class names derived from parameter types | 2,221 | still zero project-class parameters visible in the output |
+| …restricted to functions whose arity already matches | **0** | warnings gone, benefit gone too |
+| …explicit AArch64 storage, types as `x0`/`w0`/`s0`/`d0` | 1,020 | correct scalars, but class types still invisible |
+| …opaque class types actually added to the DataType manager | 1,372 | 202 of 202 resolvable, still only scalars applied |
+| …`const` stripped and references passed as pointers | **2,282** | 1,037 functions with real `Walaber::Message *`-style parameters; 0 warnings |
 
 So there were three separate faults, each of which had to be found by measurement
 rather than assumption:
 
 - **Storage has to be assigned explicitly.** With no parameters and no storage,
   Ghidra's commands have nothing to write into. `tools/ghidra/DecompileAll.java`
-  now allocates AAPCS64 registers itself G�� `x0`G��`x7`/`w0`G��`w7` for
-  integer-sized and pointer types, `s0`G��`s7` for `float`, `d0`G��`d7` for `double`
-  G�� and calls `replaceParameters` with `CUSTOM_STORAGE`. Ghidra's own
+  now allocates AAPCS64 registers itself — `x0`–`x7`/`w0`–`w7` for
+  integer-sized and pointer types, `s0`–`s7` for `float`, `d0`–`d7` for `double`
+  — and calls `replaceParameters` with `CUSTOM_STORAGE`. Ghidra's own
   `PrototypeModel.getStorageLocations()` is not usable: asked for two `uint`s it
   returns `x0` twice.
 - **A datatype is not a datatype until the manager holds it.** `new
@@ -360,15 +360,15 @@ rather than assumption:
   `dtm.addDataType` is called, so the first version "created" 202 class types and
   every later lookup still failed. Compounding it, a type created under that name
   is stored at `/Walaber::Message`, and `getDataType("Walaber::Message")` returns
-  null while `getDataType("/Walaber::Message")` succeeds G�� a silent miss that
+  null while `getDataType("/Walaber::Message")` succeeds — a silent miss that
   looks exactly like a type that was never created. Both are now verified by a
   post-condition count rather than assumed.
 - **Ghidra's C parser cannot express two of the things the ABI encodes.** `const`
   is rejected in every position, including plain `const int` ("Can't resolve
   datatype: const"), and a reference is silently degraded to a by-value type,
   which under AArch64 is actively wrong. `tools/sigs.py` therefore writes a second
-  column, `gtype`, normalised for the parser G�� `const` stripped (2,593
-  parameters) and `T &` passed as `T *` (3,599) G�� alongside the exact `params`
+  column, `gtype`, normalised for the parser — `const` stripped (2,593
+  parameters) and `T &` passed as `T *` (3,599) — alongside the exact `params`
   column, and a `notes` column records which rewrite each parameter needed so the
   loss is visible rather than silent. Template types are deliberately *not*
   faked; they still fail, and inventing a stand-in would change their meaning.
@@ -431,8 +431,8 @@ gives the wrong answer:
   fit them.
 
 A layout is emitted only if it is internally consistent. A negative offset means
-the evidence points into the middle of the object G�� a base subobject, or a
-pointer to a member G�� which no flat struct can express; fields reaching past an
+the evidence points into the middle of the object — a base subobject, or a
+pointer to a member — which no flat struct can express; fields reaching past an
 independently recovered `sizeof` means the two disagree about which object this
 is. 8 classes were withheld for these reasons.
 
@@ -557,7 +557,7 @@ Read this before treating `out/src/` as source.
 
 - **Parameter and return types are inferred, not recovered.** Function names,
   arity and class membership come from the symbol table and are trustworthy.
-  Ghidra's type propagation frequently mis-identifies them G�� a method taking
+  Ghidra's type propagation frequently mis-identifies them — a method taking
   `(Fluids*, ParticleDescription const&, int, bool&)` is emitted as taking
   `(_xmlNode*, char*)`. Trust the mangled comment, not the C signature.
 - **Local variable names, comments and macros never survive compilation.**
@@ -572,8 +572,8 @@ Read this before treating `out/src/` as source.
   and are reachable only through call sites and relocation targets. They are
   inventoried in `out/src/_unsymbolized.tsv`.
 - **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
-  include 75 pointer/fundamental typeinfos (`char*`, `bool`, GǪ) that are RTTI
-  objects, not classes G�� the real class count is 317 (filter pending).
+  include 75 pointer/fundamental typeinfos (`char*`, `bool`, …) that are RTTI
+  objects, not classes — the real class count is 317 (filter pending).
 - This is decompiled machine code, not the original source. It does not
   compile as-is and never will without hand-reconstruction.
 
@@ -597,11 +597,11 @@ By namespace: `Walaber` 127 classes / 944 slots, `WaterConcept` 61 / 1,298,
 
 Output lands in `out/rtti/`:
 
-- `hierarchy.tsv` G�� every class with its bases, offsets and virtual-inheritance flags
-- `vtables.tsv` G�� every primary-vtable slot with its owning symbol
-- `headers/` G�� a compilable-looking `.hpp` per game class: base list, then
+- `hierarchy.tsv` — every class with its bases, offsets and virtual-inheritance flags
+- `vtables.tsv` — every primary-vtable slot with its owning symbol
+- `headers/` — a compilable-looking `.hpp` per game class: base list, then
   virtual methods in slot order, annotated with the target address
-- `summary.json` G�� the metrics above, plus the demangler coverage figures
+- `summary.json` — the metrics above, plus the demangler coverage figures
 
 Two things make this non-trivial and are worth knowing if you extend it:
 
@@ -609,7 +609,7 @@ Two things make this non-trivial and are worth knowing if you extend it:
   that must be resolved through `.rela.dyn` (`R_AARCH64_RELATIVE` is an addend;
   `ABS64` and `GLOB_DAT` are `dynsym[symidx].value + addend`). Reading the raw
   file offset instead yields garbage.
-- A vtable must be anchored at a **fixed position** G�� offset-to-top, then the
+- A vtable must be anchored at a **fixed position** — offset-to-top, then the
   typeinfo pointer, then the slots. Scanning forward for typeinfo pointers runs
   straight into the neighbouring class's vtable, because they are laid out back
   to back, and silently attributes another class's methods to this one. This was
@@ -624,7 +624,7 @@ inheritance graph already records the bases.
 
 The game is mostly data-driven, and all of it is recoverable.
 
-### `water.db` and friends G�� SQLite
+### `water.db` and friends — SQLite
 
 Three databases ship under `assets/Data`. `tools/dbschema.py` dumps their
 structure (`out/db/*.schema.md`); no row *contents* are recorded.
@@ -635,7 +635,7 @@ structure (`out/db/*.schema.md`); no row *contents* are recorded.
 | `water-Lite.db` | 8 | 732 | reduced build |
 | `water-demo.db` | 7 | 41 | demo build |
 
-The schema is plain, unindexed SQLite G�� no views, no triggers, no explicit
+The schema is plain, unindexed SQLite — no views, no triggers, no explicit
 indexes, `journal_mode=delete`. The interesting tables:
 
 | Table | Rows | Notes |
@@ -647,8 +647,8 @@ indexes, `journal_mode=delete`. The interesting tables:
 | `IAPInfo` | 13 | per-store SKU ids: `Internal`, `iOS`, `Google`, `Amazon` |
 | `Achievements` | 45 | points, hidden flag, localized description pairs |
 | `HubInfo` | 5 | world-map nodes; note `DuckSQL1/2` and `ItemSQL1/2` columns that hold **SQL text** |
-| `ADSettings`, `Settings`, `PlayerData`, `AllieSongs`, `MusicCollectInfo`, `LOWInfo` | 3G��24 | settings, event counters, music unlocks, letter-of-the-week content |
-| `AllieChallengeInfo`, `CrankyChallengeInfo`, `MysteryChallengeInfo` | 12G��24 | challenge metadata |
+| `ADSettings`, `Settings`, `PlayerData`, `AllieSongs`, `MusicCollectInfo`, `LOWInfo` | 3–24 | settings, event counters, music unlocks, letter-of-the-week content |
+| `AllieChallengeInfo`, `CrankyChallengeInfo`, `MysteryChallengeInfo` | 12–24 | challenge metadata |
 
 The `DuckSQL1`/`ItemSQL1` columns are worth flagging: the database stores
 queries inside itself, so the save file is partly a program, not just data.
@@ -674,7 +674,7 @@ than values, so the format is documented without redistributing level layouts.
 ```
 
 The 345 `assets/Objects/*.hs` files share the same shape but describe reusable
-`InteractiveObject` prototypes rather than level instances G�� collision
+`InteractiveObject` prototypes rather than level instances — collision
 `Shapes`/`Shape`/`Point` polygons (2,096 points), `Sprites` with `gridSize`,
 `angle`, `isBackground`, and `DefaultProperties` name/value pairs. Two files
 additionally carry `UVs`/`VertIndices`, i.e. custom mesh geometry.
@@ -699,7 +699,7 @@ environment.
 
 That last row is the useful one: the Java layer is genuinely thin. Every
 `com.disney.*` native method is bound by ordinary static JNI name mangling
-(`Java_com_disney_common_BaseActivity_notifyProductInfo`, and so on G�� JNI
+(`Java_com_disney_common_BaseActivity_notifyProductInfo`, and so on — JNI
 escapes `_` as `_1` and `/` as `_`). The 11 unresolved natives belong to
 bundled third-party SDKs that ship their own libraries: Play Billing
 (`com.android.billingclient.api.zzah`, 9) and FMOD audio
@@ -719,11 +719,11 @@ It covers nested names, function and data manglings, template parameter and
 argument lists, substitution-compressed back-references, builtin types, CV
 qualifiers, ref qualifiers, operator overloads, converting constructors, the
 destructor's `D0`/`D1`/`D2` encodings, non-virtual and virtual thunks, and
-`J` argument packs G�� stored as a single template argument exactly as GCC
+`J` argument packs — stored as a single template argument exactly as GCC
 numbers them, then expanded element-by-element (with reference collapsing) by
-`Dp` pack expansions. Template arguments that are full C++ expressions G��
+`Dp` pack expansions. Template arguments that are full C++ expressions —
 `enable_if` conditions built from `sr` qualified names, binary operators,
-casts, `sizeof` and call expressions G�� are parsed and rendered the way
+casts, `sizeof` and call expressions — are parsed and rendered the way
 cp-demangle.c prints them, including GCC's operand-parenthesisation rules.
 It also demangles the RTTI symbols (`_ZTI`, `_ZTV`,
 `_ZTS`), which is what makes the class inventory possible.
@@ -736,7 +736,7 @@ bundled GCC 4.1 `c++filt`, which resolves all 6,769 mangled names in the binary
 and agrees with GCC 2.24 on every one. `tools/refdemangle.py` builds that oracle,
 `tools/refdiff.py` localises the first divergence, and `tools/refprobe.py`
 asks it about synthetic names. `tools/test_cxxfilt.py` runs the whole comparison
-as a regression gate and exits non-zero on any mismatch G�� run it before touching
+as a regression gate and exits non-zero on any mismatch — run it before touching
 `cxxfilt.py`.
 
 | Reference set (6,769 names) | |
@@ -756,8 +756,8 @@ symbol table, the local demangler's name agrees on 464, differs on 0, and
 leaves 0 unparsed. The comparison runs both names through a normaliser that
 folds presentation differences (Ghidra's `std::__ndk1::` inline spelling,
 `unsigned_int` for `unsigned int`, `Language_const` for `Language const`); the
-sample itself is biased toward `std::__ndk1` internals G�� precisely the hardest
-substitution cases G�� and excludes every ordinary `Walaber`/`WaterConcept`
+sample itself is biased toward `std::__ndk1` internals — precisely the hardest
+substitution cases — and excludes every ordinary `Walaber`/`WaterConcept`
 method, so the absolute numbers understate the demangler on game code.
 
 For anything load-bearing, prefer the mangled name in the source comments over
@@ -796,7 +796,7 @@ py tools\apkindex.py $apk --out out\apk
 py tools\assetdoc.py $apk --out out\assets
 ```
 
-Steps 4G��7 need only Python and run in seconds; only steps 2G��3 need Ghidra.
+Steps 4–7 need only Python and run in seconds; only steps 2–3 need Ghidra.
 `tools/ghidra.ps1 -Mode script -Script ExportSymbols.java ...` regenerates
 `out/symbols/gnu_symbols.tsv`, which step 4 consumes as a demangler
 cross-check.
@@ -812,7 +812,7 @@ frozen process. Progress is echoed from the Ghidra log instead.
 
 Do not re-import into a project that a previous decompile run has touched:
 headless runs save the program, so any functions created by an earlier run
-persist. Re-import into a fresh project when in doubt G�� although
+persist. Re-import into a fresh project when in doubt — although
 `DecompileAll` now deletes every function before rebuilding, so it is
 effectively idempotent.
 
