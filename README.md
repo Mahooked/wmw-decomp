@@ -29,7 +29,7 @@ re-inferred.
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
-| Struct/field layouts, signatures applied to bodies | **partly done** | 2,282 functions carry exact AAPCS64-allocated parameters, 1,037 of them with real project-class types; 325 class layouts recovered from p-code field-access evidence and imported into Ghidra (see "Function signatures") |
+| Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters; 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
@@ -37,7 +37,7 @@ re-inferred.
 ### Remaining work
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
-   in the manglings), validated against GCC, and now applied to 2,282 decompiled
+   in the manglings), validated against GCC, and now applied to 2,450 decompiled
    bodies. Class field layouts are now recovered too G�� 325 of them, each proven
    to rebuild to its recovered `sizeof` under the C++ ABI G�� and 9 enums have
    been lifted out of the constant compares, masks and jump tables the binary
@@ -52,16 +52,24 @@ re-inferred.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
    binary is the only honest completion test.
 
-### Milestones (20 commits)
+### Milestones
 
-- `5defcdf`G��`febcf71` G�� ELF tooling, decompiled source tree, class model, data
+- `5defcdf`..`febcf71` -- ELF tooling, decompiled source tree, class model, data
   formats, JNI bridge.
-- `c77d06c`G��`e49d4fc` G�� demangler iterated against a GCC oracle from first cut
+- `c77d06c`..`e49d4fc` -- demangler iterated against a GCC oracle from first cut
   to **100% parity** (substitutions, templates, expressions, thunks) plus a
   regression gate.
-- `0d307ad` G�� `out/src` regenerated with the final names, README stats refreshed.
-- Function boundaries rebuilt from the ELF symbol table: 2,131 G�� **8,618
-  symbols bound (100%)**, 641 G�� 1,467 files. See "Function boundaries".
+- Function boundaries rebuilt from the ELF symbol table: 2,131 -> **8,618
+  symbols bound (100%)**, 641 -> 1,467 files. See "Function boundaries".
+- Exact function prototypes recovered and validated against GCC's own rendering
+  (6,769/6,769). See "Function signatures".
+- 325 field layouts proven from p-code field-access evidence, ABI-verified, and
+  applied to the output; signatures rise 2,282 -> 2,450. See "Function
+  signatures".
+- 9 enums recovered from constant-compare/store/mask/jump-table evidence, each
+  re-derived by a gate. See "Enums".
+- `out/src` regenerated from a clean import with layouts applied and path-free
+  file headers.
 - Exact function prototypes recovered and validated against GCC's own rendering
   (6,769/6,769). Applying them to the decompiled bodies is blocked on field
   layouts; see "Function signatures".
@@ -449,22 +457,29 @@ not asserted:
 | | no layouts | layouts |
 | --- | --- | --- |
 | signatures applied | 2,282 | 2,450 |
-| signatures unparseable | 1,684 | 1,567 |
-| field accesses rendered as `f_0x` | 0 | 16,718 |
-| `DAT_` placeholders | 6,087 | 6,077 |
-| generic `param_N` parameters | 4,296 | 4,171 |
+| signatures unparseable | 1,693 | 1,576 |
+| field accesses rendered as `f_0x` | 0 | 4,884 |
+| `DAT_` placeholders | 8,272 | 8,262 |
+| generic `param_N` parameters | 74,258 | 70,864 |
 
-The control run is what makes this readable. Re-importing the binary into a fresh
-project also repairs call targets that the previous, repeatedly-patched project had
-left as `func_0x0016ace0`, which is why the committed tree differs so widely from a
-clean run. Against the control G�� where the layouts are the only variable G�� 168 more
-signatures resolve and no category regresses. A separate audit confirms all 15,222
-lines mentioning a field reference a *proven* class: none of the 125 withheld
-Field *names* are now partially recovered from accessor methods (`get*`/`set*`/`is*`/`has*`) when they unambiguously identify a single (class, offset) with consistent verb/direction and cross-accessor agreement. `tools/fieldnames.py` produces `out/types/fieldnames.tsv` (class, offset, name, votes, accessors) and filters to proven layouts; ambiguous or conflicting cases fall back to `f_0x<offset>`. `headers.py` and Ghidra import apply these names with provenance.
- 
- 
- 
-accessors are the obvious route to recovering them.
+The control is a fresh import of the same binary with only the layouts
+skipped (`-nolayout`), so the single variable is whether the recovered
+layouts are installed. Against it, 168 more signatures resolve and no
+category regresses, and 4,884 field accesses render as `f_0x<offset>`
+member reads instead of raw pointer casts. Both columns reproduce with
+`tools/srcstats.py` (token counts over `out/src`, comment lines excluded),
+and `out/src` itself is the layout-enabled run of that pipeline.
+
+A separate audit confirms every line mentioning a field references a
+*proven* class: none of the 125 withheld layouts leak into the output.
+Field *names* are partially recovered from accessor methods
+(`get*`/`set*`/`is*`/`has*`) when they unambiguously identify a single
+(class, offset) with consistent verb/direction and cross-accessor
+agreement. `tools/fieldnames.py` produces `out/types/fieldnames.tsv`
+(class, offset, name, votes, accessors) and filters to proven layouts;
+ambiguous or conflicting cases fall back to `f_0x<offset>`. `headers.py`
+and the Ghidra import apply these names with provenance, and the remaining
+`f_0x` placeholders are the obvious route to recovering the rest.
 
 ### Enums
 
