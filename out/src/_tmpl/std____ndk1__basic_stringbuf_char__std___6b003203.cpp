@@ -11,15 +11,15 @@
    >::~basic_stringbuf() */
 
 void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::~basic_stringbuf(undefined8 *param_1)
+     ::~basic_stringbuf()
 
 {
-  *param_1 = &PTR__basic_stringbuf_007111c8;
-  if ((*(byte *)(param_1 + 8) & 1) != 0) {
-    operator delete((void *)param_1[10]);
+  *this = &PTR__basic_stringbuf_007111c8;
+  if ((*(byte *)(this + 8) & 1) != 0) {
+    operator delete((void *)this[10]);
   }
-  *param_1 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(param_1 + 1);
+  *this = &PTR__basic_streambuf_00710968;
+  std::__ndk1::locale::~locale(this + 1);
   return;
 }
 
@@ -33,16 +33,16 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
    >::~basic_stringbuf() */
 
 void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>
-     ::~basic_stringbuf(undefined8 *param_1)
+     ::~basic_stringbuf()
 
 {
-  *param_1 = &PTR__basic_stringbuf_007111c8;
-  if ((*(byte *)(param_1 + 8) & 1) != 0) {
-    operator delete((void *)param_1[10]);
+  *this = &PTR__basic_stringbuf_007111c8;
+  if ((*(byte *)(this + 8) & 1) != 0) {
+    operator delete((void *)this[10]);
   }
-  *param_1 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(param_1 + 1);
-  operator delete(param_1);
+  *this = &PTR__basic_streambuf_00710968;
+  std::__ndk1::locale::~locale(this + 1);
+  operator delete(this);
   return;
 }
 

@@ -11,24 +11,24 @@
    >::~SharedPtr() */
 
 void Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>>
-     ::~SharedPtr(undefined8 *param_1)
+     ::~SharedPtr()
 
 {
   int iVar1;
   void *p0;
   undefined8 *p0_00;
   
-  p0_00 = (undefined8 *)*param_1;
+  p0_00 = (undefined8 *)*this;
   if ((p0_00 != (undefined8 *)0x0) &&
-     (iVar1 = *(int *)param_1[1] + -1, *(int *)param_1[1] = iVar1, iVar1 == 0)) {
+     (iVar1 = *(int *)this[1] + -1, *(int *)this[1] = iVar1, iVar1 == 0)) {
     p0 = (void *)*p0_00;
     if (p0 != (void *)0x0) {
       p0_00[1] = p0;
       operator delete(p0);
     }
     operator delete(p0_00);
-    if ((void *)param_1[1] != (void *)0x0) {
-      operator delete((void *)param_1[1]);
+    if ((void *)this[1] != (void *)0x0) {
+      operator delete((void *)this[1]);
       return;
     }
   }

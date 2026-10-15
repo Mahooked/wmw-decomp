@@ -109,24 +109,24 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
 /* Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, Walaber::TextureType) */
 
-void Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::TextureType param_2)
+void Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
 
 {
-  *this = &PTR__Texture_00710128;
+  *param_1 = &PTR__Texture_00710128;
                     /* try { // try from 00395b6c to 00395b73 has its CatchHandler @ 00395bdc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 1);
                     /* try { // try from 00395b78 to 00395b7f has its CatchHandler @ 00395bc4 */
-  Walaber::TextureSettings::TextureSettings(this + 4,6);
-  *(undefined8 *)((long)this + 0x8c) = 0;
-  *(undefined8 *)((long)this + 0x84) = 0;
-  *(undefined8 *)((long)this + 0x7c) = 0;
-  *(undefined4 *)(this + 0xf) = 0xffffffff;
-  *(undefined8 *)((long)this + 0xa4) = 0;
-  *(undefined8 *)((long)this + 0xac) = 0;
-  *(undefined4 *)((long)this + 0xb4) = 0;
-  *(undefined4 *)(this + 0x17) = param_2;
-  *(undefined8 *)((long)this + 0x9c) = 0;
-  *(undefined8 *)((long)this + 0x94) = 0;
+  Walaber::TextureSettings::TextureSettings(param_1 + 4,6);
+  *(undefined8 *)((long)param_1 + 0x8c) = 0;
+  *(undefined8 *)((long)param_1 + 0x84) = 0;
+  *(undefined8 *)((long)param_1 + 0x7c) = 0;
+  *(undefined4 *)(param_1 + 0xf) = 0xffffffff;
+  *(undefined8 *)((long)param_1 + 0xa4) = 0;
+  *(undefined8 *)((long)param_1 + 0xac) = 0;
+  *(undefined4 *)((long)param_1 + 0xb4) = 0;
+  *(undefined4 *)(param_1 + 0x17) = param_3;
+  *(undefined8 *)((long)param_1 + 0x9c) = 0;
+  *(undefined8 *)((long)param_1 + 0x94) = 0;
   return;
 }
 
@@ -138,18 +138,18 @@ void Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char
 
 /* Walaber::Texture::~Texture() */
 
-void Walaber::Texture::~Texture(undefined8 *param_1)
+void Walaber::Texture::~Texture()
 
 {
-  *param_1 = &PTR__Texture_00710128;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(param_1 + 0x15);
-  if ((*(byte *)(param_1 + 9) & 1) != 0) {
-    operator delete((void *)param_1[0xb]);
+  *this = &PTR__Texture_00710128;
+  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(this + 0x15);
+  if ((*(byte *)(this + 9) & 1) != 0) {
+    operator delete((void *)this[0xb]);
   }
-  if ((*(byte *)(param_1 + 1) & 1) == 0) {
+  if ((*(byte *)(this + 1) & 1) == 0) {
     return;
   }
-  operator delete((void *)param_1[3]);
+  operator delete((void *)this[3]);
   return;
 }
 
@@ -267,46 +267,46 @@ void Walaber::Texture::_applySettings(void)
    std::__ndk1::allocator<char> > const&, Walaber::TextureSettings, Walaber::TextureType) */
 
 void Walaber::Texture::Texture
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::TextureSettings param_2,Walaber::TextureType param_3)
+               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined4 param_4)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  *this = &PTR__Texture_00710128;
+  *param_1 = &PTR__Texture_00710128;
                     /* try { // try from 00396db4 to 00396dbb has its CatchHandler @ 00396e74 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
-  uVar1 = *param_2;
-  *(undefined4 *)(this + 5) = *(undefined4 *)(param_2 + 1);
-  this[4] = uVar1;
-  *(undefined1 *)((long)this + 0x2c) = *(undefined1 *)((long)param_2 + 0xc);
-  *(undefined1 *)((long)this + 0x2d) = *(undefined1 *)((long)param_2 + 0xd);
-  *(undefined1 *)((long)this + 0x2e) = *(undefined1 *)((long)param_2 + 0xe);
-  *(undefined1 *)((long)this + 0x2f) = *(undefined1 *)((long)param_2 + 0xf);
-  uVar2 = param_2[3];
-  uVar1 = param_2[2];
-  this[8] = param_2[4];
-  this[7] = uVar2;
-  this[6] = uVar1;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 1);
+  uVar1 = *param_3;
+  *(undefined4 *)(param_1 + 5) = *(undefined4 *)(param_3 + 1);
+  param_1[4] = uVar1;
+  *(undefined1 *)((long)param_1 + 0x2c) = *(undefined1 *)((long)param_3 + 0xc);
+  *(undefined1 *)((long)param_1 + 0x2d) = *(undefined1 *)((long)param_3 + 0xd);
+  *(undefined1 *)((long)param_1 + 0x2e) = *(undefined1 *)((long)param_3 + 0xe);
+  *(undefined1 *)((long)param_1 + 0x2f) = *(undefined1 *)((long)param_3 + 0xf);
+  uVar2 = param_3[3];
+  uVar1 = param_3[2];
+  param_1[8] = param_3[4];
+  param_1[7] = uVar2;
+  param_1[6] = uVar1;
                     /* try { // try from 00396e04 to 00396e07 has its CatchHandler @ 00396e5c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 9,param_2 + 5);
-  uVar1 = param_2[10];
-  uVar3 = param_2[9];
-  uVar2 = param_2[8];
-  *(undefined4 *)(this + 0xf) = 0xffffffff;
-  *(undefined8 *)((long)this + 0x8c) = 0;
-  *(undefined8 *)((long)this + 0x84) = 0;
-  *(undefined8 *)((long)this + 0x7c) = 0;
-  this[0xe] = uVar1;
-  this[0xd] = uVar3;
-  this[0xc] = uVar2;
-  *(undefined8 *)((long)this + 0xa4) = 0;
-  *(undefined8 *)((long)this + 0xac) = 0;
-  *(undefined4 *)((long)this + 0xb4) = 0;
-  *(undefined4 *)(this + 0x17) = param_3;
-  *(undefined8 *)((long)this + 0x9c) = 0;
-  *(undefined8 *)((long)this + 0x94) = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 9,param_3 + 5);
+  uVar1 = param_3[10];
+  uVar3 = param_3[9];
+  uVar2 = param_3[8];
+  *(undefined4 *)(param_1 + 0xf) = 0xffffffff;
+  *(undefined8 *)((long)param_1 + 0x8c) = 0;
+  *(undefined8 *)((long)param_1 + 0x84) = 0;
+  *(undefined8 *)((long)param_1 + 0x7c) = 0;
+  param_1[0xe] = uVar1;
+  param_1[0xd] = uVar3;
+  param_1[0xc] = uVar2;
+  *(undefined8 *)((long)param_1 + 0xa4) = 0;
+  *(undefined8 *)((long)param_1 + 0xac) = 0;
+  *(undefined4 *)((long)param_1 + 0xb4) = 0;
+  *(undefined4 *)(param_1 + 0x17) = param_4;
+  *(undefined8 *)((long)param_1 + 0x9c) = 0;
+  *(undefined8 *)((long)param_1 + 0x94) = 0;
   return;
 }
 

@@ -67,13 +67,13 @@ void std::__ndk1::
 
 void std::__ndk1::
      __tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>
-     ::destroy(std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, void*> *param_1)
+     ::destroy(undefined8 param_1,undefined8 *param_2)
 
 {
-  if (param_1 != (undefined8 *)0x0) {
-    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(this,*param_1);
-    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(this,param_1[1]);
-    operator delete(param_1);
+  if (param_2 != (undefined8 *)0x0) {
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(param_1,*param_2);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(param_1,param_2[1]);
+    operator delete(param_2);
     return;
   }
   return;
@@ -95,19 +95,19 @@ void std::__ndk1::
 
 void std::__ndk1::
      __tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>
-     ::__insert_node_at(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*> *param_1,std::__ndk1::__tree_node_base<void*>*& param_2,std::__ndk1::__tree_node_base<void*> *param_3)
+     ::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
-  *param_3 = 0;
-  param_3[1] = 0;
-  param_3[2] = param_1;
-  *param_2 = param_3;
-  if (*(long *)*this != 0) {
-    *this = *(long *)*this;
-    param_3 = (undefined8 *)*param_2;
+  *param_4 = 0;
+  param_4[1] = 0;
+  param_4[2] = param_2;
+  *param_3 = param_4;
+  if (*(long *)*param_1 != 0) {
+    *param_1 = *(long *)*param_1;
+    param_4 = (undefined8 *)*param_3;
   }
-  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(this[1],param_3);
-  this[2] = this[2] + 1;
+  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  param_1[2] = param_1[2] + 1;
   return;
 }
 
@@ -129,18 +129,18 @@ void std::__ndk1::
 
 long * std::__ndk1::
        __tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>
-       ::erase(std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, void*>*, long> param_1)
+       ::erase(undefined8 *param_1,void *param_2)
 
 {
   long *plVar1;
   long lVar2;
   long *plVar3;
   
-  plVar1 = *(long **)((long)param_1 + 8);
-  if (*(long **)((long)param_1 + 8) == (long *)0x0) {
-    plVar1 = (long *)((long)param_1 + 0x10);
+  plVar1 = *(long **)((long)param_2 + 8);
+  if (*(long **)((long)param_2 + 8) == (long *)0x0) {
+    plVar1 = (long *)((long)param_2 + 0x10);
     plVar3 = (long *)*plVar1;
-    if ((void *)*plVar3 != param_1) {
+    if ((void *)*plVar3 != param_2) {
       do {
         lVar2 = *plVar1;
         plVar1 = (long *)(lVar2 + 0x10);
@@ -154,12 +154,12 @@ long * std::__ndk1::
       plVar1 = (long *)*plVar3;
     } while ((long *)*plVar3 != (long *)0x0);
   }
-  if ((void *)*this == param_1) {
-    *this = plVar3;
+  if ((void *)*param_1 == param_2) {
+    *param_1 = plVar3;
   }
-  this[2] = this[2] + -1;
-  void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(this[1],param_1);
-  operator delete(param_1);
+  param_1[2] = param_1[2] + -1;
+  void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
+  operator delete(param_2);
   return plVar3;
 }
 

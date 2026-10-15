@@ -97,7 +97,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
    std::__ndk1::allocator<WaterConcept::Fluid>&>&) */
 
 void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>& param_1)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 uVar1;
@@ -106,34 +106,34 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
   long lVar4;
   long lVar5;
   
-  lVar3 = *this;
-  if (this[1] == lVar3) {
-    lVar4 = param_1[1];
+  lVar3 = *param_1;
+  if (param_1[1] == lVar3) {
+    lVar4 = param_2[1];
   }
   else {
-    lVar4 = param_1[1];
-    lVar5 = this[1];
+    lVar4 = param_2[1];
+    lVar5 = param_1[1];
     do {
       lVar2 = lVar5 + -0xf0;
       WaterConceptConstants::FluidDescription::FluidDescription(lVar4 + -0xf0,lVar2);
       uVar1 = *(undefined8 *)(lVar5 + -0x10);
       *(undefined1 *)(lVar4 + -8) = *(undefined1 *)(lVar5 + -8);
       *(undefined8 *)(lVar4 + -0x10) = uVar1;
-      lVar4 = param_1[1] + -0xf0;
-      param_1[1] = lVar4;
+      lVar4 = param_2[1] + -0xf0;
+      param_2[1] = lVar4;
       lVar5 = lVar2;
     } while (lVar3 != lVar2);
-    lVar3 = *this;
+    lVar3 = *param_1;
   }
-  *this = lVar4;
-  param_1[1] = lVar3;
-  lVar3 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar3;
-  lVar3 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar3;
-  *param_1 = param_1[1];
+  *param_1 = lVar4;
+  param_2[1] = lVar3;
+  lVar3 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar3;
+  lVar3 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar3;
+  *param_2 = param_2[1];
   return;
 }
 

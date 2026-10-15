@@ -9,28 +9,28 @@
 
 /* WaterConcept::Screen_PuppetShow::Screen_PuppetShow() */
 
-void WaterConcept::Screen_PuppetShow::Screen_PuppetShow(undefined8 *param_1)
+void WaterConcept::Screen_PuppetShow::Screen_PuppetShow()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0xf);
-  *param_1 = &PTR__Screen_PuppetShow_00715468;
-  param_1[4] = &PTR_handleEvent_00715518;
+  WaterConcept::WCScreen::WCScreen(this,0xf);
+  *this = &PTR__Screen_PuppetShow_00715468;
+  this[4] = &PTR_handleEvent_00715518;
                     /* try { // try from 0055bfc0 to 0055bfc7 has its CatchHandler @ 0055c030 */
-  WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(param_1 + 0x12);
-  *(undefined1 *)((long)param_1 + 0x314) = 0;
-  *(undefined4 *)(param_1 + 0x62) = 0xbf800000;
-  *(undefined4 *)(param_1 + 99) = 2;
+  WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(this + 0x12);
+  *(undefined1 *)((long)this + 0x314) = 0;
+  *(undefined4 *)(this + 0x62) = 0xbf800000;
+  *(undefined4 *)(this + 99) = 2;
                     /* try { // try from 0055bfe0 to 0055bfe3 has its CatchHandler @ 0055c020 */
-  Walaber::PropertyList::PropertyList(param_1 + 100);
-  param_1[0x6a] = 0;
-  param_1[0x6b] = 0;
-  param_1[0x6c] = 0;
-  *(undefined1 *)((long)param_1 + 0x351) = 0;
-  *(undefined4 *)(param_1 + 0x6d) = 0;
-  *(undefined4 *)(param_1 + 0x67) = 0xffffffff;
-  param_1[0x69] = 0;
-  param_1[0x68] = 0;
-  *(undefined1 *)((long)param_1 + 0x36c) = 1;
+  Walaber::PropertyList::PropertyList(this + 100);
+  this[0x6a] = 0;
+  this[0x6b] = 0;
+  this[0x6c] = 0;
+  *(undefined1 *)((long)this + 0x351) = 0;
+  *(undefined4 *)(this + 0x6d) = 0;
+  *(undefined4 *)(this + 0x67) = 0xffffffff;
+  this[0x69] = 0;
+  this[0x68] = 0;
+  *(undefined1 *)((long)this + 0x36c) = 1;
   return;
 }
 
@@ -42,18 +42,18 @@ void WaterConcept::Screen_PuppetShow::Screen_PuppetShow(undefined8 *param_1)
 
 /* WaterConcept::Screen_PuppetShow::~Screen_PuppetShow() */
 
-void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(undefined8 *param_1)
+void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow()
 
 {
-  *param_1 = &PTR__Screen_PuppetShow_00715468;
-  param_1[4] = &PTR_handleEvent_00715518;
-  if ((*(byte *)(param_1 + 0x6a) & 1) != 0) {
-    operator delete((void *)param_1[0x6c]);
+  *this = &PTR__Screen_PuppetShow_00715468;
+  this[4] = &PTR_handleEvent_00715518;
+  if ((*(byte *)(this + 0x6a) & 1) != 0) {
+    operator delete((void *)this[0x6c]);
   }
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x68);
-  Walaber::PropertyList::~PropertyList(param_1 + 100);
-  WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0x68);
+  Walaber::PropertyList::~PropertyList(this + 100);
+  WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

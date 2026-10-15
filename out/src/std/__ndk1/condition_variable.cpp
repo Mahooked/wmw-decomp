@@ -57,18 +57,18 @@ void std::__ndk1::condition_variable::notify_all(void)
 
 /* std::__ndk1::condition_variable::wait(std::__ndk1::unique_lock<std::__ndk1::mutex>&) */
 
-void std::__ndk1::condition_variable::wait(std::__ndk1::unique_lock<std::__ndk1::mutex>& param_1)
+void std::__ndk1::condition_variable::wait(undefined8 param_1,undefined8 *param_2)
 
 {
   undefined8 uVar1;
   
-  if (*(char *)(param_1 + 1) == '\0') {
+  if (*(char *)(param_2 + 1) == '\0') {
                     /* try { // try from 005efc2c to 005efc3b has its CatchHandler @ 005efc48 */
     std::__ndk1::__throw_system_error(1,"condition_variable::wait: mutex not locked");
     return;
   }
                     /* try { // try from 005efc1c to 005efc1f has its CatchHandler @ 005efc4c */
-  uVar1 = pthread_cond_wait(this,*param_1);
+  uVar1 = pthread_cond_wait(param_1,*param_2);
   if ((int)uVar1 == 0) {
     return;
   }
@@ -88,7 +88,7 @@ void std::__ndk1::condition_variable::wait(std::__ndk1::unique_lock<std::__ndk1:
    std::__ndk1::chrono::duration<long long, std::__ndk1::ratio<1l, 1000000000l> > >) */
 
 void std::__ndk1::condition_variable::__do_timed_wait
-               (std::__ndk1::unique_lock<std::__ndk1::mutex>& param_1,std::__ndk1::chrono::time_point<std::__ndk1::chrono::system_clock, std::__ndk1::chrono::duration<long long, std::__ndk1::ratio<1l, 1000000000l>>> param_2)
+               (undefined8 param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;
@@ -99,18 +99,18 @@ void std::__ndk1::condition_variable::__do_timed_wait
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  if (*(char *)(param_1 + 1) == '\0') {
+  if (*(char *)(param_2 + 1) == '\0') {
                     /* try { // try from 005efcec to 005efcfb has its CatchHandler @ 005efd0c */
     std::__ndk1::__throw_system_error(1,"condition_variable::timed wait: mutex not locked");
     return;
   }
-  if (0x59682f000000e940 < param_2) {
-    param_2 = 0x59682f000000e941;
+  if (0x59682f000000e940 < param_3) {
+    param_3 = 0x59682f000000e941;
   }
-  lStack_38 = param_2 / 1000000000;
-  lStack_30 = param_2 % 1000000000;
+  lStack_38 = param_3 / 1000000000;
+  lStack_30 = param_3 % 1000000000;
                     /* try { // try from 005efcb8 to 005efcbf has its CatchHandler @ 005efd10 */
-  uVar2 = pthread_cond_timedwait(this,*param_1,&lStack_38);
+  uVar2 = pthread_cond_timedwait(param_1,*param_2,&lStack_38);
   if (((int)uVar2 != 0) && ((int)uVar2 != 0x6e)) {
                     /* try { // try from 005efcfc to 005efd07 has its CatchHandler @ 005efd10 */
     std::__ndk1::__throw_system_error(uVar2,"condition_variable timed_wait failed");

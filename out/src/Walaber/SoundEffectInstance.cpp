@@ -12,26 +12,27 @@
    std::__ndk1::allocator<char> >) */
 
 void Walaber::SoundEffectInstance::SoundEffectInstance
-               (Walaber::SharedPtr<Walaber::SoundResource> param_1,FMOD::ChannelGroup *param_2,float param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_4)
+               (undefined4 param_1,undefined8 *param_2,long *param_3,undefined8 param_4,
+               undefined8 param_5)
 
 {
   int *piVar1;
   long lVar2;
   
-  *param_1 = &PTR__SoundEffectInstance_0070e628;
-  lVar2 = *param_2;
-  param_1[1] = lVar2;
-  piVar1 = (int *)param_2[1];
-  param_1[2] = piVar1;
+  *param_2 = &PTR__SoundEffectInstance_0070e628;
+  lVar2 = *param_3;
+  param_2[1] = lVar2;
+  piVar1 = (int *)param_3[1];
+  param_2[2] = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_1[3] = 0;
-  param_1[4] = param_3;
-  *(undefined4 *)((long)param_1 + 0x2c) = this;
+  param_2[3] = 0;
+  param_2[4] = param_4;
+  *(undefined4 *)((long)param_2 + 0x2c) = param_1;
                     /* try { // try from 0034c8f4 to 0034c8fb has its CatchHandler @ 0034c90c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 6,param_4);
-  *(undefined1 *)(param_1 + 9) = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_2 + 6,param_5);
+  *(undefined1 *)(param_2 + 9) = 0;
   return;
 }
 
@@ -43,7 +44,7 @@ void Walaber::SoundEffectInstance::SoundEffectInstance
 
 /* Walaber::SoundEffectInstance::~SoundEffectInstance() */
 
-void Walaber::SoundEffectInstance::~SoundEffectInstance(undefined8 *param_1)
+void Walaber::SoundEffectInstance::~SoundEffectInstance()
 
 {
   long lVar1;
@@ -52,22 +53,22 @@ void Walaber::SoundEffectInstance::~SoundEffectInstance(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *param_1 = &PTR__SoundEffectInstance_0070e628;
-  if (param_1[3] != 0) {
+  *this = &PTR__SoundEffectInstance_0070e628;
+  if (this[3] != 0) {
                     /* try { // try from 0034c9b4 to 0034c9db has its CatchHandler @ 0034ca1c */
-    FMOD::Channel::getMode(param_1[3],abStack_2c);
+    FMOD::Channel::getMode(this[3],abStack_2c);
     if ((abStack_2c[0] >> 1 & 1) != 0) {
-      FMOD::Channel::setMode(param_1[3],1);
-      if (param_1[3] != 0) {
+      FMOD::Channel::setMode(this[3],1);
+      if (this[3] != 0) {
         FMOD::Channel::stop();
-        param_1[3] = 0;
+        this[3] = 0;
       }
     }
   }
-  if ((*(byte *)(param_1 + 6) & 1) != 0) {
-    operator delete((void *)param_1[8]);
+  if ((*(byte *)(this + 6) & 1) != 0) {
+    operator delete((void *)this[8]);
   }
-  Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(param_1 + 1);
+  Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(this + 1);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }

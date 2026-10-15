@@ -9,14 +9,14 @@
 
 /* WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore() */
 
-void WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore(undefined8 *param_1)
+void WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x15);
-  *(undefined2 *)((long)param_1 + 0xd) = 0;
-  *(undefined1 *)(param_1 + 0x14) = 0;
-  *param_1 = &PTR__Screen_GraphicsContextRestore_00713db8;
-  param_1[4] = &PTR_handleEvent_00713e68;
+  WaterConcept::WCScreen::WCScreen(this,0x15);
+  *(undefined2 *)((long)this + 0xd) = 0;
+  *(undefined1 *)(this + 0x14) = 0;
+  *this = &PTR__Screen_GraphicsContextRestore_00713db8;
+  this[4] = &PTR_handleEvent_00713e68;
   return;
 }
 

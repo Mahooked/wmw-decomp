@@ -9,19 +9,19 @@
 
 /* Walaber::AnimationManager::AnimationManager() */
 
-void Walaber::AnimationManager::AnimationManager(undefined8 *param_1)
+void Walaber::AnimationManager::AnimationManager()
 
 {
-  param_1[2] = 0;
-  param_1[3] = 0;
-  param_1[1] = 0;
-  param_1[7] = 0;
-  param_1[8] = 0;
-  *param_1 = param_1 + 1;
-  param_1[6] = 0;
-  param_1[4] = 0;
-  param_1[5] = param_1 + 6;
-  *(undefined2 *)(param_1 + 9) = 0;
+  this[2] = 0;
+  this[3] = 0;
+  this[1] = 0;
+  this[7] = 0;
+  this[8] = 0;
+  *this = this + 1;
+  this[6] = 0;
+  this[4] = 0;
+  this[5] = this + 6;
+  *(undefined2 *)(this + 9) = 0;
   return;
 }
 
@@ -121,7 +121,7 @@ Walaber__AnimationManager * Walaber::AnimationManager::operator=(Walaber__Animat
 
 /* Walaber::AnimationManager::~AnimationManager() */
 
-void Walaber::AnimationManager::~AnimationManager(undefined8 *param_1)
+void Walaber::AnimationManager::~AnimationManager()
 
 {
   bool bVar1;
@@ -130,8 +130,8 @@ void Walaber::AnimationManager::~AnimationManager(undefined8 *param_1)
   void *pvVar4;
   long *plVar5;
   
-  plVar5 = (long *)*param_1;
-  while (param_1 + 1 != plVar5) {
+  plVar5 = (long *)*this;
+  while (this + 1 != plVar5) {
     pvVar4 = (void *)plVar5[7];
     if (pvVar4 != (void *)0x0) {
       Walaber::Animation::~Animation(pvVar4);
@@ -157,16 +157,16 @@ void Walaber::AnimationManager::~AnimationManager(undefined8 *param_1)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::destroy(param_1,param_1[1]);
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = param_1 + 1;
-  if ((*(char *)(param_1 + 9) != '\0') && (pvVar4 = (void *)param_1[3], pvVar4 != (void *)0x0)) {
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::destroy(this,this[1]);
+  this[1] = 0;
+  this[2] = 0;
+  *this = this + 1;
+  if ((*(char *)(this + 9) != '\0') && (pvVar4 = (void *)this[3], pvVar4 != (void *)0x0)) {
     Walaber::Animation::~Animation(pvVar4);
     operator delete(pvVar4);
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(param_1 + 5,param_1[6]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::destroy(param_1,param_1[1]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(this + 5,this[6]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::destroy(this,this[1]);
   return;
 }
 
@@ -314,7 +314,7 @@ void Walaber::AnimationManager::addAnimation(Walaber__Animation *p0)
 /* Walaber::AnimationManager::createAnimation(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::AnimationManager::createAnimation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::AnimationManager::createAnimation(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -330,14 +330,14 @@ void Walaber::AnimationManager::createAnimation(std::__ndk1::basic_string<char, 
   lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0x108);
                     /* try { // try from 00337c58 to 00337c63 has its CatchHandler @ 00337ce8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
                     /* try { // try from 00337c64 to 00337c73 has its CatchHandler @ 00337cd0 */
-  Walaber::Animation::Animation(uVar2,abStack_60,this);
+  Walaber::Animation::Animation(uVar2,abStack_60,param_1);
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  uStack_40 = param_1;
-  lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this,param_1,&DAT_00628470,&uStack_40,auStack_48);
+  uStack_40 = param_2;
+  lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1,param_2,&DAT_00628470,&uStack_40,auStack_48);
   *(undefined8 *)(lVar3 + 0x38) = uVar2;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
@@ -357,14 +357,14 @@ void Walaber::AnimationManager::createAnimation(std::__ndk1::basic_string<char, 
    Walaber::NumericAnimationTrack*) */
 
 void Walaber::AnimationManager::addNumericTrackToAnimation
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::NumericAnimationTrack *param_2)
+               (long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
   
   lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>();
-  if (this + 8 != lVar1) {
-    Walaber::Animation::addNumericTrack(*(undefined8 *)(lVar1 + 0x38),param_2);
+  if (param_1 + 8 != lVar1) {
+    Walaber::Animation::addNumericTrack(*(undefined8 *)(lVar1 + 0x38),param_3);
     return;
   }
   return;
@@ -381,14 +381,14 @@ void Walaber::AnimationManager::addNumericTrackToAnimation
    Walaber::NodeAnimationTrack*) */
 
 void Walaber::AnimationManager::addNodeTrackToAnimation
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::NodeAnimationTrack *param_2)
+               (long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
   
   lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>();
-  if (this + 8 != lVar1) {
-    Walaber::Animation::addNodeTrack(*(undefined8 *)(lVar1 + 0x38),param_2);
+  if (param_1 + 8 != lVar1) {
+    Walaber::Animation::addNodeTrack(*(undefined8 *)(lVar1 + 0x38),param_3);
     return;
   }
   return;
@@ -422,7 +422,8 @@ void Walaber::AnimationManager::playAnimation(void)
    Walaber::AnimationPlaybackMode, int) */
 
 void Walaber::AnimationManager::playAnimation
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2,Walaber::AnimationPlaybackMode param_3,int param_4)
+               (undefined8 param_1,long param_2,undefined8 param_3,undefined4 param_4,
+               undefined4 param_5)
 
 {
   undefined4 uVar1;
@@ -430,24 +431,24 @@ void Walaber::AnimationManager::playAnimation
   void *p0;
   
   lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>();
-  if (param_1 + 8 != lVar2) {
-    if (*(char *)(param_1 + 0x48) != '\0') {
-      p0 = *(void **)(param_1 + 0x18);
+  if (param_2 + 8 != lVar2) {
+    if (*(char *)(param_2 + 0x48) != '\0') {
+      p0 = *(void **)(param_2 + 0x18);
       if (p0 != (void *)0x0) {
         Walaber::Animation::~Animation(p0);
         operator delete(p0);
       }
-      *(undefined1 *)(param_1 + 0x48) = 0;
+      *(undefined1 *)(param_2 + 0x48) = 0;
     }
-    *(undefined8 *)(param_1 + 0x20) = 0;
+    *(undefined8 *)(param_2 + 0x20) = 0;
     lVar2 = *(long *)(lVar2 + 0x38);
-    *(long *)(param_1 + 0x18) = lVar2;
+    *(long *)(param_2 + 0x18) = lVar2;
     *(undefined1 *)(lVar2 + 0x102) = 0;
-    Walaber::Animation::play(this,lVar2,param_3,param_4,0);
-    uVar1 = Walaber::Animation::update(0,0x3f800000,*(undefined8 *)(param_1 + 0x18),
-                            *(undefined1 *)(param_1 + 0x49));
-    Walaber::AnimationManager::_fireCallback(param_1,*(undefined8 *)(param_1 + 0x18),1,0xffffffff);
-    Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(param_1,uVar1);
+    Walaber::Animation::play(param_1,lVar2,param_4,param_5,0);
+    uVar1 = Walaber::Animation::update(0,0x3f800000,*(undefined8 *)(param_2 + 0x18),
+                            *(undefined1 *)(param_2 + 0x49));
+    Walaber::AnimationManager::_fireCallback(param_2,*(undefined8 *)(param_2 + 0x18),1,0xffffffff);
+    Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(param_2,uVar1);
     return;
   }
   return;
@@ -539,7 +540,8 @@ void Walaber::AnimationManager::crossFade(undefined8 param_1)
    Walaber::AnimationPlaybackMode, int) */
 
 void Walaber::AnimationManager::crossFade
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2,float param_3,Walaber::AnimationPlaybackMode param_4,int param_5)
+               (undefined8 param_1,undefined4 param_2,long param_3,byte *param_4,undefined4 param_5,
+               undefined4 param_6)
 
 {
   ulong uVar1;
@@ -555,24 +557,24 @@ void Walaber::AnimationManager::crossFade
   byte *pbVar10;
   byte *pbVar11;
   
-  if (*(long *)(param_2 + 0x18) == 0) {
-    Walaber::AnimationManager::playAnimation(0,param_2,param_3,param_4,param_5);
-    Walaber::AnimationManager::_fireCallback(param_2,*(undefined8 *)(param_2 + 0x18),1,0xffffffff);
+  if (*(long *)(param_3 + 0x18) == 0) {
+    Walaber::AnimationManager::playAnimation(0,param_3,param_4,param_5,param_6);
+    Walaber::AnimationManager::_fireCallback(param_3,*(undefined8 *)(param_3 + 0x18),1,0xffffffff);
     return;
   }
-  lVar7 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2,param_3);
-  if (param_2 + 8 == lVar7) {
+  lVar7 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Animation*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_3,param_4);
+  if (param_3 + 8 == lVar7) {
     return;
   }
-  if (*(char *)(param_2 + 0x48) == '\0') {
-    p0 = *(byte **)(param_2 + 0x18);
-    *(byte **)(param_2 + 0x20) = p0;
+  if (*(char *)(param_3 + 0x48) == '\0') {
+    p0 = *(byte **)(param_3 + 0x18);
+    *(byte **)(param_3 + 0x20) = p0;
     pbVar11 = p0;
   }
   else {
-    Walaber::Animation::copyProperties(*(undefined8 *)(param_2 + 0x20),*(undefined8 *)(param_2 + 0x18));
-    p0 = *(byte **)(param_2 + 0x18);
-    pbVar11 = *(byte **)(param_2 + 0x20);
+    Walaber::Animation::copyProperties(*(undefined8 *)(param_3 + 0x20),*(undefined8 *)(param_3 + 0x18));
+    p0 = *(byte **)(param_3 + 0x18);
+    pbVar11 = *(byte **)(param_3 + 0x20);
   }
   pbVar11[0xc0] = 0;
   pbVar11[0xc1] = 0;
@@ -580,23 +582,23 @@ void Walaber::AnimationManager::crossFade
   pbVar11[0xc3] = 0;
   if (p0 != (byte *)0x0) {
     bVar3 = *p0;
-    bVar4 = *param_3;
+    bVar4 = *param_4;
     uVar1 = (ulong)(bVar3 >> 1);
     if ((bVar3 & 1) != 0) {
       uVar1 = *(ulong *)(p0 + 8);
     }
     uVar2 = (ulong)(bVar4 >> 1);
     if ((bVar4 & 1) != 0) {
-      uVar2 = *(ulong *)(param_3 + 8);
+      uVar2 = *(ulong *)(param_4 + 8);
     }
     if (uVar1 == uVar2) {
       pbVar9 = *(byte **)(p0 + 0x10);
-      pbVar10 = *(byte **)(param_3 + 0x10);
+      pbVar10 = *(byte **)(param_4 + 0x10);
       if ((bVar3 & 1) == 0) {
         pbVar9 = p0 + 1;
       }
       if ((bVar4 & 1) == 0) {
-        pbVar10 = param_3 + 1;
+        pbVar10 = param_4 + 1;
       }
       if ((bVar3 & 1) == 0) {
         if (uVar1 != 0) {
@@ -611,35 +613,35 @@ void Walaber::AnimationManager::crossFade
         }
       }
       else if ((uVar1 != 0) && (iVar5 = memcmp(pbVar9), iVar5 != 0)) goto LAB_00338164;
-      if (*(char *)(param_2 + 0x48) == '\0') {
+      if (*(char *)(param_3 + 0x48) == '\0') {
         p0 = (byte *)operator new(0x108);
                     /* try { // try from 003381a4 to 003381ab has its CatchHandler @ 0033823c */
         Walaber::Animation::Animation(p0,pbVar11);
-        *(byte **)(param_2 + 0x18) = p0;
+        *(byte **)(param_3 + 0x18) = p0;
       }
-      *(undefined1 *)(param_2 + 0x48) = 1;
+      *(undefined1 *)(param_3 + 0x48) = 1;
       goto LAB_003381b8;
     }
   }
 LAB_00338164:
-  if (*(char *)(param_2 + 0x48) != '\0') {
+  if (*(char *)(param_3 + 0x48) != '\0') {
     if (p0 != (byte *)0x0) {
       Walaber::Animation::~Animation(p0);
       operator delete(p0);
     }
-    *(undefined1 *)(param_2 + 0x48) = 0;
+    *(undefined1 *)(param_3 + 0x48) = 0;
   }
   p0 = *(byte **)(lVar7 + 0x38);
-  *(byte **)(param_2 + 0x18) = p0;
+  *(byte **)(param_3 + 0x18) = p0;
 LAB_003381b8:
-  *(undefined1 *)(*(long *)(param_2 + 0x20) + 0x102) = 1;
+  *(undefined1 *)(*(long *)(param_3 + 0x20) + 0x102) = 1;
   p0[0x102] = 0;
-  Walaber::Animation::play(this,p0,param_4,param_5,1);
-  uVar6 = Walaber::Animation::update(0,0,*(undefined8 *)(param_2 + 0x18),0);
-  Walaber::AnimationManager::_fireCallback(param_2,*(undefined8 *)(param_2 + 0x18),1,0xffffffff);
-  Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(param_2,uVar6);
-  *(undefined4 *)(param_2 + 0x40) = 0;
-  *(undefined4 *)(param_2 + 0x44) = param_1;
+  Walaber::Animation::play(param_1,p0,param_5,param_6,1);
+  uVar6 = Walaber::Animation::update(0,0,*(undefined8 *)(param_3 + 0x18),0);
+  Walaber::AnimationManager::_fireCallback(param_3,*(undefined8 *)(param_3 + 0x18),1,0xffffffff);
+  Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(param_3,uVar6);
+  *(undefined4 *)(param_3 + 0x40) = 0;
+  *(undefined4 *)(param_3 + 0x44) = param_2;
   return;
 }
 
@@ -751,7 +753,7 @@ undefined8 Walaber::AnimationManager::getAnimation(long param_1)
 /* Walaber::AnimationManager::registerEventCallback(void*, Walaber::SharedPtr<Walaber::Callback>) */
 
 void Walaber::AnimationManager::registerEventCallback
-               (void *param_1,Walaber::SharedPtr<Walaber::Callback> param_2)
+               (long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -764,9 +766,9 @@ void Walaber::AnimationManager::registerEventCallback
   puStack_30 = (undefined1 *)&uStack_40;
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  uStack_40 = param_1;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_unique_key_args<void*, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<void* const&>, std::__ndk1::tuple<>>(this + 0x28,&uStack_40,&DAT_00628882,&puStack_30,auStack_38);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar2 + 0x28,param_2);
+  uStack_40 = param_2;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_unique_key_args<void*, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<void* const&>, std::__ndk1::tuple<>>(param_1 + 0x28,&uStack_40,&DAT_00628882,&puStack_30,auStack_38);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(lVar2 + 0x28,param_3);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }

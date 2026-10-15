@@ -22,7 +22,7 @@ void std::__ndk1::
      __tree<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,WaterConcept::World::VBOData>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,WaterConcept::World::VBOData>>>
      ::
      __construct_node<std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<int&&>,std::__ndk1::tuple<>>
-               (std::__ndk1::piecewise_construct_t const& param_1,std::__ndk1::tuple<int&&>&& param_2,std::__ndk1::tuple<>&& param_3)
+               (long *param_1,long param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   undefined4 uVar1;
@@ -30,11 +30,11 @@ void std::__ndk1::
   undefined1 *puVar3;
   
   lVar2 = operator new(0x130);
-  *this = lVar2;
-  this[1] = param_1 + 8;
-  *(undefined1 *)(this + 2) = 0;
+  *param_1 = lVar2;
+  param_1[1] = param_2 + 8;
+  *(undefined1 *)(param_1 + 2) = 0;
   puVar3 = (undefined1 *)(lVar2 + 0x68);
-  uVar1 = *(undefined4 *)*param_3;
+  uVar1 = *(undefined4 *)*param_4;
   *(undefined1 *)(lVar2 + 0x28) = 0;
   *(undefined4 *)(lVar2 + 0x2c) = 0;
   *(undefined4 *)(lVar2 + 0x30) = 0;
@@ -52,7 +52,7 @@ void std::__ndk1::
     puVar3[0x18] = 0;
     puVar3 = puVar3 + 0x30;
   } while (puVar3 != (undefined1 *)(lVar2 + 0x128));
-  *(undefined1 *)(this + 2) = 1;
+  *(undefined1 *)(param_1 + 2) = 1;
   *(undefined8 *)(lVar2 + 0x128) = 0;
   return;
 }

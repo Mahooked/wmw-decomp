@@ -9,24 +9,24 @@
 
 /* WaterConcept::Screen_Editor::ObjectData::ObjectData() */
 
-void WaterConcept::Screen_Editor::ObjectData::ObjectData(undefined8 *param_1)
+void WaterConcept::Screen_Editor::ObjectData::ObjectData()
 
 {
-  param_1[1] = 0;
-  *param_1 = 0;
-  param_1[3] = 0;
-  param_1[2] = 0;
+  this[1] = 0;
+  *this = 0;
+  this[3] = 0;
+  this[2] = 0;
                     /* try { // try from 004c012c to 004c0133 has its CatchHandler @ 004c0174 */
-  Walaber::PropertyList::PropertyList(param_1 + 4);
+  Walaber::PropertyList::PropertyList(this + 4);
                     /* try { // try from 004c0138 to 004c013b has its CatchHandler @ 004c0164 */
-  Walaber::PropertyList::PropertyList(param_1 + 7);
-  param_1[0xf] = 0;
-  *(undefined1 *)(param_1 + 10) = 1;
-  param_1[0xb] = 0;
-  param_1[0xc] = 0;
-  param_1[0x10] = 0;
-  param_1[0xd] = 0;
-  param_1[0xe] = param_1 + 0xf;
+  Walaber::PropertyList::PropertyList(this + 7);
+  this[0xf] = 0;
+  *(undefined1 *)(this + 10) = 1;
+  this[0xb] = 0;
+  this[0xc] = 0;
+  this[0x10] = 0;
+  this[0xd] = 0;
+  this[0xe] = this + 0xf;
   return;
 }
 

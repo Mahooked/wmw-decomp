@@ -18,7 +18,7 @@
 long std::__ndk1::
      __tree<std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Vector2>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Vector2>>>
      ::__emplace_multi<std::__ndk1::pair<int_const,Walaber::Vector2>const&>
-               (std::__ndk1::pair<int const, Walaber::Vector2> const& param_1)
+               (long param_1,undefined8 *param_2)
 
 {
   long *plVar1;
@@ -28,10 +28,10 @@ long std::__ndk1::
   undefined8 uVar5;
   
   lVar2 = operator new(0x28);
-  uVar5 = *param_1;
+  uVar5 = *param_2;
   *(undefined8 *)(lVar2 + 0x1c) = uVar5;
-  *(undefined4 *)(lVar2 + 0x24) = *(undefined4 *)(param_1 + 1);
-  plVar3 = (long *)(this + 8);
+  *(undefined4 *)(lVar2 + 0x24) = *(undefined4 *)(param_2 + 1);
+  plVar3 = (long *)(param_1 + 8);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar1 = (long *)*plVar3;
@@ -46,7 +46,7 @@ long std::__ndk1::
     plVar4 = plVar3 + 1;
   }
 LAB_003793f8:
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__insert_node_at(this,plVar3,plVar4,lVar2);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__insert_node_at(param_1,plVar3,plVar4,lVar2);
   return lVar2;
 }
 

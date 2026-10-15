@@ -63,7 +63,7 @@ long * std::__ndk1::
 long * std::__ndk1::
        __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
        ::__find_equal<WaterConcept::InteractiveObject*>
-                 (std::__ndk1::__tree_const_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> param_1,std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*& param_2,std::__ndk1::__tree_node_base<void*>*& param_3,WaterConcept::InteractiveObject* const& param_4)
+                 (undefined8 *param_1,long *param_2,long *param_3,long *param_4,ulong *param_5)
 
 {
   long *plVar1;
@@ -74,19 +74,19 @@ long * std::__ndk1::
   long *plVar6;
   long lVar7;
   
-  if (this + 1 != param_1) {
-    uVar5 = *param_4;
-    if ((ulong)param_1[4] <= uVar5) {
-      if (uVar5 <= (ulong)param_1[4]) {
-        *param_2 = (long)param_1;
-        *param_3 = (long)param_1;
-        return param_3;
+  if (param_1 + 1 != param_2) {
+    uVar5 = *param_5;
+    if ((ulong)param_2[4] <= uVar5) {
+      if (uVar5 <= (ulong)param_2[4]) {
+        *param_3 = (long)param_2;
+        *param_4 = (long)param_2;
+        return param_4;
       }
-      plVar3 = (long *)param_1[1];
+      plVar3 = (long *)param_2[1];
       if (plVar3 == (long *)0x0) {
-        plVar3 = param_1 + 2;
+        plVar3 = param_2 + 2;
         plVar4 = (long *)*plVar3;
-        if ((long *)*plVar4 != param_1) {
+        if ((long *)*plVar4 != param_2) {
           do {
             lVar7 = *plVar3;
             plVar3 = (long *)(lVar7 + 0x10);
@@ -100,21 +100,21 @@ long * std::__ndk1::
           plVar3 = (long *)*plVar4;
         } while ((long *)*plVar4 != (long *)0x0);
       }
-      if ((plVar4 == this + 1) || (uVar5 < (ulong)plVar4[4])) {
-        if (param_1[1] != 0) {
-          *param_2 = (long)plVar4;
+      if ((plVar4 == param_1 + 1) || (uVar5 < (ulong)plVar4[4])) {
+        if (param_2[1] != 0) {
+          *param_3 = (long)plVar4;
           return plVar4;
         }
-        *param_2 = (long)param_1;
-        return param_1 + 1;
+        *param_3 = (long)param_2;
+        return param_2 + 1;
       }
       goto LAB_004cc714;
     }
   }
-  plVar4 = (long *)*param_1;
-  plVar3 = param_1;
-  if ((long *)*this != param_1) {
-    plVar6 = param_1;
+  plVar4 = (long *)*param_2;
+  plVar3 = param_2;
+  if ((long *)*param_1 != param_2) {
+    plVar6 = param_2;
     plVar1 = plVar4;
     if (plVar4 == (long *)0x0) {
       do {
@@ -129,20 +129,20 @@ long * std::__ndk1::
         plVar1 = (long *)plVar3[1];
       } while ((long *)plVar3[1] != (long *)0x0);
     }
-    if (*param_4 <= (ulong)plVar3[4]) {
+    if (*param_5 <= (ulong)plVar3[4]) {
 LAB_004cc714:
-      plVar3 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal<WaterConcept::InteractiveObject*>(this,param_2,param_4);
+      plVar3 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal<WaterConcept::InteractiveObject*>(param_1,param_3,param_5);
       return plVar3;
     }
   }
   if (plVar4 == (long *)0x0) {
-    *param_2 = (long)param_1;
+    *param_3 = (long)param_2;
   }
   else {
-    *param_2 = (long)plVar3;
-    param_1 = plVar3 + 1;
+    *param_3 = (long)plVar3;
+    param_2 = plVar3 + 1;
   }
-  return param_1;
+  return param_2;
 }
 
 

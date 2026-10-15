@@ -9,32 +9,32 @@
 
 /* WaterConcept::Screen_Processing::Screen_Processing() */
 
-void WaterConcept::Screen_Processing::Screen_Processing(undefined8 *param_1)
+void WaterConcept::Screen_Processing::Screen_Processing()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x25);
+  WaterConcept::WCScreen::WCScreen(this,0x25);
                     /* try { // try from 0055af34 to 0055af3b has its CatchHandler @ 0055afd0 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined8 *)((long)param_1 + 0xac) = 0xbf80000000000000;
-  *(undefined8 *)((long)param_1 + 0xa4) = 0;
-  *param_1 = &PTR__Screen_Processing_007152e8;
-  *(undefined8 *)((long)param_1 + 0x9c) = 0;
-  *(undefined1 *)(param_1 + 0x17) = 0;
-  param_1[4] = &PTR_handleEvent_007153a0;
-  param_1[0x12] = &PTR__Screen_Processing_007153c0;
-  *(undefined1 *)(param_1 + 0x18) = 0xff;
-  *(undefined1 *)((long)param_1 + 0xc1) = 0xff;
-  *(undefined1 *)((long)param_1 + 0xc2) = 0xff;
-  param_1[0x1a] = 0;
-  *(undefined4 *)((long)param_1 + 0xc4) = 0xff000000;
-  *(undefined1 *)((long)param_1 + 0xc3) = 0xff;
-  param_1[0x19] = param_1 + 0x1a;
-  param_1[0x1d] = 0;
-  param_1[0x1e] = 0;
-  *(undefined2 *)((long)param_1 + 0xfc) = 0x100;
-  param_1[0x1b] = 0;
-  param_1[0x1c] = param_1 + 0x1d;
-  *(undefined2 *)((long)param_1 + 0xff) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined8 *)((long)this + 0xac) = 0xbf80000000000000;
+  *(undefined8 *)((long)this + 0xa4) = 0;
+  *this = &PTR__Screen_Processing_007152e8;
+  *(undefined8 *)((long)this + 0x9c) = 0;
+  *(undefined1 *)(this + 0x17) = 0;
+  this[4] = &PTR_handleEvent_007153a0;
+  this[0x12] = &PTR__Screen_Processing_007153c0;
+  *(undefined1 *)(this + 0x18) = 0xff;
+  *(undefined1 *)((long)this + 0xc1) = 0xff;
+  *(undefined1 *)((long)this + 0xc2) = 0xff;
+  this[0x1a] = 0;
+  *(undefined4 *)((long)this + 0xc4) = 0xff000000;
+  *(undefined1 *)((long)this + 0xc3) = 0xff;
+  this[0x19] = this + 0x1a;
+  this[0x1d] = 0;
+  this[0x1e] = 0;
+  *(undefined2 *)((long)this + 0xfc) = 0x100;
+  this[0x1b] = 0;
+  this[0x1c] = this + 0x1d;
+  *(undefined2 *)((long)this + 0xff) = 0;
   return;
 }
 
@@ -46,17 +46,17 @@ void WaterConcept::Screen_Processing::Screen_Processing(undefined8 *param_1)
 
 /* WaterConcept::Screen_Processing::~Screen_Processing() */
 
-void WaterConcept::Screen_Processing::~Screen_Processing(undefined8 *param_1)
+void WaterConcept::Screen_Processing::~Screen_Processing()
 
 {
-  *param_1 = &PTR__Screen_Processing_007152e8;
-  param_1[4] = &PTR_handleEvent_007153a0;
-  param_1[0x12] = &PTR__Screen_Processing_007153c0;
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(param_1 + 0x1c,param_1[0x1d]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(param_1 + 0x19,param_1[0x1a]);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x14);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_Processing_007152e8;
+  this[4] = &PTR_handleEvent_007153a0;
+  this[0x12] = &PTR__Screen_Processing_007153c0;
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x1c,this[0x1d]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x19,this[0x1a]);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x14);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

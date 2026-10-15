@@ -65,14 +65,14 @@ LAB_00334a48:
 
 /* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack() */
 
-void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(undefined8 *param_1)
+void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack()
 
 {
-  param_1[1] = 0;
-  *param_1 = 0;
-  param_1[3] = 0;
-  param_1[2] = 0;
-  param_1[4] = 0xffffffff;
+  this[1] = 0;
+  *this = 0;
+  this[3] = 0;
+  this[2] = 0;
+  this[4] = 0xffffffff;
   return;
 }
 

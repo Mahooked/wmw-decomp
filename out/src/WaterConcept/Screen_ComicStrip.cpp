@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_ComicStrip::Screen_ComicStrip() */
 
-void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
+void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
 
 {
   long lVar1;
@@ -159,15 +159,15 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lVar9 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0xc);
-  *(undefined1 *)(param_1 + 0x14) = 0;
-  *param_1 = &PTR__Screen_ComicStrip_007131f8;
-  param_1[4] = &PTR_handleEvent_007132a8;
+  WaterConcept::WCScreen::WCScreen(this,0xc);
+  *(undefined1 *)(this + 0x14) = 0;
+  *this = &PTR__Screen_ComicStrip_007131f8;
+  this[4] = &PTR_handleEvent_007132a8;
                     /* try { // try from 004b415c to 004b4163 has its CatchHandler @ 004b5ae8 */
   uVar8 = operator new(0x198);
                     /* try { // try from 004b4168 to 004b416b has its CatchHandler @ 004b5ad8 */
   Walaber::ComicStrip::ComicStrip();
-  param_1[0x13] = uVar8;
+  this[0x13] = uVar8;
                     /* try { // try from 004b4170 to 004b4173 has its CatchHandler @ 004b5ad4 */
   uVar8 = Walaber::TextureManager::getManager();
                     /* try { // try from 004b4178 to 004b417f has its CatchHandler @ 004b5ad0 */
@@ -348,7 +348,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_b8 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_a6,CONCAT11(uStack_a7,uStack_a8)));
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -541,7 +541,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if (((uint)fStack_130 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_11e,CONCAT11(uStack_11f,uStack_120)));
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -621,7 +621,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((uStack_180 & 1) != 0) {
     operator delete(pvStack_170);
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -697,7 +697,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_1d0 & 1) != 0) {
     operator delete(pvStack_1c0);
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -851,7 +851,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_220 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_20e,CONCAT11(uStack_20f,uStack_210)));
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -977,7 +977,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_270 & 1) != 0) {
     operator delete(pvStack_260);
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -1101,7 +1101,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_2c0 & 1) != 0) {
     operator delete(pvStack_2b0);
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -1199,7 +1199,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
   if ((bStack_310 & 1) != 0) {
     operator delete(pvStack_300);
   }
-  uVar12 = param_1[0x13];
+  uVar12 = this[0x13];
   uStack_e0 = 0;
   uStack_d8 = 0;
   pcStack_d0 = (char *)0x0;
@@ -1259,7 +1259,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip(undefined8 *param_1)
     operator delete(pcStack_d0);
   }
                     /* try { // try from 004b576c to 004b576f has its CatchHandler @ 004b57e8 */
-  Walaber::ComicStrip::handleTouch(param_1[0x13]);
+  Walaber::ComicStrip::handleTouch(this[0x13]);
   Walaber::PropertyList::~PropertyList(&bStack_2c0);
   Walaber::PropertyList::~PropertyList(&bStack_270);
   Walaber::PropertyList::~PropertyList(&bStack_220);

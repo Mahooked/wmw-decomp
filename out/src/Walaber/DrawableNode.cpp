@@ -26,7 +26,7 @@ void Walaber::DrawableNode::setLayer(int p0)
 
 /* Walaber::DrawableNode::DrawableNode() */
 
-void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
+void Walaber::DrawableNode::DrawableNode()
 
 {
   long lVar1;
@@ -54,12 +54,12 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
   abStack_40[7] = 0x74;
   abStack_40[8] = 0x4e;
                     /* try { // try from 003ea4c0 to 003ea4cb has its CatchHandler @ 003ea514 */
-  Walaber::Node::Node(param_1,abStack_40,0xffffffff);
+  Walaber::Node::Node(this,abStack_40,0xffffffff);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  *(undefined4 *)(param_1 + 0x10) = 0;
-  *param_1 = &PTR__DrawableNode_00710da8;
+  *(undefined4 *)(this + 0x10) = 0;
+  *this = &PTR__DrawableNode_00710da8;
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }

@@ -22,9 +22,44 @@ order:
   shift by one.
 
 Any other count difference is left alone -- an alignment we cannot prove is a
-wrong type waiting to happen.  A ``+1`` definition is only trusted when
-``members.tsv`` lists it as a member, so a free function that merely happens to
-carry one extra inferred argument is not mistaken for a method.
+wrong type waiting to happen.
+
+Why the ``+1`` cases need a *role*, not just a member
+-----------------------------------------------------
+``+1`` does not by itself mean ``this``.  A function that returns a class type
+larger than 16 bytes also receives a hidden pointer, in ``x8``, and Ghidra
+models it as the *first* inferred parameter exactly like ``this``:
+
+    /* ok  address 0x396580 */                  /* _ZN7Walaber
+       void Walaber::createRenderTexture2D(      21createRenderTexture2D... */
+           undefined8 *param_1,                  // x8: the return buffer
+           undefined4 param_2, undefined4 param_3, undefined4 param_4)
+
+is a *free* function: ``param_1`` is where the ``SharedPtr`` return is written
+(``*param_1 = ...; param_1[1] = ...``), not an object.  ``members.tsv`` cannot
+separate the two -- it files ``std::current_exception`` under class ``std`` with
+role ``method`` -- and its own docstring warns that a plain ``method`` might be
+static.  Only ``ctor``, ``dtor`` and ``virtual`` are *provably* non-static, and
+none of those can carry the hidden return pointer (constructors and destructors
+return ``void``; a virtual that returned a class by value would shift by two,
+not one).  So the ``+1`` shift is applied for those roles alone, and a free
+function or static method is never mistaken for a method.
+
+Even then the *order* is only certain while no floating-point parameter is
+present, because Ghidra lists those first -- ``s0`` ahead of ``x0``:
+
+    void Walaber::SoundEffectInstance::SoundEffectInstance
+                   (undefined4 param_1, undefined8 *param_2, ...)
+    {
+      ...
+      *(undefined4 *)((long)param_2 + 0x2c) = param_1;   // the `float` argument
+
+The field evidence agrees: ``fields.tsv`` records a ``float`` at offset ``0x2c``.
+So ``param_1`` is the ``float`` and ``param_2`` is ``this`` -- the opposite of
+what the count suggests.  A signature that names a floating-point parameter is
+therefore left alone, as is a constructor that takes arguments at all: one for a
+class with virtual bases receives a VTT pointer in ``x0`` and ``this`` in
+``x1``, which no evidence available here separates.
 
 Only definitions whose parameters still contain ``undefined`` are touched, so
 the pass is idempotent.  Comments are skipped when locating the parameter list,
@@ -38,30 +73,40 @@ import re
 import sys
 
 _ADDR = re.compile(r"/\*\s*ok\s+address\s+0x([0-9a-fA-F]+)\s+size\s+\d+\s*\*/")
+#: A floating-point parameter can be listed ahead of the register parameters.
+_FP = re.compile(r"\b(float|double|long double|__fp16)\b")
 _FUNC_PTR = re.compile(r"^(.*?)\(([^()]*\*&?)\)(.*)$")
 _NAME = re.compile(r"([A-Za-z_]\w*)\s*$")
 
 
 def load_signatures(path):
-    """address -> list of exact parameter types."""
+    """address -> list of exact parameter types (empty list for a 0-arg symbol).
+
+    Zero-argument symbols are kept, because a member with no parameters is
+    still a member: its ``+1`` definition is exactly ``this``.
+    """
     sig = {}
     with open(path, encoding="utf-8") as fh:
         for line in fh:
             if line.startswith("#"):
                 continue
             f = line.rstrip("\n").split("\t")
-            if len(f) < 8 or not f[4]:
+            if len(f) < 8:
                 continue
             try:
-                sig[int(f[0], 16)] = f[4].split("|")
+                sig[int(f[0], 16)] = f[4].split("|") if f[4] else []
             except ValueError:
                 continue
     return sig
 
 
+#: Roles that cannot be static, so x0 is certainly `this` (see members.py).
+NONSTATIC_ROLES = frozenset(("ctor", "dtor", "virtual"))
+
+
 def load_members(path):
-    """addresses of the functions ``members.tsv`` classifies as members."""
-    members = set()
+    """address -> role, for the functions ``members.tsv`` classifies."""
+    members = {}
     with open(path, encoding="utf-8") as fh:
         hdr = None
         for line in fh:
@@ -73,7 +118,7 @@ def load_members(path):
                 continue
             d = dict(zip(hdr, f))
             try:
-                members.add(int(d["address"], 16))
+                members[int(d["address"], 16)] = d.get("role", "")
             except (KeyError, ValueError):
                 continue
     return members
@@ -189,13 +234,27 @@ def plan(text, sig, members):
             continue  # already typed, or nothing we can name
         params = sig[a]
         delta = len(plist) - len(params)
-        if delta == 0:
+        role = members.get(a)
+        has_fp = any(_FP.search(p) for p in params)
+        if delta == 0 and params and not has_fp:
+            # A free (or static) function: its parameters are the source
+            # parameters, in register order.  A floating-point parameter is
+            # listed *first* however (s0 before x0), so a signature that names
+            # one is left alone rather than mis-ordered.
             names = [name_of(p) for p in plist]
             new_inner = ",".join(declare_param(params[i], names[i])
                                  for i in range(len(params)))
-        elif delta == 1 and a in members:
-            # param_1 is `this`; the survivors shift down so the definition
-            # reads param_1..param_n alongside the signature.
+        elif delta == 1 and not has_fp and (
+                role == "virtual" or (not params and role in NONSTATIC_ROLES)):
+            # `this`.  Either the method takes no arguments -- the +1 is the
+            # hidden `x0` and nothing else -- or it is a virtual method, which
+            # is provably non-static and, with no floating point in its
+            # arguments, keeps source order.  A constructor that *takes*
+            # arguments is deliberately excluded: one for a class with virtual
+            # bases receives a VTT pointer in `x0` and `this` in `x1`, which is
+            # indistinguishable from an ordinary `this` + arguments here.
+            # The survivors shift down so the definition reads param_1..param_n
+            # alongside the signature.
             new_inner = ",".join(declare_param(params[i], "param_%d" % (i + 1))
                                  for i in range(len(params)))
             body = block[brace:]

@@ -12,19 +12,19 @@
 
 void std::__ndk1::
      basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream(undefined8 *param_1)
+     ~basic_stringstream()
 
 {
-  *param_1 = &PTR__basic_stringstream_007110f0;
-  param_1[0x10] = &PTR__basic_stringstream_00711140;
-  param_1[2] = &PTR__basic_stringstream_00711118;
-  param_1[3] = &PTR__basic_stringbuf_007111c8;
-  if ((*(byte *)(param_1 + 0xb) & 1) != 0) {
-    operator delete((void *)param_1[0xd]);
+  *this = &PTR__basic_stringstream_007110f0;
+  this[0x10] = &PTR__basic_stringstream_00711140;
+  this[2] = &PTR__basic_stringstream_00711118;
+  this[3] = &PTR__basic_stringbuf_007111c8;
+  if ((*(byte *)(this + 0xb) & 1) != 0) {
+    operator delete((void *)this[0xd]);
   }
-  param_1[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(param_1 + 4);
-  std::__ndk1::ios_base::~ios_base(param_1 + 0x10);
+  this[3] = &PTR__basic_streambuf_00710968;
+  std::__ndk1::locale::~locale(this + 4);
+  std::__ndk1::ios_base::~ios_base(this + 0x10);
   return;
 }
 
@@ -39,20 +39,20 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_stringstream<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     ~basic_stringstream(undefined8 *param_1)
+     ~basic_stringstream()
 
 {
-  *param_1 = &PTR__basic_stringstream_007110f0;
-  param_1[0x10] = &PTR__basic_stringstream_00711140;
-  param_1[2] = &PTR__basic_stringstream_00711118;
-  param_1[3] = &PTR__basic_stringbuf_007111c8;
-  if ((*(byte *)(param_1 + 0xb) & 1) != 0) {
-    operator delete((void *)param_1[0xd]);
+  *this = &PTR__basic_stringstream_007110f0;
+  this[0x10] = &PTR__basic_stringstream_00711140;
+  this[2] = &PTR__basic_stringstream_00711118;
+  this[3] = &PTR__basic_stringbuf_007111c8;
+  if ((*(byte *)(this + 0xb) & 1) != 0) {
+    operator delete((void *)this[0xd]);
   }
-  param_1[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(param_1 + 4);
-  std::__ndk1::ios_base::~ios_base(param_1 + 0x10);
-  operator delete(param_1);
+  this[3] = &PTR__basic_streambuf_00710968;
+  std::__ndk1::locale::~locale(this + 4);
+  std::__ndk1::ios_base::~ios_base(this + 0x10);
+  operator delete(this);
   return;
 }
 

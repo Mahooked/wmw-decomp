@@ -76,23 +76,23 @@ void WaterConcept::Switch::Switch(Walaber__Vector2 p0,float p1,Walaber__Vector2 
 
 /* WaterConcept::Switch::~Switch() */
 
-void WaterConcept::Switch::~Switch(undefined8 *param_1)
+void WaterConcept::Switch::~Switch()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Switch_00712158;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x82);
-  if ((void *)param_1[0x7d] != (void *)0x0) {
-    operator delete((void *)param_1[0x7d]);
+  *this = &PTR__Switch_00712158;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x82);
+  if ((void *)this[0x7d] != (void *)0x0) {
+    operator delete((void *)this[0x7d]);
   }
-  p0 = (void *)param_1[0x7a];
+  p0 = (void *)this[0x7a];
   if (p0 != (void *)0x0) {
-    param_1[0x7b] = p0;
+    this[0x7b] = p0;
     operator delete(p0);
   }
-  std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::destroy(param_1 + 0x77,param_1[0x78]);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::destroy(this + 0x77,this[0x78]);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

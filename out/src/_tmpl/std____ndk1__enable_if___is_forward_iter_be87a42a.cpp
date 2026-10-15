@@ -17,7 +17,7 @@ void std::__ndk1::
      __split_buffer<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>
      ::
      __construct_at_end<std::__ndk1::move_iterator<Walaber::ScreenManager::ScreenOperationDetails*>>
-               (std::__ndk1::move_iterator<Walaber::ScreenManager::ScreenOperationDetails*> param_1,std::__ndk1::move_iterator<Walaber::ScreenManager::ScreenOperationDetails*> param_2)
+               (long param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   undefined4 uVar1;
@@ -29,19 +29,19 @@ void std::__ndk1::
   undefined8 *puVar7;
   long *plVar8;
   
-  if (param_1 != param_2) {
-    puVar2 = *(undefined8 **)(this + 0x10);
+  if (param_2 != param_3) {
+    puVar2 = *(undefined8 **)(param_1 + 0x10);
     do {
-      uVar1 = *(undefined4 *)(param_1 + 1);
-      uVar6 = *param_1;
+      uVar1 = *(undefined4 *)(param_2 + 1);
+      uVar6 = *param_2;
       puVar2[4] = 0;
       *(undefined4 *)(puVar2 + 1) = uVar1;
       *puVar2 = uVar6;
       puVar7 = puVar2 + 3;
       *puVar7 = 0;
       puVar2[2] = puVar7;
-      if ((long *)param_1[2] != param_1 + 3) {
-        plVar8 = (long *)param_1[2];
+      if ((long *)param_2[2] != param_2 + 3) {
+        plVar8 = (long *)param_2[2];
         do {
                     /* try { // try from 003f33f8 to 003f3407 has its CatchHandler @ 003f348c */
           std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar2 + 2,puVar7,plVar8 + 4,plVar8 + 4);
@@ -64,12 +64,12 @@ void std::__ndk1::
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar8 = plVar4;
-        } while (plVar4 != param_1 + 3);
+        } while (plVar4 != param_2 + 3);
       }
-      param_1 = param_1 + 5;
-      puVar2 = (undefined8 *)(*(long *)(this + 0x10) + 0x28);
-      *(undefined8 **)(this + 0x10) = puVar2;
-    } while (param_1 != param_2);
+      param_2 = param_2 + 5;
+      puVar2 = (undefined8 *)(*(long *)(param_1 + 0x10) + 0x28);
+      *(undefined8 **)(param_1 + 0x10) = puVar2;
+    } while (param_2 != param_3);
   }
   return;
 }

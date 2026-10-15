@@ -12,21 +12,21 @@
    const&) */
 
 void std::__ndk1::vector<Walaber::Widget*,std::__ndk1::allocator<Walaber::Widget*>>::vector
-               (std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>> const& param_1)
+               (undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if (param_1[1] - *param_1 != 0) {
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if (param_2[1] - *param_2 != 0) {
                     /* try { // try from 00530450 to 00530453 has its CatchHandler @ 00530488 */
-    std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>::__vallocate(this,param_1[1] - *param_1 >> 3);
-    lVar1 = param_1[1] - *param_1;
+    std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>::__vallocate(param_1,param_2[1] - *param_2 >> 3);
+    lVar1 = param_2[1] - *param_2;
     if (0 < lVar1) {
-      memcpy(this[1],*param_1,lVar1);
-      this[1] = this[1] + lVar1;
+      memcpy(param_1[1],*param_2,lVar1);
+      param_1[1] = param_1[1] + lVar1;
     }
   }
   return;

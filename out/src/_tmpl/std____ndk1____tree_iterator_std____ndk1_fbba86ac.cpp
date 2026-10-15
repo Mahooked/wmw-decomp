@@ -21,7 +21,7 @@
 long std::__ndk1::
      __tree<std::__ndk1::__value_type<int,Walaber::FingerInfo*>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::FingerInfo*>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::FingerInfo*>>>
      ::__emplace_hint_unique_key_args<int,std::__ndk1::pair<int_const,Walaber::FingerInfo*>const&>
-               (std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, void*>*, long> param_1,int const& param_2,std::__ndk1::pair<int const, Walaber::FingerInfo*> const& param_3)
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   long *plVar1;
@@ -34,14 +34,14 @@ long std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__find_equal<int>(this,param_1,&uStack_50,auStack_58,param_2);
+  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__find_equal<int>(param_1,param_2,&uStack_50,auStack_58,param_3);
   lVar3 = *plVar1;
   if (lVar3 == 0) {
     lVar3 = operator new(0x30);
-    uVar4 = *param_3;
-    *(undefined8 *)(lVar3 + 0x28) = param_3[1];
+    uVar4 = *param_4;
+    *(undefined8 *)(lVar3 + 0x28) = param_4[1];
     *(undefined8 *)(lVar3 + 0x20) = uVar4;
-    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__insert_node_at(this,uStack_50,plVar1,lVar3);
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__insert_node_at(param_1,uStack_50,plVar1,lVar3);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
     return lVar3;

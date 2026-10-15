@@ -9,21 +9,21 @@
 
 /* WaterConcept::SeaweedStrand::SeaweedStrand() */
 
-void WaterConcept::SeaweedStrand::SeaweedStrand(undefined8 *param_1)
+void WaterConcept::SeaweedStrand::SeaweedStrand()
 
 {
-  *(undefined4 *)(param_1 + 3) = 0;
-  *param_1 = 0x53f800000;
-  param_1[2] = 0;
-  param_1[1] = 0x439600003e4ccccd;
-  Walaber::ParticleSet::ParticleSet(param_1 + 4);
-  param_1[0x11] = 0;
-  param_1[0x12] = 0;
-  *(undefined4 *)(param_1 + 0x10) = 0x3f6b851f;
-  *(undefined4 *)(param_1 + 0x14) = 0x3ecccccd;
-  param_1[0xf] = 0xc3960000;
-  param_1[0x13] = 0x600000003;
-  param_1[0x15] = 0;
+  *(undefined4 *)(this + 3) = 0;
+  *this = 0x53f800000;
+  this[2] = 0;
+  this[1] = 0x439600003e4ccccd;
+  Walaber::ParticleSet::ParticleSet(this + 4);
+  this[0x11] = 0;
+  this[0x12] = 0;
+  *(undefined4 *)(this + 0x10) = 0x3f6b851f;
+  *(undefined4 *)(this + 0x14) = 0x3ecccccd;
+  this[0xf] = 0xc3960000;
+  this[0x13] = 0x600000003;
+  this[0x15] = 0;
   return;
 }
 

@@ -9,17 +9,17 @@
 
 /* Walaber::Transition_Fade::Transition_Fade() */
 
-void Walaber::Transition_Fade::Transition_Fade(undefined8 *param_1)
+void Walaber::Transition_Fade::Transition_Fade()
 
 {
   Walaber::Transition::Transition();
-  *(undefined8 *)((long)param_1 + 0xd4) = 0;
-  *(undefined8 *)((long)param_1 + 0xcc) = 0;
-  *(undefined1 *)((long)param_1 + 0xde) = 0;
-  *(undefined2 *)((long)param_1 + 0xdc) = 0;
-  *(undefined8 *)((long)param_1 + 0xdf) = 0xff000000ff;
-  *param_1 = &PTR_setup_00710f58;
-  *(undefined1 *)((long)param_1 + 0xe7) = 0xff;
+  *(undefined8 *)((long)this + 0xd4) = 0;
+  *(undefined8 *)((long)this + 0xcc) = 0;
+  *(undefined1 *)((long)this + 0xde) = 0;
+  *(undefined2 *)((long)this + 0xdc) = 0;
+  *(undefined8 *)((long)this + 0xdf) = 0xff000000ff;
+  *this = &PTR_setup_00710f58;
+  *(undefined1 *)((long)this + 0xe7) = 0xff;
   return;
 }
 

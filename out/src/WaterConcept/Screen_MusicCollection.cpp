@@ -9,27 +9,27 @@
 
 /* WaterConcept::Screen_MusicCollection::Screen_MusicCollection() */
 
-void WaterConcept::Screen_MusicCollection::Screen_MusicCollection(undefined8 *param_1)
+void WaterConcept::Screen_MusicCollection::Screen_MusicCollection()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x22);
+  WaterConcept::WCScreen::WCScreen(this,0x22);
                     /* try { // try from 00532e4c to 00532e53 has its CatchHandler @ 00532ec4 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  param_1[0x14] = 0;
-  *param_1 = &PTR__Screen_MusicCollection_00714a98;
-  param_1[4] = &PTR_handleEvent_00714b50;
-  param_1[0x12] = &PTR__Screen_MusicCollection_00714b70;
-  param_1[0x1c] = 0;
-  param_1[0x1d] = 0;
-  param_1[0x18] = 0;
-  param_1[0x19] = 0;
-  *(undefined2 *)(param_1 + 0x1a) = 0;
-  *(undefined4 *)(param_1 + 0x1e) = 0xffffffff;
-  param_1[0x1b] = param_1 + 0x1c;
-  memset(param_1 + 0x1f,0,0x48);
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x15] = 0;
+  this[0x16] = 0;
+  this[0x14] = 0;
+  *this = &PTR__Screen_MusicCollection_00714a98;
+  this[4] = &PTR_handleEvent_00714b50;
+  this[0x12] = &PTR__Screen_MusicCollection_00714b70;
+  this[0x1c] = 0;
+  this[0x1d] = 0;
+  this[0x18] = 0;
+  this[0x19] = 0;
+  *(undefined2 *)(this + 0x1a) = 0;
+  *(undefined4 *)(this + 0x1e) = 0xffffffff;
+  this[0x1b] = this + 0x1c;
+  memset(this + 0x1f,0,0x48);
+  *(undefined1 *)(this[2] + 0x71) = 1;
   return;
 }
 
@@ -41,28 +41,28 @@ void WaterConcept::Screen_MusicCollection::Screen_MusicCollection(undefined8 *pa
 
 /* WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
 
-void WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(undefined8 *param_1)
+void WaterConcept::Screen_MusicCollection::~Screen_MusicCollection()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Screen_MusicCollection_00714a98;
-  param_1[4] = &PTR_handleEvent_00714b50;
-  param_1[0x12] = &PTR__Screen_MusicCollection_00714b70;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x25);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x22);
-  if ((void *)param_1[0x1f] != (void *)0x0) {
-    operator delete((void *)param_1[0x1f]);
+  *this = &PTR__Screen_MusicCollection_00714a98;
+  this[4] = &PTR_handleEvent_00714b50;
+  this[0x12] = &PTR__Screen_MusicCollection_00714b70;
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x25);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x22);
+  if ((void *)this[0x1f] != (void *)0x0) {
+    operator delete((void *)this[0x1f]);
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 0x1b,param_1[0x1c]);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x18);
-  p0 = (void *)param_1[0x14];
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 0x1b,this[0x1c]);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x18);
+  p0 = (void *)this[0x14];
   if (p0 != (void *)0x0) {
-    param_1[0x15] = p0;
+    this[0x15] = p0;
     operator delete(p0);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

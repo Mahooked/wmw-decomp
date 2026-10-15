@@ -11,18 +11,18 @@
    >::sentry::sentry(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >&) */
 
 void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry
-               (std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>& param_1)
+               (undefined1 *param_1,long *param_2)
 
 {
-  *this = 0;
-  *(long **)(this + 8) = param_1;
-  if (*(int *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x20) != 0) {
+  *param_1 = 0;
+  *(long **)(param_1 + 8) = param_2;
+  if (*(int *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x20) != 0) {
     return;
   }
-  if (*(long *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x88) != 0) {
+  if (*(long *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x88) != 0) {
     std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::flush();
   }
-  *this = 1;
+  *param_1 = 1;
   return;
 }
 

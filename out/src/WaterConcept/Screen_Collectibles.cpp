@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_Collectibles::Screen_Collectibles() */
 
-void WaterConcept::Screen_Collectibles::Screen_Collectibles(undefined8 *param_1)
+void WaterConcept::Screen_Collectibles::Screen_Collectibles()
 
 {
   long lVar1;
@@ -24,34 +24,34 @@ void WaterConcept::Screen_Collectibles::Screen_Collectibles(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0xe);
+  WaterConcept::WCScreen::WCScreen(this,0xe);
                     /* try { // try from 004ae08c to 004ae097 has its CatchHandler @ 004ae264 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *param_1 = &PTR__Screen_Collectibles_00713078;
-  param_1[4] = &PTR_handleEvent_00713130;
-  param_1[0x12] = &PTR__Screen_Collectibles_00713150;
-  memset(param_1 + 0x14,0,0x48);
-  param_1[0x1f] = 0;
-  *(undefined8 *)((long)param_1 + 0xec) = 0xffffffffffffffff;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  *(undefined1 *)((long)param_1 + 0x134) = 0;
-  param_1[0x2f] = 0;
-  param_1[0x30] = 0;
-  param_1[0x31] = 0;
-  *(undefined1 *)((long)param_1 + 0x194) = 0;
-  param_1[0x21] = 0;
-  param_1[0x22] = 0;
-  param_1[0x20] = 0;
-  *(undefined4 *)(param_1 + 0x23) = 0;
-  param_1[0x2b] = 0;
-  param_1[0x2c] = 0;
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x27] = 0;
-  param_1[0x28] = 0;
-  *(undefined8 *)((long)param_1 + 0x165) = 0;
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *this = &PTR__Screen_Collectibles_00713078;
+  this[4] = &PTR_handleEvent_00713130;
+  this[0x12] = &PTR__Screen_Collectibles_00713150;
+  memset(this + 0x14,0,0x48);
+  this[0x1f] = 0;
+  *(undefined8 *)((long)this + 0xec) = 0xffffffffffffffff;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  *(undefined1 *)((long)this + 0x134) = 0;
+  this[0x2f] = 0;
+  this[0x30] = 0;
+  this[0x31] = 0;
+  *(undefined1 *)((long)this + 0x194) = 0;
+  this[0x21] = 0;
+  this[0x22] = 0;
+  this[0x20] = 0;
+  *(undefined4 *)(this + 0x23) = 0;
+  this[0x2b] = 0;
+  this[0x2c] = 0;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x27] = 0;
+  this[0x28] = 0;
+  *(undefined8 *)((long)this + 0x165) = 0;
+  *(undefined1 *)(this[2] + 0x71) = 1;
                     /* try { // try from 004ae120 to 004ae123 has its CatchHandler @ 004ae1fc */
   uVar2 = Walaber::CurveManager::getManager();
   auStack_70[0] = 0;
@@ -67,7 +67,7 @@ void WaterConcept::Screen_Collectibles::Screen_Collectibles(undefined8 *param_1)
   uStack_80 = 0;
   uStack_78 = 0;
                     /* try { // try from 004ae16c to 004ae17f has its CatchHandler @ 004ae1d0 */
-  Walaber::CurveManager::getCurve(uVar2,param_1 + 0x24,auStack_70,&uStack_80);
+  Walaber::CurveManager::getCurve(uVar2,this + 0x24,auStack_70,&uStack_80);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
   if ((auStack_70[0] & 1) != 0) {
@@ -88,39 +88,39 @@ void WaterConcept::Screen_Collectibles::Screen_Collectibles(undefined8 *param_1)
 
 /* WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
 
-void WaterConcept::Screen_Collectibles::~Screen_Collectibles(undefined8 *param_1)
+void WaterConcept::Screen_Collectibles::~Screen_Collectibles()
 
 {
   void *pvVar1;
   
-  *param_1 = &PTR__Screen_Collectibles_00713078;
-  param_1[4] = &PTR_handleEvent_00713130;
-  param_1[0x12] = &PTR__Screen_Collectibles_00713150;
-  pvVar1 = (void *)param_1[0x2e];
+  *this = &PTR__Screen_Collectibles_00713078;
+  this[4] = &PTR_handleEvent_00713130;
+  this[0x12] = &PTR__Screen_Collectibles_00713150;
+  pvVar1 = (void *)this[0x2e];
   if (pvVar1 != (void *)0x0) {
     Walaber::ParticleSet::~ParticleSet(pvVar1);
     operator delete(pvVar1);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(param_1 + 0x2f);
-  pvVar1 = (void *)param_1[0x2a];
+  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(this + 0x2f);
+  pvVar1 = (void *)this[0x2a];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x2b] = pvVar1;
+    this[0x2b] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x27];
+  pvVar1 = (void *)this[0x27];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x28] = pvVar1;
+    this[0x28] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x24);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x1f);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x1a);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x17);
-  if ((void *)param_1[0x14] != (void *)0x0) {
-    operator delete((void *)param_1[0x14]);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x24);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1f);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1a);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x17);
+  if ((void *)this[0x14] != (void *)0x0) {
+    operator delete((void *)this[0x14]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

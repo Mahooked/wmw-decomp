@@ -12,20 +12,20 @@
 
 void std::__ndk1::
      __vector_base<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   void *pvVar1;
   void *pvVar2;
   void *pvVar3;
   
-  pvVar3 = (void *)*param_1;
+  pvVar3 = (void *)*this;
   if (pvVar3 == (void *)0x0) {
     return;
   }
   pvVar2 = pvVar3;
-  pvVar1 = (void *)param_1[1];
-  if ((void *)param_1[1] != pvVar3) {
+  pvVar1 = (void *)this[1];
+  if ((void *)this[1] != pvVar3) {
     do {
       pvVar2 = (void *)((long)pvVar1 + -0x30);
       if ((*(byte *)((long)pvVar1 + -0x20) & 1) != 0) {
@@ -34,9 +34,9 @@ void std::__ndk1::
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(pvVar2);
       pvVar1 = pvVar2;
     } while (pvVar3 != pvVar2);
-    pvVar2 = (void *)*param_1;
+    pvVar2 = (void *)*this;
   }
-  param_1[1] = pvVar3;
+  this[1] = pvVar3;
   operator delete(pvVar2);
   return;
 }

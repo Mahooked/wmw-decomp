@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_Dialogue::Screen_Dialogue() */
 
-void WaterConcept::Screen_Dialogue::Screen_Dialogue(undefined8 *param_1)
+void WaterConcept::Screen_Dialogue::Screen_Dialogue()
 
 {
   long lVar1;
@@ -19,38 +19,38 @@ void WaterConcept::Screen_Dialogue::Screen_Dialogue(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0xd);
-  param_1[0x12] = 0xff000000;
-  param_1[0x19] = 0xffffffffffffffff;
-  param_1[0x1a] = 0xffffffffffffffff;
-  param_1[4] = &PTR_handleEvent_00713518;
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  param_1[0x14] = 0;
-  *(undefined2 *)((long)param_1 + 0xc4) = 0;
-  *(undefined4 *)(param_1 + 0x17) = 0xffffffff;
-  *(undefined4 *)(param_1 + 0x18) = 0xbf800000;
-  *param_1 = &PTR__Screen_Dialogue_00713468;
-  param_1[0x1c] = 0;
-  param_1[0x1d] = 0;
-  param_1[0x1b] = 0;
-  *(undefined1 *)(param_1 + 0x1e) = 0;
-  *(undefined8 *)((long)param_1 + 0xf4) = 0;
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *(undefined8 *)((long)param_1 + 0x104) = 0;
-  memset(param_1 + 0x22,0,0x7c);
-  *(undefined8 *)((long)param_1 + 0x18c) = 0x3f800000;
+  WaterConcept::WCScreen::WCScreen(this,0xd);
+  this[0x12] = 0xff000000;
+  this[0x19] = 0xffffffffffffffff;
+  this[0x1a] = 0xffffffffffffffff;
+  this[4] = &PTR_handleEvent_00713518;
+  this[0x15] = 0;
+  this[0x16] = 0;
+  this[0x14] = 0;
+  *(undefined2 *)((long)this + 0xc4) = 0;
+  *(undefined4 *)(this + 0x17) = 0xffffffff;
+  *(undefined4 *)(this + 0x18) = 0xbf800000;
+  *this = &PTR__Screen_Dialogue_00713468;
+  this[0x1c] = 0;
+  this[0x1d] = 0;
+  this[0x1b] = 0;
+  *(undefined1 *)(this + 0x1e) = 0;
+  *(undefined8 *)((long)this + 0xf4) = 0;
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *(undefined8 *)((long)this + 0x104) = 0;
+  memset(this + 0x22,0,0x7c);
+  *(undefined8 *)((long)this + 0x18c) = 0x3f800000;
   uStack_58 = 0;
   uStack_50 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x22,&uStack_58);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x22,&uStack_58);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_58);
   uStack_58 = 0;
   uStack_50 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x24,&uStack_58);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x24,&uStack_58);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_58);
   uStack_58 = 0;
   uStack_50 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x26,&uStack_58);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x26,&uStack_58);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_58);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
@@ -67,26 +67,26 @@ void WaterConcept::Screen_Dialogue::Screen_Dialogue(undefined8 *param_1)
 
 /* WaterConcept::Screen_Dialogue::~Screen_Dialogue() */
 
-void WaterConcept::Screen_Dialogue::~Screen_Dialogue(undefined8 *param_1)
+void WaterConcept::Screen_Dialogue::~Screen_Dialogue()
 
 {
-  *param_1 = &PTR__Screen_Dialogue_00713468;
-  param_1[4] = &PTR_handleEvent_00713518;
-  if ((*(byte *)(param_1 + 0x2e) & 1) != 0) {
-    operator delete((void *)param_1[0x30]);
+  *this = &PTR__Screen_Dialogue_00713468;
+  this[4] = &PTR_handleEvent_00713518;
+  if ((*(byte *)(this + 0x2e) & 1) != 0) {
+    operator delete((void *)this[0x30]);
   }
-  if ((*(byte *)(param_1 + 0x2b) & 1) != 0) {
-    operator delete((void *)param_1[0x2d]);
+  if ((*(byte *)(this + 0x2b) & 1) != 0) {
+    operator delete((void *)this[0x2d]);
   }
-  if ((*(byte *)(param_1 + 0x28) & 1) != 0) {
-    operator delete((void *)param_1[0x2a]);
+  if ((*(byte *)(this + 0x28) & 1) != 0) {
+    operator delete((void *)this[0x2a]);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x26);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x24);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x22);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x1c);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x14);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x26);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x24);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x1c);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x14);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

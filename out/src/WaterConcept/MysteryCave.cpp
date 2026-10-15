@@ -565,7 +565,7 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::MysteryCave::~MysteryCave() */
 
-void WaterConcept::MysteryCave::~MysteryCave(undefined8 *param_1)
+void WaterConcept::MysteryCave::~MysteryCave()
 
 {
   long lVar1;
@@ -575,7 +575,7 @@ void WaterConcept::MysteryCave::~MysteryCave(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *param_1 = &PTR__MysteryCave_00711e18;
+  *this = &PTR__MysteryCave_00711e18;
   uStack_38 = 0;
   uStack_30 = 0;
   Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=(&sRockTex,&uStack_38);
@@ -585,8 +585,8 @@ void WaterConcept::MysteryCave::~MysteryCave(undefined8 *param_1)
   sRockTexInit = 0;
   _DAT_0074f150 = 0;
   sRockTexUVs = 0;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x75);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }

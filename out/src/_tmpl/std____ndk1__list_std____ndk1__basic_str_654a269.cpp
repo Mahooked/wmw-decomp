@@ -47,7 +47,7 @@ long std::__ndk1::
 
 void std::__ndk1::
      list<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::push_back(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+     ::push_back(long *param_1,undefined8 param_2)
 
 {
   long *plVar1;
@@ -56,13 +56,13 @@ void std::__ndk1::
   plVar1 = (long *)operator new(0x28);
   *plVar1 = 0;
                     /* try { // try from 003ea314 to 003ea31b has its CatchHandler @ 003ea348 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar1 + 2,param_1);
-  lVar2 = *this;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(plVar1 + 2,param_2);
+  lVar2 = *param_1;
   *plVar1 = lVar2;
-  plVar1[1] = (long)this;
+  plVar1[1] = (long)param_1;
   *(long **)(lVar2 + 8) = plVar1;
-  *this = (long)plVar1;
-  this[2] = this[2] + 1;
+  *param_1 = (long)plVar1;
+  param_1[2] = param_1[2] + 1;
   return;
 }
 

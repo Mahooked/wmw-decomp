@@ -63,7 +63,8 @@ void Walaber::Widget_SlideWheel::init(void)
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_SlideWheel::Widget_SlideWheel
-               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4)
+               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
+               long *param_5)
 
 {
   long lVar1;
@@ -75,21 +76,21 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = *param_2;
-  uStack_48 = *param_3;
-  Walaber::Widget::Widget(this,param_1,0xd,&uStack_40,&uStack_48,1,1);
-  *(undefined4 *)((long)this + 0xfc) = 0xff000000;
-  *this = &PTR__Widget_SlideWheel_0070fbf8;
-  lVar3 = *param_4;
-  this[0x20] = lVar3;
-  piVar2 = (int *)param_4[1];
-  this[0x21] = piVar2;
+  uStack_40 = *param_3;
+  uStack_48 = *param_4;
+  Walaber::Widget::Widget(param_1,param_2,0xd,&uStack_40,&uStack_48,1,1);
+  *(undefined4 *)((long)param_1 + 0xfc) = 0xff000000;
+  *param_1 = &PTR__Widget_SlideWheel_0070fbf8;
+  lVar3 = *param_5;
+  param_1[0x20] = lVar3;
+  piVar2 = (int *)param_5[1];
+  param_1[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  this[0x26] = 0;
-  this[0x27] = 0;
-  this[0x25] = 0;
+  param_1[0x26] = 0;
+  param_1[0x27] = 0;
+  param_1[0x25] = 0;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -105,23 +106,23 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
 
 /* Walaber::Widget_SlideWheel::~Widget_SlideWheel() */
 
-void Walaber::Widget_SlideWheel::~Widget_SlideWheel(undefined8 *param_1)
+void Walaber::Widget_SlideWheel::~Widget_SlideWheel()
 
 {
-  *(undefined4 *)((long)param_1 + 0xfc) = 0x7f26727f;
-  *(undefined1 *)(param_1 + 0x22) = 1;
-  *param_1 = &PTR__Widget_SlideWheel_0070fbf8;
-  *(undefined8 *)((long)param_1 + 0x11c) = 0;
-  *(undefined8 *)((long)param_1 + 0x114) = 0x3f73333300000000;
-  *(undefined4 *)((long)param_1 + 0x124) = 0x3f800000;
-  param_1[0x25] = 0x3f8000003f800000;
-  *(undefined4 *)(param_1 + 0x26) = 0;
-  *(undefined4 *)(param_1 + 0x27) = 0;
-  param_1[0x28] = 0;
-  *(undefined4 *)((long)param_1 + 0x134) = 0;
-  *(undefined4 *)((long)param_1 + 0x13c) = 0;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
+  *(undefined4 *)((long)this + 0xfc) = 0x7f26727f;
+  *(undefined1 *)(this + 0x22) = 1;
+  *this = &PTR__Widget_SlideWheel_0070fbf8;
+  *(undefined8 *)((long)this + 0x11c) = 0;
+  *(undefined8 *)((long)this + 0x114) = 0x3f73333300000000;
+  *(undefined4 *)((long)this + 0x124) = 0x3f800000;
+  this[0x25] = 0x3f8000003f800000;
+  *(undefined4 *)(this + 0x26) = 0;
+  *(undefined4 *)(this + 0x27) = 0;
+  this[0x28] = 0;
+  *(undefined4 *)((long)this + 0x134) = 0;
+  *(undefined4 *)((long)this + 0x13c) = 0;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

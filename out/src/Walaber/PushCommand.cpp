@@ -276,7 +276,7 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
 /* Walaber::PushCommand::Parse(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-ulong Walaber::PushCommand::Parse(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
+ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -303,26 +303,26 @@ ulong Walaber::PushCommand::Parse(std::__ndk1::basic_string<char, std::__ndk1::c
   uStack_40 = 0;
   memset(abStack_98,0,0x48);
   puStack_50 = &uStack_48;
-  if (*(char *)(this + 0x34) == '\0') {
+  if (*(char *)(param_1 + 0x34) == '\0') {
                     /* try { // try from 003e8df0 to 003e8dfb has its CatchHandler @ 003e8ed4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_2);
                     /* try { // try from 003e8dfc to 003e8e0b has its CatchHandler @ 003e8ea8 */
-    uVar2 = Walaber::PushCommand::ParseURI(this,abStack_b0,abStack_98);
+    uVar2 = Walaber::PushCommand::ParseURI(param_1,abStack_b0,abStack_98);
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
     }
     if ((uVar2 & 1) != 0) {
                     /* try { // try from 003e8e24 to 003e8e2f has its CatchHandler @ 003e8ed4 */
-      Walaber::PushCommand::DoCommand(this,abStack_98);
+      Walaber::PushCommand::DoCommand(param_1,abStack_98);
       uVar3 = 1;
       goto LAB_003e8e3c;
     }
   }
   else {
                     /* try { // try from 003e8dc4 to 003e8dcf has its CatchHandler @ 003e8ed4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,param_1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,param_2);
                     /* try { // try from 003e8dd0 to 003e8ddb has its CatchHandler @ 003e8ebc */
-    Walaber::PushCommand::SaveCommand(this,abStack_c8);
+    Walaber::PushCommand::SaveCommand(param_1,abStack_c8);
     if ((abStack_c8[0] & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -376,7 +376,7 @@ void Walaber::PushCommand::PumpNotifications(long param_1)
 /* Walaber::PushCommand::ValueAsBool(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-bool Walaber::PushCommand::ValueAsBool(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
+bool Walaber::PushCommand::ValueAsBool(undefined8 param_1,byte *param_2)
 
 {
   ulong uVar1;
@@ -386,8 +386,8 @@ bool Walaber::PushCommand::ValueAsBool(std::__ndk1::basic_string<char, std::__nd
   ulong uVar5;
   ulong uVar6;
   
-  bVar2 = *param_1;
-  uVar5 = *(ulong *)(param_1 + 8);
+  bVar2 = *param_2;
+  uVar5 = *(ulong *)(param_2 + 8);
   uVar6 = (ulong)(bVar2 >> 1);
   uVar1 = uVar6;
   if ((bVar2 & 1) != 0) {
@@ -395,10 +395,10 @@ bool Walaber::PushCommand::ValueAsBool(std::__ndk1::basic_string<char, std::__nd
   }
   if (uVar1 == 4) {
                     /* try { // try from 003e8fd0 to 003e8feb has its CatchHandler @ 003e91f4 */
-    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_00628413,4);
+    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_00628413,4);
     if (iVar4 != 0) {
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
       goto LAB_003e9008;
     }
@@ -413,10 +413,10 @@ LAB_003e9008:
     }
     if (uVar1 == 4) {
                     /* try { // try from 003e9018 to 003e9033 has its CatchHandler @ 003e91f0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"true",4);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"true",4);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     uVar1 = uVar6;
@@ -425,10 +425,10 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9058 to 003e9073 has its CatchHandler @ 003e91ec */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_00634ec0,1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_00634ec0,1);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     uVar1 = uVar6;
@@ -437,10 +437,10 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9098 to 003e90b3 has its CatchHandler @ 003e91e8 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"T",1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"T",1);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     uVar1 = uVar6;
@@ -449,10 +449,10 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e90d8 to 003e90f3 has its CatchHandler @ 003e91e4 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_006363eb,1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_006363eb,1);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     uVar1 = uVar6;
@@ -461,10 +461,10 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9118 to 003e9133 has its CatchHandler @ 003e91e0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Y",1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Y",1);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     uVar1 = uVar6;
@@ -473,10 +473,10 @@ LAB_003e9008:
     }
     if (uVar1 == 3) {
                     /* try { // try from 003e9158 to 003e9173 has its CatchHandler @ 003e91dc */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_0061fbdd,3);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_0061fbdd,3);
       if (iVar4 == 0) goto LAB_003e91c0;
-      bVar2 = *param_1;
-      uVar5 = *(ulong *)(param_1 + 8);
+      bVar2 = *param_2;
+      uVar5 = *(ulong *)(param_2 + 8);
       uVar6 = (ulong)(bVar2 >> 1);
     }
     if ((bVar2 & 1) != 0) {
@@ -484,7 +484,7 @@ LAB_003e9008:
     }
     if (uVar6 == 3) {
                     /* try { // try from 003e9198 to 003e91b3 has its CatchHandler @ 003e91d8 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_0062841d,3);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_0062841d,3);
       bVar3 = iVar4 == 0;
     }
     else {
@@ -503,7 +503,7 @@ LAB_003e9008:
 /* Walaber::PushCommand::ParseURI(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, Walaber::CommandData&) */
 
-void Walaber::PushCommand::ParseURI(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::CommandData& param_2)
+void Walaber::PushCommand::ParseURI(undefined8 param_1,byte *param_2,ulong *param_3)
 
 {
   byte bVar1;
@@ -534,14 +534,14 @@ void Walaber::PushCommand::ParseURI(std::__ndk1::basic_string<char, std::__ndk1:
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  bVar1 = *param_1;
+  bVar1 = *param_2;
   if ((bVar1 & 1) == 0) {
     uVar14 = (ulong)(bVar1 >> 1);
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
   }
   else {
-    uVar14 = *(ulong *)(param_1 + 8);
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    uVar14 = *(ulong *)(param_2 + 8);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   if (2 < (long)uVar14) {
     pbVar4 = pbVar9;
@@ -558,12 +558,12 @@ void Walaber::PushCommand::ParseURI(std::__ndk1::basic_string<char, std::__ndk1:
         if (iVar3 != -1) {
           uVar7 = (ulong)(iVar3 + 3);
           if ((bVar1 & 1) == 0) {
-            pbVar9 = param_1 + 1;
+            pbVar9 = param_2 + 1;
             uVar8 = (ulong)(bVar1 >> 1);
           }
           else {
-            uVar8 = *(ulong *)(param_1 + 8);
-            pbVar9 = *(byte **)(param_1 + 0x10);
+            uVar8 = *(ulong *)(param_2 + 8);
+            pbVar9 = *(byte **)(param_2 + 0x10);
           }
           if (uVar8 < uVar7) goto LAB_003e9364;
           pbVar4 = pbVar9 + uVar7;
@@ -576,12 +576,12 @@ void Walaber::PushCommand::ParseURI(std::__ndk1::basic_string<char, std::__ndk1:
     } while (2 < (long)uVar7);
   }
   if ((bVar1 & 1) == 0) {
-    param_1 = param_1 + 1;
+    param_2 = param_2 + 1;
   }
   else {
-    param_1 = *(byte **)(param_1 + 0x10);
+    param_2 = *(byte **)(param_2 + 0x10);
   }
-  Walaber::Logger::printf("PushCommand",3,"Malformed URI: %s",param_1);
+  Walaber::Logger::printf("PushCommand",3,"Malformed URI: %s",param_2);
   uVar5 = 0;
   goto LAB_003e92dc;
 LAB_003e9358:
@@ -602,21 +602,21 @@ LAB_003e9364:
   lVar12 = -1;
 LAB_003e9368:
   if ((bVar1 & 1) == 0) {
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
   }
   else {
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   Walaber::Logger::printf("PushCommand",2,"No ID Seperator found, Assuming No ID, URI: %s",pbVar9);
-  bVar1 = *param_1;
+  bVar1 = *param_2;
 joined_r0x003e93c8:
   if ((bVar1 & 1) == 0) {
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
     uVar8 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar8 = *(ulong *)(param_1 + 8);
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    uVar8 = *(ulong *)(param_2 + 8);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   if (uVar7 <= uVar8) {
     pbVar4 = pbVar9 + uVar7;
@@ -637,22 +637,22 @@ joined_r0x003e93c8:
   lVar16 = -1;
 LAB_003e9410:
   if ((bVar1 & 1) == 0) {
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
   }
   else {
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   Walaber::Logger::printf("PushCommand",2,"No Key Value pair sperator found, Assuming No Key Values, URI: %s",
                pbVar9);
-  bVar1 = *param_1;
+  bVar1 = *param_2;
 joined_r0x003e9470:
   if ((bVar1 & 1) == 0) {
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
     uVar8 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar8 = *(ulong *)(param_1 + 8);
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    uVar8 = *(ulong *)(param_2 + 8);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   if (uVar7 <= uVar8) {
     pbVar4 = pbVar9 + uVar7;
@@ -673,10 +673,10 @@ joined_r0x003e9470:
   lVar18 = -1;
 LAB_003e94b8:
   if ((bVar1 & 1) == 0) {
-    pbVar9 = param_1 + 1;
+    pbVar9 = param_2 + 1;
   }
   else {
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    pbVar9 = *(byte **)(param_2 + 0x10);
   }
   Walaber::Logger::printf("PushCommand",2,"No fragment seperator found, Assuming no fragment, URI: %s",pbVar9);
 LAB_003e94e0:
@@ -697,21 +697,21 @@ LAB_003e94e0:
   else {
     iVar6 = iVar11 + -1;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1,uVar7,(long)(iVar6 - (iVar3 + 3)),auStack_88);
-  if ((*param_2 & 1) == 0) {
-    *(undefined2 *)param_2 = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_2,uVar7,(long)(iVar6 - (iVar3 + 3)),auStack_88);
+  if ((*param_3 & 1) == 0) {
+    *(undefined2 *)param_3 = 0;
   }
   else {
-    *(undefined1 *)param_2[2] = 0;
-    param_2[1] = 0;
-    if ((*param_2 & 1) != 0) {
-      operator delete((void *)param_2[2]);
-      *param_2 = 0;
+    *(undefined1 *)param_3[2] = 0;
+    param_3[1] = 0;
+    if ((*param_3 & 1) != 0) {
+      operator delete((void *)param_3[2]);
+      *param_3 = 0;
     }
   }
-  param_2[2] = (ulong)pvStack_70;
-  param_2[1] = uStack_78;
-  *param_2 = uStack_80;
+  param_3[2] = (ulong)pvStack_70;
+  param_3[1] = uStack_78;
+  *param_3 = uStack_80;
   if (lVar12 << 0x20 != -0x100000000) {
     if (iVar15 == -1) {
       uVar7 = uVar14;
@@ -723,21 +723,21 @@ LAB_003e94e0:
     else {
       iVar3 = iVar15 + -1;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1,(long)iVar11,(long)(iVar3 - iVar11),auStack_88);
-    puVar13 = param_2 + 3;
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_2,(long)iVar11,(long)(iVar3 - iVar11),auStack_88);
+    puVar13 = param_3 + 3;
     if ((*puVar13 & 1) == 0) {
       *(undefined2 *)puVar13 = 0;
     }
     else {
-      *(undefined1 *)param_2[5] = 0;
-      param_2[4] = 0;
-      if ((param_2[3] & 1) != 0) {
-        operator delete((void *)param_2[5]);
-        param_2[3] = 0;
+      *(undefined1 *)param_3[5] = 0;
+      param_3[4] = 0;
+      if ((param_3[3] & 1) != 0) {
+        operator delete((void *)param_3[5]);
+        param_3[3] = 0;
       }
     }
-    param_2[5] = (ulong)pvStack_70;
-    param_2[4] = uStack_78;
+    param_3[5] = (ulong)pvStack_70;
+    param_3[4] = uStack_78;
     *puVar13 = uStack_80;
   }
   if (lVar16 << 0x20 != -0x100000000) {
@@ -745,11 +745,11 @@ LAB_003e94e0:
     if (iVar17 != -1) {
       iVar3 = iVar17 + -1;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_1,(lVar16 << 0x20) >> 0x20,(long)(iVar3 - iVar15),auStack_88);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,param_2,(lVar16 << 0x20) >> 0x20,(long)(iVar3 - iVar15),auStack_88);
                     /* try { // try from 003e962c to 003e9637 has its CatchHandler @ 003e97a8 */
     uVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,&uStack_80);
                     /* try { // try from 003e963c to 003e9643 has its CatchHandler @ 003e9790 */
-    Walaber::PushCommand::ParseKVpair(uVar5,abStack_a0,param_2 + 9);
+    Walaber::PushCommand::ParseKVpair(uVar5,abStack_a0,param_3 + 9);
     if ((abStack_a0[0] & 1) != 0) {
       operator delete(pvStack_90);
     }
@@ -761,20 +761,20 @@ LAB_003e94e0:
     uStack_80 = 0;
     uStack_78 = 0;
     pvStack_70 = (void *)0x0;
-    bVar1 = *param_1;
+    bVar1 = *param_2;
     uVar14 = (ulong)(bVar1 >> 1);
     if ((bVar1 & 1) != 0) {
-      uVar14 = *(ulong *)(param_1 + 8);
+      uVar14 = *(ulong *)(param_2 + 8);
     }
     uVar7 = (lVar18 << 0x20) >> 0x20;
     if (uVar14 < uVar7) {
       std::__ndk1::__basic_string_common<true>::__throw_out_of_range(&uStack_80);
       return;
     }
-    pbVar9 = *(byte **)(param_1 + 0x10);
+    pbVar9 = *(byte **)(param_2 + 0x10);
     uVar14 = uVar14 - uVar7;
     if ((bVar1 & 1) == 0) {
-      pbVar9 = param_1 + 1;
+      pbVar9 = param_2 + 1;
     }
     if (0xffffffffffffffef < uVar14) {
       std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
@@ -795,20 +795,20 @@ LAB_003e96f4:
       memcpy(pvVar10,pbVar9 + uVar7,uVar14);
     }
     *(undefined1 *)((long)pvVar10 + uVar14) = 0;
-    puVar13 = param_2 + 6;
+    puVar13 = param_3 + 6;
     if ((*puVar13 & 1) == 0) {
       *(undefined2 *)puVar13 = 0;
     }
     else {
-      *(undefined1 *)param_2[8] = 0;
-      param_2[7] = 0;
-      if ((param_2[6] & 1) != 0) {
-        operator delete((void *)param_2[8]);
-        param_2[6] = 0;
+      *(undefined1 *)param_3[8] = 0;
+      param_3[7] = 0;
+      if ((param_3[6] & 1) != 0) {
+        operator delete((void *)param_3[8]);
+        param_3[6] = 0;
       }
     }
-    param_2[8] = (ulong)pvStack_70;
-    param_2[7] = uStack_78;
+    param_3[8] = (ulong)pvStack_70;
+    param_3[7] = uStack_78;
     *puVar13 = uStack_80;
   }
   uVar5 = 1;
@@ -1214,7 +1214,8 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
     */
 
 void Walaber::PushCommand::Register
-               (Walaber::SharedPtr<Walaber::Callback> param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_4)
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+               undefined8 param_5)
 
 {
   long lVar1;
@@ -1230,12 +1231,12 @@ void Walaber::PushCommand::Register
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   memset(abStack_b0,0,0x58);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(auStack_68,param_1);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(auStack_68,param_2);
                     /* try { // try from 003e9e10 to 003e9e43 has its CatchHandler @ 003e9eac */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_b0,param_2);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_98,param_3);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_80,param_4);
-  std::__ndk1::list<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::push_back(this,abStack_b0);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_b0,param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_98,param_4);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_80,param_5);
+  std::__ndk1::list<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::push_back(param_1,abStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(auStack_68);
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
@@ -1287,7 +1288,7 @@ void Walaber::PushCommand::SetDataBaseKey(int p0)
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > >
    > >&) */
 
-ulong Walaber::PushCommand::ParseKVpair(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::map<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>& param_2)
+ulong Walaber::PushCommand::ParseKVpair(undefined8 param_1,byte *param_2,undefined8 param_3)
 
 {
   byte *pbVar1;
@@ -1320,7 +1321,7 @@ ulong Walaber::PushCommand::ParseKVpair(std::__ndk1::basic_string<char, std::__n
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
   iVar7 = 0;
-  pbVar11 = param_1 + 1;
+  pbVar11 = param_2 + 1;
   pppuStack_90 = (undefined8 ****)0x0;
   uStack_88 = 0;
   puStack_80 = (undefined1 *)0x0;
@@ -1328,20 +1329,20 @@ ulong Walaber::PushCommand::ParseKVpair(std::__ndk1::basic_string<char, std::__n
   uStack_a8 = 0;
   puStack_a0 = (undefined1 *)0x0;
   do {
-    bVar2 = *param_1;
+    bVar2 = *param_2;
     uVar12 = (ulong)iVar7;
     if ((bVar2 & 1) == 0) {
       uVar9 = (ulong)(bVar2 >> 1);
       pbVar13 = pbVar11;
     }
     else {
-      uVar9 = *(ulong *)(param_1 + 8);
-      pbVar13 = *(byte **)(param_1 + 0x10);
+      uVar9 = *(ulong *)(param_2 + 8);
+      pbVar13 = *(byte **)(param_2 + 0x10);
     }
     if (uVar9 < uVar12) {
 LAB_003ea228:
       if ((bVar2 & 1) != 0) {
-        pbVar11 = *(byte **)(param_1 + 0x10);
+        pbVar11 = *(byte **)(param_2 + 0x10);
       }
                     /* try { // try from 003ea230 to 003ea24b has its CatchHandler @ 003ea2b4 */
       Walaber::Logger::printf("PushCommand",4,"Could not find value for key value pair: %s",pbVar11);
@@ -1366,8 +1367,8 @@ LAB_003ea228:
       pbVar13 = pbVar11;
     }
     else {
-      uVar9 = *(ulong *)(param_1 + 8);
-      pbVar13 = *(byte **)(param_1 + 0x10);
+      uVar9 = *(ulong *)(param_2 + 8);
+      pbVar13 = *(byte **)(param_2 + 0x10);
     }
     if (uVar12 <= uVar9) {
       pbVar5 = pbVar13 + uVar12;
@@ -1392,12 +1393,12 @@ LAB_003ea114:
       uVar14 = (uint)(bVar2 >> 1);
     }
     else {
-      uVar14 = (uint)*(undefined8 *)(param_1 + 8);
+      uVar14 = (uint)*(undefined8 *)(param_2 + 8);
     }
     bVar4 = false;
 LAB_003ea128:
                     /* try { // try from 003ea130 to 003ea143 has its CatchHandler @ 003ea2bc */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_1,uVar12,(long)(iVar15 - iVar7),auStack_70);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_2,uVar12,(long)(iVar15 - iVar7),auStack_70);
     if (((ulong)pppuStack_90 & 1) != 0) {
       *puStack_80 = 0;
       uStack_88 = 0;
@@ -1409,7 +1410,7 @@ LAB_003ea128:
     uStack_88 = uStack_c0;
     pppuStack_90 = pppuStack_c8;
                     /* try { // try from 003ea198 to 003ea1a7 has its CatchHandler @ 003ea2b8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_1,(lVar10 << 0x20) + 0x100000000 >> 0x20,
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_2,(lVar10 << 0x20) + 0x100000000 >> 0x20,
                     (long)(int)(uVar14 - iVar15),auStack_70);
     if (((ulong)pppuStack_b0 & 1) != 0) {
       *puStack_a0 = 0;
@@ -1423,7 +1424,7 @@ LAB_003ea128:
     pppuStack_b0 = pppuStack_c8;
                     /* try { // try from 003ea1ec to 003ea20f has its CatchHandler @ 003ea2c0 */
     pppuStack_c8 = &pppuStack_90;
-    lVar10 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_2,&pppuStack_90,&DAT_00633e81,&pppuStack_c8,auStack_70);
+    lVar10 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_3,&pppuStack_90,&DAT_00633e81,&pppuStack_c8,auStack_70);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar10 + 0x38,&pppuStack_b0);
     iVar7 = uVar14 + 2;
   } while (bVar4);

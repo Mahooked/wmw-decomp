@@ -110,7 +110,7 @@ LAB_005d7478:
 /* std::__ndk1::ctype_byname<char>::ctype_byname(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
-void std::__ndk1::ctype_byname<char>::ctype_byname(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long param_2)
+void std::__ndk1::ctype_byname<char>::ctype_byname(undefined8 *param_1,byte *param_2,long param_3)
 
 {
   long lVar1;
@@ -121,20 +121,20 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(std::__ndk1::basic_string<cha
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *(undefined1 *)(this + 3) = 0;
-  this[2] = &DAT_00641af0;
-  *this = &PTR__ctype_byname_007177d8;
-  this[1] = param_2 + -1;
-  pbVar3 = *(byte **)(param_1 + 0x10);
-  if ((*param_1 & 1) == 0) {
-    pbVar3 = param_1 + 1;
+  *(undefined1 *)(param_1 + 3) = 0;
+  param_1[2] = &DAT_00641af0;
+  *param_1 = &PTR__ctype_byname_007177d8;
+  param_1[1] = param_3 + -1;
+  pbVar3 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar3 = param_2 + 1;
   }
                     /* try { // try from 005d7580 to 005d758b has its CatchHandler @ 005d75f4 */
   lVar2 = newlocale(0x1fbf,pbVar3,0);
-  this[4] = lVar2;
+  param_1[4] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d75b8 to 005d75cb has its CatchHandler @ 005d75f0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<char>::ctype_byname failed to construct for ",param_2);
                     /* try { // try from 005d75cc to 005d75d3 has its CatchHandler @ 005d75d8 */
     FUN_005d5db0(auStack_50);
   }
@@ -153,20 +153,20 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(std::__ndk1::basic_string<cha
 
 /* std::__ndk1::ctype_byname<char>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<char>::~ctype_byname(undefined8 *param_1)
+void std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 {
   ulong p1;
   
-  *param_1 = &PTR__ctype_byname_007177d8;
+  *this = &PTR__ctype_byname_007177d8;
                     /* try { // try from 005d7650 to 005d7653 has its CatchHandler @ 005d7690 */
-  freelocale(param_1[4]);
-  *param_1 = &PTR__ctype_00717770;
-  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
-    operator delete[]((void *)param_1[2],p1);
+  freelocale(this[4]);
+  *this = &PTR__ctype_00717770;
+  if (((void *)this[2] != (void *)0x0) && (*(char *)(this + 3) != '\0')) {
+    operator delete[]((void *)this[2],p1);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
-  operator delete(param_1);
+  std::__ndk1::__shared_count::~__shared_count(this);
+  operator delete(this);
   return;
 }
 
@@ -260,19 +260,19 @@ char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1)
 
 /* std::__ndk1::ctype_byname<char>::~ctype_byname() */
 
-void std::__ndk1::ctype_byname<char>::~ctype_byname(undefined8 *param_1)
+void std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 {
   ulong p1;
   
-  *param_1 = &PTR__ctype_byname_007177d8;
+  *this = &PTR__ctype_byname_007177d8;
                     /* try { // try from 005e01b8 to 005e01bb has its CatchHandler @ 005e01f0 */
-  freelocale(param_1[4]);
-  *param_1 = &PTR__ctype_00717770;
-  if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
-    operator delete[]((void *)param_1[2],p1);
+  freelocale(this[4]);
+  *this = &PTR__ctype_00717770;
+  if (((void *)this[2] != (void *)0x0) && (*(char *)(this + 3) != '\0')) {
+    operator delete[]((void *)this[2],p1);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
+  std::__ndk1::__shared_count::~__shared_count(this);
   return;
 }
 

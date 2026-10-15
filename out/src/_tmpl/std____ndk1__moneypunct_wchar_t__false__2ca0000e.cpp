@@ -37,12 +37,12 @@ undefined8 std::__ndk1::moneypunct<wchar_t,false>::do_thousands_sep(void)
 
 /* std::__ndk1::moneypunct<wchar_t, false>::do_grouping() const */
 
-void std::__ndk1::moneypunct<wchar_t,false>::do_grouping(undefined8 *param_1)
+void std::__ndk1::moneypunct<wchar_t,false>::do_grouping()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
   return;
 }
 
@@ -54,12 +54,12 @@ void std::__ndk1::moneypunct<wchar_t,false>::do_grouping(undefined8 *param_1)
 
 /* std::__ndk1::moneypunct<wchar_t, false>::do_curr_symbol() const */
 
-void std::__ndk1::moneypunct<wchar_t,false>::do_curr_symbol(undefined8 *param_1)
+void std::__ndk1::moneypunct<wchar_t,false>::do_curr_symbol()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
   return;
 }
 
@@ -71,12 +71,12 @@ void std::__ndk1::moneypunct<wchar_t,false>::do_curr_symbol(undefined8 *param_1)
 
 /* std::__ndk1::moneypunct<wchar_t, false>::do_positive_sign() const */
 
-void std::__ndk1::moneypunct<wchar_t,false>::do_positive_sign(undefined8 *param_1)
+void std::__ndk1::moneypunct<wchar_t,false>::do_positive_sign()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
   return;
 }
 
@@ -88,16 +88,16 @@ void std::__ndk1::moneypunct<wchar_t,false>::do_positive_sign(undefined8 *param_
 
 /* std::__ndk1::moneypunct<wchar_t, false>::do_negative_sign() const */
 
-void std::__ndk1::moneypunct<wchar_t,false>::do_negative_sign(undefined8 *param_1)
+void std::__ndk1::moneypunct<wchar_t,false>::do_negative_sign()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 2;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 2;
                     /* try { // try from 005c55dc to 005c55e7 has its CatchHandler @ 005c55f8 */
-  wmemset((long)param_1 + 4,0x2d,1);
-  *(undefined4 *)(param_1 + 1) = 0;
+  wmemset((long)this + 4,0x2d,1);
+  *(undefined4 *)(this + 1) = 0;
   return;
 }
 

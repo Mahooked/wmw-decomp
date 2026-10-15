@@ -9,10 +9,10 @@
 
 /* std::bad_cast::bad_cast() */
 
-void std::bad_cast::bad_cast(undefined8 *param_1)
+void std::bad_cast::bad_cast()
 
 {
-  *param_1 = &PTR__bad_cast_0071a3f8;
+  *this = &PTR__bad_cast_0071a3f8;
   return;
 }
 

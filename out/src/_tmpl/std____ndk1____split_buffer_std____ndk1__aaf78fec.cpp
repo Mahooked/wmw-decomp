@@ -66,26 +66,26 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>&>
-     ::~__split_buffer(undefined8 *param_1)
+     ::~__split_buffer()
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = param_1[1];
-  lVar2 = param_1[2];
+  lVar1 = this[1];
+  lVar2 = this[2];
   while (lVar2 != lVar1) {
-    param_1[2] = (byte *)(lVar2 + -0x30);
+    this[2] = (byte *)(lVar2 + -0x30);
     if ((*(byte *)(lVar2 + -0x18) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -8));
     }
     if ((*(byte *)(lVar2 + -0x30) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -0x20));
     }
-    lVar2 = param_1[2];
+    lVar2 = this[2];
   }
-  if ((void *)*param_1 != (void *)0x0) {
-    operator delete((void *)*param_1);
+  if ((void *)*this != (void *)0x0) {
+    operator delete((void *)*this);
     return;
   }
   return;

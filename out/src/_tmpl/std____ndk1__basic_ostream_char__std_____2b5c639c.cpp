@@ -299,30 +299,30 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::basic_ostr
    >::basic_ostream(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*) */
 
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::basic_ostream
-               (std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>> *param_1)
+               (undefined8 *param_1,long param_2)
 
 {
-  this[6] = param_1;
-  this[1] = &PTR__basic_ostream_007163f8;
-  *this = &PTR__basic_ostream_007163d0;
-  this[0x10] = 0;
-  this[0x11] = 0;
-  this[0xe] = 0;
-  this[0xf] = 0;
-  this[0xc] = 0;
-  this[0xd] = 0;
-  this[10] = 0;
-  this[0xb] = 0;
-  *(undefined4 *)(this + 2) = 0x1002;
-  *(uint *)(this + 5) = (uint)(param_1 == 0);
-  *(undefined4 *)((long)this + 0x2c) = 0;
-  this[4] = 0;
-  this[3] = 6;
-  this[8] = 0;
-  this[9] = 0;
-  std::__ndk1::locale::locale(this + 7);
-  this[0x12] = 0;
-  *(undefined4 *)(this + 0x13) = 0xffffffff;
+  param_1[6] = param_2;
+  param_1[1] = &PTR__basic_ostream_007163f8;
+  *param_1 = &PTR__basic_ostream_007163d0;
+  param_1[0x10] = 0;
+  param_1[0x11] = 0;
+  param_1[0xe] = 0;
+  param_1[0xf] = 0;
+  param_1[0xc] = 0;
+  param_1[0xd] = 0;
+  param_1[10] = 0;
+  param_1[0xb] = 0;
+  *(undefined4 *)(param_1 + 2) = 0x1002;
+  *(uint *)(param_1 + 5) = (uint)(param_2 == 0);
+  *(undefined4 *)((long)param_1 + 0x2c) = 0;
+  param_1[4] = 0;
+  param_1[3] = 6;
+  param_1[8] = 0;
+  param_1[9] = 0;
+  std::__ndk1::locale::locale(param_1 + 7);
+  param_1[0x12] = 0;
+  *(undefined4 *)(param_1 + 0x13) = 0xffffffff;
   return;
 }
 
@@ -1301,7 +1301,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
    std::__ndk1::ios_base::seekdir) */
 
 long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
-                 (long long param_1,std::__ndk1::ios_base::seekdir param_2)
+                 (long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -1316,30 +1316,30 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
-  plVar3 = (long *)(*this + -0x18);
+  plVar3 = (long *)(*param_1 + -0x18);
   lVar2 = *plVar3;
-  uVar4 = *(uint *)((long)this + lVar2 + 0x20);
-  plStack_40 = this;
+  uVar4 = *(uint *)((long)param_1 + lVar2 + 0x20);
+  plStack_40 = param_1;
   if (uVar4 == 0) {
-    if (*(long *)((long)this + lVar2 + 0x88) != 0) {
+    if (*(long *)((long)param_1 + lVar2 + 0x88) != 0) {
       std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::flush();
-      plVar3 = (long *)(*this + -0x18);
+      plVar3 = (long *)(*param_1 + -0x18);
     }
     auStack_48[0] = 1;
     lVar2 = *plVar3;
-    uVar4 = *(uint *)((long)this + lVar2 + 0x20);
+    uVar4 = *(uint *)((long)param_1 + lVar2 + 0x20);
   }
                     /* try { // try from 005ad99c to 005ad9ab has its CatchHandler @ 005ada04 */
   if (((uVar4 & 5) == 0) &&
-     (plVar3 = *(long **)((long)this + lVar2 + 0x28),
-     (**(code **)(*plVar3 + 0x20))(plVar3,param_1,param_2,0x10), extraout_x1 == -1)) {
-    lVar2 = (long)this + *(long *)(*this + -0x18);
+     (plVar3 = *(long **)((long)param_1 + lVar2 + 0x28),
+     (**(code **)(*plVar3 + 0x20))(plVar3,param_2,param_3,0x10), extraout_x1 == -1)) {
+    lVar2 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 005ad9c8 to 005ad9cb has its CatchHandler @ 005ada00 */
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return this;
+    return param_1;
   }
   plVar3 = (long *)__stack_chk_fail();
   return plVar3;

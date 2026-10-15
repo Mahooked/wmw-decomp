@@ -17,7 +17,7 @@
 void std::__ndk1::
      vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
      assign<std::__ndk1::pair<float,int>*>
-               (std::__ndk1::pair<float, int> *param_1,std::__ndk1::pair<float, int> *param_2)
+               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   ulong uVar1;
@@ -30,21 +30,21 @@ void std::__ndk1::
   ulong uVar8;
   undefined8 *puVar6;
   
-  lVar3 = this[2];
-  p0 = (undefined8 *)*this;
-  lVar7 = (long)param_2 - (long)param_1;
+  lVar3 = param_1[2];
+  p0 = (undefined8 *)*param_1;
+  lVar7 = (long)param_3 - (long)param_2;
   uVar8 = lVar7 >> 3;
   if ((ulong)(lVar3 - (long)p0 >> 3) < uVar8) {
     if (p0 != (undefined8 *)0x0) {
-      this[1] = p0;
+      param_1[1] = p0;
       operator delete(p0);
       lVar3 = 0;
-      *this = 0;
-      this[1] = 0;
-      this[2] = 0;
+      *param_1 = 0;
+      param_1[1] = 0;
+      param_1[2] = 0;
     }
     if (uVar8 >> 0x3d != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return;
     }
     if ((ulong)(lVar3 >> 3) < 0xfffffffffffffff) {
@@ -55,24 +55,24 @@ void std::__ndk1::
     else {
       uVar8 = 0x1fffffffffffffff;
     }
-    std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::__vallocate(this,uVar8);
+    std::__ndk1::vector<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>>::__vallocate(param_1,uVar8);
     if (lVar7 < 1) {
       return;
     }
-    memcpy(this[1],param_1,lVar7);
-    lVar7 = this[1] + lVar7;
+    memcpy(param_1[1],param_2,lVar7);
+    lVar7 = param_1[1] + lVar7;
   }
   else {
-    lVar3 = this[1];
+    lVar3 = param_1[1];
     lVar7 = lVar3 - (long)p0;
     uVar1 = lVar7 >> 3;
-    puVar2 = (undefined8 *)((long)param_1 + lVar7);
+    puVar2 = (undefined8 *)((long)param_2 + lVar7);
     if (uVar8 <= uVar1) {
-      puVar2 = param_2;
+      puVar2 = param_3;
     }
-    if (puVar2 != param_1) {
+    if (puVar2 != param_2) {
       puVar4 = p0;
-      puVar5 = param_1;
+      puVar5 = param_2;
       do {
         puVar6 = puVar5 + 1;
         *puVar4 = *puVar5;
@@ -80,20 +80,20 @@ void std::__ndk1::
         puVar5 = puVar6;
       } while (puVar2 != puVar6);
       p0 = (undefined8 *)
-           ((long)p0 + ((long)puVar2 + (-8 - (long)param_1) & 0xfffffffffffffff8U) + 8);
+           ((long)p0 + ((long)puVar2 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8);
     }
     if (uVar8 <= uVar1) {
-      this[1] = p0;
+      param_1[1] = p0;
       return;
     }
-    lVar7 = (long)param_2 - (long)puVar2;
+    lVar7 = (long)param_3 - (long)puVar2;
     if (lVar7 < 1) {
       return;
     }
     memcpy(lVar3,puVar2,lVar7);
-    lVar7 = this[1] + lVar7;
+    lVar7 = param_1[1] + lVar7;
   }
-  this[1] = lVar7;
+  param_1[1] = lVar7;
   return;
 }
 

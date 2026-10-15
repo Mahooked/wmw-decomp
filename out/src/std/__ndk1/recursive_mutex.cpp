@@ -9,7 +9,7 @@
 
 /* std::__ndk1::recursive_mutex::recursive_mutex() */
 
-void std::__ndk1::recursive_mutex::recursive_mutex(undefined8 param_1)
+void std::__ndk1::recursive_mutex::recursive_mutex()
 
 {
   long lVar1;
@@ -24,7 +24,7 @@ void std::__ndk1::recursive_mutex::recursive_mutex(undefined8 param_1)
   if (iStack_44 == 0) {
     iStack_44 = pthread_mutexattr_settype(auStack_40,1);
     if (iStack_44 == 0) {
-      iStack_44 = pthread_mutex_init(param_1,auStack_40);
+      iStack_44 = pthread_mutex_init(this,auStack_40);
       iVar2 = pthread_mutexattr_destroy(auStack_40);
       if (iStack_44 == 0) {
         if (iVar2 == 0) {
@@ -34,7 +34,7 @@ void std::__ndk1::recursive_mutex::recursive_mutex(undefined8 param_1)
           }
           return;
         }
-        pthread_mutex_destroy(param_1);
+        pthread_mutex_destroy(this);
         iStack_44 = iVar2;
       }
     }

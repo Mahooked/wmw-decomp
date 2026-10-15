@@ -13,7 +13,7 @@
 
 undefined8 *
 std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::insert
-          (std::__ndk1::__wrap_iter<Walaber::FluidParticle const*> param_1,unsigned long param_2,Walaber::FluidParticle const& param_3)
+          (long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
 
 {
   long lVar1;
@@ -35,26 +35,26 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  if (param_2 != 0) {
-    lVar6 = this[1];
-    if ((ulong)((this[2] - lVar6 >> 4) * -0x71c71c71c71c71c7) < param_2) {
-      lVar9 = *this;
-      uVar7 = param_2 + (lVar6 - lVar9 >> 4) * -0x71c71c71c71c71c7;
+  if (param_3 != 0) {
+    lVar6 = param_1[1];
+    if ((ulong)((param_1[2] - lVar6 >> 4) * -0x71c71c71c71c71c7) < param_3) {
+      lVar9 = *param_1;
+      uVar7 = param_3 + (lVar6 - lVar9 >> 4) * -0x71c71c71c71c71c7;
       if (0x1c71c71c71c71c7 < uVar7) {
-        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
         return puVar2;
       }
-      lVar6 = this[2] - lVar9 >> 4;
+      lVar6 = param_1[2] - lVar9 >> 4;
       uVar4 = 0x1c71c71c71c71c7;
       if (((ulong)(lVar6 * -0x71c71c71c71c71c7) < 0xe38e38e38e38e3) &&
          (uVar3 = lVar6 * 0x1c71c71c71c71c72, uVar4 = uVar7, uVar7 <= uVar3)) {
         uVar4 = uVar3;
       }
-      std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>::__split_buffer(&pvStack_90,uVar4,((long)param_1 - lVar9 >> 4) * -0x71c71c71c71c71c7,
-                      this + 2);
+      std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>::__split_buffer(&pvStack_90,uVar4,((long)param_2 - lVar9 >> 4) * -0x71c71c71c71c71c7,
+                      param_1 + 2);
                     /* try { // try from 0038daec to 0038db0b has its CatchHandler @ 0038dcdc */
-      std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>::__construct_at_end(&pvStack_90,param_2,param_3);
-      param_1 = (undefined8 *)std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__swap_out_circular_buffer(this,&pvStack_90,param_1);
+      std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>::__construct_at_end(&pvStack_90,param_3,param_4);
+      param_2 = (undefined8 *)std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__swap_out_circular_buffer(param_1,&pvStack_90,param_2);
       if (lStack_80 != lStack_88) {
         lStack_80 = lStack_80 +
                     ((ulong)((lStack_80 + -0x90) - lStack_88) / 0x90 ^ 0xffffffffffffffff) * 0x90;
@@ -64,38 +64,38 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
       }
     }
     else {
-      lVar9 = lVar6 - (long)param_1 >> 4;
+      lVar9 = lVar6 - (long)param_2 >> 4;
       uVar4 = lVar9 * -0x71c71c71c71c71c7;
-      uVar7 = param_2;
-      if (uVar4 < param_2) {
-        lVar11 = param_2 + lVar9 * 0x71c71c71c71c71c7;
+      uVar7 = param_3;
+      if (uVar4 < param_3) {
+        lVar11 = param_3 + lVar9 * 0x71c71c71c71c71c7;
         lVar9 = lVar6;
         do {
-          Walaber::BaseParticle::BaseParticle(lVar9,param_3);
+          Walaber::BaseParticle::BaseParticle(lVar9,param_4);
           lVar5 = 0;
           do {
-            *(undefined8 *)(lVar9 + 0x38 + lVar5) = *(undefined8 *)((long)param_3 + lVar5 + 0x38);
+            *(undefined8 *)(lVar9 + 0x38 + lVar5) = *(undefined8 *)((long)param_4 + lVar5 + 0x38);
             lVar5 = lVar5 + 8;
           } while (lVar5 != 0x40);
-          uVar12 = param_3[0x10];
-          uVar10 = param_3[0xf];
+          uVar12 = param_4[0x10];
+          uVar10 = param_4[0xf];
           lVar11 = lVar11 + -1;
-          *(undefined8 *)(lVar9 + 0x88) = param_3[0x11];
+          *(undefined8 *)(lVar9 + 0x88) = param_4[0x11];
           *(undefined8 *)(lVar9 + 0x80) = uVar12;
           *(undefined8 *)(lVar9 + 0x78) = uVar10;
-          lVar9 = this[1] + 0x90;
-          this[1] = lVar9;
+          lVar9 = param_1[1] + 0x90;
+          param_1[1] = lVar9;
         } while (lVar11 != 0);
         uVar7 = uVar4;
-        if (lVar6 - (long)param_1 == 0) goto LAB_0038dc9c;
+        if (lVar6 - (long)param_2 == 0) goto LAB_0038dc9c;
       }
-      std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__move_range(this,param_1,lVar6,param_1 + param_2 * 0x12);
-      puVar2 = param_3;
-      if ((param_1 <= param_3) &&
-         (puVar2 = param_3 + param_2 * 0x12, (undefined8 *)this[1] <= param_3)) {
-        puVar2 = param_3;
+      std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__move_range(param_1,param_2,lVar6,param_2 + param_3 * 0x12);
+      puVar2 = param_4;
+      if ((param_2 <= param_4) &&
+         (puVar2 = param_4 + param_3 * 0x12, (undefined8 *)param_1[1] <= param_4)) {
+        puVar2 = param_4;
       }
-      puVar8 = param_1;
+      puVar8 = param_2;
       do {
         *puVar8 = *puVar2;
         puVar8[1] = puVar2[1];
@@ -125,7 +125,7 @@ LAB_0038dc9c:
     puVar2 = (undefined8 *)__stack_chk_fail();
     return puVar2;
   }
-  return param_1;
+  return param_2;
 }
 
 
@@ -207,7 +207,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
    std::__ndk1::allocator<Walaber::FluidParticle>&>&, Walaber::FluidParticle*) */
 
 long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>&>& param_1,Walaber::FluidParticle *param_2)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   undefined8 *puVar1;
@@ -219,10 +219,10 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
   undefined8 uVar7;
   undefined8 uVar8;
   
-  lVar5 = *this;
-  lVar3 = param_1[1];
+  lVar5 = *param_1;
+  lVar3 = param_2[1];
   lVar4 = lVar3;
-  lVar6 = param_2;
+  lVar6 = param_3;
   while (lVar5 != lVar6) {
     Walaber::BaseParticle::BaseParticle(lVar4 + -0x90,lVar6 + -0x90);
     lVar2 = -0x58;
@@ -235,42 +235,42 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
     *(undefined8 *)(lVar4 + -8) = *(undefined8 *)(lVar6 + -8);
     *(undefined8 *)(lVar4 + -0x10) = uVar8;
     *(undefined8 *)(lVar4 + -0x18) = uVar7;
-    lVar4 = param_1[1] + -0x90;
-    param_1[1] = lVar4;
+    lVar4 = param_2[1] + -0x90;
+    param_2[1] = lVar4;
     lVar6 = lVar6 + -0x90;
   }
-  lVar6 = this[1];
-  if (lVar6 != param_2) {
-    lVar4 = param_1[2];
+  lVar6 = param_1[1];
+  if (lVar6 != param_3) {
+    lVar4 = param_2[2];
     do {
-      Walaber::BaseParticle::BaseParticle(lVar4,param_2);
+      Walaber::BaseParticle::BaseParticle(lVar4,param_3);
       lVar5 = 0x38;
       do {
-        *(undefined8 *)(lVar4 + lVar5) = *(undefined8 *)(param_2 + lVar5);
+        *(undefined8 *)(lVar4 + lVar5) = *(undefined8 *)(param_3 + lVar5);
         lVar5 = lVar5 + 8;
       } while (lVar5 != 0x78);
-      puVar1 = (undefined8 *)(param_2 + 0x88);
-      uVar8 = *(undefined8 *)(param_2 + 0x80);
-      uVar7 = *(undefined8 *)(param_2 + 0x78);
-      param_2 = param_2 + 0x90;
+      puVar1 = (undefined8 *)(param_3 + 0x88);
+      uVar8 = *(undefined8 *)(param_3 + 0x80);
+      uVar7 = *(undefined8 *)(param_3 + 0x78);
+      param_3 = param_3 + 0x90;
       *(undefined8 *)(lVar4 + 0x88) = *puVar1;
       *(undefined8 *)(lVar4 + 0x80) = uVar8;
       *(undefined8 *)(lVar4 + 0x78) = uVar7;
-      lVar4 = param_1[2] + 0x90;
-      param_1[2] = lVar4;
-    } while (param_2 != lVar6);
-    lVar4 = param_1[1];
+      lVar4 = param_2[2] + 0x90;
+      param_2[2] = lVar4;
+    } while (param_3 != lVar6);
+    lVar4 = param_2[1];
   }
-  lVar6 = *this;
-  *this = lVar4;
-  param_1[1] = lVar6;
-  lVar4 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar4;
-  lVar4 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar4;
-  *param_1 = param_1[1];
+  lVar6 = *param_1;
+  *param_1 = lVar4;
+  param_2[1] = lVar6;
+  lVar4 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar4;
+  lVar4 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar4;
+  *param_2 = param_2[1];
   return lVar3;
 }
 
@@ -285,19 +285,19 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
    std::__ndk1::allocator<Walaber::FluidParticle> > const&) */
 
 void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::FluidParticle>>::
-     vector(std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>> const& param_1)
+     vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if (param_1[1] - *param_1 != 0) {
-    lVar1 = (param_1[1] - *param_1 >> 4) * -0x71c71c71c71c71c7;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if (param_2[1] - *param_2 != 0) {
+    lVar1 = (param_2[1] - *param_2 >> 4) * -0x71c71c71c71c71c7;
                     /* try { // try from 0040a340 to 0040a357 has its CatchHandler @ 0040a368 */
-    std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__vallocate(this,lVar1);
-    std::__ndk1::enable_if<__is_forward_iterator<Walaber::FluidParticle*>::value, void>::type std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__construct_at_end<Walaber::FluidParticle*>(this,*param_1,param_1[1],lVar1);
+    std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__vallocate(param_1,lVar1);
+    std::__ndk1::enable_if<__is_forward_iterator<Walaber::FluidParticle*>::value, void>::type std::__ndk1::vector<Walaber::FluidParticle, std::__ndk1::allocator<Walaber::FluidParticle>>::__construct_at_end<Walaber::FluidParticle*>(param_1,*param_2,param_2[1],lVar1);
   }
   return;
 }

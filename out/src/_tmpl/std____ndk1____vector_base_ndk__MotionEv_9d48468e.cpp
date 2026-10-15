@@ -11,7 +11,7 @@
    >::~__vector_base() */
 
 void std::__ndk1::__vector_base<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     ~__vector_base(undefined8 *param_1)
+     ~__vector_base()
 
 {
   void *pvVar1;
@@ -19,11 +19,11 @@ void std::__ndk1::__vector_base<ndk::MotionEvent,std::__ndk1::allocator<ndk::Mot
   void *pvVar3;
   long lVar4;
   
-  pvVar2 = (void *)*param_1;
+  pvVar2 = (void *)*this;
   if (pvVar2 == (void *)0x0) {
     return;
   }
-  pvVar3 = (void *)param_1[1];
+  pvVar3 = (void *)this[1];
   pvVar1 = pvVar2;
   if (pvVar3 != pvVar2) {
     lVar4 = 0;
@@ -55,9 +55,9 @@ void std::__ndk1::__vector_base<ndk::MotionEvent,std::__ndk1::allocator<ndk::Mot
       }
       lVar4 = lVar4 + -0x80;
     } while ((long)pvVar2 - (long)pvVar3 != lVar4);
-    pvVar1 = (void *)*param_1;
+    pvVar1 = (void *)*this;
   }
-  param_1[1] = pvVar2;
+  this[1] = pvVar2;
   operator delete(pvVar1);
   return;
 }

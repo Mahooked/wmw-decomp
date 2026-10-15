@@ -23,7 +23,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>
      ::
      __emplace_multi<std::__ndk1::pair<int_const,Walaber::Widget_FingerCatcher::CaughtFingerInfo>const&>
-               (std::__ndk1::pair<int const, Walaber::Widget_FingerCatcher::CaughtFingerInfo> const& param_1)
+               (long param_1,undefined8 *param_2)
 
 {
   long *plVar1;
@@ -34,12 +34,12 @@ long std::__ndk1::
   undefined8 uVar6;
   
   lVar2 = operator new(0x38);
-  uVar6 = param_1[1];
-  uVar5 = *param_1;
-  *(undefined8 *)(lVar2 + 0x30) = param_1[2];
+  uVar6 = param_2[1];
+  uVar5 = *param_2;
+  *(undefined8 *)(lVar2 + 0x30) = param_2[2];
   *(undefined8 *)(lVar2 + 0x28) = uVar6;
   *(undefined8 *)(lVar2 + 0x20) = uVar5;
-  plVar3 = (long *)(this + 8);
+  plVar3 = (long *)(param_1 + 8);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar1 = (long *)*plVar3;
@@ -54,7 +54,7 @@ long std::__ndk1::
     plVar4 = plVar3 + 1;
   }
 LAB_003790a0:
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::__insert_node_at(this,plVar3,plVar4,lVar2);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::__insert_node_at(param_1,plVar3,plVar4,lVar2);
   return lVar2;
 }
 

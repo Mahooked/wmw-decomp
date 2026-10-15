@@ -9,7 +9,7 @@
 
 /* Walaber::Transition_Iris::Transition_Iris() */
 
-void Walaber::Transition_Iris::Transition_Iris(undefined8 *param_1)
+void Walaber::Transition_Iris::Transition_Iris()
 
 {
   long lVar1;
@@ -18,35 +18,35 @@ void Walaber::Transition_Iris::Transition_Iris(undefined8 *param_1)
   undefined8 *puVar3;
   
   Walaber::Transition::Transition();
-  *(undefined4 *)(param_1 + 0x19) = 8;
-  *param_1 = &PTR_setup_00710fa8;
-  *(undefined4 *)((long)param_1 + 0xdc) = 0x3f800000;
-  param_1[0x1f] = 0;
-  param_1[0x20] = 0;
-  param_1[0x1d] = 0;
-  param_1[0x1e] = 0;
-  param_1[0x1c] = 0;
-  *(undefined8 *)((long)param_1 + 0xd4) = 0x3f8000003fe66666;
-  *(undefined8 *)((long)param_1 + 0xcc) = 0x42b4000000000000;
-  puVar3 = param_1 + 0x21;
+  *(undefined4 *)(this + 0x19) = 8;
+  *this = &PTR_setup_00710fa8;
+  *(undefined4 *)((long)this + 0xdc) = 0x3f800000;
+  this[0x1f] = 0;
+  this[0x20] = 0;
+  this[0x1d] = 0;
+  this[0x1e] = 0;
+  this[0x1c] = 0;
+  *(undefined8 *)((long)this + 0xd4) = 0x3f8000003fe66666;
+  *(undefined8 *)((long)this + 0xcc) = 0x42b4000000000000;
+  puVar3 = this + 0x21;
   do {
     puVar2 = (undefined8 *)((long)puVar3 + 4);
     *(undefined4 *)puVar3 = 0xff000000;
     puVar3 = puVar2;
-  } while (puVar2 != param_1 + 0x23);
-  param_1[0x24] = 0;
-  param_1[0x23] = 0;
+  } while (puVar2 != this + 0x23);
+  this[0x24] = 0;
+  this[0x23] = 0;
   lVar4 = 0;
   do {
     lVar1 = lVar4 + 4;
-    *(undefined1 *)((long)param_1 + lVar4 + 0x108) = 0xff;
-    *(undefined1 *)((long)param_1 + lVar4 + 0x109) = 0xff;
-    *(undefined1 *)((long)param_1 + lVar4 + 0x10a) = 0xff;
-    *(undefined1 *)((long)param_1 + lVar4 + 0x10b) = 0xff;
+    *(undefined1 *)((long)this + lVar4 + 0x108) = 0xff;
+    *(undefined1 *)((long)this + lVar4 + 0x109) = 0xff;
+    *(undefined1 *)((long)this + lVar4 + 0x10a) = 0xff;
+    *(undefined1 *)((long)this + lVar4 + 0x10b) = 0xff;
     lVar4 = lVar1;
   } while (lVar1 != 0x10);
-  param_1[0x24] = 0x3f8000003f800000;
-  param_1[0x23] = 0;
+  this[0x24] = 0x3f8000003f800000;
+  this[0x23] = 0;
   return;
 }
 
@@ -58,19 +58,19 @@ void Walaber::Transition_Iris::Transition_Iris(undefined8 *param_1)
 
 /* Walaber::Transition_Iris::~Transition_Iris() */
 
-void Walaber::Transition_Iris::~Transition_Iris(undefined8 *param_1)
+void Walaber::Transition_Iris::~Transition_Iris()
 
 {
   void *p0;
   
-  *param_1 = &PTR_setup_00710fa8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x1f);
-  p0 = (void *)param_1[0x1c];
+  *this = &PTR_setup_00710fa8;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x1f);
+  p0 = (void *)this[0x1c];
   if (p0 != (void *)0x0) {
-    param_1[0x1d] = p0;
+    this[0x1d] = p0;
     operator delete(p0);
   }
-  Walaber::Transition::~Transition(param_1);
+  Walaber::Transition::~Transition(this);
   return;
 }
 

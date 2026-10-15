@@ -9,14 +9,14 @@
 
 /* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
 
-void Walaber::SkeletonActor::SoundActionData::~SoundActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::SoundActionData::~SoundActionData()
 
 {
-  *param_1 = &PTR__SoundActionData_0070e4d8;
-  if ((*(byte *)(param_1 + 3) & 1) == 0) {
+  *this = &PTR__SoundActionData_0070e4d8;
+  if ((*(byte *)(this + 3) & 1) == 0) {
     return;
   }
-  operator delete((void *)param_1[5]);
+  operator delete((void *)this[5]);
   return;
 }
 
@@ -28,14 +28,14 @@ void Walaber::SkeletonActor::SoundActionData::~SoundActionData(undefined8 *param
 
 /* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
 
-void Walaber::SkeletonActor::SoundActionData::~SoundActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::SoundActionData::~SoundActionData()
 
 {
-  *param_1 = &PTR__SoundActionData_0070e4d8;
-  if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    operator delete((void *)param_1[5]);
+  *this = &PTR__SoundActionData_0070e4d8;
+  if ((*(byte *)(this + 3) & 1) != 0) {
+    operator delete((void *)this[5]);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

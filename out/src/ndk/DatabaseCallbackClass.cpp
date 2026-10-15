@@ -289,10 +289,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
 
 /* ndk::DatabaseCallbackClass::DatabaseCallbackClass() */
 
-void ndk::DatabaseCallbackClass::DatabaseCallbackClass(undefined8 *param_1)
+void ndk::DatabaseCallbackClass::DatabaseCallbackClass()
 
 {
-  *param_1 = 0;
+  *this = 0;
   return;
 }
 

@@ -11,7 +11,8 @@
    WaterConcept::InteractiveObject::MoveEase, bool, bool) */
 
 void WaterConcept::StarSeed::addTeleport
-               (Walaber::Vector2 const& param_1,float param_2,float param_3,WaterConcept::InteractiveObject::MoveEase param_4,bool param_5,bool param_6)
+               (undefined4 param_1,undefined4 param_2,long param_3,undefined4 *param_4,
+               undefined4 param_5,byte param_6,byte param_7)
 
 {
   long lVar1;
@@ -28,25 +29,25 @@ void WaterConcept::StarSeed::addTeleport
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  bStack_2c = param_5 & 1;
-  bStack_2b = param_6 & 1;
-  uStack_40 = *param_3;
-  uStack_3c = param_3[1];
-  uStack_34 = (undefined2)param_1;
-  uStack_32 = (undefined2)((uint)param_1 >> 0x10);
-  puVar2 = *(undefined4 **)(param_2 + 0x5b8);
-  uStack_38 = this;
-  uStack_30 = param_4;
-  if (puVar2 < *(undefined4 **)(param_2 + 0x5c0)) {
+  bStack_2c = param_6 & 1;
+  bStack_2b = param_7 & 1;
+  uStack_40 = *param_4;
+  uStack_3c = param_4[1];
+  uStack_34 = (undefined2)param_2;
+  uStack_32 = (undefined2)((uint)param_2 >> 0x10);
+  puVar2 = *(undefined4 **)(param_3 + 0x5b8);
+  uStack_38 = param_1;
+  uStack_30 = param_5;
+  if (puVar2 < *(undefined4 **)(param_3 + 0x5c0)) {
     *puVar2 = uStack_40;
     puVar2[1] = uStack_3c;
     *(ulong *)((long)puVar2 + 0xe) =
-         CONCAT17(param_6,CONCAT16(param_5,CONCAT42(param_4,uStack_32))) & 0x101ffffffffffff;
-    *(ulong *)(puVar2 + 2) = CONCAT26(uStack_32,CONCAT24(uStack_34,this));
-    *(long *)(param_2 + 0x5b8) = *(long *)(param_2 + 0x5b8) + 0x18;
+         CONCAT17(param_7,CONCAT16(param_6,CONCAT42(param_5,uStack_32))) & 0x101ffffffffffff;
+    *(ulong *)(puVar2 + 2) = CONCAT26(uStack_32,CONCAT24(uStack_34,param_1));
+    *(long *)(param_3 + 0x5b8) = *(long *)(param_3 + 0x5b8) + 0x18;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(param_2 + 0x5b0,&uStack_40);
+    void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(param_3 + 0x5b0,&uStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -420,30 +421,30 @@ void WaterConcept::StarSeed::_gotSE(void *p0)
 
 /* WaterConcept::StarSeed::~StarSeed() */
 
-void WaterConcept::StarSeed::~StarSeed(undefined8 *param_1)
+void WaterConcept::StarSeed::~StarSeed()
 
 {
   void *p0;
   
-  *param_1 = &PTR__StarSeed_00712018;
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0xc2);
-  p0 = (void *)param_1[0xb6];
+  *this = &PTR__StarSeed_00712018;
+  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0xc2);
+  p0 = (void *)this[0xb6];
   if (p0 != (void *)0x0) {
-    param_1[0xb7] = p0;
+    this[0xb7] = p0;
     operator delete(p0);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x98);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x96);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x94);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x92);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x85);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x83);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x81);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x7f);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x7d);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x7a);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x78);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x98);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x96);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x94);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x92);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x85);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x83);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x81);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x7f);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x7d);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x7a);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x78);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

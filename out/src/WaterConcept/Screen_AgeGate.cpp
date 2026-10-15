@@ -9,30 +9,30 @@
 
 /* WaterConcept::Screen_AgeGate::Screen_AgeGate() */
 
-void WaterConcept::Screen_AgeGate::Screen_AgeGate(undefined8 *param_1)
+void WaterConcept::Screen_AgeGate::Screen_AgeGate()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x28);
+  WaterConcept::WCScreen::WCScreen(this,0x28);
                     /* try { // try from 004a4d58 to 004a4d63 has its CatchHandler @ 004a4df8 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined1 *)((long)param_1 + 0x9c) = 0;
-  *param_1 = &PTR__Screen_AgeGate_00712c48;
-  param_1[4] = &PTR_handleEvent_00712d00;
-  param_1[0x12] = &PTR__Screen_AgeGate_00712d20;
-  param_1[0x16] = 0;
-  *(undefined2 *)((long)param_1 + 0xc9) = 0x100;
-  *(undefined2 *)(param_1 + 0x15) = 0;
-  *(undefined4 *)((long)param_1 + 0xc4) = 0;
-  *(undefined1 *)(param_1 + 0x19) = 0;
-  param_1[0x17] = 0;
-  *(undefined1 *)(param_1 + 0x18) = 0;
-  param_1[0x14] = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined1 *)((long)this + 0x9c) = 0;
+  *this = &PTR__Screen_AgeGate_00712c48;
+  this[4] = &PTR_handleEvent_00712d00;
+  this[0x12] = &PTR__Screen_AgeGate_00712d20;
+  this[0x16] = 0;
+  *(undefined2 *)((long)this + 0xc9) = 0x100;
+  *(undefined2 *)(this + 0x15) = 0;
+  *(undefined4 *)((long)this + 0xc4) = 0;
+  *(undefined1 *)(this + 0x19) = 0;
+  this[0x17] = 0;
+  *(undefined1 *)(this + 0x18) = 0;
+  this[0x14] = 0;
                     /* try { // try from 004a4dc0 to 004a4dc3 has its CatchHandler @ 004a4de0 */
-  Walaber::PropertyList::PropertyList(param_1 + 0x1a);
-  *(undefined4 *)((long)param_1 + 0xfc) = 0;
-  *(undefined2 *)(param_1 + 0x20) = 0;
-  param_1[0x1d] = 0;
-  param_1[0x1e] = 0;
+  Walaber::PropertyList::PropertyList(this + 0x1a);
+  *(undefined4 *)((long)this + 0xfc) = 0;
+  *(undefined2 *)(this + 0x20) = 0;
+  this[0x1d] = 0;
+  this[0x1e] = 0;
   return;
 }
 
@@ -44,16 +44,16 @@ void WaterConcept::Screen_AgeGate::Screen_AgeGate(undefined8 *param_1)
 
 /* WaterConcept::Screen_AgeGate::~Screen_AgeGate() */
 
-void WaterConcept::Screen_AgeGate::~Screen_AgeGate(undefined8 *param_1)
+void WaterConcept::Screen_AgeGate::~Screen_AgeGate()
 
 {
-  *param_1 = &PTR__Screen_AgeGate_00712c48;
-  param_1[4] = &PTR_handleEvent_00712d00;
-  param_1[0x12] = &PTR__Screen_AgeGate_00712d20;
-  Walaber::PropertyList::~PropertyList(param_1 + 0x1a);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x16);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_AgeGate_00712c48;
+  this[4] = &PTR_handleEvent_00712d00;
+  this[0x12] = &PTR__Screen_AgeGate_00712d20;
+  Walaber::PropertyList::~PropertyList(this + 0x1a);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x16);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 
@@ -81,7 +81,7 @@ void WaterConcept::Screen_AgeGate::~Screen_AgeGate(void *param_1)
 
 /* WaterConcept::Screen_AgeGate::enter() */
 
-void WaterConcept::Screen_AgeGate::enter(undefined *param_1)
+void WaterConcept::Screen_AgeGate::enter()
 
 {
   long lVar1;
@@ -183,7 +183,7 @@ void WaterConcept::Screen_AgeGate::enter(undefined *param_1)
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(apcStack_50);
   ppuVar7 = (undefined **)operator new(0x28);
-  ppuVar7[2] = param_1;
+  ppuVar7[2] = this;
   *ppuVar7 = (undefined *)&PTR__Callback_00712d88;
   ppuVar7[1] = (undefined *)0x0;
   ppuVar7[4] = (undefined *)0x0;
@@ -230,15 +230,15 @@ void WaterConcept::Screen_AgeGate::enter(undefined *param_1)
     *piStack_b8 = *piStack_b8 + 1;
   }
                     /* try { // try from 004a5124 to 004a5133 has its CatchHandler @ 004a51f8 */
-  Walaber::CurveManager::getCurve(uVar6,param_1 + 0xb0,&ppuStack_60,&lStack_c0);
+  Walaber::CurveManager::getCurve(uVar6,this + 0xb0,&ppuStack_60,&lStack_c0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_c0);
   if (((ulong)ppuStack_60 & 1) != 0) {
     operator delete(apcStack_50[0]);
   }
-  *(undefined4 *)(param_1 + 0xf8) = 0;
+  *(undefined4 *)(this + 0xf8) = 0;
                     /* try { // try from 004a5150 to 004a5157 has its CatchHandler @ 004a525c */
-  WaterConcept::Screen_AgeGate::_buildUI(param_1);
-  if (param_1[0x100] == '\0') {
+  WaterConcept::Screen_AgeGate::_buildUI(this);
+  if (this[0x100] == '\0') {
                     /* try { // try from 004a5160 to 004a51bb has its CatchHandler @ 004a51f4 */
     lVar9 = Walaber::SoundManager::getInstancePtr();
     if (*(int *)(lVar9 + 0xf0) == 1) {

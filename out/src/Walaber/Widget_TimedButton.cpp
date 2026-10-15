@@ -73,7 +73,8 @@ void Walaber::Widget_TimedButton::init(long param_1)
    Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float) */
 
 void Walaber::Widget_TimedButton::Widget_TimedButton
-               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,Walaber::SharedPtr<Walaber::Texture> param_5,float param_6)
+               (undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
+               undefined8 *param_5,long *param_6,long *param_7)
 
 {
   long lVar1;
@@ -87,48 +88,48 @@ void Walaber::Widget_TimedButton::Widget_TimedButton
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = *param_3;
-  uStack_58 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,2,&uStack_50,&uStack_58,1,1);
-  *param_1 = &PTR__Widget_TimedButton_0070fdd8;
-  lVar3 = *param_5;
-  param_1[0x20] = lVar3;
-  piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
-  if (lVar3 != 0) {
-    *piVar2 = *piVar2 + 1;
-  }
+  uStack_50 = *param_4;
+  uStack_58 = *param_5;
+  Walaber::Widget::Widget(param_2,param_3,2,&uStack_50,&uStack_58,1,1);
+  *param_2 = &PTR__Widget_TimedButton_0070fdd8;
   lVar3 = *param_6;
-  param_1[0x22] = lVar3;
+  param_2[0x20] = lVar3;
   piVar2 = (int *)param_6[1];
-  param_1[0x23] = piVar2;
+  param_2[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)(param_1 + 0x29) = this;
-  *(undefined2 *)(param_1 + 0x28) = 0;
-  *(undefined4 *)((long)param_1 + 0x144) = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  *(undefined8 *)((long)param_1 + 0x14c) = 0x7f26727f99000000;
-  *(undefined1 *)(param_1 + 0x2b) = 0;
-  lVar3 = *param_5;
-  if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
-    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
-    uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = uVar4;
-    param_1[0x25] =
-         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
-                  (float)uVar5 - (float)uVar4);
+  lVar3 = *param_7;
+  param_2[0x22] = lVar3;
+  piVar2 = (int *)param_7[1];
+  param_2[0x23] = piVar2;
+  if (lVar3 != 0) {
+    *piVar2 = *piVar2 + 1;
   }
+  *(undefined4 *)(param_2 + 0x29) = param_1;
+  *(undefined2 *)(param_2 + 0x28) = 0;
+  *(undefined4 *)((long)param_2 + 0x144) = 0;
+  param_2[0x25] = 0;
+  param_2[0x24] = 0;
+  param_2[0x27] = 0;
+  param_2[0x26] = 0;
+  *(undefined8 *)((long)param_2 + 0x14c) = 0x7f26727f99000000;
+  *(undefined1 *)(param_2 + 0x2b) = 0;
   lVar3 = *param_6;
   if ((lVar3 != 0) && (*(int *)param_6[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x26] = uVar4;
-    param_1[0x27] =
+    param_2[0x24] = uVar4;
+    param_2[0x25] =
+         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
+                  (float)uVar5 - (float)uVar4);
+  }
+  lVar3 = *param_7;
+  if ((lVar3 != 0) && (*(int *)param_7[1] != 0)) {
+    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
+    uVar5 = *(undefined8 *)(lVar3 + 0x84);
+    param_2[0x26] = uVar4;
+    param_2[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
@@ -147,13 +148,13 @@ void Walaber::Widget_TimedButton::Widget_TimedButton
 
 /* Walaber::Widget_TimedButton::~Widget_TimedButton() */
 
-void Walaber::Widget_TimedButton::~Widget_TimedButton(undefined8 *param_1)
+void Walaber::Widget_TimedButton::~Widget_TimedButton()
 
 {
-  *param_1 = &PTR__Widget_TimedButton_0070fdd8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
+  *this = &PTR__Widget_TimedButton_0070fdd8;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

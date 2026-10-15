@@ -11,21 +11,21 @@
    >::vector(std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int> > const&) */
 
 void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::vector
-               (std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>> const& param_1)
+               (undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if (param_1[1] - *param_1 != 0) {
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if (param_2[1] - *param_2 != 0) {
                     /* try { // try from 003f167c to 003f167f has its CatchHandler @ 003f16b4 */
-    std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__vallocate(this,param_1[1] - *param_1 >> 2);
-    lVar1 = param_1[1] - *param_1;
+    std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>>::__vallocate(param_1,param_2[1] - *param_2 >> 2);
+    lVar1 = param_2[1] - *param_2;
     if (0 < lVar1) {
-      memcpy(this[1],*param_1,lVar1);
-      this[1] = this[1] + lVar1;
+      memcpy(param_1[1],*param_2,lVar1);
+      param_1[1] = param_1[1] + lVar1;
     }
   }
   return;

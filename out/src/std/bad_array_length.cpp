@@ -9,10 +9,10 @@
 
 /* std::bad_array_length::bad_array_length() */
 
-void std::bad_array_length::bad_array_length(undefined8 *param_1)
+void std::bad_array_length::bad_array_length()
 
 {
-  *param_1 = &PTR__bad_exception_0071a0a0;
+  *this = &PTR__bad_exception_0071a0a0;
   return;
 }
 

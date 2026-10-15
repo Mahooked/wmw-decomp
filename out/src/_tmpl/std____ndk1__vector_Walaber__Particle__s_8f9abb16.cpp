@@ -108,7 +108,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
 
 undefined8 *
 std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::insert
-          (std::__ndk1::__wrap_iter<Walaber::Particle const*> param_1,unsigned long param_2,Walaber::Particle const& param_3)
+          (long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
 
 {
   long lVar1;
@@ -131,26 +131,26 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  if (param_2 != 0) {
-    lVar5 = this[1];
-    if ((ulong)((this[2] - lVar5 >> 2) * 0x34f72c234f72c235) < param_2) {
-      lVar7 = *this;
-      uVar6 = param_2 + (lVar5 - lVar7 >> 2) * 0x34f72c234f72c235;
+  if (param_3 != 0) {
+    lVar5 = param_1[1];
+    if ((ulong)((param_1[2] - lVar5 >> 2) * 0x34f72c234f72c235) < param_3) {
+      lVar7 = *param_1;
+      uVar6 = param_3 + (lVar5 - lVar7 >> 2) * 0x34f72c234f72c235;
       if (0x234f72c234f72c2 < uVar6) {
-        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
         return puVar2;
       }
-      lVar5 = this[2] - lVar7 >> 2;
+      lVar5 = param_1[2] - lVar7 >> 2;
       uVar3 = 0x234f72c234f72c2;
       if (((ulong)(lVar5 * 0x34f72c234f72c235) < 0x11a7b9611a7b961) &&
          (uVar4 = lVar5 * 0x69ee58469ee5846a, uVar3 = uVar6, uVar6 <= uVar4)) {
         uVar3 = uVar4;
       }
-      std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__split_buffer(&pvStack_90,uVar3,((long)param_1 - lVar7 >> 2) * 0x34f72c234f72c235,
-                      this + 2);
+      std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__split_buffer(&pvStack_90,uVar3,((long)param_2 - lVar7 >> 2) * 0x34f72c234f72c235,
+                      param_1 + 2);
                     /* try { // try from 00393c2c to 00393c4b has its CatchHandler @ 00393e20 */
-      std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__construct_at_end(&pvStack_90,param_2,param_3);
-      param_1 = (undefined8 *)std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>::__swap_out_circular_buffer(this,&pvStack_90,param_1);
+      std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>::__construct_at_end(&pvStack_90,param_3,param_4);
+      param_2 = (undefined8 *)std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>::__swap_out_circular_buffer(param_1,&pvStack_90,param_2);
       if (lStack_80 != lStack_88) {
         lStack_80 = lStack_80 +
                     ((ulong)((lStack_80 + -0x74) - lStack_88) / 0x74 ^ 0xffffffffffffffff) * 0x74;
@@ -160,43 +160,43 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
       }
     }
     else {
-      uVar6 = (lVar5 - (long)param_1 >> 2) * 0x34f72c234f72c235;
-      lVar7 = uVar6 - param_2;
-      if (uVar6 < param_2) {
+      uVar6 = (lVar5 - (long)param_2 >> 2) * 0x34f72c234f72c235;
+      lVar7 = uVar6 - param_3;
+      if (uVar6 < param_3) {
         lVar10 = lVar5;
         do {
-          Walaber::BaseParticle::BaseParticle(lVar10,param_3);
+          Walaber::BaseParticle::BaseParticle(lVar10,param_4);
           lVar7 = lVar7 + 1;
-          *(undefined8 *)(lVar10 + 0x38) = param_3[7];
-          *(undefined8 *)(lVar10 + 0x40) = param_3[8];
-          *(undefined8 *)(lVar10 + 0x48) = param_3[9];
-          uVar11 = param_3[0xb];
-          uVar9 = param_3[10];
-          uVar13 = param_3[0xd];
-          uVar12 = param_3[0xc];
-          *(undefined2 *)(lVar10 + 0x70) = *(undefined2 *)(param_3 + 0xe);
+          *(undefined8 *)(lVar10 + 0x38) = param_4[7];
+          *(undefined8 *)(lVar10 + 0x40) = param_4[8];
+          *(undefined8 *)(lVar10 + 0x48) = param_4[9];
+          uVar11 = param_4[0xb];
+          uVar9 = param_4[10];
+          uVar13 = param_4[0xd];
+          uVar12 = param_4[0xc];
+          *(undefined2 *)(lVar10 + 0x70) = *(undefined2 *)(param_4 + 0xe);
           *(undefined8 *)(lVar10 + 0x58) = uVar11;
           *(undefined8 *)(lVar10 + 0x50) = uVar9;
           *(undefined8 *)(lVar10 + 0x68) = uVar13;
           *(undefined8 *)(lVar10 + 0x60) = uVar12;
-          lVar10 = this[1] + 0x74;
-          this[1] = lVar10;
+          lVar10 = param_1[1] + 0x74;
+          param_1[1] = lVar10;
         } while (lVar7 != 0);
-        if (lVar5 - (long)param_1 == 0) goto LAB_00393de0;
+        if (lVar5 - (long)param_2 == 0) goto LAB_00393de0;
       }
-      std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>::__move_range(this,param_1,lVar5,(long)param_1 + param_2 * 0x74);
-      puVar2 = param_3;
-      if ((param_1 <= param_3) &&
-         (puVar2 = (undefined8 *)((long)param_3 + param_2 * 0x74),
-         (undefined8 *)this[1] <= param_3)) {
-        puVar2 = param_3;
+      std::__ndk1::vector<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>>::__move_range(param_1,param_2,lVar5,(long)param_2 + param_3 * 0x74);
+      puVar2 = param_4;
+      if ((param_2 <= param_4) &&
+         (puVar2 = (undefined8 *)((long)param_4 + param_3 * 0x74),
+         (undefined8 *)param_1[1] <= param_4)) {
+        puVar2 = param_4;
       }
-      param_2 = ~param_2;
-      if (param_2 < ~uVar6) {
-        param_2 = ~uVar6;
+      param_3 = ~param_3;
+      if (param_3 < ~uVar6) {
+        param_3 = ~uVar6;
       }
-      lVar5 = param_2 + 1;
-      puVar8 = param_1;
+      lVar5 = param_3 + 1;
+      puVar8 = param_2;
       do {
         lVar5 = lVar5 + 1;
         *puVar8 = *puVar2;
@@ -228,7 +228,7 @@ LAB_00393de0:
     puVar2 = (undefined8 *)__stack_chk_fail();
     return puVar2;
   }
-  return param_1;
+  return param_2;
 }
 
 
@@ -320,7 +320,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
    std::__ndk1::allocator<Walaber::Particle>&>&, Walaber::Particle*) */
 
 long std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Particle, std::__ndk1::allocator<Walaber::Particle>&>& param_1,Walaber::Particle *param_2)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   undefined2 *puVar1;
@@ -333,10 +333,10 @@ long std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
   undefined8 uVar8;
   undefined8 uVar9;
   
-  lVar4 = *this;
-  lVar2 = param_1[1];
+  lVar4 = *param_1;
+  lVar2 = param_2[1];
   lVar3 = lVar2;
-  lVar5 = param_2;
+  lVar5 = param_3;
   while (lVar4 != lVar5) {
     Walaber::BaseParticle::BaseParticle(lVar3 + -0x74,lVar5 + -0x74);
     *(undefined8 *)(lVar3 + -0x3c) = *(undefined8 *)(lVar5 + -0x3c);
@@ -351,44 +351,44 @@ long std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
     *(undefined8 *)(lVar3 + -0x14) = uVar6;
     *(undefined8 *)(lVar3 + -0x1c) = uVar9;
     *(undefined8 *)(lVar3 + -0x24) = uVar8;
-    lVar3 = param_1[1] + -0x74;
-    param_1[1] = lVar3;
+    lVar3 = param_2[1] + -0x74;
+    param_2[1] = lVar3;
     lVar5 = lVar5 + -0x74;
   }
-  lVar5 = this[1];
-  if (lVar5 != param_2) {
-    lVar3 = param_1[2];
+  lVar5 = param_1[1];
+  if (lVar5 != param_3) {
+    lVar3 = param_2[2];
     do {
-      Walaber::BaseParticle::BaseParticle(lVar3,param_2);
-      *(undefined8 *)(lVar3 + 0x38) = *(undefined8 *)(param_2 + 0x38);
-      *(undefined8 *)(lVar3 + 0x40) = *(undefined8 *)(param_2 + 0x40);
-      *(undefined8 *)(lVar3 + 0x48) = *(undefined8 *)(param_2 + 0x48);
-      puVar1 = (undefined2 *)(param_2 + 0x70);
-      uVar7 = *(undefined8 *)(param_2 + 0x58);
-      uVar6 = *(undefined8 *)(param_2 + 0x50);
-      uVar9 = *(undefined8 *)(param_2 + 0x68);
-      uVar8 = *(undefined8 *)(param_2 + 0x60);
-      param_2 = param_2 + 0x74;
+      Walaber::BaseParticle::BaseParticle(lVar3,param_3);
+      *(undefined8 *)(lVar3 + 0x38) = *(undefined8 *)(param_3 + 0x38);
+      *(undefined8 *)(lVar3 + 0x40) = *(undefined8 *)(param_3 + 0x40);
+      *(undefined8 *)(lVar3 + 0x48) = *(undefined8 *)(param_3 + 0x48);
+      puVar1 = (undefined2 *)(param_3 + 0x70);
+      uVar7 = *(undefined8 *)(param_3 + 0x58);
+      uVar6 = *(undefined8 *)(param_3 + 0x50);
+      uVar9 = *(undefined8 *)(param_3 + 0x68);
+      uVar8 = *(undefined8 *)(param_3 + 0x60);
+      param_3 = param_3 + 0x74;
       *(undefined2 *)(lVar3 + 0x70) = *puVar1;
       *(undefined8 *)(lVar3 + 0x58) = uVar7;
       *(undefined8 *)(lVar3 + 0x50) = uVar6;
       *(undefined8 *)(lVar3 + 0x68) = uVar9;
       *(undefined8 *)(lVar3 + 0x60) = uVar8;
-      lVar3 = param_1[2] + 0x74;
-      param_1[2] = lVar3;
-    } while (param_2 != lVar5);
-    lVar3 = param_1[1];
+      lVar3 = param_2[2] + 0x74;
+      param_2[2] = lVar3;
+    } while (param_3 != lVar5);
+    lVar3 = param_2[1];
   }
-  lVar5 = *this;
-  *this = lVar3;
-  param_1[1] = lVar5;
-  lVar3 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar3;
-  lVar3 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar3;
-  *param_1 = param_1[1];
+  lVar5 = *param_1;
+  *param_1 = lVar3;
+  param_2[1] = lVar5;
+  lVar3 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar3;
+  lVar3 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar3;
+  *param_2 = param_2[1];
   return lVar2;
 }
 

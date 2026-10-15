@@ -12,7 +12,7 @@
 
 void std::__ndk1::
      __vector_base<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   void *pvVar1;
@@ -20,11 +20,11 @@ void std::__ndk1::
   void *pvVar3;
   void *pvVar4;
   
-  pvVar3 = (void *)*param_1;
+  pvVar3 = (void *)*this;
   if (pvVar3 != (void *)0x0) {
     pvVar1 = pvVar3;
-    pvVar2 = (void *)param_1[1];
-    if ((void *)param_1[1] != pvVar3) {
+    pvVar2 = (void *)this[1];
+    if ((void *)this[1] != pvVar3) {
       do {
         pvVar1 = *(void **)((long)pvVar2 + -0x18);
         pvVar4 = (void *)((long)pvVar2 + -0x20);
@@ -34,9 +34,9 @@ void std::__ndk1::
         }
         pvVar2 = pvVar4;
       } while (pvVar3 != pvVar4);
-      pvVar1 = (void *)*param_1;
+      pvVar1 = (void *)*this;
     }
-    param_1[1] = pvVar3;
+    this[1] = pvVar3;
     operator delete(pvVar1);
     return;
   }

@@ -61,7 +61,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>&>
-     ::~__split_buffer(undefined8 *param_1)
+     ::~__split_buffer()
 
 {
   long lVar1;
@@ -69,22 +69,22 @@ void std::__ndk1::
   void *p0;
   long lVar3;
   
-  lVar1 = param_1[1];
-  lVar2 = param_1[2];
+  lVar1 = this[1];
+  lVar2 = this[2];
   while (lVar3 = lVar2, lVar3 != lVar1) {
-    param_1[2] = lVar3 + -0x18;
+    this[2] = lVar3 + -0x18;
     p0 = *(void **)(lVar3 + -0x18);
     lVar2 = lVar3 + -0x18;
     if (p0 != (void *)0x0) {
       *(void **)(lVar3 + -0x10) = p0;
       operator delete(p0);
-      lVar2 = param_1[2];
+      lVar2 = this[2];
     }
   }
-  if ((void *)*param_1 == (void *)0x0) {
+  if ((void *)*this == (void *)0x0) {
     return;
   }
-  operator delete((void *)*param_1);
+  operator delete((void *)*this);
   return;
 }
 

@@ -140,7 +140,7 @@ LAB_003f9cc0:
 /* Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-void Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
+void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -150,9 +150,9 @@ void Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
                     /* try { // try from 003f9d84 to 003f9d8f has its CatchHandler @ 003f9dc4 */
-  Walaber::TextManager::getString(this,abStack_40,mCurrentLanguage);
+  Walaber::TextManager::getString(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -414,7 +414,7 @@ LAB_003fa010:
 /* Walaber::TextManager::getSubtitle(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-void Walaber::TextManager::getSubtitle(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
+void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -424,9 +424,9 @@ void Walaber::TextManager::getSubtitle(std::__ndk1::basic_string<char, std::__nd
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
                     /* try { // try from 003fa150 to 003fa15b has its CatchHandler @ 003fa190 */
-  Walaber::TextManager::getSubtitle(this,abStack_40,mCurrentLanguage);
+  Walaber::TextManager::getSubtitle(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }

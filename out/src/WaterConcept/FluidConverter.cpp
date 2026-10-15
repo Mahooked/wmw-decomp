@@ -218,24 +218,24 @@ void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,W
 
 /* WaterConcept::FluidConverter::~FluidConverter() */
 
-void WaterConcept::FluidConverter::~FluidConverter(undefined8 *param_1)
+void WaterConcept::FluidConverter::~FluidConverter()
 
 {
   void *p0;
   long lVar1;
   
   lVar1 = 0;
-  *param_1 = &PTR__FluidConverter_00711ad8;
+  *this = &PTR__FluidConverter_00711ad8;
   do {
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)param_1 + lVar1 + 0x420);
+    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)this + lVar1 + 0x420);
     lVar1 = lVar1 + -0x10;
   } while (lVar1 != -0x60);
-  p0 = (void *)param_1[0x76];
+  p0 = (void *)this[0x76];
   if (p0 != (void *)0x0) {
-    param_1[0x77] = p0;
+    this[0x77] = p0;
     operator delete(p0);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

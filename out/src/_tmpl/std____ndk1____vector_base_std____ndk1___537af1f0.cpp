@@ -16,7 +16,7 @@
 
 void std::__ndk1::
      __vector_base<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   undefined8 *puVar1;
@@ -24,11 +24,11 @@ void std::__ndk1::
   void *pvVar2;
   void *pvVar3;
   
-  pvVar3 = (void *)*param_1;
+  pvVar3 = (void *)*this;
   if (pvVar3 == (void *)0x0) {
     return;
   }
-  pvVar2 = (void *)param_1[1];
+  pvVar2 = (void *)this[1];
   p0 = pvVar3;
   if (pvVar2 != pvVar3) {
     do {
@@ -36,9 +36,9 @@ void std::__ndk1::
       pvVar2 = (void *)((long)pvVar2 + -0x18);
       std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::destroy(pvVar2,*puVar1);
     } while (pvVar3 != pvVar2);
-    p0 = (void *)*param_1;
+    p0 = (void *)*this;
   }
-  param_1[1] = pvVar3;
+  this[1] = pvVar3;
   operator delete(p0);
   return;
 }

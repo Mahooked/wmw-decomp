@@ -9,18 +9,18 @@
 
 /* WaterConcept::Screen_Sunset::Screen_Sunset() */
 
-void WaterConcept::Screen_Sunset::Screen_Sunset(undefined8 *param_1)
+void WaterConcept::Screen_Sunset::Screen_Sunset()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x26);
+  WaterConcept::WCScreen::WCScreen(this,0x26);
                     /* try { // try from 00565510 to 0056551b has its CatchHandler @ 00565568 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *param_1 = &PTR__Screen_Sunset_00715a18;
-  param_1[4] = &PTR_handleEvent_00715ad0;
-  param_1[0x12] = &PTR__Screen_Sunset_00715af0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *this = &PTR__Screen_Sunset_00715a18;
+  this[4] = &PTR_handleEvent_00715ad0;
+  this[0x12] = &PTR__Screen_Sunset_00715af0;
                     /* try { // try from 00565540 to 00565543 has its CatchHandler @ 00565558 */
-  Walaber::PropertyList::PropertyList(param_1 + 0x14);
-  *(undefined2 *)(param_1 + 0x17) = 0;
+  Walaber::PropertyList::PropertyList(this + 0x14);
+  *(undefined2 *)(this + 0x17) = 0;
   return;
 }
 
@@ -32,15 +32,15 @@ void WaterConcept::Screen_Sunset::Screen_Sunset(undefined8 *param_1)
 
 /* WaterConcept::Screen_Sunset::~Screen_Sunset() */
 
-void WaterConcept::Screen_Sunset::~Screen_Sunset(undefined8 *param_1)
+void WaterConcept::Screen_Sunset::~Screen_Sunset()
 
 {
-  *param_1 = &PTR__Screen_Sunset_00715a18;
-  param_1[4] = &PTR_handleEvent_00715ad0;
-  param_1[0x12] = &PTR__Screen_Sunset_00715af0;
-  Walaber::PropertyList::~PropertyList(param_1 + 0x14);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_Sunset_00715a18;
+  this[4] = &PTR_handleEvent_00715ad0;
+  this[0x12] = &PTR__Screen_Sunset_00715af0;
+  Walaber::PropertyList::~PropertyList(this + 0x14);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 
@@ -68,7 +68,7 @@ void WaterConcept::Screen_Sunset::~Screen_Sunset(void *param_1)
 
 /* WaterConcept::Screen_Sunset::enter() */
 
-void WaterConcept::Screen_Sunset::enter(undefined8 param_1)
+void WaterConcept::Screen_Sunset::enter()
 
 {
   long lVar1;
@@ -231,7 +231,7 @@ void WaterConcept::Screen_Sunset::enter(undefined8 param_1)
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  WaterConcept::Screen_Sunset::_buildUI(param_1);
+  WaterConcept::Screen_Sunset::_buildUI(this);
   uVar3 = Walaber::SoundManager::getInstancePtr();
   iVar2 = Walaber::SoundManager::getCurrentMusicTrack();
   if ((iVar2 != 1) || (uVar4 = Walaber::SoundManager::isMusicPlaying(uVar3), (uVar4 & 1) == 0)) {

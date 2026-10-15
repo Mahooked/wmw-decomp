@@ -44,12 +44,12 @@ void Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vec
 
 /* Walaber::Widget_Group::~Widget_Group() */
 
-void Walaber::Widget_Group::~Widget_Group(undefined8 *param_1)
+void Walaber::Widget_Group::~Widget_Group()
 
 {
-  *param_1 = &PTR__Widget_Group_0070efc8;
-  std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(param_1 + 0x21,param_1[0x22]);
-  Walaber::Widget::~Widget(param_1);
+  *this = &PTR__Widget_Group_0070efc8;
+  std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
+  Walaber::Widget::~Widget(this);
   return;
 }
 
@@ -61,13 +61,13 @@ void Walaber::Widget_Group::~Widget_Group(undefined8 *param_1)
 
 /* Walaber::Widget_Group::~Widget_Group() */
 
-void Walaber::Widget_Group::~Widget_Group(undefined8 *param_1)
+void Walaber::Widget_Group::~Widget_Group()
 
 {
-  *param_1 = &PTR__Widget_Group_0070efc8;
-  std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(param_1 + 0x21,param_1[0x22]);
-  Walaber::Widget::~Widget(param_1);
-  operator delete(param_1);
+  *this = &PTR__Widget_Group_0070efc8;
+  std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
+  Walaber::Widget::~Widget(this);
+  operator delete(this);
   return;
 }
 

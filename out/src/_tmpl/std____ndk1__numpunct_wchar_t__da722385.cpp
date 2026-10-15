@@ -31,15 +31,15 @@ void std::__ndk1::numpunct<wchar_t>::numpunct(ulong p0)
 
 /* std::__ndk1::numpunct<wchar_t>::~numpunct() */
 
-void std::__ndk1::numpunct<wchar_t>::~numpunct(undefined8 *param_1)
+void std::__ndk1::numpunct<wchar_t>::~numpunct()
 
 {
-  *param_1 = &PTR__numpunct_byname_00717978;
-  if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    operator delete((void *)param_1[5]);
+  *this = &PTR__numpunct_byname_00717978;
+  if ((*(byte *)(this + 3) & 1) != 0) {
+    operator delete((void *)this[5]);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
-  operator delete(param_1);
+  std::__ndk1::__shared_count::~__shared_count(this);
+  operator delete(this);
   return;
 }
 
@@ -94,13 +94,13 @@ void std::__ndk1::numpunct<wchar_t>::do_grouping(undefined8 param_1,long param_2
 
 /* std::__ndk1::numpunct<wchar_t>::do_truename() const */
 
-void std::__ndk1::numpunct<wchar_t>::do_truename(undefined8 *param_1)
+void std::__ndk1::numpunct<wchar_t>::do_truename()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(param_1,&DAT_006422f0,4);
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(this,&DAT_006422f0,4);
   return;
 }
 
@@ -112,13 +112,13 @@ void std::__ndk1::numpunct<wchar_t>::do_truename(undefined8 *param_1)
 
 /* std::__ndk1::numpunct<wchar_t>::do_falsename() const */
 
-void std::__ndk1::numpunct<wchar_t>::do_falsename(undefined8 *param_1)
+void std::__ndk1::numpunct<wchar_t>::do_falsename()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(param_1,L"false",5);
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(this,L"false",5);
   return;
 }
 

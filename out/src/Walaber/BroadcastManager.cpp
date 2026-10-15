@@ -107,12 +107,12 @@ void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0)
 
 /* Walaber::BroadcastManager::BroadcastManager() */
 
-void Walaber::BroadcastManager::BroadcastManager(undefined8 *param_1)
+void Walaber::BroadcastManager::BroadcastManager()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
                     /* try { // try from 003e86fc to 003e8713 has its CatchHandler @ 003e8720 */
   Walaber::Logger::printf("Walaber",1,"BroadcastManager::BroadcastManager()\n");
   return;
@@ -126,15 +126,15 @@ void Walaber::BroadcastManager::BroadcastManager(undefined8 *param_1)
 
 /* Walaber::BroadcastManager::~BroadcastManager() */
 
-void Walaber::BroadcastManager::~BroadcastManager(undefined8 *param_1)
+void Walaber::BroadcastManager::~BroadcastManager()
 
 {
   void *p0;
   
   mInstancePtr = 0;
-  p0 = (void *)*param_1;
+  p0 = (void *)*this;
   if (p0 != (void *)0x0) {
-    param_1[1] = p0;
+    this[1] = p0;
     operator delete(p0);
     return;
   }

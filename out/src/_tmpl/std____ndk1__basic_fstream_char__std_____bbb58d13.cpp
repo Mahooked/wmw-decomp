@@ -10,14 +10,14 @@
 /* std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char> >::~basic_fstream() */
 
 void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream
-               (undefined8 *param_1)
+               ()
 
 {
-  *param_1 = &PTR__basic_fstream_00710720;
-  param_1[0x18] = &PTR__basic_fstream_00710770;
-  param_1[2] = &PTR__basic_fstream_00710748;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(param_1 + 3);
-  std::__ndk1::ios_base::~ios_base(param_1 + 0x18);
+  *this = &PTR__basic_fstream_00710720;
+  this[0x18] = &PTR__basic_fstream_00710770;
+  this[2] = &PTR__basic_fstream_00710748;
+  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(this + 3);
+  std::__ndk1::ios_base::~ios_base(this + 0x18);
   return;
 }
 
@@ -30,15 +30,15 @@ void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fst
 /* std::__ndk1::basic_fstream<char, std::__ndk1::char_traits<char> >::~basic_fstream() */
 
 void std::__ndk1::basic_fstream<char,std::__ndk1::char_traits<char>>::~basic_fstream
-               (undefined8 *param_1)
+               ()
 
 {
-  *param_1 = &PTR__basic_fstream_00710720;
-  param_1[0x18] = &PTR__basic_fstream_00710770;
-  param_1[2] = &PTR__basic_fstream_00710748;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(param_1 + 3);
-  std::__ndk1::ios_base::~ios_base(param_1 + 0x18);
-  operator delete(param_1);
+  *this = &PTR__basic_fstream_00710720;
+  this[0x18] = &PTR__basic_fstream_00710770;
+  this[2] = &PTR__basic_fstream_00710748;
+  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(this + 3);
+  std::__ndk1::ios_base::~ios_base(this + 0x18);
+  operator delete(this);
   return;
 }
 

@@ -9,29 +9,29 @@
 
 /* Walaber::TweenedLinearCurve::TweenedLinearCurve() */
 
-void Walaber::TweenedLinearCurve::TweenedLinearCurve(undefined8 *param_1)
+void Walaber::TweenedLinearCurve::TweenedLinearCurve()
 
 {
   undefined8 uVar1;
   
-  param_1[2] = 4;
-  param_1[1] = 0;
-  *param_1 = &PTR__Curve_00710ab8;
+  this[2] = 4;
+  this[1] = 0;
+  *this = &PTR__Curve_00710ab8;
   uVar1 = operator new[](0x60);
-  param_1[4] = 0;
-  param_1[5] = 0;
-  param_1[3] = uVar1;
-  *param_1 = &PTR__TweenedLinearCurve_00710c68;
-  param_1[7] = 4;
-  param_1[6] = 0;
+  this[4] = 0;
+  this[5] = 0;
+  this[3] = uVar1;
+  *this = &PTR__TweenedLinearCurve_00710c68;
+  this[7] = 4;
+  this[6] = 0;
                     /* try { // try from 003e118c to 003e1193 has its CatchHandler @ 003e11f0 */
   uVar1 = operator new[](0x20);
-  param_1[8] = uVar1;
-  param_1[10] = 4;
-  param_1[9] = 0;
+  this[8] = uVar1;
+  this[10] = 4;
+  this[9] = 0;
                     /* try { // try from 003e11a4 to 003e11ab has its CatchHandler @ 003e11c8 */
   uVar1 = operator new[](0x20);
-  param_1[0xb] = uVar1;
+  this[0xb] = uVar1;
   return;
 }
 

@@ -728,7 +728,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
 /* Walaber::ScreenManager::commitScreenChanges(std::__ndk1::vector<unsigned int,
    std::__ndk1::allocator<unsigned int> >, float) */
 
-void Walaber::ScreenManager::commitScreenChanges(std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>> param_1,float param_2)
+void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_2)
 
 {
   long lVar1;
@@ -822,7 +822,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
    std::__ndk1::allocator<unsigned int> >, float, Walaber::PropertyList const&) */
 
 void Walaber::ScreenManager::commitScreenChanges
-               (std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>> param_1,float param_2,Walaber::PropertyList const& param_3)
+               (undefined8 param_1,long *param_2,undefined8 param_3)
 
 {
   long lVar1;

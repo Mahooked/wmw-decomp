@@ -51,19 +51,19 @@ void WaterConcept::DirtyWall::DirtyWall
 
 /* WaterConcept::DirtyWall::~DirtyWall() */
 
-void WaterConcept::DirtyWall::~DirtyWall(undefined8 *param_1)
+void WaterConcept::DirtyWall::~DirtyWall()
 
 {
   void *p0;
   
-  p0 = (void *)param_1[0x7b];
-  *param_1 = &PTR__DirtyWall_007117c8;
+  p0 = (void *)this[0x7b];
+  *this = &PTR__DirtyWall_007117c8;
   if (p0 != (void *)0x0) {
-    param_1[0x7c] = p0;
+    this[0x7c] = p0;
     operator delete(p0);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x76);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x76);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

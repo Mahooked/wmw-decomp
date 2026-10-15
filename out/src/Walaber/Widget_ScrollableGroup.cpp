@@ -173,19 +173,19 @@ void Walaber::Widget_ScrollableGroup::init(long param_1)
 
 /* Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup() */
 
-void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(undefined8 *param_1)
+void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup()
 
 {
   void *p0;
   
-  p0 = (void *)param_1[0x30];
-  param_1[0x22] = 0;
-  *param_1 = &PTR__Widget_ScrollableGroup_0070f928;
+  p0 = (void *)this[0x30];
+  this[0x22] = 0;
+  *this = &PTR__Widget_ScrollableGroup_0070f928;
   if (p0 != (void *)0x0) {
-    param_1[0x31] = p0;
+    this[0x31] = p0;
     operator delete(p0);
   }
-  Walaber::Widget::~Widget(param_1);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

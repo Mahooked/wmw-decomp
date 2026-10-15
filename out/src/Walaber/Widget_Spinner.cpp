@@ -69,7 +69,8 @@ void Walaber::Widget_Spinner::init(long param_1)
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_Spinner::Widget_Spinner
-               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4)
+               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
+               long *param_5)
 
 {
   long lVar1;
@@ -83,30 +84,30 @@ void Walaber::Widget_Spinner::Widget_Spinner
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = *param_2;
-  uStack_48 = *param_3;
-  Walaber::Widget::Widget(this,param_1,3,&uStack_40,&uStack_48,1,1);
-  *(undefined4 *)((long)this + 0xfc) = 0xff000000;
-  *this = &PTR__Widget_Spinner_0070fce8;
-  lVar3 = *param_4;
-  this[0x20] = lVar3;
-  piVar2 = (int *)param_4[1];
-  this[0x21] = piVar2;
+  uStack_40 = *param_3;
+  uStack_48 = *param_4;
+  Walaber::Widget::Widget(param_1,param_2,3,&uStack_40,&uStack_48,1,1);
+  *(undefined4 *)((long)param_1 + 0xfc) = 0xff000000;
+  *param_1 = &PTR__Widget_Spinner_0070fce8;
+  lVar3 = *param_5;
+  param_1[0x20] = lVar3;
+  piVar2 = (int *)param_5[1];
+  param_1[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)((long)this + 0xfc) = 0x7f26727f;
-  this[0x24] = 0x3f73333300000000;
-  this[0x23] = 0;
-  this[0x22] = 0;
-  this[0x25] = 0;
-  this[0x26] = 0;
-  lVar3 = *param_4;
-  if ((lVar3 != 0) && (*(int *)param_4[1] != 0)) {
+  *(undefined4 *)((long)param_1 + 0xfc) = 0x7f26727f;
+  param_1[0x24] = 0x3f73333300000000;
+  param_1[0x23] = 0;
+  param_1[0x22] = 0;
+  param_1[0x25] = 0;
+  param_1[0x26] = 0;
+  lVar3 = *param_5;
+  if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    this[0x22] = uVar4;
-    this[0x23] =
+    param_1[0x22] = uVar4;
+    param_1[0x23] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
@@ -125,12 +126,12 @@ void Walaber::Widget_Spinner::Widget_Spinner
 
 /* Walaber::Widget_Spinner::~Widget_Spinner() */
 
-void Walaber::Widget_Spinner::~Widget_Spinner(undefined8 *param_1)
+void Walaber::Widget_Spinner::~Widget_Spinner()
 
 {
-  *param_1 = &PTR__Widget_Spinner_0070fce8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
+  *this = &PTR__Widget_Spinner_0070fce8;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
   return;
 }
 
@@ -142,13 +143,13 @@ void Walaber::Widget_Spinner::~Widget_Spinner(undefined8 *param_1)
 
 /* Walaber::Widget_Spinner::~Widget_Spinner() */
 
-void Walaber::Widget_Spinner::~Widget_Spinner(undefined8 *param_1)
+void Walaber::Widget_Spinner::~Widget_Spinner()
 
 {
-  *param_1 = &PTR__Widget_Spinner_0070fce8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
-  operator delete(param_1);
+  *this = &PTR__Widget_Spinner_0070fce8;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
+  operator delete(this);
   return;
 }
 

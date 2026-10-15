@@ -247,7 +247,7 @@ long * std::__ndk1::
        __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::Property>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::Property>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::Property>>>
        ::
        __find_equal<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>
-                 (std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*>*& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+                 (long param_1,undefined8 *param_2,byte *param_3)
 
 {
   ulong uVar1;
@@ -261,18 +261,18 @@ long * std::__ndk1::
   long *plVar9;
   long *plVar10;
   
-  plVar8 = (long *)(this + 8);
+  plVar8 = (long *)(param_1 + 8);
   plVar9 = (long *)*plVar8;
   if (plVar9 == (long *)0x0) {
-    *param_1 = plVar8;
+    *param_2 = plVar8;
   }
   else {
-    uVar3 = *(ulong *)(param_2 + 8);
-    pbVar4 = *(byte **)(param_2 + 0x10);
-    plVar8 = (long *)(this + 8);
-    if ((*param_2 & 1) == 0) {
-      pbVar4 = param_2 + 1;
-      uVar3 = (ulong)(*param_2 >> 1);
+    uVar3 = *(ulong *)(param_3 + 8);
+    pbVar4 = *(byte **)(param_3 + 0x10);
+    plVar8 = (long *)(param_1 + 8);
+    if ((*param_3 & 1) == 0) {
+      pbVar4 = param_3 + 1;
+      uVar3 = (ulong)(*param_3 >> 1);
     }
     do {
       while( true ) {
@@ -304,7 +304,7 @@ LAB_003565d4:
         plVar8 = plVar10;
         plVar9 = (long *)*plVar10;
         if ((long *)*plVar10 == (long *)0x0) {
-          *param_1 = plVar10;
+          *param_2 = plVar10;
           return plVar10;
         }
       }
@@ -323,7 +323,7 @@ LAB_00356570:
       plVar9 = (long *)*plVar8;
     } while ((long *)*plVar8 != (long *)0x0);
 LAB_003565e8:
-    *param_1 = plVar10;
+    *param_2 = plVar10;
   }
   return plVar8;
 }

@@ -46,13 +46,13 @@ void WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__
 
 /* WaterConcept::AlgaeHider::~AlgaeHider() */
 
-void WaterConcept::AlgaeHider::~AlgaeHider(undefined8 *param_1)
+void WaterConcept::AlgaeHider::~AlgaeHider()
 
 {
-  *param_1 = &PTR__AlgaeHider_00711448;
-  std::__ndk1::__list_imp<WaterConcept::GridCell, std::__ndk1::allocator<WaterConcept::GridCell>>::clear(param_1 + 0x78);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x75);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  *this = &PTR__AlgaeHider_00711448;
+  std::__ndk1::__list_imp<WaterConcept::GridCell, std::__ndk1::allocator<WaterConcept::GridCell>>::clear(this + 0x78);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

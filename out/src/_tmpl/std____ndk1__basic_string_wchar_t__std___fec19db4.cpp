@@ -13,24 +13,24 @@
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     basic_string(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1)
+     basic_string(undefined8 *param_1,byte *param_2)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if ((*param_1 & 1) == 0) {
-    uVar2 = *(undefined8 *)(param_1 + 8);
-    uVar1 = *(undefined8 *)param_1;
-    this[2] = *(undefined8 *)(param_1 + 0x10);
-    this[1] = uVar2;
-    *this = uVar1;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if ((*param_2 & 1) == 0) {
+    uVar2 = *(undefined8 *)(param_2 + 8);
+    uVar1 = *(undefined8 *)param_2;
+    param_1[2] = *(undefined8 *)(param_2 + 0x10);
+    param_1[1] = uVar2;
+    *param_1 = uVar1;
     return;
   }
-  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(this,*(undefined8 *)(param_1 + 0x10),*(undefined8 *)(param_1 + 8));
+  std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(param_1,*(undefined8 *)(param_2 + 0x10),*(undefined8 *)(param_2 + 8));
   return;
 }
 
@@ -809,7 +809,7 @@ wchar_t * std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::append
-               (std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long param_2,unsigned long param_3)
+               (undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -817,21 +817,21 @@ void std::__ndk1::
   ulong uVar3;
   byte bVar4;
   
-  bVar4 = *param_1;
+  bVar4 = *param_2;
   uVar1 = (ulong)(bVar4 >> 1);
   if ((bVar4 & 1) != 0) {
-    uVar1 = *(ulong *)(param_1 + 8);
+    uVar1 = *(ulong *)(param_2 + 8);
   }
-  if (param_2 <= uVar1) {
-    pbVar2 = param_1 + 4;
+  if (param_3 <= uVar1) {
+    pbVar2 = param_2 + 4;
     if ((bVar4 & 1) != 0) {
-      pbVar2 = *(byte **)(param_1 + 0x10);
+      pbVar2 = *(byte **)(param_2 + 0x10);
     }
-    uVar3 = uVar1 - param_2;
-    if (param_3 <= uVar1 - param_2) {
-      uVar3 = param_3;
+    uVar3 = uVar1 - param_3;
+    if (param_4 <= uVar1 - param_3) {
+      uVar3 = param_4;
     }
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::append(this,pbVar2 + param_2 * 4,uVar3);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::append(param_1,pbVar2 + param_3 * 4,uVar3);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1003,7 +1003,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::assign
-               (std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long param_2,unsigned long param_3)
+               (undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1011,21 +1011,21 @@ void std::__ndk1::
   ulong uVar3;
   byte bVar4;
   
-  bVar4 = *param_1;
+  bVar4 = *param_2;
   uVar1 = (ulong)(bVar4 >> 1);
   if ((bVar4 & 1) != 0) {
-    uVar1 = *(ulong *)(param_1 + 8);
+    uVar1 = *(ulong *)(param_2 + 8);
   }
-  if (param_2 <= uVar1) {
-    pbVar2 = param_1 + 4;
+  if (param_3 <= uVar1) {
+    pbVar2 = param_2 + 4;
     if ((bVar4 & 1) != 0) {
-      pbVar2 = *(byte **)(param_1 + 0x10);
+      pbVar2 = *(byte **)(param_2 + 0x10);
     }
-    uVar3 = uVar1 - param_2;
-    if (param_3 <= uVar1 - param_2) {
-      uVar3 = param_3;
+    uVar3 = uVar1 - param_3;
+    if (param_4 <= uVar1 - param_3) {
+      uVar3 = param_4;
     }
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::assign(this,pbVar2 + param_2 * 4,uVar3);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::assign(param_1,pbVar2 + param_3 * 4,uVar3);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1182,7 +1182,7 @@ ulong std::__ndk1::
 
 void std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (unsigned long param_1,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_2,unsigned long param_3,unsigned long param_4)
+               (undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
 
 {
   ulong uVar1;
@@ -1190,21 +1190,21 @@ void std::__ndk1::
   ulong uVar3;
   byte bVar4;
   
-  bVar4 = *param_2;
+  bVar4 = *param_3;
   uVar1 = (ulong)(bVar4 >> 1);
   if ((bVar4 & 1) != 0) {
-    uVar1 = *(ulong *)(param_2 + 8);
+    uVar1 = *(ulong *)(param_3 + 8);
   }
-  if (param_3 <= uVar1) {
-    pbVar2 = param_2 + 4;
+  if (param_4 <= uVar1) {
+    pbVar2 = param_3 + 4;
     if ((bVar4 & 1) != 0) {
-      pbVar2 = *(byte **)(param_2 + 0x10);
+      pbVar2 = *(byte **)(param_3 + 0x10);
     }
-    uVar3 = uVar1 - param_3;
-    if (param_4 <= uVar1 - param_3) {
-      uVar3 = param_4;
+    uVar3 = uVar1 - param_4;
+    if (param_5 <= uVar1 - param_4) {
+      uVar3 = param_5;
     }
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::insert(this,param_1,pbVar2 + param_3 * 4,uVar3);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::insert(param_1,param_2,pbVar2 + param_4 * 4,uVar3);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1312,7 +1312,7 @@ ulong std::__ndk1::
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::insert
-               (std::__ndk1::__wrap_iter<wchar_t const*> param_1,wchar_t param_2)
+               (ulong *param_1,long param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -1322,28 +1322,28 @@ long std::__ndk1::
   ulong uVar5;
   ulong uVar6;
   
-  bVar2 = (byte)*this;
+  bVar2 = (byte)*param_1;
   if ((bVar2 & 1) == 0) {
-    uVar6 = (long)this + 4;
+    uVar6 = (long)param_1 + 4;
     uVar5 = (ulong)(bVar2 >> 1);
     uVar3 = 4;
   }
   else {
-    uVar5 = this[1];
-    uVar6 = this[2];
-    uVar3 = (*this & 0xfffffffffffffffe) - 1;
+    uVar5 = param_1[1];
+    uVar6 = param_1[2];
+    uVar3 = (*param_1 & 0xfffffffffffffffe) - 1;
   }
-  lVar4 = (long)(param_1 - uVar6) >> 2;
+  lVar4 = (long)(param_2 - uVar6) >> 2;
   if (uVar3 == uVar5) {
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__grow_by(this,uVar5,1,uVar5,lVar4,0,1);
-    uVar6 = this[2];
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__grow_by(param_1,uVar5,1,uVar5,lVar4,0,1);
+    uVar6 = param_1[2];
   }
   else {
     if ((bVar2 & 1) == 0) {
-      uVar6 = (long)this + 4;
+      uVar6 = (long)param_1 + 4;
     }
     else {
-      uVar6 = this[2];
+      uVar6 = param_1[2];
     }
     if (uVar5 - lVar4 != 0) {
       lVar1 = uVar6 + lVar4 * 4;
@@ -1352,19 +1352,19 @@ long std::__ndk1::
     }
   }
   uVar5 = uVar5 + 1;
-  *(undefined4 *)(uVar6 + lVar4 * 4) = param_2;
+  *(undefined4 *)(uVar6 + lVar4 * 4) = param_3;
   *(undefined4 *)(uVar6 + uVar5 * 4) = 0;
-  if ((*this & 1) == 0) {
-    *(char *)this = (char)((int)uVar5 << 1);
+  if ((*param_1 & 1) == 0) {
+    *(char *)param_1 = (char)((int)uVar5 << 1);
   }
   else {
-    this[1] = uVar5;
-    if ((*this & 1) != 0) {
-      uVar6 = this[2];
+    param_1[1] = uVar5;
+    if ((*param_1 & 1) != 0) {
+      uVar6 = param_1[2];
       goto LAB_005e8b60;
     }
   }
-  uVar6 = (long)this + 4;
+  uVar6 = (long)param_1 + 4;
 LAB_005e8b60:
   return uVar6 + lVar4 * 4;
 }

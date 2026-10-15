@@ -11,7 +11,7 @@
    >::~__vector_base() */
 
 void std::__ndk1::__vector_base<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     ~__vector_base(undefined8 *param_1)
+     ~__vector_base()
 
 {
   void *p0;
@@ -19,11 +19,11 @@ void std::__ndk1::__vector_base<Walaber::Achievement,std::__ndk1::allocator<Wala
   void *pvVar2;
   long lVar3;
   
-  pvVar1 = (void *)*param_1;
+  pvVar1 = (void *)*this;
   if (pvVar1 == (void *)0x0) {
     return;
   }
-  pvVar2 = (void *)param_1[1];
+  pvVar2 = (void *)this[1];
   p0 = pvVar1;
   if (pvVar2 != pvVar1) {
     lVar3 = 0;
@@ -45,9 +45,9 @@ void std::__ndk1::__vector_base<Walaber::Achievement,std::__ndk1::allocator<Wala
       }
       lVar3 = lVar3 + -0x88;
     } while ((long)pvVar1 - (long)pvVar2 != lVar3);
-    p0 = (void *)*param_1;
+    p0 = (void *)*this;
   }
-  param_1[1] = pvVar1;
+  this[1] = pvVar1;
   operator delete(p0);
   return;
 }

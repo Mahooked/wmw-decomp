@@ -17,7 +17,8 @@
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_signed<long>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,long& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -54,7 +55,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar18 = 0;
   }
@@ -67,7 +68,7 @@ long * std::__ndk1::
   else {
     uVar18 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -81,23 +82,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar19;
 LAB_005b29b8:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b29cc;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b29cc;
 LAB_005b2a14:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b2b04;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b2a14;
+    if (param_3 == (long *)0x0) goto LAB_005b2a14;
 LAB_005b29cc:
                     /* try { // try from 005b29e0 to 005b2a07 has its CatchHandler @ 005b2d38 */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b2a14;
     if (plVar6 != (long *)0x0) goto LAB_005b2b04;
   }
@@ -135,7 +136,7 @@ LAB_005b29cc:
   iVar3 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar4,uVar18,pvVar19,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar3 != 0) goto LAB_005b2b04;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -153,8 +154,8 @@ LAB_005b2b04:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b2b44 to 005b2d13 has its CatchHandler @ 005b2d30 */
-  uVar5 = long std::__ndk1::__num_get_signed_integral<long>(pvVar19,pvStack_168,param_4,uVar18);
-  *param_5 = uVar5;
+  uVar5 = long std::__ndk1::__num_get_signed_integral<long>(pvVar19,pvStack_168,param_5,uVar18);
+  *param_6 = uVar5;
   uVar4 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar4 = uStack_140;
@@ -198,12 +199,12 @@ LAB_005b2b04:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b2c58:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b2c74;
+    if (param_3 != (long *)0x0) goto LAB_005b2c74;
 LAB_005b2d20:
     if (plVar17 != (long *)0x0) goto LAB_005b2ca8;
   }
@@ -213,13 +214,13 @@ LAB_005b2d20:
     if (iVar3 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b2d20;
+    if (param_3 == (long *)0x0) goto LAB_005b2d20;
 LAB_005b2c74:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b2d20;
     if (plVar17 == (long *)0x0) goto LAB_005b2ca8;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b2ca8:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -250,7 +251,8 @@ LAB_005b2ca8:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_signed<long_long>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,long long& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -287,7 +289,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar18 = 0;
   }
@@ -300,7 +302,7 @@ long * std::__ndk1::
   else {
     uVar18 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -314,23 +316,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar19;
 LAB_005b2e5c:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b2e70;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b2e70;
 LAB_005b2eb8:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b2fa8;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b2eb8;
+    if (param_3 == (long *)0x0) goto LAB_005b2eb8;
 LAB_005b2e70:
                     /* try { // try from 005b2e84 to 005b2eab has its CatchHandler @ 005b31dc */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b2eb8;
     if (plVar6 != (long *)0x0) goto LAB_005b2fa8;
   }
@@ -368,7 +370,7 @@ LAB_005b2e70:
   iVar3 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar4,uVar18,pvVar19,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar3 != 0) goto LAB_005b2fa8;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -386,8 +388,8 @@ LAB_005b2fa8:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b2fe8 to 005b31b7 has its CatchHandler @ 005b31d4 */
-  uVar5 = long long std::__ndk1::__num_get_signed_integral<long long>(pvVar19,pvStack_168,param_4,uVar18);
-  *param_5 = uVar5;
+  uVar5 = long long std::__ndk1::__num_get_signed_integral<long long>(pvVar19,pvStack_168,param_5,uVar18);
+  *param_6 = uVar5;
   uVar4 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar4 = uStack_140;
@@ -431,12 +433,12 @@ LAB_005b2fa8:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b30fc:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b3118;
+    if (param_3 != (long *)0x0) goto LAB_005b3118;
 LAB_005b31c4:
     if (plVar17 != (long *)0x0) goto LAB_005b314c;
   }
@@ -446,13 +448,13 @@ LAB_005b31c4:
     if (iVar3 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b31c4;
+    if (param_3 == (long *)0x0) goto LAB_005b31c4;
 LAB_005b3118:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b31c4;
     if (plVar17 == (long *)0x0) goto LAB_005b314c;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b314c:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -484,7 +486,8 @@ LAB_005b314c:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_unsigned<unsigned_short>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,unsigned short& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined2 *param_6)
 
 {
   byte *pbVar1;
@@ -521,7 +524,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar18 = 0;
   }
@@ -534,7 +537,7 @@ long * std::__ndk1::
   else {
     uVar18 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -548,23 +551,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar19;
 LAB_005b3300:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b3314;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b3314;
 LAB_005b335c:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b344c;
   }
   else {
-    iVar4 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar4 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar4 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b335c;
+    if (param_3 == (long *)0x0) goto LAB_005b335c;
 LAB_005b3314:
                     /* try { // try from 005b3328 to 005b334f has its CatchHandler @ 005b3680 */
-    if ((param_2[3] == param_2[4]) && (iVar4 = (**(code **)(*param_2 + 0x48))(param_2), iVar4 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar4 = (**(code **)(*param_3 + 0x48))(param_3), iVar4 == -1)
        ) goto LAB_005b335c;
     if (plVar6 != (long *)0x0) goto LAB_005b344c;
   }
@@ -602,7 +605,7 @@ LAB_005b3314:
   iVar4 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar5,uVar18,pvVar19,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar4 != 0) goto LAB_005b344c;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -620,8 +623,8 @@ LAB_005b344c:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b348c to 005b365b has its CatchHandler @ 005b3678 */
-  uVar3 = unsigned short std::__ndk1::__num_get_unsigned_integral<unsigned short>(pvVar19,pvStack_168,param_4,uVar18);
-  *param_5 = uVar3;
+  uVar3 = unsigned short std::__ndk1::__num_get_unsigned_integral<unsigned short>(pvVar19,pvStack_168,param_5,uVar18);
+  *param_6 = uVar3;
   uVar5 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar5 = uStack_140;
@@ -665,12 +668,12 @@ LAB_005b344c:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b35a0:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b35bc;
+    if (param_3 != (long *)0x0) goto LAB_005b35bc;
 LAB_005b3668:
     if (plVar17 != (long *)0x0) goto LAB_005b35f0;
   }
@@ -680,13 +683,13 @@ LAB_005b3668:
     if (iVar4 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b3668;
+    if (param_3 == (long *)0x0) goto LAB_005b3668;
 LAB_005b35bc:
-    if ((param_2[3] == param_2[4]) && (iVar4 = (**(code **)(*param_2 + 0x48))(param_2), iVar4 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar4 = (**(code **)(*param_3 + 0x48))(param_3), iVar4 == -1)
        ) goto LAB_005b3668;
     if (plVar17 == (long *)0x0) goto LAB_005b35f0;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b35f0:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -717,7 +720,8 @@ LAB_005b35f0:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_unsigned<unsigned_int>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,unsigned int& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined4 *param_6)
 
 {
   byte *pbVar1;
@@ -753,7 +757,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar4 = 0;
   }
@@ -766,7 +770,7 @@ long * std::__ndk1::
   else {
     uVar4 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -780,23 +784,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar18;
 LAB_005b37a4:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b37b8;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b37b8;
 LAB_005b3800:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b38f0;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b3800;
+    if (param_3 == (long *)0x0) goto LAB_005b3800;
 LAB_005b37b8:
                     /* try { // try from 005b37cc to 005b37f3 has its CatchHandler @ 005b3b24 */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b3800;
     if (plVar6 != (long *)0x0) goto LAB_005b38f0;
   }
@@ -834,7 +838,7 @@ LAB_005b37b8:
   iVar3 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar5,uVar4,pvVar18,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar3 != 0) goto LAB_005b38f0;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -852,8 +856,8 @@ LAB_005b38f0:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b3930 to 005b3aff has its CatchHandler @ 005b3b1c */
-  uVar4 = unsigned int std::__ndk1::__num_get_unsigned_integral<unsigned int>(pvVar18,pvStack_168,param_4,uVar4);
-  *param_5 = uVar4;
+  uVar4 = unsigned int std::__ndk1::__num_get_unsigned_integral<unsigned int>(pvVar18,pvStack_168,param_5,uVar4);
+  *param_6 = uVar4;
   uVar5 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar5 = uStack_140;
@@ -897,12 +901,12 @@ LAB_005b38f0:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b3a44:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b3a60;
+    if (param_3 != (long *)0x0) goto LAB_005b3a60;
 LAB_005b3b0c:
     if (plVar17 != (long *)0x0) goto LAB_005b3a94;
   }
@@ -912,13 +916,13 @@ LAB_005b3b0c:
     if (iVar3 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b3b0c;
+    if (param_3 == (long *)0x0) goto LAB_005b3b0c;
 LAB_005b3a60:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b3b0c;
     if (plVar17 == (long *)0x0) goto LAB_005b3a94;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b3a94:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -949,7 +953,8 @@ LAB_005b3a94:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_unsigned<unsigned_long>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,unsigned long& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -986,7 +991,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar18 = 0;
   }
@@ -999,7 +1004,7 @@ long * std::__ndk1::
   else {
     uVar18 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -1013,23 +1018,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar19;
 LAB_005b3c48:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b3c5c;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b3c5c;
 LAB_005b3ca4:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b3d94;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b3ca4;
+    if (param_3 == (long *)0x0) goto LAB_005b3ca4;
 LAB_005b3c5c:
                     /* try { // try from 005b3c70 to 005b3c97 has its CatchHandler @ 005b3fc8 */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b3ca4;
     if (plVar6 != (long *)0x0) goto LAB_005b3d94;
   }
@@ -1067,7 +1072,7 @@ LAB_005b3c5c:
   iVar3 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar4,uVar18,pvVar19,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar3 != 0) goto LAB_005b3d94;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -1085,8 +1090,8 @@ LAB_005b3d94:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b3dd4 to 005b3fa3 has its CatchHandler @ 005b3fc0 */
-  uVar5 = unsigned long std::__ndk1::__num_get_unsigned_integral<unsigned long>(pvVar19,pvStack_168,param_4,uVar18);
-  *param_5 = uVar5;
+  uVar5 = unsigned long std::__ndk1::__num_get_unsigned_integral<unsigned long>(pvVar19,pvStack_168,param_5,uVar18);
+  *param_6 = uVar5;
   uVar4 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar4 = uStack_140;
@@ -1130,12 +1135,12 @@ LAB_005b3d94:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b3ee8:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b3f04;
+    if (param_3 != (long *)0x0) goto LAB_005b3f04;
 LAB_005b3fb0:
     if (plVar17 != (long *)0x0) goto LAB_005b3f38;
   }
@@ -1145,13 +1150,13 @@ LAB_005b3fb0:
     if (iVar3 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b3fb0;
+    if (param_3 == (long *)0x0) goto LAB_005b3fb0;
 LAB_005b3f04:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b3fb0;
     if (plVar17 == (long *)0x0) goto LAB_005b3f38;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b3f38:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -1183,7 +1188,8 @@ LAB_005b3f38:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_unsigned<unsigned_long_long>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,unsigned long long& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,long param_4,uint *param_5,
+                 undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -1220,7 +1226,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  uVar10 = *(uint *)(param_3 + 8) & 0x4a;
+  uVar10 = *(uint *)(param_4 + 8) & 0x4a;
   if (uVar10 == 0) {
     uVar18 = 0;
   }
@@ -1233,7 +1239,7 @@ long * std::__ndk1::
   else {
     uVar18 = 10;
   }
-  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_3,auStack_8c,auStack_130);
+  std::__ndk1::__num_get<char>::__stage2_int_prep(abStack_148,param_4,auStack_8c,auStack_130);
   uStack_160 = 0;
   uStack_158 = 0;
   pvStack_150 = (void *)0x0;
@@ -1247,23 +1253,23 @@ long * std::__ndk1::
   uStack_174 = 0;
   pvStack_168 = pvVar19;
 LAB_005b40ec:
-  plVar6 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b4100;
+  plVar6 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b4100;
 LAB_005b4148:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar6 == (long *)0x0) goto LAB_005b4238;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar6 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar6 = param_1;
+      plVar6 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b4148;
+    if (param_3 == (long *)0x0) goto LAB_005b4148;
 LAB_005b4100:
                     /* try { // try from 005b4114 to 005b413b has its CatchHandler @ 005b446c */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b4148;
     if (plVar6 != (long *)0x0) goto LAB_005b4238;
   }
@@ -1301,7 +1307,7 @@ LAB_005b4100:
   iVar3 = std::__ndk1::__num_get<char>::__stage2_int_loop(uVar4,uVar18,pvVar19,&pvStack_168,&uStack_174,auStack_130[0],abStack_148,
                           auStack_12c,&puStack_170,auStack_8c);
   if (iVar3 != 0) goto LAB_005b4238;
-  param_1 = plVar6;
+  param_2 = plVar6;
   if (plVar6[3] == plVar6[4]) {
     (**(code **)(*plVar6 + 0x50))(plVar6);
   }
@@ -1319,8 +1325,8 @@ LAB_005b4238:
     puStack_170 = puStack_170 + 1;
   }
                     /* try { // try from 005b4278 to 005b4447 has its CatchHandler @ 005b4464 */
-  uVar5 = unsigned long long std::__ndk1::__num_get_unsigned_integral<unsigned long long>(pvVar19,pvStack_168,param_4,uVar18);
-  *param_5 = uVar5;
+  uVar5 = unsigned long long std::__ndk1::__num_get_unsigned_integral<unsigned long long>(pvVar19,pvStack_168,param_5,uVar18);
+  *param_6 = uVar5;
   uVar4 = (ulong)(abStack_148[0] >> 1);
   if ((abStack_148[0] & 1) != 0) {
     uVar4 = uStack_140;
@@ -1364,12 +1370,12 @@ LAB_005b4238:
     }
     if ((bVar16) && (uVar10 <= *puVar9 - 1)) {
 LAB_005b438c:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar17 = plVar6;
   if ((plVar6 == (long *)0x0) || (plVar6[3] != plVar6[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b43a8;
+    if (param_3 != (long *)0x0) goto LAB_005b43a8;
 LAB_005b4454:
     if (plVar17 != (long *)0x0) goto LAB_005b43dc;
   }
@@ -1379,13 +1385,13 @@ LAB_005b4454:
     if (iVar3 != -1) {
       plVar17 = plVar6;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b4454;
+    if (param_3 == (long *)0x0) goto LAB_005b4454;
 LAB_005b43a8:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b4454;
     if (plVar17 == (long *)0x0) goto LAB_005b43dc;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b43dc:
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
@@ -1416,7 +1422,8 @@ LAB_005b43dc:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_floating_point<float>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,float& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
+                 undefined4 *param_6)
 
 {
   byte *pbVar1;
@@ -1455,7 +1462,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar7 = *(long *)(lVar2 + 0x28);
-  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_3,auStack_90,auStack_134,auStack_138);
+  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_4,auStack_90,auStack_134,auStack_138);
   uStack_168 = 0;
   uStack_160 = 0;
   pvStack_158 = (void *)0x0;
@@ -1471,23 +1478,23 @@ long * std::__ndk1::
   puStack_178 = auStack_130;
   pvStack_170 = pvVar17;
 LAB_005b4568:
-  plVar5 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b457c;
+  plVar5 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b457c;
 LAB_005b45c4:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar5 == (long *)0x0) goto LAB_005b46b8;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar5 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar5 = param_1;
+      plVar5 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b45c4;
+    if (param_3 == (long *)0x0) goto LAB_005b45c4;
 LAB_005b457c:
                     /* try { // try from 005b4590 to 005b45b7 has its CatchHandler @ 005b48f4 */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b45c4;
     if (plVar5 != (long *)0x0) goto LAB_005b46b8;
   }
@@ -1526,7 +1533,7 @@ LAB_005b457c:
                           auStack_138[0],abStack_150,auStack_130,&puStack_178,&uStack_17c,auStack_90
                          );
   if (iVar3 != 0) goto LAB_005b46b8;
-  param_1 = plVar5;
+  param_2 = plVar5;
   if (plVar5[3] == plVar5[4]) {
     (**(code **)(*plVar5 + 0x50))(plVar5);
   }
@@ -1545,8 +1552,8 @@ LAB_005b46b8:
     puStack_178 = puStack_178 + 1;
   }
                     /* try { // try from 005b4700 to 005b48cf has its CatchHandler @ 005b48ec */
-  uVar18 = func_0x005e1cf8(pvVar17,pvStack_170,param_4);
-  *param_5 = uVar18;
+  uVar18 = func_0x005e1cf8(pvVar17,pvStack_170,param_5);
+  *param_6 = uVar18;
   uVar4 = (ulong)(abStack_150[0] >> 1);
   if ((abStack_150[0] & 1) != 0) {
     uVar4 = uStack_148;
@@ -1590,12 +1597,12 @@ LAB_005b46b8:
     }
     if ((bVar15) && (uVar9 <= *puVar8 - 1)) {
 LAB_005b4814:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar16 = plVar5;
   if ((plVar5 == (long *)0x0) || (plVar5[3] != plVar5[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b4830;
+    if (param_3 != (long *)0x0) goto LAB_005b4830;
 LAB_005b48dc:
     if (plVar16 != (long *)0x0) goto LAB_005b4864;
   }
@@ -1605,13 +1612,13 @@ LAB_005b48dc:
     if (iVar3 != -1) {
       plVar16 = plVar5;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b48dc;
+    if (param_3 == (long *)0x0) goto LAB_005b48dc;
 LAB_005b4830:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b48dc;
     if (plVar16 == (long *)0x0) goto LAB_005b4864;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b4864:
   if ((uStack_168 & 1) != 0) {
     operator delete(pvStack_158);
@@ -1642,7 +1649,8 @@ LAB_005b4864:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_floating_point<double>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,double& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
+                 undefined8 *param_6)
 
 {
   byte *pbVar1;
@@ -1681,7 +1689,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar7 = *(long *)(lVar2 + 0x28);
-  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_3,auStack_90,auStack_134,auStack_138);
+  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_4,auStack_90,auStack_134,auStack_138);
   uStack_168 = 0;
   uStack_160 = 0;
   pvStack_158 = (void *)0x0;
@@ -1697,23 +1705,23 @@ long * std::__ndk1::
   puStack_178 = auStack_130;
   pvStack_170 = pvVar17;
 LAB_005b49f0:
-  plVar5 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b4a04;
+  plVar5 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b4a04;
 LAB_005b4a4c:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar5 == (long *)0x0) goto LAB_005b4b40;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar5 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar5 = param_1;
+      plVar5 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b4a4c;
+    if (param_3 == (long *)0x0) goto LAB_005b4a4c;
 LAB_005b4a04:
                     /* try { // try from 005b4a18 to 005b4a3f has its CatchHandler @ 005b4d7c */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b4a4c;
     if (plVar5 != (long *)0x0) goto LAB_005b4b40;
   }
@@ -1752,7 +1760,7 @@ LAB_005b4a04:
                           auStack_138[0],abStack_150,auStack_130,&puStack_178,&uStack_17c,auStack_90
                          );
   if (iVar3 != 0) goto LAB_005b4b40;
-  param_1 = plVar5;
+  param_2 = plVar5;
   if (plVar5[3] == plVar5[4]) {
     (**(code **)(*plVar5 + 0x50))(plVar5);
   }
@@ -1771,8 +1779,8 @@ LAB_005b4b40:
     puStack_178 = puStack_178 + 1;
   }
                     /* try { // try from 005b4b88 to 005b4d57 has its CatchHandler @ 005b4d74 */
-  uVar18 = func_0x005e1e20(pvVar17,pvStack_170,param_4);
-  *param_5 = uVar18;
+  uVar18 = func_0x005e1e20(pvVar17,pvStack_170,param_5);
+  *param_6 = uVar18;
   uVar4 = (ulong)(abStack_150[0] >> 1);
   if ((abStack_150[0] & 1) != 0) {
     uVar4 = uStack_148;
@@ -1816,12 +1824,12 @@ LAB_005b4b40:
     }
     if ((bVar15) && (uVar9 <= *puVar8 - 1)) {
 LAB_005b4c9c:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar16 = plVar5;
   if ((plVar5 == (long *)0x0) || (plVar5[3] != plVar5[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b4cb8;
+    if (param_3 != (long *)0x0) goto LAB_005b4cb8;
 LAB_005b4d64:
     if (plVar16 != (long *)0x0) goto LAB_005b4cec;
   }
@@ -1831,13 +1839,13 @@ LAB_005b4d64:
     if (iVar3 != -1) {
       plVar16 = plVar5;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b4d64;
+    if (param_3 == (long *)0x0) goto LAB_005b4d64;
 LAB_005b4cb8:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b4d64;
     if (plVar16 == (long *)0x0) goto LAB_005b4cec;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b4cec:
   if ((uStack_168 & 1) != 0) {
     operator delete(pvStack_158);
@@ -1868,7 +1876,8 @@ LAB_005b4cec:
 long * std::__ndk1::
        num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
        __do_get_floating_point<long_double>
-                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,long double& param_5)
+                 (undefined8 param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
+                 undefined1 (*param_6) [16])
 
 {
   byte *pbVar1;
@@ -1907,7 +1916,7 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lVar7 = *(long *)(lVar2 + 0x28);
-  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_3,auStack_90,auStack_134,auStack_138);
+  std::__ndk1::__num_get<char>::__stage2_float_prep(abStack_150,param_4,auStack_90,auStack_134,auStack_138);
   uStack_168 = 0;
   uStack_160 = 0;
   pvStack_158 = (void *)0x0;
@@ -1923,23 +1932,23 @@ long * std::__ndk1::
   puStack_178 = auStack_130;
   pvStack_170 = pvVar17;
 LAB_005b4e78:
-  plVar5 = param_1;
-  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b4e8c;
+  plVar5 = param_2;
+  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
+    if (param_3 != (long *)0x0) goto LAB_005b4e8c;
 LAB_005b4ed4:
-    param_2 = (long *)0x0;
+    param_3 = (long *)0x0;
     if (plVar5 == (long *)0x0) goto LAB_005b4fc8;
   }
   else {
-    iVar3 = (**(code **)(*param_1 + 0x48))(param_1);
+    iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     plVar5 = (long *)0x0;
     if (iVar3 != -1) {
-      plVar5 = param_1;
+      plVar5 = param_2;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b4ed4;
+    if (param_3 == (long *)0x0) goto LAB_005b4ed4;
 LAB_005b4e8c:
                     /* try { // try from 005b4ea0 to 005b4ec7 has its CatchHandler @ 005b5204 */
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b4ed4;
     if (plVar5 != (long *)0x0) goto LAB_005b4fc8;
   }
@@ -1978,7 +1987,7 @@ LAB_005b4e8c:
                           auStack_138[0],abStack_150,auStack_130,&puStack_178,&uStack_17c,auStack_90
                          );
   if (iVar3 != 0) goto LAB_005b4fc8;
-  param_1 = plVar5;
+  param_2 = plVar5;
   if (plVar5[3] == plVar5[4]) {
     (**(code **)(*plVar5 + 0x50))(plVar5);
   }
@@ -1997,8 +2006,8 @@ LAB_005b4fc8:
     puStack_178 = puStack_178 + 1;
   }
                     /* try { // try from 005b5010 to 005b51df has its CatchHandler @ 005b51fc */
-  auVar18 = func_0x005e1f48(pvVar17,pvStack_170,param_4);
-  *param_5 = auVar18;
+  auVar18 = func_0x005e1f48(pvVar17,pvStack_170,param_5);
+  *param_6 = auVar18;
   uVar4 = (ulong)(abStack_150[0] >> 1);
   if ((abStack_150[0] & 1) != 0) {
     uVar4 = uStack_148;
@@ -2042,12 +2051,12 @@ LAB_005b4fc8:
     }
     if ((bVar15) && (uVar9 <= *puVar8 - 1)) {
 LAB_005b5124:
-      *param_4 = 4;
+      *param_5 = 4;
     }
   }
   plVar16 = plVar5;
   if ((plVar5 == (long *)0x0) || (plVar5[3] != plVar5[4])) {
-    if (param_2 != (long *)0x0) goto LAB_005b5140;
+    if (param_3 != (long *)0x0) goto LAB_005b5140;
 LAB_005b51ec:
     if (plVar16 != (long *)0x0) goto LAB_005b5174;
   }
@@ -2057,13 +2066,13 @@ LAB_005b51ec:
     if (iVar3 != -1) {
       plVar16 = plVar5;
     }
-    if (param_2 == (long *)0x0) goto LAB_005b51ec;
+    if (param_3 == (long *)0x0) goto LAB_005b51ec;
 LAB_005b5140:
-    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
+    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
        ) goto LAB_005b51ec;
     if (plVar16 == (long *)0x0) goto LAB_005b5174;
   }
-  *param_4 = *param_4 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005b5174:
   if ((uStack_168 & 1) != 0) {
     operator delete(pvStack_158);

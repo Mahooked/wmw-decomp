@@ -42,40 +42,40 @@ void WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 /* WaterConcept::Fan::~Fan() */
 
-void WaterConcept::Fan::~Fan(undefined8 *param_1)
+void WaterConcept::Fan::~Fan()
 
 {
   void *pvVar1;
   
-  pvVar1 = (void *)param_1[0x87];
-  *param_1 = &PTR__Fan_007118c8;
+  pvVar1 = (void *)this[0x87];
+  *this = &PTR__Fan_007118c8;
   if (pvVar1 != (void *)0x0) {
-    param_1[0x88] = pvVar1;
+    this[0x88] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x84];
+  pvVar1 = (void *)this[0x84];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x85] = pvVar1;
+    this[0x85] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x81];
+  pvVar1 = (void *)this[0x81];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x82] = pvVar1;
+    this[0x82] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x7e);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x7c);
-  pvVar1 = (void *)param_1[0x79];
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x7e);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x7c);
+  pvVar1 = (void *)this[0x79];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x7a] = pvVar1;
+    this[0x7a] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x76];
+  pvVar1 = (void *)this[0x76];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x77] = pvVar1;
+    this[0x77] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

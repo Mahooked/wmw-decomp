@@ -11,20 +11,20 @@
    >::~__vector_base() */
 
 void std::__ndk1::__vector_base<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept::Fluid>>::
-     ~__vector_base(undefined8 *param_1)
+     ~__vector_base()
 
 {
   void *pvVar1;
   void *pvVar2;
   void *pvVar3;
   
-  pvVar1 = (void *)*param_1;
+  pvVar1 = (void *)*this;
   if (pvVar1 == (void *)0x0) {
     return;
   }
   pvVar3 = pvVar1;
-  pvVar2 = (void *)param_1[1];
-  if ((void *)param_1[1] != pvVar1) {
+  pvVar2 = (void *)this[1];
+  if ((void *)this[1] != pvVar1) {
     do {
       pvVar3 = (void *)((long)pvVar2 + -0xf0);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)pvVar2 + -200);
@@ -32,9 +32,9 @@ void std::__ndk1::__vector_base<WaterConcept::Fluid,std::__ndk1::allocator<Water
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)pvVar2 + -0xe8);
       pvVar2 = pvVar3;
     } while (pvVar1 != pvVar3);
-    pvVar3 = (void *)*param_1;
+    pvVar3 = (void *)*this;
   }
-  param_1[1] = pvVar1;
+  this[1] = pvVar1;
   operator delete(pvVar3);
   return;
 }

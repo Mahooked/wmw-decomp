@@ -9,27 +9,27 @@
 
 /* WaterConcept::Screen_Challenges::Screen_Challenges() */
 
-void WaterConcept::Screen_Challenges::Screen_Challenges(undefined8 *param_1)
+void WaterConcept::Screen_Challenges::Screen_Challenges()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x18);
+  WaterConcept::WCScreen::WCScreen(this,0x18);
                     /* try { // try from 004a8504 to 004a850f has its CatchHandler @ 004a85d8 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  *param_1 = &PTR__Screen_Challenges_00712ef8;
-  param_1[4] = &PTR_handleEvent_00712fb0;
-  param_1[0x12] = &PTR__Screen_Challenges_00712fd0;
-  param_1[0x14] = 0;
-  param_1[0x19] = 0;
-  param_1[0x18] = param_1 + 0x19;
-  param_1[0x1c] = 0;
-  param_1[0x1d] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x1b] = param_1 + 0x1c;
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x15] = 0;
+  this[0x16] = 0;
+  *this = &PTR__Screen_Challenges_00712ef8;
+  this[4] = &PTR_handleEvent_00712fb0;
+  this[0x12] = &PTR__Screen_Challenges_00712fd0;
+  this[0x14] = 0;
+  this[0x19] = 0;
+  this[0x18] = this + 0x19;
+  this[0x1c] = 0;
+  this[0x1d] = 0;
+  this[0x1a] = 0;
+  this[0x1b] = this + 0x1c;
+  *(undefined1 *)(this[2] + 0x71) = 1;
                     /* try { // try from 004a856c to 004a857f has its CatchHandler @ 004a8598 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1 + 0x14,"/Textures/cranky_challenge_poster_1.webp",0x28);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(this + 0x14,"/Textures/cranky_challenge_poster_1.webp",0x28);
   return;
 }
 
@@ -41,19 +41,19 @@ void WaterConcept::Screen_Challenges::Screen_Challenges(undefined8 *param_1)
 
 /* WaterConcept::Screen_Challenges::~Screen_Challenges() */
 
-void WaterConcept::Screen_Challenges::~Screen_Challenges(undefined8 *param_1)
+void WaterConcept::Screen_Challenges::~Screen_Challenges()
 
 {
-  *param_1 = &PTR__Screen_Challenges_00712ef8;
-  param_1[4] = &PTR_handleEvent_00712fb0;
-  param_1[0x12] = &PTR__Screen_Challenges_00712fd0;
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 0x1b,param_1[0x1c]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, int>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, int>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, int>>>::destroy(param_1 + 0x18,param_1[0x19]);
-  if ((*(byte *)(param_1 + 0x14) & 1) != 0) {
-    operator delete((void *)param_1[0x16]);
+  *this = &PTR__Screen_Challenges_00712ef8;
+  this[4] = &PTR_handleEvent_00712fb0;
+  this[0x12] = &PTR__Screen_Challenges_00712fd0;
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 0x1b,this[0x1c]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, int>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, int>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, int>>>::destroy(this + 0x18,this[0x19]);
+  if ((*(byte *)(this + 0x14) & 1) != 0) {
+    operator delete((void *)this[0x16]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

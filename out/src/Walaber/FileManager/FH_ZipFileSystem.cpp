@@ -13,7 +13,7 @@
    const&) */
 
 void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -27,33 +27,33 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  *this = &PTR__FH_ZipFileSystem_00710658;
-  this[1] = 0;
+  *param_1 = &PTR__FH_ZipFileSystem_00710658;
+  param_1[1] = 0;
                     /* try { // try from 003d38a4 to 003d38af has its CatchHandler @ 003d39cc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_2);
-  this[5] = 0;
-  this[6] = 0;
-  this[7] = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+  param_1[5] = 0;
+  param_1[6] = 0;
+  param_1[7] = 0;
                     /* try { // try from 003d38bc to 003d38c3 has its CatchHandler @ 003d39d4 */
   uVar2 = operator new(0xa8);
                     /* try { // try from 003d38c8 to 003d38cf has its CatchHandler @ 003d39bc */
-  Walaber::ZipArchiveReader::ZipArchiveReader(uVar2,param_1);
-  this[1] = uVar2;
+  Walaber::ZipArchiveReader::ZipArchiveReader(uVar2,param_2);
+  param_1[1] = uVar2;
                     /* try { // try from 003d38d4 to 003d38df has its CatchHandler @ 003d39b8 */
   Walaber::ZipArchiveReader::getFilenames(&uStack_70,uVar2);
-  std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(this + 5);
-  this[6] = uStack_68;
-  this[5] = uStack_70;
-  this[7] = uStack_60;
+  std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 5);
+  param_1[6] = uStack_68;
+  param_1[5] = uStack_70;
+  param_1[7] = uStack_60;
   uStack_70 = 0;
   uStack_68 = 0;
   uStack_60 = 0;
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_70);
                     /* try { // try from 003d3920 to 003d3937 has its CatchHandler @ 003d39d4 */
   Walaber::Logger::printf("Walaber IO",1,"List of APK (%d):",
-               ((long)(this[6] - this[5]) >> 3) * -0x5555555555555555);
-  pbVar4 = (byte *)this[5];
-  if (pbVar4 != (byte *)this[6]) {
+               ((long)(param_1[6] - param_1[5]) >> 3) * -0x5555555555555555);
+  pbVar4 = (byte *)param_1[5];
+  if (pbVar4 != (byte *)param_1[6]) {
     do {
       if ((*pbVar4 & 1) == 0) {
         pbVar3 = pbVar4 + 1;
@@ -64,7 +64,7 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
                     /* try { // try from 003d3968 to 003d3977 has its CatchHandler @ 003d39d8 */
       Walaber::Logger::printf("Walaber IO",1,"%s",pbVar3);
       pbVar4 = pbVar4 + 0x18;
-    } while (pbVar4 != (byte *)this[6]);
+    } while (pbVar4 != (byte *)param_1[6]);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     __stack_chk_fail();
@@ -81,23 +81,23 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
 
 /* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
 
-void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(undefined8 *param_1)
+void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem()
 
 {
   void *p0;
   
-  p0 = (void *)param_1[1];
-  *param_1 = &PTR__FH_ZipFileSystem_00710658;
+  p0 = (void *)this[1];
+  *this = &PTR__FH_ZipFileSystem_00710658;
   if (p0 != (void *)0x0) {
     Walaber::ZipArchiveReader::~ZipArchiveReader(p0);
     operator delete(p0);
   }
-  param_1[1] = 0;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 5);
-  if ((*(byte *)(param_1 + 2) & 1) == 0) {
+  this[1] = 0;
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 5);
+  if ((*(byte *)(this + 2) & 1) == 0) {
     return;
   }
-  operator delete((void *)param_1[4]);
+  operator delete((void *)this[4]);
   return;
 }
 
@@ -313,7 +313,8 @@ LAB_003d3d58:
    const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
+               (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4,
+               undefined8 param_5)
 
 {
   long lVar1;
@@ -331,15 +332,15 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = Walaber::FileManager::getInstancePtr();
-  unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar2 + 0x18,param_1);
-  (**(code **)(*this + 0x20))(abStack_b8,this);
+  unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar2 + 0x18,param_2);
+  (**(code **)(*param_1 + 0x20))(abStack_b8,param_1);
                     /* try { // try from 003d3e44 to 003d3e5f has its CatchHandler @ 003d3f14 */
-  Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_a0,param_1,1,param_2,abStack_b8,param_4);
+  Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_a0,param_2,1,param_3,abStack_b8,param_5);
   if ((abStack_b8[0] & 1) != 0) {
     operator delete(pvStack_a8);
   }
                     /* try { // try from 003d3e7c to 003d3e83 has its CatchHandler @ 003d3ee0 */
-  (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,abStack_a0);
+  (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,abStack_a0);
   if ((bStack_68 & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -552,7 +553,8 @@ LAB_003d4200:
    const&, Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
+               (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4,
+               undefined8 param_5)
 
 {
   long lVar1;
@@ -572,20 +574,20 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  Walaber::ZipArchiveReader::openFile(this[1],param_2);
-  uVar2 = Walaber::ZipArchiveReader::getCurrentFileSize(this[1]);
+  Walaber::ZipArchiveReader::openFile(param_1[1],param_3);
+  uVar2 = Walaber::ZipArchiveReader::getCurrentFileSize(param_1[1]);
   uVar3 = operator new[]();
-  Walaber::ZipArchiveReader::readCurrentFile(this[1],uVar3);
+  Walaber::ZipArchiveReader::readCurrentFile(param_1[1],uVar3);
   uVar4 = Walaber::FileManager::getInstancePtr();
-  Walaber::FileManager::_readSuccess(uVar4,param_1);
-  (**(code **)(*this + 0x20))(abStack_d8,this);
+  Walaber::FileManager::_readSuccess(uVar4,param_2);
+  (**(code **)(*param_1 + 0x20))(abStack_d8,param_1);
                     /* try { // try from 003d431c to 003d433b has its CatchHandler @ 003d43f4 */
-  Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(auStack_c0,param_1,uVar3,uVar2,param_2,abStack_d8,param_4);
+  Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(auStack_c0,param_2,uVar3,uVar2,param_3,abStack_d8,param_5);
   if ((abStack_d8[0] & 1) != 0) {
     operator delete(pvStack_c8);
   }
                     /* try { // try from 003d4358 to 003d435f has its CatchHandler @ 003d43c0 */
-  (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,auStack_c0);
+  (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,auStack_c0);
   if ((bStack_78 & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -610,14 +612,14 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
 
 /* Walaber::FileManager::FH_ZipFileSystem::getName() */
 
-void Walaber::FileManager::FH_ZipFileSystem::getName(undefined8 *param_1)
+void Walaber::FileManager::FH_ZipFileSystem::getName()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 6;
-  *(undefined4 *)((long)param_1 + 1) = 0x50495a;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 6;
+  *(undefined4 *)((long)this + 1) = 0x50495a;
   return;
 }
 

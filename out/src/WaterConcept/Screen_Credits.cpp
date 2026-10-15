@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_Credits::Screen_Credits() */
 
-void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
+void WaterConcept::Screen_Credits::Screen_Credits()
 
 {
   long lVar1;
@@ -30,28 +30,28 @@ void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0x10);
+  WaterConcept::WCScreen::WCScreen(this,0x10);
                     /* try { // try from 004b650c to 004b6517 has its CatchHandler @ 004b67fc */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *param_1 = &PTR__Screen_Credits_007132e8;
-  param_1[4] = &PTR_handleEvent_007133a0;
-  param_1[0x12] = &PTR__Screen_Credits_007133c0;
-  param_1[0x14] = 0;
-  param_1[0x16] = 0;
-  param_1[0x17] = 0;
-  param_1[0x15] = 0;
-  *(undefined2 *)(param_1 + 0x18) = 0;
-  *(undefined4 *)((long)param_1 + 0xe4) = 0;
-  param_1[0x21] = 0;
-  param_1[0x22] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x1b] = 0;
-  param_1[0x19] = 0;
-  *(undefined1 *)((long)param_1 + 0xe2) = 0;
-  *(undefined2 *)(param_1 + 0x1c) = 0;
-  *(undefined8 *)((long)param_1 + 0xec) = 0;
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *(undefined8 *)((long)param_1 + 0xf4) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *this = &PTR__Screen_Credits_007132e8;
+  this[4] = &PTR_handleEvent_007133a0;
+  this[0x12] = &PTR__Screen_Credits_007133c0;
+  this[0x14] = 0;
+  this[0x16] = 0;
+  this[0x17] = 0;
+  this[0x15] = 0;
+  *(undefined2 *)(this + 0x18) = 0;
+  *(undefined4 *)((long)this + 0xe4) = 0;
+  this[0x21] = 0;
+  this[0x22] = 0;
+  this[0x1a] = 0;
+  this[0x1b] = 0;
+  this[0x19] = 0;
+  *(undefined1 *)((long)this + 0xe2) = 0;
+  *(undefined2 *)(this + 0x1c) = 0;
+  *(undefined8 *)((long)this + 0xec) = 0;
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *(undefined8 *)((long)this + 0xf4) = 0;
                     /* try { // try from 004b657c to 004b657f has its CatchHandler @ 004b67c8 */
   uVar2 = Walaber::CurveManager::getManager();
   auStack_70[0] = 0;
@@ -67,7 +67,7 @@ void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
   uStack_80 = 0;
   uStack_78 = 0;
                     /* try { // try from 004b65d0 to 004b65e3 has its CatchHandler @ 004b679c */
-  Walaber::CurveManager::getCurve(uVar2,param_1 + 0x21,auStack_70,&uStack_80);
+  Walaber::CurveManager::getCurve(uVar2,this + 0x21,auStack_70,&uStack_80);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
   if ((auStack_70[0] & 1) != 0) {
@@ -89,7 +89,7 @@ void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
   auStack_70[0] = 0x21;
                     /* try { // try from 004b6650 to 004b666b has its CatchHandler @ 004b6780 */
   Walaber::TextureManager::getTexture(&uStack_90,uVar2,auStack_70,&uStack_a0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x14,&uStack_90);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x14,&uStack_90);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b0);
@@ -112,7 +112,7 @@ void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
   auStack_70[0] = 0x21;
                     /* try { // try from 004b66ec to 004b6707 has its CatchHandler @ 004b676c */
   Walaber::TextureManager::getTexture(&uStack_90,uVar2,auStack_70,&uStack_c0,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x16,&uStack_90);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x16,&uStack_90);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_c0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b0);
@@ -134,17 +134,17 @@ void WaterConcept::Screen_Credits::Screen_Credits(undefined8 *param_1)
 
 /* WaterConcept::Screen_Credits::~Screen_Credits() */
 
-void WaterConcept::Screen_Credits::~Screen_Credits(undefined8 *param_1)
+void WaterConcept::Screen_Credits::~Screen_Credits()
 
 {
-  *param_1 = &PTR__Screen_Credits_007132e8;
-  param_1[4] = &PTR_handleEvent_007133a0;
-  param_1[0x12] = &PTR__Screen_Credits_007133c0;
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x21);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x16);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x14);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_Credits_007132e8;
+  this[4] = &PTR_handleEvent_007133a0;
+  this[0x12] = &PTR__Screen_Credits_007133c0;
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x21);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x16);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x14);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

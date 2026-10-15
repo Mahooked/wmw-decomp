@@ -35,7 +35,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SoundManager::GotSoundCallbackData>>>
      ::
      __upper_bound<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*> *param_2,std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*> *param_3)
+               (undefined8 param_1,byte *param_2,long param_3,long param_4)
 
 {
   ulong uVar1;
@@ -47,19 +47,19 @@ long std::__ndk1::
   long lVar7;
   long lVar8;
   
-  if (param_2 != 0) {
-    uVar3 = *(ulong *)(param_1 + 8);
-    pbVar4 = *(byte **)(param_1 + 0x10);
-    lVar8 = param_3;
-    if ((*param_1 & 1) == 0) {
-      pbVar4 = param_1 + 1;
-      uVar3 = (ulong)(*param_1 >> 1);
+  if (param_3 != 0) {
+    uVar3 = *(ulong *)(param_2 + 8);
+    pbVar4 = *(byte **)(param_2 + 0x10);
+    lVar8 = param_4;
+    if ((*param_2 & 1) == 0) {
+      pbVar4 = param_2 + 1;
+      uVar3 = (ulong)(*param_2 >> 1);
     }
     do {
-      bVar5 = *(byte *)(param_2 + 0x20);
+      bVar5 = *(byte *)(param_3 + 0x20);
       uVar1 = (ulong)(bVar5 >> 1);
       if ((bVar5 & 1) != 0) {
-        uVar1 = *(ulong *)(param_2 + 0x28);
+        uVar1 = *(ulong *)(param_3 + 0x28);
       }
       uVar2 = uVar1;
       if (uVar3 <= uVar1) {
@@ -73,24 +73,24 @@ LAB_00357c94:
         }
       }
       else {
-        lVar7 = *(long *)(param_2 + 0x30);
+        lVar7 = *(long *)(param_3 + 0x30);
         if ((bVar5 & 1) == 0) {
-          lVar7 = param_2 + 0x21;
+          lVar7 = param_3 + 0x21;
         }
         uVar6 = memcmp(pbVar4,lVar7);
         if (uVar6 == 0) goto LAB_00357c94;
       }
       lVar7 = 0;
-      param_3 = param_2;
+      param_4 = param_3;
       if (-1 < (int)uVar6) {
         lVar7 = 8;
-        param_3 = lVar8;
+        param_4 = lVar8;
       }
-      param_2 = *(long *)(param_2 + lVar7);
-      lVar8 = param_3;
-    } while (param_2 != 0);
+      param_3 = *(long *)(param_3 + lVar7);
+      lVar8 = param_4;
+    } while (param_3 != 0);
   }
-  return param_3;
+  return param_4;
 }
 
 

@@ -9,13 +9,13 @@
 
 /* WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay() */
 
-void WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay(undefined8 *param_1)
+void WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,6);
-  *(undefined2 *)((long)param_1 + 0x94) = 0;
-  *param_1 = &PTR__Screen_MenuOverlay_00714968;
-  param_1[4] = &PTR_handleEvent_00714a18;
+  WaterConcept::WCScreen::WCScreen(this,6);
+  *(undefined2 *)((long)this + 0x94) = 0;
+  *this = &PTR__Screen_MenuOverlay_00714968;
+  this[4] = &PTR_handleEvent_00714a18;
   return;
 }
 

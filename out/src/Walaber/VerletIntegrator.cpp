@@ -9,10 +9,10 @@
 
 /* Walaber::VerletIntegrator::VerletIntegrator() */
 
-void Walaber::VerletIntegrator::VerletIntegrator(undefined4 *param_1)
+void Walaber::VerletIntegrator::VerletIntegrator()
 
 {
-  *param_1 = 0x38d1b717;
+  *this = 0x38d1b717;
   return;
 }
 

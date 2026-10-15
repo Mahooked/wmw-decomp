@@ -53,21 +53,21 @@ Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=
 
 /* Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr() */
 
-void Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(undefined8 *param_1)
+void Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr()
 
 {
   int iVar1;
   void *p0;
   
-  p0 = (void *)*param_1;
+  p0 = (void *)*this;
   if (p0 != (void *)0x0) {
-    iVar1 = *(int *)param_1[1] + -1;
-    *(int *)param_1[1] = iVar1;
+    iVar1 = *(int *)this[1] + -1;
+    *(int *)this[1] = iVar1;
     if (iVar1 == 0) {
       Walaber::SpriteAnimation::~SpriteAnimation(p0);
       operator delete(p0);
-      if ((void *)param_1[1] != (void *)0x0) {
-        operator delete((void *)param_1[1]);
+      if ((void *)this[1] != (void *)0x0) {
+        operator delete((void *)this[1]);
         return;
       }
     }

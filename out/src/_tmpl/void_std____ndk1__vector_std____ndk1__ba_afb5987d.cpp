@@ -18,7 +18,7 @@ void std::__ndk1::
      vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
      ::
      __push_back_slow_path<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>const&>
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+               (long *param_1,undefined8 param_2)
 
 {
   ulong uVar1;
@@ -37,24 +37,24 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (this[1] - *this >> 3) * -0x5555555555555555;
+  lVar3 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
-  lVar6 = this[2] - *this >> 3;
+  lVar6 = param_1[2] - *param_1 >> 3;
   uVar5 = 0xaaaaaaaaaaaaaaa;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x555555555555555) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar5,lVar3,this + 2);
+  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar5,lVar3,param_1 + 2);
                     /* try { // try from 002c2d58 to 002c2d5f has its CatchHandler @ 002c2e10 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_50,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lStack_50,param_2);
   lVar3 = lStack_50 + 0x18;
-  lStack_60 = *this;
-  lStack_50 = this[1];
+  lStack_60 = *param_1;
+  lStack_50 = param_1[1];
   if (lStack_50 != lStack_60) {
     do {
       uVar8 = *(undefined8 *)(lStack_50 + -0x10);
@@ -68,13 +68,13 @@ void std::__ndk1::
       lStack_50 = lStack_50 + -0x18;
       lStack_58 = lStack_58 + -0x18;
     } while (lStack_60 != lStack_50);
-    lStack_60 = *this;
-    lStack_50 = this[1];
+    lStack_60 = *param_1;
+    lStack_50 = param_1[1];
   }
-  *this = lStack_58;
-  this[1] = lVar3;
-  lVar3 = this[2];
-  this[2] = lStack_48;
+  *param_1 = lStack_58;
+  param_1[1] = lVar3;
+  lVar3 = param_1[2];
+  param_1[2] = lStack_48;
   lStack_58 = lStack_60;
   lStack_48 = lVar3;
   std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::~__split_buffer(&lStack_60);
@@ -102,7 +102,7 @@ void std::__ndk1::
      vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
      ::
      __push_back_slow_path<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&& param_1)
+               (long *param_1,undefined8 *param_2)
 
 {
   ulong uVar1;
@@ -122,30 +122,30 @@ void std::__ndk1::
   
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
-  lVar4 = (this[1] - *this >> 3) * -0x5555555555555555;
+  lVar4 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
   uVar1 = lVar4 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
-  lVar7 = this[2] - *this >> 3;
+  lVar7 = param_1[2] - *param_1 >> 3;
   uVar6 = 0xaaaaaaaaaaaaaaa;
   if (((ulong)(lVar7 * -0x5555555555555555) < 0x555555555555555) &&
      (uVar5 = lVar7 * 0x5555555555555556, uVar6 = uVar1, uVar1 <= uVar5)) {
     uVar6 = uVar5;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar6,lVar4,this + 2);
-  uVar9 = param_1[1];
-  uVar8 = *param_1;
-  puStack_50[2] = param_1[2];
+  std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::__split_buffer(&lStack_60,uVar6,lVar4,param_1 + 2);
+  uVar9 = param_2[1];
+  uVar8 = *param_2;
+  puStack_50[2] = param_2[2];
   puStack_50[1] = uVar9;
   *puStack_50 = uVar8;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
+  param_2[1] = 0;
+  param_2[2] = 0;
+  *param_2 = 0;
   puVar2 = puStack_50 + 3;
-  lStack_60 = *this;
-  puStack_50 = (undefined8 *)this[1];
+  lStack_60 = *param_1;
+  puStack_50 = (undefined8 *)param_1[1];
   if (puStack_50 != (undefined8 *)lStack_60) {
     do {
       uVar9 = *(undefined8 *)((long)puStack_50 + -0x10);
@@ -159,13 +159,13 @@ void std::__ndk1::
       puStack_50 = (undefined8 *)((long)puStack_50 + -0x18);
       lStack_58 = lStack_58 + -0x18;
     } while ((undefined8 *)lStack_60 != puStack_50);
-    lStack_60 = *this;
-    puStack_50 = (undefined8 *)this[1];
+    lStack_60 = *param_1;
+    puStack_50 = (undefined8 *)param_1[1];
   }
-  *this = lStack_58;
-  this[1] = (long)puVar2;
-  lVar4 = this[2];
-  this[2] = lStack_48;
+  *param_1 = lStack_58;
+  param_1[1] = (long)puVar2;
+  lVar4 = param_1[2];
+  param_1[2] = lStack_48;
   lStack_58 = lStack_60;
   lStack_48 = lVar4;
   std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::~__split_buffer(&lStack_60);

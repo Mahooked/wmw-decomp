@@ -31,19 +31,19 @@ void std::__ndk1::
      __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SkeletonActor::Prop*>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SkeletonActor::Prop*>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SkeletonActor::Prop*>>>
      ::
      __construct_node<std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>const&>,std::__ndk1::tuple<>>
-               (std::__ndk1::piecewise_construct_t const& param_1,std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>&& param_2,std::__ndk1::tuple<>&& param_3)
+               (long *param_1,long param_2,undefined8 param_3,undefined8 *param_4)
 
 {
   long lVar1;
   
   lVar1 = operator new(0x40);
-  *this = lVar1;
-  this[1] = param_1 + 8;
-  *(undefined1 *)(this + 2) = 0;
+  *param_1 = lVar1;
+  param_1[1] = param_2 + 8;
+  *(undefined1 *)(param_1 + 2) = 0;
                     /* try { // try from 0034c2b0 to 0034c2b3 has its CatchHandler @ 0034c2d0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
   *(undefined8 *)(lVar1 + 0x38) = 0;
-  *(undefined1 *)(this + 2) = 1;
+  *(undefined1 *)(param_1 + 2) = 1;
   return;
 }
 

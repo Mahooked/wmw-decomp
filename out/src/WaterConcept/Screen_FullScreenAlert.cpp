@@ -9,37 +9,37 @@
 
 /* WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert() */
 
-void WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert(undefined8 *param_1)
+void WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert()
 
 {
   undefined8 uVar1;
   
-  WaterConcept::WCScreen::WCScreen(param_1,0x17);
-  *param_1 = &PTR__Screen_FullScreenAlert_00713b08;
-  param_1[4] = &PTR_handleEvent_00713bb8;
-  memset(param_1 + 0x12,0,0x78);
-  *(undefined1 *)((long)param_1 + 0xf1) = 0;
-  param_1[0x22] = 0;
-  param_1[0x23] = 0;
-  param_1[0x21] = 0;
-  *(undefined1 *)((long)param_1 + 0x109) = 0;
-  *(undefined1 *)(param_1 + 0x24) = 0;
+  WaterConcept::WCScreen::WCScreen(this,0x17);
+  *this = &PTR__Screen_FullScreenAlert_00713b08;
+  this[4] = &PTR_handleEvent_00713bb8;
+  memset(this + 0x12,0,0x78);
+  *(undefined1 *)((long)this + 0xf1) = 0;
+  this[0x22] = 0;
+  this[0x23] = 0;
+  this[0x21] = 0;
+  *(undefined1 *)((long)this + 0x109) = 0;
+  *(undefined1 *)(this + 0x24) = 0;
   uVar1 = NEON_fmov(0xbf800000,4);
-  *(undefined8 *)((long)param_1 + 0x124) = uVar1;
-  *(undefined1 *)((long)param_1 + 300) = 0;
-  *(undefined1 *)((long)param_1 + 0x12d) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x12e) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x12f) = 0xff;
-  *(undefined4 *)((long)param_1 + 0x134) = 0;
-  *(undefined1 *)(param_1 + 0x26) = 0xff;
-  param_1[0x28] = 0;
-  param_1[0x29] = 0;
-  param_1[0x27] = 0x3f8000003f800000;
-  *(undefined4 *)(param_1 + 0x2a) = 0;
-  param_1[0x2b] = 0;
-  *(undefined4 *)(param_1 + 0x2c) = 0x3f800000;
-  *(undefined4 *)((long)param_1 + 0x154) = 0;
-  *(undefined1 *)((long)param_1 + 0x164) = 0;
+  *(undefined8 *)((long)this + 0x124) = uVar1;
+  *(undefined1 *)((long)this + 300) = 0;
+  *(undefined1 *)((long)this + 0x12d) = 0xff;
+  *(undefined1 *)((long)this + 0x12e) = 0xff;
+  *(undefined1 *)((long)this + 0x12f) = 0xff;
+  *(undefined4 *)((long)this + 0x134) = 0;
+  *(undefined1 *)(this + 0x26) = 0xff;
+  this[0x28] = 0;
+  this[0x29] = 0;
+  this[0x27] = 0x3f8000003f800000;
+  *(undefined4 *)(this + 0x2a) = 0;
+  this[0x2b] = 0;
+  *(undefined4 *)(this + 0x2c) = 0x3f800000;
+  *(undefined4 *)((long)this + 0x154) = 0;
+  *(undefined1 *)((long)this + 0x164) = 0;
   return;
 }
 
@@ -51,28 +51,28 @@ void WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert(undefined8 *pa
 
 /* WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert() */
 
-void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert(undefined8 *param_1)
+void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert()
 
 {
-  *param_1 = &PTR__Screen_FullScreenAlert_00713b08;
-  param_1[4] = &PTR_handleEvent_00713bb8;
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x28);
-  if ((*(byte *)(param_1 + 0x21) & 1) != 0) {
-    operator delete((void *)param_1[0x23]);
+  *this = &PTR__Screen_FullScreenAlert_00713b08;
+  this[4] = &PTR_handleEvent_00713bb8;
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x28);
+  if ((*(byte *)(this + 0x21) & 1) != 0) {
+    operator delete((void *)this[0x23]);
   }
-  if ((*(byte *)(param_1 + 0x1e) & 1) != 0) {
-    operator delete((void *)param_1[0x20]);
+  if ((*(byte *)(this + 0x1e) & 1) != 0) {
+    operator delete((void *)this[0x20]);
   }
-  if ((*(byte *)(param_1 + 0x1b) & 1) != 0) {
-    operator delete((void *)param_1[0x1d]);
+  if ((*(byte *)(this + 0x1b) & 1) != 0) {
+    operator delete((void *)this[0x1d]);
   }
-  if ((*(byte *)(param_1 + 0x18) & 1) != 0) {
-    operator delete((void *)param_1[0x1a]);
+  if ((*(byte *)(this + 0x18) & 1) != 0) {
+    operator delete((void *)this[0x1a]);
   }
-  if ((*(byte *)(param_1 + 0x15) & 1) != 0) {
-    operator delete((void *)param_1[0x17]);
+  if ((*(byte *)(this + 0x15) & 1) != 0) {
+    operator delete((void *)this[0x17]);
   }
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

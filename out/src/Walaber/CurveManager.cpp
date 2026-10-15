@@ -31,7 +31,7 @@ long Walaber::CurveManager::getManager(void)
 
 /* Walaber::CurveManager::CurveManager() */
 
-void Walaber::CurveManager::CurveManager(undefined8 *param_1)
+void Walaber::CurveManager::CurveManager()
 
 {
   undefined8 *puVar1;
@@ -48,29 +48,29 @@ void Walaber::CurveManager::CurveManager(undefined8 *param_1)
   puVar1[5] = 0;
   puVar1[3] = uVar2;
   *puVar1 = &PTR__Curve_00710be8;
-  *param_1 = puVar1;
+  *this = puVar1;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
-  param_1[0xf] = 0;
-  param_1[3] = 0;
-  param_1[4] = 0;
-  param_1[1] = puVar3;
-  param_1[2] = param_1 + 3;
-  param_1[5] = 0;
-  param_1[10] = 0;
-  param_1[8] = 0;
-  param_1[9] = param_1 + 10;
-  param_1[6] = 0;
-  param_1[7] = 0;
-  param_1[0xd] = 0;
-  param_1[0xe] = 0;
-  param_1[0xb] = 0;
-  param_1[0xc] = param_1 + 0xd;
-  param_1[0x10] = 0;
-  param_1[0x11] = 0;
+  this[0xf] = 0;
+  this[3] = 0;
+  this[4] = 0;
+  this[1] = puVar3;
+  this[2] = this + 3;
+  this[5] = 0;
+  this[10] = 0;
+  this[8] = 0;
+  this[9] = this + 10;
+  this[6] = 0;
+  this[7] = 0;
+  this[0xd] = 0;
+  this[0xe] = 0;
+  this[0xb] = 0;
+  this[0xc] = this + 0xd;
+  this[0x10] = 0;
+  this[0x11] = 0;
                     /* try { // try from 003e1848 to 003e184b has its CatchHandler @ 003e1864 */
   uVar2 = Walaber::FileManager::getInstancePtr();
-  param_1[8] = uVar2;
+  this[8] = uVar2;
   return;
 }
 
@@ -104,7 +104,7 @@ void Walaber::CurveManager::~CurveManager(long param_1)
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&, Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::SharedPtr<Walaber::Callback> param_3)
+void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param_3,long *param_4)
 
 {
   long lVar1;
@@ -136,16 +136,16 @@ void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x10,param_2);
-  if (this + 0x18 == lVar2) {
+  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x10,param_3);
+  if (param_1 + 0x18 == lVar2) {
     piStack_88 = (int *)0x0;
     piStack_80 = (int *)0x0;
-    plStack_90 = param_1;
-    Walaber::SharedPtr<Walaber::Callback>::operator=(&piStack_88,param_3);
+    plStack_90 = param_2;
+    Walaber::SharedPtr<Walaber::Callback>::operator=(&piStack_88,param_4);
                     /* try { // try from 003e1a18 to 003e1a23 has its CatchHandler @ 003e1bf4 */
-    lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x48,param_2);
+    lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x48,param_3);
                     /* try { // try from 003e1a28 to 003e1a37 has its CatchHandler @ 003e1bf0 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,param_3);
     plStack_a8 = plStack_90;
     piStack_a0 = piStack_88;
     piStack_98 = piStack_80;
@@ -153,18 +153,18 @@ void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1
       *piStack_80 = *piStack_80 + 1;
     }
                     /* try { // try from 003e1a5c to 003e1a67 has its CatchHandler @ 003e1bd0 */
-    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>(this + 0x48,abStack_c0);
+    std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>(param_1 + 0x48,abStack_c0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_a0);
     if ((abStack_c0[0] & 1) != 0) {
       operator delete(pvStack_b0);
     }
-    Walaber::SharedPtr<Walaber::Curve>::operator=(param_1,this);
-    if (this + 0x50 == lVar2) {
+    Walaber::SharedPtr<Walaber::Curve>::operator=(param_2,param_1);
+    if (param_1 + 0x50 == lVar2) {
                     /* try { // try from 003e1a98 to 003e1a9f has its CatchHandler @ 003e1bbc */
       Walaber::PropertyList::PropertyList(abStack_c0);
                     /* try { // try from 003e1aa0 to 003e1adf has its CatchHandler @ 003e1bc0 */
       puVar3 = (undefined8 *)operator new(0x28);
-      puVar3[2] = this;
+      puVar3[2] = param_1;
       *puVar3 = &PTR__Callback_00710b20;
       puVar3[1] = 0;
       puVar3[4] = 0;
@@ -182,12 +182,12 @@ void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1
       puStack_e0 = puVar3;
       piStack_d8 = piVar4;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f0);
-      uVar5 = *(undefined8 *)(this + 0x40);
+      uVar5 = *(undefined8 *)(param_1 + 0x40);
       *piVar4 = *piVar4 + 1;
                     /* try { // try from 003e1b2c to 003e1b3f has its CatchHandler @ 003e1b9c */
       puStack_100 = puVar3;
       piStack_f8 = piVar4;
-      Walaber::FileManager::readFile(uVar5,param_2,&puStack_100,abStack_c0,0);
+      Walaber::FileManager::readFile(uVar5,param_3,&puStack_100,abStack_c0,0);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_100);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
       Walaber::SharedPtr<Walaber::MemberCallback<Walaber::CurveManager>>::~SharedPtr(&puStack_d0);
@@ -196,15 +196,15 @@ void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_88);
   }
   else {
-    Walaber::SharedPtr<Walaber::Curve>::operator=(param_1,lVar2 + 0x38);
-    if (*param_3 != 0) {
-      plStack_110 = (long *)*param_1;
-      piStack_108 = (int *)param_1[1];
+    Walaber::SharedPtr<Walaber::Curve>::operator=(param_2,lVar2 + 0x38);
+    if (*param_4 != 0) {
+      plStack_110 = (long *)*param_2;
+      piStack_108 = (int *)param_2[1];
       if (plStack_110 != (long *)0x0) {
         *piStack_108 = *piStack_108 + 1;
       }
                     /* try { // try from 003e1994 to 003e19a3 has its CatchHandler @ 003e1c28 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,param_2);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c0,param_3);
       plStack_a8 = plStack_110;
       piStack_a0 = piStack_108;
       if (plStack_110 != (long *)0x0) {
@@ -212,7 +212,7 @@ void Walaber::CurveManager::getCurve(Walaber::SharedPtr<Walaber::Curve> *param_1
       }
       Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&plStack_110);
                     /* try { // try from 003e19d4 to 003e19db has its CatchHandler @ 003e1c08 */
-      (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,abStack_c0);
+      (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,abStack_c0);
       Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&plStack_a8);
       if ((abStack_c0[0] & 1) != 0) {
         operator delete(pvStack_b0);

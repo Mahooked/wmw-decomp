@@ -9,10 +9,10 @@
 
 /* std::bad_typeid::bad_typeid() */
 
-void std::bad_typeid::bad_typeid(undefined8 *param_1)
+void std::bad_typeid::bad_typeid()
 
 {
-  *param_1 = &PTR__bad_typeid_0071a420;
+  *this = &PTR__bad_typeid_0071a420;
   return;
 }
 

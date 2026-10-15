@@ -16,20 +16,20 @@
 
 void std::__ndk1::
      __vector_base<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   void *pvVar1;
   void *pvVar2;
   void *pvVar3;
   
-  pvVar1 = (void *)*param_1;
+  pvVar1 = (void *)*this;
   if (pvVar1 == (void *)0x0) {
     return;
   }
   pvVar3 = pvVar1;
-  pvVar2 = (void *)param_1[1];
-  if ((void *)param_1[1] != pvVar1) {
+  pvVar2 = (void *)this[1];
+  if ((void *)this[1] != pvVar1) {
     do {
       if ((*(byte *)((long)pvVar2 + -0x18) & 1) != 0) {
         operator delete(*(void **)((long)pvVar2 + -8));
@@ -40,9 +40,9 @@ void std::__ndk1::
       }
       pvVar2 = pvVar3;
     } while (pvVar1 != pvVar3);
-    pvVar3 = (void *)*param_1;
+    pvVar3 = (void *)*this;
   }
-  param_1[1] = pvVar1;
+  this[1] = pvVar1;
   operator delete(pvVar3);
   return;
 }

@@ -9,28 +9,28 @@
 
 /* WaterConcept::Screen_UpsellWater2::Screen_UpsellWater2() */
 
-void WaterConcept::Screen_UpsellWater2::Screen_UpsellWater2(undefined8 *param_1)
+void WaterConcept::Screen_UpsellWater2::Screen_UpsellWater2()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x27);
+  WaterConcept::WCScreen::WCScreen(this,0x27);
                     /* try { // try from 005685b8 to 005685bf has its CatchHandler @ 0056861c */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined2 *)((long)param_1 + 0x9c) = 0;
-  param_1[0x17] = 0;
-  *param_1 = &PTR__Screen_UpsellWater2_00715d18;
-  param_1[4] = &PTR_handleEvent_00715dd0;
-  param_1[0x12] = &PTR__Screen_UpsellWater2_00715df0;
-  param_1[0x16] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x1b] = 0;
-  param_1[0x19] = 0;
-  *(undefined1 *)(param_1 + 0x1e) = 0;
-  param_1[0x22] = 0;
-  param_1[0x23] = 0;
-  param_1[0x21] = 0;
-  param_1[0x1f] = 0;
-  param_1[0x15] = param_1 + 0x16;
-  *(undefined4 *)(param_1 + 0x20) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined2 *)((long)this + 0x9c) = 0;
+  this[0x17] = 0;
+  *this = &PTR__Screen_UpsellWater2_00715d18;
+  this[4] = &PTR_handleEvent_00715dd0;
+  this[0x12] = &PTR__Screen_UpsellWater2_00715df0;
+  this[0x16] = 0;
+  this[0x1a] = 0;
+  this[0x1b] = 0;
+  this[0x19] = 0;
+  *(undefined1 *)(this + 0x1e) = 0;
+  this[0x22] = 0;
+  this[0x23] = 0;
+  this[0x21] = 0;
+  this[0x1f] = 0;
+  this[0x15] = this + 0x16;
+  *(undefined4 *)(this + 0x20) = 0;
   return;
 }
 
@@ -42,20 +42,20 @@ void WaterConcept::Screen_UpsellWater2::Screen_UpsellWater2(undefined8 *param_1)
 
 /* WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2() */
 
-void WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2(undefined8 *param_1)
+void WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2()
 
 {
-  *param_1 = &PTR__Screen_UpsellWater2_00715d18;
-  param_1[4] = &PTR_handleEvent_00715dd0;
-  param_1[0x12] = &PTR__Screen_UpsellWater2_00715df0;
-  param_1[0x1f] = 0;
-  if ((*(byte *)(param_1 + 0x21) & 1) != 0) {
-    operator delete((void *)param_1[0x23]);
+  *this = &PTR__Screen_UpsellWater2_00715d18;
+  this[4] = &PTR_handleEvent_00715dd0;
+  this[0x12] = &PTR__Screen_UpsellWater2_00715df0;
+  this[0x1f] = 0;
+  if ((*(byte *)(this + 0x21) & 1) != 0) {
+    operator delete((void *)this[0x23]);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(param_1 + 0x19);
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>>>::destroy(param_1 + 0x15,param_1[0x16]);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(this + 0x19);
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>>>::destroy(this + 0x15,this[0x16]);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

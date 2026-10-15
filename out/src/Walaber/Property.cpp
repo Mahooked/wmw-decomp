@@ -9,13 +9,13 @@
 
 /* Walaber::Property::Property() */
 
-void Walaber::Property::Property(undefined4 *param_1)
+void Walaber::Property::Property()
 
 {
-  *param_1 = 0;
-  *(undefined8 *)(param_1 + 4) = 0;
-  *(undefined8 *)(param_1 + 6) = 0;
-  *(undefined8 *)(param_1 + 2) = 0;
+  *this = 0;
+  *(undefined8 *)(this + 4) = 0;
+  *(undefined8 *)(this + 6) = 0;
+  *(undefined8 *)(this + 2) = 0;
   return;
 }
 

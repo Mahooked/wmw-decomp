@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::vector(std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>> const& param_1)
+     ::vector(undefined8 *param_1,long *param_2)
 
 {
   undefined8 *puVar1;
@@ -22,16 +22,16 @@ void std::__ndk1::
   undefined4 *puVar3;
   undefined4 *puVar4;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if (param_1[1] - *param_1 != 0) {
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if (param_2[1] - *param_2 != 0) {
                     /* try { // try from 003373cc to 003373cf has its CatchHandler @ 00337424 */
-    std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__vallocate(this,(param_1[1] - *param_1 >> 3) * -0x3333333333333333);
-    puVar3 = (undefined4 *)*param_1;
-    puVar2 = (undefined4 *)param_1[1];
+    std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__vallocate(param_1,(param_2[1] - *param_2 >> 3) * -0x3333333333333333);
+    puVar3 = (undefined4 *)*param_2;
+    puVar2 = (undefined4 *)param_2[1];
     if (puVar3 != puVar2) {
-      puVar4 = (undefined4 *)this[1];
+      puVar4 = (undefined4 *)param_1[1];
       do {
         *puVar4 = *puVar3;
                     /* try { // try from 003373ec to 003373f3 has its CatchHandler @ 00337428 */
@@ -39,8 +39,8 @@ void std::__ndk1::
         puVar1 = (undefined8 *)(puVar3 + 8);
         puVar3 = puVar3 + 10;
         *(undefined8 *)(puVar4 + 8) = *puVar1;
-        puVar4 = (undefined4 *)(this[1] + 0x28);
-        this[1] = puVar4;
+        puVar4 = (undefined4 *)(param_1[1] + 0x28);
+        param_1[1] = puVar4;
       } while (puVar3 != puVar2);
     }
   }
@@ -132,7 +132,7 @@ void std::__ndk1::
 undefined4 *
 std::__ndk1::
 vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-::insert(std::__ndk1::__wrap_iter<Walaber::AnimationCueAnimationTrack::CueAnimationEvent const*> param_1,Walaber::AnimationCueAnimationTrack::CueAnimationEvent&& param_2)
+::insert(long *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
   long lVar1;
@@ -153,28 +153,28 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  lVar8 = *this;
-  puVar2 = (undefined4 *)this[1];
-  lVar9 = (long)param_1 - lVar8 >> 3;
-  if (puVar2 < (undefined4 *)this[2]) {
-    if (param_1 == puVar2) {
+  lVar8 = *param_1;
+  puVar2 = (undefined4 *)param_1[1];
+  lVar9 = (long)param_2 - lVar8 >> 3;
+  if (puVar2 < (undefined4 *)param_1[2]) {
+    if (param_2 == puVar2) {
       lVar8 = lVar8 + lVar9 * 8;
-      *param_1 = *param_2;
-      uVar13 = *(undefined8 *)(param_2 + 4);
-      uVar12 = *(undefined8 *)(param_2 + 2);
-      *(undefined8 *)(lVar8 + 0x18) = *(undefined8 *)(param_2 + 6);
+      *param_2 = *param_3;
+      uVar13 = *(undefined8 *)(param_3 + 4);
+      uVar12 = *(undefined8 *)(param_3 + 2);
+      *(undefined8 *)(lVar8 + 0x18) = *(undefined8 *)(param_3 + 6);
       *(undefined8 *)(lVar8 + 0x10) = uVar13;
       *(undefined8 *)(lVar8 + 8) = uVar12;
-      *(undefined8 *)(param_2 + 4) = 0;
-      *(undefined8 *)(param_2 + 6) = 0;
-      *(undefined8 *)(param_2 + 2) = 0;
-      *(undefined8 *)(lVar8 + 0x20) = *(undefined8 *)(param_2 + 8);
-      this[1] = this[1] + 0x28;
+      *(undefined8 *)(param_3 + 4) = 0;
+      *(undefined8 *)(param_3 + 6) = 0;
+      *(undefined8 *)(param_3 + 2) = 0;
+      *(undefined8 *)(lVar8 + 0x20) = *(undefined8 *)(param_3 + 8);
+      param_1[1] = param_1[1] + 0x28;
     }
     else {
-      std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__move_range(this,param_1,puVar2,param_1 + 10);
+      std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__move_range(param_1,param_2,puVar2,param_2 + 10);
       lVar10 = lVar8 + lVar9 * 8;
-      *param_1 = *param_2;
+      *param_2 = *param_3;
       pbVar11 = (byte *)(lVar10 + 8);
       if ((*pbVar11 & 1) == 0) {
         pbVar11[0] = 0;
@@ -197,40 +197,40 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
           pbVar11[7] = 0;
         }
       }
-      uVar13 = *(undefined8 *)(param_2 + 4);
-      uVar12 = *(undefined8 *)(param_2 + 2);
-      *(undefined8 *)(lVar10 + 0x18) = *(undefined8 *)(param_2 + 6);
+      uVar13 = *(undefined8 *)(param_3 + 4);
+      uVar12 = *(undefined8 *)(param_3 + 2);
+      *(undefined8 *)(lVar10 + 0x18) = *(undefined8 *)(param_3 + 6);
       *(undefined8 *)(lVar10 + 0x10) = uVar13;
       *(undefined8 *)pbVar11 = uVar12;
-      *(undefined8 *)(param_2 + 4) = 0;
-      *(undefined8 *)(param_2 + 6) = 0;
-      *(undefined8 *)(param_2 + 2) = 0;
-      *(undefined8 *)(lVar8 + lVar9 * 8 + 0x20) = *(undefined8 *)(param_2 + 8);
+      *(undefined8 *)(param_3 + 4) = 0;
+      *(undefined8 *)(param_3 + 6) = 0;
+      *(undefined8 *)(param_3 + 2) = 0;
+      *(undefined8 *)(lVar8 + lVar9 * 8 + 0x20) = *(undefined8 *)(param_3 + 8);
     }
   }
   else {
     uVar4 = ((long)puVar2 - lVar8 >> 3) * -0x3333333333333333 + 1;
     if (0x666666666666666 < uVar4) {
-      puVar2 = (undefined4 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+      puVar2 = (undefined4 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar2;
     }
-    lVar8 = this[2] - lVar8 >> 3;
+    lVar8 = param_1[2] - lVar8 >> 3;
     uVar3 = 0x666666666666666;
     if (((ulong)(lVar8 * -0x3333333333333333) < 0x333333333333333) &&
        (uVar7 = lVar8 * -0x6666666666666666, uVar3 = uVar4, uVar4 <= uVar7)) {
       uVar3 = uVar7;
     }
-    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::__split_buffer(auStack_80,uVar3,lVar9 * -0x3333333333333333,this + 2);
+    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::__split_buffer(auStack_80,uVar3,lVar9 * -0x3333333333333333,param_1 + 2);
                     /* try { // try from 00433ec8 to 00433ee3 has its CatchHandler @ 00433fc0 */
-    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(auStack_80,param_2);
-    param_1 = (undefined4 *)std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(this,auStack_80,param_1);
+    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(auStack_80,param_3);
+    param_2 = (undefined4 *)std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
     std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::~__split_buffer(auStack_80);
   }
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     puVar2 = (undefined4 *)__stack_chk_fail();
     return puVar2;
   }
-  return param_1;
+  return param_2;
 }
 
 
@@ -329,7 +329,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>& param_1,Walaber::AnimationCueAnimationTrack::CueAnimationEvent *param_2)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined4 *param_3)
 
 {
   undefined8 *puVar1;
@@ -340,9 +340,9 @@ void std::__ndk1::
   undefined8 uVar6;
   undefined8 uVar7;
   
-  puVar3 = (undefined4 *)*this;
-  lVar2 = param_1[1];
-  puVar4 = param_2;
+  puVar3 = (undefined4 *)*param_1;
+  lVar2 = param_2[1];
+  puVar4 = param_3;
   while (puVar3 != puVar4) {
     *(undefined4 *)(lVar2 + -0x28) = puVar4[-10];
     uVar7 = *(undefined8 *)(puVar4 + -6);
@@ -354,41 +354,41 @@ void std::__ndk1::
     *(undefined8 *)(puVar4 + -4) = 0;
     *(undefined8 *)(puVar4 + -8) = 0;
     *(undefined8 *)(lVar2 + -8) = *(undefined8 *)(puVar4 + -2);
-    lVar2 = param_1[1] + -0x28;
-    param_1[1] = lVar2;
+    lVar2 = param_2[1] + -0x28;
+    param_2[1] = lVar2;
     puVar4 = puVar4 + -10;
   }
-  puVar4 = (undefined4 *)this[1];
-  if (puVar4 != param_2) {
-    puVar3 = (undefined4 *)param_1[2];
+  puVar4 = (undefined4 *)param_1[1];
+  if (puVar4 != param_3) {
+    puVar3 = (undefined4 *)param_2[2];
     do {
-      *puVar3 = *param_2;
-      uVar7 = *(undefined8 *)(param_2 + 4);
-      uVar6 = *(undefined8 *)(param_2 + 2);
-      *(undefined8 *)(puVar3 + 6) = *(undefined8 *)(param_2 + 6);
+      *puVar3 = *param_3;
+      uVar7 = *(undefined8 *)(param_3 + 4);
+      uVar6 = *(undefined8 *)(param_3 + 2);
+      *(undefined8 *)(puVar3 + 6) = *(undefined8 *)(param_3 + 6);
       *(undefined8 *)(puVar3 + 4) = uVar7;
       *(undefined8 *)(puVar3 + 2) = uVar6;
-      puVar1 = (undefined8 *)(param_2 + 8);
-      *(undefined8 *)(param_2 + 4) = 0;
-      *(undefined8 *)(param_2 + 6) = 0;
-      *(undefined8 *)(param_2 + 2) = 0;
-      param_2 = param_2 + 10;
+      puVar1 = (undefined8 *)(param_3 + 8);
+      *(undefined8 *)(param_3 + 4) = 0;
+      *(undefined8 *)(param_3 + 6) = 0;
+      *(undefined8 *)(param_3 + 2) = 0;
+      param_3 = param_3 + 10;
       *(undefined8 *)(puVar3 + 8) = *puVar1;
-      puVar3 = (undefined4 *)(param_1[2] + 0x28);
-      param_1[2] = puVar3;
-    } while (param_2 != puVar4);
-    lVar2 = param_1[1];
+      puVar3 = (undefined4 *)(param_2[2] + 0x28);
+      param_2[2] = puVar3;
+    } while (param_3 != puVar4);
+    lVar2 = param_2[1];
   }
-  lVar5 = *this;
-  *this = lVar2;
-  param_1[1] = lVar5;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  lVar5 = *param_1;
+  *param_1 = lVar2;
+  param_2[1] = lVar5;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 
@@ -405,7 +405,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>& param_1)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined4 *puVar1;
@@ -415,13 +415,13 @@ void std::__ndk1::
   undefined8 uVar6;
   undefined4 *puVar4;
   
-  puVar1 = (undefined4 *)*this;
-  if ((undefined4 *)this[1] == puVar1) {
-    lVar2 = param_1[1];
+  puVar1 = (undefined4 *)*param_1;
+  if ((undefined4 *)param_1[1] == puVar1) {
+    lVar2 = param_2[1];
   }
   else {
-    lVar2 = param_1[1];
-    puVar3 = (undefined4 *)this[1];
+    lVar2 = param_2[1];
+    puVar3 = (undefined4 *)param_1[1];
     do {
       puVar4 = puVar3 + -10;
       *(undefined4 *)(lVar2 + -0x28) = *puVar4;
@@ -434,21 +434,21 @@ void std::__ndk1::
       *(undefined8 *)(puVar3 + -4) = 0;
       *(undefined8 *)(puVar3 + -8) = 0;
       *(undefined8 *)(lVar2 + -8) = *(undefined8 *)(puVar3 + -2);
-      lVar2 = param_1[1] + -0x28;
-      param_1[1] = lVar2;
+      lVar2 = param_2[1] + -0x28;
+      param_2[1] = lVar2;
       puVar3 = puVar4;
     } while (puVar1 != puVar4);
-    puVar1 = (undefined4 *)*this;
+    puVar1 = (undefined4 *)*param_1;
   }
-  *this = lVar2;
-  param_1[1] = puVar1;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  *param_1 = lVar2;
+  param_2[1] = puVar1;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 

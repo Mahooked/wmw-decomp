@@ -15,35 +15,35 @@
 
 long std::__ndk1::
      vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>& param_1,Walaber::PositionTextureColorVert *param_2)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  lVar1 = *this;
-  lVar3 = param_1[1];
-  lVar2 = SUB168(SEXT816(param_2 - lVar1) * SEXT816(-0x6666666666666667),8);
-  param_1[1] = lVar3 + ((lVar2 >> 3) - (lVar2 >> 0x3f)) * 0x14;
-  if (0 < param_2 - lVar1) {
+  lVar1 = *param_1;
+  lVar3 = param_2[1];
+  lVar2 = SUB168(SEXT816(param_3 - lVar1) * SEXT816(-0x6666666666666667),8);
+  param_2[1] = lVar3 + ((lVar2 >> 3) - (lVar2 >> 0x3f)) * 0x14;
+  if (0 < param_3 - lVar1) {
     memcpy();
   }
-  lVar1 = this[1];
-  if (0 < lVar1 - param_2) {
-    memcpy(param_1[2],param_2);
-    param_1[2] = param_1[2] + ((ulong)(lVar1 - param_2) / 0x14) * 0x14;
+  lVar1 = param_1[1];
+  if (0 < lVar1 - param_3) {
+    memcpy(param_2[2],param_3);
+    param_2[2] = param_2[2] + ((ulong)(lVar1 - param_3) / 0x14) * 0x14;
   }
-  lVar1 = *this;
-  *this = param_1[1];
-  param_1[1] = lVar1;
-  lVar1 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar1;
-  lVar1 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar1;
-  *param_1 = param_1[1];
+  lVar1 = *param_1;
+  *param_1 = param_2[1];
+  param_2[1] = lVar1;
+  lVar1 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar1;
+  lVar1 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar1;
+  *param_2 = param_2[1];
   return lVar3;
 }
 

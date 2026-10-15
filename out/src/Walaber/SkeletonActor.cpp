@@ -242,7 +242,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void Walaber::SkeletonActor::loadSkeleton(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+void Walaber::SkeletonActor::loadSkeleton(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -262,12 +262,12 @@ void Walaber::SkeletonActor::loadSkeleton(std::__ndk1::basic_string<char, std::_
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if (*(long **)(this + 8) != (long *)0x0) {
-    (**(code **)(**(long **)(this + 8) + 8))();
-    *(undefined8 *)(this + 8) = 0;
+  if (*(long **)(param_1 + 8) != (long *)0x0) {
+    (**(code **)(**(long **)(param_1 + 8) + 8))();
+    *(undefined8 *)(param_1 + 8) = 0;
   }
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e5e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -289,8 +289,8 @@ void Walaber::SkeletonActor::loadSkeleton(std::__ndk1::basic_string<char, std::_
                     /* try { // try from 0034056c to 0034057b has its CatchHandler @ 003405c0 */
   puStack_98 = puVar2;
   piStack_90 = piVar3;
-  Walaber::Skeleton::loadSkeletonWithCallback(*(undefined4 *)(this + 0x60),param_2,&puStack_98,this + 0x58,this + 100,
-                  param_1);
+  Walaber::Skeleton::loadSkeletonWithCallback(*(undefined4 *)(param_1 + 0x60),param_3,&puStack_98,param_1 + 0x58,param_1 + 100,
+                  param_2);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::SkeletonActor>>::~SharedPtr(&puStack_68);
@@ -386,7 +386,7 @@ void Walaber::SkeletonActor::_skeletonLoaded(void *p0)
    std::__ndk1::allocator<char> > const&) */
 
 void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -409,11 +409,11 @@ void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::SkeletonActor::loadSkeleton();
-  Walaber::SkeletonActor::_clearAnimationGroupData(this);
+  Walaber::SkeletonActor::_clearAnimationGroupData(param_1);
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 003407e8 to 00340827 has its CatchHandler @ 00340900 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e5e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -439,7 +439,7 @@ void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
     *piStack_78 = *piStack_78 + 1;
   }
                     /* try { // try from 0034087c to 0034088f has its CatchHandler @ 003408d8 */
-  Walaber::FileManager::readFile(uVar4,param_3,&puStack_a0,auStack_60,0);
+  Walaber::FileManager::readFile(uVar4,param_4,&puStack_a0,auStack_60,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::SkeletonActor>>::~SharedPtr(&puStack_70);
@@ -3588,7 +3588,7 @@ LAB_00343470:
    bool) */
 
 void Walaber::SkeletonActor::init
-               (Walaber::Vector2 const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::Vector2 const& param_3,bool param_4)
+               (long param_1,undefined8 *param_2,byte *param_3,undefined8 *param_4,byte param_5)
 
 {
   ulong uVar1;
@@ -3596,30 +3596,30 @@ void Walaber::SkeletonActor::init
   undefined4 uVar3;
   undefined8 uVar4;
   
-  if (*(char *)(this + 0x170) != '\0') {
-    lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x110,param_2);
-    if (this + 0x118 == lVar2) {
-      uVar1 = (ulong)(*param_2 >> 1);
-      if ((*param_2 & 1) != 0) {
-        uVar1 = *(ulong *)(param_2 + 8);
+  if (*(char *)(param_1 + 0x170) != '\0') {
+    lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x110,param_3);
+    if (param_1 + 0x118 == lVar2) {
+      uVar1 = (ulong)(*param_3 >> 1);
+      if ((*param_3 & 1) != 0) {
+        uVar1 = *(ulong *)(param_3 + 8);
       }
       if (uVar1 == 0) {
                     /* try { // try from 00344830 to 0034484b has its CatchHandler @ 00344874 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_0063306f,0);
+        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
       }
       uVar3 = 0xffffffff;
     }
     else {
       uVar3 = *(undefined4 *)(lVar2 + 0x38);
     }
-    Walaber::SkeletonActor::init(this,param_1,uVar3,param_3,param_4 & 1);
+    Walaber::SkeletonActor::init(param_1,param_2,uVar3,param_4,param_5 & 1);
     return;
   }
-  *(undefined1 *)(this + 0x80) = 0;
-  *(undefined8 *)(this + 0x84) = *param_1;
-  uVar4 = *param_3;
-  *(byte *)(this + 0x94) = param_4 & 1;
-  *(undefined8 *)(this + 0x8c) = uVar4;
+  *(undefined1 *)(param_1 + 0x80) = 0;
+  *(undefined8 *)(param_1 + 0x84) = *param_2;
+  uVar4 = *param_4;
+  *(byte *)(param_1 + 0x94) = param_5 & 1;
+  *(undefined8 *)(param_1 + 0x8c) = uVar4;
   return;
 }
 
@@ -3999,7 +3999,8 @@ void Walaber::SkeletonActor::drawProps(Walaber__SpriteBatch *p0)
    Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::playAnimation
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,float param_2,Walaber::AnimationPlaybackMode param_3,int param_4,bool param_5)
+               (undefined8 param_1,long param_2,undefined8 param_3,undefined4 param_4,
+               undefined4 param_5,uint param_6)
 
 {
   long lVar1;
@@ -4010,10 +4011,10 @@ void Walaber::SkeletonActor::playAnimation
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = param_2;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 200,param_2,&DAT_00628882,&uStack_50,auStack_58);
-  Walaber::SkeletonActor::_playAnimation(this,param_1,*(undefined4 *)(lVar2 + 0x38),*(undefined4 *)(param_1 + 0x7c),
-                  param_3,param_4,param_5 & 1);
+  uStack_50 = param_3;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_2 + 200,param_3,&DAT_00628882,&uStack_50,auStack_58);
+  Walaber::SkeletonActor::_playAnimation(param_1,param_2,*(undefined4 *)(lVar2 + 0x38),*(undefined4 *)(param_2 + 0x7c),
+                  param_4,param_5,param_6 & 1);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -4031,7 +4032,8 @@ void Walaber::SkeletonActor::playAnimation
    Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::_playAnimation
-               (int param_1,Walaber::SkeletonActor::AnimationSoundState param_2,float param_3,Walaber::AnimationPlaybackMode param_4,int param_5,bool param_6)
+               (undefined8 param_1,long param_2,int param_3,undefined4 param_4,undefined4 param_5,
+               undefined4 param_6,uint param_7)
 
 {
   long lVar1;
@@ -4046,29 +4048,29 @@ void Walaber::SkeletonActor::_playAnimation
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  if (*(char *)(param_1 + 0x170) != '\0') {
+  if (*(char *)(param_2 + 0x170) != '\0') {
     Walaber::SkeletonActor::_clearNonSceneProps();
-    uVar6 = *(long *)(param_1 + 0x48) - (long)*(long **)(param_1 + 0x40);
+    uVar6 = *(long *)(param_2 + 0x48) - (long)*(long **)(param_2 + 0x40);
     if ((int)(uVar6 >> 3) != 0) {
       uVar6 = uVar6 >> 3 & 0xffffffff;
-      plVar5 = *(long **)(param_1 + 0x40);
+      plVar5 = *(long **)(param_2 + 0x40);
       do {
         uVar6 = uVar6 - 1;
         *(undefined1 *)(*plVar5 + 0x1c9) = 0;
         plVar5 = plVar5 + 1;
       } while (uVar6 != 0);
     }
-    *(undefined4 *)(param_1 + 0x7c) = param_3;
-    lStack_60 = *(long *)(param_1 + 0x98) + (long)param_2 * 0x18;
-    *(int *)(param_1 + 0x6c) = param_2;
-    lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0x128,lStack_60,&DAT_00628882,&lStack_60,auStack_68);
-    lVar1 = *(long *)(param_1 + 8) + 0xe8;
-    lVar4 = *(long *)(param_1 + 0xb0) + (long)param_2 * 0x18;
-    if ((*(char *)(lVar3 + 0x58) == '\0') || ((param_6 & 1) == 0)) {
-      Walaber::AnimationManager::playAnimation(this,lVar1,lVar4,param_4,param_5);
+    *(undefined4 *)(param_2 + 0x7c) = param_4;
+    lStack_60 = *(long *)(param_2 + 0x98) + (long)param_3 * 0x18;
+    *(int *)(param_2 + 0x6c) = param_3;
+    lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_2 + 0x128,lStack_60,&DAT_00628882,&lStack_60,auStack_68);
+    lVar1 = *(long *)(param_2 + 8) + 0xe8;
+    lVar4 = *(long *)(param_2 + 0xb0) + (long)param_3 * 0x18;
+    if ((*(char *)(lVar3 + 0x58) == '\0') || ((param_7 & 1) == 0)) {
+      Walaber::AnimationManager::playAnimation(param_1,lVar1,lVar4,param_5,param_6);
     }
     else {
-      Walaber::AnimationManager::crossFade(this,0x3f000000,lVar1,lVar4,param_4,param_5);
+      Walaber::AnimationManager::crossFade(param_1,0x3f000000,lVar1,lVar4,param_5,param_6);
     }
   }
   if (*(long *)(lVar2 + 0x28) == lStack_58) {
@@ -4089,7 +4091,8 @@ void Walaber::SkeletonActor::_playAnimation
    Walaber::SkeletonActor::AnimationSoundState, float, Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::playAnimation
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::SkeletonActor::AnimationSoundState param_2,float param_3,Walaber::AnimationPlaybackMode param_4,int param_5,bool param_6)
+               (undefined8 param_1,long param_2,undefined8 param_3,undefined4 param_4,
+               undefined4 param_5,undefined4 param_6,uint param_7)
 
 {
   long lVar1;
@@ -4100,9 +4103,9 @@ void Walaber::SkeletonActor::playAnimation
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_60 = param_2;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 200,param_2,&DAT_00628882,&uStack_60,auStack_68);
-  Walaber::SkeletonActor::_playAnimation(this,param_1,*(undefined4 *)(lVar2 + 0x38),param_3,param_4,param_5,param_6 & 1)
+  uStack_60 = param_3;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_2 + 200,param_3,&DAT_00628882,&uStack_60,auStack_68);
+  Walaber::SkeletonActor::_playAnimation(param_1,param_2,*(undefined4 *)(lVar2 + 0x38),param_4,param_5,param_6,param_7 & 1)
   ;
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -4120,21 +4123,21 @@ void Walaber::SkeletonActor::playAnimation
 /* Walaber::SkeletonActor::getArmatureAnimationForActorAnimation(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void Walaber::SkeletonActor::getArmatureAnimationForActorAnimation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
+void Walaber::SkeletonActor::getArmatureAnimationForActorAnimation(undefined8 *param_1,long param_2)
 
 {
   long lVar1;
   
-  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 200);
-  if (param_1 + 0xd0 != lVar1) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,*(long *)(param_1 + 0xb0) + (long)*(int *)(lVar1 + 0x38) * 0x18);
+  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2 + 200);
+  if (param_2 + 0xd0 != lVar1) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,*(long *)(param_2 + 0xb0) + (long)*(int *)(lVar1 + 0x38) * 0x18);
     return;
   }
-  *this = 0;
-  this[1] = 0;
-  this[2] = 0;
-  *(undefined1 *)this = 6;
-  *(undefined4 *)((long)this + 1) = 0x525245;
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *(undefined1 *)param_1 = 6;
+  *(undefined4 *)((long)param_1 + 1) = 0x525245;
   return;
 }
 
@@ -4212,7 +4215,7 @@ void Walaber::SkeletonActor::_clearNonSceneProps(long param_1)
    int, bool) */
 
 void Walaber::SkeletonActor::playAnimationFromGroup
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::AnimationPlaybackMode param_2,int param_3,bool param_4)
+               (long param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,uint param_5)
 
 {
   long lVar1;
@@ -4223,10 +4226,10 @@ void Walaber::SkeletonActor::playAnimationFromGroup
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = param_1;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this + 0xf8,param_1,&DAT_00628882,&uStack_50,auStack_58);
-  Walaber::SkeletonActor::_playAnimationFromGroup(this,*(undefined4 *)(lVar2 + 0x38),*(undefined4 *)(this + 0x7c),param_2,
-                  param_3,param_4 & 1);
+  uStack_50 = param_2;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0xf8,param_2,&DAT_00628882,&uStack_50,auStack_58);
+  Walaber::SkeletonActor::_playAnimationFromGroup(param_1,*(undefined4 *)(lVar2 + 0x38),*(undefined4 *)(param_1 + 0x7c),param_3,
+                  param_4,param_5 & 1);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -4244,7 +4247,8 @@ void Walaber::SkeletonActor::playAnimationFromGroup
    Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::_playAnimationFromGroup
-               (int param_1,Walaber::SkeletonActor::AnimationSoundState param_2,Walaber::AnimationPlaybackMode param_3,int param_4,bool param_5)
+               (long param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+               uint param_6)
 
 {
   uint uVar1;
@@ -4263,16 +4267,16 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  lVar5 = *(long *)(this + 0x148);
+  lVar5 = *(long *)(param_1 + 0x148);
   if (lVar5 != 0) {
-    lVar10 = this + 0x148;
+    lVar10 = param_1 + 0x148;
     do {
-      if (param_1 <= *(int *)(lVar5 + 0x20)) {
+      if (param_2 <= *(int *)(lVar5 + 0x20)) {
         lVar10 = lVar5;
       }
-      lVar5 = *(long *)(lVar5 + (ulong)(*(int *)(lVar5 + 0x20) < param_1) * 8);
+      lVar5 = *(long *)(lVar5 + (ulong)(*(int *)(lVar5 + 0x20) < param_2) * 8);
     } while (lVar5 != 0);
-    if (((lVar10 != this + 0x148) && (*(int *)(lVar10 + 0x20) <= param_1)) &&
+    if (((lVar10 != param_1 + 0x148) && (*(int *)(lVar10 + 0x20) <= param_2)) &&
        (*(long *)(lVar10 + 0x28) != *(long *)(lVar10 + 0x30))) {
       iVar4 = rand();
       uVar6 = (*(long *)(lVar10 + 0x30) - *(long *)(lVar10 + 0x28) >> 3) * -0x5555555555555555;
@@ -4281,11 +4285,11 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
         uVar9 = (ulong)(long)iVar4 / uVar6;
       }
       uVar9 = (long)iVar4 - uVar9 * uVar6;
-      lVar5 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x128,*(long *)(lVar10 + 0x28) + (long)(int)uVar9 * 0x18);
+      lVar5 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x128,*(long *)(lVar10 + 0x28) + (long)(int)uVar9 * 0x18);
       uVar8 = 0;
       do {
         uVar1 = uVar8;
-        if ((*(uint *)(this + 0x70) & *(uint *)(lVar5 + 0x3c)) != 0) break;
+        if ((*(uint *)(param_1 + 0x70) & *(uint *)(lVar5 + 0x3c)) != 0) break;
         do {
           iVar4 = rand();
           uVar7 = (*(long *)(lVar10 + 0x30) - *(long *)(lVar10 + 0x28) >> 3) * -0x5555555555555555;
@@ -4296,7 +4300,7 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
           uVar6 = (long)iVar4 - uVar6 * uVar7;
           iVar4 = (int)uVar6;
         } while ((int)uVar9 == iVar4);
-        lVar5 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x128,*(long *)(lVar10 + 0x28) + (long)iVar4 * 0x18);
+        lVar5 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x128,*(long *)(lVar10 + 0x28) + (long)iVar4 * 0x18);
         uVar1 = uVar8 + 1;
         bVar3 = uVar8 < 10;
         uVar9 = uVar6 & 0xffffffff;
@@ -4305,14 +4309,14 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
       if ((int)uVar1 < 0xb) {
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,lVar5 + 0x20);
                     /* try { // try from 0034543c to 00345457 has its CatchHandler @ 003454bc */
-        Walaber::SkeletonActor::playAnimation(0,this,abStack_80,param_2,param_3,param_4,param_5 & 1);
+        Walaber::SkeletonActor::playAnimation(0,param_1,abStack_80,param_3,param_4,param_5,param_6 & 1);
         if ((abStack_80[0] & 1) != 0) {
           operator delete(pvStack_70);
         }
       }
       else {
-        Walaber::SkeletonActor::_playAnimation(0,this,*(undefined4 *)(this + 0x6c),param_2,param_3,param_4,
-                        param_5 & 1);
+        Walaber::SkeletonActor::_playAnimation(0,param_1,*(undefined4 *)(param_1 + 0x6c),param_3,param_4,param_5,
+                        param_6 & 1);
       }
     }
   }
@@ -4334,7 +4338,8 @@ void Walaber::SkeletonActor::_playAnimationFromGroup
    Walaber::SkeletonActor::AnimationSoundState, Walaber::AnimationPlaybackMode, int, bool) */
 
 void Walaber::SkeletonActor::playAnimationFromGroup
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::SkeletonActor::AnimationSoundState param_2,Walaber::AnimationPlaybackMode param_3,int param_4,bool param_5)
+               (long param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
+               undefined4 param_5,uint param_6)
 
 {
   long lVar1;
@@ -4345,9 +4350,9 @@ void Walaber::SkeletonActor::playAnimationFromGroup
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = param_1;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this + 0xf8,param_1,&DAT_00628882,&uStack_50,auStack_58);
-  Walaber::SkeletonActor::_playAnimationFromGroup(this,*(undefined4 *)(lVar2 + 0x38),param_2,param_3,param_4,param_5 & 1);
+  uStack_50 = param_2;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0xf8,param_2,&DAT_00628882,&uStack_50,auStack_58);
+  Walaber::SkeletonActor::_playAnimationFromGroup(param_1,*(undefined4 *)(lVar2 + 0x38),param_3,param_4,param_5,param_6 & 1);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -4367,16 +4372,16 @@ void Walaber::SkeletonActor::playAnimationFromGroup
    const&) */
 
 bool Walaber::SkeletonActor::isAnimationMemberOfGroup
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+               (long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   bool bVar1;
   long lVar2;
   long lVar3;
   
-  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0xf8,param_2);
-  if ((this + 0x100 == lVar2) ||
-     (lVar3 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x128,param_1), this + 0x130 == lVar3)) {
+  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0xf8,param_3);
+  if ((param_1 + 0x100 == lVar2) ||
+     (lVar3 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::AnimationData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x128,param_2), param_1 + 0x130 == lVar3)) {
     bVar1 = false;
   }
   else {
@@ -5745,18 +5750,18 @@ undefined1  [16] Walaber::SkeletonActor::getAnimationLength(long param_1)
 /* Walaber::SkeletonActor::getArmatureNameForAnimation(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::SkeletonActor::getArmatureNameForAnimation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::SkeletonActor::getArmatureNameForAnimation(undefined8 *param_1,long param_2)
 
 {
   long lVar1;
   
-  *this = 0;
-  this[1] = 0;
-  this[2] = 0;
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
                     /* try { // try from 0053b350 to 0053b377 has its CatchHandler @ 0053b384 */
-  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 200);
-  if (param_1 + 0xd0 != lVar1) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this,*(long *)(param_1 + 0xb0) + (long)*(int *)(lVar1 + 0x38) * 0x18);
+  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_2 + 200);
+  if (param_2 + 0xd0 != lVar1) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1,*(long *)(param_2 + 0xb0) + (long)*(int *)(lVar1 + 0x38) * 0x18);
   }
   return;
 }

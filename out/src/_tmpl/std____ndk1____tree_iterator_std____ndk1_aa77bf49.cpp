@@ -22,7 +22,7 @@
 long std::__ndk1::
      __tree<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::__map_value_compare<float,std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>,std::__ndk1::less<float>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<float,WaterConcept::ParallaxPuppetShow::CameraMove>>>
      ::__emplace_multi<std::__ndk1::pair<float,WaterConcept::ParallaxPuppetShow::CameraMove>>
-               (std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::CameraMove>&& param_1)
+               (long param_1,undefined8 *param_2)
 
 {
   long *plVar1;
@@ -33,14 +33,14 @@ long std::__ndk1::
   undefined8 uVar6;
   
   lVar2 = operator new(0x40);
-  uVar6 = *param_1;
-  *(undefined8 *)(lVar2 + 0x24) = param_1[1];
+  uVar6 = *param_2;
+  *(undefined8 *)(lVar2 + 0x24) = param_2[1];
   *(undefined8 *)(lVar2 + 0x1c) = uVar6;
-  *(undefined4 *)(lVar2 + 0x2c) = *(undefined4 *)(param_1 + 2);
-  uVar5 = *(undefined8 *)((long)param_1 + 0x14);
-  *(undefined4 *)(lVar2 + 0x38) = *(undefined4 *)((long)param_1 + 0x1c);
+  *(undefined4 *)(lVar2 + 0x2c) = *(undefined4 *)(param_2 + 2);
+  uVar5 = *(undefined8 *)((long)param_2 + 0x14);
+  *(undefined4 *)(lVar2 + 0x38) = *(undefined4 *)((long)param_2 + 0x1c);
   *(undefined8 *)(lVar2 + 0x30) = uVar5;
-  plVar3 = (long *)(this + 8);
+  plVar3 = (long *)(param_1 + 8);
   plVar1 = (long *)*plVar3;
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
@@ -55,7 +55,7 @@ long std::__ndk1::
     plVar4 = plVar3 + 1;
   }
 LAB_004349bc:
-  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>>>::__insert_node_at(this,plVar3,plVar4,lVar2);
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>>>::__insert_node_at(param_1,plVar3,plVar4,lVar2);
   return lVar2;
 }
 

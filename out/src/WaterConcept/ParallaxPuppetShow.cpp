@@ -10,7 +10,7 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow() */
 
-void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(undefined2 *param_1)
+void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow()
 
 {
   undefined2 *puVar1;
@@ -21,43 +21,43 @@ void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(undefined2 *param_1)
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  puVar1 = param_1 + 8;
-  *param_1 = 0;
-  *(undefined4 *)(param_1 + 2) = 0;
-  *(undefined1 *)(param_1 + 4) = 0;
+  puVar1 = this + 8;
+  *this = 0;
+  *(undefined4 *)(this + 2) = 0;
+  *(undefined1 *)(this + 4) = 0;
   Walaber::Camera::Camera(puVar1);
                     /* try { // try from 0042fd34 to 0042fd3b has its CatchHandler @ 0042fe48 */
-  Walaber::CameraController::CameraController(param_1 + 0x54);
-  *(undefined8 *)(param_1 + 0xb0) = 0;
-  *(undefined8 *)(param_1 + 0xb4) = 0;
+  Walaber::CameraController::CameraController(this + 0x54);
+  *(undefined8 *)(this + 0xb0) = 0;
+  *(undefined8 *)(this + 0xb4) = 0;
                     /* try { // try from 0042fd44 to 0042fd4b has its CatchHandler @ 0042fe40 */
   Walaber::SpriteBatch::SpriteBatch();
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0xf4) = 0;
-  *(undefined2 **)(param_1 + 0xf0) = param_1 + 0xf4;
-  *(undefined8 *)(param_1 + 0x104) = 0;
-  *(undefined8 *)(param_1 + 0x100) = 0;
-  *(undefined2 **)(param_1 + 0xfc) = param_1 + 0x100;
-  *(undefined8 *)(param_1 + 0x110) = 0;
-  *(undefined8 *)(param_1 + 0x10c) = 0;
-  *(undefined2 **)(param_1 + 0x108) = param_1 + 0x10c;
-  *(undefined8 *)(param_1 + 0x11c) = 0;
-  *(undefined8 *)(param_1 + 0x118) = 0;
-  *(undefined2 **)(param_1 + 0x114) = param_1 + 0x118;
-  *(undefined8 *)(param_1 + 0x128) = 0;
-  *(undefined8 *)(param_1 + 0x124) = 0;
-  *(undefined2 **)(param_1 + 0x120) = param_1 + 0x124;
-  *(undefined8 *)(param_1 + 300) = 0;
-  *(undefined4 *)(param_1 + 0x130) = 0xbf800000;
-  *(undefined1 *)(param_1 + 0x13c) = 0;
-  *(undefined8 *)(param_1 + 0x138) = 0;
-  *(undefined8 *)(param_1 + 0x134) = 0;
+  *(undefined8 *)(this + 0xf8) = 0;
+  *(undefined8 *)(this + 0xf4) = 0;
+  *(undefined2 **)(this + 0xf0) = this + 0xf4;
+  *(undefined8 *)(this + 0x104) = 0;
+  *(undefined8 *)(this + 0x100) = 0;
+  *(undefined2 **)(this + 0xfc) = this + 0x100;
+  *(undefined8 *)(this + 0x110) = 0;
+  *(undefined8 *)(this + 0x10c) = 0;
+  *(undefined2 **)(this + 0x108) = this + 0x10c;
+  *(undefined8 *)(this + 0x11c) = 0;
+  *(undefined8 *)(this + 0x118) = 0;
+  *(undefined2 **)(this + 0x114) = this + 0x118;
+  *(undefined8 *)(this + 0x128) = 0;
+  *(undefined8 *)(this + 0x124) = 0;
+  *(undefined2 **)(this + 0x120) = this + 0x124;
+  *(undefined8 *)(this + 300) = 0;
+  *(undefined4 *)(this + 0x130) = 0xbf800000;
+  *(undefined1 *)(this + 0x13c) = 0;
+  *(undefined8 *)(this + 0x138) = 0;
+  *(undefined8 *)(this + 0x134) = 0;
   uStack_70 = _sScreenSize;
                     /* try { // try from 0042fdd8 to 0042fe0b has its CatchHandler @ 0042fe50 */
   Walaber::Camera::setSize(puVar1,&uStack_70);
   uStack_78 = 0;
   Walaber::Camera::setPosition(puVar1,&uStack_78);
-  Walaber::CameraController::initCamera(param_1 + 0x54,puVar1);
+  Walaber::CameraController::initCamera(this + 0x54,puVar1);
   if (*(long *)(lVar2 + 0x28) == lStack_68) {
     return;
   }
@@ -194,7 +194,7 @@ void WaterConcept::ParallaxPuppetShow::init(void)
 /* WaterConcept::ParallaxPuppetShow::_loadFromXml(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::ParallaxPuppetShow::_loadFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -219,7 +219,7 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(std::__ndk1::basic_string<ch
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 004300e0 to 0043011f has its CatchHandler @ 004301f8 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00711388;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -245,7 +245,7 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(std::__ndk1::basic_string<ch
     *piStack_78 = *piStack_78 + 1;
   }
                     /* try { // try from 00430174 to 00430187 has its CatchHandler @ 004301d0 */
-  Walaber::FileManager::readFile(uVar4,param_1,&puStack_a0,auStack_60,0);
+  Walaber::FileManager::readFile(uVar4,param_2,&puStack_a0,auStack_60,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>::~SharedPtr(&puStack_70);
@@ -2421,7 +2421,7 @@ LAB_00431134:
 /* WaterConcept::ParallaxPuppetShow::_stringToElementType(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -2435,7 +2435,7 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(std::__ndk1::basic_
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  Walaber::StringHelper::toLower(abStack_40,param_1);
+  Walaber::StringHelper::toLower(abStack_40,param_2);
   uVar3 = (ulong)(abStack_40[0] >> 1);
   if ((abStack_40[0] & 1) != 0) {
     uVar3 = uStack_38;
@@ -2538,7 +2538,7 @@ LAB_004335dc:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 ulong WaterConcept::ParallaxPuppetShow::_stringToTransitionType
-                (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+                (undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -2553,7 +2553,7 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToTransitionType
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  Walaber::StringHelper::toLower(abStack_40,param_1);
+  Walaber::StringHelper::toLower(abStack_40,param_2);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar5;
   if ((abStack_40[0] & 1) != 0) {

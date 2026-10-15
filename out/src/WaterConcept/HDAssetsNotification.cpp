@@ -9,24 +9,24 @@
 
 /* WaterConcept::HDAssetsNotification::HDAssetsNotification() */
 
-void WaterConcept::HDAssetsNotification::HDAssetsNotification(undefined8 *param_1)
+void WaterConcept::HDAssetsNotification::HDAssetsNotification()
 
 {
   WaterConcept::Notification::Notification();
                     /* try { // try from 004996fc to 00499703 has its CatchHandler @ 00499784 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x3d,0x10);
-  *param_1 = &PTR_handleEvent_007124a8;
-  param_1[0x3d] = &PTR__HDAssetsNotification_00712538;
-  *(undefined1 *)((long)param_1 + 500) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x1f5) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x1f6) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x1f7) = 0xff;
-  *(undefined1 *)(param_1 + 0x3f) = 0;
-  *(undefined1 *)((long)param_1 + 0x1f9) = 0;
-  *(undefined1 *)((long)param_1 + 0x1fa) = 0;
-  *(undefined2 *)((long)param_1 + 0x204) = 0;
-  *(undefined1 *)((long)param_1 + 0x1fb) = 0xff;
-  *(undefined8 *)((long)param_1 + 0x1fc) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x3d,0x10);
+  *this = &PTR_handleEvent_007124a8;
+  this[0x3d] = &PTR__HDAssetsNotification_00712538;
+  *(undefined1 *)((long)this + 500) = 0xff;
+  *(undefined1 *)((long)this + 0x1f5) = 0xff;
+  *(undefined1 *)((long)this + 0x1f6) = 0xff;
+  *(undefined1 *)((long)this + 0x1f7) = 0xff;
+  *(undefined1 *)(this + 0x3f) = 0;
+  *(undefined1 *)((long)this + 0x1f9) = 0;
+  *(undefined1 *)((long)this + 0x1fa) = 0;
+  *(undefined2 *)((long)this + 0x204) = 0;
+  *(undefined1 *)((long)this + 0x1fb) = 0xff;
+  *(undefined8 *)((long)this + 0x1fc) = 0;
   return;
 }
 
@@ -337,7 +337,7 @@ void WaterConcept::HDAssetsNotification::update(float p0)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
 void WaterConcept::HDAssetsNotification::goNotify
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
+               (undefined4 param_1,long param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -345,18 +345,18 @@ void WaterConcept::HDAssetsNotification::goNotify
   undefined1 uVar3;
   long lVar4;
   
-  if (*(char *)(param_1 + 0x205) != '\0') {
-    if (*(int *)(param_1 + 0x1fc) != 0) {
-      lVar1 = param_1 + 8;
+  if (*(char *)(param_2 + 0x205) != '\0') {
+    if (*(int *)(param_2 + 0x1fc) != 0) {
+      lVar1 = param_2 + 8;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,2);
       *(undefined1 *)(lVar4 + 0x155) = 0xff;
       *(undefined1 *)(lVar4 + 0x156) = 0xff;
       *(undefined1 *)(lVar4 + 0x157) = 0xff;
       *(undefined1 *)(lVar4 + 0x158) = 0xff;
-      *(undefined1 *)(lVar4 + 400) = *(undefined1 *)(param_1 + 500);
-      *(undefined1 *)(lVar4 + 0x191) = *(undefined1 *)(param_1 + 0x1f5);
-      *(undefined1 *)(lVar4 + 0x192) = *(undefined1 *)(param_1 + 0x1f6);
-      uVar3 = *(undefined1 *)(param_1 + 0x1f7);
+      *(undefined1 *)(lVar4 + 400) = *(undefined1 *)(param_2 + 500);
+      *(undefined1 *)(lVar4 + 0x191) = *(undefined1 *)(param_2 + 0x1f5);
+      *(undefined1 *)(lVar4 + 0x192) = *(undefined1 *)(param_2 + 0x1f6);
+      uVar3 = *(undefined1 *)(param_2 + 0x1f7);
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       *(undefined1 *)(lVar4 + 0x193) = uVar3;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,3);
@@ -366,7 +366,7 @@ void WaterConcept::HDAssetsNotification::goNotify
       *(undefined1 *)(lVar4 + 0x158) = 0xff;
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,1);
-      uVar2 = *(undefined4 *)(param_1 + 0x1f8);
+      uVar2 = *(undefined4 *)(param_2 + 0x1f8);
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       *(undefined4 *)(lVar4 + 0x144) = uVar2;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,5);
@@ -377,13 +377,13 @@ void WaterConcept::HDAssetsNotification::goNotify
       *(undefined1 *)(lVar4 + 0x8c) = 0;
       Walaber::WidgetManager::getWidget(lVar1,4);
       Walaber::Widget_ProgressBar::updateValue(0);
-      *(undefined8 *)(param_1 + 0x1fc) = 0;
+      *(undefined8 *)(param_2 + 0x1fc) = 0;
     }
-    Walaber::Widget_Label::setText(*(undefined8 *)(param_1 + 0x98),param_2);
-    *(undefined4 *)(param_1 + 0x1bc) = this;
-    *(undefined8 *)(param_1 + 0x1b0) = *(undefined8 *)(param_1 + 0x108);
-    (**(code **)(**(long **)(param_1 + 8) + 0x10))(*(long **)(param_1 + 8),param_1 + 0x1b0);
-    *(undefined4 *)(param_1 + 0x1c0) = 0;
+    Walaber::Widget_Label::setText(*(undefined8 *)(param_2 + 0x98),param_3);
+    *(undefined4 *)(param_2 + 0x1bc) = param_1;
+    *(undefined8 *)(param_2 + 0x1b0) = *(undefined8 *)(param_2 + 0x108);
+    (**(code **)(**(long **)(param_2 + 8) + 0x10))(*(long **)(param_2 + 8),param_2 + 0x1b0);
+    *(undefined4 *)(param_2 + 0x1c0) = 0;
   }
   return;
 }

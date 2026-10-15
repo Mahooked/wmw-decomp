@@ -11,17 +11,17 @@
     */
 
 void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>::~__split_buffer
-               (undefined8 *param_1)
+               ()
 
 {
   long lVar1;
   
-  lVar1 = param_1[2];
-  if (lVar1 != param_1[1]) {
-    param_1[2] = lVar1 + (~((lVar1 + -8) - param_1[1]) & 0xfffffffffffffff8U);
+  lVar1 = this[2];
+  if (lVar1 != this[1]) {
+    this[2] = lVar1 + (~((lVar1 + -8) - this[1]) & 0xfffffffffffffff8U);
   }
-  if ((void *)*param_1 != (void *)0x0) {
-    operator delete((void *)*param_1);
+  if ((void *)*this != (void *)0x0) {
+    operator delete((void *)*this);
     return;
   }
   return;

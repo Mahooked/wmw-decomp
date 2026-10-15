@@ -9,16 +9,16 @@
 
 /* Walaber::Transition_Block::Transition_Block() */
 
-void Walaber::Transition_Block::Transition_Block(undefined8 *param_1)
+void Walaber::Transition_Block::Transition_Block()
 
 {
   Walaber::Transition::Transition();
-  param_1[0x1d] = 0;
-  param_1[0x1e] = 0;
-  param_1[0x1c] = 0;
-  *(undefined8 *)((long)param_1 + 0xd4) = 0;
-  *param_1 = &PTR_setup_00710f08;
-  *(undefined8 *)((long)param_1 + 0xcc) = 0;
+  this[0x1d] = 0;
+  this[0x1e] = 0;
+  this[0x1c] = 0;
+  *(undefined8 *)((long)this + 0xd4) = 0;
+  *this = &PTR_setup_00710f08;
+  *(undefined8 *)((long)this + 0xcc) = 0;
   return;
 }
 
@@ -30,14 +30,14 @@ void Walaber::Transition_Block::Transition_Block(undefined8 *param_1)
 
 /* Walaber::Transition_Block::~Transition_Block() */
 
-void Walaber::Transition_Block::~Transition_Block(undefined8 *param_1)
+void Walaber::Transition_Block::~Transition_Block()
 
 {
-  *param_1 = &PTR_setup_00710f08;
-  if ((void *)param_1[0x1c] != (void *)0x0) {
-    operator delete((void *)param_1[0x1c]);
+  *this = &PTR_setup_00710f08;
+  if ((void *)this[0x1c] != (void *)0x0) {
+    operator delete((void *)this[0x1c]);
   }
-  Walaber::Transition::~Transition(param_1);
+  Walaber::Transition::~Transition(this);
   return;
 }
 

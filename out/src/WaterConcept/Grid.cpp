@@ -9,15 +9,15 @@
 
 /* WaterConcept::Grid::Grid() */
 
-void WaterConcept::Grid::Grid(undefined8 *param_1)
+void WaterConcept::Grid::Grid()
 
 {
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  param_1[5] = 0;
-  param_1[4] = 0;
-  param_1[3] = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  this[5] = 0;
+  this[4] = 0;
+  this[3] = 0;
   return;
 }
 

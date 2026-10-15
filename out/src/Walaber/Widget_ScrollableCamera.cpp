@@ -194,43 +194,43 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
 
 /* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
 
-void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(undefined8 *param_1)
+void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera()
 
 {
   void *pvVar1;
   
-  *param_1 = &PTR__Widget_ScrollableCamera_0070f838;
-  param_1[0x29] = param_1[0x28];
-  param_1[0x2f] = param_1[0x2e];
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x3d);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x3b);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x39);
-  pvVar1 = (void *)param_1[0x34];
+  *this = &PTR__Widget_ScrollableCamera_0070f838;
+  this[0x29] = this[0x28];
+  this[0x2f] = this[0x2e];
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x3d);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x3b);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x39);
+  pvVar1 = (void *)this[0x34];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x35] = pvVar1;
+    this[0x35] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x31];
+  pvVar1 = (void *)this[0x31];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x32] = pvVar1;
+    this[0x32] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x2e];
+  pvVar1 = (void *)this[0x2e];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x2f] = pvVar1;
+    this[0x2f] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x2b];
+  pvVar1 = (void *)this[0x2b];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x2c] = pvVar1;
+    this[0x2c] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x28];
+  pvVar1 = (void *)this[0x28];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x29] = pvVar1;
+    this[0x29] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::Widget::~Widget(param_1);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

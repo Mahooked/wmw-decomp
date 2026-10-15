@@ -308,54 +308,54 @@ LAB_0040bcc4:
 
 /* WaterConceptConstants::storyLineToStr(WaterConceptConstants::StorylineType) */
 
-void WaterConceptConstants::storyLineToStr(WaterConceptConstants::StorylineType param_1)
+void WaterConceptConstants::storyLineToStr(undefined8 *param_1,undefined4 param_2)
 
 {
   undefined2 uVar1;
   undefined4 uVar2;
   
-  switch(param_1) {
+  switch(param_2) {
   default:
     uVar1 = 0x7970;
     uVar2 = 0x6d617773;
-    this[1] = 0;
-    this[2] = 0;
+    param_1[1] = 0;
+    param_1[2] = 0;
     break;
   case 1:
-    this[1] = 0;
-    this[2] = 0;
+    param_1[1] = 0;
+    param_1[2] = 0;
     uVar1 = 0x796b;
     uVar2 = 0x6e617263;
     break;
   case 2:
-    *this = 0;
-    this[1] = 0;
-    this[2] = 0;
-    *(undefined1 *)this = 0x14;
-    *(undefined2 *)((long)this + 9) = 0x736c;
-    builtin_strncpy((char *)((long)this + 1),"lostleve",8);
-    *(undefined1 *)((long)this + 0xb) = 0;
+    *param_1 = 0;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *(undefined1 *)param_1 = 0x14;
+    *(undefined2 *)((long)param_1 + 9) = 0x736c;
+    builtin_strncpy((char *)((long)param_1 + 1),"lostleve",8);
+    *(undefined1 *)((long)param_1 + 0xb) = 0;
     return;
   case 3:
-    *this = 0;
-    this[1] = 0;
-    this[2] = 0;
-    *(undefined1 *)this = 0xe;
-    *(undefined8 *)((long)this + 1) = 0x7972657473796d;
+    *param_1 = 0;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *(undefined1 *)param_1 = 0xe;
+    *(undefined8 *)((long)param_1 + 1) = 0x7972657473796d;
     return;
   case 6:
-    *this = 0;
-    this[1] = 0;
-    this[2] = 0;
-    *(undefined1 *)this = 10;
-    *(undefined4 *)((long)this + 1) = 0x696c6c61;
-    *(undefined2 *)((long)this + 5) = 0x65;
+    *param_1 = 0;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *(undefined1 *)param_1 = 10;
+    *(undefined4 *)((long)param_1 + 1) = 0x696c6c61;
+    *(undefined2 *)((long)param_1 + 5) = 0x65;
     return;
   }
-  *(undefined1 *)this = 0xc;
-  *(undefined2 *)((long)this + 5) = uVar1;
-  *(undefined4 *)((long)this + 1) = uVar2;
-  *(undefined1 *)((long)this + 7) = 0;
+  *(undefined1 *)param_1 = 0xc;
+  *(undefined2 *)((long)param_1 + 5) = uVar1;
+  *(undefined4 *)((long)param_1 + 1) = uVar2;
+  *(undefined1 *)((long)param_1 + 7) = 0;
   return;
 }
 

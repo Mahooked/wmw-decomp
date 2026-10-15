@@ -79,7 +79,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
    std::__ndk1::allocator<Walaber::TextLineInfo>&>&) */
 
 void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::TextLineInfo>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>& param_1)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -87,32 +87,32 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   long lVar3;
   long lVar4;
   
-  lVar2 = *this;
-  if (this[1] == lVar2) {
-    lVar3 = param_1[1];
+  lVar2 = *param_1;
+  if (param_1[1] == lVar2) {
+    lVar3 = param_2[1];
   }
   else {
-    lVar3 = param_1[1];
-    lVar4 = this[1];
+    lVar3 = param_2[1];
+    lVar4 = param_1[1];
     do {
       lVar1 = lVar4 + -0x20;
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar3 + -0x20,lVar1);
       *(undefined8 *)(lVar3 + -8) = *(undefined8 *)(lVar4 + -8);
-      lVar3 = param_1[1] + -0x20;
-      param_1[1] = lVar3;
+      lVar3 = param_2[1] + -0x20;
+      param_2[1] = lVar3;
       lVar4 = lVar1;
     } while (lVar2 != lVar1);
-    lVar2 = *this;
+    lVar2 = *param_1;
   }
-  *this = lVar3;
-  param_1[1] = lVar2;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  *param_1 = lVar3;
+  param_2[1] = lVar2;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 

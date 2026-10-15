@@ -14,19 +14,19 @@
 
 void std::__ndk1::
      __tree<WaterConcept::GridCell,std::__ndk1::less<WaterConcept::GridCell>,std::__ndk1::allocator<WaterConcept::GridCell>>
-     ::__insert_node_at(std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*> *param_1,std::__ndk1::__tree_node_base<void*>*& param_2,std::__ndk1::__tree_node_base<void*> *param_3)
+     ::__insert_node_at(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4)
 
 {
-  *param_3 = 0;
-  param_3[1] = 0;
-  param_3[2] = param_1;
-  *param_2 = param_3;
-  if (*(long *)*this != 0) {
-    *this = *(long *)*this;
-    param_3 = (undefined8 *)*param_2;
+  *param_4 = 0;
+  param_4[1] = 0;
+  param_4[2] = param_2;
+  *param_3 = param_4;
+  if (*(long *)*param_1 != 0) {
+    *param_1 = *(long *)*param_1;
+    param_4 = (undefined8 *)*param_3;
   }
-  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(this[1],param_3);
-  this[2] = this[2] + 1;
+  void std::__ndk1::__tree_balance_after_insert<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_4);
+  param_1[2] = param_1[2] + 1;
   return;
 }
 

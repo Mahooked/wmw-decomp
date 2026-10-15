@@ -9,24 +9,24 @@
 
 /* WaterConcept::Screen_Loading::Screen_Loading() */
 
-void WaterConcept::Screen_Loading::Screen_Loading(undefined8 *param_1)
+void WaterConcept::Screen_Loading::Screen_Loading()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x21);
+  WaterConcept::WCScreen::WCScreen(this,0x21);
                     /* try { // try from 004fecc4 to 004feccb has its CatchHandler @ 004fed38 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  param_1[0x14] = 0;
-  param_1[0x19] = 0;
-  *(undefined1 *)((long)param_1 + 0x9c) = 0;
-  *param_1 = &PTR__Screen_Loading_007144a8;
-  param_1[4] = &PTR_handleEvent_00714560;
-  param_1[0x12] = &PTR__Screen_Loading_00714580;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x15] = 0;
+  this[0x16] = 0;
+  this[0x14] = 0;
+  this[0x19] = 0;
+  *(undefined1 *)((long)this + 0x9c) = 0;
+  *this = &PTR__Screen_Loading_007144a8;
+  this[4] = &PTR_handleEvent_00714560;
+  this[0x12] = &PTR__Screen_Loading_00714580;
   mCurrentAtlas = 0;
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
+  *(undefined4 *)((long)this + 0xbc) = 0;
   mMenuLoadState = 0xffffffff;
-  *(undefined4 *)(param_1 + 0x18) = mAtlasesToLoadCount;
+  *(undefined4 *)(this + 0x18) = mAtlasesToLoadCount;
   return;
 }
 
@@ -38,14 +38,14 @@ void WaterConcept::Screen_Loading::Screen_Loading(undefined8 *param_1)
 
 /* WaterConcept::Screen_Loading::~Screen_Loading() */
 
-void WaterConcept::Screen_Loading::~Screen_Loading(undefined8 *param_1)
+void WaterConcept::Screen_Loading::~Screen_Loading()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Screen_Loading_007144a8;
-  param_1[4] = &PTR_handleEvent_00714560;
-  param_1[0x12] = &PTR__Screen_Loading_00714580;
+  *this = &PTR__Screen_Loading_007144a8;
+  this[4] = &PTR_handleEvent_00714560;
+  this[0x12] = &PTR__Screen_Loading_00714580;
                     /* try { // try from 004fed90 to 004fed93 has its CatchHandler @ 004fedd4 */
   Walaber::WidgetManager::clearAndDestroyAllWidgets(mMenuWidgetManager);
   p0 = mMenuWidgetManager;
@@ -54,9 +54,9 @@ void WaterConcept::Screen_Loading::~Screen_Loading(undefined8 *param_1)
     operator delete(p0);
   }
   mMenuWidgetManager = (void *)0x0;
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(param_1 + 0x14);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(this + 0x14);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

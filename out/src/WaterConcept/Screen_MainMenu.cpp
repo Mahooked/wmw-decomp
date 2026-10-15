@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_MainMenu::Screen_MainMenu() */
 
-void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
+void WaterConcept::Screen_MainMenu::Screen_MainMenu()
 
 {
   long lVar1;
@@ -48,66 +48,66 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lVar4 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,3);
+  WaterConcept::WCScreen::WCScreen(this,3);
                     /* try { // try from 00506cbc to 00506cc7 has its CatchHandler @ 00507244 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined1 *)(param_1 + 0x14) = 0;
-  *(undefined2 *)(param_1 + 0x15) = 0;
-  *(undefined4 *)((long)param_1 + 0xa4) = 0xbf800000;
-  *param_1 = &PTR__Screen_MainMenu_00714668;
-  param_1[4] = &PTR_handleEvent_00714720;
-  param_1[0x12] = &PTR__Screen_MainMenu_00714740;
-  param_1[0x1f] = 0;
-  *(undefined8 *)((long)param_1 + 0xac) = 0;
-  param_1[0x1b] = 0;
-  param_1[0x1c] = 0;
-  param_1[0x1a] = param_1 + 0x1b;
-  *(undefined8 *)((long)param_1 + 0xc4) = 0;
-  *(undefined8 *)((long)param_1 + 0xbc) = 0;
-  *(undefined8 *)((long)param_1 + 0xb4) = 0;
-  param_1[0x2a] = 0;
-  param_1[0x23] = 0;
-  param_1[0x24] = 0;
-  param_1[0x21] = 0;
-  param_1[0x22] = 0;
-  param_1[0x20] = 0;
-  param_1[0x27] = 0;
-  param_1[0x28] = 0;
-  param_1[0x26] = 0;
-  *(undefined1 *)(param_1 + 0x29) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined1 *)(this + 0x14) = 0;
+  *(undefined2 *)(this + 0x15) = 0;
+  *(undefined4 *)((long)this + 0xa4) = 0xbf800000;
+  *this = &PTR__Screen_MainMenu_00714668;
+  this[4] = &PTR_handleEvent_00714720;
+  this[0x12] = &PTR__Screen_MainMenu_00714740;
+  this[0x1f] = 0;
+  *(undefined8 *)((long)this + 0xac) = 0;
+  this[0x1b] = 0;
+  this[0x1c] = 0;
+  this[0x1a] = this + 0x1b;
+  *(undefined8 *)((long)this + 0xc4) = 0;
+  *(undefined8 *)((long)this + 0xbc) = 0;
+  *(undefined8 *)((long)this + 0xb4) = 0;
+  this[0x2a] = 0;
+  this[0x23] = 0;
+  this[0x24] = 0;
+  this[0x21] = 0;
+  this[0x22] = 0;
+  this[0x20] = 0;
+  this[0x27] = 0;
+  this[0x28] = 0;
+  this[0x26] = 0;
+  *(undefined1 *)(this + 0x29) = 0;
                     /* try { // try from 00506d4c to 00506d57 has its CatchHandler @ 0050723c */
-  WaterConcept::ShowerCurtain::ShowerCurtain(param_1 + 0x2b);
-  param_1[0x47] = 0;
-  param_1[0x46] = 0;
-  param_1[0x45] = 0;
-  *(undefined4 *)((long)param_1 + 0x24c) = 0;
-  *(undefined2 *)(param_1 + 0x4a) = 0;
-  param_1[0x43] = 0;
-  param_1[0x42] = 0;
-  *(undefined4 *)(param_1 + 0x4c) = 5;
+  WaterConcept::ShowerCurtain::ShowerCurtain(this + 0x2b);
+  this[0x47] = 0;
+  this[0x46] = 0;
+  this[0x45] = 0;
+  *(undefined4 *)((long)this + 0x24c) = 0;
+  *(undefined2 *)(this + 0x4a) = 0;
+  this[0x43] = 0;
+  this[0x42] = 0;
+  *(undefined4 *)(this + 0x4c) = 5;
                     /* try { // try from 00506d80 to 00506d87 has its CatchHandler @ 00507234 */
   uVar2 = operator new[](0x14);
-  param_1[0x4b] = uVar2;
-  *(undefined8 *)((long)param_1 + 0x264) = 0;
-  param_1[0x4e] = 0;
-  *(undefined4 *)(param_1 + 0x4f) = 0;
-  *(undefined4 *)(param_1 + 0x51) = 5;
+  this[0x4b] = uVar2;
+  *(undefined8 *)((long)this + 0x264) = 0;
+  this[0x4e] = 0;
+  *(undefined4 *)(this + 0x4f) = 0;
+  *(undefined4 *)(this + 0x51) = 5;
                     /* try { // try from 00506da8 to 00506daf has its CatchHandler @ 0050722c */
   uVar2 = operator new[](0x14);
-  param_1[0x50] = uVar2;
-  *(undefined4 *)(param_1 + 0x52) = 0;
-  *(undefined4 *)((long)param_1 + 0x28c) = 0;
-  *(undefined2 *)(param_1 + 0x56) = 0;
-  *(undefined1 *)(param_1 + 0x58) = 0;
-  *(undefined4 *)((long)param_1 + 0x2c4) = 0;
-  param_1[0x54] = 0;
-  param_1[0x53] = 0;
+  this[0x50] = uVar2;
+  *(undefined4 *)(this + 0x52) = 0;
+  *(undefined4 *)((long)this + 0x28c) = 0;
+  *(undefined2 *)(this + 0x56) = 0;
+  *(undefined1 *)(this + 0x58) = 0;
+  *(undefined4 *)((long)this + 0x2c4) = 0;
+  this[0x54] = 0;
+  this[0x53] = 0;
                     /* try { // try from 00506dd8 to 00506def has its CatchHandler @ 00507268 */
-  Walaber::RingBuffer<int>::setCapacity(param_1 + 0x4b,10);
-  Walaber::RingBuffer<int>::setCapacity(param_1 + 0x50,10);
+  Walaber::RingBuffer<int>::setCapacity(this + 0x4b,10);
+  Walaber::RingBuffer<int>::setCapacity(this + 0x50,10);
                     /* try { // try from 00506df0 to 00506e2f has its CatchHandler @ 00507264 */
   puVar3 = (undefined8 *)operator new(0x28);
-  puVar3[2] = param_1;
+  puVar3[2] = this;
   *puVar3 = &PTR__Callback_007147a8;
   puVar3[1] = 0;
   puVar3[4] = 0;
@@ -141,10 +141,10 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   uStack_b8 = 0x68;
                     /* try { // try from 00506ebc to 00506ed3 has its CatchHandler @ 00507204 */
   Walaber::Sprite::Sprite(0,uVar2,&bStack_c0,&uStack_c8,&uStack_d0,0);
-  param_1[0x55] = uVar2;
+  this[0x55] = uVar2;
   if ((bStack_c0 & 1) != 0) {
     operator delete(pcStack_b0);
-    uVar2 = param_1[0x55];
+    uVar2 = this[0x55];
   }
   bStack_c0 = 0;
   uStack_bf = 0;
@@ -171,7 +171,7 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   if ((bStack_c0 & 1) != 0) {
     operator delete(pcStack_b0);
   }
-  lVar5 = param_1[0x55];
+  lVar5 = this[0x55];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_f0 = puStack_98;
   piStack_e8 = piStack_90;
@@ -182,7 +182,7 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f0);
                     /* try { // try from 00506f94 to 00506fcb has its CatchHandler @ 0050724c */
   puVar3 = (undefined8 *)operator new(0x28);
-  puVar3[2] = param_1;
+  puVar3[2] = this;
   *puVar3 = &PTR__Callback_007147a8;
   puVar3[1] = 0;
   puVar3[4] = 0;
@@ -216,10 +216,10 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   uStack_b8 = 0x74;
                     /* try { // try from 0050704c to 00507063 has its CatchHandler @ 005071a0 */
   Walaber::Sprite::Sprite(0,uVar2,&bStack_c0,&uStack_118,&uStack_120,0);
-  param_1[0x57] = uVar2;
+  this[0x57] = uVar2;
   if ((bStack_c0 & 1) != 0) {
     operator delete(pcStack_b0);
-    uVar2 = param_1[0x57];
+    uVar2 = this[0x57];
   }
   bStack_c0 = 0;
   uStack_bf = 0;
@@ -246,7 +246,7 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu(undefined8 *param_1)
   if ((bStack_c0 & 1) != 0) {
     operator delete(pcStack_b0);
   }
-  lVar5 = param_1[0x57];
+  lVar5 = this[0x57];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_140 = puStack_100;
   piStack_138 = piStack_f8;

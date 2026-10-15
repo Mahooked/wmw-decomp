@@ -81,29 +81,29 @@ void WaterConcept::IcyHot::IcyHot
 
 /* WaterConcept::IcyHot::~IcyHot() */
 
-void WaterConcept::IcyHot::~IcyHot(undefined8 *param_1)
+void WaterConcept::IcyHot::~IcyHot()
 
 {
   void *pvVar1;
   ulong p1;
   
-  *param_1 = &PTR__IcyHot_00711c18;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x8a);
-  std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>>::~__deque_base(param_1 + 0x81);
-  if ((void *)param_1[0x7b] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x7b],p1);
+  *this = &PTR__IcyHot_00711c18;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x8a);
+  std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>>::~__deque_base(this + 0x81);
+  if ((void *)this[0x7b] != (void *)0x0) {
+    operator delete[]((void *)this[0x7b],p1);
   }
-  pvVar1 = (void *)param_1[0x78];
+  pvVar1 = (void *)this[0x78];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x79] = pvVar1;
+    this[0x79] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x75];
+  pvVar1 = (void *)this[0x75];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x76] = pvVar1;
+    this[0x76] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 

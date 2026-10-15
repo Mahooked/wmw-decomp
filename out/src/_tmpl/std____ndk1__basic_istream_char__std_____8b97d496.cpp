@@ -11,7 +11,7 @@
    std::__ndk1::ios_base::seekdir) */
 
 long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::seekg
-                 (long long param_1,std::__ndk1::ios_base::seekdir param_2)
+                 (long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -23,21 +23,21 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::seekg
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar1 = (long)this + *(long *)(*this + -0x18);
+  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 003d3594 to 003d3597 has its CatchHandler @ 003d3628 */
   std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) & 0xfffffffd);
                     /* try { // try from 003d3598 to 003d35a7 has its CatchHandler @ 003d362c */
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,this,1);
+  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,param_1,1);
                     /* try { // try from 003d35c8 to 003d35d7 has its CatchHandler @ 003d3624 */
   if ((acStack_40[0] != '\0') &&
-     (plVar3 = *(long **)((long)this + *(long *)(*this + -0x18) + 0x28),
-     (**(code **)(*plVar3 + 0x20))(plVar3,param_1,param_2,8), extraout_x1 == -1)) {
-    lVar1 = (long)this + *(long *)(*this + -0x18);
+     (plVar3 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28),
+     (**(code **)(*plVar3 + 0x20))(plVar3,param_2,param_3,8), extraout_x1 == -1)) {
+    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 003d35f4 to 003d35f7 has its CatchHandler @ 003d362c */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | 4);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return this;
+    return param_1;
   }
   plVar3 = (long *)__stack_chk_fail();
   return plVar3;
@@ -211,31 +211,31 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::basic_istr
    >::basic_istream(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*) */
 
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::basic_istream
-               (std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>> *param_1)
+               (undefined8 *param_1,long param_2)
 
 {
-  *(undefined4 *)(this + 3) = 0x1002;
-  this[7] = param_1;
-  this[1] = 0;
-  this[2] = &PTR__basic_istream_00716338;
-  this[0x11] = 0;
-  this[0x12] = 0;
-  this[0xf] = 0;
-  this[0x10] = 0;
-  this[0xd] = 0;
-  this[0xe] = 0;
-  this[0xb] = 0;
-  this[0xc] = 0;
-  *this = &PTR__basic_istream_00716310;
-  *(uint *)(this + 6) = (uint)(param_1 == 0);
-  *(undefined4 *)((long)this + 0x34) = 0;
-  this[5] = 0;
-  this[4] = 6;
-  this[9] = 0;
-  this[10] = 0;
-  std::__ndk1::locale::locale(this + 8);
-  this[0x13] = 0;
-  *(undefined4 *)(this + 0x14) = 0xffffffff;
+  *(undefined4 *)(param_1 + 3) = 0x1002;
+  param_1[7] = param_2;
+  param_1[1] = 0;
+  param_1[2] = &PTR__basic_istream_00716338;
+  param_1[0x11] = 0;
+  param_1[0x12] = 0;
+  param_1[0xf] = 0;
+  param_1[0x10] = 0;
+  param_1[0xd] = 0;
+  param_1[0xe] = 0;
+  param_1[0xb] = 0;
+  param_1[0xc] = 0;
+  *param_1 = &PTR__basic_istream_00716310;
+  *(uint *)(param_1 + 6) = (uint)(param_2 == 0);
+  *(undefined4 *)((long)param_1 + 0x34) = 0;
+  param_1[5] = 0;
+  param_1[4] = 6;
+  param_1[9] = 0;
+  param_1[10] = 0;
+  std::__ndk1::locale::locale(param_1 + 8);
+  param_1[0x13] = 0;
+  *(undefined4 *)(param_1 + 0x14) = 0xffffffff;
   return;
 }
 
@@ -297,7 +297,7 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::swap
    (*)(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >&)) */
 
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
-               (std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& (*param_1)(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>&))
+               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005a659c. Too many branches */
@@ -1283,7 +1283,7 @@ LAB_005a7b84:
    >::get(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >&) */
 
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get
-               (std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>>& param_1)
+               (long *param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -1294,12 +1294,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::locale::locale(auStack_40,(long)this + *(long *)(*this + -0x18) + 0x30);
+  std::__ndk1::locale::locale(auStack_40,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
                     /* try { // try from 005a7d80 to 005a7d9f has its CatchHandler @ 005a7de4 */
   plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_40,&ctype<char>::id);
   uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,10);
   std::__ndk1::locale::~locale(auStack_40);
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::get(this,param_1,uVar2);
+  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::get(param_1,param_2,uVar2);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

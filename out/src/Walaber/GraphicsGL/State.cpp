@@ -9,7 +9,7 @@
 
 /* Walaber::GraphicsGL::State::State() */
 
-void Walaber::GraphicsGL::State::State(undefined2 *param_1)
+void Walaber::GraphicsGL::State::State()
 
 {
   long lVar1;
@@ -21,18 +21,18 @@ void Walaber::GraphicsGL::State::State(undefined2 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0;
-  *(undefined1 *)(param_1 + 2) = 0;
-  *(undefined8 *)(param_1 + 4) = 0;
+  *this = 0;
+  *(undefined1 *)(this + 2) = 0;
+  *(undefined8 *)(this + 4) = 0;
   glDisable(0xbe2);
-  glBlendFunc(*(undefined4 *)(param_1 + 4),*(undefined4 *)(param_1 + 6));
+  glBlendFunc(*(undefined4 *)(this + 4),*(undefined4 *)(this + 6));
   lVar3 = 0;
-  *(undefined4 *)(param_1 + 8) = 0;
+  *(undefined4 *)(this + 8) = 0;
   do {
-    Walaber::GraphicsGL::State::Texture::Texture((long)param_1 + lVar3 + 0x14);
+    Walaber::GraphicsGL::State::Texture::Texture((long)this + lVar3 + 0x14);
     lVar3 = lVar3 + 0xc;
   } while (lVar3 != 0x18);
-  *(undefined4 *)(param_1 + 0x1e) = 0;
+  *(undefined4 *)(this + 0x1e) = 0;
   glDisableClientState(0x8074);
   glDisableClientState(0x8075);
   glDisableClientState(0x8076);
@@ -40,11 +40,11 @@ void Walaber::GraphicsGL::State::State(undefined2 *param_1)
   glClientActiveTexture(0x84c0);
   glColor4f(0x3f800000,0x3f800000,0x3f800000,0x3f800000);
   lVar3 = 0;
-  *(undefined8 *)(param_1 + 0x1a) = 0;
-  *(undefined8 *)(param_1 + 0x16) = 0;
-  puVar2 = (undefined8 *)(param_1 + 10);
+  *(undefined8 *)(this + 0x1a) = 0;
+  *(undefined8 *)(this + 0x16) = 0;
+  puVar2 = (undefined8 *)(this + 10);
   do {
-    *(undefined1 *)((long)param_1 + lVar3 + 2) = 0;
+    *(undefined1 *)((long)this + lVar3 + 2) = 0;
     Walaber::GraphicsGL::State::Texture::Texture(&uStack_48);
     lVar3 = lVar3 + 1;
     *(undefined4 *)(puVar2 + 1) = uStack_40;

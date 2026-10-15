@@ -44,12 +44,12 @@ void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 void Walaber::XMLDocument::NamedIterator::NamedIterator
-               (_xmlNode *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  *this = param_1;
-  this[1] = param_1;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_2);
+  *param_1 = param_2;
+  param_1[1] = param_2;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
   return;
 }
 
@@ -195,7 +195,7 @@ void Walaber::XMLDocument::NamedIterator::getChildIterator(long *param_1,long *p
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::Property&) */
 
 void Walaber::XMLDocument::NamedIterator::getAttribute
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::Property& param_2)
+               (long *param_1,byte *param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -214,22 +214,22 @@ void Walaber::XMLDocument::NamedIterator::getAttribute
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uVar4 = 0;
-  if (*this == 0) goto LAB_003d6608;
-  pbVar6 = *(byte **)(param_1 + 0x10);
-  if ((*param_1 & 1) == 0) {
-    pbVar6 = param_1 + 1;
+  if (*param_1 == 0) goto LAB_003d6608;
+  pbVar6 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar6 = param_2 + 1;
   }
-  lVar3 = xmlGetProp(*this,pbVar6);
+  lVar3 = xmlGetProp(*param_1,pbVar6);
   (*(code *)xmlFree)();
   if (lVar3 == 0) {
     uVar4 = 0;
     goto LAB_003d6608;
   }
-  pbVar6 = param_1 + 1;
-  if ((*param_1 & 1) != 0) {
-    pbVar6 = *(byte **)(param_1 + 0x10);
+  pbVar6 = param_2 + 1;
+  if ((*param_2 & 1) != 0) {
+    pbVar6 = *(byte **)(param_2 + 0x10);
   }
-  uVar4 = xmlGetProp(*this,pbVar6);
+  uVar4 = xmlGetProp(*param_1,pbVar6);
   uStack_68 = 0;
   pvStack_60 = (void *)0x0;
   uStack_70 = 0;
@@ -257,7 +257,7 @@ LAB_003d65c8:
                     /* try { // try from 003d65e0 to 003d65e7 has its CatchHandler @ 003d6644 */
   (*(code *)puVar2)(uVar4);
                     /* try { // try from 003d65e8 to 003d65f3 has its CatchHandler @ 003d6640 */
-  Walaber::Property::setValue(param_2,&uStack_70);
+  Walaber::Property::setValue(param_3,&uStack_70);
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }

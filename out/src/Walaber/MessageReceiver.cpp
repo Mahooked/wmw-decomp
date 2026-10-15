@@ -9,15 +9,15 @@
 
 /* Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory) */
 
-void Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory param_1)
+void Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 param_2)
 
 {
   undefined8 uVar1;
   
-  *(undefined4 *)(this + 1) = param_1;
-  *this = &PTR__MessageReceiver_00710d70;
+  *(undefined4 *)(param_1 + 1) = param_2;
+  *param_1 = &PTR__MessageReceiver_00710d70;
   uVar1 = Walaber::BroadcastManager::getInstancePtr();
-  Walaber::BroadcastManager::_addReceiver(uVar1,this);
+  Walaber::BroadcastManager::_addReceiver(uVar1,param_1);
   return;
 }
 
@@ -29,16 +29,16 @@ void Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory param_1)
 
 /* Walaber::MessageReceiver::~MessageReceiver() */
 
-void Walaber::MessageReceiver::~MessageReceiver(undefined8 *param_1)
+void Walaber::MessageReceiver::~MessageReceiver()
 
 {
   undefined8 uVar1;
   
-  *param_1 = &PTR__MessageReceiver_00710d70;
+  *this = &PTR__MessageReceiver_00710d70;
                     /* try { // try from 003e85a0 to 003e85c3 has its CatchHandler @ 003e85d0 */
   Walaber::Logger::printf("Walaber",1,"MessageReceiver::~MessageReceiver()\n");
   uVar1 = Walaber::BroadcastManager::getInstancePtr();
-  Walaber::BroadcastManager::_removeReceiver(uVar1,param_1);
+  Walaber::BroadcastManager::_removeReceiver(uVar1,this);
   return;
 }
 

@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      __vector_base<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   void *p0;
@@ -22,11 +22,11 @@ void std::__ndk1::
   undefined8 *puVar2;
   undefined8 *puVar3;
   
-  puVar3 = (undefined8 *)*param_1;
+  puVar3 = (undefined8 *)*this;
   if (puVar3 == (undefined8 *)0x0) {
     return;
   }
-  puVar2 = (undefined8 *)param_1[1];
+  puVar2 = (undefined8 *)this[1];
   puVar1 = puVar3;
   if (puVar2 != puVar3) {
     do {
@@ -38,9 +38,9 @@ void std::__ndk1::
       }
       puVar2 = puVar1;
     } while (puVar3 != puVar1);
-    puVar1 = (undefined8 *)*param_1;
+    puVar1 = (undefined8 *)*this;
   }
-  param_1[1] = puVar3;
+  this[1] = puVar3;
   operator delete(puVar1);
   return;
 }

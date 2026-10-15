@@ -95,14 +95,14 @@ void Walaber::Widget_FingerCatcher::Widget_FingerCatcher
 
 /* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
 
-void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(undefined8 *param_1)
+void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher()
 
 {
-  *param_1 = &PTR__Widget_FingerCatcher_0070eed8;
-  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(param_1 + 0x26);
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(param_1 + 0x23,param_1[0x24]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(param_1 + 0x20,param_1[0x21]);
-  Walaber::Widget::~Widget(param_1);
+  *this = &PTR__Widget_FingerCatcher_0070eed8;
+  std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(this + 0x26);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x23,this[0x24]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(this + 0x20,this[0x21]);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

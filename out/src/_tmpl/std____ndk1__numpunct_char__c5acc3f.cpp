@@ -31,15 +31,15 @@ void std::__ndk1::numpunct<char>::numpunct(ulong p0)
 
 /* std::__ndk1::numpunct<char>::~numpunct() */
 
-void std::__ndk1::numpunct<char>::~numpunct(undefined8 *param_1)
+void std::__ndk1::numpunct<char>::~numpunct()
 
 {
-  *param_1 = &PTR__numpunct_byname_00717928;
-  if ((*(byte *)(param_1 + 3) & 1) != 0) {
-    operator delete((void *)param_1[5]);
+  *this = &PTR__numpunct_byname_00717928;
+  if ((*(byte *)(this + 3) & 1) != 0) {
+    operator delete((void *)this[5]);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
-  operator delete(param_1);
+  std::__ndk1::__shared_count::~__shared_count(this);
+  operator delete(this);
   return;
 }
 
@@ -94,15 +94,15 @@ void std::__ndk1::numpunct<char>::do_grouping(undefined8 param_1,long param_2)
 
 /* std::__ndk1::numpunct<char>::do_truename() const */
 
-void std::__ndk1::numpunct<char>::do_truename(undefined8 *param_1)
+void std::__ndk1::numpunct<char>::do_truename()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 8;
-  *(undefined4 *)((long)param_1 + 1) = 0x65757274;
-  *(undefined1 *)((long)param_1 + 5) = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 8;
+  *(undefined4 *)((long)this + 1) = 0x65757274;
+  *(undefined1 *)((long)this + 5) = 0;
   return;
 }
 
@@ -114,15 +114,15 @@ void std::__ndk1::numpunct<char>::do_truename(undefined8 *param_1)
 
 /* std::__ndk1::numpunct<char>::do_falsename() const */
 
-void std::__ndk1::numpunct<char>::do_falsename(undefined8 *param_1)
+void std::__ndk1::numpunct<char>::do_falsename()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 10;
-  *(undefined4 *)((long)param_1 + 1) = 0x736c6166;
-  *(undefined2 *)((long)param_1 + 5) = 0x65;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 10;
+  *(undefined4 *)((long)this + 1) = 0x736c6166;
+  *(undefined2 *)((long)this + 5) = 0x65;
   return;
 }
 

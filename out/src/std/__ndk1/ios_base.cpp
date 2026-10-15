@@ -46,25 +46,25 @@ void std::__ndk1::ios_base::clear(uint p0)
 
 /* std::__ndk1::ios_base::~ios_base() */
 
-void std::__ndk1::ios_base::~ios_base(undefined8 *param_1)
+void std::__ndk1::ios_base::~ios_base()
 
 {
   long lVar1;
   
-  *param_1 = &PTR__ios_base_00716560;
-  if (param_1[9] != 0) {
-    lVar1 = param_1[9] + -1;
+  *this = &PTR__ios_base_00716560;
+  if (this[9] != 0) {
+    lVar1 = this[9] + -1;
     do {
                     /* try { // try from 005a40e4 to 005a40ef has its CatchHandler @ 005a412c */
-      (**(code **)(param_1[7] + lVar1 * 8))(0,param_1,*(undefined4 *)(param_1[8] + lVar1 * 4));
+      (**(code **)(this[7] + lVar1 * 8))(0,this,*(undefined4 *)(this[8] + lVar1 * 4));
       lVar1 = lVar1 + -1;
     } while (lVar1 != -1);
   }
-  std::__ndk1::locale::~locale(param_1 + 6);
-  free((void *)param_1[7]);
-  free((void *)param_1[8]);
-  free((void *)param_1[0xb]);
-  free((void *)param_1[0xe]);
+  std::__ndk1::locale::~locale(this + 6);
+  free((void *)this[7]);
+  free((void *)this[8]);
+  free((void *)this[0xb]);
+  free((void *)this[0xe]);
   return;
 }
 
@@ -76,16 +76,16 @@ void std::__ndk1::ios_base::~ios_base(undefined8 *param_1)
 
 /* std::__ndk1::ios_base::__call_callbacks(std::__ndk1::ios_base::event) */
 
-void std::__ndk1::ios_base::__call_callbacks(std::__ndk1::ios_base::event param_1)
+void std::__ndk1::ios_base::__call_callbacks(long param_1,undefined4 param_2)
 
 {
   long lVar1;
   
-  if (*(long *)(this + 0x48) != 0) {
-    lVar1 = *(long *)(this + 0x48) + -1;
+  if (*(long *)(param_1 + 0x48) != 0) {
+    lVar1 = *(long *)(param_1 + 0x48) + -1;
     do {
-      (**(code **)(*(long *)(this + 0x38) + lVar1 * 8))
-                (param_1,this,*(undefined4 *)(*(long *)(this + 0x40) + lVar1 * 4));
+      (**(code **)(*(long *)(param_1 + 0x38) + lVar1 * 8))
+                (param_2,param_1,*(undefined4 *)(*(long *)(param_1 + 0x40) + lVar1 * 4));
       lVar1 = lVar1 + -1;
     } while (lVar1 != -1);
   }
@@ -711,7 +711,7 @@ undefined8 * std::__ndk1::ios_base::pword(int p0)
 /* std::__ndk1::ios_base::register_callback(void (*)(std::__ndk1::ios_base::event,
    std::__ndk1::ios_base&, int), int) */
 
-void std::__ndk1::ios_base::register_callback(void (*param_1)(std::__ndk1::ios_base::event, std::__ndk1::ios_base&, int),int param_2)
+void std::__ndk1::ios_base::register_callback(long param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -719,11 +719,11 @@ void std::__ndk1::ios_base::register_callback(void (*param_1)(std::__ndk1::ios_b
   ulong uVar3;
   ulong uVar4;
   
-  lVar1 = *(long *)(this + 0x48);
+  lVar1 = *(long *)(param_1 + 0x48);
   uVar3 = lVar1 + 1;
-  if (*(ulong *)(this + 0x50) < uVar3) {
+  if (*(ulong *)(param_1 + 0x50) < uVar3) {
     if (uVar3 < 0xfffffffffffffff) {
-      uVar4 = *(ulong *)(this + 0x50) << 1;
+      uVar4 = *(ulong *)(param_1 + 0x50) << 1;
       if (uVar3 <= uVar4) {
         uVar3 = uVar4;
       }
@@ -731,23 +731,23 @@ void std::__ndk1::ios_base::register_callback(void (*param_1)(std::__ndk1::ios_b
     else {
       uVar3 = 0x1fffffffffffffff;
     }
-    lVar1 = realloc(*(undefined8 *)(this + 0x38),uVar3 << 3);
+    lVar1 = realloc(*(undefined8 *)(param_1 + 0x38),uVar3 << 3);
     if (lVar1 == 0) {
-      std::__ndk1::ios_base::clear(this,*(uint *)(this + 0x20) | 1);
+      std::__ndk1::ios_base::clear(param_1,*(uint *)(param_1 + 0x20) | 1);
     }
-    *(long *)(this + 0x38) = lVar1;
-    lVar2 = realloc(*(undefined8 *)(this + 0x40),uVar3 << 2);
+    *(long *)(param_1 + 0x38) = lVar1;
+    lVar2 = realloc(*(undefined8 *)(param_1 + 0x40),uVar3 << 2);
     if (lVar2 == 0) {
-      std::__ndk1::ios_base::clear(this,*(uint *)(this + 0x20) | 1);
+      std::__ndk1::ios_base::clear(param_1,*(uint *)(param_1 + 0x20) | 1);
     }
-    lVar1 = *(long *)(this + 0x48);
-    *(long *)(this + 0x40) = lVar2;
-    *(ulong *)(this + 0x50) = uVar3;
+    lVar1 = *(long *)(param_1 + 0x48);
+    *(long *)(param_1 + 0x40) = lVar2;
+    *(ulong *)(param_1 + 0x50) = uVar3;
     uVar3 = lVar1 + 1;
   }
-  *(undefined8 *)(*(long *)(this + 0x38) + lVar1 * 8) = param_1;
-  *(undefined4 *)(*(long *)(this + 0x40) + lVar1 * 4) = param_2;
-  *(ulong *)(this + 0x48) = uVar3;
+  *(undefined8 *)(*(long *)(param_1 + 0x38) + lVar1 * 8) = param_2;
+  *(undefined4 *)(*(long *)(param_1 + 0x40) + lVar1 * 4) = param_3;
+  *(ulong *)(param_1 + 0x48) = uVar3;
   return;
 }
 

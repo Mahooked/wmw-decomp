@@ -9,38 +9,38 @@
 
 /* WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor() */
 
-void WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor(undefined8 *param_1)
+void WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0xb);
+  WaterConcept::WCScreen::WCScreen(this,0xb);
                     /* try { // try from 004cda60 to 004cda6b has its CatchHandler @ 004cdb14 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x16] = 0;
-  param_1[0x17] = 0;
-  *param_1 = &PTR__Screen_EditorObjectEditor_007136c8;
-  param_1[4] = &PTR_handleEvent_00713780;
-  param_1[0x12] = &PTR__Screen_EditorObjectEditor_007137a0;
-  param_1[0x14] = 0;
-  param_1[0x15] = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x16] = 0;
+  this[0x17] = 0;
+  *this = &PTR__Screen_EditorObjectEditor_007136c8;
+  this[4] = &PTR_handleEvent_00713780;
+  this[0x12] = &PTR__Screen_EditorObjectEditor_007137a0;
+  this[0x14] = 0;
+  this[0x15] = 0;
                     /* try { // try from 004cdaa0 to 004cdaa3 has its CatchHandler @ 004cdaf4 */
-  Walaber::PropertyList::PropertyList(param_1 + 0x18);
-  param_1[0x1d] = 0;
-  *(undefined4 *)(param_1 + 0x1b) = 0xffffffff;
-  param_1[0x1e] = 0;
-  param_1[0x1f] = 0;
-  param_1[0x1c] = param_1 + 0x1d;
-  param_1[0x20] = 0;
-  *(undefined2 *)(param_1 + 0x21) = 0;
-  *(undefined4 *)((long)param_1 + 0x11c) = 0;
-  *(undefined8 *)((long)param_1 + 0x114) = 0;
-  *(undefined8 *)((long)param_1 + 0x10c) = 0;
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x27] = 0;
-  param_1[0x28] = 0;
-  param_1[0x25] = 0;
-  param_1[0x26] = 0;
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::PropertyList::PropertyList(this + 0x18);
+  this[0x1d] = 0;
+  *(undefined4 *)(this + 0x1b) = 0xffffffff;
+  this[0x1e] = 0;
+  this[0x1f] = 0;
+  this[0x1c] = this + 0x1d;
+  this[0x20] = 0;
+  *(undefined2 *)(this + 0x21) = 0;
+  *(undefined4 *)((long)this + 0x11c) = 0;
+  *(undefined8 *)((long)this + 0x114) = 0;
+  *(undefined8 *)((long)this + 0x10c) = 0;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x27] = 0;
+  this[0x28] = 0;
+  this[0x25] = 0;
+  this[0x26] = 0;
+  *(undefined1 *)(this[2] + 0x71) = 1;
   return;
 }
 
@@ -52,27 +52,27 @@ void WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor(undefine
 
 /* WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
 
-void WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(undefined8 *param_1)
+void WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Screen_EditorObjectEditor_007136c8;
-  param_1[4] = &PTR_handleEvent_00713780;
-  param_1[0x12] = &PTR__Screen_EditorObjectEditor_007137a0;
-  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::~__vector_base(param_1 + 0x28);
-  p0 = (void *)param_1[0x25];
+  *this = &PTR__Screen_EditorObjectEditor_007136c8;
+  this[4] = &PTR_handleEvent_00713780;
+  this[0x12] = &PTR__Screen_EditorObjectEditor_007137a0;
+  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::~__vector_base(this + 0x28);
+  p0 = (void *)this[0x25];
   if (p0 != (void *)0x0) {
-    param_1[0x26] = p0;
+    this[0x26] = p0;
     operator delete(p0);
   }
-  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy(param_1 + 0x1c,param_1[0x1d]);
-  Walaber::PropertyList::~PropertyList(param_1 + 0x18);
-  if ((*(byte *)(param_1 + 0x14) & 1) != 0) {
-    operator delete((void *)param_1[0x16]);
+  std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy(this + 0x1c,this[0x1d]);
+  Walaber::PropertyList::~PropertyList(this + 0x18);
+  if ((*(byte *)(this + 0x14) & 1) != 0) {
+    operator delete((void *)this[0x16]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 
@@ -1759,7 +1759,7 @@ void WaterConcept::Screen_EditorObjectEditor::_snapPosition(Walaber__Vector2 *p0
 /* WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 param_2)
 
 {
   long *plVar1;
@@ -1821,7 +1821,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<ch
     operator delete((void *)CONCAT53(uStack_95,CONCAT21(uStack_97,abStack_a8[0x10])));
   }
   uVar8 = xmlNewChild(uVar7,0,"Shapes",0);
-  lVar14 = *(long *)(this + 0xb8);
+  lVar14 = *(long *)(param_1 + 0xb8);
   if (*(long *)(lVar14 + 0xe8) != *(long *)(lVar14 + 0xe0)) {
     uVar15 = 0;
     do {
@@ -1846,10 +1846,10 @@ void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<ch
       uVar12 = (*(long *)(lVar14 + 0xe8) - lVar11 >> 3) * -0x5555555555555555;
     } while (uVar15 <= uVar12 && uVar12 - uVar15 != 0);
   }
-  if (*(long *)(this + 0x148) != *(long *)(this + 0x140)) {
+  if (*(long *)(param_1 + 0x148) != *(long *)(param_1 + 0x140)) {
     uVar8 = xmlNewChild(uVar7,0,"Sprites",0);
-    plVar17 = *(long **)(this + 0x140);
-    if (plVar17 != *(long **)(this + 0x148)) {
+    plVar17 = *(long **)(param_1 + 0x140);
+    if (plVar17 != *(long **)(param_1 + 0x148)) {
       do {
         uVar9 = xmlNewChild(uVar8,0,"Sprite",0);
         if (*plVar17 != plVar17[1]) {
@@ -1871,10 +1871,10 @@ void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<ch
           } while (plVar1 != (long *)plVar17[1]);
         }
         plVar17 = plVar17 + 3;
-      } while (plVar17 != *(long **)(this + 0x148));
+      } while (plVar17 != *(long **)(param_1 + 0x148));
     }
   }
-  lVar14 = *(long *)(this + 0xb8);
+  lVar14 = *(long *)(param_1 + 0xb8);
   uStack_88 = 0;
   uStack_80 = 0;
   plVar17 = *(long **)(lVar14 + 0xc0);
@@ -1927,7 +1927,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<ch
     operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
   }
   Walaber::PropertyList::~PropertyList(&puStack_90);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_2);
   pvVar3 = (void *)((ulong)abStack_d8 | 1);
   if ((abStack_d8[0] & 1) != 0) {
     pvVar3 = pvStack_c8;

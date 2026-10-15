@@ -9,51 +9,51 @@
 
 /* WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase() */
 
-void WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase(undefined8 *param_1)
+void WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x19);
+  WaterConcept::WCScreen::WCScreen(this,0x19);
                     /* try { // try from 004e44c8 to 004e44cf has its CatchHandler @ 004e45cc */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined8 *)((long)param_1 + 0x9c) = 0xff00000000000001;
-  *param_1 = &PTR__Screen_InAppPurchase_00714028;
-  param_1[4] = &PTR_handleEvent_007140e0;
-  param_1[0x12] = &PTR__Screen_InAppPurchase_00714100;
-  memset(param_1 + 0x15,0,0xa0);
-  *(undefined1 *)((long)param_1 + 0x14c) = 0;
-  *(undefined4 *)(param_1 + 0x29) = 0xbf800000;
-  *(undefined1 *)((long)param_1 + 0x154) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x155) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x156) = 0xff;
-  *(undefined4 *)(param_1 + 0x2b) = 0xff000000;
-  *(undefined1 *)((long)param_1 + 0x157) = 0xff;
-  param_1[0x2e] = 0;
-  param_1[0x2d] = 0;
-  param_1[0x2c] = param_1 + 0x2d;
-  param_1[0x2f] = param_1 + 0x30;
-  *(undefined2 *)((long)param_1 + 0x194) = 0x100;
-  param_1[0x31] = 0;
-  param_1[0x30] = 0;
-  *(undefined1 *)((long)param_1 + 0x197) = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  param_1[0x37] = 0;
-  param_1[0x36] = 0;
-  *(undefined1 *)((long)param_1 + 0x1c2) = 0;
-  *(undefined2 *)(param_1 + 0x38) = 0;
-  *(undefined2 *)((long)param_1 + 0x1c3) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x1c5) = 0;
-  *(undefined4 *)(param_1 + 0x3a) = 0;
-  *(undefined2 *)((long)param_1 + 0x25c) = 0;
-  *(undefined2 *)((long)param_1 + 0x1cc) = 0;
-  *(undefined4 *)(param_1 + 0x39) = 0;
-  param_1[0x40] = 0;
-  param_1[0x3f] = 0;
-  param_1[0x3e] = 0;
-  param_1[0x3d] = 0;
-  param_1[0x3c] = 0;
-  param_1[0x3b] = 0;
-  memset(param_1 + 0x42,0,0x48);
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined8 *)((long)this + 0x9c) = 0xff00000000000001;
+  *this = &PTR__Screen_InAppPurchase_00714028;
+  this[4] = &PTR_handleEvent_007140e0;
+  this[0x12] = &PTR__Screen_InAppPurchase_00714100;
+  memset(this + 0x15,0,0xa0);
+  *(undefined1 *)((long)this + 0x14c) = 0;
+  *(undefined4 *)(this + 0x29) = 0xbf800000;
+  *(undefined1 *)((long)this + 0x154) = 0xff;
+  *(undefined1 *)((long)this + 0x155) = 0xff;
+  *(undefined1 *)((long)this + 0x156) = 0xff;
+  *(undefined4 *)(this + 0x2b) = 0xff000000;
+  *(undefined1 *)((long)this + 0x157) = 0xff;
+  this[0x2e] = 0;
+  this[0x2d] = 0;
+  this[0x2c] = this + 0x2d;
+  this[0x2f] = this + 0x30;
+  *(undefined2 *)((long)this + 0x194) = 0x100;
+  this[0x31] = 0;
+  this[0x30] = 0;
+  *(undefined1 *)((long)this + 0x197) = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  this[0x37] = 0;
+  this[0x36] = 0;
+  *(undefined1 *)((long)this + 0x1c2) = 0;
+  *(undefined2 *)(this + 0x38) = 0;
+  *(undefined2 *)((long)this + 0x1c3) = 0xff;
+  *(undefined1 *)((long)this + 0x1c5) = 0;
+  *(undefined4 *)(this + 0x3a) = 0;
+  *(undefined2 *)((long)this + 0x25c) = 0;
+  *(undefined2 *)((long)this + 0x1cc) = 0;
+  *(undefined4 *)(this + 0x39) = 0;
+  this[0x40] = 0;
+  this[0x3f] = 0;
+  this[0x3e] = 0;
+  this[0x3d] = 0;
+  this[0x3c] = 0;
+  this[0x3b] = 0;
+  memset(this + 0x42,0,0x48);
   return;
 }
 
@@ -65,48 +65,48 @@ void WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase(undefined8 *param_
 
 /* WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
 
-void WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(undefined8 *param_1)
+void WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase()
 
 {
-  *param_1 = &PTR__Screen_InAppPurchase_00714028;
-  param_1[4] = &PTR_handleEvent_007140e0;
-  param_1[0x12] = &PTR__Screen_InAppPurchase_00714100;
-  std::__ndk1::__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::~__vector_base(param_1 + 0x48);
-  if ((*(byte *)(param_1 + 0x45) & 1) != 0) {
-    operator delete((void *)param_1[0x47]);
+  *this = &PTR__Screen_InAppPurchase_00714028;
+  this[4] = &PTR_handleEvent_007140e0;
+  this[0x12] = &PTR__Screen_InAppPurchase_00714100;
+  std::__ndk1::__vector_base<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::~__vector_base(this + 0x48);
+  if ((*(byte *)(this + 0x45) & 1) != 0) {
+    operator delete((void *)this[0x47]);
   }
-  if ((*(byte *)(param_1 + 0x42) & 1) != 0) {
-    operator delete((void *)param_1[0x44]);
+  if ((*(byte *)(this + 0x42) & 1) != 0) {
+    operator delete((void *)this[0x44]);
   }
-  if ((*(byte *)(param_1 + 0x3e) & 1) != 0) {
-    operator delete((void *)param_1[0x40]);
+  if ((*(byte *)(this + 0x3e) & 1) != 0) {
+    operator delete((void *)this[0x40]);
   }
-  if ((*(byte *)(param_1 + 0x3b) & 1) != 0) {
-    operator delete((void *)param_1[0x3d]);
+  if ((*(byte *)(this + 0x3b) & 1) != 0) {
+    operator delete((void *)this[0x3d]);
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(param_1 + 0x2f,param_1[0x30]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(param_1 + 0x2c,param_1[0x2d]);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x27);
-  if ((*(byte *)(param_1 + 0x24) & 1) != 0) {
-    operator delete((void *)param_1[0x26]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x2f,this[0x30]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x2c,this[0x2d]);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x27);
+  if ((*(byte *)(this + 0x24) & 1) != 0) {
+    operator delete((void *)this[0x26]);
   }
-  if ((*(byte *)(param_1 + 0x21) & 1) != 0) {
-    operator delete((void *)param_1[0x23]);
+  if ((*(byte *)(this + 0x21) & 1) != 0) {
+    operator delete((void *)this[0x23]);
   }
-  if ((*(byte *)(param_1 + 0x1e) & 1) != 0) {
-    operator delete((void *)param_1[0x20]);
+  if ((*(byte *)(this + 0x1e) & 1) != 0) {
+    operator delete((void *)this[0x20]);
   }
-  if ((*(byte *)(param_1 + 0x1b) & 1) != 0) {
-    operator delete((void *)param_1[0x1d]);
+  if ((*(byte *)(this + 0x1b) & 1) != 0) {
+    operator delete((void *)this[0x1d]);
   }
-  if ((*(byte *)(param_1 + 0x18) & 1) != 0) {
-    operator delete((void *)param_1[0x1a]);
+  if ((*(byte *)(this + 0x18) & 1) != 0) {
+    operator delete((void *)this[0x1a]);
   }
-  if ((*(byte *)(param_1 + 0x15) & 1) != 0) {
-    operator delete((void *)param_1[0x17]);
+  if ((*(byte *)(this + 0x15) & 1) != 0) {
+    operator delete((void *)this[0x17]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 
@@ -1523,7 +1523,7 @@ LAB_004e58d0:
 
 /* WaterConcept::Screen_InAppPurchase::enter() */
 
-void WaterConcept::Screen_InAppPurchase::enter(undefined *param_1)
+void WaterConcept::Screen_InAppPurchase::enter()
 
 {
   long lVar1;
@@ -1546,7 +1546,7 @@ void WaterConcept::Screen_InAppPurchase::enter(undefined *param_1)
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   ppuVar2 = (undefined **)operator new(0x28);
-  ppuVar2[2] = param_1;
+  ppuVar2[2] = this;
   *ppuVar2 = (undefined *)&PTR__Callback_00714168;
   ppuVar2[1] = (undefined *)0x0;
   ppuVar2[4] = (undefined *)0x0;
@@ -1580,12 +1580,12 @@ void WaterConcept::Screen_InAppPurchase::enter(undefined *param_1)
     *piStack_50 = *piStack_50 + 1;
   }
                     /* try { // try from 004e5c40 to 004e5c4f has its CatchHandler @ 004e5d08 */
-  Walaber::CurveManager::getCurve(uVar4,param_1 + 0x138,&ppuStack_a0,&ppuStack_78);
+  Walaber::CurveManager::getCurve(uVar4,this + 0x138,&ppuStack_a0,&ppuStack_78);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_78);
   if (((ulong)ppuStack_a0 & 1) != 0) {
     operator delete(apcStack_90[0]);
   }
-  if (((param_1[0x1cb] == '\0') && (param_1[0x1c8] == '\0')) && (*(int *)(param_1 + 0x1d0) == 0)) {
+  if (((this[0x1cb] == '\0') && (this[0x1c8] == '\0')) && (*(int *)(this + 0x1d0) == 0)) {
                     /* try { // try from 004e5c80 to 004e5c83 has its CatchHandler @ 004e5d2c */
     WaterConcept::GameSettings::shouldCheckForSale();
   }

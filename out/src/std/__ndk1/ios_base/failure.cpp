@@ -12,11 +12,11 @@
    const&) */
 
 void std::__ndk1::ios_base::failure::failure
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::error_code const& param_2)
+               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  std::__ndk1::system_error::system_error(this,*param_2,param_2[1],param_1);
-  *this = &PTR__failure_00716538;
+  std::__ndk1::system_error::system_error(param_1,*param_3,param_3[1],param_2);
+  *param_1 = &PTR__failure_00716538;
   return;
 }
 

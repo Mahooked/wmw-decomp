@@ -15,7 +15,7 @@
 undefined8 *
 std::__ndk1::
 vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::
-insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1,WaterConcept::InteractiveObject* const& param_2)
+insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
   long lVar1;
@@ -44,37 +44,37 @@ insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  puVar7 = (undefined8 *)this[1];
-  if (puVar7 < (undefined8 *)this[2]) {
-    if (param_1 == puVar7) {
-      *param_1 = *param_2;
-      this[1] = this[1] + 8;
+  puVar7 = (undefined8 *)param_1[1];
+  if (puVar7 < (undefined8 *)param_1[2]) {
+    if (param_2 == puVar7) {
+      *param_2 = *param_3;
+      param_1[1] = param_1[1] + 8;
     }
     else {
       puVar13 = puVar7;
       for (puVar9 = puVar7 + -1; puVar9 < puVar7; puVar9 = puVar9 + 1) {
         *puVar13 = *puVar9;
-        puVar13 = (undefined8 *)(this[1] + 8);
-        this[1] = (long)puVar13;
+        puVar13 = (undefined8 *)(param_1[1] + 8);
+        param_1[1] = (long)puVar13;
       }
-      if ((long)puVar7 - (long)(param_1 + 1) != 0) {
-        memmove(puVar7 + -((long)puVar7 - (long)(param_1 + 1) >> 3),param_1);
+      if ((long)puVar7 - (long)(param_2 + 1) != 0) {
+        memmove(puVar7 + -((long)puVar7 - (long)(param_2 + 1) >> 3),param_2);
       }
-      puVar7 = param_2;
-      if ((param_1 <= param_2) && (puVar7 = param_2 + 1, (undefined8 *)this[1] <= param_2)) {
-        puVar7 = param_2;
+      puVar7 = param_3;
+      if ((param_2 <= param_3) && (puVar7 = param_3 + 1, (undefined8 *)param_1[1] <= param_3)) {
+        puVar7 = param_3;
       }
-      *param_1 = *puVar7;
+      *param_2 = *puVar7;
     }
   }
   else {
-    lVar12 = *this;
+    lVar12 = *param_1;
     uVar8 = ((long)puVar7 - lVar12 >> 3) + 1;
     if (uVar8 >> 0x3d != 0) {
-      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar7;
     }
-    lVar10 = this[2] - lVar12;
+    lVar10 = param_1[2] - lVar12;
     if ((ulong)(lVar10 >> 3) < 0xfffffffffffffff) {
       uVar11 = lVar10 >> 2;
       if (uVar8 <= uVar11) {
@@ -84,7 +84,7 @@ insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1
     else {
       uVar8 = 0x1fffffffffffffff;
     }
-    std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&puStack_a8,uVar8,(long)param_1 - lVar12 >> 3,this + 2);
+    std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>::__split_buffer(&puStack_a8,uVar8,(long)param_2 - lVar12 >> 3,param_1 + 2);
     if (puStack_98 == puStack_90) {
       if (puStack_a0 < puStack_a8 || (long)puStack_a0 - (long)puStack_a8 == 0) {
         uVar8 = (long)puStack_90 - (long)puStack_a8 >> 2;
@@ -139,9 +139,9 @@ insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1
         puStack_98 = puVar13 + (lVar10 >> 3);
       }
     }
-    *puStack_98 = *param_2;
+    *puStack_98 = *param_3;
     puStack_98 = puStack_98 + 1;
-    param_1 = (undefined8 *)std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__swap_out_circular_buffer(this,&puStack_a8,param_1);
+    param_2 = (undefined8 *)std::__ndk1::vector<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__swap_out_circular_buffer(param_1,&puStack_a8,param_2);
     if (puStack_98 != puStack_a0) {
       puStack_98 = (undefined8 *)
                    ((long)puStack_98 +
@@ -155,7 +155,7 @@ insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1
     puVar7 = (undefined8 *)__stack_chk_fail();
     return puVar7;
   }
-  return param_1;
+  return param_2;
 }
 
 
@@ -172,33 +172,33 @@ insert(std::__ndk1::__wrap_iter<WaterConcept::InteractiveObject* const*> param_1
 
 long std::__ndk1::
      vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::InteractiveObject*, std::__ndk1::allocator<WaterConcept::InteractiveObject*>&>& param_1,WaterConcept::InteractiveObject **param_2)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = *this;
-  lVar2 = param_1[1];
-  param_1[1] = lVar2 - (param_2 - lVar1);
-  if (0 < param_2 - lVar1) {
+  lVar1 = *param_1;
+  lVar2 = param_2[1];
+  param_2[1] = lVar2 - (param_3 - lVar1);
+  if (0 < param_3 - lVar1) {
     memcpy();
   }
-  lVar1 = this[1] - param_2;
+  lVar1 = param_1[1] - param_3;
   if (0 < lVar1) {
-    memcpy(param_1[2],param_2,lVar1);
-    param_1[2] = param_1[2] + lVar1;
+    memcpy(param_2[2],param_3,lVar1);
+    param_2[2] = param_2[2] + lVar1;
   }
-  lVar1 = *this;
-  *this = param_1[1];
-  param_1[1] = lVar1;
-  lVar1 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar1;
-  lVar1 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar1;
-  *param_1 = param_1[1];
+  lVar1 = *param_1;
+  *param_1 = param_2[1];
+  param_2[1] = lVar1;
+  lVar1 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar1;
+  lVar1 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar1;
+  *param_2 = param_2[1];
   return lVar2;
 }
 

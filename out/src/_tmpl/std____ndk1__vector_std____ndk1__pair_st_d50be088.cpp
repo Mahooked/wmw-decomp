@@ -22,7 +22,7 @@
 
 void std::__ndk1::
      vector<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>& param_1)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -31,13 +31,13 @@ void std::__ndk1::
   undefined8 uVar4;
   undefined8 uVar5;
   
-  lVar1 = *this;
-  lVar3 = this[1];
+  lVar1 = *param_1;
+  lVar3 = param_1[1];
   if (lVar3 == lVar1) {
-    lVar2 = param_1[1];
+    lVar2 = param_2[1];
   }
   else {
-    lVar2 = param_1[1];
+    lVar2 = param_2[1];
     do {
       uVar5 = *(undefined8 *)(lVar3 + -0x28);
       uVar4 = *(undefined8 *)(lVar3 + -0x30);
@@ -56,20 +56,20 @@ void std::__ndk1::
       *(undefined8 *)(lVar3 + -8) = 0;
       *(undefined8 *)(lVar3 + -0x18) = 0;
       lVar3 = lVar3 + -0x30;
-      lVar2 = param_1[1] + -0x30;
-      param_1[1] = lVar2;
+      lVar2 = param_2[1] + -0x30;
+      param_2[1] = lVar2;
     } while (lVar1 != lVar3);
-    lVar1 = *this;
+    lVar1 = *param_1;
   }
-  *this = lVar2;
-  param_1[1] = lVar1;
-  lVar1 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar1;
-  lVar1 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar1;
-  *param_1 = param_1[1];
+  *param_1 = lVar2;
+  param_2[1] = lVar1;
+  lVar1 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar1;
+  lVar1 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar1;
+  *param_2 = param_2[1];
   return;
 }
 
@@ -94,29 +94,29 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
-     ::vector(std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>> const& param_1)
+     ::vector(undefined8 *param_1,long *param_2)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  this[1] = 0;
-  this[2] = 0;
-  *this = 0;
-  if (param_1[1] - *param_1 != 0) {
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  if (param_2[1] - *param_2 != 0) {
                     /* try { // try from 004d10fc to 004d10ff has its CatchHandler @ 004d1140 */
-    std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__vallocate(this,(param_1[1] - *param_1 >> 4) * -0x5555555555555555);
-    lVar3 = *param_1;
-    lVar1 = param_1[1];
+    std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__vallocate(param_1,(param_2[1] - *param_2 >> 4) * -0x5555555555555555);
+    lVar3 = *param_2;
+    lVar1 = param_2[1];
     if (lVar3 != lVar1) {
-      lVar2 = this[1];
+      lVar2 = param_1[1];
       do {
                     /* try { // try from 004d1110 to 004d1117 has its CatchHandler @ 004d1144 */
         std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>::pair(lVar2,lVar3);
         lVar3 = lVar3 + 0x30;
-        lVar2 = this[1] + 0x30;
-        this[1] = lVar2;
+        lVar2 = param_1[1] + 0x30;
+        param_1[1] = lVar2;
       } while (lVar1 != lVar3);
     }
   }

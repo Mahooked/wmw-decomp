@@ -12,7 +12,7 @@
    >& (*)(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >&)) */
 
 void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<
-               (std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>& (*param_1)(std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>&))
+               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
 
 {
                     /* WARNING: Could not recover jumptable at 0x005adf08. Too many branches */

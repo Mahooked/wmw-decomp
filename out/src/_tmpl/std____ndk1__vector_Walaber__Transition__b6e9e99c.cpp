@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::Transition_Iris::BladeInfo,std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Transition_Iris::BladeInfo, std::__ndk1::allocator<Walaber::Transition_Iris::BladeInfo>&>& param_1)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -24,13 +24,13 @@ void std::__ndk1::
   undefined8 *puVar5;
   undefined8 *puVar6;
   
-  puVar1 = (undefined8 *)*this;
-  if ((undefined8 *)this[1] == puVar1) {
-    puVar4 = (undefined8 *)param_1[1];
+  puVar1 = (undefined8 *)*param_1;
+  if ((undefined8 *)param_1[1] == puVar1) {
+    puVar4 = (undefined8 *)param_2[1];
   }
   else {
-    puVar3 = (undefined8 *)param_1[1];
-    puVar6 = (undefined8 *)this[1];
+    puVar3 = (undefined8 *)param_2[1];
+    puVar6 = (undefined8 *)param_1[1];
     do {
       puVar5 = (undefined8 *)((long)puVar6 + -0xc);
       puVar4 = (undefined8 *)((long)puVar3 + -0xc);
@@ -39,18 +39,18 @@ void std::__ndk1::
       puVar3 = puVar4;
       puVar6 = puVar5;
     } while (puVar1 != puVar5);
-    param_1[1] = puVar4;
-    puVar1 = (undefined8 *)*this;
+    param_2[1] = puVar4;
+    puVar1 = (undefined8 *)*param_1;
   }
-  *this = (long)puVar4;
-  param_1[1] = puVar1;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  *param_1 = (long)puVar4;
+  param_2[1] = puVar1;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 

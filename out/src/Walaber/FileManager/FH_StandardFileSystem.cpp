@@ -11,7 +11,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int) */
 
 void Walaber::FileManager::FH_StandardFileSystem::addBasePath
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2)
+               (long param_1,undefined8 param_2,undefined4 param_3)
 
 {
   long lVar1;
@@ -22,10 +22,10 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  auStack_48[0] = param_2;
+  auStack_48[0] = param_3;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40);
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(this + 8,auStack_48);
+  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(param_1 + 8,auStack_48);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -353,11 +353,11 @@ LAB_003d31c4:
 
 /* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
 
-void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefined8 *param_1)
+void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem()
 
 {
-  *param_1 = &PTR__FH_StandardFileSystem_00710690;
-  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 1,param_1[2]);
+  *this = &PTR__FH_StandardFileSystem_00710690;
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 1,this[2]);
   return;
 }
 
@@ -369,12 +369,12 @@ void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefin
 
 /* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
 
-void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefined8 *param_1)
+void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem()
 
 {
-  *param_1 = &PTR__FH_StandardFileSystem_00710690;
-  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 1,param_1[2]);
-  operator delete(param_1);
+  *this = &PTR__FH_StandardFileSystem_00710690;
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 1,this[2]);
+  operator delete(this);
   return;
 }
 
@@ -386,17 +386,17 @@ void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(undefin
 
 /* Walaber::FileManager::FH_StandardFileSystem::getName() */
 
-void Walaber::FileManager::FH_StandardFileSystem::getName(undefined8 *param_1)
+void Walaber::FileManager::FH_StandardFileSystem::getName()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 0x16;
-  *(undefined1 *)((long)param_1 + 0xb) = 0x4d;
-  *(undefined2 *)((long)param_1 + 9) = 0x4554;
-  builtin_strncpy((char *)((long)param_1 + 1),"FILE_SYS",8);
-  *(undefined1 *)((long)param_1 + 0xc) = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 0x16;
+  *(undefined1 *)((long)this + 0xb) = 0x4d;
+  *(undefined2 *)((long)this + 9) = 0x4554;
+  builtin_strncpy((char *)((long)this + 1),"FILE_SYS",8);
+  *(undefined1 *)((long)this + 0xc) = 0;
   return;
 }
 

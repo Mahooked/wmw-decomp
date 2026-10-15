@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_AnimationTest::Screen_AnimationTest() */
 
-void WaterConcept::Screen_AnimationTest::Screen_AnimationTest(undefined8 *param_1)
+void WaterConcept::Screen_AnimationTest::Screen_AnimationTest()
 
 {
   long lVar1;
@@ -20,23 +20,23 @@ void WaterConcept::Screen_AnimationTest::Screen_AnimationTest(undefined8 *param_
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0x11);
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  param_1[0x19] = 0;
-  *param_1 = &PTR__Screen_AnimationTest_00712dc8;
-  param_1[4] = &PTR_handleEvent_00712e78;
+  WaterConcept::WCScreen::WCScreen(this,0x11);
+  *(undefined4 *)(this + 0x18) = 0;
+  this[0x19] = 0;
+  *this = &PTR__Screen_AnimationTest_00712dc8;
+  this[4] = &PTR_handleEvent_00712e78;
                     /* try { // try from 004a6c30 to 004a6c37 has its CatchHandler @ 004a6cb0 */
   uVar2 = operator new(0x98);
   uStack_48 = 0x41c0000041800000;
   uStack_40 = 0x4240000042000000;
                     /* try { // try from 004a6c50 to 004a6c5b has its CatchHandler @ 004a6ca0 */
   Walaber::Camera::Camera(uVar2,&uStack_40,&uStack_48);
-  param_1[0x12] = uVar2;
+  this[0x12] = uVar2;
                     /* try { // try from 004a6c60 to 004a6c67 has its CatchHandler @ 004a6cb0 */
   uVar2 = operator new(0xb8);
                     /* try { // try from 004a6c6c to 004a6c6f has its CatchHandler @ 004a6c9c */
   Walaber::CameraController::CameraController();
-  param_1[0x13] = uVar2;
+  this[0x13] = uVar2;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -52,24 +52,24 @@ void WaterConcept::Screen_AnimationTest::Screen_AnimationTest(undefined8 *param_
 
 /* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
 
-void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(undefined8 *param_1)
+void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest()
 
 {
   void *pvVar1;
   
-  pvVar1 = (void *)param_1[0x12];
-  *param_1 = &PTR__Screen_AnimationTest_00712dc8;
-  param_1[4] = &PTR_handleEvent_00712e78;
+  pvVar1 = (void *)this[0x12];
+  *this = &PTR__Screen_AnimationTest_00712dc8;
+  this[4] = &PTR_handleEvent_00712e78;
   if (pvVar1 != (void *)0x0) {
     Walaber::Camera::~Camera(pvVar1);
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x13];
+  pvVar1 = (void *)this[0x13];
   if (pvVar1 != (void *)0x0) {
     Walaber::CameraController::~CameraController(pvVar1);
     operator delete(pvVar1);
   }
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

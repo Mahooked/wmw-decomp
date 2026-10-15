@@ -9,11 +9,11 @@
 
 /* Walaber::Message::~Message() */
 
-void Walaber::Message::~Message(undefined8 *param_1)
+void Walaber::Message::~Message()
 
 {
-  *param_1 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(param_1 + 2);
+  *this = &PTR__Message_0070cdc8;
+  Walaber::PropertyList::~PropertyList(this + 2);
   return;
 }
 
@@ -25,12 +25,12 @@ void Walaber::Message::~Message(undefined8 *param_1)
 
 /* Walaber::Message::~Message() */
 
-void Walaber::Message::~Message(undefined8 *param_1)
+void Walaber::Message::~Message()
 
 {
-  *param_1 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(param_1 + 2);
-  operator delete(param_1);
+  *this = &PTR__Message_0070cdc8;
+  Walaber::PropertyList::~PropertyList(this + 2);
+  operator delete(this);
   return;
 }
 

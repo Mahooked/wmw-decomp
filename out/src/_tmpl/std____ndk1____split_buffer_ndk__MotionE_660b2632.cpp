@@ -54,17 +54,17 @@ void std::__ndk1::__split_buffer<ndk::MotionEvent,std::__ndk1::allocator<ndk::Mo
    std::__ndk1::allocator<ndk::MotionEvent>&>::~__split_buffer() */
 
 void std::__ndk1::__split_buffer<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>&>::
-     ~__split_buffer(undefined8 *param_1)
+     ~__split_buffer()
 
 {
   long lVar1;
   void *pvVar2;
   long lVar3;
   
-  lVar1 = param_1[1];
-  lVar3 = param_1[2];
+  lVar1 = this[1];
+  lVar3 = this[2];
   while (lVar3 != lVar1) {
-    param_1[2] = lVar3 + -0x80;
+    this[2] = lVar3 + -0x80;
     pvVar2 = *(void **)(lVar3 + -0x18);
     if (pvVar2 != (void *)0x0) {
       *(void **)(lVar3 + -0x10) = pvVar2;
@@ -90,10 +90,10 @@ void std::__ndk1::__split_buffer<ndk::MotionEvent,std::__ndk1::allocator<ndk::Mo
       *(void **)(lVar3 + -0x70) = pvVar2;
       operator delete(pvVar2);
     }
-    lVar3 = param_1[2];
+    lVar3 = this[2];
   }
-  if ((void *)*param_1 != (void *)0x0) {
-    operator delete((void *)*param_1);
+  if ((void *)*this != (void *)0x0) {
+    operator delete((void *)*this);
     return;
   }
   return;

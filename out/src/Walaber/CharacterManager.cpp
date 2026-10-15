@@ -128,7 +128,7 @@ LAB_004623dc:
 
 /* Walaber::CharacterManager::~CharacterManager() */
 
-void Walaber::CharacterManager::~CharacterManager(undefined8 *param_1)
+void Walaber::CharacterManager::~CharacterManager()
 
 {
   bool bVar1;
@@ -137,8 +137,8 @@ void Walaber::CharacterManager::~CharacterManager(undefined8 *param_1)
   void *p0;
   long *plVar4;
   
-  plVar4 = (long *)*param_1;
-  while (plVar4 != param_1 + 1) {
+  plVar4 = (long *)*this;
+  while (plVar4 != this + 1) {
     p0 = (void *)plVar4[5];
     if (p0 != (void *)0x0) {
       Walaber::SkeletonActor::~SkeletonActor(p0);
@@ -164,11 +164,11 @@ void Walaber::CharacterManager::~CharacterManager(undefined8 *param_1)
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::destroy(param_1,param_1[1]);
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = param_1 + 1;
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::destroy(param_1,0);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::destroy(this,this[1]);
+  this[1] = 0;
+  this[2] = 0;
+  *this = this + 1;
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::destroy(this,0);
   return;
 }
 

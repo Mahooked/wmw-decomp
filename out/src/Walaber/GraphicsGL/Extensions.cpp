@@ -9,7 +9,7 @@
 
 /* Walaber::GraphicsGL::Extensions::Extensions() */
 
-void Walaber::GraphicsGL::Extensions::Extensions(undefined2 *param_1)
+void Walaber::GraphicsGL::Extensions::Extensions()
 
 {
   byte bVar1;
@@ -40,7 +40,7 @@ void Walaber::GraphicsGL::Extensions::Extensions(undefined2 *param_1)
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  *param_1 = 0;
+  *this = 0;
   uVar4 = glGetString(0x1f03);
   pbStack_80 = (byte *)0x0;
   pbStack_78 = (byte *)0x0;
@@ -142,7 +142,7 @@ LAB_0040a5f8:
   }
 LAB_0040a758:
   if (pbVar13 != pbVar12) {
-    *(undefined1 *)param_1 = 1;
+    *(undefined1 *)this = 1;
                     /* try { // try from 0040a768 to 0040a77f has its CatchHandler @ 0040a8bc */
     Walaber::Logger::printf("Walaber",1,"got mapped buffers.\n");
     pbVar7 = pbStack_80;
@@ -212,7 +212,7 @@ LAB_0040a758:
 LAB_0040a828:
   operator delete(pbVar6);
   if (pbVar13 != pbVar12) {
-    *(undefined1 *)((long)param_1 + 1) = 1;
+    *(undefined1 *)((long)this + 1) = 1;
                     /* try { // try from 0040a840 to 0040a857 has its CatchHandler @ 0040a8bc */
     Walaber::Logger::printf("Walaber",1,"got RTT support.\n");
   }

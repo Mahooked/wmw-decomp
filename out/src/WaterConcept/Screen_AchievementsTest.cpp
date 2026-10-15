@@ -9,15 +9,15 @@
 
 /* WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest() */
 
-void WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest(undefined8 *param_1)
+void WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest()
 
 {
   undefined8 uVar1;
   int iVar2;
   
-  WaterConcept::WCScreen::WCScreen(param_1,0x13);
-  *param_1 = &PTR__Screen_AchievementsTest_00712b18;
-  param_1[4] = &PTR_handleEvent_00712bc8;
+  WaterConcept::WCScreen::WCScreen(this,0x13);
+  *this = &PTR__Screen_AchievementsTest_00712b18;
+  this[4] = &PTR_handleEvent_00712bc8;
   if (((Walaber::AchievementManager::getInstancePtr()::instance & 1) == 0) &&
      (iVar2 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar2 != 0)) {
                     /* try { // try from 004a43dc to 004a43e7 has its CatchHandler @ 004a4414 */
@@ -26,11 +26,11 @@ void WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest(undefined8 *
                  &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
     __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
   }
-  param_1[0x16] = &Walaber::AchievementManager::getInstancePtr()::instance;
-  param_1[0x17] = &Walaber::AchievementManager::getInstancePtr()::instance;
+  this[0x16] = &Walaber::AchievementManager::getInstancePtr()::instance;
+  this[0x17] = &Walaber::AchievementManager::getInstancePtr()::instance;
   uVar1 = Walaber::AchievementManager::getInstancePtr()::instance;
-  *(undefined1 *)(param_1 + 0x19) = 1;
-  param_1[0x18] = uVar1;
+  *(undefined1 *)(this + 0x19) = 1;
+  this[0x18] = uVar1;
   return;
 }
 

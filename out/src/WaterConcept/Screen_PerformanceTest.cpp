@@ -9,18 +9,18 @@
 
 /* WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest() */
 
-void WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest(undefined8 *param_1)
+void WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x16);
-  param_1[0x12] = 0;
-  *(undefined2 *)(param_1 + 0x14) = 0;
-  *(undefined1 *)((long)param_1 + 0xa2) = 0;
-  *param_1 = &PTR__Screen_PerformanceTest_00714ec8;
-  param_1[4] = &PTR_handleEvent_00714f70;
-  param_1[0x13] = 0x400000000;
-  *(undefined4 *)((long)param_1 + 0xa4) = 0;
-  *(undefined4 *)(param_1 + 0x15) = 0;
+  WaterConcept::WCScreen::WCScreen(this,0x16);
+  this[0x12] = 0;
+  *(undefined2 *)(this + 0x14) = 0;
+  *(undefined1 *)((long)this + 0xa2) = 0;
+  *this = &PTR__Screen_PerformanceTest_00714ec8;
+  this[4] = &PTR_handleEvent_00714f70;
+  this[0x13] = 0x400000000;
+  *(undefined4 *)((long)this + 0xa4) = 0;
+  *(undefined4 *)(this + 0x15) = 0;
   return;
 }
 

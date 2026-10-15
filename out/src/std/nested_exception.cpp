@@ -9,14 +9,14 @@
 
 /* std::nested_exception::nested_exception() */
 
-void std::nested_exception::nested_exception(undefined8 *param_1)
+void std::nested_exception::nested_exception()
 
 {
   undefined8 uVar1;
   
-  *param_1 = &PTR__nested_exception_00716218;
+  *this = &PTR__nested_exception_00716218;
   uVar1 = __cxa_current_primary_exception();
-  param_1[1] = uVar1;
+  this[1] = uVar1;
   return;
 }
 
@@ -28,11 +28,11 @@ void std::nested_exception::nested_exception(undefined8 *param_1)
 
 /* std::nested_exception::~nested_exception() */
 
-void std::nested_exception::~nested_exception(undefined8 *param_1)
+void std::nested_exception::~nested_exception()
 
 {
-  *param_1 = &PTR__nested_exception_00716218;
-  __cxa_decrement_exception_refcount(param_1[1]);
+  *this = &PTR__nested_exception_00716218;
+  __cxa_decrement_exception_refcount(this[1]);
   return;
 }
 
@@ -44,12 +44,12 @@ void std::nested_exception::~nested_exception(undefined8 *param_1)
 
 /* std::nested_exception::~nested_exception() */
 
-void std::nested_exception::~nested_exception(undefined8 *param_1)
+void std::nested_exception::~nested_exception()
 
 {
-  *param_1 = &PTR__nested_exception_00716218;
-  __cxa_decrement_exception_refcount(param_1[1]);
-  operator delete(param_1);
+  *this = &PTR__nested_exception_00716218;
+  __cxa_decrement_exception_refcount(this[1]);
+  operator delete(this);
   return;
 }
 

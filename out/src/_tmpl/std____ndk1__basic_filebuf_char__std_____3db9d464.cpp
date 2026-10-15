@@ -10,26 +10,26 @@
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::~basic_filebuf() */
 
 void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_filebuf
-               (undefined8 *param_1)
+               ()
 
 {
   ulong p1;
   ulong extraout_x1;
   ulong p1_00;
   
-  *param_1 = &PTR__basic_filebuf_007108b8;
+  *this = &PTR__basic_filebuf_007108b8;
                     /* try { // try from 003d478c to 003d478f has its CatchHandler @ 003d47d8 */
   std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::close();
   p1_00 = p1;
-  if ((*(char *)(param_1 + 0x14) != '\0') && ((void *)param_1[8] != (void *)0x0)) {
-    operator delete[]((void *)param_1[8],p1);
+  if ((*(char *)(this + 0x14) != '\0') && ((void *)this[8] != (void *)0x0)) {
+    operator delete[]((void *)this[8],p1);
     p1_00 = extraout_x1;
   }
-  if ((*(char *)((long)param_1 + 0xa1) != '\0') && ((void *)param_1[0xd] != (void *)0x0)) {
-    operator delete[]((void *)param_1[0xd],p1_00);
+  if ((*(char *)((long)this + 0xa1) != '\0') && ((void *)this[0xd] != (void *)0x0)) {
+    operator delete[]((void *)this[0xd],p1_00);
   }
-  *param_1 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(param_1 + 1);
+  *this = &PTR__basic_streambuf_00710968;
+  std::__ndk1::locale::~locale(this + 1);
   return;
 }
 

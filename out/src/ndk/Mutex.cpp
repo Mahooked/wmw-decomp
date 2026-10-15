@@ -9,12 +9,12 @@
 
 /* ndk::Mutex::~Mutex() */
 
-void ndk::Mutex::~Mutex(undefined8 *param_1)
+void ndk::Mutex::~Mutex()
 
 {
-  *param_1 = &PTR__Mutex_0070ce88;
+  *this = &PTR__Mutex_0070ce88;
                     /* try { // try from 002c6368 to 002c636b has its CatchHandler @ 002c6374 */
-  pthread_mutex_destroy(param_1 + 1);
+  pthread_mutex_destroy(this + 1);
   return;
 }
 

@@ -153,25 +153,25 @@ void Walaber::Widget_NumberSpinner::init(void)
 
 /* Walaber::Widget_NumberSpinner::~Widget_NumberSpinner() */
 
-void Walaber::Widget_NumberSpinner::~Widget_NumberSpinner(undefined8 *param_1)
+void Walaber::Widget_NumberSpinner::~Widget_NumberSpinner()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Widget_NumberSpinner_0070f478;
-  *(undefined8 *)((long)param_1 + 0x22c) = 0x3f73333300000000;
-  *(undefined8 *)((long)param_1 + 0x23c) = 0;
-  p0 = (void *)param_1[0x41];
-  param_1[0x4a] = 0;
-  param_1[0x1e] = 0;
+  *this = &PTR__Widget_NumberSpinner_0070f478;
+  *(undefined8 *)((long)this + 0x22c) = 0x3f73333300000000;
+  *(undefined8 *)((long)this + 0x23c) = 0;
+  p0 = (void *)this[0x41];
+  this[0x4a] = 0;
+  this[0x1e] = 0;
   if (p0 != (void *)0x0) {
-    param_1[0x42] = p0;
+    this[0x42] = p0;
     operator delete(p0);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x24);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x24);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
   return;
 }
 
@@ -270,17 +270,17 @@ void Walaber::Widget_NumberSpinner::setNumberRect(int p0,int p1,int p2,int p3,in
 
 /* Walaber::Widget_NumberSpinner::setNumberRect(int, Walaber::Rect) */
 
-void Walaber::Widget_NumberSpinner::setNumberRect(int param_1,Walaber::Rect param_2)
+void Walaber::Widget_NumberSpinner::setNumberRect(long param_1,uint param_2,undefined8 *param_3)
 
 {
   long lVar1;
   
-  if (param_1 < 10) {
-    lVar1 = this + (long)(int)param_1 * 0x10;
-    *(undefined8 *)(lVar1 + 0x130) = *param_2;
-    *(undefined8 *)(lVar1 + 0x138) = param_2[1];
-    *(float *)(this + (long)(int)param_1 * 4 + 0x1d0) =
-         *(float *)(param_2 + 1) / *(float *)((long)param_2 + 0xc);
+  if (param_2 < 10) {
+    lVar1 = param_1 + (long)(int)param_2 * 0x10;
+    *(undefined8 *)(lVar1 + 0x130) = *param_3;
+    *(undefined8 *)(lVar1 + 0x138) = param_3[1];
+    *(float *)(param_1 + (long)(int)param_2 * 4 + 0x1d0) =
+         *(float *)(param_3 + 1) / *(float *)((long)param_3 + 0xc);
   }
   return;
 }
@@ -294,16 +294,16 @@ void Walaber::Widget_NumberSpinner::setNumberRect(int param_1,Walaber::Rect para
 /* Walaber::Widget_NumberSpinner::setNumberRect(int, Walaber::Rect, float) */
 
 void Walaber::Widget_NumberSpinner::setNumberRect
-               (int param_1,Walaber::Rect param_2,float param_3)
+               (undefined4 param_1,long param_2,uint param_3,undefined8 *param_4)
 
 {
   long lVar1;
   
-  if (param_2 < 10) {
-    lVar1 = param_1 + (long)(int)param_2 * 0x10;
-    *(undefined8 *)(lVar1 + 0x130) = *param_3;
-    *(undefined8 *)(lVar1 + 0x138) = param_3[1];
-    *(undefined4 *)(param_1 + (long)(int)param_2 * 4 + 0x1d0) = this;
+  if (param_3 < 10) {
+    lVar1 = param_2 + (long)(int)param_3 * 0x10;
+    *(undefined8 *)(lVar1 + 0x130) = *param_4;
+    *(undefined8 *)(lVar1 + 0x138) = param_4[1];
+    *(undefined4 *)(param_2 + (long)(int)param_3 * 4 + 0x1d0) = param_1;
   }
   return;
 }
@@ -663,7 +663,8 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
    Walaber::Color) */
 
 void Walaber::Widget_NumberSpinner::_drawLocalQuad
-               (Walaber::SpriteBatch *param_1,int param_2,Walaber::SharedPtr<Walaber::Texture> param_3,float param_4,Walaber::Vector2 param_5,Walaber::Vector2 param_6,Walaber::Rect param_7,Walaber::Color param_8)
+               (undefined8 param_1,long param_2,undefined8 param_3,undefined4 param_4,long *param_5,
+               float *param_6,long param_7,long param_8,undefined8 param_9)
 
 {
   long lVar1;
@@ -685,48 +686,48 @@ void Walaber::Widget_NumberSpinner::_drawLocalQuad
   lVar1 = tpidr_el0;
   lStack_78 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_80);
-  fVar8 = *(float *)(param_1 + 0x248) - *(float *)(param_1 + 0x94) * fStack_7c * 0.5;
-  Walaber::Node::getWorldScale(&fStack_80,param_1);
-  fVar3 = *(float *)(param_6 + 4);
-  fVar2 = param_5[1] + fVar3 * 0.5;
+  fVar8 = *(float *)(param_2 + 0x248) - *(float *)(param_2 + 0x94) * fStack_7c * 0.5;
+  Walaber::Node::getWorldScale(&fStack_80,param_2);
+  fVar3 = *(float *)(param_7 + 4);
+  fVar2 = param_6[1] + fVar3 * 0.5;
   if (fVar2 < fVar8) goto LAB_00382624;
-  fVar5 = param_5[1] - fVar3 * 0.5;
-  fVar4 = *(float *)(param_1 + 0x94) * fStack_7c * 0.5 - *(float *)(param_1 + 0x248);
+  fVar5 = param_6[1] - fVar3 * 0.5;
+  fVar4 = *(float *)(param_2 + 0x94) * fStack_7c * 0.5 - *(float *)(param_2 + 0x248);
   if (fVar4 < fVar5) goto LAB_00382624;
   if (fVar8 <= fVar5) {
     if (fVar4 < fVar2) {
       fVar2 = fVar3 - (fVar2 - fVar4);
-      *(float *)(param_6 + 4) = fVar2;
+      *(float *)(param_7 + 4) = fVar2;
       fVar8 = fVar5 - fVar4;
-      *(float *)(param_7 + 0xc) = (fVar2 / fVar3) * *(float *)(param_7 + 0xc);
+      *(float *)(param_8 + 0xc) = (fVar2 / fVar3) * *(float *)(param_8 + 0xc);
       goto LAB_00382584;
     }
   }
   else {
     fVar4 = fVar3 - (fVar8 - fVar5);
-    *(float *)(param_6 + 4) = fVar4;
-    fVar6 = *(float *)(param_7 + 4);
-    fVar7 = *(float *)(param_7 + 0xc);
-    *(float *)(param_7 + 0xc) = (fVar4 / fVar3) * fVar7;
-    *(float *)(param_7 + 4) = fVar6 + ((fVar8 - fVar5) / fVar3) * ((fVar6 + fVar7) - fVar6);
+    *(float *)(param_7 + 4) = fVar4;
+    fVar6 = *(float *)(param_8 + 4);
+    fVar7 = *(float *)(param_8 + 0xc);
+    *(float *)(param_8 + 0xc) = (fVar4 / fVar3) * fVar7;
+    *(float *)(param_8 + 4) = fVar6 + ((fVar8 - fVar5) / fVar3) * ((fVar6 + fVar7) - fVar6);
     fVar8 = fVar8 - fVar2;
     fVar4 = fVar2;
 LAB_00382584:
-    param_5[1] = fVar4 + fVar8 * 0.5;
+    param_6[1] = fVar4 + fVar8 * 0.5;
   }
-  lStack_90 = *param_4;
-  piStack_88 = (int *)param_4[1];
+  lStack_90 = *param_5;
+  piStack_88 = (int *)param_5[1];
   if (lStack_90 != 0) {
     *piStack_88 = *piStack_88 + 1;
   }
                     /* try { // try from 003825a8 to 003825b3 has its CatchHandler @ 00382664 */
-  Walaber::Node::getWorldPosition(&fStack_98,param_1);
-  fVar2 = (float)cosf(this);
-  fVar3 = (float)sinf(this);
-  fStack_80 = fStack_98 + (fVar2 * *param_5 - fVar3 * param_5[1]);
-  fStack_7c = fStack_94 + fVar3 * *param_5 + fVar2 * param_5[1];
+  Walaber::Node::getWorldPosition(&fStack_98,param_2);
+  fVar2 = (float)cosf(param_1);
+  fVar3 = (float)sinf(param_1);
+  fStack_80 = fStack_98 + (fVar2 * *param_6 - fVar3 * param_6[1]);
+  fStack_7c = fStack_94 + fVar3 * *param_6 + fVar2 * param_6[1];
                     /* try { // try from 003825f4 to 0038261b has its CatchHandler @ 00382660 */
-  Walaber::SpriteBatch::drawQuad(this,param_2,param_3,&lStack_90,&fStack_80,param_6,param_7,param_8,0);
+  Walaber::SpriteBatch::drawQuad(param_1,param_3,param_4,&lStack_90,&fStack_80,param_7,param_8,param_9,0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
 LAB_00382624:
   if (*(long *)(lVar1 + 0x28) == lStack_78) {

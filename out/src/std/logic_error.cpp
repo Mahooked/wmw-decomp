@@ -10,17 +10,17 @@
 /* std::logic_error::logic_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::logic_error::logic_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void std::logic_error::logic_error(undefined8 *param_1,byte *param_2)
 
 {
   long lVar1;
   long *plVar2;
   byte *pbVar3;
   
-  *this = &PTR__logic_error_0071a1a8;
-  pbVar3 = *(byte **)(param_1 + 0x10);
-  if ((*param_1 & 1) == 0) {
-    pbVar3 = param_1 + 1;
+  *param_1 = &PTR__logic_error_0071a1a8;
+  pbVar3 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar3 = param_2 + 1;
   }
   lVar1 = strlen(pbVar3);
                     /* try { // try from 005e33a0 to 005e33a3 has its CatchHandler @ 005e33d4 */
@@ -29,7 +29,7 @@ void std::logic_error::logic_error(std::__ndk1::basic_string<char, std::__ndk1::
   plVar2[1] = lVar1;
   *(undefined4 *)(plVar2 + 2) = 0;
   memcpy(plVar2 + 3,pbVar3,lVar1 + 1);
-  this[1] = plVar2 + 3;
+  param_1[1] = plVar2 + 3;
   return;
 }
 
@@ -147,7 +147,7 @@ std__logic_error * std::logic_error::operator=(std__logic_error *p0)
 
 /* std::logic_error::~logic_error() */
 
-void std::logic_error::~logic_error(undefined8 *param_1)
+void std::logic_error::~logic_error()
 
 {
   int iVar1;
@@ -156,8 +156,8 @@ void std::logic_error::~logic_error(undefined8 *param_1)
   long lVar4;
   int *piVar5;
   
-  lVar4 = param_1[1];
-  *param_1 = &PTR__logic_error_0071a1a8;
+  lVar4 = this[1];
+  *this = &PTR__logic_error_0071a1a8;
   piVar5 = (int *)(lVar4 + -8);
   do {
     iVar1 = *piVar5;
@@ -171,7 +171,7 @@ void std::logic_error::~logic_error(undefined8 *param_1)
   if (iVar1 + -1 < 0) {
     operator delete((void *)(lVar4 + -0x18));
   }
-  std::exception::~exception(param_1);
+  std::exception::~exception(this);
   return;
 }
 
@@ -183,7 +183,7 @@ void std::logic_error::~logic_error(undefined8 *param_1)
 
 /* std::logic_error::~logic_error() */
 
-void std::logic_error::~logic_error(undefined8 *param_1)
+void std::logic_error::~logic_error()
 
 {
   int iVar1;
@@ -192,8 +192,8 @@ void std::logic_error::~logic_error(undefined8 *param_1)
   long lVar4;
   int *piVar5;
   
-  lVar4 = param_1[1];
-  *param_1 = &PTR__logic_error_0071a1a8;
+  lVar4 = this[1];
+  *this = &PTR__logic_error_0071a1a8;
   piVar5 = (int *)(lVar4 + -8);
   do {
     iVar1 = *piVar5;
@@ -207,8 +207,8 @@ void std::logic_error::~logic_error(undefined8 *param_1)
   if (iVar1 + -1 < 0) {
     operator delete((void *)(lVar4 + -0x18));
   }
-  std::exception::~exception(param_1);
-  operator delete(param_1);
+  std::exception::~exception(this);
+  operator delete(this);
   return;
 }
 

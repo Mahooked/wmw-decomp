@@ -9,23 +9,23 @@
 
 /* Walaber::Transition_Slide::Transition_Slide() */
 
-void Walaber::Transition_Slide::Transition_Slide(undefined8 *param_1)
+void Walaber::Transition_Slide::Transition_Slide()
 
 {
   Walaber::Transition::Transition();
-  *(undefined1 *)(param_1 + 0x1c) = 0;
-  *param_1 = &PTR_setup_00710ff8;
-  *(undefined4 *)((long)param_1 + 0xdc) = 2;
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *(undefined8 *)((long)param_1 + 0xf4) = 0;
-  *(undefined8 *)((long)param_1 + 0xec) = 0;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0;
-  param_1[0x22] = 0;
-  param_1[0x23] = 0;
-  param_1[0x21] = 0;
-  *(undefined4 *)(param_1 + 0x24) = 0xff000000;
+  *(undefined1 *)(this + 0x1c) = 0;
+  *this = &PTR_setup_00710ff8;
+  *(undefined4 *)((long)this + 0xdc) = 2;
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *(undefined8 *)((long)this + 0xf4) = 0;
+  *(undefined8 *)((long)this + 0xec) = 0;
+  *(undefined8 *)((long)this + 0xe4) = 0;
+  this[0x22] = 0;
+  this[0x23] = 0;
+  this[0x21] = 0;
+  *(undefined4 *)(this + 0x24) = 0xff000000;
                     /* try { // try from 003f5e48 to 003f5e4f has its CatchHandler @ 003f5e60 */
-  Walaber::Transition_Slide::_setupRenderTextureBuffer(param_1);
+  Walaber::Transition_Slide::_setupRenderTextureBuffer(this);
   return;
 }
 
@@ -146,15 +146,15 @@ void Walaber::Transition_Slide::_setupRenderTextureBuffer(long param_1)
 
 /* Walaber::Transition_Slide::~Transition_Slide() */
 
-void Walaber::Transition_Slide::~Transition_Slide(undefined8 *param_1)
+void Walaber::Transition_Slide::~Transition_Slide()
 
 {
-  *param_1 = &PTR_setup_00710ff8;
+  *this = &PTR_setup_00710ff8;
                     /* try { // try from 003f6090 to 003f60a3 has its CatchHandler @ 003f60bc */
-  glDeleteFramebuffersOES(1,(long)param_1 + 0xc4);
-  glDeleteTextures(1,param_1 + 0x19);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x21);
-  Walaber::Transition::~Transition(param_1);
+  glDeleteFramebuffersOES(1,(long)this + 0xc4);
+  glDeleteTextures(1,this + 0x19);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x21);
+  Walaber::Transition::~Transition(this);
   return;
 }
 

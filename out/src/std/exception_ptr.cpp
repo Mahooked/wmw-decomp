@@ -9,10 +9,10 @@
 
 /* std::exception_ptr::~exception_ptr() */
 
-void std::exception_ptr::~exception_ptr(undefined8 *param_1)
+void std::exception_ptr::~exception_ptr()
 
 {
-  __cxa_decrement_exception_refcount(*param_1);
+  __cxa_decrement_exception_refcount(*this);
   return;
 }
 

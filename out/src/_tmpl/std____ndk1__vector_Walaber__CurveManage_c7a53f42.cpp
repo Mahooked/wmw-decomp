@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::CurveManager::CurveCollection,std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>& param_1)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined1 *puVar1;
@@ -24,13 +24,13 @@ void std::__ndk1::
   undefined8 uVar5;
   undefined8 uVar6;
   
-  lVar2 = *this;
-  lVar4 = this[1];
+  lVar2 = *param_1;
+  lVar4 = param_1[1];
   if (lVar4 == lVar2) {
-    lVar3 = param_1[1];
+    lVar3 = param_2[1];
   }
   else {
-    lVar3 = param_1[1];
+    lVar3 = param_2[1];
     do {
       uVar6 = *(undefined8 *)(lVar4 + -0x18);
       uVar5 = *(undefined8 *)(lVar4 + -0x20);
@@ -43,20 +43,20 @@ void std::__ndk1::
       *(undefined8 *)(lVar4 + -0x20) = 0;
       lVar4 = lVar4 + -0x20;
       *(undefined1 *)(lVar3 + -8) = *puVar1;
-      lVar3 = param_1[1] + -0x20;
-      param_1[1] = lVar3;
+      lVar3 = param_2[1] + -0x20;
+      param_2[1] = lVar3;
     } while (lVar2 != lVar4);
-    lVar2 = *this;
+    lVar2 = *param_1;
   }
-  *this = lVar3;
-  param_1[1] = lVar2;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  *param_1 = lVar3;
+  param_2[1] = lVar2;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 

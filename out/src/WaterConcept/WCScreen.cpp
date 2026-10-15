@@ -151,33 +151,33 @@ void WaterConcept::WCScreen::touchUp(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::WCScreen::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
-void WaterConcept::WCScreen::handleFocus(Walaber::Widget *param_1,Walaber::FocusEvent param_2)
+void WaterConcept::WCScreen::handleFocus(undefined8 param_1,long param_2,int param_3)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   
-  if (*(int *)(param_1 + 0x84) != 1) {
+  if (*(int *)(param_2 + 0x84) != 1) {
     return;
   }
-  if ((param_2 == 5) || (param_2 == 2)) {
-    if (*(char *)(param_1 + 0x150) != '\0') {
+  if ((param_3 == 5) || (param_3 == 2)) {
+    if (*(char *)(param_2 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_1 + 0x8d) == '\0') {
+    if (*(char *)(param_2 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();
     uVar2 = 0x8d;
   }
   else {
-    if (param_2 != 0) {
+    if (param_3 != 0) {
       return;
     }
-    if (*(char *)(param_1 + 0x150) != '\0') {
+    if (*(char *)(param_2 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_1 + 0x8d) == '\0') {
+    if (*(char *)(param_2 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();
@@ -195,21 +195,21 @@ void WaterConcept::WCScreen::handleFocus(Walaber::Widget *param_1,Walaber::Focus
 
 /* WaterConcept::WCScreen::~WCScreen() */
 
-void WaterConcept::WCScreen::~WCScreen(undefined8 *param_1)
+void WaterConcept::WCScreen::~WCScreen()
 
 {
   void *p0;
   
-  *param_1 = &PTR__WCScreen_00712a08;
-  param_1[4] = &PTR_handleEvent_00712ab0;
+  *this = &PTR__WCScreen_00712a08;
+  this[4] = &PTR_handleEvent_00712ab0;
                     /* try { // try from 004a4290 to 004a4293 has its CatchHandler @ 004a42bc */
-  Walaber::WidgetManager::clearAndDestroyAllWidgets(param_1[2]);
-  p0 = (void *)param_1[2];
+  Walaber::WidgetManager::clearAndDestroyAllWidgets(this[2]);
+  p0 = (void *)this[2];
   if (p0 != (void *)0x0) {
     Walaber::WidgetManager::~WidgetManager(p0);
     operator delete(p0);
   }
-  Walaber::SpriteBatch::~SpriteBatch(param_1 + 5);
+  Walaber::SpriteBatch::~SpriteBatch(this + 5);
   return;
 }
 

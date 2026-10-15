@@ -9,21 +9,21 @@
 
 /* WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect() */
 
-void WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect(undefined8 *param_1)
+void WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,10);
+  WaterConcept::WCScreen::WCScreen(this,10);
                     /* try { // try from 004d13a8 to 004d13af has its CatchHandler @ 004d1400 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x16] = 0;
-  *param_1 = &PTR__Screen_EditorObjectSelect_00713848;
-  param_1[4] = &PTR_handleEvent_00713900;
-  param_1[0x12] = &PTR__Screen_EditorObjectSelect_00713920;
-  param_1[0x15] = 0;
-  param_1[0x14] = param_1 + 0x15;
-  param_1[0x19] = 0;
-  param_1[0x17] = 0;
-  param_1[0x18] = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x16] = 0;
+  *this = &PTR__Screen_EditorObjectSelect_00713848;
+  this[4] = &PTR_handleEvent_00713900;
+  this[0x12] = &PTR__Screen_EditorObjectSelect_00713920;
+  this[0x15] = 0;
+  this[0x14] = this + 0x15;
+  this[0x19] = 0;
+  this[0x17] = 0;
+  this[0x18] = 0;
   return;
 }
 
@@ -35,15 +35,15 @@ void WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect(undefine
 
 /* WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect() */
 
-void WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect(undefined8 *param_1)
+void WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect()
 
 {
-  *param_1 = &PTR__Screen_EditorObjectSelect_00713848;
-  param_1[4] = &PTR_handleEvent_00713900;
-  param_1[0x12] = &PTR__Screen_EditorObjectSelect_00713920;
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>>>::destroy(param_1 + 0x14,param_1[0x15]);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_EditorObjectSelect_00713848;
+  this[4] = &PTR_handleEvent_00713900;
+  this[0x12] = &PTR__Screen_EditorObjectSelect_00713920;
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::InteractiveObject*>>>::destroy(this + 0x14,this[0x15]);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

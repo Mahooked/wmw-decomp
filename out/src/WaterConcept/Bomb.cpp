@@ -48,12 +48,12 @@ void WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 /* WaterConcept::Bomb::~Bomb() */
 
-void WaterConcept::Bomb::~Bomb(undefined8 *param_1)
+void WaterConcept::Bomb::~Bomb()
 
 {
-  *param_1 = &PTR__Bomb_00711548;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x77);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  *this = &PTR__Bomb_00711548;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x77);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 
@@ -65,13 +65,13 @@ void WaterConcept::Bomb::~Bomb(undefined8 *param_1)
 
 /* WaterConcept::Bomb::~Bomb() */
 
-void WaterConcept::Bomb::~Bomb(undefined8 *param_1)
+void WaterConcept::Bomb::~Bomb()
 
 {
-  *param_1 = &PTR__Bomb_00711548;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x77);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
-  operator delete(param_1);
+  *this = &PTR__Bomb_00711548;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x77);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  operator delete(this);
   return;
 }
 

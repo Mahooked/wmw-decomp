@@ -88,12 +88,12 @@ void WaterConcept::Collectible::Collectible(Walaber__Vector2 p0,float p1,Walaber
 
 /* WaterConcept::Collectible::~Collectible() */
 
-void WaterConcept::Collectible::~Collectible(undefined8 *param_1)
+void WaterConcept::Collectible::~Collectible()
 
 {
-  *param_1 = &PTR__Collectible_007116c8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  *this = &PTR__Collectible_007116c8;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
   return;
 }
 
@@ -105,13 +105,13 @@ void WaterConcept::Collectible::~Collectible(undefined8 *param_1)
 
 /* WaterConcept::Collectible::~Collectible() */
 
-void WaterConcept::Collectible::~Collectible(undefined8 *param_1)
+void WaterConcept::Collectible::~Collectible()
 
 {
-  *param_1 = &PTR__Collectible_007116c8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79);
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
-  operator delete(param_1);
+  *this = &PTR__Collectible_007116c8;
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
+  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  operator delete(this);
   return;
 }
 

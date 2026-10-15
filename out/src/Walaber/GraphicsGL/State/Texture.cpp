@@ -9,12 +9,12 @@
 
 /* Walaber::GraphicsGL::State::Texture::Texture() */
 
-void Walaber::GraphicsGL::State::Texture::Texture(undefined2 *param_1)
+void Walaber::GraphicsGL::State::Texture::Texture()
 
 {
-  *param_1 = 0;
-  *(undefined4 *)(param_1 + 2) = 0;
-  *(undefined4 *)(param_1 + 4) = 0;
+  *this = 0;
+  *(undefined4 *)(this + 2) = 0;
+  *(undefined4 *)(this + 4) = 0;
   glDisable(0xde1);
   glDisableClientState(0x8078);
   glBindTexture(0xde1,0);

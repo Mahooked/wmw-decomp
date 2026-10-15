@@ -9,15 +9,15 @@
 
 /* Walaber::CameraController::CameraController() */
 
-void Walaber::CameraController::CameraController(undefined8 *param_1)
+void Walaber::CameraController::CameraController()
 
 {
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0x3f8000003f800000;
-  memset(param_1 + 3,0,0x90);
-  *(undefined1 *)(param_1 + 0x15) = 1;
-  *(undefined8 *)((long)param_1 + 0xac) = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0x3f8000003f800000;
+  memset(this + 3,0,0x90);
+  *(undefined1 *)(this + 0x15) = 1;
+  *(undefined8 *)((long)this + 0xac) = 0;
   return;
 }
 

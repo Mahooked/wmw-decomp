@@ -9,22 +9,22 @@
 
 /* Walaber::Transition::Transition() */
 
-void Walaber::Transition::Transition(undefined8 *param_1)
+void Walaber::Transition::Transition()
 
 {
-  *param_1 = &PTR_setup_00710ec8;
-  Walaber::SpriteBatch::SpriteBatch(param_1 + 1);
-  *(undefined4 *)(param_1 + 0xe) = 0;
-  *(undefined4 *)((long)param_1 + 0x7c) = 0;
-  *(undefined2 *)(param_1 + 0x11) = 0;
-  param_1[0x12] = 0;
-  param_1[0x13] = 0;
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  *(undefined1 *)((long)param_1 + 0x8a) = 0xff;
-  *(undefined4 *)(param_1 + 0x18) = 0xff000000;
-  param_1[0x10] = 0xff0000000101ff;
-  param_1[0x14] = 0;
+  *this = &PTR_setup_00710ec8;
+  Walaber::SpriteBatch::SpriteBatch(this + 1);
+  *(undefined4 *)(this + 0xe) = 0;
+  *(undefined4 *)((long)this + 0x7c) = 0;
+  *(undefined2 *)(this + 0x11) = 0;
+  this[0x12] = 0;
+  this[0x13] = 0;
+  this[0x15] = 0;
+  this[0x16] = 0;
+  *(undefined1 *)((long)this + 0x8a) = 0xff;
+  *(undefined4 *)(this + 0x18) = 0xff000000;
+  this[0x10] = 0xff0000000101ff;
+  this[0x14] = 0;
   return;
 }
 
@@ -36,14 +36,14 @@ void Walaber::Transition::Transition(undefined8 *param_1)
 
 /* Walaber::Transition::~Transition() */
 
-void Walaber::Transition::~Transition(undefined8 *param_1)
+void Walaber::Transition::~Transition()
 
 {
-  *param_1 = &PTR_setup_00710ec8;
-  if ((*(byte *)(param_1 + 0x13) & 1) != 0) {
-    operator delete((void *)param_1[0x15]);
+  *this = &PTR_setup_00710ec8;
+  if ((*(byte *)(this + 0x13) & 1) != 0) {
+    operator delete((void *)this[0x15]);
   }
-  Walaber::SpriteBatch::~SpriteBatch(param_1 + 1);
+  Walaber::SpriteBatch::~SpriteBatch(this + 1);
   return;
 }
 

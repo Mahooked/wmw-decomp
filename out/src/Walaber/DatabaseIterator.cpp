@@ -66,10 +66,10 @@ float Walaber::DatabaseIterator::getFloatAtIndex(int p0)
 
 /* Walaber::DatabaseIterator::DatabaseIterator() */
 
-void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1)
+void Walaber::DatabaseIterator::DatabaseIterator()
 
 {
-  *param_1 = 0;
+  *this = 0;
   return;
 }
 
@@ -82,21 +82,21 @@ void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1)
 /* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2)
 
 {
   undefined8 uVar1;
   undefined4 uVar2;
   
-  *this = 0;
+  *param_1 = 0;
   if (DAT_0072d698 == 0) {
     uVar2 = 0xffffffff;
   }
   else {
     uVar2 = *(undefined4 *)(DatabaseManager::databaseMap + 0x20);
   }
-  uVar1 = Walaber::DatabaseIterator::queryDatabase(this,uVar2,param_1);
-  *this = uVar1;
+  uVar1 = Walaber::DatabaseIterator::queryDatabase(param_1,uVar2,param_2);
+  *param_1 = uVar1;
   return;
 }
 
@@ -109,14 +109,14 @@ void Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
 /* Walaber::DatabaseIterator::queryDatabase(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::DatabaseIterator::queryDatabase(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 param_2)
 
 {
   if (DAT_0072d698 != 0) {
-    Walaber::DatabaseIterator::queryDatabase(this,*(undefined4 *)(DatabaseManager::databaseMap + 0x20),param_1);
+    Walaber::DatabaseIterator::queryDatabase(param_1,*(undefined4 *)(DatabaseManager::databaseMap + 0x20),param_2);
     return;
   }
-  Walaber::DatabaseIterator::queryDatabase(this,0xffffffff,param_1);
+  Walaber::DatabaseIterator::queryDatabase(param_1,0xffffffff,param_2);
   return;
 }
 
@@ -132,7 +132,7 @@ void Walaber::DatabaseIterator::queryDatabase(std::__ndk1::basic_string<char, st
    const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -148,7 +148,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *this = 0;
+  *param_1 = 0;
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
@@ -156,7 +156,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   auStack_70[1] = 0;
   pvStack_60 = (void *)0x0;
                     /* try { // try from 0032dc7c to 0032dc93 has its CatchHandler @ 0032dd2c */
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_1,param_2,auStack_58,auStack_70);
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_2,param_3,auStack_58,auStack_70);
   if (DAT_0072d698 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -165,7 +165,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   }
                     /* try { // try from 0032dcb4 to 0032dcbb has its CatchHandler @ 0032dd14 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *this = uVar2;
+  *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -195,7 +195,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
    std::__ndk1::allocator<char> > const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
+               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -209,12 +209,12 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *this = 0;
+  *param_1 = 0;
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
                     /* try { // try from 0032dd88 to 0032dd9f has its CatchHandler @ 0032de28 */
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_1,param_2,param_3,auStack_58);
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_2,param_3,param_4,auStack_58);
   if (DAT_0072d698 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -223,7 +223,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   }
                     /* try { // try from 0032ddc0 to 0032ddc7 has its CatchHandler @ 0032de10 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *this = uVar2;
+  *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -251,7 +251,8 @@ void Walaber::DatabaseIterator::DatabaseIterator
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
+               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+               undefined8 param_5)
 
 {
   long lVar1;
@@ -263,8 +264,8 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  *this = 0;
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_1,param_2,param_3,param_4);
+  *param_1 = 0;
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_2,param_3,param_4,param_5);
   if (DAT_0072d698 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -273,7 +274,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   }
                     /* try { // try from 0032dea0 to 0032dea7 has its CatchHandler @ 0032dee0 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *this = uVar2;
+  *param_1 = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -313,7 +314,7 @@ void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1)
 /* Walaber::DatabaseIterator::queryDatabase(int, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::DatabaseIterator::queryDatabase(int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,int param_2,byte *param_3)
 
 {
   uint uVar1;
@@ -332,18 +333,18 @@ void Walaber::DatabaseIterator::queryDatabase(int param_1,std::__ndk1::basic_str
     puVar7 = &DAT_0072d690;
     puVar5 = DAT_0072d690;
     do {
-      if (param_1 <= *(int *)(puVar5 + 4)) {
+      if (param_2 <= *(int *)(puVar5 + 4)) {
         puVar7 = puVar5;
       }
-      puVar5 = (undefined8 *)puVar5[*(int *)(puVar5 + 4) < param_1];
+      puVar5 = (undefined8 *)puVar5[*(int *)(puVar5 + 4) < param_2];
     } while (puVar5 != (undefined8 *)0x0);
-    if (((undefined8 **)puVar7 != &DAT_0072d690) && (*(int *)(puVar7 + 4) <= param_1)) {
+    if (((undefined8 **)puVar7 != &DAT_0072d690) && (*(int *)(puVar7 + 4) <= param_2)) {
       uStack_30 = 0;
-      uVar1 = *(uint *)(param_2 + 8);
-      pbVar6 = *(byte **)(param_2 + 0x10);
-      if ((*param_2 & 1) == 0) {
-        pbVar6 = param_2 + 1;
-        uVar1 = (uint)(*param_2 >> 1);
+      uVar1 = *(uint *)(param_3 + 8);
+      pbVar6 = *(byte **)(param_3 + 0x10);
+      if ((*param_3 & 1) == 0) {
+        pbVar6 = param_3 + 1;
+        uVar1 = (uint)(*param_3 >> 1);
       }
       iVar3 = sqlite3_prepare_v2(puVar7[5],pbVar6,uVar1 + 1,&uStack_30,0);
       uVar4 = uStack_30;
@@ -373,7 +374,7 @@ LAB_0032dfe4:
    const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
+               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -388,7 +389,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *this = 0;
+  *param_1 = 0;
   auStack_68[0] = 0;
   auStack_68[1] = 0;
   pvStack_58 = (void *)0x0;
@@ -396,10 +397,10 @@ void Walaber::DatabaseIterator::DatabaseIterator
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
                     /* try { // try from 0032e054 to 0032e06b has its CatchHandler @ 0032e0ec */
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_2,param_3,auStack_68,auStack_80);
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,auStack_68,auStack_80);
                     /* try { // try from 0032e06c to 0032e077 has its CatchHandler @ 0032e0d4 */
-  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_1,abStack_50);
-  *this = uVar2;
+  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
+  *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -429,7 +430,8 @@ void Walaber::DatabaseIterator::DatabaseIterator
    std::__ndk1::allocator<char> > const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
+               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4,
+               undefined8 param_5)
 
 {
   long lVar1;
@@ -442,15 +444,15 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *this = 0;
+  *param_1 = 0;
   auStack_68[0] = 0;
   auStack_68[1] = 0;
   pvStack_58 = (void *)0x0;
                     /* try { // try from 0032e150 to 0032e167 has its CatchHandler @ 0032e1d8 */
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_2,param_3,param_4,auStack_68);
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,param_5,auStack_68);
                     /* try { // try from 0032e168 to 0032e173 has its CatchHandler @ 0032e1c0 */
-  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_1,abStack_50);
-  *this = uVar2;
+  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
+  *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -478,7 +480,8 @@ void Walaber::DatabaseIterator::DatabaseIterator
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 void Walaber::DatabaseIterator::DatabaseIterator
-               (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
+               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4,
+               undefined8 param_5,undefined8 param_6)
 
 {
   long lVar1;
@@ -489,11 +492,11 @@ void Walaber::DatabaseIterator::DatabaseIterator
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *this = 0;
-  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_2,param_3,param_4,param_5);
+  *param_1 = 0;
+  uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,param_5,param_6);
                     /* try { // try from 0032e238 to 0032e243 has its CatchHandler @ 0032e280 */
-  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_1,abStack_50);
-  *this = uVar2;
+  uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
+  *param_1 = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }

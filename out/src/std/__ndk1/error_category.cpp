@@ -9,10 +9,10 @@
 
 /* std::__ndk1::error_category::error_category() */
 
-void std::__ndk1::error_category::error_category(undefined8 *param_1)
+void std::__ndk1::error_category::error_category()
 
 {
-  *param_1 = &PTR__error_category_007191b8;
+  *this = &PTR__error_category_007191b8;
   return;
 }
 

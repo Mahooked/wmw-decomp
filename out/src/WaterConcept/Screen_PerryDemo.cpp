@@ -9,28 +9,28 @@
 
 /* WaterConcept::Screen_PerryDemo::Screen_PerryDemo() */
 
-void WaterConcept::Screen_PerryDemo::Screen_PerryDemo(undefined8 *param_1)
+void WaterConcept::Screen_PerryDemo::Screen_PerryDemo()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x1f);
+  WaterConcept::WCScreen::WCScreen(this,0x1f);
                     /* try { // try from 00542c00 to 00542c07 has its CatchHandler @ 00542c64 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined2 *)((long)param_1 + 0x9c) = 0;
-  param_1[0x16] = 0;
-  param_1[0x17] = 0;
-  param_1[0x15] = 0;
-  *param_1 = &PTR__Screen_PerryDemo_00714fe8;
-  *(undefined1 *)(param_1 + 0x1a) = 0;
-  *(undefined1 *)((long)param_1 + 0xd2) = 0;
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *(undefined8 *)((long)param_1 + 0xf4) = 0;
-  *(undefined8 *)((long)param_1 + 0xec) = 0;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0;
-  *(undefined8 *)((long)param_1 + 0xdc) = 0;
-  *(undefined8 *)((long)param_1 + 0xd4) = 0;
-  param_1[4] = &PTR_handleEvent_007150a0;
-  param_1[0x12] = &PTR__Screen_PerryDemo_007150c0;
-  *(undefined4 *)((long)param_1 + 0x104) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined2 *)((long)this + 0x9c) = 0;
+  this[0x16] = 0;
+  this[0x17] = 0;
+  this[0x15] = 0;
+  *this = &PTR__Screen_PerryDemo_00714fe8;
+  *(undefined1 *)(this + 0x1a) = 0;
+  *(undefined1 *)((long)this + 0xd2) = 0;
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *(undefined8 *)((long)this + 0xf4) = 0;
+  *(undefined8 *)((long)this + 0xec) = 0;
+  *(undefined8 *)((long)this + 0xe4) = 0;
+  *(undefined8 *)((long)this + 0xdc) = 0;
+  *(undefined8 *)((long)this + 0xd4) = 0;
+  this[4] = &PTR_handleEvent_007150a0;
+  this[0x12] = &PTR__Screen_PerryDemo_007150c0;
+  *(undefined4 *)((long)this + 0x104) = 0;
   return;
 }
 
@@ -42,21 +42,21 @@ void WaterConcept::Screen_PerryDemo::Screen_PerryDemo(undefined8 *param_1)
 
 /* WaterConcept::Screen_PerryDemo::~Screen_PerryDemo() */
 
-void WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(undefined8 *param_1)
+void WaterConcept::Screen_PerryDemo::~Screen_PerryDemo()
 
 {
-  *param_1 = &PTR__Screen_PerryDemo_00714fe8;
-  param_1[4] = &PTR_handleEvent_007150a0;
-  param_1[0x12] = &PTR__Screen_PerryDemo_007150c0;
-  if ((*(byte *)(param_1 + 0x1e) & 1) != 0) {
-    operator delete((void *)param_1[0x20]);
+  *this = &PTR__Screen_PerryDemo_00714fe8;
+  this[4] = &PTR_handleEvent_007150a0;
+  this[0x12] = &PTR__Screen_PerryDemo_007150c0;
+  if ((*(byte *)(this + 0x1e) & 1) != 0) {
+    operator delete((void *)this[0x20]);
   }
-  if ((*(byte *)(param_1 + 0x1b) & 1) != 0) {
-    operator delete((void *)param_1[0x1d]);
+  if ((*(byte *)(this + 0x1b) & 1) != 0) {
+    operator delete((void *)this[0x1d]);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(param_1 + 0x15);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(this + 0x15);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

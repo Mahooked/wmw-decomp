@@ -75,7 +75,7 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
    std::__ndk1::allocator<Walaber::Color>&>&) */
 
 void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Color, std::__ndk1::allocator<Walaber::Color>&>& param_1)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined1 *puVar1;
@@ -85,13 +85,13 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
   undefined1 *puVar6;
   undefined1 *puVar4;
   
-  puVar2 = (undefined1 *)*this;
-  puVar1 = (undefined1 *)this[1];
+  puVar2 = (undefined1 *)*param_1;
+  puVar1 = (undefined1 *)param_1[1];
   if (puVar1 == puVar2) {
-    lVar5 = param_1[1];
+    lVar5 = param_2[1];
   }
   else {
-    lVar5 = param_1[1];
+    lVar5 = param_2[1];
     puVar6 = (undefined1 *)(lVar5 + -2);
     puVar4 = puVar1;
     do {
@@ -104,18 +104,18 @@ void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>:
       puVar4 = puVar3;
     } while (puVar2 != puVar3);
     lVar5 = lVar5 + ~((ulong)(puVar1 + (-4 - (long)puVar2)) >> 2) * 4;
-    param_1[1] = lVar5;
-    puVar2 = (undefined1 *)*this;
+    param_2[1] = lVar5;
+    puVar2 = (undefined1 *)*param_1;
   }
-  *this = lVar5;
-  param_1[1] = puVar2;
-  lVar5 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar5;
-  lVar5 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar5;
-  *param_1 = param_1[1];
+  *param_1 = lVar5;
+  param_2[1] = puVar2;
+  lVar5 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar5;
+  lVar5 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar5;
+  *param_2 = param_2[1];
   return;
 }
 

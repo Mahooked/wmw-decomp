@@ -9,23 +9,23 @@
 
 /* Walaber::Transition_Widget_Slide::Transition_Widget_Slide() */
 
-void Walaber::Transition_Widget_Slide::Transition_Widget_Slide(undefined8 *param_1)
+void Walaber::Transition_Widget_Slide::Transition_Widget_Slide()
 
 {
   Walaber::Transition::Transition();
-  param_1[0x1d] = 0;
-  param_1[0x1e] = 0;
-  param_1[0x1b] = 0;
-  param_1[0x1c] = 0;
-  param_1[0x19] = 0;
-  param_1[0x1a] = 0;
-  *param_1 = &PTR_setup_00711048;
-  *(undefined4 *)(param_1 + 0x21) = 0;
-  param_1[0x23] = param_1 + 0x24;
-  param_1[0x24] = 0;
-  param_1[0x20] = 0;
-  param_1[0x1f] = 0;
-  param_1[0x25] = 0;
+  this[0x1d] = 0;
+  this[0x1e] = 0;
+  this[0x1b] = 0;
+  this[0x1c] = 0;
+  this[0x19] = 0;
+  this[0x1a] = 0;
+  *this = &PTR_setup_00711048;
+  *(undefined4 *)(this + 0x21) = 0;
+  this[0x23] = this + 0x24;
+  this[0x24] = 0;
+  this[0x20] = 0;
+  this[0x1f] = 0;
+  this[0x25] = 0;
   return;
 }
 
@@ -37,12 +37,12 @@ void Walaber::Transition_Widget_Slide::Transition_Widget_Slide(undefined8 *param
 
 /* Walaber::Transition_Widget_Slide::~Transition_Widget_Slide() */
 
-void Walaber::Transition_Widget_Slide::~Transition_Widget_Slide(undefined8 *param_1)
+void Walaber::Transition_Widget_Slide::~Transition_Widget_Slide()
 
 {
-  *param_1 = &PTR_setup_00711048;
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, float>>>::destroy(param_1 + 0x23,param_1[0x24]);
-  Walaber::Transition::~Transition(param_1);
+  *this = &PTR_setup_00711048;
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, float>>>::destroy(this + 0x23,this[0x24]);
+  Walaber::Transition::~Transition(this);
   return;
 }
 
@@ -760,7 +760,7 @@ void Walaber::Transition_Widget_Slide::_offsetWidgetManagers(Walaber__Vector2 *p
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Widget_Slide::_setPositionsByDirection(Walaber::AABB) */
 
-void Walaber::Transition_Widget_Slide::_setPositionsByDirection(Walaber::AABB param_1)
+void Walaber::Transition_Widget_Slide::_setPositionsByDirection(long param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -779,43 +779,43 @@ void Walaber::Transition_Widget_Slide::_setPositionsByDirection(Walaber::AABB pa
   lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) + 0.0,(float)_sScreenSize + 0.0);
   Walaber::AABB::AABB(auStack_58,&Vector2::Zero,&uStack_40);
-  Walaber::AABB::expandToInclude(param_1,auStack_58);
-  uVar3 = *param_1;
-  fVar5 = (float)param_1[1] - (float)uVar3;
-  fVar6 = (float)((ulong)param_1[1] >> 0x20) - (float)((ulong)uVar3 >> 0x20);
+  Walaber::AABB::expandToInclude(param_2,auStack_58);
+  uVar3 = *param_2;
+  fVar5 = (float)param_2[1] - (float)uVar3;
+  fVar6 = (float)((ulong)param_2[1] >> 0x20) - (float)((ulong)uVar3 >> 0x20);
   uStack_40 = CONCAT44(fVar6,fVar5);
-  *(undefined8 *)(this + 0xf8) = uVar3;
-  *(undefined8 *)(this + 0x100) = param_1[1];
-  *(undefined4 *)(this + 0x108) = *(undefined4 *)(param_1 + 2);
-  fVar8 = (float)*param_1;
-  fVar7 = (float)((ulong)*param_1 >> 0x20);
-  fVar2 = fVar8 + ((float)param_1[1] - fVar8) * 0.5 + fVar5 * (float)*(undefined8 *)(this + 0xe0)
+  *(undefined8 *)(param_1 + 0xf8) = uVar3;
+  *(undefined8 *)(param_1 + 0x100) = param_2[1];
+  *(undefined4 *)(param_1 + 0x108) = *(undefined4 *)(param_2 + 2);
+  fVar8 = (float)*param_2;
+  fVar7 = (float)((ulong)*param_2 >> 0x20);
+  fVar2 = fVar8 + ((float)param_2[1] - fVar8) * 0.5 + fVar5 * (float)*(undefined8 *)(param_1 + 0xe0)
   ;
-  fVar4 = fVar7 + ((float)((ulong)param_1[1] >> 0x20) - fVar7) * 0.5 +
-          fVar6 * (float)((ulong)*(undefined8 *)(this + 0xe0) >> 0x20);
-  *(ulong *)(this + 200) = CONCAT44(fVar4,fVar2);
-  fVar8 = (float)*param_1;
-  fVar7 = (float)((ulong)*param_1 >> 0x20);
-  *(ulong *)(this + 0xd8) =
-       CONCAT44(fVar7 + ((float)((ulong)param_1[1] >> 0x20) - fVar7) * 0.5 +
-                fVar6 * (float)((ulong)*(undefined8 *)(this + 0xe8) >> 0x20),
-                fVar8 + ((float)param_1[1] - fVar8) * 0.5 +
-                fVar5 * (float)*(undefined8 *)(this + 0xe8));
-  fVar7 = (float)*param_1;
-  fVar8 = (float)((ulong)*param_1 >> 0x20);
-  fVar7 = fVar7 + ((float)param_1[1] - fVar7) * 0.5;
-  fVar8 = fVar8 + ((float)((ulong)param_1[1] >> 0x20) - fVar8) * 0.5;
-  *(ulong *)(this + 0xd0) = CONCAT44(fVar8,fVar7);
-  if (*(char *)(this + 0xc4) != '\0') {
+  fVar4 = fVar7 + ((float)((ulong)param_2[1] >> 0x20) - fVar7) * 0.5 +
+          fVar6 * (float)((ulong)*(undefined8 *)(param_1 + 0xe0) >> 0x20);
+  *(ulong *)(param_1 + 200) = CONCAT44(fVar4,fVar2);
+  fVar8 = (float)*param_2;
+  fVar7 = (float)((ulong)*param_2 >> 0x20);
+  *(ulong *)(param_1 + 0xd8) =
+       CONCAT44(fVar7 + ((float)((ulong)param_2[1] >> 0x20) - fVar7) * 0.5 +
+                fVar6 * (float)((ulong)*(undefined8 *)(param_1 + 0xe8) >> 0x20),
+                fVar8 + ((float)param_2[1] - fVar8) * 0.5 +
+                fVar5 * (float)*(undefined8 *)(param_1 + 0xe8));
+  fVar7 = (float)*param_2;
+  fVar8 = (float)((ulong)*param_2 >> 0x20);
+  fVar7 = fVar7 + ((float)param_2[1] - fVar7) * 0.5;
+  fVar8 = fVar8 + ((float)((ulong)param_2[1] >> 0x20) - fVar8) * 0.5;
+  *(ulong *)(param_1 + 0xd0) = CONCAT44(fVar8,fVar7);
+  if (*(char *)(param_1 + 0xc4) != '\0') {
     fVar8 = fVar4;
     fVar7 = fVar2;
   }
-  *(float *)(this + 0xf0) = fVar7;
-  *(float *)(this + 0xf4) = fVar8;
-  *(float *)(this + 0xfc) = fVar8 - fVar6 * 0.5;
-  *(float *)(this + 0x100) = fVar5 * 0.5 + fVar7;
-  *(float *)(this + 0xf8) = fVar7 - fVar5 * 0.5;
-  *(float *)(this + 0x104) = fVar6 * 0.5 + fVar8;
+  *(float *)(param_1 + 0xf0) = fVar7;
+  *(float *)(param_1 + 0xf4) = fVar8;
+  *(float *)(param_1 + 0xfc) = fVar8 - fVar6 * 0.5;
+  *(float *)(param_1 + 0x100) = fVar5 * 0.5 + fVar7;
+  *(float *)(param_1 + 0xf8) = fVar7 - fVar5 * 0.5;
+  *(float *)(param_1 + 0x104) = fVar6 * 0.5 + fVar8;
   if (*(long *)(lVar1 + 0x28) != lStack_38) {
     __stack_chk_fail();
     return;

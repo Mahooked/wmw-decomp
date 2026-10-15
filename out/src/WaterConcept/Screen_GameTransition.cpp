@@ -9,16 +9,16 @@
 
 /* WaterConcept::Screen_GameTransition::Screen_GameTransition() */
 
-void WaterConcept::Screen_GameTransition::Screen_GameTransition(undefined8 *param_1)
+void WaterConcept::Screen_GameTransition::Screen_GameTransition()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x14);
+  WaterConcept::WCScreen::WCScreen(this,0x14);
                     /* try { // try from 004da2e0 to 004da2e7 has its CatchHandler @ 004da318 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined4 *)((long)param_1 + 0x9c) = 0;
-  *param_1 = &PTR__Screen_GameTransition_00713c38;
-  param_1[4] = &PTR_handleEvent_00713cf0;
-  param_1[0x12] = &PTR__Screen_GameTransition_00713d10;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined4 *)((long)this + 0x9c) = 0;
+  *this = &PTR__Screen_GameTransition_00713c38;
+  this[4] = &PTR_handleEvent_00713cf0;
+  this[0x12] = &PTR__Screen_GameTransition_00713d10;
   return;
 }
 
@@ -103,7 +103,7 @@ void WaterConcept::Screen_GameTransition::loadPropertyList(Walaber__PropertyList
 
 /* WaterConcept::Screen_GameTransition::enter() */
 
-void WaterConcept::Screen_GameTransition::enter(undefined8 param_1)
+void WaterConcept::Screen_GameTransition::enter()
 
 {
   long lVar1;
@@ -271,7 +271,7 @@ void WaterConcept::Screen_GameTransition::enter(undefined8 param_1)
   puts("[Water_Screen_GameTransition] enter");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  WaterConcept::Screen_GameTransition::_buildUI(param_1);
+  WaterConcept::Screen_GameTransition::_buildUI(this);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

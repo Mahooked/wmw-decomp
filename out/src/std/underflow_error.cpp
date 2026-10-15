@@ -9,7 +9,7 @@
 
 /* std::underflow_error::~underflow_error() */
 
-void std::underflow_error::~underflow_error(undefined8 *param_1)
+void std::underflow_error::~underflow_error()
 
 {
   int iVar1;
@@ -18,8 +18,8 @@ void std::underflow_error::~underflow_error(undefined8 *param_1)
   long lVar4;
   int *piVar5;
   
-  lVar4 = param_1[1];
-  *param_1 = &PTR__range_error_0071a1d0;
+  lVar4 = this[1];
+  *this = &PTR__range_error_0071a1d0;
   piVar5 = (int *)(lVar4 + -8);
   do {
     iVar1 = *piVar5;
@@ -33,8 +33,8 @@ void std::underflow_error::~underflow_error(undefined8 *param_1)
   if (iVar1 + -1 < 0) {
     operator delete((void *)(lVar4 + -0x18));
   }
-  std::exception::~exception(param_1);
-  operator delete(param_1);
+  std::exception::~exception(this);
+  operator delete(this);
   return;
 }
 

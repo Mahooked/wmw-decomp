@@ -9,26 +9,26 @@
 
 /* WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid() */
 
-void WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid(undefined8 *param_1)
+void WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x1c);
+  WaterConcept::WCScreen::WCScreen(this,0x1c);
                     /* try { // try from 004d4280 to 004d4287 has its CatchHandler @ 004d42e8 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x15] = 0;
-  param_1[0x16] = 0;
-  param_1[0x14] = 0;
-  param_1[0x1d] = 0;
-  *param_1 = &PTR__Screen_FoodPyramid_00713988;
-  param_1[4] = &PTR_handleEvent_00713a40;
-  param_1[0x12] = &PTR__Screen_FoodPyramid_00713a60;
-  param_1[0x1c] = 0;
-  param_1[0x1b] = param_1 + 0x1c;
-  *(undefined4 *)(param_1 + 0x1e) = 0xffffffff;
-  *(undefined2 *)(param_1 + 0x1a) = 0;
-  param_1[0x18] = 0;
-  param_1[0x19] = 0;
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x15] = 0;
+  this[0x16] = 0;
+  this[0x14] = 0;
+  this[0x1d] = 0;
+  *this = &PTR__Screen_FoodPyramid_00713988;
+  this[4] = &PTR_handleEvent_00713a40;
+  this[0x12] = &PTR__Screen_FoodPyramid_00713a60;
+  this[0x1c] = 0;
+  this[0x1b] = this + 0x1c;
+  *(undefined4 *)(this + 0x1e) = 0xffffffff;
+  *(undefined2 *)(this + 0x1a) = 0;
+  this[0x18] = 0;
+  this[0x19] = 0;
+  *(undefined1 *)(this[2] + 0x71) = 1;
   return;
 }
 
@@ -40,23 +40,23 @@ void WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid(undefined8 *param_1)
 
 /* WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
 
-void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(undefined8 *param_1)
+void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid()
 
 {
   void *p0;
   
-  *param_1 = &PTR__Screen_FoodPyramid_00713988;
-  param_1[4] = &PTR_handleEvent_00713a40;
-  param_1[0x12] = &PTR__Screen_FoodPyramid_00713a60;
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 0x1b,param_1[0x1c]);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x18);
-  p0 = (void *)param_1[0x14];
+  *this = &PTR__Screen_FoodPyramid_00713988;
+  this[4] = &PTR_handleEvent_00713a40;
+  this[0x12] = &PTR__Screen_FoodPyramid_00713a60;
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 0x1b,this[0x1c]);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x18);
+  p0 = (void *)this[0x14];
   if (p0 != (void *)0x0) {
-    param_1[0x15] = p0;
+    this[0x15] = p0;
     operator delete(p0);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

@@ -66,21 +66,21 @@ void std::__ndk1::
 
 void std::__ndk1::
      __split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>
-     ::~__split_buffer(undefined8 *param_1)
+     ::~__split_buffer()
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = param_1[1];
-  lVar2 = param_1[2];
+  lVar1 = this[1];
+  lVar2 = this[2];
   while (lVar2 != lVar1) {
-    param_1[2] = lVar2 + -0x18;
+    this[2] = lVar2 + -0x18;
     std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::destroy(lVar2 + -0x18,*(undefined8 *)(lVar2 + -0x10));
-    lVar2 = param_1[2];
+    lVar2 = this[2];
   }
-  if ((void *)*param_1 != (void *)0x0) {
-    operator delete((void *)*param_1);
+  if ((void *)*this != (void *)0x0) {
+    operator delete((void *)*this);
     return;
   }
   return;

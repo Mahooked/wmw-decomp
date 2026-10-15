@@ -9,10 +9,10 @@
 
 /* std::bad_alloc::bad_alloc() */
 
-void std::bad_alloc::bad_alloc(undefined8 *param_1)
+void std::bad_alloc::bad_alloc()
 
 {
-  *param_1 = &PTR__bad_exception_0071a050;
+  *this = &PTR__bad_exception_0071a050;
   return;
 }
 

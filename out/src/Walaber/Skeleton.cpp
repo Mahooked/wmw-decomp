@@ -9,31 +9,31 @@
 
 /* Walaber::Skeleton::Skeleton() */
 
-void Walaber::Skeleton::Skeleton(undefined8 *param_1)
+void Walaber::Skeleton::Skeleton()
 
 {
   Walaber::DrawableNode::DrawableNode();
-  *param_1 = &PTR__Skeleton_0070e3a8;
-  param_1[0x12] = 0;
-  param_1[0x11] = param_1 + 0x12;
-  param_1[0x15] = 0;
-  param_1[0x13] = 0;
-  param_1[0x14] = param_1 + 0x15;
-  param_1[0x18] = 0;
-  param_1[0x16] = 0;
-  param_1[0x17] = param_1 + 0x18;
-  param_1[0x1b] = 0;
-  param_1[0x1c] = 0;
-  param_1[0x19] = 0;
-  param_1[0x1a] = param_1 + 0x1b;
+  *this = &PTR__Skeleton_0070e3a8;
+  this[0x12] = 0;
+  this[0x11] = this + 0x12;
+  this[0x15] = 0;
+  this[0x13] = 0;
+  this[0x14] = this + 0x15;
+  this[0x18] = 0;
+  this[0x16] = 0;
+  this[0x17] = this + 0x18;
+  this[0x1b] = 0;
+  this[0x1c] = 0;
+  this[0x19] = 0;
+  this[0x1a] = this + 0x1b;
                     /* try { // try from 0033aac8 to 0033aacb has its CatchHandler @ 0033aafc */
-  Walaber::AnimationManager::AnimationManager(param_1 + 0x1d);
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x28] = 0;
-  *(undefined1 *)(param_1 + 0x2b) = 0;
-  *(undefined4 *)(param_1 + 0x27) = 0xff000000;
-  *(undefined4 *)(param_1 + 4) = 1;
+  Walaber::AnimationManager::AnimationManager(this + 0x1d);
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x28] = 0;
+  *(undefined1 *)(this + 0x2b) = 0;
+  *(undefined4 *)(this + 0x27) = 0xff000000;
+  *(undefined4 *)(this + 4) = 1;
   return;
 }
 
@@ -196,7 +196,7 @@ Walaber__Skeleton * Walaber::Skeleton::operator=(Walaber__Skeleton *p0)
 
 /* Walaber::Skeleton::~Skeleton() */
 
-void Walaber::Skeleton::~Skeleton(undefined8 *param_1)
+void Walaber::Skeleton::~Skeleton()
 
 {
   byte bVar1;
@@ -206,9 +206,9 @@ void Walaber::Skeleton::~Skeleton(undefined8 *param_1)
   long lVar5;
   long *plVar6;
   
-  *param_1 = &PTR__Skeleton_0070e3a8;
-  plVar6 = (long *)param_1[0x14];
-  while (plVar6 != param_1 + 0x15) {
+  *this = &PTR__Skeleton_0070e3a8;
+  plVar6 = (long *)this[0x14];
+  while (plVar6 != this + 0x15) {
     if ((long *)plVar6[7] != (long *)0x0) {
       (**(code **)(*(long *)plVar6[7] + 8))();
     }
@@ -232,8 +232,8 @@ void Walaber::Skeleton::~Skeleton(undefined8 *param_1)
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
-  plVar6 = (long *)param_1[0x17];
-  while (plVar6 != param_1 + 0x18) {
+  plVar6 = (long *)this[0x17];
+  while (plVar6 != this + 0x18) {
     if ((long *)plVar6[7] != (long *)0x0) {
       (**(code **)(*(long *)plVar6[7] + 8))();
     }
@@ -257,25 +257,25 @@ void Walaber::Skeleton::~Skeleton(undefined8 *param_1)
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
-  bVar1 = *(byte *)(param_1 + 0x28);
+  bVar1 = *(byte *)(this + 0x28);
   if ((bVar1 & 1) == 0) {
     if (bVar1 >> 1 == 0) goto joined_r0x0033b00c;
   }
-  else if (param_1[0x29] == 0) goto joined_r0x0033b00c;
+  else if (this[0x29] == 0) goto joined_r0x0033b00c;
                     /* try { // try from 0033aff8 to 0033b003 has its CatchHandler @ 0033b07c */
   uVar3 = Walaber::CurveManager::getManager();
-  Walaber::CurveManager::unloadCurveCollection(uVar3,param_1 + 0x28);
-  bVar1 = *(byte *)(param_1 + 0x28);
+  Walaber::CurveManager::unloadCurveCollection(uVar3,this + 0x28);
+  bVar1 = *(byte *)(this + 0x28);
 joined_r0x0033b00c:
   if ((bVar1 & 1) != 0) {
-    operator delete((void *)param_1[0x2a]);
+    operator delete((void *)this[0x2a]);
   }
-  Walaber::AnimationManager::~AnimationManager(param_1 + 0x1d);
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Sprite*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Sprite*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Sprite*>>>::destroy(param_1 + 0x1a,param_1[0x1b]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>>>::destroy(param_1 + 0x17,param_1[0x18]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>>>::destroy(param_1 + 0x14,param_1[0x15]);
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::__map_value_compare<Walaber::Bone*, std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::less<Walaber::Bone*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>>>::destroy(param_1 + 0x11,param_1[0x12]);
-  Walaber::DrawableNode::~DrawableNode(param_1);
+  Walaber::AnimationManager::~AnimationManager(this + 0x1d);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Sprite*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Sprite*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Sprite*>>>::destroy(this + 0x1a,this[0x1b]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>>>::destroy(this + 0x17,this[0x18]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>>>::destroy(this + 0x14,this[0x15]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::__map_value_compare<Walaber::Bone*, std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>, std::__ndk1::less<Walaber::Bone*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Bone*, Walaber::Skeleton::BoneLocalData>>>::destroy(this + 0x11,this[0x12]);
+  Walaber::DrawableNode::~DrawableNode(this);
   return;
 }
 
@@ -721,7 +721,7 @@ LAB_0033b6b0:
 /* Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -746,7 +746,7 @@ void Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char, st
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 0033ba2c to 0033ba6b has its CatchHandler @ 0033bb44 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e498;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -772,7 +772,7 @@ void Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char, st
     *piStack_78 = *piStack_78 + 1;
   }
                     /* try { // try from 0033bac0 to 0033bad3 has its CatchHandler @ 0033bb1c */
-  Walaber::FileManager::readFile(uVar4,param_1,&puStack_a0,auStack_60,0);
+  Walaber::FileManager::readFile(uVar4,param_2,&puStack_a0,auStack_60,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Skeleton>>::~SharedPtr(&puStack_70);
@@ -797,7 +797,8 @@ void Walaber::Skeleton::loadAnimationsFromXml(std::__ndk1::basic_string<char, st
    const&) */
 
 void Walaber::Skeleton::loadSkeletonWithCallback
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::Vector2 const& param_3,float param_4,Walaber::Vector2 const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6)
+               (undefined8 param_1,byte *param_2,long *param_3,undefined8 param_4,undefined8 param_5
+               ,undefined8 param_6)
 
 {
   long lVar1;
@@ -1818,15 +1819,15 @@ undefined8 Walaber::Skeleton::getSprite(long param_1)
 /* Walaber::Skeleton::getNode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-long Walaber::Skeleton::getNode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+long Walaber::Skeleton::getNode(long param_1,undefined8 param_2)
 
 {
   long lVar1;
   
-  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0xa0);
-  if ((this + 0xa8 == lVar1) || (lVar1 = *(long *)(lVar1 + 0x38), lVar1 == 0)) {
-    lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0xb8,param_1);
-    if (this + 0xc0 == lVar1) {
+  lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Bone*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0xa0);
+  if ((param_1 + 0xa8 == lVar1) || (lVar1 = *(long *)(lVar1 + 0x38), lVar1 == 0)) {
+    lVar1 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Sprite*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0xb8,param_2);
+    if (param_1 + 0xc0 == lVar1) {
       lVar1 = 0;
     }
     else {

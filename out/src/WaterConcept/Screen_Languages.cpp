@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_Languages::Screen_Languages() */
 
-void WaterConcept::Screen_Languages::Screen_Languages(undefined8 *param_1)
+void WaterConcept::Screen_Languages::Screen_Languages()
 
 {
   long lVar1;
@@ -25,20 +25,20 @@ void WaterConcept::Screen_Languages::Screen_Languages(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,0x24);
+  WaterConcept::WCScreen::WCScreen(this,0x24);
                     /* try { // try from 004ecd3c to 004ecd47 has its CatchHandler @ 004ecea0 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  param_1[0x18] = 0;
-  param_1[0x19] = 0;
-  *param_1 = &PTR__Screen_Languages_007141a8;
-  param_1[4] = &PTR_handleEvent_00714260;
-  param_1[0x12] = &PTR__Screen_Languages_00714280;
-  param_1[0x14] = 0;
-  param_1[0x16] = 0;
-  param_1[0x17] = 0;
-  param_1[0x15] = 0;
-  *(undefined4 *)((long)param_1 + 0xd4) = 0;
-  *(undefined1 *)(param_1 + 0x1a) = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  this[0x18] = 0;
+  this[0x19] = 0;
+  *this = &PTR__Screen_Languages_007141a8;
+  this[4] = &PTR_handleEvent_00714260;
+  this[0x12] = &PTR__Screen_Languages_00714280;
+  this[0x14] = 0;
+  this[0x16] = 0;
+  this[0x17] = 0;
+  this[0x15] = 0;
+  *(undefined4 *)((long)this + 0xd4) = 0;
+  *(undefined1 *)(this + 0x1a) = 0;
                     /* try { // try from 004ecd8c to 004ecd8f has its CatchHandler @ 004ece80 */
   uVar2 = Walaber::TextureManager::getManager();
   auStack_70[0] = 0;
@@ -55,7 +55,7 @@ void WaterConcept::Screen_Languages::Screen_Languages(undefined8 *param_1)
   auStack_70[0] = 0x21;
                     /* try { // try from 004ecdd8 to 004ecdf3 has its CatchHandler @ 004ece54 */
   Walaber::TextureManager::getTexture(auStack_58,uVar2,auStack_70,&uStack_80,0,0);
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x14,auStack_58);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x14,auStack_58);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_58);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
@@ -77,16 +77,16 @@ void WaterConcept::Screen_Languages::Screen_Languages(undefined8 *param_1)
 
 /* WaterConcept::Screen_Languages::~Screen_Languages() */
 
-void WaterConcept::Screen_Languages::~Screen_Languages(undefined8 *param_1)
+void WaterConcept::Screen_Languages::~Screen_Languages()
 
 {
-  *param_1 = &PTR__Screen_Languages_007141a8;
-  param_1[4] = &PTR_handleEvent_00714260;
-  param_1[0x12] = &PTR__Screen_Languages_00714280;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x16);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x14);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  *this = &PTR__Screen_Languages_007141a8;
+  this[4] = &PTR_handleEvent_00714260;
+  this[0x12] = &PTR__Screen_Languages_00714280;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x16);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x14);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 
@@ -114,7 +114,7 @@ void WaterConcept::Screen_Languages::~Screen_Languages(void *param_1)
 
 /* WaterConcept::Screen_Languages::enter() */
 
-void WaterConcept::Screen_Languages::enter(undefined8 param_1)
+void WaterConcept::Screen_Languages::enter()
 
 {
   long lVar1;
@@ -282,7 +282,7 @@ void WaterConcept::Screen_Languages::enter(undefined8 param_1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  WaterConcept::Screen_Languages::_buildUI(param_1);
+  WaterConcept::Screen_Languages::_buildUI(this);
   lVar3 = Walaber::SoundManager::getInstancePtr();
   if ((*(int *)(lVar3 + 0xf0) != 1) || (uVar4 = Walaber::SoundManager::isMusicPlaying(lVar3), (uVar4 & 1) == 0)) {
     Walaber::SoundManager::playMusicFromGroup(lVar3,1,0);

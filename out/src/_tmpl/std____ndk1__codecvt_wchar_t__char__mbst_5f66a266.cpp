@@ -641,14 +641,14 @@ undefined4 std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_max_length(long para
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::~codecvt() */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(undefined8 *param_1)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt()
 
 {
   int iVar1;
   long lVar2;
   
-  lVar2 = param_1[2];
-  *param_1 = &PTR__codecvt_007178c8;
+  lVar2 = this[2];
+  *this = &PTR__codecvt_007178c8;
   if (((DAT_007a4e90 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4e90), iVar1 != 0)) {
                     /* try { // try from 005e0da0 to 005e0db3 has its CatchHandler @ 005e0dcc */
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
@@ -656,9 +656,9 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt(undefined8 *param_1)
   }
   if (lVar2 != DAT_007a4e88) {
                     /* try { // try from 005e0d7c to 005e0d7f has its CatchHandler @ 005e0de0 */
-    freelocale(param_1[2]);
+    freelocale(this[2]);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
+  std::__ndk1::__shared_count::~__shared_count(this);
   return;
 }
 

@@ -9,7 +9,7 @@
 
 /* Walaber::PlatformManager::PlatformManager() */
 
-void Walaber::PlatformManager::PlatformManager(undefined8 *param_1)
+void Walaber::PlatformManager::PlatformManager()
 
 {
   long lVar1;
@@ -22,13 +22,13 @@ void Walaber::PlatformManager::PlatformManager(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  param_1[1] = 0;
-  param_1[5] = 0x3f80000000000040;
-  param_1[6] = 0;
-  param_1[2] = 0;
-  param_1[4] = 0x100002000;
-  param_1[3] = 0x80000000000;
-  *param_1 = param_1 + 1;
+  this[1] = 0;
+  this[5] = 0x3f80000000000040;
+  this[6] = 0;
+  this[2] = 0;
+  this[4] = 0x100002000;
+  this[3] = 0x80000000000;
+  *this = this + 1;
   lVar2 = 0;
   uVar3 = 0;
   do {
@@ -42,13 +42,13 @@ void Walaber::PlatformManager::PlatformManager(undefined8 *param_1)
     if ((int)uVar3 <= (int)uVar4) {
       uVar3 = uVar4;
     }
-    *(uint *)((long)param_1 + 0x34) = uVar3;
+    *(uint *)((long)this + 0x34) = uVar3;
   } while (lVar2 != 0x60);
   auStack_40[1] = 0;
   pvStack_30 = (void *)0x0;
   auStack_40[0] = 0x7661772e08;
                     /* try { // try from 00357fdc to 00357feb has its CatchHandler @ 00358020 */
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,auStack_40,auStack_40);
+  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this,auStack_40,auStack_40);
   if ((auStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -452,7 +452,7 @@ LAB_00358698:
 /* Walaber::PlatformManager::extensionShouldBeIgnored(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::PlatformManager::extensionShouldBeIgnored(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::PlatformManager::extensionShouldBeIgnored(long param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -463,16 +463,16 @@ void Walaber::PlatformManager::extensionShouldBeIgnored(std::__ndk1::basic_strin
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::StringHelper::getExtension(abStack_50,param_1);
+  Walaber::StringHelper::getExtension(abStack_50,param_2);
                     /* try { // try from 00358774 to 0035877f has its CatchHandler @ 003587c8 */
-  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this,abStack_50);
+  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
-  __stack_chk_fail(this + 8 != lVar2);
+  __stack_chk_fail(param_1 + 8 != lVar2);
   return;
 }
 
@@ -485,7 +485,7 @@ void Walaber::PlatformManager::extensionShouldBeIgnored(std::__ndk1::basic_strin
 /* Walaber::PlatformManager::addIgnoreExtension(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::PlatformManager::addIgnoreExtension(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::PlatformManager::addIgnoreExtension(undefined8 param_1,undefined8 param_2)
 
 {
   long lVar1;
@@ -495,9 +495,9 @@ void Walaber::PlatformManager::addIgnoreExtension(std::__ndk1::basic_string<char
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  Walaber::StringHelper::getExtension(abStack_40,param_1);
+  Walaber::StringHelper::getExtension(abStack_40,param_2);
                     /* try { // try from 00358810 to 0035881f has its CatchHandler @ 00358854 */
-  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this,abStack_40,abStack_40);
+  std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,abStack_40,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }

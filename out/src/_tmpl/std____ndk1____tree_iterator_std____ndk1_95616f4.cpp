@@ -34,7 +34,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,WaterConcept::World::WorldSpoutConnection>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,WaterConcept::World::WorldSpoutConnection>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,WaterConcept::World::WorldSpoutConnection>>>
      ::
      __emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,WaterConcept::World::WorldSpoutConnection>>
-               (std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>&& param_1)
+               (undefined8 param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -47,26 +47,26 @@ long std::__ndk1::
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   lVar1 = operator new(0x58);
-  uVar4 = param_1[1];
-  uVar2 = *param_1;
-  *(undefined8 *)(lVar1 + 0x30) = param_1[2];
+  uVar4 = param_2[1];
+  uVar2 = *param_2;
+  *(undefined8 *)(lVar1 + 0x30) = param_2[2];
   *(undefined8 *)(lVar1 + 0x28) = uVar4;
   *(undefined8 *)(lVar1 + 0x20) = uVar2;
-  uVar4 = param_1[4];
-  uVar2 = param_1[3];
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  *(undefined8 *)(lVar1 + 0x48) = param_1[5];
+  uVar4 = param_2[4];
+  uVar2 = param_2[3];
+  param_2[1] = 0;
+  param_2[2] = 0;
+  *param_2 = 0;
+  *(undefined8 *)(lVar1 + 0x48) = param_2[5];
   *(undefined8 *)(lVar1 + 0x40) = uVar4;
   *(undefined8 *)(lVar1 + 0x38) = uVar2;
-  param_1[4] = 0;
-  param_1[5] = 0;
-  param_1[3] = 0;
-  *(undefined8 *)(lVar1 + 0x50) = param_1[6];
+  param_2[4] = 0;
+  param_2[5] = 0;
+  param_2[3] = 0;
+  *(undefined8 *)(lVar1 + 0x50) = param_2[6];
                     /* try { // try from 0046db2c to 0046db3b has its CatchHandler @ 0046db80 */
-  uVar2 = std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__find_leaf_high(this,&uStack_50,lVar1 + 0x20);
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__insert_node_at(this,uStack_50,uVar2,lVar1);
+  uVar2 = std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__find_leaf_high(param_1,&uStack_50,lVar1 + 0x20);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::World::WorldSpoutConnection>>>::__insert_node_at(param_1,uStack_50,uVar2,lVar1);
   if (*(long *)(lVar3 + 0x28) == lStack_48) {
     return lVar1;
   }

@@ -1301,7 +1301,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     append(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long param_2,unsigned long param_3)
+     append(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1309,21 +1309,21 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   byte bVar3;
   byte *pbVar4;
   
-  bVar3 = *param_1;
+  bVar3 = *param_2;
   uVar1 = (ulong)(bVar3 >> 1);
   if ((bVar3 & 1) != 0) {
-    uVar1 = *(ulong *)(param_1 + 8);
+    uVar1 = *(ulong *)(param_2 + 8);
   }
-  if (param_2 <= uVar1) {
-    pbVar4 = *(byte **)(param_1 + 0x10);
+  if (param_3 <= uVar1) {
+    pbVar4 = *(byte **)(param_2 + 0x10);
     if ((bVar3 & 1) == 0) {
-      pbVar4 = param_1 + 1;
+      pbVar4 = param_2 + 1;
     }
-    uVar2 = uVar1 - param_2;
-    if (param_3 <= uVar1 - param_2) {
-      uVar2 = param_3;
+    uVar2 = uVar1 - param_3;
+    if (param_4 <= uVar1 - param_3) {
+      uVar2 = param_4;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(this,pbVar4 + param_2,uVar2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,pbVar4 + param_3,uVar2);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1341,7 +1341,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     assign(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long param_2,unsigned long param_3)
+     assign(undefined8 param_1,byte *param_2,ulong param_3,ulong param_4)
 
 {
   ulong uVar1;
@@ -1349,21 +1349,21 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   byte bVar3;
   byte *pbVar4;
   
-  bVar3 = *param_1;
+  bVar3 = *param_2;
   uVar1 = (ulong)(bVar3 >> 1);
   if ((bVar3 & 1) != 0) {
-    uVar1 = *(ulong *)(param_1 + 8);
+    uVar1 = *(ulong *)(param_2 + 8);
   }
-  if (param_2 <= uVar1) {
-    pbVar4 = *(byte **)(param_1 + 0x10);
+  if (param_3 <= uVar1) {
+    pbVar4 = *(byte **)(param_2 + 0x10);
     if ((bVar3 & 1) == 0) {
-      pbVar4 = param_1 + 1;
+      pbVar4 = param_2 + 1;
     }
-    uVar2 = uVar1 - param_2;
-    if (param_3 <= uVar1 - param_2) {
-      uVar2 = param_3;
+    uVar2 = uVar1 - param_3;
+    if (param_4 <= uVar1 - param_3) {
+      uVar2 = param_4;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(this,pbVar4 + param_2,uVar2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,pbVar4 + param_3,uVar2);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1467,7 +1467,7 @@ joined_r0x005e49f4:
    std::__ndk1::allocator<char> > const&, unsigned long, unsigned long) */
 
 void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(unsigned long param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,unsigned long param_3,unsigned long param_4)
+     insert(undefined8 param_1,undefined8 param_2,byte *param_3,ulong param_4,ulong param_5)
 
 {
   ulong uVar1;
@@ -1475,21 +1475,21 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   byte bVar3;
   byte *pbVar4;
   
-  bVar3 = *param_2;
+  bVar3 = *param_3;
   uVar1 = (ulong)(bVar3 >> 1);
   if ((bVar3 & 1) != 0) {
-    uVar1 = *(ulong *)(param_2 + 8);
+    uVar1 = *(ulong *)(param_3 + 8);
   }
-  if (param_3 <= uVar1) {
-    pbVar4 = *(byte **)(param_2 + 0x10);
+  if (param_4 <= uVar1) {
+    pbVar4 = *(byte **)(param_3 + 0x10);
     if ((bVar3 & 1) == 0) {
-      pbVar4 = param_2 + 1;
+      pbVar4 = param_3 + 1;
     }
-    uVar2 = uVar1 - param_3;
-    if (param_4 <= uVar1 - param_3) {
-      uVar2 = param_4;
+    uVar2 = uVar1 - param_4;
+    if (param_5 <= uVar1 - param_4) {
+      uVar2 = param_5;
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert(this,param_1,pbVar4 + param_3,uVar2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert(param_1,param_2,pbVar4 + param_4,uVar2);
     return;
   }
   std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
@@ -1631,7 +1631,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
    >::insert(std::__ndk1::__wrap_iter<char const*>, char) */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert(std::__ndk1::__wrap_iter<char const*> param_1,char param_2)
+     insert(ulong *param_1,long param_2,undefined1 param_3)
 
 {
   byte bVar1;
@@ -1641,28 +1641,28 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   void *p0;
   ulong uVar5;
   
-  bVar1 = (byte)*this;
+  bVar1 = (byte)*param_1;
   if ((bVar1 & 1) == 0) {
-    uVar3 = (long)this + 1;
+    uVar3 = (long)param_1 + 1;
     uVar5 = (ulong)(bVar1 >> 1);
     uVar4 = 0x16;
   }
   else {
-    uVar5 = this[1];
-    uVar3 = this[2];
-    uVar4 = (*this & 0xfffffffffffffffe) - 1;
+    uVar5 = param_1[1];
+    uVar3 = param_1[2];
+    uVar4 = (*param_1 & 0xfffffffffffffffe) - 1;
   }
-  param_1 = param_1 - uVar3;
+  param_2 = param_2 - uVar3;
   if (uVar4 == uVar5) {
     if (uVar5 == 0xffffffffffffffef) {
-      lVar2 = std::__ndk1::__basic_string_common<true>::__throw_length_error(this);
+      lVar2 = std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
       return lVar2;
     }
     if ((bVar1 & 1) == 0) {
-      p0 = (void *)((long)this + 1);
+      p0 = (void *)((long)param_1 + 1);
     }
     else {
-      p0 = (void *)this[2];
+      p0 = (void *)param_1[2];
     }
     if (uVar5 < 0x7fffffffffffffe7) {
       uVar3 = uVar5 << 1;
@@ -1680,45 +1680,45 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
       uVar4 = 0xffffffffffffffef;
     }
     uVar3 = operator new(uVar4);
-    if (param_1 != 0) {
-      memcpy(uVar3,p0,param_1);
+    if (param_2 != 0) {
+      memcpy(uVar3,p0,param_2);
     }
-    if (uVar5 - param_1 != 0) {
-      memcpy(uVar3 + param_1 + 1,(long)p0 + param_1,uVar5 - param_1);
+    if (uVar5 - param_2 != 0) {
+      memcpy(uVar3 + param_2 + 1,(long)p0 + param_2,uVar5 - param_2);
     }
     if (uVar5 != 0x16) {
       operator delete(p0);
     }
-    this[2] = uVar3;
-    *this = uVar4 | 1;
+    param_1[2] = uVar3;
+    *param_1 = uVar4 | 1;
   }
   else {
     if ((bVar1 & 1) == 0) {
-      uVar3 = (long)this + 1;
+      uVar3 = (long)param_1 + 1;
     }
     else {
-      uVar3 = this[2];
+      uVar3 = param_1[2];
     }
-    if (uVar5 - param_1 != 0) {
-      memmove(uVar3 + param_1 + 1,uVar3 + param_1,uVar5 - param_1);
+    if (uVar5 - param_2 != 0) {
+      memmove(uVar3 + param_2 + 1,uVar3 + param_2,uVar5 - param_2);
     }
   }
   uVar5 = uVar5 + 1;
-  *(undefined1 *)(uVar3 + param_1) = param_2;
+  *(undefined1 *)(uVar3 + param_2) = param_3;
   *(undefined1 *)(uVar3 + uVar5) = 0;
-  if ((*this & 1) == 0) {
-    *(char *)this = (char)((int)uVar5 << 1);
+  if ((*param_1 & 1) == 0) {
+    *(char *)param_1 = (char)((int)uVar5 << 1);
   }
   else {
-    this[1] = uVar5;
-    if ((*this & 1) != 0) {
-      uVar3 = this[2];
+    param_1[1] = uVar5;
+    if ((*param_1 & 1) != 0) {
+      uVar3 = param_1[2];
       goto LAB_005e4e10;
     }
   }
-  uVar3 = (long)this + 1;
+  uVar3 = (long)param_1 + 1;
 LAB_005e4e10:
-  return uVar3 + param_1;
+  return uVar3 + param_2;
 }
 
 

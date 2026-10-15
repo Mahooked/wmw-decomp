@@ -22,7 +22,7 @@
 long std::__ndk1::
      __tree<std::__ndk1::__value_type<unsigned_int,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::__map_value_compare<unsigned_int,std::__ndk1::__value_type<unsigned_int,Walaber::SharedPtr<Walaber::Callback>>,std::__ndk1::less<unsigned_int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_int,Walaber::SharedPtr<Walaber::Callback>>>>
      ::__emplace_multi<std::__ndk1::pair<unsigned_int,Walaber::SharedPtr<Walaber::Callback>>>
-               (std::__ndk1::pair<unsigned int, Walaber::SharedPtr<Walaber::Callback>>&& param_1)
+               (long param_1,undefined4 *param_2)
 
 {
   long lVar1;
@@ -33,15 +33,15 @@ long std::__ndk1::
   long *plVar6;
   
   lVar4 = operator new(0x38);
-  *(undefined4 *)(lVar4 + 0x20) = *param_1;
-  lVar1 = *(long *)(param_1 + 2);
-  piVar2 = *(int **)(param_1 + 4);
+  *(undefined4 *)(lVar4 + 0x20) = *param_2;
+  lVar1 = *(long *)(param_2 + 2);
+  piVar2 = *(int **)(param_2 + 4);
   *(long *)(lVar4 + 0x28) = lVar1;
   *(int **)(lVar4 + 0x30) = piVar2;
   if (lVar1 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  plVar5 = (long *)(this + 8);
+  plVar5 = (long *)(param_1 + 8);
   plVar6 = plVar5;
   if ((long *)*plVar5 != (long *)0x0) {
     plVar3 = (long *)*plVar5;
@@ -56,7 +56,7 @@ long std::__ndk1::
     plVar6 = plVar5 + 1;
   }
 LAB_002c2004:
-  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__insert_node_at(this,plVar5,plVar6,lVar4);
+  std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__insert_node_at(param_1,plVar5,plVar6,lVar4);
   return lVar4;
 }
 

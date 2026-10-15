@@ -85,7 +85,8 @@ void Walaber::Widget_ProgressBar::init(long param_1)
    Walaber::Widget_ProgressBar::FillMode) */
 
 void Walaber::Widget_ProgressBar::Widget_ProgressBar
-               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,Walaber::SharedPtr<Walaber::Texture> param_5,float param_6,Walaber::Widget_ProgressBar::FillMode param_7)
+               (float param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
+               undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8)
 
 {
   long lVar1;
@@ -100,60 +101,60 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_68 = *param_3;
-  uStack_70 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,9,&uStack_68,&uStack_70,1,1);
-  *param_1 = &PTR__Widget_ProgressBar_0070f568;
-  lVar3 = *param_5;
-  param_1[0x20] = lVar3;
-  piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
-  if (lVar3 != 0) {
-    *piVar2 = *piVar2 + 1;
-  }
+  uStack_68 = *param_4;
+  uStack_70 = *param_5;
+  Walaber::Widget::Widget(param_2,param_3,9,&uStack_68,&uStack_70,1,1);
+  *param_2 = &PTR__Widget_ProgressBar_0070f568;
   lVar3 = *param_6;
-  param_1[0x22] = lVar3;
+  param_2[0x20] = lVar3;
   piVar2 = (int *)param_6[1];
-  param_1[0x23] = piVar2;
+  param_2[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_1[0x2b] = 0x3f80000000000000;
-  param_1[0x2c] = 0x3dcccccd00000000;
-  param_1[0x2a] = 0;
-  *(undefined4 *)(param_1 + 0x2d) = param_7;
-  *(undefined1 *)((long)param_1 + 0x16c) = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  param_1[0x29] = 0;
-  param_1[0x28] = 0;
-  *(undefined1 *)((long)param_1 + 0x16d) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x16e) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x16f) = 0xff;
-  *(undefined1 *)(param_1 + 0x2e) = 0xff;
-                    /* try { // try from 00382a48 to 00382a53 has its CatchHandler @ 00382afc */
-  Walaber::Node::getWorldScale(auStack_60,param_1);
-  lVar3 = *param_5;
-  if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
-    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
-    uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = uVar4;
-    param_1[0x25] =
-         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
-                  (float)uVar5 - (float)uVar4);
+  lVar3 = *param_7;
+  param_2[0x22] = lVar3;
+  piVar2 = (int *)param_7[1];
+  param_2[0x23] = piVar2;
+  if (lVar3 != 0) {
+    *piVar2 = *piVar2 + 1;
   }
-  param_1[0x2a] =
-       CONCAT44(1.0 - ((float)((ulong)param_1[0x12] >> 0x20) * auStack_60._4_4_ * this) /
-                      (float)((ulong)*param_4 >> 0x20),
-                1.0 - ((float)param_1[0x12] * auStack_60._0_4_ * this) / (float)*param_4);
+  param_2[0x2b] = 0x3f80000000000000;
+  param_2[0x2c] = 0x3dcccccd00000000;
+  param_2[0x2a] = 0;
+  *(undefined4 *)(param_2 + 0x2d) = param_8;
+  *(undefined1 *)((long)param_2 + 0x16c) = 0;
+  param_2[0x25] = 0;
+  param_2[0x24] = 0;
+  param_2[0x27] = 0;
+  param_2[0x26] = 0;
+  param_2[0x29] = 0;
+  param_2[0x28] = 0;
+  *(undefined1 *)((long)param_2 + 0x16d) = 0xff;
+  *(undefined1 *)((long)param_2 + 0x16e) = 0xff;
+  *(undefined1 *)((long)param_2 + 0x16f) = 0xff;
+  *(undefined1 *)(param_2 + 0x2e) = 0xff;
+                    /* try { // try from 00382a48 to 00382a53 has its CatchHandler @ 00382afc */
+  Walaber::Node::getWorldScale(auStack_60,param_2);
   lVar3 = *param_6;
   if ((lVar3 != 0) && (*(int *)param_6[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x26] = uVar4;
-    param_1[0x27] =
+    param_2[0x24] = uVar4;
+    param_2[0x25] =
+         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
+                  (float)uVar5 - (float)uVar4);
+  }
+  param_2[0x2a] =
+       CONCAT44(1.0 - ((float)((ulong)param_2[0x12] >> 0x20) * auStack_60._4_4_ * param_1) /
+                      (float)((ulong)*param_5 >> 0x20),
+                1.0 - ((float)param_2[0x12] * auStack_60._0_4_ * param_1) / (float)*param_5);
+  lVar3 = *param_7;
+  if ((lVar3 != 0) && (*(int *)param_7[1] != 0)) {
+    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
+    uVar5 = *(undefined8 *)(lVar3 + 0x84);
+    param_2[0x26] = uVar4;
+    param_2[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
@@ -175,7 +176,9 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
    float, Walaber::Widget_ProgressBar::FillMode) */
 
 void Walaber::Widget_ProgressBar::Widget_ProgressBar
-               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,Walaber::SharedPtr<Walaber::Texture> param_5,float param_6,float param_7,float param_8,float param_9,Walaber::Widget_ProgressBar::FillMode param_10)
+               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
+               undefined8 *param_5,undefined8 param_6,undefined8 *param_7,undefined8 *param_8,
+               long *param_9,long *param_10,undefined4 param_11)
 
 {
   long lVar1;
@@ -189,60 +192,60 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  uStack_70 = *param_6;
-  uStack_78 = *param_7;
-  Walaber::Widget::Widget(param_4,param_5,9,&uStack_70,&uStack_78,1,1);
-  *param_4 = &PTR__Widget_ProgressBar_0070f568;
-  lVar3 = *param_8;
-  param_4[0x20] = lVar3;
-  piVar2 = (int *)param_8[1];
-  param_4[0x21] = piVar2;
-  if (lVar3 != 0) {
-    *piVar2 = *piVar2 + 1;
-  }
+  uStack_70 = *param_7;
+  uStack_78 = *param_8;
+  Walaber::Widget::Widget(param_5,param_6,9,&uStack_70,&uStack_78,1,1);
+  *param_5 = &PTR__Widget_ProgressBar_0070f568;
   lVar3 = *param_9;
-  param_4[0x22] = lVar3;
+  param_5[0x20] = lVar3;
   piVar2 = (int *)param_9[1];
-  param_4[0x23] = piVar2;
+  param_5[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_4[0x2b] = 0x3f80000000000000;
-  param_4[0x2c] = 0x3dcccccd00000000;
-  param_4[0x2a] = 0;
-  *(undefined4 *)(param_4 + 0x2d) = param_10;
-  *(undefined1 *)((long)param_4 + 0x16c) = 0;
-  param_4[0x25] = 0;
-  param_4[0x24] = 0;
-  param_4[0x27] = 0;
-  param_4[0x26] = 0;
-  param_4[0x29] = 0;
-  param_4[0x28] = 0;
-  *(undefined1 *)((long)param_4 + 0x16d) = 0xff;
-  *(undefined1 *)((long)param_4 + 0x16e) = 0xff;
-  *(undefined1 *)((long)param_4 + 0x16f) = 0xff;
-  *(undefined1 *)(param_4 + 0x2e) = 0xff;
-  lVar3 = *param_8;
-  if ((lVar3 != 0) && (*(int *)param_8[1] != 0)) {
-    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
-    uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_4[0x24] = uVar4;
-    param_4[0x25] =
-         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
-                  (float)uVar5 - (float)uVar4);
+  lVar3 = *param_10;
+  param_5[0x22] = lVar3;
+  piVar2 = (int *)param_10[1];
+  param_5[0x23] = piVar2;
+  if (lVar3 != 0) {
+    *piVar2 = *piVar2 + 1;
   }
+  param_5[0x2b] = 0x3f80000000000000;
+  param_5[0x2c] = 0x3dcccccd00000000;
+  param_5[0x2a] = 0;
+  *(undefined4 *)(param_5 + 0x2d) = param_11;
+  *(undefined1 *)((long)param_5 + 0x16c) = 0;
+  param_5[0x25] = 0;
+  param_5[0x24] = 0;
+  param_5[0x27] = 0;
+  param_5[0x26] = 0;
+  param_5[0x29] = 0;
+  param_5[0x28] = 0;
+  *(undefined1 *)((long)param_5 + 0x16d) = 0xff;
+  *(undefined1 *)((long)param_5 + 0x16e) = 0xff;
+  *(undefined1 *)((long)param_5 + 0x16f) = 0xff;
+  *(undefined1 *)(param_5 + 0x2e) = 0xff;
   lVar3 = *param_9;
   if ((lVar3 != 0) && (*(int *)param_9[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_4[0x26] = uVar4;
-    param_4[0x27] =
+    param_5[0x24] = uVar4;
+    param_5[0x25] =
+         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
+                  (float)uVar5 - (float)uVar4);
+  }
+  lVar3 = *param_10;
+  if ((lVar3 != 0) && (*(int *)param_10[1] != 0)) {
+    uVar4 = *(undefined8 *)(lVar3 + 0x8c);
+    uVar5 = *(undefined8 *)(lVar3 + 0x84);
+    param_5[0x26] = uVar4;
+    param_5[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
                     /* try { // try from 00382c94 to 00382cb7 has its CatchHandler @ 00382cec */
-  Walaber::Widget_ProgressBar::setPadding(this,param_1,param_2,param_3,param_4);
-  Walaber::Widget_ProgressBar::updateValue(0,param_4);
+  Walaber::Widget_ProgressBar::setPadding(param_1,param_2,param_3,param_4,param_5);
+  Walaber::Widget_ProgressBar::updateValue(0,param_5);
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return;
   }
@@ -350,13 +353,13 @@ void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 /* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
 
-void Walaber::Widget_ProgressBar::~Widget_ProgressBar(undefined8 *param_1)
+void Walaber::Widget_ProgressBar::~Widget_ProgressBar()
 
 {
-  *param_1 = &PTR__Widget_ProgressBar_0070f568;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x20);
-  Walaber::Widget::~Widget(param_1);
+  *this = &PTR__Widget_ProgressBar_0070f568;
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
+  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

@@ -9,17 +9,17 @@
 
 /* Walaber::SkeletonActor::PropActionData::~PropActionData() */
 
-void Walaber::SkeletonActor::PropActionData::~PropActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::PropActionData::~PropActionData()
 
 {
-  *param_1 = &PTR__PropActionData_0070e528;
-  if ((*(byte *)(param_1 + 7) & 1) != 0) {
-    operator delete((void *)param_1[9]);
+  *this = &PTR__PropActionData_0070e528;
+  if ((*(byte *)(this + 7) & 1) != 0) {
+    operator delete((void *)this[9]);
   }
-  if ((*(byte *)(param_1 + 4) & 1) == 0) {
+  if ((*(byte *)(this + 4) & 1) == 0) {
     return;
   }
-  operator delete((void *)param_1[6]);
+  operator delete((void *)this[6]);
   return;
 }
 
@@ -31,17 +31,17 @@ void Walaber::SkeletonActor::PropActionData::~PropActionData(undefined8 *param_1
 
 /* Walaber::SkeletonActor::PropActionData::~PropActionData() */
 
-void Walaber::SkeletonActor::PropActionData::~PropActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::PropActionData::~PropActionData()
 
 {
-  *param_1 = &PTR__PropActionData_0070e528;
-  if ((*(byte *)(param_1 + 7) & 1) != 0) {
-    operator delete((void *)param_1[9]);
+  *this = &PTR__PropActionData_0070e528;
+  if ((*(byte *)(this + 7) & 1) != 0) {
+    operator delete((void *)this[9]);
   }
-  if ((*(byte *)(param_1 + 4) & 1) != 0) {
-    operator delete((void *)param_1[6]);
+  if ((*(byte *)(this + 4) & 1) != 0) {
+    operator delete((void *)this[6]);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

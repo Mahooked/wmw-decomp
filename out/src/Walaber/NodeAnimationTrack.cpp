@@ -9,10 +9,10 @@
 
 /* Walaber::NodeAnimationTrack::NodeAnimationTrack() */
 
-void Walaber::NodeAnimationTrack::NodeAnimationTrack(undefined8 param_1)
+void Walaber::NodeAnimationTrack::NodeAnimationTrack()
 
 {
-  memset(param_1,0,0x68);
+  memset(this,0,0x68);
   return;
 }
 
@@ -173,7 +173,7 @@ void Walaber::NodeAnimationTrack::setAnimation(Walaber__Animation *p0)
    std::__ndk1::allocator<char> > const&) */
 
 void Walaber::NodeAnimationTrack::loadCurve
-               (Walaber::NodeTrackLocalPos param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
+               (uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -196,9 +196,9 @@ void Walaber::NodeAnimationTrack::loadCurve
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *this = *this | 1;
+  *param_1 = *param_1 | 1;
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e328;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -224,7 +224,7 @@ void Walaber::NodeAnimationTrack::loadCurve
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 003394c4 to 003394cf has its CatchHandler @ 00339554 */
-  Walaber::CurveManager::getCurve(uVar4,this + 2,param_2,&puStack_98);
+  Walaber::CurveManager::getCurve(uVar4,param_1 + 2,param_3,&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
                     /* try { // try from 003394d8 to 003394db has its CatchHandler @ 00339564 */
   uVar4 = Walaber::CurveManager::getManager();
@@ -234,7 +234,7 @@ void Walaber::NodeAnimationTrack::loadCurve
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 003394f8 to 00339503 has its CatchHandler @ 00339548 */
-  Walaber::CurveManager::getCurve(uVar4,this + 6,param_3,&puStack_a8);
+  Walaber::CurveManager::getCurve(uVar4,param_1 + 6,param_4,&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
@@ -290,7 +290,7 @@ void Walaber::NodeAnimationTrack::_curveFinishedLoading(void *p0)
    std::__ndk1::allocator<char> > const&) */
 
 void Walaber::NodeAnimationTrack::loadCurve
-               (Walaber::NodeTrackLocalScale param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
+               (uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -313,9 +313,9 @@ void Walaber::NodeAnimationTrack::loadCurve
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *this = *this | 2;
+  *param_1 = *param_1 | 2;
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e328;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -341,7 +341,7 @@ void Walaber::NodeAnimationTrack::loadCurve
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 00339750 to 0033975b has its CatchHandler @ 003397e0 */
-  Walaber::CurveManager::getCurve(uVar4,this + 10,param_2,&puStack_98);
+  Walaber::CurveManager::getCurve(uVar4,param_1 + 10,param_3,&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
                     /* try { // try from 00339764 to 00339767 has its CatchHandler @ 003397f0 */
   uVar4 = Walaber::CurveManager::getManager();
@@ -351,7 +351,7 @@ void Walaber::NodeAnimationTrack::loadCurve
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 00339784 to 0033978f has its CatchHandler @ 003397d4 */
-  Walaber::CurveManager::getCurve(uVar4,this + 0xe,param_3,&puStack_a8);
+  Walaber::CurveManager::getCurve(uVar4,param_1 + 0xe,param_4,&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
@@ -372,7 +372,7 @@ void Walaber::NodeAnimationTrack::loadCurve
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void Walaber::NodeAnimationTrack::loadCurve(Walaber::NodeTrackLocalAngle param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
+void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -393,9 +393,9 @@ void Walaber::NodeAnimationTrack::loadCurve(Walaber::NodeTrackLocalAngle param_1
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *this = *this | 4;
+  *param_1 = *param_1 | 4;
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e328;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -421,7 +421,7 @@ void Walaber::NodeAnimationTrack::loadCurve(Walaber::NodeTrackLocalAngle param_1
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 003398dc to 003398e7 has its CatchHandler @ 0033992c */
-  Walaber::CurveManager::getCurve(uVar4,this + 0x12,param_2,&puStack_98);
+  Walaber::CurveManager::getCurve(uVar4,param_1 + 0x12,param_3,&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
@@ -441,7 +441,8 @@ void Walaber::NodeAnimationTrack::loadCurve(Walaber::NodeTrackLocalAngle param_1
 /* Walaber::NodeAnimationTrack::apply(Walaber::AnimationBlendMode, float, float, float, bool) */
 
 void Walaber::NodeAnimationTrack::apply
-               (Walaber::AnimationBlendMode param_1,float param_2,float param_3,float param_4,bool param_5)
+               (undefined8 param_1,float param_2,float param_3,uint *param_4,int param_5,
+               uint param_6)
 
 {
   uint uVar1;
@@ -455,65 +456,65 @@ void Walaber::NodeAnimationTrack::apply
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  if (param_4 == 1) {
-    uVar1 = *param_3;
+  if (param_5 == 1) {
+    uVar1 = *param_4;
     if ((uVar1 & 1) != 0) {
-      plVar3 = *(long **)(param_3 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 2));
-      fStack_6c = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 6));
-      fStack_6c = param_1 * param_2 * fStack_6c;
-      fStack_70 = param_1 * param_2 * fVar5;
+      plVar3 = *(long **)(param_4 + 0x18);
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 2));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 6));
+      fStack_6c = param_2 * param_3 * fStack_6c;
+      fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x28))(plVar3,&fStack_70);
-      uVar1 = *param_3;
+      uVar1 = *param_4;
     }
     if ((uVar1 >> 1 & 1) != 0) {
-      plVar3 = *(long **)(param_3 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 10));
-      fStack_6c = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 0xe));
-      fStack_6c = param_1 * param_2 * fStack_6c;
-      fStack_70 = param_1 * param_2 * fVar5;
+      plVar3 = *(long **)(param_4 + 0x18);
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 10));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0xe));
+      fStack_6c = param_2 * param_3 * fStack_6c;
+      fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x30))(plVar3,&fStack_70);
-      uVar1 = *param_3;
+      uVar1 = *param_4;
     }
     if ((uVar1 >> 2 & 1) == 0) goto LAB_00339c00;
-    for (fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 0x12)); 3.1415927 < fVar5;
+    for (fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
         fVar5 = fVar5 + -6.2831855) {
     }
     for (; fVar5 <= -3.1415927; fVar5 = fVar5 + 6.2831855) {
     }
-    plVar3 = *(long **)(param_3 + 0x18);
-    fStack_70 = param_1 * param_2 * fVar5 * (float)(int)((-(param_5 & 1) ^ 1) + (param_5 & 1));
+    plVar3 = *(long **)(param_4 + 0x18);
+    fStack_70 = param_2 * param_3 * fVar5 * (float)(int)((-(param_6 & 1) ^ 1) + (param_6 & 1));
     pcVar4 = *(code **)(*plVar3 + 0x38);
   }
   else {
-    if (param_4 != 0) goto LAB_00339c00;
-    uVar1 = *param_3;
+    if (param_5 != 0) goto LAB_00339c00;
+    uVar1 = *param_4;
     if ((uVar1 & 1) != 0) {
-      plVar3 = *(long **)(param_3 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 2));
-      fStack_6c = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 6));
-      fStack_6c = param_1 * param_2 * fStack_6c;
-      fStack_70 = param_1 * param_2 * fVar5;
+      plVar3 = *(long **)(param_4 + 0x18);
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 2));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 6));
+      fStack_6c = param_2 * param_3 * fStack_6c;
+      fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x10))(plVar3,&fStack_70);
-      uVar1 = *param_3;
+      uVar1 = *param_4;
     }
     if ((uVar1 >> 1 & 1) != 0) {
-      plVar3 = *(long **)(param_3 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 10));
-      fStack_6c = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 0xe));
-      fStack_6c = param_1 * param_2 * fStack_6c;
-      fStack_70 = param_1 * param_2 * fVar5;
+      plVar3 = *(long **)(param_4 + 0x18);
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 10));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0xe));
+      fStack_6c = param_2 * param_3 * fStack_6c;
+      fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x18))(plVar3,&fStack_70);
-      uVar1 = *param_3;
+      uVar1 = *param_4;
     }
     if ((uVar1 >> 2 & 1) == 0) goto LAB_00339c00;
-    for (fVar5 = (float)Walaber::Curve::evaluate(this,*(undefined8 *)(param_3 + 0x12)); 3.1415927 < fVar5;
+    for (fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
         fVar5 = fVar5 + -6.2831855) {
     }
     for (; fVar5 <= -3.1415927; fVar5 = fVar5 + 6.2831855) {
     }
-    plVar3 = *(long **)(param_3 + 0x18);
-    fStack_70 = param_1 * param_2 * fVar5 * (float)(int)((-(param_5 & 1) ^ 1) + (param_5 & 1));
+    plVar3 = *(long **)(param_4 + 0x18);
+    fStack_70 = param_2 * param_3 * fVar5 * (float)(int)((-(param_6 & 1) ^ 1) + (param_6 & 1));
     pcVar4 = *(code **)(*plVar3 + 0x20);
   }
   (*pcVar4)(plVar3,&fStack_70);
@@ -535,7 +536,7 @@ LAB_00339c00:
    Walaber::SharedPtr<Walaber::Curve>, Walaber::SharedPtr<Walaber::Curve>) */
 
 void Walaber::NodeAnimationTrack::setCurve
-               (Walaber::NodeTrackLocalPos param_1,Walaber::SharedPtr<Walaber::Curve> param_2,Walaber::SharedPtr<Walaber::Curve> param_3)
+               (uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -543,17 +544,17 @@ void Walaber::NodeAnimationTrack::setCurve
   float fVar3;
   float fVar4;
   
-  *this = *this | 1;
-  Walaber::SharedPtr<Walaber::Curve>::operator=(this + 2,param_2);
-  Walaber::SharedPtr<Walaber::Curve>::operator=(this + 6,param_3);
-  lVar1 = *(long *)(this + 2);
+  *param_1 = *param_1 | 1;
+  Walaber::SharedPtr<Walaber::Curve>::operator=(param_1 + 2,param_3);
+  Walaber::SharedPtr<Walaber::Curve>::operator=(param_1 + 6,param_4);
+  lVar1 = *(long *)(param_1 + 2);
   fVar3 = 0.0;
   fVar4 = 0.0;
   lVar2 = *(long *)(lVar1 + 8);
   if (lVar2 != 0) {
     fVar4 = *(float *)(*(long *)(lVar1 + 0x18) + lVar2 * 0x18 + -0x18);
   }
-  lVar1 = *(long *)(this + 6);
+  lVar1 = *(long *)(param_1 + 6);
   lVar2 = *(long *)(lVar1 + 8);
   if (lVar2 != 0) {
     fVar3 = *(float *)(*(long *)(lVar1 + 0x18) + lVar2 * 0x18 + -0x18);
@@ -561,10 +562,10 @@ void Walaber::NodeAnimationTrack::setCurve
   if (fVar4 <= fVar3) {
     fVar4 = fVar3;
   }
-  if (fVar4 <= (float)this[1]) {
-    fVar4 = (float)this[1];
+  if (fVar4 <= (float)param_1[1]) {
+    fVar4 = (float)param_1[1];
   }
-  this[1] = (uint)fVar4;
+  param_1[1] = (uint)fVar4;
   return;
 }
 

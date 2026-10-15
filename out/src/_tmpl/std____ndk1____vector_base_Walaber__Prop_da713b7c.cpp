@@ -11,27 +11,27 @@
    >::~__vector_base() */
 
 void std::__ndk1::__vector_base<Walaber::PropertyList,std::__ndk1::allocator<Walaber::PropertyList>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   void *p0;
   void *pvVar1;
   void *pvVar2;
   
-  pvVar2 = (void *)*param_1;
+  pvVar2 = (void *)*this;
   if (pvVar2 == (void *)0x0) {
     return;
   }
-  pvVar1 = (void *)param_1[1];
+  pvVar1 = (void *)this[1];
   p0 = pvVar2;
   if (pvVar1 != pvVar2) {
     do {
       pvVar1 = (void *)((long)pvVar1 + -0x18);
       Walaber::PropertyList::~PropertyList(pvVar1);
     } while (pvVar2 != pvVar1);
-    p0 = (void *)*param_1;
+    p0 = (void *)*this;
   }
-  param_1[1] = pvVar2;
+  this[1] = pvVar2;
   operator delete(p0);
   return;
 }

@@ -9,7 +9,7 @@
 
 /* WaterConcept::Screen_WorldSelect::Screen_WorldSelect() */
 
-void WaterConcept::Screen_WorldSelect::Screen_WorldSelect(undefined8 *param_1)
+void WaterConcept::Screen_WorldSelect::Screen_WorldSelect()
 
 {
   long lVar1;
@@ -24,46 +24,46 @@ void WaterConcept::Screen_WorldSelect::Screen_WorldSelect(undefined8 *param_1)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  WaterConcept::WCScreen::WCScreen(param_1,5);
+  WaterConcept::WCScreen::WCScreen(this,5);
                     /* try { // try from 0058ad98 to 0058ada3 has its CatchHandler @ 0058af80 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *(undefined4 *)(param_1 + 0x17) = 0xbf800000;
-  param_1[0x15] = 0xffffffffffffffff;
-  *param_1 = &PTR__Screen_WorldSelect_00716018;
-  *(undefined1 *)((long)param_1 + 0xb4) = 0;
-  *(undefined4 *)(param_1 + 0x16) = 0;
-  param_1[4] = &PTR_handleEvent_007160d0;
-  param_1[0x12] = &PTR__Screen_WorldSelect_007160f0;
-  *(undefined4 *)(param_1 + 0x14) = 0xffffffff;
-  param_1[0x18] = 0xff000000ff000000;
-  param_1[0x28] = 0;
-  param_1[0x29] = 0;
-  memset(param_1 + 0x19,0,0x70);
-  param_1[0x27] = param_1 + 0x28;
-  param_1[0x2e] = 0;
-  param_1[0x2f] = 0;
-  *(undefined4 *)(param_1 + 0x31) = 0;
-  param_1[0x38] = 0;
-  param_1[0x2b] = 0;
-  param_1[0x2c] = 0;
-  param_1[0x2a] = 0;
-  *(undefined4 *)(param_1 + 0x2d) = 0;
-  *(undefined4 *)(param_1 + 0x39) = 0xffffffff;
-  *(undefined1 *)((long)param_1 + 0x1cc) = 0;
-  *(undefined2 *)((long)param_1 + 0x1ce) = 0;
-  *(undefined2 *)((long)param_1 + 0x1d4) = 0;
-  *(undefined2 *)(param_1 + 0x42) = 0;
-  *(undefined1 *)((long)param_1 + 0x212) = 0;
-  param_1[0x3e] = 0xffffffffffffffff;
-  param_1[0x3f] = 0xffffffffffffffff;
-  param_1[0x3c] = 0xffffffffffffffff;
-  param_1[0x3d] = 0xffffffffffffffff;
-  param_1[0x3b] = 0xffffffffffffffff;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *(undefined4 *)(this + 0x17) = 0xbf800000;
+  this[0x15] = 0xffffffffffffffff;
+  *this = &PTR__Screen_WorldSelect_00716018;
+  *(undefined1 *)((long)this + 0xb4) = 0;
+  *(undefined4 *)(this + 0x16) = 0;
+  this[4] = &PTR_handleEvent_007160d0;
+  this[0x12] = &PTR__Screen_WorldSelect_007160f0;
+  *(undefined4 *)(this + 0x14) = 0xffffffff;
+  this[0x18] = 0xff000000ff000000;
+  this[0x28] = 0;
+  this[0x29] = 0;
+  memset(this + 0x19,0,0x70);
+  this[0x27] = this + 0x28;
+  this[0x2e] = 0;
+  this[0x2f] = 0;
+  *(undefined4 *)(this + 0x31) = 0;
+  this[0x38] = 0;
+  this[0x2b] = 0;
+  this[0x2c] = 0;
+  this[0x2a] = 0;
+  *(undefined4 *)(this + 0x2d) = 0;
+  *(undefined4 *)(this + 0x39) = 0xffffffff;
+  *(undefined1 *)((long)this + 0x1cc) = 0;
+  *(undefined2 *)((long)this + 0x1ce) = 0;
+  *(undefined2 *)((long)this + 0x1d4) = 0;
+  *(undefined2 *)(this + 0x42) = 0;
+  *(undefined1 *)((long)this + 0x212) = 0;
+  this[0x3e] = 0xffffffffffffffff;
+  this[0x3f] = 0xffffffffffffffff;
+  this[0x3c] = 0xffffffffffffffff;
+  this[0x3d] = 0xffffffffffffffff;
+  this[0x3b] = 0xffffffffffffffff;
                     /* try { // try from 0058ae50 to 0058ae57 has its CatchHandler @ 0058af78 */
-  Walaber::PropertyList::PropertyList(param_1 + 0x43);
-  *(undefined4 *)(param_1 + 0x46) = 0xffffffff;
-  *(undefined1 *)((long)param_1 + 0x234) = 0;
-  *(undefined4 *)(param_1 + 0x47) = 0xffffffff;
+  Walaber::PropertyList::PropertyList(this + 0x43);
+  *(undefined4 *)(this + 0x46) = 0xffffffff;
+  *(undefined1 *)((long)this + 0x234) = 0;
+  *(undefined4 *)(this + 0x47) = 0xffffffff;
                     /* try { // try from 0058ae64 to 0058ae67 has its CatchHandler @ 0058af88 */
   uVar2 = Walaber::CurveManager::getManager();
   auStack_60[0] = 0;
@@ -79,7 +79,7 @@ void WaterConcept::Screen_WorldSelect::Screen_WorldSelect(undefined8 *param_1)
   uStack_70 = 0;
   uStack_68 = 0;
                     /* try { // try from 0058aeb0 to 0058aec3 has its CatchHandler @ 0058af4c */
-  Walaber::CurveManager::getCurve(uVar2,param_1 + 0x2e,auStack_60,&uStack_70);
+  Walaber::CurveManager::getCurve(uVar2,this + 0x2e,auStack_60,&uStack_70);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
   if ((auStack_60[0] & 1) != 0) {
@@ -89,14 +89,14 @@ void WaterConcept::Screen_WorldSelect::Screen_WorldSelect(undefined8 *param_1)
                     /* try { // try from 0058aef4 to 0058af0b has its CatchHandler @ 0058af88 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&GameSettings::currentLevelPackName,&DAT_0063306f,0);
   }
-  *(undefined4 *)((long)param_1 + 0x184) = 0;
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  param_1[0x37] = 0;
-  param_1[0x36] = 0;
-  param_1[0x33] = 0;
-  param_1[0x32] = 0;
+  *(undefined4 *)((long)this + 0x184) = 0;
+  *(undefined4 *)((long)this + 0xbc) = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  this[0x37] = 0;
+  this[0x36] = 0;
+  this[0x33] = 0;
+  this[0x32] = 0;
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -112,47 +112,47 @@ void WaterConcept::Screen_WorldSelect::Screen_WorldSelect(undefined8 *param_1)
 
 /* WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
 
-void WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(undefined8 *param_1)
+void WaterConcept::Screen_WorldSelect::~Screen_WorldSelect()
 
 {
   long *plVar1;
   void *pvVar2;
   long lVar3;
   
-  *param_1 = &PTR__Screen_WorldSelect_00716018;
-  param_1[4] = &PTR_handleEvent_007160d0;
-  param_1[0x12] = &PTR__Screen_WorldSelect_007160f0;
-  if ((long *)param_1[0x38] != (long *)0x0) {
-    (**(code **)(*(long *)param_1[0x38] + 8))();
+  *this = &PTR__Screen_WorldSelect_00716018;
+  this[4] = &PTR_handleEvent_007160d0;
+  this[0x12] = &PTR__Screen_WorldSelect_007160f0;
+  if ((long *)this[0x38] != (long *)0x0) {
+    (**(code **)(*(long *)this[0x38] + 8))();
   }
   lVar3 = 0;
   do {
-    plVar1 = *(long **)((long)param_1 + lVar3 + 400);
+    plVar1 = *(long **)((long)this + lVar3 + 400);
     if (plVar1 != (long *)0x0) {
       (**(code **)(*plVar1 + 8))();
-      *(undefined8 *)((long)param_1 + lVar3 + 400) = 0;
+      *(undefined8 *)((long)this + lVar3 + 400) = 0;
     }
     lVar3 = lVar3 + 8;
   } while (lVar3 != 0x30);
-  Walaber::PropertyList::~PropertyList(param_1 + 0x43);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x2e);
-  std::__ndk1::__tree<Walaber::Widget*, std::__ndk1::less<Walaber::Widget*>, std::__ndk1::allocator<Walaber::Widget*>>::destroy(param_1 + 0x27,param_1[0x28]);
-  pvVar2 = (void *)param_1[0x24];
+  Walaber::PropertyList::~PropertyList(this + 0x43);
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x2e);
+  std::__ndk1::__tree<Walaber::Widget*, std::__ndk1::less<Walaber::Widget*>, std::__ndk1::allocator<Walaber::Widget*>>::destroy(this + 0x27,this[0x28]);
+  pvVar2 = (void *)this[0x24];
   if (pvVar2 != (void *)0x0) {
-    param_1[0x25] = pvVar2;
+    this[0x25] = pvVar2;
     operator delete(pvVar2);
   }
-  pvVar2 = (void *)param_1[0x21];
+  pvVar2 = (void *)this[0x21];
   if (pvVar2 != (void *)0x0) {
-    param_1[0x22] = pvVar2;
+    this[0x22] = pvVar2;
     operator delete(pvVar2);
   }
-  if ((void *)param_1[0x1e] != (void *)0x0) {
-    operator delete((void *)param_1[0x1e]);
+  if ((void *)this[0x1e] != (void *)0x0) {
+    operator delete((void *)this[0x1e]);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x1b);
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1b);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

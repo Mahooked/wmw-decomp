@@ -18,7 +18,7 @@
 
 void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
      __construct_at_end<std::__ndk1::__bit_iterator<std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>,false,0ul>>
-               (std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0ul> param_1,std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0ul> param_2)
+               (undefined8 *param_1,long *param_2,long *param_3)
 
 {
   ulong uVar1;
@@ -35,27 +35,27 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
   
   lVar2 = tpidr_el0;
   lStack_28 = *(long *)(lVar2 + 0x28);
-  uVar3 = this[1];
-  uStack_30 = *(uint *)(param_1 + 1);
-  lStack_38 = *param_1;
-  lStack_48 = *param_2;
-  uStack_40 = *(uint *)(param_2 + 1);
+  uVar3 = param_1[1];
+  uStack_30 = *(uint *)(param_2 + 1);
+  lStack_38 = *param_2;
+  lStack_48 = *param_3;
+  uStack_40 = *(uint *)(param_3 + 1);
   uVar1 = (uVar3 - uStack_30) + (ulong)uStack_40 + (lStack_48 - lStack_38) * 8;
-  this[1] = uVar1;
+  param_1[1] = uVar1;
   if ((uVar3 == 0) || (0x3f < (uVar1 - 1 ^ uVar3 - 1))) {
-    this = (undefined8 *)*this;
+    param_1 = (undefined8 *)*param_1;
     if (uVar1 < 0x41) {
-      *this = 0;
+      *param_1 = 0;
     }
     else {
-      *(undefined8 *)((long)this + (uVar1 - 1 >> 3 & 0x1ffffffffffffff8)) = 0;
+      *(undefined8 *)((long)param_1 + (uVar1 - 1 >> 3 & 0x1ffffffffffffff8)) = 0;
     }
   }
   else {
-    this = (undefined8 *)*this;
+    param_1 = (undefined8 *)*param_1;
   }
   uStack_50 = (uint)uVar3 & 0x3f;
-  lStack_58 = (long)this + (uVar3 >> 3 & 0x1ffffffffffffff8);
+  lStack_58 = (long)param_1 + (uVar3 >> 3 & 0x1ffffffffffffff8);
   if (uStack_30 == uStack_50) {
     uStack_50 = uStack_30;
     std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_aligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);

@@ -203,86 +203,13 @@ undefined8 Walaber::Camera::changePosition(Walaber__Vector2 p0)
    float) */
 
 void Walaber::Camera::animate
-               (Walaber::Camera::CameraMovement param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,float param_4)
+               (undefined4 param_1,long param_2,undefined4 param_3,undefined8 *param_4,
+               undefined8 *param_5)
 
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
   long lVar3;
-  undefined4 uStack_40;
-  undefined4 uStack_3c;
-  long lStack_38;
-  
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
-  puVar1 = *(undefined4 **)(param_1 + 0x18);
-  uStack_40 = param_2;
-  uStack_3c = this;
-  if (puVar1 < *(undefined4 **)(param_1 + 0x20)) {
-    *puVar1 = param_2;
-    *(undefined4 **)(param_1 + 0x18) = puVar1 + 1;
-  }
-  else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x10,&uStack_40);
-  }
-  puVar2 = *(undefined8 **)(param_1 + 0x30);
-  if (puVar2 == *(undefined8 **)(param_1 + 0x38)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_1 + 0x28,param_3);
-  }
-  else {
-    *puVar2 = *param_3;
-    *(undefined8 **)(param_1 + 0x30) = puVar2 + 1;
-  }
-  puVar2 = *(undefined8 **)(param_1 + 0x48);
-  if (puVar2 == *(undefined8 **)(param_1 + 0x50)) {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_1 + 0x40,param_4);
-  }
-  else {
-    *puVar2 = *param_4;
-    *(undefined8 **)(param_1 + 0x48) = puVar2 + 1;
-  }
-  puVar1 = *(undefined4 **)(param_1 + 0x60);
-  if (puVar1 == *(undefined4 **)(param_1 + 0x68)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0x58,&uStack_3c);
-  }
-  else {
-    *puVar1 = uStack_3c;
-    *(undefined4 **)(param_1 + 0x60) = puVar1 + 1;
-  }
-  uStack_40 = 0;
-  puVar1 = *(undefined4 **)(param_1 + 0x78);
-  if (puVar1 < *(undefined4 **)(param_1 + 0x80)) {
-    *puVar1 = 0;
-    *(undefined4 **)(param_1 + 0x78) = puVar1 + 1;
-  }
-  else {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x70,&uStack_40);
-  }
-  *(undefined1 *)(param_1 + 0x88) = 0;
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
-  return;
-}
-
-
-
-/* ok  address 0x3ec424  size 292 */
-/* mangled: _ZN7Walaber6Camera7animateENS0_14CameraMovementENS_7Vector2ES2_ff */
-/* Walaber::Camera::animate(Walaber::Camera::CameraMovement, Walaber::Vector2, Walaber::Vector2, float, float) */
-
-/* Walaber::Camera::animate(Walaber::Camera::CameraMovement, Walaber::Vector2, Walaber::Vector2,
-   float, float) */
-
-void Walaber::Camera::animate
-               (Walaber::Camera::CameraMovement param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,float param_4,float param_5)
-
-{
-  undefined4 *puVar1;
-  undefined8 *puVar2;
-  long lVar3;
-  undefined4 uStack_44;
   undefined4 uStack_40;
   undefined4 uStack_3c;
   long lStack_38;
@@ -290,15 +217,14 @@ void Walaber::Camera::animate
   lVar3 = tpidr_el0;
   lStack_38 = *(long *)(lVar3 + 0x28);
   puVar1 = *(undefined4 **)(param_2 + 0x18);
-  uStack_44 = param_3;
-  uStack_40 = param_1;
-  uStack_3c = this;
+  uStack_40 = param_3;
+  uStack_3c = param_1;
   if (puVar1 < *(undefined4 **)(param_2 + 0x20)) {
     *puVar1 = param_3;
     *(undefined4 **)(param_2 + 0x18) = puVar1 + 1;
   }
   else {
-    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_2 + 0x10,&uStack_44);
+    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_2 + 0x10,&uStack_40);
   }
   puVar2 = *(undefined8 **)(param_2 + 0x30);
   if (puVar2 == *(undefined8 **)(param_2 + 0x38)) {
@@ -324,15 +250,91 @@ void Walaber::Camera::animate
     *puVar1 = uStack_3c;
     *(undefined4 **)(param_2 + 0x60) = puVar1 + 1;
   }
+  uStack_40 = 0;
   puVar1 = *(undefined4 **)(param_2 + 0x78);
-  if (puVar1 == *(undefined4 **)(param_2 + 0x80)) {
-    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_2 + 0x70,&uStack_40);
+  if (puVar1 < *(undefined4 **)(param_2 + 0x80)) {
+    *puVar1 = 0;
+    *(undefined4 **)(param_2 + 0x78) = puVar1 + 1;
+  }
+  else {
+    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_2 + 0x70,&uStack_40);
+  }
+  *(undefined1 *)(param_2 + 0x88) = 0;
+  if (*(long *)(lVar3 + 0x28) == lStack_38) {
+    return;
+  }
+  __stack_chk_fail();
+  return;
+}
+
+
+
+/* ok  address 0x3ec424  size 292 */
+/* mangled: _ZN7Walaber6Camera7animateENS0_14CameraMovementENS_7Vector2ES2_ff */
+/* Walaber::Camera::animate(Walaber::Camera::CameraMovement, Walaber::Vector2, Walaber::Vector2, float, float) */
+
+/* Walaber::Camera::animate(Walaber::Camera::CameraMovement, Walaber::Vector2, Walaber::Vector2,
+   float, float) */
+
+void Walaber::Camera::animate
+               (undefined4 param_1,undefined4 param_2,long param_3,undefined4 param_4,
+               undefined8 *param_5,undefined8 *param_6)
+
+{
+  undefined4 *puVar1;
+  undefined8 *puVar2;
+  long lVar3;
+  undefined4 uStack_44;
+  undefined4 uStack_40;
+  undefined4 uStack_3c;
+  long lStack_38;
+  
+  lVar3 = tpidr_el0;
+  lStack_38 = *(long *)(lVar3 + 0x28);
+  puVar1 = *(undefined4 **)(param_3 + 0x18);
+  uStack_44 = param_4;
+  uStack_40 = param_2;
+  uStack_3c = param_1;
+  if (puVar1 < *(undefined4 **)(param_3 + 0x20)) {
+    *puVar1 = param_4;
+    *(undefined4 **)(param_3 + 0x18) = puVar1 + 1;
+  }
+  else {
+    void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_3 + 0x10,&uStack_44);
+  }
+  puVar2 = *(undefined8 **)(param_3 + 0x30);
+  if (puVar2 == *(undefined8 **)(param_3 + 0x38)) {
+    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x28,param_5);
+  }
+  else {
+    *puVar2 = *param_5;
+    *(undefined8 **)(param_3 + 0x30) = puVar2 + 1;
+  }
+  puVar2 = *(undefined8 **)(param_3 + 0x48);
+  if (puVar2 == *(undefined8 **)(param_3 + 0x50)) {
+    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2 const&>(param_3 + 0x40,param_6);
+  }
+  else {
+    *puVar2 = *param_6;
+    *(undefined8 **)(param_3 + 0x48) = puVar2 + 1;
+  }
+  puVar1 = *(undefined4 **)(param_3 + 0x60);
+  if (puVar1 == *(undefined4 **)(param_3 + 0x68)) {
+    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x58,&uStack_3c);
+  }
+  else {
+    *puVar1 = uStack_3c;
+    *(undefined4 **)(param_3 + 0x60) = puVar1 + 1;
+  }
+  puVar1 = *(undefined4 **)(param_3 + 0x78);
+  if (puVar1 == *(undefined4 **)(param_3 + 0x80)) {
+    void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_3 + 0x70,&uStack_40);
   }
   else {
     *puVar1 = uStack_40;
-    *(undefined4 **)(param_2 + 0x78) = puVar1 + 1;
+    *(undefined4 **)(param_3 + 0x78) = puVar1 + 1;
   }
-  *(undefined1 *)(param_2 + 0x88) = 0;
+  *(undefined1 *)(param_3 + 0x88) = 0;
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
     return;
   }

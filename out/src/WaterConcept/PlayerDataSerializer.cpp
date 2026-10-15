@@ -2541,14 +2541,14 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int) */
 
 void WaterConcept::PlayerDataSerializer::levelAndStorylineToKey
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int param_2)
+               (undefined8 param_1,undefined8 param_2,int param_3)
 
 {
-  if (param_2 == 3) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00636699,param_1);
+  if (param_3 == 3) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00636699,param_2);
     return;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2);
   return;
 }
 
@@ -5569,7 +5569,7 @@ void WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(std::__ndk1::bas
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int&) */
 
 void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int& param_2)
+               (undefined8 param_1,byte *param_2,undefined4 *param_3)
 
 {
   ulong uVar1;
@@ -5582,13 +5582,13 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  *param_2 = 0x8e;
-  uVar1 = (ulong)(*param_1 >> 1);
-  if ((*param_1 & 1) != 0) {
-    uVar1 = *(ulong *)(param_1 + 8);
+  *param_3 = 0x8e;
+  uVar1 = (ulong)(*param_2 >> 1);
+  if ((*param_2 & 1) != 0) {
+    uVar1 = *(ulong *)(param_2 + 8);
   }
   if (3 < uVar1) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1,0,3,param_1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_2,0,3,param_2);
     uVar1 = (ulong)(abStack_50[0] >> 1);
     if ((abStack_50[0] & 1) != 0) {
       uVar1 = uStack_48;
@@ -5596,9 +5596,9 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
                     /* try { // try from 0043c4cc to 0043c4e7 has its CatchHandler @ 0043c590 */
     if ((uVar1 == 3) &&
        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,&DAT_00636699,3), iVar3 == 0)) {
-      *param_2 = 0x10;
+      *param_3 = 0x10;
                     /* try { // try from 0043c544 to 0043c55b has its CatchHandler @ 0043c574 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1,3,0xffffffffffffffff,param_1);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2,3,0xffffffffffffffff,param_2);
       if ((abStack_50[0] & 1) != 0) {
         operator delete(pvStack_40);
       }
@@ -5608,7 +5608,7 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
       operator delete(pvStack_40);
     }
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2);
 LAB_0043c518:
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     __stack_chk_fail();

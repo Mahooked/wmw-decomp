@@ -131,11 +131,11 @@ void std::__ndk1::__time_get::__time_get(long *param_1,byte *param_2)
 
 /* std::__ndk1::__time_get::~__time_get() */
 
-void std::__ndk1::__time_get::~__time_get(undefined8 *param_1)
+void std::__ndk1::__time_get::~__time_get()
 
 {
                     /* try { // try from 005ddc4c to 005ddc4f has its CatchHandler @ 005ddc58 */
-  freelocale(*param_1);
+  freelocale(*this);
   return;
 }
 

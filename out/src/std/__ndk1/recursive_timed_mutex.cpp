@@ -9,22 +9,22 @@
 
 /* std::__ndk1::recursive_timed_mutex::recursive_timed_mutex() */
 
-void std::__ndk1::recursive_timed_mutex::recursive_timed_mutex(undefined8 *param_1)
+void std::__ndk1::recursive_timed_mutex::recursive_timed_mutex()
 
 {
-  param_1[0xc] = 0;
-  param_1[9] = 0;
-  param_1[8] = 0;
-  param_1[0xb] = 0;
-  param_1[10] = 0;
-  param_1[5] = 0;
-  param_1[4] = 0;
-  param_1[7] = 0;
-  param_1[6] = 0;
-  param_1[1] = 0;
-  *param_1 = 0;
-  param_1[3] = 0;
-  param_1[2] = 0;
+  this[0xc] = 0;
+  this[9] = 0;
+  this[8] = 0;
+  this[0xb] = 0;
+  this[10] = 0;
+  this[5] = 0;
+  this[4] = 0;
+  this[7] = 0;
+  this[6] = 0;
+  this[1] = 0;
+  *this = 0;
+  this[3] = 0;
+  this[2] = 0;
   return;
 }
 

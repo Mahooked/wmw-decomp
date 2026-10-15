@@ -9,7 +9,7 @@
 
 /* WaterConcept::IAPNotification::IAPNotification() */
 
-void WaterConcept::IAPNotification::IAPNotification(undefined8 *param_1)
+void WaterConcept::IAPNotification::IAPNotification()
 
 {
   long lVar1;
@@ -26,29 +26,29 @@ void WaterConcept::IAPNotification::IAPNotification(undefined8 *param_1)
   lStack_48 = *(long *)(lVar1 + 0x28);
   WaterConcept::Notification::Notification();
                     /* try { // try from 0049a7c8 to 0049a7d3 has its CatchHandler @ 0049a938 */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x3d,0x10);
-  *param_1 = &PTR_handleEvent_00712598;
-  param_1[0x3d] = &PTR__IAPNotification_00712628;
-  *(undefined1 *)((long)param_1 + 0x1fc) = 0;
-  *(undefined8 *)((long)param_1 + 500) = 0;
-  param_1[0x41] = 0;
-  param_1[0x40] = 0;
-  param_1[0x43] = 0;
-  param_1[0x42] = 0;
-  *(undefined1 *)((long)param_1 + 0x211) = 0;
-  param_1[0x49] = 0;
-  param_1[0x48] = 0;
-  param_1[0x4b] = 0;
-  param_1[0x4a] = 0;
-  param_1[0x45] = 0;
-  param_1[0x44] = 0;
-  param_1[0x47] = 0;
-  param_1[0x46] = 0;
-  *(undefined1 *)((long)param_1 + 0x249) = 0;
-  *(undefined2 *)(param_1 + 0x4c) = 0;
-  *(undefined8 *)((long)param_1 + 0x264) = 0;
-  param_1[0x4f] = 0;
-  param_1[0x4e] = 0;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x3d,0x10);
+  *this = &PTR_handleEvent_00712598;
+  this[0x3d] = &PTR__IAPNotification_00712628;
+  *(undefined1 *)((long)this + 0x1fc) = 0;
+  *(undefined8 *)((long)this + 500) = 0;
+  this[0x41] = 0;
+  this[0x40] = 0;
+  this[0x43] = 0;
+  this[0x42] = 0;
+  *(undefined1 *)((long)this + 0x211) = 0;
+  this[0x49] = 0;
+  this[0x48] = 0;
+  this[0x4b] = 0;
+  this[0x4a] = 0;
+  this[0x45] = 0;
+  this[0x44] = 0;
+  this[0x47] = 0;
+  this[0x46] = 0;
+  *(undefined1 *)((long)this + 0x249) = 0;
+  *(undefined2 *)(this + 0x4c) = 0;
+  *(undefined8 *)((long)this + 0x264) = 0;
+  this[0x4f] = 0;
+  this[0x4e] = 0;
                     /* try { // try from 0049a828 to 0049a82b has its CatchHandler @ 0049a900 */
   uVar2 = Walaber::CurveManager::getManager();
   auStack_60[0] = 0;
@@ -64,7 +64,7 @@ void WaterConcept::IAPNotification::IAPNotification(undefined8 *param_1)
   uStack_70 = 0;
   uStack_68 = 0;
                     /* try { // try from 0049a874 to 0049a887 has its CatchHandler @ 0049a8d4 */
-  Walaber::CurveManager::getCurve(uVar2,param_1 + 0x4e,auStack_60,&uStack_70);
+  Walaber::CurveManager::getCurve(uVar2,this + 0x4e,auStack_60,&uStack_70);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
   if ((auStack_60[0] & 1) != 0) {
@@ -128,24 +128,24 @@ WaterConcept::IAPNotification::operator=(WaterConcept__IAPNotification *p0)
 
 /* WaterConcept::IAPNotification::~IAPNotification() */
 
-void WaterConcept::IAPNotification::~IAPNotification(undefined8 *param_1)
+void WaterConcept::IAPNotification::~IAPNotification()
 
 {
-  *param_1 = &PTR_handleEvent_00712598;
-  param_1[0x3d] = &PTR__IAPNotification_00712628;
-  if ((long *)param_1[0x41] != (long *)0x0) {
-    (**(code **)(*(long *)param_1[0x41] + 8))();
+  *this = &PTR_handleEvent_00712598;
+  this[0x3d] = &PTR__IAPNotification_00712628;
+  if ((long *)this[0x41] != (long *)0x0) {
+    (**(code **)(*(long *)this[0x41] + 8))();
   }
-  param_1[0x41] = 0;
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x4e);
-  if ((*(byte *)(param_1 + 0x49) & 1) != 0) {
-    operator delete((void *)param_1[0x4b]);
+  this[0x41] = 0;
+  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x4e);
+  if ((*(byte *)(this + 0x49) & 1) != 0) {
+    operator delete((void *)this[0x4b]);
   }
-  if ((*(byte *)(param_1 + 0x42) & 1) != 0) {
-    operator delete((void *)param_1[0x44]);
+  if ((*(byte *)(this + 0x42) & 1) != 0) {
+    operator delete((void *)this[0x44]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x3d);
-  WaterConcept::Notification::~Notification(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x3d);
+  WaterConcept::Notification::~Notification(this);
   return;
 }
 
@@ -646,7 +646,7 @@ LAB_0049b398:
 /* WaterConcept::IAPNotification::goNotify(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
-void WaterConcept::IAPNotification::goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
+void WaterConcept::IAPNotification::goNotify(undefined4 param_1,long param_2)
 
 {
   long lVar1;

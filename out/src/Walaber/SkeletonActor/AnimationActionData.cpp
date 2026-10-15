@@ -9,14 +9,14 @@
 
 /* Walaber::SkeletonActor::AnimationActionData::~AnimationActionData() */
 
-void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData()
 
 {
-  *param_1 = &PTR__AnimationActionData_0070e568;
-  if ((*(byte *)(param_1 + 2) & 1) == 0) {
+  *this = &PTR__AnimationActionData_0070e568;
+  if ((*(byte *)(this + 2) & 1) == 0) {
     return;
   }
-  operator delete((void *)param_1[4]);
+  operator delete((void *)this[4]);
   return;
 }
 
@@ -28,14 +28,14 @@ void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData(undefined
 
 /* Walaber::SkeletonActor::AnimationActionData::~AnimationActionData() */
 
-void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData(undefined8 *param_1)
+void Walaber::SkeletonActor::AnimationActionData::~AnimationActionData()
 
 {
-  *param_1 = &PTR__AnimationActionData_0070e568;
-  if ((*(byte *)(param_1 + 2) & 1) != 0) {
-    operator delete((void *)param_1[4]);
+  *this = &PTR__AnimationActionData_0070e568;
+  if ((*(byte *)(this + 2) & 1) != 0) {
+    operator delete((void *)this[4]);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

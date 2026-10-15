@@ -9,17 +9,17 @@
 
 /* WaterConcept::Screen_Achievements::Screen_Achievements() */
 
-void WaterConcept::Screen_Achievements::Screen_Achievements(undefined8 *param_1)
+void WaterConcept::Screen_Achievements::Screen_Achievements()
 
 {
-  WaterConcept::WCScreen::WCScreen(param_1,0x12);
+  WaterConcept::WCScreen::WCScreen(this,0x12);
                     /* try { // try from 004a172c to 004a1733 has its CatchHandler @ 004a177c */
-  Walaber::MessageReceiver::MessageReceiver(param_1 + 0x12,0x10);
-  *param_1 = &PTR__Screen_Achievements_00712878;
-  param_1[4] = &PTR_handleEvent_00712930;
-  param_1[0x12] = &PTR__Screen_Achievements_00712950;
-  memset(param_1 + 0x14,0,0x61);
-  *(undefined1 *)(param_1[2] + 0x71) = 1;
+  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  *this = &PTR__Screen_Achievements_00712878;
+  this[4] = &PTR_handleEvent_00712930;
+  this[0x12] = &PTR__Screen_Achievements_00712950;
+  memset(this + 0x14,0,0x61);
+  *(undefined1 *)(this[2] + 0x71) = 1;
   return;
 }
 
@@ -31,20 +31,20 @@ void WaterConcept::Screen_Achievements::Screen_Achievements(undefined8 *param_1)
 
 /* WaterConcept::Screen_Achievements::~Screen_Achievements() */
 
-void WaterConcept::Screen_Achievements::~Screen_Achievements(undefined8 *param_1)
+void WaterConcept::Screen_Achievements::~Screen_Achievements()
 
 {
-  *param_1 = &PTR__Screen_Achievements_00712878;
-  param_1[4] = &PTR_handleEvent_00712930;
-  param_1[0x12] = &PTR__Screen_Achievements_00712950;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x1d);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x1a);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x17);
-  if ((void *)param_1[0x14] != (void *)0x0) {
-    operator delete((void *)param_1[0x14]);
+  *this = &PTR__Screen_Achievements_00712878;
+  this[4] = &PTR_handleEvent_00712930;
+  this[0x12] = &PTR__Screen_Achievements_00712950;
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1d);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1a);
+  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x17);
+  if ((void *)this[0x14] != (void *)0x0) {
+    operator delete((void *)this[0x14]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x12);
-  WaterConcept::WCScreen::~WCScreen(param_1);
+  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
+  WaterConcept::WCScreen::~WCScreen(this);
   return;
 }
 

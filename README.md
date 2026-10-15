@@ -30,7 +30,7 @@ re-inferred.
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Call-target names (PLT imports) | **done** | 64,007 / 66,330 call placeholders resolved from `.rela.plt`; 4,765 imports named (see "Call targets and PLT imports") |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
-| Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 1,200 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
+| Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
@@ -39,7 +39,7 @@ re-inferred.
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,450 decompiled
-   bodies through Ghidra plus a further 1,200 as plain text where Ghidra cannot
+   bodies through Ghidra plus a further 641 as plain text where Ghidra cannot
    name the type (see "Types without a type system"). Class field layouts are now
    recovered too — 325 of them, each proven to rebuild to its recovered `sizeof`
    under the C++ ABI — and 9 enums have been lifted out of the constant compares,
@@ -78,8 +78,8 @@ re-inferred.
   callee by decoding PLT stubs through `.rela.plt`: 66,330 -> 2,323 unresolved,
   of which 28,332 are game-symbol calls. See "Call targets and PLT imports".
 - Exact function prototypes, which Ghidra could only apply when it could name
-  the type, now written to **1,200** more definitions as text — libc++ template
-  parameters included — with `param_N` falling 70,864 -> 64,678 and members'
+  the type, now written to **641** more definitions as text — libc++ template
+  parameters included — with `param_N` falling 70,864 -> 66,674 and members'
   `param_1` shown as `this`. See "Types without a type system".
 
 ## What the game turned out to be
@@ -433,8 +433,10 @@ cannot resolve. So the prototypes are applied a second way, as plain text, by
 attempt now reach the output:
 
 ```
--void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
-+void ndk::ApplicationContext::setSKU(std::__ndk1::basic_string<char, …> const& param_1)
+-void Walaber::DatabaseManager::openDatabase(undefined8 param_1)
++void Walaber::DatabaseManager::openDatabase(
++    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
++                              std::__ndk1::allocator<char>> const& param_1)
 ```
 
 The pass is only safe because the *alignment* is provable. Ghidra numbers the
@@ -443,23 +445,65 @@ inferred parameters `param_1…` in AAPCS64 allocation order:
 - a **free** function's order is source order, so a definition whose parameter
   count already equals the signature's is a straight positional rename;
 - a non-static **member** also receives `this` in `x0`, which the signature
-  omits, so its count is exactly one greater — there `param_1` *is* `this`, so it
-  is dropped from the list, renamed in the body, and the survivors shift down.
+  omits, so its count is exactly one greater — there `param_1` is `this`, so it is
+  dropped from the list, renamed in the body, and the survivors shift down.
 
-Any other count difference is left alone, and a `+1` definition is trusted only
-when `members.tsv` already classifies it as a member. An alignment that cannot be
-proved is a wrong type waiting to happen, so it is not guessed. A definition is
-touched only while its parameters still contain `undefined`, which makes the
-pass idempotent; `--check` fails if any applicable definition is left untyped.
+Any other count difference is left alone. But a count of one greater is not on its
+own proof of `this`, and the first two attempts at this pass were both wrong in
+ways the output had to expose.
+
+**A hidden return pointer.** A function that returns a class larger than 16 bytes
+*also* receives a hidden pointer, in `x8`, which Ghidra models as the first
+inferred parameter exactly like `this`:
+
+```
+void Walaber::createRenderTexture2D(undefined8 *param_1, undefined4 param_2, …)
+```
+
+is a **free** factory returning a `SharedPtr`: `param_1` is the caller's return
+buffer, not an object. `members.tsv` cannot separate the two — it files
+`std::current_exception` under class `std` with role `method`, and `members.py`
+itself warns that a plain `method` might be static. Only `ctor`, `dtor` and
+`virtual` are *provably* non-static, and none of those can carry the hidden return
+pointer (constructors and destructors return `void`; a virtual returning a class
+by value would shift by two, not one).
+
+**A hoisted floating-point parameter.** Even for a provably non-static member the
+*order* is only certain while no floating-point parameter is present, because
+Ghidra lists those first — `s0` ahead of `x0`:
+
+```
+void Walaber::SoundEffectInstance::SoundEffectInstance
+               (undefined4 param_1, undefined8 *param_2, …)
+{
+  …
+  *(undefined4 *)((long)param_2 + 0x2c) = param_1;   // the `float` argument
+```
+
+`fields.tsv` records a `float` at offset `0x2c`, so `param_1` is the `float` and
+`param_2` is `this` — the opposite of what the count suggests. A constructor that
+takes *arguments* is excluded as well, even without floating point: one for a
+class with virtual bases receives a VTT pointer in `x0` and `this` in `x1`, which
+nothing available here separates.
+
+So the shift is applied only where the alignment is certain: a **free or static**
+function with no floating-point parameter (positional rename), and a
+**non-static member** that either takes no arguments — the `+1` is the hidden
+`x0` and nothing else — or is a **virtual** method whose arguments contain no
+floating point. A definition is touched only while its parameters still contain
+`undefined`, which makes the pass idempotent; `--check` fails if any applicable
+definition is left untyped.
 
 | | before | after |
 |---|---|---|
-| definitions typed from `signatures.tsv` | 0 | 1,200 |
-| …of those, member (`param_1` → `this`) | — | 978 |
-| generic `param_N` tokens in `out/src` | 70,864 | 64,678 |
+| definitions typed from `signatures.tsv` | 0 | 641 |
+| …of those, member (`param_1` → `this`) | — | 438 |
+| generic `param_N` tokens in `out/src` | 70,864 | 66,674 |
 
-`tools/test_apply_signatures.py` pins the splitter, the name formatter and the
-`+1`/`this` decision on synthetic definitions, so the rule is checked without
+`tools/test_apply_signatures.py` pins the splitter, the name formatter and every
+branch of the alignment rule — the zero-argument destructor that must be renamed,
+the `method`, the constructor with arguments and the floating-point signature
+that must not — on synthetic definitions, so the rule is checked without
 touching the output.
 
 ### Call targets and PLT imports
@@ -687,8 +731,8 @@ re-inference step (README item 3).
 Read this before treating `out/src/` as source.
 
 - **Parameter and return types are mostly inferred.** Return types are never in
-  the mangling, and only the 3,650 functions that carry a prototype (2,450
-  through Ghidra, 1,200 as text; see "Function signatures") have recovered
+  the mangling, and only the 3,091 functions that carry a prototype (2,450
+  through Ghidra, 641 as text; see "Function signatures") have recovered
   parameter types — there the types are exact. Everywhere else Ghidra's type
   propagation frequently mis-identifies them — a method taking
   `(Fluids*, ParticleDescription const&, int, bool&)` is emitted as taking

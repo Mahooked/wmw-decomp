@@ -13,7 +13,7 @@
 
 void std::__ndk1::
      vector<std::__ndk1::pair<float,int>,std::__ndk1::allocator<std::__ndk1::pair<float,int>>>::
-     __push_back_slow_path<std::__ndk1::pair<float,int>>(std::__ndk1::pair<float, int>&& param_1)
+     __push_back_slow_path<std::__ndk1::pair<float,int>>(long *param_1,undefined8 *param_2)
 
 {
   long lVar1;
@@ -30,13 +30,13 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  lVar3 = this[1] - *this >> 3;
+  lVar3 = param_1[1] - *param_1 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
-  lVar5 = this[2] - *this;
+  lVar5 = param_1[2] - *param_1;
   if ((ulong)(lVar5 >> 3) < 0xfffffffffffffff) {
     uVar6 = lVar5 >> 2;
     if (uVar2 <= uVar6) {
@@ -46,21 +46,21 @@ void std::__ndk1::
   else {
     uVar2 = 0x1fffffffffffffff;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>&>::__split_buffer(&pvStack_60,uVar2,lVar3,this + 2);
-  *puStack_50 = *param_1;
+  std::__ndk1::__split_buffer<std::__ndk1::pair<float, int>, std::__ndk1::allocator<std::__ndk1::pair<float, int>>&>::__split_buffer(&pvStack_60,uVar2,lVar3,param_1 + 2);
+  *puStack_50 = *param_2;
   puStack_50 = puStack_50 + 1;
-  pvStack_60 = (void *)*this;
-  pvVar4 = (void *)this[1];
+  pvStack_60 = (void *)*param_1;
+  pvVar4 = (void *)param_1[1];
   pvStack_58 = (void *)((long)pvStack_58 - ((long)pvVar4 - (long)pvStack_60));
   if (0 < (long)pvVar4 - (long)pvStack_60) {
     memcpy();
-    pvStack_60 = (void *)*this;
-    pvVar4 = (void *)this[1];
+    pvStack_60 = (void *)*param_1;
+    pvVar4 = (void *)param_1[1];
   }
-  *this = (long)pvStack_58;
-  this[1] = (long)puStack_50;
-  lVar3 = this[2];
-  this[2] = lStack_48;
+  *param_1 = (long)pvStack_58;
+  param_1[1] = (long)puStack_50;
+  lVar3 = param_1[2];
+  param_1[2] = lStack_48;
   puStack_50 = pvVar4;
   if (pvVar4 != pvStack_60) {
     puStack_50 = (undefined8 *)

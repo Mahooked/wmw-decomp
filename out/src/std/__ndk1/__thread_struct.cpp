@@ -9,7 +9,7 @@
 
 /* std::__ndk1::__thread_struct::__thread_struct() */
 
-void std::__ndk1::__thread_struct::__thread_struct(undefined8 *param_1)
+void std::__ndk1::__thread_struct::__thread_struct()
 
 {
   undefined8 *puVar1;
@@ -21,7 +21,7 @@ void std::__ndk1::__thread_struct::__thread_struct(undefined8 *param_1)
   puVar1[3] = 0;
   *puVar1 = 0;
   puVar1[1] = 0;
-  *param_1 = puVar1;
+  *this = puVar1;
   return;
 }
 
@@ -33,12 +33,12 @@ void std::__ndk1::__thread_struct::__thread_struct(undefined8 *param_1)
 
 /* std::__ndk1::__thread_struct::~__thread_struct() */
 
-void std::__ndk1::__thread_struct::~__thread_struct(undefined8 *param_1)
+void std::__ndk1::__thread_struct::~__thread_struct()
 
 {
   void *p0;
   
-  p0 = (void *)*param_1;
+  p0 = (void *)*this;
   if (p0 != (void *)0x0) {
     __thread_local_data(p0);
     operator delete(p0);

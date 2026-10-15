@@ -12,7 +12,7 @@
    std::__ndk1::allocator<Walaber::Rect>&>&) */
 
 void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>&>& param_1)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -22,13 +22,13 @@ void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
   undefined8 *puVar6;
   undefined8 *puVar4;
   
-  puVar2 = (undefined8 *)*this;
-  puVar1 = (undefined8 *)this[1];
+  puVar2 = (undefined8 *)*param_1;
+  puVar1 = (undefined8 *)param_1[1];
   if (puVar1 == puVar2) {
-    lVar5 = param_1[1];
+    lVar5 = param_2[1];
   }
   else {
-    lVar5 = param_1[1];
+    lVar5 = param_2[1];
     puVar3 = puVar1;
     puVar6 = (undefined8 *)(lVar5 + -8);
     do {
@@ -39,18 +39,18 @@ void std::__ndk1::vector<Walaber::Rect,std::__ndk1::allocator<Walaber::Rect>>::
       puVar6 = puVar6 + -2;
     } while (puVar2 != puVar4);
     lVar5 = lVar5 + ~((ulong)((long)puVar1 + (-0x10 - (long)puVar2)) >> 4) * 0x10;
-    param_1[1] = lVar5;
-    puVar2 = (undefined8 *)*this;
+    param_2[1] = lVar5;
+    puVar2 = (undefined8 *)*param_1;
   }
-  *this = lVar5;
-  param_1[1] = puVar2;
-  lVar5 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar5;
-  lVar5 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar5;
-  *param_1 = param_1[1];
+  *param_1 = lVar5;
+  param_2[1] = puVar2;
+  lVar5 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar5;
+  lVar5 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar5;
+  *param_2 = param_2[1];
   return;
 }
 

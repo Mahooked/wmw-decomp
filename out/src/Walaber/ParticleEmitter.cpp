@@ -92,7 +92,7 @@ void Walaber::ParticleEmitter::ParticleEmitter(int p0)
 
 /* Walaber::ParticleEmitter::~ParticleEmitter() */
 
-void Walaber::ParticleEmitter::~ParticleEmitter(undefined8 *param_1)
+void Walaber::ParticleEmitter::~ParticleEmitter()
 
 {
   void *pvVar1;
@@ -100,37 +100,37 @@ void Walaber::ParticleEmitter::~ParticleEmitter(undefined8 *param_1)
   undefined8 *puVar3;
   long lVar4;
   
-  lVar4 = param_1[1];
-  *param_1 = &PTR__ParticleEmitter_0070ffb8;
+  lVar4 = this[1];
+  *this = &PTR__ParticleEmitter_0070ffb8;
   if (lVar4 != 0) {
     puVar3 = *(undefined8 **)(lVar4 + 0x10);
-    if (*(undefined8 **)(lVar4 + 0x10) == param_1) {
-      *(undefined8 *)(lVar4 + 0x10) = param_1[3];
+    if (*(undefined8 **)(lVar4 + 0x10) == this) {
+      *(undefined8 *)(lVar4 + 0x10) = this[3];
     }
     else {
       do {
         puVar2 = puVar3;
         puVar3 = (undefined8 *)puVar2[3];
-      } while (puVar3 != param_1);
-      puVar2[3] = param_1[3];
-      param_1[3] = 0;
+      } while (puVar3 != this);
+      puVar2[3] = this[3];
+      this[3] = 0;
     }
-    param_1[1] = 0;
+    this[1] = 0;
   }
-  Walaber::ParticleSet::~ParticleSet(param_1 + 0x2e);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x2a);
-  pvVar1 = (void *)param_1[0x1c];
+  Walaber::ParticleSet::~ParticleSet(this + 0x2e);
+  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x2a);
+  pvVar1 = (void *)this[0x1c];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x1d] = pvVar1;
+    this[0x1d] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x13];
+  pvVar1 = (void *)this[0x13];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x14] = pvVar1;
+    this[0x14] = pvVar1;
     operator delete(pvVar1);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(param_1 + 0x10);
-  Walaber::Node::~Node(param_1);
+  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(this + 0x10);
+  Walaber::Node::~Node(this);
   return;
 }
 
@@ -160,7 +160,7 @@ void Walaber::ParticleEmitter::~ParticleEmitter(void *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
    Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::ParticleEmitter::loadFromXML(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2)
+void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
   long lVar1;
@@ -181,9 +181,9 @@ void Walaber::ParticleEmitter::loadFromXML(std::__ndk1::basic_string<char, std::
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(this + 0x150,param_2);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x150,param_3);
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = this;
+  puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00710028;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -211,7 +211,7 @@ void Walaber::ParticleEmitter::loadFromXML(std::__ndk1::basic_string<char, std::
                     /* try { // try from 003909d4 to 003909db has its CatchHandler @ 00390a4c */
   Walaber::PropertyList::PropertyList(&puStack_90);
                     /* try { // try from 003909dc to 003909f3 has its CatchHandler @ 00390a3c */
-  Walaber::FileManager::readFile(uVar4,param_1,&puStack_78,&puStack_90,0);
+  Walaber::FileManager::readFile(uVar4,param_2,&puStack_78,&puStack_90,0);
   Walaber::PropertyList::~PropertyList(&puStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);

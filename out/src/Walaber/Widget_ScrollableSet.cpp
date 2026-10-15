@@ -183,23 +183,23 @@ void Walaber::Widget_ScrollableSet::init(long param_1)
 
 /* Walaber::Widget_ScrollableSet::~Widget_ScrollableSet() */
 
-void Walaber::Widget_ScrollableSet::~Widget_ScrollableSet(undefined8 *param_1)
+void Walaber::Widget_ScrollableSet::~Widget_ScrollableSet()
 
 {
   void *pvVar1;
   
-  pvVar1 = (void *)param_1[0x2b];
-  *param_1 = &PTR__Widget_ScrollableSet_0070fa18;
+  pvVar1 = (void *)this[0x2b];
+  *this = &PTR__Widget_ScrollableSet_0070fa18;
   if (pvVar1 != (void *)0x0) {
-    param_1[0x2c] = pvVar1;
+    this[0x2c] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x28];
+  pvVar1 = (void *)this[0x28];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x29] = pvVar1;
+    this[0x29] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::Widget::~Widget(param_1);
+  Walaber::Widget::~Widget(this);
   return;
 }
 

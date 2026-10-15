@@ -12,7 +12,8 @@
    int, Walaber::TextureInMemoryColorspace) */
 
 void Walaber::createProgrammaticTexture2D
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2,unsigned int param_3,Walaber::TextureInMemoryColorspace param_4)
+               (undefined8 *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
+               undefined4 param_5)
 
 {
   undefined8 uVar1;
@@ -20,10 +21,10 @@ void Walaber::createProgrammaticTexture2D
   
   uVar1 = operator new(0xc0);
                     /* try { // try from 00395480 to 00395493 has its CatchHandler @ 003954c0 */
-  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar1,param_1,param_2,param_3,param_4);
-  *this = uVar1;
+  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar1,param_2,param_3,param_4,param_5);
+  *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
-  this[1] = puVar2;
+  param_1[1] = puVar2;
   *puVar2 = 1;
   return;
 }
@@ -40,7 +41,8 @@ void Walaber::createProgrammaticTexture2D
    std::__ndk1::allocator<Walaber::Color> > >) */
 
 void Walaber::createProgrammaticTexture2D
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2,unsigned int param_3,Walaber::TextureInMemoryColorspace param_4,Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> param_5)
+               (undefined8 *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
+               undefined4 param_5,long *param_6)
 
 {
   long lVar1;
@@ -53,18 +55,18 @@ void Walaber::createProgrammaticTexture2D
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xc0);
-  lStack_68 = *param_5;
-  piStack_60 = (int *)param_5[1];
+  lStack_68 = *param_6;
+  piStack_60 = (int *)param_6[1];
   if (lStack_68 != 0) {
     *piStack_60 = *piStack_60 + 1;
   }
                     /* try { // try from 00395600 to 0039561b has its CatchHandler @ 0039567c */
-  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar2,param_1,param_2,param_3,param_4,&lStack_68);
-  *this = uVar2;
+  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar2,param_2,param_3,param_4,param_5,&lStack_68);
+  *param_1 = uVar2;
                     /* try { // try from 00395620 to 00395627 has its CatchHandler @ 0039566c */
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
-  this[1] = puVar3;
+  param_1[1] = puVar3;
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_68);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -182,7 +184,7 @@ undefined1  [16] Walaber::loadPVR(uchar *p0,uint p1,int *p2,int *p3,uint *p4,uin
 /* Walaber::createRenderTexture2D(unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
 
 void Walaber::createRenderTexture2D
-               (unsigned int param_1,unsigned int param_2,Walaber::TextureInMemoryColorspace param_3)
+               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   undefined8 uVar1;
@@ -190,10 +192,10 @@ void Walaber::createRenderTexture2D
   
   uVar1 = operator new(0x160);
                     /* try { // try from 003965b0 to 003965bf has its CatchHandler @ 003965ec */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_1,param_2,param_3);
-  *this = uVar1;
+  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_2,param_3,param_4);
+  *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
-  this[1] = puVar2;
+  param_1[1] = puVar2;
   *puVar2 = 1;
   return;
 }
@@ -208,7 +210,8 @@ void Walaber::createRenderTexture2D
    Walaber::TextureInMemoryColorspace) */
 
 void Walaber::createRenderTexture2D
-               (unsigned int param_1,unsigned int param_2,Walaber::TextureSettings param_3,Walaber::TextureInMemoryColorspace param_4)
+               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,
+               undefined4 param_5)
 
 {
   long lVar1;
@@ -233,26 +236,26 @@ void Walaber::createRenderTexture2D
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0x160);
-  uStack_a8 = *(undefined4 *)(param_3 + 1);
-  uStack_b0 = *param_3;
-  uStack_a4 = *(undefined1 *)((long)param_3 + 0xc);
-  uStack_a3 = *(undefined1 *)((long)param_3 + 0xd);
-  uStack_a2 = *(undefined1 *)((long)param_3 + 0xe);
-  uStack_a1 = *(undefined1 *)((long)param_3 + 0xf);
-  uStack_90 = param_3[4];
-  uStack_98 = param_3[3];
-  uStack_a0 = param_3[2];
+  uStack_a8 = *(undefined4 *)(param_4 + 1);
+  uStack_b0 = *param_4;
+  uStack_a4 = *(undefined1 *)((long)param_4 + 0xc);
+  uStack_a3 = *(undefined1 *)((long)param_4 + 0xd);
+  uStack_a2 = *(undefined1 *)((long)param_4 + 0xe);
+  uStack_a1 = *(undefined1 *)((long)param_4 + 0xf);
+  uStack_90 = param_4[4];
+  uStack_98 = param_4[3];
+  uStack_a0 = param_4[2];
                     /* try { // try from 003967a8 to 003967ab has its CatchHandler @ 00396834 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,param_3 + 5);
-  uStack_60 = param_3[10];
-  uStack_68 = param_3[9];
-  uStack_70 = param_3[8];
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,param_4 + 5);
+  uStack_60 = param_4[10];
+  uStack_68 = param_4[9];
+  uStack_70 = param_4[8];
                     /* try { // try from 003967c0 to 003967e7 has its CatchHandler @ 0039683c */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar2,param_1,param_2,&uStack_b0,param_4);
-  *this = uVar2;
+  Walaber::RenderTexture2D::RenderTexture2D(uVar2,param_2,param_3,&uStack_b0,param_5);
+  *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
-  this[1] = puVar3;
+  param_1[1] = puVar3;
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -273,7 +276,8 @@ void Walaber::createRenderTexture2D
    unsigned char*) */
 
 void Walaber::createRenderTexture2D
-               (unsigned int param_1,unsigned int param_2,Walaber::TextureInMemoryColorspace param_3,unsigned char *param_4)
+               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+               undefined8 param_5)
 
 {
   undefined8 uVar1;
@@ -281,10 +285,10 @@ void Walaber::createRenderTexture2D
   
   uVar1 = operator new(0x160);
                     /* try { // try from 00396a58 to 00396a6b has its CatchHandler @ 00396a98 */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_1,param_2,param_4,param_3);
-  *this = uVar1;
+  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_2,param_3,param_5,param_4);
+  *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
-  this[1] = puVar2;
+  param_1[1] = puVar2;
   *puVar2 = 1;
   return;
 }
@@ -300,7 +304,7 @@ void Walaber::createRenderTexture2D
    const&) */
 
 void Walaber::createSubtexture
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::TextureData const& param_3)
+               (undefined8 *param_1,undefined8 param_2,long *param_3,undefined8 param_4)
 
 {
   long lVar1;
@@ -316,18 +320,18 @@ void Walaber::createSubtexture
   lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xe8);
                     /* try { // try from 00396f80 to 00396f8b has its CatchHandler @ 0039701c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_1);
-  lStack_70 = *param_2;
-  piStack_68 = (int *)param_2[1];
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
+  lStack_70 = *param_3;
+  piStack_68 = (int *)param_3[1];
   if (lStack_70 != 0) {
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 00396fa8 to 00396fcb has its CatchHandler @ 00397024 */
-  Walaber::Subtexture::Subtexture(uVar2,abStack_60,&lStack_70,param_3);
-  *this = uVar2;
+  Walaber::Subtexture::Subtexture(uVar2,abStack_60,&lStack_70,param_4);
+  *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
-  this[1] = puVar3;
+  param_1[1] = puVar3;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
@@ -718,24 +722,24 @@ LAB_003979b0:
 
 /* Walaber::textureInMemoryColorspaceToStr(Walaber::TextureInMemoryColorspace) */
 
-void Walaber::textureInMemoryColorspaceToStr(Walaber::TextureInMemoryColorspace param_1)
+void Walaber::textureInMemoryColorspaceToStr(undefined8 *param_1,int param_2)
 
 {
-  *this = 0;
-  this[1] = 0;
-  this[2] = 0;
-  *(undefined1 *)this = 0x10;
-  *(undefined8 *)((long)this + 1) = 0x3838383861626772;
-  *(undefined1 *)((long)this + 9) = 0;
-  if (param_1 == 3) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(this,"rgba4444",8);
+  *param_1 = 0;
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *(undefined1 *)param_1 = 0x10;
+  *(undefined8 *)((long)param_1 + 1) = 0x3838383861626772;
+  *(undefined1 *)((long)param_1 + 9) = 0;
+  if (param_2 == 3) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,"rgba4444",8);
   }
-  else if (param_1 == 2) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(this,"rgba5551",8);
+  else if (param_2 == 2) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,"rgba5551",8);
   }
-  else if (param_1 == 1) {
+  else if (param_2 == 1) {
                     /* try { // try from 00397a40 to 00397a83 has its CatchHandler @ 00397a90 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(this,"rgb565",6);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,"rgb565",6);
   }
   return;
 }
@@ -769,7 +773,7 @@ undefined4 Walaber::textureInMemoryColorspaceBytesPerPixel(int param_1)
 /* Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2)
 
 {
   undefined8 *puVar1;
@@ -777,16 +781,16 @@ void Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_
   
   puVar1 = (undefined8 *)operator new(0xe8);
                     /* try { // try from 00399488 to 00399493 has its CatchHandler @ 003994d8 */
-  Walaber::Texture::Texture(puVar1,param_1,0);
+  Walaber::Texture::Texture(puVar1,param_2,0);
   puVar1[0x1b] = 0;
   puVar1[0x1c] = 0;
   puVar1[0x19] = 0;
   puVar1[0x1a] = 0;
   puVar1[0x18] = 0;
   *puVar1 = &PTR__Texture2D_00710288;
-  *this = puVar1;
+  *param_1 = puVar1;
   puVar2 = (undefined4 *)operator new(4);
-  this[1] = puVar2;
+  param_1[1] = puVar2;
   *puVar2 = 1;
   return;
 }
@@ -800,7 +804,7 @@ void Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_
 /* Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, Walaber::TextureSettings) */
 
-void Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::TextureSettings param_2)
+void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
 
 {
   long lVar1;
@@ -825,26 +829,26 @@ void Walaber::createTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xe8);
-  uStack_98 = *(undefined4 *)(param_2 + 1);
-  uStack_a0 = *param_2;
-  uStack_94 = *(undefined1 *)((long)param_2 + 0xc);
-  uStack_93 = *(undefined1 *)((long)param_2 + 0xd);
-  uStack_92 = *(undefined1 *)((long)param_2 + 0xe);
-  uStack_91 = *(undefined1 *)((long)param_2 + 0xf);
-  uStack_80 = param_2[4];
-  uStack_88 = param_2[3];
-  uStack_90 = param_2[2];
+  uStack_98 = *(undefined4 *)(param_3 + 1);
+  uStack_a0 = *param_3;
+  uStack_94 = *(undefined1 *)((long)param_3 + 0xc);
+  uStack_93 = *(undefined1 *)((long)param_3 + 0xd);
+  uStack_92 = *(undefined1 *)((long)param_3 + 0xe);
+  uStack_91 = *(undefined1 *)((long)param_3 + 0xf);
+  uStack_80 = param_3[4];
+  uStack_88 = param_3[3];
+  uStack_90 = param_3[2];
                     /* try { // try from 00399574 to 00399577 has its CatchHandler @ 003995f4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,param_2 + 5);
-  uStack_50 = param_2[10];
-  uStack_58 = param_2[9];
-  uStack_60 = param_2[8];
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,param_3 + 5);
+  uStack_50 = param_3[10];
+  uStack_58 = param_3[9];
+  uStack_60 = param_3[8];
                     /* try { // try from 0039958c to 003995ab has its CatchHandler @ 003995fc */
-  Walaber::Texture2D::Texture2D(uVar2,param_1,&uStack_a0);
-  *this = uVar2;
+  Walaber::Texture2D::Texture2D(uVar2,param_2,&uStack_a0);
+  *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
-  this[1] = puVar3;
+  param_1[1] = puVar3;
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }

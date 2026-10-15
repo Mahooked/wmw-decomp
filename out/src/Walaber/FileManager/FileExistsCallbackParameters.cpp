@@ -14,16 +14,17 @@
    std::__ndk1::allocator<char> > const&, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,bool param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4,Walaber::PropertyList const& param_5)
+               (long param_1,undefined8 param_2,byte param_3,undefined8 param_4,undefined8 param_5,
+               undefined8 param_6)
 
 {
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
-  *(byte *)(this + 0x18) = param_2 & 1;
+  *(byte *)(param_1 + 0x18) = param_3 & 1;
                     /* try { // try from 003d27c0 to 003d27cb has its CatchHandler @ 003d2808 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x20,param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x20,param_4);
                     /* try { // try from 003d27d0 to 003d27d7 has its CatchHandler @ 003d27f0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x38,param_4);
-  *(undefined8 *)(this + 0x50) = param_5;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x38,param_5);
+  *(undefined8 *)(param_1 + 0x50) = param_6;
   return;
 }
 

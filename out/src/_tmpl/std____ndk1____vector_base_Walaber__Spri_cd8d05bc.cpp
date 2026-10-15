@@ -12,18 +12,18 @@
 
 void std::__ndk1::
      __vector_base<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
-     ::~__vector_base(undefined8 *param_1)
+     ::~__vector_base()
 
 {
   byte *pbVar1;
   byte *pbVar2;
   byte *pbVar3;
   
-  pbVar2 = (byte *)*param_1;
+  pbVar2 = (byte *)*this;
   if (pbVar2 == (byte *)0x0) {
     return;
   }
-  pbVar1 = (byte *)param_1[1];
+  pbVar1 = (byte *)this[1];
   pbVar3 = pbVar2;
   if (pbVar1 != pbVar2) {
     do {
@@ -33,9 +33,9 @@ void std::__ndk1::
       }
       pbVar1 = pbVar3;
     } while (pbVar2 != pbVar3);
-    pbVar3 = (byte *)*param_1;
+    pbVar3 = (byte *)*this;
   }
-  param_1[1] = pbVar2;
+  this[1] = pbVar2;
   operator delete(pbVar3);
   return;
 }

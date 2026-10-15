@@ -9,7 +9,7 @@
 
 /* Walaber::SceneGraph::SceneGraph() */
 
-void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
+void Walaber::SceneGraph::SceneGraph()
 
 {
   long lVar1;
@@ -43,7 +43,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  *param_1 = uVar2;
+  *this = uVar2;
   abStack_50[0xd] = 0;
   abStack_50[0xe] = 0;
   abStack_50[0xf] = 0;
@@ -61,7 +61,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
   abStack_50[6] = 0x5f;
   abStack_50[7] = 0x47;
   abStack_50[8] = 0x72;
-  strncpy(param_1 + 1,(ulong)abStack_50 | 1,0x1b);
+  strncpy(this + 1,(ulong)abStack_50 | 1,0x1b);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -78,7 +78,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
 /* Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
+void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
 
 {
   long lVar1;
@@ -99,12 +99,12 @@ void Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  *this = uVar2;
-  pbVar3 = *(byte **)(param_1 + 0x10);
-  if ((*param_1 & 1) == 0) {
-    pbVar3 = param_1 + 1;
+  *param_1 = uVar2;
+  pbVar3 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar3 = param_2 + 1;
   }
-  strncpy(this + 1,pbVar3,0x1b);
+  strncpy(param_1 + 1,pbVar3,0x1b);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -148,11 +148,11 @@ void Walaber::SceneGraph::operator=(Walaber__SceneGraph *p0)
 
 /* Walaber::SceneGraph::~SceneGraph() */
 
-void Walaber::SceneGraph::~SceneGraph(undefined8 *param_1)
+void Walaber::SceneGraph::~SceneGraph()
 
 {
                     /* try { // try from 003ebdd4 to 003ebdd7 has its CatchHandler @ 003ebde0 */
-  Walaber::PCSNode::deleteNodeAndChildrenFromTree(*param_1);
+  Walaber::PCSNode::deleteNodeAndChildrenFromTree(*this);
   return;
 }
 

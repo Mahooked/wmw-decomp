@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<WaterConcept::Fan::PumpInfo,std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>>::
-     __swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Fan::PumpInfo, std::__ndk1::allocator<WaterConcept::Fan::PumpInfo>&>& param_1)
+     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   undefined8 *puVar1;
@@ -22,13 +22,13 @@ void std::__ndk1::
   undefined8 *puVar3;
   undefined8 *puVar4;
   
-  puVar1 = (undefined8 *)*this;
-  if ((undefined8 *)this[1] == puVar1) {
-    lVar2 = param_1[1];
+  puVar1 = (undefined8 *)*param_1;
+  if ((undefined8 *)param_1[1] == puVar1) {
+    lVar2 = param_2[1];
   }
   else {
-    lVar2 = param_1[1];
-    puVar3 = (undefined8 *)this[1];
+    lVar2 = param_2[1];
+    puVar3 = (undefined8 *)param_1[1];
     do {
       puVar4 = puVar3 + -5;
       *(undefined8 *)(lVar2 + -0x28) = *puVar4;
@@ -36,21 +36,21 @@ void std::__ndk1::
       *(undefined8 *)(lVar2 + -0x18) = puVar3[-3];
       *(undefined8 *)(lVar2 + -0x10) = puVar3[-2];
       *(undefined4 *)(lVar2 + -8) = *(undefined4 *)(puVar3 + -1);
-      lVar2 = param_1[1] + -0x28;
-      param_1[1] = lVar2;
+      lVar2 = param_2[1] + -0x28;
+      param_2[1] = lVar2;
       puVar3 = puVar4;
     } while (puVar1 != puVar4);
-    puVar1 = (undefined8 *)*this;
+    puVar1 = (undefined8 *)*param_1;
   }
-  *this = lVar2;
-  param_1[1] = puVar1;
-  lVar2 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar2;
-  lVar2 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar2;
-  *param_1 = param_1[1];
+  *param_1 = lVar2;
+  param_2[1] = puVar1;
+  lVar2 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar2;
+  lVar2 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar2;
+  *param_2 = param_2[1];
   return;
 }
 

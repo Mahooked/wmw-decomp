@@ -11,7 +11,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, float, bool) */
 
 void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
-               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,float param_2,bool param_3)
+               (undefined8 param_1,undefined8 *param_2,undefined8 param_3,uint param_4)
 
 {
   undefined8 *puVar1;
@@ -21,23 +21,23 @@ void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  puVar1 = param_1 + 2;
-  *param_1 = &PTR__Message_0070cdc8;
-  param_1[1] = 0x10;
+  puVar1 = param_2 + 2;
+  *param_2 = &PTR__Message_0070cdc8;
+  param_2[1] = 0x10;
   Walaber::PropertyList::PropertyList(puVar1);
-  *param_1 = &PTR__Message_0070e2e8;
+  *param_2 = &PTR__Message_0070e2e8;
                     /* try { // try from 00330748 to 00330753 has its CatchHandler @ 00330810 */
-  Walaber::Property::Property(auStack_78,param_2);
+  Walaber::Property::Property(auStack_78,param_3);
                     /* try { // try from 00330754 to 00330767 has its CatchHandler @ 00330800 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementIdentifier,auStack_78);
   Walaber::Property::~Property(auStack_78);
                     /* try { // try from 00330770 to 0033077b has its CatchHandler @ 003307fc */
-  Walaber::Property::Property(this,auStack_78);
+  Walaber::Property::Property(param_1,auStack_78);
                     /* try { // try from 0033077c to 0033078f has its CatchHandler @ 003307f8 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementPercent,auStack_78);
   Walaber::Property::~Property(auStack_78);
                     /* try { // try from 0033079c to 003307a3 has its CatchHandler @ 003307f4 */
-  Walaber::Property::Property(auStack_78,param_3 & 1);
+  Walaber::Property::Property(auStack_78,param_4 & 1);
                     /* try { // try from 003307a4 to 003307b7 has its CatchHandler @ 003307f0 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementIsNew,auStack_78);
   Walaber::Property::~Property(auStack_78);
@@ -56,12 +56,12 @@ void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
 
 /* Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked() */
 
-void Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked(undefined8 *param_1)
+void Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked()
 
 {
-  *param_1 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(param_1 + 2);
-  operator delete(param_1);
+  *this = &PTR__Message_0070cdc8;
+  Walaber::PropertyList::~PropertyList(this + 2);
+  operator delete(this);
   return;
 }
 

@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>
-     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>& param_1)
+     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
 
 {
   long *plVar1;
@@ -24,13 +24,13 @@ void std::__ndk1::
   long lVar6;
   long *plVar3;
   
-  plVar1 = (long *)*this;
-  if ((long *)this[1] == plVar1) {
-    lVar4 = param_1[1];
+  plVar1 = (long *)*param_1;
+  if ((long *)param_1[1] == plVar1) {
+    lVar4 = param_2[1];
   }
   else {
-    lVar4 = param_1[1];
-    plVar2 = (long *)this[1];
+    lVar4 = param_2[1];
+    plVar2 = (long *)param_1[1];
     do {
       plVar3 = plVar2 + -2;
       lVar6 = *plVar3;
@@ -40,21 +40,21 @@ void std::__ndk1::
       if (lVar6 != 0) {
         *piVar5 = *piVar5 + 1;
       }
-      lVar4 = param_1[1] + -0x10;
-      param_1[1] = lVar4;
+      lVar4 = param_2[1] + -0x10;
+      param_2[1] = lVar4;
       plVar2 = plVar3;
     } while (plVar1 != plVar3);
-    plVar1 = (long *)*this;
+    plVar1 = (long *)*param_1;
   }
-  *this = lVar4;
-  param_1[1] = plVar1;
-  lVar4 = this[1];
-  this[1] = param_1[2];
-  param_1[2] = lVar4;
-  lVar4 = this[2];
-  this[2] = param_1[3];
-  param_1[3] = lVar4;
-  *param_1 = param_1[1];
+  *param_1 = lVar4;
+  param_2[1] = plVar1;
+  lVar4 = param_1[1];
+  param_1[1] = param_2[2];
+  param_2[2] = lVar4;
+  lVar4 = param_1[2];
+  param_1[2] = param_2[3];
+  param_2[3] = lVar4;
+  *param_2 = param_2[1];
   return;
 }
 
