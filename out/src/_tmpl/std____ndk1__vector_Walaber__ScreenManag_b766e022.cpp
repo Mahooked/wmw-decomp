@@ -15,7 +15,7 @@
 undefined8 *
 std::__ndk1::
 vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
-::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
+::insert(std::__ndk1::__wrap_iter<Walaber::ScreenManager::ScreenOperationDetails const*> param_1,Walaber::ScreenManager::ScreenOperationDetails const& param_2)
 
 {
   undefined8 *puVar1;
@@ -46,21 +46,21 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
   
   lVar3 = tpidr_el0;
   lStack_58 = *(long *)(lVar3 + 0x28);
-  lVar14 = *param_1;
-  puVar6 = (undefined8 *)param_1[1];
-  lVar13 = (long)param_2 - lVar14 >> 3;
-  if (puVar6 < (undefined8 *)param_1[2]) {
-    if (param_2 == puVar6) {
-      uVar8 = *param_3;
+  lVar14 = *this;
+  puVar6 = (undefined8 *)this[1];
+  lVar13 = (long)param_1 - lVar14 >> 3;
+  if (puVar6 < (undefined8 *)this[2]) {
+    if (param_1 == puVar6) {
+      uVar8 = *param_2;
       lVar14 = lVar14 + lVar13 * 8;
-      *(undefined4 *)(param_2 + 1) = *(undefined4 *)(param_3 + 1);
-      *param_2 = uVar8;
+      *(undefined4 *)(param_1 + 1) = *(undefined4 *)(param_2 + 1);
+      *param_1 = uVar8;
       puVar6 = (undefined8 *)(lVar14 + 0x18);
       *puVar6 = 0;
       *(undefined8 *)(lVar14 + 0x20) = 0;
       *(undefined8 **)(lVar14 + 0x10) = puVar6;
-      if ((long *)param_3[2] != param_3 + 3) {
-        plVar15 = (long *)param_3[2];
+      if ((long *)param_2[2] != param_2 + 3) {
+        plVar15 = (long *)param_2[2];
         do {
                     /* try { // try from 003f0f4c to 003f0f5b has its CatchHandler @ 003f1160 */
           std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(lVar14 + 0x10,puVar6,plVar15 + 4,plVar15 + 4);
@@ -83,35 +83,35 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
             } while ((long *)*plVar12 != (long *)0x0);
           }
           plVar15 = plVar12;
-        } while (plVar12 != param_3 + 3);
+        } while (plVar12 != param_2 + 3);
       }
-      param_1[1] = param_1[1] + 0x28;
+      this[1] = this[1] + 0x28;
     }
     else {
-      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__move_range(param_1,param_2,puVar6,param_2 + 5);
-      puVar6 = param_3;
-      if ((param_2 <= param_3) && (puVar6 = param_3 + 5, (undefined8 *)param_1[1] <= param_3)) {
-        puVar6 = param_3;
+      std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__move_range(this,param_1,puVar6,param_1 + 5);
+      puVar6 = param_2;
+      if ((param_1 <= param_2) && (puVar6 = param_2 + 5, (undefined8 *)this[1] <= param_2)) {
+        puVar6 = param_2;
       }
       uVar8 = *puVar6;
-      *(undefined4 *)(param_2 + 1) = *(undefined4 *)(puVar6 + 1);
-      *param_2 = uVar8;
+      *(undefined4 *)(param_1 + 1) = *(undefined4 *)(puVar6 + 1);
+      *param_1 = uVar8;
       Walaber::PropertyList::operator=(lVar14 + lVar13 * 8 + 0x10,puVar6 + 2);
     }
   }
   else {
     uVar9 = ((long)puVar6 - lVar14 >> 3) * -0x3333333333333333 + 1;
     if (0x666666666666666 < uVar9) {
-      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
       return puVar6;
     }
-    lVar14 = param_1[2] - lVar14 >> 3;
+    lVar14 = this[2] - lVar14 >> 3;
     uVar7 = 0x666666666666666;
     if (((ulong)(lVar14 * -0x3333333333333333) < 0x333333333333333) &&
        (uVar11 = lVar14 * -0x6666666666666666, uVar7 = uVar9, uVar9 <= uVar11)) {
       uVar7 = uVar11;
     }
-    std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__split_buffer(&puStack_b0,uVar7,lVar13 * -0x3333333333333333,param_1 + 2);
+    std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::__split_buffer(&puStack_b0,uVar7,lVar13 * -0x3333333333333333,this + 2);
     if (puStack_a0 == puStack_98) {
       if (puStack_a8 < puStack_b0 || (long)puStack_a8 - (long)puStack_b0 == 0) {
         uVar9 = ((long)puStack_98 - (long)puStack_b0 >> 3) * -0x6666666666666666;
@@ -164,17 +164,17 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
         puStack_a0 = puVar6;
       }
     }
-    uVar2 = *(undefined4 *)(param_3 + 1);
-    uVar8 = *param_3;
+    uVar2 = *(undefined4 *)(param_2 + 1);
+    uVar8 = *param_2;
     puStack_a0[4] = 0;
     *(undefined4 *)(puStack_a0 + 1) = uVar2;
     *puStack_a0 = uVar8;
     puVar6 = puStack_a0 + 3;
     *puVar6 = 0;
     puStack_a0[2] = puVar6;
-    if ((long *)param_3[2] != param_3 + 3) {
+    if ((long *)param_2[2] != param_2 + 3) {
       puVar1 = puStack_a0 + 2;
-      plVar15 = (long *)param_3[2];
+      plVar15 = (long *)param_2[2];
       do {
                     /* try { // try from 003f107c to 003f108b has its CatchHandler @ 003f1174 */
         std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar1,puVar6,plVar15 + 4,plVar15 + 4);
@@ -197,15 +197,15 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
           } while ((long *)*plVar12 != (long *)0x0);
         }
         plVar15 = plVar12;
-      } while (plVar12 != param_3 + 3);
+      } while (plVar12 != param_2 + 3);
     }
     puStack_a0 = puStack_a0 + 5;
                     /* try { // try from 003f10ec to 003f10fb has its CatchHandler @ 003f1154 */
-    param_2 = (undefined8 *)std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(param_1,&puStack_b0,param_2);
+    param_1 = (undefined8 *)std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(this,&puStack_b0,param_1);
     std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(&puStack_b0);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return param_2;
+    return param_1;
   }
   puVar6 = (undefined8 *)__stack_chk_fail();
   return puVar6;
@@ -224,7 +224,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
 
 void std::__ndk1::
      vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>& param_1)
 
 {
   undefined4 uVar1;
@@ -239,13 +239,13 @@ void std::__ndk1::
   long *plVar11;
   undefined8 *puVar10;
   
-  puVar8 = (undefined8 *)*param_1;
-  if ((undefined8 *)param_1[1] == puVar8) {
-    lVar6 = param_2[1];
+  puVar8 = (undefined8 *)*this;
+  if ((undefined8 *)this[1] == puVar8) {
+    lVar6 = param_1[1];
   }
   else {
-    lVar6 = param_2[1];
-    puVar9 = (undefined8 *)param_1[1];
+    lVar6 = param_1[1];
+    puVar9 = (undefined8 *)this[1];
     do {
       puVar10 = puVar9 + -5;
       uVar2 = *puVar10;
@@ -282,21 +282,21 @@ void std::__ndk1::
           plVar11 = plVar4;
         } while (plVar4 != puVar9 + -2);
       }
-      lVar6 = param_2[1] + -0x28;
-      param_2[1] = lVar6;
+      lVar6 = param_1[1] + -0x28;
+      param_1[1] = lVar6;
       puVar9 = puVar10;
     } while (puVar10 != puVar8);
-    puVar8 = (undefined8 *)*param_1;
+    puVar8 = (undefined8 *)*this;
   }
-  *param_1 = lVar6;
-  param_2[1] = puVar8;
-  lVar6 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar6;
-  lVar6 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar6;
-  *param_2 = param_2[1];
+  *this = lVar6;
+  param_1[1] = puVar8;
+  lVar6 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar6;
+  lVar6 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar6;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -403,7 +403,7 @@ void std::__ndk1::
 
 long std::__ndk1::
      vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>& param_1,Walaber::ScreenManager::ScreenOperationDetails *param_2)
 
 {
   undefined4 uVar1;
@@ -418,10 +418,10 @@ long std::__ndk1::
   undefined8 *puVar10;
   long *plVar11;
   
-  puVar9 = (undefined8 *)*param_1;
-  lVar6 = param_2[1];
+  puVar9 = (undefined8 *)*this;
+  lVar6 = param_1[1];
   lVar8 = lVar6;
-  puVar10 = param_3;
+  puVar10 = param_2;
   while (puVar9 != puVar10) {
     uVar2 = puVar10[-5];
     uVar1 = *(undefined4 *)(puVar10 + -4);
@@ -457,24 +457,24 @@ long std::__ndk1::
         plVar11 = plVar5;
       } while (plVar5 != puVar10 + -2);
     }
-    lVar8 = param_2[1] + -0x28;
-    param_2[1] = lVar8;
+    lVar8 = param_1[1] + -0x28;
+    param_1[1] = lVar8;
     puVar10 = puVar10 + -5;
   }
-  puVar10 = (undefined8 *)param_1[1];
-  if (puVar10 != param_3) {
-    puVar9 = (undefined8 *)param_2[2];
+  puVar10 = (undefined8 *)this[1];
+  if (puVar10 != param_2) {
+    puVar9 = (undefined8 *)param_1[2];
     do {
-      uVar1 = *(undefined4 *)(param_3 + 1);
-      uVar2 = *param_3;
+      uVar1 = *(undefined4 *)(param_2 + 1);
+      uVar2 = *param_2;
       puVar9[4] = 0;
       *(undefined4 *)(puVar9 + 1) = uVar1;
       *puVar9 = uVar2;
       puVar7 = puVar9 + 3;
       *puVar7 = 0;
       puVar9[2] = puVar7;
-      if ((long *)param_3[2] != param_3 + 3) {
-        plVar11 = (long *)param_3[2];
+      if ((long *)param_2[2] != param_2 + 3) {
+        plVar11 = (long *)param_2[2];
         do {
                     /* try { // try from 003f32a0 to 003f32af has its CatchHandler @ 003f3374 */
           std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(puVar9 + 2,puVar7,plVar11 + 4,plVar11 + 4);
@@ -497,24 +497,24 @@ long std::__ndk1::
             } while ((long *)*plVar5 != (long *)0x0);
           }
           plVar11 = plVar5;
-        } while (plVar5 != param_3 + 3);
+        } while (plVar5 != param_2 + 3);
       }
-      param_3 = param_3 + 5;
-      puVar9 = (undefined8 *)(param_2[2] + 0x28);
-      param_2[2] = puVar9;
-    } while (param_3 != puVar10);
-    lVar8 = param_2[1];
+      param_2 = param_2 + 5;
+      puVar9 = (undefined8 *)(param_1[2] + 0x28);
+      param_1[2] = puVar9;
+    } while (param_2 != puVar10);
+    lVar8 = param_1[1];
   }
-  lVar4 = *param_1;
-  *param_1 = lVar8;
-  param_2[1] = lVar4;
-  lVar8 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar8;
-  lVar8 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar8;
-  *param_2 = param_2[1];
+  lVar4 = *this;
+  *this = lVar8;
+  param_1[1] = lVar4;
+  lVar8 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar8;
+  lVar8 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar8;
+  *param_1 = param_1[1];
   return lVar6;
 }
 

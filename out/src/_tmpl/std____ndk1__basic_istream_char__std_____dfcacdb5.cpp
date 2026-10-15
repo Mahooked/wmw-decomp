@@ -11,7 +11,7 @@
    >::sentry::sentry(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >&, bool) */
 
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,uint param_3)
+               (std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& param_1,bool param_2)
 
 {
   long lVar1;
@@ -24,19 +24,19 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0;
-  lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
+  *this = 0;
+  lVar4 = (long)param_1 + *(long *)(*param_1 + -0x18);
   if (*(uint *)(lVar4 + 0x20) == 0) {
     if (*(long *)(lVar4 + 0x88) != 0) {
       std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::flush();
     }
-    if (((param_3 & 1) == 0) &&
-       ((*(byte *)((long)param_2 + *(long *)(*param_2 + -0x18) + 9) >> 4 & 1) != 0)) {
+    if (((param_2 & 1) == 0) &&
+       ((*(byte *)((long)param_1 + *(long *)(*param_1 + -0x18) + 9) >> 4 & 1) != 0)) {
       std::__ndk1::ios_base::getloc(auStack_50);
                     /* try { // try from 003d5e54 to 003d5e63 has its CatchHandler @ 003d5fa8 */
       lVar4 = std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
       std::__ndk1::locale::~locale(auStack_50);
-      plVar5 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
+      plVar5 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
       while (plVar5 != (long *)0x0) {
         while( true ) {
           if ((plVar5[3] == plVar5[4]) &&
@@ -62,11 +62,11 @@ LAB_003d5f20:
       if ((plVar5 == (long *)0x0) ||
          ((plVar5[3] == plVar5[4] && (iVar3 = (**(code **)(*plVar5 + 0x48))(plVar5), iVar3 == -1))))
       {
-        lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
+        lVar4 = (long)param_1 + *(long *)(*param_1 + -0x18);
         std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 6);
       }
     }
-    *param_1 = *(int *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x20) == 0;
+    *this = *(int *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x20) == 0;
   }
   else {
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 4);
@@ -88,7 +88,7 @@ LAB_003d5f20:
    >::sentry::sentry(std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >&, bool) */
 
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,uint param_3)
+               (std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& param_1,bool param_2)
 
 {
   long lVar1;
@@ -101,19 +101,19 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0;
-  lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
+  *this = 0;
+  lVar4 = (long)param_1 + *(long *)(*param_1 + -0x18);
   if (*(uint *)(lVar4 + 0x20) == 0) {
     if (*(long *)(lVar4 + 0x88) != 0) {
       std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::flush();
     }
-    if (((param_3 & 1) == 0) &&
-       ((*(byte *)((long)param_2 + *(long *)(*param_2 + -0x18) + 9) >> 4 & 1) != 0)) {
-      std::__ndk1::locale::locale(auStack_50,(long)param_2 + *(long *)(*param_2 + -0x18) + 0x30);
+    if (((param_2 & 1) == 0) &&
+       ((*(byte *)((long)param_1 + *(long *)(*param_1 + -0x18) + 9) >> 4 & 1) != 0)) {
+      std::__ndk1::locale::locale(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
                     /* try { // try from 005a6424 to 005a6433 has its CatchHandler @ 005a6580 */
       lVar4 = std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
       std::__ndk1::locale::~locale(auStack_50);
-      plVar5 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
+      plVar5 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
       while (plVar5 != (long *)0x0) {
         while( true ) {
           if ((plVar5[3] == plVar5[4]) &&
@@ -139,11 +139,11 @@ LAB_005a64f8:
       if ((plVar5 == (long *)0x0) ||
          ((plVar5[3] == plVar5[4] && (iVar3 = (**(code **)(*plVar5 + 0x48))(plVar5), iVar3 == -1))))
       {
-        lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
+        lVar4 = (long)param_1 + *(long *)(*param_1 + -0x18);
         std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 6);
       }
     }
-    *param_1 = *(int *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x20) == 0;
+    *this = *(int *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x20) == 0;
   }
   else {
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 4);

@@ -24,7 +24,7 @@ void std::__ndk1::
      vector<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
      ::
      __push_back_slow_path<std::__ndk1::pair<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-               (long *param_1,undefined8 *param_2)
+               (std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&& param_1)
 
 {
   ulong uVar1;
@@ -41,38 +41,38 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
+  lVar3 = (this[1] - *this >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 4;
+  lVar6 = this[2] - *this >> 4;
   uVar5 = 0x555555555555555;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x2aaaaaaaaaaaaaa) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>::__split_buffer(auStack_60,uVar5,lVar3,param_1 + 2);
-  uVar8 = param_2[1];
-  uVar7 = *param_2;
-  puStack_50[2] = param_2[2];
+  std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>::__split_buffer(auStack_60,uVar5,lVar3,this + 2);
+  uVar8 = param_1[1];
+  uVar7 = *param_1;
+  puStack_50[2] = param_1[2];
   puStack_50[1] = uVar8;
   *puStack_50 = uVar7;
-  uVar8 = param_2[4];
-  uVar7 = param_2[3];
-  param_2[1] = 0;
-  param_2[2] = 0;
-  *param_2 = 0;
-  puStack_50[5] = param_2[5];
+  uVar8 = param_1[4];
+  uVar7 = param_1[3];
+  param_1[1] = 0;
+  param_1[2] = 0;
+  *param_1 = 0;
+  puStack_50[5] = param_1[5];
   puStack_50[4] = uVar8;
   puStack_50[3] = uVar7;
-  param_2[4] = 0;
-  param_2[5] = 0;
-  param_2[3] = 0;
+  param_1[4] = 0;
+  param_1[5] = 0;
+  param_1[3] = 0;
   puStack_50 = puStack_50 + 6;
                     /* try { // try from 004d0d90 to 004d0d9b has its CatchHandler @ 004d0dd4 */
-  std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__swap_out_circular_buffer(param_1,auStack_60);
+  std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__swap_out_circular_buffer(this,auStack_60);
   std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>::~__split_buffer(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     __stack_chk_fail();

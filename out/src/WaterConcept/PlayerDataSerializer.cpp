@@ -1491,8 +1491,7 @@ LAB_00436e44:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&) */
 
 uint WaterConcept::PlayerDataSerializer::mergeRemoteInfo
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_8)
 
 {
   uint uVar1;
@@ -1524,7 +1523,7 @@ uint WaterConcept::PlayerDataSerializer::mergeRemoteInfo
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -1628,7 +1627,7 @@ LAB_00437144:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -1762,7 +1761,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(undefined
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -1850,7 +1849,7 @@ LAB_00437658:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -1971,7 +1970,7 @@ LAB_004378cc:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -2080,7 +2079,7 @@ LAB_00437af4:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -2200,7 +2199,7 @@ LAB_00437d8c:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -2320,7 +2319,7 @@ LAB_00438010:
 /* WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(undefined8 param_1)
+ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   char *pcVar1;
@@ -2542,14 +2541,14 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int) */
 
 void WaterConcept::PlayerDataSerializer::levelAndStorylineToKey
-               (undefined8 param_1,undefined8 param_2,int param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int param_2)
 
 {
-  if (param_3 == 3) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00636699,param_2);
+  if (param_2 == 3) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&DAT_00636699,param_1);
     return;
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1);
   return;
 }
 
@@ -4702,7 +4701,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
    WaterConcept::PlayerDataSerializer::CollectibleInfo) */
 
 void WaterConcept::PlayerDataSerializer::_updateLocalCollectibleInfo
-               (undefined4 param_1,ulong param_2)
+               (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
   long lVar1;
@@ -4886,7 +4885,7 @@ LAB_0043b53c:
    WaterConcept::PlayerDataSerializer::CrankyChallengeInfo) */
 
 void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
-               (undefined4 param_1,char param_2)
+               (unsigned int param_1,WaterConcept::PlayerDataSerializer::CrankyChallengeInfo param_2)
 
 {
   long lVar1;
@@ -5017,7 +5016,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
    WaterConcept::PlayerDataSerializer::CollectibleInfo) */
 
 void WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo
-               (undefined4 param_1,ulong param_2)
+               (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
   long lVar1;
@@ -5208,7 +5207,7 @@ LAB_0043bbf4:
    WaterConcept::PlayerDataSerializer::CollectibleInfo) */
 
 void WaterConcept::PlayerDataSerializer::_updateLocalAllieMusicInfo
-               (undefined4 param_1,ulong param_2)
+               (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
   long lVar1;
@@ -5404,7 +5403,7 @@ LAB_0043bfe0:
    WaterConcept::PlayerDataSerializer::AllieChallengeInfo) */
 
 void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
-               (undefined4 param_1,char param_2)
+               (unsigned int param_1,WaterConcept::PlayerDataSerializer::AllieChallengeInfo param_2)
 
 {
   long lVar1;
@@ -5539,7 +5538,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
 /* WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&) */
 
-void WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(undefined8 param_1)
+void WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1)
 
 {
   long lVar1;
@@ -5570,7 +5569,7 @@ void WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(undefined8 param
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int&) */
 
 void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
-               (undefined8 param_1,byte *param_2,undefined4 *param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int& param_2)
 
 {
   ulong uVar1;
@@ -5583,13 +5582,13 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  *param_3 = 0x8e;
-  uVar1 = (ulong)(*param_2 >> 1);
-  if ((*param_2 & 1) != 0) {
-    uVar1 = *(ulong *)(param_2 + 8);
+  *param_2 = 0x8e;
+  uVar1 = (ulong)(*param_1 >> 1);
+  if ((*param_1 & 1) != 0) {
+    uVar1 = *(ulong *)(param_1 + 8);
   }
   if (3 < uVar1) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_2,0,3,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1,0,3,param_1);
     uVar1 = (ulong)(abStack_50[0] >> 1);
     if ((abStack_50[0] & 1) != 0) {
       uVar1 = uStack_48;
@@ -5597,9 +5596,9 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
                     /* try { // try from 0043c4cc to 0043c4e7 has its CatchHandler @ 0043c590 */
     if ((uVar1 == 3) &&
        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,&DAT_00636699,3), iVar3 == 0)) {
-      *param_3 = 0x10;
+      *param_2 = 0x10;
                     /* try { // try from 0043c544 to 0043c55b has its CatchHandler @ 0043c574 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2,3,0xffffffffffffffff,param_2);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1,3,0xffffffffffffffff,param_1);
       if ((abStack_50[0] & 1) != 0) {
         operator delete(pvStack_40);
       }
@@ -5609,7 +5608,7 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
       operator delete(pvStack_40);
     }
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1);
 LAB_0043c518:
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     __stack_chk_fail();

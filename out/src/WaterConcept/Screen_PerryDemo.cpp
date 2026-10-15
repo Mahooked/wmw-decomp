@@ -1040,33 +1040,33 @@ ulong WaterConcept::Screen_PerryDemo::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_PerryDemo::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
-void WaterConcept::Screen_PerryDemo::handleFocus(undefined8 param_1,long param_2,int param_3)
+void WaterConcept::Screen_PerryDemo::handleFocus(Walaber::Widget *param_1,Walaber::FocusEvent param_2)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   
-  if (*(int *)(param_2 + 0x84) != 1) {
+  if (*(int *)(param_1 + 0x84) != 1) {
     return;
   }
-  if ((param_3 == 5) || (param_3 == 2)) {
-    if (*(char *)(param_2 + 0x150) != '\0') {
+  if ((param_2 == 5) || (param_2 == 2)) {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();
     uVar2 = 0x8d;
   }
   else {
-    if (param_3 != 0) {
+    if (param_2 != 0) {
       return;
     }
-    if (*(char *)(param_2 + 0x150) != '\0') {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();

@@ -10,7 +10,7 @@
 /* Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,long *param_3)
+void Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2)
 
 {
   long lVar1;
@@ -33,12 +33,12 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0;
-  param_1[1] = 0;
-  lVar5 = *param_3;
-  param_1[2] = lVar5;
-  piVar4 = (int *)param_3[1];
-  param_1[3] = piVar4;
+  *this = 0;
+  this[1] = 0;
+  lVar5 = *param_2;
+  this[2] = lVar5;
+  piVar4 = (int *)param_2[1];
+  this[3] = piVar4;
   if (lVar5 != 0) {
     *piVar4 = *piVar4 + 1;
   }
@@ -46,7 +46,7 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   Walaber::PropertyList::PropertyList(auStack_70);
                     /* try { // try from 003d6b94 to 003d6bd3 has its CatchHandler @ 003d6cb8 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_007109e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -72,7 +72,7 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
     *piStack_88 = *piStack_88 + 1;
   }
                     /* try { // try from 003d6c28 to 003d6c3b has its CatchHandler @ 003d6c88 */
-  Walaber::FileManager::readFile(uVar3,param_2,&puStack_b0,auStack_70,0);
+  Walaber::FileManager::readFile(uVar3,param_1,&puStack_b0,auStack_70,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_80);
@@ -159,7 +159,7 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
    Walaber::SharedPtr<Walaber::Callback>) */
 
 void Walaber::XMLDocument::XMLDocument
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,long *param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::SharedPtr<Walaber::Callback> param_3)
 
 {
   long lVar1;
@@ -182,25 +182,25 @@ void Walaber::XMLDocument::XMLDocument
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  *param_1 = 0;
-  param_1[1] = 0;
-  lVar5 = *param_4;
-  param_1[2] = lVar5;
-  piVar4 = (int *)param_4[1];
-  param_1[3] = piVar4;
+  *this = 0;
+  this[1] = 0;
+  lVar5 = *param_3;
+  this[2] = lVar5;
+  piVar4 = (int *)param_3[1];
+  this[3] = piVar4;
   if (lVar5 != 0) {
     *piVar4 = *piVar4 + 1;
   }
                     /* try { // try from 003d6e98 to 003d6e9f has its CatchHandler @ 003d6ff8 */
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 003d6ea0 to 003d6eab has its CatchHandler @ 003d6ff4 */
-  Walaber::Property::Property(&puStack_80,param_3);
+  Walaber::Property::Property(&puStack_80,param_2);
                     /* try { // try from 003d6eac to 003d6ebf has its CatchHandler @ 003d6fe4 */
   Walaber::PropertyList::setValueForKey(auStack_60,&ROOT_NODE_NAME_KEY,&puStack_80);
   Walaber::Property::~Property(&puStack_80);
                     /* try { // try from 003d6ec8 to 003d6f07 has its CatchHandler @ 003d7000 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_007109e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -226,7 +226,7 @@ void Walaber::XMLDocument::XMLDocument
     *piStack_98 = *piStack_98 + 1;
   }
                     /* try { // try from 003d6f5c to 003d6f6f has its CatchHandler @ 003d6fbc */
-  Walaber::FileManager::readFile(uVar3,param_2,&puStack_c0,auStack_60,0);
+  Walaber::FileManager::readFile(uVar3,param_1,&puStack_c0,auStack_60,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_90);
@@ -344,7 +344,7 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 void Walaber::XMLDocument::_buildXMLObject
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+               (char *param_1,unsigned long param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
 
 {
   long lVar1;
@@ -355,10 +355,10 @@ void Walaber::XMLDocument::_buildXMLObject
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_4);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_3);
                     /* try { // try from 003d712c to 003d713f has its CatchHandler @ 003d717c */
-  uVar2 = Walaber::XML::loadDocMemory(param_2,param_3,abStack_50,param_1);
-  *(undefined8 *)(param_1 + 8) = uVar2;
+  uVar2 = Walaber::XML::loadDocMemory(param_1,param_2,abStack_50,this);
+  *(undefined8 *)(this + 8) = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }

@@ -10,7 +10,7 @@
 /* std::__ndk1::system_error::__init(std::__ndk1::error_code const&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void std::__ndk1::system_error::__init(undefined8 *param_1,int *param_2,byte *param_3)
+void std::__ndk1::system_error::__init(std::__ndk1::error_code const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2)
 
 {
   ulong uVar1;
@@ -26,17 +26,17 @@ void std::__ndk1::system_error::__init(undefined8 *param_1,int *param_2,byte *pa
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  iVar4 = *param_2;
+  iVar4 = *param_1;
   if (iVar4 == 0) goto LAB_005ef274;
-  if ((*param_3 & 1) == 0) {
-    if (*param_3 >> 1 != 0) {
+  if ((*param_2 & 1) == 0) {
+    if (*param_2 >> 1 != 0) {
 LAB_005ef210:
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_3,": ",2);
-      iVar4 = *param_2;
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_2,": ",2);
+      iVar4 = *param_1;
     }
   }
-  else if (*(long *)(param_3 + 8) != 0) goto LAB_005ef210;
-  (**(code **)(**(long **)(param_2 + 2) + 0x30))(abStack_50,*(long **)(param_2 + 2),iVar4);
+  else if (*(long *)(param_2 + 8) != 0) goto LAB_005ef210;
+  (**(code **)(**(long **)(param_1 + 2) + 0x30))(abStack_50,*(long **)(param_1 + 2),iVar4);
   uVar1 = (ulong)(abStack_50[0] >> 1);
   pvVar3 = (void *)((ulong)abStack_50 | 1);
   if ((abStack_50[0] & 1) != 0) {
@@ -44,40 +44,40 @@ LAB_005ef210:
     pvVar3 = pvStack_40;
   }
                     /* try { // try from 005ef25c to 005ef263 has its CatchHandler @ 005ef2b4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_3,pvVar3,uVar1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_2,pvVar3,uVar1);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
 LAB_005ef274:
-  uVar6 = *(undefined8 *)(param_3 + 8);
-  uVar5 = *(undefined8 *)param_3;
-  param_1[2] = *(undefined8 *)(param_3 + 0x10);
-  param_1[1] = uVar6;
-  *param_1 = uVar5;
-  param_3[8] = 0;
-  param_3[9] = 0;
-  param_3[10] = 0;
-  param_3[0xb] = 0;
-  param_3[0xc] = 0;
-  param_3[0xd] = 0;
-  param_3[0xe] = 0;
-  param_3[0xf] = 0;
-  param_3[0x10] = 0;
-  param_3[0x11] = 0;
-  param_3[0x12] = 0;
-  param_3[0x13] = 0;
-  param_3[0x14] = 0;
-  param_3[0x15] = 0;
-  param_3[0x16] = 0;
-  param_3[0x17] = 0;
-  param_3[0] = 0;
-  param_3[1] = 0;
-  param_3[2] = 0;
-  param_3[3] = 0;
-  param_3[4] = 0;
-  param_3[5] = 0;
-  param_3[6] = 0;
-  param_3[7] = 0;
+  uVar6 = *(undefined8 *)(param_2 + 8);
+  uVar5 = *(undefined8 *)param_2;
+  this[2] = *(undefined8 *)(param_2 + 0x10);
+  this[1] = uVar6;
+  *this = uVar5;
+  param_2[8] = 0;
+  param_2[9] = 0;
+  param_2[10] = 0;
+  param_2[0xb] = 0;
+  param_2[0xc] = 0;
+  param_2[0xd] = 0;
+  param_2[0xe] = 0;
+  param_2[0xf] = 0;
+  param_2[0x10] = 0;
+  param_2[0x11] = 0;
+  param_2[0x12] = 0;
+  param_2[0x13] = 0;
+  param_2[0x14] = 0;
+  param_2[0x15] = 0;
+  param_2[0x16] = 0;
+  param_2[0x17] = 0;
+  param_2[0] = 0;
+  param_2[1] = 0;
+  param_2[2] = 0;
+  param_2[3] = 0;
+  param_2[4] = 0;
+  param_2[5] = 0;
+  param_2[6] = 0;
+  param_2[7] = 0;
   if (*(long *)(lVar2 + 0x28) == lStack_38) {
     return;
   }
@@ -298,7 +298,7 @@ void std::__ndk1::system_error::system_error
    const&) */
 
 void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,ulong *param_4)
+               (int param_1,std::__ndk1::error_category const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
 
 {
   long lVar1;
@@ -320,20 +320,20 @@ void std::__ndk1::system_error::system_error
   uStack_98 = 0;
   pvStack_90 = (void *)0x0;
   uStack_a0 = 0;
-  auStack_80[0] = param_2;
-  uStack_78 = param_3;
-  if ((*param_4 & 1) == 0) {
-    pvStack_90 = (void *)param_4[2];
-    uStack_98 = param_4[1];
-    uStack_a0 = *param_4;
+  auStack_80[0] = param_1;
+  uStack_78 = param_2;
+  if ((*param_3 & 1) == 0) {
+    pvStack_90 = (void *)param_3[2];
+    uStack_98 = param_3[1];
+    uStack_a0 = *param_3;
     goto LAB_005ef780;
   }
-  uVar2 = param_4[1];
+  uVar2 = param_3[1];
   if (0xffffffffffffffef < uVar2) {
     std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a0);
     return;
   }
-  uVar3 = param_4[2];
+  uVar3 = param_3[2];
   if (uVar2 < 0x17) {
     pvVar4 = (void *)((ulong)&uStack_a0 | 1);
     uStack_a0 = (ulong)(byte)((int)uVar2 << 1);
@@ -353,16 +353,16 @@ LAB_005ef780:
                     /* try { // try from 005ef780 to 005ef78f has its CatchHandler @ 005ef83c */
   std::__ndk1::system_error::__init(abStack_70,auStack_80,&uStack_a0);
                     /* try { // try from 005ef790 to 005ef79b has its CatchHandler @ 005ef80c */
-  std::runtime_error::runtime_error(param_1,abStack_70);
+  std::runtime_error::runtime_error(this,abStack_70);
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
   if ((uStack_a0 & 1) != 0) {
     operator delete(pvStack_90);
   }
-  *(undefined4 *)(param_1 + 2) = param_2;
-  param_1[3] = param_3;
-  *param_1 = &PTR__system_error_00719200;
+  *(undefined4 *)(this + 2) = param_1;
+  this[3] = param_2;
+  *this = &PTR__system_error_00719200;
   if (*(long *)(lVar1 + 0x28) != lStack_58) {
     __stack_chk_fail();
     return;

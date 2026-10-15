@@ -84,7 +84,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::Widget_IconList::Icon,std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>& param_1)
 
 {
   int *piVar1;
@@ -94,13 +94,13 @@ void std::__ndk1::
   long *plVar5;
   long *plVar6;
   
-  plVar3 = (long *)*param_1;
-  if ((long *)param_1[1] == plVar3) {
-    lVar4 = param_2[1];
+  plVar3 = (long *)*this;
+  if ((long *)this[1] == plVar3) {
+    lVar4 = param_1[1];
   }
   else {
-    lVar4 = param_2[1];
-    plVar5 = (long *)param_1[1];
+    lVar4 = param_1[1];
+    plVar5 = (long *)this[1];
     do {
       plVar6 = plVar5 + -6;
       lVar2 = *plVar6;
@@ -113,21 +113,21 @@ void std::__ndk1::
                     /* try { // try from 0037f024 to 0037f027 has its CatchHandler @ 0037f09c */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4 + -0x20,plVar5 + -4);
       *(int *)(lVar4 + -8) = (int)plVar5[-1];
-      lVar4 = param_2[1] + -0x30;
-      param_2[1] = lVar4;
+      lVar4 = param_1[1] + -0x30;
+      param_1[1] = lVar4;
       plVar5 = plVar6;
     } while (plVar3 != plVar6);
-    plVar3 = (long *)*param_1;
+    plVar3 = (long *)*this;
   }
-  *param_1 = lVar4;
-  param_2[1] = plVar3;
-  lVar4 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar4;
-  lVar4 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar4;
-  *param_2 = param_2[1];
+  *this = lVar4;
+  param_1[1] = plVar3;
+  lVar4 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar4;
+  lVar4 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar4;
+  *param_1 = param_1[1];
   return;
 }
 

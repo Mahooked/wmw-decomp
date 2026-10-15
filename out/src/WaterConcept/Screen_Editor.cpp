@@ -540,7 +540,7 @@ void WaterConcept::Screen_Editor::loadPropertyList(Walaber__PropertyList *p0)
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte *param_3)
+void WaterConcept::Screen_Editor::loadLevel(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   ulong uVar1;
@@ -620,7 +620,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   lVar3 = operator new(0xad8);
                     /* try { // try from 004bd2a8 to 004bd2b7 has its CatchHandler @ 004bdad0 */
   WaterConcept::World::World(0x3f4ccccd,lVar3,iVar10);
-  *(long *)(param_1 + 0x98) = lVar3;
+  *(long *)(this + 0x98) = lVar3;
   *(undefined1 *)(lVar3 + 0xa68) = 1;
   uVar4 = Walaber::TextureManager::getManager();
   uStack_8b = 0;
@@ -652,7 +652,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT25(uStack_8b,CONCAT41(uStack_8f,uStack_90))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0x98);
+  uVar12 = *(undefined8 *)(this + 0x98);
   uVar4 = Walaber::TextureManager::getManager();
   uStack_8b = 0;
   uStack_89 = 0;
@@ -683,7 +683,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT25(uStack_8b,CONCAT41(uStack_8f,uStack_90))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0x98);
+  uVar12 = *(undefined8 *)(this + 0x98);
   uVar4 = Walaber::TextureManager::getManager();
   pcVar5 = (char *)operator new(0x20);
   uStack_90 = SUB81(pcVar5,0);
@@ -716,7 +716,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT25(uStack_8b,CONCAT41(uStack_8f,uStack_90))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0x98);
+  uVar12 = *(undefined8 *)(this + 0x98);
   uVar4 = Walaber::TextureManager::getManager();
   pcVar5 = (char *)operator new(0x20);
   uStack_90 = SUB81(pcVar5,0);
@@ -749,7 +749,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT25(uStack_8b,CONCAT41(uStack_8f,uStack_90))));
   }
-  lVar3 = *(long *)(param_1 + 0x98);
+  lVar3 = *(long *)(this + 0x98);
   uVar13 = 0;
   do {
     uVar4 = Walaber::TextureManager::getManager();
@@ -805,7 +805,7 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
     if (((ulong)puStack_168 & 1) != 0) {
       operator delete(pvStack_158);
     }
-    lVar3 = *(long *)(param_1 + 0x98);
+    lVar3 = *(long *)(this + 0x98);
   } while (uVar13 < 3);
   uVar4 = Walaber::TextureManager::getManager();
   puStack_130 = (undefined8 *)0x0;
@@ -865,13 +865,13 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT25(uStack_8b,CONCAT41(uStack_8f,uStack_90))));
   }
-  uVar1 = (ulong)(*param_3 >> 1);
-  if ((*param_3 & 1) != 0) {
-    uVar1 = *(ulong *)(param_3 + 8);
+  uVar1 = (ulong)(*param_2 >> 1);
+  if ((*param_2 & 1) != 0) {
+    uVar1 = *(ulong *)(param_2 + 8);
   }
   if (uVar1 < 2) {
     puVar7 = (undefined8 *)operator new(0x28);
-    puVar7[2] = param_1;
+    puVar7[2] = this;
     *puVar7 = &PTR__Callback_00713688;
     puVar7[1] = 0;
     puVar7[4] = 0;
@@ -892,17 +892,17 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
     puStack_168 = puVar7;
     piStack_160 = piVar8;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_130);
-    uVar4 = *(undefined8 *)(param_1 + 0x98);
+    uVar4 = *(undefined8 *)(this + 0x98);
     *piVar8 = *piVar8 + 1;
                     /* try { // try from 004bd8ac to 004bd8b7 has its CatchHandler @ 004bd9b0 */
     puStack_1e8 = puVar7;
     piStack_1e0 = piVar8;
-    WaterConcept::World::loadLevel(uVar4,param_2,&puStack_1e8);
+    WaterConcept::World::loadLevel(uVar4,param_1,&puStack_1e8);
     ppuVar9 = &puStack_1e8;
   }
   else {
     puVar7 = (undefined8 *)operator new(0x28);
-    puVar7[2] = param_1;
+    puVar7[2] = this;
     *puVar7 = &PTR__Callback_00713688;
     puVar7[1] = 0;
     puVar7[4] = 0;
@@ -923,12 +923,12 @@ void WaterConcept::Screen_Editor::loadLevel(long param_1,undefined8 param_2,byte
     puStack_168 = puVar7;
     piStack_160 = piVar8;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_130);
-    uVar4 = *(undefined8 *)(param_1 + 0x98);
+    uVar4 = *(undefined8 *)(this + 0x98);
     *piVar8 = *piVar8 + 1;
                     /* try { // try from 004bd948 to 004bd957 has its CatchHandler @ 004bd9a4 */
     puStack_1f8 = puVar7;
     piStack_1f0 = piVar8;
-    WaterConcept::World::loadLevel(uVar4,param_2,param_3,&puStack_1f8);
+    WaterConcept::World::loadLevel(uVar4,param_1,param_2,&puStack_1f8);
     ppuVar9 = &puStack_1f8;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(ppuVar9);
@@ -4354,7 +4354,7 @@ void WaterConcept::Screen_Editor::_pressTrack(long param_1,long param_2)
 /* WaterConcept::Screen_Editor::addObject(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void WaterConcept::Screen_Editor::addObject(undefined8 param_1,undefined8 param_2)
+void WaterConcept::Screen_Editor::addObject(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -4377,7 +4377,7 @@ void WaterConcept::Screen_Editor::addObject(undefined8 param_1,undefined8 param_
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_00713688;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -4396,7 +4396,7 @@ void WaterConcept::Screen_Editor::addObject(undefined8 param_1,undefined8 param_
   piStack_60 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
                     /* try { // try from 004c288c to 004c2897 has its CatchHandler @ 004c292c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_1);
   puStack_a0 = puStack_68;
   piStack_98 = piStack_60;
   if (puStack_68 != (undefined8 *)0x0) {

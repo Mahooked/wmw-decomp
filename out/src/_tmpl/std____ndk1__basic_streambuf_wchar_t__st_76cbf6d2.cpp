@@ -405,22 +405,22 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::ba
    const&) */
 
 void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::basic_streambuf
-               (undefined8 *param_1,long param_2)
+               (std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t>> const& param_1)
 
 {
   undefined8 uVar1;
   
-  *param_1 = &PTR__basic_streambuf_00716288;
-  std::__ndk1::locale::locale(param_1 + 1,param_2 + 8);
-  uVar1 = *(undefined8 *)(param_2 + 0x10);
-  param_1[3] = *(undefined8 *)(param_2 + 0x18);
-  param_1[2] = uVar1;
-  uVar1 = *(undefined8 *)(param_2 + 0x20);
-  param_1[5] = *(undefined8 *)(param_2 + 0x28);
-  param_1[4] = uVar1;
-  uVar1 = *(undefined8 *)(param_2 + 0x30);
-  param_1[7] = *(undefined8 *)(param_2 + 0x38);
-  param_1[6] = uVar1;
+  *this = &PTR__basic_streambuf_00716288;
+  std::__ndk1::locale::locale(this + 1,param_1 + 8);
+  uVar1 = *(undefined8 *)(param_1 + 0x10);
+  this[3] = *(undefined8 *)(param_1 + 0x18);
+  this[2] = uVar1;
+  uVar1 = *(undefined8 *)(param_1 + 0x20);
+  this[5] = *(undefined8 *)(param_1 + 0x28);
+  this[4] = uVar1;
+  uVar1 = *(undefined8 *)(param_1 + 0x30);
+  this[7] = *(undefined8 *)(param_1 + 0x38);
+  this[6] = uVar1;
   return;
 }
 

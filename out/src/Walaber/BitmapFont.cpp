@@ -69,7 +69,7 @@ void Walaber::BitmapFont::~BitmapFont(byte *param_1)
 /* Walaber::BitmapFont::load(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_3)
+void Walaber::BitmapFont::load(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::SharedPtr<Walaber::Callback> param_2)
 
 {
   long lVar1;
@@ -91,11 +91,11 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0xa8,param_3);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(this + 0xa8,param_2);
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 00364710 to 0036474f has its CatchHandler @ 00364828 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_0070ea98;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -121,7 +121,7 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
     *piStack_78 = *piStack_78 + 1;
   }
                     /* try { // try from 003647a4 to 003647b7 has its CatchHandler @ 00364800 */
-  Walaber::FileManager::readFile(uVar4,param_2,&puStack_a0,auStack_60,0);
+  Walaber::FileManager::readFile(uVar4,param_1,&puStack_a0,auStack_60,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::BitmapFont>>::~SharedPtr(&puStack_70);
@@ -717,8 +717,7 @@ LAB_0036573c:
    Walaber::Vector2 const&, float, Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::BitmapFont::addGlyph
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6,long *param_7)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::Rect const& param_2,Walaber::Vector2 const& param_3,Walaber::Vector2 const& param_4,float param_5,Walaber::SharedPtr<Walaber::Texture> param_6)
 
 {
   long lVar1;
@@ -731,14 +730,14 @@ void Walaber::BitmapFont::addGlyph
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_5c = 0;
-  uVar2 = Walaber::BitmapFont::_getGlyphKey(param_2,&uStack_5c,param_3);
-  lStack_70 = *param_7;
-  piStack_68 = (int *)param_7[1];
+  uVar2 = Walaber::BitmapFont::_getGlyphKey(param_1,&uStack_5c,param_2);
+  lStack_70 = *param_6;
+  piStack_68 = (int *)param_6[1];
   if (lStack_70 != 0) {
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 003658b0 to 003658cf has its CatchHandler @ 00365908 */
-  Walaber::BitmapFont::addGlyphKey(param_1,param_2,uVar2,param_4,param_5,param_6,&lStack_70,0);
+  Walaber::BitmapFont::addGlyphKey(this,param_1,uVar2,param_3,param_4,param_5,&lStack_70,0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
@@ -756,7 +755,7 @@ void Walaber::BitmapFont::addGlyph
 /* Walaber::BitmapFont::_getGlyphKey(unsigned int&, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) const */
 
-void Walaber::BitmapFont::_getGlyphKey(undefined8 param_1,uint *param_2,byte *param_3)
+void Walaber::BitmapFont::_getGlyphKey(unsigned int& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   byte *pbVar1;
@@ -765,11 +764,11 @@ void Walaber::BitmapFont::_getGlyphKey(undefined8 param_1,uint *param_2,byte *pa
   byte *pbVar4;
   long lVar5;
   
-  pbVar4 = *(byte **)(param_3 + 0x10);
-  if ((*param_3 & 1) == 0) {
-    pbVar4 = param_3 + 1;
+  pbVar4 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar4 = param_2 + 1;
   }
-  mUTF8Bytes = pbVar4[*param_2];
+  mUTF8Bytes = pbVar4[*param_1];
   pbVar4 = &mUTF8Bytes;
   uVar3 = Walaber::UTF8Helper::getNumCodeBytes();
   if ((int)uVar3 < 2) {
@@ -779,11 +778,11 @@ void Walaber::BitmapFont::_getGlyphKey(undefined8 param_1,uint *param_2,byte *pa
     lVar5 = (ulong)uVar3 - 1;
     do {
       pbVar4 = pbVar4 + 1;
-      uVar2 = *param_2;
-      *param_2 = uVar2 + 1;
-      pbVar1 = param_3 + 1;
-      if ((*param_3 & 1) != 0) {
-        pbVar1 = *(byte **)(param_3 + 0x10);
+      uVar2 = *param_1;
+      *param_1 = uVar2 + 1;
+      pbVar1 = param_2 + 1;
+      if ((*param_2 & 1) != 0) {
+        pbVar1 = *(byte **)(param_2 + 0x10);
       }
       lVar5 = lVar5 + -1;
       *pbVar4 = pbVar1[uVar2 + 1];
@@ -803,8 +802,7 @@ void Walaber::BitmapFont::_getGlyphKey(undefined8 param_1,uint *param_2,byte *pa
    Walaber::Vector2 const&, float, Walaber::SharedPtr<Walaber::Texture>, bool) */
 
 void Walaber::BitmapFont::addGlyphKey
-               (float param_1,long param_2,undefined4 param_3,undefined8 *param_4,float *param_5,
-               float *param_6,long *param_7,byte param_8)
+               (unsigned int param_1,Walaber::Rect const& param_2,Walaber::Vector2 const& param_3,Walaber::Vector2 const& param_4,float param_5,Walaber::SharedPtr<Walaber::Texture> param_6,bool param_7)
 
 {
   long lVar1;
@@ -835,28 +833,28 @@ void Walaber::BitmapFont::addGlyphKey
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  bStack_3c = param_8 & 1;
-  lVar2 = *param_7;
-  fVar8 = param_5[1];
+  bStack_3c = param_7 & 1;
+  lVar2 = *param_6;
+  fVar8 = param_4[1];
   uStack_40 = 0;
-  fVar9 = *(float *)(param_2 + 0x94) / fVar8;
-  if (fVar8 <= *(float *)(param_2 + 0x94)) {
+  fVar9 = *(float *)(param_1 + 0x94) / fVar8;
+  if (fVar8 <= *(float *)(param_1 + 0x94)) {
     fVar9 = 1.0;
   }
   uVar10 = NEON_ucvtf(*(undefined8 *)(lVar2 + 0x7c),4);
   fStack_58 = (float)((ulong)uVar10 >> 0x20);
-  fStack_64 = (float)*param_4 / (float)uVar10;
-  fStack_60 = (float)((ulong)*param_4 >> 0x20) / fStack_58;
-  fStack_5c = (float)param_4[1] / (float)uVar10;
-  fStack_58 = (float)((ulong)param_4[1] >> 0x20) / fStack_58;
-  fStack_50 = *(float *)(param_2 + 0x90);
-  fStack_4c = fStack_50 * *param_6;
-  fStack_48 = fStack_50 * param_6[1];
-  fStack_44 = fVar9 * param_1 * fStack_50;
-  fStack_54 = fVar9 * *param_5 * fStack_50;
+  fStack_64 = (float)*param_3 / (float)uVar10;
+  fStack_60 = (float)((ulong)*param_3 >> 0x20) / fStack_58;
+  fStack_5c = (float)param_3[1] / (float)uVar10;
+  fStack_58 = (float)((ulong)param_3[1] >> 0x20) / fStack_58;
+  fStack_50 = *(float *)(param_1 + 0x90);
+  fStack_4c = fStack_50 * *param_5;
+  fStack_48 = fStack_50 * param_5[1];
+  fStack_44 = fVar9 * this * fStack_50;
+  fStack_54 = fVar9 * *param_4 * fStack_50;
   fStack_50 = fVar9 * fVar8 * fStack_50;
-  plVar3 = *(long **)(param_2 + 0x78);
-  plVar4 = *(long **)(param_2 + 0x80);
+  plVar3 = *(long **)(param_1 + 0x78);
+  plVar4 = *(long **)(param_1 + 0x80);
   uVar6 = (uint)((ulong)((long)plVar4 - (long)plVar3) >> 4);
   plVar7 = plVar3;
   if (uVar6 != 0) {
@@ -866,27 +864,27 @@ void Walaber::BitmapFont::addGlyphKey
       plVar7 = plVar7 + 2;
     } while (uStack_40 < uVar6);
   }
-  uStack_68 = param_3;
+  uStack_68 = param_2;
   if (uStack_40 == uVar6) {
-    if (*(long **)(param_2 + 0x88) == plVar4) {
-      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long *)(param_2 + 0x78),param_7);
-      plVar3 = *(long **)(param_2 + 0x78);
-      plVar4 = *(long **)(param_2 + 0x80);
+    if (*(long **)(param_1 + 0x88) == plVar4) {
+      void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>((long *)(param_1 + 0x78),param_6);
+      plVar3 = *(long **)(param_1 + 0x78);
+      plVar4 = *(long **)(param_1 + 0x80);
     }
     else {
       *plVar4 = lVar2;
-      piVar5 = (int *)param_7[1];
+      piVar5 = (int *)param_6[1];
       plVar4[1] = (long)piVar5;
       if (lVar2 != 0) {
         *piVar5 = *piVar5 + 1;
       }
       plVar4 = plVar4 + 2;
-      *(long **)(param_2 + 0x80) = plVar4;
+      *(long **)(param_1 + 0x80) = plVar4;
     }
     uStack_40 = (int)((ulong)((long)plVar4 - (long)plVar3) >> 4) - 1;
   }
   puStack_70 = &uStack_68;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int const&>, std::__ndk1::tuple<>>(param_2 + 0x30,&uStack_68,&DAT_0062b9fd,&puStack_70,auStack_78);
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::BitmapFont::GlyphInfo>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int const&>, std::__ndk1::tuple<>>(param_1 + 0x30,&uStack_68,&DAT_0062b9fd,&puStack_70,auStack_78);
   *(undefined4 *)(lVar2 + 0x20) = uStack_68;
   *(float *)(lVar2 + 0x24) = fStack_64;
   *(float *)(lVar2 + 0x28) = fStack_60;
@@ -1691,7 +1689,7 @@ void Walaber::BitmapFont::wrapString(long param_1)
    const&) const */
 
 void Walaber::BitmapFont::wrapStringInSize
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
+               (float& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,float param_3,Walaber::Vector2 const& param_4)
 
 {
   Walaber::BitmapFont::wrapStringInSize(param_1,param_2,param_2,param_3,param_4);
@@ -2437,8 +2435,7 @@ void Walaber::BitmapFont::flush(long param_1)
    Walaber::Color const&, Walaber::BitmapFont::Justification) */
 
 void Walaber::BitmapFont::drawStringWrap
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined4 param_8)
+               (char const *param_1,Walaber::Vector2 const& param_2,float param_3,float param_4,float param_5,Walaber::Color const& param_6,Walaber::BitmapFont::Justification param_7)
 
 {
   long lVar1;
@@ -2459,7 +2456,7 @@ void Walaber::BitmapFont::drawStringWrap
   uStack_b0 = 0;
   uStack_a8 = 0;
   pvStack_a0 = (void *)0x0;
-  uVar2 = strlen(param_5);
+  uVar2 = strlen(param_4);
   if (0xffffffffffffffef < uVar2) {
     std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
     return;
@@ -2476,17 +2473,17 @@ void Walaber::BitmapFont::drawStringWrap
     uStack_a8 = uVar2;
     pvStack_a0 = pvVar3;
   }
-  memcpy(pvVar3,param_5,uVar2);
+  memcpy(pvVar3,param_4,uVar2);
 LAB_00367e6c:
   *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 00367e70 to 00367e8f has its CatchHandler @ 00367f34 */
-  Walaber::BitmapFont::_wrapText(abStack_98,param_2,param_3,param_4,&uStack_7c,&uStack_b0);
+  Walaber::BitmapFont::_wrapText(abStack_98,param_1,param_2,param_3,&uStack_7c,&uStack_b0);
   pvVar3 = (void *)((ulong)abStack_98 | 1);
   if ((abStack_98[0] & 1) != 0) {
     pvVar3 = pvStack_88;
   }
                     /* try { // try from 00367ea4 to 00367ebf has its CatchHandler @ 00367f20 */
-  Walaber::BitmapFont::drawString(param_1,param_2,param_4,pvVar3,param_6,param_7,param_8);
+  Walaber::BitmapFont::drawString(this,param_1,param_3,pvVar3,param_5,param_6,param_7);
   if ((abStack_98[0] & 1) != 0) {
     operator delete(pvStack_88);
   }
@@ -2647,8 +2644,7 @@ void Walaber::BitmapFont::_wrapText
    Walaber::Vector2 const&, Walaber::Color const&, Walaber::BitmapFont::Justification) */
 
 void Walaber::BitmapFont::drawStringWrapScale
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined4 param_8)
+               (char const *param_1,Walaber::Vector2 const& param_2,float param_3,float param_4,Walaber::Vector2 const& param_5,Walaber::Color const& param_6,Walaber::BitmapFont::Justification param_7)
 
 {
   long lVar1;
@@ -2668,7 +2664,7 @@ void Walaber::BitmapFont::drawStringWrapScale
   uStack_b0 = 0;
   uStack_a8 = 0;
   pvStack_a0 = (void *)0x0;
-  uVar2 = strlen(param_4);
+  uVar2 = strlen(param_3);
   if (0xffffffffffffffef < uVar2) {
     std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
     return;
@@ -2685,11 +2681,11 @@ void Walaber::BitmapFont::drawStringWrapScale
     uStack_a8 = uVar2;
     pvStack_a0 = pvVar3;
   }
-  memcpy(pvVar3,param_4,uVar2);
+  memcpy(pvVar3,param_3,uVar2);
 LAB_003682d8:
   *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 003682dc to 003682f7 has its CatchHandler @ 003683a0 */
-  Walaber::BitmapFont::_wrapTextScale(abStack_98,param_2,param_3,&uStack_7c,&uStack_b0,param_6);
+  Walaber::BitmapFont::_wrapTextScale(abStack_98,param_1,param_2,&uStack_7c,&uStack_b0,param_5);
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
@@ -2698,7 +2694,7 @@ LAB_003682d8:
     pvVar3 = pvStack_88;
   }
                     /* try { // try from 00368324 to 0036833b has its CatchHandler @ 0036838c */
-  Walaber::BitmapFont::drawString(param_1,uStack_7c,param_3,pvVar3,param_5,param_7,param_8);
+  Walaber::BitmapFont::drawString(this,uStack_7c,param_2,pvVar3,param_4,param_6,param_7);
   if ((abStack_98[0] & 1) != 0) {
     operator delete(pvStack_88);
   }

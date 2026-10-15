@@ -33,7 +33,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>>
 ::
 __emplace_unique_key_args<int,std::__ndk1::pair<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>
-          (long param_1,int *param_2,undefined4 *param_3)
+          (int const& param_1,std::__ndk1::pair<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>&& param_2)
 
 {
   bool bVar1;
@@ -44,18 +44,18 @@ __emplace_unique_key_args<int,std::__ndk1::pair<int,std::__ndk1::vector<Walaber:
   undefined8 uVar6;
   undefined1 auVar7 [16];
   
-  plVar3 = (long *)(param_1 + 8);
+  plVar3 = (long *)(this + 8);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+    plVar4 = (long *)(this + 8);
     do {
-      while (plVar3 = plVar2, *param_2 < (int)plVar3[4]) {
+      while (plVar3 = plVar2, *param_1 < (int)plVar3[4]) {
         plVar2 = (long *)*plVar3;
         plVar4 = plVar3;
         if ((long *)*plVar3 == (long *)0x0) goto LAB_00349d10;
       }
-      if (*param_2 <= (int)plVar3[4]) break;
+      if (*param_1 <= (int)plVar3[4]) break;
       plVar4 = plVar3 + 1;
       plVar2 = (long *)*plVar4;
     } while ((long *)*plVar4 != (long *)0x0);
@@ -65,15 +65,15 @@ LAB_00349d10:
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = operator new(0x40);
-    *(undefined4 *)(lVar5 + 0x20) = *param_3;
-    uVar6 = *(undefined8 *)(param_3 + 2);
-    *(undefined8 *)(lVar5 + 0x30) = *(undefined8 *)(param_3 + 4);
+    *(undefined4 *)(lVar5 + 0x20) = *param_2;
+    uVar6 = *(undefined8 *)(param_2 + 2);
+    *(undefined8 *)(lVar5 + 0x30) = *(undefined8 *)(param_2 + 4);
     *(undefined8 *)(lVar5 + 0x28) = uVar6;
-    *(undefined8 *)(lVar5 + 0x38) = *(undefined8 *)(param_3 + 6);
-    *(undefined8 *)(param_3 + 2) = 0;
-    *(undefined8 *)(param_3 + 4) = 0;
-    *(undefined8 *)(param_3 + 6) = 0;
-    std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>>::__insert_node_at(param_1,plVar3,plVar4,lVar5);
+    *(undefined8 *)(lVar5 + 0x38) = *(undefined8 *)(param_2 + 6);
+    *(undefined8 *)(param_2 + 2) = 0;
+    *(undefined8 *)(param_2 + 4) = 0;
+    *(undefined8 *)(param_2 + 6) = 0;
+    std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupData, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupData>>>>>::__insert_node_at(this,plVar3,plVar4,lVar5);
   }
   auVar7[8] = bVar1;
   auVar7._0_8_ = lVar5;

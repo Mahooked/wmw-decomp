@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<WaterConcept::World::RegionInfo,std::__ndk1::allocator<WaterConcept::World::RegionInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&>& param_1)
 
 {
   long *plVar1;
@@ -28,13 +28,13 @@ void std::__ndk1::
   undefined8 uVar9;
   undefined8 uVar10;
   
-  lVar6 = *param_1;
-  lVar7 = param_1[1];
+  lVar6 = *this;
+  lVar7 = this[1];
   if (lVar7 == lVar6) {
-    lVar4 = param_2[1];
+    lVar4 = param_1[1];
   }
   else {
-    lVar4 = param_2[1];
+    lVar4 = param_1[1];
     do {
       uVar10 = *(undefined8 *)(lVar7 + -0x20);
       uVar9 = *(undefined8 *)(lVar7 + -0x28);
@@ -71,20 +71,20 @@ void std::__ndk1::
         } while (plVar2 != (long *)(lVar7 + -0x10));
       }
       lVar7 = lVar7 + -0x28;
-      lVar4 = param_2[1] + -0x28;
-      param_2[1] = lVar4;
+      lVar4 = param_1[1] + -0x28;
+      param_1[1] = lVar4;
     } while (lVar7 != lVar6);
-    lVar6 = *param_1;
+    lVar6 = *this;
   }
-  *param_1 = lVar4;
-  param_2[1] = lVar6;
-  lVar6 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar6;
-  lVar6 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar6;
-  *param_2 = param_2[1];
+  *this = lVar4;
+  param_1[1] = lVar6;
+  lVar6 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar6;
+  lVar6 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar6;
+  *param_1 = param_1[1];
   return;
 }
 

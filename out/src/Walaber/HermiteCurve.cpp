@@ -92,19 +92,19 @@ void Walaber::HermiteCurve::ComputeTangent(long param_1,int param_2,int param_3,
 
 /* Walaber::HermiteCurve::ComputeTangents(Walaber::HermiteCurve::HermiteCurveTangent) */
 
-void Walaber::HermiteCurve::ComputeTangents(long param_1,undefined4 param_2)
+void Walaber::HermiteCurve::ComputeTangents(Walaber::HermiteCurve::HermiteCurveTangent param_1)
 
 {
   ulong uVar1;
   uint uVar2;
   
-  if (*(long *)(param_1 + 8) != 0) {
+  if (*(long *)(this + 8) != 0) {
     uVar2 = 1;
     do {
-      Walaber::HermiteCurve::ComputeTangent(param_1,uVar2 - 1,param_2,param_2);
+      Walaber::HermiteCurve::ComputeTangent(this,uVar2 - 1,param_1,param_1);
       uVar1 = (ulong)uVar2;
       uVar2 = uVar2 + 1;
-    } while (uVar1 < *(ulong *)(param_1 + 8));
+    } while (uVar1 < *(ulong *)(this + 8));
   }
   return;
 }
@@ -118,17 +118,17 @@ void Walaber::HermiteCurve::ComputeTangents(long param_1,undefined4 param_2)
 /* Walaber::HermiteCurve::ComputeTangents(Walaber::HermiteCurve::HermiteCurveTangent,
    Walaber::HermiteCurve::HermiteCurveTangent) */
 
-void Walaber::HermiteCurve::ComputeTangents(long param_1,undefined4 param_2,undefined4 param_3)
+void Walaber::HermiteCurve::ComputeTangents(Walaber::HermiteCurve::HermiteCurveTangent param_1,Walaber::HermiteCurve::HermiteCurveTangent param_2)
 
 {
   ulong uVar1;
   
-  if (*(long *)(param_1 + 8) != 0) {
+  if (*(long *)(this + 8) != 0) {
     uVar1 = 0;
     do {
-      Walaber::HermiteCurve::ComputeTangent(param_1,uVar1,param_2,param_3);
+      Walaber::HermiteCurve::ComputeTangent(this,uVar1,param_1,param_2);
       uVar1 = (ulong)((int)uVar1 + 1);
-    } while (uVar1 < *(ulong *)(param_1 + 8));
+    } while (uVar1 < *(ulong *)(this + 8));
   }
   return;
 }

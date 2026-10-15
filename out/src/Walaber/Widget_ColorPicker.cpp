@@ -326,9 +326,7 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_ColorPicker::Widget_ColorPicker
-               (undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,int param_6,int param_7,undefined4 param_8,long *param_9,
-               long *param_10,long *param_11)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,int param_4,int param_5,float param_6,int param_7,Walaber::SharedPtr<Walaber::Texture> param_8,Walaber::SharedPtr<Walaber::Texture> param_9,Walaber::SharedPtr<Walaber::Texture> param_10)
 
 {
   uint uVar1;
@@ -347,75 +345,75 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  uStack_70 = *param_4;
-  uStack_78 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,4,&uStack_70,&uStack_78,1,1);
-  *(int *)((long)param_2 + 0xfc) = param_7;
-  *(int *)(param_2 + 0x20) = param_6;
-  *(undefined4 *)(param_2 + 0x22) = param_8;
-  *(undefined4 *)((long)param_2 + 0x114) = param_1;
-  param_2[0x23] = 0;
-  *param_2 = &PTR__Widget_ColorPicker_0070ede8;
+  uStack_70 = *param_3;
+  uStack_78 = *param_4;
+  Walaber::Widget::Widget(param_1,param_2,4,&uStack_70,&uStack_78,1,1);
+  *(int *)((long)param_1 + 0xfc) = param_6;
+  *(int *)(param_1 + 0x20) = param_5;
+  *(undefined4 *)(param_1 + 0x22) = param_7;
+  *(undefined4 *)((long)param_1 + 0x114) = this;
+  param_1[0x23] = 0;
+  *param_1 = &PTR__Widget_ColorPicker_0070ede8;
+  lVar6 = *param_8;
+  param_1[0x26] = lVar6;
+  piVar4 = (int *)param_8[1];
+  param_1[0x27] = piVar4;
+  if (lVar6 != 0) {
+    *piVar4 = *piVar4 + 1;
+  }
   lVar6 = *param_9;
-  param_2[0x26] = lVar6;
+  param_1[0x28] = lVar6;
   piVar4 = (int *)param_9[1];
-  param_2[0x27] = piVar4;
+  param_1[0x29] = piVar4;
   if (lVar6 != 0) {
     *piVar4 = *piVar4 + 1;
   }
   lVar6 = *param_10;
-  param_2[0x28] = lVar6;
+  param_1[0x2a] = lVar6;
   piVar4 = (int *)param_10[1];
-  param_2[0x29] = piVar4;
+  param_1[0x2b] = piVar4;
   if (lVar6 != 0) {
     *piVar4 = *piVar4 + 1;
   }
-  lVar6 = *param_11;
-  param_2[0x2a] = lVar6;
-  piVar4 = (int *)param_11[1];
-  param_2[0x2b] = piVar4;
-  if (lVar6 != 0) {
-    *piVar4 = *piVar4 + 1;
+  param_1[0x33] = 0;
+  param_1[0x34] = 0;
+  param_1[0x32] = 0;
+  param_1[0x2d] = 0;
+  param_1[0x2c] = 0;
+  param_1[0x2f] = 0;
+  param_1[0x2e] = 0;
+  param_1[0x31] = 0;
+  param_1[0x30] = 0;
+  param_1[0x36] = 0;
+  param_1[0x35] = 0;
+  lVar6 = *param_8;
+  if ((lVar6 != 0) && (*(int *)param_8[1] != 0)) {
+    uVar9 = *(undefined8 *)(lVar6 + 0x8c);
+    uVar10 = *(undefined8 *)(lVar6 + 0x84);
+    param_1[0x2c] = uVar9;
+    param_1[0x2d] =
+         CONCAT44((float)((ulong)uVar10 >> 0x20) - (float)((ulong)uVar9 >> 0x20),
+                  (float)uVar10 - (float)uVar9);
   }
-  param_2[0x33] = 0;
-  param_2[0x34] = 0;
-  param_2[0x32] = 0;
-  param_2[0x2d] = 0;
-  param_2[0x2c] = 0;
-  param_2[0x2f] = 0;
-  param_2[0x2e] = 0;
-  param_2[0x31] = 0;
-  param_2[0x30] = 0;
-  param_2[0x36] = 0;
-  param_2[0x35] = 0;
   lVar6 = *param_9;
   if ((lVar6 != 0) && (*(int *)param_9[1] != 0)) {
     uVar9 = *(undefined8 *)(lVar6 + 0x8c);
     uVar10 = *(undefined8 *)(lVar6 + 0x84);
-    param_2[0x2c] = uVar9;
-    param_2[0x2d] =
+    param_1[0x2e] = uVar9;
+    param_1[0x2f] =
          CONCAT44((float)((ulong)uVar10 >> 0x20) - (float)((ulong)uVar9 >> 0x20),
                   (float)uVar10 - (float)uVar9);
   }
   lVar6 = *param_10;
-  if ((lVar6 != 0) && (*(int *)param_10[1] != 0)) {
-    uVar9 = *(undefined8 *)(lVar6 + 0x8c);
-    uVar10 = *(undefined8 *)(lVar6 + 0x84);
-    param_2[0x2e] = uVar9;
-    param_2[0x2f] =
-         CONCAT44((float)((ulong)uVar10 >> 0x20) - (float)((ulong)uVar9 >> 0x20),
-                  (float)uVar10 - (float)uVar9);
-  }
-  lVar6 = *param_11;
   if (lVar6 != 0) {
     uVar9 = *(undefined8 *)(lVar6 + 0x8c);
     uVar10 = *(undefined8 *)(lVar6 + 0x84);
-    param_2[0x30] = uVar9;
-    param_2[0x31] =
+    param_1[0x30] = uVar9;
+    param_1[0x31] =
          CONCAT44((float)((ulong)uVar10 >> 0x20) - (float)((ulong)uVar9 >> 0x20),
                   (float)uVar10 - (float)uVar9);
   }
-  uVar1 = param_7 * param_6;
+  uVar1 = param_6 * param_5;
   uVar5 = -(ulong)(uVar1 >> 0x1f) & 0xfffffffc00000000 | (ulong)uVar1 << 2;
   if ((ulong)(long)(int)uVar1 >> 0x3e != 0) {
     uVar5 = 0xffffffffffffffff;
@@ -430,8 +428,8 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
       puVar7 = puVar8;
     } while (puVar8 != puVar3 + (int)uVar1);
   }
-  param_2[0x21] = puVar3;
-  Walaber::Widget_ColorPicker::_setupColorSwatches(param_2);
+  param_1[0x21] = puVar3;
+  Walaber::Widget_ColorPicker::_setupColorSwatches(param_1);
   if (*(long *)(lVar2 + 0x28) == lStack_68) {
     return;
   }
@@ -570,21 +568,21 @@ void Walaber::Widget_ColorPicker::setSwatchHilightTexture(long param_1)
 
 /* Walaber::Widget_ColorPicker::setIcon(Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2) */
 
-void Walaber::Widget_ColorPicker::setIcon(long param_1,undefined8 param_2,undefined8 *param_3)
+void Walaber::Widget_ColorPicker::setIcon(Walaber::SharedPtr<Walaber::Texture> param_1,Walaber::Vector2 param_2)
 
 {
   long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 400);
-  lVar1 = *(long *)(param_1 + 400);
-  *(undefined8 *)(param_1 + 0x1a0) = *param_3;
-  if ((lVar1 != 0) && (**(int **)(param_1 + 0x198) != 0)) {
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 400);
+  lVar1 = *(long *)(this + 400);
+  *(undefined8 *)(this + 0x1a0) = *param_2;
+  if ((lVar1 != 0) && (**(int **)(this + 0x198) != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
     uVar3 = *(undefined8 *)(lVar1 + 0x84);
-    *(undefined8 *)(param_1 + 0x1a8) = uVar2;
-    *(ulong *)(param_1 + 0x1b0) =
+    *(undefined8 *)(this + 0x1a8) = uVar2;
+    *(ulong *)(this + 0x1b0) =
          CONCAT44((float)((ulong)uVar3 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar3 - (float)uVar2);
   }

@@ -189,37 +189,37 @@ ulong std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>& param_1)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  lVar3 = *param_1;
-  lVar2 = param_1[1];
+  lVar3 = *this;
+  lVar2 = this[1];
   if (lVar2 == lVar3) {
-    lVar1 = param_2[1];
+    lVar1 = param_1[1];
   }
   else {
-    lVar1 = param_2[1];
+    lVar1 = param_1[1];
     do {
       lVar2 = lVar2 + -0x88;
       WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1 + -0x88,lVar2);
-      lVar1 = param_2[1] + -0x88;
-      param_2[1] = lVar1;
+      lVar1 = param_1[1] + -0x88;
+      param_1[1] = lVar1;
     } while (lVar3 != lVar2);
-    lVar3 = *param_1;
+    lVar3 = *this;
   }
-  *param_1 = lVar1;
-  param_2[1] = lVar3;
-  lVar3 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar3;
-  lVar3 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar3;
-  *param_2 = param_2[1];
+  *this = lVar1;
+  param_1[1] = lVar3;
+  lVar3 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar3;
+  lVar3 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar3;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -323,7 +323,7 @@ void std::__ndk1::
 
 long std::__ndk1::
      vector<WaterConcept::Screen_Editor::ObjectData,std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>& param_1,WaterConcept::Screen_Editor::ObjectData *param_2)
 
 {
   long lVar1;
@@ -331,37 +331,37 @@ long std::__ndk1::
   long lVar3;
   long lVar4;
   
-  lVar4 = *param_1;
-  lVar2 = param_2[1];
+  lVar4 = *this;
+  lVar2 = param_1[1];
   lVar1 = lVar2;
-  lVar3 = param_3;
+  lVar3 = param_2;
   while (lVar4 != lVar3) {
     lVar3 = lVar3 + -0x88;
     WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1 + -0x88,lVar3);
-    lVar1 = param_2[1] + -0x88;
-    param_2[1] = lVar1;
+    lVar1 = param_1[1] + -0x88;
+    param_1[1] = lVar1;
   }
-  lVar3 = param_1[1];
-  if (lVar3 != param_3) {
-    lVar1 = param_2[2];
+  lVar3 = this[1];
+  if (lVar3 != param_2) {
+    lVar1 = param_1[2];
     do {
-      WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1,param_3);
-      param_3 = param_3 + 0x88;
-      lVar1 = param_2[2] + 0x88;
-      param_2[2] = lVar1;
-    } while (lVar3 != param_3);
-    lVar1 = param_2[1];
+      WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1,param_2);
+      param_2 = param_2 + 0x88;
+      lVar1 = param_1[2] + 0x88;
+      param_1[2] = lVar1;
+    } while (lVar3 != param_2);
+    lVar1 = param_1[1];
   }
-  lVar3 = *param_1;
-  *param_1 = lVar1;
-  param_2[1] = lVar3;
-  lVar1 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar1;
-  lVar1 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar1;
-  *param_2 = param_2[1];
+  lVar3 = *this;
+  *this = lVar1;
+  param_1[1] = lVar3;
+  lVar1 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar1;
+  lVar1 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar1;
+  *param_1 = param_1[1];
   return lVar2;
 }
 

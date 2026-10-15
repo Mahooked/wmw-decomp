@@ -231,8 +231,7 @@ void Walaber::Widget_PushButton::init(long param_1)
    Walaber::SharedPtr<Walaber::Texture>, bool) */
 
 void Walaber::Widget_PushButton::Widget_PushButton
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,bool param_5)
 
 {
   long lVar1;
@@ -248,43 +247,43 @@ void Walaber::Widget_PushButton::Widget_PushButton
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = *param_3;
-  uStack_58 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,1,&uStack_50,&uStack_58,1,1);
-  *param_1 = &PTR__Widget_PushButton_0070f658;
-  lVar4 = *param_5;
-  param_1[0x20] = lVar4;
-  piVar3 = (int *)param_5[1];
-  param_1[0x21] = piVar3;
+  uStack_50 = *param_2;
+  uStack_58 = *param_3;
+  Walaber::Widget::Widget(this,param_1,1,&uStack_50,&uStack_58,1,1);
+  *this = &PTR__Widget_PushButton_0070f658;
+  lVar4 = *param_4;
+  this[0x20] = lVar4;
+  piVar3 = (int *)param_4[1];
+  this[0x21] = piVar3;
   if (lVar4 != 0) {
     *piVar3 = *piVar3 + 1;
   }
-  *(byte *)(param_1 + 0x2a) = param_6 & 1;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  param_1[0x29] = 0;
-  param_1[0x28] = 0;
-  *(undefined4 *)((long)param_1 + 0x155) = 0xff000000;
-  *(undefined8 *)((long)param_1 + 0x16c) = 0;
-  *(undefined8 *)((long)param_1 + 0x164) = 0;
-  *(undefined8 *)((long)param_1 + 0x15c) = 0;
-  *(undefined4 *)(param_1 + 0x32) = 0xff000000;
-  param_1[0x31] = 0;
-  param_1[0x30] = 0;
-  param_1[0x2f] = 0;
-  *(undefined2 *)((long)param_1 + 0x194) = 0;
-  *(undefined8 *)((long)param_1 + 0x196) = 0xff000000ff00;
-  *(undefined4 *)((long)param_1 + 0x19e) = 0xff00;
-  *(undefined2 *)((long)param_1 + 0x1a2) = 0xff00;
-  param_1[0x38] = 0;
-  param_1[0x37] = 0;
-  param_1[0x36] = 0;
-  param_1[0x35] = 0;
-  Walaber::Widget_PushButton::init(param_1);
+  *(byte *)(this + 0x2a) = param_5 & 1;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x27] = 0;
+  this[0x26] = 0;
+  this[0x29] = 0;
+  this[0x28] = 0;
+  *(undefined4 *)((long)this + 0x155) = 0xff000000;
+  *(undefined8 *)((long)this + 0x16c) = 0;
+  *(undefined8 *)((long)this + 0x164) = 0;
+  *(undefined8 *)((long)this + 0x15c) = 0;
+  *(undefined4 *)(this + 0x32) = 0xff000000;
+  this[0x31] = 0;
+  this[0x30] = 0;
+  this[0x2f] = 0;
+  *(undefined2 *)((long)this + 0x194) = 0;
+  *(undefined8 *)((long)this + 0x196) = 0xff000000ff00;
+  *(undefined4 *)((long)this + 0x19e) = 0xff00;
+  *(undefined2 *)((long)this + 0x1a2) = 0xff00;
+  this[0x38] = 0;
+  this[0x37] = 0;
+  this[0x36] = 0;
+  this[0x35] = 0;
+  Walaber::Widget_PushButton::init(this);
                     /* try { // try from 003835f0 to 003835f3 has its CatchHandler @ 0038369c */
   uVar2 = Walaber::FontManager::getInstancePtr();
   abStack_70[8] = 0;
@@ -306,16 +305,16 @@ void Walaber::Widget_PushButton::Widget_PushButton
   abStack_70[7] = 0;
                     /* try { // try from 00383618 to 0038361f has its CatchHandler @ 00383684 */
   uVar2 = Walaber::FontManager::getFont(uVar2,abStack_70);
-  param_1[0x1d] = uVar2;
+  this[0x1d] = uVar2;
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  lVar4 = param_1[0x20];
-  if ((lVar4 != 0) && (*(int *)param_1[0x21] != 0)) {
+  lVar4 = this[0x20];
+  if ((lVar4 != 0) && (*(int *)this[0x21] != 0)) {
     uVar2 = *(undefined8 *)(lVar4 + 0x8c);
     uVar5 = *(undefined8 *)(lVar4 + 0x84);
-    param_1[0x24] = uVar2;
-    param_1[0x25] =
+    this[0x24] = uVar2;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar5 - (float)uVar2);
   }
@@ -338,8 +337,7 @@ void Walaber::Widget_PushButton::Widget_PushButton
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
 void Walaber::Widget_PushButton::Widget_PushButton
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6,undefined8 param_7,undefined8 param_8)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,bool param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7)
 
 {
   long lVar1;
@@ -353,51 +351,51 @@ void Walaber::Widget_PushButton::Widget_PushButton
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_60 = *param_3;
-  uStack_68 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,1,&uStack_60,&uStack_68,1,1);
-  *param_1 = (long)&PTR__Widget_PushButton_0070f658;
-  lVar3 = *param_5;
-  param_1[0x20] = lVar3;
-  piVar2 = (int *)param_5[1];
-  param_1[0x21] = (long)piVar2;
+  uStack_60 = *param_2;
+  uStack_68 = *param_3;
+  Walaber::Widget::Widget(this,param_1,1,&uStack_60,&uStack_68,1,1);
+  *this = (long)&PTR__Widget_PushButton_0070f658;
+  lVar3 = *param_4;
+  this[0x20] = lVar3;
+  piVar2 = (int *)param_4[1];
+  this[0x21] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_1[0x22] = 0;
-  param_1[0x23] = 0;
-  *(byte *)(param_1 + 0x2a) = param_6 & 1;
-  param_1[0x28] = 0;
-  param_1[0x29] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  *(undefined4 *)((long)param_1 + 0x155) = 0xff000000;
-  *(undefined8 *)((long)param_1 + 0x16c) = 0;
-  *(undefined8 *)((long)param_1 + 0x164) = 0;
-  *(undefined8 *)((long)param_1 + 0x15c) = 0;
+  this[0x22] = 0;
+  this[0x23] = 0;
+  *(byte *)(this + 0x2a) = param_5 & 1;
+  this[0x28] = 0;
+  this[0x29] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x27] = 0;
+  this[0x26] = 0;
+  *(undefined4 *)((long)this + 0x155) = 0xff000000;
+  *(undefined8 *)((long)this + 0x16c) = 0;
+  *(undefined8 *)((long)this + 0x164) = 0;
+  *(undefined8 *)((long)this + 0x15c) = 0;
                     /* try { // try from 003837c8 to 003837d3 has its CatchHandler @ 0038386c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x2f,param_7);
-  *(undefined4 *)(param_1 + 0x34) = 0xff000000;
-  param_1[0x33] = -0xffffff01000000;
-  param_1[0x32] = -0xffffff01000000;
-  param_1[0x37] = 0;
-  param_1[0x38] = 0;
-  param_1[0x35] = 0;
-  param_1[0x36] = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2f,param_6);
+  *(undefined4 *)(this + 0x34) = 0xff000000;
+  this[0x33] = -0xffffff01000000;
+  this[0x32] = -0xffffff01000000;
+  this[0x37] = 0;
+  this[0x38] = 0;
+  this[0x35] = 0;
+  this[0x36] = 0;
                     /* try { // try from 003837f4 to 00383817 has its CatchHandler @ 00383874 */
-  (**(code **)(*param_1 + 0x70))(param_1,param_8);
-  Walaber::Widget_PushButton::init(param_1);
-  if (param_1[0x1d] != 0) {
-    Walaber::Widget_PushButton::_resizeFont(param_1);
+  (**(code **)(*this + 0x70))(this,param_7);
+  Walaber::Widget_PushButton::init(this);
+  if (this[0x1d] != 0) {
+    Walaber::Widget_PushButton::_resizeFont(this);
   }
-  lVar3 = param_1[0x20];
-  if ((lVar3 != 0) && (*(int *)param_1[0x21] != 0)) {
+  lVar3 = this[0x20];
+  if ((lVar3 != 0) && (*(int *)this[0x21] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = lVar4;
-    param_1[0x25] =
+    this[0x24] = lVar4;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
@@ -470,8 +468,7 @@ void Walaber::Widget_PushButton::_resizeFont(long param_1)
    const&) */
 
 void Walaber::Widget_PushButton::Widget_PushButton
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,long *param_6,byte param_7,undefined8 param_8,undefined8 param_9)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,Walaber::SharedPtr<Walaber::Texture> param_5,bool param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8)
 
 {
   long lVar1;
@@ -485,65 +482,65 @@ void Walaber::Widget_PushButton::Widget_PushButton
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_60 = *param_3;
-  uStack_68 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,1,&uStack_60,&uStack_68,1,1);
-  *param_1 = (long)&PTR__Widget_PushButton_0070f658;
+  uStack_60 = *param_2;
+  uStack_68 = *param_3;
+  Walaber::Widget::Widget(this,param_1,1,&uStack_60,&uStack_68,1,1);
+  *this = (long)&PTR__Widget_PushButton_0070f658;
+  lVar3 = *param_4;
+  this[0x20] = lVar3;
+  piVar2 = (int *)param_4[1];
+  this[0x21] = (long)piVar2;
+  if (lVar3 != 0) {
+    *piVar2 = *piVar2 + 1;
+  }
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x22] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = (long)piVar2;
+  this[0x23] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  lVar3 = *param_6;
-  param_1[0x22] = lVar3;
-  piVar2 = (int *)param_6[1];
-  param_1[0x23] = (long)piVar2;
-  if (lVar3 != 0) {
-    *piVar2 = *piVar2 + 1;
-  }
-  *(byte *)(param_1 + 0x2a) = param_7 & 1;
-  param_1[0x28] = 0;
-  param_1[0x29] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  *(undefined4 *)((long)param_1 + 0x155) = 0xff000000;
-  *(undefined8 *)((long)param_1 + 0x16c) = 0;
-  *(undefined8 *)((long)param_1 + 0x164) = 0;
-  *(undefined8 *)((long)param_1 + 0x15c) = 0;
+  *(byte *)(this + 0x2a) = param_6 & 1;
+  this[0x28] = 0;
+  this[0x29] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x27] = 0;
+  this[0x26] = 0;
+  *(undefined4 *)((long)this + 0x155) = 0xff000000;
+  *(undefined8 *)((long)this + 0x16c) = 0;
+  *(undefined8 *)((long)this + 0x164) = 0;
+  *(undefined8 *)((long)this + 0x15c) = 0;
                     /* try { // try from 00383ae8 to 00383af3 has its CatchHandler @ 00383bb0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x2f,param_8);
-  *(undefined4 *)(param_1 + 0x34) = 0xff000000;
-  param_1[0x33] = -0xffffff01000000;
-  param_1[0x32] = -0xffffff01000000;
-  param_1[0x37] = 0;
-  param_1[0x38] = 0;
-  param_1[0x35] = 0;
-  param_1[0x36] = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2f,param_7);
+  *(undefined4 *)(this + 0x34) = 0xff000000;
+  this[0x33] = -0xffffff01000000;
+  this[0x32] = -0xffffff01000000;
+  this[0x37] = 0;
+  this[0x38] = 0;
+  this[0x35] = 0;
+  this[0x36] = 0;
                     /* try { // try from 00383b18 to 00383b37 has its CatchHandler @ 00383bb8 */
-  (**(code **)(*param_1 + 0x70))(param_1,param_9);
-  Walaber::Widget_PushButton::init(param_1);
-  if (param_1[0x1d] != 0) {
-    Walaber::Widget_PushButton::_resizeFont(param_1);
+  (**(code **)(*this + 0x70))(this,param_8);
+  Walaber::Widget_PushButton::init(this);
+  if (this[0x1d] != 0) {
+    Walaber::Widget_PushButton::_resizeFont(this);
   }
-  lVar3 = param_1[0x20];
-  if ((lVar3 != 0) && (*(int *)param_1[0x21] != 0)) {
+  lVar3 = this[0x20];
+  if ((lVar3 != 0) && (*(int *)this[0x21] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = lVar4;
-    param_1[0x25] =
+    this[0x24] = lVar4;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
-  lVar3 = param_1[0x22];
-  if ((lVar3 != 0) && (*(int *)param_1[0x23] != 0)) {
+  lVar3 = this[0x22];
+  if ((lVar3 != 0) && (*(int *)this[0x23] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x26] = lVar4;
-    param_1[0x27] =
+    this[0x26] = lVar4;
+    this[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }

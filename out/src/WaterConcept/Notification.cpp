@@ -455,7 +455,7 @@ void WaterConcept::Notification::draw(Walaber__SpriteBatch *p0)
 /* WaterConcept::Notification::goNotify(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
-void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefined8 param_3)
+void WaterConcept::Notification::goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
 
 {
   long lVar1;
@@ -473,10 +473,10 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  lVar4 = *(long *)(param_2 + 0x98);
+  lVar4 = *(long *)(param_1 + 0x98);
   if (lVar4 != 0) {
     Walaber::Node::getWorldScale(&bStack_70,lVar4);
-    lVar3 = *(long *)(param_2 + 0x98);
+    lVar3 = *(long *)(param_1 + 0x98);
     uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(lVar4 + 0x90) >> 0x20) *
                          (float)((uint7)uStack_6f >> 0x18) -
                          (*(float *)(lVar3 + 0x154) +
@@ -497,20 +497,20 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
       fVar2 = fVar6 * 0.19999999 + 0.8;
     }
     fStack_54 = fStack_54 * fVar2;
-    Walaber::BitmapFont::wrapStringInSize(&bStack_70,*(long *)(lVar3 + 0xe8),&fStack_54,param_3,&uStack_50);
+    Walaber::BitmapFont::wrapStringInSize(&bStack_70,*(long *)(lVar3 + 0xe8),&fStack_54,param_2,&uStack_50);
                     /* try { // try from 0049d188 to 0049d1cf has its CatchHandler @ 0049d210 */
-    Walaber::Widget_Label::setText(*(undefined8 *)(param_2 + 0x98),&bStack_70);
-    *(undefined4 *)(param_2 + 0x1bc) = param_1;
-    lVar4 = *(long *)(param_2 + 0x98);
+    Walaber::Widget_Label::setText(*(undefined8 *)(param_1 + 0x98),&bStack_70);
+    *(undefined4 *)(param_1 + 0x1bc) = this;
+    lVar4 = *(long *)(param_1 + 0x98);
     *(float *)(lVar4 + 0x15c) = fStack_54;
     *(float *)(lVar4 + 0x158) = fStack_54;
     Walaber::Widget_Label::_setTextTopLeft();
-    auVar5 = NEON_ext(*(undefined1 (*) [16])(param_2 + 0x108),
-                      *(undefined1 (*) [16])(param_2 + 0x108),8,1);
-    *(long *)(param_2 + 0x1b0) = auVar5._8_8_;
-    *(long *)(param_2 + 0x1a8) = auVar5._0_8_;
-    (**(code **)(**(long **)(param_2 + 8) + 0x10))(*(long **)(param_2 + 8),param_2 + 0x1b0);
-    *(undefined4 *)(param_2 + 0x1c0) = 0;
+    auVar5 = NEON_ext(*(undefined1 (*) [16])(param_1 + 0x108),
+                      *(undefined1 (*) [16])(param_1 + 0x108),8,1);
+    *(long *)(param_1 + 0x1b0) = auVar5._8_8_;
+    *(long *)(param_1 + 0x1a8) = auVar5._0_8_;
+    (**(code **)(**(long **)(param_1 + 8) + 0x10))(*(long **)(param_1 + 8),param_1 + 0x1b0);
+    *(undefined4 *)(param_1 + 0x1c0) = 0;
     if ((bStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -532,7 +532,7 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float, Walaber::Vector2)
     */
 
-void WaterConcept::Notification::goNotify(long *param_1,undefined8 param_2,long *param_3)
+void WaterConcept::Notification::goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2,Walaber::Vector2 param_3)
 
 {
   (**(code **)(*param_1 + 0x30))();
@@ -552,7 +552,7 @@ void WaterConcept::Notification::goNotify(long *param_1,undefined8 param_2,long 
 /* WaterConcept::Notification::buildUI(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
+void WaterConcept::Notification::buildUI(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -572,9 +572,9 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x1c8);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 0x1c8);
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_00712778;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -596,7 +596,7 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
                     /* try { // try from 0049d330 to 0049d33b has its CatchHandler @ 0049d380 */
   puStack_98 = puVar2;
   piStack_90 = piVar3;
-  Walaber::WidgetHelper::loadWidgetsXML(param_2,param_1 + 8,&puStack_98);
+  Walaber::WidgetHelper::loadWidgetsXML(param_1,this + 8,&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Notification>>::~SharedPtr(&puStack_68);

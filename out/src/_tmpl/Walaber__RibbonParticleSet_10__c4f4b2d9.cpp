@@ -194,7 +194,7 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
    Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, int) */
 
 void Walaber::RibbonParticleSet<10>::drawParticles
-               (long *param_1,undefined8 param_2,long *param_3,byte *param_4,undefined4 param_5)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,int param_4)
 
 {
   byte *pbVar1;
@@ -245,12 +245,12 @@ void Walaber::RibbonParticleSet<10>::drawParticles
   lVar21 = 0;
   uVar23 = 0;
   do {
-    lVar20 = *param_1;
+    lVar20 = *this;
     if (*(char *)(lVar20 + uVar23 * 0xd0 + 0x34) != '\0') {
       fVar25 = *(float *)(lVar20 + uVar23 * 0xd0 + 0x30);
       if (fVar25 == -1.0) {
-        lStack_c0 = *param_3;
-        piStack_b8 = (int *)param_3[1];
+        lStack_c0 = *param_2;
+        piStack_b8 = (int *)param_2[1];
         if (lStack_c0 != 0) {
           *piStack_b8 = *piStack_b8 + 1;
         }
@@ -260,20 +260,20 @@ void Walaber::RibbonParticleSet<10>::drawParticles
         fVar25 = (float)sinf(fVar25 * 0.017453292);
         fStack_c8 = *pfVar16 + (fVar26 * pfVar16[0xe] - fVar25 * pfVar16[0xf]);
         fStack_c4 = pfVar16[1] + fVar25 * pfVar16[0xe] + fVar26 * pfVar16[0xf];
-        lVar20 = *param_1 + uVar23 * 0xd0;
+        lVar20 = *this + uVar23 * 0xd0;
                     /* try { // try from 004537d4 to 004537ef has its CatchHandler @ 00453c50 */
-        Walaber::SpriteBatch::drawQuad(*(float *)(lVar20 + 0x50) * 0.017453292,param_2,param_5,&lStack_c0,
-                        &fStack_c8,lVar20 + 0x20,param_4,0);
+        Walaber::SpriteBatch::drawQuad(*(float *)(lVar20 + 0x50) * 0.017453292,param_1,param_4,&lStack_c0,
+                        &fStack_c8,lVar20 + 0x20,param_3,0);
         Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
       }
       else {
         lVar13 = lVar20 + uVar23 * 0xd0;
-        fVar26 = (float)NEON_ucvtf((uint)*param_4);
+        fVar26 = (float)NEON_ucvtf((uint)*param_3);
         fVar25 = fVar25 / *(float *)(lVar13 + 0x5c) + 0.0;
-        fVar29 = (float)NEON_ucvtf((uint)param_4[1]);
-        fVar31 = (float)NEON_ucvtf((uint)param_4[2]);
+        fVar29 = (float)NEON_ucvtf((uint)param_3[1]);
+        fVar31 = (float)NEON_ucvtf((uint)param_3[2]);
         iVar15 = (int)(fVar25 * fVar26);
-        fVar26 = (float)NEON_ucvtf((uint)param_4[3]);
+        fVar26 = (float)NEON_ucvtf((uint)param_3[3]);
         iVar17 = (int)(fVar25 * fVar29);
         iVar12 = *(int *)(lVar13 + 0x74);
         iVar18 = (int)(fVar25 * fVar31);
@@ -295,9 +295,9 @@ void Walaber::RibbonParticleSet<10>::drawParticles
         }
         bVar6 = (byte)iVar19 & ((byte)(iVar19 >> 0x1f) ^ 0xff);
         if (iVar12 < 1) {
-          puVar9 = (undefined8 *)param_1[9];
-          puVar10 = (undefined8 *)param_1[10];
-          pbVar11 = (byte *)param_1[0xb];
+          puVar9 = (undefined8 *)this[9];
+          puVar10 = (undefined8 *)this[10];
+          pbVar11 = (byte *)this[0xb];
         }
         else {
           uVar22 = 0;
@@ -330,12 +330,12 @@ void Walaber::RibbonParticleSet<10>::drawParticles
             fVar34 = (float)sinf(fVar34);
             fVar28 = *(float *)(lVar2 + 0x38);
             fVar30 = *(float *)(lVar2 + 0x3c);
-            puVar9 = (undefined8 *)param_1[9];
+            puVar9 = (undefined8 *)this[9];
             fVar27 = *(float *)(lVar20 + lVar21 + lVar24 + 0x78) +
                      (fVar26 * fVar28 - fVar34 * fVar30);
             fVar32 = *(float *)(lVar14 + 0x7c);
             *(float *)((long)puVar9 + lVar13 + 8) = fVar27;
-            lVar20 = *param_1;
+            lVar20 = *this;
             pfVar16 = (float *)(lVar20 + uVar23 * 0xd0 + 0x20);
             fVar33 = *pfVar16;
             fVar32 = fVar32 + fVar34 * fVar28 + fVar26 * fVar30;
@@ -358,11 +358,11 @@ void Walaber::RibbonParticleSet<10>::drawParticles
                 *(float *)((long)puVar9 + lVar13 + 0xc) = fVar26 - fVar35 * fVar28 * 0.5;
               }
             }
-            puVar10 = (undefined8 *)param_1[10];
+            puVar10 = (undefined8 *)this[10];
             fVar26 = (float)(int)uVar22 / ((float)iVar12 + -1.0);
             *(undefined4 *)((long)puVar10 + lVar13 + 8) = 0x3f800000;
             *(float *)((long)puVar10 + lVar13 + 0xc) = fVar26;
-            pbVar11 = (byte *)param_1[0xb];
+            pbVar11 = (byte *)this[0xb];
             pbVar11[lVar24 + 4] = bVar3;
             pbVar11[lVar24 + 5] = bVar4;
             pbVar11[lVar24 + 6] = bVar5;
@@ -398,7 +398,7 @@ LAB_00453b08:
           } while ((long)uVar22 < (long)iVar12);
         }
         *puVar9 = puVar9[1];
-        iVar15 = *(int *)((long)param_1 + 0x44);
+        iVar15 = *(int *)((long)this + 0x44);
         iVar17 = iVar15 + -1;
         puVar9[iVar17] = puVar9[iVar15 + -2];
         *puVar10 = puVar10[1];
@@ -412,19 +412,19 @@ LAB_00453b08:
         pbVar1[1] = bVar4;
         pbVar1[2] = bVar5;
         pbVar1[3] = bVar6;
-        lStack_d8 = *param_3;
-        piStack_d0 = (int *)param_3[1];
+        lStack_d8 = *param_2;
+        piStack_d0 = (int *)param_2[1];
         if (lStack_d8 != 0) {
           *piStack_d0 = *piStack_d0 + 1;
-          iVar15 = *(int *)((long)param_1 + 0x44);
+          iVar15 = *(int *)((long)this + 0x44);
         }
                     /* try { // try from 00453bc4 to 00453bdb has its CatchHandler @ 00453c44 */
-        Walaber::SpriteBatch::drawVerts(param_2,param_5,&lStack_d8,iVar15,0);
+        Walaber::SpriteBatch::drawVerts(param_1,param_4,&lStack_d8,iVar15,0);
         Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
       }
     }
     lVar21 = lVar21 + 0xd0;
-    bVar8 = *(uint *)(param_1 + 6) <= uVar23;
+    bVar8 = *(uint *)(this + 6) <= uVar23;
     uVar23 = uVar23 + 1;
     if (bVar8) {
       if (*(long *)(lVar7 + 0x28) == lStack_b0) {

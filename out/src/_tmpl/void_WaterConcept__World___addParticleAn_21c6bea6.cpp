@@ -14,7 +14,7 @@
    WaterConcept::ConsiderPoolAny) */
 
 void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>
-               (undefined8 param_1,undefined8 param_2,int *param_3,long param_4,long *param_5)
+               (WaterConcept::ParticleDescription const& param_1,float param_2,std::__ndk1::set<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>& param_3,Walaber::FluidParticleSet *param_4,WaterConcept::ConsiderPoolAny param_5)
 
 {
   long *plVar1;

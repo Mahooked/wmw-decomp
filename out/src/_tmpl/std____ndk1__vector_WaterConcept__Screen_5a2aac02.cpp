@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<WaterConcept::Screen_WaterTest::StrokeInfo,std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>& param_1)
 
 {
   undefined1 uVar1;
@@ -24,13 +24,13 @@ void std::__ndk1::
   undefined8 uVar6;
   undefined1 *puVar5;
   
-  puVar2 = (undefined1 *)*param_1;
-  if ((undefined1 *)param_1[1] == puVar2) {
-    lVar3 = param_2[1];
+  puVar2 = (undefined1 *)*this;
+  if ((undefined1 *)this[1] == puVar2) {
+    lVar3 = param_1[1];
   }
   else {
-    lVar3 = param_2[1];
-    puVar5 = (undefined1 *)param_1[1];
+    lVar3 = param_1[1];
+    puVar5 = (undefined1 *)this[1];
     do {
       puVar4 = puVar5 + -0x20;
       uVar1 = *puVar4;
@@ -45,21 +45,21 @@ void std::__ndk1::
       *(undefined8 *)(puVar5 + -0x18) = 0;
       *(undefined8 *)(puVar5 + -0x10) = 0;
       *(undefined8 *)(puVar5 + -8) = 0;
-      lVar3 = param_2[1] + -0x20;
-      param_2[1] = lVar3;
+      lVar3 = param_1[1] + -0x20;
+      param_1[1] = lVar3;
       puVar5 = puVar4;
     } while (puVar2 != puVar4);
-    puVar2 = (undefined1 *)*param_1;
+    puVar2 = (undefined1 *)*this;
   }
-  *param_1 = lVar3;
-  param_2[1] = puVar2;
-  lVar3 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar3;
-  lVar3 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar3;
-  *param_2 = param_2[1];
+  *this = lVar3;
+  param_1[1] = puVar2;
+  lVar3 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar3;
+  lVar3 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar3;
+  *param_1 = param_1[1];
   return;
 }
 

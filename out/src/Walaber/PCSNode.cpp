@@ -172,7 +172,7 @@ void Walaber::PCSNode::getNodeFromTree(void)
 /* Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-long Walaber::PCSNode::_depthFirstNameSearch(undefined8 param_1,byte *param_2)
+long Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   uint uVar1;
@@ -253,7 +253,7 @@ LAB_003eb214:
    const&, int) */
 
 long Walaber::PCSNode::_depthFirstNameSearchWithGroupID
-               (undefined8 param_1,byte *param_2,int param_3)
+               (Walaber::PCSNode *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,int param_3)
 
 {
   uint uVar1;
@@ -424,7 +424,7 @@ void Walaber::PCSNode::getNodesFromTree(void)
    std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*> >&) */
 
 void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
-               (undefined8 param_1,int param_2,long param_3)
+               (Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>& param_3)
 
 {
   long lVar1;

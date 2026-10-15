@@ -10,7 +10,7 @@
 /* Walaber::Flipbook::Flipbook(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::Flipbook::Flipbook(undefined8 *param_1)
+void Walaber::Flipbook::Flipbook(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   uint *puVar1;

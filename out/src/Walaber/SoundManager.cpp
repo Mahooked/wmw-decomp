@@ -32,7 +32,7 @@ long Walaber::SoundManager::getInstancePtr(void)
 /* Walaber::SoundManager::subtitlePlayed(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
-void Walaber::SoundManager::subtitlePlayed(undefined4 param_1,long param_2)
+void Walaber::SoundManager::subtitlePlayed(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
 
 {
   long lVar1;
@@ -328,7 +328,7 @@ void Walaber::SoundManager::stopMusic(long param_1)
 /* Walaber::SoundManager::init(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >&, unsigned int) */
 
-void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 param_3)
+void Walaber::SoundManager::init(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1,unsigned int param_2)
 
 {
   long lVar1;
@@ -359,8 +359,8 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  puVar4 = (undefined8 *)(param_1 + 0xa0);
-  *(undefined1 *)(param_1 + 0xc0) = 0;
+  puVar4 = (undefined8 *)(this + 0xa0);
+  *(undefined1 *)(this + 0xc0) = 0;
   iVar2 = FMOD_System_Create(puVar4);
   if (iVar2 == 0) {
     uStack_5c = 0;
@@ -368,25 +368,25 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
     if (0x44463 < uStack_5c) {
       iVar2 = FMOD::System::init(*puVar4,0x40,0,0);
       if (iVar2 == 0) {
-        FMOD::System::getSoftwareFormat(*(undefined8 *)(param_1 + 0xa0),&uStack_60,&uStack_64,&uStack_68,&uStack_6c,
+        FMOD::System::getSoftwareFormat(*(undefined8 *)(this + 0xa0),&uStack_60,&uStack_64,&uStack_68,&uStack_6c,
                         &uStack_70,&uStack_74);
         Walaber::Logger::printf("Walaber-Sound",1,
                      "sampleRate[%d]  format[%d]  outChannels[%d] inputChannels[%d] resampleMethod[%d] bits[%d]\n"
                      ,uStack_60,uStack_64,uStack_68,uStack_6c,uStack_70,uStack_74);
-        uStack_60 = param_3;
-        FMOD::System::setSoftwareFormat(*(undefined8 *)(param_1 + 0xa0),param_3,uStack_64,uStack_68,uStack_6c,
+        uStack_60 = param_2;
+        FMOD::System::setSoftwareFormat(*(undefined8 *)(this + 0xa0),param_2,uStack_64,uStack_68,uStack_6c,
                         uStack_70);
-        iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(param_1 + 0xa0),&DAT_00628d1d,param_1 + 0xa8);
+        iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(this + 0xa0),&DAT_00628d1d,this + 0xa8);
         if (iVar2 == 0) {
-          iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(param_1 + 0xa0),"VOICE",param_1 + 0xb0);
+          iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(this + 0xa0),"VOICE",this + 0xb0);
           if (iVar2 == 0) {
-            iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(param_1 + 0xa0),"MUSIC",param_1 + 0xb8);
+            iVar2 = FMOD::System::createChannelGroup(*(undefined8 *)(this + 0xa0),"MUSIC",this + 0xb8);
             if (iVar2 == 0) {
-              *(undefined1 *)(param_1 + 0xc0) = 1;
+              *(undefined1 *)(this + 0xc0) = 1;
               Walaber::PropertyList::PropertyList(auStack_90);
                     /* try { // try from 0034dcb8 to 0034dcf7 has its CatchHandler @ 0034ddb4 */
               puVar4 = (undefined8 *)operator new(0x28);
-              puVar4[2] = param_1;
+              puVar4[2] = this;
               *puVar4 = &PTR__Callback_0070e658;
               puVar4[1] = 0;
               puVar4[4] = 0;
@@ -412,7 +412,7 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
                 *piStack_a8 = *piStack_a8 + 1;
               }
                     /* try { // try from 0034dd4c to 0034dd5f has its CatchHandler @ 0034dd8c */
-              Walaber::FileManager::readFile(uVar3,param_2,&puStack_d0,auStack_90,0);
+              Walaber::FileManager::readFile(uVar3,param_1,&puStack_d0,auStack_90,0);
               Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
               Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
               Walaber::SharedPtr<Walaber::MemberCallback<Walaber::SoundManager>>::~SharedPtr(&puStack_a0);
@@ -874,8 +874,7 @@ LAB_0034e090:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, bool, float, bool, bool, bool) */
 
 void Walaber::SoundManager::addSound
-               (undefined8 param_1,long param_2,uint param_3,byte *param_4,uint param_5,uint param_6
-               ,uint param_7,uint param_8)
+               (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2,bool param_3,float param_4,bool param_5,bool param_6,bool param_7)
 
 {
   long lVar1;
@@ -913,24 +912,24 @@ void Walaber::SoundManager::addSound
   
   lVar1 = tpidr_el0;
   lStack_80 = *(long *)(lVar1 + 0x28);
-  if ((*param_4 & 1) == 0) {
-    pbVar6 = param_4 + 1;
+  if ((*param_3 & 1) == 0) {
+    pbVar6 = param_3 + 1;
   }
   else {
-    pbVar6 = *(byte **)(param_4 + 0x10);
+    pbVar6 = *(byte **)(param_3 + 0x10);
   }
-  Walaber::Logger::printf("Walaber-Sound",1,"SoundManager::addSound( %d, %s )\n",param_3,pbVar6);
-  plVar7 = (long *)(param_2 + 0x20);
+  Walaber::Logger::printf("Walaber-Sound",1,"SoundManager::addSound( %d, %s )\n",param_2,pbVar6);
+  plVar7 = (long *)(param_1 + 0x20);
   plVar8 = (long *)*plVar7;
   plVar9 = plVar7;
   if (plVar8 != (long *)0x0) {
     do {
-      if (*(uint *)(plVar8 + 4) >= param_3) {
+      if (*(uint *)(plVar8 + 4) >= param_2) {
         plVar9 = plVar8;
       }
-      plVar8 = (long *)plVar8[*(uint *)(plVar8 + 4) < param_3];
+      plVar8 = (long *)plVar8[*(uint *)(plVar8 + 4) < param_2];
     } while (plVar8 != (long *)0x0);
-    if ((plVar9 != plVar7) && (*(uint *)(plVar9 + 4) <= param_3)) goto LAB_0034ea30;
+    if ((plVar9 != plVar7) && (*(uint *)(plVar9 + 4) <= param_2)) goto LAB_0034ea30;
   }
   apuStack_c8[0] = &uStack_e0;
   uStack_98 = 0;
@@ -940,8 +939,8 @@ void Walaber::SoundManager::addSound
   piStack_a8 = (int *)0x0;
   puStack_b0 = (undefined8 *)0x0;
                     /* try { // try from 0034e9bc to 0034e9d3 has its CatchHandler @ 0034ed50 */
-  uStack_e0 = param_3;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(param_2 + 0x18,&uStack_e0,&DAT_0062b170,apuStack_c8,&puStack_f0);
+  uStack_e0 = param_2;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(param_1 + 0x18,&uStack_e0,&DAT_0062b170,apuStack_c8,&puStack_f0);
   std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__vdeallocate(lVar2 + 0x28);
   *(int **)(lVar2 + 0x30) = piStack_a8;
   *(undefined8 **)(lVar2 + 0x28) = puStack_b0;
@@ -970,7 +969,7 @@ LAB_0034ea30:
   uStack_db = 0x70;
   uStack_da = 0;
                     /* try { // try from 0034ea5c to 0034ea67 has its CatchHandler @ 0034edcc */
-  Walaber::Property::Property(&puStack_b0,param_3);
+  Walaber::Property::Property(&puStack_b0,param_2);
                     /* try { // try from 0034ea68 to 0034ea77 has its CatchHandler @ 0034edbc */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -987,7 +986,7 @@ LAB_0034ea30:
   uStack_dc = 0x70;
   uStack_db = 0;
                     /* try { // try from 0034eab4 to 0034eabb has its CatchHandler @ 0034edb8 */
-  Walaber::Property::Property(&puStack_b0,param_5 & 1);
+  Walaber::Property::Property(&puStack_b0,param_4 & 1);
                     /* try { // try from 0034eabc to 0034eacb has its CatchHandler @ 0034edb4 */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -1004,7 +1003,7 @@ LAB_0034ea30:
   uStack_d8 = 0x6c;
   uStack_d7 = 0;
                     /* try { // try from 0034eb0c to 0034eb17 has its CatchHandler @ 0034edb0 */
-  Walaber::Property::Property(param_1,&puStack_b0);
+  Walaber::Property::Property(this,&puStack_b0);
                     /* try { // try from 0034eb18 to 0034eb27 has its CatchHandler @ 0034edac */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -1021,7 +1020,7 @@ LAB_0034ea30:
   uStack_d8 = 0x77;
   uStack_d7 = 0;
                     /* try { // try from 0034eb6c to 0034eb73 has its CatchHandler @ 0034eda8 */
-  Walaber::Property::Property(&puStack_b0,param_6 & 1);
+  Walaber::Property::Property(&puStack_b0,param_5 & 1);
                     /* try { // try from 0034eb74 to 0034eb83 has its CatchHandler @ 0034eda4 */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -1038,7 +1037,7 @@ LAB_0034ea30:
   uStack_d8 = 99;
   uStack_d7 = 0;
                     /* try { // try from 0034ebc8 to 0034ebcf has its CatchHandler @ 0034eda0 */
-  Walaber::Property::Property(&puStack_b0,param_7 & 1);
+  Walaber::Property::Property(&puStack_b0,param_6 & 1);
                     /* try { // try from 0034ebd0 to 0034ebdf has its CatchHandler @ 0034ed9c */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -1055,7 +1054,7 @@ LAB_0034ea30:
   uStack_db = 0x6f;
   uStack_da = 0;
                     /* try { // try from 0034ec20 to 0034ec27 has its CatchHandler @ 0034ed98 */
-  Walaber::Property::Property(&puStack_b0,param_8 & 1);
+  Walaber::Property::Property(&puStack_b0,param_7 & 1);
                     /* try { // try from 0034ec28 to 0034ec37 has its CatchHandler @ 0034ed94 */
   Walaber::PropertyList::setValueForKey(apuStack_c8,&uStack_e0,&puStack_b0);
   Walaber::Property::~Property(&puStack_b0);
@@ -1064,7 +1063,7 @@ LAB_0034ea30:
   }
                     /* try { // try from 0034ec50 to 0034ec8f has its CatchHandler @ 0034ede4 */
   puVar3 = (undefined8 *)operator new(0x28);
-  puVar3[2] = param_2;
+  puVar3[2] = param_1;
   *puVar3 = &PTR__Callback_0070e658;
   puVar3[1] = 0;
   puVar3[4] = 0;
@@ -1096,7 +1095,7 @@ LAB_0034ea30:
     *piStack_e8 = *piStack_e8 + 1;
   }
                     /* try { // try from 0034ece4 to 0034ecf7 has its CatchHandler @ 0034ed6c */
-  Walaber::FileManager::fileExists(uVar5,param_4,&puStack_110,apuStack_c8,0);
+  Walaber::FileManager::fileExists(uVar5,param_3,&puStack_110,apuStack_c8,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_110);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f0);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::SoundManager>>::~SharedPtr(&uStack_e0);
@@ -1411,7 +1410,7 @@ LAB_0034f318:
    const&) */
 
 void Walaber::SoundManager::setLocalizedFolderMapping
-               (undefined8 param_1,undefined4 param_2,undefined8 param_3)
+               (Walaber::Language param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   long lVar1;
@@ -1424,9 +1423,9 @@ void Walaber::SoundManager::setLocalizedFolderMapping
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   puStack_30 = &uStack_3c;
-  uStack_3c = param_2;
-  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<Walaber::Language, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<Walaber::Language const&>, std::__ndk1::tuple<>>(param_1,&uStack_3c,&DAT_0062b170,&puStack_30,auStack_38);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0x28,param_3);
+  uStack_3c = param_1;
+  lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<Walaber::Language, std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<Walaber::Language>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_unique_key_args<Walaber::Language, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<Walaber::Language const&>, std::__ndk1::tuple<>>(this,&uStack_3c,&DAT_0062b170,&puStack_30,auStack_38);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar2 + 0x28,param_2);
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }
@@ -2067,7 +2066,7 @@ LAB_0034f7d0:
    Walaber::PropertyList const&) */
 
 void Walaber::SoundManager::_loadSound
-               (long param_1,uint param_2,int param_3,undefined8 param_4,undefined8 param_5)
+               (int param_1,int param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
 
 {
   long lVar1;
@@ -2124,32 +2123,32 @@ void Walaber::SoundManager::_loadSound
   
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
-  plVar7 = (long *)(param_1 + 0x20);
+  plVar7 = (long *)(this + 0x20);
   plVar8 = (long *)*plVar7;
   plVar11 = plVar7;
   if (plVar8 != (long *)0x0) {
     do {
-      if (*(uint *)(plVar8 + 4) >= param_2) {
+      if (*(uint *)(plVar8 + 4) >= param_1) {
         plVar11 = plVar8;
       }
-      plVar8 = (long *)plVar8[*(uint *)(plVar8 + 4) < param_2];
+      plVar8 = (long *)plVar8[*(uint *)(plVar8 + 4) < param_1];
     } while (plVar8 != (long *)0x0);
-    if ((plVar11 != plVar7) && (*(uint *)(plVar11 + 4) <= param_2)) {
-      if (param_3 < 0) {
+    if ((plVar11 != plVar7) && (*(uint *)(plVar11 + 4) <= param_1)) {
+      if (param_2 < 0) {
         uVar6 = (plVar11[6] - plVar11[5] >> 3) * -0x71c71c71c71c71c7;
       }
       else {
         uVar6 = (plVar11[6] - plVar11[5] >> 3) * -0x71c71c71c71c71c7;
-        if ((ulong)(long)param_3 <= uVar6 && uVar6 - (long)param_3 != 0) {
-          uStack_78 = param_2;
-          iStack_74 = param_3;
-          lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::find<std::__ndk1::pair<int, int>>(param_1 + 0xf8,&uStack_78);
+        if ((ulong)(long)param_2 <= uVar6 && uVar6 - (long)param_2 != 0) {
+          uStack_78 = param_1;
+          iStack_74 = param_2;
+          lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::find<std::__ndk1::pair<int, int>>(this + 0xf8,&uStack_78);
           Walaber::PropertyList::PropertyList(&plStack_a0);
           lStack_88 = 0;
           piStack_80 = (int *)0x0;
-          Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_88,param_4);
+          Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_88,param_3);
                     /* try { // try from 0034fe60 to 0034fe6b has its CatchHandler @ 00350458 */
-          Walaber::PropertyList::operator=(&plStack_a0,param_5);
+          Walaber::PropertyList::operator=(&plStack_a0,param_4);
           puStack_d0 = (undefined8 *)CONCAT44(iStack_74,uStack_78);
           puStack_c0 = (undefined1 *)0x0;
           uStack_b8 = 0;
@@ -2186,10 +2185,10 @@ void Walaber::SoundManager::_loadSound
             *piStack_80 = *piStack_80 + 1;
           }
                     /* try { // try from 0034ff20 to 0034ff2f has its CatchHandler @ 00350444 */
-          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0xf8,&puStack_d0);
+          std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>(this + 0xf8,&puStack_d0);
           Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_b0);
           Walaber::PropertyList::~PropertyList(&ppuStack_c8);
-          if (param_1 + 0x100 == lVar2) {
+          if (this + 0x100 == lVar2) {
                     /* try { // try from 0034ff50 to 0034ff57 has its CatchHandler @ 00350420 */
             Walaber::PropertyList::PropertyList(auStack_e8);
             uStack_f9 = 0;
@@ -2205,7 +2204,7 @@ void Walaber::SoundManager::_loadSound
             uStack_fb = 0x70;
             uStack_fa = 0;
                     /* try { // try from 0034ff7c to 0034ff87 has its CatchHandler @ 0035041c */
-            Walaber::Property::Property(&puStack_d0,param_2);
+            Walaber::Property::Property(&puStack_d0,param_1);
                     /* try { // try from 0034ff88 to 0034ff97 has its CatchHandler @ 0035040c */
             Walaber::PropertyList::setValueForKey(auStack_e8,&bStack_100,&puStack_d0);
             Walaber::Property::~Property(&puStack_d0);
@@ -2225,10 +2224,10 @@ void Walaber::SoundManager::_loadSound
             uStack_fe = 100;
             uStack_fd = 0;
                     /* try { // try from 0034ffcc to 0034ffd7 has its CatchHandler @ 00350408 */
-            Walaber::Property::Property(&puStack_d0,param_3);
+            Walaber::Property::Property(&puStack_d0,param_2);
                     /* try { // try from 0034ffd8 to 0034ffe7 has its CatchHandler @ 00350404 */
             Walaber::PropertyList::setValueForKey(auStack_e8,&bStack_100,&puStack_d0);
-            lVar2 = (long)param_3;
+            lVar2 = (long)param_2;
             Walaber::Property::~Property(&puStack_d0);
             if ((bStack_100 & 1) != 0) {
               operator delete(puStack_f0);
@@ -2275,7 +2274,7 @@ void Walaber::SoundManager::_loadSound
             }
                     /* try { // try from 003500d4 to 003500db has its CatchHandler @ 003503ec */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_100,plVar11[5] + lVar2 * 0x48);
-            plVar7 = (long *)(param_1 + 8);
+            plVar7 = (long *)(this + 8);
             plVar8 = (long *)*plVar7;
             plVar11 = plVar7;
             if (plVar8 != (long *)0x0) {
@@ -2347,7 +2346,7 @@ void Walaber::SoundManager::_loadSound
             }
                     /* try { // try from 00350274 to 003502b3 has its CatchHandler @ 00350424 */
             puVar3 = (undefined8 *)operator new(0x28);
-            puVar3[2] = param_1;
+            puVar3[2] = this;
             *puVar3 = &PTR__Callback_0070e658;
             puVar3[1] = 0;
             puVar3[4] = 0;
@@ -2391,11 +2390,11 @@ void Walaber::SoundManager::_loadSound
         }
       }
       Walaber::Logger::printf("Walaber-Sound",4,"_loadSound ERROR - assetID %d not within range [0,%d]\n",
-                   param_3,uVar6);
+                   param_2,uVar6);
       goto LAB_0034fdcc;
     }
   }
-  Walaber::Logger::printf("Walaber-Sound",4,"_loadSound ERROR - no such group: %d\n",param_2);
+  Walaber::Logger::printf("Walaber-Sound",4,"_loadSound ERROR - no such group: %d\n",param_1);
 LAB_0034fdcc:
   if (*(long *)(lVar1 + 0x28) != lStack_70) {
     __stack_chk_fail();
@@ -3593,7 +3592,7 @@ void Walaber::SoundManager::_loadSoundResource
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void Walaber::SoundManager::modifyMusicFilePath(long param_1,byte *param_2,undefined8 param_3)
+void Walaber::SoundManager::modifyMusicFilePath(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   byte *pbVar1;
@@ -3615,21 +3614,21 @@ void Walaber::SoundManager::modifyMusicFilePath(long param_1,byte *param_2,undef
   
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
-  if (*(long *)(param_1 + 0x70) != 0) {
+  if (*(long *)(this + 0x70) != 0) {
     uVar11 = 0;
     do {
       puStack_70 = &uStack_7c;
       uStack_7c = (undefined4)uVar11;
-      lVar6 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(param_1 + 0x60,&uStack_7c,&DAT_0062b170,&puStack_70,auStack_78);
+      lVar6 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(this + 0x60,&uStack_7c,&DAT_0062b170,&puStack_70,auStack_78);
       pbVar9 = *(byte **)(lVar6 + 0x28);
       lVar6 = *(long *)(lVar6 + 0x30) - (long)pbVar9;
       if (lVar6 != 0) {
         uVar8 = 0;
-        pbVar1 = param_2 + 1;
-        uVar4 = (ulong)(*param_2 >> 1);
-        if ((*param_2 & 1) != 0) {
-          pbVar1 = *(byte **)(param_2 + 0x10);
-          uVar4 = *(ulong *)(param_2 + 8);
+        pbVar1 = param_1 + 1;
+        uVar4 = (ulong)(*param_1 >> 1);
+        if ((*param_1 & 1) != 0) {
+          pbVar1 = *(byte **)(param_1 + 0x10);
+          uVar4 = *(ulong *)(param_1 + 8);
         }
         uVar12 = (lVar6 >> 3) * -0x5555555555555555;
         do {
@@ -3647,7 +3646,7 @@ void Walaber::SoundManager::modifyMusicFilePath(long param_1,byte *param_2,undef
           }
           if (((uVar2 == 0) || (iVar5 = memcmp(pbVar7,pbVar1), iVar5 == 0)) &&
              (uVar10 == uVar4)) {
-            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar9,param_3);
+            std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(pbVar9,param_2);
             goto LAB_00351b0c;
           }
           uVar8 = uVar8 + 1;
@@ -3655,7 +3654,7 @@ void Walaber::SoundManager::modifyMusicFilePath(long param_1,byte *param_2,undef
         } while (uVar8 <= uVar12 && uVar12 - uVar8 != 0);
       }
       uVar11 = uVar11 + 1;
-    } while (uVar11 < *(ulong *)(param_1 + 0x70));
+    } while (uVar11 < *(ulong *)(this + 0x70));
   }
 LAB_00351b0c:
   if (*(long *)(lVar3 + 0x28) == lStack_68) {
@@ -3902,7 +3901,7 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
    Walaber::PropertyList const&) */
 
 ulong Walaber::SoundManager::newSoundFromGroup
-                (long param_1,uint param_2,long *param_3,undefined8 param_4)
+                (int param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3)
 
 {
   int iVar1;
@@ -3918,20 +3917,20 @@ ulong Walaber::SoundManager::newSoundFromGroup
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar4 = (long *)(param_1 + 0x20);
+  plVar4 = (long *)(this + 0x20);
   plVar5 = (long *)*plVar4;
   plVar7 = plVar4;
   if (plVar5 != (long *)0x0) {
     do {
-      if (*(uint *)(plVar5 + 4) >= param_2) {
+      if (*(uint *)(plVar5 + 4) >= param_1) {
         plVar7 = plVar5;
       }
-      plVar5 = (long *)plVar5[*(uint *)(plVar5 + 4) < param_2];
+      plVar5 = (long *)plVar5[*(uint *)(plVar5 + 4) < param_1];
     } while (plVar5 != (long *)0x0);
-    if (((plVar7 != plVar4) && (*(uint *)(plVar7 + 4) <= param_2)) && (plVar7[6] != plVar7[5])) {
+    if (((plVar7 != plVar4) && (*(uint *)(plVar7 + 4) <= param_1)) && (plVar7[6] != plVar7[5])) {
       iVar3 = rand();
-      lStack_58 = *param_3;
-      piStack_50 = (int *)param_3[1];
+      lStack_58 = *param_2;
+      piStack_50 = (int *)param_2[1];
       uVar6 = (plVar7[6] - plVar7[5] >> 3) * -0x71c71c71c71c71c7;
       iVar1 = 0;
       if (uVar6 != 0) {
@@ -3942,7 +3941,7 @@ ulong Walaber::SoundManager::newSoundFromGroup
         *piStack_50 = *piStack_50 + 1;
       }
                     /* try { // try from 00352158 to 0035216f has its CatchHandler @ 00352180 */
-      Walaber::SoundManager::newSoundSpecific(param_1,param_2,uVar6,&lStack_58,param_4);
+      Walaber::SoundManager::newSoundSpecific(this,param_1,uVar6,&lStack_58,param_3);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_58);
       goto LAB_003520e0;
     }
@@ -4067,7 +4066,7 @@ LAB_00352300:
    Walaber::PropertyList const&) */
 
 void Walaber::SoundManager::newSoundSpecific
-               (long param_1,uint param_2,int param_3,long *param_4,undefined8 param_5)
+               (int param_1,int param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
 
 {
   char cVar1;
@@ -4105,40 +4104,40 @@ void Walaber::SoundManager::newSoundSpecific
   
   lVar3 = tpidr_el0;
   lStack_80 = *(long *)(lVar3 + 0x28);
-  plVar4 = (long *)(param_1 + 0x20);
+  plVar4 = (long *)(this + 0x20);
   plVar6 = (long *)*plVar4;
   plVar11 = plVar4;
   if (plVar6 != (long *)0x0) {
     do {
-      if (*(uint *)(plVar6 + 4) >= param_2) {
+      if (*(uint *)(plVar6 + 4) >= param_1) {
         plVar11 = plVar6;
       }
-      plVar6 = (long *)plVar6[*(uint *)(plVar6 + 4) < param_2];
+      plVar6 = (long *)plVar6[*(uint *)(plVar6 + 4) < param_1];
     } while (plVar6 != (long *)0x0);
-    if ((((plVar11 != plVar4) && (*(uint *)(plVar11 + 4) <= param_2)) && (-1 < param_3)) &&
+    if ((((plVar11 != plVar4) && (*(uint *)(plVar11 + 4) <= param_1)) && (-1 < param_2)) &&
        (lVar5 = plVar11[5], uVar7 = (plVar11[6] - lVar5 >> 3) * -0x71c71c71c71c71c7,
-       (ulong)(long)param_3 <= uVar7 && uVar7 - (long)param_3 != 0)) {
-      lVar10 = (long)param_3;
+       (ulong)(long)param_2 <= uVar7 && uVar7 - (long)param_2 != 0)) {
+      lVar10 = (long)param_2;
       cVar1 = *(char *)(lVar5 + lVar10 * 0x48 + 0x2e);
       if (cVar1 == '\0') {
-        cVar2 = *(char *)(param_1 + 0x90);
+        cVar2 = *(char *)(this + 0x90);
       }
       else {
-        cVar2 = *(char *)(param_1 + 0x91);
+        cVar2 = *(char *)(this + 0x91);
       }
       if (cVar2 != '\0') {
         if ((*(long *)(lVar5 + lVar10 * 0x48 + 0x18) == 0) ||
            (**(int **)(lVar5 + lVar10 * 0x48 + 0x20) == 0)) {
-          lStack_140 = *param_4;
-          piStack_138 = (int *)param_4[1];
+          lStack_140 = *param_3;
+          piStack_138 = (int *)param_3[1];
           if (lStack_140 != 0) {
             *piStack_138 = *piStack_138 + 1;
           }
                     /* try { // try from 00352580 to 00352597 has its CatchHandler @ 003527b4 */
-          Walaber::SoundManager::_loadSound(param_1,param_2,param_3,&lStack_140,param_5);
+          Walaber::SoundManager::_loadSound(this,param_1,param_2,&lStack_140,param_4);
           Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_140);
         }
-        else if (*param_4 != 0) {
+        else if (*param_3 != 0) {
           if (*(char *)(lVar5 + lVar10 * 0x48 + 0x2d) == '\0') {
             uStack_108 = operator new(0x50);
             lVar5 = plVar11[5];
@@ -4153,7 +4152,7 @@ void Walaber::SoundManager::newSoundSpecific
               lVar8 = 0xa8;
             }
             lVar5 = lVar5 + lVar10 * 0x48;
-            uVar9 = *(undefined8 *)(param_1 + lVar8);
+            uVar9 = *(undefined8 *)(this + lVar8);
             uVar12 = *(undefined4 *)(lVar5 + 0x28);
                     /* try { // try from 00352600 to 00352607 has its CatchHandler @ 00352704 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_130,lVar5 + 0x30);
@@ -4164,7 +4163,7 @@ void Walaber::SoundManager::newSoundSpecific
             *puStack_100 = 2;
                     /* try { // try from 00352644 to 0035265b has its CatchHandler @ 003526e8 */
             puStack_c8 = puStack_100;
-            Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(auStack_b0,param_2,param_3,&uStack_108,param_5);
+            Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(auStack_b0,param_1,param_2,&uStack_108,param_4);
             Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_108);
             Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_d0);
             if ((abStack_130[0] & 1) != 0) {
@@ -4172,7 +4171,7 @@ void Walaber::SoundManager::newSoundSpecific
             }
             Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(&lStack_118);
                     /* try { // try from 00352690 to 0035269b has its CatchHandler @ 003526e4 */
-            (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,auStack_b0);
+            (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,auStack_b0);
           }
           else {
             uStack_c0 = operator new(0x50);
@@ -4184,7 +4183,7 @@ void Walaber::SoundManager::newSoundSpecific
               *piStack_d8 = *piStack_d8 + 1;
             }
             lVar5 = lVar5 + lVar10 * 0x48;
-            uVar9 = *(undefined8 *)(param_1 + 0xb8);
+            uVar9 = *(undefined8 *)(this + 0xb8);
             uVar12 = *(undefined4 *)(lVar5 + 0x28);
                     /* try { // try from 003524c8 to 003524cf has its CatchHandler @ 00352744 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_f8,lVar5 + 0x30);
@@ -4195,7 +4194,7 @@ void Walaber::SoundManager::newSoundSpecific
             *puStack_c8 = 2;
                     /* try { // try from 0035250c to 00352523 has its CatchHandler @ 00352728 */
             puStack_b8 = puStack_c8;
-            Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(auStack_b0,param_2,param_3,&uStack_c0,param_5);
+            Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(auStack_b0,param_1,param_2,&uStack_c0,param_4);
             Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_c0);
             Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_d0);
             if ((abStack_f8[0] & 1) != 0) {
@@ -4203,7 +4202,7 @@ void Walaber::SoundManager::newSoundSpecific
             }
             Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(&lStack_e0);
                     /* try { // try from 00352558 to 00352563 has its CatchHandler @ 00352710 */
-            (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,auStack_b0);
+            (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,auStack_b0);
           }
           Walaber::PropertyList::~PropertyList(auStack_98);
           Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(auStack_a8);
@@ -4391,8 +4390,7 @@ void Walaber::SoundManager::playSoundSpecific(int p0,int p1,float p2,float p3)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float, float, bool) */
 
 void Walaber::SoundManager::playSoundFile
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               uint param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2,float param_3,bool param_4)
 
 {
   long lVar1;
@@ -4413,7 +4411,7 @@ void Walaber::SoundManager::playSoundFile
   pvStack_78 = (void *)0x0;
   auStack_88[0] = 0x6c6f7606;
                     /* try { // try from 00352be8 to 00352bf3 has its CatchHandler @ 00352d54 */
-  Walaber::Property::Property(param_1,&puStack_a8);
+  Walaber::Property::Property(this,&puStack_a8);
                     /* try { // try from 00352bf4 to 00352c03 has its CatchHandler @ 00352d34 */
   Walaber::PropertyList::setValueForKey(auStack_70,auStack_88,&puStack_a8);
   Walaber::Property::~Property(&puStack_a8);
@@ -4424,7 +4422,7 @@ void Walaber::SoundManager::playSoundFile
   pvStack_78 = (void *)0x0;
   auStack_88[0] = 0x68637469700a;
                     /* try { // try from 00352c40 to 00352c4b has its CatchHandler @ 00352d30 */
-  Walaber::Property::Property(param_2,&puStack_a8);
+  Walaber::Property::Property(param_1,&puStack_a8);
                     /* try { // try from 00352c4c to 00352c5b has its CatchHandler @ 00352d2c */
   Walaber::PropertyList::setValueForKey(auStack_70,auStack_88,&puStack_a8);
   Walaber::Property::~Property(&puStack_a8);
@@ -4441,7 +4439,7 @@ void Walaber::SoundManager::playSoundFile
                     /* try { // try from 00352cb4 to 00352ccb has its CatchHandler @ 00352d14 */
   puStack_b8 = puVar2;
   puStack_a0 = puStack_b0;
-  Walaber::SoundManager::getSoundFile(param_3,param_4,&puStack_b8,auStack_70,param_5 & 1);
+  Walaber::SoundManager::getSoundFile(param_2,param_3,&puStack_b8,auStack_70,param_4 & 1);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::PropertyList::~PropertyList(auStack_70);
@@ -4539,7 +4537,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
    Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&, bool) */
 
 void Walaber::SoundManager::getSoundFile
-               (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,uint param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3,bool param_4)
 
 {
   long lVar1;
@@ -4599,7 +4597,7 @@ void Walaber::SoundManager::getSoundFile
   uStack_ff = 0x765f7369;
   uStack_fb = 0x6f;
                     /* try { // try from 00352fb8 to 00352fbf has its CatchHandler @ 003534a4 */
-  Walaber::Property::Property(&puStack_140,param_5 & 1);
+  Walaber::Property::Property(&puStack_140,param_4 & 1);
                     /* try { // try from 00352fc0 to 00352fcf has its CatchHandler @ 00353494 */
   Walaber::PropertyList::setValueForKey(auStack_a8,&bStack_100,&puStack_140);
   Walaber::Property::~Property(&puStack_140);
@@ -4615,14 +4613,14 @@ void Walaber::SoundManager::getSoundFile
   uStack_f8 = 0x65;
   uStack_f7 = 0;
                     /* try { // try from 00353010 to 0035301b has its CatchHandler @ 00353490 */
-  Walaber::Property::Property(&puStack_140,param_2);
+  Walaber::Property::Property(&puStack_140,param_1);
                     /* try { // try from 0035301c to 0035302b has its CatchHandler @ 0035348c */
   Walaber::PropertyList::setValueForKey(auStack_a8,&bStack_100,&puStack_140);
   Walaber::Property::~Property(&puStack_140);
   if ((bStack_100 & 1) != 0) {
     operator delete(pvStack_f0);
   }
-  plVar6 = (long *)(param_1 + 8);
+  plVar6 = (long *)(this + 8);
   plVar8 = (long *)*plVar6;
   plVar9 = plVar6;
   if (plVar8 != (long *)0x0) {
@@ -4682,16 +4680,16 @@ void Walaber::SoundManager::getSoundFile
     }
   }
                     /* try { // try from 003531a0 to 003531ab has its CatchHandler @ 00353484 */
-  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x110,param_2);
+  lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(this + 0x110,param_1);
                     /* try { // try from 003531b0 to 003531bb has its CatchHandler @ 00353480 */
   Walaber::PropertyList::PropertyList(&bStack_100);
   lStack_e8 = 0;
   piStack_e0 = (int *)0x0;
                     /* try { // try from 003531c4 to 003531cf has its CatchHandler @ 00353478 */
-  Walaber::PropertyList::operator=(&bStack_100,param_4);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_e8,param_3);
+  Walaber::PropertyList::operator=(&bStack_100,param_3);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(&lStack_e8,param_2);
                     /* try { // try from 003531dc to 003531eb has its CatchHandler @ 00353474 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_140,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_140,param_1);
   plVar9 = (long *)CONCAT17(uStack_f9,CONCAT25(uStack_fb,CONCAT41(uStack_ff,bStack_100)));
   uStack_120 = 0;
   uStack_118 = 0;
@@ -4727,16 +4725,16 @@ void Walaber::SoundManager::getSoundFile
     *piStack_e0 = *piStack_e0 + 1;
   }
                     /* try { // try from 00353298 to 003532a7 has its CatchHandler @ 0035345c */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>(param_1 + 0x110,&puStack_140);
+  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SoundManager::GotSoundCallbackData>>(this + 0x110,&puStack_140);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_110);
   Walaber::PropertyList::~PropertyList(&puStack_128);
   if (((ulong)puStack_140 & 1) != 0) {
     operator delete(puStack_130);
   }
-  if (param_1 + 0x118 == lVar2) {
+  if (this + 0x118 == lVar2) {
                     /* try { // try from 003532d4 to 00353313 has its CatchHandler @ 00353458 */
     puVar3 = (undefined8 *)operator new(0x28);
-    puVar3[2] = param_1;
+    puVar3[2] = this;
     *puVar3 = &PTR__Callback_0070e658;
     puVar3[1] = 0;
     puVar3[4] = 0;
@@ -5582,7 +5580,7 @@ LAB_00354604:
 
 undefined8
 Walaber::SoundManager::_streamMusicAtPath
-          (undefined8 **param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4)
+          (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int param_2,int param_3)
 
 {
   long lVar1;
@@ -5606,13 +5604,13 @@ Walaber::SoundManager::_streamMusicAtPath
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  if (param_1[0x1a] != (undefined8 *)0x0) {
-    Walaber::SoundManager::stopMusic(param_1);
+  if (this[0x1a] != (undefined8 *)0x0) {
+    Walaber::SoundManager::stopMusic(this);
   }
   Walaber::PropertyList::PropertyList(auStack_88);
                     /* try { // try from 003546ac to 003546eb has its CatchHandler @ 00354804 */
   pppuVar2 = (undefined8 ***)operator new(0x28);
-  pppuVar2[2] = param_1;
+  pppuVar2[2] = this;
   *pppuVar2 = (undefined8 **)&PTR__Callback_0070e658;
   pppuVar2[1] = (undefined8 **)0x0;
   pppuVar2[4] = (undefined8 **)0x0;
@@ -5638,14 +5636,14 @@ Walaber::SoundManager::_streamMusicAtPath
     *piStack_a0 = *piStack_a0 + 1;
   }
                     /* try { // try from 00354740 to 00354753 has its CatchHandler @ 003547dc */
-  Walaber::FileManager::readFile(uVar4,param_2,&ppuStack_c8,auStack_88,0);
+  Walaber::FileManager::readFile(uVar4,param_1,&ppuStack_c8,auStack_88,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_c8);
   pppuStack_70 = &ppuStack_b8;
-  *(undefined4 *)(param_1 + 0x1e) = param_3;
-  ppuStack_b8 = (undefined8 **)CONCAT44(ppuStack_b8._4_4_,param_3);
+  *(undefined4 *)(this + 0x1e) = param_2;
+  ppuStack_b8 = (undefined8 **)CONCAT44(ppuStack_b8._4_4_,param_2);
                     /* try { // try from 00354770 to 00354787 has its CatchHandler @ 003547d8 */
-  lVar5 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(param_1 + 0xc,&ppuStack_b8,&DAT_0062b170,&pppuStack_70,auStack_60);
-  *(undefined4 *)(lVar5 + 0x58) = param_4;
+  lVar5 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::MusicGroup>>>::__emplace_unique_key_args<unsigned int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<unsigned int&&>, std::__ndk1::tuple<>>(this + 0xc,&ppuStack_b8,&DAT_0062b170,&pppuStack_70,auStack_60);
+  *(undefined4 *)(lVar5 + 0x58) = param_3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_a8);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::SoundManager>>::~SharedPtr(&ppuStack_98);
   Walaber::PropertyList::~PropertyList(auStack_88);

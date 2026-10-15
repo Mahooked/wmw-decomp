@@ -28,8 +28,7 @@ void std::__ndk1::codecvt<char32_t,char,mbstate_t>::~codecvt(void *param_1)
 
 undefined8
 std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_out
-          (undefined8 param_1,undefined8 param_2,uint *param_3,uint *param_4,ulong *param_5,
-          byte *param_6,long param_7,long *param_8)
+          (mbstate_t& param_1,char32_t const *param_2,char32_t const *param_3,char32_t const*& param_4,char *param_5,char *param_6,char*& param_7)
 
 {
   uint uVar1;
@@ -37,52 +36,52 @@ std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_out
   undefined8 uVar3;
   byte *pbVar4;
   
-  if (param_3 < param_4) {
+  if (param_2 < param_3) {
     uVar3 = 2;
-    pbVar4 = param_6;
+    pbVar4 = param_5;
     do {
-      uVar1 = *param_3;
+      uVar1 = *param_2;
       if ((0x10 < uVar1 >> 0x10) || ((uVar1 & 0xfffff800) == 0xd800)) goto LAB_005d96f0;
       bVar2 = (byte)uVar1;
       if (uVar1 < 0x80) {
-        if (param_7 - (long)pbVar4 < 1) goto LAB_005d96fc;
-        param_6 = pbVar4 + 1;
+        if (param_6 - (long)pbVar4 < 1) goto LAB_005d96fc;
+        param_5 = pbVar4 + 1;
         *pbVar4 = bVar2;
       }
       else if (uVar1 < 0x800) {
-        if (param_7 - (long)pbVar4 < 2) goto LAB_005d96fc;
+        if (param_6 - (long)pbVar4 < 2) goto LAB_005d96fc;
         *pbVar4 = (byte)(uVar1 >> 6) | 0xc0;
-        param_6 = pbVar4 + 2;
+        param_5 = pbVar4 + 2;
         pbVar4[1] = bVar2 & 0x3f | 0x80;
       }
       else if (uVar1 >> 0x10 == 0) {
-        if (param_7 - (long)pbVar4 < 3) {
+        if (param_6 - (long)pbVar4 < 3) {
 LAB_005d96fc:
           uVar3 = 1;
           goto LAB_005d96f0;
         }
         *pbVar4 = (byte)(uVar1 >> 0xc) | 0xe0;
         pbVar4[1] = (byte)(uVar1 >> 6) & 0x3f | 0x80;
-        param_6 = pbVar4 + 3;
+        param_5 = pbVar4 + 3;
         pbVar4[2] = bVar2 & 0x3f | 0x80;
       }
       else {
-        if (param_7 - (long)pbVar4 < 4) goto LAB_005d96fc;
-        param_6 = pbVar4 + 4;
+        if (param_6 - (long)pbVar4 < 4) goto LAB_005d96fc;
+        param_5 = pbVar4 + 4;
         *pbVar4 = (byte)(uVar1 >> 0x12) | 0xf0;
         pbVar4[1] = (byte)(uVar1 >> 0xc) & 0x3f | 0x80;
         pbVar4[2] = (byte)(uVar1 >> 6) & 0x3f | 0x80;
         pbVar4[3] = bVar2 & 0x3f | 0x80;
       }
-      param_3 = param_3 + 1;
-      pbVar4 = param_6;
-    } while (param_3 < param_4);
+      param_2 = param_2 + 1;
+      pbVar4 = param_5;
+    } while (param_2 < param_3);
   }
   uVar3 = 0;
-  pbVar4 = param_6;
+  pbVar4 = param_5;
 LAB_005d96f0:
-  *param_5 = (ulong)param_3;
-  *param_8 = (long)pbVar4;
+  *param_4 = (ulong)param_2;
+  *param_7 = (long)pbVar4;
   return uVar3;
 }
 
@@ -96,8 +95,7 @@ LAB_005d96f0:
    const*&, char32_t*, char32_t*, char32_t*&) const */
 
 void std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_in
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
+               (mbstate_t& param_1,char const *param_2,char const *param_3,char const*& param_4,char32_t *param_5,char32_t *param_6,char32_t*& param_7)
 
 {
   long lVar1;
@@ -107,11 +105,11 @@ void std::__ndk1::codecvt<char32_t,char,mbstate_t>::do_in
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_48 = param_6;
-  uStack_40 = param_3;
-  func_0x005d9930(param_3,param_4,&uStack_40,param_6,param_7,&uStack_48,0x10ffff,0);
-  *param_5 = uStack_40;
-  *param_8 = uStack_48;
+  uStack_48 = param_5;
+  uStack_40 = param_2;
+  func_0x005d9930(param_2,param_3,&uStack_40,param_5,param_6,&uStack_48,0x10ffff,0);
+  *param_4 = uStack_40;
+  *param_7 = uStack_48;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

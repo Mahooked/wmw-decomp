@@ -13,13 +13,13 @@
     */
 
 void WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo
-               (undefined4 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
+               (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_3)
 
 {
-  *param_1 = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+  *this = param_1;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_2);
                     /* try { // try from 004e32e0 to 004e32eb has its CatchHandler @ 004e32fc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 8,param_4);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 8,param_3);
   return;
 }
 

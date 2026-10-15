@@ -185,23 +185,23 @@ LAB_005dc370:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
 void std::__ndk1::numpunct_byname<char>::numpunct_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long param_2)
 
 {
   byte *pbVar1;
   
-  param_1[5] = 0;
-  *(undefined2 *)(param_1 + 2) = 0x2c2e;
-  param_1[3] = 0;
-  param_1[4] = 0;
-  *param_1 = &PTR__numpunct_byname_007179c8;
-  param_1[1] = param_3 + -1;
-  pbVar1 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar1 = param_2 + 1;
+  this[5] = 0;
+  *(undefined2 *)(this + 2) = 0x2c2e;
+  this[3] = 0;
+  this[4] = 0;
+  *this = &PTR__numpunct_byname_007179c8;
+  this[1] = param_2 + -1;
+  pbVar1 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar1 = param_1 + 1;
   }
                     /* try { // try from 005dc464 to 005dc467 has its CatchHandler @ 005dc474 */
-  std::__ndk1::numpunct_byname<char>::__init(param_1,pbVar1);
+  std::__ndk1::numpunct_byname<char>::__init(this,pbVar1);
   return;
 }
 

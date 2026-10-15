@@ -349,22 +349,22 @@ LAB_003d4b10:
 
 undefined1  [16]
 std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekpos
-          (long *param_1,long param_2,undefined8 param_3)
+          (std::__ndk1::fpos<mbstate_t> param_1,unsigned int param_2)
 
 {
   int iVar1;
   undefined1 auVar2 [16];
   
-  if (((param_1[0xf] == 0) || (iVar1 = (**(code **)(*param_1 + 0x30))(), iVar1 != 0)) ||
-     (iVar1 = fseeko(param_1[0xf],param_3,0), iVar1 != 0)) {
-    param_2 = 0;
-    param_3 = 0xffffffffffffffff;
+  if (((this[0xf] == 0) || (iVar1 = (**(code **)(*this + 0x30))(), iVar1 != 0)) ||
+     (iVar1 = fseeko(this[0xf],param_2,0), iVar1 != 0)) {
+    param_1 = 0;
+    param_2 = 0xffffffffffffffff;
   }
   else {
-    param_1[0x11] = param_2;
+    this[0x11] = param_1;
   }
-  auVar2._8_8_ = param_3;
-  auVar2._0_8_ = param_2;
+  auVar2._8_8_ = param_2;
+  auVar2._0_8_ = param_1;
   return auVar2;
 }
 

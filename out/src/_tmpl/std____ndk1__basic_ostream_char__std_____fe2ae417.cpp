@@ -12,7 +12,7 @@
    (*)(std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >&)) */
 
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
-               (undefined8 param_1,code *UNRECOVERED_JUMPTABLE)
+               (std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& (*param_1)(std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>&))
 
 {
                     /* WARNING: Could not recover jumptable at 0x005abf24. Too many branches */

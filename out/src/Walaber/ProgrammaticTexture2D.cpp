@@ -107,7 +107,7 @@ void Walaber::ProgrammaticTexture2D::initWithSize(long param_1,int param_2,int p
 /* Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
    std::__ndk1::allocator<Walaber::Color> > >) */
 
-void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
+void Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> param_1)
 
 {
   void *pvVar1;
@@ -132,10 +132,10 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
   
   lVar6 = tpidr_el0;
   lStack_38 = *(long *)(lVar6 + 0x28);
-  pvVar1 = *(void **)*param_2;
-  pvVar2 = (void *)((long *)*param_2)[1];
+  pvVar1 = *(void **)*param_1;
+  pvVar2 = (void *)((long *)*param_1)[1];
   if ((long)pvVar2 - (long)pvVar1 >> 2 ==
-      (ulong)(uint)(*(int *)(param_1 + 0x80) * *(int *)(param_1 + 0x7c))) {
+      (ulong)(uint)(*(int *)(this + 0x80) * *(int *)(this + 0x7c))) {
     pvStack_50 = (void *)0x0;
     uStack_40 = 0;
     uStack_48 = 0x100000000;
@@ -146,32 +146,32 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
                   );
       return;
     }
-    if (*(char *)(param_1 + 0x24) == '\0') {
+    if (*(char *)(this + 0x24) == '\0') {
       uVar10 = 0;
-      if (*(char *)(param_1 + 0x60) != '\0') {
+      if (*(char *)(this + 0x60) != '\0') {
         uVar10 = 2;
       }
     }
     else {
       uVar10 = 1;
     }
-    uStack_58 = *(undefined1 *)(param_1 + 0x2c);
-    uStack_57 = *(undefined1 *)(param_1 + 0x2d);
-    uStack_56 = *(undefined1 *)(param_1 + 0x2e);
-    uStack_55 = *(undefined1 *)(param_1 + 0x2f);
+    uStack_58 = *(undefined1 *)(this + 0x2c);
+    uStack_57 = *(undefined1 *)(this + 0x2d);
+    uStack_56 = *(undefined1 *)(this + 0x2e);
+    uStack_55 = *(undefined1 *)(this + 0x2f);
     pvStack_50 = pvVar1;
-    pvStack_50 = (void *)Walaber::processImageBufferAndMakePOT(*(undefined4 *)(param_1 + 0x28),
-                                         *(undefined4 *)(param_1 + 0x30),
-                                         *(undefined4 *)(param_1 + 100),
-                                         *(undefined4 *)(param_1 + 0x68),
-                                         *(undefined4 *)(param_1 + 0x6c),
-                                         *(undefined4 *)(param_1 + 0x70),
-                                         *(undefined4 *)(param_1 + 0x74),&pvStack_50,
-                                         *(undefined4 *)(param_1 + 0x34),0,uVar10,
-                                         *(byte *)(param_1 + 0x23) ^ 1,&uStack_58);
-    iVar3 = *(int *)(param_1 + 0x34);
-    uVar4 = *(int *)(param_1 + 0x7c) - 1;
-    uVar5 = *(int *)(param_1 + 0x80) - 1;
+    pvStack_50 = (void *)Walaber::processImageBufferAndMakePOT(*(undefined4 *)(this + 0x28),
+                                         *(undefined4 *)(this + 0x30),
+                                         *(undefined4 *)(this + 100),
+                                         *(undefined4 *)(this + 0x68),
+                                         *(undefined4 *)(this + 0x6c),
+                                         *(undefined4 *)(this + 0x70),
+                                         *(undefined4 *)(this + 0x74),&pvStack_50,
+                                         *(undefined4 *)(this + 0x34),0,uVar10,
+                                         *(byte *)(this + 0x23) ^ 1,&uStack_58);
+    iVar3 = *(int *)(this + 0x34);
+    uVar4 = *(int *)(this + 0x7c) - 1;
+    uVar5 = *(int *)(this + 0x80) - 1;
     uVar4 = uVar4 | uVar4 >> 1;
     uVar5 = uVar5 | uVar5 >> 1;
     uVar4 = uVar4 | uVar4 >> 2;
@@ -317,14 +317,13 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
    int, Walaber::TextureInMemoryColorspace) */
 
 void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
-               (undefined8 *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2,unsigned int param_3,Walaber::TextureInMemoryColorspace param_4)
 
 {
-  Walaber::Texture::Texture(param_1,param_2,3);
-  *param_1 = &PTR__ProgrammaticTexture2D_00710068;
+  Walaber::Texture::Texture(this,param_1,3);
+  *this = &PTR__ProgrammaticTexture2D_00710068;
                     /* try { // try from 0039550c to 0039551f has its CatchHandler @ 00395530 */
-  Walaber::ProgrammaticTexture2D::initWithSize(param_1,param_3,param_4,param_5);
+  Walaber::ProgrammaticTexture2D::initWithSize(this,param_2,param_3,param_4);
   return;
 }
 
@@ -340,8 +339,7 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
    std::__ndk1::allocator<Walaber::Color> > >) */
 
 void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
-               (long *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,long *param_6)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2,unsigned int param_3,Walaber::TextureInMemoryColorspace param_4,Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> param_5)
 
 {
   long lVar1;
@@ -351,17 +349,17 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  Walaber::Texture::Texture(param_1,param_2,3);
-  *param_1 = (long)&PTR__ProgrammaticTexture2D_00710068;
+  Walaber::Texture::Texture(this,param_1,3);
+  *this = (long)&PTR__ProgrammaticTexture2D_00710068;
                     /* try { // try from 003956e8 to 003956fb has its CatchHandler @ 0039576c */
-  Walaber::ProgrammaticTexture2D::initWithSize(param_1,param_3,param_4,param_5);
-  lStack_58 = *param_6;
-  piStack_50 = (int *)param_6[1];
+  Walaber::ProgrammaticTexture2D::initWithSize(this,param_2,param_3,param_4);
+  lStack_58 = *param_5;
+  piStack_50 = (int *)param_5[1];
   if (lStack_58 != 0) {
     *piStack_50 = *piStack_50 + 1;
   }
                     /* try { // try from 0039571c to 00395727 has its CatchHandler @ 0039575c */
-  (**(code **)(*param_1 + 0x10))(param_1,&lStack_58);
+  (**(code **)(*this + 0x10))(this,&lStack_58);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_58);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;

@@ -26,7 +26,7 @@ void std::__ndk1::
      __tree<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::__map_value_compare<std::__ndk1::pair<int,int>,std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>,std::__ndk1::less<std::__ndk1::pair<int,int>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>>
      ::
      __emplace_multi<std::__ndk1::pair<std::__ndk1::pair<int,int>,Walaber::SoundManager::GotSoundCallbackData>>
-               (undefined8 param_1)
+               (std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>&& param_1)
 
 {
   long lVar1;

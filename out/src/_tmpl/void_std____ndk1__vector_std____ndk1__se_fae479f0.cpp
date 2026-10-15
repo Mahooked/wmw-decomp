@@ -24,7 +24,7 @@ void std::__ndk1::
      vector<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>,std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>
      ::
      __push_back_slow_path<std::__ndk1::set<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>const&>
-               (long *param_1,undefined8 *param_2)
+               (std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>> const& param_1)
 
 {
   ulong uVar1;
@@ -44,26 +44,26 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  lVar5 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
+  lVar5 = (this[1] - *this >> 3) * -0x5555555555555555;
   uVar1 = lVar5 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
     return;
   }
-  lVar9 = param_1[2] - *param_1 >> 3;
+  lVar9 = this[2] - *this >> 3;
   uVar7 = 0xaaaaaaaaaaaaaaa;
   if (((ulong)(lVar9 * -0x5555555555555555) < 0x555555555555555) &&
      (uVar6 = lVar9 * 0x5555555555555556, uVar7 = uVar1, uVar1 <= uVar6)) {
     uVar7 = uVar6;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>::__split_buffer(auStack_70,uVar7,lVar5,param_1 + 2);
+  std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>::__split_buffer(auStack_70,uVar7,lVar5,this + 2);
   puVar3 = puStack_60;
   puVar10 = puStack_60 + 1;
   *puVar10 = 0;
   puStack_60[2] = 0;
   *puStack_60 = puVar10;
-  plVar11 = (long *)*param_2;
-  while (plVar11 != param_2 + 1) {
+  plVar11 = (long *)*param_1;
+  while (plVar11 != param_1 + 1) {
                     /* try { // try from 004cc484 to 004cc493 has its CatchHandler @ 004cc544 */
     std::__ndk1::__tree_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__emplace_hint_unique_key_args<WaterConcept::InteractiveObject*, WaterConcept::InteractiveObject* const&>(puVar3,puVar10,plVar11 + 4,plVar11 + 4);
     plVar8 = (long *)plVar11[1];
@@ -88,7 +88,7 @@ void std::__ndk1::
   }
   puStack_60 = puStack_60 + 3;
                     /* try { // try from 004cc4f4 to 004cc4ff has its CatchHandler @ 004cc53c */
-  std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__swap_out_circular_buffer(param_1,auStack_70);
+  std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__swap_out_circular_buffer(this,auStack_70);
   std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>::~__split_buffer(auStack_70);
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     __stack_chk_fail();

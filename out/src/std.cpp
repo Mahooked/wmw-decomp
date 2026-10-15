@@ -179,7 +179,7 @@ void std::get_terminate(code *param_1)
 
 /* std::set_new_handler(void (*)()) */
 
-undefined8 std::set_new_handler(undefined8 param_1)
+undefined8 std::set_new_handler(void (*param_1)())
 
 {
   char cVar1;
@@ -220,7 +220,7 @@ undefined8 std::get_new_handler(void)
 
 /* std::set_unexpected(void (*)()) */
 
-undefined * std::set_unexpected(undefined *param_1)
+undefined * std::set_unexpected(void (*param_1)())
 
 {
   undefined *puVar1;
@@ -252,7 +252,7 @@ undefined * std::set_unexpected(undefined *param_1)
 
 /* std::set_terminate(void (*)()) */
 
-undefined * std::set_terminate(undefined *param_1)
+undefined * std::set_terminate(void (*param_1)())
 
 {
   undefined *puVar1;

@@ -13,7 +13,7 @@
    const&, bool) */
 
 void Walaber::ZipUtilities::LoadArchiveDescription
-               (undefined8 param_1,undefined8 param_2,uint param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,bool param_3)
 
 {
   long lVar1;

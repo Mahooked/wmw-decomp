@@ -15,8 +15,7 @@
 
 long * std::__ndk1::
        money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_get(undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-               uint *param_6,undefined8 param_7)
+       ::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,long double& param_6)
 
 {
   long lVar1;
@@ -58,14 +57,14 @@ long * std::__ndk1::
   piStack_2b8 = aiStack_200;
   pcStack_2b0 = __do_nothing;
                     /* try { // try from 005c977c to 005c9787 has its CatchHandler @ 005c9ab0 */
-  plStack_2a8 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_2c8,param_5);
+  plStack_2a8 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_2c8,param_4);
                     /* try { // try from 005c9788 to 005c9797 has its CatchHandler @ 005c9aac */
   plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_2c8,&ctype<wchar_t>::id);
   acStack_2cc[0] = '\0';
                     /* try { // try from 005c97a8 to 005c97d7 has its CatchHandler @ 005c9ac8 */
-  uVar5 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_2a8,param_3,param_4 & 1,&uStack_2c8,*(undefined4 *)(param_5 + 8),
-                          param_6,acStack_2cc,plVar4,&piStack_2b8,&piStack_2c0,alStack_70);
+  uVar5 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_2a8,param_2,param_3 & 1,&uStack_2c8,*(undefined4 *)(param_4 + 8),
+                          param_5,acStack_2cc,plVar4,&piStack_2b8,&piStack_2c0,alStack_70);
   if ((uVar5 & 1) != 0) {
     auStack_206[0] = 0;
     uStack_208 = 0x3938;
@@ -114,7 +113,7 @@ long * std::__ndk1::
       } while (piVar10 < piStack_2c0);
     }
     *pcVar9 = '\0';
-    iVar3 = sscanf(acStack_29c,&DAT_00641601,param_7);
+    iVar3 = sscanf(acStack_29c,&DAT_00641601,param_6);
     if (iVar3 != 1) {
                     /* try { // try from 005c9a80 to 005c9a8f has its CatchHandler @ 005c9a90 */
       std::__ndk1::__throw_runtime_error("money_get error");
@@ -142,7 +141,7 @@ LAB_005c9a8c:
   if (plStack_2a8 == (long *)0x0) {
 LAB_005c99e0:
     bVar2 = true;
-    if (param_3 != (long *)0x0) goto LAB_005c99e8;
+    if (param_2 != (long *)0x0) goto LAB_005c99e8;
 LAB_005c99d4:
     if (!bVar2) goto LAB_005c9a28;
   }
@@ -159,17 +158,17 @@ LAB_005c99d4:
       goto LAB_005c99e0;
     }
     bVar2 = plStack_2a8 == (long *)0x0;
-    if (param_3 == (long *)0x0) goto LAB_005c99d4;
+    if (param_2 == (long *)0x0) goto LAB_005c99d4;
 LAB_005c99e8:
-    if ((int *)param_3[3] == (int *)param_3[4]) {
-      iVar3 = (**(code **)(*param_3 + 0x48))(param_3);
+    if ((int *)param_2[3] == (int *)param_2[4]) {
+      iVar3 = (**(code **)(*param_2 + 0x48))(param_2);
     }
     else {
-      iVar3 = *(int *)param_3[3];
+      iVar3 = *(int *)param_2[3];
     }
     if (bVar2 != (iVar3 == -1)) goto LAB_005c9a28;
   }
-  *param_6 = *param_6 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005c9a28:
   plVar4 = plStack_2a8;
   std::__ndk1::__shared_count::__release_shared(uStack_2c8);
@@ -202,9 +201,7 @@ LAB_005c9a28:
 
 ulong std::__ndk1::
       money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-      ::__do_get(long *param_1,long *param_2,uint param_3,undefined8 param_4,uint param_5,
-                uint *param_6,undefined1 *param_7,long *param_8,long *param_9,long *param_10,
-                int *param_11)
+      ::__do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>& param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<wchar_t> const& param_8,std::__ndk1::unique_ptr<wchar_t, void (*param_9)(void*)>&,wchar_t*& param_10,wchar_t *param_11)
 
 {
   undefined4 *puVar1;
@@ -1208,8 +1205,7 @@ LAB_005cadac:
 
 long * std::__ndk1::
        money_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_get(undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-               uint *param_6,byte *param_7)
+       ::do_get(std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_6)
 
 {
   int *piVar1;
@@ -1234,36 +1230,36 @@ long * std::__ndk1::
   piStack_218 = aiStack_200;
   pcStack_210 = __do_nothing;
                     /* try { // try from 005caf00 to 005caf0b has its CatchHandler @ 005cb100 */
-  plStack_208 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_228,param_5);
+  plStack_208 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_228,param_4);
                     /* try { // try from 005caf0c to 005caf1b has its CatchHandler @ 005cb0fc */
   plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_228,&ctype<wchar_t>::id);
   acStack_22c[0] = '\0';
                     /* try { // try from 005caf2c to 005cafaf has its CatchHandler @ 005cb110 */
-  uVar7 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_208,param_3,param_4 & 1,&uStack_228,*(undefined4 *)(param_5 + 8),
-                          param_6,acStack_22c,plVar6,&piStack_218,&lStack_220,auStack_70);
+  uVar7 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_208,param_2,param_3 & 1,&uStack_228,*(undefined4 *)(param_4 + 8),
+                          param_5,acStack_22c,plVar6,&piStack_218,&lStack_220,auStack_70);
   if ((uVar7 & 1) != 0) {
-    if ((*param_7 & 1) == 0) {
-      param_7[4] = 0;
-      param_7[5] = 0;
-      param_7[6] = 0;
-      param_7[7] = 0;
-      *param_7 = 0;
+    if ((*param_6 & 1) == 0) {
+      param_6[4] = 0;
+      param_6[5] = 0;
+      param_6[6] = 0;
+      param_6[7] = 0;
+      *param_6 = 0;
     }
     else {
-      **(undefined4 **)(param_7 + 0x10) = 0;
-      param_7[8] = 0;
-      param_7[9] = 0;
-      param_7[10] = 0;
-      param_7[0xb] = 0;
-      param_7[0xc] = 0;
-      param_7[0xd] = 0;
-      param_7[0xe] = 0;
-      param_7[0xf] = 0;
+      **(undefined4 **)(param_6 + 0x10) = 0;
+      param_6[8] = 0;
+      param_6[9] = 0;
+      param_6[10] = 0;
+      param_6[0xb] = 0;
+      param_6[0xc] = 0;
+      param_6[0xd] = 0;
+      param_6[0xe] = 0;
+      param_6[0xf] = 0;
     }
     if (acStack_22c[0] != '\0') {
       uVar4 = (**(code **)(*plVar6 + 0x58))(plVar6,0x2d);
-      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::push_back(param_7,uVar4);
+      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::push_back(param_6,uVar4);
     }
                     /* try { // try from 005cafb8 to 005cafc3 has its CatchHandler @ 005cb0f4 */
     iVar5 = (**(code **)(*plVar6 + 0x58))(plVar6,0x30);
@@ -1271,12 +1267,12 @@ long * std::__ndk1::
         piVar1 = piVar1 + 1) {
     }
                     /* try { // try from 005caff0 to 005caffb has its CatchHandler @ 005cb0f0 */
-    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__append_forward_unsafe<wchar_t*>(param_7,piVar1);
+    std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__append_forward_unsafe<wchar_t*>(param_6,piVar1);
   }
   if (plStack_208 == (long *)0x0) {
 LAB_005cb050:
     bVar3 = true;
-    if (param_3 != (long *)0x0) goto LAB_005cb058;
+    if (param_2 != (long *)0x0) goto LAB_005cb058;
 LAB_005cb044:
     if (!bVar3) goto LAB_005cb098;
   }
@@ -1293,17 +1289,17 @@ LAB_005cb044:
       goto LAB_005cb050;
     }
     bVar3 = plStack_208 == (long *)0x0;
-    if (param_3 == (long *)0x0) goto LAB_005cb044;
+    if (param_2 == (long *)0x0) goto LAB_005cb044;
 LAB_005cb058:
-    if ((int *)param_3[3] == (int *)param_3[4]) {
-      iVar5 = (**(code **)(*param_3 + 0x48))(param_3);
+    if ((int *)param_2[3] == (int *)param_2[4]) {
+      iVar5 = (**(code **)(*param_2 + 0x48))(param_2);
     }
     else {
-      iVar5 = *(int *)param_3[3];
+      iVar5 = *(int *)param_2[3];
     }
     if (bVar3 != (iVar5 == -1)) goto LAB_005cb098;
   }
-  *param_6 = *param_6 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005cb098:
   plVar6 = plStack_208;
   std::__ndk1::__shared_count::__release_shared(uStack_228);

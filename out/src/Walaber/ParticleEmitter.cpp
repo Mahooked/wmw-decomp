@@ -160,7 +160,7 @@ void Walaber::ParticleEmitter::~ParticleEmitter(void *param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
    Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undefined8 param_3)
+void Walaber::ParticleEmitter::loadFromXML(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2)
 
 {
   long lVar1;
@@ -181,9 +181,9 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x150,param_3);
+  Walaber::SharedPtr<Walaber::Callback>::operator=(this + 0x150,param_2);
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_00710028;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -211,7 +211,7 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
                     /* try { // try from 003909d4 to 003909db has its CatchHandler @ 00390a4c */
   Walaber::PropertyList::PropertyList(&puStack_90);
                     /* try { // try from 003909dc to 003909f3 has its CatchHandler @ 00390a3c */
-  Walaber::FileManager::readFile(uVar4,param_2,&puStack_78,&puStack_90,0);
+  Walaber::FileManager::readFile(uVar4,param_1,&puStack_78,&puStack_90,0);
   Walaber::PropertyList::~PropertyList(&puStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);

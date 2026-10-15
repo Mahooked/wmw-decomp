@@ -90,21 +90,21 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0)
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::vector(std::__ndk1::vector<int,
    std::__ndk1::allocator<int> > const&) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(undefined8 *param_1,long *param_2)
+void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(std::__ndk1::vector<int, std::__ndk1::allocator<int>> const& param_1)
 
 {
   long lVar1;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 00410c9c to 00410c9f has its CatchHandler @ 00410cd4 */
-    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__vallocate(param_1,param_2[1] - *param_2 >> 2);
-    lVar1 = param_2[1] - *param_2;
+    std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__vallocate(this,param_1[1] - *param_1 >> 2);
+    lVar1 = param_1[1] - *param_1;
     if (0 < lVar1) {
-      memcpy(param_1[1],*param_2,lVar1);
-      param_1[1] = param_1[1] + lVar1;
+      memcpy(this[1],*param_1,lVar1);
+      this[1] = this[1] + lVar1;
     }
   }
   return;

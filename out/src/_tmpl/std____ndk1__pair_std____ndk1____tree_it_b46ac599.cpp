@@ -28,7 +28,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<Walaber::Language,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::__map_value_compare<Walaber::Language,std::__ndk1::__value_type<Walaber::Language,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,std::__ndk1::less<Walaber::Language>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Language,std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>>
 ::
 __emplace_unique_key_args<Walaber::Language,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<Walaber::Language_const&>,std::__ndk1::tuple<>>
-          (long param_1,int *param_2,undefined8 param_3,undefined8 *param_4)
+          (Walaber::Language const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::Language const&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

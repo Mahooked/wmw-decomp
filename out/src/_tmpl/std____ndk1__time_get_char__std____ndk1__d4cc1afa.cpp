@@ -14,8 +14,7 @@
 
 long * std::__ndk1::
        time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::get
-                 (long *param_1,long *param_2,long *param_3,undefined8 param_4,uint *param_5,
-                 undefined8 param_6,byte *param_7,byte *param_8)
+                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5,char const *param_6,char const *param_7)
 
 {
   long lVar1;
@@ -36,33 +35,33 @@ long * std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc(&uStack_70,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_3);
                     /* try { // try from 005be7a4 to 005be7b3 has its CatchHandler @ 005bebb0 */
   plVar9 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<char>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_70);
-  *param_5 = 0;
-  if (param_7 != param_8) {
-    while ((plVar12 = param_2, param_2 != (long *)0x0 && (param_2[3] == param_2[4]))) {
-      iVar6 = (**(code **)(*param_2 + 0x48))(param_2);
+  *param_4 = 0;
+  if (param_6 != param_7) {
+    while ((plVar12 = param_1, param_1 != (long *)0x0 && (param_1[3] == param_1[4]))) {
+      iVar6 = (**(code **)(*param_1 + 0x48))(param_1);
       plVar12 = (long *)0x0;
       if (iVar6 != -1) {
-        plVar12 = param_2;
+        plVar12 = param_1;
       }
-      if (param_3 != (long *)0x0) goto LAB_005be7e0;
+      if (param_2 != (long *)0x0) goto LAB_005be7e0;
 LAB_005be828:
-      param_3 = (long *)0x0;
-      param_2 = plVar12;
+      param_2 = (long *)0x0;
+      param_1 = plVar12;
       if (plVar12 == (long *)0x0) goto LAB_005beb00;
 LAB_005be830:
-      cVar3 = (**(code **)(*plVar9 + 0x48))(plVar9,*param_7,0);
-      param_2 = plVar12;
+      cVar3 = (**(code **)(*plVar9 + 0x48))(plVar9,*param_6,0);
+      param_1 = plVar12;
       if (cVar3 == '%') {
-        pbVar11 = param_7 + 1;
-        if (pbVar11 == param_8) goto LAB_005beb00;
+        pbVar11 = param_6 + 1;
+        if (pbVar11 == param_7) goto LAB_005beb00;
         uVar7 = (**(code **)(*plVar9 + 0x48))(plVar9,*pbVar11,0);
         if (((uVar7 & 0xff) == 0x45) || ((uVar7 & 0xff) == 0x30)) {
-          if (param_7 + 2 == param_8) goto LAB_005beb00;
-          uVar8 = (**(code **)(*plVar9 + 0x48))(plVar9,param_7[2],0);
+          if (param_6 + 2 == param_7) goto LAB_005beb00;
+          uVar8 = (**(code **)(*plVar9 + 0x48))(plVar9,param_6[2],0);
           lVar13 = 2;
           uVar10 = uVar7;
         }
@@ -71,50 +70,50 @@ LAB_005be830:
           lVar13 = 1;
           uVar8 = uVar7;
         }
-        param_2 = (long *)(**(code **)(*param_1 + 0x48))
-                                    (param_1,plVar12,param_3,param_4,param_5,param_6,uVar8,uVar10);
-        param_7 = pbVar11 + lVar13;
+        param_1 = (long *)(**(code **)(*this + 0x48))
+                                    (this,plVar12,param_2,param_3,param_4,param_5,uVar8,uVar10);
+        param_6 = pbVar11 + lVar13;
       }
       else {
-        if ((-1 < (char)*param_7) &&
-           (pbVar11 = param_7, (*(byte *)(plVar9[2] + (ulong)*param_7 * 8) & 1) != 0)) {
-          while (pbVar11 = pbVar11 + 1, pbVar2 = param_8, param_8 != pbVar11) {
-            param_7 = param_7 + 1;
-            pbVar2 = param_7;
+        if ((-1 < (char)*param_6) &&
+           (pbVar11 = param_6, (*(byte *)(plVar9[2] + (ulong)*param_6 * 8) & 1) != 0)) {
+          while (pbVar11 = pbVar11 + 1, pbVar2 = param_7, param_7 != pbVar11) {
+            param_6 = param_6 + 1;
+            pbVar2 = param_6;
             if (((char)*pbVar11 < '\0') ||
                (pbVar2 = pbVar11, (*(byte *)(plVar9[2] + (ulong)*pbVar11 * 8) & 1) == 0)) break;
           }
 joined_r0x005bea00:
-          param_2 = plVar12;
+          param_1 = plVar12;
           if ((plVar12 != (long *)0x0) && (plVar12[3] == plVar12[4])) {
             iVar6 = (**(code **)(*plVar12 + 0x48))(plVar12);
-            param_2 = (long *)0x0;
+            param_1 = (long *)0x0;
             if (iVar6 != -1) {
-              param_2 = plVar12;
+              param_1 = plVar12;
             }
           }
-          param_7 = pbVar2;
-          if ((param_3 == (long *)0x0) ||
-             ((param_3[3] == param_3[4] &&
-              (iVar6 = (**(code **)(*param_3 + 0x48))(param_3), iVar6 == -1)))) {
-            param_3 = (long *)0x0;
-            if (param_2 == (long *)0x0) goto joined_r0x005beaf0;
+          param_6 = pbVar2;
+          if ((param_2 == (long *)0x0) ||
+             ((param_2[3] == param_2[4] &&
+              (iVar6 = (**(code **)(*param_2 + 0x48))(param_2), iVar6 == -1)))) {
+            param_2 = (long *)0x0;
+            if (param_1 == (long *)0x0) goto joined_r0x005beaf0;
           }
-          else if (param_2 != (long *)0x0) goto joined_r0x005beaf0;
-          if ((byte *)param_2[3] == (byte *)param_2[4]) {
-            bVar5 = (**(code **)(*param_2 + 0x48))(param_2);
+          else if (param_1 != (long *)0x0) goto joined_r0x005beaf0;
+          if ((byte *)param_1[3] == (byte *)param_1[4]) {
+            bVar5 = (**(code **)(*param_1 + 0x48))(param_1);
           }
           else {
-            bVar5 = *(byte *)param_2[3];
+            bVar5 = *(byte *)param_1[3];
           }
           if (((char)bVar5 < '\0') || ((*(byte *)(plVar9[2] + (ulong)bVar5 * 8) & 1) == 0))
           goto joined_r0x005beaf0;
-          plVar12 = param_2;
-          if (param_2[3] == param_2[4]) {
-            (**(code **)(*param_2 + 0x50))(param_2);
+          plVar12 = param_1;
+          if (param_1[3] == param_1[4]) {
+            (**(code **)(*param_1 + 0x50))(param_1);
           }
           else {
-            param_2[3] = param_2[3] + 1;
+            param_1[3] = param_1[3] + 1;
           }
           goto joined_r0x005bea00;
         }
@@ -125,7 +124,7 @@ joined_r0x005bea00:
           uVar7 = (uint)*(byte *)plVar12[3];
         }
         cVar3 = (**(code **)(*plVar9 + 0x18))(plVar9,uVar7);
-        cVar4 = (**(code **)(*plVar9 + 0x18))(plVar9,*param_7);
+        cVar4 = (**(code **)(*plVar9 + 0x18))(plVar9,*param_6);
         if (cVar3 == cVar4) {
           if (plVar12[3] == plVar12[4]) {
             (**(code **)(*plVar12 + 0x50))(plVar12);
@@ -133,44 +132,44 @@ joined_r0x005bea00:
           else {
             plVar12[3] = plVar12[3] + 1;
           }
-          param_7 = param_7 + 1;
+          param_6 = param_6 + 1;
         }
         else {
-          *param_5 = 4;
+          *param_4 = 4;
         }
       }
 joined_r0x005beaf0:
-      if ((param_7 == param_8) || (*param_5 != 0)) goto LAB_005beb08;
+      if ((param_6 == param_7) || (*param_4 != 0)) goto LAB_005beb08;
     }
-    if (param_3 == (long *)0x0) goto LAB_005be828;
+    if (param_2 == (long *)0x0) goto LAB_005be828;
 LAB_005be7e0:
-    if ((param_3[3] == param_3[4]) && (iVar6 = (**(code **)(*param_3 + 0x48))(param_3), iVar6 == -1)
+    if ((param_2[3] == param_2[4]) && (iVar6 = (**(code **)(*param_2 + 0x48))(param_2), iVar6 == -1)
        ) goto LAB_005be828;
-    param_2 = plVar12;
+    param_1 = plVar12;
     if (plVar12 == (long *)0x0) goto LAB_005be830;
 LAB_005beb00:
-    *param_5 = 4;
+    *param_4 = 4;
   }
 LAB_005beb08:
-  plVar9 = param_2;
-  if ((param_2 == (long *)0x0) || (param_2[3] != param_2[4])) {
-    if (param_3 != (long *)0x0) goto LAB_005beb1c;
+  plVar9 = param_1;
+  if ((param_1 == (long *)0x0) || (param_1[3] != param_1[4])) {
+    if (param_2 != (long *)0x0) goto LAB_005beb1c;
 LAB_005beba4:
     if (plVar9 != (long *)0x0) goto LAB_005beb50;
   }
   else {
-    iVar6 = (**(code **)(*param_2 + 0x48))(param_2);
+    iVar6 = (**(code **)(*param_1 + 0x48))(param_1);
     plVar9 = (long *)0x0;
     if (iVar6 != -1) {
-      plVar9 = param_2;
+      plVar9 = param_1;
     }
-    if (param_3 == (long *)0x0) goto LAB_005beba4;
+    if (param_2 == (long *)0x0) goto LAB_005beba4;
 LAB_005beb1c:
-    if ((param_3[3] == param_3[4]) && (iVar6 = (**(code **)(*param_3 + 0x48))(param_3), iVar6 == -1)
+    if ((param_2[3] == param_2[4]) && (iVar6 = (**(code **)(*param_2 + 0x48))(param_2), iVar6 == -1)
        ) goto LAB_005beba4;
     if (plVar9 == (long *)0x0) goto LAB_005beb50;
   }
-  *param_5 = *param_5 | 2;
+  *param_4 = *param_4 | 2;
 LAB_005beb50:
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return plVar9;
@@ -238,22 +237,21 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_date(long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-                undefined8 param_5,undefined8 param_6)
+     do_get_date(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   ulong uVar1;
   byte *pbVar2;
   byte *pbVar3;
   
-  pbVar3 = (byte *)(**(code **)(*(long *)(param_1 + 0x10) + 0x28))();
+  pbVar3 = (byte *)(**(code **)(*(long *)(this + 0x10) + 0x28))();
   uVar1 = *(ulong *)(pbVar3 + 8);
   pbVar2 = *(byte **)(pbVar3 + 0x10);
   if ((*pbVar3 & 1) == 0) {
     pbVar2 = pbVar3 + 1;
     uVar1 = (ulong)(*pbVar3 >> 1);
   }
-  std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::get(param_1,param_2,param_3,param_4,param_5,param_6,pbVar2,pbVar2 + uVar1);
+  std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::get(this,param_1,param_2,param_3,param_4,param_5,pbVar2,pbVar2 + uVar1);
   return;
 }
 
@@ -270,8 +268,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_weekday(long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-                   undefined8 param_5,long param_6)
+     do_get_weekday(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   undefined1 auVar1 [16];
@@ -285,17 +282,17 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
+  uStack_50 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005bed20 to 005bed2f has its CatchHandler @ 005bede8 */
   uVar3 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<char>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
-  lVar4 = (*(code *)**(undefined8 **)(param_1 + 0x10))((undefined8 *)(param_1 + 0x10));
-  lVar5 = func_0x005b2434(&uStack_50,param_3,lVar4,lVar4 + 0x150,uVar3,param_5,0);
+  lVar4 = (*(code *)**(undefined8 **)(this + 0x10))((undefined8 *)(this + 0x10));
+  lVar5 = func_0x005b2434(&uStack_50,param_2,lVar4,lVar4 + 0x150,uVar3,param_4,0);
   if (lVar5 - lVar4 < 0x150) {
     lVar4 = (lVar5 - lVar4 >> 3) * -0x5555555555555555;
     auVar1 = SEXT816(lVar4) * SEXT816(0x4924924924924925);
-    *(int *)(param_6 + 0x18) =
+    *(int *)(param_5 + 0x18) =
          (int)lVar4 + ((int)(auVar1._8_8_ >> 1) - (auVar1._12_4_ >> 0x1f)) * -7;
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
@@ -318,20 +315,19 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_weekdayname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                      undefined8 param_5,undefined8 param_6)
+     __get_weekdayname(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   undefined1 auVar1 [16];
   long lVar2;
   long lVar3;
   
-  lVar2 = (*(code *)**(undefined8 **)(param_1 + 0x10))();
-  lVar3 = func_0x005b2434(param_3,param_4,lVar2,lVar2 + 0x150,param_6,param_5,0);
+  lVar2 = (*(code *)**(undefined8 **)(this + 0x10))();
+  lVar3 = func_0x005b2434(param_2,param_3,lVar2,lVar2 + 0x150,param_5,param_4,0);
   if (lVar3 - lVar2 < 0x150) {
     lVar2 = (lVar3 - lVar2 >> 3) * -0x5555555555555555;
     auVar1 = SEXT816(lVar2) * SEXT816(0x4924924924924925);
-    *param_2 = (int)lVar2 + ((int)(auVar1._8_8_ >> 1) - (auVar1._12_4_ >> 0x1f)) * -7;
+    *param_1 = (int)lVar2 + ((int)(auVar1._8_8_ >> 1) - (auVar1._12_4_ >> 0x1f)) * -7;
   }
   return;
 }
@@ -349,8 +345,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_monthname(long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-                     undefined8 param_5,long param_6)
+     do_get_monthname(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   long lVar1;
@@ -363,16 +358,16 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
+  uStack_50 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005beef8 to 005bef07 has its CatchHandler @ 005befbc */
   uVar2 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<char>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
-  lVar3 = (**(code **)(*(long *)(param_1 + 0x10) + 8))((long *)(param_1 + 0x10));
-  lVar4 = func_0x005b2434(&uStack_50,param_3,lVar3,lVar3 + 0x240,uVar2,param_5,0);
+  lVar3 = (**(code **)(*(long *)(this + 0x10) + 8))((long *)(this + 0x10));
+  lVar4 = func_0x005b2434(&uStack_50,param_2,lVar3,lVar3 + 0x240,uVar2,param_4,0);
   if (lVar4 - lVar3 < 0x240) {
     lVar3 = (lVar4 - lVar3 >> 3) * -0x5555555555555555;
-    *(int *)(param_6 + 0x10) =
+    *(int *)(param_5 + 0x10) =
          (int)lVar3 +
          ((int)((ulong)(lVar3 / 6 + (lVar3 >> 0x3f)) >> 1) -
          (SUB164(SEXT816(lVar3) * SEXT816(0x2aaaaaaaaaaaaaab),0xc) >> 0x1f)) * -0xc;
@@ -397,18 +392,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_monthname(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                    undefined8 param_5,undefined8 param_6)
+     __get_monthname(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   long lVar1;
   long lVar2;
   
-  lVar1 = (**(code **)(*(long *)(param_1 + 0x10) + 8))();
-  lVar2 = func_0x005b2434(param_3,param_4,lVar1,lVar1 + 0x240,param_6,param_5,0);
+  lVar1 = (**(code **)(*(long *)(this + 0x10) + 8))();
+  lVar2 = func_0x005b2434(param_2,param_3,lVar1,lVar1 + 0x240,param_5,param_4,0);
   if (lVar2 - lVar1 < 0x240) {
     lVar1 = (lVar2 - lVar1 >> 3) * -0x5555555555555555;
-    *param_2 = (int)lVar1 +
+    *param_1 = (int)lVar1 +
                ((int)((ulong)(lVar1 / 6 + (lVar1 >> 0x3f)) >> 1) -
                (SUB164(SEXT816(lVar1) * SEXT816(0x2aaaaaaaaaaaaaab),0xc) >> 0x1f)) * -0xc;
   }
@@ -428,8 +422,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     do_get_year(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-                byte *param_5,long param_6)
+     do_get_year(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
   long lVar1;
@@ -442,13 +435,13 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
+  uStack_50 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005bf0c4 to 005bf0d3 has its CatchHandler @ 005bf154 */
   uVar3 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<char>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
-  iVar2 = func_0x005bff2c(&uStack_50,param_3,param_5,uVar3,4);
-  if ((*param_5 >> 2 & 1) == 0) {
+  iVar2 = func_0x005bff2c(&uStack_50,param_2,param_4,uVar3,4);
+  if ((*param_4 >> 2 & 1) == 0) {
     if (iVar2 < 0x45) {
       iVar4 = iVar2 + 2000;
     }
@@ -458,7 +451,7 @@ void std::__ndk1::
         iVar4 = iVar2;
       }
     }
-    *(int *)(param_6 + 0x14) = iVar4 + -0x76c;
+    *(int *)(param_5 + 0x14) = iVar4 + -0x76c;
   }
   if (*(long *)(lVar1 + 0x28) != lStack_48) {
     __stack_chk_fail(uStack_50);
@@ -480,15 +473,14 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_year(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5,
-               undefined8 param_6)
+     __get_year(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   int iVar2;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,4);
-  if ((*param_5 >> 2 & 1) == 0) {
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,4);
+  if ((*param_4 >> 2 & 1) == 0) {
     if (iVar1 < 0x45) {
       iVar2 = iVar1 + 2000;
     }
@@ -498,7 +490,7 @@ void std::__ndk1::
         iVar2 = iVar1;
       }
     }
-    *param_2 = iVar2 + -0x76c;
+    *param_1 = iVar2 + -0x76c;
   }
   return;
 }
@@ -516,8 +508,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-               (long *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,uint *param_5
-               ,int *param_6,undefined1 param_7)
+               (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5,char param_6,char param_7)
 
 {
   byte bVar1;
@@ -780,18 +771,17 @@ switchD_005bf260_caseD_26:
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::__get_day
-               (undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-               undefined8 param_6)
+               (int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 - 1U < 0x1f) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 - 1U < 0x1f) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -809,18 +799,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-               undefined8 param_6)
+     __get_hour(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 < 0x18) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 < 0x18) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -838,18 +827,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_12_hour(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                  uint *param_5,undefined8 param_6)
+     __get_12_hour(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 - 1U < 0xc) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 - 1U < 0xc) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -867,18 +855,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_day_year_num(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                       uint *param_5,undefined8 param_6)
+     __get_day_year_num(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,3);
-  if ((iVar1 < 0x16e) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,3);
+  if ((iVar1 < 0x16e) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -896,18 +883,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_month(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5
-                ,undefined8 param_6)
+     __get_month(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 < 0xd) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1 + -1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 < 0xd) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1 + -1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -925,18 +911,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_minute(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                 uint *param_5,undefined8 param_6)
+     __get_minute(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 < 0x3c) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 < 0x3c) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -954,45 +939,45 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_white_space(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long param_5)
+     __get_white_space(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,unsigned int& param_3,std::__ndk1::ctype<char> const& param_4)
 
 {
   byte bVar1;
   int iVar2;
   long *plVar3;
   
-  plVar3 = (long *)*param_2;
+  plVar3 = (long *)*param_1;
   do {
     if ((plVar3 != (long *)0x0) && (plVar3[3] == plVar3[4])) {
       iVar2 = (**(code **)(*plVar3 + 0x48))(plVar3);
       if (iVar2 == -1) {
         plVar3 = (long *)0x0;
-        *param_2 = 0;
+        *param_1 = 0;
       }
       else {
-        plVar3 = (long *)*param_2;
+        plVar3 = (long *)*param_1;
       }
     }
-    if ((param_3 == (long *)0x0) ||
-       ((param_3[3] == param_3[4] && (iVar2 = (**(code **)(*param_3 + 0x48))(param_3), iVar2 == -1))
+    if ((param_2 == (long *)0x0) ||
+       ((param_2[3] == param_2[4] && (iVar2 = (**(code **)(*param_2 + 0x48))(param_2), iVar2 == -1))
        )) {
-      param_3 = (long *)0x0;
+      param_2 = (long *)0x0;
       if (plVar3 == (long *)0x0) {
 LAB_005bfaf0:
-        plVar3 = (long *)*param_2;
+        plVar3 = (long *)*param_1;
         if ((plVar3 != (long *)0x0) && (plVar3[3] == plVar3[4])) {
           iVar2 = (**(code **)(*plVar3 + 0x48))(plVar3);
           if (iVar2 == -1) {
             plVar3 = (long *)0x0;
-            *param_2 = 0;
+            *param_1 = 0;
           }
           else {
-            plVar3 = (long *)*param_2;
+            plVar3 = (long *)*param_1;
           }
         }
-        if ((param_3 == (long *)0x0) ||
-           ((param_3[3] == param_3[4] &&
-            (iVar2 = (**(code **)(*param_3 + 0x48))(param_3), iVar2 == -1)))) {
+        if ((param_2 == (long *)0x0) ||
+           ((param_2[3] == param_2[4] &&
+            (iVar2 = (**(code **)(*param_2 + 0x48))(param_2), iVar2 == -1)))) {
           if (plVar3 != (long *)0x0) {
             return;
           }
@@ -1000,28 +985,28 @@ LAB_005bfaf0:
         else if (plVar3 == (long *)0x0) {
           return;
         }
-        *param_4 = *param_4 | 2;
+        *param_3 = *param_3 | 2;
         return;
       }
     }
     else if (plVar3 != (long *)0x0) goto LAB_005bfaf0;
-    plVar3 = (long *)*param_2;
+    plVar3 = (long *)*param_1;
     if ((byte *)plVar3[3] == (byte *)plVar3[4]) {
       bVar1 = (**(code **)(*plVar3 + 0x48))();
     }
     else {
       bVar1 = *(byte *)plVar3[3];
     }
-    if (((char)bVar1 < '\0') || ((*(byte *)(*(long *)(param_5 + 0x10) + (ulong)bVar1 * 8) & 1) == 0)
+    if (((char)bVar1 < '\0') || ((*(byte *)(*(long *)(param_4 + 0x10) + (ulong)bVar1 * 8) & 1) == 0)
        ) goto LAB_005bfaf0;
-    plVar3 = (long *)*param_2;
+    plVar3 = (long *)*param_1;
     if (plVar3[3] == plVar3[4]) {
       (**(code **)(*plVar3 + 0x50))();
-      plVar3 = (long *)*param_2;
+      plVar3 = (long *)*param_1;
     }
     else {
       plVar3[3] = plVar3[3] + 1;
-      plVar3 = (long *)*param_2;
+      plVar3 = (long *)*param_1;
     }
   } while( true );
 }
@@ -1039,8 +1024,7 @@ LAB_005bfaf0:
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_am_pm(long param_1,int *param_2,undefined8 param_3,undefined8 param_4,uint *param_5,
-                undefined8 param_6)
+     __get_am_pm(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
@@ -1050,7 +1034,7 @@ void std::__ndk1::
   ulong uVar5;
   ulong uVar6;
   
-  pbVar3 = (byte *)(**(code **)(*(long *)(param_1 + 0x10) + 0x10))();
+  pbVar3 = (byte *)(**(code **)(*(long *)(this + 0x10) + 0x10))();
   if ((*pbVar3 & 1) == 0) {
     uVar5 = (ulong)(*pbVar3 >> 1);
     bVar2 = pbVar3[0x18];
@@ -1066,16 +1050,16 @@ void std::__ndk1::
     uVar6 = *(ulong *)(pbVar3 + 0x20);
   }
   if (uVar5 + uVar6 == 0) {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   else {
-    pbVar4 = (byte *)func_0x005b2434(param_3,param_4,pbVar3,pbVar3 + 0x30,param_6,param_5,0);
-    iVar1 = *param_2;
+    pbVar4 = (byte *)func_0x005b2434(param_2,param_3,pbVar3,pbVar3 + 0x30,param_5,param_4,0);
+    iVar1 = *param_1;
     if ((iVar1 == 0xc) && (pbVar4 == pbVar3)) {
-      *param_2 = 0;
+      *param_1 = 0;
     }
     else if ((iVar1 < 0xc) && ((long)pbVar4 - (long)pbVar3 == 0x18)) {
-      *param_2 = iVar1 + 0xc;
+      *param_1 = iVar1 + 0xc;
     }
   }
   return;
@@ -1094,18 +1078,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_second(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                 uint *param_5,undefined8 param_6)
+     __get_second(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,2);
-  if ((iVar1 < 0x3d) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,2);
+  if ((iVar1 < 0x3d) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -1123,18 +1106,17 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_weekday(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,
-                  uint *param_5,undefined8 param_6)
+     __get_weekday(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,1);
-  if ((iVar1 < 7) && ((*param_5 >> 2 & 1) == 0)) {
-    *param_2 = iVar1;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,1);
+  if ((iVar1 < 7) && ((*param_4 >> 2 & 1) == 0)) {
+    *param_1 = iVar1;
   }
   else {
-    *param_5 = *param_5 | 4;
+    *param_4 = *param_4 | 4;
   }
   return;
 }
@@ -1152,15 +1134,14 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_year4(undefined8 param_1,int *param_2,undefined8 param_3,undefined8 param_4,byte *param_5
-                ,undefined8 param_6)
+     __get_year4(int& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_2,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_3,unsigned int& param_4,std::__ndk1::ctype<char> const& param_5)
 
 {
   int iVar1;
   
-  iVar1 = func_0x005bff2c(param_3,param_4,param_5,param_6,4);
-  if ((*param_5 >> 2 & 1) == 0) {
-    *param_2 = iVar1 + -0x76c;
+  iVar1 = func_0x005bff2c(param_2,param_3,param_4,param_5,4);
+  if ((*param_4 >> 2 & 1) == 0) {
+    *param_1 = iVar1 + -0x76c;
   }
   return;
 }
@@ -1178,7 +1159,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      time_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-     __get_percent(undefined8 param_1,long *param_2,long *param_3,uint *param_4,long *param_5)
+     __get_percent(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,unsigned int& param_3,std::__ndk1::ctype<char> const& param_4)
 
 {
   char cVar1;
@@ -1186,12 +1167,12 @@ void std::__ndk1::
   uint uVar3;
   long *plVar4;
   
-  plVar4 = (long *)*param_2;
+  plVar4 = (long *)*param_1;
   if ((plVar4 == (long *)0x0) || (plVar4[3] != plVar4[4])) {
 joined_r0x005bfda0:
-    if (param_3 == (long *)0x0) goto LAB_005bfdf0;
+    if (param_2 == (long *)0x0) goto LAB_005bfdf0;
 LAB_005bfda4:
-    if ((param_3[3] == param_3[4]) && (iVar2 = (**(code **)(*param_3 + 0x48))(param_3), iVar2 == -1)
+    if ((param_2[3] == param_2[4]) && (iVar2 = (**(code **)(*param_2 + 0x48))(param_2), iVar2 == -1)
        ) goto LAB_005bfdf0;
     if (plVar4 == (long *)0x0) goto LAB_005bfdf8;
   }
@@ -1199,37 +1180,37 @@ LAB_005bfda4:
     iVar2 = (**(code **)(*plVar4 + 0x48))(plVar4);
     if (iVar2 == -1) {
       plVar4 = (long *)0x0;
-      *param_2 = 0;
+      *param_1 = 0;
       goto joined_r0x005bfda0;
     }
-    plVar4 = (long *)*param_2;
-    if (param_3 != (long *)0x0) goto LAB_005bfda4;
+    plVar4 = (long *)*param_1;
+    if (param_2 != (long *)0x0) goto LAB_005bfda4;
 LAB_005bfdf0:
     if (plVar4 != (long *)0x0) {
-      param_3 = (long *)0x0;
+      param_2 = (long *)0x0;
 LAB_005bfdf8:
-      plVar4 = (long *)*param_2;
+      plVar4 = (long *)*param_1;
       if ((byte *)plVar4[3] == (byte *)plVar4[4]) {
         uVar3 = (**(code **)(*plVar4 + 0x48))();
       }
       else {
         uVar3 = (uint)*(byte *)plVar4[3];
       }
-      cVar1 = (**(code **)(*param_5 + 0x48))(param_5,uVar3,0);
+      cVar1 = (**(code **)(*param_4 + 0x48))(param_4,uVar3,0);
       if (cVar1 != '%') {
-        uVar3 = *param_4 | 4;
+        uVar3 = *param_3 | 4;
         goto LAB_005bff14;
       }
-      plVar4 = (long *)*param_2;
+      plVar4 = (long *)*param_1;
       if (plVar4[3] == plVar4[4]) {
         (**(code **)(*plVar4 + 0x50))(plVar4);
-        plVar4 = (long *)*param_2;
+        plVar4 = (long *)*param_1;
         if (plVar4 != (long *)0x0) goto LAB_005bfe8c;
 joined_r0x005bfe98:
-        if (param_3 == (long *)0x0) goto LAB_005bff08;
+        if (param_2 == (long *)0x0) goto LAB_005bff08;
 LAB_005bfe9c:
-        if ((param_3[3] == param_3[4]) &&
-           (iVar2 = (**(code **)(*param_3 + 0x48))(param_3), iVar2 == -1)) goto LAB_005bff08;
+        if ((param_2[3] == param_2[4]) &&
+           (iVar2 = (**(code **)(*param_2 + 0x48))(param_2), iVar2 == -1)) goto LAB_005bff08;
         if (plVar4 == (long *)0x0) {
           return;
         }
@@ -1240,24 +1221,24 @@ LAB_005bfe8c:
         if (plVar4[3] != plVar4[4]) goto joined_r0x005bfe98;
         iVar2 = (**(code **)(*plVar4 + 0x48))(plVar4);
         if (iVar2 != -1) {
-          plVar4 = (long *)*param_2;
+          plVar4 = (long *)*param_1;
           goto joined_r0x005bfe98;
         }
         plVar4 = (long *)0x0;
-        *param_2 = 0;
-        if (param_3 != (long *)0x0) goto LAB_005bfe9c;
+        *param_1 = 0;
+        if (param_2 != (long *)0x0) goto LAB_005bfe9c;
 LAB_005bff08:
         if (plVar4 != (long *)0x0) {
           return;
         }
       }
-      uVar3 = *param_4 | 2;
+      uVar3 = *param_3 | 2;
       goto LAB_005bff14;
     }
   }
-  uVar3 = *param_4 | 6;
+  uVar3 = *param_3 | 6;
 LAB_005bff14:
-  *param_4 = uVar3;
+  *param_3 = uVar3;
   return;
 }
 

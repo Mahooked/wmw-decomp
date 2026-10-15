@@ -228,8 +228,7 @@ void Walaber::Widget_Label::init(long param_1)
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_Label::Widget_Label
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5)
+               (int param_1,Walaber::Vector2 const& param_2,Walaber::Vector2 const& param_3,Walaber::SharedPtr<Walaber::Texture> param_4)
 
 {
   long lVar1;
@@ -245,35 +244,35 @@ void Walaber::Widget_Label::Widget_Label
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = *param_3;
-  uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,10,&uStack_40,&uStack_48,1,1);
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *param_1 = &PTR__Widget_Label_0070f1a8;
-  *(undefined8 *)((long)param_1 + 0x104) = 0;
-  lVar4 = *param_5;
-  param_1[0x22] = lVar4;
-  piVar3 = (int *)param_5[1];
-  param_1[0x23] = piVar3;
+  uStack_40 = *param_2;
+  uStack_48 = *param_3;
+  Walaber::Widget::Widget(this,param_1,10,&uStack_40,&uStack_48,1,1);
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *this = &PTR__Widget_Label_0070f1a8;
+  *(undefined8 *)((long)this + 0x104) = 0;
+  lVar4 = *param_4;
+  this[0x22] = lVar4;
+  piVar3 = (int *)param_4[1];
+  this[0x23] = piVar3;
   if (lVar4 != 0) {
     *piVar3 = *piVar3 + 1;
   }
-  param_1[0x26] = 0;
-  param_1[0x27] = 0;
-  *(undefined1 *)((long)param_1 + 0x142) = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  *(undefined2 *)(param_1 + 0x28) = 0;
-  *(undefined4 *)((long)param_1 + 0x143) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x147) = 0xff;
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x2c] = 0x100000001;
-  param_1[0x2f] = 0;
-  param_1[0x30] = 0;
-  param_1[0x2d] = 0;
-  param_1[0x2e] = 0;
-  Walaber::Widget_Label::init(param_1);
+  this[0x26] = 0;
+  this[0x27] = 0;
+  *(undefined1 *)((long)this + 0x142) = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  *(undefined2 *)(this + 0x28) = 0;
+  *(undefined4 *)((long)this + 0x143) = 0xff;
+  *(undefined1 *)((long)this + 0x147) = 0xff;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x2c] = 0x100000001;
+  this[0x2f] = 0;
+  this[0x30] = 0;
+  this[0x2d] = 0;
+  this[0x2e] = 0;
+  Walaber::Widget_Label::init(this);
                     /* try { // try from 0037f3ec to 0037f3ef has its CatchHandler @ 0037f494 */
   uVar2 = Walaber::FontManager::getInstancePtr();
   abStack_60[8] = 0;
@@ -295,16 +294,16 @@ void Walaber::Widget_Label::Widget_Label
   abStack_60[7] = 0;
                     /* try { // try from 0037f414 to 0037f41b has its CatchHandler @ 0037f47c */
   uVar2 = Walaber::FontManager::getFont(uVar2,abStack_60);
-  param_1[0x1d] = uVar2;
+  this[0x1d] = uVar2;
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  lVar4 = param_1[0x22];
-  if ((lVar4 != 0) && (*(int *)param_1[0x23] != 0)) {
+  lVar4 = this[0x22];
+  if ((lVar4 != 0) && (*(int *)this[0x23] != 0)) {
     uVar2 = *(undefined8 *)(lVar4 + 0x8c);
     uVar5 = *(undefined8 *)(lVar4 + 0x84);
-    param_1[0x24] = uVar2;
-    param_1[0x25] =
+    this[0x24] = uVar2;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar5 - (float)uVar2);
   }
@@ -328,9 +327,7 @@ void Walaber::Widget_Label::Widget_Label
    const&, float, Walaber::Widget_Label::VAlign, Walaber::Widget_Label::HAlign) */
 
 void Walaber::Widget_Label::Widget_Label
-               (float param_1,long *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,long *param_6,byte *param_7,undefined8 param_8,undefined4 param_9
-               ,undefined4 param_10)
+               (int param_1,Walaber::Vector2 const& param_2,Walaber::Vector2 const& param_3,Walaber::SharedPtr<Walaber::Texture> param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,float param_7,Walaber::Widget_Label::VAlign param_8,Walaber::Widget_Label::HAlign param_9)
 
 {
   ulong uVar1;
@@ -347,67 +344,67 @@ void Walaber::Widget_Label::Widget_Label
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  uStack_68 = *param_4;
-  uStack_70 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,10,&uStack_68,&uStack_70,1,1);
-  *(undefined8 *)((long)param_2 + 0xfc) = 0;
-  *param_2 = (long)&PTR__Widget_Label_0070f1a8;
-  *(undefined8 *)((long)param_2 + 0x104) = 0;
-  lVar4 = *param_6;
-  param_2[0x22] = lVar4;
-  piVar3 = (int *)param_6[1];
-  param_2[0x23] = (long)piVar3;
+  uStack_68 = *param_3;
+  uStack_70 = *param_4;
+  Walaber::Widget::Widget(param_1,param_2,10,&uStack_68,&uStack_70,1,1);
+  *(undefined8 *)((long)param_1 + 0xfc) = 0;
+  *param_1 = (long)&PTR__Widget_Label_0070f1a8;
+  *(undefined8 *)((long)param_1 + 0x104) = 0;
+  lVar4 = *param_5;
+  param_1[0x22] = lVar4;
+  piVar3 = (int *)param_5[1];
+  param_1[0x23] = (long)piVar3;
   if (lVar4 != 0) {
     *piVar3 = *piVar3 + 1;
   }
-  param_2[0x26] = 0;
-  param_2[0x27] = 0;
-  *(undefined1 *)((long)param_2 + 0x142) = 0;
-  *(undefined2 *)(param_2 + 0x28) = 0;
-  param_2[0x25] = 0;
-  param_2[0x24] = 0;
-  *(undefined4 *)((long)param_2 + 0x143) = 0xff;
-  *(undefined1 *)((long)param_2 + 0x147) = 0xff;
+  param_1[0x26] = 0;
+  param_1[0x27] = 0;
+  *(undefined1 *)((long)param_1 + 0x142) = 0;
+  *(undefined2 *)(param_1 + 0x28) = 0;
+  param_1[0x25] = 0;
+  param_1[0x24] = 0;
+  *(undefined4 *)((long)param_1 + 0x143) = 0xff;
+  *(undefined1 *)((long)param_1 + 0x147) = 0xff;
                     /* try { // try from 0037f5a0 to 0037f5ab has its CatchHandler @ 0037f714 */
-  Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)(param_2 + 0x29) = *(float *)(param_2 + 0x12) * fStack_60 * param_1;
+  Walaber::Node::getWorldScale(&fStack_60,param_1);
+  *(float *)(param_1 + 0x29) = *(float *)(param_1 + 0x12) * fStack_60 * this;
                     /* try { // try from 0037f5c0 to 0037f5cb has its CatchHandler @ 0037f710 */
-  Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)((long)param_2 + 0x14c) = *(float *)(param_2 + 0x12) * fStack_60 * param_1;
+  Walaber::Node::getWorldScale(&fStack_60,param_1);
+  *(float *)((long)param_1 + 0x14c) = *(float *)(param_1 + 0x12) * fStack_60 * this;
                     /* try { // try from 0037f5e0 to 0037f5eb has its CatchHandler @ 0037f70c */
-  Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)(param_2 + 0x2a) = *(float *)((long)param_2 + 0x94) * fStack_5c * param_1;
+  Walaber::Node::getWorldScale(&fStack_60,param_1);
+  *(float *)(param_1 + 0x2a) = *(float *)((long)param_1 + 0x94) * fStack_5c * this;
                     /* try { // try from 0037f600 to 0037f60b has its CatchHandler @ 0037f708 */
-  Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(undefined4 *)(param_2 + 0x2c) = param_9;
-  param_2[0x2f] = 0;
-  param_2[0x30] = 0;
-  *(undefined4 *)((long)param_2 + 0x164) = param_10;
-  *(float *)((long)param_2 + 0x154) = *(float *)((long)param_2 + 0x94) * fStack_5c * param_1;
-  param_2[0x2d] = 0;
-  param_2[0x2e] = 0;
+  Walaber::Node::getWorldScale(&fStack_60,param_1);
+  *(undefined4 *)(param_1 + 0x2c) = param_8;
+  param_1[0x2f] = 0;
+  param_1[0x30] = 0;
+  *(undefined4 *)((long)param_1 + 0x164) = param_9;
+  *(float *)((long)param_1 + 0x154) = *(float *)((long)param_1 + 0x94) * fStack_5c * this;
+  param_1[0x2d] = 0;
+  param_1[0x2e] = 0;
                     /* try { // try from 0037f640 to 0037f67f has its CatchHandler @ 0037f71c */
-  (**(code **)(*param_2 + 0x70))(param_2,param_8);
-  Walaber::Widget_Label::init(param_2);
-  uVar1 = (ulong)(*param_7 >> 1);
-  if ((*param_7 & 1) != 0) {
-    uVar1 = *(ulong *)(param_7 + 8);
+  (**(code **)(*param_1 + 0x70))(param_1,param_7);
+  Walaber::Widget_Label::init(param_1);
+  uVar1 = (ulong)(*param_6 >> 1);
+  if ((*param_6 & 1) != 0) {
+    uVar1 = *(ulong *)(param_6 + 8);
   }
-  if ((uVar1 != 0) && (param_2[0x1d] != 0)) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2 + 0x2d,param_7);
+  if ((uVar1 != 0) && (param_1[0x1d] != 0)) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x2d,param_6);
                     /* try { // try from 0037f684 to 0037f693 has its CatchHandler @ 0037f704 */
-    Walaber::BitmapFont::measureString(&fStack_60,0x3f800000,param_2[0x1d],param_7);
-    *(undefined8 *)((long)param_2 + 0x104) = CONCAT44(fStack_5c,fStack_60);
+    Walaber::BitmapFont::measureString(&fStack_60,0x3f800000,param_1[0x1d],param_6);
+    *(undefined8 *)((long)param_1 + 0x104) = CONCAT44(fStack_5c,fStack_60);
                     /* try { // try from 0037f69c to 0037f6ab has its CatchHandler @ 0037f71c */
-    Walaber::Widget_Label::_setTextScale(param_2);
-    Walaber::Widget_Label::_setTextTopLeft(param_2);
+    Walaber::Widget_Label::_setTextScale(param_1);
+    Walaber::Widget_Label::_setTextTopLeft(param_1);
   }
-  lVar4 = param_2[0x22];
-  if ((lVar4 != 0) && (*(int *)param_2[0x23] != 0)) {
+  lVar4 = param_1[0x22];
+  if ((lVar4 != 0) && (*(int *)param_1[0x23] != 0)) {
     lVar5 = *(long *)(lVar4 + 0x8c);
     uVar6 = *(undefined8 *)(lVar4 + 0x84);
-    param_2[0x24] = lVar5;
-    param_2[0x25] =
+    param_1[0x24] = lVar5;
+    param_1[0x25] =
          CONCAT44((float)((ulong)uVar6 >> 0x20) - (float)((ulong)lVar5 >> 0x20),
                   (float)uVar6 - (float)lVar5);
   }
@@ -545,9 +542,7 @@ LAB_0037f9d0:
     */
 
 void Walaber::Widget_Label::Widget_Label
-               (float param_1,float param_2,float param_3,float param_4,long *param_5,
-               undefined8 param_6,undefined8 *param_7,undefined8 *param_8,long *param_9,
-               byte *param_10,undefined8 param_11,undefined4 param_12,undefined4 param_13)
+               (int param_1,Walaber::Vector2 const& param_2,Walaber::Vector2 const& param_3,Walaber::SharedPtr<Walaber::Texture> param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,float param_7,float param_8,float param_9,float param_10,Walaber::Widget_Label::VAlign param_11,Walaber::Widget_Label::HAlign param_12)
 
 {
   ulong uVar1;
@@ -564,67 +559,67 @@ void Walaber::Widget_Label::Widget_Label
   
   lVar2 = tpidr_el0;
   lStack_78 = *(long *)(lVar2 + 0x28);
-  uStack_88 = *param_7;
-  uStack_90 = *param_8;
-  Walaber::Widget::Widget(param_5,param_6,10,&uStack_88,&uStack_90,1,1);
-  *(undefined8 *)((long)param_5 + 0xfc) = 0;
-  *param_5 = (long)&PTR__Widget_Label_0070f1a8;
-  *(undefined8 *)((long)param_5 + 0x104) = 0;
-  lVar4 = *param_9;
-  param_5[0x22] = lVar4;
-  piVar3 = (int *)param_9[1];
-  param_5[0x23] = (long)piVar3;
+  uStack_88 = *param_6;
+  uStack_90 = *param_7;
+  Walaber::Widget::Widget(param_4,param_5,10,&uStack_88,&uStack_90,1,1);
+  *(undefined8 *)((long)param_4 + 0xfc) = 0;
+  *param_4 = (long)&PTR__Widget_Label_0070f1a8;
+  *(undefined8 *)((long)param_4 + 0x104) = 0;
+  lVar4 = *param_8;
+  param_4[0x22] = lVar4;
+  piVar3 = (int *)param_8[1];
+  param_4[0x23] = (long)piVar3;
   if (lVar4 != 0) {
     *piVar3 = *piVar3 + 1;
   }
-  param_5[0x26] = 0;
-  param_5[0x27] = 0;
-  *(undefined1 *)((long)param_5 + 0x142) = 0;
-  *(undefined2 *)(param_5 + 0x28) = 0;
-  param_5[0x25] = 0;
-  param_5[0x24] = 0;
-  *(undefined4 *)((long)param_5 + 0x143) = 0xff;
-  *(undefined1 *)((long)param_5 + 0x147) = 0xff;
+  param_4[0x26] = 0;
+  param_4[0x27] = 0;
+  *(undefined1 *)((long)param_4 + 0x142) = 0;
+  *(undefined2 *)(param_4 + 0x28) = 0;
+  param_4[0x25] = 0;
+  param_4[0x24] = 0;
+  *(undefined4 *)((long)param_4 + 0x143) = 0xff;
+  *(undefined1 *)((long)param_4 + 0x147) = 0xff;
                     /* try { // try from 0037fae0 to 0037faeb has its CatchHandler @ 0037fc58 */
-  Walaber::Node::getWorldScale(&fStack_80,param_5);
-  *(float *)(param_5 + 0x29) = *(float *)(param_5 + 0x12) * fStack_80 * param_2;
+  Walaber::Node::getWorldScale(&fStack_80,param_4);
+  *(float *)(param_4 + 0x29) = *(float *)(param_4 + 0x12) * fStack_80 * param_1;
                     /* try { // try from 0037fb00 to 0037fb0b has its CatchHandler @ 0037fc54 */
-  Walaber::Node::getWorldScale(&fStack_80,param_5);
-  *(float *)((long)param_5 + 0x14c) = *(float *)(param_5 + 0x12) * fStack_80 * param_1;
+  Walaber::Node::getWorldScale(&fStack_80,param_4);
+  *(float *)((long)param_4 + 0x14c) = *(float *)(param_4 + 0x12) * fStack_80 * this;
                     /* try { // try from 0037fb20 to 0037fb2b has its CatchHandler @ 0037fc50 */
-  Walaber::Node::getWorldScale(&fStack_80,param_5);
-  *(float *)(param_5 + 0x2a) = *(float *)((long)param_5 + 0x94) * fStack_7c * param_3;
+  Walaber::Node::getWorldScale(&fStack_80,param_4);
+  *(float *)(param_4 + 0x2a) = *(float *)((long)param_4 + 0x94) * fStack_7c * param_2;
                     /* try { // try from 0037fb40 to 0037fb4b has its CatchHandler @ 0037fc4c */
-  Walaber::Node::getWorldScale(&fStack_80,param_5);
-  *(undefined4 *)(param_5 + 0x2c) = param_12;
-  param_5[0x2f] = 0;
-  param_5[0x30] = 0;
-  *(undefined4 *)((long)param_5 + 0x164) = param_13;
-  *(float *)((long)param_5 + 0x154) = *(float *)((long)param_5 + 0x94) * fStack_7c * param_4;
-  param_5[0x2d] = 0;
-  param_5[0x2e] = 0;
+  Walaber::Node::getWorldScale(&fStack_80,param_4);
+  *(undefined4 *)(param_4 + 0x2c) = param_11;
+  param_4[0x2f] = 0;
+  param_4[0x30] = 0;
+  *(undefined4 *)((long)param_4 + 0x164) = param_12;
+  *(float *)((long)param_4 + 0x154) = *(float *)((long)param_4 + 0x94) * fStack_7c * param_3;
+  param_4[0x2d] = 0;
+  param_4[0x2e] = 0;
                     /* try { // try from 0037fb80 to 0037fbbf has its CatchHandler @ 0037fc60 */
-  (**(code **)(*param_5 + 0x70))(param_5,param_11);
-  Walaber::Widget_Label::init(param_5);
-  uVar1 = (ulong)(*param_10 >> 1);
-  if ((*param_10 & 1) != 0) {
-    uVar1 = *(ulong *)(param_10 + 8);
+  (**(code **)(*param_4 + 0x70))(param_4,param_10);
+  Walaber::Widget_Label::init(param_4);
+  uVar1 = (ulong)(*param_9 >> 1);
+  if ((*param_9 & 1) != 0) {
+    uVar1 = *(ulong *)(param_9 + 8);
   }
-  if ((uVar1 != 0) && (param_5[0x1d] != 0)) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_5 + 0x2d,param_10);
+  if ((uVar1 != 0) && (param_4[0x1d] != 0)) {
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_4 + 0x2d,param_9);
                     /* try { // try from 0037fbc4 to 0037fbd3 has its CatchHandler @ 0037fc48 */
-    Walaber::BitmapFont::measureString(&fStack_80,0x3f800000,param_5[0x1d],param_10);
-    *(undefined8 *)((long)param_5 + 0x104) = CONCAT44(fStack_7c,fStack_80);
+    Walaber::BitmapFont::measureString(&fStack_80,0x3f800000,param_4[0x1d],param_9);
+    *(undefined8 *)((long)param_4 + 0x104) = CONCAT44(fStack_7c,fStack_80);
                     /* try { // try from 0037fbdc to 0037fbeb has its CatchHandler @ 0037fc60 */
-    Walaber::Widget_Label::_setTextScale(param_5);
-    Walaber::Widget_Label::_setTextTopLeft(param_5);
+    Walaber::Widget_Label::_setTextScale(param_4);
+    Walaber::Widget_Label::_setTextTopLeft(param_4);
   }
-  lVar4 = param_5[0x22];
-  if ((lVar4 != 0) && (*(int *)param_5[0x23] != 0)) {
+  lVar4 = param_4[0x22];
+  if ((lVar4 != 0) && (*(int *)param_4[0x23] != 0)) {
     lVar5 = *(long *)(lVar4 + 0x8c);
     uVar6 = *(undefined8 *)(lVar4 + 0x84);
-    param_5[0x24] = lVar5;
-    param_5[0x25] =
+    param_4[0x24] = lVar5;
+    param_4[0x25] =
          CONCAT44((float)((ulong)uVar6 >> 0x20) - (float)((ulong)lVar5 >> 0x20),
                   (float)uVar6 - (float)lVar5);
   }

@@ -12,7 +12,7 @@
    std::__ndk1::allocator<Walaber::Vector2>&>&) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>& param_1)
 
 {
   undefined8 *puVar1;
@@ -22,13 +22,13 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
   ulong uVar5;
   undefined8 *puVar6;
   
-  puVar1 = (undefined8 *)*param_1;
-  puVar3 = (undefined8 *)param_1[1];
+  puVar1 = (undefined8 *)*this;
+  puVar3 = (undefined8 *)this[1];
   if (puVar3 == puVar1) {
-    puVar4 = (undefined8 *)param_2[1];
+    puVar4 = (undefined8 *)param_1[1];
   }
   else {
-    puVar4 = (undefined8 *)param_2[1];
+    puVar4 = (undefined8 *)param_1[1];
     uVar5 = (long)puVar3 + (-8 - (long)puVar1);
     puVar6 = puVar4;
     do {
@@ -37,18 +37,18 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
       *puVar6 = *puVar3;
     } while (puVar1 != puVar3);
     puVar4 = puVar4 + ~(uVar5 >> 3);
-    param_2[1] = puVar4;
-    puVar1 = (undefined8 *)*param_1;
+    param_1[1] = puVar4;
+    puVar1 = (undefined8 *)*this;
   }
-  *param_1 = (long)puVar4;
-  param_2[1] = puVar1;
-  lVar2 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar2;
-  lVar2 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar2;
-  *param_2 = param_2[1];
+  *this = (long)puVar4;
+  param_1[1] = puVar1;
+  lVar2 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar2;
+  lVar2 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar2;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -127,7 +127,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    const&) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::vector
-               (undefined8 *param_1,long *param_2)
+               (std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>> const& param_1)
 
 {
   undefined8 *puVar1;
@@ -137,16 +137,16 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
   undefined8 *puVar6;
   undefined8 *puVar4;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 00481f4c to 00481f4f has its CatchHandler @ 00481f98 */
-    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__vallocate(param_1,param_2[1] - *param_2 >> 3);
-    puVar1 = (undefined8 *)*param_2;
-    puVar2 = (undefined8 *)param_2[1];
+    std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__vallocate(this,param_1[1] - *param_1 >> 3);
+    puVar1 = (undefined8 *)*param_1;
+    puVar2 = (undefined8 *)param_1[1];
     if (puVar1 != puVar2) {
-      puVar5 = (undefined8 *)param_1[1];
+      puVar5 = (undefined8 *)this[1];
       puVar3 = puVar1;
       puVar6 = puVar5;
       do {
@@ -155,7 +155,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
         puVar3 = puVar4;
         puVar6 = puVar6 + 1;
       } while (puVar2 != puVar4);
-      param_1[1] = (long)puVar5 + ((long)puVar2 + (-8 - (long)puVar1) & 0xfffffffffffffff8U) + 8;
+      this[1] = (long)puVar5 + ((long)puVar2 + (-8 - (long)puVar1) & 0xfffffffffffffff8U) + 8;
     }
   }
   return;
@@ -172,7 +172,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
 
 undefined8 *
 std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::insert
-          (long *param_1,undefined8 *param_2,undefined8 *param_3)
+          (std::__ndk1::__wrap_iter<Walaber::Vector2 const*> param_1,Walaber::Vector2 const& param_2)
 
 {
   long lVar1;
@@ -202,29 +202,29 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  puVar6 = (undefined8 *)param_1[1];
-  if (puVar6 < (undefined8 *)param_1[2]) {
-    if (param_2 == puVar6) {
-      *param_2 = *param_3;
-      param_1[1] = (long)(param_2 + 1);
+  puVar6 = (undefined8 *)this[1];
+  if (puVar6 < (undefined8 *)this[2]) {
+    if (param_1 == puVar6) {
+      *param_1 = *param_2;
+      this[1] = (long)(param_1 + 1);
     }
     else {
-      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__move_range(param_1,param_2,puVar6,param_2 + 1);
-      puVar6 = param_3;
-      if ((param_2 <= param_3) && (puVar6 = param_3 + 1, (undefined8 *)param_1[1] <= param_3)) {
-        puVar6 = param_3;
+      std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__move_range(this,param_1,puVar6,param_1 + 1);
+      puVar6 = param_2;
+      if ((param_1 <= param_2) && (puVar6 = param_2 + 1, (undefined8 *)this[1] <= param_2)) {
+        puVar6 = param_2;
       }
-      *param_2 = *puVar6;
+      *param_1 = *puVar6;
     }
   }
   else {
-    lVar10 = *param_1;
+    lVar10 = *this;
     uVar9 = ((long)puVar6 - lVar10 >> 3) + 1;
     if (uVar9 >> 0x3d != 0) {
-      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
       return puVar6;
     }
-    lVar7 = param_1[2] - lVar10;
+    lVar7 = this[2] - lVar10;
     if ((ulong)(lVar7 >> 3) < 0xfffffffffffffff) {
       uVar8 = lVar7 >> 2;
       if (uVar9 <= uVar8) {
@@ -234,7 +234,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
     else {
       uVar9 = 0x1fffffffffffffff;
     }
-    std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>::__split_buffer(&puStack_90,uVar9,(long)param_2 - lVar10 >> 3,param_1 + 2);
+    std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>::__split_buffer(&puStack_90,uVar9,(long)param_1 - lVar10 >> 3,this + 2);
     puVar6 = puStack_80;
     puVar11 = puStack_88;
     if (puStack_80 == puStack_78) {
@@ -306,8 +306,8 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
     }
     puStack_88 = puVar11;
     puStack_80 = puVar6 + 1;
-    *puVar6 = *param_3;
-    param_2 = (undefined8 *)std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__swap_out_circular_buffer(param_1,&puStack_90,param_2);
+    *puVar6 = *param_2;
+    param_1 = (undefined8 *)std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__swap_out_circular_buffer(this,&puStack_90,param_1);
     if (puStack_80 != puStack_88) {
       puStack_80 = (undefined8 *)
                    ((long)puStack_80 +
@@ -318,7 +318,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_2;
+    return param_1;
   }
   puVar6 = (undefined8 *)__stack_chk_fail();
   return puVar6;
@@ -335,7 +335,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
    >&, std::__ndk1::integral_constant<bool, true>) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::__move_assign
-               (undefined8 *param_1,undefined8 *param_2)
+               (std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>& param_1,std::__ndk1::integral_constant<bool, true> param_2)
 
 {
   void *p0;
@@ -415,7 +415,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
    std::__ndk1::allocator<Walaber::Vector2>&>&, Walaber::Vector2*) */
 
 void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>&>& param_1,Walaber::Vector2 *param_2)
 
 {
   undefined8 *puVar1;
@@ -426,23 +426,23 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
   undefined8 *puVar7;
   undefined8 *puVar3;
   
-  puVar4 = (undefined8 *)*param_1;
-  puVar1 = (undefined8 *)param_2[1];
-  if (puVar4 != param_3) {
-    puVar7 = param_3;
+  puVar4 = (undefined8 *)*this;
+  puVar1 = (undefined8 *)param_1[1];
+  if (puVar4 != param_2) {
+    puVar7 = param_2;
     puVar2 = puVar1;
     do {
       puVar2 = puVar2 + -1;
       puVar7 = puVar7 + -1;
       *puVar2 = *puVar7;
     } while (puVar4 != puVar7);
-    puVar1 = puVar1 + ~((ulong)((long)param_3 + (-8 - (long)puVar4)) >> 3);
-    param_2[1] = puVar1;
+    puVar1 = puVar1 + ~((ulong)((long)param_2 + (-8 - (long)puVar4)) >> 3);
+    param_1[1] = puVar1;
   }
-  puVar4 = (undefined8 *)param_1[1];
-  if (puVar4 != param_3) {
-    puVar6 = (undefined8 *)param_2[2];
-    puVar2 = param_3;
+  puVar4 = (undefined8 *)this[1];
+  if (puVar4 != param_2) {
+    puVar6 = (undefined8 *)param_1[2];
+    puVar2 = param_2;
     puVar7 = puVar6;
     do {
       puVar3 = puVar2 + 1;
@@ -450,18 +450,18 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
       puVar2 = puVar3;
       puVar7 = puVar7 + 1;
     } while (puVar4 != puVar3);
-    param_2[2] = (long)puVar6 + ((long)puVar4 + (-8 - (long)param_3) & 0xfffffffffffffff8U) + 8;
+    param_1[2] = (long)puVar6 + ((long)puVar4 + (-8 - (long)param_2) & 0xfffffffffffffff8U) + 8;
   }
-  lVar5 = *param_1;
-  *param_1 = (long)puVar1;
-  param_2[1] = lVar5;
-  lVar5 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar5;
-  lVar5 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar5;
-  *param_2 = param_2[1];
+  lVar5 = *this;
+  *this = (long)puVar1;
+  param_1[1] = lVar5;
+  lVar5 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar5;
+  lVar5 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar5;
+  *param_1 = param_1[1];
   return;
 }
 

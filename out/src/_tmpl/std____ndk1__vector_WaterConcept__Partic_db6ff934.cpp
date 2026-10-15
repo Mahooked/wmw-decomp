@@ -15,7 +15,7 @@
 undefined8 *
 std::__ndk1::
 vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
+::insert(std::__ndk1::__wrap_iter<WaterConcept::ParticleDescription const*> param_1,WaterConcept::ParticleDescription const& param_2)
 
 {
   long lVar1;
@@ -46,53 +46,53 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  puVar7 = (undefined8 *)param_1[1];
-  if (puVar7 < (undefined8 *)param_1[2]) {
-    if (param_2 == puVar7) {
-      uVar15 = *param_3;
-      *(undefined4 *)(param_2 + 1) = *(undefined4 *)(param_3 + 1);
-      *param_2 = uVar15;
-      param_1[1] = param_1[1] + 0xc;
+  puVar7 = (undefined8 *)this[1];
+  if (puVar7 < (undefined8 *)this[2]) {
+    if (param_1 == puVar7) {
+      uVar15 = *param_2;
+      *(undefined4 *)(param_1 + 1) = *(undefined4 *)(param_2 + 1);
+      *param_1 = uVar15;
+      this[1] = this[1] + 0xc;
     }
     else {
-      lVar9 = (long)puVar7 - ((long)param_2 + 0xcU);
+      lVar9 = (long)puVar7 - ((long)param_1 + 0xcU);
       puVar14 = puVar7;
       for (puVar11 = (undefined8 *)((long)puVar7 - 0xc); puVar11 < puVar7;
           puVar11 = (undefined8 *)((long)puVar11 + 0xc)) {
         uVar15 = *puVar11;
         *(undefined4 *)(puVar14 + 1) = *(undefined4 *)(puVar11 + 1);
         *puVar14 = uVar15;
-        puVar14 = (undefined8 *)(param_1[1] + 0xc);
-        param_1[1] = (long)puVar14;
+        puVar14 = (undefined8 *)(this[1] + 0xc);
+        this[1] = (long)puVar14;
       }
       if (lVar9 != 0) {
         lVar9 = SUB168(SEXT816(lVar9) * SEXT816(-0x2aaaaaaaaaaaaaab),8);
-        memmove((long)puVar7 + ((lVar9 >> 1) - (lVar9 >> 0x3f)) * 0xc,param_2);
+        memmove((long)puVar7 + ((lVar9 >> 1) - (lVar9 >> 0x3f)) * 0xc,param_1);
       }
-      puVar7 = param_3;
-      if ((param_2 <= param_3) &&
-         (puVar7 = (undefined8 *)((long)param_3 + 0xc), (undefined8 *)param_1[1] <= param_3)) {
-        puVar7 = param_3;
+      puVar7 = param_2;
+      if ((param_1 <= param_2) &&
+         (puVar7 = (undefined8 *)((long)param_2 + 0xc), (undefined8 *)this[1] <= param_2)) {
+        puVar7 = param_2;
       }
       uVar15 = *puVar7;
-      *(undefined4 *)(param_2 + 1) = *(undefined4 *)(puVar7 + 1);
-      *param_2 = uVar15;
+      *(undefined4 *)(param_1 + 1) = *(undefined4 *)(puVar7 + 1);
+      *param_1 = uVar15;
     }
   }
   else {
-    lVar9 = *param_1;
+    lVar9 = *this;
     uVar10 = ((long)puVar7 - lVar9 >> 2) * -0x5555555555555555 + 1;
     if (0x1555555555555555 < uVar10) {
-      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
       return puVar7;
     }
-    lVar12 = param_1[2] - lVar9 >> 2;
+    lVar12 = this[2] - lVar9 >> 2;
     uVar8 = 0x1555555555555555;
     if (((ulong)(lVar12 * -0x5555555555555555) < 0xaaaaaaaaaaaaaaa) &&
        (uVar13 = lVar12 * 0x5555555555555556, uVar8 = uVar10, uVar10 <= uVar13)) {
       uVar8 = uVar13;
     }
-    std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&puStack_a8,uVar8,((long)param_2 - lVar9 >> 2) * -0x5555555555555555,param_1 + 2
+    std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>::__split_buffer(&puStack_a8,uVar8,((long)param_1 - lVar9 >> 2) * -0x5555555555555555,this + 2
                    );
     if (puStack_98 == puStack_90) {
       if (puStack_a0 < puStack_a8 || (long)puStack_a0 - (long)puStack_a8 == 0) {
@@ -151,11 +151,11 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
         puStack_98 = (undefined8 *)((long)puVar7 + (lVar12 >> 2) * 4);
       }
     }
-    uVar15 = *param_3;
-    *(undefined4 *)(puStack_98 + 1) = *(undefined4 *)(param_3 + 1);
+    uVar15 = *param_2;
+    *(undefined4 *)(puStack_98 + 1) = *(undefined4 *)(param_2 + 1);
     *puStack_98 = uVar15;
     puStack_98 = (undefined8 *)((long)puStack_98 + 0xc);
-    param_2 = (undefined8 *)std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__swap_out_circular_buffer(param_1,&puStack_a8,param_2);
+    param_1 = (undefined8 *)std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__swap_out_circular_buffer(this,&puStack_a8,param_1);
     if (puStack_98 != puStack_a0) {
       puStack_98 = (undefined8 *)
                    ((long)puStack_98 +
@@ -170,7 +170,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
     puVar7 = (undefined8 *)__stack_chk_fail();
     return puVar7;
   }
-  return param_2;
+  return param_1;
 }
 
 
@@ -187,35 +187,35 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
 
 long std::__ndk1::
      vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::ParticleDescription>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,long param_3)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>&>& param_1,WaterConcept::ParticleDescription *param_2)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  lVar1 = *param_1;
-  lVar3 = param_2[1];
-  lVar2 = SUB168(SEXT816(param_3 - lVar1) * SEXT816(-0x2aaaaaaaaaaaaaab),8);
-  param_2[1] = lVar3 + ((lVar2 >> 1) - (lVar2 >> 0x3f)) * 0xc;
-  if (0 < param_3 - lVar1) {
+  lVar1 = *this;
+  lVar3 = param_1[1];
+  lVar2 = SUB168(SEXT816(param_2 - lVar1) * SEXT816(-0x2aaaaaaaaaaaaaab),8);
+  param_1[1] = lVar3 + ((lVar2 >> 1) - (lVar2 >> 0x3f)) * 0xc;
+  if (0 < param_2 - lVar1) {
     memcpy();
   }
-  lVar1 = param_1[1];
-  if (0 < lVar1 - param_3) {
-    memcpy(param_2[2],param_3);
-    param_2[2] = param_2[2] + ((ulong)(lVar1 - param_3) / 0xc) * 0xc;
+  lVar1 = this[1];
+  if (0 < lVar1 - param_2) {
+    memcpy(param_1[2],param_2);
+    param_1[2] = param_1[2] + ((ulong)(lVar1 - param_2) / 0xc) * 0xc;
   }
-  lVar1 = *param_1;
-  *param_1 = param_2[1];
-  param_2[1] = lVar1;
-  lVar1 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar1;
-  lVar1 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar1;
-  *param_2 = param_2[1];
+  lVar1 = *this;
+  *this = param_1[1];
+  param_1[1] = lVar1;
+  lVar1 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar1;
+  lVar1 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar1;
+  *param_1 = param_1[1];
   return lVar3;
 }
 

@@ -140,7 +140,7 @@ LAB_003f9cc0:
 /* Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
+void Walaber::TextManager::getString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -150,9 +150,9 @@ void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
                     /* try { // try from 003f9d84 to 003f9d8f has its CatchHandler @ 003f9dc4 */
-  Walaber::TextManager::getString(param_1,abStack_40,mCurrentLanguage);
+  Walaber::TextManager::getString(this,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -211,7 +211,7 @@ undefined8 Walaber::TextManager::stringExists(byte *param_1,int param_2)
 /* Walaber::TextManager::stringExists(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-ulong Walaber::TextManager::stringExists(undefined8 param_1)
+ulong Walaber::TextManager::stringExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -414,7 +414,7 @@ LAB_003fa010:
 /* Walaber::TextManager::getSubtitle(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
+void Walaber::TextManager::getSubtitle(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -424,9 +424,9 @@ void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
                     /* try { // try from 003fa150 to 003fa15b has its CatchHandler @ 003fa190 */
-  Walaber::TextManager::getSubtitle(param_1,abStack_40,mCurrentLanguage);
+  Walaber::TextManager::getSubtitle(this,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -485,7 +485,7 @@ undefined8 Walaber::TextManager::subtitleExists(byte *param_1,int param_2)
 /* Walaber::TextManager::subtitleExists(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-ulong Walaber::TextManager::subtitleExists(undefined8 param_1)
+ulong Walaber::TextManager::subtitleExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -520,7 +520,7 @@ ulong Walaber::TextManager::subtitleExists(undefined8 param_1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
    std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language> >&) */
 
-void Walaber::TextManager::loadScriptFromTSV(undefined8 param_1,undefined8 *param_2)
+void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>& param_2)
 
 {
   long lVar1;
@@ -949,7 +949,7 @@ LAB_003fa8a8:
 /* Walaber::TextManager::stringToLanguage(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::Language&) */
 
-ulong Walaber::TextManager::stringToLanguage(undefined8 param_1,undefined4 *param_2)
+ulong Walaber::TextManager::stringToLanguage(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Language& param_2)
 
 {
   long lVar1;
@@ -1459,7 +1459,7 @@ undefined8 Walaber::TextManager::containsLanguage(long *param_1,int *param_2)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
    std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language> >&) */
 
-void Walaber::TextManager::loadSubtitlesFromTSV(undefined8 param_1,undefined8 *param_2)
+void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>& param_2)
 
 {
   long lVar1;

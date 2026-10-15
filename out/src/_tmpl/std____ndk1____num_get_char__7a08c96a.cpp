@@ -13,8 +13,7 @@
 
 undefined8
 std::__ndk1::__num_get<char>::__stage2_int_loop
-          (char param_1,int param_2,char *param_3,long *param_4,int *param_5,char param_6,
-          byte *param_7,long param_8,undefined8 *param_9,char *param_10)
+          (char param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,char param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,char *param_10)
 
 {
   ulong uVar1;
@@ -247,8 +246,7 @@ void std::__ndk1::__num_get<char>::__stage2_float_prep
 
 undefined8
 std::__ndk1::__num_get<char>::__stage2_float_loop
-          (char param_1,char *param_2,byte *param_3,byte *param_4,long *param_5,char param_6,
-          char param_7,byte *param_8,long param_9,undefined8 *param_10,int *param_11,char *param_12)
+          (char param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,char param_6,char param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,char *param_12)
 
 {
   ulong uVar1;

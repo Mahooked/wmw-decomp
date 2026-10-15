@@ -13,8 +13,7 @@
 
 undefined8
 std::__ndk1::__num_get<wchar_t>::__stage2_int_loop
-          (int param_1,int param_2,char *param_3,long *param_4,int *param_5,int param_6,
-          byte *param_7,long param_8,undefined8 *param_9,int *param_10)
+          (wchar_t param_1,int param_2,char *param_3,char*& param_4,unsigned int& param_5,wchar_t param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,unsigned int *param_8,unsigned int*& param_9,wchar_t *param_10)
 
 {
   ulong uVar1;
@@ -249,8 +248,7 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
 
 undefined8
 std::__ndk1::__num_get<wchar_t>::__stage2_float_loop
-          (int param_1,char *param_2,byte *param_3,byte *param_4,long *param_5,int param_6,
-          int param_7,byte *param_8,long param_9,undefined8 *param_10,int *param_11,int *param_12)
+          (wchar_t param_1,bool& param_2,char& param_3,char *param_4,char*& param_5,wchar_t param_6,wchar_t param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8,unsigned int *param_9,unsigned int*& param_10,unsigned int& param_11,wchar_t *param_12)
 
 {
   int iVar1;

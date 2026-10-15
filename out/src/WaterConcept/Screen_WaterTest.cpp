@@ -2326,7 +2326,7 @@ LAB_0056d22c:
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,byte *param_3)
+void WaterConcept::Screen_WaterTest::loadLevel(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   ulong uVar1;
@@ -2423,45 +2423,45 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   
   lVar2 = tpidr_el0;
   lVar8 = *(long *)(lVar2 + 0x28);
-  if (*(char *)(param_1 + 0x174) == '\0') {
+  if (*(char *)(this + 0x174) == '\0') {
     WaterConcept::GameSettings::levelStarted();
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x158,param_2);
-  if (*(long *)(param_1 + 0x400) != 0) {
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 0x158,param_1);
+  if (*(long *)(this + 0x400) != 0) {
     Walaber::SoundEffectInstance::stop();
-    uVar12 = *(undefined8 *)(param_1 + 0x408);
-    uVar14 = *(undefined8 *)(param_1 + 0x400);
-    *(undefined8 *)(param_1 + 0x408) = 0;
-    *(undefined8 *)(param_1 + 0x400) = 0;
+    uVar12 = *(undefined8 *)(this + 0x408);
+    uVar14 = *(undefined8 *)(this + 0x400);
+    *(undefined8 *)(this + 0x408) = 0;
+    *(undefined8 *)(this + 0x400) = 0;
     uStack_128 = (undefined1)uVar12;
     uStack_127 = (undefined6)((ulong)uVar12 >> 8);
     uStack_121 = (undefined1)((ulong)uVar12 >> 0x38);
     bStack_130 = (byte)uVar14;
     uStack_12f = (undefined7)((ulong)uVar14 >> 8);
     Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&bStack_130);
-    *(undefined4 *)(param_1 + 0x410) = 0xffffffff;
+    *(undefined4 *)(this + 0x410) = 0xffffffff;
   }
-  *(undefined2 *)(param_1 + 0x1bf) = 0;
+  *(undefined2 *)(this + 0x1bf) = 0;
   uVar14 = NEON_fmov(0xbf800000,4);
-  *(undefined1 *)(param_1 + 0x1b5) = 0;
-  *(undefined8 *)(param_1 + 0x1a8) = 0;
-  *(undefined1 *)(param_1 + 0x270) = 0;
-  *(undefined1 *)(param_1 + 0x2c0) = 0;
-  *(undefined4 *)(param_1 + 0x37c) = 0;
-  *(undefined2 *)(param_1 + 0x3e0) = 0x100;
-  *(undefined1 *)(param_1 + 0x324) = 0;
-  *(undefined4 *)(param_1 + 0x1b8) = 0;
-  *(undefined4 *)(param_1 + 0x1dc) = 0;
-  *(undefined4 *)(param_1 + 700) = 0;
-  *(undefined1 *)(param_1 + 0x1c1) = 0;
-  *(undefined1 *)(param_1 + 0x314) = 0;
-  *(undefined1 *)(param_1 + 0x298) = 0;
-  *(undefined8 *)(param_1 + 0x2e4) = uVar14;
-  lVar11 = *(long *)(param_1 + 0x430);
-  *(undefined4 *)(param_1 + 0x22c) = 0;
-  *(undefined4 *)(param_1 + 0x448) = 0;
-  *(undefined1 *)(param_1 + 0x468) = 0;
-  lVar9 = *(long *)(param_1 + 0x438);
+  *(undefined1 *)(this + 0x1b5) = 0;
+  *(undefined8 *)(this + 0x1a8) = 0;
+  *(undefined1 *)(this + 0x270) = 0;
+  *(undefined1 *)(this + 0x2c0) = 0;
+  *(undefined4 *)(this + 0x37c) = 0;
+  *(undefined2 *)(this + 0x3e0) = 0x100;
+  *(undefined1 *)(this + 0x324) = 0;
+  *(undefined4 *)(this + 0x1b8) = 0;
+  *(undefined4 *)(this + 0x1dc) = 0;
+  *(undefined4 *)(this + 700) = 0;
+  *(undefined1 *)(this + 0x1c1) = 0;
+  *(undefined1 *)(this + 0x314) = 0;
+  *(undefined1 *)(this + 0x298) = 0;
+  *(undefined8 *)(this + 0x2e4) = uVar14;
+  lVar11 = *(long *)(this + 0x430);
+  *(undefined4 *)(this + 0x22c) = 0;
+  *(undefined4 *)(this + 0x448) = 0;
+  *(undefined1 *)(this + 0x468) = 0;
+  lVar9 = *(long *)(this + 0x438);
   while (lVar3 = lVar9, lVar3 != lVar11) {
     p0 = *(void **)(lVar3 + -0x18);
     lVar9 = lVar3 + -0x20;
@@ -2470,11 +2470,11 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
       operator delete(p0);
     }
   }
-  *(long *)(param_1 + 0x438) = lVar11;
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>>>::destroy(param_1 + 0x418,*(undefined8 *)(param_1 + 0x420));
-  *(long *)(param_1 + 0x418) = param_1 + 0x420;
-  *(undefined8 *)(param_1 + 0x428) = 0;
-  *(undefined8 *)(param_1 + 0x420) = 0;
+  *(long *)(this + 0x438) = lVar11;
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::Screen_WaterTest::StrokeInfo>>>::destroy(this + 0x418,*(undefined8 *)(this + 0x420));
+  *(long *)(this + 0x418) = this + 0x420;
+  *(undefined8 *)(this + 0x428) = 0;
+  *(undefined8 *)(this + 0x420) = 0;
   iVar10 = (int)(Walaber::ScreenCoord::sScreenSize / (DAT_0072d884 / 120.0) + 0.5);
   if (0x59 < iVar10) {
     iVar10 = 0x5a;
@@ -2485,9 +2485,9 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   uVar14 = operator new(0xad8);
                     /* try { // try from 0056da20 to 0056da2f has its CatchHandler @ 0056e624 */
   WaterConcept::World::World(0x3f4ccccd,uVar14,iVar10);
-  *(undefined8 *)(param_1 + 0xa8) = uVar14;
+  *(undefined8 *)(this + 0xa8) = uVar14;
   puVar4 = (undefined8 *)operator new(0x28);
-  puVar4[2] = param_1;
+  puVar4[2] = this;
   *puVar4 = &PTR__Callback_00715fd8;
   puVar4[1] = 0;
   puVar4[4] = 0;
@@ -2511,7 +2511,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
     *piStack_1d8 = *piStack_1d8 + 1;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1e0);
-  lVar9 = *(long *)(param_1 + 0xa8);
+  lVar9 = *(long *)(this + 0xa8);
   if (puStack_a8 != (undefined8 *)0x0) {
     *piStack_a0 = *piStack_a0 + 1;
   }
@@ -2519,7 +2519,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
                     /* try { // try from 0056dadc to 0056db13 has its CatchHandler @ 0056e63c */
   puVar4 = (undefined8 *)operator new(0x28);
-  puVar4[2] = param_1;
+  puVar4[2] = this;
   *puVar4 = &PTR__Callback_00715fd8;
   puVar4[1] = 0;
   puVar4[4] = 0;
@@ -2543,7 +2543,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
     *piStack_1d8 = *piStack_1d8 + 1;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1e0);
-  lVar9 = *(long *)(param_1 + 0xa8);
+  lVar9 = *(long *)(this + 0xa8);
   if (puStack_d8 != (undefined8 *)0x0) {
     *piStack_d0 = *piStack_d0 + 1;
   }
@@ -2551,7 +2551,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
                     /* try { // try from 0056db7c to 0056dbb3 has its CatchHandler @ 0056e634 */
   puVar4 = (undefined8 *)operator new(0x28);
-  puVar4[2] = param_1;
+  puVar4[2] = this;
   *puVar4 = &PTR__Callback_00715fd8;
   puVar4[1] = 0;
   puVar4[4] = 0;
@@ -2575,13 +2575,13 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
     *piStack_1d8 = *piStack_1d8 + 1;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1e0);
-  lVar9 = *(long *)(param_1 + 0xa8);
+  lVar9 = *(long *)(this + 0xa8);
   if (puStack_108 != (undefined8 *)0x0) {
     *piStack_100 = *piStack_100 + 1;
   }
   Walaber::SharedPtr<Walaber::Callback>::operator=(lVar9 + 0xa90,&puStack_108);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_108);
-  uVar12 = *(undefined8 *)(param_1 + 0xa8);
+  uVar12 = *(undefined8 *)(this + 0xa8);
                     /* try { // try from 0056dc20 to 0056dc23 has its CatchHandler @ 0056e620 */
   uVar14 = Walaber::TextureManager::getManager();
   uStack_11b = 0;
@@ -2613,7 +2613,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   if ((bStack_130 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_119,CONCAT25(uStack_11b,CONCAT41(uStack_11f,uStack_120))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0xa8);
+  uVar12 = *(undefined8 *)(this + 0xa8);
                     /* try { // try from 0056dcc8 to 0056dccb has its CatchHandler @ 0056e5e0 */
   uVar14 = Walaber::TextureManager::getManager();
   uStack_11b = 0;
@@ -2645,7 +2645,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   if ((bStack_130 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_119,CONCAT25(uStack_11b,CONCAT41(uStack_11f,uStack_120))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0xa8);
+  uVar12 = *(undefined8 *)(this + 0xa8);
                     /* try { // try from 0056dd70 to 0056dd73 has its CatchHandler @ 0056e5b8 */
   uVar14 = Walaber::TextureManager::getManager();
   bStack_130 = 0;
@@ -2689,7 +2689,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   if ((bStack_130 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_119,CONCAT25(uStack_11b,CONCAT41(uStack_11f,uStack_120))));
   }
-  uVar12 = *(undefined8 *)(param_1 + 0xa8);
+  uVar12 = *(undefined8 *)(this + 0xa8);
                     /* try { // try from 0056de30 to 0056de33 has its CatchHandler @ 0056e58c */
   uVar14 = Walaber::TextureManager::getManager();
   bStack_130 = 0;
@@ -2733,7 +2733,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
   if ((bStack_130 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_119,CONCAT25(uStack_11b,CONCAT41(uStack_11f,uStack_120))));
   }
-  lVar9 = *(long *)(param_1 + 0xa8);
+  lVar9 = *(long *)(this + 0xa8);
   uVar13 = 0;
   do {
                     /* try { // try from 0056df04 to 0056df07 has its CatchHandler @ 0056e6b8 */
@@ -2792,7 +2792,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
     if (((ulong)puStack_1f8 & 1) != 0) {
       operator delete(pvStack_1e8);
     }
-    lVar9 = *(long *)(param_1 + 0xa8);
+    lVar9 = *(long *)(this + 0xa8);
   } while (uVar13 < 3);
                     /* try { // try from 0056e014 to 0056e017 has its CatchHandler @ 0056e560 */
   uVar14 = Walaber::TextureManager::getManager();
@@ -2856,7 +2856,7 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
     operator delete((void *)CONCAT17(uStack_119,CONCAT25(uStack_11b,CONCAT41(uStack_11f,uStack_120))));
   }
   if (GameSettings::currentStoryline == 3) {
-    lVar9 = *(long *)(param_1 + 0xa8);
+    lVar9 = *(long *)(this + 0xa8);
                     /* try { // try from 0056e18c to 0056e18f has its CatchHandler @ 0056e4f8 */
     uVar14 = Walaber::TextureManager::getManager();
     bStack_130 = 0;
@@ -2902,39 +2902,39 @@ void WaterConcept::Screen_WaterTest::loadLevel(long param_1,undefined8 param_2,b
                   );
     }
   }
-  if ((*(byte *)(param_1 + 0x328) & 1) == 0) {
-    if (*(byte *)(param_1 + 0x328) >> 1 == 0) goto LAB_0056e270;
+  if ((*(byte *)(this + 0x328) & 1) == 0) {
+    if (*(byte *)(this + 0x328) >> 1 == 0) goto LAB_0056e270;
   }
-  else if (*(long *)(param_1 + 0x330) == 0) goto LAB_0056e270;
+  else if (*(long *)(this + 0x330) == 0) goto LAB_0056e270;
                     /* try { // try from 0056e26c to 0056e26f has its CatchHandler @ 0056e4fc */
-  WaterConcept::World::setLevelRequirements(*(undefined8 *)(param_1 + 0xa8),param_1 + 0x328);
+  WaterConcept::World::setLevelRequirements(*(undefined8 *)(this + 0xa8),this + 0x328);
 LAB_0056e270:
   if (-1 < GameSettings::currentLevelChallengeID) {
-    *(undefined1 *)(*(long *)(param_1 + 0xa8) + 0xa3b) = 1;
+    *(undefined1 *)(*(long *)(this + 0xa8) + 0xa3b) = 1;
   }
   switch(GameSettings::duckLockMode) {
   case 0:
-    lVar9 = *(long *)(param_1 + 0xa8);
-    *(undefined1 *)(lVar9 + 0xa69) = *(undefined1 *)(param_1 + 0x1bd);
-    *(undefined1 *)(lVar9 + 0xa6a) = *(undefined1 *)(param_1 + 0x1be);
+    lVar9 = *(long *)(this + 0xa8);
+    *(undefined1 *)(lVar9 + 0xa69) = *(undefined1 *)(this + 0x1bd);
+    *(undefined1 *)(lVar9 + 0xa6a) = *(undefined1 *)(this + 0x1be);
     break;
   case 1:
-    *(undefined1 *)(*(long *)(param_1 + 0xa8) + 0xa69) = 0;
+    *(undefined1 *)(*(long *)(this + 0xa8) + 0xa69) = 0;
     break;
   case 2:
-    *(undefined1 *)(*(long *)(param_1 + 0xa8) + 0xa69) = 1;
+    *(undefined1 *)(*(long *)(this + 0xa8) + 0xa69) = 1;
     break;
   case 3:
-    *(undefined2 *)(*(long *)(param_1 + 0xa8) + 0xa69) = 0x100;
+    *(undefined2 *)(*(long *)(this + 0xa8) + 0xa69) = 0x100;
   }
-  uVar1 = (ulong)(*param_3 >> 1);
-  if ((*param_3 & 1) != 0) {
-    uVar1 = *(ulong *)(param_3 + 8);
+  uVar1 = (ulong)(*param_2 >> 1);
+  if ((*param_2 & 1) != 0) {
+    uVar1 = *(ulong *)(param_2 + 8);
   }
   if (uVar1 < 2) {
                     /* try { // try from 0056e314 to 0056e34b has its CatchHandler @ 0056e504 */
     puVar4 = (undefined8 *)operator new(0x28);
-    puVar4[2] = param_1;
+    puVar4[2] = this;
     *puVar4 = &PTR__Callback_00715fd8;
     puVar4[1] = 0;
     puVar4[4] = 0;
@@ -2955,18 +2955,18 @@ LAB_0056e270:
     puStack_1f8 = puVar4;
     piStack_1f0 = piVar6;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1c0);
-    uVar14 = *(undefined8 *)(param_1 + 0xa8);
+    uVar14 = *(undefined8 *)(this + 0xa8);
     *piVar6 = *piVar6 + 1;
                     /* try { // try from 0056e398 to 0056e3a3 has its CatchHandler @ 0056e4c8 */
     puStack_298 = puVar4;
     piStack_290 = piVar6;
-    WaterConcept::World::loadLevel(uVar14,param_2,&puStack_298);
+    WaterConcept::World::loadLevel(uVar14,param_1,&puStack_298);
     ppuVar7 = &puStack_298;
   }
   else {
                     /* try { // try from 0056e3ac to 0056e3e3 has its CatchHandler @ 0056e500 */
     puVar4 = (undefined8 *)operator new(0x28);
-    puVar4[2] = param_1;
+    puVar4[2] = this;
     *puVar4 = &PTR__Callback_00715fd8;
     puVar4[1] = 0;
     puVar4[4] = 0;
@@ -2987,12 +2987,12 @@ LAB_0056e270:
     puStack_1f8 = puVar4;
     piStack_1f0 = piVar6;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1c0);
-    uVar14 = *(undefined8 *)(param_1 + 0xa8);
+    uVar14 = *(undefined8 *)(this + 0xa8);
     *piVar6 = *piVar6 + 1;
                     /* try { // try from 0056e430 to 0056e43f has its CatchHandler @ 0056e4bc */
     puStack_2a8 = puVar4;
     piStack_2a0 = piVar6;
-    WaterConcept::World::loadLevel(uVar14,param_2,param_3,&puStack_2a8);
+    WaterConcept::World::loadLevel(uVar14,param_1,param_2,&puStack_2a8);
     ppuVar7 = &puStack_2a8;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(ppuVar7);
@@ -7945,7 +7945,7 @@ void WaterConcept::Screen_WaterTest::_drawPhotoFinish(long param_1)
     */
 
 void WaterConcept::Screen_WaterTest::_createPhotoFinishScreenGrabCopy
-               (long param_1,undefined4 param_2)
+               (Walaber::TextureInMemoryColorspace param_1)
 
 {
   long lVar1;
@@ -7958,7 +7958,7 @@ void WaterConcept::Screen_WaterTest::_createPhotoFinishScreenGrabCopy
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  p0 = *(void **)(param_1 + 0x460);
+  p0 = *(void **)(this + 0x460);
   if (p0 != (void *)0x0) {
     if (*(void **)((long)p0 + 0x10) != (void *)0x0) {
       operator delete(*(void **)((long)p0 + 0x10));
@@ -7967,10 +7967,10 @@ void WaterConcept::Screen_WaterTest::_createPhotoFinishScreenGrabCopy
   }
   puVar2 = (undefined4 *)operator new(0x18);
   *(undefined8 *)(puVar2 + 4) = 0;
-  *puVar2 = param_2;
-  lStack_48 = *(long *)(param_1 + 0x450);
-  piStack_40 = *(int **)(param_1 + 0x458);
-  *(undefined4 **)(param_1 + 0x460) = puVar2;
+  *puVar2 = param_1;
+  lStack_48 = *(long *)(this + 0x450);
+  piStack_40 = *(int **)(this + 0x458);
+  *(undefined4 **)(this + 0x460) = puVar2;
   if (lStack_48 != 0) {
     *piStack_40 = *piStack_40 + 1;
   }
@@ -15444,34 +15444,34 @@ undefined8 WaterConcept::Screen_WaterTest::finishedLoading(long param_1)
 
 /* WaterConcept::Screen_WaterTest::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
-void WaterConcept::Screen_WaterTest::handleFocus(undefined8 param_1,long param_2,int param_3)
+void WaterConcept::Screen_WaterTest::handleFocus(Walaber::Widget *param_1,Walaber::FocusEvent param_2)
 
 {
   int iVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  if ((*(int *)(param_2 + 0x84) != 1) || (iVar1 = Walaber::Widget::getWidgetNameAsInt(param_2), iVar1 == 10)) {
+  if ((*(int *)(param_1 + 0x84) != 1) || (iVar1 = Walaber::Widget::getWidgetNameAsInt(param_1), iVar1 == 10)) {
     return;
   }
-  if ((param_3 == 5) || (param_3 == 2)) {
-    if (*(char *)(param_2 + 0x150) != '\0') {
+  if ((param_2 == 5) || (param_2 == 2)) {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar2 = Walaber::SoundManager::getInstancePtr();
     uVar3 = 0x8d;
   }
   else {
-    if (param_3 != 0) {
+    if (param_2 != 0) {
       return;
     }
-    if (*(char *)(param_2 + 0x150) != '\0') {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar2 = Walaber::SoundManager::getInstancePtr();
@@ -16492,7 +16492,7 @@ void WaterConcept::Screen_WaterTest::backKeyPressed(long param_1)
    int) */
 
 void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
-               (undefined8 param_1,undefined4 param_2,int param_3)
+               (WaterConceptConstants::SoundIndexes param_1,int param_2)
 
 {
   long lVar1;
@@ -16521,7 +16521,7 @@ void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
   Walaber::PropertyList::PropertyList(auStack_70);
                     /* try { // try from 00589b44 to 00589b83 has its CatchHandler @ 00589ca8 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_00715fd8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -16539,7 +16539,7 @@ void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
   puStack_90 = puVar2;
   piStack_88 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  if (param_3 == -1) {
+  if (param_2 == -1) {
                     /* try { // try from 00589bfc to 00589bff has its CatchHandler @ 00589c90 */
     uVar4 = Walaber::SoundManager::getInstancePtr();
     puStack_c0 = puStack_90;
@@ -16548,7 +16548,7 @@ void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
       *piStack_88 = *piStack_88 + 1;
     }
                     /* try { // try from 00589c18 to 00589c27 has its CatchHandler @ 00589c74 */
-    Walaber::SoundManager::newSoundFromGroup(uVar4,param_2,&puStack_c0,auStack_70);
+    Walaber::SoundManager::newSoundFromGroup(uVar4,param_1,&puStack_c0,auStack_70);
   }
   else {
                     /* try { // try from 00589bc4 to 00589bc7 has its CatchHandler @ 00589c90 */
@@ -16559,7 +16559,7 @@ void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
       *piStack_88 = *piStack_88 + 1;
     }
                     /* try { // try from 00589be0 to 00589bf3 has its CatchHandler @ 00589c80 */
-    Walaber::SoundManager::newSoundSpecific(uVar4,param_2,param_3,&puStack_b0,auStack_70);
+    Walaber::SoundManager::newSoundSpecific(uVar4,param_1,param_2,&puStack_b0,auStack_70);
     ppuVar5 = &puStack_b0;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(ppuVar5);

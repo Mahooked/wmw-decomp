@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::SpriteAnimation::AnimationFrame,std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>& param_1)
 
 {
   undefined8 *puVar1;
@@ -24,13 +24,13 @@ void std::__ndk1::
   long lVar6;
   undefined8 *puVar3;
   
-  puVar1 = (undefined8 *)*param_1;
-  if ((undefined8 *)param_1[1] == puVar1) {
-    lVar4 = param_2[1];
+  puVar1 = (undefined8 *)*this;
+  if ((undefined8 *)this[1] == puVar1) {
+    lVar4 = param_1[1];
   }
   else {
-    lVar4 = param_2[1];
-    puVar2 = (undefined8 *)param_1[1];
+    lVar4 = param_1[1];
+    puVar2 = (undefined8 *)this[1];
     do {
       puVar3 = puVar2 + -5;
       *(undefined8 *)(lVar4 + -0x28) = *puVar3;
@@ -47,21 +47,21 @@ void std::__ndk1::
       if (lVar6 != 0) {
         *piVar5 = *piVar5 + 1;
       }
-      lVar4 = param_2[1] + -0x28;
-      param_2[1] = lVar4;
+      lVar4 = param_1[1] + -0x28;
+      param_1[1] = lVar4;
       puVar2 = puVar3;
     } while (puVar1 != puVar3);
-    puVar1 = (undefined8 *)*param_1;
+    puVar1 = (undefined8 *)*this;
   }
-  *param_1 = lVar4;
-  param_2[1] = puVar1;
-  lVar4 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar4;
-  lVar4 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar4;
-  *param_2 = param_2[1];
+  *this = lVar4;
+  param_1[1] = puVar1;
+  lVar4 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar4;
+  lVar4 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar4;
+  *param_1 = param_1[1];
   return;
 }
 

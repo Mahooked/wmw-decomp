@@ -14,8 +14,7 @@
 
 long * std::__ndk1::
        time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::put(long *param_1,long *param_2,undefined8 param_3,undefined4 param_4,undefined8 param_5,
-            int *param_6,int *param_7)
+       ::put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,tm const *param_4,wchar_t const *param_5,wchar_t const *param_6)
 
 {
   uint uVar1;
@@ -33,14 +32,14 @@ long * std::__ndk1::
   
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
-  std::__ndk1::ios_base::getloc(&uStack_70,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_2);
                     /* try { // try from 005c4908 to 005c4917 has its CatchHandler @ 005c4b70 */
   plVar5 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<wchar_t>::id);
   plVar6 = (long *)std::__ndk1::__shared_count::__release_shared(uStack_70);
 joined_r0x005c4928:
   do {
-    plVar8 = param_2;
-    if (param_6 == param_7) {
+    plVar8 = param_1;
+    if (param_5 == param_6) {
 LAB_005c4b34:
       if (*(long *)(lVar3 + 0x28) == lStack_68) {
         return plVar8;
@@ -49,23 +48,23 @@ LAB_005c4b6c:
       plVar6 = (long *)__stack_chk_fail(plVar6);
       return plVar6;
     }
-    plVar6 = (long *)(**(code **)(*plVar5 + 0x68))(plVar5,*param_6,0);
+    plVar6 = (long *)(**(code **)(*plVar5 + 0x68))(plVar5,*param_5,0);
     if (((uint)plVar6 & 0xff) == 0x25) {
-      piVar9 = param_6 + 1;
-      if (piVar9 == param_7) {
-        if (param_2 != (long *)0x0) {
-          piVar9 = (int *)param_2[6];
-          iVar4 = *param_6;
-          if (piVar9 == (int *)param_2[7]) {
-            iVar4 = (**(code **)(*param_2 + 0x68))(param_2);
+      piVar9 = param_5 + 1;
+      if (piVar9 == param_6) {
+        if (param_1 != (long *)0x0) {
+          piVar9 = (int *)param_1[6];
+          iVar4 = *param_5;
+          if (piVar9 == (int *)param_1[7]) {
+            iVar4 = (**(code **)(*param_1 + 0x68))(param_1);
           }
           else {
-            param_2[6] = (long)(piVar9 + 1);
+            param_1[6] = (long)(piVar9 + 1);
             *piVar9 = iVar4;
           }
           plVar6 = (long *)0x0;
           if (iVar4 != -1) {
-            plVar6 = param_2;
+            plVar6 = param_1;
           }
           if (*(long *)(lVar3 + 0x28) == lStack_68) {
             return plVar6;
@@ -77,36 +76,36 @@ LAB_005c4b6c:
       plVar6 = (long *)(**(code **)(*plVar5 + 0x68))(plVar5,*piVar9,0);
       uVar1 = (uint)plVar6 & 0xff;
       if ((uVar1 == 0x4f) || (uVar1 == 0x45)) {
-        piVar2 = param_6 + 2;
-        if (piVar2 == param_7) {
-          if (param_2 != (long *)0x0) {
-            piVar2 = (int *)param_2[6];
-            iVar4 = *param_6;
-            if (piVar2 == (int *)param_2[7]) {
-              plVar6 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+        piVar2 = param_5 + 2;
+        if (piVar2 == param_6) {
+          if (param_1 != (long *)0x0) {
+            piVar2 = (int *)param_1[6];
+            iVar4 = *param_5;
+            if (piVar2 == (int *)param_1[7]) {
+              plVar6 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
               iVar4 = (int)plVar6;
             }
             else {
-              param_2[6] = (long)(piVar2 + 1);
+              param_1[6] = (long)(piVar2 + 1);
               *piVar2 = iVar4;
             }
             if (iVar4 == -1) {
               plVar8 = (long *)0x0;
             }
             else {
-              piVar2 = (int *)param_2[6];
+              piVar2 = (int *)param_1[6];
               iVar4 = *piVar9;
-              if (piVar2 == (int *)param_2[7]) {
-                plVar6 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+              if (piVar2 == (int *)param_1[7]) {
+                plVar6 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
                 iVar4 = (int)plVar6;
               }
               else {
-                param_2[6] = (long)(piVar2 + 1);
+                param_1[6] = (long)(piVar2 + 1);
                 *piVar2 = iVar4;
               }
               plVar8 = (long *)0x0;
               if (iVar4 != -1) {
-                plVar8 = param_2;
+                plVar8 = param_1;
               }
             }
           }
@@ -121,30 +120,30 @@ LAB_005c4b6c:
         uVar10 = 0;
         uVar7 = (ulong)plVar6 & 0xffffffff;
       }
-      plVar6 = (long *)(**(code **)(*param_1 + 0x18))
-                                 (param_1,param_2,param_3,param_4,param_5,uVar7,uVar10);
-      param_6 = piVar9 + 1;
-      param_2 = plVar6;
+      plVar6 = (long *)(**(code **)(*this + 0x18))
+                                 (this,param_1,param_2,param_3,param_4,uVar7,uVar10);
+      param_5 = piVar9 + 1;
+      param_1 = plVar6;
       goto joined_r0x005c4928;
     }
-    if (param_2 != (long *)0x0) {
-      piVar9 = (int *)param_2[6];
-      iVar4 = *param_6;
-      if (piVar9 == (int *)param_2[7]) {
-        plVar6 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+    if (param_1 != (long *)0x0) {
+      piVar9 = (int *)param_1[6];
+      iVar4 = *param_5;
+      if (piVar9 == (int *)param_1[7]) {
+        plVar6 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
         iVar4 = (int)plVar6;
       }
       else {
-        param_2[6] = (long)(piVar9 + 1);
+        param_1[6] = (long)(piVar9 + 1);
         *piVar9 = iVar4;
       }
       plVar8 = (long *)0x0;
       if (iVar4 != -1) {
-        plVar8 = param_2;
+        plVar8 = param_1;
       }
     }
-    param_6 = param_6 + 1;
-    param_2 = plVar8;
+    param_5 = param_5 + 1;
+    param_1 = plVar8;
   } while( true );
 }
 
@@ -161,8 +160,7 @@ LAB_005c4b6c:
 
 long * std::__ndk1::
        time_put<wchar_t,std::__ndk1::ostreambuf_iterator<wchar_t,std::__ndk1::char_traits<wchar_t>>>
-       ::do_put(long param_1,long *param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
-               undefined4 param_6,undefined4 param_7)
+       ::do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>> param_1,std::__ndk1::ios_base& param_2,wchar_t param_3,tm const *param_4,char param_5,char param_6)
 
 {
   int *piVar1;
@@ -178,13 +176,13 @@ long * std::__ndk1::
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
   plStack_1e0 = &lStack_48;
-  std::__ndk1::__time_put::__do_put(param_1 + 0x10,alStack_1d8,&plStack_1e0,param_5,param_6,param_7);
+  std::__ndk1::__time_put::__do_put(this + 0x10,alStack_1d8,&plStack_1e0,param_4,param_5,param_6);
   plVar4 = plStack_1e0;
   if (alStack_1d8 != plStack_1e0) {
     plVar6 = alStack_1d8;
-    plVar5 = param_2;
+    plVar5 = param_1;
     do {
-      param_2 = plVar5;
+      param_1 = plVar5;
       if (plVar5 != (long *)0x0) {
         piVar1 = (int *)plVar5[6];
         iVar3 = (int)*plVar6;
@@ -195,20 +193,20 @@ long * std::__ndk1::
           plVar5[6] = (long)(piVar1 + 1);
           *piVar1 = iVar3;
         }
-        param_2 = (long *)0x0;
+        param_1 = (long *)0x0;
         if (iVar3 != -1) {
-          param_2 = plVar5;
+          param_1 = plVar5;
         }
       }
       plVar6 = (long *)((long)plVar6 + 4);
-      plVar5 = param_2;
+      plVar5 = param_1;
     } while (plVar4 != plVar6);
   }
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     plVar4 = (long *)__stack_chk_fail();
     return plVar4;
   }
-  return param_2;
+  return param_1;
 }
 
 

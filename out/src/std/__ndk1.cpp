@@ -241,7 +241,7 @@ void std::__ndk1::__throw_runtime_error(char *p0)
 /* std::__ndk1::__check_grouping(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned int*, unsigned int*, unsigned int&) */
 
-void std::__ndk1::__check_grouping(byte *param_1,uint *param_2,uint *param_3,undefined4 *param_4)
+void std::__ndk1::__check_grouping(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int *param_2,unsigned int *param_3,unsigned int& param_4)
 
 {
   ulong uVar1;
@@ -437,7 +437,7 @@ void * std::__ndk1::align(ulong p0,ulong p1,void **p2,ulong *p3)
 
 /* std::__ndk1::__call_once(unsigned long volatile&, void*, void (*)(void*)) */
 
-void std::__ndk1::__call_once(long *param_1,undefined8 param_2,code *param_3)
+void std::__ndk1::__call_once(unsigned long volatile& param_1,void *param_2,void (*param_3)(void*))
 
 {
   long lVar1;
@@ -472,7 +472,7 @@ void std::__ndk1::__call_once(long *param_1,undefined8 param_2,code *param_3)
 /* std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long*, int) */
 
-ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
+ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   int iVar1;
@@ -559,7 +559,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long*, int) */
 
-ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
+ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -646,7 +646,7 @@ ulong std::__ndk1::stoi(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   int iVar1;
@@ -722,7 +722,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -798,7 +798,7 @@ undefined8 std::__ndk1::stol(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   int iVar1;
@@ -874,7 +874,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -950,7 +950,7 @@ undefined8 std::__ndk1::stoul(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   int iVar1;
@@ -1026,7 +1026,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -1102,7 +1102,7 @@ undefined8 std::__ndk1::stoll(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   int iVar1;
@@ -1192,7 +1192,7 @@ undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
 /* std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>,
    std::__ndk1::allocator<wchar_t> > const&, unsigned long*, int) */
 
-undefined8 std::__ndk1::stoull(byte *param_1,long *param_2,undefined4 param_3)
+undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_1,unsigned long *param_2,int param_3)
 
 {
   byte *pbVar1;
@@ -3549,7 +3549,7 @@ void std::__ndk1::__throw_system_error(int p0,char *p1)
 /* std::__ndk1::notify_all_at_thread_exit(std::__ndk1::condition_variable&,
    std::__ndk1::unique_lock<std::__ndk1::mutex>) */
 
-void std::__ndk1::notify_all_at_thread_exit(undefined8 param_1,undefined8 *param_2)
+void std::__ndk1::notify_all_at_thread_exit(std::__ndk1::condition_variable& param_1,std::__ndk1::unique_lock<std::__ndk1::mutex> param_2)
 
 {
   undefined4 *puVar1;

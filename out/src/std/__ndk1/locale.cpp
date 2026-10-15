@@ -336,15 +336,15 @@ LAB_005d52f0:
 /* std::__ndk1::locale::locale(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2)
+void std::__ndk1::locale::locale(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
                     /* try { // try from 005d53f0 to 005d53fb has its CatchHandler @ 005d5414 */
-  func_0x005cf4bc(uVar1,param_2,0);
-  *param_1 = uVar1;
+  func_0x005cf4bc(uVar1,param_1,0);
+  *this = uVar1;
   std::__ndk1::__shared_count::__add_shared(uVar1);
   return;
 }
@@ -433,15 +433,15 @@ LAB_005d54e4:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int) */
 
 void std::__ndk1::locale::locale
-               (undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined4 param_4)
+               (std::__ndk1::locale const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,int param_3)
 
 {
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
                     /* try { // try from 005d55f8 to 005d5603 has its CatchHandler @ 005d561c */
-  func_0x005d17a0(uVar1,*param_2,param_3,param_4);
-  *param_1 = uVar1;
+  func_0x005d17a0(uVar1,*param_1,param_2,param_3);
+  *this = uVar1;
   std::__ndk1::__shared_count::__add_shared(uVar1);
   return;
 }

@@ -13,8 +13,7 @@
 
 undefined8
 std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long param_5,
-      undefined4 param_6)
+do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,bool param_2,std::__ndk1::ios_base& param_3,char param_4,long double param_5)
 
 {
   void *pvVar1;
@@ -67,7 +66,7 @@ do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long par
     p0_01 = (undefined1 *)0x0;
 LAB_005cb4b8:
                     /* try { // try from 005cb4b8 to 005cb4c7 has its CatchHandler @ 005cb7b8 */
-    std::__ndk1::ios_base::getloc(&uStack_1b0,param_5);
+    std::__ndk1::ios_base::getloc(&uStack_1b0,param_4);
                     /* try { // try from 005cb4c8 to 005cb4f3 has its CatchHandler @ 005cb7fc */
     plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_1b0,&ctype<char>::id);
     (**(code **)(*plVar6 + 0x40))(plVar6,pcStack_1a8,pcStack_1a8 + lVar11,puVar5);
@@ -87,7 +86,7 @@ LAB_005cb4b8:
     uStack_1f8 = 0;
     pvStack_1f0 = (void *)0x0;
                     /* try { // try from 005cb52c to 005cb55b has its CatchHandler @ 005cb788 */
-    std::__ndk1::__money_put<char>::__gather_info(param_4 & 1,bVar2,&uStack_1b0,auStack_1a0,auStack_1b4,auStack_1b8,&uStack_1d0,
+    std::__ndk1::__money_put<char>::__gather_info(param_3 & 1,bVar2,&uStack_1b0,auStack_1a0,auStack_1b4,auStack_1b8,&uStack_1d0,
                     &uStack_1e8,&uStack_200,&iStack_204);
     if (iStack_204 < (int)lVar11) {
       uVar8 = (ulong)((byte)uStack_200 >> 1);
@@ -123,10 +122,10 @@ LAB_005cb4b8:
       if (p0 == (undefined1 *)0x0) goto LAB_005cb750;
     }
                     /* try { // try from 005cb60c to 005cb667 has its CatchHandler @ 005cb7c8 */
-    std::__ndk1::__money_put<char>::__format(puVar12,&uStack_210,&uStack_218,*(undefined4 *)(param_5 + 8),puVar5,
+    std::__ndk1::__money_put<char>::__format(puVar12,&uStack_210,&uStack_218,*(undefined4 *)(param_4 + 8),puVar5,
                     puVar5 + lVar11,plVar6,bVar2,auStack_1a0,auStack_1b4[0],auStack_1b8[0],
                     &uStack_1d0,&uStack_1e8,&uStack_200,iStack_204);
-    uVar7 = func_0x003ffad0(param_3,puVar12,uStack_210,uStack_218,param_5,param_6);
+    uVar7 = func_0x003ffad0(param_2,puVar12,uStack_210,uStack_218,param_4,param_5);
     if (p0 != (undefined1 *)0x0) {
       free(p0);
     }
@@ -158,7 +157,7 @@ LAB_005cb4b8:
     __cxa_guard_release(&DAT_007a4e90);
   }
                     /* try { // try from 005cb468 to 005cb483 has its CatchHandler @ 005cb780 */
-  iVar4 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_1a8,DAT_007a4e88,"%.0Lf");
+  iVar4 = std::__ndk1::__libcpp_asprintf_l(this,&pcStack_1a8,DAT_007a4e88,"%.0Lf");
   pcStack_230 = pcStack_1a8;
   if (pcStack_1a8 == (char *)0x0) {
                     /* try { // try from 005cb744 to 005cb74f has its CatchHandler @ 005cb780 */
@@ -172,7 +171,7 @@ LAB_005cb4b8:
   }
   std::__throw_bad_alloc();
   p0_00 = pvVar1;
-  pcStack_230 = param_1;
+  pcStack_230 = this;
 LAB_005cb750:
                     /* try { // try from 005cb750 to 005cb753 has its CatchHandler @ 005cb754 */
   uVar7 = std::__throw_bad_alloc();
@@ -217,8 +216,7 @@ LAB_005cb750:
 
 undefined8
 std::__ndk1::money_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined4 param_5,
-      byte *param_6)
+do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,bool param_2,std::__ndk1::ios_base& param_3,char param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
 
 {
   ulong uVar1;
@@ -255,21 +253,21 @@ do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined
   
   lVar3 = tpidr_el0;
   lStack_70 = *(long *)(lVar3 + 0x28);
-  std::__ndk1::ios_base::getloc(&uStack_e0,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_e0,param_3);
                     /* try { // try from 005cc04c to 005cc05b has its CatchHandler @ 005cc2e4 */
   plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_e0,&ctype<char>::id);
-  bVar2 = *param_6;
+  bVar2 = *param_5;
   uVar1 = (ulong)(bVar2 >> 1);
   if ((bVar2 & 1) != 0) {
-    uVar1 = *(ulong *)(param_6 + 8);
+    uVar1 = *(ulong *)(param_5 + 8);
   }
   if (uVar1 == 0) {
     bVar4 = false;
   }
   else {
-    pbVar9 = *(byte **)(param_6 + 0x10);
+    pbVar9 = *(byte **)(param_5 + 0x10);
     if ((bVar2 & 1) == 0) {
-      pbVar9 = param_6 + 1;
+      pbVar9 = param_5 + 1;
     }
     bVar2 = *pbVar9;
                     /* try { // try from 005cc090 to 005cc09b has its CatchHandler @ 005cc2cc */
@@ -286,12 +284,12 @@ do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined
   uStack_128 = 0;
   pvStack_120 = (void *)0x0;
                     /* try { // try from 005cc0c8 to 005cc0f7 has its CatchHandler @ 005cc2d4 */
-  std::__ndk1::__money_put<char>::__gather_info(param_3 & 1,bVar4,&uStack_e0,auStack_d8,auStack_e4,auStack_e8,&uStack_100,
+  std::__ndk1::__money_put<char>::__gather_info(param_2 & 1,bVar4,&uStack_e0,auStack_d8,auStack_e4,auStack_e8,&uStack_100,
                   &uStack_118,&uStack_130,&iStack_134);
-  bVar2 = *param_6;
+  bVar2 = *param_5;
   uVar1 = (ulong)(bVar2 >> 1);
   if ((bVar2 & 1) != 0) {
-    uVar1 = *(ulong *)(param_6 + 8);
+    uVar1 = *(ulong *)(param_5 + 8);
   }
   if (iStack_134 < (int)uVar1) {
     uVar8 = (ulong)((byte)uStack_130 >> 1);
@@ -340,15 +338,15 @@ do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined
       return uVar7;
     }
   }
-  pbVar9 = *(byte **)(param_6 + 0x10);
+  pbVar9 = *(byte **)(param_5 + 0x10);
   if ((bVar2 & 1) == 0) {
-    pbVar9 = param_6 + 1;
+    pbVar9 = param_5 + 1;
   }
                     /* try { // try from 005cc1d0 to 005cc227 has its CatchHandler @ 005cc2ec */
-  std::__ndk1::__money_put<char>::__format(puVar12,&uStack_140,&uStack_148,*(undefined4 *)(param_4 + 8),pbVar9,pbVar9 + uVar1
+  std::__ndk1::__money_put<char>::__format(puVar12,&uStack_140,&uStack_148,*(undefined4 *)(param_3 + 8),pbVar9,pbVar9 + uVar1
                   ,plVar6,bVar4,auStack_d8,auStack_e4[0],auStack_e8[0],&uStack_100,&uStack_118,
                   &uStack_130,iStack_134);
-  uVar7 = func_0x003ffad0(param_2,puVar12,uStack_140,uStack_148,param_4,param_5);
+  uVar7 = func_0x003ffad0(param_1,puVar12,uStack_140,uStack_148,param_3,param_4);
   if (p0 != (undefined1 *)0x0) {
     free(p0);
   }

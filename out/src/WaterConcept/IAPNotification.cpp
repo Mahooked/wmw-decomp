@@ -646,7 +646,7 @@ LAB_0049b398:
 /* WaterConcept::IAPNotification::goNotify(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
-void WaterConcept::IAPNotification::goNotify(undefined4 param_1,long param_2)
+void WaterConcept::IAPNotification::goNotify(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
 
 {
   long lVar1;

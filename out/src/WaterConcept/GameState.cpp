@@ -123,7 +123,7 @@ void WaterConcept::GameState::reset(long param_1)
     */
 
 void WaterConcept::GameState::GameState
-               (long param_1,long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5)
+               (WaterConcept::World *param_1,WaterConcept::GameState::StatePreset param_2,std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>> param_3,std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>> param_4)
 
 {
   long lVar1;
@@ -136,56 +136,56 @@ void WaterConcept::GameState::GameState
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  *(undefined1 *)(param_1 + 0x90) = 0;
-  memset(param_1,0,0x78);
-  *(undefined8 *)(param_1 + 0xf0) = 0;
-  *(undefined8 *)(param_1 + 0xb0) = 0;
-  *(undefined8 *)(param_1 + 0xa8) = 0;
-  *(undefined8 *)(param_1 + 0xc0) = 0;
-  *(undefined8 *)(param_1 + 0xb8) = 0;
-  *(undefined8 *)(param_1 + 0xd0) = 0;
-  *(undefined8 *)(param_1 + 200) = 0;
-  *(undefined8 *)(param_1 + 0xdc) = 0xbf80000000000000;
-  *(undefined1 *)(param_1 + 0xd8) = 1;
-  *(long *)(param_1 + 0x108) = param_1 + 0x110;
-  *(undefined8 *)(param_1 + 0x9c) = 0;
-  *(undefined8 *)(param_1 + 0x94) = 0;
-  *(undefined8 *)(param_1 + 0xe4) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x100) = 0;
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0x118) = 0;
-  *(undefined8 *)(param_1 + 0x110) = 0;
-  *(undefined8 *)(param_1 + 0x128) = 0;
-  *(undefined8 *)(param_1 + 0x120) = 0;
-  *(undefined8 *)(param_1 + 0x148) = 0;
-  *(undefined8 *)(param_1 + 0x140) = 0;
-  *(undefined4 *)(param_1 + 0x150) = 0xffffffff;
-  *(long *)(param_1 + 0x170) = param_1 + 0x178;
-  *(long *)(param_1 + 0x1b8) = param_1 + 0x1c0;
-  *(undefined8 *)(param_1 + 0x15a) = 0;
-  *(undefined8 *)(param_1 + 0x154) = 0;
-  *(undefined8 *)(param_1 + 0x164) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x180) = 0;
-  *(undefined8 *)(param_1 + 0x178) = 0;
-  *(undefined8 *)(param_1 + 0x1c8) = 0;
-  *(undefined8 *)(param_1 + 0x1c0) = 0;
-  *(undefined8 *)(param_1 + 0x1b0) = 0;
-  *(undefined8 *)(param_1 + 0x1a8) = 0;
-  *(undefined8 *)(param_1 + 0x1a0) = 0;
-  *(undefined8 *)(param_1 + 0x198) = 0;
-  *(undefined8 *)(param_1 + 400) = 0;
-  *(undefined8 *)(param_1 + 0x188) = 0;
-  *(undefined4 *)(param_1 + 0x1d4) = 0;
-  *(undefined8 *)(param_1 + 0x130) = 0;
-  *(undefined8 **)(param_1 + 0x138) = (undefined8 *)(param_1 + 0x140);
-  *(long *)(param_1 + 0x78) = param_2;
-  *(undefined8 *)(param_1 + 0x80) = *(undefined8 *)(param_2 + 0x440);
+  *(undefined1 *)(this + 0x90) = 0;
+  memset(this,0,0x78);
+  *(undefined8 *)(this + 0xf0) = 0;
+  *(undefined8 *)(this + 0xb0) = 0;
+  *(undefined8 *)(this + 0xa8) = 0;
+  *(undefined8 *)(this + 0xc0) = 0;
+  *(undefined8 *)(this + 0xb8) = 0;
+  *(undefined8 *)(this + 0xd0) = 0;
+  *(undefined8 *)(this + 200) = 0;
+  *(undefined8 *)(this + 0xdc) = 0xbf80000000000000;
+  *(undefined1 *)(this + 0xd8) = 1;
+  *(long *)(this + 0x108) = this + 0x110;
+  *(undefined8 *)(this + 0x9c) = 0;
+  *(undefined8 *)(this + 0x94) = 0;
+  *(undefined8 *)(this + 0xe4) = 0xffffffff;
+  *(undefined8 *)(this + 0x100) = 0;
+  *(undefined8 *)(this + 0xf8) = 0;
+  *(undefined8 *)(this + 0x118) = 0;
+  *(undefined8 *)(this + 0x110) = 0;
+  *(undefined8 *)(this + 0x128) = 0;
+  *(undefined8 *)(this + 0x120) = 0;
+  *(undefined8 *)(this + 0x148) = 0;
+  *(undefined8 *)(this + 0x140) = 0;
+  *(undefined4 *)(this + 0x150) = 0xffffffff;
+  *(long *)(this + 0x170) = this + 0x178;
+  *(long *)(this + 0x1b8) = this + 0x1c0;
+  *(undefined8 *)(this + 0x15a) = 0;
+  *(undefined8 *)(this + 0x154) = 0;
+  *(undefined8 *)(this + 0x164) = 0xffffffff;
+  *(undefined8 *)(this + 0x180) = 0;
+  *(undefined8 *)(this + 0x178) = 0;
+  *(undefined8 *)(this + 0x1c8) = 0;
+  *(undefined8 *)(this + 0x1c0) = 0;
+  *(undefined8 *)(this + 0x1b0) = 0;
+  *(undefined8 *)(this + 0x1a8) = 0;
+  *(undefined8 *)(this + 0x1a0) = 0;
+  *(undefined8 *)(this + 0x198) = 0;
+  *(undefined8 *)(this + 400) = 0;
+  *(undefined8 *)(this + 0x188) = 0;
+  *(undefined4 *)(this + 0x1d4) = 0;
+  *(undefined8 *)(this + 0x130) = 0;
+  *(undefined8 **)(this + 0x138) = (undefined8 *)(this + 0x140);
+  *(long *)(this + 0x78) = param_1;
+  *(undefined8 *)(this + 0x80) = *(undefined8 *)(param_1 + 0x440);
                     /* try { // try from 00429bec to 00429bf7 has its CatchHandler @ 00429d20 */
-  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_80,param_4);
+  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_80,param_3);
                     /* try { // try from 00429bf8 to 00429c03 has its CatchHandler @ 00429d08 */
-  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_98,param_5);
+  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_98,param_4);
                     /* try { // try from 00429c04 to 00429c17 has its CatchHandler @ 00429cec */
-  WaterConcept::GameState::init(param_1,param_3,&pvStack_80,&pvStack_98);
+  WaterConcept::GameState::init(this,param_2,&pvStack_80,&pvStack_98);
   if (pvStack_98 != (void *)0x0) {
     pvStack_90 = pvStack_98;
     operator delete(pvStack_98);
@@ -198,15 +198,15 @@ void WaterConcept::GameState::GameState
   do {
     printf("Fluid type #%i (3 props:)\n",uVar2 & 0xffffffff);
     printf(" 1 -> Converter of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x510) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x510) + uVar2));
     printf(" 2 -> Touch spout of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x518) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x518) + uVar2));
     printf(" 3 -> Infinite spout of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x518) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x518) + uVar2));
     uVar2 = uVar2 + 1;
   } while (uVar2 != 5);
                     /* try { // try from 00429cb0 to 00429cb7 has its CatchHandler @ 00429d20 */
-  WaterConcept::GameState::reset(param_1);
+  WaterConcept::GameState::reset(this);
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return;
   }
@@ -225,7 +225,7 @@ void WaterConcept::GameState::GameState
    std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*> >)
     */
 
-void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param_3,long *param_4)
+void WaterConcept::GameState::init(WaterConcept::GameState::StatePreset param_1,std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>> param_2,std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>> param_3)
 
 {
   long *plVar1;
@@ -272,64 +272,64 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
   
   lVar4 = tpidr_el0;
   lStack_80 = *(long *)(lVar4 + 0x28);
-  puVar14 = param_1 + 6;
-  param_1[7] = *puVar14;
-  puVar12 = param_1 + 9;
-  param_1[10] = *puVar12;
-  puVar13 = param_1 + 0xc;
-  puVar11 = (undefined4 *)*param_1;
-  param_1[0xd] = *puVar13;
-  param_1[1] = (ulong)puVar11;
-  puVar15 = param_1 + 3;
+  puVar14 = this + 6;
+  this[7] = *puVar14;
+  puVar12 = this + 9;
+  this[10] = *puVar12;
+  puVar13 = this + 0xc;
+  puVar11 = (undefined4 *)*this;
+  this[0xd] = *puVar13;
+  this[1] = (ulong)puVar11;
+  puVar15 = this + 3;
   puVar9 = (undefined4 *)*puVar15;
-  *(undefined4 *)((long)param_1 + 0x94) = param_2;
-  param_1[4] = (ulong)puVar9;
-  if (param_1[0x10] == 0) {
-    param_1[0x10] = *(ulong *)(param_1[0xf] + 0x440);
+  *(undefined4 *)((long)this + 0x94) = param_1;
+  this[4] = (ulong)puVar9;
+  if (this[0x10] == 0) {
+    this[0x10] = *(ulong *)(this[0xf] + 0x440);
   }
-  switch(param_2) {
+  switch(param_1) {
   case 1:
     uStack_a8._0_4_ = 1;
-    if (puVar11 < (undefined4 *)param_1[2]) {
+    if (puVar11 < (undefined4 *)this[2]) {
       *puVar11 = 1;
-      param_1[1] = (ulong)(puVar11 + 1);
+      this[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
-      puVar9 = (undefined4 *)param_1[4];
+      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(this,&uStack_a8);
+      puVar9 = (undefined4 *)this[4];
     }
     uStack_a8 = (ulong)uStack_a8._4_4_ << 0x20;
-    if (puVar9 < (undefined4 *)param_1[5]) {
+    if (puVar9 < (undefined4 *)this[5]) {
       *puVar9 = 0;
-      param_1[4] = (ulong)(puVar9 + 1);
+      this[4] = (ulong)(puVar9 + 1);
     }
     else {
       void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
     }
-    lVar10 = *param_3;
-    if (param_3[1] != lVar10) {
+    lVar10 = *param_2;
+    if (param_2[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
         uStack_a0 = 0x41a0000000000000;
         uStack_98 = 0x41f00000;
         uStack_94 = uStack_94 & 0xffffff00;
-        plVar1 = (long *)param_1[7];
-        if (plVar1 == (long *)param_1[8]) {
+        plVar1 = (long *)this[7];
+        if (plVar1 == (long *)this[8]) {
           void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41f00000);
           plVar1[1] = 0x41a0000000000000;
           *plVar1 = uStack_a8;
-          param_1[7] = param_1[7] + 0x18;
+          this[7] = this[7] + 0x18;
         }
-        lVar10 = *param_3;
+        lVar10 = *param_2;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_2[1] - lVar10 >> 3));
     }
-    lVar10 = *param_4;
-    if (param_4[1] != lVar10) {
+    lVar10 = *param_3;
+    if (param_3[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
@@ -354,58 +354,58 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
           uStack_94 = 9;
         }
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
-          plVar1 = (long *)param_1[10];
-          if (plVar1 == (long *)param_1[0xb]) {
+          plVar1 = (long *)this[10];
+          if (plVar1 == (long *)this[0xb]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[10] = param_1[10] + 0x18;
+            this[10] = this[10] + 0x18;
           }
         }
-        if ((((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 1 & 1) != 0) &&
-            (*(char *)(param_1[0xf] + 0xa6a) == '\0')) &&
+        if ((((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) >> 1 & 1) != 0) &&
+            (*(char *)(this[0xf] + 0xa6a) == '\0')) &&
            ((GameSettings::currentLevelIsAllie == '\0' ||
             (GameSettings::currentLevelChallengeID < 0)))) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+        if ((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        lVar10 = *param_4;
+        lVar10 = *param_3;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_4[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
     }
-    if ((*(char *)(param_1[0xf] + 0xa6a) != '\0') ||
+    if ((*(char *)(this[0xf] + 0xa6a) != '\0') ||
        ((GameSettings::currentLevelIsAllie != '\0' && (-1 < GameSettings::currentLevelChallengeID)))
        ) {
-      *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
+      *(int *)((long)this + 0xe4) = (int)(this[0xd] - this[0xc] >> 3) * -0x55555555;
     }
     Walaber::PropertyList::PropertyList(&uStack_a8);
-    if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
+    if ((this[0x15] == 0) || (*(int *)this[0x16] == 0)) {
                     /* try { // try from 0042a8cc to 0042a90b has its CatchHandler @ 0042aea8 */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -437,10 +437,10 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
       Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
     }
-    if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
+    if ((this[0x17] == 0) || (*(int *)this[0x18] == 0)) {
                     /* try { // try from 0042a9a0 to 0042a9df has its CatchHandler @ 0042aea4 */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -476,46 +476,46 @@ LAB_0042add0:
     break;
   case 2:
     uStack_a8._0_4_ = 3;
-    if (puVar11 < (undefined4 *)param_1[2]) {
+    if (puVar11 < (undefined4 *)this[2]) {
       *puVar11 = 3;
-      param_1[1] = (ulong)(puVar11 + 1);
+      this[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
-      puVar9 = (undefined4 *)param_1[4];
+      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(this,&uStack_a8);
+      puVar9 = (undefined4 *)this[4];
     }
     uStack_a8 = (ulong)uStack_a8._4_4_ << 0x20;
-    if (puVar9 < (undefined4 *)param_1[5]) {
+    if (puVar9 < (undefined4 *)this[5]) {
       *puVar9 = 0;
-      param_1[4] = (ulong)(puVar9 + 1);
+      this[4] = (ulong)(puVar9 + 1);
     }
     else {
       void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(puVar15,&uStack_a8);
     }
-    lVar10 = *param_3;
-    if (param_3[1] != lVar10) {
+    lVar10 = *param_2;
+    if (param_2[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
         uStack_a0 = 0x41a0000000000000;
         uStack_98 = 0x41a00000;
         uStack_94 = uStack_94 & 0xffffff00;
-        plVar1 = (long *)param_1[7];
-        if (plVar1 == (long *)param_1[8]) {
+        plVar1 = (long *)this[7];
+        if (plVar1 == (long *)this[8]) {
           void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41a00000);
           plVar1[1] = 0x41a0000000000000;
           *plVar1 = uStack_a8;
-          param_1[7] = param_1[7] + 0x18;
+          this[7] = this[7] + 0x18;
         }
-        lVar10 = *param_3;
+        lVar10 = *param_2;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_2[1] - lVar10 >> 3));
     }
-    lVar10 = *param_4;
-    if (param_4[1] != lVar10) {
+    lVar10 = *param_3;
+    if (param_3[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
@@ -540,58 +540,58 @@ LAB_0042add0:
           uStack_94 = 9;
         }
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
-          plVar1 = (long *)param_1[10];
-          if (plVar1 == (long *)param_1[0xb]) {
+          plVar1 = (long *)this[10];
+          if (plVar1 == (long *)this[0xb]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[10] = param_1[10] + 0x18;
+            this[10] = this[10] + 0x18;
           }
         }
-        if ((((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
-            (*(char *)(param_1[0xf] + 0xa6a) == '\0')) &&
+        if ((((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
+            (*(char *)(this[0xf] + 0xa6a) == '\0')) &&
            ((GameSettings::currentLevelIsAllie == '\0' ||
             (GameSettings::currentLevelChallengeID < 0)))) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+        if ((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        lVar10 = *param_4;
+        lVar10 = *param_3;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_4[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
     }
-    if ((*(char *)(param_1[0xf] + 0xa6a) != '\0') ||
+    if ((*(char *)(this[0xf] + 0xa6a) != '\0') ||
        ((GameSettings::currentLevelIsAllie != '\0' && (-1 < GameSettings::currentLevelChallengeID)))
        ) {
-      *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
+      *(int *)((long)this + 0xe4) = (int)(this[0xd] - this[0xc] >> 3) * -0x55555555;
     }
     Walaber::PropertyList::PropertyList(&uStack_a8);
-    if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
+    if ((this[0x15] == 0) || (*(int *)this[0x16] == 0)) {
                     /* try { // try from 0042ac54 to 0042ac93 has its CatchHandler @ 0042aea0 */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -623,10 +623,10 @@ LAB_0042add0:
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
       Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
     }
-    if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
+    if ((this[0x17] == 0) || (*(int *)this[0x18] == 0)) {
                     /* try { // try from 0042ad28 to 0042ad67 has its CatchHandler @ 0042ae9c */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -658,8 +658,8 @@ LAB_0042add0:
     }
     break;
   case 3:
-    lVar10 = *param_4;
-    if (param_4[1] != lVar10) {
+    lVar10 = *param_3;
+    if (param_3[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
@@ -681,46 +681,46 @@ LAB_0042add0:
           uStack_94 = 9;
         }
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
-          plVar1 = (long *)param_1[10];
-          if (plVar1 == (long *)param_1[0xb]) {
+          plVar1 = (long *)this[10];
+          if (plVar1 == (long *)this[0xb]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[10] = param_1[10] + 0x18;
+            this[10] = this[10] + 0x18;
           }
         }
-        if ((((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
-            (*(char *)(param_1[0xf] + 0xa6a) == '\0')) &&
+        if ((((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
+            (*(char *)(this[0xf] + 0xa6a) == '\0')) &&
            ((GameSettings::currentLevelIsAllie == '\0' ||
             (GameSettings::currentLevelChallengeID < 0)))) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+        if ((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        piVar7 = (int *)*param_1;
-        piVar2 = (int *)param_1[1];
+        piVar7 = (int *)*this;
+        piVar2 = (int *)this[1];
         if (piVar7 != piVar2) {
           iVar3 = *piVar7;
           while (iVar3 != uStack_a0._4_4_) {
@@ -732,53 +732,53 @@ LAB_0042add0:
         if (piVar7 == piVar2) {
 LAB_0042a07c:
           puStack_90 = (undefined8 *)CONCAT44(puStack_90._4_4_,uStack_a0._4_4_);
-          if (piVar2 < (int *)param_1[2]) {
+          if (piVar2 < (int *)this[2]) {
             *piVar2 = uStack_a0._4_4_;
-            param_1[1] = (ulong)(piVar2 + 1);
+            this[1] = (ulong)(piVar2 + 1);
           }
           else {
-            void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&puStack_90);
+            void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(this,&puStack_90);
           }
         }
-        lVar10 = *param_4;
+        lVar10 = *param_3;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_4[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
     }
-    *(undefined1 *)(param_1 + 0x12) = 1;
+    *(undefined1 *)(this + 0x12) = 1;
     goto switchD_00429e9c_default;
   case 4:
     uStack_a8 = (ulong)uStack_a8._4_4_ << 0x20;
-    if (puVar11 < (undefined4 *)param_1[2]) {
+    if (puVar11 < (undefined4 *)this[2]) {
       *puVar11 = 0;
-      param_1[1] = (ulong)(puVar11 + 1);
+      this[1] = (ulong)(puVar11 + 1);
     }
     else {
-      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(param_1,&uStack_a8);
+      void std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__push_back_slow_path<WaterConceptConstants::FluidType>(this,&uStack_a8);
     }
-    lVar10 = *param_3;
-    if (param_3[1] != lVar10) {
+    lVar10 = *param_2;
+    if (param_2[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
         uStack_a0 = 0x41a0000000000000;
         uStack_98 = 0x41a00000;
         uStack_94 = uStack_94 & 0xffffff00;
-        plVar1 = (long *)param_1[7];
-        if (plVar1 == (long *)param_1[8]) {
+        plVar1 = (long *)this[7];
+        if (plVar1 == (long *)this[8]) {
           void std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::__push_back_slow_path<WaterConcept::GameState::Goal const&>(puVar14,&uStack_a8);
         }
         else {
           plVar1[2] = CONCAT44(uStack_94,0x41a00000);
           plVar1[1] = 0x41a0000000000000;
           *plVar1 = uStack_a8;
-          param_1[7] = param_1[7] + 0x18;
+          this[7] = this[7] + 0x18;
         }
-        lVar10 = *param_3;
+        lVar10 = *param_2;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_2[1] - lVar10 >> 3));
     }
-    lVar10 = *param_4;
-    if (param_4[1] != lVar10) {
+    lVar10 = *param_3;
+    if (param_3[1] != lVar10) {
       uVar16 = 0;
       do {
         uStack_a8 = *(long *)(lVar10 + uVar16 * 8);
@@ -803,58 +803,58 @@ LAB_0042a07c:
           uStack_94 = 9;
         }
         if ((*(byte *)(lVar10 + 0x3a4) & 1) != 0) {
-          plVar1 = (long *)param_1[10];
-          if (plVar1 == (long *)param_1[0xb]) {
+          plVar1 = (long *)this[10];
+          if (plVar1 == (long *)this[0xb]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar12,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[10] = param_1[10] + 0x18;
+            this[10] = this[10] + 0x18;
           }
         }
-        if ((((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
-            (*(char *)(param_1[0xf] + 0xa6a) == '\0')) &&
+        if ((((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) & 7) != 0) &&
+            (*(char *)(this[0xf] + 0xa6a) == '\0')) &&
            ((GameSettings::currentLevelIsAllie == '\0' ||
             (GameSettings::currentLevelChallengeID < 0)))) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        if ((*(byte *)(*(long *)(*param_4 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
-          plVar1 = (long *)param_1[0xd];
-          if (plVar1 == (long *)param_1[0xe]) {
+        if ((*(byte *)(*(long *)(*param_3 + uVar16 * 8) + 0x3a4) >> 2 & 1) != 0) {
+          plVar1 = (long *)this[0xd];
+          if (plVar1 == (long *)this[0xe]) {
             void std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::__push_back_slow_path<WaterConcept::GameState::SecondaryGoal const&>(puVar13,&uStack_a8);
           }
           else {
             plVar1[2] = CONCAT44(uStack_94,uStack_98);
             plVar1[1] = uStack_a0;
             *plVar1 = uStack_a8;
-            param_1[0xd] = param_1[0xd] + 0x18;
+            this[0xd] = this[0xd] + 0x18;
           }
         }
-        lVar10 = *param_4;
+        lVar10 = *param_3;
         uVar16 = uVar16 + 1;
-      } while (uVar16 < (ulong)(param_4[1] - lVar10 >> 3));
+      } while (uVar16 < (ulong)(param_3[1] - lVar10 >> 3));
     }
-    if ((*(char *)(param_1[0xf] + 0xa6a) != '\0') ||
+    if ((*(char *)(this[0xf] + 0xa6a) != '\0') ||
        ((GameSettings::currentLevelIsAllie != '\0' && (-1 < GameSettings::currentLevelChallengeID)))
        ) {
-      *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
+      *(int *)((long)this + 0xe4) = (int)(this[0xd] - this[0xc] >> 3) * -0x55555555;
     }
     Walaber::PropertyList::PropertyList(&uStack_a8);
-    if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
+    if ((this[0x15] == 0) || (*(int *)this[0x16] == 0)) {
                     /* try { // try from 0042a3b0 to 0042a3ef has its CatchHandler @ 0042aeb0 */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -886,10 +886,10 @@ LAB_0042a07c:
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
       Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
     }
-    if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
+    if ((this[0x17] == 0) || (*(int *)this[0x18] == 0)) {
                     /* try { // try from 0042a484 to 0042a4c3 has its CatchHandler @ 0042aeac */
       puVar5 = (undefined8 *)operator new(0x28);
-      puVar5[2] = param_1;
+      puVar5[2] = this;
       *puVar5 = &PTR__Callback_00711340;
       puVar5[1] = 0;
       puVar5[4] = 0;
@@ -949,68 +949,67 @@ switchD_00429e9c_default:
    std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal> >) */
 
 void WaterConcept::GameState::GameState
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               undefined8 *param_5,undefined8 *param_6)
+               (WaterConcept::World *param_1,std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>> param_2,std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>> param_3,std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>> param_4,std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>> param_5)
 
 {
-  *(undefined1 *)(param_1 + 0x12) = 0;
-  memset(param_1,0,0x78);
-  param_1[0x16] = 0;
-  param_1[0x15] = 0;
-  param_1[0x18] = 0;
-  param_1[0x17] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x19] = 0;
-  *(undefined8 *)((long)param_1 + 0xdc) = 0xbf80000000000000;
-  *(undefined1 *)(param_1 + 0x1b) = 1;
-  *(undefined8 *)((long)param_1 + 0x9c) = 0;
-  *(undefined8 *)((long)param_1 + 0x94) = 0;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0xffffffff;
-  param_1[0x1e] = 0;
-  param_1[0x21] = param_1 + 0x22;
-  param_1[0x26] = 0;
-  param_1[0x27] = param_1 + 0x28;
-  *(undefined4 *)(param_1 + 0x2a) = 0xffffffff;
-  param_1[0x20] = 0;
-  param_1[0x1f] = 0;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x29] = 0;
-  param_1[0x28] = 0;
-  *(undefined8 *)((long)param_1 + 0x15a) = 0;
-  *(undefined8 *)((long)param_1 + 0x154) = 0;
-  *(undefined8 *)((long)param_1 + 0x164) = 0xffffffff;
-  param_1[0x30] = 0;
-  param_1[0x2f] = 0;
-  param_1[0x2e] = param_1 + 0x2f;
-  param_1[0x39] = 0;
-  param_1[0x38] = 0;
-  param_1[0x36] = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  param_1[0x33] = 0;
-  param_1[0x32] = 0;
-  param_1[0x31] = 0;
-  param_1[0x37] = param_1 + 0x38;
-  *(undefined4 *)((long)param_1 + 0x1d4) = 0;
-  param_1[0xf] = param_2;
-  if (param_1 != param_3) {
+  *(undefined1 *)(this + 0x12) = 0;
+  memset(this,0,0x78);
+  this[0x16] = 0;
+  this[0x15] = 0;
+  this[0x18] = 0;
+  this[0x17] = 0;
+  this[0x1a] = 0;
+  this[0x19] = 0;
+  *(undefined8 *)((long)this + 0xdc) = 0xbf80000000000000;
+  *(undefined1 *)(this + 0x1b) = 1;
+  *(undefined8 *)((long)this + 0x9c) = 0;
+  *(undefined8 *)((long)this + 0x94) = 0;
+  *(undefined8 *)((long)this + 0xe4) = 0xffffffff;
+  this[0x1e] = 0;
+  this[0x21] = this + 0x22;
+  this[0x26] = 0;
+  this[0x27] = this + 0x28;
+  *(undefined4 *)(this + 0x2a) = 0xffffffff;
+  this[0x20] = 0;
+  this[0x1f] = 0;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x29] = 0;
+  this[0x28] = 0;
+  *(undefined8 *)((long)this + 0x15a) = 0;
+  *(undefined8 *)((long)this + 0x154) = 0;
+  *(undefined8 *)((long)this + 0x164) = 0xffffffff;
+  this[0x30] = 0;
+  this[0x2f] = 0;
+  this[0x2e] = this + 0x2f;
+  this[0x39] = 0;
+  this[0x38] = 0;
+  this[0x36] = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  this[0x33] = 0;
+  this[0x32] = 0;
+  this[0x31] = 0;
+  this[0x37] = this + 0x38;
+  *(undefined4 *)((long)this + 0x1d4) = 0;
+  this[0xf] = param_1;
+  if (this != param_2) {
                     /* try { // try from 0042b10c to 0042b163 has its CatchHandler @ 0042b184 */
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConceptConstants::FluidType*>::value&&is_constructible<WaterConceptConstants::FluidType, std::__ndk1::iterator_traits<WaterConceptConstants::FluidType*>::reference>::value, void>::type std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(param_1,*param_3,param_3[1]);
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConceptConstants::FluidType*>::value&&is_constructible<WaterConceptConstants::FluidType, std::__ndk1::iterator_traits<WaterConceptConstants::FluidType*>::reference>::value, void>::type std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(this,*param_2,param_2[1]);
   }
-  if (param_1 + 6 != param_4) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::Goal*>::value&&is_constructible<WaterConcept::GameState::Goal, std::__ndk1::iterator_traits<WaterConcept::GameState::Goal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(param_1 + 6,*param_4,param_4[1]);
+  if (this + 6 != param_3) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::Goal*>::value&&is_constructible<WaterConcept::GameState::Goal, std::__ndk1::iterator_traits<WaterConcept::GameState::Goal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(this + 6,*param_3,param_3[1]);
   }
-  if (param_1 + 9 != param_5) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(param_1 + 9,*param_5,param_5[1]);
+  if (this + 9 != param_4) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 9,*param_4,param_4[1]);
   }
-  if (param_1 + 0xc != param_6) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(param_1 + 0xc,*param_6,param_6[1]);
+  if (this + 0xc != param_5) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 0xc,*param_5,param_5[1]);
   }
-  param_1[0x10] = *(undefined8 *)(param_1[0xf] + 0x440);
-  WaterConcept::GameState::reset(param_1);
+  this[0x10] = *(undefined8 *)(this[0xf] + 0x440);
+  WaterConcept::GameState::reset(this);
   return;
 }
 
@@ -1079,7 +1078,7 @@ void WaterConcept::GameState::~GameState(undefined8 *param_1)
    std::__ndk1::allocator<WaterConcept::StarSeed*> >) */
 
 void WaterConcept::GameState::init
-               (undefined8 param_1,byte *param_2,undefined8 param_3,undefined8 param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>> param_2,std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>> param_3)
 
 {
   ulong uVar1;
@@ -1097,8 +1096,8 @@ void WaterConcept::GameState::init
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
-  bVar2 = *param_2;
-  uVar6 = *(ulong *)(param_2 + 8);
+  bVar2 = *param_1;
+  uVar6 = *(ulong *)(param_1 + 8);
   uVar7 = (ulong)(bVar2 >> 1);
   uVar1 = uVar7;
   if ((bVar2 & 1) != 0) {
@@ -1106,10 +1105,10 @@ void WaterConcept::GameState::init
   }
   if (uVar1 == 6) {
                     /* try { // try from 0042b374 to 0042b38f has its CatchHandler @ 0042b4b4 */
-    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Swampy",6);
+    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Swampy",6);
     if (iVar4 != 0) {
-      bVar2 = *param_2;
-      uVar6 = *(ulong *)(param_2 + 8);
+      bVar2 = *param_1;
+      uVar6 = *(ulong *)(param_1 + 8);
       uVar7 = (ulong)(bVar2 >> 1);
       goto LAB_0042b3ac;
     }
@@ -1122,13 +1121,13 @@ LAB_0042b3ac:
     }
     if (uVar1 == 6) {
                     /* try { // try from 0042b3bc to 0042b3d7 has its CatchHandler @ 0042b4b0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Cranky",6);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Cranky",6);
       if (iVar4 == 0) {
         uVar5 = 2;
         goto LAB_0042b434;
       }
-      bVar2 = *param_2;
-      uVar6 = *(ulong *)(param_2 + 8);
+      bVar2 = *param_1;
+      uVar6 = *(ulong *)(param_1 + 8);
       uVar7 = (ulong)(bVar2 >> 1);
     }
     if ((bVar2 & 1) != 0) {
@@ -1136,7 +1135,7 @@ LAB_0042b3ac:
     }
     if (uVar7 == 5) {
                     /* try { // try from 0042b3fc to 0042b417 has its CatchHandler @ 0042b4ac */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Allie",5);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Allie",5);
       uVar5 = 4;
       if (iVar4 != 0) {
         uVar5 = 1;
@@ -1146,11 +1145,11 @@ LAB_0042b3ac:
   }
   uVar5 = 1;
 LAB_0042b434:
-  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_60,param_3);
+  std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_60,param_2);
                     /* try { // try from 0042b440 to 0042b44b has its CatchHandler @ 0042b4d4 */
-  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_78,param_4);
+  std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_78,param_3);
                     /* try { // try from 0042b44c to 0042b45f has its CatchHandler @ 0042b4b8 */
-  WaterConcept::GameState::init(param_1,uVar5,&pvStack_60,&pvStack_78);
+  WaterConcept::GameState::init(this,uVar5,&pvStack_60,&pvStack_78);
   if (pvStack_78 != (void *)0x0) {
     pvStack_70 = pvStack_78;
     operator delete(pvStack_78);
@@ -1235,7 +1234,7 @@ LAB_0042b570:
 /* WaterConcept::GameState::setAdditionalRequirements(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&) */
 
-void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 param_2)
+void WaterConcept::GameState::setAdditionalRequirements(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1)
 
 {
   byte *pbVar1;
@@ -1260,7 +1259,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
   
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
-  Walaber::StringHelper::split(&lStack_80,param_2,0x20);
+  Walaber::StringHelper::split(&lStack_80,param_1,0x20);
   if (lStack_80 != lStack_78) {
     lVar9 = lStack_80;
     do {
@@ -1284,7 +1283,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
               pbVar1 = *(byte **)(pbStack_98 + 0x28);
             }
             sscanf(pbVar1,"%i",&uStack_b0);
-            *(int *)(param_1 + 0xe4) = (int)uStack_b0;
+            *(int *)(this + 0xe4) = (int)uStack_b0;
             goto LAB_0042be0c;
           }
           bVar2 = *pbStack_98;
@@ -1303,7 +1302,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
             pbVar1 = *(byte **)(pbStack_98 + 0x28);
           }
           sscanf(pbVar1,"%i",&uStack_b0);
-          *(int *)(param_1 + 0x150) = (int)uStack_b0;
+          *(int *)(this + 0x150) = (int)uStack_b0;
         }
         else {
           uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1315,10 +1314,10 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
              (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nospout",7), iVar4 == 0)) {
                     /* try { // try from 0042bbf8 to 0042bc03 has its CatchHandler @ 0042be98 */
             Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
-            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 0xf0);
-            *(ulong *)(param_1 + 0xf8) = uStack_a8;
-            *(ulong *)(param_1 + 0xf0) = uStack_b0;
-            *(undefined8 *)(param_1 + 0x100) = uStack_a0;
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(this + 0xf0);
+            *(ulong *)(this + 0xf8) = uStack_a8;
+            *(ulong *)(this + 0xf0) = uStack_b0;
+            *(undefined8 *)(this + 0x100) = uStack_a0;
           }
           else {
             uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1343,7 +1342,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                   pbVar1 = *(byte **)(pbStack_98 + 0x28);
                 }
                 sscanf(pbVar1,"%i",&uStack_b0);
-                *(bool *)(param_1 + 0xd8) = (int)uStack_b0 == 1;
+                *(bool *)(this + 0xd8) = (int)uStack_b0 == 1;
               }
               else {
                 uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1362,7 +1361,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     do {
                     /* try { // try from 0042bcd8 to 0042bcef has its CatchHandler @ 0042bec4 */
                       uStack_b4 = WaterConceptConstants::stringToFluidType(uStack_b0 + uVar8 * 0x18);
-                      std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConceptConstants::FluidType, std::__ndk1::__tree_node<WaterConceptConstants::FluidType, void*>*, long>, bool> std::__ndk1::__tree<WaterConceptConstants::FluidType, std::__ndk1::less<WaterConceptConstants::FluidType>, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__emplace_unique_key_args<WaterConceptConstants::FluidType, WaterConceptConstants::FluidType>(param_1 + 0x170,&uStack_b4,&uStack_b4);
+                      std::__ndk1::pair<std::__ndk1::__tree_iterator<WaterConceptConstants::FluidType, std::__ndk1::__tree_node<WaterConceptConstants::FluidType, void*>*, long>, bool> std::__ndk1::__tree<WaterConceptConstants::FluidType, std::__ndk1::less<WaterConceptConstants::FluidType>, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::__emplace_unique_key_args<WaterConceptConstants::FluidType, WaterConceptConstants::FluidType>(this + 0x170,&uStack_b4,&uStack_b4);
                       uVar6 = ((long)(uStack_a8 - uStack_b0) >> 3) * -0x5555555555555555;
                       uVar7 = (ulong)uVar10;
                       uVar8 = (ulong)uVar10;
@@ -1382,10 +1381,10 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                      iVar4 == 0)) {
                     /* try { // try from 0042bd74 to 0042bd7f has its CatchHandler @ 0042be7c */
                     Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
-                    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate((ulong *)(param_1 + 0x188));
-                    *(ulong *)(param_1 + 400) = uStack_a8;
-                    *(ulong *)(param_1 + 0x188) = uStack_b0;
-                    *(undefined8 *)(param_1 + 0x198) = uStack_a0;
+                    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate((ulong *)(this + 0x188));
+                    *(ulong *)(this + 400) = uStack_a8;
+                    *(ulong *)(this + 0x188) = uStack_b0;
+                    *(undefined8 *)(this + 0x198) = uStack_a0;
                     uStack_b0 = 0;
                     uStack_a8 = 0;
                     uStack_a0 = 0;
@@ -1402,10 +1401,10 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                        iVar4 == 0)) {
                     /* try { // try from 0042bdd8 to 0042bde3 has its CatchHandler @ 0042be74 */
                       Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
-                      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 0x1a0);
-                      *(ulong *)(param_1 + 0x1a8) = uStack_a8;
-                      *(ulong *)(param_1 + 0x1a0) = uStack_b0;
-                      *(undefined8 *)(param_1 + 0x1b0) = uStack_a0;
+                      std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(this + 0x1a0);
+                      *(ulong *)(this + 0x1a8) = uStack_a8;
+                      *(ulong *)(this + 0x1a0) = uStack_b0;
+                      *(undefined8 *)(this + 0x1b0) = uStack_a0;
                       goto LAB_0042bdfc;
                     }
                     uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1416,7 +1415,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     if ((uVar8 == 5) &&
                        (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nodig",5),
                        iVar4 == 0)) {
-                      *(undefined1 *)(param_1 + 0x160) = 1;
+                      *(undefined1 *)(this + 0x160) = 1;
                     }
                     else {
                       uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1427,7 +1426,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                       if ((uVar8 == 0xb) &&
                          (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"noalgaeooze",0xb)
                          , iVar4 == 0)) {
-                        *(undefined1 *)(param_1 + 0x161) = 1;
+                        *(undefined1 *)(this + 0x161) = 1;
                       }
                       else {
                         uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1457,7 +1456,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                             if ((uVar8 == 0xc) &&
                                (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                         "ignoremixing",0xc), iVar4 == 0)) {
-                              *(undefined1 *)(param_1 + 0x15e) = 1;
+                              *(undefined1 *)(this + 0x15e) = 1;
                             }
                             else {
                               uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1468,7 +1467,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                               if ((uVar8 == 0xb) &&
                                  (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                           "ignorebombs",0xb), iVar4 == 0)) {
-                                *(undefined1 *)(param_1 + 0x15f) = 1;
+                                *(undefined1 *)(this + 0x15f) = 1;
                               }
                               else {
                                 uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1485,7 +1484,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                                     pbVar1 = *(byte **)(pbStack_98 + 0x28);
                                   }
                                   sscanf(pbVar1,"%f",&uStack_b0);
-                                  *(int *)(param_1 + 0xe0) = (int)uStack_b0;
+                                  *(int *)(this + 0xe0) = (int)uStack_b0;
                                 }
                                 else {
                                   uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1502,7 +1501,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                                       pbVar1 = *(byte **)(pbStack_98 + 0x28);
                                     }
                                     sscanf(pbVar1,"%i",&uStack_b0);
-                                    *(int *)(param_1 + 0x164) = (int)uStack_b0;
+                                    *(int *)(this + 0x164) = (int)uStack_b0;
                                   }
                                 }
                               }
@@ -1511,7 +1510,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                           }
                           uVar5 = 0x100;
                         }
-                        *(undefined2 *)(param_1 + 0x15c) = uVar5;
+                        *(undefined2 *)(this + 0x15c) = uVar5;
                       }
                     }
                   }
@@ -1521,10 +1520,10 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
             }
                     /* try { // try from 0042bc28 to 0042bc33 has its CatchHandler @ 0042be90 */
             Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
-            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 0x120);
-            *(ulong *)(param_1 + 0x128) = uStack_a8;
-            *(ulong *)(param_1 + 0x120) = uStack_b0;
-            *(undefined8 *)(param_1 + 0x130) = uStack_a0;
+            std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(this + 0x120);
+            *(ulong *)(this + 0x128) = uStack_a8;
+            *(ulong *)(this + 0x120) = uStack_b0;
+            *(undefined8 *)(this + 0x130) = uStack_a0;
           }
 LAB_0042bdfc:
           uStack_b0 = 0;

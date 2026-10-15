@@ -12,8 +12,7 @@
 
 undefined8
 std::__ndk1::__codecvt_utf8<char16_t>::do_out
-          (long param_1,undefined8 param_2,ushort *param_3,ushort *param_4,ulong *param_5,
-          byte *param_6,long param_7,undefined8 *param_8)
+          (mbstate_t& param_1,char16_t const *param_2,char16_t const *param_3,char16_t const*& param_4,char *param_5,char *param_6,char*& param_7)
 
 {
   ushort uVar1;
@@ -23,53 +22,53 @@ std::__ndk1::__codecvt_utf8<char16_t>::do_out
   byte *pbVar5;
   ulong uVar6;
   
-  uVar6 = *(ulong *)(param_1 + 0x10);
-  pbVar5 = param_6;
-  if ((*(byte *)(param_1 + 0x18) >> 1 & 1) != 0) {
-    if (param_7 - (long)param_6 < 3) {
+  uVar6 = *(ulong *)(this + 0x10);
+  pbVar5 = param_5;
+  if ((*(byte *)(this + 0x18) >> 1 & 1) != 0) {
+    if (param_6 - (long)param_5 < 3) {
 LAB_005da084:
       uVar3 = 1;
       goto LAB_005da088;
     }
-    param_6[0] = 0xef;
-    param_6[1] = 0xbb;
-    pbVar5 = param_6 + 3;
-    param_6[2] = 0xbf;
+    param_5[0] = 0xef;
+    param_5[1] = 0xbb;
+    pbVar5 = param_5 + 3;
+    param_5[2] = 0xbf;
   }
-  if (param_3 < param_4) {
+  if (param_2 < param_3) {
     uVar3 = 2;
     pbVar4 = pbVar5;
     do {
-      uVar1 = *param_3;
+      uVar1 = *param_2;
       pbVar5 = pbVar4;
       if ((uVar1 >> 0xb == 0x1b) || (uVar6 < uVar1)) goto LAB_005da088;
       bVar2 = (byte)uVar1;
       if (uVar1 < 0x80) {
-        if (param_7 - (long)pbVar4 < 1) goto LAB_005da084;
+        if (param_6 - (long)pbVar4 < 1) goto LAB_005da084;
         pbVar5 = pbVar4 + 1;
         *pbVar4 = bVar2;
       }
       else if (uVar1 < 0x800) {
-        if (param_7 - (long)pbVar4 < 2) goto LAB_005da084;
+        if (param_6 - (long)pbVar4 < 2) goto LAB_005da084;
         *pbVar4 = (byte)(uVar1 >> 6) | 0xc0;
         pbVar5 = pbVar4 + 2;
         pbVar4[1] = bVar2 & 0x3f | 0x80;
       }
       else {
-        if (param_7 - (long)pbVar4 < 3) goto LAB_005da084;
+        if (param_6 - (long)pbVar4 < 3) goto LAB_005da084;
         pbVar5 = pbVar4 + 3;
         *pbVar4 = (byte)(uVar1 >> 0xc) | 0xe0;
         pbVar4[1] = (byte)(uVar1 >> 6) & 0x3f | 0x80;
         pbVar4[2] = bVar2 & 0x3f | 0x80;
       }
-      param_3 = param_3 + 1;
+      param_2 = param_2 + 1;
       pbVar4 = pbVar5;
-    } while (param_3 < param_4);
+    } while (param_2 < param_3);
   }
   uVar3 = 0;
 LAB_005da088:
-  *param_5 = (ulong)param_3;
-  *param_8 = pbVar5;
+  *param_4 = (ulong)param_2;
+  *param_7 = pbVar5;
   return uVar3;
 }
 
@@ -84,8 +83,7 @@ LAB_005da088:
 
 undefined8
 std::__ndk1::__codecvt_utf8<char16_t>::do_in
-          (long param_1,undefined8 param_2,byte *param_3,byte *param_4,undefined8 *param_5,
-          undefined2 *param_6,undefined2 *param_7,undefined8 *param_8)
+          (mbstate_t& param_1,char const *param_2,char const *param_3,char const*& param_4,char16_t *param_5,char16_t *param_6,char16_t*& param_7)
 
 {
   ulong uVar1;
@@ -98,39 +96,39 @@ std::__ndk1::__codecvt_utf8<char16_t>::do_in
   ulong uVar8;
   long lVar9;
   
-  uVar6 = *(ulong *)(param_1 + 0x10);
-  if (((((*(byte *)(param_1 + 0x18) >> 2 & 1) != 0) && (2 < (long)param_4 - (long)param_3)) &&
-      (*param_3 == 0xef)) && ((param_3[1] == 0xbb && (param_3[2] == 0xbf)))) {
-    param_3 = param_3 + 3;
+  uVar6 = *(ulong *)(this + 0x10);
+  if (((((*(byte *)(this + 0x18) >> 2 & 1) != 0) && (2 < (long)param_3 - (long)param_2)) &&
+      (*param_2 == 0xef)) && ((param_2[1] == 0xbb && (param_2[2] == 0xbf)))) {
+    param_2 = param_2 + 3;
   }
   do {
-    if (param_4 <= param_3) {
+    if (param_3 <= param_2) {
       uVar5 = 0;
 LAB_005da1f0:
-      *param_5 = param_3;
-      *param_8 = param_6;
+      *param_4 = param_2;
+      *param_7 = param_5;
       return uVar5;
     }
-    if (param_7 <= param_6) goto LAB_005da1e4;
-    bVar4 = *param_3;
+    if (param_6 <= param_5) goto LAB_005da1e4;
+    bVar4 = *param_2;
     uVar7 = (ulong)bVar4;
     if ((char)bVar4 < '\0') {
       if (0xc1 < bVar4) {
         if (bVar4 < 0xe0) {
-          if ((long)param_4 - (long)param_3 < 2) {
+          if ((long)param_3 - (long)param_2 < 2) {
 LAB_005da1e4:
             uVar5 = 1;
             goto LAB_005da1f0;
           }
-          if (((param_3[1] & 0xc0) == 0x80) &&
-             (uVar7 = (ulong)param_3[1] & 0x3f | (uVar7 & 0x1f) << 6, uVar7 <= uVar6)) {
+          if (((param_2[1] & 0xc0) == 0x80) &&
+             (uVar7 = (ulong)param_2[1] & 0x3f | (uVar7 & 0x1f) << 6, uVar7 <= uVar6)) {
             lVar9 = 2;
             goto LAB_005da1cc;
           }
         }
         else if (bVar4 < 0xf0) {
-          if ((long)param_4 - (long)param_3 < 3) goto LAB_005da1e4;
-          bVar3 = param_3[1];
+          if ((long)param_3 - (long)param_2 < 3) goto LAB_005da1e4;
+          bVar3 = param_2[1];
           if (bVar4 == 0xed) {
             bVar4 = bVar3 & 0xe0;
 joined_r0x005da190:
@@ -143,9 +141,9 @@ joined_r0x005da190:
             }
             if ((bVar3 & 0xe0) != 0xa0) goto LAB_005da1ec;
           }
-          if (((param_3[2] & 0xc0) == 0x80) &&
+          if (((param_2[2] & 0xc0) == 0x80) &&
              (uVar8 = uVar7 << 0xc, uVar1 = ((ulong)bVar3 & 0x3f) << 6,
-             uVar2 = (ulong)param_3[2] & 0x3f, uVar7 = uVar8 | uVar1 | uVar2,
+             uVar2 = (ulong)param_2[2] & 0x3f, uVar7 = uVar8 | uVar1 | uVar2,
              (uVar8 & 0xffc0 | uVar1 | uVar2) <= uVar6)) {
             lVar9 = 3;
             goto LAB_005da1cc;
@@ -159,9 +157,9 @@ LAB_005da1ec:
     if (uVar6 < uVar7) goto LAB_005da1ec;
     lVar9 = 1;
 LAB_005da1cc:
-    param_3 = param_3 + lVar9;
-    *param_6 = (short)uVar7;
-    param_6 = param_6 + 1;
+    param_2 = param_2 + lVar9;
+    *param_5 = (short)uVar7;
+    param_5 = param_5 + 1;
   } while( true );
 }
 

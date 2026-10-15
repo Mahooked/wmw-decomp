@@ -11,7 +11,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int) */
 
 void Walaber::FileManager::FH_StandardFileSystem::addBasePath
-               (long param_1,undefined8 param_2,undefined4 param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned int param_2)
 
 {
   long lVar1;
@@ -22,10 +22,10 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  auStack_48[0] = param_3;
+  auStack_48[0] = param_2;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40);
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
-  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(param_1 + 8,auStack_48);
+  std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>(this + 8,auStack_48);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -47,7 +47,7 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
    Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_StandardFileSystem::fileExists
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3)
 
 {
   long lVar1;
@@ -76,23 +76,23 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_70);
-  plVar7 = (long *)param_1[1];
+  plVar7 = (long *)this[1];
   do {
                     /* try { // try from 003d2f34 to 003d2f3b has its CatchHandler @ 003d30bc */
     uVar3 = Walaber::FileHelper::fileExists(&uStack_70);
     if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d2f40 to 003d2f4f has its CatchHandler @ 003d30b4 */
       lVar4 = Walaber::FileManager::getInstancePtr();
-      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar4 + 0x18,param_2);
+      unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar4 + 0x18,param_1);
                     /* try { // try from 003d2f58 to 003d2f63 has its CatchHandler @ 003d30b0 */
-      (**(code **)(*param_1 + 0x20))(abStack_e0,param_1);
+      (**(code **)(*this + 0x20))(abStack_e0,this);
                     /* try { // try from 003d2f64 to 003d2f7f has its CatchHandler @ 003d3098 */
-      Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_c8,param_2,1,&uStack_70,abStack_e0,param_4);
+      Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_c8,param_1,1,&uStack_70,abStack_e0,param_3);
       if ((abStack_e0[0] & 1) != 0) {
         operator delete(pvStack_d0);
       }
                     /* try { // try from 003d2f9c to 003d2fa3 has its CatchHandler @ 003d3064 */
-      (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,abStack_c8);
+      (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,abStack_c8);
       if ((bStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
@@ -112,21 +112,21 @@ LAB_003d3010:
       }
       return;
     }
-    if (param_1 + 2 == plVar7) {
+    if (this + 2 == plVar7) {
                     /* try { // try from 003d2fd8 to 003d2fdb has its CatchHandler @ 003d3060 */
       uVar5 = Walaber::FileManager::getInstancePtr();
-      lStack_f0 = *param_3;
-      piStack_e8 = (int *)param_3[1];
+      lStack_f0 = *param_2;
+      piStack_e8 = (int *)param_2[1];
       if (lStack_f0 != 0) {
         *piStack_e8 = *piStack_e8 + 1;
       }
                     /* try { // try from 003d2ff4 to 003d3007 has its CatchHandler @ 003d3050 */
-      Walaber::FileManager::_existFail(uVar5,param_2,param_1,&lStack_f0,param_4);
+      Walaber::FileManager::_existFail(uVar5,param_1,this,&lStack_f0,param_3);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_f0);
       goto LAB_003d3010;
     }
                     /* try { // try from 003d2e9c to 003d2ea7 has its CatchHandler @ 003d30b8 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_c8,plVar7 + 5,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_c8,plVar7 + 5,param_1);
     if (((byte)uStack_70 & 1) != 0) {
       *puStack_60 = 0;
       uStack_68 = 0;
@@ -170,7 +170,7 @@ LAB_003d3010:
    Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::FH_StandardFileSystem::readFile
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3)
 
 {
   undefined1 *puVar1;
@@ -212,7 +212,7 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
   lVar2 = tpidr_el0;
   lStack_70 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_1f0);
-  plVar8 = (long *)param_1[1];
+  plVar8 = (long *)this[1];
   do {
     ppuStack_1d0 = &PTR__basic_istream_00710858;
     appuStack_110[0] = &PTR__basic_istream_00710880;
@@ -251,16 +251,16 @@ LAB_003d3234:
                      *(uint *)((long)auStack_1b0 + (long)ppuStack_1d0[-3]) | 4);
       }
       uVar3 = Walaber::FileManager::getInstancePtr();
-      Walaber::FileManager::_readSuccess(uVar3,param_2);
+      Walaber::FileManager::_readSuccess(uVar3,param_1);
                     /* try { // try from 003d32b8 to 003d32c3 has its CatchHandler @ 003d34ec */
-      (**(code **)(*param_1 + 0x20))(abStack_270,param_1);
+      (**(code **)(*this + 0x20))(abStack_270,this);
                     /* try { // try from 003d32c4 to 003d32e3 has its CatchHandler @ 003d34d4 */
-      Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&uStack_258,param_2,uVar4,extraout_x1,auStack_1f0,abStack_270,param_4);
+      Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&uStack_258,param_1,uVar4,extraout_x1,auStack_1f0,abStack_270,param_3);
       if ((abStack_270[0] & 1) != 0) {
         operator delete(pvStack_260);
       }
                     /* try { // try from 003d3304 to 003d330b has its CatchHandler @ 003d34a0 */
-      (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,&uStack_258);
+      (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,&uStack_258);
       if ((bStack_210 & 1) != 0) {
         operator delete(pvStack_200);
       }
@@ -278,12 +278,12 @@ LAB_003d31c4:
       std::__ndk1::ios_base::clear((undefined *)((long)&ppuStack_1d0 + (long)ppuStack_1d0[-3]),
                    *(uint *)((long)auStack_1b0 + (long)ppuStack_1d0[-3]) | 4);
       if (lStack_140 != 0) goto LAB_003d3234;
-      if (param_1 + 2 == plVar8) {
+      if (this + 2 == plVar8) {
         iVar9 = 2;
       }
       else {
                     /* try { // try from 003d31f8 to 003d3203 has its CatchHandler @ 003d349c */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_258,plVar8 + 5,param_2);
+        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_258,plVar8 + 5,param_1);
         if ((auStack_1f0[0] & 1) != 0) {
           *puStack_1e0 = 0;
           auStack_1f0[1] = 0;
@@ -324,13 +324,13 @@ LAB_003d31c4:
       if (iVar9 == 2) {
                     /* try { // try from 003d3400 to 003d3403 has its CatchHandler @ 003d3494 */
         uVar4 = Walaber::FileManager::getInstancePtr();
-        lStack_280 = *param_3;
-        piStack_278 = (int *)param_3[1];
+        lStack_280 = *param_2;
+        piStack_278 = (int *)param_2[1];
         if (lStack_280 != 0) {
           *piStack_278 = *piStack_278 + 1;
         }
                     /* try { // try from 003d3420 to 003d3433 has its CatchHandler @ 003d3484 */
-        Walaber::FileManager::_readFail(uVar4,param_2,param_1,&lStack_280,param_4);
+        Walaber::FileManager::_readFail(uVar4,param_1,this,&lStack_280,param_3);
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_280);
       }
       if ((auStack_1f0[0] & 1) != 0) {

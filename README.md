@@ -30,7 +30,7 @@ re-inferred.
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
 | Call-target names (PLT imports) | **done** | 64,007 / 66,330 call placeholders resolved from `.rela.plt`; 4,765 imports named (see "Call targets and PLT imports") |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
-| Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters; 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
+| Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 1,200 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
@@ -39,13 +39,14 @@ re-inferred.
 
 1. **Recover type definitions.** Function signatures are exact (they are encoded
    in the manglings), validated against GCC, and now applied to 2,450 decompiled
-   bodies. Class field layouts are now recovered too — 325 of them, each proven
-   to rebuild to its recovered `sizeof` under the C++ ABI — and 9 enums have
-   been lifted out of the constant compares, masks and jump tables the binary
-   performs on them (see "Enums"). Typedefs and the remaining field names still have to be
-   read out of the code that uses them, and fields are currently named
-   `f_0x<offset>` because the binary never recorded their names. See "Function
-   signatures".
+   bodies through Ghidra plus a further 1,200 as plain text where Ghidra cannot
+   name the type (see "Types without a type system"). Class field layouts are now
+   recovered too — 325 of them, each proven to rebuild to its recovered `sizeof`
+   under the C++ ABI — and 9 enums have been lifted out of the constant compares,
+   masks and jump tables the binary performs on them (see "Enums"). Typedefs and
+   the remaining field names still have to be read out of the code that uses
+   them, and fields are currently named `f_0x<offset>` because the binary never
+   recorded their names. See "Function signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped. Call targets are now named (see "Call targets and PLT
    imports"); what remains is if-converted branches, spill/reload noise and
@@ -76,9 +77,10 @@ re-inferred.
 - 64,007 call-site placeholders (`func_0x…`/`FUN_…`) rewritten to the real
   callee by decoding PLT stubs through `.rela.plt`: 66,330 -> 2,323 unresolved,
   of which 28,332 are game-symbol calls. See "Call targets and PLT imports".
-- Exact function prototypes recovered and validated against GCC's own rendering
-  (6,769/6,769). Applying them to the decompiled bodies is blocked on field
-  layouts; see "Function signatures".
+- Exact function prototypes, which Ghidra could only apply when it could name
+  the type, now written to **1,200** more definitions as text — libc++ template
+  parameters included — with `param_N` falling 70,864 -> 64,678 and members'
+  `param_1` shown as `this`. See "Types without a type system".
 
 ## What the game turned out to be
 
@@ -198,9 +200,15 @@ tools/
   resolve_refs.py     rewrite func_0x/FUN_ call placeholders in out/src to the
                       real callee by decoding PLT stubs through .rela.plt;
                       --check gates that no resolvable placeholder remains
+  apply_signatures.py write the exact parameter types from signatures.tsv back
+                      into the decompiled definitions as text, including the
+                      template types Ghidra cannot name; --check gates that no
+                      applicable definition is left untyped
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
+  test_apply_signatures.py  regression gate for apply_signatures.py's splitter,
+                      name formatter and +1/`this` alignment rule
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
@@ -414,6 +422,45 @@ A note on symbol counts, because the numbers above are easy to conflate.
 8,618 `STT_FUNC`, 2,062 `STT_OBJECT`, plus a handful of `STT_NOTYPE`). Of those,
 8,162 are mangled C++ symbols, and all 8,162 were independently confirmed to
 agree with Ghidra in both address and spelling.
+
+#### Types without a type system
+
+Ghidra can only apply a type it can *name*, which is exactly the wrong constraint:
+the mangling already spells every type, including the libc++ templates Ghidra
+cannot resolve. So the prototypes are applied a second way, as plain text, by
+`tools/apply_signatures.py`. Writing a type needs no type system, so the
+`std::__ndk1::basic_string<char, …>` parameters that defeated every Ghidra
+attempt now reach the output:
+
+```
+-void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
++void ndk::ApplicationContext::setSKU(std::__ndk1::basic_string<char, …> const& param_1)
+```
+
+The pass is only safe because the *alignment* is provable. Ghidra numbers the
+inferred parameters `param_1…` in AAPCS64 allocation order:
+
+- a **free** function's order is source order, so a definition whose parameter
+  count already equals the signature's is a straight positional rename;
+- a non-static **member** also receives `this` in `x0`, which the signature
+  omits, so its count is exactly one greater — there `param_1` *is* `this`, so it
+  is dropped from the list, renamed in the body, and the survivors shift down.
+
+Any other count difference is left alone, and a `+1` definition is trusted only
+when `members.tsv` already classifies it as a member. An alignment that cannot be
+proved is a wrong type waiting to happen, so it is not guessed. A definition is
+touched only while its parameters still contain `undefined`, which makes the
+pass idempotent; `--check` fails if any applicable definition is left untyped.
+
+| | before | after |
+|---|---|---|
+| definitions typed from `signatures.tsv` | 0 | 1,200 |
+| …of those, member (`param_1` → `this`) | — | 978 |
+| generic `param_N` tokens in `out/src` | 70,864 | 64,678 |
+
+`tools/test_apply_signatures.py` pins the splitter, the name formatter and the
+`+1`/`this` decision on synthetic definitions, so the rule is checked without
+touching the output.
 
 ### Call targets and PLT imports
 
@@ -639,11 +686,14 @@ re-inference step (README item 3).
 
 Read this before treating `out/src/` as source.
 
-- **Parameter and return types are inferred, not recovered.** Function names,
-  arity and class membership come from the symbol table and are trustworthy.
-  Ghidra's type propagation frequently mis-identifies them — a method taking
+- **Parameter and return types are mostly inferred.** Return types are never in
+  the mangling, and only the 3,650 functions that carry a prototype (2,450
+  through Ghidra, 1,200 as text; see "Function signatures") have recovered
+  parameter types — there the types are exact. Everywhere else Ghidra's type
+  propagation frequently mis-identifies them — a method taking
   `(Fluids*, ParticleDescription const&, int, bool&)` is emitted as taking
-  `(_xmlNode*, char*)`. Trust the mangled comment, not the C signature.
+  `(_xmlNode*, char*)`. Where a prototype is present, trust it and the mangled
+  comment; otherwise trust only the mangled comment.
 - **Local variable names, comments and macros never survive compilation.**
   Everything inside a function body must be re-inferred; see the goal above.
 - **Prototype comments can be misattributed** to an unrelated function.
@@ -874,6 +924,12 @@ py tools\survey_native.py $so
 #     and write out/symbols/imports.tsv (idempotent; run after any re-import)
 py tools\resolve_refs.py $so
 py tools\resolve_refs.py $so --check      # gate: 0 resolvable placeholders left
+
+# 3c. write the exact parameter types from signatures.tsv into out/src
+#     (idempotent; run after any re-import)
+py tools\apply_signatures.py
+py tools\apply_signatures.py --check      # gate: 0 applicable definitions left
+py tools\test_apply_signatures.py         # gate: formatter + alignment rule
 
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti

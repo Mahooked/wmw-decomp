@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::SpriteAnimation::FrameImport,std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>& param_1)
 
 {
   long lVar1;
@@ -23,13 +23,13 @@ void std::__ndk1::
   long lVar4;
   long lVar5;
   
-  lVar3 = *param_1;
-  lVar2 = param_1[1];
+  lVar3 = *this;
+  lVar2 = this[1];
   if (lVar2 == lVar3) {
-    lVar4 = param_2[1];
+    lVar4 = param_1[1];
   }
   else {
-    lVar4 = param_2[1];
+    lVar4 = param_1[1];
     lVar5 = 0;
     do {
       lVar1 = lVar2 + lVar5;
@@ -42,20 +42,20 @@ void std::__ndk1::
       *(undefined1 *)(lVar4 + -3) = *(undefined1 *)(lVar1 + -3);
       *(undefined1 *)(lVar4 + -2) = *(undefined1 *)(lVar1 + -2);
       *(undefined1 *)(lVar4 + -1) = *(undefined1 *)(lVar1 + -1);
-      lVar4 = param_2[1] + -0x30;
-      param_2[1] = lVar4;
+      lVar4 = param_1[1] + -0x30;
+      param_1[1] = lVar4;
     } while (lVar3 - lVar2 != lVar5);
-    lVar3 = *param_1;
+    lVar3 = *this;
   }
-  *param_1 = lVar4;
-  param_2[1] = lVar3;
-  lVar3 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar3;
-  lVar3 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar3;
-  *param_2 = param_2[1];
+  *this = lVar4;
+  param_1[1] = lVar3;
+  lVar3 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar3;
+  lVar3 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar3;
+  *param_1 = param_1[1];
   return;
 }
 

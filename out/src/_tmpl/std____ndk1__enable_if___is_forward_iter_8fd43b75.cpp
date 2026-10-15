@@ -15,7 +15,7 @@
 
 long std::__ndk1::
      basic_string<wchar_t,std::__ndk1::char_traits<wchar_t>,std::__ndk1::allocator<wchar_t>>::
-     insert<wchar_t_const*>(ulong *param_1,long param_2,undefined4 *param_3,undefined4 *param_4)
+     insert<wchar_t_const*>(std::__ndk1::__wrap_iter<wchar_t const*> param_1,wchar_t const *param_2,wchar_t const *param_3)
 
 {
   byte bVar1;
@@ -42,28 +42,28 @@ long std::__ndk1::
   
   lVar4 = tpidr_el0;
   lStack_58 = *(long *)(lVar4 + 0x28);
-  bVar1 = (byte)*param_1;
+  bVar1 = (byte)*this;
   if ((bVar1 & 1) == 0) {
-    uVar9 = (long)param_1 + 4;
+    uVar9 = (long)this + 4;
   }
   else {
-    uVar9 = param_1[2];
+    uVar9 = this[2];
   }
-  lVar12 = (long)(param_2 - uVar9) >> 2;
-  if ((long)param_4 - (long)param_3 != 0) {
+  lVar12 = (long)(param_1 - uVar9) >> 2;
+  if ((long)param_3 - (long)param_2 != 0) {
     if ((bVar1 & 1) == 0) {
-      puVar6 = (undefined4 *)((long)param_1 + 4);
+      puVar6 = (undefined4 *)((long)this + 4);
       uVar9 = (ulong)(bVar1 >> 1);
     }
     else {
-      uVar9 = param_1[1];
-      puVar6 = (undefined4 *)param_1[2];
+      uVar9 = this[1];
+      puVar6 = (undefined4 *)this[2];
     }
-    if ((puVar6 <= param_3) && (param_3 < puVar6 + uVar9)) {
+    if ((puVar6 <= param_2) && (param_2 < puVar6 + uVar9)) {
       uStack_70 = 0;
       uStack_68 = 0;
       pvStack_60 = (void *)0x0;
-      std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(&uStack_70,param_3,param_4);
+      std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value, void>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init<wchar_t const*>(&uStack_70,param_2,param_3);
       uVar9 = uStack_70 >> 1 & 0x7f;
       pvVar3 = (void *)((ulong)&uStack_70 | 4);
       if ((uStack_70 & 1) != 0) {
@@ -71,31 +71,31 @@ long std::__ndk1::
         pvVar3 = pvStack_60;
       }
                     /* try { // try from 005e8ca8 to 005e8cb3 has its CatchHandler @ 005e8e54 */
-      lVar12 = std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value&&__libcpp_string_gets_noexcept_iterator<wchar_t const*>::value, std::__ndk1::__wrap_iter<wchar_t*>>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::insert<wchar_t const*>(param_1,param_2,pvVar3,(void *)((long)pvVar3 + uVar9 * 4));
+      lVar12 = std::__ndk1::enable_if<__is_forward_iterator<wchar_t const*>::value&&__libcpp_string_gets_noexcept_iterator<wchar_t const*>::value, std::__ndk1::__wrap_iter<wchar_t*>>::type std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::insert<wchar_t const*>(this,param_1,pvVar3,(void *)((long)pvVar3 + uVar9 * 4));
       if ((uStack_70 & 1) != 0) {
         operator delete(pvStack_60);
       }
       goto LAB_005e8e1c;
     }
-    uVar9 = (long)param_4 - (long)param_3 >> 2;
+    uVar9 = (long)param_3 - (long)param_2 >> 2;
     if ((bVar1 & 1) == 0) {
       uVar7 = (ulong)(bVar1 >> 1);
       lVar5 = 4;
     }
     else {
-      uVar7 = param_1[1];
-      lVar5 = (*param_1 & 0xfffffffffffffffe) - 1;
+      uVar7 = this[1];
+      lVar5 = (*this & 0xfffffffffffffffe) - 1;
     }
     if (lVar5 - uVar7 < uVar9) {
-      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__grow_by(param_1,lVar5,(uVar7 + uVar9) - lVar5,uVar7,lVar12,0,uVar9);
-      uVar14 = param_1[2];
+      std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__grow_by(this,lVar5,(uVar7 + uVar9) - lVar5,uVar7,lVar12,0,uVar9);
+      uVar14 = this[2];
     }
     else {
       if ((bVar1 & 1) == 0) {
-        uVar14 = (long)param_1 + 4;
+        uVar14 = (long)this + 4;
       }
       else {
-        uVar14 = param_1[2];
+        uVar14 = this[2];
       }
       if (uVar7 - lVar12 != 0) {
         lVar5 = uVar14 + lVar12 * 4;
@@ -104,22 +104,22 @@ long std::__ndk1::
       }
     }
     uVar7 = uVar7 + uVar9;
-    if ((*param_1 & 1) == 0) {
-      *(char *)param_1 = (char)((int)uVar7 << 1);
+    if ((*this & 1) == 0) {
+      *(char *)this = (char)((int)uVar7 << 1);
     }
     else {
-      param_1[1] = uVar7;
+      this[1] = uVar7;
     }
     *(undefined4 *)(uVar14 + uVar7 * 4) = 0;
-    if (param_3 != param_4) {
-      uVar7 = (ulong)((long)param_4 + (-4 - (long)param_3)) >> 2;
+    if (param_2 != param_3) {
+      uVar7 = (ulong)((long)param_3 + (-4 - (long)param_2)) >> 2;
       uVar9 = uVar7 + 1;
       puVar6 = (undefined4 *)(uVar14 + lVar12 * 4);
       if ((7 < uVar9) &&
-         ((param_3 + uVar7 + 1 <= puVar6 ||
-          ((undefined4 *)(uVar14 + (lVar12 + uVar7) * 4 + 4) <= param_3)))) {
+         ((param_2 + uVar7 + 1 <= puVar6 ||
+          ((undefined4 *)(uVar14 + (lVar12 + uVar7) * 4 + 4) <= param_2)))) {
         uVar8 = uVar9 & 0x7ffffffffffffff8;
-        puVar10 = (undefined8 *)(param_3 + 4);
+        puVar10 = (undefined8 *)(param_2 + 4);
         puVar11 = (undefined8 *)(uVar14 + lVar12 * 4 + 0x10);
         uVar7 = uVar8;
         do {
@@ -136,23 +136,23 @@ long std::__ndk1::
           puVar11 = puVar11 + 4;
         } while (uVar7 != 0);
         puVar6 = puVar6 + uVar8;
-        param_3 = param_3 + uVar8;
+        param_2 = param_2 + uVar8;
         if (uVar9 == uVar8) goto LAB_005e8e04;
       }
       do {
-        puVar13 = param_3 + 1;
-        *puVar6 = *param_3;
+        puVar13 = param_2 + 1;
+        *puVar6 = *param_2;
         puVar6 = puVar6 + 1;
-        param_3 = puVar13;
-      } while (param_4 != puVar13);
+        param_2 = puVar13;
+      } while (param_3 != puVar13);
     }
   }
 LAB_005e8e04:
-  if ((*param_1 & 1) == 0) {
-    uVar9 = (long)param_1 + 4;
+  if ((*this & 1) == 0) {
+    uVar9 = (long)this + 4;
   }
   else {
-    uVar9 = param_1[2];
+    uVar9 = this[2];
   }
   lVar12 = uVar9 + lVar12 * 4;
 LAB_005e8e1c:

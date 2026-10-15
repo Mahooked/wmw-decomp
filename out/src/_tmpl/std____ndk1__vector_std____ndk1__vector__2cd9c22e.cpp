@@ -18,7 +18,7 @@
 
 void std::__ndk1::
      vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>&>& param_1)
 
 {
   undefined8 *puVar1;
@@ -27,13 +27,13 @@ void std::__ndk1::
   undefined8 *puVar4;
   undefined8 uVar5;
   
-  puVar1 = (undefined8 *)*param_1;
-  if ((undefined8 *)param_1[1] == puVar1) {
-    lVar2 = param_2[1];
+  puVar1 = (undefined8 *)*this;
+  if ((undefined8 *)this[1] == puVar1) {
+    lVar2 = param_1[1];
   }
   else {
-    lVar2 = param_2[1];
-    puVar3 = (undefined8 *)param_1[1];
+    lVar2 = param_1[1];
+    puVar3 = (undefined8 *)this[1];
     do {
       *(undefined8 *)(lVar2 + -0x10) = 0;
       *(undefined8 *)(lVar2 + -8) = 0;
@@ -46,21 +46,21 @@ void std::__ndk1::
       puVar3[-2] = 0;
       puVar3[-1] = 0;
       *puVar4 = 0;
-      lVar2 = param_2[1] + -0x18;
-      param_2[1] = lVar2;
+      lVar2 = param_1[1] + -0x18;
+      param_1[1] = lVar2;
       puVar3 = puVar4;
     } while (puVar1 != puVar4);
-    puVar1 = (undefined8 *)*param_1;
+    puVar1 = (undefined8 *)*this;
   }
-  *param_1 = lVar2;
-  param_2[1] = puVar1;
-  lVar2 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar2;
-  lVar2 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar2;
-  *param_2 = param_2[1];
+  *this = lVar2;
+  param_1[1] = puVar1;
+  lVar2 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar2;
+  lVar2 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar2;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -81,29 +81,29 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>,std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>> const& param_1)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 004d0064 to 004d0067 has its CatchHandler @ 004d00a8 */
-    std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__vallocate(param_1,(param_2[1] - *param_2 >> 3) * -0x5555555555555555);
-    lVar3 = *param_2;
-    lVar1 = param_2[1];
+    std::__ndk1::vector<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::__vallocate(this,(param_1[1] - *param_1 >> 3) * -0x5555555555555555);
+    lVar3 = *param_1;
+    lVar1 = param_1[1];
     if (lVar3 != lVar1) {
-      lVar2 = param_1[1];
+      lVar2 = this[1];
       do {
                     /* try { // try from 004d0078 to 004d007f has its CatchHandler @ 004d00ac */
         std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::vector(lVar2,lVar3);
         lVar3 = lVar3 + 0x18;
-        lVar2 = param_1[1] + 0x18;
-        param_1[1] = lVar2;
+        lVar2 = this[1] + 0x18;
+        this[1] = lVar2;
       } while (lVar1 != lVar3);
     }
   }

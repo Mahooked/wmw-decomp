@@ -369,8 +369,7 @@ void Walaber::ParticleSet::removeParticle(int p0)
    std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture> > >, Walaber::Color const&, int) */
 
 void Walaber::ParticleSet::drawParticles
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4,undefined4 param_5
-               )
+               (Walaber::SpriteBatch& param_1,std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> param_2,Walaber::Color const& param_3,int param_4)
 
 {
   long lVar1;
@@ -393,16 +392,16 @@ void Walaber::ParticleSet::drawParticles
   
   lVar3 = tpidr_el0;
   lStack_88 = *(long *)(lVar3 + 0x28);
-  if (-1 < (int)param_1[6]) {
+  if (-1 < (int)this[6]) {
     lVar5 = 0;
     lVar6 = -1;
-    plVar4 = param_1;
+    plVar4 = this;
     do {
-      lVar1 = *param_1 + lVar5;
+      lVar1 = *this + lVar5;
       if (*(char *)(lVar1 + 0x34) != '\0') {
         if (*(float *)(lVar1 + 0x30) == -1.0) {
-          pfVar2 = (float *)(*param_1 + lVar5);
-          plVar4 = (long *)(*param_3 + (long)(int)pfVar2[0x19] * 0x10);
+          pfVar2 = (float *)(*this + lVar5);
+          plVar4 = (long *)(*param_2 + (long)(int)pfVar2[0x19] * 0x10);
           lStack_98 = *plVar4;
           piStack_90 = (int *)plVar4[1];
           if (lStack_98 != 0) {
@@ -414,14 +413,14 @@ void Walaber::ParticleSet::drawParticles
           fStack_a0 = *pfVar2 + (fVar8 * pfVar2[0xe] - fVar7 * pfVar2[0xf]);
           fStack_9c = pfVar2[1] + fVar7 * pfVar2[0xe] + fVar8 * pfVar2[0xf];
                     /* try { // try from 003941a4 to 003941bf has its CatchHandler @ 003942e8 */
-          Walaber::SpriteBatch::drawQuad(*(float *)(*param_1 + lVar5 + 0x50) * 0.017453292,param_2,param_5,
-                          &lStack_98,&fStack_a0,*param_1 + lVar5 + 0x20,param_4,0);
+          Walaber::SpriteBatch::drawQuad(*(float *)(*this + lVar5 + 0x50) * 0.017453292,param_1,param_4,
+                          &lStack_98,&fStack_a0,*this + lVar5 + 0x20,param_3,0);
           plVar4 = &lStack_98;
         }
         else {
-          Walaber::ParticleSet::_getParticleColor(auStack_a8,plVar4,lVar1,param_4);
-          pfVar2 = (float *)(*param_1 + lVar5);
-          plVar4 = (long *)(*param_3 + (long)(int)pfVar2[0x19] * 0x10);
+          Walaber::ParticleSet::_getParticleColor(auStack_a8,plVar4,lVar1,param_3);
+          pfVar2 = (float *)(*this + lVar5);
+          plVar4 = (long *)(*param_2 + (long)(int)pfVar2[0x19] * 0x10);
           lStack_b8 = *plVar4;
           piStack_b0 = (int *)plVar4[1];
           if (lStack_b8 != 0) {
@@ -432,10 +431,10 @@ void Walaber::ParticleSet::drawParticles
           fVar7 = (float)sinf(fVar7 * 0.017453292);
           fStack_a0 = *pfVar2 + (fVar8 * pfVar2[0xe] - fVar7 * pfVar2[0xf]);
           fStack_9c = pfVar2[1] + fVar7 * pfVar2[0xe] + fVar8 * pfVar2[0xf];
-          fVar7 = *(float *)(*param_1 + lVar5 + 0x50);
+          fVar7 = *(float *)(*this + lVar5 + 0x50);
                     /* try { // try from 00394260 to 0039428f has its CatchHandler @ 003942f4 */
-          Walaber::ParticleSet::getParticleSize(auStack_c0,param_1,(int)lVar6 + 1);
-          Walaber::SpriteBatch::drawQuad(fVar7 * 0.017453292,param_2,param_5,&lStack_b8,&fStack_a0,auStack_c0,
+          Walaber::ParticleSet::getParticleSize(auStack_c0,this,(int)lVar6 + 1);
+          Walaber::SpriteBatch::drawQuad(fVar7 * 0.017453292,param_1,param_4,&lStack_b8,&fStack_a0,auStack_c0,
                           auStack_a8,0);
           plVar4 = &lStack_b8;
         }
@@ -443,7 +442,7 @@ void Walaber::ParticleSet::drawParticles
       }
       lVar6 = lVar6 + 1;
       lVar5 = lVar5 + 0x74;
-    } while (lVar6 < (int)param_1[6]);
+    } while (lVar6 < (int)this[6]);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_88) {
     return;
@@ -623,8 +622,7 @@ LAB_00394558:
    Walaber::Color const&, int) */
 
 void Walaber::ParticleSet::drawParticles
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4,undefined4 param_5
-               )
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,int param_4)
 
 {
   long lVar1;
@@ -648,17 +646,17 @@ void Walaber::ParticleSet::drawParticles
   
   lVar3 = tpidr_el0;
   lStack_88 = *(long *)(lVar3 + 0x28);
-  if (-1 < (int)param_1[6]) {
+  if (-1 < (int)this[6]) {
     lVar6 = 0;
     lVar7 = -1;
-    plVar4 = param_1;
+    plVar4 = this;
     do {
-      lVar5 = *param_1;
+      lVar5 = *this;
       lVar1 = lVar5 + lVar6;
       if (*(char *)(lVar1 + 0x34) != '\0') {
         if (*(float *)(lVar1 + 0x30) == -1.0) {
-          lStack_98 = *param_3;
-          piStack_90 = (int *)param_3[1];
+          lStack_98 = *param_2;
+          piStack_90 = (int *)param_2[1];
           if (lStack_98 != 0) {
             *piStack_90 = *piStack_90 + 1;
           }
@@ -669,27 +667,27 @@ void Walaber::ParticleSet::drawParticles
           fStack_a0 = *pfVar2 + (fVar9 * pfVar2[0xe] - fVar8 * pfVar2[0xf]);
           fStack_9c = pfVar2[1] + fVar8 * pfVar2[0xe] + fVar9 * pfVar2[0xf];
                     /* try { // try from 00394670 to 0039468b has its CatchHandler @ 003947a0 */
-          Walaber::SpriteBatch::drawQuad(*(float *)(*param_1 + lVar6 + 0x50) * 0.017453292,param_2,param_5,
-                          &lStack_98,&fStack_a0,*param_1 + lVar6 + 0x20,param_4,0);
+          Walaber::SpriteBatch::drawQuad(*(float *)(*this + lVar6 + 0x50) * 0.017453292,param_1,param_4,
+                          &lStack_98,&fStack_a0,*this + lVar6 + 0x20,param_3,0);
           plVar4 = &lStack_98;
         }
         else {
-          Walaber::ParticleSet::_getParticleColor(auStack_a8,plVar4,lVar1,param_4);
-          lStack_b8 = *param_3;
-          piStack_b0 = (int *)param_3[1];
+          Walaber::ParticleSet::_getParticleColor(auStack_a8,plVar4,lVar1,param_3);
+          lStack_b8 = *param_2;
+          piStack_b0 = (int *)param_2[1];
           if (lStack_b8 != 0) {
             *piStack_b0 = *piStack_b0 + 1;
           }
-          pfVar2 = (float *)(*param_1 + lVar6);
+          pfVar2 = (float *)(*this + lVar6);
           fVar8 = pfVar2[0x14];
           fVar9 = (float)cosf(fVar8 * 0.017453292);
           fVar8 = (float)sinf(fVar8 * 0.017453292);
           fStack_a0 = *pfVar2 + (fVar9 * pfVar2[0xe] - fVar8 * pfVar2[0xf]);
           fStack_9c = pfVar2[1] + fVar8 * pfVar2[0xe] + fVar9 * pfVar2[0xf];
-          fVar8 = *(float *)(*param_1 + lVar6 + 0x50);
+          fVar8 = *(float *)(*this + lVar6 + 0x50);
                     /* try { // try from 00394718 to 00394747 has its CatchHandler @ 003947ac */
-          Walaber::ParticleSet::getParticleSize(auStack_c0,param_1,(int)lVar7 + 1);
-          Walaber::SpriteBatch::drawQuad(fVar8 * 0.017453292,param_2,param_5,&lStack_b8,&fStack_a0,auStack_c0,
+          Walaber::ParticleSet::getParticleSize(auStack_c0,this,(int)lVar7 + 1);
+          Walaber::SpriteBatch::drawQuad(fVar8 * 0.017453292,param_1,param_4,&lStack_b8,&fStack_a0,auStack_c0,
                           auStack_a8,0);
           plVar4 = &lStack_b8;
         }
@@ -697,7 +695,7 @@ void Walaber::ParticleSet::drawParticles
       }
       lVar7 = lVar7 + 1;
       lVar6 = lVar6 + 0x74;
-    } while (lVar7 < (int)param_1[6]);
+    } while (lVar7 < (int)this[6]);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_88) {
     return;
@@ -716,8 +714,7 @@ void Walaber::ParticleSet::drawParticles
    Walaber::Color const&, int, float, bool) */
 
 void Walaber::ParticleSet::drawParticles
-               (float param_1,long *param_2,undefined8 param_3,long *param_4,float *param_5,
-               undefined4 param_6,ulong param_7)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,int param_4,float param_5,bool param_6)
 
 {
   long lVar1;
@@ -743,17 +740,17 @@ void Walaber::ParticleSet::drawParticles
   
   lVar3 = tpidr_el0;
   lStack_98 = *(long *)(lVar3 + 0x28);
-  if (-1 < (int)param_2[6]) {
+  if (-1 < (int)param_1[6]) {
     lVar6 = 0;
     lVar7 = -1;
-    plVar4 = param_2;
+    plVar4 = param_1;
     do {
-      lVar5 = *param_2;
+      lVar5 = *param_1;
       lVar1 = lVar5 + lVar6;
       if (*(char *)(lVar1 + 0x34) != '\0') {
         if (*(float *)(lVar1 + 0x30) == -1.0) {
-          lStack_a8 = *param_4;
-          piStack_a0 = (int *)param_4[1];
+          lStack_a8 = *param_3;
+          piStack_a0 = (int *)param_3[1];
           if (lStack_a8 != 0) {
             *piStack_a0 = *piStack_a0 + 1;
           }
@@ -763,35 +760,35 @@ void Walaber::ParticleSet::drawParticles
           fVar8 = (float)sinf(fVar8 * 0.017453292);
           fStack_b0 = *pfVar2 + (fVar9 * pfVar2[0xe] - fVar8 * pfVar2[0xf]);
           fStack_ac = pfVar2[1] + fVar8 * pfVar2[0xe] + fVar9 * pfVar2[0xf];
-          uVar10 = *(undefined8 *)(*param_2 + lVar6 + 0x20);
-          uStack_b8 = CONCAT44(param_1 * (float)((ulong)uVar10 >> 0x20),param_1 * (float)uVar10);
+          uVar10 = *(undefined8 *)(*param_1 + lVar6 + 0x20);
+          uStack_b8 = CONCAT44(this * (float)((ulong)uVar10 >> 0x20),this * (float)uVar10);
                     /* try { // try from 003948cc to 003948eb has its CatchHandler @ 00394a3c */
-          Walaber::SpriteBatch::drawQuad(*(float *)(*param_2 + lVar6 + 0x50) * 0.017453292,param_3,param_6,
-                          &lStack_a8,&fStack_b0,&uStack_b8,param_5,0);
+          Walaber::SpriteBatch::drawQuad(*(float *)(*param_1 + lVar6 + 0x50) * 0.017453292,param_2,param_5,
+                          &lStack_a8,&fStack_b0,&uStack_b8,param_4,0);
           plVar4 = &lStack_a8;
         }
         else {
-          afStack_c0[0] = *param_5;
-          if ((param_7 & 1) != 0) {
-            Walaber::ParticleSet::_getParticleColor(&fStack_b0,plVar4,lVar1,param_5);
+          afStack_c0[0] = *param_4;
+          if ((param_6 & 1) != 0) {
+            Walaber::ParticleSet::_getParticleColor(&fStack_b0,plVar4,lVar1,param_4);
             afStack_c0[0] = fStack_b0;
           }
-          lStack_d0 = *param_4;
-          piStack_c8 = (int *)param_4[1];
+          lStack_d0 = *param_3;
+          piStack_c8 = (int *)param_3[1];
           if (lStack_d0 != 0) {
             *piStack_c8 = *piStack_c8 + 1;
           }
-          pfVar2 = (float *)(*param_2 + lVar6);
+          pfVar2 = (float *)(*param_1 + lVar6);
           fVar8 = pfVar2[0x14];
           fVar9 = (float)cosf(fVar8 * 0.017453292);
           fVar8 = (float)sinf(fVar8 * 0.017453292);
           fStack_b0 = *pfVar2 + (fVar9 * pfVar2[0xe] - fVar8 * pfVar2[0xf]);
           fStack_ac = pfVar2[1] + fVar8 * pfVar2[0xe] + fVar9 * pfVar2[0xf];
-          fVar8 = *(float *)(*param_2 + lVar6 + 0x50);
+          fVar8 = *(float *)(*param_1 + lVar6 + 0x50);
                     /* try { // try from 003949a4 to 003949df has its CatchHandler @ 00394a48 */
-          Walaber::ParticleSet::getParticleSize(auStack_d8,param_2,(int)lVar7 + 1);
-          uStack_b8 = CONCAT44(param_1 * auStack_d8._4_4_,param_1 * auStack_d8._0_4_);
-          Walaber::SpriteBatch::drawQuad(fVar8 * 0.017453292,param_3,param_6,&lStack_d0,&fStack_b0,&uStack_b8,
+          Walaber::ParticleSet::getParticleSize(auStack_d8,param_1,(int)lVar7 + 1);
+          uStack_b8 = CONCAT44(this * auStack_d8._4_4_,this * auStack_d8._0_4_);
+          Walaber::SpriteBatch::drawQuad(fVar8 * 0.017453292,param_2,param_5,&lStack_d0,&fStack_b0,&uStack_b8,
                           afStack_c0,0);
           plVar4 = &lStack_d0;
         }
@@ -799,7 +796,7 @@ void Walaber::ParticleSet::drawParticles
       }
       lVar7 = lVar7 + 1;
       lVar6 = lVar6 + 0x74;
-    } while (lVar7 < (int)param_2[6]);
+    } while (lVar7 < (int)param_1[6]);
   }
   if (*(long *)(lVar3 + 0x28) == lStack_98) {
     return;

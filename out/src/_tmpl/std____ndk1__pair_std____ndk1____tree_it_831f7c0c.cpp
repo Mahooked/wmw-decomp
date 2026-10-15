@@ -32,7 +32,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>>,std::__ndk1::__map_value_compare<int,std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>>,std::__ndk1::less<int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<int,std::__ndk1::vector<Walaber::SkeletonActor::AnimationGroupDataAux,std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>>>>>
 ::
 __emplace_unique_key_args<int,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<int_const&>,std::__ndk1::tuple<>>
-          (long param_1,int *param_2,undefined8 param_3,undefined8 *param_4)
+          (int const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<int const&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

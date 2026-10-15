@@ -59,7 +59,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<Walaber::SoundManager::SoundInfo,std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>& param_1)
 
 {
   undefined4 uVar1;
@@ -71,13 +71,13 @@ void std::__ndk1::
   long lVar7;
   long lVar8;
   
-  lVar6 = *param_1;
-  if (param_1[1] == lVar6) {
-    lVar7 = param_2[1];
+  lVar6 = *this;
+  if (this[1] == lVar6) {
+    lVar7 = param_1[1];
   }
   else {
-    lVar7 = param_2[1];
-    lVar8 = param_1[1];
+    lVar7 = param_1[1];
+    lVar8 = this[1];
     do {
       lVar5 = lVar8 + -0x48;
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + -0x48,lVar5);
@@ -95,21 +95,21 @@ void std::__ndk1::
       *(undefined4 *)(lVar7 + -0x20) = uVar1;
                     /* try { // try from 00356de4 to 00356de7 has its CatchHandler @ 00356e54 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar7 + -0x18,lVar8 + -0x18);
-      lVar7 = param_2[1] + -0x48;
-      param_2[1] = lVar7;
+      lVar7 = param_1[1] + -0x48;
+      param_1[1] = lVar7;
       lVar8 = lVar5;
     } while (lVar6 != lVar5);
-    lVar6 = *param_1;
+    lVar6 = *this;
   }
-  *param_1 = lVar7;
-  param_2[1] = lVar6;
-  lVar6 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar6;
-  lVar6 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar6;
-  *param_2 = param_2[1];
+  *this = lVar7;
+  param_1[1] = lVar6;
+  lVar6 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar6;
+  lVar6 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar6;
+  *param_1 = param_1[1];
   return;
 }
 

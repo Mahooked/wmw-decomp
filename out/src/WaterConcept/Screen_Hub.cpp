@@ -5429,8 +5429,7 @@ LAB_004e22a0:
    std::__ndk1::allocator<char> > const&, bool, bool, bool) */
 
 long * WaterConcept::Screen_Hub::_copyAndFormatLabel
-                 (long param_1,int param_2,int param_3,undefined4 param_4,undefined8 *param_5,
-                 byte *param_6,byte *param_7,uint param_8,byte param_9,byte param_10)
+                 (int param_1,int param_2,int param_3,Walaber::Vector2 const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,bool param_7,bool param_8,bool param_9)
 
 {
   ulong uVar1;
@@ -5454,42 +5453,42 @@ long * WaterConcept::Screen_Hub::_copyAndFormatLabel
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  if ((param_8 & 1) == 0) {
+  if ((param_7 & 1) == 0) {
 LAB_004e3398:
-    if ((param_9 & 1) != 0) {
-      uVar1 = (ulong)(*param_7 >> 1);
-      if ((*param_7 & 1) != 0) {
-        uVar1 = *(ulong *)(param_7 + 8);
+    if ((param_8 & 1) != 0) {
+      uVar1 = (ulong)(*param_6 >> 1);
+      if ((*param_6 & 1) != 0) {
+        uVar1 = *(ulong *)(param_6 + 8);
       }
                     /* try { // try from 004e33b8 to 004e33d3 has its CatchHandler @ 004e35ec */
       if ((uVar1 == 0) &&
-         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0))
+         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0))
       goto LAB_004e35b4;
     }
     plVar4 = (long *)operator new(0x188);
                     /* try { // try from 004e33e8 to 004e33ff has its CatchHandler @ 004e3674 */
-    uVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),param_2);
+    uVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(this + 0x10),param_1);
     Walaber::Widget_Label::Widget_Label(plVar4,uVar5);
-    Walaber::StringHelper::intToStr(auStack_70,param_3 + param_2);
+    Walaber::StringHelper::intToStr(auStack_70,param_2 + param_1);
                     /* try { // try from 004e340c to 004e3417 has its CatchHandler @ 004e3660 */
     Walaber::PCSNode::setName(plVar4,auStack_70);
     if (((byte)auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
-    uVar5 = NEON_scvtf(CONCAT44(param_4,param_4),4);
+    uVar5 = NEON_scvtf(CONCAT44(param_3,param_3),4);
     auStack_70[0] =
-         CONCAT44((float)((ulong)*param_5 >> 0x20) * (float)((ulong)uVar5 >> 0x20),
-                  (float)*param_5 * (float)uVar5);
+         CONCAT44((float)((ulong)*param_4 >> 0x20) * (float)((ulong)uVar5 >> 0x20),
+                  (float)*param_4 * (float)uVar5);
     (**(code **)(*plVar4 + 0x28))(plVar4,auStack_70);
-    uVar1 = (ulong)(*param_7 >> 1);
-    if ((*param_7 & 1) != 0) {
-      uVar1 = *(ulong *)(param_7 + 8);
+    uVar1 = (ulong)(*param_6 >> 1);
+    if ((*param_6 & 1) != 0) {
+      uVar1 = *(ulong *)(param_6 + 8);
     }
                     /* try { // try from 004e3468 to 004e3483 has its CatchHandler @ 004e35f8 */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
       uVar5 = Walaber::TextureManager::getManager();
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_7);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_6);
       uStack_b0 = 0;
       uStack_a8 = 0;
       uStack_a0 = 0;
@@ -5511,18 +5510,18 @@ LAB_004e3398:
         operator delete(pvStack_60);
       }
     }
-    uVar1 = (ulong)(*param_6 >> 1);
-    if ((*param_6 & 1) != 0) {
-      uVar1 = *(ulong *)(param_6 + 8);
+    uVar1 = (ulong)(*param_5 >> 1);
+    if ((*param_5 & 1) != 0) {
+      uVar1 = *(ulong *)(param_5 + 8);
     }
                     /* try { // try from 004e3534 to 004e354f has its CatchHandler @ 004e35f4 */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
-      if ((param_10 & 1) == 0) {
-        Walaber::Widget_Label::setText(plVar4,param_6);
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+      if ((param_9 & 1) == 0) {
+        Walaber::Widget_Label::setText(plVar4,param_5);
       }
       else {
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,param_6);
+        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_c8,param_5);
                     /* try { // try from 004e3568 to 004e3573 has its CatchHandler @ 004e3614 */
         Walaber::TextManager::getString(auStack_70,abStack_c8);
                     /* try { // try from 004e3574 to 004e357f has its CatchHandler @ 004e35fc */
@@ -5537,13 +5536,13 @@ LAB_004e3398:
     }
   }
   else {
-    uVar1 = (ulong)(*param_6 >> 1);
-    if ((*param_6 & 1) != 0) {
-      uVar1 = *(ulong *)(param_6 + 8);
+    uVar1 = (ulong)(*param_5 >> 1);
+    if ((*param_5 & 1) != 0) {
+      uVar1 = *(ulong *)(param_5 + 8);
     }
                     /* try { // try from 004e3378 to 004e3393 has its CatchHandler @ 004e35f0 */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0))
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0))
     goto LAB_004e3398;
 LAB_004e35b4:
     plVar4 = (long *)0x0;
@@ -5568,8 +5567,7 @@ LAB_004e35b4:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, bool, bool) */
 
 long * WaterConcept::Screen_Hub::_copyAndFormatButton
-                 (long param_1,int param_2,int param_3,undefined4 param_4,undefined8 *param_5,
-                 byte *param_6,byte *param_7,byte *param_8,byte param_9,byte param_10)
+                 (int param_1,int param_2,int param_3,Walaber::Vector2 const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,bool param_8,bool param_9)
 
 {
   ulong uVar1;
@@ -5601,42 +5599,42 @@ long * WaterConcept::Screen_Hub::_copyAndFormatButton
   
   lVar2 = tpidr_el0;
   lStack_70 = *(long *)(lVar2 + 0x28);
-  if ((param_9 & 1) != 0) {
-    uVar1 = (ulong)(*param_6 >> 1);
-    if ((*param_6 & 1) != 0) {
-      uVar1 = *(ulong *)(param_6 + 8);
+  if ((param_8 & 1) != 0) {
+    uVar1 = (ulong)(*param_5 >> 1);
+    if ((*param_5 & 1) != 0) {
+      uVar1 = *(ulong *)(param_5 + 8);
     }
                     /* try { // try from 004e36f4 to 004e370f has its CatchHandler @ 004e3a30 */
     if ((uVar1 == 0) &&
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
       plVar4 = (long *)0x0;
       goto LAB_004e39f0;
     }
   }
   plVar4 = (long *)operator new(0x1c8);
                     /* try { // try from 004e3724 to 004e373b has its CatchHandler @ 004e3af0 */
-  uVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),param_2);
+  uVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(this + 0x10),param_1);
   Walaber::Widget_PushButton::Widget_PushButton(plVar4,uVar5);
-  Walaber::StringHelper::intToStr(auStack_88,param_3 + param_2);
+  Walaber::StringHelper::intToStr(auStack_88,param_2 + param_1);
                     /* try { // try from 004e3748 to 004e3753 has its CatchHandler @ 004e3adc */
   Walaber::PCSNode::setName(plVar4,auStack_88);
   if (((byte)auStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
-  uVar5 = NEON_scvtf(CONCAT44(param_4,param_4),4);
+  uVar5 = NEON_scvtf(CONCAT44(param_3,param_3),4);
   auStack_88[0] =
-       CONCAT44((float)((ulong)*param_5 >> 0x20) * (float)((ulong)uVar5 >> 0x20),
-                (float)*param_5 * (float)uVar5);
+       CONCAT44((float)((ulong)*param_4 >> 0x20) * (float)((ulong)uVar5 >> 0x20),
+                (float)*param_4 * (float)uVar5);
   (**(code **)(*plVar4 + 0x28))(plVar4,auStack_88);
-  uVar1 = (ulong)(*param_7 >> 1);
-  if ((*param_7 & 1) != 0) {
-    uVar1 = *(ulong *)(param_7 + 8);
+  uVar1 = (ulong)(*param_6 >> 1);
+  if ((*param_6 & 1) != 0) {
+    uVar1 = *(ulong *)(param_6 + 8);
   }
                     /* try { // try from 004e37a4 to 004e37bf has its CatchHandler @ 004e3a3c */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_6);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_b8 = 0;
@@ -5659,15 +5657,15 @@ long * WaterConcept::Screen_Hub::_copyAndFormatButton
       operator delete(pvStack_78);
     }
   }
-  uVar1 = (ulong)(*param_8 >> 1);
-  if ((*param_8 & 1) != 0) {
-    uVar1 = *(ulong *)(param_8 + 8);
+  uVar1 = (ulong)(*param_7 >> 1);
+  if ((*param_7 & 1) != 0) {
+    uVar1 = *(ulong *)(param_7 + 8);
   }
                     /* try { // try from 004e3878 to 004e3893 has its CatchHandler @ 004e3a38 */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_8,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_8);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
     uStack_c8 = 0;
     uStack_c0 = 0;
     uStack_e8 = 0;
@@ -5690,21 +5688,21 @@ long * WaterConcept::Screen_Hub::_copyAndFormatButton
       operator delete(pvStack_78);
     }
   }
-  uVar1 = (ulong)(*param_6 >> 1);
-  if ((*param_6 & 1) != 0) {
-    uVar1 = *(ulong *)(param_6 + 8);
+  uVar1 = (ulong)(*param_5 >> 1);
+  if ((*param_5 & 1) != 0) {
+    uVar1 = *(ulong *)(param_5 + 8);
   }
                     /* try { // try from 004e394c to 004e3967 has its CatchHandler @ 004e3a34 */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
-    if ((param_10 & 1) == 0) {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_130,param_6);
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+    if ((param_9 & 1) == 0) {
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_130,param_5);
                     /* try { // try from 004e39d0 to 004e39df has its CatchHandler @ 004e3a48 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(plVar4 + 0x2f,abStack_130);
       Walaber::Widget_PushButton::_resizeFont(plVar4);
     }
     else {
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_118,param_6);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_118,param_5);
                     /* try { // try from 004e3980 to 004e398b has its CatchHandler @ 004e3a40 */
       Walaber::TextManager::getString(abStack_100,abStack_118);
                     /* try { // try from 004e3990 to 004e399f has its CatchHandler @ 004e3a5c */

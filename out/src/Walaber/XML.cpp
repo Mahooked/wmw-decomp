@@ -11,7 +11,7 @@
    std::__ndk1::allocator<char> >, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, _xmlDoc*&) */
 
-long Walaber::XML::loadDoc(byte *param_1,byte *param_2,undefined8 *param_3)
+long Walaber::XML::loadDoc(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2,_xmlDoc*& param_3)
 
 {
   int iVar1;
@@ -78,7 +78,7 @@ long Walaber::XML::loadDoc(byte *param_1,byte *param_2,undefined8 *param_3)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, _xmlDoc*&) */
 
 long Walaber::XML::loadDocMemory
-               (undefined8 param_1,undefined8 param_2,byte *param_3,undefined8 *param_4)
+               (char *param_1,unsigned long param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_3,_xmlDoc*& param_4)
 
 {
   int iVar1;
@@ -545,7 +545,7 @@ LAB_00433920:
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >)
     */
 
-void Walaber::XML::newPropertyList(undefined8 param_1,undefined8 *param_2,byte *param_3)
+void Walaber::XML::newPropertyList(_xmlNode *param_1,Walaber::PropertyList const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_3)
 
 {
   void *pvVar1;

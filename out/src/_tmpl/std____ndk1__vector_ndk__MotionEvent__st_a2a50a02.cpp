@@ -147,7 +147,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
    std::__ndk1::allocator<ndk::MotionEvent>&>&) */
 
 void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEvent>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     __swap_out_circular_buffer(std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>& param_1)
 
 {
   long lVar1;
@@ -157,13 +157,13 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   long lVar5;
   undefined8 uVar6;
   
-  lVar5 = *param_1;
-  lVar2 = param_1[1];
+  lVar5 = *this;
+  lVar2 = this[1];
   if (lVar2 == lVar5) {
-    lVar3 = param_2[1];
+    lVar3 = param_1[1];
   }
   else {
-    lVar3 = param_2[1];
+    lVar3 = param_1[1];
     lVar4 = 0;
     do {
       lVar1 = lVar2 + lVar4;
@@ -220,20 +220,20 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
       *(undefined8 *)(lVar1 + -0x10) = 0;
       *(undefined8 *)(lVar1 + -8) = 0;
       *(undefined8 *)(lVar1 + -0x18) = 0;
-      lVar3 = param_2[1] + -0x80;
-      param_2[1] = lVar3;
+      lVar3 = param_1[1] + -0x80;
+      param_1[1] = lVar3;
     } while (lVar5 - lVar2 != lVar4);
-    lVar5 = *param_1;
+    lVar5 = *this;
   }
-  *param_1 = lVar3;
-  param_2[1] = lVar5;
-  lVar5 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar5;
-  lVar5 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar5;
-  *param_2 = param_2[1];
+  *this = lVar3;
+  param_1[1] = lVar5;
+  lVar5 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar5;
+  lVar5 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar5;
+  *param_1 = param_1[1];
   return;
 }
 

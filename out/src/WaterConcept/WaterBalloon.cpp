@@ -2198,7 +2198,7 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
 
 /* WaterConcept::WaterBalloon::doPop(WaterConcept::WaterBalloon::WaterBalloonCallbackReason) */
 
-void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
+void WaterConcept::WaterBalloon::doPop(WaterConcept::WaterBalloon::WaterBalloonCallbackReason param_1)
 
 {
   long lVar1;
@@ -2212,18 +2212,18 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
   
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
-  plVar2 = *(long **)(param_1 + 0x4e8);
+  plVar2 = *(long **)(this + 0x4e8);
   if (plVar2 != (long *)0x0) {
     pvStack_48 = (void *)0x0;
     pvStack_40 = (void *)0x0;
     uStack_38 = 0;
-    lStack_58 = param_1;
-    uStack_50 = param_2;
-    if (&pvStack_48 != (void **)(param_1 + 0x458)) {
+    lStack_58 = this;
+    uStack_50 = param_1;
+    if (&pvStack_48 != (void **)(this + 0x458)) {
                     /* try { // try from 00498134 to 0049814f has its CatchHandler @ 0049818c */
-      std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&pvStack_48,*(undefined8 *)(param_1 + 0x458),*(undefined8 *)(param_1 + 0x460))
+      std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&pvStack_48,*(undefined8 *)(this + 0x458),*(undefined8 *)(this + 0x460))
       ;
-      plVar2 = *(long **)(param_1 + 0x4e8);
+      plVar2 = *(long **)(this + 0x4e8);
     }
     (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_58);
     if (pvStack_48 != (void *)0x0) {
@@ -2231,7 +2231,7 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
       operator delete(pvStack_48);
     }
   }
-  *(undefined1 *)(param_1 + 0xdc) = 1;
+  *(undefined1 *)(this + 0xdc) = 1;
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
   }

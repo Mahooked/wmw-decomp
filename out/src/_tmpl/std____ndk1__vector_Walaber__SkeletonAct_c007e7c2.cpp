@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent,std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>> const& param_1)
 
 {
   undefined8 *puVar1;
@@ -24,16 +24,16 @@ void std::__ndk1::
   undefined8 uVar5;
   undefined8 uVar6;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 0033a10c to 0033a10f has its CatchHandler @ 0033a16c */
-    std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::__vallocate(param_1,(param_2[1] - *param_2 >> 3) * 0x6db6db6db6db6db7);
-    puVar3 = (undefined8 *)*param_2;
-    puVar2 = (undefined8 *)param_2[1];
+    std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::__vallocate(this,(param_1[1] - *param_1 >> 3) * 0x6db6db6db6db6db7);
+    puVar3 = (undefined8 *)*param_1;
+    puVar2 = (undefined8 *)param_1[1];
     if (puVar3 != puVar2) {
-      puVar4 = (undefined8 *)param_1[1];
+      puVar4 = (undefined8 *)this[1];
       do {
         *puVar4 = *puVar3;
                     /* try { // try from 0033a12c to 0033a133 has its CatchHandler @ 0033a170 */
@@ -45,8 +45,8 @@ void std::__ndk1::
         *(undefined2 *)(puVar4 + 6) = *(undefined2 *)puVar1;
         puVar4[5] = uVar6;
         puVar4[4] = uVar5;
-        puVar4 = (undefined8 *)(param_1[1] + 0x38);
-        param_1[1] = puVar4;
+        puVar4 = (undefined8 *)(this[1] + 0x38);
+        this[1] = puVar4;
       } while (puVar3 != puVar2);
     }
   }

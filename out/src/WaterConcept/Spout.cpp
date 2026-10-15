@@ -11,8 +11,7 @@
    WaterConcept::Spout::SpoutType) */
 
 void WaterConcept::Spout::Spout
-               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3,undefined8 param_4,
-               undefined4 param_5)
+               (Walaber::Vector2 param_1,float param_2,Walaber::Vector2 param_3,WaterConcept::Fluids *param_4,WaterConcept::Spout::SpoutType param_5)
 
 {
   long lVar1;
@@ -1663,7 +1662,7 @@ LAB_0048d4d4:
 
 undefined8
 WaterConcept::Spout::_addParticleToRandomSpout
-          (ulong param_1,long param_2,undefined8 param_3,long *param_4,undefined4 param_5)
+          (WaterConcept::ParticleDescription const& param_1,std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>> const& param_2,int param_3,float param_4)
 
 {
   undefined4 *puVar1;
@@ -1703,7 +1702,7 @@ WaterConcept::Spout::_addParticleToRandomSpout
   
   lVar3 = tpidr_el0;
   lStack_a0 = *(long *)(lVar3 + 0x28);
-  uVar12 = param_4[1] - *param_4 >> 4;
+  uVar12 = param_3[1] - *param_3 >> 4;
   uVar11 = uVar12 & 0xffffffff;
   lStack_d0 = CONCAT71(lStack_d0._1_7_,1);
   std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::vector(apvStack_e8,uVar11,&lStack_d0);
@@ -1713,7 +1712,7 @@ LAB_0048d6bc:
   if (iVar4 != 0) {
     uVar7 = 0;
     fVar22 = 0.0;
-    pfVar9 = (float *)(*param_4 + 8);
+    pfVar9 = (float *)(*param_3 + 8);
     do {
       if ((*(ulong *)((long)apvStack_e8[0] + (uVar7 >> 3 & 0x1ffffffffffffff8)) &
           1L << (uVar7 & 0x3f)) != 0) {
@@ -1745,42 +1744,42 @@ LAB_0048d714:
     uVar13 = uVar7 >> 6;
     uVar14 = 1L << (uVar7 & 0x3f);
     if ((*(ulong *)((long)apvStack_e8[0] + uVar13 * 8) & uVar14) != 0) {
-      fVar16 = *(float *)(*param_4 + lVar15 + 8);
+      fVar16 = *(float *)(*param_3 + lVar15 + 8);
       fVar23 = fVar23 + fVar16;
       if ((fVar16 != 0.0) && ((fVar22 / 10000.0) * (float)(iVar5 % 0x2711) + 0.0 <= fVar23)) {
-        lVar8 = *(long *)(param_2 + 0x4c0);
+        lVar8 = *(long *)(param_1 + 0x4c0);
         if (lVar8 != 0) {
           if (*(long *)(lVar8 + 0x3b0) == *(long *)(lVar8 + 0x3b8)) {
-            param_5 = 1;
-            param_1 = 0;
+            param_4 = 1;
+            this = 0;
           }
           else {
             puVar1 = (undefined4 *)(*(long *)(lVar8 + 0x3b0) + (long)*(int *)(lVar8 + 0x3c8) * 8);
-            param_5 = *puVar1;
-            param_1 = (ulong)(uint)puVar1[1];
+            param_4 = *puVar1;
+            this = (ulong)(uint)puVar1[1];
           }
         }
-        puVar2 = (undefined8 *)(*param_4 + lVar15);
+        puVar2 = (undefined8 *)(*param_3 + lVar15);
         plVar6 = (long *)*puVar2;
                     /* try { // try from 0048d664 to 0048d677 has its CatchHandler @ 0048d96c */
         iVar4 = (**(code **)(*plVar6 + 0xd0))
-                          (param_1,plVar6,param_3,1,*(undefined4 *)((long)puVar2 + 0xc),param_5);
+                          (this,plVar6,param_2,1,*(undefined4 *)((long)puVar2 + 0xc),param_4);
         if (iVar4 == 2) break;
         if (iVar4 == 1) {
-          if (((*(int *)(param_2 + 0x3d4) != 4) && (*(float *)(param_2 + 0x468) <= 0.0)) &&
-             (*(long *)(param_2 + 0x478) != 0)) {
-            uVar19 = *(undefined4 *)(param_2 + 0x74);
-            uVar20 = *(undefined8 *)(param_2 + 0x5c);
-            *(undefined4 *)(param_2 + 0x468) = 0x3dcccccd;
+          if (((*(int *)(param_1 + 0x3d4) != 4) && (*(float *)(param_1 + 0x468) <= 0.0)) &&
+             (*(long *)(param_1 + 0x478) != 0)) {
+            uVar19 = *(undefined4 *)(param_1 + 0x74);
+            uVar20 = *(undefined8 *)(param_1 + 0x5c);
+            *(undefined4 *)(param_1 + 0x468) = 0x3dcccccd;
             fVar22 = (float)cosf(uVar19);
             fVar23 = (float)sinf(uVar19);
             uVar10 = 1;
-            if (*(long *)(param_2 + 0x478) == 0) goto LAB_0048d714;
+            if (*(long *)(param_1 + 0x478) == 0) goto LAB_0048d714;
             uStack_c4 = 0;
             uStack_c8 = 1;
                     /* try { // try from 0048d7c8 to 0048d7d3 has its CatchHandler @ 0048d95c */
-            lStack_d0 = param_2;
-            Walaber::Node::getWorldPosition(auStack_f0,param_2);
+            lStack_d0 = param_1;
+            Walaber::Node::getWorldPosition(auStack_f0,param_1);
             uStack_bc = 0xffffffff;
             fVar18 = (float)uVar20;
             fVar17 = fVar18 * 0.0;
@@ -1791,30 +1790,30 @@ LAB_0048d714:
             fVar17 = fVar17 * fVar22;
             uStack_c4 = CONCAT44(fVar16 * fVar22 + (float)((ulong)uVar10 >> 0x20) * fVar23 +
                                  auStack_f0._4_4_,(fVar17 - fVar18) + auStack_f0._0_4_);
-            uStack_b8 = *(undefined1 *)(param_2 + 0x3a0);
-            uStack_b0 = *(undefined8 *)(param_2 + 0x4c0);
-            bStack_a8 = (byte)((uint)*(undefined4 *)(param_2 + 0x2a8) >> 0x1f) ^ 1;
-            uStack_a7 = 0.0 < *(float *)(param_2 + 0x4d0);
+            uStack_b8 = *(undefined1 *)(param_1 + 0x3a0);
+            uStack_b0 = *(undefined8 *)(param_1 + 0x4c0);
+            bStack_a8 = (byte)((uint)*(undefined4 *)(param_1 + 0x2a8) >> 0x1f) ^ 1;
+            uStack_a7 = 0.0 < *(float *)(param_1 + 0x4d0);
                     /* try { // try from 0048d858 to 0048d85f has its CatchHandler @ 0048d958 */
-            (**(code **)(**(long **)(param_2 + 0x478) + 0x10))
-                      (*(float *)(param_2 + 0x4d0),fVar17 + fVar18,*(long **)(param_2 + 0x478),
+            (**(code **)(**(long **)(param_1 + 0x478) + 0x10))
+                      (*(float *)(param_1 + 0x4d0),fVar17 + fVar18,*(long **)(param_1 + 0x478),
                        &lStack_d0);
           }
           uVar10 = 1;
           goto LAB_0048d714;
         }
         if (iVar4 == 0) {
-          if ((*(long *)(param_2 + 0x478) != 0) && (*(int *)(param_2 + 0x3d4) != 4)) {
-            uVar19 = *(undefined4 *)(param_2 + 0x74);
-            uVar10 = *(undefined8 *)(param_2 + 0x5c);
+          if ((*(long *)(param_1 + 0x478) != 0) && (*(int *)(param_1 + 0x3d4) != 4)) {
+            uVar19 = *(undefined4 *)(param_1 + 0x74);
+            uVar10 = *(undefined8 *)(param_1 + 0x5c);
             fVar22 = (float)cosf(uVar19);
             fVar23 = (float)sinf(uVar19);
-            if (*(long *)(param_2 + 0x478) != 0) {
+            if (*(long *)(param_1 + 0x478) != 0) {
               uStack_c4 = 0;
               uStack_c8 = 1;
                     /* try { // try from 0048d8b4 to 0048d8bf has its CatchHandler @ 0048d964 */
-              lStack_d0 = param_2;
-              Walaber::Node::getWorldPosition(auStack_f0,param_2);
+              lStack_d0 = param_1;
+              Walaber::Node::getWorldPosition(auStack_f0,param_1);
               uStack_bc = 0xffffffff;
               fVar18 = (float)uVar10;
               fVar17 = fVar18 * 0.0;
@@ -1825,13 +1824,13 @@ LAB_0048d714:
               fVar17 = fVar17 * fVar22;
               uStack_c4 = CONCAT44(fVar16 * fVar22 + (float)((ulong)uVar10 >> 0x20) * fVar23 +
                                    auStack_f0._4_4_,(fVar17 - fVar18) + auStack_f0._0_4_);
-              uStack_b8 = *(undefined1 *)(param_2 + 0x3a0);
-              uStack_b0 = *(undefined8 *)(param_2 + 0x4c0);
-              bStack_a8 = (byte)((uint)*(undefined4 *)(param_2 + 0x2a8) >> 0x1f) ^ 1;
-              uStack_a7 = 0.0 < *(float *)(param_2 + 0x4d0);
+              uStack_b8 = *(undefined1 *)(param_1 + 0x3a0);
+              uStack_b0 = *(undefined8 *)(param_1 + 0x4c0);
+              bStack_a8 = (byte)((uint)*(undefined4 *)(param_1 + 0x2a8) >> 0x1f) ^ 1;
+              uStack_a7 = 0.0 < *(float *)(param_1 + 0x4d0);
                     /* try { // try from 0048d944 to 0048d94b has its CatchHandler @ 0048d960 */
-              (**(code **)(**(long **)(param_2 + 0x478) + 0x10))
-                        (*(float *)(param_2 + 0x4d0),fVar17 + fVar18,*(long **)(param_2 + 0x478),
+              (**(code **)(**(long **)(param_1 + 0x478) + 0x10))
+                        (*(float *)(param_1 + 0x4d0),fVar17 + fVar18,*(long **)(param_1 + 0x478),
                          &lStack_d0);
             }
           }
@@ -1929,8 +1928,7 @@ undefined8 WaterConcept::Spout::handleLostTouch(void)
    WaterConcept::YSwitchPort, int, float) */
 
 void WaterConcept::Spout::addParticles
-               (undefined4 param_1,long param_2,int *param_3,int param_4,undefined8 param_5,
-               int param_6)
+               (WaterConcept::ParticleDescription const& param_1,int param_2,WaterConcept::YSwitchPort param_3,int param_4,float param_5)
 
 {
   int iVar1;
@@ -1947,61 +1945,61 @@ void WaterConcept::Spout::addParticles
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  if (*(char *)(param_2 + 0x112) != '\0') {
-    if ((*(int *)(param_2 + 0x430) == -1) || (param_3[2] < 1)) {
-      plVar4 = *(long **)(param_2 + 0x490);
+  if (*(char *)(param_1 + 0x112) != '\0') {
+    if ((*(int *)(param_1 + 0x430) == -1) || (param_2[2] < 1)) {
+      plVar4 = *(long **)(param_1 + 0x490);
       if (plVar4 != (long *)0x0) {
-        iStack_70 = *param_3;
-        if (param_6 != -1) {
-          iStack_70 = param_6;
+        iStack_70 = *param_2;
+        if (param_5 != -1) {
+          iStack_70 = param_5;
         }
-        uStack_78 = param_2;
-        iStack_6c = param_4;
+        uStack_78 = param_1;
+        iStack_6c = param_3;
         (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_78);
-        param_4 = iStack_6c;
+        param_3 = iStack_6c;
         if (iStack_6c == 0) goto LAB_0048dc60;
       }
-      if (*(char *)(param_2 + 0x4d4) != '\0') {
-        *(undefined1 *)(param_2 + 0x4d4) = 0;
-        std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::pop_front(param_2 + 0x400);
+      if (*(char *)(param_1 + 0x4d4) != '\0') {
+        *(undefined1 *)(param_1 + 0x4d4) = 0;
+        std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::pop_front(param_1 + 0x400);
       }
       uVar6 = 0;
-      if ((*(char *)(param_2 + 0x504) == '\0') && (0 < param_4)) {
+      if ((*(char *)(param_1 + 0x504) == '\0') && (0 < param_3)) {
         do {
-          iVar1 = *param_3;
-          iVar3 = param_6;
-          uVar7 = param_1;
-          if (param_6 == -1) {
-            plVar4 = (long *)WaterConcept::Fluids::getParticlesForFluid(*(undefined8 *)(param_2 + 0x3d8));
+          iVar1 = *param_2;
+          iVar3 = param_5;
+          uVar7 = this;
+          if (param_5 == -1) {
+            plVar4 = (long *)WaterConcept::Fluids::getParticlesForFluid(*(undefined8 *)(param_1 + 0x3d8));
             iVar3 = iVar1;
-            uVar7 = *(undefined4 *)(*plVar4 + (long)param_3[1] * 0x90 + 0x84);
+            uVar7 = *(undefined4 *)(*plVar4 + (long)param_2[1] * 0x90 + 0x84);
           }
           uStack_78 = CONCAT44(uVar7,iVar3);
-          std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(param_2 + 0x400,&uStack_78);
-          param_4 = param_4 + -1;
-        } while (param_4 != 0);
+          std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(param_1 + 0x400,&uStack_78);
+          param_3 = param_3 + -1;
+        } while (param_3 != 0);
         uVar6 = 0;
       }
       goto LAB_0048dc64;
     }
-    if (*(ulong *)(param_2 + 0x428) < (ulong)(long)*(int *)(param_2 + 0x430)) {
-      puVar5 = *(undefined8 **)(param_2 + 0x440);
-      if (puVar5 == *(undefined8 **)(param_2 + 0x448)) {
-        void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(param_2 + 0x438,param_3);
+    if (*(ulong *)(param_1 + 0x428) < (ulong)(long)*(int *)(param_1 + 0x430)) {
+      puVar5 = *(undefined8 **)(param_1 + 0x440);
+      if (puVar5 == *(undefined8 **)(param_1 + 0x448)) {
+        void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription const&>(param_1 + 0x438,param_2);
       }
       else {
-        uVar6 = *(undefined8 *)param_3;
-        *(int *)(puVar5 + 1) = param_3[2];
+        uVar6 = *(undefined8 *)param_2;
+        *(int *)(puVar5 + 1) = param_2[2];
         *puVar5 = uVar6;
-        *(long *)(param_2 + 0x440) = *(long *)(param_2 + 0x440) + 0xc;
+        *(long *)(param_1 + 0x440) = *(long *)(param_1 + 0x440) + 0xc;
       }
-      uStack_78 = CONCAT44(param_1,param_6);
-      if (*(long **)(param_2 + 0x458) < *(long **)(param_2 + 0x460)) {
-        **(long **)(param_2 + 0x458) = uStack_78;
-        *(long *)(param_2 + 0x458) = *(long *)(param_2 + 0x458) + 8;
+      uStack_78 = CONCAT44(this,param_5);
+      if (*(long **)(param_1 + 0x458) < *(long **)(param_1 + 0x460)) {
+        **(long **)(param_1 + 0x458) = uStack_78;
+        *(long *)(param_1 + 0x458) = *(long *)(param_1 + 0x458) + 8;
       }
       else {
-        void std::__ndk1::vector<std::__ndk1::pair<int, float>, std::__ndk1::allocator<std::__ndk1::pair<int, float>>>::__push_back_slow_path<std::__ndk1::pair<int, float>>(param_2 + 0x450,&uStack_78);
+        void std::__ndk1::vector<std::__ndk1::pair<int, float>, std::__ndk1::allocator<std::__ndk1::pair<int, float>>>::__push_back_slow_path<std::__ndk1::pair<int, float>>(param_1 + 0x450,&uStack_78);
       }
       uVar6 = 1;
       goto LAB_0048dc64;
@@ -2027,7 +2025,7 @@ LAB_0048dc64:
    std::__ndk1::vector<WaterConcept::ParticleDescription,
    std::__ndk1::allocator<WaterConcept::ParticleDescription> >*) */
 
-void WaterConcept::Spout::pickFinalParticles(long param_1,undefined8 param_2,long *param_3)
+void WaterConcept::Spout::pickFinalParticles(WaterConcept::Fluids *param_1,std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>> *param_2)
 
 {
   int iVar1;
@@ -2054,77 +2052,77 @@ void WaterConcept::Spout::pickFinalParticles(long param_1,undefined8 param_2,lon
   
   lVar5 = tpidr_el0;
   lStack_68 = *(long *)(lVar5 + 0x28);
-  if (*(int *)(param_1 + 0x430) != -1) {
-    iVar17 = *(int *)(param_1 + 0x430) - *(int *)(param_1 + 0x428);
+  if (*(int *)(this + 0x430) != -1) {
+    iVar17 = *(int *)(this + 0x430) - *(int *)(this + 0x428);
     if (iVar17 < 1) {
-      lVar9 = *(long *)(param_1 + 0x450);
-      *(undefined8 *)(param_1 + 0x440) = *(undefined8 *)(param_1 + 0x438);
+      lVar9 = *(long *)(this + 0x450);
+      *(undefined8 *)(this + 0x440) = *(undefined8 *)(this + 0x438);
     }
     else {
-      lVar10 = *(long *)(param_1 + 0x440);
+      lVar10 = *(long *)(this + 0x440);
       do {
-        if (lVar10 == *(long *)(param_1 + 0x438)) {
-          lVar9 = *(long *)(param_1 + 0x450);
+        if (lVar10 == *(long *)(this + 0x438)) {
+          lVar9 = *(long *)(this + 0x450);
           goto LAB_0048dfbc;
         }
         iVar6 = rand();
-        uVar8 = (*(long *)(param_1 + 0x440) - *(long *)(param_1 + 0x438) >> 2) * -0x5555555555555555
+        uVar8 = (*(long *)(this + 0x440) - *(long *)(this + 0x438) >> 2) * -0x5555555555555555
         ;
         iVar1 = 0;
         if (uVar8 != 0) {
           iVar1 = (int)((ulong)(long)iVar6 / uVar8);
         }
         iVar6 = iVar6 - iVar1 * (int)uVar8;
-        piVar11 = (int *)(*(long *)(param_1 + 0x438) + (long)iVar6 * 0xc);
+        piVar11 = (int *)(*(long *)(this + 0x438) + (long)iVar6 * 0xc);
         iVar1 = *piVar11;
         iVar2 = piVar11[1];
         uVar3 = piVar11[2];
         lVar16 = (long)iVar6;
-        plVar7 = (long *)WaterConcept::Fluids::getParticlesForFluid(param_2,iVar1);
+        plVar7 = (long *)WaterConcept::Fluids::getParticlesForFluid(param_1,iVar1);
         if (uVar3 == *(byte *)(*plVar7 + (long)iVar2 * 0x90 + 0x34)) {
-          iVar6 = *(int *)(*(long *)(param_1 + 0x450) + lVar16 * 8);
+          iVar6 = *(int *)(*(long *)(this + 0x450) + lVar16 * 8);
           if (iVar6 == -1) {
-            plVar7 = (long *)WaterConcept::Fluids::getParticlesForFluid(param_2,iVar1);
+            plVar7 = (long *)WaterConcept::Fluids::getParticlesForFluid(param_1,iVar1);
             puVar12 = (undefined4 *)(*plVar7 + (long)iVar2 * 0x90 + 0x84);
             iVar6 = iVar1;
           }
           else {
-            puVar12 = (undefined4 *)(*(long *)(param_1 + 0x450) + lVar16 * 8 + 4);
+            puVar12 = (undefined4 *)(*(long *)(this + 0x450) + lVar16 * 8 + 4);
           }
           uStack_78 = CONCAT44(*puVar12,iVar6);
-          std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(param_1 + 0x400,&uStack_78);
+          std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(this + 0x400,&uStack_78);
           uStack_78 = 0;
           uStack_70 = 0;
-          puVar15 = (undefined8 *)param_3[1];
-          if (puVar15 < (undefined8 *)param_3[2]) {
+          puVar15 = (undefined8 *)param_2[1];
+          if (puVar15 < (undefined8 *)param_2[2]) {
             *(undefined4 *)(puVar15 + 1) = 0;
             *puVar15 = 0;
-            lVar9 = param_3[1] + 0xc;
-            param_3[1] = lVar9;
+            lVar9 = param_2[1] + 0xc;
+            param_2[1] = lVar9;
           }
           else {
-            void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription>(param_3,&uStack_78);
-            lVar9 = param_3[1];
+            void std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::__push_back_slow_path<WaterConcept::ParticleDescription>(param_2,&uStack_78);
+            lVar9 = param_2[1];
           }
-          lVar9 = lVar9 - *param_3;
+          lVar9 = lVar9 - *param_2;
           if (lVar9 == 0) {
-            std::__ndk1::__vector_base_common<true>::__throw_out_of_range(param_3);
+            std::__ndk1::__vector_base_common<true>::__throw_out_of_range(param_2);
             goto LAB_0048e004;
           }
-          lVar9 = *param_3 + lVar9;
+          lVar9 = *param_2 + lVar9;
           *(int *)(lVar9 + -0xc) = iVar1;
           *(int *)(lVar9 + -8) = iVar2;
           *(uint *)(lVar9 + -4) = uVar3;
-          lVar10 = *(long *)(param_1 + 0x438) + lVar16 * 0xc;
-          lVar4 = *(long *)(param_1 + 0x440) - (lVar10 + 0xc);
+          lVar10 = *(long *)(this + 0x438) + lVar16 * 0xc;
+          lVar4 = *(long *)(this + 0x440) - (lVar10 + 0xc);
           iVar17 = iVar17 + -1;
           if (lVar4 != 0) {
             memmove(lVar10);
           }
-          lVar9 = *(long *)(param_1 + 0x450);
-          puVar13 = *(undefined8 **)(param_1 + 0x458);
+          lVar9 = *(long *)(this + 0x450);
+          puVar13 = *(undefined8 **)(this + 0x458);
           lVar10 = lVar10 + (lVar4 >> 2) * 4;
-          *(long *)(param_1 + 0x440) = lVar10;
+          *(long *)(this + 0x440) = lVar10;
           lVar16 = lVar9 + lVar16 * 8;
           puVar14 = (undefined8 *)(lVar16 + 8);
           puVar15 = puVar14;
@@ -2137,17 +2135,17 @@ void WaterConcept::Spout::pickFinalParticles(long param_1,undefined8 param_2,lon
           }
         }
         else {
-          lVar10 = *(long *)(param_1 + 0x438) + lVar16 * 0xc;
-          lVar4 = *(long *)(param_1 + 0x440) - (lVar10 + 0xc);
+          lVar10 = *(long *)(this + 0x438) + lVar16 * 0xc;
+          lVar4 = *(long *)(this + 0x440) - (lVar10 + 0xc);
           if (lVar4 != 0) {
             memmove(lVar10);
           }
-          lVar9 = *(long *)(param_1 + 0x450);
-          puVar13 = *(undefined8 **)(param_1 + 0x458);
+          lVar9 = *(long *)(this + 0x450);
+          puVar13 = *(undefined8 **)(this + 0x458);
           lVar10 = lVar10 + (lVar4 >> 2) * 4;
           lVar16 = lVar9 + lVar16 * 8;
           puVar14 = (undefined8 *)(lVar16 + 8);
-          *(long *)(param_1 + 0x440) = lVar10;
+          *(long *)(this + 0x440) = lVar10;
           puVar15 = puVar14;
           if (puVar14 != puVar13) {
             do {
@@ -2158,13 +2156,13 @@ LAB_0048df78:
             lVar16 = lVar16 + ((long)puVar13 + (-8 - (long)puVar14) & 0xfffffffffffffff8U) + 8;
           }
         }
-        *(long *)(param_1 + 0x458) = lVar16;
+        *(long *)(this + 0x458) = lVar16;
       } while (0 < iVar17);
-      lVar10 = *(long *)(param_1 + 0x438);
+      lVar10 = *(long *)(this + 0x438);
 LAB_0048dfbc:
-      *(long *)(param_1 + 0x440) = lVar10;
+      *(long *)(this + 0x440) = lVar10;
     }
-    plStack_80 = (long *)(param_1 + 0x458);
+    plStack_80 = (long *)(this + 0x458);
     *plStack_80 = lVar9;
   }
   if (*(long *)(lVar5 + 0x28) == lStack_68) {
@@ -2184,7 +2182,7 @@ LAB_0048e004:
 /* WaterConcept::Spout::addConnectedSpout(WaterConcept::Spout*, float, WaterConcept::YSwitchPort) */
 
 void WaterConcept::Spout::addConnectedSpout
-               (undefined4 param_1,long param_2,long param_3,undefined4 param_4)
+               (WaterConcept::Spout *param_1,float param_2,WaterConcept::YSwitchPort param_3)
 
 {
   long lVar1;
@@ -2196,24 +2194,24 @@ void WaterConcept::Spout::addConnectedSpout
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  plVar2 = *(long **)(param_2 + 0x4a8);
-  lStack_48 = param_3;
-  uStack_40 = param_1;
-  uStack_3c = param_4;
-  if (plVar2 < *(long **)(param_2 + 0x4b0)) {
-    plVar2[1] = CONCAT44(param_4,param_1);
-    *plVar2 = param_3;
-    *(long *)(param_2 + 0x4a8) = *(long *)(param_2 + 0x4a8) + 0x10;
+  plVar2 = *(long **)(param_1 + 0x4a8);
+  lStack_48 = param_2;
+  uStack_40 = this;
+  uStack_3c = param_3;
+  if (plVar2 < *(long **)(param_1 + 0x4b0)) {
+    plVar2[1] = CONCAT44(param_3,this);
+    *plVar2 = param_2;
+    *(long *)(param_1 + 0x4a8) = *(long *)(param_1 + 0x4a8) + 0x10;
   }
   else {
-    void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>(param_2 + 0x4a0,&lStack_48);
+    void std::__ndk1::vector<WaterConcept::Spout::SpoutConnection, std::__ndk1::allocator<WaterConcept::Spout::SpoutConnection>>::__push_back_slow_path<WaterConcept::Spout::SpoutConnection>(param_1 + 0x4a0,&lStack_48);
   }
-  if (*(int *)(param_3 + 0x3d4) == 1) {
-    *(undefined1 *)(param_3 + 0x4d4) = 0;
-    if (*(long *)(param_3 + 0x428) != 0) {
+  if (*(int *)(param_2 + 0x3d4) == 1) {
+    *(undefined1 *)(param_2 + 0x4d4) = 0;
+    if (*(long *)(param_2 + 0x428) != 0) {
       do {
-        std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::pop_front(param_3 + 0x400);
-      } while (*(long *)(param_3 + 0x428) != 0);
+        std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::pop_front(param_2 + 0x400);
+      } while (*(long *)(param_2 + 0x428) != 0);
     }
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {

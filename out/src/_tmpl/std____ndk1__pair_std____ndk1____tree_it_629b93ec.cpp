@@ -23,7 +23,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::__map_value_compare<unsigned_char,std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>,std::__ndk1::less<unsigned_char>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_char,Walaber::CompressionRecord>>>
 ::
 __emplace_unique_key_args<unsigned_char,std::__ndk1::pair<unsigned_char,Walaber::CompressionRecord>>
-          (long param_1,byte *param_2,undefined1 *param_3)
+          (unsigned char const& param_1,std::__ndk1::pair<unsigned char, Walaber::CompressionRecord>&& param_2)
 
 {
   bool bVar1;
@@ -33,18 +33,18 @@ __emplace_unique_key_args<unsigned_char,std::__ndk1::pair<unsigned_char,Walaber:
   long lVar5;
   undefined1 auVar6 [16];
   
-  plVar3 = (long *)(param_1 + 8);
+  plVar3 = (long *)(this + 8);
   plVar4 = plVar3;
   if ((long *)*plVar3 != (long *)0x0) {
     plVar2 = (long *)*plVar3;
-    plVar4 = (long *)(param_1 + 8);
+    plVar4 = (long *)(this + 8);
     do {
-      while (plVar3 = plVar2, *param_2 < *(byte *)((long)plVar3 + 0x1c)) {
+      while (plVar3 = plVar2, *param_1 < *(byte *)((long)plVar3 + 0x1c)) {
         plVar2 = (long *)*plVar3;
         plVar4 = plVar3;
         if ((long *)*plVar3 == (long *)0x0) goto LAB_003e5658;
       }
-      if (*param_2 <= *(byte *)((long)plVar3 + 0x1c)) break;
+      if (*param_1 <= *(byte *)((long)plVar3 + 0x1c)) break;
       plVar4 = plVar3 + 1;
       plVar2 = (long *)*plVar4;
     } while ((long *)*plVar4 != (long *)0x0);
@@ -54,9 +54,9 @@ LAB_003e5658:
   bVar1 = lVar5 == 0;
   if (bVar1) {
     lVar5 = operator new(0x28);
-    *(undefined1 *)(lVar5 + 0x1c) = *param_3;
-    *(undefined8 *)(lVar5 + 0x20) = *(undefined8 *)(param_3 + 4);
-    std::__ndk1::__tree<std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>, std::__ndk1::__map_value_compare<unsigned char, std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>, std::__ndk1::less<unsigned char>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>>>::__insert_node_at(param_1,plVar3,plVar4,lVar5);
+    *(undefined1 *)(lVar5 + 0x1c) = *param_2;
+    *(undefined8 *)(lVar5 + 0x20) = *(undefined8 *)(param_2 + 4);
+    std::__ndk1::__tree<std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>, std::__ndk1::__map_value_compare<unsigned char, std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>, std::__ndk1::less<unsigned char>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned char, Walaber::CompressionRecord>>>::__insert_node_at(this,plVar3,plVar4,lVar5);
   }
   auVar6[8] = bVar1;
   auVar6._0_8_ = lVar5;

@@ -403,7 +403,7 @@ void Walaber::RenderTexture2D::_applySettings(long param_1)
    Walaber::TextureInMemoryColorspace) */
 
 void Walaber::RenderTexture2D::RenderTexture2D
-               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
+               (unsigned int param_1,unsigned int param_2,Walaber::TextureInMemoryColorspace param_3)
 
 {
   long lVar1;
@@ -434,19 +434,19 @@ void Walaber::RenderTexture2D::RenderTexture2D
   abStack_60[8] = 0x54;
   uStack_4f = 0x443265;
                     /* try { // try from 00396660 to 0039666b has its CatchHandler @ 003966f8 */
-  Walaber::Texture::Texture(param_1,abStack_60,2);
+  Walaber::Texture::Texture(this,abStack_60,2);
   if ((abStack_60[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  *param_1 = &PTR__RenderTexture2D_00710188;
-  if (*(int *)((long)param_1 + 0x34) != param_4) {
-    *(int *)((long)param_1 + 0x34) = param_4;
-    *(undefined1 *)(param_1 + 4) = 1;
+  *(undefined4 *)((long)this + 0xbc) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *this = &PTR__RenderTexture2D_00710188;
+  if (*(int *)((long)this + 0x34) != param_3) {
+    *(int *)((long)this + 0x34) = param_3;
+    *(undefined1 *)(this + 4) = 1;
   }
                     /* try { // try from 003966a8 to 003966bb has its CatchHandler @ 003966e8 */
-  Walaber::RenderTexture2D::initWithSize(param_1,param_2,param_3,param_4);
+  Walaber::RenderTexture2D::initWithSize(this,param_1,param_2,param_3);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -464,7 +464,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
    Walaber::TextureInMemoryColorspace) */
 
 void Walaber::RenderTexture2D::RenderTexture2D
-               (long *param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,int param_5)
+               (unsigned int param_1,unsigned int param_2,Walaber::TextureSettings param_3,Walaber::TextureInMemoryColorspace param_4)
 
 {
   long lVar1;
@@ -508,38 +508,38 @@ void Walaber::RenderTexture2D::RenderTexture2D
   abStack_60[7] = 0x5f;
   abStack_60[8] = 0x54;
   uStack_4f = 0x443265;
-  uStack_b0 = *(undefined4 *)(param_4 + 1);
-  uStack_b8 = *param_4;
-  uStack_ac = *(undefined1 *)((long)param_4 + 0xc);
-  uStack_ab = *(undefined1 *)((long)param_4 + 0xd);
-  uStack_aa = *(undefined1 *)((long)param_4 + 0xe);
-  uStack_a9 = *(undefined1 *)((long)param_4 + 0xf);
-  uStack_a0 = param_4[3];
-  uStack_a8 = param_4[2];
-  uStack_98 = param_4[4];
+  uStack_b0 = *(undefined4 *)(param_3 + 1);
+  uStack_b8 = *param_3;
+  uStack_ac = *(undefined1 *)((long)param_3 + 0xc);
+  uStack_ab = *(undefined1 *)((long)param_3 + 0xd);
+  uStack_aa = *(undefined1 *)((long)param_3 + 0xe);
+  uStack_a9 = *(undefined1 *)((long)param_3 + 0xf);
+  uStack_a0 = param_3[3];
+  uStack_a8 = param_3[2];
+  uStack_98 = param_3[4];
                     /* try { // try from 0039691c to 0039691f has its CatchHandler @ 003969f8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_4 + 5);
-  uStack_68 = param_4[10];
-  uStack_70 = param_4[9];
-  uStack_78 = param_4[8];
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_3 + 5);
+  uStack_68 = param_3[10];
+  uStack_70 = param_3[9];
+  uStack_78 = param_3[8];
                     /* try { // try from 00396930 to 00396943 has its CatchHandler @ 003969e0 */
-  Walaber::Texture::Texture(param_1,abStack_60,&uStack_b8,2);
+  Walaber::Texture::Texture(this,abStack_60,&uStack_b8,2);
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
   if ((abStack_60[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  *param_1 = (long)&PTR__RenderTexture2D_00710188;
-  if (*(int *)((long)param_1 + 0x34) != param_5) {
-    *(int *)((long)param_1 + 0x34) = param_5;
-    *(undefined1 *)(param_1 + 4) = 1;
+  *(undefined4 *)((long)this + 0xbc) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *this = (long)&PTR__RenderTexture2D_00710188;
+  if (*(int *)((long)this + 0x34) != param_4) {
+    *(int *)((long)this + 0x34) = param_4;
+    *(undefined1 *)(this + 4) = 1;
   }
                     /* try { // try from 00396990 to 003969b3 has its CatchHandler @ 00396a10 */
-  Walaber::RenderTexture2D::initWithSize(param_1,param_2,param_3,param_5);
-  (**(code **)(*param_1 + 0x48))(param_1);
+  Walaber::RenderTexture2D::initWithSize(this,param_1,param_2,param_4);
+  (**(code **)(*this + 0x48))(this);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }
@@ -557,8 +557,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
    Walaber::TextureInMemoryColorspace) */
 
 void Walaber::RenderTexture2D::RenderTexture2D
-               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4,
-               int param_5)
+               (unsigned int param_1,unsigned int param_2,unsigned char *param_3,Walaber::TextureInMemoryColorspace param_4)
 
 {
   long lVar1;
@@ -589,19 +588,19 @@ void Walaber::RenderTexture2D::RenderTexture2D
   abStack_60[8] = 0x54;
   uStack_4f = 0x443265;
                     /* try { // try from 00396b10 to 00396b1b has its CatchHandler @ 00396bac */
-  Walaber::Texture::Texture(param_1,abStack_60,2);
+  Walaber::Texture::Texture(this,abStack_60,2);
   if ((abStack_60[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10])));
   }
-  *(undefined4 *)((long)param_1 + 0xbc) = 0;
-  *(undefined4 *)(param_1 + 0x18) = 0;
-  *param_1 = &PTR__RenderTexture2D_00710188;
-  if (*(int *)((long)param_1 + 0x34) != param_5) {
-    *(int *)((long)param_1 + 0x34) = param_5;
-    *(undefined1 *)(param_1 + 4) = 1;
+  *(undefined4 *)((long)this + 0xbc) = 0;
+  *(undefined4 *)(this + 0x18) = 0;
+  *this = &PTR__RenderTexture2D_00710188;
+  if (*(int *)((long)this + 0x34) != param_4) {
+    *(int *)((long)this + 0x34) = param_4;
+    *(undefined1 *)(this + 4) = 1;
   }
                     /* try { // try from 00396b58 to 00396b6f has its CatchHandler @ 00396b9c */
-  Walaber::RenderTexture2D::initWithPixelData(param_1,param_2,param_3,param_5,param_4);
+  Walaber::RenderTexture2D::initWithPixelData(this,param_1,param_2,param_4,param_3);
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;
   }

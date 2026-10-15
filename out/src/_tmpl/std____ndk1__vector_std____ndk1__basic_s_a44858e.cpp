@@ -58,29 +58,29 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::allocator<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> const& param_1)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 002c31f8 to 002c31fb has its CatchHandler @ 002c323c */
-    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vallocate(param_1,(param_2[1] - *param_2 >> 3) * -0x5555555555555555);
-    lVar3 = *param_2;
-    lVar1 = param_2[1];
+    std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vallocate(this,(param_1[1] - *param_1 >> 3) * -0x5555555555555555);
+    lVar3 = *param_1;
+    lVar1 = param_1[1];
     if (lVar3 != lVar1) {
-      lVar2 = param_1[1];
+      lVar2 = this[1];
       do {
                     /* try { // try from 002c320c to 002c3213 has its CatchHandler @ 002c3240 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar2,lVar3);
         lVar3 = lVar3 + 0x18;
-        lVar2 = param_1[1] + 0x18;
-        param_1[1] = lVar2;
+        lVar2 = this[1] + 0x18;
+        this[1] = lVar2;
       } while (lVar1 != lVar3);
     }
   }

@@ -559,7 +559,7 @@ void ndk::ApplicationContext::loadLocalizationScript(void)
 /* ndk::ApplicationContext::setSKU(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
+void ndk::ApplicationContext::setSKU(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   ulong uVar1;
@@ -568,8 +568,8 @@ void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
   ulong uVar4;
   ulong uVar5;
   
-  bVar2 = *param_2;
-  uVar4 = *(ulong *)(param_2 + 8);
+  bVar2 = *param_1;
+  uVar4 = *(ulong *)(param_1 + 8);
   uVar5 = (ulong)(bVar2 >> 1);
   uVar1 = uVar5;
   if ((bVar2 & 1) != 0) {
@@ -578,13 +578,13 @@ void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
   if (uVar1 != 0) {
     if (uVar1 == 6) {
                     /* try { // try from 002b35f4 to 002b360f has its CatchHandler @ 002b368c */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"amazon",6);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"amazon",6);
       if (iVar3 == 0) {
         WaterConcept::GameSettings::currentSKU = 4;
         return;
       }
-      bVar2 = *param_2;
-      uVar4 = *(ulong *)(param_2 + 8);
+      bVar2 = *param_1;
+      uVar4 = *(ulong *)(param_1 + 8);
       uVar5 = (ulong)(bVar2 >> 1);
     }
     if ((bVar2 & 1) != 0) {
@@ -592,7 +592,7 @@ void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
     }
                     /* try { // try from 002b363c to 002b3657 has its CatchHandler @ 002b3688 */
     if ((uVar5 == 6) &&
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"barnes",6), iVar3 == 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"barnes",6), iVar3 == 0)) {
       WaterConcept::GameSettings::currentSKU = 5;
       return;
     }
@@ -949,7 +949,7 @@ void ndk::ApplicationContext::accelerometerChanged(ndk__AccelerometerEvent *p0)
    const&) */
 
 void ndk::ApplicationContext::resetDatabaseAt
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   long lVar1;
@@ -1227,9 +1227,9 @@ void ndk::ApplicationContext::resetDatabaseAt
   }
                     /* try { // try from 002b4084 to 002b40b7 has its CatchHandler @ 002b4498 */
   Walaber::DatabaseManager::closeDatabase();
-  ndk::ApplicationContext::copyDatabaseFromBundle(param_1,param_3,param_2);
-  ndk::ApplicationContext::updateDatabaseAt(param_1,param_2,param_3);
-  Walaber::DatabaseManager::openDatabase(param_2);
+  ndk::ApplicationContext::copyDatabaseFromBundle(this,param_2,param_1);
+  ndk::ApplicationContext::updateDatabaseAt(this,param_1,param_2);
+  Walaber::DatabaseManager::openDatabase(param_1);
   if (lStack_a0 != lStack_98) {
     puVar10 = (undefined4 *)((ulong)&bStack_d0 | 1);
     lVar9 = lStack_a0;
@@ -1415,7 +1415,7 @@ void ndk::ApplicationContext::resetDatabaseAt
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 param_2,byte *param_3)
+void ndk::ApplicationContext::copyDatabaseFromBundle(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   byte bVar1;
@@ -1437,16 +1437,16 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
   lStack_48 = *(long *)(lVar2 + 0x28);
   p0 = (void *)operator new(0xa8);
                     /* try { // try from 002b46a4 to 002b46ab has its CatchHandler @ 002b47ec */
-  Walaber::ZipArchiveReader::ZipArchiveReader(p0,(byte *)(param_1 + 0x60));
-  bVar1 = *(byte *)(param_1 + 0x60);
+  Walaber::ZipArchiveReader::ZipArchiveReader(p0,(byte *)(this + 0x60));
+  bVar1 = *(byte *)(this + 0x60);
   if ((bVar1 & 1) == 0) {
     uVar5 = (ulong)(bVar1 >> 1);
   }
   else {
-    uVar5 = *(ulong *)(param_1 + 0x68);
+    uVar5 = *(ulong *)(this + 0x68);
   }
                     /* try { // try from 002b46c4 to 002b46d7 has its CatchHandler @ 002b47e4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2,uVar5 + 1,0xffffffffffffffff,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_1,uVar5 + 1,0xffffffffffffffff,param_1);
                     /* try { // try from 002b46d8 to 002b46e3 has its CatchHandler @ 002b47e0 */
   Walaber::ZipArchiveReader::openFile(p0,abStack_60);
                     /* try { // try from 002b46e4 to 002b46eb has its CatchHandler @ 002b47dc */
@@ -1454,9 +1454,9 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
                     /* try { // try from 002b46f0 to 002b4707 has its CatchHandler @ 002b47f4 */
   p0_00 = (void *)operator new[]((long)iVar3);
   Walaber::ZipArchiveReader::readCurrentFile(p0,p0_00);
-  pbVar6 = *(byte **)(param_3 + 0x10);
-  if ((*param_3 & 1) == 0) {
-    pbVar6 = param_3 + 1;
+  pbVar6 = *(byte **)(param_2 + 0x10);
+  if ((*param_2 & 1) == 0) {
+    pbVar6 = param_2 + 1;
   }
   lVar4 = fopen(pbVar6,"w");
   if (lVar4 == 0) {
@@ -1500,7 +1500,7 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
    const&) */
 
-void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefined8 param_3)
+void ndk::ApplicationContext::updateDatabaseAt(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   void *pvVar1;
@@ -1565,14 +1565,14 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
   
   lVar2 = tpidr_el0;
   lVar12 = *(long *)(lVar2 + 0x28);
-  pbVar14 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar14 = param_2 + 1;
+  pbVar14 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar14 = param_1 + 1;
   }
   lVar6 = fopen(pbVar14,"r");
   if (lVar6 != 0) {
     fclose();
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,param_1);
                     /* try { // try from 002b4888 to 002b488f has its CatchHandler @ 002b5274 */
     uVar7 = Walaber::DatabaseManager::openDatabase(abStack_90);
     if ((abStack_90[0] & 1) != 0) {
@@ -1643,9 +1643,9 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         operator delete(pvStack_80);
       }
     }
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_90,param_1 + 0x78,"/checked_water_tmp.db");
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_90,this + 0x78,"/checked_water_tmp.db");
                     /* try { // try from 002b49fc to 002b4a0b has its CatchHandler @ 002b52b4 */
-    ndk::ApplicationContext::copyDatabaseFromBundle(param_1,param_3,abStack_90);
+    ndk::ApplicationContext::copyDatabaseFromBundle(this,param_2,abStack_90);
                     /* try { // try from 002b4a0c to 002b4a17 has its CatchHandler @ 002b5260 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,abStack_90);
                     /* try { // try from 002b4a18 to 002b4a1f has its CatchHandler @ 002b5250 */
@@ -1741,7 +1741,7 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
     if ((iVar4 != -1) && (iVar5 != -1)) {
       if (iVar4 < iVar5) {
                     /* try { // try from 002b4bac to 002b4bb7 has its CatchHandler @ 002b51e4 */
-        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,param_2);
+        std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_b0,param_1);
                     /* try { // try from 002b4bb8 to 002b4bbf has its CatchHandler @ 002b51e0 */
         uVar7 = Walaber::DatabaseManager::openDatabase(&uStack_b0);
         if ((uStack_b0 & 1) != 0) {
@@ -1989,9 +1989,9 @@ LAB_002b5000:
       operator delete(pvStack_80);
     }
   }
-  pbVar14 = param_2 + 1;
-  if ((*param_2 & 1) != 0) {
-    pbVar14 = *(byte **)(param_2 + 0x10);
+  pbVar14 = param_1 + 1;
+  if ((*param_1 & 1) != 0) {
+    pbVar14 = *(byte **)(param_1 + 0x10);
   }
   lVar6 = fopen(pbVar14,"w");
   if (lVar6 == 0) {
@@ -2001,13 +2001,13 @@ LAB_002b5000:
   }
   else {
     fclose();
-    pbVar14 = param_2 + 1;
-    if ((*param_2 & 1) != 0) {
-      pbVar14 = *(byte **)(param_2 + 0x10);
+    pbVar14 = param_1 + 1;
+    if ((*param_1 & 1) != 0) {
+      pbVar14 = *(byte **)(param_1 + 0x10);
     }
     remove(pbVar14);
   }
-  ndk::ApplicationContext::copyDatabaseFromBundle(param_1,param_3,param_2);
+  ndk::ApplicationContext::copyDatabaseFromBundle(this,param_2,param_1);
 LAB_002b505c:
   if (*(long *)(lVar2 + 0x28) == lVar12) {
     return;
@@ -2028,7 +2028,7 @@ LAB_002b505c:
    const&) */
 
 ulong ndk::ApplicationContext::getDatabaseUpdateSteps
-                (long param_1,undefined8 param_2,undefined8 param_3)
+                (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   void *pvVar1;
@@ -2069,7 +2069,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
   
   lVar4 = tpidr_el0;
   lStack_48 = *(long *)(lVar4 + 0x28);
-  uVar9 = Walaber::DatabaseManager::openDatabase(param_2);
+  uVar9 = Walaber::DatabaseManager::openDatabase(param_1);
   if ((uVar9 & 1) == 0) {
     iVar7 = -1;
   }
@@ -2169,9 +2169,9 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
       operator delete(pvStack_50);
     }
   }
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,param_1 + 0x78,"/checked_water_tmp.db");
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,this + 0x78,"/checked_water_tmp.db");
                     /* try { // try from 002b5ab0 to 002b5abf has its CatchHandler @ 002b5d3c */
-  ndk::ApplicationContext::copyDatabaseFromBundle(param_1,param_3,abStack_60);
+  ndk::ApplicationContext::copyDatabaseFromBundle(this,param_2,abStack_60);
                     /* try { // try from 002b5ac0 to 002b5acb has its CatchHandler @ 002b5d38 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_80,abStack_60);
                     /* try { // try from 002b5acc to 002b5ad3 has its CatchHandler @ 002b5d28 */
@@ -5959,7 +5959,7 @@ LAB_002ba4ec:
 /* ndk::ApplicationContext::handleURLIntent(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
+void ndk::ApplicationContext::handleURLIntent(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   long lVar1;
@@ -5975,24 +5975,24 @@ void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  if ((*param_2 & 1) == 0) {
-    pbVar4 = param_2 + 1;
+  if ((*param_1 & 1) == 0) {
+    pbVar4 = param_1 + 1;
   }
   else {
-    pbVar4 = *(byte **)(param_2 + 0x10);
+    pbVar4 = *(byte **)(param_1 + 0x10);
   }
   Walaber::Logger::printf(&DAT_0061d37e,1,"Got payload with %s",pbVar4);
   uVar2 = Walaber::PushCommand::Get();
-  if ((*param_2 & 1) == 0) {
-    param_2 = param_2 + 1;
+  if ((*param_1 & 1) == 0) {
+    param_1 = param_1 + 1;
   }
   else {
-    param_2 = *(byte **)(param_2 + 0x10);
+    param_1 = *(byte **)(param_1 + 0x10);
   }
   uStack_60 = 0;
   uStack_58 = 0;
   pvStack_50 = (void *)0x0;
-  uVar3 = strlen(param_2);
+  uVar3 = strlen(param_1);
   if (0xffffffffffffffef < uVar3) {
     std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
@@ -6009,7 +6009,7 @@ void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
     uStack_58 = uVar3;
     pvStack_50 = pvVar5;
   }
-  memcpy(pvVar5,param_2,uVar3);
+  memcpy(pvVar5,param_1,uVar3);
 LAB_002ba5f0:
   *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 002ba5f4 to 002ba5ff has its CatchHandler @ 002ba644 */

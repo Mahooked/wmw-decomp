@@ -11,8 +11,7 @@
    Walaber::WidgetOrientation, int) */
 
 void Walaber::Widget::Widget
-               (long *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4,
-               undefined4 *param_5,undefined4 param_6,undefined4 param_7)
+               (int param_1,unsigned int param_2,Walaber::Vector2 param_3,Walaber::Vector2 param_4,Walaber::WidgetOrientation param_5,int param_6)
 
 {
   long lVar1;
@@ -22,39 +21,39 @@ void Walaber::Widget::Widget
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  *param_1 = (long)&PTR__Widget_0070eb18;
-  Walaber::StringHelper::intToStr(auStack_70,param_2);
+  *this = (long)&PTR__Widget_0070eb18;
+  Walaber::StringHelper::intToStr(auStack_70,param_1);
                     /* try { // try from 0036a7ac to 0036a7bb has its CatchHandler @ 0036a8c8 */
-  Walaber::DrawableNode::DrawableNode(param_1,auStack_70,0xffffffff);
+  Walaber::DrawableNode::DrawableNode(this,auStack_70,0xffffffff);
   if (((byte)auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  *(undefined4 *)((long)param_1 + 0x84) = param_3;
-  *(undefined4 *)(param_1 + 0x11) = param_6;
-  *param_1 = (long)&PTR__Widget_0070eb18;
-  *(undefined2 *)((long)param_1 + 0x8c) = 0x101;
-  *(undefined4 *)(param_1 + 0x12) = *param_5;
-  *(undefined4 *)((long)param_1 + 0x94) = param_5[1];
-  param_1[0x15] = 0;
-  *(undefined1 *)(param_1 + 0x16) = 1;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0;
-  param_1[0x1e] = 0;
-  *(undefined8 *)((long)param_1 + 0xdc) = 0;
-  *(undefined8 *)((long)param_1 + 0xd4) = 0;
-  *(undefined8 *)((long)param_1 + 0xcc) = 0;
-  *(undefined4 *)((long)param_1 + 0xec) = 0;
-  *(undefined8 *)((long)param_1 + 0xc4) = 0;
-  param_1[0x14] = 0;
-  param_1[0x13] = 0;
-  *(undefined8 *)((long)param_1 + 0xbc) = 0;
-  *(undefined8 *)((long)param_1 + 0xb4) = 0;
-  *(undefined4 *)(param_1 + 0x1f) = 0x3f800000;
-  Walaber::Widget::setLayer(param_1,param_7);
+  *(undefined4 *)((long)this + 0x84) = param_2;
+  *(undefined4 *)(this + 0x11) = param_5;
+  *this = (long)&PTR__Widget_0070eb18;
+  *(undefined2 *)((long)this + 0x8c) = 0x101;
+  *(undefined4 *)(this + 0x12) = *param_4;
+  *(undefined4 *)((long)this + 0x94) = param_4[1];
+  this[0x15] = 0;
+  *(undefined1 *)(this + 0x16) = 1;
+  *(undefined8 *)((long)this + 0xe4) = 0;
+  this[0x1e] = 0;
+  *(undefined8 *)((long)this + 0xdc) = 0;
+  *(undefined8 *)((long)this + 0xd4) = 0;
+  *(undefined8 *)((long)this + 0xcc) = 0;
+  *(undefined4 *)((long)this + 0xec) = 0;
+  *(undefined8 *)((long)this + 0xc4) = 0;
+  this[0x14] = 0;
+  this[0x13] = 0;
+  *(undefined8 *)((long)this + 0xbc) = 0;
+  *(undefined8 *)((long)this + 0xb4) = 0;
+  *(undefined4 *)(this + 0x1f) = 0x3f800000;
+  Walaber::Widget::setLayer(this,param_6);
                     /* try { // try from 0036a84c to 0036a857 has its CatchHandler @ 0036a8a8 */
-  (**(code **)(*param_1 + 0x10))(param_1,param_4);
+  (**(code **)(*this + 0x10))(this,param_3);
   auStack_70[0] = NEON_fmov(0x3f800000,4);
                     /* try { // try from 0036a868 to 0036a873 has its CatchHandler @ 0036a8a4 */
-  (**(code **)(*param_1 + 0x18))(param_1,auStack_70);
+  (**(code **)(*this + 0x18))(this,auStack_70);
   if (*(long *)(lVar1 + 0x28) == lStack_58) {
     return;
   }
@@ -88,7 +87,7 @@ void Walaber::Widget::_generateWidgetName(int p0)
 /* Walaber::Widget::getWidgetTypeFromString(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, Walaber::WidgetType&) */
 
-bool Walaber::Widget::getWidgetTypeFromString(undefined8 param_1,undefined4 *param_2)
+bool Walaber::Widget::getWidgetTypeFromString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::WidgetType& param_2)
 
 {
   long lVar1;

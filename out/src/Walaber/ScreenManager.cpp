@@ -9,7 +9,7 @@
 
 /* Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callback>, unsigned int) */
 
-void Walaber::ScreenManager::addScreenLoader(long *param_1,undefined4 param_2)
+void Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callback> param_1,unsigned int param_2)
 
 {
   long lVar1;
@@ -91,7 +91,7 @@ void Walaber::ScreenManager::removeScreenLoader(long *param_1)
 
 /* Walaber::ScreenManager::beginScreenChanges(Walaber::ScreenManager::ScreenChangeMethod) */
 
-void Walaber::ScreenManager::beginScreenChanges(undefined4 param_1)
+void Walaber::ScreenManager::beginScreenChanges(Walaber::ScreenManager::ScreenChangeMethod param_1)
 
 {
   mFlushMethod = param_1;
@@ -728,7 +728,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
 /* Walaber::ScreenManager::commitScreenChanges(std::__ndk1::vector<unsigned int,
    std::__ndk1::allocator<unsigned int> >, float) */
 
-void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_2)
+void Walaber::ScreenManager::commitScreenChanges(std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>> param_1,float param_2)
 
 {
   long lVar1;
@@ -822,7 +822,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
    std::__ndk1::allocator<unsigned int> >, float, Walaber::PropertyList const&) */
 
 void Walaber::ScreenManager::commitScreenChanges
-               (undefined8 param_1,long *param_2,undefined8 param_3)
+               (std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int>> param_1,float param_2,Walaber::PropertyList const& param_3)
 
 {
   long lVar1;

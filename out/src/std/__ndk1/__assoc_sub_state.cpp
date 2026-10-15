@@ -372,29 +372,29 @@ void std::__ndk1::__assoc_sub_state::copy(long *param_1)
 
 /* std::__ndk1::__assoc_sub_state::__sub_wait(std::__ndk1::unique_lock<std::__ndk1::mutex>&) */
 
-void std::__ndk1::__assoc_sub_state::__sub_wait(long *param_1,undefined8 *param_2)
+void std::__ndk1::__assoc_sub_state::__sub_wait(std::__ndk1::unique_lock<std::__ndk1::mutex>& param_1)
 
 {
   uint uVar1;
   
-  uVar1 = *(uint *)(param_1 + 0xe);
+  uVar1 = *(uint *)(this + 0xe);
   if ((uVar1 >> 2 & 1) == 0) {
     if ((uVar1 >> 3 & 1) != 0) {
-      *(uint *)(param_1 + 0xe) = uVar1 & 0xfffffff7;
-      if (*(char *)(param_2 + 1) != '\0') {
-        std::__ndk1::mutex::unlock(*param_2);
-        *(undefined1 *)(param_2 + 1) = 0;
+      *(uint *)(this + 0xe) = uVar1 & 0xfffffff7;
+      if (*(char *)(param_1 + 1) != '\0') {
+        std::__ndk1::mutex::unlock(*param_1);
+        *(undefined1 *)(param_1 + 1) = 0;
                     /* WARNING: Could not recover jumptable at 0x005f1070. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-        (**(code **)(*param_1 + 0x18))(param_1);
+        (**(code **)(*this + 0x18))(this);
         return;
       }
       std::__ndk1::__throw_system_error(1,"unique_lock::unlock: not locked");
       return;
     }
     do {
-      std::__ndk1::condition_variable::wait(param_1 + 8,param_2);
-    } while ((*(byte *)(param_1 + 0xe) >> 2 & 1) == 0);
+      std::__ndk1::condition_variable::wait(this + 8,param_1);
+    } while ((*(byte *)(this + 0xe) >> 2 & 1) == 0);
   }
   return;
 }

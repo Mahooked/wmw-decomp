@@ -9,16 +9,16 @@
 
 /* Walaber::Widget_IconList::Icon::Icon(Walaber::SharedPtr<Walaber::Texture>, int) */
 
-void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
+void Walaber::Widget_IconList::Icon::Icon(Walaber::SharedPtr<Walaber::Texture> param_1,int param_2)
 
 {
-  param_1[4] = 0;
-  param_1[1] = 0;
-  *param_1 = 0;
-  param_1[3] = 0;
-  param_1[2] = 0;
+  this[4] = 0;
+  this[1] = 0;
+  *this = 0;
+  this[3] = 0;
+  this[2] = 0;
   Walaber::SharedPtr<Walaber::Texture>::operator=();
-  *(undefined4 *)(param_1 + 5) = param_3;
+  *(undefined4 *)(this + 5) = param_2;
   return;
 }
 
@@ -31,7 +31,7 @@ void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2
 /* Walaber::Widget_IconList::Icon::Icon(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, int) */
 
-void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
+void Walaber::Widget_IconList::Icon::Icon(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,int param_2)
 
 {
   long lVar1;
@@ -41,18 +41,18 @@ void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  param_1[3] = 0;
-  param_1[2] = 0;
-  param_1[4] = 0;
-  param_1[1] = 0;
-  *param_1 = 0;
+  this[3] = 0;
+  this[2] = 0;
+  this[4] = 0;
+  this[1] = 0;
+  *this = 0;
                     /* try { // try from 0037d6e0 to 0037d6e7 has its CatchHandler @ 0037d72c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 2);
   uStack_48 = 0;
   uStack_40 = 0;
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,&uStack_48);
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this,&uStack_48);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_48);
-  *(undefined4 *)(param_1 + 5) = param_3;
+  *(undefined4 *)(this + 5) = param_2;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

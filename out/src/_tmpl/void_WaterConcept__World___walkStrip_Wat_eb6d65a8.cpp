@@ -18,9 +18,7 @@
    WaterConceptConstants::CollisionLayer, int) */
 
 void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+               (WaterConcept::GridCell param_1,WaterConcept::GridCell param_2,WaterConcept::GridCell param_3,int param_4,WaterConcept::ConsiderSameDefault param_5,WaterConcept::World::EdgeTypeFlag param_6,std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>& param_7,std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>& param_8,int param_9,WaterConceptConstants::CollisionLayer param_10,int param_11)
 
 {
   float *pfVar1;
@@ -108,44 +106,44 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
   
   lVar11 = tpidr_el0;
   lVar27 = *(long *)(lVar11 + 0x28);
-  fStack_20c = param_12;
-  if (param_12 == -NAN) {
-    fStack_20c = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x540);
+  fStack_20c = param_11;
+  if (param_11 == -NAN) {
+    fStack_20c = *(float *)((long)this + (long)(int)param_4 * 4 + 0x540);
   }
-  uStack_170 = (ulong)*(uint *)(param_1 + 8);
-  uVar20 = (uint)(param_2 >> 0x20);
-  iVar33 = (int)((ulong)param_3 >> 0x20);
-  iVar34 = (int)((ulong)param_4 >> 0x20);
+  uStack_170 = (ulong)*(uint *)(this + 8);
+  uVar20 = (uint)(param_1 >> 0x20);
+  iVar33 = (int)((ulong)param_2 >> 0x20);
+  iVar34 = (int)((ulong)param_3 >> 0x20);
   iVar2 = 0;
   uVar25 = 0;
   do {
     uVar13 = (ulong)uVar25;
-    lVar41 = *(long *)((int *)param_1[2] + 2);
-    iVar39 = *(int *)param_1[2];
+    lVar41 = *(long *)((int *)this[2] + 2);
+    iVar39 = *(int *)this[2];
     if (uVar25 == 1) {
-      lVar28 = lVar41 + (long)(int)((uint)param_2 + iVar39 * uVar20) * 0x1c;
-      if (param_7 == 1) {
+      lVar28 = lVar41 + (long)(int)((uint)param_1 + iVar39 * uVar20) * 0x1c;
+      if (param_6 == 1) {
         pbVar29 = (byte *)(lVar28 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar29 = (byte *)(lVar28 + 0x18);
       }
       else {
         pbVar29 = (byte *)(lVar28 + 0x1a);
       }
-      iVar30 = *(int *)((long)param_1 + (ulong)*pbVar29 * 0x30 + 0x7c);
-      uVar36 = param_2;
+      iVar30 = *(int *)((long)this + (ulong)*pbVar29 * 0x30 + 0x7c);
+      uVar36 = param_1;
       uVar26 = uVar20 - 1;
       if (((iVar30 != 1) && (uVar26 = uVar20 + 1, iVar30 != 4)) &&
-         (uVar36 = param_2 + 1, uVar26 = uVar20, iVar30 != 2)) {
-        uVar36 = param_2 - 1;
+         (uVar36 = param_1 + 1, uVar26 = uVar20, iVar30 != 2)) {
+        uVar36 = param_1 - 1;
       }
-      if ((((int)uVar36 < (int)param_3) || ((int)param_4 <= (int)uVar36)) ||
+      if ((((int)uVar36 < (int)param_2) || ((int)param_3 <= (int)uVar36)) ||
          (((int)uVar26 < iVar33 || (iVar34 <= (int)uVar26)))) break;
     }
     else {
       iVar30 = 1;
-      uVar36 = param_2 & 0xffffffff;
+      uVar36 = param_1 & 0xffffffff;
       uVar26 = uVar20;
     }
     bVar17 = false;
@@ -154,26 +152,26 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
       uVar35 = (uint)uVar36;
       lVar28 = (long)(int)(uVar35 + iVar39 * uVar26);
       lVar37 = lVar41 + lVar28 * 0x1c;
-      if (param_7 == 1) {
+      if (param_6 == 1) {
         pbVar29 = (byte *)(lVar37 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar29 = (byte *)(lVar37 + 0x18);
       }
       else {
         pbVar29 = (byte *)(lVar37 + 0x1a);
       }
       iVar38 = 2;
-      if ((*(byte *)(lVar41 + lVar28 * 0x1c + 0x14) != param_5) ||
-         (*(int *)(*(long *)((int *)param_1[0x87] + 2) +
-                  (long)(int)(uVar35 + *(int *)param_1[0x87] * uVar26) * 4) != 0)) break;
+      if ((*(byte *)(lVar41 + lVar28 * 0x1c + 0x14) != param_4) ||
+         (*(int *)(*(long *)((int *)this[0x87] + 2) +
+                  (long)(int)(uVar35 + *(int *)this[0x87] * uVar26) * 4) != 0)) break;
       bVar9 = *pbVar29;
       uVar44 = (ulong)bVar9;
       uVar42 = (uint)bVar9;
       uVar43 = (uint)bVar9;
       if (uVar42 == 0) {
         if (bVar17) goto LAB_0046ffe8;
-        iVar39 = *(int *)((long)param_1 + uVar13 * 4 + 0x80);
+        iVar39 = *(int *)((long)this + uVar13 * 4 + 0x80);
         if (iVar30 == 2) {
           iVar30 = 4;
           if (iVar39 == 0) {
@@ -210,7 +208,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
           uStack_c8 = 0;
           auStack_bc[0] = 0;
           uStack_c4 = 0;
-          puVar19 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+          puVar19 = (uint *)(this[6] + (long)iVar2 * 0x2c);
           *puVar19 = uVar35;
           puVar19[1] = uVar26;
           puVar19[2] = uVar35;
@@ -235,7 +233,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
           auStack_bc[0] = 0;
           uStack_c4 = 0;
           uStack_170 = (long)(int)uStack_170 - 1;
-          puVar19 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+          puVar19 = (uint *)(this[6] + uStack_170 * 0x2c);
           *puVar19 = uVar35;
           puVar19[1] = uVar26;
           puVar19[2] = uVar35;
@@ -255,9 +253,9 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
         uStack_cc = 2;
         bVar17 = false;
         *(undefined4 *)
-         (*(long *)((int *)param_1[0x87] + 2) +
-         (long)(int)(uVar35 + *(int *)param_1[0x87] * uVar26) * 4) = 1;
-        iVar30 = *(int *)((long)param_1 + uVar13 * 4 + uVar44 * 0x30 + 0x78);
+         (*(long *)((int *)this[0x87] + 2) +
+         (long)(int)(uVar35 + *(int *)this[0x87] * uVar26) * 4) = 1;
+        iVar30 = *(int *)((long)this + uVar13 * 4 + uVar44 * 0x30 + 0x78);
         piStack_e0 = piStack_d8;
         uStack_c4 = auStack_bc[0];
       }
@@ -277,27 +275,27 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
           uVar42 = uVar35 - 1;
         }
       }
-      if ((((((int)uVar42 < (int)param_3 + -1) || ((int)param_4 + 1 < (int)uVar42)) ||
+      if ((((((int)uVar42 < (int)param_2 + -1) || ((int)param_3 + 1 < (int)uVar42)) ||
            ((int)uVar18 < iVar33 + -1)) ||
           ((iVar34 + 1 < (int)uVar18 || ((int)(uVar42 | uVar18) < 0)))) ||
-         ((*(int *)(*param_1 + 0x10) <= (int)uVar42 || (*(int *)(*param_1 + 0x14) <= (int)uVar18))))
+         ((*(int *)(*this + 0x10) <= (int)uVar42 || (*(int *)(*this + 0x14) <= (int)uVar18))))
       goto LAB_0046ffe8;
-      iVar39 = *(int *)param_1[2];
-      lVar41 = *(long *)((int *)param_1[2] + 2);
+      iVar39 = *(int *)this[2];
+      lVar41 = *(long *)((int *)this[2] + 2);
       iVar21 = uVar42 + iVar39 * uVar18;
-      if (*(byte *)(lVar41 + (long)iVar21 * 0x1c + 0x14) == param_5) {
+      if (*(byte *)(lVar41 + (long)iVar21 * 0x1c + 0x14) == param_4) {
         lVar28 = lVar41 + (long)iVar21 * 0x1c;
-        if (param_7 == 1) {
+        if (param_6 == 1) {
           pbVar29 = (byte *)(lVar28 + 0x19);
         }
-        else if (param_7 == 0) {
+        else if (param_6 == 0) {
           pbVar29 = (byte *)(lVar28 + 0x18);
         }
         else {
           pbVar29 = (byte *)(lVar28 + 0x1a);
         }
         if ((uVar43 != 0) && (*pbVar29 != 0)) {
-          iVar21 = *(int *)((long)param_1 + (ulong)(uVar25 ^ 1) * 4 + (ulong)*pbVar29 * 0x30 + 0x78)
+          iVar21 = *(int *)((long)this + (ulong)(uVar25 ^ 1) * 4 + (ulong)*pbVar29 * 0x30 + 0x78)
           ;
           uVar43 = uVar42;
           if (iVar21 == 4) {
@@ -320,7 +318,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
 LAB_0046fdac:
           if ((uVar26 != uVar40) || (uVar35 != uVar43)) {
             if (bVar17) goto LAB_0046ffe8;
-            iVar21 = *(int *)((long)param_1 + uVar13 * 4 + uVar44 * 0x30 + 0x80);
+            iVar21 = *(int *)((long)this + uVar13 * 4 + uVar44 * 0x30 + 0x80);
             if (iVar30 == 2) {
               iVar30 = 4;
               if (iVar21 == 0) {
@@ -369,12 +367,12 @@ LAB_0046fe70:
       }
       uVar26 = uVar18;
       uVar36 = (ulong)uVar42;
-      if ((uVar42 == (uint)param_2) && (uVar26 == uVar20)) {
+      if ((uVar42 == (uint)param_1) && (uVar26 == uVar20)) {
         bVar17 = true;
         goto LAB_0046fffc;
       }
     }
-    if (param_5 == 1 && (param_10 & 4) == 0) {
+    if (param_4 == 1 && (param_9 & 4) == 0) {
       uVar42 = (int)uVar44 - 1;
       uVar43 = uVar42 & 0xff;
       piStack_e0 = (int *)(uVar36 & 0xffffffff | (ulong)uVar26 << 0x20);
@@ -392,7 +390,7 @@ LAB_0046fe70:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         lVar41 = 0;
-        puVar19 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+        puVar19 = (uint *)(this[6] + (long)iVar2 * 0x2c);
         *puVar19 = uVar35;
         puVar19[1] = uVar26;
         puVar19[2] = uVar35;
@@ -421,7 +419,7 @@ LAB_0046fe70:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         uStack_170 = (long)(int)uStack_170 - 1;
-        puVar19 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+        puVar19 = (uint *)(this[6] + uStack_170 * 0x2c);
         *puVar19 = uVar35;
         puVar19[1] = uVar26;
         puVar19[2] = uVar35;
@@ -445,14 +443,14 @@ LAB_0046ffe8:
   } while( true );
   bVar17 = false;
 LAB_0046fffc:
-  iVar33 = (int)param_1[8];
+  iVar33 = (int)this[8];
   fVar47 = (float)((iVar33 - (int)uStack_170) + iVar2);
   if (fVar47 != 0.0) {
     _walkStrip<WaterConcept::ConsiderSameDefault>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameDefault,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
     ::stripID = _walkStrip<WaterConcept::ConsiderSameDefault>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameDefault,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
                 ::stripID + 1;
-    if ((int)param_5 < 5) {
-      lVar41 = param_1[0x8c] + (long)(int)param_5 * 0x10;
+    if ((int)param_4 < 5) {
+      lVar41 = this[0x8c] + (long)(int)param_4 * 0x10;
       uStack_f0 = *(int **)(lVar41 + -0x10);
       piStack_e8 = *(int **)(lVar41 + -8);
       if (uStack_f0 == (int *)0x0) {
@@ -476,7 +474,7 @@ LAB_0046fffc:
       lVar41 = -0xf0;
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar41);
-    uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
+    uStack_100 = CONCAT44(*(undefined4 *)((long)this + 0x454),(int)this[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
       fVar52 = fStack_20c;
@@ -485,8 +483,8 @@ LAB_0046fffc:
       fVar52 = -NAN;
     }
     iVar34 = (int)fVar52 + (int)fVar47;
-    fVar52 = (float)*(undefined8 *)(*param_1 + 0x20) * 0.5;
-    fVar53 = (float)((ulong)*(undefined8 *)(*param_1 + 0x20) >> 0x20) * 0.5;
+    fVar52 = (float)*(undefined8 *)(*this + 0x20) * 0.5;
+    fVar53 = (float)((ulong)*(undefined8 *)(*this + 0x20) >> 0x20) * 0.5;
     if (0 < iVar34) {
       iVar39 = 0;
       uVar25 = iVar2 + iVar33;
@@ -498,8 +496,8 @@ LAB_0046fffc:
           uVar25 = uVar25 + iVar30;
           iVar21 = uVar25 - (int)uStack_170;
         } while ((int)fVar47 <= iVar21);
-        uVar26 = *(uint *)(param_1 + 8);
-        lVar41 = param_1[6];
+        uVar26 = *(uint *)(this + 8);
+        lVar41 = this[6];
         iVar5 = 0;
         if (iVar21 < (int)((int)fVar47 - 1U)) {
           iVar5 = iVar21 + 1;
@@ -517,9 +515,9 @@ LAB_0046fffc:
           uVar25 = uVar26;
         }
         uVar36 = (ulong)((iVar5 + (int)uStack_170) - uVar25);
-        if (7 < (int)param_1[(long)iVar21 * 6 + 0xf] - 1U) goto switchD_004701bc_caseD_3;
+        if (7 < (int)this[(long)iVar21 * 6 + 0xf] - 1U) goto switchD_004701bc_caseD_3;
         piVar31 = (int *)(lVar41 + uVar36 * 0x2c);
-        switch((int)param_1[(long)iVar21 * 6 + 0xf]) {
+        switch((int)this[(long)iVar21 * 6 + 0xf]) {
         case 1:
           if (*piVar15 <= *piVar31) break;
 LAB_00470250:
@@ -565,8 +563,8 @@ LAB_00470144:
 LAB_00470330:
           *(undefined4 *)(lVar41 + uVar13 * 0x2c + 0x14) = 0;
                     /* try { // try from 00470340 to 00470347 has its CatchHandler @ 00471420 */
-          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
-          lVar28 = param_1[(long)*piVar45 * 6 + 0x11];
+          WaterConcept::Grid::getCellPos(&uStack_f0,*this);
+          lVar28 = this[(long)*piVar45 * 6 + 0x11];
           lVar41 = lVar41 + uVar13 * 0x2c;
           *(undefined1 *)(lVar41 + 0x19) = 1;
           *(ulong *)(lVar41 + 0x24) =
@@ -611,8 +609,8 @@ LAB_00470388:
             uVar25 = uVar25 + iVar30;
             iVar21 = iVar5 - (int)fVar47;
           } while ((int)fVar47 <= iVar5);
-          uVar26 = *(uint *)(param_1 + 8);
-          lVar41 = param_1[6];
+          uVar26 = *(uint *)(this + 8);
+          lVar41 = this[6];
           iVar21 = 0;
           if (iVar5 < (int)((int)fVar47 - 1U)) {
             iVar21 = iVar5 + 1;
@@ -630,15 +628,15 @@ LAB_00470388:
           if (*(int *)((long)puVar16 + 0x14) == 1) {
             uVar36 = (ulong)((iVar21 + (int)uStack_170) - uVar35);
             piVar15 = (int *)(lVar41 + uVar36 * 0x2c);
-            fVar46 = param_12;
-            if (param_12 == -NAN) {
-              iVar6 = *(int *)param_1[2];
-              lVar28 = *(long *)((int *)param_1[2] + 2);
-              fVar46 = *(float *)((long)param_1 +
+            fVar46 = param_11;
+            if (param_11 == -NAN) {
+              iVar6 = *(int *)this[2];
+              lVar28 = *(long *)((int *)this[2] + 2);
+              fVar46 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar28 + (long)((int)*puVar16 +
                                                                  iVar6 * *(int *)(lVar41 + uVar13 * 
                                                   0x2c + 4)) * 0x1c + 0x14) * 4 + 0x540);
-              fVar49 = *(float *)((long)param_1 +
+              fVar49 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar28 + (long)(*piVar15 +
                                                                  *(int *)(lVar41 + uVar36 * 0x2c + 4
                                                                          ) * iVar6) * 0x1c + 0x14) *
@@ -660,7 +658,7 @@ LAB_00470388:
               }
               iVar32 = ((uint)fVar47 & iVar32 >> 0x1f) + iVar32;
               if (-1 < iVar32) {
-                iVar7 = *(int *)((long)param_1 + lVar28 * 4 + (long)iVar6 * 0x30 + 0x98);
+                iVar7 = *(int *)((long)this + lVar28 * 4 + (long)iVar6 * 0x30 + 0x98);
                 iVar3 = -1;
                 if (lVar28 == 0) {
                   iVar3 = 1;
@@ -735,9 +733,9 @@ LAB_00470634:
             uStack_108 = CONCAT44(uVar35,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar35 < 1)) {
                     /* try { // try from 004706c0 to 004706c7 has its CatchHandler @ 0047141c */
-              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*this);
                     /* try { // try from 004706cc to 004706d7 has its CatchHandler @ 00471410 */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,piVar15);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -745,53 +743,53 @@ LAB_00470634:
               if ((int)fVar49 < 2) {
                 if ((int)uVar35 < 1) {
                     /* try { // try from 00470b70 to 00470b77 has its CatchHandler @ 004713c8 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar16);
                   lVar28 = lVar41 + uVar13 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11]
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                        ,fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                          SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar28 + 0x19) = 1;
                   *(ulong *)(lVar28 + 0x24) = uStack_110;
                     /* try { // try from 00470bc4 to 00470bcf has its CatchHandler @ 004713c4 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
-                  uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+                  uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar41 + 0x18) = 1;
                 }
                 else {
                   uVar35 = -(int)fVar46;
-                  lVar28 = param_1[6];
+                  lVar28 = this[6];
                   if ((int)uVar35 <= (int)~uVar26) {
                     uVar35 = ~uVar26;
                   }
                   iVar21 = ((uint)fVar47 & (int)(iVar38 + uVar35 + uVar25 + 1) >> 0x1f) + uVar35;
                   uVar26 = 0;
-                  if (*(uint *)(param_1 + 8) <= iVar21 + uVar25 + 1) {
-                    uVar26 = *(uint *)(param_1 + 8);
+                  if (*(uint *)(this + 8) <= iVar21 + uVar25 + 1) {
+                    uVar26 = *(uint *)(this + 8);
                   }
                   uVar13 = (ulong)((iVar21 - uVar26) + uVar25 + 1);
                     /* try { // try from 00470858 to 0047085f has its CatchHandler @ 004713d0 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar28 + uVar13 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar28 + uVar13 * 0x2c);
                   lVar28 = lVar28 + uVar13 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar28 + 0x10
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar28 + 0x10
                                                                                       ) * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*(int *)(lVar28 + 0x10) * 6 +
+                                        ,fVar52 * (float)this[(long)*(int *)(lVar28 + 0x10) * 6 +
                                                                  0x11] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar28 + 0x19) = 1;
                   *(ulong *)(lVar28 + 0x24) = uStack_110;
                     /* try { // try from 00470898 to 004708a3 has its CatchHandler @ 004713cc */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
-                  uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+                  uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar41 + 0x18) = 1;
                 }
@@ -808,41 +806,41 @@ LAB_00470634:
                   uVar26 = 0xffffffff;
                 }
                 uVar35 = 0;
-                if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar26) + uVar25) - 1) {
-                  uVar35 = *(uint *)(param_1 + 8);
+                if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar26) + uVar25) - 1) {
+                  uVar35 = *(uint *)(this + 8);
                 }
-                lVar28 = param_1[6];
+                lVar28 = this[6];
                 uVar36 = (ulong)((((-(int)fVar46 - uVar35) - uVar26) + uVar25) - 1);
                     /* try { // try from 00470758 to 0047075f has its CatchHandler @ 00471400 */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar28 + uVar36 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar28 + uVar36 * 0x2c);
                 lVar28 = lVar28 + uVar36 * 0x2c;
-                uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar28 + 0x10)
+                uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar28 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
                                       (float)((ulong)uStack_f0 >> 0x20),
-                                      fVar52 * (float)param_1[(long)*(int *)(lVar28 + 0x10) * 6 +
+                                      fVar52 * (float)this[(long)*(int *)(lVar28 + 0x10) * 6 +
                                                               0x12] + SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar28 + 0x18) = 1;
                 *(ulong *)(lVar28 + 0x1c) = uStack_118;
                     /* try { // try from 00470794 to 0047079f has its CatchHandler @ 004713fc */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar16);
                 lVar41 = lVar41 + uVar13 * 0x2c;
-                uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >> 0x20
+                uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
-                                  fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                  fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                   SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar41 + 0x19) = 1;
                 puVar16 = (ulong *)(lVar41 + 0x24);
                 uStack_110 = uVar13;
               }
               *puVar16 = uVar13;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_160 = piStack_e0;
                 piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00470c40 to 00470c63 has its CatchHandler @ 004713ec */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_160,param_8,&uStack_100,&uStack_110,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_160,param_7,&uStack_100,&uStack_110,&uStack_118,
                                 &uStack_120,0xffffffff);
                 ppiVar14 = &piStack_160;
                 goto LAB_00470c68;
@@ -865,19 +863,19 @@ LAB_00470634:
               }
               uStack_110 = uVar36 & 0xffffffff | uVar44 << 0x20;
                     /* try { // try from 00470914 to 0047091f has its CatchHandler @ 0047140c */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,&uStack_110);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >>
+              uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                    fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                     (float)uStack_118);
               *(undefined1 *)(lVar41 + 0x19) = 1;
               *(ulong *)(lVar41 + 0x24) = uStack_118;
               *(ulong *)(lVar41 + 8) = uStack_110;
                     /* try { // try from 00470964 to 0047096f has its CatchHandler @ 00471404 */
-              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar16);
+              WaterConcept::Grid::getCellPos(&uStack_120,*this,puVar16);
                     /* try { // try from 00470974 to 0047097f has its CatchHandler @ 00471418 */
-              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_128,*this,piVar15);
               uVar35 = -(int)fVar46;
               if ((int)uVar35 <= (int)~uVar26) {
                 uVar35 = ~uVar26;
@@ -887,34 +885,34 @@ LAB_00470634:
                                     (float)uStack_120 +
                                     ((float)uStack_128 - (float)uStack_120) * 0.5);
               iVar21 = ((uint)fVar47 & (int)(iVar38 + uVar35 + uVar25 + 1) >> 0x1f) + uVar35;
-              lVar41 = param_1[6];
+              lVar41 = this[6];
               uVar26 = 0;
-              if (*(uint *)(param_1 + 8) <= iVar21 + uVar25 + 1) {
-                uVar26 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= iVar21 + uVar25 + 1) {
+                uVar26 = *(uint *)(this + 8);
               }
               uVar13 = (ulong)((iVar21 - uVar26) + uVar25 + 1);
                     /* try { // try from 004709f0 to 004709f7 has its CatchHandler @ 00471414 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+              uStack_120 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x11
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x11
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar41 + 0x19) = 1;
               *(undefined8 *)(lVar41 + 0x24) = uStack_120;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_140 = piStack_e0;
                 piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00470a50 to 00470a73 has its CatchHandler @ 004713e0 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_140,param_7,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
                 Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
               }
-              lVar41 = param_1[6];
+              lVar41 = this[6];
               uVar26 = ~(uint)fVar46;
               fVar46 = 0.0;
               if ((int)fVar47 <= (int)(iVar38 + (int)fVar49 + uVar25)) {
@@ -924,28 +922,28 @@ LAB_00470634:
                 uVar26 = 0xffffffff;
               }
               uVar35 = 0;
-              if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar26) + uVar25) - 1) {
-                uVar35 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar26) + uVar25) - 1) {
+                uVar35 = *(uint *)(this + 8);
               }
               uVar13 = (ulong)((((-(int)fVar46 - uVar35) - uVar26) + uVar25) - 1);
                     /* try { // try from 00470ae0 to 00470ae7 has its CatchHandler @ 00471408 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+              uStack_128 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar41 + 0x18) = 1;
               *(undefined8 *)(lVar41 + 0x1c) = uStack_128;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_150 = piStack_e0;
                 piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00470b40 to 00470b63 has its CatchHandler @ 004713d4 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_150,param_8,&uStack_100,&uStack_118,&uStack_128,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_150,param_7,&uStack_100,&uStack_118,&uStack_128,
                                 &uStack_130,0xffffffff);
                 ppiVar14 = &piStack_150;
 LAB_00470c68:
@@ -977,11 +975,11 @@ LAB_00470c68:
         do {
           uVar25 = uVar25 + (((int)uStack_170 - iVar2) - iVar33);
         } while ((int)fVar47 <= (int)(uVar25 - (int)uStack_170));
-        lVar28 = param_1[6];
+        lVar28 = this[6];
         uVar13 = 0;
         uVar26 = 0;
-        if (*(uint *)(param_1 + 8) <= uVar25) {
-          uVar26 = *(uint *)(param_1 + 8);
+        if (*(uint *)(this + 8) <= uVar25) {
+          uVar26 = *(uint *)(this + 8);
         }
         uVar36 = (ulong)(uVar25 - uVar26);
         lVar22 = lVar28 + uVar36 * 0x2c;
@@ -993,23 +991,23 @@ LAB_00470c68:
             if (uVar13 != 0) break;
             if (iVar30 == 0) {
                     /* try { // try from 00470e10 to 00470e1b has its CatchHandler @ 0047142c */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar22);
-              lVar48 = param_1[(long)*(int *)(lVar22 + 0x10) * 6 + 0x11];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar22);
+              lVar48 = this[(long)*(int *)(lVar22 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar30 != iVar34 + -1) goto LAB_00470fb4;
                     /* try { // try from 00470dbc to 00470dc7 has its CatchHandler @ 00471428 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar22);
-              lVar48 = param_1[(long)*(int *)(lVar22 + 0x10) * 6 + 0x12];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar22);
+              lVar48 = this[(long)*(int *)(lVar22 + 0x10) * 6 + 0x12];
             }
-            lVar23 = param_1[7];
+            lVar23 = this[7];
             *(ulong *)(lVar23 + (long)iVar39 * 8) =
                  CONCAT44(fVar53 * (float)((ulong)lVar48 >> 0x20) +
                           (float)((ulong)uStack_f0 >> 0x20),
                           fVar52 * (float)lVar48 + SUB84(uStack_f0,0));
 LAB_00470e54:
             iVar38 = iVar39 + 1;
-            if (((param_10 >> 2 & 1) != 0) && (lVar41 = lVar22, lVar37 != 0)) {
+            if (((param_9 >> 2 & 1) != 0) && (lVar41 = lVar22, lVar37 != 0)) {
               pfVar1 = (float *)(lVar23 + (long)iVar39 * 8);
               fVar46 = pfVar1[-2];
               uStack_f0 = *(int **)(pfVar1 + -2);
@@ -1061,8 +1059,8 @@ LAB_00470e54:
                   do {
                     iVar39 = iVar39 + 1;
                     /* try { // try from 00470f70 to 00470f87 has its CatchHandler @ 00471430 */
-                    WaterConcept::World::_considerOutlineForCollision(param_1,CONCAT44(iVar39,uVar40),&uStack_f0,&uStack_108,
-                                    &uStack_110,param_11);
+                    WaterConcept::World::_considerOutlineForCollision(this,CONCAT44(iVar39,uVar40),&uStack_f0,&uStack_108,
+                                    &uStack_110,param_10);
                   } while (iVar39 < (int)uVar25);
                   bVar17 = (int)uVar40 < (int)uVar35;
                   iVar39 = -2 - uVar43;
@@ -1077,7 +1075,7 @@ LAB_00470e54:
               fVar46 = *(float *)(lVar48 + 0x1c);
               fVar49 = *(float *)(lVar48 + 0x20);
 LAB_00470df8:
-              lVar23 = param_1[7];
+              lVar23 = this[7];
               pfVar1 = (float *)(lVar23 + (long)iVar39 * 8);
               *pfVar1 = fVar46;
               pfVar1[1] = fVar49;
@@ -1086,7 +1084,7 @@ LAB_00470df8:
             lVar48 = lVar28 + uVar36 * 0x2c + uVar13 * 8;
             fVar46 = *(float *)(lVar48 + 0x1c);
             fVar49 = *(float *)(lVar48 + 0x20);
-            lVar48 = param_1[7] + (long)iVar39 * 8;
+            lVar48 = this[7] + (long)iVar39 * 8;
             fVar50 = *(float *)(lVar48 + -8) - fVar46;
             fVar51 = *(float *)(lVar48 + -4) - fVar49;
             if (0.01 < fVar50 * fVar50 + fVar51 * fVar51) goto LAB_00470df8;
@@ -1101,15 +1099,15 @@ LAB_00470fb4:
         uVar20 = uVar25;
       } while (iVar30 < iVar34);
     }
-    if (((param_10 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
+    if (((param_9 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
       uVar13 = 0;
       bVar17 = true;
       lVar41 = 8;
-      fVar47 = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x578) * 0.5;
+      fVar47 = *(float *)((long)this + (long)(int)param_4 * 4 + 0x578) * 0.5;
       do {
-        pfVar1 = (float *)(param_1[7] + lVar41);
+        pfVar1 = (float *)(this[7] + lVar41);
         fVar52 = pfVar1[-2];
-        pfVar4 = (float *)(param_1[7] + (ulong)((int)uVar13 - 1) * 8);
+        pfVar4 = (float *)(this[7] + (ulong)((int)uVar13 - 1) * 8);
         if (uVar13 == 0) {
           pfVar4 = (float *)&uStack_108;
         }
@@ -1164,76 +1162,76 @@ LAB_00470fb4:
         if (fVar54 <= -1.0) {
           fVar51 = -1.0;
         }
-        uVar8 = *(undefined4 *)((long)param_1 + (long)(int)param_5 * 4 + 0x58c);
+        uVar8 = *(undefined4 *)((long)this + (long)(int)param_4 * 4 + 0x58c);
         fVar54 = fVar47 / fVar51;
         if (fVar51 <= 0.0) {
           fVar54 = fVar47;
         }
         piStack_e8 = (int *)CONCAT44(piStack_e8._4_4_,uVar8);
         uStack_f0 = (int *)CONCAT44(fVar49 * fVar54 + fVar53,fVar55 * fVar54 + fVar52);
-        puVar24 = *(undefined8 **)(param_9 + 8);
-        if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
+        puVar24 = *(undefined8 **)(param_8 + 8);
+        if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
                     /* try { // try from 004711ec to 0047135f has its CatchHandler @ 00471424 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar24 + 1) = uVar8;
           *puVar24 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (bVar17) {
-          puVar24 = *(undefined8 **)(param_9 + 8);
-          if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          puVar24 = *(undefined8 **)(param_8 + 8);
+          if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
             *puVar24 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
-        puVar24 = *(undefined8 **)(param_9 + 8);
-        if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+        puVar24 = *(undefined8 **)(param_8 + 8);
+        if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
           *puVar24 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (iVar39 - 2 == uVar13) {
           fVar52 = fVar47 * -fVar56;
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
-          puVar24 = *(undefined8 **)(param_9 + 8);
-          if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar24 = *(undefined8 **)(param_9 + 8);
+          puVar24 = *(undefined8 **)(param_8 + 8);
+          if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar24 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
             *puVar24 = uStack_f0;
-            puVar24 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar24;
+            puVar24 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar24;
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
-          if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar24 = *(undefined8 **)(param_9 + 8);
+          if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar24 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
             *puVar24 = uStack_f0;
-            puVar24 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar24;
+            puVar24 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar24;
           }
-          if (puVar24 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          if (puVar24 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar24 + 1) = piStack_e8._0_4_;
             *puVar24 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uVar13 = uVar13 + 1;
@@ -1268,9 +1266,7 @@ LAB_00470fb4:
    WaterConceptConstants::CollisionLayer, int) */
 
 void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,uint param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+               (WaterConcept::GridCell param_1,WaterConcept::GridCell param_2,WaterConcept::GridCell param_3,int param_4,WaterConcept::ConsiderSameRockOutline param_5,WaterConcept::World::EdgeTypeFlag param_6,std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>& param_7,std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>& param_8,int param_9,WaterConceptConstants::CollisionLayer param_10,int param_11)
 
 {
   float *pfVar1;
@@ -1358,45 +1354,45 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
   
   lVar10 = tpidr_el0;
   lVar24 = *(long *)(lVar10 + 0x28);
-  fStack_20c = param_12;
-  if (param_12 == -NAN) {
-    fStack_20c = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x540);
+  fStack_20c = param_11;
+  if (param_11 == -NAN) {
+    fStack_20c = *(float *)((long)this + (long)(int)param_4 * 4 + 0x540);
   }
-  uStack_170 = (ulong)*(uint *)(param_1 + 8);
-  uVar45 = (uint)(param_2 >> 0x20);
-  bVar44 = param_5 == 4 || (param_5 | 1) == 3;
-  iVar37 = (int)((ulong)param_3 >> 0x20);
-  iVar38 = (int)((ulong)param_4 >> 0x20);
+  uStack_170 = (ulong)*(uint *)(this + 8);
+  uVar45 = (uint)(param_1 >> 0x20);
+  bVar44 = param_4 == 4 || (param_4 | 1) == 3;
+  iVar37 = (int)((ulong)param_2 >> 0x20);
+  iVar38 = (int)((ulong)param_3 >> 0x20);
   iVar2 = 0;
   uVar30 = 0;
   do {
     uVar21 = (ulong)uVar30;
-    lVar20 = *(long *)((int *)param_1[2] + 2);
-    iVar39 = *(int *)param_1[2];
+    lVar20 = *(long *)((int *)this[2] + 2);
+    iVar39 = *(int *)this[2];
     if (uVar30 == 1) {
-      lVar25 = lVar20 + (long)(int)((uint)param_2 + iVar39 * uVar45) * 0x1c;
-      if (param_7 == 1) {
+      lVar25 = lVar20 + (long)(int)((uint)param_1 + iVar39 * uVar45) * 0x1c;
+      if (param_6 == 1) {
         pbVar19 = (byte *)(lVar25 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar19 = (byte *)(lVar25 + 0x18);
       }
       else {
         pbVar19 = (byte *)(lVar25 + 0x1a);
       }
-      iVar18 = *(int *)((long)param_1 + (ulong)*pbVar19 * 0x30 + 0x7c);
-      uVar41 = param_2;
+      iVar18 = *(int *)((long)this + (ulong)*pbVar19 * 0x30 + 0x7c);
+      uVar41 = param_1;
       uVar31 = uVar45 - 1;
       if (((iVar18 != 1) && (uVar31 = uVar45 + 1, iVar18 != 4)) &&
-         (uVar41 = param_2 + 1, uVar31 = uVar45, iVar18 != 2)) {
-        uVar41 = param_2 - 1;
+         (uVar41 = param_1 + 1, uVar31 = uVar45, iVar18 != 2)) {
+        uVar41 = param_1 - 1;
       }
-      if ((((int)uVar41 < (int)param_3) || ((int)param_4 <= (int)uVar41)) ||
+      if ((((int)uVar41 < (int)param_2) || ((int)param_3 <= (int)uVar41)) ||
          (((int)uVar31 < iVar37 || (iVar38 <= (int)uVar31)))) break;
     }
     else {
       iVar18 = 1;
-      uVar41 = param_2 & 0xffffffff;
+      uVar41 = param_1 & 0xffffffff;
       uVar31 = uVar45;
     }
     bVar11 = false;
@@ -1405,10 +1401,10 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
       uVar40 = (uint)uVar41;
       lVar43 = (long)(int)(uVar40 + iVar39 * uVar31);
       lVar25 = lVar20 + lVar43 * 0x1c;
-      if (param_7 == 1) {
+      if (param_6 == 1) {
         pbVar19 = (byte *)(lVar25 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar19 = (byte *)(lVar25 + 0x18);
       }
       else {
@@ -1416,15 +1412,15 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
       }
       bVar8 = *(byte *)(lVar20 + lVar43 * 0x1c + 0x14);
       if ((bVar44 != (bVar8 == 4 || (bVar8 | 1) == 3)) ||
-         (*(int *)(*(long *)((int *)param_1[0x87] + 2) +
-                  (long)(int)(uVar40 + *(int *)param_1[0x87] * uVar31) * 4) != 0)) break;
+         (*(int *)(*(long *)((int *)this[0x87] + 2) +
+                  (long)(int)(uVar40 + *(int *)this[0x87] * uVar31) * 4) != 0)) break;
       bVar8 = *pbVar19;
       uVar14 = (ulong)bVar8;
       uVar12 = (uint)bVar8;
       uVar13 = (uint)bVar8;
       if (uVar12 == 0) {
         if (bVar11) goto LAB_004721e8;
-        iVar39 = *(int *)((long)param_1 + uVar21 * 4 + 0x80);
+        iVar39 = *(int *)((long)this + uVar21 * 4 + 0x80);
         if (iVar18 == 2) {
           iVar18 = 4;
           if (iVar39 == 0) {
@@ -1461,7 +1457,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
           uStack_c8 = 0;
           auStack_bc[0] = 0;
           uStack_c4 = 0;
-          puVar26 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+          puVar26 = (uint *)(this[6] + (long)iVar2 * 0x2c);
           *puVar26 = uVar40;
           puVar26[1] = uVar31;
           puVar26[2] = uVar40;
@@ -1486,7 +1482,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
           auStack_bc[0] = 0;
           uStack_c4 = 0;
           uStack_170 = (long)(int)uStack_170 - 1;
-          puVar26 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+          puVar26 = (uint *)(this[6] + uStack_170 * 0x2c);
           *puVar26 = uVar40;
           puVar26[1] = uVar31;
           puVar26[2] = uVar40;
@@ -1505,9 +1501,9 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
         uStack_c8 = 0;
         uStack_cc = 2;
         *(undefined4 *)
-         (*(long *)((int *)param_1[0x87] + 2) +
-         (long)(int)(uVar40 + *(int *)param_1[0x87] * uVar31) * 4) = 1;
-        iVar18 = *(int *)((long)param_1 + uVar21 * 4 + uVar14 * 0x30 + 0x78);
+         (*(long *)((int *)this[0x87] + 2) +
+         (long)(int)(uVar40 + *(int *)this[0x87] * uVar31) * 4) = 1;
+        iVar18 = *(int *)((long)this + uVar21 * 4 + uVar14 * 0x30 + 0x78);
         bVar11 = false;
         piStack_e0 = piStack_d8;
         uStack_c4 = auStack_bc[0];
@@ -1528,28 +1524,28 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
           uVar12 = uVar40 - 1;
         }
       }
-      if ((((((int)uVar12 < (int)param_3 + -1) || ((int)param_4 + 1 < (int)uVar12)) ||
+      if ((((((int)uVar12 < (int)param_2 + -1) || ((int)param_3 + 1 < (int)uVar12)) ||
            ((int)uVar42 < iVar37 + -1)) ||
           ((iVar38 + 1 < (int)uVar42 || ((int)(uVar12 | uVar42) < 0)))) ||
-         ((*(int *)(*param_1 + 0x10) <= (int)uVar12 || (*(int *)(*param_1 + 0x14) <= (int)uVar42))))
+         ((*(int *)(*this + 0x10) <= (int)uVar12 || (*(int *)(*this + 0x14) <= (int)uVar42))))
       goto LAB_004721e8;
-      iVar39 = *(int *)param_1[2];
-      lVar20 = *(long *)((int *)param_1[2] + 2);
+      iVar39 = *(int *)this[2];
+      lVar20 = *(long *)((int *)this[2] + 2);
       iVar32 = uVar12 + iVar39 * uVar42;
       bVar8 = *(byte *)(lVar20 + (long)iVar32 * 0x1c + 0x14);
       if (bVar44 == (bVar8 == 4 || (bVar8 | 1) == 3)) {
         lVar25 = lVar20 + (long)iVar32 * 0x1c;
-        if (param_7 == 1) {
+        if (param_6 == 1) {
           pbVar19 = (byte *)(lVar25 + 0x19);
         }
-        else if (param_7 == 0) {
+        else if (param_6 == 0) {
           pbVar19 = (byte *)(lVar25 + 0x18);
         }
         else {
           pbVar19 = (byte *)(lVar25 + 0x1a);
         }
         if ((uVar13 != 0) && (*pbVar19 != 0)) {
-          iVar32 = *(int *)((long)param_1 + (ulong)(uVar30 ^ 1) * 4 + (ulong)*pbVar19 * 0x30 + 0x78)
+          iVar32 = *(int *)((long)this + (ulong)(uVar30 ^ 1) * 4 + (ulong)*pbVar19 * 0x30 + 0x78)
           ;
           uVar13 = uVar12;
           if (iVar32 == 4) {
@@ -1569,7 +1565,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
           }
           if ((uVar31 != uVar22) || (uVar40 != uVar13)) {
             if (bVar11) goto LAB_004721e8;
-            iVar32 = *(int *)((long)param_1 + uVar21 * 4 + uVar14 * 0x30 + 0x80);
+            iVar32 = *(int *)((long)this + uVar21 * 4 + uVar14 * 0x30 + 0x80);
             if (iVar18 == 2) {
               iVar18 = 4;
               if (iVar32 == 0) {
@@ -1619,12 +1615,12 @@ LAB_00472190:
       }
       uVar41 = (ulong)uVar12;
       uVar31 = uVar42;
-      if ((uVar12 == (uint)param_2) && (uVar42 == uVar45)) {
+      if ((uVar12 == (uint)param_1) && (uVar42 == uVar45)) {
         bVar44 = true;
         goto LAB_00472208;
       }
     }
-    if (param_5 == 1 && (param_10 & 4) == 0) {
+    if (param_4 == 1 && (param_9 & 4) == 0) {
       uVar12 = (int)uVar14 - 1;
       uVar13 = uVar12 & 0xff;
       piStack_e0 = (int *)(uVar41 & 0xffffffff | (ulong)uVar31 << 0x20);
@@ -1642,7 +1638,7 @@ LAB_00472190:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         lVar20 = 0;
-        puVar26 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+        puVar26 = (uint *)(this[6] + (long)iVar2 * 0x2c);
         *puVar26 = uVar40;
         puVar26[1] = uVar31;
         puVar26[2] = uVar40;
@@ -1671,7 +1667,7 @@ LAB_00472190:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         uStack_170 = (long)(int)uStack_170 - 1;
-        puVar26 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+        puVar26 = (uint *)(this[6] + uStack_170 * 0x2c);
         *puVar26 = uVar40;
         puVar26[1] = uVar31;
         puVar26[2] = uVar40;
@@ -1695,14 +1691,14 @@ LAB_004721e8:
   } while( true );
   bVar44 = false;
 LAB_00472208:
-  iVar37 = (int)param_1[8];
+  iVar37 = (int)this[8];
   fVar47 = (float)((iVar37 - (int)uStack_170) + iVar2);
   if (fVar47 != 0.0) {
     _walkStrip<WaterConcept::ConsiderSameRockOutline>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameRockOutline,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
     ::stripID = _walkStrip<WaterConcept::ConsiderSameRockOutline>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameRockOutline,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
                 ::stripID + 1;
-    if ((int)param_5 < 5) {
-      lVar20 = param_1[0x8c] + (long)(int)param_5 * 0x10;
+    if ((int)param_4 < 5) {
+      lVar20 = this[0x8c] + (long)(int)param_4 * 0x10;
       uStack_f0 = *(int **)(lVar20 + -0x10);
       piStack_e8 = *(int **)(lVar20 + -8);
       if (uStack_f0 == (int *)0x0) {
@@ -1726,7 +1722,7 @@ LAB_00472208:
       lVar20 = -0xf0;
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar20);
-    uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
+    uStack_100 = CONCAT44(*(undefined4 *)((long)this + 0x454),(int)this[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
       fVar52 = fStack_20c;
@@ -1735,8 +1731,8 @@ LAB_00472208:
       fVar52 = -NAN;
     }
     iVar38 = (int)fVar52 + (int)fVar47;
-    fVar52 = (float)*(undefined8 *)(*param_1 + 0x20) * 0.5;
-    fVar53 = (float)((ulong)*(undefined8 *)(*param_1 + 0x20) >> 0x20) * 0.5;
+    fVar52 = (float)*(undefined8 *)(*this + 0x20) * 0.5;
+    fVar53 = (float)((ulong)*(undefined8 *)(*this + 0x20) >> 0x20) * 0.5;
     if (0 < iVar38) {
       iVar39 = 0;
       uVar30 = iVar2 + iVar37;
@@ -1748,8 +1744,8 @@ LAB_00472208:
           uVar30 = uVar30 + iVar18;
           iVar23 = uVar30 - (int)uStack_170;
         } while ((int)fVar47 <= iVar23);
-        uVar31 = *(uint *)(param_1 + 8);
-        lVar20 = param_1[6];
+        uVar31 = *(uint *)(this + 8);
+        lVar20 = this[6];
         iVar33 = 0;
         if (iVar23 < (int)((int)fVar47 - 1U)) {
           iVar33 = iVar23 + 1;
@@ -1767,9 +1763,9 @@ LAB_00472208:
           uVar30 = uVar31;
         }
         uVar41 = (ulong)((iVar33 + (int)uStack_170) - uVar30);
-        if (7 < (int)param_1[(long)iVar23 * 6 + 0xf] - 1U) goto switchD_004723c8_caseD_3;
+        if (7 < (int)this[(long)iVar23 * 6 + 0xf] - 1U) goto switchD_004723c8_caseD_3;
         piVar34 = (int *)(lVar20 + uVar41 * 0x2c);
-        switch((int)param_1[(long)iVar23 * 6 + 0xf]) {
+        switch((int)this[(long)iVar23 * 6 + 0xf]) {
         case 1:
           if (*piVar16 <= *piVar34) break;
 LAB_0047245c:
@@ -1815,8 +1811,8 @@ LAB_00472350:
 LAB_0047253c:
           *(undefined4 *)(lVar20 + uVar21 * 0x2c + 0x14) = 0;
                     /* try { // try from 00472554 to 0047255b has its CatchHandler @ 00473648 */
-          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
-          lVar25 = param_1[(long)*piVar35 * 6 + 0x11];
+          WaterConcept::Grid::getCellPos(&uStack_f0,*this);
+          lVar25 = this[(long)*piVar35 * 6 + 0x11];
           lVar20 = lVar20 + uVar21 * 0x2c;
           *(undefined1 *)(lVar20 + 0x19) = 1;
           *(ulong *)(lVar20 + 0x24) =
@@ -1861,8 +1857,8 @@ LAB_004725a4:
             uVar30 = uVar30 + iVar18;
             iVar23 = iVar33 - (int)fVar47;
           } while ((int)fVar47 <= iVar33);
-          uVar31 = *(uint *)(param_1 + 8);
-          lVar20 = param_1[6];
+          uVar31 = *(uint *)(this + 8);
+          lVar20 = this[6];
           iVar23 = 0;
           if (iVar33 < (int)((int)fVar47 - 1U)) {
             iVar23 = iVar33 + 1;
@@ -1880,15 +1876,15 @@ LAB_004725a4:
           if (*(int *)((long)puVar17 + 0x14) == 1) {
             uVar41 = (ulong)((iVar23 + (int)uStack_170) - uVar40);
             piVar16 = (int *)(lVar20 + uVar41 * 0x2c);
-            fVar46 = param_12;
-            if (param_12 == -NAN) {
-              iVar5 = *(int *)param_1[2];
-              lVar25 = *(long *)((int *)param_1[2] + 2);
-              fVar46 = *(float *)((long)param_1 +
+            fVar46 = param_11;
+            if (param_11 == -NAN) {
+              iVar5 = *(int *)this[2];
+              lVar25 = *(long *)((int *)this[2] + 2);
+              fVar46 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar25 + (long)((int)*puVar17 +
                                                                  iVar5 * *(int *)(lVar20 + uVar21 * 
                                                   0x2c + 4)) * 0x1c + 0x14) * 4 + 0x540);
-              fVar49 = *(float *)((long)param_1 +
+              fVar49 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar25 + (long)(*piVar16 +
                                                                  *(int *)(lVar20 + uVar41 * 0x2c + 4
                                                                          ) * iVar5) * 0x1c + 0x14) *
@@ -1910,7 +1906,7 @@ LAB_004725a4:
               }
               iVar36 = ((uint)fVar47 & iVar36 >> 0x1f) + iVar36;
               if (-1 < iVar36) {
-                iVar6 = *(int *)((long)param_1 + lVar25 * 4 + (long)iVar5 * 0x30 + 0x98);
+                iVar6 = *(int *)((long)this + lVar25 * 4 + (long)iVar5 * 0x30 + 0x98);
                 iVar3 = -1;
                 if (lVar25 == 0) {
                   iVar3 = 1;
@@ -1985,9 +1981,9 @@ LAB_00472858:
             uStack_108 = CONCAT44(uVar40,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar40 < 1)) {
                     /* try { // try from 004728d0 to 004728db has its CatchHandler @ 00473644 */
-              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*this);
                     /* try { // try from 004728e0 to 004728eb has its CatchHandler @ 00473638 */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar16);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,piVar16);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -1995,21 +1991,21 @@ LAB_00472858:
               if ((int)fVar49 < 2) {
                 if ((int)uVar40 < 1) {
                     /* try { // try from 00472d90 to 00472d97 has its CatchHandler @ 004735f0 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar17);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar17);
                   lVar25 = lVar20 + uVar21 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11]
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar35 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*piVar35 * 6 + 0x11] +
+                                        ,fVar52 * (float)this[(long)*piVar35 * 6 + 0x11] +
                                          SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar25 + 0x19) = 1;
                   *(ulong *)(lVar25 + 0x24) = uStack_110;
                     /* try { // try from 00472de4 to 00472def has its CatchHandler @ 004735ec */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar16);
                   lVar20 = lVar20 + uVar41 * 0x2c;
-                  uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
+                  uVar21 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar20 + 0x18) = 1;
                 }
@@ -2019,29 +2015,29 @@ LAB_00472858:
                     uVar40 = ~uVar31;
                   }
                   iVar23 = ((uint)fVar47 & (int)(iVar32 + uVar40 + uVar30 + 1) >> 0x1f) + uVar40;
-                  lVar25 = param_1[6];
+                  lVar25 = this[6];
                   uVar31 = 0;
-                  if (*(uint *)(param_1 + 8) <= iVar23 + uVar30 + 1) {
-                    uVar31 = *(uint *)(param_1 + 8);
+                  if (*(uint *)(this + 8) <= iVar23 + uVar30 + 1) {
+                    uVar31 = *(uint *)(this + 8);
                   }
                   uVar21 = (ulong)((iVar23 - uVar31) + uVar30 + 1);
                     /* try { // try from 00472a74 to 00472a7b has its CatchHandler @ 004735f8 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar25 + uVar21 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar25 + uVar21 * 0x2c);
                   lVar25 = lVar25 + uVar21 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar25 + 0x10
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar25 + 0x10
                                                                                       ) * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*(int *)(lVar25 + 0x10) * 6 +
+                                        ,fVar52 * (float)this[(long)*(int *)(lVar25 + 0x10) * 6 +
                                                                  0x11] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar25 + 0x19) = 1;
                   *(ulong *)(lVar25 + 0x24) = uStack_110;
                     /* try { // try from 00472ab4 to 00472abf has its CatchHandler @ 004735f4 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar16);
                   lVar20 = lVar20 + uVar41 * 0x2c;
-                  uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
+                  uVar21 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar20 + 0x18) = 1;
                 }
@@ -2058,41 +2054,41 @@ LAB_00472858:
                   uVar31 = 0xffffffff;
                 }
                 uVar40 = 0;
-                if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar31) + uVar30) - 1) {
-                  uVar40 = *(uint *)(param_1 + 8);
+                if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar31) + uVar30) - 1) {
+                  uVar40 = *(uint *)(this + 8);
                 }
-                lVar25 = param_1[6];
+                lVar25 = this[6];
                 uVar41 = (ulong)((((-(int)fVar46 - uVar40) - uVar31) + uVar30) - 1);
                     /* try { // try from 00472974 to 0047297b has its CatchHandler @ 00473628 */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar25 + uVar41 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar25 + uVar41 * 0x2c);
                 lVar25 = lVar25 + uVar41 * 0x2c;
-                uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar25 + 0x10)
+                uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar25 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
                                       (float)((ulong)uStack_f0 >> 0x20),
-                                      fVar52 * (float)param_1[(long)*(int *)(lVar25 + 0x10) * 6 +
+                                      fVar52 * (float)this[(long)*(int *)(lVar25 + 0x10) * 6 +
                                                               0x12] + SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar25 + 0x18) = 1;
                 *(ulong *)(lVar25 + 0x1c) = uStack_118;
                     /* try { // try from 004729b0 to 004729bb has its CatchHandler @ 00473624 */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar17);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar17);
                 lVar20 = lVar20 + uVar21 * 0x2c;
-                uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11] >> 0x20
+                uVar21 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar35 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
-                                  fVar52 * (float)param_1[(long)*piVar35 * 6 + 0x11] +
+                                  fVar52 * (float)this[(long)*piVar35 * 6 + 0x11] +
                                   SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar20 + 0x19) = 1;
                 puVar17 = (ulong *)(lVar20 + 0x24);
                 uStack_110 = uVar21;
               }
               *puVar17 = uVar21;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_160 = piStack_e0;
                 piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00472e60 to 00472e83 has its CatchHandler @ 00473614 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_160,param_8,&uStack_100,&uStack_110,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_160,param_7,&uStack_100,&uStack_110,&uStack_118,
                                 &uStack_120,0xffffffff);
                 ppiVar15 = &piStack_160;
                 goto LAB_00472e88;
@@ -2115,19 +2111,19 @@ LAB_00472858:
               }
               uStack_110 = uVar41 & 0xffffffff | uVar14 << 0x20;
                     /* try { // try from 00472b2c to 00472b37 has its CatchHandler @ 00473634 */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,&uStack_110);
               lVar20 = lVar20 + uVar21 * 0x2c;
-              uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11] >>
+              uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar35 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*piVar35 * 6 + 0x11] +
+                                    fVar52 * (float)this[(long)*piVar35 * 6 + 0x11] +
                                     (float)uStack_118);
               *(undefined1 *)(lVar20 + 0x19) = 1;
               *(ulong *)(lVar20 + 0x24) = uStack_118;
               *(ulong *)(lVar20 + 8) = uStack_110;
                     /* try { // try from 00472b80 to 00472b8b has its CatchHandler @ 0047362c */
-              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar17);
+              WaterConcept::Grid::getCellPos(&uStack_120,*this,puVar17);
                     /* try { // try from 00472b90 to 00472b9b has its CatchHandler @ 00473640 */
-              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar16);
+              WaterConcept::Grid::getCellPos(&uStack_128,*this,piVar16);
               uVar40 = -(int)fVar46;
               if ((int)uVar40 <= (int)~uVar31) {
                 uVar40 = ~uVar31;
@@ -2137,35 +2133,35 @@ LAB_00472858:
                                     (float)uStack_120 +
                                     ((float)uStack_128 - (float)uStack_120) * 0.5);
               iVar23 = ((uint)fVar47 & (int)(iVar32 + uVar40 + uVar30 + 1) >> 0x1f) + uVar40;
-              lVar20 = param_1[6];
+              lVar20 = this[6];
               uVar31 = 0;
-              if (*(uint *)(param_1 + 8) <= iVar23 + uVar30 + 1) {
-                uVar31 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= iVar23 + uVar30 + 1) {
+                uVar31 = *(uint *)(this + 8);
               }
               uVar21 = (ulong)((iVar23 - uVar31) + uVar30 + 1);
                     /* try { // try from 00472c0c to 00472c13 has its CatchHandler @ 0047363c */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar20 + uVar21 * 0x2c);
               lVar20 = lVar20 + uVar21 * 0x2c;
-              uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
+              uStack_120 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar20 + 0x10) * 6 + 0x11
+                                    fVar52 * (float)this[(long)*(int *)(lVar20 + 0x10) * 6 + 0x11
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar20 + 0x19) = 1;
               *(undefined8 *)(lVar20 + 0x24) = uStack_120;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_140 = piStack_e0;
                 piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00472c70 to 00472c93 has its CatchHandler @ 00473608 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_140,param_7,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
                 Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
               }
               uVar31 = ~(uint)fVar46;
-              lVar20 = param_1[6];
+              lVar20 = this[6];
               fVar46 = 0.0;
               if ((int)fVar47 <= (int)(iVar32 + (int)fVar49 + uVar30)) {
                 fVar46 = fVar47;
@@ -2174,28 +2170,28 @@ LAB_00472858:
                 uVar31 = 0xffffffff;
               }
               uVar40 = 0;
-              if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar31) + uVar30) - 1) {
-                uVar40 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar31) + uVar30) - 1) {
+                uVar40 = *(uint *)(this + 8);
               }
               uVar21 = (ulong)((((-(int)fVar46 - uVar40) - uVar31) + uVar30) - 1);
                     /* try { // try from 00472d00 to 00472d07 has its CatchHandler @ 00473630 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar20 + uVar21 * 0x2c);
               lVar20 = lVar20 + uVar21 * 0x2c;
-              uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
+              uStack_128 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar20 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar20 + 0x18) = 1;
               *(undefined8 *)(lVar20 + 0x1c) = uStack_128;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_150 = piStack_e0;
                 piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00472d60 to 00472d83 has its CatchHandler @ 004735fc */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_150,param_8,&uStack_100,&uStack_118,&uStack_128,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_150,param_7,&uStack_100,&uStack_118,&uStack_128,
                                 &uStack_130,0xffffffff);
                 ppiVar15 = &piStack_150;
 LAB_00472e88:
@@ -2227,11 +2223,11 @@ LAB_00472e88:
         do {
           uVar30 = uVar30 + (((int)uStack_170 - iVar2) - iVar37);
         } while ((int)fVar47 <= (int)(uVar30 - (int)uStack_170));
-        lVar25 = param_1[6];
+        lVar25 = this[6];
         uVar21 = 0;
         uVar31 = 0;
-        if (*(uint *)(param_1 + 8) <= uVar30) {
-          uVar31 = *(uint *)(param_1 + 8);
+        if (*(uint *)(this + 8) <= uVar30) {
+          uVar31 = *(uint *)(this + 8);
         }
         uVar41 = (ulong)(uVar30 - uVar31);
         lVar27 = lVar25 + uVar41 * 0x2c;
@@ -2243,23 +2239,23 @@ LAB_00472e88:
             if (uVar21 != 0) break;
             if (iVar18 == 0) {
                     /* try { // try from 00473038 to 00473043 has its CatchHandler @ 00473654 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar27);
-              lVar48 = param_1[(long)*(int *)(lVar27 + 0x10) * 6 + 0x11];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar27);
+              lVar48 = this[(long)*(int *)(lVar27 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar18 != iVar38 + -1) goto LAB_004731dc;
                     /* try { // try from 00472fe4 to 00472fef has its CatchHandler @ 00473650 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar27);
-              lVar48 = param_1[(long)*(int *)(lVar27 + 0x10) * 6 + 0x12];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar27);
+              lVar48 = this[(long)*(int *)(lVar27 + 0x10) * 6 + 0x12];
             }
-            lVar28 = param_1[7];
+            lVar28 = this[7];
             *(ulong *)(lVar28 + (long)iVar39 * 8) =
                  CONCAT44(fVar53 * (float)((ulong)lVar48 >> 0x20) +
                           (float)((ulong)uStack_f0 >> 0x20),
                           fVar52 * (float)lVar48 + SUB84(uStack_f0,0));
 LAB_0047307c:
             iVar32 = iVar39 + 1;
-            if (((param_10 >> 2 & 1) != 0) && (lVar20 = lVar27, lVar43 != 0)) {
+            if (((param_9 >> 2 & 1) != 0) && (lVar20 = lVar27, lVar43 != 0)) {
               pfVar1 = (float *)(lVar28 + (long)iVar39 * 8);
               fVar46 = pfVar1[-2];
               uStack_f0 = *(int **)(pfVar1 + -2);
@@ -2311,8 +2307,8 @@ LAB_0047307c:
                   do {
                     iVar39 = iVar39 + 1;
                     /* try { // try from 00473198 to 004731af has its CatchHandler @ 00473658 */
-                    WaterConcept::World::_considerOutlineForCollision(param_1,CONCAT44(iVar39,uVar22),&uStack_f0,&uStack_108,
-                                    &uStack_110,param_11);
+                    WaterConcept::World::_considerOutlineForCollision(this,CONCAT44(iVar39,uVar22),&uStack_f0,&uStack_108,
+                                    &uStack_110,param_10);
                   } while (iVar39 < (int)uVar30);
                   bVar44 = (int)uVar22 < (int)uVar40;
                   iVar39 = -2 - uVar13;
@@ -2327,7 +2323,7 @@ LAB_0047307c:
               fVar46 = *(float *)(lVar48 + 0x1c);
               fVar49 = *(float *)(lVar48 + 0x20);
 LAB_00473020:
-              lVar28 = param_1[7];
+              lVar28 = this[7];
               pfVar1 = (float *)(lVar28 + (long)iVar39 * 8);
               *pfVar1 = fVar46;
               pfVar1[1] = fVar49;
@@ -2336,7 +2332,7 @@ LAB_00473020:
             lVar48 = lVar25 + uVar41 * 0x2c + uVar21 * 8;
             fVar46 = *(float *)(lVar48 + 0x1c);
             fVar49 = *(float *)(lVar48 + 0x20);
-            lVar48 = param_1[7] + (long)iVar39 * 8;
+            lVar48 = this[7] + (long)iVar39 * 8;
             fVar50 = *(float *)(lVar48 + -8) - fVar46;
             fVar51 = *(float *)(lVar48 + -4) - fVar49;
             if (0.01 < fVar50 * fVar50 + fVar51 * fVar51) goto LAB_00473020;
@@ -2351,15 +2347,15 @@ LAB_004731dc:
         uVar45 = uVar30;
       } while (iVar18 < iVar38);
     }
-    if (((param_10 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
+    if (((param_9 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
       uVar21 = 0;
       bVar44 = true;
       lVar20 = 8;
-      fVar47 = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x578) * 0.5;
+      fVar47 = *(float *)((long)this + (long)(int)param_4 * 4 + 0x578) * 0.5;
       do {
-        pfVar1 = (float *)(param_1[7] + lVar20);
+        pfVar1 = (float *)(this[7] + lVar20);
         fVar52 = pfVar1[-2];
-        pfVar4 = (float *)(param_1[7] + (ulong)((int)uVar21 - 1) * 8);
+        pfVar4 = (float *)(this[7] + (ulong)((int)uVar21 - 1) * 8);
         if (uVar21 == 0) {
           pfVar4 = (float *)&uStack_108;
         }
@@ -2414,76 +2410,76 @@ LAB_004731dc:
         if (fVar54 <= -1.0) {
           fVar51 = -1.0;
         }
-        uVar7 = *(undefined4 *)((long)param_1 + (long)(int)param_5 * 4 + 0x58c);
+        uVar7 = *(undefined4 *)((long)this + (long)(int)param_4 * 4 + 0x58c);
         fVar54 = fVar47 / fVar51;
         if (fVar51 <= 0.0) {
           fVar54 = fVar47;
         }
         piStack_e8 = (int *)CONCAT44(piStack_e8._4_4_,uVar7);
         uStack_f0 = (int *)CONCAT44(fVar49 * fVar54 + fVar53,fVar55 * fVar54 + fVar52);
-        puVar29 = *(undefined8 **)(param_9 + 8);
-        if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
+        puVar29 = *(undefined8 **)(param_8 + 8);
+        if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
                     /* try { // try from 00473410 to 00473587 has its CatchHandler @ 0047364c */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar29 + 1) = uVar7;
           *puVar29 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (bVar44) {
-          puVar29 = *(undefined8 **)(param_9 + 8);
-          if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          puVar29 = *(undefined8 **)(param_8 + 8);
+          if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
             *puVar29 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
-        puVar29 = *(undefined8 **)(param_9 + 8);
-        if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+        puVar29 = *(undefined8 **)(param_8 + 8);
+        if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
           *puVar29 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (iVar39 - 2 == uVar21) {
           fVar52 = fVar47 * -fVar56;
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
-          puVar29 = *(undefined8 **)(param_9 + 8);
-          if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar29 = *(undefined8 **)(param_9 + 8);
+          puVar29 = *(undefined8 **)(param_8 + 8);
+          if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar29 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
             *puVar29 = uStack_f0;
-            puVar29 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar29;
+            puVar29 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar29;
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
-          if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar29 = *(undefined8 **)(param_9 + 8);
+          if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar29 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
             *puVar29 = uStack_f0;
-            puVar29 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar29;
+            puVar29 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar29;
           }
-          if (puVar29 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          if (puVar29 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar29 + 1) = piStack_e8._0_4_;
             *puVar29 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uVar21 = uVar21 + 1;
@@ -2517,9 +2513,7 @@ LAB_004731dc:
    WaterConceptConstants::CollisionLayer, int) */
 
 void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+               (WaterConcept::GridCell param_1,WaterConcept::GridCell param_2,WaterConcept::GridCell param_3,int param_4,WaterConcept::ConsiderSameAll param_5,WaterConcept::World::EdgeTypeFlag param_6,std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>& param_7,std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>& param_8,int param_9,WaterConceptConstants::CollisionLayer param_10,int param_11)
 
 {
   float *pfVar1;
@@ -2608,46 +2602,46 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
   
   lVar11 = tpidr_el0;
   lVar25 = *(long *)(lVar11 + 0x28);
-  fStack_204 = param_12;
-  if (param_12 == -NAN) {
-    fStack_204 = *(float *)((long)param_1 + (long)param_5 * 4 + 0x540);
+  fStack_204 = param_11;
+  if (param_11 == -NAN) {
+    fStack_204 = *(float *)((long)this + (long)param_4 * 4 + 0x540);
   }
-  uStack_170 = (ulong)*(uint *)(param_1 + 8);
-  uVar38 = (uint)(param_2 >> 0x20);
-  uVar23 = param_5 - 1;
-  bVar41 = param_5 == 7 || uVar23 < 4;
-  iVar36 = (int)((ulong)param_3 >> 0x20);
-  iVar37 = (int)((ulong)param_4 >> 0x20);
+  uStack_170 = (ulong)*(uint *)(this + 8);
+  uVar38 = (uint)(param_1 >> 0x20);
+  uVar23 = param_4 - 1;
+  bVar41 = param_4 == 7 || uVar23 < 4;
+  iVar36 = (int)((ulong)param_2 >> 0x20);
+  iVar37 = (int)((ulong)param_3 >> 0x20);
   iVar2 = 0;
   uVar32 = 0;
   do {
     uVar22 = (ulong)uVar32;
-    lVar18 = *(long *)((int *)param_1[2] + 2);
-    iVar43 = *(int *)param_1[2];
+    lVar18 = *(long *)((int *)this[2] + 2);
+    iVar43 = *(int *)this[2];
     if (uVar32 == 1) {
-      lVar30 = lVar18 + (long)(int)((uint)param_2 + iVar43 * uVar38) * 0x1c;
-      if (param_7 == 1) {
+      lVar30 = lVar18 + (long)(int)((uint)param_1 + iVar43 * uVar38) * 0x1c;
+      if (param_6 == 1) {
         pbVar17 = (byte *)(lVar30 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar17 = (byte *)(lVar30 + 0x18);
       }
       else {
         pbVar17 = (byte *)(lVar30 + 0x1a);
       }
-      iVar16 = *(int *)((long)param_1 + (ulong)*pbVar17 * 0x30 + 0x7c);
-      uVar40 = param_2;
+      iVar16 = *(int *)((long)this + (ulong)*pbVar17 * 0x30 + 0x7c);
+      uVar40 = param_1;
       uVar33 = uVar38 - 1;
       if (((iVar16 != 1) && (uVar33 = uVar38 + 1, iVar16 != 4)) &&
-         (uVar40 = param_2 + 1, uVar33 = uVar38, iVar16 != 2)) {
-        uVar40 = param_2 - 1;
+         (uVar40 = param_1 + 1, uVar33 = uVar38, iVar16 != 2)) {
+        uVar40 = param_1 - 1;
       }
-      if ((((int)uVar40 < (int)param_3) || ((int)param_4 <= (int)uVar40)) ||
+      if ((((int)uVar40 < (int)param_2) || ((int)param_3 <= (int)uVar40)) ||
          (((int)uVar33 < iVar36 || (iVar37 <= (int)uVar33)))) break;
     }
     else {
       iVar16 = 1;
-      uVar40 = param_2 & 0xffffffff;
+      uVar40 = param_1 & 0xffffffff;
       uVar33 = uVar38;
     }
     bVar12 = false;
@@ -2656,10 +2650,10 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
       uVar39 = (uint)uVar40;
       lVar44 = (long)(int)(uVar39 + iVar43 * uVar33);
       lVar30 = lVar18 + lVar44 * 0x1c;
-      if (param_7 == 1) {
+      if (param_6 == 1) {
         pbVar17 = (byte *)(lVar30 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar17 = (byte *)(lVar30 + 0x18);
       }
       else {
@@ -2667,15 +2661,15 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
       }
       uVar19 = (uint)*(byte *)(lVar18 + lVar44 * 0x1c + 0x14);
       if ((bVar41 != (uVar19 == 7 || uVar19 - 1 < 4)) ||
-         (*(int *)(*(long *)((int *)param_1[0x87] + 2) +
-                  (long)(int)(uVar39 + *(int *)param_1[0x87] * uVar33) * 4) != 0)) break;
+         (*(int *)(*(long *)((int *)this[0x87] + 2) +
+                  (long)(int)(uVar39 + *(int *)this[0x87] * uVar33) * 4) != 0)) break;
       bVar9 = *pbVar17;
       uVar21 = (ulong)bVar9;
       uVar19 = (uint)bVar9;
       uVar20 = (uint)bVar9;
       if (uVar19 == 0) {
         if (bVar12) goto LAB_00473e04;
-        iVar43 = *(int *)((long)param_1 + uVar22 * 4 + 0x80);
+        iVar43 = *(int *)((long)this + uVar22 * 4 + 0x80);
         if (iVar16 == 2) {
           iVar16 = 4;
           if (iVar43 == 0) {
@@ -2712,7 +2706,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
           uStack_c8 = 0;
           auStack_bc[0] = 0;
           uStack_c4 = 0;
-          puVar31 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+          puVar31 = (uint *)(this[6] + (long)iVar2 * 0x2c);
           *puVar31 = uVar39;
           puVar31[1] = uVar33;
           puVar31[2] = uVar39;
@@ -2737,7 +2731,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
           auStack_bc[0] = 0;
           uStack_c4 = 0;
           uStack_170 = (long)(int)uStack_170 - 1;
-          puVar31 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+          puVar31 = (uint *)(this[6] + uStack_170 * 0x2c);
           *puVar31 = uVar39;
           puVar31[1] = uVar33;
           puVar31[2] = uVar39;
@@ -2757,9 +2751,9 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
         uStack_cc = 2;
         bVar12 = false;
         *(undefined4 *)
-         (*(long *)((int *)param_1[0x87] + 2) +
-         (long)(int)(uVar39 + *(int *)param_1[0x87] * uVar33) * 4) = 1;
-        iVar16 = *(int *)((long)param_1 + uVar22 * 4 + uVar21 * 0x30 + 0x78);
+         (*(long *)((int *)this[0x87] + 2) +
+         (long)(int)(uVar39 + *(int *)this[0x87] * uVar33) * 4) = 1;
+        iVar16 = *(int *)((long)this + uVar22 * 4 + uVar21 * 0x30 + 0x78);
         piStack_e0 = piStack_d8;
         uStack_c4 = auStack_bc[0];
       }
@@ -2779,28 +2773,28 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
           uVar19 = uVar39 - 1;
         }
       }
-      if ((((((int)uVar19 < (int)param_3 + -1) || ((int)param_4 + 1 < (int)uVar19)) ||
+      if ((((((int)uVar19 < (int)param_2 + -1) || ((int)param_3 + 1 < (int)uVar19)) ||
            ((int)uVar45 < iVar36 + -1)) ||
           ((iVar37 + 1 < (int)uVar45 || ((int)(uVar19 | uVar45) < 0)))) ||
-         ((*(int *)(*param_1 + 0x10) <= (int)uVar19 || (*(int *)(*param_1 + 0x14) <= (int)uVar45))))
+         ((*(int *)(*this + 0x10) <= (int)uVar19 || (*(int *)(*this + 0x14) <= (int)uVar45))))
       goto LAB_00473e04;
-      iVar43 = *(int *)param_1[2];
-      lVar18 = *(long *)((int *)param_1[2] + 2);
+      iVar43 = *(int *)this[2];
+      lVar18 = *(long *)((int *)this[2] + 2);
       iVar29 = uVar19 + iVar43 * uVar45;
       uVar42 = (uint)*(byte *)(lVar18 + (long)iVar29 * 0x1c + 0x14);
       if (bVar41 == (uVar42 == 7 || uVar42 - 1 < 4)) {
         lVar30 = lVar18 + (long)iVar29 * 0x1c;
-        if (param_7 == 1) {
+        if (param_6 == 1) {
           pbVar17 = (byte *)(lVar30 + 0x19);
         }
-        else if (param_7 == 0) {
+        else if (param_6 == 0) {
           pbVar17 = (byte *)(lVar30 + 0x18);
         }
         else {
           pbVar17 = (byte *)(lVar30 + 0x1a);
         }
         if ((uVar20 != 0) && (*pbVar17 != 0)) {
-          iVar29 = *(int *)((long)param_1 + (ulong)(uVar32 ^ 1) * 4 + (ulong)*pbVar17 * 0x30 + 0x78)
+          iVar29 = *(int *)((long)this + (ulong)(uVar32 ^ 1) * 4 + (ulong)*pbVar17 * 0x30 + 0x78)
           ;
           uVar20 = uVar19;
           if (iVar29 == 4) {
@@ -2823,7 +2817,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
 LAB_00473bd8:
           if ((uVar33 != uVar42) || (uVar39 != uVar20)) {
             if (bVar12) goto LAB_00473e04;
-            iVar29 = *(int *)((long)param_1 + uVar22 * 4 + uVar21 * 0x30 + 0x80);
+            iVar29 = *(int *)((long)this + uVar22 * 4 + uVar21 * 0x30 + 0x80);
             if (iVar16 == 2) {
               iVar16 = 4;
               if (iVar29 == 0) {
@@ -2873,12 +2867,12 @@ LAB_00473c80:
       }
       uVar40 = (ulong)uVar19;
       uVar33 = uVar45;
-      if ((uVar19 == (uint)param_2) && (uVar45 == uVar38)) {
+      if ((uVar19 == (uint)param_1) && (uVar45 == uVar38)) {
         bVar41 = true;
         goto LAB_00473e18;
       }
     }
-    if (uVar23 == 0 && (param_10 & 4) == 0) {
+    if (uVar23 == 0 && (param_9 & 4) == 0) {
       uVar20 = (int)uVar21 - 1;
       uVar19 = uVar20 & 0xff;
       piStack_e0 = (int *)(uVar40 & 0xffffffff | (ulong)uVar33 << 0x20);
@@ -2896,7 +2890,7 @@ LAB_00473c80:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         lVar18 = 0;
-        puVar31 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+        puVar31 = (uint *)(this[6] + (long)iVar2 * 0x2c);
         *puVar31 = uVar39;
         puVar31[1] = uVar33;
         puVar31[2] = uVar39;
@@ -2925,7 +2919,7 @@ LAB_00473c80:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         uStack_170 = (long)(int)uStack_170 - 1;
-        puVar31 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+        puVar31 = (uint *)(this[6] + uStack_170 * 0x2c);
         *puVar31 = uVar39;
         puVar31[1] = uVar33;
         puVar31[2] = uVar39;
@@ -2949,14 +2943,14 @@ LAB_00473e04:
   } while( true );
   bVar41 = false;
 LAB_00473e18:
-  iVar36 = (int)param_1[8];
+  iVar36 = (int)this[8];
   fVar48 = (float)((iVar36 - (int)uStack_170) + iVar2);
   if (fVar48 != 0.0) {
     _walkStrip<WaterConcept::ConsiderSameAll>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameAll,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
     ::stripID = _walkStrip<WaterConcept::ConsiderSameAll>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameAll,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
                 ::stripID + 1;
-    if (param_5 < 5) {
-      puVar28 = (undefined8 *)(param_1[0x8c] + (long)(int)uVar23 * 0x10);
+    if (param_4 < 5) {
+      puVar28 = (undefined8 *)(this[0x8c] + (long)(int)uVar23 * 0x10);
       uStack_f0 = (int *)*puVar28;
       piStack_e8 = (int *)puVar28[1];
       if (uStack_f0 == (int *)0x0) {
@@ -2980,7 +2974,7 @@ LAB_00473e18:
       lVar18 = -0xf0;
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar18);
-    uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
+    uStack_100 = CONCAT44(*(undefined4 *)((long)this + 0x454),(int)this[0x89]);
     fVar53 = fVar48;
     if ((int)fStack_204 <= (int)fVar48) {
       fVar53 = fStack_204;
@@ -2989,8 +2983,8 @@ LAB_00473e18:
       fVar53 = -NAN;
     }
     iVar37 = (int)fVar53 + (int)fVar48;
-    fVar53 = (float)*(undefined8 *)(*param_1 + 0x20) * 0.5;
-    fVar54 = (float)((ulong)*(undefined8 *)(*param_1 + 0x20) >> 0x20) * 0.5;
+    fVar53 = (float)*(undefined8 *)(*this + 0x20) * 0.5;
+    fVar54 = (float)((ulong)*(undefined8 *)(*this + 0x20) >> 0x20) * 0.5;
     if (0 < iVar37) {
       iVar43 = 0;
       uVar23 = iVar2 + iVar36;
@@ -3002,8 +2996,8 @@ LAB_00473e18:
           uVar23 = uVar23 + iVar16;
           iVar24 = uVar23 - (int)uStack_170;
         } while ((int)fVar48 <= iVar24);
-        uVar38 = *(uint *)(param_1 + 8);
-        lVar18 = param_1[6];
+        uVar38 = *(uint *)(this + 8);
+        lVar18 = this[6];
         iVar5 = 0;
         if (iVar24 < (int)((int)fVar48 - 1U)) {
           iVar5 = iVar24 + 1;
@@ -3021,9 +3015,9 @@ LAB_00473e18:
           uVar23 = uVar38;
         }
         uVar40 = (ulong)((iVar5 + (int)uStack_170) - uVar23);
-        if (7 < (int)param_1[(long)iVar24 * 6 + 0xf] - 1U) goto switchD_00473fdc_caseD_3;
+        if (7 < (int)this[(long)iVar24 * 6 + 0xf] - 1U) goto switchD_00473fdc_caseD_3;
         piVar34 = (int *)(lVar18 + uVar40 * 0x2c);
-        switch((int)param_1[(long)iVar24 * 6 + 0xf]) {
+        switch((int)this[(long)iVar24 * 6 + 0xf]) {
         case 1:
           if (*piVar14 <= *piVar34) break;
 LAB_00474070:
@@ -3069,8 +3063,8 @@ LAB_00473f64:
 LAB_00474150:
           *(undefined4 *)(lVar18 + uVar22 * 0x2c + 0x14) = 0;
                     /* try { // try from 00474160 to 00474167 has its CatchHandler @ 00475240 */
-          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
-          lVar30 = param_1[(long)*piVar46 * 6 + 0x11];
+          WaterConcept::Grid::getCellPos(&uStack_f0,*this);
+          lVar30 = this[(long)*piVar46 * 6 + 0x11];
           lVar18 = lVar18 + uVar22 * 0x2c;
           *(undefined1 *)(lVar18 + 0x19) = 1;
           *(ulong *)(lVar18 + 0x24) =
@@ -3115,8 +3109,8 @@ LAB_004741a8:
             uVar23 = uVar23 + iVar16;
             iVar24 = iVar5 - (int)fVar48;
           } while ((int)fVar48 <= iVar5);
-          uVar38 = *(uint *)(param_1 + 8);
-          lVar18 = param_1[6];
+          uVar38 = *(uint *)(this + 8);
+          lVar18 = this[6];
           iVar24 = 0;
           if (iVar5 < (int)((int)fVar48 - 1U)) {
             iVar24 = iVar5 + 1;
@@ -3134,15 +3128,15 @@ LAB_004741a8:
           if (*(int *)((long)puVar15 + 0x14) == 1) {
             uVar40 = (ulong)((iVar24 + (int)uStack_170) - uVar33);
             piVar14 = (int *)(lVar18 + uVar40 * 0x2c);
-            fVar47 = param_12;
-            if (param_12 == -NAN) {
-              iVar6 = *(int *)param_1[2];
-              lVar30 = *(long *)((int *)param_1[2] + 2);
-              fVar47 = *(float *)((long)param_1 +
+            fVar47 = param_11;
+            if (param_11 == -NAN) {
+              iVar6 = *(int *)this[2];
+              lVar30 = *(long *)((int *)this[2] + 2);
+              fVar47 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar30 + (long)((int)*puVar15 +
                                                                  iVar6 * *(int *)(lVar18 + uVar22 * 
                                                   0x2c + 4)) * 0x1c + 0x14) * 4 + 0x540);
-              fVar50 = *(float *)((long)param_1 +
+              fVar50 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar30 + (long)(*piVar14 +
                                                                  *(int *)(lVar18 + uVar40 * 0x2c + 4
                                                                          ) * iVar6) * 0x1c + 0x14) *
@@ -3164,7 +3158,7 @@ LAB_004741a8:
               }
               iVar35 = ((uint)fVar48 & iVar35 >> 0x1f) + iVar35;
               if (-1 < iVar35) {
-                iVar7 = *(int *)((long)param_1 + lVar30 * 4 + (long)iVar6 * 0x30 + 0x98);
+                iVar7 = *(int *)((long)this + lVar30 * 4 + (long)iVar6 * 0x30 + 0x98);
                 iVar3 = -1;
                 if (lVar30 == 0) {
                   iVar3 = 1;
@@ -3239,9 +3233,9 @@ LAB_00474454:
             uStack_108 = CONCAT44(uVar33,fVar50);
             if (((int)fVar50 < 2) || ((int)uVar33 < 1)) {
                     /* try { // try from 004744e0 to 004744e7 has its CatchHandler @ 0047523c */
-              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*this);
                     /* try { // try from 004744ec to 004744f7 has its CatchHandler @ 00475230 */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar14);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,piVar14);
               fVar51 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar51 + ((float)(uStack_118 >> 0x20) - fVar51) * 0.5,
                                     (float)uStack_110 +
@@ -3249,53 +3243,53 @@ LAB_00474454:
               if ((int)fVar50 < 2) {
                 if ((int)uVar33 < 1) {
                     /* try { // try from 00474990 to 00474997 has its CatchHandler @ 004751e8 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar15);
                   lVar30 = lVar18 + uVar22 * 0x2c;
-                  uStack_110 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11]
+                  uStack_110 = CONCAT44(fVar54 * (float)((ulong)this[(long)*piVar46 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar53 * (float)param_1[(long)*piVar46 * 6 + 0x11] +
+                                        ,fVar53 * (float)this[(long)*piVar46 * 6 + 0x11] +
                                          SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar30 + 0x19) = 1;
                   *(ulong *)(lVar30 + 0x24) = uStack_110;
                     /* try { // try from 004749e4 to 004749ef has its CatchHandler @ 004751e4 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar14);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar14);
                   lVar18 = lVar18 + uVar40 * 0x2c;
-                  uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
+                  uVar22 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar53 * (float)param_1[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
+                                    fVar53 * (float)this[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar18 + 0x18) = 1;
                 }
                 else {
                   uVar33 = -(int)fVar47;
-                  lVar30 = param_1[6];
+                  lVar30 = this[6];
                   if ((int)uVar33 <= (int)~uVar38) {
                     uVar33 = ~uVar38;
                   }
                   iVar24 = ((uint)fVar48 & (int)(iVar29 + uVar33 + uVar23 + 1) >> 0x1f) + uVar33;
                   uVar38 = 0;
-                  if (*(uint *)(param_1 + 8) <= iVar24 + uVar23 + 1) {
-                    uVar38 = *(uint *)(param_1 + 8);
+                  if (*(uint *)(this + 8) <= iVar24 + uVar23 + 1) {
+                    uVar38 = *(uint *)(this + 8);
                   }
                   uVar22 = (ulong)((iVar24 - uVar38) + uVar23 + 1);
                     /* try { // try from 00474678 to 0047467f has its CatchHandler @ 004751f0 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar30 + uVar22 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar30 + uVar22 * 0x2c);
                   lVar30 = lVar30 + uVar22 * 0x2c;
-                  uStack_110 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar30 + 0x10
+                  uStack_110 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar30 + 0x10
                                                                                       ) * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar53 * (float)param_1[(long)*(int *)(lVar30 + 0x10) * 6 +
+                                        ,fVar53 * (float)this[(long)*(int *)(lVar30 + 0x10) * 6 +
                                                                  0x11] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar30 + 0x19) = 1;
                   *(ulong *)(lVar30 + 0x24) = uStack_110;
                     /* try { // try from 004746bc to 004746c7 has its CatchHandler @ 004751ec */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar14);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar14);
                   lVar18 = lVar18 + uVar40 * 0x2c;
-                  uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
+                  uVar22 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar53 * (float)param_1[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
+                                    fVar53 * (float)this[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar18 + 0x18) = 1;
                 }
@@ -3312,41 +3306,41 @@ LAB_00474454:
                   uVar38 = 0xffffffff;
                 }
                 uVar33 = 0;
-                if (*(uint *)(param_1 + 8) <= ((-(int)fVar47 - uVar38) + uVar23) - 1) {
-                  uVar33 = *(uint *)(param_1 + 8);
+                if (*(uint *)(this + 8) <= ((-(int)fVar47 - uVar38) + uVar23) - 1) {
+                  uVar33 = *(uint *)(this + 8);
                 }
-                lVar30 = param_1[6];
+                lVar30 = this[6];
                 uVar40 = (ulong)((((-(int)fVar47 - uVar33) - uVar38) + uVar23) - 1);
                     /* try { // try from 00474578 to 0047457f has its CatchHandler @ 00475220 */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar30 + uVar40 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar30 + uVar40 * 0x2c);
                 lVar30 = lVar30 + uVar40 * 0x2c;
-                uStack_118 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar30 + 0x10)
+                uStack_118 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar30 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
                                       (float)((ulong)uStack_f0 >> 0x20),
-                                      fVar53 * (float)param_1[(long)*(int *)(lVar30 + 0x10) * 6 +
+                                      fVar53 * (float)this[(long)*(int *)(lVar30 + 0x10) * 6 +
                                                               0x12] + SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar30 + 0x18) = 1;
                 *(ulong *)(lVar30 + 0x1c) = uStack_118;
                     /* try { // try from 004745b4 to 004745bf has its CatchHandler @ 0047521c */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar15);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar15);
                 lVar18 = lVar18 + uVar22 * 0x2c;
-                uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11] >> 0x20
+                uVar22 = CONCAT44(fVar54 * (float)((ulong)this[(long)*piVar46 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
-                                  fVar53 * (float)param_1[(long)*piVar46 * 6 + 0x11] +
+                                  fVar53 * (float)this[(long)*piVar46 * 6 + 0x11] +
                                   SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar18 + 0x19) = 1;
                 puVar15 = (ulong *)(lVar18 + 0x24);
                 uStack_110 = uVar22;
               }
               *puVar15 = uVar22;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_160 = piStack_e0;
                 piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00474a60 to 00474a83 has its CatchHandler @ 0047520c */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_160,param_8,&uStack_100,&uStack_110,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_160,param_7,&uStack_100,&uStack_110,&uStack_118,
                                 &uStack_120,0xffffffff);
                 ppiVar13 = &piStack_160;
                 goto LAB_00474a88;
@@ -3369,19 +3363,19 @@ LAB_00474454:
               }
               uStack_110 = uVar40 & 0xffffffff | uVar21 << 0x20;
                     /* try { // try from 00474734 to 0047473f has its CatchHandler @ 0047522c */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,&uStack_110);
               lVar18 = lVar18 + uVar22 * 0x2c;
-              uStack_118 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11] >>
+              uStack_118 = CONCAT44(fVar54 * (float)((ulong)this[(long)*piVar46 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
-                                    fVar53 * (float)param_1[(long)*piVar46 * 6 + 0x11] +
+                                    fVar53 * (float)this[(long)*piVar46 * 6 + 0x11] +
                                     (float)uStack_118);
               *(undefined1 *)(lVar18 + 0x19) = 1;
               *(ulong *)(lVar18 + 0x24) = uStack_118;
               *(ulong *)(lVar18 + 8) = uStack_110;
                     /* try { // try from 00474784 to 0047478f has its CatchHandler @ 00475224 */
-              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar15);
+              WaterConcept::Grid::getCellPos(&uStack_120,*this,puVar15);
                     /* try { // try from 00474794 to 0047479f has its CatchHandler @ 00475238 */
-              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar14);
+              WaterConcept::Grid::getCellPos(&uStack_128,*this,piVar14);
               uVar33 = -(int)fVar47;
               if ((int)uVar33 <= (int)~uVar38) {
                 uVar33 = ~uVar38;
@@ -3391,34 +3385,34 @@ LAB_00474454:
                                     (float)uStack_120 +
                                     ((float)uStack_128 - (float)uStack_120) * 0.5);
               iVar24 = ((uint)fVar48 & (int)(iVar29 + uVar33 + uVar23 + 1) >> 0x1f) + uVar33;
-              lVar18 = param_1[6];
+              lVar18 = this[6];
               uVar38 = 0;
-              if (*(uint *)(param_1 + 8) <= iVar24 + uVar23 + 1) {
-                uVar38 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= iVar24 + uVar23 + 1) {
+                uVar38 = *(uint *)(this + 8);
               }
               uVar22 = (ulong)((iVar24 - uVar38) + uVar23 + 1);
                     /* try { // try from 00474810 to 00474817 has its CatchHandler @ 00475234 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar18 + uVar22 * 0x2c);
               lVar18 = lVar18 + uVar22 * 0x2c;
-              uStack_120 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
+              uStack_120 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar53 * (float)param_1[(long)*(int *)(lVar18 + 0x10) * 6 + 0x11
+                                    fVar53 * (float)this[(long)*(int *)(lVar18 + 0x10) * 6 + 0x11
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar18 + 0x19) = 1;
               *(undefined8 *)(lVar18 + 0x24) = uStack_120;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_140 = piStack_e0;
                 piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 0047486c to 0047488f has its CatchHandler @ 00475200 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_140,param_7,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
                 Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
               }
-              lVar18 = param_1[6];
+              lVar18 = this[6];
               uVar38 = ~(uint)fVar47;
               fVar47 = 0.0;
               if ((int)fVar48 <= (int)(iVar29 + (int)fVar50 + uVar23)) {
@@ -3428,28 +3422,28 @@ LAB_00474454:
                 uVar38 = 0xffffffff;
               }
               uVar33 = 0;
-              if (*(uint *)(param_1 + 8) <= ((-(int)fVar47 - uVar38) + uVar23) - 1) {
-                uVar33 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= ((-(int)fVar47 - uVar38) + uVar23) - 1) {
+                uVar33 = *(uint *)(this + 8);
               }
               uVar22 = (ulong)((((-(int)fVar47 - uVar33) - uVar38) + uVar23) - 1);
                     /* try { // try from 004748fc to 00474903 has its CatchHandler @ 00475228 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar18 + uVar22 * 0x2c);
               lVar18 = lVar18 + uVar22 * 0x2c;
-              uStack_128 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
+              uStack_128 = CONCAT44(fVar54 * (float)((ulong)this[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar53 * (float)param_1[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
+                                    fVar53 * (float)this[(long)*(int *)(lVar18 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar18 + 0x18) = 1;
               *(undefined8 *)(lVar18 + 0x1c) = uStack_128;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_150 = piStack_e0;
                 piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00474960 to 00474983 has its CatchHandler @ 004751f4 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_150,param_8,&uStack_100,&uStack_118,&uStack_128,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_150,param_7,&uStack_100,&uStack_118,&uStack_128,
                                 &uStack_130,0xffffffff);
                 ppiVar13 = &piStack_150;
 LAB_00474a88:
@@ -3481,11 +3475,11 @@ LAB_00474a88:
         do {
           uVar23 = uVar23 + (((int)uStack_170 - iVar2) - iVar36);
         } while ((int)fVar48 <= (int)(uVar23 - (int)uStack_170));
-        lVar30 = param_1[6];
+        lVar30 = this[6];
         uVar22 = 0;
         uVar38 = 0;
-        if (*(uint *)(param_1 + 8) <= uVar23) {
-          uVar38 = *(uint *)(param_1 + 8);
+        if (*(uint *)(this + 8) <= uVar23) {
+          uVar38 = *(uint *)(this + 8);
         }
         uVar40 = (ulong)(uVar23 - uVar38);
         lVar26 = lVar30 + uVar40 * 0x2c;
@@ -3497,23 +3491,23 @@ LAB_00474a88:
             if (uVar22 != 0) break;
             if (iVar16 == 0) {
                     /* try { // try from 00474c30 to 00474c3b has its CatchHandler @ 0047524c */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar26);
-              lVar49 = param_1[(long)*(int *)(lVar26 + 0x10) * 6 + 0x11];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar26);
+              lVar49 = this[(long)*(int *)(lVar26 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar16 != iVar37 + -1) goto LAB_00474dd4;
                     /* try { // try from 00474bdc to 00474be7 has its CatchHandler @ 00475248 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar26);
-              lVar49 = param_1[(long)*(int *)(lVar26 + 0x10) * 6 + 0x12];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar26);
+              lVar49 = this[(long)*(int *)(lVar26 + 0x10) * 6 + 0x12];
             }
-            lVar27 = param_1[7];
+            lVar27 = this[7];
             *(ulong *)(lVar27 + (long)iVar43 * 8) =
                  CONCAT44(fVar54 * (float)((ulong)lVar49 >> 0x20) +
                           (float)((ulong)uStack_f0 >> 0x20),
                           fVar53 * (float)lVar49 + SUB84(uStack_f0,0));
 LAB_00474c74:
             iVar29 = iVar43 + 1;
-            if (((param_10 >> 2 & 1) != 0) && (lVar18 = lVar26, lVar44 != 0)) {
+            if (((param_9 >> 2 & 1) != 0) && (lVar18 = lVar26, lVar44 != 0)) {
               pfVar1 = (float *)(lVar27 + (long)iVar43 * 8);
               fVar47 = pfVar1[-2];
               uStack_f0 = *(int **)(pfVar1 + -2);
@@ -3565,8 +3559,8 @@ LAB_00474c74:
                   do {
                     iVar43 = iVar43 + 1;
                     /* try { // try from 00474d90 to 00474da7 has its CatchHandler @ 00475250 */
-                    WaterConcept::World::_considerOutlineForCollision(param_1,CONCAT44(iVar43,uVar45),&uStack_f0,&uStack_108,
-                                    &uStack_110,param_11);
+                    WaterConcept::World::_considerOutlineForCollision(this,CONCAT44(iVar43,uVar45),&uStack_f0,&uStack_108,
+                                    &uStack_110,param_10);
                   } while (iVar43 < (int)uVar23);
                   bVar41 = (int)uVar45 < (int)uVar33;
                   iVar43 = -2 - uVar39;
@@ -3581,7 +3575,7 @@ LAB_00474c74:
               fVar47 = *(float *)(lVar49 + 0x1c);
               fVar50 = *(float *)(lVar49 + 0x20);
 LAB_00474c18:
-              lVar27 = param_1[7];
+              lVar27 = this[7];
               pfVar1 = (float *)(lVar27 + (long)iVar43 * 8);
               *pfVar1 = fVar47;
               pfVar1[1] = fVar50;
@@ -3590,7 +3584,7 @@ LAB_00474c18:
             lVar49 = lVar30 + uVar40 * 0x2c + uVar22 * 8;
             fVar47 = *(float *)(lVar49 + 0x1c);
             fVar50 = *(float *)(lVar49 + 0x20);
-            lVar49 = param_1[7] + (long)iVar43 * 8;
+            lVar49 = this[7] + (long)iVar43 * 8;
             fVar51 = *(float *)(lVar49 + -8) - fVar47;
             fVar52 = *(float *)(lVar49 + -4) - fVar50;
             if (0.01 < fVar51 * fVar51 + fVar52 * fVar52) goto LAB_00474c18;
@@ -3605,15 +3599,15 @@ LAB_00474dd4:
         uVar32 = uVar23;
       } while (iVar16 < iVar37);
     }
-    if (((param_10 >> 1 & 1) != 0) && (iVar43 - 1U != 0)) {
+    if (((param_9 >> 1 & 1) != 0) && (iVar43 - 1U != 0)) {
       uVar22 = 0;
       bVar41 = true;
       lVar18 = 8;
-      fVar48 = *(float *)((long)param_1 + (long)param_5 * 4 + 0x578) * 0.5;
+      fVar48 = *(float *)((long)this + (long)param_4 * 4 + 0x578) * 0.5;
       do {
-        pfVar1 = (float *)(param_1[7] + lVar18);
+        pfVar1 = (float *)(this[7] + lVar18);
         fVar53 = pfVar1[-2];
-        pfVar4 = (float *)(param_1[7] + (ulong)((int)uVar22 - 1) * 8);
+        pfVar4 = (float *)(this[7] + (ulong)((int)uVar22 - 1) * 8);
         if (uVar22 == 0) {
           pfVar4 = (float *)&uStack_108;
         }
@@ -3668,76 +3662,76 @@ LAB_00474dd4:
         if (fVar55 <= -1.0) {
           fVar52 = -1.0;
         }
-        uVar8 = *(undefined4 *)((long)param_1 + (long)param_5 * 4 + 0x58c);
+        uVar8 = *(undefined4 *)((long)this + (long)param_4 * 4 + 0x58c);
         fVar55 = fVar48 / fVar52;
         if (fVar52 <= 0.0) {
           fVar55 = fVar48;
         }
         piStack_e8 = (int *)CONCAT44(piStack_e8._4_4_,uVar8);
         uStack_f0 = (int *)CONCAT44(fVar50 * fVar55 + fVar54,fVar56 * fVar55 + fVar53);
-        puVar28 = *(undefined8 **)(param_9 + 8);
-        if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
+        puVar28 = *(undefined8 **)(param_8 + 8);
+        if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
                     /* try { // try from 0047500c to 0047517f has its CatchHandler @ 00475244 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar28 + 1) = uVar8;
           *puVar28 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (bVar41) {
-          puVar28 = *(undefined8 **)(param_9 + 8);
-          if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          puVar28 = *(undefined8 **)(param_8 + 8);
+          if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
             *puVar28 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uStack_f0 = (int *)CONCAT44(fVar54 - fVar50 * fVar55,fVar53 - fVar56 * fVar55);
-        puVar28 = *(undefined8 **)(param_9 + 8);
-        if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+        puVar28 = *(undefined8 **)(param_8 + 8);
+        if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
           *puVar28 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (iVar43 - 2 == uVar22) {
           fVar53 = fVar48 * -fVar57;
           uStack_f0 = (int *)CONCAT44(fVar47 + fVar48 * fVar58,fVar51 + fVar53);
-          puVar28 = *(undefined8 **)(param_9 + 8);
-          if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar28 = *(undefined8 **)(param_9 + 8);
+          puVar28 = *(undefined8 **)(param_8 + 8);
+          if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar28 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
             *puVar28 = uStack_f0;
-            puVar28 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar28;
+            puVar28 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar28;
           }
           uStack_f0 = (int *)CONCAT44(fVar47 - fVar48 * fVar58,fVar51 - fVar53);
-          if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar28 = *(undefined8 **)(param_9 + 8);
+          if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar28 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
             *puVar28 = uStack_f0;
-            puVar28 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar28;
+            puVar28 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar28;
           }
-          if (puVar28 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          if (puVar28 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar28 + 1) = piStack_e8._0_4_;
             *puVar28 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uVar22 = uVar22 + 1;
@@ -3771,9 +3765,7 @@ LAB_00474dd4:
    WaterConceptConstants::CollisionLayer, int) */
 
 void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
-               (long *param_1,ulong param_2,undefined8 param_3,undefined8 param_4,int param_5,
-               undefined8 param_6,int param_7,undefined8 param_8,long param_9,uint param_10,
-               undefined4 param_11,float param_12)
+               (WaterConcept::GridCell param_1,WaterConcept::GridCell param_2,WaterConcept::GridCell param_3,int param_4,WaterConcept::ConsiderSameAlgae param_5,WaterConcept::World::EdgeTypeFlag param_6,std::__ndk1::vector<Walaber::PositionTextureVert, std::__ndk1::allocator<Walaber::PositionTextureVert>>& param_7,std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>& param_8,int param_9,WaterConceptConstants::CollisionLayer param_10,int param_11)
 
 {
   float *pfVar1;
@@ -3861,44 +3853,44 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
   
   lVar11 = tpidr_el0;
   lVar28 = *(long *)(lVar11 + 0x28);
-  fStack_20c = param_12;
-  if (param_12 == -NAN) {
-    fStack_20c = *(float *)((long)param_1 + (long)param_5 * 4 + 0x540);
+  fStack_20c = param_11;
+  if (param_11 == -NAN) {
+    fStack_20c = *(float *)((long)this + (long)param_4 * 4 + 0x540);
   }
-  uStack_170 = (ulong)*(uint *)(param_1 + 8);
-  uVar21 = (uint)(param_2 >> 0x20);
-  iVar33 = (int)((ulong)param_3 >> 0x20);
-  iVar34 = (int)((ulong)param_4 >> 0x20);
+  uStack_170 = (ulong)*(uint *)(this + 8);
+  uVar21 = (uint)(param_1 >> 0x20);
+  iVar33 = (int)((ulong)param_2 >> 0x20);
+  iVar34 = (int)((ulong)param_3 >> 0x20);
   iVar2 = 0;
   uVar26 = 0;
   do {
     uVar13 = (ulong)uVar26;
-    lVar41 = *(long *)((int *)param_1[2] + 2);
-    iVar39 = *(int *)param_1[2];
+    lVar41 = *(long *)((int *)this[2] + 2);
+    iVar39 = *(int *)this[2];
     if (uVar26 == 1) {
-      lVar29 = lVar41 + (long)(int)((uint)param_2 + iVar39 * uVar21) * 0x1c;
-      if (param_7 == 1) {
+      lVar29 = lVar41 + (long)(int)((uint)param_1 + iVar39 * uVar21) * 0x1c;
+      if (param_6 == 1) {
         pbVar20 = (byte *)(lVar29 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar20 = (byte *)(lVar29 + 0x18);
       }
       else {
         pbVar20 = (byte *)(lVar29 + 0x1a);
       }
-      iVar30 = *(int *)((long)param_1 + (ulong)*pbVar20 * 0x30 + 0x7c);
-      uVar36 = param_2;
+      iVar30 = *(int *)((long)this + (ulong)*pbVar20 * 0x30 + 0x7c);
+      uVar36 = param_1;
       uVar27 = uVar21 - 1;
       if (((iVar30 != 1) && (uVar27 = uVar21 + 1, iVar30 != 4)) &&
-         (uVar36 = param_2 + 1, uVar27 = uVar21, iVar30 != 2)) {
-        uVar36 = param_2 - 1;
+         (uVar36 = param_1 + 1, uVar27 = uVar21, iVar30 != 2)) {
+        uVar36 = param_1 - 1;
       }
-      if ((((int)uVar36 < (int)param_3) || ((int)param_4 <= (int)uVar36)) ||
+      if ((((int)uVar36 < (int)param_2) || ((int)param_3 <= (int)uVar36)) ||
          (((int)uVar27 < iVar33 || (iVar34 <= (int)uVar27)))) break;
     }
     else {
       iVar30 = 1;
-      uVar36 = param_2 & 0xffffffff;
+      uVar36 = param_1 & 0xffffffff;
       uVar27 = uVar21;
     }
     bVar17 = false;
@@ -3907,26 +3899,26 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
       uVar35 = (uint)uVar36;
       lVar37 = (long)(int)(uVar35 + iVar39 * uVar27);
       lVar29 = lVar41 + lVar37 * 0x1c;
-      if (param_7 == 1) {
+      if (param_6 == 1) {
         pbVar20 = (byte *)(lVar29 + 0x19);
       }
-      else if (param_7 == 0) {
+      else if (param_6 == 0) {
         pbVar20 = (byte *)(lVar29 + 0x18);
       }
       else {
         pbVar20 = (byte *)(lVar29 + 0x1a);
       }
       iVar38 = 2;
-      if (((param_5 == 5) == (*(char *)(lVar41 + lVar37 * 0x1c + 0x14) != '\x05')) ||
-         (*(int *)(*(long *)((int *)param_1[0x87] + 2) +
-                  (long)(int)(uVar35 + *(int *)param_1[0x87] * uVar27) * 4) != 0)) break;
+      if (((param_4 == 5) == (*(char *)(lVar41 + lVar37 * 0x1c + 0x14) != '\x05')) ||
+         (*(int *)(*(long *)((int *)this[0x87] + 2) +
+                  (long)(int)(uVar35 + *(int *)this[0x87] * uVar27) * 4) != 0)) break;
       bVar9 = *pbVar20;
       uVar44 = (ulong)bVar9;
       uVar42 = (uint)bVar9;
       uVar43 = (uint)bVar9;
       if (uVar42 == 0) {
         if (bVar17) goto LAB_004759c8;
-        iVar39 = *(int *)((long)param_1 + uVar13 * 4 + 0x80);
+        iVar39 = *(int *)((long)this + uVar13 * 4 + 0x80);
         if (iVar30 == 2) {
           iVar30 = 4;
           if (iVar39 == 0) {
@@ -3963,7 +3955,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
           uStack_c8 = 0;
           auStack_bc[0] = 0;
           uStack_c4 = 0;
-          puVar19 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+          puVar19 = (uint *)(this[6] + (long)iVar2 * 0x2c);
           *puVar19 = uVar35;
           puVar19[1] = uVar27;
           puVar19[2] = uVar35;
@@ -3988,7 +3980,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
           auStack_bc[0] = 0;
           uStack_c4 = 0;
           uStack_170 = (long)(int)uStack_170 - 1;
-          puVar19 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+          puVar19 = (uint *)(this[6] + uStack_170 * 0x2c);
           *puVar19 = uVar35;
           puVar19[1] = uVar27;
           puVar19[2] = uVar35;
@@ -4007,9 +3999,9 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
         uStack_c8 = 0;
         uStack_cc = 2;
         *(undefined4 *)
-         (*(long *)((int *)param_1[0x87] + 2) +
-         (long)(int)(uVar35 + *(int *)param_1[0x87] * uVar27) * 4) = 1;
-        iVar30 = *(int *)((long)param_1 + uVar13 * 4 + uVar44 * 0x30 + 0x78);
+         (*(long *)((int *)this[0x87] + 2) +
+         (long)(int)(uVar35 + *(int *)this[0x87] * uVar27) * 4) = 1;
+        iVar30 = *(int *)((long)this + uVar13 * 4 + uVar44 * 0x30 + 0x78);
         bVar17 = false;
         piStack_e0 = piStack_d8;
         uStack_c4 = auStack_bc[0];
@@ -4030,27 +4022,27 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
           uVar42 = uVar35 - 1;
         }
       }
-      if ((((((int)uVar42 < (int)param_3 + -1) || ((int)param_4 + 1 < (int)uVar42)) ||
+      if ((((((int)uVar42 < (int)param_2 + -1) || ((int)param_3 + 1 < (int)uVar42)) ||
            ((int)uVar18 < iVar33 + -1)) ||
           ((iVar34 + 1 < (int)uVar18 || ((int)(uVar42 | uVar18) < 0)))) ||
-         ((*(int *)(*param_1 + 0x10) <= (int)uVar42 || (*(int *)(*param_1 + 0x14) <= (int)uVar18))))
+         ((*(int *)(*this + 0x10) <= (int)uVar42 || (*(int *)(*this + 0x14) <= (int)uVar18))))
       goto LAB_004759c8;
-      iVar39 = *(int *)param_1[2];
-      lVar41 = *(long *)((int *)param_1[2] + 2);
+      iVar39 = *(int *)this[2];
+      lVar41 = *(long *)((int *)this[2] + 2);
       iVar22 = uVar42 + iVar39 * uVar18;
-      if ((param_5 == 5) != (*(char *)(lVar41 + (long)iVar22 * 0x1c + 0x14) != '\x05')) {
+      if ((param_4 == 5) != (*(char *)(lVar41 + (long)iVar22 * 0x1c + 0x14) != '\x05')) {
         lVar29 = lVar41 + (long)iVar22 * 0x1c;
-        if (param_7 == 1) {
+        if (param_6 == 1) {
           pbVar20 = (byte *)(lVar29 + 0x19);
         }
-        else if (param_7 == 0) {
+        else if (param_6 == 0) {
           pbVar20 = (byte *)(lVar29 + 0x18);
         }
         else {
           pbVar20 = (byte *)(lVar29 + 0x1a);
         }
         if ((uVar43 != 0) && (*pbVar20 != 0)) {
-          iVar22 = *(int *)((long)param_1 + (ulong)(uVar26 ^ 1) * 4 + (ulong)*pbVar20 * 0x30 + 0x78)
+          iVar22 = *(int *)((long)this + (ulong)(uVar26 ^ 1) * 4 + (ulong)*pbVar20 * 0x30 + 0x78)
           ;
           uVar43 = uVar42;
           if (iVar22 == 4) {
@@ -4073,7 +4065,7 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
 LAB_0047577c:
           if ((uVar27 != uVar40) || (uVar35 != uVar43)) {
             if (bVar17) goto LAB_004759c8;
-            iVar22 = *(int *)((long)param_1 + uVar13 * 4 + uVar44 * 0x30 + 0x80);
+            iVar22 = *(int *)((long)this + uVar13 * 4 + uVar44 * 0x30 + 0x80);
             if (iVar30 == 2) {
               iVar30 = 4;
               if (iVar22 == 0) {
@@ -4122,12 +4114,12 @@ LAB_0047584c:
       }
       uVar27 = uVar18;
       uVar36 = (ulong)uVar42;
-      if ((uVar42 == (uint)param_2) && (uVar27 == uVar21)) {
+      if ((uVar42 == (uint)param_1) && (uVar27 == uVar21)) {
         bVar17 = true;
         goto LAB_004759dc;
       }
     }
-    if (param_5 == 1 && (param_10 & 4) == 0) {
+    if (param_4 == 1 && (param_9 & 4) == 0) {
       uVar42 = (int)uVar44 - 1;
       uVar43 = uVar42 & 0xff;
       piStack_e0 = (int *)(uVar36 & 0xffffffff | (ulong)uVar27 << 0x20);
@@ -4145,7 +4137,7 @@ LAB_0047584c:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         lVar41 = 0;
-        puVar19 = (uint *)(param_1[6] + (long)iVar2 * 0x2c);
+        puVar19 = (uint *)(this[6] + (long)iVar2 * 0x2c);
         *puVar19 = uVar35;
         puVar19[1] = uVar27;
         puVar19[2] = uVar35;
@@ -4174,7 +4166,7 @@ LAB_0047584c:
         auStack_bc[0] = 0;
         uStack_c4 = 0;
         uStack_170 = (long)(int)uStack_170 - 1;
-        puVar19 = (uint *)(param_1[6] + uStack_170 * 0x2c);
+        puVar19 = (uint *)(this[6] + uStack_170 * 0x2c);
         *puVar19 = uVar35;
         puVar19[1] = uVar27;
         puVar19[2] = uVar35;
@@ -4198,14 +4190,14 @@ LAB_004759c8:
   } while( true );
   bVar17 = false;
 LAB_004759dc:
-  iVar33 = (int)param_1[8];
+  iVar33 = (int)this[8];
   fVar47 = (float)((iVar33 - (int)uStack_170) + iVar2);
   if (fVar47 != 0.0) {
     _walkStrip<WaterConcept::ConsiderSameAlgae>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameAlgae,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
     ::stripID = _walkStrip<WaterConcept::ConsiderSameAlgae>(WaterConcept::GridCell,WaterConcept::GridCell,WaterConcept::GridCell,int,WaterConcept::ConsiderSameAlgae,WaterConcept::World::EdgeTypeFlag,std::__ndk1::vector<Walaber::PositionTextureVert,std::__ndk1::allocator<Walaber::PositionTextureVert>>&,std::__ndk1::vector<Walaber::PositionColorVert,std::__ndk1::allocator<Walaber::PositionColorVert>>&,int,WaterConceptConstants::CollisionLayer,int)
                 ::stripID + 1;
-    if (param_5 < 5) {
-      lVar41 = param_1[0x8c] + (long)param_5 * 0x10;
+    if (param_4 < 5) {
+      lVar41 = this[0x8c] + (long)param_4 * 0x10;
       uStack_f0 = *(int **)(lVar41 + -0x10);
       piStack_e8 = *(int **)(lVar41 + -8);
       if (uStack_f0 == (int *)0x0) {
@@ -4229,7 +4221,7 @@ LAB_004759dc:
       lVar41 = -0xf0;
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar41);
-    uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
+    uStack_100 = CONCAT44(*(undefined4 *)((long)this + 0x454),(int)this[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
       fVar52 = fStack_20c;
@@ -4238,8 +4230,8 @@ LAB_004759dc:
       fVar52 = -NAN;
     }
     iVar34 = (int)fVar52 + (int)fVar47;
-    fVar52 = (float)*(undefined8 *)(*param_1 + 0x20) * 0.5;
-    fVar53 = (float)((ulong)*(undefined8 *)(*param_1 + 0x20) >> 0x20) * 0.5;
+    fVar52 = (float)*(undefined8 *)(*this + 0x20) * 0.5;
+    fVar53 = (float)((ulong)*(undefined8 *)(*this + 0x20) >> 0x20) * 0.5;
     if (0 < iVar34) {
       iVar39 = 0;
       uVar26 = iVar2 + iVar33;
@@ -4251,8 +4243,8 @@ LAB_004759dc:
           uVar26 = uVar26 + iVar30;
           iVar22 = uVar26 - (int)uStack_170;
         } while ((int)fVar47 <= iVar22);
-        uVar27 = *(uint *)(param_1 + 8);
-        lVar41 = param_1[6];
+        uVar27 = *(uint *)(this + 8);
+        lVar41 = this[6];
         iVar5 = 0;
         if (iVar22 < (int)((int)fVar47 - 1U)) {
           iVar5 = iVar22 + 1;
@@ -4270,9 +4262,9 @@ LAB_004759dc:
           uVar26 = uVar27;
         }
         uVar36 = (ulong)((iVar5 + (int)uStack_170) - uVar26);
-        if (7 < (int)param_1[(long)iVar22 * 6 + 0xf] - 1U) goto switchD_00475b9c_caseD_3;
+        if (7 < (int)this[(long)iVar22 * 6 + 0xf] - 1U) goto switchD_00475b9c_caseD_3;
         piVar31 = (int *)(lVar41 + uVar36 * 0x2c);
-        switch((int)param_1[(long)iVar22 * 6 + 0xf]) {
+        switch((int)this[(long)iVar22 * 6 + 0xf]) {
         case 1:
           if (*piVar15 <= *piVar31) break;
 LAB_00475c30:
@@ -4318,8 +4310,8 @@ LAB_00475b24:
 LAB_00475d10:
           *(undefined4 *)(lVar41 + uVar13 * 0x2c + 0x14) = 0;
                     /* try { // try from 00475d20 to 00475d27 has its CatchHandler @ 00476e00 */
-          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
-          lVar29 = param_1[(long)*piVar45 * 6 + 0x11];
+          WaterConcept::Grid::getCellPos(&uStack_f0,*this);
+          lVar29 = this[(long)*piVar45 * 6 + 0x11];
           lVar41 = lVar41 + uVar13 * 0x2c;
           *(undefined1 *)(lVar41 + 0x19) = 1;
           *(ulong *)(lVar41 + 0x24) =
@@ -4364,8 +4356,8 @@ LAB_00475d68:
             uVar26 = uVar26 + iVar30;
             iVar22 = iVar5 - (int)fVar47;
           } while ((int)fVar47 <= iVar5);
-          uVar27 = *(uint *)(param_1 + 8);
-          lVar41 = param_1[6];
+          uVar27 = *(uint *)(this + 8);
+          lVar41 = this[6];
           iVar22 = 0;
           if (iVar5 < (int)((int)fVar47 - 1U)) {
             iVar22 = iVar5 + 1;
@@ -4383,15 +4375,15 @@ LAB_00475d68:
           if (*(int *)((long)puVar16 + 0x14) == 1) {
             uVar36 = (ulong)((iVar22 + (int)uStack_170) - uVar35);
             piVar15 = (int *)(lVar41 + uVar36 * 0x2c);
-            fVar46 = param_12;
-            if (param_12 == -NAN) {
-              iVar6 = *(int *)param_1[2];
-              lVar29 = *(long *)((int *)param_1[2] + 2);
-              fVar46 = *(float *)((long)param_1 +
+            fVar46 = param_11;
+            if (param_11 == -NAN) {
+              iVar6 = *(int *)this[2];
+              lVar29 = *(long *)((int *)this[2] + 2);
+              fVar46 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar29 + (long)((int)*puVar16 +
                                                                  iVar6 * *(int *)(lVar41 + uVar13 * 
                                                   0x2c + 4)) * 0x1c + 0x14) * 4 + 0x540);
-              fVar49 = *(float *)((long)param_1 +
+              fVar49 = *(float *)((long)this +
                                  (ulong)*(byte *)(lVar29 + (long)(*piVar15 +
                                                                  *(int *)(lVar41 + uVar36 * 0x2c + 4
                                                                          ) * iVar6) * 0x1c + 0x14) *
@@ -4413,7 +4405,7 @@ LAB_00475d68:
               }
               iVar32 = ((uint)fVar47 & iVar32 >> 0x1f) + iVar32;
               if (-1 < iVar32) {
-                iVar7 = *(int *)((long)param_1 + lVar29 * 4 + (long)iVar6 * 0x30 + 0x98);
+                iVar7 = *(int *)((long)this + lVar29 * 4 + (long)iVar6 * 0x30 + 0x98);
                 iVar3 = -1;
                 if (lVar29 == 0) {
                   iVar3 = 1;
@@ -4488,9 +4480,9 @@ LAB_00476014:
             uStack_108 = CONCAT44(uVar35,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar35 < 1)) {
                     /* try { // try from 004760a0 to 004760a7 has its CatchHandler @ 00476dfc */
-              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*this);
                     /* try { // try from 004760ac to 004760b7 has its CatchHandler @ 00476df0 */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,piVar15);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -4498,53 +4490,53 @@ LAB_00476014:
               if ((int)fVar49 < 2) {
                 if ((int)uVar35 < 1) {
                     /* try { // try from 00476550 to 00476557 has its CatchHandler @ 00476da8 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar16);
                   lVar29 = lVar41 + uVar13 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11]
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                        ,fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                          SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar29 + 0x19) = 1;
                   *(ulong *)(lVar29 + 0x24) = uStack_110;
                     /* try { // try from 004765a4 to 004765af has its CatchHandler @ 00476da4 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
-                  uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+                  uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar41 + 0x18) = 1;
                 }
                 else {
                   uVar35 = -(int)fVar46;
-                  lVar29 = param_1[6];
+                  lVar29 = this[6];
                   if ((int)uVar35 <= (int)~uVar27) {
                     uVar35 = ~uVar27;
                   }
                   iVar22 = ((uint)fVar47 & (int)(iVar38 + uVar35 + uVar26 + 1) >> 0x1f) + uVar35;
                   uVar27 = 0;
-                  if (*(uint *)(param_1 + 8) <= iVar22 + uVar26 + 1) {
-                    uVar27 = *(uint *)(param_1 + 8);
+                  if (*(uint *)(this + 8) <= iVar22 + uVar26 + 1) {
+                    uVar27 = *(uint *)(this + 8);
                   }
                   uVar13 = (ulong)((iVar22 - uVar27) + uVar26 + 1);
                     /* try { // try from 00476238 to 0047623f has its CatchHandler @ 00476db0 */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar29 + uVar13 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar29 + uVar13 * 0x2c);
                   lVar29 = lVar29 + uVar13 * 0x2c;
-                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar29 + 0x10
+                  uStack_110 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar29 + 0x10
                                                                                       ) * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
-                                        ,fVar52 * (float)param_1[(long)*(int *)(lVar29 + 0x10) * 6 +
+                                        ,fVar52 * (float)this[(long)*(int *)(lVar29 + 0x10) * 6 +
                                                                  0x11] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar29 + 0x19) = 1;
                   *(ulong *)(lVar29 + 0x24) = uStack_110;
                     /* try { // try from 00476278 to 00476283 has its CatchHandler @ 00476dac */
-                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*this,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
-                  uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+                  uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
                   *(undefined1 *)(lVar41 + 0x18) = 1;
                 }
@@ -4561,41 +4553,41 @@ LAB_00476014:
                   uVar27 = 0xffffffff;
                 }
                 uVar35 = 0;
-                if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar27) + uVar26) - 1) {
-                  uVar35 = *(uint *)(param_1 + 8);
+                if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar27) + uVar26) - 1) {
+                  uVar35 = *(uint *)(this + 8);
                 }
-                lVar29 = param_1[6];
+                lVar29 = this[6];
                 uVar36 = (ulong)((((-(int)fVar46 - uVar35) - uVar27) + uVar26) - 1);
                     /* try { // try from 00476138 to 0047613f has its CatchHandler @ 00476de0 */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar29 + uVar36 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar29 + uVar36 * 0x2c);
                 lVar29 = lVar29 + uVar36 * 0x2c;
-                uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar29 + 0x10)
+                uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar29 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
                                       (float)((ulong)uStack_f0 >> 0x20),
-                                      fVar52 * (float)param_1[(long)*(int *)(lVar29 + 0x10) * 6 +
+                                      fVar52 * (float)this[(long)*(int *)(lVar29 + 0x10) * 6 +
                                                               0x12] + SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar29 + 0x18) = 1;
                 *(ulong *)(lVar29 + 0x1c) = uStack_118;
                     /* try { // try from 00476174 to 0047617f has its CatchHandler @ 00476ddc */
-                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*this,puVar16);
                 lVar41 = lVar41 + uVar13 * 0x2c;
-                uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >> 0x20
+                uVar13 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
-                                  fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                  fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                   SUB84(uStack_f0,0));
                 *(undefined1 *)(lVar41 + 0x19) = 1;
                 puVar16 = (ulong *)(lVar41 + 0x24);
                 uStack_110 = uVar13;
               }
               *puVar16 = uVar13;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_160 = piStack_e0;
                 piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00476620 to 00476643 has its CatchHandler @ 00476dcc */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_160,param_8,&uStack_100,&uStack_110,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_160,param_7,&uStack_100,&uStack_110,&uStack_118,
                                 &uStack_120,0xffffffff);
                 ppiVar14 = &piStack_160;
                 goto LAB_00476648;
@@ -4618,19 +4610,19 @@ LAB_00476014:
               }
               uStack_110 = uVar36 & 0xffffffff | uVar44 << 0x20;
                     /* try { // try from 004762f4 to 004762ff has its CatchHandler @ 00476dec */
-              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*this,&uStack_110);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >>
+              uStack_118 = CONCAT44(fVar53 * (float)((ulong)this[(long)*piVar45 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*piVar45 * 6 + 0x11] +
+                                    fVar52 * (float)this[(long)*piVar45 * 6 + 0x11] +
                                     (float)uStack_118);
               *(undefined1 *)(lVar41 + 0x19) = 1;
               *(ulong *)(lVar41 + 0x24) = uStack_118;
               *(ulong *)(lVar41 + 8) = uStack_110;
                     /* try { // try from 00476344 to 0047634f has its CatchHandler @ 00476de4 */
-              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar16);
+              WaterConcept::Grid::getCellPos(&uStack_120,*this,puVar16);
                     /* try { // try from 00476354 to 0047635f has its CatchHandler @ 00476df8 */
-              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_128,*this,piVar15);
               uVar35 = -(int)fVar46;
               if ((int)uVar35 <= (int)~uVar27) {
                 uVar35 = ~uVar27;
@@ -4640,34 +4632,34 @@ LAB_00476014:
                                     (float)uStack_120 +
                                     ((float)uStack_128 - (float)uStack_120) * 0.5);
               iVar22 = ((uint)fVar47 & (int)(iVar38 + uVar35 + uVar26 + 1) >> 0x1f) + uVar35;
-              lVar41 = param_1[6];
+              lVar41 = this[6];
               uVar27 = 0;
-              if (*(uint *)(param_1 + 8) <= iVar22 + uVar26 + 1) {
-                uVar27 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= iVar22 + uVar26 + 1) {
+                uVar27 = *(uint *)(this + 8);
               }
               uVar13 = (ulong)((iVar22 - uVar27) + uVar26 + 1);
                     /* try { // try from 004763d0 to 004763d7 has its CatchHandler @ 00476df4 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+              uStack_120 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x11
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x11
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar41 + 0x19) = 1;
               *(undefined8 *)(lVar41 + 0x24) = uStack_120;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_140 = piStack_e0;
                 piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00476430 to 00476453 has its CatchHandler @ 00476dc0 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_140,param_7,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
                 Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
               }
-              lVar41 = param_1[6];
+              lVar41 = this[6];
               uVar27 = ~(uint)fVar46;
               fVar46 = 0.0;
               if ((int)fVar47 <= (int)(iVar38 + (int)fVar49 + uVar26)) {
@@ -4677,28 +4669,28 @@ LAB_00476014:
                 uVar27 = 0xffffffff;
               }
               uVar35 = 0;
-              if (*(uint *)(param_1 + 8) <= ((-(int)fVar46 - uVar27) + uVar26) - 1) {
-                uVar35 = *(uint *)(param_1 + 8);
+              if (*(uint *)(this + 8) <= ((-(int)fVar46 - uVar27) + uVar26) - 1) {
+                uVar35 = *(uint *)(this + 8);
               }
               uVar13 = (ulong)((((-(int)fVar46 - uVar35) - uVar27) + uVar26) - 1);
                     /* try { // try from 004764c0 to 004764c7 has its CatchHandler @ 00476de8 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
-              uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
+              uStack_128 = CONCAT44(fVar53 * (float)((ulong)this[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
                                     (float)((ulong)uStack_f0 >> 0x20),
-                                    fVar52 * (float)param_1[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
+                                    fVar52 * (float)this[(long)*(int *)(lVar41 + 0x10) * 6 + 0x12
                                                            ] + SUB84(uStack_f0,0));
               *(undefined1 *)(lVar41 + 0x18) = 1;
               *(undefined8 *)(lVar41 + 0x1c) = uStack_128;
-              if ((param_10 & 1) != 0) {
+              if ((param_9 & 1) != 0) {
                 piStack_150 = piStack_e0;
                 piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
                     /* try { // try from 00476520 to 00476543 has its CatchHandler @ 00476db4 */
-                WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_150,param_8,&uStack_100,&uStack_118,&uStack_128,
+                WaterConcept::World::_addSmoothingTriangle(this,&piStack_150,param_7,&uStack_100,&uStack_118,&uStack_128,
                                 &uStack_130,0xffffffff);
                 ppiVar14 = &piStack_150;
 LAB_00476648:
@@ -4730,11 +4722,11 @@ LAB_00476648:
         do {
           uVar26 = uVar26 + (((int)uStack_170 - iVar2) - iVar33);
         } while ((int)fVar47 <= (int)(uVar26 - (int)uStack_170));
-        lVar29 = param_1[6];
+        lVar29 = this[6];
         uVar13 = 0;
         uVar27 = 0;
-        if (*(uint *)(param_1 + 8) <= uVar26) {
-          uVar27 = *(uint *)(param_1 + 8);
+        if (*(uint *)(this + 8) <= uVar26) {
+          uVar27 = *(uint *)(this + 8);
         }
         uVar36 = (ulong)(uVar26 - uVar27);
         lVar23 = lVar29 + uVar36 * 0x2c;
@@ -4746,23 +4738,23 @@ LAB_00476648:
             if (uVar13 != 0) break;
             if (iVar30 == 0) {
                     /* try { // try from 004767f0 to 004767fb has its CatchHandler @ 00476e0c */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar23);
-              lVar48 = param_1[(long)*(int *)(lVar23 + 0x10) * 6 + 0x11];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar23);
+              lVar48 = this[(long)*(int *)(lVar23 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar30 != iVar34 + -1) goto LAB_00476994;
                     /* try { // try from 0047679c to 004767a7 has its CatchHandler @ 00476e08 */
-              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar23);
-              lVar48 = param_1[(long)*(int *)(lVar23 + 0x10) * 6 + 0x12];
+              WaterConcept::Grid::getCellPos(&uStack_f0,*this,lVar23);
+              lVar48 = this[(long)*(int *)(lVar23 + 0x10) * 6 + 0x12];
             }
-            lVar24 = param_1[7];
+            lVar24 = this[7];
             *(ulong *)(lVar24 + (long)iVar39 * 8) =
                  CONCAT44(fVar53 * (float)((ulong)lVar48 >> 0x20) +
                           (float)((ulong)uStack_f0 >> 0x20),
                           fVar52 * (float)lVar48 + SUB84(uStack_f0,0));
 LAB_00476834:
             iVar38 = iVar39 + 1;
-            if (((param_10 >> 2 & 1) != 0) && (lVar41 = lVar23, lVar37 != 0)) {
+            if (((param_9 >> 2 & 1) != 0) && (lVar41 = lVar23, lVar37 != 0)) {
               pfVar1 = (float *)(lVar24 + (long)iVar39 * 8);
               fVar46 = pfVar1[-2];
               uStack_f0 = *(int **)(pfVar1 + -2);
@@ -4814,8 +4806,8 @@ LAB_00476834:
                   do {
                     iVar39 = iVar39 + 1;
                     /* try { // try from 00476950 to 00476967 has its CatchHandler @ 00476e10 */
-                    WaterConcept::World::_considerOutlineForCollision(param_1,CONCAT44(iVar39,uVar40),&uStack_f0,&uStack_108,
-                                    &uStack_110,param_11);
+                    WaterConcept::World::_considerOutlineForCollision(this,CONCAT44(iVar39,uVar40),&uStack_f0,&uStack_108,
+                                    &uStack_110,param_10);
                   } while (iVar39 < (int)uVar26);
                   bVar17 = (int)uVar40 < (int)uVar35;
                   iVar39 = -2 - uVar43;
@@ -4830,7 +4822,7 @@ LAB_00476834:
               fVar46 = *(float *)(lVar48 + 0x1c);
               fVar49 = *(float *)(lVar48 + 0x20);
 LAB_004767d8:
-              lVar24 = param_1[7];
+              lVar24 = this[7];
               pfVar1 = (float *)(lVar24 + (long)iVar39 * 8);
               *pfVar1 = fVar46;
               pfVar1[1] = fVar49;
@@ -4839,7 +4831,7 @@ LAB_004767d8:
             lVar48 = lVar29 + uVar36 * 0x2c + uVar13 * 8;
             fVar46 = *(float *)(lVar48 + 0x1c);
             fVar49 = *(float *)(lVar48 + 0x20);
-            lVar48 = param_1[7] + (long)iVar39 * 8;
+            lVar48 = this[7] + (long)iVar39 * 8;
             fVar50 = *(float *)(lVar48 + -8) - fVar46;
             fVar51 = *(float *)(lVar48 + -4) - fVar49;
             if (0.01 < fVar50 * fVar50 + fVar51 * fVar51) goto LAB_004767d8;
@@ -4854,15 +4846,15 @@ LAB_00476994:
         uVar21 = uVar26;
       } while (iVar30 < iVar34);
     }
-    if (((param_10 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
+    if (((param_9 >> 1 & 1) != 0) && (iVar39 - 1U != 0)) {
       uVar13 = 0;
       bVar17 = true;
       lVar41 = 8;
-      fVar47 = *(float *)((long)param_1 + (long)param_5 * 4 + 0x578) * 0.5;
+      fVar47 = *(float *)((long)this + (long)param_4 * 4 + 0x578) * 0.5;
       do {
-        pfVar1 = (float *)(param_1[7] + lVar41);
+        pfVar1 = (float *)(this[7] + lVar41);
         fVar52 = pfVar1[-2];
-        pfVar4 = (float *)(param_1[7] + (ulong)((int)uVar13 - 1) * 8);
+        pfVar4 = (float *)(this[7] + (ulong)((int)uVar13 - 1) * 8);
         if (uVar13 == 0) {
           pfVar4 = (float *)&uStack_108;
         }
@@ -4917,76 +4909,76 @@ LAB_00476994:
         if (fVar54 <= -1.0) {
           fVar51 = -1.0;
         }
-        uVar8 = *(undefined4 *)((long)param_1 + (long)param_5 * 4 + 0x58c);
+        uVar8 = *(undefined4 *)((long)this + (long)param_4 * 4 + 0x58c);
         fVar54 = fVar47 / fVar51;
         if (fVar51 <= 0.0) {
           fVar54 = fVar47;
         }
         piStack_e8 = (int *)CONCAT44(piStack_e8._4_4_,uVar8);
         uStack_f0 = (int *)CONCAT44(fVar49 * fVar54 + fVar53,fVar55 * fVar54 + fVar52);
-        puVar25 = *(undefined8 **)(param_9 + 8);
-        if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
+        puVar25 = *(undefined8 **)(param_8 + 8);
+        if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
                     /* try { // try from 00476bcc to 00476d3f has its CatchHandler @ 00476e04 */
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar25 + 1) = uVar8;
           *puVar25 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (bVar17) {
-          puVar25 = *(undefined8 **)(param_9 + 8);
-          if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          puVar25 = *(undefined8 **)(param_8 + 8);
+          if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
             *puVar25 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uStack_f0 = (int *)CONCAT44(fVar53 - fVar49 * fVar54,fVar52 - fVar55 * fVar54);
-        puVar25 = *(undefined8 **)(param_9 + 8);
-        if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+        puVar25 = *(undefined8 **)(param_8 + 8);
+        if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
+          void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
         }
         else {
           *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
           *puVar25 = uStack_f0;
-          *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+          *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
         }
         if (iVar39 - 2 == uVar13) {
           fVar52 = fVar47 * -fVar56;
           uStack_f0 = (int *)CONCAT44(fVar46 + fVar47 * fVar57,fVar50 + fVar52);
-          puVar25 = *(undefined8 **)(param_9 + 8);
-          if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar25 = *(undefined8 **)(param_9 + 8);
+          puVar25 = *(undefined8 **)(param_8 + 8);
+          if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar25 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
             *puVar25 = uStack_f0;
-            puVar25 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar25;
+            puVar25 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar25;
           }
           uStack_f0 = (int *)CONCAT44(fVar46 - fVar47 * fVar57,fVar50 - fVar52);
-          if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
-            puVar25 = *(undefined8 **)(param_9 + 8);
+          if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
+            puVar25 = *(undefined8 **)(param_8 + 8);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
             *puVar25 = uStack_f0;
-            puVar25 = (undefined8 *)(*(long *)(param_9 + 8) + 0xc);
-            *(undefined8 **)(param_9 + 8) = puVar25;
+            puVar25 = (undefined8 *)(*(long *)(param_8 + 8) + 0xc);
+            *(undefined8 **)(param_8 + 8) = puVar25;
           }
-          if (puVar25 == *(undefined8 **)(param_9 + 0x10)) {
-            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_9,&uStack_f0);
+          if (puVar25 == *(undefined8 **)(param_8 + 0x10)) {
+            void std::__ndk1::vector<Walaber::PositionColorVert, std::__ndk1::allocator<Walaber::PositionColorVert>>::__push_back_slow_path<Walaber::PositionColorVert const&>(param_8,&uStack_f0);
           }
           else {
             *(undefined4 *)(puVar25 + 1) = piStack_e8._0_4_;
             *puVar25 = uStack_f0;
-            *(long *)(param_9 + 8) = *(long *)(param_9 + 8) + 0xc;
+            *(long *)(param_8 + 8) = *(long *)(param_8 + 8) + 0xc;
           }
         }
         uVar13 = uVar13 + 1;

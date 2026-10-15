@@ -152,9 +152,7 @@ void Walaber::Widget_MovingTextBox::init(void)
    Walaber::Widget_MovingTextBox::MovementDirection, float, float, float, float, float) */
 
 void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,long *param_6,undefined8 param_7,undefined8 *param_8,
-               undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12)
+               (int param_1,Walaber::Vector2 const& param_2,Walaber::Vector2 const& param_3,Walaber::SharedPtr<Walaber::Texture> param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,Walaber::Widget_MovingTextBox::MovementDirection param_6,float param_7,float param_8,float param_9,float param_10,float param_11)
 
 {
   long lVar1;
@@ -166,39 +164,39 @@ void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
   
   lVar1 = tpidr_el0;
   lStack_78 = *(long *)(lVar1 + 0x28);
-  uStack_80 = *param_8;
-  uStack_88 = *param_9;
-  Walaber::Widget::Widget(param_6,param_7,0xc,&uStack_80,&uStack_88,1,1);
-  *param_6 = (long)&PTR__Widget_MovingTextBox_0070f388;
-  lVar3 = *param_10;
-  param_6[0x20] = lVar3;
-  piVar2 = (int *)param_10[1];
-  param_6[0x21] = (long)piVar2;
+  uStack_80 = *param_7;
+  uStack_88 = *param_8;
+  Walaber::Widget::Widget(param_5,param_6,0xc,&uStack_80,&uStack_88,1,1);
+  *param_5 = (long)&PTR__Widget_MovingTextBox_0070f388;
+  lVar3 = *param_9;
+  param_5[0x20] = lVar3;
+  piVar2 = (int *)param_9[1];
+  param_5[0x21] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)(param_6 + 0x22) = 0xff000000;
-  *(undefined8 *)((long)param_6 + 0x11c) = 0;
-  *(undefined8 *)((long)param_6 + 0x114) = 0;
-  *(undefined8 *)((long)param_6 + 300) = 0;
-  *(undefined8 *)((long)param_6 + 0x124) = 0;
-  *(undefined4 *)(param_6 + 0x27) = 0;
-  *(undefined4 *)((long)param_6 + 0x134) = 0;
-  param_6[0x28] = (long)(param_6 + 0x28);
-  param_6[0x29] = (long)(param_6 + 0x28);
-  param_6[0x2a] = 0;
-  param_6[0x2b] = 0;
-  *(undefined4 *)(param_6 + 0x2c) = 0xff000000;
-  *(undefined4 *)((long)param_6 + 0x164) = param_1;
-  *(undefined4 *)(param_6 + 0x2d) = param_2;
-  *(undefined4 *)((long)param_6 + 0x16c) = param_3;
-  *(undefined4 *)(param_6 + 0x2e) = param_4;
-  *(undefined4 *)(param_6 + 0x2f) = param_12;
-  *(undefined4 *)((long)param_6 + 0x17c) = param_5;
+  *(undefined4 *)(param_5 + 0x22) = 0xff000000;
+  *(undefined8 *)((long)param_5 + 0x11c) = 0;
+  *(undefined8 *)((long)param_5 + 0x114) = 0;
+  *(undefined8 *)((long)param_5 + 300) = 0;
+  *(undefined8 *)((long)param_5 + 0x124) = 0;
+  *(undefined4 *)(param_5 + 0x27) = 0;
+  *(undefined4 *)((long)param_5 + 0x134) = 0;
+  param_5[0x28] = (long)(param_5 + 0x28);
+  param_5[0x29] = (long)(param_5 + 0x28);
+  param_5[0x2a] = 0;
+  param_5[0x2b] = 0;
+  *(undefined4 *)(param_5 + 0x2c) = 0xff000000;
+  *(undefined4 *)((long)param_5 + 0x164) = this;
+  *(undefined4 *)(param_5 + 0x2d) = param_1;
+  *(undefined4 *)((long)param_5 + 0x16c) = param_2;
+  *(undefined4 *)(param_5 + 0x2e) = param_3;
+  *(undefined4 *)(param_5 + 0x2f) = param_11;
+  *(undefined4 *)((long)param_5 + 0x17c) = param_4;
                     /* try { // try from 00380d3c to 00380d5b has its CatchHandler @ 00380d94 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_6 + 0x1a,param_11);
-  (**(code **)(*param_6 + 0x78))(param_6);
-  Walaber::Widget_MovingTextBox::_updateBorders(param_6);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_5 + 0x1a,param_10);
+  (**(code **)(*param_5 + 0x78))(param_5);
+  Walaber::Widget_MovingTextBox::_updateBorders(param_5);
   if (*(long *)(lVar1 + 0x28) == lStack_78) {
     return;
   }
@@ -358,7 +356,7 @@ void Walaber::Widget_MovingTextBox::setPadding(float p0,float p1,float p2,float 
 /* Walaber::Widget_MovingTextBox::addString(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
+void Walaber::Widget_MovingTextBox::addString(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -380,11 +378,11 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  lVar6 = *(long *)(param_1 + 0x150);
+  lVar6 = *(long *)(this + 0x150);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0038102c to 00381043 has its CatchHandler @ 003810fc */
-  Walaber::BitmapFont::measureString(&uStack_88,*(undefined4 *)(param_1 + 0x174),*(undefined8 *)(param_1 + 0xe8),
-                  param_2);
+  Walaber::BitmapFont::measureString(&uStack_88,*(undefined4 *)(this + 0x174),*(undefined8 *)(this + 0xe8),
+                  param_1);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&lStack_68,abStack_80);
   uStack_50 = uStack_88;
   uStack_4c = uStack_84;
@@ -398,21 +396,21 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   lStack_68 = 0;
   *(undefined4 *)(plVar4 + 5) = uStack_88;
   *(undefined4 *)((long)plVar4 + 0x2c) = uStack_84;
-  plVar4[1] = param_1 + 0x140;
+  plVar4[1] = this + 0x140;
   plVar4[4] = lVar3;
   plVar4[3] = lVar2;
   plVar4[2] = lVar5;
-  lVar5 = *(long *)(param_1 + 0x140);
+  lVar5 = *(long *)(this + 0x140);
   *plVar4 = lVar5;
   *(long **)(lVar5 + 8) = plVar4;
-  *(long **)(param_1 + 0x140) = plVar4;
-  *(long *)(param_1 + 0x150) = *(long *)(param_1 + 0x150) + 1;
+  *(long **)(this + 0x140) = plVar4;
+  *(long *)(this + 0x150) = *(long *)(this + 0x150) + 1;
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
   if (lVar6 == 0) {
-    *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_1 + 0x148);
-    Walaber::Widget_MovingTextBox::_setTextStartingPos(param_1);
+    *(undefined8 *)(this + 0x158) = *(undefined8 *)(this + 0x148);
+    Walaber::Widget_MovingTextBox::_setTextStartingPos(this);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {
     return;

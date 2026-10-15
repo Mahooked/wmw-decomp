@@ -100,7 +100,7 @@ LAB_005d7858:
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned long) */
 
 void std::__ndk1::ctype_byname<wchar_t>::ctype_byname
-               (undefined8 *param_1,byte *param_2,long param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,unsigned long param_2)
 
 {
   long lVar1;
@@ -111,18 +111,18 @@ void std::__ndk1::ctype_byname<wchar_t>::ctype_byname
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  *param_1 = &PTR__ctype_byname_00717840;
-  param_1[1] = param_3 + -1;
-  pbVar3 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar3 = param_2 + 1;
+  *this = &PTR__ctype_byname_00717840;
+  this[1] = param_2 + -1;
+  pbVar3 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar3 = param_1 + 1;
   }
                     /* try { // try from 005d792c to 005d7937 has its CatchHandler @ 005d79a0 */
   lVar2 = newlocale(0x1fbf,pbVar3,0);
-  param_1[2] = lVar2;
+  this[2] = lVar2;
   if (lVar2 == 0) {
                     /* try { // try from 005d7964 to 005d7977 has its CatchHandler @ 005d799c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"ctype_byname<wchar_t>::ctype_byname failed to construct for ",param_1);
                     /* try { // try from 005d7978 to 005d797f has its CatchHandler @ 005d7984 */
     FUN_005d5db0(auStack_50);
   }

@@ -25,7 +25,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::__map_value_compare<WaterConcept::GridCell,std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>,std::__ndk1::less<WaterConcept::GridCell>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell,WaterConcept::World::CoalDot>>>
      ::
      __emplace_unique_key_args<WaterConcept::GridCell,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<WaterConcept::GridCell_const&>,std::__ndk1::tuple<>>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+               (WaterConcept::GridCell const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<WaterConcept::GridCell const&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

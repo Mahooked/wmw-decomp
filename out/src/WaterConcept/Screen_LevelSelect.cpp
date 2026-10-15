@@ -11498,34 +11498,34 @@ void WaterConcept::Screen_LevelSelect::notifyTransitionPhaseChange(uint p0)
 
 /* WaterConcept::Screen_LevelSelect::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
-void WaterConcept::Screen_LevelSelect::handleFocus(undefined8 param_1,long param_2,int param_3)
+void WaterConcept::Screen_LevelSelect::handleFocus(Walaber::Widget *param_1,Walaber::FocusEvent param_2)
 
 {
   int iVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  if ((*(int *)(param_2 + 0x84) != 1) || (iVar1 = Walaber::Widget::getWidgetNameAsInt(param_2), iVar1 == 0x65)) {
+  if ((*(int *)(param_1 + 0x84) != 1) || (iVar1 = Walaber::Widget::getWidgetNameAsInt(param_1), iVar1 == 0x65)) {
     return;
   }
-  if ((param_3 == 5) || (param_3 == 2)) {
-    if (*(char *)(param_2 + 0x150) != '\0') {
+  if ((param_2 == 5) || (param_2 == 2)) {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar2 = Walaber::SoundManager::getInstancePtr();
     uVar3 = 0x8d;
   }
   else {
-    if (param_3 != 0) {
+    if (param_2 != 0) {
       return;
     }
-    if (*(char *)(param_2 + 0x150) != '\0') {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar2 = Walaber::SoundManager::getInstancePtr();

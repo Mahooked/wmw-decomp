@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<WaterConcept::StarSeed::TeleportWaypoint,std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>&>& param_1)
 
 {
   undefined8 *puVar1;
@@ -23,34 +23,34 @@ void std::__ndk1::
   undefined8 uVar5;
   undefined8 *puVar4;
   
-  puVar1 = (undefined8 *)*param_1;
-  if ((undefined8 *)param_1[1] == puVar1) {
-    lVar2 = param_2[1];
+  puVar1 = (undefined8 *)*this;
+  if ((undefined8 *)this[1] == puVar1) {
+    lVar2 = param_1[1];
   }
   else {
-    lVar2 = param_2[1];
-    puVar3 = (undefined8 *)param_1[1];
+    lVar2 = param_1[1];
+    puVar3 = (undefined8 *)this[1];
     do {
       puVar4 = puVar3 + -3;
       *(undefined8 *)(lVar2 + -0x18) = *puVar4;
       uVar5 = puVar3[-2];
       *(undefined8 *)(lVar2 + -10) = *(undefined8 *)((long)puVar3 + -10);
       *(undefined8 *)(lVar2 + -0x10) = uVar5;
-      lVar2 = param_2[1] + -0x18;
-      param_2[1] = lVar2;
+      lVar2 = param_1[1] + -0x18;
+      param_1[1] = lVar2;
       puVar3 = puVar4;
     } while (puVar1 != puVar4);
-    puVar1 = (undefined8 *)*param_1;
+    puVar1 = (undefined8 *)*this;
   }
-  *param_1 = lVar2;
-  param_2[1] = puVar1;
-  lVar2 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar2;
-  lVar2 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar2;
-  *param_2 = param_2[1];
+  *this = lVar2;
+  param_1[1] = puVar1;
+  lVar2 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar2;
+  lVar2 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar2;
+  *param_1 = param_1[1];
   return;
 }
 

@@ -13,8 +13,7 @@
 
 long * std::__ndk1::
        time_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::put
-                 (long *param_1,long *param_2,undefined8 param_3,undefined4 param_4,
-                 undefined8 param_5,undefined1 *param_6,undefined1 *param_7)
+                 (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,tm const *param_4,char const *param_5,char const *param_6)
 
 {
   long lVar1;
@@ -32,14 +31,14 @@ long * std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc(&uStack_70,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_2);
                     /* try { // try from 005c3fc4 to 005c3fd3 has its CatchHandler @ 005c4214 */
   plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<char>::id);
   plVar5 = (long *)std::__ndk1::__shared_count::__release_shared(uStack_70);
 joined_r0x005c3fe4:
   do {
-    plVar8 = param_2;
-    if (param_6 == param_7) {
+    plVar8 = param_1;
+    if (param_5 == param_6) {
 LAB_005c41b4:
       if (*(long *)(lVar1 + 0x28) == lStack_68) {
         return plVar8;
@@ -48,18 +47,18 @@ LAB_005c4210:
       plVar5 = (long *)__stack_chk_fail(plVar5);
       return plVar5;
     }
-    plVar5 = (long *)(**(code **)(*plVar4 + 0x48))(plVar4,*param_6,0);
+    plVar5 = (long *)(**(code **)(*plVar4 + 0x48))(plVar4,*param_5,0);
     if (((uint)plVar5 & 0xff) == 0x25) {
-      puVar9 = param_6 + 1;
-      if (puVar9 == param_7) {
-        if (param_2 != (long *)0x0) {
-          puVar7 = (undefined1 *)param_2[6];
-          uVar6 = *param_6;
-          if (puVar7 == (undefined1 *)param_2[7]) {
-            iVar3 = (**(code **)(*param_2 + 0x68))(param_2);
+      puVar9 = param_5 + 1;
+      if (puVar9 == param_6) {
+        if (param_1 != (long *)0x0) {
+          puVar7 = (undefined1 *)param_1[6];
+          uVar6 = *param_5;
+          if (puVar7 == (undefined1 *)param_1[7]) {
+            iVar3 = (**(code **)(*param_1 + 0x68))(param_1);
             plVar5 = (long *)0x0;
             if (iVar3 != -1) {
-              plVar5 = param_2;
+              plVar5 = param_1;
             }
             if (*(long *)(lVar1 + 0x28) == lStack_68) {
               return plVar5;
@@ -67,7 +66,7 @@ LAB_005c4210:
             goto LAB_005c4210;
           }
 LAB_005c41a8:
-          param_2[6] = (long)(puVar7 + 1);
+          param_1[6] = (long)(puVar7 + 1);
           *puVar7 = uVar6;
         }
         goto LAB_005c41b4;
@@ -76,29 +75,29 @@ LAB_005c41a8:
       uVar2 = (uint)plVar5;
       uVar10 = (ulong)plVar5 & 0xffffffff;
       if (((uVar2 & 0xff) == 0x4f) || ((uVar2 & 0xff) == 0x45)) {
-        puVar7 = param_6 + 2;
-        if (puVar7 == param_7) {
-          if (param_2 == (long *)0x0) goto LAB_005c41b4;
-          puVar7 = (undefined1 *)param_2[6];
-          uVar6 = *param_6;
-          if (puVar7 == (undefined1 *)param_2[7]) {
-            plVar5 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+        puVar7 = param_5 + 2;
+        if (puVar7 == param_6) {
+          if (param_1 == (long *)0x0) goto LAB_005c41b4;
+          puVar7 = (undefined1 *)param_1[6];
+          uVar6 = *param_5;
+          if (puVar7 == (undefined1 *)param_1[7]) {
+            plVar5 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
             if ((int)plVar5 == -1) {
               plVar8 = (long *)0x0;
               goto LAB_005c41b4;
             }
           }
           else {
-            param_2[6] = (long)(puVar7 + 1);
+            param_1[6] = (long)(puVar7 + 1);
             *puVar7 = uVar6;
           }
-          puVar7 = (undefined1 *)param_2[6];
+          puVar7 = (undefined1 *)param_1[6];
           uVar6 = *puVar9;
-          if (puVar7 != (undefined1 *)param_2[7]) goto LAB_005c41a8;
-          plVar5 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+          if (puVar7 != (undefined1 *)param_1[7]) goto LAB_005c41a8;
+          plVar5 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
           plVar8 = (long *)0x0;
           if ((int)plVar5 != -1) {
-            plVar8 = param_2;
+            plVar8 = param_1;
           }
           goto LAB_005c41b4;
         }
@@ -108,30 +107,30 @@ LAB_005c41a8:
       else {
         uVar10 = 0;
       }
-      plVar5 = (long *)(**(code **)(*param_1 + 0x18))
-                                 (param_1,param_2,param_3,param_4,param_5,uVar2,uVar10);
-      param_2 = plVar5;
-      param_6 = puVar9;
+      plVar5 = (long *)(**(code **)(*this + 0x18))
+                                 (this,param_1,param_2,param_3,param_4,uVar2,uVar10);
+      param_1 = plVar5;
+      param_5 = puVar9;
 joined_r0x005c4020:
-      param_6 = param_6 + 1;
+      param_5 = param_5 + 1;
       goto joined_r0x005c3fe4;
     }
-    if (param_2 != (long *)0x0) {
-      puVar9 = (undefined1 *)param_2[6];
-      uVar6 = *param_6;
-      if (puVar9 != (undefined1 *)param_2[7]) {
-        param_2[6] = (long)(puVar9 + 1);
+    if (param_1 != (long *)0x0) {
+      puVar9 = (undefined1 *)param_1[6];
+      uVar6 = *param_5;
+      if (puVar9 != (undefined1 *)param_1[7]) {
+        param_1[6] = (long)(puVar9 + 1);
         *puVar9 = uVar6;
         goto joined_r0x005c4020;
       }
-      plVar5 = (long *)(**(code **)(*param_2 + 0x68))(param_2);
+      plVar5 = (long *)(**(code **)(*param_1 + 0x68))(param_1);
       plVar8 = (long *)0x0;
       if ((int)plVar5 != -1) {
-        plVar8 = param_2;
+        plVar8 = param_1;
       }
     }
-    param_6 = param_6 + 1;
-    param_2 = plVar8;
+    param_5 = param_5 + 1;
+    param_1 = plVar8;
   } while( true );
 }
 
@@ -147,8 +146,7 @@ joined_r0x005c4020:
 
 long * std::__ndk1::
        time_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-                 (undefined8 param_1,long *param_2,undefined8 param_3,undefined8 param_4,
-                 undefined8 param_5,char param_6,char param_7)
+                 (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,tm const *param_4,char param_5,char param_6)
 
 {
   undefined1 *puVar1;
@@ -169,26 +167,26 @@ long * std::__ndk1::
   lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_a0 = 0x25;
   uStack_9d = 0;
-  cStack_9f = param_6;
-  cStack_9e = param_7;
-  if (param_7 != '\0') {
-    cStack_9f = param_7;
-    cStack_9e = param_6;
+  cStack_9f = param_5;
+  cStack_9e = param_6;
+  if (param_6 != '\0') {
+    cStack_9f = param_6;
+    cStack_9e = param_5;
   }
-  lVar5 = strftime(auStack_9c,100,&uStack_a0,param_5);
+  lVar5 = strftime(auStack_9c,100,&uStack_a0,param_4);
   if (lVar5 != 0) {
     puVar7 = auStack_9c;
-    plVar6 = param_2;
+    plVar6 = param_1;
     do {
-      param_2 = plVar6;
+      param_1 = plVar6;
       if (plVar6 != (long *)0x0) {
         puVar1 = (undefined1 *)plVar6[6];
         uVar2 = *puVar7;
         if (puVar1 == (undefined1 *)plVar6[7]) {
           iVar4 = (**(code **)(*plVar6 + 0x68))(plVar6);
-          param_2 = (long *)0x0;
+          param_1 = (long *)0x0;
           if (iVar4 != -1) {
-            param_2 = plVar6;
+            param_1 = plVar6;
           }
         }
         else {
@@ -198,14 +196,14 @@ long * std::__ndk1::
       }
       lVar5 = lVar5 + -1;
       puVar7 = puVar7 + 1;
-      plVar6 = param_2;
+      plVar6 = param_1;
     } while (lVar5 != 0);
   }
   if (*(long *)(lVar3 + 0x28) != lStack_38) {
     plVar6 = (long *)__stack_chk_fail();
     return plVar6;
   }
-  return param_2;
+  return param_1;
 }
 
 

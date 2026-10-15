@@ -28,7 +28,7 @@ void Walaber::Property::Property(undefined4 *param_1)
 /* Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::Property::Property(undefined4 *param_1)
+void Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   *(undefined8 *)(param_1 + 4) = 0;
@@ -49,7 +49,7 @@ void Walaber::Property::Property(undefined4 *param_1)
 /* Walaber::Property::setValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::Property::setValue(undefined4 *param_1)
+void Walaber::Property::setValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   *param_1 = 0;

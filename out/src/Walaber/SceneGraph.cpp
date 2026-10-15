@@ -78,7 +78,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1)
 /* Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> > const&) */
 
-void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
+void Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -99,12 +99,12 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  *param_1 = uVar2;
-  pbVar3 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar3 = param_2 + 1;
+  *this = uVar2;
+  pbVar3 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar3 = param_1 + 1;
   }
-  strncpy(param_1 + 1,pbVar3,0x1b);
+  strncpy(this + 1,pbVar3,0x1b);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }
@@ -165,7 +165,7 @@ void Walaber::SceneGraph::~SceneGraph(undefined8 *param_1)
 /* Walaber::SceneGraph::getNodeByName(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::SceneGraph::getNodeByName(undefined8 *param_1)
+void Walaber::SceneGraph::getNodeByName(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   Walaber::PCSNode::getNodeFromTree(*param_1);

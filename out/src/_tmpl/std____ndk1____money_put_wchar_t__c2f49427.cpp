@@ -15,9 +15,7 @@
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> >&, int&) */
 
 void std::__ndk1::__money_put<wchar_t>::__gather_info
-               (ulong param_1,ulong param_2,undefined8 param_3,undefined4 *param_4,
-               undefined4 *param_5,undefined4 *param_6,byte *param_7,byte *param_8,byte *param_9,
-               undefined4 *param_10)
+               (bool param_1,bool param_2,std::__ndk1::locale const& param_3,std::__ndk1::money_base::pattern& param_4,wchar_t& param_5,wchar_t& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_7,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_8,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>& param_9,int& param_10)
 
 {
   byte bVar1;
@@ -175,9 +173,7 @@ void std::__ndk1::__money_put<wchar_t>::__gather_info
    std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t> > const&, int) */
 
 void std::__ndk1::__money_put<wchar_t>::__format
-               (long param_1,long *param_2,long *param_3,uint param_4,undefined4 *param_5,
-               undefined4 *param_6,long *param_7,uint param_8,long param_9,undefined4 param_10,
-               undefined4 param_11,byte *param_12,byte *param_13,byte *param_14,uint param_15)
+               (wchar_t *param_1,wchar_t*& param_2,wchar_t*& param_3,unsigned int param_4,wchar_t const *param_5,wchar_t const *param_6,std::__ndk1::ctype<wchar_t> const& param_7,bool param_8,std::__ndk1::money_base::pattern const& param_9,wchar_t param_10,wchar_t param_11,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_12,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_13,std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>> const& param_14,int param_15)
 
 {
   byte bVar1;

@@ -22,7 +22,7 @@ long std::__ndk1::
      __tree<WaterConcept::InteractiveObject*,std::__ndk1::less<WaterConcept::InteractiveObject*>,std::__ndk1::allocator<WaterConcept::InteractiveObject*>>
      ::
      __emplace_hint_unique_key_args<WaterConcept::InteractiveObject*,WaterConcept::InteractiveObject*const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+               (std::__ndk1::__tree_const_iterator<WaterConcept::InteractiveObject*, std::__ndk1::__tree_node<WaterConcept::InteractiveObject*, void*>*, long> param_1,WaterConcept::InteractiveObject* const& param_2,WaterConcept::InteractiveObject* const& param_3)
 
 {
   long *plVar1;
@@ -34,12 +34,12 @@ long std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal<WaterConcept::InteractiveObject*>(param_1,param_2,&uStack_50,auStack_58,param_3);
+  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__find_equal<WaterConcept::InteractiveObject*>(this,param_1,&uStack_50,auStack_58,param_2);
   lVar3 = *plVar1;
   if (lVar3 == 0) {
     lVar3 = operator new(0x28);
-    *(undefined8 *)(lVar3 + 0x20) = *param_4;
-    std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__insert_node_at(param_1,uStack_50,plVar1,lVar3);
+    *(undefined8 *)(lVar3 + 0x20) = *param_3;
+    std::__ndk1::__tree<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>::__insert_node_at(this,uStack_50,plVar1,lVar3);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
     return lVar3;

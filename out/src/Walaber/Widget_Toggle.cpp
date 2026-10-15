@@ -145,8 +145,7 @@ void Walaber::Widget_Toggle::init(long param_1)
    const&) */
 
 void Walaber::Widget_Toggle::Widget_Toggle
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,Walaber::SharedPtr<Walaber::Texture> param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_7,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_8)
 
 {
   long lVar1;
@@ -160,57 +159,57 @@ void Walaber::Widget_Toggle::Widget_Toggle
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  uStack_60 = *param_3;
-  uStack_68 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,8,&uStack_60,&uStack_68,1,1);
-  *param_1 = (long)&PTR__Widget_Toggle_0070fec8;
+  uStack_60 = *param_2;
+  uStack_68 = *param_3;
+  Walaber::Widget::Widget(this,param_1,8,&uStack_60,&uStack_68,1,1);
+  *this = (long)&PTR__Widget_Toggle_0070fec8;
+  lVar3 = *param_4;
+  this[0x20] = lVar3;
+  piVar2 = (int *)param_4[1];
+  this[0x21] = (long)piVar2;
+  if (lVar3 != 0) {
+    *piVar2 = *piVar2 + 1;
+  }
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x22] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = (long)piVar2;
+  this[0x23] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  lVar3 = *param_6;
-  param_1[0x22] = lVar3;
-  piVar2 = (int *)param_6[1];
-  param_1[0x23] = (long)piVar2;
-  if (lVar3 != 0) {
-    *piVar2 = *piVar2 + 1;
-  }
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x28] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  param_1[0x2c] = 0;
-  param_1[0x2b] = 0;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x28] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x27] = 0;
+  this[0x26] = 0;
+  this[0x2c] = 0;
+  this[0x2b] = 0;
                     /* try { // try from 0038c148 to 0038c153 has its CatchHandler @ 0038c234 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x2d,param_7);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2d,param_6);
                     /* try { // try from 0038c158 to 0038c163 has its CatchHandler @ 0038c21c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x30,param_8);
-  *(undefined4 *)((long)param_1 + 0x19c) = 0xff000000;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x30,param_7);
+  *(undefined4 *)((long)this + 0x19c) = 0xff000000;
                     /* try { // try from 0038c178 to 0038c17f has its CatchHandler @ 0038c204 */
-  (**(code **)(*param_1 + 0x70))(param_1,param_9);
-  *(undefined2 *)((long)param_1 + 0x1a4) = 0;
-  *(undefined4 *)(param_1 + 0x33) = 0x3f800000;
+  (**(code **)(*this + 0x70))(this,param_8);
+  *(undefined2 *)((long)this + 0x1a4) = 0;
+  *(undefined4 *)(this + 0x33) = 0x3f800000;
+  lVar3 = *param_4;
+  if ((lVar3 != 0) && (*(int *)param_4[1] != 0)) {
+    lVar4 = *(long *)(lVar3 + 0x8c);
+    uVar5 = *(undefined8 *)(lVar3 + 0x84);
+    this[0x24] = lVar4;
+    this[0x25] =
+         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
+                  (float)uVar5 - (float)lVar4);
+  }
   lVar3 = *param_5;
   if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = lVar4;
-    param_1[0x25] =
-         CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
-                  (float)uVar5 - (float)lVar4);
-  }
-  lVar3 = *param_6;
-  if ((lVar3 != 0) && (*(int *)param_6[1] != 0)) {
-    lVar4 = *(long *)(lVar3 + 0x8c);
-    uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x26] = lVar4;
-    param_1[0x27] =
+    this[0x26] = lVar4;
+    this[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
@@ -326,21 +325,21 @@ void Walaber::Widget_Toggle::setTextureOff(long param_1)
 
 /* Walaber::Widget_Toggle::setIcon(Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2) */
 
-void Walaber::Widget_Toggle::setIcon(long param_1,long *param_2,undefined8 *param_3)
+void Walaber::Widget_Toggle::setIcon(Walaber::SharedPtr<Walaber::Texture> param_1,Walaber::Vector2 param_2)
 
 {
   long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x140);
-  *(undefined8 *)(param_1 + 0x150) = *param_3;
-  lVar1 = *param_2;
-  if ((lVar1 != 0) && (*(int *)param_2[1] != 0)) {
+  Walaber::SharedPtr<Walaber::Texture>::operator=(this + 0x140);
+  *(undefined8 *)(this + 0x150) = *param_2;
+  lVar1 = *param_1;
+  if ((lVar1 != 0) && (*(int *)param_1[1] != 0)) {
     uVar2 = *(undefined8 *)(lVar1 + 0x8c);
     uVar3 = *(undefined8 *)(lVar1 + 0x84);
-    *(undefined8 *)(param_1 + 0x158) = uVar2;
-    *(ulong *)(param_1 + 0x160) =
+    *(undefined8 *)(this + 0x158) = uVar2;
+    *(ulong *)(this + 0x160) =
          CONCAT44((float)((ulong)uVar3 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar3 - (float)uVar2);
   }

@@ -11,7 +11,7 @@
    std::__ndk1::TEMPNAMEPLACEHOLDERVALUE(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, char const*) */
 
-void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
+void std::__ndk1::operator+(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,char const *param_2)
 
 {
   long lVar1;
@@ -19,41 +19,41 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
   ulong uVar3;
   ulong p0;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  if ((*param_2 & 1) == 0) {
-    uVar2 = (ulong)(*param_2 >> 1);
-    lVar1 = strlen(param_3);
-    param_2 = param_2 + 1;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  if ((*param_1 & 1) == 0) {
+    uVar2 = (ulong)(*param_1 >> 1);
+    lVar1 = strlen(param_2);
+    param_1 = param_1 + 1;
   }
   else {
-    uVar2 = *(ulong *)(param_2 + 8);
-    lVar1 = strlen(param_3);
-    param_2 = *(byte **)(param_2 + 0x10);
+    uVar2 = *(ulong *)(param_1 + 8);
+    lVar1 = strlen(param_2);
+    param_1 = *(byte **)(param_1 + 0x10);
   }
   uVar3 = uVar2 + lVar1;
   if (uVar3 < 0xfffffffffffffff0) {
     if (uVar3 < 0x17) {
-      uVar3 = (long)param_1 + 1;
-      *(char *)param_1 = (char)((int)uVar2 << 1);
+      uVar3 = (long)this + 1;
+      *(char *)this = (char)((int)uVar2 << 1);
     }
     else {
       p0 = uVar3 + 0x10 & 0xfffffffffffffff0;
       uVar3 = operator new(p0);
-      param_1[1] = uVar2;
-      param_1[2] = uVar3;
-      *param_1 = p0 | 1;
+      this[1] = uVar2;
+      this[2] = uVar3;
+      *this = p0 | 1;
     }
     if (uVar2 != 0) {
-      memcpy(uVar3,param_2,uVar2);
+      memcpy(uVar3,param_1,uVar2);
     }
     *(undefined1 *)(uVar3 + uVar2) = 0;
                     /* try { // try from 002b324c to 002b32a3 has its CatchHandler @ 002b32a4 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,param_3,lVar1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(this,param_2,lVar1);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(this);
   return;
 }
 
@@ -67,7 +67,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
    std::__ndk1::TEMPNAMEPLACEHOLDERVALUE(char const*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
+void std::__ndk1::operator+(char const *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
   ulong uVar1;
@@ -77,41 +77,41 @@ void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
   ulong uVar5;
   ulong p0;
   
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
   uVar3 = strlen();
-  bVar2 = *param_3;
+  bVar2 = *param_2;
   uVar1 = (ulong)(bVar2 >> 1);
   if ((bVar2 & 1) != 0) {
-    uVar1 = *(ulong *)(param_3 + 8);
+    uVar1 = *(ulong *)(param_2 + 8);
   }
   uVar5 = uVar1 + uVar3;
   if (uVar5 < 0xfffffffffffffff0) {
     if (uVar5 < 0x17) {
-      uVar5 = (long)param_1 + 1;
-      *(char *)param_1 = (char)((int)uVar3 << 1);
+      uVar5 = (long)this + 1;
+      *(char *)this = (char)((int)uVar3 << 1);
     }
     else {
       p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
       uVar5 = operator new(p0);
-      param_1[1] = uVar3;
-      param_1[2] = uVar5;
-      *param_1 = p0 | 1;
+      this[1] = uVar3;
+      this[2] = uVar5;
+      *this = p0 | 1;
     }
     if (uVar3 != 0) {
-      memcpy(uVar5,param_2,uVar3);
+      memcpy(uVar5,param_1,uVar3);
     }
     *(undefined1 *)(uVar5 + uVar3) = 0;
-    pbVar4 = *(byte **)(param_3 + 0x10);
+    pbVar4 = *(byte **)(param_2 + 0x10);
     if ((bVar2 & 1) == 0) {
-      pbVar4 = param_3 + 1;
+      pbVar4 = param_2 + 1;
     }
                     /* try { // try from 002bebc0 to 002bec13 has its CatchHandler @ 002bec14 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,pbVar4,uVar1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(this,pbVar4,uVar1);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(this);
   return;
 }
 

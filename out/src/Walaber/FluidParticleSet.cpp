@@ -139,8 +139,7 @@ void Walaber::FluidParticleSet::updateParticles(float p0)
    float) */
 
 void Walaber::FluidParticleSet::drawParticles
-               (float param_1,float param_2,long *param_3,undefined8 param_4,long *param_5,
-               byte *param_6,byte *param_7,undefined4 param_8)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,int param_5,float param_6,float param_7)
 
 {
   int iVar1;
@@ -167,12 +166,12 @@ void Walaber::FluidParticleSet::drawParticles
   lVar8 = 0;
   uVar9 = 0xffffffffffffffff;
   do {
-    lVar7 = *param_3;
+    lVar7 = *param_2;
     lVar5 = lVar7 + lVar8;
     if (*(char *)(lVar5 + 0x34) != '\0') {
       fVar10 = ((float)(((int)(*(float *)(lVar5 + 0x10) * *(float *)(lVar5 + 0x10) +
                               *(float *)(lVar5 + 0x14) * *(float *)(lVar5 + 0x14)) + -0x3f800000 >>
-                        1) + 0x3f800000) - param_1) / param_2;
+                        1) + 0x3f800000) - this) / param_1;
       fVar11 = fVar10;
       if (1.0 < fVar10) {
         fVar11 = 1.0;
@@ -180,13 +179,13 @@ void Walaber::FluidParticleSet::drawParticles
       if (fVar10 <= 0.0) {
         fVar11 = 0.0;
       }
-      iVar1 = (int)(fVar11 * (float)(int)((uint)*param_7 - (uint)*param_6)) + (uint)*param_6;
-      iVar2 = (int)(fVar11 * (float)(int)((uint)param_7[1] - (uint)param_6[1])) + (uint)param_6[1];
-      iVar3 = (int)(fVar11 * (float)(int)((uint)param_7[2] - (uint)param_6[2])) + (uint)param_6[2];
+      iVar1 = (int)(fVar11 * (float)(int)((uint)*param_6 - (uint)*param_5)) + (uint)*param_5;
+      iVar2 = (int)(fVar11 * (float)(int)((uint)param_6[1] - (uint)param_5[1])) + (uint)param_5[1];
+      iVar3 = (int)(fVar11 * (float)(int)((uint)param_6[2] - (uint)param_5[2])) + (uint)param_5[2];
       if (0xfe < iVar1) {
         iVar1 = 0xff;
       }
-      iVar4 = (int)(fVar11 * (float)(int)((uint)param_7[3] - (uint)param_6[3])) + (uint)param_6[3];
+      iVar4 = (int)(fVar11 * (float)(int)((uint)param_6[3] - (uint)param_5[3])) + (uint)param_5[3];
       bStack_90 = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
       if (0xfe < iVar2) {
         iVar2 = 0xff;
@@ -200,19 +199,19 @@ void Walaber::FluidParticleSet::drawParticles
         iVar4 = 0xff;
       }
       bStack_8d = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-      lStack_a0 = *param_5;
-      piStack_98 = (int *)param_5[1];
+      lStack_a0 = *param_4;
+      piStack_98 = (int *)param_4[1];
       if (lStack_a0 != 0) {
         *piStack_98 = *piStack_98 + 1;
       }
       lVar7 = lVar7 + lVar8;
                     /* try { // try from 0038df9c to 0038dfb7 has its CatchHandler @ 0038e014 */
-      Walaber::SpriteBatch::drawQuad(0,param_4,param_8,&lStack_a0,lVar7,lVar7 + 0x20,&bStack_90,0);
+      Walaber::SpriteBatch::drawQuad(0,param_3,param_7,&lStack_a0,lVar7,lVar7 + 0x20,&bStack_90,0);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
     }
     uVar9 = uVar9 + 1;
     lVar8 = lVar8 + 0x90;
-  } while (uVar9 < *(uint *)(param_3 + 6));
+  } while (uVar9 < *(uint *)(param_2 + 6));
   if (*(long *)(lVar6 + 0x28) == lStack_88) {
     return;
   }
@@ -231,8 +230,7 @@ void Walaber::FluidParticleSet::drawParticles
    float, int) */
 
 void Walaber::FluidParticleSet::drawParticles
-               (float param_1,float param_2,long *param_3,undefined8 param_4,long *param_5,
-               byte *param_6,byte *param_7,undefined4 param_8,uint param_9)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,int param_5,float param_6,float param_7,int param_8)
 
 {
   int iVar1;
@@ -258,11 +256,11 @@ void Walaber::FluidParticleSet::drawParticles
   lVar7 = 0;
   uVar8 = 0xffffffffffffffff;
   do {
-    if ((((int)uVar8 + 1U & param_9) == 0) && (*(char *)(*param_3 + lVar7 + 0x34) != '\0')) {
-      lVar5 = *param_3 + lVar7;
+    if ((((int)uVar8 + 1U & param_8) == 0) && (*(char *)(*param_2 + lVar7 + 0x34) != '\0')) {
+      lVar5 = *param_2 + lVar7;
       fVar9 = ((float)(((int)(*(float *)(lVar5 + 0x10) * *(float *)(lVar5 + 0x10) +
                              *(float *)(lVar5 + 0x14) * *(float *)(lVar5 + 0x14)) + -0x3f800000 >> 1
-                       ) + 0x3f800000) - param_1) / param_2;
+                       ) + 0x3f800000) - this) / param_1;
       fVar10 = fVar9;
       if (1.0 < fVar9) {
         fVar10 = 1.0;
@@ -270,13 +268,13 @@ void Walaber::FluidParticleSet::drawParticles
       if (fVar9 <= 0.0) {
         fVar10 = 0.0;
       }
-      iVar1 = (int)(fVar10 * (float)(int)((uint)*param_7 - (uint)*param_6)) + (uint)*param_6;
-      iVar2 = (int)(fVar10 * (float)(int)((uint)param_7[1] - (uint)param_6[1])) + (uint)param_6[1];
-      iVar3 = (int)(fVar10 * (float)(int)((uint)param_7[2] - (uint)param_6[2])) + (uint)param_6[2];
+      iVar1 = (int)(fVar10 * (float)(int)((uint)*param_6 - (uint)*param_5)) + (uint)*param_5;
+      iVar2 = (int)(fVar10 * (float)(int)((uint)param_6[1] - (uint)param_5[1])) + (uint)param_5[1];
+      iVar3 = (int)(fVar10 * (float)(int)((uint)param_6[2] - (uint)param_5[2])) + (uint)param_5[2];
       if (0xfe < iVar1) {
         iVar1 = 0xff;
       }
-      iVar4 = (int)(fVar10 * (float)(int)((uint)param_7[3] - (uint)param_6[3])) + (uint)param_6[3];
+      iVar4 = (int)(fVar10 * (float)(int)((uint)param_6[3] - (uint)param_5[3])) + (uint)param_5[3];
       bStack_90 = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
       if (0xfe < iVar2) {
         iVar2 = 0xff;
@@ -290,18 +288,18 @@ void Walaber::FluidParticleSet::drawParticles
         iVar4 = 0xff;
       }
       bStack_8d = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-      lStack_a0 = *param_5;
-      piStack_98 = (int *)param_5[1];
+      lStack_a0 = *param_4;
+      piStack_98 = (int *)param_4[1];
       if (lStack_a0 != 0) {
         *piStack_98 = *piStack_98 + 1;
       }
                     /* try { // try from 0038e1c0 to 0038e1db has its CatchHandler @ 0038e238 */
-      Walaber::SpriteBatch::drawQuad(0,param_4,param_8,&lStack_a0,lVar5,lVar5 + 0x20,&bStack_90,0);
+      Walaber::SpriteBatch::drawQuad(0,param_3,param_7,&lStack_a0,lVar5,lVar5 + 0x20,&bStack_90,0);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
     }
     uVar8 = uVar8 + 1;
     lVar7 = lVar7 + 0x90;
-  } while (uVar8 < *(uint *)(param_3 + 6));
+  } while (uVar8 < *(uint *)(param_2 + 6));
   if (*(long *)(lVar6 + 0x28) == lStack_88) {
     return;
   }
@@ -320,8 +318,7 @@ void Walaber::FluidParticleSet::drawParticles
    float, float) */
 
 void Walaber::FluidParticleSet::drawParticles
-               (float param_1,float param_2,long *param_3,undefined8 param_4,long *param_5,
-               byte *param_6,byte *param_7,undefined4 param_8)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,int param_5,float *param_6,float param_7,float param_8)
 
 {
   int iVar1;
@@ -413,9 +410,7 @@ void Walaber::FluidParticleSet::drawParticles
    float, float, float, float, int) */
 
 void Walaber::FluidParticleSet::drawParticles
-               (float param_1,float param_2,float param_3,float param_4,long *param_5,
-               undefined8 param_6,long *param_7,byte *param_8,byte *param_9,undefined4 param_10,
-               undefined8 param_11,uint param_12)
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,int param_5,float *param_6,float param_7,float param_8,float param_9,float param_10,int param_11)
 
 {
   int iVar1;
@@ -438,11 +433,11 @@ void Walaber::FluidParticleSet::drawParticles
   lVar5 = tpidr_el0;
   lStack_a8 = *(long *)(lVar5 + 0x28);
   uVar7 = 0xffffffff;
-  lVar6 = *param_5 + 0x40;
+  lVar6 = *param_4 + 0x40;
   do {
     uVar7 = uVar7 + 1;
-    if (((uVar7 & param_12) == 0) && (*(char *)(lVar6 + -0xc) != '\0')) {
-      fVar8 = (*(float *)(lVar6 + 0x38) - param_1) / (param_2 - param_1);
+    if (((uVar7 & param_11) == 0) && (*(char *)(lVar6 + -0xc) != '\0')) {
+      fVar8 = (*(float *)(lVar6 + 0x38) - this) / (param_1 - this);
       fVar9 = fVar8;
       if (1.0 < fVar8) {
         fVar9 = 1.0;
@@ -457,13 +452,13 @@ void Walaber::FluidParticleSet::drawParticles
       if (fVar9 <= 0.0) {
         fVar8 = 0.0;
       }
-      iVar1 = (int)(fVar8 * (float)(int)((uint)*param_9 - (uint)*param_8)) + (uint)*param_8;
-      iVar2 = (int)(fVar8 * (float)(int)((uint)param_9[1] - (uint)param_8[1])) + (uint)param_8[1];
-      iVar3 = (int)(fVar8 * (float)(int)((uint)param_9[2] - (uint)param_8[2])) + (uint)param_8[2];
+      iVar1 = (int)(fVar8 * (float)(int)((uint)*param_8 - (uint)*param_7)) + (uint)*param_7;
+      iVar2 = (int)(fVar8 * (float)(int)((uint)param_8[1] - (uint)param_7[1])) + (uint)param_7[1];
+      iVar3 = (int)(fVar8 * (float)(int)((uint)param_8[2] - (uint)param_7[2])) + (uint)param_7[2];
       if (0xfe < iVar1) {
         iVar1 = 0xff;
       }
-      iVar4 = (int)(fVar8 * (float)(int)((uint)param_9[3] - (uint)param_8[3])) + (uint)param_8[3];
+      iVar4 = (int)(fVar8 * (float)(int)((uint)param_8[3] - (uint)param_7[3])) + (uint)param_7[3];
       bStack_b0 = (byte)iVar1 & ((byte)(iVar1 >> 0x1f) ^ 0xff);
       if (0xfe < iVar2) {
         iVar2 = 0xff;
@@ -477,18 +472,18 @@ void Walaber::FluidParticleSet::drawParticles
         iVar4 = 0xff;
       }
       bStack_ad = (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff);
-      lStack_c0 = *param_7;
-      piStack_b8 = (int *)param_7[1];
+      lStack_c0 = *param_6;
+      piStack_b8 = (int *)param_6[1];
       if (lStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
                     /* try { // try from 0038e818 to 0038e837 has its CatchHandler @ 0038e898 */
-      Walaber::SpriteBatch::drawTeardrop(((param_4 - param_3) * fVar9 + param_3) * 0.5,param_6,param_10,&lStack_c0,
+      Walaber::SpriteBatch::drawTeardrop(((param_3 - param_2) * fVar9 + param_2) * 0.5,param_5,param_9,&lStack_c0,
                       lVar6 + -0x40,lVar6,&bStack_b0,0,0);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
     }
     lVar6 = lVar6 + 0x90;
-  } while (uVar7 < *(uint *)(param_5 + 6));
+  } while (uVar7 < *(uint *)(param_4 + 6));
   if (*(long *)(lVar5 + 0x28) == lStack_a8) {
     return;
   }
@@ -507,9 +502,7 @@ void Walaber::FluidParticleSet::drawParticles
    const&, int) */
 
 void Walaber::FluidParticleSet::drawIntoVertBuffer
-               (float param_1,float param_2,undefined8 param_3,long *param_4,undefined8 param_5,
-               undefined8 param_6,byte *param_7,byte *param_8,int param_9,ulong param_10,
-               uint param_11,byte *param_12,int param_13)
+               (Walaber::PositionTextureColorVert *param_1,unsigned int& param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,float param_5,float param_6,int param_7,bool param_8,int param_9,float param_10,Walaber::Color const& param_11,int param_12)
 
 {
   uint uVar1;
@@ -529,25 +522,25 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   long lStack_98;
   
   lVar6 = tpidr_el0;
-  param_11 = param_11 & ((int)param_11 >> 0x1f ^ 0xffffffffU);
+  param_10 = param_10 & ((int)param_10 >> 0x1f ^ 0xffffffffU);
   lStack_98 = *(long *)(lVar6 + 0x28);
-  if (6 < (int)param_11) {
-    param_11 = 7;
+  if (6 < (int)param_10) {
+    param_10 = 7;
   }
   uVar9 = 0;
-  puVar8 = (undefined8 *)*param_4;
+  puVar8 = (undefined8 *)*param_3;
   do {
-    if ((*(char *)((long)puVar8 + 0x34) != '\0') && (*(int *)(puVar8 + 0x11) == param_13)) {
+    if ((*(char *)((long)puVar8 + 0x34) != '\0') && (*(int *)(puVar8 + 0x11) == param_12)) {
       iVar5 = 0;
-      if (param_9 != 0) {
-        iVar5 = (int)uVar9 / param_9;
+      if (param_8 != 0) {
+        iVar5 = (int)uVar9 / param_8;
       }
-      if ((param_10 & 1) == 0) {
-        if (uVar9 != iVar5 * param_9) goto LAB_0038e980;
+      if ((param_9 & 1) == 0) {
+        if (uVar9 != iVar5 * param_8) goto LAB_0038e980;
       }
-      else if (uVar9 == iVar5 * param_9) {
+      else if (uVar9 == iVar5 * param_8) {
 LAB_0038e980:
-        fVar10 = (*(float *)(puVar8 + 0xf) - param_1) / (param_2 - param_1);
+        fVar10 = (*(float *)(puVar8 + 0xf) - this) / (param_1 - this);
         uStack_a0 = *puVar8;
         fVar11 = fVar10;
         if (1.0 < fVar10) {
@@ -564,13 +557,13 @@ LAB_0038e980:
           fVar10 = 0.0;
         }
         fVar11 = *(float *)((long)puVar8 + 0x84);
-        uStack_a8 = puVar8[(ulong)(param_11 >> 1) + 7];
-        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_8 - (uint)*param_7)) + (uint)*param_7;
-        uVar2 = (int)(fVar10 * (float)(int)((uint)param_8[1] - (uint)param_7[1])) + (uint)param_7[1]
+        uStack_a8 = puVar8[(ulong)(param_10 >> 1) + 7];
+        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_7 - (uint)*param_6)) + (uint)*param_6;
+        uVar2 = (int)(fVar10 * (float)(int)((uint)param_7[1] - (uint)param_6[1])) + (uint)param_6[1]
         ;
-        uVar3 = (int)(fVar10 * (float)(int)((uint)param_8[3] - (uint)param_7[3])) + (uint)param_7[3]
+        uVar3 = (int)(fVar10 * (float)(int)((uint)param_7[3] - (uint)param_6[3])) + (uint)param_6[3]
         ;
-        uVar4 = (int)(fVar10 * (float)(int)((uint)param_8[2] - (uint)param_7[2])) + (uint)param_7[2]
+        uVar4 = (int)(fVar10 * (float)(int)((uint)param_7[2] - (uint)param_6[2])) + (uint)param_6[2]
         ;
         if (0xfe < (int)uVar1) {
           uVar1 = 0xff;
@@ -593,16 +586,16 @@ LAB_0038e980:
         if (fVar11 <= 0.0) {
           fVar10 = 0.0;
         }
-        uStack_b0 = puVar8[(ulong)param_11 + 7];
+        uStack_b0 = puVar8[(ulong)param_10 + 7];
         uVar4 = uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU);
         uVar3 = uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU);
-        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_12 - (uVar1 & 0xff))) + (uVar1 & 0xff);
-        uVar2 = (int)(fVar10 * (float)(int)((uint)param_12[1] - (uVar2 & 0xff))) + (uVar2 & 0xff);
-        uVar4 = (int)(fVar10 * (float)(int)((uint)param_12[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
+        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_11 - (uVar1 & 0xff))) + (uVar1 & 0xff);
+        uVar2 = (int)(fVar10 * (float)(int)((uint)param_11[1] - (uVar2 & 0xff))) + (uVar2 & 0xff);
+        uVar4 = (int)(fVar10 * (float)(int)((uint)param_11[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
         if (0xfe < (int)uVar1) {
           uVar1 = 0xff;
         }
-        uVar3 = (int)(fVar10 * (float)(int)((uint)param_12[3] - (uVar3 & 0xff))) + (uVar3 & 0xff);
+        uVar3 = (int)(fVar10 * (float)(int)((uint)param_11[3] - (uVar3 & 0xff))) + (uVar3 & 0xff);
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
@@ -612,7 +605,7 @@ LAB_0038e980:
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
         }
-        Walaber::FluidParticleSet::_drawIntoVertBuffer(*(float *)(puVar8 + 4) * 0.5,param_3,param_12[2],param_5,param_6,
+        Walaber::FluidParticleSet::_drawIntoVertBuffer(*(float *)(puVar8 + 4) * 0.5,param_2,param_11[2],param_4,param_5,
                         uVar1 & ((int)uVar1 >> 0x1f ^ 0xffffffffU) & 0xff |
                         (uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
                         (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
@@ -620,7 +613,7 @@ LAB_0038e980:
                         &uStack_b0);
       }
     }
-    bVar7 = *(uint *)(param_4 + 6) <= uVar9;
+    bVar7 = *(uint *)(param_3 + 6) <= uVar9;
     uVar9 = uVar9 + 1;
     puVar8 = puVar8 + 0x12;
     if (bVar7) {
@@ -762,9 +755,7 @@ void Walaber::FluidParticleSet::_drawIntoVertBuffer
    Walaber::Color const&, int) */
 
 void Walaber::FluidParticleSet::drawIntoVertBuffer
-               (float param_1,float param_2,float param_3,float param_4,undefined8 param_5,
-               long *param_6,undefined8 param_7,undefined8 param_8,byte *param_9,byte *param_10,
-               int param_11,ulong param_12,uint param_13,byte *param_14,int param_15)
+               (Walaber::PositionTextureColorVert *param_1,unsigned int& param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,float param_5,float param_6,float param_7,float param_8,int param_9,bool param_10,int param_11,float param_12,Walaber::Color const& param_13,int param_14)
 
 {
   uint uVar1;
@@ -785,25 +776,25 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   long lStack_a8;
   
   lVar5 = tpidr_el0;
-  param_13 = param_13 & ((int)param_13 >> 0x1f ^ 0xffffffffU);
+  param_12 = param_12 & ((int)param_12 >> 0x1f ^ 0xffffffffU);
   lStack_a8 = *(long *)(lVar5 + 0x28);
-  if (6 < (int)param_13) {
-    param_13 = 7;
+  if (6 < (int)param_12) {
+    param_12 = 7;
   }
   uVar9 = 0;
-  puVar8 = (undefined8 *)*param_6;
+  puVar8 = (undefined8 *)*param_5;
   do {
-    if ((*(char *)((long)puVar8 + 0x34) != '\0') && (*(int *)(puVar8 + 0x11) == param_15)) {
+    if ((*(char *)((long)puVar8 + 0x34) != '\0') && (*(int *)(puVar8 + 0x11) == param_14)) {
       iVar7 = 0;
-      if (param_11 != 0) {
-        iVar7 = (int)uVar9 / param_11;
+      if (param_10 != 0) {
+        iVar7 = (int)uVar9 / param_10;
       }
-      if ((param_12 & 1) == 0) {
-        if (uVar9 != iVar7 * param_11) goto LAB_0038eed8;
+      if ((param_11 & 1) == 0) {
+        if (uVar9 != iVar7 * param_10) goto LAB_0038eed8;
       }
-      else if (uVar9 == iVar7 * param_11) {
+      else if (uVar9 == iVar7 * param_10) {
 LAB_0038eed8:
-        fVar10 = (*(float *)(puVar8 + 0xf) - param_1) / (param_2 - param_1);
+        fVar10 = (*(float *)(puVar8 + 0xf) - this) / (param_1 - this);
         fVar11 = fVar10;
         if (1.0 < fVar10) {
           fVar11 = 1.0;
@@ -820,15 +811,15 @@ LAB_0038eed8:
           fVar10 = 0.0;
         }
         fVar12 = *(float *)((long)puVar8 + 0x84);
-        uStack_b8 = puVar8[(ulong)(param_13 >> 1) + 7];
-        iVar7 = (int)(fVar10 * (float)(int)((uint)param_10[1] - (uint)param_9[1]));
-        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_10 - (uint)*param_9)) + (uint)*param_9;
-        uVar2 = (int)(fVar10 * (float)(int)((uint)param_10[3] - (uint)param_9[3])) +
-                (uint)param_9[3];
-        uVar3 = iVar7 + (uint)param_9[1];
-        uStack_c0 = puVar8[(ulong)param_13 + 7];
-        uVar4 = (int)(fVar10 * (float)(int)((uint)param_10[2] - (uint)param_9[2])) +
-                (uint)param_9[2];
+        uStack_b8 = puVar8[(ulong)(param_12 >> 1) + 7];
+        iVar7 = (int)(fVar10 * (float)(int)((uint)param_9[1] - (uint)param_8[1]));
+        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_9 - (uint)*param_8)) + (uint)*param_8;
+        uVar2 = (int)(fVar10 * (float)(int)((uint)param_9[3] - (uint)param_8[3])) +
+                (uint)param_8[3];
+        uVar3 = iVar7 + (uint)param_8[1];
+        uStack_c0 = puVar8[(ulong)param_12 + 7];
+        uVar4 = (int)(fVar10 * (float)(int)((uint)param_9[2] - (uint)param_8[2])) +
+                (uint)param_8[2];
         if (0xfe < (int)uVar1) {
           uVar1 = 0xff;
         }
@@ -852,13 +843,13 @@ LAB_0038eed8:
         }
         uVar4 = uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU);
         uVar2 = uVar2 & ((int)uVar2 >> 0x1f ^ 0xffffffffU);
-        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_14 - (uVar1 & 0xff))) + (uVar1 & 0xff);
-        uVar3 = (int)(fVar10 * (float)(int)((uint)param_14[1] - (uVar3 & 0xff))) + (uVar3 & 0xff);
-        uVar4 = (int)(fVar10 * (float)(int)((uint)param_14[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
+        uVar1 = (int)(fVar10 * (float)(int)((uint)*param_13 - (uVar1 & 0xff))) + (uVar1 & 0xff);
+        uVar3 = (int)(fVar10 * (float)(int)((uint)param_13[1] - (uVar3 & 0xff))) + (uVar3 & 0xff);
+        uVar4 = (int)(fVar10 * (float)(int)((uint)param_13[2] - (uVar4 & 0xff))) + (uVar4 & 0xff);
         if (0xfe < (int)uVar1) {
           uVar1 = 0xff;
         }
-        uVar2 = (int)(fVar10 * (float)(int)((uint)param_14[3] - (uVar2 & 0xff))) + (uVar2 & 0xff);
+        uVar2 = (int)(fVar10 * (float)(int)((uint)param_13[3] - (uVar2 & 0xff))) + (uVar2 & 0xff);
         if (0xfe < (int)uVar3) {
           uVar3 = 0xff;
         }
@@ -868,7 +859,7 @@ LAB_0038eed8:
         if (0xfe < (int)uVar2) {
           uVar2 = 0xff;
         }
-        Walaber::FluidParticleSet::_drawIntoVertBuffer((param_4 - param_3) * fVar11 + param_3,param_5,iVar7,param_7,param_8,
+        Walaber::FluidParticleSet::_drawIntoVertBuffer((param_3 - param_2) * fVar11 + param_2,param_4,iVar7,param_6,param_7,
                         uVar1 & ((int)uVar1 >> 0x1f ^ 0xffffffffU) & 0xff |
                         (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) << 8 |
                         (uVar4 & ((int)uVar4 >> 0x1f ^ 0xffffffffU) & 0xff) << 0x10 |
@@ -876,7 +867,7 @@ LAB_0038eed8:
                         &uStack_c0);
       }
     }
-    bVar6 = *(uint *)(param_6 + 6) <= uVar9;
+    bVar6 = *(uint *)(param_5 + 6) <= uVar9;
     uVar9 = uVar9 + 1;
     puVar8 = puVar8 + 0x12;
     if (bVar6) {
@@ -900,9 +891,7 @@ LAB_0038eed8:
     */
 
 void Walaber::FluidParticleSet::drawIntoVertBuffer
-               (undefined8 param_1,long *param_2,undefined8 param_3,undefined8 param_4,
-               undefined4 *param_5,undefined8 param_6,undefined8 param_7,int param_8,uint param_9,
-               uint param_10,int param_11)
+               (Walaber::PositionTextureColorVert *param_1,unsigned int& param_2,Walaber::Color const& param_3,Walaber::Color const& param_4,Walaber::Color const& param_5,int param_6,bool param_7,int param_8,float param_9,int param_10)
 
 {
   undefined4 *puVar1;
@@ -921,27 +910,27 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   undefined8 uStack_80;
   long lStack_78;
   
-  uStack_a0 = param_6;
-  uStack_98 = param_7;
+  uStack_a0 = param_5;
+  uStack_98 = param_6;
   lVar3 = tpidr_el0;
   lStack_78 = *(long *)(lVar3 + 0x28);
-  param_10 = param_10 & ((int)param_10 >> 0x1f ^ 0xffffffffU);
-  if (6 < (int)param_10) {
-    param_10 = 7;
+  param_9 = param_9 & ((int)param_9 >> 0x1f ^ 0xffffffffU);
+  if (6 < (int)param_9) {
+    param_9 = 7;
   }
   uVar8 = 0;
-  plVar6 = param_2;
-  puVar7 = (undefined8 *)*param_2;
+  plVar6 = param_1;
+  puVar7 = (undefined8 *)*param_1;
   do {
-    if ((*(char *)((long)puVar7 + 0x34) != '\0') && (*(int *)(puVar7 + 0x11) == param_11)) {
+    if ((*(char *)((long)puVar7 + 0x34) != '\0') && (*(int *)(puVar7 + 0x11) == param_10)) {
       iVar2 = 0;
-      if (param_8 != 0) {
-        iVar2 = (int)uVar8 / param_8;
+      if (param_7 != 0) {
+        iVar2 = (int)uVar8 / param_7;
       }
-      if ((param_9 & 1) == 0) {
-        if (uVar8 != iVar2 * param_8) goto LAB_0038f1a0;
+      if ((param_8 & 1) == 0) {
+        if (uVar8 != iVar2 * param_7) goto LAB_0038f1a0;
       }
-      else if (uVar8 == iVar2 * param_8) {
+      else if (uVar8 == iVar2 * param_7) {
 LAB_0038f1a0:
         fVar9 = *(float *)(puVar7 + 0x10);
         uStack_80 = *puVar7;
@@ -949,17 +938,17 @@ LAB_0038f1a0:
         if (fVar9 == 0.0 || 0.0 > fVar9) {
           puVar4 = &uStack_a0;
         }
-        puVar1 = param_5;
+        puVar1 = param_4;
         if (0.0 <= fVar9) {
           puVar1 = (undefined4 *)*puVar4;
         }
-        uStack_88 = puVar7[(ulong)(param_10 >> 1) + 7];
-        uStack_90 = puVar7[(ulong)param_10 + 7];
-        plVar6 = (long *)Walaber::FluidParticleSet::_drawIntoVertBuffer(*(float *)(puVar7 + 4) * 0.5,param_1,plVar6,param_3,param_4
+        uStack_88 = puVar7[(ulong)(param_9 >> 1) + 7];
+        uStack_90 = puVar7[(ulong)param_9 + 7];
+        plVar6 = (long *)Walaber::FluidParticleSet::_drawIntoVertBuffer(*(float *)(puVar7 + 4) * 0.5,this,plVar6,param_2,param_3
                                          ,*puVar1,&uStack_80,&uStack_88,&uStack_90);
       }
     }
-    bVar5 = *(uint *)(param_2 + 6) <= uVar8;
+    bVar5 = *(uint *)(param_1 + 6) <= uVar8;
     uVar8 = uVar8 + 1;
     puVar7 = puVar7 + 0x12;
     if (bVar5) {
@@ -1530,8 +1519,7 @@ LAB_0038fb38:
    Walaber::SharedPtr<Walaber::Texture>, Walaber::Color const&, int) */
 
 void Walaber::FluidParticleSet::drawParticlesTeardrop
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4,undefined4 param_5
-               )
+               (Walaber::SpriteBatch& param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Color const& param_3,int param_4)
 
 {
   long lVar1;
@@ -1544,22 +1532,22 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
-  lVar2 = *param_1 + 0x40;
+  lVar2 = *this + 0x40;
   do {
     if (*(char *)(lVar2 + -0xc) != '\0') {
-      lStack_78 = *param_3;
-      piStack_70 = (int *)param_3[1];
+      lStack_78 = *param_2;
+      piStack_70 = (int *)param_2[1];
       if (lStack_78 != 0) {
         *piStack_70 = *piStack_70 + 1;
       }
                     /* try { // try from 0038fd7c to 0038fd9b has its CatchHandler @ 0038fdec */
-      Walaber::SpriteBatch::drawTeardrop(*(float *)(lVar2 + -0x20) * 0.5,param_2,param_5,&lStack_78,lVar2 + -0x40,lVar2
-                      ,param_4,0,0);
+      Walaber::SpriteBatch::drawTeardrop(*(float *)(lVar2 + -0x20) * 0.5,param_1,param_4,&lStack_78,lVar2 + -0x40,lVar2
+                      ,param_3,0,0);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
     }
     uVar3 = uVar3 + 1;
     lVar2 = lVar2 + 0x90;
-  } while (uVar3 < *(uint *)(param_1 + 6));
+  } while (uVar3 < *(uint *)(this + 6));
   if (*(long *)(lVar1 + 0x28) == lStack_68) {
     return;
   }

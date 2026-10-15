@@ -21,7 +21,7 @@
 long std::__ndk1::
      vector<Walaber::PositionTextureColorVert,std::__ndk1::allocator<Walaber::PositionTextureColorVert>>
      ::insert<std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*>>
-               (long *param_1,long param_2,undefined8 *param_3,undefined8 *param_4)
+               (std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert const*> param_1,std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*> param_2,std::__ndk1::__wrap_iter<Walaber::PositionTextureColorVert*> param_3)
 
 {
   undefined8 *puVar1;
@@ -45,30 +45,30 @@ long std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  if (0 < (long)param_4 - (long)param_3) {
-    puVar1 = (undefined8 *)param_1[1];
-    lVar7 = (long)param_4 - (long)param_3 >> 2;
-    lVar10 = param_1[2] - (long)puVar1 >> 2;
+  if (0 < (long)param_3 - (long)param_2) {
+    puVar1 = (undefined8 *)this[1];
+    lVar7 = (long)param_3 - (long)param_2 >> 2;
+    lVar10 = this[2] - (long)puVar1 >> 2;
     lVar8 = lVar7 * -0x3333333333333333;
     if (lVar8 + lVar10 * 0x3333333333333333 == 0 || lVar8 < lVar10 * -0x3333333333333333) {
-      lVar10 = (long)puVar1 - param_2 >> 2;
+      lVar10 = (long)puVar1 - param_1 >> 2;
       puVar6 = puVar1;
-      puVar11 = param_4;
+      puVar11 = param_3;
       if (lVar8 + lVar10 * 0x3333333333333333 != 0 && lVar10 * -0x3333333333333333 <= lVar8) {
-        puVar11 = (undefined8 *)((long)param_3 + lVar10 * 4);
-        for (puVar12 = puVar11; puVar12 != param_4; puVar12 = (undefined8 *)((long)puVar12 + 0x14))
+        puVar11 = (undefined8 *)((long)param_2 + lVar10 * 4);
+        for (puVar12 = puVar11; puVar12 != param_3; puVar12 = (undefined8 *)((long)puVar12 + 0x14))
         {
           uVar14 = puVar12[1];
           uVar13 = *puVar12;
           *(undefined4 *)(puVar6 + 2) = *(undefined4 *)(puVar12 + 2);
           puVar6[1] = uVar14;
           *puVar6 = uVar13;
-          puVar6 = (undefined8 *)(param_1[1] + 0x14);
-          param_1[1] = (long)puVar6;
+          puVar6 = (undefined8 *)(this[1] + 0x14);
+          this[1] = (long)puVar6;
         }
-        if ((long)puVar1 - param_2 < 1) goto LAB_00363660;
+        if ((long)puVar1 - param_1 < 1) goto LAB_00363660;
       }
-      lVar8 = (long)puVar6 - (param_2 + lVar7 * 4);
+      lVar8 = (long)puVar6 - (param_1 + lVar7 * 4);
       puVar12 = puVar6;
       for (puVar9 = (undefined8 *)((long)puVar6 + lVar7 * -4); puVar9 < puVar1;
           puVar9 = (undefined8 *)((long)puVar9 + 0x14)) {
@@ -77,41 +77,41 @@ long std::__ndk1::
         *(undefined4 *)(puVar12 + 2) = *(undefined4 *)(puVar9 + 2);
         puVar12[1] = uVar14;
         *puVar12 = uVar13;
-        puVar12 = (undefined8 *)(param_1[1] + 0x14);
-        param_1[1] = (long)puVar12;
+        puVar12 = (undefined8 *)(this[1] + 0x14);
+        this[1] = (long)puVar12;
       }
       if (lVar8 != 0) {
         lVar7 = SUB168(SEXT816(lVar8) * SEXT816(-0x6666666666666667),8);
-        memmove((long)puVar6 + ((lVar7 >> 3) - (lVar7 >> 0x3f)) * 0x14,param_2);
+        memmove((long)puVar6 + ((lVar7 >> 3) - (lVar7 >> 0x3f)) * 0x14,param_1);
       }
-      if ((long)puVar11 - (long)param_3 != 0) {
-        memmove(param_2,param_3,(long)puVar11 - (long)param_3);
+      if ((long)puVar11 - (long)param_2 != 0) {
+        memmove(param_1,param_2,(long)puVar11 - (long)param_2);
       }
     }
     else {
-      lVar7 = *param_1;
+      lVar7 = *this;
       uVar4 = lVar8 + ((long)puVar1 - lVar7 >> 2) * -0x3333333333333333;
       if (0xccccccccccccccc < uVar4) {
-        lVar2 = std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+        lVar2 = std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
         return lVar2;
       }
-      lVar8 = param_1[2] - lVar7 >> 2;
+      lVar8 = this[2] - lVar7 >> 2;
       uVar3 = 0xccccccccccccccc;
       if (((ulong)(lVar8 * -0x3333333333333333) < 0x666666666666666) &&
          (uVar5 = lVar8 * -0x6666666666666666, uVar3 = uVar4, uVar4 <= uVar5)) {
         uVar3 = uVar5;
       }
-      std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>::__split_buffer(&pvStack_70,uVar3,(param_2 - lVar7 >> 2) * -0x3333333333333333,param_1 + 2);
-      for (; param_3 != param_4; param_3 = (undefined8 *)((long)param_3 + 0x14)) {
-        uVar14 = param_3[1];
-        uVar13 = *param_3;
-        *(undefined4 *)(puStack_60 + 2) = *(undefined4 *)(param_3 + 2);
+      std::__ndk1::__split_buffer<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>&>::__split_buffer(&pvStack_70,uVar3,(param_1 - lVar7 >> 2) * -0x3333333333333333,this + 2);
+      for (; param_2 != param_3; param_2 = (undefined8 *)((long)param_2 + 0x14)) {
+        uVar14 = param_2[1];
+        uVar13 = *param_2;
+        *(undefined4 *)(puStack_60 + 2) = *(undefined4 *)(param_2 + 2);
         puStack_60[1] = uVar14;
         *puStack_60 = uVar13;
         puStack_60 = (undefined8 *)((long)puStack_60 + 0x14);
       }
                     /* try { // try from 00363524 to 00363533 has its CatchHandler @ 00363698 */
-      param_2 = std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__swap_out_circular_buffer(param_1,&pvStack_70,param_2);
+      param_1 = std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__swap_out_circular_buffer(this,&pvStack_70,param_1);
       if (puStack_60 != puStack_68) {
         puStack_60 = (undefined8 *)
                      ((long)puStack_60 +
@@ -125,7 +125,7 @@ long std::__ndk1::
   }
 LAB_00363660:
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return param_2;
+    return param_1;
   }
   lVar2 = __stack_chk_fail();
   return lVar2;

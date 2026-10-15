@@ -362,7 +362,7 @@ void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::ComicStrip::addPanel(Walaber::SharedPtr<Walaber::Texture>) */
 
-void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
+void Walaber::ComicStrip::addPanel(Walaber::SharedPtr<Walaber::Texture> param_1)
 
 {
   long lVar1;
@@ -382,8 +382,8 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(&plStack_60);
-  lStack_70 = *param_2;
-  piStack_68 = (int *)param_2[1];
+  lStack_70 = *param_1;
+  piStack_68 = (int *)param_1[1];
   if (lStack_70 != 0) {
     *piStack_68 = *piStack_68 + 1;
   }
@@ -415,7 +415,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
     }
   }
                     /* try { // try from 003eecac to 003eecbb has its CatchHandler @ 003eed00 */
-  Walaber::ComicStrip::addPanel(param_1,&lStack_70,&puStack_88);
+  Walaber::ComicStrip::addPanel(this,&lStack_70,&puStack_88);
   Walaber::PropertyList::~PropertyList(&puStack_88);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
   Walaber::PropertyList::~PropertyList(&plStack_60);
@@ -434,7 +434,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
 
 /* Walaber::ComicStrip::addPanel(Walaber::SharedPtr<Walaber::Texture>, Walaber::PropertyList) */
 
-void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3)
+void Walaber::ComicStrip::addPanel(Walaber::SharedPtr<Walaber::Texture> param_1,Walaber::PropertyList param_2)
 
 {
   long *plVar1;
@@ -471,32 +471,32 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   
   lVar5 = tpidr_el0;
   lStack_68 = *(long *)(lVar5 + 0x28);
-  plVar1 = *(long **)(param_1 + 0x48);
-  if (plVar1 == *(long **)(param_1 + 0x50)) {
-    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x40);
+  plVar1 = *(long **)(this + 0x48);
+  if (plVar1 == *(long **)(this + 0x50)) {
+    void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(this + 0x40);
   }
   else {
-    lVar10 = *param_2;
+    lVar10 = *param_1;
     *plVar1 = lVar10;
-    piVar9 = (int *)param_2[1];
+    piVar9 = (int *)param_1[1];
     plVar1[1] = (long)piVar9;
     if (lVar10 != 0) {
       *piVar9 = *piVar9 + 1;
     }
-    *(long **)(param_1 + 0x48) = plVar1 + 2;
+    *(long **)(this + 0x48) = plVar1 + 2;
   }
-  fStack_80 = ((float)*(int *)(param_1 + 4) + 0.5) * ScreenCoord::sScreenSize + 0.0;
+  fStack_80 = ((float)*(int *)(this + 4) + 0.5) * ScreenCoord::sScreenSize + 0.0;
   fVar12 = DAT_0072d884 * 0.0 + 0.0;
   uStack_7c = SUB41(fVar12,0);
   uStack_7b = (undefined1)((uint)fVar12 >> 8);
   uStack_7a = (undefined2)((uint)fVar12 >> 0x10);
-  puVar8 = *(undefined8 **)(param_1 + 0x18);
-  if (puVar8 < *(undefined8 **)(param_1 + 0x20)) {
+  puVar8 = *(undefined8 **)(this + 0x18);
+  if (puVar8 < *(undefined8 **)(this + 0x20)) {
     *puVar8 = CONCAT44(fVar12,fStack_80);
-    *(undefined8 **)(param_1 + 0x18) = puVar8 + 1;
+    *(undefined8 **)(this + 0x18) = puVar8 + 1;
   }
   else {
-    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x10,&fStack_80);
+    void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(this + 0x10,&fStack_80);
   }
   uStack_7a = 0;
   uStack_78 = 0;
@@ -511,7 +511,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7c = 0x65;
   uStack_7b = 0;
                     /* try { // try from 003eee2c to 003eee37 has its CatchHandler @ 003ef9d4 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -521,14 +521,14 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7c = SUB41(DAT_0072d884,0);
     uStack_7b = (undefined1)((uint)DAT_0072d884 >> 8);
     uStack_7a = (undefined2)((uint)DAT_0072d884 >> 0x10);
-    pfVar3 = *(float **)(param_1 + 0x30);
-    if (pfVar3 < *(float **)(param_1 + 0x38)) {
+    pfVar3 = *(float **)(this + 0x30);
+    if (pfVar3 < *(float **)(this + 0x38)) {
       *pfVar3 = ScreenCoord::sScreenSize;
       pfVar3[1] = fVar12;
-      *(float **)(param_1 + 0x30) = pfVar3 + 2;
+      *(float **)(this + 0x30) = pfVar3 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&fStack_80);
+      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(this + 0x28,&fStack_80);
     }
   }
   else {
@@ -545,16 +545,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7c = 0x65;
     uStack_7b = 0;
                     /* try { // try from 003eee6c to 003eee7f has its CatchHandler @ 003ef9fc */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     Walaber::Property::asVector2(&uStack_a0);
-    puVar8 = *(undefined8 **)(param_1 + 0x30);
-    if (puVar8 < *(undefined8 **)(param_1 + 0x38)) {
+    puVar8 = *(undefined8 **)(this + 0x30);
+    if (puVar8 < *(undefined8 **)(this + 0x38)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
-      *(undefined8 **)(param_1 + 0x30) = puVar8 + 1;
+      *(undefined8 **)(this + 0x30) = puVar8 + 1;
     }
     else {
                     /* try { // try from 003eeed0 to 003eeedb has its CatchHandler @ 003ef9fc */
-      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(param_1 + 0x28,&uStack_a0);
+      void std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>::__push_back_slow_path<Walaber::Vector2>(this + 0x28,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -573,7 +573,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x6552;
   uStack_78 = 99;
                     /* try { // try from 003eef14 to 003eef1f has its CatchHandler @ 003ef9d0 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -588,14 +588,14 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_76 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x10);
     uStack_75 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x18);
     fStack_74 = DAT_0072d884;
-    puVar8 = *(undefined8 **)(param_1 + 0xb0);
-    if (puVar8 < *(undefined8 **)(param_1 + 0xb8)) {
+    puVar8 = *(undefined8 **)(this + 0xb0);
+    if (puVar8 < *(undefined8 **)(this + 0xb8)) {
       *puVar8 = 0;
       puVar8[1] = uVar7;
-      *(undefined8 **)(param_1 + 0xb0) = puVar8 + 2;
+      *(undefined8 **)(this + 0xb0) = puVar8 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&fStack_80);
+      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(this + 0xa8,&fStack_80);
     }
   }
   else {
@@ -612,17 +612,17 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x6552;
     uStack_78 = 99;
                     /* try { // try from 003eef58 to 003eef6b has its CatchHandler @ 003ef9f8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     Walaber::Property::asRect(&uStack_a0);
-    puVar8 = *(undefined8 **)(param_1 + 0xb0);
-    if (puVar8 < *(undefined8 **)(param_1 + 0xb8)) {
+    puVar8 = *(undefined8 **)(this + 0xb0);
+    if (puVar8 < *(undefined8 **)(this + 0xb8)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
       puVar8[1] = uStack_98;
-      *(undefined8 **)(param_1 + 0xb0) = puVar8 + 2;
+      *(undefined8 **)(this + 0xb0) = puVar8 + 2;
     }
     else {
                     /* try { // try from 003eefd0 to 003eefdb has its CatchHandler @ 003ef9f8 */
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xa8,&uStack_a0);
+      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(this + 0xa8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -641,7 +641,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x7463;
   uStack_78 = 0;
                     /* try { // try from 003ef010 to 003ef01b has its CatchHandler @ 003ef9cc */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -656,14 +656,14 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_76 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x10);
     uStack_75 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x18);
     fStack_74 = DAT_0072d884;
-    puVar8 = *(undefined8 **)(param_1 + 200);
-    if (puVar8 < *(undefined8 **)(param_1 + 0xd0)) {
+    puVar8 = *(undefined8 **)(this + 200);
+    if (puVar8 < *(undefined8 **)(this + 0xd0)) {
       *puVar8 = 0;
       puVar8[1] = uVar7;
-      *(undefined8 **)(param_1 + 200) = puVar8 + 2;
+      *(undefined8 **)(this + 200) = puVar8 + 2;
     }
     else {
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&fStack_80);
+      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(this + 0xc0,&fStack_80);
     }
   }
   else {
@@ -680,17 +680,17 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7463;
     uStack_78 = 0;
                     /* try { // try from 003ef05c to 003ef06f has its CatchHandler @ 003ef9f4 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     Walaber::Property::asRect(&uStack_a0);
-    puVar8 = *(undefined8 **)(param_1 + 200);
-    if (puVar8 < *(undefined8 **)(param_1 + 0xd0)) {
+    puVar8 = *(undefined8 **)(this + 200);
+    if (puVar8 < *(undefined8 **)(this + 0xd0)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
       puVar8[1] = uStack_98;
-      *(undefined8 **)(param_1 + 200) = puVar8 + 2;
+      *(undefined8 **)(this + 200) = puVar8 + 2;
     }
     else {
                     /* try { // try from 003ef0d4 to 003ef0df has its CatchHandler @ 003ef9f4 */
-      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(param_1 + 0xc0,&uStack_a0);
+      void std::__ndk1::vector<Walaber::Rect, std::__ndk1::allocator<Walaber::Rect>>::__push_back_slow_path<Walaber::Rect>(this + 0xc0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -709,19 +709,19 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x65;
   uStack_77 = 0;
                     /* try { // try from 003ef118 to 003ef123 has its CatchHandler @ 003ef9c8 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
-    puVar4 = *(undefined4 **)(param_1 + 0xe0);
-    if (puVar4 < *(undefined4 **)(param_1 + 0xe8)) {
+    puVar4 = *(undefined4 **)(this + 0xe0);
+    if (puVar4 < *(undefined4 **)(this + 0xe8)) {
       *puVar4 = 0;
-      *(undefined4 **)(param_1 + 0xe0) = puVar4 + 1;
+      *(undefined4 **)(this + 0xe0) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&fStack_80);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0xd8,&fStack_80);
     }
   }
   else {
@@ -738,16 +738,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x65;
     uStack_77 = 0;
                     /* try { // try from 003ef158 to 003ef167 has its CatchHandler @ 003ef9f0 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
-    puVar2 = *(uint **)(param_1 + 0xe0);
-    if (puVar2 < *(uint **)(param_1 + 0xe8)) {
+    puVar2 = *(uint **)(this + 0xe0);
+    if (puVar2 < *(uint **)(this + 0xe8)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0xe0) = puVar2 + 1;
+      *(uint **)(this + 0xe0) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef1b0 to 003ef1bb has its CatchHandler @ 003ef9f0 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xd8,&uStack_a0);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0xd8,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -766,19 +766,19 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x7561;
   uStack_78 = 0x73;
                     /* try { // try from 003ef1f4 to 003ef1ff has its CatchHandler @ 003ef9c4 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
-    puVar4 = *(undefined4 **)(param_1 + 0x110);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x118)) {
+    puVar4 = *(undefined4 **)(this + 0x110);
+    if (puVar4 < *(undefined4 **)(this + 0x118)) {
       *puVar4 = 0;
-      *(undefined4 **)(param_1 + 0x110) = puVar4 + 1;
+      *(undefined4 **)(this + 0x110) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&fStack_80);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x108,&fStack_80);
     }
   }
   else {
@@ -795,16 +795,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7561;
     uStack_78 = 0x73;
                     /* try { // try from 003ef238 to 003ef247 has its CatchHandler @ 003ef9ec */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
-    puVar2 = *(uint **)(param_1 + 0x110);
-    if (puVar2 < *(uint **)(param_1 + 0x118)) {
+    puVar2 = *(uint **)(this + 0x110);
+    if (puVar2 < *(uint **)(this + 0x118)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0x110) = puVar2 + 1;
+      *(uint **)(this + 0x110) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef290 to 003ef29b has its CatchHandler @ 003ef9ec */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x108,&uStack_a0);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x108,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -823,19 +823,19 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x6e;
   uStack_77 = 0;
                     /* try { // try from 003ef2d4 to 003ef2df has its CatchHandler @ 003ef9c0 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 5.0;
-    puVar4 = *(undefined4 **)(param_1 + 0xf8);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x100)) {
+    puVar4 = *(undefined4 **)(this + 0xf8);
+    if (puVar4 < *(undefined4 **)(this + 0x100)) {
       *puVar4 = 0x40a00000;
-      *(undefined4 **)(param_1 + 0xf8) = puVar4 + 1;
+      *(undefined4 **)(this + 0xf8) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&fStack_80);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0xf0,&fStack_80);
     }
   }
   else {
@@ -852,16 +852,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x6e;
     uStack_77 = 0;
                     /* try { // try from 003ef314 to 003ef323 has its CatchHandler @ 003ef9e8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
-    puVar2 = *(uint **)(param_1 + 0xf8);
-    if (puVar2 < *(uint **)(param_1 + 0x100)) {
+    puVar2 = *(uint **)(this + 0xf8);
+    if (puVar2 < *(uint **)(this + 0x100)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0xf8) = puVar2 + 1;
+      *(uint **)(this + 0xf8) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef370 to 003ef37b has its CatchHandler @ 003ef9e8 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0xf0,&uStack_a0);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0xf0,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -880,19 +880,19 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x69;
   uStack_75 = 0;
                     /* try { // try from 003ef3b8 to 003ef3c3 has its CatchHandler @ 003ef9bc */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = -NAN;
-    puVar4 = *(undefined4 **)(param_1 + 0x128);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x130)) {
+    puVar4 = *(undefined4 **)(this + 0x128);
+    if (puVar4 < *(undefined4 **)(this + 0x130)) {
       *puVar4 = 0xffffffff;
-      *(undefined4 **)(param_1 + 0x128) = puVar4 + 1;
+      *(undefined4 **)(this + 0x128) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&fStack_80);
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x120,&fStack_80);
     }
   }
   else {
@@ -909,16 +909,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_75 = 0;
                     /* try { // try from 003ef400 to 003ef40f has its CatchHandler @ 003ef9e4 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asInt();
-    puVar2 = *(uint **)(param_1 + 0x128);
-    if (puVar2 < *(uint **)(param_1 + 0x130)) {
+    puVar2 = *(uint **)(this + 0x128);
+    if (puVar2 < *(uint **)(this + 0x130)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0x128) = puVar2 + 1;
+      *(uint **)(this + 0x128) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef45c to 003ef467 has its CatchHandler @ 003ef9e4 */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x120,&uStack_a0);
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x120,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -937,19 +937,19 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x69;
   uStack_6f = 0;
                     /* try { // try from 003ef4a0 to 003ef4ab has its CatchHandler @ 003ef9b8 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 1.0;
-    puVar4 = *(undefined4 **)(param_1 + 0x140);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x148)) {
+    puVar4 = *(undefined4 **)(this + 0x140);
+    if (puVar4 < *(undefined4 **)(this + 0x148)) {
       *puVar4 = 0x3f800000;
-      *(undefined4 **)(param_1 + 0x140) = puVar4 + 1;
+      *(undefined4 **)(this + 0x140) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&fStack_80);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x138,&fStack_80);
     }
   }
   else {
@@ -966,16 +966,16 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_6f = 0;
                     /* try { // try from 003ef4e4 to 003ef4f3 has its CatchHandler @ 003ef9e0 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
-    puVar2 = *(uint **)(param_1 + 0x140);
-    if (puVar2 < *(uint **)(param_1 + 0x148)) {
+    puVar2 = *(uint **)(this + 0x140);
+    if (puVar2 < *(uint **)(this + 0x148)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0x140) = puVar2 + 1;
+      *(uint **)(this + 0x140) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef540 to 003ef54b has its CatchHandler @ 003ef9e0 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x138,&uStack_a0);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x138,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -994,7 +994,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x6e49;
   uStack_78 = 100;
                     /* try { // try from 003ef588 to 003ef593 has its CatchHandler @ 003ef9b4 */
-  lVar10 = Walaber::PropertyList::getValueForKey(param_3,&fStack_80);
+  lVar10 = Walaber::PropertyList::getValueForKey(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -1011,15 +1011,15 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x6544;
   uStack_78 = 0x6c;
                     /* try { // try from 003ef5d4 to 003ef5df has its CatchHandler @ 003ef9b0 */
-  uVar7 = Walaber::PropertyList::getValueForKey(param_3,&fStack_80);
+  uVar7 = Walaber::PropertyList::getValueForKey(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if (lVar10 == 0) {
     fStack_80 = 0.0;
-    piVar9 = *(int **)(param_1 + 0x90);
-    if (*(int **)(param_1 + 0x98) <= piVar9) {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x88,&fStack_80);
+    piVar9 = *(int **)(this + 0x90);
+    if (*(int **)(this + 0x98) <= piVar9) {
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x88,&fStack_80);
       goto LAB_003ef7a0;
     }
     *piVar9 = 0;
@@ -1028,22 +1028,22 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     iStack_84 = 0;
     do {
       fStack_80 = (float)Walaber::Property::asInt(lVar10);
-      pfVar3 = *(float **)(param_1 + 0x60);
-      if (pfVar3 < *(float **)(param_1 + 0x68)) {
+      pfVar3 = *(float **)(this + 0x60);
+      if (pfVar3 < *(float **)(this + 0x68)) {
         *pfVar3 = fStack_80;
-        *(float **)(param_1 + 0x60) = pfVar3 + 1;
+        *(float **)(this + 0x60) = pfVar3 + 1;
       }
       else {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x58,&fStack_80);
+        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x58,&fStack_80);
       }
       fStack_80 = (float)Walaber::Property::asFloat(uVar7);
-      pfVar3 = *(float **)(param_1 + 0x78);
-      if (pfVar3 < *(float **)(param_1 + 0x80)) {
+      pfVar3 = *(float **)(this + 0x78);
+      if (pfVar3 < *(float **)(this + 0x80)) {
         *pfVar3 = fStack_80;
-        *(float **)(param_1 + 0x78) = pfVar3 + 1;
+        *(float **)(this + 0x78) = pfVar3 + 1;
       }
       else {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x70,&fStack_80);
+        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x70,&fStack_80);
       }
       iStack_84 = iStack_84 + 1;
       Walaber::StringHelper::intToStr(&uStack_a0);
@@ -1068,7 +1068,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       puVar8[2] = 0;
       *puVar8 = 0;
                     /* try { // try from 003ef6b4 to 003ef6bf has its CatchHandler @ 003efa18 */
-      lVar10 = Walaber::PropertyList::getValueForKey(param_3,&fStack_80);
+      lVar10 = Walaber::PropertyList::getValueForKey(param_2,&fStack_80);
       if (((uint)fStack_80 & 1) != 0) {
         operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
       }
@@ -1097,7 +1097,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       puVar8[2] = 0;
       *puVar8 = 0;
                     /* try { // try from 003ef71c to 003ef727 has its CatchHandler @ 003efa10 */
-      uVar7 = Walaber::PropertyList::getValueForKey(param_3,&fStack_80);
+      uVar7 = Walaber::PropertyList::getValueForKey(param_2,&fStack_80);
       if (((uint)fStack_80 & 1) != 0) {
         operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
       }
@@ -1105,14 +1105,14 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
         operator delete(pvStack_90);
       }
     } while (lVar10 != 0);
-    piVar9 = *(int **)(param_1 + 0x90);
-    if (piVar9 == *(int **)(param_1 + 0x98)) {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x88,&iStack_84);
+    piVar9 = *(int **)(this + 0x90);
+    if (piVar9 == *(int **)(this + 0x98)) {
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(this + 0x88,&iStack_84);
       goto LAB_003ef7a0;
     }
     *piVar9 = iStack_84;
   }
-  *(int **)(param_1 + 0x90) = piVar9 + 1;
+  *(int **)(this + 0x90) = piVar9 + 1;
 LAB_003ef7a0:
   uStack_70 = 0;
   uStack_6f = 0;
@@ -1127,19 +1127,19 @@ LAB_003ef7a0:
   uStack_7a = 0x5361;
   uStack_78 = 0x68;
                     /* try { // try from 003ef7cc to 003ef7d7 has its CatchHandler @ 003ef9ac */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
-    puVar4 = *(undefined4 **)(param_1 + 0x158);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x160)) {
+    puVar4 = *(undefined4 **)(this + 0x158);
+    if (puVar4 < *(undefined4 **)(this + 0x160)) {
       *puVar4 = 0;
-      *(undefined4 **)(param_1 + 0x158) = puVar4 + 1;
+      *(undefined4 **)(this + 0x158) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&fStack_80);
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x150,&fStack_80);
     }
   }
   else {
@@ -1156,16 +1156,16 @@ LAB_003ef7a0:
     uStack_7a = 0x5361;
     uStack_78 = 0x68;
                     /* try { // try from 003ef814 to 003ef823 has its CatchHandler @ 003ef9dc */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asInt();
-    puVar2 = *(uint **)(param_1 + 0x158);
-    if (puVar2 < *(uint **)(param_1 + 0x160)) {
+    puVar2 = *(uint **)(this + 0x158);
+    if (puVar2 < *(uint **)(this + 0x160)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0x158) = puVar2 + 1;
+      *(uint **)(this + 0x158) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef86c to 003ef877 has its CatchHandler @ 003ef9dc */
-      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x150,&uStack_a0);
+      void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(this + 0x150,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
@@ -1184,19 +1184,19 @@ LAB_003ef7a0:
   uStack_78 = 0x68;
   uStack_6f = 0;
                     /* try { // try from 003ef8b0 to 003ef8bb has its CatchHandler @ 003ef9a8 */
-  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_2,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
   if ((uVar6 & 1) == 0) {
     fStack_80 = 0.0;
-    puVar4 = *(undefined4 **)(param_1 + 0x170);
-    if (puVar4 < *(undefined4 **)(param_1 + 0x178)) {
+    puVar4 = *(undefined4 **)(this + 0x170);
+    if (puVar4 < *(undefined4 **)(this + 0x178)) {
       *puVar4 = 0;
-      *(undefined4 **)(param_1 + 0x170) = puVar4 + 1;
+      *(undefined4 **)(this + 0x170) = puVar4 + 1;
     }
     else {
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&fStack_80);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x168,&fStack_80);
     }
   }
   else {
@@ -1213,22 +1213,22 @@ LAB_003ef7a0:
     uStack_78 = 0x68;
     uStack_6f = 0;
                     /* try { // try from 003ef8f4 to 003ef903 has its CatchHandler @ 003ef9d8 */
-    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::PropertyList::operator[](param_2,&fStack_80);
     uStack_a0 = Walaber::Property::asFloat();
-    puVar2 = *(uint **)(param_1 + 0x170);
-    if (puVar2 < *(uint **)(param_1 + 0x178)) {
+    puVar2 = *(uint **)(this + 0x170);
+    if (puVar2 < *(uint **)(this + 0x178)) {
       *puVar2 = uStack_a0;
-      *(uint **)(param_1 + 0x170) = puVar2 + 1;
+      *(uint **)(this + 0x170) = puVar2 + 1;
     }
     else {
                     /* try { // try from 003ef94c to 003ef957 has its CatchHandler @ 003ef9d8 */
-      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_1 + 0x168,&uStack_a0);
+      void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(this + 0x168,&uStack_a0);
     }
     if (((uint)fStack_80 & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
     }
   }
-  *(int *)(param_1 + 4) = *(int *)(param_1 + 4) + 1;
+  *(int *)(this + 4) = *(int *)(this + 4) + 1;
   if (*(long *)(lVar5 + 0x28) == lStack_68) {
     return;
   }

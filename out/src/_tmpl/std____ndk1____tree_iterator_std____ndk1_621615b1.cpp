@@ -24,7 +24,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::__map_value_compare<Walaber::Widget*,std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>,std::__ndk1::less<Walaber::Widget*>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*,Walaber::Vector2>>>
      ::
      __emplace_hint_unique_key_args<Walaber::Widget*,std::__ndk1::pair<Walaber::Widget*const,Walaber::Vector2>const&>
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
+               (std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, void*>*, long> param_1,Walaber::Widget* const& param_2,std::__ndk1::pair<Walaber::Widget* const, Walaber::Vector2> const& param_3)
 
 {
   long *plVar1;
@@ -36,13 +36,13 @@ long std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__find_equal<Walaber::Widget*>(param_1,param_2,&uStack_50,auStack_58,param_3);
+  plVar1 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__find_equal<Walaber::Widget*>(this,param_1,&uStack_50,auStack_58,param_2);
   lVar3 = *plVar1;
   if (lVar3 == 0) {
     lVar3 = operator new(0x30);
-    *(undefined8 *)(lVar3 + 0x20) = *param_4;
-    *(undefined8 *)(lVar3 + 0x28) = param_4[1];
-    std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__insert_node_at(param_1,uStack_50,plVar1,lVar3);
+    *(undefined8 *)(lVar3 + 0x20) = *param_3;
+    *(undefined8 *)(lVar3 + 0x28) = param_3[1];
+    std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::__insert_node_at(this,uStack_50,plVar1,lVar3);
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {
     return lVar3;

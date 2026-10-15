@@ -188,7 +188,7 @@ ulong std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>> const& param_1)
 
 {
   undefined8 *puVar1;
@@ -196,24 +196,24 @@ void std::__ndk1::
   long lVar3;
   long lVar4;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 004cb720 to 004cb723 has its CatchHandler @ 004cb770 */
-    std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vallocate(param_1,param_2[1] - *param_2 >> 5);
-    lVar3 = *param_2;
-    lVar2 = param_2[1];
+    std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__vallocate(this,param_1[1] - *param_1 >> 5);
+    lVar3 = *param_1;
+    lVar2 = param_1[1];
     if (lVar3 != lVar2) {
-      lVar4 = param_1[1];
+      lVar4 = this[1];
       do {
                     /* try { // try from 004cb734 to 004cb73f has its CatchHandler @ 004cb774 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar4,lVar3);
         puVar1 = (undefined8 *)(lVar3 + 0x18);
         lVar3 = lVar3 + 0x20;
         *(undefined8 *)(lVar4 + 0x18) = *puVar1;
-        lVar4 = param_1[1] + 0x20;
-        param_1[1] = lVar4;
+        lVar4 = this[1] + 0x20;
+        this[1] = lVar4;
       } while (lVar3 != lVar2);
     }
   }
@@ -262,7 +262,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>& param_1)
 
 {
   undefined8 *puVar1;
@@ -272,13 +272,13 @@ void std::__ndk1::
   undefined8 uVar5;
   undefined8 uVar6;
   
-  lVar2 = *param_1;
-  lVar4 = param_1[1];
+  lVar2 = *this;
+  lVar4 = this[1];
   if (lVar4 == lVar2) {
-    lVar3 = param_2[1];
+    lVar3 = param_1[1];
   }
   else {
-    lVar3 = param_2[1];
+    lVar3 = param_1[1];
     do {
       uVar6 = *(undefined8 *)(lVar4 + -0x18);
       uVar5 = *(undefined8 *)(lVar4 + -0x20);
@@ -291,20 +291,20 @@ void std::__ndk1::
       *(undefined8 *)(lVar4 + -0x20) = 0;
       lVar4 = lVar4 + -0x20;
       *(undefined8 *)(lVar3 + -8) = *puVar1;
-      lVar3 = param_2[1] + -0x20;
-      param_2[1] = lVar3;
+      lVar3 = param_1[1] + -0x20;
+      param_1[1] = lVar3;
     } while (lVar2 != lVar4);
-    lVar2 = *param_1;
+    lVar2 = *this;
   }
-  *param_1 = lVar3;
-  param_2[1] = lVar2;
-  lVar2 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar2;
-  lVar2 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar2;
-  *param_2 = param_2[1];
+  *this = lVar3;
+  param_1[1] = lVar2;
+  lVar2 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar2;
+  lVar2 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar2;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -442,7 +442,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::World::WorldSpoutConnection,std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2,undefined8 *param_3)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>& param_1,WaterConcept::World::WorldSpoutConnection *param_2)
 
 {
   long lVar1;
@@ -453,9 +453,9 @@ void std::__ndk1::
   undefined8 uVar6;
   undefined8 uVar7;
   
-  puVar3 = (undefined8 *)*param_1;
-  lVar1 = param_2[1];
-  for (puVar4 = param_3; puVar3 != puVar4; puVar4 = puVar4 + -4) {
+  puVar3 = (undefined8 *)*this;
+  lVar1 = param_1[1];
+  for (puVar4 = param_2; puVar3 != puVar4; puVar4 = puVar4 + -4) {
     uVar7 = puVar4[-3];
     uVar6 = puVar4[-4];
     *(undefined8 *)(lVar1 + -0x10) = puVar4[-2];
@@ -465,39 +465,39 @@ void std::__ndk1::
     puVar4[-2] = 0;
     puVar4[-4] = 0;
     *(undefined8 *)(lVar1 + -8) = puVar4[-1];
-    lVar1 = param_2[1] + -0x20;
-    param_2[1] = lVar1;
+    lVar1 = param_1[1] + -0x20;
+    param_1[1] = lVar1;
   }
-  puVar4 = (undefined8 *)param_1[1];
-  if (puVar4 != param_3) {
-    puVar3 = (undefined8 *)param_2[2];
+  puVar4 = (undefined8 *)this[1];
+  if (puVar4 != param_2) {
+    puVar3 = (undefined8 *)param_1[2];
     do {
-      uVar7 = param_3[1];
-      uVar6 = *param_3;
-      puVar3[2] = param_3[2];
+      uVar7 = param_2[1];
+      uVar6 = *param_2;
+      puVar3[2] = param_2[2];
       puVar3[1] = uVar7;
       *puVar3 = uVar6;
-      param_3[1] = 0;
-      param_3[2] = 0;
-      puVar2 = param_3 + 4;
-      *param_3 = 0;
-      puVar3[3] = param_3[3];
-      puVar3 = (undefined8 *)(param_2[2] + 0x20);
-      param_2[2] = puVar3;
-      param_3 = puVar2;
+      param_2[1] = 0;
+      param_2[2] = 0;
+      puVar2 = param_2 + 4;
+      *param_2 = 0;
+      puVar3[3] = param_2[3];
+      puVar3 = (undefined8 *)(param_1[2] + 0x20);
+      param_1[2] = puVar3;
+      param_2 = puVar2;
     } while (puVar2 != puVar4);
-    lVar1 = param_2[1];
+    lVar1 = param_1[1];
   }
-  lVar5 = *param_1;
-  *param_1 = lVar1;
-  param_2[1] = lVar5;
-  lVar1 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar1;
-  lVar1 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar1;
-  *param_2 = param_2[1];
+  lVar5 = *this;
+  *this = lVar1;
+  param_1[1] = lVar5;
+  lVar1 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar1;
+  lVar1 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar1;
+  *param_1 = param_1[1];
   return;
 }
 

@@ -293,10 +293,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
     */
 
 void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,undefined4 param_6,long *param_7,undefined8 param_8,
-               undefined8 *param_9,undefined8 *param_10,long *param_11,undefined8 param_12,
-               undefined4 param_13,undefined4 param_14)
+               (int param_1,Walaber::Vector2 const& param_2,Walaber::Vector2 const& param_3,Walaber::SharedPtr<Walaber::Texture> param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,Walaber::Widget_ScoreCounter::MovementDirection param_6,int param_7,float param_8,float param_9,float param_10,float param_11,float param_12,float param_13)
 
 {
   long lVar1;
@@ -308,47 +305,47 @@ void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
   
   lVar1 = tpidr_el0;
   lStack_88 = *(long *)(lVar1 + 0x28);
-  uStack_90 = *param_9;
-  uStack_98 = *param_10;
-  Walaber::Widget::Widget(param_7,param_8,0x12,&uStack_90,&uStack_98,1,1);
-  *param_7 = (long)&PTR__Widget_ScoreCounter_0070f748;
-  lVar3 = *param_11;
-  param_7[0x20] = lVar3;
-  piVar2 = (int *)param_11[1];
-  param_7[0x21] = (long)piVar2;
+  uStack_90 = *param_8;
+  uStack_98 = *param_9;
+  Walaber::Widget::Widget(param_6,param_7,0x12,&uStack_90,&uStack_98,1,1);
+  *param_6 = (long)&PTR__Widget_ScoreCounter_0070f748;
+  lVar3 = *param_10;
+  param_6[0x20] = lVar3;
+  piVar2 = (int *)param_10[1];
+  param_6[0x21] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)(param_7 + 0x22) = 0xff000000;
-  *(undefined8 *)((long)param_7 + 0x11c) = 0;
-  *(undefined8 *)((long)param_7 + 0x114) = 0;
-  *(undefined8 *)((long)param_7 + 300) = 0;
-  *(undefined8 *)((long)param_7 + 0x124) = 0;
-  *(undefined4 *)(param_7 + 0x27) = 0;
-  *(undefined4 *)((long)param_7 + 0x134) = 0;
-  param_7[0x2c] = 0;
-  param_7[0x2d] = 0;
-  param_7[0x2a] = 0;
-  param_7[0x2b] = 0;
-  param_7[0x28] = 0;
-  param_7[0x29] = 0;
-  *(undefined4 *)((long)param_7 + 0x174) = param_14;
-  *(undefined4 *)((long)param_7 + 0x17c) = 0xff000000;
-  *(undefined4 *)(param_7 + 0x30) = param_2;
-  *(undefined4 *)((long)param_7 + 0x184) = param_3;
-  *(undefined4 *)(param_7 + 0x31) = param_4;
-  *(undefined4 *)((long)param_7 + 0x18c) = param_5;
-  *(undefined4 *)(param_7 + 0x32) = param_1;
-  *(undefined4 *)((long)param_7 + 0x194) = param_13;
-  *(undefined4 *)((long)param_7 + 0x19c) = 0;
-  *(undefined4 *)(param_7 + 0x34) = param_6;
-  *(undefined4 *)((long)param_7 + 0x1a4) = 0;
-  *(undefined4 *)((long)param_7 + 0x1ac) = 0x3f000000;
+  *(undefined4 *)(param_6 + 0x22) = 0xff000000;
+  *(undefined8 *)((long)param_6 + 0x11c) = 0;
+  *(undefined8 *)((long)param_6 + 0x114) = 0;
+  *(undefined8 *)((long)param_6 + 300) = 0;
+  *(undefined8 *)((long)param_6 + 0x124) = 0;
+  *(undefined4 *)(param_6 + 0x27) = 0;
+  *(undefined4 *)((long)param_6 + 0x134) = 0;
+  param_6[0x2c] = 0;
+  param_6[0x2d] = 0;
+  param_6[0x2a] = 0;
+  param_6[0x2b] = 0;
+  param_6[0x28] = 0;
+  param_6[0x29] = 0;
+  *(undefined4 *)((long)param_6 + 0x174) = param_13;
+  *(undefined4 *)((long)param_6 + 0x17c) = 0xff000000;
+  *(undefined4 *)(param_6 + 0x30) = param_1;
+  *(undefined4 *)((long)param_6 + 0x184) = param_2;
+  *(undefined4 *)(param_6 + 0x31) = param_3;
+  *(undefined4 *)((long)param_6 + 0x18c) = param_4;
+  *(undefined4 *)(param_6 + 0x32) = this;
+  *(undefined4 *)((long)param_6 + 0x194) = param_12;
+  *(undefined4 *)((long)param_6 + 0x19c) = 0;
+  *(undefined4 *)(param_6 + 0x34) = param_5;
+  *(undefined4 *)((long)param_6 + 0x1a4) = 0;
+  *(undefined4 *)((long)param_6 + 0x1ac) = 0x3f000000;
                     /* try { // try from 00384d90 to 00384db7 has its CatchHandler @ 00384df4 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_7 + 0x1a,param_12);
-  (**(code **)(*param_7 + 0x78))(param_7);
-  Walaber::Widget_ScoreCounter::init(param_7);
-  Walaber::Widget_ScoreCounter::_updateBorders(param_7);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_6 + 0x1a,param_11);
+  (**(code **)(*param_6 + 0x78))(param_6);
+  Walaber::Widget_ScoreCounter::init(param_6);
+  Walaber::Widget_ScoreCounter::_updateBorders(param_6);
   if (*(long *)(lVar1 + 0x28) == lStack_88) {
     return;
   }

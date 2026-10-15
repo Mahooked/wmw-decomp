@@ -786,7 +786,7 @@ LAB_003718c8:
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > >&) */
 
-void Walaber::WidgetHelper::getTextureNames(undefined8 param_1,long param_2)
+void Walaber::WidgetHelper::getTextureNames(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>& param_2)
 
 {
   ulong *puVar1;
@@ -860,7 +860,7 @@ void Walaber::WidgetHelper::getTextureNames(undefined8 param_1,long param_2)
 /* Walaber::WidgetHelper::_openXMLFile(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-long Walaber::WidgetHelper::_openXMLFile(undefined8 param_1)
+long Walaber::WidgetHelper::_openXMLFile(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long lVar1;
@@ -934,7 +934,7 @@ long Walaber::WidgetHelper::_openXMLFile(undefined8 param_1)
 /* Walaber::WidgetHelper::_getTextureName(_xmlNode*, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&) */
 
-ulong Walaber::WidgetHelper::_getTextureName(undefined8 param_1,byte *param_2)
+ulong Walaber::WidgetHelper::_getTextureName(_xmlNode *param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_2)
 
 {
   long lVar1;
@@ -1020,7 +1020,7 @@ ulong Walaber::WidgetHelper::_getTextureName(undefined8 param_1,byte *param_2)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::WidgetManager*,
    Walaber::SharedPtr<Walaber::Callback>) */
 
-void Walaber::WidgetHelper::loadWidgetsXML(byte *param_1,undefined8 param_2,undefined8 param_3)
+void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::WidgetManager *param_2,Walaber::SharedPtr<Walaber::Callback> param_3)
 
 {
   long lVar1;
@@ -4674,7 +4674,7 @@ int Walaber::WidgetHelper::_extractLayer(_xmlNode *p0)
 /* Walaber::WidgetHelper::_getTexture(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
+void Walaber::WidgetHelper::_getTexture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   ulong uVar1;
@@ -4691,24 +4691,24 @@ void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  *param_1 = 0;
-  param_1[1] = 0;
-  uVar1 = (ulong)(*param_2 >> 1);
-  if ((*param_2 & 1) != 0) {
-    uVar1 = *(ulong *)(param_2 + 8);
+  *this = 0;
+  this[1] = 0;
+  uVar1 = (ulong)(*param_1 >> 1);
+  if ((*param_1 & 1) != 0) {
+    uVar1 = *(ulong *)(param_1 + 8);
   }
   if (uVar1 != 0) {
                     /* try { // try from 003774c4 to 003774c7 has its CatchHandler @ 0037758c */
     uVar3 = Walaber::TextureManager::getManager();
                     /* try { // try from 003774cc to 003774df has its CatchHandler @ 00377588 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,&texturePath,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_60,&texturePath,param_1);
     uStack_80 = 0;
     uStack_78 = 0;
     uStack_70 = 0;
     uStack_68 = 0;
                     /* try { // try from 003774e8 to 00377503 has its CatchHandler @ 00377560 */
     Walaber::TextureManager::getTexture(auStack_48,uVar3,abStack_60,&uStack_70,0,0);
-    Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,auStack_48);
+    Walaber::SharedPtr<Walaber::Texture>::operator=(this,auStack_48);
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
@@ -4943,7 +4943,7 @@ void Walaber::WidgetHelper::_parseScreenCoordToScreen(_xmlNode *p0,char *p1)
    std::__ndk1::allocator<char> >, std::__ndk1::allocator<std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > > >&) */
 
-void Walaber::WidgetHelper::_getTextureNames(undefined8 param_1,long param_2)
+void Walaber::WidgetHelper::_getTextureNames(_xmlNode *param_1,std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>& param_2)
 
 {
   ulong uVar1;

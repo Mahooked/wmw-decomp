@@ -12,7 +12,7 @@
     */
 
 void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sentry::sentry
-               (undefined1 *param_1,long *param_2,ulong param_3)
+               (std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>& param_1,bool param_2)
 
 {
   long lVar1;
@@ -28,8 +28,8 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
   
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
-  *param_1 = 0;
-  lVar1 = (long)param_2 + *(long *)(*param_2 + -0x18);
+  *this = 0;
+  lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
   if (*(uint *)(lVar1 + 0x20) != 0) {
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | 4);
     goto LAB_005a9090;
@@ -37,13 +37,13 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
   if (*(long *)(lVar1 + 0x88) != 0) {
     std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::flush();
   }
-  if (((param_3 & 1) == 0) &&
-     ((*(byte *)((long)param_2 + *(long *)(*param_2 + -0x18) + 9) >> 4 & 1) != 0)) {
-    std::__ndk1::locale::locale(auStack_50,(long)param_2 + *(long *)(*param_2 + -0x18) + 0x30);
+  if (((param_2 & 1) == 0) &&
+     ((*(byte *)((long)param_1 + *(long *)(*param_1 + -0x18) + 9) >> 4 & 1) != 0)) {
+    std::__ndk1::locale::locale(auStack_50,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
                     /* try { // try from 005a8f64 to 005a8f73 has its CatchHandler @ 005a90d8 */
     plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_50,&ctype<wchar_t>::id);
     std::__ndk1::locale::~locale(auStack_50);
-    plVar7 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
+    plVar7 = *(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28);
     while (plVar7 != (long *)0x0) {
       while( true ) {
         if ((int *)plVar7[3] == (int *)plVar7[4]) {
@@ -83,11 +83,11 @@ LAB_005a9040:
       }
       if (iVar4 != -1) goto LAB_005a9074;
     }
-    lVar1 = (long)param_2 + *(long *)(*param_2 + -0x18);
+    lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | 6);
   }
 LAB_005a9074:
-  *param_1 = *(int *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x20) == 0;
+  *this = *(int *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x20) == 0;
 LAB_005a9090:
   if (*(long *)(lVar2 + 0x28) != lStack_48) {
     __stack_chk_fail();

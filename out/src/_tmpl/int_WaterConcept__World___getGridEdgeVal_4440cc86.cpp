@@ -12,7 +12,7 @@
    int, int, WaterConcept::ConsiderSameRockOutline) */
 
 byte WaterConcept::World::_getGridEdgeValue<WaterConcept::ConsiderSameRockOutline>
-               (long param_1,undefined8 param_2,int param_3,int param_4)
+               (WaterConcept::GridCell param_1,int param_2,int param_3,WaterConcept::ConsiderSameRockOutline param_4)
 
 {
   int iVar1;

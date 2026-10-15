@@ -41,13 +41,13 @@ void WaterConcept::Screen_WaterTest::PhotoFinishSnapshot::CreatePhotoFinishRende
     */
 
 void WaterConcept::Screen_WaterTest::PhotoFinishSnapshot::InitFromRenderTexture
-               (long param_1,undefined8 *param_2)
+               (Walaber::SharedPtr<Walaber::RenderTexture2D> param_1)
 
 {
   undefined8 uVar1;
   
-  uVar1 = Walaber::RenderTexture2D::createScreenGrab(*param_2,param_1 + 4,param_1 + 8,param_1 + 0xc);
-  *(undefined8 *)(param_1 + 0x10) = uVar1;
+  uVar1 = Walaber::RenderTexture2D::createScreenGrab(*param_1,this + 4,this + 8,this + 0xc);
+  *(undefined8 *)(this + 0x10) = uVar1;
   return;
 }
 

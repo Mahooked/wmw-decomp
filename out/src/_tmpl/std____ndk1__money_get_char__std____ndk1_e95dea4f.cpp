@@ -15,8 +15,7 @@
 
 long * std::__ndk1::
        money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-                 (undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-                 uint *param_6,undefined8 param_7)
+                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,long double& param_6)
 
 {
   char cVar1;
@@ -59,14 +58,14 @@ long * std::__ndk1::
   pcStack_168 = acStack_d4;
   pcStack_160 = __do_nothing;
                     /* try { // try from 005c7a84 to 005c7a8f has its CatchHandler @ 005c7d98 */
-  plStack_158 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_178,param_5);
+  plStack_158 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_178,param_4);
                     /* try { // try from 005c7a90 to 005c7a9f has its CatchHandler @ 005c7d94 */
   plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_178,&ctype<char>::id);
   acStack_17c[0] = '\0';
                     /* try { // try from 005c7ab0 to 005c7adf has its CatchHandler @ 005c7db0 */
-  uVar5 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_158,param_3,param_4 & 1,&uStack_178,*(undefined4 *)(param_5 + 8),
-                          param_6,acStack_17c,plVar4,&pcStack_168,&pcStack_170,alStack_70);
+  uVar5 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_158,param_2,param_3 & 1,&uStack_178,*(undefined4 *)(param_4 + 8),
+                          param_5,acStack_17c,plVar4,&pcStack_168,&pcStack_170,alStack_70);
   if ((uVar5 & 1) != 0) {
     auStack_d6[0] = 0;
     uStack_d8 = 0x3938;
@@ -116,7 +115,7 @@ long * std::__ndk1::
       } while (pcVar10 < pcStack_170);
     }
     *pcVar9 = '\0';
-    iVar3 = sscanf(acStack_150,&DAT_00641601,param_7);
+    iVar3 = sscanf(acStack_150,&DAT_00641601,param_6);
     if (iVar3 != 1) {
                     /* try { // try from 005c7d68 to 005c7d77 has its CatchHandler @ 005c7d78 */
       std::__ndk1::__throw_runtime_error("money_get error");
@@ -144,11 +143,11 @@ LAB_005c7d74:
   if ((plStack_158 == (long *)0x0) || (plStack_158[3] != plStack_158[4])) {
 joined_r0x005c7ca0:
     plVar4 = plStack_158;
-    if (param_3 == (long *)0x0) goto LAB_005c7d4c;
+    if (param_2 == (long *)0x0) goto LAB_005c7d4c;
 LAB_005c7ca4:
     plVar4 = plStack_158;
                     /* try { // try from 005c7cb8 to 005c7cbf has its CatchHandler @ 005c7db0 */
-    if ((param_3[3] == param_3[4]) && (iVar3 = (**(code **)(*param_3 + 0x48))(param_3), iVar3 == -1)
+    if ((param_2[3] == param_2[4]) && (iVar3 = (**(code **)(*param_2 + 0x48))(param_2), iVar3 == -1)
        ) goto LAB_005c7d4c;
     if (plVar4 == (long *)0x0) goto LAB_005c7cd8;
   }
@@ -160,11 +159,11 @@ LAB_005c7ca4:
       goto joined_r0x005c7ca0;
     }
     plVar4 = plStack_158;
-    if (param_3 != (long *)0x0) goto LAB_005c7ca4;
+    if (param_2 != (long *)0x0) goto LAB_005c7ca4;
 LAB_005c7d4c:
     if (plVar4 != (long *)0x0) goto LAB_005c7cd8;
   }
-  *param_6 = *param_6 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005c7cd8:
   plVar4 = plStack_158;
   std::__ndk1::__shared_count::__release_shared(uStack_178);
@@ -197,9 +196,7 @@ LAB_005c7cd8:
 
 ulong std::__ndk1::
       money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-      __do_get(long *param_1,long *param_2,uint param_3,undefined8 param_4,uint param_5,
-              uint *param_6,undefined1 *param_7,long param_8,long *param_9,long *param_10,
-              byte *param_11)
+      __do_get(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>& param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::locale const& param_4,unsigned int param_5,unsigned int& param_6,bool& param_7,std::__ndk1::ctype<char> const& param_8,std::__ndk1::unique_ptr<char, void (*param_9)(void*)>&,char*& param_10,char *param_11)
 
 {
   byte *pbVar1;
@@ -1108,8 +1105,7 @@ LAB_005c8fc0:
 
 long * std::__ndk1::
        money_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_get
-                 (undefined8 param_1,long *param_2,long *param_3,uint param_4,long param_5,
-                 uint *param_6,byte *param_7)
+                 (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,bool param_3,std::__ndk1::ios_base& param_4,unsigned int& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_6)
 
 {
   byte *pbVar1;
@@ -1134,33 +1130,33 @@ long * std::__ndk1::
   pbStack_f0 = abStack_d4;
   pcStack_e8 = __do_nothing;
                     /* try { // try from 005c916c to 005c9177 has its CatchHandler @ 005c9350 */
-  plStack_e0 = param_2;
-  std::__ndk1::ios_base::getloc(&uStack_100,param_5);
+  plStack_e0 = param_1;
+  std::__ndk1::ios_base::getloc(&uStack_100,param_4);
                     /* try { // try from 005c9178 to 005c9187 has its CatchHandler @ 005c934c */
   plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_100,&ctype<char>::id);
   acStack_104[0] = '\0';
                     /* try { // try from 005c9198 to 005c9217 has its CatchHandler @ 005c9360 */
-  uVar7 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_e0,param_3,param_4 & 1,&uStack_100,*(undefined4 *)(param_5 + 8),
-                          param_6,acStack_104,plVar6,&pbStack_f0,&lStack_f8,auStack_70);
+  uVar7 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_e0,param_2,param_3 & 1,&uStack_100,*(undefined4 *)(param_4 + 8),
+                          param_5,acStack_104,plVar6,&pbStack_f0,&lStack_f8,auStack_70);
   if ((uVar7 & 1) != 0) {
-    if ((*param_7 & 1) == 0) {
-      param_7[0] = 0;
-      param_7[1] = 0;
+    if ((*param_6 & 1) == 0) {
+      param_6[0] = 0;
+      param_6[1] = 0;
     }
     else {
-      **(undefined1 **)(param_7 + 0x10) = 0;
-      param_7[8] = 0;
-      param_7[9] = 0;
-      param_7[10] = 0;
-      param_7[0xb] = 0;
-      param_7[0xc] = 0;
-      param_7[0xd] = 0;
-      param_7[0xe] = 0;
-      param_7[0xf] = 0;
+      **(undefined1 **)(param_6 + 0x10) = 0;
+      param_6[8] = 0;
+      param_6[9] = 0;
+      param_6[10] = 0;
+      param_6[0xb] = 0;
+      param_6[0xc] = 0;
+      param_6[0xd] = 0;
+      param_6[0xe] = 0;
+      param_6[0xf] = 0;
     }
     if (acStack_104[0] != '\0') {
       uVar4 = (**(code **)(*plVar6 + 0x38))(plVar6,0x2d);
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::push_back(param_7,uVar4);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::push_back(param_6,uVar4);
     }
                     /* try { // try from 005c9220 to 005c922b has its CatchHandler @ 005c9344 */
     bVar3 = (**(code **)(*plVar6 + 0x38))(plVar6,0x30);
@@ -1168,16 +1164,16 @@ long * std::__ndk1::
         pbVar1 = pbVar1 + 1) {
     }
                     /* try { // try from 005c9258 to 005c9263 has its CatchHandler @ 005c9340 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::__append_forward_unsafe<char*>(param_7,pbVar1);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::__append_forward_unsafe<char*>(param_6,pbVar1);
   }
   if ((plStack_e0 == (long *)0x0) || (plStack_e0[3] != plStack_e0[4])) {
 joined_r0x005c9278:
     plVar6 = plStack_e0;
-    if (param_3 == (long *)0x0) goto LAB_005c9324;
+    if (param_2 == (long *)0x0) goto LAB_005c9324;
 LAB_005c927c:
     plVar6 = plStack_e0;
                     /* try { // try from 005c9290 to 005c9297 has its CatchHandler @ 005c9360 */
-    if ((param_3[3] == param_3[4]) && (iVar5 = (**(code **)(*param_3 + 0x48))(param_3), iVar5 == -1)
+    if ((param_2[3] == param_2[4]) && (iVar5 = (**(code **)(*param_2 + 0x48))(param_2), iVar5 == -1)
        ) goto LAB_005c9324;
     if (plVar6 == (long *)0x0) goto LAB_005c92b0;
   }
@@ -1189,11 +1185,11 @@ LAB_005c927c:
       goto joined_r0x005c9278;
     }
     plVar6 = plStack_e0;
-    if (param_3 != (long *)0x0) goto LAB_005c927c;
+    if (param_2 != (long *)0x0) goto LAB_005c927c;
 LAB_005c9324:
     if (plVar6 != (long *)0x0) goto LAB_005c92b0;
   }
-  *param_6 = *param_6 | 2;
+  *param_5 = *param_5 | 2;
 LAB_005c92b0:
   plVar6 = plStack_e0;
   std::__ndk1::__shared_count::__release_shared(uStack_100);

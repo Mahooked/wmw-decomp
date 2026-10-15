@@ -275,7 +275,7 @@ void Walaber::FileManager::removeFileHandler(Walaber__FileManager__FileHandler *
    Walaber::PropertyList const&, Walaber::FileManager::PlatformPolicy) */
 
 void Walaber::FileManager::fileExists
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4,int param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3,Walaber::FileManager::PlatformPolicy param_4)
 
 {
   long lVar1;
@@ -297,40 +297,40 @@ void Walaber::FileManager::fileExists
   
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
-  plVar5 = (long *)*param_1;
-  if (plVar5 != param_1 + 1) {
+  plVar5 = (long *)*this;
+  if (plVar5 != this + 1) {
     uVar3 = Walaber::PlatformManager::getInstancePtr();
-    bVar2 = Walaber::PlatformManager::extensionShouldBeIgnored(uVar3,param_2);
+    bVar2 = Walaber::PlatformManager::extensionShouldBeIgnored(uVar3,param_1);
     auStack_88[0] = 0;
     auStack_88[1] = 0;
     pvStack_78 = (void *)0x0;
                     /* try { // try from 003d1bc4 to 003d1bcf has its CatchHandler @ 003d1d20 */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_88,param_2);
-    if ((param_5 != 1 & (bVar2 ^ 1)) == 0) {
-      iStack_70 = (int)((ulong)(param_1[10] - param_1[9]) >> 3) * -0x55555555 + -1;
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_88,param_1);
+    if ((param_4 != 1 & (bVar2 ^ 1)) == 0) {
+      iStack_70 = (int)((ulong)(this[10] - this[9]) >> 3) * -0x55555555 + -1;
     }
     else {
       iStack_70 = 0;
     }
                     /* try { // try from 003d1c0c to 003d1c17 has its CatchHandler @ 003d1d1c */
-    iStack_6c = param_5;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_2);
-    if (param_5 == 0 && (bVar2 & 1) == 0) {
+    iStack_6c = param_4;
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_1);
+    if (param_4 == 0 && (bVar2 & 1) == 0) {
                     /* try { // try from 003d1c30 to 003d1c77 has its CatchHandler @ 003d1d28 */
-      Walaber::FileManager::_appendNextPlatformTag(param_1,param_2,abStack_a0,0xffffffff,&iStack_70);
+      Walaber::FileManager::_appendNextPlatformTag(this,param_1,abStack_a0,0xffffffff,&iStack_70);
     }
     pbStack_60 = abStack_a0;
-    lVar4 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 3,abStack_a0,&DAT_00633494,&pbStack_60,auStack_68);
+    lVar4 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this + 3,abStack_a0,&DAT_00633494,&pbStack_60,auStack_68);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x38,auStack_88);
     *(ulong *)(lVar4 + 0x50) = CONCAT44(iStack_6c,iStack_70);
-    lStack_b0 = *param_3;
-    piStack_a8 = (int *)param_3[1];
+    lStack_b0 = *param_2;
+    piStack_a8 = (int *)param_2[1];
     plVar5 = (long *)plVar5[5];
     if (lStack_b0 != 0) {
       *piStack_a8 = *piStack_a8 + 1;
     }
                     /* try { // try from 003d1ca4 to 003d1cb3 has its CatchHandler @ 003d1d0c */
-    (**(code **)(*plVar5 + 0x10))(plVar5,abStack_a0,&lStack_b0,param_4);
+    (**(code **)(*plVar5 + 0x10))(plVar5,abStack_a0,&lStack_b0,param_3);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_b0);
     if ((abStack_a0[0] & 1) != 0) {
       operator delete(pvStack_90);
@@ -358,7 +358,7 @@ void Walaber::FileManager::fileExists
    int, int&) */
 
 void Walaber::FileManager::_appendNextPlatformTag
-               (long param_1,undefined8 param_2,byte *param_3,int param_4,int *param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_2,int param_3,int& param_4)
 
 {
   int iVar1;
@@ -385,20 +385,20 @@ void Walaber::FileManager::_appendNextPlatformTag
   
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2);
   iVar1 = 0;
-  if (-2 < param_4) {
-    iVar1 = param_4 + 1;
+  if (-2 < param_3) {
+    iVar1 = param_3 + 1;
   }
-  *param_5 = iVar1;
-  uVar9 = (*(long *)(param_1 + 0x50) - *(long *)(param_1 + 0x48) >> 3) * -0x5555555555555555;
+  *param_4 = iVar1;
+  uVar9 = (*(long *)(this + 0x50) - *(long *)(this + 0x48) >> 3) * -0x5555555555555555;
   if (uVar9 < (ulong)(long)iVar1 || uVar9 - (long)iVar1 == 0) {
     uVar7 = 0;
-    *param_5 = -1;
+    *param_4 = -1;
   }
   else {
-    Walaber::StringHelper::removeExtension(abStack_88,param_2);
-    pbVar8 = (byte *)(*(long *)(param_1 + 0x48) + (long)*param_5 * 0x18);
+    Walaber::StringHelper::removeExtension(abStack_88,param_1);
+    pbVar8 = (byte *)(*(long *)(this + 0x48) + (long)*param_4 * 0x18);
     uVar9 = *(ulong *)(pbVar8 + 8);
     pbVar6 = *(byte **)(pbVar8 + 0x10);
     if ((*pbVar8 & 1) == 0) {
@@ -414,7 +414,7 @@ void Walaber::FileManager::_appendNextPlatformTag
     puVar5[2] = 0;
     *puVar5 = 0;
                     /* try { // try from 003d1e14 to 003d1e23 has its CatchHandler @ 003d1f44 */
-    Walaber::StringHelper::getExtension(abStack_a0,param_2);
+    Walaber::StringHelper::getExtension(abStack_a0,param_1);
     uVar9 = (ulong)(abStack_a0[0] >> 1);
     pvVar4 = (void *)((ulong)abStack_a0 | 1);
     if ((abStack_a0[0] & 1) != 0) {
@@ -452,36 +452,36 @@ void Walaber::FileManager::_appendNextPlatformTag
     pbVar6[0x15] = 0;
     pbVar6[0x16] = 0;
     pbVar6[0x17] = 0;
-    if ((*param_3 & 1) == 0) {
-      param_3[0] = 0;
-      param_3[1] = 0;
+    if ((*param_2 & 1) == 0) {
+      param_2[0] = 0;
+      param_2[1] = 0;
     }
     else {
-      **(undefined1 **)(param_3 + 0x10) = 0;
-      param_3[8] = 0;
-      param_3[9] = 0;
-      param_3[10] = 0;
-      param_3[0xb] = 0;
-      param_3[0xc] = 0;
-      param_3[0xd] = 0;
-      param_3[0xe] = 0;
-      param_3[0xf] = 0;
-      if ((*param_3 & 1) != 0) {
-        operator delete(*(void **)(param_3 + 0x10));
-        param_3[0] = 0;
-        param_3[1] = 0;
-        param_3[2] = 0;
-        param_3[3] = 0;
-        param_3[4] = 0;
-        param_3[5] = 0;
-        param_3[6] = 0;
-        param_3[7] = 0;
+      **(undefined1 **)(param_2 + 0x10) = 0;
+      param_2[8] = 0;
+      param_2[9] = 0;
+      param_2[10] = 0;
+      param_2[0xb] = 0;
+      param_2[0xc] = 0;
+      param_2[0xd] = 0;
+      param_2[0xe] = 0;
+      param_2[0xf] = 0;
+      if ((*param_2 & 1) != 0) {
+        operator delete(*(void **)(param_2 + 0x10));
+        param_2[0] = 0;
+        param_2[1] = 0;
+        param_2[2] = 0;
+        param_2[3] = 0;
+        param_2[4] = 0;
+        param_2[5] = 0;
+        param_2[6] = 0;
+        param_2[7] = 0;
       }
     }
-    *param_3 = bVar2;
-    *(ulong *)(param_3 + 8) = CONCAT71(uStack_50,uStack_51);
-    *(ulong *)(param_3 + 1) = CONCAT17(uStack_51,uStack_58);
-    *(undefined8 *)(param_3 + 0x10) = uVar7;
+    *param_2 = bVar2;
+    *(ulong *)(param_2 + 8) = CONCAT71(uStack_50,uStack_51);
+    *(ulong *)(param_2 + 1) = CONCAT17(uStack_51,uStack_58);
+    *(undefined8 *)(param_2 + 0x10) = uVar7;
     uStack_50 = 0;
     uStack_58 = 0;
     uStack_51 = 0;
@@ -514,7 +514,7 @@ void Walaber::FileManager::_appendNextPlatformTag
    Walaber::PropertyList const&, Walaber::FileManager::PlatformPolicy) */
 
 void Walaber::FileManager::readFile
-               (long *param_1,undefined8 param_2,long *param_3,undefined8 param_4,int param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3,Walaber::FileManager::PlatformPolicy param_4)
 
 {
   long lVar1;
@@ -536,41 +536,41 @@ void Walaber::FileManager::readFile
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  plVar5 = (long *)*param_1;
-  if (plVar5 != param_1 + 1) {
+  plVar5 = (long *)*this;
+  if (plVar5 != this + 1) {
     uVar3 = Walaber::PlatformManager::getInstancePtr();
-    uVar2 = Walaber::PlatformManager::extensionShouldBeIgnored(uVar3,param_2);
+    uVar2 = Walaber::PlatformManager::extensionShouldBeIgnored(uVar3,param_1);
     auStack_98[0] = 0;
     auStack_98[1] = 0;
     pvStack_88 = (void *)0x0;
                     /* try { // try from 003d1fe0 to 003d1feb has its CatchHandler @ 003d214c */
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_98,param_2);
-    if (param_5 == 1 || (uVar2 & 1) != 0) {
-      uStack_80 = (int)((ulong)(param_1[10] - param_1[9]) >> 3) * -0x55555555 - 1;
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_98,param_1);
+    if (param_4 == 1 || (uVar2 & 1) != 0) {
+      uStack_80 = (int)((ulong)(this[10] - this[9]) >> 3) * -0x55555555 - 1;
       uStack_80 = uStack_80 & ((int)uStack_80 >> 0x1f ^ 0xffffffffU);
     }
     else {
       uStack_80 = 0;
     }
                     /* try { // try from 003d2038 to 003d2043 has its CatchHandler @ 003d2148 */
-    iStack_7c = param_5;
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_2);
-    if (param_5 == 0 && (uVar2 & 1) == 0) {
+    iStack_7c = param_4;
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b0,param_1);
+    if (param_4 == 0 && (uVar2 & 1) == 0) {
                     /* try { // try from 003d2054 to 003d209f has its CatchHandler @ 003d2154 */
-      Walaber::FileManager::_appendNextPlatformTag(param_1,param_2,abStack_b0,0xffffffff,&uStack_80);
+      Walaber::FileManager::_appendNextPlatformTag(this,param_1,abStack_b0,0xffffffff,&uStack_80);
     }
     pbStack_70 = abStack_b0;
-    lVar4 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 6,abStack_b0,&DAT_00633494,&pbStack_70,auStack_78);
+    lVar4 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this + 6,abStack_b0,&DAT_00633494,&pbStack_70,auStack_78);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar4 + 0x38,auStack_98);
     *(ulong *)(lVar4 + 0x50) = CONCAT44(iStack_7c,uStack_80);
-    lStack_c0 = *param_3;
-    piStack_b8 = (int *)param_3[1];
+    lStack_c0 = *param_2;
+    piStack_b8 = (int *)param_2[1];
     plVar5 = (long *)plVar5[5];
     if (lStack_c0 != 0) {
       *piStack_b8 = *piStack_b8 + 1;
     }
                     /* try { // try from 003d20cc to 003d20db has its CatchHandler @ 003d2138 */
-    (**(code **)(*plVar5 + 0x18))(plVar5,abStack_b0,&lStack_c0,param_4);
+    (**(code **)(*plVar5 + 0x18))(plVar5,abStack_b0,&lStack_c0,param_3);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_c0);
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
@@ -709,7 +709,7 @@ void Walaber::FileManager::_printFileRequests(long param_1)
    Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::_existFail
-               (long *param_1,undefined8 param_2,long *param_3,long *param_4,undefined8 param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::FileManager::FileHandler *param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
 
 {
   long lVar1;
@@ -742,7 +742,7 @@ void Walaber::FileManager::_existFail
   
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
-  plVar5 = param_1 + 3;
+  plVar5 = this + 3;
   lVar3 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(plVar5);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,lVar3 + 0x38);
   uStack_78 = *(ulong *)(lVar3 + 0x50);
@@ -753,28 +753,28 @@ void Walaber::FileManager::_existFail
   pvStack_98 = (void *)0x0;
                     /* try { // try from 003d23c4 to 003d240f has its CatchHandler @ 003d2754 */
   if ((uStack_78._4_4_ == 0) &&
-     (uVar4 = Walaber::FileManager::_appendNextPlatformTag(param_1,abStack_90,auStack_a8,uStack_78 & 0xffffffff,&uStack_78),
+     (uVar4 = Walaber::FileManager::_appendNextPlatformTag(this,abStack_90,auStack_a8,uStack_78 & 0xffffffff,&uStack_78),
      (uVar4 & 1) != 0)) {
     apuStack_120[0] = auStack_a8;
     lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(plVar5,auStack_a8,&DAT_00633494,apuStack_120,abStack_138);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x38,abStack_90);
     *(ulong *)(lVar3 + 0x50) = uStack_78;
-    lStack_b8 = *param_4;
-    piStack_b0 = (int *)param_4[1];
+    lStack_b8 = *param_3;
+    piStack_b0 = (int *)param_3[1];
     if (lStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
                     /* try { // try from 003d2438 to 003d244b has its CatchHandler @ 003d26ec */
-    (**(code **)(*param_3 + 0x10))(param_3,auStack_a8,&lStack_b8,param_5);
+    (**(code **)(*param_2 + 0x10))(param_2,auStack_a8,&lStack_b8,param_4);
     plVar5 = &lStack_b8;
   }
   else {
-    plVar6 = param_1 + 1;
-    plVar8 = (long *)*param_1;
-    plVar9 = (long *)*param_1;
+    plVar6 = this + 1;
+    plVar8 = (long *)*this;
+    plVar9 = (long *)*this;
     while (plVar6 != plVar9) {
       plVar7 = (long *)plVar9[1];
-      if ((long *)plVar9[5] == param_3) {
+      if ((long *)plVar9[5] == param_2) {
         if (plVar7 == (long *)0x0) {
           plVar7 = plVar9 + 2;
           plVar8 = (long *)*plVar7;
@@ -816,7 +816,7 @@ void Walaber::FileManager::_existFail
     }
     if (plVar6 == plVar8) {
       Walaber::Logger::printf("Walaber",1,"FileManager::_existFail - total failure...\n");
-      if (*param_4 != 0) {
+      if (*param_3 != 0) {
         abStack_138[0xb] = 0;
         abStack_138[0xc] = 0;
         abStack_138[0xd] = 0;
@@ -835,12 +835,12 @@ void Walaber::FileManager::_existFail
         abStack_138[7] = 0x55;
         abStack_138[8] = 0x4e;
                     /* try { // try from 003d2594 to 003d25af has its CatchHandler @ 003d272c */
-        Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(apuStack_120,param_2,0,param_2,abStack_138,param_5);
+        Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(apuStack_120,param_1,0,param_1,abStack_138,param_4);
         if ((abStack_138[0] & 1) != 0) {
           operator delete(pvStack_128);
         }
                     /* try { // try from 003d25cc to 003d25d3 has its CatchHandler @ 003d26f8 */
-        (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,apuStack_120);
+        (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,apuStack_120);
         if ((bStack_e8 & 1) != 0) {
           operator delete(pvStack_d8);
         }
@@ -857,7 +857,7 @@ void Walaber::FileManager::_existFail
     Walaber::Logger::printf("Walaber",1,"FileManager::_existFail - trying next handler...\n");
     if (uStack_78._4_4_ == 0) {
                     /* try { // try from 003d2608 to 003d2653 has its CatchHandler @ 003d2760 */
-      Walaber::FileManager::_appendNextPlatformTag(param_1,abStack_90,auStack_a8,0xffffffff,&uStack_78);
+      Walaber::FileManager::_appendNextPlatformTag(this,abStack_90,auStack_a8,0xffffffff,&uStack_78);
     }
     else {
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(auStack_a8,abStack_90);
@@ -866,14 +866,14 @@ void Walaber::FileManager::_existFail
     lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(plVar5,auStack_a8,&DAT_00633494,apuStack_120,abStack_138);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar3 + 0x38,abStack_90);
     *(ulong *)(lVar3 + 0x50) = uStack_78;
-    lStack_c8 = *param_4;
-    piStack_c0 = (int *)param_4[1];
+    lStack_c8 = *param_3;
+    piStack_c0 = (int *)param_3[1];
     plVar5 = (long *)plVar8[5];
     if (lStack_c8 != 0) {
       *piStack_c0 = *piStack_c0 + 1;
     }
                     /* try { // try from 003d2680 to 003d268f has its CatchHandler @ 003d2744 */
-    (**(code **)(*plVar5 + 0x10))(plVar5,auStack_a8,&lStack_c8,param_5);
+    (**(code **)(*plVar5 + 0x10))(plVar5,auStack_a8,&lStack_c8,param_4);
     plVar5 = &lStack_c8;
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(plVar5);
@@ -902,7 +902,7 @@ LAB_003d2698:
    Walaber::SharedPtr<Walaber::Callback>, Walaber::PropertyList const&) */
 
 void Walaber::FileManager::_readFail
-               (long *param_1,byte *param_2,long *param_3,long *param_4,undefined8 param_5)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::FileManager::FileHandler *param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::PropertyList const& param_4)
 
 {
   long lVar1;
@@ -946,10 +946,10 @@ void Walaber::FileManager::_readFail
   
   lVar1 = tpidr_el0;
   lStack_70 = *(long *)(lVar1 + 0x28);
-  plVar6 = param_1 + 6;
+  plVar6 = this + 6;
   plVar3 = (long *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(plVar6);
-  if (param_1 + 7 == plVar3) {
-    if (*param_4 == 0) goto LAB_003d2c78;
+  if (this + 7 == plVar3) {
+    if (*param_3 == 0) goto LAB_003d2c78;
     uStack_ed = 0;
     bStack_f8 = 0x12;
     pvStack_e8 = (void *)0x0;
@@ -957,13 +957,13 @@ void Walaber::FileManager::_readFail
     uStack_f7 = 0x554f465f544f4e;
     uStack_f0 = 0x4e;
                     /* try { // try from 003d29f4 to 003d2a13 has its CatchHandler @ 003d2d38 */
-    Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&puStack_d8,param_2,0,0,param_2,&bStack_f8,param_5);
+    Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&puStack_d8,param_1,0,0,param_1,&bStack_f8,param_4);
     if ((bStack_f8 & 1) != 0) {
       operator delete(pvStack_e8);
     }
     puStack_d8 = (ulong *)CONCAT44(puStack_d8._4_4_,3);
                     /* try { // try from 003d2a38 to 003d2a3f has its CatchHandler @ 003d2d04 */
-    (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&puStack_d8);
+    (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,&puStack_d8);
     if ((bStack_90 & 1) != 0) {
       operator delete(pvStack_80);
     }
@@ -981,30 +981,30 @@ void Walaber::FileManager::_readFail
     pvStack_100 = (void *)0x0;
                     /* try { // try from 003d28bc to 003d2907 has its CatchHandler @ 003d2d58 */
     if ((uStack_e0._4_4_ == 0) &&
-       (uVar4 = Walaber::FileManager::_appendNextPlatformTag(param_1,&bStack_f8,&uStack_110,uStack_e0 & 0xffffffff,&uStack_e0),
+       (uVar4 = Walaber::FileManager::_appendNextPlatformTag(this,&bStack_f8,&uStack_110,uStack_e0 & 0xffffffff,&uStack_e0),
        (uVar4 & 1) != 0)) {
       puStack_d8 = &uStack_110;
       lVar5 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(plVar6,&uStack_110,&DAT_00633494,&puStack_d8,&bStack_148);
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar5 + 0x38,&bStack_f8);
       *(ulong *)(lVar5 + 0x50) = uStack_e0;
-      lStack_120 = *param_4;
-      piStack_118 = (int *)param_4[1];
+      lStack_120 = *param_3;
+      piStack_118 = (int *)param_3[1];
       if (lStack_120 != 0) {
         *piStack_118 = *piStack_118 + 1;
       }
                     /* try { // try from 003d2930 to 003d2943 has its CatchHandler @ 003d2cac */
-      (**(code **)(*param_3 + 0x18))(param_3,&uStack_110,&lStack_120,param_5);
+      (**(code **)(*param_2 + 0x18))(param_2,&uStack_110,&lStack_120,param_4);
       plVar6 = &lStack_120;
 LAB_003d2c54:
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(plVar6);
     }
     else {
-      plVar7 = param_1 + 1;
-      plVar3 = (long *)*param_1;
-      plVar10 = (long *)*param_1;
+      plVar7 = this + 1;
+      plVar3 = (long *)*this;
+      plVar10 = (long *)*this;
       while (plVar7 != plVar10) {
         plVar8 = (long *)plVar10[1];
-        if ((long *)plVar10[5] == param_3) {
+        if ((long *)plVar10[5] == param_2) {
           if (plVar8 == (long *)0x0) {
             plVar8 = plVar10 + 2;
             plVar3 = (long *)*plVar8;
@@ -1049,7 +1049,7 @@ LAB_003d2c54:
         Walaber::Logger::printf("Walaber",1,"FileManager::_readFail - trying next handler\n");
         if (uStack_e0._4_4_ == 0) {
                     /* try { // try from 003d2bc8 to 003d2c13 has its CatchHandler @ 003d2d64 */
-          Walaber::FileManager::_appendNextPlatformTag(param_1,&bStack_f8,&uStack_110,0xffffffff,&uStack_e0);
+          Walaber::FileManager::_appendNextPlatformTag(this,&bStack_f8,&uStack_110,0xffffffff,&uStack_e0);
         }
         else {
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_110,&bStack_f8);
@@ -1058,23 +1058,23 @@ LAB_003d2c54:
         lVar5 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(plVar6,&uStack_110,&DAT_00633494,&puStack_d8,&bStack_148);
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar5 + 0x38,&bStack_f8);
         *(ulong *)(lVar5 + 0x50) = uStack_e0;
-        lStack_130 = *param_4;
-        piStack_128 = (int *)param_4[1];
+        lStack_130 = *param_3;
+        piStack_128 = (int *)param_3[1];
         plVar6 = (long *)plVar3[5];
         if (lStack_130 != 0) {
           *piStack_128 = *piStack_128 + 1;
         }
                     /* try { // try from 003d2c40 to 003d2c4f has its CatchHandler @ 003d2d48 */
-        (**(code **)(*plVar6 + 0x18))(plVar6,&uStack_110,&lStack_130,param_5);
+        (**(code **)(*plVar6 + 0x18))(plVar6,&uStack_110,&lStack_130,param_4);
         plVar6 = &lStack_130;
         goto LAB_003d2c54;
       }
-      pbVar9 = *(byte **)(param_2 + 0x10);
-      if ((*param_2 & 1) == 0) {
-        pbVar9 = param_2 + 1;
+      pbVar9 = *(byte **)(param_1 + 0x10);
+      if ((*param_1 & 1) == 0) {
+        pbVar9 = param_1 + 1;
       }
       Walaber::Logger::printf("Walaber",1,"FileManager::_readFail - complete fail [%s]\n",pbVar9);
-      if (*param_4 != 0) {
+      if (*param_3 != 0) {
         uStack_13d = 0;
         bStack_148 = 0x12;
         pvStack_138 = (void *)0x0;
@@ -1082,13 +1082,13 @@ LAB_003d2c54:
         uStack_147 = 0x554f465f544f4e;
         uStack_140 = 0x4e;
                     /* try { // try from 003d2b48 to 003d2b67 has its CatchHandler @ 003d2cec */
-        Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&puStack_d8,param_2,0,0,param_2,&bStack_148,param_5);
+        Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&puStack_d8,param_1,0,0,param_1,&bStack_148,param_4);
         if ((bStack_148 & 1) != 0) {
           operator delete(pvStack_138);
         }
         puStack_d8 = (ulong *)CONCAT44(puStack_d8._4_4_,3);
                     /* try { // try from 003d2b8c to 003d2b93 has its CatchHandler @ 003d2cb8 */
-        (**(code **)(*(long *)*param_4 + 0x10))((long *)*param_4,&puStack_d8);
+        (**(code **)(*(long *)*param_3 + 0x10))((long *)*param_3,&puStack_d8);
         if ((bStack_90 & 1) != 0) {
           operator delete(pvStack_80);
         }

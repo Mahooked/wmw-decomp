@@ -11,8 +11,7 @@
    Walaber::SharedPtr<Walaber::Texture>, bool) */
 
 void Walaber::Widget_Manipulator::Widget_Manipulator
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4,bool param_5)
 
 {
   long lVar1;
@@ -26,31 +25,31 @@ void Walaber::Widget_Manipulator::Widget_Manipulator
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = *param_3;
-  uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,7,&uStack_40,&uStack_48,1,1);
-  *param_1 = &PTR__Widget_Manipulator_0070f298;
-  lVar3 = *param_5;
-  param_1[0x20] = lVar3;
-  piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
+  uStack_40 = *param_2;
+  uStack_48 = *param_3;
+  Walaber::Widget::Widget(this,param_1,7,&uStack_40,&uStack_48,1,1);
+  *this = &PTR__Widget_Manipulator_0070f298;
+  lVar3 = *param_4;
+  this[0x20] = lVar3;
+  piVar2 = (int *)param_4[1];
+  this[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(byte *)((long)param_1 + 0x13a) = param_6 & 1;
-  *(undefined4 *)(param_1 + 0x24) = 0;
-  *(undefined1 *)((long)param_1 + 0x124) = 0;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x26] = 0;
-  param_1[0x25] = 0;
-  *(undefined2 *)(param_1 + 0x27) = 0xff00;
-  lVar3 = *param_5;
-  if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
+  *(byte *)((long)this + 0x13a) = param_5 & 1;
+  *(undefined4 *)(this + 0x24) = 0;
+  *(undefined1 *)((long)this + 0x124) = 0;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x26] = 0;
+  this[0x25] = 0;
+  *(undefined2 *)(this + 0x27) = 0xff00;
+  lVar3 = *param_4;
+  if ((lVar3 != 0) && (*(int *)param_4[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x22] = uVar4;
-    param_1[0x23] =
+    this[0x22] = uVar4;
+    this[0x23] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }

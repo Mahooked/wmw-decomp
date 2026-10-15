@@ -35,7 +35,7 @@ long std::__ndk1::
      __tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SharedPtr<Walaber::Texture>>,std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SharedPtr<Walaber::Texture>>,std::__ndk1::less<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>,Walaber::SharedPtr<Walaber::Texture>>>>
      ::
      __lower_bound<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>>
-               (undefined8 param_1,byte *param_2,long param_3,long param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, void*> *param_2,std::__ndk1::__tree_end_node<std::__ndk1::__tree_node_base<void*>*> *param_3)
 
 {
   ulong uVar1;
@@ -46,18 +46,18 @@ long std::__ndk1::
   uint uVar6;
   long lVar7;
   
-  if (param_3 != 0) {
-    uVar3 = *(ulong *)(param_2 + 8);
-    pbVar4 = *(byte **)(param_2 + 0x10);
-    if ((*param_2 & 1) == 0) {
-      pbVar4 = param_2 + 1;
-      uVar3 = (ulong)(*param_2 >> 1);
+  if (param_2 != 0) {
+    uVar3 = *(ulong *)(param_1 + 8);
+    pbVar4 = *(byte **)(param_1 + 0x10);
+    if ((*param_1 & 1) == 0) {
+      pbVar4 = param_1 + 1;
+      uVar3 = (ulong)(*param_1 >> 1);
     }
     do {
-      bVar5 = *(byte *)(param_3 + 0x20);
+      bVar5 = *(byte *)(param_2 + 0x20);
       uVar1 = (ulong)(bVar5 >> 1);
       if ((bVar5 & 1) != 0) {
-        uVar1 = *(ulong *)(param_3 + 0x28);
+        uVar1 = *(ulong *)(param_2 + 0x28);
       }
       uVar2 = uVar3;
       if (uVar1 <= uVar3) {
@@ -71,20 +71,20 @@ LAB_003a0ec8:
         }
       }
       else {
-        lVar7 = *(long *)(param_3 + 0x30);
+        lVar7 = *(long *)(param_2 + 0x30);
         if ((bVar5 & 1) == 0) {
-          lVar7 = param_3 + 0x21;
+          lVar7 = param_2 + 0x21;
         }
         uVar6 = memcmp(lVar7,pbVar4);
         if (uVar6 == 0) goto LAB_003a0ec8;
       }
       if ((int)uVar6 >= 0) {
-        param_4 = param_3;
+        param_3 = param_2;
       }
-      param_3 = *(long *)(param_3 + (ulong)((int)uVar6 < 0) * 8);
-    } while (param_3 != 0);
+      param_2 = *(long *)(param_2 + (ulong)((int)uVar6 < 0) * 8);
+    } while (param_2 != 0);
   }
-  return param_4;
+  return param_3;
 }
 
 

@@ -20,7 +20,7 @@ void std::__ndk1::
      vector<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>,std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>
      ::
      __push_back_slow_path<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>const&>
-               (long *param_1,undefined8 param_2)
+               (std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>> const& param_1)
 
 {
   ulong uVar1;
@@ -35,23 +35,23 @@ void std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_38 = *(long *)(lVar2 + 0x28);
-  lVar3 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
+  lVar3 = (this[1] - *this >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(this);
     return;
   }
-  lVar6 = param_1[2] - *param_1 >> 3;
+  lVar6 = this[2] - *this >> 3;
   uVar5 = 0xaaaaaaaaaaaaaaa;
   if (((ulong)(lVar6 * -0x5555555555555555) < 0x555555555555555) &&
      (uVar4 = lVar6 * 0x5555555555555556, uVar5 = uVar1, uVar1 <= uVar4)) {
     uVar5 = uVar4;
   }
-  std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>::__split_buffer(auStack_60,uVar5,lVar3,param_1 + 2);
+  std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>::__split_buffer(auStack_60,uVar5,lVar3,this + 2);
                     /* try { // try from 0052fe40 to 0052fe5f has its CatchHandler @ 0052fe98 */
-  std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::vector(lStack_50,param_2);
+  std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::vector(lStack_50,param_1);
   lStack_50 = lStack_50 + 0x18;
-  std::__ndk1::vector<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>::__swap_out_circular_buffer(param_1,auStack_60);
+  std::__ndk1::vector<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>>::__swap_out_circular_buffer(this,auStack_60);
   std::__ndk1::__split_buffer<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>, std::__ndk1::allocator<std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>>&>::~__split_buffer(auStack_60);
   if (*(long *)(lVar2 + 0x28) != lStack_38) {
     __stack_chk_fail();

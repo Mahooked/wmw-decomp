@@ -14,8 +14,7 @@
 
 void WaterConcept::World::
      _getGridEdgeValue<WaterConcept::ConsiderEdgeDirt,WaterConcept::ConsiderEdgeCollision>
-               (long param_1,undefined8 param_2,undefined8 param_3,int param_4,int param_5,
-               undefined8 param_6,undefined8 param_7,byte *param_8,byte *param_9,byte *param_10)
+               (WaterConcept::GridCell param_1,int param_2,int param_3,int param_4,WaterConcept::ConsiderEdgeDirt param_5,WaterConcept::ConsiderEdgeCollision param_6,unsigned char& param_7,unsigned char& param_8,unsigned char& param_9)
 
 {
   byte bVar1;
@@ -24,64 +23,64 @@ void WaterConcept::World::
   uint uVar4;
   byte *pbVar5;
   
-  iVar3 = (int)((ulong)param_2 >> 0x20);
-  iVar2 = (int)param_2;
-  *param_10 = 0;
+  iVar3 = (int)((ulong)param_1 >> 0x20);
+  iVar2 = (int)param_1;
   *param_9 = 0;
   *param_8 = 0;
+  *param_7 = 0;
   if (0 < iVar3) {
-    pbVar5 = (byte *)(*(long *)(*(int **)(param_1 + 0x10) + 2) +
-                      (long)(iVar2 + **(int **)(param_1 + 0x10) * (iVar3 + -1)) * 0x1c + 0x14);
+    pbVar5 = (byte *)(*(long *)(*(int **)(this + 0x10) + 2) +
+                      (long)(iVar2 + **(int **)(this + 0x10) * (iVar3 + -1)) * 0x1c + 0x14);
     bVar1 = *pbVar5;
     uVar4 = (uint)bVar1;
     if ((bVar1 < 7) && ((1 << (ulong)(bVar1 & 0x1f) & 0x61U) != 0)) {
-      *param_8 = 1;
+      *param_7 = 1;
       uVar4 = (uint)*pbVar5;
     }
     if ((uVar4 < 7) && ((1 << (ulong)(uVar4 & 0x1f) & 0x61U) != 0)) {
-      *param_10 = *param_10 | 1;
+      *param_9 = *param_9 | 1;
     }
   }
-  if (iVar3 < param_5 + -1) {
-    pbVar5 = (byte *)(*(long *)(*(int **)(param_1 + 0x10) + 2) +
-                      (long)(iVar2 + **(int **)(param_1 + 0x10) * (iVar3 + 1)) * 0x1c + 0x14);
+  if (iVar3 < param_4 + -1) {
+    pbVar5 = (byte *)(*(long *)(*(int **)(this + 0x10) + 2) +
+                      (long)(iVar2 + **(int **)(this + 0x10) * (iVar3 + 1)) * 0x1c + 0x14);
     bVar1 = *pbVar5;
     uVar4 = (uint)bVar1;
     if ((bVar1 < 7) && ((1 << (ulong)(bVar1 & 0x1f) & 0x61U) != 0)) {
-      *param_8 = *param_8 | 4;
+      *param_7 = *param_7 | 4;
       uVar4 = (uint)*pbVar5;
     }
     if ((uVar4 < 7) && ((1 << (ulong)(uVar4 & 0x1f) & 0x61U) != 0)) {
-      *param_10 = *param_10 | 4;
+      *param_9 = *param_9 | 4;
     }
   }
   if (0 < iVar2) {
-    pbVar5 = (byte *)(*(long *)(*(int **)(param_1 + 0x10) + 2) +
-                      (long)(iVar2 + **(int **)(param_1 + 0x10) * iVar3 + -1) * 0x1c + 0x14);
+    pbVar5 = (byte *)(*(long *)(*(int **)(this + 0x10) + 2) +
+                      (long)(iVar2 + **(int **)(this + 0x10) * iVar3 + -1) * 0x1c + 0x14);
     bVar1 = *pbVar5;
     uVar4 = (uint)bVar1;
     if ((bVar1 < 7) && ((1 << (ulong)(bVar1 & 0x1f) & 0x61U) != 0)) {
-      *param_8 = *param_8 | 8;
+      *param_7 = *param_7 | 8;
       uVar4 = (uint)*pbVar5;
     }
     if ((uVar4 < 7) && ((1 << (ulong)(uVar4 & 0x1f) & 0x61U) != 0)) {
-      *param_10 = *param_10 | 8;
+      *param_9 = *param_9 | 8;
     }
   }
-  if (iVar2 < param_4 + -1) {
-    pbVar5 = (byte *)(*(long *)(*(int **)(param_1 + 0x10) + 2) +
-                      (long)(iVar2 + **(int **)(param_1 + 0x10) * iVar3 + 1) * 0x1c + 0x14);
+  if (iVar2 < param_3 + -1) {
+    pbVar5 = (byte *)(*(long *)(*(int **)(this + 0x10) + 2) +
+                      (long)(iVar2 + **(int **)(this + 0x10) * iVar3 + 1) * 0x1c + 0x14);
     bVar1 = *pbVar5;
     uVar4 = (uint)bVar1;
     if ((bVar1 < 7) && ((1 << (ulong)(bVar1 & 0x1f) & 0x61U) != 0)) {
-      *param_8 = *param_8 | 2;
+      *param_7 = *param_7 | 2;
       uVar4 = (uint)*pbVar5;
     }
     if ((uVar4 < 7) && ((1 << (ulong)(uVar4 & 0x1f) & 0x61U) != 0)) {
-      *param_10 = *param_10 | 2;
+      *param_9 = *param_9 | 2;
     }
   }
-  *param_9 = *param_8;
+  *param_8 = *param_7;
   return;
 }
 

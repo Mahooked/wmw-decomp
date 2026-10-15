@@ -26,7 +26,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<unsigned_int,WaterConcept::PlayerDataSerializer::AllieChallengeInfo>,std::__ndk1::__map_value_compare<unsigned_int,std::__ndk1::__value_type<unsigned_int,WaterConcept::PlayerDataSerializer::AllieChallengeInfo>,std::__ndk1::less<unsigned_int>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<unsigned_int,WaterConcept::PlayerDataSerializer::AllieChallengeInfo>>>
 ::
 __emplace_unique_key_args<unsigned_int,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<unsigned_int_const&>,std::__ndk1::tuple<>>
-          (long param_1,uint *param_2,undefined8 param_3,undefined8 *param_4)
+          (unsigned int const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<unsigned int const&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

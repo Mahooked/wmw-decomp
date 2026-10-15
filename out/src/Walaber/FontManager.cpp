@@ -59,7 +59,7 @@ undefined8 Walaber::FontManager::getFont(long param_1)
    std::__ndk1::allocator<char> >, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >) */
 
-void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 param_3)
+void Walaber::FontManager::addFont(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2)
 
 {
   long lVar1;
@@ -86,11 +86,11 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   uVar2 = operator new(0xb8);
                     /* try { // try from 00369da0 to 00369da3 has its CatchHandler @ 00369f00 */
   Walaber::BitmapFont::BitmapFont();
-  puStack_58 = param_2;
-  lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0x18,param_2,&DAT_0062ba4b,&puStack_58,&puStack_68);
+  puStack_58 = param_1;
+  lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::BitmapFont*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(this + 0x18,param_1,&DAT_0062ba4b,&puStack_58,&puStack_68);
   *(undefined8 *)(lVar3 + 0x38) = uVar2;
   puVar4 = (undefined8 *)operator new(0x28);
-  puVar4[2] = param_1;
+  puVar4[2] = this;
   *puVar4 = &PTR__Callback_0070ead8;
   puVar4[1] = 0;
   puVar4[4] = 0;
@@ -109,7 +109,7 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   piStack_70 = piVar5;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
                     /* try { // try from 00369e40 to 00369e4b has its CatchHandler @ 00369ee8 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_2);
   puStack_b0 = puStack_78;
   piStack_a8 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {

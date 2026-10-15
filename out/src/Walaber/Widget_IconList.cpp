@@ -219,9 +219,7 @@ void Walaber::Widget_IconList::Widget_IconList
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_IconList::Widget_IconList
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,float *param_4,
-               int param_5,int param_6,int param_7,int param_8,long *param_9,long *param_10,
-               long *param_11)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,int param_4,int param_5,int param_6,int param_7,Walaber::SharedPtr<Walaber::Texture> param_8,Walaber::SharedPtr<Walaber::Texture> param_9,Walaber::SharedPtr<Walaber::Texture> param_10)
 
 {
   long lVar1;
@@ -240,73 +238,73 @@ void Walaber::Widget_IconList::Widget_IconList
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  uStack_70 = *param_3;
-  fStack_78 = (float)param_7 + (float)param_7 + *param_4 * (float)param_5 +
-              (float)((param_5 + -1) * param_8);
-  fStack_74 = (float)param_6;
-  Walaber::Widget::Widget(param_1,param_2,5,&uStack_70,&fStack_78,1,1);
-  param_1[0x21] = 0;
-  param_1[0x22] = 0;
-  param_1[0x20] = 0;
-  *(int *)(param_1 + 0x23) = param_5;
-  *(int *)((long)param_1 + 0x11c) = param_7;
-  *param_1 = &PTR__Widget_IconList_0070f0b8;
-  *(int *)(param_1 + 0x24) = param_8;
-  *(undefined8 *)((long)param_1 + 0x124) = *(undefined8 *)param_4;
-  lVar4 = *param_9;
-  param_1[0x2a] = lVar4;
-  piVar7 = (int *)param_9[1];
-  param_1[0x2b] = piVar7;
+  uStack_70 = *param_2;
+  fStack_78 = (float)param_6 + (float)param_6 + *param_3 * (float)param_4 +
+              (float)((param_4 + -1) * param_7);
+  fStack_74 = (float)param_5;
+  Walaber::Widget::Widget(this,param_1,5,&uStack_70,&fStack_78,1,1);
+  this[0x21] = 0;
+  this[0x22] = 0;
+  this[0x20] = 0;
+  *(int *)(this + 0x23) = param_4;
+  *(int *)((long)this + 0x11c) = param_6;
+  *this = &PTR__Widget_IconList_0070f0b8;
+  *(int *)(this + 0x24) = param_7;
+  *(undefined8 *)((long)this + 0x124) = *(undefined8 *)param_3;
+  lVar4 = *param_8;
+  this[0x2a] = lVar4;
+  piVar7 = (int *)param_8[1];
+  this[0x2b] = piVar7;
   if (lVar4 != 0) {
     *piVar7 = *piVar7 + 1;
   }
-  lVar2 = *param_10;
-  param_1[0x2c] = lVar2;
-  piVar5 = (int *)param_10[1];
-  param_1[0x2d] = piVar5;
+  lVar2 = *param_9;
+  this[0x2c] = lVar2;
+  piVar5 = (int *)param_9[1];
+  this[0x2d] = piVar5;
   if (lVar2 != 0) {
     *piVar5 = *piVar5 + 1;
   }
-  lVar3 = *param_11;
-  param_1[0x2e] = lVar3;
-  piVar6 = (int *)param_11[1];
-  param_1[0x2f] = piVar6;
+  lVar3 = *param_10;
+  this[0x2e] = lVar3;
+  piVar6 = (int *)param_10[1];
+  this[0x2f] = piVar6;
   if (lVar3 != 0) {
     *piVar6 = *piVar6 + 1;
   }
-  param_1[0x31] = 0;
-  param_1[0x30] = 0;
-  param_1[0x33] = 0;
-  param_1[0x32] = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  *(undefined8 *)((long)param_1 + 0x134) = 0;
-  *(undefined8 *)((long)param_1 + 300) = 0x3f66666600000000;
-  *(undefined4 *)((long)param_1 + 0x13c) = 0;
-  param_1[0x28] = 0xffffffffffffffff;
-  *(undefined1 *)(param_1 + 0x29) = 0;
-  param_1[0x36] = 0;
+  this[0x31] = 0;
+  this[0x30] = 0;
+  this[0x33] = 0;
+  this[0x32] = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  *(undefined8 *)((long)this + 0x134) = 0;
+  *(undefined8 *)((long)this + 300) = 0x3f66666600000000;
+  *(undefined4 *)((long)this + 0x13c) = 0;
+  this[0x28] = 0xffffffffffffffff;
+  *(undefined1 *)(this + 0x29) = 0;
+  this[0x36] = 0;
   if ((lVar4 != 0) && (*piVar7 != 0)) {
     uVar8 = *(undefined8 *)(lVar4 + 0x8c);
     uVar9 = *(undefined8 *)(lVar4 + 0x84);
-    param_1[0x30] = uVar8;
-    param_1[0x31] =
+    this[0x30] = uVar8;
+    this[0x31] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
   if ((lVar2 != 0) && (*piVar5 != 0)) {
     uVar8 = *(undefined8 *)(lVar2 + 0x8c);
     uVar9 = *(undefined8 *)(lVar2 + 0x84);
-    param_1[0x32] = uVar8;
-    param_1[0x33] =
+    this[0x32] = uVar8;
+    this[0x33] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
   if ((lVar3 != 0) && (*piVar6 != 0)) {
     uVar8 = *(undefined8 *)(lVar3 + 0x8c);
     uVar9 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x34] = uVar8;
-    param_1[0x35] =
+    this[0x34] = uVar8;
+    this[0x35] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
@@ -388,7 +386,7 @@ void Walaber::Widget_IconList::clearIcons(long param_1)
 
 /* Walaber::Widget_IconList::addIcon(Walaber::SharedPtr<Walaber::Texture>, int) */
 
-void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 param_3)
+void Walaber::Widget_IconList::addIcon(Walaber::SharedPtr<Walaber::Texture> param_1,int param_2)
 
 {
   long *plVar1;
@@ -411,8 +409,8 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   
   lVar4 = tpidr_el0;
   lStack_38 = *(long *)(lVar4 + 0x28);
-  lStack_78 = *param_2;
-  piStack_70 = (int *)param_2[1];
+  lStack_78 = *param_1;
+  piStack_70 = (int *)param_1[1];
   if (lStack_78 != 0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -422,9 +420,9 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   piStack_60 = (int *)0x0;
   uStack_68 = 0;
   Walaber::SharedPtr<Walaber::Texture>::operator=(&uStack_68,&lStack_78);
-  plVar1 = *(long **)(param_1 + 0x108);
-  uStack_40 = param_3;
-  if (plVar1 < *(long **)(param_1 + 0x110)) {
+  plVar1 = *(long **)(this + 0x108);
+  uStack_40 = param_2;
+  if (plVar1 < *(long **)(this + 0x110)) {
     *plVar1 = uStack_68;
     plVar1[1] = (long)piStack_60;
     if (uStack_68 != 0) {
@@ -436,32 +434,32 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
     lStack_50 = 0;
     pvStack_48 = (void *)0x0;
     uStack_58 = 0;
-    *(undefined4 *)(plVar1 + 5) = param_3;
-    *(long *)(param_1 + 0x108) = *(long *)(param_1 + 0x108) + 0x30;
+    *(undefined4 *)(plVar1 + 5) = param_2;
+    *(long *)(this + 0x108) = *(long *)(this + 0x108) + 0x30;
   }
   else {
                     /* try { // try from 0037d86c to 0037d873 has its CatchHandler @ 0037d948 */
-    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
+    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(this + 0x100,&uStack_68);
     if ((uStack_58 & 1) != 0) {
       operator delete(pvStack_48);
     }
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_68);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
-  lVar2 = *(long *)(param_1 + 0x100);
-  lVar3 = *(long *)(param_1 + 0x108);
-  iVar5 = *(int *)(param_1 + 0x118);
-  Walaber::Node::getWorldScale(&uStack_68,param_1);
-  fVar6 = *(float *)(param_1 + 0x94) * uStack_68._4_4_ -
-          ((float)*(int *)(param_1 + 0x11c) + (float)*(int *)(param_1 + 0x11c));
-  fVar7 = (*(float *)(param_1 + 0x128) + (float)*(int *)(param_1 + 0x120)) *
+  lVar2 = *(long *)(this + 0x100);
+  lVar3 = *(long *)(this + 0x108);
+  iVar5 = *(int *)(this + 0x118);
+  Walaber::Node::getWorldScale(&uStack_68,this);
+  fVar6 = *(float *)(this + 0x94) * uStack_68._4_4_ -
+          ((float)*(int *)(this + 0x11c) + (float)*(int *)(this + 0x11c));
+  fVar7 = (*(float *)(this + 0x128) + (float)*(int *)(this + 0x120)) *
           (float)(int)((float)(ulong)((lVar3 - lVar2 >> 4) * -0x5555555555555555) / (float)iVar5 +
                       0.999);
   fVar8 = fVar6 - fVar7;
   if (fVar7 <= fVar6) {
     fVar8 = 0.0;
   }
-  *(float *)(param_1 + 0x13c) = fVar8;
+  *(float *)(this + 0x13c) = fVar8;
   if (*(long *)(lVar4 + 0x28) == lStack_38) {
     return;
   }
@@ -478,7 +476,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
 /* Walaber::Widget_IconList::addIcon(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, int) */
 
-void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined4 param_3)
+void Walaber::Widget_IconList::addIcon(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,int param_2)
 
 {
   long *plVar1;
@@ -504,9 +502,9 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   lStack_38 = *(long *)(lVar4 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0037d9a4 to 0037d9b3 has its CatchHandler @ 0037db18 */
-  Walaber::Widget_IconList::Icon::Icon(&uStack_68,abStack_80,param_3);
-  plVar1 = *(long **)(param_1 + 0x108);
-  if (plVar1 < *(long **)(param_1 + 0x110)) {
+  Walaber::Widget_IconList::Icon::Icon(&uStack_68,abStack_80,param_2);
+  plVar1 = *(long **)(this + 0x108);
+  if (plVar1 < *(long **)(this + 0x110)) {
     *plVar1 = CONCAT44(fStack_64,uStack_68);
     plVar1[1] = (long)piStack_60;
     if (CONCAT44(fStack_64,uStack_68) != 0) {
@@ -519,11 +517,11 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
     pvStack_48 = (void *)0x0;
     uStack_58 = 0;
     *(undefined4 *)(plVar1 + 5) = uStack_40;
-    *(long *)(param_1 + 0x108) = *(long *)(param_1 + 0x108) + 0x30;
+    *(long *)(this + 0x108) = *(long *)(this + 0x108) + 0x30;
   }
   else {
                     /* try { // try from 0037da14 to 0037da1b has its CatchHandler @ 0037daf8 */
-    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(param_1 + 0x100,&uStack_68);
+    void std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__push_back_slow_path<Walaber::Widget_IconList::Icon>(this + 0x100,&uStack_68);
     if ((uStack_58 & 1) != 0) {
       operator delete(pvStack_48);
     }
@@ -532,20 +530,20 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  lVar2 = *(long *)(param_1 + 0x100);
-  lVar3 = *(long *)(param_1 + 0x108);
-  iVar5 = *(int *)(param_1 + 0x118);
-  Walaber::Node::getWorldScale(&uStack_68,param_1);
-  fVar6 = *(float *)(param_1 + 0x94) * fStack_64 -
-          ((float)*(int *)(param_1 + 0x11c) + (float)*(int *)(param_1 + 0x11c));
-  fVar7 = (*(float *)(param_1 + 0x128) + (float)*(int *)(param_1 + 0x120)) *
+  lVar2 = *(long *)(this + 0x100);
+  lVar3 = *(long *)(this + 0x108);
+  iVar5 = *(int *)(this + 0x118);
+  Walaber::Node::getWorldScale(&uStack_68,this);
+  fVar6 = *(float *)(this + 0x94) * fStack_64 -
+          ((float)*(int *)(this + 0x11c) + (float)*(int *)(this + 0x11c));
+  fVar7 = (*(float *)(this + 0x128) + (float)*(int *)(this + 0x120)) *
           (float)(int)((float)(ulong)((lVar3 - lVar2 >> 4) * -0x5555555555555555) / (float)iVar5 +
                       0.999);
   fVar8 = fVar6 - fVar7;
   if (fVar7 <= fVar6) {
     fVar8 = 0.0;
   }
-  *(float *)(param_1 + 0x13c) = fVar8;
+  *(float *)(this + 0x13c) = fVar8;
   if (*(long *)(lVar4 + 0x28) == lStack_38) {
     return;
   }

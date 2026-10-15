@@ -13,7 +13,7 @@
 
 long * std::__ndk1::
        num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-                 (long *param_1,long *param_2,long param_3,undefined8 param_4,ulong param_5)
+                 (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,bool param_4)
 
 {
   ulong uVar1;
@@ -33,18 +33,18 @@ long * std::__ndk1::
   
   lVar4 = tpidr_el0;
   lStack_38 = *(long *)(lVar4 + 0x28);
-  if ((*(byte *)(param_3 + 8) & 1) == 0) {
-    plVar7 = (long *)(**(code **)(*param_1 + 0x30))(param_1,param_2,param_3,param_4,param_5 & 1);
+  if ((*(byte *)(param_2 + 8) & 1) == 0) {
+    plVar7 = (long *)(**(code **)(*this + 0x30))(this,param_1,param_2,param_3,param_4 & 1);
     if (*(long *)(lVar4 + 0x28) == lStack_38) {
       return plVar7;
     }
   }
   else {
-    std::__ndk1::ios_base::getloc(&bStack_50,param_3);
+    std::__ndk1::ios_base::getloc(&bStack_50,param_2);
                     /* try { // try from 005ba444 to 005ba453 has its CatchHandler @ 005ba548 */
     plVar7 = (long *)std::__ndk1::locale::use_facet(&bStack_50,&numpunct<char>::id);
     std::__ndk1::__shared_count::__release_shared(CONCAT71(uStack_4f,bStack_50));
-    if ((param_5 & 1) == 0) {
+    if ((param_4 & 1) == 0) {
       pcVar8 = *(code **)(*plVar7 + 0x38);
     }
     else {
@@ -57,22 +57,22 @@ long * std::__ndk1::
       uVar1 = uStack_48;
     }
     if (uVar1 != 0) {
-      plVar7 = param_2;
+      plVar7 = param_1;
       puVar9 = (undefined1 *)((ulong)&bStack_50 | 1);
       if ((bStack_50 & 1) != 0) {
         puVar9 = puStack_40;
       }
       do {
-        param_2 = plVar7;
+        param_1 = plVar7;
         if (plVar7 != (long *)0x0) {
           puVar2 = (undefined1 *)plVar7[6];
           uVar3 = *puVar9;
           if (puVar2 == (undefined1 *)plVar7[7]) {
                     /* try { // try from 005ba4d8 to 005ba4df has its CatchHandler @ 005ba560 */
             iVar6 = (**(code **)(*plVar7 + 0x68))(plVar7);
-            param_2 = (long *)0x0;
+            param_1 = (long *)0x0;
             if (iVar6 != -1) {
-              param_2 = plVar7;
+              param_1 = plVar7;
             }
           }
           else {
@@ -88,14 +88,14 @@ long * std::__ndk1::
           uVar1 = uStack_48;
           puVar2 = puStack_40;
         }
-        plVar7 = param_2;
+        plVar7 = param_1;
       } while (puVar9 != puVar2 + uVar1);
     }
     if (!bVar5) {
       operator delete(puStack_40);
     }
     if (*(long *)(lVar4 + 0x28) == lStack_38) {
-      return param_2;
+      return param_1;
     }
   }
   plVar7 = (long *)__stack_chk_fail();
@@ -114,8 +114,7 @@ long * std::__ndk1::
 
 void std::__ndk1::
      num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (undefined8 param_1,undefined8 param_2,long param_3,undefined4 param_4,
-               undefined8 param_5)
+               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long param_4)
 
 {
   uint uVar1;
@@ -140,7 +139,7 @@ void std::__ndk1::
   lStack_68 = *(long *)(lVar4 + 0x28);
   uStack_6c = 0;
   uStack_70 = 0x25;
-  uVar2 = *(uint *)(param_3 + 8);
+  uVar2 = *(uint *)(param_2 + 8);
   if ((uVar2 >> 0xb & 1) == 0) {
     puVar6 = (undefined1 *)((ulong)&uStack_70 | 1);
   }
@@ -166,7 +165,7 @@ void std::__ndk1::
     uVar7 = 100;
   }
   puVar6[1] = uVar7;
-  uVar2 = *(uint *)(param_3 + 8) >> 9 & 1;
+  uVar2 = *(uint *)(param_2 + 8) >> 9 & 1;
   lVar10 = -((ulong)(uVar2 + 0x26) & 0x70);
   pcVar8 = acStack_90 + lVar10;
   if (((DAT_007a4e90 & 1) == 0) && (iVar5 = __cxa_guard_acquire(&DAT_007a4e90), iVar5 != 0)) {
@@ -174,8 +173,8 @@ void std::__ndk1::
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
-  iVar5 = std::__ndk1::__libcpp_snprintf_l(pcVar8,uVar2 + 0x17,DAT_007a4e88,&uStack_70,param_5);
-  uVar1 = *(uint *)(param_3 + 8) & 0xb0;
+  iVar5 = std::__ndk1::__libcpp_snprintf_l(pcVar8,uVar2 + 0x17,DAT_007a4e88,&uStack_70,param_4);
+  uVar1 = *(uint *)(param_2 + 8) & 0xb0;
   pcVar9 = pcVar8 + iVar5;
   if ((uVar1 != 0x20) && (pcVar9 = pcVar8, uVar1 == 0x10)) {
     cVar3 = *pcVar8;
@@ -187,11 +186,11 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar8 - ((ulong)((uVar2 << 1 | 0x2c) - 1) + 0xf & 0x1fffffff0);
-  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_2);
                     /* try { // try from 005ba718 to 005ba737 has its CatchHandler @ 005ba7f0 */
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
-  func_0x003ffad0(param_2,lVar10,uStack_78,uStack_80,param_3,param_4);
+  func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
   if (*(long *)(lVar4 + 0x28) == lStack_68) {
     return;
   }
@@ -211,8 +210,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (undefined8 param_1,undefined8 param_2,long param_3,undefined4 param_4,
-               undefined8 param_5)
+               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long long param_4)
 
 {
   uint uVar1;
@@ -235,7 +233,7 @@ void std::__ndk1::
   lVar4 = tpidr_el0;
   lStack_68 = *(long *)(lVar4 + 0x28);
   uStack_70 = 0x25;
-  uVar2 = *(uint *)(param_3 + 8);
+  uVar2 = *(uint *)(param_2 + 8);
   if ((uVar2 >> 0xb & 1) == 0) {
     puVar6 = (undefined2 *)((ulong)&uStack_70 | 1);
   }
@@ -261,7 +259,7 @@ void std::__ndk1::
     uVar7 = 100;
   }
   *(undefined1 *)(puVar6 + 1) = uVar7;
-  uVar2 = *(uint *)(param_3 + 8) >> 9 & 1;
+  uVar2 = *(uint *)(param_2 + 8) >> 9 & 1;
   lVar10 = -((ulong)(uVar2 + 0x26) & 0x70);
   pcVar8 = acStack_90 + lVar10;
   if (((DAT_007a4e90 & 1) == 0) && (iVar5 = __cxa_guard_acquire(&DAT_007a4e90), iVar5 != 0)) {
@@ -269,8 +267,8 @@ void std::__ndk1::
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
-  iVar5 = std::__ndk1::__libcpp_snprintf_l(pcVar8,uVar2 + 0x17,DAT_007a4e88,&uStack_70,param_5);
-  uVar1 = *(uint *)(param_3 + 8) & 0xb0;
+  iVar5 = std::__ndk1::__libcpp_snprintf_l(pcVar8,uVar2 + 0x17,DAT_007a4e88,&uStack_70,param_4);
+  uVar1 = *(uint *)(param_2 + 8) & 0xb0;
   pcVar9 = pcVar8 + iVar5;
   if ((uVar1 != 0x20) && (pcVar9 = pcVar8, uVar1 == 0x10)) {
     cVar3 = *pcVar8;
@@ -282,11 +280,11 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar8 - ((ulong)((uVar2 << 1 | 0x2c) - 1) + 0xf & 0x1fffffff0);
-  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_2);
                     /* try { // try from 005baee8 to 005baf07 has its CatchHandler @ 005bafc0 */
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
-  func_0x003ffad0(param_2,lVar10,uStack_78,uStack_80,param_3,param_4);
+  func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
   if (*(long *)(lVar4 + 0x28) == lStack_68) {
     return;
   }
@@ -306,8 +304,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (undefined8 param_1,undefined8 param_2,long param_3,undefined4 param_4,
-               undefined8 param_5)
+               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long param_4)
 
 {
   uint uVar1;
@@ -332,7 +329,7 @@ void std::__ndk1::
   lStack_68 = *(long *)(lVar3 + 0x28);
   uStack_6c = 0;
   uStack_70 = 0x25;
-  uVar9 = *(uint *)(param_3 + 8);
+  uVar9 = *(uint *)(param_2 + 8);
   if ((uVar9 >> 0xb & 1) == 0) {
     puVar5 = (undefined1 *)((ulong)&uStack_70 | 1);
   }
@@ -358,7 +355,7 @@ void std::__ndk1::
     uVar6 = 0x75;
   }
   puVar5[1] = uVar6;
-  uVar9 = *(uint *)(param_3 + 8) >> 9 & 1 | 0x16;
+  uVar9 = *(uint *)(param_2 + 8) >> 9 & 1 | 0x16;
   lVar10 = -((ulong)(uVar9 + 0x10) & 0x70);
   pcVar7 = acStack_90 + lVar10;
   if (((DAT_007a4e90 & 1) == 0) && (iVar4 = __cxa_guard_acquire(&DAT_007a4e90), iVar4 != 0)) {
@@ -366,8 +363,8 @@ void std::__ndk1::
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
-  iVar4 = std::__ndk1::__libcpp_snprintf_l(pcVar7,uVar9 + 1,DAT_007a4e88,&uStack_70,param_5);
-  uVar1 = *(uint *)(param_3 + 8) & 0xb0;
+  iVar4 = std::__ndk1::__libcpp_snprintf_l(pcVar7,uVar9 + 1,DAT_007a4e88,&uStack_70,param_4);
+  uVar1 = *(uint *)(param_2 + 8) & 0xb0;
   pcVar8 = pcVar7 + iVar4;
   if ((uVar1 != 0x20) && (pcVar8 = pcVar7, uVar1 == 0x10)) {
     cVar2 = *pcVar7;
@@ -379,11 +376,11 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar7 - ((ulong)(uVar9 * 2 - 1) + 0xf & 0x1fffffff0);
-  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_2);
                     /* try { // try from 005bb174 to 005bb193 has its CatchHandler @ 005bb24c */
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
-  func_0x003ffad0(param_2,lVar10,uStack_78,uStack_80,param_3,param_4);
+  func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
   if (*(long *)(lVar3 + 0x28) == lStack_68) {
     return;
   }
@@ -403,8 +400,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (undefined8 param_1,undefined8 param_2,long param_3,undefined4 param_4,
-               undefined8 param_5)
+               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,unsigned long long param_4)
 
 {
   uint uVar1;
@@ -427,7 +423,7 @@ void std::__ndk1::
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
   uStack_70 = 0x25;
-  uVar9 = *(uint *)(param_3 + 8);
+  uVar9 = *(uint *)(param_2 + 8);
   if ((uVar9 >> 0xb & 1) == 0) {
     puVar5 = (undefined2 *)((ulong)&uStack_70 | 1);
   }
@@ -453,7 +449,7 @@ void std::__ndk1::
     uVar6 = 0x75;
   }
   *(undefined1 *)(puVar5 + 1) = uVar6;
-  uVar9 = *(uint *)(param_3 + 8) >> 9 & 1 | 0x16;
+  uVar9 = *(uint *)(param_2 + 8) >> 9 & 1 | 0x16;
   lVar10 = -((ulong)(uVar9 + 0x10) & 0x70);
   pcVar7 = acStack_90 + lVar10;
   if (((DAT_007a4e90 & 1) == 0) && (iVar4 = __cxa_guard_acquire(&DAT_007a4e90), iVar4 != 0)) {
@@ -461,8 +457,8 @@ void std::__ndk1::
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
-  iVar4 = std::__ndk1::__libcpp_snprintf_l(pcVar7,uVar9 + 1,DAT_007a4e88,&uStack_70,param_5);
-  uVar1 = *(uint *)(param_3 + 8) & 0xb0;
+  iVar4 = std::__ndk1::__libcpp_snprintf_l(pcVar7,uVar9 + 1,DAT_007a4e88,&uStack_70,param_4);
+  uVar1 = *(uint *)(param_2 + 8) & 0xb0;
   pcVar8 = pcVar7 + iVar4;
   if ((uVar1 != 0x20) && (pcVar8 = pcVar7, uVar1 == 0x10)) {
     cVar2 = *pcVar7;
@@ -474,11 +470,11 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar7 - ((ulong)(uVar9 * 2 - 1) + 0xf & 0x1fffffff0);
-  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_2);
                     /* try { // try from 005bb3fc to 005bb41b has its CatchHandler @ 005bb4d4 */
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
-  func_0x003ffad0(param_2,lVar10,uStack_78,uStack_80,param_3,param_4);
+  func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
   if (*(long *)(lVar3 + 0x28) == lStack_68) {
     return;
   }
@@ -499,7 +495,7 @@ void std::__ndk1::
 
 undefined8
 std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,double param_4)
 
 {
   char *pcVar1;
@@ -532,7 +528,7 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   lVar5 = tpidr_el0;
   lStack_78 = *(long *)(lVar5 + 0x28);
   uStack_e0 = 0x25;
-  uVar3 = *(uint *)(param_4 + 8);
+  uVar3 = *(uint *)(param_3 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
     puVar11 = (undefined2 *)((ulong)&uStack_e0 | 1);
   }
@@ -586,14 +582,14 @@ LAB_005bb580:
     __cxa_guard_release(&DAT_007a4e90);
   }
   if (bVar6) {
-    iVar9 = std::__ndk1::__libcpp_snprintf_l(param_1,acStack_98,0x1e,DAT_007a4e88,&uStack_e0,
-                            *(undefined4 *)(param_4 + 0x10));
+    iVar9 = std::__ndk1::__libcpp_snprintf_l(this,acStack_98,0x1e,DAT_007a4e88,&uStack_e0,
+                            *(undefined4 *)(param_3 + 0x10));
     if (0x1d < iVar9) goto LAB_005bb654;
 LAB_005bb62c:
     p0_00 = (char *)0x0;
   }
   else {
-    iVar9 = std::__ndk1::__libcpp_snprintf_l(param_1,acStack_98,0x1e,DAT_007a4e88,&uStack_e0);
+    iVar9 = std::__ndk1::__libcpp_snprintf_l(this,acStack_98,0x1e,DAT_007a4e88,&uStack_e0);
     if (iVar9 < 0x1e) goto LAB_005bb62c;
 LAB_005bb654:
     if (bVar6) {
@@ -603,8 +599,8 @@ LAB_005bb654:
         __cxa_guard_release(&DAT_007a4e90);
       }
                     /* try { // try from 005bb668 to 005bb693 has its CatchHandler @ 005bb8c8 */
-      iVar9 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_e8,DAT_007a4e88,&uStack_e0,
-                              *(undefined4 *)(param_4 + 0x10));
+      iVar9 = std::__ndk1::__libcpp_asprintf_l(this,&pcStack_e8,DAT_007a4e88,&uStack_e0,
+                              *(undefined4 *)(param_3 + 0x10));
     }
     else {
       if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(&DAT_007a4e90), iVar9 != 0)) {
@@ -612,7 +608,7 @@ LAB_005bb654:
         DAT_007a4e88 = newlocale(0x1fbf,"C",0);
         __cxa_guard_release(&DAT_007a4e90);
       }
-      iVar9 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_e8,DAT_007a4e88,&uStack_e0);
+      iVar9 = std::__ndk1::__libcpp_asprintf_l(this,&pcStack_e8,DAT_007a4e88,&uStack_e0);
     }
     p0_00 = pcStack_e8;
     if (pcStack_e8 == (char *)0x0) {
@@ -625,7 +621,7 @@ LAB_005bb654:
   }
   pcVar7 = pcStack_e8;
   pcVar1 = pcStack_e8 + iVar9;
-  uVar3 = *(uint *)(param_4 + 8) & 0xb0;
+  uVar3 = *(uint *)(param_3 + 8) & 0xb0;
   pcVar15 = pcVar1;
   if ((uVar3 != 0x20) && (pcVar15 = pcStack_e8, uVar3 == 0x10)) {
     cVar4 = *pcStack_e8;
@@ -647,12 +643,12 @@ LAB_005bb654:
   puVar16 = auStack_d4;
 LAB_005bb73c:
                     /* try { // try from 005bb73c to 005bb747 has its CatchHandler @ 005bb8f0 */
-  std::__ndk1::ios_base::getloc(&uStack_100,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_100,param_3);
                     /* try { // try from 005bb748 to 005bb767 has its CatchHandler @ 005bb8d8 */
   std::__ndk1::__num_put<char>::__widen_and_group_float(pcVar7,pcVar15,pcVar1,puVar16,&uStack_f0,&uStack_f8,&uStack_100);
   std::__ndk1::__shared_count::__release_shared(uStack_100);
                     /* try { // try from 005bb774 to 005bb787 has its CatchHandler @ 005bb8cc */
-  uVar10 = func_0x003ffad0(param_3,puVar16,uStack_f0,uStack_f8,param_4,param_5);
+  uVar10 = func_0x003ffad0(param_2,puVar16,uStack_f0,uStack_f8,param_3,param_4);
   if (p0 != (undefined1 *)0x0) {
     free(p0);
   }
@@ -679,7 +675,7 @@ LAB_005bb73c:
 
 undefined8
 std::__ndk1::num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::
-do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,undefined4 param_5)
+do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,long double param_4)
 
 {
   char *pcVar1;
@@ -711,7 +707,7 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   lVar5 = tpidr_el0;
   lStack_70 = *(long *)(lVar5 + 0x28);
   uStack_d8 = 0x25;
-  uVar3 = *(uint *)(param_4 + 8);
+  uVar3 = *(uint *)(param_3 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
     puVar11 = (undefined2 *)((ulong)&uStack_d8 | 1);
   }
@@ -757,37 +753,37 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   pcStack_e0 = acStack_90;
   if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc2c0 to 005bc2d3 has its CatchHandler @ 005bc398 */
-    DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+    DAT_007a4e88 = newlocale(this,0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
   if (bVar7) {
-    iVar9 = std::__ndk1::__libcpp_snprintf_l(param_1,acStack_90,0x1e,DAT_007a4e88,&uStack_d8,
-                            *(undefined4 *)(param_4 + 0x10));
+    iVar9 = std::__ndk1::__libcpp_snprintf_l(this,acStack_90,0x1e,DAT_007a4e88,&uStack_d8,
+                            *(undefined4 *)(param_3 + 0x10));
     if (0x1d < iVar9) goto LAB_005bc128;
 LAB_005bc104:
     p0_00 = (char *)0x0;
   }
   else {
-    iVar9 = std::__ndk1::__libcpp_snprintf_l(param_1,acStack_90,0x1e,DAT_007a4e88,&uStack_d8);
+    iVar9 = std::__ndk1::__libcpp_snprintf_l(this,acStack_90,0x1e,DAT_007a4e88,&uStack_d8);
     if (iVar9 < 0x1e) goto LAB_005bc104;
 LAB_005bc128:
     if (bVar7) {
-      if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(param_1,&DAT_007a4e90), iVar9 != 0)) {
+      if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(this,&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc304 to 005bc317 has its CatchHandler @ 005bc394 */
-        DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+        DAT_007a4e88 = newlocale(this,0x1fbf,"C",0);
         __cxa_guard_release(&DAT_007a4e90);
       }
                     /* try { // try from 005bc140 to 005bc167 has its CatchHandler @ 005bc3b0 */
-      iVar9 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_e0,DAT_007a4e88,&uStack_d8,
-                              *(undefined4 *)(param_4 + 0x10));
+      iVar9 = std::__ndk1::__libcpp_asprintf_l(this,&pcStack_e0,DAT_007a4e88,&uStack_d8,
+                              *(undefined4 *)(param_3 + 0x10));
     }
     else {
-      if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(param_1,&DAT_007a4e90), iVar9 != 0)) {
+      if (((DAT_007a4e90 & 1) == 0) && (iVar9 = __cxa_guard_acquire(this,&DAT_007a4e90), iVar9 != 0)) {
                     /* try { // try from 005bc344 to 005bc357 has its CatchHandler @ 005bc390 */
-        DAT_007a4e88 = newlocale(param_1,0x1fbf,"C",0);
+        DAT_007a4e88 = newlocale(this,0x1fbf,"C",0);
         __cxa_guard_release(&DAT_007a4e90);
       }
-      iVar9 = std::__ndk1::__libcpp_asprintf_l(param_1,&pcStack_e0,DAT_007a4e88,&uStack_d8);
+      iVar9 = std::__ndk1::__libcpp_asprintf_l(this,&pcStack_e0,DAT_007a4e88,&uStack_d8);
     }
     p0_00 = pcStack_e0;
     if (pcStack_e0 == (char *)0x0) {
@@ -800,7 +796,7 @@ LAB_005bc128:
   }
   pcVar6 = pcStack_e0;
   pcVar1 = pcStack_e0 + iVar9;
-  uVar3 = *(uint *)(param_4 + 8) & 0xb0;
+  uVar3 = *(uint *)(param_3 + 8) & 0xb0;
   pcVar14 = pcVar1;
   if ((uVar3 != 0x20) && (pcVar14 = pcStack_e0, uVar3 == 0x10)) {
     cVar4 = *pcStack_e0;
@@ -822,12 +818,12 @@ LAB_005bc128:
   puVar15 = auStack_cc;
 LAB_005bc210:
                     /* try { // try from 005bc210 to 005bc21b has its CatchHandler @ 005bc3d8 */
-  std::__ndk1::ios_base::getloc(&uStack_f8,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_f8,param_3);
                     /* try { // try from 005bc21c to 005bc23b has its CatchHandler @ 005bc3c0 */
   std::__ndk1::__num_put<char>::__widen_and_group_float(pcVar6,pcVar14,pcVar1,puVar15,&uStack_e8,&uStack_f0,&uStack_f8);
   std::__ndk1::__shared_count::__release_shared(uStack_f8);
                     /* try { // try from 005bc248 to 005bc25b has its CatchHandler @ 005bc3b4 */
-  uVar10 = func_0x003ffad0(param_3,puVar15,uStack_e8,uStack_f0,param_4,param_5);
+  uVar10 = func_0x003ffad0(param_2,puVar15,uStack_e8,uStack_f0,param_3,param_4);
   if (p0 != (undefined1 *)0x0) {
     free(p0);
   }
@@ -853,8 +849,7 @@ LAB_005bc210:
 
 void std::__ndk1::
      num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>::do_put
-               (undefined8 param_1,undefined8 param_2,long param_3,undefined4 param_4,
-               undefined8 param_5)
+               (std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::ios_base& param_2,char param_3,void const *param_4)
 
 {
   char *pcVar1;
@@ -880,9 +875,9 @@ void std::__ndk1::
     DAT_007a4e88 = newlocale(0x1fbf,"C",0);
     __cxa_guard_release(&DAT_007a4e90);
   }
-  iVar5 = std::__ndk1::__libcpp_snprintf_l(acStack_7c,0x14,DAT_007a4e88,&uStack_ac,param_5);
+  iVar5 = std::__ndk1::__libcpp_snprintf_l(acStack_7c,0x14,DAT_007a4e88,&uStack_ac,param_4);
   pcVar1 = acStack_7c + iVar5;
-  uVar2 = *(uint *)(param_3 + 8) & 0xb0;
+  uVar2 = *(uint *)(param_2 + 8) & 0xb0;
   pcVar7 = pcVar1;
   if (uVar2 == 0x20) goto LAB_005bc4e4;
   if (uVar2 == 0x10) {
@@ -897,7 +892,7 @@ void std::__ndk1::
   }
   pcVar7 = acStack_7c;
 LAB_005bc4e4:
-  std::__ndk1::ios_base::getloc(&uStack_b8,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_b8,param_2);
                     /* try { // try from 005bc4f0 to 005bc4ff has its CatchHandler @ 005bc5e0 */
   plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_b8,&ctype<char>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_b8);
@@ -906,7 +901,7 @@ LAB_005bc4e4:
   if (pcVar7 != pcVar1) {
     pcVar3 = pcVar7 + (long)(acStack_a4 + -(long)acStack_7c);
   }
-  func_0x003ffad0(param_2,acStack_a4,pcVar3,acStack_a4 + iVar5,param_3,param_4);
+  func_0x003ffad0(param_1,acStack_a4,pcVar3,acStack_a4 + iVar5,param_2,param_3);
   if (*(long *)(lVar4 + 0x28) == lStack_68) {
     return;
   }

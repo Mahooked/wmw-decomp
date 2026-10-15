@@ -102414,7 +102414,7 @@ void FUN_003df9f8(ulong *param_1,long param_2,uint param_3)
 /* drawMasked(Walaber::Sprite*, Walaber::SharedPtr<Walaber::Texture>, Walaber::Rect const&,
    Walaber::Color const&) */
 
-void drawMasked(long param_1,long *param_2,undefined8 *param_3,undefined4 *param_4)
+void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Rect const& param_3,Walaber::Color const& param_4)
 
 {
   undefined4 uVar1;
@@ -102753,8 +102753,7 @@ void drawShockwave(Walaber__Vector2 p0,float p1,Walaber__Color p2,float p3,float
    Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::Color, Walaber::VertexColorBlendMode)
     */
 
-void stretchQuad(undefined8 param_1,long *param_2,float *param_3,float *param_4,float *param_5,
-                undefined8 param_6,undefined4 param_7)
+void stretchQuad(Walaber::SpriteBatch *param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Vector2 const& param_3,Walaber::Vector2 const& param_4,Walaber::Vector2 const& param_5,Walaber::Color param_6,Walaber::VertexColorBlendMode param_7)
 
 {
   long lVar1;
@@ -103350,7 +103349,7 @@ void operator_delete(void *param_1)
 
 /* operator delete(void*, unsigned long, std::align_val_t) */
 
-void operator_delete(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void operator_delete(void *param_1,unsigned long param_2,std::align_val_t param_3)
 
 {
   operator delete(param_1,param_3);
@@ -103395,7 +103394,7 @@ void operator_delete__(void)
 
 /* operator delete[](void*, unsigned long, std::align_val_t) */
 
-void operator_delete__(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void operator_delete__(void *param_1,unsigned long param_2,std::align_val_t param_3)
 
 {
   operator delete[](param_1,param_3);

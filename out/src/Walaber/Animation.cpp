@@ -10,25 +10,25 @@
 /* Walaber::Animation::Animation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
    std::__ndk1::allocator<char> >, Walaber::AnimationManager*) */
 
-void Walaber::Animation::Animation(long param_1,undefined8 param_2,undefined8 param_3)
+void Walaber::Animation::Animation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::AnimationManager *param_2)
 
 {
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
-  memset(param_1 + 0x18,0,0xa0);
-  *(undefined4 *)(param_1 + 0xe4) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0xc0) = 0;
-  *(undefined8 *)(param_1 + 200) = 0;
-  *(undefined8 *)(param_1 + 0xb8) = param_3;
-  *(undefined4 *)(param_1 + 0xd0) = 0;
-  *(undefined4 *)(param_1 + 0xdc) = 0;
-  *(undefined4 *)(param_1 + 0xe0) = 0;
-  *(undefined8 *)(param_1 + 0xf0) = 0;
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0xe8) = 0;
-  *(undefined1 *)(param_1 + 0x100) = 0;
-  *(undefined8 *)(param_1 + 0xd4) = 0x3f800000;
-  *(undefined2 *)(param_1 + 0x101) = 1;
-  *(undefined1 *)(param_1 + 0x103) = 0;
+  memset(this + 0x18,0,0xa0);
+  *(undefined4 *)(this + 0xe4) = 0xffffffff;
+  *(undefined8 *)(this + 0xc0) = 0;
+  *(undefined8 *)(this + 200) = 0;
+  *(undefined8 *)(this + 0xb8) = param_2;
+  *(undefined4 *)(this + 0xd0) = 0;
+  *(undefined4 *)(this + 0xdc) = 0;
+  *(undefined4 *)(this + 0xe0) = 0;
+  *(undefined8 *)(this + 0xf0) = 0;
+  *(undefined8 *)(this + 0xf8) = 0;
+  *(undefined8 *)(this + 0xe8) = 0;
+  *(undefined1 *)(this + 0x100) = 0;
+  *(undefined8 *)(this + 0xd4) = 0x3f800000;
+  *(undefined2 *)(this + 0x101) = 1;
+  *(undefined1 *)(this + 0x103) = 0;
   return;
 }
 
@@ -598,7 +598,7 @@ LAB_0033247c:
 /* Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, Walaber::SceneGraph*) */
 
-void Walaber::Animation::createAnimationFromXml(undefined8 param_1,undefined8 param_2)
+void Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SceneGraph *param_2)
 
 {
   long lVar1;
@@ -2279,7 +2279,7 @@ void Walaber::Animation::_updateCueTrackEventsWithCurrentTime(long param_1)
     */
 
 void Walaber::Animation::play
-               (float param_1,long param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+               (Walaber::AnimationPlaybackMode param_1,float param_2,int param_3,Walaber::AnimationBlendMode param_4)
 
 {
   long lVar1;
@@ -2288,25 +2288,25 @@ void Walaber::Animation::play
   
   lVar1 = tpidr_el0;
   alStack_38[2] = *(long *)(lVar1 + 0x28);
-  *(float *)(param_2 + 0xcc) = param_1;
-  *(undefined1 *)(param_2 + 0x100) = 1;
-  *(undefined4 *)(param_2 + 0xc0) = param_5;
-  *(undefined4 *)(param_2 + 0xc4) = param_3;
-  *(undefined4 *)(param_2 + 0xe0) = param_4;
-  if (param_1 == 0.0) {
-    *(undefined4 *)(param_2 + 0xe4) = 0xffffffff;
-    Walaber::Animation::_rewindSpriteTracks(param_2);
-    Walaber::Animation::_rewindCueTracks(param_2);
+  *(float *)(param_1 + 0xcc) = this;
+  *(undefined1 *)(param_1 + 0x100) = 1;
+  *(undefined4 *)(param_1 + 0xc0) = param_4;
+  *(undefined4 *)(param_1 + 0xc4) = param_2;
+  *(undefined4 *)(param_1 + 0xe0) = param_3;
+  if (this == 0.0) {
+    *(undefined4 *)(param_1 + 0xe4) = 0xffffffff;
+    Walaber::Animation::_rewindSpriteTracks(param_1);
+    Walaber::Animation::_rewindCueTracks(param_1);
   }
   else {
-    Walaber::Animation::_updateLastHitMarkerIndexWithCurrentTime(param_2);
-    Walaber::Animation::_updateSpriteTrackEventsWithCurrentTime(param_2);
-    Walaber::Animation::_updateCueTrackEventsWithCurrentTime(param_2);
+    Walaber::Animation::_updateLastHitMarkerIndexWithCurrentTime(param_1);
+    Walaber::Animation::_updateSpriteTrackEventsWithCurrentTime(param_1);
+    Walaber::Animation::_updateCueTrackEventsWithCurrentTime(param_1);
   }
-  plVar2 = *(long **)(param_2 + 0xa8);
-  if ((plVar2 != (long *)0x0) && (**(int **)(param_2 + 0xb0) != 0)) {
+  plVar2 = *(long **)(param_1 + 0xa8);
+  if ((plVar2 != (long *)0x0) && (**(int **)(param_1 + 0xb0) != 0)) {
     alStack_38[1] = 0x1ffffffff;
-    alStack_38[0] = param_2;
+    alStack_38[0] = param_1;
     (**(code **)(*plVar2 + 0x10))(plVar2,alStack_38);
   }
   if (*(long *)(lVar1 + 0x28) == alStack_38[2]) {

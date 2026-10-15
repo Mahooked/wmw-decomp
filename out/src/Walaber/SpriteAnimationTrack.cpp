@@ -11,8 +11,7 @@
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, bool, float, bool) */
 
 void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
-               (undefined4 param_1,undefined4 param_2,long param_3,undefined8 param_4,byte param_5,
-               byte param_6)
+               (float param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,bool param_3,float param_4,bool param_5)
 
 {
   long *plVar1;
@@ -28,15 +27,15 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
   
   lVar3 = tpidr_el0;
   lStack_58 = *(long *)(lVar3 + 0x28);
-  plVar1 = (long *)(param_3 + 0x20);
-  if (*(int *)(param_3 + 0x40) == 0) {
+  plVar1 = (long *)(param_2 + 0x20);
+  if (*(int *)(param_2 + 0x40) == 0) {
     uStack_60 = 0;
     uStack_78 = 0;
     uStack_80 = 0;
     pvStack_68 = (void *)0x0;
     uStack_70 = 0;
-    puVar2 = *(undefined8 **)(param_3 + 0x28);
-    if (puVar2 < *(undefined8 **)(param_3 + 0x30)) {
+    puVar2 = *(undefined8 **)(param_2 + 0x28);
+    if (puVar2 < *(undefined8 **)(param_2 + 0x30)) {
       *puVar2 = 0;
       puVar2[3] = 0;
       puVar2[2] = 0;
@@ -45,7 +44,7 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
       pvStack_68 = (void *)0x0;
       uStack_78 = 0;
       *(undefined2 *)(puVar2 + 4) = 0;
-      *(long *)(param_3 + 0x28) = *(long *)(param_3 + 0x28) + 0x28;
+      *(long *)(param_2 + 0x28) = *(long *)(param_2 + 0x28) + 0x28;
     }
     else {
                     /* try { // try from 00333d58 to 00333d63 has its CatchHandler @ 00333dd4 */
@@ -63,17 +62,17 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
     pvStack_68 = (void *)0x0;
     uStack_70 = 0;
                     /* try { // try from 00333ce8 to 00333cf3 has its CatchHandler @ 00333dd8 */
-    puVar4 = (undefined4 *)std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::insert(plVar1,*(undefined8 *)(param_3 + 0x28),&uStack_80);
+    puVar4 = (undefined4 *)std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::insert(plVar1,*(undefined8 *)(param_2 + 0x28),&uStack_80);
     if ((uStack_78 & 1) != 0) {
       operator delete(pvStack_68);
     }
   }
-  *puVar4 = param_1;
-  puVar4[1] = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(puVar4 + 2,param_4);
-  *(byte *)(puVar4 + 8) = param_5 & 1;
-  *(byte *)((long)puVar4 + 0x21) = param_6 & 1;
-  *(int *)(param_3 + 0x40) = *(int *)(param_3 + 0x40) + 1;
+  *puVar4 = this;
+  puVar4[1] = param_1;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(puVar4 + 2,param_3);
+  *(byte *)(puVar4 + 8) = param_4 & 1;
+  *(byte *)((long)puVar4 + 0x21) = param_5 & 1;
+  *(int *)(param_2 + 0x40) = *(int *)(param_2 + 0x40) + 1;
   if (*(long *)(lVar3 + 0x28) == lStack_58) {
     return;
   }

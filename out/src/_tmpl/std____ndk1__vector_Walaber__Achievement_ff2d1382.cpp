@@ -12,37 +12,37 @@
    std::__ndk1::allocator<Walaber::Achievement>&>&) */
 
 void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::
-     __swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     __swap_out_circular_buffer(std::__ndk1::__split_buffer<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>&>& param_1)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  lVar3 = *param_1;
-  lVar2 = param_1[1];
+  lVar3 = *this;
+  lVar2 = this[1];
   if (lVar2 == lVar3) {
-    lVar1 = param_2[1];
+    lVar1 = param_1[1];
   }
   else {
-    lVar1 = param_2[1];
+    lVar1 = param_1[1];
     do {
       lVar2 = lVar2 + -0x88;
       Walaber::Achievement::Achievement(lVar1 + -0x88,lVar2);
-      lVar1 = param_2[1] + -0x88;
-      param_2[1] = lVar1;
+      lVar1 = param_1[1] + -0x88;
+      param_1[1] = lVar1;
     } while (lVar3 != lVar2);
-    lVar3 = *param_1;
+    lVar3 = *this;
   }
-  *param_1 = lVar1;
-  param_2[1] = lVar3;
-  lVar3 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar3;
-  lVar3 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar3;
-  *param_2 = param_2[1];
+  *this = lVar1;
+  param_1[1] = lVar3;
+  lVar3 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar3;
+  lVar3 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar3;
+  *param_1 = param_1[1];
   return;
 }
 
@@ -57,29 +57,29 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
    > const&) */
 
 void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Achievement>>::vector
-               (undefined8 *param_1,long *param_2)
+               (std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>> const& param_1)
 
 {
   long lVar1;
   long lVar2;
   long lVar3;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 004a3e28 to 004a3e2b has its CatchHandler @ 004a3e6c */
-    std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>::__vallocate(param_1,(param_2[1] - *param_2 >> 3) * -0xf0f0f0f0f0f0f0f);
-    lVar3 = *param_2;
-    lVar1 = param_2[1];
+    std::__ndk1::vector<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>::__vallocate(this,(param_1[1] - *param_1 >> 3) * -0xf0f0f0f0f0f0f0f);
+    lVar3 = *param_1;
+    lVar1 = param_1[1];
     if (lVar3 != lVar1) {
-      lVar2 = param_1[1];
+      lVar2 = this[1];
       do {
                     /* try { // try from 004a3e3c to 004a3e43 has its CatchHandler @ 004a3e70 */
         Walaber::Achievement::Achievement(lVar2,lVar3);
         lVar3 = lVar3 + 0x88;
-        lVar2 = param_1[1] + 0x88;
-        param_1[1] = lVar2;
+        lVar2 = this[1] + 0x88;
+        this[1] = lVar2;
       } while (lVar1 != lVar3);
     }
   }

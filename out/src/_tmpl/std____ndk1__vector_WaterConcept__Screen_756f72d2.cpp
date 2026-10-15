@@ -14,19 +14,19 @@
 
 void std::__ndk1::
      vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>> const& param_1)
 
 {
   long lVar1;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
-    lVar1 = (param_2[1] - *param_2 >> 4) * -0x5555555555555555;
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
+    lVar1 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
                     /* try { // try from 004ea928 to 004ea93f has its CatchHandler @ 004ea950 */
-    std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__vallocate(param_1,lVar1);
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Screen_InAppPurchase::product*>::value, void>::type std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>(param_1,*param_2,param_2[1],lVar1);
+    std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__vallocate(this,lVar1);
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::Screen_InAppPurchase::product*>::value, void>::type std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__construct_at_end<WaterConcept::Screen_InAppPurchase::product*>(this,*param_1,param_1[1],lVar1);
   }
   return;
 }
@@ -73,7 +73,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::Screen_InAppPurchase::product,std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>& param_1)
 
 {
   long lVar1;
@@ -82,13 +82,13 @@ void std::__ndk1::
   undefined8 uVar4;
   undefined8 uVar5;
   
-  lVar1 = *param_1;
-  lVar3 = param_1[1];
+  lVar1 = *this;
+  lVar3 = this[1];
   if (lVar3 == lVar1) {
-    lVar2 = param_2[1];
+    lVar2 = param_1[1];
   }
   else {
-    lVar2 = param_2[1];
+    lVar2 = param_1[1];
     do {
       uVar5 = *(undefined8 *)(lVar3 + -0x28);
       uVar4 = *(undefined8 *)(lVar3 + -0x30);
@@ -107,20 +107,20 @@ void std::__ndk1::
       *(undefined8 *)(lVar3 + -8) = 0;
       *(undefined8 *)(lVar3 + -0x18) = 0;
       lVar3 = lVar3 + -0x30;
-      lVar2 = param_2[1] + -0x30;
-      param_2[1] = lVar2;
+      lVar2 = param_1[1] + -0x30;
+      param_1[1] = lVar2;
     } while (lVar1 != lVar3);
-    lVar1 = *param_1;
+    lVar1 = *this;
   }
-  *param_1 = lVar2;
-  param_2[1] = lVar1;
-  lVar1 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar1;
-  lVar1 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar1;
-  *param_2 = param_2[1];
+  *this = lVar2;
+  param_1[1] = lVar1;
+  lVar1 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar1;
+  lVar1 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar1;
+  *param_1 = param_1[1];
   return;
 }
 

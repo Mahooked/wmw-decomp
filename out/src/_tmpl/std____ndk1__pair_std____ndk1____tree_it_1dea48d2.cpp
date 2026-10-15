@@ -34,7 +34,7 @@ std::__ndk1::
 __tree<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::__map_value_compare<Walaber::AnimationEventType,std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>,std::__ndk1::less<Walaber::AnimationEventType>,true>,std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::AnimationEventType,std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>,std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>>>>
 ::
 __emplace_unique_key_args<Walaber::AnimationEventType,std::__ndk1::piecewise_construct_t_const&,std::__ndk1::tuple<Walaber::AnimationEventType&&>,std::__ndk1::tuple<>>
-          (long param_1,uint *param_2,undefined8 param_3,undefined8 *param_4)
+          (Walaber::AnimationEventType const& param_1,std::__ndk1::piecewise_construct_t const& param_2,std::__ndk1::tuple<Walaber::AnimationEventType&&>&& param_3,std::__ndk1::tuple<>&& param_4)
 
 {
   bool bVar1;

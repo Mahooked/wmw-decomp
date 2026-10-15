@@ -440,7 +440,7 @@ LAB_0040c400:
 /* WaterConcept::GameSettings::levelShorthand(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, bool) */
 
-void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_2,uint param_3)
+void WaterConcept::GameSettings::levelShorthand(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,bool param_2)
 
 {
   ulong uVar1;
@@ -544,11 +544,11 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
   uStack_108 = 0x66;
                     /* try { // try from 0040c664 to 0040c677 has its CatchHandler @ 0040d2f4 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_170,&DAT_00734418,"=\'");
-  uVar15 = *(ulong *)(param_2 + 8);
-  pbVar16 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar16 = param_2 + 1;
-    uVar15 = (ulong)(*param_2 >> 1);
+  uVar15 = *(ulong *)(param_1 + 8);
+  pbVar16 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar16 = param_1 + 1;
+    uVar15 = (ulong)(*param_1 >> 1);
   }
                     /* try { // try from 0040c690 to 0040c697 has its CatchHandler @ 0040d2e0 */
   puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_170,pbVar16,uVar15);
@@ -1070,19 +1070,19 @@ joined_r0x0040cdec:
                     /* try { // try from 0040cfdc to 0040cfeb has its CatchHandler @ 0040d2fc */
         Walaber::DatabaseIterator::getStringAtIndex(&bStack_90,&bStack_c0,0);
         bVar7 = bStack_90;
-        bVar3 = *param_2;
+        bVar3 = *param_1;
         uVar15 = (ulong)(bVar3 >> 1);
         if ((bVar3 & 1) != 0) {
-          uVar15 = *(ulong *)(param_2 + 8);
+          uVar15 = *(ulong *)(param_1 + 8);
         }
         uVar22 = (ulong)(bStack_90 >> 1);
         if ((bStack_90 & 1) != 0) {
           uVar22 = CONCAT17(uStack_81,uStack_88);
         }
         if (uVar15 == uVar22) {
-          pbVar16 = param_2 + 1;
+          pbVar16 = param_1 + 1;
           if ((bVar3 & 1) != 0) {
-            pbVar16 = *(byte **)(param_2 + 0x10);
+            pbVar16 = *(byte **)(param_1 + 0x10);
           }
           pbVar18 = (byte *)((ulong)&bStack_90 | 1);
           if ((bStack_90 & 1) != 0) {
@@ -1091,7 +1091,7 @@ joined_r0x0040cdec:
           if ((bVar3 & 1) == 0) {
             if (uVar15 != 0) {
               lVar20 = -(ulong)(bVar3 >> 1);
-              pbVar16 = param_2 + 1;
+              pbVar16 = param_1 + 1;
               do {
                 if (*pbVar16 != *pbVar18) goto LAB_0040d068;
                 pbVar16 = pbVar16 + 1;
@@ -1119,7 +1119,7 @@ joined_r0x0040d06c:
         iVar11 = iVar11 + 1;
       }
                     /* try { // try from 0040d0a8 to 0040d0c3 has its CatchHandler @ 0040d108 */
-      WaterConcept::GameSettings::levelShorthand(param_1,iVar25,iVar11,uVar9,uVar10 >> 0x1f,param_3 & 1);
+      WaterConcept::GameSettings::levelShorthand(this,iVar25,iVar11,uVar9,uVar10 >> 0x1f,param_2 & 1);
       Walaber::DatabaseIterator::~DatabaseIterator(&bStack_c0);
       Walaber::DatabaseIterator::~DatabaseIterator(&uStack_1a0);
       if ((uStack_170 & 1) != 0) {
@@ -1136,11 +1136,11 @@ joined_r0x0040d06c:
       operator delete(pcStack_140);
     }
   }
-  *param_1 = 0;
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *(undefined1 *)param_1 = 6;
-  *(undefined4 *)((long)param_1 + 1) = 0x525245;
+  *this = 0;
+  this[1] = 0;
+  this[2] = 0;
+  *(undefined1 *)this = 6;
+  *(undefined4 *)((long)this + 1) = 0x525245;
 LAB_0040cbb4:
   Walaber::DatabaseIterator::~DatabaseIterator(auStack_178);
   if ((bStack_130 & 1) != 0) {
@@ -1175,9 +1175,7 @@ LAB_0040cbb4:
    std::__ndk1::allocator<int> >, bool) */
 
 ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
-                (byte *param_1,ulong *param_2,int *param_3,ulong *param_4,ulong *param_5,
-                int *param_6,undefined4 *param_7,byte *param_8,undefined8 param_9,long *param_10,
-                byte param_11)
+                (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_2,int& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_5,int& param_6,int& param_7,bool& param_8,bool& param_9,std::__ndk1::vector<int, std::__ndk1::allocator<int>> param_10,bool param_11)
 
 {
   byte *pbVar1;
@@ -2924,7 +2922,7 @@ LAB_0040f56c:
    std::__ndk1::vector<int, std::__ndk1::allocator<int> >, bool) */
 
 void WaterConcept::GameSettings::goPlayLevel
-               (byte *param_1,int param_2,undefined8 param_3,byte param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int param_2,std::__ndk1::vector<int, std::__ndk1::allocator<int>> param_3,bool param_4)
 
 {
   char cVar1;
@@ -4455,7 +4453,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
 /* WaterConcept::GameSettings::playCinematic(Walaber::PropertyList&, int, WaterConcept::ScreenTypes)
     */
 
-void WaterConcept::GameSettings::playCinematic(undefined8 param_1,int param_2,undefined4 param_3)
+void WaterConcept::GameSettings::playCinematic(Walaber::PropertyList& param_1,int param_2,WaterConcept::ScreenTypes param_3)
 
 {
   long lVar1;
@@ -4890,7 +4888,7 @@ LAB_00411c70:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOWStorylineType) */
 
-void WaterConcept::GameSettings::updateLOTWParameters(undefined4 param_1)
+void WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOWStorylineType param_1)
 
 {
   long lVar1;
@@ -7761,7 +7759,7 @@ void WaterConcept::GameSettings::getChallengeIAPid(int p0)
 /* WaterConcept::GameSettings::getNextLevelPath(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >&) */
 
-void WaterConcept::GameSettings::getNextLevelPath(undefined8 param_1)
+void WaterConcept::GameSettings::getNextLevelPath(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1)
 
 {
   long lVar1;
@@ -10649,7 +10647,7 @@ ulong WaterConcept::GameSettings::nextLevelUnlockable(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineType, bool) */
 
-ulong WaterConcept::GameSettings::getStarCount(undefined4 param_1,ulong param_2)
+ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineType param_1,bool param_2)
 
 {
   undefined1 *puVar1;
@@ -11026,7 +11024,7 @@ ulong WaterConcept::GameSettings::getStarCount(undefined4 param_1,ulong param_2)
 
 /* WaterConcept::GameSettings::getTotalStarCount(WaterConceptConstants::StorylineType) */
 
-int WaterConcept::GameSettings::getTotalStarCount(undefined8 param_1)
+int WaterConcept::GameSettings::getTotalStarCount(WaterConceptConstants::StorylineType param_1)
 
 {
   int iVar1;
@@ -11048,7 +11046,7 @@ int WaterConcept::GameSettings::getTotalStarCount(undefined8 param_1)
 /* WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::StorylineType, bool, bool)
     */
 
-ulong WaterConcept::GameSettings::getTotalLevelCount(undefined4 param_1,ulong param_2,ulong param_3)
+ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::StorylineType param_1,bool param_2,bool param_3)
 
 {
   undefined2 *puVar1;
@@ -11726,7 +11724,7 @@ void WaterConcept::GameSettings::goMainMenu_v2(bool p0)
 
 /* WaterConcept::GameSettings::goWater2Upsell(Walaber::PropertyList) */
 
-void WaterConcept::GameSettings::goWater2Upsell(undefined8 param_1)
+void WaterConcept::GameSettings::goWater2Upsell(Walaber::PropertyList param_1)
 
 {
   Walaber::ScreenManager::pushScreen(0x27,param_1);
@@ -16455,7 +16453,7 @@ LAB_00420484:
 /* WaterConcept::GameSettings::appendPromotion(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::GameSettings::appendPromotion(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   ulong uVar1;
@@ -16478,17 +16476,17 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
                     /* try { // try from 00421db0 to 00421dcf has its CatchHandler @ 00421e74 */
   if ((uVar1 == 0) &&
      (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&promotionSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
-    uVar7 = param_2[1];
-    uVar6 = *param_2;
-    param_1[2] = param_2[2];
-    param_1[1] = uVar7;
-    *param_1 = uVar6;
-    param_2[1] = 0;
-    param_2[2] = 0;
-    *param_2 = 0;
+    uVar7 = param_1[1];
+    uVar6 = *param_1;
+    this[2] = param_1[2];
+    this[1] = uVar7;
+    *this = uVar6;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *param_1 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_1,"_");
     uVar1 = DAT_00735e48;
     puVar3 = DAT_00735e50;
     if ((promotionSuffix & 1) == 0) {
@@ -16499,9 +16497,9 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
     puVar5 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_50,puVar3,uVar1);
     uVar7 = puVar5[1];
     uVar6 = *puVar5;
-    param_1[2] = puVar5[2];
-    param_1[1] = uVar7;
-    *param_1 = uVar6;
+    this[2] = puVar5[2];
+    this[1] = uVar7;
+    *this = uVar6;
     puVar5[1] = 0;
     puVar5[2] = 0;
     *puVar5 = 0;
@@ -16525,7 +16523,7 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
 /* WaterConcept::GameSettings::appendTheme(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::GameSettings::appendTheme(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   ulong uVar1;
@@ -16548,17 +16546,17 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
                     /* try { // try from 00421edc to 00421efb has its CatchHandler @ 00421fa0 */
   if ((uVar1 == 0) &&
      (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&themeSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
-    uVar7 = param_2[1];
-    uVar6 = *param_2;
-    param_1[2] = param_2[2];
-    param_1[1] = uVar7;
-    *param_1 = uVar6;
-    param_2[1] = 0;
-    param_2[2] = 0;
-    *param_2 = 0;
+    uVar7 = param_1[1];
+    uVar6 = *param_1;
+    this[2] = param_1[2];
+    this[1] = uVar7;
+    *this = uVar6;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *param_1 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_1,"_");
     uVar1 = DAT_00735e60;
     puVar3 = DAT_00735e68;
     if ((themeSuffix & 1) == 0) {
@@ -16569,9 +16567,9 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
     puVar5 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_50,puVar3,uVar1);
     uVar7 = puVar5[1];
     uVar6 = *puVar5;
-    param_1[2] = puVar5[2];
-    param_1[1] = uVar7;
-    *param_1 = uVar6;
+    this[2] = puVar5[2];
+    this[1] = uVar7;
+    *this = uVar6;
     puVar5[1] = 0;
     puVar5[2] = 0;
     *puVar5 = 0;
@@ -16595,7 +16593,7 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
 /* WaterConcept::GameSettings::appendDuckSuffix(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8 *param_2)
+void WaterConcept::GameSettings::appendDuckSuffix(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   ulong uVar1;
@@ -16617,17 +16615,17 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
                     /* try { // try from 00422008 to 00422027 has its CatchHandler @ 004220cc */
   if ((uVar1 == 0) &&
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&duckSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
-    uVar6 = param_2[1];
-    uVar5 = *param_2;
-    param_1[2] = param_2[2];
-    param_1[1] = uVar6;
-    *param_1 = uVar5;
-    param_2[1] = 0;
-    param_2[2] = 0;
-    *param_2 = 0;
+    uVar6 = param_1[1];
+    uVar5 = *param_1;
+    this[2] = param_1[2];
+    this[1] = uVar6;
+    *this = uVar5;
+    param_1[1] = 0;
+    param_1[2] = 0;
+    *param_1 = 0;
   }
   else {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_2,"_");
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_50,param_1,"_");
     uVar1 = DAT_00735e78;
     uVar5 = DAT_00735e80;
     if (((byte)duckSuffix & 1) == 0) {
@@ -16638,9 +16636,9 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
     puVar4 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(abStack_50,uVar5,uVar1);
     uVar6 = puVar4[1];
     uVar5 = *puVar4;
-    param_1[2] = puVar4[2];
-    param_1[1] = uVar6;
-    *param_1 = uVar5;
+    this[2] = puVar4[2];
+    this[1] = uVar6;
+    *this = uVar5;
     puVar4[1] = 0;
     puVar4[2] = 0;
     *puVar4 = 0;
@@ -16664,18 +16662,18 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
 /* WaterConcept::GameSettings::stripIAPGoofyCode(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::GameSettings::stripIAPGoofyCode(undefined8 param_1,byte *param_2)
+void WaterConcept::GameSettings::stripIAPGoofyCode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   byte *pbVar1;
   long lVar2;
   ulong uVar3;
   
-  uVar3 = *(ulong *)(param_2 + 8);
-  pbVar1 = *(byte **)(param_2 + 0x10);
-  if ((*param_2 & 1) == 0) {
-    pbVar1 = param_2 + 1;
-    uVar3 = (ulong)(*param_2 >> 1);
+  uVar3 = *(ulong *)(param_1 + 8);
+  pbVar1 = *(byte **)(param_1 + 0x10);
+  if ((*param_1 & 1) == 0) {
+    pbVar1 = param_1 + 1;
+    uVar3 = (ulong)(*param_1 >> 1);
   }
   do {
     if (uVar3 == 0) goto LAB_00422138;
@@ -16683,11 +16681,11 @@ void WaterConcept::GameSettings::stripIAPGoofyCode(undefined8 param_1,byte *para
     uVar3 = uVar3 - 1;
   } while (pbVar1[lVar2] != 0x2e);
   if (uVar3 != 0xffffffffffffffff) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2,0,uVar3,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1,0,uVar3,param_1);
     return;
   }
 LAB_00422138:
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this);
   return;
 }
 
@@ -16700,18 +16698,18 @@ LAB_00422138:
 /* WaterConcept::GameSettings::getIAPGoodyCode(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::GameSettings::getIAPGoodyCode(undefined8 param_1,byte *param_2)
+void WaterConcept::GameSettings::getIAPGoodyCode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   byte *pbVar1;
   ulong uVar2;
   ulong uVar3;
   
-  pbVar1 = *(byte **)(param_2 + 0x10);
-  uVar2 = *(ulong *)(param_2 + 8);
-  if ((*param_2 & 1) == 0) {
-    pbVar1 = param_2 + 1;
-    uVar2 = (ulong)(*param_2 >> 1);
+  pbVar1 = *(byte **)(param_1 + 0x10);
+  uVar2 = *(ulong *)(param_1 + 8);
+  if ((*param_1 & 1) == 0) {
+    pbVar1 = param_1 + 1;
+    uVar2 = (ulong)(*param_1 >> 1);
   }
   do {
     uVar3 = uVar2;
@@ -16719,11 +16717,11 @@ void WaterConcept::GameSettings::getIAPGoodyCode(undefined8 param_1,byte *param_
     uVar2 = uVar3 - 1;
   } while (pbVar1[uVar3 - 1] != 0x2e);
   if (uVar3 - 1 != 0xffffffffffffffff) {
-    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2,uVar3,0xffffffffffffffff,param_2);
+    std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this,param_1,uVar3,0xffffffffffffffff,param_1);
     return;
   }
 LAB_0042218c:
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this);
   return;
 }
 
@@ -18562,7 +18560,7 @@ ulong WaterConcept::GameSettings::getConsecutiveDaysPlayed(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::GameSettings::getFurthestLevelInStoryline(WaterConceptConstants::StorylineType) */
 
-void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1,undefined4 param_2)
+void WaterConcept::GameSettings::getFurthestLevelInStoryline(WaterConceptConstants::StorylineType param_1)
 
 {
   long lVar1;
@@ -18718,7 +18716,7 @@ void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1
   puVar6[2] = 0;
   *puVar6 = 0;
                     /* try { // try from 004247ac to 004247bb has its CatchHandler @ 00425110 */
-  Walaber::StringHelper::intToStr(abStack_270,param_2);
+  Walaber::StringHelper::intToStr(abStack_270,param_1);
   uVar8 = (ulong)(abStack_270[0] >> 1);
   pvVar2 = (void *)((ulong)abStack_270 | 1);
   if ((abStack_270[0] & 1) != 0) {
@@ -19065,9 +19063,9 @@ void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1
   puVar7 = (undefined8 *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_e0,pvVar2,uVar8);
   uVar14 = puVar7[1];
   uVar13 = *puVar7;
-  param_1[2] = puVar7[2];
-  param_1[1] = uVar14;
-  *param_1 = uVar13;
+  this[2] = puVar7[2];
+  this[1] = uVar14;
+  *this = uVar13;
   puVar7[1] = 0;
   puVar7[2] = 0;
   *puVar7 = 0;
@@ -19243,7 +19241,7 @@ ulong WaterConcept::GameSettings::getFurthestLevelIndexInPack(byte *param_1)
 /* WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptConstants::StorylineType)
     */
 
-ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(undefined4 param_1)
+ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptConstants::StorylineType param_1)
 
 {
   undefined1 *puVar1;
@@ -21925,8 +21923,7 @@ void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(int p0,int p1)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, bool, bool, bool) */
 
 long * WaterConcept::GameSettings::copyAndFormatLabel
-                 (undefined8 param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,
-                 byte *param_5,byte *param_6,uint param_7,uint param_8,byte param_9)
+                 (Walaber::Widget_Label *param_1,int param_2,int param_3,Walaber::Vector2 const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,bool param_7,bool param_8,bool param_9)
 
 {
   ulong uVar1;
@@ -22064,8 +22061,7 @@ LAB_00428a78:
    const&, bool, bool) */
 
 long * WaterConcept::GameSettings::copyAndFormatButton
-                 (undefined8 param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,
-                 byte *param_5,byte *param_6,byte *param_7,uint param_8,byte param_9)
+                 (Walaber::Widget_PushButton *param_1,int param_2,int param_3,Walaber::Vector2 const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_6,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_7,bool param_8,bool param_9)
 
 {
   ulong uVar1;

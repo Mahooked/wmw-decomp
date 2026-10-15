@@ -31,69 +31,68 @@ void ndk::MotionEvent::MotionEvent(long param_1)
 /* ndk::MotionEvent::set(int, ndk::MotionEvent::ActionType, float*, float*, int*) */
 
 void ndk::MotionEvent::set
-               (uint *param_1,uint param_2,uint param_3,undefined4 *param_4,undefined4 *param_5,
-               undefined4 *param_6)
+               (int param_1,ndk::MotionEvent::ActionType param_2,float *param_3,float *param_4,int *param_5)
 
 {
   undefined4 *puVar1;
   ulong uVar2;
   
-  puVar1 = *(undefined4 **)(param_1 + 2);
-  *(undefined4 **)(param_1 + 4) = puVar1;
-  *(undefined8 *)(param_1 + 10) = *(undefined8 *)(param_1 + 8);
-  *(undefined8 *)(param_1 + 0x10) = *(undefined8 *)(param_1 + 0xe);
-  *(undefined8 *)(param_1 + 0x16) = *(undefined8 *)(param_1 + 0x14);
-  *param_1 = param_2;
-  param_1[1] = param_3;
-  *(undefined8 *)(param_1 + 0x1c) = *(undefined8 *)(param_1 + 0x1a);
-  if (0 < (int)param_2) {
-    uVar2 = (ulong)param_2;
+  puVar1 = *(undefined4 **)(this + 2);
+  *(undefined4 **)(this + 4) = puVar1;
+  *(undefined8 *)(this + 10) = *(undefined8 *)(this + 8);
+  *(undefined8 *)(this + 0x10) = *(undefined8 *)(this + 0xe);
+  *(undefined8 *)(this + 0x16) = *(undefined8 *)(this + 0x14);
+  *this = param_1;
+  this[1] = param_2;
+  *(undefined8 *)(this + 0x1c) = *(undefined8 *)(this + 0x1a);
+  if (0 < (int)param_1) {
+    uVar2 = (ulong)param_1;
     while( true ) {
       uVar2 = uVar2 - 1;
-      if (puVar1 == *(undefined4 **)(param_1 + 6)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 2,param_4);
+      if (puVar1 == *(undefined4 **)(this + 6)) {
+        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(this + 2,param_3);
+      }
+      else {
+        *puVar1 = *param_3;
+        *(undefined4 **)(this + 4) = puVar1 + 1;
+      }
+      puVar1 = *(undefined4 **)(this + 10);
+      if (puVar1 == *(undefined4 **)(this + 0xc)) {
+        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(this + 8,param_4);
       }
       else {
         *puVar1 = *param_4;
-        *(undefined4 **)(param_1 + 4) = puVar1 + 1;
+        *(undefined4 **)(this + 10) = puVar1 + 1;
       }
-      puVar1 = *(undefined4 **)(param_1 + 10);
-      if (puVar1 == *(undefined4 **)(param_1 + 0xc)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 8,param_5);
+      puVar1 = *(undefined4 **)(this + 0x1c);
+      if (puVar1 == *(undefined4 **)(this + 0x1e)) {
+        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(this + 0x1a,param_5);
       }
       else {
         *puVar1 = *param_5;
-        *(undefined4 **)(param_1 + 10) = puVar1 + 1;
+        *(undefined4 **)(this + 0x1c) = puVar1 + 1;
       }
-      puVar1 = *(undefined4 **)(param_1 + 0x1c);
-      if (puVar1 == *(undefined4 **)(param_1 + 0x1e)) {
-        void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int const&>(param_1 + 0x1a,param_6);
+      puVar1 = *(undefined4 **)(this + 0x10);
+      if (puVar1 == *(undefined4 **)(this + 0x12)) {
+        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(this + 0xe,param_3);
       }
       else {
-        *puVar1 = *param_6;
-        *(undefined4 **)(param_1 + 0x1c) = puVar1 + 1;
+        *puVar1 = *param_3;
+        *(undefined4 **)(this + 0x10) = puVar1 + 1;
       }
-      puVar1 = *(undefined4 **)(param_1 + 0x10);
-      if (puVar1 == *(undefined4 **)(param_1 + 0x12)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0xe,param_4);
+      puVar1 = *(undefined4 **)(this + 0x16);
+      if (puVar1 == *(undefined4 **)(this + 0x18)) {
+        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(this + 0x14,param_4);
       }
       else {
         *puVar1 = *param_4;
-        *(undefined4 **)(param_1 + 0x10) = puVar1 + 1;
-      }
-      puVar1 = *(undefined4 **)(param_1 + 0x16);
-      if (puVar1 == *(undefined4 **)(param_1 + 0x18)) {
-        void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float const&>(param_1 + 0x14,param_5);
-      }
-      else {
-        *puVar1 = *param_5;
-        *(undefined4 **)(param_1 + 0x16) = puVar1 + 1;
+        *(undefined4 **)(this + 0x16) = puVar1 + 1;
       }
       if (uVar2 == 0) break;
-      puVar1 = *(undefined4 **)(param_1 + 4);
-      param_6 = param_6 + 1;
+      puVar1 = *(undefined4 **)(this + 4);
       param_5 = param_5 + 1;
       param_4 = param_4 + 1;
+      param_3 = param_3 + 1;
     }
   }
   return;

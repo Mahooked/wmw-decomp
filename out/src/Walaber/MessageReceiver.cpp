@@ -9,15 +9,15 @@
 
 /* Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory) */
 
-void Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 param_2)
+void Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory param_1)
 
 {
   undefined8 uVar1;
   
-  *(undefined4 *)(param_1 + 1) = param_2;
-  *param_1 = &PTR__MessageReceiver_00710d70;
+  *(undefined4 *)(this + 1) = param_1;
+  *this = &PTR__MessageReceiver_00710d70;
   uVar1 = Walaber::BroadcastManager::getInstancePtr();
-  Walaber::BroadcastManager::_addReceiver(uVar1,param_1);
+  Walaber::BroadcastManager::_addReceiver(uVar1,this);
   return;
 }
 

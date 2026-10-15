@@ -60,34 +60,34 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_ios
    >::basic_iostream(std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >*) */
 
 void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_iostream
-               (undefined8 *param_1,long param_2)
+               (std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char>> *param_1)
 
 {
-  *(undefined4 *)(param_1 + 4) = 0x1002;
-  param_1[8] = param_2;
-  param_1[1] = 0;
-  *param_1 = &PTR__basic_istream_00716648;
-  param_1[0x12] = 0;
-  param_1[0x13] = 0;
-  param_1[0x10] = 0;
-  param_1[0x11] = 0;
-  param_1[0xe] = 0;
-  param_1[0xf] = 0;
-  param_1[0xc] = 0;
-  param_1[0xd] = 0;
-  param_1[3] = &PTR__basic_istream_00716670;
-  *(uint *)(param_1 + 7) = (uint)(param_2 == 0);
-  *(undefined4 *)((long)param_1 + 0x3c) = 0;
-  param_1[6] = 0;
-  param_1[5] = 6;
-  param_1[10] = 0;
-  param_1[0xb] = 0;
-  std::__ndk1::locale::locale(param_1 + 9);
-  param_1[0x14] = 0;
-  *(undefined4 *)(param_1 + 0x15) = 0xffffffff;
-  *param_1 = &PTR__basic_iostream_00716490;
-  param_1[3] = &PTR__basic_iostream_007164e0;
-  param_1[2] = &PTR__basic_iostream_007164b8;
+  *(undefined4 *)(this + 4) = 0x1002;
+  this[8] = param_1;
+  this[1] = 0;
+  *this = &PTR__basic_istream_00716648;
+  this[0x12] = 0;
+  this[0x13] = 0;
+  this[0x10] = 0;
+  this[0x11] = 0;
+  this[0xe] = 0;
+  this[0xf] = 0;
+  this[0xc] = 0;
+  this[0xd] = 0;
+  this[3] = &PTR__basic_istream_00716670;
+  *(uint *)(this + 7) = (uint)(param_1 == 0);
+  *(undefined4 *)((long)this + 0x3c) = 0;
+  this[6] = 0;
+  this[5] = 6;
+  this[10] = 0;
+  this[0xb] = 0;
+  std::__ndk1::locale::locale(this + 9);
+  this[0x14] = 0;
+  *(undefined4 *)(this + 0x15) = 0xffffffff;
+  *this = &PTR__basic_iostream_00716490;
+  this[3] = &PTR__basic_iostream_007164e0;
+  this[2] = &PTR__basic_iostream_007164b8;
   return;
 }
 

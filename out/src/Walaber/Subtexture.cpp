@@ -51,34 +51,34 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
    const&) */
 
 void Walaber::Subtexture::Subtexture
-               (undefined8 *param_1,undefined8 param_2,long *param_3,ulong *param_4)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::TextureData const& param_3)
 
 {
   int *piVar1;
   long lVar2;
   ulong uVar3;
   
-  Walaber::Texture::Texture(param_1,param_2,1);
-  *param_1 = &PTR__Subtexture_00710208;
-  lVar2 = *param_3;
-  param_1[0x18] = lVar2;
-  piVar1 = (int *)param_3[1];
-  param_1[0x19] = piVar1;
+  Walaber::Texture::Texture(this,param_1,1);
+  *this = &PTR__Subtexture_00710208;
+  lVar2 = *param_2;
+  this[0x18] = lVar2;
+  piVar1 = (int *)param_2[1];
+  this[0x19] = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
                     /* try { // try from 003970c0 to 003970c3 has its CatchHandler @ 0039711c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x1a,*param_3 + 8);
-  uVar3 = *param_4;
-  *(ulong *)((long)param_1 + 0x84) = param_4[1];
-  *(ulong *)((long)param_1 + 0x7c) = uVar3;
-  *(float *)((long)param_1 + 0x94) = (float)(uVar3 & 0xffffffff);
-  *(float *)(param_1 + 0x13) = (float)(uVar3 >> 0x20);
-  *(int *)((long)param_1 + 0x8c) = (int)param_4[2];
-  *(undefined4 *)(param_1 + 0x12) = *(undefined4 *)((long)param_4 + 0x14);
-  *(ulong *)((long)param_1 + 0x9c) = param_4[3];
-  *(int *)((long)param_1 + 0xa4) = (int)param_4[4];
-  *(undefined4 *)(param_1 + 0xf) = *(undefined4 *)(*param_3 + 0x78);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x1a,*param_2 + 8);
+  uVar3 = *param_3;
+  *(ulong *)((long)this + 0x84) = param_3[1];
+  *(ulong *)((long)this + 0x7c) = uVar3;
+  *(float *)((long)this + 0x94) = (float)(uVar3 & 0xffffffff);
+  *(float *)(this + 0x13) = (float)(uVar3 >> 0x20);
+  *(int *)((long)this + 0x8c) = (int)param_3[2];
+  *(undefined4 *)(this + 0x12) = *(undefined4 *)((long)param_3 + 0x14);
+  *(ulong *)((long)this + 0x9c) = param_3[3];
+  *(int *)((long)this + 0xa4) = (int)param_3[4];
+  *(undefined4 *)(this + 0xf) = *(undefined4 *)(*param_2 + 0x78);
   return;
 }
 

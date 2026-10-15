@@ -1759,7 +1759,7 @@ void WaterConcept::Screen_EditorObjectEditor::_snapPosition(Walaber__Vector2 *p0
 /* WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
 
-void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 param_2)
+void WaterConcept::Screen_EditorObjectEditor::_save(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
   long *plVar1;
@@ -1821,7 +1821,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
     operator delete((void *)CONCAT53(uStack_95,CONCAT21(uStack_97,abStack_a8[0x10])));
   }
   uVar8 = xmlNewChild(uVar7,0,"Shapes",0);
-  lVar14 = *(long *)(param_1 + 0xb8);
+  lVar14 = *(long *)(this + 0xb8);
   if (*(long *)(lVar14 + 0xe8) != *(long *)(lVar14 + 0xe0)) {
     uVar15 = 0;
     do {
@@ -1846,10 +1846,10 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
       uVar12 = (*(long *)(lVar14 + 0xe8) - lVar11 >> 3) * -0x5555555555555555;
     } while (uVar15 <= uVar12 && uVar12 - uVar15 != 0);
   }
-  if (*(long *)(param_1 + 0x148) != *(long *)(param_1 + 0x140)) {
+  if (*(long *)(this + 0x148) != *(long *)(this + 0x140)) {
     uVar8 = xmlNewChild(uVar7,0,"Sprites",0);
-    plVar17 = *(long **)(param_1 + 0x140);
-    if (plVar17 != *(long **)(param_1 + 0x148)) {
+    plVar17 = *(long **)(this + 0x140);
+    if (plVar17 != *(long **)(this + 0x148)) {
       do {
         uVar9 = xmlNewChild(uVar8,0,"Sprite",0);
         if (*plVar17 != plVar17[1]) {
@@ -1871,10 +1871,10 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
           } while (plVar1 != (long *)plVar17[1]);
         }
         plVar17 = plVar17 + 3;
-      } while (plVar17 != *(long **)(param_1 + 0x148));
+      } while (plVar17 != *(long **)(this + 0x148));
     }
   }
-  lVar14 = *(long *)(param_1 + 0xb8);
+  lVar14 = *(long *)(this + 0xb8);
   uStack_88 = 0;
   uStack_80 = 0;
   plVar17 = *(long **)(lVar14 + 0xc0);
@@ -1927,7 +1927,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
     operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
   }
   Walaber::PropertyList::~PropertyList(&puStack_90);
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_2);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_1);
   pvVar3 = (void *)((ulong)abStack_d8 | 1);
   if ((abStack_d8[0] & 1) != 0) {
     pvVar3 = pvStack_c8;

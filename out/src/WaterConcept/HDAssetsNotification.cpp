@@ -337,7 +337,7 @@ void WaterConcept::HDAssetsNotification::update(float p0)
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, float) */
 
 void WaterConcept::HDAssetsNotification::goNotify
-               (undefined4 param_1,long param_2,undefined8 param_3)
+               (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,float param_2)
 
 {
   long lVar1;
@@ -345,18 +345,18 @@ void WaterConcept::HDAssetsNotification::goNotify
   undefined1 uVar3;
   long lVar4;
   
-  if (*(char *)(param_2 + 0x205) != '\0') {
-    if (*(int *)(param_2 + 0x1fc) != 0) {
-      lVar1 = param_2 + 8;
+  if (*(char *)(param_1 + 0x205) != '\0') {
+    if (*(int *)(param_1 + 0x1fc) != 0) {
+      lVar1 = param_1 + 8;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,2);
       *(undefined1 *)(lVar4 + 0x155) = 0xff;
       *(undefined1 *)(lVar4 + 0x156) = 0xff;
       *(undefined1 *)(lVar4 + 0x157) = 0xff;
       *(undefined1 *)(lVar4 + 0x158) = 0xff;
-      *(undefined1 *)(lVar4 + 400) = *(undefined1 *)(param_2 + 500);
-      *(undefined1 *)(lVar4 + 0x191) = *(undefined1 *)(param_2 + 0x1f5);
-      *(undefined1 *)(lVar4 + 0x192) = *(undefined1 *)(param_2 + 0x1f6);
-      uVar3 = *(undefined1 *)(param_2 + 0x1f7);
+      *(undefined1 *)(lVar4 + 400) = *(undefined1 *)(param_1 + 500);
+      *(undefined1 *)(lVar4 + 0x191) = *(undefined1 *)(param_1 + 0x1f5);
+      *(undefined1 *)(lVar4 + 0x192) = *(undefined1 *)(param_1 + 0x1f6);
+      uVar3 = *(undefined1 *)(param_1 + 0x1f7);
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       *(undefined1 *)(lVar4 + 0x193) = uVar3;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,3);
@@ -366,7 +366,7 @@ void WaterConcept::HDAssetsNotification::goNotify
       *(undefined1 *)(lVar4 + 0x158) = 0xff;
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,1);
-      uVar2 = *(undefined4 *)(param_2 + 0x1f8);
+      uVar2 = *(undefined4 *)(param_1 + 0x1f8);
       *(undefined1 *)(lVar4 + 0x8c) = 1;
       *(undefined4 *)(lVar4 + 0x144) = uVar2;
       lVar4 = Walaber::WidgetManager::getWidget(lVar1,5);
@@ -377,13 +377,13 @@ void WaterConcept::HDAssetsNotification::goNotify
       *(undefined1 *)(lVar4 + 0x8c) = 0;
       Walaber::WidgetManager::getWidget(lVar1,4);
       Walaber::Widget_ProgressBar::updateValue(0);
-      *(undefined8 *)(param_2 + 0x1fc) = 0;
+      *(undefined8 *)(param_1 + 0x1fc) = 0;
     }
-    Walaber::Widget_Label::setText(*(undefined8 *)(param_2 + 0x98),param_3);
-    *(undefined4 *)(param_2 + 0x1bc) = param_1;
-    *(undefined8 *)(param_2 + 0x1b0) = *(undefined8 *)(param_2 + 0x108);
-    (**(code **)(**(long **)(param_2 + 8) + 0x10))(*(long **)(param_2 + 8),param_2 + 0x1b0);
-    *(undefined4 *)(param_2 + 0x1c0) = 0;
+    Walaber::Widget_Label::setText(*(undefined8 *)(param_1 + 0x98),param_2);
+    *(undefined4 *)(param_1 + 0x1bc) = this;
+    *(undefined8 *)(param_1 + 0x1b0) = *(undefined8 *)(param_1 + 0x108);
+    (**(code **)(**(long **)(param_1 + 8) + 0x10))(*(long **)(param_1 + 8),param_1 + 0x1b0);
+    *(undefined4 *)(param_1 + 0x1c0) = 0;
   }
   return;
 }
@@ -765,33 +765,33 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::HDAssetsNotification::handleFocus(Walaber::Widget*, Walaber::FocusEvent) */
 
-void WaterConcept::HDAssetsNotification::handleFocus(undefined8 param_1,long param_2,int param_3)
+void WaterConcept::HDAssetsNotification::handleFocus(Walaber::Widget *param_1,Walaber::FocusEvent param_2)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   
-  if (*(int *)(param_2 + 0x84) != 1) {
+  if (*(int *)(param_1 + 0x84) != 1) {
     return;
   }
-  if ((param_3 == 5) || (param_3 == 2)) {
-    if (*(char *)(param_2 + 0x150) != '\0') {
+  if ((param_2 == 5) || (param_2 == 2)) {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();
     uVar2 = 0x8d;
   }
   else {
-    if (param_3 != 0) {
+    if (param_2 != 0) {
       return;
     }
-    if (*(char *)(param_2 + 0x150) != '\0') {
+    if (*(char *)(param_1 + 0x150) != '\0') {
       return;
     }
-    if (*(char *)(param_2 + 0x8d) == '\0') {
+    if (*(char *)(param_1 + 0x8d) == '\0') {
       return;
     }
     uVar1 = Walaber::SoundManager::getInstancePtr();

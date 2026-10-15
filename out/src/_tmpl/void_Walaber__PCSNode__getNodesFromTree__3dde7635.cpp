@@ -11,7 +11,7 @@
 /* void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode*, int,
    std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*> >&) */
 
-void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(undefined8 param_1,int param_2,long param_3)
+void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>& param_3)
 
 {
   long lVar1;

@@ -63,8 +63,7 @@ void Walaber::Widget_SlideWheel::init(void)
    Walaber::SharedPtr<Walaber::Texture>) */
 
 void Walaber::Widget_SlideWheel::Widget_SlideWheel
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5)
+               (int param_1,Walaber::Vector2 param_2,Walaber::Vector2 param_3,Walaber::SharedPtr<Walaber::Texture> param_4)
 
 {
   long lVar1;
@@ -76,21 +75,21 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  uStack_40 = *param_3;
-  uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,0xd,&uStack_40,&uStack_48,1,1);
-  *(undefined4 *)((long)param_1 + 0xfc) = 0xff000000;
-  *param_1 = &PTR__Widget_SlideWheel_0070fbf8;
-  lVar3 = *param_5;
-  param_1[0x20] = lVar3;
-  piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
+  uStack_40 = *param_2;
+  uStack_48 = *param_3;
+  Walaber::Widget::Widget(this,param_1,0xd,&uStack_40,&uStack_48,1,1);
+  *(undefined4 *)((long)this + 0xfc) = 0xff000000;
+  *this = &PTR__Widget_SlideWheel_0070fbf8;
+  lVar3 = *param_4;
+  this[0x20] = lVar3;
+  piVar2 = (int *)param_4[1];
+  this[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_1[0x26] = 0;
-  param_1[0x27] = 0;
-  param_1[0x25] = 0;
+  this[0x26] = 0;
+  this[0x27] = 0;
+  this[0x25] = 0;
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return;
   }

@@ -14,7 +14,7 @@
    const*>(std::__ndk1::__wrap_iter<char const*>, char const*, char const*) */
 
 long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::allocator<char>>::
-     insert<char_const*>(ulong *param_1,long param_2,undefined1 *param_3,undefined1 *param_4)
+     insert<char_const*>(std::__ndk1::__wrap_iter<char const*> param_1,char const *param_2,char const *param_3)
 
 {
   byte bVar1;
@@ -43,25 +43,25 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   
   lVar6 = tpidr_el0;
   lStack_68 = *(long *)(lVar6 + 0x28);
-  bVar1 = (byte)*param_1;
+  bVar1 = (byte)*this;
   if ((bVar1 & 1) == 0) {
-    uVar8 = (long)param_1 + 1;
+    uVar8 = (long)this + 1;
   }
   else {
-    uVar8 = param_1[2];
+    uVar8 = this[2];
   }
-  uVar2 = (long)param_4 - (long)param_3;
-  lVar14 = param_2 - uVar8;
+  uVar2 = (long)param_3 - (long)param_2;
+  lVar14 = param_1 - uVar8;
   if (uVar2 != 0) {
     if ((bVar1 & 1) == 0) {
-      puVar4 = (undefined1 *)((long)param_1 + 1);
+      puVar4 = (undefined1 *)((long)this + 1);
       uVar9 = (ulong)(bVar1 >> 1);
     }
     else {
-      uVar9 = param_1[1];
-      puVar4 = (undefined1 *)param_1[2];
+      uVar9 = this[1];
+      puVar4 = (undefined1 *)this[2];
     }
-    if ((puVar4 <= param_3) && (param_3 < puVar4 + uVar9)) {
+    if ((puVar4 <= param_2) && (param_2 < puVar4 + uVar9)) {
       uStack_80 = 0;
       uStack_78 = 0;
       puStack_70 = (undefined1 *)0x0;
@@ -80,21 +80,21 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
         uStack_78 = uVar2;
         puStack_70 = puVar4;
       }
-      if (param_3 != param_4) {
+      if (param_2 != param_3) {
         puVar13 = puVar4;
         if (uVar2 < 0x20) {
 LAB_005e5024:
           do {
-            puVar7 = param_3 + 1;
-            *puVar13 = *param_3;
-            param_3 = puVar7;
+            puVar7 = param_2 + 1;
+            *puVar13 = *param_2;
+            param_2 = puVar7;
             puVar13 = puVar13 + 1;
-          } while (param_4 != puVar7);
+          } while (param_3 != puVar7);
         }
         else {
           uVar9 = uVar2 & 0xffffffffffffffe0;
           puVar10 = (undefined8 *)(puVar4 + 0x10);
-          puVar11 = (undefined8 *)(param_3 + 0x10);
+          puVar11 = (undefined8 *)(param_2 + 0x10);
           uVar8 = uVar9;
           do {
             puVar3 = puVar11 + -1;
@@ -109,7 +109,7 @@ LAB_005e5024:
             *puVar10 = uVar17;
             puVar10 = puVar10 + 4;
           } while (uVar8 != 0);
-          param_3 = param_3 + uVar9;
+          param_2 = param_2 + uVar9;
           puVar13 = puVar4 + uVar9;
           if (uVar2 != uVar9) goto LAB_005e5024;
         }
@@ -123,7 +123,7 @@ LAB_005e5024:
         puVar4 = puStack_70;
       }
                     /* try { // try from 005e5060 to 005e506b has its CatchHandler @ 005e5250 */
-      lVar14 = std::__ndk1::enable_if<__is_forward_iterator<char const*>::value&&__libcpp_string_gets_noexcept_iterator<char const*>::value, std::__ndk1::__wrap_iter<char*>>::type std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert<char const*>(param_1,param_2,puVar4,puVar4 + uVar8);
+      lVar14 = std::__ndk1::enable_if<__is_forward_iterator<char const*>::value&&__libcpp_string_gets_noexcept_iterator<char const*>::value, std::__ndk1::__wrap_iter<char*>>::type std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert<char const*>(this,param_1,puVar4,puVar4 + uVar8);
       if ((uStack_80 & 1) != 0) {
         operator delete(puStack_70);
       }
@@ -135,21 +135,21 @@ LAB_005e5024:
       uVar9 = (ulong)bVar1;
     }
     else {
-      uVar9 = *param_1;
-      uVar15 = param_1[1];
+      uVar9 = *this;
+      uVar15 = this[1];
       uVar12 = (uVar9 & 0xfffffffffffffffe) - 1;
     }
     if (uVar12 - uVar15 < uVar2) {
       uVar9 = uVar15 + uVar2;
       if (-uVar12 - 0x11 < uVar9 - uVar12) {
-        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
+        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(this);
         return lVar6;
       }
       if ((bVar1 & 1) == 0) {
-        p0 = (void *)((long)param_1 + 1);
+        p0 = (void *)((long)this + 1);
       }
       else {
-        p0 = (void *)param_1[2];
+        p0 = (void *)this[2];
       }
       if (uVar12 < 0x7fffffffffffffe7) {
         uVar5 = uVar12 << 1;
@@ -176,34 +176,34 @@ LAB_005e5024:
       if (uVar12 != 0x16) {
         operator delete(p0);
       }
-      param_1[2] = uVar5;
-      *param_1 = uVar9 | 1;
+      this[2] = uVar5;
+      *this = uVar9 | 1;
 LAB_005e5164:
-      param_1[1] = uVar15 + uVar2;
+      this[1] = uVar15 + uVar2;
     }
     else {
       if ((bVar1 & 1) == 0) {
-        uVar5 = (long)param_1 + 1;
+        uVar5 = (long)this + 1;
       }
       else {
-        uVar5 = param_1[2];
+        uVar5 = this[2];
       }
       if (uVar15 - lVar14 != 0) {
         memmove(uVar5 + lVar14 + uVar2,uVar5 + lVar14,uVar15 - lVar14);
-        uVar9 = (ulong)(byte)*param_1;
+        uVar9 = (ulong)(byte)*this;
       }
       if ((uVar9 & 1) != 0) goto LAB_005e5164;
-      *(char *)param_1 = ((char)uVar15 + (char)uVar2) * '\x02';
+      *(char *)this = ((char)uVar15 + (char)uVar2) * '\x02';
     }
     *(undefined1 *)(uVar5 + uVar15 + uVar2) = 0;
-    if (param_3 != param_4) {
+    if (param_2 != param_3) {
       puVar4 = (undefined1 *)(uVar5 + lVar14);
       if ((0x1f < uVar2) &&
-         ((param_4 <= puVar4 || (param_4 + uVar5 + ((param_2 - (long)param_3) - uVar8) <= param_3)))
+         ((param_3 <= puVar4 || (param_3 + uVar5 + ((param_1 - (long)param_2) - uVar8) <= param_2)))
          ) {
         uVar9 = uVar2 & 0xffffffffffffffe0;
-        puVar10 = (undefined8 *)(param_3 + 0x10);
-        puVar11 = (undefined8 *)(uVar5 + ((param_2 + 0x10) - uVar8));
+        puVar10 = (undefined8 *)(param_2 + 0x10);
+        puVar11 = (undefined8 *)(uVar5 + ((param_1 + 0x10) - uVar8));
         uVar8 = uVar9;
         do {
           puVar3 = puVar10 + -1;
@@ -219,23 +219,23 @@ LAB_005e5164:
           puVar11 = puVar11 + 4;
         } while (uVar8 != 0);
         puVar4 = puVar4 + uVar9;
-        param_3 = param_3 + uVar9;
+        param_2 = param_2 + uVar9;
         if (uVar2 == uVar9) goto LAB_005e51f0;
       }
       do {
-        puVar13 = param_3 + 1;
-        *puVar4 = *param_3;
+        puVar13 = param_2 + 1;
+        *puVar4 = *param_2;
         puVar4 = puVar4 + 1;
-        param_3 = puVar13;
-      } while (param_4 != puVar13);
+        param_2 = puVar13;
+      } while (param_3 != puVar13);
     }
   }
 LAB_005e51f0:
-  if ((*param_1 & 1) == 0) {
-    uVar8 = (long)param_1 + 1;
+  if ((*this & 1) == 0) {
+    uVar8 = (long)this + 1;
   }
   else {
-    uVar8 = param_1[2];
+    uVar8 = this[2];
   }
   lVar14 = uVar8 + lVar14;
 LAB_005e5208:

@@ -14,7 +14,7 @@
 
 void std::__ndk1::
      vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::vector(undefined8 *param_1,long *param_2)
+     ::vector(std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>> const& param_1)
 
 {
   undefined1 *puVar1;
@@ -23,16 +23,16 @@ void std::__ndk1::
   undefined8 *puVar4;
   undefined8 *puVar5;
   
-  param_1[1] = 0;
-  param_1[2] = 0;
-  *param_1 = 0;
-  if (param_2[1] - *param_2 != 0) {
+  this[1] = 0;
+  this[2] = 0;
+  *this = 0;
+  if (param_1[1] - *param_1 != 0) {
                     /* try { // try from 0052fed8 to 0052fedb has its CatchHandler @ 0052ff38 */
-    std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::__vallocate(param_1,param_2[1] - *param_2 >> 5);
-    puVar4 = (undefined8 *)*param_2;
-    puVar2 = (undefined8 *)param_2[1];
+    std::__ndk1::vector<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>::__vallocate(this,param_1[1] - *param_1 >> 5);
+    puVar4 = (undefined8 *)*param_1;
+    puVar2 = (undefined8 *)param_1[1];
     if (puVar4 != puVar2) {
-      puVar5 = (undefined8 *)param_1[1];
+      puVar5 = (undefined8 *)this[1];
       do {
         *puVar5 = *puVar4;
         puVar5[1] = puVar4[1];
@@ -42,8 +42,8 @@ void std::__ndk1::
         puVar4 = puVar4 + 4;
         *(undefined1 *)((long)puVar5 + 0x1c) = *puVar1;
         *(undefined4 *)(puVar5 + 3) = uVar3;
-        puVar5 = (undefined8 *)(param_1[1] + 0x20);
-        param_1[1] = puVar5;
+        puVar5 = (undefined8 *)(this[1] + 0x20);
+        this[1] = puVar5;
       } while (puVar4 != puVar2);
     }
   }
@@ -92,7 +92,7 @@ void std::__ndk1::
 
 void std::__ndk1::
      vector<WaterConcept::Screen_MainMenu_v2::DuckInfo,std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>>
-     ::__swap_out_circular_buffer(long *param_1,undefined8 *param_2)
+     ::__swap_out_circular_buffer(std::__ndk1::__split_buffer<WaterConcept::Screen_MainMenu_v2::DuckInfo, std::__ndk1::allocator<WaterConcept::Screen_MainMenu_v2::DuckInfo>&>& param_1)
 
 {
   undefined4 uVar1;
@@ -101,13 +101,13 @@ void std::__ndk1::
   undefined8 *puVar4;
   undefined8 *puVar5;
   
-  puVar2 = (undefined8 *)*param_1;
-  if ((undefined8 *)param_1[1] == puVar2) {
-    lVar3 = param_2[1];
+  puVar2 = (undefined8 *)*this;
+  if ((undefined8 *)this[1] == puVar2) {
+    lVar3 = param_1[1];
   }
   else {
-    lVar3 = param_2[1];
-    puVar4 = (undefined8 *)param_1[1];
+    lVar3 = param_1[1];
+    puVar4 = (undefined8 *)this[1];
     do {
       puVar5 = puVar4 + -4;
       *(undefined8 *)(lVar3 + -0x20) = *puVar5;
@@ -116,21 +116,21 @@ void std::__ndk1::
       uVar1 = *(undefined4 *)(puVar4 + -1);
       *(undefined1 *)(lVar3 + -4) = *(undefined1 *)((long)puVar4 + -4);
       *(undefined4 *)(lVar3 + -8) = uVar1;
-      lVar3 = param_2[1] + -0x20;
-      param_2[1] = lVar3;
+      lVar3 = param_1[1] + -0x20;
+      param_1[1] = lVar3;
       puVar4 = puVar5;
     } while (puVar2 != puVar5);
-    puVar2 = (undefined8 *)*param_1;
+    puVar2 = (undefined8 *)*this;
   }
-  *param_1 = lVar3;
-  param_2[1] = puVar2;
-  lVar3 = param_1[1];
-  param_1[1] = param_2[2];
-  param_2[2] = lVar3;
-  lVar3 = param_1[2];
-  param_1[2] = param_2[3];
-  param_2[3] = lVar3;
-  *param_2 = param_2[1];
+  *this = lVar3;
+  param_1[1] = puVar2;
+  lVar3 = this[1];
+  this[1] = param_1[2];
+  param_1[2] = lVar3;
+  lVar3 = this[2];
+  this[2] = param_1[3];
+  param_1[3] = lVar3;
+  *param_1 = param_1[1];
   return;
 }
 

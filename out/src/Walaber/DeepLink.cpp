@@ -38,7 +38,7 @@ void Walaber::DeepLink::~DeepLink(void)
 /* Walaber::DeepLink::RegisterScreen(unsigned int, std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void Walaber::DeepLink::RegisterScreen(undefined4 param_1,undefined8 param_2)
+void Walaber::DeepLink::RegisterScreen(unsigned int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2)
 
 {
   long lVar1;
@@ -199,7 +199,7 @@ void Walaber::DeepLink::UnregisterScreen(uint p0)
 /* Walaber::DeepLink::UnregisterScreen(std::__ndk1::basic_string<char,
    std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
 
-void Walaber::DeepLink::UnregisterScreen(undefined8 param_1)
+void Walaber::DeepLink::UnregisterScreen(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
   unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&sm_mapDeepLinkedScreens,param_1);

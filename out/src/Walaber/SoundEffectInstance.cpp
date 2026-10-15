@@ -12,27 +12,26 @@
    std::__ndk1::allocator<char> >) */
 
 void Walaber::SoundEffectInstance::SoundEffectInstance
-               (undefined4 param_1,undefined8 *param_2,long *param_3,undefined8 param_4,
-               undefined8 param_5)
+               (Walaber::SharedPtr<Walaber::SoundResource> param_1,FMOD::ChannelGroup *param_2,float param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_4)
 
 {
   int *piVar1;
   long lVar2;
   
-  *param_2 = &PTR__SoundEffectInstance_0070e628;
-  lVar2 = *param_3;
-  param_2[1] = lVar2;
-  piVar1 = (int *)param_3[1];
-  param_2[2] = piVar1;
+  *param_1 = &PTR__SoundEffectInstance_0070e628;
+  lVar2 = *param_2;
+  param_1[1] = lVar2;
+  piVar1 = (int *)param_2[1];
+  param_1[2] = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_2[3] = 0;
-  param_2[4] = param_4;
-  *(undefined4 *)((long)param_2 + 0x2c) = param_1;
+  param_1[3] = 0;
+  param_1[4] = param_3;
+  *(undefined4 *)((long)param_1 + 0x2c) = this;
                     /* try { // try from 0034c8f4 to 0034c8fb has its CatchHandler @ 0034c90c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_2 + 6,param_5);
-  *(undefined1 *)(param_2 + 9) = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 6,param_4);
+  *(undefined1 *)(param_1 + 9) = 0;
   return;
 }
 
