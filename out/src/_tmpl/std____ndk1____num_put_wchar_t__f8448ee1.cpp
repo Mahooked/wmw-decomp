@@ -41,8 +41,8 @@ void std::__ndk1::__num_put<wchar_t>::__widen_and_group_int
   
   lVar4 = tpidr_el0;
   lStack_68 = *(long *)(lVar4 + 0x28);
-  plVar8 = (long *)std::__ndk1::locale::use_facet const(p6,&ctype<wchar_t>::id);
-  plVar9 = (long *)std::__ndk1::locale::use_facet const(p6,&numpunct<wchar_t>::id);
+  plVar8 = (long *)std::__ndk1::locale::use_facet(p6,&ctype<wchar_t>::id);
+  plVar9 = (long *)std::__ndk1::locale::use_facet(p6,&numpunct<wchar_t>::id);
   (**(code **)(*plVar9 + 0x28))(abStack_80);
   uVar2 = (ulong)(abStack_80[0] >> 1);
   if ((abStack_80[0] & 1) != 0) {
@@ -198,8 +198,8 @@ void std::__ndk1::__num_put<wchar_t>::__widen_and_group_float
   
   lVar4 = tpidr_el0;
   lStack_68 = *(long *)(lVar4 + 0x28);
-  plVar9 = (long *)std::__ndk1::locale::use_facet const(p6,&ctype<wchar_t>::id);
-  plVar10 = (long *)std::__ndk1::locale::use_facet const(p6,&numpunct<wchar_t>::id);
+  plVar9 = (long *)std::__ndk1::locale::use_facet(p6,&ctype<wchar_t>::id);
+  plVar10 = (long *)std::__ndk1::locale::use_facet(p6,&numpunct<wchar_t>::id);
   (**(code **)(*plVar10 + 0x28))(abStack_80);
   *p5 = p3;
   bVar3 = *p0;

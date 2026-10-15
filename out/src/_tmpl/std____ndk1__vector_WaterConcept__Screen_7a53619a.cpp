@@ -70,7 +70,7 @@ ulong std::__ndk1::
   else {
     uVar3 = ((long)(uVar3 - lVar9) >> 3) * -0xf0f0f0f0f0f0f0f + 1;
     if (0x1e1e1e1e1e1e1e1 < uVar3) {
-      uVar3 = std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      uVar3 = std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return uVar3;
     }
     lVar9 = param_1[2] - lVar9 >> 3;

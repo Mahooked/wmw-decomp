@@ -146,8 +146,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_70 = 0x68;
   uStack_69 = 0;
                     /* try { // try from 0055c11c to 0055c12f has its CatchHandler @ 0055c738 */
-  Walaber::PropertyList::operator[] const();
-  Walaber::Property::asString const(abStack_60);
+  Walaber::PropertyList::operator[]();
+  Walaber::Property::asString(abStack_60);
   if ((bStack_78 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
   }
@@ -167,7 +167,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_70 = 0x65;
   uStack_6d = 0;
                     /* try { // try from 0055c16c to 0055c177 has its CatchHandler @ 0055c704 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((bStack_78 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
   }
@@ -188,8 +188,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uStack_70 = 0x65;
     uStack_6d = 0;
                     /* try { // try from 0055c1b0 to 0055c1bf has its CatchHandler @ 0055c700 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x21].f_0x0 = uVar3;
     if ((bStack_78 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
@@ -211,7 +211,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_70 = 0x65;
   uStack_65 = 0;
                     /* try { // try from 0055c204 to 0055c20f has its CatchHandler @ 0055c6fc */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((bStack_78 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
   }
@@ -232,8 +232,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uStack_67 = 0x6566;
     uStack_65 = 0;
                     /* try { // try from 0055c24c to 0055c25b has its CatchHandler @ 0055c6f8 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x21].f_0x0 + 4) = uVar3;
     if ((bStack_78 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
@@ -257,7 +257,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_70 = 0x61;
   uStack_6b = 0;
                     /* try { // try from 0055c2ac to 0055c2b7 has its CatchHandler @ 0055c6f0 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((bStack_78 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
   }
@@ -273,8 +273,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uStack_88 = 0x61;
     uStack_83 = 0;
                     /* try { // try from 0055c2fc to 0055c30b has its CatchHandler @ 0055c6d0 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x22].f_0x8 = uVar3;
     if ((bStack_90 & 1) != 0) {
       operator delete(pvStack_80);
@@ -336,7 +336,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_71 = 0x65;
   uStack_70 = 0x78;
                     /* try { // try from 0055c410 to 0055c41b has its CatchHandler @ 0055c6c4 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((bStack_78 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
   }
@@ -350,8 +350,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uStack_8f = 0x6554656c746954;
     uStack_88 = 0x78;
                     /* try { // try from 0055c450 to 0055c463 has its CatchHandler @ 0055c6b0 */
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asString const(&bStack_78);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asString(&bStack_78);
     if ((p0[0x23].f_0x8 & 1) == 0) {
       *(undefined2 *)&p0[0x23].f_0x8 = 0;
     }
@@ -406,7 +406,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uStack_70 = 0x72;
     uStack_6a = 0;
                     /* try { // try from 0055c4f4 to 0055c4ff has its CatchHandler @ 0055c658 */
-    uVar4 = Walaber::PropertyList::keyExists const();
+    uVar4 = Walaber::PropertyList::keyExists();
     if ((bStack_78 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
     }
@@ -427,8 +427,8 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
       uStack_70 = 0x72;
       uStack_6a = 0;
                     /* try { // try from 0055c534 to 0055c543 has its CatchHandler @ 0055c654 */
-      Walaber::PropertyList::operator[] const();
-      uVar3 = Walaber::Property::asFloat const();
+      Walaber::PropertyList::operator[]();
+      uVar3 = Walaber::Property::asFloat();
       *(undefined4 *)&p0[0x24].f_0x8 = uVar3;
       if ((bStack_78 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_64,CONCAT13(uStack_65,CONCAT21(uStack_67,uStack_68))));
@@ -569,7 +569,7 @@ void WaterConcept::Screen_PuppetShow::_fileExists(void *p0)
     abStack_50[7] = 0x65;
     abStack_50[8] = 0x72;
                     /* try { // try from 0055c8a0 to 0055c8ab has its CatchHandler @ 0055c904 */
-    uVar3 = Walaber::PropertyList::keyExists const(lVar1,abStack_50);
+    uVar3 = Walaber::PropertyList::keyExists(lVar1,abStack_50);
     if ((abStack_50[0] & 1) != 0) {
       operator delete(pvStack_40);
     }
@@ -896,7 +896,7 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
     abStack_70[7] = 0x65;
     abStack_70[8] = 0x72;
                     /* try { // try from 0055cd0c to 0055cd17 has its CatchHandler @ 0055ce90 */
-    uVar3 = Walaber::PropertyList::keyExists const(lVar5,abStack_70);
+    uVar3 = Walaber::PropertyList::keyExists(lVar5,abStack_70);
     if ((abStack_70[0] & 1) != 0) {
       operator delete(apvStack_60[0]);
     }
@@ -1132,7 +1132,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     uStack_94 = 0x65747379;
     uStack_90 = 0x72;
                     /* try { // try from 0055d2a8 to 0055d2b3 has its CatchHandler @ 0055d310 */
-    uVar6 = Walaber::PropertyList::keyExists const(lVar4,&fStack_98);
+    uVar6 = Walaber::PropertyList::keyExists(lVar4,&fStack_98);
     if (((uint)fStack_98 & 1) != 0) {
       operator delete(apvStack_88[0]);
     }

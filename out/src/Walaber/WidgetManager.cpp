@@ -318,7 +318,7 @@ void Walaber::WidgetManager::update(float p0)
               lStack_98 = plVar16[0x14];
               lStack_a0 = plVar16[0x13];
               uStack_90 = CONCAT44(uStack_90._4_4_,(int)plVar16[0x15]);
-              uVar8 = Walaber::AABB::contains const(&lStack_a0,plVar19[5] + 4);
+              uVar8 = Walaber::AABB::contains(&lStack_a0,plVar19[5] + 4);
               uVar5 = (undefined4)plVar19[4];
               lVar17 = plVar19[5];
               lVar10 = *plVar16;
@@ -377,7 +377,7 @@ LAB_0036b440:
                     lStack_c8 = *(long *)(lVar17 + 0xa0);
                     lStack_d0 = *(long *)(lVar17 + 0x98);
                     uStack_c0 = *(undefined4 *)(lVar17 + 0xa8);
-                    uVar8 = Walaber::AABB::contains const(&lStack_d0,plVar19[5] + 4);
+                    uVar8 = Walaber::AABB::contains(&lStack_d0,plVar19[5] + 4);
                     if ((uVar8 & 1) != 0) {
                       lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b20c to 0036b217 has its CatchHandler @ 0036b978 */
@@ -437,7 +437,7 @@ LAB_0036b440:
               lStack_98 = plVar16[0x14];
               lStack_a0 = plVar16[0x13];
               uStack_90 = CONCAT44(uStack_90._4_4_,(int)plVar16[0x15]);
-              uVar8 = Walaber::AABB::contains const(&lStack_a0,plVar19[5] + 4);
+              uVar8 = Walaber::AABB::contains(&lStack_a0,plVar19[5] + 4);
               uVar5 = (undefined4)plVar19[4];
               lVar17 = plVar19[5];
               lVar10 = *plVar16;
@@ -541,7 +541,7 @@ LAB_0036b458:
                   lStack_c8 = *(long *)(lVar17 + 0xa0);
                   lStack_d0 = *(long *)(lVar17 + 0x98);
                   uStack_c0 = *(undefined4 *)(lVar17 + 0xa8);
-                  uVar8 = Walaber::AABB::contains const(&lStack_d0,plVar19[5] + 4);
+                  uVar8 = Walaber::AABB::contains(&lStack_d0,plVar19[5] + 4);
                   if ((uVar8 & 1) != 0) {
                     lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b620 to 0036b62b has its CatchHandler @ 0036b984 */
@@ -822,7 +822,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
             uStack_c8 = *(undefined8 *)(lVar12 + 0xa0);
             plStack_d0 = *(long **)(lVar12 + 0x98);
             uStack_c0 = *(undefined4 *)(lVar12 + 0xa8);
-            uVar5 = Walaber::AABB::contains const(&plStack_d0,plVar10[5] + 4);
+            uVar5 = Walaber::AABB::contains(&plStack_d0,plVar10[5] + 4);
             if ((uVar5 & 1) != 0) {
               puVar6 = (undefined4 *)plVar10[5];
               *(long *)(puVar6 + 6) = lVar12;
@@ -986,7 +986,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
                     /* try { // try from 0036be9c to 0036beab has its CatchHandler @ 0036c0d0 */
           Walaber::AABB::AABB(alStack_100,&uStack_108,&uStack_110);
                     /* try { // try from 0036beac to 0036becf has its CatchHandler @ 0036c0f4 */
-          uVar6 = Walaber::AABB::intersects const(auStack_b0,alStack_100);
+          uVar6 = Walaber::AABB::intersects(auStack_b0,alStack_100);
           if ((uVar6 & 1) != 0) {
             (**(code **)(*plVar8 + 0x48))(plVar8);
           }
@@ -1285,7 +1285,7 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
                     /* try { // try from 0036c654 to 0036c663 has its CatchHandler @ 0036c7a4 */
             Walaber::AABB::AABB(alStack_118,&uStack_120,&uStack_128);
                     /* try { // try from 0036c664 to 0036c687 has its CatchHandler @ 0036c7b0 */
-            uVar4 = Walaber::AABB::intersects const(auStack_c8,alStack_118);
+            uVar4 = Walaber::AABB::intersects(auStack_c8,alStack_118);
             if ((uVar4 & 1) != 0) {
               (**(code **)(*plVar5 + 0x48))(plVar5,p1);
             }
@@ -1654,7 +1654,7 @@ void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1)
               lStack_98 = plVar3[0x14];
               lStack_a0 = plVar3[0x13];
               uStack_90 = (undefined4)plVar3[0x15];
-              uVar6 = Walaber::AABB::contains const(&lStack_a0,plVar9[5] + 4);
+              uVar6 = Walaber::AABB::contains(&lStack_a0,plVar9[5] + 4);
                     /* try { // try from 0036ce54 to 0036ce5b has its CatchHandler @ 0036ceec */
               if (((uVar6 & 1) != 0) &&
                  (uVar6 = (**(code **)(*plVar3 + 0x88))(plVar3,(int)plVar9[4],plVar9[5]),
@@ -1835,7 +1835,7 @@ void Walaber::WidgetManager::touchUp(int p0,Walaber__Vector2 p1)
               lStack_78 = plVar4[0x14];
               lStack_80 = plVar4[0x13];
               uStack_70 = (undefined4)plVar4[0x15];
-              uVar7 = Walaber::AABB::contains const(&lStack_80,plVar10[5] + 4);
+              uVar7 = Walaber::AABB::contains(&lStack_80,plVar10[5] + 4);
                     /* try { // try from 0036d14c to 0036d153 has its CatchHandler @ 0036d1ec */
               if (((uVar7 & 1) != 0) &&
                  (uVar7 = (**(code **)(*plVar4 + 0x88))(plVar4,(int)plVar10[4],plVar10[5]),

@@ -351,26 +351,26 @@ void WaterConcept::Notification::_applyTransitionBehavior
   uStack_60 = p0[5].f_0x20;
   Walaber::WidgetManager::getBoundingArea(&fStack_78,&p0->f_0x8);
   if ((*plVar3 != 0) && (*(int *)plVar3[1] != 0)) {
-    fVar4 = (float)Walaber::Curve::evaluate const((int)p0[5].f_0x28);
+    fVar4 = (float)Walaber::Curve::evaluate((int)p0[5].f_0x28);
     uStack_60 = CONCAT44(uStack_60._4_4_,
                          *(float *)&p0[5].f_0x20 + (fStack_70 - fStack_78) * fVar4 * (float)in_w2);
   }
   if ((plVar3[2] != 0) && (*(int *)plVar3[3] != 0)) {
-    fVar4 = (float)Walaber::Curve::evaluate const((int)p0[5].f_0x28);
+    fVar4 = (float)Walaber::Curve::evaluate((int)p0[5].f_0x28);
     uStack_60 = CONCAT44(*(float *)((long)&p0[5].f_0x20 + 4) +
                          (fStack_6c - fStack_74) * fVar4 * (float)in_w2,(undefined4)uStack_60);
   }
   plVar2 = (long *)p0->f_0x8;
   (**(code **)(*plVar2 + 0x10))(plVar2,&uStack_60);
   if ((plVar3[4] != 0) && (*(int *)plVar3[5] != 0)) {
-    fVar4 = (float)Walaber::Curve::evaluate const((int)p0[5].f_0x28);
+    fVar4 = (float)Walaber::Curve::evaluate((int)p0[5].f_0x28);
     uStack_80 = CONCAT44(uStack_80._4_4_,fVar4 * (float)in_w2 + 0.0);
     (**(code **)(*(long *)p0->f_0x8 + 0x20))((long *)p0->f_0x8,&uStack_80);
   }
   fVar4 = *(float *)&p0[5].f_0x18;
   if ((plVar3[6] != 0) && (*(int *)plVar3[7] != 0)) {
     fVar5 = *(float *)((long)&p0[5].f_0x18 + 4);
-    fVar4 = (float)Walaber::Curve::evaluate const((int)p0[5].f_0x28);
+    fVar4 = (float)Walaber::Curve::evaluate((int)p0[5].f_0x28);
     if (in_w2 < 0) {
       fVar4 = (1.0 - fVar4) + 1.0;
     }
@@ -379,7 +379,7 @@ void WaterConcept::Notification::_applyTransitionBehavior
     (**(code **)(*(long *)p0->f_0x8 + 0x18))((long *)p0->f_0x8,&uStack_80);
   }
   if ((plVar3[8] != 0) && (*(int *)plVar3[9] != 0)) {
-    fVar5 = (float)Walaber::Curve::evaluate const((int)p0[5].f_0x28);
+    fVar5 = (float)Walaber::Curve::evaluate((int)p0[5].f_0x28);
     if (in_w2 < 0) {
       fVar5 = (1.0 - fVar5) + 1.0;
     }
@@ -497,7 +497,7 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
       fVar2 = fVar6 * 0.19999999 + 0.8;
     }
     fStack_54 = fStack_54 * fVar2;
-    Walaber::BitmapFont::wrapStringInSize const(&bStack_70,*(long *)(lVar3 + 0xe8),&fStack_54,param_3,&uStack_50);
+    Walaber::BitmapFont::wrapStringInSize(&bStack_70,*(long *)(lVar3 + 0xe8),&fStack_54,param_3,&uStack_50);
                     /* try { // try from 0049d188 to 0049d1cf has its CatchHandler @ 0049d210 */
     Walaber::Widget_Label::setText(*(undefined8 *)(param_2 + 0x98),&bStack_70);
     *(undefined4 *)(param_2 + 0x1bc) = param_1;

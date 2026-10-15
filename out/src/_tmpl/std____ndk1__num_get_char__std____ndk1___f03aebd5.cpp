@@ -48,13 +48,13 @@ do_get(long *param_1,undefined8 param_2,undefined8 param_3,long param_4,undefine
     }
   }
   else {
-    std::__ndk1::ios_base::getloc const(auStack_88,param_4);
+    std::__ndk1::ios_base::getloc(auStack_88,param_4);
                     /* try { // try from 005b22c0 to 005b22cf has its CatchHandler @ 005b241c */
-    uVar2 = std::__ndk1::locale::use_facet const(auStack_88,&ctype<char>::id);
+    uVar2 = std::__ndk1::locale::use_facet(auStack_88,&ctype<char>::id);
     std::__ndk1::__shared_count::__release_shared(auStack_88[0]);
-    std::__ndk1::ios_base::getloc const(auStack_88,param_4);
+    std::__ndk1::ios_base::getloc(auStack_88,param_4);
                     /* try { // try from 005b22e8 to 005b22f7 has its CatchHandler @ 005b2418 */
-    plVar3 = (long *)std::__ndk1::locale::use_facet const(auStack_88,&numpunct<char>::id);
+    plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_88,&numpunct<char>::id);
     std::__ndk1::__shared_count::__release_shared(auStack_88[0]);
                     /* try { // try from 005b230c to 005b231b has its CatchHandler @ 005b2414 */
     (**(code **)(*plVar3 + 0x30))(auStack_88,plVar3);
@@ -302,9 +302,9 @@ long * std::__ndk1::
   auStack_148[1] = 0;
   pvStack_138 = (void *)0x0;
                     /* try { // try from 005b528c to 005b5293 has its CatchHandler @ 005b55e8 */
-  std::__ndk1::ios_base::getloc const(auStack_130,param_4);
+  std::__ndk1::ios_base::getloc(auStack_130,param_4);
                     /* try { // try from 005b5294 to 005b52bf has its CatchHandler @ 005b55f8 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(auStack_130,&ctype<char>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_130,&ctype<char>::id);
   (**(code **)(*plVar3 + 0x40))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",auStack_8c);
   std::__ndk1::__shared_count::__release_shared(auStack_130[0]);
   uStack_160 = 0;

@@ -38,7 +38,7 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::assign<int*>(int *p0,
       p0[5] = 0;
     }
     if (uVar5 >> 0x3e != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     if ((ulong)(lVar2 >> 2) < 0x1fffffffffffffff) {

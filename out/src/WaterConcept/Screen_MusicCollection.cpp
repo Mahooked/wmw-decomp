@@ -103,11 +103,11 @@ void WaterConcept::Screen_MusicCollection::loadPropertyList(Walaber__PropertyLis
   lVar1 = tpidr_el0;
   lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 00533014 to 0053301f has its CatchHandler @ 005330b0 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
                     /* try { // try from 0053305c to 0053306b has its CatchHandler @ 005330ac */
-    Walaber::PropertyList::getValueForKey const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p0[10].f_0x0 = uVar2;
   }
   if (*(long *)(lVar1 + 0x28) != lVar4) {
@@ -581,7 +581,7 @@ void WaterConcept::Screen_MusicCollection::_curveLoadCallback(void *p0)
     uVar1 = *(ulong *)(in_x1 + 8);
   }
                     /* try { // try from 005339a8 to 005339c3 has its CatchHandler @ 005339dc */
-  if ((uVar1 == 0x22) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar2 == 0)) {
+  if ((uVar1 == 0x22) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar2 == 0)) {
     *(undefined1 *)((long)p0 + 0xd0) = 1;
   }
   return;
@@ -1889,7 +1889,7 @@ LAB_0053499c:
     uVar28 = strlen(pvVar4);
     if (0xffffffffffffffef < uVar28) {
                     /* try { // try from 0053686c to 00536873 has its CatchHandler @ 00536884 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_100);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_100);
       return;
     }
     if (uVar28 < 0x17) {
@@ -1953,7 +1953,7 @@ LAB_00534e6c:
     uVar28 = strlen(pvVar4);
     if (0xffffffffffffffef < uVar28) {
                     /* try { // try from 00536874 to 0053687b has its CatchHandler @ 0053687c */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_2e0);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_2e0);
       return;
     }
     if (uVar28 < 0x17) {
@@ -2052,7 +2052,7 @@ LAB_00534fb8:
                     /* try { // try from 00535120 to 0053516b has its CatchHandler @ 00536ba8 */
     Walaber::Node::getWorldScale(&uStack_2e0,lVar24);
     fVar52 = (21.0 / fVar50) * fVar52;
-    Walaber::BitmapFont::wrapString const(&fStack_310,fVar52,*(float *)(lVar24 + 0x90) * (float)uStack_2e0 * 0.85,uVar37,
+    Walaber::BitmapFont::wrapString(&fStack_310,fVar52,*(float *)(lVar24 + 0x90) * (float)uStack_2e0 * 0.85,uVar37,
                     &bStack_e0);
     if ((bStack_3a0 & 1) != 0) {
       operator delete(pvStack_390);
@@ -3257,7 +3257,7 @@ void WaterConcept::Screen_MusicCollection::update(float p0,bool p1)
       *(undefined8 *)(uVar3 + 0xa8) = *(undefined8 *)(uVar3 + 0xa0);
     }
     else if ((fVar8 < 1.25) && (*(char *)(uVar3 + 0xd0) != '\0')) {
-      fVar8 = (float)Walaber::Curve::evaluate const((1.25 - fVar8) / 1.25,*(undefined8 *)(uVar3 + 0xc0));
+      fVar8 = (float)Walaber::Curve::evaluate((1.25 - fVar8) / 1.25,*(undefined8 *)(uVar3 + 0xc0));
       lVar4 = *(long *)(uVar3 + 0xa0);
       bVar2 = *(char *)(uVar3 + 0xbc) == '\0';
       if (*(long *)(uVar3 + 0xa8) != lVar4) {
@@ -3507,7 +3507,7 @@ void WaterConcept::Screen_MusicCollection::handleEvent
     uVar7 = strlen(pvVar11);
     if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 0053828c to 00538293 has its CatchHandler @ 00538388 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
       return;
     }
     if (uVar7 < 0x17) {
@@ -3566,7 +3566,7 @@ LAB_00537894:
     uVar7 = strlen(pvVar11);
     if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00538294 to 0053829b has its CatchHandler @ 00538380 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_170);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_170);
       return;
     }
     if (uVar7 < 0x17) {

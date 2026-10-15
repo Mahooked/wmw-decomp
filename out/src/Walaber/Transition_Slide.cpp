@@ -284,11 +284,11 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
   *(undefined1 *)((long)&p1[0xc].f_0x0 + 2) = 0;
   *(undefined4 *)&p1[8].f_0x0 = 0;
   *(undefined1 *)((long)&p1[0xc].f_0x0 + 3) = 0xff;
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
     uVar5 = Walaber::TextureManager::getManager();
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asString const(&bStack_70);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asString(&bStack_70);
     uStack_90 = 0;
     uStack_88 = 0;
     uStack_80 = 0;
@@ -303,38 +303,38 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
       operator delete(pvStack_60);
     }
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&bStack_70);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&bStack_70);
     p1[0xb].f_0x10 =
          CONCAT44(uStack_6c,CONCAT13(uStack_6d,CONCAT12(uStack_6e,CONCAT11(uStack_6f,bStack_70))));
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asColor const(&bStack_70);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asColor(&bStack_70);
     *(byte *)&p1[0xc].f_0x0 = bStack_70;
     *(undefined1 *)((long)&p1[0xc].f_0x0 + 1) = uStack_6f;
     *(undefined1 *)((long)&p1[0xc].f_0x0 + 2) = uStack_6e;
     *(undefined1 *)((long)&p1[0xc].f_0x0 + 3) = uStack_6d;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p1[9].f_0x0 + 4) = uVar2;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar3 == 1;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar3 == 1;
   }
   *(undefined4 *)&p1[4].f_0x10 = 0;

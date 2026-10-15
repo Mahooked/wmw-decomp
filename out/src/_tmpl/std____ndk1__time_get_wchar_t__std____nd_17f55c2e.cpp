@@ -38,9 +38,9 @@ long * std::__ndk1::
   
   lVar2 = tpidr_el0;
   lStack_68 = *(long *)(lVar2 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_70,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_4);
                     /* try { // try from 005c034c to 005c035b has its CatchHandler @ 005c0798 */
-  plVar10 = (long *)std::__ndk1::locale::use_facet const(&uStack_70,&ctype<wchar_t>::id);
+  plVar10 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_70);
   *param_5 = 0;
   if (param_7 != param_8) {
@@ -264,7 +264,7 @@ void std::__ndk1::
   
   lVar1 = tpidr_el0;
   lVar2 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get const();
+  std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get();
   if (*(long *)(lVar1 + 0x28) == lVar2) {
     return;
   }
@@ -300,7 +300,7 @@ void std::__ndk1::
     uVar1 = *(ulong *)(pbVar3 + 8);
     pbVar2 = *(byte **)(pbVar3 + 0x10);
   }
-  std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get const(param_1,param_2,param_3,param_4,param_5,param_6,pbVar2,pbVar2 + uVar1 * 4);
+  std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get(param_1,param_2,param_3,param_4,param_5,param_6,pbVar2,pbVar2 + uVar1 * 4);
   return;
 }
 
@@ -333,9 +333,9 @@ void std::__ndk1::
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
   uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_58,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
                     /* try { // try from 005c0908 to 005c0917 has its CatchHandler @ 005c09d0 */
-  uVar3 = std::__ndk1::locale::use_facet const(&uStack_58,&ctype<wchar_t>::id);
+  uVar3 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
   lVar4 = (*(code *)**(undefined8 **)(param_1 + 0x10))((undefined8 *)(param_1 + 0x10));
   lVar5 = func_0x005b5e10(&uStack_50,param_3,lVar4,lVar4 + 0x150,uVar3,param_5,0);
@@ -412,9 +412,9 @@ void std::__ndk1::
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_58,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
                     /* try { // try from 005c0ae0 to 005c0aef has its CatchHandler @ 005c0ba4 */
-  uVar2 = std::__ndk1::locale::use_facet const(&uStack_58,&ctype<wchar_t>::id);
+  uVar2 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
   lVar3 = (**(code **)(*(long *)(param_1 + 0x10) + 8))((long *)(param_1 + 0x10));
   lVar4 = func_0x005b5e10(&uStack_50,param_3,lVar3,lVar3 + 0x240,uVar2,param_5,0);
@@ -492,9 +492,9 @@ void std::__ndk1::
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_58,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_58,param_4);
                     /* try { // try from 005c0cac to 005c0cbb has its CatchHandler @ 005c0d3c */
-  uVar3 = std::__ndk1::locale::use_facet const(&uStack_58,&ctype<wchar_t>::id);
+  uVar3 = std::__ndk1::locale::use_facet(&uStack_58,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_58);
   iVar2 = func_0x005c1b54(&uStack_50,param_3,param_5,uVar3,4);
   if ((*param_5 >> 2 & 1) == 0) {
@@ -597,13 +597,13 @@ void std::__ndk1::
   lStack_58 = *(long *)(lVar3 + 0x28);
   *param_5 = 0;
   uStack_98 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_90,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_90,param_4);
                     /* try { // try from 005c0e0c to 005c0e1b has its CatchHandler @ 005c1374 */
-  uVar5 = std::__ndk1::locale::use_facet const(&uStack_90,&ctype<wchar_t>::id);
+  uVar5 = std::__ndk1::locale::use_facet(&uStack_90,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_90);
   switch(param_7) {
   case 0x25:
-    std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__get_percent const(param_1,&uStack_98,param_3,param_5,uVar5);
+    std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__get_percent(param_1,&uStack_98,param_3,param_5,uVar5);
     uVar5 = uStack_98;
     goto LAB_005c128c;
   default:
@@ -691,7 +691,7 @@ LAB_005c1124:
 LAB_005c1138:
     pbVar9 = (byte *)&uStack_90;
 LAB_005c113c:
-    uStack_98 = std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get const(param_1,uStack_98,param_3,param_4,param_5,param_6,pbVar9,pbVar8);
+    uStack_98 = std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::get(param_1,uStack_98,param_3,param_4,param_5,param_6,pbVar9,pbVar8);
     uVar5 = uStack_98;
     goto LAB_005c128c;
   case 0x58:
@@ -746,7 +746,7 @@ LAB_005c10a0:
     break;
   case 0x6e:
   case 0x74:
-    std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__get_white_space const(param_1,&uStack_98,param_3,param_5,uVar5);
+    std::__ndk1::time_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__get_white_space(param_1,&uStack_98,param_3,param_5,uVar5);
     uVar5 = uStack_98;
     goto LAB_005c128c;
   case 0x70:

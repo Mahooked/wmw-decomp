@@ -226,7 +226,7 @@ void FUN_005e0fa4(undefined8 *param_1,long param_2,long param_3)
   }
   if (uVar5 >> 0x3d != 0) {
 LAB_005e1120:
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
   if ((ulong)(lVar1 >> 3) < 0xfffffffffffffff) {
@@ -285,7 +285,7 @@ void FUN_005e1128(long *param_1,ulong param_2)
   lVar6 = (long)puVar5 - *param_1 >> 3;
   uVar1 = lVar6 + param_2;
   if (uVar1 >> 0x3d != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
   lVar3 = param_1[2] - *param_1;

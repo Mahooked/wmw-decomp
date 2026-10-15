@@ -224,7 +224,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
   abStack_88[8] = 0x6f;
   abStack_88[0xb] = 0;
                     /* try { // try from 00478718 to 00478723 has its CatchHandler @ 00478ea8 */
-  uVar8 = Walaber::PropertyList::keyExists const();
+  uVar8 = Walaber::PropertyList::keyExists();
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -247,8 +247,8 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     abStack_88[8] = 0x6f;
     abStack_88[0xb] = 0;
                     /* try { // try from 0047875c to 0047876b has its CatchHandler @ 00478ea4 */
-    Walaber::PropertyList::getValueForKey const();
-    iVar6 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar6 = Walaber::Property::asInt();
     *(bool *)&p0[0x29].f_0x8 = iVar6 == 1;
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
@@ -272,7 +272,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
   abStack_88[7] = 0x6f;
   abStack_88[8] = 100;
                     /* try { // try from 004787b0 to 004787bb has its CatchHandler @ 00478ea0 */
-  uVar8 = Walaber::PropertyList::keyExists const();
+  uVar8 = Walaber::PropertyList::keyExists();
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -295,8 +295,8 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     abStack_88[7] = 0x6f;
     abStack_88[8] = 100;
                     /* try { // try from 004787f0 to 004787ff has its CatchHandler @ 00478e9c */
-    Walaber::PropertyList::getValueForKey const();
-    iVar6 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar6 = Walaber::Property::asInt();
     *(bool *)((long)&p0[0x29].f_0x8 + 1) = iVar6 == 1;
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
@@ -320,7 +320,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
   abStack_88[8] = 0x69;
   abStack_88[0xe] = 0;
                     /* try { // try from 00478848 to 00478853 has its CatchHandler @ 00478e98 */
-  uVar8 = Walaber::PropertyList::keyExists const();
+  uVar8 = Walaber::PropertyList::keyExists();
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -343,8 +343,8 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     abStack_88[8] = 0x69;
     abStack_88[0xe] = 0;
                     /* try { // try from 00478888 to 00478897 has its CatchHandler @ 00478e94 */
-    Walaber::PropertyList::getValueForKey const();
-    uVar7 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    uVar7 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x29].f_0x0 + 4) = uVar7;
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);

@@ -83,7 +83,7 @@ vector<WaterConcept::ParticleDescription,std::__ndk1::allocator<WaterConcept::Pa
     lVar9 = *param_1;
     uVar10 = ((long)puVar7 - lVar9 >> 2) * -0x5555555555555555 + 1;
     if (0x1555555555555555 < uVar10) {
-      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar7;
     }
     lVar12 = param_1[2] - lVar9 >> 2;

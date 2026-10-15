@@ -1712,7 +1712,7 @@ LAB_0040e044:
         }
         if (uVar15 == 9) {
                     /* try { // try from 0040dc40 to 0040dc5b has its CatchHandler @ 0040eb60 */
-          iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"LP_SECRET",9);
+          iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"LP_SECRET",9);
           if (iVar11 != 0) {
             bVar10 = (byte)*param_2;
             uVar20 = param_2[1];
@@ -1730,7 +1730,7 @@ LAB_0040dc78:
           }
           if (uVar15 == 0x10) {
                     /* try { // try from 0040dc88 to 0040dca3 has its CatchHandler @ 0040e9d4 */
-            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"LP_SECRET_CRANKY",0x10);
+            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"LP_SECRET_CRANKY",0x10);
             if (iVar11 == 0) goto LAB_0040dd70;
             bVar10 = (byte)*param_2;
             uVar20 = param_2[1];
@@ -1742,7 +1742,7 @@ LAB_0040dc78:
           }
           if (uVar15 == 0x11) {
                     /* try { // try from 0040dcc8 to 0040dce3 has its CatchHandler @ 0040e9d0 */
-            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"LP_SECRET_MYSTERY",0x11);
+            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"LP_SECRET_MYSTERY",0x11);
             if (iVar11 == 0) goto LAB_0040dd70;
             bVar10 = (byte)*param_2;
             uVar20 = param_2[1];
@@ -1754,7 +1754,7 @@ LAB_0040dc78:
           }
           if (uVar15 == 0x11) {
                     /* try { // try from 0040dd08 to 0040dd23 has its CatchHandler @ 0040e9cc */
-            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"LP_BURSTLY_REWARD",0x11);
+            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"LP_BURSTLY_REWARD",0x11);
             if (iVar11 == 0) goto LAB_0040dd70;
             bVar10 = (byte)*param_2;
             uVar20 = param_2[1];
@@ -1765,7 +1765,7 @@ LAB_0040dc78:
           }
           if (uVar23 == 0xf) {
                     /* try { // try from 0040dd48 to 0040dd63 has its CatchHandler @ 0040e98c */
-            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"LP_SECRET_ALLIE",0xf);
+            iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"LP_SECRET_ALLIE",0xf);
             bVar9 = iVar11 == 0;
           }
           else {
@@ -4508,7 +4508,7 @@ void WaterConcept::GameSettings::playCinematic(undefined8 param_1,int param_2,un
   uVar2 = strlen(auStack_e8);
   if (0xffffffffffffffef < uVar2) {
                     /* try { // try from 00411d6c to 00411d73 has its CatchHandler @ 00411e44 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
     return;
   }
   if (uVar2 < 0x17) {
@@ -7579,7 +7579,7 @@ void WaterConcept::GameSettings::getChallengeResultsDescription
   uVar5 = strlen(pvVar1);
   if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00415904 to 0041590b has its CatchHandler @ 0041590c */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
     return;
   }
   if (uVar5 < 0x17) {
@@ -9842,7 +9842,7 @@ ulong WaterConcept::GameSettings::onLastLevelInPack(void)
   }
                     /* try { // try from 00418814 to 00418833 has its CatchHandler @ 004188a4 */
   if ((uVar9 == 0) &&
-     (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&currentLevelPackName,0,0xffffffffffffffff,&DAT_0063306f,0),
+     (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&currentLevelPackName,0,0xffffffffffffffff,&DAT_0063306f,0),
      iVar5 == 0)) {
     uVar9 = 0;
   }
@@ -10817,7 +10817,7 @@ ulong WaterConcept::GameSettings::getStarCount(undefined4 param_1,ulong param_2)
       }
                     /* try { // try from 00419c9c to 00419cb7 has its CatchHandler @ 0041a01c */
       if ((uVar10 == 0) &&
-         (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 == 0)) {
+         (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 == 0)) {
                     /* try { // try from 00419db0 to 00419dc3 has its CatchHandler @ 0041a050 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_f0," (",2);
         bVar6 = true;
@@ -11361,7 +11361,7 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(undefined4 param_1,ulong pa
       }
                     /* try { // try from 0041a640 to 0041a65b has its CatchHandler @ 0041a978 */
       if ((uVar11 == 0) &&
-         (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar8 == 0)) {
+         (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar8 == 0)) {
                     /* try { // try from 0041a754 to 0041a767 has its CatchHandler @ 0041a9dc */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_f0," AND (",6);
         bVar7 = true;
@@ -16477,7 +16477,7 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
   }
                     /* try { // try from 00421db0 to 00421dcf has its CatchHandler @ 00421e74 */
   if ((uVar1 == 0) &&
-     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&promotionSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
+     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&promotionSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
     uVar7 = param_2[1];
     uVar6 = *param_2;
     param_1[2] = param_2[2];
@@ -16547,7 +16547,7 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
   }
                     /* try { // try from 00421edc to 00421efb has its CatchHandler @ 00421fa0 */
   if ((uVar1 == 0) &&
-     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&themeSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
+     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&themeSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 == 0)) {
     uVar7 = param_2[1];
     uVar6 = *param_2;
     param_1[2] = param_2[2];
@@ -16616,7 +16616,7 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
   }
                     /* try { // try from 00422008 to 00422027 has its CatchHandler @ 004220cc */
   if ((uVar1 == 0) &&
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&duckSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&duckSuffix,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
     uVar6 = param_2[1];
     uVar5 = *param_2;
     param_1[2] = param_2[2];
@@ -20264,7 +20264,7 @@ LAB_00425d90:
             }
                     /* try { // try from 00427100 to 00427113 has its CatchHandler @ 00427720 */
             if ((uVar24 == uVar33) &&
-               (iVar26 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_150,0,0xffffffffffffffff,puVar31,uVar24),
+               (iVar26 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_150,0,0xffffffffffffffff,puVar31,uVar24),
                iVar26 == 0)) {
               unaff_w20 = 1;
               bVar11 = *(char *)((long)&uStack_94 + uVar21) == '\0';
@@ -21455,7 +21455,7 @@ LAB_00427cc8:
     uVar9 = strlen(p0);
     if (0xffffffffffffffef < uVar9) {
                     /* try { // try from 00428018 to 0042801f has its CatchHandler @ 00428020 */
-      uVar9 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_100);
+      uVar9 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_100);
       return uVar9;
     }
     if (uVar9 < 0x17) {
@@ -21959,7 +21959,7 @@ LAB_00428874:
       }
                     /* try { // try from 00428890 to 004288ab has its CatchHandler @ 00428ab0 */
       if ((uVar1 == 0) &&
-         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0))
+         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0))
       goto LAB_00428a78;
     }
     plVar4 = (long *)operator new(0x188);
@@ -21982,7 +21982,7 @@ LAB_00428874:
     }
                     /* try { // try from 0042892c to 00428947 has its CatchHandler @ 00428abc */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
       uVar5 = Walaber::TextureManager::getManager();
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_70,"/Textures/",param_6);
       uStack_b0 = 0;
@@ -22012,7 +22012,7 @@ LAB_00428874:
     }
                     /* try { // try from 004289f8 to 00428a13 has its CatchHandler @ 00428ab8 */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
       if ((param_9 & 1) == 0) {
         Walaber::Widget_Label::setText(plVar4,param_5);
       }
@@ -22038,7 +22038,7 @@ LAB_00428874:
     }
                     /* try { // try from 00428854 to 0042886f has its CatchHandler @ 00428ab4 */
     if ((uVar1 != 0) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0))
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0))
     goto LAB_00428874;
 LAB_00428a78:
     plVar4 = (long *)0x0;
@@ -22104,7 +22104,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
     }
                     /* try { // try from 00428d74 to 00428d8f has its CatchHandler @ 0042909c */
     if ((uVar1 == 0) &&
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
       plVar4 = (long *)0x0;
       goto LAB_0042905c;
     }
@@ -22129,7 +22129,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   }
                     /* try { // try from 00428e10 to 00428e2b has its CatchHandler @ 004290a8 */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_6,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_6);
     uStack_c8 = 0;
@@ -22160,7 +22160,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   }
                     /* try { // try from 00428ee4 to 00428eff has its CatchHandler @ 004290a4 */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_7,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     uVar5 = Walaber::TextureManager::getManager();
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,"/Textures/",param_7);
     uStack_c8 = 0;
@@ -22191,7 +22191,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   }
                     /* try { // try from 00428fb8 to 00428fd3 has its CatchHandler @ 004290a0 */
   if ((uVar1 != 0) ||
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_5,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 != 0)) {
     if ((param_9 & 1) == 0) {
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_130,param_5);
                     /* try { // try from 0042903c to 0042904b has its CatchHandler @ 004290b4 */
@@ -22321,7 +22321,7 @@ void WaterConcept::GameSettings::wrapTextInLabel(Walaber__Widget_Label *p0)
                     /* try { // try from 00429550 to 00429557 has its CatchHandler @ 00429618 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,&p0->f_0x168);
                     /* try { // try from 0042956c to 00429583 has its CatchHandler @ 00429600 */
-  Walaber::BitmapFont::wrapStringInSize const(&fStack_88,(21.0 / fVar4) * fVar5,uVar2,&fStack_6c,abStack_b8,&fStack_50);
+  Walaber::BitmapFont::wrapStringInSize(&fStack_88,(21.0 / fVar4) * fVar5,uVar2,&fStack_6c,abStack_b8,&fStack_50);
   if ((abStack_b8[0] & 1) != 0) {
     operator delete(pvStack_a8);
   }

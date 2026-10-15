@@ -22,7 +22,7 @@ bool Walaber::CurveKey::curveContinuityFromString(byte *param_1)
   }
   if (uVar1 == 4) {
                     /* try { // try from 003e0c28 to 003e0c3f has its CatchHandler @ 003e0c5c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"Step",4);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Step",4);
     return iVar2 == 0;
   }
   return false;

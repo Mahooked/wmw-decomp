@@ -1687,10 +1687,10 @@ void WaterConcept::Fluids::getBoundaryFluidCellsForAABB
   
   uVar3._0_4_ = p0[0x30c9].f_0xc;
   uVar3._4_4_ = p0[0x30c9].f_0x10;
-  uVar3 = WaterConcept::Grid::getCellForPos const(uVar3);
+  uVar3 = WaterConcept::Grid::getCellForPos(uVar3);
   uVar4._0_4_ = p0[0x30c9].f_0xc;
   uVar4._4_4_ = p0[0x30c9].f_0x10;
-  uVar4 = WaterConcept::Grid::getCellForPos const(uVar4,p1 + 1);
+  uVar4 = WaterConcept::Grid::getCellForPos(uVar4,p1 + 1);
   uVar2 = (uint)uVar4;
   uVar7 = (uint)uVar3;
   uVar1 = uVar7;
@@ -1936,7 +1936,7 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
         do {
           if (*(char *)(*plVar12 + lVar14 + 0x34) != '\0') {
             piVar11 = (int *)param_1[0x79fa];
-            uVar5 = WaterConcept::Grid::getCellForPos const(param_1[0x79f8]);
+            uVar5 = WaterConcept::Grid::getCellForPos(param_1[0x79f8]);
             uVar1 = *(uint *)(*plVar12 + lVar14 + 0x8c);
             uVar3 = (int)uVar5 + *piVar11 * (int)((ulong)uVar5 >> 0x20);
             if (uVar3 != uVar1) {

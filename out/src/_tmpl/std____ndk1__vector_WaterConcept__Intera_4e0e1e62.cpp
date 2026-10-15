@@ -71,7 +71,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
     lVar12 = *param_1;
     uVar8 = ((long)puVar7 - lVar12 >> 3) + 1;
     if (uVar8 >> 0x3d != 0) {
-      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      puVar7 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar7;
     }
     lVar10 = param_1[2] - lVar12;

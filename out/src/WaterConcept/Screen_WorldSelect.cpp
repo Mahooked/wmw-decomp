@@ -226,35 +226,35 @@ void WaterConcept::Screen_WorldSelect::loadPropertyList(Walaber__PropertyList *p
   lVar1 = tpidr_el0;
   lVar5 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 0058b1cc to 0058b1d7 has its CatchHandler @ 0058b43c */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 0058b210 to 0058b21f has its CatchHandler @ 0058b438 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)&p0[6].f_0x10 = uVar3;
   }
                     /* try { // try from 0058b25c to 0058b267 has its CatchHandler @ 0058b434 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 0058b298 to 0058b2a7 has its CatchHandler @ 0058b430 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[7].f_0x0 + 4) = uVar3;
   }
                     /* try { // try from 0058b2e8 to 0058b2f3 has its CatchHandler @ 0058b42c */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
     *(undefined1 *)((long)&p0[0x13].f_0x0 + 4) = 1;
   }
                     /* try { // try from 0058b338 to 0058b343 has its CatchHandler @ 0058b428 */
-  bVar2 = Walaber::PropertyList::keyExists const();
+  bVar2 = Walaber::PropertyList::keyExists();
   *(byte *)&p0[0x16].f_0x0 = bVar2 & 1;
                     /* try { // try from 0058b388 to 0058b393 has its CatchHandler @ 0058b424 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 0058b3c8 to 0058b3d7 has its CatchHandler @ 0058b420 */
-    Walaber::PropertyList::operator[] const();
-    GameSettings::currentStoryline = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    GameSettings::currentStoryline = Walaber::Property::asInt();
   }
   if (*(long *)(lVar1 + 0x28) != lVar5) {
     __stack_chk_fail();
@@ -606,7 +606,7 @@ void WaterConcept::Screen_WorldSelect::enter(long param_1)
   uVar34 = strlen(&bStack_190);
   if (0xffffffffffffffef < uVar34) {
                     /* try { // try from 0058eb0c to 0058eb13 has its CatchHandler @ 0058eef4 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_2a0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_2a0);
     return;
   }
   if (uVar34 < 0x17) {
@@ -875,7 +875,7 @@ LAB_0058b6e0:
     iVar22 = iVar19;
                     /* try { // try from 0058bb2c to 0058bb47 has its CatchHandler @ 0058ed40 */
     if ((uVar34 == 10) &&
-       (iVar18 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"LP_MYSTERY",10), iVar22 = iVar26,
+       (iVar18 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"LP_MYSTERY",10), iVar22 = iVar26,
        iVar18 != 0)) {
       iVar22 = iVar19;
     }
@@ -1305,7 +1305,7 @@ LAB_0058b6e0:
         }
         if (uVar34 == 0xf) {
                     /* try { // try from 0058c154 to 0058c16b has its CatchHandler @ 0058f06c */
-          iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_2f0,0,0xffffffffffffffff,"LP_SWAMPY_PICKS",0xf);
+          iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_2f0,0,0xffffffffffffffff,"LP_SWAMPY_PICKS",0xf);
           bVar15 = iVar19 == 0;
         }
         else {
@@ -2595,7 +2595,7 @@ LAB_0058ccd4:
     iVar18 = iStack_474;
     if (uVar31 == 0x19) {
                     /* try { // try from 0058d37c to 0058d397 has its CatchHandler @ 0058f9fc */
-      iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"CRANKY_STORY_TITLE_COMING",0x19);
+      iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"CRANKY_STORY_TITLE_COMING",0x19);
       if (iVar24 != 0) {
         uVar36 = CONCAT17(uStack_181,
                           CONCAT16(uStack_182,
@@ -2622,7 +2622,7 @@ LAB_0058d3bc:
       }
       if (uVar31 == 0x11) {
                     /* try { // try from 0058d3cc to 0058d3e7 has its CatchHandler @ 0058f9f8 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"crankypack01_NAME",0x11);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"crankypack01_NAME",0x11);
         if (iVar24 == 0) goto LAB_0058d61c;
         uVar36 = CONCAT17(uStack_181,
                           CONCAT16(uStack_182,
@@ -2638,7 +2638,7 @@ LAB_0058d3bc:
       }
       if (uVar31 == 0xd) {
                     /* try { // try from 0058d40c to 0058d427 has its CatchHandler @ 0058f9f0 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"MERCH_CALLOUT",0xd);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"MERCH_CALLOUT",0xd);
         if (iVar24 == 0) {
           *(int *)(param_1 + 0x1e4) = iVar22;
           goto LAB_0058d654;
@@ -2657,7 +2657,7 @@ LAB_0058d3bc:
       }
       if (uVar31 == 0x10) {
                     /* try { // try from 0058d44c to 0058d467 has its CatchHandler @ 0058f9ec */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"MORE_COMING_SOON",0x10);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"MORE_COMING_SOON",0x10);
         if (iVar24 != 0) {
           uVar36 = CONCAT17(uStack_181,
                             CONCAT16(uStack_182,
@@ -2680,7 +2680,7 @@ LAB_0058d47c:
       }
       if (uVar31 == 0xb) {
                     /* try { // try from 0058d48c to 0058d4a7 has its CatchHandler @ 0058f9e8 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"COMING_SOON",0xb);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"COMING_SOON",0xb);
         if (iVar24 == 0) goto LAB_0058d628;
         uVar36 = CONCAT17(uStack_181,
                           CONCAT16(uStack_182,
@@ -2696,7 +2696,7 @@ LAB_0058d47c:
       }
       if (uVar31 == 8) {
                     /* try { // try from 0058d4cc to 0058d4e7 has its CatchHandler @ 0058f9e4 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"GIFT_APP",8);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"GIFT_APP",8);
         if (iVar24 != 0) {
           uVar36 = CONCAT17(uStack_181,
                             CONCAT16(uStack_182,
@@ -2719,7 +2719,7 @@ LAB_0058d4fc:
       }
       if (uVar31 == 0x10) {
                     /* try { // try from 0058d50c to 0058d527 has its CatchHandler @ 0058f9d8 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"BUY_FULL_VERSION",0x10);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"BUY_FULL_VERSION",0x10);
         if (iVar24 == 0) goto LAB_0058d638;
         uVar36 = CONCAT17(uStack_181,
                           CONCAT16(uStack_182,
@@ -2735,7 +2735,7 @@ LAB_0058d4fc:
       }
       if (uVar31 == 0xe) {
                     /* try { // try from 0058d54c to 0058d567 has its CatchHandler @ 0058f9cc */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"CALENDAR_PROMO",0xe);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"CALENDAR_PROMO",0xe);
         if (iVar24 == 0) {
           *(int *)(param_1 + 0x1e8) = iVar22;
           goto LAB_0058d654;
@@ -2754,7 +2754,7 @@ LAB_0058d4fc:
       }
       if (uVar31 == 9) {
                     /* try { // try from 0058d58c to 0058d5a7 has its CatchHandler @ 0058f9c8 */
-        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"LP_SWAMPY",9);
+        iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"LP_SWAMPY",9);
         if (iVar24 == 0) {
           *(int *)(param_1 + 0x1f0) = iVar22;
           goto LAB_0058d654;
@@ -2772,7 +2772,7 @@ LAB_0058d4fc:
       }
                     /* try { // try from 0058d5cc to 0058d5e7 has its CatchHandler @ 0058f9c4 */
       if ((uVar37 == 8) &&
-         (iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_190,0,0xffffffffffffffff,"LP_PERRY",8), iVar24 == 0)) {
+         (iVar24 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_190,0,0xffffffffffffffff,"LP_PERRY",8), iVar24 == 0)) {
         *(int *)(param_1 + 0x1ec) = iVar22;
         goto LAB_0058d654;
       }
@@ -4720,9 +4720,9 @@ void WaterConcept::Screen_WorldSelect::update(float p0,bool p1)
       fVar24 = 0.0;
     }
     *(float *)(uVar6 + 0x168) = fVar24;
-    fVar24 = (float)Walaber::Curve::evaluate const((0.5 - fVar24) + (0.5 - fVar24),*(undefined8 *)(uVar6 + 0x170));
+    fVar24 = (float)Walaber::Curve::evaluate((0.5 - fVar24) + (0.5 - fVar24),*(undefined8 *)(uVar6 + 0x170));
     fVar25 = 0.5 - *(float *)(uVar6 + 0x168);
-    fVar25 = (float)Walaber::Curve::evaluate const(fVar25 + fVar25,*(undefined8 *)(uVar6 + 0x170));
+    fVar25 = (float)Walaber::Curve::evaluate(fVar25 + fVar25,*(undefined8 *)(uVar6 + 0x170));
     iVar12 = *(int *)(uVar6 + 0x180);
     uVar29 = NEON_fmov(0xbf800000,4);
     fVar24 = (fVar24 + (float)uVar29) * 0.15;
@@ -4953,7 +4953,7 @@ LAB_005905c8:
       uVar14 = strlen(&fStack_1b0);
       if (0xffffffffffffffef < uVar14) {
                     /* try { // try from 0059185c to 00591863 has its CatchHandler @ 00591984 */
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_290);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_290);
         return;
       }
       if (uVar14 < 0x17) {
@@ -5065,7 +5065,7 @@ LAB_00590950:
         uVar14 = strlen(pcVar20);
         if (0xffffffffffffffef < uVar14) {
                     /* try { // try from 00591864 to 0059186b has its CatchHandler @ 00591878 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_318);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_318);
           return;
         }
         if (uVar14 < 0x17) {
@@ -5150,7 +5150,7 @@ LAB_005915ec:
         uVar14 = strlen(&fStack_1b0);
         if (0xffffffffffffffef < uVar14) {
                     /* try { // try from 0059186c to 00591873 has its CatchHandler @ 00591874 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_330);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_330);
           return;
         }
         if (uVar14 < 0x17) {
@@ -5551,7 +5551,7 @@ LAB_005911fc:
     uStack_1a8 = 0x74;
     pvStack_1a0 = (void *)0x0;
                     /* try { // try from 00591470 to 0059147b has its CatchHandler @ 00591a70 */
-    uVar14 = Walaber::PropertyList::keyExists const(uVar6 + 0x218,&fStack_1b0);
+    uVar14 = Walaber::PropertyList::keyExists(uVar6 + 0x218,&fStack_1b0);
     if (((uint)fStack_1b0 & 1) != 0) {
       operator delete(pvStack_1a0);
     }
@@ -7314,7 +7314,7 @@ LAB_00593650:
       uVar20 = strlen(&bStack_280);
       if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 00597124 to 0059712b has its CatchHandler @ 00597cf4 */
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_350);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_350);
         return;
       }
       if (uVar20 < 0x17) {
@@ -8414,7 +8414,7 @@ LAB_00594d30:
                 uVar20 = strlen(pcVar22);
                 if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 00597134 to 0059713b has its CatchHandler @ 005972d8 */
-                  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_510);
+                  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_510);
                   return;
                 }
                 if (uVar20 < 0x17) {
@@ -8515,7 +8515,7 @@ LAB_00595ecc:
                 uVar20 = strlen(&bStack_280);
                 if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 0059713c to 00597143 has its CatchHandler @ 005972d0 */
-                  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_410);
+                  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_410);
                   return;
                 }
                 if (uVar20 < 0x17) {
@@ -8690,7 +8690,7 @@ LAB_005960c4:
                   uVar20 = strlen(pcVar22);
                   if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 00597144 to 0059714b has its CatchHandler @ 0059716c */
-                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_4c8);
+                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_4c8);
                     return;
                   }
                   if (uVar20 < 0x17) {
@@ -8784,7 +8784,7 @@ LAB_00596e9c:
                   uVar20 = strlen(&bStack_280);
                   if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 0059714c to 00597153 has its CatchHandler @ 00597164 */
-                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_450);
+                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_450);
                     return;
                   }
                   if (uVar20 < 0x17) {
@@ -8928,7 +8928,7 @@ LAB_00596420:
                     }
                     if (uVar20 == 0) {
                     /* try { // try from 005968b8 to 005968d3 has its CatchHandler @ 00597278 */
-                      iVar16 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_280,0,0xffffffffffffffff,&DAT_0063306f,0);
+                      iVar16 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_280,0,0xffffffffffffffff,&DAT_0063306f,0);
                       bVar13 = iVar16 != 0;
                     }
                     else {
@@ -9807,7 +9807,7 @@ LAB_00595cd4:
               uVar20 = strlen(&bStack_280);
               if (0xffffffffffffffef < uVar20) {
                     /* try { // try from 0059712c to 00597133 has its CatchHandler @ 00597518 */
-                std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_3d0);
+                std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_3d0);
                 return;
               }
               if (uVar20 < 0x17) {
@@ -11211,7 +11211,7 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
   uStack_1ae = 0x44;
   uStack_1ad = 0;
                     /* try { // try from 0059811c to 00598127 has its CatchHandler @ 0059b680 */
-  uVar21 = Walaber::PropertyList::keyExists const(lVar24,&bStack_1b0);
+  uVar21 = Walaber::PropertyList::keyExists(lVar24,&bStack_1b0);
   if ((bStack_1b0 & 1) != 0) {
     operator delete(apcStack_1a0[0]);
   }
@@ -11232,8 +11232,8 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
     uStack_1ae = 0x44;
     uStack_1ad = 0;
                     /* try { // try from 0059815c to 0059816b has its CatchHandler @ 0059b67c */
-    Walaber::PropertyList::operator[] const(lVar24,&bStack_1b0);
-    iVar19 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](lVar24,&bStack_1b0);
+    iVar19 = Walaber::Property::asInt();
     if ((bStack_1b0 & 1) != 0) {
       operator delete(apcStack_1a0[0]);
     }
@@ -11256,7 +11256,7 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
       uStack_1a8 = 0x65;
       uStack_1a7 = 0;
                     /* try { // try from 00598730 to 0059873b has its CatchHandler @ 0059b504 */
-      uVar21 = Walaber::PropertyList::keyExists const(lVar24,&bStack_1b0);
+      uVar21 = Walaber::PropertyList::keyExists(lVar24,&bStack_1b0);
       if ((bStack_1b0 & 1) != 0) {
         operator delete(apcStack_1a0[0]);
       }
@@ -11371,8 +11371,8 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
       uStack_1a8 = 0x65;
       apcStack_1a0[0] = (char *)0x0;
                     /* try { // try from 00598494 to 005984a3 has its CatchHandler @ 0059b5f0 */
-      Walaber::PropertyList::operator[] const(lVar24,&bStack_1b0);
-      iVar19 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](lVar24,&bStack_1b0);
+      iVar19 = Walaber::Property::asInt();
       if ((bStack_1b0 & 1) != 0) {
         operator delete(apcStack_1a0[0]);
       }
@@ -11392,7 +11392,7 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
       uStack_1ae = 100;
       uStack_1ad = 0;
                     /* try { // try from 005984e0 to 005984eb has its CatchHandler @ 0059b4b4 */
-      lVar24 = Walaber::PropertyList::getValueForKey const(lVar24,&bStack_1b0);
+      lVar24 = Walaber::PropertyList::getValueForKey(lVar24,&bStack_1b0);
       if ((bStack_1b0 & 1) != 0) {
         operator delete(apcStack_1a0[0]);
       }
@@ -11400,7 +11400,7 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
       Walaber::Logger::printf(&DAT_0061d37e,1,"Purchase Complete Message");
       if (lVar24 != 0) {
                     /* try { // try from 0059851c to 00598527 has its CatchHandler @ 0059b460 */
-        Walaber::Property::asString const(&bStack_1b0,lVar24);
+        Walaber::Property::asString(&bStack_1b0,lVar24);
         uVar21 = (ulong)(bStack_1b0 >> 1);
         if ((bStack_1b0 & 1) != 0) {
           uVar21 = CONCAT17(uStack_1a1,
@@ -11409,7 +11409,7 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
         }
         if (uVar21 == 0xd) {
                     /* try { // try from 00598544 to 0059855f has its CatchHandler @ 0059b3f8 */
-          iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_1b0,0,0xffffffffffffffff,"locksmith_one",0xd);
+          iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_1b0,0,0xffffffffffffffff,"locksmith_one",0xd);
           bVar18 = iVar19 == 0;
         }
         else {
@@ -11780,7 +11780,7 @@ LAB_0059a234:
         }
         else {
                     /* try { // try from 00599454 to 00599463 has its CatchHandler @ 0059b3e0 */
-          Walaber::Property::asString const(&bStack_1b0,lVar24);
+          Walaber::Property::asString(&bStack_1b0,lVar24);
           p0_00 = apcStack_1a0[0];
           bVar4 = bStack_1b0;
           pcVar28 = (char *)CONCAT17(uStack_1a1,
@@ -15904,7 +15904,7 @@ LAB_0059c440:
       }
                     /* try { // try from 0059c760 to 0059c77b has its CatchHandler @ 005a1668 */
       if ((uVar60 == 0) &&
-         (iVar39 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar39 == 0)) {
+         (iVar39 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar39 == 0)) {
                     /* try { // try from 0059c780 to 0059c78b has its CatchHandler @ 005a10f8 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&bStack_280,&bStack_d0);
       }
@@ -16302,7 +16302,7 @@ LAB_0059cde8:
           }
                     /* try { // try from 0059d00c to 0059d027 has its CatchHandler @ 005a1030 */
           if ((uVar60 == 0x15) &&
-             (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_240,0,0xffffffffffffffff,"world_select_buy_full",0x15
+             (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_240,0,0xffffffffffffffff,"world_select_buy_full",0x15
                                       ), iVar43 == 0)) {
                     /* try { // try from 0059d02c to 0059d03f has its CatchHandler @ 005a08e8 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_2a0,"/Textures/",&uStack_240);
@@ -16524,7 +16524,7 @@ LAB_0059e838:
           Walaber::TextManager::getString(&uStack_2a0,abStack_7a8);
           fVar78 = (21.0 / fVar76) * 0.75 * fVar78;
                     /* try { // try from 0059eb48 to 0059eb5b has its CatchHandler @ 005a143c */
-          Walaber::BitmapFont::wrapString const(&bStack_5f0,fVar78,fVar79 * fVar75,uVar52,&uStack_2a0);
+          Walaber::BitmapFont::wrapString(&bStack_5f0,fVar78,fVar79 * fVar75,uVar52,&uStack_2a0);
           if ((uStack_2a0 & 1) != 0) {
             operator delete(pcStack_290);
           }
@@ -17360,7 +17360,7 @@ LAB_0059ce00:
             uVar60 = strlen(puVar1);
             if (0xffffffffffffffef < uVar60) {
                     /* try { // try from 005a0888 to 005a088f has its CatchHandler @ 005a0894 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_300);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_300);
               return;
             }
             if (uVar60 < 0x17) {
@@ -17415,7 +17415,7 @@ LAB_0059db88:
             uVar60 = strlen(pvVar58);
             if (0xffffffffffffffef < uVar60) {
                     /* try { // try from 005a0880 to 005a0887 has its CatchHandler @ 005a0898 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_2e0);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_2e0);
               return;
             }
             if (uVar60 < 0x17) {
@@ -17565,7 +17565,7 @@ LAB_0059dccc:
             uVar52 = Walaber::FontManager::getFont(uVar52,abStack_670);
                     /* try { // try from 0059df08 to 0059df3f has its CatchHandler @ 005a149c */
             Walaber::Node::getWorldScale(&uStack_300,plVar62);
-            Walaber::BitmapFont::wrapString const(&uStack_2e0,fVar79,*(float *)(plVar62 + 0x12) * (float)uStack_300 * 0.85
+            Walaber::BitmapFont::wrapString(&uStack_2e0,fVar79,*(float *)(plVar62 + 0x12) * (float)uStack_300 * 0.85
                             ,uVar52,&bStack_5f0);
             if ((abStack_670[0] & 1) != 0) {
               operator delete(pvStack_660);
@@ -17972,7 +17972,7 @@ LAB_0059dccc:
       }
                     /* try { // try from 0059f090 to 0059f0af has its CatchHandler @ 005a16f8 */
       if ((uVar60 == 0xb) &&
-         (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::promotionSuffix,0,0xffffffffffffffff,"TARGET_2012"
+         (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::promotionSuffix,0,0xffffffffffffffff,"TARGET_2012"
                                    ,0xb), iVar43 == 0)) {
         uVar60 = (ulong)(bStack_d0 >> 1);
         if ((bStack_d0 & 1) != 0) {
@@ -17980,7 +17980,7 @@ LAB_0059dccc:
         }
                     /* try { // try from 0059f0d0 to 0059f0eb has its CatchHandler @ 005a1034 */
         if ((uVar60 == 0x11) &&
-           (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_d0,0,0xffffffffffffffff,"LP_DAYS_OF_SUMMER",0x11),
+           (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_d0,0,0xffffffffffffffff,"LP_DAYS_OF_SUMMER",0x11),
            iVar43 == 0)) {
           fVar75 = (float)uStack_160 * 1.5;
           uStack_2c0 = CONCAT44((float)((ulong)uStack_160 >> 0x20) / 2.35 + fStack_144,
@@ -18123,7 +18123,7 @@ LAB_0059dccc:
       }
       if (uVar60 == 0xb) {
                     /* try { // try from 0059f374 to 0059f38f has its CatchHandler @ 005a16e4 */
-        iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_d0,0,0xffffffffffffffff,"MORE_DISNEY",0xb);
+        iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_d0,0,0xffffffffffffffff,"MORE_DISNEY",0xb);
         if (iVar43 != 0) {
           uVar72 = CONCAT17(uStack_c1,uStack_c8);
           uVar68 = (ulong)(bStack_d0 >> 1);
@@ -18158,7 +18158,7 @@ LAB_0059f3ac:
         }
                     /* try { // try from 0059f3bc to 0059f3d7 has its CatchHandler @ 005a166c */
         if ((uVar68 == 9) &&
-           (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_d0,0,0xffffffffffffffff,"WATER_TWO",9), iVar43 == 0)) {
+           (iVar43 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_d0,0,0xffffffffffffffff,"WATER_TWO",9), iVar43 == 0)) {
           *(int *)((long)p0 + 0x238) = iVar40;
           uStack_5e8 = 0;
           uStack_5e7 = 0;
@@ -18850,7 +18850,7 @@ LAB_0059fd7c:
       }
                     /* try { // try from 005a0110 to 005a0127 has its CatchHandler @ 005a1664 */
       if ((uVar60 == 0) &&
-         (iVar40 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_5f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar40 == 0))
+         (iVar40 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_5f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar40 == 0))
       {
                     /* try { // try from 005a0224 to 005a0233 has its CatchHandler @ 005a19c4 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_5f0," AND (",6);
@@ -18929,7 +18929,7 @@ LAB_0059fd7c:
   }
                     /* try { // try from 005a0254 to 005a026f has its CatchHandler @ 005a08e0 */
   if ((uVar60 != 0) ||
-     (iVar40 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_5f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar40 != 0)) {
+     (iVar40 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_5f0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar40 != 0)) {
                     /* try { // try from 005a0274 to 005a0287 has its CatchHandler @ 005a0994 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&bStack_5f0,")",1);
   }
@@ -19256,7 +19256,7 @@ void WaterConcept::Screen_WorldSelect::_locksmithSpriteAnimationEventCallback(vo
     uVar7 = strlen(lVar11 + 0x24);
     if (0xffffffffffffffef < uVar7) {
 LAB_005a24b8:
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
       return;
     }
     if (uVar7 < 0x17) {
@@ -19441,7 +19441,7 @@ LAB_005a1df0:
         }
         if (piVar3 == (int *)0x4) {
                     /* try { // try from 005a2044 to 005a205f has its CatchHandler @ 005a24fc */
-          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_90,0,0xffffffffffffffff,"open",4);
+          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_90,0,0xffffffffffffffff,"open",4);
           bVar5 = iVar6 == 0;
         }
         else {
@@ -19534,7 +19534,7 @@ LAB_005a1fac:
           }
           if (piVar3 == (int *)0x5) {
                     /* try { // try from 005a21a4 to 005a21bf has its CatchHandler @ 005a24c4 */
-            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_90,0,0xffffffffffffffff,"outro",5);
+            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_90,0,0xffffffffffffffff,"outro",5);
             bVar5 = iVar6 == 0;
           }
           else {
@@ -19580,7 +19580,7 @@ LAB_005a1fac:
     }
     if (piVar3 == (int *)0x6) {
                     /* try { // try from 005a1e84 to 005a1e9f has its CatchHandler @ 005a253c */
-      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_90,0,0xffffffffffffffff,"unlock",6);
+      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_90,0,0xffffffffffffffff,"unlock",6);
       bVar5 = iVar6 == 0;
     }
     else {
@@ -19673,7 +19673,7 @@ LAB_005a1d40:
       }
       if (piVar3 == (int *)0x6) {
                     /* try { // try from 005a1f68 to 005a1f83 has its CatchHandler @ 005a2538 */
-        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_90,0,0xffffffffffffffff,"unlock",6);
+        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_90,0,0xffffffffffffffff,"unlock",6);
         bVar5 = iVar6 == 0;
       }
       else {

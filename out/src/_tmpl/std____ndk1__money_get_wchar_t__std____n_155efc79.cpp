@@ -59,9 +59,9 @@ long * std::__ndk1::
   pcStack_2b0 = __do_nothing;
                     /* try { // try from 005c977c to 005c9787 has its CatchHandler @ 005c9ab0 */
   plStack_2a8 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_2c8,param_5);
+  std::__ndk1::ios_base::getloc(&uStack_2c8,param_5);
                     /* try { // try from 005c9788 to 005c9797 has its CatchHandler @ 005c9aac */
-  plVar4 = (long *)std::__ndk1::locale::use_facet const(&uStack_2c8,&ctype<wchar_t>::id);
+  plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_2c8,&ctype<wchar_t>::id);
   acStack_2cc[0] = '\0';
                     /* try { // try from 005c97a8 to 005c97d7 has its CatchHandler @ 005c9ac8 */
   uVar5 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_2a8,param_3,param_4 & 1,&uStack_2c8,*(undefined4 *)(param_5 + 8),
@@ -1235,9 +1235,9 @@ long * std::__ndk1::
   pcStack_210 = __do_nothing;
                     /* try { // try from 005caf00 to 005caf0b has its CatchHandler @ 005cb100 */
   plStack_208 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_228,param_5);
+  std::__ndk1::ios_base::getloc(&uStack_228,param_5);
                     /* try { // try from 005caf0c to 005caf1b has its CatchHandler @ 005cb0fc */
-  plVar6 = (long *)std::__ndk1::locale::use_facet const(&uStack_228,&ctype<wchar_t>::id);
+  plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_228,&ctype<wchar_t>::id);
   acStack_22c[0] = '\0';
                     /* try { // try from 005caf2c to 005cafaf has its CatchHandler @ 005cb110 */
   uVar7 = std::__ndk1::money_get<wchar_t, std::__ndk1::istreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_t>>>::__do_get(&plStack_208,param_3,param_4 & 1,&uStack_228,*(undefined4 *)(param_5 + 8),

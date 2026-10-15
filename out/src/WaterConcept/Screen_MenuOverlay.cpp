@@ -71,11 +71,11 @@ void WaterConcept::Screen_MenuOverlay::loadPropertyList(Walaber__PropertyList *p
   lVar1 = tpidr_el0;
   lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 005309e8 to 005309f3 has its CatchHandler @ 00530a94 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
                     /* try { // try from 00530a2c to 00530a3b has its CatchHandler @ 00530a90 */
-    Walaber::PropertyList::operator[] const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p0[6].f_0x0 + 5) = iVar2 == 1;
     if (iVar2 == 1) {
       WaterConcept::GameSettings::reloadGameFonts();
@@ -871,7 +871,7 @@ LAB_005318f0:
       }
       if (uVar7 == 0xe) {
                     /* try { // try from 00531460 to 00531483 has its CatchHandler @ 00531bc4 */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_ALLIE",0xe);
         if (iVar4 != 0) {
           uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -887,7 +887,7 @@ LAB_0053182c:
         }
         if (uVar7 == 0xf) {
                     /* try { // try from 0053183c to 0053185f has its CatchHandler @ 00531bc0 */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_CRANKY",0xf);
           if (iVar4 == 0) goto LAB_005318f8;
           uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -898,7 +898,7 @@ LAB_0053182c:
         }
         if (uVar7 == 8) {
                     /* try { // try from 00531884 to 005318a7 has its CatchHandler @ 00531bbc */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS",8);
           if (iVar4 != 0) {
             uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -912,7 +912,7 @@ LAB_005318bc:
           }
                     /* try { // try from 005318cc to 005318eb has its CatchHandler @ 00531bb8 */
           if ((uVar9 != 0x10) ||
-             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                       "LP_BONUS_FRANKEN",0x10), iVar4 != 0)) goto LAB_005318f0;
         }
         uVar8 = 0xe;
@@ -985,7 +985,7 @@ LAB_00531b1c:
       }
       if (uVar7 == 0xf) {
                     /* try { // try from 00531a18 to 00531a3b has its CatchHandler @ 00531ba8 */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_CRANKY",0xf);
         if (iVar4 != 0) {
           uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -1001,7 +1001,7 @@ LAB_00531a58:
         }
         if (uVar7 == 0xe) {
                     /* try { // try from 00531a68 to 00531a8b has its CatchHandler @ 00531ba4 */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_ALLIE",0xe);
           if (iVar4 == 0) {
             uVar8 = 0x22;
@@ -1015,7 +1015,7 @@ LAB_00531a58:
         }
         if (uVar7 == 8) {
                     /* try { // try from 00531ab0 to 00531ad3 has its CatchHandler @ 00531ba0 */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS",8);
           if (iVar4 != 0) {
             uVar9 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -1029,7 +1029,7 @@ LAB_00531ae8:
           }
                     /* try { // try from 00531af8 to 00531b17 has its CatchHandler @ 00531b9c */
           if ((uVar9 != 0x10) ||
-             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                       "LP_BONUS_FRANKEN",0x10), iVar4 != 0)) goto LAB_00531b1c;
         }
         uVar8 = 0xe;
@@ -1145,7 +1145,7 @@ void WaterConcept::Screen_MenuOverlay::_updateAudioButtons(long param_1)
   pvStack_88 = (void *)0x0;
   if (uVar1 == 10) {
                     /* try { // try from 00531d18 to 00531d3b has its CatchHandler @ 00532520 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_FRANKEN",10
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_FRANKEN",10
                            );
     if (iVar3 != 0) {
       uVar7 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -1159,7 +1159,7 @@ LAB_00531d58:
     }
                     /* try { // try from 00531d68 to 00531d87 has its CatchHandler @ 0053251c */
     if ((uVar7 != 0x10) ||
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_FRANKEN",0x10), iVar3 != 0)) {
       if ((GameSettings::currentStoryline == 0) && (GameSettings::currentLevelChallengeID < 0)) {
                     /* try { // try from 00531dac to 00531edf has its CatchHandler @ 005325d0 */
@@ -1462,7 +1462,7 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0)
   }
                     /* try { // try from 005326b0 to 005326cf has its CatchHandler @ 00532a30 */
   if ((uVar10 == 4) &&
-     (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelName,0,0xffffffffffffffff,"NULL",4),
+     (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelName,0,0xffffffffffffffff,"NULL",4),
      iVar5 == 0)) {
                     /* try { // try from 005326f8 to 005326ff has its CatchHandler @ 00532a28 */
     Walaber::StringHelper::removeExtension(&uStack_a8,
@@ -1499,7 +1499,7 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0)
   }
   if (uVar10 == 0) {
                     /* try { // try from 005327e4 to 00532803 has its CatchHandler @ 00532a2c */
-    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,&DAT_0063306f,0
+    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,&DAT_0063306f,0
                            );
     bVar3 = iVar5 == 0;
   }

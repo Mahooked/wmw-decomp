@@ -1357,7 +1357,7 @@ LAB_004a33ac:
                     /* try { // try from 004a3494 to 004a34d7 has its CatchHandler @ 004a3d8c */
         Walaber::Node::getWorldScale(&uStack_b8,lVar30);
         fVar48 = ((*(float *)(&DAT_00638e88 + (ulong)bVar23 * 4) * 21.0) / fVar49) * fVar48;
-        Walaber::BitmapFont::wrapString const(&uStack_2c0,fVar48,*(float *)(lVar30 + 0x90) * (float)uStack_b8,uVar31,
+        Walaber::BitmapFont::wrapString(&uStack_2c0,fVar48,*(float *)(lVar30 + 0x90) * (float)uStack_b8,uVar31,
                         &uStack_248);
         if ((uStack_248 & 1) != 0) {
           operator delete(pvStack_238);
@@ -1559,8 +1559,8 @@ ulong WaterConcept::Screen_Achievements::messageRx(Walaber__Message *p0)
     abStack_50[8] = 0x65;
     uStack_3f = 0x49;
                     /* try { // try from 004a3ee0 to 004a3eeb has its CatchHandler @ 004a3f50 */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_50);
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_50);
+    iVar2 = Walaber::Property::asInt();
     if ((abStack_50[0] & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_3d,CONCAT21(uStack_3f,abStack_50[0x10])));
     }

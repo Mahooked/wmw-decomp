@@ -119,7 +119,7 @@ void Walaber::Flipbook::Flipbook(undefined8 *param_1)
   uVar12 = strlen();
   if (0xffffffffffffffef < uVar12) {
                     /* try { // try from 003594a4 to 003594ab has its CatchHandler @ 003594e4 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e8);
     return;
   }
   if (uVar12 < 0x17) {

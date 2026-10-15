@@ -81,7 +81,7 @@ void WaterConcept::Screen_GraphicsContextRestore::enter(long param_1)
   WaterConcept::Screen_GraphicsContextRestore::_buildUI();
   *(undefined8 *)(param_1 + 0x98) = 0;
   Walaber::TextureManager::getManager();
-  lVar1 = Walaber::TextureManager::countInvalidateTextures const();
+  lVar1 = Walaber::TextureManager::countInvalidateTextures();
   *(long *)(param_1 + 0x90) = lVar1 + 1;
   GameSettings::mAllowNotifications = 0;
   return;

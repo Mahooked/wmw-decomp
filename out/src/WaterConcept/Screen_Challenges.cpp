@@ -1752,7 +1752,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 004aa710 to 004aa73b has its CatchHandler @ 004aca0c */
               uVar19 = Walaber::FontManager::getFont(uVar19,abStack_3a8);
               fVar49 = (21.0 / fVar51) * fVar55 * fVar49;
-              Walaber::BitmapFont::wrapString const(&uStack_240,fVar49,fVar54 * fVar52,uVar19,&uStack_220);
+              Walaber::BitmapFont::wrapString(&uStack_240,fVar49,fVar54 * fVar52,uVar19,&uStack_220);
               if ((abStack_3a8[0] & 1) != 0) {
                 operator delete(pvStack_398);
               }
@@ -1998,7 +1998,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 004aad0c to 004aad2b has its CatchHandler @ 004ac700 */
           uVar19 = Walaber::FontManager::getFont(uVar19,abStack_428);
           fVar54 = fVar54 * fVar49;
-          Walaber::BitmapFont::wrapString const(&uStack_200,fVar54,fVar51 * fVar52,uVar19,&uStack_1e0);
+          Walaber::BitmapFont::wrapString(&uStack_200,fVar54,fVar51 * fVar52,uVar19,&uStack_1e0);
           if ((abStack_428[0] & 1) != 0) {
             operator delete(pvStack_418);
           }
@@ -2357,7 +2357,7 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 004ab5bc to 004ab5fb has its CatchHandler @ 004ac51c */
             Walaber::Node::getWorldScale(&uStack_f0,plVar33);
             fVar54 = (21.0 / fVar52) * fVar54;
-            Walaber::BitmapFont::wrapString const(&bStack_260,fVar54,*(float *)(plVar33 + 0x12) * (float)uStack_f0 * 0.85,
+            Walaber::BitmapFont::wrapString(&bStack_260,fVar54,*(float *)(plVar33 + 0x12) * (float)uStack_f0 * 0.85,
                             uVar19,&fStack_2c0);
             if ((abStack_578[0] & 1) != 0) {
               operator delete(pvStack_568);
@@ -3501,7 +3501,7 @@ undefined8 WaterConcept::Screen_Challenges::messageRx(Walaber__Message *p0)
     abStack_78[8] = 0x65;
     abStack_78[9] = 0;
                     /* try { // try from 004ad7f4 to 004ad7fb has its CatchHandler @ 004ada08 */
-    pWVar2 = (Walaber__Message *)Walaber::PropertyList::keyExists const(in_x1 + 0x10,abStack_78);
+    pWVar2 = (Walaber__Message *)Walaber::PropertyList::keyExists(in_x1 + 0x10,abStack_78);
     p0 = pWVar2;
     if ((abStack_78[0] & 1) != 0) {
       p0 = (Walaber__Message *)operator delete(pvStack_68);

@@ -146,7 +146,7 @@ void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(long *param_1,und
   lVar5 = lVar3 - (long)p0 >> 4;
   uVar6 = lVar5 + 1;
   if (uVar6 >> 0x3c != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
   if ((ulong)(param_1[2] - (long)p0 >> 4) < 0x7ffffffffffffff) {
@@ -206,7 +206,7 @@ void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(long *param_1,und
   lVar5 = lVar3 - (long)p0 >> 3;
   uVar6 = lVar5 + 1;
   if (uVar6 >> 0x3d != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
   if ((ulong)(param_1[2] - (long)p0 >> 3) < 0xfffffffffffffff) {

@@ -360,7 +360,7 @@ ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
   pvStack_58 = (void *)0x0;
   uVar3 = strlen(param_1 + 0x24);
   if (0xffffffffffffffef < uVar3) {
-    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_68);
+    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_68);
     return uVar3;
   }
   if (uVar3 < 0x17) {
@@ -674,7 +674,7 @@ void Walaber::Widget::getWidgetName(ulong *param_1,long param_2)
   param_1[2] = 0;
   uVar1 = strlen(param_2 + 0x24);
   if (0xffffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar1 < 0x17) {

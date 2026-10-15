@@ -293,7 +293,7 @@ void Walaber::NumericAnimationTrack::apply
   int *piVar3;
   float fVar4;
   
-  fVar4 = (float)Walaber::Curve::evaluate const(*param_4);
+  fVar4 = (float)Walaber::Curve::evaluate(*param_4);
   fVar4 = param_2 * param_3 * fVar4;
   iVar1 = (-(param_6 & 1) ^ 1) + (param_6 & 1);
   if (param_5 == 1) {

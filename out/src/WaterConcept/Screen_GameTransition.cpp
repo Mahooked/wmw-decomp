@@ -79,11 +79,11 @@ void WaterConcept::Screen_GameTransition::loadPropertyList(Walaber__PropertyList
   *(undefined2 *)&p0[6].f_0x10 = 0;
   *(undefined4 *)((long)&p0[6].f_0x8 + 4) = 0;
                     /* try { // try from 004da438 to 004da443 has its CatchHandler @ 004da4d8 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
                     /* try { // try from 004da478 to 004da487 has its CatchHandler @ 004da4d4 */
-    Walaber::PropertyList::operator[] const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar2 = Walaber::Property::asInt();
     if (iVar2 == 1) {
       *(undefined1 *)((long)&p0[6].f_0x10 + 1) = 1;
     }

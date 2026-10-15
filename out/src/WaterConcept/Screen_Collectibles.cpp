@@ -2642,9 +2642,9 @@ LAB_004b1360:
     }
                     /* try { // try from 004b1210 to 004b1233 has its CatchHandler @ 004b29f4 */
     plVar27 = (long *)std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(std::__ndk1::cout,pvVar39,uVar24);
-    std::__ndk1::ios_base::getloc const(&uStack_1b0,(long)plVar27 + *(long *)(*plVar27 + -0x18));
+    std::__ndk1::ios_base::getloc(&uStack_1b0,(long)plVar27 + *(long *)(*plVar27 + -0x18));
                     /* try { // try from 004b1234 to 004b1253 has its CatchHandler @ 004b28e0 */
-    plVar32 = (long *)std::__ndk1::locale::use_facet const(&uStack_1b0,&std::__ndk1::ctype<char>::id);
+    plVar32 = (long *)std::__ndk1::locale::use_facet(&uStack_1b0,&std::__ndk1::ctype<char>::id);
     uVar19 = (**(code **)(*plVar32 + 0x38))(plVar32,10);
     std::__ndk1::locale::~locale(&uStack_1b0);
                     /* try { // try from 004b1260 to 004b1273 has its CatchHandler @ 004b29f4 */
@@ -2839,7 +2839,7 @@ LAB_004b1360:
   }
   if (uVar24 == 8) {
                     /* try { // try from 004b17c4 to 004b17e7 has its CatchHandler @ 004b1fbc */
-    iVar17 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_BONUS",8);
+    iVar17 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_BONUS",8);
     if (iVar17 != 0) {
       uVar29 = (ulong)(GameSettings::currentLevelPackName >> 1);
       goto LAB_004b1804;
@@ -2863,7 +2863,7 @@ LAB_004b1804:
     }
     if (uVar29 == 0x10) {
                     /* try { // try from 004b1814 to 004b1833 has its CatchHandler @ 004b1fb8 */
-      iVar17 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+      iVar17 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                "LP_BONUS_FRANKEN",0x10);
       if (iVar17 == 0) goto LAB_004b1854;
     }
@@ -3355,9 +3355,9 @@ void WaterConcept::Screen_Collectibles::update(float p0,bool p1)
       fVar7 = 0.0;
     }
     *(float *)(uVar3 + 0x110) = fVar7;
-    fVar7 = (float)Walaber::Curve::evaluate const((0.5 - fVar7) + (0.5 - fVar7),*(undefined8 *)(uVar3 + 0x120));
+    fVar7 = (float)Walaber::Curve::evaluate((0.5 - fVar7) + (0.5 - fVar7),*(undefined8 *)(uVar3 + 0x120));
     fVar8 = 0.5 - *(float *)(uVar3 + 0x110);
-    fVar8 = (float)Walaber::Curve::evaluate const(fVar8 + fVar8,*(undefined8 *)(uVar3 + 0x120));
+    fVar8 = (float)Walaber::Curve::evaluate(fVar8 + fVar8,*(undefined8 *)(uVar3 + 0x120));
     uVar12 = NEON_fmov(0xbf800000,4);
     plVar4 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar3 + 0x10),*(undefined4 *)(uVar3 + 0x130));
     fVar9 = (float)*(undefined8 *)(uVar3 + 0x114);
@@ -3376,8 +3376,8 @@ void WaterConcept::Screen_Collectibles::update(float p0,bool p1)
       *(undefined8 *)(uVar3 + 0x158) = *(undefined8 *)(uVar3 + 0x150);
     }
     else if (fVar7 < 1.25) {
-      fVar7 = (float)Walaber::Curve::evaluate const((1.25 - fVar7) / 1.25,*(undefined8 *)(uVar3 + 0x120));
-      fVar8 = (float)Walaber::Curve::evaluate const((1.25 - *(float *)(uVar3 + 0x168)) / 1.25,
+      fVar7 = (float)Walaber::Curve::evaluate((1.25 - fVar7) / 1.25,*(undefined8 *)(uVar3 + 0x120));
+      fVar8 = (float)Walaber::Curve::evaluate((1.25 - *(float *)(uVar3 + 0x168)) / 1.25,
                                      *(undefined8 *)(uVar3 + 0x120));
       lVar5 = *(long *)(uVar3 + 0x138);
       bVar2 = *(char *)(uVar3 + 0x16c) == '\0';

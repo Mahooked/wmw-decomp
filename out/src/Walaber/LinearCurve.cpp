@@ -50,7 +50,7 @@ void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0)
         uVar8 = strlen();
         if (0xffffffffffffffef < uVar8) {
 LAB_003e6548:
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_90);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_90);
           return;
         }
         if (uVar8 < 0x17) {
@@ -221,7 +221,7 @@ undefined1  [16] Walaber::LinearCurve::_evaluateCurve(float p0,float p1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  fVar2 = (float)Walaber::Curve::findSegment const(in_x0,&iStack_3c,&iStack_40);
+  fVar2 = (float)Walaber::Curve::findSegment(in_x0,&iStack_3c,&iStack_40);
   fVar4 = *(float *)(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18 + 4);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
     return ZEXT416((uint)(fVar4 + fVar2 * (*(float *)(*(long *)(in_x0 + 0x18) +

@@ -66,7 +66,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
       uStack_78 = 0;
       puStack_70 = (undefined1 *)0x0;
       if (0xffffffffffffffef < uVar2) {
-        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
         return lVar6;
       }
       if (uVar2 < 0x17) {
@@ -142,7 +142,7 @@ LAB_005e5024:
     if (uVar12 - uVar15 < uVar2) {
       uVar9 = uVar15 + uVar2;
       if (-uVar12 - 0x11 < uVar9 - uVar12) {
-        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+        lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
         return lVar6;
       }
       if ((bVar1 & 1) == 0) {

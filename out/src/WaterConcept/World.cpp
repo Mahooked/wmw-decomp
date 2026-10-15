@@ -2440,7 +2440,7 @@ void WaterConcept::World::setLevelRequirements(long param_1,undefined8 param_2)
       }
                     /* try { // try from 004482fc to 00448313 has its CatchHandler @ 004483e4 */
       if ((uVar1 == 0xb) &&
-         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbVar4,0,0xffffffffffffffff,"crankyducks",0xb), iVar3 == 0)) {
+         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbVar4,0,0xffffffffffffffff,"crankyducks",0xb), iVar3 == 0)) {
         *(undefined1 *)(param_1 + 0xa38) = 1;
       }
       uVar1 = (ulong)(*pbVar4 >> 1);
@@ -2449,7 +2449,7 @@ void WaterConcept::World::setLevelRequirements(long param_1,undefined8 param_2)
       }
                     /* try { // try from 00448338 to 0044834f has its CatchHandler @ 004483dc */
       if ((uVar1 == 0xb) &&
-         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbVar4,0,0xffffffffffffffff,"swampyducks",0xb), iVar3 == 0)) {
+         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbVar4,0,0xffffffffffffffff,"swampyducks",0xb), iVar3 == 0)) {
         *(undefined1 *)(param_1 + 0xa39) = 1;
       }
       uVar1 = (ulong)(*pbVar4 >> 1);
@@ -2458,7 +2458,7 @@ void WaterConcept::World::setLevelRequirements(long param_1,undefined8 param_2)
       }
                     /* try { // try from 00448374 to 0044838b has its CatchHandler @ 004483e0 */
       if ((uVar1 == 0xe) &&
-         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbVar4,0,0xffffffffffffffff,"halloweenducks",0xe), iVar3 == 0)) {
+         (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbVar4,0,0xffffffffffffffff,"halloweenducks",0xe), iVar3 == 0)) {
         *(undefined1 *)(param_1 + 0xa3a) = 1;
       }
       pbVar4 = pbVar4 + 0x18;
@@ -5410,17 +5410,17 @@ LAB_0044c624:
             uStack_a8 = CONCAT44(fVar8 + (float)((ulong)uStack_98 >> 0x20),fVar8 + (float)uStack_98)
             ;
             Walaber::AABB::expandToInclude(&uStack_a0,&uStack_a8);
-            uVar2 = Walaber::AABB::contains const(&uStack_a0,p1);
+            uVar2 = Walaber::AABB::contains(&uStack_a0,p1);
             if ((uVar2 & 1) != 0) {
               uStack_ac = 0;
-              uVar2 = WaterConcept::InteractiveObject::contains const(plVar4,p1,&uStack_ac);
+              uVar2 = WaterConcept::InteractiveObject::contains(plVar4,p1,&uStack_ac);
               if (((uVar2 & 1) != 0) && (*(char *)((long)plVar4 + 0x111) != '\0')) {
                 *in_x2 = plVar4;
                 goto LAB_0044c760;
               }
               uStack_b8 = 0x3f80000000000000;
               uStack_a8 = CONCAT44((float)((ulong)*p1 >> 0x20) + 1000.0,SUB84(*p1,0) + 1000.0);
-              WaterConcept::InteractiveObject::getClosestPoint const(plVar4,p1,&uStack_a8,&uStack_b8);
+              WaterConcept::InteractiveObject::getClosestPoint(plVar4,p1,&uStack_a8,&uStack_b8);
               fVar7 = (float)uStack_a8 - SUB84(*p1,0);
               fVar9 = (float)((ulong)uStack_a8 >> 0x20) - (float)((ulong)*p1 >> 0x20);
               fVar7 = SQRT(fVar7 * fVar7 + fVar9 * fVar9);
@@ -5750,7 +5750,7 @@ void WaterConcept::World::update(float p0)
       *(float *)(plVar18 + 9) = fVar24;
       if (in_x0[0x80] != 0) {
                     /* try { // try from 0044cd38 to 0044cd3b has its CatchHandler @ 0044eca8 */
-        fVar24 = (float)Walaber::Curve::evaluate const(fVar24 + fVar24 + 0.0);
+        fVar24 = (float)Walaber::Curve::evaluate(fVar24 + fVar24 + 0.0);
         plVar18[8] = CONCAT44((float)((ulong)plVar18[7] >> 0x20) * fVar24,(float)plVar18[7] * fVar24
                              );
       }
@@ -5916,7 +5916,7 @@ void WaterConcept::World::update(float p0)
                     /* try { // try from 0044d3b0 to 0044d3b7 has its CatchHandler @ 0044ec8c */
         Walaber::Node::getWorldPosition(&uStack_d8,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8));
                     /* try { // try from 0044d3c0 to 0044d3cb has its CatchHandler @ 0044ec88 */
-        WaterConcept::InteractiveObject::getSpriteWorldSizeAt const(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
+        WaterConcept::InteractiveObject::getSpriteWorldSizeAt(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
                     /* try { // try from 0044d3cc to 0044d3d7 has its CatchHandler @ 0044ecc8 */
         iVar6 = rand();
         iVar7 = rand();
@@ -5949,7 +5949,7 @@ void WaterConcept::World::update(float p0)
                     /* try { // try from 0044d518 to 0044d51f has its CatchHandler @ 0044ec58 */
           Walaber::Node::getWorldPosition(&uStack_d8,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8));
                     /* try { // try from 0044d528 to 0044d533 has its CatchHandler @ 0044ec4c */
-          WaterConcept::InteractiveObject::getSpriteWorldSizeAt const(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
+          WaterConcept::InteractiveObject::getSpriteWorldSizeAt(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
                     /* try { // try from 0044d534 to 0044d53f has its CatchHandler @ 0044ecc0 */
           iVar6 = rand();
           iVar7 = rand();
@@ -5991,7 +5991,7 @@ void WaterConcept::World::update(float p0)
                     /* try { // try from 0044d710 to 0044d717 has its CatchHandler @ 0044ec54 */
           Walaber::Node::getWorldPosition(&uStack_d8,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8));
                     /* try { // try from 0044d720 to 0044d72b has its CatchHandler @ 0044ec48 */
-          WaterConcept::InteractiveObject::getSpriteWorldSizeAt const(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
+          WaterConcept::InteractiveObject::getSpriteWorldSizeAt(&uStack_e0,*(undefined8 *)(in_x0[0xcd] + uVar22 * 8),0);
                     /* try { // try from 0044d72c to 0044d737 has its CatchHandler @ 0044ecbc */
           iVar6 = rand();
           iVar7 = rand();
@@ -6979,7 +6979,7 @@ void WaterConcept::World::_resolveParticleCollisions(long *param_1)
             fVar32 = -3.5;
             goto LAB_00450a34;
           }
-          uVar17 = WaterConcept::Grid::getCellForPos const(*param_1,*plVar16 + (long)(int)uStack_c4 * 0x90);
+          uVar17 = WaterConcept::Grid::getCellForPos(*param_1,*plVar16 + (long)(int)uStack_c4 * 0x90);
           lVar26 = *(long *)((int *)param_1[2] + 2);
           iVar15 = (int)((ulong)uVar17 >> 0x20);
           iVar14 = (int)uVar17;
@@ -7290,7 +7290,7 @@ LAB_00450804:
                   do {
                     uStack_b8 = *(undefined8 *)
                                  (*plVar16 + (long)(int)uStack_c4 * 0x90 + uVar18 * 8 + 0x38);
-                    uVar17 = WaterConcept::Grid::getCellForPos const(*param_1,&uStack_b8);
+                    uVar17 = WaterConcept::Grid::getCellForPos(*param_1,&uStack_b8);
                     lVar26 = *(long *)((int *)param_1[2] + 2);
                     iVar13 = (int)uVar17 + *(int *)param_1[2] * (int)((ulong)uVar17 >> 0x20);
                     cVar20 = *(char *)(lVar26 + (long)iVar13 * 0x1c + 0x16);
@@ -7329,12 +7329,12 @@ LAB_00450804:
 LAB_00450158:
                 pfVar19 = (float *)(*plVar16 + (long)(int)uStack_c4 * 0x90);
                 if (1.0 <= pfVar19[0x21]) {
-                  uStack_b8 = WaterConcept::Grid::getCellForPos const(*param_1);
+                  uStack_b8 = WaterConcept::Grid::getCellForPos(*param_1);
                   if (*(char *)(*(long *)((int *)param_1[2] + 2) +
                                 (long)((int)uStack_b8 +
                                       *(int *)param_1[2] * (int)((ulong)uStack_b8 >> 0x20)) * 0x1c +
                                0x14) != '\0') {
-                    uStack_e0 = WaterConcept::Grid::getCellForPos const(*param_1,*plVar16 + (long)(int)uStack_c4 * 0x90 + 8)
+                    uStack_e0 = WaterConcept::Grid::getCellForPos(*param_1,*plVar16 + (long)(int)uStack_c4 * 0x90 + 8)
                     ;
                     uStack_b8 = WaterConcept::World::_getClosestGridCellAlongPath(param_1,&uStack_b8,&uStack_e0,0);
                   }
@@ -7438,8 +7438,8 @@ LAB_004503b4:
                                 if ((uVar18 & 1) != 0) {
                                   fVar29 = fVar32 * 0.017453292;
                                 }
-                                WaterConcept::Grid::getCellPos const(&uStack_e8,*param_1,&uStack_b8);
-                                WaterConcept::Grid::getCellPos const(auStack_f8,*param_1,&uStack_b8);
+                                WaterConcept::Grid::getCellPos(&uStack_e8,*param_1,&uStack_b8);
+                                WaterConcept::Grid::getCellPos(auStack_f8,*param_1,&uStack_b8);
                                 iVar11 = rand();
                                 iVar12 = rand();
                                 Walaber::ParticleSet::addParticle(0x3f800000,(float)(iVar11 % 0x168),
@@ -7620,11 +7620,11 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
                   plVar12 = (long *)WaterConcept::Fluids::getParticlesForFluid(param_1[0x88],*(undefined4 *)puVar21);
                   uStack_d8 = *(ulong *)(*plVar12 + (long)*(int *)((long)puVar21 + 4) * 0x90);
                     /* try { // try from 00450d34 to 00450d3f has its CatchHandler @ 00451a40 */
-                  uVar9 = Walaber::AABB::contains const((long)plVar19 + 0x15c,&uStack_d8);
+                  uVar9 = Walaber::AABB::contains((long)plVar19 + 0x15c,&uStack_d8);
                   if ((uVar9 & 1) != 0) {
                     uStack_f8 = uStack_f8 & 0xffffffff00000000;
                     /* try { // try from 00450d48 to 00450d57 has its CatchHandler @ 00451a38 */
-                    uVar9 = WaterConcept::InteractiveObject::contains const(plVar19,&uStack_d8,&uStack_f8);
+                    uVar9 = WaterConcept::InteractiveObject::contains(plVar19,&uStack_d8,&uStack_f8);
                     if ((uVar9 & 1) != 0) {
                       uStack_100 = uStack_100 & 0xffffffffffffff00;
                     /* try { // try from 00450d70 to 00450dbf has its CatchHandler @ 00451a30 */
@@ -7707,7 +7707,7 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
         uStack_ec = (uint)((ulong)*(undefined8 *)((long)plVar23 + 0x15c) >> 0x20);
         uStack_e0 = *(undefined4 *)((long)plVar23 + 0x16c);
                     /* try { // try from 00450f88 to 00450f93 has its CatchHandler @ 004519f8 */
-        uVar9 = Walaber::AABB::intersects const(pfVar1,&iStack_f0);
+        uVar9 = Walaber::AABB::intersects(pfVar1,&iStack_f0);
         if ((uVar9 & 1) == 0) {
                     /* try { // try from 004514a4 to 004514af has its CatchHandler @ 004519ec */
           Walaber::Node::getWorldPosition(&uStack_130,plVar23);
@@ -7732,10 +7732,10 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
             do {
               lVar27 = *plVar12;
                     /* try { // try from 00451404 to 0045140f has its CatchHandler @ 00451a1c */
-              uVar10 = Walaber::AABB::contains const(pfVar1,lVar27 + lVar25);
+              uVar10 = Walaber::AABB::contains(pfVar1,lVar27 + lVar25);
               if ((uVar10 & 1) != 0) {
                     /* try { // try from 00451418 to 0045141f has its CatchHandler @ 00451a14 */
-                uStack_130 = WaterConcept::Grid::getCellForPos const(*param_1,lVar27 + lVar25);
+                uStack_130 = WaterConcept::Grid::getCellForPos(*param_1,lVar27 + lVar25);
                 lVar24 = *(long *)((int *)param_1[2] + 2);
                 iVar17 = (int)uStack_130 + *(int *)param_1[2] * (int)((ulong)uStack_130 >> 0x20);
                 pfVar22 = (float *)(lVar24 + (long)iVar17 * 0x1c);
@@ -7748,7 +7748,7 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
                     pfVar18 = pfVar22;
                     if ((cVar4 == '\x05') && (*(char *)((long)param_1 + 0xa6d) != '\0')) {
                     /* try { // try from 00450fcc to 00450fd7 has its CatchHandler @ 004519f4 */
-                      WaterConcept::Grid::getCellPos const(&uStack_d0,*param_1,&uStack_130);
+                      WaterConcept::Grid::getCellPos(&uStack_d0,*param_1,&uStack_130);
                       fVar36 = *(float *)(*param_1 + 0x20);
                       pcVar30 = (char *)(lVar24 + (long)iVar17 * 0x1c + 0x19);
                       fVar31 = 0.0;
@@ -7859,7 +7859,7 @@ void WaterConcept::World::_resolveObjectCollisions(long *param_1)
                     else if (*(byte *)((long)pfVar22 + 0x16) == 2) {
                       uStack_d0 = *(long *)(lVar27 + lVar25 + 8);
                     /* try { // try from 00451040 to 00451047 has its CatchHandler @ 004519e0 */
-                      uVar11 = WaterConcept::Grid::getCellForPos const(*param_1,&uStack_d0);
+                      uVar11 = WaterConcept::Grid::getCellForPos(*param_1,&uStack_d0);
                       lVar24 = *(long *)((int *)param_1[2] + 2);
                       iVar17 = (int)uVar11 + *(int *)param_1[2] * (int)((ulong)uVar11 >> 0x20);
                       pfVar18 = (float *)(lVar24 + (long)iVar17 * 0x1c);
@@ -7938,9 +7938,9 @@ LAB_0045148c:
           uStack_d0 = NEON_rev64(CONCAT44(uStack_e8,uStack_ec),4);
           uStack_130 = CONCAT44(uStack_e4,iStack_f0);
                     /* try { // try from 00451514 to 0045151f has its CatchHandler @ 004519e8 */
-          uVar9 = WaterConcept::Grid::getCellForPos const(*param_1,&uStack_130);
+          uVar9 = WaterConcept::Grid::getCellForPos(*param_1,&uStack_130);
                     /* try { // try from 00451524 to 0045152b has its CatchHandler @ 004519e4 */
-          uVar11 = WaterConcept::Grid::getCellForPos const(*param_1,&uStack_d0);
+          uVar11 = WaterConcept::Grid::getCellForPos(*param_1,&uStack_d0);
           uVar10 = uVar9 >> 0x20;
           iVar17 = (int)((ulong)uVar11 >> 0x20);
           uStack_d8 = uVar9;
@@ -7968,17 +7968,17 @@ LAB_0045148c:
                       uStack_f8 = *puVar3;
                       if (bVar2 < 2) {
                     /* try { // try from 004515c8 to 004515d3 has its CatchHandler @ 00451a2c */
-                        WaterConcept::Grid::getCellPos const(&uStack_100,*param_1,&uStack_d8);
+                        WaterConcept::Grid::getCellPos(&uStack_100,*param_1,&uStack_d8);
                         uStack_f8 = uStack_100;
                       }
                       uStack_104 = 0;
                     /* try { // try from 004515e0 to 004515ef has its CatchHandler @ 00451a34 */
-                      uVar10 = WaterConcept::InteractiveObject::contains const(plVar23,&uStack_f8,&uStack_104);
+                      uVar10 = WaterConcept::InteractiveObject::contains(plVar23,&uStack_f8,&uStack_104);
                       if ((uVar10 & 1) != 0) {
                         uStack_100 = 0;
                         uStack_110 = 0;
                     /* try { // try from 00451600 to 0045161b has its CatchHandler @ 00451a24 */
-                        fVar32 = (float)WaterConcept::InteractiveObject::getClosestPointOnShape const(plVar23,&uStack_f8,uStack_104,&uStack_100,
+                        fVar32 = (float)WaterConcept::InteractiveObject::getClosestPointOnShape(plVar23,&uStack_f8,uStack_104,&uStack_100,
                                                         &uStack_110,&uStack_114,&fStack_118);
                         printf((double)fVar32,(double)fStack_118,"penetration: %f  edgeD:%f\n"
                                     );
@@ -8061,7 +8061,7 @@ LAB_0045170c:
                 uStack_130 = *(undefined8 *)(lVar25 + 0x15c);
                 uStack_120 = *(undefined4 *)(lVar25 + 0x16c);
                     /* try { // try from 004517c8 to 00451803 has its CatchHandler @ 00451a10 */
-                uVar9 = Walaber::AABB::intersects const(&iStack_f0,&uStack_130);
+                uVar9 = Walaber::AABB::intersects(&iStack_f0,&uStack_130);
                 if ((uVar9 & 1) != 0) {
                   if (lVar27 == 0) {
                     WaterConcept::World::_handleFloaterVsObjectCollision(uVar9,plVar20,lVar25);
@@ -8975,11 +8975,11 @@ void WaterConcept::World::_drawGrid
       fStack_84 = p2->f_0x4 - in_x3[1] * 0.5;
       uVar4._0_4_ = p0->f_0x18;
       uVar4._4_4_ = p0->f_0x1c;
-      uVar3 = WaterConcept::Grid::getCellForPos const(uVar4,&fStack_80);
+      uVar3 = WaterConcept::Grid::getCellForPos(uVar4,&fStack_80);
       uVar5._0_4_ = p0->f_0x18;
       uVar5._4_4_ = p0->f_0x1c;
       uVar9 = uVar3 >> 0x20;
-      uVar4 = WaterConcept::Grid::getCellForPos const(uVar5,&fStack_88);
+      uVar4 = WaterConcept::Grid::getCellForPos(uVar5,&fStack_88);
       Walaber::GraphicsGL::setTextureEnabled(0);
       iVar8 = (int)(uVar3 >> 0x20);
       iVar10 = (int)((ulong)uVar4 >> 0x20);
@@ -9206,7 +9206,7 @@ void WaterConcept::World::_drawGridSprites(Walaber__SpriteBatch *p0)
       uVar4 = 0x100 - (int)(((*(float *)&pWVar16[1].field_0x8 / 2.5) * 0.099999964 + 0.85) * 256.0);
       if (uVar11 == 10) {
                     /* try { // try from 0045342c to 00453443 has its CatchHandler @ 00453684 */
-        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_FRANKEN",10);
         uVar11 = p0[0x1a].f_0x0;
         if (iVar8 != 0) goto LAB_004534f8;
@@ -10205,7 +10205,7 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
           uStack_18d = puVar1[3];
           iVar2 = **(int **)((long)p0 + 0x10);
                     /* try { // try from 004551c8 to 004551d3 has its CatchHandler @ 0045576c */
-          WaterConcept::Grid::getCellPos const(&uStack_e0,*(undefined8 *)p0,&uStack_178);
+          WaterConcept::Grid::getCellPos(&uStack_e0,*(undefined8 *)p0,&uStack_178);
           puVar11 = uStack_e0;
           uStack_e0 = (undefined8 *)((ulong)uStack_e0 & 0xffffffff00000000);
                     /* try { // try from 004551dc to 004551f7 has its CatchHandler @ 00455770 */
@@ -10744,7 +10744,7 @@ void WaterConcept::World::_addAlgaeDot(WaterConcept__GridCell p0)
   
   lVar2 = tpidr_el0;
   lStack_58 = *(long *)(lVar2 + 0x28);
-  WaterConcept::Grid::getCellPos const(&puStack_60,*(undefined8 *)p0,auStack_70);
+  WaterConcept::Grid::getCellPos(&puStack_60,*(undefined8 *)p0,auStack_70);
   puVar3 = puStack_60;
   lVar7 = *(long *)((long)p0 + 0x480);
   lVar8 = *(long *)((long)p0 + 0x478);
@@ -10811,7 +10811,7 @@ void WaterConcept::World::_addCoalDot(WaterConcept__GridCell p0)
   
   lVar3 = tpidr_el0;
   lStack_58 = *(long *)(lVar3 + 0x28);
-  WaterConcept::Grid::getCellPos const(&puStack_60,*(undefined8 *)p0,auStack_70);
+  WaterConcept::Grid::getCellPos(&puStack_60,*(undefined8 *)p0,auStack_70);
   puVar4 = puStack_60;
   lVar9 = *(long *)((long)p0 + 0x498);
   lVar10 = *(long *)((long)p0 + 0x490);
@@ -11307,7 +11307,7 @@ LAB_00456b24:
               uVar21 = strlen();
               if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c060 to 0045c067 has its CatchHandler @ 0045c090 */
-                std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+                std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
                 return;
               }
               if (uVar21 < 0x17) {
@@ -11352,7 +11352,7 @@ LAB_00456e9c:
                 uStack_f9 = 0;
                 sscanf(puVar22,"%i,%i",&bStack_100,uVar43);
                     /* try { // try from 00456f08 to 00456f13 has its CatchHandler @ 0045c77c */
-                WaterConcept::Grid::getCellPos const(&bStack_480,*(undefined8 *)p0,&bStack_100);
+                WaterConcept::Grid::getCellPos(&bStack_480,*(undefined8 *)p0,&bStack_100);
                 *(ulong *)((long)p0 + 0x680) = CONCAT62(uStack_47e,CONCAT11(bStack_47f,bStack_480));
               }
               if (((uint)fStack_458 & 1) != 0) {
@@ -11416,7 +11416,7 @@ LAB_00456e9c:
             uVar21 = strlen();
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c078 to 0045c07f has its CatchHandler @ 0045c084 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_100);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_100);
               return;
             }
             if (uVar21 < 0x17) {
@@ -11463,7 +11463,7 @@ LAB_004575d4:
             uVar21 = strlen();
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c070 to 0045c077 has its CatchHandler @ 0045c088 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_480);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_480);
               return;
             }
             if (uVar21 < 0x17) {
@@ -11600,7 +11600,7 @@ LAB_00457694:
               *puVar46 = 0x76654c73756e6f42;
               uStack_44d = 0;
                     /* try { // try from 00456bb0 to 00456bbb has its CatchHandler @ 0045c558 */
-              uVar21 = Walaber::PropertyList::keyExists const(lVar25,&fStack_458);
+              uVar21 = Walaber::PropertyList::keyExists(lVar25,&fStack_458);
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
               }
@@ -11623,7 +11623,7 @@ LAB_00457694:
                 uStack_44d = 0;
                     /* try { // try from 00456bf8 to 00456c07 has its CatchHandler @ 0045c554 */
                 Walaber::PropertyList::getValueForKey(lVar25,&fStack_458);
-                iVar15 = Walaber::Property::asInt const();
+                iVar15 = Walaber::Property::asInt();
                 *(bool *)((long)p0 + 0x9a8) = iVar15 == 1;
                 if (((uint)fStack_458 & 1) != 0) {
                   operator delete(puStack_448);
@@ -11646,7 +11646,7 @@ LAB_00457694:
               *puVar46 = 0x4c7972657473794d;
               uStack_44b = 0;
                     /* try { // try from 00456c58 to 00456c63 has its CatchHandler @ 0045c560 */
-              uVar21 = Walaber::PropertyList::keyExists const(lVar25,&fStack_458);
+              uVar21 = Walaber::PropertyList::keyExists(lVar25,&fStack_458);
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
               }
@@ -11669,7 +11669,7 @@ LAB_00457694:
                 uStack_44b = 0;
                     /* try { // try from 00456ca4 to 00456cb3 has its CatchHandler @ 0045c55c */
                 Walaber::PropertyList::getValueForKey(lVar25,&fStack_458);
-                iVar15 = Walaber::Property::asInt const();
+                iVar15 = Walaber::Property::asInt();
                 uVar11 = iVar15 == 1;
                 *(undefined1 *)((long)p0 + 0x9a9) = uVar11;
                 if (((uint)fStack_458 & 1) != 0) {
@@ -11729,7 +11729,7 @@ LAB_00457694:
         uVar21 = strlen();
         if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c068 to 0045c06f has its CatchHandler @ 0045c08c */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
           return;
         }
         if (uVar21 < 0x17) {
@@ -11812,7 +11812,7 @@ LAB_00456fb4:
           uVar21 = strlen();
           if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c058 to 0045c05f has its CatchHandler @ 0045c094 */
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
             return;
           }
           if (uVar21 < 0x17) {
@@ -11856,7 +11856,7 @@ LAB_00457128:
           uStack_f9 = 0;
           sscanf(puVar22,"%i,%i",&bStack_100,uVar43);
                     /* try { // try from 0045717c to 00457187 has its CatchHandler @ 0045c848 */
-          WaterConcept::Grid::getCellPos const(&bStack_480,*(undefined8 *)p0,&bStack_100);
+          WaterConcept::Grid::getCellPos(&bStack_480,*(undefined8 *)p0,&bStack_100);
           lStack_5f0 = CONCAT62(uStack_47e,CONCAT11(bStack_47f,bStack_480));
           if (((uint)fStack_458 & 1) != 0) {
             operator delete(puStack_448);
@@ -11910,7 +11910,7 @@ LAB_00457128:
       }
       else {
                     /* try { // try from 004571f4 to 004571ff has its CatchHandler @ 0045c664 */
-        Walaber::Property::asString const(&bStack_100,lVar40);
+        Walaber::Property::asString(&bStack_100,lVar40);
                     /* try { // try from 00457200 to 0045720b has its CatchHandler @ 0045c64c */
         Walaber::StringHelper::toLower(&fStack_458,&bStack_100);
         if ((bStack_100 & 1) != 0) {
@@ -11931,7 +11931,7 @@ LAB_00457128:
         }
         if (uVar21 == 5) {
                     /* try { // try from 00457238 to 00457253 has its CatchHandler @ 0045c570 */
-          iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"spout",5);
+          iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"spout",5);
           if (iVar15 != 0) {
             uVar32 = CONCAT17(uStack_449,
                               CONCAT16(uStack_44a,
@@ -11956,7 +11956,7 @@ LAB_00457278:
           bVar14 = fStack_458._0_1_;
           if (uVar21 == 4) {
                     /* try { // try from 00457288 to 004572a3 has its CatchHandler @ 0045c564 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,&DAT_00637350,4);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,&DAT_00637350,4);
             if (iVar15 == 0) {
               iVar15 = 2;
               goto LAB_00457894;
@@ -11979,7 +11979,7 @@ LAB_00457278:
           }
           if (uVar21 == 4) {
                     /* try { // try from 004572c8 to 004572e3 has its CatchHandler @ 0045c528 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,&DAT_00637355,4);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,&DAT_00637355,4);
             if (iVar15 == 0) {
               iVar15 = 3;
               goto LAB_00457894;
@@ -12002,7 +12002,7 @@ LAB_00457278:
           }
           if (uVar21 == 6) {
                     /* try { // try from 00457308 to 00457323 has its CatchHandler @ 0045c520 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"switch",6);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"switch",6);
             if (iVar15 == 0) {
               iVar15 = 4;
               goto LAB_00457894;
@@ -12025,7 +12025,7 @@ LAB_00457278:
           }
           if (uVar21 == 0xb) {
                     /* try { // try from 00457348 to 00457363 has its CatchHandler @ 0045c4f8 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"collectible",0xb);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"collectible",0xb);
             if (iVar15 == 0) {
               iVar15 = 5;
               goto LAB_00457894;
@@ -12048,7 +12048,7 @@ LAB_00457278:
           }
           if (uVar21 == 0xe) {
                     /* try { // try from 00457388 to 004573a3 has its CatchHandler @ 0045c434 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"fluidconverter",0xe);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"fluidconverter",0xe);
             if (iVar15 == 0) {
               iVar15 = 6;
               goto LAB_00457894;
@@ -12071,7 +12071,7 @@ LAB_00457278:
           }
           if (uVar21 == 6) {
                     /* try { // try from 004573c8 to 004573e3 has its CatchHandler @ 0045c3ec */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"icyhot",6);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"icyhot",6);
             if (iVar15 == 0) {
               iVar15 = 7;
               goto LAB_00457894;
@@ -12094,7 +12094,7 @@ LAB_00457278:
           }
           if (uVar21 == 9) {
                     /* try { // try from 00457408 to 00457423 has its CatchHandler @ 0045c3a4 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"dirtywall",9);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"dirtywall",9);
             if (iVar15 == 0) {
               iVar15 = 8;
               goto LAB_00457894;
@@ -12117,7 +12117,7 @@ LAB_00457278:
           }
           if (uVar21 == 7) {
                     /* try { // try from 00457448 to 00457463 has its CatchHandler @ 0045c304 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"floater",7);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"floater",7);
             if (iVar15 == 0) {
               iVar15 = 9;
               goto LAB_00457894;
@@ -12140,7 +12140,7 @@ LAB_00457278:
           }
           if (uVar21 == 0xc) {
                     /* try { // try from 00457488 to 004574a3 has its CatchHandler @ 0045c2f8 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"waterballoon",0xc);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"waterballoon",0xc);
             if (iVar15 == 0) {
               iVar15 = 10;
               goto LAB_00457894;
@@ -12163,7 +12163,7 @@ LAB_00457278:
           }
           if (uVar21 == 10) {
                     /* try { // try from 004574c8 to 004574e3 has its CatchHandler @ 0045c210 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"algaehider",10);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"algaehider",10);
             if (iVar15 == 0) {
               iVar15 = 0xb;
               goto LAB_00457894;
@@ -12186,7 +12186,7 @@ LAB_00457278:
           }
           if (uVar21 == 3) {
                     /* try { // try from 00457508 to 00457523 has its CatchHandler @ 0045c1d8 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,&DAT_006373a6,3);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,&DAT_006373a6,3);
             if (iVar15 == 0) {
               iVar15 = 0xc;
               goto LAB_00457894;
@@ -12209,7 +12209,7 @@ LAB_00457278:
           }
           if (uVar21 == 7) {
                     /* try { // try from 00457548 to 00457563 has its CatchHandler @ 0045c1d4 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"yswitch",7);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"yswitch",7);
             if (iVar15 == 0) {
               iVar15 = 0xd;
               goto LAB_00457894;
@@ -12231,7 +12231,7 @@ LAB_00457278:
           }
           if (uVar48 == 0xb) {
                     /* try { // try from 00457588 to 004575a3 has its CatchHandler @ 0045c1c8 */
-            iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"mysterycave",0xb);
+            iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"mysterycave",0xb);
             iVar15 = 0xe;
             if (iVar19 != 0) {
               iVar15 = 0;
@@ -12267,7 +12267,7 @@ LAB_00457894:
       }
       if (lVar40 != 0) {
                     /* try { // try from 004578f8 to 00457903 has its CatchHandler @ 0045c660 */
-        Walaber::Property::asString const(&fStack_458,lVar40);
+        Walaber::Property::asString(&fStack_458,lVar40);
         if ((bStack_1d0 & 1) != 0) {
           *(undefined1 *)CONCAT17(uStack_1b9,CONCAT43(uStack_1bd,CONCAT21(uStack_1bf,uStack_1c0))) =
                0;
@@ -12305,7 +12305,7 @@ LAB_00457894:
         }
                     /* try { // try from 0045796c to 00457987 has its CatchHandler @ 0045c568 */
         if ((uVar21 == 0x10) &&
-           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star.hs",0x10),
+           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star.hs",0x10),
            iVar19 == 0)) {
                     /* try { // try from 0045798c to 0045799f has its CatchHandler @ 0045c578 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_1d0,"/Objects/star_poison.hs",0x17);
@@ -12318,7 +12318,7 @@ LAB_00457894:
         }
                     /* try { // try from 004579c4 to 004579df has its CatchHandler @ 0045c574 */
         if ((uVar21 == 0x17) &&
-           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star_poison.hs",0x17
+           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star_poison.hs",0x17
                                     ), iVar19 == 0)) {
                     /* try { // try from 004579e4 to 004579f7 has its CatchHandler @ 0045c578 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_1d0,"/Objects/star.hs",0x10);
@@ -12331,7 +12331,7 @@ LAB_00457894:
         }
                     /* try { // try from 00457a1c to 00457a37 has its CatchHandler @ 0045c56c */
         if ((uVar21 == 0x10) &&
-           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star.hs",0x10),
+           (iVar19 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_1d0,0,0xffffffffffffffff,"/Objects/star.hs",0x10),
            iVar19 == 0)) {
                     /* try { // try from 00457a3c to 00457a4f has its CatchHandler @ 0045c578 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_1d0,"/Objects/star_halloween.hs",0x1a);
@@ -12363,7 +12363,7 @@ LAB_00457894:
       }
       else {
                     /* try { // try from 00457aa0 to 00457aa7 has its CatchHandler @ 0045c66c */
-        fVar50 = (float)Walaber::Property::asFloat const(lVar40);
+        fVar50 = (float)Walaber::Property::asFloat(lVar40);
         fVar50 = fVar50 * 0.017453292;
       }
       switch(iVar15) {
@@ -12470,7 +12470,7 @@ LAB_00457894:
         uStack_450 = 0x65;
         uStack_44f = 0;
                     /* try { // try from 004583d8 to 004583e3 has its CatchHandler @ 0045c348 */
-        uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+        uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
         if (((uint)fStack_458 & 1) != 0) {
           operator delete(puStack_448);
         }
@@ -12492,8 +12492,8 @@ LAB_00457894:
           uStack_f8 = 0x65;
           uStack_f7 = 0;
                     /* try { // try from 00458428 to 0045843b has its CatchHandler @ 0045c328 */
-          Walaber::PropertyList::operator[] const(&bStack_d0,&bStack_100);
-          Walaber::Property::asString const(&fStack_458);
+          Walaber::PropertyList::operator[](&bStack_d0,&bStack_100);
+          Walaber::Property::asString(&fStack_458);
                     /* try { // try from 0045843c to 00458443 has its CatchHandler @ 0045c1e0 */
           iVar19 = WaterConcept::StarSeed::strToStarType(&fStack_458);
           if (((uint)fStack_458 & 1) != 0) {
@@ -12521,7 +12521,7 @@ LAB_00457894:
             *puVar46 = 0x74726f70656c6554;
             uStack_44d = 0;
                     /* try { // try from 004584c0 to 004584cb has its CatchHandler @ 0045c1b0 */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12546,8 +12546,8 @@ LAB_00457894:
               *puVar46 = 0x74726f70656c6554;
               uStack_44d = 0;
                     /* try { // try from 00458508 to 00458517 has its CatchHandler @ 0045c1bc */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              iVar19 = Walaber::Property::asInt const();
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              iVar19 = Walaber::Property::asInt();
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
               }
@@ -12569,7 +12569,7 @@ LAB_00457894:
             *puVar46 = 0x74726f70656c6554;
             puStack_448 = (ulong *)0x0;
                     /* try { // try from 004588e4 to 004588ef has its CatchHandler @ 0045c194 */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12592,8 +12592,8 @@ LAB_00457894:
               *puVar46 = 0x74726f70656c6554;
               puStack_448 = (ulong *)0x0;
                     /* try { // try from 0045892c to 0045893b has its CatchHandler @ 0045c184 */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              uVar51 = Walaber::Property::asFloat const();
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              uVar51 = Walaber::Property::asFloat();
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
               }
@@ -12615,7 +12615,7 @@ LAB_00457894:
             *puVar46 = 0x74726f70656c6554;
             puStack_448 = (ulong *)0x0;
                     /* try { // try from 0045897c to 00458987 has its CatchHandler @ 0045c1b8 */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12638,8 +12638,8 @@ LAB_00457894:
               *puVar46 = 0x74726f70656c6554;
               puStack_448 = (ulong *)0x0;
                     /* try { // try from 004589c4 to 004589d3 has its CatchHandler @ 0045c1b4 */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              uVar36 = Walaber::Property::asFloat const();
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              uVar36 = Walaber::Property::asFloat();
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
               }
@@ -12659,7 +12659,7 @@ LAB_00457894:
             uStack_450 = 0x6b;
             uStack_44f = 0;
                     /* try { // try from 00458a18 to 00458a23 has its CatchHandler @ 0045c190 */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12682,8 +12682,8 @@ LAB_00457894:
               uStack_450 = 0x6b;
               uStack_44f = 0;
                     /* try { // try from 00458a6c to 00458a7b has its CatchHandler @ 0045c19c */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              iVar16 = Walaber::Property::asInt const();
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              iVar16 = Walaber::Property::asInt();
               bVar12 = iVar16 != 0;
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
@@ -12706,7 +12706,7 @@ LAB_00457894:
             *puVar46 = 0x74726f70656c6554;
             puStack_448 = (ulong *)0x0;
                     /* try { // try from 00458ac8 to 00458ad3 has its CatchHandler @ 0045c188 */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12731,8 +12731,8 @@ LAB_00457894:
               *puVar46 = 0x74726f70656c6554;
               puStack_448 = (ulong *)0x0;
                     /* try { // try from 00458b0c to 00458b1f has its CatchHandler @ 0045c1a0 */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              Walaber::Property::asString const(abStack_228);
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              Walaber::Property::asString(abStack_228);
                     /* try { // try from 00458b20 to 00458b27 has its CatchHandler @ 0045c0d8 */
               uVar17 = WaterConcept::InteractiveObject::strToMoveEase(abStack_228);
               if ((abStack_228[0] & 1) != 0) {
@@ -12759,7 +12759,7 @@ LAB_00457894:
             *(undefined4 *)puVar46 = 0x73727542;
             uStack_452 = 0;
                     /* try { // try from 00458b80 to 00458b8b has its CatchHandler @ 0045c18c */
-            uVar21 = Walaber::PropertyList::keyExists const(&bStack_d0,&fStack_458);
+            uVar21 = Walaber::PropertyList::keyExists(&bStack_d0,&fStack_458);
             if (((uint)fStack_458 & 1) != 0) {
               operator delete(puStack_448);
             }
@@ -12784,8 +12784,8 @@ LAB_00457894:
               *(undefined4 *)puVar46 = 0x73727542;
               uStack_452 = 0;
                     /* try { // try from 00458bd4 to 00458be3 has its CatchHandler @ 0045c198 */
-              Walaber::PropertyList::operator[] const(&bStack_d0,&fStack_458);
-              iVar16 = Walaber::Property::asInt const();
+              Walaber::PropertyList::operator[](&bStack_d0,&fStack_458);
+              iVar16 = Walaber::Property::asInt();
               bVar13 = iVar16 != 0;
               if (((uint)fStack_458 & 1) != 0) {
                 operator delete(puStack_448);
@@ -14038,7 +14038,7 @@ LAB_00458ea8:
           iVar19 = 1;
           do {
                     /* try { // try from 00458f08 to 00458f13 has its CatchHandler @ 0045c908 */
-            Walaber::Property::asString const(&pbStack_420,lVar40);
+            Walaber::Property::asString(&pbStack_420,lVar40);
             snprintf(&bStack_100,0x24,"ConnectedSpoutProbability%i",iVar19 + -1);
             uStack_450 = 0;
             uStack_44f = 0;
@@ -14057,7 +14057,7 @@ LAB_00458ea8:
             uVar21 = strlen(&bStack_100);
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c048 to 0045c04f has its CatchHandler @ 0045c09c */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
               return;
             }
             if (uVar21 < 0x17) {
@@ -14095,7 +14095,7 @@ LAB_00458f90:
             uVar49 = 0x3f800000;
             if (lVar40 != 0) {
                     /* try { // try from 00458fcc to 00458fd3 has its CatchHandler @ 0045c878 */
-              uVar49 = Walaber::Property::asFloat const(lVar40);
+              uVar49 = Walaber::Property::asFloat(lVar40);
             }
             snprintf(&bStack_100,0x24,"ConnectedYSwitchPort%i",iVar19 + -1);
             uStack_450 = 0;
@@ -14115,7 +14115,7 @@ LAB_00458f90:
             uVar21 = strlen(&bStack_100);
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c040 to 0045c047 has its CatchHandler @ 0045c0a0 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
               return;
             }
             if (uVar21 < 0x17) {
@@ -14155,7 +14155,7 @@ LAB_00459050:
             }
             else {
                     /* try { // try from 00459088 to 00459093 has its CatchHandler @ 0045c870 */
-              Walaber::Property::asString const(&fStack_458,lVar40);
+              Walaber::Property::asString(&fStack_458,lVar40);
                     /* try { // try from 00459094 to 0045909b has its CatchHandler @ 0045c874 */
               uVar18 = WaterConcept::YSwitch::strToYSwitchPort(&fStack_458);
               if (((uint)fStack_458 & 1) != 0) {
@@ -14207,7 +14207,7 @@ LAB_00459050:
             uVar21 = strlen(&bStack_100);
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c038 to 0045c03f has its CatchHandler @ 0045c0a4 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
               return;
             }
             if (uVar21 < 0x17) {
@@ -14273,7 +14273,7 @@ LAB_004591b0:
           iVar19 = 1;
           do {
                     /* try { // try from 0045924c to 00459257 has its CatchHandler @ 0045c8bc */
-            Walaber::Property::asString const(&bStack_480,lVar40);
+            Walaber::Property::asString(&bStack_480,lVar40);
                     /* try { // try from 00459258 to 00459263 has its CatchHandler @ 0045c8b0 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_458,&bStack_1f0);
                     /* try { // try from 00459264 to 0045926f has its CatchHandler @ 0045c8c0 */
@@ -14304,7 +14304,7 @@ LAB_004591b0:
             uVar21 = strlen(&bStack_100);
             if (0xffffffffffffffef < uVar21) {
                     /* try { // try from 0045c050 to 0045c057 has its CatchHandler @ 0045c098 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_458);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_458);
               return;
             }
             if (uVar21 < 0x17) {
@@ -14369,7 +14369,7 @@ LAB_00459314:
         }
         if (lVar40 != 0) {
                     /* try { // try from 004593b4 to 004593bf has its CatchHandler @ 0045c604 */
-          Walaber::Property::asString const(&bStack_480,lVar40);
+          Walaber::Property::asString(&bStack_480,lVar40);
                     /* try { // try from 004593c0 to 004593cb has its CatchHandler @ 0045c608 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_458,&bStack_1f0);
                     /* try { // try from 004593cc to 004593d7 has its CatchHandler @ 0045c600 */
@@ -14399,7 +14399,7 @@ LAB_00459314:
           }
           if (lVar40 != 0) {
                     /* try { // try from 00459518 to 00459523 has its CatchHandler @ 0045c504 */
-            Walaber::Property::asString const(&bStack_480,lVar40);
+            Walaber::Property::asString(&bStack_480,lVar40);
                     /* try { // try from 00459524 to 0045952f has its CatchHandler @ 0045c514 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_458,&bStack_1f0);
                     /* try { // try from 00459530 to 0045953b has its CatchHandler @ 0045c50c */
@@ -14431,7 +14431,7 @@ LAB_00459548:
           }
           if (lVar40 != 0) {
                     /* try { // try from 0045947c to 00459487 has its CatchHandler @ 0045c4fc */
-            Walaber::Property::asString const(&bStack_480,lVar40);
+            Walaber::Property::asString(&bStack_480,lVar40);
                     /* try { // try from 00459488 to 00459493 has its CatchHandler @ 0045c518 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_458,&bStack_1f0);
                     /* try { // try from 00459494 to 0045949f has its CatchHandler @ 0045c508 */
@@ -14660,7 +14660,7 @@ LAB_004598bc:
         }
                     /* try { // try from 00459aa8 to 00459ac3 has its CatchHandler @ 0045c780 */
         if ((uVar42 != 0xc) ||
-           (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbVar28,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc), iVar15 != 0))
+           (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbVar28,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc), iVar15 != 0))
         {
           bVar1 = *(byte *)(plVar30 + 7);
           uVar42 = (ulong)(bVar1 >> 1);
@@ -14669,7 +14669,7 @@ LAB_004598bc:
           }
                     /* try { // try from 00459ae8 to 00459aff has its CatchHandler @ 0045c75c */
           if ((uVar42 != 0xc) ||
-             (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(plVar30 + 7,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc),
+             (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(plVar30 + 7,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc),
              iVar15 != 0)) goto LAB_0045a108;
         }
         uVar42 = (ulong)(*(byte *)(plVar30 + 4) >> 1);
@@ -14678,7 +14678,7 @@ LAB_004598bc:
         }
                     /* try { // try from 00459b20 to 00459b3b has its CatchHandler @ 0045c648 */
         if ((uVar42 == 0xc) &&
-           (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbVar28,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc), iVar15 == 0))
+           (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbVar28,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc), iVar15 == 0))
         {
           plVar34 = plVar30 + 7;
           bStack_100 = (byte)plVar34;
@@ -14705,7 +14705,7 @@ LAB_004598bc:
           }
           if (uVar42 == 6) {
                     /* try { // try from 00459c44 to 00459c5f has its CatchHandler @ 0045c438 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"Cranky",6);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"Cranky",6);
             if (iVar15 != 0) {
               uVar21 = CONCAT17(uStack_449,
                                 CONCAT16(uStack_44a,
@@ -14729,7 +14729,7 @@ LAB_00459c84:
             }
             if (uVar43 == 5) {
                     /* try { // try from 00459c94 to 00459caf has its CatchHandler @ 0045c3f0 */
-              iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"Allie",5);
+              iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"Allie",5);
               goto LAB_00459bec;
             }
 LAB_00459cb4:
@@ -14761,7 +14761,7 @@ LAB_00459cb4:
           }
           if (uVar42 == 6) {
                     /* try { // try from 00459b88 to 00459ba3 has its CatchHandler @ 0045c634 */
-            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"Cranky",6);
+            iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"Cranky",6);
             if (iVar15 == 0) goto LAB_00459c78;
             uVar21 = CONCAT17(uStack_449,
                               CONCAT16(uStack_44a,
@@ -14779,7 +14779,7 @@ LAB_00459cb4:
           }
           if (uVar43 != 5) goto LAB_00459cb4;
                     /* try { // try from 00459bd0 to 00459beb has its CatchHandler @ 0045c5a8 */
-          iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,"Allie",5);
+          iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,"Allie",5);
 LAB_00459bec:
           iVar19 = 4;
           if (iVar15 != 0) {
@@ -15484,7 +15484,7 @@ LAB_0045a194:
   }
   if (uVar42 == 6) {
                     /* try { // try from 0045a73c to 0045a757 has its CatchHandler @ 0045c41c */
-    iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(lVar44,0,0xffffffffffffffff,"Cranky",6);
+    iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(lVar44,0,0xffffffffffffffff,"Cranky",6);
     uVar51 = WaterConceptConstants::CRANKY_FOOD_OFFSET;
     if (iVar15 != 0) {
       bVar14 = *(byte *)((long)p0 + 0xa08);
@@ -16105,7 +16105,7 @@ LAB_0045a774:
     }
                     /* try { // try from 0045a784 to 0045a79f has its CatchHandler @ 0045c3e8 */
     if ((uVar43 == 5) &&
-       (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(lVar44,0,0xffffffffffffffff,"Allie",5), iVar15 == 0)) {
+       (iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(lVar44,0,0xffffffffffffffff,"Allie",5), iVar15 == 0)) {
                     /* try { // try from 0045ace8 to 0045acef has its CatchHandler @ 0045c1dc */
       Walaber::PropertyList::PropertyList(&fStack_458);
       if (((*(float *)((long)p0 + 0x680) == -1.0) && (*(float *)((long)p0 + 0x684) == -1.0)) ||
@@ -16644,11 +16644,11 @@ LAB_0045b70c:
       fVar53 = *(float *)(lVar40 + 0x20);
       fVar54 = *(float *)(lVar40 + 0x24);
                     /* try { // try from 0045b930 to 0045b937 has its CatchHandler @ 0045c7bc */
-      WaterConcept::Grid::getCellPos const(&fStack_458,lVar40,lVar25 + uVar42 * 0x28);
+      WaterConcept::Grid::getCellPos(&fStack_458,lVar40,lVar25 + uVar42 * 0x28);
       fVar52 = fStack_458;
       fVar50 = (float)CONCAT13(uStack_451,CONCAT12(uStack_452,CONCAT11(uStack_453,uStack_454)));
                     /* try { // try from 0045b950 to 0045b957 has its CatchHandler @ 0045c7c0 */
-      WaterConcept::Grid::getCellPos const(&fStack_458,*(undefined8 *)p0,lVar25 + uVar42 * 0x28 + 8);
+      WaterConcept::Grid::getCellPos(&fStack_458,*(undefined8 *)p0,lVar25 + uVar42 * 0x28 + 8);
       fVar53 = fVar53 * 0.5;
       fVar54 = fVar54 * 0.5;
       fVar50 = fVar54 + fVar50;
@@ -16685,7 +16685,7 @@ LAB_0045b70c:
       builtin_strncpy(pcVar37,"FluidType",9);
       uStack_44e = 0;
                     /* try { // try from 0045b9d0 to 0045b9db has its CatchHandler @ 0045c7c8 */
-      uVar43 = Walaber::PropertyList::keyExists const(lVar25,&fStack_458);
+      uVar43 = Walaber::PropertyList::keyExists(lVar25,&fStack_458);
       if (((uint)fStack_458 & 1) != 0) {
         operator delete(puStack_448);
       }
@@ -16708,8 +16708,8 @@ LAB_0045b70c:
         builtin_strncpy((char *)((ulong)&bStack_100 | 1),"FluidType",9);
         uStack_f6 = 0;
                     /* try { // try from 0045ba14 to 0045ba27 has its CatchHandler @ 0045c7cc */
-        Walaber::PropertyList::operator[] const(lVar25,&bStack_100);
-        Walaber::Property::asString const(&fStack_458);
+        Walaber::PropertyList::operator[](lVar25,&bStack_100);
+        Walaber::Property::asString(&fStack_458);
                     /* try { // try from 0045ba28 to 0045ba2f has its CatchHandler @ 0045c760 */
         uVar20 = WaterConceptConstants::stringToFluidType(&fStack_458);
         if (((uint)fStack_458 & 1) != 0) {
@@ -16736,7 +16736,7 @@ LAB_0045b70c:
       builtin_strncpy(pcVar37,"InitialVelocity",0xf);
       puStack_448 = (ulong *)0x0;
                     /* try { // try from 0045ba98 to 0045baa3 has its CatchHandler @ 0045c7e0 */
-      uVar43 = Walaber::PropertyList::keyExists const(lVar25,&fStack_458);
+      uVar43 = Walaber::PropertyList::keyExists(lVar25,&fStack_458);
       if (((uint)fStack_458 & 1) != 0) {
         operator delete(puStack_448);
       }
@@ -16757,8 +16757,8 @@ LAB_0045b70c:
         builtin_strncpy(pcVar37,"InitialVelocity",0xf);
         puStack_448 = (ulong *)0x0;
                     /* try { // try from 0045badc to 0045baef has its CatchHandler @ 0045c7e4 */
-        Walaber::PropertyList::operator[] const(lVar25,&fStack_458);
-        Walaber::Property::asVector2 const(&bStack_100);
+        Walaber::PropertyList::operator[](lVar25,&fStack_458);
+        Walaber::Property::asVector2(&bStack_100);
         uVar51 = CONCAT17(uStack_f9,
                           CONCAT25(uStack_fb,
                                    CONCAT14(uStack_fc,
@@ -16782,7 +16782,7 @@ LAB_0045b70c:
             uStack_452 = (undefined1)((ulong)uVar36 >> 0x30);
             uStack_451 = (undefined1)((ulong)uVar36 >> 0x38);
                     /* try { // try from 0045bb4c to 0045bb57 has its CatchHandler @ 0045c8ac */
-            uVar21 = Walaber::AABB::contains const(&bStack_480,&fStack_458);
+            uVar21 = Walaber::AABB::contains(&bStack_480,&fStack_458);
             if ((uVar21 & 1) != 0) {
               *(ulong *)(*plVar30 + lVar25 + 8) =
                    CONCAT44((float)(CONCAT17(uStack_451,
@@ -16846,7 +16846,7 @@ LAB_0045b70c:
               }
               if (uVar42 == 0x1b) {
                     /* try { // try from 0045bc4c to 0045bc63 has its CatchHandler @ 0045c830 */
-                iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_458,0,0xffffffffffffffff,
+                iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_458,0,0xffffffffffffffff,
                                          "/Objects/fan_vacuum_tube.hs",0x1b);
                 bVar10 = iVar15 == 0;
               }
@@ -16866,7 +16866,7 @@ LAB_0045b70c:
                 uStack_47e = (undefined6)((ulong)uVar51 >> 0x10);
                 pcStack_470 = (char *)CONCAT44(pcStack_470._4_4_,*(undefined4 *)(lVar40 + 0x16c));
                     /* try { // try from 0045bcac to 0045bcc7 has its CatchHandler @ 0045c880 */
-                uVar42 = Walaber::AABB::intersects const(&bStack_100,&bStack_480);
+                uVar42 = Walaber::AABB::intersects(&bStack_100,&bStack_480);
                 if ((uVar42 & 1) != 0) {
                   WaterConcept::Fan::connectPump(lVar25,*plVar39);
                   uStack_450 = 0;
@@ -18127,7 +18127,7 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0)
     }
     if (puVar1 == (undefined4 *)((long)&Elf64_Ehdr_00000000.e_type + 1)) {
                     /* try { // try from 0045ebb0 to 0045ebcb has its CatchHandler @ 0045f070 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_c8,0,0xffffffffffffffff,"BombExplodesStart",0x11);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_c8,0,0xffffffffffffffff,"BombExplodesStart",0x11);
       if (iVar3 != 0) {
         puVar10 = (undefined4 *)(ulong)(fStack_c8._0_1_ >> 1);
         goto LAB_0045ebe8;
@@ -18141,7 +18141,7 @@ LAB_0045ebe8:
                     /* try { // try from 0045ebf8 to 0045ec13 has its CatchHandler @ 0045f06c */
                     /* try { // try from 0045ec1c to 0045ec1f has its CatchHandler @ 0045f088 */
       if (((puVar10 != &Elf64_Ehdr_00000000.e_version) ||
-          (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_c8,0,0xffffffffffffffff,"BombExplodesReaction",0x14),
+          (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_c8,0,0xffffffffffffffff,"BombExplodesReaction",0x14),
           iVar3 != 0)) &&
          (uVar8 = WaterConcept::GameState::isGameWon(*(undefined8 *)((long)p0 + 0x9d0)), (uVar8 & 1) == 0)) {
         abStack_e0[0xb] = 0;
@@ -18730,10 +18730,10 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
     if (fVar16 <= fVar15) {
       fVar15 = fVar16;
     }
-    uVar9 = WaterConcept::Grid::getCellForPos const(*(undefined8 *)p0,&uStack_b8);
+    uVar9 = WaterConcept::Grid::getCellForPos(*(undefined8 *)p0,&uStack_b8);
     uVar13 = uVar9 >> 0x20;
     uStack_b8 = CONCAT44(fVar17,fVar18);
-    uVar8 = WaterConcept::Grid::getCellForPos const(*(undefined8 *)p0,&uStack_b8);
+    uVar8 = WaterConcept::Grid::getCellForPos(*(undefined8 *)p0,&uStack_b8);
     iVar5 = (int)((ulong)uVar8 >> 0x20);
     uVar11 = (uint)(uVar9 >> 0x20);
     uStack_c8 = (ulong)uVar11 << 0x20;
@@ -18743,7 +18743,7 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
         iVar6 = (int)uVar13;
         if ((int)uVar9 <= (int)uVar8) {
           do {
-            WaterConcept::Grid::getCellPos const(&fStack_d0,*(undefined8 *)p0,&uStack_c8);
+            WaterConcept::Grid::getCellPos(&fStack_d0,*(undefined8 *)p0,&uStack_c8);
             fVar17 = (fStack_d0 - fStack_c0) * (fStack_d0 - fStack_c0) +
                      (fStack_cc - fStack_bc) * (fStack_cc - fStack_bc);
             fVar16 = SQRT(fVar17);
@@ -18862,7 +18862,7 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
     *(undefined1 *)(lVar10 + 0x1a) = 0;
     WaterConcept::World::_flagCellForRedraw(p0,*(undefined8 *)(in_x1 + 6));
     if ((char)in_x1[8] == '\0') {
-      WaterConcept::Grid::getCellPos const(&uStack_b8,*(undefined8 *)p0,piVar12);
+      WaterConcept::Grid::getCellPos(&uStack_b8,*(undefined8 *)p0,piVar12);
       lVar10 = *(long *)((long)p0 + 0x760);
       fVar15 = *(float *)(*(long *)((long)p0 + 0x778) + 4) + 0.001;
       if (*(float *)(lVar10 + 4) <= 0.0) {
@@ -19250,9 +19250,9 @@ void WaterConcept::World::_mysteryCaveStateChangeCallback(void *p0)
       fVar14 = fVar14 + fVar18;
       fVar15 = fVar15 + fVar17 * 0.5;
       uStack_b0 = CONCAT44(fVar15 - fVar16,fVar14 - fVar18);
-      uVar12 = WaterConcept::Grid::getCellForPos const(*(undefined8 *)p0,&uStack_b0);
+      uVar12 = WaterConcept::Grid::getCellForPos(*(undefined8 *)p0,&uStack_b0);
       uStack_b0 = CONCAT44(fVar16 + fVar15,fVar18 + fVar14);
-      uVar7 = WaterConcept::Grid::getCellForPos const(*(undefined8 *)p0,&uStack_b0);
+      uVar7 = WaterConcept::Grid::getCellForPos(*(undefined8 *)p0,&uStack_b0);
       uVar13 = (int)uVar12 - 1;
       uVar13 = uVar13 & ((int)uVar13 >> 0x1f ^ 0xffffffffU);
       iVar4 = *(int *)(*(long *)p0 + 0x10) + -1;
@@ -19274,8 +19274,8 @@ void WaterConcept::World::_mysteryCaveStateChangeCallback(void *p0)
               iVar9 = iVar9 + 1;
               uStack_b0 = CONCAT44(iVar9,uVar13);
               uVar12 = *(undefined8 *)(in_x1 + 4);
-              WaterConcept::Grid::getCellPos const(&uStack_b8,*(undefined8 *)p0,&uStack_b0);
-              uVar6 = WaterConcept::InteractiveObject::shapeContains const(uVar12,&uStack_b8,0);
+              WaterConcept::Grid::getCellPos(&uStack_b8,*(undefined8 *)p0,&uStack_b0);
+              uVar6 = WaterConcept::InteractiveObject::shapeContains(uVar12,&uStack_b8,0);
               if ((uVar6 & 1) != 0) {
                 *(char *)(*(long *)(*(int **)((long)p0 + 0x10) + 2) +
                           (long)((int)uStack_b0 + **(int **)((long)p0 + 0x10) * uStack_b0._4_4_) *
@@ -19985,7 +19985,7 @@ void WaterConcept::World::_setupObjectParents(long param_1)
       }
                     /* try { // try from 00462754 to 0046276f has its CatchHandler @ 00462a6c */
       if ((uVar5 != 0) ||
-         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_a8,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 != 0)) {
+         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_a8,0,0xffffffffffffffff,&DAT_0063306f,0), iVar4 != 0)) {
         plVar13 = *(long **)(param_1 + 0x4c0);
         for (plVar11 = *(long **)(param_1 + 0x4b8); plVar11 != plVar13; plVar11 = plVar11 + 1) {
           lVar8 = *plVar11;
@@ -19995,7 +19995,7 @@ void WaterConcept::World::_setupObjectParents(long param_1)
           uVar5 = strlen(lVar8 + 0x24);
           if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00462a44 to 00462a4b has its CatchHandler @ 00462a50 */
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c0);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c0);
             return;
           }
           if (uVar5 < 0x17) {
@@ -20207,12 +20207,12 @@ void WaterConcept::World::_clearMaterialInCapsule
     fVar3 = (float)uVar2 * 0.5;
     fVar4 = (float)((ulong)uVar2 >> 0x20) * 0.5;
     uStack_78 = CONCAT44(fVar4 + (float)((ulong)*param_4 >> 0x20),fVar3 + (float)*param_4);
-    uStack_70 = WaterConcept::Grid::getCellForPos const(*param_3,&uStack_78);
+    uStack_70 = WaterConcept::Grid::getCellForPos(*param_3,&uStack_78);
     uStack_80 = CONCAT44(fVar4 + (float)((ulong)*param_5 >> 0x20),fVar3 + (float)*param_5);
-    uStack_78 = WaterConcept::Grid::getCellForPos const(*param_3,&uStack_80);
-    WaterConcept::Grid::getCellPos const(&uStack_88,*param_3,&uStack_70);
+    uStack_78 = WaterConcept::Grid::getCellForPos(*param_3,&uStack_80);
+    WaterConcept::Grid::getCellPos(&uStack_88,*param_3,&uStack_70);
     uStack_80 = CONCAT44((float)((ulong)uStack_88 >> 0x20) - fVar4,(float)uStack_88 - fVar3);
-    WaterConcept::Grid::getCellPos const(auStack_90,*param_3,&uStack_78);
+    WaterConcept::Grid::getCellPos(auStack_90,*param_3,&uStack_78);
     uStack_88 = CONCAT44(auStack_90._4_4_ - fVar4,auStack_90._0_4_ - fVar3);
     std::__ndk1::vector<int, std::__ndk1::allocator<int>>::vector(&pvStack_a8,param_6);
                     /* try { // try from 00462c18 to 00462c3f has its CatchHandler @ 00462cdc */
@@ -20317,9 +20317,9 @@ void WaterConcept::World::_clearMaterialInCapsule
     fVar27 = *(float *)(lVar15 + 0x24);
   }
                     /* try { // try from 00462d98 to 00462d9f has its CatchHandler @ 00463798 */
-  uVar16 = WaterConcept::Grid::getCellForPos const(lVar15,param_4);
+  uVar16 = WaterConcept::Grid::getCellForPos(lVar15,param_4);
                     /* try { // try from 00462da8 to 00462daf has its CatchHandler @ 00463794 */
-  uVar17 = WaterConcept::Grid::getCellForPos const(*param_3,param_5);
+  uVar17 = WaterConcept::Grid::getCellForPos(*param_3,param_5);
   iVar11 = (int)uVar17;
   iVar12 = (int)uVar16;
   iVar10 = iVar12;
@@ -20353,10 +20353,10 @@ void WaterConcept::World::_clearMaterialInCapsule
   iStack_dc = iVar4;
   uStack_d8 = uVar2;
   uStack_d4 = uVar3;
-  WaterConcept::Grid::getCellPos const(&uStack_b8,*param_3,&uStack_d8);
+  WaterConcept::Grid::getCellPos(&uStack_b8,*param_3,&uStack_d8);
   Walaber::AABB::expandToInclude(&uStack_100,&uStack_b8);
                     /* try { // try from 00462e4c to 00462e63 has its CatchHandler @ 004637a8 */
-  WaterConcept::Grid::getCellPos const(&uStack_b8,*param_3,&iStack_e0);
+  WaterConcept::Grid::getCellPos(&uStack_b8,*param_3,&iStack_e0);
   Walaber::AABB::expandToInclude(&uStack_100,&uStack_b8);
   fVar30 = *param_5 - *param_4;
   fVar31 = param_5[1] - param_4[1];
@@ -20380,7 +20380,7 @@ void WaterConcept::World::_clearMaterialInCapsule
       if ((int)uVar3 <= iVar4) {
         do {
                     /* try { // try from 00462f7c to 00462f87 has its CatchHandler @ 004637ec */
-          WaterConcept::Grid::getCellPos const(&fStack_110,*param_3,&uStack_108);
+          WaterConcept::Grid::getCellPos(&fStack_110,*param_3,&uStack_108);
           fVar26 = fVar30 * (fStack_110 - *param_4) + fVar31 * (fStack_10c - param_4[1]);
           if (fVar27 <= fVar26) {
             fVar26 = fVar27;
@@ -20421,9 +20421,9 @@ void WaterConcept::World::_clearMaterialInCapsule
                 iVar10 = rand();
                 if (iVar10 % 0xe < 1) {
                     /* try { // try from 004630c4 to 004630cf has its CatchHandler @ 004637d8 */
-                  WaterConcept::Grid::getCellPos const(&uStack_b8,*param_3,&uStack_108);
+                  WaterConcept::Grid::getCellPos(&uStack_b8,*param_3,&uStack_108);
                     /* try { // try from 004630d4 to 004630df has its CatchHandler @ 004637dc */
-                  WaterConcept::Grid::getCellPos const(&fStack_120,*param_3,&uStack_108);
+                  WaterConcept::Grid::getCellPos(&fStack_120,*param_3,&uStack_108);
                   fVar28 = fStack_120 - (float)*(undefined8 *)param_4;
                   fVar29 = fStack_11c - (float)((ulong)*(undefined8 *)param_4 >> 0x20);
                   fVar25 = fVar28 * fVar28 + fVar29 * fVar29;
@@ -20454,7 +20454,7 @@ void WaterConcept::World::_clearMaterialInCapsule
                   if (((param_8 & 1) != 0) && (lVar15 = param_3[0xb5], lVar15 != 0)) {
                     fStack_130 = -NAN;
                     /* try { // try from 004631dc to 004632a3 has its CatchHandler @ 004637e0 */
-                    WaterConcept::Grid::getCellPos const(&uStack_128,*param_3,&uStack_108);
+                    WaterConcept::Grid::getCellPos(&uStack_128,*param_3,&uStack_108);
                     iVar11 = rand();
                     iVar12 = rand();
                     Walaber::ParticleSet::addParticle(0x3f000000,(float)(iVar11 % 0x168),
@@ -20504,9 +20504,9 @@ void WaterConcept::World::_clearMaterialInCapsule
                   if (((param_8 & 1) != 0) && (lVar15 = param_3[0xb5], lVar15 != 0)) {
                     uStack_118 = 0xffffffff;
                     /* try { // try from 004633ec to 004633f7 has its CatchHandler @ 004637a4 */
-                    WaterConcept::Grid::getCellPos const(&fStack_120,*param_3,&uStack_108);
+                    WaterConcept::Grid::getCellPos(&fStack_120,*param_3,&uStack_108);
                     /* try { // try from 004633fc to 00463533 has its CatchHandler @ 004637b8 */
-                    WaterConcept::Grid::getCellPos const(&fStack_130,*param_3,&uStack_108);
+                    WaterConcept::Grid::getCellPos(&fStack_130,*param_3,&uStack_108);
                     uStack_128 = CONCAT44((float)(iVar11 % 0x2711) * 3e-06 + -0.075 + fStack_12c,
                                           (float)(iVar10 % 0x2711) * 2e-05 + -0.1 + fStack_130);
                     iVar10 = rand();
@@ -20597,7 +20597,7 @@ LAB_004635bc:
   for (plVar23 = (long *)param_3[0x97]; plVar23 != plVar20; plVar23 = plVar23 + 1) {
                     /* try { // try from 00463714 to 0046372b has its CatchHandler @ 004637cc */
     if ((*(int *)(*plVar23 + 0xd8) == 5) &&
-       (uVar18 = Walaber::AABB::intersects const(*plVar23 + 0x15c,&uStack_100), (uVar18 & 1) != 0)) {
+       (uVar18 = Walaber::AABB::intersects(*plVar23 + 0x15c,&uStack_100), (uVar18 & 1) != 0)) {
       WaterConcept::World::_collectibleIsRevealedCheck(param_3,*plVar23);
     }
     plVar20 = (long *)param_3[0x98];
@@ -20657,9 +20657,9 @@ void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0)
   uVar18 = *(undefined8 *)(in_x1 + 0x164);
   uStack_88 = uVar18;
   uStack_80 = uVar16;
-  uVar5 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_80);
+  uVar5 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_80);
   uVar11 = uVar5 >> 0x20;
-  uVar6 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_88);
+  uVar6 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_88);
   uVar10 = (uint)uVar5;
   uStack_8c = (uint)(uVar5 >> 0x20);
   iVar2 = *(int *)(in_x1 + 0x3b8);
@@ -20681,9 +20681,9 @@ void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0)
           pcVar15 = (char *)(lVar12 + (long)iVar3 * 0x1c + 0x14);
           uVar7 = (uint)uVar8;
           if (*pcVar15 == '\0') {
-            WaterConcept::Grid::getCellPos const(&uStack_98,p0->f_0x0,&uStack_90);
+            WaterConcept::Grid::getCellPos(&uStack_98,p0->f_0x0,&uStack_90);
             uStack_a0 = uStack_a0 & 0xffffffff00000000;
-            uVar11 = WaterConcept::InteractiveObject::contains const();
+            uVar11 = WaterConcept::InteractiveObject::contains();
             uVar7 = uStack_90;
             if ((uVar11 & 1) != 0) {
               uVar11 = WaterConcept::AlgaeHider::addAlgae();
@@ -20715,7 +20715,7 @@ void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0)
     do {
       uStack_98 = CONCAT44(((float)((ulong)uVar18 >> 0x20) - fVar17) * 0.5 + fVar17,
                            ((float)uVar18 - (float)uVar16) * 0.5 + (float)uVar16);
-      uVar5 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_98);
+      uVar5 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_98);
       uStack_a0 = uVar5;
       uVar6 = WaterConcept::World::_getClosestGridCell(p0,&uStack_a0,0x14,0);
       iVar9 = (int)((ulong)uVar6 >> 0x20);
@@ -20776,9 +20776,9 @@ void WaterConcept::World::_fillMaterialGridUsingObjectShape
   lStack_68 = *(long *)(lVar2 + 0x28);
   uStack_78 = *(undefined8 *)(uVar5 + 0x15c);
   uStack_80 = *(undefined8 *)(uVar5 + 0x164);
-  uVar3 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_78);
+  uVar3 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_78);
   uVar13 = uVar3 >> 0x20;
-  uVar4 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_80);
+  uVar4 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_80);
   iVar6 = (int)((ulong)uVar4 >> 0x20);
   uStack_84 = (uint)(uVar3 >> 0x20);
   uVar9 = (uint)uVar3;
@@ -20794,9 +20794,9 @@ void WaterConcept::World::_fillMaterialGridUsingObjectShape
           iVar1 = (uint)uVar8 + **(int **)&p0->field_0x10 * (int)uVar13;
           pcVar10 = (char *)(lVar11 + (long)iVar1 * 0x1c + 0x14);
           if ((*pcVar10 == '\0') || (uVar7 = (uint)uVar8, (in_w3 & 1) != 0)) {
-            WaterConcept::Grid::getCellPos const(auStack_90,p0->f_0x0,&uStack_88);
+            WaterConcept::Grid::getCellPos(auStack_90,p0->f_0x0,&uStack_88);
             uStack_94 = 0;
-            uVar13 = WaterConcept::InteractiveObject::contains const(uVar5,auStack_90,&uStack_94);
+            uVar13 = WaterConcept::InteractiveObject::contains(uVar5,auStack_90,&uStack_94);
             uVar7 = uStack_88;
             if ((uVar13 & 1) != 0) {
               *pcVar10 = p2;
@@ -20865,7 +20865,7 @@ void WaterConcept::World::setRoomPosition(Walaber__Vector2 p0)
       pvStack_70 = (void *)0x0;
       uVar4 = strlen((long)plVar7 + 0x24);
       if (0xffffffffffffffef < uVar4) {
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
         return;
       }
       if (uVar4 < 0x17) {
@@ -20889,7 +20889,7 @@ LAB_00463cd8:
       }
       if (uVar4 == 0xc) {
                     /* try { // try from 00463d08 to 00463d1f has its CatchHandler @ 00463df8 */
-        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_80,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc);
+        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_80,0,0xffffffffffffffff,"SWAMPY_SPOUT",0xc);
         bVar2 = iVar3 == 0;
       }
       else {
@@ -21787,9 +21787,9 @@ void WaterConcept::World::_collectibleIsRevealedCheck(WaterConcept__InteractiveO
   uStack_70 = *(undefined4 *)(in_x1 + 0x15c);
   uStack_6c = *(undefined4 *)(in_x1 + 0x168);
   uStack_78 = NEON_rev64(*(undefined8 *)(in_x1 + 0x160),4);
-  uVar4 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_70);
+  uVar4 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_70);
   uVar9 = uVar4 >> 0x20;
-  uVar5 = WaterConcept::Grid::getCellForPos const(p0->f_0x0,&uStack_78);
+  uVar5 = WaterConcept::Grid::getCellForPos(p0->f_0x0,&uStack_78);
   iVar7 = (int)((ulong)uVar5 >> 0x20);
   uStack_7c = (uint)(uVar4 >> 0x20);
   iVar6 = (int)uVar4;
@@ -21800,8 +21800,8 @@ void WaterConcept::World::_collectibleIsRevealedCheck(WaterConcept__InteractiveO
       iStack_80 = iVar6;
       if (iVar6 <= (int)uVar5) {
         do {
-          WaterConcept::Grid::getCellPos const(auStack_88,p0->f_0x0,&iStack_80);
-          WaterConcept::InteractiveObject::contains const();
+          WaterConcept::Grid::getCellPos(auStack_88,p0->f_0x0,&iStack_80);
+          WaterConcept::InteractiveObject::contains();
           iVar2 = iStack_80 + 1;
           bVar1 = iStack_80 < (int)uVar5;
           uVar8 = uStack_7c;
@@ -21871,7 +21871,7 @@ ulong WaterConcept::World::_isMaterialInCircle(Walaber__Vector2 *p0,float p1,int
     fVar14 = *(float *)((long)WVar7 + 0x24);
   }
                     /* try { // try from 004658c4 to 004658cb has its CatchHandler @ 004659e8 */
-  uVar8 = WaterConcept::Grid::getCellForPos const(WVar7,p2);
+  uVar8 = WaterConcept::Grid::getCellForPos(WVar7,p2);
   iVar12 = (int)(p1 / fVar14);
   iVar3 = iVar3 + -1;
   iVar13 = iVar12 + (int)uVar8;
@@ -23156,16 +23156,16 @@ void WaterConcept::World::_handleFloaterVsObjectCollision
     uVar13 = 0;
     do {
       lVar12 = *plVar7;
-      p1 = (WaterConcept__InteractiveObject *)Walaber::AABB::contains const(&uStack_d0,lVar12 + lVar10);
+      p1 = (WaterConcept__InteractiveObject *)Walaber::AABB::contains(&uStack_d0,lVar12 + lVar10);
       if ((((ulong)p1 & 1) != 0) &&
-         (p1 = (WaterConcept__InteractiveObject *)WaterConcept::InteractiveObject::contains const(), ((ulong)p1 & 1) != 0)) {
+         (p1 = (WaterConcept__InteractiveObject *)WaterConcept::InteractiveObject::contains(), ((ulong)p1 & 1) != 0)) {
         if (((int)in_x1[0x1b] == 10) && (*(char *)(in_x2 + 0x3a2) != '\0')) goto LAB_004681d0;
         if (*(int *)(in_x2 + 0xd8) == 3) {
           WaterConcept::Bomb::setToExplode();
         }
         uStack_e0 = 0;
         uStack_d8 = 0;
-        WaterConcept::InteractiveObject::getClosestPointOnShape const();
+        WaterConcept::InteractiveObject::getClosestPointOnShape();
         if ((*(int *)(in_x2 + 0x2a8) < 0) || (*(int *)(in_x2 + 0x2a8) != 0)) {
           puVar4 = (undefined8 *)(lVar12 + lVar10);
           fVar16 = ((float)*puVar4 - (float)puVar4[1]) -
@@ -23212,9 +23212,9 @@ void WaterConcept::World::_handleFloaterVsObjectCollision
           uVar8 = 0;
           while( true ) {
             uStack_d8 = *(undefined8 *)(*(long *)(lVar5 + uVar13 * 0x18) + uVar8 * 8);
-            p1 = (WaterConcept__InteractiveObject *)Walaber::AABB::contains const(&uStack_b0,&uStack_d8);
+            p1 = (WaterConcept__InteractiveObject *)Walaber::AABB::contains(&uStack_b0,&uStack_d8);
             if ((((ulong)p1 & 1) != 0) &&
-               (p1 = (WaterConcept__InteractiveObject *)WaterConcept::InteractiveObject::contains const(), ((ulong)p1 & 1) != 0)) {
+               (p1 = (WaterConcept__InteractiveObject *)WaterConcept::InteractiveObject::contains(), ((ulong)p1 & 1) != 0)) {
               if (((int)in_x1[0x1b] == 10) && (*(char *)(in_x2 + 0x3a2) != '\0')) goto LAB_004681d0;
               if (*(int *)(in_x2 + 0xd8) == 3) {
                 WaterConcept::Bomb::setToExplode();
@@ -23230,7 +23230,7 @@ void WaterConcept::World::_handleFloaterVsObjectCollision
                 uVar11 = 0xffffffff;
                 fVar16 = 10000.0;
                 do {
-                  fVar14 = (float)WaterConcept::InteractiveObject::getClosestPointOnEdge const();
+                  fVar14 = (float)WaterConcept::InteractiveObject::getClosestPointOnEdge();
                   if ((fVar14 < fVar16) &&
                      ((float)uStack_e0 * 0.0 + (float)((ulong)uStack_e0 >> 0x20) * 0.0 < 0.0)) {
                     uVar11 = uVar9;
@@ -23356,9 +23356,9 @@ void WaterConcept::World::_handleFloaterVsFloaterCollision
     uVar12 = 0;
     do {
       lVar13 = *plVar10;
-      uVar4 = Walaber::AABB::contains const(&uStack_b0,lVar13 + lVar11);
-      if (((uVar4 & 1) != 0) && (uVar4 = WaterConcept::InteractiveObject::contains const(), (uVar4 & 1) != 0)) {
-        fVar14 = (float)WaterConcept::InteractiveObject::getClosestPointOnShape const();
+      uVar4 = Walaber::AABB::contains(&uStack_b0,lVar13 + lVar11);
+      if (((uVar4 & 1) != 0) && (uVar4 = WaterConcept::InteractiveObject::contains(), (uVar4 & 1) != 0)) {
+        fVar14 = (float)WaterConcept::InteractiveObject::getClosestPointOnShape();
         pfVar1 = (float *)(lVar13 + lVar11);
         lVar7 = **(long **)(in_x2 + 0x3a8);
         iVar2 = 0;
@@ -24161,16 +24161,16 @@ void WaterConcept::World::_createPolyWithGridCells
   lStack_78 = *(long *)(lVar1 + 0x28);
   uVar7 = *(undefined8 *)(*param_1 + 0x20);
   uStack_90 = 0;
-  WaterConcept::Grid::getCellPos const(&uStack_88,*param_1,&uStack_90);
+  WaterConcept::Grid::getCellPos(&uStack_88,*param_1,&uStack_90);
   fVar13 = (float)uVar7;
   fVar3 = fVar13 * -0.5;
   fVar8 = (float)((ulong)uVar7 >> 0x20) * 0.5;
   fVar4 = fVar3 + (float)uStack_88;
   fVar9 = fVar8 + (float)((ulong)uStack_88 >> 0x20);
-  WaterConcept::Grid::getCellPos const(&uStack_88,*param_1,param_4);
+  WaterConcept::Grid::getCellPos(&uStack_88,*param_1,param_4);
   fVar3 = fVar3 + (float)uStack_88;
   fVar10 = fVar8 + (float)((ulong)uStack_88 >> 0x20);
-  WaterConcept::Grid::getCellPos const(&uStack_88,*param_1,param_5);
+  WaterConcept::Grid::getCellPos(&uStack_88,*param_1,param_5);
   lStack_a0 = *param_2;
   piStack_98 = (int *)param_2[1];
   fVar15 = (float)uStack_88;
@@ -24375,7 +24375,7 @@ void WaterConcept::World::raycast
       plVar6 = (long *)*param_5;
       if (plVar6 == (long *)0x0) {
 LAB_0046a1e0:
-        uVar7 = Walaber::AABB::intersects const(&uStack_b0,*plVar13 + 0x15c);
+        uVar7 = Walaber::AABB::intersects(&uStack_b0,*plVar13 + 0x15c);
         if ((uVar7 & 1) != 0) {
           uStack_c0 = 0;
           uVar7 = WaterConcept::InteractiveObject::rayIntersect(*plVar13,param_3,param_4,&fStack_c8,&uStack_c0);
@@ -24396,8 +24396,8 @@ LAB_0046a1e0:
       plVar13 = plVar13 + 1;
     } while (plVar13 != (long *)param_2[0x98]);
   }
-  uVar8 = WaterConcept::Grid::getCellForPos const(*param_2,param_3);
-  uVar9 = WaterConcept::Grid::getCellForPos const(*param_2,(long)param_7 + 0xc);
+  uVar8 = WaterConcept::Grid::getCellForPos(*param_2,param_3);
+  uVar9 = WaterConcept::Grid::getCellForPos(*param_2,(long)param_7 + 0xc);
   iVar3 = (int)uVar9 - (int)uVar8;
   fVar16 = (float)iVar3;
   iVar12 = (int)((ulong)uVar8 >> 0x20);
@@ -24435,7 +24435,7 @@ LAB_0046a1e0:
         }
         if (puVar10 == puVar1) {
 LAB_0046a338:
-          WaterConcept::Grid::getCellPos const(&fStack_c8,*param_2,&uStack_c0);
+          WaterConcept::Grid::getCellPos(&fStack_c8,*param_2,&uStack_c0);
           fVar17 = fStack_c8 - (float)*(undefined8 *)param_3;
           fVar18 = fStack_c4 - (float)((ulong)*(undefined8 *)param_3 >> 0x20);
           fVar18 = fVar17 * fVar17 + fVar18 * fVar18;
@@ -24606,7 +24606,7 @@ undefined1 WaterConcept::World::getMaterialForPosition(Walaber__Vector2 *p0)
 {
   undefined8 uVar1;
   
-  uVar1 = WaterConcept::Grid::getCellForPos const(*p0);
+  uVar1 = WaterConcept::Grid::getCellForPos(*p0);
   return *(undefined1 *)
           (*(long *)((long)p0[2] + 8) +
            (long)((int)uVar1 + *(int *)p0[2] * (int)((ulong)uVar1 >> 0x20)) * 0x1c + 0x14);
@@ -25352,7 +25352,7 @@ void WaterConcept::World::_considerOutlineForCollision
   *(undefined1 *)((long)puVar5 + 0x16) = 1;
   uStack_70 = param_2;
   if (cVar2 == '\x01') {
-    WaterConcept::Grid::getCellPos const(auStack_78,*param_1,&uStack_70);
+    WaterConcept::Grid::getCellPos(auStack_78,*param_1,&uStack_70);
     puVar1 = (undefined8 *)(lVar6 + lVar7 * 0x1c + 8);
     Walaber::VectorTools::closestPointOnLineSegment(auStack_88,puVar5,puVar1,auStack_78,&fStack_7c);
     fStack_7c = 0.5 - fStack_7c;

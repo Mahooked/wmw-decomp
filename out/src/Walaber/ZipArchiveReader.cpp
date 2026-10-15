@@ -57,7 +57,7 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
       uVar4 = strlen(auStack_170);
       if (0xffffffffffffffef < uVar4) {
                     /* try { // try from 003d73b8 to 003d73bf has its CatchHandler @ 003d73c4 */
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_238);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_238);
         return;
       }
       if (uVar4 < 0x17) {

@@ -353,7 +353,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
       }
       if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390b80 to 00390b8b has its CatchHandler @ 00392684 */
-        Walaber::Property::asString const(&uStack_120,auStack_d8);
+        Walaber::Property::asString(&uStack_120,auStack_d8);
                     /* try { // try from 00390b8c to 00390b97 has its CatchHandler @ 00392680 */
         Walaber::PCSNode::setName(p0,&uStack_120);
         if ((uStack_120 & 1) != 0) {
@@ -377,7 +377,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
       }
       if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390c00 to 00390c13 has its CatchHandler @ 003926b8 */
-        uVar5 = Walaber::Property::asInt const(auStack_d8);
+        uVar5 = Walaber::Property::asInt(auStack_d8);
         Walaber::ParticleSet::initParticles((long)p0 + 0x170,uVar5);
       }
       uStack_118 = 0;
@@ -397,7 +397,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
       }
       if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390c60 to 00390c67 has its CatchHandler @ 003926b8 */
-        iVar6 = Walaber::Property::asInt const(auStack_d8);
+        iVar6 = Walaber::Property::asInt(auStack_d8);
         *(bool *)((long)p0 + 0x1c9) = iVar6 != 0;
       }
                     /* try { // try from 00390c74 to 00390c83 has its CatchHandler @ 0039269c */
@@ -414,7 +414,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
         }
         if (uVar8 == 0xc) {
                     /* try { // try from 00390d04 to 00390d1f has its CatchHandler @ 00392768 */
-          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"EmitterZones",0xc);
+          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"EmitterZones",0xc);
           bVar4 = iVar6 == 0;
         }
         else {
@@ -470,7 +470,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
             }
             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390e0c to 00390e17 has its CatchHandler @ 003927e8 */
-              Walaber::Property::asVector2 const(&bStack_158,auStack_d8);
+              Walaber::Property::asVector2(&bStack_158,auStack_d8);
               uStack_140 = CONCAT17(uStack_151,
                                     CONCAT16(uStack_152,
                                              CONCAT15(uStack_153,CONCAT41(uStack_157,bStack_158))));
@@ -493,7 +493,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
             }
             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390e64 to 00390e6b has its CatchHandler @ 00392830 */
-              uVar5 = Walaber::Property::asFloat const(auStack_d8);
+              uVar5 = Walaber::Property::asFloat(auStack_d8);
               uStack_138 = (undefined1)uVar5;
               uStack_137 = (undefined1)((uint)uVar5 >> 8);
               uStack_136 = (undefined1)((uint)uVar5 >> 0x10);
@@ -519,7 +519,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
             }
             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390eb4 to 00390ebf has its CatchHandler @ 003927ec */
-              Walaber::Property::asVector2 const(&bStack_158,auStack_d8);
+              Walaber::Property::asVector2(&bStack_158,auStack_d8);
               uStack_134 = (undefined4)CONCAT41(uStack_157,bStack_158);
               uStack_130 = (undefined4)
                            (CONCAT17(uStack_151,
@@ -548,7 +548,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
             }
             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390f14 to 00390f1b has its CatchHandler @ 00392830 */
-              uStack_12c = Walaber::Property::asInt const(auStack_d8);
+              uStack_12c = Walaber::Property::asInt(auStack_d8);
             }
             uStack_157 = 0;
             uStack_153 = 0;
@@ -571,7 +571,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
             }
             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00390f70 to 00390f8f has its CatchHandler @ 00392830 */
-              uStack_128 = Walaber::Property::asFloat const(auStack_d8);
+              uStack_128 = Walaber::Property::asFloat(auStack_d8);
             }
             Walaber::ParticleEmitter::addEmitterZone(p0,&uStack_140);
             Walaber::XMLDocument::NamedIterator::operator++(&uStack_120);
@@ -590,7 +590,7 @@ LAB_00391174:
           }
           if (uVar8 == 8) {
                     /* try { // try from 00390fbc to 00390fd7 has its CatchHandler @ 00392738 */
-            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Textures",8);
+            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Textures",8);
             bVar4 = iVar6 == 0;
           }
           else {
@@ -634,7 +634,7 @@ LAB_00391174:
                     /* try { // try from 003910a4 to 003910a7 has its CatchHandler @ 003927c0 */
                 uVar9 = Walaber::TextureManager::getManager();
                     /* try { // try from 003910ac to 003910b7 has its CatchHandler @ 003927e4 */
-                Walaber::Property::asString const(&uStack_140,auStack_d8);
+                Walaber::Property::asString(&uStack_140,auStack_d8);
                 uStack_188 = 0;
                 uStack_180 = 0;
                 uStack_178 = 0;
@@ -701,7 +701,7 @@ LAB_00391174:
           }
           if (uVar8 == 7) {
                     /* try { // try from 003911b8 to 003911d3 has its CatchHandler @ 00392714 */
-            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Gravity",7);
+            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Gravity",7);
             bVar4 = iVar6 == 0;
           }
           else {
@@ -731,7 +731,7 @@ LAB_00391174:
             if ((uVar8 & 1) != 0) {
               *(undefined1 *)((long)p0 + 0x1c8) = 1;
                     /* try { // try from 0039125c to 00391267 has its CatchHandler @ 003926f0 */
-              Walaber::Property::asVector2 const(&uStack_120,auStack_d8);
+              Walaber::Property::asVector2(&uStack_120,auStack_d8);
               *(ulong *)((long)p0 + 0x138) =
                    CONCAT17(uStack_119,
                             CONCAT16(uStack_11a,CONCAT15(uStack_11b,CONCAT14(uStack_11c,uStack_120))
@@ -747,7 +747,7 @@ LAB_00391174:
             }
             if (uVar8 == 9) {
                     /* try { // try from 0039129c to 003912b7 has its CatchHandler @ 003926ec */
-              iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Particles",9);
+              iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Particles",9);
               bVar4 = iVar6 == 0;
             }
             else {
@@ -773,7 +773,7 @@ LAB_00391174:
               }
               if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391334 to 0039133b has its CatchHandler @ 0039278c */
-                uVar5 = Walaber::Property::asInt const(auStack_d8);
+                uVar5 = Walaber::Property::asInt(auStack_d8);
                 *(undefined4 *)((long)p0 + 0x16c) = uVar5;
               }
                     /* try { // try from 00391340 to 0039134b has its CatchHandler @ 003926e4 */
@@ -790,7 +790,7 @@ LAB_00391174:
                 }
                 if (uVar8 == 4) {
                     /* try { // try from 0039137c to 00391397 has its CatchHandler @ 0039276c */
-                  iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Size",4);
+                  iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Size",4);
                   bVar4 = iVar6 == 0;
                 }
                 else {
@@ -819,7 +819,7 @@ LAB_00391174:
                   }
                   if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391414 to 0039141f has its CatchHandler @ 0039274c */
-                    Walaber::Property::asVector2 const(&uStack_140,auStack_d8);
+                    Walaber::Property::asVector2(&uStack_140,auStack_d8);
                     uStack_11b = 0;
                     uStack_11a = 0;
                     uStack_119 = 0;
@@ -843,7 +843,7 @@ LAB_00391174:
                     }
                     else {
                     /* try { // try from 0039146c to 00391477 has its CatchHandler @ 00392728 */
-                      Walaber::Property::asVector2 const(&uStack_120,auStack_d8);
+                      Walaber::Property::asVector2(&uStack_120,auStack_d8);
                       uVar12 = uStack_120;
                       uVar5 = CONCAT13(uStack_119,
                                        CONCAT12(uStack_11a,CONCAT11(uStack_11b,uStack_11c)));
@@ -871,7 +871,7 @@ LAB_003916f8:
                   }
                   if (uVar8 == 9) {
                     /* try { // try from 003914ac to 003914c7 has its CatchHandler @ 00392740 */
-                    iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"StartSize",9);
+                    iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"StartSize",9);
                     bVar4 = iVar6 == 0;
                   }
                   else {
@@ -900,7 +900,7 @@ LAB_003916f8:
                     }
                     if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391544 to 0039154f has its CatchHandler @ 0039271c */
-                      Walaber::Property::asVector2 const(&uStack_140,auStack_d8);
+                      Walaber::Property::asVector2(&uStack_140,auStack_d8);
                       uStack_11b = 0;
                       uStack_11a = 0;
                       uStack_119 = 0;
@@ -924,7 +924,7 @@ LAB_003916f8:
                       }
                       else {
                     /* try { // try from 0039159c to 003915a7 has its CatchHandler @ 00392708 */
-                        Walaber::Property::asVector2 const(&uStack_120,auStack_d8);
+                        Walaber::Property::asVector2(&uStack_120,auStack_d8);
                         uVar12 = uStack_120;
                         uVar5 = CONCAT13(uStack_119,
                                          CONCAT12(uStack_11a,CONCAT11(uStack_11b,uStack_11c)));
@@ -945,7 +945,7 @@ LAB_003916f8:
                     }
                     if (uVar8 == 10) {
                     /* try { // try from 003915dc to 003915f7 has its CatchHandler @ 00392724 */
-                      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"GrowToSize",10);
+                      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"GrowToSize",10);
                       bVar4 = iVar6 == 0;
                     }
                     else {
@@ -974,7 +974,7 @@ LAB_003916f8:
                       }
                       if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391674 to 0039167f has its CatchHandler @ 003926f8 */
-                        Walaber::Property::asVector2 const(&uStack_140,auStack_d8);
+                        Walaber::Property::asVector2(&uStack_140,auStack_d8);
                         uStack_11b = 0;
                         uStack_11a = 0;
                         uStack_119 = 0;
@@ -1000,7 +1000,7 @@ LAB_003916f8:
                         }
                         else {
                     /* try { // try from 003916cc to 003916d7 has its CatchHandler @ 003926dc */
-                          Walaber::Property::asVector2 const(&uStack_120,auStack_d8);
+                          Walaber::Property::asVector2(&uStack_120,auStack_d8);
                           uVar12 = uStack_120;
                           uVar5 = CONCAT13(uStack_119,
                                            CONCAT12(uStack_11a,CONCAT11(uStack_11b,uStack_11c)));
@@ -1020,7 +1020,7 @@ LAB_003916f8:
                       }
                       if (uVar8 == 10) {
                     /* try { // try from 0039172c to 00391747 has its CatchHandler @ 00392704 */
-                        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Directions",10);
+                        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Directions",10);
                         bVar4 = iVar6 == 0;
                       }
                       else {
@@ -1066,7 +1066,7 @@ LAB_003916f8:
                           }
                           if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391818 to 0039181f has its CatchHandler @ 003927a4 */
-                            uVar18 = Walaber::Property::asFloat const(auStack_d8);
+                            uVar18 = Walaber::Property::asFloat(auStack_d8);
                             uStack_138 = 0;
                             uStack_137 = 0;
                             uStack_136 = 0;
@@ -1087,7 +1087,7 @@ LAB_003916f8:
                             uVar19 = uVar18;
                             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391874 to 0039188b has its CatchHandler @ 003927b4 */
-                              uVar19 = Walaber::Property::asFloat const(uVar9,uVar18,auStack_d8);
+                              uVar19 = Walaber::Property::asFloat(uVar9,uVar18,auStack_d8);
                             }
                             Walaber::ParticleEmitter::addDirectionRangeDegrees(uVar18,uVar19,p0);
                           }
@@ -1108,7 +1108,7 @@ LAB_003916f8:
                         }
                         if (uVar8 == 5) {
                     /* try { // try from 003918e0 to 003918fb has its CatchHandler @ 003926d8 */
-                          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Speed",5);
+                          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Speed",5);
                           bVar4 = iVar6 == 0;
                         }
                         else {
@@ -1137,7 +1137,7 @@ LAB_003916f8:
                           }
                           if ((uVar8 & 1) != 0) {
                     /* try { // try from 0039198c to 00391993 has its CatchHandler @ 00392698 */
-                            uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                            uVar5 = Walaber::Property::asFloat(auStack_d8);
                             uStack_11b = 0;
                             uStack_11a = 0;
                             uStack_119 = 0;
@@ -1158,7 +1158,7 @@ LAB_003916f8:
                             uVar16 = uVar5;
                             if ((uVar8 & 1) != 0) {
                     /* try { // try from 003919e8 to 003919ef has its CatchHandler @ 0039267c */
-                              uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                              uVar16 = Walaber::Property::asFloat(auStack_d8);
                             }
                             *(undefined4 *)((long)p0 + 0xf8) = uVar5;
                             *(undefined4 *)((long)p0 + 0xfc) = uVar16;
@@ -1174,7 +1174,7 @@ LAB_003916f8:
                           }
                           if (uVar8 == 0xb) {
                     /* try { // try from 00391a30 to 00391a4b has its CatchHandler @ 00392690 */
-                            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"ScreenSpeed",
+                            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"ScreenSpeed",
                                                     0xb);
                             bVar4 = iVar6 == 0;
                           }
@@ -1204,7 +1204,7 @@ LAB_003916f8:
                             }
                             if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391ac8 to 00391acf has its CatchHandler @ 00392678 */
-                              uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                              uVar5 = Walaber::Property::asFloat(auStack_d8);
                               uStack_11b = 0;
                               uStack_11a = 0;
                               uStack_119 = 0;
@@ -1225,7 +1225,7 @@ LAB_003916f8:
                               uVar16 = uVar5;
                               if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391b24 to 00391b2b has its CatchHandler @ 00392664 */
-                                uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                uVar16 = Walaber::Property::asFloat(auStack_d8);
                               }
                               *(undefined4 *)((long)p0 + 0x100) = uVar5;
                               *(undefined4 *)((long)p0 + 0x104) = uVar16;
@@ -1242,7 +1242,7 @@ LAB_003916f8:
                             }
                             if (uVar8 == 0x12) {
                     /* try { // try from 00391b60 to 00391b7b has its CatchHandler @ 00392670 */
-                              iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,
+                              iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,
                                                       "ParticlesPerSecond",0x12);
                               bVar4 = iVar6 == 0;
                             }
@@ -1272,7 +1272,7 @@ LAB_003916f8:
                               }
                               if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391bf8 to 00391bff has its CatchHandler @ 00392660 */
-                                fVar17 = (float)Walaber::Property::asFloat const(auStack_d8);
+                                fVar17 = (float)Walaber::Property::asFloat(auStack_d8);
                                 uStack_11b = 0;
                                 uStack_11a = 0;
                                 uStack_119 = 0;
@@ -1292,7 +1292,7 @@ LAB_003916f8:
                                 }
                                 if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391c50 to 00391c57 has its CatchHandler @ 00392648 */
-                                  Walaber::Property::asFloat const(auStack_d8);
+                                  Walaber::Property::asFloat(auStack_d8);
                                 }
                                 *(float *)((long)p0 + 0x108) = fVar17;
                                 *(float *)((long)p0 + 0x10c) = fVar17;
@@ -1319,7 +1319,7 @@ LAB_003916f8:
                               }
                               if (uVar8 == 4) {
                     /* try { // try from 00391cdc to 00391cf7 has its CatchHandler @ 00392654 */
-                                iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Mass",4);
+                                iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Mass",4);
                                 bVar4 = iVar6 == 0;
                               }
                               else {
@@ -1348,7 +1348,7 @@ LAB_003916f8:
                                 }
                                 if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391d74 to 00391d7b has its CatchHandler @ 00392644 */
-                                  uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                  uVar5 = Walaber::Property::asFloat(auStack_d8);
                                   uStack_11b = 0;
                                   uStack_11a = 0;
                                   uStack_119 = 0;
@@ -1369,7 +1369,7 @@ LAB_003916f8:
                                   uVar16 = uVar5;
                                   if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391dd0 to 00391dd7 has its CatchHandler @ 00392630 */
-                                    uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                    uVar16 = Walaber::Property::asFloat(auStack_d8);
                                   }
                                   *(undefined4 *)((long)p0 + 0x110) = uVar5;
                                   *(undefined4 *)((long)p0 + 0x114) = uVar16;
@@ -1386,7 +1386,7 @@ LAB_003916f8:
                                 }
                                 if (uVar8 == 5) {
                     /* try { // try from 00391e0c to 00391e27 has its CatchHandler @ 0039263c */
-                                  iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"Angle",5
+                                  iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"Angle",5
                                                          );
                                   bVar4 = iVar6 == 0;
                                 }
@@ -1416,7 +1416,7 @@ LAB_003916f8:
                                   }
                                   if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391ea4 to 00391eab has its CatchHandler @ 0039262c */
-                                    uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                    uVar5 = Walaber::Property::asFloat(auStack_d8);
                                     uStack_11b = 0;
                                     uStack_11a = 0;
                                     uStack_119 = 0;
@@ -1437,7 +1437,7 @@ LAB_003916f8:
                                     uVar16 = uVar5;
                                     if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391f00 to 00391f07 has its CatchHandler @ 00392618 */
-                                      uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                      uVar16 = Walaber::Property::asFloat(auStack_d8);
                                     }
                                     *(undefined4 *)((long)p0 + 0x118) = uVar5;
                                     *(undefined4 *)((long)p0 + 0x11c) = uVar16;
@@ -1454,7 +1454,7 @@ LAB_003916f8:
                                   }
                                   if (uVar8 == 5) {
                     /* try { // try from 00391f3c to 00391f57 has its CatchHandler @ 00392624 */
-                                    iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,
+                                    iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,
                                                             &DAT_00614feb,5);
                                     bVar4 = iVar6 == 0;
                                   }
@@ -1484,7 +1484,7 @@ LAB_003916f8:
                                     }
                                     if ((uVar8 & 1) != 0) {
                     /* try { // try from 00391fdc to 00391fe3 has its CatchHandler @ 00392614 */
-                                      uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                      uVar5 = Walaber::Property::asFloat(auStack_d8);
                                       uStack_11b = 0;
                                       uStack_11a = 0;
                                       uStack_119 = 0;
@@ -1505,7 +1505,7 @@ LAB_003916f8:
                                       uVar16 = uVar5;
                                       if ((uVar8 & 1) != 0) {
                     /* try { // try from 00392038 to 0039203f has its CatchHandler @ 00392600 */
-                                        uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                        uVar16 = Walaber::Property::asFloat(auStack_d8);
                                       }
                                       *(undefined4 *)((long)p0 + 0x120) = uVar5;
                                       *(undefined4 *)((long)p0 + 0x124) = uVar16;
@@ -1522,7 +1522,7 @@ LAB_003916f8:
                                     }
                                     if (uVar8 == 8) {
                     /* try { // try from 00392074 to 0039208f has its CatchHandler @ 0039260c */
-                                      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,
+                                      iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,
                                                               "LifeTime",8);
                                       bVar4 = iVar6 == 0;
                                     }
@@ -1552,7 +1552,7 @@ LAB_003916f8:
                                       }
                                       if ((uVar8 & 1) != 0) {
                     /* try { // try from 0039210c to 00392113 has its CatchHandler @ 003925fc */
-                                        uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                        uVar5 = Walaber::Property::asFloat(auStack_d8);
                                         uStack_11b = 0;
                                         uStack_11a = 0;
                                         uStack_119 = 0;
@@ -1573,7 +1573,7 @@ LAB_003916f8:
                                         uVar16 = uVar5;
                                         if ((uVar8 & 1) != 0) {
                     /* try { // try from 00392168 to 0039216f has its CatchHandler @ 003925e8 */
-                                          uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                          uVar16 = Walaber::Property::asFloat(auStack_d8);
                                         }
                                         *(undefined4 *)((long)p0 + 0x128) = uVar5;
                                         *(undefined4 *)((long)p0 + 300) = uVar16;
@@ -1590,7 +1590,7 @@ LAB_003916f8:
                                       }
                                       if (uVar8 == 8) {
                     /* try { // try from 003921a4 to 003921bf has its CatchHandler @ 003925f4 */
-                                        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,
+                                        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,
                                                                 "FadeTime",8);
                                         bVar4 = iVar6 == 0;
                                       }
@@ -1620,7 +1620,7 @@ LAB_003916f8:
                                         }
                                         if ((uVar8 & 1) != 0) {
                     /* try { // try from 0039223c to 00392243 has its CatchHandler @ 003925e4 */
-                                          uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                          uVar5 = Walaber::Property::asFloat(auStack_d8);
                                           uStack_11b = 0;
                                           uStack_11a = 0;
                                           uStack_119 = 0;
@@ -1642,7 +1642,7 @@ LAB_003916f8:
                                           uVar16 = uVar5;
                                           if ((uVar8 & 1) != 0) {
                     /* try { // try from 00392298 to 0039229f has its CatchHandler @ 003925d0 */
-                                            uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                            uVar16 = Walaber::Property::asFloat(auStack_d8);
                                           }
                                           *(undefined4 *)((long)p0 + 0x130) = uVar5;
                                           *(undefined4 *)((long)p0 + 0x134) = uVar16;
@@ -1660,7 +1660,7 @@ LAB_003916f8:
                                         }
                                         if (uVar8 == 4) {
                     /* try { // try from 003922d4 to 003922ef has its CatchHandler @ 003925dc */
-                                          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,
+                                          iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,
                                                                   &DAT_0062d25a,4);
                                           bVar4 = iVar6 == 0;
                                         }
@@ -1691,7 +1691,7 @@ LAB_003916f8:
                                           }
                                           if ((uVar8 & 1) != 0) {
                     /* try { // try from 00392370 to 00392377 has its CatchHandler @ 003925cc */
-                                            uVar5 = Walaber::Property::asFloat const(auStack_d8);
+                                            uVar5 = Walaber::Property::asFloat(auStack_d8);
                                             uStack_11b = 0;
                                             uStack_11a = 0;
                                             uStack_119 = 0;
@@ -1713,7 +1713,7 @@ LAB_003916f8:
                                             uVar16 = uVar5;
                                             if ((uVar8 & 1) != 0) {
                     /* try { // try from 003923cc to 003923d3 has its CatchHandler @ 003925bc */
-                                              uVar16 = Walaber::Property::asFloat const(auStack_d8);
+                                              uVar16 = Walaber::Property::asFloat(auStack_d8);
                                             }
                                             *(undefined4 *)((long)p0 + 0x140) = uVar5;
                                             *(undefined4 *)((long)p0 + 0x144) = uVar16;
@@ -1731,7 +1731,7 @@ LAB_003916f8:
                                           }
                                           if (uVar8 == 9) {
                     /* try { // try from 00392408 to 00392423 has its CatchHandler @ 003925c4 */
-                                            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff
+                                            iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff
                                                                     ,"SizeSlerp",9);
                                             bVar4 = iVar6 == 0;
                                           }
@@ -1762,7 +1762,7 @@ LAB_003916f8:
                                             }
                                             if ((uVar8 & 1) != 0) {
                     /* try { // try from 003924a4 to 003924ab has its CatchHandler @ 003925b8 */
-                                              iVar6 = Walaber::Property::asInt const(auStack_d8);
+                                              iVar6 = Walaber::Property::asInt(auStack_d8);
                                               uStack_11b = 0;
                                               uStack_11a = 0;
                                               uStack_119 = 0;
@@ -1784,7 +1784,7 @@ LAB_003916f8:
                                               iVar7 = iVar6;
                                               if ((uVar8 & 1) != 0) {
                     /* try { // try from 00392508 to 0039250f has its CatchHandler @ 003925b0 */
-                                                iVar7 = Walaber::Property::asInt const(auStack_d8);
+                                                iVar7 = Walaber::Property::asInt(auStack_d8);
                                               }
                                               *(bool *)((long)p0 + 0x149) = iVar7 != 0;
                                               *(bool *)((long)p0 + 0x148) = iVar6 != 0;

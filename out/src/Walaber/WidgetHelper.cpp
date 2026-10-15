@@ -534,7 +534,7 @@ void Walaber::WidgetHelper::_parseSizeToScreen(_xmlNode *p0,Walaber__Widget *p1)
     uStack_a8 = 0;
     uVar6 = strlen();
     if (0xffffffffffffffef < uVar6) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
       return;
     }
     if (uVar6 < 0x17) {
@@ -567,7 +567,7 @@ LAB_00371424:
     }
     if (uVar6 == 6) {
                     /* try { // try from 0037147c to 00371497 has its CatchHandler @ 00371568 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_90,0,0xffffffffffffffff,"height",6);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_90,0,0xffffffffffffffff,"height",6);
       if (iVar4 != 0) {
         uVar9 = (ulong)(fStack_90._0_1_ >> 1);
         goto LAB_003714b4;
@@ -586,7 +586,7 @@ LAB_003714b4:
     }
     if (uVar9 == 1) {
                     /* try { // try from 003714c4 to 003714df has its CatchHandler @ 00371564 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_90,0,0xffffffffffffffff,&DAT_006363eb,1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_90,0,0xffffffffffffffff,&DAT_006363eb,1);
       if (iVar4 == 0) goto LAB_00371508;
       uVar8 = (uint)fStack_90 & 0xff;
     }
@@ -1205,7 +1205,7 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
   }
                     /* try { // try from 003720ec to 00372107 has its CatchHandler @ 003722d0 */
   if ((uVar1 == 0) &&
-     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_80,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
+     (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_80,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
                     /* try { // try from 003721d4 to 003721db has its CatchHandler @ 003722b0 */
     Walaber::PropertyList::PropertyList(&uStack_b0);
                     /* try { // try from 003721e4 to 003721eb has its CatchHandler @ 003722ac */
@@ -1308,7 +1308,7 @@ void Walaber::WidgetHelper::_parseString(_xmlNode *p0,char *p1)
   uVar5 = strlen();
   if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00372468 to 0037246f has its CatchHandler @ 00372488 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return;
   }
   if (uVar5 < 0x17) {
@@ -1414,7 +1414,7 @@ void Walaber::WidgetHelper::_createAndUpdateWidgetPrototypes(_xmlNode *p0)
         uVar6 = strlen();
         if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 00372738 to 0037273f has its CatchHandler @ 00372744 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
           return;
         }
         if (uVar6 < 0x17) {
@@ -3040,7 +3040,7 @@ void Walaber::WidgetHelper::_updateWidgetToggle
       }
       if ((byte *)piVar2 == Elf64_Ehdr_00000000.e_ident_pad) {
                     /* try { // try from 00374c94 to 00374caf has its CatchHandler @ 00374e38 */
-        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_f8,0,0xffffffffffffffff,"leftright",9);
+        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_f8,0,0xffffffffffffffff,"leftright",9);
         uVar10 = (uint)(iVar8 != 0);
         uVar11 = (uint)(iVar8 != 0);
       }
@@ -3479,7 +3479,7 @@ void Walaber::WidgetHelper::_updateWidgetLabel
     }
     if (piVar1 == (int *)(Elf64_Ehdr_00000000.e_ident_magic_str + 2)) {
                     /* try { // try from 00375754 to 0037576f has its CatchHandler @ 00375f50 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,&DAT_0062c1ef,3);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,&DAT_0062c1ef,3);
       bVar3 = iVar4 == 0;
     }
     else {
@@ -3500,7 +3500,7 @@ void Walaber::WidgetHelper::_updateWidgetLabel
       }
       if ((byte *)piVar1 == &Elf64_Ehdr_00000000.e_ident_version) {
                     /* try { // try from 003757d0 to 003757eb has its CatchHandler @ 00375f40 */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"bottom",6);
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"bottom",6);
         bVar3 = iVar4 == 0;
       }
       else {
@@ -3543,7 +3543,7 @@ void Walaber::WidgetHelper::_updateWidgetLabel
     }
     if ((byte *)piVar1 == &Elf64_Ehdr_00000000.e_ident_class) {
                     /* try { // try from 003758c4 to 003758df has its CatchHandler @ 00375f48 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"left",4);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"left",4);
       bVar3 = iVar4 == 0;
     }
     else {
@@ -3564,7 +3564,7 @@ void Walaber::WidgetHelper::_updateWidgetLabel
       }
       if ((byte *)piVar1 == &Elf64_Ehdr_00000000.e_ident_data) {
                     /* try { // try from 00375940 to 0037595b has its CatchHandler @ 00375f3c */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"right",5);
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"right",5);
         bVar3 = iVar4 == 0;
       }
       else {
@@ -4063,7 +4063,7 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
   }
   if (uVar1 == 7) {
                     /* try { // try from 003765cc to 003765e7 has its CatchHandler @ 003768e8 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(auStack_e0,0,0xffffffffffffffff,"stretch",7);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(auStack_e0,0,0xffffffffffffffff,"stretch",7);
     if (iVar3 == 0) {
       uVar6 = 0;
       goto LAB_00376704;
@@ -4075,7 +4075,7 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
   }
   if (uVar7 == 6) {
                     /* try { // try from 00376614 to 0037662f has its CatchHandler @ 003768e4 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(auStack_e0,0,0xffffffffffffffff,"repeat",6);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(auStack_e0,0,0xffffffffffffffff,"repeat",6);
     uVar6 = 1;
     if (iVar3 == 0) {
       uVar6 = 2;
@@ -4204,7 +4204,7 @@ void Walaber::WidgetHelper::_updateWidgetMovingTextBox
     }
     if (uVar2 == 5) {
                     /* try { // try from 00376a90 to 00376aab has its CatchHandler @ 00376f88 */
-      iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_110,0,0xffffffffffffffff,"right",5);
+      iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_110,0,0xffffffffffffffff,"right",5);
       bVar7 = iVar8 == 0;
     }
     else {
@@ -4225,7 +4225,7 @@ void Walaber::WidgetHelper::_updateWidgetMovingTextBox
       }
       if (uVar2 == 2) {
                     /* try { // try from 00376b0c to 00376b27 has its CatchHandler @ 00376f80 */
-        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_110,0,0xffffffffffffffff,"up",2);
+        iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_110,0,0xffffffffffffffff,"up",2);
         bVar7 = iVar8 == 0;
       }
       else {
@@ -4246,7 +4246,7 @@ void Walaber::WidgetHelper::_updateWidgetMovingTextBox
         }
         if (uVar2 == 4) {
                     /* try { // try from 00376b88 to 00376ba3 has its CatchHandler @ 00376f78 */
-          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_110,0,0xffffffffffffffff,"down",4);
+          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_110,0,0xffffffffffffffff,"down",4);
           bVar7 = iVar8 == 0;
         }
         else {
@@ -4566,7 +4566,7 @@ void Walaber::WidgetHelper::_updateBaseWidget(_xmlNode *p0,Walaber__Widget *p1)
     }
     if (uVar1 == 0xd) {
                     /* try { // try from 00377250 to 0037726b has its CatchHandler @ 00377438 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_78,0,0xffffffffffffffff,"portrait_down",0xd);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_78,0,0xffffffffffffffff,"portrait_down",0xd);
       bVar3 = iVar4 == 0;
     }
     else {
@@ -4587,7 +4587,7 @@ void Walaber::WidgetHelper::_updateBaseWidget(_xmlNode *p0,Walaber__Widget *p1)
       }
       if (uVar1 == 0xc) {
                     /* try { // try from 003772cc to 003772e7 has its CatchHandler @ 00377430 */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_78,0,0xffffffffffffffff,"landscape_up",0xc);
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_78,0,0xffffffffffffffff,"landscape_up",0xc);
         bVar3 = iVar4 == 0;
       }
       else {
@@ -4608,7 +4608,7 @@ void Walaber::WidgetHelper::_updateBaseWidget(_xmlNode *p0,Walaber__Widget *p1)
         }
         if (uVar1 == 0xe) {
                     /* try { // try from 00377348 to 00377363 has its CatchHandler @ 00377428 */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_78,0,0xffffffffffffffff,"landscape_down",0xe);
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_78,0,0xffffffffffffffff,"landscape_down",0xe);
           uVar7 = 1;
           if (iVar4 == 0) {
             uVar7 = 2;
@@ -5179,7 +5179,7 @@ void Walaber::WidgetHelper::_fileReadCallback(void *p0)
               uVar8 = strlen();
               if (0xffffffffffffffef < uVar8) {
                     /* try { // try from 00378484 to 0037848b has its CatchHandler @ 00378490 */
-                std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+                std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
                 return;
               }
               if (uVar8 < 0x17) {

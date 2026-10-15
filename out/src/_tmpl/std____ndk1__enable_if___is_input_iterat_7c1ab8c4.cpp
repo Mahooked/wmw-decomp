@@ -45,7 +45,7 @@ replace<char_const*>
   uStack_68 = 0;
   puStack_60 = (undefined1 *)0x0;
   if (0xffffffffffffffef < uVar12) {
-    uVar4 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    uVar4 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return uVar4;
   }
   if (uVar12 < 0x17) {

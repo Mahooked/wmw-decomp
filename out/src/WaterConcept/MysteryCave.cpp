@@ -71,15 +71,15 @@ void WaterConcept::MysteryCave::setProperties(Walaber__PropertyList *p0)
   lVar5 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0048ac94 to 0048ac9f has its CatchHandler @ 0048ad50 */
-  lVar4 = Walaber::PropertyList::getValueForKey const();
+  lVar4 = Walaber::PropertyList::getValueForKey();
   if (lVar4 != 0) {
-    uVar2 = Walaber::Property::asInt const(lVar4);
+    uVar2 = Walaber::Property::asInt(lVar4);
     *(undefined4 *)((long)&p0[0x28].f_0x8 + 4) = uVar2;
   }
                     /* try { // try from 0048acec to 0048acf7 has its CatchHandler @ 0048ad4c */
-  lVar4 = Walaber::PropertyList::getValueForKey const();
+  lVar4 = Walaber::PropertyList::getValueForKey();
   if (lVar4 != 0) {
-    iVar3 = Walaber::Property::asInt const(lVar4);
+    iVar3 = Walaber::Property::asInt(lVar4);
     *(bool *)&p0[0x28].f_0x8 = iVar3 == 1;
   }
   if (*(long *)(lVar1 + 0x28) != lVar5) {
@@ -140,8 +140,8 @@ void WaterConcept::MysteryCave::_initFinished(long *param_1)
     fVar13 = (float)*(undefined8 *)(lVar4 + 0x18) * 0.5;
     fVar14 = (float)((ulong)*(undefined8 *)(lVar4 + 0x18) >> 0x20) * 0.5;
     uStack_70 = CONCAT44(fVar14 + auStack_80._4_4_,fVar13 + auStack_80._0_4_);
-    uStack_68 = WaterConcept::Grid::getCellForPos const(lVar4,&uStack_70);
-    WaterConcept::Grid::getCellPos const(auStack_60,lVar4,&uStack_68);
+    uStack_68 = WaterConcept::Grid::getCellForPos(lVar4,&uStack_70);
+    WaterConcept::Grid::getCellPos(auStack_60,lVar4,&uStack_68);
     uStack_78 = CONCAT44(auStack_60._4_4_ - fVar14,auStack_60._0_4_ - fVar13);
     (**(code **)(*param_1 + 0x10))(param_1,&uStack_78);
     fVar13 = (float)((ulong)_DAT_0074f140 >> 0x20);

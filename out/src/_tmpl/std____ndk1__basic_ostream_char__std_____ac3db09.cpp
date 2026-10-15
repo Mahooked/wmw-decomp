@@ -45,9 +45,9 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
     uVar2 = *(uint *)(lVar5 + 8);
     if (*(int *)(lVar5 + 0x90) == -1) {
                     /* try { // try from 003ff9b4 to 003ff9bf has its CatchHandler @ 003ffa90 */
-      std::__ndk1::ios_base::getloc const(auStack_60,lVar5);
+      std::__ndk1::ios_base::getloc(auStack_60,lVar5);
                     /* try { // try from 003ff9c0 to 003ff9df has its CatchHandler @ 003ffa80 */
-      plVar6 = (long *)std::__ndk1::locale::use_facet const(auStack_60,&ctype<char>::id);
+      plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar4 = (**(code **)(*plVar6 + 0x38))(plVar6,0x20);
       std::__ndk1::locale::~locale(auStack_60);
       *(uint *)(lVar5 + 0x90) = uVar4 & 0xff;

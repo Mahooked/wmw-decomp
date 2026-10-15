@@ -1322,7 +1322,7 @@ joined_r0x00569694:
             }
             if (piVar4 == (int *)0x0) {
                     /* try { // try from 00569c20 to 00569c3b has its CatchHandler @ 00569e58 */
-              iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_c8,0,0xffffffffffffffff,&DAT_0063306f,0);
+              iVar15 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_c8,0,0xffffffffffffffff,&DAT_0063306f,0);
               bVar13 = iVar15 != 0;
             }
             else {
@@ -1446,7 +1446,7 @@ void WaterConcept::Screen_UpsellWater2::_fileExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 00569fc4 to 00569fcb has its CatchHandler @ 0056a0b4 */
-    lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }

@@ -76,7 +76,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
         puStack_48 = &DAT_007a5f08;
         uStack_50 = 4;
                     /* try { // try from 005f14e8 to 005f14f3 has its CatchHandler @ 005f1614 */
-        std::__ndk1::error_code::message const(auStack_68,&uStack_50);
+        std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f14f4 to 005f14ff has its CatchHandler @ 005f15f8 */
         std::logic_error::logic_error(appuStack_90,auStack_68);
         if ((auStack_68[0] & 1) != 0) {

@@ -60,9 +60,9 @@ long * std::__ndk1::
   pcStack_160 = __do_nothing;
                     /* try { // try from 005c7a84 to 005c7a8f has its CatchHandler @ 005c7d98 */
   plStack_158 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_178,param_5);
+  std::__ndk1::ios_base::getloc(&uStack_178,param_5);
                     /* try { // try from 005c7a90 to 005c7a9f has its CatchHandler @ 005c7d94 */
-  plVar4 = (long *)std::__ndk1::locale::use_facet const(&uStack_178,&ctype<char>::id);
+  plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_178,&ctype<char>::id);
   acStack_17c[0] = '\0';
                     /* try { // try from 005c7ab0 to 005c7adf has its CatchHandler @ 005c7db0 */
   uVar5 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_158,param_3,param_4 & 1,&uStack_178,*(undefined4 *)(param_5 + 8),
@@ -1135,9 +1135,9 @@ long * std::__ndk1::
   pcStack_e8 = __do_nothing;
                     /* try { // try from 005c916c to 005c9177 has its CatchHandler @ 005c9350 */
   plStack_e0 = param_2;
-  std::__ndk1::ios_base::getloc const(&uStack_100,param_5);
+  std::__ndk1::ios_base::getloc(&uStack_100,param_5);
                     /* try { // try from 005c9178 to 005c9187 has its CatchHandler @ 005c934c */
-  plVar6 = (long *)std::__ndk1::locale::use_facet const(&uStack_100,&ctype<char>::id);
+  plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_100,&ctype<char>::id);
   acStack_104[0] = '\0';
                     /* try { // try from 005c9198 to 005c9217 has its CatchHandler @ 005c9360 */
   uVar7 = std::__ndk1::money_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::__do_get(&plStack_e0,param_3,param_4 & 1,&uStack_100,*(undefined4 *)(param_5 + 8),

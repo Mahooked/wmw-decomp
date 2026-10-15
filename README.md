@@ -473,6 +473,15 @@ slot, `.dynsym` index, mangled and resolved name) as the evidence, and
 `resolve_refs.py --check` re-derives it and fails if any resolvable placeholder
 survives. It is a post-pass over generated output, so it is idempotent.
 
+A callee name is the qualified name only. `signature().name` keeps a member's
+cv-qualifier (`Walaber::Property::asString const`), so the resolver strips a
+trailing `const`/`volatile` (and any `&`/`&&`) before writing it; otherwise the
+`const` lands mid-expression and the call no longer reads as C++. Because the
+mangled symbol is the stable key, the pass is also *self-repairing*: it reads the
+previous `imports.tsv` back, recomputes each name under the current rule, and
+rewrites any stale name it finds. Fixing the rule therefore fixed the 82 distinct
+names already written across 361 files, without a revert.
+
 ### Field layouts
 
 Class layouts are recovered from the code that *uses* them, since the binary

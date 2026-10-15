@@ -478,7 +478,7 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
   lVar3 = *(long *)&p0[4].field_0x8;
   if (lVar3 == 0) goto LAB_0038cb54;
   if (p0[7].f_0x18 == 1) {
-    Walaber::BitmapFont::measureString const(&fStack_b8,0x3f800000,lVar3,&p0[6].f_0x18);
+    Walaber::BitmapFont::measureString(&fStack_b8,0x3f800000,lVar3,&p0[6].f_0x18);
     Walaber::Node::getWorldScale(&fStack_b8,p0);
     fVar8 = (float)p0[2].f_0x20;
     Walaber::Node::getWorldScale(&fStack_b8,p0);
@@ -494,7 +494,7 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
     pvStack_128 = (void *)0x0;
     uVar4 = strlen(puVar5);
     if (0xffffffffffffffef < uVar4) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
       return;
     }
     if (uVar4 < 0x17) {
@@ -520,7 +520,7 @@ LAB_0038c89c:
     if ((uStack_138 & 1) != 0) {
       operator delete(pvStack_128);
     }
-    Walaber::BitmapFont::measureString const(&fStack_b8,0x3f800000,*(undefined8 *)&p0[4].field_0x8,&p0[6].f_0x30);
+    Walaber::BitmapFont::measureString(&fStack_b8,0x3f800000,*(undefined8 *)&p0[4].field_0x8,&p0[6].f_0x30);
     fVar10 = fStack_b4;
     fVar12 = *(float *)&p0[7].field_0x10;
     Walaber::Node::getWorldScale(&fStack_b8,p0);
@@ -540,7 +540,7 @@ LAB_0038c89c:
     pvStack_140 = (void *)0x0;
     uVar4 = strlen(puVar5);
     if (0xffffffffffffffef < uVar4) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_150);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_150);
       return;
     }
     if (uVar4 < 0x17) {
@@ -568,7 +568,7 @@ LAB_0038cad0:
   }
   else {
     if (p0[7].f_0x18 != 0) goto LAB_0038cb54;
-    Walaber::BitmapFont::measureString const(&fStack_b8,0x3f800000,lVar3,&p0[6].f_0x18);
+    Walaber::BitmapFont::measureString(&fStack_b8,0x3f800000,lVar3,&p0[6].f_0x18);
     fVar10 = *(float *)&p0[7].field_0x10;
     Walaber::Node::getWorldScale(&fStack_b8,p0);
     fVar8 = (float)p0[2].f_0x20;
@@ -583,7 +583,7 @@ LAB_0038cad0:
     pvStack_f8 = (void *)0x0;
     uVar4 = strlen(puVar5);
     if (0xffffffffffffffef < uVar4) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_108);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_108);
       return;
     }
     if (uVar4 < 0x17) {
@@ -609,7 +609,7 @@ LAB_0038c7a8:
     if ((uStack_108 & 1) != 0) {
       operator delete(pvStack_f8);
     }
-    Walaber::BitmapFont::measureString const(&fStack_b8,0x3f800000,*(undefined8 *)&p0[4].field_0x8,&p0[6].f_0x30);
+    Walaber::BitmapFont::measureString(&fStack_b8,0x3f800000,*(undefined8 *)&p0[4].field_0x8,&p0[6].f_0x30);
     fVar11 = fStack_b4;
     fVar8 = fStack_b8;
     fVar12 = *(float *)&p0[7].field_0x10;
@@ -627,7 +627,7 @@ LAB_0038c7a8:
     pvStack_110 = (void *)0x0;
     uVar4 = strlen(puVar5);
     if (0xffffffffffffffef < uVar4) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_120);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_120);
       return;
     }
     if (uVar4 < 0x17) {

@@ -126,7 +126,7 @@ void WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber__PropertyList 
   uStack_58 = 0x69;
   uStack_55 = 0;
                     /* try { // try from 004a6da8 to 004a6db3 has its CatchHandler @ 004a6f14 */
-  uVar2 = Walaber::PropertyList::keyExists const();
+  uVar2 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -139,8 +139,8 @@ void WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber__PropertyList 
     uStack_58 = 0x69;
     uStack_55 = 0;
                     /* try { // try from 004a6dec to 004a6dff has its CatchHandler @ 004a6f10 */
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&fStack_68);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&fStack_68);
     if ((bStack_60 & 1) != 0) {
       operator delete(pvStack_50);
     }
@@ -157,7 +157,7 @@ void WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber__PropertyList 
   uStack_5f = 0x506172656d6143;
   uStack_58 = 0x6f;
                     /* try { // try from 004a6e64 to 004a6e6f has its CatchHandler @ 004a6f0c */
-  uVar2 = Walaber::PropertyList::keyExists const();
+  uVar2 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -171,8 +171,8 @@ void WaterConcept::Screen_AnimationTest::loadPropertyList(Walaber__PropertyList 
     uStack_5f = 0x506172656d6143;
     uStack_58 = 0x6f;
                     /* try { // try from 004a6ea8 to 004a6ec7 has its CatchHandler @ 004a6f18 */
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(auStack_78);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(auStack_78);
     Walaber::Camera::setPosition(uVar2,auStack_78);
     if ((bStack_60 & 1) != 0) {
       operator delete(pvStack_50);

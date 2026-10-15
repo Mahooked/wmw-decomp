@@ -37,7 +37,7 @@ void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Langu
       *(undefined8 *)(p0 + 4) = 0;
     }
     if (uVar5 >> 0x3e != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     if ((ulong)(lVar2 >> 2) < 0x1fffffffffffffff) {

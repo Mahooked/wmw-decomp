@@ -40,7 +40,7 @@ void std::__ndk1::
   lVar3 = (in_x0[1] - *in_x0 >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const();
+    std::__ndk1::__vector_base_common<true>::__throw_length_error();
     return;
   }
   lVar7 = in_x0[2] - *in_x0 >> 3;

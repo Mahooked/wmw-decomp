@@ -112,7 +112,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 8;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 
@@ -221,7 +221,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
     lVar10 = *param_1;
     uVar9 = ((long)puVar6 - lVar10 >> 3) + 1;
     if (uVar9 >> 0x3d != 0) {
-      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar6;
     }
     lVar7 = param_1[2] - lVar10;

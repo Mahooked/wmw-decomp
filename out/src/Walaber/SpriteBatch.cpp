@@ -3158,7 +3158,7 @@ void Walaber::SpriteBatch::_drawStringCenter
   Walaber::StringHelper::split(param_5,10,&lStack_a0);
   if (lStack_98 - lStack_a0 == 0) {
                     /* try { // try from 00361d60 to 00361d73 has its CatchHandler @ 00361e00 */
-    Walaber::BitmapFont::measureString const(&fStack_a8,param_2,param_4,param_5);
+    Walaber::BitmapFont::measureString(&fStack_a8,param_2,param_4,param_5);
     fStack_ac = param_6[1];
     fStack_b0 = *param_6 + fStack_a8 * -0.5;
                     /* try { // try from 00361d94 to 00361db7 has its CatchHandler @ 00361dfc */
@@ -3172,7 +3172,7 @@ void Walaber::SpriteBatch::_drawStringCenter
       uVar4 = 1;
       while( true ) {
                     /* try { // try from 00361d04 to 00361d13 has its CatchHandler @ 00361e0c */
-        Walaber::BitmapFont::measureString const(&fStack_a8,param_2,param_4,lStack_a0 + lVar3);
+        Walaber::BitmapFont::measureString(&fStack_a8,param_2,param_4,lStack_a0 + lVar3);
         fStack_ac = fVar5 + param_6[1];
         fStack_b0 = *param_6 + fStack_a8 * -0.5;
                     /* try { // try from 00361d34 to 00361d53 has its CatchHandler @ 00361e08 */
@@ -3216,7 +3216,7 @@ void Walaber::SpriteBatch::_drawStringRight
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  Walaber::BitmapFont::measureString const(afStack_70,param_2,param_4,param_5);
+  Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,param_5);
   fStack_74 = param_6[1];
   fStack_78 = *param_6 - afStack_70[0];
   Walaber::SpriteBatch::_drawStringLeft(param_1,param_2,param_3,param_4,param_5,&fStack_78,param_7,param_8);
@@ -3272,7 +3272,7 @@ void Walaber::SpriteBatch::_drawStringLeft
   fVar12 = 1.0;
   iVar8 = -1;
   do {
-    piVar6 = (int *)Walaber::BitmapFont::getGlyph const(param_4,&iStack_b4,param_5);
+    piVar6 = (int *)Walaber::BitmapFont::getGlyph(param_4,&iStack_b4,param_5);
     iVar4 = *piVar6;
     if (iVar4 < 0xd) {
       if (iVar4 != 10) {
@@ -3387,7 +3387,7 @@ void Walaber::SpriteBatch::_drawStringCenterClip
   lStack_68 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
                     /* try { // try from 00362230 to 00362243 has its CatchHandler @ 003622d0 */
-  Walaber::BitmapFont::measureString const(afStack_70,param_2,param_4,&fStack_88);
+  Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
   if ((fStack_88._0_1_ & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -3428,7 +3428,7 @@ void Walaber::SpriteBatch::_drawStringRightClip
   lStack_68 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
                     /* try { // try from 00362348 to 0036235b has its CatchHandler @ 003623e0 */
-  Walaber::BitmapFont::measureString const(afStack_70,param_2,param_4,&fStack_88);
+  Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
   if ((fStack_88._0_1_ & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -3485,7 +3485,7 @@ void Walaber::SpriteBatch::_drawStringLeftClip
   uVar1 = *param_8;
   do {
     fVar4 = fStack_8c;
-    piVar5 = (int *)Walaber::BitmapFont::getGlyph const(param_4,&iStack_94,param_5);
+    piVar5 = (int *)Walaber::BitmapFont::getGlyph(param_4,&iStack_94,param_5);
     iVar2 = *piVar5;
     if (iVar2 < 0xd) {
       if (iVar2 != 10) {

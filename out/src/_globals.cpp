@@ -63350,7 +63350,7 @@ void Java_com_disney_common_WMWRenderer_rendererInit
   uVar8 = strlen(uVar6);
   if (0xffffffffffffffef < uVar8) {
                     /* try { // try from 002c44b0 to 002c44b7 has its CatchHandler @ 002c44d4 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
     return;
   }
   if (uVar8 < 0x17) {
@@ -63390,7 +63390,7 @@ LAB_002c4140:
   uVar8 = strlen();
   if (0xffffffffffffffef < uVar8) {
                     /* try { // try from 002c44b8 to 002c44bf has its CatchHandler @ 002c44c8 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c0);
     return;
   }
   if (uVar8 < 0x17) {
@@ -63418,7 +63418,7 @@ LAB_002c4240:
   }
   if (uVar8 == 2) {
                     /* try { // try from 002c428c to 002c42a7 has its CatchHandler @ 002c44c4 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_c0,0,0xffffffffffffffff,&DAT_00634775,2);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_c0,0,0xffffffffffffffff,&DAT_00634775,2);
     if (iVar2 != 0) {
       uVar10 = (ulong)((byte)uStack_c0 >> 1);
       goto LAB_002c42c4;
@@ -63433,7 +63433,7 @@ LAB_002c42c4:
     }
                     /* try { // try from 002c42d4 to 002c42ef has its CatchHandler @ 002c44c0 */
     if ((uVar10 == 2) &&
-       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_c0,0,0xffffffffffffffff,&DAT_0061e917,2), iVar2 == 0))
+       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_c0,0,0xffffffffffffffff,&DAT_0061e917,2), iVar2 == 0))
     goto LAB_002c430c;
                     /* try { // try from 002c42f4 to 002c4337 has its CatchHandler @ 002c44ec */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&uStack_a8,"zh-Hans",7);
@@ -64452,7 +64452,7 @@ void Java_com_disney_common_BaseActivity_notifyViewIntent
   uStack_60 = 0;
   uVar4 = strlen(uVar2);
   if (0xffffffffffffffef < uVar4) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
   }
   if (uVar4 < 0x17) {

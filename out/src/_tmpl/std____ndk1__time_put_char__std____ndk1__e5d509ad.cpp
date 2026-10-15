@@ -32,9 +32,9 @@ long * std::__ndk1::
   
   lVar1 = tpidr_el0;
   lStack_68 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_70,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_3);
                     /* try { // try from 005c3fc4 to 005c3fd3 has its CatchHandler @ 005c4214 */
-  plVar4 = (long *)std::__ndk1::locale::use_facet const(&uStack_70,&ctype<char>::id);
+  plVar4 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<char>::id);
   plVar5 = (long *)std::__ndk1::__shared_count::__release_shared(uStack_70);
 joined_r0x005c3fe4:
   do {

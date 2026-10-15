@@ -431,7 +431,7 @@ void Walaber::Widget_PushButton::_resizeFont(long param_1)
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)(param_1 + 0xe8) != 0) {
-    Walaber::BitmapFont::measureString const(&fStack_58,0x3f800000,*(long *)(param_1 + 0xe8),param_1 + 0x178);
+    Walaber::BitmapFont::measureString(&fStack_58,0x3f800000,*(long *)(param_1 + 0xe8),param_1 + 0x178);
     *(undefined4 *)(param_1 + 0x174) = 0x3f800000;
     Walaber::Node::getWorldScale(&fStack_50,param_1);
     fVar2 = (*(float *)(param_1 + 0x90) * fStack_50 - *(float *)(param_1 + 0x16c)) / fStack_58;
@@ -838,7 +838,7 @@ void Walaber::Widget_PushButton::draw(Walaber__SpriteBatch *p0)
     if ((bVar4 & 1) == 0) {
       if (bVar4 >> 1 != 0) {
 LAB_00383ff0:
-        Walaber::BitmapFont::measureString const(&bStack_80,0x3f800000,*(long *)&p0[4].field_0x8,&p0[6].f_0x28);
+        Walaber::BitmapFont::measureString(&bStack_80,0x3f800000,*(long *)&p0[4].field_0x8,&p0[6].f_0x28);
         puVar1 = (undefined8 *)&p0[6].field_0xc;
         if (*(char *)((long)&p0[6].f_0x0 + 3) != '\0') {
           puVar1 = (undefined8 *)&p0[6].field_0x14;
@@ -855,7 +855,7 @@ LAB_00383ff0:
         pvStack_a8 = (void *)0x0;
         uVar12 = strlen(puVar17);
         if (0xffffffffffffffef < uVar12) {
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b8);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b8);
           return;
         }
         if (uVar12 < 0x17) {

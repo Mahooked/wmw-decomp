@@ -140,7 +140,7 @@ void Walaber::ProgrammaticTexture2D::setData(long param_1,undefined8 *param_2)
     uStack_40 = 0;
     uStack_48 = 0x100000000;
     if (pvVar2 == pvVar1) {
-      std::__ndk1::__vector_base_common<true>::__throw_out_of_range const();
+      std::__ndk1::__vector_base_common<true>::__throw_out_of_range();
       Walaber::Logger::printf("Walaber",4,
                    "ProgrammaticTexture::setData override for specific region not currently supported!\n"
                   );

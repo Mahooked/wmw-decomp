@@ -150,7 +150,7 @@ void Walaber::Property::setValue(int p0)
                     /* try { // try from 003fe260 to 003fe26b has its CatchHandler @ 003fe33c */
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(&ppuStack_180,in_w1);
                     /* try { // try from 003fe26c to 003fe277 has its CatchHandler @ 003fe338 */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&uStack_1a8,&ppuStack_178);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&uStack_1a8,&ppuStack_178);
   pbVar3 = (byte *)(puVar2 + 2);
   if ((*pbVar3 & 1) == 0) {
     pbVar3[0] = 0;
@@ -275,7 +275,7 @@ void Walaber::Property::setValue(float p0)
                     /* try { // try from 003fe4d8 to 003fe4e3 has its CatchHandler @ 003fe5b8 */
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(CONCAT44(in_register_00005004,p0),&ppuStack_190);
                     /* try { // try from 003fe4e4 to 003fe4ef has its CatchHandler @ 003fe5b4 */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&uStack_1b8,&ppuStack_188);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&uStack_1b8,&ppuStack_188);
   pbVar2 = (byte *)(in_x0 + 2);
   if ((*pbVar2 & 1) == 0) {
     pbVar2[0] = 0;
@@ -404,7 +404,7 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0)
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(in_x1[1]);
                     /* try { // try from 003fe774 to 003fe77f has its CatchHandler @ 003fe840 */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&WStack_1a8,&ppuStack_178);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&WStack_1a8,&ppuStack_178);
   pWVar4 = p0 + 1;
   if (((uint)pWVar4->f_0x0 & 1) == 0) {
     *(undefined2 *)&pWVar4->f_0x0 = 0;
@@ -538,7 +538,7 @@ void Walaber::Property::setValue(Walaber__Rect *p0)
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(in_x1[3]);
                     /* try { // try from 003fea30 to 003fea3b has its CatchHandler @ 003feafc */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&uStack_1a8,&ppuStack_178);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&uStack_1a8,&ppuStack_178);
   if (((uint)p0->f_0x8 & 1) == 0) {
     *(undefined2 *)&p0->f_0x8 = 0;
   }
@@ -675,7 +675,7 @@ void Walaber::Property::setValue(Walaber__Color *p0)
   uVar3 = std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar3,&DAT_0062359c,1);
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(uVar3,in_x1[3]);
                     /* try { // try from 003fecec to 003fecf7 has its CatchHandler @ 003fedb8 */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&uStack_1a8,&ppuStack_178);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&uStack_1a8,&ppuStack_178);
   pWVar4 = p0 + 2;
   if ((pWVar4->f_0x0 & 1) == 0) {
     pWVar4->f_0x0 = '\0';
@@ -806,7 +806,7 @@ void Walaber::Property::setValue(Walaber__AABB *p0)
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>& std::__ndk1::__put_character_sequence<char, std::__ndk1::char_traits<char>>(uVar2,&DAT_0062359c,1);
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::operator<<(in_x1[3]);
                     /* try { // try from 003fefa8 to 003fefb3 has its CatchHandler @ 003ff074 */
-  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str const(&uStack_1a8,&ppuStack_178);
+  std::__ndk1::basic_stringbuf<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::str(&uStack_1a8,&ppuStack_178);
   if (((uint)p0->f_0x8 & 1) == 0) {
     *(undefined2 *)&p0->f_0x8 = 0;
   }

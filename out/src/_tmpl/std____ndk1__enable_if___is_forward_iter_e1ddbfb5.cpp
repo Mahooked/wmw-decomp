@@ -31,7 +31,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   if ((ulong)(*(long *)(p0 + 0x10) - (long)pbVar5 >> 5) < uVar8) {
     std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::__vdeallocate(p0);
     if (uVar8 >> 0x3b != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 5) < 0x3ffffffffffffff) {

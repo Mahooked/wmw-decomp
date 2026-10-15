@@ -565,8 +565,8 @@ LAB_0049b104:
       *(undefined4 *)(in_x0 + 0x1f8) = 0;
       *(undefined2 *)(in_x0 + 0x260) = 0x100;
     }
-    fVar6 = (float)Walaber::Curve::evaluate const(1.0 - fVar6,*(undefined8 *)(in_x0 + 0x270));
-    fVar7 = (float)Walaber::Curve::evaluate const(1.0 - *(float *)(in_x0 + 0x268),*(undefined8 *)(in_x0 + 0x270));
+    fVar6 = (float)Walaber::Curve::evaluate(1.0 - fVar6,*(undefined8 *)(in_x0 + 0x270));
+    fVar7 = (float)Walaber::Curve::evaluate(1.0 - *(float *)(in_x0 + 0x268),*(undefined8 *)(in_x0 + 0x270));
     plVar4 = *(long **)(in_x0 + 0x200);
     if (plVar4 != (long *)0x0) {
       uVar10 = NEON_fmov(0xbf800000,4);
@@ -1231,7 +1231,7 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
   fStack_44 = fVar4 * fVar3;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,in_x1 + 0x168);
                     /* try { // try from 0049bf00 to 0049bf1b has its CatchHandler @ 0049bf84 */
-  Walaber::BitmapFont::wrapStringInSize const(&bStack_60,fVar4 * fVar3,lVar2,&fStack_44,abStack_78,&uStack_40);
+  Walaber::BitmapFont::wrapStringInSize(&bStack_60,fVar4 * fVar3,lVar2,&fStack_44,abStack_78,&uStack_40);
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -1348,7 +1348,7 @@ void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton
                     /* try { // try from 0049c0e0 to 0049c0eb has its CatchHandler @ 0049c1cc */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,in_x1 + 0x178);
                     /* try { // try from 0049c100 to 0049c117 has its CatchHandler @ 0049c1b4 */
-  Walaber::BitmapFont::wrapStringInSize const(&bStack_88,(21.0 / fVar6) * fVar5,uVar2,&uStack_6c,abStack_b8,&uStack_50);
+  Walaber::BitmapFont::wrapStringInSize(&bStack_88,(21.0 / fVar6) * fVar5,uVar2,&uStack_6c,abStack_b8,&uStack_50);
   if ((abStack_b8[0] & 1) != 0) {
     operator delete(pvStack_a8);
   }

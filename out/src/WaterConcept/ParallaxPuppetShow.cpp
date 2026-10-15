@@ -1342,7 +1342,7 @@ LAB_004317d8:
                 uStack_110 = (undefined4 **)0x0;
                 ppuVar10 = (undefined4 **)strlen();
                 if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
-                  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+                  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
                   return;
                 }
                 if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1445,7 +1445,7 @@ LAB_00431884:
                     ppuVar10 = (undefined4 **)strlen();
                     if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433048 to 0043304f has its CatchHandler @ 00433078 */
-                      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                       return;
                     }
                     if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1538,7 +1538,7 @@ LAB_00431dec:
                   ppuVar10 = (undefined4 **)strlen();
                   if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433040 to 00433047 has its CatchHandler @ 0043307c */
-                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                     return;
                   }
                   if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1590,7 +1590,7 @@ LAB_00431db8:
                   ppuVar10 = (undefined4 **)strlen();
                   if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433028 to 0043302f has its CatchHandler @ 00433088 */
-                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                     return;
                   }
                   if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1738,7 +1738,7 @@ LAB_00431fb4:
                     uVar12 = strlen();
                     if (0xffffffffffffffef < uVar12) {
                     /* try { // try from 00433018 to 0043301f has its CatchHandler @ 00433090 */
-                      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                       return;
                     }
                     if (uVar12 < 0x17) {
@@ -1823,7 +1823,7 @@ LAB_004322b8:
                       ppuVar10 = (undefined4 **)strlen();
                       if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
 LAB_00433008:
-                        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                         return;
                       }
                       if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1853,7 +1853,7 @@ LAB_00432480:
                       ppuVar10 = (undefined4 **)strlen();
                       if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433030 to 00433037 has its CatchHandler @ 00433084 */
-                        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+                        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
                         return;
                       }
                       if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -1975,7 +1975,7 @@ LAB_00432978:
                               piVar18 = (int *)strlen();
                               if ((int *)0xffffffffffffffef < piVar18) {
                     /* try { // try from 00433020 to 00433027 has its CatchHandler @ 0043308c */
-                                std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_220);
+                                std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_220);
                                 return;
                               }
                               if ((int *)((long)&Elf64_Ehdr_00000000.e_version + 2) < piVar18) {
@@ -2092,7 +2092,7 @@ LAB_004329ac:
                                   piVar18 = (int *)strlen();
                                   if ((int *)0xffffffffffffffef < piVar18) {
                     /* try { // try from 00433038 to 0043303f has its CatchHandler @ 00433080 */
-                                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_220);
+                                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_220);
                                     return;
                                   }
                                   if ((int *)((long)&Elf64_Ehdr_00000000.e_version + 2) < piVar18) {
@@ -2214,7 +2214,7 @@ LAB_00432bbc:
                         ppuVar10 = (undefined4 **)strlen();
                         if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433050 to 00433057 has its CatchHandler @ 00433074 */
-                          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                           return;
                         }
                         if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -2255,7 +2255,7 @@ LAB_00432dc8:
                         ppuVar10 = (undefined4 **)strlen();
                         if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433058 to 0043305f has its CatchHandler @ 00433070 */
-                          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                           return;
                         }
                         if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10) {
@@ -2335,7 +2335,7 @@ LAB_00432ea0:
                           ppuVar10 = (undefined4 **)strlen();
                           if ((undefined4 **)0xffffffffffffffef < ppuVar10) {
                     /* try { // try from 00433060 to 00433067 has its CatchHandler @ 0043306c */
-                            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+                            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
                             return;
                           }
                           if ((undefined4 **)((long)&Elf64_Ehdr_00000000.e_version + 2) < ppuVar10)
@@ -2442,7 +2442,7 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(undefined8 param_1,
   }
   if (uVar3 == 8) {
                     /* try { // try from 004334b0 to 004334cb has its CatchHandler @ 00433520 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"skeleton",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"skeleton",8);
     uVar4 = (uint)(iVar2 == 0);
   }
   else {
@@ -2490,7 +2490,7 @@ void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0)
   lVar4 = *(long *)(in_x1 + 8) + 0x24;
   uVar3 = strlen(lVar4);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return;
   }
   if (uVar3 < 0x17) {
@@ -2561,7 +2561,7 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToTransitionType
   }
   if (uVar3 == 4) {
                     /* try { // try from 004336c0 to 004336db has its CatchHandler @ 004337c0 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_0063658e,4);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_0063658e,4);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_40[0] >> 1);
       goto LAB_004336f8;
@@ -2575,7 +2575,7 @@ LAB_004336f8:
     }
     if (uVar3 == 4) {
                     /* try { // try from 00433708 to 00433723 has its CatchHandler @ 004337bc */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_00636593,4);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_00636593,4);
       if (iVar2 == 0) {
         uVar4 = 0;
         goto LAB_00433780;
@@ -2587,7 +2587,7 @@ LAB_004336f8:
     }
     if (uVar5 == 5) {
                     /* try { // try from 00433748 to 00433763 has its CatchHandler @ 004337b8 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"block",5);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"block",5);
       uVar4 = 1;
       if (iVar2 == 0) {
         uVar4 = 2;

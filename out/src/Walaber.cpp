@@ -669,7 +669,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   }
   if (uVar3 == 6) {
                     /* try { // try from 003978e8 to 00397903 has its CatchHandler @ 003979f0 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"rgb565",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"rgb565",6);
     if (iVar2 == 0) {
       uVar4 = 1;
       goto LAB_003979b0;
@@ -682,7 +682,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   }
   if (uVar3 == 8) {
                     /* try { // try from 00397930 to 0039794b has its CatchHandler @ 003979ec */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"rgba5551",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"rgba5551",8);
     if (iVar2 == 0) {
       uVar4 = 2;
       goto LAB_003979b0;
@@ -694,7 +694,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   }
   if (uVar5 == 8) {
                     /* try { // try from 00397970 to 0039798b has its CatchHandler @ 003979e8 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"rgba4444",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"rgba4444",8);
     uVar4 = 3;
     if (iVar2 != 0) {
       uVar4 = 0;

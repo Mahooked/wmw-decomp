@@ -662,7 +662,7 @@ LAB_0034e5f8:
                     puStack_d0 = (undefined4 *)0x0;
                     uVar9 = strlen();
                     if (0xffffffffffffffef < uVar9) {
-                      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_d0);
+                      std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_d0);
                       return;
                     }
                     if (uVar9 < 0x17) {
@@ -765,7 +765,7 @@ LAB_0034e318:
                   uStack_168 = 0;
                   uVar9 = strlen();
                   if (0xffffffffffffffef < uVar9) {
-                    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_168);
+                    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_168);
                     return;
                   }
                   if (uVar9 < 0x17) {
@@ -799,7 +799,7 @@ LAB_0034dfe4:
                     piVar10 = (int *)strlen();
                     if ((int *)0xffffffffffffffef < piVar10) {
 LAB_0034e75c:
-                      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_120);
+                      std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_120);
                       return;
                     }
                     if ((int *)((long)&Elf64_Ehdr_00000000.e_version + 2) < piVar10) {
@@ -1168,7 +1168,7 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
   uStack_c1 = 0x65;
   uStack_c0 = 0x61;
                     /* try { // try from 0034ee5c to 0034ee63 has its CatchHandler @ 0034f3f4 */
-  lVar7 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+  lVar7 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
   if ((bStack_c8 & 1) != 0) {
     operator delete(pvStack_b8);
   }
@@ -1183,8 +1183,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
   uStack_c3 = 0x70;
   uStack_c2 = 0;
                     /* try { // try from 0034eea0 to 0034eeab has its CatchHandler @ 0034f3f8 */
-  Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-  uStack_7c = Walaber::Property::asInt const();
+  Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+  uStack_7c = Walaber::Property::asInt();
   if ((bStack_c8 & 1) != 0) {
     operator delete(pvStack_b8);
   }
@@ -1200,8 +1200,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
     uStack_c7 = 0x706f6f6c;
     uStack_c3 = 0;
                     /* try { // try from 0034ef40 to 0034ef4b has its CatchHandler @ 0034f3f0 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+    iVar3 = Walaber::Property::asInt();
     if ((bStack_c8 & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1216,8 +1216,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
     uStack_c0 = 0x6c;
     uStack_bf = 0;
                     /* try { // try from 0034ef94 to 0034ef9f has its CatchHandler @ 0034f3ec */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-    uVar9 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+    uVar9 = Walaber::Property::asFloat();
     if ((bStack_c8 & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1232,8 +1232,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
     uStack_c0 = 0x77;
     uStack_bf = 0;
                     /* try { // try from 0034efe0 to 0034efeb has its CatchHandler @ 0034f3e8 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+    iVar4 = Walaber::Property::asInt();
     if ((bStack_c8 & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1248,8 +1248,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
     uStack_c0 = 99;
     uStack_bf = 0;
                     /* try { // try from 0034f02c to 0034f037 has its CatchHandler @ 0034f3e4 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-    iVar5 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+    iVar5 = Walaber::Property::asInt();
     if ((bStack_c8 & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1264,8 +1264,8 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
     uStack_c3 = 0x6f;
     uStack_c2 = 0;
                     /* try { // try from 0034f07c to 0034f087 has its CatchHandler @ 0034f3e0 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
-    iVar6 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_c8);
+    iVar6 = Walaber::Property::asInt();
     if ((bStack_c8 & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -3165,8 +3165,8 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
   uStack_14b = 0x70;
   uStack_14a = 0;
                     /* try { // try from 00350d98 to 00350da3 has its CatchHandler @ 003516a0 */
-  Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
-  uVar5 = Walaber::Property::asInt const();
+  Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
+  uVar5 = Walaber::Property::asInt();
   if ((bStack_150 & 1) != 0) {
     operator delete(pvStack_140);
   }
@@ -3182,8 +3182,8 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
   uStack_14f = 0x6469;
   uStack_14d = 0;
                     /* try { // try from 00350dd8 to 00350de3 has its CatchHandler @ 0035169c */
-  Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
-  uVar6 = Walaber::Property::asInt const();
+  Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
+  uVar6 = Walaber::Property::asInt();
   uVar17 = uVar6 & 0xffffffff;
   if ((bStack_150 & 1) != 0) {
     operator delete(pvStack_140);
@@ -3200,8 +3200,8 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
   uStack_14c = 0x70;
   uStack_14b = 0;
                     /* try { // try from 00350e1c to 00350e27 has its CatchHandler @ 00351698 */
-  Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
-  Walaber::Property::asInt const();
+  Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
+  Walaber::Property::asInt();
   if ((bStack_150 & 1) != 0) {
     operator delete(pvStack_140);
   }
@@ -3217,11 +3217,11 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
   uStack_149 = 0x5f;
   uStack_148 = 0x74;
                     /* try { // try from 00350e6c to 00350e73 has its CatchHandler @ 00351694 */
-  lVar7 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
+  lVar7 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x60),&bStack_150);
   if ((bStack_150 & 1) != 0) {
     operator delete(pvStack_140);
   }
-  if (((lVar7 == 0) || (iVar4 = Walaber::Property::asInt const(lVar7), iVar4 != 1)) ||
+  if (((lVar7 == 0) || (iVar4 = Walaber::Property::asInt(lVar7), iVar4 != 1)) ||
      (*(long *)(in_x1 + 0x20) != 0)) {
     plVar11 = (long *)((long)p0 + 0x20);
     plVar14 = (long *)*plVar11;
@@ -3843,7 +3843,7 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
   pvStack_60 = (void *)0x0;
   auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00351ed8 to 00351ee3 has its CatchHandler @ 00352044 */
-  uVar3 = Walaber::PropertyList::keyExists const(lVar1,auStack_70);
+  uVar3 = Walaber::PropertyList::keyExists(lVar1,auStack_70);
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -3855,8 +3855,8 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00351f18 to 00351f27 has its CatchHandler @ 00352040 */
-    Walaber::PropertyList::operator[] const(lVar1,auStack_70);
-    uVar5 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    uVar5 = Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -3865,7 +3865,7 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
   pvStack_60 = (void *)0x0;
   auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00351f68 to 00351f73 has its CatchHandler @ 0035203c */
-  uVar3 = Walaber::PropertyList::keyExists const(lVar1,auStack_70);
+  uVar3 = Walaber::PropertyList::keyExists(lVar1,auStack_70);
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -3875,8 +3875,8 @@ void Walaber::SoundManager::_oneShotCallback(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00351fb8 to 00351fc7 has its CatchHandler @ 00352038 */
-    Walaber::PropertyList::operator[] const(lVar1,auStack_70);
-    fVar4 = (float)Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    fVar4 = (float)Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -4479,7 +4479,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
   pvStack_60 = (void *)0x0;
   auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00352db8 to 00352dc3 has its CatchHandler @ 00352f24 */
-  uVar3 = Walaber::PropertyList::keyExists const(lVar1,auStack_70);
+  uVar3 = Walaber::PropertyList::keyExists(lVar1,auStack_70);
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -4491,8 +4491,8 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x6c6f7606;
                     /* try { // try from 00352df8 to 00352e07 has its CatchHandler @ 00352f20 */
-    Walaber::PropertyList::operator[] const(lVar1,auStack_70);
-    uVar5 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    uVar5 = Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -4501,7 +4501,7 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
   pvStack_60 = (void *)0x0;
   auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00352e48 to 00352e53 has its CatchHandler @ 00352f1c */
-  uVar3 = Walaber::PropertyList::keyExists const(lVar1,auStack_70);
+  uVar3 = Walaber::PropertyList::keyExists(lVar1,auStack_70);
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -4511,8 +4511,8 @@ void Walaber::SoundManager::_oneShotCallbackDirectFile(void *p0)
     pvStack_60 = (void *)0x0;
     auStack_70[0] = 0x68637469700a;
                     /* try { // try from 00352e98 to 00352ea7 has its CatchHandler @ 00352f18 */
-    Walaber::PropertyList::operator[] const(lVar1,auStack_70);
-    fVar4 = (float)Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](lVar1,auStack_70);
+    fVar4 = (float)Walaber::Property::asFloat();
     if ((auStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -4883,8 +4883,8 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
   uStack_df = 0x765f7369;
   uStack_db = 0x6f;
                     /* try { // try from 00353578 to 00353583 has its CatchHandler @ 00353da4 */
-  Walaber::PropertyList::operator[] const(*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
-  iVar6 = Walaber::Property::asInt const();
+  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
+  iVar6 = Walaber::Property::asInt();
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -4898,8 +4898,8 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
   uStack_d8 = 0x65;
   uStack_d7 = 0;
                     /* try { // try from 003535cc to 003535db has its CatchHandler @ 00353da0 */
-  Walaber::PropertyList::operator[] const(*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
-  Walaber::Property::asString const(abStack_98);
+  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
+  Walaber::Property::asString(abStack_98);
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -4912,7 +4912,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
   uStack_d9 = 0x5f;
   uStack_d8 = 0x74;
                     /* try { // try from 00353620 to 00353627 has its CatchHandler @ 00353d90 */
-  lVar8 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
+  lVar8 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x18),&bStack_e0);
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -4921,7 +4921,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
   }
   else {
                     /* try { // try from 00353640 to 00353647 has its CatchHandler @ 00353d74 */
-    iVar7 = Walaber::Property::asInt const(lVar8);
+    iVar7 = Walaber::Property::asInt(lVar8);
     bVar5 = iVar7 == 1;
   }
   piVar1 = in_x1 + 2;
@@ -5529,7 +5529,7 @@ void Walaber::SoundManager::update(float p0)
         pvStack_70 = (void *)0x0;
         uVar4 = strlen(pbVar6);
         if (0xffffffffffffffef < uVar4) {
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
           return;
         }
         if (uVar4 < 0x17) {
@@ -5951,7 +5951,7 @@ ulong Walaber::SoundManager::playMusicFromGroup(int p0,bool p1)
       pvStack_60 = (void *)0x0;
       uVar6 = strlen(pbVar10);
       if (0xffffffffffffffef < uVar6) {
-        uVar7 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+        uVar7 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
         return uVar7;
       }
       if (uVar6 < 0x17) {
@@ -6170,7 +6170,7 @@ ulong Walaber::SoundManager::playHubMusicFromGroup(int p0,float p1)
       uVar6 = strlen(pbVar15);
       if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 00355014 to 0035501b has its CatchHandler @ 0035501c */
-        uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&ppppuStack_d0);
+        uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&ppppuStack_d0);
         return uVar6;
       }
       if (uVar6 < 0x17) {
@@ -6381,7 +6381,7 @@ ulong Walaber::SoundManager::playNextTrackInGroup(int p0)
           pvStack_60 = (void *)0x0;
           uVar4 = strlen(pbVar10);
           if (0xffffffffffffffef < uVar4) {
-            uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+            uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
             return uVar5;
           }
           if (uVar4 < 0x17) {
@@ -6475,7 +6475,7 @@ ulong Walaber::SoundManager::playCurrentTrackInGroup(int p0)
         pvStack_60 = (void *)0x0;
         uVar4 = strlen(pbVar8);
         if (0xffffffffffffffef < uVar4) {
-          uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+          uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
           return uVar5;
         }
         if (uVar4 < 0x17) {

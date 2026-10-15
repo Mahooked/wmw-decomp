@@ -132,7 +132,7 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
   param_1[2] = 0;
   uVar5 = strlen(pcVar7);
   if (0xffffffffffffffef < uVar5) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar5 < 0x17) {

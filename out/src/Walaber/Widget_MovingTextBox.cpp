@@ -383,7 +383,7 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   lVar6 = *(long *)(param_1 + 0x150);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0038102c to 00381043 has its CatchHandler @ 003810fc */
-  Walaber::BitmapFont::measureString const(&uStack_88,*(undefined4 *)(param_1 + 0x174),*(undefined8 *)(param_1 + 0xe8),
+  Walaber::BitmapFont::measureString(&uStack_88,*(undefined4 *)(param_1 + 0x174),*(undefined8 *)(param_1 + 0xe8),
                   param_2);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&lStack_68,abStack_80);
   uStack_50 = uStack_88;

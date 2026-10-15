@@ -70,7 +70,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
   puStack_48 = &DAT_007a5f08;
   uStack_50 = 2;
                     /* try { // try from 005f08c8 to 005f08d3 has its CatchHandler @ 005f0944 */
-  std::__ndk1::error_code::message const(auStack_68,&uStack_50);
+  std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f08d4 to 005f08df has its CatchHandler @ 005f092c */
   std::logic_error::logic_error(puVar3,auStack_68);
   if ((auStack_68[0] & 1) != 0) {
@@ -138,7 +138,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
   puStack_48 = &DAT_007a5f08;
   uStack_50 = 2;
                     /* try { // try from 005f0a7c to 005f0a87 has its CatchHandler @ 005f0af0 */
-  std::__ndk1::error_code::message const(auStack_68,&uStack_50);
+  std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f0a88 to 005f0a93 has its CatchHandler @ 005f0ad8 */
   std::logic_error::logic_error(puVar5,auStack_68);
   if ((auStack_68[0] & 1) != 0) {
@@ -202,7 +202,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
   puStack_58 = &DAT_007a5f08;
   uStack_60 = 2;
                     /* try { // try from 005f0c3c to 005f0c47 has its CatchHandler @ 005f0cb8 */
-  std::__ndk1::error_code::message const(auStack_78,&uStack_60);
+  std::__ndk1::error_code::message(auStack_78,&uStack_60);
                     /* try { // try from 005f0c48 to 005f0c53 has its CatchHandler @ 005f0ca0 */
   std::logic_error::logic_error(puVar3,auStack_78);
   if ((auStack_78[0] & 1) != 0) {
@@ -270,7 +270,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
   puStack_58 = &DAT_007a5f08;
   uStack_60 = 2;
                     /* try { // try from 005f0dfc to 005f0e07 has its CatchHandler @ 005f0e70 */
-  std::__ndk1::error_code::message const(auStack_78,&uStack_60);
+  std::__ndk1::error_code::message(auStack_78,&uStack_60);
                     /* try { // try from 005f0e08 to 005f0e13 has its CatchHandler @ 005f0e58 */
   std::logic_error::logic_error(puVar5,auStack_78);
   if ((auStack_78[0] & 1) != 0) {

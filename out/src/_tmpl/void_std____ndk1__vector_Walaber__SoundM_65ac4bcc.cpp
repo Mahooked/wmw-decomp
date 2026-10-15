@@ -37,7 +37,7 @@ void std::__ndk1::
   lVar5 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x71c71c71c71c71c7;
   uVar1 = lVar5 + 1;
   if (0x38e38e38e38e38e < uVar1) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
     return;
   }
   lVar9 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;

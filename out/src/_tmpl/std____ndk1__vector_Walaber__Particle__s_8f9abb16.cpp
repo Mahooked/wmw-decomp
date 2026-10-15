@@ -50,7 +50,7 @@ void std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Parti
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x74;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 
@@ -137,7 +137,7 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
       lVar7 = *param_1;
       uVar6 = param_3 + (lVar5 - lVar7 >> 2) * 0x34f72c234f72c235;
       if (0x234f72c234f72c2 < uVar6) {
-        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
         return puVar2;
       }
       lVar5 = param_1[2] - lVar7 >> 2;

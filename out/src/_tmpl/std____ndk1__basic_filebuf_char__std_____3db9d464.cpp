@@ -105,7 +105,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::imbue(std_
   std____ndk1__locale *psVar8;
   
   (**(code **)(p0->f_0x0 + 0x30))();
-  plVar6 = (long *)std::__ndk1::locale::use_facet const();
+  plVar6 = (long *)std::__ndk1::locale::use_facet();
   p0[0x10].f_0x0 = (ulong)plVar6;
   bVar2 = *(byte *)((long)&p0[0x14].f_0x0 + 2);
   bVar5 = (**(code **)(*plVar6 + 0x38))();
@@ -865,12 +865,12 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_file
   memset(param_1 + 0xc,0,0x43);
   std::__ndk1::locale::locale(auStack_50,plVar1);
                     /* try { // try from 003d5d00 to 003d5d0f has its CatchHandler @ 003d5dd0 */
-  uVar4 = std::__ndk1::locale::has_facet const(auStack_50,&codecvt<char,char,mbstate_t>::id);
+  uVar4 = std::__ndk1::locale::has_facet(auStack_50,&codecvt<char,char,mbstate_t>::id);
   std::__ndk1::locale::~locale(auStack_50);
   if ((uVar4 & 1) != 0) {
     std::__ndk1::locale::locale(auStack_50,plVar1);
                     /* try { // try from 003d5d2c to 003d5d3b has its CatchHandler @ 003d5da4 */
-    lVar5 = std::__ndk1::locale::use_facet const(auStack_50,&codecvt<char,char,mbstate_t>::id);
+    lVar5 = std::__ndk1::locale::use_facet(auStack_50,&codecvt<char,char,mbstate_t>::id);
     param_1[0x10] = lVar5;
     std::__ndk1::locale::~locale(auStack_50);
     bVar3 = (**(code **)(*(long *)param_1[0x10] + 0x38))();

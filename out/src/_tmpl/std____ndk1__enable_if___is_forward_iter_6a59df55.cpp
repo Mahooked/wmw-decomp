@@ -67,7 +67,7 @@ void std::__ndk1::
       *(undefined8 *)(p0 + 0x10) = 0;
     }
     if (0xaaaaaaaaaaaaaaa < uVar8) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     uVar2 = 0xaaaaaaaaaaaaaaa;

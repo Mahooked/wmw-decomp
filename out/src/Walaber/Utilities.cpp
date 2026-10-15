@@ -56,7 +56,7 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
   *param_1 = 0;
   uVar14 = strlen(auStack_80);
   if (0xffffffffffffffef < uVar14) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar14 < 0x17) {

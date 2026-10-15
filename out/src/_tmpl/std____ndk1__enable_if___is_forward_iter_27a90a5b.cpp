@@ -44,7 +44,7 @@ void std::__ndk1::
       param_1[2] = 0;
     }
     if (uVar8 >> 0x3d != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return;
     }
     if ((ulong)(lVar3 >> 3) < 0xfffffffffffffff) {

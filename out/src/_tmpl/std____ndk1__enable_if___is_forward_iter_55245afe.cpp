@@ -92,7 +92,7 @@ long std::__ndk1::
       lVar7 = *param_1;
       uVar4 = lVar8 + ((long)puVar1 - lVar7 >> 2) * -0x3333333333333333;
       if (0xccccccccccccccc < uVar4) {
-        lVar2 = std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+        lVar2 = std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
         return lVar2;
       }
       lVar8 = param_1[2] - lVar7 >> 2;

@@ -64,7 +64,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x20;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 

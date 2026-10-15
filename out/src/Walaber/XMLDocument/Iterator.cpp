@@ -49,7 +49,7 @@ void Walaber::XMLDocument::Iterator::getNodeName(ulong *param_1,long *param_2)
   param_1[2] = 0;
   uVar1 = strlen(uVar3);
   if (0xffffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar1 < 0x17) {
@@ -244,7 +244,7 @@ void Walaber::XMLDocument::Iterator::getAttribute(long *param_1,byte *param_2,un
   uStack_70 = 0;
   uVar5 = strlen();
   if (0xffffffffffffffef < uVar5) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return;
   }
   if (uVar5 < 0x17) {
@@ -314,7 +314,7 @@ void Walaber::XMLDocument::Iterator::getNodeValue(Walaber__Property *p0)
       pvStack_50 = (void *)0x0;
       uVar4 = strlen(uVar3);
       if (0xffffffffffffffef < uVar4) {
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
         return;
       }
       if (uVar4 < 0x17) {

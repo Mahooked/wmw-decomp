@@ -157,7 +157,7 @@ undefined1  [16] Walaber::HermiteCurve::_evaluateCurve(float p0,float p1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::Curve::findSegment const(in_x0,&iStack_3c,&iStack_40);
+  Walaber::Curve::findSegment(in_x0,&iStack_3c,&iStack_40);
   fVar2 = (float)Walaber::HermiteCurve::Hermite(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18,
                                  *(long *)(in_x0 + 0x18) + (long)iStack_40 * 0x18);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
@@ -282,7 +282,7 @@ LAB_003e5ba8:
       }
       if (uVar10 == 0xf) {
                     /* try { // try from 003e5bec to 003e5c07 has its CatchHandler @ 003e6158 */
-        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_80,0,0xffffffffffffffff,"Framework:Curve",0xf);
+        iVar6 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_80,0,0xffffffffffffffff,"Framework:Curve",0xf);
         bVar5 = iVar6 != 0;
       }
       else {
@@ -345,7 +345,7 @@ LAB_003e5d34:
       uVar10 = strlen();
       if (0xffffffffffffffef < uVar10) {
 LAB_003e6144:
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
         return;
       }
       if (uVar10 < 0x17) {

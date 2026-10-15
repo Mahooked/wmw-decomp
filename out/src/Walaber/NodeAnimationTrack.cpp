@@ -460,8 +460,8 @@ void Walaber::NodeAnimationTrack::apply
     uVar1 = *param_4;
     if ((uVar1 & 1) != 0) {
       plVar3 = *(long **)(param_4 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 2));
-      fStack_6c = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 6));
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 2));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 6));
       fStack_6c = param_2 * param_3 * fStack_6c;
       fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x28))(plVar3,&fStack_70);
@@ -469,15 +469,15 @@ void Walaber::NodeAnimationTrack::apply
     }
     if ((uVar1 >> 1 & 1) != 0) {
       plVar3 = *(long **)(param_4 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 10));
-      fStack_6c = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 0xe));
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 10));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0xe));
       fStack_6c = param_2 * param_3 * fStack_6c;
       fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x30))(plVar3,&fStack_70);
       uVar1 = *param_4;
     }
     if ((uVar1 >> 2 & 1) == 0) goto LAB_00339c00;
-    for (fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
+    for (fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
         fVar5 = fVar5 + -6.2831855) {
     }
     for (; fVar5 <= -3.1415927; fVar5 = fVar5 + 6.2831855) {
@@ -491,8 +491,8 @@ void Walaber::NodeAnimationTrack::apply
     uVar1 = *param_4;
     if ((uVar1 & 1) != 0) {
       plVar3 = *(long **)(param_4 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 2));
-      fStack_6c = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 6));
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 2));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 6));
       fStack_6c = param_2 * param_3 * fStack_6c;
       fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x10))(plVar3,&fStack_70);
@@ -500,15 +500,15 @@ void Walaber::NodeAnimationTrack::apply
     }
     if ((uVar1 >> 1 & 1) != 0) {
       plVar3 = *(long **)(param_4 + 0x18);
-      fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 10));
-      fStack_6c = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 0xe));
+      fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 10));
+      fStack_6c = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0xe));
       fStack_6c = param_2 * param_3 * fStack_6c;
       fStack_70 = param_2 * param_3 * fVar5;
       (**(code **)(*plVar3 + 0x18))(plVar3,&fStack_70);
       uVar1 = *param_4;
     }
     if ((uVar1 >> 2 & 1) == 0) goto LAB_00339c00;
-    for (fVar5 = (float)Walaber::Curve::evaluate const(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
+    for (fVar5 = (float)Walaber::Curve::evaluate(param_1,*(undefined8 *)(param_4 + 0x12)); 3.1415927 < fVar5;
         fVar5 = fVar5 + -6.2831855) {
     }
     for (; fVar5 <= -3.1415927; fVar5 = fVar5 + 6.2831855) {

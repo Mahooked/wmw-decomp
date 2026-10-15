@@ -699,7 +699,7 @@ long Walaber::Animation::createAnimationFromXmlNode(_xmlNode *p0,Walaber__SceneG
   uStack_80 = 0;
   uVar5 = strlen();
   if (0xffffffffffffffef < uVar5) {
-    lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+    lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
     return lVar10;
   }
   if (uVar5 < 0x17) {
@@ -775,7 +775,7 @@ LAB_00332814:
         uVar5 = strlen();
         if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e68 to 00332e6f has its CatchHandler @ 00332eb8 */
-          lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+          lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
           return lVar10;
         }
         if (uVar5 < 0x17) {
@@ -818,7 +818,7 @@ LAB_00332a24:
             uVar5 = strlen();
             if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e70 to 00332e77 has its CatchHandler @ 00332eb4 */
-              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
               return lVar10;
             }
             if (uVar5 < 0x17) {
@@ -857,7 +857,7 @@ LAB_00332b04:
             uVar5 = strlen();
             if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e78 to 00332e7f has its CatchHandler @ 00332eb0 */
-              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
               return lVar10;
             }
             if (uVar5 < 0x17) {
@@ -886,7 +886,7 @@ LAB_00332bcc:
             uVar5 = strlen();
             if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e80 to 00332e87 has its CatchHandler @ 00332eac */
-              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
               return lVar10;
             }
             if (uVar5 < 0x17) {
@@ -928,7 +928,7 @@ LAB_00332c54:
             uVar5 = strlen();
             if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e88 to 00332e8f has its CatchHandler @ 00332ea8 */
-              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
               return lVar10;
             }
             if (uVar5 < 0x17) {
@@ -957,7 +957,7 @@ LAB_00332d30:
             uVar5 = strlen();
             if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 00332e90 to 00332e97 has its CatchHandler @ 00332ea4 */
-              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+              lVar10 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
               return lVar10;
             }
             if (uVar5 < 0x17) {
@@ -1095,7 +1095,7 @@ void Walaber::Animation::createAnimationFromXmlNode(_xmlNode *p0,Walaber__Skelet
   uStack_98 = 0;
   uVar7 = strlen();
   if (0xffffffffffffffef < uVar7) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_98);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_98);
     return;
   }
   if (uVar7 < 0x17) {
@@ -1172,7 +1172,7 @@ LAB_003330ec:
         uVar7 = strlen();
         if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333afc to 00333b03 has its CatchHandler @ 00333b58 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
           return;
         }
         if (uVar7 < 0x17) {
@@ -1216,7 +1216,7 @@ LAB_00333374:
             uVar7 = strlen();
             if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b0c to 00333b13 has its CatchHandler @ 00333b50 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
               return;
             }
             if (uVar7 < 0x17) {
@@ -1256,7 +1256,7 @@ LAB_0033377c:
             uVar7 = strlen();
             if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b14 to 00333b1b has its CatchHandler @ 00333b4c */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
               return;
             }
             if (uVar7 < 0x17) {
@@ -1285,7 +1285,7 @@ LAB_00333844:
             uVar7 = strlen();
             if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b1c to 00333b23 has its CatchHandler @ 00333b48 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_f8);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_f8);
               return;
             }
             if (uVar7 < 0x17) {
@@ -1327,7 +1327,7 @@ LAB_003338cc:
             uVar7 = strlen();
             if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b24 to 00333b2b has its CatchHandler @ 00333b44 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
               return;
             }
             if (uVar7 < 0x17) {
@@ -1356,7 +1356,7 @@ LAB_003339a8:
             uVar7 = strlen();
             if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b2c to 00333b33 has its CatchHandler @ 00333b40 */
-              std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_f8);
+              std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_f8);
               return;
             }
             if (uVar7 < 0x17) {
@@ -1404,7 +1404,7 @@ LAB_00333a30:
           uVar7 = strlen();
           if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333b04 to 00333b0b has its CatchHandler @ 00333b54 */
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
             return;
           }
           if (uVar7 < 0x17) {
@@ -1466,7 +1466,7 @@ LAB_00333450:
                 uVar7 = strlen();
                 if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 00333af4 to 00333afb has its CatchHandler @ 00333b5c */
-                  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+                  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
                   return;
                 }
                 if (uVar7 < 0x17) {

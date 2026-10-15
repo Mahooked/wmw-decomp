@@ -48,7 +48,7 @@ void Walaber::StringHelper::intToStr(int p0)
   *in_x8 = 0;
   uVar3 = strlen(puVar6);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar3 < 0x17) {
@@ -120,7 +120,7 @@ void Walaber::StringHelper::longToStr(long p0)
   *in_x8 = 0;
   uVar3 = strlen(puVar6);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar3 < 0x17) {
@@ -196,7 +196,7 @@ void Walaber::StringHelper::floatToStr(float p0,int p1)
   *in_x8 = 0;
   uVar3 = strlen(puVar7);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar3 < 0x17) {
@@ -805,7 +805,7 @@ LAB_003f8af4:
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_2,0,uVar9,param_2);
                     /* try { // try from 003f8b1c to 003f8b27 has its CatchHandler @ 003f8c74 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_70,param_3);
-  lVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find const(&uStack_70,0x2f,0);
+  lVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find(&uStack_70,0x2f,0);
   if (lVar7 == 0) {
                     /* try { // try from 003f8b3c to 003f8b53 has its CatchHandler @ 003f8c40 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,&uStack_70,1,0xffffffffffffffff,&uStack_70);
@@ -908,7 +908,7 @@ void Walaber::StringHelper::toLower(ulong *param_1,byte *param_2)
   uVar4 = auVar7._8_8_;
   uVar5 = auVar7._0_8_;
   if (0xffffffffffffffef < uVar5) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar5 < 0x17) {
@@ -1034,7 +1034,7 @@ LAB_003f8fcc:
                 uStack_98 = uStack_b0;
                 uStack_a0 = uStack_b8;
                     /* try { // try from 003f8fa4 to 003f8fab has its CatchHandler @ 003f9078 */
-                Walaber::Property::asString const(&uStack_b8,plVar9 + 7);
+                Walaber::Property::asString(&uStack_b8,plVar9 + 7);
                 uVar6 = uStack_b8 >> 1 & 0x7f;
                 pcVar1 = (char *)((ulong)&uStack_b8 | 1);
                 if ((uStack_b8 & 1) != 0) {
@@ -1132,7 +1132,7 @@ void Walaber::StringHelper::uIntToStr(uint p0)
   *in_x8 = 0;
   uVar2 = strlen(puVar6);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar2 < 0x17) {

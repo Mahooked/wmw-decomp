@@ -82,7 +82,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   }
   uVar2 = param_2[1];
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   uVar3 = param_2[2];
@@ -216,7 +216,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     (p6 + (p3 - p5))[lVar2] = '\0';
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
   return;
 }
 
@@ -328,7 +328,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return uVar6;
   }
-  uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return uVar6;
 }
 
@@ -397,7 +397,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return p0;
   }
-  uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar3;
 }
 
@@ -431,7 +431,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar4 = *(ulong *)(param_2 + 8);
   }
   if (uVar4 < param_3) {
-    std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_out_of_range(param_1);
     return;
   }
   pbVar3 = *(byte **)(param_2 + 0x10);
@@ -443,7 +443,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar1 = param_4;
   }
   if (0xffffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar1 < 0x17) {
@@ -615,7 +615,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     *(ulong *)p0 = uVar3 | 1;
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
   return;
 }
 
@@ -771,7 +771,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return p0;
   }
-  uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar5;
 }
 
@@ -807,7 +807,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   }
   uVar2 = param_2[1];
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   uVar3 = param_2[2];
@@ -847,7 +847,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   ulong p0_00;
   
   if (0xffffffffffffffef < in_x2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (in_x2 < 0x17) {
@@ -900,7 +900,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   }
   uVar2 = param_2[1];
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   uVar3 = param_2[2];
@@ -942,7 +942,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   
   uVar1 = (ulong)(byte)p1;
   if (0xffffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (uVar1 < 0x17) {
@@ -993,7 +993,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar4 = *(ulong *)(param_2 + 8);
   }
   if (uVar4 < param_3) {
-    std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_out_of_range(param_1);
     return;
   }
   pbVar3 = *(byte **)(param_2 + 0x10);
@@ -1005,7 +1005,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar1 = param_4;
   }
   if (0xffffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
     return;
   }
   if (uVar1 < 0x17) {
@@ -1126,7 +1126,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   ulong uVar7;
   
   if (0xffffffffffffffef < in_x1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   bVar1 = *(byte *)p0;
@@ -1228,7 +1228,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar3 = *(ulong *)(p0 + 8);
   }
   if (uVar3 <= in_x1) {
-    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
     return lVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -1263,7 +1263,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     uVar3 = *(ulong *)(p0 + 8);
   }
   if (uVar3 <= in_x1) {
-    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
     return lVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -1326,7 +1326,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,pbVar4 + param_3,uVar2);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1366,7 +1366,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1,pbVar4 + param_3,uVar2);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1411,7 +1411,7 @@ LAB_005e4938:
     if (uVar3 <= uVar7) goto LAB_005e4938;
 LAB_005e495c:
     if (-uVar7 - 0x11 < uVar3 - uVar7) {
-      uVar3 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+      uVar3 = std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
       return uVar3;
     }
     if ((bVar1 & 1) == 0) {
@@ -1492,7 +1492,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::insert(param_1,param_2,pbVar4 + param_4,uVar2);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1557,7 +1557,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
       if (uVar8 - uVar7 < uVar5) {
         uVar6 = uVar7 + uVar5;
         if (-uVar8 - 0x11 < uVar6 - uVar8) {
-          uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+          uVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
           return uVar5;
         }
         if ((bVar3 & 1) == 0) {
@@ -1617,7 +1617,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return p0;
   }
-  uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar5;
 }
 
@@ -1655,7 +1655,7 @@ long std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
   param_2 = param_2 - uVar3;
   if (uVar4 == uVar5) {
     if (uVar5 == 0xffffffffffffffef) {
-      lVar2 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+      lVar2 = std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
       return lVar2;
     }
     if ((bVar1 & 1) == 0) {
@@ -1757,7 +1757,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     pcVar5 = (char *)(uVar8 - p1);
   }
   if (uVar8 < p1) {
-    uVar8 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar8 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar8;
   }
   pcVar6 = pcVar5;
@@ -1773,7 +1773,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
   if (pcVar6 + (uVar9 - uVar8) < in_x4) {
     pcVar7 = in_x4 + (uVar8 - (long)pcVar6);
     if (-uVar9 - 0x12 < (long)pcVar7 - uVar9) {
-      uVar8 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+      uVar8 = std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
       return uVar8;
     }
     if ((bVar1 & 1) == 0) {
@@ -1906,7 +1906,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::replace();
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1964,7 +1964,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     uVar7 = uVar8 - p1;
   }
   if (uVar8 < p1) {
-    uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar6;
   }
   uVar1 = uVar7;
@@ -1980,7 +1980,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
   if ((uVar1 - uVar8) + uVar9 < uVar6) {
     uVar7 = (uVar8 - uVar1) + uVar6;
     if (-uVar9 - 0x11 < uVar7 - uVar9) {
-      uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+      uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
       return uVar6;
     }
     if ((bVar3 & 1) == 0) {
@@ -2086,7 +2086,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return uVar2;
   }
-  uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return uVar2;
 }
 
@@ -2570,7 +2570,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
   }
   if (uVar2 == 0xffffffffffffffff) {
                     /* try { // try from 005e6df8 to 005e6dff has its CatchHandler @ 005e6e00 */
-    uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -2646,7 +2646,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     return uVar7;
   }
-  uVar7 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar7 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar7;
 }
 
@@ -2685,7 +2685,7 @@ void std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1::
     pcVar1[p2] = '\0';
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
   return;
 }
 

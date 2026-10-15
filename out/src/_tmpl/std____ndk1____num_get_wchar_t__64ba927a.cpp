@@ -218,12 +218,12 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_50);
+  std::__ndk1::ios_base::getloc(&uStack_50);
                     /* try { // try from 005b9d0c to 005b9d37 has its CatchHandler @ 005b9db8 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_50,&ctype<wchar_t>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&ctype<wchar_t>::id);
   (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","",p1);
                     /* try { // try from 005b9d38 to 005b9d83 has its CatchHandler @ 005b9dbc */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_50,&numpunct<wchar_t>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&numpunct<wchar_t>::id);
   wVar2 = (**(code **)(*plVar3 + 0x18))();
   *p2 = wVar2;
   wVar2 = (**(code **)(*plVar3 + 0x20))(plVar3);
@@ -466,12 +466,12 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_40);
+  std::__ndk1::ios_base::getloc(&uStack_40);
                     /* try { // try from 005ba290 to 005ba2bb has its CatchHandler @ 005ba324 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_40,&ctype<wchar_t>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&ctype<wchar_t>::id);
   (**(code **)(*plVar3 + 0x60))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",p1);
                     /* try { // try from 005ba2bc to 005ba2f3 has its CatchHandler @ 005ba328 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_40,&numpunct<wchar_t>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&numpunct<wchar_t>::id);
   wVar2 = (**(code **)(*plVar3 + 0x20))();
   *p2 = wVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);

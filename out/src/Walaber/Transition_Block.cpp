@@ -115,13 +115,13 @@ void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
   lStack_48 = *(long *)(lVar2 + 0x28);
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
-  uVar5 = Walaber::PropertyList::keyExists const();
+  uVar5 = Walaber::PropertyList::keyExists();
   if ((uVar5 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&fStack_50);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&fStack_50);
     *(int *)&p1[10].f_0x10 = (int)fStack_50;
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&fStack_50);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&fStack_50);
     iVar4 = (int)p1[10].f_0x10;
     iVar6 = (int)fStack_4c;
     iVar1 = iVar4 * iVar6;
@@ -143,16 +143,16 @@ void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
       } while (iVar4 < (int)p1[10].f_0x8);
     }
   }
-  uVar5 = Walaber::PropertyList::keyExists const();
+  uVar5 = Walaber::PropertyList::keyExists();
   if ((uVar5 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar4 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar4 == 1;
   }
-  uVar5 = Walaber::PropertyList::keyExists const();
+  uVar5 = Walaber::PropertyList::keyExists();
   if ((uVar5 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar4 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar4 == 1;
   }
   if (*(long *)(lVar2 + 0x28) == lStack_48) {

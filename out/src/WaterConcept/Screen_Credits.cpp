@@ -826,7 +826,7 @@ void WaterConcept::Screen_Credits::update(float p0,bool p1)
   fStack_48 = Walaber::ScreenCoord::sScreenSize * 1.35 + 0.0;
   fStack_48 = fStack_48 +
               (fVar6 / 7.5) * ((Walaber::ScreenCoord::sScreenSize * -0.65 + 0.0) - fStack_48);
-  fVar6 = (float)Walaber::Curve::evaluate const(1.0 - (*(float *)(uVar4 + 0xe4) + *(float *)(uVar4 + 0xe4)),
+  fVar6 = (float)Walaber::Curve::evaluate(1.0 - (*(float *)(uVar4 + 0xe4) + *(float *)(uVar4 + 0xe4)),
                                  *(undefined8 *)(uVar4 + 0x108));
   if (*(char *)(uVar4 + 0xe1) == '\0') {
     if (*(char *)(uVar4 + 0xe0) != '\0') {
@@ -1335,8 +1335,8 @@ undefined8 WaterConcept::Screen_Credits::messageRx(Walaber__Message *p0)
     abStack_c8[2] = 0x44;
     abStack_c8[3] = 0;
                     /* try { // try from 004b7fbc to 004b7fc7 has its CatchHandler @ 004b80c4 */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_c8);
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_c8);
+    iVar3 = Walaber::Property::asInt();
     if ((abStack_c8[0] & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1366,8 +1366,8 @@ LAB_004b7fec:
     abStack_c8[7] = 0x6e;
     abStack_c8[8] = 0;
                     /* try { // try from 004b7ed4 to 004b7ee3 has its CatchHandler @ 004b80c8 */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_c8);
-    Walaber::Property::asString const(abStack_e0);
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_c8);
+    Walaber::Property::asString(abStack_e0);
     if ((abStack_c8[0] & 1) != 0) {
       operator delete(pvStack_b8);
     }
@@ -1394,7 +1394,7 @@ LAB_004b7fec:
       uVar5 = strlen(abStack_c8);
       if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 004b8088 to 004b808f has its CatchHandler @ 004b8090 */
-        uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_f8);
+        uVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_f8);
         return uVar6;
       }
       if (uVar5 < 0x17) {
@@ -1442,8 +1442,8 @@ LAB_004b8014:
     abStack_c8[7] = 0x6c;
     abStack_c8[8] = 0x65;
                     /* try { // try from 004b7e80 to 004b7e8b has its CatchHandler @ 004b80cc */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_c8);
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_c8);
+    iVar3 = Walaber::Property::asInt();
     *(bool *)(p0 + 0xc) = iVar3 == 1;
     if ((abStack_c8[0] & 1) != 0) {
       operator delete(pvStack_b8);

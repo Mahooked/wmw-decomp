@@ -112,7 +112,7 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
   lVar3 = tpidr_el0;
   lStack_48 = *(long *)(lVar3 + 0x28);
   if (*(long *)(in_x1 + 0x20) != 0) {
-    uVar4 = Walaber::PropertyList::keyExists const(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
+    uVar4 = Walaber::PropertyList::keyExists(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
     uVar1 = *(undefined8 *)(in_x1 + 0x20);
     uVar2 = *(undefined8 *)(in_x1 + 0x28);
     if ((uVar4 & 1) == 0) {
@@ -120,8 +120,8 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
       uVar4 = extraout_x1_01;
     }
     else {
-      Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
-      Walaber::Property::asString const(abStack_60);
+      Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
+      Walaber::Property::asString(abStack_60);
                     /* try { // try from 003d6d38 to 003d6d4b has its CatchHandler @ 003d6dd0 */
       Walaber::XMLDocument::_buildXMLObject(p0,uVar1,uVar2,abStack_60);
       uVar4 = extraout_x1;

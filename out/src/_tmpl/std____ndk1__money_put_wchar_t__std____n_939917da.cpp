@@ -119,9 +119,9 @@ LAB_005cc728:
   puVar11 = auStack_264;
 LAB_005cc480:
                     /* try { // try from 005cc480 to 005cc48f has its CatchHandler @ 005cc790 */
-  std::__ndk1::ios_base::getloc const(&uStack_408,param_5);
+  std::__ndk1::ios_base::getloc(&uStack_408,param_5);
                     /* try { // try from 005cc490 to 005cc4bb has its CatchHandler @ 005cc7d4 */
-  plVar5 = (long *)std::__ndk1::locale::use_facet const(&uStack_408,&ctype<wchar_t>::id);
+  plVar5 = (long *)std::__ndk1::locale::use_facet(&uStack_408,&ctype<wchar_t>::id);
   (**(code **)(*plVar5 + 0x60))(plVar5,pcStack_400,pcStack_400 + lVar10,puVar11);
   if (lVar10 == 0) {
     bVar2 = false;
@@ -265,9 +265,9 @@ do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined
   
   lVar5 = tpidr_el0;
   lStack_70 = *(long *)(lVar5 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_210,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_210,param_4);
                     /* try { // try from 005cd09c to 005cd0ab has its CatchHandler @ 005cd33c */
-  plVar8 = (long *)std::__ndk1::locale::use_facet const(&uStack_210,&ctype<wchar_t>::id);
+  plVar8 = (long *)std::__ndk1::locale::use_facet(&uStack_210,&ctype<wchar_t>::id);
   bVar4 = *param_6;
   uVar1 = (ulong)(bVar4 >> 1);
   if ((bVar4 & 1) != 0) {

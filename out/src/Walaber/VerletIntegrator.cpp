@@ -106,7 +106,7 @@ void Walaber::VerletIntegrator::integrateParticles
       p1 = p1 + 1;
     } while (uVar2 != 0);
   }
-  Walaber::VerletIntegrator::integrateVelocities const();
+  Walaber::VerletIntegrator::integrateVelocities();
   return;
 }
 

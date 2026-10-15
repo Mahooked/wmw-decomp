@@ -55,7 +55,7 @@ void Walaber::GraphicsGL::Extensions::Extensions(undefined2 *param_1)
   uVar5 = strlen();
   if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 0040a890 to 0040a897 has its CatchHandler @ 0040a89c */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_98);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_98);
     return;
   }
   if (uVar5 < 0x17) {

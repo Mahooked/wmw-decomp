@@ -422,7 +422,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
     uVar7 = (long)puVar6 - (long)puVar4;
     if (0xffffffffffffffef < uVar7) {
 LAB_003ff924:
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
       return;
     }
     if (uVar7 < 0x17) {

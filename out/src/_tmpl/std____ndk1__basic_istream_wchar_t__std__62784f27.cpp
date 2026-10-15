@@ -41,7 +41,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
      ((*(byte *)((long)param_2 + *(long *)(*param_2 + -0x18) + 9) >> 4 & 1) != 0)) {
     std::__ndk1::locale::locale(auStack_50,(long)param_2 + *(long *)(*param_2 + -0x18) + 0x30);
                     /* try { // try from 005a8f64 to 005a8f73 has its CatchHandler @ 005a90d8 */
-    plVar5 = (long *)std::__ndk1::locale::use_facet const(auStack_50,&ctype<wchar_t>::id);
+    plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_50,&ctype<wchar_t>::id);
     std::__ndk1::locale::~locale(auStack_50);
     plVar7 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
     while (plVar7 != (long *)0x0) {

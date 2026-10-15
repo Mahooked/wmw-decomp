@@ -407,15 +407,15 @@ void WaterConcept::Screen_MainMenu_v2::loadPropertyList(Walaber__PropertyList *p
   lVar1 = tpidr_el0;
   lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 0051777c to 00517787 has its CatchHandler @ 00517888 */
-  bVar2 = Walaber::PropertyList::keyExists const();
+  bVar2 = Walaber::PropertyList::keyExists();
   *(byte *)&p0[0x16].f_0x10 = bVar2 & 1;
                     /* try { // try from 005177cc to 005177d7 has its CatchHandler @ 00517884 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
     *(undefined1 *)((long)&p0[0x2a].f_0x0 + 4) = 1;
   }
                     /* try { // try from 00517824 to 0051782f has its CatchHandler @ 00517880 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
     *(undefined1 *)((long)&p0[0x2b].f_0x0 + 4) = 1;
     *(undefined4 *)&p0[0x1c].f_0x8 = 5;
@@ -1850,7 +1850,7 @@ void WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void *p0)
     uVar1 = *(ulong *)(in_x1 + 8);
   }
                     /* try { // try from 00519264 to 0051927f has its CatchHandler @ 00519324 */
-  if ((uVar1 == 0x22) && (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar3 == 0)) {
+  if ((uVar1 == 0x22) && (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar3 == 0)) {
     *(undefined1 *)((long)p0 + 0x324) = 1;
   }
   uVar1 = (ulong)(*in_x1 >> 1);
@@ -1858,7 +1858,7 @@ void WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void *p0)
     uVar1 = *(ulong *)(in_x1 + 8);
   }
                     /* try { // try from 005192a8 to 005192c3 has its CatchHandler @ 00519320 */
-  if ((uVar1 == 0x27) && (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar3 == 0)) {
+  if ((uVar1 == 0x27) && (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar3 == 0)) {
     lStack_48 = *(long *)(in_x1 + 0x18);
     piStack_40 = *(int **)(in_x1 + 0x20);
     lVar4 = *(long *)((long)p0 + 0xa0);
@@ -2030,7 +2030,7 @@ void WaterConcept::Screen_MainMenu_v2::update(float p0,bool p1)
     iVar2 = Walaber::Widget_ScrollableCamera::getCurrentIndex(*(undefined8 *)(uVar5 + 0xa0));
     if ((iVar2 != *(int *)(uVar5 + 0x1d0)) && (*(char *)(uVar5 + 0xe0) == '\0')) {
       *(int *)(uVar5 + 0x1d0) = iVar2;
-      uVar4 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex const(uVar5);
+      uVar4 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(uVar5);
       *(undefined4 *)(uVar5 + 0x1d4) = uVar4;
     }
     WaterConcept::Screen_MainMenu_v2::_updateSprites(uVar11,uVar5);
@@ -3310,11 +3310,11 @@ LAB_0051b57c:
           uVar15 = *(undefined8 *)(in_x0 + 0x328);
           uStack_b8 = &uStack_d8;
           lVar7 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, float>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, float>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, float>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, float>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, float>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(lVar10,&uStack_d8,&DAT_0063d4b5,&uStack_b8,&fStack_e0);
-          fVar16 = (float)Walaber::Curve::evaluate const(1.0 - *(float *)(lVar7 + 0x20),uVar15);
+          fVar16 = (float)Walaber::Curve::evaluate(1.0 - *(float *)(lVar7 + 0x20),uVar15);
           uVar15 = *(undefined8 *)(in_x0 + 0x328);
           uStack_b8 = &uStack_d8;
           lVar7 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, float>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, float>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, float>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, float>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, float>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(lVar10,&uStack_d8,&DAT_0063d4b5,&uStack_b8,&fStack_e0);
-          fVar17 = (float)Walaber::Curve::evaluate const(1.0 - *(float *)(lVar7 + 0x20),uVar15);
+          fVar17 = (float)Walaber::Curve::evaluate(1.0 - *(float *)(lVar7 + 0x20),uVar15);
           fVar22 = (float)*(undefined8 *)(in_x0 + 0x2b8);
           fVar18 = (float)((ulong)*(undefined8 *)(in_x0 + 0x2b8) >> 0x20);
           fVar16 = (fVar16 + (float)uVar6) * fVar22 * 0.55;
@@ -3394,8 +3394,8 @@ LAB_0051b57c:
       fVar16 = 0.0;
     }
     *(float *)(in_x0 + 0x3f0) = fVar16;
-    fVar16 = (float)Walaber::Curve::evaluate const(1.0 - fVar16,*(undefined8 *)(in_x0 + 0x328));
-    fVar17 = (float)Walaber::Curve::evaluate const(1.0 - *(float *)(in_x0 + 0x3f0),*(undefined8 *)(in_x0 + 0x328));
+    fVar16 = (float)Walaber::Curve::evaluate(1.0 - fVar16,*(undefined8 *)(in_x0 + 0x328));
+    fVar17 = (float)Walaber::Curve::evaluate(1.0 - *(float *)(in_x0 + 0x3f0),*(undefined8 *)(in_x0 + 0x328));
     uVar6 = NEON_fmov(0xbf800000,4);
     lVar10 = Walaber::WidgetManager::getWidget(*(undefined8 *)(in_x0 + 0x10),0x385);
     Walaber::Node::getWorldScale(&uStack_b8);
@@ -6791,7 +6791,7 @@ LAB_0051dacc:
     uVar16 = strlen(&fStack_1e0);
     if (0xffffffffffffffef < uVar16) {
                     /* try { // try from 00520a80 to 00520a87 has its CatchHandler @ 00520c9c */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_220);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_220);
       return;
     }
     if (uVar16 < 0x17) {
@@ -6953,7 +6953,7 @@ LAB_0051f104:
     goto switchD_0052014c_caseD_2;
   }
   if (uVar12 == 0xc) {
-    uVar12 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex const(plVar15);
+    uVar12 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(plVar15);
     if (uVar12 < 8) {
       pcVar20 = (char *)&fStack_1e0;
       sprintf(&fStack_1e0,"main_menu_%s",
@@ -7049,7 +7049,7 @@ LAB_0051f104:
     uVar16 = strlen(pcVar20);
     if (0xffffffffffffffef < uVar16) {
                     /* try { // try from 00520a88 to 00520a8f has its CatchHandler @ 00520bd4 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_220);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_220);
       return;
     }
     if (uVar16 < 0x17) {
@@ -7404,7 +7404,7 @@ LAB_0051f794:
       }
       if (uVar28 == 0xd) {
                     /* try { // try from 0051fdd0 to 0051fdeb has its CatchHandler @ 00520b94 */
-        iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_1e0,0,0xffffffffffffffff,"HubTapCurtain",0xd);
+        iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_1e0,0,0xffffffffffffffff,"HubTapCurtain",0xd);
         bVar10 = iVar11 != 0;
       }
       else {
@@ -7507,7 +7507,7 @@ LAB_0051f794:
       }
       if (uVar28 == 0xd) {
                     /* try { // try from 00520084 to 0052009f has its CatchHandler @ 00520b90 */
-        iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&fStack_1e0,0,0xffffffffffffffff,"HubTapCurtain",0xd);
+        iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&fStack_1e0,0,0xffffffffffffffff,"HubTapCurtain",0xd);
         bVar10 = iVar11 != 0;
       }
       else {
@@ -8780,7 +8780,7 @@ void WaterConcept::Screen_MainMenu_v2::handleFocus(long param_1,long param_2,int
       }
       if (uVar1 == 0xd) {
                     /* try { // try from 00522228 to 00522243 has its CatchHandler @ 005222f4 */
-        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"HubTapCurtain",0xd);
+        iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"HubTapCurtain",0xd);
         bVar3 = iVar4 == 0;
       }
       else {
@@ -8893,7 +8893,7 @@ void WaterConcept::Screen_MainMenu_v2::messageRx(Walaber__Message *p0)
   uStack_9f = 0x4449;
   uStack_9d = 0;
                     /* try { // try from 00522354 to 0052235f has its CatchHandler @ 00524998 */
-  uVar14 = Walaber::PropertyList::keyExists const(lVar1,&bStack_a0);
+  uVar14 = Walaber::PropertyList::keyExists(lVar1,&bStack_a0);
   if ((bStack_a0 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
   }
@@ -8916,8 +8916,8 @@ void WaterConcept::Screen_MainMenu_v2::messageRx(Walaber__Message *p0)
     uStack_9f = 0x4449;
     uStack_9d = 0;
                     /* try { // try from 00522394 to 005223a3 has its CatchHandler @ 00524994 */
-    Walaber::PropertyList::operator[] const(lVar1,&bStack_a0);
-    iVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](lVar1,&bStack_a0);
+    iVar11 = Walaber::Property::asInt();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
     }
@@ -10946,7 +10946,7 @@ LAB_00524118:
       uStack_98 = 0x65;
       uStack_97 = 0;
                     /* try { // try from 00522a90 to 00522a9b has its CatchHandler @ 00524960 */
-      uVar14 = Walaber::PropertyList::keyExists const(lVar1,&bStack_a0);
+      uVar14 = Walaber::PropertyList::keyExists(lVar1,&bStack_a0);
       if ((bStack_a0 & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
       }
@@ -11052,8 +11052,8 @@ LAB_00523ed0:
         fStack_9c = 7.0372523e+22;
         uStack_98 = 99;
                     /* try { // try from 005226a8 to 005226b7 has its CatchHandler @ 00524934 */
-        Walaber::PropertyList::operator[] const(lVar1,&bStack_a0);
-        iVar11 = Walaber::Property::asInt const();
+        Walaber::PropertyList::operator[](lVar1,&bStack_a0);
+        iVar11 = Walaber::Property::asInt();
         if ((bStack_a0 & 1) != 0) {
           operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
         }
@@ -11078,7 +11078,7 @@ LAB_00523ed0:
     fStack_9c = 7.155429e+22;
     uStack_98 = 0;
                     /* try { // try from 00522714 to 0052271f has its CatchHandler @ 00524984 */
-    uVar14 = Walaber::PropertyList::keyExists const(lVar1,&bStack_a0);
+    uVar14 = Walaber::PropertyList::keyExists(lVar1,&bStack_a0);
     if ((uVar14 & 1) == 0) {
       bVar10 = false;
     }
@@ -11101,8 +11101,8 @@ LAB_00523ed0:
       abStack_e0[7] = 0x65;
       abStack_e0[8] = 0;
                     /* try { // try from 00522748 to 00522757 has its CatchHandler @ 00524964 */
-      Walaber::PropertyList::operator[] const(lVar1,abStack_e0);
-      iVar11 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](lVar1,abStack_e0);
+      iVar11 = Walaber::Property::asInt();
       bVar10 = iVar11 == 1;
       if ((abStack_e0[0] & 1) != 0) {
         operator delete(pvStack_d0);
@@ -11150,8 +11150,8 @@ LAB_005232dc:
     uStack_98 = 0x65;
     uStack_89 = 0;
                     /* try { // try from 00522be0 to 00522bef has its CatchHandler @ 00524980 */
-    Walaber::PropertyList::getValueForKey const(lVar1,&bStack_a0);
-    iVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(lVar1,&bStack_a0);
+    iVar11 = Walaber::Property::asInt();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
     }
@@ -11184,8 +11184,8 @@ LAB_005232dc:
     fStack_9c = 1.0395823e+21;
     uStack_98 = 0x6c;
                     /* try { // try from 00522c50 to 00522c5f has its CatchHandler @ 0052497c */
-    Walaber::PropertyList::getValueForKey const(lVar1,&bStack_a0);
-    iVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(lVar1,&bStack_a0);
+    iVar11 = Walaber::Property::asInt();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
     }
@@ -11195,7 +11195,7 @@ LAB_005232dc:
       goto switchD_0052279c_caseD_17;
     }
     if (p0[0x22].field_0x2 != '\0') {
-      uVar12 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex const(p0);
+      uVar12 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(p0);
       *(undefined4 *)&p0[0x1d].field_0x4 = uVar12;
       *(undefined4 *)(p0 + 0x29) = 0;
       *(undefined4 *)&p0[0x22].field_0x8 = 2;
@@ -11217,8 +11217,8 @@ LAB_005232dc:
       abStack_e0[7] = 0x44;
       abStack_e0[8] = 0;
                     /* try { // try from 00522cbc to 00522ccf has its CatchHandler @ 00524940 */
-      Walaber::PropertyList::getValueForKey const(lVar1,abStack_e0);
-      Walaber::Property::asString const(&bStack_a0);
+      Walaber::PropertyList::getValueForKey(lVar1,abStack_e0);
+      Walaber::Property::asString(&bStack_a0);
       if ((*(byte *)(p0 + 0x23) & 1) == 0) {
         *(undefined2 *)(p0 + 0x23) = 0;
       }
@@ -11338,8 +11338,8 @@ LAB_0052414c:
       uStack_98 = 0x74;
       uStack_97 = 0;
                     /* try { // try from 0052420c to 0052421b has its CatchHandler @ 0052493c */
-      Walaber::PropertyList::getValueForKey const(lVar1,&bStack_a0);
-      uVar12 = Walaber::Property::asInt const();
+      Walaber::PropertyList::getValueForKey(lVar1,&bStack_a0);
+      uVar12 = Walaber::Property::asInt();
       if ((bStack_a0 & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
       }
@@ -11358,8 +11358,8 @@ LAB_0052414c:
       fStack_9c = 6.034327e+22;
       uStack_98 = 0x66;
                     /* try { // try from 00524258 to 00524267 has its CatchHandler @ 00524938 */
-      Walaber::PropertyList::getValueForKey const(lVar1,&bStack_a0);
-      uVar13 = Walaber::Property::asInt const();
+      Walaber::PropertyList::getValueForKey(lVar1,&bStack_a0);
+      uVar13 = Walaber::Property::asInt();
       if ((bStack_a0 & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_89,CONCAT61(uStack_8f,bStack_90)));
       }
@@ -12012,7 +12012,7 @@ void WaterConcept::Screen_MainMenu_v2::_notifyNetworkConnectionTest(bool p0)
           abStack_d8[7] = 0x61;
           abStack_d8[8] = 0x6c;
                     /* try { // try from 00524dcc to 00524ddb has its CatchHandler @ 00524f5c */
-          Walaber::Property::asString const(abStack_f0,abStack_c0);
+          Walaber::Property::asString(abStack_f0,abStack_c0);
           uVar5 = (ulong)(abStack_f0[0] >> 1);
           pvVar2 = (void *)((ulong)abStack_f0 | 1);
           if ((abStack_f0[0] & 1) != 0) {
@@ -14353,7 +14353,7 @@ LAB_00527440:
   }
   if (*(char *)((long)p0 + 0x3f4) == '\0') {
     *(int *)((long)p0 + 0x1d0) = GameSettings::currentScreenIndex;
-    uVar22 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex const(p0);
+    uVar22 = WaterConcept::Screen_MainMenu_v2::_getSubscreenIDForCurrentIndex(p0);
     *(undefined4 *)((long)p0 + 0x1d4) = uVar22;
   }
   WaterConcept::Screen_MainMenu_v2::_updateTriDuckPosAccordingToCamPos((float)*(int *)((long)p0 + 0x1d0),p0);
@@ -15121,7 +15121,7 @@ void WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 005294c8 to 005294cf has its CatchHandler @ 00529604 */
-    lVar3 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar3 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }
@@ -15134,8 +15134,8 @@ void WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void *p0)
       uStack_4f = 0x694c79726f7473;
       uStack_48 = 0x6e;
                     /* try { // try from 00529514 to 0052951f has its CatchHandler @ 00529608 */
-      Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
-      iVar2 = Walaber::Property::asInt const();
+      Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+      iVar2 = Walaber::Property::asInt();
       if ((bStack_50 & 1) != 0) {
         operator delete(pvStack_40);
       }
@@ -16845,7 +16845,7 @@ void WaterConcept::Screen_MainMenu_v2::_fileExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 0052bbc4 to 0052bbcb has its CatchHandler @ 0052bcb4 */
-    lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }

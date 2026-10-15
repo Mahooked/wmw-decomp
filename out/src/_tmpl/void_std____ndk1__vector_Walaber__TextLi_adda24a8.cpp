@@ -31,7 +31,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   lVar3 = (long)p0[1] - (long)*p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
     return;
   }
   lVar4 = (long)p0[2] - (long)*p0;

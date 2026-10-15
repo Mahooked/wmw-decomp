@@ -49,13 +49,13 @@ num_get<wchar_t,std::__ndk1::istreambuf_iterator<wchar_t,std::__ndk1::char_trait
     }
   }
   else {
-    std::__ndk1::ios_base::getloc const(auStack_88,param_4);
+    std::__ndk1::ios_base::getloc(auStack_88,param_4);
                     /* try { // try from 005b5c9c to 005b5cab has its CatchHandler @ 005b5df8 */
-    uVar2 = std::__ndk1::locale::use_facet const(auStack_88,&ctype<wchar_t>::id);
+    uVar2 = std::__ndk1::locale::use_facet(auStack_88,&ctype<wchar_t>::id);
     std::__ndk1::__shared_count::__release_shared(auStack_88[0]);
-    std::__ndk1::ios_base::getloc const(auStack_88,param_4);
+    std::__ndk1::ios_base::getloc(auStack_88,param_4);
                     /* try { // try from 005b5cc4 to 005b5cd3 has its CatchHandler @ 005b5df4 */
-    plVar3 = (long *)std::__ndk1::locale::use_facet const(auStack_88,&numpunct<wchar_t>::id);
+    plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_88,&numpunct<wchar_t>::id);
     std::__ndk1::__shared_count::__release_shared(auStack_88[0]);
                     /* try { // try from 005b5ce8 to 005b5cf7 has its CatchHandler @ 005b5df0 */
     (**(code **)(*plVar3 + 0x30))(auStack_88,plVar3);
@@ -309,9 +309,9 @@ long * std::__ndk1::
   uStack_188 = 0;
   pvStack_180 = (void *)0x0;
                     /* try { // try from 005b8ec4 to 005b8ecb has its CatchHandler @ 005b9264 */
-  std::__ndk1::ios_base::getloc const(auStack_178,param_4);
+  std::__ndk1::ios_base::getloc(auStack_178,param_4);
                     /* try { // try from 005b8ecc to 005b8ef7 has its CatchHandler @ 005b9274 */
-  plVar4 = (long *)std::__ndk1::locale::use_facet const(auStack_178,&ctype<wchar_t>::id);
+  plVar4 = (long *)std::__ndk1::locale::use_facet(auStack_178,&ctype<wchar_t>::id);
   (**(code **)(*plVar4 + 0x60))(plVar4,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",auStack_d8);
   std::__ndk1::__shared_count::__release_shared(auStack_178[0]);
   uStack_1a8 = 0;

@@ -131,7 +131,7 @@ LAB_005dc2d0:
   uVar6 = strlen();
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 005dc314 to 005dc34f has its CatchHandler @ 005dc3e4 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_78);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_78);
     return;
   }
   if (uVar6 < 0x17) {

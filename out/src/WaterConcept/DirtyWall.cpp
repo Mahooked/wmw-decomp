@@ -116,12 +116,12 @@ void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
   uStack_48 = 0x65;
   uStack_43 = 0;
                     /* try { // try from 004793a8 to 004793b3 has its CatchHandler @ 0047940c */
-  lVar2 = Walaber::PropertyList::getValueForKey const();
+  lVar2 = Walaber::PropertyList::getValueForKey();
   if ((bStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
   if (lVar2 != 0) {
-    Walaber::Property::asVector2 const(&bStack_50,lVar2);
+    Walaber::Property::asVector2(&bStack_50,lVar2);
     *(ulong *)((long)&p0[0x28].f_0x8 + 4) = CONCAT71(uStack_4f,bStack_50);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_38) {

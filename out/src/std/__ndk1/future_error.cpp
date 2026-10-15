@@ -24,7 +24,7 @@ void std::__ndk1::future_error::future_error
   lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_38 = param_2;
   uStack_30 = param_3;
-  std::__ndk1::error_code::message const(abStack_50,&uStack_38);
+  std::__ndk1::error_code::message(abStack_50,&uStack_38);
                     /* try { // try from 005f0704 to 005f070f has its CatchHandler @ 005f075c */
   std::logic_error::logic_error(param_1,abStack_50);
   if ((abStack_50[0] & 1) != 0) {

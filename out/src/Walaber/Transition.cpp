@@ -98,34 +98,34 @@ void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
   (**(code **)p1->f_0x0)(CONCAT44(in_register_00005004,p0));
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar7 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[]();
+    uVar7 = Walaber::Property::asFloat();
     *(undefined4 *)&p1[5].f_0x0 = uVar7;
   }
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asColor const(&bStack_78);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asColor(&bStack_78);
     *(byte *)((long)&p1[5].f_0x0 + 5) = bStack_78;
     *(undefined1 *)((long)&p1[5].f_0x0 + 6) = uStack_77;
     *(undefined1 *)((long)&p1[5].f_0x0 + 7) = uStack_76;
     *(undefined1 *)&p1[5].f_0x8 = uStack_75;
   }
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) == 0) goto LAB_003f44a8;
   uVar4 = Walaber::FontManager::getInstancePtr();
-  Walaber::PropertyList::operator[] const();
-  Walaber::Property::asString const(abStack_60);
+  Walaber::PropertyList::operator[]();
+  Walaber::Property::asString(abStack_60);
                     /* try { // try from 003f4220 to 003f422b has its CatchHandler @ 003f44f0 */
   uVar3 = Walaber::FontManager::getFont(uVar4,abStack_60);
   p1[6].f_0x0 = uVar3;
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  Walaber::PropertyList::operator[] const();
-  Walaber::Property::asString const(&bStack_78);
+  Walaber::PropertyList::operator[]();
+  Walaber::Property::asString(&bStack_78);
   puVar6 = &p1[6].f_0x8;
   if ((*puVar6 & 1) == 0) {
     *(undefined2 *)puVar6 = 0;
@@ -144,25 +144,25 @@ void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
                     );
   p1[7].f_0x8 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0,
                          (float)_sScreenSize * 0.5 + 0.0);
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(auStack_80);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(auStack_80);
     p1[7].f_0x8 = CONCAT44(auStack_80._4_4_ * (float)((ulong)_sScreenSize >> 0x20) + 0.0,
                            auStack_80._0_4_ * (float)_sScreenSize + 0.0);
   }
   *(undefined4 *)&p1[7].f_0x10 = 0x3f800000;
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar7 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[]();
+    uVar7 = Walaber::Property::asFloat();
     *(undefined4 *)&p1[7].f_0x10 = uVar7;
   }
   *(undefined4 *)((long)&p1[7].f_0x10 + 4) = 0;
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asString const(abStack_98);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asString(abStack_98);
                     /* try { // try from 003f436c to 003f4377 has its CatchHandler @ 003f44dc */
     Walaber::StringHelper::toLower(&bStack_78,abStack_98);
     if ((abStack_98[0] & 1) != 0) {
@@ -175,7 +175,7 @@ void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
     }
     if (uVar3 == 4) {
                     /* try { // try from 003f43a4 to 003f43bf has its CatchHandler @ 003f44d8 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_78,0,0xffffffffffffffff,"left",4);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_78,0,0xffffffffffffffff,"left",4);
       if (iVar2 != 0) {
         uVar5 = (ulong)(bStack_78 >> 1);
         goto LAB_003f43dc;
@@ -191,7 +191,7 @@ LAB_003f43dc:
       }
                     /* try { // try from 003f43ec to 003f4407 has its CatchHandler @ 003f44d4 */
       if ((uVar5 == 5) &&
-         (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_78,0,0xffffffffffffffff,"right",5), iVar2 == 0)) {
+         (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_78,0,0xffffffffffffffff,"right",5), iVar2 == 0)) {
         uVar7 = 1;
         goto LAB_003f4418;
       }
@@ -206,10 +206,10 @@ LAB_003f43dc:
   *(undefined1 *)((long)&p1[5].f_0x10 + 1) = 0xff;
   *(undefined4 *)&p1[8].f_0x0 = 0;
   *(undefined1 *)((long)&p1[5].f_0x10 + 2) = 0xff;
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asColor const(&bStack_78);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asColor(&bStack_78);
     *(byte *)((long)&p1[5].f_0x8 + 7) = bStack_78;
     *(undefined1 *)&p1[5].f_0x10 = uStack_77;
     *(undefined1 *)((long)&p1[5].f_0x10 + 1) = uStack_76;

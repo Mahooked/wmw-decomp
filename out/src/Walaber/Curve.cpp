@@ -577,7 +577,7 @@ LAB_003e0db0:
   uStack_78 = 0;
   uVar4 = strlen();
   if (0xffffffffffffffef < uVar4) {
-    p_Var7 = (_xmlNode *)std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_78);
+    p_Var7 = (_xmlNode *)std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_78);
     return p_Var7;
   }
   if (uVar4 < 0x17) {
@@ -609,7 +609,7 @@ LAB_003e0e80:
   }
   if (uVar4 == 6) {
                     /* try { // try from 003e0ee0 to 003e0efb has its CatchHandler @ 003e10cc */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_60,0,0xffffffffffffffff,"linear",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_60,0,0xffffffffffffffff,"linear",6);
     if (iVar2 != 0) {
       uVar6 = (ulong)(abStack_60[0] >> 1);
       goto LAB_003e0f18;
@@ -642,7 +642,7 @@ LAB_003e0f58:
       }
                     /* try { // try from 003e0f68 to 003e0f83 has its CatchHandler @ 003e10c4 */
       if ((uVar6 != 6) ||
-         (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_60,0,0xffffffffffffffff,"bezier",6), iVar2 != 0)) {
+         (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_60,0,0xffffffffffffffff,"bezier",6), iVar2 != 0)) {
                     /* try { // try from 003e0f88 to 003e0f8f has its CatchHandler @ 003e1104 */
         p_Var7 = (_xmlNode *)operator new(0x30);
         *(undefined8 *)(p_Var7 + 0x10) = 4;
@@ -666,7 +666,7 @@ LAB_003e0f58:
       goto LAB_003e0ffc;
     }
                     /* try { // try from 003e0f28 to 003e0f43 has its CatchHandler @ 003e10c8 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_60,0,0xffffffffffffffff,"tweenedlinear",0xd);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_60,0,0xffffffffffffffff,"tweenedlinear",0xd);
     if (iVar2 != 0) {
       uVar6 = (ulong)(abStack_60[0] >> 1);
       goto LAB_003e0f58;
@@ -716,7 +716,7 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
   }
   if (uVar1 == 8) {
                     /* try { // try from 003e1238 to 003e1253 has its CatchHandler @ 003e13a4 */
-    lVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"Constant",8);
+    lVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Constant",8);
     if ((int)lVar4 == 0) {
       return lVar4;
     }
@@ -730,7 +730,7 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
   }
   if (uVar1 == 5) {
                     /* try { // try from 003e1280 to 003e129b has its CatchHandler @ 003e13a0 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"Cycle",5);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Cycle",5);
     if (iVar3 == 0) {
       return 1;
     }
@@ -744,7 +744,7 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
   }
   if (uVar1 == 0xb) {
                     /* try { // try from 003e12c0 to 003e12db has its CatchHandler @ 003e139c */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"CycleOffset",0xb);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"CycleOffset",0xb);
     if (iVar3 == 0) {
       return 2;
     }
@@ -758,7 +758,7 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
   }
   if (uVar1 == 9) {
                     /* try { // try from 003e1300 to 003e131b has its CatchHandler @ 003e1398 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"Oscillate",9);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Oscillate",9);
     if (iVar3 == 0) {
       return 3;
     }
@@ -771,7 +771,7 @@ long Walaber::Curve::curveLoopTypeFromString(byte *param_1)
   }
   if (uVar6 == 6) {
                     /* try { // try from 003e1340 to 003e135b has its CatchHandler @ 003e1394 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"Linear",6);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"Linear",6);
     lVar4 = (ulong)(iVar3 == 0) << 2;
   }
   else {

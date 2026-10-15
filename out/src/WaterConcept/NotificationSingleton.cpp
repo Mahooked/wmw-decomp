@@ -1548,7 +1548,7 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
     }
     else if (iVar1 == 0) {
       Walaber::WidgetManager::getBoundingArea(auStack_50,plVar3 + 1);
-      uVar4 = Walaber::AABB::contains const(auStack_50,in_x1 + 1);
+      uVar4 = Walaber::AABB::contains(auStack_50,in_x1 + 1);
       if ((uVar4 & 1) != 0) {
         uStack_58 = *(undefined8 *)(in_x1 + 1);
         (**(code **)(**(long **)((long)p0 + 0x68) + 0x58))
@@ -1832,8 +1832,8 @@ void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
     abStack_50[8] = 0x6f;
     uStack_3f = 0x656c62;
                     /* try { // try from 0049fcec to 0049fcf7 has its CatchHandler @ 0049fe60 */
-    Walaber::PropertyList::getValueForKey const(in_x1 + 0x10,abStack_50);
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(in_x1 + 0x10,abStack_50);
+    iVar4 = Walaber::Property::asInt();
     if ((abStack_50[0] & 1) != 0) {
       operator delete((void *)CONCAT35(uStack_3b,CONCAT41(uStack_3f,abStack_50[0x10])));
     }
@@ -1845,7 +1845,7 @@ void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
       }
                     /* try { // try from 0049fd30 to 0049fd47 has its CatchHandler @ 0049fe20 */
       if ((uVar1 != 9) ||
-         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(p0 + 7,0,0xffffffffffffffff,"hd_assets",9), iVar4 != 0)) {
+         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(p0 + 7,0,0xffffffffffffffff,"hd_assets",9), iVar4 != 0)) {
         abStack_68[0xb] = 0;
         abStack_68[0xc] = 0;
         abStack_68[0xd] = 0;

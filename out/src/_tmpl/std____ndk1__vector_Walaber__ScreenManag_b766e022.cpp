@@ -102,7 +102,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
   else {
     uVar9 = ((long)puVar6 - lVar14 >> 3) * -0x3333333333333333 + 1;
     if (0x666666666666666 < uVar9) {
-      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      puVar6 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return puVar6;
     }
     lVar14 = param_1[2] - lVar14 >> 3;
@@ -583,7 +583,7 @@ void std::__ndk1::
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x28;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 

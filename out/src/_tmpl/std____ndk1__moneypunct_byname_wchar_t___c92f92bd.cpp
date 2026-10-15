@@ -58,7 +58,7 @@ void std::__ndk1::moneypunct_byname<wchar_t,false>::init(char *p0)
     uVar8 = strlen();
     if (0xffffffffffffffef < uVar8) {
                     /* try { // try from 005c6ab0 to 005c6ab7 has its CatchHandler @ 005c6ba8 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_218);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_218);
       return;
     }
   }

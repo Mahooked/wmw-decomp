@@ -20,7 +20,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0)
   uVar1 = *(ulong *)(p0 + 8);
   if (uVar1 == *(long *)(p0 + 0x10) * 0x40) {
     if ((long)(uVar1 + 1) < 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     if (uVar1 < 0x3fffffffffffffff) {
@@ -131,7 +131,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p
     *(long *)(p0 + 0x10) = lVar1;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 

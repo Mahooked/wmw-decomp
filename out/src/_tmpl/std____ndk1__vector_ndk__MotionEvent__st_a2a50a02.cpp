@@ -98,7 +98,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
     lVar1 = *(long *)(p0 + 8) - *(long *)p0 >> 7;
     uVar3 = in_x1 + lVar1;
     if (uVar3 >> 0x39 != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0,in_x1,in_x2,p0 + 0x10);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0,in_x1,in_x2,p0 + 0x10);
       return;
     }
     lVar4 = *(long *)(p0 + 0x10) - *(long *)p0;

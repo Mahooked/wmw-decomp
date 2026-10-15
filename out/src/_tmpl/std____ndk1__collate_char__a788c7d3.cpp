@@ -92,7 +92,7 @@ char * std::__ndk1::collate<char>::do_transform(char *p0,char *p1)
   in_x8[1] = 0;
   in_x8[2] = 0;
   if (0xffffffffffffffef < uVar7) {
-    pcVar5 = (char *)std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    pcVar5 = (char *)std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return pcVar5;
   }
   if (uVar7 < 0x17) {

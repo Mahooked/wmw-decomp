@@ -1743,7 +1743,7 @@ void Walaber::TextureManager::_loadImageList
   uStack_f6 = 0;
   uVar7 = strlen();
   if (0xffffffffffffffef < uVar7) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_f8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_f8);
     return;
   }
   if (uVar7 < 0x17) {
@@ -1774,7 +1774,7 @@ LAB_0039baa0:
   uVar7 = strlen();
   if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 0039c258 to 0039c25f has its CatchHandler @ 0039c300 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
     return;
   }
   if (uVar7 < 0x17) {
@@ -1935,7 +1935,7 @@ LAB_0039bb44:
         uVar7 = strlen();
         if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 0039c248 to 0039c24f has its CatchHandler @ 0039c264 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_180);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_180);
           return;
         }
         if (uVar7 < 0x17) {
@@ -2624,7 +2624,7 @@ void Walaber::TextureManager::_loadedTextureSettings(void *p0)
           uStack_ec._4_4_ = uVar12;
           uVar5 = uStack_e4;
           uStack_e4._4_4_ = uVar13;
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
           return;
         }
         if (uVar9 < 0x17) {
@@ -3003,7 +3003,7 @@ LAB_0039cd3c:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
             return;
           }
           if (uVar9 < 0x17) {
@@ -3092,7 +3092,7 @@ LAB_0039cff8:
                     /* try { // try from 0039d050 to 0039d06b has its CatchHandler @ 0039dc84 */
             uStack_ec._4_4_ = uVar12;
             uStack_e4._4_4_ = uVar13;
-            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"nearest_mipmap_nearest",0x16);
+            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"nearest_mipmap_nearest",0x16);
             uVar5 = uStack_e4;
             uVar4 = uStack_ec;
             if (iVar7 != 0) {
@@ -3129,7 +3129,7 @@ LAB_0039d088:
                     /* try { // try from 0039d098 to 0039d0b3 has its CatchHandler @ 0039dc74 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"linear_mipmap_nearest",0x15)
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"linear_mipmap_nearest",0x15)
               ;
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
@@ -3159,7 +3159,7 @@ LAB_0039d088:
                     /* try { // try from 0039d0d8 to 0039d0f3 has its CatchHandler @ 0039dc44 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"nearest_mipmap_linear",0x15)
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"nearest_mipmap_linear",0x15)
               ;
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
@@ -3189,7 +3189,7 @@ LAB_0039d088:
                     /* try { // try from 0039d118 to 0039d133 has its CatchHandler @ 0039dc3c */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"linear_mipmap_linear",0x14);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"linear_mipmap_linear",0x14);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 == 0) {
@@ -3218,7 +3218,7 @@ LAB_0039d088:
                     /* try { // try from 0039d158 to 0039d173 has its CatchHandler @ 0039dc34 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"nearest",7);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"nearest",7);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 == 0) {
@@ -3245,7 +3245,7 @@ LAB_0039d088:
                     /* try { // try from 0039d198 to 0039d1b3 has its CatchHandler @ 0039dc30 */
             if ((uVar16 == 6) &&
                (uStack_ec._4_4_ = uVar12, uStack_e4._4_4_ = uVar13,
-               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"linear",6),
+               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"linear",6),
                uVar5 = uStack_e4, uVar4 = uStack_ec, uVar12 = uStack_ec._4_4_,
                uVar13 = uStack_e4._4_4_, iVar7 == 0)) {
               uVar12 = 0x2601;
@@ -3333,7 +3333,7 @@ LAB_0039d088:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
             return;
           }
           if (uVar9 < 0x17) {
@@ -3422,7 +3422,7 @@ LAB_0039d284:
                     /* try { // try from 0039d2dc to 0039d2f7 has its CatchHandler @ 0039dc7c */
             uStack_ec._4_4_ = uVar12;
             uStack_e4._4_4_ = uVar13;
-            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"nearest",7);
+            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"nearest",7);
             uVar5 = uStack_e4;
             uVar4 = uStack_ec;
             if (iVar7 != 0) {
@@ -3457,7 +3457,7 @@ LAB_0039d314:
                     /* try { // try from 0039d324 to 0039d33f has its CatchHandler @ 0039dc70 */
             if ((uVar16 == 6) &&
                (uStack_ec._4_4_ = uVar12, uStack_e4._4_4_ = uVar13,
-               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"linear",6),
+               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"linear",6),
                uVar5 = uStack_e4, uVar4 = uStack_ec, uVar12 = uStack_ec._4_4_,
                uVar13 = uStack_e4._4_4_, iVar7 == 0)) {
               uVar13 = 0x2601;
@@ -3545,7 +3545,7 @@ LAB_0039d314:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
             return;
           }
           if (uVar9 < 0x17) {
@@ -3634,7 +3634,7 @@ LAB_0039d3f0:
                     /* try { // try from 0039d448 to 0039d463 has its CatchHandler @ 0039dc8c */
             uStack_ec._4_4_ = uVar12;
             uStack_e4._4_4_ = uVar13;
-            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"clamp",5);
+            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"clamp",5);
             uVar5 = uStack_e4;
             uVar4 = uStack_ec;
             if (iVar7 != 0) {
@@ -3676,7 +3676,7 @@ LAB_0039d480:
                     /* try { // try from 0039d490 to 0039d4ab has its CatchHandler @ 0039dc6c */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"clamp_to_edge",0xd);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"clamp_to_edge",0xd);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 == 0) goto LAB_0039d4f8;
@@ -3699,7 +3699,7 @@ LAB_0039d480:
                     /* try { // try from 0039d4d0 to 0039d4eb has its CatchHandler @ 0039dc50 */
             if ((uVar16 == 6) &&
                (uStack_ec._4_4_ = uVar12, uStack_e4._4_4_ = uVar13,
-               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"repeat",6),
+               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"repeat",6),
                uVar5 = uStack_e4, uVar4 = uStack_ec, uVar12 = uStack_ec._4_4_,
                uVar13 = uStack_e4._4_4_, iVar7 == 0)) {
               uVar13 = 0x2901;
@@ -3787,7 +3787,7 @@ LAB_0039d480:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
             return;
           }
           if (uVar9 < 0x17) {
@@ -3876,7 +3876,7 @@ LAB_0039d59c:
                     /* try { // try from 0039d5f4 to 0039d60f has its CatchHandler @ 0039dc88 */
             uStack_ec._4_4_ = uVar12;
             uStack_e4._4_4_ = uVar13;
-            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"clamp",5);
+            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"clamp",5);
             uVar5 = uStack_e4;
             uVar4 = uStack_ec;
             if (iVar7 != 0) {
@@ -3923,7 +3923,7 @@ LAB_0039d62c:
                     /* try { // try from 0039d63c to 0039d657 has its CatchHandler @ 0039dc68 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"clamp_to_edge",0xd);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"clamp_to_edge",0xd);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 == 0) goto LAB_0039d6a4;
@@ -3946,7 +3946,7 @@ LAB_0039d62c:
                     /* try { // try from 0039d67c to 0039d697 has its CatchHandler @ 0039dc4c */
             if ((uVar16 == 6) &&
                (uStack_ec._4_4_ = uVar12, uStack_e4._4_4_ = uVar13,
-               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"repeat",6),
+               iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"repeat",6),
                uVar5 = uStack_e4, uVar4 = uStack_ec, uVar12 = uStack_ec._4_4_,
                uVar13 = uStack_e4._4_4_, iVar7 == 0)) {
               uStack_dc = 0x2901;
@@ -4033,7 +4033,7 @@ LAB_0039d62c:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
             return;
           }
           if (uVar9 < 0x17) {
@@ -4122,7 +4122,7 @@ LAB_0039d748:
                     /* try { // try from 0039d7a0 to 0039d7bb has its CatchHandler @ 0039dc80 */
             uStack_ec._4_4_ = uVar12;
             uStack_e4._4_4_ = uVar13;
-            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"r5g6b5",6);
+            iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"r5g6b5",6);
             uVar5 = uStack_e4;
             uVar4 = uStack_ec;
             if (iVar7 != 0) {
@@ -4163,7 +4163,7 @@ LAB_0039d7d8:
                     /* try { // try from 0039d7e8 to 0039d803 has its CatchHandler @ 0039dc78 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"rgb565",6);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"rgb565",6);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 == 0) goto LAB_0039d91c;
@@ -4188,7 +4188,7 @@ LAB_0039d7d8:
                     /* try { // try from 0039d828 to 0039d843 has its CatchHandler @ 0039dc48 */
               uStack_ec._4_4_ = uVar12;
               uStack_e4._4_4_ = uVar13;
-              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"r5g5b5a1",8);
+              iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"r5g5b5a1",8);
               uVar5 = uStack_e4;
               uVar4 = uStack_ec;
               if (iVar7 != 0) {
@@ -4226,7 +4226,7 @@ LAB_0039d858:
                     /* try { // try from 0039d868 to 0039d883 has its CatchHandler @ 0039dc40 */
                 uStack_ec._4_4_ = uVar12;
                 uStack_e4._4_4_ = uVar13;
-                iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"rgba5551",8);
+                iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"rgba5551",8);
                 uVar5 = uStack_e4;
                 uVar4 = uStack_ec;
                 if (iVar7 == 0) goto LAB_0039d93c;
@@ -4251,7 +4251,7 @@ LAB_0039d858:
                     /* try { // try from 0039d8a8 to 0039d8c3 has its CatchHandler @ 0039dc38 */
                 uStack_ec._4_4_ = uVar12;
                 uStack_e4._4_4_ = uVar13;
-                iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"r4g4b4a4",8);
+                iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"r4g4b4a4",8);
                 uVar5 = uStack_e4;
                 uVar4 = uStack_ec;
                 if (iVar7 != 0) {
@@ -4278,7 +4278,7 @@ LAB_0039d8d8:
                     /* try { // try from 0039d8e8 to 0039d903 has its CatchHandler @ 0039dc2c */
                 if ((uVar16 != 8) ||
                    (uStack_ec._4_4_ = uVar12, uStack_e4._4_4_ = uVar13,
-                   iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_120,0,0xffffffffffffffff,"rgba4444",8),
+                   iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_120,0,0xffffffffffffffff,"rgba4444",8),
                    uVar5 = uStack_e4, uVar4 = uStack_ec, uVar12 = uStack_ec._4_4_,
                    uVar13 = uStack_e4._4_4_, iVar7 != 0)) goto LAB_0039d954;
               }
@@ -4478,7 +4478,7 @@ LAB_0039d954:
             uStack_ec._4_4_ = uVar12;
             uVar5 = uStack_e4;
             uStack_e4._4_4_ = uVar13;
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_120);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_120);
             return;
           }
           if (uVar9 < 0x17) {

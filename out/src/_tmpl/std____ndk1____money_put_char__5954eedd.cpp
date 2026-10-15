@@ -39,7 +39,7 @@ void std::__ndk1::__money_put<char>::__gather_info
   else {
     puVar6 = &moneypunct<char,true>::id;
   }
-  plVar5 = (long *)std::__ndk1::locale::use_facet const(param_3,puVar6);
+  plVar5 = (long *)std::__ndk1::locale::use_facet(param_3,puVar6);
   if ((param_2 & 1) == 0) {
     uVar4 = (**(code **)(*plVar5 + 0x50))(plVar5);
     *param_4 = uVar4;

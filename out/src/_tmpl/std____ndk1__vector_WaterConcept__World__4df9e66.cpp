@@ -64,7 +64,7 @@ ulong std::__ndk1::
   else {
     uVar5 = ((long)(uVar5 - lVar7) >> 5) + 1;
     if (uVar5 >> 0x3b != 0) {
-      uVar5 = std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      uVar5 = std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return uVar5;
     }
     lVar7 = param_1[2] - lVar7;
@@ -245,7 +245,7 @@ void std::__ndk1::
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x20;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 

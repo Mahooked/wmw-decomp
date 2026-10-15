@@ -48,7 +48,7 @@ void std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1)
   uVar3 = strlen(p1);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d5cc8 to 005d5ccf has its CatchHandler @ 005d5d98 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_78);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_78);
     return;
   }
   if (uVar3 < 0x17) {
@@ -235,7 +235,7 @@ ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,c
   uStack_68 = 0;
   pcStack_60 = (char *)0x0;
   if (0xffffffffffffffef < uVar14) {
-    uVar14 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    uVar14 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return uVar14;
   }
   if (uVar14 < 0x17) {
@@ -291,7 +291,7 @@ LAB_005d6054:
   pcStack_78 = (char *)0x0;
   if (0xffffffffffffffef < uVar14) {
                     /* try { // try from 005d61bc to 005d61c3 has its CatchHandler @ 005d61c8 */
-    uVar14 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+    uVar14 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
     return uVar14;
   }
   if (uVar14 < 0x17) {
@@ -415,7 +415,7 @@ void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
   uStack_58 = 0;
   pcStack_50 = (char *)0x0;
   if (0xffffffffffffffef < uVar9) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
   }
   if (uVar9 < 0x17) {
@@ -475,7 +475,7 @@ LAB_005d62c0:
   *in_x8 = 0;
   if (0xffffffffffffffef < uVar9) {
                     /* try { // try from 005d63d8 to 005d63df has its CatchHandler @ 005d63e4 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar9 < 0x17) {

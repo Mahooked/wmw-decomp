@@ -33,7 +33,7 @@ void std::__ndk1::
   lVar3 = param_1[1] - *param_1 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
     return;
   }
   lVar5 = param_1[2] - *param_1;

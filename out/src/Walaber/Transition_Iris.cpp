@@ -189,21 +189,21 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
   lStack_48 = *(long *)(lVar1 + 0x28);
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
-  lVar3 = Walaber::PropertyList::getValueForKey const();
+  lVar3 = Walaber::PropertyList::getValueForKey();
   if (lVar3 != 0) {
-    uVar6 = Walaber::Property::asFloat const();
+    uVar6 = Walaber::Property::asFloat();
     *(undefined4 *)&p1[5].f_0x0 = uVar6;
   }
-  lVar3 = Walaber::PropertyList::getValueForKey const();
+  lVar3 = Walaber::PropertyList::getValueForKey();
   if (lVar3 != 0) {
-    uVar6 = Walaber::Property::asInt const();
+    uVar6 = Walaber::Property::asInt();
     *(undefined4 *)&p1[8].f_0x8 = uVar6;
     Walaber::Transition_Iris::_initBladeAnchors(p1);
   }
-  lVar3 = Walaber::PropertyList::getValueForKey const();
+  lVar3 = Walaber::PropertyList::getValueForKey();
   if (lVar3 != 0) {
     uVar4 = Walaber::TextureManager::getManager();
-    Walaber::Property::asString const(abStack_70,lVar3);
+    Walaber::Property::asString(abStack_70,lVar3);
     uStack_90 = 0;
     uStack_88 = 0;
     uStack_80 = 0;
@@ -218,21 +218,21 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
       operator delete(pvStack_60);
     }
   }
-  lVar3 = Walaber::PropertyList::getValueForKey const();
+  lVar3 = Walaber::PropertyList::getValueForKey();
   if (lVar3 != 0) {
-    uVar6 = Walaber::Property::asFloat const();
+    uVar6 = Walaber::Property::asFloat();
     *(undefined4 *)&p1[8].f_0x10 = uVar6;
   }
-  uVar5 = Walaber::PropertyList::keyExists const();
+  uVar5 = Walaber::PropertyList::keyExists();
   if ((uVar5 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar2 == 1;
   }
-  uVar5 = Walaber::PropertyList::keyExists const();
+  uVar5 = Walaber::PropertyList::keyExists();
   if ((uVar5 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar2 == 1;
   }
   if (*(long *)(lVar1 + 0x28) == lStack_48) {

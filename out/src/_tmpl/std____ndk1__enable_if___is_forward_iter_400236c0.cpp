@@ -32,7 +32,7 @@ void std::__ndk1::
   
   uVar9 = (long)in_x2 - (long)p1 >> 2;
   if (0x3fffffffffffffef < uVar9) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (uVar9 < 5) {

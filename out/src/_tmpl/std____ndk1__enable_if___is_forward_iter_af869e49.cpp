@@ -74,7 +74,7 @@ void std::__ndk1::
   else {
     std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__vdeallocate(p0);
     if (0x666666666666666 < uVar9) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     lVar5 = *(long *)(p0 + 0x10) - *(long *)p0 >> 3;

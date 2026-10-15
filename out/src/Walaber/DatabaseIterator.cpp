@@ -613,7 +613,7 @@ void Walaber::DatabaseIterator::getStringAtIndex(int p0)
   *in_x8 = 0;
   uVar2 = strlen();
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const();
+    std::__ndk1::__basic_string_common<true>::__throw_length_error();
     return;
   }
   if (uVar2 < 0x17) {
@@ -671,7 +671,7 @@ void Walaber::DatabaseIterator::getColorAtIndex(int p0)
   uStack_60 = 0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
   }
   if (uVar3 < 0x17) {

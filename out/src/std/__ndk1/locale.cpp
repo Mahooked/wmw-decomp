@@ -294,7 +294,7 @@ void std::__ndk1::locale::locale(char *p0)
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d537c to 005d5383 has its CatchHandler @ 005d53a0 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return;
   }
   if (uVar3 < 0x17) {
@@ -390,7 +390,7 @@ void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
   uVar3 = strlen(p2);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d5578 to 005d557f has its CatchHandler @ 005d559c */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
     return;
   }
   if (uVar3 < 0x17) {
@@ -552,7 +552,7 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
   }
   if (uVar6 == 1) {
                     /* try { // try from 005d57a0 to 005d57bb has its CatchHandler @ 005d5874 */
-    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_60,0,0xffffffffffffffff,&DAT_00645814,1);
+    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_60,0,0xffffffffffffffff,&DAT_00645814,1);
     bVar3 = iVar4 != 0;
   }
   else {
@@ -717,7 +717,7 @@ ulong std::__ndk1::locale::operator==(std____ndk1__locale *p0)
     }
     if (uVar1 == 1) {
                     /* try { // try from 005d5b04 to 005d5b1b has its CatchHandler @ 005d5bd8 */
-      uVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pcVar6,0,0xffffffffffffffff,&DAT_00645814,1);
+      uVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pcVar6,0,0xffffffffffffffff,&DAT_00645814,1);
       if ((int)uVar5 == 0) {
         return uVar5;
       }

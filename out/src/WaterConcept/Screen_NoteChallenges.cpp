@@ -1323,7 +1323,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 0053c9b8 to 0053c9d7 has its CatchHandler @ 0053f840 */
         uVar19 = Walaber::FontManager::getFont(uVar19,abStack_318);
         fVar54 = fVar54 * fVar50;
-        Walaber::BitmapFont::wrapString const(&plStack_1c0,fVar54,fVar53 * fVar52,uVar19,&bStack_1a0);
+        Walaber::BitmapFont::wrapString(&plStack_1c0,fVar54,fVar53 * fVar52,uVar19,&bStack_1a0);
         if ((abStack_318[0] & 1) != 0) {
           operator delete(pvStack_308);
         }
@@ -1800,7 +1800,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 0053d704 to 0053d72f has its CatchHandler @ 0053fbb8 */
               uVar19 = Walaber::FontManager::getFont(uVar19,abStack_458);
               fVar51 = (21.0 / fVar48) * fStack_758 * fVar51;
-              Walaber::BitmapFont::wrapString const(&uStack_240,fVar51,fVar50 * fVar54,uVar19,&uStack_220);
+              Walaber::BitmapFont::wrapString(&uStack_240,fVar51,fVar50 * fVar54,uVar19,&uStack_220);
               if ((abStack_458[0] & 1) != 0) {
                 operator delete(pvStack_448);
               }
@@ -2047,7 +2047,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 0053dd10 to 0053dd2f has its CatchHandler @ 0053f864 */
           uVar19 = Walaber::FontManager::getFont(uVar19,abStack_4e0);
           fVar50 = fVar50 * fVar51;
-          Walaber::BitmapFont::wrapString const(&uStack_200,fVar50,fVar48 * fVar54,uVar19,&uStack_1e0);
+          Walaber::BitmapFont::wrapString(&uStack_200,fVar50,fVar48 * fVar54,uVar19,&uStack_1e0);
           if ((abStack_4e0[0] & 1) != 0) {
             operator delete(pvStack_4d0);
           }
@@ -2399,7 +2399,7 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
                     /* try { // try from 0053e5ac to 0053e5eb has its CatchHandler @ 0053f660 */
             Walaber::Node::getWorldScale(&fStack_d0,plVar36);
             fVar50 = (21.0 / fVar54) * fVar50;
-            Walaber::BitmapFont::wrapString const(&bStack_260,fVar50,*(float *)(plVar36 + 0x12) * fStack_d0 * 0.85,uVar19,
+            Walaber::BitmapFont::wrapString(&bStack_260,fVar50,*(float *)(plVar36 + 0x12) * fStack_d0 * 0.85,uVar19,
                             &fStack_370);
             if ((abStack_628[0] & 1) != 0) {
               operator delete(pvStack_618);
@@ -3629,7 +3629,7 @@ undefined8 WaterConcept::Screen_NoteChallenges::messageRx(Walaber__Message *p0)
     abStack_88[8] = 0x65;
     abStack_88[9] = 0;
                     /* try { // try from 00540c00 to 00540c07 has its CatchHandler @ 00540e30 */
-    uVar2 = Walaber::PropertyList::keyExists const(in_x1 + 0x10,abStack_88);
+    uVar2 = Walaber::PropertyList::keyExists(in_x1 + 0x10,abStack_88);
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }

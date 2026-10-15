@@ -511,7 +511,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7c = 0x65;
   uStack_7b = 0;
                     /* try { // try from 003eee2c to 003eee37 has its CatchHandler @ 003ef9d4 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -545,8 +545,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7c = 0x65;
     uStack_7b = 0;
                     /* try { // try from 003eee6c to 003eee7f has its CatchHandler @ 003ef9fc */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    Walaber::Property::asVector2 const(&uStack_a0);
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::Property::asVector2(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 0x30);
     if (puVar8 < *(undefined8 **)(param_1 + 0x38)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
@@ -573,7 +573,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x6552;
   uStack_78 = 99;
                     /* try { // try from 003eef14 to 003eef1f has its CatchHandler @ 003ef9d0 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -612,8 +612,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x6552;
     uStack_78 = 99;
                     /* try { // try from 003eef58 to 003eef6b has its CatchHandler @ 003ef9f8 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    Walaber::Property::asRect const(&uStack_a0);
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::Property::asRect(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 0xb0);
     if (puVar8 < *(undefined8 **)(param_1 + 0xb8)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
@@ -641,7 +641,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x7463;
   uStack_78 = 0;
                     /* try { // try from 003ef010 to 003ef01b has its CatchHandler @ 003ef9cc */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -680,8 +680,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7463;
     uStack_78 = 0;
                     /* try { // try from 003ef05c to 003ef06f has its CatchHandler @ 003ef9f4 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    Walaber::Property::asRect const(&uStack_a0);
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    Walaber::Property::asRect(&uStack_a0);
     puVar8 = *(undefined8 **)(param_1 + 200);
     if (puVar8 < *(undefined8 **)(param_1 + 0xd0)) {
       *puVar8 = CONCAT44(uStack_9c,uStack_a0);
@@ -709,7 +709,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x65;
   uStack_77 = 0;
                     /* try { // try from 003ef118 to 003ef123 has its CatchHandler @ 003ef9c8 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -738,8 +738,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x65;
     uStack_77 = 0;
                     /* try { // try from 003ef158 to 003ef167 has its CatchHandler @ 003ef9f0 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0xe0);
     if (puVar2 < *(uint **)(param_1 + 0xe8)) {
       *puVar2 = uStack_a0;
@@ -766,7 +766,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_7a = 0x7561;
   uStack_78 = 0x73;
                     /* try { // try from 003ef1f4 to 003ef1ff has its CatchHandler @ 003ef9c4 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -795,8 +795,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_7a = 0x7561;
     uStack_78 = 0x73;
                     /* try { // try from 003ef238 to 003ef247 has its CatchHandler @ 003ef9ec */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x110);
     if (puVar2 < *(uint **)(param_1 + 0x118)) {
       *puVar2 = uStack_a0;
@@ -823,7 +823,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x6e;
   uStack_77 = 0;
                     /* try { // try from 003ef2d4 to 003ef2df has its CatchHandler @ 003ef9c0 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -852,8 +852,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x6e;
     uStack_77 = 0;
                     /* try { // try from 003ef314 to 003ef323 has its CatchHandler @ 003ef9e8 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0xf8);
     if (puVar2 < *(uint **)(param_1 + 0x100)) {
       *puVar2 = uStack_a0;
@@ -880,7 +880,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x69;
   uStack_75 = 0;
                     /* try { // try from 003ef3b8 to 003ef3c3 has its CatchHandler @ 003ef9bc */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -909,8 +909,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_75 = 0;
                     /* try { // try from 003ef400 to 003ef40f has its CatchHandler @ 003ef9e4 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asInt();
     puVar2 = *(uint **)(param_1 + 0x128);
     if (puVar2 < *(uint **)(param_1 + 0x130)) {
       *puVar2 = uStack_a0;
@@ -937,7 +937,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uStack_78 = 0x69;
   uStack_6f = 0;
                     /* try { // try from 003ef4a0 to 003ef4ab has its CatchHandler @ 003ef9b8 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -966,8 +966,8 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_78 = 0x69;
     uStack_6f = 0;
                     /* try { // try from 003ef4e4 to 003ef4f3 has its CatchHandler @ 003ef9e0 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x140);
     if (puVar2 < *(uint **)(param_1 + 0x148)) {
       *puVar2 = uStack_a0;
@@ -1027,7 +1027,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   else {
     iStack_84 = 0;
     do {
-      fStack_80 = (float)Walaber::Property::asInt const(lVar10);
+      fStack_80 = (float)Walaber::Property::asInt(lVar10);
       pfVar3 = *(float **)(param_1 + 0x60);
       if (pfVar3 < *(float **)(param_1 + 0x68)) {
         *pfVar3 = fStack_80;
@@ -1036,7 +1036,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
       else {
         void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(param_1 + 0x58,&fStack_80);
       }
-      fStack_80 = (float)Walaber::Property::asFloat const(uVar7);
+      fStack_80 = (float)Walaber::Property::asFloat(uVar7);
       pfVar3 = *(float **)(param_1 + 0x78);
       if (pfVar3 < *(float **)(param_1 + 0x80)) {
         *pfVar3 = fStack_80;
@@ -1127,7 +1127,7 @@ LAB_003ef7a0:
   uStack_7a = 0x5361;
   uStack_78 = 0x68;
                     /* try { // try from 003ef7cc to 003ef7d7 has its CatchHandler @ 003ef9ac */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -1156,8 +1156,8 @@ LAB_003ef7a0:
     uStack_7a = 0x5361;
     uStack_78 = 0x68;
                     /* try { // try from 003ef814 to 003ef823 has its CatchHandler @ 003ef9dc */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asInt();
     puVar2 = *(uint **)(param_1 + 0x158);
     if (puVar2 < *(uint **)(param_1 + 0x160)) {
       *puVar2 = uStack_a0;
@@ -1184,7 +1184,7 @@ LAB_003ef7a0:
   uStack_78 = 0x68;
   uStack_6f = 0;
                     /* try { // try from 003ef8b0 to 003ef8bb has its CatchHandler @ 003ef9a8 */
-  uVar6 = Walaber::PropertyList::keyExists const(param_3,&fStack_80);
+  uVar6 = Walaber::PropertyList::keyExists(param_3,&fStack_80);
   if (((uint)fStack_80 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
   }
@@ -1213,8 +1213,8 @@ LAB_003ef7a0:
     uStack_78 = 0x68;
     uStack_6f = 0;
                     /* try { // try from 003ef8f4 to 003ef903 has its CatchHandler @ 003ef9d8 */
-    Walaber::PropertyList::operator[] const(param_3,&fStack_80);
-    uStack_a0 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[](param_3,&fStack_80);
+    uStack_a0 = Walaber::Property::asFloat();
     puVar2 = *(uint **)(param_1 + 0x170);
     if (puVar2 < *(uint **)(param_1 + 0x178)) {
       *puVar2 = uStack_a0;

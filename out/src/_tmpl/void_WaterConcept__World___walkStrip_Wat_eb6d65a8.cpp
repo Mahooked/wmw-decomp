@@ -565,7 +565,7 @@ LAB_00470144:
 LAB_00470330:
           *(undefined4 *)(lVar41 + uVar13 * 0x2c + 0x14) = 0;
                     /* try { // try from 00470340 to 00470347 has its CatchHandler @ 00471420 */
-          WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1);
+          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
           lVar28 = param_1[(long)*piVar45 * 6 + 0x11];
           lVar41 = lVar41 + uVar13 * 0x2c;
           *(undefined1 *)(lVar41 + 0x19) = 1;
@@ -735,9 +735,9 @@ LAB_00470634:
             uStack_108 = CONCAT44(uVar35,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar35 < 1)) {
                     /* try { // try from 004706c0 to 004706c7 has its CatchHandler @ 0047141c */
-              WaterConcept::Grid::getCellPos const(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
                     /* try { // try from 004706cc to 004706d7 has its CatchHandler @ 00471410 */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar15);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -745,7 +745,7 @@ LAB_00470634:
               if ((int)fVar49 < 2) {
                 if ((int)uVar35 < 1) {
                     /* try { // try from 00470b70 to 00470b77 has its CatchHandler @ 004713c8 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
                   lVar28 = lVar41 + uVar13 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
@@ -754,7 +754,7 @@ LAB_00470634:
                   *(undefined1 *)(lVar28 + 0x19) = 1;
                   *(ulong *)(lVar28 + 0x24) = uStack_110;
                     /* try { // try from 00470bc4 to 00470bcf has its CatchHandler @ 004713c4 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
                   uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -776,7 +776,7 @@ LAB_00470634:
                   }
                   uVar13 = (ulong)((iVar21 - uVar26) + uVar25 + 1);
                     /* try { // try from 00470858 to 0047085f has its CatchHandler @ 004713d0 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar28 + uVar13 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar28 + uVar13 * 0x2c);
                   lVar28 = lVar28 + uVar13 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar28 + 0x10
                                                                                       ) * 6 + 0x11]
@@ -786,7 +786,7 @@ LAB_00470634:
                   *(undefined1 *)(lVar28 + 0x19) = 1;
                   *(ulong *)(lVar28 + 0x24) = uStack_110;
                     /* try { // try from 00470898 to 004708a3 has its CatchHandler @ 004713cc */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
                   uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -814,7 +814,7 @@ LAB_00470634:
                 lVar28 = param_1[6];
                 uVar36 = (ulong)((((-(int)fVar46 - uVar35) - uVar26) + uVar25) - 1);
                     /* try { // try from 00470758 to 0047075f has its CatchHandler @ 00471400 */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar28 + uVar36 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar28 + uVar36 * 0x2c);
                 lVar28 = lVar28 + uVar36 * 0x2c;
                 uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar28 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
@@ -824,7 +824,7 @@ LAB_00470634:
                 *(undefined1 *)(lVar28 + 0x18) = 1;
                 *(ulong *)(lVar28 + 0x1c) = uStack_118;
                     /* try { // try from 00470794 to 0047079f has its CatchHandler @ 004713fc */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar16);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
                 lVar41 = lVar41 + uVar13 * 0x2c;
                 uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
@@ -865,7 +865,7 @@ LAB_00470634:
               }
               uStack_110 = uVar36 & 0xffffffff | uVar44 << 0x20;
                     /* try { // try from 00470914 to 0047091f has its CatchHandler @ 0047140c */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
@@ -875,9 +875,9 @@ LAB_00470634:
               *(ulong *)(lVar41 + 0x24) = uStack_118;
               *(ulong *)(lVar41 + 8) = uStack_110;
                     /* try { // try from 00470964 to 0047096f has its CatchHandler @ 00471404 */
-              WaterConcept::Grid::getCellPos const(&uStack_120,*param_1,puVar16);
+              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar16);
                     /* try { // try from 00470974 to 0047097f has its CatchHandler @ 00471418 */
-              WaterConcept::Grid::getCellPos const(&uStack_128,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar15);
               uVar35 = -(int)fVar46;
               if ((int)uVar35 <= (int)~uVar26) {
                 uVar35 = ~uVar26;
@@ -894,7 +894,7 @@ LAB_00470634:
               }
               uVar13 = (ulong)((iVar21 - uVar26) + uVar25 + 1);
                     /* try { // try from 004709f0 to 004709f7 has its CatchHandler @ 00471414 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
@@ -929,7 +929,7 @@ LAB_00470634:
               }
               uVar13 = (ulong)((((-(int)fVar46 - uVar35) - uVar26) + uVar25) - 1);
                     /* try { // try from 00470ae0 to 00470ae7 has its CatchHandler @ 00471408 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -993,13 +993,13 @@ LAB_00470c68:
             if (uVar13 != 0) break;
             if (iVar30 == 0) {
                     /* try { // try from 00470e10 to 00470e1b has its CatchHandler @ 0047142c */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar22);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar22);
               lVar48 = param_1[(long)*(int *)(lVar22 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar30 != iVar34 + -1) goto LAB_00470fb4;
                     /* try { // try from 00470dbc to 00470dc7 has its CatchHandler @ 00471428 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar22);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar22);
               lVar48 = param_1[(long)*(int *)(lVar22 + 0x10) * 6 + 0x12];
             }
             lVar23 = param_1[7];
@@ -1815,7 +1815,7 @@ LAB_00472350:
 LAB_0047253c:
           *(undefined4 *)(lVar20 + uVar21 * 0x2c + 0x14) = 0;
                     /* try { // try from 00472554 to 0047255b has its CatchHandler @ 00473648 */
-          WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1);
+          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
           lVar25 = param_1[(long)*piVar35 * 6 + 0x11];
           lVar20 = lVar20 + uVar21 * 0x2c;
           *(undefined1 *)(lVar20 + 0x19) = 1;
@@ -1985,9 +1985,9 @@ LAB_00472858:
             uStack_108 = CONCAT44(uVar40,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar40 < 1)) {
                     /* try { // try from 004728d0 to 004728db has its CatchHandler @ 00473644 */
-              WaterConcept::Grid::getCellPos const(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
                     /* try { // try from 004728e0 to 004728eb has its CatchHandler @ 00473638 */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,piVar16);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar16);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -1995,7 +1995,7 @@ LAB_00472858:
               if ((int)fVar49 < 2) {
                 if ((int)uVar40 < 1) {
                     /* try { // try from 00472d90 to 00472d97 has its CatchHandler @ 004735f0 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar17);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar17);
                   lVar25 = lVar20 + uVar21 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
@@ -2004,7 +2004,7 @@ LAB_00472858:
                   *(undefined1 *)(lVar25 + 0x19) = 1;
                   *(ulong *)(lVar25 + 0x24) = uStack_110;
                     /* try { // try from 00472de4 to 00472def has its CatchHandler @ 004735ec */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar16);
                   lVar20 = lVar20 + uVar41 * 0x2c;
                   uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -2026,7 +2026,7 @@ LAB_00472858:
                   }
                   uVar21 = (ulong)((iVar23 - uVar31) + uVar30 + 1);
                     /* try { // try from 00472a74 to 00472a7b has its CatchHandler @ 004735f8 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar25 + uVar21 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar25 + uVar21 * 0x2c);
                   lVar25 = lVar25 + uVar21 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar25 + 0x10
                                                                                       ) * 6 + 0x11]
@@ -2036,7 +2036,7 @@ LAB_00472858:
                   *(undefined1 *)(lVar25 + 0x19) = 1;
                   *(ulong *)(lVar25 + 0x24) = uStack_110;
                     /* try { // try from 00472ab4 to 00472abf has its CatchHandler @ 004735f4 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar16);
                   lVar20 = lVar20 + uVar41 * 0x2c;
                   uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -2064,7 +2064,7 @@ LAB_00472858:
                 lVar25 = param_1[6];
                 uVar41 = (ulong)((((-(int)fVar46 - uVar40) - uVar31) + uVar30) - 1);
                     /* try { // try from 00472974 to 0047297b has its CatchHandler @ 00473628 */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar25 + uVar41 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar25 + uVar41 * 0x2c);
                 lVar25 = lVar25 + uVar41 * 0x2c;
                 uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar25 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
@@ -2074,7 +2074,7 @@ LAB_00472858:
                 *(undefined1 *)(lVar25 + 0x18) = 1;
                 *(ulong *)(lVar25 + 0x1c) = uStack_118;
                     /* try { // try from 004729b0 to 004729bb has its CatchHandler @ 00473624 */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar17);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar17);
                 lVar20 = lVar20 + uVar21 * 0x2c;
                 uVar21 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
@@ -2115,7 +2115,7 @@ LAB_00472858:
               }
               uStack_110 = uVar41 & 0xffffffff | uVar14 << 0x20;
                     /* try { // try from 00472b2c to 00472b37 has its CatchHandler @ 00473634 */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
               lVar20 = lVar20 + uVar21 * 0x2c;
               uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar35 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
@@ -2125,9 +2125,9 @@ LAB_00472858:
               *(ulong *)(lVar20 + 0x24) = uStack_118;
               *(ulong *)(lVar20 + 8) = uStack_110;
                     /* try { // try from 00472b80 to 00472b8b has its CatchHandler @ 0047362c */
-              WaterConcept::Grid::getCellPos const(&uStack_120,*param_1,puVar17);
+              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar17);
                     /* try { // try from 00472b90 to 00472b9b has its CatchHandler @ 00473640 */
-              WaterConcept::Grid::getCellPos const(&uStack_128,*param_1,piVar16);
+              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar16);
               uVar40 = -(int)fVar46;
               if ((int)uVar40 <= (int)~uVar31) {
                 uVar40 = ~uVar31;
@@ -2144,7 +2144,7 @@ LAB_00472858:
               }
               uVar21 = (ulong)((iVar23 - uVar31) + uVar30 + 1);
                     /* try { // try from 00472c0c to 00472c13 has its CatchHandler @ 0047363c */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
               lVar20 = lVar20 + uVar21 * 0x2c;
               uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
@@ -2179,7 +2179,7 @@ LAB_00472858:
               }
               uVar21 = (ulong)((((-(int)fVar46 - uVar40) - uVar31) + uVar30) - 1);
                     /* try { // try from 00472d00 to 00472d07 has its CatchHandler @ 00473630 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar20 + uVar21 * 0x2c);
               lVar20 = lVar20 + uVar21 * 0x2c;
               uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar20 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -2243,13 +2243,13 @@ LAB_00472e88:
             if (uVar21 != 0) break;
             if (iVar18 == 0) {
                     /* try { // try from 00473038 to 00473043 has its CatchHandler @ 00473654 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar27);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar27);
               lVar48 = param_1[(long)*(int *)(lVar27 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar18 != iVar38 + -1) goto LAB_004731dc;
                     /* try { // try from 00472fe4 to 00472fef has its CatchHandler @ 00473650 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar27);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar27);
               lVar48 = param_1[(long)*(int *)(lVar27 + 0x10) * 6 + 0x12];
             }
             lVar28 = param_1[7];
@@ -3069,7 +3069,7 @@ LAB_00473f64:
 LAB_00474150:
           *(undefined4 *)(lVar18 + uVar22 * 0x2c + 0x14) = 0;
                     /* try { // try from 00474160 to 00474167 has its CatchHandler @ 00475240 */
-          WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1);
+          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
           lVar30 = param_1[(long)*piVar46 * 6 + 0x11];
           lVar18 = lVar18 + uVar22 * 0x2c;
           *(undefined1 *)(lVar18 + 0x19) = 1;
@@ -3239,9 +3239,9 @@ LAB_00474454:
             uStack_108 = CONCAT44(uVar33,fVar50);
             if (((int)fVar50 < 2) || ((int)uVar33 < 1)) {
                     /* try { // try from 004744e0 to 004744e7 has its CatchHandler @ 0047523c */
-              WaterConcept::Grid::getCellPos const(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
                     /* try { // try from 004744ec to 004744f7 has its CatchHandler @ 00475230 */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,piVar14);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar14);
               fVar51 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar51 + ((float)(uStack_118 >> 0x20) - fVar51) * 0.5,
                                     (float)uStack_110 +
@@ -3249,7 +3249,7 @@ LAB_00474454:
               if ((int)fVar50 < 2) {
                 if ((int)uVar33 < 1) {
                     /* try { // try from 00474990 to 00474997 has its CatchHandler @ 004751e8 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar15);
                   lVar30 = lVar18 + uVar22 * 0x2c;
                   uStack_110 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
@@ -3258,7 +3258,7 @@ LAB_00474454:
                   *(undefined1 *)(lVar30 + 0x19) = 1;
                   *(ulong *)(lVar30 + 0x24) = uStack_110;
                     /* try { // try from 004749e4 to 004749ef has its CatchHandler @ 004751e4 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar14);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar14);
                   lVar18 = lVar18 + uVar40 * 0x2c;
                   uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -3280,7 +3280,7 @@ LAB_00474454:
                   }
                   uVar22 = (ulong)((iVar24 - uVar38) + uVar23 + 1);
                     /* try { // try from 00474678 to 0047467f has its CatchHandler @ 004751f0 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar30 + uVar22 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar30 + uVar22 * 0x2c);
                   lVar30 = lVar30 + uVar22 * 0x2c;
                   uStack_110 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar30 + 0x10
                                                                                       ) * 6 + 0x11]
@@ -3290,7 +3290,7 @@ LAB_00474454:
                   *(undefined1 *)(lVar30 + 0x19) = 1;
                   *(ulong *)(lVar30 + 0x24) = uStack_110;
                     /* try { // try from 004746bc to 004746c7 has its CatchHandler @ 004751ec */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar14);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar14);
                   lVar18 = lVar18 + uVar40 * 0x2c;
                   uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -3318,7 +3318,7 @@ LAB_00474454:
                 lVar30 = param_1[6];
                 uVar40 = (ulong)((((-(int)fVar47 - uVar33) - uVar38) + uVar23) - 1);
                     /* try { // try from 00474578 to 0047457f has its CatchHandler @ 00475220 */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar30 + uVar40 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar30 + uVar40 * 0x2c);
                 lVar30 = lVar30 + uVar40 * 0x2c;
                 uStack_118 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar30 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
@@ -3328,7 +3328,7 @@ LAB_00474454:
                 *(undefined1 *)(lVar30 + 0x18) = 1;
                 *(ulong *)(lVar30 + 0x1c) = uStack_118;
                     /* try { // try from 004745b4 to 004745bf has its CatchHandler @ 0047521c */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar15);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar15);
                 lVar18 = lVar18 + uVar22 * 0x2c;
                 uVar22 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
@@ -3369,7 +3369,7 @@ LAB_00474454:
               }
               uStack_110 = uVar40 & 0xffffffff | uVar21 << 0x20;
                     /* try { // try from 00474734 to 0047473f has its CatchHandler @ 0047522c */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
               lVar18 = lVar18 + uVar22 * 0x2c;
               uStack_118 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*piVar46 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
@@ -3379,9 +3379,9 @@ LAB_00474454:
               *(ulong *)(lVar18 + 0x24) = uStack_118;
               *(ulong *)(lVar18 + 8) = uStack_110;
                     /* try { // try from 00474784 to 0047478f has its CatchHandler @ 00475224 */
-              WaterConcept::Grid::getCellPos const(&uStack_120,*param_1,puVar15);
+              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar15);
                     /* try { // try from 00474794 to 0047479f has its CatchHandler @ 00475238 */
-              WaterConcept::Grid::getCellPos const(&uStack_128,*param_1,piVar14);
+              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar14);
               uVar33 = -(int)fVar47;
               if ((int)uVar33 <= (int)~uVar38) {
                 uVar33 = ~uVar38;
@@ -3398,7 +3398,7 @@ LAB_00474454:
               }
               uVar22 = (ulong)((iVar24 - uVar38) + uVar23 + 1);
                     /* try { // try from 00474810 to 00474817 has its CatchHandler @ 00475234 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
               lVar18 = lVar18 + uVar22 * 0x2c;
               uStack_120 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
@@ -3433,7 +3433,7 @@ LAB_00474454:
               }
               uVar22 = (ulong)((((-(int)fVar47 - uVar33) - uVar38) + uVar23) - 1);
                     /* try { // try from 004748fc to 00474903 has its CatchHandler @ 00475228 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar18 + uVar22 * 0x2c);
               lVar18 = lVar18 + uVar22 * 0x2c;
               uStack_128 = CONCAT44(fVar54 * (float)((ulong)param_1[(long)*(int *)(lVar18 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -3497,13 +3497,13 @@ LAB_00474a88:
             if (uVar22 != 0) break;
             if (iVar16 == 0) {
                     /* try { // try from 00474c30 to 00474c3b has its CatchHandler @ 0047524c */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar26);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar26);
               lVar49 = param_1[(long)*(int *)(lVar26 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar16 != iVar37 + -1) goto LAB_00474dd4;
                     /* try { // try from 00474bdc to 00474be7 has its CatchHandler @ 00475248 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar26);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar26);
               lVar49 = param_1[(long)*(int *)(lVar26 + 0x10) * 6 + 0x12];
             }
             lVar27 = param_1[7];
@@ -4318,7 +4318,7 @@ LAB_00475b24:
 LAB_00475d10:
           *(undefined4 *)(lVar41 + uVar13 * 0x2c + 0x14) = 0;
                     /* try { // try from 00475d20 to 00475d27 has its CatchHandler @ 00476e00 */
-          WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1);
+          WaterConcept::Grid::getCellPos(&uStack_f0,*param_1);
           lVar29 = param_1[(long)*piVar45 * 6 + 0x11];
           lVar41 = lVar41 + uVar13 * 0x2c;
           *(undefined1 *)(lVar41 + 0x19) = 1;
@@ -4488,9 +4488,9 @@ LAB_00476014:
             uStack_108 = CONCAT44(uVar35,fVar49);
             if (((int)fVar49 < 2) || ((int)uVar35 < 1)) {
                     /* try { // try from 004760a0 to 004760a7 has its CatchHandler @ 00476dfc */
-              WaterConcept::Grid::getCellPos const(&uStack_110,*param_1);
+              WaterConcept::Grid::getCellPos(&uStack_110,*param_1);
                     /* try { // try from 004760ac to 004760b7 has its CatchHandler @ 00476df0 */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,piVar15);
               fVar50 = (float)(uStack_110 >> 0x20);
               uStack_120 = CONCAT44(fVar50 + ((float)(uStack_118 >> 0x20) - fVar50) * 0.5,
                                     (float)uStack_110 +
@@ -4498,7 +4498,7 @@ LAB_00476014:
               if ((int)fVar49 < 2) {
                 if ((int)uVar35 < 1) {
                     /* try { // try from 00476550 to 00476557 has its CatchHandler @ 00476da8 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar16);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
                   lVar29 = lVar41 + uVar13 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11]
                                                         >> 0x20) + (float)((ulong)uStack_f0 >> 0x20)
@@ -4507,7 +4507,7 @@ LAB_00476014:
                   *(undefined1 *)(lVar29 + 0x19) = 1;
                   *(ulong *)(lVar29 + 0x24) = uStack_110;
                     /* try { // try from 004765a4 to 004765af has its CatchHandler @ 00476da4 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
                   uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -4529,7 +4529,7 @@ LAB_00476014:
                   }
                   uVar13 = (ulong)((iVar22 - uVar27) + uVar26 + 1);
                     /* try { // try from 00476238 to 0047623f has its CatchHandler @ 00476db0 */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar29 + uVar13 * 0x2c);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar29 + uVar13 * 0x2c);
                   lVar29 = lVar29 + uVar13 * 0x2c;
                   uStack_110 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar29 + 0x10
                                                                                       ) * 6 + 0x11]
@@ -4539,7 +4539,7 @@ LAB_00476014:
                   *(undefined1 *)(lVar29 + 0x19) = 1;
                   *(ulong *)(lVar29 + 0x24) = uStack_110;
                     /* try { // try from 00476278 to 00476283 has its CatchHandler @ 00476dac */
-                  WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,piVar15);
+                  WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,piVar15);
                   lVar41 = lVar41 + uVar36 * 0x2c;
                   uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -4567,7 +4567,7 @@ LAB_00476014:
                 lVar29 = param_1[6];
                 uVar36 = (ulong)((((-(int)fVar46 - uVar35) - uVar27) + uVar26) - 1);
                     /* try { // try from 00476138 to 0047613f has its CatchHandler @ 00476de0 */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar29 + uVar36 * 0x2c);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar29 + uVar36 * 0x2c);
                 lVar29 = lVar29 + uVar36 * 0x2c;
                 uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar29 + 0x10)
                                                                       * 6 + 0x12] >> 0x20) +
@@ -4577,7 +4577,7 @@ LAB_00476014:
                 *(undefined1 *)(lVar29 + 0x18) = 1;
                 *(ulong *)(lVar29 + 0x1c) = uStack_118;
                     /* try { // try from 00476174 to 0047617f has its CatchHandler @ 00476ddc */
-                WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,puVar16);
+                WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,puVar16);
                 lVar41 = lVar41 + uVar13 * 0x2c;
                 uVar13 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >> 0x20
                                                   ) + (float)((ulong)uStack_f0 >> 0x20),
@@ -4618,7 +4618,7 @@ LAB_00476014:
               }
               uStack_110 = uVar36 & 0xffffffff | uVar44 << 0x20;
                     /* try { // try from 004762f4 to 004762ff has its CatchHandler @ 00476dec */
-              WaterConcept::Grid::getCellPos const(&uStack_118,*param_1,&uStack_110);
+              WaterConcept::Grid::getCellPos(&uStack_118,*param_1,&uStack_110);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_118 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*piVar45 * 6 + 0x11] >>
                                                     0x20) + (float)(uStack_118 >> 0x20),
@@ -4628,9 +4628,9 @@ LAB_00476014:
               *(ulong *)(lVar41 + 0x24) = uStack_118;
               *(ulong *)(lVar41 + 8) = uStack_110;
                     /* try { // try from 00476344 to 0047634f has its CatchHandler @ 00476de4 */
-              WaterConcept::Grid::getCellPos const(&uStack_120,*param_1,puVar16);
+              WaterConcept::Grid::getCellPos(&uStack_120,*param_1,puVar16);
                     /* try { // try from 00476354 to 0047635f has its CatchHandler @ 00476df8 */
-              WaterConcept::Grid::getCellPos const(&uStack_128,*param_1,piVar15);
+              WaterConcept::Grid::getCellPos(&uStack_128,*param_1,piVar15);
               uVar35 = -(int)fVar46;
               if ((int)uVar35 <= (int)~uVar27) {
                 uVar35 = ~uVar27;
@@ -4647,7 +4647,7 @@ LAB_00476014:
               }
               uVar13 = (ulong)((iVar22 - uVar27) + uVar26 + 1);
                     /* try { // try from 004763d0 to 004763d7 has its CatchHandler @ 00476df4 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_120 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x11] >> 0x20) +
@@ -4682,7 +4682,7 @@ LAB_00476014:
               }
               uVar13 = (ulong)((((-(int)fVar46 - uVar35) - uVar27) + uVar26) - 1);
                     /* try { // try from 004764c0 to 004764c7 has its CatchHandler @ 00476de8 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar41 + uVar13 * 0x2c);
               lVar41 = lVar41 + uVar13 * 0x2c;
               uStack_128 = CONCAT44(fVar53 * (float)((ulong)param_1[(long)*(int *)(lVar41 + 0x10) *
                                                                     6 + 0x12] >> 0x20) +
@@ -4746,13 +4746,13 @@ LAB_00476648:
             if (uVar13 != 0) break;
             if (iVar30 == 0) {
                     /* try { // try from 004767f0 to 004767fb has its CatchHandler @ 00476e0c */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar23);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar23);
               lVar48 = param_1[(long)*(int *)(lVar23 + 0x10) * 6 + 0x11];
             }
             else {
               if (iVar30 != iVar34 + -1) goto LAB_00476994;
                     /* try { // try from 0047679c to 004767a7 has its CatchHandler @ 00476e08 */
-              WaterConcept::Grid::getCellPos const(&uStack_f0,*param_1,lVar23);
+              WaterConcept::Grid::getCellPos(&uStack_f0,*param_1,lVar23);
               lVar48 = param_1[(long)*(int *)(lVar23 + 0x10) * 6 + 0x12];
             }
             lVar24 = param_1[7];

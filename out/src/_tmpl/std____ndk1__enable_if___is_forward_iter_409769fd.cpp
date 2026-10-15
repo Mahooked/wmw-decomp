@@ -63,7 +63,7 @@ void std::__ndk1::
   else {
     std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__vdeallocate(p0);
     if (0x555555555555555 < uVar6) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     lVar4 = (long)(*(long *)&p0->field_0x10 - p0->f_0x0) >> 4;

@@ -44,7 +44,7 @@ code * Walaber::Tweens::getEasingFunctionForString(byte *param_1,int param_2)
   }
   if (uVar1 == 9) {
                     /* try { // try from 003e7030 to 003e704b has its CatchHandler @ 003e734c */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"quadratic",9);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"quadratic",9);
     if (iVar3 != 0) {
       bVar2 = *param_1;
       uVar5 = *(ulong *)(param_1 + 8);
@@ -69,7 +69,7 @@ LAB_003e7068:
     }
     if (uVar1 == 5) {
                     /* try { // try from 003e7078 to 003e7093 has its CatchHandler @ 003e7348 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"cubic",5);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"cubic",5);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return cubicEaseIn;
@@ -87,7 +87,7 @@ LAB_003e7068:
     }
     if (uVar1 == 7) {
                     /* try { // try from 003e70b8 to 003e70d3 has its CatchHandler @ 003e7344 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"quartic",7);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"quartic",7);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return quarticEaseIn;
@@ -105,7 +105,7 @@ LAB_003e7068:
     }
     if (uVar1 == 7) {
                     /* try { // try from 003e70f8 to 003e7113 has its CatchHandler @ 003e7340 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"quintic",7);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"quintic",7);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return quinticEaseIn;
@@ -123,7 +123,7 @@ LAB_003e7068:
     }
     if (uVar1 == 0xe) {
                     /* try { // try from 003e7138 to 003e7153 has its CatchHandler @ 003e733c */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"dual quadratic",0xe);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"dual quadratic",0xe);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return quadraticEaseInOut;
@@ -141,7 +141,7 @@ LAB_003e7068:
     }
     if (uVar1 == 10) {
                     /* try { // try from 003e7178 to 003e7193 has its CatchHandler @ 003e7338 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"dual cubic",10);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"dual cubic",10);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return cubicEaseInOut;
@@ -159,7 +159,7 @@ LAB_003e7068:
     }
     if (uVar1 == 0xc) {
                     /* try { // try from 003e71b8 to 003e71d3 has its CatchHandler @ 003e7334 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"dual quartic",0xc);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"dual quartic",0xc);
       if (iVar3 == 0) {
         if (param_2 < 0) {
           return quarticEaseInOut;
@@ -176,7 +176,7 @@ LAB_003e7068:
     }
     if (uVar7 == 0xc) {
                     /* try { // try from 003e71f8 to 003e7213 has its CatchHandler @ 003e7330 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"dual quintic",0xc);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"dual quintic",0xc);
       pcVar4 = linearTween;
       if (iVar3 == 0) {
         if (param_2 < 0) {

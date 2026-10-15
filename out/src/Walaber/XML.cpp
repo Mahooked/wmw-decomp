@@ -222,7 +222,7 @@ void Walaber::XML::parseColor8bit(_xmlNode *p0,char *p1)
   pvStack_58 = (void *)0x0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_68);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
@@ -292,7 +292,7 @@ undefined1  [16] Walaber::XML::parseAspectRatio(_xmlNode *p0,char *p1)
   uStack_70 = 0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    auVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    auVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return auVar5;
   }
   if (uVar3 < 0x17) {
@@ -387,7 +387,7 @@ void Walaber::XML::parseColor8bitRGBA(_xmlNode *p0,char *p1)
   pvStack_58 = (void *)0x0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_68);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {
@@ -463,7 +463,7 @@ void Walaber::XML::parsePropertyList(_xmlNode *p0,Walaber__PropertyList *p1)
         uStack_80 = 0;
         uVar5 = strlen();
         if (0xffffffffffffffef < uVar5) {
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
           return;
         }
         if (uVar5 < 0x17) {
@@ -492,7 +492,7 @@ LAB_00433898:
         uVar5 = strlen();
         if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 004339c8 to 004339cf has its CatchHandler @ 004339d4 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b8);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b8);
           return;
         }
         if (uVar5 < 0x17) {
@@ -580,7 +580,7 @@ void Walaber::XML::newPropertyList(undefined8 param_1,undefined8 *param_2,byte *
         lVar7 = plVar8[6];
       }
       xmlNewProp(uVar4,"name",lVar7);
-      Walaber::Property::asString const(abStack_80,plVar8 + 7);
+      Walaber::Property::asString(abStack_80,plVar8 + 7);
       pvVar1 = (void *)((ulong)abStack_80 | 1);
       if ((abStack_80[0] & 1) != 0) {
         pvVar1 = pvStack_70;

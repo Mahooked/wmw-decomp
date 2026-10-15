@@ -278,7 +278,7 @@ void WaterConcept::Screen_AgeGate::_curveLoadCallback(void *p0)
     uVar1 = *(ulong *)(in_x1 + 8);
   }
                     /* try { // try from 004a52bc to 004a52d7 has its CatchHandler @ 004a52f0 */
-  if ((uVar1 == 0x17) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar2 == 0)) {
+  if ((uVar1 == 0x17) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar2 == 0)) {
     *(undefined1 *)((long)p0 + 0xc0) = 1;
   }
   return;
@@ -429,7 +429,7 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
   uStack_5f = 0x746553746f6f42;
   uStack_58 = 0;
                     /* try { // try from 004a5518 to 004a5523 has its CatchHandler @ 004a5714 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -446,7 +446,7 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
   uStack_5f = 0x65646f4d504149;
   uStack_58 = 0;
                     /* try { // try from 004a5568 to 004a5573 has its CatchHandler @ 004a5710 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -463,7 +463,7 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
   uStack_58 = 0x73;
   uStack_55 = 0;
                     /* try { // try from 004a55c0 to 004a55cb has its CatchHandler @ 004a570c */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -478,8 +478,8 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
     uStack_58 = 0x73;
     uStack_55 = 0;
                     /* try { // try from 004a5604 to 004a5617 has its CatchHandler @ 004a5708 */
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&uStack_68);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&uStack_68);
     p0[6].f_0x10 = uStack_68;
     if ((bStack_60 & 1) != 0) {
       operator delete(pvStack_50);
@@ -495,7 +495,7 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
   uStack_58 = 0x49;
   uStack_53 = 0;
                     /* try { // try from 004a5660 to 004a566b has its CatchHandler @ 004a5704 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -510,8 +510,8 @@ void WaterConcept::Screen_AgeGate::loadPropertyList(Walaber__PropertyList *p0)
     uStack_58 = 0x49;
     uStack_53 = 0;
                     /* try { // try from 004a56a8 to 004a56b7 has its CatchHandler @ 004a5700 */
-    Walaber::PropertyList::operator[] const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)&p0[8].f_0x8 = iVar2 == 1;
     if ((bStack_60 & 1) != 0) {
       operator delete(pvStack_50);
@@ -641,7 +641,7 @@ void WaterConcept::Screen_AgeGate::update(float p0,bool p1)
              (CONCAT17(uVar16,CONCAT16(uVar15,CONCAT15(uVar14,CONCAT14(SUB41(fVar11,0),
                                                                        -(float)uVar19)))) ^ uVar19)
              & uVar21;
-    fVar11 = (float)Walaber::Curve::evaluate const(fVar12,*(undefined8 *)(uVar4 + 0xb0));
+    fVar11 = (float)Walaber::Curve::evaluate(fVar12,*(undefined8 *)(uVar4 + 0xb0));
     fVar24 = (float)uVar19;
     fVar10 = (float)uVar22 - fVar24;
     fVar25 = (float)(uVar19 >> 0x20);
@@ -663,7 +663,7 @@ void WaterConcept::Screen_AgeGate::update(float p0,bool p1)
     if (fVar12 <= 0.0) {
       fVar2 = 0.0;
     }
-    fVar12 = (float)Walaber::Curve::evaluate const(fVar2,*(undefined8 *)(uVar4 + 0xb0));
+    fVar12 = (float)Walaber::Curve::evaluate(fVar2,*(undefined8 *)(uVar4 + 0xb0));
     iVar9 = 0x14;
     uStack_80 = CONCAT44((fVar25 + fVar23 * fVar12) - (fVar25 + fVar23 * fVar11),
                          (fVar24 + fVar10 * fVar12) - (fVar24 + fVar10 * fVar11));

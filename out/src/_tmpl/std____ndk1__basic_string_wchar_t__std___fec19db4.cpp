@@ -54,7 +54,7 @@ void std::__ndk1::
   ulong uVar3;
   
   if (0x3fffffffffffffef < in_x2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (in_x2 < 5) {
@@ -141,7 +141,7 @@ void std::__ndk1::
   
   uVar1 = (ulong)(uint)p1;
   if (0x3fffffffffffffef < uVar1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (uVar1 < 5) {
@@ -204,7 +204,7 @@ void std::__ndk1::
     std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::__init(param_1,pbVar2 + param_3 * 4,uVar3);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -505,7 +505,7 @@ void std::__ndk1::
   ulong uVar9;
   
   if (0x3fffffffffffffef < in_x1) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   bVar2 = *(byte *)p0;
@@ -629,7 +629,7 @@ long std::__ndk1::
     uVar3 = *(ulong *)(p0 + 8);
   }
   if (uVar3 <= in_x1) {
-    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
     return lVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -665,7 +665,7 @@ long std::__ndk1::
     uVar3 = *(ulong *)(p0 + 8);
   }
   if (uVar3 <= in_x1) {
-    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+    lVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
     return lVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -834,7 +834,7 @@ void std::__ndk1::
     std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::append(param_1,pbVar2 + param_3 * 4,uVar3);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -860,7 +860,7 @@ void std::__ndk1::
   ulong uVar4;
   
   if (0x3fffffffffffffee - p1 < p2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if ((*(byte *)p0 & 1) == 0) {
@@ -942,7 +942,7 @@ void std::__ndk1::
   
   uVar4 = 0x3fffffffffffffef;
   if (0x3fffffffffffffef - p1 < p2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if ((*(byte *)p0 & 1) == 0) {
@@ -1028,7 +1028,7 @@ void std::__ndk1::
     std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::assign(param_1,pbVar2 + param_3 * 4,uVar3);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1126,7 +1126,7 @@ ulong std::__ndk1::
     pwVar6 = *(wchar_t **)(p0 + 8);
   }
   if (pwVar6 < p1) {
-    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar3;
   }
   if ((bVar2 & 1) == 0) {
@@ -1207,7 +1207,7 @@ void std::__ndk1::
     std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::insert(param_1,param_2,pbVar2 + param_4 * 4,uVar3);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1297,7 +1297,7 @@ ulong std::__ndk1::
     }
     return p0;
   }
-  uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar3;
 }
 
@@ -1401,7 +1401,7 @@ ulong std::__ndk1::
     uVar3 = uVar5 - p1;
   }
   if (uVar5 < p1) {
-    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar3 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar3;
   }
   if (in_x2 != 0) {
@@ -1468,7 +1468,7 @@ ulong std::__ndk1::
     pwVar2 = (wchar_t *)(uVar6 - p1);
   }
   if (uVar6 < p1) {
-    uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar6;
   }
   pwVar7 = pwVar2;
@@ -1568,7 +1568,7 @@ void std::__ndk1::
     std::__ndk1::basic_string<wchar_t, std::__ndk1::char_traits<wchar_t>, std::__ndk1::allocator<wchar_t>>::replace();
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return;
 }
 
@@ -1626,7 +1626,7 @@ ulong std::__ndk1::
     uVar4 = uVar7 - p1;
   }
   if (uVar7 < p1) {
-    uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar5 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar5;
   }
   uVar2 = uVar4;
@@ -1716,7 +1716,7 @@ ulong std::__ndk1::
     }
     return uVar2;
   }
-  uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return uVar2;
 }
 
@@ -2215,7 +2215,7 @@ ulong std::__ndk1::
     }
     return uVar6;
   }
-  uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const();
+  uVar6 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range();
   return uVar6;
 }
 
@@ -2332,7 +2332,7 @@ ulong std::__ndk1::
   }
   if (uVar2 == 0xffffffffffffffff) {
                     /* try { // try from 005eaa30 to 005eaa37 has its CatchHandler @ 005eaa38 */
-    uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+    uVar2 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
     return uVar2;
   }
   if ((bVar1 & 1) == 0) {
@@ -2409,7 +2409,7 @@ ulong std::__ndk1::
     }
     return uVar7;
   }
-  uVar7 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(p0);
+  uVar7 = std::__ndk1::__basic_string_common<true>::__throw_out_of_range(p0);
   return uVar7;
 }
 
@@ -2433,7 +2433,7 @@ void std::__ndk1::
   ulong uVar3;
   
   if (0x3fffffffffffffef < in_x3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(p0);
     return;
   }
   if (in_x3 < 5) {

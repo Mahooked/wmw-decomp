@@ -483,7 +483,7 @@ long * std::__ndk1::ios_base::__set_failbit_and_consider_rethrow(long *param_1)
   if (acStack_60[0] != '\0') {
     uStack_64 = 0;
     std::__ndk1::locale::locale(auStack_70,(long)plVar3 + *(long *)(*plVar3 + -0x18) + 0x30);
-    plVar4 = (long *)std::__ndk1::locale::use_facet const(auStack_70,
+    plVar4 = (long *)std::__ndk1::locale::use_facet(auStack_70,
                                   &num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
     lVar1 = (long)plVar3 + *(long *)(*plVar3 + -0x18);
@@ -533,7 +533,7 @@ long * std::__ndk1::ios_base::__set_badbit_and_consider_rethrow(long *param_1)
   if (acStack_50[0] != '\0') {
     uStack_54 = 0;
     std::__ndk1::locale::locale(auStack_60,(long)plVar4 + *(long *)(*plVar4 + -0x18) + 0x30);
-    plVar3 = (long *)std::__ndk1::locale::use_facet const(auStack_60,
+    plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
     lVar1 = (long)plVar4 + *(long *)(*plVar4 + -0x18);

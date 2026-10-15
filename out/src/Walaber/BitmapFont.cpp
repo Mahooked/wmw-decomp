@@ -322,7 +322,7 @@ void Walaber::BitmapFont::_xmlFileLoaded(void *p0)
         uVar10 = strlen();
         if (0xffffffffffffffef < uVar10) {
 LAB_00365774:
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&fStack_e0);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&fStack_e0);
           return;
         }
         if (uVar10 < 0x17) {
@@ -656,7 +656,7 @@ LAB_00364e38:
               pvStack_128 = (void *)0x0;
               uVar10 = strlen(apfStack_b0);
               if (0xffffffffffffffef < uVar10) {
-                std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+                std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
                 return;
               }
               if (uVar10 < 0x17) {
@@ -731,7 +731,7 @@ void Walaber::BitmapFont::addGlyph
   lVar1 = tpidr_el0;
   lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_5c = 0;
-  uVar2 = Walaber::BitmapFont::_getGlyphKey const(param_2,&uStack_5c,param_3);
+  uVar2 = Walaber::BitmapFont::_getGlyphKey(param_2,&uStack_5c,param_3);
   lStack_70 = *param_7;
   piStack_68 = (int *)param_7[1];
   if (lStack_70 != 0) {
@@ -927,7 +927,7 @@ long * Walaber::BitmapFont::getGlyph(long param_1)
   long *plVar4;
   long *plVar5;
   
-  uVar2 = Walaber::BitmapFont::_getGlyphKey const();
+  uVar2 = Walaber::BitmapFont::_getGlyphKey();
   plVar5 = (long *)(param_1 + 0x38);
   plVar4 = (long *)*plVar5;
   plVar3 = plVar5;
@@ -1046,7 +1046,7 @@ LAB_00365e4c:
       }
       *(undefined1 *)((long)pvVar7 + uVar6) = 0;
                     /* try { // try from 00365e60 to 00365e6b has its CatchHandler @ 003660b8 */
-      uVar5 = Walaber::BitmapFont::_getGlyphKey const(uVar8,&iStack_ac,&uStack_c8);
+      uVar5 = Walaber::BitmapFont::_getGlyphKey(uVar8,&iStack_ac,&uStack_c8);
       if ((uStack_c8 & 1) != 0) {
         operator delete(pvStack_b8);
       }
@@ -1114,7 +1114,7 @@ LAB_00365fac:
               }
               *(undefined1 *)((long)pvVar7 + uVar6) = 0;
                     /* try { // try from 00365fc0 to 00365fcb has its CatchHandler @ 003660b4 */
-              uVar5 = Walaber::BitmapFont::_getGlyphKey const(uVar8,&iStack_cc,&uStack_c8);
+              uVar5 = Walaber::BitmapFont::_getGlyphKey(uVar8,&iStack_cc,&uStack_c8);
               if ((uStack_c8 & 1) != 0) {
                 operator delete(pvStack_b8);
               }
@@ -1130,7 +1130,7 @@ LAB_00365fac:
                   plVar9 = (long *)plVar9[bVar4];
                 } while (plVar9 != (long *)0x0);
                 if ((plVar10 != plVar1) && (*(uint *)((long)plVar10 + 0x1c) <= uVar5)) {
-                  fVar14 = (float)Walaber::BitmapFont::_getKern const(param_3,plVar12 + 4,plVar10 + 4);
+                  fVar14 = (float)Walaber::BitmapFont::_getKern(param_3,plVar12 + 4,plVar10 + 4);
                 }
               }
             }
@@ -1146,7 +1146,7 @@ LAB_00365fac:
       uVar6 = strlen(pbVar2);
     } while (uVar6 < 0xfffffffffffffff0);
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c8);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c8);
   return;
 }
 
@@ -1186,7 +1186,7 @@ Walaber::BitmapFont::_getKern(Walaber__BitmapFont__GlyphInfo *p0,Walaber__Bitmap
   pvStack_70 = (void *)0x0;
   uVar2 = strlen(auStack_68);
   if (0xffffffffffffffef < uVar2) {
-    auVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+    auVar5 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
     return auVar5;
   }
   if (uVar2 < 0x17) {
@@ -1205,7 +1205,7 @@ Walaber::BitmapFont::_getKern(Walaber__BitmapFont__GlyphInfo *p0,Walaber__Bitmap
 LAB_00366188:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 00366190 to 00366197 has its CatchHandler @ 003661fc */
-  pWVar3 = (Walaber__BitmapFont__GlyphInfo *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>> const(&p0[1].f_0x20,&uStack_80);
+  pWVar3 = (Walaber__BitmapFont__GlyphInfo *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&p0[1].f_0x20,&uStack_80);
   if (p0 + 2 == pWVar3) {
     uVar6 = 0;
   }
@@ -1291,10 +1291,10 @@ void Walaber::BitmapFont::wrapString(long param_1,undefined8 param_2)
   lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 1;
   if (*(int *)(param_1 + 0x9c) == 1) {
-    Walaber::BitmapFont::_wrapStringAtWord const();
+    Walaber::BitmapFont::_wrapStringAtWord();
   }
   else {
-    Walaber::BitmapFont::_wrapStringAtChar const(param_1,&uStack_2c,param_2);
+    Walaber::BitmapFont::_wrapStringAtChar(param_1,&uStack_2c,param_2);
   }
   if (*(long *)(lVar1 + 0x28) == lStack_28) {
     return;
@@ -1354,14 +1354,14 @@ void Walaber::BitmapFont::_wrapStringAtWord
   
   lVar5 = tpidr_el0;
   lStack_a0 = *(long *)(lVar5 + 0x28);
-  Walaber::BitmapFont::measureString const(&uStack_b8,param_4,param_6);
+  Walaber::BitmapFont::measureString(&uStack_b8,param_4,param_6);
   fVar7 = (float)uStack_b8;
   uStack_b8 = 0;
   uStack_b0 = 0;
   pvStack_a8 = (void *)0x0;
   if (fVar7 <= param_3) {
     lVar9 = 0;
-    while (lVar9 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find const(param_6,10,lVar9), lVar9 != -1) {
+    while (lVar9 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find(param_6,10,lVar9), lVar9 != -1) {
       lVar9 = lVar9 + 1;
       *param_5 = *param_5 + 1;
     }
@@ -1376,7 +1376,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
     auStack_d0[0] = 0x2002;
     uStack_e8 = 0xa02;
                     /* try { // try from 003663a8 to 003663bb has its CatchHandler @ 003667b4 */
-    Walaber::BitmapFont::measureString const(&lStack_100,param_2,param_4,auStack_d0);
+    Walaber::BitmapFont::measureString(&lStack_100,param_2,param_4,auStack_d0);
     fVar7 = (float)lStack_100;
     lStack_100 = 0;
     lStack_f8 = 0;
@@ -1393,10 +1393,10 @@ void Walaber::BitmapFont::_wrapStringAtWord
         if ((uStack_e8 & 1) != 0) {
           puVar2 = puStack_d8;
         }
-        uVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find const(lStack_100 + uVar14 * 0x18,*puVar2,0);
+        uVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find(lStack_100 + uVar14 * 0x18,*puVar2,0);
         if (uVar8 == 0xffffffffffffffff) {
                     /* try { // try from 0036656c to 0036657b has its CatchHandler @ 003667f8 */
-          Walaber::BitmapFont::measureString const(afStack_118,param_2,param_4,lStack_100 + uVar14 * 0x18);
+          Walaber::BitmapFont::measureString(afStack_118,param_2,param_4,lStack_100 + uVar14 * 0x18);
           fVar6 = afStack_118[0];
           if (fVar16 < afStack_118[0]) {
             *param_5 = *param_5 + 1;
@@ -1434,7 +1434,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
                     /* try { // try from 00366478 to 00366483 has its CatchHandler @ 003667fc */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_118,lVar9,uVar12,uVar1 - uVar12,lVar9);
                     /* try { // try from 00366484 to 00366497 has its CatchHandler @ 00366804 */
-            Walaber::BitmapFont::measureString const(afStack_130,param_2,param_4,afStack_118);
+            Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             if (fVar16 < afStack_130[0]) {
               *param_5 = *param_5 + 1;
               uVar8 = uStack_e8 >> 1 & 0x7f;
@@ -1458,7 +1458,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
             if ((uStack_e8 & 1) != 0) {
               puVar2 = puStack_d8;
             }
-            uVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find const(lStack_100 + uVar14 * 0x18,*puVar2,uVar1);
+            uVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::find(lStack_100 + uVar14 * 0x18,*puVar2,uVar1);
             if (((uint)afStack_118[0] & 1) != 0) {
               operator delete(pvStack_108);
             }
@@ -1483,7 +1483,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
                     /* try { // try from 00366640 to 0036664f has its CatchHandler @ 003667e0 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_118,pbVar10,uVar1,uVar8 + ~uVar13,pbVar10);
                     /* try { // try from 00366650 to 00366663 has its CatchHandler @ 003667dc */
-            Walaber::BitmapFont::measureString const(afStack_130,param_2,param_4,afStack_118);
+            Walaber::BitmapFont::measureString(afStack_130,param_2,param_4,afStack_118);
             fVar16 = afStack_130[0];
                     /* try { // try from 00366668 to 00366677 has its CatchHandler @ 003667d8 */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(afStack_130,afStack_118,auStack_d0);
@@ -1572,7 +1572,7 @@ void Walaber::BitmapFont::_wrapStringAtChar
   
   lVar2 = tpidr_el0;
   lStack_88 = *(long *)(lVar2 + 0x28);
-  uVar8 = Walaber::BitmapFont::measureString const(&uStack_a0,param_4,param_6);
+  uVar8 = Walaber::BitmapFont::measureString(&uStack_a0,param_4,param_6);
   fVar10 = (float)uStack_a0;
   uStack_a0 = 0;
   uStack_98 = 0;
@@ -1586,7 +1586,7 @@ void Walaber::BitmapFont::_wrapStringAtChar
     do {
                     /* try { // try from 003669d4 to 003669e3 has its CatchHandler @ 00366aac */
       iStack_bc = iVar9;
-      iVar7 = Walaber::BitmapFont::_getGlyphKey const(uVar8,&iStack_bc,param_6);
+      iVar7 = Walaber::BitmapFont::_getGlyphKey(uVar8,&iStack_bc,param_6);
       uVar6 = uStack_98;
       uVar1 = uStack_a0;
       iVar5 = iStack_bc;
@@ -1604,7 +1604,7 @@ void Walaber::BitmapFont::_wrapStringAtChar
       }
       else {
         if (iVar7 == 0) goto code_r0x003669fc;
-        Walaber::BitmapFont::measureCharacter const(afStack_d8,param_2,param_4);
+        Walaber::BitmapFont::measureCharacter(afStack_d8,param_2,param_4);
         fVar4 = afStack_d8[0];
         if (fVar10 < afStack_d8[0]) {
           *param_5 = *param_5 + 1;
@@ -1673,10 +1673,10 @@ void Walaber::BitmapFont::wrapString(long param_1)
 
 {
   if (*(int *)(param_1 + 0x9c) == 1) {
-    Walaber::BitmapFont::_wrapStringAtWord const();
+    Walaber::BitmapFont::_wrapStringAtWord();
     return;
   }
-  Walaber::BitmapFont::_wrapStringAtChar const();
+  Walaber::BitmapFont::_wrapStringAtChar();
   return;
 }
 
@@ -1694,7 +1694,7 @@ void Walaber::BitmapFont::wrapStringInSize
                (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  Walaber::BitmapFont::wrapStringInSize const(param_1,param_2,param_2,param_3,param_4);
+  Walaber::BitmapFont::wrapStringInSize(param_1,param_2,param_2,param_3,param_4);
   return;
 }
 
@@ -1806,12 +1806,12 @@ void Walaber::BitmapFont::wrapStringInSize
     } while (uVar18 < (uVar10 & 0xffffffff));
   }
                     /* try { // try from 00366e0c to 00366e43 has its CatchHandler @ 003673b8 */
-  Walaber::BitmapFont::measureString const(&fStack_e8,param_2,param_3,param_1);
+  Walaber::BitmapFont::measureString(&fStack_e8,param_2,param_3,param_1);
   Walaber::Logger::printf((double)fStack_e8,(double)fStack_e4,"Walaber",1,"[wrapStringInSize]: box -> %f, %f");
   if ((*param_7 < fStack_e8) || (param_7[1] < fStack_e4)) {
     uStack_130 = CONCAT44(uStack_130._4_4_,1);
                     /* try { // try from 00366e68 to 00366e7f has its CatchHandler @ 0036738c */
-    Walaber::BitmapFont::wrapString const(&uStack_e0,param_2,param_3,&uStack_130,param_1);
+    Walaber::BitmapFont::wrapString(&uStack_e0,param_2,param_3,&uStack_130,param_1);
     iVar8 = (int)uStack_130;
     fVar20 = *(float *)(param_3 + 0x94);
                     /* try { // try from 00366e88 to 00366ea3 has its CatchHandler @ 00367384 */
@@ -1819,7 +1819,7 @@ void Walaber::BitmapFont::wrapStringInSize
     fVar20 = fVar20 * fVar19 * (float)iVar8;
     if (param_7[1] < fVar20) {
                     /* try { // try from 00366ec4 to 00366edf has its CatchHandler @ 00367374 */
-      Walaber::BitmapFont::_recursiveBinaryMeasure const(&uStack_100,param_2,(param_7[1] / fVar20) * fVar19,param_3,param_5,param_1,
+      Walaber::BitmapFont::_recursiveBinaryMeasure(&uStack_100,param_2,(param_7[1] / fVar20) * fVar19,param_3,param_5,param_1,
                       param_7);
       if ((uStack_e0 & 1) != 0) {
         *puStack_d0 = 0;
@@ -1844,7 +1844,7 @@ void Walaber::BitmapFont::wrapStringInSize
       uVar18 = 0;
       do {
                     /* try { // try from 00366f98 to 00366fa3 has its CatchHandler @ 003673d0 */
-        Walaber::BitmapFont::measureString const(&fStack_118,*param_5,param_3,uStack_100 + lVar14);
+        Walaber::BitmapFont::measureString(&fStack_118,*param_5,param_3,uStack_100 + lVar14);
         fVar19 = fStack_118;
         if ((*(byte *)(uStack_100 + lVar14) & 1) == 0) {
           lVar16 = uStack_100 + lVar14 + 1;
@@ -1857,7 +1857,7 @@ void Walaber::BitmapFont::wrapStringInSize
         ;
         if (*param_7 < fVar19) {
                     /* try { // try from 00366ff0 to 00367007 has its CatchHandler @ 003673c0 */
-          Walaber::BitmapFont::_recursiveBinaryMeasure const(&fStack_118,*param_5,(*param_7 / fVar19) * *param_5,param_3,param_5,
+          Walaber::BitmapFont::_recursiveBinaryMeasure(&fStack_118,*param_5,(*param_7 / fVar19) * *param_5,param_3,param_5,
                           &uStack_e0,param_7);
           if ((uStack_e0 & 1) != 0) {
             *puStack_d0 = 0;
@@ -2039,7 +2039,7 @@ void Walaber::BitmapFont::_recursiveBinaryMeasure
   fVar5 = ((float)param_2 + (float)param_3) * 0.5;
   *param_5 = fVar5;
   iStack_6c = 1;
-  Walaber::BitmapFont::wrapString const(&uStack_88,fVar5,*param_7,param_4,&iStack_6c);
+  Walaber::BitmapFont::wrapString(&uStack_88,fVar5,*param_7,param_4,&iStack_6c);
   fVar5 = *(float *)(param_4 + 0x94) * *param_5 * (float)iStack_6c;
                     /* try { // try from 0036752c to 00367627 has its CatchHandler @ 0036766c */
   Walaber::Logger::printf((double)fVar5,"Walaber",1,"[_recursiveBinaryMeasure]: y_height -> %f");
@@ -2168,7 +2168,7 @@ void Walaber::BitmapFont::_drawStringCenter
   pvStack_78 = (void *)0x0;
   uVar2 = strlen(p1);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
     return;
   }
   if (uVar2 < 0x17) {
@@ -2187,7 +2187,7 @@ void Walaber::BitmapFont::_drawStringCenter
 LAB_003677e4:
   *(undefined1 *)((long)pvVar3 + uVar2) = 0;
                     /* try { // try from 003677e8 to 003677fb has its CatchHandler @ 00367884 */
-  Walaber::BitmapFont::measureString const(afStack_70,CONCAT44(in_register_00005024,p3),p0,&uStack_88);
+  Walaber::BitmapFont::measureString(afStack_70,CONCAT44(in_register_00005024,p3),p0,&uStack_88);
   if ((uStack_88 & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -2280,7 +2280,7 @@ LAB_003679b8:
       }
       *(undefined1 *)((long)pvVar5 + uVar4) = 0;
                     /* try { // try from 003679cc to 003679d7 has its CatchHandler @ 00367c58 */
-      uVar3 = Walaber::BitmapFont::_getGlyphKey const(uVar14,&iStack_b4,&uStack_d0);
+      uVar3 = Walaber::BitmapFont::_getGlyphKey(uVar14,&iStack_b4,&uStack_d0);
       uVar14 = extraout_d0;
       if ((uStack_d0 & 1) != 0) {
         uVar14 = operator delete(pvStack_c0);
@@ -2348,7 +2348,7 @@ LAB_00367b5c:
             }
             *(undefined1 *)((long)pvVar5 + uVar4) = 0;
                     /* try { // try from 00367b70 to 00367b7b has its CatchHandler @ 00367c54 */
-            uVar3 = Walaber::BitmapFont::_getGlyphKey const(uVar14,&iStack_d4,&uStack_d0);
+            uVar3 = Walaber::BitmapFont::_getGlyphKey(uVar14,&iStack_d4,&uStack_d0);
             if ((uStack_d0 & 1) != 0) {
               operator delete(pvStack_c0);
             }
@@ -2363,7 +2363,7 @@ LAB_00367b5c:
                 pcVar7 = *(char **)(pcVar7 + (ulong)(*(uint *)(pcVar7 + 0x1c) < uVar3) * 8);
               } while (pcVar7 != (char *)0x0);
               if ((pcVar6 != pcVar1) && (*(uint *)(pcVar6 + 0x1c) <= uVar3)) {
-                fVar11 = (float)Walaber::BitmapFont::_getKern const(p0,pcVar10 + 0x20,pcVar6 + 0x20);
+                fVar11 = (float)Walaber::BitmapFont::_getKern(p0,pcVar10 + 0x20,pcVar6 + 0x20);
               }
             }
           }
@@ -2381,7 +2381,7 @@ LAB_00367b5c:
       uVar4 = strlen(p1);
     } while (uVar4 < 0xfffffffffffffff0);
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_d0);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_d0);
   return;
 }
 
@@ -2461,7 +2461,7 @@ void Walaber::BitmapFont::drawStringWrap
   pvStack_a0 = (void *)0x0;
   uVar2 = strlen(param_5);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
     return;
   }
   if (uVar2 < 0x17) {
@@ -2542,7 +2542,7 @@ void Walaber::BitmapFont::_wrapText
   
   lVar2 = tpidr_el0;
   lStack_a0 = *(long *)(lVar2 + 0x28);
-  Walaber::BitmapFont::measureString const(&uStack_b8,param_4,param_6);
+  Walaber::BitmapFont::measureString(&uStack_b8,param_4,param_6);
   fVar5 = (float)uStack_b8;
   uStack_b8 = 0;
   uStack_b0 = 0;
@@ -2565,7 +2565,7 @@ void Walaber::BitmapFont::_wrapText
     auStack_d0[0] = 0x2002;
     uStack_e8 = 0xa02;
                     /* try { // try from 00367fe8 to 00367ffb has its CatchHandler @ 003681b0 */
-    Walaber::BitmapFont::measureString const(&fStack_100,param_2,param_4,auStack_d0);
+    Walaber::BitmapFont::measureString(&fStack_100,param_2,param_4,auStack_d0);
     fVar5 = fStack_100;
                     /* try { // try from 00368000 to 0036800f has its CatchHandler @ 003681ac */
     Walaber::StringHelper::split(&fStack_100,param_6,0x20);
@@ -2577,7 +2577,7 @@ void Walaber::BitmapFont::_wrapText
       fVar10 = param_3;
       while( true ) {
                     /* try { // try from 00368068 to 00368077 has its CatchHandler @ 003681d8 */
-        Walaber::BitmapFont::measureString const(afStack_118,param_2,param_4,lVar6 + lVar8);
+        Walaber::BitmapFont::measureString(afStack_118,param_2,param_4,lVar6 + lVar8);
         fVar4 = afStack_118[0];
         if (fVar10 < afStack_118[0]) {
           *param_5 = *param_5 + 1;
@@ -2670,7 +2670,7 @@ void Walaber::BitmapFont::drawStringWrapScale
   pvStack_a0 = (void *)0x0;
   uVar2 = strlen(param_4);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
     return;
   }
   if (uVar2 < 0x17) {
@@ -2744,7 +2744,7 @@ void Walaber::BitmapFont::_wrapTextScale
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_5);
   *param_4 = (float)param_2;
                     /* try { // try from 0036840c to 0036841f has its CatchHandler @ 00368598 */
-  Walaber::BitmapFont::measureString const(&fStack_60,param_2,param_3,param_5);
+  Walaber::BitmapFont::measureString(&fStack_60,param_2,param_3,param_5);
   if ((*param_6 < fStack_60) || (param_6[1] < fStack_5c)) {
     iStack_64 = 1;
                     /* try { // try from 00368448 to 00368453 has its CatchHandler @ 00368594 */
@@ -2761,7 +2761,7 @@ void Walaber::BitmapFont::_wrapTextScale
         param_2 = (ulong)(uint)((fVar2 * 0.5) / *(float *)(param_3 + 0x94));
       }
                     /* try { // try from 003684bc to 003684d7 has its CatchHandler @ 00368564 */
-      Walaber::BitmapFont::_recursiveBinaryMeasure const(&uStack_b0,param_2,(fVar2 / fVar3) * (float)param_2,param_3,param_4,param_5,
+      Walaber::BitmapFont::_recursiveBinaryMeasure(&uStack_b0,param_2,(fVar2 / fVar3) * (float)param_2,param_3,param_4,param_5,
                       param_6);
       if ((uStack_80 & 1) != 0) {
         *puStack_70 = 0;

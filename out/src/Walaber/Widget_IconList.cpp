@@ -990,7 +990,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
       uStack_150 = CONCAT44(fVar24 - fVar28,fVar19 - fVar27);
       uStack_130 = CONCAT44(fVar24 + fVar28,fVar19 + fVar27);
       Walaber::AABB::AABB(&uStack_110,&uStack_150,&uStack_130);
-      uVar5 = Walaber::AABB::intersects const(&fStack_e0,&uStack_110);
+      uVar5 = Walaber::AABB::intersects(&fStack_e0,&uStack_110);
       if ((uVar5 & 1) != 0) {
         lVar7 = *(long *)(*(long *)&p0[4].f_0x20 + lVar12);
         if ((lVar7 == 0) || (**(int **)(*(long *)&p0[4].f_0x20 + lVar12 + 8) == 0)) {

@@ -401,7 +401,7 @@ long Walaber::Skeleton::createFromXmlNode(_xmlNode *p0)
   uStack_70 = 0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_70);
+    lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_70);
     return lVar6;
   }
   if (uVar3 < 0x17) {
@@ -437,7 +437,7 @@ LAB_0033b27c:
     uVar3 = strlen();
     if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033b4f8 to 0033b4ff has its CatchHandler @ 0033b550 */
-      lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+      lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
       return lVar6;
     }
     if (uVar3 < 0x17) {
@@ -492,7 +492,7 @@ LAB_0033b348:
     uVar3 = strlen();
     if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033b500 to 0033b507 has its CatchHandler @ 0033b54c */
-      lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+      lVar6 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
       return lVar6;
     }
     if (uVar3 < 0x17) {
@@ -577,7 +577,7 @@ void Walaber::Skeleton::_recursiveBuildSkeleton
         uVar6 = strlen();
         if (0xffffffffffffffef < uVar6) {
 LAB_0033b950:
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
           return;
         }
         if (uVar6 < 0x17) {
@@ -652,7 +652,7 @@ LAB_0033b628:
           uVar6 = strlen();
           if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0033b958 to 0033b95f has its CatchHandler @ 0033b964 */
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_98);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_98);
             return;
           }
           if (uVar6 < 0x17) {
@@ -973,7 +973,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   uVar3 = strlen(&uStack_6c);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 0033bfc0 to 0033bfc7 has its CatchHandler @ 0033bfcc */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_a0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_a0);
     return;
   }
   if (uVar3 < 0x17) {
@@ -1131,7 +1131,7 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
   uStack_48 = 0x6d;
   uStack_47 = 0;
                     /* try { // try from 0033c0bc to 0033c0c3 has its CatchHandler @ 0033c430 */
-  lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
+  lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
   if ((bStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -1139,7 +1139,7 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
     puVar4 = (undefined *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mCallbackMap,(long)p0 + 8);
   }
   else {
-    Walaber::Property::asString const(auStack_68,lVar2);
+    Walaber::Property::asString(auStack_68,lVar2);
     uVar6 = (ulong)(*(byte *)((long)p0 + 8) >> 1);
     lVar2 = (long)p0 + 9;
     if ((*(byte *)((long)p0 + 8) & 1) != 0) {
@@ -1205,8 +1205,8 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
         pvStack_58 = (void *)0x0;
         auStack_68[0] = 0x656d616e08;
                     /* try { // try from 0033c220 to 0033c22f has its CatchHandler @ 0033c3f4 */
-        Walaber::PropertyList::operator[] const(*(undefined8 *)((long)p0 + 0x60),auStack_68);
-        Walaber::Property::asString const(&bStack_50);
+        Walaber::PropertyList::operator[](*(undefined8 *)((long)p0 + 0x60),auStack_68);
+        Walaber::Property::asString(&bStack_50);
                     /* try { // try from 0033c230 to 0033c23b has its CatchHandler @ 0033c3dc */
         Walaber::PCSNode::setName(plVar5,&bStack_50);
         if ((bStack_50 & 1) != 0) {
@@ -1224,8 +1224,8 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
         pvStack_40 = (void *)0x0;
         uStack_4f = 0x736f70;
                     /* try { // try from 0033c27c to 0033c29f has its CatchHandler @ 0033c400 */
-        Walaber::PropertyList::operator[] const(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
-        Walaber::Property::asVector2 const(auStack_68);
+        Walaber::PropertyList::operator[](*(undefined8 *)((long)p0 + 0x60),&bStack_50);
+        Walaber::Property::asVector2(auStack_68);
         (**(code **)(*plVar5 + 0x10))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
           operator delete(pvStack_40);
@@ -1239,8 +1239,8 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
         uStack_4f = 0x6c676e61;
         uStack_4b = 0x65;
                     /* try { // try from 0033c2d8 to 0033c2fb has its CatchHandler @ 0033c3fc */
-        Walaber::PropertyList::operator[] const(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
-        uVar7 = Walaber::Property::asFloat const();
+        Walaber::PropertyList::operator[](*(undefined8 *)((long)p0 + 0x60),&bStack_50);
+        uVar7 = Walaber::Property::asFloat();
         auStack_68[0] = CONCAT44(auStack_68[0]._4_4_,uVar7);
         (**(code **)(*plVar5 + 0x20))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
@@ -1255,8 +1255,8 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
         uStack_4f = 0x6c616373;
         uStack_4b = 0x65;
                     /* try { // try from 0033c334 to 0033c357 has its CatchHandler @ 0033c3f8 */
-        Walaber::PropertyList::operator[] const(*(undefined8 *)((long)p0 + 0x60),&bStack_50);
-        Walaber::Property::asVector2 const(auStack_68);
+        Walaber::PropertyList::operator[](*(undefined8 *)((long)p0 + 0x60),&bStack_50);
+        Walaber::Property::asVector2(auStack_68);
         (**(code **)(*plVar5 + 0x18))(plVar5,auStack_68);
         if ((bStack_50 & 1) != 0) {
           operator delete(pvStack_40);
@@ -1488,7 +1488,7 @@ LAB_0033c6d4:
     uVar2 = strlen(lVar4);
     if (0xffffffffffffffef < uVar2) {
 LAB_0033c854:
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&piStack_88);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&piStack_88);
       return;
     }
     if (uVar2 < 0x17) {
@@ -1616,7 +1616,7 @@ LAB_0033c968:
   uVar5 = strlen(uStack_70 + 0x24);
   if (0xffffffffffffffef < uVar5) {
 LAB_0033ca88:
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_88);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_88);
     return;
   }
   if (uVar5 < 0x17) {
@@ -1727,7 +1727,7 @@ LAB_0033cb9c:
   uVar5 = strlen(uStack_70 + 0x24);
   if (0xffffffffffffffef < uVar5) {
 LAB_0033ccbc:
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_88);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_88);
     return;
   }
   if (uVar5 < 0x17) {

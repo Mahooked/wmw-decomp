@@ -1106,7 +1106,7 @@ void WaterConcept::GameState::init
   }
   if (uVar1 == 6) {
                     /* try { // try from 0042b374 to 0042b38f has its CatchHandler @ 0042b4b4 */
-    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"Swampy",6);
+    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Swampy",6);
     if (iVar4 != 0) {
       bVar2 = *param_2;
       uVar6 = *(ulong *)(param_2 + 8);
@@ -1122,7 +1122,7 @@ LAB_0042b3ac:
     }
     if (uVar1 == 6) {
                     /* try { // try from 0042b3bc to 0042b3d7 has its CatchHandler @ 0042b4b0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"Cranky",6);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Cranky",6);
       if (iVar4 == 0) {
         uVar5 = 2;
         goto LAB_0042b434;
@@ -1136,7 +1136,7 @@ LAB_0042b3ac:
     }
     if (uVar7 == 5) {
                     /* try { // try from 0042b3fc to 0042b417 has its CatchHandler @ 0042b4ac */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"Allie",5);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Allie",5);
       uVar5 = 4;
       if (iVar4 != 0) {
         uVar5 = 1;
@@ -1212,7 +1212,7 @@ LAB_0042b570:
   pvStack_40 = (void *)0x0;
   auStack_50[0] = 0x79616c7008;
                     /* try { // try from 0042b594 to 0042b59b has its CatchHandler @ 0042b5e8 */
-  uVar4 = Walaber::PropertyList::keyExists const(in_x1 + 6,auStack_50);
+  uVar4 = Walaber::PropertyList::keyExists(in_x1 + 6,auStack_50);
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -1276,7 +1276,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
         }
         if (uVar8 == 5) {
                     /* try { // try from 0042b7b4 to 0042b7c7 has its CatchHandler @ 0042beb8 */
-          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"ducks",5);
+          iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"ducks",5);
           if (iVar4 == 0) {
             uStack_b0 = uStack_b0 & 0xffffffff00000000;
             pbVar1 = pbStack_98 + 0x19;
@@ -1296,7 +1296,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
         }
                     /* try { // try from 0042b7fc to 0042b80f has its CatchHandler @ 0042beb4 */
         if ((uVar7 == 10) &&
-           (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"explosions",10), iVar4 == 0)) {
+           (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"explosions",10), iVar4 == 0)) {
           uStack_b0 = uStack_b0 & 0xffffffff00000000;
           pbVar1 = pbStack_98 + 0x19;
           if ((pbStack_98[0x18] & 1) != 0) {
@@ -1312,7 +1312,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
           }
                     /* try { // try from 0042b838 to 0042b84b has its CatchHandler @ 0042beb0 */
           if ((uVar8 == 7) &&
-             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"nospout",7), iVar4 == 0)) {
+             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nospout",7), iVar4 == 0)) {
                     /* try { // try from 0042bbf8 to 0042bc03 has its CatchHandler @ 0042be98 */
             Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
             std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 0xf0);
@@ -1327,7 +1327,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
             }
                     /* try { // try from 0042b870 to 0042b883 has its CatchHandler @ 0042beac */
             if ((uVar8 != 8) ||
-               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"noswitch",8), iVar4 != 0))
+               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"noswitch",8), iVar4 != 0))
             {
               uVar8 = (ulong)(*pbStack_98 >> 1);
               if ((*pbStack_98 & 1) != 0) {
@@ -1335,7 +1335,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
               }
                     /* try { // try from 0042b8a8 to 0042b8bb has its CatchHandler @ 0042bea8 */
               if ((uVar8 == 10) &&
-                 (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"waitforwin",10),
+                 (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"waitforwin",10),
                  iVar4 == 0)) {
                 uStack_b0 = uStack_b0 & 0xffffffff00000000;
                 pbVar1 = pbStack_98 + 0x19;
@@ -1352,7 +1352,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                 }
                     /* try { // try from 0042b8e4 to 0042b8fb has its CatchHandler @ 0042bea4 */
                 if ((uVar8 == 9) &&
-                   (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"losefluid",9),
+                   (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"losefluid",9),
                    iVar4 == 0)) {
                     /* try { // try from 0042bcb0 to 0042bcbb has its CatchHandler @ 0042be84 */
                   Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
@@ -1378,7 +1378,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                   }
                     /* try { // try from 0042b920 to 0042b937 has its CatchHandler @ 0042bea0 */
                   if ((uVar8 == 0xb) &&
-                     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"nofingerpop",0xb),
+                     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nofingerpop",0xb),
                      iVar4 == 0)) {
                     /* try { // try from 0042bd74 to 0042bd7f has its CatchHandler @ 0042be7c */
                     Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
@@ -1398,7 +1398,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     }
                     /* try { // try from 0042b95c to 0042b973 has its CatchHandler @ 0042be94 */
                     if ((uVar8 == 5) &&
-                       (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"nopop",5),
+                       (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nopop",5),
                        iVar4 == 0)) {
                     /* try { // try from 0042bdd8 to 0042bde3 has its CatchHandler @ 0042be74 */
                       Walaber::StringHelper::split(&uStack_b0,pbStack_98 + 0x18,0x2c);
@@ -1414,7 +1414,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     }
                     /* try { // try from 0042b998 to 0042b9af has its CatchHandler @ 0042be8c */
                     if ((uVar8 == 5) &&
-                       (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"nodig",5),
+                       (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"nodig",5),
                        iVar4 == 0)) {
                       *(undefined1 *)(param_1 + 0x160) = 1;
                     }
@@ -1425,7 +1425,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                       }
                     /* try { // try from 0042b9d4 to 0042b9eb has its CatchHandler @ 0042be88 */
                       if ((uVar8 == 0xb) &&
-                         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"noalgaeooze",0xb)
+                         (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"noalgaeooze",0xb)
                          , iVar4 == 0)) {
                         *(undefined1 *)(param_1 + 0x161) = 1;
                       }
@@ -1436,7 +1436,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                         }
                     /* try { // try from 0042ba10 to 0042ba27 has its CatchHandler @ 0042be80 */
                         if ((uVar8 == 9) &&
-                           (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"onlybombs",9),
+                           (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"onlybombs",9),
                            iVar4 == 0)) {
                           uVar5 = 1;
                         }
@@ -1447,7 +1447,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                           }
                     /* try { // try from 0042ba4c to 0042ba63 has its CatchHandler @ 0042be78 */
                           if ((uVar8 != 10) ||
-                             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,"onlymixing",
+                             (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,"onlymixing",
                                                       10), iVar4 != 0)) {
                             uVar8 = (ulong)(*pbStack_98 >> 1);
                             if ((*pbStack_98 & 1) != 0) {
@@ -1455,7 +1455,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                             }
                     /* try { // try from 0042ba88 to 0042ba9f has its CatchHandler @ 0042be70 */
                             if ((uVar8 == 0xc) &&
-                               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,
+                               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                         "ignoremixing",0xc), iVar4 == 0)) {
                               *(undefined1 *)(param_1 + 0x15e) = 1;
                             }
@@ -1466,7 +1466,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                               }
                     /* try { // try from 0042bac4 to 0042badb has its CatchHandler @ 0042be6c */
                               if ((uVar8 == 0xb) &&
-                                 (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,
+                                 (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                           "ignorebombs",0xb), iVar4 == 0)) {
                                 *(undefined1 *)(param_1 + 0x15f) = 1;
                               }
@@ -1477,7 +1477,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                                 }
                     /* try { // try from 0042bb00 to 0042bb17 has its CatchHandler @ 0042be68 */
                                 if ((uVar8 == 7) &&
-                                   (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,
+                                   (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                             "winwait",7), iVar4 == 0)) {
                                   uStack_b0 = uStack_b0 & 0xffffffff00000000;
                                   pbVar1 = pbStack_98 + 0x19;
@@ -1494,7 +1494,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                                   }
                     /* try { // try from 0042bb40 to 0042bb57 has its CatchHandler @ 0042be64 */
                                   if ((uVar8 == 0xc) &&
-                                     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_98,0,0xffffffffffffffff,
+                                     (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_98,0,0xffffffffffffffff,
                                                               "yswitchcount",0xc), iVar4 == 0)) {
                                     uStack_b0 = uStack_b0 & 0xffffffff00000000;
                                     pbVar1 = pbStack_98 + 0x19;
@@ -2279,7 +2279,7 @@ void WaterConcept::GameState::_switchChangeCallback(void *p0)
   pvStack_50 = (void *)0x0;
   uVar3 = strlen(lVar1);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
   }
   if (uVar3 < 0x17) {
@@ -2381,7 +2381,7 @@ void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
   pvStack_50 = (void *)0x0;
   uVar2 = strlen(in_x1 + 0x24);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
     return;
   }
   if (uVar2 < 0x17) {
@@ -2446,7 +2446,7 @@ void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
   pvStack_70 = (void *)0x0;
   uVar3 = strlen(lVar4 + 0x24);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
     return;
   }
   if (uVar3 < 0x17) {

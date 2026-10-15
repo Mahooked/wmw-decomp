@@ -521,7 +521,7 @@ void WaterConcept::Screen_Popup::loadPropertyList(Walaber__PropertyList *p0)
   uStack_68 = 0x79;
   uStack_67 = 0;
                     /* try { // try from 0054515c to 00545167 has its CatchHandler @ 00546a7c */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -543,7 +543,7 @@ void WaterConcept::Screen_Popup::loadPropertyList(Walaber__PropertyList *p0)
     uStack_69 = 0x65;
     uStack_68 = 0x72;
                     /* try { // try from 00545298 to 005452a3 has its CatchHandler @ 005469c0 */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
     }
@@ -565,7 +565,7 @@ void WaterConcept::Screen_Popup::loadPropertyList(Walaber__PropertyList *p0)
       uStack_69 = 0x65;
       uStack_68 = 0;
                     /* try { // try from 00545cc4 to 00545ccf has its CatchHandler @ 005468c4 */
-      uVar16 = Walaber::PropertyList::keyExists const();
+      uVar16 = Walaber::PropertyList::keyExists();
       if ((bStack_70 & 1) != 0) {
         operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
       }
@@ -678,7 +678,7 @@ LAB_005453ac:
   uStack_69 = 0x6e;
   uStack_68 = 0x67;
                     /* try { // try from 005453e4 to 005453ef has its CatchHandler @ 00546a78 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -700,8 +700,8 @@ LAB_005453ac:
     uStack_69 = 0x6e;
     uStack_68 = 0x67;
                     /* try { // try from 00545428 to 00545437 has its CatchHandler @ 00546a74 */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[9].f_0x8 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -724,7 +724,7 @@ LAB_005453ac:
   uStack_68 = 0x65;
   uStack_67 = 0;
                     /* try { // try from 00545474 to 0054547f has its CatchHandler @ 00546a70 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -749,8 +749,8 @@ LAB_005453ac:
     uStack_68 = 0x65;
     uStack_67 = 0;
                     /* try { // try from 005454b0 to 005454bf has its CatchHandler @ 00546a6c */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asFloat();
     *(undefined4 *)&p0[6].f_0x10 = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -773,7 +773,7 @@ LAB_005453ac:
   uStack_69 = 0x65;
   uStack_68 = 0;
                     /* try { // try from 00545504 to 0054550f has its CatchHandler @ 00546a68 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -798,8 +798,8 @@ LAB_005453ac:
     uStack_69 = 0x65;
     uStack_68 = 0;
                     /* try { // try from 0054554c to 0054555b has its CatchHandler @ 00546a64 */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asFloat();
     *(undefined4 *)((long)&p0[6].f_0x10 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -822,7 +822,7 @@ LAB_005453ac:
   uStack_6b = 0x73;
   uStack_6a = 0;
                     /* try { // try from 005455a0 to 005455ab has its CatchHandler @ 00546a60 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -847,8 +847,8 @@ LAB_005453ac:
     uStack_6b = 0x73;
     uStack_6a = 0;
                     /* try { // try from 005455e8 to 005455f7 has its CatchHandler @ 00546a5c */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[7].f_0x0 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -871,7 +871,7 @@ LAB_005453ac:
   uStack_68 = 0x73;
   uStack_67 = 0;
                     /* try { // try from 00545640 to 0054564b has its CatchHandler @ 00546a58 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -896,8 +896,8 @@ LAB_005453ac:
     uStack_68 = 0x73;
     uStack_67 = 0;
                     /* try { // try from 0054567c to 0054568b has its CatchHandler @ 00546a54 */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(int *)&p0[7].f_0x8 = iVar12;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -925,7 +925,7 @@ LAB_005453ac:
   uStack_6b = 0x73;
   uStack_6a = 0;
                     /* try { // try from 005456e4 to 005456ef has its CatchHandler @ 00546a50 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -950,8 +950,8 @@ LAB_005453ac:
     uStack_6b = 0x73;
     uStack_6a = 0;
                     /* try { // try from 0054572c to 0054573b has its CatchHandler @ 00546a4c */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[7].f_0x8 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -974,7 +974,7 @@ LAB_005453ac:
   uStack_69 = 0x6f;
   uStack_68 = 0x72;
                     /* try { // try from 00545784 to 0054578f has its CatchHandler @ 00546a48 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -996,8 +996,8 @@ LAB_005453ac:
     uStack_69 = 0x6f;
     uStack_68 = 0x72;
                     /* try { // try from 005457c4 to 005457d3 has its CatchHandler @ 00546a44 */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)&p0[7].f_0x0 = iVar12 != 0;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1020,7 +1020,7 @@ LAB_005453ac:
   uStack_68 = 0x4c;
   uStack_63 = 0;
                     /* try { // try from 00545820 to 0054582b has its CatchHandler @ 00546a40 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1042,8 +1042,8 @@ LAB_005453ac:
     uStack_68 = 0x4c;
     uStack_63 = 0;
                     /* try { // try from 00545868 to 00545877 has its CatchHandler @ 00546a3c */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)&p0[0x30].f_0x10 = iVar12 != 0;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1066,7 +1066,7 @@ LAB_005453ac:
   uStack_68 = 0x72;
   uStack_61 = 0;
                     /* try { // try from 005458bc to 005458c7 has its CatchHandler @ 00546a38 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1088,8 +1088,8 @@ LAB_005453ac:
     uStack_68 = 0x72;
     uStack_61 = 0;
                     /* try { // try from 005458f8 to 00545907 has its CatchHandler @ 00546a34 */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)((long)&p0[0x30].f_0x10 + 1) = iVar12 == 1;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1112,7 +1112,7 @@ LAB_005453ac:
   uStack_68 = 0x65;
   uStack_67 = 0;
                     /* try { // try from 0054594c to 00545957 has its CatchHandler @ 00546a30 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1134,8 +1134,8 @@ LAB_005453ac:
     uStack_68 = 0x65;
     uStack_67 = 0;
                     /* try { // try from 00545988 to 00545997 has its CatchHandler @ 00546a2c */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x31].f_0x0 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1158,7 +1158,7 @@ LAB_005453ac:
   uStack_68 = 0x53;
   uStack_63 = 0;
                     /* try { // try from 005459dc to 005459e7 has its CatchHandler @ 00546a28 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1180,8 +1180,8 @@ LAB_005453ac:
     uStack_68 = 0x53;
     uStack_63 = 0;
                     /* try { // try from 00545a24 to 00545a33 has its CatchHandler @ 00546a24 */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x31].f_0x8 = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1204,7 +1204,7 @@ LAB_005453ac:
   uStack_5f = 0x73;
   uStack_5e = 0;
                     /* try { // try from 00545a74 to 00545a7f has its CatchHandler @ 00546a20 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1226,8 +1226,8 @@ LAB_005453ac:
     uStack_5f = 0x73;
     uStack_5e = 0;
                     /* try { // try from 00545ab8 to 00545ac7 has its CatchHandler @ 00546a1c */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x32].f_0x0 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1250,7 +1250,7 @@ LAB_005453ac:
   uStack_68 = 0x69;
   uStack_62 = 0;
                     /* try { // try from 00545b08 to 00545b13 has its CatchHandler @ 00546a18 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1272,8 +1272,8 @@ LAB_005453ac:
     uStack_68 = 0x69;
     uStack_62 = 0;
                     /* try { // try from 00545b48 to 00545b57 has its CatchHandler @ 00546a14 */
-    Walaber::PropertyList::operator[] const();
-    uVar11 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar11 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[7].f_0x10 + 4) = uVar11;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1296,7 +1296,7 @@ LAB_005453ac:
     uStack_68 = 0x6c;
     uStack_5f = 0;
                     /* try { // try from 00545b9c to 00545ba7 has its CatchHandler @ 005469bc */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
     }
@@ -1318,8 +1318,8 @@ LAB_005453ac:
       uStack_68 = 0x6c;
       uStack_5f = 0;
                     /* try { // try from 00545bdc to 00545beb has its CatchHandler @ 005469b8 */
-      Walaber::PropertyList::operator[] const();
-      iVar12 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[]();
+      iVar12 = Walaber::Property::asInt();
       *(bool *)&p0[8].f_0x0 = iVar12 != 0;
       if ((bStack_70 & 1) != 0) {
         operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1342,7 +1342,7 @@ LAB_005453ac:
     uStack_68 = 0x69;
     uStack_60 = 0;
                     /* try { // try from 00545c30 to 00545c3b has its CatchHandler @ 005469b4 */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
     }
@@ -1357,8 +1357,8 @@ LAB_005453ac:
       uStack_b8 = 0x69;
       pvStack_b0 = (void *)0x0;
                     /* try { // try from 00545c6c to 00545c7f has its CatchHandler @ 005469a4 */
-      Walaber::PropertyList::operator[] const();
-      Walaber::Property::asString const(abStack_a8);
+      Walaber::PropertyList::operator[]();
+      Walaber::Property::asString(abStack_a8);
                     /* try { // try from 00545c80 to 00545c8b has its CatchHandler @ 005468c8 */
       Walaber::TextManager::getString(&bStack_70,abStack_a8);
       puVar24 = &p0[8].f_0x8;
@@ -1423,7 +1423,7 @@ LAB_005453ac:
     uStack_5f = 0x65;
     uStack_5e = 0;
                     /* try { // try from 00545d8c to 00545d97 has its CatchHandler @ 005469a0 */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
     }
@@ -1445,8 +1445,8 @@ LAB_005453ac:
       uStack_5f = 0x65;
       uStack_5e = 0;
                     /* try { // try from 00545dd0 to 00545ddf has its CatchHandler @ 0054699c */
-      Walaber::PropertyList::operator[] const();
-      iVar12 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[]();
+      iVar12 = Walaber::Property::asInt();
       *(bool *)((long)&p0[9].f_0x8 + 1) = iVar12 == 1;
       if ((bStack_70 & 1) != 0) {
         operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1469,7 +1469,7 @@ LAB_005453ac:
     uStack_68 = 0x6c;
     uStack_5f = 0;
                     /* try { // try from 00545e24 to 00545e2f has its CatchHandler @ 00546998 */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
     }
@@ -1491,8 +1491,8 @@ LAB_005453ac:
       uStack_68 = 0x6c;
       uStack_5f = 0;
                     /* try { // try from 00545e64 to 00545e73 has its CatchHandler @ 00546994 */
-      Walaber::PropertyList::operator[] const();
-      iVar12 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[]();
+      iVar12 = Walaber::Property::asInt();
       *(bool *)((long)&p0[9].f_0x8 + 2) = iVar12 == 1;
       if ((bStack_70 & 1) != 0) {
         operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1516,7 +1516,7 @@ LAB_005453ac:
   uStack_68 = 0x69;
   uStack_5f = 0;
                     /* try { // try from 00545eb8 to 00545ec3 has its CatchHandler @ 00546a10 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1538,8 +1538,8 @@ LAB_005453ac:
     uStack_68 = 0x69;
     uStack_5f = 0;
                     /* try { // try from 00545ef8 to 00545f07 has its CatchHandler @ 00546a0c */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)&p0[9].f_0x8 = iVar12 != 0;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1563,7 +1563,7 @@ LAB_005453ac:
   uStack_5f = 0x6b;
   uStack_5e = 0;
                     /* try { // try from 00545f58 to 00545f63 has its CatchHandler @ 00546a08 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1585,8 +1585,8 @@ LAB_005453ac:
     uStack_5f = 0x6b;
     uStack_5e = 0;
                     /* try { // try from 00545f9c to 00545fab has its CatchHandler @ 00546a04 */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)((long)&p0[0x30].f_0x10 + 2) = iVar12 != 0;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1609,7 +1609,7 @@ LAB_005453ac:
   uStack_69 = 0x6e;
   uStack_68 = 0x4f;
                     /* try { // try from 00545ff4 to 00545fff has its CatchHandler @ 00546a00 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1631,8 +1631,8 @@ LAB_005453ac:
     uStack_69 = 0x6e;
     uStack_68 = 0x4f;
                     /* try { // try from 00546038 to 00546047 has its CatchHandler @ 005469fc */
-    Walaber::PropertyList::operator[] const();
-    iVar12 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar12 = Walaber::Property::asInt();
     *(bool *)&p0[0x34].f_0x0 = iVar12 != 0;
     if ((bStack_70 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
@@ -1655,7 +1655,7 @@ LAB_005453ac:
   uStack_6f = 0x5f706169;
   uStack_69 = 0;
                     /* try { // try from 00546088 to 00546093 has its CatchHandler @ 005469f8 */
-  uVar16 = Walaber::PropertyList::keyExists const();
+  uVar16 = Walaber::PropertyList::keyExists();
   if ((bStack_70 & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_5d,CONCAT12(uStack_5e,CONCAT11(uStack_5f,uStack_60))));
   }
@@ -1670,8 +1670,8 @@ LAB_005453ac:
     uStack_bf = 0x5f706169;
     uStack_b9 = 0;
                     /* try { // try from 005460d0 to 005460e3 has its CatchHandler @ 005469e4 */
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asString const(&bStack_70);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asString(&bStack_70);
     if ((p0[0x34].f_0x8 & 1) == 0) {
       *(undefined2 *)&p0[0x34].f_0x8 = 0;
     }
@@ -1832,7 +1832,7 @@ LAB_005453ac:
     uStack_b8 = 100;
     uStack_b5 = 0;
                     /* try { // try from 005463a0 to 005463ab has its CatchHandler @ 005468f8 */
-    uVar16 = Walaber::PropertyList::keyExists const();
+    uVar16 = Walaber::PropertyList::keyExists();
     if ((bStack_c0 & 1) != 0) {
       operator delete(pvStack_b0);
     }
@@ -1850,8 +1850,8 @@ LAB_005453ac:
       uStack_b8 = 100;
       uStack_b5 = 0;
                     /* try { // try from 005463e4 to 005463f3 has its CatchHandler @ 005468f4 */
-      Walaber::PropertyList::operator[] const();
-      iVar13 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[]();
+      iVar13 = Walaber::Property::asInt();
       if ((bStack_c0 & 1) != 0) {
         operator delete(pvStack_b0);
       }
@@ -3142,7 +3142,7 @@ LAB_00547a88:
   }
                     /* try { // try from 00547aa8 to 00547ac7 has its CatchHandler @ 005489ac */
   if ((uVar21 == 0) &&
-     (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+     (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                &DAT_0063306f,0), iVar11 == 0)) {
     uVar14 = Walaber::TextureManager::getManager();
     apcStack_d0[0] = (char *)operator new(0x30);
@@ -3372,7 +3372,7 @@ LAB_00547a88:
       }
                     /* try { // try from 00547d9c to 00547dbb has its CatchHandler @ 005489a8 */
       if ((uVar21 != 0x10) ||
-         (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+         (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                    "LP_BONUS_FRANKEN",0x10), iVar11 != 0)) {
         uStack_f3 = 0;
         uStack_f2 = 0;
@@ -3632,7 +3632,7 @@ LAB_00547a88:
       }
                     /* try { // try from 005480b8 to 005480d7 has its CatchHandler @ 005489a4 */
       if ((uVar21 != 0x10) ||
-         (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+         (iVar11 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                    "LP_BONUS_FRANKEN",0x10), iVar11 != 0)) {
                     /* try { // try from 005480dc to 005480ef has its CatchHandler @ 00548c6c */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(&bStack_100,"shower_curtain_bonus",0x14);
@@ -5410,7 +5410,7 @@ LAB_0054a2ac:
       *(undefined1 *)(lVar19 + 0x8c) = 1;
       fVar46 = Walaber::ScreenCoord::sScreenSize * 0.0 + 0.0 + *(float *)(uVar18 + 0x3f8);
       fVar45 = DAT_0072d884 * 1.05 + 0.0 + 0.0;
-      fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) / 0.3,
+      fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) / 0.3,
                                       *(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x3f8) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x3f8) >> 0x20) - fVar45) * fVar42;
@@ -5431,7 +5431,7 @@ LAB_0054c4fc:
       fVar45 = *(float *)(uVar18 + 0x3f4) + DAT_0072d884 * 0.0 + 0.0;
       plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x18);
       fVar42 = *(float *)(uVar18 + 0x348) / 0.3;
-      fVar42 = (float)Walaber::Curve::evaluate const(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
+      fVar42 = (float)Walaber::Curve::evaluate(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x3f0) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x3f0) >> 0x20) - fVar45) * fVar42;
       uStack_19c = SUB41(fVar45,0);
@@ -5810,7 +5810,7 @@ LAB_0054ce74:
         iVar12 = 0;
         do {
           uVar35 = *(undefined8 *)(uVar18 + 1000);
-          fVar42 = (float)Walaber::Curve::evaluate const((*(float *)(uVar18 + 0x348) - (float)iVar12 * 0.15) / 0.15
+          fVar42 = (float)Walaber::Curve::evaluate((*(float *)(uVar18 + 0x348) - (float)iVar12 * 0.15) / 0.15
                                           ,*(undefined8 *)(uVar18 + 0x318));
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),iVar12 + 0x14);
           if (plVar24 != (long *)0x0) {
@@ -5833,7 +5833,7 @@ LAB_0054cddc:
           lVar19 = Walaber::WidgetManager::getWidget(*puVar36,iVar12 + 0xfa);
           if (lVar19 != 0) {
             uVar35 = *(undefined8 *)(uVar18 + 1000);
-            fVar42 = (float)Walaber::Curve::evaluate const((*(float *)(uVar18 + 0x348) - (float)iVar12 * 0.15) /
+            fVar42 = (float)Walaber::Curve::evaluate((*(float *)(uVar18 + 0x348) - (float)iVar12 * 0.15) /
                                             0.15,*(undefined8 *)(uVar18 + 0x318));
             plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),iVar12 + 0xfa);
             uStack_140 = CONCAT44((float)((ulong)uVar35 >> 0x20) * fVar42 + 0.0,
@@ -6003,7 +6003,7 @@ LAB_0054b764:
       fVar45 = *(float *)(uVar18 + 0x404) + fVar42;
       plVar24 = (long *)Walaber::WidgetManager::getWidget(CONCAT44(fVar42,Walaber::ScreenCoord::sScreenSize * 0.5 +
                                                         0.0),*(undefined8 *)(uVar18 + 0x10),0);
-      fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+      fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                       *(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x400) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x400) >> 0x20) - fVar45) * fVar42;
@@ -6014,7 +6014,7 @@ LAB_0054b764:
       fVar46 = Walaber::ScreenCoord::sScreenSize * 1.5 + 0.0 + 0.0;
       fVar45 = *(float *)(uVar18 + 0x40c) + DAT_0072d884 * 0.0 + 0.0;
       plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),1);
-      fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+      fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                       *(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x408) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x408) >> 0x20) - fVar45) * fVar42;
@@ -6028,7 +6028,7 @@ LAB_0054b764:
         plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),2);
         fVar47 = *(float *)(uVar18 + 0x400);
         fVar41 = *(float *)(uVar18 + 0x414);
-        fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+        fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                         *(undefined8 *)(uVar18 + 0x318));
         fStack_1a0 = fVar46 + (fVar47 - fVar46) * fVar42;
         fVar45 = fVar45 + (fVar41 - fVar45) * fVar42;
@@ -6039,7 +6039,7 @@ LAB_0054b764:
         fVar46 = Walaber::ScreenCoord::sScreenSize * 1.5 + 0.0 + 0.0;
         fVar45 = *(float *)(uVar18 + 0x41c) + DAT_0072d884 * 0.0 + 0.0;
         plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x456);
-        fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+        fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                         *(undefined8 *)(uVar18 + 0x318));
         uVar35 = *(undefined8 *)(uVar18 + 0x418);
       }
@@ -6047,7 +6047,7 @@ LAB_0054b764:
         fVar46 = Walaber::ScreenCoord::sScreenSize * 0.0 + 0.0 + *(float *)(uVar18 + 0x410);
         fVar45 = DAT_0072d884 * 1.5 + 0.0 + 0.0;
         plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),2);
-        fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+        fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                         *(undefined8 *)(uVar18 + 0x318));
         uVar35 = *(undefined8 *)(uVar18 + 0x410);
       }
@@ -6120,7 +6120,7 @@ LAB_0054b764:
       fVar46 = Walaber::ScreenCoord::sScreenSize + 0.0 + (float)*(undefined8 *)(uVar18 + 0x440);
       fVar45 = DAT_0072d884 * 0.0 + 0.0 + (float)((ulong)*(undefined8 *)(uVar18 + 0x440) >> 0x20);
       plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),500);
-      fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+      fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                       *(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x440) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x440) >> 0x20) - fVar45) * fVar42;
@@ -6133,7 +6133,7 @@ LAB_0054b764:
       fVar46 = Walaber::ScreenCoord::sScreenSize + 0.0 + (float)*(undefined8 *)(uVar18 + 0x448);
       fVar45 = DAT_0072d884 * 0.0 + 0.0 + (float)((ulong)*(undefined8 *)(uVar18 + 0x448) >> 0x20);
       plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x1f5);
-      fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+      fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                       *(undefined8 *)(uVar18 + 0x318));
       fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x448) - fVar46) * fVar42;
       fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x448) >> 0x20) - fVar45) * fVar42;
@@ -6202,7 +6202,7 @@ LAB_0054b764:
     fVar42 = *(float *)(lVar19 + 0x54);
     fVar46 = *(float *)(uVar18 + 0x414);
     plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),2);
-    fVar45 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) + *(float *)(uVar18 + 0x348),
+    fVar45 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) + *(float *)(uVar18 + 0x348),
                                     *(undefined8 *)(uVar18 + 0x318));
     fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x410);
     fVar47 = (float)((ulong)*(undefined8 *)(uVar18 + 0x410) >> 0x20);
@@ -6215,7 +6215,7 @@ LAB_0054b764:
     fVar46 = Walaber::ScreenCoord::sScreenSize * 1.5 + 0.0 + 0.0;
     fVar45 = *(float *)(uVar18 + 0x41c) + DAT_0072d884 * 0.0 + 0.0;
     plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),3);
-    fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) + *(float *)(uVar18 + 0x348),
+    fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) + *(float *)(uVar18 + 0x348),
                                     *(undefined8 *)(uVar18 + 0x318));
     fStack_1a0 = fVar46 + ((float)*(undefined8 *)(uVar18 + 0x418) - fVar46) * fVar42;
     fVar45 = fVar45 + ((float)((ulong)*(undefined8 *)(uVar18 + 0x418) >> 0x20) - fVar45) * fVar42;
@@ -6229,7 +6229,7 @@ LAB_0054b764:
     if (0.25 <= *(float *)(uVar18 + 0x348)) {
       fVar42 = *(float *)(uVar18 + 0x348) * 4.0 + -1.0;
     }
-    fVar45 = (float)Walaber::Curve::evaluate const(fVar42,*(undefined8 *)(uVar18 + 0x318));
+    fVar45 = (float)Walaber::Curve::evaluate(fVar42,*(undefined8 *)(uVar18 + 0x318));
     fVar42 = fVar45;
     if (1.0 < fVar45) {
       fVar42 = 1.0;
@@ -6468,7 +6468,7 @@ LAB_0054b764:
             if (fVar42 <= 0.0) {
               fVar42 = 0.0;
             }
-            fVar42 = (float)Walaber::Curve::evaluate const(fVar42,*(undefined8 *)(uVar18 + 0x338));
+            fVar42 = (float)Walaber::Curve::evaluate(fVar42,*(undefined8 *)(uVar18 + 0x338));
             fVar42 = (fVar42 + -1.0) * 0.5;
             fStack_1a0 = (fVar42 + 1.0) - (float)uVar35;
             fVar42 = (1.0 - fVar42) - (float)((ulong)uVar35 >> 0x20);
@@ -6504,7 +6504,7 @@ LAB_0054b764:
           if (fVar45 <= 0.0) {
             fVar42 = 0.0;
           }
-          fVar42 = (float)Walaber::Curve::evaluate const(fVar42,*(undefined8 *)(uVar18 + 0x338));
+          fVar42 = (float)Walaber::Curve::evaluate(fVar42,*(undefined8 *)(uVar18 + 0x338));
           fVar42 = *(float *)(uVar18 + 0x4b0) * (fVar42 + -1.0 + 1.0);
           *(float *)(lVar19 + 0x15c) = fVar42;
           *(float *)(lVar19 + 0x158) = fVar42;
@@ -6636,7 +6636,7 @@ LAB_0054d8f8:
         puVar26 = (undefined8 *)(uVar18 + 0x3c8);
         *(ulong *)(uVar18 + 0x3c8) =
              CONCAT44((float)((ulong)uVar35 >> 0x20) * fVar46,(float)uVar35 * fVar46);
-        fVar42 = (float)Walaber::Curve::evaluate const(fVar42,*(undefined8 *)(uVar18 + 0x338));
+        fVar42 = (float)Walaber::Curve::evaluate(fVar42,*(undefined8 *)(uVar18 + 0x338));
         uVar35 = *(undefined8 *)(uVar18 + 0x3dc);
         fVar42 = (fVar42 + -1.0) * 0.5;
         uVar35 = CONCAT44((float)((ulong)uVar35 >> 0x20) * (1.0 - fVar42) * fVar46,
@@ -6957,7 +6957,7 @@ LAB_0054f4b4:
         if (fVar45 <= 0.0) {
           fVar42 = 0.0;
         }
-        fVar42 = (float)Walaber::Curve::evaluate const(fVar42,*(undefined8 *)(uVar18 + 0x338));
+        fVar42 = (float)Walaber::Curve::evaluate(fVar42,*(undefined8 *)(uVar18 + 0x338));
         fVar42 = *(float *)(uVar18 + 0x594) * (fVar42 + -1.0 + 1.0);
         *(float *)(lVar19 + 0x15c) = fVar42;
         *(float *)(lVar19 + 0x158) = fVar42;
@@ -7070,7 +7070,7 @@ LAB_0054f4b4:
       uVar35 = 0;
       goto LAB_0054d0d4;
     }
-    fVar42 = (float)Walaber::Curve::evaluate const(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
+    fVar42 = (float)Walaber::Curve::evaluate(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
     *(float *)(uVar18 + 0x450) = fVar42 + 0.0;
     *(float *)(uVar18 + 0x454) = fVar42 + 0.0;
     plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x1f6);
@@ -7093,7 +7093,7 @@ LAB_0054bcbc:
     fVar42 = *(float *)(uVar18 + 0x348) + fVar37;
     *(float *)(uVar18 + 0x348) = fVar42;
     if (fVar42 < 0.5) {
-      fVar42 = (float)Walaber::Curve::evaluate const(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
+      fVar42 = (float)Walaber::Curve::evaluate(fVar42 + fVar42,*(undefined8 *)(uVar18 + 0x318));
       *(float *)(uVar18 + 0x450) = 1.0 - fVar42;
       *(float *)(uVar18 + 0x454) = 1.0 - fVar42;
       plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x1f6);
@@ -7702,7 +7702,7 @@ LAB_0054e02c:
           fVar46 = DAT_0072d884 * 0.0;
           fVar37 = Walaber::ScreenCoord::sScreenSize + 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),500);
-          fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x440);
           fVar45 = (float)((ulong)*(undefined8 *)(uVar18 + 0x440) >> 0x20);
@@ -7716,7 +7716,7 @@ LAB_0054e02c:
           fVar37 = DAT_0072d884 * 0.0;
           fVar42 = Walaber::ScreenCoord::sScreenSize + 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x1f5);
-          fVar45 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar45 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x448);
           fVar46 = (float)((ulong)*(undefined8 *)(uVar18 + 0x448) >> 0x20);
@@ -7732,7 +7732,7 @@ LAB_0054e02c:
         fVar47 = *(float *)(uVar18 + 0x404);
         plVar24 = (long *)Walaber::WidgetManager::getWidget(CONCAT44(fVar45,fVar37 + 0.0),
                                           *(undefined8 *)(uVar18 + 0x10),0);
-        fVar42 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+        fVar42 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                         *(undefined8 *)(uVar18 + 0x318));
         fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x400);
         fVar46 = (float)((ulong)*(undefined8 *)(uVar18 + 0x400) >> 0x20);
@@ -7746,7 +7746,7 @@ LAB_0054e02c:
         fVar45 = Walaber::ScreenCoord::sScreenSize * 1.5;
         fVar46 = DAT_0072d884 * 0.0;
         plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),1);
-        fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+        fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                         *(undefined8 *)(uVar18 + 0x318));
         fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x408);
         fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x408) >> 0x20);
@@ -7774,7 +7774,7 @@ LAB_0054e02c:
                                             *(undefined8 *)(uVar18 + 0x10),2);
           fVar47 = *(float *)(uVar18 + 0x400);
           fVar45 = *(float *)(uVar18 + 0x414);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = fVar47 + (((0.0 - fVar46) + 0.0) - fVar47) * fVar37;
           fVar45 = fVar45 + ((fVar41 + fVar42) - fVar45) * fVar37;
@@ -7786,7 +7786,7 @@ LAB_0054e02c:
           fVar45 = Walaber::ScreenCoord::sScreenSize * 1.5;
           fVar46 = DAT_0072d884 * 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x456);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x418);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x418) >> 0x20);
@@ -7800,7 +7800,7 @@ LAB_0054e02c:
           fVar46 = *(float *)(uVar18 + 0x55c) + DAT_0072d884 * 0.0 + 0.0;
           uVar48 = CONCAT44(fVar46,fVar45);
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x457);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x558);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x558) >> 0x20);
@@ -7811,14 +7811,14 @@ LAB_0054e02c:
           uStack_199 = (undefined1)((uint)fVar42 >> 0x18);
           (**(code **)(*plVar24 + 0x10))(plVar24,&fStack_1a0);
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x458);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           uVar35 = *(undefined8 *)(uVar18 + 0x558);
         }
         else {
           uVar48 = *(undefined8 *)(uVar18 + 0x438);
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),2);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           uVar35 = *(undefined8 *)(uVar18 + 0x410);
         }
@@ -7834,7 +7834,7 @@ LAB_0054e02c:
           fVar45 = Walaber::ScreenCoord::sScreenSize * 1.5;
           fVar46 = DAT_0072d884 * 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),3);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x418);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x418) >> 0x20);
@@ -7851,7 +7851,7 @@ LAB_0054e02c:
           fVar42 = DAT_0072d884 * 0.0 + 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(CONCAT44(fVar42,fVar46 + 0.0),
                                             *(undefined8 *)(uVar18 + 0x10),0x122);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x428);
           fVar45 = (float)((ulong)*(undefined8 *)(uVar18 + 0x428) >> 0x20);
@@ -7865,7 +7865,7 @@ LAB_0054e02c:
           fVar45 = Walaber::ScreenCoord::sScreenSize * 1.5;
           fVar46 = DAT_0072d884 * 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x123);
-          fVar37 = (float)Walaber::Curve::evaluate const(*(float *)(uVar18 + 0x348) * 4.0,
+          fVar37 = (float)Walaber::Curve::evaluate(*(float *)(uVar18 + 0x348) * 4.0,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x430);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x430) >> 0x20);
@@ -7945,7 +7945,7 @@ LAB_0054e02c:
           fVar45 = Walaber::ScreenCoord::sScreenSize * 1.75;
           fVar46 = DAT_0072d884 * 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x18);
-          fVar37 = (float)Walaber::Curve::evaluate const((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
+          fVar37 = (float)Walaber::Curve::evaluate((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x3f0);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x3f0) >> 0x20);
@@ -7960,7 +7960,7 @@ LAB_0054e02c:
           fVar42 = Walaber::ScreenCoord::sScreenSize * -0.75;
           fVar45 = DAT_0072d884 * 0.0;
           plVar24 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar18 + 0x10),0x18);
-          fVar37 = (float)Walaber::Curve::evaluate const((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
+          fVar37 = (float)Walaber::Curve::evaluate((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = *(float *)(uVar18 + 0x3f0) +
                        fVar37 * ((fVar42 + 0.0 + 0.0) - *(float *)(uVar18 + 0x3f0));
@@ -7975,7 +7975,7 @@ LAB_0054e02c:
           fVar47 = *(float *)(uVar18 + 0x3f8);
           fVar45 = Walaber::ScreenCoord::sScreenSize * 0.0;
           fVar46 = DAT_0072d884 * 1.05;
-          fVar37 = (float)Walaber::Curve::evaluate const((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
+          fVar37 = (float)Walaber::Curve::evaluate((*(float *)(uVar18 + 0x348) + -0.25) / 0.1,
                                           *(undefined8 *)(uVar18 + 0x318));
           fStack_1a0 = (float)*(undefined8 *)(uVar18 + 0x3f8);
           fVar42 = (float)((ulong)*(undefined8 *)(uVar18 + 0x3f8) >> 0x20);
@@ -8238,7 +8238,7 @@ LAB_0054e02c:
     }
     if (uVar20 == 0) {
                     /* try { // try from 0054f308 to 0054f327 has its CatchHandler @ 0054fa64 */
-      iVar12 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+      iVar12 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                &DAT_0063306f,0);
       lVar19 = (long)GameSettings::currentLevelIndex;
       if (iVar12 != 0) goto LAB_0054f338;
@@ -11006,7 +11006,7 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
         uStack_df = 0x4449;
         uStack_dd = 0;
                     /* try { // try from 005533ac to 005533b7 has its CatchHandler @ 00554860 */
-        uVar12 = Walaber::PropertyList::keyExists const(in_x1 + 0x10,&bStack_e0);
+        uVar12 = Walaber::PropertyList::keyExists(in_x1 + 0x10,&bStack_e0);
         if ((bStack_e0 & 1) != 0) {
           operator delete(apvStack_d0[0]);
         }
@@ -11027,8 +11027,8 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
           uStack_df = 0x4449;
           uStack_dd = 0;
                     /* try { // try from 005533ec to 005533fb has its CatchHandler @ 00554844 */
-          Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-          iVar8 = Walaber::Property::asInt const();
+          Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+          iVar8 = Walaber::Property::asInt();
           if ((bStack_e0 & 1) != 0) {
             operator delete(apvStack_d0[0]);
           }
@@ -11054,7 +11054,7 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
         uStack_df = 0x4449;
         uStack_dd = 0;
                     /* try { // try from 00553670 to 0055367b has its CatchHandler @ 0055485c */
-        uVar12 = Walaber::PropertyList::keyExists const(in_x1 + 0x10,&bStack_e0);
+        uVar12 = Walaber::PropertyList::keyExists(in_x1 + 0x10,&bStack_e0);
         if ((bStack_e0 & 1) != 0) {
           operator delete(apvStack_d0[0]);
         }
@@ -11075,8 +11075,8 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
           uStack_df = 0x4449;
           uStack_dd = 0;
                     /* try { // try from 005536b0 to 005536bf has its CatchHandler @ 00554840 */
-          Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-          iVar8 = Walaber::Property::asInt const();
+          Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+          iVar8 = Walaber::Property::asInt();
           if ((bStack_e0 & 1) != 0) {
             operator delete(apvStack_d0[0]);
           }
@@ -11107,8 +11107,8 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
           uStack_d9 = 0x65;
           uStack_d8 = 99;
                     /* try { // try from 00552e68 to 00552e73 has its CatchHandler @ 00554868 */
-          Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-          iVar8 = Walaber::Property::asInt const();
+          Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+          iVar8 = Walaber::Property::asInt();
           if ((bStack_e0 & 1) != 0) {
             operator delete(apvStack_d0[0]);
           }
@@ -11196,8 +11196,8 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
         uStack_d8 = 100;
         uStack_d5 = 0;
                     /* try { // try from 00553470 to 0055347b has its CatchHandler @ 0055487c */
-        Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-        iVar8 = Walaber::Property::asInt const();
+        Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+        iVar8 = Walaber::Property::asInt();
         if ((bStack_e0 & 1) != 0) {
           operator delete(apvStack_d0[0]);
         }
@@ -11336,7 +11336,7 @@ LAB_00553cc4:
       uStack_d9 = 0x44;
       uStack_d8 = 0;
                     /* try { // try from 00553134 to 0055313f has its CatchHandler @ 00554678 */
-      uVar12 = Walaber::PropertyList::keyExists const(lVar17,&bStack_e0);
+      uVar12 = Walaber::PropertyList::keyExists(lVar17,&bStack_e0);
       if ((bStack_e0 & 1) != 0) {
         operator delete(apvStack_d0[0]);
       }
@@ -11349,8 +11349,8 @@ LAB_00553cc4:
         uStack_139 = 0x44;
         uStack_138 = 0;
                     /* try { // try from 0055317c to 0055318f has its CatchHandler @ 00554664 */
-        Walaber::PropertyList::operator[] const(lVar17,&bStack_140);
-        Walaber::Property::asString const(&bStack_e0);
+        Walaber::PropertyList::operator[](lVar17,&bStack_140);
+        Walaber::Property::asString(&bStack_e0);
         uStack_118 = CONCAT17(uStack_d1,
                               CONCAT16(uStack_d2,
                                        CONCAT15(uStack_d3,
@@ -11401,7 +11401,7 @@ LAB_00553cc4:
       uStack_db = 0x65;
       uStack_da = 0;
                     /* try { // try from 005531dc to 005531e7 has its CatchHandler @ 00554660 */
-      uVar12 = Walaber::PropertyList::keyExists const(lVar17,&bStack_e0);
+      uVar12 = Walaber::PropertyList::keyExists(lVar17,&bStack_e0);
       if ((bStack_e0 & 1) != 0) {
         operator delete(apvStack_d0[0]);
       }
@@ -11414,8 +11414,8 @@ LAB_00553cc4:
         uStack_13f = 0x63697270;
         uStack_13b = 0x65;
                     /* try { // try from 00553224 to 00553237 has its CatchHandler @ 0055465c */
-        Walaber::PropertyList::operator[] const(lVar17,&bStack_140);
-        Walaber::Property::asString const(&bStack_e0);
+        Walaber::PropertyList::operator[](lVar17,&bStack_140);
+        Walaber::Property::asString(&bStack_e0);
         uStack_f3 = uStack_d3;
         uStack_f8 = uStack_d8;
         uStack_f9 = uStack_d9;
@@ -11623,8 +11623,8 @@ LAB_00553cc4:
       uStack_1a0 = 0x7302;
       uStack_1e8 = 0x65636972700a;
                     /* try { // try from 0055403c to 00554053 has its CatchHandler @ 005547f8 */
-      Walaber::PropertyList::operator[] const(lVar17,&uStack_1e8);
-      Walaber::Property::asString const(&uStack_1d0);
+      Walaber::PropertyList::operator[](lVar17,&uStack_1e8);
+      Walaber::Property::asString(&uStack_1d0);
       uStack_1b0 = 0;
       uStack_1af = 0;
       uStack_1ad = 0;
@@ -11639,7 +11639,7 @@ LAB_00553cc4:
       uVar12 = strlen(pvVar13);
       if (0xffffffffffffffef < uVar12) {
                     /* try { // try from 0055441c to 00554423 has its CatchHandler @ 00554424 */
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_1b8);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_1b8);
         return;
       }
       if (uVar12 < 0x17) {
@@ -11761,7 +11761,7 @@ LAB_005540c4:
                     /* try { // try from 0055431c to 00554357 has its CatchHandler @ 005546cc */
         uVar11 = Walaber::FontManager::getFont(uVar11,&bStack_220);
         fVar25 = (21.0 / fVar27) * 0.9 * fVar25;
-        Walaber::BitmapFont::wrapString const(&uStack_1a0,fVar25,fVar26 * fVar5,uVar11,&bStack_e0);
+        Walaber::BitmapFont::wrapString(&uStack_1a0,fVar25,fVar26 * fVar5,uVar11,&bStack_e0);
         if ((bStack_220 & 1) != 0) {
           operator delete(pvStack_210);
         }
@@ -11823,8 +11823,8 @@ LAB_00553380:
       uStack_d9 = 0x4c;
       uStack_d8 = 0x69;
                     /* try { // try from 00552fbc to 00552fcb has its CatchHandler @ 00554890 */
-      Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-      iVar8 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+      iVar8 = Walaber::Property::asInt();
       if ((bStack_e0 & 1) != 0) {
         operator delete(apvStack_d0[0]);
       }
@@ -11844,8 +11844,8 @@ LAB_00553380:
       uStack_d9 = 0x6b;
       uStack_d8 = 0x65;
                     /* try { // try from 00553008 to 00553017 has its CatchHandler @ 00554880 */
-      Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-      iVar9 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+      iVar9 = Walaber::Property::asInt();
       cVar6 = iVar9 == 1;
       p0[0x36].field_0x9 = cVar6;
       if ((bStack_e0 & 1) != 0) {
@@ -11907,8 +11907,8 @@ LAB_005537d8:
     uStack_d8 = 99;
     uStack_d1 = 0;
                     /* try { // try from 00553618 to 00553623 has its CatchHandler @ 00554888 */
-    Walaber::PropertyList::getValueForKey const(in_x1 + 0x10,&bStack_e0);
-    iVar8 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(in_x1 + 0x10,&bStack_e0);
+    iVar8 = Walaber::Property::asInt();
     if ((bStack_e0 & 1) != 0) {
       operator delete(apvStack_d0[0]);
     }
@@ -12061,8 +12061,8 @@ LAB_00553a00:
       uStack_d9 = 100;
       uStack_d8 = 0;
                     /* try { // try from 00553758 to 00553763 has its CatchHandler @ 00554884 */
-      Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-      iVar8 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+      iVar8 = Walaber::Property::asInt();
       if ((bStack_e0 & 1) != 0) {
         operator delete(apvStack_d0[0]);
       }
@@ -12131,8 +12131,8 @@ joined_r0x005537d0:
       uStack_d8 = 0x66;
       uStack_d5 = 0;
                     /* try { // try from 005532d8 to 005532e3 has its CatchHandler @ 0055488c */
-      Walaber::PropertyList::operator[] const(in_x1 + 0x10,&bStack_e0);
-      iVar8 = Walaber::Property::asInt const();
+      Walaber::PropertyList::operator[](in_x1 + 0x10,&bStack_e0);
+      iVar8 = Walaber::Property::asInt();
       if ((bStack_e0 & 1) != 0) {
         operator delete(apvStack_d0[0]);
       }
@@ -12432,7 +12432,7 @@ void WaterConcept::Screen_Popup::_wrapLikeText(long param_1)
                     /* try { // try from 00554a0c to 00554a13 has its CatchHandler @ 00554ae0 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_b8,lVar2 + 0x168);
                     /* try { // try from 00554a34 to 00554a4b has its CatchHandler @ 00554ac8 */
-    Walaber::BitmapFont::wrapStringInSize const(&bStack_88,(18.9 / fVar7) * fVar6,uVar3,&uStack_6c,abStack_b8,&uStack_50);
+    Walaber::BitmapFont::wrapStringInSize(&bStack_88,(18.9 / fVar7) * fVar6,uVar3,&uStack_6c,abStack_b8,&uStack_50);
     if ((abStack_b8[0] & 1) != 0) {
       operator delete(pvStack_a8);
     }
@@ -12928,7 +12928,7 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
     }
                     /* try { // try from 00554da0 to 00554dbf has its CatchHandler @ 00559204 */
     if ((uVar19 == 0) &&
-       (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+       (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 &DAT_0063306f,0), iVar8 == 0)) {
       plVar11 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
       (**(code **)(*plVar11 + 0x60))(plVar11,0);
@@ -12966,7 +12966,7 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
       }
                     /* try { // try from 00554e40 to 00554e5f has its CatchHandler @ 00559180 */
       if ((uVar19 == 6) &&
-         (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelName,0,0xffffffffffffffff,"LN_JC3",6),
+         (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelName,0,0xffffffffffffffff,"LN_JC3",6),
          iVar8 == 0)) {
         lVar12 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
         pvStack_170 = (void *)0x0;
@@ -13262,7 +13262,7 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
         }
         if (uVar19 == 0xf) {
                     /* try { // try from 005550f0 to 00555113 has its CatchHandler @ 00558c78 */
-          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_CRANKY",0xf);
           if (iVar8 == 0) {
             lVar12 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
@@ -13295,7 +13295,7 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
         }
         if (uVar19 == 0xe) {
                     /* try { // try from 00555140 to 00555163 has its CatchHandler @ 00558c48 */
-          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS_ALLIE",0xe);
           if (iVar8 == 0) {
             lVar12 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
@@ -13328,7 +13328,7 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
         }
         if (uVar19 == 8) {
                     /* try { // try from 00555188 to 005551ab has its CatchHandler @ 00558c20 */
-          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+          iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                   "LP_BONUS",8);
           if (iVar8 != 0) {
             uVar31 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -13342,7 +13342,7 @@ LAB_005551c0:
           }
                     /* try { // try from 005551d0 to 005551ef has its CatchHandler @ 00558bf8 */
           if ((uVar31 != 0x10) ||
-             (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+             (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                       "LP_BONUS_FRANKEN",0x10), iVar8 != 0)) {
             lVar12 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),1);
             pvStack_330 = (void *)0x0;
@@ -14546,7 +14546,7 @@ LAB_005560e8:
         piVar20 = (int *)strlen(&fStack_150);
         if ((int *)0xffffffffffffffef < piVar20) {
                     /* try { // try from 00558bd8 to 00558bdf has its CatchHandler @ 00558f90 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_4d0);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_4d0);
           return;
         }
         if ((int *)((long)&Elf64_Ehdr_00000000.e_version + 2) < piVar20) {
@@ -14642,7 +14642,7 @@ LAB_005570c0:
                     /* try { // try from 00557284 to 005572bf has its CatchHandler @ 00559604 */
       uVar28 = Walaber::FontManager::getFont(uVar28,&bStack_570);
       fVar35 = (21.0 / fVar36) * 0.9 * fVar35;
-      Walaber::BitmapFont::wrapString const(&bStack_490,fVar35,fVar37 * fVar34,uVar28,&bStack_470);
+      Walaber::BitmapFont::wrapString(&bStack_490,fVar35,fVar37 * fVar34,uVar28,&bStack_470);
       if ((bStack_570 & 1) != 0) {
         operator delete(pvStack_560);
       }
@@ -15079,7 +15079,7 @@ LAB_005570c0:
     }
                     /* try { // try from 00557a94 to 00557ab3 has its CatchHandler @ 00559200 */
     if ((uVar19 == 0) &&
-       (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::themeSuffix,0,0xffffffffffffffff,&DAT_0063306f,0),
+       (iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::themeSuffix,0,0xffffffffffffffff,&DAT_0063306f,0),
        iVar8 == 0)) {
 LAB_00557c1c:
       iVar8 = *(int *)((long)p0 + 0x30c);
@@ -15864,7 +15864,7 @@ void WaterConcept::Screen_Popup::_curveLoadCallback(void *p0)
   }
   if (uVar1 == 0x17) {
                     /* try { // try from 00559874 to 0055988f has its CatchHandler @ 00559960 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const();
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare();
     if (iVar3 != 0) {
       bVar2 = *in_x1;
       uVar4 = *(ulong *)(in_x1 + 8);
@@ -15880,7 +15880,7 @@ LAB_005598ac:
     }
     if (uVar1 == 0x14) {
                     /* try { // try from 005598bc to 005598d7 has its CatchHandler @ 0055995c */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const();
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare();
       if (iVar3 == 0) goto LAB_0055991c;
       bVar2 = *in_x1;
       uVar4 = *(ulong *)(in_x1 + 8);
@@ -15890,7 +15890,7 @@ LAB_005598ac:
       uVar6 = uVar4;
     }
                     /* try { // try from 005598fc to 00559917 has its CatchHandler @ 00559958 */
-    if ((uVar6 != 0x22) || (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar3 != 0)) goto LAB_00559928;
+    if ((uVar6 != 0x22) || (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar3 != 0)) goto LAB_00559928;
   }
 LAB_0055991c:
   *(int *)((long)p0 + 0x458) = *(int *)((long)p0 + 0x458) + 1;
@@ -16379,7 +16379,7 @@ void WaterConcept::Screen_Popup::_logoTextureExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 0055a3e8 to 0055a3ef has its CatchHandler @ 0055a4d8 */
-    lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }
@@ -16451,7 +16451,7 @@ void WaterConcept::Screen_Popup::backKeyPressed(long param_1)
     }
                     /* try { // try from 0055a624 to 0055a643 has its CatchHandler @ 0055a818 */
     if ((uVar1 == 6) &&
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelName,0,0xffffffffffffffff,"LN_JC3",6),
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelName,0,0xffffffffffffffff,"LN_JC3",6),
        iVar3 == 0)) {
       uVar4 = 0x10;
     }
@@ -16463,7 +16463,7 @@ void WaterConcept::Screen_Popup::backKeyPressed(long param_1)
       }
       if (uVar1 == 0xe) {
                     /* try { // try from 0055a67c to 0055a69f has its CatchHandler @ 0055a814 */
-        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_ALLIE",0xe);
         if (iVar3 == 0) {
           uVar4 = 0x22;
@@ -16477,7 +16477,7 @@ void WaterConcept::Screen_Popup::backKeyPressed(long param_1)
       }
       if (uVar1 == 0xf) {
                     /* try { // try from 0055a6d4 to 0055a6f7 has its CatchHandler @ 0055a810 */
-        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                 "LP_BONUS_CRANKY",0xf);
         if (iVar3 == 0) {
           uVar4 = 0x18;
@@ -16491,7 +16491,7 @@ void WaterConcept::Screen_Popup::backKeyPressed(long param_1)
       }
       if (uVar1 == 8) {
                     /* try { // try from 0055a71c to 0055a73f has its CatchHandler @ 0055a80c */
-        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_BONUS",
+        iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,"LP_BONUS",
                                 8);
         if (iVar3 != 0) {
           uVar5 = (ulong)(GameSettings::currentLevelPackName >> 1);
@@ -16505,7 +16505,7 @@ LAB_0055a754:
         }
                     /* try { // try from 0055a764 to 0055a783 has its CatchHandler @ 0055a808 */
         if ((uVar5 != 0x10) ||
-           (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
+           (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::currentLevelPackName,0,0xffffffffffffffff,
                                     "LP_BONUS_FRANKEN",0x10), iVar3 != 0)) {
           uVar4 = 2;
           goto LAB_0055a7a4;
@@ -16627,7 +16627,7 @@ void WaterConcept::Screen_Popup::_uploadProgressToCloud(void)
   pvStack_e8 = (void *)0x0;
   uVar2 = strlen(auStack_c8);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_f8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_f8);
     return;
   }
   if (uVar2 < 0x17) {

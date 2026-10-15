@@ -146,12 +146,12 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
   uStack_5f = 0x656a624f;
   uStack_59 = 0;
                     /* try { // try from 004cdc54 to 004cdc5f has its CatchHandler @ 004cdf34 */
-  lVar3 = Walaber::PropertyList::getValueForKey const();
+  lVar3 = Walaber::PropertyList::getValueForKey();
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
   if (lVar3 != 0) {
-    Walaber::Property::asString const(&bStack_60,lVar3);
+    Walaber::Property::asString(&bStack_60,lVar3);
     pvVar1 = (void *)((ulong)&bStack_60 | 1);
     if ((bStack_60 & 1) != 0) {
       pvVar1 = pvStack_50;
@@ -161,7 +161,7 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     if ((bStack_60 & 1) != 0) {
       operator delete(pvStack_50);
     }
-    Walaber::Property::asString const(&bStack_60,lVar3);
+    Walaber::Property::asString(&bStack_60,lVar3);
     puVar9 = &p0[6].f_0x10;
     if ((*puVar9 & 1) == 0) {
       *(undefined2 *)puVar9 = 0;
@@ -359,7 +359,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0)
                     /* try { // try from 004ce0c0 to 004ce0cb has its CatchHandler @ 004ce304 */
             Walaber::XMLDocument::AttributeIterator::getValue(auStack_160,alStack_c8);
                     /* try { // try from 004ce0cc to 004ce0d7 has its CatchHandler @ 004ce2ec */
-            Walaber::Property::asString const(&uStack_140,auStack_160);
+            Walaber::Property::asString(&uStack_140,auStack_160);
             pvVar6 = pvStack_118;
             uVar5 = uStack_120;
             uVar4 = uStack_128;

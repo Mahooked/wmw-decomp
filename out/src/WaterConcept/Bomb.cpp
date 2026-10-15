@@ -222,7 +222,7 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
     }
     if (uVar1 == 10) {
                     /* try { // try from 004779e0 to 004779fb has its CatchHandler @ 00477cc8 */
-      iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_58,0,0xffffffffffffffff,"BOMB_FLASH",10);
+      iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_58,0,0xffffffffffffffff,"BOMB_FLASH",10);
       bVar4 = iVar5 == 0;
     }
     else {
@@ -306,7 +306,7 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
       }
       if (uVar1 == 0xc) {
                     /* try { // try from 00477bb0 to 00477bcb has its CatchHandler @ 00477c74 */
-        iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_58,0,0xffffffffffffffff,"BOMB_EXPLODE",0xc);
+        iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_58,0,0xffffffffffffffff,"BOMB_EXPLODE",0xc);
         bVar4 = iVar5 == 0;
       }
       else {
@@ -361,15 +361,15 @@ void WaterConcept::Bomb::setProperties(Walaber__PropertyList *p0)
   lVar3 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 00477d90 to 00477d9b has its CatchHandler @ 00477e48 */
-  lVar2 = Walaber::PropertyList::getValueForKey const();
+  lVar2 = Walaber::PropertyList::getValueForKey();
   if (lVar2 != 0) {
-    uVar4 = Walaber::Property::asFloat const(lVar2);
+    uVar4 = Walaber::Property::asFloat(lVar2);
     *(undefined4 *)&p0[0x28].f_0x10 = uVar4;
   }
                     /* try { // try from 00477dec to 00477df7 has its CatchHandler @ 00477e44 */
-  lVar2 = Walaber::PropertyList::getValueForKey const();
+  lVar2 = Walaber::PropertyList::getValueForKey();
   if (lVar2 != 0) {
-    uVar4 = Walaber::Property::asFloat const(lVar2);
+    uVar4 = Walaber::Property::asFloat(lVar2);
     *(undefined4 *)((long)&p0[0x28].f_0x8 + 4) = uVar4;
   }
   if (*(long *)(lVar1 + 0x28) != lVar3) {

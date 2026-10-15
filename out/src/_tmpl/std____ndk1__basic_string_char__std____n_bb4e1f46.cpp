@@ -64,7 +64,7 @@ char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
     uStack_58 = 0;
     pcStack_50 = (char *)0x0;
     if (0xffffffffffffffef < uVar4) {
-      pcVar5 = (char *)std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_60);
+      pcVar5 = (char *)std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_60);
       return pcVar5;
     }
     if (uVar4 < 0x17) {

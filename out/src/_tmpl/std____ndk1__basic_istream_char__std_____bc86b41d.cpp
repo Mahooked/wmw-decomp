@@ -56,9 +56,9 @@ long * std::__ndk1::operator>>(long *param_1,byte *param_2)
       lVar6 = lVar5;
     }
                     /* try { // try from 00403000 to 00403007 has its CatchHandler @ 00403160 */
-    std::__ndk1::ios_base::getloc const(auStack_68);
+    std::__ndk1::ios_base::getloc(auStack_68);
                     /* try { // try from 00403008 to 00403017 has its CatchHandler @ 00403150 */
-    lVar5 = std::__ndk1::locale::use_facet const(auStack_68,&ctype<char>::id);
+    lVar5 = std::__ndk1::locale::use_facet(auStack_68,&ctype<char>::id);
     std::__ndk1::locale::~locale(auStack_68);
     if (lVar6 < 1) {
       lVar7 = 0;

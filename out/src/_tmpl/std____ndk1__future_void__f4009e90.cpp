@@ -37,7 +37,7 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
     puStack_48 = &DAT_007a5f08;
     uStack_50 = 1;
                     /* try { // try from 005f1318 to 005f1323 has its CatchHandler @ 005f1394 */
-    std::__ndk1::error_code::message const(abStack_68,&uStack_50);
+    std::__ndk1::error_code::message(abStack_68,&uStack_50);
                     /* try { // try from 005f1324 to 005f132f has its CatchHandler @ 005f137c */
     std::logic_error::logic_error(puVar3,abStack_68);
     if ((abStack_68[0] & 1) != 0) {

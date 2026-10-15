@@ -335,7 +335,7 @@ void Walaber::DatabaseManager::constructInsertQuery
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032b440 to 0032b45b has its CatchHandler @ 0032b694 */
-    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
+    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
     if (iVar5 == 0) goto LAB_0032b564;
     bVar2 = *param_3;
     uVar8 = *(ulong *)(param_3 + 8);
@@ -795,7 +795,7 @@ void Walaber::DatabaseManager::constructUpdateQuery
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032bbac to 0032bbc7 has its CatchHandler @ 0032bca0 */
-    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_4,0,0xffffffffffffffff,&DAT_0063306f,0);
+    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_4,0,0xffffffffffffffff,&DAT_0063306f,0);
     if (iVar5 == 0) goto LAB_0032bc78;
     bVar2 = *param_4;
     uVar8 = *(ulong *)(param_4 + 8);
@@ -937,7 +937,7 @@ ulong Walaber::DatabaseManager::incrementValue
   uVar4 = strlen(auStack_60);
   if (0xffffffffffffffef < uVar4) {
                     /* try { // try from 0032bf1c to 0032bf23 has its CatchHandler @ 0032bf24 */
-    uVar4 = std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_b0);
+    uVar4 = std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_b0);
     return uVar4;
   }
   if (uVar4 < 0x17) {
@@ -1276,7 +1276,7 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
   uStack_ac = 0x73616261;
   bStack_a8 = 0x65;
                     /* try { // try from 0032c430 to 0032c437 has its CatchHandler @ 0032cb04 */
-  uVar6 = Walaber::PropertyList::keyExists const(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
+  uVar6 = Walaber::PropertyList::keyExists(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
@@ -1291,8 +1291,8 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
     uStack_ac = 0x73616261;
     bStack_a8 = 0x65;
                     /* try { // try from 0032c474 to 0032c47f has its CatchHandler @ 0032cb00 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)((long)p0 + 0x60),&uStack_b0);
+    iVar4 = Walaber::Property::asInt();
     if ((uStack_b0 & 1) != 0) {
       operator delete(pvStack_a0);
     }
@@ -1327,7 +1327,7 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
   pvStack_f0 = (void *)0x0;
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0032cad0 to 0032cad7 has its CatchHandler @ 0032cadc */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_100);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_100);
     return;
   }
   if (uVar6 < 0x17) {
@@ -1402,7 +1402,7 @@ LAB_0032c6b8:
         uVar6 = strlen();
         if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0032cac4 to 0032cacb has its CatchHandler @ 0032cad8 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_138);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_138);
           return;
         }
         if (uVar6 < 0x17) {
@@ -1784,7 +1784,7 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
   }
   if (uVar1 == 0) {
                     /* try { // try from 0032ce2c to 0032ce47 has its CatchHandler @ 0032cf20 */
-    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
+    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_3,0,0xffffffffffffffff,&DAT_0063306f,0);
     if (iVar5 == 0) goto LAB_0032cef8;
     bVar2 = *param_3;
     uVar8 = *(ulong *)(param_3 + 8);

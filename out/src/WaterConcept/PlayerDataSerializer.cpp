@@ -525,7 +525,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
     }
                     /* try { // try from 004359a8 to 004359bf has its CatchHandler @ 00435ca0 */
     if ((uVar14 != 0x11) ||
-       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_d0,0,0xffffffffffffffff,"LN_LOADING_SCREEN",0x11),
+       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_d0,0,0xffffffffffffffff,"LN_LOADING_SCREEN",0x11),
        iVar5 != 0)) {
                     /* try { // try from 004359c4 to 004359d3 has its CatchHandler @ 00435cc0 */
       Walaber::DatabaseIterator::getStringAtIndex(&pbStack_f0,&uStack_110,6);
@@ -5596,7 +5596,7 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
     }
                     /* try { // try from 0043c4cc to 0043c4e7 has its CatchHandler @ 0043c590 */
     if ((uVar1 == 3) &&
-       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,&DAT_00636699,3), iVar3 == 0)) {
+       (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,&DAT_00636699,3), iVar3 == 0)) {
       *param_3 = 0x10;
                     /* try { // try from 0043c544 to 0043c55b has its CatchHandler @ 0043c574 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2,3,0xffffffffffffffff,param_2);

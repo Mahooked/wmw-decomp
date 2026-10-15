@@ -67,9 +67,9 @@ do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long par
     p0_01 = (undefined1 *)0x0;
 LAB_005cb4b8:
                     /* try { // try from 005cb4b8 to 005cb4c7 has its CatchHandler @ 005cb7b8 */
-    std::__ndk1::ios_base::getloc const(&uStack_1b0,param_5);
+    std::__ndk1::ios_base::getloc(&uStack_1b0,param_5);
                     /* try { // try from 005cb4c8 to 005cb4f3 has its CatchHandler @ 005cb7fc */
-    plVar6 = (long *)std::__ndk1::locale::use_facet const(&uStack_1b0,&ctype<char>::id);
+    plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_1b0,&ctype<char>::id);
     (**(code **)(*plVar6 + 0x40))(plVar6,pcStack_1a8,pcStack_1a8 + lVar11,puVar5);
     if (lVar11 == 0) {
       bVar2 = false;
@@ -255,9 +255,9 @@ do_put(undefined8 param_1,undefined8 param_2,uint param_3,long param_4,undefined
   
   lVar3 = tpidr_el0;
   lStack_70 = *(long *)(lVar3 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_e0,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_e0,param_4);
                     /* try { // try from 005cc04c to 005cc05b has its CatchHandler @ 005cc2e4 */
-  plVar6 = (long *)std::__ndk1::locale::use_facet const(&uStack_e0,&ctype<char>::id);
+  plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_e0,&ctype<char>::id);
   bVar2 = *param_6;
   uVar1 = (ulong)(bVar2 >> 1);
   if ((bVar2 & 1) != 0) {

@@ -127,7 +127,7 @@ void std::__ndk1::system_error::system_error
   }
   uVar2 = param_4[1];
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_90);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_90);
     return;
   }
   uVar3 = param_4[2];
@@ -201,7 +201,7 @@ void std::__ndk1::system_error::system_error
   uStack_50 = param_3;
   uVar2 = strlen(param_4);
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_88);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_88);
     return;
   }
   if (uVar2 < 0x17) {
@@ -330,7 +330,7 @@ void std::__ndk1::system_error::system_error
   }
   uVar2 = param_4[1];
   if (0xffffffffffffffef < uVar2) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a0);
     return;
   }
   uVar3 = param_4[2];
@@ -405,7 +405,7 @@ void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category 
   pcStack_78 = p2;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_98);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_98);
     return;
   }
   if (uVar3 < 0x17) {

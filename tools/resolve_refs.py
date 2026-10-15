@@ -77,6 +77,11 @@ _LDR_MASK, _LDR_OP = 0xFFC00000, 0xF9400000
 
 _PLACEHOLDER = re.compile(r"\b(?:FUN_([0-9a-fA-F]{8})|func_0x([0-9a-fA-F]+))\b")
 
+#: ``signature().name`` keeps the member's cv-/ref-qualifiers
+#: (``Walaber::Property::asString const``); a *callee* name must not.
+_QUALIFIER = re.compile(
+    r"\s+(?:const|volatile)(?:\s+(?:const|volatile))?(?:\s*&&?)?$")
+
 _HEADER_OLD = "   ELF symbol table in out/symbols/functions.tsv */"
 _HEADER_NEW = (
     "   ELF symbol table in out/symbols/functions.tsv; call targets\n"
@@ -94,7 +99,7 @@ def _qualified(mangled: str) -> str:
     if sig is not None and sig.name:
         if sig.name.startswith("raw:"):
             return name
-        return sig.name
+        return _QUALIFIER.sub("", sig.name)
     return name
 
 
@@ -156,23 +161,62 @@ def _placeholder_addrs(text: str):
         yield int(m.group(1) or m.group(2), 16)
 
 
-def rewrite_file(path: str, names: dict) -> int:
+def _replace_name(text: str, old: str, new: str) -> str:
+    """Replace a previously-written callee name ``old`` with ``new``.
+
+    Anchored so a name is never matched inside a longer identifier.
+    """
+    return re.sub(r"(?<![\w])" + re.escape(old) + r"(?![\w])", new, text)
+
+
+def _has_name(text: str, old: str) -> bool:
+    return re.search(r"(?<![\w])" + re.escape(old) + r"(?![\w])", text) is not None
+
+
+def rewrite_file(path: str, names: dict, repairs: dict) -> int:
     text = open(path, encoding="utf-8", errors="replace").read()
+    orig = text
+    for old, new in repairs.items():
+        if old in text:
+            text = _replace_name(text, old, new)
     hits = sum(1 for a in _placeholder_addrs(text) if a in names)
-    if hits == 0:
-        return 0
+    if hits:
+        def sub(m: re.Match) -> str:
+            addr = int(m.group(1) or m.group(2), 16)
+            return names.get(addr, m.group(0))
 
-    def sub(m: re.Match) -> str:
-        addr = int(m.group(1) or m.group(2), 16)
-        return names.get(addr, m.group(0))
-
-    new = _PLACEHOLDER.sub(sub, text)
-    if _HEADER_OLD in new:
-        new = new.replace(_HEADER_OLD, _HEADER_NEW)
-    if new != text:
+        text = _PLACEHOLDER.sub(sub, text)
+    if _HEADER_OLD in text:
+        text = text.replace(_HEADER_OLD, _HEADER_NEW)
+    if text != orig:
         with open(path, "w", encoding="utf-8", newline="") as fh:
-            fh.write(new)
+            fh.write(text)
     return hits
+
+
+def load_repairs(imports_path: str) -> dict:
+    """Names written by an earlier run that the *current* rule renders differently.
+
+    Reading the stored name back and recomputing it from the stable mangled
+    symbol makes the pass self-repairing: fixing the naming rule (as for the
+    trailing cv-qualifier once leaked by ``signature().name``) then repairs
+    every already-rewritten file on the next run, instead of needing a revert.
+    """
+    repairs = {}
+    if not os.path.exists(imports_path):
+        return repairs
+    with open(imports_path, encoding="utf-8", errors="replace") as fh:
+        for line in fh:
+            if line.startswith("#"):
+                continue
+            f = line.rstrip("\n").split("\t")
+            if len(f) < 5:
+                continue
+            mangled, old = f[3], f[4]
+            new = _qualified(mangled)
+            if old and new and old != new:
+                repairs[old] = new
+    return repairs
 
 
 def main(argv=None) -> int:
@@ -198,7 +242,8 @@ def main(argv=None) -> int:
     print("resolvable targets    %6d" % len(names))
 
     if args.check:
-        files = total = unresolved = 0
+        repairs = load_repairs(args.imports_out)
+        files = total = unresolved = stale = 0
         for base, _dirs, fnames in os.walk(args.src):
             for name in fnames:
                 if not name.endswith(".cpp"):
@@ -210,29 +255,37 @@ def main(argv=None) -> int:
                     total += 1
                     if addr in names:
                         unresolved += 1
-        print("check: %d files, %d placeholders, %d resolvable but left"
-              % (files, total, unresolved))
-        if unresolved:
+                for old in repairs:
+                    if _has_name(text, old):
+                        stale += 1
+                        break
+        print("check: %d files, %d placeholders, %d resolvable left, %d files stale"
+              % (files, total, unresolved, stale))
+        if unresolved or stale:
             print("resolve_refs: FAIL", file=sys.stderr)
             return 1
         print("resolve_refs: ok")
         return 0
 
     os.makedirs(os.path.dirname(args.imports_out), exist_ok=True)
+    repairs = load_repairs(args.imports_out)
     with open(args.imports_out, "w", encoding="utf-8", newline="") as fh:
         fh.write("# plt_addr\tgot_slot\tsymidx\tmangled\tname\n")
         for addr, slot, idx, mangled, name in sorted(rows):
             fh.write("0x%x\t0x%x\t%d\t%s\t%s\n" % (addr, slot, idx, mangled, name))
 
-    files = replaced = 0
+    files = replaced = repaired = 0
     for base, _dirs, fnames in os.walk(args.src):
         for name in fnames:
             if not name.endswith(".cpp"):
                 continue
             files += 1
-            replaced += rewrite_file(os.path.join(base, name), names)
+            replaced += rewrite_file(os.path.join(base, name), names, repairs)
+    for old in repairs:
+        repaired += 1
     print("scanned files         %6d" % files)
     print("placeholders replaced %6d" % replaced)
+    print("stale names repaired  %6d" % repaired)
     print("wrote %s" % args.imports_out)
     return 0
 

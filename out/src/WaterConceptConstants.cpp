@@ -33,7 +33,7 @@ ulong WaterConceptConstants::stringToFluidType(void)
   }
   if (uVar3 == 5) {
                     /* try { // try from 0040b844 to 0040b85f has its CatchHandler @ 0040bab0 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"water",5);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"water",5);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_40[0] >> 1);
       goto LAB_0040b87c;
@@ -47,7 +47,7 @@ LAB_0040b87c:
     }
     if (uVar3 == 0x11) {
                     /* try { // try from 0040b88c to 0040b8a7 has its CatchHandler @ 0040baac */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"contaminatedwater",0x11);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"contaminatedwater",0x11);
       if (iVar2 == 0) {
         uVar4 = 3;
         goto LAB_0040ba5c;
@@ -60,7 +60,7 @@ LAB_0040b87c:
     }
     if (uVar3 == 4) {
                     /* try { // try from 0040b8cc to 0040b8e7 has its CatchHandler @ 0040baa8 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_00634ed4,4);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_00634ed4,4);
       if (iVar2 != 0) {
         uVar5 = (ulong)(abStack_40[0] >> 1);
         goto LAB_0040b8fc;
@@ -76,7 +76,7 @@ LAB_0040b8fc:
     }
     if (uVar3 == 4) {
                     /* try { // try from 0040b90c to 0040b927 has its CatchHandler @ 0040baa4 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"ooze",4);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"ooze",4);
       if (iVar2 == 0) goto LAB_0040ba40;
       uVar5 = (ulong)(abStack_40[0] >> 1);
     }
@@ -86,7 +86,7 @@ LAB_0040b8fc:
     }
     if (uVar3 == 5) {
                     /* try { // try from 0040b94c to 0040b967 has its CatchHandler @ 0040baa0 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"steam",5);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"steam",5);
       if (iVar2 == 0) {
         uVar4 = 0;
         goto LAB_0040ba5c;
@@ -99,7 +99,7 @@ LAB_0040b8fc:
     }
     if (uVar3 == 3) {
                     /* try { // try from 0040b98c to 0040b9a7 has its CatchHandler @ 0040ba9c */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_00634ee2,3);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_00634ee2,3);
       if (iVar2 != 0) {
         uVar5 = (ulong)(abStack_40[0] >> 1);
         goto LAB_0040b9bc;
@@ -115,7 +115,7 @@ LAB_0040b9bc:
     }
     if (uVar3 == 6) {
                     /* try { // try from 0040b9cc to 0040b9e7 has its CatchHandler @ 0040ba98 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_00634edf,6);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_00634edf,6);
       if (iVar2 == 0) goto LAB_0040ba50;
       uVar5 = (ulong)(abStack_40[0] >> 1);
     }
@@ -124,7 +124,7 @@ LAB_0040b9bc:
     }
     if (uVar5 == 6) {
                     /* try { // try from 0040ba0c to 0040ba27 has its CatchHandler @ 0040ba94 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"drymud",6);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"drymud",6);
       uVar4 = 1;
       if (iVar2 == 0) {
         uVar4 = 2;
@@ -176,7 +176,7 @@ undefined1  [16] WaterConceptConstants::stringToDryness(void)
   }
   if (uVar5 == 6) {
                     /* try { // try from 0040baf8 to 0040bb13 has its CatchHandler @ 0040bb74 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"drymud",6);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"drymud",6);
     uVar2 = 0x3f800000;
     if (iVar3 != 0) {
       uVar2 = 0;
@@ -235,7 +235,7 @@ ulong WaterConceptConstants::strToStoryline(byte *param_1)
   }
   if (uVar4 == 6) {
                     /* try { // try from 0040bbbc to 0040bbd7 has its CatchHandler @ 0040bd08 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"swampy",6);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"swampy",6);
     if (iVar3 != 0) {
       bVar1 = *param_1;
       uVar6 = *(ulong *)(param_1 + 8);
@@ -251,7 +251,7 @@ LAB_0040bbf4:
     }
     if (uVar4 == 6) {
                     /* try { // try from 0040bc04 to 0040bc1f has its CatchHandler @ 0040bd04 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"cranky",6);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"cranky",6);
       if (iVar3 == 0) {
         uVar5 = 1;
         goto LAB_0040bcc4;
@@ -266,7 +266,7 @@ LAB_0040bbf4:
     }
     if (uVar4 == 10) {
                     /* try { // try from 0040bc44 to 0040bc5f has its CatchHandler @ 0040bd00 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"lostlevels",10);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"lostlevels",10);
       if (iVar3 == 0) {
         uVar5 = 2;
         goto LAB_0040bcc4;
@@ -280,7 +280,7 @@ LAB_0040bbf4:
     }
     if (uVar7 == 7) {
                     /* try { // try from 0040bc84 to 0040bc9f has its CatchHandler @ 0040bcfc */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"mystery",7);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"mystery",7);
       uVar5 = 3;
       if (iVar3 != 0) {
         uVar5 = 0;

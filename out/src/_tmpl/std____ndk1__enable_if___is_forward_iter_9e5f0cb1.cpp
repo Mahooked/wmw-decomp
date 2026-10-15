@@ -44,7 +44,7 @@ void std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector
       p0[2].f_0x4 = 0.0;
     }
     if (uVar9 >> 0x3d != 0) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
       return;
     }
     if ((ulong)((long)WVar3 >> 3) < 0xfffffffffffffff) {

@@ -48,7 +48,7 @@ void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1)
   uVar3 = strlen(p1);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d6498 to 005d649f has its CatchHandler @ 005d6568 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_78);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_78);
     return;
   }
   if (uVar3 < 0x17) {

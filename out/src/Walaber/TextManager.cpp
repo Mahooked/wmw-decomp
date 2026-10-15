@@ -86,7 +86,7 @@ LAB_003f9c6c:
     if (((undefined8 **)puVar3 == &DAT_007308b8) || (param_3 < *(int *)(puVar3 + 4)))
     goto LAB_003f9c6c;
                     /* try { // try from 003f9ce8 to 003f9d07 has its CatchHandler @ 003f9d2c */
-    puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>> const(puVar3 + 5,param_2);
+    puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar3 + 5,param_2);
     if (puVar3 + 6 != puVar2) {
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1,puVar2 + 7);
       goto LAB_003f9cc0;
@@ -195,7 +195,7 @@ undefined8 Walaber::TextManager::stringExists(byte *param_1,int param_2)
       puVar2 = (undefined8 *)puVar2[*(int *)(puVar2 + 4) < param_2];
     } while (puVar2 != (undefined8 *)0x0);
     if ((((undefined8 **)puVar3 != &DAT_007308b8) && (*(int *)(puVar3 + 4) <= param_2)) &&
-       (puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>> const(puVar3 + 5,param_1), puVar3 + 6 != puVar2)) {
+       (puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar3 + 5,param_1), puVar3 + 6 != puVar2)) {
       return 1;
     }
   }
@@ -321,7 +321,7 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
     } while (puVar2 != (undefined8 *)0x0);
     if (((undefined8 **)puVar3 != &DAT_007308d0) && (*(int *)(puVar3 + 4) <= param_3)) {
                     /* try { // try from 003fa03c to 003fa06b has its CatchHandler @ 003fa0e4 */
-      puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>> const(puVar3 + 5,param_2);
+      puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar3 + 5,param_2);
       if (puVar3 + 6 == puVar2) {
                     /* try { // try from 003fa070 to 003fa083 has its CatchHandler @ 003fa0e0 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,param_2,&DAT_0063452c);
@@ -469,7 +469,7 @@ undefined8 Walaber::TextManager::subtitleExists(byte *param_1,int param_2)
       puVar2 = (undefined8 *)puVar2[*(int *)(puVar2 + 4) < param_2];
     } while (puVar2 != (undefined8 *)0x0);
     if ((((undefined8 **)puVar3 != &DAT_007308d0) && (*(int *)(puVar3 + 4) <= param_2)) &&
-       (puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>> const(puVar3 + 5,param_1), puVar3 + 6 != puVar2)) {
+       (puVar2 = (undefined8 *)std::__ndk1::__tree_const_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::TextManager::SubtitleInfo>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(puVar3 + 5,param_1), puVar3 + 6 != puVar2)) {
       return 1;
     }
   }
@@ -689,7 +689,7 @@ void Walaber::TextManager::loadedScriptFile(void *p0)
     }
     if (uVar7 == 7) {
                     /* try { // try from 003fa5b8 to 003fa5cf has its CatchHandler @ 003fac0c */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_e0,0,0xffffffffffffffff,"TEXT_ID",7);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_e0,0,0xffffffffffffffff,"TEXT_ID",7);
     }
     iVar5 = (int)((ulong)(lStack_d8 - (long)pbStack_e0) >> 3) * -0x55555555;
     ppppuStack_130 = (undefined8 ****)CONCAT44(ppppuStack_130._4_4_,1);
@@ -973,7 +973,7 @@ ulong Walaber::TextManager::stringToLanguage(undefined8 param_1,undefined4 *para
   }
   if (uVar3 == 0xb) {
                     /* try { // try from 003fad4c to 003fad67 has its CatchHandler @ 003fb578 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"text_string",0xb);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"text_string",0xb);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fad84;
@@ -991,7 +991,7 @@ LAB_003fad84:
   }
   if (uVar3 == 8) {
                     /* try { // try from 003fad94 to 003fadaf has its CatchHandler @ 003fb574 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"dialogue",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"dialogue",8);
     if (iVar2 == 0) goto LAB_003fb400;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1001,7 +1001,7 @@ LAB_003fad84:
   }
   if (uVar3 == 0xc) {
                     /* try { // try from 003fadd4 to 003fadef has its CatchHandler @ 003fb570 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"english_ntsc",0xc);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"english_ntsc",0xc);
     if (iVar2 == 0) goto LAB_003fb400;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1011,7 +1011,7 @@ LAB_003fad84:
   }
   if (uVar3 == 7) {
                     /* try { // try from 003fae14 to 003fae2f has its CatchHandler @ 003fb56c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"english",7);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"english",7);
     if (iVar2 == 0) goto LAB_003fb400;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1021,7 +1021,7 @@ LAB_003fad84:
   }
   if (uVar3 == 0xb) {
                     /* try { // try from 003fae54 to 003fae6f has its CatchHandler @ 003fb568 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"english_pal",0xb);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"english_pal",0xb);
     if (iVar2 == 0) {
       uVar4 = 1;
       goto LAB_003fb404;
@@ -1034,7 +1034,7 @@ LAB_003fad84:
   }
   if (uVar3 == 0xb) {
                     /* try { // try from 003fae94 to 003faeaf has its CatchHandler @ 003fb564 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"french_ntsc",0xb);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"french_ntsc",0xb);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003faec4;
@@ -1051,7 +1051,7 @@ LAB_003faec4:
   }
   if (uVar3 == 6) {
                     /* try { // try from 003faed4 to 003faeef has its CatchHandler @ 003fb560 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"french",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"french",6);
     if (iVar2 == 0) goto LAB_003fb444;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1061,7 +1061,7 @@ LAB_003faec4:
   }
   if (uVar3 == 10) {
                     /* try { // try from 003faf14 to 003faf2f has its CatchHandler @ 003fb55c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"french_pal",10);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"french_pal",10);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 3;
@@ -1075,7 +1075,7 @@ LAB_003faec4:
   }
   if (uVar3 == 7) {
                     /* try { // try from 003faf54 to 003faf6f has its CatchHandler @ 003fb558 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"italian",7);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"italian",7);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 4;
@@ -1089,7 +1089,7 @@ LAB_003faec4:
   }
   if (uVar3 == 6) {
                     /* try { // try from 003faf94 to 003fafaf has its CatchHandler @ 003fb554 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"german",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"german",6);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 5;
@@ -1103,7 +1103,7 @@ LAB_003faec4:
   }
   if (uVar3 == 0xc) {
                     /* try { // try from 003fafd4 to 003fafef has its CatchHandler @ 003fb550 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"spanish_ntsc",0xc);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"spanish_ntsc",0xc);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fb004;
@@ -1120,7 +1120,7 @@ LAB_003fb004:
   }
   if (uVar3 == 7) {
                     /* try { // try from 003fb014 to 003fb02f has its CatchHandler @ 003fb54c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"spanish",7);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"spanish",7);
     if (iVar2 == 0) goto LAB_003fb464;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1130,7 +1130,7 @@ LAB_003fb004:
   }
   if (uVar3 == 0xb) {
                     /* try { // try from 003fb054 to 003fb06f has its CatchHandler @ 003fb548 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"spanish_pal",0xb);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"spanish_pal",0xb);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fb084;
@@ -1147,7 +1147,7 @@ LAB_003fb084:
   }
   if (uVar3 == 0x10) {
                     /* try { // try from 003fb094 to 003fb0af has its CatchHandler @ 003fb544 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"castilianspanish",0x10);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"castilianspanish",0x10);
     if (iVar2 == 0) goto LAB_003fb488;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1157,7 +1157,7 @@ LAB_003fb084:
   }
   if (uVar3 == 8) {
                     /* try { // try from 003fb0d4 to 003fb0ef has its CatchHandler @ 003fb540 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"american",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"american",8);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 8;
@@ -1171,7 +1171,7 @@ LAB_003fb084:
   }
   if (uVar3 == 8) {
                     /* try { // try from 003fb114 to 003fb12f has its CatchHandler @ 003fb53c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"japanese",8);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"japanese",8);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 9;
@@ -1185,7 +1185,7 @@ LAB_003fb084:
   }
   if (uVar3 == 6) {
                     /* try { // try from 003fb154 to 003fb16f has its CatchHandler @ 003fb538 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"korean",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"korean",6);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 10;
@@ -1199,7 +1199,7 @@ LAB_003fb084:
   }
   if (uVar3 == 0xd) {
                     /* try { // try from 003fb194 to 003fb1af has its CatchHandler @ 003fb534 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"chinesesimple",0xd);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"chinesesimple",0xd);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fb1c4;
@@ -1216,7 +1216,7 @@ LAB_003fb1c4:
   }
   if (uVar3 == 0x14) {
                     /* try { // try from 003fb1d4 to 003fb1ef has its CatchHandler @ 003fb530 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"chinese - simplified",0x14);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"chinese - simplified",0x14);
     if (iVar2 == 0) goto LAB_003fb4a0;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1226,7 +1226,7 @@ LAB_003fb1c4:
   }
   if (uVar3 == 0x12) {
                     /* try { // try from 003fb214 to 003fb22f has its CatchHandler @ 003fb52c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"chinesetraditional",0x12);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"chinesetraditional",0x12);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fb244;
@@ -1243,7 +1243,7 @@ LAB_003fb244:
   }
   if (uVar3 == 0x15) {
                     /* try { // try from 003fb254 to 003fb26f has its CatchHandler @ 003fb528 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"chinese - traditional",0x15);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"chinese - traditional",0x15);
     if (iVar2 == 0) goto LAB_003fb4c4;
     uVar5 = (ulong)(abStack_50[0] >> 1);
   }
@@ -1253,7 +1253,7 @@ LAB_003fb244:
   }
   if (uVar3 == 7) {
                     /* try { // try from 003fb294 to 003fb2af has its CatchHandler @ 003fb524 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"russian",7);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"russian",7);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 0xd;
@@ -1267,7 +1267,7 @@ LAB_003fb244:
   }
   if (uVar3 == 5) {
                     /* try { // try from 003fb2d4 to 003fb2ef has its CatchHandler @ 003fb520 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"dutch",5);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"dutch",5);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 0xe;
@@ -1281,7 +1281,7 @@ LAB_003fb244:
   }
   if (uVar3 == 5) {
                     /* try { // try from 003fb314 to 003fb32f has its CatchHandler @ 003fb51c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"czech",5);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"czech",5);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 0xf;
@@ -1295,7 +1295,7 @@ LAB_003fb244:
   }
   if (uVar3 == 6) {
                     /* try { // try from 003fb354 to 003fb36f has its CatchHandler @ 003fb518 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"polish",6);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"polish",6);
     if (iVar2 == 0) {
       uVar6 = 1;
       uVar4 = 0x10;
@@ -1309,7 +1309,7 @@ LAB_003fb244:
   }
   if (uVar3 == 0x13) {
                     /* try { // try from 003fb394 to 003fb3af has its CatchHandler @ 003fb514 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"brazilianportuguese",0x13);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"brazilianportuguese",0x13);
     if (iVar2 != 0) {
       uVar5 = (ulong)(abStack_50[0] >> 1);
       goto LAB_003fb3c4;
@@ -1322,7 +1322,7 @@ LAB_003fb3c4:
     }
                     /* try { // try from 003fb3d4 to 003fb3ef has its CatchHandler @ 003fb510 */
     if ((uVar5 != 0x14) ||
-       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_50,0,0xffffffffffffffff,"portuguese_brazilian",0x14),
+       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_50,0,0xffffffffffffffff,"portuguese_brazilian",0x14),
        iVar2 != 0)) {
       uVar6 = 0;
       uVar4 = 0x12;
@@ -1632,7 +1632,7 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
     }
     if (uVar9 == 0x14) {
                     /* try { // try from 003fbac4 to 003fbadb has its CatchHandler @ 003fc1d0 */
-      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pbStack_d0,0,0xffffffffffffffff,"SOUND_FILE_REFERENCE",0x14);
+      std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pbStack_d0,0,0xffffffffffffffff,"SOUND_FILE_REFERENCE",0x14);
     }
     iVar5 = (int)((ulong)(lStack_c8 - (long)pbStack_d0) >> 3) * -0x55555555;
     pppppuStack_108 = (undefined8 *****)CONCAT44(pppppuStack_108._4_4_,1);
@@ -1655,7 +1655,7 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
           }
           if (uVar9 == 0xe) {
                     /* try { // try from 003fbbc0 to 003fbbd7 has its CatchHandler @ 003fc1fc */
-            iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&pppppppuStack_140,0,0xffffffffffffffff,"character_name",0xe);
+            iVar8 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&pppppppuStack_140,0,0xffffffffffffffff,"character_name",0xe);
             bVar7 = iVar8 == 0;
           }
           else {

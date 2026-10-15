@@ -395,7 +395,7 @@ bool Walaber::PushCommand::ValueAsBool(undefined8 param_1,byte *param_2)
   }
   if (uVar1 == 4) {
                     /* try { // try from 003e8fd0 to 003e8feb has its CatchHandler @ 003e91f4 */
-    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,&DAT_00628413,4);
+    iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_00628413,4);
     if (iVar4 != 0) {
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -413,7 +413,7 @@ LAB_003e9008:
     }
     if (uVar1 == 4) {
                     /* try { // try from 003e9018 to 003e9033 has its CatchHandler @ 003e91f0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"true",4);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"true",4);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -425,7 +425,7 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9058 to 003e9073 has its CatchHandler @ 003e91ec */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,&DAT_00634ec0,1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_00634ec0,1);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -437,7 +437,7 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9098 to 003e90b3 has its CatchHandler @ 003e91e8 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"T",1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"T",1);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -449,7 +449,7 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e90d8 to 003e90f3 has its CatchHandler @ 003e91e4 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,&DAT_006363eb,1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_006363eb,1);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -461,7 +461,7 @@ LAB_003e9008:
     }
     if (uVar1 == 1) {
                     /* try { // try from 003e9118 to 003e9133 has its CatchHandler @ 003e91e0 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,"Y",1);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,"Y",1);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -473,7 +473,7 @@ LAB_003e9008:
     }
     if (uVar1 == 3) {
                     /* try { // try from 003e9158 to 003e9173 has its CatchHandler @ 003e91dc */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,&DAT_0061fbdd,3);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_0061fbdd,3);
       if (iVar4 == 0) goto LAB_003e91c0;
       bVar2 = *param_2;
       uVar5 = *(ulong *)(param_2 + 8);
@@ -484,7 +484,7 @@ LAB_003e9008:
     }
     if (uVar6 == 3) {
                     /* try { // try from 003e9198 to 003e91b3 has its CatchHandler @ 003e91d8 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_2,0,0xffffffffffffffff,&DAT_0062841d,3);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_2,0,0xffffffffffffffff,&DAT_0062841d,3);
       bVar3 = iVar4 == 0;
     }
     else {
@@ -768,7 +768,7 @@ LAB_003e94e0:
     }
     uVar7 = (lVar18 << 0x20) >> 0x20;
     if (uVar14 < uVar7) {
-      std::__ndk1::__basic_string_common<true>::__throw_out_of_range const(&uStack_80);
+      std::__ndk1::__basic_string_common<true>::__throw_out_of_range(&uStack_80);
       return;
     }
     pbVar9 = *(byte **)(param_2 + 0x10);
@@ -777,7 +777,7 @@ LAB_003e94e0:
       pbVar9 = param_2 + 1;
     }
     if (0xffffffffffffffef < uVar14) {
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_80);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_80);
       return;
     }
     if (uVar14 < 0x17) {
@@ -922,7 +922,7 @@ joined_r0x003e9908:
         }
                     /* try { // try from 003e9948 to 003e9963 has its CatchHandler @ 003e9ba4 */
         if ((uVar1 != 0) ||
-           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
           Walaber::StringHelper::toLower(abStack_80,pWVar11);
                     /* try { // try from 003e9974 to 003e997f has its CatchHandler @ 003e9bac */
           Walaber::StringHelper::toLower(abStack_98,in_x1 + 0x18);
@@ -985,7 +985,7 @@ joined_r0x003e9a28:
         }
                     /* try { // try from 003e9a68 to 003e9a83 has its CatchHandler @ 003e9ba0 */
         if ((uVar1 != 0) ||
-           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(pWVar11,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
           Walaber::StringHelper::toLower(abStack_80,pWVar11);
                     /* try { // try from 003e9a94 to 003e9a9f has its CatchHandler @ 003e9ba8 */
           Walaber::StringHelper::toLower(abStack_98,in_x1 + 0x30);

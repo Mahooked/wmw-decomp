@@ -35,7 +35,7 @@ void std::__ndk1::
   lVar3 = *(long *)&p0->field_0x8 - *(long *)p0 >> 6;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3a != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
     return;
   }
   lVar4 = *(long *)&p0->field_0x10 - *(long *)p0;

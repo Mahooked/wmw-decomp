@@ -512,8 +512,8 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
         abStack_70[7] = 0x65;
         abStack_70[8] = 99;
                     /* try { // try from 0049a120 to 0049a12b has its CatchHandler @ 0049a58c */
-        Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_70);
-        iVar4 = Walaber::Property::asInt const();
+        Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_70);
+        iVar4 = Walaber::Property::asInt();
         if ((abStack_70[0] & 1) != 0) {
           operator delete((void *)CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
         }
@@ -728,8 +728,8 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
     abStack_70[8] = 100;
     uStack_5f = 0;
                     /* try { // try from 0049a1bc to 0049a1c7 has its CatchHandler @ 0049a590 */
-    Walaber::PropertyList::getValueForKey const(in_x1 + 0x10,abStack_70);
-    uVar5 = Walaber::Property::asFloat const();
+    Walaber::PropertyList::getValueForKey(in_x1 + 0x10,abStack_70);
+    uVar5 = Walaber::Property::asFloat();
     if ((abStack_70[0] & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_5e,CONCAT11(uStack_5f,uStack_63._3_1_)));
     }

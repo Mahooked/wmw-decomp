@@ -720,7 +720,7 @@ void WaterConcept::Screen_Sunset::_finishedLoadingWidgets(void *p0)
   uVar6 = strlen(pvVar1);
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 005666ac to 005666b3 has its CatchHandler @ 00566788 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
     return;
   }
   if (uVar6 < 0x17) {
@@ -828,7 +828,7 @@ LAB_00566050:
   abStack_140[7] = 0;
                     /* try { // try from 005661dc to 0056620b has its CatchHandler @ 00566850 */
   uVar7 = Walaber::FontManager::getFont(uVar7,abStack_140);
-  Walaber::BitmapFont::wrapStringInSize const(&uStack_100,(21.0 / fVar18) * fVar17,uVar7,&uStack_124,abStack_90,&fStack_108);
+  Walaber::BitmapFont::wrapStringInSize(&uStack_100,(21.0 / fVar18) * fVar17,uVar7,&uStack_124,abStack_90,&fStack_108);
   if ((uStack_e0 & 1) != 0) {
     *puStack_d0 = 0;
     uStack_d8 = 0;
@@ -1094,7 +1094,7 @@ void WaterConcept::Screen_Sunset::_fileExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 00566964 to 0056696b has its CatchHandler @ 00566a54 */
-    lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }

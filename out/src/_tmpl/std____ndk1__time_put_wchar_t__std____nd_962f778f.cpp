@@ -33,9 +33,9 @@ long * std::__ndk1::
   
   lVar3 = tpidr_el0;
   lStack_68 = *(long *)(lVar3 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_70,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_70,param_3);
                     /* try { // try from 005c4908 to 005c4917 has its CatchHandler @ 005c4b70 */
-  plVar5 = (long *)std::__ndk1::locale::use_facet const(&uStack_70,&ctype<wchar_t>::id);
+  plVar5 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<wchar_t>::id);
   plVar6 = (long *)std::__ndk1::__shared_count::__release_shared(uStack_70);
 joined_r0x005c4928:
   do {
@@ -178,7 +178,7 @@ long * std::__ndk1::
   lVar2 = tpidr_el0;
   lStack_48 = *(long *)(lVar2 + 0x28);
   plStack_1e0 = &lStack_48;
-  std::__ndk1::__time_put::__do_put const(param_1 + 0x10,alStack_1d8,&plStack_1e0,param_5,param_6,param_7);
+  std::__ndk1::__time_put::__do_put(param_1 + 0x10,alStack_1d8,&plStack_1e0,param_5,param_6,param_7);
   plVar4 = plStack_1e0;
   if (alStack_1d8 != plStack_1e0) {
     plVar6 = alStack_1d8;

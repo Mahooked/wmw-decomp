@@ -113,7 +113,7 @@ void std::__ndk1::__time_put::__time_put(char *p0)
   pvStack_58 = (void *)0x0;
   uVar3 = strlen();
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_68);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_68);
     return;
   }
   if (uVar3 < 0x17) {

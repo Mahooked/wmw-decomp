@@ -97,11 +97,11 @@ void WaterConcept::Screen_FoodPyramid::loadPropertyList(Walaber__PropertyList *p
   lVar1 = tpidr_el0;
   lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 004d441c to 004d4427 has its CatchHandler @ 004d44b8 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
                     /* try { // try from 004d4464 to 004d4473 has its CatchHandler @ 004d44b4 */
-    Walaber::PropertyList::getValueForKey const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p0[10].f_0x0 = uVar2;
   }
   if (*(long *)(lVar1 + 0x28) != lVar4) {
@@ -568,7 +568,7 @@ void WaterConcept::Screen_FoodPyramid::_curveLoadCallback(void *p0)
     uVar1 = *(ulong *)(in_x1 + 8);
   }
                     /* try { // try from 004d4dbc to 004d4dd7 has its CatchHandler @ 004d4df0 */
-  if ((uVar1 == 0x22) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(), iVar2 == 0)) {
+  if ((uVar1 == 0x22) && (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(), iVar2 == 0)) {
     *(undefined1 *)((long)p0 + 0xd0) = 1;
   }
   return;
@@ -1911,7 +1911,7 @@ LAB_004d5d74:
     uVar26 = strlen(pvVar4);
     if (0xffffffffffffffef < uVar26) {
                     /* try { // try from 004d6e28 to 004d6e2f has its CatchHandler @ 004d6e40 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_108);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_108);
       return;
     }
     if (uVar26 < 0x17) {
@@ -1972,7 +1972,7 @@ LAB_004d6564:
     uVar26 = strlen(pvVar4);
     if (0xffffffffffffffef < uVar26) {
                     /* try { // try from 004d6e30 to 004d6e37 has its CatchHandler @ 004d6e38 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_258);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_258);
       return;
     }
     if (uVar26 < 0x17) {
@@ -2073,7 +2073,7 @@ LAB_004d66a4:
                     /* try { // try from 004d6810 to 004d685b has its CatchHandler @ 004d6f90 */
     Walaber::Node::getWorldScale(&uStack_258,lVar20);
     fVar43 = (21.0 / fVar44) * fVar43;
-    Walaber::BitmapFont::wrapString const(&fStack_2a0,fVar43,*(float *)(lVar20 + 0x90) * (float)uStack_258 * 0.85,uVar33,
+    Walaber::BitmapFont::wrapString(&fStack_2a0,fVar43,*(float *)(lVar20 + 0x90) * (float)uStack_258 * 0.85,uVar33,
                     &bStack_f0);
     if ((bStack_330 & 1) != 0) {
       operator delete(pvStack_320);
@@ -2299,7 +2299,7 @@ void WaterConcept::Screen_FoodPyramid::update(float p0,bool p1)
       *(undefined8 *)(uVar3 + 0xa8) = *(undefined8 *)(uVar3 + 0xa0);
     }
     else if ((fVar8 < 1.25) && (*(char *)(uVar3 + 0xd0) != '\0')) {
-      fVar8 = (float)Walaber::Curve::evaluate const((1.25 - fVar8) / 1.25,*(undefined8 *)(uVar3 + 0xc0));
+      fVar8 = (float)Walaber::Curve::evaluate((1.25 - fVar8) / 1.25,*(undefined8 *)(uVar3 + 0xc0));
       lVar4 = *(long *)(uVar3 + 0xa0);
       bVar2 = *(char *)(uVar3 + 0xbc) == '\0';
       if (*(long *)(uVar3 + 0xa8) != lVar4) {
@@ -2504,7 +2504,7 @@ void WaterConcept::Screen_FoodPyramid::handleEvent
     uVar5 = strlen(pvVar9);
     if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 004d7f98 to 004d7f9f has its CatchHandler @ 004d7fc4 */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_e0);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_e0);
       return;
     }
     if (uVar5 < 0x17) {
@@ -2574,7 +2574,7 @@ LAB_004d79b8:
     uVar5 = strlen(pvVar9);
     if (0xffffffffffffffef < uVar5) {
                     /* try { // try from 004d7fa0 to 004d7fa7 has its CatchHandler @ 004d7fbc */
-      std::__ndk1::__basic_string_common<true>::__throw_length_error const(&bStack_170);
+      std::__ndk1::__basic_string_common<true>::__throw_length_error(&bStack_170);
       return;
     }
     if (uVar5 < 0x17) {
@@ -3088,7 +3088,7 @@ undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0)
     abStack_78[8] = 0x65;
     abStack_78[9] = 0;
                     /* try { // try from 004d8438 to 004d843f has its CatchHandler @ 004d8620 */
-    uVar2 = Walaber::PropertyList::keyExists const(in_x1 + 0x10,abStack_78);
+    uVar2 = Walaber::PropertyList::keyExists(in_x1 + 0x10,abStack_78);
     if ((abStack_78[0] & 1) != 0) {
       operator delete(pvStack_68);
     }

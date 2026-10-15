@@ -74,7 +74,7 @@ void std::__ndk1::
   else {
     std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1);
     if (0xaaaaaaaaaaaaaaa < uVar9) {
-      std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+      std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
       return;
     }
     lVar4 = param_1[2] - *param_1 >> 3;

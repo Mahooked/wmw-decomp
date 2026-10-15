@@ -410,7 +410,7 @@ LAB_0038652c:
     else {
       fVar10 = *(float *)(*(long *)(*(long *)(p1 + 0x10) + (long)*(int *)&p1[0xf].field_0x4 * 8) +
                          0x54);
-      fVar12 = (float)Walaber::Curve::evaluate const(fVar12 / (float)p1[0xf].f_0x10);
+      fVar12 = (float)Walaber::Curve::evaluate(fVar12 / (float)p1[0xf].f_0x10);
       fVar10 = fVar12 * (fVar10 - *(float *)(*(long *)(*(long *)(p1 + 0x10) +
                                                       (long)*(int *)&p1[0xf].field_0x8 * 8) + 0x54))
                - fVar10;

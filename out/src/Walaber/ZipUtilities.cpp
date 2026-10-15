@@ -225,7 +225,7 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
           }
           if (uVar6 == 6) {
                     /* try { // try from 003d80ac to 003d80c3 has its CatchHandler @ 003d8a64 */
-            iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_198,0,0xffffffffffffffff,"Sounds",6);
+            iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_198,0,0xffffffffffffffff,"Sounds",6);
             if (iVar4 != 0) {
               uVar8 = CONCAT35((undefined3)uStack_18b,CONCAT41(uStack_18f,uStack_190));
               uVar9 = (ulong)(bStack_198 >> 1);
@@ -264,7 +264,7 @@ LAB_003d80e0:
             }
             if (uVar6 == 8) {
                     /* try { // try from 003d80f0 to 003d8107 has its CatchHandler @ 003d8a10 */
-              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_198,0,0xffffffffffffffff,"Textures",8);
+              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_198,0,0xffffffffffffffff,"Textures",8);
               if (iVar4 == 0) {
                 uStack_1b7 = 0;
                 uStack_1b2 = 0;
@@ -295,7 +295,7 @@ LAB_003d80e0:
             }
             if (uVar6 == 7) {
                     /* try { // try from 003d812c to 003d8143 has its CatchHandler @ 003d8a0c */
-              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_198,0,0xffffffffffffffff,"Atlases",7);
+              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_198,0,0xffffffffffffffff,"Atlases",7);
               if (iVar4 == 0) {
                 uStack_1b7 = 0;
                 uStack_1b1 = 0;
@@ -325,7 +325,7 @@ LAB_003d80e0:
             }
             if (uVar6 == 0xe) {
                     /* try { // try from 003d8168 to 003d817f has its CatchHandler @ 003d8a08 */
-              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_198,0,0xffffffffffffffff,"StreamedTracks",0xe);
+              iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_198,0,0xffffffffffffffff,"StreamedTracks",0xe);
               if (iVar4 == 0) {
                 uStack_1b7 = 0;
                 uStack_1b1 = 0;
@@ -354,7 +354,7 @@ LAB_003d80e0:
             }
                     /* try { // try from 003d81a4 to 003d81bf has its CatchHandler @ 003d8978 */
             if ((uVar9 == 10) &&
-               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_198,0,0xffffffffffffffff,"SQLScripts",10),
+               (iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_198,0,0xffffffffffffffff,"SQLScripts",10),
                iVar4 == 0)) {
               uStack_1b0 = 0;
               uStack_1af = 0;
@@ -441,7 +441,7 @@ LAB_003d80e0:
             }
             if ((uVar6 & 1) != 0) {
                     /* try { // try from 003d84cc to 003d84d7 has its CatchHandler @ 003d8a48 */
-              Walaber::Property::asString const(&uStack_1d0,&bStack_1b8);
+              Walaber::Property::asString(&uStack_1d0,&bStack_1b8);
               uStack_216 = 0;
               bStack_220 = 0x10;
               puStack_210 = (undefined1 *)0x0;
@@ -600,8 +600,8 @@ LAB_003d80e0:
     uStack_191 = 0x5f;
     uStack_190 = 0x66;
                     /* try { // try from 003d8840 to 003d884b has its CatchHandler @ 003d89f8 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)((long)p0 + 0x60),&bStack_198);
-    iVar4 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)((long)p0 + 0x60),&bStack_198);
+    iVar4 = Walaber::Property::asInt();
     if ((bStack_198 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_184,
                                     CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
@@ -660,7 +660,7 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
     }
     else {
                     /* try { // try from 003d8b78 to 003d8b7f has its CatchHandler @ 003d8c74 */
-      iVar3 = Walaber::Property::asInt const(auStack_88);
+      iVar3 = Walaber::Property::asInt(auStack_88);
       bVar2 = iVar3 != 0;
     }
     auStack_a0[1] = 0;
@@ -675,7 +675,7 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
                     /* try { // try from 003d8bcc to 003d8bcf has its CatchHandler @ 003d8c74 */
       uVar5 = Walaber::SoundManager::getInstancePtr();
                     /* try { // try from 003d8bd4 to 003d8bdf has its CatchHandler @ 003d8c50 */
-      Walaber::Property::asString const(auStack_a0,auStack_88);
+      Walaber::Property::asString(auStack_a0,auStack_88);
                     /* try { // try from 003d8be0 to 003d8bf3 has its CatchHandler @ 003d8c54 */
       Walaber::SoundManager::refreshSound(uVar5,auStack_a0,bVar2,0xffffffff);
       if ((auStack_a0[0] & 1) != 0) {
@@ -733,7 +733,7 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
       operator delete(pvStack_90);
     }
                     /* try { // try from 003d8d2c to 003d8d33 has its CatchHandler @ 003d8e48 */
-    if (((uVar3 & 1) != 0) && (iVar2 = Walaber::Property::asInt const(auStack_88), iVar2 != 0)) {
+    if (((uVar3 & 1) != 0) && (iVar2 = Walaber::Property::asInt(auStack_88), iVar2 != 0)) {
       auStack_a0[1] = 0;
       pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
@@ -744,7 +744,7 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
       }
       if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d8d74 to 003d8d7f has its CatchHandler @ 003d8e08 */
-        Walaber::Property::asString const(auStack_a0,auStack_88);
+        Walaber::Property::asString(auStack_a0,auStack_88);
                     /* try { // try from 003d8d80 to 003d8d83 has its CatchHandler @ 003d8e00 */
         uVar4 = Walaber::TextureManager::getManager();
         uStack_c0 = 0;
@@ -811,7 +811,7 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
       operator delete(pvStack_90);
     }
                     /* try { // try from 003d8f00 to 003d8f07 has its CatchHandler @ 003d901c */
-    if (((uVar3 & 1) == 0) || (iVar2 = Walaber::Property::asInt const(auStack_88), iVar2 != 0)) {
+    if (((uVar3 & 1) == 0) || (iVar2 = Walaber::Property::asInt(auStack_88), iVar2 != 0)) {
       auStack_a0[1] = 0;
       pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
@@ -824,7 +824,7 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
                     /* try { // try from 003d8f48 to 003d8f4b has its CatchHandler @ 003d901c */
         uVar4 = Walaber::TextureManager::getManager();
                     /* try { // try from 003d8f50 to 003d8f5b has its CatchHandler @ 003d8ffc */
-        Walaber::Property::asString const(auStack_a0,auStack_88);
+        Walaber::Property::asString(auStack_a0,auStack_88);
         uStack_c0 = 0;
         uStack_b8 = 0;
         uStack_b0 = 0;
@@ -889,7 +889,7 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
                     /* try { // try from 003d90b8 to 003d90bb has its CatchHandler @ 003d91c0 */
       uVar4 = Walaber::SoundManager::getInstancePtr();
                     /* try { // try from 003d90c0 to 003d90cb has its CatchHandler @ 003d9178 */
-      Walaber::Property::asString const(abStack_98,auStack_68);
+      Walaber::Property::asString(abStack_98,auStack_68);
       uVar3 = DAT_00730400;
       uVar2 = DAT_00730408;
       if (((byte)mUserStoreBasePath & 1) == 0) {
@@ -967,7 +967,7 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
     }
     if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d9290 to 003d9297 has its CatchHandler @ 003d93f4 */
-      uVar2 = Walaber::Property::asInt const(auStack_88);
+      uVar2 = Walaber::Property::asInt(auStack_88);
       auStack_a0[1] = 0;
       pvStack_90 = (void *)0x0;
       auStack_a0[0] = 0x6874617008;
@@ -978,7 +978,7 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
       }
       if ((uVar3 & 1) != 0) {
                     /* try { // try from 003d92dc to 003d92e7 has its CatchHandler @ 003d93e0 */
-        Walaber::Property::asString const(auStack_a0,auStack_88);
+        Walaber::Property::asString(auStack_a0,auStack_88);
                     /* try { // try from 003d92e8 to 003d930f has its CatchHandler @ 003d93e4 */
         puVar4 = (undefined8 *)operator new(0x10);
         *puVar4 = &PTR__Callback_0070e2c0;
@@ -1061,7 +1061,7 @@ void Walaber::ZipUtilities::_fileReadCallback(void *p0)
   uStack_57 = 0x5f6574656c6564;
   uStack_50 = 0x66;
                     /* try { // try from 003d9484 to 003d948b has its CatchHandler @ 003d978c */
-  auVar8 = Walaber::PropertyList::keyExists const(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
+  auVar8 = Walaber::PropertyList::keyExists(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
   uVar6 = auVar8._8_8_;
   if ((bStack_58 & 1) != 0) {
     operator delete(pvStack_48);
@@ -1147,7 +1147,7 @@ LAB_003d9604:
         abStack_a0[7] = 0x6e;
         abStack_a0[8] = 0;
                     /* try { // try from 003d9578 to 003d957f has its CatchHandler @ 003d974c */
-        uVar6 = Walaber::PropertyList::keyExists const(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
+        uVar6 = Walaber::PropertyList::keyExists(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
         if ((abStack_a0[0] & 1) != 0) {
           operator delete(pvStack_90);
         }
@@ -1170,13 +1170,13 @@ LAB_003d9604:
         abStack_a0[7] = 0x6e;
         abStack_a0[8] = 0;
                     /* try { // try from 003d95c0 to 003d95cb has its CatchHandler @ 003d9748 */
-        Walaber::PropertyList::getValueForKey const(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
-        iVar4 = Walaber::Property::asInt const();
+        Walaber::PropertyList::getValueForKey(*(undefined8 *)((long)p0 + 0x60),abStack_a0);
+        iVar4 = Walaber::Property::asInt();
         if ((abStack_a0[0] & 1) != 0) {
           operator delete(pvStack_90);
         }
                     /* try { // try from 003d95e0 to 003d95e7 has its CatchHandler @ 003d9740 */
-        iVar5 = Walaber::Property::asInt const(abStack_88);
+        iVar5 = Walaber::Property::asInt(abStack_88);
         bVar7 = iVar5 < iVar4;
       }
       Walaber::Property::~Property(abStack_88);
@@ -1195,7 +1195,7 @@ LAB_003d9634:
   uStack_57 = 0x5f6574656c6564;
   uStack_50 = 0x66;
                     /* try { // try from 003d9664 to 003d966b has its CatchHandler @ 003d97a4 */
-  bVar3 = Walaber::PropertyList::keyExists const(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
+  bVar3 = Walaber::PropertyList::keyExists(*(undefined8 *)((long)p0 + 0x60),&bStack_58);
   if ((bStack_58 & 1) != 0) {
     operator delete(pvStack_48);
   }
@@ -1218,8 +1218,8 @@ LAB_003d9634:
     abStack_88[7] = 0x61;
     abStack_88[8] = 0x74;
                     /* try { // try from 003d96b8 to 003d96c7 has its CatchHandler @ 003d9790 */
-    Walaber::PropertyList::getValueForKey const(*(undefined8 *)((long)p0 + 0x60),abStack_88);
-    Walaber::Property::asString const(&bStack_58);
+    Walaber::PropertyList::getValueForKey(*(undefined8 *)((long)p0 + 0x60),abStack_88);
+    Walaber::Property::asString(&bStack_58);
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }

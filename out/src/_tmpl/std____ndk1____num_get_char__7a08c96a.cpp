@@ -216,12 +216,12 @@ void std::__ndk1::__num_get<char>::__stage2_float_prep
   
   lVar1 = tpidr_el0;
   lStack_48 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_50);
+  std::__ndk1::ios_base::getloc(&uStack_50);
                     /* try { // try from 005b96a0 to 005b96cb has its CatchHandler @ 005b974c */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_50,&ctype<char>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&ctype<char>::id);
   (**(code **)(*plVar3 + 0x40))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","",p1);
                     /* try { // try from 005b96cc to 005b9717 has its CatchHandler @ 005b9750 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_50,&numpunct<char>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&numpunct<char>::id);
   cVar2 = (**(code **)(*plVar3 + 0x18))();
   *p2 = cVar2;
   cVar2 = (**(code **)(*plVar3 + 0x20))(plVar3);
@@ -464,12 +464,12 @@ void std::__ndk1::__num_get<char>::__stage2_int_prep(std____ndk1__ios_base *p0,c
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  std::__ndk1::ios_base::getloc const(&uStack_40);
+  std::__ndk1::ios_base::getloc(&uStack_40);
                     /* try { // try from 005b9c24 to 005b9c4f has its CatchHandler @ 005b9cb8 */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_40,&ctype<char>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&ctype<char>::id);
   (**(code **)(*plVar3 + 0x40))(plVar3,"0123456789abcdefABCDEFxX+-pPiInN","pPiInN",p1);
                     /* try { // try from 005b9c50 to 005b9c87 has its CatchHandler @ 005b9cbc */
-  plVar3 = (long *)std::__ndk1::locale::use_facet const(&uStack_40,&numpunct<char>::id);
+  plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&numpunct<char>::id);
   cVar2 = (**(code **)(*plVar3 + 0x20))();
   *p2 = cVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);

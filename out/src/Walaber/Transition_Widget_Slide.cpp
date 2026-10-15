@@ -95,53 +95,53 @@ void Walaber::Transition_Widget_Slide::setup(float p0,Walaber__PropertyList *p1)
   lStack_38 = *(long *)(lVar1 + 0x28);
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p1[0xb].f_0x0 + 4) = uVar2;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p1[0xb].f_0x8 = uVar2;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&uStack_40);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&uStack_40);
     p1[9].f_0x8 = uStack_40;
     p1[9].f_0x10 = CONCAT44(-(float)(uStack_40 >> 0x20),-(float)uStack_40);
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&uStack_40);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&uStack_40);
     p1[9].f_0x8 = uStack_40;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    Walaber::Property::asVector2 const(&uStack_40);
+    Walaber::PropertyList::operator[]();
+    Walaber::Property::asVector2(&uStack_40);
     p1[9].f_0x10 = uStack_40;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[0xb].f_0x8 + 4) = iVar3 == 1;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar3 == 1;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar3 == 1;
   }
   if (*(char *)((long)&p1[5].f_0x8 + 1) != '\0') {
@@ -551,7 +551,7 @@ void Walaber::Transition_Widget_Slide::_findWidgetsInAABB(long param_1)
     do {
       if (*(float *)(plVar6 + 5) == -1.0) {
         Walaber::Node::getWorldPosition(auStack_60,plVar6[4]);
-        uVar2 = Walaber::AABB::contains const(param_1 + 0xf8,auStack_60);
+        uVar2 = Walaber::AABB::contains(param_1 + 0xf8,auStack_60);
         if ((uVar2 & 1) != 0) {
           fVar7 = *(float *)(param_1 + 0x74) * 0.25;
           *(float *)(plVar6 + 5) = fVar7;

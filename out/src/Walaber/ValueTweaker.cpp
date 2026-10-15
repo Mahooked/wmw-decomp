@@ -977,9 +977,9 @@ LAB_00402a20:
       pvStack_1c8 = (void *)0x0;
       auStack_1d8[0] = 0;
                     /* try { // try from 00402aa4 to 00402aab has its CatchHandler @ 00402cb8 */
-      std::__ndk1::ios_base::getloc const(&pbStack_1f0,(undefined *)((long)&ppuStack_1c0 + (long)ppuStack_1c0[-3]));
+      std::__ndk1::ios_base::getloc(&pbStack_1f0,(undefined *)((long)&ppuStack_1c0 + (long)ppuStack_1c0[-3]));
                     /* try { // try from 00402aac to 00402ac7 has its CatchHandler @ 00402cc0 */
-      plVar3 = (long *)std::__ndk1::locale::use_facet const(&pbStack_1f0,&std::__ndk1::ctype<char>::id);
+      plVar3 = (long *)std::__ndk1::locale::use_facet(&pbStack_1f0,&std::__ndk1::ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,10);
       std::__ndk1::locale::~locale(&pbStack_1f0);
                     /* try { // try from 00402ad4 to 00402ae3 has its CatchHandler @ 00402cb8 */
@@ -1111,7 +1111,7 @@ void Walaber::ValueTweaker::_StringToValueType(byte *param_1)
   }
   if (uVar1 == 3) {
                     /* try { // try from 00402d8c to 00402da7 has its CatchHandler @ 00402f24 */
-    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"int",3);
+    iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"int",3);
     if (iVar3 != 0) {
       bVar2 = *param_1;
       uVar4 = *(ulong *)(param_1 + 8);
@@ -1128,7 +1128,7 @@ LAB_00402dc4:
     }
     if (uVar1 == 5) {
                     /* try { // try from 00402dd4 to 00402def has its CatchHandler @ 00402f20 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"float",5);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"float",5);
       if (iVar3 == 0) {
         uVar7 = 2;
         goto LAB_00402eec;
@@ -1143,7 +1143,7 @@ LAB_00402dc4:
     }
     if (uVar1 == 7) {
                     /* try { // try from 00402e14 to 00402e2f has its CatchHandler @ 00402f1c */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"vector2",7);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"vector2",7);
       if (iVar3 == 0) {
         uVar7 = 3;
         goto LAB_00402eec;
@@ -1158,7 +1158,7 @@ LAB_00402dc4:
     }
     if (uVar1 == 4) {
                     /* try { // try from 00402e54 to 00402e6f has its CatchHandler @ 00402f18 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,&DAT_0062daa2,4);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,&DAT_0062daa2,4);
       if (iVar3 == 0) {
         uVar7 = 4;
         goto LAB_00402eec;
@@ -1172,7 +1172,7 @@ LAB_00402dc4:
     }
     if (uVar6 == 5) {
                     /* try { // try from 00402e94 to 00402eb3 has its CatchHandler @ 00402f14 */
-      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"color",5);
+      iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"color",5);
       lVar5 = *(long *)(lVar5 + 0x28);
       uVar7 = 5;
       if (iVar3 != 0) {

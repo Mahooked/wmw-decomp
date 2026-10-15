@@ -220,7 +220,7 @@ void Walaber::SpriteAnimation::loadFromXML(ulong *param_1,long param_2,undefined
   uStack_110 = (undefined8 *)0x0;
   uVar6 = strlen();
   if (0xffffffffffffffef < uVar6) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
     return;
   }
   if (uVar6 < 0x17) {
@@ -260,7 +260,7 @@ LAB_00359cec:
   uStack_a8 = 0;
   uVar6 = strlen();
   if (0xffffffffffffffef < uVar6) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
     return;
   }
   if (uVar6 < 0x17) {
@@ -303,7 +303,7 @@ LAB_00359dc0:
   uStack_c0 = 0;
   uVar6 = strlen();
   if (0xffffffffffffffef < uVar6) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_c0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_c0);
     return;
   }
   if (uVar6 < 0x17) {
@@ -339,7 +339,7 @@ LAB_00359ef8:
         uVar7 = strlen();
         if (0xffffffffffffffef < uVar7) {
                     /* try { // try from 0035a664 to 0035a66b has its CatchHandler @ 0035a690 */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
           return;
         }
         if (uVar7 < 0x17) {
@@ -552,7 +552,7 @@ LAB_00359fd8:
   uVar6 = strlen();
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0035a684 to 0035a68b has its CatchHandler @ 0035a704 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_110);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_110);
     return;
   }
   if (uVar6 < 0x17) {
@@ -627,7 +627,7 @@ ulong Walaber::SpriteAnimation::_parsePlaybackMode(byte *param_1)
   }
   if (uVar3 == 4) {
                     /* try { // try from 0035a7e0 to 0035a7fb has its CatchHandler @ 0035a928 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,&DAT_00628de2,4);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,&DAT_00628de2,4);
     if (iVar2 != 0) {
       uVar4 = (ulong)(abStack_40[0] >> 1);
       goto LAB_0035a818;
@@ -643,7 +643,7 @@ LAB_0035a818:
     }
     if (uVar3 == 5) {
                     /* try { // try from 0035a828 to 0035a843 has its CatchHandler @ 0035a924 */
-      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"loops",5);
+      iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"loops",5);
       if (iVar2 == 0) goto LAB_0035a8d0;
       uVar4 = (ulong)(abStack_40[0] >> 1);
     }
@@ -652,7 +652,7 @@ LAB_0035a818:
     }
                     /* try { // try from 0035a868 to 0035a883 has its CatchHandler @ 0035a920 */
     if ((uVar4 == 7) &&
-       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"pinpong",7), iVar2 == 0)) {
+       (iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"pinpong",7), iVar2 == 0)) {
       uVar5 = 2;
     }
     else {
@@ -662,7 +662,7 @@ LAB_0035a818:
       }
       if (uVar3 == 9) {
                     /* try { // try from 0035a8a4 to 0035a8bf has its CatchHandler @ 0035a91c */
-        iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(param_1,0,0xffffffffffffffff,"pingpongs",9);
+        iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(param_1,0,0xffffffffffffffff,"pingpongs",9);
         uVar5 = (uint)(iVar2 == 0) << 1;
       }
       else {

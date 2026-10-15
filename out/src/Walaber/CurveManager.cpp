@@ -1173,7 +1173,7 @@ LAB_003e2ea0:
           uVar19 = strlen(lVar13);
           if (0xffffffffffffffef < uVar19) {
 LAB_003e3358:
-            std::__ndk1::__basic_string_common<true>::__throw_length_error const(&puStack_90);
+            std::__ndk1::__basic_string_common<true>::__throw_length_error(&puStack_90);
             return;
           }
           if (uVar19 < 0x17) {
@@ -1312,7 +1312,7 @@ LAB_003e2c04:
         uVar19 = strlen(lVar13);
         if (0xffffffffffffffef < uVar19) {
                     /* try { // try from 003e3360 to 003e3367 has its CatchHandler @ 003e336c */
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a8);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a8);
           return;
         }
         if (uVar19 < 0x17) {
@@ -1557,7 +1557,7 @@ void Walaber::CurveManager::_loadV1Collection(long param_1,undefined8 param_2,lo
       pvStack_80 = (void *)0x0;
       uVar13 = strlen(lVar10);
       if (0xffffffffffffffef < uVar13) {
-        std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_90);
+        std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_90);
         return;
       }
       if (uVar13 < 0x17) {

@@ -52,7 +52,7 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1)
   uVar3 = strlen(p1);
   if (0xffffffffffffffef < uVar3) {
                     /* try { // try from 005d7418 to 005d741f has its CatchHandler @ 005d74e8 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_78);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_78);
     return;
   }
   if (uVar3 < 0x17) {

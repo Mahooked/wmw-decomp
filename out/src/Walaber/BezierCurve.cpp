@@ -25,7 +25,7 @@ undefined1  [16] Walaber::BezierCurve::_evaluateCurve(float p0,float p1)
   
   lVar1 = tpidr_el0;
   lStack_38 = *(long *)(lVar1 + 0x28);
-  Walaber::Curve::findSegment const(in_x0,&iStack_3c,&iStack_40);
+  Walaber::Curve::findSegment(in_x0,&iStack_3c,&iStack_40);
   fVar2 = (float)Walaber::BezierCurve::BezierInterp(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18,
                                  *(long *)(in_x0 + 0x18) + (long)iStack_40 * 0x18);
   if (*(long *)(lVar1 + 0x28) == lStack_38) {
@@ -125,7 +125,7 @@ void Walaber::BezierCurve::loadFromXmlNode(_xmlNode *p0)
         uVar8 = strlen();
         if (0xffffffffffffffef < uVar8) {
 LAB_003e00a0:
-          std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_a0);
+          std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_a0);
           return;
         }
         if (uVar8 < 0x17) {

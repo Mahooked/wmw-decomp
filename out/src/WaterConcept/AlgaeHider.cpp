@@ -94,11 +94,11 @@ void WaterConcept::AlgaeHider::setProperties(Walaber__PropertyList *p0)
   lVar4 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0047727c to 00477287 has its CatchHandler @ 00477314 */
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
                     /* try { // try from 004772c0 to 004772cf has its CatchHandler @ 00477310 */
-    Walaber::PropertyList::operator[] const();
-    uVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x27].f_0x10 = uVar2;
   }
   if (*(long *)(lVar1 + 0x28) != lVar4) {

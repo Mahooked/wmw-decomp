@@ -212,7 +212,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
                     /* try { // try from 00384a78 to 00384a83 has its CatchHandler @ 00384c10 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,&uStack_50);
                     /* try { // try from 00384a8c to 00384aa3 has its CatchHandler @ 00384c30 */
-    Walaber::BitmapFont::measureString const(&uStack_a8,*(undefined4 *)(param_1 + 400),*(undefined8 *)(param_1 + 0xe8),
+    Walaber::BitmapFont::measureString(&uStack_a8,*(undefined4 *)(param_1 + 400),*(undefined8 *)(param_1 + 0xe8),
                     &uStack_50);
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_88,abStack_a0);
     uStack_70 = uStack_a8;

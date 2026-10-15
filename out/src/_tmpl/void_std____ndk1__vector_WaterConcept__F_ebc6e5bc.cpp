@@ -36,7 +36,7 @@ void std::__ndk1::
   lVar3 = (long)(p0->f_0x0[1] - p0->f_0x0[0]) >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+    std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
     return;
   }
   lVar4 = p0->f_0x10 - p0->f_0x0[0];

@@ -42,9 +42,9 @@ long * std::__ndk1::
     }
   }
   else {
-    std::__ndk1::ios_base::getloc const(&bStack_50,param_3);
+    std::__ndk1::ios_base::getloc(&bStack_50,param_3);
                     /* try { // try from 005bc700 to 005bc70f has its CatchHandler @ 005bc80c */
-    plVar6 = (long *)std::__ndk1::locale::use_facet const(&bStack_50,&numpunct<wchar_t>::id);
+    plVar6 = (long *)std::__ndk1::locale::use_facet(&bStack_50,&numpunct<wchar_t>::id);
     std::__ndk1::__shared_count::__release_shared(CONCAT71(uStack_4f,bStack_50));
     if ((param_5 & 1) == 0) {
       pcVar8 = *(code **)(*plVar6 + 0x38);
@@ -195,7 +195,7 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar8 - ((ulong)((uVar2 << 1 | 0x2c) - 1) * 4 + 0xf & 0x7fffffff0);
-  std::__ndk1::ios_base::getloc const(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
                     /* try { // try from 005bc9e0 to 005bc9ff has its CatchHandler @ 005bcab8 */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
@@ -290,7 +290,7 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar8 - ((ulong)((uVar2 << 1 | 0x2c) - 1) * 4 + 0xf & 0x7fffffff0);
-  std::__ndk1::ios_base::getloc const(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
                     /* try { // try from 005bd128 to 005bd147 has its CatchHandler @ 005bd200 */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
@@ -387,7 +387,7 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar7 - ((ulong)(uVar9 * 2 - 1) * 4 + 0xf & 0x7fffffff0);
-  std::__ndk1::ios_base::getloc const(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
                     /* try { // try from 005bd3b8 to 005bd3d7 has its CatchHandler @ 005bd490 */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
@@ -483,7 +483,7 @@ void std::__ndk1::
     }
   }
   lVar10 = (long)pcVar7 - ((ulong)(uVar9 * 2 - 1) * 4 + 0xf & 0x7fffffff0);
-  std::__ndk1::ios_base::getloc const(&uStack_88,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_88,param_3);
                     /* try { // try from 005bd644 to 005bd663 has its CatchHandler @ 005bd71c */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
@@ -657,7 +657,7 @@ LAB_005bdadc:
     }
   }
                     /* try { // try from 005bd988 to 005bd993 has its CatchHandler @ 005bdb40 */
-  std::__ndk1::ios_base::getloc const(&uStack_1b0,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_1b0,param_4);
                     /* try { // try from 005bd994 to 005bd9b3 has its CatchHandler @ 005bdb28 */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_float(pcVar6,pcVar14,pcVar1,puVar15,&uStack_1a0,&uStack_1a8,&uStack_1b0);
   std::__ndk1::__shared_count::__release_shared(uStack_1b0);
@@ -839,7 +839,7 @@ LAB_005be440:
     }
   }
                     /* try { // try from 005be2d8 to 005be2e3 has its CatchHandler @ 005be4a4 */
-  std::__ndk1::ios_base::getloc const(&uStack_1a0,param_4);
+  std::__ndk1::ios_base::getloc(&uStack_1a0,param_4);
                     /* try { // try from 005be2e4 to 005be303 has its CatchHandler @ 005be48c */
   std::__ndk1::__num_put<wchar_t>::__widen_and_group_float(pcVar6,pcVar14,pcVar1,puVar15,&uStack_190,&uStack_198,&uStack_1a0);
   std::__ndk1::__shared_count::__release_shared(uStack_1a0);
@@ -914,9 +914,9 @@ void std::__ndk1::
   }
   pcVar7 = acStack_84;
 LAB_005be5b0:
-  std::__ndk1::ios_base::getloc const(&uStack_128,param_3);
+  std::__ndk1::ios_base::getloc(&uStack_128,param_3);
                     /* try { // try from 005be5bc to 005be5cb has its CatchHandler @ 005be6ac */
-  plVar6 = (long *)std::__ndk1::locale::use_facet const(&uStack_128,&ctype<wchar_t>::id);
+  plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_128,&ctype<wchar_t>::id);
   std::__ndk1::__shared_count::__release_shared(uStack_128);
   (**(code **)(*plVar6 + 0x60))(plVar6,acStack_84,pcVar1,auStack_118);
   puVar3 = auStack_118 + (long)iVar5 * 4;

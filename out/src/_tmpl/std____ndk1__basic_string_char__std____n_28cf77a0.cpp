@@ -53,7 +53,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,undefined8 param_3)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,param_3,lVar1);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
   return;
 }
 
@@ -111,7 +111,7 @@ void std::__ndk1::operator+(ulong *param_1,undefined8 param_2,byte *param_3)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,pbVar4,uVar1);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
   return;
 }
 
@@ -180,7 +180,7 @@ void std::__ndk1::operator+(ulong *param_1,byte *param_2,byte *param_3)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1,pbVar5,uVar1);
     return;
   }
-  std::__ndk1::__basic_string_common<true>::__throw_length_error const(param_1);
+  std::__ndk1::__basic_string_common<true>::__throw_length_error(param_1);
   return;
 }
 

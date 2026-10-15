@@ -33,7 +33,7 @@ ulong WaterConcept::YSwitch::strToYSwitchPort(void)
   }
   if (uVar3 == 4) {
                     /* try { // try from 00461770 to 0046178b has its CatchHandler @ 0046182c */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"left",4);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"left",4);
     if (iVar2 == 0) {
       uVar5 = 1;
       goto LAB_004617f0;
@@ -45,7 +45,7 @@ ulong WaterConcept::YSwitch::strToYSwitchPort(void)
   }
   if (uVar4 == 5) {
                     /* try { // try from 004617b8 to 004617d3 has its CatchHandler @ 00461828 */
-    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(abStack_40,0,0xffffffffffffffff,"right",5);
+    iVar2 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(abStack_40,0,0xffffffffffffffff,"right",5);
     uVar5 = (uint)(iVar2 == 0) << 1;
   }
   else {
@@ -178,59 +178,59 @@ void WaterConcept::YSwitch::setProperties(Walaber__PropertyList *p0)
   lVar5 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0049880c to 00498817 has its CatchHandler @ 00498c28 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 00498848 to 00498857 has its CatchHandler @ 00498c24 */
-    Walaber::PropertyList::operator[] const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p0[0x35].f_0x8 + 5) = iVar2 != 0;
   }
                     /* try { // try from 0049889c to 004988a7 has its CatchHandler @ 00498c20 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 004988d8 to 004988e7 has its CatchHandler @ 00498c1c */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x35].f_0x10 = uVar3;
   }
                     /* try { // try from 00498924 to 0049892f has its CatchHandler @ 00498c18 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 00498960 to 0049896f has its CatchHandler @ 00498c14 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x35].f_0x10 + 4) = uVar3;
   }
                     /* try { // try from 004989b0 to 004989bb has its CatchHandler @ 00498c10 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 004989f4 to 00498a03 has its CatchHandler @ 00498c0c */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x36].f_0x0 + 4) = uVar3;
   }
                     /* try { // try from 00498a44 to 00498a4f has its CatchHandler @ 00498c08 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 00498a88 to 00498a97 has its CatchHandler @ 00498c04 */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x36].f_0x8 = uVar3;
   }
                     /* try { // try from 00498ad4 to 00498adf has its CatchHandler @ 00498c00 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 00498b10 to 00498b1f has its CatchHandler @ 00498bfc */
-    Walaber::PropertyList::operator[] const();
-    uVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar3 = Walaber::Property::asInt();
     *(undefined4 *)((long)&p0[0x36].f_0x8 + 4) = uVar3;
   }
                     /* try { // try from 00498b5c to 00498b67 has its CatchHandler @ 00498bf8 */
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 00498b98 to 00498ba7 has its CatchHandler @ 00498bf4 */
-    Walaber::PropertyList::operator[] const();
-    fVar6 = (float)Walaber::Property::asFloat const();
+    Walaber::PropertyList::operator[]();
+    fVar6 = (float)Walaber::Property::asFloat();
     *(float *)((long)&p0[0x38].f_0x0 + 4) = fVar6 * 0.017453292;
   }
   if (*(long *)(lVar1 + 0x28) != lVar5) {

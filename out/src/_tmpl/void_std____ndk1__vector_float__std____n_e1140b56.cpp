@@ -34,7 +34,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   lVar3 = in_x0[1] - *in_x0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const();
+    std::__ndk1::__vector_base_common<true>::__throw_length_error();
     return;
   }
   lVar5 = in_x0[2] - *in_x0;
@@ -113,7 +113,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   lVar3 = in_x0[1] - *in_x0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
-    std::__ndk1::__vector_base_common<true>::__throw_length_error const();
+    std::__ndk1::__vector_base_common<true>::__throw_length_error();
     return;
   }
   lVar5 = in_x0[2] - *in_x0;

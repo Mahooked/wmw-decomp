@@ -728,7 +728,7 @@ void WaterConcept::Screen_Upsell::_finishedLoadingWidgets(void *p0)
   uVar6 = strlen(pvVar2);
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 00568014 to 0056801b has its CatchHandler @ 005680e8 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_f0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_f0);
     return;
   }
   if (uVar6 < 0x17) {
@@ -836,7 +836,7 @@ LAB_00567798:
   abStack_150[7] = 0;
                     /* try { // try from 00567928 to 00567957 has its CatchHandler @ 00568234 */
   uVar7 = Walaber::FontManager::getFont(uVar7,abStack_150);
-  Walaber::BitmapFont::wrapStringInSize const(&uStack_110,(21.0 / fVar19) * fVar18,uVar7,&uStack_134,abStack_a0,&fStack_118);
+  Walaber::BitmapFont::wrapStringInSize(&uStack_110,(21.0 / fVar19) * fVar18,uVar7,&uStack_134,abStack_a0,&fStack_118);
   if ((uStack_f0 & 1) != 0) {
     *puStack_e0 = 0;
     uStack_e8 = 0;
@@ -1097,7 +1097,7 @@ LAB_00567adc:
   uVar6 = strlen(pvVar2);
   if (0xffffffffffffffef < uVar6) {
                     /* try { // try from 0056801c to 00568023 has its CatchHandler @ 005680e0 */
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_1b0);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_1b0);
     return;
   }
   if (uVar6 < 0x17) {
@@ -1206,7 +1206,7 @@ void WaterConcept::Screen_Upsell::_fileExistsCallback(void *p0)
     uStack_4f = 0x7865745f636f6c;
     uStack_48 = 0x74;
                     /* try { // try from 00568358 to 0056835f has its CatchHandler @ 00568448 */
-    lVar2 = Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
+    lVar2 = Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x50),&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pvStack_40);
     }

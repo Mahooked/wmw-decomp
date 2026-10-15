@@ -396,7 +396,7 @@ void Walaber::Widget_Label::Widget_Label
   if ((uVar1 != 0) && (param_2[0x1d] != 0)) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_2 + 0x2d,param_7);
                     /* try { // try from 0037f684 to 0037f693 has its CatchHandler @ 0037f704 */
-    Walaber::BitmapFont::measureString const(&fStack_60,0x3f800000,param_2[0x1d],param_7);
+    Walaber::BitmapFont::measureString(&fStack_60,0x3f800000,param_2[0x1d],param_7);
     *(undefined8 *)((long)param_2 + 0x104) = CONCAT44(fStack_5c,fStack_60);
                     /* try { // try from 0037f69c to 0037f6ab has its CatchHandler @ 0037f71c */
     Walaber::Widget_Label::_setTextScale(param_2);
@@ -613,7 +613,7 @@ void Walaber::Widget_Label::Widget_Label
   if ((uVar1 != 0) && (param_5[0x1d] != 0)) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_5 + 0x2d,param_10);
                     /* try { // try from 0037fbc4 to 0037fbd3 has its CatchHandler @ 0037fc48 */
-    Walaber::BitmapFont::measureString const(&fStack_80,0x3f800000,param_5[0x1d],param_10);
+    Walaber::BitmapFont::measureString(&fStack_80,0x3f800000,param_5[0x1d],param_10);
     *(undefined8 *)((long)param_5 + 0x104) = CONCAT44(fStack_7c,fStack_80);
                     /* try { // try from 0037fbdc to 0037fbeb has its CatchHandler @ 0037fc60 */
     Walaber::Widget_Label::_setTextScale(param_5);
@@ -689,7 +689,7 @@ void Walaber::Widget_Label::reloadFont(long param_1)
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Widget::reloadFont();
-  Walaber::BitmapFont::measureString const(&uStack_30,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x168);
+  Walaber::BitmapFont::measureString(&uStack_30,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x168);
   *(undefined8 *)(param_1 + 0x104) = uStack_30;
   Walaber::Widget_Label::_setTextScale(param_1);
   Walaber::Widget_Label::_setTextTopLeft(param_1);
@@ -903,11 +903,11 @@ void Walaber::Widget_Label::setText(long param_1)
     }
     if (uVar2 == 0) {
                     /* try { // try from 0037ffe0 to 0037fffb has its CatchHandler @ 00380060 */
-      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(lVar1,0,0xffffffffffffffff,&DAT_0063306f,0);
+      iVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(lVar1,0,0xffffffffffffffff,&DAT_0063306f,0);
       if (iVar4 == 0) goto LAB_00380038;
       lVar5 = *(long *)(param_1 + 0xe8);
     }
-    Walaber::BitmapFont::measureString const(&uStack_40,0x3f800000,lVar5,lVar1);
+    Walaber::BitmapFont::measureString(&uStack_40,0x3f800000,lVar5,lVar1);
     *(undefined8 *)(param_1 + 0x104) = uStack_40;
     *(undefined4 *)(param_1 + 0x15c) = *(undefined4 *)(param_1 + 0x158);
     Walaber::Widget_Label::_setTextScale(param_1);
@@ -948,7 +948,7 @@ void Walaber::Widget_Label::addText(long param_1,byte *param_2)
     uVar1 = (ulong)(*param_2 >> 1);
   }
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(param_1 + 0x168,pbVar2,uVar1);
-  Walaber::BitmapFont::measureString const(&uStack_40,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x168);
+  Walaber::BitmapFont::measureString(&uStack_40,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x168);
   *(undefined8 *)(param_1 + 0x104) = uStack_40;
   *(undefined4 *)(param_1 + 0x15c) = *(undefined4 *)(param_1 + 0x158);
   Walaber::Widget_Label::_setTextScale(param_1);
@@ -1187,7 +1187,7 @@ void Walaber::Widget_Label::draw(Walaber__SpriteBatch *p0)
   pvStack_c8 = (void *)0x0;
   uVar3 = strlen(puVar9);
   if (0xffffffffffffffef < uVar3) {
-    std::__ndk1::__basic_string_common<true>::__throw_length_error const(&uStack_d8);
+    std::__ndk1::__basic_string_common<true>::__throw_length_error(&uStack_d8);
     return;
   }
   if (uVar3 < 0x17) {

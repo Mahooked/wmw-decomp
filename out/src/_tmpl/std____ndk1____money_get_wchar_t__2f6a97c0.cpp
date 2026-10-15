@@ -40,7 +40,7 @@ void std::__ndk1::__money_get<wchar_t>::__gather_info
   else {
     puVar5 = &moneypunct<wchar_t,true>::id;
   }
-  plVar4 = (long *)std::__ndk1::locale::use_facet const(param_2,puVar5);
+  plVar4 = (long *)std::__ndk1::locale::use_facet(param_2,puVar5);
   uVar3 = (**(code **)(*plVar4 + 0x58))();
   *param_3 = uVar3;
   (**(code **)(*plVar4 + 0x40))(&uStack_80,plVar4);

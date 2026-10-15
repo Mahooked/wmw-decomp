@@ -95,16 +95,16 @@ void Walaber::Transition_Fade::setup(float p0,Walaber__PropertyList *p1)
   *(undefined2 *)((long)&p1[9].f_0x8 + 4) = uVar2;
   *(undefined1 *)((long)&p1[9].f_0x8 + 6) = uVar1;
   *(undefined1 *)((long)&p1[9].f_0x8 + 7) = 0xff;
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar3 == 1;
   }
-  uVar4 = Walaber::PropertyList::keyExists const();
+  uVar4 = Walaber::PropertyList::keyExists();
   if ((uVar4 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar3 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar3 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar3 == 1;
   }
   return;

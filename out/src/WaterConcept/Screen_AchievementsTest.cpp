@@ -408,7 +408,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   lVar5 = *(long *)(param_1 + 0xa0);
                     /* try { // try from 004a49a8 to 004a49db has its CatchHandler @ 004a4bcc */
   Walaber::Node::getWorldScale(afStack_50,lVar5);
-  Walaber::BitmapFont::wrapString const(&bStack_68,0x3f333333,*(float *)(lVar5 + 0x90) * afStack_50[0],uVar2,auStack_b8);
+  Walaber::BitmapFont::wrapString(&bStack_68,0x3f333333,*(float *)(lVar5 + 0x90) * afStack_50[0],uVar2,auStack_b8);
                     /* try { // try from 004a49dc to 004a49e7 has its CatchHandler @ 004a4b2c */
   Walaber::Widget_Label::setText(lVar4,&bStack_68);
   if ((bStack_68 & 1) != 0) {
@@ -430,7 +430,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   lVar4 = *(long *)(param_1 + 0xa8);
                     /* try { // try from 004a4a5c to 004a4a87 has its CatchHandler @ 004a4ba8 */
   Walaber::Node::getWorldScale(afStack_50,lVar4);
-  Walaber::BitmapFont::wrapString const(&bStack_68,0x3f333333,*(float *)(lVar4 + 0x90) * afStack_50[0],uVar3,auStack_b8);
+  Walaber::BitmapFont::wrapString(&bStack_68,0x3f333333,*(float *)(lVar4 + 0x90) * afStack_50[0],uVar3,auStack_b8);
                     /* try { // try from 004a4a88 to 004a4a93 has its CatchHandler @ 004a4b0c */
   Walaber::Widget_Label::setText(uVar2,&bStack_68);
   if ((bStack_68 & 1) != 0) {

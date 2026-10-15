@@ -99,10 +99,10 @@ void Walaber::Transition_Wipe::setup(float p0,Walaber__PropertyList *p1)
   
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::operator[] const();
-    uVar1 = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[]();
+    uVar1 = Walaber::Property::asInt();
     switch(uVar1) {
     case 0:
       fVar4 = ScreenCoord::sScreenSize * 1.5 + 0.0;
@@ -142,10 +142,10 @@ void Walaber::Transition_Wipe::setup(float p0,Walaber__PropertyList *p1)
     *(float *)&p1[9].f_0x8 = fVar4;
     *(float *)((long)&p1[9].f_0x8 + 4) = fVar6;
   }
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) == 0) goto LAB_003f7de8;
-  Walaber::PropertyList::operator[] const();
-  uVar1 = Walaber::Property::asInt const();
+  Walaber::PropertyList::operator[]();
+  uVar1 = Walaber::Property::asInt();
   switch(uVar1) {
   case 0:
     uVar7 = 0x3f0000003fc00000;
@@ -174,10 +174,10 @@ LAB_003f7de0:
 LAB_003f7de4:
   p1[9].f_0x8 = uVar3;
 LAB_003f7de8:
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) == 0) goto LAB_003f7edc;
-  Walaber::PropertyList::operator[] const();
-  uVar1 = Walaber::Property::asInt const();
+  Walaber::PropertyList::operator[]();
+  uVar1 = Walaber::Property::asInt();
   switch(uVar1) {
   case 0:
     fVar4 = 0.0 - ScreenCoord::sScreenSize * 0.5;
@@ -205,16 +205,16 @@ LAB_003f7ed0:
 switchD_003f7e2c_default:
   p1[9].f_0x8 = p1[8].f_0x8;
 LAB_003f7edc:
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 1) = iVar2 == 1;
   }
-  uVar3 = Walaber::PropertyList::keyExists const();
+  uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
-    Walaber::PropertyList::getValueForKey const();
-    iVar2 = Walaber::Property::asInt const();
+    Walaber::PropertyList::getValueForKey();
+    iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar2 == 1;
   }
   return;

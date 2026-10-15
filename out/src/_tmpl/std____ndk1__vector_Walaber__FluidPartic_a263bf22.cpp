@@ -41,7 +41,7 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
       lVar9 = *param_1;
       uVar7 = param_3 + (lVar6 - lVar9 >> 4) * -0x71c71c71c71c71c7;
       if (0x1c71c71c71c71c7 < uVar7) {
-        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error const(param_1);
+        puVar2 = (undefined8 *)std::__ndk1::__vector_base_common<true>::__throw_length_error(param_1);
         return puVar2;
       }
       lVar6 = param_1[2] - lVar9 >> 4;
@@ -325,7 +325,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
     *(ulong *)(p0 + 0x10) = lVar1 + in_x1 * 0x90;
     return;
   }
-  std::__ndk1::__vector_base_common<true>::__throw_length_error const(p0);
+  std::__ndk1::__vector_base_common<true>::__throw_length_error(p0);
   return;
 }
 

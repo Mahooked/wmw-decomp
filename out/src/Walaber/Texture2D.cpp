@@ -370,7 +370,7 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
   if (*in_x1 != 1) {
     lVar13 = Walaber::PlatformManager::getInstancePtr();
     if (((*(int *)(lVar13 + 0x1c) == 0x800) && (*(int *)(lVar13 + 0x20) == 0x2000)) &&
-       (uVar7 = Walaber::PropertyList::keyExists const(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY), (uVar7 & 1) == 0)
+       (uVar7 = Walaber::PropertyList::keyExists(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY), (uVar7 & 1) == 0)
        ) {
       puVar17 = *(undefined8 **)(in_x1 + 0x18);
       uStack_b0 = 0;
@@ -457,7 +457,7 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
   }
   if (uVar7 == 7) {
                     /* try { // try from 00398144 to 0039815f has its CatchHandler @ 00398c78 */
-    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&puStack_b8,0,0xffffffffffffffff,".waltex",7);
+    iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&puStack_b8,0,0xffffffffffffffff,".waltex",7);
     if (iVar5 != 0) {
       uVar14 = (ulong)((byte)puStack_b8 >> 1);
       goto LAB_00398354;
@@ -473,13 +473,13 @@ LAB_00398354:
     }
                     /* try { // try from 00398364 to 0039837f has its CatchHandler @ 00398c70 */
     if ((uVar14 == 5) &&
-       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&puStack_b8,0,0xffffffffffffffff,".webp",5), iVar5 == 0)) {
+       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&puStack_b8,0,0xffffffffffffffff,".webp",5), iVar5 == 0)) {
       uVar10 = 3;
       goto LAB_00398390;
     }
   }
                     /* try { // try from 00398398 to 003983bf has its CatchHandler @ 00398c7c */
-  uVar7 = Walaber::PropertyList::keyExists const(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+  uVar7 = Walaber::PropertyList::keyExists(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
   if (((uVar7 & 1) != 0) && (*(int *)((long)p0 + 0xe4) != 3)) {
     Walaber::Texture2D::_failedToLoad(p0,pbVar1);
   }
@@ -490,8 +490,8 @@ LAB_00398354:
   uStack_98 = 0x78;
   uStack_97 = 0;
                     /* try { // try from 003983f0 to 003983fb has its CatchHandler @ 00398c8c */
-  Walaber::PropertyList::operator[] const(*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
-  iVar5 = Walaber::Property::asInt const();
+  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
+  iVar5 = Walaber::Property::asInt();
   if (((uint)uStack_a0 & 1) != 0) {
     operator delete(piStack_90);
   }
@@ -502,8 +502,8 @@ LAB_00398354:
   uStack_a0._4_4_ = 0x75625f70;
   uStack_98 = 0x66;
                     /* try { // try from 00398440 to 0039844b has its CatchHandler @ 00398c88 */
-  Walaber::PropertyList::operator[] const(*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
-  auVar37 = Walaber::Property::asInt const();
+  Walaber::PropertyList::operator[](*(undefined8 *)(in_x1 + 0x18),&uStack_a0);
+  auVar37 = Walaber::Property::asInt();
   iVar29 = auVar37._0_4_;
   bVar4 = iVar29 == 1;
   if (((uint)uStack_a0 & 1) != 0) {
@@ -533,13 +533,13 @@ LAB_00398490:
     WebPInitDecoderConfigInternal(puVar17,0x200);
     *(undefined4 *)(puVar17 + 5) = 1;
     piStack_108 = (int *)((ulong)piStack_108 & 0xffffffff00000000);
-    uVar7 = Walaber::PropertyList::keyExists const(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+    uVar7 = Walaber::PropertyList::keyExists(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
     if ((uVar7 & 1) != 0) {
                     /* try { // try from 0039858c to 00398597 has its CatchHandler @ 00398be8 */
       WebPGetInfo(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),&uStack_100,lVar13);
                     /* try { // try from 0039859c to 003985ab has its CatchHandler @ 00398c38 */
-      Walaber::PropertyList::getValueForKey const(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
-      fVar19 = (float)Walaber::Property::asFloat const();
+      Walaber::PropertyList::getValueForKey(*(undefined8 *)(in_x1 + 0x18),&TEXTURE_SCALE_KEY);
+      fVar19 = (float)Walaber::Property::asFloat();
       *(undefined4 *)((long)puVar17 + 0xbc) = 1;
       uVar22 = NEON_rev64(uStack_100,4);
       uVar22 = NEON_scvtf(uVar22,4);
@@ -945,7 +945,7 @@ LAB_00398e08:
     }
   }
 LAB_00398e2c:
-  std::__ndk1::__vector_base_common<true>::__throw_out_of_range const(plVar5);
+  std::__ndk1::__vector_base_common<true>::__throw_out_of_range(plVar5);
 LAB_00398e30:
   __stack_chk_fail();
   return;
@@ -1016,7 +1016,7 @@ void Walaber::Texture2D::setData
       lVar7 = **(long **)(param_1 + 0xa8);
       if ((*(long **)(param_1 + 0xa8))[1] == lVar7) {
 LAB_0039900c:
-        std::__ndk1::__vector_base_common<true>::__throw_out_of_range const();
+        std::__ndk1::__vector_base_common<true>::__throw_out_of_range();
         goto LAB_00399010;
       }
       glTexImage2D(0xde1,0,0x1908,*(undefined4 *)(param_1 + 0x7c),*(undefined4 *)(param_1 + 0x80)
@@ -1153,7 +1153,7 @@ void Walaber::Texture2D::bufferFromImageData(uchar *p0,int p1,int p2)
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_58);
   if (plVar2[1] == *plVar2) {
                     /* try { // try from 003992ac to 003992b3 has its CatchHandler @ 003992b8 */
-    std::__ndk1::__vector_base_common<true>::__throw_out_of_range const(plVar2);
+    std::__ndk1::__vector_base_common<true>::__throw_out_of_range(plVar2);
   }
   else {
     memcpy(*plVar2,p1,(long)(in_w3 * p2 * 4));

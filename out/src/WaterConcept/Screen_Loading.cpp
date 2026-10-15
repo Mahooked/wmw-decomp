@@ -921,7 +921,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
         }
                     /* try { // try from 004ffdd8 to 004ffdf3 has its CatchHandler @ 00500290 */
         if ((uVar10 != 0) ||
-           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_c0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_c0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
                     /* try { // try from 004ffdf8 to 004ffe07 has its CatchHandler @ 00500334 */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&GameSettings::promotionSuffix,&bStack_c0);
         }
@@ -1063,7 +1063,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
         }
                     /* try { // try from 004fffe0 to 004ffffb has its CatchHandler @ 0050028c */
         if ((uVar10 != 0) ||
-           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&bStack_c0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+           (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&bStack_c0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
                     /* try { // try from 00500000 to 0050000f has its CatchHandler @ 0050031c */
           std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&GameSettings::themeSuffix,&bStack_c0);
         }
@@ -1096,7 +1096,7 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
       mUpdatedDatabase = 1;
                     /* try { // try from 005000b0 to 005000cf has its CatchHandler @ 00500318 */
       if ((uVar10 != 0) ||
-         (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&mRemoteData,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
+         (iVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&mRemoteData,0,0xffffffffffffffff,&DAT_0063306f,0), iVar7 != 0)) {
         bStack_c0 = 200;
         uStack_bf = 0x70cd;
         uStack_b8 = 0x10;
@@ -1260,7 +1260,7 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
     }
                     /* try { // try from 00500654 to 00500673 has its CatchHandler @ 00500760 */
     if (((uVar1 == 0) &&
-        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&GameSettings::promotionSuffix,0,0xffffffffffffffff,&DAT_0063306f,0
+        (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&GameSettings::promotionSuffix,0,0xffffffffffffffff,&DAT_0063306f,0
                                 ), iVar3 == 0)) || (mCurrentAtlas != mAtlasesToLoadCount)) {
       lVar5 = Walaber::GraphicsGL::getState();
       lVar7 = 0;
@@ -5564,7 +5564,7 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
     }
                     /* try { // try from 00504e94 to 00504eaf has its CatchHandler @ 00505148 */
     if ((uVar8 != 0) ||
-       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_b0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar5 != 0)) {
+       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_b0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar5 != 0)) {
                     /* try { // try from 00504eb4 to 00504ec3 has its CatchHandler @ 00505164 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&GameSettings::promotionSuffix,&uStack_b0);
     }
@@ -5680,7 +5680,7 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
     }
                     /* try { // try from 005050a8 to 005050c3 has its CatchHandler @ 00505144 */
     if ((uVar8 != 0) ||
-       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare const(&uStack_b0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar5 != 0)) {
+       (iVar5 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_b0,0,0xffffffffffffffff,&DAT_0063306f,0), iVar5 != 0)) {
                     /* try { // try from 005050c8 to 005050d7 has its CatchHandler @ 0050514c */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&GameSettings::themeSuffix,&uStack_b0);
     }
@@ -6145,8 +6145,8 @@ undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
     abStack_88[8] = 0x61;
     abStack_88[0xb] = 0;
                     /* try { // try from 00505ab0 to 00505abf has its CatchHandler @ 00505c64 */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_88);
-    Walaber::Property::asString const(abStack_60);
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_88);
+    Walaber::Property::asString(abStack_60);
     if ((abStack_88[0] & 1) != 0) {
       operator delete(apvStack_78[0]);
     }
@@ -6259,8 +6259,8 @@ undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
     abStack_88[8] = 0x73;
     abStack_88[9] = 0;
                     /* try { // try from 00505a44 to 00505a4f has its CatchHandler @ 00505c68 */
-    Walaber::PropertyList::operator[] const(in_x1 + 0x10,abStack_88);
-    mNumUpdateSteps = Walaber::Property::asInt const();
+    Walaber::PropertyList::operator[](in_x1 + 0x10,abStack_88);
+    mNumUpdateSteps = Walaber::Property::asInt();
     if ((abStack_88[0] & 1) != 0) {
       operator delete(apvStack_78[0]);
     }
