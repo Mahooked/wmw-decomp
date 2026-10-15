@@ -4,6 +4,7 @@ Counts, over the .cpp files under <dir> (lines starting with "/*" skipped):
   - f_0x  field accesses rendered as f_0x<offset>
   - DAT_  DAT_<address> placeholder tokens
   - param generic param_N parameter names
+  - FUN_/func_0x unresolved call targets (PLT stubs resolve via resolve_refs.py)
 
 The no-layout control and the layout-enabled run come from the same Ghidra
 pipeline (fresh import -> DecompileAll); the control adds -nolayout as the
@@ -18,7 +19,7 @@ import sys
 
 def main() -> None:
     root = sys.argv[1] if len(sys.argv) > 1 else os.path.join("out", "src")
-    f0x = dat = param = files = 0
+    f0x = dat = param = call = files = 0
     for base, _dirs, names in os.walk(root):
         for name in names:
             if not name.endswith(".cpp"):
@@ -33,10 +34,12 @@ def main() -> None:
             f0x += len(re.findall(r"\bf_0x[0-9a-f]+\b", text))
             dat += len(re.findall(r"\bDAT_[0-9a-f]+\b", text))
             param += len(re.findall(r"\bparam_[0-9]+\b", text))
+            call += len(re.findall(r"\b(?:FUN_[0-9a-f]{8}|func_0x[0-9a-f]+)\b", text))
     print("files     %6d" % files)
     print("f_0x      %6d" % f0x)
     print("DAT_      %6d" % dat)
     print("param_N   %6d" % param)
+    print("call      %6d" % call)
 
 
 if __name__ == "__main__":

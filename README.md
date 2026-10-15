@@ -28,6 +28,7 @@ re-inferred.
 | Class hierarchy + vtables (RTTI) | **done** | 317 classes, 343 base edges, 284 polymorphic, 3,003 virtual slots, 184 headers |
 | Data formats (SQLite, level XML, assets, dex/JNI) | **done** | schemas and vocabularies under `out/` |
 | Decompiled, named function bodies | **done** | 8,618 / 8,618 symbols bound (100%), 1,467 files |
+| Call-target names (PLT imports) | **done** | 64,007 / 66,330 call placeholders resolved from `.rela.plt`; 4,765 imports named (see "Call targets and PLT imports") |
 | Exact function prototypes recovered | **done** | 6,769/6,769 C++ symbols validated against GCC's own rendering; 9,952 parameters |
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters; 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
@@ -46,7 +47,9 @@ re-inferred.
    `f_0x<offset>` because the binary never recorded their names. See "Function
    signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
-   machine-shaped: if-converted branches, spill/reload noise, register aliases.
+   machine-shaped. Call targets are now named (see "Call targets and PLT
+   imports"); what remains is if-converted branches, spill/reload noise and
+   register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -70,6 +73,9 @@ re-inferred.
   re-derived by a gate. See "Enums".
 - `out/src` regenerated from a clean import with layouts applied and path-free
   file headers.
+- 64,007 call-site placeholders (`func_0x…`/`FUN_…`) rewritten to the real
+  callee by decoding PLT stubs through `.rela.plt`: 66,330 -> 2,323 unresolved,
+  of which 28,332 are game-symbol calls. See "Call targets and PLT imports".
 - Exact function prototypes recovered and validated against GCC's own rendering
   (6,769/6,769). Applying them to the decompiled bodies is blocked on field
   layouts; see "Function signatures".
@@ -119,6 +125,11 @@ section further down:
   from the ELF symbol table rather than from Ghidra's auto-analysis — see
   "Function boundaries" below. 1,516 further functions exist in the gaps that no
   symbol covers; they keep Ghidra's name.
+- **Call targets are named, not numbered.** 64,007 of 66,330 call-site
+  placeholders were `func_0x…`/`FUN_…` pointing at PLT stubs; resolving the
+  stubs through `.rela.plt` recovers the real callee for 4,765 imports (96%),
+  turning them into `operator new`, `fopen`, `Walaber::SceneGraph::~SceneGraph`
+  and 28,332 game-symbol calls. See "Call targets and PLT imports".
 - **Levels are XML scene graphs**, not a binary format: 636 level files, a
   12-element vocabulary, ~42 objects per level; plus 345 reusable `.hs`
   object prototypes.
@@ -184,6 +195,10 @@ tools/
   check_enums.py      proves each recovered enum is attested by >= 2 distinct
                       values from >= 2 evidence functions, or one verified jump
                       table over >= 3 indices (exit != 0 otherwise)
+  resolve_refs.py     rewrite func_0x/FUN_ call placeholders in out/src to the
+                      real callee by decoding PLT stubs through .rela.plt;
+                      --check gates that no resolvable placeholder remains
+  srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
@@ -216,6 +231,8 @@ out/
     reference.tsv     the 6,769-name GCC oracle
     classes.tsv       RTTI class inventory
     gnu_symbols.tsv   Ghidra's demangled names, as a cross-check oracle
+    imports.tsv       one row per PLT stub: address, GOT slot, .dynsym index,
+                      mangled and resolved callee name
     summary.json      section table + namespace histogram
   types/
     enums.tsv         recovered enum definitions with their evidence
@@ -398,6 +415,64 @@ A note on symbol counts, because the numbers above are easy to conflate.
 8,162 are mangled C++ symbols, and all 8,162 were independently confirmed to
 agree with Ghidra in both address and spelling.
 
+### Call targets and PLT imports
+
+Naming functions is not the same as naming the code they call. `DecompileAll`
+gives a name to every function that has a symbol, but a shared library built
+without `-Bsymbolic` reaches its own exported functions through the **PLT**, and
+a PLT stub is not in the symbol table. The decompiler therefore printed every
+such call as `func_0x00169310(…)` or `FUN_0016a330()`. That was the single
+largest readability defect in the output — and, unlike local names, it is
+fully recoverable.
+
+Measured over the tree, 66,330 call-target placeholders fell into exactly two
+classes:
+
+| Placeholder target | Refs | Recoverable? |
+|---|---|---|
+| PLT stub (`.plt`, no symbol) | 64,007 | **yes**, via `.rela.plt` |
+| gap function inside `.text` | 2,323 | no symbol exists |
+
+`tools/resolve_refs.py` recovers the first class. The AArch64 PLT stub is a
+four-instruction veneer whose first two instructions name the GOT slot it
+loads:
+
+```
+adrp x16, page(GOT[n])      ; page = (pc & ~0xfff) + (imm << 12)
+ldr  x17, [x16, #imm12*8]   ; slot = page + imm12*8
+add  x16, x16, #imm
+br   x17
+```
+
+`adrp`+`ldr` decode to the GOT slot; `.rela.plt` maps that slot to a `.dynsym`
+index; `.dynsym` gives the mangled name — the linker's own mapping, not a
+heuristic. All 4,765 mapped PLT entries decode to a slot that `.rela.plt`
+actually contains (the 4,766th entry is an unpadded tail), so the read is
+complete rather than sampled.
+
+The name written at the call site is the demangled symbol with its parameter
+list stripped — a *callee* name, so `func_0x00169310(uVar1, …)` reads as
+`Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar1, …)` and
+`FUN_00164060(0xc0)` as `operator new(0xc0)`. It also makes the output
+*internally consistent*: `std::uncaught_exception` had been emitting
+`FUN_0016a330()` while `std::uncaught_exceptions`, calling the same stub, had
+already shown `__cxa_uncaught_exceptions()`; both now agree.
+
+| | before | after |
+|---|---|---|
+| unresolved call placeholders | 66,330 | 2,323 |
+| …of those, resolvable via PLT | 64,007 | 0 |
+| …of those, no symbol (gap function) | 2,323 | 2,323 |
+| game-symbol call sites named | — | 28,332 |
+| third-party call sites named | — | 35,675 |
+
+The 2,323 that remain point at functions in the 35% of `.text` no symbol
+covers; they cannot be named from the symbol table because they have no name
+there. `out/symbols/imports.tsv` records the whole PLT map (stub address, GOT
+slot, `.dynsym` index, mangled and resolved name) as the evidence, and
+`resolve_refs.py --check` re-derives it and fails if any resolvable placeholder
+survives. It is a post-pass over generated output, so it is idempotent.
+
 ### Field layouts
 
 Class layouts are recovered from the code that *uses* them, since the binary
@@ -570,7 +645,10 @@ Read this before treating `out/src/` as source.
 - **1,516 functions have no ELF symbol** and appear as `FUN_...`/`func_0x...`
   calls inside other bodies. They live in the 35% of `.text` no symbol covers
   and are reachable only through call sites and relocation targets. They are
-  inventoried in `out/src/_unsymbolized.tsv`.
+  inventoried in `out/src/_unsymbolized.tsv`. These are the *only* remaining
+  `FUN_...`/`func_0x...` call targets: calls that go through a PLT stub — 96%
+  of all call sites — are named from `.rela.plt` by `tools/resolve_refs.py`
+  (see "Call targets and PLT imports").
 - **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
   include 75 pointer/fundamental typeinfos (`char*`, `bool`, …) that are RTTI
   objects, not classes — the real class count is 317 (filter pending).
@@ -783,6 +861,11 @@ py tools\survey_native.py $so
 # 3. decompile -> out/src/ (uses the same project)
 .\tools\ghidra.ps1 -Mode script -Rest @('libwmw.so', "$PWD/out/symbols/functions.tsv", "$PWD/out/src", '60', '0') -ProjectName 'wmwb'
 
+# 3b. name the call targets: rewrite func_0x/FUN_ PLT placeholders in out/src
+#     and write out/symbols/imports.tsv (idempotent; run after any re-import)
+py tools\resolve_refs.py $so
+py tools\resolve_refs.py $so --check      # gate: 0 resolvable placeholders left
+
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti
 
@@ -796,7 +879,7 @@ py tools\apkindex.py $apk --out out\apk
 py tools\assetdoc.py $apk --out out\assets
 ```
 
-Steps 4–7 need only Python and run in seconds; only steps 2–3 need Ghidra.
+Step 3b and 4–7 need only Python and run in seconds; only steps 2–3 need Ghidra.
 `tools/ghidra.ps1 -Mode script -Script ExportSymbols.java ...` regenerates
 `out/symbols/gnu_symbols.tsv`, which step 4 consumes as a demangler
 cross-check.
