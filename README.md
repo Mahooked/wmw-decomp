@@ -33,6 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; 84,570 diagnostics, 13,741 of them malformed C++ (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -54,7 +55,13 @@ re-inferred.
    register copies are handled next: 1,094 dead or aliasing copies removed and
    586 alias reads folded back to their source across 273 files. What remains is
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
-   exception landing pads.
+   exception landing pads. "Is it source?" is now a *number* rather than an
+   opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
+   files against synthesised declarations and sorts the 84,570 diagnostics into
+   the ones that are genuinely malformed C++ and the ones that are only missing
+   declarations (see "The syntax gate"). The first systematic defect it names —
+   605 constructors and destructors carrying an illegal return type — is the next
+   fix.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -92,6 +99,11 @@ re-inferred.
 - The decompiler's register copies collapsed: **1,094** dead or aliasing copies
   removed and **586** alias reads folded to their source, freeing **833**
   declarations across 273 files (`out/src` −1,927 lines). See "Source shaping".
+- The distance to a compilable tree made measurable: `tools/check_syntax.py`
+  synthesises the declarations the bodies are missing and has `clang++` parse all
+  **1,467** files, sorting **84,570** diagnostics into malformed C++ and mere
+  missing declarations. The synthesised declarations themselves compile with
+  **0 errors**. See "The syntax gate".
 
 ## What the game turned out to be
 
@@ -224,6 +236,10 @@ tools/
                       and dead-copy removal, then drop the freed declarations;
                       --check gates that no coalescible copy is left
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
+  check_syntax.py     synthesise the declarations out/src is missing from the
+                      definitions themselves, then have clang++ -fsyntax-only
+                      parse every file and tally the diagnostics; --check gates
+                      the tree, --decls-only checks just the generated headers
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   test_apply_signatures.py  regression gate for apply_signatures.py's splitter,
@@ -277,6 +293,10 @@ out/
                       demangled, status
     _unclaimed.tsv    symbols that never bound to a Ghidra function
     _unsymbolized.tsv functions Ghidra found with no ELF symbol behind them
+  check/
+    prelude.h         ambient declarations (Ghidra primitives, ABI helpers, libc,
+                      libc++ skeletons, platform symbols) for check_syntax.py
+    _generated/       decls.h + preamble.h synthesised from out/src (not tracked)
   rtti/               class hierarchy, vtables, per-class headers, metrics
   db/                 water*.db schemas (.schema.md) and schema.json
   apk/                dex.md (classes, JNI surface, manifest) + apkindex.json
@@ -637,7 +657,6 @@ is. 8 classes were withheld for these reasons.
 The result is checked rather than assumed. `tools/check_headers.py` walks every
 generated header, applies the alignment rules a real compiler would, and confirms
 each field lands at the correct offset and each struct measures its recovered sizeof (including accessor-named fields). headers.py accepts --names/--no-names and records provenance for named fields; check_headers.py validates accessor names against out/types/fieldnames.tsv. **325 headers, 2,616 field declarations, 0 disagreements.**
-recovered `sizeof`: **325 headers, 2,616 field declarations, 0 disagreements.**
 `DecompileAll.java` then rebuilds the same structures in Ghidra at explicit
 offsets with packing disabled, and verifies all 325 measure their recovered size
 before decompiling.
@@ -882,8 +901,100 @@ Read this before treating `out/src/` as source.
 - **`out/rtti/hierarchy.tsv` currently over-reports classes:** its 392 rows
   include 75 pointer/fundamental typeinfos (`char*`, `bool`, …) that are RTTI
   objects, not classes — the real class count is 317 (filter pending).
-- This is decompiled machine code, not the original source. It does not
-  compile as-is and never will without hand-reconstruction.
+- This is decompiled machine code, not the original source. It does not yet
+  compile as-is, though "how far from compiling" is now a measured number rather
+  than an impression — see "The syntax gate" below.
+
+## The syntax gate
+
+Everything above measures what the tree *says*. This section measures what a
+compiler *makes of it*. `tools/check_syntax.py` points `clang++ -fsyntax-only`
+at every generated `.cpp` and tallies the diagnostics, so that "is this
+source?" stops being a matter of opinion and becomes a number to drive the
+remaining shaping work.
+
+It cannot simply include the headers, because there are none: a body names
+types and calls functions that are defined two directories away and were never
+declared. So the missing declarations are *synthesised from the definitions
+themselves*. An out-of-line definition — `void A::B::f(...) { }` — is only
+well-formed once `A::B` has been declared and `f` matches a declaration in it,
+so the tool walks every `/* ok address 0x… */` block, parses the definition
+header and rebuilds exactly the class and namespace declarations those headers
+require:
+
+- a member definition contributes a member declaration to its owning class (the
+  owner comes from `out/types/members.tsv`, which records the class of all 6,742
+  classified members);
+- a namespace-scope definition contributes a namespace declaration;
+- a class's `f_0x<offset>` members come from the recovered layouts
+  (`out/types/fields.tsv`), so the field reads the bodies already contain resolve;
+- a type name the definitions mention but nothing declares becomes an opaque
+  `struct` — Ghidra's flattened `Walaber__Vector2` is one of these — and a name
+  used with `<…>` becomes a variadic template, so its arity never has to be
+  guessed;
+- the constructor/destructor return type Ghidra writes (`void A::A(...)`) is
+  dropped in the declaration, because the declaration has to be legal C++ even
+  where the body is not yet.
+
+Everything the bodies name that is *not* the game — Ghidra's `undefined8`
+primitives, the ABI helpers, libc and libm, the libc++ primary templates, the
+GLES/XML/NEON/FMOD symbols the `.so` calls by their bare C names — is declared
+in the hand-written `out/check/prelude.h`. `_Datum`, a type that accepts any
+use, stands in for a data global the binary never named (`DAT_00634ed4`).
+
+Those declarations compile clean: **408 classes, 272 member declarations, 141
+opaque structs, 7,489 definitions parsed** (740 headers unparsed, 1,683
+template-qualified definitions skipped because a template member cannot be
+declared without the template's definition), **6,966 placeholder globals**, and
+**0 errors** in the generated `decls.h` itself. The bodies are then checked
+freestanding — `-target aarch64-linux-gnu -ffreestanding -nostdinc -nostdinc++`
+— so that nothing depends on the host's headers.
+
+The baseline over the whole tree:
+
+| | |
+|---|---|
+| Files checked | 1,467 |
+| Files with at least one error | 1,460 |
+| Diagnostics | 84,570 |
+| Malformed C++ (structural) | 13,741 |
+| Missing declarations / unresolved types | the rest |
+
+The number is not a defect count, and the tool is careful to say so. Its own
+largest buckets are **not** defects in the game:
+
+- **17,254** *call to non-static member function without an object argument*:
+  Ghidra writes a call to a method in static form — `Type::method(obj, a, b)` —
+  with the receiver as the first argument, while the synthesised declaration
+  makes the method a non-static member. One modelling decision moves this whole
+  bucket at once.
+- **10,732** *implicit instantiation of undefined template* and **1,715** *too
+  many template arguments*: the libc++ primary templates are declared, not
+  defined, and their arity is guessed.
+- **8,673** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+  definition fails to parse — most often because of the illegal return type
+  below — its own parameter names (`p0`, `p1`, `param_1`) are not in scope in the
+  body, and every use of them is reported.
+- **6,560** *incomplete type in a parameter definition*: a flattened type used
+  by value where only a forward declaration exists.
+
+The buckets that *are* real shape the next pass. The largest single systematic
+defect the gate names is that **605** constructor and destructor definitions
+carry a return type (`void WaterConcept::Bomb::Bomb(...)` — ill-formed C++), and
+**210** destructors carry a parameter (`~EmitterActionData(void *p0)` — a
+destructor takes none), across 249 files. Because a malformed constructor also
+suppresses the parse of its own parameter list, that one defect alone is behind a
+large share of the cascade above.
+
+Run it with:
+
+```powershell
+py tools\check_syntax.py --clang "C:\Program Files\LLVM\bin\clang++.exe"
+py tools\check_syntax.py --decls-only           # just the synthesised declarations
+py tools\check_syntax.py --only WaterConcept    # one subtree
+py tools\check_syntax.py --dump errors.tsv      # one row per diagnostic
+py tools\check_syntax.py --check                # gate: non-zero while any remain
+```
 
 ## Class hierarchy and virtual tables
 
@@ -1112,6 +1223,12 @@ py tools\test_shape_source.py             # gate: every guard shape
 py tools\coalesce_locals.py
 py tools\coalesce_locals.py --check       # gate: 0 coalescible copies left
 py tools\test_coalesce_locals.py          # gate: every copy rule
+
+# 3f. synthesise the declarations out/src is missing and compile-check every
+#     body with clang++ -fsyntax-only; reports the diagnostics by kind
+#     (needs clang; see "The syntax gate")
+py tools\check_syntax.py --clang "<llvm>\bin\clang++.exe"
+py tools\check_syntax.py --decls-only     # just the synthesised declarations
 
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti
