@@ -277,7 +277,6 @@ void Walaber::SpriteBatch::_flushImmediate(undefined8 *param_1)
   int *piVar1;
   uint uVar2;
   uint uVar3;
-  long lVar4;
   bool bVar5;
   undefined8 *puVar6;
   ulong *puVar7;
@@ -293,10 +292,7 @@ void Walaber::SpriteBatch::_flushImmediate(undefined8 *param_1)
   int *piVar17;
   uint *puVar18;
   uint auStack_70 [2];
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   plVar12 = param_1 + 1;
   plVar14 = (long *)*param_1;
   while (plVar14 != plVar12) {
@@ -371,10 +367,6 @@ void Walaber::SpriteBatch::_flushImmediate(undefined8 *param_1)
         plVar8 = (long *)*plVar14;
       } while ((long *)*plVar14 != (long *)0x0);
     }
-  }
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -480,7 +472,6 @@ void Walaber::SpriteBatch::drawQuad(long param_1,long *param_2)
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   long lStack_68;
   int *piStack_60;
@@ -490,10 +481,7 @@ void Walaber::SpriteBatch::drawQuad(long param_1,long *param_2)
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_2;
@@ -547,10 +535,6 @@ void Walaber::SpriteBatch::drawQuad(long param_1,long *param_2)
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
 LAB_0035e45c:
-  if (*(long *)(lVar2 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -569,7 +553,6 @@ void Walaber::SpriteBatch::_addQuadToBatchImmediate
                undefined4 *param_6,undefined4 param_7)
 
 {
-  long lVar1;
   long lVar2;
   undefined4 *puVar3;
   undefined8 uVar4;
@@ -580,10 +563,7 @@ void Walaber::SpriteBatch::_addQuadToBatchImmediate
   int *piStack_80;
   undefined1 auStack_78 [8];
   undefined4 *puStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lStack_88 = *param_3;
   piStack_80 = (int *)param_3[1];
   if (lStack_88 != 0) {
@@ -611,10 +591,6 @@ void Walaber::SpriteBatch::_addQuadToBatchImmediate
     *(long *)(lVar2 + 0x30) = *(long *)(lVar2 + 0x30) + 8;
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -634,7 +610,6 @@ void Walaber::SpriteBatch::_addQuadToBatchOptimal
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
@@ -642,10 +617,7 @@ void Walaber::SpriteBatch::_addQuadToBatchOptimal
   undefined8 uStack_80;
   long lStack_78;
   int *piStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lVar3 = *param_3;
   piStack_70 = (int *)param_3[1];
   if (lVar3 != 0) {
@@ -673,10 +645,6 @@ void Walaber::SpriteBatch::_addQuadToBatchOptimal
   Walaber::SpriteBatch::_addQuadToBatchUVRect(uVar4,uVar5,param_2,lVar3 + 8,lVar3 + 0x20,&uStack_88,param_4,param_5,*param_6,
                   param_7);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -694,7 +662,6 @@ void Walaber::SpriteBatch::drawQuad
                undefined8 param_6,undefined4 param_7)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_68;
   int *piStack_60;
@@ -704,10 +671,7 @@ void Walaber::SpriteBatch::drawQuad
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_3;
@@ -763,10 +727,6 @@ void Walaber::SpriteBatch::drawQuad
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
 LAB_0035e8bc:
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -786,7 +746,6 @@ void Walaber::SpriteBatch::drawQuad
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   undefined4 *puVar4;
   long *plVar5;
@@ -802,10 +761,7 @@ void Walaber::SpriteBatch::drawQuad
   int *piStack_90;
   undefined1 auStack_88 [8];
   undefined4 *puStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     lStack_98 = *param_3;
@@ -922,10 +878,6 @@ void Walaber::SpriteBatch::drawQuad
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar5);
 LAB_0035ec8c:
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -945,7 +897,6 @@ void Walaber::SpriteBatch::drawQuad
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   long *plVar4;
   int *piVar5;
@@ -961,10 +912,7 @@ void Walaber::SpriteBatch::drawQuad
   int *piStack_90;
   undefined1 auStack_88 [8];
   int *piStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     lStack_98 = *param_4;
@@ -1083,10 +1031,6 @@ void Walaber::SpriteBatch::drawQuad
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
 LAB_0035f088:
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1106,7 +1050,6 @@ void Walaber::SpriteBatch::drawQuad
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   undefined4 *puVar4;
   long *plVar5;
@@ -1122,10 +1065,7 @@ void Walaber::SpriteBatch::drawQuad
   int *piStack_90;
   undefined1 auStack_88 [8];
   undefined4 *puStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     lStack_98 = *param_3;
@@ -1242,10 +1182,6 @@ void Walaber::SpriteBatch::drawQuad
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar5);
 LAB_0035f46c:
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1265,7 +1201,6 @@ void Walaber::SpriteBatch::drawQuad
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   long *plVar4;
   int *piVar5;
@@ -1281,10 +1216,7 @@ void Walaber::SpriteBatch::drawQuad
   int *piStack_90;
   undefined1 auStack_88 [8];
   int *piStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     lStack_98 = *param_4;
@@ -1403,10 +1335,6 @@ void Walaber::SpriteBatch::drawQuad
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
 LAB_0035f868:
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1424,7 +1352,6 @@ void Walaber::SpriteBatch::drawQuadColored
 
 {
   float fVar1;
-  long lVar2;
   long lVar3;
   Walaber__Vector2 *pWVar4;
   undefined4 *in_x3;
@@ -1433,10 +1360,7 @@ void Walaber::SpriteBatch::drawQuadColored
   undefined8 uVar6;
   undefined1 auStack_78 [8];
   Walaber__Vector2 *pWStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   uVar5 = cosf();
   uVar6 = sinf(CONCAT44(in_register_00005004,p1));
   switch(p0[3].f_0x0) {
@@ -1476,10 +1400,6 @@ LAB_0035f96c:
     *(long *)(lVar3 + 0x30) = *(long *)(lVar3 + 0x30) + 8;
   }
 LAB_0035fa5c:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1550,7 +1470,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
                float *param_6,float *param_7,float *param_8,undefined4 param_9,float param_10)
 
 {
-  long lVar1;
   ulong *puVar2;
   undefined8 *puVar3;
   float fVar4;
@@ -1562,10 +1481,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
   float fStack_9c;
   undefined8 uStack_98;
   undefined4 uStack_90;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   fVar7 = *param_8;
   puVar2 = (ulong *)param_5[1];
   fVar5 = param_8[1] * 0.5;
@@ -1675,10 +1591,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *puVar3 = *(undefined8 *)((long)puVar3 + -0x14);
     *(long *)(param_4 + 8) = *(long *)(param_4 + 8) + 0x14;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1693,7 +1605,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
 void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1)
 
 {
-  long lVar1;
   long lVar2;
   int in_w2;
   long lVar3;
@@ -1703,10 +1614,7 @@ void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1)
   uint uStack_5c;
   undefined1 auStack_58 [8];
   uint *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puStack_50 = &uStack_5c;
   piStack_68 = (int *)0x0;
   uStack_5c = p1;
@@ -1737,10 +1645,6 @@ void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1)
   else {
     piStack_68 = *(int **)(lVar3 + (uVar5 & 0xffffffff) * 8);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(piStack_68);
-    return;
-  }
   return;
 }
 
@@ -1758,7 +1662,6 @@ void Walaber::SpriteBatch::drawQuadColored
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   long lVar4;
   undefined4 *puVar5;
@@ -1768,11 +1671,8 @@ void Walaber::SpriteBatch::drawQuadColored
   undefined8 uVar7;
   undefined1 auStack_78 [8];
   undefined4 *puStack_70;
-  long lStack_68;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   iVar1 = (int)p1;
   uVar6 = cosf();
   uVar7 = sinf(CONCAT44(in_register_00005004,p2));
@@ -1814,10 +1714,6 @@ LAB_00360058:
     *(long *)(lVar4 + 0x30) = *(long *)(lVar4 + 0x30) + 8;
   }
 LAB_00360144:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1835,16 +1731,12 @@ void Walaber::SpriteBatch::drawCircle
                undefined8 param_6,undefined4 param_7)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   int iVar3;
   long lVar4;
   undefined1 auStack_78 [8];
   undefined4 *puStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   iVar3 = (int)param_3;
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
@@ -1887,10 +1779,6 @@ LAB_00360228:
     *(long *)(lVar4 + 0x30) = *(long *)(lVar4 + 0x30) + 8;
   }
 LAB_00360310:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1913,7 +1801,6 @@ void Walaber::SpriteBatch::_addCircleToBatch
 {
   undefined8 *puVar1;
   undefined4 uVar2;
-  long lVar3;
   ulong *puVar4;
   long lVar5;
   float fVar6;
@@ -1925,10 +1812,7 @@ void Walaber::SpriteBatch::_addCircleToBatch
   float fStack_88;
   float fStack_84;
   undefined4 uStack_80;
-  long lStack_78;
   
-  lVar3 = tpidr_el0;
-  lStack_78 = *(long *)(lVar3 + 0x28);
   puVar4 = (ulong *)param_4[1];
   if ((puVar4 == (ulong *)*param_4) || (*(float *)(puVar4 + -1) != param_7)) {
     fStack_8c = 0.0;
@@ -1991,10 +1875,6 @@ void Walaber::SpriteBatch::_addCircleToBatch
     *puVar1 = *(undefined8 *)((long)puVar1 + -0x14);
     *(long *)(param_3 + 8) = *(long *)(param_3 + 8) + 0x14;
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2013,15 +1893,11 @@ void Walaber::SpriteBatch::drawCircle
 
 {
   int iVar1;
-  long lVar2;
   undefined4 *puVar3;
   long lVar4;
   undefined1 auStack_78 [8];
   undefined4 *puStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     break;
@@ -2061,10 +1937,6 @@ LAB_003605d4:
     *(long *)(lVar4 + 0x30) = *(long *)(lVar4 + 0x30) + 8;
   }
 LAB_003606ac:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2080,16 +1952,12 @@ void Walaber::SpriteBatch::drawCircleColored(Walaber__Vector2 *p0,float p1,Walab
 
 {
   float fVar1;
-  long lVar2;
   long lVar3;
   Walaber__Vector2 *pWVar4;
   undefined4 in_register_00005004;
   undefined1 auStack_68 [8];
   Walaber__Vector2 *pWStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   switch(p0[3].f_0x0) {
   case 1.4013e-45:
     break;
@@ -2127,10 +1995,6 @@ LAB_00360758:
     *(long *)(lVar3 + 0x30) = *(long *)(lVar3 + 0x30) + 8;
   }
 LAB_00360828:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2147,7 +2011,6 @@ void Walaber::SpriteBatch::drawLineColored
                (Walaber__Vector2 *p0,Walaber__Vector2 *p1,float p2,Walaber__Color *p3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   float fVar3;
   float fVar4;
@@ -2156,10 +2019,7 @@ void Walaber::SpriteBatch::drawLineColored
   float fStack_58;
   float fStack_54;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fVar5 = (*p1).f_0x0;
   fVar3 = (float)*(undefined8 *)p3 - fVar5;
   fVar6 = (*p1).f_0x4;
@@ -2173,10 +2033,6 @@ void Walaber::SpriteBatch::drawLineColored
   }
   fStack_54 = p2;
   Walaber::SpriteBatch::drawQuadColored(uVar2,p0,&uStack_50,&fStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2195,7 +2051,6 @@ void Walaber::SpriteBatch::drawTri
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   long lStack_68;
   int *piStack_60;
@@ -2205,10 +2060,7 @@ void Walaber::SpriteBatch::drawTri
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_2;
@@ -2262,10 +2114,6 @@ void Walaber::SpriteBatch::drawTri
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
 LAB_00360a60:
-  if (*(long *)(lVar2 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2284,7 +2132,6 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
                long param_7,uint param_8)
 
 {
-  long lVar1;
   long lVar2;
   undefined4 *puVar3;
   ulong *puVar4;
@@ -2295,10 +2142,7 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
   ulong uStack_80;
   ulong uStack_78;
   undefined4 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uStack_80 = param_1 + 0x20;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(param_1,uStack_80,&DAT_0062b573,&uStack_80,&puStack_88);
   puVar3 = (undefined4 *)Walaber::SpriteBatch::_getDrawAction(param_1);
@@ -2367,10 +2211,6 @@ void Walaber::SpriteBatch::_addVertsToBatchImmediate
     **(undefined8 **)(lVar2 + 0x30) = puStack_88;
     *(long *)(lVar2 + 0x30) = *(long *)(lVar2 + 0x30) + 8;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2390,7 +2230,6 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
 
 {
   int iVar1;
-  long lVar2;
   ulong *puVar3;
   int iVar4;
   long lVar5;
@@ -2399,10 +2238,7 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
   ulong uStack_80;
   ulong uStack_78;
   undefined4 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   iVar4 = *(int *)(param_1 + 0x20);
   iVar1 = *(int *)(*param_2 + 0x78);
   if ((iVar1 == *(int *)(param_1 + 0x28)) && (iVar4 == *(int *)(param_1 + 0x24))) {
@@ -2470,10 +2306,6 @@ void Walaber::SpriteBatch::_addVertsToBatchOptimal
       lVar7 = lVar7 + 4;
     } while ((ulong)param_3 * 8 - lVar6 != 0);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2491,7 +2323,6 @@ void Walaber::SpriteBatch::drawTri
                undefined8 param_6,undefined4 param_7)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_68;
   int *piStack_60;
@@ -2501,10 +2332,7 @@ void Walaber::SpriteBatch::drawTri
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_3;
@@ -2560,10 +2388,6 @@ void Walaber::SpriteBatch::drawTri
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
 LAB_00361048:
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2581,7 +2405,6 @@ void Walaber::SpriteBatch::drawVerts(long param_1,long *param_2,undefined8 param
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   long lStack_68;
   int *piStack_60;
@@ -2591,10 +2414,7 @@ void Walaber::SpriteBatch::drawVerts(long param_1,long *param_2,undefined8 param
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_2;
@@ -2648,10 +2468,6 @@ void Walaber::SpriteBatch::drawVerts(long param_1,long *param_2,undefined8 param
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
 LAB_003611bc:
-  if (*(long *)(lVar2 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2670,7 +2486,6 @@ void Walaber::SpriteBatch::drawVerts
                undefined8 param_6,undefined8 param_7,undefined8 param_8,undefined4 param_9)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_68;
   int *piStack_60;
@@ -2680,10 +2495,7 @@ void Walaber::SpriteBatch::drawVerts
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x18)) {
   case 1:
     lStack_38 = *param_3;
@@ -2739,10 +2551,6 @@ void Walaber::SpriteBatch::drawVerts
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
 LAB_003613ac:
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2762,17 +2570,13 @@ void Walaber::SpriteBatch::drawString
 
 {
   int iVar1;
-  long lVar2;
   byte abStack_a0 [16];
   void *pvStack_90;
   byte abStack_88 [16];
   void *pvStack_78;
   byte abStack_70 [16];
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)(param_3 + 0x18);
   if (iVar1 - 2U < 2) {
     iVar1 = *(int *)(param_3 + 0x1c);
@@ -2807,10 +2611,6 @@ void Walaber::SpriteBatch::drawString
     operator delete(pvStack_60);
   }
 LAB_00361554:
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2858,17 +2658,13 @@ void Walaber::SpriteBatch::drawString
 
 {
   int iVar1;
-  long lVar2;
   byte abStack_a0 [16];
   void *pvStack_90;
   byte abStack_88 [16];
   void *pvStack_78;
   byte abStack_70 [16];
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)(param_3 + 0x18);
   if (iVar1 - 2U < 2) {
     *(int *)(param_3 + 0x20) = param_4;
@@ -2904,10 +2700,6 @@ void Walaber::SpriteBatch::drawString
     operator delete(pvStack_60);
   }
 LAB_00361744:
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2928,17 +2720,13 @@ void Walaber::SpriteBatch::drawStringClipped
 
 {
   int iVar1;
-  long lVar2;
   byte abStack_b0 [16];
   void *pvStack_a0;
   byte abStack_98 [16];
   void *pvStack_88;
   byte abStack_80 [16];
   void *pvStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)(param_3 + 0x18);
   if (iVar1 - 2U < 2) {
     iVar1 = *(int *)(param_3 + 0x1c);
@@ -2973,10 +2761,6 @@ void Walaber::SpriteBatch::drawStringClipped
     operator delete(pvStack_70);
   }
 LAB_00361918:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3026,17 +2810,13 @@ void Walaber::SpriteBatch::drawStringClipped
 
 {
   int iVar1;
-  long lVar2;
   byte abStack_b0 [16];
   void *pvStack_a0;
   byte abStack_98 [16];
   void *pvStack_88;
   byte abStack_80 [16];
   void *pvStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)(param_3 + 0x18);
   if (iVar1 - 2U < 2) {
     *(int *)(param_3 + 0x20) = param_4;
@@ -3072,10 +2852,6 @@ void Walaber::SpriteBatch::drawStringClipped
     operator delete(pvStack_70);
   }
 LAB_00361b20:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3135,7 +2911,6 @@ void Walaber::SpriteBatch::_drawStringCenter
                undefined8 param_5,float *param_6,undefined8 param_7,undefined4 param_8)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   ulong uVar4;
@@ -3147,10 +2922,7 @@ void Walaber::SpriteBatch::_drawStringCenter
   long lStack_a0;
   long lStack_98;
   undefined8 uStack_90;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   lStack_a0 = 0;
   lStack_98 = 0;
   uStack_90 = 0;
@@ -3186,10 +2958,6 @@ void Walaber::SpriteBatch::_drawStringCenter
     }
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a0);
-  if (*(long *)(lVar1 + 0x28) != lStack_88) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3208,22 +2976,14 @@ void Walaber::SpriteBatch::_drawStringRight
                undefined8 param_5,float *param_6,undefined8 param_7,undefined4 param_8)
 
 {
-  long lVar1;
   float fStack_78;
   float fStack_74;
   float afStack_70 [2];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,param_5);
   fStack_74 = param_6[1];
   fStack_78 = *param_6 - afStack_70[0];
   Walaber::SpriteBatch::_drawStringLeft(param_1,param_2,param_3,param_4,param_5,&fStack_78,param_7,param_8);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3246,7 +3006,6 @@ void Walaber::SpriteBatch::_drawStringLeft
   float fVar2;
   undefined4 uVar3;
   int iVar4;
-  long lVar5;
   int *piVar6;
   long lVar7;
   int iVar8;
@@ -3257,10 +3016,7 @@ void Walaber::SpriteBatch::_drawStringLeft
   undefined8 uStack_c0;
   int iStack_b4;
   undefined8 uStack_b0;
-  long lStack_a8;
   
-  lVar5 = tpidr_el0;
-  lStack_a8 = *(long *)(lVar5 + 0x28);
   uVar10 = cosf();
   uVar11 = sinf(param_1);
   fVar1 = *param_6;
@@ -3277,10 +3033,6 @@ void Walaber::SpriteBatch::_drawStringLeft
     if (iVar4 < 0xd) {
       if (iVar4 != 10) {
         if (iVar4 == 0) {
-          if (*(long *)(lVar5 + 0x28) != lStack_a8) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
         goto LAB_00362018;
@@ -3328,15 +3080,11 @@ void Walaber::SpriteBatch::_drawGlyph
                uint param_10,undefined4 param_11)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fVar2 = (float)*(undefined8 *)(param_6 + 0x14) * param_2;
   fVar3 = (float)((ulong)*(undefined8 *)(param_6 + 0x14) >> 0x20) * param_2;
   uStack_58 = CONCAT44(fVar3,fVar2);
@@ -3353,10 +3101,6 @@ void Walaber::SpriteBatch::_drawGlyph
   param_2 = *(float *)(param_6 + 0x24) * param_2;
   *param_1 = *param_9 + (param_2 * (float)param_3 - (float)param_4 * 0.0);
   param_1[1] = fVar2 + (float)param_3 * 0.0 + param_2 * (float)param_4;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3376,15 +3120,11 @@ void Walaber::SpriteBatch::_drawStringCenterClip
                undefined4 param_9)
 
 {
-  long lVar1;
   float fStack_88;
   float fStack_84;
   void *pvStack_78;
   float afStack_70 [2];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
                     /* try { // try from 00362230 to 00362243 has its CatchHandler @ 003622d0 */
   Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
@@ -3394,10 +3134,6 @@ void Walaber::SpriteBatch::_drawStringCenterClip
   fStack_84 = param_6[1];
   fStack_88 = *param_6 + afStack_70[0] * -0.5;
   Walaber::SpriteBatch::_drawStringLeftClip(param_1,param_2,param_3,param_4,param_5,&fStack_88,param_7,param_8,param_9);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3417,15 +3153,11 @@ void Walaber::SpriteBatch::_drawStringRightClip
                undefined4 param_9)
 
 {
-  long lVar1;
   float fStack_88;
   float fStack_84;
   void *pvStack_78;
   float afStack_70 [2];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&fStack_88,param_5);
                     /* try { // try from 00362348 to 0036235b has its CatchHandler @ 003623e0 */
   Walaber::BitmapFont::measureString(afStack_70,param_2,param_4,&fStack_88);
@@ -3435,10 +3167,6 @@ void Walaber::SpriteBatch::_drawStringRightClip
   fStack_84 = param_6[1];
   fStack_88 = *param_6 - afStack_70[0];
   Walaber::SpriteBatch::_drawStringLeftClip(param_1,param_2,param_3,param_4,param_5,&fStack_88,param_7,param_8,param_9);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3459,7 +3187,6 @@ void Walaber::SpriteBatch::_drawStringLeftClip
 {
   undefined4 uVar1;
   int iVar2;
-  long lVar3;
   float fVar4;
   int *piVar5;
   int iVar6;
@@ -3471,10 +3198,7 @@ void Walaber::SpriteBatch::_drawStringLeftClip
   int iStack_94;
   undefined4 uStack_90;
   float fStack_8c;
-  long lStack_88;
   
-  lVar3 = tpidr_el0;
-  lStack_88 = *(long *)(lVar3 + 0x28);
   uVar8 = cosf();
   uVar9 = sinf(param_1);
   uStack_90 = *param_6;
@@ -3490,10 +3214,6 @@ void Walaber::SpriteBatch::_drawStringLeftClip
     if (iVar2 < 0xd) {
       if (iVar2 != 10) {
         if (iVar2 == 0) {
-          if (*(long *)(lVar3 + 0x28) != lStack_88) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
         goto LAB_00362494;
@@ -3538,7 +3258,6 @@ void Walaber::SpriteBatch::_drawGlyphClip
                float *param_10)
 
 {
-  long lVar1;
   ulong uVar2;
   float fVar3;
   float fVar4;
@@ -3553,10 +3272,7 @@ void Walaber::SpriteBatch::_drawGlyphClip
   undefined8 uStack_78;
   undefined8 uStack_70;
   undefined8 uStack_68;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_70 = 0;
   uStack_80 = 0;
   uStack_78 = 0;
@@ -3656,10 +3372,6 @@ LAB_0036288c:
   param_2 = *(float *)(param_6 + 0x24) * param_2;
   *param_1 = fVar3 + (param_2 * (float)param_3 - param_4._0_4_ * 0.0);
   param_1[1] = fVar6 + (float)param_3 * 0.0 + param_2 * param_4._0_4_;
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3681,7 +3393,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
                float *param_6,float *param_7,float *param_8,undefined4 *param_9,float param_10)
 
 {
-  long lVar1;
   ulong *puVar2;
   undefined8 *puVar3;
   float fVar4;
@@ -3693,10 +3404,7 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
   float fStack_9c;
   undefined8 uStack_98;
   undefined4 uStack_90;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   fVar7 = *param_8;
   puVar2 = (ulong *)param_5[1];
   fVar5 = param_8[1] * 0.5;
@@ -3805,10 +3513,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *puVar3 = *(undefined8 *)((long)puVar3 + -0x14);
     *(long *)(param_4 + 8) = *(long *)(param_4 + 8) + 0x14;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3896,16 +3600,12 @@ void Walaber::SpriteBatch::drawTeardrop
                undefined8 param_6,undefined8 param_7,undefined4 param_8,uint param_9)
 
 {
-  long lVar1;
   long lVar2;
   undefined4 *puVar3;
   int iVar4;
   undefined1 auStack_88 [8];
   undefined4 *puStack_80;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   switch(*(undefined4 *)(param_2 + 0x18)) {
   case 1:
     break;
@@ -3959,10 +3659,6 @@ LAB_0038e55c:
     *(long *)(lVar2 + 0x30) = *(long *)(lVar2 + 0x30) + 8;
   }
 LAB_0038e648:
-  if (*(long *)(lVar1 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3985,7 +3681,6 @@ void Walaber::SpriteBatch::_addTeardropToBatch
 {
   long *plVar1;
   undefined8 *puVar2;
-  long lVar3;
   uint uVar4;
   uint uVar5;
   ulong *puVar6;
@@ -4001,10 +3696,7 @@ void Walaber::SpriteBatch::_addTeardropToBatch
   float fStack_ac;
   undefined8 uStack_a8;
   uint uStack_a0;
-  long lStack_98;
   
-  lVar3 = tpidr_el0;
-  lStack_98 = *(long *)(lVar3 + 0x28);
   puVar6 = (ulong *)param_4[1];
   uVar5 = *param_7;
   uVar4 = *param_7;
@@ -4139,10 +3831,6 @@ void Walaber::SpriteBatch::_addTeardropToBatch
     *puVar2 = *(undefined8 *)((long)puVar2 + -0x14);
     *plVar1 = *plVar1 + 0x14;
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4160,7 +3848,6 @@ void Walaber::SpriteBatch::drawTeardropColored
                Walaber__VertexColorBlendMode p5,bool p6)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   undefined4 *puVar4;
@@ -4169,11 +3856,8 @@ void Walaber::SpriteBatch::drawTeardropColored
   undefined4 in_register_00005004;
   undefined1 auStack_78 [8];
   undefined4 *puStack_70;
-  long lStack_68;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   iVar5 = (int)p1;
   switch(*(undefined4 *)(uVar2 + 0x18)) {
   case 1:
@@ -4225,10 +3909,6 @@ LAB_00494788:
     *(long *)(lVar3 + 0x30) = *(long *)(lVar3 + 0x30) + 8;
   }
 LAB_0049486c:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

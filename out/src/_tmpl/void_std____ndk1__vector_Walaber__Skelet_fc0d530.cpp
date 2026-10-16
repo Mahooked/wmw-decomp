@@ -20,7 +20,6 @@ void std::__ndk1::
 {
   ulong uVar1;
   undefined1 uVar2;
-  long lVar3;
   undefined8 *in_x1;
   long lVar4;
   ulong uVar5;
@@ -33,10 +32,7 @@ void std::__ndk1::
   Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_58;
   Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_50;
   Walaber__SkeletonActor__AnimationGroupDataAux *pWStack_48;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   lVar4 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar4 + 1;
   if (0x666666666666666 < uVar1) {
@@ -90,10 +86,6 @@ void std::__ndk1::
   pWStack_58 = pWStack_60;
   pWStack_48 = pWVar8;
   std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&>::~__split_buffer(&pWStack_60);
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

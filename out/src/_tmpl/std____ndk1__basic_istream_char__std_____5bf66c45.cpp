@@ -17,15 +17,11 @@ long * std::__ndk1::getline<char,std::__ndk1::char_traits<char>,std::__ndk1::all
 
 {
   byte *pbVar1;
-  long lVar2;
   long *plVar3;
   uint uVar4;
   long lVar5;
   char acStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 003f8398 to 003f83a7 has its CatchHandler @ 003f84b0 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_50,param_1,1);
   if (acStack_50[0] != '\0') {
@@ -76,10 +72,6 @@ LAB_003f8464:
     lVar5 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 003f8478 to 003f847b has its CatchHandler @ 003f84ac */
     std::__ndk1::ios_base::clear(lVar5,*(uint *)(lVar5 + 0x20) | uVar4);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    plVar3 = (long *)__stack_chk_fail();
-    return plVar3;
   }
   return param_1;
 }

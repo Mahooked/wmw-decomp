@@ -19,7 +19,6 @@ replace<char_const*>
           (byte *param_1,long param_2,long param_3,undefined1 *param_4,undefined1 *param_5)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined1 *puVar3;
   undefined8 uVar4;
@@ -36,10 +35,7 @@ replace<char_const*>
   ulong uStack_70;
   ulong uStack_68;
   undefined1 *puStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar12 = (long)param_5 - (long)param_4;
   uStack_70 = 0;
   uStack_68 = 0;
@@ -111,10 +107,6 @@ LAB_005e5aec:
   uVar4 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::replace(param_1,param_2 - (long)pbVar6,param_3 - param_2,puVar3,uVar12);
   if ((uStack_70 & 1) != 0) {
     operator delete(puStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
   }
   return uVar4;
 }

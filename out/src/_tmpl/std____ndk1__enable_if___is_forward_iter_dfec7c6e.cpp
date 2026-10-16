@@ -22,7 +22,6 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
 
 {
   ulong uVar1;
-  long lVar2;
   ulong uVar3;
   undefined1 auStack_68 [16];
   long lStack_58;
@@ -31,10 +30,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
   uint uStack_40;
   long lStack_38;
   uint uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uVar3 = param_1[1];
   uStack_30 = *(uint *)(param_2 + 1);
   lStack_38 = *param_2;
@@ -63,10 +59,6 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::
   else {
     std::__ndk1::__bit_iterator<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false, 0> std::__ndk1::__copy_unaligned<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>, false>(auStack_68,&lStack_38,&lStack_48,&lStack_58);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

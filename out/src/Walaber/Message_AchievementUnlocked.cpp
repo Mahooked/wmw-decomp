@@ -15,12 +15,8 @@ void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
 
 {
   undefined8 *puVar1;
-  long lVar2;
   undefined1 auStack_78 [32];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   puVar1 = param_2 + 2;
   *param_2 = &PTR__Message_0070cdc8;
   param_2[1] = 0x10;
@@ -41,10 +37,6 @@ void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
                     /* try { // try from 003307a4 to 003307b7 has its CatchHandler @ 003307f0 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementIsNew,auStack_78);
   Walaber::Property::~Property(auStack_78);
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

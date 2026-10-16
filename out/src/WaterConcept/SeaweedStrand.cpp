@@ -59,7 +59,6 @@ void WaterConcept::SeaweedStrand::init
 
 {
   undefined1 auVar1 [16];
-  long lVar2;
   float *pfVar3;
   float fVar4;
   undefined8 *in_x2;
@@ -71,11 +70,8 @@ void WaterConcept::SeaweedStrand::init
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined4 uStack_6c;
-  long lStack_68;
   
   pfVar3 = (float *)(ulong)(uint)p2;
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   fVar4 = SUB84(p3,0);
   pfVar3[4] = p5;
   fVar8 = DAT_0072d894;
@@ -116,10 +112,6 @@ void WaterConcept::SeaweedStrand::init
   }
   uVar9 = operator new[](lVar5);
   *(undefined8 *)(pfVar3 + 0x2a) = uVar9;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

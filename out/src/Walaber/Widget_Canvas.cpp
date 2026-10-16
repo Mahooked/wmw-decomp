@@ -12,16 +12,12 @@
 void Walaber::Widget_Canvas::Widget_Canvas(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,6,&uStack_40,&uStack_48,1,1);
@@ -34,10 +30,6 @@ void Walaber::Widget_Canvas::Widget_Canvas(int p0,Walaber__Vector2 p1,Walaber__V
   puVar2[0x24] = 0;
   *(undefined4 *)((long)puVar2 + 0x11c) = 0;
   *(undefined1 *)(puVar2 + 0x25) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

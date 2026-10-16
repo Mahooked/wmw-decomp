@@ -43,11 +43,9 @@ void std::__ndk1::
   undefined8 uVar5;
   byte bVar6;
   byte bVar7;
-  long lVar8;
   long in_x5;
   long *in_x6;
   byte *in_x7;
-  long lVar9;
   long lVar10;
   byte *pbVar11;
   byte *pbVar12;
@@ -67,8 +65,6 @@ void std::__ndk1::
   undefined1 uStack_71;
   undefined7 uStack_70;
   
-  lVar8 = tpidr_el0;
-  lVar9 = *(long *)(lVar8 + 0x28);
   if (in_x7 == param_2) {
     lVar10 = 0;
   }
@@ -400,10 +396,6 @@ void std::__ndk1::
         *(undefined8 *)(pbVar12 + 0x38) = uVar15;
       }
     }
-  }
-  if (*(long *)(lVar8 + 0x28) != lVar9) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

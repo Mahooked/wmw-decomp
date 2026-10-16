@@ -17,7 +17,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   long *in_x1;
   long lVar3;
   ulong uVar4;
@@ -26,10 +25,7 @@ void std::__ndk1::
   long lVar7;
   undefined1 auStack_60 [16];
   long *plStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = ((long)p0[1] - (long)*p0 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
@@ -63,10 +59,6 @@ void std::__ndk1::
                     /* try { // try from 0037eea8 to 0037eeb3 has its CatchHandler @ 0037eeec */
   std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

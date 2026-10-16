@@ -14,16 +14,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
                (undefined1 *param_1,long *param_2,uint param_3)
 
 {
-  long lVar1;
   byte bVar2;
   int iVar3;
   long lVar4;
   long *plVar5;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
   lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
   if (*(uint *)(lVar4 + 0x20) == 0) {
@@ -71,10 +67,6 @@ LAB_003d5f20:
   else {
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -91,16 +83,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
                (undefined1 *param_1,long *param_2,uint param_3)
 
 {
-  long lVar1;
   byte bVar2;
   int iVar3;
   long lVar4;
   long *plVar5;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
   lVar4 = (long)param_2 + *(long *)(*param_2 + -0x18);
   if (*(uint *)(lVar4 + 0x20) == 0) {
@@ -148,10 +136,6 @@ LAB_005a64f8:
   else {
     std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

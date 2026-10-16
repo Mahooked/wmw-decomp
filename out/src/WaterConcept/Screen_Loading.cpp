@@ -105,7 +105,6 @@ void WaterConcept::Screen_Loading::enter(long param_1)
 {
   long lVar1;
   undefined8 *puVar2;
-  long lVar3;
   undefined8 uVar4;
   undefined **ppuVar5;
   byte abStack_c0 [16];
@@ -116,10 +115,7 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   undefined **ppuStack_70;
   undefined4 *puStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   ppuStack_70 = &PTR__Message_0070cdc8;
   puStack_68 = (undefined4 *)0xa00000010;
   Walaber::PropertyList::PropertyList(auStack_60);
@@ -545,10 +541,6 @@ void WaterConcept::Screen_Loading::enter(long param_1)
   WaterConcept::Screen_Loading::_doPromoAndThemeCheck();
   GameSettings::systemLanguage = Walaber::TextManager::mCurrentLanguage;
   WaterConcept::Screen_Loading::_buildUI(param_1);
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -567,7 +559,6 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
   undefined1 *puVar1;
   void *pvVar2;
   byte bVar3;
-  long lVar4;
   undefined *puVar5;
   undefined7 uVar6;
   int iVar7;
@@ -576,7 +567,6 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
   ulong uVar10;
   ulong *puVar11;
   byte *pbVar12;
-  long lVar13;
   undefined8 uVar14;
   byte bStack_160;
   undefined7 uStack_15f;
@@ -621,8 +611,6 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
   void *pvStack_80;
   
   iVar7 = mNumUpdateSteps;
-  lVar4 = tpidr_el0;
-  lVar13 = *(long *)(lVar4 + 0x28);
   if (mGotNumUpdateSteps == '\0') {
     uVar8 = Walaber::BroadcastManager::getInstancePtr();
     bStack_c0 = 200;
@@ -1191,10 +1179,6 @@ void WaterConcept::Screen_Loading::_updateDatabase(void *p0)
       *(int *)p0 = *(int *)p0 + 1;
     }
   }
-  if (*(long *)(lVar4 + 0x28) == lVar13) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1210,7 +1194,6 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
@@ -1225,10 +1208,7 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
   char *pcStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (mCurrentAtlas < mAtlasesToLoadCount) {
     puStack_60 = (undefined8 *)operator new(0x10);
     *puStack_60 = &PTR__Callback_0070e2c0;
@@ -1293,10 +1273,6 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
     }
   }
   *(undefined1 *)((long)p0 + 4) = uVar6;
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1311,7 +1287,6 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
 void WaterConcept::Screen_Loading::_loadSwampy(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong auStack_b0 [2];
   char *pcStack_a0;
@@ -1325,10 +1300,7 @@ void WaterConcept::Screen_Loading::_loadSwampy(void *p0)
   undefined2 uStack_3f;
   undefined4 uStack_3d;
   undefined1 uStack_39;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,1,"Loading Swampy!! \n");
   uVar2 = Walaber::CurveManager::getManager();
   auStack_90[0] = 0;
@@ -1451,10 +1423,6 @@ void WaterConcept::Screen_Loading::_loadSwampy(void *p0)
   Walaber::Logger::printf(&DAT_0061d37e,1,"Done Loading Swampy!! \n");
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1469,7 +1437,6 @@ void WaterConcept::Screen_Loading::_loadSwampy(void *p0)
 void WaterConcept::Screen_Loading::_loadMystery(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong auStack_90 [2];
   char *pcStack_80;
@@ -1477,10 +1444,7 @@ void WaterConcept::Screen_Loading::_loadMystery(void *p0)
   char *pcStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,1,"Loading Mystery!! \n");
   uVar2 = Walaber::CharacterManager::getInstancePtr();
   uVar2 = Walaber::CharacterManager::createSkeletonActorWithID(uVar2,3);
@@ -1532,10 +1496,6 @@ void WaterConcept::Screen_Loading::_loadMystery(void *p0)
   Walaber::Logger::printf(&DAT_0061d37e,1,"Done Loading Mystery!! \n");
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1550,7 +1510,6 @@ void WaterConcept::Screen_Loading::_loadMystery(void *p0)
 void WaterConcept::Screen_Loading::_loadCranky(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong auStack_90 [2];
   char *pcStack_80;
@@ -1558,10 +1517,7 @@ void WaterConcept::Screen_Loading::_loadCranky(void *p0)
   char *pcStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,1,"Loading Cranky!! \n");
   uVar2 = Walaber::CharacterManager::getInstancePtr();
   uVar2 = Walaber::CharacterManager::createSkeletonActorWithID(uVar2,1);
@@ -1613,10 +1569,6 @@ void WaterConcept::Screen_Loading::_loadCranky(void *p0)
   Walaber::Logger::printf(&DAT_0061d37e,1,"Done Loading Cranky!! \n");
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1631,7 +1583,6 @@ void WaterConcept::Screen_Loading::_loadCranky(void *p0)
 void WaterConcept::Screen_Loading::_loadAllie(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte abStack_88 [17];
   undefined5 uStack_77;
@@ -1641,10 +1592,7 @@ void WaterConcept::Screen_Loading::_loadAllie(void *p0)
   char *pcStack_60;
   ulong auStack_50 [2];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,1,"Loading Allie!! \n");
   uVar2 = Walaber::CharacterManager::getInstancePtr();
   uVar2 = Walaber::CharacterManager::createSkeletonActorWithID(uVar2,6);
@@ -1695,10 +1643,6 @@ void WaterConcept::Screen_Loading::_loadAllie(void *p0)
   Walaber::Logger::printf(&DAT_0061d37e,1,"Done Loading Allie!! \n");
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1758,16 +1702,12 @@ LAB_00501070:
 void WaterConcept::Screen_Loading::_loadAchievementsFromDB(void *p0)
 
 {
-  long lVar1;
   int iVar2;
   byte abStack_58 [16];
   void *pvStack_48;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,1,"Loading Achievements");
   if (((Walaber::AchievementManager::getInstancePtr()::instance & 1) == 0) &&
      (iVar2 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar2 != 0)) {
@@ -1823,10 +1763,6 @@ void WaterConcept::Screen_Loading::_loadAchievementsFromDB(void *p0)
   }
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1842,7 +1778,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
 
 {
   long lVar1;
-  long lVar2;
   float fVar3;
   int iVar4;
   undefined8 *puVar5;
@@ -1854,7 +1789,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   long lVar11;
   undefined8 uVar12;
   char *pcVar13;
-  long lVar14;
   float fVar15;
   undefined8 uStack_340;
   undefined8 uStack_338;
@@ -1942,8 +1876,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   undefined1 uStack_a9;
   undefined4 uStack_a8;
   
-  lVar2 = tpidr_el0;
-  lVar14 = *(long *)(lVar2 + 0x28);
   if (((NotificationSingleton::getInstancePtr()::instance & 1) == 0) &&
      (iVar4 = __cxa_guard_acquire(&NotificationSingleton::getInstancePtr()::instance), iVar4 != 0)) {
                     /* try { // try from 0050229c to 005022a7 has its CatchHandler @ 005024c4 */
@@ -2628,10 +2560,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::NotificationSingleton>>::~SharedPtr(&puStack_260);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_240);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::NotificationSingleton>>::~SharedPtr(&puStack_230);
-  if (*(long *)(lVar2 + 0x28) == lVar14) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2651,7 +2579,6 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
   void *pvVar2;
   byte *pbVar3;
   byte bVar4;
-  long lVar5;
   undefined *puVar6;
   undefined4 *puVar7;
   undefined2 *puVar8;
@@ -2663,7 +2590,6 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
   char *pcVar14;
   undefined8 *puVar15;
   ulong uVar16;
-  long lVar17;
   undefined8 uVar18;
   undefined8 uVar19;
   undefined4 *puVar20;
@@ -2765,8 +2691,6 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar5 = tpidr_el0;
-  lVar17 = *(long *)(lVar5 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_138,&DAT_0077f948);
   uStack_8a = 0;
   uStack_89 = 0;
@@ -5214,10 +5138,6 @@ void WaterConcept::Screen_Loading::_updateLanguage(void *p0)
   if ((bStack_138 & 1) != 0) {
     operator delete(puStack_128);
   }
-  if (*(long *)(lVar5 + 0x28) == lVar17) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5251,7 +5171,6 @@ void WaterConcept::Screen_Loading::_loadFonts(void *p0)
 void WaterConcept::Screen_Loading::_loadFluidTextures(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_60;
   undefined8 uStack_58;
@@ -5261,10 +5180,7 @@ void WaterConcept::Screen_Loading::_loadFluidTextures(void *p0)
   undefined4 uStack_2f;
   undefined1 uStack_2b;
   undefined2 uStack_2a;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   WaterConcept::GameSettings::loadFluidTextures();
   puts("Loading JC Curves");
   uVar2 = Walaber::CurveManager::getManager();
@@ -5303,10 +5219,6 @@ void WaterConcept::Screen_Loading::_loadFluidTextures(void *p0)
   puts("Done Loading JC Curves!");
   *(undefined1 *)((long)p0 + 4) = 1;
   *(int *)p0 = *(int *)p0 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5321,16 +5233,12 @@ void WaterConcept::Screen_Loading::_loadFluidTextures(void *p0)
 void WaterConcept::Screen_Loading::_loadSounds(void *p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   byte abStack_40 [17];
   undefined2 uStack_2f;
   undefined5 uStack_2d;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2d = 0;
   abStack_40[0] = 0x22;
   abStack_40[9] = 0x6f;
@@ -5362,10 +5270,6 @@ void WaterConcept::Screen_Loading::_loadSounds(void *p0)
   if ((abStack_40[0] & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_2d,CONCAT21(uStack_2f,abStack_40[0x10])));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5380,7 +5284,6 @@ void WaterConcept::Screen_Loading::_loadSounds(void *p0)
 void WaterConcept::Screen_Loading::_loadMainMenu(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   undefined8 *puStack_70;
@@ -5389,10 +5292,7 @@ void WaterConcept::Screen_Loading::_loadMainMenu(void *p0)
   undefined4 *puStack_58;
   ulong auStack_50 [2];
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (mMenuLoadState < 0) {
     pcStack_40 = (char *)operator new(0x20);
     auStack_50[1] = 0x18;
@@ -5418,10 +5318,6 @@ void WaterConcept::Screen_Loading::_loadMainMenu(void *p0)
   }
   *(int *)p0 = *(int *)p0 + 1;
   *(bool *)((long)p0 + 4) = mMenuLoadState == 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5458,14 +5354,12 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
 {
   void *pvVar1;
   byte bVar2;
-  long lVar3;
   undefined7 uVar4;
   int iVar5;
   ulong *puVar6;
   undefined8 *puVar7;
   ulong uVar8;
   byte *pbVar9;
-  long lVar10;
   undefined8 uVar11;
   undefined1 auStack_108 [8];
   ulong auStack_100 [2];
@@ -5490,8 +5384,6 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
   undefined1 uStack_51;
   undefined7 uStack_50;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,&DAT_0077fb88);
   auStack_e8[1] = 0;
   pvStack_d8 = (void *)0x0;
@@ -5696,10 +5588,6 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5714,7 +5602,6 @@ void WaterConcept::Screen_Loading::_doPromoAndThemeCheck(void)
 void WaterConcept::Screen_Loading::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -5732,10 +5619,7 @@ void WaterConcept::Screen_Loading::_buildUI(long param_1)
   undefined2 uStack_4a;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_4a = 0;
   abStack_60[0] = 0x28;
   abStack_60[9] = 0x5f;
@@ -5789,10 +5673,6 @@ void WaterConcept::Screen_Loading::_buildUI(long param_1)
     operator delete((void *)CONCAT26(uStack_4a,CONCAT15(uStack_4b,CONCAT41(uStack_4f,abStack_60[0x10]))
                                  ));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5809,18 +5689,14 @@ void WaterConcept::Screen_Loading::update(float p0,bool p1)
 {
   ulong uVar1;
   uint uVar2;
-  long lVar3;
   ulong uVar4;
   long *plVar5;
   float fVar6;
   float fVar7;
   undefined4 uStack_30;
   char cStack_2c;
-  long lStack_28;
   
   uVar4 = (ulong)p1;
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   if (*(char *)(uVar4 + 0x9c) == '\0') {
     uStack_30 = *(undefined4 *)(uVar4 + 0xbc);
     cStack_2c = '\0';
@@ -5855,10 +5731,6 @@ void WaterConcept::Screen_Loading::update(float p0,bool p1)
   else {
     Walaber::WidgetManager::update(*(undefined8 *)(uVar4 + 0x10));
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5874,7 +5746,6 @@ void WaterConcept::Screen_Loading::update(float p0,bool p1)
 void WaterConcept::Screen_Loading::_goEnter(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   int iVar3;
   ulong *puVar4;
@@ -5900,10 +5771,7 @@ void WaterConcept::Screen_Loading::_goEnter(void)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_0077fb70);
   abStack_98[4] = 0;
   abStack_98[5] = 0;
@@ -6047,10 +5915,6 @@ void WaterConcept::Screen_Loading::_goEnter(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6112,7 +5976,6 @@ int WaterConcept::Screen_Loading::handleEvent
 undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long in_x1;
   undefined1 auStack_c0 [32];
@@ -6122,10 +5985,7 @@ undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
   void *apvStack_78 [3];
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(int *)(in_x1 + 0xc) == 0x82) {
     abStack_88[0xc] = 0;
     abStack_88[0xd] = 0;
@@ -6266,10 +6126,6 @@ undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
     }
     *(int *)(p0 + 0xc) = *(int *)(p0 + 0xc) + mNumUpdateSteps;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return 0;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -6320,7 +6176,6 @@ void WaterConcept::Screen_Loading::exit(void)
 void WaterConcept::Screen_Loading::backKeyPressed(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   byte abStack_c0 [16];
@@ -6335,10 +6190,7 @@ void WaterConcept::Screen_Loading::backKeyPressed(long param_1)
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lVar2 = Walaber::ScreenManager::peekTop();
   if ((((lVar2 != 0) && (*(int *)(lVar2 + 8) == 3)) && (*(char *)(param_1 + 0x9c) != '\0')) &&
      (uVar3 = Walaber::ScreenManager::isTransitioning(), (uVar3 & 1) == 0)) {
@@ -6502,10 +6354,6 @@ void WaterConcept::Screen_Loading::backKeyPressed(long param_1)
     Walaber::ScreenManager::commitScreenChanges();
     Walaber::PropertyList::~PropertyList(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6537,7 +6385,6 @@ void WaterConcept::Screen_Loading::_atlasLoaded(void *p0)
   ulong uVar1;
   ulong uVar2;
   byte bVar3;
-  long lVar4;
   char *p0_00;
   int iVar5;
   undefined8 uVar6;
@@ -6556,10 +6403,7 @@ void WaterConcept::Screen_Loading::_atlasLoaded(void *p0)
   byte abStack_70 [8];
   ulong uStack_68;
   char *pcStack_60;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   if ((*(long *)((long)p0 + 0x20) != 0) && (0 < mAtlasesToLoadCount)) {
     uVar11 = 0;
     do {
@@ -6637,10 +6481,6 @@ LAB_005061a8:
       }
       uVar11 = uVar11 + 1;
     } while ((long)uVar11 < (long)mAtlasesToLoadCount);
-  }
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

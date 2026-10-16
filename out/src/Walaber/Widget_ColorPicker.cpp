@@ -83,16 +83,12 @@ Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
 void Walaber::Widget_ColorPicker::Widget_ColorPicker(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,4,&uStack_30,&uStack_38,1,1);
@@ -119,10 +115,6 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker(int p0,Walaber__Vector2 p1,
   *(undefined4 *)((long)puVar2 + 0x124) = 0;
   *(undefined2 *)((long)puVar2 + 300) = 0;
   puVar2[0x34] = 0x3f8000003f800000;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -159,7 +151,6 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
 
 {
   uint uVar1;
-  long lVar2;
   undefined8 *puVar3;
   undefined4 *puVar4;
   int in_w5;
@@ -167,12 +158,9 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
   undefined4 *puVar6;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   undefined4 *puVar7;
   
   puVar3 = (undefined8 *)(ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uStack_60 = *(undefined8 *)p2;
   uStack_68 = *(undefined8 *)(ulong)(uint)p3;
   Walaber::Widget::Widget(puVar3,p1,4,&uStack_60,&uStack_68,1,1);
@@ -219,10 +207,6 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
   }
   puVar3[0x21] = puVar4;
   Walaber::Widget_ColorPicker::_setupColorSwatches(puVar3);
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -239,7 +223,6 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
 {
   undefined1 *puVar1;
   int iVar2;
-  long lVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -255,10 +238,7 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
   undefined1 uStack_6e;
   undefined1 uStack_6d;
   float fStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   Walaber::Node::getWorldScale(&uStack_70);
   uVar8 = *(undefined8 *)(param_1 + 0xfc);
   fVar12 = (float)*(int *)(param_1 + 0x110) + (float)*(int *)(param_1 + 0x110);
@@ -308,10 +288,6 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
       iVar5 = iVar5 + 1;
     } while (iVar5 < iVar9);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -332,7 +308,6 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
 
 {
   uint uVar1;
-  long lVar2;
   undefined4 *puVar3;
   int *piVar4;
   ulong uVar5;
@@ -342,11 +317,8 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
   undefined8 uVar10;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   undefined4 *puVar8;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   uStack_70 = *param_4;
   uStack_78 = *param_5;
   Walaber::Widget::Widget(param_2,param_3,4,&uStack_70,&uStack_78,1,1);
@@ -432,10 +404,6 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
   }
   param_2[0x21] = puVar3;
   Walaber::Widget_ColorPicker::_setupColorSwatches(param_2);
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -720,7 +688,6 @@ undefined8 Walaber::Widget_ColorPicker::update(float p0,Walaber__Widget__WidgetA
 void Walaber::Widget_ColorPicker::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   long lVar2;
   int *piVar3;
   uint uVar4;
@@ -753,10 +720,7 @@ void Walaber::Widget_ColorPicker::draw(Walaber__SpriteBatch *p0)
   long lStack_b0;
   int *piStack_a8;
   undefined8 uStack_a0;
-  long lStack_98;
   
-  lVar1 = tpidr_el0;
-  lStack_98 = *(long *)(lVar1 + 0x28);
   uVar11 = Walaber::Widget::_getAngle();
   lVar2._0_4_ = p0[5].f_0x18;
   lVar2._4_4_ = p0[5].f_0x1c;
@@ -906,10 +870,6 @@ LAB_0037bcb0:
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_f8);
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -939,7 +899,6 @@ undefined8 Walaber::Widget_ColorPicker::acceptNewFingerDown(int p0,Walaber__Fing
 void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0)
 
 {
-  long lVar1;
   long in_x1;
   float fVar2;
   float fVar3;
@@ -951,10 +910,7 @@ void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0)
   float fVar9;
   float fVar10;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(uint *)&p0[0xb].f_0x4 < 3) {
     uVar8 = *(undefined4 *)(&DAT_0062c600 + (long)(int)*(uint *)&p0[0xb].f_0x4 * 4);
   }
@@ -987,10 +943,6 @@ void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0)
       p0[0x19].field_0x1 = 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

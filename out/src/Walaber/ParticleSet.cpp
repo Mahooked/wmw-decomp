@@ -160,7 +160,6 @@ Walaber::ParticleSet::addParticle
 void Walaber::ParticleSet::initParticles(uint p0)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   int in_w1;
@@ -183,11 +182,8 @@ void Walaber::ParticleSet::initParticles(uint p0)
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined2 uStack_50;
-  long lStack_48;
   
   puVar2 = (undefined8 *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_a0 = 0x3f8000003f800000;
   uStack_b8 = 0;
   uStack_c0 = 0;
@@ -222,10 +218,6 @@ void Walaber::ParticleSet::initParticles(uint p0)
     } while (in_w1 != iVar5);
   }
   *(int *)(puVar2 + 7) = in_w1;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -242,7 +234,6 @@ void Walaber::ParticleSet::updateParticles(float p0)
 {
   long lVar1;
   undefined8 *puVar2;
-  long lVar3;
   long *in_x0;
   long *plVar4;
   long lVar5;
@@ -254,10 +245,7 @@ void Walaber::ParticleSet::updateParticles(float p0)
   undefined8 uVar11;
   float fVar12;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   if (-1 < (int)in_x0[6]) {
     lVar6 = 0;
     lVar7 = -1;
@@ -301,10 +289,6 @@ void Walaber::ParticleSet::updateParticles(float p0)
   if (plVar4 != (long *)0x0) {
     (**(code **)(*plVar4 + 0x10))(plVar4,auStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -375,7 +359,6 @@ void Walaber::ParticleSet::drawParticles
 {
   long lVar1;
   float *pfVar2;
-  long lVar3;
   long *plVar4;
   long lVar5;
   long lVar6;
@@ -389,10 +372,7 @@ void Walaber::ParticleSet::drawParticles
   float fStack_9c;
   long lStack_98;
   int *piStack_90;
-  long lStack_88;
   
-  lVar3 = tpidr_el0;
-  lStack_88 = *(long *)(lVar3 + 0x28);
   if (-1 < (int)param_1[6]) {
     lVar5 = 0;
     lVar6 = -1;
@@ -445,10 +425,6 @@ void Walaber::ParticleSet::drawParticles
       lVar5 = lVar5 + 0x74;
     } while (lVar6 < (int)param_1[6]);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -629,7 +605,6 @@ void Walaber::ParticleSet::drawParticles
 {
   long lVar1;
   float *pfVar2;
-  long lVar3;
   long *plVar4;
   long lVar5;
   long lVar6;
@@ -644,10 +619,7 @@ void Walaber::ParticleSet::drawParticles
   float fStack_9c;
   long lStack_98;
   int *piStack_90;
-  long lStack_88;
   
-  lVar3 = tpidr_el0;
-  lStack_88 = *(long *)(lVar3 + 0x28);
   if (-1 < (int)param_1[6]) {
     lVar6 = 0;
     lVar7 = -1;
@@ -699,10 +671,6 @@ void Walaber::ParticleSet::drawParticles
       lVar6 = lVar6 + 0x74;
     } while (lVar7 < (int)param_1[6]);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -722,7 +690,6 @@ void Walaber::ParticleSet::drawParticles
 {
   long lVar1;
   float *pfVar2;
-  long lVar3;
   long *plVar4;
   long lVar5;
   long lVar6;
@@ -739,10 +706,7 @@ void Walaber::ParticleSet::drawParticles
   float fStack_ac;
   long lStack_a8;
   int *piStack_a0;
-  long lStack_98;
   
-  lVar3 = tpidr_el0;
-  lStack_98 = *(long *)(lVar3 + 0x28);
   if (-1 < (int)param_2[6]) {
     lVar6 = 0;
     lVar7 = -1;
@@ -801,10 +765,6 @@ void Walaber::ParticleSet::drawParticles
       lVar6 = lVar6 + 0x74;
     } while (lVar7 < (int)param_2[6]);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

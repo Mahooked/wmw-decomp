@@ -39,7 +39,6 @@ void std::__ndk1::
                (long *param_1,long *param_2,long *param_3)
 
 {
-  long lVar1;
   long lVar2;
   bool bVar3;
   undefined8 uVar4;
@@ -47,10 +46,7 @@ void std::__ndk1::
   long *plVar6;
   long lVar7;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (param_1[2] != 0) {
     lVar5 = *param_1;
     plVar6 = param_1 + 1;
@@ -129,10 +125,6 @@ joined_r0x003ffeec:
     }
   }
 LAB_00400008:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

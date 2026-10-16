@@ -12,14 +12,10 @@
 void Walaber::SceneGraph::SceneGraph()
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0x80);
   abStack_50[6] = 0;
   abStack_50[7] = 0;
@@ -62,10 +58,6 @@ void Walaber::SceneGraph::SceneGraph()
   abStack_50[7] = 0x47;
   abStack_50[8] = 0x72;
   strncpy(this + 1,(ulong)abStack_50 | 1,0x1b);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -81,15 +73,11 @@ void Walaber::SceneGraph::SceneGraph()
 void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte *pbVar3;
   ulong auStack_50 [2];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0x80);
   auStack_50[1] = 0;
   pvStack_40 = (void *)0x0;
@@ -105,10 +93,6 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
     pbVar3 = param_2 + 1;
   }
   strncpy(param_1 + 1,pbVar3,0x1b);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

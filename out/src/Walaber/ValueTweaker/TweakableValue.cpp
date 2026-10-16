@@ -29,7 +29,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(long param_1)
 void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
 
 {
-  long lVar1;
   int *piVar2;
   undefined4 in_w1;
   undefined **ppuStack_190;
@@ -51,11 +50,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
   piVar2 = (int *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if (*piVar2 == 1) {
     appuStack_110[0] = &PTR__basic_istream_00711190;
     ppuStack_190 = &PTR__basic_istream_00711168;
@@ -97,10 +93,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
     std::__ndk1::locale::~locale(auStack_170);
     std::__ndk1::ios_base::~ios_base(appuStack_110);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -115,7 +107,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
 void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
 
 {
-  long lVar1;
   int *in_x0;
   undefined4 in_register_00005004;
   undefined **ppuStack_1a0;
@@ -137,10 +128,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
   undefined **appuStack_120 [17];
   undefined8 uStack_98;
   undefined4 uStack_90;
-  long lStack_80;
   
-  lVar1 = tpidr_el0;
-  lStack_80 = *(long *)(lVar1 + 0x28);
   if (*in_x0 == 2) {
     appuStack_120[0] = &PTR__basic_istream_00711190;
     ppuStack_1a0 = &PTR__basic_istream_00711168;
@@ -182,10 +170,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
     std::__ndk1::locale::~locale(auStack_180);
     std::__ndk1::ios_base::~ios_base(appuStack_120);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_80) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -200,7 +184,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
 void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *in_x1;
   undefined **ppuStack_190;
@@ -222,10 +205,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if (*(int *)p0 == 3) {
     appuStack_110[0] = &PTR__basic_istream_00711190;
     ppuStack_190 = &PTR__basic_istream_00711168;
@@ -269,10 +249,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0)
     std::__ndk1::locale::~locale(auStack_170);
     std::__ndk1::ios_base::~ios_base(appuStack_110);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -287,7 +263,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0)
 void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_190;
   undefined8 uStack_188;
@@ -308,10 +283,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if (*param_1 == 4) {
     appuStack_110[0] = &PTR__basic_istream_00711190;
     ppuStack_190 = &PTR__basic_istream_00711168;
@@ -359,10 +331,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     std::__ndk1::locale::~locale(auStack_170);
     std::__ndk1::ios_base::~ios_base(appuStack_110);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -377,7 +345,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
 void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0)
 
 {
-  long lVar1;
   int *piVar2;
   undefined8 uVar3;
   undefined1 *in_x1;
@@ -401,11 +368,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_78;
   
   piVar2 = (int *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   if (*piVar2 == 5) {
     appuStack_110[0] = &PTR__basic_istream_00711190;
     ppuStack_190 = &PTR__basic_istream_00711168;
@@ -457,10 +421,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0)
     std::__ndk1::locale::~locale(auStack_170);
     std::__ndk1::ios_base::~ios_base(appuStack_110);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -475,7 +435,6 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0)
 void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
 
 {
-  long lVar1;
   long *plVar2;
   long *plVar3;
   long lVar4;
@@ -490,10 +449,7 @@ void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
   undefined1 uStack_65;
   undefined4 uStack_64;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (*(long **)(param_1 + 2) != (long *)(param_1 + 4)) {
     plVar5 = *(long **)(param_1 + 2);
     do {
@@ -552,10 +508,6 @@ void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
       }
       plVar5 = plVar3;
     } while (plVar3 != (long *)(param_1 + 4));
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -633,14 +585,10 @@ void Walaber::ValueTweaker::TweakableValue::asString(undefined8 param_1,long par
 ulong Walaber::ValueTweaker::TweakableValue::asInt(int *param_1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   uint uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   uVar3 = 0;
   if (*param_1 == 1) {
@@ -653,10 +601,6 @@ ulong Walaber::ValueTweaker::TweakableValue::asInt(int *param_1)
     sscanf(lVar2,"%d",&uStack_2c);
     uVar3 = (ulong)uStack_2c;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -671,13 +615,9 @@ ulong Walaber::ValueTweaker::TweakableValue::asInt(int *param_1)
 void Walaber::ValueTweaker::TweakableValue::asFloat(int *param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   if (*param_1 == 2) {
     if ((*(byte *)(param_1 + 8) & 1) == 0) {
@@ -688,10 +628,6 @@ void Walaber::ValueTweaker::TweakableValue::asFloat(int *param_1)
     }
     sscanf(0,lVar2,"%f",&uStack_2c);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_2c);
   return;
 }
 
@@ -761,16 +697,12 @@ void Walaber::ValueTweaker::TweakableValue::asRect(undefined8 *param_1,int *para
 void Walaber::ValueTweaker::TweakableValue::asColor(byte *param_1,int *param_2)
 
 {
-  long lVar1;
   long lVar2;
   int iStack_38;
   int iStack_34;
   int iStack_30;
   int iStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *param_1 = 0xff;
   param_1[1] = 0xff;
   param_1[2] = 0xff;
@@ -800,10 +732,6 @@ void Walaber::ValueTweaker::TweakableValue::asColor(byte *param_1,int *param_2)
     param_1[2] = (byte)iStack_34 & ((byte)(iStack_34 >> 0x1f) ^ 0xff);
     param_1[3] = (byte)iStack_38 & ((byte)(iStack_38 >> 0x1f) ^ 0xff);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -12,7 +12,6 @@
 void std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -26,20 +25,13 @@ void std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined ***)p0 = &PTR__ctype_byname_00717840;
   *(long *)(p0 + 8) = in_x2 + -1;
                     /* try { // try from 005d77a4 to 005d77af has its CatchHandler @ 005d78cc */
   lVar2 = newlocale(0x1fbf,p1,0);
   *(long *)(p0 + 0x10) = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_78 = 0;

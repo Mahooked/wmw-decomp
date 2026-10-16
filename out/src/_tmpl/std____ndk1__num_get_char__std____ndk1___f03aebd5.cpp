@@ -273,12 +273,10 @@ long * std::__ndk1::
                  (std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,void*& param_5)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   ulong uVar4;
   long lVar5;
-  long lVar6;
   ulong uVar7;
   long *plVar8;
   void *pvVar9;
@@ -294,8 +292,6 @@ long * std::__ndk1::
   undefined8 auStack_130 [20];
   undefined1 auStack_8c [44];
   
-  lVar1 = tpidr_el0;
-  lVar6 = *(long *)(lVar1 + 0x28);
   auStack_148[0] = 0;
   auStack_148[1] = 0;
   pvStack_138 = (void *)0x0;
@@ -421,10 +417,6 @@ LAB_005b550c:
   }
   if ((auStack_148[0] & 1) != 0) {
     operator delete(pvStack_138);
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar6) {
-    plVar3 = (long *)__stack_chk_fail();
-    return plVar3;
   }
   return plVar8;
 }

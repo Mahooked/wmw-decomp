@@ -82,16 +82,12 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
 void Walaber::Widget_IconList::Widget_IconList(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,5,&uStack_30,&uStack_38,1,1);
@@ -119,10 +115,6 @@ void Walaber::Widget_IconList::Widget_IconList(int p0,Walaber__Vector2 p1,Walabe
   puVar2[0x32] = 0;
   puVar2[0x35] = 0;
   puVar2[0x34] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -159,17 +151,13 @@ void Walaber::Widget_IconList::Widget_IconList
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,int p3,int p4,int p5,int p6)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int in_w7;
   float fStack_58;
   float fStack_54;
   undefined8 uStack_50;
-  long lStack_48;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *(undefined8 *)p2;
   fStack_58 = (float)p6 + (float)p6 + *(float *)(ulong)(uint)p3 * (float)p4 +
               (float)((p4 + -1) * in_w7);
@@ -201,10 +189,6 @@ void Walaber::Widget_IconList::Widget_IconList
   puVar2[0x28] = 0xffffffffffffffff;
   *(undefined1 *)(puVar2 + 0x29) = 0;
   puVar2[0x36] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -224,7 +208,6 @@ void Walaber::Widget_IconList::Widget_IconList
                long *param_11)
 
 {
-  long lVar1;
   long lVar2;
   long lVar3;
   long lVar4;
@@ -236,10 +219,7 @@ void Walaber::Widget_IconList::Widget_IconList
   float fStack_78;
   float fStack_74;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uStack_70 = *param_3;
   fStack_78 = (float)param_7 + (float)param_7 + *param_4 * (float)param_5 +
               (float)((param_5 + -1) * param_8);
@@ -310,10 +290,6 @@ void Walaber::Widget_IconList::Widget_IconList
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -394,7 +370,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   long *plVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
   int iVar5;
   float fVar6;
   float fVar7;
@@ -407,10 +382,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   long lStack_50;
   void *pvStack_48;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   lStack_78 = *param_2;
   piStack_70 = (int *)param_2[1];
   if (lStack_78 != 0) {
@@ -462,10 +434,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
     fVar8 = 0.0;
   }
   *(float *)(param_1 + 0x13c) = fVar8;
-  if (*(long *)(lVar4 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -484,7 +452,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   long *plVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
   int iVar5;
   float fVar6;
   float fVar7;
@@ -498,10 +465,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   long lStack_50;
   void *pvStack_48;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0037d9a4 to 0037d9b3 has its CatchHandler @ 0037db18 */
   Walaber::Widget_IconList::Icon::Icon(&uStack_68,abStack_80,param_3);
@@ -546,10 +510,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
     fVar8 = 0.0;
   }
   *(float *)(param_1 + 0x13c) = fVar8;
-  if (*(long *)(lVar4 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -564,14 +524,10 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
 void Walaber::Widget_IconList::setIconListSizes(Walaber__Vector2 p0,int p1,int p2,int p3,int p4)
 
 {
-  long lVar1;
   int in_w5;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fStack_50 = (float)p4 + (float)p4 + *(float *)(ulong)(uint)p1 * (float)p2 +
               (float)((p2 + -1) * in_w5);
   fStack_4c = (float)p3;
@@ -580,10 +536,6 @@ void Walaber::Widget_IconList::setIconListSizes(Walaber__Vector2 p0,int p1,int p
   *(int *)((long)p0 + 0x11c) = p4;
   *(int *)((long)p0 + 0x120) = in_w5;
   *(undefined8 *)((long)p0 + 0x124) = *(undefined8 *)(ulong)(uint)p1;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -684,7 +636,6 @@ void Walaber::Widget_IconList::update(float p0,Walaber__Widget__WidgetActionRet 
 {
   int iVar1;
   undefined4 uVar2;
-  long lVar3;
   undefined8 uVar4;
   undefined1 *in_x1;
   long lVar5;
@@ -705,10 +656,7 @@ void Walaber::Widget_IconList::update(float p0,Walaber__Widget__WidgetActionRet 
   undefined8 uStack_58;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   lVar5._0_4_ = p1[0x15].f_0xc;
   lVar5._4_4_ = p1[0x15].f_0x10;
   if (lVar5 == 0) {
@@ -808,10 +756,6 @@ void Walaber::Widget_IconList::update(float p0,Walaber__Widget__WidgetActionRet 
     *(int *)&p1[0x10].field_0x4 = iVar7;
     *(undefined4 *)(p1 + 0x10) = 0xffffffff;
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -830,7 +774,6 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
   long *plVar1;
   int iVar2;
   undefined4 uVar3;
-  long lVar4;
   ulong uVar5;
   int iVar6;
   long lVar7;
@@ -888,10 +831,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
   float fStack_c4;
   float fStack_c0;
   float fStack_bc;
-  long lStack_b0;
   
-  lVar4 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar4 + 0x28);
   fVar13 = (float)Walaber::Widget::_getAngle();
   Walaber::Node::getWorldPosition(&uStack_150,p0);
   uVar25 = *(undefined8 *)&p0[4].field_0x10;
@@ -1166,10 +1106,6 @@ LAB_0037e5fc:
   Walaber::SpriteBatch::drawQuadColored(fVar13);
 LAB_0037e8e4:
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar4 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1184,7 +1120,6 @@ LAB_0037e8e4:
 void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
@@ -1197,11 +1132,8 @@ void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p
   float fVar9;
   undefined8 uStack_58;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)(uVar2 + 0x1b0) == 0) {
     *(long *)(uVar2 + 0x1b0) = in_x2;
     if (*(uint *)(uVar2 + 0x88) < 3) {
@@ -1232,10 +1164,6 @@ void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p
   else {
     uVar3 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar3,p1);
   return;
 }
 
@@ -1250,16 +1178,12 @@ void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p
 void Walaber::Widget_IconList::_iconFromPos(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   int iVar2;
   float *in_x1;
   float fVar3;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   fVar3 = *(float *)((long)p0 + 0x134);
   Walaber::Node::getWorldScale(&fStack_40);
   iVar2 = (int)((*in_x1 - ((0.0 - *(float *)((long)p0 + 0x90) * fStack_40 * 0.5) +
@@ -1276,10 +1200,6 @@ void Walaber::Widget_IconList::_iconFromPos(Walaber__Vector2 p0)
   else if ((int)((ulong)(*(long *)((long)p0 + 0x108) - *(long *)((long)p0 + 0x100)) >> 4) *
            -0x55555555 <= iVar2) {
     iVar2 = -1;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(iVar2);
-    return;
   }
   return;
 }

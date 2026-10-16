@@ -42,7 +42,6 @@ void FUN_005cd86c(undefined8 *param_1,long param_2)
 
 {
   long *plVar1;
-  long lVar2;
   int iVar3;
   ulong uVar4;
   long lVar5;
@@ -56,10 +55,7 @@ void FUN_005cd86c(undefined8 *param_1,long param_2)
   undefined8 uStack_80;
   undefined8 ***pppuStack_78;
   undefined8 **ppuStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   *param_1 = &PTR_FUN_007176c8;
   param_1[1] = param_2 + -1;
   puVar10 = param_1 + 6;
@@ -1158,10 +1154,6 @@ void FUN_005cd86c(undefined8 *param_1,long param_2)
     plVar7 = (long *)(*plVar1 + uVar9 * 8);
   }
   *plVar7 = (long)&DAT_007a5ab0;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

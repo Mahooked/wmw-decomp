@@ -75,14 +75,10 @@ void Walaber::AchievementManager::~AchievementManager(long param_1)
 void Walaber::AchievementManager::loadAchievements(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined4 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::DatabaseManager::firstEntryInMap();
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_2);
                     /* try { // try from 0032f230 to 0032f23f has its CatchHandler @ 0032f278 */
@@ -90,10 +86,6 @@ void Walaber::AchievementManager::loadAchievements(undefined8 param_1,undefined8
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -113,7 +105,6 @@ void Walaber::AchievementManager::loadAchievements
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined2 *puVar4;
   undefined4 *puVar5;
   undefined *puVar6;
@@ -122,7 +113,6 @@ void Walaber::AchievementManager::loadAchievements
   byte *pbVar9;
   ulong uVar10;
   long lVar11;
-  long lVar12;
   undefined8 uVar13;
   long lVar14;
   long lVar15;
@@ -206,8 +196,6 @@ void Walaber::AchievementManager::loadAchievements
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar12 = *(long *)(lVar3 + 0x28);
   *(undefined4 *)(param_1 + 0x48) = param_2;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x50,param_3);
   auStack_2b8[1] = 0;
@@ -660,10 +648,6 @@ void Walaber::AchievementManager::loadAchievements
   if ((uStack_140 & 1) != 0) {
     operator delete(pvStack_130);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -683,13 +667,11 @@ void Walaber::AchievementManager::reportAchievement
   ulong uVar1;
   void *pvVar2;
   byte bVar3;
-  long lVar4;
   undefined7 uVar5;
   long lVar6;
   undefined8 uVar7;
   ulong *puVar8;
   byte *pbVar9;
-  long lVar10;
   long *plVar11;
   byte abStack_188 [16];
   void *pvStack_178;
@@ -722,8 +704,6 @@ void Walaber::AchievementManager::reportAchievement
   undefined1 uStack_71;
   undefined7 uStack_70;
   
-  lVar4 = tpidr_el0;
-  lVar10 = *(long *)(lVar4 + 0x28);
   lVar6 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Achievement*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Achievement*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Achievement*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Achievement*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Achievement*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>();
   if (param_2 + 8 != lVar6) {
     plVar11 = (long *)(lVar6 + 0x38);
@@ -873,10 +853,6 @@ void Walaber::AchievementManager::reportAchievement
   }
   uVar7 = 0;
 LAB_00330260:
-  if (*(long *)(lVar4 + 0x28) != lVar10) {
-    __stack_chk_fail(uVar7);
-    return;
-  }
   return;
 }
 
@@ -894,7 +870,6 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
 
 {
   byte *pbVar1;
-  long lVar2;
   undefined8 *puVar3;
   void *pvVar4;
   undefined2 *puVar5;
@@ -920,10 +895,7 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
   byte abStack_60 [8];
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   Walaber::StringHelper::floatToStr(abStack_60,8);
   uStack_b8 = 0;
   pvStack_b0 = (void *)0x0;
@@ -1027,10 +999,6 @@ ulong Walaber::AchievementManager::_setDBPercentComplete(long param_1,byte *para
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return (ulong)(uVar6 & 1);
-  }
-  uVar8 = __stack_chk_fail();
   return uVar8;
 }
 
@@ -1060,17 +1028,13 @@ void Walaber::AchievementManager::clearCompletedAchievementsToPublishToFacebook(
 void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   long *plVar3;
   long lVar4;
   long *plVar5;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar5 = (long *)*param_1;
   while (plVar5 != param_1 + 1) {
     *(undefined4 *)(plVar5[7] + 0x78) = 0;
@@ -1100,10 +1064,6 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1118,7 +1078,6 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
 void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long *plVar3;
   long *plVar4;
@@ -1128,10 +1087,7 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
   void *pvStack_78;
   undefined **appuStack_70 [2];
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((long *)*param_1 != param_1 + 1) {
     plVar6 = (long *)*param_1;
     do {
@@ -1169,10 +1125,6 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
       plVar6 = plVar4;
     } while (plVar4 != param_1 + 1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

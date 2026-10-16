@@ -13,7 +13,6 @@
 void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   ulong uVar4;
@@ -31,10 +30,7 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
   undefined1 auStack_180 [8];
   ulong *puStack_178;
   undefined1 auStack_170 [256];
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   plVar7 = param_1 + 2;
   *plVar7 = 0;
   param_1[3] = 0;
@@ -86,10 +82,6 @@ LAB_003d7328:
                     /* try { // try from 003d737c to 003d737f has its CatchHandler @ 003d73ec */
       iVar2 = wUnzGoToNextFile(*param_1);
     } while (iVar2 == 0);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_70) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -186,15 +178,11 @@ void Walaber::ZipArchiveReader::getFilenames(undefined8 *param_1,long param_2)
 void Walaber::ZipArchiveReader::openFile(long *param_1,byte *param_2)
 
 {
-  long lVar1;
   long *plVar2;
   byte *pbVar3;
   long lVar4;
   undefined1 auStack_d0 [136];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*param_1 != 0) {
     plVar2 = (long *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 1);
     if (param_1 + 2 == plVar2) {
@@ -212,10 +200,6 @@ void Walaber::ZipArchiveReader::openFile(long *param_1,byte *param_2)
       memcpy(param_1 + 4,plVar2 + 7,0x88);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

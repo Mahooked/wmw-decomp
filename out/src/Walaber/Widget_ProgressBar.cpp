@@ -12,16 +12,12 @@
 void Walaber::Widget_ProgressBar::Widget_ProgressBar(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,9,&uStack_30,&uStack_38,1,1);
@@ -44,10 +40,6 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar(int p0,Walaber__Vector2 p1,
   *(undefined1 *)((long)puVar2 + 0x16e) = 0xff;
   *(undefined1 *)((long)puVar2 + 0x16f) = 0xff;
   *(undefined1 *)(puVar2 + 0x2e) = 0xff;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -89,7 +81,6 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
                undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -97,10 +88,7 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = *param_4;
   uStack_70 = *param_5;
   Walaber::Widget::Widget(param_2,param_3,9,&uStack_68,&uStack_70,1,1);
@@ -158,10 +146,6 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -181,17 +165,13 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
                long *param_9,long *param_10,undefined4 param_11)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uStack_70 = *param_7;
   uStack_78 = *param_8;
   Walaber::Widget::Widget(param_5,param_6,9,&uStack_70,&uStack_78,1,1);
@@ -246,10 +226,6 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
                     /* try { // try from 00382c94 to 00382cb7 has its CatchHandler @ 00382cec */
   Walaber::Widget_ProgressBar::setPadding(param_1,param_2,param_3,param_4,param_5);
   Walaber::Widget_ProgressBar::updateValue(0,param_5);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -264,7 +240,6 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
 void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3)
 
 {
-  long lVar1;
   long in_x0;
   float fVar2;
   float fVar3;
@@ -273,10 +248,7 @@ void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3
   float fVar6;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_60);
   fVar6 = *(float *)(in_x0 + 0x90) * fStack_60 * p0;
   Walaber::Node::getWorldScale(&fStack_60);
@@ -292,10 +264,6 @@ void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3
   *(float *)(in_x0 + 0x144) = fVar4 - fVar3;
   *(float *)(in_x0 + 0x150) = 1.0 - (fVar6 + fVar5) / (fVar2 * fStack_60);
   *(float *)(in_x0 + 0x154) = 1.0 - (fVar4 + fVar3) / (*(float *)(in_x0 + 0x94) * fStack_5c);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -310,16 +278,12 @@ void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3
 void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 {
-  long lVar1;
   bool bVar2;
   long in_x0;
   float fVar3;
   float fVar4;
   float afStack_40 [2];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   bVar2 = 0.0 <= p0;
   if (1.0 < p0) {
     p0 = 1.0;
@@ -338,10 +302,6 @@ void Walaber::Widget_ProgressBar::updateValue(float p0)
        (fVar3 * fVar4 -
        *(float *)(in_x0 + 0x90) * afStack_40[0] * *(float *)(in_x0 + 0x150) *
        *(float *)(in_x0 + 0x160)) * -0.5;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -427,7 +387,6 @@ undefined4 Walaber::Widget_ProgressBar::getValue(long param_1)
 void Walaber::Widget_ProgressBar::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   float fVar3;
   float fVar4;
@@ -442,10 +401,7 @@ void Walaber::Widget_ProgressBar::draw(Walaber__SpriteBatch *p0)
   int *piStack_78;
   float fStack_70;
   float fStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::Widget::_getAngle();
   lStack_80._0_4_ = p0[4].f_0x20;
   lStack_80._4_4_ = p0[4].f_0x24;
@@ -498,10 +454,6 @@ LAB_003830bc:
   Walaber::SpriteBatch::drawQuad(uVar2);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b0);
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

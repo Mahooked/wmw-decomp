@@ -94,16 +94,12 @@ void Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0xf,&uStack_40,&uStack_48,1,1);
@@ -124,10 +120,6 @@ void Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup
   puVar2[0x2e] = 0;
   Walaber::Widget_ScrollableGroup::init(puVar2);
   puVar2[0x28] = *(undefined8 *)p2;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -216,15 +208,11 @@ void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(void *param_1)
 void Walaber::Widget_ScrollableGroup::setGroup(Walaber__Widget_Group *p0)
 
 {
-  long lVar1;
   ulong in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0->f_0x110 = in_x1;
   Walaber::Node::getWorldScale(&fStack_40);
   *(ulong *)(p0 + 1) =
@@ -253,10 +241,6 @@ void Walaber::Widget_ScrollableGroup::setGroup(Walaber__Widget_Group *p0)
     *(undefined4 *)&p0[1].field_0xc = 0;
     *(undefined4 *)&p0[1].field_0x14 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -288,21 +272,13 @@ void Walaber::Widget_ScrollableGroup::setDirectionMask(Walaber__Vector2 p0)
 void Walaber::Widget_ScrollableGroup::snapTo(int p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(auStack_30);
   uVar2 = *(undefined8 *)((ulong)(uint)p0 + 0x158);
   *(ulong *)((ulong)(uint)p0 + 0x130) =
        CONCAT44((float)((ulong)uVar2 >> 0x20) * auStack_30._4_4_,(float)uVar2 * auStack_30._0_4_);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -317,7 +293,6 @@ void Walaber::Widget_ScrollableGroup::snapTo(int p0)
 void Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(int p0)
 
 {
-  long lVar1;
   ulong *in_x8;
   float fVar2;
   float fVar3;
@@ -325,11 +300,8 @@ void Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(int p0)
   ulong uVar5;
   undefined1 auStack_48 [8];
   undefined1 auStack_40 [8];
-  long lStack_38;
   
   uVar4 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_Group::getWidget(*(undefined8 *)(uVar4 + 0x110));
   Walaber::Node::getWorldPosition(auStack_40);
   Walaber::Node::getWorldPosition(auStack_48,*(undefined8 *)(uVar4 + 0x110));
@@ -343,10 +315,6 @@ void Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(int p0)
   *in_x8 = uVar5 ^ (uVar5 ^ uVar4) &
                    CONCAT44(-(uint)(fVar3 <= (float)(uVar4 >> 0x20)),-(uint)(fVar2 <= (float)uVar4))
   ;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -361,20 +329,12 @@ void Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(int p0)
 void Walaber::Widget_ScrollableGroup::snapTo(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_relativePositionToOffset(auStack_30);
   *(ulong *)((long)p0 + 0x130) =
        CONCAT44((float)((ulong)*(undefined8 *)((long)p0 + 0x158) >> 0x20) * auStack_30._4_4_,
                 (float)*(undefined8 *)((long)p0 + 0x158) * auStack_30._0_4_);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -389,7 +349,6 @@ void Walaber::Widget_ScrollableGroup::snapTo(Walaber__Vector2 p0)
 void Walaber::Widget_ScrollableGroup::_relativePositionToOffset(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong *in_x8;
   float fVar2;
@@ -398,10 +357,7 @@ void Walaber::Widget_ScrollableGroup::_relativePositionToOffset(Walaber__Vector2
   Walaber__Vector2 WVar5;
   ulong uVar6;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(auStack_40);
   WVar4 = p0[0x24];
   WVar5 = p0[0x25];
@@ -413,10 +369,6 @@ void Walaber::Widget_ScrollableGroup::_relativePositionToOffset(Walaber__Vector2
           CONCAT44(-(uint)(WVar4.f_0x4 <= fVar3),-(uint)(WVar4.f_0x0 <= fVar2));
   *in_x8 = uVar6 ^ (uVar6 ^ (ulong)WVar5) &
                    CONCAT44(-(uint)(fVar3 <= WVar5.f_0x4),-(uint)(fVar2 <= WVar5.f_0x0));
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -431,20 +383,12 @@ void Walaber::Widget_ScrollableGroup::_relativePositionToOffset(Walaber__Vector2
 void Walaber::Widget_ScrollableGroup::dollyTo(int p0,float p1)
 
 {
-  long lVar1;
   undefined4 in_register_00005004;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(auStack_40);
   Walaber::Widget_ScrollableGroup::_dollyFromTo(CONCAT44(in_register_00005004,p1),(ulong)(uint)p0,(ulong)(uint)p0 + 0x130,
                   auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -524,22 +468,14 @@ void Walaber::Widget_ScrollableGroup::_dollyFromTo
 void Walaber::Widget_ScrollableGroup::dollyFromTo(int p0,int p1,float p2)
 
 {
-  long lVar1;
   undefined4 in_w2;
   undefined4 in_register_00005004;
   undefined1 auStack_48 [8];
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(auStack_40,p0,p1);
   Walaber::Widget_ScrollableGroup::_widgetPositionToOffset(auStack_48,p0,in_w2);
   Walaber::Widget_ScrollableGroup::_dollyFromTo(CONCAT44(in_register_00005004,p2),p0,auStack_40,auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -554,19 +490,11 @@ void Walaber::Widget_ScrollableGroup::dollyFromTo(int p0,int p1,float p2)
 void Walaber::Widget_ScrollableGroup::dollyTo(Walaber__Vector2 p0,float p1)
 
 {
-  long lVar1;
   undefined4 in_register_00005004;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_relativePositionToOffset(auStack_40);
   Walaber::Widget_ScrollableGroup::_dollyFromTo(CONCAT44(in_register_00005004,p1),p0,(long)p0 + 0x130,auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -581,21 +509,13 @@ void Walaber::Widget_ScrollableGroup::dollyTo(Walaber__Vector2 p0,float p1)
 void Walaber::Widget_ScrollableGroup::dollyFromTo(Walaber__Vector2 p0,Walaber__Vector2 p1,float p2)
 
 {
-  long lVar1;
   undefined4 in_register_00005004;
   undefined1 auStack_48 [8];
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Widget_ScrollableGroup::_relativePositionToOffset(auStack_40);
   Walaber::Widget_ScrollableGroup::_relativePositionToOffset(auStack_48,p0);
   Walaber::Widget_ScrollableGroup::_dollyFromTo(CONCAT44(in_register_00005004,p2),p0,auStack_40,auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -610,7 +530,6 @@ void Walaber::Widget_ScrollableGroup::dollyFromTo(Walaber__Vector2 p0,Walaber__V
 undefined8 Walaber::Widget_ScrollableGroup::update(float p0,Walaber__Widget__WidgetActionRet *p1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   float fVar4;
@@ -623,10 +542,7 @@ undefined8 Walaber::Widget_ScrollableGroup::update(float p0,Walaber__Widget__Wid
   float fVar11;
   float fVar12;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lVar2._0_4_ = p1[0xd].f_0xc;
   lVar2._4_4_ = p1[0xd].f_0x10;
   if (lVar2 != 0) {
@@ -700,10 +616,6 @@ undefined8 Walaber::Widget_ScrollableGroup::update(float p0,Walaber__Widget__Wid
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return 0;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 

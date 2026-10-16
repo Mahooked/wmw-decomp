@@ -29,7 +29,6 @@ void ndk::DatabaseCallbackClass::databaseCompletedCallback(void *p0)
 void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   int *in_x1;
@@ -42,10 +41,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   void *apvStack_50 [3];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*in_x1 == 1) {
     uStack_58 = 0;
     apvStack_50[0] = (void *)0x0;
@@ -274,10 +270,6 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
     Walaber::PropertyList::~PropertyList(apvStack_50);
   }
   *(undefined1 *)(in_x1 + 0xe) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

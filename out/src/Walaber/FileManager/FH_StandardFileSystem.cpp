@@ -14,14 +14,10 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
                (long param_1,undefined8 param_2,undefined4 param_3)
 
 {
-  long lVar1;
   undefined4 auStack_48 [2];
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = param_3;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40);
                     /* try { // try from 002c1c80 to 002c1c87 has its CatchHandler @ 002c1cbc */
@@ -29,10 +25,6 @@ void Walaber::FileManager::FH_StandardFileSystem::addBasePath
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50,7 +42,6 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
                (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::PropertyList const& param_3)
 
 {
-  long lVar1;
   bool bVar2;
   ulong uVar3;
   long lVar4;
@@ -71,10 +62,7 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
   ulong uStack_70;
   undefined8 uStack_68;
   undefined1 *puStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_70);
   plVar7 = (long *)this[1];
   do {
@@ -105,10 +93,6 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
 LAB_003d3010:
       if (((byte)uStack_70 & 1) != 0) {
         operator delete(puStack_60);
-      }
-      if (*(long *)(lVar1 + 0x28) != lStack_58) {
-        __stack_chk_fail();
-        return;
       }
       return;
     }
@@ -174,7 +158,6 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
 
 {
   undefined1 *puVar1;
-  long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 extraout_x1;
@@ -207,10 +190,7 @@ void Walaber::FileManager::FH_StandardFileSystem::readFile
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_1f0);
   plVar8 = (long *)this[1];
   do {
@@ -335,10 +315,6 @@ LAB_003d31c4:
       }
       if ((auStack_1f0[0] & 1) != 0) {
         operator delete(puStack_1e0);
-      }
-      if (*(long *)(lVar2 + 0x28) != lStack_70) {
-        __stack_chk_fail();
-        return;
       }
       return;
     }

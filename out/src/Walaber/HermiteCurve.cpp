@@ -144,7 +144,6 @@ void Walaber::HermiteCurve::ComputeTangents(long param_1,undefined4 param_2,unde
 undefined1  [16] Walaber::HermiteCurve::_evaluateCurve(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   float fVar2;
   undefined4 extraout_s0;
@@ -152,18 +151,11 @@ undefined1  [16] Walaber::HermiteCurve::_evaluateCurve(float p0,float p1)
   undefined8 extraout_var_00;
   int iStack_40;
   int iStack_3c;
-  long lStack_38;
   undefined1 auVar3 [16];
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Curve::findSegment(in_x0,&iStack_3c,&iStack_40);
   fVar2 = (float)Walaber::HermiteCurve::Hermite(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18,
                                  *(long *)(in_x0 + 0x18) + (long)iStack_40 * 0x18);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return ZEXT416((uint)(fVar2 + p1));
-  }
-  __stack_chk_fail();
   auVar3._4_4_ = extraout_var;
   auVar3._0_4_ = extraout_s0;
   auVar3._8_8_ = extraout_var_00;
@@ -208,7 +200,6 @@ float Walaber::HermiteCurve::Hermite(Walaber__CurveKey *p0,Walaber__CurveKey *p1
 void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
 
 {
-  long lVar1;
   undefined4 uVar2;
   undefined4 uVar3;
   undefined4 uVar4;
@@ -240,10 +231,7 @@ void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   for (lVar14 = *(long *)(in_x1 + 0x18); lVar14 != 0; lVar14 = *(long *)(lVar14 + 0x30)) {
     iVar6 = xmlStrcmp(*(undefined8 *)(lVar14 + 0x10),"Asset");
     if (iVar6 == 0) {
@@ -508,10 +496,6 @@ LAB_003e5f6c:
     lVar14 = *(long *)(lVar14 + 0x30);
   } while (lVar14 != 0);
 LAB_003e6110:
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

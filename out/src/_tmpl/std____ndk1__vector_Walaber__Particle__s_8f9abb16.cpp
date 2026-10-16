@@ -111,7 +111,6 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
           (long *param_1,undefined8 *param_2,ulong param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   ulong uVar3;
   ulong uVar4;
@@ -127,10 +126,7 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
   void *pvStack_90;
   long lStack_88;
   long lStack_80;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_3 != 0) {
     lVar5 = param_1[1];
     if ((ulong)((param_1[2] - lVar5 >> 2) * 0x34f72c234f72c235) < param_3) {
@@ -224,10 +220,6 @@ std::__ndk1::vector<Walaber::Particle,std::__ndk1::allocator<Walaber::Particle>>
     }
   }
 LAB_00393de0:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    puVar2 = (undefined8 *)__stack_chk_fail();
-    return puVar2;
-  }
   return param_2;
 }
 

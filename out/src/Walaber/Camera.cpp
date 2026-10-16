@@ -209,13 +209,9 @@ void Walaber::Camera::animate
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
-  long lVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   puVar1 = *(undefined4 **)(param_2 + 0x18);
   uStack_40 = param_3;
   uStack_3c = param_1;
@@ -260,10 +256,6 @@ void Walaber::Camera::animate
     void std::__ndk1::vector<float, std::__ndk1::allocator<float>>::__push_back_slow_path<float>(param_2 + 0x70,&uStack_40);
   }
   *(undefined1 *)(param_2 + 0x88) = 0;
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -283,14 +275,10 @@ void Walaber::Camera::animate
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
-  long lVar3;
   undefined4 uStack_44;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   puVar1 = *(undefined4 **)(param_3 + 0x18);
   uStack_44 = param_4;
   uStack_40 = param_2;
@@ -335,10 +323,6 @@ void Walaber::Camera::animate
     *(undefined4 **)(param_3 + 0x78) = puVar1 + 1;
   }
   *(undefined1 *)(param_3 + 0x88) = 0;
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -353,25 +337,17 @@ void Walaber::Camera::animate
 void Walaber::Camera::shake(float p0,float p1,float p2)
 
 {
-  long lVar1;
   undefined8 *in_x0;
   undefined4 in_register_00005044;
   undefined8 uStack_38;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   in_x0[0x12] = *in_x0;
   uStack_38 = 0;
   fStack_30 = p0;
   fStack_2c = p1;
   Walaber::Camera::animate(CONCAT44(in_register_00005044,p2),in_x0,3,&fStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -386,24 +362,16 @@ void Walaber::Camera::shake(float p0,float p1,float p2)
 void Walaber::Camera::halfShake(float p0,float p1,float p2)
 
 {
-  long lVar1;
   undefined8 *in_x0;
   undefined8 uStack_38;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   in_x0[0x12] = *in_x0;
   uStack_38 = 0;
   fStack_30 = p0;
   fStack_2c = p1;
   Walaber::Camera::animate(p2 + p2,0x3f000000,in_x0,3,&fStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -418,21 +386,13 @@ void Walaber::Camera::halfShake(float p0,float p1,float p2)
 void Walaber::Camera::dollyToPosition(Walaber__Vector2 p0,float p1)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p0;
   uStack_38 = *in_x1;
   Walaber::Camera::animate(p0,0,&uStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -447,21 +407,13 @@ void Walaber::Camera::dollyToPosition(Walaber__Vector2 p0,float p1)
 void Walaber::Camera::linearDollyToPosition(Walaber__Vector2 p0,float p1)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p0;
   uStack_38 = *in_x1;
   Walaber::Camera::animate(p0,1,&uStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -476,26 +428,18 @@ void Walaber::Camera::linearDollyToPosition(Walaber__Vector2 p0,float p1)
 void Walaber::Camera::zoomToFactor(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   undefined4 in_register_00005024;
   float fStack_38;
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   fStack_30 = *(float *)(in_x0 + 8);
   fStack_2c = *(float *)(in_x0 + 0xc);
   fStack_38 = (1.0 / p0) * fStack_30;
   fStack_34 = (1.0 / p0) * fStack_2c;
   Walaber::Camera::animate(CONCAT44(in_register_00005024,p1),in_x0,2,&fStack_30,&fStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -510,24 +454,16 @@ void Walaber::Camera::zoomToFactor(float p0,float p1)
 void Walaber::Camera::zoomToWidth(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   undefined4 in_register_00005024;
   float fStack_38;
   float fStack_34;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)(in_x0 + 8);
   fStack_34 = (1.0 / (ScreenCoord::sScreenSize / DAT_0072d884)) * p0;
   fStack_38 = p0;
   Walaber::Camera::animate(CONCAT44(in_register_00005024,p1),in_x0,2,&uStack_30,&fStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -542,24 +478,16 @@ void Walaber::Camera::zoomToWidth(float p0,float p1)
 void Walaber::Camera::zoomToHeight(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   undefined4 in_register_00005024;
   float fStack_38;
   float fStack_34;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)(in_x0 + 8);
   fStack_38 = (ScreenCoord::sScreenSize / DAT_0072d884) * p0;
   fStack_34 = p0;
   Walaber::Camera::animate(CONCAT44(in_register_00005024,p1),in_x0,2,&uStack_30,&fStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

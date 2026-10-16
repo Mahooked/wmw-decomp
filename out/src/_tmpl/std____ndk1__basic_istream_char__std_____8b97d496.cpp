@@ -15,14 +15,10 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::seekg
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   long extraout_x1;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
                     /* try { // try from 003d3594 to 003d3597 has its CatchHandler @ 003d3628 */
   std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) & 0xfffffffd);
@@ -36,10 +32,6 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::seekg
                     /* try { // try from 003d35f4 to 003d35f7 has its CatchHandler @ 003d362c */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | 4);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return param_1;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -54,14 +46,10 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::seekg
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::tellg(long *param_1)
 
 {
-  long lVar1;
   long *plVar2;
   undefined1 auVar3 [16];
   char acStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 003d367c to 003d368b has its CatchHandler @ 003d36c4 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_30,param_1,1);
   if (acStack_30[0] == '\0') {
@@ -72,10 +60,6 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::tellg(long
                     /* try { // try from 003d36ac to 003d36bb has its CatchHandler @ 003d36c0 */
     auVar3 = (**(code **)(*plVar2 + 0x20))(plVar2,0,1,8);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(auVar3._0_8_,auVar3._8_8_);
   return;
 }
 
@@ -90,15 +74,11 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::tellg(long
 char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::read(char *p0,long p1)
 
 {
-  long lVar1;
   long lVar2;
   char *pcVar3;
   long in_x2;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0[8] = '\0';
   p0[9] = '\0';
   p0[10] = '\0';
@@ -121,10 +101,6 @@ char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::read(cha
                    *(uint *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) | 6);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return p0;
-  }
-  pcVar3 = (char *)__stack_chk_fail();
   return pcVar3;
 }
 
@@ -443,16 +419,12 @@ LAB_005a673c:
 bool * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>(bool *p0)
 
 {
-  long lVar1;
   long *plVar2;
   bool *pbVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 005a6868 to 005a6877 has its CatchHandler @ 005a6928 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -470,10 +442,6 @@ bool * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator
     std::__ndk1::ios_base::clear(p0 + *(long *)(*(long *)p0 + -0x18),
                  *(uint *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return p0;
-  }
-  pbVar3 = (bool *)__stack_chk_fail();
   return pbVar3;
 }
 
@@ -490,7 +458,6 @@ short * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   short *psVar4;
   undefined2 *in_x1;
@@ -499,10 +466,7 @@ short * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
   long lStack_50;
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a69ac to 005a69bb has its CatchHandler @ 005a6aac */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] == '\0') goto LAB_005a6a7c;
@@ -532,10 +496,6 @@ LAB_005a6a4c:
                     /* try { // try from 005a6a78 to 005a6a7b has its CatchHandler @ 005a6aa8 */
   std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
 LAB_005a6a7c:
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  psVar4 = (short *)__stack_chk_fail();
   return psVar4;
 }
 
@@ -552,16 +512,12 @@ ushort * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operat
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   ushort *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a6b30 to 005a6b3f has its CatchHandler @ 005a6bf0 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -578,10 +534,6 @@ ushort * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operat
                     /* try { // try from 005a6bbc to 005a6bbf has its CatchHandler @ 005a6bec */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  puVar4 = (ushort *)__stack_chk_fail();
   return puVar4;
 }
 
@@ -598,7 +550,6 @@ int * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   int *piVar4;
   undefined4 *in_x1;
@@ -607,10 +558,7 @@ int * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>
   long lStack_50;
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a6c74 to 005a6c83 has its CatchHandler @ 005a6d78 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] == '\0') goto LAB_005a6d48;
@@ -640,10 +588,6 @@ LAB_005a6d18:
                     /* try { // try from 005a6d44 to 005a6d47 has its CatchHandler @ 005a6d74 */
   std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
 LAB_005a6d48:
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  piVar4 = (int *)__stack_chk_fail();
   return piVar4;
 }
 
@@ -660,16 +604,12 @@ uint * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   uint *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a6dfc to 005a6e0b has its CatchHandler @ 005a6ebc */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -686,10 +626,6 @@ uint * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator
                     /* try { // try from 005a6e88 to 005a6e8b has its CatchHandler @ 005a6eb8 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  puVar4 = (uint *)__stack_chk_fail();
   return puVar4;
 }
 
@@ -706,15 +642,11 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a6f40 to 005a6f4f has its CatchHandler @ 005a7000 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -731,10 +663,6 @@ long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator
                     /* try { // try from 005a6fcc to 005a6fcf has its CatchHandler @ 005a6ffc */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -751,16 +679,12 @@ ulong * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   ulong *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a7084 to 005a7093 has its CatchHandler @ 005a7144 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -777,10 +701,6 @@ ulong * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
                     /* try { // try from 005a7110 to 005a7113 has its CatchHandler @ 005a7140 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  puVar4 = (ulong *)__stack_chk_fail();
   return puVar4;
 }
 
@@ -797,16 +717,12 @@ longlong * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::oper
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   longlong *plVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a71c8 to 005a71d7 has its CatchHandler @ 005a7288 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -823,10 +739,6 @@ longlong * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::oper
                     /* try { // try from 005a7254 to 005a7257 has its CatchHandler @ 005a7284 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  plVar4 = (longlong *)__stack_chk_fail();
   return plVar4;
 }
 
@@ -844,16 +756,12 @@ std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>(ulon
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   ulonglong *puVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a730c to 005a731b has its CatchHandler @ 005a73cc */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -870,10 +778,6 @@ std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>(ulon
                     /* try { // try from 005a7398 to 005a739b has its CatchHandler @ 005a73c8 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  puVar4 = (ulonglong *)__stack_chk_fail();
   return puVar4;
 }
 
@@ -890,16 +794,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
 
 {
   long lVar1;
-  long lVar2;
   long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a7450 to 005a745f has its CatchHandler @ 005a7510 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40);
   if (acStack_40[0] != '\0') {
@@ -916,10 +816,6 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
                     /* try { // try from 005a74dc to 005a74df has its CatchHandler @ 005a750c */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -936,16 +832,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
 
 {
   long lVar1;
-  long lVar2;
   long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a7594 to 005a75a3 has its CatchHandler @ 005a7654 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40);
   if (acStack_40[0] != '\0') {
@@ -962,10 +854,6 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
                     /* try { // try from 005a7620 to 005a7623 has its CatchHandler @ 005a7650 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -982,16 +870,12 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
 
 {
   long lVar1;
-  long lVar2;
   long *in_x0;
   long *plVar3;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a76d8 to 005a76e7 has its CatchHandler @ 005a7798 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40);
   if (acStack_40[0] != '\0') {
@@ -1008,10 +892,6 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operator>>
                     /* try { // try from 005a7764 to 005a7767 has its CatchHandler @ 005a7794 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1028,16 +908,12 @@ void ** std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   void **ppvVar4;
   undefined1 auStack_50 [12];
   uint uStack_44;
   char acStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 005a781c to 005a782b has its CatchHandler @ 005a78dc */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_40,p0,0);
   if (acStack_40[0] != '\0') {
@@ -1054,10 +930,6 @@ void ** std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::operato
                     /* try { // try from 005a78a8 to 005a78ab has its CatchHandler @ 005a78d8 */
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_44);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return p0;
-  }
-  ppvVar4 = (void **)__stack_chk_fail();
   return ppvVar4;
 }
 
@@ -1144,23 +1016,15 @@ char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get(char
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get(char *p0,long p1)
 
 {
-  long lVar1;
   long *plVar2;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::locale::locale(auStack_50,p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a7ac0 to 005a7adf has its CatchHandler @ 005a7b2c */
   plVar2 = (long *)std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
   (**(code **)(*plVar2 + 0x38))(plVar2,10);
   std::__ndk1::locale::~locale(auStack_50);
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::get(p0,p1);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1286,24 +1150,16 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get
                (long *param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined4 uVar2;
   long *plVar3;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::locale::locale(auStack_40,(long)param_1 + *(long *)(*param_1 + -0x18) + 0x30);
                     /* try { // try from 005a7d80 to 005a7d9f has its CatchHandler @ 005a7de4 */
   plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_40,&ctype<char>::id);
   uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,10);
   std::__ndk1::locale::~locale(auStack_40);
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::get(param_1,param_2,uVar2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1402,23 +1258,15 @@ LAB_005a7f34:
 void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::getline(char *p0,long p1)
 
 {
-  long lVar1;
   long *plVar2;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::locale::locale(auStack_50,p0 + *(long *)(*(long *)p0 + -0x18) + 0x30);
                     /* try { // try from 005a7ff8 to 005a8017 has its CatchHandler @ 005a8064 */
   plVar2 = (long *)std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
   (**(code **)(*plVar2 + 0x38))(plVar2,10);
   std::__ndk1::locale::~locale(auStack_50);
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::getline(p0,p1);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

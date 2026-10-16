@@ -12,15 +12,11 @@
 void Walaber::GraphicsGL::State::State()
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_48;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *this = 0;
   *(undefined1 *)(this + 2) = 0;
   *(undefined8 *)(this + 4) = 0;
@@ -51,10 +47,6 @@ void Walaber::GraphicsGL::State::State()
     *puVar2 = uStack_48;
     puVar2 = (undefined8 *)((long)puVar2 + 0xc);
   } while (lVar3 != 2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

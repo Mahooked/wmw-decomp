@@ -13,7 +13,6 @@ void Walaber::GraphicsGL::Extensions::Extensions()
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   ulong uVar5;
@@ -36,10 +35,7 @@ void Walaber::GraphicsGL::Extensions::Extensions()
   byte *pbStack_80;
   byte *pbStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   *this = 0;
   uVar4 = glGetString(0x1f03);
   pbStack_80 = (byte *)0x0;
@@ -217,10 +213,6 @@ LAB_0040a828:
     Walaber::Logger::printf("Walaber",1,"got RTT support.\n");
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_80);
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -18,7 +18,6 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
 ::insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   ulong uVar3;
   ulong uVar4;
@@ -31,10 +30,7 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
   undefined8 uVar11;
   undefined8 uVar12;
   undefined1 auStack_80 [40];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar7 = *param_1;
   puVar2 = (undefined8 *)param_1[1];
   lVar8 = (long)param_2 - lVar7 >> 3;
@@ -107,10 +103,6 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
     std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined8 *)std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
     std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::~__split_buffer(auStack_80);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    puVar2 = (undefined8 *)__stack_chk_fail();
-    return puVar2;
   }
   return param_2;
 }

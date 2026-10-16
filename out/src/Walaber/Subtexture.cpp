@@ -12,15 +12,11 @@
 void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lStack_58;
   int *piStack_50;
   undefined1 auStack_48 [16];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::TextureManager::getManager();
   lStack_58 = *param_2;
   piStack_50 = (int *)param_2[1];
@@ -33,10 +29,6 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_58);
   *(undefined4 *)(param_1 + 0x78) = *(undefined4 *)(*(long *)(param_1 + 0xc0) + 0x78);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

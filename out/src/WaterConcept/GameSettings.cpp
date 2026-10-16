@@ -44,13 +44,11 @@ void WaterConcept::GameSettings::levelShorthand(int p0,int p1,int p2,bool p3,boo
   undefined1 *puVar2;
   byte bVar3;
   undefined1 uVar4;
-  long lVar5;
   undefined8 uVar6;
   ulong *puVar7;
   byte *pbVar8;
   undefined8 *puVar9;
   undefined8 *in_x8;
-  long lVar10;
   undefined8 uVar11;
   ulong uVar12;
   undefined8 uVar13;
@@ -104,8 +102,6 @@ void WaterConcept::GameSettings::levelShorthand(int p0,int p1,int p2,bool p3,boo
   undefined1 uStack_61;
   undefined1 *puStack_60;
   
-  lVar5 = tpidr_el0;
-  lVar10 = *(long *)(lVar5 + 0x28);
   *in_x8 = 0;
   in_x8[1] = 0;
   in_x8[2] = 0;
@@ -423,10 +419,6 @@ LAB_0040c130:
     operator delete(puStack_90);
   }
 LAB_0040c400:
-  if (*(long *)(lVar5 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -446,7 +438,6 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
   ulong uVar1;
   undefined1 *puVar2;
   byte bVar3;
-  long lVar4;
   undefined2 *puVar5;
   void *pvVar6;
   byte bVar7;
@@ -461,7 +452,6 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
   byte *pbVar16;
   undefined8 *puVar17;
   byte *pbVar18;
-  long lVar19;
   long lVar20;
   undefined8 uVar21;
   ulong uVar22;
@@ -533,8 +523,6 @@ void WaterConcept::GameSettings::levelShorthand(undefined8 *param_1,byte *param_
   undefined1 uStack_81;
   byte *pbStack_80;
   
-  lVar4 = tpidr_el0;
-  lVar19 = *(long *)(lVar4 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_f8,&DAT_00734430);
   uStack_105 = 0;
   bStack_110 = 0x12;
@@ -1152,10 +1140,6 @@ LAB_0040cbb4:
   if ((bStack_f8 & 1) != 0) {
     operator delete(puStack_e8);
   }
-  if (*(long *)(lVar4 + 0x28) != lVar19) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1183,7 +1167,6 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
   void *pvVar3;
   undefined1 *puVar4;
   undefined1 uVar5;
-  long lVar6;
   undefined2 *puVar7;
   undefined8 uVar8;
   bool bVar9;
@@ -1194,7 +1177,6 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
   undefined8 *puVar14;
   ulong uVar15;
   byte *pbVar16;
-  long lVar17;
   undefined4 *puVar18;
   long lVar19;
   ulong uVar20;
@@ -1272,8 +1254,6 @@ ulong WaterConcept::GameSettings::packAndLevelInfoFromLevelFilename
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar6 = tpidr_el0;
-  lVar17 = *(long *)(lVar6 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_158,"LevelInfo.",&DAT_00734430);
                     /* try { // try from 0040d3ec to 0040d3ff has its CatchHandler @ 0040e9b8 */
   puVar13 = (ulong *)std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::append(&uStack_158,&DAT_0063552b,4);
@@ -2396,10 +2376,6 @@ LAB_0040e92c:
   if ((uStack_120 & 1) != 0) {
     operator delete(puStack_110);
   }
-  if (*(long *)(lVar6 + 0x28) != lVar17) {
-    uVar27 = __stack_chk_fail();
-    return uVar27;
-  }
   return (ulong)uVar26;
 }
 
@@ -2418,14 +2394,12 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   void *p0;
   undefined7 uVar4;
   undefined8 *puVar5;
   ulong uVar6;
   ulong *puVar7;
   byte *pbVar8;
-  long lVar9;
   undefined8 uVar10;
   undefined8 uVar11;
   void *pvStack_158;
@@ -2466,8 +2440,6 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
   undefined1 uStack_81;
   undefined7 uStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar9 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&currentLevelPackName,param_1);
   lastStoryline = currentStoryline;
   currentLevelPackIndex = param_2;
@@ -2903,10 +2875,6 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
   Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,abStack_a0);
   Walaber::PropertyList::~PropertyList(abStack_a0);
 LAB_0040f56c:
-  if (*(long *)(lVar3 + 0x28) == lVar9) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2926,7 +2894,6 @@ void WaterConcept::GameSettings::goPlayLevel
 
 {
   char cVar1;
-  long lVar2;
   undefined *puVar3;
   undefined4 *puVar4;
   ulong uVar5;
@@ -2936,7 +2903,6 @@ void WaterConcept::GameSettings::goPlayLevel
   undefined8 *puVar9;
   ulong *puVar10;
   char *pcVar11;
-  long lVar12;
   byte *pbVar13;
   int *piVar14;
   int iVar15;
@@ -3014,8 +2980,6 @@ void WaterConcept::GameSettings::goPlayLevel
   void *pvStack_90;
   int aiStack_7c [7];
   
-  lVar2 = tpidr_el0;
-  lVar12 = *(long *)(lVar2 + 0x28);
   currentLevelIsMyst = '\0';
   currentLevelIsAllie = '\0';
   aiStack_7c[0] = 0;
@@ -3966,10 +3930,6 @@ LAB_004104d4:
   Walaber::PropertyList::~PropertyList(abStack_e0);
   Walaber::PropertyList::~PropertyList(auStack_100);
 LAB_00410804:
-  if (*(long *)(lVar2 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3984,7 +3944,6 @@ LAB_00410804:
 void WaterConcept::GameSettings::setStandardFadeProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   byte abStack_78 [16];
   void *pvStack_68;
   uint auStack_60 [2];
@@ -3993,10 +3952,7 @@ void WaterConcept::GameSettings::setStandardFadeProperties(Walaber__PropertyList
   undefined6 uStack_56;
   void *pvStack_50;
   undefined1 auStack_48 [32];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(0x3dcccccd,auStack_48);
                     /* try { // try from 00410d28 to 00410d3b has its CatchHandler @ 00410f40 */
   Walaber::PropertyList::setValueForKey(p0,&Walaber::Transition::tk_pauseLength,auStack_48);
@@ -4060,10 +4016,6 @@ void WaterConcept::GameSettings::setStandardFadeProperties(Walaber__PropertyList
                     /* try { // try from 00410e90 to 00410ea3 has its CatchHandler @ 00410ed0 */
   Walaber::PropertyList::setValueForKey(p0,&Walaber::Transition::tk_fontScale,auStack_48);
   Walaber::Property::~Property(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4080,13 +4032,11 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
 
 {
   byte *pbVar1;
-  long lVar2;
   undefined2 *puVar3;
   byte bVar4;
   byte bVar5;
   undefined8 *puVar6;
   ulong *puVar7;
-  long lVar8;
   ulong uVar9;
   undefined8 uVar10;
   byte abStack_1b8 [16];
@@ -4130,8 +4080,6 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
   void *pvStack_80;
   undefined1 auStack_70 [16];
   
-  lVar2 = tpidr_el0;
-  lVar8 = *(long *)(lVar2 + 0x28);
   if (currentStoryline == 3) {
     uVar9 = 0xffffffff;
   }
@@ -4437,10 +4385,6 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
     }
     Walaber::DatabaseIterator::~DatabaseIterator(auStack_70);
   }
-  if (*(long *)(lVar2 + 0x28) == lVar8) {
-    return uVar9;
-  }
-  uVar9 = __stack_chk_fail();
   return uVar9;
 }
 
@@ -4456,9 +4400,7 @@ ulong WaterConcept::GameSettings::getChallengeForLevel(byte *param_1,byte *param
 void WaterConcept::GameSettings::playCinematic(Walaber::PropertyList& param_1,int param_2,WaterConcept::ScreenTypes param_3)
 
 {
-  long lVar1;
   ulong uVar2;
-  long lVar3;
   void *pvVar4;
   ulong p0;
   byte abStack_180 [16];
@@ -4477,8 +4419,6 @@ void WaterConcept::GameSettings::playCinematic(Walaber::PropertyList& param_1,in
   undefined4 uStack_ec;
   undefined1 auStack_e8 [136];
   
-  lVar1 = tpidr_el0;
-  lVar3 = *(long *)(lVar1 + 0x28);
   snprintf(auStack_e8,0x80,"/PuppetShows/intro_pack_%d.ps",param_2);
   abStack_100[0x10] = 0;
   uStack_ef = 0;
@@ -4872,10 +4812,6 @@ LAB_00411c70:
                                   CONCAT13(uStack_ed,CONCAT21(uStack_ef,abStack_100[0x10]))));
   }
   Walaber::ScreenManager::pushScreen(0xf,param_1);
-  if (*(long *)(lVar1 + 0x28) != lVar3) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4891,7 +4827,6 @@ LAB_00411c70:
 void WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOWStorylineType param_1)
 
 {
-  long lVar1;
   undefined *puVar2;
   void *pvVar3;
   undefined4 *puVar4;
@@ -4899,7 +4834,6 @@ void WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOW
   ulong *puVar6;
   ulong uVar7;
   undefined8 *puVar8;
-  long lVar9;
   byte *pbVar10;
   undefined8 uVar11;
   ulong auStack_248 [2];
@@ -4960,8 +4894,6 @@ void WaterConcept::GameSettings::updateLOTWParameters(WaterConceptConstants::LOW
   ulong uStack_58;
   void *pvStack_50;
   
-  lVar1 = tpidr_el0;
-  lVar9 = *(long *)(lVar1 + 0x28);
   uStack_d4 = 0;
   uStack_d0 = 0;
   uStack_cf = 0;
@@ -5391,10 +5323,6 @@ switchD_004126bc_caseD_2:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) != lVar9) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5412,7 +5340,6 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
 {
   void *pvVar1;
   undefined1 uVar2;
-  long lVar3;
   undefined *puVar4;
   undefined8 *puVar5;
   ulong *puVar6;
@@ -5420,7 +5347,6 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
   undefined8 *puVar8;
   undefined8 uVar9;
   char *pcVar10;
-  long lVar11;
   undefined8 uVar12;
   undefined4 *puVar13;
   undefined1 *puVar14;
@@ -5500,8 +5426,6 @@ void WaterConcept::GameSettings::goPlayLOTWLevel(uint param_1)
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar11 = *(long *)(lVar3 + 0x28);
   currentLevelIsMyst = 0;
   Walaber::PropertyList::PropertyList(auStack_b8);
   uStack_d0 = 0;
@@ -6405,10 +6329,6 @@ switchD_00412afc_caseD_2:
     operator delete(pvStack_c0);
   }
   Walaber::PropertyList::~PropertyList(auStack_b8);
-  if (*(long *)(lVar3 + 0x28) == lVar11) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6424,7 +6344,6 @@ switchD_00412afc_caseD_2:
 ulong WaterConcept::GameSettings::goNextLevel(void)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   undefined *puVar3;
   bool bVar4;
@@ -6435,7 +6354,6 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
   ulong *puVar9;
   undefined8 *puVar10;
   ulong uVar11;
-  long lVar12;
   uint uVar13;
   int iVar14;
   undefined8 uVar15;
@@ -6471,8 +6389,6 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
   ulong uStack_68;
   void *pvStack_60;
   
-  lVar1 = tpidr_el0;
-  lVar12 = *(long *)(lVar1 + 0x28);
   auStack_128[1] = 0;
   pvStack_118 = (void *)0x0;
   auStack_128[0] = 0x202c04;
@@ -6774,10 +6690,6 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar12) {
-    return (ulong)uVar13;
-  }
-  uVar11 = __stack_chk_fail();
   return uVar11;
 }
 
@@ -6794,7 +6706,6 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int iVar4;
   void *pvStack_88;
   void *pvStack_80;
@@ -6804,10 +6715,7 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
   undefined8 uStack_58;
   long lStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   WaterConcept::GameSettings::getLevelList(&lStack_50);
   iVar1 = (int)((ulong)(lStack_48 - lStack_50) >> 3) * -0x55555555;
   if (iVar1 != 0) {
@@ -6837,10 +6745,6 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
     }
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_50);
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6856,12 +6760,10 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
 void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   ulong *puVar3;
   undefined8 *puVar4;
   ulong uVar5;
-  long lVar6;
   undefined8 uVar7;
   ulong auStack_130 [2];
   void *pvStack_120;
@@ -6892,8 +6794,6 @@ void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
   ulong uStack_48;
   void *pvStack_40;
   
-  lVar1 = tpidr_el0;
-  lVar6 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_00734418,&DAT_0063d328);
   abStack_100[0] = 0x1e;
   abStack_100[9] = 0x28;
@@ -7112,10 +7012,6 @@ void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
   if ((uStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar6) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7130,7 +7026,6 @@ void WaterConcept::GameSettings::getLevelList(undefined8 *param_1)
 void WaterConcept::GameSettings::levelStarted(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
@@ -7138,10 +7033,7 @@ void WaterConcept::GameSettings::levelStarted(void)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x5100000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -7200,10 +7092,6 @@ void WaterConcept::GameSettings::levelStarted(void)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7218,14 +7106,12 @@ void WaterConcept::GameSettings::levelStarted(void)
 void WaterConcept::GameSettings::getChallengeDescription(int p0,bool *p1)
 
 {
-  long lVar1;
   undefined *puVar2;
   void *pvVar3;
   byte bVar4;
   ulong *puVar5;
   ulong uVar6;
   undefined8 *in_x8;
-  long lVar7;
   byte abStack_118 [16];
   void *pvStack_108;
   byte abStack_100 [16];
@@ -7254,8 +7140,6 @@ void WaterConcept::GameSettings::getChallengeDescription(int p0,bool *p1)
   ulong uStack_68;
   void *pvStack_60;
   
-  lVar1 = tpidr_el0;
-  lVar7 = *(long *)(lVar1 + 0x28);
   *p1 = true;
   if (currentLevelIsAllie == '\0') {
     if (currentLevelIsMyst == '\0') {
@@ -7486,10 +7370,6 @@ LAB_00415598:
     operator delete(pvStack_60);
   }
 LAB_004155ec:
-  if (*(long *)(lVar1 + 0x28) != lVar7) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7506,7 +7386,6 @@ void WaterConcept::GameSettings::getChallengeResultsDescription
 
 {
   void *pvVar1;
-  long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   ulong uVar5;
@@ -7523,10 +7402,7 @@ void WaterConcept::GameSettings::getChallengeResultsDescription
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   *p1 = true;
   if (currentLevelIsMyst == '\0') {
     WaterConcept::GameSettings::getChallengeDescription(p0);
@@ -7642,10 +7518,6 @@ LAB_00415838:
     operator delete(pcStack_b0);
   }
 LAB_004158d4:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7662,7 +7534,6 @@ void WaterConcept::GameSettings::getChallengeIAPid(int p0)
 {
   long lVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   ulong uVar6;
@@ -7677,10 +7548,7 @@ void WaterConcept::GameSettings::getChallengeIAPid(int p0)
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_007348e0);
                     /* try { // try from 004159ac to 004159bf has its CatchHandler @ 00415b78 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,&DAT_007348b0,"=");
@@ -7743,10 +7611,6 @@ void WaterConcept::GameSettings::getChallengeIAPid(int p0)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7789,7 +7653,6 @@ ulong WaterConcept::GameSettings::unlockNextLevel(void)
 
 {
   undefined1 *puVar1;
-  long lVar2;
   undefined4 *puVar3;
   undefined *puVar4;
   undefined7 uVar5;
@@ -7802,7 +7665,6 @@ ulong WaterConcept::GameSettings::unlockNextLevel(void)
   undefined8 *puVar12;
   byte *pbVar13;
   ulong uVar14;
-  long lVar15;
   uint uVar16;
   int iVar17;
   undefined8 uVar18;
@@ -7866,8 +7728,6 @@ ulong WaterConcept::GameSettings::unlockNextLevel(void)
   undefined1 uStack_81;
   undefined7 uStack_80;
   
-  lVar2 = tpidr_el0;
-  lVar15 = *(long *)(lVar2 + 0x28);
   if (currentLevelIsBonus == '\0') {
     if (currentLevelIsLOTW == '\0') {
       uStack_158 = 0;
@@ -8554,10 +8414,6 @@ ulong WaterConcept::GameSettings::unlockNextLevel(void)
   }
   uVar16 = 0;
 LAB_00415c64:
-  if (*(long *)(lVar2 + 0x28) == lVar15) {
-    return (ulong)uVar16;
-  }
-  uVar14 = __stack_chk_fail();
   return uVar14;
 }
 
@@ -8574,7 +8430,6 @@ ulong WaterConcept::GameSettings::unlockNextLevelPack(int *p0)
 
 {
   void *pvVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -8583,7 +8438,6 @@ ulong WaterConcept::GameSettings::unlockNextLevelPack(int *p0)
   ulong uVar8;
   char *pcVar9;
   ulong uVar10;
-  long lVar11;
   uint uVar12;
   undefined4 *puVar13;
   undefined2 *puVar14;
@@ -8641,8 +8495,6 @@ ulong WaterConcept::GameSettings::unlockNextLevelPack(int *p0)
   ulong uStack_88;
   void *pvStack_80;
   
-  lVar2 = tpidr_el0;
-  lVar11 = *(long *)(lVar2 + 0x28);
   iVar3 = WaterConcept::GameSettings::getStarCount(currentStoryline,0);
   uStack_188 = 0;
   pvStack_180 = (void *)0x0;
@@ -8912,10 +8764,6 @@ ulong WaterConcept::GameSettings::unlockNextLevelPack(int *p0)
       if ((uStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
-      if (*(long *)(lVar2 + 0x28) == lVar11) {
-        return (ulong)uVar12;
-      }
-      uVar10 = __stack_chk_fail();
       return uVar10;
     }
                     /* try { // try from 004171e0 to 004171eb has its CatchHandler @ 004178e4 */
@@ -9148,7 +8996,6 @@ void WaterConcept::GameSettings::packContainsLevels(byte *param_1)
 {
   ulong uVar1;
   byte *pbVar2;
-  long lVar3;
   int iVar4;
   undefined8 *puVar5;
   ulong *puVar6;
@@ -9166,10 +9013,7 @@ void WaterConcept::GameSettings::packContainsLevels(byte *param_1)
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_007343e8);
                     /* try { // try from 00417980 to 00417993 has its CatchHandler @ 00417b0c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_00734430,"=\'");
@@ -9222,10 +9066,6 @@ void WaterConcept::GameSettings::packContainsLevels(byte *param_1)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(iVar4 != 0);
   return;
 }
 
@@ -9241,7 +9081,6 @@ void WaterConcept::GameSettings::packContainsLevels(byte *param_1)
 ulong WaterConcept::GameSettings::canUnlockNextLevelPack(int *p0,int p1)
 
 {
-  long lVar1;
   undefined2 *puVar2;
   void *pvVar3;
   int iVar4;
@@ -9251,7 +9090,6 @@ ulong WaterConcept::GameSettings::canUnlockNextLevelPack(int *p0,int p1)
   ulong *puVar8;
   undefined8 *puVar9;
   ulong uVar10;
-  long lVar11;
   undefined8 uVar12;
   undefined8 uVar13;
   ulong auStack_230 [2];
@@ -9304,8 +9142,6 @@ ulong WaterConcept::GameSettings::canUnlockNextLevelPack(int *p0,int p1)
   ulong uStack_78;
   void *pvStack_70;
   
-  lVar1 = tpidr_el0;
-  lVar11 = *(long *)(lVar1 + 0x28);
   iVar4 = WaterConcept::GameSettings::getStarCount(currentStoryline,0);
   uStack_138 = 0;
   pvStack_130 = (void *)0x0;
@@ -9612,10 +9448,6 @@ LAB_004181f0:
       if ((uStack_80 & 1) != 0) {
         operator delete(pvStack_70);
       }
-      if (*(long *)(lVar1 + 0x28) == lVar11) {
-        return (ulong)uVar6;
-      }
-      uVar10 = __stack_chk_fail();
       return uVar10;
     }
                     /* try { // try from 00418168 to 00418173 has its CatchHandler @ 00418468 */
@@ -9677,14 +9509,12 @@ void WaterConcept::GameSettings::calculateScores(int p0,int p1,int p2,int p3)
 ulong WaterConcept::GameSettings::onLastLevelInPack(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   undefined4 *puVar3;
   int iVar4;
   int iVar5;
   ulong *puVar6;
   undefined8 *puVar7;
-  long lVar8;
   ulong uVar9;
   undefined8 uVar10;
   ulong auStack_138 [2];
@@ -9714,8 +9544,6 @@ ulong WaterConcept::GameSettings::onLastLevelInPack(void)
   byte abStack_50 [16];
   void *pvStack_40;
   
-  lVar1 = tpidr_el0;
-  lVar8 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_00734430);
   auStack_108[1] = 0;
   pvStack_f8 = (void *)0x0;
@@ -9853,10 +9681,6 @@ ulong WaterConcept::GameSettings::onLastLevelInPack(void)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar8) {
-    return uVar9;
-  }
-  uVar9 = __stack_chk_fail();
   return uVar9;
 }
 
@@ -9874,7 +9698,6 @@ ulong WaterConcept::GameSettings::onLastPackInStoryline(void)
 {
   ulong uVar1;
   undefined *puVar2;
-  long lVar3;
   undefined2 *puVar4;
   void *pvVar5;
   undefined4 *puVar6;
@@ -9884,7 +9707,6 @@ ulong WaterConcept::GameSettings::onLastPackInStoryline(void)
   ulong uVar10;
   ulong uVar11;
   char *pcVar12;
-  long lVar13;
   char *pcVar14;
   long lVar15;
   uint uVar16;
@@ -9948,8 +9770,6 @@ ulong WaterConcept::GameSettings::onLastPackInStoryline(void)
   ulong uStack_58;
   void *pvStack_50;
   
-  lVar3 = tpidr_el0;
-  lVar13 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80,&DAT_007345c8,&DAT_0063d328);
   uVar11 = DAT_007345b8;
   puVar4 = DAT_007345c0;
@@ -10285,10 +10105,6 @@ LAB_00418fec:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar13) {
-    return (ulong)uVar16;
-  }
-  uVar11 = __stack_chk_fail();
   return uVar11;
 }
 
@@ -10304,7 +10120,6 @@ LAB_00418fec:
 ulong WaterConcept::GameSettings::nextLevelUnlockable(void)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   undefined *puVar3;
   bool bVar4;
@@ -10317,7 +10132,6 @@ ulong WaterConcept::GameSettings::nextLevelUnlockable(void)
   undefined8 *puVar11;
   ulong uVar12;
   ulong uVar13;
-  long lVar14;
   void *p0;
   uint uVar15;
   int iVar16;
@@ -10358,8 +10172,6 @@ ulong WaterConcept::GameSettings::nextLevelUnlockable(void)
   ulong uStack_88;
   void *pvStack_80;
   
-  lVar1 = tpidr_el0;
-  lVar14 = *(long *)(lVar1 + 0x28);
   if (currentLevelIsLOTW == '\0' && currentLevelIsBonus == '\0') {
     auStack_188[1] = 0;
     pvStack_178 = (void *)0x0;
@@ -10631,10 +10443,6 @@ ulong WaterConcept::GameSettings::nextLevelUnlockable(void)
   else {
     uVar15 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) != lVar14) {
-    uVar13 = __stack_chk_fail();
-    return uVar13;
-  }
   return (ulong)uVar15;
 }
 
@@ -10652,7 +10460,6 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   undefined *puVar5;
   bool bVar6;
@@ -10661,7 +10468,6 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
   undefined8 *puVar9;
   ulong uVar10;
   byte *pbVar11;
-  long lVar12;
   undefined8 uVar13;
   ulong uVar14;
   undefined8 uVar15;
@@ -10704,8 +10510,6 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar12 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
   uVar10 = (ulong)(DAT_007346a0 >> 1);
   puVar9 = &DAT_007346a1;
@@ -11009,10 +10813,6 @@ ulong WaterConcept::GameSettings::getStarCount(WaterConceptConstants::StorylineT
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar12) {
-    return uVar10 & 0xffffffff;
-  }
-  uVar10 = __stack_chk_fail();
   return uVar10;
 }
 
@@ -11052,7 +10852,6 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
   undefined2 *puVar1;
   void *pvVar2;
   byte bVar3;
-  long lVar4;
   undefined *puVar5;
   undefined7 uVar6;
   bool bVar7;
@@ -11061,7 +10860,6 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
   undefined8 *puVar10;
   ulong uVar11;
   byte *pbVar12;
-  long lVar13;
   undefined8 uVar14;
   ulong uVar15;
   undefined8 uVar16;
@@ -11106,8 +10904,6 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar4 = tpidr_el0;
-  lVar13 = *(long *)(lVar4 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_d0,&DAT_007345c8,&DAT_00619cc6);
   uVar11 = (ulong)(DAT_007346a0 >> 1);
   puVar10 = &DAT_007346a1;
@@ -11541,10 +11337,6 @@ ulong WaterConcept::GameSettings::getTotalLevelCount(WaterConceptConstants::Stor
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar13) {
-    return uVar11 & 0xffffffff;
-  }
-  uVar11 = __stack_chk_fail();
   return uVar11;
 }
 
@@ -11573,15 +11365,11 @@ undefined8 WaterConcept::GameSettings::isUpsellLevel(void)
 void WaterConcept::GameSettings::goMainMenu(bool p0)
 
 {
-  long lVar1;
   undefined1 auStack_78 [32];
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::ScreenManager::popAllScreens();
   Walaber::PropertyList::PropertyList(auStack_40);
   if (p0) {
@@ -11614,10 +11402,6 @@ void WaterConcept::GameSettings::goMainMenu(bool p0)
                     /* try { // try from 0041abd4 to 0041abdf has its CatchHandler @ 0041ac30 */
   Walaber::ScreenManager::pushScreen(3,auStack_40);
   Walaber::PropertyList::~PropertyList(auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11649,15 +11433,11 @@ void WaterConcept::GameSettings::goLoadingScreen(void)
 void WaterConcept::GameSettings::goMainMenu_v2(bool p0)
 
 {
-  long lVar1;
   undefined1 auStack_78 [32];
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (p0) {
     Walaber::PropertyList::PropertyList(auStack_40);
     abStack_58[0xb] = 0;
@@ -11709,10 +11489,6 @@ void WaterConcept::GameSettings::goMainMenu_v2(bool p0)
     Walaber::PropertyList::~PropertyList(abStack_58);
   }
   Walaber::PropertyList::~PropertyList(auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11744,7 +11520,6 @@ void WaterConcept::GameSettings::loadFluidTextures(void)
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uStack_160;
@@ -11781,10 +11556,7 @@ void WaterConcept::GameSettings::loadFluidTextures(void)
   long lStack_58;
   int *piStack_50;
   long alStack_48 [2];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = Walaber::PlatformManager::getInstancePtr();
   iVar1 = *(int *)(lVar3 + 0x28);
   if (0x80 < iVar1) {
@@ -12020,10 +11792,6 @@ void WaterConcept::GameSettings::loadFluidTextures(void)
   Walaber::SharedPtr<Walaber::Texture>::operator=(&DAT_007340c8,&lStack_b0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(alStack_48);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -12041,7 +11809,6 @@ void WaterConcept::GameSettings::reloadGameFonts(void)
   ulong uVar1;
   ulong uVar2;
   char *pcVar3;
-  long lVar4;
   char *p0;
   bool bVar5;
   void *pvVar6;
@@ -12054,7 +11821,6 @@ void WaterConcept::GameSettings::reloadGameFonts(void)
   long lVar13;
   char *pcVar14;
   undefined8 in_x7;
-  long lVar15;
   char *pcVar16;
   undefined8 uVar17;
   undefined8 uVar18;
@@ -12815,8 +12581,6 @@ void WaterConcept::GameSettings::reloadGameFonts(void)
   undefined8 uStack_b8;
   void *pvStack_b0;
   
-  lVar4 = tpidr_el0;
-  lVar15 = *(long *)(lVar4 + 0x28);
   uVar9 = Walaber::FontManager::getInstancePtr();
   pvStack_b0 = (void *)0x0;
   uStack_c0 = 0x2f73746e6f462f0e;
@@ -16437,10 +16201,6 @@ LAB_00420484:
   if ((bStack_d8 & 1) != 0) {
     operator delete(pcStack_c8);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar15) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -16457,7 +16217,6 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
 
 {
   ulong uVar1;
-  long lVar2;
   undefined *puVar3;
   int iVar4;
   undefined8 *puVar5;
@@ -16465,10 +16224,7 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
   undefined8 uVar7;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar1 = (ulong)(promotionSuffix >> 1);
   if ((promotionSuffix & 1) != 0) {
     uVar1 = DAT_00735e48;
@@ -16507,10 +16263,6 @@ void WaterConcept::GameSettings::appendPromotion(undefined8 *param_1,undefined8 
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -16527,7 +16279,6 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
 
 {
   ulong uVar1;
-  long lVar2;
   undefined *puVar3;
   int iVar4;
   undefined8 *puVar5;
@@ -16535,10 +16286,7 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
   undefined8 uVar7;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar1 = (ulong)(themeSuffix >> 1);
   if ((themeSuffix & 1) != 0) {
     uVar1 = DAT_00735e60;
@@ -16577,10 +16325,6 @@ void WaterConcept::GameSettings::appendTheme(undefined8 *param_1,undefined8 *par
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -16597,17 +16341,13 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   undefined8 *puVar4;
   undefined8 uVar5;
   undefined8 uVar6;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar1 = (ulong)((byte)duckSuffix >> 1);
   if (((byte)duckSuffix & 1) != 0) {
     uVar1 = DAT_00735e78;
@@ -16646,10 +16386,6 @@ void WaterConcept::GameSettings::appendDuckSuffix(undefined8 *param_1,undefined8
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -16739,7 +16475,6 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
 {
   void *pvVar1;
   byte bVar2;
-  long lVar3;
   undefined4 *puVar4;
   undefined *puVar5;
   undefined7 uVar6;
@@ -16749,7 +16484,6 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
   ulong uVar10;
   undefined8 *puVar11;
   byte *pbVar12;
-  long lVar13;
   undefined8 uVar14;
   byte abStack_148 [16];
   void *pvStack_138;
@@ -16783,8 +16517,6 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar13 = *(long *)(lVar3 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -17067,10 +16799,6 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
   if ((bStack_a8 & 1) != 0) {
     operator delete(puStack_98);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar13) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17086,7 +16814,6 @@ void WaterConcept::GameSettings::getPurchasedIAPNames(undefined8 *param_1)
 void WaterConcept::GameSettings::getLocksmithLevelPacks(undefined8 *param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   ulong *puVar3;
   ulong uVar4;
@@ -17101,10 +16828,7 @@ void WaterConcept::GameSettings::getLocksmithLevelPacks(undefined8 *param_1)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -17186,10 +16910,6 @@ void WaterConcept::GameSettings::getLocksmithLevelPacks(undefined8 *param_1)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17207,7 +16927,6 @@ void WaterConcept::GameSettings::getLocksmithLevelPacks(undefined8 *param_1)
 void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   undefined4 *puVar4;
@@ -17217,10 +16936,7 @@ void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1)
   undefined **ppuStack_a0;
   undefined8 uStack_98;
   undefined1 auStack_90 [24];
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   lVar3 = *param_1;
   if (lVar3 != param_1[1]) {
     puVar4 = (undefined4 *)((ulong)abStack_b8 | 1);
@@ -17314,10 +17030,6 @@ void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1)
       lVar3 = lVar3 + 0x18;
     } while (lVar3 != param_1[1]);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17335,7 +17047,6 @@ void WaterConcept::GameSettings::restoreIAPUsingNames(long *param_1)
 void WaterConcept::GameSettings::restoreLPsUsingNames(long *param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   undefined4 *puVar4;
@@ -17347,10 +17058,7 @@ void WaterConcept::GameSettings::restoreLPsUsingNames(long *param_1)
   undefined **ppuStack_a0;
   undefined8 uStack_98;
   undefined1 auStack_90 [24];
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   lVar3 = *param_1;
   if (lVar3 != param_1[1]) {
     puVar4 = (undefined4 *)((ulong)abStack_b8 | 1);
@@ -17451,10 +17159,6 @@ void WaterConcept::GameSettings::restoreLPsUsingNames(long *param_1)
       lVar3 = lVar3 + 0x18;
     } while (lVar3 != param_1[1]);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17469,20 +17173,12 @@ void WaterConcept::GameSettings::restoreLPsUsingNames(long *param_1)
 void WaterConcept::GameSettings::restorePurchasedIAP(void)
 
 {
-  long lVar1;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   WaterConcept::GameSettings::getPurchasedIAPNames(auStack_40);
                     /* try { // try from 00423084 to 0042308b has its CatchHandler @ 004230b8 */
   WaterConcept::GameSettings::restoreIAPUsingNames(auStack_40);
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17497,7 +17193,6 @@ void WaterConcept::GameSettings::restorePurchasedIAP(void)
 ulong WaterConcept::GameSettings::getCloudSyncSetting(void)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_78 [16];
@@ -17507,10 +17202,7 @@ ulong WaterConcept::GameSettings::getCloudSyncSetting(void)
   void *pvStack_48;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_007347f0);
                     /* try { // try from 004230fc to 0042310f has its CatchHandler @ 004231ec */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347d8,"=\'CloudSync\'");
@@ -17551,10 +17243,6 @@ ulong WaterConcept::GameSettings::getCloudSyncSetting(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -17570,7 +17258,6 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
 
 {
   char *pcVar1;
-  long lVar2;
   ulong *puVar3;
   byte abStack_70 [16];
   void *pvStack_60;
@@ -17579,10 +17266,7 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
   ulong uStack_40;
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_58,&DAT_007347f0,"=");
   pcVar1 = "1";
   if (!p0) {
@@ -17629,10 +17313,6 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
   if ((uStack_40 & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17647,7 +17327,6 @@ void WaterConcept::GameSettings::setCloudSyncSetting(bool p0)
 ulong WaterConcept::GameSettings::hasPromptedForCloudSync(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   uint uVar3;
   undefined8 *puVar4;
@@ -17668,10 +17347,7 @@ ulong WaterConcept::GameSettings::hasPromptedForCloudSync(void)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_00734a18);
                     /* try { // try from 004233dc to 004233ef has its CatchHandler @ 00423588 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_98,&DAT_00734a00,"=\'");
@@ -17735,10 +17411,6 @@ ulong WaterConcept::GameSettings::hasPromptedForCloudSync(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar3 & 1);
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -17755,7 +17427,6 @@ void WaterConcept::GameSettings::setPromptedForCloudSync(bool p0)
 {
   char *pcVar1;
   ulong uVar2;
-  long lVar3;
   undefined *puVar4;
   ulong *puVar5;
   undefined8 *puVar6;
@@ -17775,10 +17446,7 @@ void WaterConcept::GameSettings::setPromptedForCloudSync(bool p0)
   ulong uStack_40;
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_60,&DAT_00734a18,"=");
   pcVar1 = "1";
   if (!p0) {
@@ -17848,10 +17516,6 @@ void WaterConcept::GameSettings::setPromptedForCloudSync(bool p0)
   if ((uStack_40 & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17869,13 +17533,11 @@ void WaterConcept::GameSettings::nextLanguage(void)
 {
   ulong uVar1;
   undefined4 uVar2;
-  long lVar3;
   undefined *puVar4;
   void *pvVar5;
   undefined8 uVar6;
   ulong *puVar7;
   undefined8 *puVar8;
-  long lVar9;
   int iVar10;
   long lVar11;
   ulong auStack_168 [2];
@@ -17907,8 +17569,6 @@ void WaterConcept::GameSettings::nextLanguage(void)
   ulong uStack_78;
   void *apvStack_70 [4];
   
-  lVar3 = tpidr_el0;
-  lVar9 = *(long *)(lVar3 + 0x28);
   lVar11 = 0;
   do {
     if ((&mLanguageList)[lVar11] == Walaber::TextManager::mCurrentLanguage) {
@@ -18106,10 +17766,6 @@ LAB_00423870:
   if (((ulong)ppuStack_80 & 1) != 0) {
     operator delete(apvStack_70[0]);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar9) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -18126,13 +17782,11 @@ void WaterConcept::GameSettings::setCurrentLanguage(Walaber__Language p0)
 
 {
   ulong uVar1;
-  long lVar2;
   undefined *puVar3;
   void *pvVar4;
   undefined8 uVar5;
   ulong *puVar6;
   undefined8 *puVar7;
-  long lVar8;
   ulong auStack_158 [2];
   void *pvStack_148;
   ulong auStack_140 [2];
@@ -18162,8 +17816,6 @@ void WaterConcept::GameSettings::setCurrentLanguage(Walaber__Language p0)
   ulong uStack_68;
   void *apvStack_60 [4];
   
-  lVar2 = tpidr_el0;
-  lVar8 = *(long *)(lVar2 + 0x28);
   Walaber::TextManager::mCurrentLanguage.f_0x0 = p0.f_0x0;
   uVar5 = Walaber::BroadcastManager::getInstancePtr();
   uStack_68 = 0x3b00000010;
@@ -18347,10 +17999,6 @@ void WaterConcept::GameSettings::setCurrentLanguage(Walaber__Language p0)
   if (((ulong)ppuStack_70 & 1) != 0) {
     operator delete(apvStack_60[0]);
   }
-  if (*(long *)(lVar2 + 0x28) == lVar8) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -18430,7 +18078,6 @@ undefined8 WaterConcept::GameSettings::getFacebookLoggedIn(void)
 ulong WaterConcept::GameSettings::getConsecutiveDaysPlayed(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   ulong *puVar3;
   undefined8 *puVar4;
@@ -18454,10 +18101,7 @@ ulong WaterConcept::GameSettings::getConsecutiveDaysPlayed(void)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_007347f0);
   auStack_b8[1] = 0;
   pvStack_a8 = (void *)0x0;
@@ -18544,10 +18188,6 @@ ulong WaterConcept::GameSettings::getConsecutiveDaysPlayed(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -18563,7 +18203,6 @@ ulong WaterConcept::GameSettings::getConsecutiveDaysPlayed(void)
 void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1,undefined4 param_2)
 
 {
-  long lVar1;
   void *pvVar2;
   undefined2 *puVar3;
   bool bVar4;
@@ -18571,7 +18210,6 @@ void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1
   ulong *puVar6;
   undefined8 *puVar7;
   ulong uVar8;
-  long lVar9;
   int iVar10;
   int iVar11;
   int iVar12;
@@ -18653,8 +18291,6 @@ void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1
   ulong uStack_78;
   void *pvStack_70;
   
-  lVar1 = tpidr_el0;
-  lVar9 = *(long *)(lVar1 + 0x28);
   uStack_ba = 0;
   uStack_b8 = 0;
   uStack_b7 = 0;
@@ -19088,10 +18724,6 @@ void WaterConcept::GameSettings::getFurthestLevelInStoryline(undefined8 *param_1
   if ((uStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar9) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -19109,7 +18741,6 @@ ulong WaterConcept::GameSettings::getFurthestLevelIndexInPack(byte *param_1)
 
 {
   byte *pbVar1;
-  long lVar2;
   int iVar3;
   ulong *puVar4;
   undefined8 *puVar5;
@@ -19133,10 +18764,7 @@ ulong WaterConcept::GameSettings::getFurthestLevelIndexInPack(byte *param_1)
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_00734490);
   auStack_c8[1] = 0;
   pvStack_b8 = (void *)0x0;
@@ -19224,10 +18852,6 @@ ulong WaterConcept::GameSettings::getFurthestLevelIndexInPack(byte *param_1)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return (ulong)uVar7;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -19246,14 +18870,12 @@ ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptCo
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined *puVar4;
   void *pvVar5;
   undefined7 uVar6;
   undefined8 *puVar7;
   ulong uVar8;
   byte *pbVar9;
-  long lVar10;
   undefined8 uVar11;
   undefined8 uVar12;
   undefined1 auStack_e8 [8];
@@ -19282,8 +18904,6 @@ ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptCo
   undefined1 uStack_51;
   undefined7 uStack_50;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_70,&DAT_00734f10);
   auStack_c8[1] = 0;
   pvStack_b8 = (void *)0x0;
@@ -19476,10 +19096,6 @@ ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptCo
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar10) {
-    return uVar8;
-  }
-  uVar8 = __stack_chk_fail();
   return uVar8;
 }
 
@@ -19495,7 +19111,6 @@ ulong WaterConcept::GameSettings::getLocksmithPacksNumInStoryline(WaterConceptCo
 undefined1 * WaterConcept::GameSettings::getGUID(void)
 
 {
-  long lVar1;
   ulong *puVar2;
   undefined8 *puVar3;
   ulong uVar4;
@@ -19520,10 +19135,7 @@ undefined1 * WaterConcept::GameSettings::getGUID(void)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   puVar5 = &DAT_00734a18;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_00734a18);
   auStack_b8[1] = 0;
@@ -19604,10 +19216,6 @@ undefined1 * WaterConcept::GameSettings::getGUID(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return puVar5;
-  }
-  puVar5 = (undefined1 *)__stack_chk_fail();
   return puVar5;
 }
 
@@ -19629,7 +19237,6 @@ ulong WaterConcept::GameSettings::showIAPADAndUpdateServer(int param_1)
   undefined1 *puVar5;
   void *pvVar6;
   byte bVar7;
-  long lVar8;
   undefined4 *puVar9;
   undefined7 uVar10;
   bool bVar11;
@@ -19649,7 +19256,6 @@ ulong WaterConcept::GameSettings::showIAPADAndUpdateServer(int param_1)
   undefined8 uVar25;
   int iVar26;
   uint uVar27;
-  long lVar28;
   uint uVar29;
   long lVar30;
   uint unaff_w20;
@@ -19719,8 +19325,6 @@ ulong WaterConcept::GameSettings::showIAPADAndUpdateServer(int param_1)
   undefined1 uStack_81;
   char *pcStack_80;
   
-  lVar8 = tpidr_el0;
-  lVar28 = *(long *)(lVar8 + 0x28);
   WaterConcept::GameSettings::getPurchasedIAPNames(&lStack_b0);
   uStack_92 = 0;
   iVar26 = (int)(lStack_a8 - lStack_b0 >> 3) * -0x55555555;
@@ -21189,10 +20793,6 @@ LAB_00426460:
     operator delete(pvStack_c0);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_b0);
-  if (*(long *)(lVar8 + 0x28) == lVar28) {
-    return (ulong)uVar12;
-  }
-  uVar21 = __stack_chk_fail();
   return uVar21;
 }
 
@@ -21239,7 +20839,6 @@ ulong WaterConcept::GameSettings::handleIAPPromotionTimes
   byte *pbVar1;
   byte bVar2;
   undefined1 auVar3 [16];
-  long lVar4;
   int iVar5;
   int iVar6;
   byte *pbVar7;
@@ -21270,10 +20869,7 @@ ulong WaterConcept::GameSettings::handleIAPPromotionTimes
   undefined1 auStack_a0 [24];
   long lStack_88;
   long lStack_80;
-  long lStack_70;
   
-  lVar4 = tpidr_el0;
-  lStack_70 = *(long *)(lVar4 + 0x28);
   WaterConcept::GameSettings::getPurchasedIAPNames(&lStack_88);
   uVar9 = (lStack_80 - lStack_88 >> 3) * -0x5555555555555555;
   if ((int)uVar9 < 1) {
@@ -21510,10 +21106,6 @@ LAB_00427f54:
   Walaber::PropertyList::~PropertyList(auStack_a0);
 LAB_00427fcc:
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_88);
-  if (*(long *)(lVar4 + 0x28) == lStack_70) {
-    return (ulong)uVar15;
-  }
-  uVar9 = __stack_chk_fail();
   return uVar9;
 }
 
@@ -21530,7 +21122,6 @@ ulong WaterConcept::GameSettings::shouldCheckForSale(void)
 {
   byte *pbVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   byte *pbVar5;
   ulong uVar6;
@@ -21544,10 +21135,7 @@ ulong WaterConcept::GameSettings::shouldCheckForSale(void)
   uint uVar14;
   long lStack_80;
   long lStack_78;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   WaterConcept::GameSettings::getPurchasedIAPNames(&lStack_80);
   uVar6 = (lStack_78 - lStack_80 >> 3) * -0x5555555555555555;
   if ((int)uVar6 < 1) {
@@ -21671,10 +21259,6 @@ LAB_004282fc:
     } while (uVar13 != (uVar6 & 0xffffffff));
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return (ulong)(uVar10 & uVar12 & uVar14 ^ 1);
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -21689,8 +21273,6 @@ LAB_004282fc:
 void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(int p0,int p1)
 
 {
-  long lVar1;
-  long lVar2;
   byte abStack_110 [16];
   void *pvStack_100;
   byte abStack_f8 [16];
@@ -21709,8 +21291,6 @@ void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(int p0,int p1)
   undefined8 uStack_58;
   undefined1 *puStack_50;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   uStack_60 = 0;
   uStack_58 = 0;
   puStack_50 = (undefined1 *)0x0;
@@ -21904,10 +21484,6 @@ void WaterConcept::GameSettings::getLocalizedSaleDaysLeftString(int p0,int p1)
   if ((uStack_60 & 1) != 0) {
     operator delete(puStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) != lVar2) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -21927,7 +21503,6 @@ long * WaterConcept::GameSettings::copyAndFormatLabel
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   undefined8 uVar5;
@@ -21943,10 +21518,7 @@ long * WaterConcept::GameSettings::copyAndFormatLabel
   int *piStack_78;
   ulong auStack_70 [2];
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   if ((param_7 & 1) == 0) {
 LAB_00428874:
     if ((param_8 & 1) != 0) {
@@ -22040,10 +21612,6 @@ LAB_00428874:
 LAB_00428a78:
     plVar4 = (long *)0x0;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return plVar4;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 
@@ -22065,7 +21633,6 @@ long * WaterConcept::GameSettings::copyAndFormatButton
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   undefined8 uVar5;
@@ -22089,10 +21656,7 @@ long * WaterConcept::GameSettings::copyAndFormatButton
   int *piStack_90;
   ulong auStack_88 [2];
   void *pvStack_78;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
   if ((param_8 & 1) != 0) {
     uVar1 = (ulong)(*param_5 >> 1);
     if ((*param_5 & 1) != 0) {
@@ -22214,10 +21778,6 @@ long * WaterConcept::GameSettings::copyAndFormatButton
     }
   }
 LAB_0042905c:
-  if (*(long *)(lVar2 + 0x28) != lStack_70) {
-    plVar4 = (long *)__stack_chk_fail();
-    return plVar4;
-  }
   return plVar4;
 }
 
@@ -22232,7 +21792,6 @@ LAB_0042905c:
 void WaterConcept::GameSettings::wrapTextInLabel(Walaber__Widget_Label *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   float fVar4;
@@ -22250,10 +21809,7 @@ void WaterConcept::GameSettings::wrapTextInLabel(Walaber__Widget_Label *p0)
   void *pvStack_58;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_88);
   fVar5 = p0->f_0x148;
   fVar6 = p0->f_0x14c;
@@ -22332,10 +21888,6 @@ void WaterConcept::GameSettings::wrapTextInLabel(Walaber__Widget_Label *p0)
   if ((fStack_88._0_1_ & 1) != 0) {
     operator delete(pvStack_78);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

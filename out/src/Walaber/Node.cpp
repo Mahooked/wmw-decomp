@@ -12,13 +12,9 @@
 void Walaber::Node::Node()
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   abStack_40[0xd] = 0;
   abStack_40[0xe] = 0;
   abStack_40[0xf] = 0;
@@ -62,10 +58,6 @@ void Walaber::Node::Node()
   *(undefined4 *)(this + 0xc) = 0x3f800000;
   *(undefined4 *)((long)this + 0x6c) = 0x3f800000;
   *(undefined4 *)(this + 0xe) = 0x3f800000;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -417,7 +409,6 @@ void Walaber::Node::applyAngleOffset(float *p0)
 void Walaber::Node::getWorldPosition(undefined8 *param_1,long param_2)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -425,10 +416,7 @@ void Walaber::Node::getWorldPosition(undefined8 *param_1,long param_2)
   float fVar6;
   float fVar7;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_2 + 0x7c) == '\0') {
     uVar5 = *(undefined8 *)(param_2 + 100);
   }
@@ -457,10 +445,6 @@ void Walaber::Node::getWorldPosition(undefined8 *param_1,long param_2)
     *(undefined8 *)(param_2 + 100) = uVar5;
   }
   *param_1 = uVar5;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -475,13 +459,9 @@ void Walaber::Node::getWorldPosition(undefined8 *param_1,long param_2)
 void Walaber::Node::getWorldScale(undefined8 *param_1,long param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_2 + 0x7d) == '\0') {
     uVar2 = *(undefined8 *)(param_2 + 0x6c);
   }
@@ -499,10 +479,6 @@ void Walaber::Node::getWorldScale(undefined8 *param_1,long param_2)
     *(undefined8 *)(param_2 + 0x6c) = uVar2;
   }
   *param_1 = uVar2;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -547,7 +523,6 @@ float Walaber::Node::getWorldAngle(long param_1)
 void Walaber::Node::transformVector(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 *in_x8;
   float fVar2;
@@ -556,10 +531,7 @@ void Walaber::Node::transformVector(Walaber__Vector2 *p0)
   float fVar5;
   float fVar6;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(auStack_50);
   uVar4 = Walaber::Node::getWorldAngle(p0);
   fVar5 = (float)*in_x1 * auStack_50._0_4_;
@@ -569,10 +541,6 @@ void Walaber::Node::transformVector(Walaber__Vector2 *p0)
   uVar4 = NEON_rev64(CONCAT44(fVar6,fVar5),4);
   *in_x8 = CONCAT44(fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3 + 0.0,
                     (fVar5 * fVar2 - (float)uVar4 * fVar3) + 0.0);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -587,7 +555,6 @@ void Walaber::Node::transformVector(Walaber__Vector2 *p0)
 void Walaber::Node::transformPoint(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 *in_x8;
   float fVar2;
@@ -597,10 +564,7 @@ void Walaber::Node::transformPoint(Walaber__Vector2 *p0)
   float fVar6;
   undefined1 auStack_58 [8];
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(auStack_50);
   uVar4 = Walaber::Node::getWorldAngle(p0);
   Walaber::Node::getWorldPosition(auStack_58,p0);
@@ -611,10 +575,6 @@ void Walaber::Node::transformPoint(Walaber__Vector2 *p0)
   uVar4 = NEON_rev64(CONCAT44(fVar6,fVar5),4);
   *in_x8 = CONCAT44(auStack_58._4_4_ + fVar6 * fVar2 + (float)((ulong)uVar4 >> 0x20) * fVar3,
                     auStack_58._0_4_ + (fVar5 * fVar2 - (float)uVar4 * fVar3));
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -629,7 +589,6 @@ void Walaber::Node::transformPoint(Walaber__Vector2 *p0)
 void Walaber::Node::inverseTransformVector(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   float *in_x1;
   float *in_x8;
   float fVar2;
@@ -640,10 +599,7 @@ void Walaber::Node::inverseTransformVector(Walaber__Vector2 *p0)
   float fVar7;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_60);
   fVar6 = fStack_60;
   if (fStack_60 < 0.0) {
@@ -672,10 +628,6 @@ LAB_003eae90:
   fVar2 = (float)sinf(-fVar2);
   *in_x8 = (fVar4 * fVar6 * fVar3 - fVar5 * fVar7 * fVar2) + 0.0;
   in_x8[1] = fVar5 * fVar7 * fVar3 + fVar4 * fVar6 * fVar2 + 0.0;
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -690,7 +642,6 @@ LAB_003eae90:
 void Walaber::Node::inverseTransformPoint(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 *in_x1;
   undefined8 *in_x8;
@@ -701,10 +652,7 @@ void Walaber::Node::inverseTransformPoint(Walaber__Vector2 *p0)
   float fVar7;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldPosition(&fStack_60);
   uVar5 = *in_x1;
   fVar4 = (float)_fStack_60;
@@ -738,10 +686,6 @@ LAB_003eafc8:
   uVar5 = NEON_rev64(CONCAT44(fVar7,fVar6),4);
   *in_x8 = CONCAT44(fVar7 * fVar4 + (float)((ulong)uVar5 >> 0x20) * fVar3 + 0.0,
                     (fVar6 * fVar4 - (float)uVar5 * fVar3) + 0.0);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

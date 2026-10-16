@@ -16,7 +16,6 @@ void Walaber::ZipUtilities::LoadArchiveDescription
                (std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,bool param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puStack_a8;
   int *piStack_a0;
@@ -26,10 +25,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&mUserStoreBasePath);
   puStack_48 = (undefined8 *)operator new(0x10);
   *puStack_48 = &PTR__Callback_0070e2c0;
@@ -75,10 +71,6 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::PropertyList::~PropertyList(auStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -94,7 +86,6 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
 
 {
   undefined1 *puVar1;
-  long lVar2;
   void *p0_00;
   byte bVar3;
   int iVar4;
@@ -108,7 +99,6 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
   ulong extraout_x1_04;
   ulong extraout_x1_05;
   ulong extraout_x1_06;
-  long lVar7;
   ulong uVar8;
   ulong uVar9;
   undefined4 *puVar10;
@@ -168,8 +158,6 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
   long lStack_98;
   undefined8 uStack_90;
   
-  lVar2 = tpidr_el0;
-  lVar7 = *(long *)(lVar2 + 0x28);
   if (*(long *)((long)p0 + 0x20) != 0) {
     uStack_184 = 0;
     bStack_198 = 0x24;
@@ -612,10 +600,6 @@ LAB_003d80e0:
     }
     Walaber::XMLDocument::~XMLDocument(&lStack_98);
   }
-  if (*(long *)(lVar2 + 0x28) != lVar7) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -630,7 +614,6 @@ LAB_003d80e0:
 void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   ulong uVar4;
@@ -638,10 +621,7 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined1 auStack_88 [32];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(auStack_88);
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
@@ -686,10 +666,6 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
   Walaber::Property::~Property(auStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -704,7 +680,6 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
 void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -715,10 +690,7 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined1 auStack_88 [32];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(auStack_88);
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
@@ -764,10 +736,6 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
   Walaber::Property::~Property(auStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -782,7 +750,6 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
 void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -793,10 +760,7 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined1 auStack_88 [32];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(auStack_88);
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
@@ -842,10 +806,6 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
   Walaber::Property::~Property(auStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -860,7 +820,6 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
 void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIterator p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -871,10 +830,7 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
   ulong uStack_78;
   void *pvStack_70;
   undefined1 auStack_68 [32];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(auStack_68);
   while (*(long *)p0.f_0x0 != 0) {
     uStack_78 = 0;
@@ -917,10 +873,6 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
   Walaber::Property::~Property(auStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -935,7 +887,6 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
 void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p0)
 
 {
-  long lVar1;
   undefined4 uVar2;
   ulong uVar3;
   undefined8 *puVar4;
@@ -950,10 +901,7 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined1 auStack_88 [32];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::Property::Property(auStack_88);
   while (*(long *)p0.f_0x0 != 0) {
     pvStack_90 = (void *)0x0;
@@ -1007,10 +955,6 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
   Walaber::Property::~Property(auStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1026,7 +970,6 @@ void Walaber::ZipUtilities::_fileReadCallback(void *p0)
 
 {
   void *pvVar1;
-  long lVar2;
   byte bVar3;
   int iVar4;
   int iVar5;
@@ -1046,10 +989,7 @@ void Walaber::ZipUtilities::_fileReadCallback(void *p0)
   undefined4 uStack_4f;
   undefined3 uStack_4b;
   void *pvStack_48;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (*(long *)((long)p0 + 0x20) == 0) {
     bVar7 = true;
     goto LAB_003d9634;
@@ -1236,10 +1176,6 @@ LAB_003d9634:
       operator delete(pvStack_48);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

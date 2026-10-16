@@ -18,7 +18,6 @@ void std::__ndk1::
                (WaterConcept__Fluids__FluidCollisionRecord *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -29,10 +28,7 @@ void std::__ndk1::
   void *pvStack_60;
   undefined8 *puStack_58;
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)(p0->f_0x0[1] - p0->f_0x0[0]) >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
@@ -66,10 +62,6 @@ void std::__ndk1::
   }
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

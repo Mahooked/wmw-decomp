@@ -13,7 +13,6 @@ void Walaber::VertexArraysObject::bind(undefined1 *param_1)
 
 {
   undefined1 uVar1;
-  long lVar2;
   undefined4 uVar3;
   undefined4 uVar4;
   undefined4 uVar5;
@@ -22,10 +21,7 @@ void Walaber::VertexArraysObject::bind(undefined1 *param_1)
   int iVar8;
   long lVar9;
   ulong uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   uStack_70 = uStack_70 & 0xffffffff00000000;
   glGetIntegerv(0x8894,&uStack_70);
   *(undefined4 *)(param_1 + 8) = (undefined4)uStack_70;
@@ -124,10 +120,6 @@ void Walaber::VertexArraysObject::bind(undefined1 *param_1)
   } while (lVar9 != 0x60);
   Walaber::GraphicsGL::setActiveTexture(0);
   *param_1 = 1;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

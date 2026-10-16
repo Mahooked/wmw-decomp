@@ -13,15 +13,11 @@ void std::__ndk1::future_error::future_error
                (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   byte abStack_50 [16];
   void *pvStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_38 = param_2;
   uStack_30 = param_3;
   std::__ndk1::error_code::message(abStack_50,&uStack_38);
@@ -33,10 +29,6 @@ void std::__ndk1::future_error::future_error
   *param_1 = &PTR__future_error_00719378;
   param_1[3] = uStack_30;
   param_1[2] = uStack_38;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

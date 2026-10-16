@@ -12,15 +12,11 @@
 void WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38,0,0);
@@ -31,10 +27,6 @@ void WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__
   *(long *)((long)p0 + 0x3c8) = (long)p0 + 0x3c0;
   *(undefined8 *)((long)p0 + 0x3d0) = 0;
   *(undefined4 *)((long)p0 + 0xd8) = 0xb;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -85,13 +77,9 @@ void WaterConcept::AlgaeHider::~AlgaeHider(void *param_1)
 void WaterConcept::AlgaeHider::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   undefined4 uVar2;
   ulong uVar3;
-  long lVar4;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0047727c to 00477287 has its CatchHandler @ 00477314 */
   uVar3 = Walaber::PropertyList::keyExists();
@@ -100,10 +88,6 @@ void WaterConcept::AlgaeHider::setProperties(Walaber__PropertyList *p0)
     Walaber::PropertyList::operator[]();
     uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p0[0x27].f_0x10 = uVar2;
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar4) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -135,7 +119,6 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
 
 {
   long lVar1;
-  long lVar2;
   long *p0;
   long *plVar3;
   long lVar4;
@@ -145,10 +128,7 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
   undefined4 uStack_48;
   undefined4 uStack_44;
   undefined1 uStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar4 = *(long *)(param_1 + 0x3d0);
   while (lVar4 != 0) {
     plVar3 = *(long **)(param_1 + 0x3a8);
@@ -171,10 +151,6 @@ void WaterConcept::AlgaeHider::removeAll(long param_1)
     operator delete(p0);
     lVar4 = *(long *)(param_1 + 0x3d0);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -192,7 +168,6 @@ void WaterConcept::AlgaeHider::particleHasCollided
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   int *piVar4;
   undefined1 *in_x4;
@@ -206,11 +181,8 @@ void WaterConcept::AlgaeHider::particleHasCollided
   undefined8 uStack_70;
   long lStack_68;
   undefined1 uStack_60;
-  long lStack_58;
   
   piVar4 = (int *)(ulong)(uint)p2;
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   iVar5 = *piVar4;
   if (iVar5 - 3U < 2) {
     *in_x4 = 1;
@@ -261,10 +233,6 @@ void WaterConcept::AlgaeHider::particleHasCollided
   else {
     *in_x4 = 0;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

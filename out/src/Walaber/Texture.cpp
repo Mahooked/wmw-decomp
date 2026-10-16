@@ -12,16 +12,12 @@
 void Walaber::Texture::create_empty_buffer(undefined8 *param_1,long param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   float fVar3;
   float fVar4;
   undefined8 uStack_58;
   undefined4 *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fVar3 = (float)NEON_ucvtf(*(undefined4 *)(param_2 + 0x7c));
   fVar4 = (float)NEON_ucvtf(*(undefined4 *)(param_2 + 0x80));
   uVar2 = operator new(0x18);
@@ -33,10 +29,6 @@ void Walaber::Texture::create_empty_buffer(undefined8 *param_1,long param_2)
   param_1[1] = puStack_50;
   *puStack_50 = 2;
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -66,16 +58,12 @@ void Walaber::Texture::writeToFile(void)
 void Walaber::Texture::_getData(long param_1,long *param_2)
 
 {
-  long lVar1;
   long lStack_60;
   int *piStack_58;
   long lStack_50;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*param_2 != 0) {
     lStack_60 = *(long *)(param_1 + 0xa8);
     piStack_58 = *(int **)(param_1 + 0xb0);
@@ -93,10 +81,6 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
     (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,&lStack_50);
     Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -359,13 +343,9 @@ void Walaber::Texture::setSettings(long *param_1,long *param_2)
 void Walaber::Texture::getData(long *param_1,long *param_2)
 
 {
-  long lVar1;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_38 = *param_2;
   piStack_30 = (int *)param_2[1];
   if (lStack_38 != 0) {
@@ -374,10 +354,6 @@ void Walaber::Texture::getData(long *param_1,long *param_2)
                     /* try { // try from 004557f0 to 004557f7 has its CatchHandler @ 00455824 */
   (**(code **)(*param_1 + 0x40))(param_1,&lStack_38);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

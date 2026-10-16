@@ -112,13 +112,11 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0)
   undefined1 *puVar2;
   undefined1 uVar3;
   byte bVar4;
-  long lVar5;
   int iVar6;
   undefined8 *puVar7;
   ulong *puVar8;
   ulong uVar9;
   long in_x1;
-  long lVar10;
   undefined8 uVar11;
   Walaber__Message *pWVar12;
   undefined1 *puVar13;
@@ -192,8 +190,6 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0)
   undefined7 uStack_88;
   void *pvStack_80;
   
-  lVar5 = tpidr_el0;
-  lVar10 = *(long *)(lVar5 + 0x28);
   if (*(int *)(in_x1 + 0xc) != 0x43) goto LAB_0043e328;
   lVar1 = in_x1 + 0x10;
   uStack_2bc = 0;
@@ -984,10 +980,6 @@ LAB_0043e0a8:
     operator delete(puStack_a0);
   }
 LAB_0043e328:
-  if (*(long *)(lVar5 + 0x28) == lVar10) {
-    return 0;
-  }
-  uVar11 = __stack_chk_fail();
   return uVar11;
 }
 
@@ -1006,7 +998,6 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
 {
   byte *pbVar1;
   byte bVar2;
-  long lVar3;
   ulong uVar4;
   undefined4 *puVar5;
   undefined *puVar6;
@@ -1014,7 +1005,6 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   undefined8 *puVar8;
   ulong uVar9;
   byte *pbVar10;
-  long lVar11;
   undefined8 uVar12;
   void *p0;
   undefined8 uVar13;
@@ -1062,8 +1052,6 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   byte abStack_90 [16];
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar11 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,&DAT_00739a68);
   uStack_c8 = 0;
   pvStack_c0 = (void *)0x0;
@@ -1576,10 +1564,6 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar11) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1599,7 +1583,6 @@ void WaterConcept::PurchaseHandler::_processPurchaseSpecific(undefined8 param_1,
   undefined4 *puVar1;
   undefined1 *puVar2;
   byte bVar3;
-  long lVar4;
   undefined *puVar5;
   void *pvVar6;
   undefined2 *puVar7;
@@ -1613,7 +1596,6 @@ void WaterConcept::PurchaseHandler::_processPurchaseSpecific(undefined8 param_1,
   byte *pbVar14;
   ulong *puVar15;
   char *pcVar16;
-  long lVar17;
   ulong uVar18;
   undefined8 uVar19;
   long lVar20;
@@ -1678,8 +1660,6 @@ void WaterConcept::PurchaseHandler::_processPurchaseSpecific(undefined8 param_1,
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar4 = tpidr_el0;
-  lVar17 = *(long *)(lVar4 + 0x28);
   bVar3 = *param_2;
   uVar18 = *(ulong *)(param_2 + 8);
   uVar21 = (ulong)(bVar3 >> 1);
@@ -5025,10 +5005,6 @@ LAB_00441f64:
     operator delete(pvStack_a0);
   }
 LAB_00441f8c:
-  if (*(long *)(lVar4 + 0x28) != lVar17) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5048,7 +5024,6 @@ void WaterConcept::PurchaseHandler::_processFakeLocksmithPurchase(undefined8 par
   ulong uVar1;
   byte *pbVar2;
   byte bVar3;
-  long lVar4;
   undefined4 *puVar5;
   bool bVar6;
   int iVar7;
@@ -5086,10 +5061,7 @@ void WaterConcept::PurchaseHandler::_processFakeLocksmithPurchase(undefined8 par
   undefined1 auStack_90 [8];
   byte abStack_88 [16];
   void *pvStack_78;
-  long lStack_70;
   
-  lVar4 = tpidr_el0;
-  lStack_70 = *(long *)(lVar4 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,&DAT_00739a68);
   uStack_a1 = 0;
   pbStack_a0 = (byte *)0x0;
@@ -5355,10 +5327,6 @@ LAB_00442cb8:
   Walaber::DatabaseIterator::~DatabaseIterator(auStack_90);
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
-  }
-  if (*(long *)(lVar4 + 0x28) != lStack_70) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

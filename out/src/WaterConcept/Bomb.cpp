@@ -12,15 +12,11 @@
 void WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38,1,0);
@@ -33,10 +29,6 @@ void WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
   *(undefined8 *)((long)p0 + 0x3b8) = 0;
   *(undefined8 *)((long)p0 + 0x3cc) = 0x41700000457a0000;
   *(undefined4 *)((long)p0 + 0xd8) = 3;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -86,7 +78,6 @@ void WaterConcept::Bomb::~Bomb()
 void WaterConcept::Bomb::_initFinished(long param_1)
 
 {
-  long lVar1;
   byte bVar2;
   undefined7 uVar3;
   undefined1 uVar4;
@@ -108,10 +99,7 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   undefined5 uStack_55;
   void *pvStack_50;
   undefined1 auStack_48 [16];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_55 = 0;
   pvStack_50 = (void *)0x0;
   bStack_60 = 0x12;
@@ -162,10 +150,6 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Bomb>>::~SharedPtr(&puStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -182,7 +166,6 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
 {
   ulong uVar1;
   long lVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   undefined8 *puVar6;
@@ -210,10 +193,7 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
   undefined4 uStack_48;
   undefined4 uStack_44;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   if (*(int *)(in_x1 + 0x18) == 4) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_58,*(undefined8 *)(in_x1 + 8));
     uVar1 = (ulong)(bStack_58 >> 1);
@@ -332,10 +312,6 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
       }
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -352,13 +328,9 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
 void WaterConcept::Bomb::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   long lVar2;
-  long lVar3;
   undefined4 uVar4;
   
-  lVar1 = tpidr_el0;
-  lVar3 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 00477d90 to 00477d9b has its CatchHandler @ 00477e48 */
   lVar2 = Walaber::PropertyList::getValueForKey();
@@ -371,10 +343,6 @@ void WaterConcept::Bomb::setProperties(Walaber__PropertyList *p0)
   if (lVar2 != 0) {
     uVar4 = Walaber::Property::asFloat(lVar2);
     *(undefined4 *)((long)&p0[0x28].f_0x8 + 4) = uVar4;
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar3) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -390,17 +358,13 @@ void WaterConcept::Bomb::setProperties(Walaber__PropertyList *p0)
 void WaterConcept::Bomb::update(float p0)
 
 {
-  long lVar1;
   long in_x0;
   undefined8 uStack_60;
   undefined1 auStack_58 [8];
   undefined4 uStack_50;
   undefined8 uStack_4c;
   undefined8 uStack_44;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   *(float *)(in_x0 + 0x3c8) = *(float *)(in_x0 + 0x3c8) + p0;
   if (*(int *)(in_x0 + 0x3a8) == 3) {
@@ -414,10 +378,6 @@ void WaterConcept::Bomb::update(float p0)
     }
     *(undefined1 *)(in_x0 + 0xdc) = 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -434,14 +394,12 @@ void WaterConcept::Bomb::setToExplode(bool p0)
 {
   long lVar1;
   undefined4 uVar2;
-  long lVar3;
   ulong uVar4;
   undefined8 *puVar5;
   int *piVar6;
   undefined8 uVar7;
   undefined8 **ppuVar8;
   ulong in_x1;
-  long lVar9;
   long lVar10;
   undefined8 *puStack_e8;
   int *piStack_e0;
@@ -470,8 +428,6 @@ void WaterConcept::Bomb::setToExplode(bool p0)
   undefined4 uStack_50;
   
   uVar4 = (ulong)p0;
-  lVar3 = tpidr_el0;
-  lVar9 = *(long *)(lVar3 + 0x28);
   if (*(int *)(uVar4 + 0x3a8) == 0) {
     *(undefined4 *)(uVar4 + 0x3b0) = 0;
     *(undefined4 *)(uVar4 + 0x3a8) = 2;
@@ -633,10 +589,6 @@ void WaterConcept::Bomb::setToExplode(bool p0)
       (**(code **)(**(long **)(uVar4 + 0x3b8) + 0x10))(*(long **)(uVar4 + 0x3b8),&bStack_68);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lVar9) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

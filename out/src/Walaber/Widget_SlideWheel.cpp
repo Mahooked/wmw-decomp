@@ -12,16 +12,12 @@
 void Walaber::Widget_SlideWheel::Widget_SlideWheel(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0xd,&uStack_30,&uStack_38,1,1);
@@ -32,10 +28,6 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel(int p0,Walaber__Vector2 p1,Wa
   puVar2[0x25] = 0;
   *(undefined4 *)((long)puVar2 + 0xfc) = 0xff000000;
   *puVar2 = &PTR__Widget_SlideWheel_0070fbf8;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67,15 +59,11 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
                long *param_5)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *param_3;
   uStack_48 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,0xd,&uStack_40,&uStack_48,1,1);
@@ -91,10 +79,6 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
   param_1[0x26] = 0;
   param_1[0x27] = 0;
   param_1[0x25] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -208,7 +192,6 @@ bool Walaber::Widget_SlideWheel::update(float p0,Walaber__Widget__WidgetActionRe
 void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   uint uVar2;
   float fVar3;
   float fVar4;
@@ -238,10 +221,7 @@ void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
   undefined8 uStack_a8;
   float fStack_a0;
   float fStack_9c;
-  long lStack_98;
   
-  lVar1 = tpidr_el0;
-  lStack_98 = *(long *)(lVar1 + 0x28);
   uVar7 = Walaber::Widget::_getAngle();
   if ((char)p0[4].f_0x30 == '\0') {
     uStack_a8 = *(undefined8 *)&p0[5].field_0x10;
@@ -308,10 +288,6 @@ void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
     } while (uVar2 < 0x11);
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) != lStack_98) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

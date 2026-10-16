@@ -34,13 +34,9 @@ void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2
 void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
 
 {
-  long lVar1;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   param_1[3] = 0;
   param_1[2] = 0;
   param_1[4] = 0;
@@ -53,10 +49,6 @@ void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2
   Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,&uStack_48);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_48);
   *(undefined4 *)(param_1 + 5) = param_3;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

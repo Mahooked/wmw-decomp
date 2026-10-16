@@ -22,7 +22,6 @@ ulong std::__ndk1::
                 (long *param_1,long *param_2,long *param_3,long *param_4,undefined8 *param_5)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   code *pcVar4;
@@ -41,10 +40,7 @@ ulong std::__ndk1::
   int *piStack_70;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = unsigned int std::__ndk1::__sort3<bool (*&)(Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>), Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>*>();
   lStack_78 = *param_4;
   piStack_70 = (int *)param_4[1];
@@ -129,10 +125,6 @@ ulong std::__ndk1::
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 

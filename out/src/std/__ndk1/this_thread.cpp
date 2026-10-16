@@ -13,16 +13,12 @@
 void std::__ndk1::this_thread::sleep_for(ulong *param_1)
 
 {
-  long lVar1;
   int iVar2;
   int *piVar3;
   ulong uVar4;
   ulong uStack_38;
   ulong uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uVar4 = *param_1;
   if (0 < (long)uVar4) {
     uStack_38 = uVar4 / 1000000000;
@@ -33,10 +29,6 @@ void std::__ndk1::this_thread::sleep_for(ulong *param_1)
       piVar3 = (int *)__errno();
     } while (*piVar3 == 4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

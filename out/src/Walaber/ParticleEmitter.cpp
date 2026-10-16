@@ -163,7 +163,6 @@ void Walaber::ParticleEmitter::~ParticleEmitter(void *param_1)
 void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -177,10 +176,7 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   int *piStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x150,param_3);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -216,10 +212,6 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::ParticleEmitter>>::~SharedPtr(&puStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -234,7 +226,6 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
 void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
 
 {
-  long lVar1;
   long lVar2;
   int *piVar3;
   bool bVar4;
@@ -302,10 +293,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
   long lStack_b8;
   undefined8 uStack_b0;
   undefined4 auStack_98 [2];
-  long lStack_90;
   
-  lVar1 = tpidr_el0;
-  lStack_90 = *(long *)(lVar1 + 0x28);
   auStack_98[0] = 1;
   if (*in_x1 == 1) {
     uStack_117 = 0;
@@ -1823,10 +1811,6 @@ LAB_003916f8:
   if (plVar10 != (long *)0x0) {
     (**(code **)(*plVar10 + 0x10))(plVar10,auStack_98);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_90) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1842,7 +1826,6 @@ void Walaber::ParticleEmitter::update(float p0)
 
 {
   float *pfVar1;
-  long lVar2;
   ulong uVar3;
   int iVar4;
   int iVar5;
@@ -1904,10 +1887,7 @@ void Walaber::ParticleEmitter::update(float p0)
   int iStack_c4;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
-  long lStack_b0;
   
-  lVar2 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar2 + 0x28);
   if (((*(char *)(in_x0 + 0x1c9) != '\0') && (*(int *)(in_x0 + 0x16c) != 0)) &&
      (fVar24 = *(float *)(in_x0 + 0x160), fVar24 != 0.0)) {
     fVar38 = *(float *)(in_x0 + 0x164) + p0;
@@ -2161,10 +2141,6 @@ void Walaber::ParticleEmitter::update(float p0)
       pcVar21 = pcVar21 + 0x74;
     } while (lVar20 < iVar5);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2179,20 +2155,12 @@ void Walaber::ParticleEmitter::update(float p0)
 void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
                     /* try { // try from 003934cc to 003934df has its CatchHandler @ 00393510 */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20);
   std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2207,20 +2175,12 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0)
 void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0,Walaber__Color p1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
                     /* try { // try from 003935f4 to 0039360b has its CatchHandler @ 0039363c */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20,p1,auStack_50);
   std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2235,14 +2195,10 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0,Walaber__Color p1)
 void Walaber::ParticleEmitter::addDirectionRangeDegrees(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   fStack_30 = p0 * 0.017453292;
   fStack_2c = p1 * 0.017453292;
   if (*(undefined8 **)(in_x0 + 0xe8) < *(undefined8 **)(in_x0 + 0xf0)) {
@@ -2252,10 +2208,6 @@ void Walaber::ParticleEmitter::addDirectionRangeDegrees(float p0,float p1)
   else {
     void std::__ndk1::vector<std::__ndk1::pair<float, float>, std::__ndk1::allocator<std::__ndk1::pair<float, float>>>::__push_back_slow_path<std::__ndk1::pair<float, float>>(in_x0 + 0xe0,&fStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

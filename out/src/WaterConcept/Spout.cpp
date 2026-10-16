@@ -15,14 +15,10 @@ void WaterConcept::Spout::Spout
                undefined4 param_5)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *param_2;
   uStack_58 = *param_3;
   WaterConcept::InteractiveObject::InteractiveObject(param_1,&uStack_50,&uStack_58,1,0);
@@ -88,10 +84,6 @@ void WaterConcept::Spout::Spout
   *(undefined1 *)((long)param_1 + 0x4fc) = 0;
   *(undefined8 *)((long)param_1 + 0x4f4) = 0;
   *(undefined4 *)(param_1 + 0x1b) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -167,7 +159,6 @@ void WaterConcept::Spout::setProperties(Walaber__PropertyList *p0)
 {
   ulong *puVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   uint uVar5;
   long lVar6;
@@ -198,10 +189,7 @@ void WaterConcept::Spout::setProperties(Walaber__PropertyList *p0)
   undefined2 uStack_4f;
   undefined4 uStack_4d;
   undefined1 uStack_49;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   uStack_55 = 0;
   uStack_54 = 0;
@@ -1052,10 +1040,6 @@ LAB_0048bbf4:
       operator delete((void *)CONCAT17(uStack_49,CONCAT43(uStack_4d,CONCAT21(uStack_4f,uStack_50))));
     }
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1070,17 +1054,13 @@ LAB_0048bbf4:
 void WaterConcept::Spout::setInfiniteParticles(int p0,bool p1)
 
 {
-  long lVar1;
   ulong uVar2;
   byte in_w2;
   long lVar3;
   uint uStack_50;
   float fStack_4c;
-  long lStack_48;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(uVar2 + 0x428);
   *(byte *)(uVar2 + 0x4d4) = in_w2 & 1;
   while (lVar3 != 0) {
@@ -1094,10 +1074,6 @@ void WaterConcept::Spout::setInfiniteParticles(int p0,bool p1)
     }
     uStack_50 = (uint)p1;
     std::__ndk1::deque<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::push_back(uVar2 + 0x400,&uStack_50);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -1120,7 +1096,6 @@ void WaterConcept::Spout::update(float p0)
   byte bVar5;
   byte bVar6;
   byte bVar7;
-  long lVar8;
   bool bVar9;
   bool bVar10;
   int iVar11;
@@ -1163,10 +1138,7 @@ void WaterConcept::Spout::update(float p0)
   undefined8 uStack_c0;
   byte bStack_b8;
   undefined1 uStack_b7;
-  long lStack_b0;
   
-  lVar8 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar8 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   fVar28 = *(float *)(in_x0 + 0x468) - p0;
   if (fVar28 <= 0.0) {
@@ -1534,10 +1506,6 @@ LAB_0048d1a8:
       } while (uVar18 <= uVar21 && uVar21 - uVar18 != 0);
     }
   }
-  if (*(long *)(lVar8 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1552,7 +1520,6 @@ LAB_0048d1a8:
 void WaterConcept::Spout::getWorldBlockPosition(float p0)
 
 {
-  long lVar1;
   long in_x0;
   undefined8 *in_x8;
   float fVar2;
@@ -1563,10 +1530,7 @@ void WaterConcept::Spout::getWorldBlockPosition(float p0)
   float fVar7;
   float fVar8;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar4 = *(undefined8 *)(in_x0 + 0x3a8);
   uVar5 = *(undefined8 *)(in_x0 + 0x3b0);
   Walaber::Node::getWorldScale(auStack_50);
@@ -1591,10 +1555,6 @@ void WaterConcept::Spout::getWorldBlockPosition(float p0)
   }
   Walaber::Node::getWorldPosition(auStack_50);
   *in_x8 = CONCAT44(fVar8 * p0 + fVar3 + auStack_50._4_4_,fVar7 * p0 + fVar6 + auStack_50._0_4_);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1668,7 +1628,6 @@ WaterConcept::Spout::_addParticleToRandomSpout
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
-  long lVar3;
   int iVar4;
   int iVar5;
   long *plVar6;
@@ -1699,10 +1658,7 @@ WaterConcept::Spout::_addParticleToRandomSpout
   undefined8 uStack_b0;
   byte bStack_a8;
   undefined1 uStack_a7;
-  long lStack_a0;
   
-  lVar3 = tpidr_el0;
-  lStack_a0 = *(long *)(lVar3 + 0x28);
   uVar12 = param_4[1] - *param_4 >> 4;
   uVar11 = uVar12 & 0xffffffff;
   lStack_d0 = CONCAT71(lStack_d0._1_7_,1);
@@ -1732,10 +1688,6 @@ LAB_0048d714:
     if (apvStack_e8[0] != (void *)0x0) {
       operator delete(apvStack_e8[0]);
     }
-    if (*(long *)(lVar3 + 0x28) == lStack_a0) {
-      return uVar10;
-    }
-    uVar10 = __stack_chk_fail();
     return uVar10;
   }
   lVar15 = 0;
@@ -1934,7 +1886,6 @@ void WaterConcept::Spout::addParticles
 
 {
   int iVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   undefined8 *puVar5;
@@ -1943,10 +1894,7 @@ void WaterConcept::Spout::addParticles
   undefined8 uStack_78;
   int iStack_70;
   int iStack_6c;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (*(char *)(param_2 + 0x112) != '\0') {
     if ((*(int *)(param_2 + 0x430) == -1) || (param_3[2] < 1)) {
       plVar4 = *(long **)(param_2 + 0x490);
@@ -2010,10 +1958,6 @@ void WaterConcept::Spout::addParticles
 LAB_0048dc60:
   uVar6 = 2;
 LAB_0048dc64:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail(uVar6);
   return;
 }
 
@@ -2187,15 +2131,11 @@ void WaterConcept::Spout::addConnectedSpout
                (undefined4 param_1,long param_2,long param_3,undefined4 param_4)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_48;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar2 = *(long **)(param_2 + 0x4a8);
   lStack_48 = param_3;
   uStack_40 = param_1;
@@ -2216,10 +2156,6 @@ void WaterConcept::Spout::addConnectedSpout
       } while (*(long *)(param_3 + 0x428) != 0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2289,7 +2225,6 @@ void WaterConcept::Spout::_initFinished(long param_1)
 void WaterConcept::Spout::getWorldMouthPosition(float p0)
 
 {
-  long lVar1;
   long in_x0;
   undefined8 *in_x8;
   float fVar2;
@@ -2299,10 +2234,7 @@ void WaterConcept::Spout::getWorldMouthPosition(float p0)
   float fVar6;
   float fVar7;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(auStack_50);
   fVar6 = (float)*(undefined8 *)(in_x0 + 0x3a8) * auStack_50._0_4_;
   fVar7 = (float)((ulong)*(undefined8 *)(in_x0 + 0x3a8) >> 0x20) * auStack_50._4_4_;
@@ -2325,10 +2257,6 @@ void WaterConcept::Spout::getWorldMouthPosition(float p0)
   }
   Walaber::Node::getWorldPosition(auStack_50);
   *in_x8 = CONCAT44(fVar7 * p0 + fVar3 + auStack_50._4_4_,fVar6 * p0 + fVar5 + auStack_50._0_4_);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

@@ -135,7 +135,6 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
 ::insert(long *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   ulong uVar3;
   ulong uVar4;
@@ -149,10 +148,7 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
   undefined8 uVar12;
   undefined8 uVar13;
   undefined1 auStack_80 [40];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar8 = *param_1;
   puVar2 = (undefined4 *)param_1[1];
   lVar9 = (long)param_2 - lVar8 >> 3;
@@ -225,10 +221,6 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
     std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined4 *)std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
     std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::~__split_buffer(auStack_80);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    puVar2 = (undefined4 *)__stack_chk_fail();
-    return puVar2;
   }
   return param_2;
 }

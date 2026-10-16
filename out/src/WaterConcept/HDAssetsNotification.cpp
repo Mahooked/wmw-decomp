@@ -424,15 +424,11 @@ void WaterConcept::HDAssetsNotification::handleEvent
                (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if ((int)p1 == 2) {
     *(undefined1 *)((long)(ulong)(uint)p0 + 0x204) = 1;
     uVar2 = Walaber::BroadcastManager::getInstancePtr();
@@ -447,10 +443,6 @@ void WaterConcept::HDAssetsNotification::handleEvent
   else if ((int)p1 == 3) {
     (**(code **)(*(long *)(ulong)(uint)p0 + 0x40))();
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -465,7 +457,6 @@ void WaterConcept::HDAssetsNotification::handleEvent
 void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
 
 {
-  long lVar1;
   byte bVar2;
   undefined7 uVar3;
   int iVar4;
@@ -485,10 +476,7 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
   undefined4 uStack_63;
   undefined1 uStack_5f;
   undefined6 uStack_5e;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   iVar4 = *(int *)(in_x1 + 0xc);
   if (iVar4 < 0x27) {
@@ -750,10 +738,6 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
     uVar5 = 0;
     NotificationSingleton::getInstancePtr()::instance[0x94] = 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 

@@ -13,15 +13,11 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::fl
 
 {
   long lVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   undefined1 auStack_38 [8];
   long *plStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   plVar4 = (long *)(*param_1 + -0x18);
   if (*(long *)((long)param_1 + *plVar4 + 0x28) != 0) {
     auStack_38[0] = 0;
@@ -42,10 +38,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::fl
     }
     std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_38);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return param_1;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 
@@ -216,7 +208,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::swap
 long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(bool p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -227,11 +218,8 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -268,10 +256,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -289,7 +273,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 {
   ulong uVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   long *plVar5;
   long lVar6;
@@ -300,11 +283,8 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar7 = (long *)(ulong)(ushort)p0;
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   auStack_70[0] = 0;
   plVar8 = (long *)(*plVar7 + -0x18);
   plStack_68 = plVar7;
@@ -347,10 +327,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return plVar7;
-  }
-  plVar7 = (long *)__stack_chk_fail();
   return plVar7;
 }
 
@@ -366,7 +342,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ushort p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -377,11 +352,8 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -418,10 +390,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -439,7 +407,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 {
   ulong uVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   long *plVar5;
   long lVar6;
@@ -450,11 +417,8 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar7 = (long *)(ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   auStack_70[0] = 0;
   plVar8 = (long *)(*plVar7 + -0x18);
   plStack_68 = plVar7;
@@ -497,10 +461,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return plVar7;
-  }
-  plVar7 = (long *)__stack_chk_fail();
   return plVar7;
 }
 
@@ -516,7 +476,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(uint p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -527,11 +486,8 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -568,10 +524,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -655,7 +607,6 @@ long std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(ulong p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -665,10 +616,7 @@ ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ope
   undefined1 auStack_70 [8];
   ulong uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   uStack_68 = p0;
@@ -705,10 +653,6 @@ ulong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ope
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -725,7 +669,6 @@ longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::
                    (longlong p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -735,10 +678,7 @@ longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::
   undefined1 auStack_70 [8];
   longlong lStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   lStack_68 = p0;
@@ -775,10 +715,6 @@ longlong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  lVar5 = __stack_chk_fail();
   return lVar5;
 }
 
@@ -795,7 +731,6 @@ ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
                     (ulonglong p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -805,10 +740,7 @@ ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
   undefined1 auStack_70 [8];
   ulonglong uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   uStack_68 = p0;
@@ -845,10 +777,6 @@ ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -864,7 +792,6 @@ ulonglong std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
 void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(float p0)
 
 {
-  long lVar1;
   int iVar2;
   long *in_x0;
   long *plVar3;
@@ -873,10 +800,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
   undefined8 uVar6;
   undefined1 auStack_70 [16];
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -912,10 +836,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -931,7 +851,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(double p0)
 
 {
-  long lVar1;
   int iVar2;
   long *in_x0;
   long *plVar3;
@@ -940,10 +859,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
   undefined8 uVar6;
   undefined1 auStack_70 [16];
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -979,10 +895,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -999,7 +911,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
                (longdouble p0)
 
 {
-  long lVar1;
   int iVar2;
   long *in_x0;
   long *plVar3;
@@ -1008,10 +919,7 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
   undefined8 uVar6;
   undefined1 auStack_60 [16];
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   auStack_60[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -1047,10 +955,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1066,7 +970,6 @@ void std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::oper
 void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::operator<<(void *p0)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
@@ -1076,10 +979,7 @@ void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
   undefined1 auStack_70 [8];
   void *pvStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   pvStack_68 = p0;
@@ -1116,10 +1016,6 @@ void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  pvVar5 = (void *)__stack_chk_fail();
   return pvVar5;
 }
 
@@ -1135,18 +1031,14 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
 
 {
   int *piVar1;
-  long lVar2;
   long *plVar3;
   int in_w1;
   long *plVar4;
   long lVar5;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   auStack_48[0] = 0;
   plVar4 = (long *)(*plVar3 + -0x18);
   plStack_40 = plVar3;
@@ -1176,10 +1068,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::pu
   }
 LAB_005afb20:
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return plVar3;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -1196,17 +1084,13 @@ wchar_t * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
                     (wchar_t *p0,long p1)
 
 {
-  long lVar1;
   long *plVar2;
   long lVar3;
   wchar_t *pwVar4;
   long in_x2;
   undefined1 auStack_48 [8];
   wchar_t *pwStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   pwStack_40 = p0;
   if (*(int *)((long)p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) == 0) {
@@ -1224,10 +1108,6 @@ wchar_t * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>:
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return p0;
-  }
-  pwVar4 = (wchar_t *)__stack_chk_fail();
   return pwVar4;
 }
 
@@ -1267,17 +1147,13 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
                  (long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   long extraout_x1;
   long lVar2;
   long *plVar3;
   uint uVar4;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   plVar3 = (long *)(*param_1 + -0x18);
   lVar2 = *plVar3;
@@ -1301,10 +1177,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_1;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -1321,17 +1193,13 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
                  (long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
-  long lVar1;
   long extraout_x1;
   long lVar2;
   long *plVar3;
   uint uVar4;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   plVar3 = (long *)(*param_1 + -0x18);
   lVar2 = *plVar3;
@@ -1355,10 +1223,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_1;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 

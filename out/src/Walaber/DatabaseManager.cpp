@@ -29,7 +29,6 @@ void Walaber::DatabaseManager::openDatabase(std::__ndk1::basic_string<char, std:
 ulong Walaber::DatabaseManager::openDatabase(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,int param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 uVar3;
   undefined8 uVar4;
@@ -41,10 +40,7 @@ ulong Walaber::DatabaseManager::openDatabase(std::__ndk1::basic_string<char, std
   undefined4 uStack_4c;
   undefined1 auStack_48 [8];
   undefined4 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pbVar7 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
     pbVar7 = param_1 + 1;
@@ -77,10 +73,6 @@ ulong Walaber::DatabaseManager::openDatabase(std::__ndk1::basic_string<char, std
     uVar8 = 0;
     uStack_58 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar8;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -166,15 +158,11 @@ undefined4 Walaber::DatabaseManager::firstEntryInMap(void)
 ulong Walaber::DatabaseManager::insertEntry(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   ulong auStack_40 [2];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_40[0] = 0;
   auStack_40[1] = 0;
   pvStack_30 = (void *)0x0;
@@ -183,10 +171,6 @@ ulong Walaber::DatabaseManager::insertEntry(std::__ndk1::basic_string<char, std:
   if ((auStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -205,16 +189,12 @@ ulong Walaber::DatabaseManager::insertEntry(std::__ndk1::basic_string<char, std:
 ulong Walaber::DatabaseManager::insertEntry(void)
 
 {
-  long lVar1;
   undefined4 uVar2;
   uint uVar3;
   ulong uVar4;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseManager::constructInsertQuery(abStack_40);
   if (DAT_0072d698 == 0) {
     uVar2 = 0xffffffff;
@@ -227,10 +207,6 @@ ulong Walaber::DatabaseManager::insertEntry(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar3 & 1);
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -272,7 +248,6 @@ void Walaber::DatabaseManager::constructInsertQuery
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   int iVar5;
   undefined8 *puVar6;
@@ -296,10 +271,7 @@ void Walaber::DatabaseManager::constructInsertQuery
   undefined1 uStack_43;
   undefined2 uStack_42;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_42 = 0;
   pvStack_40 = (void *)0x0;
   bStack_50 = 0x18;
@@ -477,10 +449,6 @@ LAB_0032b564:
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -499,15 +467,11 @@ ulong Walaber::DatabaseManager::insertEntry
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   ulong auStack_40 [2];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_40[0] = 0;
   auStack_40[1] = 0;
   pvStack_30 = (void *)0x0;
@@ -516,10 +480,6 @@ ulong Walaber::DatabaseManager::insertEntry
   if ((auStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -539,25 +499,17 @@ ulong Walaber::DatabaseManager::insertEntry
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseManager::constructInsertQuery(abStack_40,param_2,param_3,param_4);
                     /* try { // try from 0032b7e0 to 0032b7eb has its CatchHandler @ 0032b828 */
   uVar2 = Walaber::DatabaseManager::queryDatabase(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -573,7 +525,6 @@ ulong Walaber::DatabaseManager::insertEntry
 ulong Walaber::DatabaseManager::queryDatabase(int param_1,byte *param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -582,10 +533,7 @@ ulong Walaber::DatabaseManager::queryDatabase(int param_1,byte *param_2)
   uint uVar7;
   undefined8 *puVar8;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (DAT_0072d690 != (undefined8 *)0x0) {
     puVar8 = &DAT_0072d690;
     puVar5 = DAT_0072d690;
@@ -623,10 +571,6 @@ ulong Walaber::DatabaseManager::queryDatabase(int param_1,byte *param_2)
   }
   uVar7 = 0;
 LAB_0032b97c:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar7;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -645,16 +589,12 @@ LAB_0032b97c:
 ulong Walaber::DatabaseManager::updateEntry(void)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   undefined4 uVar4;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (DAT_0072d698 == 0) {
     uVar4 = 0xffffffff;
   }
@@ -667,10 +607,6 @@ ulong Walaber::DatabaseManager::updateEntry(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -692,7 +628,6 @@ void Walaber::DatabaseManager::constructUpdateQuery
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   int iVar5;
   undefined8 *puVar6;
@@ -709,10 +644,7 @@ void Walaber::DatabaseManager::constructUpdateQuery
   undefined1 uStack_48;
   undefined7 uStack_47;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_47 = 0;
   pvStack_40 = (void *)0x0;
   bStack_50 = 0xe;
@@ -850,10 +782,6 @@ void Walaber::DatabaseManager::constructUpdateQuery
     operator delete(pvStack_58);
   }
 LAB_0032bc78:
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -897,7 +825,6 @@ ulong Walaber::DatabaseManager::incrementValue
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
 
 {
-  long lVar1;
   int iVar2;
   uint uVar3;
   ulong uVar4;
@@ -914,10 +841,7 @@ ulong Walaber::DatabaseManager::incrementValue
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseIterator::DatabaseIterator(&lStack_68,param_1,param_3,param_2,param_4);
                     /* try { // try from 0032bd84 to 0032bda7 has its CatchHandler @ 0032bf70 */
   iVar2 = sqlite3_step(lStack_68);
@@ -983,10 +907,6 @@ LAB_0032be4c:
   }
 LAB_0032bee0:
   Walaber::DatabaseIterator::~DatabaseIterator(&lStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return (ulong)(uVar3 & 1);
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -1006,25 +926,17 @@ ulong Walaber::DatabaseManager::updateEntry
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseManager::constructUpdateQuery(abStack_40,param_2,param_3,param_4);
                     /* try { // try from 0032bfb8 to 0032bfc3 has its CatchHandler @ 0032c000 */
   uVar2 = Walaber::DatabaseManager::queryDatabase(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -1041,16 +953,12 @@ ulong Walaber::DatabaseManager::updateEntry
 void Walaber::DatabaseManager::runSQL(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SharedPtr<Walaber::Callback> param_2,Walaber::SharedPtr<Walaber::Callback> param_3)
 
 {
-  long lVar1;
   undefined4 uVar2;
   long lStack_48;
   int *piStack_40;
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (DAT_0072d698 == 0) {
     uVar2 = 0xffffffff;
   }
@@ -1071,10 +979,6 @@ void Walaber::DatabaseManager::runSQL(std::__ndk1::basic_string<char, std::__ndk
   Walaber::DatabaseManager::runSQL(uVar2,param_1,&lStack_38,&lStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1092,7 +996,6 @@ void Walaber::DatabaseManager::runSQL
                (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,Walaber::SharedPtr<Walaber::Callback> param_3,Walaber::SharedPtr<Walaber::Callback> param_4)
 
 {
-  long lVar1;
   bool bVar2;
   undefined *puVar3;
   undefined8 uVar4;
@@ -1107,10 +1010,7 @@ void Walaber::DatabaseManager::runSQL
   void *pvStack_70;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   puVar3 = (undefined *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mSqlScriptCallbacks);
   if (puVar3 == &DAT_0072d6a8) {
     bVar2 = true;
@@ -1188,10 +1088,6 @@ void Walaber::DatabaseManager::runSQL
     Walaber::PropertyList::~PropertyList(auStack_98);
   }
 LAB_0032c31c:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1207,7 +1103,6 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
 
 {
   undefined1 *puVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   uint uVar5;
@@ -1225,7 +1120,6 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
   ulong extraout_x1_07;
   ulong extraout_x1_08;
   byte *pbVar9;
-  long lVar10;
   ulong uVar11;
   long *plVar12;
   undefined8 *puVar13;
@@ -1267,8 +1161,6 @@ void Walaber::DatabaseManager::_readSQL(void *p0)
   undefined1 *puStack_80;
   undefined2 uStack_78;
   
-  lVar2 = tpidr_el0;
-  lVar10 = *(long *)(lVar2 + 0x28);
   uStack_a3 = 0;
   pvStack_a0 = (void *)0x0;
   uStack_a7 = 0x79654b;
@@ -1581,10 +1473,6 @@ LAB_0032c8d8:
     operator delete(pvStack_d8);
   }
 LAB_0032ca94:
-  if (*(long *)(lVar2 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1625,25 +1513,17 @@ ulong Walaber::DatabaseManager::deleteEntry
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseManager::constructDeleteQuery(abStack_40,param_2,param_3);
                     /* try { // try from 0032cc18 to 0032cc23 has its CatchHandler @ 0032cc60 */
   uVar2 = Walaber::DatabaseManager::queryDatabase(param_1,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -1679,17 +1559,13 @@ void Walaber::DatabaseManager::clearTable(std::__ndk1::basic_string<char, std::_
 ulong Walaber::DatabaseManager::clearTable(int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   ulong auStack_58 [2];
   void *pvStack_48;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
@@ -1703,10 +1579,6 @@ ulong Walaber::DatabaseManager::clearTable(int param_1,std::__ndk1::basic_string
   if ((auStack_58[0] & 1) != 0) {
     operator delete(pvStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -1726,7 +1598,6 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   int iVar5;
   undefined8 *puVar6;
@@ -1745,10 +1616,7 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
   undefined1 uStack_43;
   undefined2 uStack_42;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_42 = 0;
   pvStack_40 = (void *)0x0;
   bStack_50 = 0x18;
@@ -1841,10 +1709,6 @@ void Walaber::DatabaseManager::constructDeleteQuery(undefined8 *param_1,byte *pa
     operator delete(pvStack_58);
   }
 LAB_0032cef8:
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1867,7 +1731,6 @@ void Walaber::DatabaseManager::constructQuery
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   undefined8 *puVar5;
   ulong *puVar6;
@@ -1883,10 +1746,7 @@ void Walaber::DatabaseManager::constructQuery
   undefined1 uStack_58;
   undefined7 uStack_57;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uStack_57 = 0;
   pvStack_50 = (void *)0x0;
   bStack_60 = 0xe;
@@ -2068,10 +1928,6 @@ void Walaber::DatabaseManager::constructQuery
       operator delete(pvStack_68);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2114,16 +1970,12 @@ ulong Walaber::DatabaseManager::sumColAsInt
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
 
 {
-  long lVar1;
   ulong uVar2;
   ulong auStack_58 [2];
   void *pvStack_48;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
@@ -2137,10 +1989,6 @@ ulong Walaber::DatabaseManager::sumColAsInt
   if ((auStack_58[0] & 1) != 0) {
     operator delete(pvStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar2 & 0xffffffff;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -2176,16 +2024,12 @@ void Walaber::DatabaseManager::sumColAsInt(std::__ndk1::basic_string<char, std::
 ulong Walaber::DatabaseManager::sumColAsInt(int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   ulong uVar4;
   uint uVar5;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = Walaber::DatabaseIterator::queryDatabase(param_1,param_1 & 0xffffffff,param_2);
   uVar5 = 0;
   lStack_40 = lVar3;
@@ -2200,10 +2044,6 @@ ulong Walaber::DatabaseManager::sumColAsInt(int param_1,std::__ndk1::basic_strin
     uVar5 = iVar2 + uVar5;
   }
   Walaber::DatabaseIterator::~DatabaseIterator(&lStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar5;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -2244,7 +2084,6 @@ undefined1  [16]
 Walaber::DatabaseManager::sumColAsFloat(int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3)
 
 {
-  long lVar1;
   int iVar2;
   float fVar3;
   double dVar4;
@@ -2252,10 +2091,7 @@ Walaber::DatabaseManager::sumColAsFloat(int param_1,std::__ndk1::basic_string<ch
   float fVar6;
   undefined8 uVar7;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::DatabaseIterator::DatabaseIterator(&lStack_40,param_1,param_2,param_3);
   fVar6 = 0.0;
   while( true ) {
@@ -2273,11 +2109,6 @@ Walaber::DatabaseManager::sumColAsFloat(int param_1,std::__ndk1::basic_string<ch
     fVar6 = fVar6 + fVar3;
   }
   Walaber::DatabaseIterator::~DatabaseIterator(&lStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    auVar5._8_8_ = uVar7;
-    return auVar5;
-  }
-  auVar5 = __stack_chk_fail();
   return auVar5;
 }
 
@@ -2320,7 +2151,6 @@ ulong Walaber::DatabaseManager::numResults
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_4)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -2330,10 +2160,7 @@ ulong Walaber::DatabaseManager::numResults
   byte abStack_58 [16];
   void *pvStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   auStack_70[1] = 0;
   pvStack_60 = (void *)0x0;
@@ -2355,10 +2182,6 @@ ulong Walaber::DatabaseManager::numResults
     uVar5 = uVar5 + 1;
   }
   Walaber::DatabaseIterator::~DatabaseIterator(&uStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar5;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -2402,7 +2225,6 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,int const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
 
 {
-  long lVar1;
   void *pvVar2;
   int iVar3;
   undefined8 uVar4;
@@ -2419,10 +2241,7 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
   ulong uStack_78;
   void *pvStack_70;
   long lStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_98[0] = 0;
   auStack_98[1] = 0;
   pvStack_88 = (void *)0x0;
@@ -2483,10 +2302,6 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
     uVar8 = 0;
   }
   Walaber::DatabaseIterator::~DatabaseIterator(&lStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar8;
 }
 
@@ -2530,7 +2345,6 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
                 (int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_2,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_3,int const& param_4,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_5)
 
 {
-  long lVar1;
   void *pvVar2;
   int iVar3;
   undefined8 uVar4;
@@ -2547,10 +2361,7 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
   ulong uStack_78;
   void *pvStack_70;
   long lStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_98[0] = 0;
   auStack_98[1] = 0;
   pvStack_88 = (void *)0x0;
@@ -2613,10 +2424,6 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
   uVar8 = 0;
 LAB_0032dafc:
   Walaber::DatabaseIterator::~DatabaseIterator(&lStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar8;
 }
 

@@ -90,7 +90,6 @@ void Walaber::Property::Property(int p0)
 void Walaber::Property::setValue(int p0)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   undefined4 in_w1;
   byte *pbVar3;
@@ -116,11 +115,8 @@ void Walaber::Property::setValue(int p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
   puVar2 = (undefined4 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
   *puVar2 = 1;
@@ -177,10 +173,6 @@ void Walaber::Property::setValue(int p0)
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_170);
   std::__ndk1::ios_base::~ios_base(appuStack_110);
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -216,7 +208,6 @@ void Walaber::Property::Property(float p0)
 void Walaber::Property::setValue(float p0)
 
 {
-  long lVar1;
   undefined4 *in_x0;
   byte *pbVar2;
   undefined4 in_register_00005004;
@@ -242,10 +233,7 @@ void Walaber::Property::setValue(float p0)
   undefined **appuStack_120 [17];
   undefined8 uStack_98;
   undefined4 uStack_90;
-  long lStack_80;
   
-  lVar1 = tpidr_el0;
-  lStack_80 = *(long *)(lVar1 + 0x28);
   ppuStack_1a0 = &PTR__basic_istream_00711168;
   appuStack_120[0] = &PTR__basic_istream_00711190;
   *in_x0 = 2;
@@ -302,10 +290,6 @@ void Walaber::Property::setValue(float p0)
   ppuStack_188 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_180);
   std::__ndk1::ios_base::~ios_base(appuStack_120);
-  if (*(long *)(lVar1 + 0x28) == lStack_80) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -342,7 +326,6 @@ void Walaber::Property::Property(Walaber__Vector2 *p0)
 void Walaber::Property::setValue(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   float fVar2;
   undefined8 uVar3;
   undefined4 *in_x1;
@@ -369,10 +352,7 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
   p0->f_0x0 = 4.2039e-45;
@@ -433,10 +413,6 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0)
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_170);
   std::__ndk1::ios_base::~ios_base(appuStack_110);
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -473,7 +449,6 @@ void Walaber::Property::Property(Walaber__Rect *p0)
 void Walaber::Property::setValue(Walaber__Rect *p0)
 
 {
-  long lVar1;
   float fVar2;
   undefined8 uVar3;
   undefined4 *in_x1;
@@ -499,10 +474,7 @@ void Walaber::Property::setValue(Walaber__Rect *p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
   p0->f_0x0 = 5.60519e-45;
@@ -569,10 +541,6 @@ void Walaber::Property::setValue(Walaber__Rect *p0)
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_170);
   std::__ndk1::ios_base::~ios_base(appuStack_110);
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -607,7 +575,6 @@ void Walaber::Property::setValue(Walaber__Color *p0)
 
 {
   byte bVar1;
-  long lVar2;
   undefined8 uVar3;
   undefined1 *in_x1;
   Walaber__Color *pWVar4;
@@ -633,10 +600,7 @@ void Walaber::Property::setValue(Walaber__Color *p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
   p0->f_0x0 = '\x05';
@@ -703,10 +667,6 @@ void Walaber::Property::setValue(Walaber__Color *p0)
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_170);
   std::__ndk1::ios_base::~ios_base(appuStack_110);
-  if (*(long *)(lVar2 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -742,7 +702,6 @@ void Walaber::Property::Property(Walaber__AABB *p0)
 void Walaber::Property::setValue(Walaber__AABB *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *in_x1;
   undefined8 uStack_1a8;
@@ -767,10 +726,7 @@ void Walaber::Property::setValue(Walaber__AABB *p0)
   undefined **appuStack_110 [17];
   undefined8 uStack_88;
   undefined4 uStack_80;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   ppuStack_190 = &PTR__basic_istream_00711168;
   appuStack_110[0] = &PTR__basic_istream_00711190;
   p0->f_0x0 = 8.40779e-45;
@@ -834,10 +790,6 @@ void Walaber::Property::setValue(Walaber__AABB *p0)
   ppuStack_178 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::~locale(auStack_170);
   std::__ndk1::ios_base::~ios_base(appuStack_110);
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -885,14 +837,10 @@ void Walaber::Property::asString(undefined8 param_1,long param_2)
 ulong Walaber::Property::asInt(uint *param_1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   uint uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   uVar3 = 0;
   if (*param_1 < 2) {
@@ -905,10 +853,6 @@ ulong Walaber::Property::asInt(uint *param_1)
     sscanf(lVar2,"%d",&uStack_2c);
     uVar3 = (ulong)uStack_2c;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -923,13 +867,9 @@ ulong Walaber::Property::asInt(uint *param_1)
 void Walaber::Property::asFloat(uint *param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   if ((*param_1 | 2) == 2) {
     if ((param_1[2] & 1) == 0) {
@@ -939,10 +879,6 @@ void Walaber::Property::asFloat(uint *param_1)
       lVar2 = *(long *)(param_1 + 6);
     }
     sscanf(lVar2,"%f",&uStack_2c);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(uStack_2c);
-    return;
   }
   return;
 }
@@ -1013,16 +949,12 @@ void Walaber::Property::asRect(undefined8 *param_1,uint *param_2)
 void Walaber::Property::asColor(byte *param_1,int *param_2)
 
 {
-  long lVar1;
   long lVar2;
   int iStack_38;
   int iStack_34;
   int iStack_30;
   int iStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *param_1 = 0xff;
   param_1[1] = 0xff;
   param_1[2] = 0xff;
@@ -1052,10 +984,6 @@ void Walaber::Property::asColor(byte *param_1,int *param_2)
     param_1[2] = (byte)iStack_34 & ((byte)(iStack_34 >> 0x1f) ^ 0xff);
     param_1[3] = (byte)iStack_38 & ((byte)(iStack_38 >> 0x1f) ^ 0xff);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

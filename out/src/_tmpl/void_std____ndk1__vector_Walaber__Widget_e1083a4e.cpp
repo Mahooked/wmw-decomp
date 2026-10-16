@@ -14,7 +14,6 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
      __push_back_slow_path<Walaber::Widget_Label*const&>(Walaber__Widget_Label **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   Walaber__Widget_Label *pWStack_58;
   Walaber__Widget_Label *pWStack_50;
   Walaber__Widget_Label *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -72,10 +68,6 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   if (pWStack_60 != (Walaber__Widget_Label *)0x0) {
     operator delete(pWStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -92,7 +84,6 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
      __push_back_slow_path<Walaber::Widget_Label*>(Walaber__Widget_Label ***p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -104,10 +95,7 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   Walaber__Widget_Label **ppWStack_58;
   Walaber__Widget_Label **ppWStack_50;
   Walaber__Widget_Label **ppWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -149,10 +137,6 @@ void std::__ndk1::vector<Walaber::Widget_Label*,std::__ndk1::allocator<Walaber::
   ppWStack_48 = ppWVar7;
   if (ppWStack_60 != (Walaber__Widget_Label **)0x0) {
     operator delete(ppWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

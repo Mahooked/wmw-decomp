@@ -34,13 +34,9 @@ long Walaber::BroadcastManager::getInstancePtr(void)
 void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0)
 
 {
-  long lVar1;
   undefined8 in_x1;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf("Walaber",1,"BroadcastManager::_addReceiver( %p ) count %d\n");
   if ((undefined8 *)p0[1].f_0x0 == (undefined8 *)p0[2].f_0x0) {
     void std::__ndk1::vector<Walaber::MessageReceiver*, std::__ndk1::allocator<Walaber::MessageReceiver*>>::__push_back_slow_path<Walaber::MessageReceiver* const&>(p0,auStack_40);
@@ -49,10 +45,6 @@ void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0)
     *(undefined8 *)p0[1].f_0x0 = in_x1;
     p0[1].f_0x0 = p0[1].f_0x0 + 8;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

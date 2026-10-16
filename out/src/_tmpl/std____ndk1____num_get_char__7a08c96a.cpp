@@ -207,14 +207,10 @@ void std::__ndk1::__num_get<char>::__stage2_float_prep
                (std____ndk1__ios_base *p0,char *p1,char *p2,char *p3)
 
 {
-  long lVar1;
   char cVar2;
   long *plVar3;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_50);
                     /* try { // try from 005b96a0 to 005b96cb has its CatchHandler @ 005b974c */
   plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&ctype<char>::id);
@@ -227,10 +223,6 @@ void std::__ndk1::__num_get<char>::__stage2_float_prep
   *p3 = cVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);
   std::__ndk1::__shared_count::__release_shared(uStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -454,14 +446,10 @@ LAB_005b9adc:
 void std::__ndk1::__num_get<char>::__stage2_int_prep(std____ndk1__ios_base *p0,char *p1,char *p2)
 
 {
-  long lVar1;
   char cVar2;
   long *plVar3;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_40);
                     /* try { // try from 005b9c24 to 005b9c4f has its CatchHandler @ 005b9cb8 */
   plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&ctype<char>::id);
@@ -472,10 +460,6 @@ void std::__ndk1::__num_get<char>::__stage2_int_prep(std____ndk1__ios_base *p0,c
   *p2 = cVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);
   std::__ndk1::__shared_count::__release_shared(uStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

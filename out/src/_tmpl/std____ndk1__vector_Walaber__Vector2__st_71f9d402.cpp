@@ -175,7 +175,6 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
           (long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
@@ -197,11 +196,8 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   undefined8 *puStack_48;
-  long lStack_38;
   undefined8 *puVar14;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   puVar6 = (undefined8 *)param_1[1];
   if (puVar6 < (undefined8 *)param_1[2]) {
     if (param_2 == puVar6) {
@@ -317,10 +313,6 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
       operator delete(puStack_90);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_2;
-  }
-  puVar6 = (undefined8 *)__stack_chk_fail();
   return puVar6;
 }
 

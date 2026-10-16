@@ -13,14 +13,10 @@
 void Walaber::ComicStrip::ComicStrip()
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *this = 0;
   *(undefined4 *)(this + 1) = 0;
   this[0x32] = 0;
@@ -40,10 +36,6 @@ void Walaber::ComicStrip::ComicStrip()
   this[0x31] = uVar2;
                     /* try { // try from 003ee4d8 to 003ee4df has its CatchHandler @ 003ee520 */
   Walaber::CameraController::initCamera(uVar2,this[0x30]);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -146,7 +138,6 @@ void Walaber::ComicStrip::~ComicStrip(long param_1)
 void Walaber::ComicStrip::update(float p0)
 
 {
-  long lVar1;
   int iVar2;
   int *in_x0;
   ulong uVar3;
@@ -158,11 +149,8 @@ void Walaber::ComicStrip::update(float p0)
   undefined4 in_register_00005004;
   int aiStack_58 [2];
   undefined8 *puStack_50;
-  long lStack_48;
   
   uVar5 = CONCAT44(in_register_00005004,p0);
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   in_x0[2] = (int)((float)in_x0[2] + p0);
   Walaber::Camera::update(uVar5,*(undefined8 *)(in_x0 + 0x60));
   Walaber::CameraController::update(uVar5,*(undefined8 *)(in_x0 + 0x62));
@@ -230,10 +218,6 @@ LAB_003ee834:
   else {
     uVar5 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -250,7 +234,6 @@ void Walaber::ComicStrip::advancePanel(int *param_1)
 {
   undefined8 *puVar1;
   int iVar2;
-  long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uVar6;
@@ -258,10 +241,7 @@ void Walaber::ComicStrip::advancePanel(int *param_1)
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   iVar2 = *param_1;
   if (iVar2 < param_1[1]) {
     if (iVar2 != 0) {
@@ -294,10 +274,6 @@ void Walaber::ComicStrip::advancePanel(int *param_1)
   else {
     uVar5 = 0;
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -315,14 +291,10 @@ void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
   bool bVar1;
   long *plVar2;
   int iVar3;
-  long lVar4;
   int iVar5;
   long lStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   Walaber::Camera::updateViewport(p0[6].f_0x30);
   iVar5 = -1;
   do {
@@ -347,10 +319,6 @@ void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
     Walaber::Camera::restoreViewport(p0[6].f_0x30);
     (**(code **)(**(long **)&p0[7].field_0x8 + 0x18))();
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -365,7 +333,6 @@ void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
 void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
 
 {
-  long lVar1;
   bool bVar2;
   long *plVar3;
   long lVar4;
@@ -377,10 +344,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   int *piStack_68;
   long *plStack_60;
   long alStack_58 [2];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(&plStack_60);
   lStack_70 = *param_2;
   piStack_68 = (int *)param_2[1];
@@ -419,10 +383,6 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   Walaber::PropertyList::~PropertyList(&puStack_88);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
   Walaber::PropertyList::~PropertyList(&plStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -441,7 +401,6 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   uint *puVar2;
   float *pfVar3;
   undefined4 *puVar4;
-  long lVar5;
   ulong uVar6;
   undefined8 uVar7;
   undefined8 *puVar8;
@@ -467,10 +426,7 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
   undefined1 uStack_70;
   undefined1 uStack_6f;
   undefined6 uStack_6e;
-  long lStack_68;
   
-  lVar5 = tpidr_el0;
-  lStack_68 = *(long *)(lVar5 + 0x28);
   plVar1 = *(long **)(param_1 + 0x48);
   if (plVar1 == *(long **)(param_1 + 0x50)) {
     void std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__push_back_slow_path<Walaber::SharedPtr<Walaber::Texture> const&>(param_1 + 0x40);
@@ -1229,10 +1185,6 @@ LAB_003ef7a0:
     }
   }
   *(int *)(param_1 + 4) = *(int *)(param_1 + 4) + 1;
-  if (*(long *)(lVar5 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -17,7 +17,6 @@ void std::__ndk1::
                (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 *puVar4;
@@ -26,10 +25,7 @@ void std::__ndk1::
   long lVar7;
   long lVar8;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   unsigned int std::__ndk1::__sort3<bool (*&)(std::__ndk1::pair<float, int> const&, std::__ndk1::pair<float, int> const&), std::__ndk1::pair<float, int>*>(param_1,param_1 + 1,param_1 + 2,param_3);
   if (param_1 + 3 != param_2) {
     lVar7 = 0;
@@ -58,10 +54,6 @@ LAB_00337110:
       puVar5 = puVar4 + 1;
       puVar6 = puVar4;
     } while (puVar4 + 1 != param_2);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

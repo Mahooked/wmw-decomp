@@ -307,7 +307,6 @@ void Walaber::Skeleton::~Skeleton(void *param_1)
 undefined8 Walaber::Skeleton::createFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   byte abStack_60 [16];
@@ -315,10 +314,7 @@ undefined8 Walaber::Skeleton::createFromXml(std::__ndk1::basic_string<char, std:
   byte abStack_48 [16];
   void *pvStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_48,param_1);
   abStack_60[10] = 0;
   abStack_60[0xb] = 0;
@@ -351,10 +347,6 @@ undefined8 Walaber::Skeleton::createFromXml(std::__ndk1::basic_string<char, std:
     xmlFreeDoc(uStack_30);
     xmlCleanupMemory();
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -542,7 +534,6 @@ void Walaber::Skeleton::_recursiveBuildSkeleton
                (_xmlNode *p0,Walaber__Skeleton *p1,Walaber__Node *p2)
 
 {
-  long lVar1;
   undefined *puVar2;
   int iVar3;
   void *pvVar4;
@@ -560,10 +551,7 @@ void Walaber::Skeleton::_recursiveBuildSkeleton
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   p0_00 = *(_xmlNode **)(p0 + 0x18);
   if (p0_00 != (_xmlNode *)0x0) {
     pvVar7 = (void *)((ulong)&uStack_80 | 1);
@@ -705,10 +693,6 @@ LAB_0033b6b0:
       p0_00 = *(_xmlNode **)(p0_00 + 0x30);
     } while (p0_00 != (_xmlNode *)0x0);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -724,7 +708,6 @@ LAB_0033b6b0:
 void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -739,10 +722,7 @@ void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 para
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 0033ba2c to 0033ba6b has its CatchHandler @ 0033bb44 */
   puVar2 = (undefined8 *)operator new(0x28);
@@ -777,10 +757,6 @@ void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 para
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Skeleton>>::~SharedPtr(&puStack_70);
   Walaber::PropertyList::~PropertyList(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -801,7 +777,6 @@ void Walaber::Skeleton::loadSkeletonWithCallback
                ,undefined8 param_6)
 
 {
-  long lVar1;
   long *plVar2;
   ulong uVar3;
   byte *pbVar4;
@@ -837,10 +812,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
   undefined7 uStack_68;
   undefined1 uStack_61;
   undefined7 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auVar12 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>, std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__equal_range_multi<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mCallbackMap,param_2);
   if (auVar12._0_8_ == auVar12._8_8_) {
     iVar11 = 0;
@@ -1073,10 +1045,6 @@ LAB_0033be5c:
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_c8);
   Walaber::PropertyList::~PropertyList(auStack_88);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1091,7 +1059,6 @@ LAB_0033be5c:
 void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 *puVar3;
   undefined *puVar4;
@@ -1118,10 +1085,7 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
   undefined1 uStack_47;
   undefined6 uStack_46;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_46 = 0;
   pvStack_40 = (void *)0x0;
   bStack_50 = 0x10;
@@ -1276,10 +1240,6 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
     (**(code **)(**(long **)(puVar4 + 0x38) + 0x10))(*(long **)(puVar4 + 0x38),auStack_78);
     std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::erase(&mCallbackMap,puVar4);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1427,7 +1387,6 @@ void Walaber::Skeleton::draw(Walaber__SpriteBatch *p0)
 void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite *p1,int p2)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined1 *puVar3;
   long lVar4;
@@ -1445,11 +1404,8 @@ void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite
   int iStack_6c;
   undefined1 auStack_68 [8];
   int **ppiStack_60;
-  long lStack_58;
   
   uVar5 = (ulong)(uint)p2;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar4 = uVar5 + 0x24;
   uVar6 = *(undefined8 *)&p1->field_0x10;
   *(Walaber__Sprite **)(uVar5 + 8) = p1;
@@ -1531,10 +1487,6 @@ LAB_0033c774:
                           &piStack_88,&ppiStack_60);
   *(ulong *)(lVar4 + 0x28) = uVar5;
 LAB_0033c828:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1550,7 +1502,6 @@ void Walaber::Skeleton::addRootBone(Walaber__Bone *p0)
 
 {
   undefined4 uVar1;
-  long lVar2;
   long lVar3;
   undefined1 *puVar4;
   ulong in_x1;
@@ -1565,10 +1516,7 @@ void Walaber::Skeleton::addRootBone(Walaber__Bone *p0)
   ulong uStack_70;
   undefined1 auStack_68 [8];
   ulong **ppuStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uVar5 = p0->f_0x10;
   *(Walaber__Bone **)(in_x1 + 8) = p0;
   *(ulong *)(in_x1 + 0x18) = uVar5;
@@ -1642,10 +1590,6 @@ LAB_0033ca10:
     operator delete(pvStack_78);
   }
 LAB_0033ca5c:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1661,7 +1605,6 @@ void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1)
 
 {
   undefined4 uVar1;
-  long lVar2;
   long lVar3;
   undefined1 *puVar4;
   ulong in_x2;
@@ -1676,10 +1619,7 @@ void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1)
   ulong uStack_70;
   undefined1 auStack_68 [8];
   ulong **ppuStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uVar5 = p1->f_0x10;
   *(Walaber__Bone **)(in_x2 + 8) = p1;
   *(ulong *)(in_x2 + 0x18) = uVar5;
@@ -1753,10 +1693,6 @@ LAB_0033cc44:
     operator delete(pvStack_78);
   }
 LAB_0033cc90:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1848,7 +1784,6 @@ long Walaber::Skeleton::getNode(long param_1,undefined8 param_2)
 void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   int *in_x1;
@@ -1860,10 +1795,7 @@ void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
   byte abStack_68 [16];
   void *pvStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*in_x1 == 1) {
     abStack_68[0xc] = 0;
     abStack_68[0xd] = 0;
@@ -1910,10 +1842,6 @@ void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
       operator delete[](*(void **)(in_x1 + 8),p1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1928,14 +1856,10 @@ void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
 void Walaber::Skeleton::_setNodeProperties(_xmlNode *p0,Walaber__Node *p1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   ulong uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = xmlGetProp(p0,"localPos");
   (*(code *)xmlFree)();
   if (lVar2 != 0) {
@@ -1974,10 +1898,6 @@ void Walaber::Skeleton::_setNodeProperties(_xmlNode *p0,Walaber__Node *p1)
   }
   (**(code **)(*(long *)p1 + 0x20))(p1,&uStack_50);
 LAB_0033d13c:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1993,17 +1913,13 @@ LAB_0033d13c:
 void Walaber::Skeleton::setBindPose(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   long lVar4;
   long alStack_90 [7];
   undefined1 auStack_58 [8];
   undefined1 *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   alStack_90[6] = 0;
   alStack_90[5] = 0;
   alStack_90[4] = 0;
@@ -2044,10 +1960,6 @@ void Walaber::Skeleton::setBindPose(long param_1)
     }
   }
   std::__ndk1::__deque_base<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>::~__deque_base(alStack_90 + 1);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2237,17 +2149,13 @@ void Walaber::Skeleton::setColor(Walaber__Color *p0)
 void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   bool bVar2;
   Walaber__Vector2 WVar3;
   undefined8 *in_x1;
   Walaber__Vector2 *pWVar4;
   Walaber__Vector2 WVar5;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   WVar5 = p0[0x17];
   while (WVar5 != (Walaber__Vector2)(p0 + 0x18)) {
     WVar3 = *(Walaber__Vector2 *)((long)WVar5 + 0x38);
@@ -2275,10 +2183,6 @@ void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2294,7 +2198,6 @@ void Walaber::Skeleton::setScreenSpace(bool p0)
 
 {
   byte bVar1;
-  long lVar2;
   bool bVar3;
   long *plVar4;
   byte in_w1;
@@ -2303,11 +2206,8 @@ void Walaber::Skeleton::setScreenSpace(bool p0)
   long lVar7;
   undefined4 uStack_40;
   float fStack_3c;
-  long lStack_38;
   
   plVar4 = (long *)(ulong)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   bVar1 = in_w1 & 1;
   if (((in_w1 & 1) != 0) && (0.0 < *(float *)(plVar4 + 0xc))) {
     uStack_40 = *(undefined4 *)((long)plVar4 + 0x5c);
@@ -2338,10 +2238,6 @@ void Walaber::Skeleton::setScreenSpace(bool p0)
         plVar6 = (long *)*plVar5;
       } while ((long *)*plVar5 != (long *)0x0);
     }
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

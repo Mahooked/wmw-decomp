@@ -12,7 +12,6 @@
 void WaterConcept::IAPNotification::IAPNotification()
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_80;
   undefined8 uStack_78;
@@ -20,10 +19,7 @@ void WaterConcept::IAPNotification::IAPNotification()
   undefined8 uStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   WaterConcept::Notification::Notification();
                     /* try { // try from 0049a7c8 to 0049a7d3 has its CatchHandler @ 0049a938 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x3d,0x10);
@@ -70,10 +66,6 @@ void WaterConcept::IAPNotification::IAPNotification()
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -194,7 +186,6 @@ void WaterConcept::IAPNotification::~IAPNotification(void *param_1)
 void WaterConcept::IAPNotification::_loadSprites(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   undefined8 uVar3;
   undefined8 *puVar4;
@@ -221,10 +212,7 @@ void WaterConcept::IAPNotification::_loadSprites(long param_1)
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar3 = Walaber::WidgetManager::getWidget(param_1 + 8,3);
   *(undefined8 *)(param_1 + 0x200) = uVar3;
   uVar3 = Walaber::WidgetManager::getWidget(param_1 + 8,2);
@@ -366,10 +354,6 @@ void WaterConcept::IAPNotification::_loadSprites(long param_1)
   Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&bStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::IAPNotification>>::~SharedPtr(&puStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -447,7 +431,6 @@ void WaterConcept::IAPNotification::update(float p0)
 
 {
   ulong uVar1;
-  long lVar2;
   long in_x0;
   long lVar3;
   long *plVar4;
@@ -467,10 +450,7 @@ void WaterConcept::IAPNotification::update(float p0)
   undefined1 auStack_60 [8];
   ulong uStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar5 = *(uint *)(in_x0 + 0x1c0);
   lVar3 = *(long *)(in_x0 + 0x208);
   if (uVar5 == 2) {
@@ -578,10 +558,6 @@ LAB_0049b104:
     }
   }
   WaterConcept::Notification::update(CONCAT44(in_register_00005004,p0));
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -596,15 +572,11 @@ LAB_0049b104:
 void WaterConcept::IAPNotification::_updateUI(long param_1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if ((*(byte *)(param_1 + 0x248) & 1) == 0) {
     uVar2 = (ulong)(*(byte *)(param_1 + 0x248) >> 1);
   }
@@ -630,10 +602,6 @@ void WaterConcept::IAPNotification::_updateUI(long param_1)
     operator delete(pvStack_40);
   }
 LAB_0049b398:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -649,13 +617,11 @@ LAB_0049b398:
 void WaterConcept::IAPNotification::goNotify(undefined4 param_1,long param_2)
 
 {
-  long lVar1;
   byte bVar2;
   undefined8 uVar3;
   void *pvVar4;
   long *plVar5;
   undefined4 *puVar6;
-  long lVar7;
   long lVar8;
   float fVar9;
   byte bStack_1b0;
@@ -742,8 +708,6 @@ void WaterConcept::IAPNotification::goNotify(undefined4 param_1,long param_2)
   undefined4 uStack_60;
   float fStack_5c;
   
-  lVar1 = tpidr_el0;
-  lVar7 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_2 + 0x1fc) == '\0') goto LAB_0049bce4;
   *(undefined4 *)(param_2 + 0x1bc) = param_1;
   *(undefined8 *)(param_2 + 0x1b0) = *(undefined8 *)(param_2 + 0x108);
@@ -1174,10 +1138,6 @@ LAB_0049bcc0:
   *(undefined1 *)(*(long *)(param_2 + 0x208) + 200) = 0;
   *(undefined1 *)(param_2 + 0x260) = 1;
 LAB_0049bce4:
-  if (*(long *)(lVar1 + 0x28) != lVar7) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1192,7 +1152,6 @@ LAB_0049bce4:
 void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
 
 {
-  long lVar1;
   long in_x1;
   long lVar2;
   float fVar3;
@@ -1204,10 +1163,7 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
   void *pvStack_50;
   float fStack_44;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&bStack_60);
   uStack_40 = CONCAT44((float)((ulong)*(undefined8 *)(in_x1 + 0x90) >> 0x20) *
                        (float)((uint7)uStack_5f >> 0x18) -
@@ -1242,10 +1198,6 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
   if ((bStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1260,7 +1212,6 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
 void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   long in_x1;
@@ -1280,10 +1231,7 @@ void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton
   byte abStack_68 [16];
   void *pvStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&bStack_88);
   uStack_50 = CONCAT44((float)((ulong)*(undefined8 *)(in_x1 + 0x90) >> 0x20) *
                        (float)((uint7)uStack_87 >> 0x18),
@@ -1367,10 +1315,6 @@ void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton
   if ((bStack_88 & 1) != 0) {
     operator delete(pvStack_78);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1403,7 +1347,6 @@ void WaterConcept::IAPNotification::handleEvent
                (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  long lVar1;
   void *pvVar2;
   ulong *puVar3;
   undefined8 *puVar4;
@@ -1434,11 +1377,8 @@ void WaterConcept::IAPNotification::handleEvent
   undefined **ppuStack_70;
   undefined8 uStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
   uVar5 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((int)p1 == 3) {
     ppuStack_70 = &PTR__Message_0070cdc8;
     uStack_68 = 0xa00000010;
@@ -1703,10 +1643,6 @@ void WaterConcept::IAPNotification::handleEvent
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,&uStack_b0);
     WaterConcept::GameSettings::hideIAPADBanners(0);
     uVar5 = Walaber::PropertyList::~PropertyList(&uStack_b0);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar5);
-    return;
   }
   return;
 }

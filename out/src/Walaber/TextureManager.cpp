@@ -74,7 +74,6 @@ void Walaber::TextureManager::_createErrorTexture(long param_1)
 {
   undefined8 *puVar1;
   undefined4 *puVar2;
-  long lVar3;
   long *plVar4;
   long *plVar5;
   ulong uVar6;
@@ -93,10 +92,7 @@ void Walaber::TextureManager::_createErrorTexture(long param_1)
   undefined4 uStack_58;
   undefined4 uStack_54;
   int *piStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uStack_65 = 0;
   pvStack_60 = (void *)0x0;
   bStack_70 = 0x12;
@@ -153,10 +149,6 @@ void Walaber::TextureManager::_createErrorTexture(long param_1)
   (**(code **)(*plVar5 + 0x10))(plVar5,auStack_80);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(auStack_80);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&bStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -195,16 +187,12 @@ void Walaber::TextureManager::reloadTextureAtlas
                (undefined8 param_1,undefined8 param_2,long *param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lStack_60;
   int *piStack_58;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::PlatformManager::getInstancePtr();
   Walaber::PlatformManager::stripPlatformSpecificFilename(abStack_50,uVar2,param_2);
                     /* try { // try from 00399d88 to 00399d93 has its CatchHandler @ 00399e0c */
@@ -220,10 +208,6 @@ void Walaber::TextureManager::reloadTextureAtlas
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -264,7 +248,6 @@ bool Walaber::TextureManager::unloadTextureAtlas(long param_1)
 void Walaber::TextureManager::loadTextureAtlas(long param_1,undefined8 param_2,long *param_3)
 
 {
-  long lVar1;
   long lVar2;
   int *piVar3;
   int *piVar4;
@@ -289,10 +272,7 @@ void Walaber::TextureManager::loadTextureAtlas(long param_1,undefined8 param_2,l
   int *piStack_70;
   int *piStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x58);
   if (param_1 + 0x60 == lVar2) {
     lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x88,param_2);
@@ -378,10 +358,6 @@ void Walaber::TextureManager::loadTextureAtlas(long param_1,undefined8 param_2,l
       operator delete(pvStack_c0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -400,7 +376,6 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
   ulong uVar1;
   byte bVar2;
   byte bVar3;
-  long lVar4;
   int iVar5;
   ulong uVar6;
   byte *pbVar7;
@@ -413,10 +388,7 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
   int *piStack_70;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   if (param_1 + 1 != (long *)*param_1) {
     plVar11 = (long *)*param_1;
     do {
@@ -555,10 +527,6 @@ LAB_0039a30c:
       plVar11 = plVar12;
     } while (param_1 + 1 != plVar12);
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -573,7 +541,6 @@ LAB_0039a30c:
 void Walaber::TextureManager::_loadedTextureAtlas(void *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long *plVar3;
   int *in_x1;
@@ -602,10 +569,7 @@ void Walaber::TextureManager::_loadedTextureAtlas(void *p0)
   undefined5 uStack_7d;
   void *pvStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (*in_x1 == 1) {
     pvStack_78 = (void *)0x0;
     uStack_70 = 0;
@@ -693,10 +657,6 @@ void Walaber::TextureManager::_loadedTextureAtlas(void *p0)
     }
   }
 LAB_0039a660:
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -721,7 +681,6 @@ void Walaber::TextureManager::getTexture
   long *plVar4;
   undefined1 *puVar5;
   byte bVar6;
-  long lVar7;
   void *pvVar8;
   bool bVar9;
   int iVar10;
@@ -733,7 +692,6 @@ void Walaber::TextureManager::getTexture
   undefined8 *puVar16;
   char *pcVar17;
   char *pcVar18;
-  long lVar19;
   int *piVar20;
   long lVar21;
   long *plVar22;
@@ -865,8 +823,6 @@ void Walaber::TextureManager::getTexture
   undefined1 uStack_81;
   char *pcStack_80;
   
-  lVar7 = tpidr_el0;
-  lVar19 = *(long *)(lVar7 + 0x28);
   Walaber::StringHelper::removeExtension(abStack_f0,param_3);
                     /* try { // try from 0039a788 to 0039a793 has its CatchHandler @ 0039b918 */
   Walaber::StringHelper::getExtension(abStack_108,param_3);
@@ -1648,10 +1604,6 @@ LAB_0039b4c0:
   if ((abStack_f0[0] & 1) != 0) {
     operator delete(pvStack_e0);
   }
-  if (*(long *)(lVar7 + 0x28) != lVar19) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1670,7 +1622,6 @@ void Walaber::TextureManager::_loadImageList
 {
   byte bVar1;
   undefined1 uVar2;
-  long lVar3;
   undefined7 uVar4;
   int iVar5;
   undefined8 uVar6;
@@ -1682,7 +1633,6 @@ void Walaber::TextureManager::_loadImageList
   void *pvVar12;
   undefined8 *puVar13;
   int *piVar14;
-  long lVar15;
   ulong uVar16;
   undefined1 *puVar17;
   void *pvVar18;
@@ -1728,8 +1678,6 @@ void Walaber::TextureManager::_loadImageList
   undefined7 uStack_90;
   undefined1 uStack_89;
   
-  lVar3 = tpidr_el0;
-  lVar15 = *(long *)(lVar3 + 0x28);
   uStack_e0 = 0;
   uVar6 = xmlGetProp(param_3,"imgSize");
   sscanf(uVar6,"%f %f",&uStack_e0,(ulong)&uStack_e0 | 4);
@@ -2092,10 +2040,6 @@ LAB_0039bea0:
   if ((bStack_f8 & 1) != 0) {
     operator delete(puStack_e8);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar15) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2180,7 +2124,6 @@ undefined8 Walaber::TextureManager::_isTextureSupported(undefined8 param_1,byte 
 void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
 
 {
-  long lVar1;
   ulong *puVar2;
   long lVar3;
   long *plVar4;
@@ -2214,10 +2157,7 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
   void *pvStack_88;
   undefined8 uStack_80;
   undefined8 uStack_78;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   auStack_a0[0] = 1;
   auStack_98[1] = 0;
   pvStack_88 = (void *)0x0;
@@ -2367,10 +2307,6 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
   if ((auStack_98[0] & 1) != 0) {
     operator delete(pvStack_88);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_70) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2386,7 +2322,6 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
 void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -2401,10 +2336,7 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 0039ca74 to 0039cab3 has its CatchHandler @ 0039cb8c */
   puVar2 = (undefined8 *)operator new(0x28);
@@ -2439,10 +2371,6 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::TextureManager>>::~SharedPtr(&puStack_70);
   Walaber::PropertyList::~PropertyList(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2459,7 +2387,6 @@ void Walaber::TextureManager::_loadedTextureSettings(void *p0)
 
 {
   byte bVar1;
-  long lVar2;
   undefined *puVar3;
   undefined8 uVar4;
   undefined8 uVar5;
@@ -2473,7 +2400,6 @@ void Walaber::TextureManager::_loadedTextureSettings(void *p0)
   ulong extraout_x1;
   undefined4 uVar12;
   undefined4 uVar13;
-  long lVar14;
   void *pvVar15;
   ulong uVar16;
   long lVar17;
@@ -2520,8 +2446,6 @@ void Walaber::TextureManager::_loadedTextureSettings(void *p0)
   void *pvStack_80;
   undefined8 auStack_78 [3];
   
-  lVar2 = tpidr_el0;
-  lVar14 = *(long *)(lVar2 + 0x28);
   auStack_78[0] = 0;
   abStack_90[0] = 0x1e;
   abStack_90[9] = 0x65;
@@ -4681,18 +4605,6 @@ LAB_0039dab0:
   xmlCleanupMemory();
   uVar5 = uStack_e4;
   uVar4 = uStack_ec;
-  if (*(long *)(lVar2 + 0x28) != lVar14) {
-    uVar12 = uStack_ec._4_4_;
-    uStack_ec = uVar4;
-    uVar13 = uStack_e4._4_4_;
-    uStack_e4 = uVar5;
-    uVar4 = uStack_ec;
-    uStack_ec._4_4_ = uVar12;
-    uVar5 = uStack_e4;
-    uStack_e4._4_4_ = uVar13;
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4710,9 +4622,7 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
 
 {
   long *plVar1;
-  long lVar2;
   long lVar3;
-  long lVar4;
   undefined8 uVar5;
   undefined1 *puVar6;
   ulong uVar7;
@@ -4756,8 +4666,6 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
   long *plStack_78;
   int *piStack_70;
   
-  lVar2 = tpidr_el0;
-  lVar4 = *(long *)(lVar2 + 0x28);
   Walaber::StringHelper::removeExtension(abStack_90,param_2);
   puVar6 = &mSupportedExtensions;
   uVar7 = 0;
@@ -4866,10 +4774,6 @@ void Walaber::TextureManager::setTextureSettings(long param_1,undefined8 param_2
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
-  if (*(long *)(lVar2 + 0x28) != lVar4) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4889,7 +4793,6 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
   int *piVar1;
   undefined1 *puVar2;
   byte bVar3;
-  long lVar4;
   void *pvVar5;
   undefined7 uVar6;
   undefined8 uVar7;
@@ -4897,7 +4800,6 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
   long lVar9;
   undefined8 *puVar10;
   byte *pbVar11;
-  long lVar12;
   long lStack_118;
   int *piStack_110;
   long lStack_108;
@@ -4926,8 +4828,6 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
   undefined1 uStack_61;
   undefined7 uStack_60;
   
-  lVar4 = tpidr_el0;
-  lVar12 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::getExtension(abStack_80,param_2);
                     /* try { // try from 0039e27c to 0039e287 has its CatchHandler @ 0039e6a4 */
   uVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_98,param_2);
@@ -5103,10 +5003,6 @@ LAB_0039e42c:
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5121,7 +5017,6 @@ LAB_0039e42c:
 void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   long lVar3;
   long *plVar4;
@@ -5136,10 +5031,7 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
   undefined8 uStack_50;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar6 = param_1 + 1;
   plVar7 = (long *)*param_1;
   if (plVar7 != plVar6) {
@@ -5217,10 +5109,6 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
         plVar4 = (long *)*plVar7;
       } while ((long *)*plVar7 != (long *)0x0);
     }
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -5338,7 +5226,6 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
 {
   void *pvVar1;
   ulong uVar2;
-  long lVar3;
   bool bVar4;
   ulong uVar5;
   long *plVar6;
@@ -5350,10 +5237,7 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
   undefined8 uStack_58;
   ulong auStack_50 [2];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   Walaber::Logger::printf("Walaber",1,"Validating texture: %i",param_1[3]);
   uVar5 = param_1[3];
   if (uVar5 < (ulong)param_1[2]) {
@@ -5464,10 +5348,6 @@ LAB_0039eb54:
   else {
     uVar9 = 0;
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    uVar9 = __stack_chk_fail();
-    return uVar9;
-  }
   return uVar9;
 }
 
@@ -5482,7 +5362,6 @@ LAB_0039eb54:
 void Walaber::TextureManager::reloadSubTextures(long *param_1)
 
 {
-  long lVar1;
   int *piVar2;
   bool bVar3;
   long lVar4;
@@ -5495,10 +5374,7 @@ void Walaber::TextureManager::reloadSubTextures(long *param_1)
   int *piStack_60;
   long lStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   plVar7 = (long *)*param_1;
   piVar2 = piStack_60;
   lVar4 = lStack_68;
@@ -5556,12 +5432,6 @@ void Walaber::TextureManager::reloadSubTextures(long *param_1)
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    lStack_68 = lVar4;
-    piStack_60 = piVar2;
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5579,7 +5449,6 @@ void Walaber::TextureManager::getTextureSettings
 
 {
   long lVar1;
-  long lVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
@@ -5596,10 +5465,7 @@ void Walaber::TextureManager::getTextureSettings
   undefined7 uStack_68;
   undefined1 uStack_61;
   undefined7 uStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   Walaber::StringHelper::removeExtension(abStack_b0,param_3);
   lVar1 = param_2 + 0x20;
                     /* try { // try from 0039ee3c to 0039ee47 has its CatchHandler @ 0039eff0 */
@@ -5668,10 +5534,6 @@ void Walaber::TextureManager::getTextureSettings
   if ((abStack_b0[0] & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5690,7 +5552,6 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
   int *piVar1;
   undefined1 *puVar2;
   byte bVar3;
-  long lVar4;
   void *pvVar5;
   undefined7 uVar6;
   undefined8 uVar7;
@@ -5698,7 +5559,6 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
   long lVar9;
   ulong *puVar10;
   byte *pbVar11;
-  long lVar12;
   ulong uStack_108;
   undefined8 uStack_100;
   void *pvStack_f8;
@@ -5723,8 +5583,6 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
   undefined1 uStack_61;
   undefined7 uStack_60;
   
-  lVar4 = tpidr_el0;
-  lVar12 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::getExtension(abStack_80,param_2);
                     /* try { // try from 0039f048 to 0039f053 has its CatchHandler @ 0039f34c */
   uVar7 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&bStack_98,param_2);
@@ -5855,10 +5713,6 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5929,7 +5783,6 @@ void Walaber::TextureManager::memoryWarning(bool p0)
 void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   long lVar3;
   long *plVar4;
@@ -5940,10 +5793,7 @@ void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
   void *pvStack_68;
   long lStack_60;
   int *piStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   plVar5 = (long *)*param_1;
   while (plVar5 != param_1 + 1) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_78,plVar5 + 4);
@@ -5987,10 +5837,6 @@ void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6006,7 +5852,6 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
 
 {
   void *pvVar1;
-  long lVar2;
   bool bVar3;
   undefined8 *puVar4;
   ulong in_x1;
@@ -6020,11 +5865,8 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
   int *piStack_78;
   byte abStack_70 [16];
   void *pvStack_60;
-  long lStack_58;
   
   puVar4 = (undefined8 *)(ulong)p0;
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   plVar7 = (long *)*puVar4;
   if (puVar4 + 1 != plVar7) {
     do {
@@ -6116,10 +5958,6 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
       }
     } while (puVar4 + 1 != plVar7);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6136,17 +5974,13 @@ void Walaber::TextureManager::dumpTextures(undefined8 *param_1)
 {
   void *pvVar1;
   undefined4 uVar2;
-  long lVar3;
   long *plVar4;
   long *plVar5;
   long lVar6;
   long *plVar7;
   byte abStack_70 [16];
   void *pvStack_60;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   Walaber::Logger::printf("Walaber",1,"===============[ Texture Dump ]=============================\n");
   if ((long *)*param_1 != param_1 + 1) {
     plVar7 = (long *)*param_1;
@@ -6184,10 +6018,6 @@ void Walaber::TextureManager::dumpTextures(undefined8 *param_1)
     } while (plVar5 != param_1 + 1);
   }
   Walaber::Logger::printf("Walaber",1,"===============[ End of Texture Dump ]======================\n");
-  if (*(long *)(lVar3 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

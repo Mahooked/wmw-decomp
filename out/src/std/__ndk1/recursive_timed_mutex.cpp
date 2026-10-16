@@ -67,17 +67,13 @@ void std::__ndk1::recursive_timed_mutex::~recursive_timed_mutex(long param_1)
 void std::__ndk1::recursive_timed_mutex::lock(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   long lVar5;
   long lStack_48;
   char cStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = pthread_self();
   cStack_40 = '\x01';
   lStack_48 = param_1;
@@ -114,10 +110,6 @@ void std::__ndk1::recursive_timed_mutex::lock(long param_1)
                     /* try { // try from 005e2e50 to 005e2e53 has its CatchHandler @ 005e2ed4 */
   pthread_mutex_unlock(lStack_48);
 LAB_005e2e54:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

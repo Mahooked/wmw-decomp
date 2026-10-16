@@ -28,7 +28,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   undefined8 *puVar3;
   bool bVar4;
   long lVar5;
@@ -40,10 +39,7 @@ void std::__ndk1::
   long *plVar11;
   undefined1 auStack_70 [16];
   undefined8 *puStack_60;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   lVar5 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
   uVar1 = lVar5 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
@@ -90,10 +86,6 @@ void std::__ndk1::
                     /* try { // try from 004cc4f4 to 004cc4ff has its CatchHandler @ 004cc53c */
   std::__ndk1::vector<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>>::__swap_out_circular_buffer(param_1,auStack_70);
   std::__ndk1::__split_buffer<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>, std::__ndk1::allocator<std::__ndk1::set<WaterConcept::InteractiveObject*, std::__ndk1::less<WaterConcept::InteractiveObject*>, std::__ndk1::allocator<WaterConcept::InteractiveObject*>>>&>::~__split_buffer(auStack_70);
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

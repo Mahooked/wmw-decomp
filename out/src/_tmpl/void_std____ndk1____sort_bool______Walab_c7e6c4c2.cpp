@@ -20,7 +20,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   ulong uVar5;
@@ -76,10 +75,7 @@ void std::__ndk1::
   int *piStack_88;
   long lStack_80;
   int *piStack_78;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
 LAB_0034a624:
   plVar10 = param_2 + -2;
   plVar13 = param_1;
@@ -420,10 +416,6 @@ LAB_0034ab5c:
     } while( true );
   }
 switchD_0034acd8_caseD_0:
-  if (*(long *)(lVar2 + 0x28) != lStack_70) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

@@ -37,17 +37,13 @@ long std::__ndk1::
                (undefined8 param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   long lVar4;
   int *piVar5;
   undefined8 uVar6;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar2 = operator new(0x48);
   lVar4 = param_2[3];
   uVar6 = param_2[1];
@@ -66,10 +62,6 @@ long std::__ndk1::
   }
   uVar3 = std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__find_leaf_high(param_1,&uStack_40,lVar2 + 0x20);
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__insert_node_at(param_1,uStack_40,uVar3,lVar2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return lVar2;
-  }
-  lVar4 = __stack_chk_fail();
   return lVar4;
 }
 

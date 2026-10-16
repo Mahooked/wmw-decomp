@@ -57,7 +57,6 @@ void Walaber::ZipArchiveCreator::~ZipArchiveCreator(long *param_1)
 ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte *param_3)
 
 {
-  long lVar1;
   int iVar2;
   void *p0;
   long lVar3;
@@ -78,10 +77,7 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
   undefined **appuStack_100 [17];
   undefined8 uStack_78;
   undefined4 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (*param_1 == 0) {
     uVar6 = 0;
     goto LAB_003d7900;
@@ -156,10 +152,6 @@ LAB_003d78d4:
   std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(auStack_1a8);
   std::__ndk1::ios_base::~ios_base(appuStack_100);
 LAB_003d7900:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
-  }
   return (ulong)uVar6;
 }
 

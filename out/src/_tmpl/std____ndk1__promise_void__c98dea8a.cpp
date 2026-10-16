@@ -45,7 +45,6 @@ void std::__ndk1::promise<void>::promise(undefined8 *param_1)
 void std::__ndk1::promise<void>::~promise(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined **appuStack_90 [2];
@@ -56,10 +55,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
   void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *param_1;
   if (lVar3 != 0) {
     if ((*(byte *)(lVar3 + 0x70) & 1) == 0) {
@@ -94,10 +90,6 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
     }
     std::__ndk1::__shared_count::__release_shared(*param_1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -174,15 +166,11 @@ void std::__ndk1::promise<void>::set_value(long *param_1)
 void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lVar4 = *(long *)p0.f_0x0;
   if (lVar4 == 0) {
     uVar3 = __cxa_allocate_exception(0x20);
@@ -201,10 +189,6 @@ void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
                     /* try { // try from 005f1868 to 005f1873 has its CatchHandler @ 005f194c */
   std::__ndk1::__assoc_sub_state::set_exception(lVar4,auStack_30);
   std::exception_ptr::~exception_ptr(auStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -250,15 +234,11 @@ void std::__ndk1::promise<void>::set_value_at_thread_exit(long *param_1)
 void std::__ndk1::promise<void>::set_exception_at_thread_exit(std__exception_ptr p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lVar4 = *(long *)p0.f_0x0;
   if (lVar4 == 0) {
     uVar3 = __cxa_allocate_exception(0x20);
@@ -277,10 +257,6 @@ void std::__ndk1::promise<void>::set_exception_at_thread_exit(std__exception_ptr
                     /* try { // try from 005f1a58 to 005f1a63 has its CatchHandler @ 005f1b3c */
   std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(lVar4,auStack_30);
   std::exception_ptr::~exception_ptr(auStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

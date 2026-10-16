@@ -67,7 +67,6 @@ void Walaber::SpriteAnimation::SpriteAnimation
                undefined8 *param_6)
 
 {
-  long lVar1;
   int *piVar2;
   undefined8 *puVar3;
   long lVar4;
@@ -80,10 +79,7 @@ void Walaber::SpriteAnimation::SpriteAnimation
   undefined1 uStack_69;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   *(undefined8 *)(param_1 + 0x28) = 0;
   *(undefined8 *)(param_1 + 0x54) = 0xffffffffffffffff;
@@ -148,10 +144,6 @@ void Walaber::SpriteAnimation::SpriteAnimation
     *(undefined8 **)(param_1 + 0x30) = puVar3 + 5;
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -167,7 +159,6 @@ void Walaber::SpriteAnimation::loadFromXML(ulong *param_1,long param_2,undefined
 
 {
   ulong uVar1;
-  long lVar2;
   undefined4 uVar3;
   int iVar4;
   undefined8 uVar5;
@@ -209,10 +200,7 @@ void Walaber::SpriteAnimation::loadFromXML(ulong *param_1,long param_2,undefined
   ulong uStack_a8;
   ulong uStack_a0;
   void *pvStack_98;
-  long lStack_90;
   
-  lVar2 = tpidr_el0;
-  lStack_90 = *(long *)(lVar2 + 0x28);
   Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x17,param_3);
   uVar5 = xmlGetProp(param_2,"name");
   piStack_108 = (int *)0x0;
@@ -588,10 +576,6 @@ LAB_0035a5b0:
   if ((uStack_c0 & 1) != 0) {
     operator delete(pvStack_b0);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_90) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -607,7 +591,6 @@ LAB_0035a5b0:
 ulong Walaber::SpriteAnimation::_parsePlaybackMode(byte *param_1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong uVar4;
@@ -615,10 +598,7 @@ ulong Walaber::SpriteAnimation::_parsePlaybackMode(byte *param_1)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar4 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar4;
@@ -673,10 +653,6 @@ LAB_0035a818:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return (ulong)uVar5;
 }
 
@@ -692,7 +668,6 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
 
 {
   uint uVar1;
-  long lVar2;
   byte *pbVar3;
   undefined8 uVar4;
   long *plVar5;
@@ -718,10 +693,7 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
   undefined1 uStack_89;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   if (*in_x1 == 1) {
     Walaber::SharedPtr<Walaber::Texture>::operator=((long)p0 + 0x60,in_x1 + 8);
     uVar4 = Walaber::TextureManager::getManager();
@@ -816,10 +788,6 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
     uStack_a0 = CONCAT44(uStack_a0._4_4_,*in_x1);
     pvStack_98 = p0;
     (**(code **)(*plVar5 + 0x10))(plVar5,&uStack_a0);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -976,27 +944,19 @@ LAB_0035af50:
 void Walaber::SpriteAnimation::addMarkerEvent(float p0,int p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   undefined4 in_w1;
   float fStack_4c;
   undefined1 auStack_48 [8];
   float *pfStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p1;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pfStack_40 = &fStack_4c;
   fStack_4c = p0;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<float, Walaber::SpriteAnimation::AnimationMarker>, std::__ndk1::__tree_node<std::__ndk1::__value_type<float, Walaber::SpriteAnimation::AnimationMarker>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<float, Walaber::SpriteAnimation::AnimationMarker>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, Walaber::SpriteAnimation::AnimationMarker>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, Walaber::SpriteAnimation::AnimationMarker>>>::__emplace_unique_key_args<float, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<float const&>, std::__ndk1::tuple<>>(uVar2 + 0x70,&fStack_4c,&DAT_0062b342,&pfStack_40,auStack_48);
   *(undefined4 *)(lVar3 + 0x20) = in_w1;
   *(undefined8 *)(uVar2 + 0x88) = *(undefined8 *)(uVar2 + 0x70);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1034,7 +994,6 @@ void Walaber::SpriteAnimation::play(long param_1)
 
 {
   char cVar1;
-  long lVar2;
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
@@ -1042,10 +1001,7 @@ void Walaber::SpriteAnimation::play(long param_1)
   long lStack_40;
   undefined4 *puStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   cVar1 = *(char *)(param_1 + 0x18);
   *(undefined1 *)(param_1 + 0x18) = 1;
   if ((cVar1 == '\0') && (*(long *)(param_1 + 0x90) != 0)) {
@@ -1063,10 +1019,6 @@ void Walaber::SpriteAnimation::play(long param_1)
     (**(code **)(**(long **)(param_1 + 0x90) + 0x10))(*(long **)(param_1 + 0x90),&lStack_40);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1084,7 +1036,6 @@ void Walaber::SpriteAnimation::play(float p0)
   int iVar1;
   char cVar2;
   int iVar3;
-  long lVar4;
   bool bVar5;
   long in_x0;
   int iVar6;
@@ -1098,10 +1049,7 @@ void Walaber::SpriteAnimation::play(float p0)
   undefined1 auStack_40 [8];
   undefined4 *puStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar4 = tpidr_el0;
-  lStack_28 = *(long *)(lVar4 + 0x28);
   plVar7 = (long *)(in_x0 + 0x78);
   plVar8 = (long *)*plVar7;
   cVar2 = *(char *)(in_x0 + 0x18);
@@ -1141,10 +1089,6 @@ void Walaber::SpriteAnimation::play(float p0)
     (**(code **)(**(long **)(in_x0 + 0x90) + 0x10))(*(long **)(in_x0 + 0x90),auStack_40);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_40);
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1163,7 +1107,6 @@ void Walaber::SpriteAnimation::play
   int iVar1;
   char cVar2;
   int iVar3;
-  long lVar4;
   bool bVar5;
   long *plVar6;
   long *plVar7;
@@ -1176,10 +1119,7 @@ void Walaber::SpriteAnimation::play
   long lStack_40;
   undefined4 *puStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar4 = tpidr_el0;
-  lStack_28 = *(long *)(lVar4 + 0x28);
   plVar6 = (long *)(param_2 + 0x78);
   plVar7 = (long *)*plVar6;
   cVar2 = *(char *)(param_2 + 0x18);
@@ -1225,10 +1165,6 @@ void Walaber::SpriteAnimation::play
     (**(code **)(**(long **)(param_2 + 0x90) + 0x10))(*(long **)(param_2 + 0x90),&lStack_40);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_40);
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1244,7 +1180,6 @@ void Walaber::SpriteAnimation::pause(long param_1)
 
 {
   char cVar1;
-  long lVar2;
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
@@ -1252,10 +1187,7 @@ void Walaber::SpriteAnimation::pause(long param_1)
   long lStack_40;
   undefined4 *puStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   cVar1 = *(char *)(param_1 + 0x18);
   *(undefined1 *)(param_1 + 0x18) = 0;
   if ((cVar1 != '\0') && (*(long *)(param_1 + 0x90) != 0)) {
@@ -1273,10 +1205,6 @@ void Walaber::SpriteAnimation::pause(long param_1)
     (**(code **)(**(long **)(param_1 + 0x90) + 0x10))(*(long **)(param_1 + 0x90),&lStack_40);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1292,7 +1220,6 @@ void Walaber::SpriteAnimation::stop(long param_1)
 
 {
   char cVar1;
-  long lVar2;
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
@@ -1300,10 +1227,7 @@ void Walaber::SpriteAnimation::stop(long param_1)
   long lStack_40;
   undefined4 *puStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   *(undefined4 *)(param_1 + 0x48) = 1;
   cVar1 = *(char *)(param_1 + 0x18);
   *(undefined8 *)(param_1 + 0x40) = 0;
@@ -1325,10 +1249,6 @@ void Walaber::SpriteAnimation::stop(long param_1)
     (**(code **)(**(long **)(param_1 + 0x90) + 0x10))(*(long **)(param_1 + 0x90),&lStack_40);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

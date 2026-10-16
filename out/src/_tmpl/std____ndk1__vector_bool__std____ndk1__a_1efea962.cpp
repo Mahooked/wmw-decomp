@@ -61,7 +61,6 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0)
 void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
 
 {
-  long lVar1;
   ulong in_x1;
   undefined8 uVar2;
   void *p0_00;
@@ -73,10 +72,7 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
   uint uStack_40;
   long lStack_38;
   undefined4 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if ((ulong)(*(long *)(p0 + 0x10) << 6) < in_x1) {
     pvStack_60 = (void *)0x0;
     uStack_58 = 0;
@@ -101,10 +97,6 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
       operator delete(p0_00);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -148,16 +140,12 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,boo
 {
   Elf64_Phdr *pEVar1;
   char cVar2;
-  long lVar3;
   char *in_x2;
   ulong uVar4;
   undefined8 *puVar5;
   long lStack_48;
   uint uStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   *(undefined8 *)p0 = 0;
   *(undefined8 *)(p0 + 8) = 0;
   *(undefined8 *)(p0 + 0x10) = 0;
@@ -189,10 +177,6 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,boo
       void std::__ndk1::__fill_n_true<std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>>(&lStack_48,p1);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

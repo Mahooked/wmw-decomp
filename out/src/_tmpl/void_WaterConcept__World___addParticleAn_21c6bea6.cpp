@@ -18,7 +18,6 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
 
 {
   long *plVar1;
-  long lVar2;
   bool bVar3;
   ulong uVar4;
   long *plVar5;
@@ -32,10 +31,7 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
   int iStack_88;
   uint uStack_84;
   undefined4 uStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   iStack_88 = param_3[1];
   std::__ndk1::pair<std::__ndk1::__tree_iterator<unsigned int, std::__ndk1::__tree_node<unsigned int, void*>*, long>, bool> std::__ndk1::__tree<unsigned int, std::__ndk1::less<unsigned int>, std::__ndk1::allocator<unsigned int>>::__emplace_unique_key_args<unsigned int, unsigned int>(param_4,&iStack_88,&iStack_88);
   uVar4 = (ulong)param_3[1];
@@ -69,10 +65,6 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
 LAB_0046f680:
     uVar7 = uVar7 + 1;
     if (*(uint *)(param_5 + 6) < uVar7) {
-      if (*(long *)(lVar2 + 0x28) == lStack_78) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
     uVar4 = (ulong)(uint)param_3[1];

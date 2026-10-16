@@ -477,16 +477,12 @@ undefined8 Walaber::Curve::loadFromXml(std::__ndk1::basic_string<char, std::__nd
 
 {
   void *pvVar1;
-  long lVar2;
   undefined8 uVar3;
   long lVar4;
   undefined8 uVar5;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1);
   pvVar1 = (void *)((ulong)abStack_50 | 1);
   if ((abStack_50[0] & 1) != 0) {
@@ -513,10 +509,6 @@ undefined8 Walaber::Curve::loadFromXml(std::__ndk1::basic_string<char, std::__nd
     xmlFreeDoc(uVar3);
     xmlCleanupMemory();
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return uVar5;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -531,7 +523,6 @@ undefined8 Walaber::Curve::loadFromXml(std::__ndk1::basic_string<char, std::__nd
 _xmlNode * Walaber::Curve::loadFromXml(_xmlNode *p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -545,10 +536,7 @@ _xmlNode * Walaber::Curve::loadFromXml(_xmlNode *p0)
   byte abStack_60 [8];
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (p0 == (_xmlNode *)0x0) {
 LAB_003e0db0:
     p_Var7 = (_xmlNode *)0x0;
@@ -681,10 +669,6 @@ LAB_003e0f58:
     operator delete(pvStack_50);
   }
 LAB_003e1028:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    p_Var7 = (_xmlNode *)__stack_chk_fail();
-    return p_Var7;
-  }
   return p_Var7;
 }
 

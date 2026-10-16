@@ -26,16 +26,12 @@ void std::__ndk1::
 
 {
   bool bVar1;
-  long lVar2;
   long *plVar3;
   long lVar4;
   long *plVar5;
   long *plVar6;
   long alStack_50 [3];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar5 = (long *)(param_1 + 8);
   plVar6 = plVar5;
   if ((long *)*plVar5 != (long *)0x0) {
@@ -59,10 +55,6 @@ LAB_0046d000:
     std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>>>::__construct_node<std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int&&>, std::__ndk1::tuple<>>(alStack_50,param_1,param_3,param_4,param_5);
     std::__ndk1::__tree<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, WaterConcept::World::VBOData>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, WaterConcept::World::VBOData>>>::__insert_node_at(param_1,plVar5,plVar6,alStack_50[0]);
     lVar4 = alStack_50[0];
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail(lVar4,bVar1);
-    return;
   }
   return;
 }

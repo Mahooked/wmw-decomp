@@ -14,7 +14,6 @@ void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
 {
   char *pcVar1;
   uint uVar2;
-  long lVar3;
   long lVar4;
   long lVar5;
   long lVar6;
@@ -30,10 +29,7 @@ void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   lVar4 = newlocale(0x1fbf,in_x1,0);
   if (lVar4 != 0) {
                     /* try { // try from 005c5894 to 005c5897 has its CatchHandler @ 005c5b24 */
@@ -85,10 +81,6 @@ void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
     }
                     /* try { // try from 005c59c0 to 005c59c7 has its CatchHandler @ 005c5aec */
     freelocale(lVar4);
-    if (*(long *)(lVar3 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_78 = 0;

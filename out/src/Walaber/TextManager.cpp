@@ -31,16 +31,12 @@ void Walaber::TextManager::clearAll(void)
 void Walaber::TextManager::getString(byte *param_1,byte *param_2,int param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   param_1[0] = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -124,10 +120,6 @@ LAB_003f9c6c:
   *(undefined8 *)(param_1 + 8) = uStack_48;
   *(undefined8 *)param_1 = uStack_50;
 LAB_003f9cc0:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -143,23 +135,15 @@ LAB_003f9cc0:
 void Walaber::TextManager::getString(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
                     /* try { // try from 003f9d84 to 003f9d8f has its CatchHandler @ 003f9dc4 */
   Walaber::TextManager::getString(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -214,25 +198,17 @@ undefined8 Walaber::TextManager::stringExists(byte *param_1,int param_2)
 ulong Walaber::TextManager::stringExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
                     /* try { // try from 003f9eb0 to 003f9eb7 has its CatchHandler @ 003f9ef4 */
   uVar2 = Walaber::TextManager::stringExists(abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -248,16 +224,12 @@ ulong Walaber::TextManager::stringExists(std::__ndk1::basic_string<char, std::__
 void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   param_1[0x18] = 0;
   param_1[0x19] = 0;
   param_1[0x1a] = 0;
@@ -398,10 +370,6 @@ void Walaber::TextManager::getSubtitle(byte *param_1,byte *param_2,int param_3)
                     /* try { // try from 003fa000 to 003fa00f has its CatchHandler @ 003fa0e8 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::assign(param_1 + 0x18,&DAT_00634530,7);
 LAB_003fa010:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -417,23 +385,15 @@ LAB_003fa010:
 void Walaber::TextManager::getSubtitle(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_2);
                     /* try { // try from 003fa150 to 003fa15b has its CatchHandler @ 003fa190 */
   Walaber::TextManager::getSubtitle(param_1,abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -488,25 +448,17 @@ undefined8 Walaber::TextManager::subtitleExists(byte *param_1,int param_2)
 ulong Walaber::TextManager::subtitleExists(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,param_1);
                     /* try { // try from 003fa27c to 003fa283 has its CatchHandler @ 003fa2c0 */
   uVar2 = Walaber::TextManager::subtitleExists(abStack_40,mCurrentLanguage);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)(uVar2 & 1);
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -523,7 +475,6 @@ ulong Walaber::TextManager::subtitleExists(std::__ndk1::basic_string<char, std::
 void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>& param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   undefined8 *puStack_70;
@@ -531,10 +482,7 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   undefined8 *puStack_60;
   undefined4 *puStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_2 != &mLanguagesToLoad) {
     std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
@@ -555,10 +503,6 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -578,7 +522,6 @@ void Walaber::TextManager::loadedScriptFile(void *p0)
   char *pcVar3;
   undefined4 uVar4;
   int iVar5;
-  long lVar6;
   ulong uVar7;
   long lVar8;
   void *p0_00;
@@ -592,7 +535,6 @@ void Walaber::TextManager::loadedScriptFile(void *p0)
   ulong extraout_x1_06;
   ulong extraout_x1_07;
   int iVar9;
-  long lVar10;
   long lVar11;
   long *plVar12;
   long *plVar13;
@@ -627,8 +569,6 @@ void Walaber::TextManager::loadedScriptFile(void *p0)
   undefined1 auStack_88 [8];
   undefined8 ****appppuStack_80 [4];
   
-  lVar6 = tpidr_el0;
-  lVar10 = *(long *)(lVar6 + 0x28);
   lVar11 = *(long *)((long)p0 + 0x20);
   if (lVar11 != 0) {
     lStack_98 = 0;
@@ -933,10 +873,6 @@ LAB_003fa8a8:
     }
     std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Language>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Language>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Language>>>::destroy(&plStack_a0,lStack_98);
   }
-  if (*(long *)(lVar6 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -952,7 +888,6 @@ LAB_003fa8a8:
 ulong Walaber::TextManager::stringToLanguage(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Language& param_2)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined4 uVar4;
@@ -961,10 +896,7 @@ ulong Walaber::TextManager::stringToLanguage(std::__ndk1::basic_string<char, std
   byte abStack_50 [8];
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_50);
   uVar5 = (ulong)(abStack_50[0] >> 1);
   uVar3 = uVar5;
@@ -1336,10 +1268,6 @@ LAB_003fb408:
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return (ulong)uVar6;
 }
 
@@ -1462,7 +1390,6 @@ undefined8 Walaber::TextManager::containsLanguage(long *param_1,int *param_2)
 void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>& param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   undefined8 *puStack_70;
@@ -1470,10 +1397,7 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   undefined8 *puStack_60;
   undefined4 *puStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_2 != &mLanguagesToLoad) {
     std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
@@ -1494,10 +1418,6 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1518,7 +1438,6 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
   char *pcVar3;
   undefined4 uVar4;
   int iVar5;
-  long lVar6;
   bool bVar7;
   int iVar8;
   ulong uVar9;
@@ -1533,7 +1452,6 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
   ulong extraout_x1_06;
   ulong extraout_x1_07;
   ulong extraout_x1_08;
-  long lVar10;
   long lVar11;
   long *plVar12;
   long *plVar13;
@@ -1570,8 +1488,6 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
   undefined8 uStack_88;
   undefined1 auStack_80 [32];
   
-  lVar6 = tpidr_el0;
-  lVar10 = *(long *)(lVar6 + 0x28);
   lVar11 = *(long *)((long)p0 + 0x20);
   if (lVar11 != 0) {
     lStack_90 = 0;
@@ -1914,10 +1830,6 @@ LAB_003fbf68:
     }
     std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Language>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Language>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Language>>>::destroy(&plStack_98,lStack_90);
   }
-  if (*(long *)(lVar6 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1935,7 +1847,6 @@ ulong Walaber::TextManager::CountryInfoToLanguage(void)
 
 {
   short *psVar1;
-  long lVar2;
   void *pvVar3;
   ulong uVar4;
   void *pvVar5;
@@ -1948,10 +1859,7 @@ ulong Walaber::TextManager::CountryInfoToLanguage(void)
   byte abStack_70 [8];
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   Walaber::StringHelper::toLower(abStack_70);
   uVar11 = (ulong)(abStack_70[0] >> 1);
   pvVar3 = (void *)((ulong)abStack_70 | 1);
@@ -2209,10 +2117,6 @@ LAB_003fc8ec:
     operator delete(pvStack_60);
   }
 LAB_003fc8f4:
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return (ulong)uVar10;
-  }
-  uVar11 = __stack_chk_fail();
   return uVar11;
 code_r0x003fc8b0:
   uVar11 = (long)psVar1 - (long)((long)psVar7 + 1U);
@@ -2550,7 +2454,6 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
 
 {
   ulong *puVar1;
-  long lVar2;
   long *plVar3;
   long *plVar4;
   long lVar5;
@@ -2558,10 +2461,7 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar6 = mDictionary;
   if (mDictionary != &DAT_007308b8) {
     do {
@@ -2604,10 +2504,6 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
       plVar6 = plVar4;
     } while (plVar4 != &DAT_007308b8);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2622,17 +2518,13 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
 void Walaber::TextManager::getLanguageMap(Walaber__Language p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
   uint uStack_3c;
   undefined1 auStack_38 [8];
   uint *puStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_3c = p0.f_0x0;
   if (DAT_007308b8 != (undefined8 *)0x0) {
     puVar3 = &DAT_007308b8;
@@ -2652,10 +2544,6 @@ void Walaber::TextManager::getLanguageMap(Walaber__Language p0)
   }
   lVar2 = 0;
 LAB_003fd214:
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(lVar2);
   return;
 }
 
@@ -2670,17 +2558,13 @@ LAB_003fd214:
 void Walaber::TextManager::getSubtitleMap(Walaber__Language p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
   uint uStack_3c;
   undefined1 auStack_38 [8];
   uint *puStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_3c = p0.f_0x0;
   if (DAT_007308d0 != (undefined8 *)0x0) {
     puVar3 = &DAT_007308d0;
@@ -2700,10 +2584,6 @@ void Walaber::TextManager::getSubtitleMap(Walaber__Language p0)
   }
   lVar2 = 0;
 LAB_003fd2d0:
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(lVar2);
   return;
 }
 

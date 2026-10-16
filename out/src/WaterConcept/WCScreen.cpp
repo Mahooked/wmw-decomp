@@ -13,16 +13,12 @@
 void WaterConcept::WCScreen::WCScreen(uint p0)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined4 in_w1;
   undefined8 uStack_50;
-  long lStack_48;
   
   puVar2 = (undefined8 *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined4 *)(puVar2 + 1) = in_w1;
   *(undefined1 *)((long)puVar2 + 0xe) = 1;
   *(undefined2 *)((long)puVar2 + 0xc) = 0x100;
@@ -38,10 +34,6 @@ void WaterConcept::WCScreen::WCScreen(uint p0)
                     /* try { // try from 004a1818 to 004a1823 has its CatchHandler @ 004a1854 */
   Walaber::WidgetManager::WidgetManager(uVar3,puVar2 + 4,&uStack_50);
   puVar2[2] = uVar3;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -71,19 +63,11 @@ void WaterConcept::WCScreen::beingStacked(long param_1)
 void WaterConcept::WCScreen::touchDown(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchDown(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -98,21 +82,13 @@ void WaterConcept::WCScreen::touchDown(int p0,Walaber__Vector2 p1)
 void WaterConcept::WCScreen::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::WidgetManager::touchMoved(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -127,19 +103,11 @@ void WaterConcept::WCScreen::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
 void WaterConcept::WCScreen::touchUp(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchUp(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

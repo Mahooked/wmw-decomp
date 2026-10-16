@@ -207,7 +207,6 @@ void Walaber::XMLDocument::Iterator::getChildIterator(long *param_1,long *param_
 void Walaber::XMLDocument::Iterator::getAttribute(long *param_1,byte *param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined *puVar2;
   long lVar3;
   undefined8 uVar4;
@@ -218,10 +217,7 @@ void Walaber::XMLDocument::Iterator::getAttribute(long *param_1,byte *param_2,un
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar4 = 0;
   if (*param_1 == 0) goto LAB_003d69b0;
   pbVar6 = *(byte **)(param_2 + 0x10);
@@ -272,10 +268,6 @@ LAB_003d6970:
   }
   uVar4 = 1;
 LAB_003d69b0:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -290,7 +282,6 @@ LAB_003d69b0:
 void Walaber::XMLDocument::Iterator::getNodeValue(Walaber__Property *p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -300,10 +291,7 @@ void Walaber::XMLDocument::Iterator::getNodeValue(Walaber__Property *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)p0 != 0) {
     lVar5 = *(long *)(*(long *)p0 + 0x30);
     iVar2 = xmlStrcmp(*(undefined8 *)(lVar5 + 0x10),"text");
@@ -343,10 +331,6 @@ LAB_003d6ab8:
   }
   uVar3 = 0;
 LAB_003d6aec:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 

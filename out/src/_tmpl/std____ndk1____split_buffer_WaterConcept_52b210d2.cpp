@@ -62,7 +62,6 @@ void std::__ndk1::
 
 {
   long lVar1;
-  long lVar2;
   WaterConcept__NotificationSingleton__NotificationData **ppWVar3;
   undefined8 *in_x1;
   ulong uVar4;
@@ -75,10 +74,7 @@ void std::__ndk1::
   WaterConcept__NotificationSingleton__NotificationData **ppWStack_68;
   WaterConcept__NotificationSingleton__NotificationData **ppWStack_60;
   WaterConcept__NotificationSingleton__NotificationData **ppWStack_58;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   ppWVar5 = p0[2];
   if (ppWVar5 == p0[3]) {
     ppWVar7 = *p0;
@@ -143,10 +139,6 @@ void std::__ndk1::
   }
   *ppWVar5 = (WaterConcept__NotificationSingleton__NotificationData *)*in_x1;
   p0[2] = p0[2] + 1;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -165,7 +157,6 @@ void std::__ndk1::
      ::push_front(WaterConcept__NotificationSingleton__NotificationData **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   long lVar2;
   WaterConcept__NotificationSingleton__NotificationData *pWVar3;
@@ -177,10 +168,7 @@ void std::__ndk1::
   WaterConcept__NotificationSingleton__NotificationData *pWStack_68;
   WaterConcept__NotificationSingleton__NotificationData *pWStack_60;
   WaterConcept__NotificationSingleton__NotificationData *pWStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   pWVar3 = p0[1];
   if (pWVar3 == *p0) {
     pWVar4 = p0[2];
@@ -243,10 +231,6 @@ void std::__ndk1::
   }
   *(undefined8 *)(pWVar3 + -8) = *in_x1;
   p0[1] = p0[1] + -8;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

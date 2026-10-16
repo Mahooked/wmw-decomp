@@ -12,15 +12,11 @@
 void WaterConcept::Floater::Floater(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,1,0);
@@ -42,10 +38,6 @@ void WaterConcept::Floater::Floater(Walaber__Vector2 p0,float p1,Walaber__Vector
   *(undefined8 *)((long)p0 + 0x448) = 0x3e4ccccd3f000000;
   *(undefined4 *)((long)p0 + 0x150) = 0x40000000;
   *(undefined4 *)((long)p0 + 0xd8) = 9;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -134,7 +126,6 @@ void WaterConcept::Floater::_initFinished(long param_1)
 {
   ulong uVar1;
   long *plVar2;
-  long lVar3;
   undefined8 uVar4;
   void *p0;
   ulong uVar5;
@@ -146,10 +137,7 @@ void WaterConcept::Floater::_initFinished(long param_1)
   uint uStack_6c;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   plVar2 = *(long **)(param_1 + 0xe0);
   if (plVar2 != *(long **)(param_1 + 0xe8)) {
     uVar4 = operator new(0x58);
@@ -214,10 +202,6 @@ void WaterConcept::Floater::_initFinished(long param_1)
     *(undefined8 *)(param_1 + 0x3d8) = uStack_68;
     *(undefined8 *)(param_1 + 0x3e0) = uStack_60;
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -234,7 +218,6 @@ void WaterConcept::Floater::_updateSpringDs(long param_1)
 {
   float *pfVar1;
   float *pfVar2;
-  long lVar3;
   uint *puVar4;
   float fVar5;
   float fVar6;
@@ -242,10 +225,7 @@ void WaterConcept::Floater::_updateSpringDs(long param_1)
   float fVar8;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   puVar4 = *(uint **)(param_1 + 0x3b8);
   if (puVar4 != *(uint **)(param_1 + 0x3c0)) {
     do {
@@ -270,10 +250,6 @@ void WaterConcept::Floater::_updateSpringDs(long param_1)
       puVar4 = puVar4 + 6;
     } while (puVar4 != *(uint **)(param_1 + 0x3c0));
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -289,7 +265,6 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   _xmlNode *extraout_x1;
@@ -307,10 +282,7 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
   long lVar8;
   ulong uVar9;
   ulong uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lVar8 = *(long *)(in_x2 + 0x18);
   if (lVar8 != 0) {
     do {
@@ -385,10 +357,6 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
     memset(uVar4,0,uVar9);
   }
   *(undefined8 *)(p0 + 0x430) = uVar4;
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -403,7 +371,6 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
 void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   byte *pbVar2;
   long lVar3;
   long lVar4;
@@ -439,10 +406,7 @@ void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
   undefined1 uStack_6b;
   undefined1 uStack_6a;
   undefined1 uStack_69;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   bStack_80 = 0x1e;
   uStack_77 = 0x7053;
@@ -1101,10 +1065,6 @@ void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
                                                                CONCAT21(uStack_6f,uStack_70))))));
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1119,7 +1079,6 @@ void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
 void WaterConcept::Floater::update(float p0)
 
 {
-  long lVar1;
   long in_x0;
   long *plVar2;
   uint uVar3;
@@ -1137,10 +1096,7 @@ void WaterConcept::Floater::update(float p0)
   undefined8 uVar14;
   undefined1 auStack_78 [8];
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   plVar2 = *(long **)(in_x0 + 0x3a8);
   uVar3 = *(uint *)((long)plVar2 + 0x34);
@@ -1225,10 +1181,6 @@ void WaterConcept::Floater::update(float p0)
     } while (uVar4 < *(uint *)((long)plVar2 + 0x34));
   }
   Walaber::ParticleSet::updateParticles(CONCAT44(in_register_00005004,p0));
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1309,7 +1261,6 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2)
 
 {
   uint uVar1;
-  long lVar2;
   undefined4 in_w3;
   long lVar3;
   ulong uVar4;
@@ -1329,10 +1280,7 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2)
   undefined8 uStack_70;
   undefined1 auStack_64 [4];
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   if ((-1 < p2) &&
      (uVar4 = (*(long *)&p0[7].field_0x10 - *(long *)&p0[7].field_0x8 >> 3) * -0x3333333333333333,
      (ulong)(long)p2 <= uVar4 && uVar4 - (long)p2 != 0)) {
@@ -1405,10 +1353,6 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2)
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_b0);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1426,7 +1370,6 @@ void WaterConcept::Floater::_updateGlobalShape(bool p0)
   bool bVar1;
   long *plVar2;
   long lVar3;
-  long lVar4;
   ulong uVar5;
   uint in_w1;
   long *plVar6;
@@ -1437,11 +1380,8 @@ void WaterConcept::Floater::_updateGlobalShape(bool p0)
   ulong uVar11;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
   uVar5 = (ulong)p0;
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   Walaber::AABB::clear(uVar5 + 0x15c);
   plVar2 = *(long **)(uVar5 + 0xe0);
   if ((plVar2 != *(long **)(uVar5 + 0xe8)) &&
@@ -1491,10 +1431,6 @@ void WaterConcept::Floater::_updateGlobalShape(bool p0)
   }
   WaterConcept::InteractiveObject::_updateGlobalShape(uVar5,in_w1 & 1);
 LAB_0047c150:
-  if (*(long *)(lVar4 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1511,7 +1447,6 @@ void WaterConcept::Floater::_derivePositionAndAngle(long *param_1)
 {
   float *pfVar1;
   long *plVar2;
-  long lVar3;
   ulong uVar4;
   float *pfVar5;
   int iVar6;
@@ -1530,10 +1465,7 @@ void WaterConcept::Floater::_derivePositionAndAngle(long *param_1)
   float fStack_b4;
   float fStack_b0;
   float fStack_ac;
-  long lStack_a8;
   
-  lVar3 = tpidr_el0;
-  lStack_a8 = *(long *)(lVar3 + 0x28);
   plVar2 = (long *)param_1[0x1c];
   if (plVar2 != (long *)param_1[0x1d]) {
     uVar8 = plVar2[1] - *plVar2;
@@ -1638,10 +1570,6 @@ void WaterConcept::Floater::_derivePositionAndAngle(long *param_1)
     fStack_b4 = fStack_b4 / fVar15;
     (**(code **)(*param_1 + 0x20))(param_1,&fStack_b4);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_a8) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1682,7 +1610,6 @@ void WaterConcept::Floater::_handleCollision
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   undefined4 *puVar4;
   undefined4 in_w3;
@@ -1707,11 +1634,8 @@ void WaterConcept::Floater::_handleCollision
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
   puVar4 = (undefined4 *)(ulong)(uint)p2;
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   plVar3 = (long *)WaterConcept::Fluids::getParticlesForFluid(p1,*puVar4);
   uStack_50 = *(undefined8 *)(*plVar3 + (long)(int)puVar4[1] * 0x90);
   uStack_60 = 0;
@@ -1808,10 +1732,6 @@ void WaterConcept::Floater::_handleCollision
                     ((float)uStack_60 * fVar17 - fVar13) + (float)*(undefined8 *)pfVar7);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

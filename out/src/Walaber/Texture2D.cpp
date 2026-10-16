@@ -31,7 +31,6 @@ void Walaber::Texture2D::loadFromFile(long param_1,undefined8 param_2,undefined4
 void Walaber::Texture2D::initFromFileName(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -50,10 +49,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   undefined3 uStack_5b;
   void *pvStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(auStack_50);
   uStack_5b = 0;
   pvStack_58 = (void *)0x0;
@@ -119,10 +115,6 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>::~SharedPtr(&bStack_68);
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -137,7 +129,6 @@ void Walaber::Texture2D::initFromFileName(long param_1)
 void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -159,10 +150,7 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
   undefined3 uStack_5b;
   void *pvStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(int *)((long)this + 0xe4) == 1) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_88,this + 1);
     piVar3 = (int *)((ulong)&puStack_88 | 1);
@@ -264,10 +252,6 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
       Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&piStack_80);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -283,7 +267,6 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
 
 {
   byte *pbVar1;
-  long lVar2;
   bool bVar3;
   undefined8 *p0_00;
   bool bVar4;
@@ -297,7 +280,6 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
   ulong extraout_x1;
   ulong extraout_x1_00;
   undefined4 uVar10;
-  long lVar11;
   long *plVar12;
   long lVar13;
   ulong uVar14;
@@ -357,8 +339,6 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
   int *piStack_90;
   undefined4 uStack_88;
   
-  lVar2 = tpidr_el0;
-  lVar11 = *(long *)(lVar2 + 0x28);
   pbVar15 = (byte *)((long)p0 + 8);
   if ((*pbVar15 & 1) == 0) {
     lVar13 = (long)p0 + 9;
@@ -880,10 +860,6 @@ LAB_00398b4c:
     operator delete(pvStack_a8);
   }
 LAB_00398b90:
-  if (*(long *)(lVar2 + 0x28) != lVar11) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1065,7 +1041,6 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
 
 {
   ulong uVar1;
-  long lVar2;
   long lVar3;
   byte *pbVar4;
   ulong uStack_68;
@@ -1074,10 +1049,7 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
   int *piStack_50;
   void *pvStack_48;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   pbVar4 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar4 = param_2 + 1;
@@ -1113,10 +1085,6 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
     }
   }
   Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(&uStack_68);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1176,15 +1144,11 @@ void Walaber::Texture2D::bufferFromImageData(uchar *p0,int p1,int p2)
 void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Walaber::FileManager::PlatformPolicy param_2)
 
 {
-  long lVar1;
   long lVar2;
   int *piVar3;
   long lStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((*(byte *)(this + 8) & 1) == 0) {
     lVar2 = this + 9;
   }
@@ -1208,10 +1172,6 @@ void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Wa
                     /* try { // try from 00399414 to 0039941b has its CatchHandler @ 00399450 */
   Walaber::Texture2D::initFromFileName(this);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1227,7 +1187,6 @@ void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Wa
 void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 uStack_90;
   undefined4 uStack_88;
   undefined1 uStack_84;
@@ -1242,10 +1201,7 @@ void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefi
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_88 = *(undefined4 *)(param_3 + 1);
   uStack_90 = *param_3;
   uStack_84 = *(undefined1 *)((long)param_3 + 0xc);
@@ -1270,10 +1226,6 @@ void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefi
   param_1[0x1a] = 0;
   param_1[0x18] = 0;
   *param_1 = &PTR__Texture2D_00710288;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1292,17 +1244,13 @@ void Walaber::Texture2D::~Texture2D()
   ulong uVar1;
   ulong uVar2;
   byte bVar3;
-  long lVar4;
   int iVar5;
   char *pcVar6;
   char *pcVar7;
   long lVar8;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   *this = &PTR__Texture2D_00710288;
   if (*(int *)(this + 0xf) == -1) goto LAB_00399834;
   bVar3 = *(byte *)(this + 1);
@@ -1350,10 +1298,6 @@ LAB_00399834:
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x1a);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x18);
   Walaber::Texture::~Texture(this);
-  if (*(long *)(lVar4 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1388,17 +1332,13 @@ void Walaber::Texture2D::clearGlMem(long param_1)
   ulong uVar1;
   ulong uVar2;
   byte bVar3;
-  long lVar4;
   int iVar5;
   char *pcVar6;
   char *pcVar7;
   long lVar8;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   if (*(int *)(param_1 + 0x78) == -1) goto LAB_003999a4;
   bVar3 = *(byte *)(param_1 + 8);
   uVar1 = (ulong)(bVar3 >> 1);
@@ -1441,10 +1381,6 @@ LAB_00399984:
   *(undefined8 *)(param_1 + 0xb0) = 0;
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_50);
 LAB_003999a4:
-  if (*(long *)(lVar4 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

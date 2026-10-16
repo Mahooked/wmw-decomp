@@ -18,7 +18,6 @@ vector<WaterConcept::InteractiveObject*,std::__ndk1::allocator<WaterConcept::Int
 insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
@@ -40,10 +39,7 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
   undefined8 *puStack_78;
   undefined8 *puStack_70;
   undefined8 *puStack_68;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   puVar7 = (undefined8 *)param_1[1];
   if (puVar7 < (undefined8 *)param_1[2]) {
     if (param_2 == puVar7) {
@@ -150,10 +146,6 @@ insert(long *param_1,undefined8 *param_2,undefined8 *param_3)
     if (puStack_a8 != (undefined8 *)0x0) {
       operator delete(puStack_a8);
     }
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    puVar7 = (undefined8 *)__stack_chk_fail();
-    return puVar7;
   }
   return param_2;
 }

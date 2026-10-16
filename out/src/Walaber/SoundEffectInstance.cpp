@@ -47,12 +47,8 @@ void Walaber::SoundEffectInstance::SoundEffectInstance
 void Walaber::SoundEffectInstance::~SoundEffectInstance()
 
 {
-  long lVar1;
   byte abStack_2c [4];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *this = &PTR__SoundEffectInstance_0070e628;
   if (this[3] != 0) {
                     /* try { // try from 0034c9b4 to 0034c9db has its CatchHandler @ 0034ca1c */
@@ -69,10 +65,6 @@ void Walaber::SoundEffectInstance::~SoundEffectInstance()
     operator delete((void *)this[8]);
   }
   Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(this + 1);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -166,13 +158,9 @@ LAB_0034cb08:
 void Walaber::SoundEffectInstance::getState(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   char acStack_2c [4];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0x48) == '\0') {
     if (*(long *)(param_1 + 0x18) != 0) {
       FMOD::Channel::getPaused(*(long *)(param_1 + 0x18),acStack_2c);
@@ -190,10 +178,6 @@ LAB_0034cb74:
     uVar2 = 1;
   }
 LAB_0034cb78:
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -208,16 +192,12 @@ LAB_0034cb78:
 void Walaber::SoundEffectInstance::_initChannel(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   char *pcVar4;
   long *plVar5;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar5 = (long *)(param_1 + 0x18);
   if (*plVar5 != 0) goto LAB_0034cc8c;
   uStack_40 = 0;
@@ -242,10 +222,6 @@ void Walaber::SoundEffectInstance::_initChannel(long param_1)
   }
   Walaber::Logger::printf("Walaber-Sound",4,pcVar4,uVar3);
 LAB_0034cc8c:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -260,15 +236,11 @@ LAB_0034cc8c:
 void Walaber::SoundEffectInstance::getDuration(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   float fVar4;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   iVar2 = FMOD::Sound::getLength(**(undefined8 **)(param_1 + 8),&uStack_2c,1);
   if (iVar2 == 0) {
     fVar4 = (float)NEON_ucvtf(uStack_2c);
@@ -279,10 +251,6 @@ void Walaber::SoundEffectInstance::getDuration(long param_1)
     Walaber::Logger::printf("Walaber-Sound",4,"ERROR getting sound length! [%s]\n",uVar3);
     fVar4 = 0.0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(fVar4);
   return;
 }
 
@@ -455,24 +423,16 @@ void Walaber::SoundEffectInstance::setPlaybackPosition(uint p0)
 void Walaber::SoundEffectInstance::getPlaybackPosition(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   if ((*(long *)(param_1 + 0x18) != 0) &&
      (iVar2 = FMOD::Channel::getPosition(*(long *)(param_1 + 0x18),&uStack_2c,2), iVar2 != 0)) {
     uVar3 = func_0x0034cf84();
     Walaber::Logger::printf("Walaber-Sound",4,"ERROR getting position! [%s]\n",uVar3);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_2c);
   return;
 }
 
@@ -487,15 +447,11 @@ void Walaber::SoundEffectInstance::getPlaybackPosition(long param_1)
 void Walaber::SoundEffectInstance::getLength(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 uVar3;
   undefined8 uVar4;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_2c = 0;
   iVar2 = FMOD::Sound::getLength(**(undefined8 **)(param_1 + 8),&uStack_2c,2);
   uVar3 = uStack_2c;
@@ -503,10 +459,6 @@ void Walaber::SoundEffectInstance::getLength(long param_1)
     uVar4 = func_0x0034cf84();
     Walaber::Logger::printf("Walaber-Sound",4,"ERROR getting sound length! [%s]\n",uVar4);
     uVar3 = 0;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(uVar3);
-    return;
   }
   return;
 }
@@ -522,7 +474,6 @@ void Walaber::SoundEffectInstance::getLength(long param_1)
 void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   int iVar4;
@@ -538,11 +489,8 @@ void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2)
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
   uVar5 = (ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -590,10 +538,6 @@ LAB_0034d174:
   }
   iVar4 = 0;
 LAB_0034d1c8:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(iVar4);
   return;
 }
 
@@ -611,7 +555,6 @@ void Walaber::SoundEffectInstance::saveToWAV(long param_1,byte *param_2,int para
 {
   uint uVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   undefined8 uVar5;
   long lVar6;
@@ -626,10 +569,7 @@ void Walaber::SoundEffectInstance::saveToWAV(long param_1,byte *param_2,int para
   undefined4 uStack_5c;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   iVar4 = FMOD::Sound::getFormat(**(undefined8 **)(param_1 + 8),auStack_64,&iStack_68,&iStack_6c,auStack_70
                          );
   if (iVar4 == 0) {
@@ -693,10 +633,6 @@ LAB_0034d33c:
     Walaber::Logger::printf("Walaber-Sound",4,pcVar7,uVar5);
   }
 LAB_0034d38c:
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -714,7 +650,6 @@ void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1)
 {
   uint uVar1;
   uint uVar2;
-  long lVar3;
   int in_w2;
   int iStack_78;
   float fStack_74;
@@ -729,10 +664,7 @@ void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1)
   int iStack_40;
   undefined2 uStack_3c;
   undefined2 uStack_3a;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   if (*(long *)(p0 + 8) != 0) {
     fseek(p1,0,0);
     FMOD::Sound::getFormat(**(undefined8 **)(p0 + 8),0,&iStack_78,aiStack_6c,&iStack_70);
@@ -760,10 +692,6 @@ void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1)
     fwrite(&uStack_50,0x18,1,p1);
     fwrite(auStack_58,8,1,p1);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

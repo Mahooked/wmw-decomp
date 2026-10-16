@@ -35,15 +35,11 @@ void std::__ndk1::
                (long param_1)
 
 {
-  long lVar1;
   long *plVar2;
   long *plVar3;
   long *plVar4;
   long alStack_40 [3];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__construct_node<std::__ndk1::pair<int const, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>> const&>(alStack_40);
   plVar3 = (long *)(param_1 + 8);
   plVar4 = plVar3;
@@ -61,10 +57,6 @@ void std::__ndk1::
   }
 LAB_003645ec:
   std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__insert_node_at(param_1,plVar3,plVar4);
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(alStack_40[0]);
-    return;
-  }
   return;
 }
 

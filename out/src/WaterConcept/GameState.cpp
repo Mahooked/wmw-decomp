@@ -74,13 +74,9 @@ void WaterConcept::GameState::GameState(WaterConcept__World *p0)
 void WaterConcept::GameState::reset(long param_1)
 
 {
-  long lVar1;
   undefined8 uStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *(undefined4 *)(param_1 + 0xdc) = 0;
   *(undefined4 *)(param_1 + 0xe8) = 0;
   *(undefined4 *)(param_1 + 0x158) = 0;
@@ -104,10 +100,6 @@ void WaterConcept::GameState::reset(long param_1)
     *(undefined8 *)(param_1 + 0xb0) = 0;
     Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -126,16 +118,12 @@ void WaterConcept::GameState::GameState
                (long param_1,long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5)
 
 {
-  long lVar1;
   ulong uVar2;
   void *pvStack_98;
   void *pvStack_90;
   void *pvStack_80;
   void *pvStack_78;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   *(undefined1 *)(param_1 + 0x90) = 0;
   memset(param_1,0,0x78);
   *(undefined8 *)(param_1 + 0xf0) = 0;
@@ -207,10 +195,6 @@ void WaterConcept::GameState::GameState
   } while (uVar2 != 5);
                     /* try { // try from 00429cb0 to 00429cb7 has its CatchHandler @ 00429d20 */
   WaterConcept::GameState::reset(param_1);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -231,7 +215,6 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
   long *plVar1;
   int *piVar2;
   int iVar3;
-  long lVar4;
   undefined8 *puVar5;
   undefined8 uVar6;
   int *piVar7;
@@ -268,10 +251,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
   uint uStack_94;
   undefined8 *puStack_90;
   int *piStack_88;
-  long lStack_80;
   
-  lVar4 = tpidr_el0;
-  lStack_80 = *(long *)(lVar4 + 0x28);
   puVar14 = param_1 + 6;
   param_1[7] = *puVar14;
   puVar12 = param_1 + 9;
@@ -925,10 +905,6 @@ LAB_0042a07c:
   }
   Walaber::PropertyList::~PropertyList(&uStack_a8);
 switchD_00429e9c_default:
-  if (*(long *)(lVar4 + 0x28) == lStack_80) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1084,7 +1060,6 @@ void WaterConcept::GameState::init
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   undefined4 uVar5;
   ulong uVar6;
@@ -1093,10 +1068,7 @@ void WaterConcept::GameState::init
   void *pvStack_70;
   void *pvStack_60;
   void *pvStack_58;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   bVar2 = *param_2;
   uVar6 = *(ulong *)(param_2 + 8);
   uVar7 = (ulong)(bVar2 >> 1);
@@ -1159,10 +1131,6 @@ LAB_0042b434:
     pvStack_58 = pvStack_60;
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1178,16 +1146,12 @@ void WaterConcept::GameState::_gotSE(void *p0)
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   ulong uVar4;
   int *in_x1;
   ulong auStack_50 [2];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   iVar1 = *in_x1;
   if (iVar1 < 0xfdc) {
     if (iVar1 != 0x14) {
@@ -1219,10 +1183,6 @@ LAB_0042b570:
   if ((uVar4 & 1) != 0) {
     Walaber::SoundEffectInstance::play(0x3f800000,*(undefined8 *)(in_x1 + 2));
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1240,7 +1200,6 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
 {
   byte *pbVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   undefined2 uVar5;
   ulong uVar6;
@@ -1256,10 +1215,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
   byte *pbStack_90;
   long lStack_80;
   long lStack_78;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   Walaber::StringHelper::split(&lStack_80,param_2,0x20);
   if (lStack_80 != lStack_78) {
     lVar9 = lStack_80;
@@ -1539,10 +1495,6 @@ LAB_0042be0c:
     } while (lVar9 != lStack_78);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1813,7 +1765,6 @@ int WaterConcept::GameState::getNumSecondaryGoals(long param_1)
 void WaterConcept::GameState::audioUpdate(float p0,int p1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined8 *puVar4;
@@ -1838,11 +1789,8 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
   int *piStack_80;
   void *pvStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
   uVar3 = (ulong)(uint)p1;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (0.0 < *(float *)(uVar3 + 0x98)) {
     *(float *)(uVar3 + 0x98) = *(float *)(uVar3 + 0x98) - p0;
     goto LAB_0042caac;
@@ -2034,10 +1982,6 @@ LAB_0042caac:
      (*(long *)(uVar3 + 0xb8) != 0)) {
     Walaber::SoundEffectInstance::pause();
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2260,7 +2204,6 @@ void WaterConcept::GameState::_switchChangeCallback(void *p0)
 
 {
   long lVar1;
-  long lVar2;
   ulong uVar3;
   long *in_x1;
   void *pvVar4;
@@ -2268,10 +2211,7 @@ void WaterConcept::GameState::_switchChangeCallback(void *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (*in_x1 == 0) goto LAB_0042d030;
   lVar1 = *in_x1 + 0x24;
   uStack_60 = 0;
@@ -2303,10 +2243,6 @@ LAB_0042cffc:
     operator delete(pvStack_50);
   }
 LAB_0042d030:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2364,7 +2300,6 @@ void WaterConcept::GameState::_notifyExplosion
 void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   long in_x1;
   void *pvVar3;
@@ -2372,10 +2307,7 @@ void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_60 = 0;
   uStack_58 = 0;
   pvStack_50 = (void *)0x0;
@@ -2404,10 +2336,6 @@ LAB_0042d160:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2423,7 +2351,6 @@ void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
 
 {
   uint uVar1;
-  long lVar2;
   ulong uVar3;
   long *in_x1;
   long lVar4;
@@ -2434,10 +2361,7 @@ void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
   void *pvStack_70;
   undefined1 auStack_68 [8];
   undefined1 *puStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uVar1 = *(uint *)(in_x1 + 1);
   if ((8 < uVar1) || ((1 << (ulong)(uVar1 & 0x1f) & 0x1c7U) == 0)) goto LAB_0042d2d0;
   lVar4 = *in_x1;
@@ -2472,10 +2396,6 @@ LAB_0042d284:
     operator delete(pvStack_70);
   }
 LAB_0042d2d0:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

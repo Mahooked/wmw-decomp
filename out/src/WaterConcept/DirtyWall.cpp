@@ -14,15 +14,11 @@ void WaterConcept::DirtyWall::DirtyWall
                (Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined4 in_register_00005004;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,0,0);
@@ -36,10 +32,6 @@ void WaterConcept::DirtyWall::DirtyWall
   *(undefined8 *)((long)p0 + 1000) = 0;
   *(undefined8 *)((long)p0 + 0x3e0) = 0;
   *(undefined8 *)((long)p0 + 0x3d8) = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -94,7 +86,6 @@ void WaterConcept::DirtyWall::~DirtyWall(void *param_1)
 void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   long lVar2;
   byte bStack_50;
   undefined7 uStack_4f;
@@ -103,10 +94,7 @@ void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
   undefined1 uStack_43;
   undefined2 uStack_42;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   uStack_42 = 0;
   pvStack_40 = (void *)0x0;
@@ -124,10 +112,6 @@ void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
     Walaber::Property::asVector2(&bStack_50,lVar2);
     *(ulong *)((long)&p0[0x28].f_0x8 + 4) = CONCAT71(uStack_4f,bStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -143,7 +127,6 @@ void WaterConcept::DirtyWall::setProperties(Walaber__PropertyList *p0)
 void WaterConcept::DirtyWall::update(float p0)
 
 {
-  long lVar1;
   long in_x0;
   long *plVar2;
   uint uVar3;
@@ -154,10 +137,7 @@ void WaterConcept::DirtyWall::update(float p0)
   undefined8 uStack_70;
   undefined4 uStack_68;
   undefined8 uStack_64;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   puVar4 = *(undefined4 **)(in_x0 + 0x3d8);
   if (puVar4 != *(undefined4 **)(in_x0 + 0x3e0)) {
@@ -212,10 +192,6 @@ void WaterConcept::DirtyWall::update(float p0)
            (uVar3 & ((int)uVar3 >> 0x1f ^ 0xffffffffU) & 0xff) * 0x1010101;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

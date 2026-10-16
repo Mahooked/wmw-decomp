@@ -73,7 +73,6 @@ void Walaber::Transition::setup(float p0)
 void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -93,10 +92,7 @@ void Walaber::Transition::setup(float p0,Walaber__PropertyList *p1)
   void *pvStack_68;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   (**(code **)p1->f_0x0)(CONCAT44(in_register_00005004,p0));
   uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
@@ -216,10 +212,6 @@ LAB_003f43dc:
     *(undefined1 *)((long)&p1[5].f_0x10 + 2) = uStack_75;
   }
 LAB_003f44a8:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -262,14 +254,10 @@ void Walaber::Transition::draw(void)
 void Walaber::Transition::_drawFont(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar2 = *(long *)(param_1 + 0x90);
   if (lVar2 != 0) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1 + 0x98);
@@ -280,10 +268,6 @@ void Walaber::Transition::_drawFont(long param_1)
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

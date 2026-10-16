@@ -188,7 +188,6 @@ void Walaber::NumericAnimationTrack::setAnimation(Walaber__Animation *p0)
 void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -202,10 +201,7 @@ void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 par
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_0070e368;
@@ -237,10 +233,6 @@ void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 par
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NumericAnimationTrack>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

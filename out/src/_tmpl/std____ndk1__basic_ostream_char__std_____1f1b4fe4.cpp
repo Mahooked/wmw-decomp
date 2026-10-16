@@ -16,7 +16,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 
 {
   undefined1 *puVar1;
-  long lVar2;
   undefined1 uVar3;
   int iVar4;
   long *plVar5;
@@ -24,10 +23,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   long lVar7;
   undefined1 auStack_58 [8];
   long *plStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   auStack_58[0] = 0;
   plVar5 = (long *)(*param_1 + -0x18);
   plStack_50 = param_1;
@@ -84,10 +80,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   }
 LAB_005ad484:
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_58);
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return param_1;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 LAB_005ad5ac:
   if (lVar7 == 0) {

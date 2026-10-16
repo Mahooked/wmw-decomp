@@ -12,18 +12,10 @@
 void Walaber::SoundResource::SoundResource(FMOD__Sound *p0)
 
 {
-  long lVar1;
   undefined8 in_x1;
-  long lVar2;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   *(undefined8 *)p0 = in_x1;
   FMOD::Sound::getName();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -38,22 +30,14 @@ void Walaber::SoundResource::SoundResource(FMOD__Sound *p0)
 void Walaber::SoundResource::~SoundResource(long *param_1)
 
 {
-  long lVar1;
   undefined1 auStack_68 [64];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 0034c860 to 0034c877 has its CatchHandler @ 0034c8a0 */
   FMOD::Sound::getName(*param_1,auStack_68,0x40);
   if (*param_1 != 0) {
     FMOD::Sound::release();
   }
   *param_1 = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

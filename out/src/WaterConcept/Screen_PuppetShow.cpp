@@ -84,7 +84,6 @@ void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(void *param_1)
 void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   byte bVar2;
   undefined4 uVar3;
   ulong uVar4;
@@ -126,10 +125,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   undefined4 uStack_64;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_67 = 0;
   uStack_65 = 0;
@@ -485,10 +481,6 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -503,14 +495,10 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
 void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0)
 
 {
-  long lVar1;
   long in_x1;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x340,in_x1 + 8);
   lStack_48 = *(long *)(in_x1 + 8);
   piStack_40 = *(int **)(in_x1 + 0x10);
@@ -519,10 +507,6 @@ void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0)
   }
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x2f8,&lStack_48);
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&lStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -538,15 +522,11 @@ void WaterConcept::Screen_PuppetShow::_fileExists(void *p0)
 
 {
   long lVar1;
-  long lVar2;
   ulong uVar3;
   long in_x1;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (*(char *)(in_x1 + 0x18) == '\0') {
     Walaber::ScreenManager::popAllScreens();
     lVar1 = (long)p0 + 800;
@@ -581,10 +561,6 @@ void WaterConcept::Screen_PuppetShow::_fileExists(void *p0)
   else {
     WaterConcept::ParallaxPuppetShow::init((long)p0 + 0x90);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -623,7 +599,6 @@ void WaterConcept::Screen_PuppetShow::enter(long param_1)
 void WaterConcept::Screen_PuppetShow::_buildUI(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uStack_70;
   undefined8 uStack_68;
@@ -631,10 +606,7 @@ void WaterConcept::Screen_PuppetShow::_buildUI(long param_1)
   undefined8 uStack_58;
   ulong auStack_50 [2];
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_40 = (char *)operator new(0x20);
   auStack_50[1] = 0x17;
   auStack_50[0] = 0x21;
@@ -656,10 +628,6 @@ void WaterConcept::Screen_PuppetShow::_buildUI(long param_1)
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pcStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -674,14 +642,10 @@ void WaterConcept::Screen_PuppetShow::_buildUI(long param_1)
 void WaterConcept::Screen_PuppetShow::exit(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(long *)(param_1 + 0x340) != 0) {
     Walaber::SoundEffectInstance::stop();
     uStack_38 = *(undefined8 *)(param_1 + 0x348);
@@ -692,10 +656,6 @@ void WaterConcept::Screen_PuppetShow::exit(long param_1)
     uVar2 = Walaber::SoundManager::getInstancePtr();
     Walaber::SoundManager::freeGroup(uVar2,*(undefined4 *)(param_1 + 0x338),1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -745,7 +705,6 @@ void WaterConcept::Screen_PuppetShow::regainedTop(long param_1)
 void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
 
 {
-  long lVar1;
   ulong uVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -763,11 +722,8 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
   undefined5 uStack_75;
   byte abStack_70 [16];
   void *apvStack_60 [3];
-  long lStack_48;
   
   uVar2 = (ulong)p1;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::WidgetManager::update(*(undefined8 *)(uVar2 + 0x10));
   uVar3 = WaterConcept::ParallaxPuppetShow::update(CONCAT44(in_register_00005004,p0),uVar2 + 0x90);
   if (((uVar3 & 1) == 0) && (*(char *)(uVar2 + 0x314) == '\0')) {
@@ -946,10 +902,6 @@ LAB_0055ce38:
     lVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar2 + 0x10),3);
     *(undefined1 *)(lVar5 + 0x8c) = 0;
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -999,7 +951,6 @@ void WaterConcept::Screen_PuppetShow::handleEvent
 
 {
   int iVar1;
-  long lVar2;
   float *pfVar3;
   long lVar4;
   undefined8 uVar5;
@@ -1015,11 +966,8 @@ void WaterConcept::Screen_PuppetShow::handleEvent
   char *pcStack_60;
   byte abStack_50 [18];
   undefined6 uStack_3e;
-  long lStack_38;
   
   uVar6 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((int)p1 == 0) {
     iVar1 = *(int *)((long)&p2->f_0x8 + 4);
     if (iVar1 != 3) {
@@ -1223,10 +1171,6 @@ void WaterConcept::Screen_PuppetShow::handleEvent
   }
   Walaber::PropertyList::~PropertyList(pfVar3);
 LAB_0055d114:
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1241,12 +1185,8 @@ LAB_0055d114:
 void WaterConcept::Screen_PuppetShow::backKeyPressed(long param_1)
 
 {
-  long lVar1;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0xc) == '\0') {
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popAllScreens();
@@ -1257,10 +1197,6 @@ void WaterConcept::Screen_PuppetShow::backKeyPressed(long param_1)
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
     Walaber::PropertyList::~PropertyList(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

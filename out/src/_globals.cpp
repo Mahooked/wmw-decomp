@@ -1285,7 +1285,6 @@ void xmlCleanupEncodingAliases(void)
 void xmlGetEncodingAlias(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   byte bVar3;
   int iVar4;
@@ -1295,11 +1294,8 @@ void xmlGetEncodingAlias(long param_1)
   ulong uVar8;
   long lVar9;
   byte abStack_ac [100];
-  long lStack_48;
   
   lVar2 = DAT_0072aad0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   if ((param_1 != 0) && (DAT_0072aad0 != 0)) {
     uVar8 = 0;
@@ -1327,10 +1323,6 @@ void xmlGetEncodingAlias(long param_1)
     uVar5 = 0;
   }
 LAB_0024ff04:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -1343,7 +1335,6 @@ LAB_0024ff04:
 void xmlAddEncodingAlias(long param_1,long param_2)
 
 {
-  long lVar1;
   byte bVar2;
   int iVar3;
   undefined8 uVar4;
@@ -1354,10 +1345,7 @@ void xmlAddEncodingAlias(long param_1,long param_2)
   long lVar9;
   long lVar10;
   byte abStack_bc [100];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar4 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != 0)) {
     uVar7 = 0;
@@ -1411,10 +1399,6 @@ void xmlAddEncodingAlias(long param_1,long param_2)
     *(undefined8 *)(DAT_0072aad0 + lVar6 * 0x10 + 8) = uVar5;
   }
 LAB_002500f4:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -1464,17 +1448,13 @@ undefined8 xmlDelEncodingAlias(long param_1)
 void xmlParseCharEncoding(long param_1)
 
 {
-  long lVar1;
   byte bVar2;
   int iVar3;
   long lVar4;
   undefined4 uVar5;
-  long lVar6;
   ulong uVar7;
   byte abStack_23c [508];
   
-  lVar1 = tpidr_el0;
-  lVar6 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   if (param_1 != 0) {
     lVar4 = xmlGetEncodingAlias();
@@ -1594,10 +1574,6 @@ void xmlParseCharEncoding(long param_1)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lVar6) {
-    __stack_chk_fail(uVar5);
-    return;
-  }
   return;
 }
 
@@ -1625,16 +1601,12 @@ undefined * xmlGetCharEncodingName(int param_1)
 long * xmlNewCharEncodingHandler(long param_1,long param_2,long param_3)
 
 {
-  long lVar1;
   byte bVar2;
   long lVar3;
   long *plVar4;
-  long lVar5;
   ulong uVar6;
   byte abStack_24c [508];
   
-  lVar1 = tpidr_el0;
-  lVar5 = *(long *)(lVar1 + 0x28);
   lVar3 = xmlGetEncodingAlias();
   if (lVar3 != 0) {
     param_1 = lVar3;
@@ -1670,10 +1642,6 @@ long * xmlNewCharEncodingHandler(long param_1,long param_2,long param_3)
   }
   plVar4 = (long *)0x0;
 LAB_0025068c:
-  if (*(long *)(lVar1 + 0x28) == lVar5) {
-    return plVar4;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 
@@ -1915,7 +1883,6 @@ undefined8 * xmlFindCharEncodingHandler(char *param_1)
 
 {
   char *pcVar1;
-  long lVar2;
   byte bVar3;
   int iVar4;
   char *pcVar5;
@@ -1925,10 +1892,7 @@ undefined8 * xmlFindCharEncodingHandler(char *param_1)
   long lVar9;
   long lVar10;
   byte abStack_bc [100];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   if (DAT_0072aae0 == 0) {
     xmlInitCharEncodingHandlers();
   }
@@ -1966,10 +1930,6 @@ undefined8 * xmlFindCharEncodingHandler(char *param_1)
   }
   puVar7 = (undefined8 *)0x0;
 LAB_00251770:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    puVar7 = (undefined8 *)__stack_chk_fail();
-    return puVar7;
-  }
   return puVar7;
 }
 
@@ -1982,15 +1942,11 @@ LAB_00251770:
 void xmlCharEncFirstLineInt(long param_1,long *param_2,undefined8 *param_3,int param_4)
 
 {
-  long lVar1;
   uint uVar2;
   uint uVar3;
   int iStack_40;
   int iStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   if (((param_1 != 0) && (param_2 != (long *)0x0)) && (param_3 != (undefined8 *)0x0)) {
     uVar3 = *(uint *)(param_2 + 1);
@@ -2024,10 +1980,6 @@ void xmlCharEncFirstLineInt(long param_1,long *param_2,undefined8 *param_3,int p
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -2054,17 +2006,13 @@ void xmlCharEncInFunc(long param_1,long *param_2,undefined8 *param_3)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   undefined1 *puVar4;
   int iStack_74;
   int iStack_70;
   undefined1 auStack_6c [49];
   undefined1 uStack_3b;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   iVar3 = -1;
   if (((param_1 == 0) || (param_2 == (long *)0x0)) || (param_3 == (undefined8 *)0x0))
   goto LAB_00251a44;
@@ -2105,10 +2053,6 @@ LAB_002519ac:
     iVar3 = iStack_70;
   }
 LAB_00251a44:
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail(iVar3);
-    return;
-  }
   return;
 }
 
@@ -2121,7 +2065,6 @@ LAB_00251a44:
 ulong xmlCharEncOutFunc(long param_1,long *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   uint uVar4;
@@ -2132,10 +2075,7 @@ ulong xmlCharEncOutFunc(long param_1,long *param_2,undefined8 *param_3)
   int iStack_80;
   undefined1 auStack_7c [49];
   undefined1 uStack_4b;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar6 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != (long *)0x0)) {
     uVar6 = (ulong)*(uint *)(param_2 + 1);
@@ -2206,10 +2146,6 @@ ulong xmlCharEncOutFunc(long param_1,long *param_2,undefined8 *param_3)
     uVar6 = 0;
   }
 LAB_00251c1c:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -2625,7 +2561,6 @@ byte * xmlEncodeEntitiesReentrant(long param_1,byte *param_2)
 
 {
   byte bVar1;
-  long lVar2;
   bool bVar3;
   byte *pbVar4;
   byte *pbVar5;
@@ -2638,10 +2573,7 @@ byte * xmlEncodeEntitiesReentrant(long param_1,byte *param_2)
   int iVar12;
   byte abStack_74 [10];
   undefined1 uStack_6a;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (param_2 != (byte *)0x0) {
     if (param_1 == 0) {
       bVar3 = false;
@@ -2810,10 +2742,6 @@ LAB_00252a0c:
   }
   pbVar5 = (byte *)0x0;
 LAB_00252d00:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return pbVar5;
-  }
-  pbVar4 = (byte *)__stack_chk_fail();
   return pbVar4;
 }
 
@@ -3135,8 +3063,6 @@ void xmlGenericErrorDefaultFunc
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -3148,8 +3074,6 @@ void xmlGenericErrorDefaultFunc
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   if (xmlGenericErrorContext == 0) {
     xmlGenericErrorContext = _stderr;
   }
@@ -3164,10 +3088,6 @@ void xmlGenericErrorDefaultFunc
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   vfprintf(xmlGenericErrorContext,param_2,&puStack_70);
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3268,7 +3188,6 @@ void FUN_002536a0(long param_1,code *param_2,undefined8 param_3)
 {
   char *pcVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   byte *pbVar5;
   char *pcVar6;
@@ -3277,10 +3196,7 @@ void FUN_002536a0(long param_1,code *param_2,undefined8 param_3)
   char cVar9;
   uint uVar10;
   byte abStack_9c [84];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   if (param_1 != 0) {
     pcVar1 = *(char **)(param_1 + 0x18);
     for (pcVar6 = *(char **)(param_1 + 0x20);
@@ -3335,10 +3251,6 @@ LAB_00253768:
     pbVar5[1] = 0;
     (*param_2)(param_3,"%s\n",abStack_9c);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3353,13 +3265,11 @@ void __xmlRaiseError(code *param_1,code *param_2,long param_3,long *param_4,long
                     long param_12,long param_13,uint param_14,uint param_15,long param_16)
 
 {
-  long lVar1;
   bool bVar2;
   bool bVar3;
   int iVar4;
   long lVar5;
   undefined8 uVar6;
-  long lVar7;
   long lVar8;
   uint uVar9;
   undefined1 *puVar10;
@@ -3378,8 +3288,6 @@ void __xmlRaiseError(code *param_1,code *param_2,long param_3,long *param_4,long
   undefined1 **ppuStack_88;
   undefined8 uStack_80;
   
-  lVar1 = tpidr_el0;
-  lVar7 = *(long *)(lVar1 + 0x28);
   if ((param_8 == 1) && (xmlGetWarningsDefaultValue == 0)) goto LAB_00253ddc;
   plVar11 = (long *)0x0;
   if ((param_6 < 0x18) &&
@@ -3598,10 +3506,6 @@ LAB_00253bfc:
     (*param_1)(lVar5,puVar10);
   }
 LAB_00253ddc:
-  if (*(long *)(lVar1 + 0x28) != lVar7) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3616,12 +3520,10 @@ void xmlParserValidityError
                undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   int iVar4;
   long lVar5;
-  long lVar6;
   int iVar7;
   long lVar8;
   int iVar9;
@@ -3637,8 +3539,6 @@ void xmlParserValidityError
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
-  lVar1 = tpidr_el0;
-  lVar6 = *(long *)(lVar1 + 0x28);
   uStack_f0 = param_3;
   uStack_e8 = param_4;
   uStack_e0 = param_5;
@@ -3699,10 +3599,6 @@ void xmlParserValidityError
   if ((param_1 != 0) && (lStack_190 != 0)) {
     FUN_002536a0(lStack_190,xmlGenericError,xmlGenericErrorContext);
   }
-  if (*(long *)(lVar1 + 0x28) != lVar6) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3717,12 +3613,10 @@ void xmlParserValidityWarning
                undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   int iVar4;
   long lVar5;
-  long lVar6;
   int iVar7;
   long lVar8;
   long lVar9;
@@ -3738,8 +3632,6 @@ void xmlParserValidityWarning
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
-  lVar1 = tpidr_el0;
-  lVar6 = *(long *)(lVar1 + 0x28);
   uStack_f0 = param_3;
   uStack_e8 = param_4;
   uStack_e0 = param_5;
@@ -3792,10 +3684,6 @@ void xmlParserValidityWarning
   }
   if (param_1 != 0) {
     FUN_002536a0(lVar8,xmlGenericError,xmlGenericErrorContext);
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar6) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -3898,10 +3786,8 @@ void xmlParserError(long param_1,undefined8 param_2,undefined8 param_3,undefined
                    undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   long lVar6;
   int iVar7;
@@ -3920,8 +3806,6 @@ void xmlParserError(long param_1,undefined8 param_2,undefined8 param_3,undefined
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_f0 = param_3;
   uStack_e8 = param_4;
   uStack_e0 = param_5;
@@ -3986,10 +3870,6 @@ void xmlParserError(long param_1,undefined8 param_2,undefined8 param_3,undefined
     (*(code *)xmlGenericError)(xmlGenericErrorContext,&DAT_0061b9ce);
     FUN_002536a0(lVar6,xmlGenericError,xmlGenericErrorContext);
   }
-  if (*(long *)(lVar1 + 0x28) != lVar4) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4003,10 +3883,8 @@ void xmlParserWarning(long param_1,undefined8 param_2,undefined8 param_3,undefin
                      undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   long lVar6;
   int iVar7;
@@ -4025,8 +3903,6 @@ void xmlParserWarning(long param_1,undefined8 param_2,undefined8 param_3,undefin
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_f0 = param_3;
   uStack_e8 = param_4;
   uStack_e0 = param_5;
@@ -4090,10 +3966,6 @@ void xmlParserWarning(long param_1,undefined8 param_2,undefined8 param_3,undefin
     }
     (*(code *)xmlGenericError)(xmlGenericErrorContext,&DAT_0061b9ce);
     FUN_002536a0(lVar6,xmlGenericError,xmlGenericErrorContext);
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar4) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -5695,20 +5567,12 @@ void xmlHashQLookup2(void)
 void xmlHashScan(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_38 = param_2;
   uStack_30 = param_3;
   xmlHashScanFull(param_1,0x25673c,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6238,7 +6102,6 @@ void UTF8ToHtml(undefined1 *param_1,int *param_2,byte *param_3,int *param_4)
 
 {
   byte *pbVar1;
-  long lVar2;
   byte *pbVar3;
   undefined8 uVar4;
   uint uVar5;
@@ -6254,10 +6117,7 @@ void UTF8ToHtml(undefined1 *param_1,int *param_2,byte *param_3,int *param_4)
   byte *pbVar15;
   byte *pbVar16;
   undefined1 auStack_78 [16];
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   uVar4 = 0xffffffff;
   if (((param_1 != (undefined1 *)0x0) && (param_2 != (int *)0x0)) && (param_4 != (int *)0x0)) {
     if (param_3 == (byte *)0x0) {
@@ -6352,10 +6212,6 @@ LAB_0025700c:
 LAB_00257084:
     *param_4 = iVar7;
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -6370,7 +6226,6 @@ void htmlEncodeEntities(undefined1 *param_1,int *param_2,byte *param_3,int *para
 {
   byte *pbVar1;
   undefined1 *puVar2;
-  long lVar3;
   int iVar4;
   undefined8 uVar5;
   uint uVar6;
@@ -6384,10 +6239,7 @@ void htmlEncodeEntities(undefined1 *param_1,int *param_2,byte *param_3,int *para
   undefined *puVar14;
   byte *pbVar15;
   undefined1 auStack_78 [16];
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   uVar5 = 0xffffffff;
   if ((((param_3 != (byte *)0x0) && (param_1 != (undefined1 *)0x0)) && (param_2 != (int *)0x0)) &&
      (param_4 != (int *)0x0)) {
@@ -6481,10 +6333,6 @@ LAB_002572d4:
     }
     *param_2 = iVar13 - iVar12;
     *param_4 = (int)pbVar11 - (int)param_3;
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar5);
-    return;
   }
   return;
 }
@@ -6634,7 +6482,6 @@ void FUN_00257608(long param_1)
 
 {
   byte bVar1;
-  long lVar2;
   uint uVar3;
   int iVar4;
   int iVar5;
@@ -6647,10 +6494,7 @@ void FUN_00257608(long param_1)
   byte *pbVar12;
   ulong uVar13;
   int iStack_6c;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((*(int *)(param_1 + 0x1c4) == 0) &&
      (lVar6 = *(long *)(param_1 + 0x38), *(long *)(lVar6 + 0x28) - *(long *)(lVar6 + 0x20) < 0xfa))
   {
@@ -6751,10 +6595,6 @@ LAB_002577dc:
   }
   uVar7 = 0;
 LAB_002579b4:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar7);
-    return;
-  }
   return;
 }
 
@@ -6891,7 +6731,6 @@ void htmlParseElement(long *param_1)
 {
   byte bVar1;
   int iVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   long lVar6;
@@ -6908,10 +6747,7 @@ void htmlParseElement(long *param_1)
   long lStack_60;
   long lStack_58;
   long lStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   if ((param_1 == (long *)0x0) || (lVar6 = param_1[7], lVar6 == 0)) {
     FUN_00257a1c(param_1,1,"htmlParseElement: context error\n",0,0);
   }
@@ -7032,10 +6868,6 @@ LAB_002583b0:
     }
   }
 LAB_00258364:
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7049,7 +6881,6 @@ ulong htmlParseDocument(long *param_1)
 
 {
   undefined1 *puVar1;
-  long lVar2;
   int iVar3;
   long lVar4;
   undefined8 uVar5;
@@ -7061,10 +6892,7 @@ ulong htmlParseDocument(long *param_1)
   undefined1 uStack_3b;
   undefined1 uStack_3a;
   undefined1 uStack_39;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   xmlInitParser();
   htmlDefaultSAXHandlerInit();
   if ((param_1 == (long *)0x0) || (lVar4 = param_1[7], lVar4 == 0)) {
@@ -7148,10 +6976,6 @@ ulong htmlParseDocument(long *param_1)
       *(undefined8 *)(param_1[2] + 0x50) = uVar5;
     }
     uVar8 = -(uint)((int)param_1[3] == 0);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    uVar6 = __stack_chk_fail();
-    return uVar6;
   }
   return (ulong)uVar8;
 }
@@ -7310,7 +7134,6 @@ ulong htmlParseChunk(long *param_1,long param_2,int param_3,int param_4)
   byte bVar2;
   byte bVar3;
   int iVar4;
-  long lVar5;
   bool bVar6;
   bool bVar7;
   bool bVar8;
@@ -7332,10 +7155,7 @@ ulong htmlParseChunk(long *param_1,long param_2,int param_3,int param_4)
   int iVar24;
   ushort auStack_70 [2];
   byte abStack_6c [4];
-  long lStack_68;
   
-  lVar5 = tpidr_el0;
-  lStack_68 = *(long *)(lVar5 + 0x28);
   if ((param_1 == (long *)0x0) || (plVar23 = (long *)param_1[7], plVar23 == (long *)0x0)) {
     pcVar12 = "htmlParseChunk: context error\n";
     uVar21 = 1;
@@ -7417,10 +7237,6 @@ switchD_0025a358_caseD_ffffffff:
       }
       uVar20 = *(uint *)(param_1 + 0x11);
 LAB_0025b0c8:
-      if (*(long *)(lVar5 + 0x28) != lStack_68) {
-        uVar11 = __stack_chk_fail();
-        return uVar11;
-      }
       return (ulong)uVar20;
     }
   }
@@ -9186,7 +9002,6 @@ void htmlSetMetaEncoding(long param_1,long param_2)
 
 {
   long *plVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   undefined8 uVar5;
@@ -9197,10 +9012,7 @@ void htmlSetMetaEncoding(long param_1,long param_2)
   long lVar10;
   undefined1 auStack_cc [99];
   undefined1 uStack_69;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (param_1 != 0) {
     if (param_2 != 0) {
       snprintf(auStack_cc,100,"text/html; charset=%s",param_2);
@@ -9296,10 +9108,6 @@ LAB_0025f894:
   }
   uVar5 = 0;
 LAB_0025f72c:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar5);
-    return;
-  }
   return;
 }
 
@@ -11088,7 +10896,6 @@ void xmlParserHandlePEReference(long *param_1)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   long lVar5;
   long lVar6;
@@ -11099,10 +10906,7 @@ void xmlParserHandlePEReference(long *param_1)
   undefined1 uStack_3b;
   undefined1 uStack_3a;
   undefined1 uStack_39;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   if (**(char **)(param_1[7] + 0x20) != '%') goto switchD_00261a90_caseD_2;
   switch((int)param_1[0x22]) {
   case 0:
@@ -11208,10 +11012,6 @@ void xmlParserHandlePEReference(long *param_1)
   }
   FUN_002622b0(param_1,uVar7,0);
 switchD_00261a90_caseD_2:
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -11461,7 +11261,6 @@ void xmlParseName(long param_1)
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -11474,10 +11273,7 @@ void xmlParseName(long param_1)
   byte *pbVar12;
   int iVar13;
   int iStack_6c;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((*(int *)(param_1 + 0x1c4) == 0) &&
      (*(long *)(*(long *)(param_1 + 0x38) + 0x28) - *(long *)(*(long *)(param_1 + 0x38) + 0x20) <
       0xfa)) {
@@ -11675,10 +11471,6 @@ LAB_0026265c:
   }
   lVar6 = 0;
 LAB_002625cc:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(lVar6);
-    return;
-  }
   return;
 }
 
@@ -11804,7 +11596,6 @@ long xmlStringLenDecodeEntities
   int iVar5;
   undefined8 *puVar6;
   long lVar7;
-  long lVar8;
   long lVar9;
   undefined1 *puVar10;
   undefined8 uVar11;
@@ -11822,10 +11613,7 @@ long xmlStringLenDecodeEntities
   int iStack_7c;
   char *pcStack_78;
   int iStack_6c;
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   lVar17 = 0;
   pcStack_78 = param_2;
   if (((param_1 == 0) || (param_2 == (char *)0x0)) || (param_3 < 0)) goto LAB_00263c50;
@@ -12217,10 +12005,6 @@ LAB_00263c34:
   }
   lVar17 = 0;
 LAB_00263c50:
-  if (*(long *)(lVar8 + 0x28) != lStack_68) {
-    lVar8 = __stack_chk_fail();
-    return lVar8;
-  }
   return lVar17;
 }
 
@@ -12236,17 +12020,13 @@ long xmlParseStringEntityRef(long *param_1,long *param_2)
   long lVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
   undefined8 uVar5;
   char *pcVar6;
   uint uVar7;
   char *pcVar8;
   code *pcVar9;
   char *pcStack_50;
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   if (((param_2 == (long *)0x0) || (pcVar8 = (char *)*param_2, pcVar8 == (char *)0x0)) ||
      (pcStack_50 = pcVar8, *pcVar8 != '&')) {
     lVar2 = 0;
@@ -12321,10 +12101,6 @@ LAB_00263ef4:
   }
   *param_2 = (long)pcVar8;
 LAB_00263d20:
-  if (*(long *)(lVar4 + 0x28) != lStack_48) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar2;
 }
 
@@ -12436,17 +12212,13 @@ long xmlSplitQName(undefined8 param_1,byte *param_2,long *param_3)
   long lVar3;
   byte *pbVar4;
   long lVar5;
-  long lVar6;
   int iVar7;
   byte bVar8;
   ulong uVar9;
   byte *pbVar10;
   undefined1 auStack_d8 [4];
   byte abStack_d4 [108];
-  long lStack_68;
   
-  lVar6 = tpidr_el0;
-  lStack_68 = *(long *)(lVar6 + 0x28);
   if ((param_3 == (long *)0x0) || (*param_3 = 0, param_2 == (byte *)0x0)) {
 LAB_00264544:
     lVar3 = 0;
@@ -12590,10 +12362,6 @@ LAB_002643c8:
     xmlErrMemory(param_1,0);
   }
 LAB_00264548:
-  if (*(long *)(lVar6 + 0x28) != lStack_68) {
-    lVar6 = __stack_chk_fail();
-    return lVar6;
-  }
   return lVar3;
 }
 
@@ -12609,7 +12377,6 @@ long xmlParseNmtoken(long param_1)
   undefined4 uVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   long lVar6;
   char *pcVar7;
@@ -12618,10 +12385,7 @@ long xmlParseNmtoken(long param_1)
   int iVar10;
   int iStack_d8;
   undefined1 auStack_d4 [108];
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   nbParseNmToken = nbParseNmToken + 1;
   if ((*(int *)(param_1 + 0x1c4) == 0) &&
      (*(long *)(*(long *)(param_1 + 0x38) + 0x28) - *(long *)(*(long *)(param_1 + 0x38) + 0x20) <
@@ -12737,10 +12501,6 @@ LAB_00264a20:
     *(undefined1 *)(lVar5 + lVar9) = 0;
   }
 LAB_00264a24:
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar5;
 }
 
@@ -12754,7 +12514,6 @@ undefined8 xmlParseEntityValue(long param_1,undefined8 *param_2)
 
 {
   char cVar1;
-  long lVar2;
   uint uVar3;
   int iVar4;
   char *pcVar5;
@@ -12769,10 +12528,7 @@ undefined8 xmlParseEntityValue(long param_1,undefined8 *param_2)
   uint uVar14;
   char *pcStack_78;
   int iStack_6c;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   pcStack_78 = (char *)0x0;
   cVar1 = **(char **)(*(long *)(param_1 + 0x38) + 0x20);
   if (cVar1 == '\"') {
@@ -12917,10 +12673,6 @@ LAB_002650f4:
 LAB_002650fc:
   uVar7 = 0;
 LAB_00265100:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return uVar7;
-  }
-  uVar7 = __stack_chk_fail();
   return uVar7;
 }
 
@@ -12953,7 +12705,6 @@ byte * FUN_002653e4(long param_1,int *param_2,undefined4 *param_3,int param_4)
 {
   byte bVar1;
   char cVar2;
-  long lVar3;
   bool bVar4;
   byte *pbVar5;
   int iVar6;
@@ -12974,10 +12725,7 @@ byte * FUN_002653e4(long param_1,int *param_2,undefined4 *param_3,int param_4)
   byte *pbVar21;
   int iVar22;
   int iStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   if ((*(int *)(param_1 + 0x1c4) == 0) &&
      (*(long *)(*(long *)(param_1 + 0x38) + 0x28) - *(long *)(*(long *)(param_1 + 0x38) + 0x20) <
       0xfa)) {
@@ -13422,10 +13170,6 @@ LAB_00265fc8:
     *param_2 = iVar12;
   }
 LAB_00265f10:
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return pbVar19;
-  }
-  pbVar16 = (byte *)__stack_chk_fail();
   return pbVar16;
 }
 
@@ -13445,7 +13189,6 @@ long xmlParseSystemLiteral(long param_1)
   uint uVar5;
   int iVar6;
   long lVar7;
-  long lVar8;
   long lVar9;
   char *pcVar10;
   int iVar11;
@@ -13453,10 +13196,7 @@ long xmlParseSystemLiteral(long param_1)
   int iVar13;
   int iVar14;
   int iStack_6c;
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   uVar1 = *(undefined4 *)(param_1 + 0x110);
   if (*(int *)(param_1 + 0x1c4) == 0) {
     lVar9 = *(long *)(param_1 + 0x38);
@@ -13581,10 +13321,6 @@ LAB_0026634c:
   xmlErrMemory(param_1,0);
   lVar9 = lVar7;
 LAB_00266360:
-  if (*(long *)(lVar8 + 0x28) != lStack_68) {
-    lVar8 = __stack_chk_fail();
-    return lVar8;
-  }
   return lVar9;
 }
 
@@ -13910,7 +13646,6 @@ LAB_00266964:
 void xmlParseCharDataComplex(long *param_1,int param_2)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   int iVar4;
@@ -13920,10 +13655,7 @@ void xmlParseCharDataComplex(long *param_1,int param_2)
   int iVar8;
   int iStack_1a8;
   undefined1 auStack_1a4 [308];
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if (*(int *)((long)param_1 + 0x1c4) == 0) {
     lVar5 = param_1[7];
     if ((((*(long *)(lVar5 + 0x20) - *(long *)(lVar5 + 0x18) < 0x1f5) ||
@@ -14046,10 +13778,6 @@ void xmlParseCharDataComplex(long *param_1,int param_2)
     }
   }
 LAB_00266fd8:
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -14204,7 +13932,6 @@ LAB_00267364:
 void xmlParseComment(long *param_1)
 
 {
-  long lVar1;
   long lVar2;
   int iVar3;
   uint uVar4;
@@ -14228,10 +13955,7 @@ void xmlParseComment(long *param_1)
   int iStack_74;
   int iStack_70;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar10 = param_1[7];
   pcVar14 = *(char **)(lVar10 + 0x20);
   if ((((*pcVar14 != '<') || (pcVar14[1] != '!')) || (pcVar14[2] != '-')) || (pcVar14[3] != '-'))
@@ -14587,10 +14311,6 @@ LAB_00267a88:
 LAB_0026791c:
   *(int *)(param_1 + 0x22) = (int)lVar2;
 LAB_0026794c:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 LAB_00267d60:
   (*(code *)xmlFree)(lVar10);
@@ -14673,7 +14393,6 @@ void FUN_00267f2c(long param_1,undefined4 param_2,undefined8 param_3,undefined8 
 void xmlParsePI(long *param_1)
 
 {
-  long lVar1;
   long lVar2;
   int iVar3;
   uint uVar4;
@@ -14690,10 +14409,7 @@ void xmlParsePI(long *param_1)
   int *piVar15;
   int iVar16;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar12 = param_1[7];
   plVar14 = (long *)(lVar12 + 0x20);
   pcVar9 = (char *)*plVar14;
@@ -14872,10 +14588,6 @@ LAB_00268468:
     *(int *)(param_1 + 0x22) = (int)lVar2;
   }
 LAB_0026846c:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -14888,7 +14600,6 @@ LAB_0026846c:
 void xmlParseNotationDecl(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -14897,10 +14608,7 @@ void xmlParseNotationDecl(long *param_1)
   code *pcVar7;
   long lVar8;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar8 = param_1[7];
   pcVar6 = *(char **)(lVar8 + 0x20);
   if ((((((*pcVar6 != '<') || (pcVar6[1] != '!')) || (pcVar6[2] != 'N')) ||
@@ -14972,10 +14680,6 @@ void xmlParseNotationDecl(long *param_1)
   }
   FUN_00263f14(param_1,0x41,pcVar6);
 LAB_0026889c:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -14988,7 +14692,6 @@ LAB_0026889c:
 void xmlParseEntityDecl(long *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   long lVar4;
@@ -15002,10 +14705,7 @@ void xmlParseEntityDecl(long *param_1)
   long lVar12;
   long lStack_68;
   long lStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lStack_68 = 0;
   lStack_60 = 0;
   lVar12 = param_1[7];
@@ -15262,10 +14962,6 @@ joined_r0x00269050:
     (*(code *)xmlFree)(lVar5);
   }
 LAB_00269098:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -15771,7 +15467,6 @@ void xmlParseAttributeListDecl(long *param_1)
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   long lVar4;
   int iVar5;
@@ -15793,10 +15488,7 @@ void xmlParseAttributeListDecl(long *param_1)
   long lStack_90;
   long lStack_88;
   int iStack_7c;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   lVar20 = param_1[7];
   pcVar14 = *(char **)(lVar20 + 0x20);
   if ((((((*pcVar14 == '<') && (pcVar14[1] == '!')) && (pcVar14[2] == 'A')) &&
@@ -16036,10 +15728,6 @@ joined_r0x0026a4ec:
         xmlNextChar(param_1);
       }
     }
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -16556,7 +16244,6 @@ undefined4 xmlParseElementContentDecl(long param_1,undefined8 param_2,undefined8
 ulong xmlParseElementDecl(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -16569,10 +16256,7 @@ ulong xmlParseElementDecl(long *param_1)
   code *pcVar11;
   long lVar12;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lStack_50 = 0;
   lVar12 = param_1[7];
   pcVar9 = *(char **)(lVar12 + 0x20);
@@ -16709,10 +16393,6 @@ LAB_0026b640:
   }
   uVar5 = 0xffffffff;
 LAB_0026b64c:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -17056,7 +16736,6 @@ void xmlParseExternalSubset(long param_1,undefined8 param_2,undefined8 param_3)
   undefined1 *puVar1;
   uint uVar2;
   byte bVar3;
-  long lVar4;
   int iVar5;
   long lVar6;
   char *pcVar7;
@@ -17067,10 +16746,7 @@ void xmlParseExternalSubset(long param_1,undefined8 param_2,undefined8 param_3)
   undefined1 uStack_4b;
   undefined1 uStack_4a;
   undefined1 uStack_49;
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   FUN_0026c920();
   if ((*(int *)(param_1 + 0x1c4) == 0) &&
      (*(long *)(*(long *)(param_1 + 0x38) + 0x28) - *(long *)(*(long *)(param_1 + 0x38) + 0x20) <
@@ -17167,10 +16843,6 @@ LAB_0026c8d0:
     }
   }
 LAB_0026c8e0:
-  if (*(long *)(lVar4 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -17185,7 +16857,6 @@ void xmlParseReference(long *param_1)
 {
   byte bVar1;
   int iVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   undefined4 uVar6;
@@ -17205,10 +16876,7 @@ void xmlParseReference(long *param_1)
   long *plVar20;
   long lStack_60;
   undefined1 auStack_54 [12];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   lStack_60 = 0;
   pcVar14 = *(char **)(param_1[7] + 0x20);
   if (*pcVar14 != '&') goto LAB_0026cf94;
@@ -17454,10 +17122,6 @@ LAB_0026cbdc:
     (*pcVar15)(lVar9,puVar13);
   }
 LAB_0026cf94:
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -17586,7 +17250,6 @@ LAB_0026d2bc:
 void xmlParseDocTypeDecl(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -17594,10 +17257,7 @@ void xmlParseDocTypeDecl(long *param_1)
   long lVar6;
   code *pcVar7;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lStack_50 = 0;
   lVar3 = param_1[7];
   param_1[0x27] = param_1[0x27] + 9;
@@ -17639,10 +17299,6 @@ void xmlParseDocTypeDecl(long *param_1)
   }
   xmlNextChar(param_1);
 LAB_0026dbe8:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -17728,7 +17384,6 @@ long xmlParseStartTag(long *param_1)
   int iVar4;
   long lVar5;
   long lVar6;
-  long lVar7;
   char *pcVar8;
   long lVar9;
   code *pcVar10;
@@ -17743,10 +17398,7 @@ long xmlParseStartTag(long *param_1)
   byte *pbVar19;
   long lStack_78;
   long lStack_70;
-  long lStack_68;
   
-  lVar7 = tpidr_el0;
-  lStack_68 = *(long *)(lVar7 + 0x28);
   lVar5 = param_1[7];
   pcVar8 = *(char **)(lVar5 + 0x20);
   if (*pcVar8 == '<') {
@@ -17901,10 +17553,6 @@ LAB_0026e170:
   }
   lVar5 = 0;
 LAB_0026e1d4:
-  if (*(long *)(lVar7 + 0x28) != lStack_68) {
-    lVar7 = __stack_chk_fail();
-    return lVar7;
-  }
   return lVar5;
 }
 
@@ -17930,7 +17578,6 @@ void xmlParseEndTag(undefined8 param_1)
 void xmlParseCDSect(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   uint uVar3;
   uint uVar4;
@@ -17946,10 +17593,7 @@ void xmlParseCDSect(long *param_1)
   int iStack_74;
   int iStack_70;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar8 = param_1[7];
   pcVar10 = *(char **)(lVar8 + 0x20);
   if ((((((*pcVar10 != '<') || (pcVar10[1] != '!')) || (pcVar10[2] != '[')) ||
@@ -18113,10 +17757,6 @@ LAB_0026e990:
   FUN_002622b0(param_1,0x3f,0);
   *(undefined4 *)(param_1 + 0x22) = 7;
 LAB_0026e9c8:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 LAB_0026e9a8:
   (*(code *)xmlFree)(lVar8);
@@ -18229,7 +17869,6 @@ void xmlParseElement(long *param_1)
   undefined4 uVar2;
   byte bVar3;
   int iVar4;
-  long lVar5;
   int iVar6;
   long lVar7;
   char cVar8;
@@ -18244,10 +17883,7 @@ void xmlParseElement(long *param_1)
   long lStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar5 = tpidr_el0;
-  lStack_48 = *(long *)(lVar5 + 0x28);
   iVar1 = *(int *)((long)param_1 + 0x1fc);
   if ((xmlParserMaxDepth < *(uint *)(param_1 + 0x25)) &&
      ((*(byte *)((long)param_1 + 0x23e) >> 3 & 1) == 0)) {
@@ -18388,10 +18024,6 @@ void xmlParseElement(long *param_1)
     }
   }
 LAB_0026ef74:
-  if (*(long *)(lVar5 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -18881,7 +18513,6 @@ void xmlParseDocument(long *param_1)
 {
   undefined1 *puVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   undefined8 uVar5;
   long lVar6;
@@ -18892,10 +18523,7 @@ void xmlParseDocument(long *param_1)
   undefined1 uStack_2b;
   undefined1 uStack_2a;
   undefined1 uStack_29;
-  long lStack_28;
   
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   xmlInitParser();
   if ((param_1 != (long *)0x0) && (lVar6 = param_1[7], lVar6 != 0)) {
     if ((*(int *)((long)param_1 + 0x1c4) == 0) &&
@@ -19026,10 +18654,6 @@ void xmlParseDocument(long *param_1)
 LAB_002715f8:
   uVar5 = 0xffffffff;
 LAB_002715fc:
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -19073,7 +18697,6 @@ void xmlParseExtParsedEnt(long *param_1)
 {
   undefined1 *puVar1;
   char cVar2;
-  long lVar3;
   int iVar4;
   long lVar5;
   undefined8 uVar6;
@@ -19083,10 +18706,7 @@ void xmlParseExtParsedEnt(long *param_1)
   undefined1 uStack_2b;
   undefined1 uStack_2a;
   undefined1 uStack_29;
-  long lStack_28;
   
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   if ((param_1 == (long *)0x0) || (param_1[7] == 0)) {
 LAB_0027199c:
     iVar4 = -1;
@@ -19156,10 +18776,6 @@ LAB_0027199c:
     }
     iVar4 = -(uint)((int)param_1[3] == 0);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(iVar4);
   return;
 }
 
@@ -19178,7 +18794,6 @@ void xmlParseChunk(long *param_1,long param_2,int param_3,int param_4)
   uint uVar2;
   char cVar3;
   byte bVar4;
-  long lVar5;
   undefined8 uVar6;
   char cVar7;
   bool bVar8;
@@ -19213,10 +18828,7 @@ void xmlParseChunk(long *param_1,long param_2,int param_3,int param_4)
   undefined1 uStack_106;
   undefined1 uStack_105;
   undefined4 uStack_104;
-  long lStack_70;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   if (param_1 == (long *)0x0) {
     iVar11 = 1;
     goto LAB_00272f84;
@@ -20104,10 +19716,6 @@ switchD_00271cec_caseD_ffffffff:
     *(undefined4 *)(param_1 + 0x22) = 0xffffffff;
   }
 LAB_00272f84:
-  if (*(long *)(lVar5 + 0x28) != lStack_70) {
-    __stack_chk_fail(iVar11);
-    return;
-  }
   return;
 }
 
@@ -20323,7 +19931,6 @@ ulong xmlParseCtxtExternalEntity(undefined8 *param_1,long param_2,long param_3,l
   undefined1 *puVar1;
   uint uVar2;
   char cVar3;
-  long lVar4;
   int iVar5;
   undefined8 *puVar6;
   long lVar7;
@@ -20336,10 +19943,7 @@ ulong xmlParseCtxtExternalEntity(undefined8 *param_1,long param_2,long param_3,l
   undefined1 uStack_5b;
   undefined1 uStack_5a;
   undefined1 uStack_59;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   if (param_1 != (undefined8 *)0x0) {
     if ((0x28 < *(int *)(param_1 + 0x31)) &&
        ((uVar11 = 0x59, 0x400 < *(int *)(param_1 + 0x31) ||
@@ -20511,10 +20115,6 @@ ulong xmlParseCtxtExternalEntity(undefined8 *param_1,long param_2,long param_3,l
 LAB_0027376c:
   uVar11 = 0xffffffff;
 LAB_00273770:
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    uVar11 = __stack_chk_fail();
-    return uVar11;
-  }
   return uVar11;
 }
 
@@ -22505,7 +22105,6 @@ void xmlNextChar(long param_1)
   undefined1 *puVar1;
   byte bVar2;
   char cVar3;
-  long lVar4;
   int iVar5;
   long lVar6;
   undefined1 *puVar7;
@@ -22516,11 +22115,8 @@ void xmlNextChar(long param_1)
   byte *pbVar12;
   byte *pbVar13;
   undefined1 auStack_e0 [152];
-  long lStack_48;
   
   puVar7 = auStack_e0;
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   if (((param_1 == 0) || (*(int *)(param_1 + 0x110) == -1)) ||
      (lVar6 = *(long *)(param_1 + 0x38), lVar6 == 0)) goto LAB_00277ea8;
   pcVar10 = *(char **)(lVar6 + 0x20);
@@ -22639,10 +22235,6 @@ joined_r0x00277cb8:
     xmlPopInput(param_1);
   }
 LAB_00277ea8:
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -22657,7 +22249,6 @@ ulong xmlCurrentChar(long param_1,undefined4 *param_2)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   long lVar4;
   ulong uVar5;
   byte bVar6;
@@ -22665,10 +22256,7 @@ ulong xmlCurrentChar(long param_1,undefined4 *param_2)
   uint uVar8;
   byte *pbVar9;
   undefined1 auStack_e0 [152];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uVar8 = 0;
   if ((param_1 == 0) || (param_2 == (undefined4 *)0x0)) goto LAB_00278130;
   lVar4 = *(long *)(param_1 + 0x38);
@@ -22781,10 +22369,6 @@ LAB_00278164:
     uVar8 = 10;
   }
 LAB_00278130:
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    uVar5 = __stack_chk_fail();
-    return uVar5;
-  }
   return (ulong)uVar8;
 }
 
@@ -22799,17 +22383,13 @@ ulong xmlStringCurrentChar(long param_1,byte *param_2,undefined4 *param_3)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   ulong uVar4;
   byte *pbVar5;
   uint uVar6;
   long lVar7;
   uint uVar8;
   undefined1 auStack_e0 [152];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uVar8 = 0;
   if ((param_2 == (byte *)0x0) || (param_3 == (undefined4 *)0x0)) goto LAB_002784a4;
   if (((param_1 == 0) || (*(int *)(param_1 + 0x198) == 1)) && (bVar2 = *param_2, (char)bVar2 < '\0')
@@ -22861,10 +22441,6 @@ LAB_00278480:
   *param_3 = 1;
   uVar8 = (uint)*param_2;
 LAB_002784a4:
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
-  }
   return (ulong)uVar8;
 }
 
@@ -24475,15 +24051,11 @@ void xmlSAX2AttributeDecl
 
 {
   undefined4 uVar1;
-  long lVar2;
   int iVar3;
   long lVar4;
   undefined8 uVar5;
   long lStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lStack_70 = 0;
   if ((param_1 != 0) && (*(long *)(param_1 + 0x10) != 0)) {
     iVar3 = xmlStrEqual(param_3,&DAT_0061914d);
@@ -24515,10 +24087,6 @@ void xmlSAX2AttributeDecl
     }
   }
 LAB_0027a4ec:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -24816,7 +24384,6 @@ void xmlSAX2EndDocument(long param_1)
 void xmlSAX2StartElement(long *param_1,long param_2,long *param_3)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   undefined8 uVar4;
@@ -24833,10 +24400,7 @@ void xmlSAX2StartElement(long *param_1,long param_2,long *param_3)
   long lVar15;
   long lStack_a8;
   undefined1 auStack_9c [52];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (((param_1 == (long *)0x0) || (param_2 == 0)) || (lVar10 = param_1[2], lVar10 == 0))
   goto LAB_0027af20;
   lVar15 = param_1[10];
@@ -25052,10 +24616,6 @@ LAB_0027ae40:
     (*(code *)xmlFree)();
   }
 LAB_0027af20:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -25068,15 +24628,11 @@ LAB_0027af20:
 void xmlSAX2EndElement(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   long alStack_50 [3];
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (param_1 != 0) {
     if ((*(long *)(param_1 + 0x50) != 0) && (*(int *)(param_1 + 0x68) != 0)) {
       lVar2 = *(long *)(param_1 + 0x38);
@@ -25088,10 +24644,6 @@ void xmlSAX2EndElement(long param_1)
     *(undefined4 *)(param_1 + 0x1a0) = 0xffffffff;
     nodePop(param_1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -25366,15 +24918,11 @@ LAB_0027bd24:
 void xmlSAX2EndElementNs(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   long alStack_50 [3];
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (param_1 != 0) {
     if ((*(long *)(param_1 + 0x50) != 0) && (*(int *)(param_1 + 0x68) != 0)) {
       lVar2 = *(long *)(param_1 + 0x38);
@@ -25386,10 +24934,6 @@ void xmlSAX2EndElementNs(long param_1)
     *(undefined4 *)(param_1 + 0x1a0) = 0xffffffff;
     nodePop(param_1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -26214,7 +25758,6 @@ char * xmlSplitQName3(char *param_1,int *param_2)
 void xmlValidateNCName(byte *param_1,int param_2)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   ulong uVar4;
@@ -26224,10 +25767,7 @@ void xmlValidateNCName(byte *param_1,int param_2)
   long lVar8;
   byte bVar9;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_1 == (byte *)0x0) {
     uVar4 = 0xffffffff;
     goto LAB_0027d004;
@@ -26325,10 +25865,6 @@ LAB_0027cf60:
   }
   uVar4 = 1;
 LAB_0027d004:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -26342,18 +25878,14 @@ void xmlValidateQName(byte *param_1,int param_2)
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   uint uVar4;
   ulong uVar5;
   byte *pbVar6;
   ulong uVar8;
   int iStack_6c;
-  long lStack_68;
   byte *pbVar7;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (param_1 == (byte *)0x0) {
     uVar8 = 0xffffffff;
     goto LAB_0027d650;
@@ -26506,10 +26038,6 @@ LAB_0027d4b4:
   }
   uVar8 = 1;
 LAB_0027d650:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar8);
-    return;
-  }
   return;
 }
 
@@ -26522,7 +26050,6 @@ LAB_0027d650:
 void xmlValidateName(byte *param_1,int param_2)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   ulong uVar4;
@@ -26532,10 +26059,7 @@ void xmlValidateName(byte *param_1,int param_2)
   byte bVar8;
   ulong uVar9;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_1 == (byte *)0x0) {
     uVar9 = 0xffffffff;
     goto LAB_0027da5c;
@@ -26631,10 +26155,6 @@ LAB_0027d9b8:
   }
   uVar9 = 1;
 LAB_0027da5c:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar9);
-    return;
-  }
   return;
 }
 
@@ -26647,7 +26167,6 @@ LAB_0027da5c:
 void xmlValidateNMToken(byte *param_1,int param_2)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   ulong uVar4;
@@ -26657,10 +26176,7 @@ void xmlValidateNMToken(byte *param_1,int param_2)
   byte bVar8;
   ulong uVar9;
   int iStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_1 == (byte *)0x0) {
     uVar9 = 0xffffffff;
     goto LAB_0027def0;
@@ -26765,10 +26281,6 @@ LAB_0027de0c:
   }
   uVar9 = 1;
 LAB_0027def0:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar9);
-    return;
-  }
   return;
 }
 
@@ -27642,7 +27154,6 @@ long xmlStringLenGetNodeList(undefined8 param_1,byte *param_2,int param_3)
   long lVar7;
   long lVar8;
   long lVar9;
-  long lVar10;
   undefined8 uVar11;
   char *pcVar12;
   uint uVar13;
@@ -27653,10 +27164,7 @@ long xmlStringLenGetNodeList(undefined8 param_1,byte *param_2,int param_3)
   byte *pbVar18;
   ulong uVar19;
   undefined1 auStack_74 [12];
-  long lStack_68;
   
-  lVar10 = tpidr_el0;
-  lStack_68 = *(long *)(lVar10 + 0x28);
   if (param_2 == (byte *)0x0) {
     lVar8 = 0;
   }
@@ -27878,10 +27386,6 @@ LAB_0027f330:
     }
   }
 LAB_0027f414:
-  if (*(long *)(lVar10 + 0x28) != lStack_68) {
-    lVar10 = __stack_chk_fail();
-    return lVar10;
-  }
   return lVar8;
 }
 
@@ -28354,15 +27858,11 @@ LAB_0027fcec:
 undefined8 xmlNodeListGetString(undefined8 param_1,long param_2,int param_3)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined2 auStack_6c [2];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_2 == 0) {
     uVar4 = 0;
   }
@@ -28403,10 +27903,6 @@ LAB_0027fda0:
       param_2 = *(long *)(param_2 + 0x30);
     } while (param_2 != 0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -28419,15 +27915,11 @@ LAB_0027fda0:
 undefined8 xmlNodeListGetRawString(undefined8 param_1,long param_2,int param_3)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined2 auStack_6c [2];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (param_2 == 0) {
     uVar4 = 0;
   }
@@ -28468,10 +27960,6 @@ LAB_0027fefc:
       param_2 = *(long *)(param_2 + 0x30);
     } while (param_2 != 0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -30577,7 +30065,6 @@ char * xmlGetNodePath(long param_1)
 
 {
   int *piVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   int iVar5;
@@ -30594,10 +30081,7 @@ char * xmlGetNodePath(long param_1)
   char *pcVar16;
   char acStack_cc [99];
   undefined1 uStack_69;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (param_1 != 0) {
     pcVar6 = (char *)(*(code *)xmlMallocAtomic)(500);
     if (pcVar6 == (char *)0x0) {
@@ -30861,10 +30345,6 @@ LAB_00282948:
   }
   pcVar6 = (char *)0x0;
 LAB_00282a38:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    pcVar6 = (char *)__stack_chk_fail();
-    return pcVar6;
-  }
   return pcVar6;
 }
 
@@ -32039,14 +31519,10 @@ undefined8 * FUN_00283f4c(long param_1)
 void xmlNewReconciliedNs(undefined8 param_1,long param_2,long param_3)
 
 {
-  long lVar1;
   long lVar2;
   uint uVar3;
   undefined8 auStack_90 [7];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar2 = 0;
   if ((param_2 != 0) && (param_3 != 0)) {
     if (*(int *)(param_3 + 8) == 0x12) {
@@ -32081,10 +31557,6 @@ LAB_002841cc:
       lVar2 = 0;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(lVar2);
   return;
 }
 
@@ -33322,7 +32794,6 @@ void xmlDOMWrapRemoveNode(long param_1,long param_2,long param_3)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
@@ -33331,10 +32802,7 @@ void xmlDOMWrapRemoveNode(long param_1,long param_2,long param_3)
   int iStack_58;
   undefined1 auStack_54 [4];
   long lStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar4 = 0xffffffff;
   lStack_50 = 0;
   if ((param_2 != 0) && (param_3 != 0)) {
@@ -33425,10 +32893,6 @@ LAB_00285764:
     }
   }
 LAB_002857a0:
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -33441,7 +32905,6 @@ LAB_002857a0:
 undefined8 xmlDOMWrapReconcileNamespaces(undefined8 param_1,long param_2,ulong param_3)
 
 {
-  long lVar1;
   bool bVar2;
   bool bVar3;
   bool bVar4;
@@ -33461,10 +32924,7 @@ undefined8 xmlDOMWrapReconcileNamespaces(undefined8 param_1,long param_2,ulong p
   undefined8 *puStack_80;
   long *plStack_78;
   long *plStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   puStack_80 = (undefined8 *)0x0;
   plStack_78 = (long *)0x0;
   uStack_88 = 0;
@@ -33665,10 +33125,6 @@ LAB_00285e00:
       } while( true );
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return uVar10;
-  }
-  uVar10 = __stack_chk_fail();
   return uVar10;
 }
 
@@ -33686,7 +33142,6 @@ xmlDOMWrapCloneNode(long param_1,long param_2,long param_3,long *param_4,long pa
   long lVar1;
   uint uVar2;
   undefined4 uVar3;
-  long lVar4;
   bool bVar5;
   bool bVar6;
   bool bVar7;
@@ -33711,10 +33166,7 @@ xmlDOMWrapCloneNode(long param_1,long param_2,long param_3,long *param_4,long pa
   long lStack_80;
   long *plStack_78;
   long *plStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   uVar21 = 0xffffffff;
   plStack_70 = (long *)0x0;
   if (((param_3 != 0) && (param_4 != (long *)0x0)) && (param_5 != 0)) {
@@ -33879,10 +33331,6 @@ switchD_00286694_caseD_13:
     }
   }
 LAB_0028649c:
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar21 = __stack_chk_fail();
-    return uVar21;
-  }
   return uVar21;
 switchD_00286694_caseD_1:
   plVar16 = *(long **)(lVar24 + 0x60);
@@ -34092,7 +33540,6 @@ switchD_00286694_caseD_9:
 ulong xmlDOMWrapAdoptNode(long param_1,long param_2,long param_3,long param_4,long param_5)
 
 {
-  long lVar1;
   bool bVar2;
   bool bVar3;
   int iVar4;
@@ -34117,11 +33564,8 @@ ulong xmlDOMWrapAdoptNode(long param_1,long param_2,long param_3,long param_4,lo
   long lStack_80;
   undefined8 *puStack_78;
   long *plStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
   uVar19 = 0xffffffff;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if ((param_3 == 0) || (param_4 == 0)) goto LAB_0028787c;
   if (((param_5 == 0) || (*(long *)(param_5 + 0x40) == param_4)) &&
      (((lVar12 = *(long *)(param_3 + 0x40), lVar12 == param_2 || (param_2 == 0)) || (lVar12 == 0))))
@@ -34508,10 +33952,6 @@ LAB_00287858:
 switchD_00286e78_caseD_13:
   uVar19 = 0xffffffff;
 LAB_0028787c:
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return (ulong)uVar19;
-  }
-  uVar8 = __stack_chk_fail();
   return uVar8;
 LAB_002877e8:
   plVar16 = (long *)FUN_002878bc(param_4,param_5,*(undefined8 *)(*(long *)(param_3 + 0x48) + 0x10),
@@ -34740,7 +34180,6 @@ ulong FUN_00287b9c(long *param_1,byte *param_2)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   uint uVar4;
   long lVar5;
@@ -34752,10 +34191,7 @@ ulong FUN_00287b9c(long *param_1,byte *param_2)
   byte *pbStack_60;
   byte *pbStack_58;
   byte *pbStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (param_2 == (byte *)0x0) {
     uVar8 = 0xffffffff;
     goto LAB_00287fd0;
@@ -34974,10 +34410,6 @@ LAB_00287fc8:
     FUN_0028a5c0(param_1);
   }
 LAB_00287fd0:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    uVar8 = __stack_chk_fail();
-    return uVar8;
-  }
   return uVar8;
 }
 
@@ -35034,7 +34466,6 @@ ulong xmlParseURIReference(long *param_1,byte *param_2)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   uint uVar4;
   long lVar5;
@@ -35046,10 +34477,7 @@ ulong xmlParseURIReference(long *param_1,byte *param_2)
   byte *pbStack_60;
   byte *pbStack_58;
   byte *pbStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (param_2 == (byte *)0x0) {
     uVar8 = 0xffffffff;
     goto LAB_00287fd0;
@@ -35268,10 +34696,6 @@ LAB_00287fc8:
     FUN_0028a5c0(param_1);
   }
 LAB_00287fd0:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    uVar8 = __stack_chk_fail();
-    return uVar8;
-  }
   return uVar8;
 }
 
@@ -36167,16 +35591,12 @@ long xmlURIEscapeStr(byte *param_1,undefined8 param_2)
 undefined8 xmlURIEscape(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   long lVar4;
   undefined8 uVar5;
   undefined1 auStack_44 [12];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   if (param_1 == 0) goto LAB_002898f0;
   plVar3 = (long *)(*(code *)xmlMalloc)(0x58);
@@ -36269,10 +35689,6 @@ LAB_002898c0:
   }
   uVar5 = 0;
 LAB_002898f0:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -36877,15 +36293,11 @@ LAB_0028a468:
 undefined8 xmlPathToURI(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_90 [48];
   long lStack_60;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 != 0) {
     lVar2 = xmlParseURI();
     if (lVar2 != 0) {
@@ -36904,10 +36316,6 @@ undefined8 xmlPathToURI(long param_1)
   }
   uVar3 = 0;
 LAB_0028a594:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -37052,17 +36460,13 @@ LAB_0028a758:
 int * xmlNewDocElementContent(long param_1,long param_2,int param_3)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
   char *pcVar5;
   long lVar6;
   undefined4 uStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     lVar6 = 0;
   }
@@ -37126,10 +36530,6 @@ LAB_0028b344:
   }
   *(undefined8 *)(piVar2 + 2) = uVar4;
 LAB_0028b370:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    piVar2 = (int *)__stack_chk_fail();
-    return piVar2;
-  }
   return piVar2;
 }
 
@@ -37527,7 +36927,6 @@ long xmlAddElementDecl(long param_1,long param_2,long param_3,undefined4 param_4
   int iVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
   char *pcVar5;
   undefined8 uVar6;
   long *plVar7;
@@ -37535,10 +36934,7 @@ long xmlAddElementDecl(long param_1,long param_2,long param_3,undefined4 param_4
   long lVar9;
   long lVar10;
   long lStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   lVar9 = 0;
   if ((param_2 == 0) || (param_3 == 0)) goto LAB_0028bd28;
   switch(param_4) {
@@ -37680,10 +37076,6 @@ LAB_0028bd1c:
 LAB_0028bd24:
   lVar9 = 0;
 LAB_0028bd28:
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar9;
 }
 
@@ -37952,16 +37344,12 @@ long xmlAddAttributeDecl(undefined8 param_1,long param_2,long param_3,long param
   undefined8 uVar3;
   long lVar4;
   long lVar5;
-  long lVar6;
   char *pcVar7;
   long lVar8;
   long lVar9;
   long lStack_80;
   long lStack_70;
-  long lStack_68;
   
-  lVar6 = tpidr_el0;
-  lStack_68 = *(long *)(lVar6 + 0x28);
   if (((param_2 == 0) || (param_4 == 0)) || (param_3 == 0)) {
     xmlFreeEnumeration(param_9);
   }
@@ -38110,10 +37498,6 @@ LAB_0028c644:
 LAB_0028c4f0:
   lVar2 = 0;
 LAB_0028c4f4:
-  if (*(long *)(lVar6 + 0x28) != lStack_68) {
-    lVar6 = __stack_chk_fail();
-    return lVar6;
-  }
   return lVar2;
 }
 
@@ -38473,7 +37857,6 @@ void xmlFreeIDTable(undefined8 param_1)
 void xmlIsID(long param_1,long param_2,long param_3)
 
 {
-  long lVar1;
   int iVar2;
   undefined1 *puVar3;
   undefined8 uVar4;
@@ -38483,10 +37866,7 @@ void xmlIsID(long param_1,long param_2,long param_3)
   long lVar8;
   undefined1 auStack_c0 [52];
   undefined1 auStack_8c [52];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if ((param_3 == 0) || (lVar5 = *(long *)(param_3 + 0x10), lVar5 == 0)) goto LAB_0028d3f4;
   lVar8 = *(long *)(param_3 + 0x48);
   if ((lVar8 == 0) ||
@@ -38547,10 +37927,6 @@ LAB_0028d3f4:
 LAB_0028d3ec:
     uVar4 = 1;
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -38563,15 +37939,11 @@ LAB_0028d3ec:
 undefined8 xmlGetDtdAttrDesc(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   long lVar4;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lStack_50 = 0;
   if ((param_1 == 0) || (lVar4 = *(long *)(param_1 + 0x58), lVar4 == 0)) {
     uVar3 = 0;
@@ -38589,10 +37961,6 @@ undefined8 xmlGetDtdAttrDesc(long param_1,undefined8 param_2,undefined8 param_3)
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -38784,7 +38152,6 @@ undefined8 xmlIsRef(long param_1,long param_2,long param_3)
 void xmlRemoveRef(long param_1,long param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
@@ -38792,10 +38159,7 @@ void xmlRemoveRef(long param_1,long param_2)
   long lVar6;
   long lStack_58;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != 0)) {
     lVar6 = *(long *)(param_1 + 0x80);
@@ -38819,10 +38183,6 @@ void xmlRemoveRef(long param_1,long param_2)
     uVar3 = 0xffffffff;
   }
 LAB_0028d9d8:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -38854,15 +38214,11 @@ undefined8 xmlGetDtdElementDesc(long param_1,long param_2)
 
 {
   long lVar1;
-  long lVar2;
   long lVar3;
   undefined8 uVar4;
   long lVar5;
   long lStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar4 = 0;
   lStack_40 = 0;
   if (((param_1 != 0) && (param_2 != 0)) &&
@@ -38880,10 +38236,6 @@ undefined8 xmlGetDtdElementDesc(long param_1,long param_2)
       (*(code *)xmlFree)(lVar3);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -39018,7 +38370,6 @@ void xlinkSetDefaultDetect(undefined8 param_1)
 ulong xlinkIsLink(long param_1,long param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -39028,11 +38379,8 @@ ulong xlinkIsLink(long param_1,long param_2)
   uint uVar8;
   char acStack_110 [199];
   undefined1 uStack_49;
-  long lStack_48;
   
   pcVar7 = acStack_110;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_2 != 0) {
     if ((((param_1 == 0) && (param_1 = *(long *)(param_2 + 0x40), param_1 == 0)) ||
         (*(int *)(param_1 + 8) != 0xd)) && (*(long *)(param_2 + 0x48) != 0)) {
@@ -39069,10 +38417,6 @@ ulong xlinkIsLink(long param_1,long param_2)
   }
   uVar8 = 0;
 LAB_0028dd9c:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return (ulong)uVar8;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -39486,15 +38830,11 @@ void xmlCleanupOutputCallbacks(void)
 void xmlCheckFilename(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 uVar3;
   undefined1 auStack_a8 [16];
   uint uStack_98;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uVar3 = 0;
   if (param_1 != 0) {
     iVar2 = stat(param_1,auStack_a8);
@@ -39507,10 +38847,6 @@ void xmlCheckFilename(long param_1)
         uVar3 = 2;
       }
     }
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(uVar3);
-    return;
   }
   return;
 }
@@ -40704,7 +40040,6 @@ ulong xmlOutputBufferWriteEscape(undefined8 *param_1,long param_2,code *param_3)
 {
   long *plVar1;
   code *pcVar2;
-  long lVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
@@ -40717,10 +40052,7 @@ ulong xmlOutputBufferWriteEscape(undefined8 *param_1,long param_2,code *param_3)
   uint uVar13;
   int iStack_70;
   int iStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   if (param_1 != (undefined8 *)0x0) {
     uVar10 = 0xffffffff;
     if ((param_2 == 0) || (*(int *)((long)param_1 + 0x34) != 0)) goto LAB_0028f920;
@@ -40830,10 +40162,6 @@ LAB_0028fb20:
 LAB_0028f91c:
   uVar10 = 0xffffffff;
 LAB_0028f920:
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    uVar10 = __stack_chk_fail();
-    return uVar10;
-  }
   return uVar10;
 LAB_0028fb78:
   uVar10 = (ulong)uVar13;
@@ -40875,17 +40203,13 @@ void xmlParserGetDirectory(long param_1)
 
 {
   char *pcVar1;
-  long lVar2;
   bool bVar3;
   long lVar4;
   undefined8 uVar5;
   char *pcVar6;
   char acStack_438 [1023];
   undefined1 uStack_39;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((DAT_0072af20 & 1) == 0) {
     xmlRegisterDefaultInputCallbacks();
   }
@@ -40923,10 +40247,6 @@ LAB_0028fde0:
       }
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -42739,17 +42059,13 @@ long xmlTextReaderGetAttributeNo(long param_1,int param_2)
 undefined8 xmlTextReaderGetAttribute(long param_1,long param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
   long *plVar6;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   lStack_50 = 0;
   if ((param_1 == 0) || (param_2 == 0)) goto LAB_00292b1c;
@@ -42810,10 +42126,6 @@ LAB_00292b94:
   }
   uVar5 = 0;
 LAB_00292b1c:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    uVar5 = __stack_chk_fail();
-    return uVar5;
-  }
   return uVar5;
 }
 
@@ -42983,16 +42295,12 @@ undefined8 xmlTextReaderMoveToAttributeNo(long param_1,int param_2)
 void xmlTextReaderMoveToAttribute(long param_1,long param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
   long *plVar5;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   lStack_40 = 0;
   if ((param_1 != 0) && (param_2 != 0)) {
@@ -43073,10 +42381,6 @@ LAB_00292fe0:
 LAB_00293018:
   uVar3 = 1;
 LAB_00292f84:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 
@@ -46020,7 +45324,6 @@ void xmlAttrSerializeTxtContent(undefined8 param_1,long param_2,undefined8 param
 {
   uint uVar1;
   byte bVar2;
-  long lVar3;
   undefined8 uVar4;
   char *pcVar5;
   int iVar6;
@@ -46030,10 +45333,7 @@ void xmlAttrSerializeTxtContent(undefined8 param_1,long param_2,undefined8 param
   byte *pbVar10;
   long lVar11;
   char acStack_74 [12];
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   pbVar10 = param_4;
   if (param_4 != (byte *)0x0) {
 LAB_0029652c:
@@ -46175,10 +45475,6 @@ LAB_00296644:
       xmlBufferAdd(param_1,param_4,iVar9 - iVar6);
     }
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -46231,7 +45527,6 @@ void xmlNodeDumpOutput(long param_1,undefined8 param_2,long param_3,undefined4 p
 
 {
   char *pcVar1;
-  long lVar2;
   int iVar3;
   long lVar4;
   undefined1 auStack_f8 [24];
@@ -46241,10 +45536,7 @@ void xmlNodeDumpOutput(long param_1,undefined8 param_2,long param_3,undefined4 p
   uint uStack_c0;
   undefined4 uStack_bc;
   undefined4 uStack_b8;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   xmlInitParser();
   if ((param_1 != 0) && (param_3 != 0)) {
     pcVar1 = "UTF-8";
@@ -46269,10 +45561,6 @@ void xmlNodeDumpOutput(long param_1,undefined8 param_2,long param_3,undefined4 p
       FUN_00296d4c(auStack_f8,param_3);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -46803,12 +46091,10 @@ void xmlDocDumpFormatMemoryEnc
 
 {
   int *piVar1;
-  long lVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
   char *pcVar6;
-  long lVar7;
   undefined8 *puVar8;
   int iStack_10c;
   undefined1 auStack_108 [24];
@@ -46819,8 +46105,6 @@ void xmlDocDumpFormatMemoryEnc
   undefined4 uStack_cc;
   undefined4 uStack_c8;
   
-  lVar2 = tpidr_el0;
-  lVar7 = *(long *)(lVar2 + 0x28);
   piVar1 = &iStack_10c;
   if (param_3 != (int *)0x0) {
     piVar1 = param_3;
@@ -46875,10 +46159,6 @@ LAB_002979e4:
   }
   __xmlSimpleError(7,uVar5,param_1,pcVar6,param_4);
 LAB_00297a9c:
-  if (*(long *)(lVar2 + 0x28) == lVar7) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -46930,7 +46210,6 @@ void xmlDocDumpMemoryEnc(void)
 void xmlDocFormatDump(undefined8 param_1,long param_2,undefined4 param_3)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   long lVar4;
@@ -46941,10 +46220,7 @@ void xmlDocFormatDump(undefined8 param_1,long param_2,undefined4 param_3)
   uint uStack_b0;
   undefined4 uStack_ac;
   undefined4 uStack_a8;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_2 != 0) {
     lVar4 = *(long *)(param_2 + 0x70);
     if (lVar4 == 0) {
@@ -46976,10 +46252,6 @@ void xmlDocFormatDump(undefined8 param_1,long param_2,undefined4 param_3)
   }
   uVar3 = 0xffffffff;
 LAB_00297bc0:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -47005,7 +46277,6 @@ void xmlDocDump(undefined8 param_1,undefined8 param_2)
 void xmlSaveFileTo(long param_1,long param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_d8 [24];
   undefined8 uStack_c0;
@@ -47014,10 +46285,7 @@ void xmlSaveFileTo(long param_1,long param_2,undefined8 param_3)
   uint uStack_a0;
   undefined4 uStack_9c;
   undefined4 uStack_98;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 != 0) {
     if (param_2 != 0) {
       memset(auStack_d8,0,0xa0);
@@ -47036,10 +46304,6 @@ void xmlSaveFileTo(long param_1,long param_2,undefined8 param_3)
   }
   uVar2 = 0xffffffff;
 LAB_00297c7c:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -47052,7 +46316,6 @@ LAB_00297c7c:
 void xmlSaveFormatFileTo(long param_1,long param_2,undefined8 param_3,undefined4 param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_e8 [24];
   undefined8 uStack_d0;
@@ -47061,10 +46324,7 @@ void xmlSaveFormatFileTo(long param_1,long param_2,undefined8 param_3,undefined4
   uint uStack_b0;
   undefined4 uStack_ac;
   undefined4 uStack_a8;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 != 0) {
     if ((param_2 != 0) && ((*(uint *)(param_2 + 8) | 4) == 0xd)) {
       memset(auStack_e8,0,0xa0);
@@ -47083,10 +46343,6 @@ void xmlSaveFormatFileTo(long param_1,long param_2,undefined8 param_3,undefined4
   }
   uVar2 = 0xffffffff;
 LAB_00297d44:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -47099,7 +46355,6 @@ LAB_00297d44:
 void xmlSaveFormatFileEnc(undefined8 param_1,long param_2,long param_3,undefined4 param_4)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_e8 [24];
@@ -47109,10 +46364,7 @@ void xmlSaveFormatFileEnc(undefined8 param_1,long param_2,long param_3,undefined
   uint uStack_b0;
   undefined4 uStack_ac;
   undefined4 uStack_a8;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_2 != 0) {
     if ((param_3 == 0) && (param_3 = *(long *)(param_2 + 0x70), param_3 == 0)) {
       lVar2 = 0;
@@ -47139,10 +46391,6 @@ void xmlSaveFormatFileEnc(undefined8 param_1,long param_2,long param_3,undefined
 LAB_00297e28:
   uVar3 = 0xffffffff;
 LAB_00297e2c:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 
@@ -47885,9 +47133,7 @@ void xmlStrPrintf(long param_1,int param_2,long param_3,undefined8 param_4,undef
                  undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   undefined8 uVar2;
-  long lVar3;
   undefined1 auStack_b0 [8];
   undefined8 uStack_a8;
   undefined8 uStack_a0;
@@ -47899,8 +47145,6 @@ void xmlStrPrintf(long param_1,int param_2,long param_3,undefined8 param_4,undef
   undefined1 *puStack_70;
   undefined8 uStack_68;
   
-  lVar1 = tpidr_el0;
-  lVar3 = *(long *)(lVar1 + 0x28);
   uVar2 = 0xffffffff;
   uStack_a8 = param_4;
   uStack_a0 = param_5;
@@ -47915,10 +47159,6 @@ void xmlStrPrintf(long param_1,int param_2,long param_3,undefined8 param_4,undef
     uVar2 = vsnprintf(param_1,(long)param_2,param_3,&puStack_80);
     *(undefined1 *)(param_1 + param_2 + -1) = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lVar3) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -47931,16 +47171,12 @@ void xmlStrPrintf(long param_1,int param_2,long param_3,undefined8 param_4,undef
 void xmlStrVPrintf(long param_1,int param_2,long param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = 0xffffffff;
   if ((param_1 != 0) && (param_3 != 0)) {
     uStack_58 = param_4[1];
@@ -47950,10 +47186,6 @@ void xmlStrVPrintf(long param_1,int param_2,long param_3,undefined8 *param_4)
     uVar2 = vsnprintf(param_1,(long)param_2,param_3,&uStack_60);
     *(undefined1 *)(param_1 + param_2 + -1) = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -49317,8 +48549,6 @@ void xmlTextWriterWriteFormatComment
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -49330,8 +48560,6 @@ void xmlTextWriterWriteFormatComment
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = &uStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
@@ -49343,10 +48571,6 @@ void xmlTextWriterWriteFormatComment
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatComment(param_1,param_2,&puStack_70);
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -49359,17 +48583,13 @@ void xmlTextWriterWriteFormatComment
 ulong xmlTextWriterWriteVFormatComment(long param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     func_0x00299808(0,1,"xmlTextWriterWriteVFormatComment : invalid writer!\n");
     uVar3 = 0xffffffff;
@@ -49389,10 +48609,6 @@ ulong xmlTextWriterWriteVFormatComment(long param_1,undefined8 param_2,undefined
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -49727,8 +48943,6 @@ void xmlTextWriterWriteFormatRaw
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -49740,8 +48954,6 @@ void xmlTextWriterWriteFormatRaw
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = &uStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
@@ -49753,10 +48965,6 @@ void xmlTextWriterWriteFormatRaw
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatRaw(param_1,param_2,&puStack_70);
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -49769,7 +48977,6 @@ void xmlTextWriterWriteFormatRaw
 ulong xmlTextWriterWriteVFormatRaw(long param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined4 uVar2;
   long lVar3;
   ulong uVar4;
@@ -49777,10 +48984,7 @@ ulong xmlTextWriterWriteVFormatRaw(long param_1,undefined8 param_2,undefined8 *p
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar4 = 0xffffffff;
   }
@@ -49800,10 +49004,6 @@ ulong xmlTextWriterWriteVFormatRaw(long param_1,undefined8 param_2,undefined8 *p
       (*(code *)xmlFree)(lVar3);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -49880,8 +49080,6 @@ ulong xmlTextWriterWriteFormatString
                 undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   ulong uVar3;
   undefined8 uStack_a0;
   undefined8 uStack_98;
@@ -49894,8 +49092,6 @@ ulong xmlTextWriterWriteFormatString
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   uStack_a0 = param_3;
   uStack_98 = param_4;
@@ -49911,10 +49107,6 @@ ulong xmlTextWriterWriteFormatString
     uVar3 = xmlTextWriterWriteVFormatString(param_1,param_2,&puStack_70);
     uVar3 = uVar3 & 0xffffffff;
   }
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -49927,17 +49119,13 @@ ulong xmlTextWriterWriteFormatString
 ulong xmlTextWriterWriteVFormatString(long param_1,long param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != 0)) {
     uStack_58 = param_3[1];
@@ -49954,10 +49142,6 @@ ulong xmlTextWriterWriteVFormatString(long param_1,long param_2,undefined8 *para
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -49971,7 +49155,6 @@ void xmlTextWriterWriteBase64(long *param_1,long param_2,uint param_3,uint param
 
 {
   long lVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   long lVar5;
@@ -49986,10 +49169,7 @@ void xmlTextWriterWriteBase64(long *param_1,long param_2,uint param_3,uint param
   char cStack_6d;
   undefined2 uStack_6c;
   byte bStack_6a;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   iVar8 = -1;
   if (((param_1 == (long *)0x0) || (param_2 == 0)) || ((int)(param_4 | param_3) < 0))
   goto LAB_0029bc9c;
@@ -50062,10 +49242,6 @@ LAB_0029bb68:
 LAB_0029bc98:
   iVar8 = -1;
 LAB_0029bc9c:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(iVar8);
-    return;
-  }
   return;
 }
 
@@ -50190,7 +49366,6 @@ int xmlTextWriterStartAttribute(undefined8 *param_1,char *param_2)
 void xmlTextWriterStartAttributeNS(long param_1,long param_2,char *param_3,long param_4)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined8 uVar4;
@@ -50199,10 +49374,7 @@ void xmlTextWriterStartAttributeNS(long param_1,long param_2,char *param_3,long 
   long lStack_70;
   long lStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   iVar2 = -1;
   if ((param_1 == 0) || (param_3 == (char *)0x0)) goto LAB_0029c06c;
   if (*param_3 == '\0') goto LAB_0029bfc0;
@@ -50261,10 +49433,6 @@ LAB_0029c014:
     iVar2 = -1;
   }
 LAB_0029c06c:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(iVar2);
-    return;
-  }
   return;
 }
 
@@ -50277,13 +49445,11 @@ LAB_0029c06c:
 void xmlTextWriterWriteFormatAttribute(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -50295,8 +49461,6 @@ void xmlTextWriterWriteFormatAttribute(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -50307,10 +49471,6 @@ void xmlTextWriterWriteFormatAttribute(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatAttribute();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50324,17 +49484,13 @@ ulong xmlTextWriterWriteVFormatAttribute
                 (long param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -50353,10 +49509,6 @@ ulong xmlTextWriterWriteVFormatAttribute
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -50393,11 +49545,9 @@ int xmlTextWriterWriteAttribute(undefined8 param_1,undefined8 param_2,undefined8
 void xmlTextWriterWriteFormatAttributeNS(void)
 
 {
-  long lVar1;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_90 [8];
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -50407,8 +49557,6 @@ void xmlTextWriterWriteFormatAttributeNS(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_90;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffe8;
@@ -50417,10 +49565,6 @@ void xmlTextWriterWriteFormatAttributeNS(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatAttributeNS();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50435,17 +49579,13 @@ ulong xmlTextWriterWriteVFormatAttributeNS
                 undefined8 param_5,undefined8 *param_6)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -50464,10 +49604,6 @@ ulong xmlTextWriterWriteVFormatAttributeNS
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -50509,13 +49645,11 @@ int xmlTextWriterWriteAttributeNS
 void xmlTextWriterWriteFormatElement(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -50527,8 +49661,6 @@ void xmlTextWriterWriteFormatElement(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -50539,10 +49671,6 @@ void xmlTextWriterWriteFormatElement(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatElement();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50556,17 +49684,13 @@ ulong xmlTextWriterWriteVFormatElement
                 (long param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -50585,10 +49709,6 @@ ulong xmlTextWriterWriteVFormatElement
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -50629,11 +49749,9 @@ ulong xmlTextWriterWriteElement(undefined8 param_1,undefined8 param_2,undefined8
 void xmlTextWriterWriteFormatElementNS(void)
 
 {
-  long lVar1;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_90 [8];
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -50643,8 +49761,6 @@ void xmlTextWriterWriteFormatElementNS(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_90;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffe8;
@@ -50653,10 +49769,6 @@ void xmlTextWriterWriteFormatElementNS(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatElementNS();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50671,17 +49783,13 @@ ulong xmlTextWriterWriteVFormatElementNS
                 undefined8 param_5,undefined8 *param_6)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -50700,10 +49808,6 @@ ulong xmlTextWriterWriteVFormatElementNS
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -50850,13 +49954,11 @@ switchD_0029c860_caseD_6:
 void xmlTextWriterWriteFormatPI(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -50868,8 +49970,6 @@ void xmlTextWriterWriteFormatPI(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -50880,10 +49980,6 @@ void xmlTextWriterWriteFormatPI(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatPI();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -50897,17 +49993,13 @@ ulong xmlTextWriterWriteVFormatPI
                 (long param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -50926,10 +50018,6 @@ ulong xmlTextWriterWriteVFormatPI
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -51049,8 +50137,6 @@ void xmlTextWriterWriteFormatCDATA
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -51062,8 +50148,6 @@ void xmlTextWriterWriteFormatCDATA
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = &uStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
@@ -51075,10 +50159,6 @@ void xmlTextWriterWriteFormatCDATA
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatCDATA(param_1,param_2,&puStack_70);
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -51091,17 +50171,13 @@ void xmlTextWriterWriteFormatCDATA
 ulong xmlTextWriterWriteVFormatCDATA(long param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -51120,10 +50196,6 @@ ulong xmlTextWriterWriteVFormatCDATA(long param_1,undefined8 param_2,undefined8 
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -51398,11 +50470,9 @@ int xmlTextWriterEndDTDEntity(undefined8 *param_1)
 void xmlTextWriterWriteFormatDTD(void)
 
 {
-  long lVar1;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_90 [8];
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -51412,8 +50482,6 @@ void xmlTextWriterWriteFormatDTD(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_90;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffe8;
@@ -51422,10 +50490,6 @@ void xmlTextWriterWriteFormatDTD(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatDTD();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -51440,17 +50504,13 @@ ulong xmlTextWriterWriteVFormatDTD
                 undefined8 param_5,undefined8 *param_6)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -51469,10 +50529,6 @@ ulong xmlTextWriterWriteVFormatDTD
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -51599,13 +50655,11 @@ int xmlTextWriterStartDTDElement(undefined8 *param_1,char *param_2)
 void xmlTextWriterWriteFormatDTDElement(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -51617,8 +50671,6 @@ void xmlTextWriterWriteFormatDTDElement(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -51629,10 +50681,6 @@ void xmlTextWriterWriteFormatDTDElement(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatDTDElement();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -51646,17 +50694,13 @@ ulong xmlTextWriterWriteVFormatDTDElement
                 (long param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -51675,10 +50719,6 @@ ulong xmlTextWriterWriteVFormatDTDElement
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -51807,13 +50847,11 @@ int xmlTextWriterStartDTDAttlist(undefined8 *param_1,char *param_2)
 void xmlTextWriterWriteFormatDTDAttlist(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -51825,8 +50863,6 @@ void xmlTextWriterWriteFormatDTDAttlist(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -51837,10 +50873,6 @@ void xmlTextWriterWriteFormatDTDAttlist(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatDTDAttlist();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -51854,17 +50886,13 @@ ulong xmlTextWriterWriteVFormatDTDAttlist
                 (long param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -51883,10 +50911,6 @@ ulong xmlTextWriterWriteVFormatDTDAttlist
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -52026,12 +51050,10 @@ int xmlTextWriterStartDTDEntity(undefined8 *param_1,int param_2,char *param_3)
 void xmlTextWriterWriteFormatDTDInternalEntity(void)
 
 {
-  long lVar1;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -52041,8 +51063,6 @@ void xmlTextWriterWriteFormatDTDInternalEntity(void)
   undefined8 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = &uStack_90;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffe0;
@@ -52052,10 +51072,6 @@ void xmlTextWriterWriteFormatDTDInternalEntity(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatDTDInternalEntity();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -52070,17 +51086,13 @@ ulong xmlTextWriterWriteVFormatDTDInternalEntity
                 undefined8 *param_5)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     uVar3 = 0xffffffff;
   }
@@ -52099,10 +51111,6 @@ ulong xmlTextWriterWriteVFormatDTDInternalEntity
       (*(code *)xmlFree)(lVar2);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -54021,14 +53029,10 @@ int * xmlXPathNodeSetCreate(undefined8 *param_1)
 void FUN_0029fcd0(long param_1,long param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   char *pcVar3;
   char acStack_100 [200];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     if (param_2 == 0) {
       param_2 = 0;
@@ -54054,10 +53058,6 @@ void FUN_0029fcd0(long param_1,long param_2)
       (**(code **)(param_1 + 0xe0))(*(undefined8 *)(param_1 + 0xd8));
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -55768,7 +54768,6 @@ void xmlXPathCastNumberToString(double param_1)
 {
   bool bVar1;
   char cVar2;
-  long lVar3;
   int iVar4;
   char *pcVar5;
   long lVar6;
@@ -55780,13 +54779,10 @@ void xmlXPathCastNumberToString(double param_1)
   char acStack_c0 [99];
   undefined1 uStack_5d;
   char acStack_58 [32];
-  long lStack_38;
   
   pcVar8 = acStack_c0;
   pcVar5 = acStack_c0;
-  lVar3 = tpidr_el0;
   dVar11 = ABS(param_1);
-  lStack_38 = *(long *)(lVar3 + 0x28);
   iVar4 = -1;
   if (0.0 < param_1) {
     iVar4 = 1;
@@ -55883,10 +54879,6 @@ void xmlXPathCastNumberToString(double param_1)
     uStack_5d = 0;
   }
   xmlStrdup(pcVar5);
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -59344,7 +58336,6 @@ void xmlXPathNormalizeFunction(long param_1,int param_2)
   int iVar1;
   byte bVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   undefined8 uVar6;
   int *piVar7;
@@ -59352,10 +58343,7 @@ void xmlXPathNormalizeFunction(long param_1,int param_2)
   byte *pbVar9;
   undefined8 uVar10;
   char acStack_5c [4];
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   if (param_1 == 0) goto LAB_002a6a14;
   if (param_2 == 1) {
 LAB_002a69b0:
@@ -59433,10 +58421,6 @@ LAB_002a6a00:
   }
   xmlXPathErr(param_1,uVar6);
 LAB_002a6a14:
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -60408,18 +59392,10 @@ void xmlXPathCompile(undefined8 param_1)
 void xmlXPathCompiledEval(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = 0;
   func_0x002a8248(param_1,param_2,&uStack_30,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_30);
   return;
 }
 
@@ -61731,7 +60707,6 @@ void xmlXPtrStringRangeFunction(long param_1,int param_2)
 {
   char cVar1;
   int iVar2;
-  long lVar3;
   uint uVar4;
   int iVar5;
   int iVar6;
@@ -61763,10 +60738,7 @@ void xmlXPtrStringRangeFunction(long param_1,int param_2)
   uint uStack_84;
   long lStack_80;
   uint uStack_74;
-  long lStack_70;
   
-  lVar3 = tpidr_el0;
-  lStack_70 = *(long *)(lVar3 + 0x28);
   if (param_2 - 2U < 3) {
     if (param_2 < 4) {
       lVar9 = 0;
@@ -62000,10 +60972,6 @@ LAB_002b0710:
   }
   xmlXPathErr(param_1,uVar17);
 LAB_002b07ec:
-  if (*(long *)(lVar3 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63088,7 +62056,6 @@ void pumpEvents(void)
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   long lVar4;
   undefined8 uVar5;
@@ -63106,10 +62073,7 @@ void pumpEvents(void)
   void *pvStack_58;
   void *pvStack_50;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   ndk::MotionEvent::MotionEvent(auStack_c0);
                     /* try { // try from 002c36e4 to 002c36ef has its CatchHandler @ 002c3800 */
   while (uVar3 = ndk::SafeQueue<int>::pop(touchEventIndices,&uStack_3c), (uVar3 & 1) != 0) {
@@ -63157,10 +62121,6 @@ void pumpEvents(void)
     pvStack_b0 = pvStack_b8;
     operator delete(pvStack_b8);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63175,13 +62135,9 @@ void pumpEvents(void)
 void handleCommands(void)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 *puStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uVar2 = ndk::SafeQueue<ndk::AbstractCommand*>::pop(commands,&puStack_30);
   while ((uVar2 & 1) != 0) {
     (**(code **)*puStack_30)();
@@ -63190,10 +62146,6 @@ void handleCommands(void)
     }
     uVar2 = ndk::SafeQueue<ndk::AbstractCommand*>::pop(commands,&puStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63206,16 +62158,12 @@ void handleCommands(void)
 ulong JNI_OnLoad(long *param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
   uint uVar5;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar5 = 0x10006;
   iVar2 = (**(code **)(*param_1 + 0x30))(param_1,auStack_40,0x10006);
   if (iVar2 == 0) {
@@ -63225,10 +62173,6 @@ ulong JNI_OnLoad(long *param_1)
   else {
     uVar5 = 0xffffffff;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar5;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -63258,7 +62202,6 @@ void Java_com_disney_common_WMWRenderer_rendererInit
                undefined8 param_5,undefined8 param_6,undefined8 param_7)
 
 {
-  long lVar1;
   int iVar2;
   int iVar3;
   undefined8 uVar4;
@@ -63277,10 +62220,7 @@ void Java_com_disney_common_WMWRenderer_rendererInit
   void *pvStack_98;
   ulong auStack_90 [2];
   void *pvStack_80;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 002c3db8 to 002c3dfb has its CatchHandler @ 002c4530 */
   uVar4 = ndk::ApplicationContext::getInstance();
   uVar5 = (**(code **)(*param_2 + 0xa8))(param_2,param_6);
@@ -63470,10 +62410,6 @@ LAB_002c4348:
   if ((auStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -63563,7 +62499,6 @@ void Java_com_disney_common_WMWRenderer_rendererTouchBegan
 {
   long lVar1;
   int iVar2;
-  long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   undefined8 uVar6;
@@ -63574,10 +62509,7 @@ void Java_com_disney_common_WMWRenderer_rendererTouchBegan
   long lVar11;
   long lVar12;
   uint uStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   uVar4 = (**(code **)(*param_1 + 0x5e8))(param_1,param_4,0);
   uVar5 = (**(code **)(*param_1 + 0x5e8))(param_1,param_5,0);
   uVar6 = (**(code **)(*param_1 + 0x5d8))(param_1,param_6,0);
@@ -63602,10 +62534,6 @@ void Java_com_disney_common_WMWRenderer_rendererTouchBegan
   (**(code **)(*param_1 + 0x628))(param_1,param_4,uVar4,0);
   (**(code **)(*param_1 + 0x628))(param_1,param_5,uVar5,0);
   (**(code **)(*param_1 + 0x618))(param_1,param_6,uVar6,0);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63620,7 +62548,6 @@ void Java_com_disney_common_WMWRenderer_rendererTouchMoved
                undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   float *pfVar2;
   float *pfVar3;
   int *piVar4;
@@ -63636,10 +62563,7 @@ void Java_com_disney_common_WMWRenderer_rendererTouchMoved
   int *piVar14;
   float fVar15;
   uint uStack_7c;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   pfVar2 = (float *)(**(code **)(*param_1 + 0x5e8))(param_1,param_4,0);
   pfVar3 = (float *)(**(code **)(*param_1 + 0x5e8))(param_1,param_5,0);
   piVar4 = (int *)(**(code **)(*param_1 + 0x5d8))(param_1,param_8,0);
@@ -63693,10 +62617,6 @@ LAB_002c50e0:
   (**(code **)(*param_1 + 0x618))(param_1,param_8,piVar4,0);
   (**(code **)(*param_1 + 0x628))(param_1,param_6,puVar5,0);
   (**(code **)(*param_1 + 0x628))(param_1,param_7,puVar6,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63711,16 +62631,12 @@ void Java_com_disney_common_WMWRenderer_rendererTouchEnded
                undefined8 param_5,undefined8 param_6)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   uint uStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uVar2 = (**(code **)(*param_1 + 0x5e8))(param_1,param_4,0);
   uVar3 = (**(code **)(*param_1 + 0x5e8))(param_1,param_5,0);
   uVar4 = (**(code **)(*param_1 + 0x5d8))(param_1,param_6,0);
@@ -63731,10 +62647,6 @@ void Java_com_disney_common_WMWRenderer_rendererTouchEnded
   (**(code **)(*param_1 + 0x628))(param_1,param_4,uVar2,0);
   (**(code **)(*param_1 + 0x628))(param_1,param_5,uVar3,0);
   (**(code **)(*param_1 + 0x618))(param_1,param_6,uVar4,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -63748,22 +62660,14 @@ void Java_com_disney_common_BaseActivity_accelerometerChanged
                (undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  long lVar1;
   undefined4 uStack_38;
   undefined4 uStack_34;
   undefined4 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_38 = param_1;
   uStack_34 = param_2;
   uStack_30 = param_3;
   ndk::SafeQueue<ndk::AccelerometerEvent>::push(accelerometerEvents,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -64432,7 +63336,6 @@ void Java_com_disney_common_BaseActivity_notifyViewIntent
                (long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -64441,10 +63344,7 @@ void Java_com_disney_common_BaseActivity_notifyViewIntent
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = (**(code **)(*param_1 + 0x548))(param_1,param_3,0);
   uVar3 = ndk::ApplicationContext::getInstance();
   uStack_58 = 0;
@@ -64474,10 +63374,6 @@ LAB_002c5d38:
   ndk::ApplicationContext::handleURLIntent(uVar3,&uStack_60);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -64513,7 +63409,6 @@ ulong main(int param_1,undefined8 *param_2)
 
 {
   char *pcVar1;
-  long lVar2;
   int iVar3;
   uint uVar4;
   int iVar5;
@@ -64538,10 +63433,7 @@ ulong main(int param_1,undefined8 *param_2)
   undefined2 auStack_1578 [410];
   undefined2 auStack_1244 [2266];
   char *pcStack_90;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
   lStack_15b8 = 0;
   uVar6 = sqlite3_sourceid();
   iVar3 = strcmp(uVar6,&DAT_0061eb30);
@@ -64886,10 +63778,6 @@ LAB_002c74b0:
     sqlite3_close();
   }
 LAB_002c74d0:
-  if (*(long *)(lVar2 + 0x28) != lStack_70) {
-    uVar14 = __stack_chk_fail();
-    return uVar14;
-  }
   return uVar14;
 }
 
@@ -65046,7 +63934,6 @@ ulong sqlite3_db_status(long param_1,int param_2,int *param_3,undefined4 *param_
 {
   int iVar1;
   ushort uVar2;
-  long lVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -65057,10 +63944,7 @@ ulong sqlite3_db_status(long param_1,int param_2,int *param_3,undefined4 *param_
   int iVar11;
   long lVar12;
   int iStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729070)();
   }
@@ -65174,10 +64058,6 @@ LAB_002cbf34:
 LAB_002cbf38:
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729080)();
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
   }
   return (ulong)param_5;
 }
@@ -65959,12 +64839,8 @@ undefined8 sqlite3_malloc(undefined4 param_1)
 void FUN_002cce48(int param_1)
 
 {
-  long lVar1;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 - 1U < 0x7ffffeff) {
     if (DAT_00728ff0 == 0) {
       uStack_40 = (*DAT_00729010)(param_1);
@@ -65982,10 +64858,6 @@ void FUN_002cce48(int param_1)
   else {
     uStack_40 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uStack_40);
   return;
 }
 
@@ -66125,7 +64997,6 @@ long FUN_002cd030(long param_1,int param_2)
 void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined8 uStack_1e0;
@@ -66140,10 +65011,7 @@ void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
   undefined2 uStack_19c;
   undefined1 uStack_19a;
   undefined1 auStack_198 [352];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iVar2 = sqlite3_initialize();
   if (iVar2 == 0) {
     puStack_1b8 = auStack_198;
@@ -66163,10 +65031,6 @@ void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
   else {
     uVar3 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -67126,10 +65990,8 @@ void sqlite3_mprintf(undefined8 param_1,undefined8 param_2,undefined8 param_3,un
                     undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
-  long lVar4;
   undefined1 auStack_c0 [8];
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -67143,8 +66005,6 @@ void sqlite3_mprintf(undefined8 param_1,undefined8 param_2,undefined8 param_3,un
   undefined1 *puStack_70;
   undefined8 uStack_68;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_b8 = param_2;
   uStack_b0 = param_3;
   uStack_a8 = param_4;
@@ -67163,10 +66023,6 @@ void sqlite3_mprintf(undefined8 param_1,undefined8 param_2,undefined8 param_3,un
   else {
     uVar3 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -67179,7 +66035,6 @@ void sqlite3_mprintf(undefined8 param_1,undefined8 param_2,undefined8 param_3,un
 undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_70;
   undefined8 uStack_68;
@@ -67193,10 +66048,7 @@ undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,u
   undefined4 uStack_30;
   undefined2 uStack_2c;
   undefined1 uStack_2a;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (0 < param_1) {
     uStack_50 = 0;
     uStack_38 = 0;
@@ -67213,10 +66065,6 @@ undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,u
     FUN_002cd2c8(&uStack_50,0,param_3,&uStack_70);
     param_2 = FUN_002ce674(&uStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return param_2;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -67229,13 +66077,11 @@ undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,u
 void sqlite3_snprintf(void)
 
 {
-  long lVar1;
   undefined8 in_x3;
   undefined8 in_x4;
   undefined8 in_x5;
   undefined8 in_x6;
   undefined8 in_x7;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -67247,8 +66093,6 @@ void sqlite3_snprintf(void)
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -67259,10 +66103,6 @@ void sqlite3_snprintf(void)
   uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   sqlite3_vsnprintf();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67276,7 +66116,6 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
                 undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   code *pcVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -67298,10 +66137,7 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
   undefined2 uStack_46c;
   undefined1 uStack_46a;
   undefined1 auStack_464 [1052];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_500 = param_3;
   uStack_4f8 = param_4;
   uStack_4f0 = param_5;
@@ -67326,10 +66162,6 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
     uVar4 = FUN_002ce674(&uStack_490);
     (*pcVar2)(uVar3,param_1,uVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67348,7 +66180,6 @@ void sqlite3_randomness(int param_1,undefined1 *param_2)
   long lVar2;
   undefined1 uVar3;
   char cVar4;
-  long lVar5;
   bool bVar6;
   long lVar7;
   long lVar8;
@@ -67358,10 +66189,7 @@ void sqlite3_randomness(int param_1,undefined1 *param_2)
   undefined8 uStack_180;
   undefined8 uStack_178;
   char acStack_170 [256];
-  long lStack_70;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   if (DAT_00728ff4 == 0) {
     lVar7 = 0;
   }
@@ -67441,10 +66269,6 @@ joined_r0x002cea88:
   if (!bVar6) {
     (*DAT_00729080)(lVar7);
   }
-  if (*(long *)(lVar5 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67567,10 +66391,8 @@ void FUN_002cfef0(long param_1,undefined4 param_2,long param_3,undefined8 param_
                  ,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   long *plVar2;
   undefined8 uVar3;
-  long lVar4;
   undefined1 auStack_c0 [8];
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -67582,8 +66404,6 @@ void FUN_002cfef0(long param_1,undefined4 param_2,long param_3,undefined8 param_
   undefined1 *puStack_80;
   undefined8 uStack_78;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_b8 = param_4;
   uStack_b0 = param_5;
   uStack_a8 = param_6;
@@ -67626,10 +66446,6 @@ void FUN_002cfef0(long param_1,undefined4 param_2,long param_3,undefined8 param_
     }
   }
 LAB_002d0004:
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67649,7 +66465,6 @@ ulong sqlite3_backup_step(long *param_1,uint param_2)
   int iVar5;
   int iVar6;
   uint uVar7;
-  long lVar8;
   bool bVar9;
   undefined8 *puVar10;
   bool bVar11;
@@ -67665,10 +66480,7 @@ ulong sqlite3_backup_step(long *param_1,uint param_2)
   long lVar21;
   uint uVar22;
   undefined8 *puStack_70;
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   if (*(long *)(param_1[4] + 0x58) != 0) {
     (*DAT_00729070)();
   }
@@ -67860,10 +66672,6 @@ LAB_002d05b8:
   if (*(long *)(param_1[4] + 0x58) != 0) {
     (*DAT_00729080)();
   }
-  if (*(long *)(lVar8 + 0x28) == lStack_68) {
-    return (ulong)uVar13;
-  }
-  uVar15 = __stack_chk_fail();
   return uVar15;
 }
 
@@ -67942,15 +66750,11 @@ int sqlite3_backup_finish(long *param_1)
 void FUN_002d216c(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   uint uVar3;
   long *plVar4;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar4 = *(long **)(param_1 + 8);
   FUN_002d065c();
   iVar2 = FUN_002e8444(plVar4,0,0);
@@ -67982,10 +66786,6 @@ void FUN_002d216c(long param_1)
     }
     *(undefined1 *)(param_1 + 0x12) = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -68415,13 +67215,9 @@ void sqlite3_value_double(long param_1)
 
 {
   ushort uVar1;
-  long lVar2;
   double dVar3;
   double dStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uVar1 = *(ushort *)(param_1 + 0x24);
   if ((uVar1 >> 3 & 1) == 0) {
     if ((uVar1 >> 2 & 1) == 0) {
@@ -68442,10 +67238,6 @@ void sqlite3_value_double(long param_1)
   else {
     dVar3 = *(double *)(param_1 + 0x10);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(dVar3);
   return;
 }
 
@@ -68459,13 +67251,9 @@ void FUN_002d2860(long param_1)
 
 {
   ushort uVar1;
-  long lVar2;
   double dVar3;
   double dStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uVar1 = *(ushort *)(param_1 + 0x24);
   if ((uVar1 >> 3 & 1) == 0) {
     if ((uVar1 >> 2 & 1) == 0) {
@@ -68486,10 +67274,6 @@ void FUN_002d2860(long param_1)
   else {
     dVar3 = *(double *)(param_1 + 0x10);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(dVar3);
   return;
 }
 
@@ -68516,15 +67300,11 @@ void FUN_002d2908(long param_1)
 
 {
   ushort uVar1;
-  long lVar2;
   bool bVar3;
   long lVar4;
   double dVar5;
   long lStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uVar1 = *(ushort *)(param_1 + 0x24);
   if ((uVar1 >> 2 & 1) == 0) {
     if ((uVar1 >> 3 & 1) == 0) {
@@ -68553,10 +67333,6 @@ void FUN_002d2908(long param_1)
   else {
     lVar4 = *(long *)(param_1 + 0x18);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(lVar4);
   return;
 }
 
@@ -68570,15 +67346,11 @@ void sqlite3_value_int64(long param_1)
 
 {
   ushort uVar1;
-  long lVar2;
   bool bVar3;
   long lVar4;
   double dVar5;
   long lStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uVar1 = *(ushort *)(param_1 + 0x24);
   if ((uVar1 >> 2 & 1) == 0) {
     if ((uVar1 >> 3 & 1) == 0) {
@@ -68607,10 +67379,6 @@ void sqlite3_value_int64(long param_1)
   else {
     lVar4 = *(long *)(param_1 + 0x18);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(lVar4);
   return;
 }
 
@@ -69218,7 +67986,6 @@ ulong sqlite3_step(long *param_1)
   char cVar2;
   byte bVar3;
   ushort uVar4;
-  long lVar5;
   undefined8 *puVar6;
   long lVar7;
   int iVar8;
@@ -69249,10 +68016,7 @@ ulong sqlite3_step(long *param_1)
   undefined8 *puVar33;
   long lStack_180;
   long alStack_178 [33];
-  long lStack_70;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   iVar8 = FUN_002d3c8c();
   if (iVar8 == 0) {
     lVar13 = *param_1;
@@ -69687,10 +68451,6 @@ LAB_002d3560:
   sqlite3_log(0x15,"misuse at line %d of [%.10s]",0xf247,"3e0da808d2f5b4d12046e05980ca04578f581177"
               );
 LAB_002d3be4:
-  if (*(long *)(lVar5 + 0x28) == lStack_70) {
-    return uVar26;
-  }
-  uVar26 = __stack_chk_fail();
   return uVar26;
 LAB_002d3c18:
   if (uVar10 == 7) {
@@ -70828,15 +69588,11 @@ void FUN_002d5098(long param_1)
 
 {
   undefined1 uVar1;
-  long lVar2;
   int iVar3;
   ushort uVar4;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (((*(ushort *)(param_1 + 0x24) & 0xc) == 0) && ((*(ushort *)(param_1 + 0x24) >> 1 & 1) != 0)) {
     uVar1 = *(undefined1 *)(param_1 + 0x27);
     iVar3 = FUN_002ea3c4(*(undefined8 *)(param_1 + 8),&uStack_40,*(undefined4 *)(param_1 + 0x20),
@@ -70855,10 +69611,6 @@ void FUN_002d5098(long param_1)
       *(ushort *)(param_1 + 0x24) = *(ushort *)(param_1 + 0x24) | uVar4;
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -70914,7 +69666,6 @@ ulong sqlite3_blob_open(long param_1,undefined8 param_2,undefined8 param_3,char 
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  long lVar5;
   bool bVar6;
   int iVar7;
   int iVar8;
@@ -70936,10 +69687,7 @@ ulong sqlite3_blob_open(long param_1,undefined8 param_2,undefined8 param_3,char 
   char *pcVar24;
   uint uStack_94;
   long lStack_80;
-  long lStack_78;
   
-  lVar5 = tpidr_el0;
-  lStack_78 = *(long *)(lVar5 + 0x28);
   lStack_80 = 0;
   *param_7 = 0;
   uVar15 = (uint)(param_6 != 0);
@@ -71185,10 +69933,6 @@ LAB_002d56dc:
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729080)(*(long *)(param_1 + 0x58));
   }
-  if (*(long *)(lVar5 + 0x28) != lStack_78) {
-    uVar13 = __stack_chk_fail();
-    return uVar13;
-  }
   return uVar13 & 0xffffffff;
 }
 
@@ -71300,15 +70044,11 @@ ulong sqlite3_blob_reopen(long param_1,undefined8 param_2)
 
 {
   char *pcVar1;
-  long lVar2;
   int iVar3;
   ulong uVar4;
   long lVar5;
   long lStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (param_1 == 0) {
     uVar4 = 0x15;
     sqlite3_log(0x15,"misuse at line %d of [%.10s]",0x11267,
@@ -71339,10 +70079,6 @@ ulong sqlite3_blob_reopen(long param_1,undefined8 param_2)
       (*DAT_00729080)(*(long *)(lVar5 + 0x58));
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -71383,7 +70119,6 @@ ulong sqlite3_exec(long param_1,byte *param_2,code *param_3,undefined8 param_4,l
 {
   char cVar1;
   ushort uVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   int iVar6;
@@ -71404,10 +70139,7 @@ ulong sqlite3_exec(long param_1,byte *param_2,code *param_3,undefined8 param_4,l
   long lStack_88;
   long lStack_78;
   byte *pbStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   lStack_78 = 0;
   iVar5 = FUN_002d6b50();
   if (iVar5 != 0) {
@@ -71519,10 +70251,6 @@ LAB_002d6894:
   sqlite3_log(0x15,"misuse at line %d of [%.10s]",0x15abd,
                "3e0da808d2f5b4d12046e05980ca04578f581177");
 LAB_002d6acc:
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    uVar15 = __stack_chk_fail();
-    return uVar15;
-  }
   return uVar15;
 LAB_002d69d0:
   lStack_98 = 0;
@@ -71665,7 +70393,6 @@ ulong sqlite3_load_extension(long *param_1,undefined8 param_2,char *param_3,long
 
 {
   char *pcVar1;
-  long lVar2;
   int iVar3;
   long lVar4;
   code *pcVar5;
@@ -71674,10 +70401,7 @@ ulong sqlite3_load_extension(long *param_1,undefined8 param_2,char *param_3,long
   undefined8 uVar8;
   long lVar9;
   long lStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   if (param_1[0xb] != 0) {
     (*DAT_00729070)();
   }
@@ -71773,10 +70497,6 @@ LAB_002d6f54:
   if (param_1[0xb] != 0) {
     (*DAT_00729080)(param_1[0xb]);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return uVar7 & 0xffffffff;
-  }
-  uVar7 = __stack_chk_fail();
   return uVar7;
 }
 
@@ -72004,7 +70724,6 @@ ulong sqlite3_get_table(long param_1,undefined8 param_2,undefined8 *param_3,unde
                        undefined4 *param_5,undefined8 *param_6)
 
 {
-  long lVar1;
   int iVar2;
   uint uVar3;
   int iVar4;
@@ -72016,10 +70735,7 @@ ulong sqlite3_get_table(long param_1,undefined8 param_2,undefined8 *param_3,unde
   undefined8 uStack_70;
   undefined8 uStack_68;
   uint uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   *param_3 = 0;
   if (param_5 != (undefined4 *)0x0) {
     *param_5 = 0;
@@ -72085,10 +70801,6 @@ LAB_002d7544:
   }
   *(uint *)(param_1 + 0x20) = uVar3;
 LAB_002d754c:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar3;
 }
 
@@ -72288,7 +71000,6 @@ ulong sqlite3_declare_vtab(long param_1,undefined8 param_2)
 
 {
   char *pcVar1;
-  long lVar2;
   long lVar3;
   int iVar4;
   long *plVar5;
@@ -72297,10 +71008,7 @@ ulong sqlite3_declare_vtab(long param_1,undefined8 param_2)
   undefined4 uVar8;
   long lVar9;
   long lStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   lStack_50 = 0;
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729070)();
@@ -72361,10 +71069,6 @@ ulong sqlite3_declare_vtab(long param_1,undefined8 param_2)
       (*DAT_00729080)(*(long *)(param_1 + 0x58));
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -72380,7 +71084,6 @@ ulong FUN_002d7c1c(long *param_1,long param_2,long *param_3)
   bool bVar1;
   int iVar2;
   undefined1 uVar3;
-  long lVar4;
   int iVar5;
   int *piVar6;
   ulong uVar7;
@@ -72395,10 +71098,7 @@ ulong FUN_002d7c1c(long *param_1,long param_2,long *param_3)
   int iVar16;
   int iVar17;
   int iStack_6c;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   lVar14 = *param_1;
   iVar2 = *(int *)(lVar14 + 100);
   if (*(int *)(lVar14 + 0xb0) == 0) {
@@ -72538,10 +71238,6 @@ LAB_002d7e0c:
     *(undefined4 *)(param_1 + 1) = 1;
   }
 LAB_002d7f80:
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar15;
 }
 
@@ -72571,13 +71267,9 @@ ulong sqlite3_vtab_config(long param_1,int param_2,undefined1 param_3)
 
 {
   undefined4 uVar1;
-  long lVar2;
   ulong uVar3;
-  long lVar4;
   uint uVar5;
   
-  lVar2 = tpidr_el0;
-  lVar4 = *(long *)(lVar2 + 0x28);
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729070)();
   }
@@ -72600,10 +71292,6 @@ LAB_002d810c:
   if (*(long *)(param_1 + 0x58) != 0) {
     (*DAT_00729080)();
   }
-  if (*(long *)(lVar2 + 0x28) == lVar4) {
-    return (ulong)uVar5;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -73078,7 +71766,6 @@ undefined8 sqlite3_shutdown(void)
 undefined8 sqlite3_config(int param_1,long *param_2,undefined4 param_3)
 
 {
-  long lVar1;
   long lVar2;
   long lVar3;
   long lVar4;
@@ -73086,14 +71773,11 @@ undefined8 sqlite3_config(int param_1,long *param_2,undefined4 param_3)
   long lVar6;
   long lVar7;
   long lVar8;
-  long lVar9;
   undefined8 uVar10;
   long *plStack_90;
   undefined8 uStack_88;
   undefined4 uStack_80;
   
-  lVar1 = tpidr_el0;
-  lVar9 = *(long *)(lVar1 + 0x28);
   if (DAT_00729130 != 0) {
     uVar10 = 0x15;
     sqlite3_log(0x15,"misuse at line %d of [%.10s]",0x1af63,
@@ -73203,10 +71887,6 @@ LAB_002d8a74:
     uVar10 = 0;
   }
 switchD_002d88c4_caseD_8:
-  if (*(long *)(lVar1 + 0x28) != lVar9) {
-    uVar10 = __stack_chk_fail();
-    return uVar10;
-  }
   return uVar10;
 }
 
@@ -73240,19 +71920,15 @@ void sqlite3_db_config(long param_1,uint param_2,undefined8 param_3,undefined4 p
 
 {
   uint uVar1;
-  long lVar2;
   bool bVar3;
   undefined8 uVar4;
   uint *puVar5;
   uint uVar6;
   long lVar7;
-  long lVar8;
   int iStack_78;
   uint *puStack_70;
   undefined4 uStack_68;
   
-  lVar2 = tpidr_el0;
-  lVar8 = *(long *)(lVar2 + 0x28);
   if (param_2 == 0x3e9) {
     uVar4 = FUN_002d9018(param_1,param_3,param_4,uStack_68);
   }
@@ -73288,10 +71964,6 @@ LAB_002d8f64:
     }
   }
 LAB_002d8f7c:
-  if (*(long *)(lVar2 + 0x28) != lVar8) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 code_r0x002d8ee0:
   uVar4 = 1;
@@ -73769,7 +72441,6 @@ sqlite3_create_function16
 void FUN_002d9e24(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   long lStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
@@ -73777,10 +72448,7 @@ void FUN_002d9e24(long param_1,undefined8 param_2,undefined8 param_3)
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = 0;
   uStack_38 = 0;
   uStack_40 = 0;
@@ -73793,10 +72461,6 @@ void FUN_002d9e24(long param_1,undefined8 param_2,undefined8 param_3)
   if (*(char *)(param_1 + 0x2a) != '\0') {
     FUN_002d26bc(&lStack_60);
     uStack_58 = 0;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(uStack_58);
-    return;
   }
   return;
 }
@@ -74481,7 +73145,6 @@ ulong FUN_002daa5c(undefined8 param_1,undefined8 *param_2,uint param_3,undefined
 
 {
   char *pcVar1;
-  long lVar2;
   bool bVar3;
   bool bVar4;
   uint uVar5;
@@ -74498,10 +73161,7 @@ ulong FUN_002daa5c(undefined8 param_1,undefined8 *param_2,uint param_3,undefined
   undefined8 uStack_80;
   uint uStack_74;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lStack_88 = 0;
   uStack_80 = 0;
   *param_2 = 0;
@@ -74711,10 +73371,6 @@ LAB_002dae7c:
   uVar13 = (ulong)(uVar5 & 0xff);
   *param_2 = puVar7;
 LAB_002daeb8:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return uVar13;
-  }
-  uVar13 = __stack_chk_fail();
   return uVar13;
 }
 
@@ -74730,7 +73386,6 @@ ulong sqlite3_open_v2(undefined8 param_1,undefined8 *param_2,uint param_3,undefi
 
 {
   char *pcVar1;
-  long lVar2;
   bool bVar3;
   bool bVar4;
   uint uVar5;
@@ -74747,10 +73402,7 @@ ulong sqlite3_open_v2(undefined8 param_1,undefined8 *param_2,uint param_3,undefi
   undefined8 uStack_80;
   uint uStack_74;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lStack_88 = 0;
   uStack_80 = 0;
   *param_2 = 0;
@@ -74960,10 +73612,6 @@ LAB_002dae7c:
   uVar13 = (ulong)(uVar5 & 0xff);
   *param_2 = puVar7;
 LAB_002daeb8:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return uVar13;
-  }
-  uVar13 = __stack_chk_fail();
   return uVar13;
 }
 
@@ -75422,7 +74070,6 @@ ulong sqlite3_test_control(int param_1,long param_2,undefined8 *param_3)
   byte bVar3;
   int iVar4;
   int iVar5;
-  long lVar6;
   int iVar7;
   int iVar8;
   uint uVar9;
@@ -75440,10 +74087,7 @@ ulong sqlite3_test_control(int param_1,long param_2,undefined8 *param_3)
   undefined8 *puStack_c8;
   undefined8 uStack_c0;
   uint uStack_74;
-  long lStack_70;
   
-  lVar6 = tpidr_el0;
-  lStack_70 = *(long *)(lVar6 + 0x28);
   uVar15 = 0;
   if (0xe < param_1 - 5U) goto switchD_002db8e0_caseD_9;
   lStack_d0._0_4_ = (uint)param_2;
@@ -75607,10 +74251,6 @@ LAB_002dbbc8:
     uVar15 = 0;
   }
 switchD_002db8e0_caseD_9:
-  if (*(long *)(lVar6 + 0x28) == lStack_70) {
-    return (ulong)uVar15;
-  }
-  uVar13 = __stack_chk_fail();
   return uVar13;
   while( true ) {
     uVar13 = (ulong)(uVar19 + 1);
@@ -75767,11 +74407,9 @@ void FUN_002dc568(undefined4 param_1)
 ulong save_image_as_DDS(long param_1,int param_2,int param_3,uint param_4,long param_5)
 
 {
-  long lVar1;
   void *p0;
   undefined8 uVar2;
   ulong uVar3;
-  long lVar4;
   uint uVar5;
   int iStack_dc;
   undefined8 uStack_d8;
@@ -75784,8 +74422,6 @@ ulong save_image_as_DDS(long param_1,int param_2,int param_3,uint param_4,long p
   undefined4 uStack_84;
   undefined4 uStack_6c;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uVar5 = 0;
   if ((param_5 != 0) && (param_1 != 0)) {
     if ((0 < param_2) && ((0 < param_3 && (param_4 - 1 < 4)))) {
@@ -75815,10 +74451,6 @@ ulong save_image_as_DDS(long param_1,int param_2,int param_3,uint param_4,long p
       free(p0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return (ulong)uVar5;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -75846,7 +74478,6 @@ long convert_image_to_DXT1(long param_1,uint param_2,int param_3,int param_4,int
   int iVar13;
   int iVar14;
   undefined1 *puVar15;
-  long lVar16;
   int iVar17;
   int iVar18;
   int iVar19;
@@ -75866,11 +74497,8 @@ long convert_image_to_DXT1(long param_1,uint param_2,int param_3,int param_4,int
   long lStack_d0;
   undefined8 uStack_a8;
   undefined1 auStack_a0 [48];
-  long lStack_70;
   
   lStack_d0 = 0;
-  lVar16 = tpidr_el0;
-  lStack_70 = *(long *)(lVar16 + 0x28);
   *param_5 = 0;
   if ((((param_4 - 1U < 4) && (param_1 != 0)) && (0 < (int)param_2)) && (0 < param_3)) {
     iVar19 = (param_2 + 3 >> 2) * (param_3 + 3U >> 2) * 8;
@@ -75984,10 +74612,6 @@ long convert_image_to_DXT1(long param_1,uint param_2,int param_3,int param_4,int
       iVar21 = iVar22;
     } while (iVar19 < param_3);
   }
-  if (*(long *)(lVar16 + 0x28) != lStack_70) {
-    lVar16 = __stack_chk_fail();
-    return lVar16;
-  }
   return lStack_d0;
 }
 
@@ -76018,7 +74642,6 @@ long convert_image_to_DXT5(long param_1,uint param_2,int param_3,int param_4,int
   uint uVar16;
   byte bVar17;
   long lVar18;
-  long lVar19;
   char *pcVar20;
   int iVar21;
   int iVar22;
@@ -76043,11 +74666,8 @@ long convert_image_to_DXT5(long param_1,uint param_2,int param_3,int param_4,int
   undefined1 uStack_af;
   undefined1 uStack_ae;
   undefined1 uStack_ad;
-  long lStack_70;
   
   lStack_f0 = 0;
-  lVar19 = tpidr_el0;
-  lStack_70 = *(long *)(lVar19 + 0x28);
   uVar16 = param_4 - 1;
   *param_5 = 0;
   if ((((uVar16 < 4) && (param_1 != 0)) && (0 < (int)param_2)) && (0 < param_3)) {
@@ -76172,10 +74792,6 @@ long convert_image_to_DXT5(long param_1,uint param_2,int param_3,int param_4,int
       iVar23 = iVar2;
     } while (iVar2 < param_3);
   }
-  if (*(long *)(lVar19 + 0x28) != lStack_70) {
-    lVar19 = __stack_chk_fail();
-    return lVar19;
-  }
   return lStack_f0;
 }
 
@@ -76188,7 +74804,6 @@ long convert_image_to_DXT5(long param_1,uint param_2,int param_3,int param_4,int
 void compress_DDS_color_block(int param_1,long param_2,undefined1 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   byte *pbVar3;
   uint uVar4;
@@ -76213,10 +74828,7 @@ void compress_DDS_color_block(int param_1,long param_2,undefined1 *param_3)
   uint uStack_50;
   undefined8 uStack_48;
   uint uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   LSE_master_colors_max_min(&uStack_6c,&uStack_70,param_1,param_2);
@@ -76282,10 +74894,6 @@ void compress_DDS_color_block(int param_1,long param_2,undefined1 *param_3)
          param_3[uVar5] |
          (byte)(*(int *)(&DAT_0062de78 + (ulong)uVar4 * 4) << (ulong)((uint)uVar12 & 6));
   } while (lVar2 != 0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -76511,7 +75119,6 @@ void LSE_master_colors_max_min(uint *param_1,uint *param_2,int param_3,byte *par
   uint uVar6;
   uint uVar7;
   uint uVar8;
-  long lVar9;
   long lVar10;
   int iVar11;
   undefined4 uVar12;
@@ -76526,10 +75133,7 @@ void LSE_master_colors_max_min(uint *param_1,uint *param_2,int param_3,byte *par
   undefined8 uStack_70;
   float fStack_68;
   int aiStack_60 [6];
-  long lStack_48;
   
-  lVar9 = tpidr_el0;
-  lStack_48 = *(long *)(lVar9 + 0x28);
   fStack_68 = 0.0;
   uStack_70 = 0;
   fStack_78 = 0.0;
@@ -76593,10 +75197,6 @@ LAB_003a2394:
     } while( true );
   }
 LAB_003a244c:
-  if (*(long *)(lVar9 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 code_r0x003a23a0:
   iVar11 = aiStack_60[3] * 0x1f + 0x80;
@@ -76828,16 +75428,12 @@ void stbi_load_from_file(undefined8 param_1,undefined4 *param_2,undefined4 *para
                         int param_5)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
   undefined1 auStack_3780 [16];
   undefined8 uStack_3770;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   iVar2 = stbi_jpeg_test_file();
   if (iVar2 == 0) {
     iVar2 = stbi_png_test_file(param_1);
@@ -76906,10 +75502,6 @@ void stbi_load_from_file(undefined8 param_1,undefined4 *param_2,undefined4 *para
     uVar3 = func_0x003a3e20(auStack_3780,param_2,param_3,param_4,param_5);
   }
 LAB_003a28c0:
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -76922,17 +75514,13 @@ LAB_003a28c0:
 ulong stbi_jpeg_test_file(undefined8 param_1)
 
 {
-  long lVar1;
   char cVar2;
   int iVar3;
   ulong uVar4;
   undefined1 auStack_3758 [16];
   undefined8 uStack_3748;
   undefined1 uStack_70;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar3 = ftell();
   uStack_70 = 0xff;
   uStack_3748 = param_1;
@@ -76941,10 +75529,6 @@ ulong stbi_jpeg_test_file(undefined8 param_1)
     DAT_0072dfc0 = "Corrupt JPEG";
   }
   fseek(param_1,(long)iVar3,0);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
-  }
   return (ulong)(cVar2 == -0x28);
 }
 
@@ -76957,19 +75541,11 @@ ulong stbi_jpeg_test_file(undefined8 param_1)
 void stbi_jpeg_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_3738 [16];
   undefined8 uStack_3728;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_3728 = param_1;
   func_0x003a3e20(auStack_3738);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77024,19 +75600,11 @@ LAB_003a2a80:
 void stbi_png_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_68 [16];
   undefined8 uStack_58;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_58 = param_1;
   func_0x003a5644(auStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77049,23 +75617,15 @@ void stbi_png_load_from_file(undefined8 param_1)
 ulong stbi_bmp_test_file(undefined8 param_1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined1 auStack_60 [16];
   undefined8 uStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iVar2 = ftell();
   uStack_50 = param_1;
   uVar3 = func_0x003a62e4(auStack_60);
   fseek(param_1,(long)iVar2,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -77078,19 +75638,11 @@ ulong stbi_bmp_test_file(undefined8 param_1)
 void stbi_bmp_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a6494(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77150,19 +75702,11 @@ bool stbi_psd_test_file(long param_1)
 void stbi_psd_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a7bd0(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77175,23 +75719,15 @@ void stbi_psd_load_from_file(undefined8 param_1)
 ulong stbi_dds_test_file(undefined8 param_1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined1 auStack_60 [16];
   undefined8 uStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iVar2 = ftell();
   uStack_50 = param_1;
   uVar3 = func_0x003a8e68(auStack_60);
   fseek(param_1,(long)iVar2,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -77204,19 +75740,11 @@ ulong stbi_dds_test_file(undefined8 param_1)
 void stbi_dds_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a95bc(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77270,19 +75798,11 @@ LAB_003a2dd8:
 void stbi_hdr_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a8170(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77295,23 +75815,15 @@ void stbi_hdr_load_from_file(undefined8 param_1)
 ulong stbi_tga_test_file(undefined8 param_1)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   undefined1 auStack_60 [16];
   undefined8 uStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iVar2 = ftell();
   uStack_50 = param_1;
   uVar3 = func_0x003a73d4(auStack_60);
   fseek(param_1,(long)iVar2,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -77324,19 +75836,11 @@ ulong stbi_tga_test_file(undefined8 param_1)
 void stbi_tga_load_from_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a7580(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77352,7 +75856,6 @@ void stbi_load_from_memory
 
 {
   char *pcVar1;
-  long lVar2;
   char cVar3;
   int iVar4;
   undefined8 uVar5;
@@ -77364,10 +75867,7 @@ void stbi_load_from_memory
   char *pcStack_3768;
   char *pcStack_3760;
   undefined1 uStack_98;
-  long lStack_70;
   
-  lVar2 = tpidr_el0;
-  lStack_70 = *(long *)(lVar2 + 0x28);
   pcVar1 = param_1 + param_2;
   uStack_3770 = 0;
   uStack_98 = 0xff;
@@ -77486,10 +75986,6 @@ LAB_003a333c:
     uVar5 = func_0x003a7580(auStack_3780,param_3,param_4,param_5,param_6);
   }
 LAB_003a33b4:
-  if (*(long *)(lVar2 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -77502,17 +75998,13 @@ LAB_003a33b4:
 void stbi_jpeg_test_memory(long param_1,int param_2)
 
 {
-  long lVar1;
   char cVar2;
   undefined1 auStack_3738 [16];
   undefined8 uStack_3728;
   long lStack_3720;
   long lStack_3718;
   undefined1 uStack_50;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_3718 = param_1 + param_2;
   uStack_3728 = 0;
   uStack_50 = 0xff;
@@ -77520,10 +76012,6 @@ void stbi_jpeg_test_memory(long param_1,int param_2)
   cVar2 = FUN_003a9efc(auStack_3738);
   if (cVar2 != -0x28) {
     DAT_0072dfc0 = "Corrupt JPEG";
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail(cVar2 == -0x28);
-    return;
   }
   return;
 }
@@ -77539,23 +76027,15 @@ void stbi_jpeg_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_3738 [16];
   undefined8 uStack_3728;
   long lStack_3720;
   long lStack_3718;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_3718 = param_1 + param_2;
   uStack_3728 = 0;
   lStack_3720 = param_1;
   func_0x003a3e20(auStack_3738,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77603,23 +76083,15 @@ void stbi_png_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_68 [16];
   undefined8 uStack_58;
   long lStack_50;
   long lStack_48;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_48 = param_1 + param_2;
   uStack_58 = 0;
   lStack_50 = param_1;
   func_0x003a5644(auStack_68,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77632,23 +76104,15 @@ void stbi_png_load_from_memory
 void stbi_bmp_test_memory(long param_1,int param_2)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a62e4(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77663,23 +76127,15 @@ void stbi_bmp_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a6494(auStack_50,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77740,23 +76196,15 @@ void stbi_psd_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a7bd0(auStack_50,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77769,23 +76217,15 @@ void stbi_psd_load_from_memory
 void stbi_dds_test_memory(long param_1,int param_2)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a8e68(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77800,23 +76240,15 @@ void stbi_dds_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a95bc(auStack_50,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77863,23 +76295,15 @@ void stbi_hdr_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a8170(auStack_50,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77892,23 +76316,15 @@ void stbi_hdr_load_from_memory
 void stbi_tga_test_memory(long param_1,int param_2)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a73d4(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77923,23 +76339,15 @@ void stbi_tga_load_from_memory
                undefined4 param_6)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a7580(auStack_50,param_3,param_4,param_5,param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77979,15 +76387,11 @@ void stbi_loadf_from_file
                (undefined8 param_1,undefined4 *param_2,undefined4 *param_3,int *param_4,int param_5)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined1 auStack_70 [16];
   undefined8 uStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar2 = stbi_hdr_test_file();
   if (iVar2 == 0) {
     lVar3 = stbi_load_from_file(param_1,param_2,param_3,param_4,param_5);
@@ -78005,10 +76409,6 @@ void stbi_loadf_from_file
     uStack_60 = param_1;
     func_0x003a8170(auStack_70,param_2,param_3,param_4,param_5);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -78023,7 +76423,6 @@ void stbi_loadf_from_memory
                int *param_5,int param_6)
 
 {
-  long lVar1;
   long lVar2;
   char *pcVar3;
   char cVar4;
@@ -78031,10 +76430,7 @@ void stbi_loadf_from_memory
   undefined8 uStack_60;
   char *pcStack_58;
   char *pcStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = 0;
   pcVar3 = param_1;
   while( true ) {
@@ -78053,10 +76449,6 @@ void stbi_loadf_from_memory
       pcStack_50 = param_1 + (int)param_2;
       func_0x003a8170(auStack_70,param_3,param_4,param_5,param_6);
 LAB_003a3d24:
-      if (*(long *)(lVar1 + 0x28) == lStack_48) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   }
@@ -78202,15 +76594,11 @@ stbi_jpeg_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefine
               undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_3768 [16];
   long lStack_3758;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -78220,10 +76608,6 @@ stbi_jpeg_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefine
     uVar3 = func_0x003a3e20(auStack_3768,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -78459,7 +76843,6 @@ LAB_003a4a14:
 void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int *param_4)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   void *pvVar4;
@@ -78467,10 +76850,7 @@ void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int 
   long lStack_1040;
   int iStack_1030;
   void *pvStack_1028;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = malloc((long)param_3);
   pvVar4 = (void *)0x0;
   if (lVar3 != 0) {
@@ -78487,10 +76867,6 @@ void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int 
         *param_4 = iStack_1030 - (int)pvStack_1028;
       }
     }
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(pvVar4);
-    return;
   }
   return;
 }
@@ -78517,16 +76893,12 @@ void stbi_zlib_decode_malloc(undefined8 param_1,undefined8 param_2,undefined8 pa
 void stbi_zlib_decode_buffer(undefined8 param_1,undefined4 param_2,long param_3,int param_4)
 
 {
-  long lVar1;
   int iVar2;
   long lStack_1028;
   long lStack_1020;
   int iStack_1010;
   int iStack_1008;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_1020 = param_3 + param_4;
   lStack_1028 = param_3;
   iVar2 = func_0x003a4dd0(&lStack_1028,param_1,param_2,0,1);
@@ -78536,10 +76908,6 @@ void stbi_zlib_decode_buffer(undefined8 param_1,undefined4 param_2,long param_3,
   else {
     iStack_1010 = iStack_1010 - iStack_1008;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(iStack_1010);
   return;
 }
 
@@ -78552,7 +76920,6 @@ void stbi_zlib_decode_buffer(undefined8 param_1,undefined4 param_2,long param_3,
 void stbi_zlib_decode_noheader_malloc(long param_1,int param_2,int *param_3)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   void *pvVar4;
@@ -78560,10 +76927,7 @@ void stbi_zlib_decode_noheader_malloc(long param_1,int param_2,int *param_3)
   long lStack_1040;
   int iStack_1030;
   void *pvStack_1028;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = malloc(0x4000);
   pvVar4 = (void *)0x0;
   if (lVar3 != 0) {
@@ -78581,10 +76945,6 @@ void stbi_zlib_decode_noheader_malloc(long param_1,int param_2,int *param_3)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(pvVar4);
-    return;
-  }
   return;
 }
 
@@ -78598,16 +76958,12 @@ void stbi_zlib_decode_noheader_buffer
                (undefined8 param_1,undefined4 param_2,long param_3,int param_4)
 
 {
-  long lVar1;
   int iVar2;
   long lStack_1028;
   long lStack_1020;
   int iStack_1010;
   int iStack_1008;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_1020 = param_3 + param_4;
   lStack_1028 = param_3;
   iVar2 = func_0x003a4dd0(&lStack_1028,param_1,param_2,0,0);
@@ -78617,10 +76973,6 @@ void stbi_zlib_decode_noheader_buffer
   else {
     iStack_1010 = iStack_1010 - iStack_1008;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(iStack_1010);
   return;
 }
 
@@ -78635,15 +76987,11 @@ stbi_png_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
              undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_88 [16];
   long lStack_78;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -78653,10 +77001,6 @@ stbi_png_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
     uVar3 = func_0x003a5644(auStack_88,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -78675,7 +77019,6 @@ void FUN_003a57e0(uint *param_1,int param_2,uint param_3)
   undefined1 uVar4;
   uint uVar5;
   uint uVar6;
-  long lVar7;
   bool bVar8;
   bool bVar9;
   undefined4 uVar10;
@@ -78714,10 +77057,7 @@ void FUN_003a57e0(uint *param_1,int param_2,uint param_3)
   int iStack_478;
   char acStack_474 [4];
   undefined1 auStack_470 [1024];
-  long lStack_70;
   
-  lVar7 = tpidr_el0;
-  lStack_70 = *(long *)(lVar7 + 0x28);
   uVar30 = 0;
   do {
     uVar13 = FUN_003aa25c(param_1);
@@ -79103,10 +77443,6 @@ LAB_003a618c:
 LAB_003a6028:
   uVar23 = 1;
 LAB_003a5d38:
-  if (*(long *)(lVar7 + 0x28) != lStack_70) {
-    __stack_chk_fail(uVar23);
-    return;
-  }
   return;
 }
 
@@ -79119,7 +77455,6 @@ LAB_003a5d38:
 void stbi_png_info(undefined8 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined8 uVar4;
@@ -79127,10 +77462,7 @@ void stbi_png_info(undefined8 param_1,undefined4 *param_2,undefined4 *param_3,un
   undefined4 uStack_84;
   undefined4 uStack_80;
   long lStack_78;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = fopen(param_1,&DAT_0061ee22);
   uVar4 = 0;
   if (lVar3 != 0) {
@@ -79154,10 +77486,6 @@ void stbi_png_info(undefined8 param_1,undefined4 *param_2,undefined4 *param_3,un
       uVar4 = 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -79172,15 +77500,11 @@ stbi_bmp_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
              undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -79190,10 +77514,6 @@ stbi_bmp_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
     uVar3 = func_0x003a6494(auStack_70,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -79208,15 +77528,11 @@ stbi_tga_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
              undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -79226,10 +77542,6 @@ stbi_tga_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
     uVar3 = func_0x003a7580(auStack_70,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -79244,15 +77556,11 @@ stbi_psd_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
              undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -79262,10 +77570,6 @@ stbi_psd_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
     uVar3 = func_0x003a7bd0(auStack_70,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -79278,19 +77582,11 @@ stbi_psd_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
 void stbi_hdr_load_rgbe_file(undefined8 param_1)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = param_1;
   func_0x003a8620(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79304,15 +77600,11 @@ undefined8
 stbi_hdr_load_rgbe(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -79323,10 +77615,6 @@ stbi_hdr_load_rgbe(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
     uVar3 = func_0x003a8620(auStack_70,param_2,param_3,param_4);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -79340,23 +77628,15 @@ void stbi_hdr_load_rgbe_memory
                (long param_1,int param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5)
 
 {
-  long lVar1;
   undefined1 auStack_50 [16];
   undefined8 uStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = param_1 + param_2;
   uStack_40 = 0;
   lStack_38 = param_1;
   func_0x003a8620(auStack_50,param_3,param_4,param_5);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79440,7 +77720,6 @@ void stbi_decode_DXT1_block(long param_1,ushort *param_2)
   undefined1 *puVar6;
   uint uVar7;
   uint uVar8;
-  long lVar9;
   ushort uVar10;
   ulong uVar11;
   ulong uVar12;
@@ -79457,10 +77736,7 @@ void stbi_decode_DXT1_block(long param_1,ushort *param_2)
   undefined1 uStack_1b;
   undefined1 uStack_1a;
   undefined1 uStack_19;
-  long lStack_18;
   
-  lVar9 = tpidr_el0;
-  lStack_18 = *(long *)(lVar9 + 0x28);
   uVar10 = param_2[1];
   uVar1 = ((uint)(*(byte *)((long)param_2 + 1) >> 3) * 0x100 -
           (uint)(*(byte *)((long)param_2 + 1) >> 3)) + 0x10;
@@ -79518,10 +77794,6 @@ void stbi_decode_DXT1_block(long param_1,ushort *param_2)
     puVar6[2] = auStack_28[(uVar13 & 3) << 2 | 2];
     puVar6[3] = auStack_28[(uVar13 & 3) << 2 | 3];
   } while (uVar11 < 0x40);
-  if (*(long *)(lVar9 + 0x28) == lStack_18) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79558,7 +77830,6 @@ void stbi_decode_DXT45_alpha_block(long param_1,byte *param_2)
 {
   uint uVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   uint uVar5;
   int iVar6;
@@ -79577,10 +77848,7 @@ void stbi_decode_DXT45_alpha_block(long param_1,byte *param_2)
   undefined1 uStack_1b;
   undefined1 uStack_1a;
   undefined1 uStack_19;
-  long lStack_18;
   
-  lVar3 = tpidr_el0;
-  lStack_18 = *(long *)(lVar3 + 0x28);
   abStack_20[0] = *param_2;
   abStack_20[1] = param_2[1];
   uVar4 = (uint)abStack_20[0];
@@ -79634,10 +77902,6 @@ void stbi_decode_DXT45_alpha_block(long param_1,byte *param_2)
           ((ulong)(param_2[iVar6 + 2U >> 3] >> ((ulong)(iVar6 + 2U) & 7)) & 1) << 2];
     uVar10 = uVar10 + 4;
   } while (uVar10 < 0x40);
-  if (*(long *)(lVar3 + 0x28) == lStack_18) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79659,7 +77923,6 @@ void stbi_decode_DXT_color_block(long param_1,ushort *param_2)
   uint uVar7;
   uint uVar8;
   uint uVar9;
-  long lVar10;
   long lVar11;
   ulong uVar12;
   ulong uVar13;
@@ -79670,10 +77933,7 @@ void stbi_decode_DXT_color_block(long param_1,ushort *param_2)
   undefined1 uStack_1b;
   undefined1 uStack_1a;
   undefined1 uStack_19;
-  long lStack_18;
   
-  lVar10 = tpidr_el0;
-  lStack_18 = *(long *)(lVar10 + 0x28);
   uVar12 = 0;
   uVar1 = ((uint)(*(byte *)((long)param_2 + 1) >> 3) * 0x100 -
           (uint)(*(byte *)((long)param_2 + 1) >> 3)) + 0x10;
@@ -79714,10 +77974,6 @@ void stbi_decode_DXT_color_block(long param_1,ushort *param_2)
     puVar6[1] = auStack_24[lVar11 + 1];
     puVar6[2] = auStack_24[lVar11 + 2];
   } while (uVar12 < 0x40);
-  if (*(long *)(lVar10 + 0x28) == lStack_18) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79732,15 +77988,11 @@ stbi_dds_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
              undefined4 param_5)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = fopen(param_1,&DAT_0061ee22);
   if (lVar2 == 0) {
     uVar3 = 0;
@@ -79750,10 +78002,6 @@ stbi_dds_load(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined
     uVar3 = func_0x003a95bc(auStack_70,param_2,param_3,param_4,param_5);
     fclose(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -82102,7 +80350,6 @@ ulong VP8GetHeaders(int *param_1,uint *param_2)
   int *piVar1;
   long lVar2;
   byte bVar3;
-  long lVar4;
   byte bVar5;
   byte bVar6;
   undefined1 uVar7;
@@ -82127,10 +80374,7 @@ ulong VP8GetHeaders(int *param_1,uint *param_2)
   long lStack_90;
   undefined1 auStack_88 [16];
   int iStack_68;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   if (param_1 != (int *)0x0) {
     *param_1 = 0;
     *(undefined **)(param_1 + 2) = &DAT_0062f4ba;
@@ -82453,10 +80697,6 @@ LAB_003b0690:
   }
   uVar16 = 0;
 LAB_003b0c74:
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    uVar11 = __stack_chk_fail();
-    return uVar11;
-  }
   return (ulong)uVar16;
 }
 
@@ -82473,7 +80713,6 @@ void VP8DecodeMB(long param_1,long param_2)
   short *psVar2;
   byte bVar3;
   uint uVar4;
-  long lVar5;
   bool bVar6;
   int iVar7;
   int iVar8;
@@ -82504,10 +80743,7 @@ void VP8DecodeMB(long param_1,long param_2)
   int aiStack_a0 [2];
   int aiStack_98 [2];
   int aiStack_90 [8];
-  long lStack_70;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   lVar30 = param_1 + 0x10;
   lVar25 = *(long *)(param_1 + 0x7e0);
   iVar7 = *(int *)(param_1 + 0x830);
@@ -82794,10 +81030,6 @@ LAB_003b0f68:
   else {
     bVar6 = false;
   }
-  if (*(long *)(lVar5 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail(bVar6);
   return;
 }
 
@@ -82955,16 +81187,12 @@ void VP8LGetInfo(long param_1,ulong param_2,undefined4 *param_3,undefined4 *para
                 undefined4 *param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_78 [52];
   undefined4 uStack_44;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = 0;
   if ((param_1 != 0) && (4 < param_2)) {
     VP8LInitBitReader(auStack_78);
@@ -82982,10 +81210,6 @@ void VP8LGetInfo(long param_1,ulong param_2,undefined4 *param_3,undefined4 *para
       uVar2 = 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -83093,17 +81317,13 @@ ulong VP8LDecodeAlphaImageStream
                 undefined8 param_5)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 *p0;
   ulong uVar3;
   undefined4 uStack_108;
   undefined4 uStack_104;
   undefined8 uStack_d0;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   p0 = (undefined4 *)calloc(1,0x130);
   if (p0 == (undefined4 *)0x0) {
     uVar3 = 0;
@@ -83133,10 +81353,6 @@ ulong VP8LDecodeAlphaImageStream
     VP8LClear(p0);
     free(p0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -83160,7 +81376,6 @@ void FUN_003b2948(uint param_1,int param_2,int param_3,int *param_4,long *param_
   int iVar9;
   ushort uVar10;
   uint uVar11;
-  long lVar12;
   int iVar13;
   uint uVar14;
   int iVar15;
@@ -83187,10 +81402,7 @@ void FUN_003b2948(uint param_1,int param_2,int param_3,int *param_4,long *param_
   int iStack_84;
   undefined4 uStack_80;
   undefined4 uStack_7c;
-  long lStack_70;
   
-  lVar12 = tpidr_el0;
-  lStack_70 = *(long *)(lVar12 + 0x28);
   piVar3 = param_4 + 0xc;
   piVar4 = param_4 + 0x1c;
   if (param_3 == 0) {
@@ -83537,10 +81749,6 @@ LAB_003b30f8:
     uVar21 = 0;
   }
 LAB_003b3140:
-  if (*(long *)(lVar12 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail(uVar21);
   return;
 }
 
@@ -83553,16 +81761,12 @@ LAB_003b3140:
 undefined8 VP8LDecodeHeader(undefined4 *param_1,undefined4 *param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined1 auStack_44 [4];
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 != (undefined4 *)0x0) {
     if (param_2 == (undefined4 *)0x0) {
       *param_1 = 2;
@@ -83588,10 +81792,6 @@ undefined8 VP8LDecodeHeader(undefined4 *param_1,undefined4 *param_2)
   }
   uVar3 = 0;
 LAB_003b3acc:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return uVar3;
 }
 
@@ -83944,7 +82144,6 @@ void WebPDecodeYUVInto(undefined8 param_1,undefined8 param_2,long param_3,undefi
                       undefined8 param_9,undefined8 param_10,undefined4 param_11)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 *puStack_2b8;
   undefined1 auStack_2b0 [456];
@@ -83959,10 +82158,7 @@ void WebPDecodeYUVInto(undefined8 param_1,undefined8 param_2,long param_3,undefi
   undefined8 uStack_a8;
   undefined8 uStack_a0;
   undefined8 uStack_98;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if (param_3 == 0) {
     param_3 = 0;
   }
@@ -83986,10 +82182,6 @@ void WebPDecodeYUVInto(undefined8 param_1,undefined8 param_2,long param_3,undefi
       param_3 = 0;
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_70) {
-    __stack_chk_fail(param_3);
-    return;
-  }
   return;
 }
 
@@ -84002,7 +82194,6 @@ void WebPDecodeYUVInto(undefined8 param_1,undefined8 param_2,long param_3,undefi
 ulong FUN_003b49c0(long param_1,long param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   uint *puVar4;
@@ -84017,10 +82208,7 @@ ulong FUN_003b49c0(long param_1,long param_2,undefined8 *param_3)
   undefined4 uStack_e4;
   long lStack_88;
   long lStack_80;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lStack_128 = param_1;
   lStack_120 = param_2;
   uVar2 = FUN_003b4358(param_1,param_2,0,0,0,&lStack_128);
@@ -84081,10 +82269,6 @@ LAB_003b4b08:
     WebPFreeDecBuffer(*param_3);
   }
 LAB_003b4a08:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -84163,17 +82347,13 @@ void WebPDecodeYUV(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
                   undefined8 *param_5,undefined8 *param_6,undefined4 *param_7,undefined4 *param_8)
 
 {
-  long lVar1;
   long lVar2;
   undefined1 auStack_c0 [24];
   undefined8 uStack_a8;
   undefined8 uStack_a0;
   undefined4 uStack_90;
   undefined4 uStack_8c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = func_0x003b4b58(0xb,param_1,param_2,param_3,param_4,auStack_c0);
   if (lVar2 != 0) {
     *param_5 = uStack_a8;
@@ -84181,10 +82361,6 @@ void WebPDecodeYUV(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
     *param_7 = uStack_90;
     *param_8 = uStack_8c;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -84197,7 +82373,6 @@ void WebPDecodeYUV(undefined8 param_1,undefined8 param_2,undefined8 param_3,unde
 void WebPGetInfo(long param_1,undefined8 param_2,undefined4 *param_3,undefined4 *param_4)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined8 uStack_60;
@@ -84205,10 +82380,7 @@ void WebPGetInfo(long param_1,undefined8 param_2,undefined4 *param_3,undefined4 
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = 0;
   if (param_1 != 0) {
     uStack_40 = 0;
@@ -84230,10 +82402,6 @@ void WebPGetInfo(long param_1,undefined8 param_2,undefined4 *param_3,undefined4 
       uVar3 = 0;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -84294,15 +82462,11 @@ int WebPGetFeaturesInternal(long param_1,undefined8 param_2,undefined8 *param_3,
 void WebPDecode(long param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puStack_218;
   undefined1 auStack_210 [32];
   undefined8 *puStack_1f0;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((param_3 == (undefined8 *)0x0) || (param_1 == 0)) {
     uVar2 = 2;
   }
@@ -84323,10 +82487,6 @@ void WebPDecode(long param_1,undefined8 param_2,undefined8 *param_3)
       uVar2 = 3;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -84693,7 +82853,6 @@ void VP8LResidualImage(int param_1,int param_2,uint param_3,long param_4,long pa
   int iVar12;
   int iVar13;
   uint uVar14;
-  long lVar15;
   float fVar16;
   bool bVar17;
   uint uVar18;
@@ -84724,10 +82883,7 @@ void VP8LResidualImage(int param_1,int param_2,uint param_3,long param_4,long pa
   int aiStack_24b0 [1024];
   int aiStack_14b0 [1024];
   int aiStack_4b0 [256];
-  long lStack_b0;
   
-  lVar15 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar15 + 0x28);
   iVar6 = 1 << (ulong)(param_3 & 0x1f);
   iVar12 = iVar6 + -1;
   uVar9 = (uint)(iVar12 + param_2) >> (ulong)(param_3 & 0x1f);
@@ -84927,10 +83083,6 @@ void VP8LResidualImage(int param_1,int param_2,uint param_3,long param_4,long pa
       uVar26 = uVar26 + 1;
     } while (uVar26 != uVar9);
   }
-  if (*(long *)(lVar15 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -84979,7 +83131,6 @@ void VP8LColorSpaceTransform
   int iVar8;
   uint uVar9;
   uint uVar10;
-  long lVar11;
   int iVar12;
   ulong uVar13;
   int iVar14;
@@ -85012,10 +83163,7 @@ void VP8LColorSpaceTransform
   int aiStack_c90 [256];
   int aiStack_890 [256];
   int aiStack_490 [256];
-  long lStack_90;
   
-  lVar11 = tpidr_el0;
-  lStack_90 = *(long *)(lVar11 + 0x28);
   iVar6 = 1 << (ulong)(param_3 & 0x1f);
   uVar9 = (uint)(iVar6 + -1 + param_2) >> (ulong)(param_3 & 0x1f);
   memset(aiStack_890,0,0x400);
@@ -85283,10 +83431,6 @@ LAB_003b905c:
       uStack_d18 = uStack_d18 + 1;
     } while (uStack_d18 != uVar9);
   }
-  if (*(long *)(lVar11 + 0x28) == lStack_90) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -85842,7 +83986,6 @@ void VP8EncFinishAlpha(long *param_1)
   uint uVar6;
   undefined4 uVar7;
   int iVar8;
-  long lVar9;
   undefined8 uVar10;
   undefined8 uVar11;
   undefined8 uVar12;
@@ -85872,10 +84015,7 @@ void VP8EncFinishAlpha(long *param_1)
   undefined8 uStack_148;
   long lStack_138;
   undefined1 auStack_130 [192];
-  long lStack_70;
   
-  lVar9 = tpidr_el0;
-  lStack_70 = *(long *)(lVar9 + 0x28);
   if (*(int *)((long)param_1 + 500) == 0) {
 LAB_003be1ec:
     uVar16 = WebPReportProgress(param_1[1],(int)param_1[0x3e] + 0x14,param_1 + 0x3e);
@@ -86020,10 +84160,6 @@ LAB_003be190:
     }
     uVar16 = 0;
   }
-  if (*(long *)(lVar9 + 0x28) != lStack_70) {
-    __stack_chk_fail(uVar16);
-    return;
-  }
   return;
 }
 
@@ -86063,7 +84199,6 @@ ulong VP8EncAnalyze(long *param_1)
   int iVar10;
   int iVar11;
   int iVar12;
-  long lVar13;
   undefined4 uVar14;
   uint uVar15;
   int iVar16;
@@ -86105,10 +84240,7 @@ ulong VP8EncAnalyze(long *param_1)
   int aiStack_90 [4];
   undefined8 uStack_80;
   undefined8 uStack_78;
-  long lStack_70;
   
-  lVar13 = tpidr_el0;
-  lStack_70 = *(long *)(lVar13 + 0x28);
   memset(aiStack_8b0,0,0x400);
   VP8IteratorInit(param_1,auStack_a18);
   *(undefined4 *)((long)param_1 + 0xa9c) = 0;
@@ -86548,10 +84680,6 @@ LAB_003bea4c:
         }
       }
 LAB_003beedc:
-      if (*(long *)(lVar13 + 0x28) == lStack_70) {
-        return (ulong)uVar17;
-      }
-      uVar38 = __stack_chk_fail();
       return uVar38;
     }
     iVar23 = 0;
@@ -86657,7 +84785,6 @@ void VP8LGetBackwardReferences
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   undefined4 uVar4;
   ulong *puVar5;
@@ -86677,10 +84804,7 @@ void VP8LGetBackwardReferences
   undefined8 uStack_90;
   ulong *puStack_88;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   uVar1 = param_2 * param_1;
   lVar13 = (long)(int)uVar1;
   uStack_80 = 0;
@@ -86837,10 +84961,6 @@ LAB_003bf264:
     param_7[1] = 0;
   }
 LAB_003bf33c:
-  if (*(long *)(lVar2 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail(uVar7);
   return;
 }
 
@@ -86854,7 +84974,6 @@ ulong VP8LCalculateEstimateForCacheSize(long param_1,int param_2,int param_3,int
 
 {
   int iVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -86874,10 +84993,7 @@ ulong VP8LCalculateEstimateForCacheSize(long param_1,int param_2,int param_3,int
   long lStack_19b0;
   uint uStack_19a8;
   undefined1 auStack_19a0 [6416];
-  long lStack_90;
   
-  lVar2 = tpidr_el0;
-  lStack_90 = *(long *)(lVar2 + 0x28);
   uStack_19c0 = 0;
   pvStack_19c8 = (void *)WebPSafeMalloc((long)(param_3 * param_2),8);
   if (pvStack_19c8 == (void *)0x0) {
@@ -86954,10 +85070,6 @@ LAB_003c01d0:
   uVar8 = 0;
 LAB_003c02c0:
   free(p0);
-  if (*(long *)(lVar2 + 0x28) == lStack_90) {
-    return (ulong)uVar8;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -87618,7 +85730,6 @@ void FUN_003c1718(byte *param_1,ulong param_2,int param_3,int param_4,int param_
 void VP8GetCostLuma4(long param_1,long param_2)
 
 {
-  long lVar1;
   long lVar2;
   long lStack_58;
   long lStack_50;
@@ -87626,10 +85737,7 @@ void VP8GetCostLuma4(long param_1,long param_2)
   long lStack_40;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_40 = *(long *)(param_1 + 0x38);
   uStack_48 = 3;
   lStack_38 = lStack_40 + 0x1b38;
@@ -87647,10 +85755,6 @@ void VP8GetCostLuma4(long param_1,long param_2)
   lStack_50 = param_2;
   func_0x003c1a00(*(int *)(param_1 + (long)((int)*(uint *)(param_1 + 0x90) >> 2) * 4 + 0xb8) +
                   *(int *)(param_1 + ((ulong)*(uint *)(param_1 + 0x90) & 3) * 4 + 0x94),&lStack_58);
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -87664,7 +85768,6 @@ ulong VP8GetCostLuma16(long param_1,long param_2)
 
 {
   uint *puVar1;
-  long lVar2;
   int iVar3;
   ulong uVar4;
   long lVar5;
@@ -87681,10 +85784,7 @@ ulong VP8GetCostLuma16(long param_1,long param_2)
   long lStack_80;
   long lStack_78;
   long lStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lVar8 = *(long *)(param_1 + 0x38);
   VP8IteratorNzToBytes();
   lStack_80 = lVar8 + 0xbc0;
@@ -87741,10 +85841,6 @@ LAB_003c1c98:
     lVar5 = lVar5 + 1;
     lVar8 = lVar8 + 0x80;
     if (lVar5 == 4) {
-      if (*(long *)(lVar2 + 0x28) != lStack_68) {
-        uVar4 = __stack_chk_fail();
-        return uVar4;
-      }
       return uVar4;
     }
   } while( true );
@@ -87761,7 +85857,6 @@ ulong VP8GetCostUV(long param_1,long param_2)
 {
   uint *puVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   long lVar5;
   ulong uVar6;
@@ -87779,10 +85874,7 @@ ulong VP8GetCostUV(long param_1,long param_2)
   long lStack_80;
   long lStack_78;
   long lStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   lVar8 = *(long *)(param_1 + 0x38);
   VP8IteratorNzToBytes();
   lStack_80 = lVar8 + 0xcc8;
@@ -87827,10 +85919,6 @@ ulong VP8GetCostUV(long param_1,long param_2)
     uVar6 = uVar6 + 2;
     lVar11 = lVar11 + 0x80;
     if (2 < uVar6) {
-      if (*(long *)(lVar3 + 0x28) != lStack_68) {
-        uVar6 = __stack_chk_fail();
-        return uVar6;
-      }
       return (ulong)uVar7;
     }
   } while( true );
@@ -87850,7 +85938,6 @@ ulong VP8EncLoop(long param_1)
   byte bVar3;
   int iVar4;
   int iVar5;
-  long lVar6;
   byte *pbVar7;
   long *plVar8;
   int iVar9;
@@ -87907,10 +85994,7 @@ ulong VP8EncLoop(long param_1)
   long alStack_d8 [6];
   long lStack_a8;
   long lStack_a0;
-  long lStack_80;
   
-  lVar6 = tpidr_el0;
-  lStack_80 = *(long *)(lVar6 + 0x28);
   iVar1 = *(int *)((long)DWORD_ARRAY_00000230 + param_1 + 0x502c);
   iVar9 = *(int *)(param_1 + 0x3c);
   uVar2 = *(undefined4 *)((long)DWORD_ARRAY_00000230 + param_1 + 0x50a4);
@@ -88189,10 +86273,6 @@ LAB_003c25fc:
   }
   VP8AdjustFilterStrength(&iStack_1e8);
 LAB_003c260c:
-  if (*(long *)(lVar6 + 0x28) != lStack_80) {
-    uVar24 = __stack_chk_fail();
-    return uVar24;
-  }
   return uVar24;
 }
 
@@ -88209,7 +86289,6 @@ void VP8StatLoop(long *param_1)
   int iVar2;
   int iVar3;
   int *piVar4;
-  long lVar5;
   bool bVar6;
   int iVar7;
   int iVar8;
@@ -88218,10 +86297,7 @@ void VP8StatLoop(long *param_1)
   float fVar11;
   float fVar12;
   float fStack_6c;
-  long lStack_68;
   
-  lVar5 = tpidr_el0;
-  lStack_68 = *(long *)(lVar5 + 0x28);
   lVar9 = *param_1;
   if (*(int *)(lVar9 + 0x10) < 1) {
     bVar6 = 0.0 < *(float *)(lVar9 + 0x14);
@@ -88285,10 +86361,6 @@ void VP8StatLoop(long *param_1)
 LAB_003c27e8:
   WebPReportProgress(param_1[1],(int)lVar9 + 0x14,param_1 + 0x3e);
 LAB_003c27f8:
-  if (*(long *)(lVar5 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -88574,7 +86646,6 @@ ulong VP8LGetHistoImageSymbols
   uint uVar7;
   uint uVar8;
   undefined8 *puVar9;
-  long lVar10;
   undefined4 uVar11;
   bool bVar12;
   uint *p0;
@@ -88614,10 +86685,7 @@ ulong VP8LGetHistoImageSymbols
   void *pvStack_19c0;
   void *pvStack_19a8;
   undefined8 auStack_1990 [802];
-  long lStack_80;
   
-  lVar10 = tpidr_el0;
-  lStack_80 = *(long *)(lVar10 + 0x28);
   uVar25 = 1;
   if (param_5 == 0) {
     uVar17 = 1;
@@ -89015,10 +87083,6 @@ LAB_003c3dd4:
     }
     free(p0);
   }
-  if (*(long *)(lVar10 + 0x28) == lStack_80) {
-    return (ulong)uVar25;
-  }
-  uVar15 = __stack_chk_fail();
   return uVar15;
 }
 
@@ -90043,15 +88107,11 @@ void WebPPictureView(int *param_1,int param_2,int param_3,int param_4,int param_
 
 {
   long lVar1;
-  long lVar2;
   undefined8 uVar3;
   long lVar4;
   int iStack_50;
   int iStack_4c;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar3 = 0;
   iStack_50 = param_3;
   iStack_4c = param_2;
@@ -90102,10 +88162,6 @@ void WebPPictureView(int *param_1,int param_2,int param_3,int param_4,int param_
     }
     uVar3 = 1;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -90121,7 +88177,6 @@ void WebPPictureCrop(int *param_1,int param_2,int param_3,int param_4,int param_
   int iVar1;
   int iVar2;
   long lVar3;
-  long lVar4;
   undefined8 uVar5;
   long lVar6;
   long lVar7;
@@ -90148,10 +88203,7 @@ void WebPPictureCrop(int *param_1,int param_2,int param_3,int param_4,int param_
   undefined4 uStack_b0;
   undefined8 uStack_90;
   undefined8 uStack_88;
-  long lStack_70;
   
-  lVar4 = tpidr_el0;
-  lStack_70 = *(long *)(lVar4 + 0x28);
   uVar5 = 0;
   iStack_178 = param_3;
   iStack_174 = param_2;
@@ -90258,10 +88310,6 @@ void WebPPictureCrop(int *param_1,int param_2,int param_3,int param_4,int param_
       uVar5 = 1;
     }
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_70) {
-    __stack_chk_fail(uVar5);
-    return;
-  }
   return;
 }
 
@@ -90280,7 +88328,6 @@ void WebPPictureRescale(int *param_1,int param_2,int param_3)
   int iVar4;
   int iVar5;
   int iVar6;
-  long lVar7;
   undefined8 uVar8;
   void *p0;
   undefined1 auStack_170 [8];
@@ -90299,10 +88346,7 @@ void WebPPictureRescale(int *param_1,int param_2,int param_3)
   undefined4 uStack_b0;
   void *pvStack_90;
   void *pvStack_88;
-  long lStack_70;
   
-  lVar7 = tpidr_el0;
-  lStack_70 = *(long *)(lVar7 + 0x28);
   uVar8 = 0;
   if (param_1 == (int *)0x0) goto LAB_003c57fc;
   iVar5 = param_1[2];
@@ -90419,10 +88463,6 @@ LAB_003c57c4:
   memcpy(param_1,auStack_170,0x100);
   uVar8 = 1;
 LAB_003c57fc:
-  if (*(long *)(lVar7 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail(uVar8);
   return;
 }
 
@@ -90636,7 +88676,6 @@ void WebPPictureYUVAToARGB(undefined4 *param_1)
 {
   uint uVar1;
   uint uVar2;
-  long lVar3;
   int iVar4;
   code *pcVar5;
   undefined8 uVar6;
@@ -90664,10 +88703,7 @@ void WebPPictureYUVAToARGB(undefined4 *param_1)
   undefined4 uStack_b0;
   undefined8 uStack_90;
   undefined8 uStack_88;
-  long lStack_70;
   
-  lVar3 = tpidr_el0;
-  lStack_70 = *(long *)(lVar3 + 0x28);
   uVar6 = 0;
   if (param_1 != (undefined4 *)0x0) {
     if (((((*(long *)(param_1 + 0x38) == 0) || (*(long *)(param_1 + 4) == 0)) ||
@@ -90772,10 +88808,6 @@ void WebPPictureYUVAToARGB(undefined4 *param_1)
     uVar6 = WebPEncodingSetError(param_1,uVar6);
   }
 LAB_003c5d70:
-  if (*(long *)(lVar3 + 0x28) != lStack_70) {
-    __stack_chk_fail(uVar6);
-    return;
-  }
   return;
 }
 
@@ -90788,7 +88820,6 @@ LAB_003c5d70:
 void WebPPictureARGBToYUVA(long param_1,uint param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
@@ -90797,10 +88828,7 @@ void WebPPictureARGBToYUVA(long param_1,uint param_2)
   undefined8 uStack_110;
   undefined4 uStack_108;
   undefined8 uStack_70;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = 0;
   if (param_1 != 0) {
     lVar4 = *(long *)(param_1 + 0x48);
@@ -90829,10 +88857,6 @@ void WebPPictureARGBToYUVA(long param_1,uint param_2)
     uVar3 = WebPEncodingSetError(param_1,uVar3);
   }
 LAB_003c6088:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -91302,7 +89326,6 @@ void WebPPictureDistortion(int *param_1,int *param_2,int param_3,long param_4)
   uint uVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   undefined8 uVar5;
   undefined1 *puVar6;
   ulong uVar7;
@@ -91315,10 +89338,7 @@ void WebPPictureDistortion(int *param_1,int *param_2,int param_3,long param_4)
   undefined1 auStack_130 [48];
   undefined1 auStack_100 [48];
   undefined1 auStack_d0 [48];
-  long lStack_a0;
   
-  lVar4 = tpidr_el0;
-  lStack_a0 = *(long *)(lVar4 + 0x28);
   uVar5 = 0;
   if ((param_1 == (int *)0x0) || (param_2 == (int *)0x0)) goto LAB_003c6b68;
   iVar2 = param_1[2];
@@ -91374,10 +89394,6 @@ void WebPPictureDistortion(int *param_1,int *param_2,int param_3,long param_4)
   }
   uVar5 = 0;
 LAB_003c6b68:
-  if (*(long *)(lVar4 + 0x28) == lStack_a0) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -91771,7 +89787,6 @@ ulong VP8Decimate(long param_1,long *param_2,int param_3)
   byte bVar4;
   byte bVar5;
   ushort uVar6;
-  long lVar7;
   undefined4 uVar8;
   int iVar9;
   int iVar10;
@@ -91816,10 +89831,7 @@ ulong VP8Decimate(long param_1,long *param_2,int param_3)
   undefined8 auStack_390 [64];
   undefined1 auStack_190 [280];
   uint uStack_78;
-  long lStack_70;
   
-  lVar7 = tpidr_el0;
-  lStack_70 = *(long *)(lVar7 + 0x28);
   *(undefined4 *)(param_2 + 0x6b) = 0;
   *param_2 = 0;
   param_2[1] = 0;
@@ -92051,10 +90063,6 @@ LAB_003c7830:
 LAB_003c79d4:
   uVar26 = (ulong)((int)param_2[0x6b] == 0);
   VP8SetSkip(param_1,uVar26);
-  if (*(long *)(lVar7 + 0x28) == lStack_70) {
-    return uVar26;
-  }
-  uVar26 = __stack_chk_fail();
   return uVar26;
 }
 
@@ -92095,7 +90103,6 @@ void VP8EncWrite(long *param_1)
   uint uVar1;
   uint uVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   long lVar6;
   bool bVar7;
@@ -92122,10 +90129,7 @@ void VP8EncWrite(long *param_1)
   undefined1 uStack_72;
   undefined1 uStack_71;
   undefined2 uStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   plVar17 = param_1 + 8;
   iVar9 = *(int *)((long)param_1 + 0x3c);
   lVar16 = param_1[1];
@@ -92405,10 +90409,6 @@ LAB_003c89fc:
     uVar21 = 0;
   }
 LAB_003c8c94:
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar21);
-    return;
-  }
   return;
 }
 
@@ -92444,7 +90444,6 @@ void VP8CodeIntraModes(long param_1)
   byte bVar4;
   undefined1 uVar5;
   int iVar6;
-  long lVar7;
   long lVar8;
   byte *pbVar9;
   bool bVar10;
@@ -92458,10 +90457,7 @@ void VP8CodeIntraModes(long param_1)
   undefined1 auStack_1d8 [64];
   byte *pbStack_198;
   byte *pbStack_188;
-  long lStack_70;
   
-  lVar7 = tpidr_el0;
-  lStack_70 = *(long *)(lVar7 + 0x28);
   lVar2 = param_1 + 0x40;
   VP8IteratorInit(param_1,auStack_1d8);
   do {
@@ -92553,10 +90549,6 @@ LAB_003c90b4:
     }
     iVar11 = VP8IteratorNext(auStack_1d8,0);
     if (iVar11 == 0) {
-      if (*(long *)(lVar7 + 0x28) != lStack_70) {
-        __stack_chk_fail();
-        return;
-      }
       return;
     }
   } while( true );
@@ -93195,7 +91187,6 @@ void VP8LEncodeImage(long param_1,long param_2)
   ulong uVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int iVar5;
   undefined4 uVar6;
   undefined8 uVar7;
@@ -93214,10 +91205,7 @@ void VP8LEncodeImage(long param_1,long param_2)
   undefined1 uStack_5e;
   undefined1 uStack_5d;
   undefined1 uStack_5c;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   uStack_74 = 0;
   if (param_2 != 0) {
     if ((param_1 == 0) || (*(long *)(param_2 + 0x48) == 0)) {
@@ -93316,10 +91304,6 @@ LAB_003ca370:
   }
   uVar7 = 0;
 LAB_003ca33c:
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar7);
-    return;
-  }
   return;
 }
 
@@ -94180,7 +92164,6 @@ ulong WebPMuxSetImage(long param_1,long *param_2,undefined4 param_3)
 {
   undefined4 *puVar1;
   undefined4 uVar2;
-  long lVar3;
   uint uVar4;
   ulong uVar5;
   int iStack_b4;
@@ -94190,10 +92173,7 @@ ulong WebPMuxSetImage(long param_1,long *param_2,undefined4 param_3)
   undefined1 auStack_88 [8];
   undefined1 auStack_80 [24];
   undefined1 auStack_68 [32];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uVar5 = 0xffffffff;
   if ((param_1 == 0) || (param_2 == (long *)0x0)) goto LAB_003cc7d4;
   if ((*param_2 == 0) || (0xfffffff6 < (ulong)param_2[1])) {
@@ -94238,10 +92218,6 @@ LAB_003cc8a8:
   ChunkRelease(auStack_68);
   MuxImageRelease(auStack_90);
 LAB_003cc7d4:
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -94379,17 +92355,13 @@ void WebPMuxDeleteColorProfile(undefined8 param_1)
 ulong WebPMuxSetLoopCount(long param_1,int param_2)
 
 {
-  long lVar1;
   uint uVar2;
   undefined4 uVar3;
   undefined1 *p0;
   ulong uVar4;
   undefined1 *puStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar4 = 0xffffffff;
   if ((param_1 != 0) && (param_2 < 0x10000)) {
     uVar2 = func_0x003cd114(param_1,2);
@@ -94411,10 +92383,6 @@ ulong WebPMuxSetLoopCount(long param_1,int param_2)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return uVar4;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -94513,15 +92481,11 @@ undefined8 WebPMuxDeleteTile(long param_1,undefined8 param_2)
 void MuxGetImageWidthHeight(int *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = *(undefined8 *)(param_1 + 4);
   if (*param_1 == 0x20385056) {
     iVar2 = VP8GetInfo(*(undefined8 *)(param_1 + 2),uVar3,uVar3,&uStack_3c,&uStack_40);
@@ -94537,10 +92501,6 @@ void MuxGetImageWidthHeight(int *param_1,undefined4 *param_2,undefined4 *param_3
     *param_2 = uStack_3c;
     *param_3 = uStack_40;
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 
@@ -94553,7 +92513,6 @@ void MuxGetImageWidthHeight(int *param_1,undefined4 *param_2,undefined4 *param_3
 ulong WebPMuxAssemble(undefined8 *param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   uint3 uVar2;
   uint3 uVar3;
   uint uVar4;
@@ -94587,10 +92546,7 @@ ulong WebPMuxAssemble(undefined8 *param_1,undefined8 *param_2)
   undefined1 uStack_6d;
   undefined1 uStack_6c;
   undefined1 uStack_6b;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uVar21 = 0xffffffff;
   if ((param_1 == (undefined8 *)0x0) || (param_2 == (undefined8 *)0x0)) goto LAB_003cd740;
   uVar4 = WebPMuxNumChunks(param_1,2,&iStack_94);
@@ -94749,10 +92705,6 @@ LAB_003cd544:
     param_2[1] = lVar14;
   }
 LAB_003cd740:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    uVar21 = __stack_chk_fail();
-    return uVar21;
-  }
   return uVar21;
 }
 
@@ -95341,14 +93293,10 @@ void MuxImageDeleteAll(undefined8 *param_1)
 void MuxImageDeleteNth(undefined8 *param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
-  long lVar4;
   void *p0;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uVar2 = func_0x003cde40();
   if ((int)uVar2 != 0) {
     p0 = (void *)*param_1;
@@ -95357,10 +93305,6 @@ void MuxImageDeleteNth(undefined8 *param_1)
     uVar2 = 1;
     *param_1 = uVar3;
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -95373,21 +93317,13 @@ void MuxImageDeleteNth(undefined8 *param_1)
 void MuxImageGetNth(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
-  long lVar3;
   
-  lVar1 = tpidr_el0;
-  lVar3 = *(long *)(lVar1 + 0x28);
   uVar2 = func_0x003cde40();
   if ((int)uVar2 != 0) {
     uVar2 = 1;
     *param_4 = *param_1;
   }
-  if (*(long *)(lVar1 + 0x28) == lVar3) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -95586,7 +93522,6 @@ void MuxValidate(long *param_1)
 
 {
   uint uVar1;
-  long lVar2;
   uint uVar3;
   ulong uVar4;
   long lVar5;
@@ -95599,10 +93534,7 @@ void MuxValidate(long *param_1)
   int iStack_44;
   int iStack_40;
   int iStack_3c;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((param_1 != (long *)0x0) && (*param_1 != 0)) {
     uVar4 = WebPMuxGetFeatures(param_1,&uStack_5c);
     uVar1 = uStack_5c;
@@ -95665,10 +93597,6 @@ LAB_003ce450:
 LAB_003ce2e0:
   uVar4 = 0xffffffff;
 LAB_003ce2e4:
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -95688,7 +93616,6 @@ long WebPMuxCreateInternal(undefined8 *param_1,undefined4 param_2,uint param_3)
   int iVar5;
   int iVar6;
   long lVar7;
-  long lVar8;
   long *plVar9;
   long lVar10;
   long *plVar11;
@@ -95699,10 +93626,7 @@ long WebPMuxCreateInternal(undefined8 *param_1,undefined4 param_2,uint param_3)
   int iStack_88;
   int *piStack_78;
   ulong uStack_70;
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   ChunkInit(auStack_98);
   lVar10 = 0;
   if ((param_1 == (undefined8 *)0x0) || ((param_3 & 0xffffff00) != 0x100)) goto LAB_003ce56c;
@@ -95791,10 +93715,6 @@ LAB_003ce550:
   }
   lVar10 = 0;
 LAB_003ce56c:
-  if (*(long *)(lVar8 + 0x28) != lStack_68) {
-    lVar8 = __stack_chk_fail();
-    return lVar8;
-  }
   return lVar10;
 }
 
@@ -95807,15 +93727,11 @@ LAB_003ce56c:
 ulong WebPMuxGetFeatures(long param_1,undefined4 *param_2)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   undefined4 *puStack_48;
   ulong uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != (undefined4 *)0x0)) {
     *param_2 = 0;
@@ -95838,10 +93754,6 @@ ulong WebPMuxGetFeatures(long param_1,undefined4 *param_2)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return uVar3;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -95854,23 +93766,15 @@ ulong WebPMuxGetFeatures(long param_1,undefined4 *param_2)
 void WebPMuxGetImage(long param_1,long param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = 0xffffffff;
   uStack_40 = 0;
   if (((param_1 != 0) && (param_2 != 0)) && (uVar2 = MuxValidateForImage(param_1), (int)uVar2 == 1)) {
     MuxImageGetNth(param_1,1,6,&uStack_40);
     uVar2 = FUN_003ce990(uStack_40,param_2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -95884,7 +93788,6 @@ ulong FUN_003ce990(long param_1,undefined8 *param_2)
 
 {
   long lVar1;
-  long lVar2;
   uint uVar3;
   void *p0;
   undefined8 *puVar4;
@@ -95893,10 +93796,7 @@ ulong FUN_003ce990(long param_1,undefined8 *param_2)
   long lVar7;
   int iStack_60;
   int iStack_5c;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   lVar7 = *(long *)(param_1 + 8);
   if (lVar7 == 0) {
     lVar6 = 0;
@@ -95939,10 +93839,6 @@ ulong FUN_003ce990(long param_1,undefined8 *param_2)
     param_2[1] = lVar6;
   }
 LAB_003ceac4:
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return (ulong)uVar3;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -95991,14 +93887,10 @@ undefined8 WebPMuxGetColorProfile(long param_1,long param_2)
 void WebPMuxGetLoopCount(long param_1,uint *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ushort *puStack_38;
   ulong uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uVar2 = 0xffffffff;
   if (((param_1 != 0) && (param_2 != (uint *)0x0)) &&
      (uVar2 = func_0x003ce844(param_1,2,&puStack_38), (int)uVar2 == 1)) {
@@ -96010,10 +93902,6 @@ void WebPMuxGetLoopCount(long param_1,uint *param_2)
       *param_2 = (uint)*puStack_38;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -96770,7 +94658,6 @@ void EstimateBestFilter(long param_1,int param_2,int param_3,uint param_4)
   byte bVar3;
   uint uVar4;
   uint uVar5;
-  long lVar6;
   undefined4 uVar7;
   uint uVar8;
   undefined4 uVar9;
@@ -96800,10 +94687,7 @@ void EstimateBestFilter(long param_1,int param_2,int param_3,uint param_4)
   undefined4 auStack_118 [16];
   undefined4 auStack_d8 [16];
   undefined4 auStack_98 [16];
-  long lStack_58;
   
-  lVar6 = tpidr_el0;
-  lStack_58 = *(long *)(lVar6 + 0x28);
   memset(auStack_158,0,0x100);
   if (3 < param_3) {
     uVar14 = -(ulong)(param_4 >> 0x1f) & 0xfffffffe00000000 | (ulong)param_4 << 1;
@@ -96913,10 +94797,6 @@ void EstimateBestFilter(long param_1,int param_2,int param_3,uint param_4)
     puVar16 = puVar16 + 0x10;
     iVar13 = iVar20;
   } while (lVar12 != 4);
-  if (*(long *)(lVar6 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar9);
-    return;
-  }
   return;
 }
 
@@ -97324,7 +95204,6 @@ void VP8LCreateHuffmanTree(int *param_1,int param_2,uint *param_3)
   byte bVar2;
   uint uVar3;
   int iVar4;
-  long lVar5;
   byte *pbVar6;
   void *p0;
   int *piVar7;
@@ -97351,10 +95230,7 @@ void VP8LCreateHuffmanTree(int *param_1,int param_2,uint *param_3)
   ulong uVar28;
   ulong auStack_100 [8];
   uint auStack_c0 [16];
-  long lStack_80;
   
-  lVar5 = tpidr_el0;
-  lStack_80 = *(long *)(lVar5 + 0x28);
   uVar3 = *param_3;
   lVar21 = (long)(int)uVar3;
   uVar24 = (ulong)uVar3;
@@ -97649,10 +95525,6 @@ LAB_003d0a9c:
       uVar8 = 1;
     }
   }
-  if (*(long *)(lVar5 + 0x28) != lStack_80) {
-    __stack_chk_fail(uVar8);
-    return;
-  }
   return;
 }
 
@@ -97667,7 +95539,6 @@ void QuantizeLevels(long param_1,int param_2,int param_3,uint param_4,long *para
 {
   bool bVar1;
   byte bVar2;
-  long lVar3;
   double *pdVar4;
   double *pdVar5;
   double *pdVar6;
@@ -97696,10 +95567,7 @@ void QuantizeLevels(long param_1,int param_2,int param_3,uint param_4,long *para
   double adStack_1080 [256];
   uint auStack_880 [256];
   int aiStack_480 [256];
-  long lStack_80;
   
-  lVar3 = tpidr_el0;
-  lStack_80 = *(long *)(lVar3 + 0x28);
   memset(aiStack_480,0,0x400);
   memset(auStack_880,0,0x400);
   memset(adStack_1080,0,0x800);
@@ -97840,10 +95708,6 @@ void QuantizeLevels(long param_1,int param_2,int param_3,uint param_4,long *para
       }
       uVar9 = 1;
     }
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_80) {
-    __stack_chk_fail(uVar9);
-    return;
   }
   return;
 }
@@ -98410,7 +96274,6 @@ ulong wUnzRepair(undefined8 param_1,undefined8 param_2,undefined8 param_3,ulong 
                 long *param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined1 uVar4;
@@ -98432,7 +96295,6 @@ ulong wUnzRepair(undefined8 param_1,undefined8 param_2,undefined8 param_3,ulong 
   void *p0;
   ulong uVar20;
   undefined2 uVar21;
-  long lVar22;
   uint uVar23;
   uint uVar24;
   uint uVar25;
@@ -98473,8 +96335,6 @@ ulong wUnzRepair(undefined8 param_1,undefined8 param_2,undefined8 param_3,ulong 
   undefined1 uStack_74;
   undefined1 uStack_73;
   
-  lVar1 = tpidr_el0;
-  lVar22 = *(long *)(lVar1 + 0x28);
   lVar14 = fopen(param_1,&DAT_0061ee22);
   lVar15 = fopen(param_2,&DAT_0061a74e);
   uVar16 = fopen(param_3,&DAT_0061a74e);
@@ -98653,10 +96513,6 @@ LAB_003da044:
     }
   }
 LAB_003da080:
-  if (*(long *)(lVar1 + 0x28) != lVar22) {
-    uVar20 = __stack_chk_fail();
-    return uVar20;
-  }
   return (ulong)uVar25;
 }
 
@@ -98715,23 +96571,15 @@ ulong wUnzStringFileNameCompare(byte *param_1,byte *param_2,uint param_3)
 void wUnzOpen2(undefined8 param_1,long param_2)
 
 {
-  long lVar1;
   undefined1 *puVar2;
   undefined1 auStack_80 [88];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined1 *)0x0;
   if (param_2 != 0) {
     fill_zlib_filefunc64_32_def_from_filefunc32(auStack_80);
     puVar2 = auStack_80;
   }
   func_0x003da18c(param_1,puVar2,0);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -98744,7 +96592,6 @@ void wUnzOpen2(undefined8 param_1,long param_2)
 void wUnzOpen2_64(undefined8 param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uStack_80;
   undefined8 uStack_78;
@@ -98756,10 +96603,7 @@ void wUnzOpen2_64(undefined8 param_1,undefined8 *param_2)
   undefined8 uStack_48;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)(undefined1 *)0x0;
   if (param_2 != (undefined8 *)0x0) {
     uStack_58 = param_2[5];
@@ -98775,10 +96619,6 @@ void wUnzOpen2_64(undefined8 param_1,undefined8 *param_2)
     puVar2 = &uStack_80;
   }
   func_0x003da18c(param_1,puVar2,1);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -98931,7 +96771,6 @@ void wUnzGetCurrentFileInfo
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
@@ -98950,10 +96789,7 @@ void wUnzGetCurrentFileInfo
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   iVar2 = func_0x003daa30(param_1,&uStack_b0,0,param_3,param_4,param_5,param_6,param_7,param_8,0,0);
   if (iVar2 == 0) {
     param_2[1] = uStack_a8;
@@ -98974,10 +96810,6 @@ void wUnzGetCurrentFileInfo
     param_2[7] = uStack_78;
     param_2[6] = uStack_80;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -99046,17 +96878,13 @@ ulong wUnzLocateFile(long param_1,undefined8 param_2,undefined4 param_3)
 {
   undefined8 uVar1;
   undefined8 uVar2;
-  long lVar3;
   uint uVar4;
   int iVar5;
   ulong uVar6;
   undefined8 uVar7;
   undefined1 auStack_200 [140];
   undefined1 auStack_174 [260];
-  long lStack_70;
   
-  lVar3 = tpidr_el0;
-  lStack_70 = *(long *)(lVar3 + 0x28);
   if ((param_1 == 0) || (uVar6 = strlen(param_2), 0xff < uVar6)) {
     uVar6 = 0xffffff9a;
   }
@@ -99085,10 +96913,6 @@ ulong wUnzLocateFile(long param_1,undefined8 param_2,undefined4 param_3)
     *(undefined8 *)(param_1 + 0x138) = uVar7;
   }
 LAB_003db20c:
-  if (*(long *)(lVar3 + 0x28) == lStack_70) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -99203,14 +97027,10 @@ undefined8 wUnzGoToFilePos64(long param_1,undefined1 (*param_2) [16])
 void wUnzGoToFilePos(undefined8 param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (param_2 == (undefined8 *)0x0) {
     uVar2 = 0xffffff9a;
   }
@@ -99219,10 +97039,6 @@ void wUnzGoToFilePos(undefined8 param_1,undefined8 *param_2)
     uStack_40 = *param_2;
     uVar2 = wUnzGoToFilePos64(param_1,&uStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 
@@ -99236,7 +97052,6 @@ ulong wUnzOpenCurrentFile3
                 (long param_1,undefined4 *param_2,undefined4 *param_3,int param_4,long param_5)
 
 {
-  long lVar1;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -99251,10 +97066,7 @@ ulong wUnzOpenCurrentFile3
   byte abStack_80 [8];
   ulong uStack_78;
   long lStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uVar9 = 0xffffff9a;
   if ((param_1 == 0) || (param_5 != 0)) goto LAB_003db8b0;
   if (*(long *)(param_1 + 0x90) == 0) {
@@ -99440,10 +97252,6 @@ LAB_003db6c0:
   }
   uVar9 = 0xffffff99;
 LAB_003db8b0:
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return uVar9;
-  }
-  uVar9 = __stack_chk_fail();
   return uVar9;
 }
 
@@ -99868,7 +97676,6 @@ void wUnzSetOffset(void)
 void FUN_003dbe78(long param_1,undefined8 param_2,ulong *param_3)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -99879,10 +97686,7 @@ void FUN_003dbe78(long param_1,undefined8 param_2,ulong *param_3)
   byte abStack_64 [4];
   byte abStack_60 [4];
   byte abStack_5c [4];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   iVar2 = (**(code **)(param_1 + 8))(*(undefined8 *)(param_1 + 0x38),param_2,abStack_68,1);
   if (iVar2 == 1) {
     uVar5 = (ulong)abStack_68[0];
@@ -99929,10 +97733,6 @@ LAB_003dbfac:
     uVar3 = 0xffffffff;
   }
   *param_3 = uVar5;
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 
@@ -99945,7 +97745,6 @@ LAB_003dbfac:
 void FUN_003dbff4(long param_1,undefined8 param_2,ulong *param_3)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -99957,10 +97756,7 @@ void FUN_003dbff4(long param_1,undefined8 param_2,ulong *param_3)
   ulong uVar10;
   ulong uVar11;
   byte abStack_6c [4];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   iVar2 = (**(code **)(param_1 + 8))(*(undefined8 *)(param_1 + 0x38),param_2,abStack_6c,1);
   if (iVar2 == 1) {
     uVar5 = (ulong)abStack_6c[0];
@@ -100044,10 +97840,6 @@ LAB_003dc234:
     uVar3 = 0xffffffff;
   }
   *param_3 = uVar5;
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar3);
-    return;
-  }
   return;
 }
 
@@ -100061,7 +97853,6 @@ void LoadCentralDirectoryRecord(long param_1)
 
 {
   long *plVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -100094,10 +97885,7 @@ void LoadCentralDirectoryRecord(long param_1)
   ulong uStack_80;
   ulong uStack_78;
   ulong uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   uVar22 = *(undefined8 *)(param_1 + 0x58);
   lVar12 = call_zseek64(param_1,uVar22,0,2);
   if (lVar12 == 0) {
@@ -100375,10 +98163,6 @@ joined_r0x003dc7c8:
     (**(code **)(param_1 + 0x28))(*(undefined8 *)(param_1 + 0x38),*(undefined8 *)(param_1 + 0x58));
     iVar3 = -1;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail(iVar3);
   return;
 }
 
@@ -100393,11 +98177,9 @@ joined_r0x003dc7c8:
 void * wZipOpen3(undefined8 param_1,int param_2,undefined8 *param_3,long param_4)
 
 {
-  long lVar1;
   int iVar2;
   void *pvVar3;
   undefined4 uVar4;
-  long lVar5;
   undefined1 auStack_101f8 [40];
   code *pcStack_101d0;
   undefined8 uStack_101c0;
@@ -100409,8 +98191,6 @@ void * wZipOpen3(undefined8 param_1,int param_2,undefined8 *param_3,long param_4
   undefined4 uStack_10188;
   undefined4 uStack_10110;
   
-  lVar1 = tpidr_el0;
-  lVar5 = *(long *)(lVar1 + 0x28);
   uStack_101b0 = 0;
   uStack_101a8 = 0;
   if (param_4 == 0) {
@@ -100455,10 +98235,6 @@ void * wZipOpen3(undefined8 param_1,int param_2,undefined8 *param_3,long param_4
   }
   pvVar3 = (void *)0x0;
 LAB_003dd2b4:
-  if (*(long *)(lVar1 + 0x28) != lVar5) {
-    pvVar3 = (void *)__stack_chk_fail();
-    return pvVar3;
-  }
   return pvVar3;
 }
 
@@ -100471,23 +98247,15 @@ LAB_003dd2b4:
 void wZipOpen2(undefined8 param_1,undefined4 param_2,undefined8 param_3,long param_4)
 
 {
-  long lVar1;
   undefined1 *puVar2;
   undefined1 auStack_90 [88];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined1 *)0x0;
   if (param_4 != 0) {
     fill_zlib_filefunc64_32_def_from_filefunc32(auStack_90,param_4);
     puVar2 = auStack_90;
   }
   wZipOpen3(param_1,param_2,param_3,puVar2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -100500,16 +98268,8 @@ void wZipOpen2(undefined8 param_1,undefined4 param_2,undefined8 param_3,long par
 void wZipOpen2_64(void)
 
 {
-  long lVar1;
-  long lVar2;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   wZipOpen3();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -100817,7 +98577,6 @@ void wZipOpenNewFileInZip4_64
   bool bVar5;
   undefined1 *puVar6;
   byte bVar7;
-  long lVar8;
   uint uVar9;
   uint uVar10;
   undefined8 uVar11;
@@ -100835,10 +98594,7 @@ void wZipOpenNewFileInZip4_64
   byte bStack_76;
   byte bStack_75;
   byte abStack_74 [12];
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   uVar11 = 0xffffff9a;
   if (((param_1 == 0) || ((param_9 | 8) != 8)) ||
      ((*(int *)(param_1 + 0x70) == 1 && (uVar11 = wZipCloseFileInZipRaw64(param_1,0,0), (int)uVar11 != 0))))
@@ -101219,10 +98975,6 @@ LAB_003ddf50:
     *(undefined4 *)((long)DWORD_ARRAY_00008274 + param_1 + 0x7f04) = 0;
   }
 LAB_003de1d0:
-  if (*(long *)(lVar8 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar11);
-    return;
-  }
   return;
 }
 
@@ -101436,7 +99188,6 @@ ulong wZipCloseFileInZipRaw64(long param_1,ulong param_2,ulong param_3)
 {
   undefined4 *puVar1;
   undefined2 *puVar2;
-  long lVar3;
   bool bVar4;
   uint uVar5;
   int iVar6;
@@ -101453,10 +99204,7 @@ ulong wZipCloseFileInZipRaw64(long param_1,ulong param_2,ulong param_3)
   ulong uVar17;
   ulong uVar18;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   if ((param_1 == 0) || (*(int *)(param_1 + 0x70) == 0)) {
     uVar17 = 0xffffff9a;
     goto LAB_003dee00;
@@ -101790,10 +99538,6 @@ LAB_003dedcc:
        *(long *)((long)DWORD_ARRAY_00008274 + param_1 + 0x7f1c) + 1;
   *(undefined4 *)(param_1 + 0x70) = 0;
 LAB_003dee00:
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return uVar17;
-  }
-  uVar17 = __stack_chk_fail();
   return uVar17;
 }
 
@@ -101806,7 +99550,6 @@ LAB_003dee00:
 void Write_Zip64EndOfCentralDirectoryLocator(long param_1,long param_2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   long lVar4;
@@ -101814,10 +99557,7 @@ void Write_Zip64EndOfCentralDirectoryLocator(long param_1,long param_2)
   ulong uVar6;
   long lVar7;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar7 = *(long *)((long)DWORD_ARRAY_00008274 + param_1 + 0x7f14);
   uVar3 = *(undefined8 *)(param_1 + 0x58);
   lVar4 = 0;
@@ -101866,10 +99606,6 @@ void Write_Zip64EndOfCentralDirectoryLocator(long param_1,long param_2)
   }
   iVar2 = -1;
 LAB_003def84:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(iVar2);
   return;
 }
 
@@ -101883,17 +99619,13 @@ void Write_Zip64EndOfCentralDirectoryRecord(long param_1,ulong param_2,long para
 
 {
   ulong *puVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
   undefined1 uVar6;
   ulong uVar7;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar4 = *(undefined8 *)(param_1 + 0x58);
   lVar5 = 0;
   uVar7 = 0x6064b50;
@@ -102019,10 +99751,6 @@ void Write_Zip64EndOfCentralDirectoryRecord(long param_1,ulong param_2,long para
   }
   iVar3 = -1;
 LAB_003df2a8:
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(iVar3);
   return;
 }
 
@@ -102036,16 +99764,12 @@ void Write_EndOfCentralDirectoryRecord(long param_1,ulong param_2,long param_3)
 
 {
   ulong *puVar1;
-  long lVar2;
   int iVar3;
   undefined8 uVar4;
   long lVar5;
   ulong uVar6;
   undefined4 auStack_50 [2];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar4 = *(undefined8 *)(param_1 + 0x58);
   lVar5 = 0;
   uVar6 = 0x6054b50;
@@ -102168,10 +99892,6 @@ void Write_EndOfCentralDirectoryRecord(long param_1,ulong param_2,long param_3)
   }
   iVar3 = -1;
 LAB_003df54c:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail(iVar3);
-    return;
-  }
   return;
 }
 
@@ -102421,9 +100141,7 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   int *piVar2;
   undefined4 uVar3;
   char cVar4;
-  long lVar5;
   long lVar6;
-  long lVar7;
   float fVar8;
   float fVar9;
   float fVar10;
@@ -102484,8 +100202,6 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   float fStack_b4;
   undefined8 uStack_b0;
   
-  lVar5 = tpidr_el0;
-  lVar7 = *(long *)(lVar5 + 0x28);
   uStack_158 = 0;
   uStack_168 = 0;
   uStack_180 = 0;
@@ -102637,10 +100353,6 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   Walaber::GraphicsGL::setTextureEnabled(0);
   Walaber::GraphicsGL::setActiveTexture(0);
   Walaber::GraphicsGL::setAlphaBlending(cVar4 != '\0',uVar3,uVar1);
-  if (*(long *)(lVar5 + 0x28) == lVar7) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -102756,16 +100468,12 @@ void drawShockwave(Walaber__Vector2 p0,float p1,Walaber__Color p2,float p3,float
 void stretchQuad(Walaber::SpriteBatch *param_1,Walaber::SharedPtr<Walaber::Texture> param_2,Walaber::Vector2 const& param_3,Walaber::Vector2 const& param_4,Walaber::Vector2 const& param_5,Walaber::Color param_6,Walaber::VertexColorBlendMode param_7)
 
 {
-  long lVar1;
   float fStack_88;
   float fStack_84;
   long lStack_80;
   int *piStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   fStack_88 = SQRT((*param_4 - *param_3) * (*param_4 - *param_3) +
                    (param_4[1] - param_3[1]) * (param_4[1] - param_3[1]));
   if (NAN(fStack_88)) {
@@ -102785,10 +100493,6 @@ void stretchQuad(Walaber::SpriteBatch *param_1,Walaber::SharedPtr<Walaber::Textu
                     /* try { // try from 0042f9d8 to 0042f9f3 has its CatchHandler @ 0042fa30 */
   Walaber::SpriteBatch::drawQuad(param_1,&lStack_80,&uStack_70,&fStack_88,param_6,param_7);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_80);
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -102975,7 +100679,6 @@ void FUN_005a3b10(uint *param_1,undefined8 param_2)
   byte *pbVar2;
   byte *pbVar3;
   byte bVar4;
-  long lVar5;
   int iVar6;
   byte *pbVar7;
   uint uVar8;
@@ -102984,10 +100687,7 @@ void FUN_005a3b10(uint *param_1,undefined8 param_2)
   long lVar11;
   byte *pbVar12;
   byte abStack_98 [64];
-  long lStack_58;
   
-  lVar5 = tpidr_el0;
-  lStack_58 = *(long *)(lVar5 + 0x28);
   *param_1 = 0;
   iVar6 = FUN_005a3a6c(param_2,abStack_98,0x40);
   if ((-1 < iVar6) && (iVar6 != 0)) {
@@ -103042,10 +100742,6 @@ void FUN_005a3b10(uint *param_1,undefined8 param_2)
     }
   }
 LAB_005a3c78:
-  if (*(long *)(lVar5 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -103230,15 +100926,11 @@ void operator_delete__(void *p0,ulong p1)
 void operator_new(long param_1,ulong param_2)
 
 {
-  long lVar1;
   int iVar2;
   code *pcVar3;
   undefined8 uVar4;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (param_1 == 0) {
     param_1 = 1;
   }
@@ -103248,10 +100940,6 @@ void operator_new(long param_1,ulong param_2)
   while( true ) {
     iVar2 = posix_memalign(&uStack_40,param_2,param_1);
     if (iVar2 == 0) {
-      if (*(long *)(lVar1 + 0x28) != lStack_38) {
-        __stack_chk_fail(uStack_40);
-        return;
-      }
       return;
     }
     pcVar3 = (code *)std::get_new_handler();
@@ -104152,7 +101840,6 @@ void __cxa_guard_abort(undefined8 *param_1)
 void __gxx_personality_v0(int param_1,ulong param_2,ulong param_3,long param_4,long param_5)
 
 {
-  long lVar1;
   long lVar2;
   int iVar3;
   undefined8 uVar4;
@@ -104162,10 +101849,7 @@ void __gxx_personality_v0(int param_1,ulong param_2,ulong param_3,long param_4,l
   undefined8 uStack_60;
   undefined8 uStack_58;
   int iStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar3 = 3;
   if (((param_1 == 1) && (param_4 != 0)) && (param_5 != 0)) {
     param_3 = param_3 & 0xffffffffffffff00;
@@ -104220,10 +101904,6 @@ void __gxx_personality_v0(int param_1,ulong param_2,ulong param_3,long param_4,l
     }
   }
 LAB_005f2910:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(iVar3);
-    return;
-  }
   return;
 }
 
@@ -104571,7 +102251,6 @@ void __dynamic_cast(long *param_1,undefined8 param_2,long *param_3,undefined8 pa
 
 {
   long *plVar1;
-  long lVar2;
   long lVar3;
   long *plStack_78;
   long *plStack_70;
@@ -104585,10 +102264,7 @@ void __dynamic_cast(long *param_1,undefined8 param_2,long *param_3,undefined8 pa
   undefined4 uStack_34;
   undefined4 uStack_30;
   undefined3 uStack_2c;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   plVar1 = *(long **)(*param_1 + -8);
   uStack_40 = 0;
   iStack_38 = 0;
@@ -104628,10 +102304,6 @@ void __dynamic_cast(long *param_1,undefined8 param_2,long *param_3,undefined8 pa
       lVar3 = 0;
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(lVar3);
   return;
 }
 

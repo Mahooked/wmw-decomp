@@ -14,13 +14,9 @@ void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow()
 
 {
   undefined2 *puVar1;
-  long lVar2;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   puVar1 = this + 8;
   *this = 0;
   *(undefined4 *)(this + 2) = 0;
@@ -58,10 +54,6 @@ void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow()
   uStack_78 = 0;
   Walaber::Camera::setPosition(puVar1,&uStack_78);
   Walaber::CameraController::initCamera(this + 0x54,puVar1);
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -197,7 +189,6 @@ void WaterConcept::ParallaxPuppetShow::init(void)
 void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -212,10 +203,7 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(auStack_60);
                     /* try { // try from 004300e0 to 0043011f has its CatchHandler @ 004301f8 */
   puVar2 = (undefined8 *)operator new(0x28);
@@ -250,10 +238,6 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>::~SharedPtr(&puStack_70);
   Walaber::PropertyList::~PropertyList(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -268,13 +252,9 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
 void WaterConcept::ParallaxPuppetShow::start(char *param_1)
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*param_1 == '\0') {
     param_1[1] = '\x01';
   }
@@ -312,10 +292,6 @@ void WaterConcept::ParallaxPuppetShow::start(char *param_1)
       Walaber::SoundEffectInstance::play(0x3f800000);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -437,7 +413,6 @@ void WaterConcept::ParallaxPuppetShow::_doneLoading(undefined1 *param_1)
 
 {
   long *plVar1;
-  long lVar2;
   bool bVar3;
   long lVar4;
   long *plVar5;
@@ -452,10 +427,7 @@ void WaterConcept::ParallaxPuppetShow::_doneLoading(undefined1 *param_1)
   undefined1 uStack_59;
   undefined8 uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (*(long *)(param_1 + 0x160) != 0) {
     uStack_58 = 0;
     pvStack_50 = (void *)0x0;
@@ -556,10 +528,6 @@ void WaterConcept::ParallaxPuppetShow::_doneLoading(undefined1 *param_1)
     }
   }
 LAB_004306dc:
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -574,7 +542,6 @@ LAB_004306dc:
 void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   long *plVar2;
   long *plVar3;
@@ -592,10 +559,7 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
   float fStack_88;
   float fStack_84;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   if (*(long *)(in_x0 + 0x160) == 0) {
     if ((long *)(in_x0 + 0x200) != *(long **)(in_x0 + 0x1f8)) {
       plVar5 = *(long **)(in_x0 + 0x1f8);
@@ -652,10 +616,6 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
     fStack_88 = fStack_84 * (Walaber::ScreenCoord::sScreenSize / DAT_0072d884);
     Walaber::Camera::setSize(in_x0 + 0x10,&fStack_88);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -865,7 +825,6 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
 
 {
   char *pcVar1;
-  long lVar2;
   bool bVar3;
   long *plVar4;
   long lVar5;
@@ -875,10 +834,7 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (*param_1 != '\0') {
     uStack_50 = *(undefined8 *)(param_1 + 0x10);
     pcVar1 = param_1 + 0x178;
@@ -925,10 +881,6 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
       (**(code **)(**(long **)(param_1 + 600) + 0x18))();
     }
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -943,7 +895,6 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
 void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0)
 
 {
-  long lVar1;
   undefined *puVar2;
   float fVar3;
   long *plVar4;
@@ -969,7 +920,6 @@ void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0)
   ulong extraout_x1;
   float *pfVar22;
   ulong uVar23;
-  long lVar24;
   undefined4 **ppuVar25;
   undefined4 *puVar26;
   undefined4 *puVar27;
@@ -1068,8 +1018,6 @@ void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0)
   undefined8 uStack_a8;
   undefined4 *puStack_a0;
   
-  lVar1 = tpidr_el0;
-  lVar24 = *(long *)(lVar1 + 0x28);
   uStack_124 = 0;
   pvStack_120 = (void *)0x0;
   bStack_130 = 0x14;
@@ -2405,10 +2353,6 @@ LAB_00431134:
       WaterConcept::ParallaxPuppetShow::_doneLoading();
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lVar24) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2424,17 +2368,13 @@ LAB_00431134:
 ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40,param_2);
   uVar3 = (ulong)(abStack_40[0] >> 1);
   if ((abStack_40[0] & 1) != 0) {
@@ -2451,10 +2391,6 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(undefined8 param_1,
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)uVar4;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -2470,7 +2406,6 @@ void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0)
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   long lVar4;
   long in_x1;
@@ -2479,10 +2414,7 @@ void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0)
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   printf("got skeleton: %s\n",*(long *)(in_x1 + 8) + 0x24);
   uStack_70 = 0;
   uStack_68 = 0;
@@ -2521,10 +2453,6 @@ LAB_004335dc:
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2541,7 +2469,6 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToTransitionType
                 (undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
@@ -2549,10 +2476,7 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToTransitionType
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40,param_2);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar5;
@@ -2599,10 +2523,6 @@ LAB_004336f8:
 LAB_00433780:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return (ulong)uVar4;
 }

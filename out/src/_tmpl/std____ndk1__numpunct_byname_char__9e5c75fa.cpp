@@ -78,7 +78,6 @@ void std::__ndk1::numpunct_byname<char>::numpunct_byname(char *p0,ulong p1)
 void std::__ndk1::numpunct_byname<char>::__init(char *p0)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -94,17 +93,10 @@ void std::__ndk1::numpunct_byname<char>::__init(char *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar2 = strcmp();
   if (iVar2 == 0) {
 LAB_005dc2d0:
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   lVar3 = newlocale(0x1fbf);

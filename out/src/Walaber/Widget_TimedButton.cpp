@@ -12,16 +12,12 @@
 void Walaber::Widget_TimedButton::Widget_TimedButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,2,&uStack_30,&uStack_38,1,1);
@@ -38,10 +34,6 @@ void Walaber::Widget_TimedButton::Widget_TimedButton(int p0,Walaber__Vector2 p1,
   puVar2[0x26] = 0;
   *(undefined8 *)((long)puVar2 + 0x14c) = 0x7f26727f99000000;
   *(undefined1 *)(puVar2 + 0x2b) = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -77,17 +69,13 @@ void Walaber::Widget_TimedButton::Widget_TimedButton
                undefined8 *param_5,long *param_6,long *param_7)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *param_4;
   uStack_58 = *param_5;
   Walaber::Widget::Widget(param_2,param_3,2,&uStack_50,&uStack_58,1,1);
@@ -133,10 +121,6 @@ void Walaber::Widget_TimedButton::Widget_TimedButton
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -316,7 +300,6 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
 
 {
   ulong *puVar1;
-  long lVar2;
   float fVar3;
   undefined8 uVar4;
   ulong uStack_90;
@@ -326,10 +309,7 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
   ulong uStack_70;
   int *piStack_68;
   float afStack_60 [2];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   puVar1 = &p0[4].f_0x30;
   if ((char)p0[5].f_0x28 != '\0') {
     puVar1 = (ulong *)&p0[4].f_0x20;
@@ -400,10 +380,6 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
                     /* try { // try from 0038aeb4 to 0038aebf has its CatchHandler @ 0038af2c */
   Walaber::Widget::draw(p0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_70);
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -12,16 +12,12 @@
 void Walaber::PlatformManager::PlatformManager()
 
 {
-  long lVar1;
   long lVar2;
   uint uVar3;
   uint uVar4;
   ulong auStack_40 [2];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   this[1] = 0;
   this[5] = 0x3f80000000000040;
   this[6] = 0;
@@ -52,10 +48,6 @@ void Walaber::PlatformManager::PlatformManager()
   if ((auStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -101,7 +93,6 @@ void Walaber::PlatformManager::stripPlatformSpecificFilename
   undefined1 *puVar5;
   byte bVar6;
   undefined1 uVar7;
-  long lVar8;
   void *pvVar9;
   bool bVar10;
   int iVar11;
@@ -114,10 +105,7 @@ void Walaber::PlatformManager::stripPlatformSpecificFilename
   byte abStack_80 [8];
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar8 = tpidr_el0;
-  lStack_68 = *(long *)(lVar8 + 0x28);
   uVar16 = *(ulong *)(param_3 + 8);
   pbVar4 = *(byte **)(param_3 + 0x10);
   if ((*param_3 & 1) == 0) {
@@ -210,10 +198,6 @@ LAB_0035824c:
 LAB_00358260:
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_3);
 LAB_0035826c:
-  if (*(long *)(lVar8 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -235,7 +219,6 @@ void Walaber::PlatformManager::getPlatformSpecificFilename
   long lVar3;
   uint uVar4;
   long lVar5;
-  long lVar6;
   void *pvVar7;
   ulong *puVar8;
   undefined8 *puVar9;
@@ -249,10 +232,7 @@ void Walaber::PlatformManager::getPlatformSpecificFilename
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar6 = tpidr_el0;
-  lStack_38 = *(long *)(lVar6 + 0x28);
   uVar4 = *(uint *)(param_2 + 0x30);
   uVar1 = 2;
   if ((uVar4 & 0x1000) != 0) {
@@ -305,10 +285,6 @@ void Walaber::PlatformManager::getPlatformSpecificFilename
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar6 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -329,7 +305,6 @@ void Walaber::PlatformManager::appendSpecificPlatformTagToFilename
   ulong uVar1;
   long lVar2;
   long lVar3;
-  long lVar4;
   void *pvVar5;
   ulong *puVar6;
   undefined8 *puVar7;
@@ -343,10 +318,7 @@ void Walaber::PlatformManager::appendSpecificPlatformTagToFilename
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::removeExtension(abStack_68,param_3);
   lVar3 = (long)param_4 * 0x18;
   uVar1 = *(ulong *)(&DAT_0072d820 + lVar3);
@@ -390,10 +362,6 @@ void Walaber::PlatformManager::appendSpecificPlatformTagToFilename
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -455,24 +423,16 @@ LAB_00358698:
 void Walaber::PlatformManager::extensionShouldBeIgnored(long param_1,undefined8 param_2)
 
 {
-  long lVar1;
   long lVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::getExtension(abStack_50,param_2);
                     /* try { // try from 00358774 to 0035877f has its CatchHandler @ 003587c8 */
   lVar2 = std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,abStack_50);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(param_1 + 8 != lVar2);
   return;
 }
 
@@ -488,23 +448,15 @@ void Walaber::PlatformManager::extensionShouldBeIgnored(long param_1,undefined8 
 void Walaber::PlatformManager::addIgnoreExtension(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::getExtension(abStack_40,param_2);
                     /* try { // try from 00358810 to 0035881f has its CatchHandler @ 00358854 */
   std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,abStack_40,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

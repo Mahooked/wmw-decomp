@@ -15,7 +15,6 @@
 void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2,Walaber::ValueTweaker::ValueDataType param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   byte abStack_c0 [16];
@@ -30,10 +29,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 == &DAT_00730910) {
     uStack_98 = 0;
@@ -73,10 +69,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
       operator delete(pvStack_60);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -92,7 +84,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,int param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined4 auStack_90 [2];
@@ -103,10 +94,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 == &DAT_00730910) {
     uStack_80 = 0;
@@ -133,10 +121,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   else {
     Walaber::ValueTweaker::TweakableValue::setValue(puVar2 + 7,param_2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -152,7 +136,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined4 auStack_90 [2];
@@ -163,10 +146,7 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
   void *pvStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_2);
   if (puVar2 == &DAT_00730910) {
     uStack_80 = 0;
@@ -193,10 +173,6 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
   else {
     Walaber::ValueTweaker::TweakableValue::setValue(param_1,puVar2 + 7);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -212,7 +188,6 @@ void Walaber::ValueTweaker::setTweakableValue(undefined8 param_1,undefined8 para
 void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Vector2 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_a0;
@@ -225,10 +200,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   undefined8 uStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 == &DAT_00730910) {
     uStack_88 = 0;
@@ -257,10 +229,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     uStack_60 = *param_2;
     Walaber::ValueTweaker::TweakableValue::setValue(puVar2 + 7,&uStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -276,7 +244,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Rect param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_c0;
@@ -291,10 +258,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   undefined8 uStack_68;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 == &DAT_00730910) {
     uStack_98 = 0;
@@ -325,10 +289,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     uStack_70 = *param_2;
     Walaber::ValueTweaker::TweakableValue::setValue(puVar2 + 7,&uStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -344,7 +304,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Color param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined1 uStack_a0;
@@ -363,10 +322,7 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
   undefined1 uStack_5d;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 == &DAT_00730910) {
     uStack_88 = 0;
@@ -401,10 +357,6 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
     uStack_5d = param_2[3];
     Walaber::ValueTweaker::TweakableValue::setValue(puVar2 + 7,&uStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -421,16 +373,12 @@ void Walaber::ValueTweaker::setTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> *param_2,void *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -451,10 +399,6 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -470,16 +414,12 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,int *param_2,void *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -500,10 +440,6 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -519,16 +455,12 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::mapTweakableValue(byte *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -549,10 +481,6 @@ void Walaber::ValueTweaker::mapTweakableValue(byte *param_1,undefined8 param_2,u
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -568,16 +496,12 @@ void Walaber::ValueTweaker::mapTweakableValue(byte *param_1,undefined8 param_2,u
 void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Vector2 *param_2,void *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -598,10 +522,6 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -617,16 +537,12 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Rect *param_2,void *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -647,10 +563,6 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -666,16 +578,12 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
 void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_1,Walaber::Color *param_2,void *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_3;
   puVar2 = (undefined8 *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ValueTweaker::TweakableValue>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&mTweakables,param_1);
   if (puVar2 != &DAT_00730910) {
@@ -696,10 +604,6 @@ void Walaber::ValueTweaker::mapTweakableValue(std::__ndk1::basic_string<char, st
                    param_1);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -911,7 +815,6 @@ void Walaber::ValueTweaker::getTweakableValueColor(undefined1 *param_1,undefined
 void Walaber::ValueTweaker::loadFromFile(byte *param_1)
 
 {
-  long lVar1;
   undefined4 uVar2;
   long *plVar3;
   byte *pbVar4;
@@ -937,10 +840,7 @@ void Walaber::ValueTweaker::loadFromFile(byte *param_1)
   undefined **appuStack_108 [17];
   undefined8 uStack_80;
   undefined4 uStack_78;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   if ((*param_1 & 1) == 0) {
     param_1 = param_1 + 1;
   }
@@ -1039,10 +939,6 @@ LAB_00402bf4:
   appuStack_108[0] = &PTR__basic_ifstream_00711298;
   std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(auStack_1b0);
   std::__ndk1::ios_base::~ios_base(appuStack_108);
-  if (*(long *)(lVar1 + 0x28) != lStack_70) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

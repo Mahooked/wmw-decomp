@@ -14,7 +14,6 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
                (float *p0)
 
 {
-  long lVar1;
   long *in_x0;
   undefined4 *in_x1;
   ulong uVar2;
@@ -27,10 +26,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   void *pvStack_58;
   undefined4 *puStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = in_x0[1] - *in_x0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -72,10 +68,6 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   lStack_48 = lVar3;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -93,7 +85,6 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
                (float **p0)
 
 {
-  long lVar1;
   long *in_x0;
   undefined4 *in_x1;
   ulong uVar2;
@@ -106,10 +97,7 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   void *pvStack_58;
   undefined4 *puStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = in_x0[1] - *in_x0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -151,10 +139,6 @@ void std::__ndk1::vector<float,std::__ndk1::allocator<float>>::__push_back_slow_
   lStack_48 = lVar3;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

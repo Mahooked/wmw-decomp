@@ -466,13 +466,9 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
                (long param_1,long param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::locale::locale(auStack_50,param_1 + 8);
   std::__ndk1::locale::operator=(param_1 + 8,param_2 + 8);
   std::__ndk1::locale::operator=(param_2 + 8,auStack_50);
@@ -495,10 +491,6 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
   uVar2 = *(undefined8 *)(param_1 + 0x38);
   *(undefined8 *)(param_1 + 0x38) = *(undefined8 *)(param_2 + 0x38);
   *(undefined8 *)(param_2 + 0x38) = uVar2;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -14,7 +14,6 @@ void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcep
      __push_back_slow_path<WaterConcept::Spout*const&>(WaterConcept__Spout **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcep
   WaterConcept__Spout *pWStack_58;
   WaterConcept__Spout *pWStack_50;
   WaterConcept__Spout *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -71,10 +67,6 @@ void std::__ndk1::vector<WaterConcept::Spout*,std::__ndk1::allocator<WaterConcep
   pWStack_48 = pWVar7;
   if (pWStack_60 != (WaterConcept__Spout *)0x0) {
     operator delete(pWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

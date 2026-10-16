@@ -21,7 +21,6 @@ void std::__ndk1::
   ulong uVar1;
   undefined4 uVar2;
   undefined2 uVar3;
-  long lVar4;
   long in_x1;
   long lVar5;
   ulong uVar6;
@@ -30,10 +29,7 @@ void std::__ndk1::
   long lVar9;
   undefined1 auStack_70 [16];
   long lStack_60;
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   lVar5 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x71c71c71c71c71c7;
   uVar1 = lVar5 + 1;
   if (0x38e38e38e38e38e < uVar1) {
@@ -68,10 +64,6 @@ void std::__ndk1::
                     /* try { // try from 00356c18 to 00356c23 has its CatchHandler @ 00356c80 */
   std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__swap_out_circular_buffer(p0,auStack_70);
   std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>::~__split_buffer(auStack_70);
-  if (*(long *)(lVar4 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

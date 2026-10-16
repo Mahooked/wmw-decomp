@@ -406,14 +406,10 @@ void Walaber::RenderTexture2D::RenderTexture2D
                (undefined8 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
 
 {
-  long lVar1;
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined3 uStack_4b;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   abStack_60[0] = 0x26;
   uStack_4b = 0;
   abStack_60[9] = 0x6f;
@@ -447,10 +443,6 @@ void Walaber::RenderTexture2D::RenderTexture2D
   }
                     /* try { // try from 003966a8 to 003966bb has its CatchHandler @ 003966e8 */
   Walaber::RenderTexture2D::initWithSize(param_1,param_2,param_3,param_4);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -467,7 +459,6 @@ void Walaber::RenderTexture2D::RenderTexture2D
                (long *param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,int param_5)
 
 {
-  long lVar1;
   undefined8 uStack_b8;
   undefined4 uStack_b0;
   undefined1 uStack_ac;
@@ -485,10 +476,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined3 uStack_4b;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_4b = 0;
   abStack_60[0] = 0x26;
   abStack_60[9] = 0x6f;
@@ -540,10 +528,6 @@ void Walaber::RenderTexture2D::RenderTexture2D
                     /* try { // try from 00396990 to 003969b3 has its CatchHandler @ 00396a10 */
   Walaber::RenderTexture2D::initWithSize(param_1,param_2,param_3,param_5);
   (**(code **)(*param_1 + 0x48))(param_1);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -561,14 +545,10 @@ void Walaber::RenderTexture2D::RenderTexture2D
                int param_5)
 
 {
-  long lVar1;
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined3 uStack_4b;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   abStack_60[0] = 0x26;
   uStack_4b = 0;
   abStack_60[9] = 0x6f;
@@ -602,10 +582,6 @@ void Walaber::RenderTexture2D::RenderTexture2D
   }
                     /* try { // try from 00396b58 to 00396b6f has its CatchHandler @ 00396b9c */
   Walaber::RenderTexture2D::initWithPixelData(param_1,param_2,param_3,param_5,param_4);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

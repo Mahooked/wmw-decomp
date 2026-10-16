@@ -151,17 +151,13 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
 
 {
   long *plVar1;
-  long lVar2;
   undefined4 *puVar3;
   undefined8 uStack_80;
   ulong uStack_78;
   undefined8 uStack_70;
   void *pvStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   plVar1 = (long *)(param_2 + 0x10);
   if (*(int *)(param_2 + 0x2c) == 0) {
     uStack_60 = 0;
@@ -207,10 +203,6 @@ void Walaber::AnimationCueAnimationTrack::addAnimationEvent
   puVar3[8] = param_4;
   puVar3[9] = param_5;
   *(int *)(param_2 + 0x2c) = *(int *)(param_2 + 0x2c) + 1;
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

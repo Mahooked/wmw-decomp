@@ -14,23 +14,15 @@ void std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_out
                (mbstate_t& param_1,char16_t const *param_2,char16_t const *param_3,char16_t const*& param_4,char *param_5,char *param_6,char*& param_7)
 
 {
-  long lVar1;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = param_5;
   uStack_40 = param_2;
   func_0x005d8d68(param_2,param_3,&uStack_40,param_5,param_6,&uStack_48,
                   *(undefined8 *)(this + 0x10),*(undefined4 *)(this + 0x18));
   *param_4 = uStack_40;
   *param_7 = uStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -47,23 +39,15 @@ void std::__ndk1::__codecvt_utf8_utf16<char16_t>::do_in
                (mbstate_t& param_1,char const *param_2,char const *param_3,char const*& param_4,char16_t *param_5,char16_t *param_6,char16_t*& param_7)
 
 {
-  long lVar1;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = param_5;
   uStack_40 = param_2;
   func_0x005d907c(param_2,param_3,&uStack_40,param_5,param_6,&uStack_48,
                   *(undefined8 *)(this + 0x10),*(undefined4 *)(this + 0x18));
   *param_4 = uStack_40;
   *param_7 = uStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

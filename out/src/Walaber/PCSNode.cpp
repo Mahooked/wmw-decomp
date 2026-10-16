@@ -178,7 +178,6 @@ long Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode *param_1,std::__nd
   uint uVar1;
   uint uVar2;
   int iVar3;
-  long lVar4;
   ulong uVar5;
   byte *pbVar6;
   long lVar7;
@@ -189,10 +188,7 @@ long Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode *param_1,std::__nd
   long lStack_70;
   long lStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   pbVar6 = *(byte **)(param_2 + 0x10);
   uStack_78 = 0;
   uStack_80 = 0;
@@ -235,10 +231,6 @@ long Walaber::PCSNode::_depthFirstNameSearch(Walaber::PCSNode *param_1,std::__nd
   lVar7 = 0;
 LAB_003eb214:
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar7;
 }
 
@@ -259,7 +251,6 @@ long Walaber::PCSNode::_depthFirstNameSearchWithGroupID
   uint uVar1;
   uint uVar2;
   int iVar3;
-  long lVar4;
   ulong uVar5;
   byte *pbVar6;
   long lVar7;
@@ -270,10 +261,7 @@ long Walaber::PCSNode::_depthFirstNameSearchWithGroupID
   long lStack_70;
   long lStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   pbVar6 = *(byte **)(param_2 + 0x10);
   uStack_78 = 0;
   uStack_80 = 0;
@@ -318,10 +306,6 @@ long Walaber::PCSNode::_depthFirstNameSearchWithGroupID
   lVar7 = 0;
 LAB_003eb380:
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar7;
 }
 
@@ -427,7 +411,6 @@ void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
                (Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>& param_3)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uStack_78;
   long lStack_70;
@@ -437,10 +420,7 @@ void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
   long lStack_50;
   long lStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lStack_50 = 0;
   lStack_58 = 0;
   uStack_60 = 0;
@@ -476,10 +456,6 @@ void Walaber::PCSNode::_depthFirstGroupIDSearchMultipleResults
     }
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_78);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -558,7 +534,6 @@ void Walaber::PCSNode::_recursiveDelete(Walaber__PCSNode *p0)
 ulong Walaber::PCSNode::getTreeSize(Walaber__PCSNode *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   uint uVar3;
   long lVar4;
@@ -569,10 +544,7 @@ ulong Walaber::PCSNode::getTreeSize(Walaber__PCSNode *p0)
   ulong uStack_50;
   long lStack_48;
   Walaber__PCSNode *pWStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_58 = 0;
   uStack_60 = 0;
   lStack_48 = 0;
@@ -608,10 +580,6 @@ ulong Walaber::PCSNode::getTreeSize(Walaber__PCSNode *p0)
     alStack_78[0] = 0;
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(alStack_78 + 1);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar3;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -626,7 +594,6 @@ ulong Walaber::PCSNode::getTreeSize(Walaber__PCSNode *p0)
 void Walaber::PCSNode::printTree(Walaber__PCSNode *p0)
 
 {
-  long lVar1;
   long lVar2;
   long lStack_98;
   undefined8 uStack_90;
@@ -636,10 +603,7 @@ void Walaber::PCSNode::printTree(Walaber__PCSNode *p0)
   ulong uStack_70;
   long lStack_68;
   Walaber__PCSNode *pWStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_78 = 0;
   uStack_80 = 0;
   lStack_68 = 0;
@@ -673,10 +637,6 @@ void Walaber::PCSNode::printTree(Walaber__PCSNode *p0)
     Walaber::Logger::printf("Walaber",2,&DAT_0061b9ce);
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_90);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

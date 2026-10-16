@@ -17,17 +17,13 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
 {
   long *plVar1;
   undefined8 *puVar2;
-  long lVar3;
   undefined4 *puVar4;
   undefined8 uStack_80;
   ulong uStack_78;
   undefined8 uStack_70;
   void *pvStack_68;
   undefined2 uStack_60;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   plVar1 = (long *)(param_3 + 0x20);
   if (*(int *)(param_3 + 0x40) == 0) {
     uStack_60 = 0;
@@ -74,10 +70,6 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
   *(byte *)(puVar4 + 8) = param_5 & 1;
   *(byte *)((long)puVar4 + 0x21) = param_6 & 1;
   *(int *)(param_3 + 0x40) = *(int *)(param_3 + 0x40) + 1;
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -94,7 +86,6 @@ void Walaber::SpriteAnimationTrack::apply(float p0)
 {
   long *plVar1;
   long lVar2;
-  long lVar3;
   long *in_x0;
   int iVar4;
   long lVar5;
@@ -103,10 +94,7 @@ void Walaber::SpriteAnimationTrack::apply(float p0)
   long lVar8;
   float fVar9;
   undefined1 auStack_88 [16];
-  long lStack_78;
   
-  lVar3 = tpidr_el0;
-  lStack_78 = *(long *)(lVar3 + 0x28);
   iVar4 = *(int *)((long)in_x0 + 0x3c);
   if (iVar4 != (int)in_x0[8] + -1) {
     lVar8 = in_x0[4];
@@ -177,10 +165,6 @@ void Walaber::SpriteAnimationTrack::apply(float p0)
       pfVar7 = (float *)(lVar8 + (long)(iVar4 + 1) * 0x28);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

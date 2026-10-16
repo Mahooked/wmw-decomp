@@ -12,14 +12,10 @@
 void WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(p0,&uStack_30,&uStack_38,0,0);
@@ -27,10 +23,6 @@ void WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
   *(undefined ***)p0 = &PTR__Fan_007118c8;
   memset((long)p0 + 0x3ac,0,0xa4);
   *(undefined4 *)((long)p0 + 0xd8) = 0xc;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -106,7 +98,6 @@ void WaterConcept::Fan::~Fan(void *param_1)
 void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
@@ -131,10 +122,7 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
   undefined1 uStack_58;
   undefined7 uStack_57;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   uStack_59 = 0;
   uStack_58 = 0;
@@ -304,10 +292,6 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
     }
     std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&bStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -324,7 +308,6 @@ void WaterConcept::Fan::update(float p0)
 
 {
   float *pfVar1;
-  long lVar2;
   long in_x0;
   long *plVar3;
   char cVar4;
@@ -346,10 +329,7 @@ void WaterConcept::Fan::update(float p0)
   undefined8 uStack_90;
   int *piStack_88;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   if (*(char *)(in_x0 + 0x3a8) != '\0') {
     if (*(int **)(in_x0 + 0x3b0) != *(int **)(in_x0 + 0x3b8)) {
@@ -484,10 +464,6 @@ LAB_0047a054:
     uStack_90 = lVar6;
     (**(code **)(*plVar3 + 0x10))(plVar3,&uStack_90);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -503,7 +479,6 @@ void WaterConcept::Fan::_setState(bool p0)
 
 {
   byte bVar1;
-  long lVar2;
   ulong uVar3;
   long *plVar4;
   byte in_w1;
@@ -511,11 +486,8 @@ void WaterConcept::Fan::_setState(bool p0)
   ulong uStack_48;
   uint uStack_40;
   byte bStack_3c;
-  long lStack_38;
   
   uVar3 = (ulong)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   bVar1 = in_w1 & 1;
   if ((bVar1 != *(byte *)(uVar3 + 0x3a8)) &&
      (plVar4 = *(long **)(uVar3 + 0x3e0), plVar4 != (long *)0x0)) {
@@ -529,10 +501,6 @@ void WaterConcept::Fan::_setState(bool p0)
     (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_48);
   }
   *(byte *)(uVar3 + 0x3a8) = bVar1;
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -584,7 +552,6 @@ void WaterConcept::Fan::connectDrain(WaterConcept__Spout *p0)
 void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
 
 {
-  long lVar1;
   bool bVar2;
   ulong uVar3;
   long in_x1;
@@ -607,10 +574,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
   undefined4 uStack_68;
   undefined4 uStack_64;
   undefined4 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_88 = 0;
   uStack_78 = 0;
   uStack_74 = 0;
@@ -724,10 +688,6 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
     *(long **)&p0[1].field_0x148 = plVar5 + 5;
   }
   Walaber::PropertyList::~PropertyList(&puStack_98);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -743,7 +703,6 @@ void WaterConcept::Fan::_initFinished(long param_1)
 
 {
   undefined4 uVar1;
-  long lVar2;
   ulong uVar3;
   long lVar4;
   ulong uVar5;
@@ -758,10 +717,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
   int *piStack_88;
   void *pvStack_80;
   undefined1 auStack_78 [16];
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lVar4 = *(long *)(param_1 + 400);
   if (*(long *)(param_1 + 0x198) != lVar4) {
     uVar3 = 1;
@@ -829,10 +785,6 @@ void WaterConcept::Fan::_initFinished(long param_1)
     } while (piVar8 != *(int **)(param_1 + 0x3d0));
   }
   *(undefined4 *)(param_1 + 0x308) = 0x40000000;
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

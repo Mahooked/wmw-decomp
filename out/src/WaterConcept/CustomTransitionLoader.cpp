@@ -12,7 +12,6 @@
 void WaterConcept::CustomTransitionLoader::init(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   int *piVar4;
@@ -26,10 +25,7 @@ void WaterConcept::CustomTransitionLoader::init(void)
   int *piStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(1);
   puVar3 = (undefined8 *)operator new(0x28);
   puVar3[2] = uVar2;
@@ -58,10 +54,6 @@ void WaterConcept::CustomTransitionLoader::init(void)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::CustomTransitionLoader>>::~SharedPtr(&puStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -12,7 +12,6 @@
 void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -26,20 +25,13 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined ***)p0 = &PTR__codecvt_007178c8;
   *(long *)(p0 + 8) = in_x2 + -1;
                     /* try { // try from 005cd618 to 005cd623 has its CatchHandler @ 005cd740 */
   lVar2 = newlocale(0x1fbf,p1,0);
   *(long *)(p0 + 0x10) = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_78 = 0;
@@ -149,7 +141,6 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_out
 
 {
   wchar_t wVar1;
-  long lVar2;
   undefined1 uVar3;
   long lVar4;
   long lVar5;
@@ -161,10 +152,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_out
   wchar_t **ppwVar10;
   undefined8 uStack_78;
   undefined1 auStack_6c [4];
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   ppwVar9 = (wchar_t **)p2;
   if ((wchar_t **)p2 == p3) {
     *in_x7 = (long)p5;
@@ -273,10 +261,6 @@ LAB_005d85b0:
   *(wchar_t **)p4 = p2;
   uVar3 = 2;
 LAB_005d84f8:
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 
@@ -294,7 +278,6 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_in
 
 {
   wchar_t **ppwVar1;
-  long lVar2;
   char **ppcVar3;
   undefined1 uVar4;
   bool bVar5;
@@ -304,10 +287,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_in
   char **ppcVar8;
   char **ppcVar9;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   ppcVar8 = (char **)p2;
   ppcVar3 = (char **)p2;
   if ((char **)p2 == p3) {
@@ -411,10 +391,6 @@ LAB_005d88cc:
 LAB_005d87d8:
   uVar4 = ppcVar3 != p3;
 LAB_005d87dc:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -432,7 +408,6 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
 
 {
   undefined1 uVar1;
-  long lVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
@@ -440,10 +415,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
   undefined1 *puVar6;
   undefined1 *puVar7;
   undefined1 auStack_4c [4];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   *in_x4 = (long)p2;
   lVar3 = uselocale(p0[2]);
                     /* try { // try from 005d898c to 005d899b has its CatchHandler @ 005d8a58 */
@@ -480,10 +452,6 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::do_unshift
       uVar5 = 0;
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 

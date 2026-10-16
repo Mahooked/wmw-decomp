@@ -53,16 +53,12 @@ void Walaber::Transition_Block::~Transition_Block()
 void Walaber::Transition_Block::setup(float p0)
 
 {
-  long lVar1;
   ulong uVar2;
   long in_x0;
   int iVar3;
   float fVar4;
   undefined1 auStack_3c [4];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *(undefined4 *)(in_x0 + 0x70) = 0;
   *(undefined1 *)(in_x0 + 0xc4) = 0;
   *(undefined4 *)(in_x0 + 0x78) = 0;
@@ -80,10 +76,6 @@ void Walaber::Transition_Block::setup(float p0)
     std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::push_back(in_x0 + 0xe0,auStack_3c);
     iVar3 = iVar3 + 1;
   } while (iVar3 < *(int *)(in_x0 + 0xf8));
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -100,7 +92,6 @@ void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
 
 {
   int iVar1;
-  long lVar2;
   undefined8 uVar3;
   int iVar4;
   ulong uVar5;
@@ -109,10 +100,7 @@ void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
   undefined8 uVar7;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
   uVar5 = Walaber::PropertyList::keyExists();
@@ -155,10 +143,6 @@ void Walaber::Transition_Block::setup(float p0,Walaber__PropertyList *p1)
     iVar4 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar4 == 1;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -379,7 +379,6 @@ std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::seekpos
 ulong std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::sync(long *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   ulong uVar4;
@@ -388,10 +387,7 @@ ulong std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::sync(long
   long lVar7;
   long lVar8;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1[0xf] != 0) {
     if ((long *)param_1[0x10] == (long *)0x0) {
       uVar5 = __cxa_allocate_exception(8);
@@ -462,10 +458,6 @@ LAB_003d4d60:
   }
   uVar6 = 0;
 LAB_003d4d8c:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
-  }
   return (ulong)uVar6;
 }
 
@@ -480,7 +472,6 @@ LAB_003d4d8c:
 void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::underflow(long param_1)
 
 {
-  long lVar1;
   bool bVar2;
   int iVar3;
   long *plVar4;
@@ -495,10 +486,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::underflow(
   ulong uVar13;
   byte *pbStack_58;
   undefined1 auStack_4c [4];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)(param_1 + 0x78) == 0) {
     uVar12 = 0xffffffff;
     goto LAB_003d5108;
@@ -632,10 +620,6 @@ LAB_003d50f0:
     *(undefined8 *)(param_1 + 0x20) = 0;
   }
 LAB_003d5108:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar12);
-    return;
-  }
   return;
 }
 
@@ -682,7 +666,6 @@ uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(
 void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(int p0)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   ulong uVar4;
@@ -697,11 +680,8 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(i
   long lStack_70;
   long lStack_68;
   undefined1 auStack_5c [4];
-  long lStack_58;
   
   uVar4 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (*(long *)(uVar4 + 0x78) != 0) {
     std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::__write_mode();
     puVar8 = *(undefined1 **)(uVar4 + 0x30);
@@ -782,10 +762,6 @@ LAB_003d535c:
   }
   iVar3 = -1;
 LAB_003d5448:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(iVar3);
-    return;
-  }
   return;
 }
 
@@ -840,15 +816,11 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_file
 
 {
   long *plVar1;
-  long lVar2;
   byte bVar3;
   ulong uVar4;
   long lVar5;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   plVar1 = param_1 + 1;
   *param_1 = (long)&PTR__basic_streambuf_00710968;
   std::__ndk1::locale::locale(plVar1);
@@ -878,10 +850,6 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_file
   }
                     /* try { // try from 003d5d68 to 003d5d77 has its CatchHandler @ 003d5db4 */
   (**(code **)(*param_1 + 0x18))(param_1,0,0x1000);
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

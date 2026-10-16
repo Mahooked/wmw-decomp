@@ -44,7 +44,6 @@ void Walaber::Animation::Animation(Walaber__Animation *p0)
 
 {
   uint uVar1;
-  long lVar2;
   undefined8 uVar3;
   long in_x1;
   int *piVar4;
@@ -52,10 +51,7 @@ void Walaber::Animation::Animation(Walaber__Animation *p0)
   ulong uVar6;
   undefined8 uVar7;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   memset(&p0->f_0x18,0,0x78);
                     /* try { // try from 00331978 to 00331983 has its CatchHandler @ 00331c68 */
@@ -188,10 +184,6 @@ void Walaber::Animation::Animation(Walaber__Animation *p0)
       uVar6 = uVar6 + 1;
     } while (uVar6 < (uVar5 >> 3 & 0xffffffff));
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -206,7 +198,6 @@ void Walaber::Animation::Animation(Walaber__Animation *p0)
 Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
 
 {
-  long lVar1;
   uint uVar2;
   float fVar3;
   undefined8 uVar4;
@@ -215,10 +206,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
   ulong uVar6;
   ulong uVar7;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=();
   uVar6 = in_x1->f_0x20 - in_x1->f_0x18;
   if ((int)(uVar6 >> 3) != 0) {
@@ -332,10 +320,6 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
   p0->f_0x101 = in_x1->f_0x101;
   p0->f_0x102 = in_x1->f_0x102;
   p0->f_0x103 = in_x1->f_0x103;
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  pWVar5 = (Walaber__Animation *)__stack_chk_fail();
   return pWVar5;
 }
 
@@ -601,7 +585,6 @@ LAB_0033247c:
 void Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1,Walaber::SceneGraph *param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined8 uVar4;
@@ -615,10 +598,7 @@ void Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, 
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_58,param_1);
   uStack_64 = 0;
   pvStack_60 = (void *)0x0;
@@ -646,10 +626,6 @@ void Walaber::Animation::createAnimationFromXml(std::__ndk1::basic_string<char, 
   }
   uVar4 = 0;
 LAB_00332618:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -1015,13 +991,9 @@ LAB_00332db8:
 void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0)
 
 {
-  long lVar1;
   long in_x1;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lStack_40 = in_x1;
   Walaber::NodeAnimationTrack::setAnimation();
   if ((long *)p0->f_0x38 == *(long **)&p0->field_0x40) {
@@ -1034,10 +1006,6 @@ void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0)
   if (*(float *)&p0[1].f_0x60 < *(float *)(lStack_40 + 4)) {
     *(float *)&p0[1].f_0x60 = *(float *)(lStack_40 + 4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1052,7 +1020,6 @@ void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0)
 void Walaber::Animation::createAnimationFromXmlNode(_xmlNode *p0,Walaber__Skeleton *p1)
 
 {
-  long lVar1;
   undefined *puVar2;
   bool bVar3;
   bool bVar4;
@@ -1085,10 +1052,7 @@ void Walaber::Animation::createAnimationFromXmlNode(_xmlNode *p0,Walaber__Skelet
   ulong uStack_98;
   ulong uStack_90;
   void *pvStack_88;
-  long lStack_80;
   
-  lVar1 = tpidr_el0;
-  lStack_80 = *(long *)(lVar1 + 0x28);
   uVar6 = xmlGetProp(p0,"name");
   uStack_90 = 0;
   pvStack_88 = (void *)0x0;
@@ -1531,10 +1495,6 @@ LAB_003335c0:
   if ((uStack_98 & 1) != 0) {
     operator delete(pvStack_88);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_80) {
-    return;
-  }
-  __stack_chk_fail(lVar8);
   return;
 }
 
@@ -1549,14 +1509,10 @@ LAB_003335c0:
 void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0)
 
 {
-  long lVar1;
   long in_x1;
   float fVar2;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *(Walaber__SpriteAnimationTrack **)(in_x1 + 0x18) = p0;
   lStack_30 = in_x1;
   if ((long *)p0[1].f_0x8 == (long *)p0[1].f_0x10) {
@@ -1575,10 +1531,6 @@ void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0)
   if ((float)p0[2].f_0x38 < fVar2) {
     p0[2].f_0x38 = (uint)fVar2;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1593,15 +1545,11 @@ void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0)
 void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0)
 
 {
-  long lVar1;
   long *in_x1;
   long lVar2;
   float fVar3;
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plStack_40 = in_x1;
   Walaber::NumericAnimationTrack::setAnimation();
   if ((undefined8 *)p0->animation == (undefined8 *)p0[1].f_0x0) {
@@ -1621,10 +1569,6 @@ void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0)
   if (*(float *)&p0[5].f_0x0 < fVar3) {
     *(float *)&p0[5].f_0x0 = fVar3;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1639,14 +1583,10 @@ void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0)
 void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrack *p0)
 
 {
-  long lVar1;
   long in_x1;
   float fVar2;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *(Walaber__AnimationCueAnimationTrack **)(in_x1 + 8) = p0;
   lStack_30 = in_x1;
   if ((long *)p0[2].f_0x8 == (long *)p0[2].f_0x10) {
@@ -1665,10 +1605,6 @@ void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrac
   if (*(float *)&p0[4].f_0x8 < fVar2) {
     *(float *)&p0[4].f_0x8 = fVar2;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1683,14 +1619,10 @@ void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrac
 void Walaber::Animation::addSkeletonActorCueTrack(Walaber__SkeletonActorCueAnimationTrack *p0)
 
 {
-  long lVar1;
   long in_x1;
   float fVar2;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = in_x1;
   if ((long *)p0[3].f_0x8 == (long *)p0[3].f_0x10) {
     void std::__ndk1::vector<Walaber::SkeletonActorCueAnimationTrack*, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack*>>::__push_back_slow_path<Walaber::SkeletonActorCueAnimationTrack* const&>(p0 + 3,&lStack_30);
@@ -1708,10 +1640,6 @@ void Walaber::Animation::addSkeletonActorCueTrack(Walaber__SkeletonActorCueAnima
   if (*(float *)&p0[5].f_0x0 < fVar2) {
     *(float *)&p0[5].f_0x0 = fVar2;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1770,7 +1698,6 @@ ulong Walaber::Animation::_checkForEventsAndHandleTime(long param_1)
 {
   undefined4 *puVar1;
   int iVar2;
-  long lVar3;
   long *plVar4;
   int iVar5;
   long lVar6;
@@ -1781,10 +1708,7 @@ ulong Walaber::Animation::_checkForEventsAndHandleTime(long param_1)
   undefined4 uStack_7c;
   long lStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   lVar6 = *(long *)(param_1 + 0x90);
   if (lVar6 == *(long *)(param_1 + 0x98)) {
 LAB_003341c8:
@@ -1927,10 +1851,6 @@ LAB_003341c8:
     (**(code **)(*plVar4 + 0x10))(plVar4,&lStack_78);
   }
 LAB_003344ac:
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return (ulong)uVar7;
-  }
-  uVar8 = __stack_chk_fail();
   return uVar8;
 }
 
@@ -2039,16 +1959,12 @@ void Walaber::Animation::applyTracks(float p0,bool p1)
 void Walaber::Animation::addMarker(float p0,int p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long in_x1;
   long lVar3;
   code *pcStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p1;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_40 = (code *)((ulong)(uint)p0 | in_x1 << 0x20);
   if (*(ulong **)(uVar2 + 0x98) < *(ulong **)(uVar2 + 0xa0)) {
     **(ulong **)(uVar2 + 0x98) = (ulong)pcStack_40;
@@ -2061,10 +1977,6 @@ void Walaber::Animation::addMarker(float p0,int p1)
   }
   pcStack_40 = _markerCompare;
   void std::__ndk1::__sort<bool (*&)(std::__ndk1::pair<float, int> const&, std::__ndk1::pair<float, int> const&), std::__ndk1::pair<float, int>*>(*(undefined8 *)(uVar2 + 0x90),lVar3,&pcStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

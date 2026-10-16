@@ -19,7 +19,6 @@ void std::__ndk1::__money_put<wchar_t>::__gather_info
 
 {
   byte bVar1;
-  long lVar2;
   undefined4 uVar3;
   long *plVar4;
   undefined8 *puVar5;
@@ -27,10 +26,7 @@ void std::__ndk1::__money_put<wchar_t>::__gather_info
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((param_1 & 1) == 0) {
     puVar5 = &moneypunct<wchar_t,false>::id;
   }
@@ -151,10 +147,6 @@ void std::__ndk1::__money_put<wchar_t>::__gather_info
   *(undefined8 *)param_8 = uStack_80;
   uVar3 = (**(code **)(*plVar4 + 0x48))(plVar4);
   *param_10 = uVar3;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

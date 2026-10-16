@@ -18,7 +18,6 @@ wchar_t * std::__ndk1::
 
 {
   byte bVar1;
-  long lVar2;
   wchar_t *pwVar3;
   void *pvVar4;
   wchar_t *pwVar5;
@@ -39,10 +38,7 @@ wchar_t * std::__ndk1::
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   bVar1 = (byte)*p0;
   if ((bVar1 & 1) == 0) {
     uVar15 = (ulong)(bVar1 >> 1);
@@ -137,10 +133,6 @@ LAB_005e24e0:
     *(ulong *)(p0 + 2) = uVar15 + uVar8;
   }
 LAB_005e2514:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    pwVar5 = (wchar_t *)__stack_chk_fail();
-    return pwVar5;
-  }
   return p0;
 }
 

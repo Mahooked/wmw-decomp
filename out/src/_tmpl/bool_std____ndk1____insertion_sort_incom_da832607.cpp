@@ -17,7 +17,6 @@ void std::__ndk1::
                (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long lVar2;
   bool bVar3;
   ulong uVar4;
@@ -29,10 +28,7 @@ void std::__ndk1::
   int iVar10;
   long lVar11;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   bVar3 = true;
   switch((long)param_2 - (long)param_1 >> 3) {
   case 0:
@@ -95,10 +91,6 @@ LAB_00337284:
   }
   bVar3 = true;
 switchD_003371b0_caseD_0:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail(bVar3);
-    return;
-  }
   return;
 }
 

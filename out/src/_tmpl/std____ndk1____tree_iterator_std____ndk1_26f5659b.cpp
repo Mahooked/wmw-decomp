@@ -41,16 +41,12 @@ void std::__ndk1::
                (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  long lVar1;
   long *plVar2;
   long lVar3;
   undefined1 auStack_60 [8];
   undefined8 uStack_58;
   long alStack_50 [3];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar2 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__find_equal<int>(param_1,param_2,&uStack_58,auStack_60,param_3);
   lVar3 = *plVar2;
   if (*plVar2 == 0) {
@@ -58,10 +54,6 @@ void std::__ndk1::
     std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::__insert_node_at(param_1,uStack_58,plVar2,alStack_50[0]);
     lVar3 = alStack_50[0];
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(lVar3);
   return;
 }
 

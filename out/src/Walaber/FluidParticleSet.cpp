@@ -12,7 +12,6 @@
 void Walaber::FluidParticleSet::initParticles(uint p0)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   int in_w1;
@@ -28,11 +27,8 @@ void Walaber::FluidParticleSet::initParticles(uint p0)
   undefined4 uStack_a8;
   undefined2 uStack_a4;
   undefined1 auStack_a0 [88];
-  long lStack_48;
   
   puVar2 = (undefined8 *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar6 = *puVar2;
   uStack_b8 = 0x3f8000003f800000;
   uStack_b0 = 0;
@@ -60,10 +56,6 @@ void Walaber::FluidParticleSet::initParticles(uint p0)
     } while (in_w1 != iVar5);
   }
   *(int *)(puVar2 + 7) = in_w1;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79,7 +71,6 @@ void Walaber::FluidParticleSet::updateParticles(float p0)
 
 {
   undefined8 *puVar1;
-  long lVar2;
   long *in_x0;
   long lVar3;
   long *plVar4;
@@ -91,10 +82,7 @@ void Walaber::FluidParticleSet::updateParticles(float p0)
   undefined8 uVar10;
   float fVar11;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   lVar3 = 0;
   uVar5 = 0xffffffffffffffff;
   do {
@@ -121,10 +109,6 @@ void Walaber::FluidParticleSet::updateParticles(float p0)
   if (plVar4 != (long *)0x0) {
     (**(code **)(*plVar4 + 0x10))(plVar4,auStack_30);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -148,7 +132,6 @@ void Walaber::FluidParticleSet::drawParticles
   int iVar3;
   int iVar4;
   long lVar5;
-  long lVar6;
   long lVar7;
   long lVar8;
   ulong uVar9;
@@ -160,10 +143,7 @@ void Walaber::FluidParticleSet::drawParticles
   byte bStack_8f;
   byte bStack_8e;
   byte bStack_8d;
-  long lStack_88;
   
-  lVar6 = tpidr_el0;
-  lStack_88 = *(long *)(lVar6 + 0x28);
   lVar8 = 0;
   uVar9 = 0xffffffffffffffff;
   do {
@@ -213,10 +193,6 @@ void Walaber::FluidParticleSet::drawParticles
     uVar9 = uVar9 + 1;
     lVar8 = lVar8 + 0x90;
   } while (uVar9 < *(uint *)(param_3 + 6));
-  if (*(long *)(lVar6 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -240,7 +216,6 @@ void Walaber::FluidParticleSet::drawParticles
   int iVar3;
   int iVar4;
   long lVar5;
-  long lVar6;
   long lVar7;
   ulong uVar8;
   float fVar9;
@@ -251,10 +226,7 @@ void Walaber::FluidParticleSet::drawParticles
   byte bStack_8f;
   byte bStack_8e;
   byte bStack_8d;
-  long lStack_88;
   
-  lVar6 = tpidr_el0;
-  lStack_88 = *(long *)(lVar6 + 0x28);
   lVar7 = 0;
   uVar8 = 0xffffffffffffffff;
   do {
@@ -302,10 +274,6 @@ void Walaber::FluidParticleSet::drawParticles
     uVar8 = uVar8 + 1;
     lVar7 = lVar7 + 0x90;
   } while (uVar8 < *(uint *)(param_3 + 6));
-  if (*(long *)(lVar6 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -328,7 +296,6 @@ void Walaber::FluidParticleSet::drawParticles
   int iVar2;
   int iVar3;
   int iVar4;
-  long lVar5;
   long lVar6;
   uint uVar7;
   float fVar8;
@@ -339,10 +306,7 @@ void Walaber::FluidParticleSet::drawParticles
   byte bStack_9f;
   byte bStack_9e;
   byte bStack_9d;
-  long lStack_98;
   
-  lVar5 = tpidr_el0;
-  lStack_98 = *(long *)(lVar5 + 0x28);
   uVar7 = 0xffffffff;
   lVar6 = *param_3 + 0x40;
   do {
@@ -395,10 +359,6 @@ void Walaber::FluidParticleSet::drawParticles
     uVar7 = uVar7 + 1;
     lVar6 = lVar6 + 0x90;
   } while (uVar7 < *(uint *)(param_3 + 6));
-  if (*(long *)(lVar5 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -422,7 +382,6 @@ void Walaber::FluidParticleSet::drawParticles
   int iVar2;
   int iVar3;
   int iVar4;
-  long lVar5;
   long lVar6;
   uint uVar7;
   float fVar8;
@@ -433,10 +392,7 @@ void Walaber::FluidParticleSet::drawParticles
   byte bStack_af;
   byte bStack_ae;
   byte bStack_ad;
-  long lStack_a8;
   
-  lVar5 = tpidr_el0;
-  lStack_a8 = *(long *)(lVar5 + 0x28);
   uVar7 = 0xffffffff;
   lVar6 = *param_5 + 0x40;
   do {
@@ -489,10 +445,6 @@ void Walaber::FluidParticleSet::drawParticles
     }
     lVar6 = lVar6 + 0x90;
   } while (uVar7 < *(uint *)(param_5 + 6));
-  if (*(long *)(lVar5 + 0x28) == lStack_a8) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -517,7 +469,6 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   uint uVar3;
   uint uVar4;
   int iVar5;
-  long lVar6;
   bool bVar7;
   undefined8 *puVar8;
   uint uVar9;
@@ -526,11 +477,8 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   undefined8 uStack_b0;
   undefined8 uStack_a8;
   undefined8 uStack_a0;
-  long lStack_98;
   
-  lVar6 = tpidr_el0;
   param_11 = param_11 & ((int)param_11 >> 0x1f ^ 0xffffffffU);
-  lStack_98 = *(long *)(lVar6 + 0x28);
   if (6 < (int)param_11) {
     param_11 = 7;
   }
@@ -624,10 +572,6 @@ LAB_0038e980:
     uVar9 = uVar9 + 1;
     puVar8 = puVar8 + 0x12;
     if (bVar7) {
-      if (*(long *)(lVar6 + 0x28) == lStack_98) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   } while( true );
@@ -771,7 +715,6 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   uint uVar2;
   uint uVar3;
   uint uVar4;
-  long lVar5;
   bool bVar6;
   int iVar7;
   undefined8 *puVar8;
@@ -782,11 +725,8 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   undefined8 uStack_b0;
-  long lStack_a8;
   
-  lVar5 = tpidr_el0;
   param_13 = param_13 & ((int)param_13 >> 0x1f ^ 0xffffffffU);
-  lStack_a8 = *(long *)(lVar5 + 0x28);
   if (6 < (int)param_13) {
     param_13 = 7;
   }
@@ -880,10 +820,6 @@ LAB_0038eed8:
     uVar9 = uVar9 + 1;
     puVar8 = puVar8 + 0x12;
     if (bVar6) {
-      if (*(long *)(lVar5 + 0x28) == lStack_a8) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   } while( true );
@@ -907,7 +843,6 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
 {
   undefined4 *puVar1;
   int iVar2;
-  long lVar3;
   undefined8 *puVar4;
   bool bVar5;
   long *plVar6;
@@ -919,12 +854,9 @@ void Walaber::FluidParticleSet::drawIntoVertBuffer
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  long lStack_78;
   
   uStack_a0 = param_6;
   uStack_98 = param_7;
-  lVar3 = tpidr_el0;
-  lStack_78 = *(long *)(lVar3 + 0x28);
   param_10 = param_10 & ((int)param_10 >> 0x1f ^ 0xffffffffU);
   if (6 < (int)param_10) {
     param_10 = 7;
@@ -963,10 +895,6 @@ LAB_0038f1a0:
     uVar8 = uVar8 + 1;
     puVar7 = puVar7 + 0x12;
     if (bVar5) {
-      if (*(long *)(lVar3 + 0x28) == lStack_78) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   } while( true );
@@ -1534,15 +1462,11 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
                )
 
 {
-  long lVar1;
   long lVar2;
   uint uVar3;
   long lStack_78;
   int *piStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uVar3 = 0xffffffff;
   lVar2 = *param_1 + 0x40;
   do {
@@ -1560,10 +1484,6 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
     uVar3 = uVar3 + 1;
     lVar2 = lVar2 + 0x90;
   } while (uVar3 < *(uint *)(param_1 + 6));
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

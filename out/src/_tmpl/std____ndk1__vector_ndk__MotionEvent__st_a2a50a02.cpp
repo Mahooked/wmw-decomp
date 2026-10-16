@@ -82,7 +82,6 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
 
 {
   long lVar1;
-  long lVar2;
   ulong in_x1;
   ulong uVar3;
   undefined8 in_x2;
@@ -90,10 +89,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   ulong uVar5;
   undefined1 auStack_60 [16];
   long lStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((ulong)(*(long *)(p0 + 0x10) - *(long *)(p0 + 8) >> 7) < in_x1) {
     lVar1 = *(long *)(p0 + 8) - *(long *)p0 >> 7;
     uVar3 = in_x1 + lVar1;
@@ -128,10 +124,6 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
       in_x1 = in_x1 - 1;
       *(long *)(p0 + 8) = *(long *)(p0 + 8) + 0x80;
     } while (in_x1 != 0);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

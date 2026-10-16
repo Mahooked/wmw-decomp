@@ -12,13 +12,9 @@
 void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
 
 {
-  long lVar1;
   undefined **appuStack_50 [2];
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::__time_get::__time_get();
   memset(p0 + 8,0,0x420);
                     /* try { // try from 005c2fb0 to 005c2fbf has its CatchHandler @ 005c306c */
@@ -30,10 +26,6 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
                     /* try { // try from 005c2fec to 005c2fef has its CatchHandler @ 005c3020 */
   freelocale(uStack_40);
   std::__ndk1::__shared_count::~__shared_count(appuStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -16,7 +16,6 @@ void std::__ndk1::
      __push_back_slow_path<std::__ndk1::pair<float,int>>(long *param_1,undefined8 *param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   void *pvVar4;
@@ -26,10 +25,7 @@ void std::__ndk1::
   void *pvStack_58;
   undefined8 *puStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = param_1[1] - *param_1 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -70,10 +66,6 @@ void std::__ndk1::
   lStack_48 = lVar3;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

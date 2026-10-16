@@ -15,17 +15,13 @@ void Walaber::Widget_Manipulator::Widget_Manipulator
                long *param_5,byte param_6)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *param_3;
   uStack_48 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,7,&uStack_40,&uStack_48,1,1);
@@ -54,10 +50,6 @@ void Walaber::Widget_Manipulator::Widget_Manipulator
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -149,7 +141,6 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
 {
   undefined1 uVar1;
   undefined1 uVar2;
-  long lVar3;
   float fVar4;
   float fVar5;
   undefined1 auStack_78 [8];
@@ -159,10 +150,7 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
   undefined1 uStack_5f;
   undefined1 uStack_5e;
   undefined1 uStack_5d;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   fVar4 = (float)Walaber::Widget::_getAngle();
   lStack_70._0_4_ = p0[4].f_0x20;
   lStack_70._4_4_ = p0[4].f_0x24;
@@ -187,10 +175,6 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
   Walaber::SpriteBatch::drawQuad(fVar4 + fVar5 * 57.295776);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -205,16 +189,12 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
 undefined8 Walaber::Widget_Manipulator::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   long in_x2;
   undefined8 uStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *(undefined1 *)(uVar2 + 0x124) = 1;
   Walaber::Node::getWorldPosition(&uStack_40);
   *(ulong *)(uVar2 + 0x130) =
@@ -224,10 +204,6 @@ undefined8 Walaber::Widget_Manipulator::acceptNewFingerDown(int p0,Walaber__Fing
   Walaber::Node::getWorldPosition(&uStack_40,uVar2);
   *(undefined8 *)(uVar2 + 0x128) = uStack_40;
   *(byte *)(uVar2 + 0x138) = *(byte *)(uVar2 + 0x13a) ^ 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return 1;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 

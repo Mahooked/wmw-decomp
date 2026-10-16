@@ -12,7 +12,6 @@
 void WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_420;
@@ -20,10 +19,7 @@ void WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber
   undefined8 uStack_410;
   undefined8 uStack_408;
   undefined1 auStack_400 [936];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_408 = *(undefined8 *)p2;
   uStack_410 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(p0,&uStack_408,&uStack_410,1,0);
@@ -41,10 +37,6 @@ void WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),auStack_400,&uStack_418,&uStack_420,1,0);
   WaterConcept::InteractiveObject::~InteractiveObject(auStack_400);
   *(undefined4 *)((long)p0 + 0xd8) = 0xe;
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -61,14 +53,10 @@ void WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber
 void WaterConcept::MysteryCave::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   undefined4 uVar2;
   int iVar3;
   long lVar4;
-  long lVar5;
   
-  lVar1 = tpidr_el0;
-  lVar5 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0048ac94 to 0048ac9f has its CatchHandler @ 0048ad50 */
   lVar4 = Walaber::PropertyList::getValueForKey();
@@ -81,10 +69,6 @@ void WaterConcept::MysteryCave::setProperties(Walaber__PropertyList *p0)
   if (lVar4 != 0) {
     iVar3 = Walaber::Property::asInt(lVar4);
     *(bool *)&p0[0x28].f_0x8 = iVar3 == 1;
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar5) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -101,7 +85,6 @@ void WaterConcept::MysteryCave::setProperties(Walaber__PropertyList *p0)
 void WaterConcept::MysteryCave::_initFinished(long *param_1)
 
 {
-  long lVar1;
   undefined1 auVar2 [8];
   long *plVar3;
   long lVar4;
@@ -119,11 +102,8 @@ void WaterConcept::MysteryCave::_initFinished(long *param_1)
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   ulong uVar10;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if ((char)param_1[0x79] == '\0') {
     Walaber::Node::getWorldPosition(auStack_60);
     fVar13 = (float)*(undefined8 *)(*(long *)param_1[0x17] + 0x20);
@@ -172,10 +152,6 @@ void WaterConcept::MysteryCave::_initFinished(long *param_1)
                     (float)uVar8 - (float)_sRockTexCoords);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -192,7 +168,6 @@ void WaterConcept::MysteryCave::particleHasCollided
                (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
-  long lVar1;
   undefined1 auVar2 [16];
   undefined1 auVar3 [16];
   undefined1 auVar4 [16];
@@ -201,7 +176,6 @@ void WaterConcept::MysteryCave::particleHasCollided
   undefined8 uStack_44;
   undefined8 uStack_38;
   undefined4 uStack_30;
-  long lStack_28;
   
   auVar3._8_8_ = p1;
   auVar3._0_8_ = p0;
@@ -209,8 +183,6 @@ void WaterConcept::MysteryCave::particleHasCollided
   auVar2._0_8_ = p0;
   auVar4._8_8_ = p1;
   auVar4._0_8_ = p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (((*(char *)&p0[0xf2].particlesForFluid == '\0') &&
       (auVar4 = auVar2, *(char *)&p0[0xee].particlesForFluid == '\0')) &&
      (auVar4 = auVar3, *(long *)(p0 + 0xea) != 0)) {
@@ -221,10 +193,6 @@ void WaterConcept::MysteryCave::particleHasCollided
     uStack_30 = 0;
     auVar4 = (**(code **)(**(long **)(p0 + 0xea) + 0x10))(*(long **)(p0 + 0xea),&uStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(auVar4._0_8_,auVar4._8_8_);
   return;
 }
 
@@ -239,7 +207,6 @@ void WaterConcept::MysteryCave::particleHasCollided
 void WaterConcept::MysteryCave::update(float p0)
 
 {
-  long lVar1;
   long in_x0;
   long lVar2;
   undefined8 uVar3;
@@ -267,10 +234,7 @@ void WaterConcept::MysteryCave::update(float p0)
   undefined4 uStack_fc;
   long lStack_f8;
   undefined4 uStack_f0;
-  long lStack_a0;
   
-  lVar1 = tpidr_el0;
-  lStack_a0 = *(long *)(lVar1 + 0x28);
   if (*(char *)(in_x0 + 0x3c8) == '\0') {
     if (sRockTexInit == '\0') {
       iVar8 = (int)Walaber::ScreenCoord::sScreenSize;
@@ -377,10 +341,6 @@ void WaterConcept::MysteryCave::update(float p0)
   }
   (**(code **)(**(long **)(in_x0 + 0x3a8) + 0x10))(*(long **)(in_x0 + 0x3a8),&uStack_108);
 LAB_0048b2f0:
-  if (*(long *)(lVar1 + 0x28) == lStack_a0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -396,7 +356,6 @@ LAB_0048b2f0:
 void WaterConcept::MysteryCave::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
-  long lVar1;
   bool bVar2;
   float fVar3;
   undefined4 in_register_00005004;
@@ -425,11 +384,8 @@ void WaterConcept::MysteryCave::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
   undefined1 uStack_3e;
   undefined1 uStack_3d;
   undefined4 uStack_3c;
-  long lStack_38;
   
   uVar5 = CONCAT44(in_register_00005004,p2);
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_3c = -1;
   if ((*(long *)&p0[3].field_0x10 == 0) || (*(char *)(*(long *)&p0[3].field_0x10 + 0xa68) == '\0'))
   {
@@ -511,10 +467,6 @@ LAB_0048b46c:
   uStack_3d = 0xff;
   uVar5 = WaterConcept::InteractiveObject::debugDrawShapes(0x3e800000,p0,p1,&uStack_40);
 LAB_0048b5fc:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -529,14 +481,10 @@ LAB_0048b5fc:
 void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
-  long lVar1;
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined4 auStack_30 [2];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (p0[0x11].field_0x10 == '\0') {
     auStack_30[0] = 0xff882b2f;
     uStack_38 = 0x404ccccd404ccccd;
@@ -549,10 +497,6 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
     Walaber::SpriteBatch::flush(p1);
     p2 = (float)Walaber::SpriteBatch::start(p1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(p2);
   return;
 }
 
@@ -568,13 +512,9 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
 void WaterConcept::MysteryCave::~MysteryCave()
 
 {
-  long lVar1;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *this = &PTR__MysteryCave_00711e18;
   uStack_38 = 0;
   uStack_30 = 0;
@@ -587,10 +527,6 @@ void WaterConcept::MysteryCave::~MysteryCave()
   sRockTexUVs = 0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
   WaterConcept::InteractiveObject::~InteractiveObject(this);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -14,7 +14,6 @@ void std::__ndk1::vector<Walaber::PCSNode*,std::__ndk1::allocator<Walaber::PCSNo
      __push_back_slow_path<Walaber::PCSNode*const&>(Walaber__PCSNode **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::vector<Walaber::PCSNode*,std::__ndk1::allocator<Walaber::PCSNo
   Walaber__PCSNode *pWStack_58;
   Walaber__PCSNode *pWStack_50;
   Walaber__PCSNode *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -71,10 +67,6 @@ void std::__ndk1::vector<Walaber::PCSNode*,std::__ndk1::allocator<Walaber::PCSNo
   pWStack_48 = pWVar7;
   if (pWStack_60 != (Walaber__PCSNode *)0x0) {
     operator delete(pWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

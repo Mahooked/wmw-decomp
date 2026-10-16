@@ -176,7 +176,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                (uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -192,10 +191,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = *param_1 | 1;
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -238,10 +234,6 @@ void Walaber::NodeAnimationTrack::loadCurve
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -293,7 +285,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                (uint *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -309,10 +300,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = *param_1 | 2;
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -355,10 +343,6 @@ void Walaber::NodeAnimationTrack::loadCurve
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -375,7 +359,6 @@ void Walaber::NodeAnimationTrack::loadCurve
 void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -389,10 +372,7 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = *param_1 | 4;
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -425,10 +405,6 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -446,16 +422,12 @@ void Walaber::NodeAnimationTrack::apply
 
 {
   uint uVar1;
-  long lVar2;
   long *plVar3;
   code *pcVar4;
   float fVar5;
   float fStack_70;
   float fStack_6c;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (param_5 == 1) {
     uVar1 = *param_4;
     if ((uVar1 & 1) != 0) {
@@ -519,10 +491,6 @@ void Walaber::NodeAnimationTrack::apply
   }
   (*pcVar4)(plVar3,&fStack_70);
 LAB_00339c00:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

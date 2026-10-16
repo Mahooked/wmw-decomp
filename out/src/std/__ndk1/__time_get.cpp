@@ -12,7 +12,6 @@
 void std::__ndk1::__time_get::__time_get(char *p0)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -26,17 +25,10 @@ void std::__ndk1::__time_get::__time_get(char *p0)
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar2 = newlocale(0x1fbf,in_x1,0);
   *(long *)p0 = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_38) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_68 = 0;

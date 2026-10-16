@@ -30,14 +30,10 @@ long std::__ndk1::
 {
   bool bVar1;
   long *plVar2;
-  long lVar3;
   undefined8 uVar4;
   long lVar5;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   plVar2 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__find_equal<WaterConcept::GridCell>(param_1,&uStack_50,param_2);
   lVar5 = *plVar2;
   bVar1 = lVar5 == 0;
@@ -52,10 +48,6 @@ long std::__ndk1::
     *(undefined8 *)(lVar5 + 0x1c) = uVar4;
     *(undefined1 *)(lVar5 + 0x3f) = 0xff;
     plVar2 = (long *)std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::__map_value_compare<WaterConcept::GridCell, std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>, std::__ndk1::less<WaterConcept::GridCell>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::GridCell, WaterConcept::World::CoalDot>>>::__insert_node_at(param_1,uStack_50,plVar2,lVar5);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    lVar3 = __stack_chk_fail(plVar2,bVar1);
-    return lVar3;
   }
   return lVar5;
 }

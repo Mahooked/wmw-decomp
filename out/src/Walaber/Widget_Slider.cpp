@@ -82,16 +82,12 @@ Walaber__Widget_Slider * Walaber::Widget_Slider::operator=(Walaber__Widget_Slide
 void Walaber::Widget_Slider::Widget_Slider(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,9,&uStack_40,&uStack_48,1,1);
@@ -101,10 +97,6 @@ void Walaber::Widget_Slider::Widget_Slider(int p0,Walaber__Vector2 p1,Walaber__V
   *(undefined8 *)((long)puVar2 + 0x194) = 0xff000000ffffffff;
   puVar2[0x34] = 0;
   Walaber::Widget_Slider::init(puVar2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -150,7 +142,6 @@ void Walaber::Widget_Slider::Widget_Slider
                float *param_10)
 
 {
-  long lVar1;
   int *piVar2;
   undefined8 uVar3;
   long lVar4;
@@ -158,10 +149,7 @@ void Walaber::Widget_Slider::Widget_Slider
   float fVar6;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   uStack_70 = *param_6;
   uStack_78 = *(undefined8 *)param_7;
   Walaber::Widget::Widget(param_4,param_5,9,&uStack_70,&uStack_78,1,1);
@@ -200,10 +188,6 @@ void Walaber::Widget_Slider::Widget_Slider
   fVar6 = *param_7;
   *(float *)((long)param_4 + 0x154) = param_7[1];
   *(float *)(param_4 + 0x2a) = fVar6 - fVar5;
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -254,24 +238,16 @@ void Walaber::Widget_Slider::~Widget_Slider(void *param_1)
 void Walaber::Widget_Slider::setHandleSize(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   float *in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *(undefined8 *)((long)p0 + 0x148) = *(undefined8 *)in_x1;
   Walaber::Node::getWorldScale(&fStack_40);
   fVar2 = *in_x1;
   *(float *)((long)p0 + 0x154) = *(float *)((long)p0 + 0x94) * fStack_3c;
   *(float *)((long)p0 + 0x150) = *(float *)((long)p0 + 0x90) * fStack_40 - fVar2;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -303,23 +279,15 @@ void Walaber::Widget_Slider::setStepSize(Walaber__Vector2 p0)
 void Walaber::Widget_Slider::setBaseSize(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   float *in_x1;
   float fVar2;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)in_x1;
   Walaber::Widget::setBaseSize(p0,&uStack_40);
   fVar2 = *in_x1;
   *(float *)((long)p0 + 0x154) = in_x1[1];
   *(float *)((long)p0 + 0x150) = fVar2 - *(float *)((long)p0 + 0x148);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -394,7 +362,6 @@ void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
   int iVar5;
   int iVar6;
   undefined1 uVar7;
-  long lVar8;
   undefined1 uVar9;
   undefined1 uVar10;
   undefined1 uVar11;
@@ -431,10 +398,7 @@ void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
   long lStack_b0;
   int *piStack_a8;
   undefined4 uStack_a0;
-  long lStack_98;
   
-  lVar8 = tpidr_el0;
-  lStack_98 = *(long *)(lVar8 + 0x28);
   uVar17 = Walaber::Widget::_getAngle();
   if (*(char *)((long)&p0[2].f_0x1c + 1) == '\0') {
     uVar9 = 0x60;
@@ -603,10 +567,6 @@ void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
   Walaber::SpriteBatch::drawQuad((float)uVar17 + *(float *)&p0[7].f_0x0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_128);
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar8 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -657,7 +617,6 @@ void Walaber::Widget_Slider::setValue(float p0)
 void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
@@ -668,11 +627,8 @@ void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
   float fVar7;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((*(char *)(uVar2 + 0x8d) == '\0') || (*(long *)(uVar2 + 0x100) != 0)) {
     uVar3 = 0;
     goto LAB_00389654;
@@ -710,10 +666,6 @@ LAB_00389638:
   uVar3 = 1;
   p1 = extraout_x1;
 LAB_00389654:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar3,p1);
   return;
 }
 
@@ -728,7 +680,6 @@ LAB_00389654:
 void Walaber::Widget_Slider::_setValue(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   undefined8 uVar4;
@@ -737,10 +688,7 @@ void Walaber::Widget_Slider::_setValue(long param_1)
   undefined4 uVar7;
   float fVar8;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)(param_1 + 0x100) != 0) {
     fVar8 = *(float *)(param_1 + 0x17c);
     if (*(uint *)(param_1 + 0x88) < 3) {
@@ -783,10 +731,6 @@ void Walaber::Widget_Slider::_setValue(long param_1)
     }
     *(undefined1 *)(param_1 + 0x184) = 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

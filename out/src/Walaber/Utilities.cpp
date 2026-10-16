@@ -18,7 +18,6 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
   uint uVar4;
   uint uVar5;
   uint uVar6;
-  long lVar7;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -30,10 +29,7 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
   ulong p0;
   undefined1 auStack_88 [8];
   undefined1 auStack_80 [40];
-  long lStack_58;
   
-  lVar7 = tpidr_el0;
-  lStack_58 = *(long *)(lVar7 + 0x28);
   time(auStack_88);
   puVar13 = (uint *)gmtime(auStack_88);
   uVar1 = puVar13[3];
@@ -74,10 +70,6 @@ void Walaber::Utilities::generateGUID(ulong *param_1)
   memcpy(uVar15,auStack_80,uVar14);
 LAB_004008a8:
   *(undefined1 *)(uVar15 + uVar14) = 0;
-  if (*(long *)(lVar7 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

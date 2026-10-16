@@ -99,7 +99,6 @@ void WaterConcept::Screen_GraphicsContextRestore::enter(long param_1)
 void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long *plVar3;
   long *plVar4;
@@ -167,10 +166,7 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
   char *pcStack_a0;
   long *plStack_90;
   int *piStack_88;
-  long lStack_80;
   
-  lVar1 = tpidr_el0;
-  lStack_80 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::TextureManager::getManager();
   pcStack_a0 = (char *)operator new(0x30);
   builtin_strncpy(pcStack_a0,"/Textures/ui_progress_bar_bg.webp",0x22);
@@ -464,10 +460,6 @@ void WaterConcept::Screen_GraphicsContextRestore::_buildUI(long param_1)
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&plStack_f0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&plStack_d0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&plStack_90);
-  if (*(long *)(lVar1 + 0x28) != lStack_80) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -515,7 +507,6 @@ void WaterConcept::Screen_GraphicsContextRestore::recreateGraphicsContext(long *
 void WaterConcept::Screen_GraphicsContextRestore::update(float p0,bool p1)
 
 {
-  long lVar1;
   ulong uVar2;
   ulong uVar3;
   long lVar4;
@@ -525,11 +516,8 @@ void WaterConcept::Screen_GraphicsContextRestore::update(float p0,bool p1)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
   uVar2 = (ulong)p1;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::ScreenManager::beginScreenChanges(1);
   Walaber::WidgetManager::update(CONCAT44(in_register_00005004,p0),*(undefined8 *)(uVar2 + 0x10));
   Walaber::TextureManager::getManager();
@@ -578,10 +566,6 @@ void WaterConcept::Screen_GraphicsContextRestore::update(float p0,bool p1)
       Walaber::Widget_ProgressBar::updateValue(fVar6);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -597,15 +581,11 @@ void WaterConcept::Screen_GraphicsContextRestore::draw(int p0)
 
 {
   long lVar1;
-  long lVar2;
   int in_w1;
   undefined4 auStack_50 [2];
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
   if (in_w1 == 1) {
@@ -622,10 +602,6 @@ void WaterConcept::Screen_GraphicsContextRestore::draw(int p0)
     Walaber::WidgetManager::drawAll(*(undefined8 *)((ulong)(uint)p0 + 0x10),lVar1);
   }
   Walaber::SpriteBatch::flush(lVar1);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -656,19 +632,11 @@ int WaterConcept::Screen_GraphicsContextRestore::handleEvent
 void WaterConcept::Screen_GraphicsContextRestore::touchDown(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchDown(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -685,21 +653,13 @@ void WaterConcept::Screen_GraphicsContextRestore::touchMoved
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::WidgetManager::touchMoved(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -714,19 +674,11 @@ void WaterConcept::Screen_GraphicsContextRestore::touchMoved
 void WaterConcept::Screen_GraphicsContextRestore::touchUp(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchUp(*(undefined8 *)((ulong)(uint)p0 + 0x10),p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

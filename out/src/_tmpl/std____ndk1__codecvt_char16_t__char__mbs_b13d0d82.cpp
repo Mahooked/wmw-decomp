@@ -31,22 +31,14 @@ void std::__ndk1::codecvt<char16_t,char,mbstate_t>::do_out
                undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
 
 {
-  long lVar1;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = param_6;
   uStack_40 = param_3;
   func_0x005d8d68(param_3,param_4,&uStack_40,param_6,param_7,&uStack_48,0x10ffff,0);
   *param_5 = uStack_40;
   *param_8 = uStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -64,22 +56,14 @@ void std::__ndk1::codecvt<char16_t,char,mbstate_t>::do_in
                undefined8 *param_5,undefined8 param_6,undefined8 param_7,undefined8 *param_8)
 
 {
-  long lVar1;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = param_6;
   uStack_40 = param_3;
   func_0x005d907c(param_3,param_4,&uStack_40,param_6,param_7,&uStack_48,0x10ffff,0);
   *param_5 = uStack_40;
   *param_8 = uStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

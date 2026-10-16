@@ -12,15 +12,11 @@
 void WaterConcept::WaterBalloon::WaterBalloon(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
   WaterConcept::Floater::Floater(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38);
@@ -47,10 +43,6 @@ void WaterConcept::WaterBalloon::WaterBalloon(Walaber__Vector2 p0,float p1,Walab
   *(undefined8 *)((long)p0 + 0x4f0) = 0;
   *(undefined8 *)((long)p0 + 0x4e8) = 0;
   *(undefined4 *)((long)p0 + 0xd8) = 10;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -111,13 +103,9 @@ void WaterConcept::WaterBalloon::~WaterBalloon(void *param_1)
 void WaterConcept::WaterBalloon::_initFinished(long *param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   WaterConcept::Floater::_initFinished();
   WaterConcept::WaterBalloon::_updateScale(param_1);
   WaterConcept::WaterBalloon::_updateMass(param_1);
@@ -128,10 +116,6 @@ void WaterConcept::WaterBalloon::_initFinished(long *param_1)
   lVar2 = *(long *)(param_1[0x32] + (ulong)*(uint *)((long)param_1 + 0x4a4) * 0x28);
   param_1[0x95] = *(long *)(lVar2 + 0x5c);
   *(undefined4 *)((long)param_1 + 0x4b4) = *(undefined4 *)(lVar2 + 0x74);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -148,15 +132,11 @@ void WaterConcept::WaterBalloon::_updateScale(long *param_1)
 
 {
   float *pfVar1;
-  long lVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   fVar3 = (float)NEON_ucvtf((int)param_1[0x8e]);
   fVar5 = (float)NEON_ucvtf(*(undefined4 *)((long)param_1 + 0x474));
   fVar3 = ((float)(ulong)(param_1[0x8c] - param_1[0x8b] >> 3) - fVar3) / (fVar5 - fVar3);
@@ -182,10 +162,6 @@ void WaterConcept::WaterBalloon::_updateScale(long *param_1)
   *(float *)((long)param_1 + 0x4c4) =
        *(float *)((long)param_1 + 0x4bc) +
        fVar3 * (*(float *)(param_1 + 0x98) - *(float *)((long)param_1 + 0x4bc));
-  if (*(long *)(lVar2 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -243,7 +219,6 @@ void WaterConcept::WaterBalloon::setProperties(Walaber__PropertyList *p0)
 {
   long lVar1;
   long lVar2;
-  long lVar3;
   ulong uVar4;
   long lVar5;
   char *pcVar6;
@@ -254,10 +229,7 @@ void WaterConcept::WaterBalloon::setProperties(Walaber__PropertyList *p0)
   undefined5 uStack_6e;
   undefined1 uStack_69;
   undefined4 uStack_5c;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   WaterConcept::Floater::setProperties();
   *(int *)((long)&p0[0x33].f_0x0 + 4) = (int)p0[0xe].f_0x0;
   abStack_80[9] = 0x44;
@@ -1127,10 +1099,6 @@ void WaterConcept::WaterBalloon::setProperties(Walaber__PropertyList *p0)
                   );
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1148,7 +1116,6 @@ void WaterConcept::WaterBalloon::addFluidParticles
 
 {
   uint uVar1;
-  long lVar2;
   bool bVar3;
   long *plVar4;
   uint in_w2;
@@ -1171,10 +1138,7 @@ void WaterConcept::WaterBalloon::addFluidParticles
   undefined8 *puStack_70;
   undefined8 *puStack_68;
   uint uStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   puVar5 = *(ulong **)(p0.f_0x0 + 0x460);
   puVar6 = *(ulong **)(p0.f_0x0 + 0x458);
   uVar11 = (long)puVar5 - (long)puVar6;
@@ -1316,10 +1280,6 @@ LAB_00496df0:
     *(float *)(p0.f_0x0 + 0x150) = *(float *)(p0.f_0x0 + 0x4cc) + fVar15;
   }
 LAB_00496fe8:
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1334,7 +1294,6 @@ LAB_00496fe8:
 void WaterConcept::WaterBalloon::update(float p0)
 
 {
-  long lVar1;
   long *in_x0;
   long *plVar2;
   undefined8 *puVar3;
@@ -1355,10 +1314,7 @@ void WaterConcept::WaterBalloon::update(float p0)
   void *pvStack_88;
   void *pvStack_80;
   undefined8 uStack_78;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   WaterConcept::Floater::update();
   if (in_x0[0x93] == 0) {
     pfVar4 = (float *)(*(long *)in_x0[0x75] + (ulong)*(uint *)(in_x0 + 0x94) * 0x74);
@@ -1462,10 +1418,6 @@ void WaterConcept::WaterBalloon::update(float p0)
   if (*(char *)((long)in_x0 + 0x4dc) != '\0') {
     *(float *)(in_x0 + 0x9c) = *(float *)(in_x0 + 0x9c) + p0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1651,8 +1603,6 @@ int WaterConcept::WaterBalloon::numParticlesOfFluidType(int p0)
 void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
-  long lVar2;
   long lVar3;
   float fVar4;
   float fVar5;
@@ -1694,8 +1644,6 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
   undefined8 uStack_78;
   undefined8 uStack_70;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   uStack_f0 = 0;
   lVar3 = *(long *)(*(long *)&p0[7].field_0x8 + (ulong)*(uint *)&p0[0x15].field_0xc * 0x28);
   uStack_d0 = 0;
@@ -1818,10 +1766,6 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_110);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
   Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_130);
-  if (*(long *)(lVar1 + 0x28) != lVar2) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1866,17 +1810,13 @@ void WaterConcept::WaterBalloon::handleTouchMoved(Walaber__Vector2 *p0,Walaber__
 void WaterConcept::WaterBalloon::handleTouchUp(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   Walaber__Vector2 WVar2;
   Walaber__Vector2 *pWStack_58;
   undefined4 uStack_50;
   Walaber__Vector2 WStack_48;
   Walaber__Vector2 WStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (p0[0x9c].f_0x0 < 0.5) {
     if (p0[0x93] == (Walaber__Vector2)0x0) {
       WVar2 = p0[0x9d];
@@ -1907,10 +1847,6 @@ void WaterConcept::WaterBalloon::handleTouchUp(Walaber__Vector2 *p0)
   }
   *(undefined1 *)&p0[0x9b].f_0x4 = 0;
   p0[0x9c].f_0x0 = -1.0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1925,7 +1861,6 @@ void WaterConcept::WaterBalloon::handleTouchUp(Walaber__Vector2 *p0)
 void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   long *plVar3;
   ulong auStack_80 [2];
@@ -1936,10 +1871,7 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
   void *pvStack_48;
   void *pvStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *(undefined8 *)(*(long *)(param_1 + 0x498) + 0x4c8) = 0;
   pvStack_40 = (void *)0x0;
   uStack_38 = 0;
@@ -1967,10 +1899,6 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
     pvStack_40 = pvStack_48;
     operator delete(pvStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1987,7 +1915,6 @@ void WaterConcept::WaterBalloon::particleHasCollided
                (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
-  long lVar1;
   long *plVar2;
   undefined8 uVar3;
   WaterConcept__ParticleDescription *extraout_x1;
@@ -1998,12 +1925,9 @@ void WaterConcept::WaterBalloon::particleHasCollided
   void *pvStack_58;
   void *pvStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
   auVar4._8_8_ = p1;
   auVar4._0_8_ = p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *in_x4 = 0;
   if (*(char *)&p0[0x37].particlesForFluid == '\0') {
     if (*(int *)(ulong)(uint)p2 == 4) {
@@ -2040,10 +1964,6 @@ void WaterConcept::WaterBalloon::particleHasCollided
       auVar4 = WaterConcept::Floater::_handleCollision(p0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(auVar4._0_8_,auVar4._8_8_);
   return;
 }
 
@@ -2093,7 +2013,6 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
   uint *puVar2;
   uint uVar3;
   byte bVar4;
-  long lVar5;
   int iVar6;
   long *plVar7;
   long in_x1;
@@ -2115,10 +2034,7 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
   undefined1 auStack_a8 [8];
   float fStack_a0;
   float fStack_9c;
-  long lStack_98;
   
-  lVar5 = tpidr_el0;
-  lStack_98 = *(long *)(lVar5 + 0x28);
   fVar18 = p0[0x59].particlesForFluid;
   fVar21 = p0[0x57].particlesForFluid;
   fVar20 = p0[0x5a].particlesForFluid;
@@ -2183,10 +2099,6 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
   if (*(long *)(p0 + 0x126) != 0) {
     WaterConcept::WaterBalloon::_detachFromSpout(p0);
   }
-  if (*(long *)(lVar5 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2201,17 +2113,13 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
 void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_58;
   undefined4 uStack_50;
   void *pvStack_48;
   void *pvStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   plVar2 = *(long **)(param_1 + 0x4e8);
   if (plVar2 != (long *)0x0) {
     pvStack_48 = (void *)0x0;
@@ -2232,10 +2140,6 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
     }
   }
   *(undefined1 *)(param_1 + 0xdc) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2250,15 +2154,11 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
 void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0)
 
 {
-  long lVar1;
   long in_x1;
   ulong auStack_50 [2];
   void *pvStack_40;
   undefined1 auStack_38 [16];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (in_x1 == 0) {
     WaterConcept::WaterBalloon::_detachFromSpout(p0);
   }
@@ -2279,10 +2179,6 @@ void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0)
     *(undefined1 *)(*(long *)(p0->f_0x190 + (ulong)*(uint *)((long)&p0->f_0x4a0 + 4) * 0x28) + 200)
          = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

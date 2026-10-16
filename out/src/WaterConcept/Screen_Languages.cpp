@@ -12,7 +12,6 @@
 void WaterConcept::Screen_Languages::Screen_Languages()
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_90;
   undefined8 uStack_88;
@@ -21,10 +20,7 @@ void WaterConcept::Screen_Languages::Screen_Languages()
   ulong auStack_70 [2];
   char *pcStack_60;
   undefined1 auStack_58 [16];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   WaterConcept::WCScreen::WCScreen(this,0x24);
                     /* try { // try from 004ecd3c to 004ecd47 has its CatchHandler @ 004ecea0 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -62,10 +58,6 @@ void WaterConcept::Screen_Languages::Screen_Languages()
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pcStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -117,7 +109,6 @@ void WaterConcept::Screen_Languages::~Screen_Languages(void *param_1)
 void WaterConcept::Screen_Languages::enter()
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   ulong uVar4;
@@ -129,10 +120,7 @@ void WaterConcept::Screen_Languages::enter()
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0xa00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -287,10 +275,6 @@ void WaterConcept::Screen_Languages::enter()
   if ((*(int *)(lVar3 + 0xf0) != 1) || (uVar4 = Walaber::SoundManager::isMusicPlaying(lVar3), (uVar4 & 1) == 0)) {
     Walaber::SoundManager::playMusicFromGroup(lVar3,1,0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -305,7 +289,6 @@ void WaterConcept::Screen_Languages::enter()
 void WaterConcept::Screen_Languages::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -323,10 +306,7 @@ void WaterConcept::Screen_Languages::_buildUI(long param_1)
   undefined1 uStack_49;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   bStack_60 = 0x2c;
   uStack_4f = 0x6c6d782e7365;
   builtin_strncpy(acStack_5f,"/Data/SN_Languag",0x10);
@@ -363,10 +343,6 @@ void WaterConcept::Screen_Languages::_buildUI(long param_1)
   if ((bStack_60 & 1) != 0) {
     operator delete((void *)CONCAT17(uStack_49,CONCAT61(uStack_4f,acStack_5f[0xf])));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -482,7 +458,6 @@ void WaterConcept::Screen_Languages::draw(int p0)
 
 {
   long lVar1;
-  long lVar2;
   ulong uVar3;
   int in_w1;
   undefined4 uStack_5c;
@@ -490,11 +465,8 @@ void WaterConcept::Screen_Languages::draw(int p0)
   undefined8 uStack_50;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (in_w1 != 0) {
     lVar1 = uVar3 + 0x28;
     Walaber::SpriteBatch::start(lVar1,3);
@@ -525,10 +497,6 @@ void WaterConcept::Screen_Languages::draw(int p0)
     Walaber::WidgetManager::drawLayerRange(*(undefined8 *)(uVar3 + 0x10),lVar1,1,0xffffffff);
     Walaber::SpriteBatch::flush(lVar1);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -582,13 +550,11 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   long lVar4;
   undefined8 uVar5;
   char *pcVar6;
   int in_w1;
-  long lVar7;
   undefined8 uStack_110;
   undefined8 uStack_108;
   long lStack_100;
@@ -615,8 +581,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
   int *piStack_60;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lVar7 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)("&purchased_AP=" + (long)in_w1 * 4 + 6);
   if (iVar1 != *(int *)(uVar3 + 0xc4)) {
     lVar4 = Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar3 + 0x10));
@@ -814,10 +778,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
                                     CONCAT15(uStack_7b,CONCAT41(uStack_7f,abStack_90[0x10]))));
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lVar7) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -848,7 +808,6 @@ void WaterConcept::Screen_Languages::_setUpLanguages(long param_1)
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   long lVar4;
   long *plVar5;
@@ -875,10 +834,7 @@ void WaterConcept::Screen_Languages::_setUpLanguages(long param_1)
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   char *pcStack_b0;
-  long lStack_a0;
   
-  lVar2 = tpidr_el0;
-  lStack_a0 = *(long *)(lVar2 + 0x28);
   lVar3 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),100);
   lVar4 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),200);
   fVar9 = *(float *)(lVar3 + 0x54);
@@ -1005,10 +961,6 @@ LAB_004edd6c:
     if (10 < lVar8) {
       *(undefined1 *)(lVar3 + 0x8c) = 0;
       *(undefined1 *)(lVar4 + 0x8c) = 0;
-      if (*(long *)(lVar2 + 0x28) == lStack_a0) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   } while( true );
@@ -1025,17 +977,13 @@ LAB_004edd6c:
 void WaterConcept::Screen_Languages::backKeyPressed(long param_1)
 
 {
-  long lVar1;
   undefined1 auStack_78 [32];
   byte abStack_58 [17];
   undefined2 uStack_47;
   undefined1 uStack_45;
   undefined4 uStack_44;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0xc) == '\0') {
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popAllScreens();
@@ -1080,10 +1028,6 @@ void WaterConcept::Screen_Languages::backKeyPressed(long param_1)
     Walaber::PropertyList::~PropertyList(auStack_78);
     Walaber::PropertyList::~PropertyList(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

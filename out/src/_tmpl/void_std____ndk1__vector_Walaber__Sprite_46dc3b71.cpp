@@ -19,7 +19,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
@@ -28,10 +27,7 @@ void std::__ndk1::
   long lVar7;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0x666666666666666 < uVar1) {
@@ -63,10 +59,6 @@ void std::__ndk1::
                     /* try { // try from 0035cfac to 0035cfb7 has its CatchHandler @ 0035cff0 */
   std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -88,7 +80,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
@@ -97,10 +88,7 @@ void std::__ndk1::
   long lVar7;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0x666666666666666 < uVar1) {
@@ -132,10 +120,6 @@ void std::__ndk1::
                     /* try { // try from 0035d664 to 0035d66f has its CatchHandler @ 0035d6a8 */
   std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

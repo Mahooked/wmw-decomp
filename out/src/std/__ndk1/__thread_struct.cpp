@@ -61,14 +61,10 @@ void std::__ndk1::__thread_struct::notify_all_at_thread_exit
 
 {
   undefined8 *puVar1;
-  long lVar2;
   undefined8 in_x2;
   long lVar3;
   std____ndk1__mutex *apsStack_38 [2];
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   lVar3 = *(long *)p0;
   puVar1 = *(undefined8 **)(lVar3 + 0x20);
   apsStack_38[0] = p1;
@@ -80,10 +76,6 @@ void std::__ndk1::__thread_struct::notify_all_at_thread_exit
   else {
     __make_ready_at_thread_exit(lVar3 + 0x18,apsStack_38);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -98,14 +90,10 @@ void std::__ndk1::__thread_struct::notify_all_at_thread_exit
 void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std____ndk1____assoc_sub_state *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 in_x1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uVar2 = p0->f_0x0;
   uStack_30 = in_x1;
   if (*(undefined8 **)(uVar2 + 8) == *(undefined8 **)(uVar2 + 0x10)) {
@@ -116,10 +104,6 @@ void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std____ndk1____as
     *(long *)(uVar2 + 8) = *(long *)(uVar2 + 8) + 8;
   }
   std::__ndk1::__shared_count::__add_shared(uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

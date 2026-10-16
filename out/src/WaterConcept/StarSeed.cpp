@@ -15,7 +15,6 @@ void WaterConcept::StarSeed::addTeleport
                undefined4 param_5,byte param_6,byte param_7)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -25,10 +24,7 @@ void WaterConcept::StarSeed::addTeleport
   undefined4 uStack_30;
   byte bStack_2c;
   byte bStack_2b;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   bStack_2c = param_6 & 1;
   bStack_2b = param_7 & 1;
   uStack_40 = *param_4;
@@ -49,10 +45,6 @@ void WaterConcept::StarSeed::addTeleport
   else {
     void std::__ndk1::vector<WaterConcept::StarSeed::TeleportWaypoint, std::__ndk1::allocator<WaterConcept::StarSeed::TeleportWaypoint>>::__push_back_slow_path<WaterConcept::StarSeed::TeleportWaypoint>(param_3 + 0x5b0,&uStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -67,7 +59,6 @@ void WaterConcept::StarSeed::addTeleport
 void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 *puVar3;
   undefined8 uVar4;
@@ -101,10 +92,7 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   int *piStack_98;
   undefined8 uStack_90;
   undefined8 uStack_88;
-  long lStack_80;
   
-  lVar1 = tpidr_el0;
-  lStack_80 = *(long *)(lVar1 + 0x28);
   uStack_88 = *(undefined8 *)p2;
   uStack_90 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_88,&uStack_90,1,0);
@@ -362,10 +350,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::StarSeed>>::~SharedPtr(&puStack_c0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::StarSeed>>::~SharedPtr(&puStack_a0);
-  if (*(long *)(lVar1 + 0x28) == lStack_80) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -475,7 +459,6 @@ void WaterConcept::StarSeed::~StarSeed(void *param_1)
 void WaterConcept::StarSeed::_initFinished(long param_1)
 
 {
-  long lVar1;
   byte bVar2;
   undefined4 uVar3;
   undefined1 uVar4;
@@ -509,10 +492,7 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
   undefined4 uStack_54;
   void *pvStack_50;
   undefined1 auStack_48 [16];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_54 = 0;
   pvStack_50 = (void *)0x0;
   bStack_60 = 0x14;
@@ -669,10 +649,6 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
     Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::StarSeed>>::~SharedPtr(&puStack_80);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -690,7 +666,6 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
   ulong uVar1;
   long lVar2;
   int *piVar3;
-  long lVar4;
   bool bVar5;
   int iVar6;
   undefined8 uVar7;
@@ -709,10 +684,7 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
   undefined1 uStack_45;
   undefined4 uStack_44;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   if (*(int *)(in_x1 + 0x18) == 0x20) {
     if (*(int *)(in_x1 + 0x1c) == 1) {
       uStack_80 = 0;
@@ -811,10 +783,6 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
       *(undefined1 *)(*(long *)(*(long *)((long)p0 + 400) + 0x28) + 200) = 1;
     }
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -829,7 +797,6 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
 void WaterConcept::StarSeed::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   bool bVar2;
   undefined4 uVar3;
   int iVar4;
@@ -872,10 +839,7 @@ void WaterConcept::StarSeed::setProperties(Walaber__PropertyList *p0)
   undefined1 uStack_4e;
   undefined2 uStack_4d;
   undefined3 uStack_4b;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   uStack_52 = 0;
   uStack_51 = 0;
@@ -1733,10 +1697,6 @@ LAB_00490ab4:
     iVar4 = Walaber::Property::asInt(lVar5);
     *(bool *)&p0[0x42].f_0x0 = iVar4 == 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1752,7 +1712,6 @@ LAB_00490ab4:
 ulong WaterConcept::StarSeed::strToStarType(void)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
@@ -1760,10 +1719,7 @@ ulong WaterConcept::StarSeed::strToStarType(void)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar5;
@@ -1836,10 +1792,6 @@ LAB_00491268:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return (ulong)uVar4;
 }
 
@@ -1858,7 +1810,6 @@ void WaterConcept::StarSeed::update(float p0)
 {
   int *piVar1;
   byte bVar2;
-  long lVar3;
   float fVar4;
   float fVar5;
   int iVar6;
@@ -1903,10 +1854,7 @@ void WaterConcept::StarSeed::update(float p0)
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
-  long lStack_88;
   
-  lVar3 = tpidr_el0;
-  lStack_88 = *(long *)(lVar3 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   fVar23 = p0 / *(float *)(in_x0 + 0x44c);
   *(float *)(in_x0 + 0x3e0) = *(float *)(in_x0 + 0x3e0) + fVar23;
@@ -2453,10 +2401,6 @@ LAB_00491b14:
   }
 LAB_00491d80:
   *(undefined1 *)(in_x0 + 0x622) = 0;
-  if (*(long *)(lVar3 + 0x28) != lStack_88) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2471,7 +2415,6 @@ LAB_00491d80:
 void WaterConcept::StarSeed::_makePoof(Walaber__Vector2 p0,float p1)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined1 auStack_78 [8];
   Walaber__Vector2 WStack_70;
@@ -2485,10 +2428,7 @@ void WaterConcept::StarSeed::_makePoof(Walaber__Vector2 p0,float p1)
   undefined4 uStack_48;
   undefined8 uStack_44;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(long *)((long)p0 + 0x3c0) != 0) {
     uStack_68 = 9;
     WStack_70 = p0;
@@ -2505,10 +2445,6 @@ void WaterConcept::StarSeed::_makePoof(Walaber__Vector2 p0,float p1)
     fStack_4c = p1;
     (**(code **)(**(long **)((long)p0 + 0x3c0) + 0x10))(*(long **)((long)p0 + 0x3c0),&WStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2524,7 +2460,6 @@ void WaterConcept::StarSeed::_updateTeleportingDuck(float p0)
 
 {
   int *piVar1;
-  long lVar2;
   byte bVar3;
   undefined4 uVar4;
   undefined2 uVar5;
@@ -2537,7 +2472,6 @@ void WaterConcept::StarSeed::_updateTeleportingDuck(float p0)
   int iVar12;
   long *in_x0;
   long *plVar13;
-  long lVar14;
   undefined8 uVar15;
   long lVar16;
   long lVar17;
@@ -2589,8 +2523,6 @@ void WaterConcept::StarSeed::_updateTeleportingDuck(float p0)
   uVar9 = uStack_c3;
   uVar8 = uStack_c7;
   bVar7 = bStack_c8;
-  lVar2 = tpidr_el0;
-  lVar14 = *(long *)(lVar2 + 0x28);
   fVar32 = *(float *)((long)in_x0 + 0x5cc) - p0;
   *(float *)((long)in_x0 + 0x5cc) = fVar32;
   bStack_c8 = (byte)in_x0;
@@ -3261,10 +3193,6 @@ LAB_00492e20:
     in_x0[0xbe] = CONCAT17(uStack_c1,CONCAT25(uStack_c3,CONCAT41(uStack_c7,bStack_c8)));
     *(undefined1 *)(in_x0 + 0xc5) = 0;
   }
-  if (*(long *)(lVar2 + 0x28) != lVar14) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3279,7 +3207,6 @@ LAB_00492e20:
 void WaterConcept::StarSeed::_updateNormalDuck(float p0)
 
 {
-  long lVar1;
   long in_x0;
   long *plVar2;
   ulong uVar3;
@@ -3290,10 +3217,7 @@ void WaterConcept::StarSeed::_updateNormalDuck(float p0)
   float fVar8;
   undefined8 uVar9;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   fVar7 = 0.0;
   if ((*(int *)(in_x0 + 0x3ac) == 5) && (*(char *)(in_x0 + 0x630) != '\0')) {
     fVar7 = (float)Walaber::Curve::evaluate(*(float *)(in_x0 + 0x444) + *(float *)(in_x0 + 0x444),
@@ -3364,10 +3288,6 @@ void WaterConcept::StarSeed::_updateNormalDuck(float p0)
     } while (uVar6 <= uVar3 && uVar3 - uVar6 != 0);
     WaterConcept::InteractiveObject::_updateSpriteTransforms();
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3383,7 +3303,6 @@ void WaterConcept::StarSeed::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 {
   int iVar1;
-  long lVar2;
   undefined8 uVar3;
   long *plVar4;
   long lVar5;
@@ -3394,10 +3313,7 @@ void WaterConcept::StarSeed::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
   undefined8 uStack_50;
   ulong uStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((p0[0x14].field_0x2c != '\0') && (p0[0x10].f_0x28 != 0xf)) {
     if (*(int *)&p0[0x10].field_0x2c == 1) {
       p2 = (float)glDisable(0xb71);
@@ -3436,10 +3352,6 @@ void WaterConcept::StarSeed::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
       glEnable(0xb71);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3479,7 +3391,6 @@ void WaterConcept::StarSeed::drawForeground(Walaber__SpriteBatch *p0,bool p1,flo
 {
   uint uVar1;
   int iVar2;
-  long lVar3;
   bool bVar4;
   undefined8 uVar5;
   long *plVar6;
@@ -3495,11 +3406,8 @@ void WaterConcept::StarSeed::drawForeground(Walaber__SpriteBatch *p0,bool p1,flo
   int *piStack_60;
   undefined4 auStack_58 [2];
   undefined1 auStack_50 [8];
-  long lStack_48;
   
   uVar10 = CONCAT44(in_register_00005004,p2);
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   if ((p0[0x14].field_0x2c != '\0') &&
      ((uVar1 = *(uint *)&p0[0x10].field_0x2c, 5 < uVar1 ||
       ((1 << (ulong)(uVar1 & 0x1f) & 0x35U) == 0)))) {
@@ -3564,10 +3472,6 @@ void WaterConcept::StarSeed::drawForeground(Walaber__SpriteBatch *p0,bool p1,flo
       uVar10 = (**(code **)(*plVar6 + 0x48))(plVar6,p1);
     }
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar10);
-    return;
-  }
   return;
 }
 
@@ -3583,7 +3487,6 @@ void WaterConcept::StarSeed::_drawTeleportShockwaveIntro(Walaber__SpriteBatch *p
 
 {
   long lVar1;
-  long lVar2;
   uint uVar3;
   int iVar4;
   long lVar5;
@@ -3611,10 +3514,7 @@ void WaterConcept::StarSeed::_drawTeleportShockwaveIntro(Walaber__SpriteBatch *p
   undefined8 uStack_90;
   undefined4 uStack_84;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   uVar6 = *(undefined8 *)&p0[0x13].f_0x28;
   if (*(float *)&p0[0x13].f_0x30 <= 0.5) {
     fVar7 = *(float *)&p0[0x13].f_0x30 + -0.25;
@@ -3701,10 +3601,6 @@ void WaterConcept::StarSeed::_drawTeleportShockwaveIntro(Walaber__SpriteBatch *p
   drawShockwave(fVar8 * fVar8 * fVar8,0x42fa0000,0x42480000,0x40e00000,0x42480000,&uStack_d8,
                   auStack_e0,0x40,0,10);
   glDisable(0xbf2);
-  if (*(long *)(lVar2 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3721,7 +3617,6 @@ void WaterConcept::StarSeed::_drawTeleportSpiralIntro(Walaber__SpriteBatch *p0)
 {
   int iVar1;
   long lVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   int iVar6;
@@ -3758,10 +3653,7 @@ void WaterConcept::StarSeed::_drawTeleportSpiralIntro(Walaber__SpriteBatch *p0)
   long lStack_c8;
   long lStack_c0;
   int *piStack_b8;
-  long lStack_b0;
   
-  lVar3 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar3 + 0x28);
   fVar15 = *(float *)&p0[0x13].f_0x30 * 0.5;
   if (1.0 < fVar15) {
     fVar15 = 1.0;
@@ -3910,10 +3802,6 @@ void WaterConcept::StarSeed::_drawTeleportSpiralIntro(Walaber__SpriteBatch *p0)
   Walaber::SpriteBatch::flush();
   Walaber::SpriteBatch::start();
   glPopMatrix();
-  if (*(long *)(lVar3 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3934,7 +3822,6 @@ void WaterConcept::StarSeed::particleHasCollided
   long lVar2;
   int *piVar3;
   float fVar4;
-  long lVar5;
   undefined8 *puVar6;
   byte bVar7;
   undefined7 uVar8;
@@ -3970,12 +3857,9 @@ void WaterConcept::StarSeed::particleHasCollided
   undefined8 uStack_5c;
   undefined8 uStack_54;
   undefined4 uStack_4c;
-  long lStack_48;
   
   uVar10 = uStack_7f;
   bVar9 = bStack_80;
-  lVar5 = tpidr_el0;
-  lStack_48 = *(long *)(lVar5 + 0x28);
   fVar4 = p0[0xea].particlesForFluid;
   if (((fVar4 != 1.4013e-45) && (fVar4 != 1.4013e-44)) && ((int)fVar4 < 0xc)) {
     bStack_80 = (byte)p0;
@@ -4237,10 +4121,6 @@ LAB_00494248:
   bStack_80 = bVar9;
   uStack_7f = uVar10;
 LAB_004940f4:
-  if (*(long *)(lVar5 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4255,7 +4135,6 @@ LAB_004940f4:
 void WaterConcept::StarSeed::killMe(long param_1)
 
 {
-  long lVar1;
   long *plVar2;
   undefined4 uStack_68;
   undefined4 uStack_64;
@@ -4272,10 +4151,7 @@ void WaterConcept::StarSeed::killMe(long param_1)
   undefined4 uStack_34;
   undefined4 uStack_30;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *(undefined4 *)(param_1 + 0x3a8) = 0xb;
   if (*(long *)(param_1 + 0x3c0) != 0) {
     uStack_58 = 0xb;
@@ -4301,10 +4177,6 @@ void WaterConcept::StarSeed::killMe(long param_1)
     (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_60);
   }
   *(undefined1 *)(param_1 + 0xdc) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

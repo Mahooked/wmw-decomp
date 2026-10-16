@@ -18,7 +18,6 @@ void std::__ndk1::
                (WaterConcept__Screen_WaterTest__StrokeInfo *p0)
 
 {
-  long lVar1;
   undefined1 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::
   ulong uVar5;
   undefined1 auStack_60 [16];
   undefined1 *puStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
@@ -53,10 +49,6 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 0x20;
   std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

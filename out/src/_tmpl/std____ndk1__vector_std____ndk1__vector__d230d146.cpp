@@ -17,13 +17,9 @@ void std::__ndk1::
      ::reserve(ulong p0)
 
 {
-  long lVar1;
   ulong in_x1;
   undefined1 auStack_50 [40];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if ((ulong)((*(long *)(p0 + 0x10) - *(long *)p0 >> 3) * -0x5555555555555555) < in_x1) {
     std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>::__split_buffer(auStack_50,in_x1,(*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x5555555555555555,
                     p0 + 0x10);
@@ -31,10 +27,6 @@ void std::__ndk1::
     std::__ndk1::vector<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>>::__swap_out_circular_buffer(p0,auStack_50);
     std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>>&>::~__split_buffer(auStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

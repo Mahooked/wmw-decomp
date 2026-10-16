@@ -13,7 +13,6 @@
 ulong WaterConcept::YSwitch::strToYSwitchPort(void)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong uVar4;
@@ -21,10 +20,7 @@ ulong WaterConcept::YSwitch::strToYSwitchPort(void)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar4 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar4;
@@ -55,10 +51,6 @@ LAB_004617f0:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return (ulong)uVar5;
 }
 
@@ -73,15 +65,11 @@ LAB_004617f0:
 void WaterConcept::YSwitch::YSwitch(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
   WaterConcept::Spout::Spout(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38,0,4);
@@ -100,10 +88,6 @@ void WaterConcept::YSwitch::YSwitch(Walaber__Vector2 p0,float p1,Walaber__Vector
   *(undefined8 *)((long)p0 + 0x4c0) = 0;
   *(undefined4 *)((long)p0 + 0xd8) = 0xd;
   *(undefined1 *)((long)p0 + 0x111) = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -167,15 +151,11 @@ void WaterConcept::YSwitch::~YSwitch()
 void WaterConcept::YSwitch::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 uVar3;
   ulong uVar4;
-  long lVar5;
   float fVar6;
   
-  lVar1 = tpidr_el0;
-  lVar5 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
                     /* try { // try from 0049880c to 00498817 has its CatchHandler @ 00498c28 */
   uVar4 = Walaber::PropertyList::keyExists();
@@ -233,10 +213,6 @@ void WaterConcept::YSwitch::setProperties(Walaber__PropertyList *p0)
     fVar6 = (float)Walaber::Property::asFloat();
     *(float *)((long)&p0[0x38].f_0x0 + 4) = fVar6 * 0.017453292;
   }
-  if (*(long *)(lVar1 + 0x28) != lVar5) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -291,13 +267,9 @@ void WaterConcept::YSwitch::update(float p0)
 void WaterConcept::YSwitch::_updateToggleSprite(long param_1)
 
 {
-  long lVar1;
   long *plVar2;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(int *)(param_1 + 0x514) != -1) {
     plVar2 = *(long **)(*(long *)(param_1 + 400) + (long)*(int *)(param_1 + 0x514) * 0x28);
     (**(code **)(*plVar2 + 0x10))(plVar2,param_1 + 0x520);
@@ -305,10 +277,6 @@ void WaterConcept::YSwitch::_updateToggleSprite(long param_1)
     fStack_3c = *(float *)(param_1 + 0x528) + 2.0943952;
     (**(code **)(*plVar2 + 0x20))(plVar2,&fStack_3c);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -323,7 +291,6 @@ void WaterConcept::YSwitch::_updateToggleSprite(long param_1)
 void WaterConcept::YSwitch::_updatePlugSprite(float p0)
 
 {
-  long lVar1;
   long in_x0;
   long *plVar2;
   float fVar3;
@@ -339,10 +306,7 @@ void WaterConcept::YSwitch::_updatePlugSprite(float p0)
   float fStack_68;
   float fStack_64;
   float fStack_5c;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (*(int *)(in_x0 + 0x51c) != -1) {
     if (*(float *)(in_x0 + 0x538) <= 0.0) {
       plVar2 = *(long **)(*(long *)(in_x0 + 400) + (long)*(int *)(in_x0 + 0x51c) * 0x28);
@@ -392,10 +356,6 @@ void WaterConcept::YSwitch::_updatePlugSprite(float p0)
       *(float *)(in_x0 + 0x538) = *(float *)(in_x0 + 0x538) - p0;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -425,18 +385,14 @@ void WaterConcept::YSwitch::handleTouchDown(Walaber__Vector2 *p0)
 void WaterConcept::YSwitch::setYSwitchPosition(bool p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   long *plVar4;
   byte in_w1;
   undefined4 uVar5;
   ulong uStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(byte *)(uVar2 + 0x505) != (in_w1 & 1)) {
     *(byte *)(uVar2 + 0x505) = in_w1 & 1;
     uVar3 = Walaber::SoundManager::getInstancePtr();
@@ -455,10 +411,6 @@ void WaterConcept::YSwitch::setYSwitchPosition(bool p0)
       (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_40);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -478,7 +430,6 @@ ulong WaterConcept::YSwitch::addParticles
 {
   undefined4 *puVar1;
   undefined8 *puVar2;
-  long lVar3;
   uint uVar4;
   ulong uVar5;
   long lVar6;
@@ -495,10 +446,7 @@ ulong WaterConcept::YSwitch::addParticles
   undefined8 *puStack_70;
   undefined8 *puStack_68;
   undefined8 *puStack_60;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   puStack_70 = (undefined8 *)0x0;
   puStack_68 = (undefined8 *)0x0;
   puStack_60 = (undefined8 *)0x0;
@@ -615,10 +563,6 @@ LAB_004992bc:
     puStack_68 = puStack_70;
     operator delete(puStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -633,7 +577,6 @@ LAB_004992bc:
 void WaterConcept::YSwitch::_initFinished(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long *plVar4;
@@ -642,10 +585,7 @@ void WaterConcept::YSwitch::_initFinished(long param_1)
   float fVar7;
   float fStack_50;
   undefined4 uStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(int *)(param_1 + 0x514) != -1) {
     *(undefined8 *)(param_1 + 0x520) =
          *(undefined8 *)
@@ -684,10 +624,6 @@ void WaterConcept::YSwitch::_initFinished(long param_1)
     }
   }
   WaterConcept::YSwitch::_updateToggleSprite(param_1);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

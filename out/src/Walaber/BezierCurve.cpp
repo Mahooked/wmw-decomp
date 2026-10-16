@@ -12,7 +12,6 @@
 undefined1  [16] Walaber::BezierCurve::_evaluateCurve(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   float fVar2;
   undefined4 extraout_s0;
@@ -20,18 +19,11 @@ undefined1  [16] Walaber::BezierCurve::_evaluateCurve(float p0,float p1)
   undefined8 extraout_var_00;
   int iStack_40;
   int iStack_3c;
-  long lStack_38;
   undefined1 auVar3 [16];
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Curve::findSegment(in_x0,&iStack_3c,&iStack_40);
   fVar2 = (float)Walaber::BezierCurve::BezierInterp(*(long *)(in_x0 + 0x18) + (long)iStack_3c * 0x18,
                                  *(long *)(in_x0 + 0x18) + (long)iStack_40 * 0x18);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return ZEXT416((uint)(fVar2 + p1));
-  }
-  __stack_chk_fail();
   auVar3._4_4_ = extraout_var;
   auVar3._0_4_ = extraout_s0;
   auVar3._8_8_ = extraout_var_00;
@@ -49,17 +41,13 @@ undefined1  [16] Walaber::BezierCurve::_evaluateCurve(float p0,float p1)
 void Walaber::BezierCurve::BezierInterp(Walaber__CurveKey *p0,Walaber__CurveKey *p1,float p2)
 
 {
-  long lVar1;
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined1 auStack_30 [4];
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_38._0_4_ = p0->f_0x0;
   uStack_38._4_4_ = p0->f_0x4;
   uStack_40._0_4_ = p0[1].f_0x4;
@@ -68,10 +56,6 @@ void Walaber::BezierCurve::BezierInterp(Walaber__CurveKey *p0,Walaber__CurveKey 
   uStack_48._4_4_ = p1->f_0x4;
   uStack_50 = *(undefined8 *)&p1->f_0x8;
   Walaber::VectorTools::bezierInterp(auStack_30,&uStack_38,&uStack_40,&uStack_48,&uStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_2c);
   return;
 }
 
@@ -86,7 +70,6 @@ void Walaber::BezierCurve::BezierInterp(Walaber__CurveKey *p0,Walaber__CurveKey 
 void Walaber::BezierCurve::loadFromXmlNode(_xmlNode *p0)
 
 {
-  long lVar1;
   undefined *puVar2;
   float fVar3;
   float fVar4;
@@ -108,10 +91,7 @@ void Walaber::BezierCurve::loadFromXmlNode(_xmlNode *p0)
   ulong uStack_a0;
   ulong uStack_98;
   void *pvStack_90;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   lVar11 = *(long *)(in_x1 + 0x18);
   if (lVar11 != 0) {
     pvVar10 = (void *)((ulong)&uStack_a0 | 1);
@@ -233,10 +213,6 @@ LAB_003dfea0:
       lVar11 = *(long *)(lVar11 + 0x30);
     } while (lVar11 != 0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

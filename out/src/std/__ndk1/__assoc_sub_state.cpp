@@ -32,7 +32,6 @@ void std::__ndk1::__assoc_sub_state::__on_zero_shared(long *param_1)
 void std::__ndk1::__assoc_sub_state::set_value(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 *puVar3;
   long lVar4;
@@ -40,10 +39,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
   void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::mutex::lock(param_1 + 0x18);
   if ((*(byte *)(param_1 + 0x70) & 1) == 0) {
     auStack_68[0] = 0;
@@ -53,10 +49,6 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
       *(uint *)(param_1 + 0x70) = *(uint *)(param_1 + 0x70) | 5;
       std::__ndk1::condition_variable::notify_all(param_1 + 0x40);
       std::__ndk1::mutex::unlock(param_1 + 0x18);
-      if (*(long *)(lVar1 + 0x28) == lStack_38) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   }
@@ -95,7 +87,6 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
 void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 *puVar3;
   undefined8 uVar4;
@@ -105,10 +96,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
   void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::mutex::lock(param_1 + 0x18);
   if ((*(byte *)(param_1 + 0x70) & 1) == 0) {
     auStack_68[0] = 0;
@@ -121,10 +109,6 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
       uVar4 = pthread_getspecific(*puVar3);
       std::__ndk1::__thread_struct::__make_ready_at_thread_exit(uVar4,param_1);
       std::__ndk1::mutex::unlock(param_1 + 0x18);
-      if (*(long *)(lVar1 + 0x28) == lStack_38) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   }
@@ -163,7 +147,6 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
 void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 *puVar3;
   long lVar4;
@@ -171,10 +154,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
   void *pvStack_68;
   undefined8 uStack_60;
   undefined8 *puStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::mutex::lock(p0.f_0x0 + 0x18);
   if ((*(byte *)(p0.f_0x0 + 0x70) & 1) == 0) {
     auStack_78[0] = 0;
@@ -185,10 +165,6 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
       *(uint *)(p0.f_0x0 + 0x70) = *(uint *)(p0.f_0x0 + 0x70) | 4;
       std::__ndk1::condition_variable::notify_all(p0.f_0x0 + 0x40);
       std::__ndk1::mutex::unlock(p0.f_0x0 + 0x18);
-      if (*(long *)(lVar1 + 0x28) == lStack_48) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   }
@@ -227,7 +203,6 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
 void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception_ptr p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined4 *puVar3;
   undefined8 uVar4;
@@ -237,10 +212,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
   void *pvStack_68;
   undefined8 uStack_60;
   undefined8 *puStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::mutex::lock(p0.f_0x0 + 0x18);
   if ((*(byte *)(p0.f_0x0 + 0x70) & 1) == 0) {
     auStack_78[0] = 0;
@@ -253,10 +225,6 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
       uVar4 = pthread_getspecific(*puVar3);
       std::__ndk1::__thread_struct::__make_ready_at_thread_exit(uVar4,p0.f_0x0);
       std::__ndk1::mutex::unlock(p0.f_0x0 + 0x18);
-      if (*(long *)(lVar1 + 0x28) == lStack_48) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   }
@@ -412,13 +380,9 @@ void std::__ndk1::__assoc_sub_state::wait(long *param_1)
 {
   long *plVar1;
   uint uVar2;
-  long lVar3;
   long *plStack_48;
   char cStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   plVar1 = param_1 + 3;
   cStack_40 = '\x01';
   plStack_48 = plVar1;
@@ -440,10 +404,6 @@ void std::__ndk1::__assoc_sub_state::wait(long *param_1)
   }
   if (cStack_40 != '\0') {
     std::__ndk1::mutex::unlock(plStack_48);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

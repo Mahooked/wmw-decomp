@@ -72,7 +72,6 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0)
 void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ulong *param_1)
 
 {
-  long lVar1;
   void *pvVar2;
   long lVar3;
   undefined8 *puVar4;
@@ -87,10 +86,7 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::__add_back_capacity(ul
   undefined8 *puStack_68;
   undefined8 *puStack_60;
   ulong uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1[4] < 0x400) {
     uVar5 = (long)(param_1[2] - param_1[1]) >> 3;
     lVar7 = param_1[3] - *param_1;
@@ -246,10 +242,6 @@ LAB_004801cc:
   *puVar6 = uVar10;
   param_1[2] = param_1[2] + 8;
 LAB_00480458:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

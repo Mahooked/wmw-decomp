@@ -19,7 +19,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   long in_x1;
   long lVar3;
   ulong uVar4;
@@ -27,10 +26,7 @@ void std::__ndk1::
   long lVar6;
   undefined1 auStack_60 [16];
   long lStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
@@ -53,10 +49,6 @@ void std::__ndk1::
                     /* try { // try from 004ecac4 to 004ecacf has its CatchHandler @ 004ecb20 */
   std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

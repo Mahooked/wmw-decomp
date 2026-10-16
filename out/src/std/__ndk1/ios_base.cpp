@@ -375,17 +375,13 @@ void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0)
 
 {
   uint uVar1;
-  long lVar2;
   long in_x1;
   undefined8 uVar3;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uVar1 = p0->f_0x8;
   p0->f_0x8 = *(uint *)(in_x1 + 8);
   *(uint *)(in_x1 + 8) = uVar1;
@@ -438,10 +434,6 @@ void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0)
   uVar4 = p0->f_0x80;
   p0->f_0x80 = *(ulong *)(in_x1 + 0x80);
   *(ulong *)(in_x1 + 0x80) = uVar4;
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -457,14 +449,12 @@ long * std::__ndk1::ios_base::__set_failbit_and_consider_rethrow(long *param_1)
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   long *plVar4;
   undefined1 auVar5 [16];
   undefined1 auStack_70 [12];
   uint uStack_64;
   char acStack_60 [8];
-  long lStack_58;
   
   *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) | 4;
   if ((*(byte *)((long)param_1 + 0x24) >> 2 & 1) == 0) {
@@ -477,8 +467,6 @@ long * std::__ndk1::ios_base::__set_failbit_and_consider_rethrow(long *param_1)
   }
   auVar5 = __cxa_rethrow();
   plVar3 = auVar5._0_8_;
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_60,plVar3,0);
   if (acStack_60[0] != '\0') {
     uStack_64 = 0;
@@ -493,10 +481,6 @@ long * std::__ndk1::ios_base::__set_failbit_and_consider_rethrow(long *param_1)
     lVar1 = (long)plVar3 + *(long *)(*plVar3 + -0x18);
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_64);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return plVar3;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -512,14 +496,12 @@ long * std::__ndk1::ios_base::__set_badbit_and_consider_rethrow(long *param_1)
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   long *plVar4;
   undefined1 auVar5 [16];
   undefined1 auStack_60 [12];
   uint uStack_54;
   char acStack_50 [8];
-  long lStack_48;
   
   *(uint *)(param_1 + 4) = *(uint *)(param_1 + 4) | 1;
   if ((*(byte *)((long)param_1 + 0x24) & 1) == 0) {
@@ -527,8 +509,6 @@ long * std::__ndk1::ios_base::__set_badbit_and_consider_rethrow(long *param_1)
   }
   auVar5 = __cxa_rethrow();
   plVar4 = auVar5._0_8_;
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_50,plVar4,0);
   if (acStack_50[0] != '\0') {
     uStack_54 = 0;
@@ -543,10 +523,6 @@ long * std::__ndk1::ios_base::__set_badbit_and_consider_rethrow(long *param_1)
     lVar1 = (long)plVar4 + *(long *)(*plVar4 + -0x18);
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_54);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return plVar4;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 

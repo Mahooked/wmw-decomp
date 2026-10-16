@@ -16,7 +16,6 @@ void Walaber::Flipbook::Flipbook(std::__ndk1::basic_string<char, std::__ndk1::ch
   uint *puVar1;
   uint uVar2;
   uint uVar3;
-  long lVar4;
   undefined *puVar5;
   int iVar6;
   long lVar7;
@@ -48,10 +47,7 @@ void Walaber::Flipbook::Flipbook(std::__ndk1::basic_string<char, std::__ndk1::ch
   byte abStack_a0 [16];
   void *pvStack_90;
   undefined8 uStack_88;
-  long lStack_80;
   
-  lVar4 = tpidr_el0;
-  lStack_80 = *(long *)(lVar4 + 0x28);
   param_1[3] = 0;
   param_1[2] = 0;
   param_1[5] = 0;
@@ -215,10 +211,6 @@ LAB_00359270:
     } while (lVar7 != 0);
   }
 LAB_0035946c:
-  if (*(long *)(lVar4 + 0x28) != lStack_80) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

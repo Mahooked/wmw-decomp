@@ -109,7 +109,6 @@ void std::__ndk1::
      ::__add_back_capacity(ulong *param_1)
 
 {
-  long lVar1;
   void *pvVar2;
   long lVar3;
   undefined8 *puVar4;
@@ -124,10 +123,7 @@ void std::__ndk1::
   undefined8 *puStack_68;
   undefined8 *puStack_60;
   ulong uStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (param_1[4] < 0x40) {
     uVar5 = (long)(param_1[2] - param_1[1]) >> 3;
     lVar7 = param_1[3] - *param_1;
@@ -283,10 +279,6 @@ LAB_004a09bc:
   *puVar6 = uVar10;
   param_1[2] = param_1[2] + 8;
 LAB_004a0c48:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

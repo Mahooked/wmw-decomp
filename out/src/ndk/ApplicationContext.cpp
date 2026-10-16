@@ -53,13 +53,9 @@ void ndk::ApplicationContext::ApplicationContext()
 void ndk::ApplicationContext::~ApplicationContext()
 
 {
-  long lVar1;
   int iVar2;
   long *plStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   *this = &PTR__ApplicationContext_0070cd88;
                     /* try { // try from 002b2898 to 002b28c3 has its CatchHandler @ 002b2934 */
   if (((this[3] != 0) &&
@@ -81,10 +77,6 @@ void ndk::ApplicationContext::~ApplicationContext()
     operator delete((void *)this[0xe]);
   }
   Walaber::MessageReceiver::~MessageReceiver(this);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -99,22 +91,14 @@ void ndk::ApplicationContext::~ApplicationContext()
 void ndk::ApplicationContext::getJNIEnv(long param_1)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   iVar2 = (**(code **)(**(long **)(param_1 + 0x10) + 0x30))
                     (*(long **)(param_1 + 0x10),&uStack_30,0x10006);
   if (iVar2 != 0) {
     uStack_30 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_30);
   return;
 }
 
@@ -177,7 +161,6 @@ void ndk::ApplicationContext::setJavaVM(_JavaVM *p0)
 void ndk::ApplicationContext::initializeGame(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -197,10 +180,7 @@ void ndk::ApplicationContext::initializeGame(long param_1)
   undefined1 uStack_48;
   undefined7 uStack_47;
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"init start");
   if (*(char *)(param_1 + 0x28) != '\0') {
     *(undefined1 *)(param_1 + 0x28) = 0;
@@ -305,10 +285,6 @@ void ndk::ApplicationContext::initializeGame(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
     Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ScreenLoader>>::~SharedPtr(&bStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -325,7 +301,6 @@ void ndk::ApplicationContext::setPlatformConstants(long param_1)
 {
   void *pvVar1;
   long lVar2;
-  long lVar3;
   float fVar4;
   void *p0;
   bool bVar5;
@@ -342,10 +317,7 @@ void ndk::ApplicationContext::setPlatformConstants(long param_1)
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   lVar7 = Walaber::PlatformManager::getInstancePtr();
   fVar4 = *(float *)(param_1 + 0x94);
   if (*(float *)(param_1 + 0x94) <= *(float *)(param_1 + 0x90)) {
@@ -411,10 +383,6 @@ LAB_002b2ecc:
   if ((uVar14 & 1) != 0) {
     operator delete(p0);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -457,15 +425,11 @@ void ndk::ApplicationContext::createUserFolders(void)
 void ndk::ApplicationContext::initLocalization(long param_1)
 
 {
-  long lVar1;
   ulong uVar2;
   byte abStack_48 [16];
   void *pvStack_38;
   undefined4 uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_48,param_1 + 0xb0);
                     /* try { // try from 002b308c to 002b3093 has its CatchHandler @ 002b30fc */
   uStack_2c = Walaber::TextManager::CountryInfoToLanguage(abStack_48);
@@ -478,10 +442,6 @@ void ndk::ApplicationContext::initLocalization(long param_1)
   }
   Walaber::TextManager::mCurrentLanguage = uStack_2c;
   ndk::ApplicationContext::loadLocalizationScript();
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -496,17 +456,13 @@ void ndk::ApplicationContext::initLocalization(long param_1)
 void ndk::ApplicationContext::loadLocalizationScript(void)
 
 {
-  long lVar1;
   byte abStack_70 [16];
   void *pvStack_60;
   void *pvStack_58;
   void *pvStack_50;
   undefined8 uStack_48;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pvStack_58 = (void *)0x0;
   pvStack_50 = (void *)0x0;
   uStack_3c = Walaber::TextManager::mCurrentLanguage;
@@ -543,10 +499,6 @@ void ndk::ApplicationContext::loadLocalizationScript(void)
     pvStack_50 = pvStack_58;
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -629,15 +581,11 @@ void ndk::ApplicationContext::setActivity(_jobject *p0)
 void ndk::ApplicationContext::drawFrame(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   float fVar3;
   long lStack_48;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0x29) == '\0') {
     ndk::ApplicationContext::firstFrame();
     *(undefined1 *)(param_1 + 0x29) = 1;
@@ -659,10 +607,6 @@ void ndk::ApplicationContext::drawFrame(long param_1)
   Walaber::SoundManager::update(fVar3);
   Walaber::SoundManager::getInstancePtr();
   Walaber::SoundManager::updateMusicMuteStatus();
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -814,15 +758,11 @@ void ndk::ApplicationContext::setCountryCode(char *p0)
 void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0)
 
 {
-  long lVar1;
   int *in_x1;
   long lVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (0 < *in_x1) {
     lVar2 = 0;
     do {
@@ -833,10 +773,6 @@ void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0)
       lVar2 = lVar2 + 1;
     } while (lVar2 < *in_x1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(p0);
   return;
 }
 
@@ -851,17 +787,13 @@ void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0)
 void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0)
 
 {
-  long lVar1;
   int *in_x1;
   long lVar2;
   undefined4 uStack_48;
   undefined4 uStack_44;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (0 < *in_x1) {
     lVar2 = 0;
     do {
@@ -875,10 +807,6 @@ void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0)
       lVar2 = lVar2 + 1;
     } while (lVar2 < *in_x1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(p0);
   return;
 }
 
@@ -893,15 +821,11 @@ void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0)
 void ndk::ApplicationContext::touchEnded(ndk__MotionEvent *p0)
 
 {
-  long lVar1;
   int *in_x1;
   long lVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (0 < *in_x1) {
     lVar2 = 0;
     do {
@@ -912,10 +836,6 @@ void ndk::ApplicationContext::touchEnded(ndk__MotionEvent *p0)
       lVar2 = lVar2 + 1;
     } while (lVar2 < *in_x1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(p0);
   return;
 }
 
@@ -952,14 +872,12 @@ void ndk::ApplicationContext::resetDatabaseAt
                (undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   void *pvVar2;
   int iVar3;
   undefined8 *puVar4;
   ulong uVar5;
   ulong *puVar6;
   undefined8 uVar7;
-  long lVar8;
   long lVar9;
   undefined4 *puVar10;
   undefined8 uVar11;
@@ -1002,8 +920,6 @@ void ndk::ApplicationContext::resetDatabaseAt
   long lStack_98;
   long lStack_90;
   
-  lVar1 = tpidr_el0;
-  lVar8 = *(long *)(lVar1 + 0x28);
   lStack_a0 = 0;
   lStack_98 = 0;
   lStack_90 = 0;
@@ -1397,10 +1313,6 @@ void ndk::ApplicationContext::resetDatabaseAt
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_b8);
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a0);
-  if (*(long *)(lVar1 + 0x28) == lVar8) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1419,7 +1331,6 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   void *p0;
   void *p0_00;
@@ -1431,10 +1342,7 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
   byte *pbVar6;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   p0 = (void *)operator new(0xa8);
                     /* try { // try from 002b46a4 to 002b46ab has its CatchHandler @ 002b47ec */
   Walaber::ZipArchiveReader::ZipArchiveReader(p0,(byte *)(param_1 + 0x60));
@@ -1482,10 +1390,6 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
   }
   Walaber::ZipArchiveReader::~ZipArchiveReader(p0);
   operator delete(p0);
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1504,7 +1408,6 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
 
 {
   void *pvVar1;
-  long lVar2;
   undefined *puVar3;
   int iVar4;
   int iVar5;
@@ -1514,7 +1417,6 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
   undefined8 *puVar9;
   int *piVar10;
   int *piVar11;
-  long lVar12;
   undefined8 uVar13;
   byte *pbVar14;
   int iVar15;
@@ -1563,8 +1465,6 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
   byte abStack_90 [16];
   void *pvStack_80;
   
-  lVar2 = tpidr_el0;
-  lVar12 = *(long *)(lVar2 + 0x28);
   pbVar14 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar14 = param_2 + 1;
@@ -2009,10 +1909,6 @@ LAB_002b5000:
   }
   ndk::ApplicationContext::copyDatabaseFromBundle(param_1,param_3,param_2);
 LAB_002b505c:
-  if (*(long *)(lVar2 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2034,7 +1930,6 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
   void *pvVar1;
   void *pvVar2;
   uint uVar3;
-  long lVar4;
   undefined *puVar5;
   undefined4 uVar6;
   int iVar7;
@@ -2065,10 +1960,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
   void *pvStack_70;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   uVar9 = Walaber::DatabaseManager::openDatabase(param_2);
   if ((uVar9 & 1) == 0) {
     iVar7 = -1;
@@ -2290,10 +2182,6 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_48) {
-    uVar9 = __stack_chk_fail();
-    return uVar9;
-  }
   return (ulong)uVar3;
 }
 
@@ -2311,7 +2199,6 @@ ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0)
 {
   Walaber__Message *pWVar1;
   byte bVar2;
-  long lVar3;
   undefined3 uVar4;
   undefined2 uVar5;
   undefined7 uVar6;
@@ -2337,7 +2224,6 @@ ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0)
   long in_x1;
   undefined *puVar26;
   char *pcVar27;
-  long lVar28;
   int iVar29;
   void *pvVar30;
   int iVar31;
@@ -2446,8 +2332,6 @@ ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0)
   undefined1 uStack_91;
   undefined7 uStack_90;
   
-  lVar3 = tpidr_el0;
-  lVar28 = *(long *)(lVar3 + 0x28);
   iVar9 = *(int *)(in_x1 + 0xc);
   uVar11 = 1;
   if (iVar9 < 0x3a) {
@@ -4640,10 +4524,6 @@ LAB_002b79e0:
 LAB_002b7a80:
   uVar11 = 1;
 switchD_002b6100_caseD_61:
-  if (*(long *)(lVar3 + 0x28) == lVar28) {
-    return (ulong)(uVar11 & 1);
-  }
-  uVar25 = __stack_chk_fail();
   return uVar25;
 }
 
@@ -4659,16 +4539,12 @@ switchD_002b6100_caseD_61:
 void ndk::ApplicationContext::launchURL(long param_1,byte *param_2)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined8 uVar4;
   char *pcVar5;
   long *plStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((*param_2 & 1) == 0) {
     if (*param_2 >> 1 != 0) {
 LAB_002b8e0c:
@@ -4707,10 +4583,6 @@ LAB_002b8e0c:
   else if (*(long *)(param_2 + 8) != 0) goto LAB_002b8e0c;
   uVar4 = 0;
 LAB_002b8ecc:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uVar4);
-    return;
-  }
   return;
 }
 
@@ -4726,15 +4598,11 @@ void ndk::ApplicationContext::_setDisplayPercent(float p0)
 
 {
   long *plVar1;
-  long lVar2;
   int iVar3;
   long in_x0;
   long lVar4;
   long *plStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (*(long *)(in_x0 + 0x18) != 0) {
     iVar3 = (**(code **)(**(long **)(in_x0 + 0x10) + 0x30))
                       (*(long **)(in_x0 + 0x10),&plStack_50,0x10006);
@@ -4756,10 +4624,6 @@ void ndk::ApplicationContext::_setDisplayPercent(float p0)
     _JNIEnv::CallVoidMethod((double)p0,plVar1,*(undefined8 *)(in_x0 + 0x18),lVar4);
     *(bool *)(in_x0 + 200) = p0 != 0.0;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4827,14 +4691,12 @@ void ndk::ApplicationContext::mergeRemoteInfo(char *p0)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined7 uVar4;
   ulong uVar5;
   ulong *puVar6;
   byte *pbVar7;
   undefined8 *puVar8;
   long in_x1;
-  long lVar9;
   undefined8 uVar10;
   void *pvVar11;
   undefined8 *puVar12;
@@ -4964,8 +4826,6 @@ void ndk::ApplicationContext::mergeRemoteInfo(char *p0)
   undefined1 uStack_61;
   void *pvStack_60;
   
-  lVar3 = tpidr_el0;
-  lVar9 = *(long *)(lVar3 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"ApplicationContext::mergeRemoteInfo()");
   if (in_x1 == 0) {
     __android_log_write(4,&DAT_0061d37e,"ERROR: null serializedPlayerData");
@@ -5852,10 +5712,6 @@ LAB_002b9300:
     operator delete(pvStack_140);
   }
 LAB_002b9e6c:
-  if (*(long *)(lVar3 + 0x28) != lVar9) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5870,16 +5726,12 @@ LAB_002b9e6c:
 void ndk::ApplicationContext::handleAgeChange(int p0,int p1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   int in_w2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (p1 < 0) {
     if (0xc < in_w2) goto LAB_002ba3c0;
   }
@@ -5895,10 +5747,6 @@ void ndk::ApplicationContext::handleAgeChange(int p0,int p1)
   WaterConcept::GameSettings::setAllowFacebookPublishing(0xffffffff);
 LAB_002ba3c0:
   Walaber::Logger::printf(&DAT_0061d37e,1,"AGEGATE handler fine");
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5913,7 +5761,6 @@ LAB_002ba3c0:
 void ndk::ApplicationContext::checkAudioStatus(long param_1)
 
 {
-  long lVar1;
   char *pcVar2;
   bool bVar3;
   char cVar4;
@@ -5921,10 +5768,7 @@ void ndk::ApplicationContext::checkAudioStatus(long param_1)
   long lVar6;
   undefined8 uVar7;
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iVar5 = (**(code **)(**(long **)(param_1 + 0x10) + 0x30))
                     (*(long **)(param_1 + 0x10),&plStack_40,0x10006);
   if ((iVar5 == 0) && (plStack_40 != (long *)0x0)) {
@@ -5943,10 +5787,6 @@ void ndk::ApplicationContext::checkAudioStatus(long param_1)
   __android_log_write(4,&DAT_0061db84,pcVar2 + 10);
   bVar3 = false;
 LAB_002ba4ec:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(bVar3);
   return;
 }
 
@@ -5962,7 +5802,6 @@ LAB_002ba4ec:
 void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   byte *pbVar4;
@@ -5971,10 +5810,7 @@ void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if ((*param_2 & 1) == 0) {
     pbVar4 = param_2 + 1;
   }
@@ -6017,10 +5853,6 @@ LAB_002ba5f0:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6035,7 +5867,6 @@ LAB_002ba5f0:
 void ndk::ApplicationContext::reloadContextData(void)
 
 {
-  long lVar1;
   long lVar2;
   long lVar3;
   undefined8 *puVar4;
@@ -6049,10 +5880,7 @@ void ndk::ApplicationContext::reloadContextData(void)
   undefined8 uStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ndk::ApplicationContext::firstFrame();
   Walaber::Logger::printf(&DAT_0061d37e,1,"ApplicationContext::reloadContextData() - 1");
   Walaber::GraphicsGL::State::State(&uStack_78);
@@ -6088,10 +5916,6 @@ void ndk::ApplicationContext::reloadContextData(void)
   Walaber::Logger::printf(&DAT_0061d37e,1,"ApplicationContext::reloadContextData() - 5");
   Walaber::ScreenManager::update(0);
   Walaber::Logger::printf(&DAT_0061d37e,1,"ApplicationContext::reloadContextData() - 6");
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6341,7 +6165,6 @@ void ndk::ApplicationContext::logApplicationOnResumeEvent(void)
 void ndk::ApplicationContext::notifyReachability(bool p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   uint in_w1;
   undefined1 auStack_98 [32];
@@ -6350,10 +6173,7 @@ void ndk::ApplicationContext::notifyReachability(bool p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x1d00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -6388,10 +6208,6 @@ void ndk::ApplicationContext::notifyReachability(bool p0)
   __android_log_write(4,&DAT_0061d37e,"notifyReachability");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6406,7 +6222,6 @@ void ndk::ApplicationContext::notifyReachability(bool p0)
 void ndk::ApplicationContext::notifyIAPAvailability(bool p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   uint in_w1;
   undefined1 auStack_98 [32];
@@ -6415,10 +6230,7 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x3e00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -6453,10 +6265,6 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0)
   __android_log_write(4,&DAT_0061d37e,"notifyIAPAvailability");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6471,7 +6279,6 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0)
 void ndk::ApplicationContext::notifyProductInfo(char *p0,char *p1,char *p2)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   ulong uVar4;
@@ -6485,10 +6292,7 @@ void ndk::ApplicationContext::notifyProductInfo(char *p0,char *p1,char *p2)
   undefined **ppuStack_90;
   undefined8 uStack_88;
   undefined1 auStack_80 [24];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   ppuStack_90 = &PTR__Message_0070cdc8;
   uStack_88 = 0x4000000010;
   Walaber::PropertyList::PropertyList(auStack_80);
@@ -6657,10 +6461,6 @@ LAB_002baf1c:
   __android_log_write(4,&DAT_0061d37e,"notifyProductInfo");
   ppuStack_90 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_80);
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6675,7 +6475,6 @@ LAB_002baf1c:
 void ndk::ApplicationContext::notifyProductInfoFailed(char *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   void *pvVar4;
@@ -6690,10 +6489,7 @@ void ndk::ApplicationContext::notifyProductInfoFailed(char *p0)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4100000010;
   Walaber::PropertyList::PropertyList(auStack_70);
@@ -6742,10 +6538,6 @@ LAB_002bb138:
   __android_log_write(4,&DAT_0061d37e,"notifyProductInfoFailed");
   ppuStack_80 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6760,7 +6552,6 @@ LAB_002bb138:
 void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   uint in_w2;
@@ -6775,10 +6566,7 @@ void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4300000010;
   Walaber::PropertyList::PropertyList(auStack_70);
@@ -6866,10 +6654,6 @@ LAB_002bb384:
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseSuccess");
   ppuStack_80 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6884,7 +6668,6 @@ LAB_002bb384:
 void ndk::ApplicationContext::notifyPurchaseFailed(char *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   void *pvVar4;
@@ -6899,10 +6682,7 @@ void ndk::ApplicationContext::notifyPurchaseFailed(char *p0)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4400000010;
   Walaber::PropertyList::PropertyList(auStack_70);
@@ -6951,10 +6731,6 @@ LAB_002bb588:
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseFailed");
   ppuStack_80 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6969,7 +6745,6 @@ LAB_002bb588:
 void ndk::ApplicationContext::notifyPurchaseCancelled(char *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   void *pvVar4;
@@ -6984,10 +6759,7 @@ void ndk::ApplicationContext::notifyPurchaseCancelled(char *p0)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseCancelled");
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4500000010;
@@ -7036,10 +6808,6 @@ LAB_002bb790:
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_80);
   ppuStack_80 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7069,7 +6837,6 @@ void ndk::ApplicationContext::notifyTwitterLoggedIn(bool p0)
 void ndk::ApplicationContext::notifyAMPSAvailability(bool p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   uint in_w1;
   undefined1 auStack_98 [32];
@@ -7079,10 +6846,7 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2400000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -7119,10 +6883,6 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0)
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSAvailability");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7137,15 +6897,11 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0)
 void ndk::ApplicationContext::notifyAMPSDownloadHasBegun(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2600000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -7155,10 +6911,6 @@ void ndk::ApplicationContext::notifyAMPSDownloadHasBegun(void)
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSDownloadHasBegun");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7173,7 +6925,6 @@ void ndk::ApplicationContext::notifyAMPSDownloadHasBegun(void)
 void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 in_register_00005004;
   undefined1 auStack_98 [32];
@@ -7182,10 +6933,7 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2700000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -7221,10 +6969,6 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7239,15 +6983,11 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
 void ndk::ApplicationContext::notifyAMPSDownloadFinished(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2800000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -7257,10 +6997,6 @@ void ndk::ApplicationContext::notifyAMPSDownloadFinished(void)
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSDownloadFinished");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7275,7 +7011,6 @@ void ndk::ApplicationContext::notifyAMPSDownloadFinished(void)
 void ndk::ApplicationContext::notifyLoadArchiveDescription(char *p0,char *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   void *pvVar3;
   ulong uVar4;
@@ -7285,10 +7020,7 @@ void ndk::ApplicationContext::notifyLoadArchiveDescription(char *p0,char *p1)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_60 = 0;
   uStack_58 = 0;
   pvStack_50 = (void *)0x0;
@@ -7346,10 +7078,6 @@ LAB_002bbda8:
     operator delete(pvStack_50);
   }
   __android_log_write(4,&DAT_0061d37e,"notifyLoadArchiveDescription");
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7364,7 +7092,6 @@ LAB_002bbda8:
 void * ndk::ApplicationContext::getLocalizedText(char *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   void *pvVar3;
   ulong p0_00;
@@ -7373,10 +7100,7 @@ void * ndk::ApplicationContext::getLocalizedText(char *p0)
   void *pvStack_68;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"getLocalizedText CALLED");
   uStack_78 = 0;
   uStack_70 = 0;
@@ -7411,10 +7135,6 @@ LAB_002bbf10:
   }
   if ((uStack_78 & 1) != 0) {
     operator delete(pvStack_68);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    pvVar3 = (void *)__stack_chk_fail();
-    return pvVar3;
   }
   return pvStack_50;
 }
@@ -7466,7 +7186,6 @@ void ndk::ApplicationContext::_getSerializedPlayerData(undefined8 *param_1)
 
 {
   ulong uVar1;
-  long lVar2;
   void *pvVar3;
   ulong *puVar4;
   undefined8 *puVar5;
@@ -7487,10 +7206,7 @@ void ndk::ApplicationContext::_getSerializedPlayerData(undefined8 *param_1)
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"ApplicationContext::getSerializedPlayerData()");
   uStack_88 = 0;
   pvStack_80 = (void *)0x0;
@@ -7955,10 +7671,6 @@ void ndk::ApplicationContext::_getSerializedPlayerData(undefined8 *param_1)
   if ((uStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7973,7 +7685,6 @@ void ndk::ApplicationContext::_getSerializedPlayerData(undefined8 *param_1)
 void ndk::ApplicationContext::handleNewCloudData(char *p0)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -7988,10 +7699,7 @@ void ndk::ApplicationContext::handleNewCloudData(char *p0)
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   __android_log_write(4,&DAT_0061d37e,"ApplicationContext::handleNewCloudData()");
   lVar2 = Walaber::ScreenManager::getScreenWithName(0x21);
   if (lVar2 == 0) {
@@ -8060,10 +7768,6 @@ LAB_002bcc4c:
   ppuStack_80 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_70);
 LAB_002bccc0:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -8087,7 +7791,6 @@ void ndk::ApplicationContext::_getStringBetweenTokens
   byte *pbVar3;
   byte bVar4;
   byte bVar5;
-  long lVar6;
   byte *pbVar7;
   byte *pbVar8;
   ulong uVar9;
@@ -8100,10 +7803,7 @@ void ndk::ApplicationContext::_getStringBetweenTokens
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar6 = tpidr_el0;
-  lStack_68 = *(long *)(lVar6 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -8197,10 +7897,6 @@ void ndk::ApplicationContext::_getStringBetweenTokens
     }
   }
 LAB_002bcf30:
-  if (*(long *)(lVar6 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -8215,7 +7911,6 @@ LAB_002bcf30:
 ulong ndk::ApplicationContext::getPlayerHasMadeProgress(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   int iVar3;
   ulong *puVar4;
@@ -8229,10 +7924,7 @@ ulong ndk::ApplicationContext::getPlayerHasMadeProgress(void)
   void *pvStack_50;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_40,&DAT_0072b4b0);
   abStack_78[4] = 0;
   abStack_78[5] = 0;
@@ -8311,10 +8003,6 @@ ulong ndk::ApplicationContext::getPlayerHasMadeProgress(void)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return (ulong)uVar6;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -8331,7 +8019,6 @@ void ndk::ApplicationContext::notifyRewardsInitFileSystem(char *p0)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined7 uVar4;
   ulong uVar5;
   ulong *puVar6;
@@ -8358,10 +8045,7 @@ void ndk::ApplicationContext::notifyRewardsInitFileSystem(char *p0)
   undefined7 uStack_58;
   undefined1 uStack_51;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   bStack_98 = 0;
   uStack_97 = 0;
   uStack_96 = 0;
@@ -8521,10 +8205,6 @@ LAB_002bd35c:
   if ((uStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -8539,7 +8219,6 @@ LAB_002bd35c:
 void ndk::ApplicationContext::notifyRewardsDownloadFinished(char *p0,char *p1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -8572,10 +8251,7 @@ void ndk::ApplicationContext::notifyRewardsDownloadFinished(char *p0,char *p1)
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)operator new(8);
   *puVar2 = 0;
   uStack_88 = 0;
@@ -8747,10 +8423,6 @@ LAB_002bd738:
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -8797,7 +8469,6 @@ void ndk::ApplicationContext::notifyUpdateIAPADInfoToDB
 {
   undefined *puVar1;
   byte bVar2;
-  long lVar3;
   undefined4 *puVar4;
   bool bVar5;
   int iVar6;
@@ -8805,7 +8476,6 @@ void ndk::ApplicationContext::notifyUpdateIAPADInfoToDB
   ulong *puVar8;
   byte *pbVar9;
   int in_w6;
-  long lVar10;
   undefined8 uVar11;
   long *plVar12;
   undefined1 *puVar13;
@@ -8847,8 +8517,6 @@ void ndk::ApplicationContext::notifyUpdateIAPADInfoToDB
   undefined7 uStack_88;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   bStack_a8 = 0;
   bStack_a7 = 0;
   uStack_a6 = 0;
@@ -9613,10 +9281,6 @@ LAB_002be3ac:
   if ((bStack_a8 & 1) != 0) {
     operator delete(puStack_98);
   }
-  if (*(long *)(lVar3 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -9633,7 +9297,6 @@ void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   undefined7 uVar5;
   bool bVar6;
@@ -9641,7 +9304,6 @@ void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1)
   ulong uVar8;
   byte *pbVar9;
   uint in_w2;
-  long lVar10;
   void *pvVar11;
   ulong uVar12;
   byte abStack_e8 [8];
@@ -9669,8 +9331,6 @@ void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1)
   undefined1 uStack_51;
   undefined7 uStack_50;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   bStack_70 = 0;
   uStack_6f = 0;
   uStack_6e = 0;
@@ -10063,10 +9723,6 @@ LAB_002bf55c:
   if ((bStack_70 & 1) != 0) {
     operator delete(puStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -10083,7 +9739,6 @@ void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   undefined7 uVar5;
   bool bVar6;
@@ -10091,7 +9746,6 @@ void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1)
   ulong uVar8;
   byte *pbVar9;
   uint in_w2;
-  long lVar10;
   void *pvVar11;
   ulong uVar12;
   byte abStack_e8 [8];
@@ -10119,8 +9773,6 @@ void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1)
   undefined1 uStack_51;
   undefined7 uStack_50;
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   bStack_70 = 0;
   uStack_6f = 0;
   uStack_6e = 0;
@@ -10513,10 +10165,6 @@ LAB_002bfe1c:
   if ((bStack_70 & 1) != 0) {
     operator delete(puStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -10533,7 +10181,6 @@ void ndk::ApplicationContext::notifyLoWAMPSInitFileSystem(char *p0)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined8 uVar4;
   undefined7 uVar5;
   ulong uVar6;
@@ -10558,10 +10205,7 @@ void ndk::ApplicationContext::notifyLoWAMPSInitFileSystem(char *p0)
   undefined7 uStack_58;
   undefined1 uStack_51;
   undefined7 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   uStack_70 = 0;
   uStack_68 = 0;
   pvStack_60 = (void *)0x0;
@@ -10862,10 +10506,6 @@ LAB_002bffe8:
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -10882,7 +10522,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bo
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   int iVar5;
   undefined8 *puVar6;
@@ -10893,7 +10532,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bo
   undefined **ppuVar11;
   undefined8 uVar12;
   ulong in_x3;
-  long lVar13;
   undefined4 uVar14;
   void *pvVar15;
   ulong p0_00;
@@ -10937,8 +10575,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bo
   undefined7 uStack_80;
   undefined1 uStack_79;
   
-  lVar3 = tpidr_el0;
-  lVar13 = *(long *)(lVar3 + 0x28);
   puVar6 = (undefined8 *)operator new(8);
   *puVar6 = 0;
   uStack_a0 = 0;
@@ -11542,10 +11178,6 @@ LAB_002c0f3c:
   if ((uStack_a0 & 1) != 0) {
     operator delete(pvStack_90);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar13) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11560,15 +11192,11 @@ LAB_002c0f3c:
 void ndk::ApplicationContext::notifyLoWAMPSDownloadFailed(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x6e00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -11577,10 +11205,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFailed(void)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11595,7 +11219,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFailed(void)
 void ndk::ApplicationContext::notifyLOTWCountDown(int p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 in_w1;
   undefined1 auStack_98 [32];
@@ -11604,10 +11227,7 @@ void ndk::ApplicationContext::notifyLOTWCountDown(int p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7200000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -11642,10 +11262,6 @@ void ndk::ApplicationContext::notifyLOTWCountDown(int p0)
   __android_log_write(4,&DAT_0061d37e,"notifyLOTWCountDown DONE!!!");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11679,7 +11295,6 @@ uint ndk::ApplicationContext::notifyUpdateIAPPromoToDB(char *p0,longlong p1,long
 void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong in_x1;
   undefined1 auStack_98 [32];
@@ -11688,10 +11303,7 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7800000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -11751,10 +11363,6 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0)
   __android_log_write(4,&DAT_0061d37e,"notifyScreenCaptureResult CALLED!");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11769,15 +11377,11 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0)
 void ndk::ApplicationContext::notifyEnableBackKey(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7d00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -11787,10 +11391,6 @@ void ndk::ApplicationContext::notifyEnableBackKey(void)
   __android_log_write(4,&DAT_0061d37e,"notifyEnableBackKey CALLED!");
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11805,16 +11405,12 @@ void ndk::ApplicationContext::notifyEnableBackKey(void)
 void ndk::ApplicationContext::notifyHeadsetChange(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7e00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -11830,10 +11426,6 @@ void ndk::ApplicationContext::notifyHeadsetChange(void)
   }
   ppuStack_60 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11848,7 +11440,6 @@ void ndk::ApplicationContext::notifyHeadsetChange(void)
 void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
 
 {
-  long lVar1;
   ulong auStack_c0 [2];
   char *pcStack_b0;
   byte abStack_a8 [16];
@@ -11859,10 +11450,7 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   __android_log_write(6,&DAT_0061db84,"notifyLaunchExternalUrlFailed");
   Walaber::PropertyList::PropertyList(auStack_40);
   abStack_58[0xe] = 0;
@@ -11985,10 +11573,6 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
   Walaber::ScreenManager::pushScreen(0xd,auStack_40);
   Walaber::ScreenManager::commitScreenChanges();
   Walaber::PropertyList::~PropertyList(auStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -12023,7 +11607,6 @@ void ndk::ApplicationContext::setDisplayDensity(float p0)
 void ndk::ApplicationContext::notifyAddObbFilePathToFileManager(char *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -12037,10 +11620,7 @@ void ndk::ApplicationContext::notifyAddObbFilePathToFileManager(char *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_60 = 0;
   uStack_58 = 0;
   pvStack_50 = (void *)0x0;
@@ -12115,10 +11695,6 @@ LAB_002c1ac0:
   Walaber::FileManager::addFileHandler(uVar4,0x33,uVar3);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

@@ -83,15 +83,11 @@ void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0)
 
 {
   undefined4 *puVar1;
-  long lVar2;
   ulong uVar3;
   undefined4 in_w1;
   undefined1 auStack_3c [4];
-  long lStack_38;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   pthread_mutex_lock(uVar3 + 8);
   puVar1 = *(undefined4 **)(uVar3 + 0x50);
   if (puVar1 == *(undefined4 **)(uVar3 + 0x58)) {
@@ -104,10 +100,6 @@ void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0)
   }
                     /* try { // try from 002c3b04 to 002c3b0b has its CatchHandler @ 002c3b4c */
   pthread_mutex_unlock(uVar3 + 8);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -123,7 +115,6 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
 
 {
   undefined8 *puVar1;
-  long lVar2;
   ulong uVar3;
   uint *puVar4;
   uint uVar5;
@@ -143,10 +134,7 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
   void *pvStack_50;
   void *pvStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   pthread_mutex_lock(param_1 + 8);
   if (*(long *)(param_1 + 0x50) == *(long *)(param_1 + 0x48)) {
                     /* try { // try from 002c4ae4 to 002c4aeb has its CatchHandler @ 002c4ca4 */
@@ -234,10 +222,6 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
   }
                     /* try { // try from 002c4c14 to 002c4c1b has its CatchHandler @ 002c4cbc */
   pthread_mutex_unlock(param_1 + 8);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return (ulong)uVar5;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -253,15 +237,11 @@ void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
 
 {
   undefined4 *puVar1;
-  long lVar2;
   long lVar3;
   long lVar4;
   ulong uVar5;
   undefined4 uStack_3c;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::resize(p0 + 0x30);
   std::__ndk1::vector<int, std::__ndk1::allocator<int>>::reserve(p0 + 0x48);
   lVar3 = *(long *)(p0 + 0x30);
@@ -283,10 +263,6 @@ void ndk::SafePool<ndk::MotionEvent>::reserve(ulong p0)
       uVar5 = uVar5 + 1;
     } while (uVar5 < (ulong)(lVar4 - lVar3 >> 7));
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

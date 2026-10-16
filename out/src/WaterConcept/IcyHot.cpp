@@ -13,16 +13,12 @@ void WaterConcept::IcyHot::IcyHot
                (Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 in_x3;
   undefined4 in_register_00005004;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,0,0);
@@ -66,10 +62,6 @@ void WaterConcept::IcyHot::IcyHot
   *(undefined4 *)((long)p0 + 0x468) = 0;
   *(undefined1 *)((long)p0 + 0x46c) = 1;
   *(undefined4 *)((long)p0 + 0xd8) = 7;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -134,7 +126,6 @@ void WaterConcept::IcyHot::~IcyHot(void *param_1)
 void WaterConcept::IcyHot::setProperties(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   ulong uVar4;
@@ -161,10 +152,7 @@ void WaterConcept::IcyHot::setProperties(Walaber__PropertyList *p0)
   undefined2 uStack_8f;
   undefined1 uStack_8d;
   undefined4 uStack_8c;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   abStack_a0[0] = 0x1e;
   uStack_97 = 0x7275;
@@ -501,10 +489,6 @@ LAB_0047f304:
   iVar2 = rand();
   *(float *)&p0[0x2f].f_0x0 = (float)(iVar2 % 0x2711) * 0.0005 + 0.0;
 LAB_0047f314:
-  if (*(long *)(lVar1 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -520,14 +504,10 @@ void WaterConcept::IcyHot::addOffsetToMouthWithProbability(Walaber__Vector2 *p0,
 
 {
   int iVar1;
-  long lVar2;
   undefined8 *in_x1;
   Walaber__Vector2 WVar3;
   long lStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (p0[0x75] == p0[0x76]) {
     lStack_40 = (ulong)((int)(p1 * 100.0) - 1) << 0x20;
     if ((ulong)p0[0x7a] <= (ulong)p0[0x79]) goto LAB_0047f468;
@@ -554,10 +534,6 @@ LAB_0047f474:
     *(undefined8 *)WVar3 = *in_x1;
     p0[0x76] = (Walaber__Vector2)((long)WVar3 + 8);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -574,7 +550,6 @@ void WaterConcept::IcyHot::update(float p0)
 {
   int iVar1;
   long lVar2;
-  long lVar3;
   bool bVar4;
   bool bVar5;
   bool bVar6;
@@ -613,10 +588,7 @@ void WaterConcept::IcyHot::update(float p0)
   undefined2 uStack_ca;
   void *pvStack_c8;
   undefined1 auStack_c0 [16];
-  long lStack_b0;
   
-  lVar3 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar3 + 0x28);
   WaterConcept::InteractiveObject::update(p0);
   fVar22 = *(float *)(in_x0 + 0x460) + p0;
   *(float *)(in_x0 + 0x460) = fVar22;
@@ -774,10 +746,6 @@ void WaterConcept::IcyHot::update(float p0)
       std::__ndk1::deque<int, std::__ndk1::allocator<int>>::pop_front(in_x0 + 0x408);
     } while ((iVar19 < iVar10) && (*(long *)(in_x0 + 0x430) != 0));
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -822,18 +790,14 @@ void WaterConcept::IcyHot::particleHasCollided
                (WaterConcept__Fluids *p0,WaterConcept__ParticleDescription *p1,int p2,bool *p3)
 
 {
-  long lVar1;
   long *plVar2;
   int *piVar3;
   undefined1 *in_x4;
   long lVar4;
   undefined4 uStack_58;
   undefined8 uStack_54;
-  long lStack_48;
   
   piVar3 = (int *)(ulong)(uint)p2;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*piVar3 == 0) {
     uStack_58 = 1;
     std::__ndk1::deque<int, std::__ndk1::allocator<int>>::push_back(p0 + 0x102,&uStack_58);
@@ -852,10 +816,6 @@ void WaterConcept::IcyHot::particleHasCollided
     *in_x4 = 0;
     WaterConcept::InteractiveObject::_handleCollision(p0,p1,piVar3);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -870,14 +830,10 @@ void WaterConcept::IcyHot::particleHasCollided
 void WaterConcept::IcyHot::_initFinished(long param_1)
 
 {
-  long lVar1;
   byte abStack_50 [16];
   void *pvStack_40;
   undefined1 auStack_38 [16];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if ((*(int *)(param_1 + 0x444) == 0) && (*(int *)(param_1 + 0x448) == 0)) {
     abStack_50[0xd] = 0;
     abStack_50[0xe] = 0;
@@ -903,10 +859,6 @@ void WaterConcept::IcyHot::_initFinished(long param_1)
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

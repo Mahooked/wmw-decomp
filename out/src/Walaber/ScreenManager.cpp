@@ -12,14 +12,10 @@
 void Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callback> param_1,unsigned int param_2)
 
 {
-  long lVar1;
   undefined4 auStack_40 [2];
   long lStack_38;
   int *piStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_38 = *param_1;
   piStack_30 = (int *)param_1[1];
   if (lStack_38 != 0) {
@@ -29,10 +25,6 @@ void Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callbac
                     /* try { // try from 002b3358 to 002b3367 has its CatchHandler @ 002b3394 */
   std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>(&mLoaderFunctions,auStack_40);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -109,7 +101,6 @@ void Walaber::ScreenManager::beginScreenChanges(Walaber::ScreenManager::ScreenCh
 void Walaber::ScreenManager::pushScreen(uint p0)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -120,10 +111,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
   uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (DAT_00730530 != 0) {
     Walaber::PropertyList::PropertyList(&plStack_70);
     puVar2 = DAT_007304b8;
@@ -170,10 +158,6 @@ void Walaber::ScreenManager::pushScreen(uint p0)
     }
     Walaber::PropertyList::~PropertyList(&plStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -188,7 +172,6 @@ void Walaber::ScreenManager::pushScreen(uint p0)
 void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -199,10 +182,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
   uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (DAT_00730530 != 0) {
     Walaber::PropertyList::PropertyList(&plStack_70);
     uStack_80 = 0x100000000;
@@ -251,10 +231,6 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
     }
     Walaber::PropertyList::~PropertyList(&plStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -269,7 +245,6 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
 void Walaber::ScreenManager::swapScreen(uint p0)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -280,10 +255,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
   uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (DAT_00730530 != 0) {
     Walaber::PropertyList::PropertyList(&plStack_70);
     puVar2 = DAT_007304b8;
@@ -330,10 +302,6 @@ void Walaber::ScreenManager::swapScreen(uint p0)
     }
     Walaber::PropertyList::~PropertyList(&plStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -348,7 +316,6 @@ void Walaber::ScreenManager::swapScreen(uint p0)
 void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -359,10 +326,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
   uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (DAT_00730530 != 0) {
     Walaber::PropertyList::PropertyList(&plStack_70);
     uStack_80 = 0x100000001;
@@ -411,10 +375,6 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
     }
     Walaber::PropertyList::~PropertyList(&plStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -429,7 +389,6 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
 void Walaber::ScreenManager::popScreen(bool p0,bool p1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -441,10 +400,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
   undefined4 uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(&plStack_70);
   puVar2 = DAT_007304b8;
   uStack_80 = 2;
@@ -496,10 +452,6 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
     DAT_007304b8 = DAT_007304b8 + 5;
   }
   Walaber::PropertyList::~PropertyList(&plStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -514,7 +466,6 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
 void Walaber::ScreenManager::popAllScreens(void)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -526,10 +477,7 @@ void Walaber::ScreenManager::popAllScreens(void)
   undefined4 uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(&plStack_70);
   puVar2 = DAT_007304b8;
   uStack_80 = 3;
@@ -574,10 +522,6 @@ void Walaber::ScreenManager::popAllScreens(void)
     DAT_007304b8 = DAT_007304b8 + 5;
   }
   Walaber::PropertyList::~PropertyList(&plStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -592,7 +536,6 @@ void Walaber::ScreenManager::popAllScreens(void)
 void Walaber::ScreenManager::stopFlush(void)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   long *plVar3;
   long *plVar4;
@@ -603,10 +546,7 @@ void Walaber::ScreenManager::stopFlush(void)
   undefined4 uStack_78;
   long *plStack_70;
   long alStack_68 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::PropertyList::PropertyList(&plStack_70);
   puVar2 = DAT_007304b8;
   uStack_80 = 0x100000004;
@@ -650,10 +590,6 @@ void Walaber::ScreenManager::stopFlush(void)
     DAT_007304b8 = DAT_007304b8 + 5;
   }
   Walaber::PropertyList::~PropertyList(&plStack_70);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -683,7 +619,6 @@ void Walaber::ScreenManager::commitScreenChanges(void)
 void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
 
 {
-  long lVar1;
   undefined4 in_register_00005004;
   void *pvStack_60;
   void *pvStack_58;
@@ -691,10 +626,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
   void *pvStack_40;
   undefined8 uStack_38;
   uint uStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   pvStack_48 = (void *)0x0;
   pvStack_40 = (void *)0x0;
   uStack_38 = 0;
@@ -712,10 +644,6 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
     pvStack_40 = pvStack_48;
     operator delete(pvStack_48);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -731,14 +659,10 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
 void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_2)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = *param_2;
   if (param_2[1] != lVar2) {
     uVar3 = 0;
@@ -758,10 +682,6 @@ void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_
       uVar3 = uVar3 + 1;
     } while (uVar3 < (ulong)(param_2[1] - lVar2 >> 2));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -776,7 +696,6 @@ void Walaber::ScreenManager::commitScreenChanges(undefined8 param_1,long *param_
 void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__PropertyList *p2)
 
 {
-  long lVar1;
   undefined4 in_register_00005004;
   void *pvStack_70;
   void *pvStack_68;
@@ -784,10 +703,7 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
   void *pvStack_50;
   undefined8 uStack_48;
   uint uStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pvStack_58 = (void *)0x0;
   pvStack_50 = (void *)0x0;
   uStack_48 = 0;
@@ -805,10 +721,6 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
     pvStack_50 = pvStack_58;
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -825,15 +737,11 @@ void Walaber::ScreenManager::commitScreenChanges
                (undefined8 param_1,long *param_2,undefined8 param_3)
 
 {
-  long lVar1;
   long *plVar2;
   long lVar3;
   ulong uVar4;
   long lStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = *param_2;
   if (param_2[1] != lVar3) {
     uVar4 = 0;
@@ -854,10 +762,6 @@ void Walaber::ScreenManager::commitScreenChanges
       uVar4 = uVar4 + 1;
     } while (uVar4 < (ulong)(param_2[1] - lVar3 >> 2));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -873,7 +777,6 @@ void Walaber::ScreenManager::update(float p0)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   int iVar5;
@@ -885,11 +788,8 @@ void Walaber::ScreenManager::update(float p0)
   undefined4 in_register_00005004;
   undefined8 uVar10;
   float afStack_70 [2];
-  long lStack_68;
   
   uVar10 = CONCAT44(in_register_00005004,p0);
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((DAT_007304b8 != mPrepList) && (mFlushMethod == 0)) {
     Walaber::ScreenManager::_goFlush();
     mFlushMethod = 1;
@@ -968,10 +868,6 @@ void Walaber::ScreenManager::update(float p0)
       }
     }
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -986,7 +882,6 @@ void Walaber::ScreenManager::update(float p0)
 void Walaber::ScreenManager::_goFlush(void)
 
 {
-  long lVar1;
   bool bVar2;
   undefined8 *puVar3;
   long *plVar4;
@@ -1009,10 +904,7 @@ void Walaber::ScreenManager::_goFlush(void)
   undefined8 *puStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar6 = DAT_007304b8;
   lVar10 = mPrepList;
   if (DAT_007304b8 != mPrepList) {
@@ -1242,10 +1134,6 @@ switchD_003f1cd0_caseD_2:
   mFlushMethod = 0;
   DAT_007304b8 = lVar10;
 LAB_003f204c:
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1354,7 +1242,6 @@ void Walaber::ScreenManager::draw(uint param_1)
 void Walaber::ScreenManager::touchDown(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long *plVar4;
@@ -1368,10 +1255,7 @@ void Walaber::ScreenManager::touchDown(int p0,Walaber__Vector2 p1)
   undefined4 uStack_58;
   int iStack_54;
   char cStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fVar5 = (float)_sScreenSize * (float)*(undefined8 *)p1;
   fVar6 = (float)((ulong)_sScreenSize >> 0x20) * (float)((ulong)*(undefined8 *)p1 >> 0x20);
   *(ulong *)p1 = CONCAT44(fVar6,fVar5);
@@ -1398,10 +1282,6 @@ void Walaber::ScreenManager::touchDown(int p0,Walaber__Vector2 p1)
     } while ((uVar2 & 1) == 0);
   }
 LAB_003f2310:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1417,7 +1297,6 @@ LAB_003f2310:
 void Walaber::ScreenManager::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long *plVar4;
@@ -1429,10 +1308,7 @@ void Walaber::ScreenManager::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
   undefined8 uStack_6c;
   int iStack_64;
   char cStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   *(ulong *)p1 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) *
                           (float)((ulong)*(undefined8 *)p1 >> 0x20),
                           (float)_sScreenSize * (float)*(undefined8 *)p1);
@@ -1461,10 +1337,6 @@ void Walaber::ScreenManager::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
     } while ((uVar2 & 1) == 0);
   }
 LAB_003f245c:
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1515,7 +1387,6 @@ void Walaber::ScreenManager::accelerometerChanged(float p0,float p1,float p2)
 void Walaber::ScreenManager::touchUp(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long *plVar4;
@@ -1526,10 +1397,7 @@ void Walaber::ScreenManager::touchUp(int p0,Walaber__Vector2 p1)
   undefined8 uStack_5c;
   int iStack_54;
   char cStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * (float)((ulong)*(undefined8 *)p1 >> 0x20),
                    (float)_sScreenSize * (float)*(undefined8 *)p1);
   *(undefined8 *)p1 = uVar5;
@@ -1554,10 +1422,6 @@ void Walaber::ScreenManager::touchUp(int p0,Walaber__Vector2 p1)
     } while ((uVar2 & 1) == 0);
   }
 LAB_003f2634:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1661,12 +1525,8 @@ long Walaber::ScreenManager::getScreenWithName(uint p0)
 void Walaber::ScreenManager::_pushScreen(Walaber__GameScreen *p0)
 
 {
-  long lVar1;
   Walaber__GameScreen *pWStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pWStack_40 = p0;
   (**(code **)(*(long *)p0 + 0x10))();
   if (DAT_007304a0 != mScreenStack) {
@@ -1679,10 +1539,6 @@ void Walaber::ScreenManager::_pushScreen(Walaber__GameScreen *p0)
     *DAT_007304a0 = p0;
     DAT_007304a0 = DAT_007304a0 + 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

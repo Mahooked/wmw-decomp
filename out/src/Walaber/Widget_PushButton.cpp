@@ -110,7 +110,6 @@ Walaber__Widget_PushButton * Walaber::Widget_PushButton::operator=(Walaber__Widg
 void Walaber::Widget_PushButton::Widget_PushButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined8 *in_x3;
@@ -118,11 +117,8 @@ void Walaber::Widget_PushButton::Widget_PushButton(int p0,Walaber__Vector2 p1,Wa
   void *pvStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *(undefined8 *)p2;
   uStack_58 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,1,&uStack_50,&uStack_58,1,1);
@@ -180,10 +176,6 @@ void Walaber::Widget_PushButton::Widget_PushButton(int p0,Walaber__Vector2 p1,Wa
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -235,7 +227,6 @@ void Walaber::Widget_PushButton::Widget_PushButton
                long *param_5,byte param_6)
 
 {
-  long lVar1;
   undefined8 uVar2;
   int *piVar3;
   long lVar4;
@@ -244,10 +235,7 @@ void Walaber::Widget_PushButton::Widget_PushButton
   void *pvStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *param_3;
   uStack_58 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,1,&uStack_50,&uStack_58,1,1);
@@ -319,10 +307,6 @@ void Walaber::Widget_PushButton::Widget_PushButton
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar5 - (float)uVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -342,17 +326,13 @@ void Walaber::Widget_PushButton::Widget_PushButton
                long *param_5,byte param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_60 = *param_3;
   uStack_68 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,1,&uStack_60,&uStack_68,1,1);
@@ -401,10 +381,6 @@ void Walaber::Widget_PushButton::Widget_PushButton
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -419,17 +395,13 @@ void Walaber::Widget_PushButton::Widget_PushButton
 void Walaber::Widget_PushButton::_resizeFont(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   float fStack_58;
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(long *)(param_1 + 0xe8) != 0) {
     Walaber::BitmapFont::measureString(&fStack_58,0x3f800000,*(long *)(param_1 + 0xe8),param_1 + 0x178);
     *(undefined4 *)(param_1 + 0x174) = 0x3f800000;
@@ -450,10 +422,6 @@ void Walaber::Widget_PushButton::_resizeFont(long param_1)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -474,17 +442,13 @@ void Walaber::Widget_PushButton::Widget_PushButton
                long *param_5,long *param_6,byte param_7,undefined8 param_8,undefined8 param_9)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_60 = *param_3;
   uStack_68 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,1,&uStack_60,&uStack_68,1,1);
@@ -547,10 +511,6 @@ void Walaber::Widget_PushButton::Widget_PushButton
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -731,7 +691,6 @@ void Walaber::Widget_PushButton::draw(Walaber__SpriteBatch *p0)
   undefined4 *puVar3;
   byte bVar4;
   long lVar5;
-  long lVar6;
   int iVar7;
   long lVar8;
   uint *puVar9;
@@ -764,10 +723,7 @@ void Walaber::Widget_PushButton::draw(Walaber__SpriteBatch *p0)
   byte bStack_7e;
   byte bStack_7d;
   float fStack_7c;
-  long lStack_78;
   
-  lVar6 = tpidr_el0;
-  lStack_78 = *(long *)(lVar6 + 0x28);
   lVar8._0_4_ = p0[4].f_0x20;
   lVar8._4_4_ = p0[4].f_0x24;
   if ((lVar8 == 0) || (**(int **)&p0[4].f_0x28 == 0)) goto LAB_00384224;
@@ -927,10 +883,6 @@ LAB_00384094:
   }
 LAB_00384224:
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar6 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -963,15 +915,11 @@ void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0)
 void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0,float p1)
 
 {
-  long lVar1;
   float *in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_40);
   fVar2 = *(float *)((long)p0 + 0x94);
   Walaber::Node::getWorldScale(&fStack_40,p0);
@@ -980,10 +928,6 @@ void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0,float p1)
   *(float *)((long)p0 + 0x140) = *in_x1;
   *(float *)((long)p0 + 0x144) = fVar2;
   Walaber::Widget_PushButton::_applyTile(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1033,17 +977,13 @@ void Walaber::Widget_PushButton::setTileAnimation(Walaber__Vector2 p0)
 void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 in_x1;
   undefined8 *puVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   puVar3 = *(undefined8 **)&p0[1].field_0x28;
   uStack_40 = in_x1;
   if (*(undefined8 **)&p0[1].field_0x20 == puVar3) {
@@ -1063,10 +1003,6 @@ void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0)
     *(long *)&p0[1].field_0x28 = *(long *)&p0[1].field_0x28 + 8;
   }
   Walaber::Widget_Group::addWidget(*(undefined8 *)&p0[1].field_0x38,uStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1081,22 +1017,14 @@ void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0)
 void Walaber::Widget_PushButton::setLocalPosition(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (p0[0x38] != (Walaber__Vector2)0x0) {
     uStack_40 = *in_x1;
     Walaber::Widget_Group::setLocalPosition(p0[0x38],&uStack_40);
   }
   Walaber::Widget::setLocalPosition(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

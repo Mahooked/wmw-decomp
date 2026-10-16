@@ -14,16 +14,12 @@ void std::__ndk1::__num_get_unsigned_integral<unsigned_short>(char *p0,char *p1,
 
 {
   char cVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   int *piVar5;
   ulong uVar6;
   char *pcStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   if ((p0 != p1) && ((cVar1 = *p0, cVar1 != '-' || (p0 = p0 + 1, p0 != p1)))) {
     piVar5 = (int *)__errno();
     iVar3 = *piVar5;
@@ -55,10 +51,6 @@ void std::__ndk1::__num_get_unsigned_integral<unsigned_short>(char *p0,char *p1,
   *p2 = 4;
   iVar3 = 0;
 LAB_005e182c:
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail(iVar3);
-    return;
-  }
   return;
 }
 

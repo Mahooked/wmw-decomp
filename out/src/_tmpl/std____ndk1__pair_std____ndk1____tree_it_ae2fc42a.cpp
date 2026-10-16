@@ -22,14 +22,10 @@ long std::__ndk1::
 {
   bool bVar1;
   long *plVar2;
-  long lVar3;
   undefined8 *in_x2;
   long lVar4;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   plVar2 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<WaterConcept::GridCell, std::__ndk1::less<WaterConcept::GridCell>, std::__ndk1::allocator<WaterConcept::GridCell>>::__find_equal<WaterConcept::GridCell>(p0,&uStack_50,p1);
   lVar4 = *plVar2;
   bVar1 = lVar4 == 0;
@@ -37,10 +33,6 @@ long std::__ndk1::
     lVar4 = operator new(0x28);
     *(undefined8 *)(lVar4 + 0x1c) = *in_x2;
     plVar2 = (long *)std::__ndk1::__tree<WaterConcept::GridCell, std::__ndk1::less<WaterConcept::GridCell>, std::__ndk1::allocator<WaterConcept::GridCell>>::__insert_node_at(p0,uStack_50,plVar2,lVar4);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    lVar3 = __stack_chk_fail(plVar2,bVar1);
-    return lVar3;
   }
   return lVar4;
 }

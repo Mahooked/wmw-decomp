@@ -14,8 +14,6 @@ void Walaber::Logger::printf
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -27,8 +25,6 @@ void Walaber::Logger::printf
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   uStack_98 = param_4;
   uStack_90 = param_5;
   uStack_88 = param_6;
@@ -41,10 +37,6 @@ void Walaber::Logger::printf
     puStack_70 = (undefined1 *)register0x00000008;
     __android_log_vprint(*(undefined4 *)(&DAT_006348a0 + (long)param_2 * 4),param_1,param_3,&puStack_70);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

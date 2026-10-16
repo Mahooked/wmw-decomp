@@ -16,16 +16,12 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 
 {
   int *piVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   long lVar5;
   undefined1 auStack_58 [8];
   long *plStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   auStack_58[0] = 0;
   plVar4 = (long *)(*param_1 + -0x18);
   plStack_50 = param_1;
@@ -85,10 +81,6 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
     }
   }
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_58);
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    plVar4 = (long *)__stack_chk_fail();
-    return plVar4;
-  }
   return param_1;
 }
 

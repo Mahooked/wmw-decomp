@@ -31,15 +31,11 @@ long std::__ndk1::
 {
   bool bVar1;
   long *plVar2;
-  long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uVar6;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   plVar2 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__find_equal<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&uStack_50,param_2);
   lVar4 = *plVar2;
   bVar1 = lVar4 == 0;
@@ -54,10 +50,6 @@ long std::__ndk1::
     param_3[2] = 0;
     *param_3 = 0;
     plVar2 = (long *)std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__insert_node_at(param_1,uStack_50,plVar2,lVar4);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    lVar3 = __stack_chk_fail(plVar2,bVar1);
-    return lVar3;
   }
   return lVar4;
 }
@@ -91,15 +83,11 @@ void std::__ndk1::
 
 {
   bool bVar1;
-  long lVar2;
   long *plVar3;
   long lVar4;
   undefined8 uStack_58;
   long alStack_50 [3];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar3 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__find_equal<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&uStack_58,param_2);
   lVar4 = *plVar3;
   bVar1 = lVar4 == 0;
@@ -107,10 +95,6 @@ void std::__ndk1::
     std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, void*>>>> std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__construct_node<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>(alStack_50,param_1,param_3);
     std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__insert_node_at(param_1,uStack_58,plVar3,alStack_50[0]);
     lVar4 = alStack_50[0];
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail(lVar4,bVar1);
-    return;
   }
   return;
 }

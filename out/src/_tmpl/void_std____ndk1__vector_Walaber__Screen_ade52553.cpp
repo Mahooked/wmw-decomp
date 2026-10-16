@@ -20,7 +20,6 @@ void std::__ndk1::
 {
   ulong uVar1;
   undefined8 *puVar2;
-  long lVar3;
   undefined8 *in_x1;
   long lVar4;
   ulong uVar5;
@@ -33,10 +32,7 @@ void std::__ndk1::
   long *plVar12;
   undefined1 auStack_70 [16];
   undefined8 *puStack_60;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   lVar4 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar4 + 1;
   if (0x666666666666666 < uVar1) {
@@ -88,10 +84,6 @@ void std::__ndk1::
                     /* try { // try from 003f2d28 to 003f2d33 has its CatchHandler @ 003f2d70 */
   std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(p0,auStack_70);
   std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(auStack_70);
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

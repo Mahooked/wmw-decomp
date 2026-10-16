@@ -13,7 +13,6 @@ void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,W
 
 {
   long lVar1;
-  long lVar2;
   undefined8 *in_x2;
   long lVar3;
   undefined4 in_register_00005004;
@@ -37,10 +36,7 @@ void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,W
   undefined1 auStack_68 [16];
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uStack_50 = *(undefined8 *)p2;
   uStack_58 = *in_x2;
   WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_50,&uStack_58,0,0);
@@ -203,10 +199,6 @@ void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,W
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pcStack_70);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -267,7 +259,6 @@ void WaterConcept::FluidConverter::setProperties(Walaber__PropertyList *p0)
 
 {
   Walaber__PropertyList *pWVar1;
-  long lVar2;
   int iVar3;
   undefined4 uVar4;
   float fVar5;
@@ -305,10 +296,7 @@ void WaterConcept::FluidConverter::setProperties(Walaber__PropertyList *p0)
   undefined1 uStack_70;
   undefined2 uStack_6f;
   undefined5 uStack_6d;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   WaterConcept::InteractiveObject::setProperties();
   uStack_b1 = 0;
   uStack_b0 = 0;
@@ -819,10 +807,6 @@ LAB_0047d3d0:
     p0[0x27].f_0x10 = uVar7;
     WaterConcept::FluidConverter::addFluidType(0,p0,1);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -837,14 +821,10 @@ LAB_0047d3d0:
 void WaterConcept::FluidConverter::addFluidType(WaterConceptConstants__FluidType p0,float p1)
 
 {
-  long lVar1;
   undefined4 in_w1;
   undefined1 auStack_30 [4];
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   fStack_2c = p1;
   if (*(undefined8 **)(p0.f_0x0 + 0x3b8) < *(undefined8 **)(p0.f_0x0 + 0x3c0)) {
     **(undefined8 **)(p0.f_0x0 + 0x3b8) = CONCAT44(p1,in_w1);
@@ -853,10 +833,6 @@ void WaterConcept::FluidConverter::addFluidType(WaterConceptConstants__FluidType
   else {
     void std::__ndk1::vector<std::__ndk1::pair<WaterConceptConstants::FluidType, float>, std::__ndk1::allocator<std::__ndk1::pair<WaterConceptConstants::FluidType, float>>>::__push_back_slow_path<std::__ndk1::pair<WaterConceptConstants::FluidType, float>>(p0.f_0x0 + 0x3b0,auStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1007,17 +983,13 @@ switchD_0047dd78_default:
 void WaterConcept::FluidConverter::_updateHandleSprite(long param_1)
 
 {
-  long lVar1;
   long *plVar2;
   float fVar3;
   float fVar4;
   undefined4 uVar5;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar5 = *(undefined4 *)(param_1 + 0x448);
   fVar3 = (float)cosf(uVar5);
   fVar4 = (float)sinf(uVar5);
@@ -1027,10 +999,6 @@ void WaterConcept::FluidConverter::_updateHandleSprite(long param_1)
   (**(code **)(*plVar2 + 0x10))(plVar2,&fStack_50);
   plVar2 = *(long **)(*(long *)(param_1 + 400) + (long)*(int *)(param_1 + 0x43c) * 0x28);
   (**(code **)(*plVar2 + 0x20))(plVar2,param_1 + 0x448);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1106,7 +1074,6 @@ void WaterConcept::FluidConverter::_updateFluidSprite(int p0)
 void WaterConcept::FluidConverter::_initFinished(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -1116,10 +1083,7 @@ void WaterConcept::FluidConverter::_initFinished(long param_1)
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00711bd8;
@@ -1145,10 +1109,6 @@ void WaterConcept::FluidConverter::_initFinished(long param_1)
   *(undefined8 *)(param_1 + 0x440) = uVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::FluidConverter>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1164,7 +1124,6 @@ void WaterConcept::FluidConverter::_animationEvent(void *p0)
 
 {
   ulong uVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   long in_x1;
@@ -1172,10 +1131,7 @@ void WaterConcept::FluidConverter::_animationEvent(void *p0)
   byte abStack_50 [8];
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (*(int *)(in_x1 + 0x18) == 4) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,*(undefined8 *)(in_x1 + 8));
     uVar1 = (ulong)(abStack_50[0] >> 1);
@@ -1233,10 +1189,6 @@ void WaterConcept::FluidConverter::_animationEvent(void *p0)
       }
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1254,7 +1206,6 @@ void WaterConcept::FluidConverter::draw(Walaber__SpriteBatch *p0,bool p1,float p
   undefined4 *puVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   long *plVar6;
   undefined8 uVar7;
@@ -1273,11 +1224,8 @@ void WaterConcept::FluidConverter::draw(Walaber__SpriteBatch *p0,bool p1,float p
   int *piStack_60;
   undefined1 auStack_58 [8];
   int *piStack_50;
-  long lStack_48;
   
   puVar8 = auStack_90;
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   if (p0[0x10].f_0x28 == 1) {
     plVar6 = *(long **)(*(long *)&p0[7].field_0x8 + (long)*(int *)&p0[0x13].field_0x14 * 0x28);
     (**(code **)(*plVar6 + 0x48))(plVar6,p1);
@@ -1351,10 +1299,6 @@ void WaterConcept::FluidConverter::draw(Walaber__SpriteBatch *p0,bool p1,float p
   else {
     WaterConcept::InteractiveObject::draw(0x3e4ccccd,p0,p1,0);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

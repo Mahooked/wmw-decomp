@@ -39,10 +39,8 @@ void std::__ndk1::
   undefined8 uVar4;
   byte bVar5;
   byte bVar6;
-  long lVar7;
   bool bVar8;
   byte *pbVar9;
-  long lVar10;
   undefined8 uVar11;
   undefined8 uVar12;
   ulong uVar13;
@@ -58,8 +56,6 @@ void std::__ndk1::
   undefined1 uStack_71;
   undefined7 uStack_70;
   
-  lVar7 = tpidr_el0;
-  lVar10 = *(long *)(lVar7 + 0x28);
   if (1 < param_6) {
     uVar16 = param_6 - 1U;
     if (-1 < (long)(param_6 - 2U)) {
@@ -320,10 +316,6 @@ void std::__ndk1::
       *(undefined8 *)(pbVar9 + 0x38) = uVar12;
     }
   }
-  if (*(long *)(lVar7 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

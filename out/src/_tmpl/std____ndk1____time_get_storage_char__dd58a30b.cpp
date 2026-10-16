@@ -12,17 +12,13 @@
 void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
 
 {
-  long lVar1;
   undefined **ppuVar2;
   ulong p1;
   undefined **appuStack_60 [2];
   void *pvStack_50;
   char cStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::__time_get::__time_get();
   memset(p0 + 8,0,0x420);
                     /* try { // try from 005c1f80 to 005c1f8f has its CatchHandler @ 005c2084 */
@@ -42,10 +38,6 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
   }
   appuStack_60[0] = ppuVar2;
   std::__ndk1::__shared_count::~__shared_count(appuStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -377,7 +369,6 @@ void std::__ndk1::__time_get_storage<char>::__analyze(char p0,std____ndk1__ctype
   byte *pbVar1;
   byte *pbVar2;
   byte bVar3;
-  long lVar4;
   uint uVar5;
   uint uVar6;
   ulong uVar7;
@@ -387,7 +378,6 @@ void std::__ndk1::__time_get_storage<char>::__analyze(char p0,std____ndk1__ctype
   byte *in_x8;
   byte *pbVar10;
   ulong uVar11;
-  long lVar12;
   long lVar13;
   int iVar14;
   byte *pbVar15;
@@ -405,8 +395,6 @@ void std::__ndk1::__time_get_storage<char>::__analyze(char p0,std____ndk1__ctype
   byte abStack_dc [124];
   
   uVar7 = (ulong)(byte)p0;
-  lVar4 = tpidr_el0;
-  lVar12 = *(long *)(lVar4 + 0x28);
   uStack_f8 = 0;
   uStack_100 = 0xffffffff;
   uStack_f0 = 0;
@@ -673,10 +661,6 @@ LAB_005ddfd0:
       pbVar15 = pbVar16;
     } while (pbVar2 != pbVar16);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar12) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -692,7 +676,6 @@ void std::__ndk1::__time_get_storage<char>::init(std____ndk1__ctype<char> *p0)
 
 {
   byte bVar1;
-  long lVar2;
   uchar *puVar3;
   long lVar4;
   ulong uStack_110;
@@ -706,10 +689,7 @@ void std::__ndk1::__time_get_storage<char>::init(std____ndk1__ctype<char> *p0)
   undefined8 uStack_d0;
   undefined8 uStack_c8;
   undefined1 auStack_bc [100];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uStack_c8 = 0;
   uStack_d0 = 0;
   uStack_d8 = 0;
@@ -840,10 +820,6 @@ void std::__ndk1::__time_get_storage<char>::init(std____ndk1__ctype<char> *p0)
   p0[0x20]._tail = uStack_108._1_1_;
   *(undefined6 *)&p0[0x20].field_0x1a = uStack_108._2_6_;
   p0[0x20].f_0x10 = uStack_110;
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

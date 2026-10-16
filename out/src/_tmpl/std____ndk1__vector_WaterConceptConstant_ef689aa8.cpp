@@ -15,7 +15,6 @@ void std::__ndk1::
      ::reserve(ulong p0)
 
 {
-  long lVar1;
   ulong in_x1;
   void *pvVar2;
   undefined8 uVar3;
@@ -23,10 +22,7 @@ void std::__ndk1::
   void *pvStack_48;
   void *pvStack_40;
   undefined8 uStack_38;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 2) < in_x1) {
     std::__ndk1::__split_buffer<WaterConceptConstants::MaterialType, std::__ndk1::allocator<WaterConceptConstants::MaterialType>&>::__split_buffer(&pvStack_50,in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 2,p0 + 0x10);
     pvStack_50 = *(void **)p0;
@@ -52,10 +48,6 @@ void std::__ndk1::
       operator delete(pvStack_50);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

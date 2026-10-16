@@ -14,23 +14,15 @@ void std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_out
                (mbstate_t *p0,wchar_t *p1,wchar_t *p2,wchar_t **p3,char *p4,char *p5,char **p6)
 
 {
-  long lVar1;
   undefined8 *in_x7;
   char *pcStack_48;
   wchar_t *pwStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_48 = p5;
   pwStack_40 = p2;
   func_0x005db5ac(p2,p3,&pwStack_40,p5,p6,&pcStack_48,p0[3],p0[4].__count);
   *(wchar_t **)p4 = pwStack_40;
   *in_x7 = pcStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -47,23 +39,15 @@ void std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_in
                (mbstate_t *p0,char *p1,char *p2,char **p3,wchar_t *p4,wchar_t *p5,wchar_t **p6)
 
 {
-  long lVar1;
   undefined8 *in_x7;
   wchar_t *pwStack_48;
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pwStack_48 = p5;
   pcStack_40 = p2;
   func_0x005db8bc(p2,p3,&pcStack_40,p5,p6,&pwStack_48,p0[3],p0[4].__count);
   *(char **)p4 = pcStack_40;
   *in_x7 = pwStack_48;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

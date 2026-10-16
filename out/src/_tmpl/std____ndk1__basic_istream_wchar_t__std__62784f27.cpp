@@ -16,7 +16,6 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
 
 {
   long lVar1;
-  long lVar2;
   undefined4 uVar3;
   int iVar4;
   long *plVar5;
@@ -24,10 +23,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::sent
   long *plVar7;
   long *plVar8;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   *param_1 = 0;
   lVar1 = (long)param_2 + *(long *)(*param_2 + -0x18);
   if (*(uint *)(lVar1 + 0x20) != 0) {
@@ -89,10 +85,6 @@ LAB_005a9040:
 LAB_005a9074:
   *param_1 = *(int *)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x20) == 0;
 LAB_005a9090:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

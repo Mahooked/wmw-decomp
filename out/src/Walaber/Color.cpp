@@ -202,14 +202,10 @@ void Walaber::Color::getClosestColor(Walaber__Color *p0,int *p1,Walaber__Color *
 void Walaber::Color::parseColorFromString(byte *param_1,byte *param_2)
 
 {
-  long lVar1;
   int iStack_34;
   int iStack_30;
   int iStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   param_1[0] = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -234,10 +230,6 @@ void Walaber::Color::parseColorFromString(byte *param_1,byte *param_2)
   *param_1 = (byte)iStack_2c & ((byte)(iStack_2c >> 0x1f) ^ 0xff);
   param_1[1] = (byte)iStack_30 & ((byte)(iStack_30 >> 0x1f) ^ 0xff);
   param_1[2] = (byte)iStack_34 & ((byte)(iStack_34 >> 0x1f) ^ 0xff);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -253,16 +245,12 @@ void Walaber::Color::parseColorFromString(byte *param_1,byte *param_2)
 void Walaber::Color::parseColorFromStringRGBA(byte *param_1,byte *param_2)
 
 {
-  long lVar1;
   byte *pbVar2;
   int iStack_38;
   int iStack_34;
   int iStack_30;
   int iStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   pbVar2 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar2 = param_2 + 1;
@@ -284,10 +272,6 @@ void Walaber::Color::parseColorFromStringRGBA(byte *param_1,byte *param_2)
   param_1[1] = (byte)iStack_30 & ((byte)(iStack_30 >> 0x1f) ^ 0xff);
   param_1[2] = (byte)iStack_34 & ((byte)(iStack_34 >> 0x1f) ^ 0xff);
   param_1[3] = (byte)iStack_38 & ((byte)(iStack_38 >> 0x1f) ^ 0xff);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

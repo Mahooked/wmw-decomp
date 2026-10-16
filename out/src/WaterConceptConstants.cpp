@@ -13,7 +13,6 @@
 ulong WaterConceptConstants::stringToFluidType(void)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
@@ -21,10 +20,7 @@ ulong WaterConceptConstants::stringToFluidType(void)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar5;
@@ -137,10 +133,6 @@ LAB_0040ba5c:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return (ulong)uVar4;
 }
 
@@ -156,7 +148,6 @@ LAB_0040ba5c:
 undefined1  [16] WaterConceptConstants::stringToDryness(void)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   undefined1 auVar4 [16];
@@ -165,10 +156,7 @@ undefined1  [16] WaterConceptConstants::stringToDryness(void)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   if ((abStack_40[0] & 1) != 0) {
@@ -191,12 +179,6 @@ undefined1  [16] WaterConceptConstants::stringToDryness(void)
     uVar6 = 0;
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    auVar4._8_8_ = uVar6;
-    auVar4._0_8_ = uVar5;
-    return auVar4;
-  }
-  auVar4 = __stack_chk_fail();
   return auVar4;
 }
 
@@ -213,7 +195,6 @@ ulong WaterConceptConstants::strToStoryline(byte *param_1)
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   ulong uVar4;
   uint uVar5;
@@ -221,10 +202,7 @@ ulong WaterConceptConstants::strToStoryline(byte *param_1)
   ulong uVar7;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   bVar1 = *param_1;
   uVar6 = *(ulong *)(param_1 + 8);
@@ -292,10 +270,6 @@ LAB_0040bbf4:
 LAB_0040bcc4:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_28) {
-    uVar4 = __stack_chk_fail();
-    return uVar4;
   }
   return (ulong)uVar5;
 }

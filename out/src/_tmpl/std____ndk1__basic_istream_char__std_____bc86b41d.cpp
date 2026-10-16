@@ -16,7 +16,6 @@ long * std::__ndk1::operator>>(long *param_1,byte *param_2)
 
 {
   uint uVar1;
-  long lVar2;
   uint uVar3;
   long *plVar4;
   long lVar5;
@@ -24,10 +23,7 @@ long * std::__ndk1::operator>>(long *param_1,byte *param_2)
   long lVar7;
   undefined1 auStack_68 [8];
   char acStack_60 [8];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
                     /* try { // try from 00402f94 to 00402fd3 has its CatchHandler @ 00403164 */
   std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_60,param_1,0);
   if (acStack_60[0] == '\0') {
@@ -108,10 +104,6 @@ LAB_004030e0:
                     /* try { // try from 0040310c to 0040310f has its CatchHandler @ 0040314c */
     std::__ndk1::ios_base::clear(lVar6,*(uint *)(lVar6 + 0x20) | uVar1);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return param_1;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 

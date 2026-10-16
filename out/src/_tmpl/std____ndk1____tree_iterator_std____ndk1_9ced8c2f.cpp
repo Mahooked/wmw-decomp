@@ -29,22 +29,14 @@ void std::__ndk1::
                (std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>&& param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_58;
   long alStack_50 [3];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__construct_node<std::__ndk1::pair<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>(alStack_50);
                     /* try { // try from 003570d4 to 003570df has its CatchHandler @ 0035711c */
   uVar2 = std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__find_leaf_high(param_1,&uStack_58,alStack_50[0] + 0x20);
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::__map_value_compare<std::__ndk1::pair<int, int>, std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>, std::__ndk1::less<std::__ndk1::pair<int, int>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::pair<int, int>, Walaber::SoundManager::GotSoundCallbackData>>>::__insert_node_at(param_1,uStack_58,uVar2,alStack_50[0]);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(alStack_50[0]);
   return;
 }
 

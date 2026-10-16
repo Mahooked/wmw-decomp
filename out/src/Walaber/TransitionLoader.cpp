@@ -65,16 +65,12 @@ switchD_003f3e0c_default:
 void Walaber::TransitionLoader::createTransition(uint p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 *puVar3;
   undefined8 *puVar4;
   uint auStack_48 [2];
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   puVar3 = mTransitionFunctions;
   if (mTransitionFunctions != DAT_00730558) {
     do {
@@ -89,10 +85,6 @@ void Walaber::TransitionLoader::createTransition(uint p0)
   }
   lVar2 = 0;
 LAB_003f3fbc:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(lVar2);
-    return;
-  }
   return;
 }
 

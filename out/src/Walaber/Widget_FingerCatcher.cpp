@@ -57,16 +57,12 @@ void Walaber::Widget_FingerCatcher::Widget_FingerCatcher
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0x11,&uStack_30,&uStack_38,1,1);
@@ -80,10 +76,6 @@ void Walaber::Widget_FingerCatcher::Widget_FingerCatcher
   puVar2[0x20] = puVar2 + 0x21;
   puVar2[0x21] = 0;
   *puVar2 = &PTR__Widget_FingerCatcher_0070eed8;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -183,17 +175,13 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerDown(int p0,Walaber__Fi
 undefined8 Walaber::Widget_FingerCatcher::_acceptFinger(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   long in_x2;
   undefined4 uStack_5c;
   undefined1 auStack_58 [8];
   undefined4 *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_5c = SUB84(p1,0);
   puStack_50 = &uStack_5c;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((ulong)(uint)p0 + 0x100,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
@@ -202,10 +190,6 @@ undefined8 Walaber::Widget_FingerCatcher::_acceptFinger(int p0,Walaber__FingerIn
   puStack_50 = &uStack_5c;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((ulong)(uint)p0 + 0x118,&uStack_5c,&DAT_0062c631,&puStack_50,auStack_58);
   *(undefined8 *)(lVar2 + 0x20) = *(undefined8 *)(in_x2 + 4);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return 1;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -238,7 +222,6 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerEntered(int p0,Walaber_
 undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   undefined8 uVar4;
@@ -247,11 +230,8 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__Fi
   int iStack_4c;
   undefined1 auStack_48 [8];
   int *piStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   piStack_40 = &iStack_4c;
   iStack_4c = (int)p1;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(uVar2 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
@@ -269,10 +249,6 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__Fi
       *(int *)(lVar5 + 0x28) = *(int *)(lVar5 + 0x28) + 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return 0;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -287,7 +263,6 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__Fi
 undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   undefined8 uVar4;
@@ -296,11 +271,8 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__Fin
   int iStack_4c;
   undefined1 auStack_48 [8];
   int *piStack_40;
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   piStack_40 = &iStack_4c;
   iStack_4c = (int)p1;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(uVar2 + 0x118,&iStack_4c,&DAT_0062c631,&piStack_40,auStack_48);
@@ -318,10 +290,6 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__Fin
       *(int *)(lVar5 + 0x28) = *(int *)(lVar5 + 0x28) + 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return 0;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 
@@ -351,7 +319,6 @@ void Walaber::Widget_FingerCatcher::releaseFingerUp(int p0,Walaber__FingerInfo *
 undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   long *plVar3;
   undefined8 uVar4;
@@ -362,11 +329,8 @@ undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerI
   int iStack_5c;
   undefined1 auStack_58 [8];
   int *piStack_50;
-  long lStack_48;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar5 = (int)p1;
   lVar7 = *(long *)(uVar2 + 0x108);
   iStack_5c = iVar5;
@@ -393,10 +357,6 @@ undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerI
   piStack_50 = &iStack_5c;
   lVar7 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Vector2>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(uVar2 + 0x118,&iStack_5c,&DAT_0062c631,&piStack_50,auStack_58);
   *(undefined8 *)(lVar7 + 0x20) = *(undefined8 *)(in_x2 + 4);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return 1;
-  }
-  uVar4 = __stack_chk_fail();
   return uVar4;
 }
 

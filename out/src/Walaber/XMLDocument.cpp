@@ -13,7 +13,6 @@
 void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,long *param_3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -29,10 +28,7 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   undefined1 auStack_70 [24];
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   lVar5 = *param_3;
@@ -77,10 +73,6 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_80);
   Walaber::PropertyList::~PropertyList(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -97,7 +89,6 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
 {
   undefined8 uVar1;
   undefined8 uVar2;
-  long lVar3;
   ulong uVar4;
   long *plVar5;
   long in_x1;
@@ -107,10 +98,7 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
   ulong extraout_x1_02;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   if (*(long *)(in_x1 + 0x20) != 0) {
     uVar4 = Walaber::PropertyList::keyExists(*(undefined8 *)(in_x1 + 0x60),&ROOT_NODE_NAME_KEY);
     uVar1 = *(undefined8 *)(in_x1 + 0x20);
@@ -140,10 +128,6 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
       operator delete[](*(void **)(in_x1 + 0x20),uVar4);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -162,7 +146,6 @@ void Walaber::XMLDocument::XMLDocument
                (undefined8 *param_1,undefined8 param_2,undefined8 param_3,long *param_4)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -178,10 +161,7 @@ void Walaber::XMLDocument::XMLDocument
   undefined8 *puStack_80;
   int *piStack_78;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   lVar5 = *param_4;
@@ -231,10 +211,6 @@ void Walaber::XMLDocument::XMLDocument
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_90);
   Walaber::PropertyList::~PropertyList(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -347,14 +323,10 @@ void Walaber::XMLDocument::_buildXMLObject
                (long param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_4);
                     /* try { // try from 003d712c to 003d713f has its CatchHandler @ 003d717c */
   uVar2 = Walaber::XML::loadDocMemory(param_2,param_3,abStack_50,param_1);
@@ -362,10 +334,6 @@ void Walaber::XMLDocument::_buildXMLObject
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

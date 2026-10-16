@@ -59,7 +59,6 @@ void WaterConcept::ShowerCurtain::init
 
 {
   undefined1 auVar1 [16];
-  long lVar2;
   float *pfVar3;
   float *in_x3;
   float fVar4;
@@ -74,12 +73,9 @@ void WaterConcept::ShowerCurtain::init
   float fStack_98;
   float fStack_94;
   undefined4 uStack_8c;
-  long lStack_88;
   
   fVar9 = DAT_0072d894;
   pfVar3 = (float *)(ulong)(uint)p2;
-  lVar2 = tpidr_el0;
-  lStack_88 = *(long *)(lVar2 + 0x28);
   *pfVar3 = p0;
   pfVar3[1] = p1;
   fVar4 = (float)((int)p4 + 1);
@@ -131,10 +127,6 @@ void WaterConcept::ShowerCurtain::init
   }
   uVar11 = operator new[](lVar5);
   *(undefined8 *)(pfVar3 + 0x2a) = uVar11;
-  if (*(long *)(lVar2 + 0x28) != lStack_88) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -462,7 +454,6 @@ void WaterConcept::ShowerCurtain::draw(Walaber__SpriteBatch *p0)
   int iVar1;
   undefined4 uVar2;
   undefined4 uVar3;
-  long lVar4;
   uint uVar5;
   undefined4 *puVar6;
   long lVar7;
@@ -478,10 +469,7 @@ void WaterConcept::ShowerCurtain::draw(Walaber__SpriteBatch *p0)
   float fVar17;
   float fVar18;
   undefined4 auStack_b0 [2];
-  long lStack_a8;
   
-  lVar4 = tpidr_el0;
-  lStack_a8 = *(long *)(lVar4 + 0x28);
   uVar5 = p0->f_0x18;
   if (1 < (int)uVar5) {
     lVar7 = *(long *)&p0[2].f_0x18;
@@ -565,10 +553,6 @@ void WaterConcept::ShowerCurtain::draw(Walaber__SpriteBatch *p0)
   Walaber::GraphicsGL::disableVertexClientState();
   Walaber::GraphicsGL::disableTextureClientState();
   Walaber::GraphicsGL::disableColorClientState();
-  if (*(long *)(lVar4 + 0x28) != lStack_a8) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

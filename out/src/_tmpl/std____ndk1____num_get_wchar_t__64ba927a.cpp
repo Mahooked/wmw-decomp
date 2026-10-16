@@ -209,14 +209,10 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
                (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
 
 {
-  long lVar1;
   wchar_t wVar2;
   long *plVar3;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_50);
                     /* try { // try from 005b9d0c to 005b9d37 has its CatchHandler @ 005b9db8 */
   plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_50,&ctype<wchar_t>::id);
@@ -229,10 +225,6 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_float_prep
   *p3 = wVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);
   std::__ndk1::__shared_count::__release_shared(uStack_50);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -456,14 +448,10 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
                (std____ndk1__ios_base *p0,wchar_t *p1,wchar_t *p2)
 
 {
-  long lVar1;
   wchar_t wVar2;
   long *plVar3;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_40);
                     /* try { // try from 005ba290 to 005ba2bb has its CatchHandler @ 005ba324 */
   plVar3 = (long *)std::__ndk1::locale::use_facet(&uStack_40,&ctype<wchar_t>::id);
@@ -474,10 +462,6 @@ void std::__ndk1::__num_get<wchar_t>::__stage2_int_prep
   *p2 = wVar2;
   (**(code **)(*plVar3 + 0x28))(plVar3);
   std::__ndk1::__shared_count::__release_shared(uStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

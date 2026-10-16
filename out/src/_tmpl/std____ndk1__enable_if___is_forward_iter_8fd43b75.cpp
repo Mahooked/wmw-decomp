@@ -21,7 +21,6 @@ long std::__ndk1::
   byte bVar1;
   undefined8 *puVar2;
   void *pvVar3;
-  long lVar4;
   long lVar5;
   undefined4 *puVar6;
   ulong uVar7;
@@ -38,10 +37,7 @@ long std::__ndk1::
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   bVar1 = (byte)*param_1;
   if ((bVar1 & 1) == 0) {
     uVar9 = (long)param_1 + 4;
@@ -156,10 +152,6 @@ LAB_005e8e04:
   }
   lVar12 = uVar9 + lVar12 * 4;
 LAB_005e8e1c:
-  if (*(long *)(lVar4 + 0x28) != lStack_58) {
-    lVar4 = __stack_chk_fail();
-    return lVar4;
-  }
   return lVar12;
 }
 

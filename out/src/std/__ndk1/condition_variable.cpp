@@ -91,14 +91,10 @@ void std::__ndk1::condition_variable::__do_timed_wait
                (undefined8 param_1,undefined8 *param_2,long param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_2 + 1) == '\0') {
                     /* try { // try from 005efcec to 005efcfb has its CatchHandler @ 005efd0c */
     std::__ndk1::__throw_system_error(1,"condition_variable::timed wait: mutex not locked");
@@ -116,10 +112,6 @@ void std::__ndk1::condition_variable::__do_timed_wait
     std::__ndk1::__throw_system_error(uVar2,"condition_variable timed_wait failed");
     return;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -20,7 +20,6 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
 {
   undefined8 *puVar1;
   undefined4 uVar2;
-  long lVar3;
   undefined8 *puVar4;
   undefined8 *puVar5;
   undefined8 *puVar6;
@@ -42,10 +41,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
   undefined8 *puStack_78;
   undefined8 *puStack_70;
   undefined8 *puStack_68;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   lVar14 = *param_1;
   puVar6 = (undefined8 *)param_1[1];
   lVar13 = (long)param_2 - lVar14 >> 3;
@@ -204,10 +200,6 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
     param_2 = (undefined8 *)std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(param_1,&puStack_b0,param_2);
     std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(&puStack_b0);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return param_2;
-  }
-  puVar6 = (undefined8 *)__stack_chk_fail();
   return puVar6;
 }
 

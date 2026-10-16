@@ -25,15 +25,11 @@ void std::__ndk1::
                (long param_1)
 
 {
-  long lVar1;
   long *plVar2;
   long *plVar3;
   long *plVar4;
   long alStack_40 [3];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   std::__ndk1::unique_ptr<std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, void*>, std::__ndk1::__tree_node_destructor<std::__ndk1::allocator<std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, void*>>>> std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::__construct_node<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::TransitionData>>(alStack_40);
   plVar3 = (long *)(param_1 + 8);
   plVar4 = plVar3;
@@ -51,10 +47,6 @@ void std::__ndk1::
   }
 LAB_00434aa4:
   std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::__insert_node_at(param_1,plVar3,plVar4);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(alStack_40[0]);
   return;
 }
 

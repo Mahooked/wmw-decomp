@@ -13,7 +13,6 @@ void Walaber::SkeletonActorCueAnimationTrack::apply(float p0)
 
 {
   int iVar1;
-  long lVar2;
   long *in_x0;
   long lVar3;
   long lVar4;
@@ -21,10 +20,7 @@ void Walaber::SkeletonActorCueAnimationTrack::apply(float p0)
   long lVar6;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if ((int)in_x0[4] != *(int *)((long)in_x0 + 0x24) + -1) {
     lVar4 = in_x0[1];
     iVar1 = (int)in_x0[4] + 1;
@@ -50,10 +46,6 @@ void Walaber::SkeletonActorCueAnimationTrack::apply(float p0)
     }
   }
 LAB_00334a48:
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

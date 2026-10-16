@@ -14,7 +14,6 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
      __push_back_slow_path<WaterConcept::StarSeed*const&>(WaterConcept__StarSeed **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
   WaterConcept__StarSeed *pWStack_58;
   WaterConcept__StarSeed *pWStack_50;
   WaterConcept__StarSeed *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -72,10 +68,6 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
   if (pWStack_60 != (WaterConcept__StarSeed *)0x0) {
     operator delete(pWStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -92,7 +84,6 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
      __push_back_slow_path<WaterConcept::StarSeed*>(WaterConcept__StarSeed ***p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -104,10 +95,7 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
   WaterConcept__StarSeed **ppWStack_58;
   WaterConcept__StarSeed **ppWStack_50;
   WaterConcept__StarSeed **ppWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -150,10 +138,6 @@ void std::__ndk1::vector<WaterConcept::StarSeed*,std::__ndk1::allocator<WaterCon
   ppWStack_48 = ppWVar7;
   if (ppWStack_60 != (WaterConcept__StarSeed **)0x0) {
     operator delete(ppWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

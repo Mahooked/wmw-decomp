@@ -41,7 +41,6 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
 
 {
   long lVar1;
-  long lVar2;
   Walaber__PCSNode ***pppWVar3;
   undefined8 *in_x1;
   ulong uVar4;
@@ -54,10 +53,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
   Walaber__PCSNode ***pppWStack_68;
   Walaber__PCSNode ***pppWStack_60;
   Walaber__PCSNode ***pppWStack_58;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   pppWVar5 = p0[2];
   if (pppWVar5 == p0[3]) {
     pppWVar7 = *p0;
@@ -122,10 +118,6 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
   }
   *pppWVar5 = (Walaber__PCSNode **)*in_x1;
   p0[2] = p0[2] + 1;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -142,7 +134,6 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
      push_front(Walaber__PCSNode ****p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   long lVar2;
   Walaber__PCSNode ***pppWVar3;
@@ -154,10 +145,7 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
   Walaber__PCSNode ***pppWStack_68;
   Walaber__PCSNode ***pppWStack_60;
   Walaber__PCSNode ***pppWStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   pppWVar3 = p0[1];
   if (pppWVar3 == *p0) {
     pppWVar4 = p0[2];
@@ -222,10 +210,6 @@ void std::__ndk1::__split_buffer<Walaber::PCSNode**,std::__ndk1::allocator<Walab
   }
   pppWVar3[-1] = (Walaber__PCSNode **)*in_x1;
   p0[1] = p0[1] + -1;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

@@ -103,7 +103,6 @@ void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert(void *param_1
 void WaterConcept::Screen_FullScreenAlert::enter(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -118,10 +117,7 @@ void WaterConcept::Screen_FullScreenAlert::enter(long param_1)
   int *piStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
   *puVar2 = &PTR__Callback_00713bf8;
@@ -164,10 +160,6 @@ void WaterConcept::Screen_FullScreenAlert::enter(long param_1)
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_FullScreenAlert>>::~SharedPtr(&puStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -228,7 +220,6 @@ void WaterConcept::Screen_FullScreenAlert::exit(void)
 void WaterConcept::Screen_FullScreenAlert::loadPropertyList(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   Walaber__PropertyList *pWVar4;
@@ -243,10 +234,7 @@ void WaterConcept::Screen_FullScreenAlert::loadPropertyList(Walaber__PropertyLis
   undefined1 uStack_50;
   undefined1 uStack_4f;
   undefined6 uStack_4e;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_5a = 0;
   uStack_59 = 0;
   uStack_58 = 0;
@@ -494,10 +482,6 @@ void WaterConcept::Screen_FullScreenAlert::loadPropertyList(Walaber__PropertyLis
       operator delete((void *)CONCAT62(uStack_4e,CONCAT11(uStack_4f,uStack_50)));
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -527,7 +511,6 @@ void WaterConcept::Screen_FullScreenAlert::regainedTop(void)
 void WaterConcept::Screen_FullScreenAlert::update(float p0,bool p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   long lVar4;
@@ -546,11 +529,8 @@ void WaterConcept::Screen_FullScreenAlert::update(float p0,bool p1)
   float fVar16;
   float fVar17;
   undefined8 uStack_70;
-  long lStack_68;
   
   uVar2 = (ulong)p1;
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if ((in_x1 & 1) != 0) {
     Walaber::WidgetManager::update(*(undefined8 *)(uVar2 + 0x10));
     if (0.0 < *(float *)(uVar2 + 0x128)) {
@@ -659,10 +639,6 @@ void WaterConcept::Screen_FullScreenAlert::update(float p0,bool p1)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -730,7 +706,6 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0)
 
 {
   ulong uVar1;
-  long lVar2;
   int *piVar3;
   int iVar4;
   undefined8 uVar5;
@@ -739,7 +714,6 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0)
   long lVar8;
   ulong *puVar9;
   int *in_x1;
-  long lVar10;
   undefined8 uVar11;
   byte *pbVar12;
   long lVar13;
@@ -789,8 +763,6 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0)
   undefined1 *puStack_a0;
   undefined1 auStack_98 [24];
   
-  lVar2 = tpidr_el0;
-  lVar10 = *(long *)(lVar2 + 0x28);
   if (*in_x1 != 1) goto LAB_004d9dcc;
   uVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),0);
   *(undefined8 *)((long)p0 + 0x90) = uVar5;
@@ -1135,10 +1107,6 @@ LAB_004d9734:
     }
   }
 LAB_004d9dcc:
-  if (*(long *)(lVar2 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1153,7 +1121,6 @@ LAB_004d9dcc:
 void WaterConcept::Screen_FullScreenAlert::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -1169,10 +1136,7 @@ void WaterConcept::Screen_FullScreenAlert::_buildUI(long param_1)
   char *pcStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_50 = (char *)operator new(0x20);
   auStack_60[1] = 0x1c;
   auStack_60[0] = 0x21;
@@ -1209,10 +1173,6 @@ void WaterConcept::Screen_FullScreenAlert::_buildUI(long param_1)
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

@@ -109,7 +109,6 @@ void Walaber::Transition_Iris::_initBladeAnchors(long param_1)
 {
   undefined8 *puVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   float fVar5;
   float fVar6;
@@ -117,10 +116,7 @@ void Walaber::Transition_Iris::_initBladeAnchors(long param_1)
   float fStack_88;
   float fStack_84;
   undefined4 uStack_80;
-  long lStack_78;
   
-  lVar3 = tpidr_el0;
-  lStack_78 = *(long *)(lVar3 + 0x28);
   *(undefined8 *)(param_1 + 0xe8) = *(undefined8 *)(param_1 + 0xe0);
   fVar6 = SQRT(ScreenCoord::sScreenSize * 0.5 * ScreenCoord::sScreenSize * 0.5 +
                DAT_0072d884 * 0.5 * DAT_0072d884 * 0.5);
@@ -151,10 +147,6 @@ void Walaber::Transition_Iris::_initBladeAnchors(long param_1)
       uVar4 = uVar4 + 1;
     } while (uVar4 < uVar2);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -169,7 +161,6 @@ void Walaber::Transition_Iris::_initBladeAnchors(long param_1)
 void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   undefined8 uVar4;
@@ -183,10 +174,7 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
   byte abStack_70 [16];
   void *pvStack_60;
   undefined1 auStack_58 [16];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   (**(code **)p1->f_0x0)();
   Walaber::Transition::setup(CONCAT44(in_register_00005004,p0),p1);
   lVar3 = Walaber::PropertyList::getValueForKey();
@@ -235,10 +223,6 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
     iVar2 = Walaber::Property::asInt();
     *(bool *)((long)&p1[5].f_0x8 + 2) = iVar2 == 1;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -395,7 +379,6 @@ void Walaber::Transition_Iris::draw(long param_1)
 
 {
   long lVar1;
-  long lVar2;
   undefined8 *puVar3;
   long lVar4;
   int iVar5;
@@ -416,10 +399,7 @@ void Walaber::Transition_Iris::draw(long param_1)
   int *piStack_98;
   float fStack_90;
   float fStack_8c;
-  long lStack_88;
   
-  lVar2 = tpidr_el0;
-  lStack_88 = *(long *)(lVar2 + 0x28);
   Walaber::GraphicsGL::setAlphaBlending(1,1,0x303);
   lVar1 = param_1 + 8;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -474,10 +454,6 @@ void Walaber::Transition_Iris::draw(long param_1)
   }
   Walaber::Transition::_drawFont(param_1);
   Walaber::SpriteBatch::flush(lVar1);
-  if (*(long *)(lVar2 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

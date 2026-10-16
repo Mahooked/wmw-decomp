@@ -52,19 +52,11 @@ void WaterConcept::Notification::reloadWidgets(long param_1)
 void WaterConcept::Notification::touchDown(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchDown((ulong)(uint)p0 + 8,p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -79,21 +71,13 @@ void WaterConcept::Notification::touchDown(int p0,Walaber__Vector2 p1)
 void WaterConcept::Notification::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::WidgetManager::touchMoved((ulong)(uint)p0 + 8,p1,&uStack_30,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -108,19 +92,11 @@ void WaterConcept::Notification::touchMoved(int p0,Walaber__Vector2 p1,Walaber__
 void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x2;
   Walaber::WidgetManager::touchUp((ulong)(uint)p0 + 8,p1,&uStack_30);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -136,12 +112,8 @@ void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1)
 void WaterConcept::Notification::Notification()
 
 {
-  long lVar1;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   *this = &PTR_handleEvent_007126c8;
   uStack_40 = _sScreenSize;
   Walaber::WidgetManager::WidgetManager(this + 1,this,&uStack_40);
@@ -164,10 +136,6 @@ void WaterConcept::Notification::Notification()
   this[0x3b] = 0;
   this[0x39] = 0;
   *(undefined4 *)(this + 0x38) = 3;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -331,7 +299,6 @@ void WaterConcept::Notification::_applyTransitionBehavior
                (WaterConcept__Notification__NotificationTransitionBehavior *p0,int p1)
 
 {
-  long lVar1;
   long *plVar2;
   long *plVar3;
   int in_w2;
@@ -343,11 +310,8 @@ void WaterConcept::Notification::_applyTransitionBehavior
   float fStack_70;
   float fStack_6c;
   undefined8 uStack_60;
-  long lStack_58;
   
   plVar3 = (long *)(ulong)(uint)p1;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_60 = p0[5].f_0x20;
   Walaber::WidgetManager::getBoundingArea(&fStack_78,&p0->f_0x8);
   if ((*plVar3 != 0) && (*(int *)plVar3[1] != 0)) {
@@ -386,10 +350,6 @@ void WaterConcept::Notification::_applyTransitionBehavior
     uStack_80 = CONCAT44((float)(p0[5].f_0x18 >> 0x20) * fVar5,(float)p0[5].f_0x18 * fVar4);
     (**(code **)(*(long *)p0->f_0x8 + 0x18))((long *)p0->f_0x8,&uStack_80);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -458,7 +418,6 @@ void WaterConcept::Notification::draw(Walaber__SpriteBatch *p0)
 void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefined8 param_3)
 
 {
-  long lVar1;
   float fVar2;
   long lVar3;
   long lVar4;
@@ -469,10 +428,7 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
   void *pvStack_60;
   float fStack_54;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar4 = *(long *)(param_2 + 0x98);
   if (lVar4 != 0) {
     Walaber::Node::getWorldScale(&bStack_70,lVar4);
@@ -515,10 +471,6 @@ void WaterConcept::Notification::goNotify(undefined4 param_1,long param_2,undefi
       operator delete(pvStack_60);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -555,7 +507,6 @@ void WaterConcept::Notification::goNotify(long *param_1,undefined8 param_2,long 
 void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 *puStack_98;
@@ -568,10 +519,7 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x1c8);
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -600,10 +548,6 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Notification>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

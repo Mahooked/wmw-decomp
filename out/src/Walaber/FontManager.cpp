@@ -62,7 +62,6 @@ undefined8 Walaber::FontManager::getFont(long param_1)
 void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   undefined8 *puVar4;
@@ -79,10 +78,7 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xb8);
                     /* try { // try from 00369da0 to 00369da3 has its CatchHandler @ 00369f00 */
   Walaber::BitmapFont::BitmapFont();
@@ -123,10 +119,6 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   Walaber::SharedPtr<Walaber::MemberCallback<Walaber::FontManager>>::~SharedPtr(&puStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -142,7 +134,6 @@ void Walaber::FontManager::_fontLoaded(void *p0)
 
 {
   long lVar1;
-  long lVar2;
   undefined8 uVar3;
   int *in_x1;
   undefined1 *puVar4;
@@ -162,10 +153,7 @@ void Walaber::FontManager::_fontLoaded(void *p0)
   ulong uStack_80;
   int *piStack_78;
   undefined1 *puStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if (*in_x1 == 1) {
     lVar6 = *(long *)(in_x1 + 2);
     lVar8 = *(long *)(lVar6 + 0x60);
@@ -232,10 +220,6 @@ void Walaber::FontManager::_fontLoaded(void *p0)
     if ((uStack_80 & 1) != 0) {
       operator delete(puStack_70);
     }
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

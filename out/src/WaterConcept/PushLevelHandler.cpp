@@ -40,7 +40,6 @@ void WaterConcept::PushLevelHandler::~PushLevelHandler(void)
 void WaterConcept::PushLevelHandler::Initialise(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   ulong auStack_a0 [2];
@@ -53,10 +52,7 @@ void WaterConcept::PushLevelHandler::Initialise(void)
   undefined4 *puStack_50;
   undefined8 *puStack_48;
   undefined4 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::PushCommand::Get();
   puVar3 = (undefined8 *)operator new(0x10);
   *puVar3 = &PTR__Callback_0070e2c0;
@@ -88,10 +84,6 @@ void WaterConcept::PushLevelHandler::Initialise(void)
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -107,17 +99,13 @@ void WaterConcept::PushLevelHandler::OnLevelCommand(void *p0)
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   void *pvStack_68;
   void *pvStack_60;
   undefined8 uStack_58;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (p0 != (void *)0x0) {
     lVar3 = Walaber::ScreenManager::peekTop();
     if (((lVar3 != 0) &&
@@ -139,10 +127,6 @@ void WaterConcept::PushLevelHandler::OnLevelCommand(void *p0)
       operator delete(pvStack_40);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

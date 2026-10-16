@@ -18,7 +18,6 @@ do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long par
       undefined4 param_6)
 
 {
-  long lVar1;
   bool bVar2;
   uint uVar3;
   int iVar4;
@@ -56,11 +55,8 @@ do_put(char *param_1,undefined8 param_2,undefined8 param_3,uint param_4,long par
   undefined1 auStack_3f4 [400];
   undefined1 auStack_264 [400];
   char acStack_d4 [100];
-  long lStack_70;
   undefined4 uVar14;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   p0_01 = (void *)(ulong)param_4;
   pcStack_400 = acStack_d4;
   uVar3 = snprintf(acStack_d4,100,"%.0Lf");
@@ -201,10 +197,6 @@ LAB_005cc480:
   if (pcStack_480 != (char *)0x0) {
     free(pcStack_480);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -231,7 +223,6 @@ do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_
   byte *pbVar2;
   int iVar3;
   byte bVar4;
-  long lVar5;
   bool bVar6;
   int iVar7;
   long *plVar8;
@@ -259,11 +250,8 @@ do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_
   undefined8 uStack_210;
   undefined1 auStack_208 [8];
   undefined1 auStack_200 [400];
-  long lStack_70;
   undefined4 uVar15;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_210,param_3);
                     /* try { // try from 005cd09c to 005cd0ab has its CatchHandler @ 005cd33c */
   plVar8 = (long *)std::__ndk1::locale::use_facet(&uStack_210,&ctype<wchar_t>::id);
@@ -374,10 +362,6 @@ do_put(std::__ndk1::ostreambuf_iterator<wchar_t, std::__ndk1::char_traits<wchar_
     operator delete(pvStack_220);
   }
   std::__ndk1::__shared_count::__release_shared(uStack_210);
-  if (*(long *)(lVar5 + 0x28) != lStack_70) {
-    uVar9 = __stack_chk_fail();
-    return uVar9;
-  }
   return uVar9;
 }
 

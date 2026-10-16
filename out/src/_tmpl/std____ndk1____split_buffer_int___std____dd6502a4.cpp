@@ -38,7 +38,6 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(i
 
 {
   long lVar1;
-  long lVar2;
   int **ppiVar3;
   undefined8 *in_x1;
   ulong uVar4;
@@ -51,10 +50,7 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(i
   int **ppiStack_68;
   int **ppiStack_60;
   int **ppiStack_58;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   ppiVar5 = p0[2];
   if (ppiVar5 == p0[3]) {
     ppiVar7 = *p0;
@@ -118,10 +114,6 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(i
   }
   *ppiVar5 = (int *)*in_x1;
   p0[2] = p0[2] + 1;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -136,7 +128,6 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(i
 void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_front(int ***p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   long lVar2;
   int **ppiVar3;
@@ -148,10 +139,7 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_front(
   int **ppiStack_68;
   int **ppiStack_60;
   int **ppiStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   ppiVar3 = p0[1];
   if (ppiVar3 == *p0) {
     ppiVar4 = p0[2];
@@ -215,10 +203,6 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_front(
   }
   ppiVar3[-1] = (int *)*in_x1;
   p0[1] = p0[1] + -1;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

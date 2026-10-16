@@ -15,13 +15,9 @@ void Walaber::Widget::Widget
                undefined4 *param_5,undefined4 param_6,undefined4 param_7)
 
 {
-  long lVar1;
   undefined8 auStack_70 [2];
   void *pvStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   *param_1 = (long)&PTR__Widget_0070eb18;
   Walaber::StringHelper::intToStr(auStack_70,param_2);
                     /* try { // try from 0036a7ac to 0036a7bb has its CatchHandler @ 0036a8c8 */
@@ -55,10 +51,6 @@ void Walaber::Widget::Widget
   auStack_70[0] = NEON_fmov(0x3f800000,4);
                     /* try { // try from 0036a868 to 0036a873 has its CatchHandler @ 0036a8a4 */
   (**(code **)(*param_1 + 0x18))(param_1,auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -149,7 +141,6 @@ void Walaber::Widget::setLocalPosition(Walaber__Vector2 *p0)
 void Walaber::Widget::_updateAABB(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   float fStack_80;
   float fStack_7c;
@@ -163,10 +154,7 @@ void Walaber::Widget::_updateAABB(long param_1)
   float fStack_5c;
   undefined8 uStack_58;
   undefined4 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_60);
   fVar2 = *(float *)(param_1 + 0x90) * fStack_60 * 0.5;
   fStack_78 = *(float *)(param_1 + 0x94) * fStack_5c * 0.5;
@@ -185,10 +173,6 @@ void Walaber::Widget::_updateAABB(long param_1)
   *(undefined8 *)(param_1 + 0xa0) = uStack_58;
   *(ulong *)(param_1 + 0x98) = CONCAT44(fStack_5c,fStack_60);
   *(undefined4 *)(param_1 + 0xa8) = uStack_50;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -341,7 +325,6 @@ LAB_0036acd0:
 ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
 
 {
-  long lVar1;
   uint uVar2;
   ulong uVar3;
   void *pvVar4;
@@ -351,10 +334,7 @@ ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
   ulong uStack_60;
   void *pvStack_58;
   uint uStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   pvStack_58 = (void *)0x0;
@@ -388,10 +368,6 @@ LAB_0036af30:
   uVar2 = uStack_4c;
   if ((uStack_68 & 1) != 0) {
     operator delete(pvStack_58);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return (ulong)uVar2;
 }
@@ -442,19 +418,11 @@ void Walaber::Widget::~Widget(void *param_1)
 void Walaber::Widget::setRotation(float p0)
 
 {
-  long lVar1;
   long *in_x0;
   float fStack_2c;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   fStack_2c = p0 * 0.017453292;
   (**(code **)(*in_x0 + 0x20))(in_x0,&fStack_2c);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -519,14 +487,10 @@ void Walaber::Widget::setFont(long *param_1)
 void Walaber::Widget::reloadFont(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::FontManager::getInstancePtr();
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,param_1 + 0xd0);
                     /* try { // try from 0036d5e0 to 0036d5eb has its CatchHandler @ 0036d628 */
@@ -535,10 +499,6 @@ void Walaber::Widget::reloadFont(long param_1)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

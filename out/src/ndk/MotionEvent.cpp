@@ -112,7 +112,6 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
 {
   float *pfVar1;
   undefined4 *puVar2;
-  long lVar3;
   int *piVar4;
   undefined4 in_w1;
   undefined4 uStack_3c;
@@ -120,11 +119,8 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
   float fStack_34;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
   piVar4 = (int *)(ulong)(uint)p4;
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   pfVar1 = *(float **)(piVar4 + 4);
   uStack_3c = in_w1;
   fStack_38 = p3;
@@ -171,10 +167,6 @@ void ndk::MotionEvent::addEvent(float p0,float p1,float p2,float p3,int p4)
     *(float **)(piVar4 + 0x16) = pfVar1 + 1;
   }
   *piVar4 = *piVar4 + 1;
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

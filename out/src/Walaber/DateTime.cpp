@@ -40,20 +40,12 @@ long Walaber::DateTime::getCurrentUnixLocalTime(void)
 void Walaber::DateTime::hasDatePassedUnixTime(long p0)
 
 {
-  long lVar1;
   long lVar2;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = time(0);
   gmtime(&lStack_30);
   lVar2 = mktime();
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(p0 < lStack_30 * 2 - lVar2);
   return;
 }
 

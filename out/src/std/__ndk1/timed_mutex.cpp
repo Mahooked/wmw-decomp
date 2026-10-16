@@ -66,14 +66,10 @@ void std::__ndk1::timed_mutex::~timed_mutex(long param_1)
 void std::__ndk1::timed_mutex::lock(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lStack_48;
   char cStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   cStack_40 = '\x01';
   lStack_48 = param_1;
   uVar2 = pthread_mutex_lock();
@@ -94,10 +90,6 @@ void std::__ndk1::timed_mutex::lock(long param_1)
                     /* try { // try from 005e2c80 to 005e2c83 has its CatchHandler @ 005e2cb8 */
   pthread_mutex_unlock(lStack_48);
 LAB_005e2c84:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

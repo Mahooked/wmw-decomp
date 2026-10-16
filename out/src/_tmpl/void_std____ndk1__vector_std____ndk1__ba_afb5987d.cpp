@@ -22,7 +22,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -33,10 +32,7 @@ void std::__ndk1::
   long lStack_58;
   long lStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
@@ -78,10 +74,6 @@ void std::__ndk1::
   lStack_58 = lStack_60;
   lStack_48 = lVar3;
   std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::~__split_buffer(&lStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -107,7 +99,6 @@ void std::__ndk1::
 {
   ulong uVar1;
   undefined8 *puVar2;
-  long lVar3;
   long lVar4;
   ulong uVar5;
   ulong uVar6;
@@ -118,10 +109,7 @@ void std::__ndk1::
   long lStack_58;
   undefined8 *puStack_50;
   long lStack_48;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   lVar4 = (param_1[1] - *param_1 >> 3) * -0x5555555555555555;
   uVar1 = lVar4 + 1;
   if (0xaaaaaaaaaaaaaaa < uVar1) {
@@ -169,10 +157,6 @@ void std::__ndk1::
   lStack_58 = lStack_60;
   lStack_48 = lVar4;
   std::__ndk1::__split_buffer<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>&>::~__split_buffer(&lStack_60);
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

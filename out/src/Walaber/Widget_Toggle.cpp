@@ -73,16 +73,12 @@ Walaber__Widget_Toggle * Walaber::Widget_Toggle::operator=(Walaber__Widget_Toggl
 void Walaber::Widget_Toggle::Widget_Toggle(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,8,&uStack_30,&uStack_38,1,1);
@@ -108,10 +104,6 @@ void Walaber::Widget_Toggle::Widget_Toggle(int p0,Walaber__Vector2 p1,Walaber__V
   puVar2[0x2e] = 0;
   *(undefined2 *)((long)puVar2 + 0x1a4) = 0;
   puVar2[0x33] = 0xff0000003f800000;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -149,17 +141,13 @@ void Walaber::Widget_Toggle::Widget_Toggle
                long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_60 = *param_3;
   uStack_68 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,8,&uStack_60,&uStack_68,1,1);
@@ -214,10 +202,6 @@ void Walaber::Widget_Toggle::Widget_Toggle
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -380,7 +364,6 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
 
 {
   ulong *puVar1;
-  long lVar2;
   long lVar3;
   ulong uVar4;
   undefined1 *puVar5;
@@ -415,10 +398,7 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
   int *piStack_c0;
   float fStack_b8;
   float fStack_b4;
-  long lStack_b0;
   
-  lVar2 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar2 + 0x28);
   uVar9 = Walaber::Widget::_getAngle();
   lVar3._0_4_ = p0[4].f_0x20;
   lVar3._4_4_ = p0[4].f_0x24;
@@ -658,10 +638,6 @@ LAB_0038ca24:
   }
 LAB_0038cb54:
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar2 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

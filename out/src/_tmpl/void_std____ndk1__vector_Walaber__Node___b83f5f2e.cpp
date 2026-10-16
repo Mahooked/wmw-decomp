@@ -14,7 +14,6 @@ void std::__ndk1::vector<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>:
      __push_back_slow_path<Walaber::Node*>(Walaber__Node ***p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -26,10 +25,7 @@ void std::__ndk1::vector<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>:
   Walaber__Node **ppWStack_58;
   Walaber__Node **ppWStack_50;
   Walaber__Node **ppWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 3;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3d != 0) {
@@ -71,10 +67,6 @@ void std::__ndk1::vector<Walaber::Node*,std::__ndk1::allocator<Walaber::Node*>>:
   ppWStack_48 = ppWVar7;
   if (ppWStack_60 != (Walaber__Node **)0x0) {
     operator delete(ppWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

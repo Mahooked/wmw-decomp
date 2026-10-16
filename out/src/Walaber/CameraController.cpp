@@ -106,7 +106,6 @@ void Walaber::CameraController::update(float p0)
   undefined8 *puVar3;
   undefined4 uVar4;
   long lVar5;
-  long lVar6;
   undefined8 *in_x0;
   ulong uVar7;
   uint uVar8;
@@ -123,10 +122,7 @@ void Walaber::CameraController::update(float p0)
   undefined1 auStack_68 [16];
   long lStack_58;
   uint uStack_50;
-  long lStack_48;
   
-  lVar6 = tpidr_el0;
-  lStack_48 = *(long *)(lVar6 + 0x28);
   if ((*(char *)(in_x0 + 0x15) == '\0') && (uVar7 = Walaber::Camera::isAnimating(*in_x0), (uVar7 & 1) == 0)) {
     uVar7 = (ulong)*(uint *)(in_x0 + 0x16);
     lVar9 = in_x0[0xc];
@@ -224,10 +220,6 @@ void Walaber::CameraController::update(float p0)
       *(undefined4 *)(in_x0[0xc] + (ulong)*(uint *)(in_x0 + 0x16) * 4) = 0xbf800000;
     }
   }
-  if (*(long *)(lVar6 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -246,16 +238,12 @@ void Walaber::CameraController::queueMovement
 {
   undefined8 *puVar1;
   float *pfVar2;
-  long lVar3;
   byte in_w3;
   byte abStack_48 [4];
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   abStack_48[0] = in_w3 & 1;
   puVar1 = *(undefined8 **)((long)p0 + 0x20);
   fStack_44 = p4;
@@ -302,10 +290,6 @@ void Walaber::CameraController::queueMovement
   }
   std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::push_back((long)p0 + 0x90,abStack_48);
   *(undefined1 *)((long)p0 + 0xa8) = 0;
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -320,22 +304,14 @@ void Walaber::CameraController::queueMovement
 void Walaber::CameraController::setMovement(Walaber__Vector2 p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   undefined8 *in_x2;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p1;
   Walaber::Camera::setPosition(*(undefined8 *)p0,&uStack_40);
   uStack_48 = *in_x2;
   Walaber::Camera::setSize(*(undefined8 *)p0,&uStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -350,13 +326,9 @@ void Walaber::CameraController::setMovement(Walaber__Vector2 p0,Walaber__Vector2
 void Walaber::CameraController::restoreOrig(undefined8 *param_1)
 
 {
-  long lVar1;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Camera::clearAnimations(*param_1);
   param_1[4] = param_1[3];
   param_1[7] = param_1[6];
@@ -370,10 +342,6 @@ void Walaber::CameraController::restoreOrig(undefined8 *param_1)
   Walaber::Camera::setPosition(*param_1,&uStack_30);
   uStack_38 = param_1[2];
   Walaber::Camera::setSize(*param_1,&uStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

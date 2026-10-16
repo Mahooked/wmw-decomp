@@ -18,7 +18,6 @@ void std::__ndk1::
                (Walaber__SharedPtr<Walaber::SoundEffectInstance> *p0)
 
 {
-  long lVar1;
   long *in_x1;
   ulong uVar2;
   long lVar3;
@@ -27,10 +26,7 @@ void std::__ndk1::
   int *piVar6;
   undefined1 auStack_60 [16];
   long *plStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)(p0->f_0x8 - p0->f_0x0) >> 4;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3c != 0) {
@@ -59,10 +55,6 @@ void std::__ndk1::
                     /* try { // try from 0034c608 to 0034c613 has its CatchHandler @ 0034c64c */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -83,7 +75,6 @@ void std::__ndk1::
                (Walaber__SharedPtr<Walaber::SoundEffectInstance> **p0)
 
 {
-  long lVar1;
   long *in_x1;
   ulong uVar2;
   long lVar3;
@@ -92,10 +83,7 @@ void std::__ndk1::
   int *piVar6;
   undefined1 auStack_60 [16];
   long *plStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 4;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3c != 0) {
@@ -124,10 +112,6 @@ void std::__ndk1::
                     /* try { // try from 0046c808 to 0046c813 has its CatchHandler @ 0046c84c */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

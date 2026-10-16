@@ -62,7 +62,6 @@ void std::__ndk1::
 
 {
   long lVar1;
-  long lVar2;
   undefined4 *in_x1;
   long lVar3;
   ulong uVar4;
@@ -76,10 +75,7 @@ void std::__ndk1::
   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_78;
   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_70;
   Walaber__AnimationCueAnimationTrack__CueAnimationEvent *pWStack_68;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   pWVar7 = p0[2];
   pWVar8 = pWVar7;
   if (pWVar7 == p0[3]) {
@@ -183,10 +179,6 @@ void std::__ndk1::
   *(undefined8 *)(in_x1 + 2) = 0;
   *(undefined8 *)(pWVar8 + 0x20) = *(undefined8 *)(in_x1 + 8);
   p0[2] = p0[2] + 0x28;
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

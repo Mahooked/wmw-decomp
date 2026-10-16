@@ -152,7 +152,6 @@ long * std::__ndk1::
 {
   undefined1 *puVar1;
   undefined1 uVar2;
-  long lVar3;
   int iVar4;
   long lVar5;
   long *plVar6;
@@ -162,10 +161,7 @@ long * std::__ndk1::
   char cStack_9e;
   undefined1 uStack_9d;
   undefined1 auStack_9c [100];
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   uStack_a0 = 0x25;
   uStack_9d = 0;
   cStack_9f = param_5;
@@ -199,10 +195,6 @@ long * std::__ndk1::
       puVar7 = puVar7 + 1;
       plVar6 = param_1;
     } while (lVar5 != 0);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    plVar6 = (long *)__stack_chk_fail();
-    return plVar6;
   }
   return param_1;
 }

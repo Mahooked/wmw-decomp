@@ -21,7 +21,6 @@ void std::__ndk1::
                (long *param_1,long *param_2,long *param_3,undefined8 *param_4)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   code *pcVar4;
@@ -48,10 +47,7 @@ void std::__ndk1::
   int *piStack_70;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lStack_78 = *param_2;
   piStack_70 = (int *)param_2[1];
   pcVar4 = (code *)*param_4;
@@ -188,10 +184,6 @@ LAB_0034b1e4:
   }
   uVar3 = 1;
 LAB_0034b204:
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(uVar3);
   return;
 }
 

@@ -19,7 +19,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
@@ -28,10 +27,7 @@ void std::__ndk1::
   void *pvStack_60;
   long lStack_58;
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (*(long *)(p0 + 8) - *(long *)p0 >> 2) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0xccccccccccccccc < uVar1) {
@@ -59,10 +55,6 @@ void std::__ndk1::
   }
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

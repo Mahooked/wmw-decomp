@@ -210,7 +210,6 @@ void Walaber::QuadHelper::drawQuadOutline
                (Walaber__Vector2 *p0,float p1,Walaber__Vector2 *p2,float p3,Walaber__Color *p4)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   undefined4 in_register_00005004;
@@ -223,11 +222,8 @@ void Walaber::QuadHelper::drawQuadOutline
   float fStack_84;
   float fStack_80;
   float fStack_7c;
-  long lStack_78;
   
   uVar4 = CONCAT44(in_register_00005004,p1);
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   fStack_80 = p2->f_0x0 - p3;
   fVar5 = p1 * 0.017453292;
   fStack_84 = p2->f_0x4 + p3;
@@ -257,10 +253,6 @@ void Walaber::QuadHelper::drawQuadOutline
   fStack_90 = p0->f_0x0 + (fVar2 * fVar6 - fVar3 * 0.0);
   fStack_8c = p0->f_0x4 + fVar2 * 0.0 + fVar6 * fVar3;
   Walaber::QuadHelper::drawQuadColored(uVar4,&fStack_90,&fStack_88,p4);
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

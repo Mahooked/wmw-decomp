@@ -13,18 +13,14 @@ void Walaber::Widget_NumberSpinner::Widget_NumberSpinner
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   long lVar3;
   float fVar4;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_60 = *(undefined8 *)p2;
   uStack_68 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0x14,&uStack_60,&uStack_68,1,1);
@@ -58,10 +54,6 @@ void Walaber::Widget_NumberSpinner::Widget_NumberSpinner
   *(undefined8 *)((long)puVar2 + 0x23c) = 0;
                     /* try { // try from 00381a6c to 00381a7f has its CatchHandler @ 00381ab0 */
   Walaber::Widget_NumberSpinner::setRange(puVar2,1,99,1);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -78,19 +70,15 @@ void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2)
 {
   bool bVar1;
   int iVar2;
-  long lVar3;
   ulong uVar4;
   uint uVar5;
   byte in_w3;
   undefined4 *puVar6;
   int *piVar7;
   int iStack_3c;
-  long lStack_38;
   
   uVar5 = (uint)p2;
   uVar4 = (ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   puVar6 = *(undefined4 **)(uVar4 + 0x208);
   *(int *)(uVar4 + 0x1fc) = p1;
   *(uint *)(uVar4 + 0x200) = (uint)p2;
@@ -124,10 +112,6 @@ void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2)
       iStack_3c = iVar2;
     } while (bVar1);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -202,21 +186,13 @@ void Walaber::Widget_NumberSpinner::~Widget_NumberSpinner(void *param_1)
 void Walaber::Widget_NumberSpinner::setPadding(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   undefined1 auStack_30 [8];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(auStack_30);
   *(ulong *)(in_x0 + 0x244) =
        CONCAT44(p1 * (float)((ulong)*(undefined8 *)(in_x0 + 0x90) >> 0x20) * auStack_30._4_4_,
                 p0 * (float)*(undefined8 *)(in_x0 + 0x90) * auStack_30._0_4_);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -352,7 +328,6 @@ void Walaber::Widget_NumberSpinner::update(float p0,Walaber__Widget__WidgetActio
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   bool bVar4;
   long in_x1;
   int iVar5;
@@ -364,10 +339,7 @@ void Walaber::Widget_NumberSpinner::update(float p0,Walaber__Widget__WidgetActio
   float fVar11;
   undefined1 auStack_40 [4];
   float fStack_3c;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   lVar6._0_4_ = p1[0x1d].f_0xc;
   lVar6._4_4_ = p1[0x1d].f_0x10;
   if (lVar6 == 0) {
@@ -448,10 +420,6 @@ void Walaber::Widget_NumberSpinner::update(float p0,Walaber__Widget__WidgetActio
   if (bVar4) {
     *(undefined4 *)(in_x1 + 0xc) = *(undefined4 *)(*(long *)(p1 + 0x1a) + (long)iVar5 * 4);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(bVar4);
   return;
 }
 
@@ -466,25 +434,17 @@ void Walaber::Widget_NumberSpinner::update(float p0,Walaber__Widget__WidgetActio
 void Walaber::Widget_NumberSpinner::_getCellSize(float *param_1,long param_2)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_40);
   fVar3 = *(float *)(param_2 + 0x94);
   fVar2 = *(float *)(param_2 + 0x248);
   *param_1 = *(float *)(param_2 + 0x90) * fStack_40 -
              (*(float *)(param_2 + 0x244) + *(float *)(param_2 + 0x244));
   param_1[1] = (fVar3 * fStack_3c - (fVar2 + fVar2)) / *(float *)(param_2 + 0x1f8);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -501,7 +461,6 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
 {
   bool bVar1;
   int iVar2;
-  long lVar3;
   int iVar4;
   ulong uVar5;
   long lVar6;
@@ -529,10 +488,7 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
   long lStack_d8;
   int *piStack_d0;
   int aiStack_c8 [6];
-  long lStack_b0;
   
-  lVar3 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar3 + 0x28);
   uVar12 = Walaber::Widget::_getAngle();
   lStack_d8._0_4_ = p0[4].f_0x20;
   lStack_d8._4_4_ = p0[4].f_0x24;
@@ -645,10 +601,6 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
     } while (bVar1);
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar3 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -667,7 +619,6 @@ void Walaber::Widget_NumberSpinner::_drawLocalQuad
                float *param_6,long param_7,long param_8,undefined8 param_9)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   float fVar4;
@@ -681,10 +632,7 @@ void Walaber::Widget_NumberSpinner::_drawLocalQuad
   int *piStack_88;
   float fStack_80;
   float fStack_7c;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_80);
   fVar8 = *(float *)(param_2 + 0x248) - *(float *)(param_2 + 0x94) * fStack_7c * 0.5;
   Walaber::Node::getWorldScale(&fStack_80,param_2);
@@ -730,10 +678,6 @@ LAB_00382584:
   Walaber::SpriteBatch::drawQuad(param_1,param_3,param_4,&lStack_90,&fStack_80,param_7,param_8,param_9,0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
 LAB_00382624:
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

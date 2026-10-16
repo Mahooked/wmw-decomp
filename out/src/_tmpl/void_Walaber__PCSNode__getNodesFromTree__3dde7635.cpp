@@ -14,14 +14,10 @@
 void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1,int param_2,std::__ndk1::vector<Walaber::Node*, std::__ndk1::allocator<Walaber::Node*>>& param_3)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long alStack_78 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   alStack_78[4] = 0;
   alStack_78[3] = 0;
   alStack_78[6] = 0;
@@ -58,10 +54,6 @@ void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1
     }
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(alStack_78 + 1);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

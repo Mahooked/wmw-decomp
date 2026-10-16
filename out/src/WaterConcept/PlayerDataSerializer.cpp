@@ -109,7 +109,6 @@ undefined8 WaterConcept::PlayerDataSerializer::initAndMergeLocalInfo(void)
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo(void)
 
 {
-  long lVar1;
   bool bVar2;
   ushort uVar3;
   ushort uVar4;
@@ -138,10 +137,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo(void)
   ulong uStack_78;
   void *pvStack_70;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(apbStack_d8,&DAT_00737e80,&DAT_0063d328);
   uVar8 = (ulong)(DAT_00737e98 >> 1);
   puVar5 = &DAT_00737e99;
@@ -223,10 +219,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo(void)
       if ((uStack_80 & 1) != 0) {
         operator delete(pvStack_70);
       }
-      if (*(long *)(lVar1 + 0x28) != lStack_58) {
-        uVar8 = __stack_chk_fail();
-        return uVar8;
-      }
       return (ulong)uVar9;
     }
                     /* try { // try from 004353d4 to 004353e3 has its CatchHandler @ 00435558 */
@@ -275,7 +267,6 @@ LAB_00435480:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
 
 {
-  long lVar1;
   undefined4 *puVar2;
   undefined *puVar3;
   byte bVar4;
@@ -289,7 +280,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
   undefined8 *puVar12;
   long lVar13;
   ulong uVar14;
-  long lVar15;
   uint uVar16;
   undefined8 uVar17;
   undefined8 uVar18;
@@ -333,8 +323,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
   ulong uStack_88;
   void *pvStack_80;
   
-  lVar1 = tpidr_el0;
-  lVar15 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_1e8,&DAT_00737cb8,&DAT_0063d328);
   uVar14 = (ulong)(DAT_00737d00 >> 1);
   puVar2 = &DAT_00737d01;
@@ -586,10 +574,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
   if ((uStack_90 & 1) != 0) {
     operator delete(pvStack_80);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar15) {
-    return (ulong)(uVar16 & 1);
-  }
-  uVar14 = __stack_chk_fail();
   return uVar14;
 }
 
@@ -606,7 +590,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo(void)
 
 {
   void *pvVar1;
-  long lVar2;
   float fVar3;
   ulong *puVar4;
   undefined8 *puVar5;
@@ -626,10 +609,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo(void)
   ulong uStack_98;
   void *pvStack_90;
   float afStack_80 [2];
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_b8,&DAT_00738138,&DAT_0063d328);
   uVar7 = (ulong)(DAT_00738150 >> 1);
   puVar5 = &DAT_00738151;
@@ -685,10 +665,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo(void)
       if ((uStack_a0 & 1) != 0) {
         operator delete(pvStack_90);
       }
-      if (*(long *)(lVar2 + 0x28) == lStack_78) {
-        return (ulong)uVar9;
-      }
-      uVar7 = __stack_chk_fail();
       return uVar7;
     }
                     /* try { // try from 00435e4c to 00435e5b has its CatchHandler @ 00435fb0 */
@@ -738,7 +714,6 @@ LAB_00435ef8:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
 
 {
-  long lVar1;
   undefined *puVar2;
   bool bVar3;
   ushort uVar4;
@@ -747,7 +722,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
   ulong *puVar7;
   long lVar8;
   ulong uVar9;
-  long lVar10;
   undefined8 *puVar11;
   uint uVar12;
   uint uStack_ec;
@@ -766,8 +740,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
   void *pvStack_80;
   undefined1 auStack_70 [16];
   
-  lVar1 = tpidr_el0;
-  lVar10 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_007380c0,&DAT_0063d328);
   uVar9 = (ulong)(DAT_007380d8 >> 1);
   puVar2 = &DAT_007380d9;
@@ -841,10 +813,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
       if ((uStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
-      if (*(long *)(lVar1 + 0x28) == lVar10) {
-        return (ulong)uVar12;
-      }
-      uVar9 = __stack_chk_fail();
       return uVar9;
     }
                     /* try { // try from 0043619c to 004361a7 has its CatchHandler @ 00436340 */
@@ -901,7 +869,6 @@ LAB_00436238:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo(void)
 
 {
-  long lVar1;
   bool bVar2;
   byte bVar3;
   ulong *puVar4;
@@ -925,10 +892,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo(v
   ulong uStack_68;
   void *pvStack_60;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,&DAT_00738168,&DAT_0063d328);
   uVar6 = (ulong)(DAT_007381b0 >> 1);
   puVar7 = &DAT_007381b1;
@@ -975,10 +939,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo(v
         if ((uStack_70 & 1) != 0) {
           operator delete(pvStack_60);
         }
-        if (*(long *)(lVar1 + 0x28) != lStack_48) {
-          uVar6 = __stack_chk_fail();
-          return uVar6;
-        }
         return (ulong)uVar9;
       }
                     /* try { // try from 00436480 to 0043648b has its CatchHandler @ 004365b8 */
@@ -1024,7 +984,6 @@ LAB_004364e0:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
 
 {
-  long lVar1;
   bool bVar2;
   ushort uVar3;
   ushort uVar4;
@@ -1032,7 +991,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
   ulong *puVar6;
   long lVar7;
   ulong uVar8;
-  long lVar9;
   undefined8 *puVar10;
   uint uVar11;
   undefined8 uVar12;
@@ -1053,8 +1011,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
   void *pvStack_80;
   undefined1 auStack_70 [16];
   
-  lVar1 = tpidr_el0;
-  lVar9 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_007384f8,&DAT_0063d328);
   uVar8 = (ulong)(DAT_00738558 >> 1);
   puVar5 = &DAT_00738559;
@@ -1131,10 +1087,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
       if ((uStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
-      if (*(long *)(lVar1 + 0x28) == lVar9) {
-        return (ulong)uVar11;
-      }
-      uVar8 = __stack_chk_fail();
       return uVar8;
     }
                     /* try { // try from 0043678c to 00436797 has its CatchHandler @ 00436930 */
@@ -1191,7 +1143,6 @@ LAB_00436828:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
 
 {
-  long lVar1;
   bool bVar2;
   ushort uVar3;
   ushort uVar4;
@@ -1199,7 +1150,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
   ulong *puVar6;
   long lVar7;
   ulong uVar8;
-  long lVar9;
   undefined8 uVar10;
   undefined8 *puVar11;
   uint uVar12;
@@ -1221,8 +1171,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
   void *pvStack_80;
   undefined1 auStack_70 [16];
   
-  lVar1 = tpidr_el0;
-  lVar9 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_00738588,&DAT_0063d328);
   uVar8 = (ulong)(DAT_007385e8 >> 1);
   puVar5 = &DAT_007385e9;
@@ -1301,10 +1249,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
       if ((uStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
-      if (*(long *)(lVar1 + 0x28) == lVar9) {
-        return (ulong)uVar12;
-      }
-      uVar8 = __stack_chk_fail();
       return uVar8;
     }
                     /* try { // try from 00436b00 to 00436b0b has its CatchHandler @ 00436ca4 */
@@ -1361,7 +1305,6 @@ LAB_00436b9c:
 ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo(void)
 
 {
-  long lVar1;
   bool bVar2;
   byte bVar3;
   ulong *puVar4;
@@ -1386,10 +1329,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo(vo
   ulong uStack_68;
   void *pvStack_60;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_88,&DAT_00738168,&DAT_0063d328);
   uVar6 = (ulong)(DAT_007381b0 >> 1);
   puVar7 = &DAT_007381b1;
@@ -1436,10 +1376,6 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo(vo
         }
         if ((uStack_70 & 1) != 0) {
           operator delete(pvStack_60);
-        }
-        if (*(long *)(lVar1 + 0x28) != lStack_48) {
-          uVar6 = __stack_chk_fail();
-          return uVar6;
         }
         return (ulong)uVar9;
       }
@@ -1529,7 +1465,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::
   char *pcVar1;
   char cVar2;
   char cVar3;
-  long lVar4;
   undefined8 *puVar5;
   long lVar6;
   ulong uVar7;
@@ -1547,10 +1482,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::
   long lStack_88;
   undefined1 auStack_78 [8];
   byte *pbStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar10 = 0;
@@ -1611,10 +1543,6 @@ LAB_00437144:
     } while (lVar9 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar10;
 }
 
@@ -1630,7 +1558,6 @@ LAB_00437144:
 ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
-  long lVar1;
   bool bVar2;
   uint uVar3;
   undefined8 *puVar4;
@@ -1653,10 +1580,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__nd
   long lStack_88;
   undefined1 auStack_78 [8];
   byte *pbStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar13 = 0;
@@ -1745,10 +1669,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__nd
     } while (lVar8 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    uVar6 = __stack_chk_fail();
-    return uVar6;
-  }
   return (ulong)(uVar13 & 1);
 }
 
@@ -1764,7 +1684,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__nd
 ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
 
 {
-  long lVar1;
   uint uVar2;
   undefined1 *puVar3;
   undefined8 *puVar4;
@@ -1781,10 +1700,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std
   long lStack_78;
   undefined1 auStack_68 [8];
   undefined1 *puStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::split(&lStack_80,param_1,0x3b);
   if (lStack_80 == lStack_78) {
     uVar9 = 0;
@@ -1833,10 +1749,6 @@ LAB_00437658:
     } while (lVar8 != lStack_78);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    uVar6 = __stack_chk_fail();
-    return uVar6;
-  }
   return (ulong)uVar9;
 }
 
@@ -1855,7 +1767,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std
   char *pcVar1;
   char cVar2;
   char cVar3;
-  long lVar4;
   uint uVar5;
   bool bVar6;
   long lVar7;
@@ -1875,10 +1786,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std
   long lStack_88;
   undefined1 auStack_78 [8];
   uint *puStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar13 = 0;
@@ -1954,10 +1862,6 @@ LAB_004378cc:
     } while (lVar12 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar8 = __stack_chk_fail();
-    return uVar8;
-  }
   return (ulong)uVar13;
 }
 
@@ -1975,7 +1879,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo
 {
   char *pcVar1;
   char cVar2;
-  long lVar3;
   uint uVar4;
   bool bVar5;
   long lVar6;
@@ -1994,10 +1897,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo
   long lStack_88;
   undefined1 auStack_78 [8];
   uint *puStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar12 = 0;
@@ -2063,10 +1963,6 @@ LAB_00437af4:
     } while (lVar11 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar12;
 }
 
@@ -2085,7 +1981,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std:
   char *pcVar1;
   char cVar2;
   char cVar3;
-  long lVar4;
   uint uVar5;
   bool bVar6;
   long lVar7;
@@ -2105,10 +2000,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std:
   long lStack_88;
   undefined1 auStack_78 [8];
   uint *puStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar13 = 0;
@@ -2183,10 +2075,6 @@ LAB_00437d8c:
     } while (lVar12 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar8 = __stack_chk_fail();
-    return uVar8;
-  }
   return (ulong)uVar13;
 }
 
@@ -2205,7 +2093,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std:
   char *pcVar1;
   char cVar2;
   char cVar3;
-  long lVar4;
   uint uVar5;
   bool bVar6;
   long lVar7;
@@ -2225,10 +2112,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std:
   long lStack_88;
   undefined1 auStack_78 [8];
   uint *puStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar13 = 0;
@@ -2303,10 +2187,6 @@ LAB_00438010:
     } while (lVar12 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    uVar8 = __stack_chk_fail();
-    return uVar8;
-  }
   return (ulong)uVar13;
 }
 
@@ -2324,7 +2204,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(
 {
   char *pcVar1;
   char cVar2;
-  long lVar3;
   uint uVar4;
   bool bVar5;
   long lVar6;
@@ -2343,10 +2222,7 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(
   long lStack_88;
   undefined1 auStack_78 [8];
   uint *puStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   Walaber::StringHelper::split(&lStack_90,param_1,0x3b);
   if (lStack_90 == lStack_88) {
     uVar12 = 0;
@@ -2412,10 +2288,6 @@ LAB_00438238:
     } while (lVar11 != lStack_88);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return (ulong)uVar12;
 }
 
@@ -2432,7 +2304,6 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
 
 {
   byte *pbVar1;
-  long lVar2;
   undefined8 *puVar3;
   ulong *puVar4;
   ulong uVar5;
@@ -2453,10 +2324,7 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_00737fd0);
                     /* try { // try from 0043836c to 0043837f has its CatchHandler @ 00438514 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_a8,&DAT_00737e80,"=\'");
@@ -2524,10 +2392,6 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -2566,7 +2430,6 @@ void WaterConcept::PlayerDataSerializer::serializeLevelPackInfo(undefined8 *para
   ulong uVar1;
   char *pcVar2;
   undefined *puVar3;
-  long lVar4;
   void *pvVar5;
   long *plVar6;
   long *plVar7;
@@ -2575,10 +2438,7 @@ void WaterConcept::PlayerDataSerializer::serializeLevelPackInfo(undefined8 *para
   byte abStack_80 [8];
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -2631,10 +2491,6 @@ void WaterConcept::PlayerDataSerializer::serializeLevelPackInfo(undefined8 *para
       plVar9 = plVar7;
     } while (plVar7 != &DAT_00739688);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2651,7 +2507,6 @@ void WaterConcept::PlayerDataSerializer::serializeLevelInfo(undefined8 *param_1)
 {
   char *pcVar1;
   ulong uVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -2665,10 +2520,7 @@ void WaterConcept::PlayerDataSerializer::serializeLevelInfo(undefined8 *param_1)
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -2826,10 +2678,6 @@ void WaterConcept::PlayerDataSerializer::serializeLevelInfo(undefined8 *param_1)
       plVar9 = plVar7;
     } while (plVar7 != &DAT_007396a0);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2845,7 +2693,6 @@ void WaterConcept::PlayerDataSerializer::serializeAchievementInfo(undefined8 *pa
 
 {
   ulong uVar1;
-  long lVar2;
   void *pvVar3;
   long *plVar4;
   long *plVar5;
@@ -2854,10 +2701,7 @@ void WaterConcept::PlayerDataSerializer::serializeAchievementInfo(undefined8 *pa
   byte abStack_70 [8];
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -2913,10 +2757,6 @@ void WaterConcept::PlayerDataSerializer::serializeAchievementInfo(undefined8 *pa
       plVar7 = plVar5;
     } while (plVar5 != &DAT_007396b8);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2933,7 +2773,6 @@ void WaterConcept::PlayerDataSerializer::serializeCollectibleInfo(undefined8 *pa
 {
   ulong uVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -2945,10 +2784,7 @@ void WaterConcept::PlayerDataSerializer::serializeCollectibleInfo(undefined8 *pa
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -3012,10 +2848,6 @@ void WaterConcept::PlayerDataSerializer::serializeCollectibleInfo(undefined8 *pa
       plVar9 = plVar7;
     } while (plVar7 != &DAT_007396d0);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3032,7 +2864,6 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo(undefined8
 {
   ulong uVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -3044,10 +2875,7 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo(undefined8
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -3106,10 +2934,6 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo(undefined8
       plVar9 = plVar7;
     } while (plVar7 != &DAT_007396e8);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3126,7 +2950,6 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo(undefined8 *par
 {
   ulong uVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -3138,10 +2961,7 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo(undefined8 *par
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -3205,10 +3025,6 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo(undefined8 *par
       plVar9 = plVar7;
     } while (plVar7 != &DAT_00739700);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3225,7 +3041,6 @@ void WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo(undefined8 *par
 {
   ulong uVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -3237,10 +3052,7 @@ void WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo(undefined8 *par
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -3304,10 +3116,6 @@ void WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo(undefined8 *par
       plVar9 = plVar7;
     } while (plVar7 != &DAT_00739718);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3324,7 +3132,6 @@ void WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo(undefined8 
 {
   ulong uVar1;
   char *pcVar2;
-  long lVar3;
   void *pvVar4;
   ulong *puVar5;
   long *plVar6;
@@ -3336,10 +3143,7 @@ void WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo(undefined8 
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   param_1[1] = 0;
   param_1[2] = 0;
   *param_1 = 0;
@@ -3398,10 +3202,6 @@ void WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo(undefined8 
       plVar9 = plVar7;
     } while (plVar7 != &DAT_00739730);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3420,7 +3220,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo(byte *param_1
 
 {
   byte *pbVar1;
-  long lVar2;
   undefined1 *puVar3;
   bool bVar4;
   uint uVar5;
@@ -3452,10 +3251,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo(byte *param_1
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80,&DAT_00737e98,&DAT_0063d328);
   uVar8 = (ulong)(DAT_00737eb0 >> 1);
   puVar7 = &DAT_00737eb1;
@@ -3619,10 +3415,6 @@ LAB_00439ac4:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3646,7 +3438,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo
   void *pvVar3;
   undefined1 *puVar4;
   byte bVar5;
-  long lVar6;
   undefined *puVar7;
   bool bVar8;
   uint uVar9;
@@ -3656,7 +3447,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo
   undefined8 *puVar13;
   byte *pbVar14;
   ulong uVar15;
-  long lVar16;
   char *pcVar17;
   char *pcVar18;
   undefined8 uVar19;
@@ -3716,8 +3506,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo
   undefined1 uStack_81;
   char *pcStack_80;
   
-  lVar6 = tpidr_el0;
-  lVar16 = *(long *)(lVar6 + 0x28);
   uStack_94 = 0;
   WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey(&uStack_b0,param_1,&uStack_94);
   if ((*param_1 & 1) == 0) {
@@ -3951,10 +3739,6 @@ LAB_0043a994:
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
-      if (*(long *)(lVar6 + 0x28) == lVar16) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
                     /* try { // try from 0043a07c to 0043a08b has its CatchHandler @ 0043ad70 */
@@ -4458,7 +4242,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   void *pvVar4;
   undefined7 uVar5;
   int iVar6;
@@ -4466,7 +4249,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
   ulong *puVar8;
   ulong uVar9;
   byte *pbVar10;
-  long lVar11;
   float fVar12;
   undefined8 uVar13;
   undefined8 uVar14;
@@ -4495,8 +4277,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
   undefined1 uStack_71;
   undefined7 uStack_70;
   
-  lVar3 = tpidr_el0;
-  lVar11 = *(long *)(lVar3 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_90,&DAT_00738150);
                     /* try { // try from 0043ae00 to 0043ae13 has its CatchHandler @ 0043b22c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(abStack_e8,&DAT_00738138,"=\'");
@@ -4683,10 +4463,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar11) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4704,7 +4480,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCollectibleInfo
                (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined1 *puVar3;
   bool bVar4;
@@ -4727,10 +4502,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCollectibleInfo
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_80,&DAT_007380d8,&DAT_0063d328);
   uVar7 = (ulong)(DAT_00738108 >> 1);
   puVar2 = &DAT_00738109;
@@ -4868,10 +4640,6 @@ LAB_0043b53c:
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4888,7 +4656,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
                (unsigned int param_1,WaterConcept::PlayerDataSerializer::CrankyChallengeInfo param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   uint uVar3;
   ulong *puVar4;
@@ -4913,10 +4680,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_007381b0);
                     /* try { // try from 0043b6ac to 0043b6bf has its CatchHandler @ 0043b918 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00738168,"=");
@@ -4998,10 +4762,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5019,7 +4779,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo
                (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined1 *puVar3;
   bool bVar4;
@@ -5043,10 +4802,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_70,&DAT_00738558,&DAT_0063d328);
   uVar7 = (ulong)(DAT_00738570 >> 1);
   puVar2 = &DAT_00738571;
@@ -5189,10 +4945,6 @@ LAB_0043bbf4:
   if ((uStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5210,7 +4962,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieMusicInfo
                (unsigned int param_1,WaterConcept::PlayerDataSerializer::CollectibleInfo param_2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   ulong uVar3;
   bool bVar4;
@@ -5237,10 +4988,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieMusicInfo
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&uStack_70,&DAT_007385e8,&DAT_0063d328);
   uVar7 = (ulong)(DAT_00738600 >> 1);
   puVar2 = &DAT_00738601;
@@ -5386,10 +5134,6 @@ LAB_0043bfe0:
   if ((uStack_50 & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5406,7 +5150,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
                (unsigned int param_1,WaterConcept::PlayerDataSerializer::AllieChallengeInfo param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   uint uVar3;
   ulong *puVar4;
@@ -5433,10 +5176,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
   void *pvStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_50,&DAT_007381b0);
                     /* try { // try from 0043c14c to 0043c15f has its CatchHandler @ 0043c3b8 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_90,&DAT_00738168,"=");
@@ -5522,10 +5262,6 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -5541,21 +5277,13 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
 void WaterConcept::PlayerDataSerializer::reUpdateLocalLevelInfo(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>& param_1)
 
 {
-  long lVar1;
   long lVar2;
   undefined1 auStack_38 [8];
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = param_1;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::PlayerDataSerializer::LevelInfo>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::PlayerDataSerializer::LevelInfo>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::PlayerDataSerializer::LevelInfo>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::PlayerDataSerializer::LevelInfo>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::PlayerDataSerializer::LevelInfo>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(&mLevelInfo,param_1,&DAT_0063669d,&uStack_30,auStack_38);
   WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo(param_1,*(undefined8 *)(lVar2 + 0x38),*(undefined8 *)(lVar2 + 0x40));
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5573,15 +5301,11 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
 
 {
   ulong uVar1;
-  long lVar2;
   int iVar3;
   byte abStack_50 [8];
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   *param_3 = 0x8e;
   uVar1 = (ulong)(*param_2 >> 1);
   if ((*param_2 & 1) != 0) {
@@ -5610,10 +5334,6 @@ void WaterConcept::PlayerDataSerializer::decodeLevelAndStorylineBitmaskFromKey
   }
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1,param_2);
 LAB_0043c518:
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

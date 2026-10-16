@@ -42,15 +42,11 @@ long std::__ndk1::
 {
   bool bVar1;
   long *plVar2;
-  long lVar3;
   long lVar4;
   undefined8 uVar5;
   undefined8 uVar6;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   plVar2 = (long *)std::__ndk1::__tree_node_base<void*>*& std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>>>::__find_equal<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1,&uStack_50,param_2);
   lVar4 = *plVar2;
   bVar1 = lVar4 == 0;
@@ -67,10 +63,6 @@ long std::__ndk1::
     *param_4 = 0;
     *(undefined4 *)(lVar4 + 0x38) = 0;
     plVar2 = (long *)std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>>>::__insert_node_at(param_1,uStack_50,plVar2,lVar4);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_48) {
-    lVar3 = __stack_chk_fail(plVar2,bVar1);
-    return lVar3;
   }
   return lVar4;
 }

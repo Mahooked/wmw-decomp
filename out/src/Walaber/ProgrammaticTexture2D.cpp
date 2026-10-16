@@ -115,7 +115,6 @@ void Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vec
   int iVar3;
   uint uVar4;
   uint uVar5;
-  long lVar6;
   ulong p1;
   undefined8 uVar7;
   undefined8 uVar8;
@@ -128,10 +127,7 @@ void Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vec
   void *pvStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar6 = tpidr_el0;
-  lStack_38 = *(long *)(lVar6 + 0x28);
   pvVar1 = *(void **)*param_1;
   pvVar2 = (void *)((long *)*param_1)[1];
   if ((long)pvVar2 - (long)pvVar1 >> 2 ==
@@ -209,10 +205,6 @@ void Walaber::ProgrammaticTexture2D::setData(Walaber::SharedPtr<std::__ndk1::vec
                  "ProgrammaticTexture::setData ERROR - source data size does not match texture size %dx%d"
                 );
   }
-  if (*(long *)(lVar6 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -268,16 +260,12 @@ void Walaber::ProgrammaticTexture2D::_applySettings(long param_1)
 void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
 
 {
-  long lVar1;
   long lStack_68;
   int *piStack_60;
   byte abStack_58 [16];
   void *pvStack_48;
   undefined4 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if ((int)param_1[0xf] == -1) {
     Walaber::ProgrammaticTexture2D::initWithSize(param_1,*(undefined4 *)((long)param_1 + 0x7c),(int)param_1[0x10],
                     *(undefined4 *)((long)param_1 + 0x34));
@@ -299,10 +287,6 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
       operator delete(pvStack_48);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -344,13 +328,9 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
                undefined4 param_5,long *param_6)
 
 {
-  long lVar1;
   long lStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Texture::Texture(param_1,param_2,3);
   *param_1 = (long)&PTR__ProgrammaticTexture2D_00710068;
                     /* try { // try from 003956e8 to 003956fb has its CatchHandler @ 0039576c */
@@ -363,10 +343,6 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
                     /* try { // try from 0039571c to 00395727 has its CatchHandler @ 0039575c */
   (**(code **)(*param_1 + 0x10))(param_1,&lStack_58);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_58);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

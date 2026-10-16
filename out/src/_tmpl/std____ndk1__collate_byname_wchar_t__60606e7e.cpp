@@ -12,7 +12,6 @@
 void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -26,20 +25,13 @@ void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined ***)p0 = &PTR__collate_byname_00717730;
   *(long *)(p0 + 8) = in_x2 + -1;
                     /* try { // try from 005d6444 to 005d644f has its CatchHandler @ 005d656c */
   lVar2 = newlocale(0x1fbf,p1,0);
   *(long *)(p0 + 0x10) = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_78 = 0;
@@ -188,7 +180,6 @@ ulong std::__ndk1::collate_byname<wchar_t>::do_compare
 {
   void *pvVar1;
   void *pvVar2;
-  long lVar3;
   int iVar4;
   ulong uVar5;
   uint uVar6;
@@ -196,10 +187,7 @@ ulong std::__ndk1::collate_byname<wchar_t>::do_compare
   void *pvStack_68;
   ulong auStack_60 [2];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_60[0] = 0;
   auStack_60[1] = 0;
   pvStack_50 = (void *)0x0;
@@ -228,10 +216,6 @@ ulong std::__ndk1::collate_byname<wchar_t>::do_compare
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return (ulong)uVar6;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -248,15 +232,11 @@ void std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 {
   void *pvVar1;
   ulong uVar2;
-  long lVar3;
   byte *pbVar4;
   byte *in_x8;
   ulong auStack_50 [2];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   auStack_50[0] = 0;
   auStack_50[1] = 0;
   pvStack_40 = (void *)0x0;
@@ -306,10 +286,6 @@ void std::__ndk1::collate_byname<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
   wcsxfrm(pbVar4,pvVar1,uVar2 + 1);
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
-  }
-  if (*(long *)(lVar3 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

@@ -18,7 +18,6 @@ ulong std::__ndk1::
 
 {
   byte *pbVar1;
-  long lVar2;
   ulong uVar3;
   ulong uVar4;
   undefined8 *puVar5;
@@ -36,10 +35,7 @@ ulong std::__ndk1::
   undefined8 *puStack_90;
   undefined8 *puStack_88;
   undefined8 *puStack_80;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   lVar9 = *param_1;
   uVar3 = param_1[1];
   lVar7 = (long)(param_2 - lVar9) >> 3;
@@ -168,10 +164,6 @@ ulong std::__ndk1::
     puStack_a8 = puStack_a8 + 0x11;
     param_2 = std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(param_1,&puStack_b8,param_2);
     std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(&puStack_b8);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return param_2;
 }

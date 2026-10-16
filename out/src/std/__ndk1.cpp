@@ -36,10 +36,8 @@ ulong std::__ndk1::__libcpp_sscanf_l
                 undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
-  long lVar4;
   undefined1 auStack_c0 [8];
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -51,8 +49,6 @@ ulong std::__ndk1::__libcpp_sscanf_l
   undefined1 *puStack_80;
   undefined8 uStack_78;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_b8 = param_4;
   uStack_b0 = param_5;
   uStack_a8 = param_6;
@@ -68,10 +64,6 @@ ulong std::__ndk1::__libcpp_sscanf_l
                     /* try { // try from 005b5a84 to 005b5a8b has its CatchHandler @ 005b5abc */
     uselocale(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -109,10 +101,8 @@ ulong std::__ndk1::__libcpp_snprintf_l
                 undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
-  long lVar4;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -122,8 +112,6 @@ ulong std::__ndk1::__libcpp_snprintf_l
   undefined8 *puStack_90;
   undefined8 uStack_88;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_c0 = param_5;
   uStack_b8 = param_6;
   uStack_b0 = param_7;
@@ -138,10 +126,6 @@ ulong std::__ndk1::__libcpp_snprintf_l
                     /* try { // try from 005ba944 to 005ba94b has its CatchHandler @ 005ba980 */
     uselocale(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -158,10 +142,8 @@ ulong std::__ndk1::__libcpp_asprintf_l
                 undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
-  long lVar4;
   undefined1 auStack_c0 [8];
   undefined8 uStack_b8;
   undefined8 uStack_b0;
@@ -173,8 +155,6 @@ ulong std::__ndk1::__libcpp_asprintf_l
   undefined1 *puStack_80;
   undefined8 uStack_78;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
   uStack_b8 = param_4;
   uStack_b0 = param_5;
   uStack_a8 = param_6;
@@ -191,10 +171,6 @@ ulong std::__ndk1::__libcpp_asprintf_l
                     /* try { // try from 005bba68 to 005bba6f has its CatchHandler @ 005bbaa0 */
     uselocale(lVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lVar4) {
-    return uVar3 & 0xffffffff;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 
@@ -477,7 +453,6 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   ulong uVar5;
   undefined8 *puVar6;
@@ -486,10 +461,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -533,10 +505,6 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
     if ((auStack_80[0] & 1) != 0) {
       operator delete(pvStack_70);
     }
-    if (*(long *)(lVar3 + 0x28) == lStack_48) {
-      return uVar5 & 0xffffffff;
-    }
-    uVar5 = __stack_chk_fail();
     return uVar5;
   }
                     /* try { // try from 005eaecc to 005eaedf has its CatchHandler @ 005eaf68 */
@@ -565,7 +533,6 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   ulong uVar6;
   undefined8 *puVar7;
@@ -573,10 +540,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -620,10 +584,6 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
     if ((auStack_80[0] & 1) != 0) {
       operator delete(pvStack_70);
     }
-    if (*(long *)(lVar4 + 0x28) == lStack_48) {
-      return uVar6 & 0xffffffff;
-    }
-    uVar6 = __stack_chk_fail();
     return uVar6;
   }
                     /* try { // try from 005eb120 to 005eb133 has its CatchHandler @ 005eb1bc */
@@ -651,7 +611,6 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_t
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puVar6;
@@ -660,10 +619,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_t
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -706,10 +662,6 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_t
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -728,7 +680,6 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::cha
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
@@ -736,10 +687,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::cha
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -782,10 +730,6 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::cha
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -803,7 +747,6 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puVar6;
@@ -812,10 +755,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -858,10 +798,6 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -880,7 +816,6 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
@@ -888,10 +823,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -934,10 +866,6 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -955,7 +883,6 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puVar6;
@@ -964,10 +891,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1010,10 +934,6 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -1032,7 +952,6 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
@@ -1040,10 +959,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1086,10 +1002,6 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -1107,7 +1019,6 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puVar6;
@@ -1116,10 +1027,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   abStack_80[0] = 0xc;
   abStack_80[8] = 0;
   abStack_80[9] = 0;
@@ -1176,10 +1084,6 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return uVar5;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -1198,7 +1102,6 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::c
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 uVar6;
   undefined8 *puVar7;
@@ -1206,10 +1109,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::c
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   abStack_80[0] = 0xc;
   abStack_80[8] = 0;
   abStack_80[9] = 0;
@@ -1266,10 +1166,6 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::c
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return uVar6;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -1287,7 +1183,6 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 *puVar5;
   byte *pbVar6;
@@ -1297,10 +1192,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1344,11 +1236,6 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    auVar7._8_8_ = uVar8;
-    return auVar7;
-  }
-  auVar7 = __stack_chk_fail();
   return auVar7;
 }
 
@@ -1367,7 +1254,6 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 *puVar6;
   undefined1 auVar7 [16];
@@ -1376,10 +1262,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1423,11 +1306,6 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    auVar7._8_8_ = uVar8;
-    return auVar7;
-  }
-  auVar7 = __stack_chk_fail();
   return auVar7;
 }
 
@@ -1445,7 +1323,6 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 *puVar5;
   byte *pbVar6;
@@ -1455,10 +1332,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1502,11 +1376,6 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    auVar7._8_8_ = uVar8;
-    return auVar7;
-  }
-  auVar7 = __stack_chk_fail();
   return auVar7;
 }
 
@@ -1525,7 +1394,6 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 *puVar6;
   undefined1 auVar7 [16];
@@ -1534,10 +1402,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1581,11 +1446,6 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    auVar7._8_8_ = uVar8;
-    return auVar7;
-  }
-  auVar7 = __stack_chk_fail();
   return auVar7;
 }
 
@@ -1603,7 +1463,6 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
 {
   int iVar1;
   int iVar2;
-  long lVar3;
   int *piVar4;
   undefined8 *puVar5;
   byte *pbVar6;
@@ -1612,10 +1471,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1658,10 +1514,6 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar7);
   return;
 }
 
@@ -1680,7 +1532,6 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   byte *pbVar1;
   int iVar2;
   int iVar3;
-  long lVar4;
   int *piVar5;
   undefined8 *puVar6;
   undefined8 uVar7;
@@ -1688,10 +1539,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   void *pvStack_70;
   long lStack_68;
   undefined1 auStack_60 [24];
-  long lStack_48;
   
-  lVar4 = tpidr_el0;
-  lStack_48 = *(long *)(lVar4 + 0x28);
   auStack_80[1] = 0;
   pvStack_70 = (void *)0x0;
   lStack_68 = 0;
@@ -1734,10 +1582,6 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar7);
   return;
 }
 
@@ -1752,7 +1596,6 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
 void std::__ndk1::to_string(int p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -1761,10 +1604,7 @@ void std::__ndk1::to_string(int p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -1807,10 +1647,6 @@ void std::__ndk1::to_string(int p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -1847,7 +1683,6 @@ LAB_005ecd50:
 void std::__ndk1::to_string(uint p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -1856,10 +1691,7 @@ void std::__ndk1::to_string(uint p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -1902,10 +1734,6 @@ void std::__ndk1::to_string(uint p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -1942,7 +1770,6 @@ LAB_005ecf14:
 void std::__ndk1::to_string(long p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -1951,10 +1778,7 @@ void std::__ndk1::to_string(long p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -1997,10 +1821,6 @@ void std::__ndk1::to_string(long p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2037,7 +1857,6 @@ LAB_005ed0d8:
 void std::__ndk1::to_string(ulong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2046,10 +1865,7 @@ void std::__ndk1::to_string(ulong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -2092,10 +1908,6 @@ void std::__ndk1::to_string(ulong p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2132,7 +1944,6 @@ LAB_005ed29c:
 void std::__ndk1::to_string(longlong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2141,10 +1952,7 @@ void std::__ndk1::to_string(longlong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -2187,10 +1995,6 @@ void std::__ndk1::to_string(longlong p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2227,7 +2031,6 @@ LAB_005ed460:
 void std::__ndk1::to_string(ulonglong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2236,10 +2039,7 @@ void std::__ndk1::to_string(ulonglong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -2282,10 +2082,6 @@ void std::__ndk1::to_string(ulonglong p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2322,7 +2118,6 @@ LAB_005ed624:
 void std::__ndk1::to_string(float p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2331,10 +2126,7 @@ void std::__ndk1::to_string(float p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -2377,10 +2169,6 @@ void std::__ndk1::to_string(float p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2417,7 +2205,6 @@ LAB_005ed7ec:
 void std::__ndk1::to_string(double p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2426,10 +2213,7 @@ void std::__ndk1::to_string(double p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uStack_68 = 0;
   uStack_60 = 0;
   uStack_70 = 0;
@@ -2472,10 +2256,6 @@ void std::__ndk1::to_string(double p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2512,7 +2292,6 @@ LAB_005ed9b0:
 void std::__ndk1::to_string(longdouble p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong *in_x8;
   ulong uVar3;
@@ -2521,10 +2300,7 @@ void std::__ndk1::to_string(longdouble p0)
   undefined8 uStack_60;
   ulong uStack_58;
   ulong uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_58 = 0;
   uStack_50 = 0;
   uStack_60 = 0;
@@ -2567,10 +2343,6 @@ void std::__ndk1::to_string(longdouble p0)
           in_x8[2] = uStack_50;
           in_x8[1] = uStack_58;
           *in_x8 = uStack_60;
-          if (*(long *)(lVar1 + 0x28) != lStack_48) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -2607,7 +2379,6 @@ LAB_005edb70:
 void std::__ndk1::to_wstring(int p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -2617,10 +2388,7 @@ void std::__ndk1::to_wstring(int p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -2663,10 +2431,6 @@ void std::__ndk1::to_wstring(int p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -2704,7 +2468,6 @@ void std::__ndk1::to_wstring(int p0)
 void std::__ndk1::to_wstring(uint p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -2714,10 +2477,7 @@ void std::__ndk1::to_wstring(uint p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -2760,10 +2520,6 @@ void std::__ndk1::to_wstring(uint p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -2801,7 +2557,6 @@ void std::__ndk1::to_wstring(uint p0)
 void std::__ndk1::to_wstring(long p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -2811,10 +2566,7 @@ void std::__ndk1::to_wstring(long p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -2857,10 +2609,6 @@ void std::__ndk1::to_wstring(long p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -2898,7 +2646,6 @@ void std::__ndk1::to_wstring(long p0)
 void std::__ndk1::to_wstring(ulong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -2908,10 +2655,7 @@ void std::__ndk1::to_wstring(ulong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -2954,10 +2698,6 @@ void std::__ndk1::to_wstring(ulong p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -2995,7 +2735,6 @@ void std::__ndk1::to_wstring(ulong p0)
 void std::__ndk1::to_wstring(longlong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -3005,10 +2744,7 @@ void std::__ndk1::to_wstring(longlong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -3051,10 +2787,6 @@ void std::__ndk1::to_wstring(longlong p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -3092,7 +2824,6 @@ void std::__ndk1::to_wstring(longlong p0)
 void std::__ndk1::to_wstring(ulonglong p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -3102,10 +2833,7 @@ void std::__ndk1::to_wstring(ulonglong p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x17;
   uStack_70 = 0x19;
@@ -3148,10 +2876,6 @@ void std::__ndk1::to_wstring(ulonglong p0)
         in_x8[2] = uStack_60;
         in_x8[1] = uStack_68;
         *in_x8 = uStack_70;
-        if (*(long *)(lVar1 + 0x28) == lStack_58) {
-          return;
-        }
-        __stack_chk_fail();
         return;
       }
     }
@@ -3189,7 +2913,6 @@ void std::__ndk1::to_wstring(ulonglong p0)
 void std::__ndk1::to_wstring(float p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -3198,10 +2921,7 @@ void std::__ndk1::to_wstring(float p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x14;
   uStack_70 = 0x19;
@@ -3249,10 +2969,6 @@ void std::__ndk1::to_wstring(float p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -3288,7 +3004,6 @@ LAB_005ee820:
 void std::__ndk1::to_wstring(double p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -3297,10 +3012,7 @@ void std::__ndk1::to_wstring(double p0)
   undefined8 uStack_70;
   ulong uStack_68;
   ulong uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_68 = 0x14;
   uStack_70 = 0x19;
@@ -3348,10 +3060,6 @@ void std::__ndk1::to_wstring(double p0)
           in_x8[2] = uStack_60;
           in_x8[1] = uStack_68;
           *in_x8 = uStack_70;
-          if (*(long *)(lVar1 + 0x28) != lStack_58) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }
@@ -3387,7 +3095,6 @@ LAB_005eea0c:
 void std::__ndk1::to_wstring(longdouble p0)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   ulong *in_x8;
@@ -3396,10 +3103,7 @@ void std::__ndk1::to_wstring(longdouble p0)
   undefined8 uStack_60;
   ulong uStack_58;
   ulong uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar3 = operator new(0x60);
   uStack_58 = 0x14;
   uStack_60 = 0x19;
@@ -3447,10 +3151,6 @@ void std::__ndk1::to_wstring(longdouble p0)
           in_x8[2] = uStack_50;
           in_x8[1] = uStack_58;
           *in_x8 = uStack_60;
-          if (*(long *)(lVar1 + 0x28) != lStack_48) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
       }

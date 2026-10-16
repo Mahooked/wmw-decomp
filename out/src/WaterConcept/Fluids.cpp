@@ -13,11 +13,9 @@ void WaterConcept::Fluids::Fluids(int p0,Walaber__AABB *p1)
 
 {
   long lVar1;
-  long lVar2;
   long *plVar3;
   long lVar4;
   long *in_x2;
-  long lVar5;
   long *plVar6;
   long *plVar7;
   ulong uVar8;
@@ -57,8 +55,6 @@ void WaterConcept::Fluids::Fluids(int p0,Walaber__AABB *p1)
   undefined1 uStack_80;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lVar5 = *(long *)(lVar2 + 0x28);
   std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::vector(plVar3,5);
   *(int *)(plVar3 + 4) = (int)p1;
   plVar3[3] = -0x4080000000000000;
@@ -288,10 +284,6 @@ void WaterConcept::Fluids::Fluids(int p0,Walaber__AABB *p1)
   memset((long)plVar3 + 0x3d04c,0,0x50);
                     /* try { // try from 00404310 to 00404317 has its CatchHandler @ 004043d0 */
   WaterConcept::Fluids::_setupRenderTextureBuffer(plVar3);
-  if (*(long *)(lVar2 + 0x28) == lVar5) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -450,7 +442,6 @@ void WaterConcept::Fluids::_initFluidsWithBounds(Walaber__AABB *p0)
   int iVar2;
   uint uVar3;
   undefined1 auVar4 [16];
-  long lVar5;
   long lVar6;
   int *piVar7;
   undefined8 uVar8;
@@ -461,10 +452,7 @@ void WaterConcept::Fluids::_initFluidsWithBounds(Walaber__AABB *p0)
   float fVar13;
   float fStack_70;
   float fStack_6c;
-  long lStack_68;
   
-  lVar5 = tpidr_el0;
-  lStack_68 = *(long *)(lVar5 + 0x28);
   fStack_70 = p0[0x30c8].f_0x8;
   fStack_6c = p0[0x30c9].f_0x0;
   fVar12 = p0[0x30f0].f_0x0;
@@ -507,10 +495,6 @@ void WaterConcept::Fluids::_initFluidsWithBounds(Walaber__AABB *p0)
   p0[0x30ca].f_0x8 = (float)(int)uVar8;
   p0[0x30ca].f_0xc = (float)(int)((ulong)uVar8 >> 0x20);
   WaterConcept::Fluids::_fillNeighborGrid(p0);
-  if (*(long *)(lVar5 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -762,11 +746,9 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
   undefined4 *puVar1;
   int *piVar2;
   int iVar3;
-  long lVar4;
   long lVar5;
   WaterConcept__Fluids *pWVar6;
   long *in_x1;
-  long lVar7;
   int *piVar8;
   undefined8 uVar9;
   long lVar10;
@@ -809,8 +791,6 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
   undefined8 uStack_80;
   undefined1 uStack_78;
   
-  lVar4 = tpidr_el0;
-  lVar7 = *(long *)(lVar4 + 0x28);
   uVar11 = 0;
   piStack_130 = (int *)0x0;
   lStack_138 = 0;
@@ -954,10 +934,6 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_138);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_148);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_158);
-  if (*(long *)(lVar4 + 0x28) == lVar7) {
-    return p0;
-  }
-  pWVar6 = (WaterConcept__Fluids *)__stack_chk_fail();
   return pWVar6;
 }
 
@@ -1104,7 +1080,6 @@ void WaterConcept::Fluids::_fillNeighborGrid(long param_1)
   undefined8 *puVar2;
   int iVar3;
   int iVar4;
-  long lVar5;
   int iVar6;
   int iVar7;
   int iVar8;
@@ -1119,10 +1094,7 @@ void WaterConcept::Fluids::_fillNeighborGrid(long param_1)
   ulong uStack_30;
   ulong uStack_28;
   ulong uStack_20;
-  long lStack_18;
   
-  lVar5 = tpidr_el0;
-  lStack_18 = *(long *)(lVar5 + 0x28);
   lVar9 = *(long *)((long)&__DT_SYMTAB[0x1c0e].st_size + param_1);
   iVar3 = *(int *)(lVar9 + 0x10);
   if (0 < iVar3) {
@@ -1172,10 +1144,6 @@ void WaterConcept::Fluids::_fillNeighborGrid(long param_1)
       iVar10 = iVar10 + 1;
     } while (iVar8 != iVar3);
   }
-  if (*(long *)(lVar5 + 0x28) == lStack_18) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1207,14 +1175,10 @@ void WaterConcept::Fluids::addParticle(int p0,float p1,Walaber__Vector2 *p2,floa
 
 {
   undefined4 uVar1;
-  long lVar2;
   ulong uVar3;
   undefined8 uVar4;
-  long lVar5;
   long lVar6;
   
-  lVar2 = tpidr_el0;
-  lVar5 = *(long *)(lVar2 + 0x28);
   lVar6 = *(long *)(ulong)(uint)p0 + (long)(int)p2 * 0xf0;
   *(undefined1 *)(lVar6 + 0xe8) = 1;
   uVar3 = Walaber::FluidParticleSet::addParticle(*(undefined8 *)(lVar6 + 0xe0));
@@ -1232,10 +1196,6 @@ void WaterConcept::Fluids::addParticle(int p0,float p1,Walaber__Vector2 *p2,floa
     *(undefined4 *)(lVar6 + -0xc) = 0;
     *(undefined4 *)(lVar6 + -0x60) = 0;
   }
-  if (*(long *)(lVar2 + 0x28) == lVar5) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -1253,14 +1213,10 @@ void WaterConcept::Fluids::addParticle
 
 {
   undefined4 uVar1;
-  long lVar2;
   ulong uVar3;
   undefined8 uVar4;
-  long lVar5;
   long lVar6;
   
-  lVar2 = tpidr_el0;
-  lVar5 = *(long *)(lVar2 + 0x28);
   lVar6 = *(long *)(ulong)(uint)p0 + (long)(int)p2 * 0xf0;
   *(undefined1 *)(lVar6 + 0xe8) = 1;
   uVar3 = Walaber::FluidParticleSet::addParticle(*(undefined8 *)(lVar6 + 0xe0),p3);
@@ -1278,10 +1234,6 @@ void WaterConcept::Fluids::addParticle
     *(float *)(lVar6 + -0xc) = p5;
     *(undefined4 *)(lVar6 + -0x60) = 0;
   }
-  if (*(long *)(lVar2 + 0x28) == lVar5) {
-    return;
-  }
-  __stack_chk_fail(uVar4);
   return;
 }
 
@@ -1327,15 +1279,11 @@ void WaterConcept::Fluids::addCollisionBehavior
 
 {
   long *plVar1;
-  long lVar2;
   ulong uVar3;
   undefined8 in_x3;
   undefined8 uStack_40;
-  long lStack_38;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar1 = (long *)((long)&__DT_SYMTAB[0x1c0a].st_size + uVar3);
   uStack_40 = in_x3;
   if ((undefined8 *)*plVar1 == *(undefined8 **)((long)&__DT_SYMTAB[0x1c0b].st_name + uVar3)) {
@@ -1351,10 +1299,6 @@ void WaterConcept::Fluids::addCollisionBehavior
   *(undefined8 *)
    (*(long *)((long)&__DT_SYMTAB[0x1c0b].st_value + uVar3) + (long)((int)p2 * 5 + p1) * 8) =
        uStack_40;
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1370,7 +1314,6 @@ void WaterConcept::Fluids::addCollisionBehavior
 void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__ParticleDescription *p1)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   undefined8 *puVar4;
@@ -1387,11 +1330,8 @@ void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__Partic
   undefined8 uStack_78;
   uint uStack_70;
   int iStack_6c;
-  long lStack_68;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar5 = *plVar3;
   iVar2 = (int)p1;
   lVar7 = lVar5 + (long)iVar2 * 0xf0;
@@ -1441,10 +1381,6 @@ void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__Partic
     }
   }
   WaterConcept::Fluids::removeParticle(plVar3);
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail(iStack_6c);
-    return;
-  }
   return;
 }
 
@@ -1463,7 +1399,6 @@ void WaterConcept::Fluids::changeParticleToFluidTypeWithDamping
 
 {
   int iVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   int *in_x2;
@@ -1484,11 +1419,8 @@ void WaterConcept::Fluids::changeParticleToFluidTypeWithDamping
   undefined8 uStack_88;
   uint uStack_80;
   int iStack_7c;
-  long lStack_78;
   
   plVar4 = (long *)(ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   lVar5 = *plVar4;
   iVar3 = (int)p1;
   *(undefined1 *)(lVar5 + (long)iVar3 * 0xf0 + 0xe8) = 1;
@@ -1544,10 +1476,6 @@ void WaterConcept::Fluids::changeParticleToFluidTypeWithDamping
     }
   }
   WaterConcept::Fluids::removeParticle(plVar4);
-  if (*(long *)(lVar2 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1564,7 +1492,6 @@ void WaterConcept::Fluids::addCloneParticleToFluidWithDamping
                (int p0,WaterConcept__ParticleDescription *p1,float p2)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   int *in_x2;
@@ -1583,11 +1510,8 @@ void WaterConcept::Fluids::addCloneParticleToFluidWithDamping
   undefined8 uStack_68;
   uint uStack_60;
   int iStack_5c;
-  long lStack_58;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar4 = *plVar3;
   iVar2 = (int)p1;
   *(undefined1 *)(lVar4 + (long)iVar2 * 0xf0 + 0xe8) = 1;
@@ -1624,10 +1548,6 @@ void WaterConcept::Fluids::addCloneParticleToFluidWithDamping
     uStack_60 = (uint)*(byte *)(lVar6 + (long)iStack_5c * 0x90 + 0x34);
     std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>::insert(puVar5,*puVar5,&uStack_68);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1728,7 +1648,6 @@ void WaterConcept::Fluids::update(float p0)
 
 {
   uint uVar1;
-  long lVar2;
   long *p0_00;
   long *in_x0;
   ulong uVar3;
@@ -1750,11 +1669,8 @@ void WaterConcept::Fluids::update(float p0)
   float fVar18;
   float fStack_80;
   float fStack_7c;
-  long lStack_78;
   
   uVar13 = CONCAT44(in_register_00005004,p0);
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   fVar14 = *(float *)(in_x0 + 0x7a58);
   if (*(float *)((long)in_x0 + 0x3d2bc) != fVar14) {
     *(float *)((long)in_x0 + 0x3d2bc) = fVar14;
@@ -1850,10 +1766,6 @@ void WaterConcept::Fluids::update(float p0)
       operator delete(p0_00);
     }
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_78) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1903,7 +1815,6 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
   uint uVar1;
   int iVar2;
   uint uVar3;
-  long lVar4;
   undefined8 uVar5;
   long lVar6;
   long lVar7;
@@ -1918,10 +1829,7 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
   int iStack_78;
   undefined4 uStack_74;
   uint uStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   lVar6 = *param_1;
   uVar8 = (param_1[1] - lVar6 >> 4) * -0x1111111111111111;
   if ((int)uVar8 != 0) {
@@ -1974,10 +1882,6 @@ void WaterConcept::Fluids::_updateFluidGrid(long *param_1)
       lVar6 = *param_1;
     }
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -2000,7 +1904,6 @@ void WaterConcept::Fluids::_calculate_densities(long *param_1)
   uint uVar6;
   uint uVar7;
   int iVar8;
-  long lVar9;
   bool bVar10;
   undefined8 *puVar11;
   int iVar12;
@@ -2032,10 +1935,7 @@ void WaterConcept::Fluids::_calculate_densities(long *param_1)
   undefined8 uStack_b8;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
-  long lStack_a0;
   
-  lVar9 = tpidr_el0;
-  lStack_a0 = *(long *)(lVar9 + 0x28);
   uStack_b8 = 0;
   uStack_c0 = 0;
   uStack_a8 = 0;
@@ -2234,10 +2134,6 @@ void WaterConcept::Fluids::_calculate_densities(long *param_1)
     }
   }
 LAB_0040822c:
-  if (*(long *)(lVar9 + 0x28) == lStack_a0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2385,9 +2281,7 @@ void WaterConcept::Fluids::_update_orphans(float p0)
 
 {
   uint uVar1;
-  long lVar2;
   long *in_x0;
-  long lVar3;
   long lVar4;
   long lVar5;
   ulong uVar6;
@@ -2400,8 +2294,6 @@ void WaterConcept::Fluids::_update_orphans(float p0)
   float fVar13;
   float fVar14;
   
-  lVar2 = tpidr_el0;
-  lVar3 = *(long *)(lVar2 + 0x28);
   lVar4 = *in_x0;
   uVar6 = (in_x0[1] - lVar4 >> 4) * -0x1111111111111111;
   if ((int)uVar6 != 0) {
@@ -2441,10 +2333,6 @@ void WaterConcept::Fluids::_update_orphans(float p0)
       lVar4 = *in_x0;
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lVar3) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2508,7 +2396,6 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
 
 {
   undefined8 *puVar1;
-  long lVar2;
   long *plVar3;
   long *plVar4;
   long lVar5;
@@ -2518,10 +2405,7 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
   void *pvStack_60;
   void *pvStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   plVar4 = (long *)((long)&__DT_SYMTAB[0x1c09].st_size + param_1);
   plVar3 = (long *)*plVar4;
   puVar1 = (undefined8 *)((long)&__DT_SYMTAB[0x1c08].st_size + param_1);
@@ -2574,10 +2458,6 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
       uVar8 = uVar8 + 1;
     } while (uVar8 < (uVar6 >> 3 & 0xffffffff));
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2714,7 +2594,6 @@ void WaterConcept::Fluids::renderOffscreenTargets
 
 {
   uint uVar1;
-  long lVar2;
   long lVar3;
   long *plVar4;
   undefined8 *in_x3;
@@ -2728,10 +2607,7 @@ void WaterConcept::Fluids::renderOffscreenTargets
   Walaber__Vector2 *pWStack_80;
   Walaber__Vector2 WStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   Walaber::GraphicsGL::setBlending(1);
   lVar3 = Walaber::PlatformManager::getInstancePtr();
   iVar6 = *(int *)(lVar3 + 0x28);
@@ -2906,10 +2782,6 @@ void WaterConcept::Fluids::renderOffscreenTargets
   glBindBuffer(0x8892,0);
   glColorMask(1,1,1,1);
   *(uint *)((long)&p0[0x1179].f_0x30 + 4) = *(uint *)((long)&p0[0x1179].f_0x30 + 4) ^ 1;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2932,7 +2804,6 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
   Walaber__Vector2 *pWVar5;
   Walaber__Vector2 *pWVar6;
   uint uVar7;
-  long lVar8;
   uint in_w3;
   Walaber__Vector2 WVar9;
   uint uVar10;
@@ -2959,10 +2830,7 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
   float fStack_c0;
   float fStack_bc;
   uint uStack_b8;
-  long lStack_b0;
   
-  lVar8 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar8 + 0x28);
   pWVar4 = p0 + 0x7a04;
   fVar16 = *(float *)(ulong)p2;
   fVar21 = ((float *)(ulong)p2)[1];
@@ -3072,10 +2940,6 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
     uVar10 = uVar1;
   } while (uVar1 != 0x18);
   DAT_007323a8 = DAT_007323a8 + 0.1;
-  if (*(long *)(lVar8 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3332,7 +3196,6 @@ void WaterConcept::Fluids::_drawDrawBuffer
 
 {
   int iVar1;
-  long lVar2;
   long lVar3;
   undefined4 *in_x3;
   undefined4 auStack_68 [2];
@@ -3340,10 +3203,7 @@ void WaterConcept::Fluids::_drawDrawBuffer
   float fStack_5c;
   undefined8 uStack_58;
   ulong uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   lVar3 = Walaber::PlatformManager::getInstancePtr();
   iVar1 = *(int *)(lVar3 + 0x28);
   if (iVar1 < 0x41) {
@@ -3382,10 +3242,6 @@ void WaterConcept::Fluids::_drawDrawBuffer
       glTexEnvi(0x2300,0x2200,0x2100);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3403,7 +3259,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
                 ,float p5,int p6,bool p7,Walaber__Color *p8,int p9)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -3411,10 +3266,7 @@ ulong WaterConcept::Fluids::_fillVertBuffer
   undefined4 in_register_00005004;
   undefined4 in_register_00005024;
   uint uStack_7c;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   uStack_7c = (uint)p2;
   if (*(int *)((ulong)(uint)p1 + 0x34) != 0) {
     uVar5 = 3;
@@ -3427,10 +3279,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
     Walaber::FluidParticleSet::drawIntoVertBuffer(CONCAT44(in_register_00005004,p4),CONCAT44(in_register_00005024,p5),0,
                     (ulong)(uint)p1,uVar4,&uStack_7c,p3,p6,p7,(uint)p8 & 1,uVar5,p9);
     p2 = (Walaber__Color *)(ulong)uStack_7c;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_78) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return (ulong)p2 & 0xffffffff;
 }
@@ -3449,7 +3297,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
                 ,float p5,float p6,float p7,int p8,bool p9,Walaber__Color *p10,int p11)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   undefined8 uVar4;
@@ -3459,10 +3306,7 @@ ulong WaterConcept::Fluids::_fillVertBuffer
   undefined4 in_register_00005044;
   undefined4 in_register_00005064;
   uint uStack_8c;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   uStack_8c = (uint)p2;
   if (*(int *)((ulong)(uint)p1 + 0x34) != 0) {
     uVar5 = 3;
@@ -3476,10 +3320,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
                     CONCAT44(in_register_00005044,p6),CONCAT44(in_register_00005064,p7),0,
                     (ulong)(uint)p1,uVar4,&uStack_8c,p3,p8,p9,(uint)p10 & 1,uVar5,p11);
     p2 = (Walaber__Color *)(ulong)uStack_8c;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_88) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return (ulong)p2 & 0xffffffff;
 }

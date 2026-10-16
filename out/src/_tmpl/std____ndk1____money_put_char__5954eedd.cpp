@@ -18,7 +18,6 @@ void std::__ndk1::__money_put<char>::__gather_info
 
 {
   byte bVar1;
-  long lVar2;
   undefined1 uVar3;
   undefined4 uVar4;
   long *plVar5;
@@ -27,10 +26,7 @@ void std::__ndk1::__money_put<char>::__gather_info
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((param_1 & 1) == 0) {
     puVar6 = &moneypunct<char,false>::id;
   }
@@ -145,10 +141,6 @@ void std::__ndk1::__money_put<char>::__gather_info
   *(undefined8 *)param_8 = uStack_80;
   uVar4 = (**(code **)(*plVar5 + 0x48))(plVar5);
   *param_10 = uVar4;
-  if (*(long *)(lVar2 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

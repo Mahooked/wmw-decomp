@@ -111,16 +111,12 @@ void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
                (int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
   Walaber__Vector2 WStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   WStack_40 = *p2;
   uStack_48 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0x12,&WStack_40,&uStack_48,1,1);
@@ -143,10 +139,6 @@ void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
   puVar2[0x2d] = 0;
                     /* try { // try from 0038496c to 00384973 has its CatchHandler @ 0038499c */
   Walaber::Widget_ScoreCounter::init(puVar2);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -164,7 +156,6 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   int iVar1;
   ulong *puVar2;
   undefined4 *puVar3;
-  long lVar4;
   int iVar5;
   int iVar6;
   uint uVar7;
@@ -180,10 +171,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   ulong uStack_50;
   ulong uStack_48;
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   uVar7 = 0;
   uStack_50 = 0;
   uStack_48 = 0;
@@ -273,10 +261,6 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   if ((uStack_50 & 1) != 0) {
     operator delete(puStack_40);
   }
-  if (*(long *)(lVar4 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -299,15 +283,11 @@ void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
                undefined4 param_13,undefined4 param_14)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uStack_98;
   undefined8 uStack_90;
-  long lStack_88;
   
-  lVar1 = tpidr_el0;
-  lStack_88 = *(long *)(lVar1 + 0x28);
   uStack_90 = *param_9;
   uStack_98 = *param_10;
   Walaber::Widget::Widget(param_7,param_8,0x12,&uStack_90,&uStack_98,1,1);
@@ -349,10 +329,6 @@ void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
   (**(code **)(*param_7 + 0x78))(param_7);
   Walaber::Widget_ScoreCounter::init(param_7);
   Walaber::Widget_ScoreCounter::_updateBorders(param_7);
-  if (*(long *)(lVar1 + 0x28) == lStack_88) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -368,14 +344,10 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
 
 {
   undefined8 *puVar1;
-  long lVar2;
   float fVar3;
   undefined1 auStack_48 [8];
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   Walaber::Node::getWorldPosition(auStack_48);
   Walaber::Node::getWorldScale(auStack_40,param_1);
   puVar1 = (undefined8 *)(param_1 + 0x124);
@@ -392,10 +364,6 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
                 (*(float *)(param_1 + 0x180) + (float)*(undefined8 *)(param_1 + 0x184)));
   *puVar1 = CONCAT44(fVar3 + (float)((ulong)*puVar1 >> 0x20),
                      *(float *)(param_1 + 0x180) + (float)*puVar1);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -659,17 +627,13 @@ int Walaber::Widget_ScoreCounter::_getDigitAtIndex(int p0)
 void Walaber::Widget_ScoreCounter::_setTextStartingPos(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   undefined8 uVar3;
   float fStack_48;
   float fStack_44;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(int *)(param_1 + 0x198) == 1) {
     Walaber::Node::getWorldPosition(&fStack_48,param_1);
     Walaber::Node::getWorldScale(&fStack_40,param_1);
@@ -687,10 +651,6 @@ void Walaber::Widget_ScoreCounter::_setTextStartingPos(long param_1)
   }
   *(undefined8 *)(param_1 + 0x134) = uVar3;
 LAB_00385434:
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -708,17 +668,13 @@ void Walaber::Widget_ScoreCounter::update(float p0,Walaber__Widget__WidgetAction
   bool bVar1;
   int iVar2;
   uint uVar3;
-  long lVar4;
   undefined1 *in_x1;
   float fVar5;
   float fVar6;
   float fVar7;
   undefined1 auStack_60 [4];
   float fStack_5c;
-  long lStack_58;
   
-  lVar4 = tpidr_el0;
-  lStack_58 = *(long *)(lVar4 + 0x28);
   uVar3 = p1[0x14].f_0xc;
   if (uVar3 == 2) {
     fVar6 = *(float *)&p1[0x15].field_0x8;
@@ -782,10 +738,6 @@ LAB_00385654:
     *(undefined1 *)&p1[0x15].f_0x10 = 0;
     *in_x1 = 1;
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(bVar1);
   return;
 }
 
@@ -800,7 +752,6 @@ LAB_00385654:
 void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   void *p0_00;
   byte bVar2;
   undefined8 uVar3;
@@ -832,10 +783,7 @@ void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
   undefined1 uStack_b6;
   undefined1 uStack_b5;
   float fStack_b4;
-  long lStack_b0;
   
-  lVar1 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar1 + 0x28);
   uVar8 = Walaber::Widget::_getAngle();
   lVar4._0_4_ = p0[4].f_0x20;
   lVar4._4_4_ = p0[4].f_0x24;
@@ -953,10 +901,6 @@ void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
     }
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1064,20 +1008,12 @@ void Walaber::Widget_ScoreCounter::notifyFingerLost(int p0,Walaber__FingerInfo *
 void Walaber::Widget_ScoreCounter::setBaseSize(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x1;
   Walaber::Widget::setBaseSize(p0,&uStack_30);
   Walaber::Widget_ScoreCounter::_updateBorders(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

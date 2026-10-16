@@ -91,16 +91,12 @@ void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
                (int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   Walaber__Vector2 WStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   WStack_30 = *p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0xc,&WStack_30,&uStack_38,1,1);
@@ -119,10 +115,6 @@ void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
   puVar2[0x2a] = 0;
   puVar2[0x2b] = 0;
   *(undefined4 *)(puVar2 + 0x2c) = 0xff000000;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -157,15 +149,11 @@ void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
                undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uStack_88;
   undefined8 uStack_80;
-  long lStack_78;
   
-  lVar1 = tpidr_el0;
-  lStack_78 = *(long *)(lVar1 + 0x28);
   uStack_80 = *param_8;
   uStack_88 = *param_9;
   Walaber::Widget::Widget(param_6,param_7,0xc,&uStack_80,&uStack_88,1,1);
@@ -199,10 +187,6 @@ void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_6 + 0x1a,param_11);
   (**(code **)(*param_6 + 0x78))(param_6);
   Walaber::Widget_MovingTextBox::_updateBorders(param_6);
-  if (*(long *)(lVar1 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -218,14 +202,10 @@ void Walaber::Widget_MovingTextBox::_updateBorders(long param_1)
 
 {
   undefined8 *puVar1;
-  long lVar2;
   float fVar3;
   undefined1 auStack_48 [8];
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   Walaber::Node::getWorldPosition(auStack_48);
   Walaber::Node::getWorldScale(auStack_40,param_1);
   puVar1 = (undefined8 *)(param_1 + 0x124);
@@ -242,10 +222,6 @@ void Walaber::Widget_MovingTextBox::_updateBorders(long param_1)
                 (*(float *)(param_1 + 0x164) + (float)*(undefined8 *)(param_1 + 0x168)));
   *puVar1 = CONCAT44(fVar3 + (float)((ulong)*puVar1 >> 0x20),
                      *(float *)(param_1 + 0x164) + (float)*puVar1);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -361,7 +337,6 @@ void Walaber::Widget_MovingTextBox::setPadding(float p0,float p1,float p2,float 
 void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
 
 {
-  long lVar1;
   long lVar2;
   long lVar3;
   long *plVar4;
@@ -376,10 +351,7 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
   long lStack_58;
   undefined4 uStack_50;
   undefined4 uStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar6 = *(long *)(param_1 + 0x150);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0038102c to 00381043 has its CatchHandler @ 003810fc */
@@ -414,10 +386,6 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
     *(undefined8 *)(param_1 + 0x158) = *(undefined8 *)(param_1 + 0x148);
     Walaber::Widget_MovingTextBox::_setTextStartingPos(param_1);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -432,7 +400,6 @@ void Walaber::Widget_MovingTextBox::addString(long param_1,undefined8 param_2)
 void Walaber::Widget_MovingTextBox::_setTextStartingPos(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   undefined8 uVar3;
   float fVar4;
@@ -441,10 +408,7 @@ void Walaber::Widget_MovingTextBox::_setTextStartingPos(long param_1)
   undefined1 auStack_48 [8];
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   switch(*(undefined4 *)(param_1 + 0x178)) {
   case 0:
     Walaber::Node::getWorldPosition(auStack_48,param_1);
@@ -494,10 +458,6 @@ LAB_003812d0:
 LAB_003812e4:
   *(undefined8 *)(param_1 + 0x134) = uVar3;
 switchD_00381158_default:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -538,7 +498,6 @@ void Walaber::Widget_MovingTextBox::update(float p0,Walaber__Widget__WidgetActio
 
 {
   bool bVar1;
-  long lVar2;
   undefined1 *in_x1;
   float fVar3;
   float fVar4;
@@ -546,10 +505,7 @@ void Walaber::Widget_MovingTextBox::update(float p0,Walaber__Widget__WidgetActio
   float fVar6;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (*(long *)&p1[0x10].f_0x10 == 0) goto switchD_00381390_default;
   switch(p1[0x12].f_0x10) {
   case 0:
@@ -599,10 +555,6 @@ switchD_00381390_default:
     p1[0x13].field_0x8 = 0;
     *in_x1 = 1;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(bVar1);
   return;
 }
 
@@ -617,7 +569,6 @@ switchD_00381390_default:
 void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   undefined1 uVar4;
@@ -637,10 +588,7 @@ void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
   long lStack_60;
   int *piStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar9 = Walaber::Widget::_getAngle();
   lVar3._0_4_ = p0[4].f_0x20;
   lVar3._4_4_ = p0[4].f_0x24;
@@ -710,10 +658,6 @@ void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
     }
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -821,20 +765,12 @@ void Walaber::Widget_MovingTextBox::notifyFingerLost(int p0,Walaber__FingerInfo 
 void Walaber::Widget_MovingTextBox::setBaseSize(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x1;
   Walaber::Widget::setBaseSize(p0,&uStack_30);
   Walaber::Widget_MovingTextBox::_updateBorders(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

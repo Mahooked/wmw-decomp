@@ -12,7 +12,6 @@
 void std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -26,20 +25,13 @@ void std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined ***)p0 = &PTR__collate_byname_007176f0;
   *(long *)(p0 + 8) = in_x2 + -1;
                     /* try { // try from 005d5c74 to 005d5c7f has its CatchHandler @ 005d5d9c */
   lVar2 = newlocale(0x1fbf,p1,0);
   *(long *)(p0 + 0x10) = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_78 = 0;
@@ -202,7 +194,6 @@ void std::__ndk1::collate_byname<char>::~collate_byname()
 ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,char *p3)
 
 {
-  long lVar1;
   char *pcVar2;
   int iVar3;
   char *pcVar4;
@@ -226,10 +217,7 @@ ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,c
   ulong uStack_70;
   ulong uStack_68;
   char *pcStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar14 = (long)p2 - (long)p1;
   uStack_70 = 0;
   uStack_68 = 0;
@@ -371,10 +359,6 @@ LAB_005d6128:
   if ((uVar10 & 1) != 0) {
     operator delete(pcVar6);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return (ulong)uVar5;
-  }
-  uVar14 = __stack_chk_fail();
   return uVar14;
 }
 
@@ -389,7 +373,6 @@ LAB_005d6128:
 void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
 
 {
-  long lVar1;
   char *pcVar2;
   char *pcVar3;
   char *in_x2;
@@ -406,10 +389,7 @@ void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
   ulong uStack_60;
   ulong uStack_58;
   char *pcStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar9 = (long)in_x2 - (long)p1;
   uStack_60 = 0;
   uStack_58 = 0;
@@ -507,10 +487,6 @@ LAB_005d6364:
   strxfrm(pbVar7,pcVar3,uVar9 + 1);
   if ((uStack_60 & 1) != 0) {
     operator delete(pcStack_50);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

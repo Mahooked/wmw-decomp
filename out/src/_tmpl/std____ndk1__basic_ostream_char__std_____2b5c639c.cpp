@@ -13,14 +13,10 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::flush(lo
 
 {
   long lVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   char acStack_38 [16];
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   if (*(long *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28) != 0) {
                     /* try { // try from 003d5ff0 to 003d5ffb has its CatchHandler @ 003d6084 */
     std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_38,param_1);
@@ -33,10 +29,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::flush(lo
     }
     std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(acStack_38);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return param_1;
-  }
-  plVar4 = (long *)__stack_chk_fail();
   return plVar4;
 }
 
@@ -54,7 +46,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 {
   ulong uVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   long *plVar5;
   long lVar6;
@@ -65,11 +56,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar7 = (long *)(ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   auStack_70[0] = 0;
   plVar8 = (long *)(*plVar7 + -0x18);
   plStack_68 = plVar7;
@@ -115,10 +103,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return plVar7;
-  }
-  plVar7 = (long *)__stack_chk_fail();
   return plVar7;
 }
 
@@ -134,7 +118,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(float p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *in_x0;
   long *plVar3;
@@ -143,10 +126,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
   undefined8 uVar6;
   undefined1 auStack_70 [16];
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -183,10 +163,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -202,7 +178,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char
 
 {
   undefined1 *puVar1;
-  long lVar2;
   int iVar3;
   long *plVar4;
   long *plVar5;
@@ -210,11 +185,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char
   long *plVar6;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
   plVar5 = (long *)(ulong)(byte)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   auStack_48[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_40 = plVar5;
@@ -241,10 +213,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char
   std::__ndk1::ios_base::clear((long)plVar5 + *plVar6,*(uint *)((long)plVar5 + *plVar6 + 0x20) | 1);
 LAB_004b4054:
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -413,7 +381,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::swap
 long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(bool p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -424,11 +391,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -466,10 +430,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -487,7 +447,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 {
   ulong uVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   long *plVar5;
   long lVar6;
@@ -498,11 +457,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar7 = (long *)(ulong)(ushort)p0;
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   auStack_70[0] = 0;
   plVar8 = (long *)(*plVar7 + -0x18);
   plStack_68 = plVar7;
@@ -546,10 +502,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return plVar7;
-  }
-  plVar7 = (long *)__stack_chk_fail();
   return plVar7;
 }
 
@@ -565,7 +517,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(ushort p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -576,11 +527,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -618,10 +566,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -637,7 +581,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(uint p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -648,11 +591,8 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
   plVar5 = (long *)(ulong)p0;
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*plVar5 + -0x18);
   plStack_68 = plVar5;
@@ -690,10 +630,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return plVar5;
-  }
-  plVar5 = (long *)__stack_chk_fail();
   return plVar5;
 }
 
@@ -776,7 +712,6 @@ long std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
 ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(ulong p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -786,10 +721,7 @@ ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<
   undefined1 auStack_70 [8];
   ulong uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   uStack_68 = p0;
@@ -825,10 +757,6 @@ ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -844,7 +772,6 @@ ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<
 longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(longlong p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -854,10 +781,7 @@ longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operat
   undefined1 auStack_70 [8];
   longlong lStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   lStack_68 = p0;
@@ -893,10 +817,6 @@ longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operat
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  lVar5 = __stack_chk_fail();
   return lVar5;
 }
 
@@ -912,7 +832,6 @@ longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operat
 ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(ulonglong p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -922,10 +841,7 @@ ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::opera
   undefined1 auStack_70 [8];
   ulonglong uStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   uStack_68 = p0;
@@ -961,10 +877,6 @@ ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::opera
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  uVar5 = __stack_chk_fail();
   return uVar5;
 }
 
@@ -980,7 +892,6 @@ ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::opera
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(double p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *in_x0;
   long *plVar3;
@@ -989,10 +900,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
   undefined8 uVar6;
   undefined1 auStack_70 [16];
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -1027,10 +935,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1046,7 +950,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(longdouble p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *in_x0;
   long *plVar3;
@@ -1055,10 +958,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
   undefined8 uVar6;
   undefined1 auStack_60 [16];
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   auStack_60[0] = 0;
   plVar5 = (long *)(*in_x0 + -0x18);
   if (*(int *)((long)in_x0 + *plVar5 + 0x20) == 0) {
@@ -1093,10 +993,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_60);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1112,7 +1008,6 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
 void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<(void *p0)
 
 {
-  long lVar1;
   uint uVar2;
   long *plVar3;
   long lVar4;
@@ -1122,10 +1017,7 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
   undefined1 auStack_70 [8];
   void *pvStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*(long *)p0 + -0x18);
   pvStack_68 = p0;
@@ -1161,10 +1053,6 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return p0;
-  }
-  pvVar5 = (void *)__stack_chk_fail();
   return pvVar5;
 }
 
@@ -1179,16 +1067,12 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 char * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::write(char *p0,long p1)
 
 {
-  long lVar1;
   long lVar2;
   char *pcVar3;
   long in_x2;
   undefined1 auStack_48 [8];
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   pcStack_40 = p0;
   if (*(int *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) == 0) {
@@ -1207,10 +1091,6 @@ char * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::write(ch
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return p0;
-  }
-  pcVar3 = (char *)__stack_chk_fail();
   return pcVar3;
 }
 
@@ -1250,17 +1130,13 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
                  (long *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   long extraout_x1;
   long lVar2;
   long *plVar3;
   uint uVar4;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   plVar3 = (long *)(*param_1 + -0x18);
   lVar2 = *plVar3;
@@ -1284,10 +1160,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_1;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 
@@ -1304,17 +1176,13 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
                  (long *param_1,undefined8 param_2,undefined4 param_3)
 
 {
-  long lVar1;
   long extraout_x1;
   long lVar2;
   long *plVar3;
   uint uVar4;
   undefined1 auStack_48 [8];
   long *plStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   auStack_48[0] = 0;
   plVar3 = (long *)(*param_1 + -0x18);
   lVar2 = *plVar3;
@@ -1338,10 +1206,6 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return param_1;
-  }
-  plVar3 = (long *)__stack_chk_fail();
   return plVar3;
 }
 

@@ -12,16 +12,12 @@
 void Walaber::Widget_Spinner::Widget_Spinner(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,3,&uStack_30,&uStack_38,1,1);
@@ -34,10 +30,6 @@ void Walaber::Widget_Spinner::Widget_Spinner(int p0,Walaber__Vector2 p1,Walaber_
   puVar2[0x26] = 0;
   puVar2[0x23] = 0;
   puVar2[0x22] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -73,17 +65,13 @@ void Walaber::Widget_Spinner::Widget_Spinner
                long *param_5)
 
 {
-  long lVar1;
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
   undefined8 uVar5;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *param_3;
   uStack_48 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,3,&uStack_40,&uStack_48,1,1);
@@ -111,10 +99,6 @@ void Walaber::Widget_Spinner::Widget_Spinner
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -219,7 +203,6 @@ undefined8 Walaber::Widget_Spinner::update(float p0,Walaber__Widget__WidgetActio
 void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   long lVar2;
   long lVar3;
   int *piVar4;
@@ -230,10 +213,7 @@ void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
   long lStack_70;
   int *piStack_68;
   float afStack_60 [2];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   fVar5 = (float)Walaber::Widget::_getAngle();
   lVar2._0_4_ = p0[4].f_0x20;
   lVar2._4_4_ = p0[4].f_0x24;
@@ -269,10 +249,6 @@ void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
     }
   }
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -287,7 +263,6 @@ void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
 void Walaber::Widget_Spinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
@@ -296,11 +271,8 @@ void Walaber::Widget_Spinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1
   float fVar5;
   undefined1 auStack_48 [8];
   float afStack_40 [2];
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(long *)(uVar2 + 0x130) == 0) {
     Walaber::Node::getWorldPosition(auStack_48);
     fVar4 = (float)*(undefined8 *)(in_x2 + 4) - auStack_48._0_4_;
@@ -319,10 +291,6 @@ void Walaber::Widget_Spinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1
   }
   uVar3 = 0;
 LAB_0038a4f4:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(uVar3,p1);
-    return;
-  }
   return;
 }
 
@@ -337,7 +305,6 @@ LAB_0038a4f4:
 void Walaber::Widget_Spinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
@@ -346,11 +313,8 @@ void Walaber::Widget_Spinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo 
   float fVar5;
   undefined1 auStack_48 [8];
   float afStack_40 [2];
-  long lStack_38;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(long *)(uVar2 + 0x130) == 0) {
     Walaber::Node::getWorldPosition(auStack_48);
     fVar4 = (float)*(undefined8 *)(in_x2 + 4) - auStack_48._0_4_;
@@ -369,10 +333,6 @@ void Walaber::Widget_Spinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo 
   }
   uVar3 = 0;
 LAB_0038a5bc:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail(uVar3,p1);
-    return;
-  }
   return;
 }
 
@@ -406,7 +366,6 @@ undefined8 Walaber::Widget_Spinner::releaseFingerStayed(int p0,Walaber__FingerIn
 void Walaber::Widget_Spinner::_updateFinger(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   float fVar3;
   float fVar4;
@@ -416,10 +375,7 @@ void Walaber::Widget_Spinner::_updateFinger(long param_1)
   float fVar8;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   lVar2 = *(long *)(param_1 + 0x130);
   Walaber::Node::getWorldPosition(&fStack_60);
   fVar5 = *(float *)(lVar2 + 4) - fStack_60;
@@ -462,10 +418,6 @@ void Walaber::Widget_Spinner::_updateFinger(long param_1)
   fVar3 = fVar4 * fVar3 * 57.295776;
   *(float *)(param_1 + 300) = fVar3;
   *(float *)(param_1 + 0x128) = *(float *)(param_1 + 0x128) + fVar3;
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

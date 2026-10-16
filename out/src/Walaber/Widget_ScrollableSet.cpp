@@ -103,18 +103,14 @@ void Walaber::Widget_ScrollableSet::Widget_ScrollableSet
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uVar3;
   undefined8 uStack_50;
   undefined8 uStack_48;
   float afStack_40 [2];
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = *(undefined8 *)p2;
   uStack_50 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0xe,&uStack_48,&uStack_50,1,1);
@@ -140,10 +136,6 @@ void Walaber::Widget_ScrollableSet::Widget_ScrollableSet
                     /* try { // try from 00387fb8 to 00387fc3 has its CatchHandler @ 0038800c */
   Walaber::Node::getWorldScale(afStack_40,puVar2);
   *(float *)(puVar2 + 0x24) = (*(float *)(puVar2 + 0x12) * afStack_40[0] * 7.0) / 10.0;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -232,7 +224,6 @@ undefined8 Walaber::Widget_ScrollableSet::update(float p0,Walaber__Widget__Widge
 {
   undefined4 uVar1;
   uint uVar2;
-  long lVar3;
   bool bVar4;
   float *pfVar5;
   undefined8 uVar6;
@@ -250,10 +241,7 @@ undefined8 Walaber::Widget_ScrollableSet::update(float p0,Walaber__Widget__Widge
   undefined4 uStack_64;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   if ((p1[0x13].field_0x4 == '\0') || (pfVar5 = *(float **)&p1[0x12].f_0x10, pfVar5 == (float *)0x0)
      ) {
     lVar7 = *(long *)(p1 + 0x10);
@@ -404,10 +392,6 @@ LAB_003883d4:
 LAB_003884b8:
   Walaber::Widget_ScrollableSet::_updateSlider(p1);
 LAB_003884c0:
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return 0;
-  }
-  uVar6 = __stack_chk_fail();
   return uVar6;
 }
 
@@ -469,7 +453,6 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0)
 
 {
   int *piVar1;
-  long lVar2;
   undefined8 in_x1;
   float fVar3;
   undefined1 auStack_70 [4];
@@ -480,10 +463,7 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0)
   float fStack_58;
   float fStack_54;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uStack_50 = in_x1;
   if ((p0[1].field_0x68 == '\0') || (*(long *)((long)&p0[1].f_0x5c + 4) == 0)) {
     Walaber::Node::getWorldPosition(afStack_60,p0);
@@ -512,10 +492,6 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0)
     void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x40,&iStack_68);
   }
   *(int *)((long)&p0->f_0x110 + 4) = *(int *)((long)&p0->f_0x110 + 4) + 1;
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

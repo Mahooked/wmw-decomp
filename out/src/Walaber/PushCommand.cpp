@@ -129,15 +129,11 @@ void Walaber::PushCommand::OnGameLoaded(void)
 void Walaber::PushCommand::ResumeNotifications(long param_1)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(undefined1 *)(param_1 + 0x34) = 0;
   Walaber::PushCommand::LoadHeldCommands();
   for (lVar3 = *(long *)(param_1 + 0x20); param_1 + 0x18 != lVar3; lVar3 = *(long *)(lVar3 + 8)) {
@@ -151,10 +147,6 @@ void Walaber::PushCommand::ResumeNotifications(long param_1)
       lVar3 = std::__ndk1::list<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::erase(param_1 + 0x18,lVar3);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -184,7 +176,6 @@ void Walaber::PushCommand::HoldNotifications(long param_1)
 void Walaber::PushCommand::LoadHeldCommands(long param_1)
 
 {
-  long lVar1;
   void *p0;
   byte bVar2;
   ulong uVar3;
@@ -205,10 +196,7 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
   undefined4 uStack_4c;
   void *pvStack_48;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(int *)(param_1 + 0x30) != -1) {
     bStack_58 = 0x1e;
     uStack_64 = 0;
@@ -260,10 +248,6 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
     }
     Walaber::DatabaseIterator::~DatabaseIterator(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -279,7 +263,6 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
 ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   uint uVar3;
   byte abStack_c8 [16];
@@ -295,10 +278,7 @@ ulong Walaber::PushCommand::Parse(long param_1,undefined8 param_2)
   undefined8 *puStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_48 = 0;
   uStack_40 = 0;
   memset(abStack_98,0,0x48);
@@ -339,10 +319,6 @@ LAB_003e8e3c:
   if ((abStack_98[0] & 1) != 0) {
     operator delete(pvStack_88);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return (ulong)uVar3;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -507,7 +483,6 @@ void Walaber::PushCommand::ParseURI(undefined8 param_1,byte *param_2,ulong *para
 
 {
   byte bVar1;
-  long lVar2;
   int iVar3;
   byte *pbVar4;
   undefined8 uVar5;
@@ -530,10 +505,7 @@ void Walaber::PushCommand::ParseURI(undefined8 param_1,byte *param_2,ulong *para
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   bVar1 = *param_2;
   if ((bVar1 & 1) == 0) {
     uVar14 = (ulong)(bVar1 >> 1);
@@ -813,10 +785,6 @@ LAB_003e96f4:
   }
   uVar5 = 1;
 LAB_003e92dc:
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail(uVar5);
-    return;
-  }
   return;
 }
 
@@ -833,7 +801,6 @@ void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0)
 {
   ulong uVar1;
   ulong uVar2;
-  long lVar3;
   byte bVar4;
   byte bVar5;
   bool bVar6;
@@ -852,10 +819,7 @@ void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0)
   byte abStack_80 [8];
   ulong uStack_78;
   char *pcStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   pWVar12 = *(Walaber__CommandData **)(p0 + 8);
   if (p0 != pWVar12) {
     pcVar13 = (char *)((ulong)abStack_80 | 1);
@@ -1047,10 +1011,6 @@ LAB_003e9b5c:
       pWVar12 = *(Walaber__CommandData **)(pWVar12 + 8);
     } while (p0 != pWVar12);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1068,7 +1028,6 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
 {
   undefined8 uVar1;
   byte bVar2;
-  long lVar3;
   byte *pbVar4;
   undefined8 uVar5;
   byte abStack_78 [16];
@@ -1080,10 +1039,7 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
   undefined6 uStack_57;
   undefined1 uStack_51;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar3 = tpidr_el0;
-  lStack_48 = *(long *)(lVar3 + 0x28);
   if (*(int *)(param_1 + 0x30) == -1) {
     std::__ndk1::list<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::push_back(param_1 + 0x18,param_2);
   }
@@ -1194,10 +1150,6 @@ void Walaber::PushCommand::SaveCommand(long param_1,byte *param_2)
       operator delete(pvStack_68);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1218,7 +1170,6 @@ void Walaber::PushCommand::Register
                undefined8 param_5)
 
 {
-  long lVar1;
   byte abStack_b0 [16];
   void *pvStack_a0;
   byte abStack_98 [16];
@@ -1226,10 +1177,7 @@ void Walaber::PushCommand::Register
   byte abStack_80 [16];
   void *pvStack_70;
   undefined1 auStack_68 [16];
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   memset(abStack_b0,0,0x58);
   Walaber::SharedPtr<Walaber::Callback>::operator=(auStack_68,param_2);
                     /* try { // try from 003e9e10 to 003e9e43 has its CatchHandler @ 003e9eac */
@@ -1247,10 +1195,6 @@ void Walaber::PushCommand::Register
   if ((abStack_b0[0] & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1293,7 +1237,6 @@ ulong Walaber::PushCommand::ParseKVpair(undefined8 param_1,byte *param_2,undefin
 {
   byte *pbVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   byte *pbVar5;
   byte *pbVar6;
@@ -1316,10 +1259,7 @@ ulong Walaber::PushCommand::ParseKVpair(undefined8 param_1,byte *param_2,undefin
   undefined8 uStack_88;
   undefined1 *puStack_80;
   undefined1 auStack_70 [8];
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   iVar7 = 0;
   pbVar11 = param_2 + 1;
   pppuStack_90 = (undefined8 ****)0x0;
@@ -1436,10 +1376,6 @@ LAB_003ea258:
   if (((ulong)pppuStack_90 & 1) != 0) {
     operator delete(puStack_80);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return (ulong)uVar14;
-  }
-  uVar12 = __stack_chk_fail();
   return uVar12;
 }
 

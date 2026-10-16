@@ -12,17 +12,13 @@
 void WaterConcept::NotificationSingleton::NotificationSingleton()
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   ulong auStack_60 [2];
   char *pcStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *this = &PTR_handleEvent_00712858;
   Walaber::MessageReceiver::MessageReceiver(this + 1,0x10);
   this[7] = 0;
@@ -78,10 +74,6 @@ void WaterConcept::NotificationSingleton::NotificationSingleton()
     operator delete(pcStack_50);
   }
   *(undefined4 *)(this + 0x27) = 0x3f800000;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -97,17 +89,13 @@ void WaterConcept::NotificationSingleton::NotificationSingleton()
 void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8 param_2)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
   undefined1 auStack_48 [16];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::TextureManager::getManager();
   uStack_68 = 0;
   uStack_60 = 0;
@@ -119,10 +107,6 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_58);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -302,7 +286,6 @@ void WaterConcept::NotificationSingleton::notify
 
 {
   void *pvVar1;
-  long lVar2;
   long lVar3;
   ulong auStack_90 [2];
   void *pvStack_80;
@@ -311,10 +294,7 @@ void WaterConcept::NotificationSingleton::notify
   ulong auStack_70 [2];
   void *pvStack_60;
   undefined8 uStack_58;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   if (((param_5 < *(int *)(param_2 + 0x88)) && (lVar3 = *(long *)(param_2 + 0x68), lVar3 != 0)) &&
      (*(int *)(lVar3 + 0x1c0) != 3)) {
     *(undefined4 *)(lVar3 + 0x1c0) = 1;
@@ -352,10 +332,6 @@ void WaterConcept::NotificationSingleton::notify
       operator delete(pvStack_80);
     }
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -376,7 +352,6 @@ void WaterConcept::NotificationSingleton::notify
                undefined4 param_5,undefined8 *param_6)
 
 {
-  long lVar1;
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined4 uStack_88;
@@ -384,10 +359,7 @@ void WaterConcept::NotificationSingleton::notify
   ulong auStack_80 [2];
   void *pvStack_70;
   undefined8 uStack_68;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   *(undefined1 *)(param_2 + 0x13c) = 1;
   WaterConcept::NotificationSingleton::notify();
   auStack_a0[0] = 0;
@@ -412,10 +384,6 @@ void WaterConcept::NotificationSingleton::notify
   if ((auStack_a0[0] & 1) != 0) {
     operator delete(pvStack_90);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -435,7 +403,6 @@ void WaterConcept::NotificationSingleton::update(void *p0)
   undefined8 uVar2;
   byte bVar3;
   undefined1 uVar4;
-  long lVar5;
   int iVar6;
   undefined8 uVar7;
   long lVar8;
@@ -465,10 +432,7 @@ void WaterConcept::NotificationSingleton::update(void *p0)
   undefined7 uStack_88;
   undefined1 uStack_81;
   undefined7 uStack_80;
-  long lStack_78;
   
-  lVar5 = tpidr_el0;
-  lStack_78 = *(long *)(lVar5 + 0x28);
   fVar24 = *in_x1;
   if (*(long **)((long)p0 + 0x68) != (long *)0x0) {
     iVar6 = (**(code **)(**(long **)((long)p0 + 0x68) + 0x20))(fVar24);
@@ -682,10 +646,6 @@ LAB_0049e67c:
     }
   }
   WaterConcept::NotificationSingleton::_handle10DaysAchievement();
-  if (*(long *)(lVar5 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -703,7 +663,6 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined *puVar4;
   void *pvVar5;
   int iVar6;
@@ -714,7 +673,6 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
   ulong *puVar11;
   byte *pbVar12;
   ulong uVar13;
-  long lVar14;
   undefined8 uVar15;
   byte abStack_168 [16];
   void *pvStack_158;
@@ -752,8 +710,6 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
   undefined1 uStack_81;
   void *pvStack_80;
   
-  lVar3 = tpidr_el0;
-  lVar14 = *(long *)(lVar3 + 0x28);
   lVar7 = Walaber::DateTime::getCurrentUnixLocalTime();
   if (0x1517f < lVar7 - DAT_0075e028) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a8,&DAT_0075cc78);
@@ -1112,10 +1068,6 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
       operator delete(pvStack_98);
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lVar14) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1131,7 +1083,6 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
 
 {
   uint uVar1;
-  long lVar2;
   bool bVar3;
   long *plVar4;
   long lVar5;
@@ -1152,11 +1103,8 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
   char *pcStack_50;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
   puVar9 = auStack_a0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if (GameSettings::mAllowNotifications == '\0') goto LAB_0049f6b8;
   glMatrixMode(0x1701);
   glLoadIdentity();
@@ -1502,10 +1450,6 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
 LAB_0049f6b4:
   *(undefined1 *)((long)p0 + 0x94) = 0;
 LAB_0049f6b8:
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1521,7 +1465,6 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   ulong uVar4;
   int *in_x1;
@@ -1530,10 +1473,7 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar3 = *(long **)((long)p0 + 0x68);
   if (plVar3 != (long *)0x0) {
     iVar1 = *in_x1;
@@ -1557,10 +1497,6 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
       }
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1575,14 +1511,10 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
 void WaterConcept::NotificationSingleton::notifyAchievement(void *p0)
 
 {
-  long lVar1;
   long in_x1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   abStack_40[10] = 0;
   abStack_40[0xb] = 0;
   abStack_40[0xc] = 0;
@@ -1605,10 +1537,6 @@ void WaterConcept::NotificationSingleton::notifyAchievement(void *p0)
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1625,15 +1553,11 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
                (undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   byte abStack_68 [16];
   void *pvStack_58;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   abStack_68[9] = 0;
   abStack_68[10] = 0;
   abStack_68[0xb] = 0;
@@ -1661,10 +1585,6 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1681,15 +1601,11 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
                (undefined8 param_1,undefined8 param_2)
 
 {
-  long lVar1;
   byte abStack_68 [16];
   void *pvStack_58;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   abStack_68[9] = 0;
   abStack_68[10] = 0;
   abStack_68[0xb] = 0;
@@ -1717,10 +1633,6 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1735,16 +1647,12 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
 void WaterConcept::NotificationSingleton::hideIAPAdNotification(bool p0)
 
 {
-  long lVar1;
   long lVar2;
   long *plVar3;
   ulong in_x1;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   abStack_50[0xb] = 0;
   abStack_50[0xc] = 0;
   abStack_50[0xd] = 0;
@@ -1776,10 +1684,6 @@ void WaterConcept::NotificationSingleton::hideIAPAdNotification(bool p0)
       (**(code **)(*plVar3 + 0x40))();
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1796,7 +1700,6 @@ void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   int iVar4;
   undefined8 uVar5;
   long in_x1;
@@ -1807,10 +1710,7 @@ void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
   byte abStack_50 [17];
   undefined4 uStack_3f;
   undefined3 uStack_3b;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   if (*(int *)(in_x1 + 0xc) == 0x24) {
     uStack_3b = 0;
     abStack_50[0] = 0x26;
@@ -1900,10 +1800,6 @@ void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
   else {
     uVar5 = 0;
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 }
 
@@ -1924,7 +1820,6 @@ void WaterConcept::NotificationSingleton::clearNotifications(long param_1)
   undefined8 uVar4;
   byte bVar5;
   undefined1 uVar6;
-  long lVar7;
   long lVar8;
   undefined8 uVar9;
   ulong uVar10;
@@ -1942,10 +1837,7 @@ void WaterConcept::NotificationSingleton::clearNotifications(long param_1)
   undefined7 uStack_78;
   undefined1 uStack_71;
   undefined7 uStack_70;
-  long lStack_68;
   
-  lVar7 = tpidr_el0;
-  lStack_68 = *(long *)(lVar7 + 0x28);
   if (*(long *)(param_1 + 0x60) != 0) {
     plVar1 = (long *)(param_1 + 0x50);
     do {
@@ -2082,10 +1974,6 @@ void WaterConcept::NotificationSingleton::clearNotifications(long param_1)
     } while (lVar8 != 0);
   }
   *(undefined8 *)(param_1 + 0x68) = 0;
-  if (*(long *)(lVar7 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2103,25 +1991,17 @@ void WaterConcept::NotificationSingleton::addNotification
                (long param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   bool bVar2;
   long lVar3;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar3 = std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(param_1 + 0x50);
   bVar2 = param_1 + 0x58 == lVar3;
   if (bVar2) {
     uStack_50 = param_2;
     lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(param_1 + 0x50,param_2,&DAT_0063c5e1,&uStack_50,auStack_58);
     *(undefined8 *)(lVar3 + 0x38) = param_3;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(bVar2);
-    return;
   }
   return;
 }

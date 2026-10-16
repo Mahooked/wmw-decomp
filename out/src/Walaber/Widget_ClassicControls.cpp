@@ -14,16 +14,12 @@ void Walaber::Widget_ClassicControls::Widget_ClassicControls
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0,&uStack_30,&uStack_38,1,1);
@@ -31,10 +27,6 @@ void Walaber::Widget_ClassicControls::Widget_ClassicControls
   puVar2[0x21] = 0;
   *(undefined1 *)(puVar2 + 0x16) = 0;
   *puVar2 = &PTR__Widget_ClassicControls_0070ecf8;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -97,7 +89,6 @@ undefined8 Walaber::Widget_ClassicControls::update(float p0,Walaber__Widget__Wid
 
 {
   uint uVar1;
-  long lVar2;
   undefined8 uVar3;
   long in_x1;
   long lVar4;
@@ -107,10 +98,7 @@ undefined8 Walaber::Widget_ClassicControls::update(float p0,Walaber__Widget__Wid
   float fVar7;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   lVar4 = *(long *)&p1[0xc].f_0x10;
   if (lVar4 == 0) {
     *(undefined4 *)(in_x1 + 4) = 0;
@@ -161,10 +149,6 @@ LAB_0037acfc:
   fVar6 = 0.0;
 LAB_0037ad84:
   *(float *)(in_x1 + 8) = fVar6;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
-  }
   return 1;
 }
 

@@ -18,7 +18,6 @@ void std::__ndk1::
                (WaterConcept__Spout__SpoutConnection **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -31,10 +30,7 @@ void std::__ndk1::
   WaterConcept__Spout__SpoutConnection *pWStack_58;
   WaterConcept__Spout__SpoutConnection *pWStack_50;
   WaterConcept__Spout__SpoutConnection *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 4;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3c != 0) {
@@ -78,10 +74,6 @@ void std::__ndk1::
   if (pWStack_60 != (WaterConcept__Spout__SpoutConnection *)0x0) {
     operator delete(pWStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -102,7 +94,6 @@ void std::__ndk1::
                (WaterConcept__Spout__SpoutConnection *p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -114,10 +105,7 @@ void std::__ndk1::
   void *pvStack_58;
   undefined8 *puStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(p0 + 8) - *(long *)p0 >> 4;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3c != 0) {
@@ -161,10 +149,6 @@ void std::__ndk1::
   uStack_48 = uVar7;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

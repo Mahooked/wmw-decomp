@@ -12,7 +12,6 @@
 void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
 
 {
-  long lVar1;
   undefined *puVar2;
   byte bVar3;
   undefined8 uVar4;
@@ -65,10 +64,7 @@ void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
   undefined8 uStack_88;
   undefined8 uStack_80;
   undefined4 uStack_74;
-  long lStack_70;
   
-  lVar1 = tpidr_el0;
-  lStack_70 = *(long *)(lVar1 + 0x28);
   WaterConcept::WCScreen::WCScreen(this,2);
                     /* try { // try from 004ee420 to 004ee42b has its CatchHandler @ 004eead0 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -327,10 +323,6 @@ void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
   if ((auStack_b0[0] & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_70) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -502,13 +494,11 @@ void WaterConcept::Screen_LevelSelect::~Screen_LevelSelect(void *param_1)
 void WaterConcept::Screen_LevelSelect::loadPropertyList(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   undefined1 *puVar2;
   int iVar3;
   ulong uVar4;
   undefined8 *puVar5;
   ulong *puVar6;
-  long lVar7;
   int iVar8;
   undefined8 uVar9;
   undefined8 uVar10;
@@ -540,8 +530,6 @@ void WaterConcept::Screen_LevelSelect::loadPropertyList(Walaber__PropertyList *p
   undefined4 uStack_64;
   undefined1 *puStack_60;
   
-  lVar1 = tpidr_el0;
-  lVar7 = *(long *)(lVar1 + 0x28);
   uStack_64 = 0;
   bStack_70 = 0x14;
   puStack_60 = (void *)0x0;
@@ -805,10 +793,6 @@ void WaterConcept::Screen_LevelSelect::loadPropertyList(Walaber__PropertyList *p
       operator delete(puStack_60);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lVar7) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -826,7 +810,6 @@ void WaterConcept::Screen_LevelSelect::enter(long param_1)
 {
   void *pvVar1;
   long *plVar2;
-  long lVar3;
   undefined1 *puVar4;
   long lVar5;
   int *piVar6;
@@ -840,7 +823,6 @@ void WaterConcept::Screen_LevelSelect::enter(long param_1)
   undefined8 *puVar14;
   char *pcVar15;
   ulong uVar16;
-  long lVar17;
   ulong uVar18;
   byte bVar19;
   float fVar20;
@@ -905,8 +887,6 @@ void WaterConcept::Screen_LevelSelect::enter(long param_1)
   ulong uStack_98;
   void *apvStack_90 [6];
   
-  lVar3 = tpidr_el0;
-  lVar17 = *(long *)(lVar3 + 0x28);
   ppuStack_a0 = &PTR__Message_0070cdc8;
   uStack_98 = 0xa00000010;
   Walaber::PropertyList::PropertyList(apvStack_90);
@@ -2065,10 +2045,6 @@ LAB_004f002c:
   if (((ulong)ppuStack_a0 & 1) != 0) {
     operator delete(apvStack_90[0]);
   }
-  if (*(long *)(lVar3 + 0x28) == lVar17) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2083,7 +2059,6 @@ LAB_004f002c:
 void WaterConcept::Screen_LevelSelect::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined4 uVar2;
   char *p0;
   undefined8 *puVar3;
@@ -2103,10 +2078,7 @@ void WaterConcept::Screen_LevelSelect::_buildUI(long param_1)
   undefined8 *puStack_50;
   undefined8 uStack_48;
   char *pcStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0 = (char *)operator new(0x20);
   uVar2 = GameSettings::currentStoryline;
   uStack_48 = 0x18;
@@ -2193,10 +2165,6 @@ switchD_004f0c44_caseD_4:
   if (((ulong)puStack_50 & 1) != 0) {
     operator delete(pcStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2232,7 +2200,6 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
   void *pvVar4;
   undefined1 *puVar5;
   byte bVar6;
-  long lVar7;
   byte bVar8;
   undefined2 uVar9;
   undefined1 uVar10;
@@ -2254,7 +2221,6 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
   long *plVar26;
   long *plVar27;
   int *in_x1;
-  long lVar28;
   int *piVar29;
   int iVar30;
   int iVar31;
@@ -2380,8 +2346,6 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
   undefined1 uStack_c1;
   void *pvStack_c0;
   
-  lVar7 = tpidr_el0;
-  lVar28 = *(long *)(lVar7 + 0x28);
   if (*in_x1 != 1) goto LAB_004f2ed0;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_100,&DAT_0077dd40);
                     /* try { // try from 004f0ef0 to 004f0f03 has its CatchHandler @ 004f3470 */
@@ -4352,10 +4316,6 @@ LAB_004f1f20:
     operator delete(pvStack_f0);
   }
 LAB_004f2ed0:
-  if (*(long *)(lVar7 + 0x28) != lVar28) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -4370,17 +4330,13 @@ LAB_004f2ed0:
 void WaterConcept::Screen_LevelSelect::_treasureSpriteAnimationEventCallback(void *p0)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long *in_x1;
   long lVar4;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar4 = *in_x1;
   abStack_50[0xd] = 0;
   abStack_50[0xe] = 0;
@@ -4420,10 +4376,6 @@ void WaterConcept::Screen_LevelSelect::_treasureSpriteAnimationEventCallback(voi
       *(undefined1 *)(*(long *)((long)p0 + 0x270) + 0x8c) = 1;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -4442,7 +4394,6 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
   char *pcVar1;
   undefined4 uVar2;
   byte bVar3;
-  long lVar4;
   undefined *puVar5;
   undefined2 *puVar6;
   undefined7 uVar7;
@@ -4471,7 +4422,6 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
   ulong uVar30;
   long *plVar31;
   int *piVar32;
-  long lVar33;
   undefined4 *puVar34;
   undefined8 uVar35;
   void *pvVar36;
@@ -4708,8 +4658,6 @@ void WaterConcept::Screen_LevelSelect::_loadLevelList(long param_1)
   void *pvStack_c0;
   
   pbVar29 = GameSettings::mLevelList;
-  lVar4 = tpidr_el0;
-  lVar33 = *(long *)(lVar4 + 0x28);
   pbVar45 = DAT_00735e90;
   while (pbVar11 = pbVar45, pbVar11 != pbVar29) {
     pbVar45 = pbVar11 + -0x18;
@@ -7168,10 +7116,6 @@ LAB_004f70f0:
   }
   operator delete(pvVar36);
 LAB_004f7380:
-  if (*(long *)(lVar4 + 0x28) != lVar33) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7190,7 +7134,6 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
 {
   bool bVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   long lVar5;
   int iVar6;
@@ -7226,12 +7169,9 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
   undefined8 uStack_d0;
   ulong auStack_c8 [2];
   void *pvStack_b8;
-  long lStack_b0;
   
   uVar23 = CONCAT44(in_register_00005004,p0);
   uVar10 = (ulong)p1;
-  lVar3 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar3 + 0x28);
   *(float *)(uVar10 + 0x1e4) = *(float *)(uVar10 + 0x1e4) + p0;
   if (*(long *)(uVar10 + 0x128) != 0) {
     Walaber::SkeletonActor::update(uVar23);
@@ -7673,10 +7613,6 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
     Walaber::Sprite::update(uVar23);
   }
   Walaber::WidgetManager::update(uVar23,*(undefined8 *)(uVar10 + 0x10));
-  if (*(long *)(lVar3 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -7692,7 +7628,6 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
 
 {
   uint uVar1;
-  long lVar2;
   int iVar3;
   int iVar4;
   uint uVar5;
@@ -7714,11 +7649,8 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
   float fStack_bc;
   undefined8 uStack_b8;
   int *piStack_b0;
-  long lStack_a8;
   
   uVar6 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_a8 = *(long *)(lVar2 + 0x28);
   lVar7 = *(long *)(*(long *)(uVar6 + 0x1e8) + (long)in_w1 * 8);
   uStack_b8 = *(long *)(lVar7 + 0xa0);
   piStack_b0 = *(int **)(lVar7 + 0xa8);
@@ -7767,10 +7699,6 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
     uVar1 = (iVar3 - 10U) / uVar5;
   }
   Walaber::SoundManager::playSoundSpecific(0x3f800000,uVar8,0xd2,(iVar3 - 10U) - uVar1 * uVar5);
-  if (*(long *)(lVar2 + 0x28) == lStack_a8) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7787,7 +7715,6 @@ void WaterConcept::Screen_LevelSelect::draw(int p0)
 {
   ulong uVar1;
   long lVar2;
-  long lVar3;
   ulong uVar4;
   long *plVar5;
   int in_w1;
@@ -7796,11 +7723,8 @@ void WaterConcept::Screen_LevelSelect::draw(int p0)
   uint uVar8;
   undefined1 auStack_58 [28];
   undefined4 uStack_3c;
-  long lStack_38;
   
   uVar4 = (ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   if (in_w1 != 0) {
     lVar2 = uVar4 + 0x28;
     Walaber::SpriteBatch::start(lVar2,3);
@@ -7889,10 +7813,6 @@ void WaterConcept::Screen_LevelSelect::draw(int p0)
     Walaber::WidgetManager::drawLayerRange(*(undefined8 *)(uVar4 + 0x10),lVar2,9,0xffffffff);
     Walaber::SpriteBatch::flush(lVar2);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -7911,7 +7831,6 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0)
   int *piVar2;
   int *piVar3;
   byte bVar4;
-  long lVar5;
   byte bVar6;
   int *piVar7;
   bool bVar8;
@@ -7924,7 +7843,6 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0)
   undefined8 uVar15;
   void **ppvVar16;
   long in_x1;
-  long lVar17;
   long lVar18;
   byte *pbVar19;
   ulong uVar20;
@@ -8047,8 +7965,6 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0)
   byte *pbStack_a0;
   
   pbVar31 = GameSettings::mLevelList;
-  lVar5 = tpidr_el0;
-  lVar17 = *(long *)(lVar5 + 0x28);
   uVar11 = 0;
   iVar9 = *(int *)(in_x1 + 0xc);
   if (iVar9 < 0x33) {
@@ -9048,10 +8964,6 @@ LAB_004faaec:
 LAB_004faaf4:
   uVar11 = 1;
 LAB_004faaf8:
-  if (*(long *)(lVar5 + 0x28) != lVar17) {
-    __stack_chk_fail(uVar11);
-    return;
-  }
   return;
 }
 
@@ -9072,7 +8984,6 @@ void WaterConcept::Screen_LevelSelect::handleEvent
 {
   char *pcVar1;
   byte *pbVar2;
-  long lVar3;
   undefined *puVar4;
   int *piVar5;
   bool bVar6;
@@ -9097,7 +9008,6 @@ void WaterConcept::Screen_LevelSelect::handleEvent
   long lVar25;
   void *p0_00;
   char **ppcVar26;
-  long lVar27;
   byte *pbVar28;
   undefined4 *puVar29;
   void *pvVar30;
@@ -9230,8 +9140,6 @@ void WaterConcept::Screen_LevelSelect::handleEvent
   char *apcStack_280 [66];
   
   plVar18 = (long *)(ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lVar27 = *(long *)(lVar3 + 0x28);
   uStack_2d0 = (long **)CONCAT44(uStack_2d0._4_4_,(float)uStack_2d0);
   if ((int)plVar18[0x36] != 0) goto LAB_004fb1a0;
   iVar15 = (int)p1;
@@ -11435,10 +11343,6 @@ LAB_004fccac:
   Walaber::PropertyList::~PropertyList(ppcVar26);
   uStack_2d0 = (long **)CONCAT44(uStack_2d0._4_4_,(float)uStack_2d0);
 LAB_004fb1a0:
-  if (*(long *)(lVar3 + 0x28) == lVar27) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11546,13 +11450,9 @@ void WaterConcept::Screen_LevelSelect::handleFocus(Walaber::Widget *param_1,Wala
 void WaterConcept::Screen_LevelSelect::backKeyPressed(long param_1)
 
 {
-  long lVar1;
   undefined1 auStack_60 [32];
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0xc) == '\0') {
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popAllScreens();
@@ -11568,10 +11468,6 @@ void WaterConcept::Screen_LevelSelect::backKeyPressed(long param_1)
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
     Walaber::PropertyList::~PropertyList(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -11586,18 +11482,14 @@ void WaterConcept::Screen_LevelSelect::backKeyPressed(long param_1)
 void WaterConcept::Screen_LevelSelect::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 *in_x3;
   long lVar3;
   ulong uVar4;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
   uVar2 = (ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = *(undefined8 *)p2;
   uStack_58 = *in_x3;
   Walaber::WidgetManager::touchMoved(*(undefined8 *)(uVar2 + 0x10),p1,&uStack_50,&uStack_58);
@@ -11619,10 +11511,6 @@ void WaterConcept::Screen_LevelSelect::touchMoved(int p0,Walaber__Vector2 p1,Wal
       uVar4 = uVar4 + 1;
     } while (uVar4 < (ulong)(*(long *)(uVar2 + 0x2c0) - lVar3 >> 3));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

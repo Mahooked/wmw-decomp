@@ -14,8 +14,6 @@ void _JNIEnv::CallVoidMethod
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -27,8 +25,6 @@ void _JNIEnv::CallVoidMethod
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -39,10 +35,6 @@ void _JNIEnv::CallVoidMethod
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   (**(code **)(*param_1 + 0x1f0))();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -59,8 +51,6 @@ void _JNIEnv::CallObjectMethod
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -72,8 +62,6 @@ void _JNIEnv::CallObjectMethod
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -84,10 +72,6 @@ void _JNIEnv::CallObjectMethod
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   (**(code **)(*param_1 + 0x118))();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -104,8 +88,6 @@ void _JNIEnv::CallBooleanMethod
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -117,8 +99,6 @@ void _JNIEnv::CallBooleanMethod
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -129,10 +109,6 @@ void _JNIEnv::CallBooleanMethod
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   (**(code **)(*param_1 + 0x130))();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -149,8 +125,6 @@ void _JNIEnv::CallIntMethod
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -162,8 +136,6 @@ void _JNIEnv::CallIntMethod
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -174,10 +146,6 @@ void _JNIEnv::CallIntMethod
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   (**(code **)(*param_1 + 400))();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -194,8 +162,6 @@ void _JNIEnv::CallFloatMethod
                undefined8 param_5,undefined8 param_6,undefined8 param_7,undefined8 param_8)
 
 {
-  long lVar1;
-  long lVar2;
   undefined1 auStack_a0 [8];
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -207,8 +173,6 @@ void _JNIEnv::CallFloatMethod
   undefined1 *puStack_60;
   undefined8 uStack_58;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   puStack_60 = auStack_a0;
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd8;
@@ -219,10 +183,6 @@ void _JNIEnv::CallFloatMethod
   uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   (**(code **)(*param_1 + 0x1c0))();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

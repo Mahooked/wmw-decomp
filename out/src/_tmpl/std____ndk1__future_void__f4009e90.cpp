@@ -12,7 +12,6 @@
 void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 *puVar3;
   ulong in_x1;
@@ -20,10 +19,7 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
   void *pvStack_58;
   undefined8 uStack_50;
   undefined8 *puStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0->f_0x0 = in_x1;
   std::__ndk1::mutex::lock(in_x1 + 0x18);
   if ((*(byte *)(in_x1 + 0x70) >> 1 & 1) != 0) {
@@ -53,10 +49,6 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
   std::__ndk1::__shared_count::__add_shared();
   *(uint *)(in_x1 + 0x70) = *(uint *)(in_x1 + 0x70) | 2;
   std::__ndk1::mutex::unlock(in_x1 + 0x18);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

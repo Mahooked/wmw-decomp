@@ -28,7 +28,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
@@ -37,10 +36,7 @@ void std::__ndk1::
   undefined8 uVar8;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (param_1[1] - *param_1 >> 4) * -0x5555555555555555;
   uVar1 = lVar3 + 1;
   if (0x555555555555555 < uVar1) {
@@ -74,10 +70,6 @@ void std::__ndk1::
                     /* try { // try from 004d0d90 to 004d0d9b has its CatchHandler @ 004d0dd4 */
   std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::__swap_out_circular_buffer(param_1,auStack_60);
   std::__ndk1::__split_buffer<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

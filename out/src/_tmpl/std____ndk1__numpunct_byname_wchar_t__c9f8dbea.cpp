@@ -84,7 +84,6 @@ void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1)
 void std::__ndk1::numpunct_byname<wchar_t>::__init(char *p0)
 
 {
-  long lVar1;
   int iVar2;
   long lVar3;
   long lVar4;
@@ -100,17 +99,10 @@ void std::__ndk1::numpunct_byname<wchar_t>::__init(char *p0)
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   iVar2 = strcmp();
   if (iVar2 == 0) {
 LAB_005dc708:
-    if (*(long *)(lVar1 + 0x28) != lStack_48) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   lVar3 = newlocale(0x1fbf);
@@ -240,16 +232,12 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
 void FUN_005dc92c(undefined4 *param_1,char *param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   ulong uVar4;
   undefined4 uStack_54;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*param_2 != '\0') {
     uStack_50 = 0;
     uVar2 = strlen(param_2);
@@ -268,10 +256,6 @@ void FUN_005dc92c(undefined4 *param_1,char *param_2,undefined8 param_3)
   }
   uVar2 = 0;
 LAB_005dc9c0:
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uVar2);
   return;
 }
 

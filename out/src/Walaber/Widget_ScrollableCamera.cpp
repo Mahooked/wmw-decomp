@@ -104,16 +104,12 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0x13,&uStack_30,&uStack_38,1,1);
@@ -131,10 +127,6 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
   puVar2[0x3c] = 0;
   puVar2[0x39] = 0;
   puVar2[0x3a] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -151,16 +143,12 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
                (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,Walaber__Camera *p3)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 in_x4;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
   Walaber::Widget::Widget(puVar2,p1,0x13,&uStack_40,&uStack_48,1,1);
@@ -179,10 +167,6 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
   puVar2[0x3c] = 0;
   puVar2[0x39] = 0;
   puVar2[0x3a] = 0;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -261,7 +245,6 @@ void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(void *param_1)
 void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 in_x1;
   undefined8 uStack_90;
@@ -273,10 +256,7 @@ void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0)
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined1 auStack_48 [16];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0[3].f_0x8 = (float)(int)in_x1;
   p0[3].f_0xc = (float)(int)((ulong)in_x1 >> 0x20);
   uVar2 = Walaber::TextureManager::getManager();
@@ -316,10 +296,6 @@ void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0)
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -335,7 +311,6 @@ undefined8 Walaber::Widget_ScrollableCamera::update(float p0,Walaber__Widget__Wi
 
 {
   uint uVar1;
-  long lVar2;
   long lVar3;
   bool bVar4;
   long lVar5;
@@ -355,10 +330,7 @@ undefined8 Walaber::Widget_ScrollableCamera::update(float p0,Walaber__Widget__Wi
   undefined4 uStack_54;
   float fStack_50;
   undefined4 uStack_4c;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   switch(*(undefined4 *)(p1 + 0xe)) {
   case 1:
     bVar4 = false;
@@ -515,10 +487,6 @@ LAB_003865d4:
       uVar7 = uVar7 + 1;
     } while (uVar7 < (ulong)(*(long *)&p1[0x11].f_0xc - lVar3 >> 3));
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return 0;
-  }
-  uVar9 = __stack_chk_fail();
   return uVar9;
 }
 
@@ -533,7 +501,6 @@ LAB_003865d4:
 void Walaber::Widget_ScrollableCamera::_updateSlider(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   long *plVar3;
   ulong uVar4;
@@ -541,10 +508,7 @@ void Walaber::Widget_ScrollableCamera::_updateSlider(long param_1)
   int *piStack_50;
   long lStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar2 = *(long *)(param_1 + 0x170);
   if (*(long *)(param_1 + 0x178) != lVar2) {
     uVar4 = 0;
@@ -577,10 +541,6 @@ void Walaber::Widget_ScrollableCamera::_updateSlider(long param_1)
       uVar4 = uVar4 + 1;
     } while (uVar4 < (ulong)(*(long *)(param_1 + 0x178) - lVar2 >> 3));
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -623,14 +583,10 @@ void Walaber::Widget_ScrollableCamera::draw(Walaber__SpriteBatch *p0)
 void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p1)
 
 {
-  long lVar1;
   uint in_w2;
   ulong uStack_40;
-  long lStack_38;
   
   uStack_40 = (ulong)p1;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(ulong **)&p0[1].field_0x30 == *(ulong **)&p0[1].field_0x38) {
     void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x28,&uStack_40);
   }
@@ -642,10 +598,6 @@ void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p
     Walaber::Widget_ScrollableCamera::createFakeSliderIndex(p0,*(undefined4 *)&p0[1].field_0x4);
   }
   *(int *)&p0[1].field_0x4 = *(int *)&p0[1].field_0x4 + 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -662,7 +614,6 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
 
 {
   int *piVar1;
-  long lVar2;
   ulong uVar3;
   long *plVar4;
   int in_w1;
@@ -677,11 +628,8 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
   long *plStack_48;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
   uVar3 = (ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   plVar4 = (long *)operator new(0x188);
   fVar5 = (float)((ulong)_sScreenSize >> 0x20);
   fStack_40 = (float)_sScreenSize * -0.068 + 0.0;
@@ -727,10 +675,6 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
     void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(uVar3 + 0x188,&iStack_6c);
   }
   Walaber::Widget_ScrollableCamera::_updateSlider(uVar3);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -746,15 +690,11 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0
 
 {
   int *piVar1;
-  long lVar2;
   undefined8 in_x1;
   float afStack_40 [3];
   int iStack_34;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   uStack_30 = in_x1;
   if (*(undefined8 **)&p0[1].field_0x48 == *(undefined8 **)&p0[1].field_0x50) {
     void std::__ndk1::vector<Walaber::Widget_Group*, std::__ndk1::allocator<Walaber::Widget_Group*>>::__push_back_slow_path<Walaber::Widget_Group* const&>(&p0[1].field_0x40,&uStack_30);
@@ -773,10 +713,6 @@ void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0
   else {
     void std::__ndk1::vector<int, std::__ndk1::allocator<int>>::__push_back_slow_path<int>(&p0[1].field_0x88,&iStack_34);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

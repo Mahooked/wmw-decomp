@@ -17,15 +17,11 @@ void Walaber::Utilities::
 
 {
   undefined4 uVar1;
-  long lVar2;
   long lVar3;
   undefined4 *in_x2;
   undefined1 auStack_48 [8];
   WaterConcept__Screen_Hub__WidgetName *pWStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   p0[1].f_0x0 = 0;
   p0[2].f_0x0 = 0;
   p0->f_0x0 = (ulong)(p0 + 1);
@@ -34,10 +30,6 @@ void Walaber::Utilities::
   pWStack_40 = p1;
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::__tree_node<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::__map_value_compare<WaterConcept::Screen_Hub::HubAction, std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>, std::__ndk1::less<WaterConcept::Screen_Hub::HubAction>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<WaterConcept::Screen_Hub::HubAction, WaterConcept::Screen_Hub::WidgetName>>>::__emplace_unique_key_args<WaterConcept::Screen_Hub::HubAction, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<WaterConcept::Screen_Hub::HubAction const&>, std::__ndk1::tuple<>>(p0,p1,&DAT_0063b06d,&pWStack_40,auStack_48);
   *(undefined4 *)(lVar3 + 0x20) = uVar1;
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

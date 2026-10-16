@@ -20,7 +20,6 @@ void std::__ndk1::
                (long param_1,long *param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   long *plVar2;
   ulong uVar3;
   long lVar4;
@@ -39,10 +38,7 @@ void std::__ndk1::
   int *piStack_70;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   unsigned int std::__ndk1::__sort3<bool (*&)(Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>), Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>*>(param_1,param_1 + 0x10,(long *)(param_1 + 0x20),param_3);
   if ((long *)(param_1 + 0x30) != param_2) {
     lVar8 = 0;
@@ -102,10 +98,6 @@ LAB_0034b9c4:
       plVar2 = plVar5 + 2;
       plVar7 = plVar5;
     } while (plVar5 + 2 != param_2);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

@@ -16,7 +16,6 @@ char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
 
 {
   byte bVar1;
-  long lVar2;
   char *pcVar3;
   ulong uVar4;
   char *pcVar5;
@@ -34,10 +33,7 @@ char * std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1
   ulong uStack_60;
   ulong uStack_58;
   char *pcStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   bVar1 = *p0;
   if ((bVar1 & 1) == 0) {
     uVar11 = (ulong)(bVar1 >> 1);
@@ -182,10 +178,6 @@ LAB_005e21ec:
     *(ulong *)(p0 + 8) = uVar11 + uVar4;
   }
 LAB_005e22d4:
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    pcVar5 = (char *)__stack_chk_fail();
-    return pcVar5;
-  }
   return p0;
 }
 

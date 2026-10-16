@@ -132,7 +132,6 @@ LAB_003d625c:
 void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   void *pvVar4;
@@ -140,10 +139,7 @@ void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *
   ulong uStack_60;
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar3 = *(undefined8 *)(*(long *)(*param_2 + 0x18) + 0x50);
   uStack_60 = 0;
   uStack_58 = 0;
@@ -172,10 +168,6 @@ LAB_003d6318:
   Walaber::Property::Property(param_1,&uStack_60);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

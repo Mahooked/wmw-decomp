@@ -77,7 +77,6 @@ undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0)
 undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   int in_w1;
@@ -87,10 +86,7 @@ undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0)
   undefined1 auStack_4c [4];
   undefined1 auStack_48 [8];
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   plVar4 = (long *)((ulong)(uint)p0 + 8);
   plVar5 = (long *)*plVar4;
   plVar6 = plVar4;
@@ -113,10 +109,6 @@ undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0)
   lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>((ulong)(uint)p0,auStack_4c,&DAT_006377d4,&puStack_40,auStack_48);
   *(undefined8 *)(lVar3 + 0x28) = uVar2;
 LAB_004623dc:
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    uVar2 = __stack_chk_fail();
-    return uVar2;
-  }
   return uVar2;
 }
 

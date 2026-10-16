@@ -42,17 +42,13 @@ void std::__ndk1::__time_put::~__time_put(long *param_1)
 void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4)
 
 {
-  long lVar1;
   long lVar2;
   char in_w5;
   undefined1 uStack_3c;
   char cStack_3b;
   char cStack_3a;
   undefined1 uStack_39;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_3c = 0x25;
   uStack_39 = 0;
   cStack_3b = p4;
@@ -63,10 +59,6 @@ void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4
   }
   lVar2 = strftime(p1,*(long *)p2 - (long)p1,&uStack_3c,p3);
   *(long *)p2 = (long)p1 + lVar2;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -81,7 +73,6 @@ void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4
 void std::__ndk1::__time_put::__time_put(char *p0)
 
 {
-  long lVar1;
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -95,17 +86,10 @@ void std::__ndk1::__time_put::__time_put(char *p0)
   ulong uStack_50;
   ulong uStack_48;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar2 = newlocale(0x1fbf,in_x1,0);
   *(long *)p0 = lVar2;
   if (lVar2 != 0) {
-    if (*(long *)(lVar1 + 0x28) != lStack_38) {
-      __stack_chk_fail();
-      return;
-    }
     return;
   }
   uStack_68 = 0;

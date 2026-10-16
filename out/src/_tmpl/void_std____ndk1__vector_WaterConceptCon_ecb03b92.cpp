@@ -16,7 +16,6 @@ void std::__ndk1::
      ::__push_back_slow_path<WaterConceptConstants::PackType>(WaterConceptConstants__PackType **p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -28,10 +27,7 @@ void std::__ndk1::
   WaterConceptConstants__PackType *pWStack_58;
   WaterConceptConstants__PackType *pWStack_50;
   WaterConceptConstants__PackType *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -73,10 +69,6 @@ void std::__ndk1::
   pWStack_48 = pWVar7;
   if (pWStack_60 != (WaterConceptConstants__PackType *)0x0) {
     operator delete(pWStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

@@ -49,8 +49,9 @@ re-inferred.
    recorded their names. See "Function signatures".
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped. Call targets are now named (see "Call targets and PLT
-   imports"); what remains is if-converted branches, spill/reload noise and
-   register aliases.
+   imports") and the compiler's `-fstack-protector` canary has been stripped
+   from 2,434 of the 2,513 guarded bodies (see "Source shaping"); what remains
+   is if-converted branches, spill/reload noise and register aliases.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -81,6 +82,10 @@ re-inferred.
   the type, now written to **641** more definitions as text — libc++ template
   parameters included — with `param_N` falling 70,864 -> 66,674 and members'
   `param_1` shown as `this`. See "Types without a type system".
+- Compiler-inserted code stripped from the bodies: the `-fstack-protector`
+  canary and its dead locals removed from **2,434** guarded functions
+  (`out/src` −19,500 lines, 485 files), the remaining 79 left intact because
+  the guard shares a live local or an exit label. See "Source shaping".
 
 ## What the game turned out to be
 
@@ -204,11 +209,17 @@ tools/
                       into the decompiled definitions as text, including the
                       template types Ghidra cannot name; --check gates that no
                       applicable definition is left untyped
+  shape_source.py     remove compiler-inserted code from the bodies, starting
+                      with the -fstack-protector canary (entry load, guard test,
+                      __stack_chk_fail and the dead locals); --check gates that
+                      no strippable guard is left
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
   test_apply_signatures.py  regression gate for apply_signatures.py's splitter,
                       name formatter and +1/`this` alignment rule
+  test_shape_source.py      regression gate for shape_source.py: every stack
+                      protector shape, and the bodies that must be left alone
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
@@ -726,6 +737,67 @@ pointer, which stays unproven. The enumerator *names* themselves are not encoded
 anywhere in the binary; `E_<Name>_<ord>` placeholders stand in until the
 re-inference step (README item 3).
 
+### Source shaping
+
+Ghidra lifts machine code, so the bodies carry work the *compiler* did and the
+source never had. `tools/shape_source.py` deletes the largest and most
+mechanical of those artefacts and nothing else.
+
+The stack protector (`-fstack-protector`) is the first target. It appears in
+2,513 of the 8,229 bodies as a canary loaded from the thread-control block at
+entry and compared at every exit:
+
+```c
+lVar1 = tpidr_el0;
+lStack_38 = *(long *)(lVar1 + 0x28);          /* entry   */
+...
+if (*(long *)(lVar1 + 0x28) == lStack_38) {   /* exit    */
+  return;
+}
+__stack_chk_fail();
+return;
+```
+
+It is pure ABI. The pass removes the two entry lines, the guard test, the
+`__stack_chk_fail` call and the now-dead locals, leaving the body's own
+`return` — that `return` is the function's, the `if` around the abort is the
+compiler's. **2,434** guards come out this way (2,513 → 79), shrinking
+`out/src` by 19,500 lines across 485 files.
+
+The pattern is not always the tidy one. The compiler is free to invert the
+test, so the abort is usually *inside* the block:
+
+```c
+if (*(long *)(lVar1 + 0x28) != lStack_38) {
+  __stack_chk_fail();
+  return;
+}
+return;
+```
+
+and `__stack_chk_fail` — declared `noreturn`, but not always typed so by Ghidra
+— can be assigned, handed a spurious argument or cast:
+`uVar3 = __stack_chk_fail();`, `__stack_chk_fail(uVar5);`,
+`plVar4 = (long *)__stack_chk_fail();`. The canary also lives in a saved-register
+array as often as a scalar (`alStack_38[2] = *(long *)(lVar1 + 0x28);`). All of
+these are handled, and `tools/test_shape_source.py` pins each shape.
+
+The pass is deliberately conservative, and the 79 it leaves are the two reasons
+it must be:
+
+- **A shared local.** `lVar1 = tpidr_el0` reuses a local the decompiler also
+  gives a real value elsewhere, or the canary slot is reused for a live local.
+  Slicing the guard out would then delete a live definition, so the whole body
+  stays. A function is rewritten only when the canary and the TCB local are
+  provably dead afterwards.
+- **A shared exit label.** The abort sits behind a `LAB_…:` that other `goto`s
+  reach; removing the block would strand them.
+
+`--check` fails while any strippable guard remains, and the pass is idempotent:
+a stripped body no longer matches. `-D_FORTIFY_SOURCE` overflow checks, C++
+exception cleanup and the like are the obvious next targets for the same
+treatment.
+
 ### Quality caveats
 
 Read this before treating `out/src/` as source.
@@ -975,6 +1047,12 @@ py tools\apply_signatures.py
 py tools\apply_signatures.py --check      # gate: 0 applicable definitions left
 py tools\test_apply_signatures.py         # gate: formatter + alignment rule
 
+# 3d. strip compiler-inserted code (the -fstack-protector canary) from the
+#     bodies (idempotent; run after any re-import)
+py tools\shape_source.py
+py tools\shape_source.py --check          # gate: 0 strippable guards left
+py tools\test_shape_source.py             # gate: every guard shape
+
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti
 
@@ -988,7 +1066,8 @@ py tools\apkindex.py $apk --out out\apk
 py tools\assetdoc.py $apk --out out\assets
 ```
 
-Step 3b and 4–7 need only Python and run in seconds; only steps 2–3 need Ghidra.
+Steps 3b–3d and 4–7 need only Python and run in seconds; only steps 2–3 need
+Ghidra.
 `tools/ghidra.ps1 -Mode script -Script ExportSymbols.java ...` regenerates
 `out/symbols/gnu_symbols.tsv`, which step 4 consumes as a demangler
 cross-check.

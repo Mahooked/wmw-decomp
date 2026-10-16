@@ -96,7 +96,6 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
 
 {
   int iVar1;
-  long lVar2;
   int iVar3;
   int *piVar4;
   ulong uVar5;
@@ -104,10 +103,7 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
   char *pcVar7;
   ulong p0;
   char acStack_458 [1024];
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   pcVar7 = acStack_458;
   piVar4 = (int *)__errno();
   iVar1 = *piVar4;
@@ -150,10 +146,6 @@ void std::__ndk1::error_category::equivalent(ulong *param_1,undefined8 param_2,u
   memcpy(uVar6,pcVar7,uVar5);
 LAB_005eeed0:
   *(undefined1 *)(uVar6 + uVar5) = 0;
-  if (*(long *)(lVar2 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

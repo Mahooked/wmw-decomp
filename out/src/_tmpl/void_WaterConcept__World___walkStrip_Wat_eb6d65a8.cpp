@@ -33,7 +33,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
   undefined4 uVar8;
   byte bVar9;
   char cVar10;
-  long lVar11;
   bool bVar12;
   ulong uVar13;
   int **ppiVar14;
@@ -49,7 +48,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
   undefined8 *puVar24;
   uint uVar25;
   uint uVar26;
-  long lVar27;
   long lVar28;
   byte *pbVar29;
   int iVar30;
@@ -106,8 +104,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
   undefined8 auStack_bc [3];
   uint uVar43;
   
-  lVar11 = tpidr_el0;
-  lVar27 = *(long *)(lVar11 + 0x28);
   fStack_20c = param_12;
   if (param_12 == -NAN) {
     fStack_20c = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x540);
@@ -1243,10 +1239,6 @@ LAB_00470fb4:
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
   }
-  if (*(long *)(lVar11 + 0x28) == lVar27) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1282,7 +1274,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
   undefined4 uVar7;
   byte bVar8;
   char cVar9;
-  long lVar10;
   bool bVar11;
   uint uVar12;
   ulong uVar14;
@@ -1295,7 +1286,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
   ulong uVar21;
   uint uVar22;
   int iVar23;
-  long lVar24;
   long lVar25;
   uint *puVar26;
   long lVar27;
@@ -1356,8 +1346,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
   undefined8 auStack_bc [3];
   uint uVar13;
   
-  lVar10 = tpidr_el0;
-  lVar24 = *(long *)(lVar10 + 0x28);
   fStack_20c = param_12;
   if (param_12 == -NAN) {
     fStack_20c = *(float *)((long)param_1 + (long)(int)param_5 * 4 + 0x540);
@@ -2493,10 +2481,6 @@ LAB_004731dc:
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
   }
-  if (*(long *)(lVar10 + 0x28) == lVar24) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2532,7 +2516,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
   undefined4 uVar8;
   byte bVar9;
   char cVar10;
-  long lVar11;
   bool bVar12;
   int **ppiVar13;
   int *piVar14;
@@ -2545,7 +2528,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
   ulong uVar22;
   uint uVar23;
   int iVar24;
-  long lVar25;
   long lVar26;
   long lVar27;
   undefined8 *puVar28;
@@ -2606,8 +2588,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
   undefined8 auStack_bc [3];
   uint uVar20;
   
-  lVar11 = tpidr_el0;
-  lVar25 = *(long *)(lVar11 + 0x28);
   fStack_204 = param_12;
   if (param_12 == -NAN) {
     fStack_204 = *(float *)((long)param_1 + (long)param_5 * 4 + 0x540);
@@ -3747,10 +3727,6 @@ LAB_00474dd4:
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
   }
-  if (*(long *)(lVar11 + 0x28) == lVar25) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3786,7 +3762,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
   undefined4 uVar8;
   byte bVar9;
   char cVar10;
-  long lVar11;
   bool bVar12;
   ulong uVar13;
   int **ppiVar14;
@@ -3803,7 +3778,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
   undefined8 *puVar25;
   uint uVar26;
   uint uVar27;
-  long lVar28;
   long lVar29;
   int iVar30;
   int *piVar31;
@@ -3859,8 +3833,6 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
   undefined8 auStack_bc [3];
   uint uVar43;
   
-  lVar11 = tpidr_el0;
-  lVar28 = *(long *)(lVar11 + 0x28);
   fStack_20c = param_12;
   if (param_12 == -NAN) {
     fStack_20c = *(float *)((long)param_1 + (long)param_5 * 4 + 0x540);
@@ -4995,10 +4967,6 @@ LAB_00476994:
       } while (uVar13 < iVar39 - 1U);
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
-  }
-  if (*(long *)(lVar11 + 0x28) != lVar28) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

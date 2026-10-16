@@ -33,7 +33,6 @@ undefined8 * std::__ndk1::locale::classic(void)
 void std::__ndk1::locale::classic(long param_1,long param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long *plVar4;
@@ -45,10 +44,7 @@ void std::__ndk1::locale::classic(long param_1,long param_2)
   undefined8 uStack_60;
   undefined1 **ppuStack_58;
   undefined1 *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puStack_70 = &collate<char>::id;
   uStack_60 = 0;
   pcStack_68 = id::__init;
@@ -81,10 +77,6 @@ void std::__ndk1::locale::classic(long param_1,long param_2)
     plVar4 = (long *)(*plVar6 + uVar7 * 8);
   }
   *plVar4 = param_2;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -97,7 +89,6 @@ void std::__ndk1::locale::classic(long param_1,long param_2)
 void std::__ndk1::locale::classic(long param_1,long param_2)
 
 {
-  long lVar1;
   ulong uVar2;
   long lVar3;
   long *plVar4;
@@ -109,10 +100,7 @@ void std::__ndk1::locale::classic(long param_1,long param_2)
   undefined8 uStack_60;
   undefined1 **ppuStack_58;
   undefined1 *puStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   puStack_70 = &collate<wchar_t>::id;
   uStack_60 = 0;
   pcStack_68 = id::__init;
@@ -145,10 +133,6 @@ void std::__ndk1::locale::classic(long param_1,long param_2)
     plVar4 = (long *)(*plVar6 + uVar7 * 8);
   }
   *plVar4 = param_2;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -266,7 +250,6 @@ std____ndk1__locale * std::__ndk1::locale::operator=(std____ndk1__locale *p0)
 void std::__ndk1::locale::locale(char *p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   long in_x1;
@@ -275,10 +258,7 @@ void std::__ndk1::locale::locale(char *p0)
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   if (in_x1 == 0) {
     uVar2 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005d5358 to 005d5363 has its CatchHandler @ 005d538c */
@@ -320,10 +300,6 @@ LAB_005d52f0:
   }
   *(undefined8 *)p0 = uVar2;
   std::__ndk1::__shared_count::__add_shared(uVar2);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -360,7 +336,6 @@ void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2)
 void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
 
 {
-  long lVar1;
   ulong uVar2;
   ulong uVar3;
   undefined4 in_w3;
@@ -370,10 +345,7 @@ void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   if (p2 == 0) {
     uVar4 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005d5554 to 005d555f has its CatchHandler @ 005d5588 */
@@ -416,10 +388,6 @@ LAB_005d54e4:
   }
   p0->f_0x0 = uVar2;
   std::__ndk1::__shared_count::__add_shared(uVar2);
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -523,7 +491,6 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
 
 {
   void *pvVar1;
-  long lVar2;
   bool bVar3;
   int iVar4;
   ulong *puVar5;
@@ -532,10 +499,7 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
   byte abStack_60 [8];
   ulong uStack_58;
   void *pvStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   puVar5 = (ulong *)std::__ndk1::locale::__global();
   uVar6 = *puVar5;
   *in_x8 = uVar6;
@@ -574,10 +538,6 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
       operator delete(pvStack_50);
     }
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -593,7 +553,6 @@ void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
 
 {
   long lVar1;
-  long lVar2;
   bool bVar3;
   long *in_x1;
   ulong uVar4;
@@ -603,10 +562,7 @@ void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
   undefined8 uStack_50;
   undefined1 **ppuStack_48;
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar5 = p0->f_0x0;
   uStack_50 = 0;
   pcStack_58 = id::__init;
@@ -623,10 +579,6 @@ void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
   else {
     bVar3 = false;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail(bVar3);
   return;
 }
 
@@ -642,7 +594,6 @@ void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0)
 
 {
   long lVar1;
-  long lVar2;
   undefined8 uVar3;
   long *in_x1;
   ulong uVar4;
@@ -652,10 +603,7 @@ void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0)
   undefined8 uStack_50;
   undefined1 **ppuStack_48;
   undefined1 *puStack_40;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   uVar5 = p0->f_0x0;
   uStack_50 = 0;
   pcStack_58 = id::__init;
@@ -668,10 +616,6 @@ void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0)
   uVar4 = (long)(int)in_x1[1] - 1;
   if ((uVar4 < (ulong)(*(long *)(uVar5 + 0x18) - lVar1 >> 3)) && (*(long *)(lVar1 + uVar4 * 8) != 0)
      ) {
-    if (*(long *)(lVar2 + 0x28) == lStack_38) {
-      return;
-    }
-    __stack_chk_fail();
     return;
   }
   uVar3 = __cxa_allocate_exception(8);

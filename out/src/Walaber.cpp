@@ -45,15 +45,11 @@ void Walaber::createProgrammaticTexture2D
                undefined4 param_5,long *param_6)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *puVar3;
   long lStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xc0);
   lStack_68 = *param_6;
   piStack_60 = (int *)param_6[1];
@@ -68,10 +64,6 @@ void Walaber::createProgrammaticTexture2D
   *puVar3 = 1;
   param_1[1] = puVar3;
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_68);
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -91,7 +83,6 @@ void Walaber::createProgrammaticSolidColorTexture2D
 {
   undefined1 *puVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   int iVar5;
   long lVar6;
@@ -102,10 +93,7 @@ void Walaber::createProgrammaticSolidColorTexture2D
   int *piStack_70;
   long *plStack_68;
   int *piStack_60;
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   Walaber::createProgrammaticTexture2D(&plStack_68);
   *param_1 = (long)plStack_68;
   param_1[1] = (long)piStack_60;
@@ -154,10 +142,6 @@ void Walaber::createProgrammaticSolidColorTexture2D
   (**(code **)(*param_1 + 0x10))(param_1,&plStack_88);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_88);
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_68);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -214,7 +198,6 @@ void Walaber::createRenderTexture2D
                undefined4 param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *puVar3;
   undefined8 uStack_b0;
@@ -231,10 +214,7 @@ void Walaber::createRenderTexture2D
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0x160);
   uStack_a8 = *(undefined4 *)(param_4 + 1);
   uStack_b0 = *param_4;
@@ -259,10 +239,6 @@ void Walaber::createRenderTexture2D
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -307,17 +283,13 @@ void Walaber::createSubtexture
                (undefined8 *param_1,undefined8 param_2,long *param_3,undefined8 param_4)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *puVar3;
   long lStack_70;
   int *piStack_68;
   byte abStack_60 [16];
   void *pvStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xe8);
                     /* try { // try from 00396f80 to 00396f8b has its CatchHandler @ 0039701c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
@@ -336,10 +308,6 @@ void Walaber::createSubtexture
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -649,7 +617,6 @@ LAB_00397838:
 ulong Walaber::strToTextureInMemoryColorspace(void)
 
 {
-  long lVar1;
   int iVar2;
   ulong uVar3;
   uint uVar4;
@@ -657,10 +624,7 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
   byte abStack_40 [8];
   ulong uStack_38;
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::toLower(abStack_40);
   uVar5 = (ulong)(abStack_40[0] >> 1);
   uVar3 = uVar5;
@@ -706,10 +670,6 @@ ulong Walaber::strToTextureInMemoryColorspace(void)
 LAB_003979b0:
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_28) {
-    uVar3 = __stack_chk_fail();
-    return uVar3;
   }
   return (ulong)uVar4;
 }
@@ -807,7 +767,6 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2)
 void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 *puVar3;
   undefined8 uStack_a0;
@@ -824,10 +783,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = operator new(0xe8);
   uStack_98 = *(undefined4 *)(param_3 + 1);
   uStack_a0 = *param_3;
@@ -852,10 +808,6 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

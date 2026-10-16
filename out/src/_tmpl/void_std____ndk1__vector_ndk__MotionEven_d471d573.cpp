@@ -14,7 +14,6 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
      __push_back_slow_path<ndk::MotionEvent>(ndk__MotionEvent **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -23,10 +22,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   undefined8 uVar6;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 7;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x39 != 0) {
@@ -100,10 +96,6 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
                     /* try { // try from 002c6d04 to 002c6d0f has its CatchHandler @ 002c6d48 */
   std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

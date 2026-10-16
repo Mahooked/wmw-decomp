@@ -18,7 +18,6 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
 {
   long lVar1;
   uint uVar2;
-  long lVar3;
   uint uVar4;
   long lVar5;
   long *plVar6;
@@ -26,10 +25,7 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
   undefined1 auStack_70 [8];
   long *plStack_68;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   auStack_70[0] = 0;
   plVar6 = (long *)(*param_1 + -0x18);
   plStack_68 = param_1;
@@ -65,10 +61,6 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
     }
   }
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return param_1;
-  }
-  plVar6 = (long *)__stack_chk_fail();
   return plVar6;
 }
 

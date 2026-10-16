@@ -29,13 +29,9 @@ void Walaber::DrawableNode::setLayer(int p0)
 void Walaber::DrawableNode::DrawableNode()
 
 {
-  long lVar1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   abStack_40[0xd] = 0;
   abStack_40[0xe] = 0;
   abStack_40[0xf] = 0;
@@ -60,10 +56,6 @@ void Walaber::DrawableNode::DrawableNode()
   }
   *(undefined4 *)(this + 0x10) = 0;
   *this = &PTR__DrawableNode_00710da8;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

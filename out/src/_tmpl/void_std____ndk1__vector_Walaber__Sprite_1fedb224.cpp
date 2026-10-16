@@ -19,7 +19,6 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   undefined8 *in_x1;
   long lVar3;
   ulong uVar4;
@@ -29,10 +28,7 @@ void std::__ndk1::
   undefined8 uVar8;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = ((long)p0[1] - (long)*p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar3 + 1;
   if (0x666666666666666 < uVar1) {
@@ -60,10 +56,6 @@ void std::__ndk1::
                     /* try { // try from 00335534 to 0033553f has its CatchHandler @ 00335578 */
   std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

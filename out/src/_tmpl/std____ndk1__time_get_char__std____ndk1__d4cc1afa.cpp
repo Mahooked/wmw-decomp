@@ -18,7 +18,6 @@ long * std::__ndk1::
                  undefined8 param_6,byte *param_7,byte *param_8)
 
 {
-  long lVar1;
   byte *pbVar2;
   char cVar3;
   char cVar4;
@@ -32,10 +31,7 @@ long * std::__ndk1::
   long *plVar12;
   long lVar13;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_70,param_4);
                     /* try { // try from 005be7a4 to 005be7b3 has its CatchHandler @ 005bebb0 */
   plVar9 = (long *)std::__ndk1::locale::use_facet(&uStack_70,&ctype<char>::id);
@@ -172,10 +168,6 @@ LAB_005beb1c:
   }
   *param_5 = *param_5 | 2;
 LAB_005beb50:
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return plVar9;
-  }
-  plVar9 = (long *)__stack_chk_fail();
   return plVar9;
 }
 
@@ -212,16 +204,8 @@ void std::__ndk1::
      do_get_time(void)
 
 {
-  long lVar1;
-  long lVar2;
   
-  lVar1 = tpidr_el0;
-  lVar2 = *(long *)(lVar1 + 0x28);
   std::__ndk1::time_get<char, std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>>>::get();
-  if (*(long *)(lVar1 + 0x28) == lVar2) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -273,16 +257,12 @@ void std::__ndk1::
 
 {
   undefined1 auVar1 [16];
-  long lVar2;
   undefined8 uVar3;
   long lVar4;
   long lVar5;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   uStack_50 = param_1;
   std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005bed20 to 005bed2f has its CatchHandler @ 005bede8 */
@@ -296,10 +276,6 @@ void std::__ndk1::
     *(int *)(param_5 + 0x18) =
          (int)lVar4 + ((int)(auVar1._8_8_ >> 1) - (auVar1._12_4_ >> 0x1f)) * -7;
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uStack_50);
   return;
 }
 
@@ -350,16 +326,12 @@ void std::__ndk1::
      do_get_monthname(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   long lVar3;
   long lVar4;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_1;
   std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005beef8 to 005bef07 has its CatchHandler @ 005befbc */
@@ -374,10 +346,6 @@ void std::__ndk1::
          ((int)((ulong)(lVar3 / 6 + (lVar3 >> 0x3f)) >> 1) -
          (SUB164(SEXT816(lVar3) * SEXT816(0x2aaaaaaaaaaaaaab),0xc) >> 0x1f)) * -0xc;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail(uStack_50);
   return;
 }
 
@@ -428,16 +396,12 @@ void std::__ndk1::
      do_get_year(std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_1,std::__ndk1::istreambuf_iterator<char, std::__ndk1::char_traits<char>> param_2,std::__ndk1::ios_base& param_3,unsigned int& param_4,tm *param_5)
 
 {
-  long lVar1;
   int iVar2;
   undefined8 uVar3;
   int iVar4;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uStack_50 = param_1;
   std::__ndk1::ios_base::getloc(&uStack_58,param_3);
                     /* try { // try from 005bf0c4 to 005bf0d3 has its CatchHandler @ 005bf154 */
@@ -455,10 +419,6 @@ void std::__ndk1::
       }
     }
     *(int *)(param_5 + 0x14) = iVar4 + -0x76c;
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail(uStack_50);
-    return;
   }
   return;
 }
@@ -517,7 +477,6 @@ void std::__ndk1::
 {
   byte bVar1;
   undefined1 auVar2 [16];
-  long lVar3;
   int iVar4;
   undefined8 uVar5;
   long lVar6;
@@ -531,10 +490,7 @@ void std::__ndk1::
   undefined8 uStack_70;
   undefined8 uStack_68;
   byte abStack_60 [8];
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   *param_5 = 0;
   uStack_70 = param_2;
   std::__ndk1::ios_base::getloc(&uStack_68,param_4);
@@ -752,10 +708,6 @@ LAB_005bf6ac:
   *param_5 = uVar10 | 4;
   uVar5 = uStack_70;
 LAB_005bf6b8:
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail(uVar5);
   return;
 switchD_005bf260_caseD_26:
   uVar10 = *param_5;

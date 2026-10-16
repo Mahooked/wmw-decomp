@@ -139,13 +139,11 @@ void WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber__PropertyList 
 {
   undefined1 *puVar1;
   byte bVar2;
-  long lVar3;
   undefined *puVar4;
   undefined4 uVar5;
   ulong uVar6;
   undefined8 *puVar7;
   long lVar8;
-  long lVar9;
   undefined8 uVar10;
   Walaber__PropertyList *pWVar11;
   undefined8 uVar12;
@@ -201,8 +199,6 @@ void WaterConcept::Screen_InAppPurchase::loadPropertyList(Walaber__PropertyList 
   undefined1 uStack_8b;
   undefined2 uStack_8a;
   
-  lVar3 = tpidr_el0;
-  lVar9 = *(long *)(lVar3 + 0x28);
   uStack_f4 = 0;
   uStack_f3 = 0;
   uStack_f2 = 0;
@@ -1508,10 +1504,6 @@ LAB_004e58d0:
   uStack_f2 = 0;
   uStack_f1 = 0;
   Walaber::PropertyList::~PropertyList(apvStack_e8);
-  if (*(long *)(lVar3 + 0x28) == lVar9) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1526,7 +1518,6 @@ LAB_004e58d0:
 void WaterConcept::Screen_InAppPurchase::enter()
 
 {
-  long lVar1;
   undefined **ppuVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -1541,10 +1532,7 @@ void WaterConcept::Screen_InAppPurchase::enter()
   int *piStack_50;
   undefined **ppuStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   ppuVar2 = (undefined **)operator new(0x28);
   ppuVar2[2] = this;
   *ppuVar2 = (undefined *)&PTR__Callback_00714168;
@@ -1600,10 +1588,6 @@ void WaterConcept::Screen_InAppPurchase::enter()
   Walaber::PropertyList::~PropertyList(apcStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_58);
   Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_InAppPurchase>>::~SharedPtr(&ppuStack_48);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1665,7 +1649,6 @@ void WaterConcept::Screen_InAppPurchase::update(float p0,bool p1)
   undefined **ppuVar2;
   byte bVar3;
   undefined1 uVar4;
-  long lVar5;
   ulong uVar6;
   long *plVar7;
   long lVar8;
@@ -1702,11 +1685,8 @@ void WaterConcept::Screen_InAppPurchase::update(float p0,bool p1)
   undefined8 uStack_d8;
   undefined **appuStack_d0 [3];
   undefined1 auStack_b8 [8];
-  long lStack_b0;
   
   uVar6 = (ulong)p1;
-  lVar5 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar5 + 0x28);
   if ((in_x1 & 1) == 0) goto LAB_004e6aa0;
   if (*(char *)(uVar6 + 0x1c4) != '\0') {
     plVar7 = (long *)Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar6 + 0x10),0x14);
@@ -2176,10 +2156,6 @@ LAB_004e6608:
   }
   Walaber::WidgetManager::update(CONCAT44(in_register_00005004,p0),*(undefined8 *)(uVar6 + 0x10));
 LAB_004e6aa0:
-  if (*(long *)(lVar5 + 0x28) == lStack_b0) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2197,7 +2173,6 @@ void WaterConcept::Screen_InAppPurchase::_setAndshowState(long param_1,uint para
 {
   undefined8 *puVar1;
   uint uVar2;
-  long lVar3;
   bool bVar4;
   bool bVar5;
   long lVar6;
@@ -2205,7 +2180,6 @@ void WaterConcept::Screen_InAppPurchase::_setAndshowState(long param_1,uint para
   undefined8 uVar8;
   void *p0;
   long lVar9;
-  long lVar10;
   undefined1 uVar11;
   int iVar12;
   float fVar13;
@@ -2234,8 +2208,6 @@ void WaterConcept::Screen_InAppPurchase::_setAndshowState(long param_1,uint para
   void *pvStack_90;
   undefined8 auStack_88 [3];
   
-  lVar3 = tpidr_el0;
-  lVar10 = *(long *)(lVar3 + 0x28);
   Walaber::Logger::printf(&DAT_0061d37e,5,"SetShowState: %d",param_2);
   uVar2 = param_2 | 1;
   if (uVar2 == 5) {
@@ -2537,10 +2509,6 @@ LAB_004e7010:
     operator delete(pvStack_90);
   }
 LAB_004e71d0:
-  if (*(long *)(lVar3 + 0x28) == lVar10) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2588,7 +2556,6 @@ void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
 {
   void *pvVar1;
   byte bVar2;
-  long lVar3;
   undefined2 *puVar4;
   bool bVar5;
   bool bVar6;
@@ -2605,7 +2572,6 @@ void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
   long lVar17;
   long lVar18;
   long in_x1;
-  long lVar19;
   char *pcVar20;
   long lVar21;
   char *pcVar22;
@@ -2725,8 +2691,6 @@ void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
   ulong uStack_a8;
   char *pcStack_a0;
   
-  lVar3 = tpidr_el0;
-  lVar19 = *(long *)(lVar3 + 0x28);
   uVar13 = 0;
   iVar9 = *(int *)(in_x1 + 0xc);
   if (0x73 < iVar9) {
@@ -4572,10 +4536,6 @@ LAB_004e8ea0:
   }
   uVar13 = 0;
 switchD_004e7414_caseD_3f:
-  if (*(long *)(lVar3 + 0x28) == lVar19) {
-    return;
-  }
-  __stack_chk_fail(uVar13);
   return;
 }
 
@@ -4594,7 +4554,6 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   ulong uVar1;
   byte bVar2;
   byte bVar3;
-  long lVar4;
   bool bVar5;
   bool bVar6;
   int iVar7;
@@ -4606,7 +4565,6 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   ulong uVar13;
   void *pvVar14;
   byte *pbVar15;
-  long lVar16;
   void *pvVar17;
   byte *pbVar18;
   ulong uVar19;
@@ -4672,8 +4630,6 @@ void WaterConcept::Screen_InAppPurchase::updateScreenWithProducts(long param_1,l
   ulong uStack_a8;
   void *pvStack_a0;
   
-  lVar4 = tpidr_el0;
-  lVar16 = *(long *)(lVar4 + 0x28);
   uStack_b0 = 0;
   uStack_a8 = 0;
   pvStack_a0 = (void *)0x0;
@@ -5326,10 +5282,6 @@ LAB_004ea1d4:
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
-  if (*(long *)(lVar4 + 0x28) == lVar16) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -5369,7 +5321,6 @@ void WaterConcept::Screen_InAppPurchase::handleEvent
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   ulong uVar4;
   undefined8 uVar5;
   int iVar6;
@@ -5391,11 +5342,8 @@ void WaterConcept::Screen_InAppPurchase::handleEvent
   undefined **ppuStack_a8;
   undefined8 uStack_a0;
   undefined1 auStack_98 [24];
-  long lStack_80;
   
   uVar4 = (ulong)(uint)p0;
-  lVar3 = tpidr_el0;
-  lStack_80 = *(long *)(lVar3 + 0x28);
   iVar6 = (int)p1;
   if (iVar6 == 0x2b) {
     if ((*(byte *)(uVar4 + 0x108) & 1) == 0) {
@@ -6102,10 +6050,6 @@ void WaterConcept::Screen_InAppPurchase::handleEvent
   ppuStack_a8 = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(auStack_98);
 LAB_004eabe8:
-  if (*(long *)(lVar3 + 0x28) != lStack_80) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6121,7 +6065,6 @@ void WaterConcept::Screen_InAppPurchase::_buildUI(long param_1)
 
 {
   undefined *puVar1;
-  long lVar2;
   undefined *puVar3;
   int iVar4;
   char *p0;
@@ -6148,10 +6091,7 @@ void WaterConcept::Screen_InAppPurchase::_buildUI(long param_1)
   undefined8 *puStack_70;
   undefined8 uStack_68;
   char *pcStack_60;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   p0 = (char *)operator new(0x20);
   uStack_68 = 0x1a;
   puStack_70 = (undefined8 *)0x21;
@@ -6286,10 +6226,6 @@ LAB_004eb918:
   if (((ulong)puStack_70 & 1) != 0) {
     operator delete(pcStack_60);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -6309,7 +6245,6 @@ void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
   ulong uVar3;
   float fVar4;
   undefined4 uVar5;
-  long lVar6;
   void *pvVar7;
   int iVar8;
   undefined8 uVar9;
@@ -6321,7 +6256,6 @@ void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar15;
   int *in_x1;
   char *pcVar16;
-  long lVar17;
   char *pcVar18;
   byte bVar19;
   float fVar20;
@@ -6364,8 +6298,6 @@ void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
   int *piStack_c8;
   void *apvStack_c0 [6];
   
-  lVar6 = tpidr_el0;
-  lVar17 = *(long *)(lVar6 + 0x28);
   if (*in_x1 != 1) goto LAB_004ec544;
   uVar9 = Walaber::BroadcastManager::getInstancePtr();
   piStack_c8 = (int *)0x1c00000010;
@@ -6720,10 +6652,6 @@ LAB_004ec25c:
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&puStack_e8);
 LAB_004ec544:
-  if (*(long *)(lVar6 + 0x28) != lVar17) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -6738,7 +6666,6 @@ LAB_004ec544:
 void WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void *p0)
 
 {
-  long lVar1;
   long lVar2;
   undefined8 uVar3;
   long in_x1;
@@ -6754,10 +6681,7 @@ void WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void *p0)
   undefined4 uStack_47;
   undefined3 uStack_43;
   void *pvStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (*(char *)(in_x1 + 0x18) != '\0') {
     uStack_43 = 0;
     bStack_50 = 0x16;
@@ -6792,10 +6716,6 @@ void WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void *p0)
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

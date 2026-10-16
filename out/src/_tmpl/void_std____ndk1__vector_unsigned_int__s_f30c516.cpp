@@ -14,7 +14,6 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
      __push_back_slow_path<unsigned_int_const&>(uint *p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -27,10 +26,7 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
   void *pvStack_58;
   undefined4 *puStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(p0 + 2) - *(long *)p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -73,10 +69,6 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -93,7 +85,6 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
      __push_back_slow_path<unsigned_int>(uint **p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -105,10 +96,7 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
   uint *puStack_58;
   uint *puStack_50;
   uint *puStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -150,10 +138,6 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::
   puStack_48 = puVar7;
   if (puStack_60 != (uint *)0x0) {
     operator delete(puStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

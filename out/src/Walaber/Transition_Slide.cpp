@@ -257,7 +257,6 @@ LAB_003f61f0:
 void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   undefined4 uVar2;
   int iVar3;
   ulong uVar4;
@@ -273,10 +272,7 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
   undefined4 uStack_6c;
   void *pvStack_60;
   undefined1 auStack_58 [16];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Transition::setup();
   p1[0xb].f_0x10 = _sScreenSize;
   *(undefined1 *)&p1[0xc].f_0x0 = 0;
@@ -341,10 +337,6 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
   *(float *)((long)&p1[4].f_0x10 + 4) = p0;
   *(undefined4 *)((long)&p1[0xc].f_0x0 + 4) = 0;
   Walaber::Transition_Slide::_goIntro(p1);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -529,7 +521,6 @@ LAB_003f675c:
 void Walaber::Transition_Slide::draw(long param_1)
 
 {
-  long lVar1;
   long lVar2;
   int iVar3;
   int iVar4;
@@ -546,10 +537,7 @@ void Walaber::Transition_Slide::draw(long param_1)
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0xe0) == '\0') {
     fVar7 = *(float *)(param_1 + 0x70);
     fVar6 = *(float *)(param_1 + 0x74) * 0.5;
@@ -602,10 +590,6 @@ void Walaber::Transition_Slide::draw(long param_1)
       Walaber::SpriteBatch::flush(param_1 + 8);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

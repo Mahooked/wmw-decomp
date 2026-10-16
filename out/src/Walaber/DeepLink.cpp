@@ -41,24 +41,16 @@ void Walaber::DeepLink::~DeepLink(void)
 void Walaber::DeepLink::RegisterScreen(unsigned int param_1,std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> param_2)
 
 {
-  long lVar1;
   long lVar2;
   undefined1 auStack_48 [8];
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if (sm_bIsInitialised == '\0') {
     Walaber::DeepLink::Initialise();
   }
   uStack_40 = param_2;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(&sm_mapDeepLinkedScreens,param_2,"",&uStack_40,auStack_48);
   *(undefined4 *)(lVar2 + 0x38) = param_1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -73,7 +65,6 @@ void Walaber::DeepLink::RegisterScreen(unsigned int param_1,std::__ndk1::basic_s
 void Walaber::DeepLink::Initialise(void)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 *puVar3;
   ulong auStack_a0 [2];
@@ -86,10 +77,7 @@ void Walaber::DeepLink::Initialise(void)
   undefined4 *puStack_50;
   undefined8 *puStack_48;
   undefined4 *puStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uVar2 = Walaber::PushCommand::Get();
   puVar3 = (undefined8 *)operator new(0x10);
   *puVar3 = &PTR__Callback_0070e2c0;
@@ -136,10 +124,6 @@ void Walaber::DeepLink::Initialise(void)
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   sm_bIsInitialised = 1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -217,7 +201,6 @@ void Walaber::DeepLink::UnregisterScreen(std::__ndk1::basic_string<char, std::__
 void Walaber::DeepLink::OnScreenCommand(void *p0)
 
 {
-  long lVar1;
   bool bVar2;
   undefined *puVar3;
   long lVar4;
@@ -231,10 +214,7 @@ void Walaber::DeepLink::OnScreenCommand(void *p0)
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   if ((((p0 != (void *)0x0) &&
        (puVar3 = (undefined *)std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, unsigned int>>>::find<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(&sm_mapDeepLinkedScreens,(long)p0 + 0x18),
        puVar3 != &DAT_00730480)) && (lVar4 = Walaber::ScreenManager::peekTop(), lVar4 != 0)) &&
@@ -305,10 +285,6 @@ void Walaber::DeepLink::OnScreenCommand(void *p0)
     Walaber::ScreenManager::pushScreen(*(undefined4 *)(puVar3 + 0x38),apuStack_70);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1);
     Walaber::PropertyList::~PropertyList(apuStack_70);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

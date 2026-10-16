@@ -222,7 +222,6 @@ do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> pa
 {
   ulong uVar1;
   byte bVar2;
-  long lVar3;
   bool bVar4;
   byte bVar5;
   long *plVar6;
@@ -250,10 +249,7 @@ do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> pa
   undefined8 uStack_e0;
   undefined1 auStack_d8 [4];
   undefined1 auStack_d4 [100];
-  long lStack_70;
   
-  lVar3 = tpidr_el0;
-  lStack_70 = *(long *)(lVar3 + 0x28);
   std::__ndk1::ios_base::getloc(&uStack_e0,param_3);
                     /* try { // try from 005cc04c to 005cc05b has its CatchHandler @ 005cc2e4 */
   plVar6 = (long *)std::__ndk1::locale::use_facet(&uStack_e0,&ctype<char>::id);
@@ -361,10 +357,6 @@ do_put(std::__ndk1::ostreambuf_iterator<char, std::__ndk1::char_traits<char>> pa
     operator delete(pvStack_f0);
   }
   std::__ndk1::__shared_count::__release_shared(uStack_e0);
-  if (*(long *)(lVar3 + 0x28) != lStack_70) {
-    uVar7 = __stack_chk_fail();
-    return uVar7;
-  }
   return uVar7;
 }
 

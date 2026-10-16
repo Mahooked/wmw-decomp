@@ -125,7 +125,6 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
 {
   long lVar1;
   undefined8 *puVar2;
-  long lVar3;
   long *in_x0;
   long *plVar4;
   long lVar5;
@@ -137,10 +136,7 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
   undefined8 uVar11;
   float fVar12;
   undefined1 auStack_60 [8];
-  long lStack_58;
   
-  lVar3 = tpidr_el0;
-  lStack_58 = *(long *)(lVar3 + 0x28);
   lVar6 = 0;
   uVar7 = 0xffffffffffffffff;
   do {
@@ -177,10 +173,6 @@ void Walaber::RibbonParticleSet<10>::updateParticles(float p0)
   if (plVar4 != (long *)0x0) {
     (**(code **)(*plVar4 + 0x10))(plVar4,auStack_60);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -203,7 +195,6 @@ void Walaber::RibbonParticleSet<10>::drawParticles
   byte bVar4;
   byte bVar5;
   byte bVar6;
-  long lVar7;
   bool bVar8;
   undefined8 *puVar9;
   undefined8 *puVar10;
@@ -238,10 +229,7 @@ void Walaber::RibbonParticleSet<10>::drawParticles
   float fStack_c4;
   long lStack_c0;
   int *piStack_b8;
-  long lStack_b0;
   
-  lVar7 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar7 + 0x28);
   lVar21 = 0;
   uVar23 = 0;
   do {
@@ -427,10 +415,6 @@ LAB_00453b08:
     bVar8 = *(uint *)(param_1 + 6) <= uVar23;
     uVar23 = uVar23 + 1;
     if (bVar8) {
-      if (*(long *)(lVar7 + 0x28) == lStack_b0) {
-        return;
-      }
-      __stack_chk_fail();
       return;
     }
   } while( true );

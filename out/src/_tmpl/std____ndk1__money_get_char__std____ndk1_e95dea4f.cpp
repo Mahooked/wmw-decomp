@@ -1110,13 +1110,11 @@ long * std::__ndk1::
 
 {
   byte *pbVar1;
-  long lVar2;
   byte bVar3;
   undefined4 uVar4;
   int iVar5;
   long *plVar6;
   ulong uVar7;
-  long lVar8;
   char acStack_104 [4];
   undefined8 uStack_100;
   long lStack_f8;
@@ -1126,8 +1124,6 @@ long * std::__ndk1::
   byte abStack_d4 [100];
   undefined1 auStack_70 [16];
   
-  lVar2 = tpidr_el0;
-  lVar8 = *(long *)(lVar2 + 0x28);
   pbStack_f0 = abStack_d4;
   pcStack_e8 = __do_nothing;
                     /* try { // try from 005c916c to 005c9177 has its CatchHandler @ 005c9350 */
@@ -1199,10 +1195,6 @@ LAB_005c92b0:
   if (pbVar1 != (byte *)0x0) {
                     /* try { // try from 005c92cc to 005c92cf has its CatchHandler @ 005c9348 */
     (*pcStack_e8)();
-  }
-  if (*(long *)(lVar2 + 0x28) != lVar8) {
-    plVar6 = (long *)__stack_chk_fail();
-    return plVar6;
   }
   return plVar6;
 }

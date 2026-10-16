@@ -14,7 +14,6 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
      __push_back_slow_path<Walaber::TextLineInfo>(Walaber__TextLineInfo **p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -24,10 +23,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   undefined8 uVar7;
   undefined1 auStack_60 [16];
   undefined8 *puStack_50;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 5;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3b != 0) {
@@ -58,10 +54,6 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
                     /* try { // try from 00385d68 to 00385d73 has its CatchHandler @ 00385dac */
   std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

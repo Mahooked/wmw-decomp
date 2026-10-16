@@ -82,14 +82,10 @@ Walaber__Widget_Label * Walaber::Widget_Label::operator=(Walaber__Widget_Label *
 void Walaber::Widget_Label::setPadding(float p0,float p1,float p2,float p3)
 
 {
-  long lVar1;
   long in_x0;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_50);
   *(float *)(in_x0 + 0x148) = *(float *)(in_x0 + 0x90) * fStack_50 * p0;
   Walaber::Node::getWorldScale(&fStack_50);
@@ -100,10 +96,6 @@ void Walaber::Widget_Label::setPadding(float p0,float p1,float p2,float p3)
   *(float *)(in_x0 + 0x154) = *(float *)(in_x0 + 0x94) * fStack_4c * p3;
   Walaber::Widget_Label::_setTextScale();
   Walaber::Widget_Label::_setTextTopLeft();
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -118,7 +110,6 @@ void Walaber::Widget_Label::setPadding(float p0,float p1,float p2,float p3)
 void Walaber::Widget_Label::Widget_Label(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined8 *in_x3;
@@ -126,11 +117,8 @@ void Walaber::Widget_Label::Widget_Label(int p0,Walaber__Vector2 *p1,Walaber__Ve
   void *pvStack_50;
   undefined8 uStack_48;
   Walaber__Vector2 WStack_40;
-  long lStack_38;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   WStack_40 = *p2;
   uStack_48 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,10,&WStack_40,&uStack_48,1,1);
@@ -180,10 +168,6 @@ void Walaber::Widget_Label::Widget_Label(int p0,Walaber__Vector2 *p1,Walaber__Ve
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -232,7 +216,6 @@ void Walaber::Widget_Label::Widget_Label
                long *param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   int *piVar3;
   long lVar4;
@@ -241,10 +224,7 @@ void Walaber::Widget_Label::Widget_Label
   void *pvStack_50;
   undefined8 uStack_48;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   uStack_40 = *param_3;
   uStack_48 = *param_4;
   Walaber::Widget::Widget(param_1,param_2,10,&uStack_40,&uStack_48,1,1);
@@ -308,10 +288,6 @@ void Walaber::Widget_Label::Widget_Label
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar5 - (float)uVar2);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -334,7 +310,6 @@ void Walaber::Widget_Label::Widget_Label
 
 {
   ulong uVar1;
-  long lVar2;
   int *piVar3;
   long lVar4;
   long lVar5;
@@ -343,10 +318,7 @@ void Walaber::Widget_Label::Widget_Label
   undefined8 uStack_68;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   uStack_68 = *param_4;
   uStack_70 = *param_5;
   Walaber::Widget::Widget(param_2,param_3,10,&uStack_68,&uStack_70,1,1);
@@ -411,10 +383,6 @@ void Walaber::Widget_Label::Widget_Label
          CONCAT44((float)((ulong)uVar6 >> 0x20) - (float)((ulong)lVar5 >> 0x20),
                   (float)uVar6 - (float)lVar5);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -429,14 +397,10 @@ void Walaber::Widget_Label::Widget_Label
 void Walaber::Widget_Label::_setTextScale(long param_1)
 
 {
-  long lVar1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   fVar2 = *(float *)(param_1 + 0x104);
   Walaber::Node::getWorldScale(&fStack_40);
   if (*(float *)(param_1 + 0x90) * fStack_40 -
@@ -458,10 +422,6 @@ void Walaber::Widget_Label::_setTextScale(long param_1)
       *(float *)(param_1 + 0x15c) = fVar2;
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -477,14 +437,10 @@ void Walaber::Widget_Label::_setTextTopLeft(long param_1)
 
 {
   int iVar1;
-  long lVar2;
   float fVar3;
   float fStack_30;
   float fStack_2c;
-  long lStack_28;
   
-  lVar2 = tpidr_el0;
-  lStack_28 = *(long *)(lVar2 + 0x28);
   iVar1 = *(int *)(param_1 + 0x160);
   if (iVar1 == 2) {
     Walaber::Node::getWorldScale(&fStack_30,param_1);
@@ -524,10 +480,6 @@ LAB_0037f924:
   }
   *(float *)(param_1 + 0xfc) = fVar3;
 LAB_0037f9d0:
-  if (*(long *)(lVar2 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -551,7 +503,6 @@ void Walaber::Widget_Label::Widget_Label
 
 {
   ulong uVar1;
-  long lVar2;
   int *piVar3;
   long lVar4;
   long lVar5;
@@ -560,10 +511,7 @@ void Walaber::Widget_Label::Widget_Label
   undefined8 uStack_88;
   float fStack_80;
   float fStack_7c;
-  long lStack_78;
   
-  lVar2 = tpidr_el0;
-  lStack_78 = *(long *)(lVar2 + 0x28);
   uStack_88 = *param_7;
   uStack_90 = *param_8;
   Walaber::Widget::Widget(param_5,param_6,10,&uStack_88,&uStack_90,1,1);
@@ -628,10 +576,6 @@ void Walaber::Widget_Label::Widget_Label
          CONCAT44((float)((ulong)uVar6 >> 0x20) - (float)((ulong)lVar5 >> 0x20),
                   (float)uVar6 - (float)lVar5);
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_78) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -682,21 +626,13 @@ void Walaber::Widget_Label::~Widget_Label(void *param_1)
 void Walaber::Widget_Label::reloadFont(long param_1)
 
 {
-  long lVar1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::Widget::reloadFont();
   Walaber::BitmapFont::measureString(&uStack_30,0x3f800000,*(undefined8 *)(param_1 + 0xe8),param_1 + 0x168);
   *(undefined8 *)(param_1 + 0x104) = uStack_30;
   Walaber::Widget_Label::_setTextScale(param_1);
   Walaber::Widget_Label::_setTextTopLeft(param_1);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -757,25 +693,17 @@ void Walaber::Widget_Label::_applyTile(long param_1)
 void Walaber::Widget_Label::setTile(Walaber__Vector2 *p0,float p1)
 
 {
-  long lVar1;
   Walaber__Vector2 *in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   p0[0x26] = *in_x1;
   Walaber::Node::getWorldScale(&fStack_40);
   fVar2 = p0[0x12].f_0x4;
   Walaber::Node::getWorldScale(&fStack_40,p0);
   p0[0x26].f_0x4 = (fVar2 * fStack_3c * p1) / ((p0[0x12].f_0x0 * fStack_40) / in_x1->f_0x0);
   Walaber::Widget_Label::_applyTile(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -822,15 +750,11 @@ void Walaber::Widget_Label::setTileOffset(Walaber__Vector2 *p0)
 void Walaber::Widget_Label::getTileOffsetBySize(undefined8 *param_1,long param_2)
 
 {
-  long lVar1;
   float fVar2;
   float fVar3;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   printf((double)*(float *)(param_2 + 0x120),(double)*(float *)(param_2 + 0x124),
                (double)*(float *)(param_2 + 0x128),(double)*(float *)(param_2 + 300),
                "Rect info - upperleft: %f, %f -- size: %f, %f\n");
@@ -847,10 +771,6 @@ void Walaber::Widget_Label::getTileOffsetBySize(undefined8 *param_1,long param_2
   fVar3 = (float)((ulong)*(undefined8 *)(param_2 + 0x120) >> 0x20);
   *param_1 = CONCAT44(fVar3 + ((float)((ulong)*(undefined8 *)(param_2 + 0x128) >> 0x20) - fVar3),
                       fVar2 + ((float)*(undefined8 *)(param_2 + 0x128) - fVar2));
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -885,14 +805,10 @@ void Walaber::Widget_Label::setText(long param_1)
 {
   long lVar1;
   ulong uVar2;
-  long lVar3;
   int iVar4;
   long lVar5;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   lVar1 = param_1 + 0x168;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(lVar1);
   lVar5 = *(long *)(param_1 + 0xe8);
@@ -914,10 +830,6 @@ void Walaber::Widget_Label::setText(long param_1)
     Walaber::Widget_Label::_setTextTopLeft(param_1);
   }
 LAB_00380038:
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -935,12 +847,8 @@ void Walaber::Widget_Label::addText(long param_1,byte *param_2)
 {
   ulong uVar1;
   byte *pbVar2;
-  long lVar3;
   undefined8 uStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   uVar1 = *(ulong *)(param_2 + 8);
   pbVar2 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
@@ -953,10 +861,6 @@ void Walaber::Widget_Label::addText(long param_1,byte *param_2)
   *(undefined4 *)(param_1 + 0x15c) = *(undefined4 *)(param_1 + 0x158);
   Walaber::Widget_Label::_setTextScale(param_1);
   Walaber::Widget_Label::_setTextTopLeft(param_1);
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1025,7 +929,6 @@ void Walaber::Widget_Label::draw(Walaber__SpriteBatch *p0)
 
 {
   byte bVar1;
-  long lVar2;
   ulong uVar3;
   int iVar4;
   long lVar5;
@@ -1053,10 +956,7 @@ void Walaber::Widget_Label::draw(Walaber__SpriteBatch *p0)
   int *piStack_b0;
   undefined8 uStack_a8;
   undefined8 uStack_a0;
-  long lStack_98;
   
-  lVar2 = tpidr_el0;
-  lStack_98 = *(long *)(lVar2 + 0x28);
   uVar13 = Walaber::Widget::_getAngle();
   if ((p0[4].f_0x30 == 0) || (*(int *)p0[5].f_0x0 == 0)) {
     if (((char)p0[5].f_0x28 != -1) ||
@@ -1242,10 +1142,6 @@ LAB_00380554:
   }
 LAB_00380630:
   Walaber::Widget::draw(p0);
-  if (*(long *)(lVar2 + 0x28) == lStack_98) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1260,21 +1156,13 @@ LAB_00380630:
 void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *in_x1;
   Walaber::Widget::setBaseSize(p0,&uStack_30);
   Walaber::Widget_Label::_setTextScale(p0);
   Walaber::Widget_Label::_setTextTopLeft(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1371,14 +1259,10 @@ void Walaber::Widget_Label::Widget_Label(Walaber__Widget_Label *p0)
 void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0,float p1,float p2,float p3)
 
 {
-  long lVar1;
   long in_x0;
   float fStack_50;
   float fStack_4c;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_50);
   *(float *)(in_x0 + 0x148) = *(float *)(in_x0 + 0x90) * fStack_50 * p0;
   Walaber::Node::getWorldScale(&fStack_50);
@@ -1387,10 +1271,6 @@ void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0,float p1,floa
   *(float *)(in_x0 + 0x150) = *(float *)(in_x0 + 0x94) * fStack_4c * p2;
   Walaber::Node::getWorldScale(&fStack_50);
   *(float *)(in_x0 + 0x154) = *(float *)(in_x0 + 0x94) * fStack_4c * p3;
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1405,14 +1285,10 @@ void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0,float p1,floa
 void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0)
 
 {
-  long lVar1;
   long in_x0;
   float fStack_40;
   float fStack_3c;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(&fStack_40);
   *(float *)(in_x0 + 0x148) = *(float *)(in_x0 + 0x90) * fStack_40 * p0;
   Walaber::Node::getWorldScale(&fStack_40);
@@ -1421,10 +1297,6 @@ void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0)
   *(float *)(in_x0 + 0x150) = *(float *)(in_x0 + 0x94) * fStack_3c * p0;
   Walaber::Node::getWorldScale(&fStack_40);
   *(float *)(in_x0 + 0x154) = *(float *)(in_x0 + 0x94) * fStack_3c * p0;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1439,21 +1311,13 @@ void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0)
 void Walaber::Widget_Label::setTextEdgeLRPaddingPercentSize(float p0,float p1)
 
 {
-  long lVar1;
   long in_x0;
   float afStack_40 [2];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   Walaber::Node::getWorldScale(afStack_40);
   *(float *)(in_x0 + 0x148) = *(float *)(in_x0 + 0x90) * afStack_40[0] * p0;
   Walaber::Node::getWorldScale(afStack_40);
   *(float *)(in_x0 + 0x14c) = *(float *)(in_x0 + 0x90) * afStack_40[0] * p1;
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

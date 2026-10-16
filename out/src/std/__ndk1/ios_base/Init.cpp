@@ -13,16 +13,12 @@
 void std::__ndk1::ios_base::Init::Init(void)
 
 {
-  long lVar1;
   undefined **ppuVar2;
   undefined **ppuVar3;
   undefined **ppuVar4;
   undefined *puVar5;
   undefined1 auStack_70 [8];
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   DAT_007a4ac8 = &PTR__basic_streambuf_00710968;
   std::__ndk1::locale::locale(&DAT_007a4ad0);
   uRam00000000007a4af0 = 0;
@@ -122,10 +118,6 @@ void std::__ndk1::ios_base::Init::Init(void)
   *(uint *)(&DAT_007a48e8 + (long)puVar5) = *(uint *)(&DAT_007a48e8 + (long)puVar5) | 0x2000;
   *(undefined1 **)(ppuVar3[-3] + 0x7a48c8) = cout;
   *(undefined1 **)(ppuVar4[-3] + 0x7a4968) = wcout;
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

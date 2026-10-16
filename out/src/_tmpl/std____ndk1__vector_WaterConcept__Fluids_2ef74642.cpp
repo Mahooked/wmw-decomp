@@ -15,15 +15,11 @@ void std::__ndk1::
      ::reserve(ulong p0)
 
 {
-  long lVar1;
   ulong in_x1;
   void *pvStack_50;
   long lStack_48;
   long lStack_40;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if ((ulong)(*(long *)(p0 + 0x10) - *(long *)p0 >> 5) < in_x1) {
     std::__ndk1::__split_buffer<WaterConcept::Fluids::FluidCollisionRecord, std::__ndk1::allocator<WaterConcept::Fluids::FluidCollisionRecord>&>::__split_buffer(&pvStack_50,in_x1,*(long *)(p0 + 8) - *(long *)p0 >> 5,p0 + 0x10);
                     /* try { // try from 00404cc0 to 00404ccb has its CatchHandler @ 00404d20 */
@@ -35,10 +31,6 @@ void std::__ndk1::
       operator delete(pvStack_50);
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

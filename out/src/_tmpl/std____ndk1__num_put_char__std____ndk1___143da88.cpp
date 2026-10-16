@@ -120,7 +120,6 @@ void std::__ndk1::
   uint uVar1;
   uint uVar2;
   char cVar3;
-  long lVar4;
   int iVar5;
   undefined1 *puVar6;
   undefined1 uVar7;
@@ -133,10 +132,7 @@ void std::__ndk1::
   undefined8 uStack_78;
   undefined4 uStack_70;
   undefined2 uStack_6c;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   uStack_6c = 0;
   uStack_70 = 0x25;
   uVar2 = *(uint *)(param_2 + 8);
@@ -191,10 +187,6 @@ void std::__ndk1::
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
   func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -216,7 +208,6 @@ void std::__ndk1::
   uint uVar1;
   uint uVar2;
   char cVar3;
-  long lVar4;
   int iVar5;
   undefined2 *puVar6;
   undefined1 uVar7;
@@ -228,10 +219,7 @@ void std::__ndk1::
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   uStack_70 = 0x25;
   uVar2 = *(uint *)(param_2 + 8);
   if ((uVar2 >> 0xb & 1) == 0) {
@@ -285,10 +273,6 @@ void std::__ndk1::
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar8,pcVar9,pcVar8 + iVar5,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
   func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -309,7 +293,6 @@ void std::__ndk1::
 {
   uint uVar1;
   char cVar2;
-  long lVar3;
   int iVar4;
   undefined1 *puVar5;
   undefined1 uVar6;
@@ -323,10 +306,7 @@ void std::__ndk1::
   undefined8 uStack_78;
   undefined4 uStack_70;
   undefined2 uStack_6c;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   uStack_6c = 0;
   uStack_70 = 0x25;
   uVar9 = *(uint *)(param_2 + 8);
@@ -381,10 +361,6 @@ void std::__ndk1::
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
   func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -405,7 +381,6 @@ void std::__ndk1::
 {
   uint uVar1;
   char cVar2;
-  long lVar3;
   int iVar4;
   undefined2 *puVar5;
   undefined1 uVar6;
@@ -418,10 +393,7 @@ void std::__ndk1::
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   uStack_70 = 0x25;
   uVar9 = *(uint *)(param_2 + 8);
   if ((uVar9 >> 0xb & 1) == 0) {
@@ -475,10 +447,6 @@ void std::__ndk1::
   std::__ndk1::__num_put<char>::__widen_and_group_int(pcVar7,pcVar8,pcVar7 + iVar4,lVar10,&uStack_78,&uStack_80,&uStack_88);
   std::__ndk1::__shared_count::__release_shared(uStack_88);
   func_0x003ffad0(param_1,lVar10,uStack_78,uStack_80,param_2,param_3);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -502,7 +470,6 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   uint uVar2;
   uint uVar3;
   char cVar4;
-  long lVar5;
   bool bVar6;
   char *pcVar7;
   bool bVar8;
@@ -523,10 +490,7 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   undefined8 uStack_e0;
   undefined1 auStack_d4 [60];
   char acStack_98 [32];
-  long lStack_78;
   
-  lVar5 = tpidr_el0;
-  lStack_78 = *(long *)(lVar5 + 0x28);
   uStack_e0 = 0x25;
   uVar3 = *(uint *)(param_4 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
@@ -655,10 +619,6 @@ LAB_005bb73c:
   if (p0_00 != (char *)0x0) {
     free(p0_00);
   }
-  if (*(long *)(lVar5 + 0x28) != lStack_78) {
-    uVar10 = __stack_chk_fail();
-    return uVar10;
-  }
   return uVar10;
 }
 
@@ -682,7 +642,6 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   uint uVar2;
   uint uVar3;
   char cVar4;
-  long lVar5;
   char *pcVar6;
   bool bVar7;
   bool bVar8;
@@ -702,10 +661,7 @@ do_put(undefined8 param_1,undefined8 param_2,undefined8 param_3,long param_4,und
   undefined8 uStack_d8;
   undefined1 auStack_cc [60];
   char acStack_90 [32];
-  long lStack_70;
   
-  lVar5 = tpidr_el0;
-  lStack_70 = *(long *)(lVar5 + 0x28);
   uStack_d8 = 0x25;
   uVar3 = *(uint *)(param_4 + 8);
   if ((uVar3 >> 0xb & 1) == 0) {
@@ -830,10 +786,6 @@ LAB_005bc210:
   if (p0_00 != (char *)0x0) {
     free(p0_00);
   }
-  if (*(long *)(lVar5 + 0x28) != lStack_70) {
-    uVar10 = __stack_chk_fail();
-    return uVar10;
-  }
   return uVar10;
 }
 
@@ -855,7 +807,6 @@ void std::__ndk1::
   char *pcVar1;
   uint uVar2;
   char *pcVar3;
-  long lVar4;
   int iVar5;
   long *plVar6;
   char *pcVar7;
@@ -864,10 +815,7 @@ void std::__ndk1::
   undefined2 uStack_a8;
   char acStack_a4 [40];
   char acStack_7c [20];
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   uStack_a8 = 0;
   uStack_ac = 0x7025;
   if (((DAT_007a4e90 & 1) == 0) && (iVar5 = __cxa_guard_acquire(&DAT_007a4e90), iVar5 != 0)) {
@@ -902,10 +850,6 @@ LAB_005bc4e4:
     pcVar3 = pcVar7 + (long)(acStack_a4 + -(long)acStack_7c);
   }
   func_0x003ffad0(param_1,acStack_a4,pcVar3,acStack_a4 + iVar5,param_2,param_3);
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

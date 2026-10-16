@@ -21,7 +21,6 @@ void std::__ndk1::
   ulong uVar1;
   undefined8 *puVar2;
   undefined1 uVar3;
-  long lVar4;
   undefined8 *in_x1;
   long lVar5;
   ulong uVar6;
@@ -34,10 +33,7 @@ void std::__ndk1::
   undefined8 *puStack_58;
   undefined8 *puStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   lVar5 = (*(long *)(p0 + 8) - *(long *)p0 >> 3) * -0x3333333333333333;
   uVar1 = lVar5 + 1;
   if (0x666666666666666 < uVar1) {
@@ -86,10 +82,6 @@ void std::__ndk1::
   puStack_58 = puStack_60;
   uStack_48 = uVar10;
   std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>::~__split_buffer(&puStack_60);
-  if (*(long *)(lVar4 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

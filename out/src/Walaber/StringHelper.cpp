@@ -13,7 +13,6 @@ void Walaber::StringHelper::intToStr(int p0)
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   uint uVar4;
   ulong *in_x8;
@@ -21,10 +20,7 @@ void Walaber::StringHelper::intToStr(int p0)
   undefined1 *puVar6;
   ulong p0_00;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   iVar1 = -p0;
   if (-1 < p0) {
     iVar1 = p0;
@@ -66,10 +62,6 @@ void Walaber::StringHelper::intToStr(int p0)
   memcpy(uVar5,puVar6,uVar3);
 LAB_002b53e0:
   *(undefined1 *)(uVar5 + uVar3) = 0;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -85,7 +77,6 @@ void Walaber::StringHelper::longToStr(long p0)
 
 {
   long lVar1;
-  long lVar2;
   ulong uVar3;
   uint uVar4;
   ulong *in_x8;
@@ -93,10 +84,7 @@ void Walaber::StringHelper::longToStr(long p0)
   undefined1 *puVar6;
   ulong p0_00;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   lVar1 = -p0;
   if (-1 < p0) {
     lVar1 = p0;
@@ -138,10 +126,6 @@ void Walaber::StringHelper::longToStr(long p0)
   memcpy(uVar5,puVar6,uVar3);
 LAB_002bed90:
   *(undefined1 *)(uVar5 + uVar3) = 0;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -157,7 +141,6 @@ void Walaber::StringHelper::floatToStr(float p0,int p1)
 
 {
   int iVar1;
-  long lVar2;
   ulong uVar3;
   int iVar4;
   ulong *in_x8;
@@ -167,11 +150,8 @@ void Walaber::StringHelper::floatToStr(float p0,int p1)
   ulong p0_00;
   undefined1 auStack_60 [8];
   undefined1 auStack_58 [16];
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
   iVar5 = (int)p0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   iVar1 = -iVar5;
   if (-1 < iVar5) {
     iVar1 = iVar5;
@@ -214,10 +194,6 @@ void Walaber::StringHelper::floatToStr(float p0,int p1)
   memcpy(uVar6,puVar7,uVar3);
 LAB_00330ba8:
   *(undefined1 *)(uVar6 + uVar3) = 0;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -336,15 +312,11 @@ long Walaber::StringHelper::split(std::__ndk1::basic_string<char, std::__ndk1::c
 void Walaber::StringHelper::split(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uStack_40;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = 0;
   uStack_38 = 0;
   uStack_30 = 0;
@@ -352,10 +324,6 @@ void Walaber::StringHelper::split(undefined8 param_1,undefined8 param_2,undefine
   uVar2 = Walaber::StringHelper::split(param_2,param_3,&uStack_40);
   std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::vector(param_1,uVar2);
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_40);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -498,16 +466,12 @@ void Walaber::StringHelper::changeExtension(undefined8 *param_1,undefined8 param
 {
   ulong uVar1;
   byte *pbVar2;
-  long lVar3;
   undefined8 *puVar4;
   undefined8 uVar5;
   undefined8 uVar6;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar3 = tpidr_el0;
-  lStack_38 = *(long *)(lVar3 + 0x28);
   Walaber::StringHelper::removeExtension(abStack_50);
   uVar1 = *(ulong *)(param_3 + 8);
   pbVar2 = *(byte **)(param_3 + 0x10);
@@ -528,10 +492,6 @@ void Walaber::StringHelper::changeExtension(undefined8 *param_1,undefined8 param
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -693,15 +653,11 @@ void Walaber::StringHelper::removeLastPathComponent(undefined8 param_1,byte *par
 {
   ulong uVar1;
   byte *pbVar2;
-  long lVar3;
   ulong uVar4;
   ulong uVar5;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar3 = tpidr_el0;
-  lStack_28 = *(long *)(lVar3 + 0x28);
   uVar1 = *(ulong *)(param_2 + 8);
   pbVar2 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
@@ -733,10 +689,6 @@ void Walaber::StringHelper::removeLastPathComponent(undefined8 param_1,byte *par
 LAB_003f8a14:
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1);
 LAB_003f8a1c:
-  if (*(long *)(lVar3 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -757,7 +709,6 @@ void Walaber::StringHelper::appendPath(undefined8 *param_1,byte *param_2,undefin
   ulong uVar2;
   byte *pbVar3;
   byte bVar4;
-  long lVar5;
   undefined1 *puVar6;
   long lVar7;
   undefined8 *puVar8;
@@ -772,10 +723,7 @@ void Walaber::StringHelper::appendPath(undefined8 *param_1,byte *param_2,undefin
   undefined1 *puStack_60;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
-  lVar5 = tpidr_el0;
-  lStack_38 = *(long *)(lVar5 + 0x28);
   bVar4 = *param_2;
   pbVar3 = *(byte **)(param_2 + 0x10);
   uVar2 = *(ulong *)(param_2 + 8);
@@ -847,10 +795,6 @@ LAB_003f8af4:
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  if (*(long *)(lVar5 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -946,7 +890,6 @@ void Walaber::StringHelper::formatString(undefined8 *param_1,byte *param_2,undef
 {
   char *pcVar1;
   byte *pbVar2;
-  long lVar3;
   char *pcVar4;
   long *plVar5;
   ulong uVar6;
@@ -962,10 +905,7 @@ void Walaber::StringHelper::formatString(undefined8 *param_1,byte *param_2,undef
   char *pcStack_90;
   long lStack_80;
   long lStack_78;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   *param_1 = 0;
   param_1[1] = 0;
   param_1[2] = 0;
@@ -1085,10 +1025,6 @@ LAB_003f8fdc:
     } while (uVar10 <= uVar6 && uVar6 - uVar10 != 0);
   }
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1103,7 +1039,6 @@ LAB_003f8fdc:
 void Walaber::StringHelper::uIntToStr(uint p0)
 
 {
-  long lVar1;
   ulong uVar2;
   ulong *in_x8;
   long lVar3;
@@ -1112,10 +1047,7 @@ void Walaber::StringHelper::uIntToStr(uint p0)
   undefined1 *puVar6;
   ulong p0_00;
   undefined1 auStack_50 [8];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = (ulong)p0;
   lVar3 = 1;
   if (9 < p0) {
@@ -1150,10 +1082,6 @@ void Walaber::StringHelper::uIntToStr(uint p0)
   memcpy(uVar5,puVar6,uVar2);
 LAB_0045cae0:
   *(undefined1 *)(uVar5 + uVar2) = 0;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

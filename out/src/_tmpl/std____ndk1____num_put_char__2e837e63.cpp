@@ -16,7 +16,6 @@ void std::__ndk1::__num_put<char>::__widen_and_group_int
 {
   void *pvVar1;
   ulong uVar2;
-  long lVar3;
   bool bVar4;
   char cVar5;
   char cVar6;
@@ -33,10 +32,7 @@ void std::__ndk1::__num_put<char>::__widen_and_group_int
   byte abStack_80 [8];
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   plVar7 = (long *)std::__ndk1::locale::use_facet(p6,&ctype<char>::id);
   plVar8 = (long *)std::__ndk1::locale::use_facet(p6,&numpunct<char>::id);
   (**(code **)(*plVar8 + 0x28))(abStack_80);
@@ -141,10 +137,6 @@ void std::__ndk1::__num_put<char>::__widen_and_group_int
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
-  if (*(long *)(lVar3 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -164,7 +156,6 @@ void std::__ndk1::__num_put<char>::__widen_and_group_float
   void *pvVar1;
   ulong uVar2;
   byte bVar3;
-  long lVar4;
   bool bVar5;
   char cVar6;
   char cVar7;
@@ -187,10 +178,7 @@ void std::__ndk1::__num_put<char>::__widen_and_group_float
   byte abStack_80 [8];
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   plVar9 = (long *)std::__ndk1::locale::use_facet(p6,&ctype<char>::id);
   plVar10 = (long *)std::__ndk1::locale::use_facet(p6,&numpunct<char>::id);
   (**(code **)(*plVar10 + 0x28))(abStack_80);
@@ -326,10 +314,6 @@ LAB_005bbef4:
       *p4 = pcVar11;
       if ((abStack_80[0] & 1) != 0) {
         operator delete(pvStack_70);
-      }
-      if (*(long *)(lVar4 + 0x28) != lStack_68) {
-        __stack_chk_fail();
-        return;
       }
       return;
     }

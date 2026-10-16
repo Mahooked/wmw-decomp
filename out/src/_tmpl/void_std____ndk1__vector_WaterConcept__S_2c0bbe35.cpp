@@ -19,17 +19,13 @@ void std::__ndk1::
 
 {
   ulong uVar1;
-  long lVar2;
   long lVar3;
   ulong uVar4;
   ulong uVar5;
   long lVar6;
   undefined1 auStack_60 [16];
   long lStack_50;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   lVar3 = (*(long *)&p0->field_0x8 - *(long *)p0 >> 3) * -0xf0f0f0f0f0f0f0f;
   uVar1 = lVar3 + 1;
   if (0x1e1e1e1e1e1e1e1 < uVar1) {
@@ -48,10 +44,6 @@ void std::__ndk1::
   lStack_50 = lStack_50 + 0x88;
   std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(p0,auStack_60);
   std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(auStack_60);
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

@@ -89,13 +89,9 @@ void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(void *param_1)
 void WaterConcept::Screen_FoodPyramid::loadPropertyList(Walaber__PropertyList *p0)
 
 {
-  long lVar1;
   undefined4 uVar2;
   ulong uVar3;
-  long lVar4;
   
-  lVar1 = tpidr_el0;
-  lVar4 = *(long *)(lVar1 + 0x28);
                     /* try { // try from 004d441c to 004d4427 has its CatchHandler @ 004d44b8 */
   uVar3 = Walaber::PropertyList::keyExists();
   if ((uVar3 & 1) != 0) {
@@ -103,10 +99,6 @@ void WaterConcept::Screen_FoodPyramid::loadPropertyList(Walaber__PropertyList *p
     Walaber::PropertyList::getValueForKey();
     uVar2 = Walaber::Property::asInt();
     *(undefined4 *)&p0[10].f_0x0 = uVar2;
-  }
-  if (*(long *)(lVar1 + 0x28) != lVar4) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -122,7 +114,6 @@ void WaterConcept::Screen_FoodPyramid::loadPropertyList(Walaber__PropertyList *p
 void WaterConcept::Screen_FoodPyramid::enter(long param_1)
 
 {
-  long lVar1;
   undefined *puVar2;
   byte bVar3;
   undefined4 uVar4;
@@ -134,7 +125,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
   ulong uVar10;
   int *piVar11;
   bool bVar12;
-  long lVar13;
   undefined8 uVar14;
   undefined8 uVar15;
   undefined8 *puStack_118;
@@ -172,8 +162,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
   undefined8 uStack_68;
   void *apvStack_60 [4];
   
-  lVar1 = tpidr_el0;
-  lVar13 = *(long *)(lVar1 + 0x28);
   ppuStack_70 = &PTR__Message_0070cdc8;
   uStack_68 = 0xa00000010;
   Walaber::PropertyList::PropertyList(apvStack_60);
@@ -467,10 +455,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
   if (((ulong)ppuStack_70 & 1) != 0) {
     operator delete(apvStack_60[0]);
   }
-  if (*(long *)(lVar1 + 0x28) != lVar13) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -485,7 +469,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
 void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -501,10 +484,7 @@ void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
   char *pcStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_50 = (char *)operator new(0x20);
   auStack_60[1] = 0x18;
   auStack_60[0] = 0x21;
@@ -541,10 +521,6 @@ void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -609,7 +585,6 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
   undefined1 uVar7;
   undefined1 uVar8;
   undefined1 uVar9;
-  long lVar10;
   undefined4 *puVar11;
   undefined7 uVar12;
   float fVar13;
@@ -631,7 +606,6 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
   undefined8 uVar29;
   int *in_x1;
   undefined4 uVar30;
-  long lVar31;
   undefined8 uVar32;
   undefined8 uVar33;
   undefined8 uVar34;
@@ -777,8 +751,6 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
   undefined1 uStack_c1;
   void *pvStack_c0;
   
-  lVar10 = tpidr_el0;
-  lVar31 = *(long *)(lVar10 + 0x28);
   if (*in_x1 != 1) goto LAB_004d6de4;
   puVar39 = (undefined8 *)((long)p0 + 0x10);
   Walaber::WidgetManager::getWidget(*puVar39,0x66);
@@ -2255,10 +2227,6 @@ LAB_004d66a4:
     operator delete(pvStack_120);
   }
 LAB_004d6de4:
-  if (*(long *)(lVar10 + 0x28) == lVar31) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2273,7 +2241,6 @@ LAB_004d6de4:
 void WaterConcept::Screen_FoodPyramid::update(float p0,bool p1)
 
 {
-  long lVar1;
   bool bVar2;
   ulong uVar3;
   long lVar4;
@@ -2283,11 +2250,8 @@ void WaterConcept::Screen_FoodPyramid::update(float p0,bool p1)
   float fVar8;
   undefined4 in_register_00005004;
   undefined8 uStack_50;
-  long lStack_48;
   
   uVar3 = (ulong)p1;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *(float *)(uVar3 + 0xf4) = *(float *)(uVar3 + 0xf4) + p0;
   Walaber::WidgetManager::update(CONCAT44(in_register_00005004,p0),*(undefined8 *)(uVar3 + 0x10));
   if ((*(long *)(uVar3 + 0xa0) != *(long *)(uVar3 + 0xa8)) &&
@@ -2328,10 +2292,6 @@ void WaterConcept::Screen_FoodPyramid::update(float p0,bool p1)
       }
     }
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -2377,7 +2337,6 @@ void WaterConcept::Screen_FoodPyramid::handleEvent
                (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  long lVar1;
   int iVar2;
   long *plVar3;
   ulong *puVar4;
@@ -2386,7 +2345,6 @@ void WaterConcept::Screen_FoodPyramid::handleEvent
   long lVar7;
   undefined8 uVar8;
   void *pvVar9;
-  long lVar10;
   void *pvVar11;
   ulong uVar12;
   void *pvStack_1b8;
@@ -2448,8 +2406,6 @@ void WaterConcept::Screen_FoodPyramid::handleEvent
   uint auStack_5c [3];
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lVar10 = *(long *)(lVar1 + 0x28);
   iVar2 = (int)p1;
   if (iVar2 == 0) {
     (**(code **)(*plVar3 + 0x70))(plVar3);
@@ -2994,10 +2950,6 @@ LAB_004d7988:
   }
   operator delete(pvVar9);
 LAB_004d7f68:
-  if (*(long *)(lVar1 + 0x28) != lVar10) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -3012,13 +2964,9 @@ LAB_004d7f68:
 void WaterConcept::Screen_FoodPyramid::backKeyPressed(long param_1)
 
 {
-  long lVar1;
   undefined1 auStack_60 [32];
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(char *)(param_1 + 0xc) == '\0') {
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popScreen(0,0);
@@ -3036,10 +2984,6 @@ void WaterConcept::Screen_FoodPyramid::backKeyPressed(long param_1)
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
     Walaber::PropertyList::~PropertyList(auStack_40);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -3054,7 +2998,6 @@ void WaterConcept::Screen_FoodPyramid::backKeyPressed(long param_1)
 undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0)
 
 {
-  long lVar1;
   ulong uVar2;
   undefined8 uVar3;
   long in_x1;
@@ -3065,10 +3008,7 @@ undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0)
   byte abStack_58 [16];
   void *pvStack_48;
   undefined1 auStack_40 [24];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   if (*(int *)(in_x1 + 0xc) == 0xd) {
     abStack_78[10] = 0;
     abStack_78[0xb] = 0;
@@ -3228,10 +3168,6 @@ undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0)
   }
   Walaber::PropertyList::~PropertyList(auStack_40);
 LAB_004d85bc:
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return 0;
-  }
-  uVar3 = __stack_chk_fail();
   return uVar3;
 }
 

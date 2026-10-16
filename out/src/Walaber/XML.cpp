@@ -198,7 +198,6 @@ LAB_003472a0:
 void Walaber::XML::parseColor8bit(_xmlNode *p0,char *p1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   undefined4 *in_x8;
@@ -211,10 +210,7 @@ void Walaber::XML::parseColor8bit(_xmlNode *p0,char *p1)
   undefined1 uStack_4f;
   undefined1 uStack_4e;
   undefined1 uStack_4d;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *in_x8 = 0xff000000;
   uVar2 = xmlGetProp();
   uStack_68 = 0;
@@ -250,10 +246,6 @@ LAB_0035a9cc:
     operator delete(pvStack_58);
   }
   (*(code *)xmlFree)(uVar2);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -268,7 +260,6 @@ LAB_0035a9cc:
 undefined1  [16] Walaber::XML::parseAspectRatio(_xmlNode *p0,char *p1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   void *pvVar4;
@@ -282,10 +273,7 @@ undefined1  [16] Walaber::XML::parseAspectRatio(_xmlNode *p0,char *p1)
   ulong uStack_70;
   ulong uStack_68;
   void *pvStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   uVar2 = xmlGetProp();
   uStack_68 = 0;
   pvStack_60 = (void *)0x0;
@@ -344,10 +332,6 @@ LAB_00377a88:
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    auVar5 = __stack_chk_fail();
-    return auVar5;
-  }
   auVar5._8_8_ = uVar2;
   return auVar5;
 }
@@ -363,7 +347,6 @@ LAB_00377a88:
 void Walaber::XML::parseColor8bitRGBA(_xmlNode *p0,char *p1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   ulong uVar3;
   undefined4 *in_x8;
@@ -376,10 +359,7 @@ void Walaber::XML::parseColor8bitRGBA(_xmlNode *p0,char *p1)
   undefined1 uStack_4f;
   undefined1 uStack_4e;
   undefined1 uStack_4d;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   *in_x8 = 0xff000000;
   uVar2 = xmlGetProp();
   uStack_68 = 0;
@@ -415,10 +395,6 @@ LAB_00377d78:
     operator delete(pvStack_58);
   }
   (*(code *)xmlFree)(uVar2);
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -433,7 +409,6 @@ LAB_00377d78:
 void Walaber::XML::parsePropertyList(_xmlNode *p0,Walaber__PropertyList *p1)
 
 {
-  long lVar1;
   undefined *puVar2;
   int iVar3;
   undefined8 uVar4;
@@ -448,10 +423,7 @@ void Walaber::XML::parsePropertyList(_xmlNode *p0,Walaber__PropertyList *p1)
   ulong uStack_80;
   ulong uStack_78;
   void *pvStack_70;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar7 = *(long *)(p0 + 0x18);
   if (lVar7 != 0) {
     do {
@@ -528,10 +500,6 @@ LAB_00433920:
       lVar7 = *(long *)(lVar7 + 0x30);
     } while (lVar7 != 0);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -549,7 +517,6 @@ void Walaber::XML::newPropertyList(_xmlNode *param_1,Walaber::PropertyList const
 
 {
   void *pvVar1;
-  long lVar2;
   undefined8 uVar3;
   undefined8 uVar4;
   long *plVar5;
@@ -558,10 +525,7 @@ void Walaber::XML::newPropertyList(_xmlNode *param_1,Walaber::PropertyList const
   long *plVar8;
   byte abStack_80 [16];
   void *pvStack_70;
-  long lStack_68;
   
-  lVar2 = tpidr_el0;
-  lStack_68 = *(long *)(lVar2 + 0x28);
   if ((*param_3 & 1) == 0) {
     param_3 = param_3 + 1;
   }
@@ -610,10 +574,6 @@ void Walaber::XML::newPropertyList(_xmlNode *param_1,Walaber::PropertyList const
       }
       plVar8 = plVar6;
     } while (plVar6 != param_2 + 1);
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_68) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

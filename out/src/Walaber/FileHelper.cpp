@@ -13,23 +13,15 @@
 void Walaber::FileHelper::fileExists(byte *param_1)
 
 {
-  long lVar1;
   int iVar2;
   byte *pbVar3;
   undefined1 auStack_a8 [128];
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   pbVar3 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
     pbVar3 = param_1 + 1;
   }
   iVar2 = stat(pbVar3,auStack_a8);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(iVar2 == 0);
   return;
 }
 
@@ -45,15 +37,11 @@ void Walaber::FileHelper::fileExists(byte *param_1)
 void Walaber::FileHelper::fileSize(byte *param_1)
 
 {
-  long lVar1;
   int iVar2;
   byte *pbVar3;
   undefined1 auStack_a8 [48];
   undefined4 uStack_78;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   pbVar3 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
     pbVar3 = param_1 + 1;
@@ -62,10 +50,6 @@ void Walaber::FileHelper::fileSize(byte *param_1)
   if (iVar2 != 0) {
     uStack_78 = 0;
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail(uStack_78);
   return;
 }
 

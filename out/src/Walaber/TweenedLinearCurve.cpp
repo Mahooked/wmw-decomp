@@ -370,7 +370,6 @@ void Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1)
 void Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode *p0)
 
 {
-  long lVar1;
   undefined *puVar2;
   int iVar3;
   undefined4 uVar4;
@@ -394,10 +393,7 @@ void Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode *p0)
   ulong uStack_80;
   void *pvStack_78;
   float fStack_6c;
-  long lStack_68;
   
-  lVar1 = tpidr_el0;
-  lStack_68 = *(long *)(lVar1 + 0x28);
   lVar10 = *(long *)(in_x1 + 0x18);
   if (lVar10 != 0) {
     pvVar9 = (void *)((ulong)&uStack_88 | 1);
@@ -574,10 +570,6 @@ LAB_003e6a34:
       lVar10 = *(long *)(lVar10 + 0x30);
     } while (lVar10 != 0);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -665,25 +657,17 @@ void Walaber::TweenedLinearCurve::_evaluateCurve(float p0,float p1)
 
 {
   undefined4 *puVar1;
-  long lVar2;
   long in_x0;
   long lVar3;
   float *pfVar4;
   undefined1 auStack_40 [4];
   int iStack_3c;
-  long lStack_38;
   
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   Walaber::Curve::findSegment(in_x0,&iStack_3c,auStack_40);
   lVar3 = (long)iStack_3c;
   pfVar4 = (float *)(*(long *)(in_x0 + 0x18) + lVar3 * 0x18);
   puVar1 = (undefined4 *)(*(long *)(in_x0 + 0x40) + lVar3 * 8);
   (**(code **)(*(long *)(in_x0 + 0x58) + lVar3 * 8))(p0 - *pfVar4,pfVar4[1],*puVar1,puVar1[1]);
-  if (*(long *)(lVar2 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

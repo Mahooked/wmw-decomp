@@ -230,25 +230,17 @@ void Walaber::WidgetManager::clearAndDestroyAllWidgets(long *param_1)
 undefined8 Walaber::WidgetManager::getWidget(int p0)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined4 in_w1;
   byte abStack_40 [16];
   void *pvStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   Walaber::StringHelper::intToStr(abStack_40,in_w1);
                     /* try { // try from 0036b05c to 0036b067 has its CatchHandler @ 0036b0a4 */
   uVar2 = Walaber::SceneGraph::getNodeByName(p0,abStack_40);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return uVar2;
-  }
-  uVar2 = __stack_chk_fail();
   return uVar2;
 }
 
@@ -265,7 +257,6 @@ void Walaber::WidgetManager::update(float p0)
 {
   long *plVar1;
   int iVar2;
-  long lVar3;
   bool bVar4;
   undefined4 uVar5;
   long *in_x0;
@@ -298,10 +289,7 @@ void Walaber::WidgetManager::update(float p0)
   undefined8 uStack_88;
   long lStack_80;
   long lStack_78;
-  long lStack_68;
   
-  lVar3 = tpidr_el0;
-  lStack_68 = *(long *)(lVar3 + 0x28);
   if ((char)in_x0[0xe] != '\0') {
     if ((char)in_x0[9] == '\0') {
       plVar15 = in_x0 + 6;
@@ -708,10 +696,6 @@ LAB_0036b458:
       Walaber::WidgetManager::updateCustomize();
     }
   }
-  if (*(long *)(lVar3 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -727,7 +711,6 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
 
 {
   long *plVar1;
-  long lVar2;
   long *plVar3;
   int *piVar4;
   ulong uVar5;
@@ -755,10 +738,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
   long lStack_98;
   long lStack_90;
   undefined1 auStack_88 [8];
-  long lStack_80;
   
-  lVar2 = tpidr_el0;
-  lStack_80 = *(long *)(lVar2 + 0x28);
   plVar9 = param_1 + 6;
   plVar10 = (long *)*plVar9;
   plVar1 = param_1 + 7;
@@ -906,10 +886,6 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
       } while ((long *)*plVar10 != (long *)0x0);
     }
   }
-  if (*(long *)(lVar2 + 0x28) != lStack_80) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -924,7 +900,6 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
 void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
 
 {
-  long lVar1;
   Walaber__SpriteBatch *pWVar2;
   bool bVar3;
   uint uVar4;
@@ -950,10 +925,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
   long lStack_c0;
   long lStack_b8;
   undefined1 auStack_b0 [24];
-  long lStack_98;
   
-  lVar1 = tpidr_el0;
-  lStack_98 = *(long *)(lVar1 + 0x28);
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
     Walaber::AABB::AABB(auStack_b0,&Vector2::Zero,&p0[1].f_0x30);
     uStack_c8 = 0;
@@ -1055,10 +1027,6 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
     }
     std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_e0);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_98) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1074,7 +1042,6 @@ void Walaber::WidgetManager::drawLayerRange
                (Walaber__SpriteBatch *p0,Walaber__Camera *p1,int p2,int p3)
 
 {
-  long lVar1;
   Walaber__SpriteBatch *pWVar2;
   bool bVar3;
   uint uVar4;
@@ -1103,10 +1070,7 @@ void Walaber::WidgetManager::drawLayerRange
   undefined1 auStack_d8 [24];
   undefined8 uStack_c0;
   undefined8 uStack_b8;
-  long lStack_b0;
   
-  lVar1 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar1 + 0x28);
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
     uStack_b8 = *(undefined8 *)(ulong)(uint)p2;
     uStack_c0 = ((undefined8 *)(ulong)(uint)p2)[1];
@@ -1209,10 +1173,6 @@ void Walaber::WidgetManager::drawLayerRange
     }
     std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_108);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1227,7 +1187,6 @@ void Walaber::WidgetManager::drawLayerRange
 void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int p2)
 
 {
-  long lVar1;
   uint uVar2;
   int iVar3;
   int in_w3;
@@ -1247,10 +1206,7 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
   long lStack_d8;
   long lStack_d0;
   undefined1 auStack_c8 [24];
-  long lStack_b0;
   
-  lVar1 = tpidr_el0;
-  lStack_b0 = *(long *)(lVar1 + 0x28);
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
     Walaber::AABB::AABB(auStack_c8,&Vector2::Zero,&p0[1].f_0x30);
     lStack_d0 = 0;
@@ -1319,10 +1275,6 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
     }
     std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_f8);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_b0) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1362,7 +1314,6 @@ void Walaber::WidgetManager::setCustomizeMode(bool p0)
 void Walaber::WidgetManager::_clearFingers(long *param_1)
 
 {
-  long lVar1;
   bool bVar2;
   void *p0;
   long *plVar3;
@@ -1376,10 +1327,7 @@ void Walaber::WidgetManager::_clearFingers(long *param_1)
   undefined8 uStack_70;
   long lStack_68;
   long lStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::Logger::printf("Walaber",1,"_clearFingers()\n");
   plVar6 = (long *)param_1[6];
   while (plVar6 != param_1 + 7) {
@@ -1447,10 +1395,6 @@ void Walaber::WidgetManager::_clearFingers(long *param_1)
   param_1[7] = 0;
   param_1[8] = 0;
   param_1[6] = (long)(param_1 + 7);
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1513,17 +1457,13 @@ void Walaber::WidgetManager::_snapWidget
 
 {
   float fVar1;
-  long lVar2;
   float fVar3;
   float fVar4;
   float fVar5;
   float fVar6;
   float fStack_60;
   float fStack_5c;
-  long lStack_58;
   
-  lVar2 = tpidr_el0;
-  lStack_58 = *(long *)(lVar2 + 0x28);
   fVar6 = *param_4;
   fVar1 = param_4[1];
   fVar4 = 0.0;
@@ -1567,10 +1507,6 @@ void Walaber::WidgetManager::_snapWidget
   if (param_5[3] < fVar1) {
     param_1[1] = param_5[3];
   }
-  if (*(long *)(lVar2 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -1585,7 +1521,6 @@ void Walaber::WidgetManager::_snapWidget
 void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1)
 
 {
-  long lVar1;
   long *plVar2;
   long *plVar3;
   undefined8 *puVar4;
@@ -1607,11 +1542,8 @@ void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1)
   long lStack_60;
   long lStack_58;
   float fStack_4c;
-  long lStack_48;
   
   plVar2 = (long *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   fStack_4c = p1.f_0x0;
   if (((char)plVar2[0xe] == '\0') || ((*(char *)((long)plVar2 + 0x71) == '\0' && (plVar2[8] != 0))))
   goto LAB_0036cd88;
@@ -1709,10 +1641,6 @@ LAB_0036cce8:
   lVar5 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::__emplace_unique_key_args<int, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<int const&>, std::__ndk1::tuple<>>(plVar2 + 6,&fStack_4c,&DAT_0062bd12,&pfStack_80,&lStack_a0);
   *(undefined8 **)(lVar5 + 0x28) = puVar4;
 LAB_0036cd88:
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1772,7 +1700,6 @@ void Walaber::WidgetManager::touchUp(int p0,Walaber__Vector2 p1)
 
 {
   int iVar1;
-  long lVar2;
   long *plVar3;
   long *plVar4;
   int *p0_00;
@@ -1791,11 +1718,8 @@ void Walaber::WidgetManager::touchUp(int p0,Walaber__Vector2 p1)
   undefined8 uStack_50;
   long lStack_48;
   long lStack_40;
-  long lStack_38;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar2 = tpidr_el0;
-  lStack_38 = *(long *)(lVar2 + 0x28);
   if ((char)plVar3[0xe] == '\0') goto LAB_0036d004;
   plVar4 = plVar3 + 7;
   plVar9 = (long *)*plVar4;
@@ -1893,10 +1817,6 @@ LAB_0036d06c:
                "touchUp WARNING - removed finger not found in map! [%d]  fingerCount:%d\n",
                (ulong)p1 & 0xffffffff,(int)plVar3[8]);
 LAB_0036d004:
-  if (*(long *)(lVar2 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1911,7 +1831,6 @@ LAB_0036d004:
 void Walaber::WidgetManager::getBoundingArea(undefined8 *param_1,long *param_2)
 
 {
-  long lVar1;
   long lVar2;
   long lStack_90;
   undefined8 uStack_88;
@@ -1923,10 +1842,7 @@ void Walaber::WidgetManager::getBoundingArea(undefined8 *param_1,long *param_2)
   undefined8 uStack_50;
   ulong uStack_48;
   long lStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lStack_40 = 0;
   uStack_48 = 0;
   uStack_50 = 0;
@@ -1969,10 +1885,6 @@ void Walaber::WidgetManager::getBoundingArea(undefined8 *param_1,long *param_2)
     lStack_90 = 0;
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_68);
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -1988,7 +1900,6 @@ void Walaber::WidgetManager::getBoundingArea(undefined8 *param_1,long *param_2)
 void Walaber::WidgetManager::reloadFonts(long *param_1)
 
 {
-  long lVar1;
   long *plVar2;
   long lStack_68;
   long alStack_60 [2];
@@ -1997,10 +1908,7 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
   undefined8 uStack_40;
   ulong uStack_38;
   long lStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   lStack_30 = 0;
   uStack_38 = 0;
   uStack_40 = 0;
@@ -2034,10 +1942,6 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
     }
   }
   std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(alStack_60 + 1);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

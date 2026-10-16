@@ -18,7 +18,6 @@ void std::__ndk1::
                (WaterConceptConstants__MaterialType **p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -30,10 +29,7 @@ void std::__ndk1::
   WaterConceptConstants__MaterialType *pWStack_58;
   WaterConceptConstants__MaterialType *pWStack_50;
   WaterConceptConstants__MaterialType *pWStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = (long)p0[1] - (long)*p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -78,10 +74,6 @@ void std::__ndk1::
   if (pWStack_60 != (WaterConceptConstants__MaterialType *)0x0) {
     operator delete(pWStack_60);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -102,7 +94,6 @@ void std::__ndk1::
                (WaterConceptConstants__MaterialType *p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -115,10 +106,7 @@ void std::__ndk1::
   void *pvStack_58;
   undefined4 *puStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(p0 + 2) - *(long *)p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -160,10 +148,6 @@ void std::__ndk1::
   uStack_48 = uVar8;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

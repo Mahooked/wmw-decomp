@@ -12,16 +12,12 @@
 void Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
-  long lStack_28;
   
   puVar2 = (undefined8 *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
   Walaber::Widget::Widget(puVar2,p1,0x10,&uStack_30,&uStack_38,1,1);
@@ -29,10 +25,6 @@ void Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vec
   puVar2[0x23] = 0;
   puVar2[0x21] = puVar2 + 0x22;
   *puVar2 = &PTR__Widget_Group_0070efc8;
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -111,23 +103,15 @@ void Walaber::Widget_Group::draw(Walaber__SpriteBatch *p0)
 void Walaber::Widget_Group::addWidget(Walaber__Widget *p0)
 
 {
-  long lVar1;
   long in_x1;
   undefined1 auStack_38 [8];
   undefined8 uStack_30;
-  long lStack_28;
   
-  lVar1 = tpidr_el0;
-  lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_30 = CONCAT44((float)((ulong)*(undefined8 *)(in_x1 + 0x54) >> 0x20) -
                        (float)((ulong)*(undefined8 *)&p0->field_0x54 >> 0x20),
                        (float)*(undefined8 *)(in_x1 + 0x54) - (float)*(undefined8 *)&p0->field_0x54)
   ;
   std::__ndk1::pair<std::__ndk1::__tree_iterator<Walaber::Widget_Group::WidgetInfo, std::__ndk1::__tree_node<Walaber::Widget_Group::WidgetInfo, void*>*, long>, bool> std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::__emplace_unique_key_args<Walaber::Widget_Group::WidgetInfo, Walaber::Widget_Group::WidgetInfo const&>(&p0->field_0x108,auStack_38,auStack_38);
-  if (*(long *)(lVar1 + 0x28) == lStack_28) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -269,7 +253,6 @@ LAB_0037cb0c:
 void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0)
 
 {
-  long lVar1;
   bool bVar2;
   Walaber__Vector2 p0_00;
   undefined8 *in_x1;
@@ -278,10 +261,7 @@ void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0)
   long *plVar5;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   plVar5 = *(long **)((long)p0 + 0x108);
   while (plVar5 != (long *)((long)p0 + 0x110)) {
     Walaber::Node::getWorldPosition(&uStack_50,plVar5[4]);
@@ -317,10 +297,6 @@ void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0)
     }
   }
   Walaber::Widget::setLocalPosition(p0);
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -378,16 +354,12 @@ void Walaber::Widget_Group::applyPositionOffset(Walaber__Vector2 *p0)
 void Walaber::Widget_Group::setLocalScale(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   bool bVar2;
   Walaber__Vector2 *pWVar3;
   Walaber__Vector2 WVar4;
   Walaber__Vector2 WVar5;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Widget::setLocalScale();
   WVar5 = p0[0x21];
   while (WVar5 != (Walaber__Vector2)(p0 + 0x22)) {
@@ -420,10 +392,6 @@ void Walaber::Widget_Group::setLocalScale(Walaber__Vector2 *p0)
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -438,16 +406,12 @@ void Walaber::Widget_Group::setLocalScale(Walaber__Vector2 *p0)
 void Walaber::Widget_Group::applyScaleOffset(Walaber__Vector2 *p0)
 
 {
-  long lVar1;
   bool bVar2;
   Walaber__Vector2 *pWVar3;
   Walaber__Vector2 WVar4;
   Walaber__Vector2 WVar5;
   undefined8 uStack_50;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   Walaber::Node::applyScaleOffset();
   WVar5 = p0[0x21];
   while (WVar5 != (Walaber__Vector2)(p0 + 0x22)) {
@@ -479,10 +443,6 @@ void Walaber::Widget_Group::applyScaleOffset(Walaber__Vector2 *p0)
         WVar4 = *(Walaber__Vector2 *)WVar5;
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -545,7 +505,6 @@ void Walaber::Widget_Group::setColor(Walaber__Color *p0)
 
 {
   Walaber__Color WVar1;
-  long lVar2;
   bool bVar3;
   Walaber__Color *in_x1;
   Walaber__Color *pWVar4;
@@ -553,10 +512,7 @@ void Walaber::Widget_Group::setColor(Walaber__Color *p0)
   long lVar6;
   long lStack_58;
   int *piStack_50;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   pWVar5 = *(Walaber__Color **)(p0 + 0x42);
   while (pWVar5 != p0 + 0x44) {
     pWVar4 = *(Walaber__Color **)(pWVar5 + 8);
@@ -606,10 +562,6 @@ void Walaber::Widget_Group::setColor(Walaber__Color *p0)
         pWVar4 = *(Walaber__Color **)pWVar5;
       } while (*(Walaber__Color **)pWVar5 != (Walaber__Color *)0x0);
     }
-  }
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

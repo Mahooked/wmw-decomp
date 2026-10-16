@@ -83,7 +83,6 @@ void WaterConcept::Screen_PerformanceTest::enter(long param_1)
   uint uVar1;
   uint uVar2;
   uint uVar3;
-  long lVar4;
   undefined8 uVar5;
   long lVar6;
   long lVar7;
@@ -97,10 +96,7 @@ void WaterConcept::Screen_PerformanceTest::enter(long param_1)
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
-  long lStack_38;
   
-  lVar4 = tpidr_el0;
-  lStack_38 = *(long *)(lVar4 + 0x28);
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0xa00000010;
   Walaber::PropertyList::PropertyList(auStack_50);
@@ -289,10 +285,6 @@ void WaterConcept::Screen_PerformanceTest::enter(long param_1)
   }
   WaterConcept::GameSettings::loadFluidTextures();
   WaterConcept::Screen_PerformanceTest::_buildUI(param_1);
-  if (*(long *)(lVar4 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -307,7 +299,6 @@ void WaterConcept::Screen_PerformanceTest::enter(long param_1)
 void WaterConcept::Screen_PerformanceTest::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -323,10 +314,7 @@ void WaterConcept::Screen_PerformanceTest::_buildUI(long param_1)
   char *pcStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_50 = (char *)operator new(0x20);
   auStack_60[1] = 0x1c;
   auStack_60[0] = 0x21;
@@ -363,10 +351,6 @@ void WaterConcept::Screen_PerformanceTest::_buildUI(long param_1)
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -399,7 +383,6 @@ void WaterConcept::Screen_PerformanceTest::update(float p0,bool p1)
   uint uVar2;
   uint uVar3;
   byte bVar4;
-  long lVar5;
   undefined4 *puVar6;
   undefined *puVar7;
   ulong uVar8;
@@ -416,7 +399,6 @@ void WaterConcept::Screen_PerformanceTest::update(float p0,bool p1)
   char *pcVar19;
   long lVar20;
   ulong in_x1;
-  long lVar21;
   undefined8 uVar22;
   uint uVar23;
   float fVar24;
@@ -516,8 +498,6 @@ void WaterConcept::Screen_PerformanceTest::update(float p0,bool p1)
   void *apvStack_b0 [6];
   
   uVar11 = (ulong)p1;
-  lVar5 = tpidr_el0;
-  lVar21 = *(long *)(lVar5 + 0x28);
   if ((*(char *)(uVar11 + 0xa2) == '\0') || ((in_x1 & 1) == 0)) goto LAB_00541450;
   *(int *)(uVar11 + 0x90) = (int)((float)*(int *)(uVar11 + 0x90) + p0);
   Walaber::WidgetManager::update(CONCAT44(in_register_00005004,p0),*(undefined8 *)(uVar11 + 0x10));
@@ -1715,10 +1695,6 @@ joined_r0x005425e4:
   }
   operator delete(pcVar19);
 LAB_00541450:
-  if (*(long *)(lVar5 + 0x28) == lVar21) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

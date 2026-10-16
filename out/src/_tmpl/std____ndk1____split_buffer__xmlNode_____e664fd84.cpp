@@ -41,7 +41,6 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
 
 {
   long lVar1;
-  long lVar2;
   _xmlNode ***ppp_Var3;
   undefined8 *in_x1;
   ulong uVar4;
@@ -54,10 +53,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
   _xmlNode ***ppp_Stack_68;
   _xmlNode ***ppp_Stack_60;
   _xmlNode ***ppp_Stack_58;
-  long lStack_48;
   
-  lVar2 = tpidr_el0;
-  lStack_48 = *(long *)(lVar2 + 0x28);
   ppp_Var5 = p0[2];
   if (ppp_Var5 == p0[3]) {
     ppp_Var7 = *p0;
@@ -122,10 +118,6 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
   }
   *ppp_Var5 = (_xmlNode **)*in_x1;
   p0[2] = p0[2] + 1;
-  if (*(long *)(lVar2 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -142,7 +134,6 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
                (_xmlNode ****p0)
 
 {
-  long lVar1;
   undefined8 *in_x1;
   long lVar2;
   _xmlNode ***ppp_Var3;
@@ -154,10 +145,7 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
   _xmlNode ***ppp_Stack_68;
   _xmlNode ***ppp_Stack_60;
   _xmlNode ***ppp_Stack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   ppp_Var3 = p0[1];
   if (ppp_Var3 == *p0) {
     ppp_Var4 = p0[2];
@@ -222,10 +210,6 @@ void std::__ndk1::__split_buffer<_xmlNode**,std::__ndk1::allocator<_xmlNode**>>:
   }
   ppp_Var3[-1] = (_xmlNode **)*in_x1;
   p0[1] = p0[1] + -1;
-  if (*(long *)(lVar1 + 0x28) != lStack_48) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 

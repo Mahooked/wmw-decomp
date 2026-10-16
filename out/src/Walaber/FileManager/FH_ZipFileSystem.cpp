@@ -16,17 +16,13 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
                (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  long lVar1;
   undefined8 uVar2;
   byte *pbVar3;
   byte *pbVar4;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   *param_1 = &PTR__FH_ZipFileSystem_00710658;
   param_1[1] = 0;
                     /* try { // try from 003d38a4 to 003d38af has its CatchHandler @ 003d39cc */
@@ -65,10 +61,6 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
       Walaber::Logger::printf("Walaber IO",1,"%s",pbVar3);
       pbVar4 = pbVar4 + 0x18;
     } while (pbVar4 != (byte *)param_1[6]);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_58) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }
@@ -134,7 +126,6 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExists
   undefined1 *puVar1;
   byte *pbVar2;
   byte bVar3;
-  long lVar4;
   ulong uVar5;
   int iVar6;
   undefined8 uVar7;
@@ -155,10 +146,7 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExists
   ulong uStack_80;
   ulong uStack_78;
   undefined1 *puStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   pbVar9 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
     pbVar9 = param_1 + 1;
@@ -294,10 +282,6 @@ LAB_003d3d58:
   if ((uStack_80 & 1) != 0) {
     operator delete(puStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -317,7 +301,6 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
                undefined8 param_5)
 
 {
-  long lVar1;
   long lVar2;
   byte abStack_b8 [16];
   void *pvStack_a8;
@@ -327,10 +310,7 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
   void *pvStack_70;
   byte bStack_68;
   void *pvStack_58;
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   lVar2 = Walaber::FileManager::getInstancePtr();
   unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar2 + 0x18,param_2);
   (**(code **)(*param_1 + 0x20))(abStack_b8,param_1);
@@ -350,10 +330,6 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
   if ((abStack_a0[0] & 1) != 0) {
     operator delete(pvStack_90);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -374,7 +350,6 @@ void Walaber::FileManager::FH_ZipFileSystem::readFile
   undefined1 *puVar1;
   byte *pbVar2;
   byte bVar3;
-  long lVar4;
   ulong uVar5;
   int iVar6;
   undefined8 uVar7;
@@ -395,10 +370,7 @@ void Walaber::FileManager::FH_ZipFileSystem::readFile
   ulong uStack_80;
   ulong uStack_78;
   undefined1 *puStack_70;
-  long lStack_68;
   
-  lVar4 = tpidr_el0;
-  lStack_68 = *(long *)(lVar4 + 0x28);
   pbVar9 = *(byte **)(param_1 + 0x10);
   if ((*param_1 & 1) == 0) {
     pbVar9 = param_1 + 1;
@@ -534,10 +506,6 @@ LAB_003d4200:
   if ((uStack_80 & 1) != 0) {
     operator delete(puStack_70);
   }
-  if (*(long *)(lVar4 + 0x28) == lStack_68) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -557,7 +525,6 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
                undefined8 param_5)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   undefined8 uVar4;
@@ -570,10 +537,7 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
   void *pvStack_80;
   byte bStack_78;
   void *pvStack_68;
-  long lStack_58;
   
-  lVar1 = tpidr_el0;
-  lStack_58 = *(long *)(lVar1 + 0x28);
   Walaber::ZipArchiveReader::openFile(param_1[1],param_3);
   uVar2 = Walaber::ZipArchiveReader::getCurrentFileSize(param_1[1]);
   uVar3 = operator new[]();
@@ -597,10 +561,6 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
   if ((bStack_b8 & 1) != 0) {
     operator delete(pvStack_a8);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_58) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

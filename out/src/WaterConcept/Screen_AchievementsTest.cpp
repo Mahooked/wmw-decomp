@@ -106,7 +106,6 @@ void WaterConcept::Screen_AchievementsTest::enter(long param_1)
 void WaterConcept::Screen_AchievementsTest::_buildUI(long param_1)
 
 {
-  long lVar1;
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -122,10 +121,7 @@ void WaterConcept::Screen_AchievementsTest::_buildUI(long param_1)
   char *pcStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   pcStack_50 = (char *)operator new(0x20);
   auStack_60[1] = 0x1c;
   auStack_60[0] = 0x21;
@@ -162,10 +158,6 @@ void WaterConcept::Screen_AchievementsTest::_buildUI(long param_1)
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
-  if (*(long *)(lVar1 + 0x28) == lStack_38) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 
@@ -244,7 +236,6 @@ void WaterConcept::Screen_AchievementsTest::handleEvent
                (int p0,Walaber__Widget__WidgetActionRet *p1,Walaber__Widget *p2)
 
 {
-  long lVar1;
   bool bVar2;
   long *plVar3;
   long *plVar4;
@@ -253,11 +244,8 @@ void WaterConcept::Screen_AchievementsTest::handleEvent
   long lVar7;
   byte abStack_50 [16];
   void *pvStack_40;
-  long lStack_38;
   
   plVar3 = (long *)(ulong)(uint)p0;
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   switch((ulong)p1 & 0xffffffff) {
   case 0:
     lVar7 = plVar3[0x18];
@@ -325,10 +313,6 @@ LAB_004a4840:
     }
     Walaber::AchievementManager::resetAchievementProgress(plVar3[0x16]);
   }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
-  }
   return;
 }
 
@@ -343,7 +327,6 @@ LAB_004a4840:
 void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long param_1)
 
 {
-  long lVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   long lVar4;
@@ -365,10 +348,7 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   int *piStack_60;
   void *pvStack_58;
   float afStack_50 [2];
-  long lStack_48;
   
-  lVar1 = tpidr_el0;
-  lStack_48 = *(long *)(lVar1 + 0x28);
   uVar2 = *(undefined8 *)(param_1 + 0x90);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80,*(long *)(param_1 + 0xc0) + 0x20);
                     /* try { // try from 004a48d0 to 004a48db has its CatchHandler @ 004a4b94 */
@@ -444,10 +424,6 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   }
   *(undefined8 *)(*(long *)(param_1 + 0xa8) + 0x158) = 0x3f3333333f333333;
   Walaber::Widget_Label::_setTextTopLeft();
-  if (*(long *)(lVar1 + 0x28) == lStack_48) {
-    return;
-  }
-  __stack_chk_fail();
   return;
 }
 

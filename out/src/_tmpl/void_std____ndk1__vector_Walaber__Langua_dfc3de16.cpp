@@ -14,7 +14,6 @@ void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Langu
      __push_back_slow_path<Walaber::Language_const&>(Walaber__Language *p0)
 
 {
-  long lVar1;
   undefined4 *in_x1;
   ulong uVar2;
   long lVar3;
@@ -27,10 +26,7 @@ void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Langu
   void *pvStack_58;
   undefined4 *puStack_50;
   undefined8 uStack_48;
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   lVar3 = *(long *)(p0 + 2) - *(long *)p0 >> 2;
   uVar2 = lVar3 + 1;
   if (uVar2 >> 0x3e != 0) {
@@ -72,10 +68,6 @@ void std::__ndk1::vector<Walaber::Language,std::__ndk1::allocator<Walaber::Langu
   uStack_48 = uVar8;
   if (pvStack_60 != (void *)0x0) {
     operator delete(pvStack_60);
-  }
-  if (*(long *)(lVar1 + 0x28) != lStack_38) {
-    __stack_chk_fail();
-    return;
   }
   return;
 }

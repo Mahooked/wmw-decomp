@@ -12,14 +12,10 @@
 void std::__ndk1::recursive_mutex::recursive_mutex()
 
 {
-  long lVar1;
   int iVar2;
   int iStack_44;
   undefined1 auStack_40 [8];
-  long lStack_38;
   
-  lVar1 = tpidr_el0;
-  lStack_38 = *(long *)(lVar1 + 0x28);
   iStack_44 = pthread_mutexattr_init(auStack_40);
   if (iStack_44 == 0) {
     iStack_44 = pthread_mutexattr_settype(auStack_40,1);
@@ -28,10 +24,6 @@ void std::__ndk1::recursive_mutex::recursive_mutex()
       iVar2 = pthread_mutexattr_destroy(auStack_40);
       if (iStack_44 == 0) {
         if (iVar2 == 0) {
-          if (*(long *)(lVar1 + 0x28) != lStack_38) {
-            __stack_chk_fail();
-            return;
-          }
           return;
         }
         pthread_mutex_destroy(this);
