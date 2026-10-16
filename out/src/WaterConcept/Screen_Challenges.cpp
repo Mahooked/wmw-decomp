@@ -405,13 +405,9 @@ void WaterConcept::Screen_Challenges::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -432,20 +428,16 @@ void WaterConcept::Screen_Challenges::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a8de8 to 004a8df3 has its CatchHandler @ 004a8e44 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -544,11 +536,9 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
   undefined4 uStack_620;
   float fStack_61c;
   undefined4 uStack_618;
-  float fStack_614;
   undefined8 uStack_610;
   undefined8 uStack_608;
   byte *pbStack_600;
-  int *piStack_5f8;
   undefined8 uStack_5f0;
   undefined8 uStack_5e8;
   undefined8 *puStack_5e0;
@@ -2659,7 +2649,6 @@ LAB_004aba28:
                     /* try { // try from 004abb90 to 004abbab has its CatchHandler @ 004ac270 */
             Walaber::TextureManager::getTexture(&uStack_530,uVar19,&uStack_f0,&uStack_610,0,0);
             pbStack_600 = uStack_530;
-            piStack_5f8 = piStack_528;
             if (uStack_530 != (byte *)0x0) {
               *piStack_528 = *piStack_528 + 1;
             }
@@ -2746,7 +2735,6 @@ LAB_004aba28:
       lVar15 = Walaber::WidgetManager::getWidget(*puVar47,5000);
       uStack_618 = *(undefined4 *)(lVar15 + 0x90);
       fVar50 = fVar50 - fVar53;
-      fStack_614 = fVar50;
       (**(code **)(*plVar28 + 0x50))(plVar28,&uStack_618);
                     /* try { // try from 004abe18 to 004abe3b has its CatchHandler @ 004ac518 */
       plVar28 = (long *)Walaber::WidgetManager::getWidget(*puVar47,10);
@@ -3372,7 +3360,6 @@ void WaterConcept::Screen_Challenges::handleEvent
                     /* try { // try from 004ad33c to 004ad34b has its CatchHandler @ 004ad534 */
         WaterConcept::GameSettings::goPlayLevel(plVar14 + 5,0xffffffff,&pvStack_180,0);
         if (pvStack_180 != (void *)0x0) {
-          pvStack_178 = pvStack_180;
           operator delete(pvStack_180);
         }
       }

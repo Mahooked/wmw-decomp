@@ -419,7 +419,6 @@ LAB_003e6b7c:
           uVar12 = uVar6 + 0x10 & 0xfffffffffffffff0;
           pvVar13 = (void *)operator new(uVar12);
           uStack_88 = uVar12 | 1;
-          uStack_80 = uVar6;
           pvStack_78 = pvVar13;
 LAB_003e680c:
           memcpy(pvVar13,uVar5,uVar6);
@@ -454,7 +453,6 @@ LAB_003e6898:
             uVar12 = uVar6 + 0x10 & 0xfffffffffffffff0;
             pvVar13 = (void *)operator new(uVar12);
             uStack_88 = uVar12 | 1;
-            uStack_80 = uVar6;
             pvStack_78 = pvVar13;
 LAB_003e6864:
             memcpy(pvVar13,uVar5,uVar6);
@@ -525,7 +523,6 @@ LAB_003e6864:
                 uVar12 = uVar6 + 0x10 & 0xfffffffffffffff0;
                 pvVar13 = (void *)operator new(uVar12);
                 uStack_88 = uVar12 | 1;
-                uStack_80 = uVar6;
                 pvStack_78 = pvVar13;
 LAB_003e6a34:
                 memcpy(pvVar13,uVar5,uVar6);

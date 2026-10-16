@@ -341,12 +341,10 @@ void Walaber::Camera::shake(float p0,float p1,float p2)
   undefined4 in_register_00005044;
   undefined8 uStack_38;
   float fStack_30;
-  float fStack_2c;
   
   in_x0[0x12] = *in_x0;
   uStack_38 = 0;
   fStack_30 = p0;
-  fStack_2c = p1;
   Walaber::Camera::animate(CONCAT44(in_register_00005044,p2),in_x0,3,&fStack_30,&uStack_38);
   return;
 }
@@ -365,12 +363,10 @@ void Walaber::Camera::halfShake(float p0,float p1,float p2)
   undefined8 *in_x0;
   undefined8 uStack_38;
   float fStack_30;
-  float fStack_2c;
   
   in_x0[0x12] = *in_x0;
   uStack_38 = 0;
   fStack_30 = p0;
-  fStack_2c = p1;
   Walaber::Camera::animate(p2 + p2,0x3f000000,in_x0,3,&fStack_30,&uStack_38);
   return;
 }
@@ -481,12 +477,10 @@ void Walaber::Camera::zoomToHeight(float p0,float p1)
   long in_x0;
   undefined4 in_register_00005024;
   float fStack_38;
-  float fStack_34;
   undefined8 uStack_30;
   
   uStack_30 = *(undefined8 *)(in_x0 + 8);
   fStack_38 = (ScreenCoord::sScreenSize / DAT_0072d884) * p0;
-  fStack_34 = p0;
   Walaber::Camera::animate(CONCAT44(in_register_00005024,p1),in_x0,2,&uStack_30,&fStack_38);
   return;
 }

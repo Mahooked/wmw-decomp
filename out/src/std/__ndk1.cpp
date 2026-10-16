@@ -104,18 +104,12 @@ ulong std::__ndk1::__libcpp_snprintf_l
   long lVar2;
   ulong uVar3;
   undefined8 uStack_c0;
-  undefined8 uStack_b8;
-  undefined8 uStack_b0;
-  undefined8 uStack_a8;
   undefined1 *puStack_a0;
   undefined1 **ppuStack_98;
   undefined8 *puStack_90;
   undefined8 uStack_88;
   
   uStack_c0 = param_5;
-  uStack_b8 = param_6;
-  uStack_b0 = param_7;
-  uStack_a8 = param_8;
   lVar2 = uselocale(param_3);
   uStack_88 = 0xffffff80ffffffe0;
   puStack_a0 = (undefined1 *)register0x00000008;

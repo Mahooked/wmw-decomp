@@ -287,7 +287,6 @@ void std::__ndk1::locale::locale(char *p0)
                     /* try { // try from 005d52c8 to 005d52cf has its CatchHandler @ 005d53a0 */
     pvVar4 = (void *)operator new(p0_00);
     uStack_70 = p0_00 | 1;
-    uStack_68 = uVar3;
     pvStack_60 = pvVar4;
   }
   memcpy(pvVar4);
@@ -375,7 +374,6 @@ void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
                     /* try { // try from 005d54bc to 005d54c3 has its CatchHandler @ 005d559c */
     pvVar5 = (void *)operator new(p0_00);
     uStack_80 = p0_00 | 1;
-    uStack_78 = uVar3;
     pvStack_70 = pvVar5;
   }
   memcpy(pvVar5,p2,uVar3);
@@ -577,7 +575,6 @@ void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
     bVar3 = *(long *)(lVar1 + uVar4 * 8) != 0;
   }
   else {
-    bVar3 = false;
   }
   return;
 }

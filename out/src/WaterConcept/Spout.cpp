@@ -1901,7 +1901,6 @@ void WaterConcept::Spout::addParticles
       if (plVar4 != (long *)0x0) {
         iStack_70 = *param_3;
         if (param_6 != -1) {
-          iStack_70 = param_6;
         }
         uStack_78 = param_2;
         iStack_6c = param_4;
@@ -2133,13 +2132,9 @@ void WaterConcept::Spout::addConnectedSpout
 {
   long *plVar2;
   long lStack_48;
-  undefined4 uStack_40;
-  undefined4 uStack_3c;
   
   plVar2 = *(long **)(param_2 + 0x4a8);
   lStack_48 = param_3;
-  uStack_40 = param_1;
-  uStack_3c = param_4;
   if (plVar2 < *(long **)(param_2 + 0x4b0)) {
     plVar2[1] = CONCAT44(param_4,param_1);
     *plVar2 = param_3;

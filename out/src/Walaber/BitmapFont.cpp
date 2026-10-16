@@ -76,13 +76,10 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -100,8 +97,6 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -112,7 +107,6 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
                     /* try { // try from 00364788 to 0036478b has its CatchHandler @ 00364810 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -999,7 +993,6 @@ LAB_00366068:
         uVar11 = uVar6 + 0x10 & 0xfffffffffffffff0;
         pvVar7 = (void *)operator new(uVar11);
         uStack_c8 = uVar11 | 1;
-        uStack_c0 = uVar6;
         pvStack_b8 = pvVar7;
 LAB_00365e4c:
         uVar8 = memcpy(pvVar7,pbVar2,uVar6);
@@ -1067,7 +1060,6 @@ LAB_00365ed0:
                 uVar11 = uVar6 + 0x10 & 0xfffffffffffffff0;
                 pvVar7 = (void *)operator new(uVar11);
                 uStack_c8 = uVar11 | 1;
-                uStack_c0 = uVar6;
                 pvStack_b8 = pvVar7;
 LAB_00365fac:
                 uVar8 = memcpy(pvVar7,pbVar2,uVar6);
@@ -1369,7 +1361,7 @@ void Walaber::BitmapFont::_wrapStringAtWord
           uVar12 = 0;
           do {
             uVar13 = uVar8;
-            uVar1 = uVar13 + 1;
+            uVar1 = uVar8 + 1;
             lVar9 = lStack_100 + uVar14 * 0x18;
                     /* try { // try from 00366478 to 00366483 has its CatchHandler @ 003667fc */
             std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(afStack_118,lVar9,uVar12,uVar1 - uVar12,lVar9);
@@ -2088,7 +2080,6 @@ void Walaber::BitmapFont::_drawStringCenter
     p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0_00);
     uStack_88 = p0_00 | 1;
-    uStack_80 = uVar2;
     pvStack_78 = pvVar3;
   }
   memcpy(pvVar3,p1,uVar2);
@@ -2142,7 +2133,6 @@ void Walaber::BitmapFont::_drawStringLeft
   void *pvStack_c0;
   int iStack_b4;
   Walaber__Color WStack_b0;
-  Walaber__Color WStack_ac;
   
   uVar12 = cosf(p2 * 0.017453292);
   uVar13 = sinf(p2 * 0.017453292);
@@ -2154,7 +2144,6 @@ void Walaber::BitmapFont::_drawStringLeft
   uStack_c8 = 0;
   pvStack_c0 = (void *)0x0;
   WStack_b0 = WVar16;
-  WStack_ac = WVar15;
   DAT_0072d8cc = DAT_0072d8b8;
   DAT_0072d8e0 = DAT_0072d8b8;
   DAT_0072d8f4 = DAT_0072d8b8;
@@ -2173,7 +2162,6 @@ void Walaber::BitmapFont::_drawStringLeft
         uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
         pvVar5 = (void *)operator new(uVar9);
         uStack_d0 = uVar9 | 1;
-        uStack_c8 = uVar4;
         pvStack_c0 = pvVar5;
 LAB_003679b8:
         uVar14 = memcpy(pvVar5,p1,uVar4);
@@ -2196,7 +2184,6 @@ LAB_00367a14:
         WVar16 = *p4;
         WVar15 = (Walaber__Color)((float)WVar15 + *(float *)(p0 + 0x98) * p3);
         WStack_b0 = WVar16;
-        WStack_ac = WVar15;
       }
       else {
         if ((uVar3 == 0xd) || (uVar3 == 0x2028)) goto LAB_00367a14;
@@ -2237,7 +2224,6 @@ LAB_00367a70:
               uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
               pvVar5 = (void *)operator new(uVar9);
               uStack_d0 = uVar9 | 1;
-              uStack_c8 = uVar4;
               pvStack_c0 = pvVar5;
 LAB_00367b5c:
               uVar14 = memcpy(pvVar5,p1,uVar4);
@@ -2267,7 +2253,6 @@ LAB_00367b5c:
           WVar16 = (Walaber__Color)((float)WVar16 + ((float)uVar12 * fVar11 - (float)uVar13 * 0.0));
           WVar15 = (Walaber__Color)((float)WVar15 + (float)uVar12 * 0.0 + (float)uVar13 * fVar11);
           WStack_b0 = WVar16;
-          WStack_ac = WVar15;
         }
       }
       uStack_d0 = 0;
@@ -2365,7 +2350,6 @@ void Walaber::BitmapFont::drawStringWrap
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0);
     uStack_b0 = p0 | 1;
-    uStack_a8 = uVar2;
     pvStack_a0 = pvVar3;
   }
   memcpy(pvVar3,param_5,uVar2);
@@ -2558,7 +2542,6 @@ void Walaber::BitmapFont::drawStringWrapScale
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0);
     uStack_b0 = p0 | 1;
-    uStack_a8 = uVar2;
     pvStack_a0 = pvVar3;
   }
   memcpy(pvVar3,param_4,uVar2);

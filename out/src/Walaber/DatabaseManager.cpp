@@ -1359,7 +1359,7 @@ LAB_0032c760:
             else {
               do {
                 plVar8 = plVar7;
-                plVar7 = (long *)*plVar8;
+                plVar7 = (long *)*plVar7;
               } while ((long *)*plVar8 != (long *)0x0);
             }
           }
@@ -1430,7 +1430,7 @@ LAB_0032c8d8:
     else {
       do {
         plVar8 = plVar12;
-        plVar12 = (long *)*plVar8;
+        plVar12 = (long *)*plVar12;
       } while ((long *)*plVar8 != (long *)0x0);
     }
     if (plVar7 != (long *)&DAT_0072d6a8) {
@@ -1454,7 +1454,7 @@ LAB_0032c8d8:
     else {
       do {
         plVar8 = plVar12;
-        plVar12 = (long *)*plVar8;
+        plVar12 = (long *)*plVar12;
       } while ((long *)*plVar8 != (long *)0x0);
     }
     if (plVar7 != (long *)&DAT_0072d6a8) {

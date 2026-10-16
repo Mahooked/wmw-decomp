@@ -99,7 +99,6 @@ void WaterConcept::Screen_SettingsProfile::enter()
   undefined5 uStack_a5;
   char *pcStack_a0;
   undefined **ppuStack_98;
-  int *piStack_90;
   byte bStack_78;
   undefined4 uStack_77;
   undefined2 uStack_73;
@@ -235,9 +234,7 @@ void WaterConcept::Screen_SettingsProfile::enter()
   uStack_a5 = (undefined5)((ulong)piVar8 >> 0x18);
   uVar5 = uStack_a5;
   *piVar8 = 3;
-  piStack_90 = piVar8;
   ppuStack_60 = ppuVar7;
-  piStack_58 = piVar8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_60);
   uStack_73 = (undefined2)((ulong)ppuVar7 >> 0x28);
   uStack_71 = (undefined1)((ulong)ppuVar7 >> 0x38);
@@ -245,9 +242,6 @@ void WaterConcept::Screen_SettingsProfile::enter()
   uStack_6e = (undefined1)((ulong)piVar8 >> 0x10);
   *piVar8 = *piVar8 + 1;
   bStack_78 = bVar2;
-  uStack_77 = uVar3;
-  uStack_70 = uVar4;
-  uStack_6d = uVar5;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_b0);
                     /* try { // try from 00561468 to 0056146b has its CatchHandler @ 005615d4 */
   uVar6 = Walaber::CurveManager::getManager();
@@ -258,8 +252,8 @@ void WaterConcept::Screen_SettingsProfile::enter()
   apcStack_50[0] = (char *)operator new(0x20);
   piStack_58 = (int *)0x17;
   ppuStack_60 = (undefined **)0x21;
-  lStack_c0 = CONCAT17(uStack_71,CONCAT25(uStack_73,CONCAT41(uStack_77,bStack_78)));
-  piStack_b8 = (int *)CONCAT53(uStack_6d,CONCAT12(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+  lStack_c0 = CONCAT17(uStack_71,CONCAT25(uStack_73,CONCAT41(uVar3,bStack_78)));
+  piStack_b8 = (int *)CONCAT53(uVar5,CONCAT12(uStack_6e,CONCAT11(uStack_6f,uVar4)));
   builtin_strncpy(apcStack_50[0],"/Curves/ease_in_out.xml",0x18);
   if (lStack_c0 != 0) {
     *piStack_b8 = *piStack_b8 + 1;
@@ -324,13 +318,9 @@ void WaterConcept::Screen_SettingsProfile::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -351,20 +341,16 @@ void WaterConcept::Screen_SettingsProfile::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 00561754 to 0056175f has its CatchHandler @ 005617b0 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -797,7 +783,7 @@ LAB_00561f1c:
       else {
         do {
           plVar8 = plVar6;
-          plVar6 = (long *)*plVar8;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar8 != (long *)0x0);
       }
       plVar9 = plVar8;
@@ -973,11 +959,9 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
   undefined8 uStack_150;
   undefined8 uStack_148;
   long lStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   long lStack_120;
-  int *piStack_118;
   byte abStack_110 [16];
   void *pvStack_100;
   byte abStack_f8 [16];
@@ -1065,7 +1049,6 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
                     /* try { // try from 005626f4 to 0056270f has its CatchHandler @ 005628b0 */
       Walaber::TextureManager::getTexture(&lStack_88,uVar4,abStack_a0,&uStack_130,0,0);
       lStack_120 = lStack_88;
-      piStack_118 = piStack_80;
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }
@@ -1110,7 +1093,6 @@ void WaterConcept::Screen_SettingsProfile::_updateCloudButton(long param_1)
                     /* try { // try from 005627b0 to 005627cb has its CatchHandler @ 00562868 */
       Walaber::TextureManager::getTexture(&lStack_88,uVar4,abStack_a0,&uStack_150,0,0);
       lStack_140 = lStack_88;
-      piStack_138 = piStack_80;
       if (lStack_88 != 0) {
         *piStack_80 = *piStack_80 + 1;
       }

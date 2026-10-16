@@ -16,15 +16,10 @@ void WaterConcept::CustomTransitionLoader::init(void)
   undefined8 *puVar3;
   int *piVar4;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   undefined8 *puStack_48;
-  int *piStack_40;
   
   uVar2 = operator new(1);
   puVar3 = (undefined8 *)operator new(0x28);
@@ -37,19 +32,14 @@ void WaterConcept::CustomTransitionLoader::init(void)
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_78 = puVar3;
-  piStack_70 = piVar4;
-  piStack_50 = piVar4;
   puStack_48 = puVar3;
-  piStack_40 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar4 = *piVar4 + 1;
   puStack_68 = puVar3;
-  piStack_60 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   *piVar4 = *piVar4 + 1;
                     /* try { // try from 005a34f0 to 005a34f7 has its CatchHandler @ 005a3538 */
   puStack_88 = puVar3;
-  piStack_80 = piVar4;
   Walaber::TransitionLoader::addTransitionLoader(&puStack_88);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);

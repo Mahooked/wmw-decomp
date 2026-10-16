@@ -293,13 +293,10 @@ void WaterConcept::InteractiveObject::InteractiveObject
   undefined8 uVar4;
   byte in_w4;
   undefined8 *puStack_d8;
-  int *piStack_d0;
   undefined8 *puStack_c8;
-  int *piStack_c0;
   undefined8 *puStack_b8;
   int *piStack_b0;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 auStack_98 [3];
   float fStack_7c;
   undefined8 *puStack_78;
@@ -430,8 +427,6 @@ void WaterConcept::InteractiveObject::InteractiveObject
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_c8 = puVar2;
-  piStack_c0 = piVar3;
-  piStack_a0 = piVar3;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
@@ -442,7 +437,6 @@ void WaterConcept::InteractiveObject::InteractiveObject
                     /* try { // try from 00480efc to 00480eff has its CatchHandler @ 00480f98 */
   uVar4 = Walaber::SoundManager::getInstancePtr();
   puStack_d8 = puStack_b8;
-  piStack_d0 = piStack_b0;
   if (puStack_b8 != (undefined8 *)0x0) {
     *piStack_b0 = *piStack_b0 + 1;
   }
@@ -612,15 +606,11 @@ void WaterConcept::InteractiveObject::init
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
   int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x348,param_4);
   *(undefined4 *)(param_1 + 0x340) = 0;
@@ -635,10 +625,7 @@ void WaterConcept::InteractiveObject::init
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
@@ -647,7 +634,6 @@ void WaterConcept::InteractiveObject::init
                     /* try { // try from 00481390 to 00481393 has its CatchHandler @ 00481414 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_98 = puStack_78;
-  piStack_90 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -1257,7 +1243,6 @@ void WaterConcept::InteractiveObject::_buildVaccuum(long *param_1)
   float fVar15;
   float fVar16;
   void *pvStack_c0;
-  void *pvStack_b8;
   undefined8 uStack_a8;
   float fStack_a0;
   float fStack_9c;
@@ -1339,7 +1324,6 @@ void WaterConcept::InteractiveObject::_buildVaccuum(long *param_1)
                     /* try { // try from 00482584 to 0048258f has its CatchHandler @ 00482754 */
     WaterConcept::InteractiveObject::addShape(param_1,&pvStack_c0);
     if (pvStack_c0 != (void *)0x0) {
-      pvStack_b8 = pvStack_c0;
       operator delete(pvStack_c0);
     }
     *(int *)(param_1 + 0x55) = (int)((ulong)(param_1[0x1d] - param_1[0x1c]) >> 3) * -0x55555555 + -1
@@ -1429,7 +1413,6 @@ void WaterConcept::InteractiveObject::getDefaultProperties(std::__ndk1::basic_st
   undefined8 *puStack_70;
   undefined4 *puStack_68;
   undefined8 *puStack_60;
-  undefined4 *puStack_58;
   undefined8 auStack_50 [3];
   
   auStack_50[0] = param_1;
@@ -1447,7 +1430,6 @@ void WaterConcept::InteractiveObject::getDefaultProperties(std::__ndk1::basic_st
   *puStack_68 = 2;
                     /* try { // try from 00482838 to 0048284f has its CatchHandler @ 00482890 */
   puStack_60 = puVar4;
-  puStack_58 = puStack_68;
   Walaber::FileManager::readFile(uVar3,param_1,&puStack_60,auStack_50,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
@@ -1679,7 +1661,7 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0)
       else {
         do {
           plVar16 = plVar12;
-          plVar12 = (long *)*plVar16;
+          plVar12 = (long *)*plVar12;
         } while ((long *)*plVar16 != (long *)0x0);
       }
       plVar21 = plVar16;
@@ -5276,12 +5258,10 @@ void WaterConcept::InteractiveObject::addTimeQueueEntry(bool p0,float p1)
   ulong uVar3;
   undefined1 in_w1;
   uint uStack_30;
-  float fStack_2c;
   
   uVar3 = (ulong)p0;
   uVar2 = CONCAT31(uStack_30._1_3_,in_w1);
   uStack_30 = uVar2 & 0xffffff01;
-  fStack_2c = p1;
   if (*(ulong **)(uVar3 + 0x328) == *(ulong **)(uVar3 + 0x330)) {
     void std::__ndk1::vector<WaterConcept::InteractiveObject::TimerSetting, std::__ndk1::allocator<WaterConcept::InteractiveObject::TimerSetting>>::__push_back_slow_path<WaterConcept::InteractiveObject::TimerSetting const&>(uVar3 + 800,&uStack_30);
   }
@@ -5575,7 +5555,6 @@ void WaterConcept::InteractiveObject::_applyConstraints(long *param_1)
                  (fStack_c4 - fStack_bc) * (fStack_c4 - fStack_bc);
         if (fVar10 < fVar11) {
           fStack_a0 = fStack_c0;
-          fStack_9c = fStack_bc;
           fVar11 = fVar10;
           if (((uVar8 == 0) && (fStack_b4 == 0.0)) || ((iVar1 - 2 == uVar8 && (fStack_b4 == 1.0))))
           {
@@ -6038,18 +6017,15 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
   ulong uVar24;
   float fVar25;
   undefined8 *puStack_120;
-  int *piStack_118;
   undefined8 *puStack_110;
   int *piStack_108;
   undefined4 uStack_100;
   float fStack_fc;
   undefined8 uStack_f8;
   undefined8 uStack_f0;
-  int *piStack_e8;
   undefined8 *puStack_e0;
   int *piStack_d8;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   void *pvStack_c0;
   void *pvStack_b8;
   undefined8 uStack_b0;
@@ -6100,8 +6076,6 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
       puStack_110 = puVar4;
       piStack_108 = piVar5;
       uStack_f0 = puVar4;
-      piStack_e8 = piVar5;
-      piStack_c8 = piVar5;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_110);
       *piVar5 = *piVar5 + 1;
       puStack_e0 = puVar4;
@@ -6154,7 +6128,6 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
                                (float)uStack_f8 + (fVar18 - (float)uStack_f8) * fVar21);
           uVar6 = *(undefined8 *)(param_1 + 0xb8);
           puStack_120 = puStack_e0;
-          piStack_118 = piStack_d8;
           if (puStack_e0 != (undefined8 *)0x0) {
             *piStack_d8 = *piStack_d8 + 1;
           }
@@ -6190,7 +6163,6 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
       Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>::~SharedPtr(&puStack_d0);
       if (pvStack_c0 != (void *)0x0) {
-        pvStack_b8 = pvStack_c0;
         operator delete(pvStack_c0);
       }
     }
@@ -6619,7 +6591,6 @@ void WaterConcept::InteractiveObject::debugDrawShape
   float fVar13;
   float fVar14;
   float fStack_78;
-  float fStack_74;
   undefined8 uStack_70;
   
   plVar8 = (long *)(*(long *)((ulong)p0 + 0xf8) + ((ulong)p1 & 0xffffffff) * 0x18);
@@ -6631,7 +6602,7 @@ void WaterConcept::InteractiveObject::debugDrawShape
     uVar9 = 0;
     do {
       uVar7 = uVar4;
-      puVar1 = puVar5 + uVar7;
+      puVar1 = puVar5 + uVar4;
       if (uVar6 - 1 <= uVar9) {
         puVar1 = puVar5;
       }
@@ -6647,7 +6618,6 @@ void WaterConcept::InteractiveObject::debugDrawShape
         fVar12 = (float)sqrtf(fVar14);
       }
       fStack_78 = fVar12;
-      fStack_74 = p3;
       Walaber::SpriteBatch::drawQuadColored(uVar10,p2,&uStack_70,&fStack_78);
       puVar5 = (undefined8 *)*plVar8;
       uVar6 = plVar8[1] - (long)puVar5 >> 3;
@@ -6732,7 +6702,6 @@ void WaterConcept::InteractiveObject::debugDrawAABB
   float fVar4;
   float fVar5;
   float fStack_78;
-  float fStack_74;
   float fStack_70;
   float fStack_6c;
   
@@ -6744,23 +6713,17 @@ void WaterConcept::InteractiveObject::debugDrawAABB
   fVar2 = *(float *)&p0[6].field_0xc + fVar2 * 0.5;
   fStack_6c = fVar3 + fVar5 * 0.5;
   fStack_78 = fVar4;
-  fStack_74 = p2;
   fStack_70 = fVar2;
   Walaber::SpriteBatch::drawQuadColored(0,p1,&fStack_70,&fStack_78);
   fStack_6c = fVar3 - fVar5 * 0.5;
   fStack_78 = fVar4;
-  fStack_74 = p2;
   fStack_70 = fVar2;
   Walaber::SpriteBatch::drawQuadColored(0,p1,&fStack_70,&fStack_78);
   fStack_70 = fVar2 - fVar4 * 0.5;
   fStack_78 = p2;
-  fStack_74 = fVar5;
-  fStack_6c = fVar3;
   Walaber::SpriteBatch::drawQuadColored(0,p1,&fStack_70,&fStack_78);
   fStack_70 = fVar2 + fVar4 * 0.5;
   fStack_78 = p2;
-  fStack_74 = fVar5;
-  fStack_6c = fVar3;
   Walaber::SpriteBatch::drawQuadColored(0,p1,&fStack_70,&fStack_78);
   return;
 }
@@ -7346,7 +7309,6 @@ void WaterConcept::InteractiveObject::updateShapes(long *param_1)
   uint uVar9;
   undefined8 *puVar10;
   void *pvStack_70;
-  void *pvStack_68;
   long lVar5;
   
   puVar8 = (undefined8 *)param_1[0x1f];
@@ -7376,7 +7338,6 @@ void WaterConcept::InteractiveObject::updateShapes(long *param_1)
         param_1[0x20] = param_1[0x20] + 0x18;
       }
       if (pvStack_70 != (void *)0x0) {
-        pvStack_68 = pvStack_70;
         operator delete(pvStack_70);
       }
       lVar5 = param_1[0x1c];
@@ -8005,7 +7966,6 @@ void WaterConcept::InteractiveObject::_handleCollision
   undefined8 uStack_70;
   undefined8 uStack_68;
   float fStack_60;
-  float fStack_5c;
   
   puVar4 = (undefined4 *)(ulong)(uint)p2;
   if (p0[0xaa].particlesForFluid == in_w3) {
@@ -8020,7 +7980,6 @@ void WaterConcept::InteractiveObject::_handleCollision
     fVar7 = *pfVar5;
     fVar6 = pfVar5[1];
     fStack_60 = fVar7;
-    fStack_5c = fVar6;
     if ((-1 < (int)p0[0xaa].particlesForFluid) &&
        (uVar3 = WaterConcept::InteractiveObject::shapeContains(p0,&fStack_60), (uVar3 & 1) != 0)) {
       WaterConcept::InteractiveObject::applyVacuumForce(p0,pfVar5);

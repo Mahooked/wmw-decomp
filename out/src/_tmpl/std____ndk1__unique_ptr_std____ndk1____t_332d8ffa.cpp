@@ -64,7 +64,7 @@ void std::__ndk1::
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar7 = plVar4;

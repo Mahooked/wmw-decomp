@@ -69,7 +69,7 @@ void Walaber::AnimationManager::AnimationManager(Walaber__AnimationManager *p0)
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -153,7 +153,7 @@ void Walaber::AnimationManager::~AnimationManager()
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -456,12 +456,10 @@ void Walaber::AnimationManager::_fireCallback
   ulong uVar4;
   ulong *puVar5;
   ulong uStack_48;
-  int iStack_3c;
   
   if (p0->f_0x38 != 0) {
     puVar5 = (ulong *)p0->f_0x28;
     uStack_48 = p1.f_0x0;
-    iStack_3c = p2;
     while (puVar5 != &p0->f_0x30) {
       (**(code **)(*(long *)puVar5[5] + 0x10))((long *)puVar5[5],&uStack_48);
       puVar3 = (ulong *)puVar5[1];
@@ -480,7 +478,7 @@ void Walaber::AnimationManager::_fireCallback
       else {
         do {
           puVar5 = puVar3;
-          puVar3 = (ulong *)*puVar5;
+          puVar3 = (ulong *)*puVar3;
         } while ((ulong *)*puVar5 != (ulong *)0x0);
       }
     }

@@ -45,17 +45,11 @@ void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4
   long lVar2;
   char in_w5;
   undefined1 uStack_3c;
-  char cStack_3b;
-  char cStack_3a;
   undefined1 uStack_39;
   
   uStack_3c = 0x25;
   uStack_39 = 0;
-  cStack_3b = p4;
-  cStack_3a = in_w5;
   if (in_w5 != '\0') {
-    cStack_3b = in_w5;
-    cStack_3a = p4;
   }
   lVar2 = strftime(p1,*(long *)p2 - (long)p1,&uStack_3c,p3);
   *(long *)p2 = (long)p1 + lVar2;
@@ -109,7 +103,6 @@ void std::__ndk1::__time_put::__time_put(char *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar6 = (void *)operator new(p0_00);
     uStack_68 = p0_00 | 1;
-    uStack_60 = uVar3;
     pvStack_58 = pvVar6;
   }
   memcpy(pvVar6);

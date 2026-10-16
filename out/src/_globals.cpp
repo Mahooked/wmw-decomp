@@ -3064,11 +3064,6 @@ void xmlGenericErrorDefaultFunc
 
 {
   undefined8 uStack_a0;
-  undefined8 uStack_98;
-  undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -3081,11 +3076,6 @@ void xmlGenericErrorDefaultFunc
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
   uStack_a0 = param_3;
-  uStack_98 = param_4;
-  uStack_90 = param_5;
-  uStack_88 = param_6;
-  uStack_80 = param_7;
-  uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   vfprintf(xmlGenericErrorContext,param_2,&puStack_70);
   return;
@@ -3117,7 +3107,6 @@ void initGenericErrorDefaultFunc(undefined8 *param_1)
 void xmlSetGenericErrorFunc(undefined8 param_1,code *param_2)
 
 {
-  xmlGenericErrorContext = param_1;
   xmlGenericError = xmlGenericErrorDefaultFunc;
   if (param_2 != (code *)0x0) {
     xmlGenericError = param_2;
@@ -3134,8 +3123,6 @@ void xmlSetGenericErrorFunc(undefined8 param_1,code *param_2)
 void xmlSetStructuredErrorFunc(undefined8 param_1,undefined8 param_2)
 
 {
-  xmlGenericErrorContext = param_1;
-  xmlStructuredError = param_2;
   return;
 }
 
@@ -3280,11 +3267,8 @@ void __xmlRaiseError(code *param_1,code *param_2,long param_3,long *param_4,long
   uint uStack_15c;
   uint uStack_158;
   undefined1 *puStack_c0;
-  undefined8 uStack_b8;
   undefined1 **ppuStack_b0;
   undefined8 uStack_a8;
-  undefined1 *puStack_98;
-  undefined8 uStack_90;
   undefined1 **ppuStack_88;
   undefined8 uStack_80;
   
@@ -3338,10 +3322,8 @@ LAB_00253920:
         if (63999 < iVar12) break;
         puStack_c0 = &stack0x00000040;
         uStack_80 = 0xffffff8000000000;
-        uStack_b8 = uStack_90;
         uStack_a8 = 0xffffff8000000000;
         ppuStack_b0 = &puStack_c0;
-        puStack_98 = puStack_c0;
         ppuStack_88 = &puStack_c0;
         iVar4 = vsnprintf(lVar8,(long)iVar12,param_16,&puStack_c0);
         if (((-1 < iVar4) && (iVar4 < iVar12)) && (bVar3 = iVar13 == iVar4, iVar13 = iVar4, bVar3))
@@ -3529,22 +3511,12 @@ void xmlParserValidityError
   int iVar9;
   long lStack_190;
   undefined8 uStack_f0;
-  undefined8 uStack_e8;
-  undefined8 uStack_e0;
-  undefined8 uStack_d8;
-  undefined8 uStack_d0;
-  undefined8 uStack_c8;
   undefined1 *puStack_c0;
   undefined1 **ppuStack_b8;
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
   uStack_f0 = param_3;
-  uStack_e8 = param_4;
-  uStack_e0 = param_5;
-  uStack_d8 = param_6;
-  uStack_d0 = param_7;
-  uStack_c8 = param_8;
   iVar3 = xmlStrlen(param_2);
   if ((iVar3 < 2) || (*(char *)(param_2 + iVar3 + -2) == ':')) {
     lStack_190 = 0;
@@ -3622,22 +3594,12 @@ void xmlParserValidityWarning
   long lVar9;
   int iVar10;
   undefined8 uStack_f0;
-  undefined8 uStack_e8;
-  undefined8 uStack_e0;
-  undefined8 uStack_d8;
-  undefined8 uStack_d0;
-  undefined8 uStack_c8;
   undefined1 *puStack_c0;
   undefined1 **ppuStack_b8;
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
   uStack_f0 = param_3;
-  uStack_e8 = param_4;
-  uStack_e0 = param_5;
-  uStack_d8 = param_6;
-  uStack_d0 = param_7;
-  uStack_c8 = param_8;
   iVar3 = xmlStrlen(param_2);
   lVar8 = 0;
   if ((param_1 != 0) && (iVar3 != 0)) {
@@ -3796,22 +3758,12 @@ void xmlParserError(long param_1,undefined8 param_2,undefined8 param_3,undefined
   int iVar10;
   long lStack_198;
   undefined8 uStack_f0;
-  undefined8 uStack_e8;
-  undefined8 uStack_e0;
-  undefined8 uStack_d8;
-  undefined8 uStack_d0;
-  undefined8 uStack_c8;
   undefined1 *puStack_c0;
   undefined1 **ppuStack_b8;
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
   uStack_f0 = param_3;
-  uStack_e8 = param_4;
-  uStack_e0 = param_5;
-  uStack_d8 = param_6;
-  uStack_d0 = param_7;
-  uStack_c8 = param_8;
   if (param_1 == 0) {
     lVar6 = 0;
     lStack_198 = 0;
@@ -3893,22 +3845,12 @@ void xmlParserWarning(long param_1,undefined8 param_2,undefined8 param_3,undefin
   int iVar10;
   long lStack_198;
   undefined8 uStack_f0;
-  undefined8 uStack_e8;
-  undefined8 uStack_e0;
-  undefined8 uStack_d8;
-  undefined8 uStack_d0;
-  undefined8 uStack_c8;
   undefined1 *puStack_c0;
   undefined1 **ppuStack_b8;
   undefined8 *puStack_b0;
   undefined8 uStack_a8;
   
   uStack_f0 = param_3;
-  uStack_e8 = param_4;
-  uStack_e0 = param_5;
-  uStack_d8 = param_6;
-  uStack_d0 = param_7;
-  uStack_c8 = param_8;
   if (param_1 == 0) {
     lVar6 = 0;
     lStack_198 = 0;
@@ -4167,7 +4109,6 @@ void xmlThrDefSetGenericErrorFunc(undefined8 param_1,code *param_2)
   if (param_2 != (code *)0x0) {
     PTR_xmlGenericErrorDefaultFunc_00728508 = param_2;
   }
-  DAT_0072ab80 = param_1;
   xmlMutexUnlock(DAT_0072ab00);
   return;
 }
@@ -4182,8 +4123,6 @@ void xmlThrDefSetStructuredErrorFunc(undefined8 param_1,undefined8 param_2)
 
 {
   xmlMutexLock(DAT_0072ab00);
-  DAT_0072ab78 = param_2;
-  DAT_0072ab80 = param_1;
   xmlMutexUnlock(DAT_0072ab00);
   return;
 }
@@ -5568,10 +5507,8 @@ void xmlHashScan(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 {
   undefined8 uStack_38;
-  undefined8 uStack_30;
   
   uStack_38 = param_2;
-  uStack_30 = param_3;
   xmlHashScanFull(param_1,0x25673c,&uStack_38);
   return;
 }
@@ -5786,7 +5723,7 @@ xmlHashRemoveEntry3(long *param_1,long param_2,undefined8 param_3,undefined8 par
       plVar3 = (long *)0x0;
       do {
         plVar5 = plVar4;
-        iVar1 = xmlStrEqual(plVar5[1],param_2);
+        iVar1 = xmlStrEqual(plVar4[1],param_2);
         if (((iVar1 != 0) && (iVar1 = xmlStrEqual(plVar5[2],param_3), iVar1 != 0)) &&
            (iVar1 = xmlStrEqual(plVar5[3],param_4), iVar1 != 0)) {
           if ((param_5 != (code *)0x0) && (plVar5[4] != 0)) {
@@ -6884,7 +6821,6 @@ ulong htmlParseDocument(long *param_1)
   int iVar3;
   long lVar4;
   undefined8 uVar5;
-  ulong uVar6;
   code *pcVar7;
   uint uVar8;
   char *pcVar9;
@@ -11798,7 +11734,7 @@ LAB_0026392c:
                     do {
                       iVar13 = iVar22;
                       iVar5 = iVar5 + -1;
-                      iVar22 = iVar13 + 1;
+                      iVar22 = iVar22 + 1;
                       *puVar15 = *puVar10;
                       puVar15 = puVar15 + 1;
                       puVar10 = puVar10 + 1;
@@ -22250,7 +22186,6 @@ ulong xmlCurrentChar(long param_1,undefined4 *param_2)
   undefined1 *puVar1;
   byte bVar2;
   long lVar4;
-  ulong uVar5;
   byte bVar6;
   undefined8 *puVar7;
   uint uVar8;
@@ -22383,7 +22318,6 @@ ulong xmlStringCurrentChar(long param_1,byte *param_2,undefined4 *param_3)
 {
   undefined1 *puVar1;
   byte bVar2;
-  ulong uVar4;
   byte *pbVar5;
   uint uVar6;
   long lVar7;
@@ -24837,7 +24771,7 @@ LAB_0027b8fc:
           else {
             do {
               lVar11 = lVar12;
-              lVar12 = *(long *)(lVar11 + 0x30);
+              lVar12 = *(long *)(lVar12 + 0x30);
             } while (*(long *)(lVar11 + 0x30) != 0);
             *(long *)(lVar11 + 0x30) = lVar18;
             *(long *)(lVar18 + 0x38) = lVar11;
@@ -25788,7 +25722,7 @@ void xmlValidateNCName(byte *param_1,int param_2)
     do {
       do {
         pbVar6 = pbVar7;
-        pbVar7 = pbVar6 + 1;
+        pbVar7 = pbVar7 + 1;
         bVar9 = *pbVar7;
       } while (bVar9 - 0x30 < 10);
     } while ((((bVar9 & 0xffffffdf) - 0x41 & 0xff) < 0x1a) ||
@@ -25906,7 +25840,7 @@ void xmlValidateQName(byte *param_1,int param_2)
     do {
       do {
         pbVar7 = pbVar6;
-        pbVar6 = pbVar7 + 1;
+        pbVar6 = pbVar6 + 1;
         bVar1 = *pbVar6;
         uVar8 = (ulong)bVar1;
       } while (bVar1 - 0x30 < 10);
@@ -26079,7 +26013,7 @@ void xmlValidateName(byte *param_1,int param_2)
     do {
       do {
         pbVar5 = pbVar6;
-        pbVar6 = pbVar5 + 1;
+        pbVar6 = pbVar6 + 1;
         bVar8 = *pbVar6;
       } while (bVar8 - 0x30 < 10);
     } while ((((bVar8 & 0xffffffdf) - 0x41 & 0xff) < 0x1a) ||
@@ -26198,7 +26132,7 @@ void xmlValidateNMToken(byte *param_1,int param_2)
     do {
       do {
         pbVar5 = pbVar6;
-        pbVar6 = pbVar5 + 1;
+        pbVar6 = pbVar6 + 1;
         bVar8 = *pbVar6;
       } while (bVar8 - 0x30 < 10);
     } while ((((bVar8 & 0xffffffdf) - 0x41 & 0xff) < 0x1a) ||
@@ -27782,8 +27716,8 @@ LAB_0027fb70:
         lVar5 = 2;
         do {
           lVar8 = lVar5;
-          bVar2 = pbVar16[lVar8] == 0;
-          lVar5 = lVar8 + 1;
+          bVar2 = pbVar16[lVar5] == 0;
+          lVar5 = lVar5 + 1;
         } while (bVar2 != (pbVar16[lVar8] != 0x3b));
       }
       if (bVar2) goto LAB_0027fcec;
@@ -29110,7 +29044,7 @@ long xmlAddChild(long param_1,long param_2)
         if (*(long *)(param_1 + 0x58) != 0) {
           do {
             lVar3 = lVar1;
-            lVar1 = *(long *)(lVar3 + 0x30);
+            lVar1 = *(long *)(lVar1 + 0x30);
           } while (*(long *)(lVar3 + 0x30) != 0);
           *(long *)(lVar3 + 0x30) = param_2;
           *(long *)(param_2 + 0x38) = lVar3;
@@ -29489,8 +29423,8 @@ LAB_00281b14:
       do {
         lVar7 = lVar1;
         lVar6 = lVar4;
-        lVar4 = lVar7;
-        lVar1 = *(long *)(lVar7 + 0x28);
+        lVar4 = lVar1;
+        lVar1 = *(long *)(lVar1 + 0x28);
       } while (*(long *)(lVar7 + 0x28) != 0);
       if (lVar7 != *(long *)(param_2 + 0x40)) {
         lVar6 = lVar7;
@@ -29515,7 +29449,7 @@ LAB_00281bc4:
     if (lVar8 != 0) {
       do {
         lVar4 = lVar8;
-        lVar8 = *(long *)(lVar4 + 0x30);
+        lVar8 = *(long *)(lVar8 + 0x30);
       } while (lVar8 != 0);
       *(long *)(lVar3 + 0x20) = lVar4;
     }
@@ -29673,7 +29607,7 @@ LAB_00281e3c:
           if (lVar7 == 0) goto LAB_00281f3c;
           do {
             lVar12 = lVar6;
-            lVar6 = *(long *)(lVar12 + 0x28);
+            lVar6 = *(long *)(lVar6 + 0x28);
           } while (lVar6 != 0);
           lVar6 = xmlNewNs(lVar12,*(undefined8 *)(lVar7 + 0x10),*(undefined8 *)(lVar7 + 0x18));
         }
@@ -29833,7 +29767,7 @@ LAB_00282110:
 LAB_002820d4:
         lVar1 = lVar2;
         lVar4 = 0;
-        lVar3 = lVar1;
+        lVar3 = lVar2;
 LAB_0028211c:
         *(long *)(lVar3 + 0x38) = lVar4;
       }
@@ -30018,7 +29952,7 @@ long xmlCopyDoc(long param_1,int param_2)
           if (lVar3 != 0) {
             do {
               lVar4 = lVar3;
-              lVar3 = *(long *)(lVar4 + 0x30);
+              lVar3 = *(long *)(lVar3 + 0x30);
             } while (lVar3 != 0);
             *(long *)(lVar1 + 0x20) = lVar4;
           }
@@ -33697,7 +33631,7 @@ LAB_00286e00:
               lVar13 = *(long *)(lVar18 + 0x30);
               do {
                 lVar18 = lVar13;
-                iVar5 = *(int *)(lVar18 + 8);
+                iVar5 = *(int *)(lVar13 + 8);
                 if (iVar5 == 0x14) break;
                 if (*(long *)(lVar18 + 0x40) == *(long *)(param_3 + 0x40)) goto LAB_00286e44;
                 lVar13 = *(long *)(lVar18 + 0x30);
@@ -38158,7 +38092,6 @@ void xmlRemoveRef(long param_1,long param_2)
   long lVar5;
   long lVar6;
   long lStack_58;
-  long lStack_50;
   
   uVar3 = 0xffffffff;
   if ((param_1 != 0) && (param_2 != 0)) {
@@ -38168,7 +38101,6 @@ void xmlRemoveRef(long param_1,long param_2)
       lVar5 = xmlHashLookup(lVar6,lVar4);
       if (lVar5 != 0) {
         lStack_58 = lVar5;
-        lStack_50 = param_2;
         xmlListWalk(lVar5,0x28da04,&lStack_58);
         iVar2 = xmlListEmpty(lVar5);
         if (iVar2 != 0) {
@@ -38332,7 +38264,6 @@ undefined8 xlinkGetDefaultHandler(void)
 void xlinkSetDefaultHandler(undefined8 param_1)
 
 {
-  DAT_0072af10 = param_1;
   return;
 }
 
@@ -38357,7 +38288,6 @@ undefined8 xlinkGetDefaultDetect(void)
 void xlinkSetDefaultDetect(undefined8 param_1)
 
 {
-  DAT_0072af18 = param_1;
   return;
 }
 
@@ -40271,7 +40201,6 @@ undefined8 xmlCheckHTTPInput(undefined8 param_1,undefined8 param_2)
 void xmlSetExternalEntityLoader(undefined *param_1)
 
 {
-  PTR_SUB_00728520 = param_1;
   return;
 }
 
@@ -47312,7 +47241,7 @@ int xmlUTF8Strlen(byte *param_1)
       }
     }
     param_1 = pbVar1;
-    uVar3 = (uint)*param_1;
+    uVar3 = (uint)*pbVar1;
     iVar2 = iVar2 + 1;
     if (uVar3 == 0) {
       return iVar2;
@@ -48550,11 +48479,6 @@ void xmlTextWriterWriteFormatComment
 
 {
   undefined8 uStack_a0;
-  undefined8 uStack_98;
-  undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -48564,11 +48488,6 @@ void xmlTextWriterWriteFormatComment
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
   uStack_a0 = param_3;
-  uStack_98 = param_4;
-  uStack_90 = param_5;
-  uStack_88 = param_6;
-  uStack_80 = param_7;
-  uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatComment(param_1,param_2,&puStack_70);
   return;
@@ -48944,11 +48863,6 @@ void xmlTextWriterWriteFormatRaw
 
 {
   undefined8 uStack_a0;
-  undefined8 uStack_98;
-  undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -48958,11 +48872,6 @@ void xmlTextWriterWriteFormatRaw
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
   uStack_a0 = param_3;
-  uStack_98 = param_4;
-  uStack_90 = param_5;
-  uStack_88 = param_6;
-  uStack_80 = param_7;
-  uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatRaw(param_1,param_2,&puStack_70);
   return;
@@ -49082,11 +48991,6 @@ ulong xmlTextWriterWriteFormatString
 {
   ulong uVar3;
   undefined8 uStack_a0;
-  undefined8 uStack_98;
-  undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -49094,11 +48998,6 @@ ulong xmlTextWriterWriteFormatString
   
   uVar3 = 0xffffffff;
   uStack_a0 = param_3;
-  uStack_98 = param_4;
-  uStack_90 = param_5;
-  uStack_88 = param_6;
-  uStack_80 = param_7;
-  uStack_78 = param_8;
   if ((param_1 != 0) && (param_2 != 0)) {
     puStack_60 = &uStack_a0;
     ppuStack_68 = &puStack_70;
@@ -49372,7 +49271,6 @@ void xmlTextWriterStartAttributeNS(long param_1,long param_2,char *param_3,long 
   long lVar5;
   long *plVar6;
   long lStack_70;
-  long lStack_68;
   undefined8 uStack_60;
   
   iVar2 = -1;
@@ -49385,7 +49283,6 @@ void xmlTextWriterStartAttributeNS(long param_1,long param_2,char *param_3,long 
       lVar3 = xmlStrcat(uVar4,param_2);
     }
     lStack_70 = lVar3;
-    lStack_68 = param_4;
     uStack_60 = xmlListFront(*(undefined8 *)(param_1 + 8));
     lVar5 = xmlListSearch(*(undefined8 *)(param_1 + 0x10),&lStack_70);
     if (lVar5 == 0) {
@@ -50138,11 +50035,6 @@ void xmlTextWriterWriteFormatCDATA
 
 {
   undefined8 uStack_a0;
-  undefined8 uStack_98;
-  undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -50152,11 +50044,6 @@ void xmlTextWriterWriteFormatCDATA
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffd0;
   uStack_a0 = param_3;
-  uStack_98 = param_4;
-  uStack_90 = param_5;
-  uStack_88 = param_6;
-  uStack_80 = param_7;
-  uStack_78 = param_8;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatCDATA(param_1,param_2,&puStack_70);
   return;
@@ -51051,13 +50938,7 @@ void xmlTextWriterWriteFormatDTDInternalEntity(void)
 
 {
   undefined8 in_x4;
-  undefined8 in_x5;
-  undefined8 in_x6;
-  undefined8 in_x7;
   undefined8 uStack_90;
-  undefined8 uStack_88;
-  undefined8 uStack_80;
-  undefined8 uStack_78;
   undefined1 *puStack_70;
   undefined1 **ppuStack_68;
   undefined8 *puStack_60;
@@ -51067,9 +50948,6 @@ void xmlTextWriterWriteFormatDTDInternalEntity(void)
   ppuStack_68 = &puStack_70;
   uStack_58 = 0xffffff80ffffffe0;
   uStack_90 = in_x4;
-  uStack_88 = in_x5;
-  uStack_80 = in_x6;
-  uStack_78 = in_x7;
   puStack_70 = (undefined1 *)register0x00000008;
   xmlTextWriterWriteVFormatDTDInternalEntity();
   return;
@@ -54858,7 +54736,7 @@ void xmlXPathCastNumberToString(double param_1)
       pcVar9 = pcVar8;
       do {
         pcVar10 = pcVar9;
-        pcVar9 = pcVar10 + -1;
+        pcVar9 = pcVar9 + -1;
       } while (*pcVar9 == '0');
       if (*pcVar9 != '.') {
         pcVar9 = pcVar10;
@@ -56842,7 +56720,7 @@ LAB_002a4bd0:
     }
     do {
       lVar1 = lVar3;
-      lVar3 = *(long *)(lVar1 + 0x20);
+      lVar3 = *(long *)(lVar3 + 0x20);
     } while (*(long *)(lVar1 + 0x20) != 0);
   }
   return lVar1;
@@ -62303,7 +62181,6 @@ void Java_com_disney_common_WMWRenderer_rendererInit
                     /* try { // try from 002c4128 to 002c412f has its CatchHandler @ 002c44d4 */
     pvVar11 = (void *)operator new(uVar10);
     uStack_a8 = uVar10 | 1;
-    uStack_a0 = uVar8;
     pvStack_98 = pvVar11;
 LAB_002c4140:
     memcpy(pvVar11,uVar6,uVar8);
@@ -62661,12 +62538,8 @@ void Java_com_disney_common_BaseActivity_accelerometerChanged
 
 {
   undefined4 uStack_38;
-  undefined4 uStack_34;
-  undefined4 uStack_30;
   
   uStack_38 = param_1;
-  uStack_34 = param_2;
-  uStack_30 = param_3;
   ndk::SafeQueue<ndk::AccelerometerEvent>::push(accelerometerEvents,&uStack_38);
   return;
 }
@@ -63364,7 +63237,6 @@ void Java_com_disney_common_BaseActivity_notifyViewIntent
     p0 = uVar4 + 0x10 & 0xfffffffffffffff0;
     pvVar5 = (void *)operator new(p0);
     uStack_60 = p0 | 1;
-    uStack_58 = uVar4;
     pvStack_50 = pvVar5;
   }
   memcpy(pvVar5,uVar2,uVar4);
@@ -63426,7 +63298,6 @@ ulong main(int param_1,undefined8 *param_2)
   long lStack_15b0;
   undefined4 uStack_15a8;
   undefined4 uStack_15a4;
-  undefined8 uStack_1598;
   undefined4 uStack_1590;
   undefined4 uStack_1588;
   void *pvStack_1580;
@@ -63535,7 +63406,6 @@ LAB_002c7534:
     fwrite("Use -help for a list of options.\n",0x21,1,_stderr);
     goto LAB_002c74d0;
   }
-  uStack_1598 = _stdout;
   iVar3 = access(pcStack_90,0);
   if (iVar3 == 0) {
     FUN_002c76ec(&lStack_15b0);
@@ -63937,7 +63807,6 @@ ulong sqlite3_db_status(long param_1,int param_2,int *param_3,undefined4 *param_
   int iVar4;
   int iVar5;
   int iVar6;
-  ulong uVar7;
   long lVar8;
   long *plVar9;
   long lVar10;
@@ -65004,8 +64873,6 @@ void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
   undefined8 uStack_1d0;
   undefined8 uStack_1c8;
   undefined8 uStack_1c0;
-  undefined1 *puStack_1b8;
-  undefined1 *puStack_1b0;
   undefined8 uStack_1a8;
   undefined4 uStack_1a0;
   undefined2 uStack_19c;
@@ -65014,7 +64881,6 @@ void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
   
   iVar2 = sqlite3_initialize();
   if (iVar2 == 0) {
-    puStack_1b8 = auStack_198;
     uStack_1a0 = 1000000000;
     uStack_1c0 = 0;
     uStack_1a8 = 0x15e00000000;
@@ -65024,7 +64890,6 @@ void sqlite3_vmprintf(undefined8 param_1,undefined8 *param_2)
     uStack_1e0 = *param_2;
     uStack_1c8 = param_2[3];
     uStack_1d0 = param_2[2];
-    puStack_1b0 = puStack_1b8;
     FUN_002cd2c8(&uStack_1c0,0,param_1,&uStack_1e0);
     uVar3 = FUN_002ce674(&uStack_1c0);
   }
@@ -66041,10 +65906,7 @@ undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,u
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
-  undefined8 uStack_48;
-  undefined8 uStack_40;
   undefined4 uStack_38;
-  int iStack_34;
   undefined4 uStack_30;
   undefined2 uStack_2c;
   undefined1 uStack_2a;
@@ -66059,9 +65921,6 @@ undefined8 sqlite3_vsnprintf(int param_1,undefined8 param_2,undefined8 param_3,u
     uStack_70 = *param_4;
     uStack_58 = param_4[3];
     uStack_60 = param_4[2];
-    uStack_48 = param_2;
-    uStack_40 = param_2;
-    iStack_34 = param_1;
     FUN_002cd2c8(&uStack_50,0,param_3,&uStack_70);
     param_2 = FUN_002ce674(&uStack_50);
   }
@@ -66120,18 +65979,11 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
   undefined8 uVar3;
   undefined8 uVar4;
   undefined8 uStack_500;
-  undefined8 uStack_4f8;
-  undefined8 uStack_4f0;
-  undefined8 uStack_4e8;
-  undefined8 uStack_4e0;
-  undefined8 uStack_4d8;
   undefined1 *puStack_4b0;
   undefined1 *puStack_4a8;
   undefined8 *puStack_4a0;
   undefined8 uStack_498;
   undefined8 uStack_490;
-  undefined1 *puStack_488;
-  undefined1 *puStack_480;
   undefined8 uStack_478;
   undefined4 uStack_470;
   undefined2 uStack_46c;
@@ -66139,13 +65991,7 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
   undefined1 auStack_464 [1052];
   
   uStack_500 = param_3;
-  uStack_4f8 = param_4;
-  uStack_4f0 = param_5;
-  uStack_4e8 = param_6;
-  uStack_4e0 = param_7;
-  uStack_4d8 = param_8;
   if (DAT_00729158 != (code *)0x0) {
-    puStack_488 = auStack_464;
     puStack_4a0 = &uStack_500;
     uStack_478 = 0x41a00000000;
     puStack_4a8 = &stack0xfffffffffffffb30;
@@ -66155,7 +66001,6 @@ void sqlite3_log(undefined4 param_1,undefined8 param_2,undefined8 param_3,undefi
     uStack_46a = 0;
     uStack_46c = 0;
     puStack_4b0 = (undefined1 *)register0x00000008;
-    puStack_480 = puStack_488;
     FUN_002cd2c8(&uStack_490,0,param_2,&puStack_4b0);
     uVar3 = DAT_00729160;
     pcVar2 = DAT_00729158;
@@ -66312,7 +66157,6 @@ undefined8 sqlite3_os_end(void)
 undefined8 sqlite3_enable_shared_cache(undefined4 param_1)
 
 {
-  DAT_0072912c = param_1;
   return 0;
 }
 
@@ -66709,7 +66553,7 @@ int sqlite3_backup_finish(long *param_1)
       plVar2 = (long *)(**(long **)(param_1[5] + 8) + 0x70);
       do {
         plVar3 = plVar2;
-        plVar4 = (long *)*plVar3;
+        plVar4 = (long *)*plVar2;
         plVar2 = plVar4 + 8;
       } while (plVar4 != param_1);
       *plVar3 = param_1[8];
@@ -67228,7 +67072,6 @@ void sqlite3_value_double(long param_1)
         dStack_30 = 0.0;
         FUN_002ea3c4(*(undefined8 *)(param_1 + 8),&dStack_30,*(undefined4 *)(param_1 + 0x20),
                      *(undefined1 *)(param_1 + 0x27));
-        dVar3 = dStack_30;
       }
     }
     else {
@@ -67264,7 +67107,6 @@ void FUN_002d2860(long param_1)
         dStack_30 = 0.0;
         FUN_002ea3c4(*(undefined8 *)(param_1 + 8),&dStack_30,*(undefined4 *)(param_1 + 0x20),
                      *(undefined1 *)(param_1 + 0x27));
-        dVar3 = dStack_30;
       }
     }
     else {
@@ -67315,7 +67157,6 @@ void FUN_002d2908(long param_1)
         lStack_30 = 0;
         FUN_002ea8c0(*(undefined8 *)(param_1 + 8),&lStack_30,*(undefined4 *)(param_1 + 0x20),
                      *(undefined1 *)(param_1 + 0x27));
-        lVar4 = lStack_30;
       }
     }
     else {
@@ -67361,7 +67202,6 @@ void sqlite3_value_int64(long param_1)
         lStack_30 = 0;
         FUN_002ea8c0(*(undefined8 *)(param_1 + 8),&lStack_30,*(undefined4 *)(param_1 + 0x20),
                      *(undefined1 *)(param_1 + 0x27));
-        lVar4 = lStack_30;
       }
     }
     else {
@@ -70729,7 +70569,6 @@ ulong sqlite3_get_table(long param_1,undefined8 param_2,undefined8 *param_3,unde
   int iVar4;
   undefined8 uVar5;
   long *plVar6;
-  ulong uVar7;
   long *plStack_80;
   long lStack_78;
   undefined8 uStack_70;
@@ -71086,7 +70925,6 @@ ulong FUN_002d7c1c(long *param_1,long param_2,long *param_3)
   undefined1 uVar3;
   int iVar5;
   int *piVar6;
-  ulong uVar7;
   long lVar8;
   long *plVar9;
   char *pcVar10;
@@ -74339,7 +74177,6 @@ int FUN_002dc444(int param_1,long *param_2)
   if (DAT_0072d1c4 < param_1) {
     DAT_0072d1c4 = param_1;
   }
-  DAT_0072d19c = param_1;
   if (DAT_0072d1f0 != 0) {
     if ((long)DAT_0072d188 < DAT_0072d1e8 - iVar3) {
       DAT_0072d210._4_4_ = 0;
@@ -74414,9 +74251,6 @@ ulong save_image_as_DDS(long param_1,int param_2,int param_3,uint param_4,long p
   int iStack_dc;
   undefined8 uStack_d8;
   undefined4 uStack_d0;
-  int iStack_cc;
-  int iStack_c8;
-  int iStack_c4;
   undefined1 auStack_c0 [52];
   undefined8 uStack_8c;
   undefined4 uStack_84;
@@ -74438,11 +74272,8 @@ ulong save_image_as_DDS(long param_1,int param_2,int param_3,uint param_4,long p
         uStack_84 = 0x35545844;
       }
       uStack_d0 = 0x81007;
-      iStack_c4 = iStack_dc;
       uStack_8c = 0x400000020;
       uStack_6c = 0x1000;
-      iStack_cc = param_3;
-      iStack_c8 = param_2;
       uVar2 = fopen(param_1,&DAT_0061a74e);
       uVar5 = 1;
       fwrite(&uStack_d8,0x80,1,uVar2);
@@ -75516,7 +75347,6 @@ ulong stbi_jpeg_test_file(undefined8 param_1)
 {
   char cVar2;
   int iVar3;
-  ulong uVar4;
   undefined1 auStack_3758 [16];
   undefined8 uStack_3748;
   undefined1 uStack_70;
@@ -76566,7 +76396,6 @@ void stbi_hdr_to_ldr_scale(float param_1)
 void stbi_ldr_to_hdr_gamma(undefined4 param_1)
 
 {
-  DAT_0072a838 = param_1;
   return;
 }
 
@@ -76579,7 +76408,6 @@ void stbi_ldr_to_hdr_gamma(undefined4 param_1)
 void stbi_ldr_to_hdr_scale(undefined4 param_1)
 
 {
-  DAT_0072a83c = param_1;
   return;
 }
 
@@ -76862,7 +76690,6 @@ void stbi_zlib_decode_malloc_guesssize(long param_1,int param_2,int param_3,int 
       pvVar4 = (void *)0x0;
     }
     else {
-      pvVar4 = pvStack_1028;
       if (param_4 != (int *)0x0) {
         *param_4 = iStack_1030 - (int)pvStack_1028;
       }
@@ -76939,7 +76766,6 @@ void stbi_zlib_decode_noheader_malloc(long param_1,int param_2,int *param_3)
       pvVar4 = (void *)0x0;
     }
     else {
-      pvVar4 = pvStack_1028;
       if (param_3 != (int *)0x0) {
         *param_3 = iStack_1030 - (int)pvStack_1028;
       }
@@ -77108,7 +76934,7 @@ LAB_003a6020:
           }
           do {
             uVar35 = uVar1;
-            uVar1 = uVar35 << 1;
+            uVar1 = uVar1 << 1;
           } while (uVar35 < uVar14);
           lVar25 = realloc(*(undefined8 *)(param_1 + 10),uVar35);
           if (lVar25 == 0) goto LAB_003a618c;
@@ -77461,12 +77287,10 @@ void stbi_png_info(undefined8 param_1,undefined4 *param_2,undefined4 *param_3,un
   undefined4 uStack_88;
   undefined4 uStack_84;
   undefined4 uStack_80;
-  long lStack_78;
   
   lVar3 = fopen(param_1,&DAT_0061ee22);
   uVar4 = 0;
   if (lVar3 != 0) {
-    lStack_78 = lVar3;
     iVar2 = FUN_003a57e0(&uStack_88,2,0);
     if (iVar2 == 0) {
       fclose(lVar3);
@@ -81321,8 +81145,6 @@ ulong VP8LDecodeAlphaImageStream
   undefined4 *p0;
   ulong uVar3;
   undefined4 uStack_108;
-  undefined4 uStack_104;
-  undefined8 uStack_d0;
   
   p0 = (undefined4 *)calloc(1,0x130);
   if (p0 == (undefined4 *)0x0) {
@@ -81337,8 +81159,6 @@ ulong VP8LDecodeAlphaImageStream
     WebPInitCustomIo(0,&uStack_108);
     *p0 = 0;
     uStack_108 = param_1;
-    uStack_104 = param_2;
-    uStack_d0 = param_5;
     VP8LInitBitReader(p0 + 0xc,param_3,param_4);
     p0[1] = 1;
     iVar2 = FUN_003b2948(param_1,param_2,1,p0,0);
@@ -82199,7 +82019,6 @@ ulong FUN_003b49c0(long param_1,long param_2,undefined8 *param_3)
   uint *puVar4;
   ulong uVar5;
   long lStack_128;
-  long lStack_120;
   long lStack_118;
   undefined8 uStack_110;
   undefined8 uStack_108;
@@ -82210,13 +82029,12 @@ ulong FUN_003b49c0(long param_1,long param_2,undefined8 *param_3)
   long lStack_80;
   
   lStack_128 = param_1;
-  lStack_120 = param_2;
   uVar2 = FUN_003b4358(param_1,param_2,0,0,0,&lStack_128);
   uVar5 = (ulong)uVar2;
   if (uVar2 != 0) goto LAB_003b4a08;
   VP8InitIoInternal(&uStack_e8,0x200);
   lStack_80 = lStack_128 + lStack_118;
-  lStack_88 = lStack_120 - lStack_118;
+  lStack_88 = param_2 - lStack_118;
   WebPInitCustomIo(param_3,&uStack_e8);
   if (iStack_f0 == 0) {
     puVar4 = (uint *)VP8New();
@@ -85732,7 +85550,6 @@ void VP8GetCostLuma4(long param_1,long param_2)
 {
   long lVar2;
   long lStack_58;
-  long lStack_50;
   undefined4 uStack_48;
   long lStack_40;
   long lStack_38;
@@ -85752,7 +85569,6 @@ void VP8GetCostLuma4(long param_1,long param_2)
     }
     lVar2 = lVar2 + -1;
   } while (lVar2 != -1);
-  lStack_50 = param_2;
   func_0x003c1a00(*(int *)(param_1 + (long)((int)*(uint *)(param_1 + 0x90) >> 2) * 4 + 0xb8) +
                   *(int *)(param_1 + ((ulong)*(uint *)(param_1 + 0x90) & 3) * 4 + 0x94),&lStack_58);
   return;
@@ -85908,7 +85724,7 @@ ulong VP8GetCostUV(long param_1,long param_2)
         iVar4 = func_0x003c1a00(*puVar1 + *puVar10,&uStack_98);
         lVar9 = lVar9 + 1;
         uVar7 = iVar4 + uVar7;
-        uVar2 = uVar2 >> 0x1f ^ 1;
+        uVar2 = uStack_94 >> 0x1f ^ 1;
         lVar13 = lVar13 + 0x20;
         *puVar1 = uVar2;
         *puVar10 = uVar2;
@@ -86046,7 +85862,6 @@ ulong VP8EncLoop(long param_1)
           }
           lVar27 = lVar27 + -1;
         } while (lVar27 != 0xf);
-        psStack_570 = asStack_528;
         iStack_110 = func_0x003c2eb8(lVar22,iStack_110 + iStack_134,&uStack_578);
         lStack_560 = lVar13 + 0xab8;
         lStack_558 = lVar13 + 0xed8;
@@ -87029,7 +86844,7 @@ LAB_003c3dd4:
                 uVar11 = uVar27;
               }
               uVar27 = uVar11;
-              uVar26 = (undefined2)uVar27;
+              uVar26 = (undefined2)uVar11;
               lVar35 = lVar35 + 1;
               dVar42 = dVar38;
             } while (lVar35 < (int)uVar17);
@@ -91199,8 +91014,6 @@ void VP8LEncodeImage(long param_1,long param_2)
   undefined4 uStack_74;
   undefined8 uStack_70;
   undefined5 uStack_68;
-  undefined3 uStack_63;
-  undefined1 uStack_60;
   undefined1 uStack_5f;
   undefined1 uStack_5e;
   undefined1 uStack_5d;
@@ -91697,7 +91510,7 @@ undefined8 * WebPDemuxInternal(undefined8 *param_1,int param_2,undefined4 *param
       piVar2 = &DAT_007105c0;
       do {
         piVar10 = piVar2;
-        pcVar7 = *(code **)(piVar10 + 2);
+        pcVar7 = *(code **)(piVar2 + 2);
         if (pcVar7 == (code *)0x0) {
           iVar1 = 2;
           goto joined_r0x003cb70c;
@@ -92068,7 +91881,7 @@ undefined8 FUN_003cbaec(long *param_1)
         do {
           plVar7 = plVar3;
           lVar5 = lVar6;
-          lVar6 = *plVar7;
+          lVar6 = *plVar3;
           plVar3 = (long *)(lVar6 + 0x40);
         } while (lVar6 != 0);
         if ((lVar5 == 0) || (*(int *)(lVar5 + 0x1c) != 0)) {
@@ -96315,7 +96128,6 @@ ulong wUnzRepair(undefined8 param_1,undefined8 param_2,undefined8 param_3,ulong 
   undefined1 uStack_2582;
   undefined1 uStack_2581;
   uint6 uStack_2580;
-  undefined2 uStack_257a;
   undefined8 uStack_2570;
   undefined2 uStack_2568;
   undefined1 uStack_2566;
@@ -96475,8 +96287,6 @@ LAB_003d9f44:
   uStack_2582 = (undefined1)((uint)iStack_25a0 >> 0x10);
   uStack_2581 = (undefined1)((uint)iStack_25a0 >> 0x18);
   uStack_2580 = (uint6)uVar23;
-  uStack_2586 = uStack_2588;
-  uStack_2585 = uStack_2587;
   lVar17 = fwrite(&uStack_2590,1,0x16,uVar16);
   if (lVar17 != 0x16) {
     uVar25 = 0xffffffff;
@@ -100152,7 +99962,6 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   float fVar15;
   undefined8 uVar16;
   float fVar17;
-  float fVar18;
   float fVar19;
   float fVar20;
   float fVar21;
@@ -100171,35 +99980,12 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   float fStack_148;
   float fStack_144;
   float fStack_140;
-  float fStack_13c;
   undefined4 uStack_138;
-  long lStack_134;
-  float fStack_12c;
-  float fStack_128;
-  float fStack_124;
   undefined8 uStack_120;
   undefined8 uStack_118;
-  float fStack_110;
   float fStack_10c;
-  float fStack_108;
-  float fStack_104;
-  undefined4 uStack_100;
   undefined8 uStack_fc;
-  float fStack_f4;
-  float fStack_f0;
-  float fStack_ec;
-  float fStack_e8;
-  undefined4 uStack_e4;
   undefined8 uStack_e0;
-  float fStack_d8;
-  float fStack_d4;
-  float fStack_d0;
-  float fStack_cc;
-  undefined4 uStack_c8;
-  undefined8 uStack_c4;
-  float fStack_bc;
-  float fStack_b8;
-  float fStack_b4;
   undefined8 uStack_b0;
   
   uStack_158 = 0;
@@ -100231,7 +100017,7 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   fVar17 = (float)uStack_178 + (float)uStack_180;
   uVar13 = *(undefined8 *)(*param_2 + 0x8c);
   uVar16 = *(undefined8 *)(*param_2 + 0x84);
-  fVar18 = uStack_178._4_4_ + uStack_180._4_4_;
+  fStack_10c = uStack_178._4_4_ + uStack_180._4_4_;
   fVar9 = (float)*param_3;
   fVar10 = (float)((ulong)*param_3 >> 0x20);
   fVar8 = (float)uVar16 - (float)uVar13;
@@ -100250,17 +100036,11 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
                         fVar21 * fVar9 + (float)((ulong)uVar13 >> 0x20) * fVar10,
                         (float)uStack_158 + (fVar20 * fVar9 - (float)uVar13 * fVar10));
   fStack_148 = fVar11;
-  fStack_144 = fVar12;
   uStack_120 = CONCAT44(uVar3,fVar14);
-  fStack_12c = fVar11;
-  fStack_128 = fVar12;
   fVar20 = (float)uStack_168 * -0.5;
   fVar21 = (float)((ulong)uStack_168 >> 0x20) * -0.5;
   fStack_140 = fVar19;
-  fStack_13c = fVar14;
   uStack_138 = uVar3;
-  lStack_134 = lStack_150;
-  fStack_124 = fVar19;
   fVar9 = (float)cosf(uStack_15c);
   fVar10 = (float)sinf(uVar1);
   uVar1 = uStack_15c;
@@ -100270,24 +100050,14 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
                         (float)uStack_158 + (fVar20 * fVar9 - (float)uVar13 * fVar10));
   fVar10 = (float)uStack_168 * 0.5;
   fVar20 = (float)((ulong)uStack_168 >> 0x20) * 0.5;
-  fStack_110 = fVar11;
-  fStack_10c = fVar18;
-  fStack_108 = fVar19;
-  fStack_104 = fVar15;
-  uStack_100 = uVar3;
   fVar11 = (float)cosf(uStack_15c);
   fVar9 = (float)sinf(uVar1);
   uVar13 = NEON_rev64(CONCAT44(fVar20,fVar10),4);
   uStack_fc = CONCAT44((float)((ulong)uStack_158 >> 0x20) +
                        fVar20 * fVar11 + (float)((ulong)uVar13 >> 0x20) * fVar9,
                        (float)uStack_158 + (fVar10 * fVar11 - (float)uVar13 * fVar9));
-  fStack_f0 = fVar12;
   fVar9 = (float)uStack_168 * 0.5;
   fVar10 = (float)((ulong)uStack_168 >> 0x20) * -0.5;
-  fStack_f4 = fVar17;
-  fStack_ec = fVar8;
-  fStack_e8 = fVar14;
-  uStack_e4 = uVar3;
   fVar11 = (float)cosf(uStack_15c);
   fVar12 = (float)sinf(uStack_15c);
   uVar13 = NEON_rev64(CONCAT44(fVar10,fVar9),4);
@@ -100295,15 +100065,6 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
                        fVar10 * fVar11 + (float)((ulong)uVar13 >> 0x20) * fVar12,
                        (float)uStack_158 + (fVar9 * fVar11 - (float)uVar13 * fVar12));
   uStack_b0 = CONCAT44(uVar3,fVar15);
-  fStack_d8 = fVar17;
-  fStack_d4 = fVar18;
-  fStack_d0 = fVar8;
-  fStack_cc = fVar15;
-  uStack_c8 = uVar3;
-  uStack_c4 = uStack_e0;
-  fStack_bc = fVar17;
-  fStack_b8 = fVar18;
-  fStack_b4 = fVar8;
   lVar6 = Walaber::GraphicsGL::getState();
   cVar4 = *(char *)(lVar6 + 4);
   uVar3 = *(undefined4 *)(lVar6 + 8);
@@ -100704,7 +100465,7 @@ void FUN_005a3b10(uint *param_1,undefined8 param_2)
       pbVar7 = pbVar12;
       do {
         pbVar10 = pbVar7;
-        pbVar7 = pbVar10 + 1;
+        pbVar7 = pbVar7 + 1;
         uVar8 = uVar9 + uVar8 * 10;
         if (pbVar3 <= pbVar7) break;
         uVar9 = *pbVar7 - 0x30;
@@ -101860,7 +101621,6 @@ void __gxx_personality_v0(int param_1,ulong param_2,ulong param_3,long param_4,l
       else {
         if (((uint)param_2 >> 2 & 1) == 0) {
           func_0x005f2948(&lStack_78,param_2,param_3 == 0x434c4e47432b2b00,param_4,param_5);
-          iVar3 = iStack_50;
           if (iStack_50 != 6) goto LAB_005f2910;
           _Unwind_SetGR(param_5,0,param_4);
           _Unwind_SetGR(param_5,1,lStack_78);
@@ -101892,7 +101652,6 @@ void __gxx_personality_v0(int param_1,ulong param_2,ulong param_3,long param_4,l
     }
     else {
       func_0x005f2948(&lStack_78,param_2,param_3 == 0x434c4e47432b2b00,param_4,param_5);
-      iVar3 = iStack_50;
       if ((iStack_50 == 6) && (param_3 == 0x434c4e47432b2b00)) {
         iVar3 = 6;
         *(int *)(param_4 + -0x2c) = (int)lStack_78;
@@ -102141,7 +101900,7 @@ ushort * FUN_005f34bc(long param_1)
     puVar4 = (ushort *)0x0;
     do {
       puVar3 = puVar5;
-      uVar2 = puVar3[1];
+      uVar2 = puVar5[1];
       if (uVar1 < uVar2) {
         uVar2 = uVar2 - (ushort)uVar1;
         puVar3[1] = uVar2;
@@ -102253,9 +102012,6 @@ void __dynamic_cast(long *param_1,undefined8 param_2,long *param_3,undefined8 pa
   long *plVar1;
   long lVar3;
   long *plStack_78;
-  long *plStack_70;
-  undefined8 uStack_68;
-  undefined8 uStack_60;
   long lStack_58;
   long lStack_50;
   undefined8 uStack_48;
@@ -102276,9 +102032,6 @@ void __dynamic_cast(long *param_1,undefined8 param_2,long *param_3,undefined8 pa
   uStack_2c = 0;
   lStack_58 = 0;
   plStack_78 = param_3;
-  plStack_70 = param_1;
-  uStack_68 = param_2;
-  uStack_60 = param_4;
   if (plVar1 == param_3) {
     uStack_30 = 1;
     (**(code **)(*param_3 + 0x28))(param_3,&plStack_78,lVar3,lVar3,1,0);
@@ -103291,7 +103044,6 @@ LAB_00609dec:
 undefined4 __getf2(undefined1 param_1 [16],undefined1 param_2 [16])
 
 {
-  undefined8 uVar1;
   bool bVar2;
   ulong uVar3;
   ulong uVar4;
@@ -103309,7 +103061,6 @@ undefined4 __getf2(undefined1 param_1 [16],undefined1 param_2 [16])
   uVar12 = param_2._0_8_;
   uVar11 = param_1._8_8_;
   uVar10 = param_1._0_8_;
-  uVar1 = fpcr;
   uVar8 = uVar11 >> 0x30 & 0x7fff;
   uVar4 = uVar11 & 0xffffffffffff;
   uVar5 = uVar13 & 0xffffffffffff;
@@ -103371,7 +103122,6 @@ LAB_00609fc0:
 undefined4 __lttf2(undefined1 param_1 [16],undefined1 param_2 [16])
 
 {
-  undefined8 uVar1;
   bool bVar2;
   ulong uVar3;
   ulong uVar4;
@@ -103389,7 +103139,6 @@ undefined4 __lttf2(undefined1 param_1 [16],undefined1 param_2 [16])
   uVar12 = param_2._0_8_;
   uVar11 = param_1._8_8_;
   uVar10 = param_1._0_8_;
-  uVar1 = fpcr;
   uVar8 = uVar11 >> 0x30 & 0x7fff;
   uVar4 = uVar11 & 0xffffffffffff;
   uVar5 = uVar13 & 0xffffffffffff;
@@ -104503,7 +104252,6 @@ int __fixtfsi(undefined1 param_1 [16])
 
 {
   ushort uVar1;
-  undefined8 uVar2;
   uint uVar3;
   ulong uVar4;
   int iVar5;
@@ -104512,7 +104260,6 @@ int __fixtfsi(undefined1 param_1 [16])
   long lVar8;
   
   lVar8 = param_1._0_8_;
-  uVar2 = fpcr;
   uVar6 = param_1._14_2_ & 0x7fff;
   uVar4 = param_1._8_8_ & 0xffffffffffff;
   uVar1 = (ushort)uVar6;
@@ -104601,14 +104348,12 @@ undefined1  [16] __floatsitf(uint param_1)
 undefined1  [16] __extenddftf2(ulong param_1)
 
 {
-  undefined8 uVar1;
   ulong uVar2;
   ulong uVar3;
   ulong uVar4;
   uint uVar5;
   undefined1 auVar6 [16];
   
-  uVar1 = fpcr;
   uVar2 = param_1 >> 0x34 & 0x7ff;
   uVar4 = param_1 & 0xfffffffffffff;
   if ((uVar2 + 1 & 0x7ff) < 2) {
@@ -105925,21 +105670,16 @@ LAB_0060ef24:
 ulong __sfp_handle_exceptions(ulong param_1)
 
 {
-  undefined8 uVar1;
   uint uVar2;
   
   uVar2 = (uint)param_1;
   if ((param_1 & 1) != 0) {
-    uVar1 = fpsr;
   }
   if ((uVar2 >> 1 & 1) != 0) {
-    uVar1 = fpsr;
   }
   if ((uVar2 >> 2 & 1) != 0) {
-    uVar1 = fpsr;
   }
   if ((uVar2 >> 3 & 1) != 0) {
-    uVar1 = fpsr;
   }
   if ((uVar2 >> 4 & 1) != 0) {
     param_1 = fpsr;

@@ -510,15 +510,10 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   undefined8 *puVar2;
   int *piVar3;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 0x1c8);
   puVar2 = (undefined8 *)operator new(0x28);
@@ -531,19 +526,14 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
-  piStack_70 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0049d330 to 0049d33b has its CatchHandler @ 0049d380 */
   puStack_98 = puVar2;
-  piStack_90 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(param_2,param_1 + 8,&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);

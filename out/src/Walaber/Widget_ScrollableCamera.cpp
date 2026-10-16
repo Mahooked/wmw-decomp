@@ -323,7 +323,6 @@ undefined8 Walaber::Widget_ScrollableCamera::update(float p0,Walaber__Widget__Wi
   float fVar12;
   float fVar13;
   float fStack_68;
-  undefined4 uStack_64;
   undefined1 auStack_60 [4];
   undefined4 uStack_5c;
   float fStack_58;
@@ -480,7 +479,6 @@ LAB_003865d4:
       fVar10 = *(float *)&p1[0xe].field_0x8;
       iVar11 = *(int *)(*(long *)&p1[0x14].f_0x10 + uVar7 * 4);
       Walaber::Node::getWorldPosition(auStack_60,uVar9);
-      uStack_64 = uStack_5c;
       fStack_68 = (float)iVar11 - fVar10;
       Walaber::Widget_Group::setLocalPosition(uVar9,&fStack_68);
       lVar3 = *(long *)&p1[0x11].field_0x4;
@@ -620,7 +618,6 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
   float fVar5;
   int iStack_6c;
   float fStack_68;
-  float fStack_64;
   long lStack_60;
   int *piStack_58;
   float fStack_50;
@@ -651,7 +648,6 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
   fStack_68 = fStack_50 + *(float *)(plVar4 + 0x12) * fStack_40 * (float)in_w1 * 2.5;
   _fStack_50 = CONCAT44(fStack_4c,fStack_68);
   *(undefined1 *)(plVar4 + 0x16) = 1;
-  fStack_64 = fStack_4c;
   Walaber::Widget::setLocalPosition(plVar4,&fStack_68);
   Walaber::Widget_Label::_setTextTopLeft(plVar4);
   (**(code **)(*plVar4 + 0x40))(plVar4,10);

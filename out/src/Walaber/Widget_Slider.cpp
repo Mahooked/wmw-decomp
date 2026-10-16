@@ -458,7 +458,6 @@ void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
     if (-1 < iVar6) {
       iVar14 = 0;
       do {
-        uStack_f8 = uStack_a0;
         fVar15 = 1.0;
         if (iVar14 == *(int *)&p0[7].field_0xc) {
           fVar15 = (float)sinf(*(float *)&p0[7].field_0x14 * 3.0);
@@ -619,7 +618,6 @@ void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
 {
   ulong uVar2;
   undefined8 uVar3;
-  Walaber__FingerInfo *extraout_x1;
   long in_x2;
   float fVar4;
   float fVar5;
@@ -664,7 +662,6 @@ LAB_00389638:
   }
   Walaber::Widget_Slider::_setValue(uVar2);
   uVar3 = 1;
-  p1 = extraout_x1;
 LAB_00389654:
   return;
 }

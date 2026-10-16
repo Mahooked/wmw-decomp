@@ -91,7 +91,7 @@ ulong std::__ndk1::
                     /* try { // try from 004c726c to 004c7273 has its CatchHandler @ 004c736c */
           WaterConcept::Screen_Editor::ObjectData::ObjectData(puStack_80,puVar5);
           puStack_80 = puStack_80 + 0x11;
-          puStack_b0 = puStack_88;
+          puStack_b0 = puStack_b0;
         }
         puStack_a8 = puStack_80;
         std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(&puStack_90);

@@ -4410,13 +4410,9 @@ void WaterConcept::Screen_WorldSelect::_buildUI(long param_1)
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
   int *piStack_68;
   char *pcStack_60;
@@ -4475,7 +4471,6 @@ void WaterConcept::Screen_WorldSelect::_buildUI(long param_1)
   }
   operator delete(p0);
   pcStack_40 = pcStack_60;
-  uStack_48 = piStack_68;
   puStack_50 = puStack_70;
 switchD_00590088_caseD_4:
                     /* try { // try from 00590198 to 005901d7 has its CatchHandler @ 005902b4 */
@@ -4489,20 +4484,15 @@ switchD_00590088_caseD_4:
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_a0 = puVar3;
-  piStack_98 = piVar4;
-  piStack_78 = piVar4;
   puStack_70 = puVar3;
-  piStack_68 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
   *piVar4 = *piVar4 + 1;
   puStack_90 = puVar3;
-  piStack_88 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   uVar5 = *(undefined8 *)(param_1 + 0x10);
   *piVar4 = *piVar4 + 1;
                     /* try { // try from 00590224 to 0059022f has its CatchHandler @ 00590294 */
   puStack_b0 = puVar3;
-  piStack_a8 = piVar4;
   Walaber::WidgetHelper::loadWidgetsXML(&puStack_50,uVar5,&puStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
@@ -4779,7 +4769,7 @@ LAB_005905c8:
       else {
         do {
           plVar17 = plVar15;
-          plVar15 = (long *)*plVar17;
+          plVar15 = (long *)*plVar15;
         } while ((long *)*plVar17 != (long *)0x0);
       }
       plVar7 = plVar17;
@@ -6416,8 +6406,6 @@ void WaterConcept::Screen_WorldSelect::handleEvent
   undefined *puVar7;
   undefined4 *puVar8;
   undefined1 *puVar9;
-  undefined1 uVar10;
-  undefined2 uVar11;
   int iVar12;
   bool bVar13;
   undefined4 uVar14;
@@ -6444,7 +6432,6 @@ void WaterConcept::Screen_WorldSelect::handleEvent
   undefined8 uStack_598;
   undefined8 uStack_590;
   void *pvStack_588;
-  void *pvStack_580;
   byte bStack_570;
   undefined7 uStack_56f;
   undefined1 uStack_568;
@@ -8359,7 +8346,6 @@ LAB_00594d30:
                     /* try { // try from 00595eb4 to 00595ebb has its CatchHandler @ 005972d8 */
                   pvVar29 = (void *)operator new(uVar30);
                   uStack_510 = uVar30 | 1;
-                  uStack_508 = uVar20;
                   pvStack_500 = pvVar29;
 LAB_00595ecc:
                   memcpy(pvVar29,pcVar22,uVar20);
@@ -8460,7 +8446,6 @@ LAB_00595ecc:
                     /* try { // try from 005960ac to 005960b3 has its CatchHandler @ 005972d0 */
                   pvVar29 = (void *)operator new(uVar30);
                   uStack_410 = uVar30 | 1;
-                  uStack_408 = uVar20;
                   pvStack_400 = pvVar29;
 LAB_005960c4:
                   memcpy(pvVar29,&bStack_280,uVar20);
@@ -8635,7 +8620,6 @@ LAB_005960c4:
                     /* try { // try from 00596e84 to 00596e8b has its CatchHandler @ 0059716c */
                     pvVar29 = (void *)operator new(uVar30);
                     uStack_4c8 = uVar30 | 1;
-                    uStack_4c0 = uVar20;
                     pvStack_4b8 = pvVar29;
 LAB_00596e9c:
                     memcpy(pvVar29,pcVar22,uVar20);
@@ -8893,8 +8877,6 @@ LAB_00596420:
                                                                CONCAT41(uStack_277,bStack_278)))) >>
                                    0x20);
                       bStack_3f0 = bStack_280;
-                      uStack_3ef = uStack_27f;
-                      uStack_3eb = uStack_27b;
                       uStack_3ea = (undefined1)uStack_27a;
                       uStack_3e9 = (undefined1)((ushort)uStack_27a >> 8);
                     }
@@ -10754,7 +10736,7 @@ LAB_005969cc:
                   else {
                     do {
                       pbVar31 = pbVar26;
-                      pbVar26 = *(byte **)pbVar31;
+                      pbVar26 = *(byte **)pbVar26;
                     } while (*(byte **)pbVar31 != (byte *)0x0);
                   }
                 }
@@ -10810,7 +10792,6 @@ LAB_005969cc:
                     /* try { // try from 00595de0 to 00595df3 has its CatchHandler @ 00597280 */
             WaterConcept::GameSettings::goPlayLevel(&uStack_2c0,0xffffffff,&pvStack_588,0);
             if (pvStack_588 != (void *)0x0) {
-              pvStack_580 = pvStack_588;
               operator delete(pvStack_588);
             }
             if (((byte)uStack_2c0 & 1) != 0) {
@@ -10915,9 +10896,7 @@ LAB_005969cc:
       uStack_27f = 0x70cd;
       uVar14 = uStack_27f;
       uStack_27b = 0;
-      uVar10 = uStack_27b;
       uStack_27a = 0;
-      uVar11 = uStack_27a;
       Walaber::PropertyList::~PropertyList(apbStack_270);
       bStack_278 = 0x10;
       uStack_277 = 0x3c000000;
@@ -10925,9 +10904,9 @@ LAB_005969cc:
       uStack_272 = 0;
       uStack_271 = 0;
       bStack_280 = bVar28;
-      uStack_27f = uVar14;
-      uStack_27b = uVar10;
-      uStack_27a = uVar11;
+      uStack_27f = uStack_27f;
+      uStack_27b = uStack_27b;
+      uStack_27a = uStack_27a;
       Walaber::PropertyList::PropertyList(apbStack_270);
       uStack_297 = 0;
       uStack_296 = 0;
@@ -13366,7 +13345,7 @@ LAB_00598fc4:
           else {
             do {
               plVar34 = plVar40;
-              plVar40 = (long *)*plVar34;
+              plVar40 = (long *)*plVar40;
             } while ((long *)*plVar34 != (long *)0x0);
           }
           plVar31 = plVar34;
@@ -13412,7 +13391,7 @@ LAB_00598fc4:
         else {
           do {
             plVar40 = plVar31;
-            plVar31 = (long *)*plVar40;
+            plVar31 = (long *)*plVar31;
           } while ((long *)*plVar40 != (long *)0x0);
         }
       }

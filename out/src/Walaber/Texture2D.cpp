@@ -35,13 +35,10 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_b8;
-  int *piStack_b0;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
   int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   byte bStack_68;
   undefined7 uStack_67;
   undefined1 uStack_60;
@@ -94,9 +91,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   uStack_5b = (undefined3)((ulong)piVar3 >> 0x28);
   *piVar3 = 3;
   puStack_a8 = puVar2;
-  piStack_a0 = piVar3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   *piVar3 = *piVar3 + 1;
   puStack_98 = puVar2;
@@ -105,7 +100,6 @@ void Walaber::Texture2D::initFromFileName(long param_1)
                     /* try { // try from 00397c54 to 00397c57 has its CatchHandler @ 00397cdc */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_b8 = puStack_98;
-  piStack_b0 = piStack_90;
   if (puStack_98 != (undefined8 *)0x0) {
     *piStack_90 = *piStack_90 + 1;
   }
@@ -135,9 +129,7 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
   int *piStack_c8;
   int *piStack_c0;
   undefined8 *puStack_b8;
-  int *piStack_b0;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
   int *piStack_90;
   undefined8 *puStack_88;
@@ -210,7 +202,6 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
     uStack_5b = (undefined3)((ulong)piVar3 >> 0x28);
     *piVar3 = 3;
     puStack_a8 = puVar2;
-    piStack_a0 = piVar3;
     puStack_88 = puVar2;
     piStack_80 = piVar3;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
@@ -221,7 +212,6 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
                     /* try { // try from 00397f5c to 00397f5f has its CatchHandler @ 00398030 */
     uVar4 = Walaber::FileManager::getInstancePtr();
     puStack_b8 = puStack_98;
-    piStack_b0 = piStack_90;
     if (puStack_98 != (undefined8 *)0x0) {
       *piStack_90 = *piStack_90 + 1;
     }
@@ -376,7 +366,7 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
         else {
           do {
             plVar16 = plVar12;
-            plVar12 = (long *)*plVar16;
+            plVar12 = (long *)*plVar12;
           } while ((long *)*plVar16 != (long *)0x0);
         }
       }
@@ -1046,7 +1036,6 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
   ulong uStack_68;
   int *piStack_60;
   ulong uStack_58;
-  int *piStack_50;
   void *pvStack_48;
   undefined4 uStack_40;
   
@@ -1066,7 +1055,6 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
     uStack_68 = uVar1;
   }
   uStack_58 = uVar1;
-  piStack_50 = piStack_60;
   Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(&uStack_58);
   *(undefined8 *)(param_1 + 0x7c) = *(undefined8 *)(uVar1 + 0x7c);
   *(undefined8 *)(param_1 + 0x8c) = 0;

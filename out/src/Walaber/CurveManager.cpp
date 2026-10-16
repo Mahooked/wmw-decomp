@@ -114,13 +114,9 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
   long *plStack_110;
   int *piStack_108;
   undefined8 *puStack_100;
-  int *piStack_f8;
   undefined8 *puStack_f0;
-  int *piStack_e8;
   undefined8 *puStack_e0;
-  int *piStack_d8;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   byte abStack_c0 [16];
   void *pvStack_b0;
   long *plStack_a8;
@@ -169,20 +165,16 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
       piVar4 = (int *)operator new(4);
       *piVar4 = 3;
       puStack_f0 = puVar3;
-      piStack_e8 = piVar4;
-      piStack_c8 = piVar4;
       puStack_78 = puVar3;
       piStack_70 = piVar4;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
       *piVar4 = *piVar4 + 1;
       puStack_e0 = puVar3;
-      piStack_d8 = piVar4;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f0);
       uVar5 = *(undefined8 *)(param_1 + 0x40);
       *piVar4 = *piVar4 + 1;
                     /* try { // try from 003e1b2c to 003e1b3f has its CatchHandler @ 003e1b9c */
       puStack_100 = puVar3;
-      piStack_f8 = piVar4;
       Walaber::FileManager::readFile(uVar5,param_3,&puStack_100,abStack_c0,0);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_100);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
@@ -367,7 +359,7 @@ void Walaber::CurveManager::_initCurveFileLoaded(void *p0)
         else {
           do {
             puVar10 = puVar9;
-            puVar9 = (ulong *)*puVar10;
+            puVar9 = (ulong *)*puVar9;
           } while ((ulong *)*puVar10 != (ulong *)0x0);
         }
         bVar3 = true;
@@ -416,15 +408,10 @@ void Walaber::CurveManager::loadCurveCollection(long param_1,byte *param_2,long 
   byte *pbVar14;
   byte *pbVar15;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   byte abStack_80 [16];
   void *pvStack_70;
   long lStack_68;
@@ -497,20 +484,15 @@ LAB_003e20f8:
       piVar9 = (int *)operator new(4);
       *piVar9 = 3;
       puStack_c0 = puVar8;
-      piStack_b8 = piVar9;
-      piStack_98 = piVar9;
       puStack_90 = puVar8;
-      piStack_88 = piVar9;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       *piVar9 = *piVar9 + 1;
       puStack_b0 = puVar8;
-      piStack_a8 = piVar9;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
       uVar10 = *(undefined8 *)(param_1 + 0x40);
       *piVar9 = *piVar9 + 1;
                     /* try { // try from 003e2248 to 003e225b has its CatchHandler @ 003e22ac */
       puStack_d0 = puVar8;
-      piStack_c8 = piVar9;
       Walaber::FileManager::readFile(uVar10,param_2,&puStack_d0,abStack_80,0);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
@@ -611,7 +593,7 @@ LAB_003e23ac:
       else {
         do {
           plVar6 = plVar5;
-          plVar5 = (long *)*plVar6;
+          plVar5 = (long *)*plVar5;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar8 = plVar6;
@@ -657,7 +639,7 @@ void Walaber::CurveManager::optimize(long param_1)
       else {
         do {
           plVar5 = plVar3;
-          plVar3 = (long *)*plVar5;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>>>::erase((long *)(param_1 + 0x10));
@@ -680,7 +662,7 @@ void Walaber::CurveManager::optimize(long param_1)
       else {
         do {
           plVar2 = plVar3;
-          plVar3 = (long *)*plVar2;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar2 != (long *)0x0);
       }
     }
@@ -779,7 +761,7 @@ void Walaber::CurveManager::unloadCurveCollection(long param_1,byte *param_2)
                 else {
                   do {
                     plVar16 = plVar9;
-                    plVar9 = (long *)*plVar16;
+                    plVar9 = (long *)*plVar9;
                   } while ((long *)*plVar16 != (long *)0x0);
                 }
                 std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::CurveMapEntry>>>::erase((long *)(param_1 + 0x10));
@@ -798,7 +780,7 @@ void Walaber::CurveManager::unloadCurveCollection(long param_1,byte *param_2)
               else {
                 do {
                   plVar16 = plVar9;
-                  plVar9 = (long *)*plVar16;
+                  plVar9 = (long *)*plVar9;
                 } while ((long *)*plVar16 != (long *)0x0);
               }
               plVar8 = plVar16;
@@ -932,7 +914,7 @@ void Walaber::CurveManager::printMappedCurves(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -981,7 +963,6 @@ void Walaber::CurveManager::_loadV2Collection(std::__ndk1::basic_string<char, st
   ulong **ppuStack_f0;
   undefined4 *puStack_e8;
   ulong **ppuStack_e0;
-  undefined4 *puStack_d8;
   uint *puStack_d0;
   undefined1 auStack_c8 [8];
   ulong **ppuStack_c0;
@@ -1388,7 +1369,6 @@ LAB_003e321c:
           puStack_d0 = &uStack_a8;
                     /* try { // try from 003e324c to 003e3263 has its CatchHandler @ 003e33dc */
           ppuStack_f0 = ppuVar12;
-          puStack_d8 = puStack_e8;
           ppuStack_c0 = ppuVar12;
           puStack_b8 = puStack_e8;
           uStack_b0 = uVar7;
@@ -1464,7 +1444,6 @@ void Walaber::CurveManager::_loadV1Collection(std::__ndk1::basic_string<char, st
   undefined8 *puStack_e0;
   undefined4 *puStack_d8;
   undefined8 *puStack_d0;
-  undefined4 *puStack_c8;
   int iStack_bc;
   undefined1 auStack_b8 [8];
   ulong *puStack_b0;
@@ -1577,7 +1556,6 @@ LAB_003e36c0:
       puStack_b0 = &uStack_90;
                     /* try { // try from 003e36f0 to 003e370b has its CatchHandler @ 003e37f4 */
       puStack_e0 = puVar9;
-      puStack_c8 = puStack_d8;
       puStack_a8 = puVar9;
       puStack_a0 = puStack_d8;
       uStack_98 = uVar5;

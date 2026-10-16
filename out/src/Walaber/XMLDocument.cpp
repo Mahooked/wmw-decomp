@@ -18,13 +18,10 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   int *piVar4;
   long lVar5;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
   int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined1 auStack_70 [24];
   undefined8 *puStack_58;
   int *piStack_50;
@@ -51,8 +48,6 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_a0 = puVar2;
-  piStack_98 = piVar4;
-  piStack_78 = piVar4;
   puStack_58 = puVar2;
   piStack_50 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
@@ -63,7 +58,6 @@ void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,lo
                     /* try { // try from 003d6c0c to 003d6c0f has its CatchHandler @ 003d6c98 */
   uVar3 = Walaber::FileManager::getInstancePtr();
   puStack_b0 = puStack_90;
-  piStack_a8 = piStack_88;
   if (puStack_90 != (undefined8 *)0x0) {
     *piStack_88 = *piStack_88 + 1;
   }
@@ -151,15 +145,11 @@ void Walaber::XMLDocument::XMLDocument
   int *piVar4;
   long lVar5;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
   int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined1 auStack_60 [24];
   
   *param_1 = 0;
@@ -189,10 +179,7 @@ void Walaber::XMLDocument::XMLDocument
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_b0 = puVar2;
-  piStack_a8 = piVar4;
-  piStack_88 = piVar4;
   puStack_80 = puVar2;
-  piStack_78 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
   *piVar4 = *piVar4 + 1;
   puStack_a0 = puVar2;
@@ -201,7 +188,6 @@ void Walaber::XMLDocument::XMLDocument
                     /* try { // try from 003d6f40 to 003d6f43 has its CatchHandler @ 003d6fcc */
   uVar3 = Walaber::FileManager::getInstancePtr();
   puStack_c0 = puStack_a0;
-  piStack_b8 = piStack_98;
   if (puStack_a0 != (undefined8 *)0x0) {
     *piStack_98 = *piStack_98 + 1;
   }

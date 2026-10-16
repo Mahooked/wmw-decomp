@@ -120,7 +120,6 @@ void WaterConcept::PushLevelHandler::OnLevelCommand(void *p0)
                     /* try { // try from 00442ff8 to 0044300b has its CatchHandler @ 00443054 */
     WaterConcept::GameSettings::goPlayLevel(abStack_50,1,&pvStack_68,0);
     if (pvStack_68 != (void *)0x0) {
-      pvStack_60 = pvStack_68;
       operator delete(pvStack_68);
     }
     if ((abStack_50[0] & 1) != 0) {

@@ -67,7 +67,6 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   undefined8 *puVar4;
   int *piVar5;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   byte abStack_a0 [16];
   void *pvStack_90;
   undefined8 *puStack_88;
@@ -107,7 +106,6 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
                     /* try { // try from 00369e40 to 00369e4b has its CatchHandler @ 00369ee8 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_3);
   puStack_b0 = puStack_78;
-  piStack_a8 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -146,7 +144,6 @@ void Walaber::FontManager::_fontLoaded(void *p0)
   undefined8 uStack_b8;
   undefined8 uStack_b0;
   ulong uStack_a8;
-  int *piStack_a0;
   ulong uStack_98;
   int *piStack_90;
   undefined1 *puStack_88;
@@ -187,7 +184,6 @@ void Walaber::FontManager::_fontLoaded(void *p0)
             operator delete(puStack_70);
           }
         }
-        piStack_78 = piStack_90;
         uStack_80 = uStack_98;
         puStack_70 = puStack_88;
         puVar4 = (undefined1 *)((ulong)&uStack_80 | 1);
@@ -203,7 +199,6 @@ void Walaber::FontManager::_fontLoaded(void *p0)
                     /* try { // try from 0036a064 to 0036a07f has its CatchHandler @ 0036a138 */
         Walaber::TextureManager::getTexture(&uStack_98,uVar3,&uStack_80,&uStack_b8,0,0);
         uStack_a8 = uStack_98;
-        piStack_a0 = piStack_90;
         if (uStack_98 != 0) {
           *piStack_90 = *piStack_90 + 1;
         }
@@ -264,7 +259,7 @@ void Walaber::FontManager::removeAllFonts(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }

@@ -93,7 +93,7 @@ LAB_00379190:
         else {
           do {
             param_2 = plVar6;
-            plVar6 = (long *)*param_2;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*param_2 != (long *)0x0);
         }
         lVar8 = lVar5;
@@ -119,7 +119,7 @@ LAB_00379190:
     else {
       do {
         param_2 = plVar7;
-        plVar7 = (long *)*param_2;
+        plVar7 = (long *)*plVar7;
       } while ((long *)*param_2 != (long *)0x0);
     }
   }

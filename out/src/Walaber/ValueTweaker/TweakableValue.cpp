@@ -503,7 +503,7 @@ void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar5 = plVar3;
@@ -551,7 +551,7 @@ void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void *p0)
     else {
       do {
         plVar2 = plVar3;
-        plVar3 = (long *)*plVar2;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar2 != (long *)0x0);
     }
   }

@@ -394,7 +394,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -586,7 +586,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -663,7 +663,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -741,7 +741,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -896,7 +896,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -1020,7 +1020,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -1145,7 +1145,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -1240,7 +1240,7 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
     else {
       do {
         plVar13 = plVar10;
-        plVar10 = (long *)*plVar13;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar13 != (long *)0x0);
     }
   }
@@ -1518,7 +1518,7 @@ void WaterConcept::Screen_ComicStrip::handleEvent
           else {
             do {
               plVar4 = plVar6;
-              plVar6 = (long *)*plVar4;
+              plVar6 = (long *)*plVar6;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar6 = plStack_80;
@@ -1546,7 +1546,7 @@ void WaterConcept::Screen_ComicStrip::handleEvent
           else {
             do {
               plVar6 = plVar7;
-              plVar7 = (long *)*plVar6;
+              plVar7 = (long *)*plVar7;
             } while ((long *)*plVar6 != (long *)0x0);
           }
         }

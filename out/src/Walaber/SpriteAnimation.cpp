@@ -180,7 +180,6 @@ void Walaber::SpriteAnimation::loadFromXML(ulong *param_1,long param_2,undefined
   byte bVar21;
   float fVar22;
   undefined8 *puStack_140;
-  int *piStack_138;
   undefined8 *puStack_130;
   int *piStack_128;
   undefined8 *puStack_120;
@@ -260,7 +259,6 @@ LAB_00359cec:
     uVar7 = uVar6 + 0x10 & 0xfffffffffffffff0;
     pvVar18 = (void *)operator new(uVar7);
     uStack_a8 = uVar7 | 1;
-    uStack_a0 = uVar6;
     pvStack_98 = pvVar18;
 LAB_00359dc0:
     memcpy(pvVar18,uVar5,uVar6);
@@ -522,7 +520,6 @@ LAB_00359fd8:
   puStack_130 = puVar11;
   uStack_110 = puVar11;
   piStack_108 = piStack_128;
-  piStack_d8 = piStack_128;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_110);
   puStack_120 = puStack_130;
   piStack_118 = piStack_128;
@@ -561,7 +558,6 @@ LAB_0035a5b0:
                     /* try { // try from 0035a5c0 to 0035a5c7 has its CatchHandler @ 0035a6ac */
   (*(code *)xmlFree)(uVar12);
   puStack_140 = puStack_120;
-  piStack_138 = piStack_118;
   if (puStack_120 != (undefined8 *)0x0) {
     *piStack_118 = *piStack_118 + 1;
   }
@@ -786,7 +782,6 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
   plVar5 = *(long **)((long)p0 + 0xb8);
   if (plVar5 != (long *)0x0) {
     uStack_a0 = CONCAT44(uStack_a0._4_4_,*in_x1);
-    pvStack_98 = p0;
     (**(code **)(*plVar5 + 0x10))(plVar5,&uStack_a0);
   }
   return;
@@ -913,7 +908,7 @@ LAB_0035af50:
     else {
       do {
         puVar8 = puVar5;
-        puVar5 = (undefined8 *)*puVar8;
+        puVar5 = (undefined8 *)*puVar5;
       } while ((undefined8 *)*puVar8 != (undefined8 *)0x0);
     }
     *(undefined8 **)(p1 + 0x22) = puVar8;
@@ -997,9 +992,7 @@ void Walaber::SpriteAnimation::play(long param_1)
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
-  undefined4 *puStack_48;
   long lStack_40;
-  undefined4 *puStack_38;
   undefined8 uStack_30;
   
   cVar1 = *(char *)(param_1 + 0x18);
@@ -1010,9 +1003,7 @@ void Walaber::SpriteAnimation::play(long param_1)
     *puStack_58 = 3;
     uStack_30 = 0xffffffff00000001;
     lStack_50 = param_1;
-    puStack_48 = puStack_58;
     lStack_40 = param_1;
-    puStack_38 = puStack_58;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_50);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_60);
                     /* try { // try from 0035b124 to 0035b12b has its CatchHandler @ 0035b158 */
@@ -1115,9 +1106,7 @@ void Walaber::SpriteAnimation::play
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
-  undefined4 *puStack_48;
   long lStack_40;
-  undefined4 *puStack_38;
   undefined8 uStack_30;
   
   plVar6 = (long *)(param_2 + 0x78);
@@ -1156,9 +1145,7 @@ void Walaber::SpriteAnimation::play
     *puStack_58 = 3;
     uStack_30 = 0xffffffff00000001;
     lStack_50 = param_2;
-    puStack_48 = puStack_58;
     lStack_40 = param_2;
-    puStack_38 = puStack_58;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_50);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_60);
                     /* try { // try from 0035b3cc to 0035b3d3 has its CatchHandler @ 0035b400 */
@@ -1183,9 +1170,7 @@ void Walaber::SpriteAnimation::pause(long param_1)
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
-  undefined4 *puStack_48;
   long lStack_40;
-  undefined4 *puStack_38;
   undefined8 uStack_30;
   
   cVar1 = *(char *)(param_1 + 0x18);
@@ -1196,9 +1181,7 @@ void Walaber::SpriteAnimation::pause(long param_1)
     *puStack_58 = 3;
     uStack_30 = 0xffffffff00000002;
     lStack_50 = param_1;
-    puStack_48 = puStack_58;
     lStack_40 = param_1;
-    puStack_38 = puStack_58;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_50);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_60);
                     /* try { // try from 0035b490 to 0035b497 has its CatchHandler @ 0035b4c4 */
@@ -1223,9 +1206,7 @@ void Walaber::SpriteAnimation::stop(long param_1)
   long lStack_60;
   undefined4 *puStack_58;
   long lStack_50;
-  undefined4 *puStack_48;
   long lStack_40;
-  undefined4 *puStack_38;
   undefined8 uStack_30;
   
   *(undefined4 *)(param_1 + 0x48) = 1;
@@ -1240,9 +1221,7 @@ void Walaber::SpriteAnimation::stop(long param_1)
     *puStack_58 = 3;
     uStack_30 = 0xffffffff00000004;
     lStack_50 = param_1;
-    puStack_48 = puStack_58;
     lStack_40 = param_1;
-    puStack_38 = puStack_58;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_50);
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_60);
                     /* try { // try from 0035b570 to 0035b577 has its CatchHandler @ 0035b5a4 */

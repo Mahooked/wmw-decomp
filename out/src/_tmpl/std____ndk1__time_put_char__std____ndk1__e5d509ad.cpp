@@ -157,18 +157,12 @@ long * std::__ndk1::
   long *plVar6;
   undefined1 *puVar7;
   undefined1 uStack_a0;
-  char cStack_9f;
-  char cStack_9e;
   undefined1 uStack_9d;
   undefined1 auStack_9c [100];
   
   uStack_a0 = 0x25;
   uStack_9d = 0;
-  cStack_9f = param_5;
-  cStack_9e = param_6;
   if (param_6 != '\0') {
-    cStack_9f = param_6;
-    cStack_9e = param_5;
   }
   lVar5 = strftime(auStack_9c,100,&uStack_a0,param_4);
   if (lVar5 != 0) {

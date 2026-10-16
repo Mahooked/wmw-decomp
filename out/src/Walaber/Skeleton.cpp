@@ -120,7 +120,7 @@ void Walaber::Skeleton::Skeleton(Walaber__Skeleton *p0)
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -148,7 +148,7 @@ void Walaber::Skeleton::Skeleton(Walaber__Skeleton *p0)
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -228,7 +228,7 @@ void Walaber::Skeleton::~Skeleton()
     else {
       do {
         plVar6 = plVar4;
-        plVar4 = (long *)*plVar6;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
@@ -253,7 +253,7 @@ void Walaber::Skeleton::~Skeleton()
     else {
       do {
         plVar6 = plVar4;
-        plVar4 = (long *)*plVar6;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
@@ -405,7 +405,6 @@ long Walaber::Skeleton::createFromXmlNode(_xmlNode *p0)
     uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar7 = (void *)operator new(uVar8);
     uStack_70 = uVar8 | 1;
-    uStack_68 = uVar3;
     pvStack_60 = pvVar7;
 LAB_0033b27c:
     memcpy(pvVar7,uVar2,uVar3);
@@ -441,7 +440,6 @@ LAB_0033b27c:
       uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
       pvVar7 = (void *)operator new(uVar8);
       uStack_88 = uVar8 | 1;
-      uStack_80 = uVar3;
       pvStack_78 = pvVar7;
 LAB_0033b348:
       memcpy(pvVar7,uVar2,uVar3);
@@ -496,7 +494,6 @@ LAB_0033b348:
       uVar8 = uVar3 + 0x10 & 0xfffffffffffffff0;
       pvVar7 = (void *)operator new(uVar8);
       uStack_88 = uVar8 | 1;
-      uStack_80 = uVar3;
       pvStack_78 = pvVar7;
 LAB_0033b470:
       memcpy(pvVar7,uVar2,uVar3);
@@ -712,13 +709,10 @@ void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 para
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -735,8 +729,6 @@ void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 para
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -747,7 +739,6 @@ void Walaber::Skeleton::loadAnimationsFromXml(undefined8 param_1,undefined8 para
                     /* try { // try from 0033baa4 to 0033baa7 has its CatchHandler @ 0033bb2c */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -837,7 +828,7 @@ void Walaber::Skeleton::loadSkeletonWithCallback
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar2 = plVar7;
@@ -1282,7 +1273,7 @@ void Walaber::Skeleton::setLayer(int p0)
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -1326,7 +1317,7 @@ void Walaber::Skeleton::update(float p0)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -1369,7 +1360,7 @@ void Walaber::Skeleton::draw(Walaber__SpriteBatch *p0)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -1426,7 +1417,6 @@ void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite
     uVar11 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar10 = (void *)operator new(uVar11);
     piStack_88 = (int *)(uVar11 | 1);
-    uStack_80 = uVar2;
     pvStack_78 = pvVar10;
 LAB_0033c6d4:
     memcpy(pvVar10,lVar4,uVar2);
@@ -1456,7 +1446,6 @@ LAB_0033c854:
       uVar11 = uVar2 + 0x10 & 0xfffffffffffffff0;
       pvVar10 = (void *)operator new(uVar11);
       piStack_88 = (int *)(uVar11 | 1);
-      uStack_80 = uVar2;
       pvStack_78 = pvVar10;
 LAB_0033c774:
       memcpy(pvVar10,lVar4,uVar2);
@@ -1546,7 +1535,6 @@ void Walaber::Skeleton::addRootBone(Walaber__Bone *p0)
     uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
     pvVar8 = (void *)operator new(uVar9);
     puStack_88 = (ulong *)(uVar9 | 1);
-    uStack_80 = uVar5;
     pvStack_78 = pvVar8;
 LAB_0033c968:
     memcpy(pvVar8,lVar3,uVar5);
@@ -1576,7 +1564,6 @@ LAB_0033ca88:
     uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
     pvVar8 = (void *)operator new(uVar9);
     puStack_88 = (ulong *)(uVar9 | 1);
-    uStack_80 = uVar5;
     pvStack_78 = pvVar8;
 LAB_0033ca10:
     memcpy(pvVar8,uStack_70 + 0x24,uVar5);
@@ -1649,7 +1636,6 @@ void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1)
     uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
     pvVar8 = (void *)operator new(uVar9);
     puStack_88 = (ulong *)(uVar9 | 1);
-    uStack_80 = uVar5;
     pvStack_78 = pvVar8;
 LAB_0033cb9c:
     memcpy(pvVar8,lVar3,uVar5);
@@ -1679,7 +1665,6 @@ LAB_0033ccbc:
     uVar9 = uVar5 + 0x10 & 0xfffffffffffffff0;
     pvVar8 = (void *)operator new(uVar9);
     puStack_88 = (ulong *)(uVar9 | 1);
-    uStack_80 = uVar5;
     pvStack_78 = pvVar8;
 LAB_0033cc44:
     memcpy(pvVar8,uStack_70 + 0x24,uVar5);
@@ -2124,7 +2109,7 @@ void Walaber::Skeleton::setColor(Walaber__Color *p0)
       else {
         do {
           pWVar7 = pWVar6;
-          pWVar6 = *(Walaber__Color **)pWVar7;
+          pWVar6 = *(Walaber__Color **)pWVar6;
         } while (*(Walaber__Color **)pWVar7 != (Walaber__Color *)0x0);
       }
       if (pWVar7 == p0 + 0x30) break;
@@ -2179,7 +2164,7 @@ void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
     else {
       do {
         WVar5 = WVar3;
-        WVar3 = *(Walaber__Vector2 *)WVar5;
+        WVar3 = *(Walaber__Vector2 *)WVar3;
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
   }
@@ -2235,7 +2220,7 @@ void Walaber::Skeleton::setScreenSpace(bool p0)
     else {
       do {
         plVar5 = plVar6;
-        plVar6 = (long *)*plVar5;
+        plVar6 = (long *)*plVar6;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }

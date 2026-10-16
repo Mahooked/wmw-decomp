@@ -2422,7 +2422,6 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
     (**(code **)(*plVar3 + 0x10))(plVar3,&pvStack_60);
     *(undefined8 *)((long)&__DT_SYMTAB[0x1c09].st_name + param_1) = *puVar1;
     if (pvStack_60 != (void *)0x0) {
-      pvStack_58 = pvStack_60;
       operator delete(pvStack_60);
     }
   }
@@ -2447,7 +2446,6 @@ void WaterConcept::Fluids::_handleParticleCollisions(long param_1)
           plVar4 = *(long **)(*(long *)(lVar5 + uVar8 * 8) + 0x28);
           (**(code **)(*plVar4 + 0x10))(plVar4,&pvStack_60);
           if (pvStack_60 != (void *)0x0) {
-            pvStack_58 = pvStack_60;
             operator delete(pvStack_60);
           }
           lVar5 = *(long *)((long)&__DT_SYMTAB[0x1c0a].st_value + param_1);
@@ -3260,7 +3258,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
 
 {
   long lVar2;
-  ulong uVar3;
   undefined8 uVar4;
   undefined4 uVar5;
   undefined4 in_register_00005004;
@@ -3298,7 +3295,6 @@ ulong WaterConcept::Fluids::_fillVertBuffer
 
 {
   long lVar2;
-  ulong uVar3;
   undefined8 uVar4;
   undefined4 uVar5;
   undefined4 in_register_00005004;

@@ -168,14 +168,11 @@ void Walaber::Transition_Widget_Slide::_populateWidgetManagerMap(long param_1)
   int iVar9;
   ulong uVar10;
   undefined8 uStack_d0;
-  undefined8 uStack_c8;
-  undefined4 uStack_c0;
   long *plStack_b0;
   undefined8 uStack_a8;
   undefined4 uStack_a0;
   long lStack_98;
   undefined8 uStack_90;
-  undefined8 uStack_88;
   undefined4 uStack_80;
   undefined1 auStack_70 [8];
   
@@ -196,7 +193,6 @@ void Walaber::Transition_Widget_Slide::_populateWidgetManagerMap(long param_1)
   if (0 < iVar1) {
     iVar2 = iVar8;
   }
-  uStack_88 = uStack_90;
   if (iVar2 < iVar9) {
     do {
       uVar3 = (int)uVar10 - 1;
@@ -231,8 +227,6 @@ void Walaber::Transition_Widget_Slide::_populateWidgetManagerMap(long param_1)
     } while (iVar2 < (int)uVar3);
   }
   uStack_d0 = uStack_90;
-  uStack_c8 = uStack_88;
-  uStack_c0 = uStack_80;
   Walaber::Transition_Widget_Slide::_setPositionsByDirection(param_1,&uStack_d0);
   return;
 }
@@ -547,7 +541,7 @@ void Walaber::Transition_Widget_Slide::_findWidgetsInAABB(long param_1)
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar6 = plVar4;
@@ -660,7 +654,7 @@ void Walaber::Transition_Widget_Slide::_updateWidgetManagers(float p0)
     else {
       do {
         plVar6 = plVar4;
-        plVar4 = (long *)*plVar6;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
@@ -704,7 +698,7 @@ void Walaber::Transition_Widget_Slide::_offsetWidgetManagers(Walaber__Vector2 *p
     else {
       do {
         WVar4 = WVar3;
-        WVar3 = *(Walaber__Vector2 *)WVar4;
+        WVar3 = *(Walaber__Vector2 *)WVar3;
       } while (*(Walaber__Vector2 *)WVar4 != (Walaber__Vector2)0x0);
     }
   }

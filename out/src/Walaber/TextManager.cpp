@@ -480,7 +480,6 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   undefined8 *puStack_70;
   undefined4 *puStack_68;
   undefined8 *puStack_60;
-  undefined4 *puStack_58;
   undefined1 auStack_50 [24];
   
   if (param_2 != &mLanguagesToLoad) {
@@ -498,7 +497,6 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   *puStack_68 = 2;
                     /* try { // try from 003fa374 to 003fa38b has its CatchHandler @ 003fa3cc */
   puStack_60 = puVar3;
-  puStack_58 = puStack_68;
   Walaber::FileManager::readFile(uVar2,param_1,&puStack_60,auStack_50,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
@@ -696,7 +694,7 @@ void Walaber::TextManager::loadedScriptFile(void *p0)
         else {
           do {
             plVar13 = plVar12;
-            plVar12 = (long *)*plVar13;
+            plVar12 = (long *)*plVar12;
           } while ((long *)*plVar13 != (long *)0x0);
         }
         uVar7 = extraout_x1_00;
@@ -1395,7 +1393,6 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   undefined8 *puStack_70;
   undefined4 *puStack_68;
   undefined8 *puStack_60;
-  undefined4 *puStack_58;
   undefined1 auStack_50 [24];
   
   if (param_2 != &mLanguagesToLoad) {
@@ -1413,7 +1410,6 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   *puStack_68 = 2;
                     /* try { // try from 003fb880 to 003fb897 has its CatchHandler @ 003fb8d8 */
   puStack_60 = puVar3;
-  puStack_58 = puStack_68;
   Walaber::FileManager::readFile(uVar2,param_1,&puStack_60,auStack_50,0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
@@ -1639,7 +1635,7 @@ void Walaber::TextManager::loadedSubtitleFile(void *p0)
         else {
           do {
             plVar13 = plVar12;
-            plVar12 = (long *)*plVar13;
+            plVar12 = (long *)*plVar12;
           } while ((long *)*plVar13 != (long *)0x0);
         }
         uVar9 = extraout_x1_00;
@@ -2430,7 +2426,7 @@ void Walaber::TextManager::getAvailableLanguages(long param_1)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar5 = plVar3;
@@ -2498,7 +2494,7 @@ void Walaber::TextManager::getAvailableLanguagesAsStrings(long param_1)
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar6 = plVar4;

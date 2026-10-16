@@ -280,7 +280,7 @@ void WaterConcept::Screen_EditorObjectSelect::exit(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -403,7 +403,7 @@ void WaterConcept::Screen_EditorObjectSelect::draw(int p0)
         else {
           do {
             plVar7 = plVar6;
-            plVar6 = (long *)*plVar7;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*plVar7 != (long *)0x0);
         }
         plVar12 = plVar7;
@@ -431,7 +431,7 @@ void WaterConcept::Screen_EditorObjectSelect::draw(int p0)
         else {
           do {
             plVar7 = plVar6;
-            plVar6 = (long *)*plVar7;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*plVar7 != (long *)0x0);
         }
         plVar12 = plVar7;
@@ -459,7 +459,7 @@ void WaterConcept::Screen_EditorObjectSelect::draw(int p0)
         else {
           do {
             plVar12 = plVar6;
-            plVar6 = (long *)*plVar12;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*plVar12 != (long *)0x0);
         }
       }
@@ -535,7 +535,7 @@ void WaterConcept::Screen_EditorObjectSelect::handleEvent
         else {
           do {
             plVar9 = plVar7;
-            plVar7 = (long *)*plVar9;
+            plVar7 = (long *)*plVar7;
           } while ((long *)*plVar9 != (long *)0x0);
         }
       }

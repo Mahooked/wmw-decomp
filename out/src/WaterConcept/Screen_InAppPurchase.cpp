@@ -1543,7 +1543,6 @@ void WaterConcept::Screen_InAppPurchase::enter()
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   ppuStack_a0 = ppuVar2;
-  piStack_98 = piVar3;
   ppuStack_68 = ppuVar2;
   piStack_60 = piVar3;
   piStack_40 = piVar3;
@@ -6078,13 +6077,9 @@ void WaterConcept::Screen_InAppPurchase::_buildUI(long param_1)
   undefined8 uVar12;
   undefined8 uVar13;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
   int *piStack_88;
   char *pcStack_80;
@@ -6192,7 +6187,6 @@ LAB_004eb918:
   puStack_90 = (undefined8 *)0x31;
   operator delete(p0);
   pcStack_60 = pcStack_80;
-  uStack_68 = piStack_88;
   puStack_70 = puStack_90;
                     /* try { // try from 004eb9c4 to 004eba03 has its CatchHandler @ 004ebaf0 */
   puVar6 = (undefined8 *)operator new(0x28);
@@ -6205,20 +6199,15 @@ LAB_004eb918:
   piVar7 = (int *)operator new(4);
   *piVar7 = 3;
   puStack_c0 = puVar6;
-  piStack_b8 = piVar7;
-  piStack_98 = piVar7;
   puStack_90 = puVar6;
-  piStack_88 = piVar7;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   *piVar7 = *piVar7 + 1;
   puStack_b0 = puVar6;
-  piStack_a8 = piVar7;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
   uVar8 = *(undefined8 *)(param_1 + 0x10);
   *piVar7 = *piVar7 + 1;
                     /* try { // try from 004eba50 to 004eba5b has its CatchHandler @ 004ebad0 */
   puStack_d0 = puVar6;
-  piStack_c8 = piVar7;
   Walaber::WidgetHelper::loadWidgetsXML(&puStack_70,uVar8,&puStack_d0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
@@ -6260,7 +6249,6 @@ void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
   byte bVar19;
   float fVar20;
   undefined8 *puStack_1d0;
-  int *piStack_1c8;
   undefined8 *puStack_1c0;
   int *piStack_1b8;
   undefined8 uStack_1b0;
@@ -6622,7 +6610,6 @@ LAB_004ec25c:
                     /* try { // try from 004ec498 to 004ec49b has its CatchHandler @ 004ec594 */
       uVar9 = Walaber::FileManager::getInstancePtr();
       puStack_1d0 = uStack_1b0;
-      piStack_1c8 = piStack_1a8;
       if (uStack_1b0 != (undefined8 *)0x0) {
         *piStack_1a8 = *piStack_1a8 + 1;
       }

@@ -303,7 +303,6 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
   float fVar3;
   undefined8 uVar4;
   ulong uStack_90;
-  int *piStack_88;
   undefined1 auStack_80 [8];
   undefined8 uStack_78;
   ulong uStack_70;
@@ -335,7 +334,6 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
                       p0 + 6);
     }
     uStack_90 = uStack_70;
-    piStack_88 = piStack_68;
     if (uStack_70 != 0) {
       *piStack_68 = *piStack_68 + 1;
     }

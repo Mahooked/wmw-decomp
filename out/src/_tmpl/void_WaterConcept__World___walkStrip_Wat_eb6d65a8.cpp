@@ -80,11 +80,8 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameDefault>
   float fStack_20c;
   ulong uStack_170;
   int *piStack_160;
-  int *piStack_158;
   int *piStack_150;
-  int *piStack_148;
   int *piStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
@@ -605,7 +602,7 @@ LAB_00470388:
           do {
             iVar5 = iVar21;
             uVar25 = uVar25 + iVar30;
-            iVar21 = iVar5 - (int)fVar47;
+            iVar21 = iVar21 - (int)fVar47;
           } while ((int)fVar47 <= iVar5);
           uVar26 = *(uint *)(param_1 + 8);
           lVar41 = param_1[6];
@@ -833,7 +830,6 @@ LAB_00470634:
               *puVar16 = uVar13;
               if ((param_10 & 1) != 0) {
                 piStack_160 = piStack_e0;
-                piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -901,7 +897,6 @@ LAB_00470634:
               *(undefined8 *)(lVar41 + 0x24) = uStack_120;
               if ((param_10 & 1) != 0) {
                 piStack_140 = piStack_e0;
-                piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -936,7 +931,6 @@ LAB_00470634:
               *(undefined8 *)(lVar41 + 0x1c) = uStack_128;
               if ((param_10 & 1) != 0) {
                 piStack_150 = piStack_e0;
-                piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -1322,11 +1316,8 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameRockOutline>
   float fStack_20c;
   ulong uStack_170;
   int *piStack_160;
-  int *piStack_158;
   int *piStack_150;
-  int *piStack_148;
   int *piStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
@@ -1847,7 +1838,7 @@ LAB_004725a4:
           do {
             iVar33 = iVar23;
             uVar30 = uVar30 + iVar18;
-            iVar23 = iVar33 - (int)fVar47;
+            iVar23 = iVar23 - (int)fVar47;
           } while ((int)fVar47 <= iVar33);
           uVar31 = *(uint *)(param_1 + 8);
           lVar20 = param_1[6];
@@ -2075,7 +2066,6 @@ LAB_00472858:
               *puVar17 = uVar21;
               if ((param_10 & 1) != 0) {
                 piStack_160 = piStack_e0;
-                piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -2143,7 +2133,6 @@ LAB_00472858:
               *(undefined8 *)(lVar20 + 0x24) = uStack_120;
               if ((param_10 & 1) != 0) {
                 piStack_140 = piStack_e0;
-                piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -2178,7 +2167,6 @@ LAB_00472858:
               *(undefined8 *)(lVar20 + 0x1c) = uStack_128;
               if ((param_10 & 1) != 0) {
                 piStack_150 = piStack_e0;
-                piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -2564,11 +2552,8 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAll>
   float fStack_204;
   ulong uStack_170;
   int *piStack_160;
-  int *piStack_158;
   int *piStack_150;
-  int *piStack_148;
   int *piStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
@@ -3093,7 +3078,7 @@ LAB_004741a8:
           do {
             iVar5 = iVar24;
             uVar23 = uVar23 + iVar16;
-            iVar24 = iVar5 - (int)fVar48;
+            iVar24 = iVar24 - (int)fVar48;
           } while ((int)fVar48 <= iVar5);
           uVar38 = *(uint *)(param_1 + 8);
           lVar18 = param_1[6];
@@ -3321,7 +3306,6 @@ LAB_00474454:
               *puVar15 = uVar22;
               if ((param_10 & 1) != 0) {
                 piStack_160 = piStack_e0;
-                piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -3389,7 +3373,6 @@ LAB_00474454:
               *(undefined8 *)(lVar18 + 0x24) = uStack_120;
               if ((param_10 & 1) != 0) {
                 piStack_140 = piStack_e0;
-                piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -3424,7 +3407,6 @@ LAB_00474454:
               *(undefined8 *)(lVar18 + 0x1c) = uStack_128;
               if ((param_10 & 1) != 0) {
                 piStack_150 = piStack_e0;
-                piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -3809,11 +3791,8 @@ void WaterConcept::World::_walkStrip<WaterConcept::ConsiderSameAlgae>
   float fStack_20c;
   ulong uStack_170;
   int *piStack_160;
-  int *piStack_158;
   int *piStack_150;
-  int *piStack_148;
   int *piStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
@@ -4334,7 +4313,7 @@ LAB_00475d68:
           do {
             iVar5 = iVar22;
             uVar26 = uVar26 + iVar30;
-            iVar22 = iVar5 - (int)fVar47;
+            iVar22 = iVar22 - (int)fVar47;
           } while ((int)fVar47 <= iVar5);
           uVar27 = *(uint *)(param_1 + 8);
           lVar41 = param_1[6];
@@ -4562,7 +4541,6 @@ LAB_00476014:
               *puVar16 = uVar13;
               if ((param_10 & 1) != 0) {
                 piStack_160 = piStack_e0;
-                piStack_158 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -4630,7 +4608,6 @@ LAB_00476014:
               *(undefined8 *)(lVar41 + 0x24) = uStack_120;
               if ((param_10 & 1) != 0) {
                 piStack_140 = piStack_e0;
-                piStack_138 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }
@@ -4665,7 +4642,6 @@ LAB_00476014:
               *(undefined8 *)(lVar41 + 0x1c) = uStack_128;
               if ((param_10 & 1) != 0) {
                 piStack_150 = piStack_e0;
-                piStack_148 = piStack_d8;
                 if (piStack_e0 != (int *)0x0) {
                   *piStack_d8 = *piStack_d8 + 1;
                 }

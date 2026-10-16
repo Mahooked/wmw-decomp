@@ -81,7 +81,7 @@ LAB_0034a624:
   plVar13 = param_1;
 LAB_0034a644:
   param_1 = plVar13;
-  lVar9 = (long)param_2 - (long)param_1;
+  lVar9 = (long)param_2 - (long)plVar13;
   uVar7 = lVar9 >> 4;
   switch(uVar7) {
   case 0:

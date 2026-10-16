@@ -1099,7 +1099,6 @@ void Walaber::Widget_Label::draw(Walaber__SpriteBatch *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar10 = (void *)operator new(p0_00);
     uStack_d8 = p0_00 | 1;
-    uStack_d0 = uVar3;
     pvStack_c8 = pvVar10;
 LAB_00380554:
     memcpy(pvVar10,puVar9,uVar3);

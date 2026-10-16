@@ -35,7 +35,6 @@ void std::__ndk1::__num_get_signed_integral<long>(char *p0,char *p1,uint *p2,int
       *piVar4 = iVar1;
     }
     if (pcStack_60 == p1) {
-      lVar6 = lVar5;
       if (iVar3 == 0x22) {
         *p2 = 4;
         lVar6 = 0x7fffffffffffffff;

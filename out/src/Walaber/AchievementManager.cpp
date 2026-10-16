@@ -1060,7 +1060,7 @@ void Walaber::AchievementManager::resetAchievementProgress(long *param_1)
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -1119,7 +1119,7 @@ void Walaber::AchievementManager::sendAchievementsToPlatform(undefined8 *param_1
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar6 = plVar4;

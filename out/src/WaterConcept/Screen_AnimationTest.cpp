@@ -289,13 +289,9 @@ void WaterConcept::Screen_AnimationTest::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -316,20 +312,16 @@ void WaterConcept::Screen_AnimationTest::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a72bc to 004a72c7 has its CatchHandler @ 004a7318 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -547,31 +539,24 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   ulong uStack_198;
-  int *piStack_190;
   undefined8 uStack_188;
   undefined8 uStack_180;
   ulong uStack_178;
-  int *piStack_170;
   undefined8 uStack_168;
   undefined8 uStack_160;
   ulong uStack_158;
-  int *piStack_150;
   undefined8 uStack_148;
   undefined8 uStack_140;
   ulong uStack_138;
-  int *piStack_130;
   undefined8 uStack_128;
   float fStack_120;
-  float fStack_11c;
   undefined8 uStack_118;
   undefined8 uStack_110;
   undefined8 uStack_108;
   ulong uStack_100;
-  int *piStack_f8;
   undefined8 uStack_f0;
   undefined8 uStack_e8;
   ulong uStack_e0;
-  int *piStack_d8;
   ulong uStack_d0;
   ulong uStack_c8;
   void *pvStack_c0;
@@ -666,7 +651,6 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
                     /* try { // try from 004a7834 to 004a784b has its CatchHandler @ 004a811c */
           Walaber::TextureManager::getTexture(&uStack_b8,uVar13,&bStack_a0,&uStack_f0,0,0);
           uStack_e0 = uStack_b8;
-          piStack_d8 = piStack_b0;
           if (uStack_b8 != 0) {
             *piStack_b0 = *piStack_b0 + 1;
           }
@@ -697,7 +681,6 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
                     /* try { // try from 004a78f4 to 004a790f has its CatchHandler @ 004a80f8 */
           Walaber::TextureManager::getTexture(&uStack_b8,uVar13,&bStack_a0,&uStack_110,0,0);
           uStack_100 = uStack_b8;
-          piStack_f8 = piStack_b0;
           if (uStack_b8 != 0) {
             *piStack_b0 = *piStack_b0 + 1;
           }
@@ -771,7 +754,6 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
                     /* try { // try from 004a7ae0 to 004a7afb has its CatchHandler @ 004a80d4 */
           Walaber::TextureManager::getTexture(&uStack_b8,uVar13,&bStack_a0,&uStack_148,0,0);
           uStack_138 = uStack_b8;
-          piStack_130 = piStack_b0;
           if (uStack_b8 != 0) {
             *piStack_b0 = *piStack_b0 + 1;
           }
@@ -802,7 +784,6 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
                     /* try { // try from 004a7ba4 to 004a7bbf has its CatchHandler @ 004a80b0 */
           Walaber::TextureManager::getTexture(&uStack_b8,uVar13,&bStack_a0,&uStack_168,0,0);
           uStack_158 = uStack_b8;
-          piStack_150 = piStack_b0;
           if (uStack_b8 != 0) {
             *piStack_b0 = *piStack_b0 + 1;
           }
@@ -839,7 +820,6 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
                                fVar19 + 0.0 + (float)uStack_d0);
                     /* try { // try from 004a7cbc to 004a7cd3 has its CatchHandler @ 004a8094 */
           fStack_120 = fVar18;
-          fStack_11c = fVar18;
           Walaber::SkeletonActor::init(uVar5,&uStack_b8,&bStack_a0,&fStack_120,1);
           goto LAB_004a8008;
         }
@@ -913,7 +893,6 @@ LAB_004a7d5c:
                     /* try { // try from 004a7db8 to 004a7dd3 has its CatchHandler @ 004a8168 */
     Walaber::TextureManager::getTexture(&uStack_b8,uVar5,&bStack_a0,&uStack_188,0,0);
     uStack_178 = uStack_b8;
-    piStack_170 = piStack_b0;
     if (uStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }
@@ -944,7 +923,6 @@ LAB_004a7d5c:
                     /* try { // try from 004a7e7c to 004a7e97 has its CatchHandler @ 004a8144 */
     Walaber::TextureManager::getTexture(&uStack_b8,uVar13,&bStack_a0,&uStack_1a8,0,0);
     uStack_198 = uStack_b8;
-    piStack_190 = piStack_b0;
     if (uStack_b8 != 0) {
       *piStack_b0 = *piStack_b0 + 1;
     }

@@ -75,7 +75,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
           else {
             do {
               plVar12 = plVar10;
-              plVar10 = (long *)*plVar12;
+              plVar10 = (long *)*plVar10;
             } while ((long *)*plVar12 != (long *)0x0);
           }
           plVar15 = plVar12;
@@ -189,7 +189,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
         else {
           do {
             plVar12 = plVar10;
-            plVar10 = (long *)*plVar12;
+            plVar10 = (long *)*plVar10;
           } while ((long *)*plVar12 != (long *)0x0);
         }
         plVar15 = plVar12;
@@ -268,7 +268,7 @@ void std::__ndk1::
           else {
             do {
               plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar11 = plVar4;
@@ -357,7 +357,7 @@ void std::__ndk1::
         else {
           do {
             pWVar5 = pWVar4;
-            pWVar4 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar5;
+            pWVar4 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4;
           } while (*(Walaber__ScreenManager__ScreenOperationDetails **)pWVar5 !=
                    (Walaber__ScreenManager__ScreenOperationDetails *)0x0);
         }
@@ -443,7 +443,7 @@ long std::__ndk1::
         else {
           do {
             plVar5 = plVar3;
-            plVar3 = (long *)*plVar5;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar5 != (long *)0x0);
         }
         plVar11 = plVar5;
@@ -485,7 +485,7 @@ long std::__ndk1::
           else {
             do {
               plVar5 = plVar3;
-              plVar3 = (long *)*plVar5;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar5 != (long *)0x0);
           }
           plVar11 = plVar5;

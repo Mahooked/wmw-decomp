@@ -623,7 +623,6 @@ void Walaber::DatabaseIterator::getColorAtIndex(int p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0_00);
     uStack_60 = p0_00 | 1;
-    uStack_58 = uVar3;
     pvStack_50 = pvVar4;
 LAB_0032e47c:
     memcpy(pvVar4,uVar2,uVar3);

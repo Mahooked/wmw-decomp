@@ -485,7 +485,6 @@ void WaterConcept::Fan::_setState(bool p0)
   ulong uVar5;
   ulong uStack_48;
   uint uStack_40;
-  byte bStack_3c;
   
   uVar3 = (ulong)p0;
   bVar1 = in_w1 & 1;
@@ -497,7 +496,6 @@ void WaterConcept::Fan::_setState(bool p0)
       uStack_48 = uVar5;
     }
     uStack_40 = (uint)(uVar5 != 0);
-    bStack_3c = bVar1;
     (**(code **)(*plVar4 + 0x10))(plVar4,&uStack_48);
   }
   *(byte *)(uVar3 + 0x3a8) = bVar1;
@@ -606,7 +604,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
     else {
       do {
         plVar5 = plVar4;
-        plVar4 = (long *)*plVar5;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -777,7 +775,6 @@ void WaterConcept::Fan::_initFinished(long param_1)
         *piStack_98 = *piStack_98 + 2;
         uStack_90 = lStack_a0;
       }
-      piStack_88 = piStack_98;
       Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_a0);
       *(undefined4 *)(uStack_90 + 0x4c) = 0;
       Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&uStack_90);

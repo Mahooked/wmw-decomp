@@ -84,9 +84,6 @@ void Walaber::BezierCurve::loadFromXmlNode(_xmlNode *p0)
   long lVar12;
   ulong uVar13;
   float fStack_c0;
-  float fStack_bc;
-  ulong uStack_b8;
-  undefined8 uStack_b0;
   undefined8 uStack_a8;
   ulong uStack_a0;
   ulong uStack_98;
@@ -117,7 +114,6 @@ LAB_003e00a0:
           uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
           pvVar9 = (void *)operator new(uVar13);
           uStack_a0 = uVar13 | 1;
-          uStack_98 = uVar8;
           pvStack_90 = pvVar9;
 LAB_003dfe18:
           memcpy(pvVar9,uVar7,uVar8);
@@ -157,7 +153,6 @@ LAB_003dff04:
             uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
             pvVar9 = (void *)operator new(uVar13);
             uStack_a0 = uVar13 | 1;
-            uStack_98 = uVar8;
             pvStack_90 = pvVar9;
 LAB_003dfea0:
             memcpy(pvVar9,uVar7,uVar8);
@@ -203,9 +198,6 @@ LAB_003dfea0:
             sscanf(uVar7,"%f %f",&uStack_a8,(ulong)&uStack_a8 | 4);
             (*(code *)xmlFree)(uVar7);
             fStack_c0 = fVar3;
-            fStack_bc = fVar4;
-            uStack_b8 = uStack_a0;
-            uStack_b0 = uStack_a8;
             Walaber::Curve::addCurveKey(p0,&fStack_c0);
           }
         }

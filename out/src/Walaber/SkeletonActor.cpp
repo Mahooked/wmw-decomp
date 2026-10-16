@@ -124,7 +124,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
     else {
       do {
         plVar8 = plVar4;
-        plVar4 = (long *)*plVar8;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar8 != (long *)0x0);
     }
   }
@@ -171,7 +171,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
     }
@@ -195,7 +195,7 @@ void Walaber::SkeletonActor::~SkeletonActor(long param_1)
     else {
       do {
         plVar8 = plVar4;
-        plVar4 = (long *)*plVar8;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar8 != (long *)0x0);
     }
   }
@@ -240,15 +240,10 @@ void Walaber::SkeletonActor::loadSkeleton(long param_1,undefined8 param_2,undefi
   undefined8 *puVar2;
   int *piVar3;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   if (*(long **)(param_1 + 8) != (long *)0x0) {
     (**(code **)(**(long **)(param_1 + 8) + 8))();
@@ -264,19 +259,14 @@ void Walaber::SkeletonActor::loadSkeleton(long param_1,undefined8 param_2,undefi
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
-  piStack_70 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0034056c to 0034057b has its CatchHandler @ 003405c0 */
   puStack_98 = puVar2;
-  piStack_90 = piVar3;
   Walaber::Skeleton::loadSkeletonWithCallback(*(undefined4 *)(param_1 + 0x60),param_3,&puStack_98,param_1 + 0x58,param_1 + 100,
                   param_2);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -301,15 +291,10 @@ void Walaber::SkeletonActor::_skeletonLoaded(void *p0)
   long in_x1;
   long lVar4;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   undefined8 *puStack_48;
-  int *piStack_40;
   
   *(undefined8 *)((long)p0 + 8) = *(undefined8 *)(in_x1 + 8);
   puVar2 = (undefined8 *)operator new(0x28);
@@ -322,20 +307,15 @@ void Walaber::SkeletonActor::_skeletonLoaded(void *p0)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_78 = puVar2;
-  piStack_70 = piVar3;
-  piStack_50 = piVar3;
   puStack_48 = puVar2;
-  piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_68 = puVar2;
-  piStack_60 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   lVar4 = *(long *)((long)p0 + 8);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 003406a0 to 003406ab has its CatchHandler @ 00340728 */
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
   Walaber::AnimationManager::registerEventCallback(lVar4 + 0xe8,p0,&puStack_88);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   if (*(char *)((long)p0 + 0x75) == '\0') {
@@ -369,13 +349,10 @@ void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -394,8 +371,6 @@ void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -406,7 +381,6 @@ void Walaber::SkeletonActor::loadSkeletonWithAnimationDescriptions
                     /* try { // try from 00340860 to 00340863 has its CatchHandler @ 003408e8 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -507,7 +481,7 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
       else {
         do {
           plVar5 = plVar4;
-          plVar4 = (long *)*plVar5;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar5 != (long *)0x0);
       }
     }
@@ -531,7 +505,7 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
     else {
       do {
         plVar10 = plVar5;
-        plVar5 = (long *)*plVar10;
+        plVar5 = (long *)*plVar5;
       } while ((long *)*plVar10 != (long *)0x0);
     }
   }
@@ -1191,7 +1165,7 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0)
             else {
               do {
                 pbVar27 = pbVar25;
-                pbVar25 = *(byte **)pbVar27;
+                pbVar25 = *(byte **)pbVar25;
               } while (*(byte **)pbVar27 != (byte *)0x0);
             }
             pbVar23 = pbVar27;
@@ -3663,7 +3637,7 @@ LAB_00344928:
       else {
         do {
           WVar4 = WVar8;
-          WVar8 = *(Walaber__Vector2 *)WVar4;
+          WVar8 = *(Walaber__Vector2 *)WVar8;
         } while (*(Walaber__Vector2 *)WVar4 != (Walaber__Vector2)0x0);
       }
     }
@@ -3735,7 +3709,7 @@ void Walaber::SkeletonActor::update(float p0)
     else {
       do {
         plVar7 = plVar3;
-        plVar3 = (long *)*plVar7;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
@@ -3853,7 +3827,7 @@ void Walaber::SkeletonActor::draw(Walaber__SpriteBatch *p0,bool p1,bool p2)
       else {
         do {
           plVar2 = plVar3;
-          plVar3 = (long *)*plVar2;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar2 != (long *)0x0);
       }
     }
@@ -3933,7 +3907,7 @@ void Walaber::SkeletonActor::drawProps(Walaber__SpriteBatch *p0)
     else {
       do {
         plVar7 = plVar2;
-        plVar2 = (long *)*plVar7;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
@@ -4104,7 +4078,7 @@ void Walaber::SkeletonActor::_clearNonSceneProps(long param_1)
       else {
         do {
           plVar5 = plVar3;
-          plVar3 = (long *)*plVar5;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SkeletonActor::Prop*>>>::erase((long *)(param_1 + 0x28));
@@ -4125,7 +4099,7 @@ void Walaber::SkeletonActor::_clearNonSceneProps(long param_1)
     else {
       do {
         plVar2 = plVar3;
-        plVar3 = (long *)*plVar2;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar2 != (long *)0x0);
     }
   }
@@ -4532,7 +4506,7 @@ void Walaber::SkeletonActor::_animationEventCallback(void *p0)
           else {
             do {
               plVar13 = plVar15;
-              plVar15 = (long *)*plVar13;
+              plVar15 = (long *)*plVar15;
             } while ((long *)*plVar13 != (long *)0x0);
           }
           plVar7 = plVar13;

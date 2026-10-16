@@ -43,7 +43,6 @@ void std::__ndk1::__num_get_unsigned_integral<unsigned_long_long>(char *p0,char 
       else {
         lVar7 = -lVar6;
         if (cVar2 != '-') {
-          lVar7 = lVar6;
         }
       }
       goto LAB_005e1c50;

@@ -36,7 +36,7 @@ LAB_00336a18:
   puVar10 = param_1;
 LAB_00336a38:
   param_1 = puVar10;
-  lVar7 = (long)param_2 - (long)param_1;
+  lVar7 = (long)param_2 - (long)puVar10;
   uVar6 = lVar7 >> 3;
   switch(uVar6) {
   case 0:
@@ -113,7 +113,7 @@ LAB_00336adc:
       puVar13 = puVar10 + -1;
       do {
         puVar10 = puVar13;
-        puVar13 = puVar10 + 1;
+        puVar13 = puVar13 + 1;
         uVar6 = (*(code *)*param_3)(param_1,puVar13);
       } while ((uVar6 & 1) == 0);
       puVar10 = puVar10 + 2;
@@ -151,7 +151,7 @@ LAB_00336b10:
       puVar12 = puVar11 + -1;
       do {
         puVar11 = puVar12;
-        puVar12 = puVar11 + 1;
+        puVar12 = puVar12 + 1;
         uVar6 = (*(code *)*param_3)(puVar12,puVar10);
       } while ((uVar6 & 1) != 0);
       puVar11 = puVar11 + 2;

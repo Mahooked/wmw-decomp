@@ -94,7 +94,7 @@ void Walaber::WidgetManager::~WidgetManager(long param_1)
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -174,7 +174,7 @@ void Walaber::WidgetManager::removeWidget(Walaber__Widget *p0)
   else {
     do {
       lVar1 = lVar2;
-      lVar2 = *(long *)(lVar1 + 0x18);
+      lVar2 = *(long *)(lVar2 + 0x18);
     } while (lVar2 != in_x1);
     *(undefined8 *)(lVar1 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
     *(undefined8 *)(in_x1 + 0x18) = 0;
@@ -369,7 +369,6 @@ LAB_0036b440:
                     if ((uVar8 & 1) != 0) {
                       lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b20c to 0036b217 has its CatchHandler @ 0036b978 */
-                      lStack_c8 = lVar17;
                       std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
                     }
                   }
@@ -414,7 +413,7 @@ LAB_0036b440:
                   else {
                     do {
                       plVar14 = plVar9;
-                      plVar9 = (long *)*plVar14;
+                      plVar9 = (long *)*plVar9;
                     } while ((long *)*plVar14 != (long *)0x0);
                   }
                 }
@@ -454,7 +453,7 @@ LAB_0036b458:
           else {
             do {
               plVar14 = plVar16;
-              plVar16 = (long *)*plVar14;
+              plVar16 = (long *)*plVar16;
             } while ((long *)*plVar14 != (long *)0x0);
           }
           plVar19 = plVar14;
@@ -492,7 +491,7 @@ LAB_0036b458:
         else {
           do {
             plVar16 = plVar14;
-            plVar14 = (long *)*plVar16;
+            plVar14 = (long *)*plVar14;
           } while ((long *)*plVar16 != (long *)0x0);
         }
       }
@@ -533,7 +532,6 @@ LAB_0036b458:
                   if ((uVar8 & 1) != 0) {
                     lStack_d0 = CONCAT44(lStack_d0._4_4_,*(undefined4 *)(lVar17 + 0x20));
                     /* try { // try from 0036b620 to 0036b62b has its CatchHandler @ 0036b984 */
-                    lStack_c8 = lVar17;
                     std::__ndk1::__tree_iterator<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__tree_node<std::__ndk1::__value_type<int, Walaber::Widget*>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::__emplace_multi<std::__ndk1::pair<int, Walaber::Widget*>>(&uStack_b8,&lStack_d0);
                   }
                 }
@@ -588,7 +586,7 @@ LAB_0036b458:
                 else {
                   do {
                     plVar16 = plVar14;
-                    plVar14 = (long *)*plVar16;
+                    plVar14 = (long *)*plVar14;
                   } while ((long *)*plVar16 != (long *)0x0);
                 }
               }
@@ -616,7 +614,7 @@ LAB_0036b458:
           else {
             do {
               plVar14 = plVar16;
-              plVar16 = (long *)*plVar14;
+              plVar16 = (long *)*plVar16;
             } while ((long *)*plVar14 != (long *)0x0);
           }
           plVar19 = plVar14;
@@ -687,7 +685,7 @@ LAB_0036b458:
         else {
           do {
             plVar16 = plVar19;
-            plVar19 = (long *)*plVar16;
+            plVar19 = (long *)*plVar19;
           } while ((long *)*plVar16 != (long *)0x0);
         }
       }
@@ -762,7 +760,6 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
               piVar4 = (int *)plVar10[5];
               uVar5 = *(ulong *)(piVar4 + 6);
               uStack_f8 = uStack_b8;
-              lStack_f0 = lStack_b0;
               iStack_e8 = (int)uStack_a8;
             }
             else {
@@ -849,7 +846,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
       else {
         do {
           plVar8 = plVar7;
-          plVar7 = (long *)*plVar8;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar8 != (long *)0x0);
       }
       plVar10 = plVar8;
@@ -882,7 +879,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
     else {
       do {
         plVar10 = plVar3;
-        plVar3 = (long *)*plVar10;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar10 != (long *)0x0);
     }
   }
@@ -1357,7 +1354,7 @@ void Walaber::WidgetManager::_clearFingers(long *param_1)
     else {
       do {
         plVar6 = plVar3;
-        plVar3 = (long *)*plVar6;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
@@ -1436,7 +1433,7 @@ undefined8 Walaber::WidgetManager::isMovingWidget(long param_1)
       else {
         do {
           plVar2 = plVar3;
-          plVar3 = (long *)*plVar2;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar2 != (long *)0x0);
       }
     }
@@ -1995,7 +1992,7 @@ void Walaber::WidgetManager::WidgetManager(Walaber__WidgetManager *p0)
     else {
       do {
         plVar10 = plVar4;
-        plVar4 = (long *)*plVar10;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar10 != (long *)0x0);
     }
   }
@@ -2026,7 +2023,7 @@ void Walaber::WidgetManager::WidgetManager(Walaber__WidgetManager *p0)
       else {
         do {
           plVar6 = plVar4;
-          plVar4 = (long *)*plVar6;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar10 = plVar6;

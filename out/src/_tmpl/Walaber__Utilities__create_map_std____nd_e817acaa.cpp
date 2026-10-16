@@ -50,7 +50,7 @@ void Walaber::Utilities::create_map::operator_cast_to_map(undefined8 *param_1,lo
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }

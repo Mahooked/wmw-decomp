@@ -61,7 +61,7 @@ void std::__ndk1::
           else {
             do {
               pWVar4 = pWVar3;
-              pWVar3 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4;
+              pWVar3 = *(Walaber__ScreenManager__ScreenOperationDetails **)pWVar3;
             } while (*(Walaber__ScreenManager__ScreenOperationDetails **)pWVar4 !=
                      (Walaber__ScreenManager__ScreenOperationDetails *)0x0);
           }

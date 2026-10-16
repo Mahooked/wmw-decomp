@@ -78,7 +78,6 @@ void Walaber::TransitionLoader::createTransition(uint p0)
       puVar4 = puVar3 + 2;
       auStack_48[0] = p0;
       (**(code **)(*(long *)*puVar3 + 0x10))((long *)*puVar3,auStack_48);
-      lVar2 = lStack_40;
       if (lStack_40 != 0) goto LAB_003f3fbc;
       puVar3 = puVar4;
     } while (puVar4 != DAT_00730558);

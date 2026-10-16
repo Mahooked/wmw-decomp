@@ -151,7 +151,7 @@ void WaterConcept::NotificationSingleton::~NotificationSingleton()
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -221,7 +221,7 @@ void WaterConcept::NotificationSingleton::reloadFont(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -263,7 +263,7 @@ void WaterConcept::NotificationSingleton::reloadWidgets(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }

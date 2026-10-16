@@ -50,8 +50,11 @@ re-inferred.
 2. **Re-shape decompiler output into source-shaped code.** The emitted C is
    machine-shaped. Call targets are now named (see "Call targets and PLT
    imports") and the compiler's `-fstack-protector` canary has been stripped
-   from 2,434 of the 2,513 guarded bodies (see "Source shaping"); what remains
-   is if-converted branches, spill/reload noise and register aliases.
+   from 2,434 of the 2,513 guarded bodies (see "Source shaping"). The bodies'
+   register copies are handled next: 1,094 dead or aliasing copies removed and
+   586 alias reads folded back to their source across 273 files. What remains is
+   if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
+   exception landing pads.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -86,6 +89,9 @@ re-inferred.
   canary and its dead locals removed from **2,434** guarded functions
   (`out/src` −19,500 lines, 485 files), the remaining 79 left intact because
   the guard shares a live local or an exit label. See "Source shaping".
+- The decompiler's register copies collapsed: **1,094** dead or aliasing copies
+  removed and **586** alias reads folded to their source, freeing **833**
+  declarations across 273 files (`out/src` −1,927 lines). See "Source shaping".
 
 ## What the game turned out to be
 
@@ -213,6 +219,10 @@ tools/
                       with the -fstack-protector canary (entry load, guard test,
                       __stack_chk_fail and the dead locals); --check gates that
                       no strippable guard is left
+  coalesce_locals.py  collapse the decompiler's register copies: in-block copy
+                      propagation, single-assignment alias/temporary folding,
+                      and dead-copy removal, then drop the freed declarations;
+                      --check gates that no coalescible copy is left
   srcstats.py         token metrics over out/src (f_0x, DAT_, param_N, call)
   test_cxxfilt.py     regression gate: 6,769/6,769 must match GCC (exit != 0
                       on any mismatch)
@@ -220,6 +230,8 @@ tools/
                       name formatter and +1/`this` alignment rule
   test_shape_source.py      regression gate for shape_source.py: every stack
                       protector shape, and the bodies that must be left alone
+  test_coalesce_locals.py   regression gate for coalesce_locals.py: every copy
+                      rule and every case that must be left alone
   ghidra.ps1          non-interactive analyzeHeadless wrapper (the .bat pauses
                       on error and would otherwise hang forever headless)
   ghidra/
@@ -794,9 +806,52 @@ it must be:
   reach; removing the block would strand them.
 
 `--check` fails while any strippable guard remains, and the pass is idempotent:
-a stripped body no longer matches. `-D_FORTIFY_SOURCE` overflow checks, C++
-exception cleanup and the like are the obvious next targets for the same
-treatment.
+a stripped body no longer matches.
+
+#### Register copies
+
+The stack protector gone, the next machine shape is the *register copy*. Ghidra
+models each ARM64 register as a variable, so one source local often travels
+through two or three of them, and a spilled value is written to a slot and read
+straight back:
+
+```c
+uVar5 = (ulong)(abStack_40[0] >> 1);
+uVar3 = uVar5;                 /* register alias */
+...
+uStack_98 = param_4;           /* argument spilled to a slot */
+uVar7 = uStack_98;
+```
+
+`tools/coalesce_locals.py` removes them by substitution, under two rules that
+keep it sound where the decompiler reuses a name:
+
+- **Copy propagation, within a basic block.** Walking each straight-line run of
+  plain statements, `x = y;` (both locals, no cast) records that `x` currently
+  *is* `y`; later reads of `x` in the same run are rewritten to `y`. The alias
+  is dropped the moment `y` is reassigned, and the whole environment is cleared
+  at any control line — `if`, `while`, `goto`, `return`, a label, a brace — so
+  an alias never crosses a branch. Locals whose address is taken are excluded
+  entirely, so a call in the run can never observe one behind the rewrite.
+- **Single-assignment folding, across blocks.** Where a name is assigned exactly
+  once in the whole body, a copy can be folded even across control flow. If the
+  source is *never* assigned (a local or a parameter) the destination is simply
+  that value; if the source is a single-use temporary, the two names are
+  collapsed into one. Either way the destination must not be read before the
+  copy, because a stack slot the decompiler reused would hold another variable
+  there.
+
+Finally, any copy left with no reader is a dead store — Ghidra materialises the
+values a `-O2` build leaves in registers — and is deleted, and declarations no
+longer mentioned are dropped. In all, **1,094** copies are removed and **586**
+alias reads folded, freeing **833** declarations across 273 files; `out/src`
+loses 1,927 lines. `tools/test_coalesce_locals.py` pins every rule *and* every
+case that must be refused (a branch between source and read, a reassignment, an
+address-taken local, a cast, a pointer write such as `*p = …` that only *reads*
+`p`). `--check` is a gate, and the pass is idempotent.
+
+If-converted branches, the sub-register `CONCAT`/`SUB`/`ZEXT` noise and the C++
+exception landing pads are the next targets for the same treatment.
 
 ### Quality caveats
 
@@ -1052,6 +1107,11 @@ py tools\test_apply_signatures.py         # gate: formatter + alignment rule
 py tools\shape_source.py
 py tools\shape_source.py --check          # gate: 0 strippable guards left
 py tools\test_shape_source.py             # gate: every guard shape
+
+# 3e. collapse the decompiler's register copies (idempotent; run after 3d)
+py tools\coalesce_locals.py
+py tools\coalesce_locals.py --check       # gate: 0 coalescible copies left
+py tools\test_coalesce_locals.py          # gate: every copy rule
 
 # 4. class hierarchy, vtables, per-class headers -> out/rtti/
 py tools\rtti.py $so out\rtti

@@ -16,7 +16,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   undefined8 *puVar3;
   long lVar5;
   undefined8 *puStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
@@ -26,7 +25,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   undefined8 *puStack_100;
   int *piStack_f8;
   undefined8 *puStack_f0;
-  int *piStack_e8;
   undefined8 uStack_e0;
   undefined8 uStack_d8;
   undefined8 uStack_d0;
@@ -42,7 +40,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   undefined8 *puStack_98;
   int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   
   WaterConcept::WCScreen::WCScreen(this,3);
                     /* try { // try from 00506cbc to 00506cc7 has its CatchHandler @ 00507244 */
@@ -117,7 +114,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   uStack_b3 = (undefined3)((ulong)piStack_a0 >> 0x28);
   *piStack_a0 = 3;
   puStack_a8 = puVar3;
-  piStack_80 = piStack_a0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_c0);
   puStack_98 = puStack_a8;
   piStack_90 = piStack_a0;
@@ -170,7 +166,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   lVar5 = this[0x55];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_f0 = puStack_98;
-  piStack_e8 = piStack_90;
   if (puStack_98 != (undefined8 *)0x0) {
     *piStack_90 = *piStack_90 + 1;
   }
@@ -245,7 +240,6 @@ void WaterConcept::Screen_MainMenu::Screen_MainMenu()
   lVar5 = this[0x57];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_140 = puStack_100;
-  piStack_138 = piStack_f8;
   if (puStack_100 != (undefined8 *)0x0) {
     *piStack_f8 = *piStack_f8 + 1;
   }
@@ -516,11 +510,9 @@ void WaterConcept::Screen_MainMenu::enter(long param_1)
   long lStack_1b8;
   int *piStack_1b0;
   long lStack_1a8;
-  int *piStack_1a0;
   undefined8 uStack_198;
   undefined8 uStack_190;
   ulong uStack_188;
-  int *piStack_180;
   float fStack_178;
   float fStack_174;
   undefined8 uStack_170;
@@ -1451,7 +1443,6 @@ void WaterConcept::Screen_MainMenu::enter(long param_1)
                     /* try { // try from 005084c8 to 005084e3 has its CatchHandler @ 005087d0 */
     Walaber::TextureManager::getTexture(&uStack_138,uVar9,&bStack_120,&uStack_198,0,0);
     uStack_188 = uStack_138;
-    piStack_180 = piStack_130;
     if (uStack_138 != 0) {
       *piStack_130 = *piStack_130 + 1;
     }
@@ -1482,7 +1473,6 @@ void WaterConcept::Screen_MainMenu::enter(long param_1)
                     /* try { // try from 00508544 to 0050855f has its CatchHandler @ 0050878c */
     Walaber::TextureManager::getTexture(&lStack_1b8,uVar9,&bStack_80,&uStack_1c8,0,0);
     lStack_1a8 = lStack_1b8;
-    piStack_1a0 = piStack_1b0;
     if (lStack_1b8 != 0) {
       *piStack_1b0 = *piStack_1b0 + 1;
     }
@@ -2085,7 +2075,6 @@ void WaterConcept::Screen_MainMenu::_loadAtlases(void *p0)
   int *piStack_58;
   char *pcStack_50;
   undefined8 *puStack_48;
-  int *piStack_40;
   
   if (mCurrentAtlas < mAtlasesToLoadCount) {
     puStack_60 = (undefined8 *)operator new(0x10);
@@ -2098,7 +2087,6 @@ void WaterConcept::Screen_MainMenu::_loadAtlases(void *p0)
     lVar7 = (long)mCurrentAtlas;
     mCurrentAtlas = mCurrentAtlas + 1;
     puStack_48 = puStack_60;
-    piStack_40 = piStack_58;
     if (puStack_60 != (undefined8 *)0x0) {
       *piStack_58 = *piStack_58 + 1;
     }
@@ -2424,19 +2412,15 @@ void WaterConcept::Screen_MainMenu::_loadAchievements(void *p0)
   undefined8 uStack_2c0;
   undefined8 uStack_2b8;
   undefined8 *puStack_2b0;
-  int *piStack_2a8;
   undefined8 *puStack_2a0;
   undefined4 *puStack_298;
   undefined8 *puStack_290;
-  int *piStack_288;
   undefined8 *puStack_280;
   undefined4 *puStack_278;
   undefined8 *puStack_270;
-  int *piStack_268;
   undefined8 *puStack_260;
   undefined4 *puStack_258;
   undefined8 *puStack_250;
-  int *piStack_248;
   undefined8 *puStack_240;
   int *piStack_238;
   undefined8 *puStack_230;
@@ -2529,7 +2513,6 @@ void WaterConcept::Screen_MainMenu::_loadAchievements(void *p0)
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_250 = puStack_240;
-  piStack_248 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -2565,7 +2548,6 @@ void WaterConcept::Screen_MainMenu::_loadAchievements(void *p0)
   Walaber::SharedPtr<Walaber::Callback>::operator=(&puStack_240,&uStack_1a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_270 = puStack_240;
-  piStack_268 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -2601,7 +2583,6 @@ void WaterConcept::Screen_MainMenu::_loadAchievements(void *p0)
   Walaber::SharedPtr<Walaber::Callback>::operator=(&puStack_240,&uStack_1a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_290 = puStack_240;
-  piStack_288 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -2645,7 +2626,6 @@ void WaterConcept::Screen_MainMenu::_loadAchievements(void *p0)
     __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
   }
   puStack_2b0 = puStack_240;
-  piStack_2a8 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -7934,13 +7914,9 @@ void WaterConcept::Screen_MainMenu::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [17];
   undefined5 uStack_4f;
   undefined1 uStack_4a;
@@ -7979,20 +7955,16 @@ void WaterConcept::Screen_MainMenu::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0050f1a4 to 0050f1af has its CatchHandler @ 0050f200 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -8533,7 +8505,7 @@ LAB_0050fe78:
             else {
               do {
                 plVar14 = plVar17;
-                plVar17 = (long *)*plVar14;
+                plVar17 = (long *)*plVar17;
               } while ((long *)*plVar14 != (long *)0x0);
             }
           }
@@ -8562,7 +8534,7 @@ LAB_0050fe78:
               else {
                 do {
                   plVar17 = plVar14;
-                  plVar14 = (long *)*plVar17;
+                  plVar14 = (long *)*plVar14;
                 } while ((long *)*plVar17 != (long *)0x0);
               }
               std::__ndk1::__tree<std::__ndk1::__value_type<int, float>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, float>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, float>>>::erase(puVar10,plVar12);
@@ -8909,7 +8881,6 @@ void WaterConcept::Screen_MainMenu::triggerAccelerometerTheme(long param_1)
   float fVar14;
   float fStack_f8;
   float fStack_d0;
-  float fStack_cc;
   undefined8 uStack_c8;
   undefined4 uStack_bc;
   undefined8 uStack_b8;
@@ -8962,7 +8933,6 @@ void WaterConcept::Screen_MainMenu::triggerAccelerometerTheme(long param_1)
         }
         iVar6 = rand(iVar4);
         fStack_d0 = fVar14;
-        fStack_cc = fVar14;
         Walaber::ParticleSet::addParticle(0x3f800000,(float)(iVar6 % 0x168),(float)(iVar5 % 0x2711) * 5e-05 + 2.25,
                         fVar10,uVar7,&uStack_b8,&uStack_c8,&fStack_d0,&Walaber::Vector2::Zero,
                         &Walaber::Vector2::Zero,iVar1,&uStack_bc);
@@ -9894,7 +9864,7 @@ LAB_00510f84:
         if (iVar28 < 0) {
           do {
             iVar28 = iVar13;
-            iVar13 = iVar28 + 10;
+            iVar13 = iVar13 + 10;
           } while (iVar13 < -10);
           iVar28 = iVar28 + 0x14;
         }

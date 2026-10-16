@@ -53,7 +53,6 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1)
                     /* try { // try from 005cd6a4 to 005cd6ab has its CatchHandler @ 005cd73c */
     pvVar6 = (void *)operator new(p0_00);
     uStack_78 = p0_00 | 1;
-    uStack_70 = uVar3;
     pvStack_68 = pvVar6;
   }
   memcpy(pvVar6,p1,uVar3);

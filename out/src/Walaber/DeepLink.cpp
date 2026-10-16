@@ -165,7 +165,7 @@ void Walaber::DeepLink::UnregisterScreen(uint p0)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar1 = plVar3;
@@ -277,7 +277,7 @@ void Walaber::DeepLink::OnScreenCommand(void *p0)
       else {
         do {
           plVar8 = plVar7;
-          plVar7 = (long *)*plVar8;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar8 != (long *)0x0);
       }
     }

@@ -119,7 +119,6 @@ void Walaber::CircleHelper::drawCurvedArrow
   float fVar4;
   undefined4 in_register_00005004;
   undefined4 in_register_00005024;
-  float fVar5;
   float fVar6;
   float fVar7;
   
@@ -141,10 +140,9 @@ void Walaber::CircleHelper::drawCurvedArrow
   if (p3 <= 0.0) {
     fVar3 = -10.0;
   }
-  fVar5 = fVar7 * 0.0 - fVar4;
+  DAT_0072d9fc = fVar7 * 0.0 - fVar4;
   fVar6 = (p3 - fVar3) * 0.017453292;
   fVar7 = fVar7 + fVar4 * 0.0;
-  DAT_0072d9fc = fVar5;
   DAT_0072da00 = fVar7;
   fVar3 = (float)cosf(fVar6);
   fVar4 = (float)sinf(fVar6);
@@ -153,7 +151,7 @@ void Walaber::CircleHelper::drawCurvedArrow
   fVar4 = (float)sinf(fVar6);
   fVar6 = fVar3 * 0.85 + fVar4 * 0.0;
   DAT_0072da0c = CONCAT44(fVar6,fVar3 * 0.0 - fVar4 * 0.85);
-  DAT_0072da14 = fVar5;
+  DAT_0072da14 = DAT_0072d9fc;
   DAT_0072da18 = fVar7;
   Walaber::GraphicsGL::setBlending(CONCAT44(fVar6,fVar3 * 0.0 + fVar4 * 0.85),1);
   Walaber::GraphicsGL::setTextureEnabled(0);

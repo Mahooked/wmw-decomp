@@ -14,7 +14,6 @@ long std::__ndk1::locale::id::__get(long *param_1)
 {
   long lVar1;
   long *plStack_50;
-  code *pcStack_48;
   undefined8 uStack_40;
   undefined1 **ppuStack_38;
   undefined1 *puStack_30;
@@ -23,7 +22,6 @@ long std::__ndk1::locale::id::__get(long *param_1)
   lVar1 = tpidr_el0;
   lStack_28 = *(long *)(lVar1 + 0x28);
   uStack_40 = 0;
-  pcStack_48 = __init;
   plStack_50 = param_1;
   if (*param_1 != -1) {
     ppuStack_38 = &puStack_30;

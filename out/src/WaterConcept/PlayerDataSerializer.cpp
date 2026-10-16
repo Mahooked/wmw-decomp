@@ -1467,7 +1467,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelPackInfo(std::
   char cVar3;
   undefined8 *puVar5;
   long lVar6;
-  ulong uVar7;
   bool bVar8;
   long lVar9;
   ulong unaff_x22;
@@ -1562,7 +1561,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__nd
   uint uVar3;
   undefined8 *puVar4;
   long lVar5;
-  ulong uVar6;
   byte *pbVar7;
   long lVar8;
   undefined4 uVar9;
@@ -1688,7 +1686,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAchievementInfo(std
   undefined1 *puVar3;
   undefined8 *puVar4;
   long lVar5;
-  ulong uVar6;
   byte *pbVar7;
   long lVar8;
   uint uVar9;
@@ -1770,7 +1767,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCollectibleInfo(std
   uint uVar5;
   bool bVar6;
   long lVar7;
-  ulong uVar8;
   undefined8 *puVar9;
   undefined8 *puVar10;
   byte *pbVar11;
@@ -1882,7 +1878,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyChallengeInfo
   uint uVar4;
   bool bVar5;
   long lVar6;
-  ulong uVar7;
   undefined8 *puVar8;
   byte *pbVar9;
   undefined8 *puVar10;
@@ -1984,7 +1979,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeCrankyFoodInfo(std:
   uint uVar5;
   bool bVar6;
   long lVar7;
-  ulong uVar8;
   undefined8 *puVar9;
   undefined8 *puVar10;
   byte *pbVar11;
@@ -2096,7 +2090,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieMusicInfo(std:
   uint uVar5;
   bool bVar6;
   long lVar7;
-  ulong uVar8;
   undefined8 *puVar9;
   undefined8 *puVar10;
   byte *pbVar11;
@@ -2207,7 +2200,6 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeAllieChallengeInfo(
   uint uVar4;
   bool bVar5;
   long lVar6;
-  ulong uVar7;
   undefined8 *puVar8;
   byte *pbVar9;
   undefined8 *puVar10;
@@ -2485,7 +2477,7 @@ void WaterConcept::PlayerDataSerializer::serializeLevelPackInfo(undefined8 *para
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -2672,7 +2664,7 @@ void WaterConcept::PlayerDataSerializer::serializeLevelInfo(undefined8 *param_1)
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -2751,7 +2743,7 @@ void WaterConcept::PlayerDataSerializer::serializeAchievementInfo(undefined8 *pa
       else {
         do {
           plVar5 = plVar4;
-          plVar4 = (long *)*plVar5;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       plVar7 = plVar5;
@@ -2842,7 +2834,7 @@ void WaterConcept::PlayerDataSerializer::serializeCollectibleInfo(undefined8 *pa
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -2928,7 +2920,7 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyChallengeInfo(undefined8
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -3019,7 +3011,7 @@ void WaterConcept::PlayerDataSerializer::serializeCrankyFoodInfo(undefined8 *par
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -3110,7 +3102,7 @@ void WaterConcept::PlayerDataSerializer::serializeAllieMusicInfo(undefined8 *par
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -3196,7 +3188,7 @@ void WaterConcept::PlayerDataSerializer::serializeAllieChallengeInfo(undefined8 
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;

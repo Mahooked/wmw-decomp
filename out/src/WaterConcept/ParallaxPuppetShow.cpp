@@ -126,7 +126,7 @@ void WaterConcept::ParallaxPuppetShow::_clearScene(long param_1)
     else {
       do {
         plVar5 = plVar2;
-        plVar2 = (long *)*plVar5;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -193,13 +193,10 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -216,8 +213,6 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -228,7 +223,6 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
                     /* try { // try from 00430158 to 0043015b has its CatchHandler @ 004301e0 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -365,7 +359,7 @@ undefined8 WaterConcept::ParallaxPuppetShow::update(float p0)
       else {
         do {
           plVar5 = plVar3;
-          plVar3 = (long *)*plVar5;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar5 != (long *)0x0);
       }
     }
@@ -467,7 +461,7 @@ void WaterConcept::ParallaxPuppetShow::_doneLoading(undefined1 *param_1)
       else {
         do {
           plVar7 = plVar6;
-          plVar6 = (long *)*plVar7;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar5 = plVar7;
@@ -500,7 +494,7 @@ void WaterConcept::ParallaxPuppetShow::_doneLoading(undefined1 *param_1)
       else {
         do {
           plVar8 = plVar5;
-          plVar5 = (long *)*plVar8;
+          plVar5 = (long *)*plVar5;
         } while ((long *)*plVar8 != (long *)0x0);
       }
     }
@@ -551,7 +545,6 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
   float fVar7;
   float fVar8;
   float fStack_a8;
-  float fStack_a4;
   long lStack_a0;
   float fStack_98;
   float fStack_94;
@@ -568,7 +561,6 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
           fVar6 = *(float *)(plVar5 + 6);
           fVar8 = *(float *)(in_x0 + 0x1c);
           fStack_98 = *(float *)(in_x0 + 0x18);
-          fStack_94 = fVar8;
           if (fVar6 != -1.0) {
             fStack_94 = fVar6 / (Walaber::ScreenCoord::sScreenSize / DAT_0072d884);
             fStack_98 = fVar6;
@@ -583,7 +575,6 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
           Walaber::CameraController::setMovement(in_x0 + 0xa8,&lStack_90,&fStack_98);
           lStack_a0 = plVar5[5];
           fStack_a8 = fVar6;
-          fStack_a4 = fVar8;
           Walaber::CameraController::queueMovement((int)plVar5[7],0,0,in_x0 + 0xa8,&lStack_a0,&fStack_a8,0);
         }
         plVar2 = (long *)plVar5[1];
@@ -601,7 +592,7 @@ void WaterConcept::ParallaxPuppetShow::_fireCameraMoves(float p0,float p1)
         else {
           do {
             plVar3 = plVar2;
-            plVar2 = (long *)*plVar3;
+            plVar2 = (long *)*plVar2;
           } while ((long *)*plVar3 != (long *)0x0);
         }
         plVar5 = plVar3;
@@ -668,7 +659,7 @@ void WaterConcept::ParallaxPuppetShow::_fireTransitions(float p0,float p1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -715,7 +706,7 @@ void WaterConcept::ParallaxPuppetShow::_fireAnimationCues(float p0,float p1)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar4 = plVar3;
@@ -768,7 +759,7 @@ void WaterConcept::ParallaxPuppetShow::_fireColorCues(float p0,float p1)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar4 = plVar3;
@@ -872,7 +863,7 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
       else {
         do {
           plVar6 = plVar4;
-          plVar4 = (long *)*plVar6;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar6 != (long *)0x0);
       }
     }
@@ -1746,7 +1737,7 @@ LAB_004322b8:
                       else {
                         do {
                           ppuVar10 = ppuVar25;
-                          ppuVar25 = (undefined4 **)*ppuVar10;
+                          ppuVar25 = (undefined4 **)*ppuVar25;
                         } while ((undefined4 **)*ppuVar10 != (undefined4 **)0x0);
                       }
                     }
@@ -2434,7 +2425,6 @@ void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar5 = (void *)operator new(p0_00);
     uStack_70 = p0_00 | 1;
-    uStack_68 = uVar3;
     pvStack_60 = pvVar5;
   }
   memcpy(pvVar5,lVar4,uVar3);

@@ -38,7 +38,7 @@ void Walaber::WidgetHelper::_clearPrototypes(void)
       else {
         do {
           plVar2 = plVar1;
-          plVar1 = (long *)*plVar2;
+          plVar1 = (long *)*plVar1;
         } while ((long *)*plVar2 != (long *)0x0);
       }
       plVar4 = plVar2;
@@ -77,9 +77,7 @@ void Walaber::WidgetHelper::_copyFromPrototype
   ulong uVar12;
   undefined8 uVar13;
   undefined4 uStack_90;
-  undefined4 uStack_8c;
   undefined4 uStack_88;
-  undefined4 uStack_84;
   undefined1 auStack_80 [8];
   undefined4 uStack_78;
   undefined4 uStack_74;
@@ -429,7 +427,6 @@ void Walaber::WidgetHelper::_copyFromPrototype
                     /* try { // try from 00370028 to 00370037 has its CatchHandler @ 00370108 */
       Walaber::WidgetHelper::_parseSizeToScreen(&uStack_78,p0,p1);
       uStack_88 = uStack_78;
-      uStack_84 = uStack_74;
                     /* try { // try from 00370040 to 003700c7 has its CatchHandler @ 00370110 */
       Walaber::WidgetHelper::_parsePositionToScreen(auStack_80,p0,p3,&uStack_88);
       lVar9 = xmlGetProp(p0,&DAT_006122f0);
@@ -441,7 +438,6 @@ void Walaber::WidgetHelper::_copyFromPrototype
       (*(code *)xmlFree)();
       if (lVar9 != 0) {
         uStack_90 = uStack_78;
-        uStack_8c = uStack_74;
         (**(code **)(p1->f_0x0 + 0x50))(p1,&uStack_90);
       }
       if ((abStack_70[0] & 1) != 0) {
@@ -534,7 +530,6 @@ void Walaber::WidgetHelper::_parseSizeToScreen(_xmlNode *p0,Walaber__Widget *p1)
       uVar9 = uVar6 + 0x10 & 0xfffffffffffffff0;
       pvVar10 = (void *)operator new(uVar9);
       uStack_a8 = uVar9 | 1;
-      uStack_a0 = uVar6;
       pvStack_98 = pvVar10;
 LAB_00371424:
       memcpy(pvVar10,uVar7,uVar6);
@@ -991,7 +986,6 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
   undefined8 *puStack_98;
   undefined4 *puStack_90;
   undefined8 *puStack_88;
-  undefined4 *puStack_80;
   byte *apbStack_78 [3];
   undefined8 uStack_60;
   undefined8 uStack_58;
@@ -1022,7 +1016,6 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
     *puStack_90 = 2;
                     /* try { // try from 00371eb0 to 00371ec7 has its CatchHandler @ 00371f14 */
     puStack_88 = puVar5;
-    puStack_80 = puStack_90;
     Walaber::FileManager::readFile(uVar4,param_1,&puStack_88,apbStack_78,0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -1063,12 +1056,10 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
   undefined8 *puStack_f8;
   undefined4 *puStack_f0;
   undefined8 *puStack_e8;
-  undefined4 *puStack_e0;
   undefined8 *puStack_d8;
   undefined4 *puStack_d0;
   void *pvStack_c8;
   undefined8 *puStack_c0;
-  undefined4 *puStack_b8;
   ulong uStack_b0;
   ulong uStack_a8;
   undefined1 *puStack_a0;
@@ -1174,7 +1165,6 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
     *puStack_f0 = 2;
                     /* try { // try from 00372250 to 00372267 has its CatchHandler @ 00372290 */
     puStack_e8 = puVar7;
-    puStack_e0 = puStack_f0;
     Walaber::FileManager::readFile(uVar6,&puStack_d8,&puStack_e8,&uStack_b0,1);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f8);
@@ -1196,7 +1186,6 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
     *puStack_d0 = 2;
                     /* try { // try from 0037215c to 00372173 has its CatchHandler @ 003722ec */
     puStack_c0 = puVar7;
-    puStack_b8 = puStack_d0;
     Walaber::FileManager::readFile(uVar6,&uStack_80,&puStack_c0,&uStack_b0,1);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
@@ -1304,7 +1293,6 @@ void Walaber::WidgetHelper::_createAndUpdateWidgetPrototypes(_xmlNode *p0)
 
 {
   undefined4 uVar2;
-  undefined4 uVar3;
   int iVar4;
   undefined8 uVar5;
   ulong uVar6;
@@ -1314,13 +1302,10 @@ void Walaber::WidgetHelper::_createAndUpdateWidgetPrototypes(_xmlNode *p0)
   long lVar10;
   ulong p0_00;
   undefined4 uStack_f8;
-  undefined4 uStack_f4;
   undefined8 uStack_f0;
   undefined4 uStack_e8;
-  undefined4 uStack_e4;
   undefined8 uStack_e0;
   undefined4 uStack_d8;
-  undefined4 uStack_d4;
   byte abStack_d0 [16];
   void *pvStack_c0;
   undefined4 uStack_b4;
@@ -1392,14 +1377,11 @@ LAB_003725a8:
         }
                     /* try { // try from 00372660 to 0037266f has its CatchHandler @ 0037275c */
         Walaber::WidgetHelper::_parseSizeToScreen(&uStack_d8,lVar10,0);
-        uVar3 = uStack_d4;
         uVar2 = uStack_d8;
         uStack_e8 = uStack_d8;
-        uStack_e4 = uStack_d4;
                     /* try { // try from 00372678 to 003726d7 has its CatchHandler @ 00372788 */
         Walaber::WidgetHelper::_parsePositionToScreen(&uStack_e0,lVar10,0,&uStack_e8);
         uStack_f8 = uVar2;
-        uStack_f4 = uVar3;
         uStack_f0 = uStack_e0;
         uVar5 = Walaber::WidgetHelper::_createAndUpdateWidget(lVar10,0,uStack_b4,0xffffffff,&uStack_f0,&uStack_f8,uVar5);
         pbStack_78 = abStack_98;
@@ -1470,7 +1452,6 @@ Walaber::WidgetHelper::_createAndUpdateWidget
   undefined8 uStack_c8;
   undefined8 uStack_c0;
   undefined8 ****ppppuStack_b8;
-  undefined8 uStack_b0;
   undefined1 *puStack_a8;
   undefined8 ****ppppuStack_a0;
   undefined8 uStack_98;
@@ -1495,7 +1476,6 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       }
     }
     puStack_90 = puStack_a8;
-    uStack_98 = uStack_b0;
     ppppuStack_a0 = ppppuStack_b8;
   }
                     /* try { // try from 00372898 to 003728ab has its CatchHandler @ 00372fc0 */
@@ -1752,15 +1732,11 @@ void Walaber::WidgetHelper::_createBaseWidget
   undefined8 uVar6;
   long *plVar7;
   undefined4 uStack_98;
-  undefined4 uStack_94;
   undefined8 uStack_90;
   undefined4 uStack_88;
-  undefined4 uStack_84;
   undefined4 uStack_80;
-  undefined4 uStack_7c;
   undefined8 uStack_78;
   undefined4 uStack_70;
-  undefined4 uStack_6c;
   
   iVar3 = Walaber::WidgetHelper::_parseInt(p0,&DAT_00619151);
   if (p3 == (Walaber__WidgetManager *)0x0) {
@@ -1783,7 +1759,6 @@ void Walaber::WidgetHelper::_createBaseWidget
   }
   Walaber::WidgetHelper::_parseSizeToScreen(&uStack_70,p0,plVar7);
   uStack_80 = uStack_70;
-  uStack_7c = uStack_6c;
   Walaber::WidgetHelper::_parsePositionToScreen(&uStack_78,p0,p1,&uStack_80);
   if (plVar7 != (long *)0x0) {
     lVar4 = xmlGetProp(p0,&DAT_006122f0);
@@ -1795,17 +1770,14 @@ void Walaber::WidgetHelper::_createBaseWidget
     (*(code *)xmlFree)();
     if (lVar4 != 0) {
       uStack_88 = uStack_70;
-      uStack_84 = uStack_6c;
       (**(code **)(*plVar7 + 0x50))(plVar7,&uStack_88);
     }
   }
   uStack_98 = uStack_70;
-  uStack_94 = uStack_6c;
   uStack_90 = uStack_78;
   uVar5 = Walaber::WidgetHelper::_createAndUpdateWidget(p0,p1,p2,iVar3,&uStack_90,&uStack_98,plVar7);
   uVar6 = 0;
   if (!bVar2) {
-    uVar6 = uVar5;
   }
 LAB_0037315c:
   return;
@@ -1837,7 +1809,6 @@ void Walaber::WidgetHelper::_parseInt(_xmlNode *p0,char *p1)
     uVar4 = xmlGetProp(p0,p1);
     sscanf(uVar4,"%d",&uStack_4c);
     (*(code *)xmlFree)(uVar4);
-    uVar2 = uStack_4c;
   }
   return;
 }
@@ -2272,9 +2243,7 @@ void Walaber::WidgetHelper::_updateWidgetTimedButton
 {
   float fVar2;
   long lStack_b8;
-  int *piStack_b0;
   long lStack_a8;
-  int *piStack_a0;
   long lStack_98;
   int *piStack_90;
   long lStack_88;
@@ -2306,7 +2275,6 @@ void Walaber::WidgetHelper::_updateWidgetTimedButton
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_98);
   lStack_a8 = lStack_78;
-  piStack_a0 = piStack_70;
   if (lStack_78 != 0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -2314,7 +2282,6 @@ void Walaber::WidgetHelper::_updateWidgetTimedButton
   Walaber::Widget_TimedButton::setActiveTexture(p1,&lStack_a8);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
   lStack_b8 = lStack_88;
-  piStack_b0 = piStack_80;
   if (lStack_88 != 0) {
     *piStack_80 = *piStack_80 + 1;
   }
@@ -2398,11 +2365,8 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   float fVar5;
   float fVar6;
   long lStack_110;
-  int *piStack_108;
   long lStack_100;
-  int *piStack_f8;
   long lStack_f0;
-  int *piStack_e8;
   long lStack_e0;
   int *piStack_d8;
   long lStack_d0;
@@ -2460,7 +2424,6 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_e0);
   lStack_f0 = lStack_b0;
-  piStack_e8 = piStack_a8;
   if (lStack_b0 != 0) {
     *piStack_a8 = *piStack_a8 + 1;
   }
@@ -2468,7 +2431,6 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   Walaber::Widget_ColorPicker::setBGTexture(p1,&lStack_f0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_f0);
   lStack_100 = lStack_c0;
-  piStack_f8 = piStack_b8;
   if (lStack_c0 != 0) {
     *piStack_b8 = *piStack_b8 + 1;
   }
@@ -2476,7 +2438,6 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   Walaber::Widget_ColorPicker::setSwatchTexture(p1,&lStack_100);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_100);
   lStack_110 = lStack_d0;
-  piStack_108 = piStack_c8;
   if (lStack_d0 != 0) {
     *piStack_c8 = *piStack_c8 + 1;
   }
@@ -2524,9 +2485,7 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   float fVar9;
   float fVar10;
   long lStack_1c8;
-  int *piStack_1c0;
   ulong uStack_1b8;
-  undefined8 uStack_1b0;
   undefined1 *puStack_1a8;
   ulong uStack_1a0;
   undefined8 uStack_198;
@@ -2534,11 +2493,8 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   long lStack_180;
   int *piStack_178;
   long lStack_170;
-  int *piStack_168;
   long lStack_160;
-  int *piStack_158;
   long lStack_150;
-  int *piStack_148;
   long lStack_140;
   int *piStack_138;
   long lStack_130;
@@ -2623,7 +2579,6 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   }
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
   lStack_150 = lStack_120;
-  piStack_148 = piStack_118;
   if (lStack_120 != 0) {
     *piStack_118 = *piStack_118 + 1;
   }
@@ -2631,7 +2586,6 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   Walaber::Widget_IconList::setBGTexture(p1,&lStack_150);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_150);
   lStack_160 = lStack_130;
-  piStack_158 = piStack_128;
   if (lStack_130 != 0) {
     *piStack_128 = *piStack_128 + 1;
   }
@@ -2639,7 +2593,6 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   Walaber::Widget_IconList::setScrollBarTexture(p1,&lStack_160);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_160);
   lStack_170 = lStack_140;
-  piStack_168 = piStack_138;
   if (lStack_140 != 0) {
     *piStack_138 = *piStack_138 + 1;
   }
@@ -2664,7 +2617,6 @@ void Walaber::WidgetHelper::_updateWidgetIconList
       }
     }
     puStack_190 = puStack_1a8;
-    uStack_198 = uStack_1b0;
     uStack_1a0 = uStack_1b8;
                     /* try { // try from 00374684 to 0037468f has its CatchHandler @ 003747e8 */
     Walaber::WidgetHelper::_getTexture(&uStack_1b8,&uStack_1a0);
@@ -2673,7 +2625,6 @@ void Walaber::WidgetHelper::_updateWidgetIconList
     if (lStack_180 == 0) break;
     if (*piStack_178 != 0) {
       lStack_1c8 = lStack_180;
-      piStack_1c0 = piStack_178;
       *piStack_178 = *piStack_178 + 1;
                     /* try { // try from 003746c4 to 003746d3 has its CatchHandler @ 003747d4 */
       Walaber::Widget_IconList::addIcon(p1,&lStack_1c8,iVar5);
@@ -3200,7 +3151,6 @@ void Walaber::WidgetHelper::_updateWidgetLabel
   int *piStack_118;
   void *pvStack_110;
   ulong uStack_108;
-  int *piStack_100;
   ulong uStack_f8;
   int *piStack_f0;
   byte abStack_e8 [16];
@@ -3288,7 +3238,6 @@ void Walaber::WidgetHelper::_updateWidgetLabel
     }
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f8);
     uStack_108 = uStack_120;
-    piStack_100 = piStack_118;
     if (uStack_120 != 0) {
       *piStack_118 = *piStack_118 + 1;
     }
@@ -4614,7 +4563,6 @@ void Walaber::WidgetHelper::_parseFloat(_xmlNode *p0,char *p1)
     uVar3 = xmlGetProp(p0,p1);
     sscanf(uVar3,"%f",&uStack_4c);
     (*(code *)xmlFree)(uVar3);
-    uVar4 = uStack_4c;
   }
   return;
 }
@@ -4731,7 +4679,6 @@ void Walaber::WidgetHelper::_getTextureNames(_xmlNode *param_1,std::__ndk1::vect
         operator delete(puStack_90);
       }
     }
-    uStack_98 = uStack_b0;
     uStack_a0 = uStack_b8;
     puStack_90 = puStack_a8;
     uVar1 = uStack_b8 >> 1 & 0x7f;

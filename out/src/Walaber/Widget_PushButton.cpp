@@ -823,7 +823,6 @@ LAB_00383ff0:
           p0_00 = uVar12 + 0x10 & 0xfffffffffffffff0;
           pvVar18 = (void *)operator new(p0_00);
           uStack_b8 = p0_00 | 1;
-          uStack_b0 = uVar12;
           pvStack_a8 = pvVar18;
 LAB_00384094:
           memcpy(pvVar18,puVar17,uVar12);

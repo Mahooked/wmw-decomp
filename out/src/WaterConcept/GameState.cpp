@@ -120,9 +120,7 @@ void WaterConcept::GameState::GameState
 {
   ulong uVar2;
   void *pvStack_98;
-  void *pvStack_90;
   void *pvStack_80;
-  void *pvStack_78;
   
   *(undefined1 *)(param_1 + 0x90) = 0;
   memset(param_1,0,0x78);
@@ -175,11 +173,9 @@ void WaterConcept::GameState::GameState
                     /* try { // try from 00429c04 to 00429c17 has its CatchHandler @ 00429cec */
   WaterConcept::GameState::init(param_1,param_3,&pvStack_80,&pvStack_98);
   if (pvStack_98 != (void *)0x0) {
-    pvStack_90 = pvStack_98;
     operator delete(pvStack_98);
   }
   if (pvStack_80 != (void *)0x0) {
-    pvStack_78 = pvStack_80;
     operator delete(pvStack_80);
   }
   uVar2 = 0;
@@ -228,29 +224,21 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
   ulong *puVar15;
   ulong uVar16;
   undefined8 *puStack_138;
-  int *piStack_130;
   undefined8 *puStack_128;
-  int *piStack_120;
   undefined8 *puStack_118;
-  int *piStack_110;
   undefined8 *puStack_108;
-  int *piStack_100;
   undefined8 *puStack_f8;
-  int *piStack_f0;
   undefined8 *puStack_e8;
-  int *piStack_e0;
   undefined8 *puStack_d8;
   int *piStack_d0;
   undefined8 *puStack_c8;
   int *piStack_c0;
   undefined8 *puStack_b8;
-  int *piStack_b0;
   undefined8 uStack_a8;
   undefined8 uStack_a0;
   undefined4 uStack_98;
   uint uStack_94;
   undefined8 *puStack_90;
-  int *piStack_88;
   
   puVar14 = param_1 + 6;
   param_1[7] = *puVar14;
@@ -394,9 +382,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       piStack_d0 = (int *)operator new(4);
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
-      piStack_b0 = piStack_d0;
       puStack_90 = puVar5;
-      piStack_88 = piStack_d0;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
@@ -407,7 +393,6 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
                     /* try { // try from 0042a948 to 0042a94b has its CatchHandler @ 0042ae60 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_e8 = puStack_c8;
-      piStack_e0 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -430,9 +415,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       *piVar7 = 3;
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
-      piStack_b0 = piVar7;
       puStack_90 = puVar5;
-      piStack_88 = piVar7;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
@@ -441,7 +424,6 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
                     /* try { // try from 0042aa18 to 0042aa1b has its CatchHandler @ 0042ae50 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_f8 = puStack_c8;
-      piStack_f0 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -580,9 +562,7 @@ LAB_0042add0:
       piStack_d0 = (int *)operator new(4);
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
-      piStack_b0 = piStack_d0;
       puStack_90 = puVar5;
-      piStack_88 = piStack_d0;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
@@ -593,7 +573,6 @@ LAB_0042add0:
                     /* try { // try from 0042acd0 to 0042acd3 has its CatchHandler @ 0042ae40 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_108 = puStack_c8;
-      piStack_100 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -616,9 +595,7 @@ LAB_0042add0:
       *piVar7 = 3;
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
-      piStack_b0 = piVar7;
       puStack_90 = puVar5;
-      piStack_88 = piVar7;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
@@ -627,7 +604,6 @@ LAB_0042add0:
                     /* try { // try from 0042ada0 to 0042ada3 has its CatchHandler @ 0042ae30 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_118 = puStack_c8;
-      piStack_110 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -843,9 +819,7 @@ LAB_0042a07c:
       piStack_d0 = (int *)operator new(4);
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
-      piStack_b0 = piStack_d0;
       puStack_90 = puVar5;
-      piStack_88 = piStack_d0;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
@@ -856,7 +830,6 @@ LAB_0042a07c:
                     /* try { // try from 0042a42c to 0042a42f has its CatchHandler @ 0042ae84 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_128 = puStack_c8;
-      piStack_120 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -879,9 +852,7 @@ LAB_0042a07c:
       *piVar7 = 3;
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
-      piStack_b0 = piVar7;
       puStack_90 = puVar5;
-      piStack_88 = piVar7;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
@@ -890,7 +861,6 @@ LAB_0042a07c:
                     /* try { // try from 0042a4fc to 0042a4ff has its CatchHandler @ 0042ae70 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_138 = puStack_c8;
-      piStack_130 = piStack_c0;
       if (puStack_c8 != (undefined8 *)0x0) {
         *piStack_c0 = *piStack_c0 + 1;
       }
@@ -1065,9 +1035,7 @@ void WaterConcept::GameState::init
   ulong uVar6;
   ulong uVar7;
   void *pvStack_78;
-  void *pvStack_70;
   void *pvStack_60;
-  void *pvStack_58;
   
   bVar2 = *param_2;
   uVar6 = *(ulong *)(param_2 + 8);
@@ -1124,11 +1092,9 @@ LAB_0042b434:
                     /* try { // try from 0042b44c to 0042b45f has its CatchHandler @ 0042b4b8 */
   WaterConcept::GameState::init(param_1,uVar5,&pvStack_60,&pvStack_78);
   if (pvStack_78 != (void *)0x0) {
-    pvStack_70 = pvStack_78;
     operator delete(pvStack_78);
   }
   if (pvStack_60 != (void *)0x0) {
-    pvStack_58 = pvStack_60;
     operator delete(pvStack_60);
   }
   return;
@@ -1776,15 +1742,12 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
   float fVar9;
   float fVar10;
   undefined8 *puStack_e8;
-  int *piStack_e0;
   undefined8 *puStack_d8;
-  int *piStack_d0;
   undefined8 *puStack_c8;
   int *piStack_c0;
   undefined8 *puStack_b8;
   int *piStack_b0;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_88;
   int *piStack_80;
   void *pvStack_78;
@@ -1826,8 +1789,6 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
         *piStack_c0 = 3;
         puStack_c8 = puVar4;
         puStack_a8 = puVar4;
-        piStack_a0 = piStack_c0;
-        piStack_80 = piStack_c0;
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
         puStack_b8 = puStack_c8;
         piStack_b0 = piStack_c0;
@@ -1838,7 +1799,6 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
                     /* try { // try from 0042c7a4 to 0042c7a7 has its CatchHandler @ 0042cb38 */
         uVar5 = Walaber::SoundManager::getInstancePtr();
         puStack_d8 = puStack_b8;
-        piStack_d0 = piStack_b0;
         if (puStack_b8 != (undefined8 *)0x0) {
           *piStack_b0 = *piStack_b0 + 1;
         }
@@ -1880,8 +1840,6 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
         *piStack_c0 = 3;
         puStack_c8 = puVar4;
         puStack_a8 = puVar4;
-        piStack_a0 = piStack_c0;
-        piStack_80 = piStack_c0;
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
         puStack_b8 = puStack_c8;
         piStack_b0 = piStack_c0;
@@ -1892,7 +1850,6 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
                     /* try { // try from 0042c8fc to 0042c8ff has its CatchHandler @ 0042cb54 */
         uVar5 = Walaber::SoundManager::getInstancePtr();
         puStack_e8 = puStack_b8;
-        piStack_e0 = piStack_b0;
         if (puStack_b8 != (undefined8 *)0x0) {
           *piStack_b0 = *piStack_b0 + 1;
         }
@@ -2231,7 +2188,6 @@ void WaterConcept::GameState::_switchChangeCallback(void *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0_00);
     uStack_60 = p0_00 | 1;
-    uStack_58 = uVar3;
     pvStack_50 = pvVar4;
 LAB_0042cffc:
     memcpy(pvVar4,lVar1,uVar3);
@@ -2325,7 +2281,6 @@ void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
     p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0_00);
     uStack_60 = p0_00 | 1;
-    uStack_58 = uVar2;
     pvStack_50 = pvVar3;
   }
   memcpy(pvVar3,in_x1 + 0x24,uVar2);
@@ -2382,7 +2337,6 @@ void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar5 = (void *)operator new(p0_00);
     uStack_80 = p0_00 | 1;
-    uStack_78 = uVar3;
     pvStack_70 = pvVar5;
 LAB_0042d284:
     memcpy(pvVar5,lVar4 + 0x24,uVar3);
@@ -2536,7 +2490,7 @@ LAB_0042d4d8:
       else {
         do {
           plVar9 = plVar8;
-          plVar8 = (long *)*plVar9;
+          plVar8 = (long *)*plVar8;
         } while ((long *)*plVar9 != (long *)0x0);
       }
       plVar7 = plVar9;
@@ -2732,7 +2686,7 @@ undefined8 WaterConcept::GameState::_requirementsFailed(long param_1)
         else {
           do {
             plVar10 = plVar8;
-            plVar8 = (long *)*plVar10;
+            plVar8 = (long *)*plVar8;
           } while ((long *)*plVar10 != (long *)0x0);
         }
         plVar6 = plVar10;

@@ -110,7 +110,7 @@ void Walaber::ParticleEmitter::~ParticleEmitter()
     else {
       do {
         puVar2 = puVar3;
-        puVar3 = (undefined8 *)puVar2[3];
+        puVar3 = (undefined8 *)puVar3[3];
       } while (puVar3 != this);
       puVar2[3] = this[3];
       this[3] = 0;
@@ -167,15 +167,11 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
   int *piStack_50;
   undefined8 *puStack_48;
-  int *piStack_40;
   
   Walaber::SharedPtr<Walaber::Callback>::operator=(param_1 + 0x150,param_3);
   puVar2 = (undefined8 *)operator new(0x28);
@@ -188,10 +184,7 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
   puStack_68 = puVar2;
-  piStack_60 = piVar3;
-  piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   *piVar3 = *piVar3 + 1;
   puStack_58 = puVar2;
@@ -200,7 +193,6 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
                     /* try { // try from 003909b4 to 003909b7 has its CatchHandler @ 00390a5c */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_78 = puStack_58;
-  piStack_70 = piStack_50;
   if (puStack_58 != (undefined8 *)0x0) {
     *piStack_50 = *piStack_50 + 1;
   }

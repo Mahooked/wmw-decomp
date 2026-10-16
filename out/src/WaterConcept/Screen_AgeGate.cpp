@@ -103,7 +103,6 @@ void WaterConcept::Screen_AgeGate::enter()
   undefined1 uStack_a1;
   void *pvStack_a0;
   undefined **ppuStack_98;
-  int *piStack_90;
   byte bStack_78;
   undefined4 uStack_77;
   undefined2 uStack_73;
@@ -197,9 +196,7 @@ void WaterConcept::Screen_AgeGate::enter()
   uStack_a5 = (undefined4)((ulong)piVar8 >> 0x18);
   uStack_a1 = (undefined1)((ulong)piVar8 >> 0x38);
   *piVar8 = 3;
-  piStack_90 = piVar8;
   ppuStack_60 = ppuVar7;
-  piStack_58 = piVar8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_60);
   uStack_77 = (undefined4)((ulong)ppuVar7 >> 8);
   uStack_73 = (undefined2)((ulong)ppuVar7 >> 0x28);
@@ -207,8 +204,6 @@ void WaterConcept::Screen_AgeGate::enter()
   uStack_6e = (undefined6)((ulong)piVar8 >> 0x10);
   *piVar8 = *piVar8 + 1;
   bStack_78 = bVar2;
-  uStack_71 = uVar3;
-  uStack_70 = uVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_b0);
                     /* try { // try from 004a50c4 to 004a50c7 has its CatchHandler @ 004a525c */
   uVar6 = Walaber::CurveManager::getManager();
@@ -217,8 +212,8 @@ void WaterConcept::Screen_AgeGate::enter()
   apcStack_50[0] = (char *)0x0;
                     /* try { // try from 004a50d4 to 004a50db has its CatchHandler @ 004a5218 */
   apcStack_50[0] = (char *)operator new(0x20);
-  lStack_c0 = CONCAT17(uStack_71,CONCAT25(uStack_73,CONCAT41(uStack_77,bStack_78)));
-  piStack_b8 = (int *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uStack_70));
+  lStack_c0 = CONCAT17(uVar3,CONCAT25(uStack_73,CONCAT41(uStack_77,bStack_78)));
+  piStack_b8 = (int *)CONCAT62(uStack_6e,CONCAT11(uStack_6f,uVar4));
   builtin_strncpy(apcStack_50[0],"/Curves/ease_in_out.xml",0x18);
   piStack_58 = (int *)0x17;
   ppuStack_60 = (undefined **)0x21;
@@ -291,13 +286,9 @@ void WaterConcept::Screen_AgeGate::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined1 uStack_4b;
@@ -336,20 +327,16 @@ void WaterConcept::Screen_AgeGate::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a53d4 to 004a53df has its CatchHandler @ 004a5430 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -685,7 +672,7 @@ void WaterConcept::Screen_AgeGate::update(float p0,bool p1)
         else {
           do {
             plVar7 = plVar8;
-            plVar8 = (long *)*plVar7;
+            plVar8 = (long *)*plVar8;
           } while ((long *)*plVar7 != (long *)0x0);
         }
       }

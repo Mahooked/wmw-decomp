@@ -354,7 +354,6 @@ ulong Walaber::Widget::getWidgetNameAsInt(long param_1)
     pvVar4 = (void *)operator new(p0);
     uStack_68 = p0 | 1;
     pvVar5 = (void *)((ulong)&uStack_68 | 1);
-    uStack_60 = uVar3;
     pvStack_58 = pvVar4;
   }
   memcpy(pvVar4,param_1 + 0x24,uVar3);

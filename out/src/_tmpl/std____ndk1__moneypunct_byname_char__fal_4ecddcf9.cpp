@@ -102,7 +102,6 @@ void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
                     /* try { // try from 005c5a40 to 005c5a47 has its CatchHandler @ 005c5adc */
     pvVar10 = (void *)operator new(p0_00);
     uStack_78 = p0_00 | 1;
-    uStack_70 = uVar7;
     pvStack_68 = pvVar10;
   }
   memcpy(pvVar10);

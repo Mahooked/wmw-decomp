@@ -1207,7 +1207,6 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
   int *piStack_58;
   char *pcStack_50;
   undefined8 *puStack_48;
-  int *piStack_40;
   
   if (mCurrentAtlas < mAtlasesToLoadCount) {
     puStack_60 = (undefined8 *)operator new(0x10);
@@ -1220,7 +1219,6 @@ void WaterConcept::Screen_Loading::_loadAtlases(void *p0)
     lVar7 = (long)mCurrentAtlas;
     mCurrentAtlas = mCurrentAtlas + 1;
     puStack_48 = puStack_60;
-    piStack_40 = piStack_58;
     if (puStack_60 != (undefined8 *)0x0) {
       *piStack_58 = *piStack_58 + 1;
     }
@@ -1812,19 +1810,15 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   undefined8 uStack_2c0;
   undefined8 uStack_2b8;
   undefined8 *puStack_2b0;
-  int *piStack_2a8;
   undefined8 *puStack_2a0;
   undefined4 *puStack_298;
   undefined8 *puStack_290;
-  int *piStack_288;
   undefined8 *puStack_280;
   undefined4 *puStack_278;
   undefined8 *puStack_270;
-  int *piStack_268;
   undefined8 *puStack_260;
   undefined4 *puStack_258;
   undefined8 *puStack_250;
-  int *piStack_248;
   undefined8 *puStack_240;
   int *piStack_238;
   undefined8 *puStack_230;
@@ -1917,7 +1911,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   }
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_250 = puStack_240;
-  piStack_248 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -1953,7 +1946,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   Walaber::SharedPtr<Walaber::Callback>::operator=(&puStack_240,&uStack_1a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_270 = puStack_240;
-  piStack_268 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -1989,7 +1981,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
   Walaber::SharedPtr<Walaber::Callback>::operator=(&puStack_240,&uStack_1a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
   puStack_290 = puStack_240;
-  piStack_288 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -2033,7 +2024,6 @@ void WaterConcept::Screen_Loading::_loadAchievements(void *p0)
     __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
   }
   puStack_2b0 = puStack_240;
-  piStack_2a8 = piStack_238;
   if (puStack_240 != (undefined8 *)0x0) {
     *piStack_238 = *piStack_238 + 1;
   }
@@ -5289,7 +5279,6 @@ void WaterConcept::Screen_Loading::_loadMainMenu(void *p0)
   undefined8 *puStack_70;
   undefined4 *puStack_68;
   undefined8 *puStack_60;
-  undefined4 *puStack_58;
   ulong auStack_50 [2];
   char *pcStack_40;
   
@@ -5308,7 +5297,6 @@ void WaterConcept::Screen_Loading::_loadMainMenu(void *p0)
     *puStack_68 = 2;
                     /* try { // try from 00504c1c to 00504c27 has its CatchHandler @ 00504c8c */
     puStack_70 = puVar3;
-    puStack_58 = puStack_68;
     Walaber::WidgetHelper::loadWidgetsXML(auStack_50,uVar2,&puStack_70);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
@@ -5606,13 +5594,9 @@ void WaterConcept::Screen_Loading::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined1 uStack_4b;
@@ -5651,20 +5635,16 @@ void WaterConcept::Screen_Loading::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0050536c to 00505377 has its CatchHandler @ 005053c8 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);

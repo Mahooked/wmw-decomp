@@ -53,7 +53,6 @@ void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1)
                     /* try { // try from 005d64d0 to 005d64d7 has its CatchHandler @ 005d6568 */
     pvVar6 = (void *)operator new(p0_00);
     uStack_78 = p0_00 | 1;
-    uStack_70 = uVar3;
     pvStack_68 = pvVar6;
   }
   memcpy(pvVar6,p1,uVar3);

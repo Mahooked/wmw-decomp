@@ -18,10 +18,8 @@ void WaterConcept::StarSeed::addTeleport
   undefined4 *puVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  undefined4 uStack_38;
   undefined2 uStack_34;
   undefined2 uStack_32;
-  undefined4 uStack_30;
   byte bStack_2c;
   byte bStack_2b;
   
@@ -32,8 +30,6 @@ void WaterConcept::StarSeed::addTeleport
   uStack_34 = (undefined2)param_2;
   uStack_32 = (undefined2)((uint)param_2 >> 0x10);
   puVar2 = *(undefined4 **)(param_3 + 0x5b8);
-  uStack_38 = param_1;
-  uStack_30 = param_5;
   if (puVar2 < *(undefined4 **)(param_3 + 0x5c0)) {
     *puVar2 = uStack_40;
     puVar2[1] = uStack_3c;
@@ -66,7 +62,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 *puStack_160;
-  int *piStack_158;
   undefined8 uStack_150;
   undefined8 uStack_148;
   undefined8 uStack_140;
@@ -80,7 +75,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   undefined8 uStack_100;
   undefined8 uStack_f8;
   undefined8 *puStack_f0;
-  int *piStack_e8;
   undefined8 *puStack_e0;
   int *piStack_d8;
   char *pcStack_d0;
@@ -89,7 +83,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   undefined8 *puStack_b0;
   int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 uStack_90;
   undefined8 uStack_88;
   
@@ -161,10 +154,9 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   puStack_e0 = puVar3;
   puStack_c0 = puVar3;
   piStack_b8 = piStack_d8;
-  piStack_98 = piStack_d8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
   puStack_b0 = puStack_c0;
-  piStack_a8 = piStack_b8;
+  piStack_a8 = piStack_d8;
   if (puStack_c0 != (undefined8 *)0x0) {
     *piStack_b8 = *piStack_b8 + 1;
   }
@@ -178,7 +170,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
   pcStack_d0 = (char *)operator new(0x20);
   builtin_strncpy(pcStack_d0,"/Curves/test_curve_1.xml",0x19);
   puStack_f0 = puStack_b0;
-  piStack_e8 = piStack_a8;
   piStack_d8 = (int *)0x18;
   puStack_e0 = (undefined8 *)0x21;
   if (puStack_b0 != (undefined8 *)0x0) {
@@ -334,7 +325,6 @@ void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vect
                     /* try { // try from 0048fb04 to 0048fb07 has its CatchHandler @ 0048fbdc */
   uVar4 = Walaber::SoundManager::getInstancePtr();
   puStack_160 = puStack_b0;
-  piStack_158 = piStack_a8;
   if (puStack_b0 != (undefined8 *)0x0) {
     *piStack_a8 = *piStack_a8 + 1;
   }
@@ -475,11 +465,8 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
   ulong uVar15;
   long *plVar16;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined1 auStack_70 [16];
   byte bStack_60;
   undefined4 uStack_5f;
@@ -626,8 +613,6 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
     uVar10 = uStack_54;
     *piVar12 = 3;
     puStack_90 = puVar11;
-    piStack_88 = piVar12;
-    piStack_78 = piVar12;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
     *piVar12 = *piVar12 + 1;
     bStack_60 = bVar2;
@@ -643,7 +628,6 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
     lVar14 = *(long *)(*(long *)(param_1 + 400) + 0x50);
     *piVar12 = *piVar12 + 1;
     puStack_a0 = puVar11;
-    piStack_98 = piVar12;
     Walaber::SharedPtr<Walaber::Callback>::operator=(lVar14 + 0xd0,&puStack_a0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
@@ -4137,19 +4121,14 @@ void WaterConcept::StarSeed::killMe(long param_1)
 {
   long *plVar2;
   undefined4 uStack_68;
-  undefined4 uStack_64;
   long lStack_60;
   undefined4 uStack_58;
-  undefined4 uStack_54;
-  undefined4 uStack_50;
   undefined1 uStack_4c;
   undefined4 uStack_48;
   undefined4 uStack_44;
   undefined1 uStack_40;
   undefined4 uStack_3c;
   undefined4 uStack_38;
-  undefined4 uStack_34;
-  undefined4 uStack_30;
   undefined4 uStack_2c;
   
   *(undefined4 *)(param_1 + 0x3a8) = 0xb;
@@ -4158,13 +4137,9 @@ void WaterConcept::StarSeed::killMe(long param_1)
     lStack_60 = param_1;
     Walaber::Node::getWorldPosition(&uStack_68,param_1);
     uStack_4c = 1;
-    uStack_54 = uStack_68;
-    uStack_50 = uStack_64;
     uStack_44 = *(undefined4 *)(param_1 + 0x484);
     uStack_48 = 0;
     uStack_40 = *(undefined1 *)(param_1 + 0x5f8);
-    uStack_34 = uStack_68;
-    uStack_30 = uStack_64;
     uStack_3c = 0;
     uStack_38 = 0;
     uStack_2c = 0x3f800000;

@@ -412,13 +412,9 @@ void WaterConcept::Screen_NoteChallenges::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -439,20 +435,16 @@ void WaterConcept::Screen_NoteChallenges::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0053bcd0 to 0053bcdb has its CatchHandler @ 0053bd2c */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -551,7 +543,6 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
   undefined4 uStack_6b8;
   float fStack_6b4;
   undefined4 uStack_6b0;
-  float fStack_6ac;
   undefined8 uStack_6a8;
   undefined8 uStack_6a0;
   long lStack_698;
@@ -2747,7 +2738,6 @@ LAB_0053eae4:
       lVar14 = Walaber::WidgetManager::getWidget(*puVar45,5000);
       uStack_6b0 = *(undefined4 *)(lVar14 + 0x90);
       fVar52 = fVar52 - fVar47;
-      fStack_6ac = fVar52;
       (**(code **)(*plVar31 + 0x50))(plVar31,&uStack_6b0);
                     /* try { // try from 0053ee58 to 0053ee7b has its CatchHandler @ 0053f5ac */
       plVar31 = (long *)Walaber::WidgetManager::getWidget(*puVar45,10);

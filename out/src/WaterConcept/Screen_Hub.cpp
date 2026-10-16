@@ -831,13 +831,9 @@ void WaterConcept::Screen_Hub::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [18];
   undefined6 uStack_4e;
   undefined8 *puStack_48;
@@ -873,20 +869,16 @@ void WaterConcept::Screen_Hub::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004dcd74 to 004dcd7f has its CatchHandler @ 004dcdd0 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -940,7 +932,6 @@ void WaterConcept::Screen_Hub::update(float p0,bool p1)
   float fVar16;
   ulong uVar17;
   float fStack_a8;
-  float fStack_a4;
   undefined8 uStack_a0;
   int iStack_94;
   undefined8 uStack_90;
@@ -1024,7 +1015,6 @@ void WaterConcept::Screen_Hub::update(float p0,bool p1)
     uStack_a0 = CONCAT44(fVar14 + 0.0 + (float)(uVar17 >> 0x20),fVar12 + 0.0 + (float)uVar17);
     iVar3 = rand();
     fStack_a8 = fVar15;
-    fStack_a4 = fVar15;
     Walaber::ParticleSet::addParticle(0x3f000000,(float)(iVar3 % 0x168),fVar11,fVar16,uVar7,&uStack_90,&uStack_a0,
                     &fStack_a8,&Walaber::Vector2::Zero,&Walaber::Vector2::Zero,bVar1,&iStack_94);
     if (iStack_94 != -1) {
@@ -1483,7 +1473,7 @@ void WaterConcept::Screen_Hub::handleEvent
     plVar18 = HUB_ACTION_TO_WIDGET_REF_MAP;
     do {
       plVar17 = plVar18;
-      iVar8 = iVar9 - (int)plVar17[4];
+      iVar8 = iVar9 - (int)plVar18[4];
       plVar18 = (long *)*plVar16;
       plVar23 = plVar16;
       if ((long *)*plVar16 == (long *)0x0) {
@@ -1504,7 +1494,7 @@ LAB_004dd694:
         else {
           do {
             plVar18 = plVar19;
-            plVar19 = (long *)*plVar18;
+            plVar19 = (long *)*plVar19;
             plVar23 = plVar16;
           } while ((long *)*plVar18 != (long *)0x0);
         }
@@ -5300,7 +5290,7 @@ LAB_004e22a0:
         else {
           do {
             plVar16 = plVar24;
-            plVar24 = (long *)*plVar16;
+            plVar24 = (long *)*plVar24;
           } while ((long *)*plVar16 != (long *)0x0);
         }
       }
@@ -5329,7 +5319,7 @@ LAB_004e22a0:
         else {
           do {
             plVar16 = plVar24;
-            plVar24 = (long *)*plVar16;
+            plVar24 = (long *)*plVar24;
           } while ((long *)*plVar16 != (long *)0x0);
         }
       }

@@ -26,7 +26,6 @@ void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0)
   long lVar12;
   ulong uVar13;
   float fStack_a8;
-  float fStack_a4;
   undefined8 uStack_a0;
   undefined4 uStack_98;
   ulong uStack_90;
@@ -58,7 +57,6 @@ LAB_003e6548:
           uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
           pvVar9 = (void *)operator new(uVar13);
           uStack_90 = uVar13 | 1;
-          uStack_88 = uVar8;
           pvStack_80 = pvVar9;
 LAB_003e632c:
           memcpy(pvVar9,uVar7,uVar8);
@@ -98,7 +96,6 @@ LAB_003e6420:
             uVar13 = uVar8 + 0x10 & 0xfffffffffffffff0;
             pvVar9 = (void *)operator new(uVar13);
             uStack_90 = uVar13 | 1;
-            uStack_88 = uVar8;
             pvStack_80 = pvVar9;
 LAB_003e63b8:
             memcpy(pvVar9,uVar7,uVar8);
@@ -136,7 +133,6 @@ LAB_003e63b8:
             Walaber::Logger::printf((double)fVar3,(double)(float)uStack_90,"Walaber",1,
                          "Keys -> got content! position: [%f] value: [%f]\n");
             fStack_a8 = fVar3;
-            fStack_a4 = fVar4;
             uStack_a0 = 0;
             uStack_98 = 0;
             Walaber::Curve::addCurveKey(p0,&fStack_a8);

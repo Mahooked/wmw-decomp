@@ -29,7 +29,6 @@ void std::__ndk1::
   long lVar11;
   undefined8 uStack_60;
   
-  bVar3 = true;
   switch((long)param_2 - (long)param_1 >> 3) {
   case 0:
   case 1:
@@ -61,7 +60,7 @@ void std::__ndk1::
       puVar8 = param_1 + 2;
       do {
         puVar5 = puVar6;
-        uVar4 = (*(code *)*param_3)(puVar5,puVar8);
+        uVar4 = (*(code *)*param_3)(puVar6,puVar8);
         if ((uVar4 & 1) != 0) {
           uStack_60 = *puVar5;
           lVar2 = lVar9;
@@ -89,7 +88,6 @@ LAB_00337284:
       } while (puVar5 + 1 != param_2);
     }
   }
-  bVar3 = true;
 switchD_003371b0_caseD_0:
   return;
 }

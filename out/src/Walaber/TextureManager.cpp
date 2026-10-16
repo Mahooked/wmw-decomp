@@ -387,7 +387,6 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
   long lStack_78;
   int *piStack_70;
   long lStack_68;
-  int *piStack_60;
   
   if (param_1 + 1 != (long *)*param_1) {
     plVar11 = (long *)*param_1;
@@ -403,7 +402,6 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
           lStack_78 = lVar8;
         }
         lStack_68 = lVar8;
-        piStack_60 = piStack_70;
         Walaber::SharedPtr<Walaber::Subtexture>::~SharedPtr(&lStack_68);
         uVar6 = Walaber::Subtexture::isTextureParent(lStack_78,param_2);
         plVar10 = (long *)plVar11[1];
@@ -422,7 +420,7 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
           else {
             do {
               plVar12 = plVar10;
-              plVar10 = (long *)*plVar12;
+              plVar10 = (long *)*plVar10;
             } while ((long *)*plVar12 != (long *)0x0);
           }
         }
@@ -441,7 +439,7 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
           else {
             do {
               plVar12 = plVar10;
-              plVar10 = (long *)*plVar12;
+              plVar10 = (long *)*plVar10;
             } while ((long *)*plVar12 != (long *)0x0);
           }
                     /* try { // try from 0039a398 to 0039a3a3 has its CatchHandler @ 0039a454 */
@@ -497,7 +495,7 @@ void Walaber::TextureManager::_unloadTextureAndSubTextures(undefined8 *param_1,b
           else {
             do {
               plVar12 = plVar10;
-              plVar10 = (long *)*plVar12;
+              plVar10 = (long *)*plVar10;
             } while ((long *)*plVar12 != (long *)0x0);
           }
           std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>>>>::erase(param_1,plVar11);
@@ -519,7 +517,7 @@ LAB_0039a30c:
           else {
             do {
               plVar12 = plVar10;
-              plVar10 = (long *)*plVar12;
+              plVar10 = (long *)*plVar10;
             } while ((long *)*plVar12 != (long *)0x0);
           }
         }
@@ -648,7 +646,7 @@ void Walaber::TextureManager::_loadedTextureAtlas(void *p0)
       else {
         do {
           plVar6 = plVar5;
-          plVar5 = (long *)*plVar6;
+          plVar5 = (long *)*plVar5;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar9 = plVar6;
@@ -1227,7 +1225,7 @@ joined_r0x0039b0b8:
             else {
               do {
                 plVar22 = plVar24;
-                plVar24 = (long *)*plVar22;
+                plVar24 = (long *)*plVar24;
               } while ((long *)*plVar22 != (long *)0x0);
             }
             plVar15 = plVar22;
@@ -1473,7 +1471,7 @@ LAB_0039aeec:
                 else {
                   do {
                     plVar22 = plVar24;
-                    plVar24 = (long *)*plVar22;
+                    plVar24 = (long *)*plVar24;
                   } while ((long *)*plVar22 != (long *)0x0);
                 }
                 plVar15 = plVar22;
@@ -1641,7 +1639,6 @@ void Walaber::TextureManager::_loadImageList
   float fVar21;
   float fVar22;
   undefined8 *puStack_1a0;
-  int *piStack_198;
   undefined8 *puStack_190;
   int *piStack_188;
   undefined8 *puStack_180;
@@ -2015,7 +2012,6 @@ LAB_0039bea0:
   *piVar14 = *piVar14 + 1;
                     /* try { // try from 0039c170 to 0039c18b has its CatchHandler @ 0039c2ac */
   puStack_1a0 = puVar13;
-  piStack_198 = piVar14;
   Walaber::TextureManager::getTexture(&puStack_190,param_1,&bStack_f8,&puStack_1a0,0,1);
   uStack_d8 = (byte *)puStack_190;
   piStack_d0 = piStack_188;
@@ -2294,7 +2290,7 @@ void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
       else {
         do {
           plVar7 = plVar4;
-          plVar4 = (long *)*plVar7;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar7 != (long *)0x0);
       }
       plVar9 = plVar7;
@@ -2326,13 +2322,10 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -2349,8 +2342,6 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -2361,7 +2352,6 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
                     /* try { // try from 0039caec to 0039caef has its CatchHandler @ 0039cb74 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -4912,10 +4902,8 @@ void Walaber::TextureManager::reloadTextureFromDisk(long param_1,undefined8 para
       }
       uVar6 = uStack_68;
       uStack_68 = 0;
-      uStack_8f = uStack_60;
       uStack_97 = (undefined1)uVar6;
       uStack_96 = (undefined6)((uint7)uVar6 >> 8);
-      uStack_90 = uStack_61;
       uStack_61 = 0;
       uStack_60 = 0;
       bStack_98 = bVar3;
@@ -4979,7 +4967,6 @@ LAB_0039e42c:
       pbStack_f8 = pbStack_e0;
       *piStack_d8 = *piStack_d8 + 2;
     }
-    piStack_f0 = piStack_d8;
     Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&pbStack_b0);
     pbStack_b0 = &bStack_98;
                     /* try { // try from 0039e51c to 0039e537 has its CatchHandler @ 0039e630 */
@@ -5059,7 +5046,7 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
       else {
         do {
           plVar5 = plVar4;
-          plVar4 = (long *)*plVar5;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       plVar7 = plVar5;
@@ -5078,7 +5065,6 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
         lStack_68 = lVar3;
       }
       lStack_48 = lVar3;
-      piStack_40 = piStack_60;
       Walaber::SharedPtr<Walaber::Subtexture>::~SharedPtr(&lStack_48);
       lStack_48 = 0;
       piStack_40 = (int *)0x0;
@@ -5106,7 +5092,7 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
     else {
       do {
         plVar7 = plVar4;
-        plVar4 = (long *)*plVar7;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
@@ -5154,7 +5140,7 @@ void Walaber::TextureManager::invalidateTextures(bool p0)
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -5204,7 +5190,7 @@ long Walaber::TextureManager::countInvalidateTextures(long *param_1)
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       plVar2 = plVar4;
@@ -5257,7 +5243,7 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
         else {
           do {
             plVar10 = plVar7;
-            plVar7 = (long *)plVar10[1];
+            plVar7 = (long *)plVar7[1];
           } while ((long *)plVar10[1] != (long *)0x0);
         }
         bVar4 = (long)uVar5 < -1;
@@ -5283,7 +5269,7 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
           else {
             do {
               plVar10 = plVar6;
-              plVar6 = (long *)*plVar10;
+              plVar6 = (long *)*plVar6;
             } while ((long *)*plVar10 != (long *)0x0);
           }
           uVar2 = uVar5 - 1;
@@ -5337,7 +5323,7 @@ undefined8 Walaber::TextureManager::reloadNextInvalidTexture(long *param_1)
       else {
         do {
           plVar10 = plVar7;
-          plVar7 = (long *)*plVar10;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar10 != (long *)0x0);
       }
     }
@@ -5385,7 +5371,6 @@ void Walaber::TextureManager::reloadSubTextures(long *param_1)
       if (*piStack_60 != 1) {
         *piStack_60 = *piStack_60 + 2;
         lStack_58 = lStack_68;
-        piStack_50 = piStack_60;
         Walaber::SharedPtr<Walaber::Subtexture>::~SharedPtr(&lStack_58);
         lStack_58 = 0;
         piStack_50 = (int *)0x0;
@@ -5412,7 +5397,7 @@ void Walaber::TextureManager::reloadSubTextures(long *param_1)
     lStack_68 = lVar4;
     plVar5 = (long *)plVar7[1];
     lVar4 = lStack_68;
-    piVar2 = piStack_60;
+    piVar2 = piVar2;
     if ((long *)plVar7[1] == (long *)0x0) {
       plVar5 = plVar7 + 2;
       bVar3 = (long *)*(long *)*plVar5 != plVar7;
@@ -5428,7 +5413,7 @@ void Walaber::TextureManager::reloadSubTextures(long *param_1)
     else {
       do {
         plVar7 = plVar5;
-        plVar5 = (long *)*plVar7;
+        plVar5 = (long *)*plVar5;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
@@ -5664,10 +5649,8 @@ void Walaber::TextureManager::clearTexture(long param_1,ulong param_2)
         }
         uVar6 = uStack_68;
         uStack_68 = 0;
-        uStack_8f = uStack_60;
         uStack_97 = (undefined1)uVar6;
         uStack_96 = (undefined6)((uint7)uVar6 >> 8);
-        uStack_90 = uStack_61;
         uStack_61 = 0;
         uStack_60 = 0;
         bStack_98 = bVar3;
@@ -5833,7 +5816,7 @@ void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
     else {
       do {
         plVar5 = plVar4;
-        plVar4 = (long *)*plVar5;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -5890,7 +5873,7 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
           else {
             do {
               plVar7 = plVar6;
-              plVar6 = (long *)*plVar7;
+              plVar6 = (long *)*plVar6;
             } while ((long *)*plVar7 != (long *)0x0);
           }
         }
@@ -5923,7 +5906,7 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
           else {
             do {
               plVar8 = plVar6;
-              plVar6 = (long *)*plVar8;
+              plVar6 = (long *)*plVar6;
             } while ((long *)*plVar8 != (long *)0x0);
           }
                     /* try { // try from 0039f710 to 0039f71b has its CatchHandler @ 0039f770 */
@@ -5949,7 +5932,7 @@ void Walaber::TextureManager::_removeUnusedTextures(bool p0)
         else {
           do {
             plVar7 = plVar6;
-            plVar6 = (long *)*plVar7;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*plVar7 != (long *)0x0);
         }
       }
@@ -6011,7 +5994,7 @@ void Walaber::TextureManager::dumpTextures(undefined8 *param_1)
       else {
         do {
           plVar5 = plVar4;
-          plVar4 = (long *)*plVar5;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       plVar7 = plVar5;
@@ -6071,7 +6054,7 @@ int Walaber::TextureManager::getMemory(undefined8 *param_1)
       else {
         do {
           plVar6 = plVar5;
-          plVar5 = (long *)*plVar6;
+          plVar5 = (long *)*plVar5;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar8 = plVar6;
@@ -6125,7 +6108,7 @@ void Walaber::TextureManager::getTextureFileName(uint p0)
     else {
       do {
         plVar2 = plVar3;
-        plVar3 = (long *)*plVar2;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar2 != (long *)0x0);
     }
   }

@@ -60,7 +60,6 @@ ulong Walaber::ZipArchiveCreator::addFileToZip(long *param_1,byte *param_2,byte 
   int iVar2;
   void *p0;
   long lVar3;
-  ulong uVar4;
   ulong extraout_x1;
   ulong p1;
   ulong p1_00;

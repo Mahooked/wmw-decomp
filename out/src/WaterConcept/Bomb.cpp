@@ -87,11 +87,8 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   int *piVar8;
   long lVar9;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte bStack_60;
   undefined7 uStack_5f;
   undefined1 uStack_58;
@@ -132,8 +129,6 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   uVar6 = uStack_55;
   *piVar8 = 3;
   puStack_80 = puVar7;
-  piStack_78 = piVar8;
-  piStack_68 = piVar8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
   *piVar8 = *piVar8 + 1;
   bStack_60 = bVar2;
@@ -145,7 +140,6 @@ void WaterConcept::Bomb::_initFinished(long param_1)
   lVar9 = **(long **)(param_1 + 400);
   *piVar8 = *piVar8 + 1;
   puStack_90 = puVar7;
-  piStack_88 = piVar8;
   Walaber::SharedPtr<Walaber::Callback>::operator=(lVar9 + 0xd0,&puStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_60);
@@ -174,13 +168,10 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
   long in_x1;
   long lVar9;
   undefined8 *puStack_b8;
-  int *piStack_b0;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
   int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined1 auStack_78 [16];
   undefined8 *puStack_68;
   int *piStack_60;
@@ -255,8 +246,6 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
       piVar7 = (int *)operator new(4);
       *piVar7 = 3;
       puStack_a8 = puVar6;
-      piStack_a0 = piVar7;
-      piStack_80 = piVar7;
       puStack_68 = puVar6;
       piStack_60 = piVar7;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);
@@ -267,7 +256,6 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
                     /* try { // try from 00477b38 to 00477b3b has its CatchHandler @ 00477cb0 */
       uVar8 = Walaber::SoundManager::getInstancePtr();
       puStack_b8 = puStack_98;
-      piStack_b0 = piStack_90;
       if (puStack_98 != (undefined8 *)0x0) {
         *piStack_90 = *piStack_90 + 1;
       }
@@ -402,7 +390,6 @@ void WaterConcept::Bomb::setToExplode(bool p0)
   ulong in_x1;
   long lVar10;
   undefined8 *puStack_e8;
-  int *piStack_e0;
   undefined1 auStack_d8 [16];
   undefined8 *puStack_c8;
   int *piStack_c0;
@@ -492,7 +479,6 @@ void WaterConcept::Bomb::setToExplode(bool p0)
                     /* try { // try from 004781b0 to 004781b3 has its CatchHandler @ 004782b0 */
       uVar7 = Walaber::SoundManager::getInstancePtr();
       puStack_e8 = puStack_a8;
-      piStack_e0 = piStack_a0;
       if (puStack_a8 != (undefined8 *)0x0) {
         *piStack_a0 = *piStack_a0 + 1;
       }

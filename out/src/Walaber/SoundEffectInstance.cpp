@@ -454,7 +454,6 @@ void Walaber::SoundEffectInstance::getLength(long param_1)
   
   uStack_2c = 0;
   iVar2 = FMOD::Sound::getLength(**(undefined8 **)(param_1 + 8),&uStack_2c,2);
-  uVar3 = uStack_2c;
   if (iVar2 != 0) {
     uVar4 = func_0x0034cf84();
     Walaber::Logger::printf("Walaber-Sound",4,"ERROR getting sound length! [%s]\n",uVar4);

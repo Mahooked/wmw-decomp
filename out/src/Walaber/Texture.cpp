@@ -62,7 +62,6 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
   int *piStack_58;
   long lStack_50;
   long lStack_48;
-  int *piStack_40;
   
   if (*param_2 != 0) {
     lStack_60 = *(long *)(param_1 + 0xa8);
@@ -75,7 +74,6 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
       lStack_48 = lStack_60;
     }
     lStack_50 = param_1;
-    piStack_40 = piStack_58;
     Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_60);
                     /* try { // try from 00395af4 to 00395afb has its CatchHandler @ 00395b2c */
     (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,&lStack_50);

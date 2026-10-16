@@ -224,7 +224,7 @@ LAB_0037caa4:
       else {
         do {
           plVar11 = plVar9;
-          plVar9 = (long *)*plVar11;
+          plVar9 = (long *)*plVar9;
         } while ((long *)*plVar11 != (long *)0x0);
       }
       plVar13 = plVar11;
@@ -292,7 +292,7 @@ void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0)
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -335,7 +335,7 @@ void Walaber::Widget_Group::applyPositionOffset(Walaber__Vector2 *p0)
     else {
       do {
         WVar4 = WVar3;
-        WVar3 = *(Walaber__Vector2 *)WVar4;
+        WVar3 = *(Walaber__Vector2 *)WVar3;
       } while (*(Walaber__Vector2 *)WVar4 != (Walaber__Vector2)0x0);
     }
   }
@@ -388,7 +388,7 @@ void Walaber::Widget_Group::setLocalScale(Walaber__Vector2 *p0)
     else {
       do {
         WVar5 = WVar4;
-        WVar4 = *(Walaber__Vector2 *)WVar5;
+        WVar4 = *(Walaber__Vector2 *)WVar4;
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
   }
@@ -440,7 +440,7 @@ void Walaber::Widget_Group::applyScaleOffset(Walaber__Vector2 *p0)
     else {
       do {
         WVar5 = WVar4;
-        WVar4 = *(Walaber__Vector2 *)WVar5;
+        WVar4 = *(Walaber__Vector2 *)WVar4;
       } while (*(Walaber__Vector2 *)WVar5 != (Walaber__Vector2)0x0);
     }
   }
@@ -485,7 +485,7 @@ void Walaber::Widget_Group::setVisible(bool p0)
     else {
       do {
         plVar3 = plVar4;
-        plVar4 = (long *)*plVar3;
+        plVar4 = (long *)*plVar4;
       } while ((long *)*plVar3 != (long *)0x0);
     }
   }

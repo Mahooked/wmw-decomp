@@ -137,7 +137,7 @@ LAB_003d3010:
     else {
       do {
         plVar7 = plVar6;
-        plVar6 = (long *)*plVar7;
+        plVar6 = (long *)*plVar6;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   } while( true );
@@ -288,7 +288,7 @@ LAB_003d31c4:
         else {
           do {
             plVar6 = plVar5;
-            plVar5 = (long *)*plVar6;
+            plVar5 = (long *)*plVar5;
           } while ((long *)*plVar6 != (long *)0x0);
         }
         iVar9 = 0;

@@ -1078,11 +1078,8 @@ void WaterConcept::FluidConverter::_initFinished(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -1094,14 +1091,10 @@ void WaterConcept::FluidConverter::_initFinished(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_78 = puVar2;
-  piStack_70 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   uVar4 = *(undefined8 *)
            (*(long *)(*(long *)(param_1 + 400) + (long)*(int *)(param_1 + 0x43c) * 0x28) + 0x54);

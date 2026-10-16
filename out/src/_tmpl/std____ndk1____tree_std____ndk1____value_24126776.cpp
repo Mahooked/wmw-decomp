@@ -113,7 +113,7 @@ void std::__ndk1::
       while (plVar2 != (long *)0x0) {
         do {
           plVar1 = plVar2;
-          plVar2 = (long *)*plVar1;
+          plVar2 = (long *)*plVar2;
         } while (plVar2 != (long *)0x0);
         plVar2 = (long *)plVar1[1];
       }
@@ -123,7 +123,7 @@ void std::__ndk1::
       while (plVar2 != (long *)0x0) {
         do {
           plVar1 = plVar2;
-          plVar2 = (long *)*plVar1;
+          plVar2 = (long *)*plVar2;
         } while (plVar2 != (long *)0x0);
         plVar2 = (long *)plVar1[1];
       }

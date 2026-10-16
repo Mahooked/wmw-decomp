@@ -158,7 +158,6 @@ void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0);
     uStack_60 = p0 | 1;
-    uStack_58 = uVar2;
     pvStack_50 = pvVar4;
   }
   memcpy(pvVar4,uVar3,uVar2);

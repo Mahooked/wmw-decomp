@@ -17,19 +17,16 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   long lVar5;
   float fVar6;
   undefined8 *puStack_140;
-  int *piStack_138;
   undefined8 uStack_130;
   undefined8 uStack_128;
   undefined8 uStack_120;
   undefined8 uStack_118;
   undefined8 *puStack_110;
-  int *piStack_108;
   undefined8 uStack_100;
   undefined8 uStack_f8;
   undefined8 uStack_f0;
   undefined8 uStack_e8;
   undefined8 *puStack_e0;
-  int *piStack_d8;
   undefined8 uStack_d0;
   undefined8 uStack_c8;
   undefined8 uStack_c0;
@@ -48,7 +45,6 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   undefined8 *puStack_88;
   int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   
   WaterConcept::WCScreen::WCScreen(this,0x1e);
   this[0x19] = 0;
@@ -84,7 +80,6 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   uStack_a1 = (undefined1)((ulong)piStack_90 >> 0x38);
   *piStack_90 = 3;
   puStack_98 = puVar2;
-  piStack_70 = piStack_90;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_b0);
   puStack_88 = puStack_98;
   piStack_80 = piStack_90;
@@ -147,7 +142,6 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   lVar5 = this[0x15];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_e0 = puStack_88;
-  piStack_d8 = piStack_80;
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
@@ -207,7 +201,6 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   lVar5 = this[0x16];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_110 = puStack_88;
-  piStack_108 = piStack_80;
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
@@ -267,7 +260,6 @@ void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
   lVar5 = this[0x17];
   *(undefined1 *)(lVar5 + 200) = 0;
   puStack_140 = puStack_88;
-  piStack_138 = piStack_80;
   if (puStack_88 != (undefined8 *)0x0) {
     *piStack_80 = *piStack_80 + 1;
   }
@@ -1577,13 +1569,10 @@ void WaterConcept::Screen_MysteryShow::_playAnimation(long param_1,int param_2)
   undefined6 uStack_136;
   void *pvStack_130;
   undefined8 *puStack_128;
-  int *piStack_120;
   undefined8 *puStack_118;
-  int *piStack_110;
   undefined8 *puStack_108;
   int *piStack_100;
   undefined8 *puStack_f8;
-  int *piStack_f0;
   undefined1 auStack_e8 [16];
   undefined1 auStack_d8 [16];
   byte bStack_c8;
@@ -1706,8 +1695,6 @@ joined_r0x0053ac30:
     piVar4 = (int *)operator new(4);
     *piVar4 = 3;
     puStack_118 = puVar3;
-    piStack_110 = piVar4;
-    piStack_f0 = piVar4;
     puStack_58 = puVar3;
     piStack_50 = piVar4;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
@@ -1718,7 +1705,6 @@ joined_r0x0053ac30:
                     /* try { // try from 0053ab88 to 0053ab8b has its CatchHandler @ 0053ade4 */
     uVar5 = Walaber::SoundManager::getInstancePtr();
     puStack_128 = puStack_108;
-    piStack_120 = piStack_100;
     if (puStack_108 != (undefined8 *)0x0) {
       *piStack_100 = *piStack_100 + 1;
     }

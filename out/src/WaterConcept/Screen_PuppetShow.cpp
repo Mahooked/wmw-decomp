@@ -91,9 +91,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   undefined8 uVar6;
   int *piVar7;
   undefined8 *puStack_e0;
-  int *piStack_d8;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   undefined8 *puStack_c0;
   int *piStack_b8;
   undefined8 *puStack_b0;
@@ -305,7 +303,6 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     uVar6 = Walaber::SoundManager::getInstancePtr();
     uVar4 = p0[0x22].f_0x8;
     puStack_d0 = puStack_b0;
-    piStack_c8 = piStack_a8;
     if (puStack_b0 != (undefined8 *)0x0) {
       *piStack_a8 = *piStack_a8 + 1;
     }
@@ -469,7 +466,6 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
                     /* try { // try from 0055c5d0 to 0055c5d3 has its CatchHandler @ 0055c698 */
   uVar6 = Walaber::FileManager::getInstancePtr();
   puStack_e0 = puStack_a0;
-  piStack_d8 = piStack_98;
   if (puStack_a0 != (undefined8 *)0x0) {
     *piStack_98 = *piStack_98 + 1;
   }

@@ -73,7 +73,7 @@ void Walaber::SpriteBatch::SpriteBatch(Walaber__SpriteBatch *p0)
     else {
       do {
         plVar6 = plVar2;
-        plVar2 = (long *)*plVar6;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar6 != (long *)0x0);
     }
   }
@@ -364,7 +364,7 @@ void Walaber::SpriteBatch::_flushImmediate(undefined8 *param_1)
     else {
       do {
         plVar14 = plVar8;
-        plVar8 = (long *)*plVar14;
+        plVar8 = (long *)*plVar8;
       } while ((long *)*plVar14 != (long *)0x0);
     }
   }
@@ -452,7 +452,7 @@ void Walaber::SpriteBatch::_flushOptimal(long *param_1)
     else {
       do {
         plVar7 = plVar5;
-        plVar5 = (long *)*plVar7;
+        plVar5 = (long *)*plVar5;
       } while ((long *)*plVar7 != (long *)0x0);
     }
   }
@@ -1480,7 +1480,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
   float fStack_a0;
   float fStack_9c;
   undefined8 uStack_98;
-  undefined4 uStack_90;
   
   fVar7 = *param_8;
   puVar2 = (ulong *)param_5[1];
@@ -1506,7 +1505,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
   fStack_9c = fVar6 + fVar5 * param_1 + param_7[1];
   uStack_98 = CONCAT44(param_6[1] + param_6[3],*param_6);
   puVar3 = *(undefined8 **)(param_4 + 8);
-  uStack_90 = param_9;
   if (puVar3 < *(undefined8 **)(param_4 + 0x10)) {
     *(undefined4 *)(puVar3 + 2) = param_9;
     puVar3[1] = uStack_98;
@@ -1545,7 +1543,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    uStack_90 = param_9;
     void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
@@ -1562,7 +1559,6 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *(undefined8 **)(param_4 + 8) = puVar3;
   }
   else {
-    uStack_90 = param_9;
     void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
@@ -1575,10 +1571,8 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
     *puVar3 = CONCAT44(fStack_9c,fStack_a0);
     puVar3 = (undefined8 *)(*(long *)(param_4 + 8) + 0x14);
     *(undefined8 **)(param_4 + 8) = puVar3;
-    uStack_90 = param_9;
   }
   else {
-    uStack_90 = param_9;
     void std::__ndk1::vector<Walaber::PositionTextureColorVert, std::__ndk1::allocator<Walaber::PositionTextureColorVert>>::__push_back_slow_path<Walaber::PositionTextureColorVert>(param_4,&fStack_a0);
     puVar3 = *(undefined8 **)(param_4 + 8);
   }
@@ -1811,7 +1805,6 @@ void Walaber::SpriteBatch::_addCircleToBatch
   float fStack_8c;
   float fStack_88;
   float fStack_84;
-  undefined4 uStack_80;
   
   puVar4 = (ulong *)param_4[1];
   if ((puVar4 == (ulong *)*param_4) || (*(float *)(puVar4 + -1) != param_7)) {
@@ -1841,7 +1834,6 @@ void Walaber::SpriteBatch::_addCircleToBatch
     fStack_84 = fVar6 * 0.5 + 0.5;
     fStack_8c = param_5[1] + fVar6 * param_1;
     puVar1 = *(undefined8 **)(param_3 + 8);
-    uStack_80 = uVar2;
     if (puVar1 < *(undefined8 **)(param_3 + 0x10)) {
       *(undefined4 *)(puVar1 + 2) = uVar2;
       puVar1[1] = CONCAT44(fStack_84,fStack_88);
@@ -2017,7 +2009,6 @@ void Walaber::SpriteBatch::drawLineColored
   float fVar5;
   float fVar6;
   float fStack_58;
-  float fStack_54;
   undefined8 uStack_50;
   
   fVar5 = (*p1).f_0x0;
@@ -2031,7 +2022,6 @@ void Walaber::SpriteBatch::drawLineColored
   if (NAN(fStack_58)) {
     fStack_58 = (float)sqrtf(fVar3);
   }
-  fStack_54 = p2;
   Walaber::SpriteBatch::drawQuadColored(uVar2,p0,&uStack_50,&fStack_58);
   return;
 }

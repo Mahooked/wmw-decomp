@@ -86,7 +86,7 @@ void Walaber::PCSNode::removeNodeFromTree(void)
     else {
       do {
         lVar3 = lVar2;
-        lVar2 = *(long *)(lVar3 + 0x18);
+        lVar2 = *(long *)(lVar2 + 0x18);
       } while (lVar2 != lVar1);
       *(undefined8 *)(lVar3 + 0x18) = *(undefined8 *)(lVar1 + 0x18);
       *(undefined8 *)(lVar1 + 0x18) = 0;
@@ -137,7 +137,7 @@ void Walaber::PCSNode::removeNodeFromTree(void)
     else {
       do {
         lVar3 = lVar2;
-        lVar2 = *(long *)(lVar3 + 0x18);
+        lVar2 = *(long *)(lVar2 + 0x18);
       } while (lVar2 != lVar1);
       *(undefined8 *)(lVar3 + 0x18) = *(undefined8 *)(lVar1 + 0x18);
       *(undefined8 *)(lVar1 + 0x18) = 0;
@@ -483,7 +483,7 @@ void Walaber::PCSNode::deleteNodeAndChildrenFromTree(Walaber__PCSNode *p0)
     else {
       do {
         pWVar1 = pWVar2;
-        pWVar2 = (Walaber__PCSNode *)pWVar1->f_0x18;
+        pWVar2 = (Walaber__PCSNode *)pWVar2->f_0x18;
       } while (pWVar2 != p0);
       pWVar1->f_0x18 = p0->f_0x18;
       p0->f_0x18 = 0;

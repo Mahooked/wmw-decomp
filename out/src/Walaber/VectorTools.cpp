@@ -156,10 +156,8 @@ void Walaber::VectorTools::distanceBetweenLineSegments
   float fVar7;
   float fVar8;
   float fStack_a0;
-  undefined4 uStack_9c;
   undefined8 uStack_98;
   float fStack_90;
-  undefined4 uStack_8c;
   undefined8 uStack_88;
   undefined1 auStack_7c [4];
   float fStack_78;
@@ -204,7 +202,6 @@ void Walaber::VectorTools::distanceBetweenLineSegments
     fVar4 = SQRT(fVar7 * fVar7 + fVar8 * fVar8);
     uVar3 = (ulong)(uint)fVar4;
     fStack_90 = fVar6;
-    uStack_8c = uVar5;
     if (NAN(fVar4)) {
       uVar3 = sqrtf();
     }
@@ -213,7 +210,6 @@ void Walaber::VectorTools::distanceBetweenLineSegments
       uStack_98 = CONCAT44(fVar8 * fVar4,fVar7 * fVar4);
     }
     fStack_a0 = fVar6;
-    uStack_9c = uVar5;
     fVar6 = (float)Walaber::VectorTools::distToLineSegment(uVar2,p0,p1,&uStack_88,&fStack_90,p2,auStack_7c);
     fVar4 = (float)Walaber::VectorTools::distToLineSegment(uVar2,p0,p1,&uStack_88,&fStack_90,p3,auStack_7c);
     if (fVar4 <= fVar6) {
@@ -298,10 +294,8 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
   float fVar7;
   float fVar8;
   float fStack_a0;
-  undefined4 uStack_9c;
   undefined8 uStack_98;
   float fStack_90;
-  undefined4 uStack_8c;
   undefined8 uStack_88;
   undefined1 auStack_7c [4];
   float fStack_78;
@@ -341,7 +335,6 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
     fVar4 = SQRT(fVar7 * fVar7 + fVar8 * fVar8);
     uVar3 = (ulong)(uint)fVar4;
     fStack_90 = fVar6;
-    uStack_8c = uVar5;
     if (NAN(fVar4)) {
       uVar3 = sqrtf();
     }
@@ -350,7 +343,6 @@ void Walaber::VectorTools::distanceBetweenLineSegmentsSquared
       uStack_98 = CONCAT44(fVar8 * fVar4,fVar7 * fVar4);
     }
     fStack_a0 = fVar6;
-    uStack_9c = uVar5;
     fVar6 = (float)Walaber::VectorTools::distToLineSegmentSquared(uVar2,p0,p1,&uStack_88,&fStack_90,p2,auStack_7c);
     fVar4 = (float)Walaber::VectorTools::distToLineSegmentSquared(uVar2,p0,p1,&uStack_88,&fStack_90,p3,auStack_7c);
     if (fVar4 <= fVar6) {

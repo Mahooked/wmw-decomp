@@ -54,7 +54,7 @@ long * std::__ndk1::
       else {
         do {
           plVar5 = plVar4;
-          plVar4 = (long *)*plVar5;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar5 != (long *)0x0);
       }
       if ((plVar5 == param_1 + 1) || (iVar1 < (int)plVar5[4])) {
@@ -83,7 +83,7 @@ long * std::__ndk1::
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)plVar4[1];
+        plVar2 = (long *)plVar2[1];
       } while ((long *)plVar4[1] != (long *)0x0);
     }
     if (*param_5 <= (int)plVar4[4]) {

@@ -18,7 +18,6 @@ void Walaber::ZipUtilities::LoadArchiveDescription
 {
   undefined8 uVar2;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
   void *pvStack_68;
@@ -62,7 +61,6 @@ void Walaber::ZipUtilities::LoadArchiveDescription
                     /* try { // try from 003d7e94 to 003d7e97 has its CatchHandler @ 003d7f14 */
   uVar2 = Walaber::FileManager::getInstancePtr();
   puStack_a8 = puStack_48;
-  piStack_a0 = piStack_40;
   if (puStack_48 != (undefined8 *)0x0) {
     *piStack_40 = *piStack_40 + 1;
   }
@@ -103,7 +101,6 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
   ulong uVar9;
   undefined4 *puVar10;
   undefined8 *puStack_230;
-  int *piStack_228;
   byte bStack_220;
   undefined4 uStack_21f;
   undefined1 uStack_21b;
@@ -545,7 +542,6 @@ LAB_003d80e0:
                     /* try { // try from 003d873c to 003d873f has its CatchHandler @ 003d898c */
                 uVar5 = Walaber::FileManager::getInstancePtr();
                 puStack_230 = puStack_200;
-                piStack_228 = piStack_1f8;
                 if (puStack_200 != (undefined8 *)0x0) {
                   *piStack_1f8 = *piStack_1f8 + 1;
                 }
@@ -897,7 +893,6 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
   undefined8 *puStack_c0;
   undefined4 *puStack_b8;
   undefined8 *puStack_b0;
-  undefined4 *puStack_a8;
   ulong auStack_a0 [2];
   void *pvStack_90;
   undefined1 auStack_88 [32];
@@ -940,7 +935,6 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
         uStack_c8 = 0;
                     /* try { // try from 003d9328 to 003d933b has its CatchHandler @ 003d93b8 */
         puStack_b0 = puVar4;
-        puStack_a8 = puStack_b8;
         Walaber::DatabaseManager::runSQL(uVar2,auStack_a0,&puStack_b0,&uStack_d0);
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_e0);

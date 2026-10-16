@@ -248,14 +248,14 @@ void WaterConcept::MysteryCave::update(float p0)
       iVar8 = 1;
       do {
         iVar5 = iVar8;
-        iVar8 = iVar5 << 1;
+        iVar8 = iVar8 << 1;
       } while (iVar5 < iVar10);
       iVar9 = (int)((DAT_0074f144 / (*(float *)(lVar7 + 0x454) - *(float *)(lVar7 + 0x44c))) *
                    (float)(int)(*(float *)(lVar2 + 0x2c) * (float)iVar9));
       iVar8 = 1;
       do {
         iVar6 = iVar8;
-        iVar8 = iVar6 << 1;
+        iVar8 = iVar8 << 1;
       } while (iVar6 < iVar9);
       DAT_0074f150 = (float)iVar10 / (float)iVar5;
       DAT_0074f154 = (float)iVar9 / (float)iVar6;
@@ -375,7 +375,6 @@ void WaterConcept::MysteryCave::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
   float fVar17;
   undefined8 uStack_70;
   long lStack_68;
-  int *piStack_60;
   undefined1 auStack_58 [8];
   undefined8 uStack_50;
   undefined8 uStack_48;
@@ -411,7 +410,6 @@ void WaterConcept::MysteryCave::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
         fVar15 = (fVar12 + (float)_DAT_0074f150) - fVar12;
         fVar17 = (fVar14 + (float)((ulong)_DAT_0074f150 >> 0x20)) - fVar14;
         lStack_68 = sRockTex;
-        piStack_60 = DAT_0074f130;
         fVar3 = fVar12 + fVar15 * (((fVar6 - (fVar3 + fVar3)) - (float)_sRockTexCoords) /
                                   (float)_DAT_0074f140);
         fVar11 = fVar14 + fVar17 * (((fVar9 - (fVar11 + fVar11)) - fVar13) / fVar16);

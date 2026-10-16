@@ -29,7 +29,6 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
   float fVar11;
   undefined8 uVar12;
   int iStack_88;
-  uint uStack_84;
   undefined4 uStack_80;
   
   iStack_88 = param_3[1];
@@ -59,7 +58,6 @@ void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny
       }
       uStack_80 = 0;
       iStack_88 = *param_3;
-      uStack_84 = uVar7;
       void WaterConcept::World::_addParticleAndNeighbors<WaterConcept::ConsiderPoolAny>(param_1,param_2,&iStack_88,param_4,param_5);
     }
 LAB_0046f680:

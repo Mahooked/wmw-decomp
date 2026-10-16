@@ -1250,7 +1250,6 @@ ulong Walaber::PushCommand::ParseKVpair(undefined8 param_1,byte *param_2,undefin
   uint uVar14;
   int iVar15;
   undefined8 ***pppuStack_c8;
-  undefined8 uStack_c0;
   undefined1 *puStack_b8;
   undefined8 ***pppuStack_b0;
   undefined8 uStack_a8;
@@ -1347,7 +1346,6 @@ LAB_003ea128:
       }
     }
     puStack_80 = puStack_b8;
-    uStack_88 = uStack_c0;
     pppuStack_90 = pppuStack_c8;
                     /* try { // try from 003ea198 to 003ea1a7 has its CatchHandler @ 003ea2b8 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&pppuStack_c8,param_2,(lVar10 << 0x20) + 0x100000000 >> 0x20,
@@ -1360,7 +1358,6 @@ LAB_003ea128:
       }
     }
     puStack_a0 = puStack_b8;
-    uStack_a8 = uStack_c0;
     pppuStack_b0 = pppuStack_c8;
                     /* try { // try from 003ea1ec to 003ea20f has its CatchHandler @ 003ea2c0 */
     pppuStack_c8 = &pppuStack_90;

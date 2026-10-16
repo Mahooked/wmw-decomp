@@ -84,7 +84,7 @@ joined_r0x004cd138:
         else {
           do {
             param_2 = plVar6;
-            plVar6 = (long *)*param_2;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*param_2 != (long *)0x0);
         }
         lVar7 = lVar5;
@@ -110,7 +110,7 @@ joined_r0x004cd138:
     else {
       do {
         param_2 = plVar6;
-        plVar6 = (long *)*param_2;
+        plVar6 = (long *)*plVar6;
       } while ((long *)*param_2 != (long *)0x0);
     }
   }

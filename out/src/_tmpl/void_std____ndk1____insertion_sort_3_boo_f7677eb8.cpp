@@ -33,7 +33,7 @@ void std::__ndk1::
     puVar6 = param_1 + 2;
     do {
       puVar4 = puVar5;
-      uVar3 = (*(code *)*param_3)(puVar4,puVar6);
+      uVar3 = (*(code *)*param_3)(puVar5,puVar6);
       if ((uVar3 & 1) != 0) {
         uStack_60 = *puVar4;
         lVar2 = lVar7;

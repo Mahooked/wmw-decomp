@@ -391,8 +391,6 @@ void Walaber::Transition_Iris::draw(long param_1)
   float fVar12;
   float fVar13;
   byte bStack_b0;
-  byte bStack_af;
-  byte bStack_ae;
   undefined1 uStack_ad;
   undefined8 uStack_a8;
   long lStack_a0;
@@ -433,8 +431,6 @@ void Walaber::Transition_Iris::draw(long param_1)
         bStack_b0 = cVar6 << 4 ^ 0x80;
         uStack_a8 = CONCAT44(fVar9 + (float)((ulong)*puVar3 >> 0x20),fVar12 + (float)*puVar3);
         uStack_ad = 0xff;
-        bStack_af = bStack_b0;
-        bStack_ae = bStack_b0;
         Walaber::SpriteBatch::drawQuadColored(fVar11,lVar1,&uStack_a8,&fStack_90,&bStack_b0);
       }
       else {

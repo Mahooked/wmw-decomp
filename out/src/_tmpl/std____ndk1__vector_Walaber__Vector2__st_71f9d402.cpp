@@ -276,7 +276,7 @@ std::__ndk1::vector<Walaber::Vector2,std::__ndk1::allocator<Walaber::Vector2>>::
         if (puVar12 != (undefined8 *)0x0) {
           puStack_80 = puVar6;
           operator delete(puVar12);
-          puVar6 = puStack_80;
+          puVar6 = puVar6;
           puVar11 = puStack_88;
         }
       }

@@ -22,11 +22,7 @@ void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
   byte *pbVar9;
   undefined8 uVar10;
   undefined8 uStack_1a8;
-  undefined4 uStack_1a0;
   undefined4 uStack_19c;
-  void *pvStack_198;
-  undefined8 uStack_190;
-  undefined8 uStack_188;
   byte abStack_180 [16];
   void *pvStack_170;
   undefined8 uStack_168;
@@ -294,10 +290,6 @@ void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
     uVar4 = Walaber::TextureManager::getManager();
     uStack_19c = CONCAT13(uStack_141,CONCAT12(uStack_142,uStack_144));
     uStack_1a8 = CONCAT26(uStack_14a,CONCAT51(uStack_14f,bStack_150));
-    uStack_1a0 = uStack_148;
-    uStack_190 = uStack_138;
-    pvStack_198 = pcStack_140;
-    uStack_188 = uStack_130;
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_180,abStack_128);
     uStack_158 = CONCAT44(uStack_fc,uStack_100);
     uStack_160 = CONCAT44(uStack_104,uStack_108);
@@ -369,7 +361,7 @@ void WaterConcept::Screen_LevelSelect::~Screen_LevelSelect()
     uVar9 = 1;
     do {
       lVar4 = lVar2;
-      plVar3 = *(long **)(lVar4 + uVar8 * 8);
+      plVar3 = *(long **)(lVar2 + uVar8 * 8);
       if (plVar3 != (long *)0x0) {
         (**(code **)(*plVar3 + 8))();
         lVar4 = this[0x3d];
@@ -2065,13 +2057,9 @@ void WaterConcept::Screen_LevelSelect::_buildUI(long param_1)
   int *piVar4;
   undefined8 uVar5;
   undefined8 *puStack_b0;
-  int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
   int *piStack_68;
   char *pcStack_60;
@@ -2130,7 +2118,6 @@ void WaterConcept::Screen_LevelSelect::_buildUI(long param_1)
   }
   operator delete(p0);
   pcStack_40 = pcStack_60;
-  uStack_48 = piStack_68;
   puStack_50 = puStack_70;
 switchD_004f0c44_caseD_4:
                     /* try { // try from 004f0d54 to 004f0d93 has its CatchHandler @ 004f0e70 */
@@ -2144,20 +2131,15 @@ switchD_004f0c44_caseD_4:
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_a0 = puVar3;
-  piStack_98 = piVar4;
-  piStack_78 = piVar4;
   puStack_70 = puVar3;
-  piStack_68 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
   *piVar4 = *piVar4 + 1;
   puStack_90 = puVar3;
-  piStack_88 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   uVar5 = *(undefined8 *)(param_1 + 0x10);
   *piVar4 = *piVar4 + 1;
                     /* try { // try from 004f0de0 to 004f0deb has its CatchHandler @ 004f0e50 */
   puStack_b0 = puVar3;
-  piStack_a8 = piVar4;
   Walaber::WidgetHelper::loadWidgetsXML(&puStack_50,uVar5,&puStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
@@ -2238,7 +2220,6 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
   undefined8 uStack_340;
   undefined8 uStack_338;
   ulong uStack_330;
-  int *piStack_328;
   ulong uStack_320;
   undefined8 uStack_318;
   void *pvStack_310;
@@ -4074,7 +4055,6 @@ LAB_004f1f20:
                     /* try { // try from 004f2a70 to 004f2a87 has its CatchHandler @ 004f355c */
       Walaber::TextureManager::getTexture(&uStack_260,uVar24,&bStack_240,&uStack_340,0,0);
       uStack_330 = uStack_260;
-      piStack_328 = piStack_258;
       if (uStack_260 != 0) {
         *piStack_258 = *piStack_258 + 1;
       }
@@ -7163,7 +7143,6 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
   undefined8 uStack_108;
   undefined8 uStack_100;
   void *pvStack_f8;
-  void *pvStack_f0;
   undefined8 uStack_e0;
   void *pvStack_d8;
   undefined8 uStack_d0;
@@ -7233,11 +7212,9 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
                     /* try { // try from 004f846c to 004f847f has its CatchHandler @ 004f9080 */
     WaterConcept::GameSettings::goPlayLevel(auStack_c8,0xffffffff,&pvStack_f8,0);
     if (pvStack_f8 != (void *)0x0) {
-      pvStack_f0 = pvStack_f8;
       operator delete(pvStack_f8);
     }
     if (uStack_e0 != (void *)0x0) {
-      pvStack_d8 = uStack_e0;
       operator delete(uStack_e0);
     }
     *(undefined4 *)(uVar10 + 0x1e0) = 0x3e800000;
@@ -7380,7 +7357,7 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
       uVar18 = 1;
       do {
         lVar12 = lVar5;
-        plVar11 = *(long **)(lVar12 + uVar13 * 8);
+        plVar11 = *(long **)(lVar5 + uVar13 * 8);
         if (plVar11 != (long *)0x0) {
           (**(code **)(*plVar11 + 8))();
           lVar12 = *(long *)(uVar10 + 0x1e8);
@@ -7641,7 +7618,6 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
   float fVar12;
   float fVar13;
   float fStack_d8;
-  float fStack_d4;
   float fStack_d0;
   float fStack_cc;
   undefined4 uStack_c4;
@@ -7685,7 +7661,6 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
     fStack_d0 = fStack_c0 - (fVar11 * fVar10 - fVar12 * 0.0);
     fStack_cc = fStack_bc - (fVar11 * 0.0 + fVar12 * fVar10);
     fStack_d8 = fVar13;
-    fStack_d4 = fVar13;
     iVar4 = rand();
     Walaber::ParticleSet::addParticle(0x3f800000,0,0x3fc00000,0,uVar9,&fStack_c0,&fStack_d0,&fStack_d8,
                     &Walaber::Vector2::Zero,&Walaber::Vector2::Zero,iVar4 % 4 + 2,&uStack_c4);
@@ -8806,7 +8781,6 @@ LAB_004faaf0:
                     /* try { // try from 004fa888 to 004fa88f has its CatchHandler @ 004fae18 */
         pvVar26 = (void *)operator new(uVar32);
         uStack_2c8 = uVar32 | 1;
-        uStack_2c0 = uVar12;
         pvStack_2b8 = pvVar26;
 LAB_004fa8a0:
         memcpy(pvVar26,pvVar28,uVar12);
@@ -9023,7 +8997,6 @@ void WaterConcept::Screen_LevelSelect::handleEvent
   void *pvStack_590;
   undefined8 uStack_588;
   undefined8 *puStack_580;
-  int *piStack_578;
   undefined8 uStack_570;
   undefined8 uStack_568;
   undefined8 uStack_560;
@@ -9780,7 +9753,6 @@ LAB_004fdb44:
         pcVar1 = apcStack_280[0];
         bVar8 = bStack_290;
         if (pvStack_598 != (void *)0x0) {
-          pvStack_590 = pvStack_598;
           p0_00 = pvStack_598;
           goto LAB_004fd9f8;
         }
@@ -11261,7 +11233,6 @@ LAB_004fdb1c:
             }
             Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_330);
             puStack_580 = puStack_310;
-            piStack_578 = piStack_308;
             if (puStack_310 != (undefined8 *)0x0) {
               *piStack_308 = *piStack_308 + 1;
             }

@@ -168,7 +168,6 @@ void ndk::ApplicationContext::initializeGame(long param_1)
   float fVar6;
   float fVar7;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
   int *piStack_80;
   undefined8 *puStack_78;
@@ -270,7 +269,6 @@ void ndk::ApplicationContext::initializeGame(long param_1)
     piStack_70 = piStack_80;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
     puStack_98 = puStack_78;
-    piStack_90 = piStack_70;
     if (puStack_78 != (undefined8 *)0x0) {
       *piStack_70 = *piStack_70 + 1;
     }
@@ -1422,13 +1420,10 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
   int iVar15;
   undefined8 uVar16;
   undefined8 *puStack_180;
-  int *piStack_178;
   undefined8 *puStack_170;
-  int *piStack_168;
   long lStack_160;
   int *piStack_158;
   undefined8 *puStack_150;
-  int *piStack_148;
   ulong uStack_140;
   int *piStack_138;
   void *pvStack_130;
@@ -1753,13 +1748,9 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         uStack_c6 = (undefined6)((ulong)piStack_120 >> 0x10);
         *piStack_120 = 3;
         bStack_f0 = bStack_d0;
-        uStack_ef = uStack_cf;
-        uStack_e8 = uStack_c8;
-        uStack_e7 = uStack_c7;
-        uStack_e6 = uStack_c6;
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_d0);
-        uStack_140 = CONCAT71(uStack_ef,bStack_f0);
-        piStack_138 = (int *)CONCAT62(uStack_e6,CONCAT11(uStack_e7,uStack_e8));
+        uStack_140 = CONCAT71(uStack_cf,bStack_f0);
+        piStack_138 = (int *)CONCAT62(uStack_c6,CONCAT11(uStack_c7,uStack_c8));
         if (uStack_140 != 0) {
           *piStack_138 = *piStack_138 + 1;
         }
@@ -1779,21 +1770,15 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         uStack_c7 = (undefined1)((ulong)piVar11 >> 8);
         uStack_c6 = (undefined6)((ulong)piVar11 >> 0x10);
         *piVar11 = 3;
-        piStack_148 = piVar11;
         bStack_f0 = bStack_d0;
-        uStack_ef = uStack_cf;
-        uStack_e8 = uStack_c8;
-        uStack_e7 = uStack_c7;
-        uStack_e6 = uStack_c6;
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_d0);
-        lStack_160 = CONCAT71(uStack_ef,bStack_f0);
-        piStack_158 = (int *)CONCAT62(uStack_e6,CONCAT11(uStack_e7,uStack_e8));
+        lStack_160 = CONCAT71(uStack_cf,bStack_f0);
+        piStack_158 = (int *)CONCAT62(uStack_c6,CONCAT11(uStack_c7,uStack_c8));
         if (lStack_160 != 0) {
           *piStack_158 = *piStack_158 + 1;
         }
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_f0);
         puStack_170 = puStack_128;
-        piStack_168 = piStack_120;
         if (puStack_128 != (undefined8 *)0x0) {
           *piStack_120 = *piStack_120 + 1;
         }
@@ -1802,7 +1787,6 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
           *piVar11 = *piVar11 + 1;
         }
                     /* try { // try from 002b4e70 to 002b4e7f has its CatchHandler @ 002b5110 */
-        piStack_178 = piVar11;
         Walaber::DatabaseManager::runSQL(&uStack_b0,&puStack_170,&puStack_180);
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_180);
         Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_170);
@@ -5785,7 +5769,6 @@ void ndk::ApplicationContext::checkAudioStatus(long param_1)
     pcVar2 = "openURL:  env failed";
   }
   __android_log_write(4,&DAT_0061db84,pcVar2 + 10);
-  bVar3 = false;
 LAB_002ba4ec:
   return;
 }
@@ -5842,7 +5825,6 @@ void ndk::ApplicationContext::handleURLIntent(undefined8 param_1,byte *param_2)
     p0 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar5 = (void *)operator new(p0);
     uStack_60 = p0 | 1;
-    uStack_58 = uVar3;
     pvStack_50 = pvVar5;
   }
   memcpy(pvVar5,param_2,uVar3);
@@ -6332,7 +6314,6 @@ void ndk::ApplicationContext::notifyProductInfo(char *p0,char *p1,char *p2)
                     /* try { // try from 002bad48 to 002bad4f has its CatchHandler @ 002bafec */
     pvVar5 = (void *)operator new(uVar4);
     uStack_e0 = uVar4 | 1;
-    uStack_d8 = uVar2;
     pvStack_d0 = pvVar5;
 LAB_002bad60:
     memcpy(pvVar5,p1,uVar2);
@@ -6385,7 +6366,6 @@ LAB_002bad60:
                     /* try { // try from 002bae20 to 002bae27 has its CatchHandler @ 002bafe8 */
     pvVar5 = (void *)operator new(uVar4);
     uStack_e0 = uVar4 | 1;
-    uStack_d8 = uVar2;
     pvStack_d0 = pvVar5;
 LAB_002bae38:
     memcpy(pvVar5,p2,uVar2);
@@ -6438,7 +6418,6 @@ LAB_002bae38:
                     /* try { // try from 002baef4 to 002baefb has its CatchHandler @ 002bafe4 */
     pvVar5 = (void *)operator new(uVar4);
     uStack_e0 = uVar4 | 1;
-    uStack_d8 = uVar2;
     pvStack_d0 = pvVar5;
   }
   memcpy(pvVar5);
@@ -6515,7 +6494,6 @@ void ndk::ApplicationContext::notifyProductInfoFailed(char *p0)
                     /* try { // try from 002bb110 to 002bb117 has its CatchHandler @ 002bb1ec */
     pvVar4 = (void *)operator new(p0_00);
     uStack_d0 = p0_00 | 1;
-    uStack_c8 = uVar2;
     pvStack_c0 = pvVar4;
   }
   memcpy(pvVar4);
@@ -6631,7 +6609,6 @@ void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1)
                     /* try { // try from 002bb35c to 002bb363 has its CatchHandler @ 002bb438 */
     pvVar4 = (void *)operator new(p0_00);
     uStack_d0 = p0_00 | 1;
-    uStack_c8 = uVar2;
     pvStack_c0 = pvVar4;
   }
   memcpy(pvVar4,p1,uVar2);
@@ -6708,7 +6685,6 @@ void ndk::ApplicationContext::notifyPurchaseFailed(char *p0)
                     /* try { // try from 002bb560 to 002bb567 has its CatchHandler @ 002bb63c */
     pvVar4 = (void *)operator new(p0_00);
     uStack_d0 = p0_00 | 1;
-    uStack_c8 = uVar2;
     pvStack_c0 = pvVar4;
   }
   memcpy(pvVar4);
@@ -6786,7 +6762,6 @@ void ndk::ApplicationContext::notifyPurchaseCancelled(char *p0)
                     /* try { // try from 002bb768 to 002bb76f has its CatchHandler @ 002bb82c */
     pvVar4 = (void *)operator new(p0_00);
     uStack_d0 = p0_00 | 1;
-    uStack_c8 = uVar2;
     pvStack_c0 = pvVar4;
   }
   memcpy(pvVar4);
@@ -7038,7 +7013,6 @@ void ndk::ApplicationContext::notifyLoadArchiveDescription(char *p0,char *p1)
     uVar4 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(uVar4);
     uStack_60 = uVar4 | 1;
-    uStack_58 = uVar2;
     pvStack_50 = pvVar3;
 LAB_002bbd28:
     memcpy(pvVar3);
@@ -7063,7 +7037,6 @@ LAB_002bbd28:
                     /* try { // try from 002bbd80 to 002bbd87 has its CatchHandler @ 002bbe30 */
     pvVar3 = (void *)operator new(uVar4);
     uStack_78 = uVar4 | 1;
-    uStack_70 = uVar2;
     pvStack_68 = pvVar3;
   }
   memcpy(pvVar3,p1,uVar2);
@@ -7119,7 +7092,6 @@ void * ndk::ApplicationContext::getLocalizedText(char *p0)
     p0_00 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0_00);
     uStack_78 = p0_00 | 1;
-    uStack_70 = uVar2;
     pvStack_68 = pvVar3;
   }
   memcpy(pvVar3);
@@ -7745,7 +7717,6 @@ void ndk::ApplicationContext::handleNewCloudData(char *p0)
                     /* try { // try from 002bcc34 to 002bcc3b has its CatchHandler @ 002bccf8 */
     pvVar5 = (void *)operator new(p0_00);
     uStack_d0 = p0_00 | 1;
-    uStack_c8 = uVar3;
     pvStack_c0 = pvVar5;
 LAB_002bcc4c:
     memcpy(pvVar5);

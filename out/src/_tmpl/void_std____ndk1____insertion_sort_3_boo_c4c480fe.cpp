@@ -31,7 +31,6 @@ void std::__ndk1::
   long lStack_a8;
   int *piStack_a0;
   long lStack_98;
-  int *piStack_90;
   long lStack_88;
   int *piStack_80;
   long lStack_78;
@@ -46,9 +45,9 @@ void std::__ndk1::
     plVar7 = (long *)(param_1 + 0x20);
     do {
       plVar5 = plVar2;
-      lStack_68 = *plVar5;
+      lStack_68 = *plVar2;
       pcVar6 = (code *)*param_3;
-      piStack_60 = (int *)plVar5[1];
+      piStack_60 = (int *)plVar2[1];
       if (lStack_68 != 0) {
         *piStack_60 = *piStack_60 + 1;
       }
@@ -74,7 +73,6 @@ void std::__ndk1::
           if (lVar9 == -0x20) goto LAB_0034b9c4;
           pcVar6 = (code *)*param_3;
           lStack_98 = lStack_88;
-          piStack_90 = piStack_80;
           if (lStack_88 != 0) {
             *piStack_80 = *piStack_80 + 1;
           }

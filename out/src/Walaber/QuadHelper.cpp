@@ -221,7 +221,6 @@ void Walaber::QuadHelper::drawQuadOutline
   float fStack_88;
   float fStack_84;
   float fStack_80;
-  float fStack_7c;
   
   uVar4 = CONCAT44(in_register_00005004,p1);
   fStack_80 = p2->f_0x0 - p3;
@@ -229,7 +228,6 @@ void Walaber::QuadHelper::drawQuadOutline
   fStack_84 = p2->f_0x4 + p3;
   fVar6 = p2->f_0x4 * 0.5;
   fStack_88 = p3;
-  fStack_7c = p3;
   fVar2 = (float)cosf(fVar5);
   fVar3 = (float)sinf(fVar5);
   fStack_90 = p0->f_0x0 + (fVar2 * 0.0 - fVar6 * fVar3);

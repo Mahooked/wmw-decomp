@@ -705,7 +705,6 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(i
 LAB_003d5364:
       iVar3 = 0;
       if (in_w1 != -1) {
-        iVar3 = in_w1;
       }
       goto LAB_003d5448;
     }

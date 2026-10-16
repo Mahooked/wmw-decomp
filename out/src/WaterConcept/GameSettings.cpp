@@ -2403,7 +2403,6 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
   undefined8 uVar10;
   undefined8 uVar11;
   void *pvStack_158;
-  void *pvStack_150;
   ulong auStack_140 [2];
   void *pvStack_130;
   undefined1 auStack_128 [8];
@@ -2442,7 +2441,6 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
   
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&currentLevelPackName,param_1);
   lastStoryline = currentStoryline;
-  currentLevelPackIndex = param_2;
   *param_3 = '\x01';
   if (param_2 != -1) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,&DAT_007345f8);
@@ -2835,7 +2833,6 @@ void WaterConcept::GameSettings::goPlayPack(byte *param_1,int param_2,char *para
                     /* try { // try from 0040f4a0 to 0040f4b3 has its CatchHandler @ 0040f5a0 */
         WaterConcept::GameSettings::goPlayLevel(&uStack_120,0xffffffff,&pvStack_158,0);
         if (pvStack_158 != (void *)0x0) {
-          pvStack_150 = pvStack_158;
           operator delete(pvStack_158);
         }
         if ((uStack_120 & 1) != 0) {
@@ -3012,7 +3009,6 @@ void WaterConcept::GameSettings::goPlayLevel
   uStack_bf = 0x70cd;
   uStack_b8 = 0x10;
   uStack_b7 = 0xa000000;
-  currentLevelChallengeID = param_2;
   Walaber::PropertyList::PropertyList(&uStack_b0);
   abStack_e0[7] = 0;
   abStack_e0[8] = 0;
@@ -3189,7 +3185,7 @@ void WaterConcept::GameSettings::goPlayLevel
     operator delete((void *)CONCAT17(uStack_c9,CONCAT43(uStack_cd,CONCAT21(uStack_cf,abStack_e0[0x10]))
                                  ));
   }
-  if (currentLevelChallengeID < 0) {
+  if (param_2 < 0) {
     auStack_118[0] = auStack_118[0] & 0xffffff00;
     uStack_130 = uStack_130 & 0xffffffffffffff00;
                     /* try { // try from 0040fc74 to 0040fc83 has its CatchHandler @ 00410954 */
@@ -3651,7 +3647,7 @@ void WaterConcept::GameSettings::goPlayLevel
                     /* try { // try from 004102a0 to 004102b7 has its CatchHandler @ 00410950 */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&bStack_c0,&DAT_007348b0,"=");
                     /* try { // try from 004102bc to 004102c7 has its CatchHandler @ 00410948 */
-      Walaber::StringHelper::intToStr(&bStack_170,currentLevelChallengeID);
+      Walaber::StringHelper::intToStr(&bStack_170,param_2);
       uVar7 = (ulong)(bStack_170 >> 1);
       uVar5 = (ulong)&bStack_170 | 1;
       if ((bStack_170 & 1) != 0) {
@@ -3740,7 +3736,7 @@ LAB_00410444:
   }
                     /* try { // try from 00410454 to 00410457 has its CatchHandler @ 00410b80 */
   Walaber::ScreenManager::popAllScreens();
-  if ((((currentLevelChallengeID < 0) && (currentLevelIndex == 0)) && (-1 < currentLevelPackIndex))
+  if ((((param_2 < 0) && (currentLevelIndex == 0)) && (-1 < currentLevelPackIndex))
      && (currentStoryline != 2)) {
     if (currentStoryline == 6) {
       piVar14 = &WaterConceptConstants::ALLIE_CINEMATIC_INDEX_OFFSET;
@@ -6359,7 +6355,6 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
   undefined8 uVar15;
   undefined8 uVar16;
   void *pvStack_170;
-  void *pvStack_168;
   ulong auStack_158 [2];
   void *pvStack_148;
   ulong auStack_140 [2];
@@ -6671,7 +6666,6 @@ ulong WaterConcept::GameSettings::goNextLevel(void)
                     /* try { // try from 0041459c to 004145af has its CatchHandler @ 00414640 */
     WaterConcept::GameSettings::goPlayLevel(&bStack_b0,0xffffffff,&pvStack_170,0);
     if (pvStack_170 != (void *)0x0) {
-      pvStack_168 = pvStack_170;
       operator delete(pvStack_170);
     }
     if (pvStack_d0 != (void *)0x0) {
@@ -6708,7 +6702,6 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
   int iVar2;
   int iVar4;
   void *pvStack_88;
-  void *pvStack_80;
   undefined4 uStack_6c;
   void *pvStack_68;
   void *pvStack_60;
@@ -6736,11 +6729,9 @@ void WaterConcept::GameSettings::goPlayRewardLevel(void)
                     /* try { // try from 004148ac to 004148bb has its CatchHandler @ 0041490c */
     WaterConcept::GameSettings::goPlayLevel(lStack_50 + (long)(iVar4 - iVar2 * iVar1) * 0x18,0xffffffff,&pvStack_88,1);
     if (pvStack_88 != (void *)0x0) {
-      pvStack_80 = pvStack_88;
       operator delete(pvStack_88);
     }
     if (pvStack_68 != (void *)0x0) {
-      pvStack_60 = pvStack_68;
       operator delete(pvStack_68);
     }
   }
@@ -18841,7 +18832,6 @@ ulong WaterConcept::GameSettings::getFurthestLevelIndexInPack(byte *param_1)
                     /* try { // try from 00425340 to 0042535f has its CatchHandler @ 00425424 */
     iVar3 = Walaber::DatabaseIterator::getIntAtIndex(auStack_c8,0);
     if (iVar3 != 0) {
-      uVar7 = uVar8;
     }
     uVar8 = uVar8 + 1;
   }

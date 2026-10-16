@@ -642,7 +642,7 @@ void Walaber::ValueTweaker::removeMappingsForOwner(void *p0)
       else {
         do {
           plVar2 = plVar1;
-          plVar1 = (long *)*plVar2;
+          plVar1 = (long *)*plVar1;
         } while ((long *)*plVar2 != (long *)0x0);
       }
       plVar4 = plVar2;

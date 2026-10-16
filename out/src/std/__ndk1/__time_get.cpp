@@ -48,7 +48,6 @@ void std::__ndk1::__time_get::__time_get(char *p0)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar6 = (void *)operator new(p0_00);
     uStack_68 = p0_00 | 1;
-    uStack_60 = uVar3;
     pvStack_58 = pvVar6;
   }
   memcpy(pvVar6);

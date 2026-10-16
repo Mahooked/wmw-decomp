@@ -180,17 +180,12 @@ void Walaber::NodeAnimationTrack::loadCurve
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
   int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   *param_1 = *param_1 | 1;
   puVar2 = (undefined8 *)operator new(0x28);
@@ -203,10 +198,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
@@ -215,7 +207,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                     /* try { // try from 003394a4 to 003394a7 has its CatchHandler @ 00339564 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
-  piStack_90 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -225,7 +216,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                     /* try { // try from 003394d8 to 003394db has its CatchHandler @ 00339564 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_a8 = puStack_78;
-  piStack_a0 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -289,17 +279,12 @@ void Walaber::NodeAnimationTrack::loadCurve
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
   int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   *param_1 = *param_1 | 2;
   puVar2 = (undefined8 *)operator new(0x28);
@@ -312,10 +297,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
@@ -324,7 +306,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                     /* try { // try from 00339730 to 00339733 has its CatchHandler @ 003397f0 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
-  piStack_90 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -334,7 +315,6 @@ void Walaber::NodeAnimationTrack::loadCurve
                     /* try { // try from 00339764 to 00339767 has its CatchHandler @ 003397f0 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_a8 = puStack_78;
-  piStack_a0 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
@@ -363,15 +343,11 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
   int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   *param_1 = *param_1 | 4;
   puVar2 = (undefined8 *)operator new(0x28);
@@ -384,10 +360,7 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_88 = puVar2;
-  piStack_80 = piVar3;
-  piStack_60 = piVar3;
   puStack_58 = puVar2;
-  piStack_50 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
@@ -396,7 +369,6 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
                     /* try { // try from 003398bc to 003398bf has its CatchHandler @ 0033993c */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
-  piStack_90 = piStack_70;
   if (puStack_78 != (undefined8 *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }

@@ -111,13 +111,10 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
   undefined8 uVar7;
   ulong *puVar9;
   undefined8 *puStack_f0;
-  int *piStack_e8;
   undefined8 *puStack_e0;
-  int *piStack_d8;
   undefined8 *puStack_d0;
   int *piStack_c8;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
   undefined8 uStack_98;
@@ -211,8 +208,6 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     piVar6 = (int *)operator new(4);
     *piVar6 = 3;
     puStack_e0 = puVar5;
-    piStack_d8 = piVar6;
-    piStack_b8 = piVar6;
     puStack_48 = puVar5;
     piStack_40 = piVar6;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -223,7 +218,6 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
                     /* try { // try from 004cde50 to 004cde53 has its CatchHandler @ 004cdee0 */
     uVar7 = Walaber::FileManager::getInstancePtr();
     puStack_f0 = puStack_d0;
-    piStack_e8 = piStack_c8;
     if (puStack_d0 != (undefined8 *)0x0) {
       *piStack_c8 = *piStack_c8 + 1;
     }
@@ -876,7 +870,7 @@ void WaterConcept::Screen_EditorObjectEditor::handleEvent
           else {
             do {
               plVar17 = plVar26;
-              plVar26 = (long *)*plVar17;
+              plVar26 = (long *)*plVar26;
             } while ((long *)*plVar17 != (long *)0x0);
           }
           if (plVar9 + 0x1d == plVar17) break;
@@ -1105,7 +1099,7 @@ switchD_004ce9f0_caseD_4:
           else {
             do {
               plVar26 = plVar17;
-              plVar17 = (long *)*plVar26;
+              plVar17 = (long *)*plVar17;
             } while ((long *)*plVar26 != (long *)0x0);
           }
         }
@@ -1152,7 +1146,7 @@ switchD_004ce9f0_caseD_4:
             else {
               do {
                 plVar17 = plVar26;
-                plVar26 = (long *)*plVar17;
+                plVar26 = (long *)*plVar26;
               } while ((long *)*plVar17 != (long *)0x0);
             }
             if (plVar9 + 0x1d == plVar17) break;
@@ -1372,7 +1366,7 @@ LAB_004cecac:
         else {
           do {
             plVar15 = plVar17;
-            plVar17 = (long *)*plVar15;
+            plVar17 = (long *)*plVar17;
           } while ((long *)*plVar15 != (long *)0x0);
         }
         if (plVar14 == plVar15) break;
@@ -1587,18 +1581,15 @@ void WaterConcept::Screen_EditorObjectEditor::_toggleSnap(long param_1)
   bool bVar4;
   long lVar5;
   undefined8 uVar6;
-  void *pvVar7;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
   undefined8 uStack_88;
   ulong uStack_80;
-  long lStack_78;
   void *pvStack_70;
   long lStack_68;
   int *piStack_60;
   long lStack_58;
-  int *piStack_50;
   
   *(byte *)(param_1 + 0x108) = *(byte *)(param_1 + 0x108) ^ 1;
   lVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),8);
@@ -1612,12 +1603,10 @@ void WaterConcept::Screen_EditorObjectEditor::_toggleSnap(long param_1)
   if (!bVar4) {
     lVar1 = 0x1e;
   }
-  pvVar7 = (void *)operator new(0x20);
+  pvStack_70 = (void *)operator new(0x20);
   uStack_80 = 0x21;
-  lStack_78 = lVar1;
-  pvStack_70 = pvVar7;
-  memcpy(pvVar7,pcVar2,lVar1);
-  *(undefined1 *)((long)pvVar7 + lVar1) = 0;
+  memcpy(pvStack_70,pcVar2,lVar1);
+  *(undefined1 *)((long)pvStack_70 + lVar1) = 0;
   uStack_a0 = 0;
   uStack_98 = 0;
   uStack_90 = 0;
@@ -1625,7 +1614,6 @@ void WaterConcept::Screen_EditorObjectEditor::_toggleSnap(long param_1)
                     /* try { // try from 004d0160 to 004d017b has its CatchHandler @ 004d021c */
   Walaber::TextureManager::getTexture(&lStack_68,uVar6,&uStack_80,&uStack_90,0,0);
   lStack_58 = lStack_68;
-  piStack_50 = piStack_60;
   if (lStack_68 != 0) {
     *piStack_60 = *piStack_60 + 1;
   }
@@ -1846,7 +1834,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
     else {
       do {
         plVar17 = plVar13;
-        plVar13 = (long *)*plVar17;
+        plVar13 = (long *)*plVar13;
       } while ((long *)*plVar17 != (long *)0x0);
     }
   }

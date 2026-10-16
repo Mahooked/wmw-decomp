@@ -293,13 +293,9 @@ void WaterConcept::Screen_Languages::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte bStack_60;
   char acStack_5f [16];
   undefined6 uStack_4f;
@@ -322,20 +318,16 @@ void WaterConcept::Screen_Languages::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004ed314 to 004ed31f has its CatchHandler @ 004ed370 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(&bStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -558,15 +550,12 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
   undefined8 uStack_110;
   undefined8 uStack_108;
   long lStack_100;
-  int *piStack_f8;
   undefined8 uStack_f0;
   undefined8 uStack_e8;
   long lStack_e0;
-  int *piStack_d8;
   undefined8 uStack_d0;
   undefined8 uStack_c8;
   long lStack_c0;
-  int *piStack_b8;
   undefined8 uStack_b0;
   undefined8 uStack_a8;
   undefined8 uStack_a0;
@@ -659,7 +648,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
                     /* try { // try from 004ed844 to 004ed85f has its CatchHandler @ 004edb18 */
     Walaber::TextureManager::getTexture(&lStack_78,uVar5,abStack_90,&uStack_d0,0,0);
     lStack_c0 = lStack_78;
-    piStack_b8 = piStack_70;
     if (lStack_78 != 0) {
       *piStack_70 = *piStack_70 + 1;
     }
@@ -704,7 +692,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
                     /* try { // try from 004ed910 to 004ed927 has its CatchHandler @ 004edaf4 */
       Walaber::TextureManager::getTexture(&lStack_78,uVar5,abStack_90,&uStack_f0,0,0);
       lStack_e0 = lStack_78;
-      piStack_d8 = piStack_70;
       if (lStack_78 != 0) {
         *piStack_70 = *piStack_70 + 1;
       }
@@ -749,7 +736,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
                     /* try { // try from 004ed9c8 to 004ed9e3 has its CatchHandler @ 004edad0 */
       Walaber::TextureManager::getTexture(&lStack_78,uVar5,abStack_90,&uStack_110,0,0);
       lStack_100 = lStack_78;
-      piStack_f8 = piStack_70;
       if (lStack_78 != 0) {
         *piStack_70 = *piStack_70 + 1;
       }
@@ -819,13 +805,10 @@ void WaterConcept::Screen_Languages::_setUpLanguages(long param_1)
   undefined8 uStack_138;
   undefined8 uStack_130;
   ulong uStack_128;
-  int *piStack_120;
   undefined8 uStack_118;
   undefined8 uStack_110;
   ulong uStack_108;
-  int *piStack_100;
   float fStack_f8;
-  float fStack_f4;
   ulong auStack_f0 [2];
   void *pvStack_e0;
   ulong uStack_d8;
@@ -894,7 +877,6 @@ LAB_004edd6c:
     uStack_c0 = CONCAT44(fVar10,fVar9);
     (**(code **)(*plVar5 + 0x10))(plVar5,&uStack_c0);
     fStack_f8 = fVar9;
-    fStack_f4 = fVar10;
     Walaber::Widget::setLocalPosition(uVar7,&fStack_f8);
     Walaber::Widget_Label::_setTextTopLeft(uVar7);
     Walaber::WidgetManager::addWidget(*(undefined8 *)(param_1 + 0x10),plVar5,0);
@@ -916,7 +898,6 @@ LAB_004edd6c:
                     /* try { // try from 004ede98 to 004edeb3 has its CatchHandler @ 004ee02c */
       Walaber::TextureManager::getTexture(&uStack_d8,uVar7,&uStack_c0,&uStack_118,0,0);
       uStack_108 = uStack_d8;
-      piStack_100 = piStack_d0;
       if (uStack_d8 != 0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
@@ -942,7 +923,6 @@ LAB_004edd6c:
                     /* try { // try from 004edf50 to 004edf6b has its CatchHandler @ 004ee024 */
       Walaber::TextureManager::getTexture(&uStack_d8,uVar7,&uStack_c0,&uStack_138,0,0);
       uStack_128 = uStack_d8;
-      piStack_120 = piStack_d0;
       if (uStack_d8 != 0) {
         *piStack_d0 = *piStack_d0 + 1;
       }

@@ -32,7 +32,7 @@ void std::__ndk1::
       while (plVar2 != (long *)0x0) {
         do {
           plVar1 = plVar2;
-          plVar2 = (long *)*plVar1;
+          plVar2 = (long *)*plVar2;
         } while (plVar2 != (long *)0x0);
         plVar2 = (long *)plVar1[1];
       }
@@ -42,7 +42,7 @@ void std::__ndk1::
       while (plVar2 != (long *)0x0) {
         do {
           plVar1 = plVar2;
-          plVar2 = (long *)*plVar1;
+          plVar2 = (long *)*plVar2;
         } while (plVar2 != (long *)0x0);
         plVar2 = (long *)plVar1[1];
       }
@@ -151,7 +151,7 @@ long * std::__ndk1::
   else {
     do {
       plVar3 = plVar1;
-      plVar1 = (long *)*plVar3;
+      plVar1 = (long *)*plVar1;
     } while ((long *)*plVar3 != (long *)0x0);
   }
   if ((void *)*param_1 == param_2) {

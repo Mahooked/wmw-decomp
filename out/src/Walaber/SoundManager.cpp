@@ -329,13 +329,10 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
   int *piVar5;
   char *pcVar6;
   undefined8 *puStack_d0;
-  int *piStack_c8;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   undefined8 *puStack_b0;
   int *piStack_a8;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined1 auStack_90 [28];
   undefined4 uStack_74;
   undefined4 uStack_70;
@@ -383,8 +380,6 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
               piVar5 = (int *)operator new(4);
               *piVar5 = 3;
               puStack_c0 = puVar4;
-              piStack_b8 = piVar5;
-              piStack_98 = piVar5;
               puStack_58 = puVar4;
               piStack_50 = piVar5;
               Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
@@ -395,7 +390,6 @@ void Walaber::SoundManager::init(long param_1,undefined8 param_2,undefined4 para
                     /* try { // try from 0034dd30 to 0034dd33 has its CatchHandler @ 0034dd9c */
               uVar3 = Walaber::FileManager::getInstancePtr();
               puStack_d0 = puStack_b0;
-              piStack_c8 = piStack_a8;
               if (puStack_b0 != (undefined8 *)0x0) {
                 *piStack_a8 = *piStack_a8 + 1;
               }
@@ -863,9 +857,7 @@ void Walaber::SoundManager::addSound
   long *plVar8;
   long *plVar9;
   undefined8 *puStack_110;
-  int *piStack_108;
   undefined8 *puStack_100;
-  int *piStack_f8;
   undefined8 *puStack_f0;
   int *piStack_e8;
   uint uStack_e0;
@@ -1052,7 +1044,6 @@ LAB_0034ea30:
   uStack_d6 = (undefined6)((ulong)piVar4 >> 0x10);
   *piVar4 = 3;
   puStack_100 = puVar3;
-  piStack_f8 = piVar4;
   puStack_b0 = puVar3;
   piStack_a8 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
@@ -1063,7 +1054,6 @@ LAB_0034ea30:
                     /* try { // try from 0034ecc8 to 0034eccb has its CatchHandler @ 0034ed7c */
   uVar5 = Walaber::FileManager::getInstancePtr();
   puStack_110 = puStack_f0;
-  piStack_108 = piStack_e8;
   if (puStack_f0 != (undefined8 *)0x0) {
     *piStack_e8 = *piStack_e8 + 1;
   }
@@ -1714,7 +1704,7 @@ LAB_0034fa64:
         else {
           do {
             plVar14 = plVar9;
-            plVar9 = (long *)*plVar14;
+            plVar9 = (long *)*plVar9;
           } while ((long *)*plVar14 != (long *)0x0);
         }
         plVar21 = plVar14;
@@ -2025,9 +2015,7 @@ void Walaber::SoundManager::_loadSound
   long lVar10;
   long *plVar11;
   undefined8 *puStack_158;
-  undefined1 **ppuStack_150;
   undefined8 *puStack_148;
-  undefined1 **ppuStack_140;
   void *pvStack_138;
   undefined8 *puStack_130;
   undefined1 **ppuStack_128;
@@ -2114,7 +2102,7 @@ void Walaber::SoundManager::_loadSound
               else {
                 do {
                   plVar9 = plVar8;
-                  plVar8 = (long *)*plVar9;
+                  plVar8 = (long *)*plVar8;
                 } while ((long *)*plVar9 != (long *)0x0);
               }
               plVar7 = plVar9;
@@ -2300,7 +2288,6 @@ void Walaber::SoundManager::_loadSound
             uStack_10b = (undefined3)((ulong)ppuVar4 >> 0x28);
             *(int *)ppuVar4 = 3;
             puStack_148 = puVar3;
-            ppuStack_140 = ppuVar4;
             puStack_d0 = puVar3;
             ppuStack_c8 = ppuVar4;
             Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
@@ -2311,7 +2298,6 @@ void Walaber::SoundManager::_loadSound
                     /* try { // try from 003502ec to 003502ef has its CatchHandler @ 003503d4 */
             uVar5 = Walaber::FileManager::getInstancePtr();
             puStack_158 = puStack_130;
-            ppuStack_150 = ppuStack_128;
             if (puStack_130 != (undefined8 *)0x0) {
               *(int *)ppuStack_128 = *(int *)ppuStack_128 + 1;
             }
@@ -2401,7 +2387,6 @@ LAB_003504f8:
                     /* try { // try from 00350508 to 0035051b has its CatchHandler @ 00350d2c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_98,param_2,(int)uVar9 + 1,0xffffffffffffffff,param_2);
   puStack_70 = puStack_88;
-  uStack_78 = uStack_90;
   uStack_80 = uStack_98;
   uVar9 = uStack_80;
   uStack_80._0_1_ = (byte)uStack_98;
@@ -2456,7 +2441,7 @@ LAB_003504f8:
       else {
         do {
           plVar18 = plVar10;
-          plVar10 = (long *)*plVar18;
+          plVar10 = (long *)*plVar10;
         } while ((long *)*plVar18 != (long *)0x0);
       }
     }
@@ -3303,7 +3288,7 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
                 else {
                   do {
                     plVar16 = plVar13;
-                    plVar13 = (long *)*plVar16;
+                    plVar13 = (long *)*plVar13;
                   } while ((long *)*plVar16 != (long *)0x0);
                 }
                 plVar21 = plVar16;
@@ -3360,7 +3345,7 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
       else {
         do {
           plVar18 = plVar11;
-          plVar11 = (long *)*plVar18;
+          plVar11 = (long *)*plVar11;
         } while ((long *)*plVar18 != (long *)0x0);
       }
     }
@@ -3659,7 +3644,6 @@ ulong Walaber::SoundManager::playSoundFromGroup(int p0,float p1,float p2)
   undefined8 *puStack_a8;
   undefined4 *puStack_a0;
   undefined8 *puStack_98;
-  undefined4 *puStack_90;
   ulong auStack_78 [2];
   void *pvStack_68;
   undefined1 auStack_60 [24];
@@ -3696,7 +3680,6 @@ ulong Walaber::SoundManager::playSoundFromGroup(int p0,float p1,float p2)
   *puStack_a0 = 2;
                     /* try { // try from 00351dd4 to 00351de7 has its CatchHandler @ 00351e34 */
   puStack_a8 = puVar2;
-  puStack_90 = puStack_a0;
   uVar3 = Walaber::SoundManager::newSoundFromGroup(p0,in_w1,&puStack_a8,auStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -4124,7 +4107,6 @@ void Walaber::SoundManager::playSoundSpecific(int p0,int p1,float p2)
   undefined8 *puStack_a8;
   undefined4 *puStack_a0;
   undefined8 *puStack_98;
-  undefined4 *puStack_90;
   ulong auStack_78 [2];
   void *pvStack_68;
   undefined1 auStack_60 [24];
@@ -4150,7 +4132,6 @@ void Walaber::SoundManager::playSoundSpecific(int p0,int p1,float p2)
   *puStack_a0 = 2;
                     /* try { // try from 003528f4 to 0035290b has its CatchHandler @ 00352954 */
   puStack_a8 = puVar2;
-  puStack_90 = puStack_a0;
   Walaber::SoundManager::newSoundSpecific(p0,p1,in_w2,&puStack_a8,auStack_60);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -4176,7 +4157,6 @@ void Walaber::SoundManager::playSoundSpecific(int p0,int p1,float p2,float p3)
   undefined8 *puStack_b8;
   undefined4 *puStack_b0;
   undefined8 *puStack_a8;
-  undefined4 *puStack_a0;
   ulong auStack_88 [2];
   void *pvStack_78;
   undefined1 auStack_70 [24];
@@ -4213,7 +4193,6 @@ void Walaber::SoundManager::playSoundSpecific(int p0,int p1,float p2,float p3)
   *puStack_b0 = 2;
                     /* try { // try from 00352ad0 to 00352ae7 has its CatchHandler @ 00352b30 */
   puStack_b8 = puVar2;
-  puStack_a0 = puStack_b0;
   Walaber::SoundManager::newSoundSpecific(p0,p1,in_w2,&puStack_b8,auStack_70);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
@@ -4239,7 +4218,6 @@ void Walaber::SoundManager::playSoundFile
   undefined8 *puStack_b8;
   undefined4 *puStack_b0;
   undefined8 *puStack_a8;
-  undefined4 *puStack_a0;
   ulong auStack_88 [2];
   void *pvStack_78;
   undefined1 auStack_70 [24];
@@ -4276,7 +4254,6 @@ void Walaber::SoundManager::playSoundFile
   *puStack_b0 = 2;
                     /* try { // try from 00352cb4 to 00352ccb has its CatchHandler @ 00352d14 */
   puStack_b8 = puVar2;
-  puStack_a0 = puStack_b0;
   Walaber::SoundManager::getSoundFile(param_3,param_4,&puStack_b8,auStack_70,param_5 & 1);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
@@ -4375,9 +4352,7 @@ void Walaber::SoundManager::getSoundFile
   long *plVar8;
   long *plVar9;
   undefined8 *puStack_160;
-  int *piStack_158;
   undefined8 *puStack_150;
-  int *piStack_148;
   undefined8 *puStack_140;
   int *piStack_138;
   undefined1 *puStack_130;
@@ -4385,7 +4360,6 @@ void Walaber::SoundManager::getSoundFile
   undefined8 uStack_120;
   undefined8 uStack_118;
   long lStack_110;
-  int *piStack_108;
   byte bStack_100;
   undefined4 uStack_ff;
   undefined2 uStack_fb;
@@ -4400,7 +4374,6 @@ void Walaber::SoundManager::getSoundFile
   int *piStack_d0;
   void *pvStack_c8;
   undefined8 *puStack_c0;
-  int *piStack_b8;
   void *pvStack_b0;
   undefined1 auStack_a8 [24];
   undefined8 *puStack_90;
@@ -4535,14 +4508,13 @@ void Walaber::SoundManager::getSoundFile
       else {
         do {
           plVar8 = plVar6;
-          plVar6 = (long *)*plVar8;
+          plVar6 = (long *)*plVar6;
         } while ((long *)*plVar8 != (long *)0x0);
       }
       plVar9 = plVar8;
     } while (plVar8 != (long *)&uStack_f8);
   }
   lStack_110 = lStack_e8;
-  piStack_108 = piStack_e0;
   if (lStack_e8 != 0) {
     *piStack_e0 = *piStack_e0 + 1;
   }
@@ -4565,10 +4537,8 @@ void Walaber::SoundManager::getSoundFile
     piVar4 = (int *)operator new(4);
     *piVar4 = 3;
     puStack_150 = puVar3;
-    piStack_148 = piVar4;
     puStack_140 = puVar3;
     piStack_138 = piVar4;
-    piStack_b8 = piVar4;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_140);
     *piVar4 = *piVar4 + 1;
     puStack_d8 = puVar3;
@@ -4577,7 +4547,6 @@ void Walaber::SoundManager::getSoundFile
                     /* try { // try from 0035334c to 0035334f has its CatchHandler @ 00353440 */
     uVar5 = Walaber::FileManager::getInstancePtr();
     puStack_160 = puStack_d8;
-    piStack_158 = piStack_d0;
     if (puStack_d8 != (undefined8 *)0x0) {
       *piStack_d0 = *piStack_d0 + 1;
     }
@@ -4797,7 +4766,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
       else {
         do {
           plVar18 = plVar12;
-          plVar12 = (long *)*plVar18;
+          plVar12 = (long *)*plVar12;
         } while ((long *)*plVar18 != (long *)0x0);
       }
     }
@@ -4991,7 +4960,7 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
       else {
         do {
           plVar15 = plVar13;
-          plVar13 = (long *)*plVar15;
+          plVar13 = (long *)*plVar13;
         } while ((long *)*plVar15 != (long *)0x0);
       }
       plVar19 = plVar15;
@@ -5037,7 +5006,6 @@ void Walaber::SoundManager::optimize(bool p0)
   undefined8 *puVar10;
   long *plVar11;
   long lStack_58;
-  int *piStack_50;
   
   uVar2 = (ulong)p0;
   if ((long *)(uVar2 + 0x20) != *(long **)(uVar2 + 0x18)) {
@@ -5059,7 +5027,7 @@ void Walaber::SoundManager::optimize(bool p0)
       else {
         do {
           plVar6 = plVar3;
-          plVar3 = (long *)*plVar6;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar11 = plVar6;
@@ -5078,7 +5046,6 @@ LAB_003540ec:
         puVar10[-1] = 0;
         *puVar4 = 0;
         lStack_58 = lVar7;
-        piStack_50 = piVar8;
         Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(&lStack_58);
         puVar5 = *(undefined8 **)(uVar2 + 0x50);
       }
@@ -5321,7 +5288,6 @@ void Walaber::SoundManager::update(float p0)
           p0_00 = uVar4 + 0x10 & 0xfffffffffffffff0;
           pvVar10 = (void *)operator new(p0_00);
           uStack_80 = p0_00 | 1;
-          uStack_78 = uVar4;
           pvStack_70 = pvVar10;
 LAB_003545a4:
           memcpy(pvVar10,pbVar6,uVar4);
@@ -5366,13 +5332,10 @@ Walaber::SoundManager::_streamMusicAtPath
   undefined8 uVar4;
   long lVar5;
   undefined8 **ppuStack_c8;
-  int *piStack_c0;
   undefined8 **ppuStack_b8;
-  int *piStack_b0;
   undefined8 **ppuStack_a8;
   int *piStack_a0;
   undefined8 **ppuStack_98;
-  int *piStack_90;
   undefined1 auStack_88 [24];
   undefined8 ***pppuStack_70;
   int *piStack_68;
@@ -5393,8 +5356,6 @@ Walaber::SoundManager::_streamMusicAtPath
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   ppuStack_b8 = pppuVar2;
-  piStack_b0 = piVar3;
-  piStack_90 = piVar3;
   pppuStack_70 = pppuVar2;
   piStack_68 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&pppuStack_70);
@@ -5405,7 +5366,6 @@ Walaber::SoundManager::_streamMusicAtPath
                     /* try { // try from 00354724 to 00354727 has its CatchHandler @ 003547ec */
   uVar4 = Walaber::FileManager::getInstancePtr();
   ppuStack_c8 = ppuStack_a8;
-  piStack_c0 = piStack_a0;
   if ((undefined8 ***)ppuStack_a8 != (undefined8 ***)0x0) {
     *piStack_a0 = *piStack_a0 + 1;
   }
@@ -5727,7 +5687,6 @@ ulong Walaber::SoundManager::playMusicFromGroup(int p0,bool p1)
         p0_00 = uVar6 + 0x10 & 0xfffffffffffffff0;
         pvVar12 = (void *)operator new(p0_00);
         uStack_70 = p0_00 | 1;
-        uStack_68 = uVar6;
         pvStack_60 = pvVar12;
 LAB_00354b84:
         memcpy(pvVar12,pbVar10,uVar6);
@@ -5761,7 +5720,6 @@ void Walaber::SoundManager::isMusicPlaying(long param_1)
   char acStack_30 [4];
   char acStack_2c [4];
   
-  bVar2 = false;
   if (*(long *)(param_1 + 0xd0) != 0) {
     acStack_2c[0] = '\0';
     FMOD::Channel::isPlaying(*(long *)(param_1 + 0xd0),acStack_2c);
@@ -5809,16 +5767,13 @@ ulong Walaber::SoundManager::playHubMusicFromGroup(int p0,float p1)
   undefined8 ***pppuVar17;
   undefined4 in_register_00005004;
   undefined8 ****ppppuStack_e0;
-  int *piStack_d8;
   undefined8 ****ppppuStack_d0;
   int *piStack_c8;
   void *pvStack_c0;
   undefined8 ****ppppuStack_b8;
-  int *piStack_b0;
   undefined8 ****ppppuStack_a8;
   int *piStack_a0;
   undefined8 ****ppppuStack_98;
-  int *piStack_90;
   char acStack_88 [24];
   undefined1 auStack_70 [8];
   
@@ -5894,10 +5849,7 @@ ulong Walaber::SoundManager::playHubMusicFromGroup(int p0,float p1)
       piVar8 = (int *)operator new(4);
       *piVar8 = 3;
       ppppuStack_d0 = ppppuVar7;
-      piStack_c8 = piVar8;
       ppppuStack_b8 = ppppuVar7;
-      piStack_b0 = piVar8;
-      piStack_90 = piVar8;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppppuStack_d0);
       *piVar8 = *piVar8 + 1;
       ppppuStack_a8 = ppppuVar7;
@@ -5938,7 +5890,6 @@ LAB_00354f30:
       }
       *(undefined1 *)((long)pvVar16 + uVar6) = 0;
       ppppuStack_e0 = ppppuStack_a8;
-      piStack_d8 = piStack_a0;
       if (ppppuStack_a8 != (undefined8 ****)0x0) {
         *piStack_a0 = *piStack_a0 + 1;
       }
@@ -6125,7 +6076,6 @@ ulong Walaber::SoundManager::playNextTrackInGroup(int p0)
             uVar9 = uVar4 + 0x10 & 0xfffffffffffffff0;
             pvVar11 = (void *)operator new(uVar9);
             uStack_70 = uVar9 | 1;
-            uStack_68 = uVar4;
             pvStack_60 = pvVar11;
 LAB_00355368:
             memcpy(pvVar11,pbVar10,uVar4);
@@ -6211,7 +6161,6 @@ ulong Walaber::SoundManager::playCurrentTrackInGroup(int p0)
           p0_00 = uVar4 + 0x10 & 0xfffffffffffffff0;
           pvVar9 = (void *)operator new(p0_00);
           uStack_70 = p0_00 | 1;
-          uStack_68 = uVar4;
           pvStack_60 = pvVar9;
 LAB_00355514:
           memcpy(pvVar9,pbVar8,uVar4);
@@ -6389,7 +6338,7 @@ void Walaber::SoundManager::initDefaultSubtitleText(long param_1)
       else {
         do {
           plVar8 = plVar7;
-          plVar7 = (long *)*plVar8;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar8 != (long *)0x0);
       }
       plVar10 = plVar8;

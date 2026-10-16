@@ -88,7 +88,6 @@ void Walaber::createProgrammaticSolidColorTexture2D
   long lVar6;
   ulong uVar7;
   long *plStack_88;
-  int *piStack_80;
   long *plStack_78;
   int *piStack_70;
   long *plStack_68;
@@ -133,7 +132,6 @@ void Walaber::createProgrammaticSolidColorTexture2D
     } while (iVar5 != param_4);
   }
   param_1 = (long *)*param_1;
-  piStack_80 = piStack_70;
   if (plStack_78 != (long *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }

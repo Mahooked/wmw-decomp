@@ -200,8 +200,6 @@ float Walaber::HermiteCurve::Hermite(Walaber__CurveKey *p0,Walaber__CurveKey *p1
 void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
 
 {
-  undefined4 uVar2;
-  undefined4 uVar3;
   undefined4 uVar4;
   bool bVar5;
   int iVar6;
@@ -218,9 +216,6 @@ void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
   void *pvVar16;
   ulong uVar17;
   undefined4 uStack_c0;
-  undefined4 uStack_bc;
-  undefined4 uStack_b8;
-  undefined4 uStack_b4;
   undefined4 uStack_b0;
   undefined4 uStack_a8;
   undefined4 uStack_a4;
@@ -472,15 +467,10 @@ LAB_003e5f6c:
           }
           sscanf(pbVar13,"%f",&uStack_a8);
           uVar4 = uStack_9c;
-          uVar3 = uStack_a0;
-          uVar2 = uStack_a4;
           uVar7 = uStack_a8;
                     /* try { // try from 003e60b0 to 003e60cb has its CatchHandler @ 003e6180 */
           uStack_b0 = Walaber::CurveKey::curveContinuityFromString(lStack_98 + (ulong)(uVar15 - 1) * 0x18);
           uStack_c0 = uVar4;
-          uStack_bc = uVar3;
-          uStack_b8 = uVar2;
-          uStack_b4 = uVar7;
           Walaber::Curve::addCurveKey(p0,&uStack_c0);
           uVar12 = (lStack_90 - lStack_98 >> 3) * -0x5555555555555555;
           uVar17 = (ulong)uVar15;

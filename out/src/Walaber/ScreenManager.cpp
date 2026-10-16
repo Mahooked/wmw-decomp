@@ -66,7 +66,7 @@ void Walaber::ScreenManager::removeScreenLoader(long *param_1)
       else {
         do {
           plVar3 = plVar2;
-          plVar2 = (long *)*plVar3;
+          plVar2 = (long *)*plVar2;
         } while ((long *)*plVar3 != (long *)0x0);
       }
       plVar1 = plVar3;
@@ -86,7 +86,6 @@ void Walaber::ScreenManager::removeScreenLoader(long *param_1)
 void Walaber::ScreenManager::beginScreenChanges(Walaber::ScreenManager::ScreenChangeMethod param_1)
 
 {
-  mFlushMethod = param_1;
   return;
 }
 
@@ -108,7 +107,6 @@ void Walaber::ScreenManager::pushScreen(uint p0)
   undefined8 *puVar6;
   long *plVar7;
   undefined8 uStack_80;
-  uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
   
@@ -116,7 +114,6 @@ void Walaber::ScreenManager::pushScreen(uint p0)
     Walaber::PropertyList::PropertyList(&plStack_70);
     puVar2 = DAT_007304b8;
     uStack_80 = 0x100000000;
-    uStack_78 = p0;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f0698 to 003f06a7 has its CatchHandler @ 003f06e0 */
       void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
@@ -148,7 +145,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
           else {
             do {
               plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar7 = plVar4;
@@ -221,7 +218,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
           else {
             do {
               plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar7 = plVar4;
@@ -252,7 +249,6 @@ void Walaber::ScreenManager::swapScreen(uint p0)
   undefined8 *puVar6;
   long *plVar7;
   undefined8 uStack_80;
-  uint uStack_78;
   long *plStack_70;
   long alStack_68 [2];
   
@@ -260,7 +256,6 @@ void Walaber::ScreenManager::swapScreen(uint p0)
     Walaber::PropertyList::PropertyList(&plStack_70);
     puVar2 = DAT_007304b8;
     uStack_80 = 0x100000001;
-    uStack_78 = p0;
     if (DAT_007304b8 == DAT_007304c0) {
                     /* try { // try from 003f09c0 to 003f09cf has its CatchHandler @ 003f0a08 */
       void std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__push_back_slow_path<Walaber::ScreenManager::ScreenOperationDetails const&>(&mPrepList,&uStack_80);
@@ -292,7 +287,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
           else {
             do {
               plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar7 = plVar4;
@@ -365,7 +360,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
           else {
             do {
               plVar4 = plVar3;
-              plVar3 = (long *)*plVar4;
+              plVar3 = (long *)*plVar3;
             } while ((long *)*plVar4 != (long *)0x0);
           }
           plVar7 = plVar4;
@@ -443,7 +438,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
         else {
           do {
             plVar4 = plVar3;
-            plVar3 = (long *)*plVar4;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar4 != (long *)0x0);
         }
         plVar7 = plVar4;
@@ -513,7 +508,7 @@ void Walaber::ScreenManager::popAllScreens(void)
         else {
           do {
             plVar4 = plVar3;
-            plVar3 = (long *)*plVar4;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar4 != (long *)0x0);
         }
         plVar7 = plVar4;
@@ -581,7 +576,7 @@ void Walaber::ScreenManager::stopFlush(void)
         else {
           do {
             plVar4 = plVar3;
-            plVar3 = (long *)*plVar4;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar4 != (long *)0x0);
         }
         plVar7 = plVar4;
@@ -621,7 +616,6 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
 {
   undefined4 in_register_00005004;
   void *pvStack_60;
-  void *pvStack_58;
   void *pvStack_48;
   void *pvStack_40;
   undefined8 uStack_38;
@@ -637,11 +631,9 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1)
                     /* try { // try from 003f14e8 to 003f14f3 has its CatchHandler @ 003f153c */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_60);
   if (pvStack_60 != (void *)0x0) {
-    pvStack_58 = pvStack_60;
     operator delete(pvStack_60);
   }
   if (pvStack_48 != (void *)0x0) {
-    pvStack_40 = pvStack_48;
     operator delete(pvStack_48);
   }
   return;
@@ -698,7 +690,6 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
 {
   undefined4 in_register_00005004;
   void *pvStack_70;
-  void *pvStack_68;
   void *pvStack_58;
   void *pvStack_50;
   undefined8 uStack_48;
@@ -714,11 +705,9 @@ void Walaber::ScreenManager::commitScreenChanges(uint p0,float p1,Walaber__Prope
                     /* try { // try from 003f1720 to 003f172f has its CatchHandler @ 003f1778 */
   Walaber::ScreenManager::commitScreenChanges(CONCAT44(in_register_00005004,p1),&pvStack_70,p2);
   if (pvStack_70 != (void *)0x0) {
-    pvStack_68 = pvStack_70;
     operator delete(pvStack_70);
   }
   if (pvStack_58 != (void *)0x0) {
-    pvStack_50 = pvStack_58;
     operator delete(pvStack_58);
   }
   return;
@@ -937,7 +926,7 @@ void Walaber::ScreenManager::_goFlush(void)
         else {
           do {
             plVar12 = plVar4;
-            plVar4 = (long *)*plVar12;
+            plVar4 = (long *)*plVar4;
           } while ((long *)*plVar12 != (long *)0x0);
         }
       }
@@ -988,7 +977,7 @@ LAB_003f1d64:
             else {
               do {
                 plVar7 = plVar4;
-                plVar4 = (long *)*plVar7;
+                plVar4 = (long *)*plVar4;
               } while ((long *)*plVar7 != (long *)0x0);
             }
             plVar12 = plVar7;
@@ -1030,7 +1019,7 @@ LAB_003f1e38:
             else {
               do {
                 plVar7 = plVar4;
-                plVar4 = (long *)*plVar7;
+                plVar4 = (long *)*plVar4;
               } while ((long *)*plVar7 != (long *)0x0);
             }
             plVar12 = plVar7;
@@ -1097,7 +1086,7 @@ LAB_003f1e38:
                   else {
                     do {
                       plVar8 = plVar5;
-                      plVar5 = (long *)*plVar8;
+                      plVar5 = (long *)*plVar5;
                     } while ((long *)*plVar8 != (long *)0x0);
                   }
                   plVar12 = plVar8;
@@ -1249,11 +1238,8 @@ void Walaber::ScreenManager::touchDown(int p0,Walaber__Vector2 p1)
   float fVar6;
   undefined8 uStack_70;
   undefined4 uStack_68;
-  float fStack_64;
-  float fStack_60;
   undefined4 uStack_5c;
   undefined4 uStack_58;
-  int iStack_54;
   char cStack_50;
   
   fVar5 = (float)_sScreenSize * (float)*(undefined8 *)p1;
@@ -1264,9 +1250,6 @@ void Walaber::ScreenManager::touchDown(int p0,Walaber__Vector2 p1)
     uStack_68 = 0;
     uStack_5c = 0;
     uStack_58 = 0;
-    fStack_64 = fVar5;
-    fStack_60 = fVar6;
-    iStack_54 = p0;
     (**(code **)(*mTouchFirstResponderCallback + 0x10))(mTouchFirstResponderCallback,&uStack_68);
     if (cStack_50 != '\0') goto LAB_003f2310;
   }
@@ -1305,8 +1288,6 @@ void Walaber::ScreenManager::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
   undefined8 uStack_80;
   undefined4 uStack_78;
   undefined8 uStack_74;
-  undefined8 uStack_6c;
-  int iStack_64;
   char cStack_60;
   
   *(ulong *)p1 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) *
@@ -1319,8 +1300,6 @@ void Walaber::ScreenManager::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
     cStack_60 = '\0';
     uStack_78 = 1;
     uStack_74 = *(undefined8 *)p1;
-    uStack_6c = uVar5;
-    iStack_64 = p0;
     (**(code **)(*mTouchFirstResponderCallback + 0x10))(mTouchFirstResponderCallback,&uStack_78);
     if (cStack_60 != '\0') goto LAB_003f245c;
   }
@@ -1393,9 +1372,7 @@ void Walaber::ScreenManager::touchUp(int p0,Walaber__Vector2 p1)
   undefined8 uVar5;
   undefined8 uStack_70;
   undefined4 uStack_68;
-  undefined8 uStack_64;
   undefined8 uStack_5c;
-  int iStack_54;
   char cStack_50;
   
   uVar5 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * (float)((ulong)*(undefined8 *)p1 >> 0x20),
@@ -1405,8 +1382,6 @@ void Walaber::ScreenManager::touchUp(int p0,Walaber__Vector2 p1)
     cStack_50 = '\0';
     uStack_5c = 0;
     uStack_68 = 2;
-    uStack_64 = uVar5;
-    iStack_54 = p0;
     (**(code **)(*mTouchFirstResponderCallback + 0x10))(mTouchFirstResponderCallback,&uStack_68);
     if (cStack_50 != '\0') goto LAB_003f2634;
   }

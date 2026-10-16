@@ -477,7 +477,6 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
   undefined4 uStack_128;
   undefined8 uStack_120;
   undefined8 uStack_118;
-  undefined8 uStack_110;
   undefined4 uStack_108;
   float fStack_104;
   ulong uStack_100;
@@ -524,7 +523,6 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
         *piStack_f8 = *piStack_f8 + 1;
       }
       uStack_108 = 0;
-      uStack_110 = uStack_e0;
       uStack_120 = *(undefined8 *)(uStack_100 + 0x8c);
       uStack_128 = 0xffffffff;
       uStack_118 = CONCAT44((float)((ulong)*(undefined8 *)(uStack_100 + 0x84) >> 0x20) -

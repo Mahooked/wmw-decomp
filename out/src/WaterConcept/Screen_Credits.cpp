@@ -638,13 +638,9 @@ void WaterConcept::Screen_Credits::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined1 uStack_4b;
@@ -683,20 +679,16 @@ void WaterConcept::Screen_Credits::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004b7190 to 004b719b has its CatchHandler @ 004b71ec */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -896,7 +888,6 @@ LAB_004b752c:
                     /* try { // try from 004b75f0 to 004b7603 has its CatchHandler @ 004b76ac */
     WaterConcept::GameSettings::goPlayLevel(&fStack_88,0xffffffff,&pvStack_a0,0);
     if (pvStack_a0 != (void *)0x0) {
-      pvStack_98 = pvStack_a0;
       operator delete(pvStack_a0);
     }
     if (((uint)fStack_88 & 1) != 0) {
@@ -1355,7 +1346,6 @@ LAB_004b7fec:
                     /* try { // try from 004b7ffc to 004b8003 has its CatchHandler @ 004b8090 */
         pvVar7 = (void *)operator new(p0_00);
         uStack_f8 = p0_00 | 1;
-        uStack_f0 = uVar5;
         pvStack_e8 = pvVar7;
 LAB_004b8014:
         memcpy(pvVar7,abStack_c8,uVar5);
@@ -1471,7 +1461,6 @@ void WaterConcept::Screen_Credits::_finishedLoadingWidgets(void *p0)
       uStack_96 = (undefined6)((ulong)piVar4 >> 0x10);
       *piVar4 = 3;
       ppuStack_d0 = ppuVar3;
-      piStack_c8 = piVar4;
       piStack_60 = piVar4;
       Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_d0);
       *piVar4 = *piVar4 + 1;

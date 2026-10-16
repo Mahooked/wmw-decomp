@@ -69,7 +69,7 @@ __equal_range_multi<std::__ndk1::basic_string<char,std::__ndk1::char_traits<char
     }
     do {
       puVar9 = puVar11;
-      bVar5 = *(byte *)(puVar9 + 4);
+      bVar5 = *(byte *)(puVar11 + 4);
       uVar1 = (ulong)(bVar5 >> 1);
       if ((bVar5 & 1) != 0) {
         uVar1 = puVar9[5];

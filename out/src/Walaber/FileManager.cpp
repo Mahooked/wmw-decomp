@@ -627,7 +627,7 @@ void Walaber::FileManager::_printFileRequests(long param_1)
     else {
       do {
         plVar4 = plVar2;
-        plVar2 = (long *)*plVar4;
+        plVar2 = (long *)*plVar2;
       } while ((long *)*plVar4 != (long *)0x0);
     }
   }
@@ -721,7 +721,7 @@ void Walaber::FileManager::_existFail
         else {
           do {
             plVar8 = plVar7;
-            plVar7 = (long *)*plVar8;
+            plVar7 = (long *)*plVar7;
           } while ((long *)*plVar8 != (long *)0x0);
         }
         break;
@@ -742,7 +742,7 @@ void Walaber::FileManager::_existFail
       else {
         do {
           plVar9 = plVar7;
-          plVar7 = (long *)*plVar9;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar9 != (long *)0x0);
       }
     }
@@ -943,7 +943,7 @@ LAB_003d2c54:
           else {
             do {
               plVar3 = plVar8;
-              plVar8 = (long *)*plVar3;
+              plVar8 = (long *)*plVar8;
             } while ((long *)*plVar3 != (long *)0x0);
           }
           break;
@@ -964,7 +964,7 @@ LAB_003d2c54:
         else {
           do {
             plVar10 = plVar8;
-            plVar8 = (long *)*plVar10;
+            plVar8 = (long *)*plVar8;
           } while ((long *)*plVar10 != (long *)0x0);
         }
       }

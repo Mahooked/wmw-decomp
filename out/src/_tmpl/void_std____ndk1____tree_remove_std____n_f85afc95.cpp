@@ -41,7 +41,7 @@ LAB_0032e7ac:
     if ((long *)param_2[1] != (long *)0x0) {
       do {
         plVar7 = plVar5;
-        plVar5 = (long *)*plVar7;
+        plVar5 = (long *)*plVar5;
       } while ((long *)*plVar7 != (long *)0x0);
       goto LAB_0032e7ac;
     }

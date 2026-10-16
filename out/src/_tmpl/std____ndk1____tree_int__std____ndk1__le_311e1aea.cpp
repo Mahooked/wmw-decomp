@@ -82,7 +82,7 @@ long * std::__ndk1::__tree<int,std::__ndk1::less<int>,std::__ndk1::allocator<int
   else {
     do {
       plVar3 = plVar1;
-      plVar1 = (long *)*plVar3;
+      plVar1 = (long *)*plVar1;
     } while ((long *)*plVar3 != (long *)0x0);
   }
   if ((void *)*param_1 == param_2) {

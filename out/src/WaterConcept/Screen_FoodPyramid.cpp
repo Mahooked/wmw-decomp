@@ -128,7 +128,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
   undefined8 uVar14;
   undefined8 uVar15;
   undefined8 *puStack_118;
-  int *piStack_110;
   undefined1 auStack_108 [8];
   undefined8 *puStack_100;
   int *piStack_f8;
@@ -436,7 +435,6 @@ void WaterConcept::Screen_FoodPyramid::enter(long param_1)
   uStack_89 = 0;
   builtin_strncpy(pcStack_80,"/Curves/one_to_one_bounce_fade.xml",0x23);
   puStack_118 = puStack_e8;
-  piStack_110 = piStack_e0;
   if (puStack_e8 != (undefined8 *)0x0) {
     *piStack_e0 = *piStack_e0 + 1;
   }
@@ -473,13 +471,9 @@ void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -500,20 +494,16 @@ void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004d4cf8 to 004d4d03 has its CatchHandler @ 004d4d54 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -639,9 +629,7 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
   undefined4 uStack_348;
   float fStack_344;
   undefined4 uStack_340;
-  float fStack_33c;
   float fStack_338;
-  float fStack_334;
   byte bStack_330;
   undefined4 uStack_32f;
   undefined2 uStack_32b;
@@ -2087,7 +2075,6 @@ LAB_004d66a4:
                     /* try { // try from 004d6988 to 004d69b7 has its CatchHandler @ 004d6f78 */
       plVar28 = (long *)Walaber::WidgetManager::getWidget(*puVar39,900);
       fStack_338 = fVar45 * fVar44 * 0.8;
-      fStack_334 = fVar43;
       (**(code **)(*plVar28 + 0x50))(plVar28,&fStack_338);
       uVar37 = 900;
       do {
@@ -2175,7 +2162,6 @@ LAB_004d66a4:
   lVar20 = Walaber::WidgetManager::getWidget(*puVar39,2000);
   uStack_340 = *(undefined4 *)(lVar20 + 0x90);
   fVar43 = fVar43 - fVar44;
-  fStack_33c = fVar43;
   (**(code **)(*plVar28 + 0x50))(plVar28,&uStack_340);
                     /* try { // try from 004d6c18 to 004d6c3b has its CatchHandler @ 004d70b8 */
   plVar28 = (long *)Walaber::WidgetManager::getWidget(*puVar39,10);
@@ -2848,7 +2834,6 @@ LAB_004d7ab8:
                     /* try { // try from 004d78f8 to 004d790b has its CatchHandler @ 004d7fcc */
     WaterConcept::GameSettings::goPlayLevel(&bStack_150,0xffffffff,&pvStack_1a0,0);
     if (pvStack_1a0 != (void *)0x0) {
-      pvStack_198 = pvStack_1a0;
       pvVar9 = pvStack_1a0;
 LAB_004d7984:
       operator delete(pvVar9);
@@ -2877,7 +2862,6 @@ LAB_004d7988:
                     /* try { // try from 004d7964 to 004d7977 has its CatchHandler @ 004d7fa8 */
       WaterConcept::GameSettings::goPlayLevel(&bStack_150,0xffffffff,&pvStack_1b8,0);
       if (pvStack_1b8 != (void *)0x0) {
-        pvStack_1b0 = pvStack_1b8;
         pvVar9 = pvStack_1b8;
         goto LAB_004d7984;
       }

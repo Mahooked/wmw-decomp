@@ -53,7 +53,6 @@ void std::__ndk1::collate_byname<char>::collate_byname(char *p0,ulong p1)
                     /* try { // try from 005d5d00 to 005d5d07 has its CatchHandler @ 005d5d98 */
     pvVar6 = (void *)operator new(p0_00);
     uStack_78 = p0_00 | 1;
-    uStack_70 = uVar3;
     pvStack_68 = pvVar6;
   }
   memcpy(pvVar6,p1,uVar3);
@@ -234,7 +233,6 @@ ulong std::__ndk1::collate_byname<char>::do_compare(char *p0,char *p1,char *p2,c
     uVar13 = uVar14 + 0x10 & 0xfffffffffffffff0;
     pcVar4 = (char *)operator new(uVar13);
     uStack_70 = uVar13 | 1;
-    uStack_68 = uVar14;
     pcStack_60 = pcVar4;
   }
   if (p1 != p2) {
@@ -294,7 +292,6 @@ LAB_005d6054:
     uVar13 = uVar14 + 0x10 & 0xfffffffffffffff0;
                     /* try { // try from 005d60bc to 005d60c3 has its CatchHandler @ 005d61c8 */
     pcVar4 = (char *)operator new(uVar13);
-    uStack_80 = uVar14;
     uVar13 = uVar13 | 1;
     pcVar8 = pcVar4;
     uVar10 = uStack_70;
@@ -406,7 +403,6 @@ void std::__ndk1::collate_byname<char>::do_transform(char *p0,char *p1)
     uVar8 = uVar9 + 0x10 & 0xfffffffffffffff0;
     pcVar3 = (char *)operator new(uVar8);
     uStack_60 = uVar8 | 1;
-    uStack_58 = uVar9;
     pcStack_50 = pcVar3;
   }
   if (p1 != in_x2) {

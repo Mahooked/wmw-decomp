@@ -112,7 +112,7 @@ LAB_003642a4:
         else {
           do {
             param_2 = plVar6;
-            plVar6 = (long *)*param_2;
+            plVar6 = (long *)*plVar6;
           } while ((long *)*param_2 != (long *)0x0);
         }
         plVar6 = plVar5;
@@ -138,7 +138,7 @@ LAB_003642a4:
     else {
       do {
         param_2 = plVar5;
-        plVar5 = (long *)*param_2;
+        plVar5 = (long *)*plVar5;
       } while ((long *)*param_2 != (long *)0x0);
     }
   }

@@ -33,7 +33,6 @@ void std::__ndk1::
   long lStack_d8;
   int *piStack_d0;
   long lStack_c8;
-  int *piStack_c0;
   long lStack_b8;
   int *piStack_b0;
   long lStack_a8;
@@ -45,7 +44,6 @@ void std::__ndk1::
   long lStack_78;
   int *piStack_70;
   
-  bVar3 = true;
   switch((long)param_2 - (long)param_1 >> 4) {
   case 0:
   case 1:
@@ -96,9 +94,9 @@ void std::__ndk1::
       plVar8 = param_1 + 4;
       do {
         plVar6 = plVar5;
-        lStack_a8 = *plVar6;
+        lStack_a8 = *plVar5;
         pcVar7 = (code *)*param_3;
-        piStack_a0 = (int *)plVar6[1];
+        piStack_a0 = (int *)plVar5[1];
         if (lStack_a8 != 0) {
           *piStack_a0 = *piStack_a0 + 1;
         }
@@ -120,12 +118,11 @@ void std::__ndk1::
           }
           do {
             lVar11 = lVar2;
-            Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=((long)param_1 + lVar11 + 0x30,(long)param_1 + lVar11 + 0x20);
+            Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=((long)param_1 + lVar2 + 0x30,(long)param_1 + lVar2 + 0x20);
             plVar5 = param_1;
             if (lVar11 == -0x20) goto LAB_0034bc98;
             pcVar7 = (code *)*param_3;
             lStack_c8 = lStack_78;
-            piStack_c0 = piStack_70;
             if (lStack_78 != 0) {
               *piStack_70 = *piStack_70 + 1;
             }
@@ -156,7 +153,6 @@ LAB_0034bc98:
       } while (plVar6 + 2 != param_2);
     }
   }
-  bVar3 = true;
 switchD_0034baac_caseD_0:
   return;
 }

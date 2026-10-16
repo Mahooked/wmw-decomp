@@ -420,7 +420,6 @@ LAB_005c75ec:
                     /* try { // try from 005c7624 to 005c762b has its CatchHandler @ 005c76c0 */
     pvVar20 = (void *)operator new(uVar11);
     uStack_218 = uVar11 | 1;
-    uStack_210 = uVar8;
     pvStack_208 = pvVar20;
   }
   memcpy(pvVar20,in_x1,uVar8);

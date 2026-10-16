@@ -381,7 +381,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   ulong uStack_58;
   long lStack_50;
   void *pvStack_48;
-  undefined4 uStack_40;
   
   lStack_78 = *param_2;
   piStack_70 = (int *)param_2[1];
@@ -395,7 +394,6 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
   uStack_68 = 0;
   Walaber::SharedPtr<Walaber::Texture>::operator=(&uStack_68,&lStack_78);
   plVar1 = *(long **)(param_1 + 0x108);
-  uStack_40 = param_3;
   if (plVar1 < *(long **)(param_1 + 0x110)) {
     *plVar1 = uStack_68;
     plVar1[1] = (long)piStack_60;
@@ -713,8 +711,8 @@ void Walaber::Widget_IconList::update(float p0,Walaber__Widget__WidgetActionRet 
           fVar15 = fVar13;
           fVar14 = fVar9;
           iVar7 = iVar7 + 1;
-          fVar9 = fVar14;
-          fVar13 = fVar15 + (float)p1[0xe].f_0xc + (float)*(int *)&p1[0xe].field_0x8;
+          fVar9 = fVar9;
+          fVar13 = fVar13 + (float)p1[0xe].f_0xc + (float)*(int *)&p1[0xe].field_0x8;
           if (*(int *)(p1 + 0xe) <= iVar6 + 1) {
             fVar9 = fVar14 + fVar8 + (float)*(int *)&p1[0xe].field_0x8;
             fVar13 = fVar12;
@@ -804,12 +802,10 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
   float fVar32;
   float fVar33;
   long lStack_188;
-  int *piStack_180;
   long lStack_178;
   int *piStack_170;
   undefined8 uStack_168;
   long lStack_160;
-  int *piStack_158;
   undefined8 uStack_150;
   undefined8 uStack_148;
   undefined4 uStack_140;
@@ -1009,7 +1005,6 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
               uVar25 = NEON_scvtf(CONCAT44(iVar2,iVar2),4);
               uStack_168 = CONCAT44(fVar19 + (float)((ulong)uVar25 >> 0x20),fVar28 + (float)uVar25);
               lStack_160 = lVar7;
-              piStack_158 = piVar9;
                     /* try { // try from 0037e584 to 0037e5a7 has its CatchHandler @ 0037e950 */
               Walaber::SpriteBatch::drawQuad(fVar13);
               Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_160);
@@ -1093,7 +1088,6 @@ LAB_0037e5fc:
       uStack_e8 = CONCAT44((float)(int)fVar30,fVar27 + -6.0);
       uStack_150 = CONCAT44(fVar18 + fVar24 + (fVar33 - fVar24) * 0.5,fVar19 + fVar27 * 0.5 + 0.0);
       lStack_188 = lVar12;
-      piStack_180 = piVar8;
                     /* try { // try from 0037e85c to 0037e87f has its CatchHandler @ 0037e938 */
       Walaber::SpriteBatch::drawQuad(fVar13);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_188);

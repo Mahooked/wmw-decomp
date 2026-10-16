@@ -66,7 +66,6 @@ void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
                     /* try { // try from 003d730c to 003d7313 has its CatchHandler @ 003d73cc */
         pvVar5 = (void *)operator new(p0);
         uStack_238 = p0 | 1;
-        uStack_230 = uVar4;
         pvStack_228 = pvVar5;
 LAB_003d7328:
         memcpy(pvVar5,auStack_170,uVar4);
@@ -154,7 +153,7 @@ void Walaber::ZipArchiveReader::getFilenames(undefined8 *param_1,long param_2)
       else {
         do {
           plVar4 = plVar3;
-          plVar3 = (long *)*plVar4;
+          plVar3 = (long *)*plVar3;
         } while ((long *)*plVar4 != (long *)0x0);
       }
       if (plVar4 == (long *)(param_2 + 0x10)) break;

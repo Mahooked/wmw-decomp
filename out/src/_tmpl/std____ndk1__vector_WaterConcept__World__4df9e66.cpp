@@ -159,7 +159,7 @@ ulong std::__ndk1::
     }
     puVar10 = puStack_a8;
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(puStack_a8,param_3);
-    puVar10[3] = *(undefined8 *)(param_3 + 0x18);
+    puStack_a8[3] = *(undefined8 *)(param_3 + 0x18);
     puStack_a8 = puStack_a8 + 4;
     param_2 = std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(param_1,&puStack_b8,param_2);
     std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::~__split_buffer(&puStack_b8);

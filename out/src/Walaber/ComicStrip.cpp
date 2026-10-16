@@ -374,7 +374,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -543,7 +543,6 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_77 = (undefined1)((uint)ScreenCoord::sScreenSize >> 8);
     uStack_76 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x10);
     uStack_75 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x18);
-    fStack_74 = DAT_0072d884;
     puVar8 = *(undefined8 **)(param_1 + 0xb0);
     if (puVar8 < *(undefined8 **)(param_1 + 0xb8)) {
       *puVar8 = 0;
@@ -611,7 +610,6 @@ void Walaber::ComicStrip::addPanel(long param_1,long *param_2,undefined8 param_3
     uStack_77 = (undefined1)((uint)ScreenCoord::sScreenSize >> 8);
     uStack_76 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x10);
     uStack_75 = (undefined1)((uint)ScreenCoord::sScreenSize >> 0x18);
-    fStack_74 = DAT_0072d884;
     puVar8 = *(undefined8 **)(param_1 + 200);
     if (puVar8 < *(undefined8 **)(param_1 + 0xd0)) {
       *puVar8 = 0;

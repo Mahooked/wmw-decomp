@@ -1131,13 +1131,11 @@ void WaterConcept::WaterBalloon::addFluidParticles
   float fVar14;
   float fVar15;
   uint uStack_90;
-  float fStack_8c;
   undefined8 uStack_88;
   undefined4 uStack_80;
   undefined8 *puStack_78;
   undefined8 *puStack_70;
   undefined8 *puStack_68;
-  uint uStack_60;
   
   puVar5 = *(ulong **)(p0.f_0x0 + 0x460);
   puVar6 = *(ulong **)(p0.f_0x0 + 0x458);
@@ -1223,10 +1221,8 @@ LAB_00496df0:
       }
       uVar12 = 1;
       uStack_88 = p0.f_0x0;
-      uStack_60 = p2;
       while( true ) {
         uStack_90 = p2;
-        fStack_8c = p1;
         if (puStack_70 < puStack_68) {
           *puStack_70 = CONCAT44(p1,p2);
           puStack_70 = puStack_70 + 1;
@@ -2115,7 +2111,6 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
 {
   long *plVar2;
   long lStack_58;
-  undefined4 uStack_50;
   void *pvStack_48;
   void *pvStack_40;
   undefined8 uStack_38;
@@ -2126,7 +2121,6 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
     pvStack_40 = (void *)0x0;
     uStack_38 = 0;
     lStack_58 = param_1;
-    uStack_50 = param_2;
     if (&pvStack_48 != (void **)(param_1 + 0x458)) {
                     /* try { // try from 00498134 to 0049814f has its CatchHandler @ 0049818c */
       std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::value&&is_constructible<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::iterator_traits<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::WaterBalloon::WaterBalloonStoredParticle, std::__ndk1::allocator<WaterConcept::WaterBalloon::WaterBalloonStoredParticle>>::assign<WaterConcept::WaterBalloon::WaterBalloonStoredParticle*>(&pvStack_48,*(undefined8 *)(param_1 + 0x458),*(undefined8 *)(param_1 + 0x460))
@@ -2135,7 +2129,6 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
     }
     (**(code **)(*plVar2 + 0x10))(plVar2,&lStack_58);
     if (pvStack_48 != (void *)0x0) {
-      pvStack_40 = pvStack_48;
       operator delete(pvStack_48);
     }
   }

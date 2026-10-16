@@ -142,67 +142,51 @@ void WaterConcept::World::World(float p0,int p1)
   float fVar10;
   undefined8 uVar11;
   undefined8 *puStack_330;
-  int *piStack_328;
   undefined8 *puStack_320;
   undefined4 *puStack_318;
   undefined8 *puStack_310;
-  int *piStack_308;
   undefined8 *puStack_300;
   undefined4 *puStack_2f8;
   undefined8 *puStack_2f0;
-  int *piStack_2e8;
   undefined8 *puStack_2e0;
   undefined4 *puStack_2d8;
   undefined8 *puStack_2d0;
-  int *piStack_2c8;
   undefined8 *puStack_2c0;
   undefined4 *puStack_2b8;
   undefined8 *puStack_2b0;
-  int *piStack_2a8;
   undefined8 *puStack_2a0;
-  int *piStack_298;
   undefined8 *puStack_290;
   undefined4 *puStack_288;
   undefined8 *puStack_280;
-  int *piStack_278;
   undefined8 *puStack_270;
   undefined4 *puStack_268;
   undefined8 *puStack_260;
-  int *piStack_258;
   undefined8 *puStack_250;
   undefined4 *puStack_248;
   undefined8 *puStack_240;
-  int *piStack_238;
   undefined8 *puStack_230;
   undefined4 *puStack_228;
   undefined8 *puStack_220;
-  int *piStack_218;
   undefined8 *puStack_210;
   undefined4 *puStack_208;
   undefined8 *puStack_200;
-  int *piStack_1f8;
   undefined8 *puStack_1f0;
   undefined4 *puStack_1e8;
   undefined8 *puStack_1e0;
-  int *piStack_1d8;
   undefined8 *puStack_1d0;
   undefined4 *puStack_1c8;
   undefined8 *puStack_1c0;
-  int *piStack_1b8;
   undefined8 *puStack_1b0;
   undefined4 *puStack_1a8;
   undefined8 *puStack_1a0;
-  int *piStack_198;
   undefined8 *puStack_190;
   undefined4 *puStack_188;
   undefined8 *puStack_180;
-  int *piStack_178;
   undefined8 *puStack_170;
   int *piStack_168;
   undefined8 *puStack_160;
   int *piStack_158;
   undefined8 *puStack_150;
-  int *piStack_148;
   ulong auStack_140 [2];
   char *pcStack_130;
   ulong auStack_120 [2];
@@ -491,7 +475,6 @@ void WaterConcept::World::World(float p0,int p1)
   piStack_168 = (int *)operator new(4);
   *piStack_168 = 3;
   puStack_170 = puVar5;
-  piStack_148 = piStack_168;
   puStack_98 = puVar5;
   piStack_90 = piStack_168;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -504,7 +487,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00444f48 to 00444f4b has its CatchHandler @ 00445a4c */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_180 = puStack_160;
-  piStack_178 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -531,7 +513,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00444fe8 to 00444feb has its CatchHandler @ 00445a38 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_1a0 = puStack_160;
-  piStack_198 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -560,7 +541,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445094 to 00445097 has its CatchHandler @ 00445c44 */
     uVar11 = Walaber::SoundManager::getInstancePtr();
     puStack_1c0 = puStack_160;
-    piStack_1b8 = piStack_158;
     if (puStack_160 != (undefined8 *)0x0) {
       *piStack_158 = *piStack_158 + 1;
     }
@@ -617,7 +597,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445170 to 00445173 has its CatchHandler @ 00445bf8 */
       uVar11 = Walaber::SoundManager::getInstancePtr();
       puStack_1e0 = puStack_160;
-      piStack_1d8 = piStack_158;
       if (puStack_160 != (undefined8 *)0x0) {
         *piStack_158 = *piStack_158 + 1;
       }
@@ -649,7 +628,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445264 to 00445267 has its CatchHandler @ 00445c10 */
     uVar11 = Walaber::SoundManager::getInstancePtr();
     puStack_200 = puStack_160;
-    piStack_1f8 = piStack_158;
     if (puStack_160 != (undefined8 *)0x0) {
       *piStack_158 = *piStack_158 + 1;
     }
@@ -678,7 +656,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445308 to 0044530b has its CatchHandler @ 00445a24 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_220 = puStack_160;
-  piStack_218 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -705,7 +682,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 004453a0 to 004453a3 has its CatchHandler @ 00445a10 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_240 = puStack_160;
-  piStack_238 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -732,7 +708,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445438 to 0044543b has its CatchHandler @ 004459fc */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_260 = puStack_160;
-  piStack_258 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -759,7 +734,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 004454d0 to 004454d3 has its CatchHandler @ 004459e8 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_280 = puStack_160;
-  piStack_278 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -786,7 +760,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445570 to 00445573 has its CatchHandler @ 00445b00 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_2a0 = puStack_160;
-  piStack_298 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -796,7 +769,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 004455a8 to 004455ab has its CatchHandler @ 00445b00 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_2b0 = puStack_160;
-  piStack_2a8 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -823,7 +795,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445640 to 00445643 has its CatchHandler @ 004459b8 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_2d0 = puStack_160;
-  piStack_2c8 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -850,7 +821,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 004456d8 to 004456db has its CatchHandler @ 004459a4 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_2f0 = puStack_160;
-  piStack_2e8 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -877,7 +847,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445770 to 00445773 has its CatchHandler @ 00445990 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_310 = puStack_160;
-  piStack_308 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -904,7 +873,6 @@ void WaterConcept::World::World(float p0,int p1)
                     /* try { // try from 00445808 to 0044580b has its CatchHandler @ 00445b84 */
   uVar11 = Walaber::SoundManager::getInstancePtr();
   puStack_330 = puStack_160;
-  piStack_328 = piStack_158;
   if (puStack_160 != (undefined8 *)0x0) {
     *piStack_158 = *piStack_158 + 1;
   }
@@ -1835,7 +1803,7 @@ void WaterConcept::World::~World(undefined8 *param_1,ulong param_2)
         else {
           do {
             plVar4 = plVar3;
-            plVar3 = (long *)*plVar4;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar4 != (long *)0x0);
         }
       }
@@ -1867,7 +1835,7 @@ void WaterConcept::World::~World(undefined8 *param_1,ulong param_2)
         else {
           do {
             plVar4 = plVar3;
-            plVar3 = (long *)*plVar4;
+            plVar3 = (long *)*plVar3;
           } while ((long *)*plVar4 != (long *)0x0);
         }
       }
@@ -2282,17 +2250,13 @@ void WaterConcept::World::createGridFromFile(undefined8 param_1,undefined8 param
   undefined8 *puVar3;
   int *piVar4;
   undefined8 *puStack_a8;
-  int *piStack_a0;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
   int *piStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   undefined8 *puStack_48;
   int *piStack_40;
   
@@ -2304,7 +2268,6 @@ void WaterConcept::World::createGridFromFile(undefined8 param_1,undefined8 param
                     /* try { // try from 00448100 to 00448117 has its CatchHandler @ 00448244 */
   Walaber::TextureManager::getTexture(&puStack_48,uVar2,param_2,&uStack_68,1,0);
   puStack_58 = puStack_48;
-  piStack_50 = piStack_40;
   if (puStack_48 != (undefined8 *)0x0) {
     *piStack_40 = *piStack_40 + 1;
   }
@@ -2322,19 +2285,15 @@ void WaterConcept::World::createGridFromFile(undefined8 param_1,undefined8 param
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_98 = puVar3;
-  piStack_90 = piVar4;
-  piStack_70 = piVar4;
   puStack_48 = puVar3;
   piStack_40 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar4 = *piVar4 + 1;
   puStack_88 = puVar3;
-  piStack_80 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
   *piVar4 = *piVar4 + 1;
                     /* try { // try from 004481d4 to 004481db has its CatchHandler @ 00448224 */
   puStack_a8 = puVar3;
-  piStack_a0 = piVar4;
   Walaber::Texture::getData(puStack_58,&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
@@ -2439,7 +2398,6 @@ void WaterConcept::World::loadLevelPart2(long param_1)
   undefined8 uStack_338;
   undefined8 uStack_330;
   long lStack_328;
-  int *piStack_320;
   undefined8 uStack_318;
   undefined8 uStack_310;
   undefined8 uStack_308;
@@ -4099,7 +4057,6 @@ void WaterConcept::World::loadLevelPart2(long param_1)
                     /* try { // try from 0044a5c8 to 0044a5e3 has its CatchHandler @ 0044aa5c */
     Walaber::TextureManager::getTexture(&lStack_88,uVar11,&uStack_a0,&uStack_338,0,0);
     lStack_328 = lStack_88;
-    piStack_320 = piStack_80;
     if (lStack_88 != 0) {
       *piStack_80 = *piStack_80 + 1;
     }
@@ -5353,13 +5310,11 @@ void WaterConcept::World::_clearMaterialInCapsule(Walaber__Vector2 *p0,Walaber__
 
 {
   void *pvStack_60;
-  void *pvStack_58;
   
   std::__ndk1::vector<int, std::__ndk1::allocator<int>>::vector(&pvStack_60,p0 + 0xc1);
                     /* try { // try from 0044c800 to 0044c827 has its CatchHandler @ 0044c868 */
   WaterConcept::World::_clearMaterialInCapsule(0x40400000,p0,p1);
   if (pvStack_60 != (void *)0x0) {
-    pvStack_58 = pvStack_60;
     operator delete(pvStack_60);
   }
   return;
@@ -5500,7 +5455,7 @@ void WaterConcept::World::update(float p0)
           else {
             do {
               plVar15 = plVar14;
-              plVar14 = (long *)plVar15[3];
+              plVar14 = (long *)plVar14[3];
             } while (plVar14 != plVar11);
             plVar15[3] = plVar11[3];
             plVar11[3] = 0;
@@ -5532,7 +5487,7 @@ void WaterConcept::World::update(float p0)
           else {
             do {
               plVar14 = plVar15;
-              plVar15 = (long *)*plVar14;
+              plVar15 = (long *)*plVar15;
             } while ((long *)*plVar14 != (long *)0x0);
           }
         }
@@ -5647,7 +5602,7 @@ void WaterConcept::World::update(float p0)
     else {
       do {
         plVar18 = plVar11;
-        plVar11 = (long *)*plVar18;
+        plVar11 = (long *)*plVar11;
       } while ((long *)*plVar18 != (long *)0x0);
     }
   }
@@ -5778,7 +5733,7 @@ void WaterConcept::World::update(float p0)
       else {
         do {
           plVar19 = plVar11;
-          plVar11 = (long *)*plVar19;
+          plVar11 = (long *)*plVar11;
         } while ((long *)*plVar19 != (long *)0x0);
       }
       plVar18 = plVar19;
@@ -6073,7 +6028,7 @@ void WaterConcept::World::update(float p0)
             else {
               do {
                 plVar19 = plVar14;
-                plVar14 = (long *)*plVar19;
+                plVar14 = (long *)*plVar14;
               } while ((long *)*plVar19 != (long *)0x0);
             }
           }
@@ -6102,7 +6057,7 @@ void WaterConcept::World::update(float p0)
       else {
         do {
           plVar19 = plVar11;
-          plVar11 = (long *)*plVar19;
+          plVar11 = (long *)*plVar11;
         } while ((long *)*plVar19 != (long *)0x0);
       }
       plVar18 = plVar19;
@@ -6636,7 +6591,6 @@ void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0)
   undefined8 uStack_d0;
   undefined8 uStack_c8;
   float fStack_c0;
-  float fStack_bc;
   undefined4 uStack_b4;
   
   lVar9 = *in_x1;
@@ -6664,7 +6618,6 @@ void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0)
               iVar4 = rand();
               iVar5 = rand();
               fStack_c0 = (float)(iVar5 % 0x2711) * 0.0001 + 2.0;
-              fStack_bc = fStack_c0;
               iVar5 = rand();
               puVar8 = (undefined8 *)(*in_x1 + uVar11 * 0x20 + 0x18);
               uVar14 = *puVar8;
@@ -6681,7 +6634,6 @@ void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0)
             iVar3 = rand();
             iVar4 = rand();
             fStack_c0 = (float)(iVar4 % 0x2711) * 0.0001 + 1.0;
-            fStack_bc = fStack_c0;
             iVar4 = rand();
             puVar8 = (undefined8 *)(*in_x1 + uVar11 * 0x20 + 0x18);
             uVar14 = *puVar8;
@@ -8005,8 +7957,6 @@ void WaterConcept::World::_freezeFluids(long param_1)
   ulong uVar4;
   uint uVar5;
   undefined4 uStack_78;
-  uint uStack_74;
-  uint uStack_70;
   
   uVar4 = 0;
   do {
@@ -8019,8 +7969,6 @@ void WaterConcept::World::_freezeFluids(long param_1)
            (*(float *)(*plVar2 + (ulong)uVar5 * 0x90 + 0x80) < (float)(&DAT_00733f94)[uVar4 * 0x38])
            ) {
           uStack_78 = (undefined4)uVar4;
-          uStack_74 = uVar5;
-          uStack_70 = uVar3;
           WaterConcept::Fluids::removeParticle(*(undefined8 *)(param_1 + 0x440),&uStack_78);
         }
         uVar5 = uVar5 + 1;
@@ -8963,7 +8911,7 @@ void WaterConcept::World::_drawGridSprites(Walaber__SpriteBatch *p0)
     else {
       do {
         plVar15 = plVar10;
-        plVar10 = (long *)*plVar15;
+        plVar10 = (long *)*plVar10;
       } while ((long *)*plVar15 != (long *)0x0);
     }
   }
@@ -8995,7 +8943,7 @@ void WaterConcept::World::_drawGridSprites(Walaber__SpriteBatch *p0)
       else {
         do {
           pWVar14 = pWVar6;
-          pWVar6 = (Walaber__SpriteBatch *)pWVar14->f_0x0;
+          pWVar6 = (Walaber__SpriteBatch *)pWVar6->f_0x0;
         } while ((Walaber__SpriteBatch *)pWVar14->f_0x0 != (Walaber__SpriteBatch *)0x0);
       }
       pWVar16 = pWVar14;
@@ -9037,8 +8985,6 @@ void WaterConcept::World::_drawGridSprites(Walaber__SpriteBatch *p0)
         bStack_e8 = (byte)iVar8 & ((byte)(iVar8 >> 0x1f) ^ 0xff);
         fStack_e0 = *(float *)((long)&pWVar16->f_0x30 + 4) * 3.0;
         uStack_e5 = (undefined1)uVar4;
-        bStack_e7 = bStack_e8;
-        bStack_e6 = bStack_e8;
                     /* try { // try from 004534cc to 004534eb has its CatchHandler @ 00453678 */
         Walaber::SpriteBatch::drawQuad((int)pWVar16->f_0x30);
         plVar15 = &lStack_d0;
@@ -9556,7 +9502,6 @@ void WaterConcept::World::_drawFluidRefractionColor(void *p0)
   undefined8 *in_x1;
   undefined8 uVar3;
   long lStack_b0;
-  int *piStack_a8;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -9598,7 +9543,6 @@ void WaterConcept::World::_drawFluidRefractionColor(void *p0)
     *piStack_60 = *piStack_60 + 1;
   }
   lStack_b0 = lStack_68;
-  piStack_a8 = piStack_60;
                     /* try { // try from 00454930 to 00454947 has its CatchHandler @ 00454984 */
   Walaber::ParticleSet::drawParticles(0x40000000,uVar2,uVar3,&lStack_b0,&Walaber::Color::White,3,0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
@@ -9621,7 +9565,6 @@ void WaterConcept::World::_drawFluidRefractionAlpha(void *p0)
   undefined8 *in_x1;
   undefined8 uVar3;
   long lStack_b0;
-  int *piStack_a8;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -9665,7 +9608,6 @@ void WaterConcept::World::_drawFluidRefractionAlpha(void *p0)
   auStack_80[0] = CONCAT44(auStack_80[0]._4_4_,0xa0a0a0a);
                     /* try { // try from 00454acc to 00454adf has its CatchHandler @ 00454b1c */
   lStack_b0 = lStack_68;
-  piStack_a8 = piStack_60;
   Walaber::ParticleSet::drawParticles(0x3f800000,uVar2,uVar3,&lStack_b0,auStack_80,3,0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_58);
@@ -9716,21 +9658,17 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
   undefined8 uStack_178;
   int *piStack_170;
   undefined8 *puStack_168;
-  int *piStack_160;
   undefined8 *puStack_158;
   int *piStack_150;
   undefined8 *puStack_148;
   int *piStack_140;
   undefined8 *puStack_138;
-  int *piStack_130;
   undefined8 *puStack_128;
   int *piStack_120;
   undefined8 *puStack_118;
   int *piStack_110;
   undefined8 uStack_108;
-  int *piStack_100;
   undefined8 uStack_f8;
-  int *piStack_f0;
   float afStack_e8 [2];
   undefined8 uStack_e0;
   float fStack_d8;
@@ -9877,13 +9815,11 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
   fStack_d4 = (float)((ulong)piStack_110 >> 0x20);
   *piStack_110 = 3;
   puStack_118 = puVar11;
-  piStack_f0 = piStack_110;
   uStack_e0 = puVar11;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_e0);
   piStack_120 = piStack_110;
   puStack_128 = puStack_118;
   uStack_108 = puStack_118;
-  piStack_100 = piStack_110;
   if (puStack_118 != (undefined8 *)0x0) {
     *piStack_110 = *piStack_110 + 1;
   }
@@ -9913,7 +9849,6 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
   piStack_150 = piStack_140;
   puStack_158 = puStack_148;
   puStack_138 = puStack_148;
-  piStack_130 = piStack_140;
   if (puStack_148 != (undefined8 *)0x0) {
     *piStack_140 = *piStack_140 + 1;
   }
@@ -9943,7 +9878,6 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
   piStack_180 = piStack_170;
   puStack_188 = uStack_178;
   puStack_168 = uStack_178;
-  piStack_160 = piStack_170;
   if (uStack_178 != (undefined8 *)0x0) {
     *piStack_170 = *piStack_170 + 1;
   }
@@ -10043,57 +9977,38 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   undefined8 *puVar3;
   int *piVar4;
   undefined8 *puStack_208;
-  int *piStack_200;
   undefined8 *puStack_1f8;
-  int *piStack_1f0;
   undefined8 *puStack_1e8;
-  int *piStack_1e0;
   undefined8 *puStack_1d8;
-  int *piStack_1d0;
   undefined8 *puStack_1c8;
   int *piStack_1c0;
   undefined8 *puStack_1b8;
-  int *piStack_1b0;
   undefined8 *puStack_1a8;
-  int *piStack_1a0;
   undefined8 *puStack_198;
   int *piStack_190;
   undefined8 *puStack_188;
-  int *piStack_180;
   undefined8 *puStack_178;
-  int *piStack_170;
   undefined8 *puStack_168;
   int *piStack_160;
   undefined8 *puStack_158;
-  int *piStack_150;
   undefined8 *puStack_148;
-  int *piStack_140;
   undefined8 *puStack_138;
   int *piStack_130;
   undefined8 *puStack_128;
-  int *piStack_120;
   undefined8 *puStack_118;
-  int *piStack_110;
   undefined8 *puStack_108;
   int *piStack_100;
   undefined8 *puStack_f8;
-  int *piStack_f0;
   undefined8 *puStack_e8;
-  int *piStack_e0;
   undefined8 *puStack_d8;
   int *piStack_d0;
   undefined8 *puStack_c8;
-  int *piStack_c0;
   undefined8 *puStack_b8;
-  int *piStack_b0;
   undefined8 *puStack_a8;
   int *piStack_a0;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   
   puVar2 = (undefined8 *)operator new(0x38);
   puVar2[5] = 0;
@@ -10113,14 +10028,11 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   piStack_a0 = (int *)operator new(4);
   *piStack_a0 = 3;
   puStack_a8 = puVar3;
-  piStack_80 = piStack_a0;
   puStack_78 = puVar3;
-  piStack_70 = piStack_a0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_a0;
   puVar3 = puStack_a8;
   puStack_98 = puStack_a8;
-  piStack_90 = piStack_a0;
   if (puStack_a8 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
   }
@@ -10129,7 +10041,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_b0 = piVar4;
   puStack_b8 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_b8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
@@ -10156,12 +10067,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_d8 = puVar3;
   piStack_a0 = piStack_d0;
   puStack_78 = puVar3;
-  piStack_70 = piStack_d0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_d0;
   puVar3 = puStack_d8;
   puStack_c8 = puStack_d8;
-  piStack_c0 = piStack_d0;
   if (puStack_d8 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
   }
@@ -10170,7 +10079,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_e0 = piVar4;
   puStack_e8 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_e8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
@@ -10197,12 +10105,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_108 = puVar3;
   piStack_d0 = piStack_100;
   puStack_78 = puVar3;
-  piStack_70 = piStack_100;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_100;
   puVar3 = puStack_108;
   puStack_f8 = puStack_108;
-  piStack_f0 = piStack_100;
   if (puStack_108 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_108);
   }
@@ -10211,7 +10117,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_108);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_110 = piVar4;
   puStack_118 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_118);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_118);
@@ -10238,12 +10143,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_138 = puVar3;
   piStack_100 = piStack_130;
   puStack_78 = puVar3;
-  piStack_70 = piStack_130;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_130;
   puVar3 = puStack_138;
   puStack_128 = puStack_138;
-  piStack_120 = piStack_130;
   if (puStack_138 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_138);
   }
@@ -10252,7 +10155,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_138);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_140 = piVar4;
   puStack_148 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_148);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_148);
@@ -10279,12 +10181,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_168 = puVar3;
   piStack_130 = piStack_160;
   puStack_78 = puVar3;
-  piStack_70 = piStack_160;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_160;
   puVar3 = puStack_168;
   puStack_158 = puStack_168;
-  piStack_150 = piStack_160;
   if (puStack_168 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_168);
   }
@@ -10293,7 +10193,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_168);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_170 = piVar4;
   puStack_178 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_178);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_178);
@@ -10320,12 +10219,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_198 = puVar3;
   piStack_160 = piStack_190;
   puStack_78 = puVar3;
-  piStack_70 = piStack_190;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_190;
   puVar3 = puStack_198;
   puStack_188 = puStack_198;
-  piStack_180 = piStack_190;
   if (puStack_198 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_198);
   }
@@ -10334,7 +10231,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_198);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_1a0 = piVar4;
   puStack_1a8 = puVar3;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar2 + 5,&puStack_1a8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1a8);
@@ -10370,12 +10266,10 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   puStack_1c8 = puVar2;
   piStack_190 = piStack_1c0;
   puStack_78 = puVar2;
-  piStack_70 = piStack_1c0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   piVar4 = piStack_1c0;
   puVar2 = puStack_1c8;
   puStack_1b8 = puStack_1c8;
-  piStack_1b0 = piStack_1c0;
   if (puStack_1c8 == (undefined8 *)0x0) {
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1c8);
   }
@@ -10384,7 +10278,6 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1c8);
     *piVar4 = *piVar4 + 1;
   }
-  piStack_1d0 = piVar4;
   puStack_1d8 = puVar2;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar3 + 5,&puStack_1d8);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1d8);
@@ -10409,18 +10302,14 @@ void WaterConcept::World::_setupFluidCollisions(long param_1)
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_1f8 = puVar2;
-  piStack_1f0 = piVar4;
   piStack_1c0 = piVar4;
   puStack_78 = puVar2;
-  piStack_70 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
   *piVar4 = *piVar4 + 1;
   puStack_1e8 = puVar2;
-  piStack_1e0 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1f8);
   *piVar4 = *piVar4 + 1;
   puStack_208 = puVar2;
-  piStack_200 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::operator=(puVar3 + 5,&puStack_208);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_208);
                     /* try { // try from 004560a4 to 004560b3 has its CatchHandler @ 00456168 */
@@ -10461,7 +10350,6 @@ void WaterConcept::World::_getMaterialForColor(Walaber__Color *p0)
   
   iStack_2c = 0;
   Walaber::Color::getClosestColor(auStack_30);
-  iVar1 = iStack_2c;
   if (0xc < iStack_2c) {
     iVar1 = 0;
   }
@@ -10604,13 +10492,10 @@ void WaterConcept::World::loadLevelMetaFile(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -10627,8 +10512,6 @@ void WaterConcept::World::loadLevelMetaFile(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -10639,7 +10522,6 @@ void WaterConcept::World::loadLevelMetaFile(long param_1)
                     /* try { // try from 00456740 to 00456743 has its CatchHandler @ 004567c8 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -11290,7 +11172,7 @@ LAB_00457694:
                   else {
                     do {
                       puVar38 = puVar33;
-                      puVar33 = (ulong *)*puVar38;
+                      puVar33 = (ulong *)*puVar33;
                     } while ((ulong *)*puVar38 != (ulong *)0x0);
                   }
                   puVar22 = puVar38;
@@ -14959,7 +14841,7 @@ LAB_0045a194:
       else {
         do {
           plVar35 = plVar34;
-          plVar34 = (long *)*plVar35;
+          plVar34 = (long *)*plVar34;
         } while ((long *)*plVar35 != (long *)0x0);
       }
       plVar30 = plVar35;
@@ -16211,7 +16093,7 @@ LAB_0045a83c:
     else {
       do {
         plVar30 = plVar35;
-        plVar35 = (long *)*plVar30;
+        plVar35 = (long *)*plVar35;
       } while ((long *)*plVar30 != (long *)0x0);
     }
   }
@@ -16277,7 +16159,7 @@ LAB_0045b70c:
     else {
       do {
         plVar35 = plVar30;
-        plVar30 = (long *)*plVar35;
+        plVar30 = (long *)*plVar30;
       } while ((long *)*plVar35 != (long *)0x0);
     }
   }
@@ -16316,7 +16198,7 @@ LAB_0045b70c:
     else {
       do {
         plVar30 = plVar35;
-        plVar35 = (long *)*plVar30;
+        plVar35 = (long *)*plVar35;
       } while ((long *)*plVar30 != (long *)0x0);
     }
   }
@@ -16355,7 +16237,7 @@ LAB_0045b70c:
     else {
       do {
         plVar35 = plVar30;
-        plVar30 = (long *)*plVar35;
+        plVar30 = (long *)*plVar30;
       } while ((long *)*plVar35 != (long *)0x0);
     }
   }
@@ -16700,7 +16582,6 @@ void WaterConcept::World::_spoutStateChangeCallback(void *p0)
   float fVar11;
   undefined8 uStack_e8;
   float fStack_e0;
-  float fStack_dc;
   byte abStack_c0 [16];
   void *pvStack_b0;
   uint auStack_a8 [2];
@@ -16833,7 +16714,6 @@ void WaterConcept::World::_spoutStateChangeCallback(void *p0)
       iVar4 = rand();
       iVar5 = rand();
       fStack_e0 = (float)(iVar5 % 0x2711) * 5e-05 + 0.75;
-      fStack_dc = fStack_e0;
       iVar5 = rand();
       iVar6 = rand();
       uVar8 = rand();
@@ -17981,8 +17861,6 @@ void WaterConcept::World::_collectibleCollected(void *p0)
   undefined8 uStack_60;
   undefined4 uStack_58;
   uint uStack_54;
-  undefined8 uStack_50;
-  undefined8 uStack_48;
   undefined1 uStack_40;
   undefined1 uStack_3f;
   
@@ -17994,9 +17872,7 @@ void WaterConcept::World::_collectibleCollected(void *p0)
     uVar2 = WaterConcept::Collectible::isGhost();
     uStack_54 = CONCAT31(uStack_54._1_3_,uVar2) & 0xffffff01;
     Walaber::Node::getWorldPosition(&uStack_60,*in_x1);
-    uStack_50 = uStack_60;
     WaterConcept::Collectible::getSpriteWorldSize(&uStack_60,*in_x1);
-    uStack_48 = uStack_60;
     uStack_40 = *(undefined1 *)(*in_x1 + 0x3e0);
     uStack_3f = *(undefined1 *)(*in_x1 + 0x3e1);
     (**(code **)(**(long **)((long)p0 + 0x970) + 0x10))(*(long **)((long)p0 + 0x970),&uStack_58);
@@ -18031,14 +17907,12 @@ void WaterConcept::World::_icyHotStateChangeCallback(void *p0)
   float fStack_8c;
   int iStack_84;
   float fStack_80;
-  float fStack_7c;
   
   if ((*in_x1 == 1) && (*(long *)((long)p0 + 0x5c8) != 0)) {
     iVar3 = rand();
     iVar4 = rand();
     iVar5 = rand();
     fStack_80 = (float)(iVar5 % 0x2711) * 0.0001 + 3.0;
-    fStack_7c = fStack_80;
     iVar5 = rand();
     fVar9 = (float)(iVar5 % 0x2711) * 1.00000025e-05 + 0.65;
     iVar5 = rand();
@@ -18361,9 +18235,7 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
   undefined8 uStack_f0;
   undefined4 uStack_e4;
   float fStack_e0;
-  float fStack_dc;
   float fStack_d8;
-  float fStack_d4;
   float fStack_d0;
   float fStack_cc;
   undefined8 uStack_c8;
@@ -18420,7 +18292,6 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
               *(undefined4 *)(lVar10 + 8) = 0x3f800000;
               iVar6 = rand();
               fStack_d8 = (float)(iVar6 % 0x2711) * 0.0002 + 2.0;
-              fStack_d4 = fStack_d8;
               iVar6 = rand();
               iVar7 = rand();
               uVar13 = rand();
@@ -18443,7 +18314,6 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
                 iVar7 = rand();
                 iVar3 = rand();
                 fStack_e0 = (float)(iVar3 % 0x2711) * 0.0002 + 3.0;
-                fStack_dc = fStack_e0;
                 iVar3 = rand();
                 iVar4 = rand();
                 uVar13 = rand();
@@ -18643,9 +18513,7 @@ void WaterConcept::World::_fanParticleCallback(void *p0)
   float fStack_c4;
   int iStack_bc;
   float fStack_b8;
-  float fStack_b4;
   float fStack_b0;
-  float fStack_ac;
   
   lVar10 = *in_x1;
   iVar5 = rand();
@@ -18695,10 +18563,8 @@ void WaterConcept::World::_fanParticleCallback(void *p0)
     }
     iVar5 = rand();
     fStack_b0 = fVar12;
-    fStack_ac = fVar11;
     iVar6 = rand();
     fStack_b8 = (float)(iVar6 % 0x2711) * 2e-05 + 0.45;
-    fStack_b4 = fStack_b8;
     rand();
     rand();
     rand();
@@ -18768,7 +18634,6 @@ void WaterConcept::World::_ySwitchStateChangeCallback(void *p0)
   float fStack_8c;
   undefined4 uStack_84;
   float fStack_80;
-  float fStack_7c;
   
   if (*(int *)((long)p0 + 0x700) < 1) {
     iVar2 = *(int *)(in_x1 + 8);
@@ -18789,7 +18654,6 @@ void WaterConcept::World::_ySwitchStateChangeCallback(void *p0)
       iVar3 = rand();
       iVar4 = rand();
       fStack_80 = (float)(iVar4 % 0x2711) * 5e-05 + 0.75;
-      fStack_7c = fStack_80;
       iVar4 = rand();
       iVar5 = rand();
       uVar6 = rand();
@@ -19485,7 +19349,6 @@ void WaterConcept::World::_crankyChompAnimationCallback(void *p0)
   float fStack_c4;
   undefined4 uStack_bc;
   float fStack_b8;
-  float fStack_b4;
   float fStack_b0;
   float fStack_ac;
   
@@ -19505,7 +19368,6 @@ void WaterConcept::World::_crankyChompAnimationCallback(void *p0)
         iVar3 = rand();
         iVar4 = rand();
         fStack_b8 = (float)(iVar4 % 0x2711) * 5e-05 + 0.5;
-        fStack_b4 = fStack_b8;
         iVar4 = rand();
         lVar6 = *(long *)((long)p0 + 0x5a8);
         if (lVar6 != 0) {
@@ -19781,9 +19643,7 @@ void WaterConcept::World::_clearMaterialInCapsule
   float fVar3;
   float fVar4;
   void *pvStack_c0;
-  void *pvStack_b8;
   void *pvStack_a8;
-  void *pvStack_a0;
   undefined1 auStack_90 [8];
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -19795,7 +19655,6 @@ void WaterConcept::World::_clearMaterialInCapsule
                     /* try { // try from 00462c5c to 00462c83 has its CatchHandler @ 00462cc8 */
     WaterConcept::World::_clearMaterialInCapsule(param_1,param_2,param_3,param_4,param_5,&pvStack_c0,0,param_8 & 1,param_9 & 1);
     if (pvStack_c0 == (void *)0x0) goto LAB_00462c94;
-    pvStack_b8 = pvStack_c0;
     pvStack_a8 = pvStack_c0;
   }
   else {
@@ -19815,7 +19674,6 @@ void WaterConcept::World::_clearMaterialInCapsule
     WaterConcept::World::_clearMaterialInCapsule(param_1,param_2,param_3,&uStack_80,&uStack_88,&pvStack_a8,0,param_8 & 1,
                     param_9 & 1);
     if (pvStack_a8 == (void *)0x0) goto LAB_00462c94;
-    pvStack_a0 = pvStack_a8;
   }
   operator delete(pvStack_a8);
 LAB_00462c94:
@@ -19839,7 +19697,6 @@ void WaterConcept::World::_clearMaterialInCapsule
 {
   bool bVar1;
   uint uVar2;
-  uint uVar3;
   int iVar4;
   uint *puVar5;
   char cVar6;
@@ -19880,14 +19737,11 @@ void WaterConcept::World::_clearMaterialInCapsule
   uint uStack_108;
   uint uStack_104;
   ulong uStack_100;
-  ulong uStack_f8;
   undefined4 uStack_f0;
   int iStack_e0;
-  int iStack_dc;
   uint uStack_d8;
   uint uStack_d4;
   void *pvStack_d0;
-  void *pvStack_c8;
   undefined8 uStack_b8;
   
   uStack_100 = uStack_100 & 0xffffffffffffff00;
@@ -19930,17 +19784,14 @@ void WaterConcept::World::_clearMaterialInCapsule
   if (iVar11 + iVar22 <= iVar14) {
     iVar14 = iVar11 + iVar22;
   }
-  uVar3 = iVar12 - iVar22 & (iVar12 - iVar22 >> 0x1f ^ 0xffffffffU);
+  uStack_d4 = iVar12 - iVar22 & (iVar12 - iVar22 >> 0x1f ^ 0xffffffffU);
   if (iVar13 + iVar22 <= iVar4) {
     iVar4 = iVar13 + iVar22;
   }
   uStack_f0 = 0;
                     /* try { // try from 00462e30 to 00462e47 has its CatchHandler @ 004637ac */
-  uStack_f8 = uStack_100;
   iStack_e0 = iVar14;
-  iStack_dc = iVar4;
   uStack_d8 = uVar2;
-  uStack_d4 = uVar3;
   WaterConcept::Grid::getCellPos(&uStack_b8,*param_3,&uStack_d8);
   Walaber::AABB::expandToInclude(&uStack_100,&uStack_b8);
                     /* try { // try from 00462e4c to 00462e63 has its CatchHandler @ 004637a8 */
@@ -19964,8 +19815,8 @@ void WaterConcept::World::_clearMaterialInCapsule
     bVar9 = false;
     uStack_134 = 0;
     do {
-      uStack_104 = uVar3;
-      if ((int)uVar3 <= iVar4) {
+      uStack_104 = uStack_d4;
+      if ((int)uStack_d4 <= iVar4) {
         do {
                     /* try { // try from 00462f7c to 00462f87 has its CatchHandler @ 004637ec */
           WaterConcept::Grid::getCellPos(&fStack_110,*param_3,&uStack_108);
@@ -20191,7 +20042,6 @@ LAB_004635bc:
     plVar20 = (long *)param_3[0x98];
   }
   if (pvStack_d0 != (void *)0x0) {
-    pvStack_c8 = pvStack_d0;
     operator delete(pvStack_d0);
   }
   return;
@@ -20513,7 +20363,6 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
   undefined8 uStack_c8;
   undefined4 uStack_bc;
   float fStack_b8;
-  float fStack_b4;
   
   lVar9 = *in_x1;
   uVar7 = in_x1[1] - lVar9;
@@ -20527,7 +20376,6 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
         rand();
         iVar3 = rand();
         fStack_b8 = (float)(iVar3 % 0x2711) * 0.0002 + 1.0;
-        fStack_b4 = fStack_b8;
         iVar3 = rand();
         lVar9 = *(long *)((long)p0 + 0x5a8);
         if (lVar9 != 0) {
@@ -20545,7 +20393,6 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
           iVar4 = rand();
           iVar5 = rand();
           fStack_b8 = (float)(iVar5 % 0x2711) * 0.0001 + 1.0;
-          fStack_b4 = fStack_b8;
           iVar5 = rand();
           pfVar11 = (float *)(*in_x1 + lVar12 + 0x18);
           uStack_c8 = CONCAT44((float)(iVar4 % 0x2711) * 1.25e-05 + -0.25 +
@@ -20559,7 +20406,6 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
           iVar3 = rand();
           iVar4 = rand();
           fStack_b8 = (float)(iVar4 % 0x2711) * 0.0002 + 2.0;
-          fStack_b4 = fStack_b8;
           iVar4 = rand();
           iVar5 = rand();
           fVar14 = (float)(iVar5 % 0x5a + 0x5a);
@@ -20629,11 +20475,8 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
   undefined4 uStack_114;
   float fStack_110;
   float fStack_10c;
-  uint uStack_108;
   void *pvStack_100;
-  void *pvStack_f8;
   void *pvStack_e8;
-  void *pvStack_e0;
   undefined1 uStack_d0;
   undefined7 uStack_cf;
   undefined4 *puStack_c8;
@@ -20684,11 +20527,9 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
                     /* try { // try from 004645b8 to 004645df has its CatchHandler @ 00464e40 */
       WaterConcept::World::_clearMaterialInCapsule(&pvStack_e8,0x40c00000,p0,auStack_b8,auStack_b8,&pvStack_100,0,1,1);
       if (pvStack_e8 != (void *)0x0) {
-        pvStack_e0 = pvStack_e8;
         operator delete(pvStack_e8);
       }
       if (pvStack_100 != (void *)0x0) {
-        pvStack_f8 = pvStack_100;
         operator delete(pvStack_100);
       }
       fVar17 = 0.0;
@@ -20707,7 +20548,6 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
             fStack_10c = (float)((int)uVar13 + 1);
                     /* try { // try from 00464658 to 0046465f has its CatchHandler @ 00464ea4 */
             fStack_110 = fVar17;
-            uStack_108 = uVar10;
             WaterConcept::Fluids::removeParticle(*(undefined8 *)((long)p0 + 0x440),&fStack_110);
           }
           uVar13 = uVar13 + 1;
@@ -20730,7 +20570,6 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
                     /* try { // try from 004646d0 to 004646d3 has its CatchHandler @ 00464e80 */
           iVar6 = rand();
           fStack_110 = (float)(iVar6 % 0x2711) * 0.0001 + 2.0;
-          fStack_10c = fStack_110;
                     /* try { // try from 00464700 to 00464703 has its CatchHandler @ 00464e78 */
           iVar6 = rand();
                     /* try { // try from 00464708 to 0046470b has its CatchHandler @ 00464e7c */
@@ -20756,7 +20595,6 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
                     /* try { // try from 004647f4 to 004647f7 has its CatchHandler @ 00464e34 */
         iVar6 = rand();
         fStack_110 = (float)(iVar6 % 0x2711) * 0.0001 + 1.0;
-        fStack_10c = fStack_110;
                     /* try { // try from 00464824 to 00464827 has its CatchHandler @ 00464e5c */
         iVar6 = rand();
         puVar9 = (undefined8 *)(*in_x1 + uVar15 * 0x20 + 0x18);
@@ -20776,7 +20614,6 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
                     /* try { // try from 004648fc to 0046492f has its CatchHandler @ 00464e90 */
           iVar6 = rand();
           fStack_110 = (float)(iVar6 % 0x2711) * 0.0001 + 3.0;
-          fStack_10c = fStack_110;
           iVar6 = rand();
                     /* try { // try from 00464934 to 0046493f has its CatchHandler @ 00464e98 */
           iVar7 = rand();
@@ -21096,19 +20933,17 @@ void WaterConcept::World::handleTouchDown(int p0,Walaber__Vector2 *p1)
   long *plVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  long lStack_38;
   long lStack_30;
   
   uVar2 = (ulong)(uint)p0;
   uStack_3c = SUB84(p1,0);
   uStack_40 = 0;
-  lStack_38 = *in_x2;
+  lStack_30 = *in_x2;
   plVar3 = *(long **)(uVar2 + 0x4f0);
-  lStack_30 = lStack_38;
   if (plVar3 < *(long **)(uVar2 + 0x4f8)) {
     *plVar3 = (long)p1 << 0x20;
-    plVar3[1] = lStack_38;
-    plVar3[2] = lStack_38;
+    plVar3[1] = lStack_30;
+    plVar3[2] = lStack_30;
     *(long *)(uVar2 + 0x4f0) = *(long *)(uVar2 + 0x4f0) + 0x18;
   }
   else {
@@ -21170,19 +21005,17 @@ void WaterConcept::World::handleTouchUp(int p0,Walaber__Vector2 *p1)
   undefined8 *puVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
-  undefined8 uStack_38;
   undefined8 uStack_30;
   
   uVar2 = (ulong)(uint)p0;
   uStack_3c = SUB84(p1,0);
   uStack_40 = 2;
-  uStack_38 = *in_x2;
+  uStack_30 = *in_x2;
   puVar3 = *(undefined8 **)(uVar2 + 0x4f0);
-  uStack_30 = uStack_38;
   if (puVar3 < *(undefined8 **)(uVar2 + 0x4f8)) {
     *puVar3 = CONCAT44(uStack_3c,2);
-    puVar3[1] = uStack_38;
-    puVar3[2] = uStack_38;
+    puVar3[1] = uStack_30;
+    puVar3[2] = uStack_30;
     *(long *)(uVar2 + 0x4f0) = *(long *)(uVar2 + 0x4f0) + 0x18;
   }
   else {
@@ -21354,7 +21187,6 @@ ulong WaterConcept::World::_isMaterialInCircle(Walaber__Vector2 *p0,float p1,int
   void *pvStack_80;
   undefined8 uStack_78;
   void *pvStack_70;
-  void *pvStack_68;
   
   pvStack_88 = (void *)((ulong)pvStack_88 & 0xffffffffffffff00);
   std::__ndk1::vector<char, std::__ndk1::allocator<char>>::vector(&pvStack_70,4,&pvStack_88);
@@ -21411,11 +21243,9 @@ ulong WaterConcept::World::_isMaterialInCircle(Walaber__Vector2 *p0,float p1,int
   uVar10 = 0;
 LAB_00465994:
   if (pvStack_88 != (void *)0x0) {
-    pvStack_80 = pvStack_88;
     operator delete(pvStack_88);
   }
   if (pvStack_70 != (void *)0x0) {
-    pvStack_68 = pvStack_70;
     operator delete(pvStack_70);
   }
   return uVar9;
@@ -22954,7 +22784,7 @@ void WaterConcept::World::_convertPoolToFluidType
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -23013,7 +22843,7 @@ void WaterConcept::World::_killFluidPool(WaterConcept__ParticleDescription *p0,f
     else {
       do {
         plVar5 = plVar3;
-        plVar3 = (long *)*plVar5;
+        plVar3 = (long *)*plVar3;
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
@@ -23187,7 +23017,6 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
   int *piVar10;
   int iVar11;
   int iStack_70;
-  int iStack_6c;
   
   iVar9 = (int)((ulong)in_x1 >> 0x20);
   iVar11 = iVar9 << 5;
@@ -23202,7 +23031,6 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
   if (iVar9 <= iVar2) {
     iVar2 = iVar9;
   }
-  iStack_6c = iVar11;
   if (iVar11 < iVar2) {
     iVar4 = (int)in_x1 << 5;
     do {
@@ -23212,7 +23040,6 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
         piVar10 = (int *)(*(long *)(*(int **)((long)p0 + 0x10) + 2) +
                           ((long)iVar4 + (long)(iVar3 * iVar11)) * 0x1c + 0x10);
         iVar9 = iVar4;
-        iStack_6c = iVar11;
         do {
           if (*(char *)((long)piVar10 + 6) == '\x02') {
             iStack_70 = iVar9;
@@ -23230,7 +23057,6 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
         } while (iVar9 < iVar1);
       }
       iVar11 = iVar11 + 1;
-      iStack_6c = iVar11;
     } while (iVar11 < iVar2);
   }
   return;
@@ -23345,7 +23171,6 @@ void WaterConcept::World::createPolygonsForGrid
   long *plVar16;
   int iVar17;
   long lStack_b0;
-  int *piStack_a8;
   int iStack_a0;
   int iStack_9c;
   ulong uStack_98;
@@ -23395,7 +23220,6 @@ void WaterConcept::World::createPolygonsForGrid
           iStack_9c = iVar8 + -1 + iStack_90;
           iVar15 = iVar15 + iStack_8c + -1;
           lStack_b0 = lStack_88;
-          piStack_a8 = piStack_80;
           if (lStack_88 != 0) {
             *piStack_80 = *piStack_80 + 1;
           }
@@ -23758,7 +23582,6 @@ void WaterConcept::World::raycast
   undefined8 uStack_c0;
   char cStack_b8;
   undefined8 uStack_b0;
-  undefined8 uStack_a8;
   undefined4 uStack_a0;
   
   *param_7 = 0;
@@ -23774,7 +23597,6 @@ void WaterConcept::World::raycast
   *(float *)((long)param_7 + 0x14) = fVar15;
   uStack_b0 = 0;
   uStack_a0 = 0;
-  uStack_a8 = uStack_b0;
   Walaber::AABB::expandToInclude(&uStack_b0,param_3);
   Walaber::AABB::expandToInclude(&uStack_b0,param_4);
   plVar13 = (long *)param_2[0x97];
@@ -24449,7 +24271,6 @@ void WaterConcept::World::scaleDucks(undefined4 param_1,long param_2,int param_3
   long *plVar3;
   long *plVar4;
   undefined4 uStack_50;
-  undefined4 uStack_4c;
   
   plVar4 = *(long **)(param_2 + 0x4b8);
   plVar3 = *(long **)(param_2 + 0x4c0);
@@ -24458,7 +24279,6 @@ void WaterConcept::World::scaleDucks(undefined4 param_1,long param_2,int param_3
       plVar2 = (long *)*plVar4;
       if (((int)plVar2[0x1b] == 2) && (*(int *)((long)plVar2 + 0x3ac) == param_3)) {
         uStack_50 = param_1;
-        uStack_4c = param_1;
         (**(code **)(*plVar2 + 0x18))(plVar2,&uStack_50);
         plVar3 = *(long **)(param_2 + 0x4c0);
       }

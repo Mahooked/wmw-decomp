@@ -65,7 +65,7 @@ LAB_0033e1e0:
       else {
         do {
           plVar9 = plVar6;
-          plVar6 = (long *)plVar9[1];
+          plVar6 = (long *)plVar6[1];
         } while ((long *)plVar9[1] != (long *)0x0);
       }
       bVar4 = *(byte *)(plVar9 + 4);
@@ -156,7 +156,7 @@ LAB_0033e32c:
         else {
           do {
             plVar13 = plVar9;
-            plVar9 = (long *)*plVar13;
+            plVar9 = (long *)*plVar9;
           } while ((long *)*plVar13 != (long *)0x0);
         }
         if (plVar13 != param_1 + 1) {
@@ -277,7 +277,7 @@ long * std::__ndk1::
     do {
       while( true ) {
         plVar10 = plVar9;
-        bVar5 = *(byte *)(plVar10 + 4);
+        bVar5 = *(byte *)(plVar9 + 4);
         uVar1 = (ulong)(bVar5 >> 1);
         if ((bVar5 & 1) != 0) {
           uVar1 = plVar10[5];

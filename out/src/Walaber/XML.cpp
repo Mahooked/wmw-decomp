@@ -230,7 +230,6 @@ void Walaber::XML::parseColor8bit(_xmlNode *p0,char *p1)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0_00);
     uStack_68 = p0_00 | 1;
-    uStack_60 = uVar3;
     pvStack_58 = pvVar4;
   }
   memcpy(pvVar4,uVar2,uVar3);
@@ -379,7 +378,6 @@ void Walaber::XML::parseColor8bitRGBA(_xmlNode *p0,char *p1)
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0_00);
     uStack_68 = p0_00 | 1;
-    uStack_60 = uVar3;
     pvStack_58 = pvVar4;
   }
   memcpy(pvVar4,uVar2,uVar3);
@@ -476,7 +474,6 @@ LAB_00433898:
           uVar8 = uVar5 + 0x10 & 0xfffffffffffffff0;
           pvVar6 = (void *)operator new(uVar8);
           uStack_b8 = uVar8 | 1;
-          uStack_b0 = uVar5;
           pvStack_a8 = pvVar6;
 LAB_00433920:
           memcpy(pvVar6,uVar4,uVar5);
@@ -569,7 +566,7 @@ void Walaber::XML::newPropertyList(_xmlNode *param_1,Walaber::PropertyList const
       else {
         do {
           plVar6 = plVar5;
-          plVar5 = (long *)*plVar6;
+          plVar5 = (long *)*plVar5;
         } while ((long *)*plVar6 != (long *)0x0);
       }
       plVar8 = plVar6;

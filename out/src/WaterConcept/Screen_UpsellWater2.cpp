@@ -302,13 +302,9 @@ void WaterConcept::Screen_UpsellWater2::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -329,20 +325,16 @@ void WaterConcept::Screen_UpsellWater2::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 00568aa4 to 00568aaf has its CatchHandler @ 00568b00 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -580,7 +572,7 @@ LAB_00568e58:
         else {
           do {
             plVar21 = plVar19;
-            plVar19 = (long *)*plVar21;
+            plVar19 = (long *)*plVar19;
           } while ((long *)*plVar21 != (long *)0x0);
         }
         plVar23 = plVar21;
@@ -890,7 +882,7 @@ void WaterConcept::Screen_UpsellWater2::_closeButtonPressed(long param_1)
       else {
         do {
           plVar3 = plVar4;
-          plVar4 = (long *)*plVar3;
+          plVar4 = (long *)*plVar4;
         } while ((long *)*plVar3 != (long *)0x0);
       }
     }
@@ -971,7 +963,6 @@ void WaterConcept::Screen_UpsellWater2::_finishedLoadingWidgets(void *p0)
   void *pvStack_1c0;
   undefined8 uStack_1b8;
   undefined8 *puStack_1b0;
-  int *piStack_1a8;
   undefined8 *puStack_1a0;
   int *piStack_198;
   undefined8 *puStack_190;
@@ -1198,7 +1189,6 @@ joined_r0x00569694:
                     /* try { // try from 00569920 to 00569923 has its CatchHandler @ 00569d8c */
     uVar19 = Walaber::FileManager::getInstancePtr();
     puStack_1b0 = puStack_190;
-    piStack_1a8 = piStack_188;
     if (puStack_190 != (undefined8 *)0x0) {
       *piStack_188 = *piStack_188 + 1;
     }

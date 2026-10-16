@@ -102,7 +102,6 @@ void WaterConcept::Screen_Settings::enter()
   undefined5 uStack_a5;
   void *pvStack_a0;
   undefined **ppuStack_98;
-  int *piStack_90;
   byte bStack_78;
   undefined4 uStack_77;
   undefined2 uStack_73;
@@ -230,9 +229,7 @@ void WaterConcept::Screen_Settings::enter()
   uStack_a5 = (undefined5)((ulong)piVar8 >> 0x18);
   uVar5 = uStack_a5;
   *piVar8 = 3;
-  piStack_90 = piVar8;
   ppuStack_60 = ppuVar7;
-  piStack_58 = piVar8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_60);
   uStack_73 = (undefined2)((ulong)ppuVar7 >> 0x28);
   uStack_71 = (undefined1)((ulong)ppuVar7 >> 0x38);
@@ -240,9 +237,6 @@ void WaterConcept::Screen_Settings::enter()
   uStack_6e = (undefined1)((ulong)piVar8 >> 0x10);
   *piVar8 = *piVar8 + 1;
   bStack_78 = bVar2;
-  uStack_77 = uVar3;
-  uStack_70 = uVar4;
-  uStack_6d = uVar5;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_b0);
                     /* try { // try from 0055d924 to 0055d927 has its CatchHandler @ 0055da7c */
   uVar6 = Walaber::CurveManager::getManager();
@@ -251,8 +245,8 @@ void WaterConcept::Screen_Settings::enter()
   apcStack_50[0] = (char *)0x0;
                     /* try { // try from 0055d934 to 0055d93b has its CatchHandler @ 0055da30 */
   apcStack_50[0] = (char *)operator new(0x20);
-  lStack_c0 = CONCAT17(uStack_71,CONCAT25(uStack_73,CONCAT41(uStack_77,bStack_78)));
-  piStack_b8 = (int *)CONCAT53(uStack_6d,CONCAT12(uStack_6e,CONCAT11(uStack_6f,uStack_70)));
+  lStack_c0 = CONCAT17(uStack_71,CONCAT25(uStack_73,CONCAT41(uVar3,bStack_78)));
+  piStack_b8 = (int *)CONCAT53(uVar5,CONCAT12(uStack_6e,CONCAT11(uStack_6f,uVar4)));
   builtin_strncpy(apcStack_50[0],"/Curves/ease_in_out.xml",0x18);
   piStack_58 = (int *)0x17;
   ppuStack_60 = (undefined **)0x21;
@@ -321,13 +315,9 @@ void WaterConcept::Screen_Settings::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   byte abStack_60 [17];
   undefined5 uStack_4f;
   undefined1 uStack_4a;
@@ -366,20 +356,16 @@ void WaterConcept::Screen_Settings::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0055dbf4 to 0055dbff has its CatchHandler @ 0055dc50 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(abStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -929,11 +915,9 @@ void WaterConcept::Screen_Settings::handleEvent
   undefined8 uStack_158;
   undefined8 uStack_150;
   ulong uStack_148;
-  int *piStack_140;
   undefined8 uStack_138;
   undefined8 uStack_130;
   ulong uStack_128;
-  int *piStack_120;
   byte bStack_118;
   undefined5 uStack_117;
   undefined2 uStack_112;
@@ -945,11 +929,9 @@ void WaterConcept::Screen_Settings::handleEvent
   undefined8 uStack_100;
   undefined8 uStack_f8;
   ulong uStack_f0;
-  int *piStack_e8;
   undefined8 uStack_e0;
   undefined8 uStack_d8;
   ulong uStack_d0;
-  int *piStack_c8;
   ulong uStack_c0;
   int *piStack_b8;
   void *pvStack_b0;
@@ -1400,7 +1382,6 @@ LAB_0055ed88:
                     /* try { // try from 0055f05c to 0055f077 has its CatchHandler @ 0055f5cc */
       Walaber::TextureManager::getTexture(&uStack_c0,uVar11,&bStack_a0,&uStack_e0,0,0);
       uStack_d0 = uStack_c0;
-      piStack_c8 = piStack_b8;
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
@@ -1442,7 +1423,6 @@ LAB_0055ed88:
                     /* try { // try from 0055f128 to 0055f143 has its CatchHandler @ 0055f5a8 */
       Walaber::TextureManager::getTexture(&uStack_c0,uVar11,&bStack_a0,&uStack_100,0,0);
       uStack_f0 = uStack_c0;
-      piStack_e8 = piStack_b8;
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
@@ -1497,7 +1477,6 @@ LAB_0055ed88:
                     /* try { // try from 0055edf4 to 0055ee0b has its CatchHandler @ 0055f658 */
       Walaber::TextureManager::getTexture(&uStack_c0,uVar11,&bStack_a0,&uStack_138,0,0);
       uStack_128 = uStack_c0;
-      piStack_120 = piStack_b8;
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
@@ -1539,7 +1518,6 @@ LAB_0055ed88:
                     /* try { // try from 0055eebc to 0055eed7 has its CatchHandler @ 0055f634 */
       Walaber::TextureManager::getTexture(&uStack_c0,uVar11,&bStack_a0,&uStack_158,0,0);
       uStack_148 = uStack_c0;
-      piStack_140 = piStack_b8;
       if (uStack_c0 != 0) {
         *piStack_b8 = *piStack_b8 + 1;
       }
@@ -1709,31 +1687,24 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
   undefined8 uStack_180;
   undefined8 uStack_178;
   long lStack_170;
-  int *piStack_168;
   undefined8 uStack_160;
   undefined8 uStack_158;
   long lStack_150;
-  int *piStack_148;
   undefined8 uStack_140;
   undefined8 uStack_138;
   long lStack_130;
-  int *piStack_128;
   undefined8 uStack_120;
   undefined8 uStack_118;
   long lStack_110;
-  int *piStack_108;
   undefined8 uStack_100;
   undefined8 uStack_f8;
   long lStack_f0;
-  int *piStack_e8;
   undefined8 uStack_e0;
   undefined8 uStack_d8;
   long lStack_d0;
-  int *piStack_c8;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   long lStack_b0;
-  int *piStack_a8;
   undefined8 uStack_a0;
   undefined8 uStack_98;
   undefined8 uStack_90;
@@ -1788,7 +1759,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055f92c to 0055f947 has its CatchHandler @ 0055ff40 */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_c0,0,0);
     lStack_b0 = lStack_68;
-    piStack_a8 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1812,7 +1782,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055f9d0 to 0055f9eb has its CatchHandler @ 0055fed4 */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_e0,0,0);
     lStack_d0 = lStack_68;
-    piStack_c8 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1839,7 +1808,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055fa90 to 0055faab has its CatchHandler @ 0055feb0 */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_100,0,0);
     lStack_f0 = lStack_68;
-    piStack_e8 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1871,7 +1839,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055fb78 to 0055fb93 has its CatchHandler @ 0055ff1c */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_120,0,0);
     lStack_110 = lStack_68;
-    piStack_108 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1898,7 +1865,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055fc44 to 0055fc5f has its CatchHandler @ 0055fef8 */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_140,0,0);
     lStack_130 = lStack_68;
-    piStack_128 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1922,7 +1888,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055fce8 to 0055fd03 has its CatchHandler @ 0055fe8c */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_160,0,0);
     lStack_150 = lStack_68;
-    piStack_148 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }
@@ -1949,7 +1914,6 @@ void WaterConcept::Screen_Settings::_updateAudioButtons(long param_1)
                     /* try { // try from 0055fda8 to 0055fdc3 has its CatchHandler @ 0055fe68 */
     Walaber::TextureManager::getTexture(&lStack_68,uVar3,auStack_80,&uStack_180,0,0);
     lStack_170 = lStack_68;
-    piStack_168 = piStack_60;
     if (lStack_68 != 0) {
       *piStack_60 = *piStack_60 + 1;
     }

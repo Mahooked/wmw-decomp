@@ -354,7 +354,7 @@ LAB_005cce08:
           do {
             uVar14 = uVar6;
             puVar9 = puVar9 + -1;
-            uVar6 = uVar14 - 1;
+            uVar6 = uVar6 - 1;
             puVar13 = puVar19 + 1;
             *puVar19 = *puVar9;
             if ((int)uVar14 < 2) break;

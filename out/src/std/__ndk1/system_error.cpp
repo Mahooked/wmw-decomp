@@ -128,7 +128,6 @@ void std::__ndk1::system_error::system_error
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0);
     uStack_90 = p0 | 1;
-    uStack_88 = uVar2;
     pvStack_80 = pvVar4;
 LAB_005ef370:
     memcpy(pvVar4,uVar3,uVar2);
@@ -193,7 +192,6 @@ void std::__ndk1::system_error::system_error
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar3 = (void *)operator new(p0);
     uStack_88 = p0 | 1;
-    uStack_80 = uVar2;
     pvStack_78 = pvVar3;
   }
   memcpy(pvVar3,param_4,uVar2);
@@ -307,7 +305,6 @@ void std::__ndk1::system_error::system_error
     p0 = uVar2 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0);
     uStack_a0 = p0 | 1;
-    uStack_98 = uVar2;
     pvStack_90 = pvVar4;
 LAB_005ef76c:
     memcpy(pvVar4,uVar3,uVar2);
@@ -373,7 +370,6 @@ void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category 
     p0_00 = uVar3 + 0x10 & 0xfffffffffffffff0;
     pvVar4 = (void *)operator new(p0_00);
     uStack_98 = p0_00 | 1;
-    uStack_90 = uVar3;
     pvStack_88 = pvVar4;
   }
   memcpy(pvVar4);

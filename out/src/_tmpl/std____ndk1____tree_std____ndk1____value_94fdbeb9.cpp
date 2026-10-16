@@ -90,7 +90,7 @@ long * std::__ndk1::
     do {
       while( true ) {
         plVar7 = plVar9;
-        bVar5 = *(byte *)(plVar7 + 4);
+        bVar5 = *(byte *)(plVar9 + 4);
         uVar1 = (ulong)(bVar5 >> 1);
         if ((bVar5 & 1) != 0) {
           uVar1 = plVar7[5];

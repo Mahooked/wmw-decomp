@@ -527,7 +527,7 @@ void WaterConcept::Switch::_setState(bool p0)
       else {
         do {
           plVar10 = plVar7;
-          plVar7 = (long *)*plVar10;
+          plVar7 = (long *)*plVar7;
         } while ((long *)*plVar10 != (long *)0x0);
       }
       plVar6 = plVar10;
@@ -851,11 +851,8 @@ void WaterConcept::Switch::_initFinished(long param_1)
   long lVar6;
   undefined8 uVar7;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
   int *piStack_68;
   void *pvStack_60;
@@ -893,19 +890,14 @@ void WaterConcept::Switch::_initFinished(long param_1)
     piVar5 = (int *)operator new(4);
     *piVar5 = 3;
     puStack_90 = puVar4;
-    piStack_88 = piVar5;
-    piStack_78 = piVar5;
     puStack_70 = puVar4;
-    piStack_68 = piVar5;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
     *piVar5 = *piVar5 + 1;
     puStack_70 = puVar4;
-    piStack_68 = piVar5;
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
     lVar6 = **(long **)(param_1 + 400);
     *piVar5 = *piVar5 + 1;
     puStack_a0 = puVar4;
-    piStack_98 = piVar5;
     Walaber::SharedPtr<Walaber::Callback>::operator=(lVar6 + 0xd0,&puStack_a0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
     Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);

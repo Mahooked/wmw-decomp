@@ -243,7 +243,6 @@ void Walaber::XMLDocument::NamedIterator::getAttribute
     p0 = uVar5 + 0x10 & 0xfffffffffffffff0;
     pvVar7 = (void *)operator new(p0);
     uStack_70 = p0 | 1;
-    uStack_68 = uVar5;
     pvStack_60 = pvVar7;
 LAB_003d65c8:
     memcpy(pvVar7,uVar4,uVar5);
@@ -305,7 +304,6 @@ void Walaber::XMLDocument::NamedIterator::getNodeValue(Walaber__Property *p0)
         p0_00 = uVar4 + 0x10 & 0xfffffffffffffff0;
         pvVar6 = (void *)operator new(p0_00);
         uStack_60 = p0_00 | 1;
-        uStack_58 = uVar4;
         pvStack_50 = pvVar6;
 LAB_003d6710:
         memcpy(pvVar6,uVar3,uVar4);

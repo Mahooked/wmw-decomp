@@ -711,14 +711,11 @@ void Walaber::Widget_ColorPicker::draw(Walaber__SpriteBatch *p0)
   long lStack_f8;
   int *piStack_f0;
   ulong uStack_e8;
-  int *piStack_e0;
   long lStack_d8;
-  int *piStack_d0;
   undefined8 uStack_c8;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
   long lStack_b0;
-  int *piStack_a8;
   undefined8 uStack_a0;
   
   uVar11 = Walaber::Widget::_getAngle();
@@ -744,7 +741,6 @@ LAB_0037b98c:
     *piVar3 = *piVar3 + 1;
                     /* try { // try from 0037b904 to 0037b90f has its CatchHandler @ 0037be34 */
     lStack_b0 = lVar2;
-    piStack_a8 = piVar3;
     Walaber::Node::getWorldPosition(&uStack_c0,p0);
     uStack_b8 = CONCAT44((float)(uStack_c0 >> 0x20) +
                          (float)((ulong)*(undefined8 *)&p0[4].field_0x10 >> 0x20),
@@ -802,7 +798,6 @@ LAB_0037bb78:
             *piVar3 = *piVar3 + 1;
             uStack_c0 = p0[5].f_0x0;
             lStack_d8 = lVar2;
-            piStack_d0 = piVar3;
                     /* try { // try from 0037bb48 to 0037bb6b has its CatchHandler @ 0037be44 */
             Walaber::SpriteBatch::drawQuad(uVar11);
             Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
@@ -831,7 +826,6 @@ LAB_0037bb78:
       *piVar3 = *piVar3 + 1;
       uStack_a0 = CONCAT44(fVar13,fVar20);
       uStack_e8 = uVar5;
-      piStack_e0 = piVar3;
                     /* try { // try from 0037bc38 to 0037bc53 has its CatchHandler @ 0037be24 */
       Walaber::SpriteBatch::drawQuad(uVar11);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_e8);

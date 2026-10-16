@@ -486,7 +486,6 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
       uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
       pvVar6 = (void *)operator new(uVar7);
       uStack_138 = uVar7 | 1;
-      uStack_130 = uVar4;
       pvStack_128 = pvVar6;
 LAB_0038c89c:
       memcpy(pvVar6,puVar5,uVar4);
@@ -532,7 +531,6 @@ LAB_0038c89c:
       uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
       pvVar6 = (void *)operator new(uVar7);
       uStack_150 = uVar7 | 1;
-      uStack_148 = uVar4;
       pvStack_140 = pvVar6;
 LAB_0038cad0:
       memcpy(pvVar6,puVar5,uVar4);
@@ -575,7 +573,6 @@ LAB_0038cad0:
       uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
       pvVar6 = (void *)operator new(uVar7);
       uStack_108 = uVar7 | 1;
-      uStack_100 = uVar4;
       pvStack_f8 = pvVar6;
 LAB_0038c7a8:
       memcpy(pvVar6,puVar5,uVar4);
@@ -619,7 +616,6 @@ LAB_0038c7a8:
       uVar7 = uVar4 + 0x10 & 0xfffffffffffffff0;
       pvVar6 = (void *)operator new(uVar7);
       uStack_120 = uVar7 | 1;
-      uStack_118 = uVar4;
       pvStack_110 = pvVar6;
 LAB_0038ca24:
       memcpy(pvVar6,puVar5,uVar4);

@@ -275,13 +275,9 @@ void WaterConcept::Screen_Achievements::_buildUI(long param_1)
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
-  int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   ulong auStack_60 [2];
   char *pcStack_50;
   undefined8 *puStack_48;
@@ -302,20 +298,16 @@ void WaterConcept::Screen_Achievements::_buildUI(long param_1)
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  piStack_78 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a1d14 to 004a1d1f has its CatchHandler @ 004a1d70 */
   puStack_a0 = puVar2;
-  piStack_98 = piVar3;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
@@ -490,7 +482,6 @@ void WaterConcept::Screen_Achievements::handleEvent
                     /* try { // try from 004a2220 to 004a2233 has its CatchHandler @ 004a22f8 */
         WaterConcept::GameSettings::goPlayLevel(abStack_70,0xffffffff,&pvStack_118,0);
         if (pvStack_118 != (void *)0x0) {
-          pvStack_110 = pvStack_118;
           operator delete(pvStack_118);
         }
         if ((abStack_70[0] & 1) == 0) goto LAB_004a2254;

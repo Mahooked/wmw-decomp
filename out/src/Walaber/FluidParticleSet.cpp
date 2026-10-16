@@ -1340,7 +1340,6 @@ uint Walaber::FluidParticleSet::writeIntoBuffer
   Walaber__Color *pWStack_c0;
   Walaber__Color *pWStack_b8;
   uint uStack_ac;
-  float fStack_a8;
   float fStack_a4;
   
   pWStack_c0 = p3;
@@ -1390,11 +1389,10 @@ LAB_0038fb38:
           fVar18 = (float)atan2f(fVar21,fVar18);
           fVar19 = fVar18 + -1.5707964;
         }
-        fStack_a8 = fVar19;
         fVar18 = (float)cosf();
         pfVar14 = (float *)&DAT_0062d144;
         puVar13 = &DAT_0062d184;
-        fVar21 = (float)sinf(fStack_a8);
+        fVar21 = (float)sinf(fVar19);
         uVar12 = 0;
         do {
           fVar19 = fVar22 * (fVar18 * pfVar14[-1] - fVar21 * *pfVar14);

@@ -89,7 +89,6 @@ undefined8 Walaber::Widget_ClassicControls::update(float p0,Walaber__Widget__Wid
 
 {
   uint uVar1;
-  undefined8 uVar3;
   long in_x1;
   long lVar4;
   float fVar5;

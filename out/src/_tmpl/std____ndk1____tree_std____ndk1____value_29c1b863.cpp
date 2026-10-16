@@ -99,7 +99,7 @@ long * std::__ndk1::
   else {
     do {
       plVar3 = plVar1;
-      plVar1 = (long *)*plVar3;
+      plVar1 = (long *)*plVar1;
     } while ((long *)*plVar3 != (long *)0x0);
   }
   if ((void *)*param_1 == param_2) {

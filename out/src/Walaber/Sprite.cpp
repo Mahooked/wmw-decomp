@@ -334,13 +334,10 @@ void Walaber::Sprite::loadAnimationsFromXML(undefined8 param_1,undefined8 param_
   int *piVar3;
   undefined8 uVar4;
   undefined8 *puStack_a0;
-  int *piStack_98;
   undefined8 *puStack_90;
-  int *piStack_88;
   undefined8 *puStack_80;
   int *piStack_78;
   undefined8 *puStack_70;
-  int *piStack_68;
   undefined1 auStack_60 [24];
   undefined8 *puStack_48;
   int *piStack_40;
@@ -357,8 +354,6 @@ void Walaber::Sprite::loadAnimationsFromXML(undefined8 param_1,undefined8 param_
   piVar3 = (int *)operator new(4);
   *piVar3 = 3;
   puStack_90 = puVar2;
-  piStack_88 = piVar3;
-  piStack_68 = piVar3;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
@@ -369,7 +364,6 @@ void Walaber::Sprite::loadAnimationsFromXML(undefined8 param_1,undefined8 param_
                     /* try { // try from 0035c048 to 0035c04b has its CatchHandler @ 0035c0d0 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
-  piStack_98 = piStack_78;
   if (puStack_80 != (undefined8 *)0x0) {
     *piStack_78 = *piStack_78 + 1;
   }
@@ -471,7 +465,6 @@ void Walaber::Sprite::playAnimation(long *param_1,undefined8 param_2,long param_
   int *piStack_70;
   long lStack_68;
   int *piStack_60;
-  int *piStack_58;
   undefined8 uStack_50;
   
   Walaber::Sprite::setAnimation(&lStack_68);
@@ -496,7 +489,6 @@ void Walaber::Sprite::playAnimation(long *param_1,undefined8 param_2,long param_
     }
     uStack_50 = 0xffffffff00000001;
     lStack_68 = param_3;
-    piStack_58 = piStack_70;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&piStack_78);
     plVar3 = *(long **)(param_3 + 0xd0);
     if (plVar3 != (long *)0x0) {
@@ -528,7 +520,6 @@ void Walaber::Sprite::playAnimation
   int *piStack_80;
   long lStack_78;
   int *piStack_70;
-  int *piStack_68;
   undefined8 uStack_60;
   
   Walaber::Sprite::setAnimation(&lStack_78);
@@ -553,7 +544,6 @@ void Walaber::Sprite::playAnimation
     }
     uStack_60 = 0xffffffff00000001;
     lStack_78 = param_3;
-    piStack_68 = piStack_80;
     Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&piStack_88);
     plVar3 = *(long **)(param_3 + 0xd0);
     if (plVar3 != (long *)0x0) {
@@ -747,13 +737,11 @@ void Walaber::Sprite::draw(Walaber__SpriteBatch *p0)
   long lStack_98;
   int *piStack_90;
   long lStack_88;
-  int *piStack_80;
   byte bStack_78;
   byte bStack_77;
   byte bStack_76;
   byte bStack_75;
   undefined8 uStack_70;
-  undefined8 uStack_68;
   undefined8 uStack_60;
   undefined4 uStack_54;
   undefined8 uStack_50;
@@ -763,7 +751,6 @@ void Walaber::Sprite::draw(Walaber__SpriteBatch *p0)
     uStack_60 = 0;
     uStack_70 = 0;
     uVar11 = p0[2].f_0x30;
-    uStack_68 = uStack_70;
     if (uVar11 != 0) {
       Walaber::Node::getWorldPosition(&lStack_98,p0);
       uVar13 = Walaber::Node::getWorldAngle(p0);
@@ -821,7 +808,6 @@ void Walaber::Sprite::draw(Walaber__SpriteBatch *p0)
         *piStack_90 = *piStack_90 + 2;
         lStack_88 = lStack_98;
       }
-      piStack_80 = piStack_90;
                     /* try { // try from 0035c9c0 to 0035c9df has its CatchHandler @ 0035ca1c */
       Walaber::SpriteBatch::drawQuad(uStack_54);
       Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_88);
@@ -846,15 +832,10 @@ void Walaber::Sprite::_loadAnimation(_xmlNode *p0)
   undefined8 *puVar3;
   int *piVar4;
   undefined8 *puStack_98;
-  int *piStack_90;
   undefined8 *puStack_88;
-  int *piStack_80;
   undefined8 *puStack_78;
-  int *piStack_70;
   undefined8 *puStack_68;
-  int *piStack_60;
   undefined8 *puStack_58;
-  int *piStack_50;
   
   uVar2 = operator new(200);
                     /* try { // try from 0035ca70 to 0035ca73 has its CatchHandler @ 0035cb70 */
@@ -869,18 +850,13 @@ void Walaber::Sprite::_loadAnimation(_xmlNode *p0)
   piVar4 = (int *)operator new(4);
   *piVar4 = 3;
   puStack_88 = puVar3;
-  piStack_80 = piVar4;
-  piStack_60 = piVar4;
   puStack_58 = puVar3;
-  piStack_50 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
   *piVar4 = *piVar4 + 1;
   puStack_78 = puVar3;
-  piStack_70 = piVar4;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
   *piVar4 = *piVar4 + 1;
   puStack_98 = puVar3;
-  piStack_90 = piVar4;
                     /* try { // try from 0035cafc to 0035cb0b has its CatchHandler @ 0035cb50 */
   Walaber::SpriteAnimation::loadFromXML(uVar2);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
@@ -905,7 +881,6 @@ void Walaber::Sprite::_animationLoaded(void *p0)
   long in_x1;
   long lVar4;
   long lStack_68;
-  undefined4 *puStack_60;
   long lStack_58;
   undefined4 *puStack_50;
   undefined1 auStack_48 [16];
@@ -921,7 +896,6 @@ void Walaber::Sprite::_animationLoaded(void *p0)
     *puStack_50 = 2;
   }
                     /* try { // try from 0035cbe4 to 0035cbf3 has its CatchHandler @ 0035cc68 */
-  puStack_60 = puStack_50;
   lStack_58 = lVar4;
   Walaber::Sprite::addAnimation(auStack_48,p0,&lStack_58);
   Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_48);
@@ -931,7 +905,6 @@ void Walaber::Sprite::_animationLoaded(void *p0)
   *(int *)((long)p0 + 0xb0) = iVar1;
   if ((iVar1 == 0) && (plVar3 = *(long **)((long)p0 + 0xb8), plVar3 != (long *)0x0)) {
     lStack_68 = CONCAT44(lStack_68._4_4_,1);
-    puStack_60 = p0;
     (**(code **)(*plVar3 + 0x10))(plVar3,&lStack_68);
   }
   return;
