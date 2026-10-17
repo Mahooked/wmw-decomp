@@ -58,8 +58,9 @@ _OPERATOR = re.compile(
     r"\+\+|--|\+=|-=|\*=|/=|%=|&=|\|=|\^=|,|\+|-|\*|/|%|\^|&|\||~|!|=|<|>|"
     r"new\[\]|new|delete\[\]|delete|\s+\w+)")
 
-#: Ghidra's placeholder globals (``DAT_00634ed4``) and gap functions.
-_SYMBOL = re.compile(r"\b([A-Za-z][A-Za-z0-9]*_[0-9a-fA-F]{6,})\b")
+#: Ghidra's placeholder globals (``DAT_00634ed4``, ``PTR__Message_0070cdc8``)
+# and other hex-suffixed symbols.
+_SYMBOL = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*_[0-9a-fA-F]{6,})\b")
 _ARRAY = re.compile(r"\[[^\]]*\]")
 #: Ghidra's sub-register fold helpers, e.g. ``CONCAT21``/``SUB81``/``ZEXT416``.
 _FOLD = re.compile(r"\b(?:CONCAT|SUB|ZEXT|SEXT)\d+\b")
