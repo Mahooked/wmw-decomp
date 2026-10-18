@@ -359,10 +359,17 @@ def scan(model, src):
                 a, b = _type_names(params)
                 model.types |= a
                 model.templates |= b
-                add_definition(model, ret, qname, params, post)
+                # A body that names ``this`` was shifted by apply_signatures:
+                # its object is the implicit C++ this, so its declaration must
+                # stay non-static.  Every other member body takes the object as
+                # an explicit first parameter (Ghidra's static form), which is
+                # also how the call sites spell it -- ``A::f(obj, args)``.
+                uses_this = re.search(r"\bthis\b",
+                                      strip_comments(block[brace:])) is not None
+                add_definition(model, ret, qname, params, post, uses_this)
 
 
-def add_definition(model, ret, qname, params, post):
+def add_definition(model, ret, qname, params, post, uses_this=False):
     if "<" in qname or "<" in ret or "[" in ret:
         model.stats["skipped-template"] += 1
         return
@@ -377,7 +384,14 @@ def add_definition(model, ret, qname, params, post):
     if short == "operator[]" and params.count(","):
         model.stats["skipped-operator"] += 1
         return
-    is_ctorlike = short.lstrip("~") == qname.split("::")[-2:][0] if "::" in qname else False
+    if short in ("operator++", "operator--") and not re.match(
+            r"^\s*int(\s+\w+)?\s*$", params):
+        # A single-parameter ++/-- parses as the postfix form, whose parameter
+        # must be exactly `int`.  Here the parameter is Ghidra's static-form
+        # object pointer, which C++ gives no spelling for; declaring it would
+        # error in every one of the 1,467 files that include the preamble.
+        model.stats["skipped-operator"] += 1
+        return
     if short.startswith("~") or (short == qname.split("::")[-2]
                                  if "::" in qname else False):
         ret = ""                    # a constructor or destructor has no return type
@@ -391,31 +405,56 @@ def add_definition(model, ret, qname, params, post):
             return
         if "::" in qname:
             ns, name = qname.rsplit("::", 1)
-            model.funcs[ns][name] = _decl(ret, name, params, post)
+            _store(model.funcs[ns], name, _decl(ret, name, params, post))
         else:
-            model.funcs[""][qname] = _decl(ret, qname, params, post)
+            _store(model.funcs[""], qname, _decl(ret, qname, params, post))
         return
     ns, cls = parts
     short = cls[-1]
     owner = "::".join(cls[:-1])
+    # A constructor or destructor cannot be static, and neither can an
+    # operator whose call syntax needs an object (operator=, operator(),
+    # operator[]).  A `this`-using body already has its object implicit.
+    is_dtor = short.startswith("~")
+    is_ctor = (not is_dtor) and len(cls) >= 2 and short == cls[-2]
+    is_op = short.startswith("operator")
+    static = (not (is_ctor or is_dtor or is_op or uses_this)
+              and "const" not in post and "virtual" not in post)
     if owner:
         target = "::".join(ns + cls[:-1])
-        if short.startswith("~"):
+        if is_dtor:
             params, post = "", post
-        elif short == cls[-2]:
+        elif is_ctor:
             ret = ""
-        model.members[target][short] = _decl(ret, short, params, post)
+        _store(model.members[target], short,
+               _decl(ret, short, params, post, static))
     else:
-        if short.startswith("~") or short == cls[-1]:
+        if is_dtor or short == cls[-1]:
             ret = ""
-        model.members["::".join(ns + cls)][short] = _decl(ret, short, params, post)
+        _store(model.members["::".join(ns + cls)], short,
+               _decl(ret, short, params, post))
 
 
-def _decl(ret, name, params, post):
+def _store(bucket, key, decl):
+    """Remember a declaration, keeping every overload of the same name.
+
+    A class often defines the same method at several addresses (D1/D2 dtors,
+    thunks resolved to distinct bodies) and genuinely overloads others
+    (``setPosition(Vector2)`` and ``setPosition(float, float, float)``); a
+    single slot silently dropped all but the last one seen, so call sites to
+    the lost overloads read "no matching function".
+    """
+    seen = bucket.setdefault(key, [])
+    if decl not in seen:
+        seen.append(decl)
+
+
+def _decl(ret, name, params, post, static=False):
     body = "%s(%s)" % (name, params)
     if post:
         body += " " + post
-    return ("%s %s;" % (ret, body)).strip() if ret else body + ";"
+    text = ("%s %s;" % (ret, body)).strip() if ret else body + ";"
+    return ("static " + text) if static else text
 
 
 def emit_class(model, qname, out, depth, emitted, stack):
@@ -434,7 +473,8 @@ def emit_class(model, qname, out, depth, emitted, stack):
     for _off, ty, fname in sorted(model.fields.get(qname, [])):
         out.append("%s  %s %s;" % (indent, ty, fname))
     for short in sorted(model.members.get(qname, {})):
-        out.append("%s  %s" % (indent, model.members[qname][short]))
+        for decl in model.members[qname][short]:
+            out.append("%s  %s" % (indent, decl))
     out.append("%s};" % indent)
     emitted.add(qname)
     stack.discard(qname)
@@ -496,7 +536,8 @@ def generate(model, path):
             emit_class(model, cls, buf, 0, emitted, set())
             out.append(_wrap(comps[:-1], "\n".join(buf)))
     for ns in sorted(model.funcs):
-        decls = "\n".join(model.funcs[ns][n] for n in sorted(model.funcs[ns]))
+        decls = "\n".join(d for n in sorted(model.funcs[ns])
+                          for d in model.funcs[ns][n])
         out.append(_wrap(ns.split("::") if ns else [""], decls))
     with open(path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(out) + "\n")

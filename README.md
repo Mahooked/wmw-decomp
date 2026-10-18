@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; 84,570 diagnostics, 13,741 of them malformed C++ (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **75,922** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,11 +57,12 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 84,570 diagnostics into
+   files against synthesised declarations and sorts the 75,922 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
-   declarations (see "The syntax gate"). The first systematic defect it names —
-   605 constructors and destructors carrying an illegal return type — is the next
-   fix.
+   declarations (see "The syntax gate"). The first two systematic defects it
+   named are fixed — illegal return types and parameters on 695 constructors
+   and destructors, then 17,182 calls spelled in Ghidra's static member form —
+   and the next one it names is call/definition arity divergence.
 3. **Re-infer local identifiers and file organisation.** These were never in the
    binary; they have to be reconstructed from behaviour and class structure.
 4. **Verify by recompilation.** Rebuilding and comparing against the shipped
@@ -104,6 +105,14 @@ re-inferred.
   **1,467** files, sorting **84,570** diagnostics into malformed C++ and mere
   missing declarations. The synthesised declarations themselves compile with
   **0 errors**. See "The syntax gate".
+- The baseline driven **84,570 → 75,922** by the gate's own largest buckets:
+  illegal return types and destructor parameters stripped from **695**
+  constructor/destructor definitions (none such remain); symbol detection
+  extended to the `PTR_`/`UNK_` hex-suffixed forms; and member declarations
+  synthesised in Ghidra's static form — `static` unless the body names
+  `this`, never for constructors, destructors or operators — with every
+  overload kept, moving *call to non-static member function* **17,182 →
+  2,334**. See "The syntax gate".
 
 ## What the game turned out to be
 
@@ -945,7 +954,7 @@ use, stands in for a data global the binary never named (`DAT_00634ed4`).
 Those declarations compile clean: **408 classes, 272 member declarations, 141
 opaque structs, 7,489 definitions parsed** (740 headers unparsed, 1,683
 template-qualified definitions skipped because a template member cannot be
-declared without the template's definition), **6,966 placeholder globals**, and
+declared without the template's definition), **7,365 placeholder globals**, and
 **0 errors** in the generated `decls.h` itself. The bodies are then checked
 freestanding — `-target aarch64-linux-gnu -ffreestanding -nostdinc -nostdinc++`
 — so that nothing depends on the host's headers.
@@ -955,36 +964,47 @@ The baseline over the whole tree:
 | | |
 |---|---|
 | Files checked | 1,467 |
-| Files with at least one error | 1,460 |
-| Diagnostics | 84,570 |
-| Malformed C++ (structural) | 13,741 |
-| Missing declarations / unresolved types | the rest |
+| Files with at least one error | 1,459 |
+| Diagnostics | 75,922 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → **75,922** (static-form members) |
+| Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
 largest buckets are **not** defects in the game:
 
-- **17,254** *call to non-static member function without an object argument*:
-  Ghidra writes a call to a method in static form — `Type::method(obj, a, b)` —
-  with the receiver as the first argument, while the synthesised declaration
-  makes the method a non-static member. One modelling decision moves this whole
-  bucket at once.
-- **10,732** *implicit instantiation of undefined template* and **1,715** *too
+- **10,756** *implicit instantiation of undefined template* and **1,715** *too
   many template arguments*: the libc++ primary templates are declared, not
   defined, and their arity is guessed.
-- **8,673** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
-  definition fails to parse — most often because of the illegal return type
-  below — its own parameter names (`p0`, `p1`, `param_1`) are not in scope in the
-  body, and every use of them is reported.
-- **6,560** *incomplete type in a parameter definition*: a flattened type used
-  by value where only a forward declaration exists.
+- **6,971** *no matching function*, **4,817** *too many arguments to function
+  call* and **2,018** *too few*: a call/definition arity divergence. Ghidra
+  binds the callee's `w0` as its object parameter but leaves the argument the
+  binary passes in `w1` as an unbound input register (`in_w1`), so the
+  definition declares one parameter where the call site passes two:
+  `SoundManager::soundCountForGroup(uVar17, 0x79)` against
+  `soundCountForGroup(int p0)`. Re-binding those input registers is the next
+  systematic pass.
+- **3,922** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
+  definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
+  are not in scope in the body, and every use of them is reported.
+- **2,334** *call to non-static member function without an object argument*,
+  down from **17,182**: a decision, not a defect, and now decided. Ghidra
+  writes every method call in static form and the tree contains zero
+  object-style (`->`/`.`) calls, so member declarations are synthesised
+  `static` unless the body names `this` (the ~438 definitions
+  `apply_signatures` shifted onto the implicit receiver) or the member is a
+  constructor, destructor or operator, none of which can be static. The
+  declarations still compile with 0 errors and no *invalid use of `this`*
+  diagnostic appeared — the guard holds.
 
-The buckets that *are* real shape the next pass. The largest single systematic
-defect the gate names is that **605** constructor and destructor definitions
-carry a return type (`void WaterConcept::Bomb::Bomb(...)` — ill-formed C++), and
-**210** destructors carry a parameter (`~EmitterActionData(void *p0)` — a
-destructor takes none), across 249 files. Because a malformed constructor also
-suppresses the parse of its own parameter list, that one defect alone is behind a
-large share of the cascade above.
+The buckets that *are* real shape the next pass. The first defect the gate
+named is fully fixed: **0** constructor or destructor definitions now carry a
+return type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`). What
+remains real: the arity divergence above (re-binding Ghidra's unbound
+`in_wN` input registers), definitions of two distinct overloads that flatten
+to a single signature (`stold` of a `char` string and of a `wchar_t` string
+both become `stold(byte *, long *)`, so the second definition collides; **7**
+of them newly visible now that both overloads are declared), and the
+libc++ template work.
 
 Run it with:
 
