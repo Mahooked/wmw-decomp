@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a6be4  size 224 */
-/* mangled: _ZN12WaterConcept20Screen_AnimationTestC1Ev */
-/* WaterConcept::Screen_AnimationTest::Screen_AnimationTest() */
-
-/* WaterConcept::Screen_AnimationTest::Screen_AnimationTest() */
-
-void WaterConcept::Screen_AnimationTest::Screen_AnimationTest()
-
-{
+/* ok  address 0x4a6be4  size 224 */WaterConcept::Screen_AnimationTest::Screen_AnimationTest(){
   undefined8 uVar2;
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -38,15 +30,7 @@ void WaterConcept::Screen_AnimationTest::Screen_AnimationTest()
 
 
 
-/* ok  address 0x4a6cc4  size 104 */
-/* mangled: _ZN12WaterConcept20Screen_AnimationTestD1Ev */
-/* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
-
-/* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
-
-void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest()
-
-{
+/* ok  address 0x4a6cc4  size 104 */WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(){
   void *pvVar1;
   
   pvVar1 = (void *)this[0x12];
@@ -67,15 +51,7 @@ void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest()
 
 
 
-/* ok  address 0x4a6d2c  size 36 */
-/* mangled: _ZN12WaterConcept20Screen_AnimationTestD0Ev */
-/* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
-
-/* WaterConcept::Screen_AnimationTest::~Screen_AnimationTest() */
-
-void WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(void *param_1)
-
-{
+/* ok  address 0x4a6d2c  size 36 */WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(){
   WaterConcept::Screen_AnimationTest::~Screen_AnimationTest();
   operator delete(param_1);
   return;

@@ -3,32 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4cdbb0  size 8 */
-/* mangled: _ZThn144_N12WaterConcept25Screen_EditorObjectEditorD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-/* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor
-               (long param_1)
-
-{
+/* ok  address 0x4cdbb0  size 8 */non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
   WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4cdbdc  size 40 */
-/* mangled: _ZThn144_N12WaterConcept25Screen_EditorObjectEditorD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-/* non-virtual thunk to WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor
-               (long param_1)
-
-{
+/* ok  address 0x4cdbdc  size 40 */non_virtual_thunk_to_WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
   WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

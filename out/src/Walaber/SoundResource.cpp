@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x34c7e4  size 88 */
-/* mangled: _ZN7Walaber13SoundResourceC1EPN4FMOD5SoundE */
-/* Walaber::SoundResource::SoundResource(FMOD::Sound*) */
-
-/* Walaber::SoundResource::SoundResource(FMOD::Sound*) */
-
-void Walaber::SoundResource::SoundResource(FMOD__Sound *p0)
-
-{
+/* ok  address 0x34c7e4  size 88 */Walaber::SoundResource::SoundResource(FMOD__Sound *p0){
   undefined8 in_x1;
   
   *(undefined8 *)p0 = in_x1;
@@ -21,15 +13,7 @@ void Walaber::SoundResource::SoundResource(FMOD__Sound *p0)
 
 
 
-/* ok  address 0x34c83c  size 104 */
-/* mangled: _ZN7Walaber13SoundResourceD1Ev */
-/* Walaber::SoundResource::~SoundResource() */
-
-/* Walaber::SoundResource::~SoundResource() */
-
-void Walaber::SoundResource::~SoundResource(long *param_1)
-
-{
+/* ok  address 0x34c83c  size 104 */Walaber::SoundResource::~SoundResource(){
   undefined1 auStack_68 [64];
   
                     /* try { // try from 0034c860 to 0034c877 has its CatchHandler @ 0034c8a0 */

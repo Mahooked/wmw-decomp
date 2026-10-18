@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3f45cc  size 64 */
-/* mangled: _ZN7Walaber16Transition_BlockC1Ev */
-/* Walaber::Transition_Block::Transition_Block() */
-
-/* Walaber::Transition_Block::Transition_Block() */
-
-void Walaber::Transition_Block::Transition_Block()
-
-{
+/* ok  address 0x3f45cc  size 64 */Walaber::Transition_Block::Transition_Block(){
   Walaber::Transition::Transition();
   this[0x1d] = 0;
   this[0x1e] = 0;
@@ -24,15 +16,7 @@ void Walaber::Transition_Block::Transition_Block()
 
 
 
-/* ok  address 0x3f460c  size 60 */
-/* mangled: _ZN7Walaber16Transition_BlockD1Ev */
-/* Walaber::Transition_Block::~Transition_Block() */
-
-/* Walaber::Transition_Block::~Transition_Block() */
-
-void Walaber::Transition_Block::~Transition_Block()
-
-{
+/* ok  address 0x3f460c  size 60 */Walaber::Transition_Block::~Transition_Block(){
   *this = &PTR_setup_00710f08;
   if ((void *)this[0x1c] != (void *)0x0) {
     operator delete((void *)this[0x1c]);

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3f51c4  size 208 */
-/* mangled: _ZN7Walaber15Transition_IrisC1Ev */
-/* Walaber::Transition_Iris::Transition_Iris() */
-
-/* Walaber::Transition_Iris::Transition_Iris() */
-
-void Walaber::Transition_Iris::Transition_Iris()
-
-{
+/* ok  address 0x3f51c4  size 208 */Walaber::Transition_Iris::Transition_Iris(){
   long lVar1;
   undefined8 *puVar2;
   long lVar4;
@@ -52,15 +44,7 @@ void Walaber::Transition_Iris::Transition_Iris()
 
 
 
-/* ok  address 0x3f5294  size 68 */
-/* mangled: _ZN7Walaber15Transition_IrisD1Ev */
-/* Walaber::Transition_Iris::~Transition_Iris() */
-
-/* Walaber::Transition_Iris::~Transition_Iris() */
-
-void Walaber::Transition_Iris::~Transition_Iris()
-
-{
+/* ok  address 0x3f5294  size 68 */Walaber::Transition_Iris::~Transition_Iris(){
   void *p0;
   
   *this = &PTR_setup_00710fa8;

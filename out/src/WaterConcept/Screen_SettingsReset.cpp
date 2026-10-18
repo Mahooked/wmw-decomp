@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x56310c  size 208 */
-/* mangled: _ZN12WaterConcept20Screen_SettingsResetC1Ev */
-/* WaterConcept::Screen_SettingsReset::Screen_SettingsReset() */
-
-/* WaterConcept::Screen_SettingsReset::Screen_SettingsReset() */
-
-void WaterConcept::Screen_SettingsReset::Screen_SettingsReset()
-
-{
+/* ok  address 0x56310c  size 208 */WaterConcept::Screen_SettingsReset::Screen_SettingsReset(){
   undefined8 uVar1;
   
   WaterConcept::WCScreen::WCScreen(this,0x1b);
@@ -44,15 +36,7 @@ void WaterConcept::Screen_SettingsReset::Screen_SettingsReset()
 
 
 
-/* ok  address 0x5631dc  size 116 */
-/* mangled: _ZN12WaterConcept20Screen_SettingsResetD1Ev */
-/* WaterConcept::Screen_SettingsReset::~Screen_SettingsReset() */
-
-/* WaterConcept::Screen_SettingsReset::~Screen_SettingsReset() */
-
-void WaterConcept::Screen_SettingsReset::~Screen_SettingsReset()
-
-{
+/* ok  address 0x5631dc  size 116 */WaterConcept::Screen_SettingsReset::~Screen_SettingsReset(){
   ulong p1;
   
   *this = &PTR__Screen_SettingsReset_00715898;
@@ -71,15 +55,7 @@ void WaterConcept::Screen_SettingsReset::~Screen_SettingsReset()
 
 
 
-/* ok  address 0x563258  size 36 */
-/* mangled: _ZN12WaterConcept20Screen_SettingsResetD0Ev */
-/* WaterConcept::Screen_SettingsReset::~Screen_SettingsReset() */
-
-/* WaterConcept::Screen_SettingsReset::~Screen_SettingsReset() */
-
-void WaterConcept::Screen_SettingsReset::~Screen_SettingsReset(void *param_1)
-
-{
+/* ok  address 0x563258  size 36 */WaterConcept::Screen_SettingsReset::~Screen_SettingsReset(){
   WaterConcept::Screen_SettingsReset::~Screen_SettingsReset();
   operator delete(param_1);
   return;

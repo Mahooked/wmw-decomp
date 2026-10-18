@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4da2c4  size 104 */
-/* mangled: _ZN12WaterConcept21Screen_GameTransitionC1Ev */
-/* WaterConcept::Screen_GameTransition::Screen_GameTransition() */
-
-/* WaterConcept::Screen_GameTransition::Screen_GameTransition() */
-
-void WaterConcept::Screen_GameTransition::Screen_GameTransition()
-
-{
+/* ok  address 0x4da2c4  size 104 */WaterConcept::Screen_GameTransition::Screen_GameTransition(){
   WaterConcept::WCScreen::WCScreen(this,0x14);
                     /* try { // try from 004da2e0 to 004da2e7 has its CatchHandler @ 004da318 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -24,15 +16,7 @@ void WaterConcept::Screen_GameTransition::Screen_GameTransition()
 
 
 
-/* ok  address 0x4da32c  size 40 */
-/* mangled: _ZN12WaterConcept21Screen_GameTransitionD1Ev */
-/* WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-/* WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-void WaterConcept::Screen_GameTransition::~Screen_GameTransition(long param_1)
-
-{
+/* ok  address 0x4da32c  size 40 */WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x90);
   WaterConcept::WCScreen::~WCScreen(param_1);
   return;
@@ -40,15 +24,7 @@ void WaterConcept::Screen_GameTransition::~Screen_GameTransition(long param_1)
 
 
 
-/* ok  address 0x4da378  size 48 */
-/* mangled: _ZN12WaterConcept21Screen_GameTransitionD0Ev */
-/* WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-/* WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-void WaterConcept::Screen_GameTransition::~Screen_GameTransition(void *param_1)
-
-{
+/* ok  address 0x4da378  size 48 */WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver((long)param_1 + 0x90);
   WaterConcept::WCScreen::~WCScreen(param_1);
   operator delete(param_1);

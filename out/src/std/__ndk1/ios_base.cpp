@@ -40,15 +40,7 @@ void std::__ndk1::ios_base::clear(uint p0)
 
 
 
-/* ok  address 0x5a40ac  size 132 */
-/* mangled: _ZNSt6__ndk18ios_baseD1Ev */
-/* std::__ndk1::ios_base::~ios_base() */
-
-/* std::__ndk1::ios_base::~ios_base() */
-
-void std::__ndk1::ios_base::~ios_base()
-
-{
+/* ok  address 0x5a40ac  size 132 */std::__ndk1::ios_base::~ios_base(){
   long lVar1;
   
   *this = &PTR__ios_base_00716560;
@@ -729,15 +721,7 @@ void std::__ndk1::ios_base::register_callback(long param_1,undefined8 param_2,un
 
 
 
-/* ok  address 0x5b08fc  size 36 */
-/* mangled: _ZNSt6__ndk18ios_baseD0Ev */
-/* std::__ndk1::ios_base::~ios_base() */
-
-/* std::__ndk1::ios_base::~ios_base() */
-
-void std::__ndk1::ios_base::~ios_base(void *param_1)
-
-{
+/* ok  address 0x5b08fc  size 36 */std::__ndk1::ios_base::~ios_base(){
   std::__ndk1::ios_base::~ios_base();
   operator delete(param_1);
   return;

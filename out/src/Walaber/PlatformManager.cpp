@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x357f34  size 276 */
-/* mangled: _ZN7Walaber15PlatformManagerC1Ev */
-/* Walaber::PlatformManager::PlatformManager() */
-
-/* Walaber::PlatformManager::PlatformManager() */
-
-void Walaber::PlatformManager::PlatformManager()
-
-{
+/* ok  address 0x357f34  size 276 */Walaber::PlatformManager::PlatformManager(){
   long lVar2;
   uint uVar3;
   uint uVar4;

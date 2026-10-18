@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x42fce8  size 468 */
-/* mangled: _ZN12WaterConcept18ParallaxPuppetShowC1Ev */
-/* WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow() */
-
-void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow()
-
-{
+/* ok  address 0x42fce8  size 468 */WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(){
   undefined2 *puVar1;
   undefined8 uStack_78;
   undefined8 uStack_70;
@@ -59,15 +50,7 @@ void WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow()
 
 
 
-/* ok  address 0x42febc  size 120 */
-/* mangled: _ZN12WaterConcept18ParallaxPuppetShowD1Ev */
-/* WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow() */
-
-/* WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow() */
-
-void WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(long param_1)
-
-{
+/* ok  address 0x42febc  size 120 */WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(){
   WaterConcept::ParallaxPuppetShow::_clearScene();
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x268);
   std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>>>::destroy(param_1 + 0x240,*(undefined8 *)(param_1 + 0x248));

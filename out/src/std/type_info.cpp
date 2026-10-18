@@ -3,29 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f53d8  size 4 */
-/* mangled: _ZNSt9type_infoD1Ev */
-/* std::type_info::~type_info() */
-
-/* std::type_info::~type_info() */
-
-void std::type_info::~type_info(void)
-
-{
+/* ok  address 0x5f53d8  size 4 */std::type_info::~type_info(){
   return;
 }
 
 
 
-/* ok  address 0x5f53dc  size 4 */
-/* mangled: _ZNSt9type_infoD0Ev */
-/* std::type_info::~type_info() */
-
-/* std::type_info::~type_info() */
-
-void std::type_info::~type_info(void *p0)
-
-{
+/* ok  address 0x5f53dc  size 4 */std::type_info::~type_info(){
   operator_delete(p0);
   return;
 }

@@ -80,17 +80,7 @@ Walaber::Widget_MovingTextBox::operator=(Walaber__Widget_MovingTextBox *p0)
 
 
 
-/* ok  address 0x380b6c  size 192 */
-/* mangled: _ZN7Walaber20Widget_MovingTextBoxC1EiRKNS_7Vector2ES3_ */
-/* Walaber::Widget_MovingTextBox::Widget_MovingTextBox(int, Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-/* Walaber::Widget_MovingTextBox::Widget_MovingTextBox(int, Walaber::Vector2 const&,
-   Walaber::Vector2 const&) */
-
-void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
-               (int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
-
-{
+/* ok  address 0x380b6c  size 192 */Walaber::Widget_MovingTextBox::Widget_MovingTextBox(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -134,21 +124,7 @@ void Walaber::Widget_MovingTextBox::init(void)
 
 
 
-/* ok  address 0x380c30  size 392 */
-/* mangled: _ZN7Walaber20Widget_MovingTextBoxC1EiRKNS_7Vector2ES3_NS_9SharedPtrINS_7TextureEEERKNSt6__ndk112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEENS0_17MovementDirectionEfffff */
-/* Walaber::Widget_MovingTextBox::Widget_MovingTextBox(int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::Widget_MovingTextBox::MovementDirection, float, float, float, float, float) */
-
-/* Walaber::Widget_MovingTextBox::Widget_MovingTextBox(int, Walaber::Vector2 const&,
-   Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   Walaber::Widget_MovingTextBox::MovementDirection, float, float, float, float, float) */
-
-void Walaber::Widget_MovingTextBox::Widget_MovingTextBox
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,long *param_6,undefined8 param_7,undefined8 *param_8,
-               undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12)
-
-{
+/* ok  address 0x380c30  size 392 */Walaber::Widget_MovingTextBox::Widget_MovingTextBox(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,long *param_6,undefined8 param_7,undefined8 *param_8, undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12){
   int *piVar2;
   long lVar3;
   undefined8 uStack_88;
@@ -227,15 +203,7 @@ void Walaber::Widget_MovingTextBox::_updateBorders(long param_1)
 
 
 
-/* ok  address 0x380e84  size 216 */
-/* mangled: _ZN7Walaber20Widget_MovingTextBoxD1Ev */
-/* Walaber::Widget_MovingTextBox::~Widget_MovingTextBox() */
-
-/* Walaber::Widget_MovingTextBox::~Widget_MovingTextBox() */
-
-void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox()
-
-{
+/* ok  address 0x380e84  size 216 */Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(){
   *this = &PTR__Widget_MovingTextBox_0070f388;
   *(undefined1 *)(this + 0x22) = 0xff;
   *(undefined1 *)((long)this + 0x111) = 0xff;
@@ -262,15 +230,7 @@ void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox()
 
 
 
-/* ok  address 0x380f5c  size 36 */
-/* mangled: _ZN7Walaber20Widget_MovingTextBoxD0Ev */
-/* Walaber::Widget_MovingTextBox::~Widget_MovingTextBox() */
-
-/* Walaber::Widget_MovingTextBox::~Widget_MovingTextBox() */
-
-void Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(void *param_1)
-
-{
+/* ok  address 0x380f5c  size 36 */Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(){
   Walaber::Widget_MovingTextBox::~Widget_MovingTextBox();
   operator delete(param_1);
   return;

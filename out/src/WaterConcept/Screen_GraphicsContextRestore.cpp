@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4dacdc  size 68 */
-/* mangled: _ZN12WaterConcept29Screen_GraphicsContextRestoreC1Ev */
-/* WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore() */
-
-/* WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore() */
-
-void WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore()
-
-{
+/* ok  address 0x4dacdc  size 68 */WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore(){
   WaterConcept::WCScreen::WCScreen(this,0x15);
   *(undefined2 *)((long)this + 0xd) = 0;
   *(undefined1 *)(this + 0x14) = 0;
@@ -22,30 +14,14 @@ void WaterConcept::Screen_GraphicsContextRestore::Screen_GraphicsContextRestore(
 
 
 
-/* ok  address 0x4dad20  size 4 */
-/* mangled: _ZN12WaterConcept29Screen_GraphicsContextRestoreD1Ev */
-/* WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore() */
-
-/* WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore() */
-
-void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(void)
-
-{
+/* ok  address 0x4dad20  size 4 */WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(){
   WCScreen::~WCScreen();
   return;
 }
 
 
 
-/* ok  address 0x4dad24  size 36 */
-/* mangled: _ZN12WaterConcept29Screen_GraphicsContextRestoreD0Ev */
-/* WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore() */
-
-/* WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore() */
-
-void WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(void *param_1)
-
-{
+/* ok  address 0x4dad24  size 36 */WaterConcept::Screen_GraphicsContextRestore::~Screen_GraphicsContextRestore(){
   WaterConcept::WCScreen::~WCScreen();
   operator delete(param_1);
   return;

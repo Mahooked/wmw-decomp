@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x380720  size 260 */
-/* mangled: _ZN7Walaber18Widget_ManipulatorC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEEb */
-/* Walaber::Widget_Manipulator::Widget_Manipulator(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, bool) */
-
-/* Walaber::Widget_Manipulator::Widget_Manipulator(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, bool) */
-
-void Walaber::Widget_Manipulator::Widget_Manipulator
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6)
-
-{
+/* ok  address 0x380720  size 260 */Walaber::Widget_Manipulator::Widget_Manipulator(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,byte param_6){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -74,15 +63,7 @@ void Walaber::Widget_Manipulator::init(long param_1)
 
 
 
-/* ok  address 0x380850  size 56 */
-/* mangled: _ZN7Walaber18Widget_ManipulatorD1Ev */
-/* Walaber::Widget_Manipulator::~Widget_Manipulator() */
-
-/* Walaber::Widget_Manipulator::~Widget_Manipulator() */
-
-void Walaber::Widget_Manipulator::~Widget_Manipulator()
-
-{
+/* ok  address 0x380850  size 56 */Walaber::Widget_Manipulator::~Widget_Manipulator(){
   *this = &PTR__Widget_Manipulator_0070f298;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
   Walaber::Widget::~Widget(this);
@@ -91,15 +72,7 @@ void Walaber::Widget_Manipulator::~Widget_Manipulator()
 
 
 
-/* ok  address 0x380888  size 64 */
-/* mangled: _ZN7Walaber18Widget_ManipulatorD0Ev */
-/* Walaber::Widget_Manipulator::~Widget_Manipulator() */
-
-/* Walaber::Widget_Manipulator::~Widget_Manipulator() */
-
-void Walaber::Widget_Manipulator::~Widget_Manipulator()
-
-{
+/* ok  address 0x380888  size 64 */Walaber::Widget_Manipulator::~Widget_Manipulator(){
   *this = &PTR__Widget_Manipulator_0070f298;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
   Walaber::Widget::~Widget(this);

@@ -56,15 +56,7 @@ LAB_004617f0:
 
 
 
-/* ok  address 0x498674  size 200 */
-/* mangled: _ZN12WaterConcept7YSwitchC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::YSwitch::YSwitch(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::YSwitch::YSwitch(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::YSwitch::YSwitch(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x498674  size 200 */WaterConcept::YSwitch::YSwitch(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
@@ -93,15 +85,7 @@ void WaterConcept::YSwitch::YSwitch(Walaber__Vector2 p0,float p1,Walaber__Vector
 
 
 
-/* ok  address 0x49873c  size 56 */
-/* mangled: _ZN12WaterConcept7YSwitchD1Ev */
-/* WaterConcept::YSwitch::~YSwitch() */
-
-/* WaterConcept::YSwitch::~YSwitch() */
-
-void WaterConcept::YSwitch::~YSwitch()
-
-{
+/* ok  address 0x49873c  size 56 */WaterConcept::YSwitch::~YSwitch(){
   *this = &PTR__YSwitch_007123a8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0xa9);
   WaterConcept::Spout::~Spout(this);
@@ -110,15 +94,7 @@ void WaterConcept::YSwitch::~YSwitch()
 
 
 
-/* ok  address 0x498774  size 64 */
-/* mangled: _ZN12WaterConcept7YSwitchD0Ev */
-/* WaterConcept::YSwitch::~YSwitch() */
-
-/* WaterConcept::YSwitch::~YSwitch() */
-
-void WaterConcept::YSwitch::~YSwitch()
-
-{
+/* ok  address 0x498774  size 64 */WaterConcept::YSwitch::~YSwitch(){
   *this = &PTR__YSwitch_007123a8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0xa9);
   WaterConcept::Spout::~Spout(this);

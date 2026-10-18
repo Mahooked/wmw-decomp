@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ed2d4  size 92 */
-/* mangled: _ZN7Walaber16CameraControllerC1Ev */
-/* Walaber::CameraController::CameraController() */
-
-/* Walaber::CameraController::CameraController() */
-
-void Walaber::CameraController::CameraController()
-
-{
+/* ok  address 0x3ed2d4  size 92 */Walaber::CameraController::CameraController(){
   *this = 0;
   this[1] = 0;
   this[2] = 0x3f8000003f800000;
@@ -23,15 +15,7 @@ void Walaber::CameraController::CameraController()
 
 
 
-/* ok  address 0x3ed330  size 128 */
-/* mangled: _ZN7Walaber16CameraControllerD1Ev */
-/* Walaber::CameraController::~CameraController() */
-
-/* Walaber::CameraController::~CameraController() */
-
-void Walaber::CameraController::~CameraController(long param_1)
-
-{
+/* ok  address 0x3ed330  size 128 */Walaber::CameraController::~CameraController(){
   void *pvVar1;
   
   if (*(void **)(param_1 + 0x90) != (void *)0x0) {

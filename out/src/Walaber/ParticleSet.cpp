@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x39070c  size 228 */
-/* mangled: _ZN7Walaber11ParticleSetC2Ej */
-/* Walaber::ParticleSet::ParticleSet(unsigned int) */
-
-/* Walaber::ParticleSet::ParticleSet(unsigned int) */
-
-void Walaber::ParticleSet::ParticleSet(uint p0)
-
-{
+/* ok  address 0x39070c  size 228 */Walaber::ParticleSet::ParticleSet(uint p0){
   long lVar1;
   ulong uVar2;
   long *plVar3;
@@ -52,15 +44,7 @@ void Walaber::ParticleSet::ParticleSet(uint p0)
 
 
 
-/* ok  address 0x390898  size 76 */
-/* mangled: _ZN7Walaber11ParticleSetD2Ev */
-/* Walaber::ParticleSet::~ParticleSet() */
-
-/* Walaber::ParticleSet::~ParticleSet() */
-
-void Walaber::ParticleSet::~ParticleSet()
-
-{
+/* ok  address 0x390898  size 76 */Walaber::ParticleSet::~ParticleSet(){
   void *p0;
   
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 9);
@@ -770,15 +754,7 @@ void Walaber::ParticleSet::drawParticles
 
 
 
-/* ok  address 0x4430fc  size 116 */
-/* mangled: _ZN7Walaber11ParticleSetC2Ev */
-/* Walaber::ParticleSet::ParticleSet() */
-
-/* Walaber::ParticleSet::ParticleSet() */
-
-void Walaber::ParticleSet::ParticleSet()
-
-{
+/* ok  address 0x4430fc  size 116 */Walaber::ParticleSet::ParticleSet(){
   *this = 0;
   this[1] = 0;
   this[2] = 0;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x49d8f4  size 560 */
-/* mangled: _ZN12WaterConcept21NotificationSingletonC1Ev */
-/* WaterConcept::NotificationSingleton::NotificationSingleton() */
-
-/* WaterConcept::NotificationSingleton::NotificationSingleton() */
-
-void WaterConcept::NotificationSingleton::NotificationSingleton()
-
-{
+/* ok  address 0x49d8f4  size 560 */WaterConcept::NotificationSingleton::NotificationSingleton(){
   float fVar2;
   float fVar3;
   float fVar4;
@@ -112,15 +104,7 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
 
 
 
-/* ok  address 0x49dbd8  size 276 */
-/* mangled: _ZN12WaterConcept21NotificationSingletonD1Ev */
-/* WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-/* WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-void WaterConcept::NotificationSingleton::~NotificationSingleton()
-
-{
+/* ok  address 0x49dbd8  size 276 */WaterConcept::NotificationSingleton::~NotificationSingleton(){
   bool bVar1;
   long *plVar2;
   long lVar3;
@@ -172,15 +156,7 @@ void WaterConcept::NotificationSingleton::~NotificationSingleton()
 
 
 
-/* ok  address 0x49dcf4  size 36 */
-/* mangled: _ZN12WaterConcept21NotificationSingletonD0Ev */
-/* WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-/* WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-void WaterConcept::NotificationSingleton::~NotificationSingleton(void *param_1)
-
-{
+/* ok  address 0x49dcf4  size 36 */WaterConcept::NotificationSingleton::~NotificationSingleton(){
   WaterConcept::NotificationSingleton::~NotificationSingleton();
   operator delete(param_1);
   return;

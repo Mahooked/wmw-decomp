@@ -102,16 +102,7 @@ void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1)
 
 
 
-/* ok  address 0x49c8a8  size 232 */
-/* mangled: _ZN12WaterConcept12NotificationC1Ev */
-/* WaterConcept::Notification::Notification() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WaterConcept::Notification::Notification() */
-
-void WaterConcept::Notification::Notification()
-
-{
+/* ok  address 0x49c8a8  size 232 */WaterConcept::Notification::Notification(){
   undefined8 uStack_40;
   
   *this = &PTR_handleEvent_007126c8;
@@ -141,15 +132,7 @@ void WaterConcept::Notification::Notification()
 
 
 
-/* ok  address 0x49c990  size 152 */
-/* mangled: _ZN12WaterConcept12NotificationC1ERKS0_ */
-/* WaterConcept::Notification::Notification(WaterConcept::Notification const&) */
-
-/* WaterConcept::Notification::Notification(WaterConcept::Notification const&) */
-
-void WaterConcept::Notification::Notification(WaterConcept__Notification *p0)
-
-{
+/* ok  address 0x49c990  size 152 */WaterConcept::Notification::Notification(WaterConcept__Notification *p0){
   long in_x1;
   
   p0->f_0x0 = (ulong)&PTR_handleEvent_007126c8;
@@ -187,15 +170,7 @@ void WaterConcept::Notification::operator=(WaterConcept__Notification *p0)
 
 
 
-/* ok  address 0x49cbfc  size 168 */
-/* mangled: _ZN12WaterConcept12NotificationD1Ev */
-/* WaterConcept::Notification::~Notification() */
-
-/* WaterConcept::Notification::~Notification() */
-
-void WaterConcept::Notification::~Notification()
-
-{
+/* ok  address 0x49cbfc  size 168 */WaterConcept::Notification::~Notification(){
   *this = &PTR_handleEvent_007126c8;
   if ((*(byte *)(this + 0x39) & 1) != 0) {
     operator delete((void *)this[0x3b]);
@@ -218,15 +193,7 @@ void WaterConcept::Notification::~Notification()
 
 
 
-/* ok  address 0x49cca4  size 36 */
-/* mangled: _ZN12WaterConcept12NotificationD0Ev */
-/* WaterConcept::Notification::~Notification() */
-
-/* WaterConcept::Notification::~Notification() */
-
-void WaterConcept::Notification::~Notification(void *param_1)
-
-{
+/* ok  address 0x49cca4  size 36 */WaterConcept::Notification::~Notification(){
   WaterConcept::Notification::~Notification();
   operator delete(param_1);
   return;

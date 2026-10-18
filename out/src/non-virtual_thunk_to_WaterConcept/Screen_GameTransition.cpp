@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4da354  size 36 */
-/* mangled: _ZThn144_N12WaterConcept21Screen_GameTransitionD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-/* non-virtual thunk to WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(long param_1)
-
-{
+/* ok  address 0x4da354  size 36 */non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver();
   WaterConcept::WCScreen::~WCScreen(param_1 + -0x90);
   return;
@@ -19,15 +11,7 @@ void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTrans
 
 
 
-/* ok  address 0x4da3a8  size 44 */
-/* mangled: _ZThn144_N12WaterConcept21Screen_GameTransitionD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-/* non-virtual thunk to WaterConcept::Screen_GameTransition::~Screen_GameTransition() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(long param_1)
-
-{
+/* ok  address 0x4da3a8  size 44 */non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver();
   WaterConcept::WCScreen::~WCScreen((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));

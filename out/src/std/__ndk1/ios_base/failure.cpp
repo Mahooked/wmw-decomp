@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5b0590  size 56 */
-/* mangled: _ZNSt6__ndk18ios_base7failureC1ERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKNS_10error_codeE */
-/* std::__ndk1::ios_base::failure::failure(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::error_code const&) */
-
-/* std::__ndk1::ios_base::failure::failure(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, std::__ndk1::error_code
-   const&) */
-
-void std::__ndk1::ios_base::failure::failure
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
-
-{
+/* ok  address 0x5b0590  size 56 */std::__ndk1::ios_base::failure::failure(undefined8 *param_1,undefined8 param_2,undefined8 *param_3){
   std::__ndk1::system_error::system_error(param_1,*param_3,param_3[1],param_2);
   *param_1 = &PTR__failure_00716538;
   return;
@@ -22,15 +11,7 @@ void std::__ndk1::ios_base::failure::failure
 
 
 
-/* ok  address 0x5b05c8  size 56 */
-/* mangled: _ZNSt6__ndk18ios_base7failureC1EPKcRKNS_10error_codeE */
-/* std::__ndk1::ios_base::failure::failure(char const*, std::__ndk1::error_code const&) */
-
-/* std::__ndk1::ios_base::failure::failure(char const*, std::__ndk1::error_code const&) */
-
-void std::__ndk1::ios_base::failure::failure(char *p0,std____ndk1__error_code *p1)
-
-{
+/* ok  address 0x5b05c8  size 56 */std::__ndk1::ios_base::failure::failure(char *p0,std____ndk1__error_code *p1){
   undefined8 *in_x2;
   
   std::__ndk1::system_error::system_error(p0,*in_x2,in_x2[1],p1);
@@ -40,30 +21,14 @@ void std::__ndk1::ios_base::failure::failure(char *p0,std____ndk1__error_code *p
 
 
 
-/* ok  address 0x5b0600  size 4 */
-/* mangled: _ZNSt6__ndk18ios_base7failureD1Ev */
-/* std::__ndk1::ios_base::failure::~failure() */
-
-/* std::__ndk1::ios_base::failure::~failure() */
-
-void std::__ndk1::ios_base::failure::~failure(void)
-
-{
+/* ok  address 0x5b0600  size 4 */std::__ndk1::ios_base::failure::~failure(){
   system_error::~system_error();
   return;
 }
 
 
 
-/* ok  address 0x5b0604  size 36 */
-/* mangled: _ZNSt6__ndk18ios_base7failureD0Ev */
-/* std::__ndk1::ios_base::failure::~failure() */
-
-/* std::__ndk1::ios_base::failure::~failure() */
-
-void std::__ndk1::ios_base::failure::~failure(void *param_1)
-
-{
+/* ok  address 0x5b0604  size 36 */std::__ndk1::ios_base::failure::~failure(){
   std::__ndk1::system_error::~system_error();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x395be8  size 136 */
-/* mangled: _ZN7Walaber15TextureSettingsC2Ej */
-/* Walaber::TextureSettings::TextureSettings(unsigned int) */
-
-/* Walaber::TextureSettings::TextureSettings(unsigned int) */
-
-void Walaber::TextureSettings::TextureSettings(uint p0)
-
-{
+/* ok  address 0x395be8  size 136 */Walaber::TextureSettings::TextureSettings(uint p0){
   undefined2 *puVar1;
   uint in_w1;
   undefined4 uVar2;

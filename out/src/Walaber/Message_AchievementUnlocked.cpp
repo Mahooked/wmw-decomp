@@ -3,17 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3306d8  size 340 */
-/* mangled: _ZN7Walaber27Message_AchievementUnlockedC2ENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEfb */
-/* Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, float, bool) */
-
-/* Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, float, bool) */
-
-void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
-               (undefined8 param_1,undefined8 *param_2,undefined8 param_3,uint param_4)
-
-{
+/* ok  address 0x3306d8  size 340 */Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked(undefined8 param_1,undefined8 *param_2,undefined8 param_3,uint param_4){
   undefined8 *puVar1;
   undefined1 auStack_78 [32];
   
@@ -42,15 +32,7 @@ void Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked
 
 
 
-/* ok  address 0x330d64  size 52 */
-/* mangled: _ZN7Walaber27Message_AchievementUnlockedD0Ev */
-/* Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked() */
-
-/* Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked() */
-
-void Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked()
-
-{
+/* ok  address 0x330d64  size 52 */Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked(){
   *this = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(this + 2);
   operator delete(this);

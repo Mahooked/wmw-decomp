@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x394e34  size 16 */
-/* mangled: _ZN7Walaber16VerletIntegratorC1Ev */
-/* Walaber::VerletIntegrator::VerletIntegrator() */
-
-/* Walaber::VerletIntegrator::VerletIntegrator() */
-
-void Walaber::VerletIntegrator::VerletIntegrator()
-
-{
+/* ok  address 0x394e34  size 16 */Walaber::VerletIntegrator::VerletIntegrator(){
   *this = 0x38d1b717;
   return;
 }
 
 
 
-/* ok  address 0x394e44  size 12 */
-/* mangled: _ZN7Walaber16VerletIntegratorC1ERKS0_ */
-/* Walaber::VerletIntegrator::VerletIntegrator(Walaber::VerletIntegrator const&) */
-
-/* Walaber::VerletIntegrator::VerletIntegrator(Walaber::VerletIntegrator const&) */
-
-void Walaber::VerletIntegrator::VerletIntegrator(Walaber__VerletIntegrator *p0)
-
-{
+/* ok  address 0x394e44  size 12 */Walaber::VerletIntegrator::VerletIntegrator(Walaber__VerletIntegrator *p0){
   uint *in_x1;
   
   p0->f_0x0 = *in_x1;
@@ -52,15 +36,7 @@ void Walaber::VerletIntegrator::operator=(Walaber__VerletIntegrator *p0)
 
 
 
-/* ok  address 0x394e5c  size 4 */
-/* mangled: _ZN7Walaber16VerletIntegratorD1Ev */
-/* Walaber::VerletIntegrator::~VerletIntegrator() */
-
-/* Walaber::VerletIntegrator::~VerletIntegrator() */
-
-void Walaber::VerletIntegrator::~VerletIntegrator(void)
-
-{
+/* ok  address 0x394e5c  size 4 */Walaber::VerletIntegrator::~VerletIntegrator(){
   return;
 }
 

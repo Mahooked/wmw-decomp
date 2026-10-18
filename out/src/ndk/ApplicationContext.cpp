@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2b27d0  size 132 */
-/* mangled: _ZN3ndk18ApplicationContextC1Ev */
-/* ndk::ApplicationContext::ApplicationContext() */
-
-/* ndk::ApplicationContext::ApplicationContext() */
-
-void ndk::ApplicationContext::ApplicationContext()
-
-{
+/* ok  address 0x2b27d0  size 132 */ndk::ApplicationContext::ApplicationContext(){
   Walaber::MessageReceiver::MessageReceiver(this,0x3f);
   *(undefined4 *)((long)this + 0xcc) = 0x3f800000;
   *(undefined8 *)((long)this + 0x24) = 0x100000100000001;
@@ -44,15 +36,7 @@ void ndk::ApplicationContext::ApplicationContext()
 
 
 
-/* ok  address 0x2b2854  size 276 */
-/* mangled: _ZN3ndk18ApplicationContextD1Ev */
-/* ndk::ApplicationContext::~ApplicationContext() */
-
-/* ndk::ApplicationContext::~ApplicationContext() */
-
-void ndk::ApplicationContext::~ApplicationContext()
-
-{
+/* ok  address 0x2b2854  size 276 */ndk::ApplicationContext::~ApplicationContext(){
   int iVar2;
   long *plStack_30;
   
@@ -118,15 +102,7 @@ void ndk::ApplicationContext::getJNIEnv(void)
 
 
 
-/* ok  address 0x2b29dc  size 36 */
-/* mangled: _ZN3ndk18ApplicationContextD0Ev */
-/* ndk::ApplicationContext::~ApplicationContext() */
-
-/* ndk::ApplicationContext::~ApplicationContext() */
-
-void ndk::ApplicationContext::~ApplicationContext(void *param_1)
-
-{
+/* ok  address 0x2b29dc  size 36 */ndk::ApplicationContext::~ApplicationContext(){
   ndk::ApplicationContext::~ApplicationContext();
   operator delete(param_1);
   return;

@@ -3,17 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x37abd4  size 132 */
-/* mangled: _ZN7Walaber22Widget_ClassicControlsC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ClassicControls::Widget_ClassicControls(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ClassicControls::Widget_ClassicControls(int, Walaber::Vector2, Walaber::Vector2)
-    */
-
-void Walaber::Widget_ClassicControls::Widget_ClassicControls
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37abd4  size 132 */Walaber::Widget_ClassicControls::Widget_ClassicControls(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -48,30 +38,14 @@ void Walaber::Widget_ClassicControls::init(long param_1)
 
 
 
-/* ok  address 0x37ac60  size 4 */
-/* mangled: _ZN7Walaber22Widget_ClassicControlsD1Ev */
-/* Walaber::Widget_ClassicControls::~Widget_ClassicControls() */
-
-/* Walaber::Widget_ClassicControls::~Widget_ClassicControls() */
-
-void Walaber::Widget_ClassicControls::~Widget_ClassicControls(void)
-
-{
+/* ok  address 0x37ac60  size 4 */Walaber::Widget_ClassicControls::~Widget_ClassicControls(){
   Widget::~Widget();
   return;
 }
 
 
 
-/* ok  address 0x37ac64  size 36 */
-/* mangled: _ZN7Walaber22Widget_ClassicControlsD0Ev */
-/* Walaber::Widget_ClassicControls::~Widget_ClassicControls() */
-
-/* Walaber::Widget_ClassicControls::~Widget_ClassicControls() */
-
-void Walaber::Widget_ClassicControls::~Widget_ClassicControls(void *param_1)
-
-{
+/* ok  address 0x37ac64  size 36 */Walaber::Widget_ClassicControls::~Widget_ClassicControls(){
   Walaber::Widget::~Widget();
   operator delete(param_1);
   return;

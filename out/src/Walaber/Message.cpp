@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2b52d0  size 20 */
-/* mangled: _ZN7Walaber7MessageD2Ev */
-/* Walaber::Message::~Message() */
-
-/* Walaber::Message::~Message() */
-
-void Walaber::Message::~Message()
-
-{
+/* ok  address 0x2b52d0  size 20 */Walaber::Message::~Message(){
   *this = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(this + 2);
   return;
@@ -19,15 +11,7 @@ void Walaber::Message::~Message()
 
 
 
-/* ok  address 0x2c22dc  size 52 */
-/* mangled: _ZN7Walaber7MessageD0Ev */
-/* Walaber::Message::~Message() */
-
-/* Walaber::Message::~Message() */
-
-void Walaber::Message::~Message()
-
-{
+/* ok  address 0x2c22dc  size 52 */Walaber::Message::~Message(){
   *this = &PTR__Message_0070cdc8;
   Walaber::PropertyList::~PropertyList(this + 2);
   operator delete(this);

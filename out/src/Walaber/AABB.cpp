@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3dfa40  size 32 */
-/* mangled: _ZN7Walaber4AABBC1ERKNS_7Vector2ES3_ */
-/* Walaber::AABB::AABB(Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-/* Walaber::AABB::AABB(Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-void Walaber::AABB::AABB(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
-
-{
+/* ok  address 0x3dfa40  size 32 */Walaber::AABB::AABB(Walaber__Vector2 *p0,Walaber__Vector2 *p1){
   Walaber__Vector2 *in_x2;
   Walaber__Vector2 WVar1;
   

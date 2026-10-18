@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4bc84c  size 700 */
-/* mangled: _ZN12WaterConcept13Screen_EditorC1Ev */
-/* WaterConcept::Screen_Editor::Screen_Editor() */
-
-/* WaterConcept::Screen_Editor::Screen_Editor() */
-
-void WaterConcept::Screen_Editor::Screen_Editor()
-
-{
+/* ok  address 0x4bc84c  size 700 */WaterConcept::Screen_Editor::Screen_Editor(){
   undefined8 *puVar1;
   undefined4 *puVar3;
   undefined4 *puVar4;
@@ -93,15 +85,7 @@ void WaterConcept::Screen_Editor::Screen_Editor()
 
 
 
-/* ok  address 0x4bcb08  size 244 */
-/* mangled: _ZN12WaterConcept13Screen_EditorD1Ev */
-/* WaterConcept::Screen_Editor::~Screen_Editor() */
-
-/* WaterConcept::Screen_Editor::~Screen_Editor() */
-
-void WaterConcept::Screen_Editor::~Screen_Editor()
-
-{
+/* ok  address 0x4bcb08  size 244 */WaterConcept::Screen_Editor::~Screen_Editor(){
   void *pvVar1;
   
   pvVar1 = (void *)this[0x13];
@@ -151,15 +135,7 @@ void WaterConcept::Screen_Editor::~Screen_Editor()
 
 
 
-/* ok  address 0x4bcbfc  size 36 */
-/* mangled: _ZN12WaterConcept13Screen_EditorD0Ev */
-/* WaterConcept::Screen_Editor::~Screen_Editor() */
-
-/* WaterConcept::Screen_Editor::~Screen_Editor() */
-
-void WaterConcept::Screen_Editor::~Screen_Editor(void *param_1)
-
-{
+/* ok  address 0x4bcbfc  size 36 */WaterConcept::Screen_Editor::~Screen_Editor(){
   WaterConcept::Screen_Editor::~Screen_Editor();
   operator delete(param_1);
   return;

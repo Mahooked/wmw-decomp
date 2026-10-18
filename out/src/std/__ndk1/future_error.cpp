@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f06d4  size 164 */
-/* mangled: _ZNSt6__ndk112future_errorC1ENS_10error_codeE */
-/* std::__ndk1::future_error::future_error(std::__ndk1::error_code) */
-
-/* std::__ndk1::future_error::future_error(std::__ndk1::error_code) */
-
-void std::__ndk1::future_error::future_error
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x5f06d4  size 164 */std::__ndk1::future_error::future_error(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   byte abStack_50 [16];
   void *pvStack_40;
   undefined8 uStack_38;
@@ -34,30 +25,14 @@ void std::__ndk1::future_error::future_error
 
 
 
-/* ok  address 0x5f0778  size 4 */
-/* mangled: _ZNSt6__ndk112future_errorD1Ev */
-/* std::__ndk1::future_error::~future_error() */
-
-/* std::__ndk1::future_error::~future_error() */
-
-void std::__ndk1::future_error::~future_error(void)
-
-{
+/* ok  address 0x5f0778  size 4 */std::__ndk1::future_error::~future_error(){
   logic_error::~logic_error();
   return;
 }
 
 
 
-/* ok  address 0x5f077c  size 36 */
-/* mangled: _ZNSt6__ndk112future_errorD0Ev */
-/* std::__ndk1::future_error::~future_error() */
-
-/* std::__ndk1::future_error::~future_error() */
-
-void std::__ndk1::future_error::~future_error(void *param_1)
-
-{
+/* ok  address 0x5f077c  size 36 */std::__ndk1::future_error::~future_error(){
   std::logic_error::~logic_error();
   operator delete(param_1);
   return;

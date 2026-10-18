@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e2a48  size 196 */
-/* mangled: _ZNSt6__ndk115recursive_mutexC1Ev */
-/* std::__ndk1::recursive_mutex::recursive_mutex() */
-
-/* std::__ndk1::recursive_mutex::recursive_mutex() */
-
-void std::__ndk1::recursive_mutex::recursive_mutex()
-
-{
+/* ok  address 0x5e2a48  size 196 */std::__ndk1::recursive_mutex::recursive_mutex(){
   int iVar2;
   int iStack_44;
   undefined1 auStack_40 [8];
@@ -40,15 +32,7 @@ void std::__ndk1::recursive_mutex::recursive_mutex()
 
 
 
-/* ok  address 0x5e2b0c  size 24 */
-/* mangled: _ZNSt6__ndk115recursive_mutexD1Ev */
-/* std::__ndk1::recursive_mutex::~recursive_mutex() */
-
-/* std::__ndk1::recursive_mutex::~recursive_mutex() */
-
-void std::__ndk1::recursive_mutex::~recursive_mutex(void)
-
-{
+/* ok  address 0x5e2b0c  size 24 */std::__ndk1::recursive_mutex::~recursive_mutex(){
                     /* try { // try from 005e2b14 to 005e2b17 has its CatchHandler @ 005e2b20 */
   pthread_mutex_destroy();
   return;

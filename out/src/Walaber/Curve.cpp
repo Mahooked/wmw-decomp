@@ -159,15 +159,7 @@ void Walaber::Curve::computeTangents(void)
 
 
 
-/* ok  address 0x3e0758  size 64 */
-/* mangled: _ZN7Walaber5CurveD2Ev */
-/* Walaber::Curve::~Curve() */
-
-/* Walaber::Curve::~Curve() */
-
-void Walaber::Curve::~Curve(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x3e0758  size 64 */Walaber::Curve::~Curve(){
   *param_1 = &PTR__Curve_00710ab8;
   if ((void *)param_1[3] != (void *)0x0) {
     operator delete[]((void *)param_1[3],param_2);
@@ -179,15 +171,7 @@ void Walaber::Curve::~Curve(undefined8 *param_1,ulong param_2)
 
 
 
-/* ok  address 0x3e0798  size 4 */
-/* mangled: _ZN7Walaber5CurveD0Ev */
-/* Walaber::Curve::~Curve() */
-
-/* Walaber::Curve::~Curve() */
-
-void Walaber::Curve::~Curve(void)
-
-{
+/* ok  address 0x3e0798  size 4 */Walaber::Curve::~Curve(){
   code *pcVar1;
   
                     /* WARNING: Does not return */
@@ -1031,15 +1015,7 @@ void Walaber::Curve::addCurveKey(long param_1,float *param_2)
 
 
 
-/* ok  address 0x3e3f2c  size 228 */
-/* mangled: _ZN7Walaber5CurveC2EPcRj */
-/* Walaber::Curve::Curve(char*, unsigned int&) */
-
-/* Walaber::Curve::Curve(char*, unsigned int&) */
-
-void Walaber::Curve::Curve(char *p0,uint *p1)
-
-{
+/* ok  address 0x3e3f2c  size 228 */Walaber::Curve::Curve(char *p0,uint *p1){
   uint uVar1;
   undefined8 uVar2;
   uint *in_x2;
@@ -1088,18 +1064,7 @@ void Walaber::Curve::Curve(char *p0,uint *p1)
 
 
 
-/* ok  address 0x3e4010  size 1888 */
-/* mangled: _ZN7Walaber5CurveC2EPcRjjRKNS_17CompressionRecordES5_ */
-/* Walaber::Curve::Curve(char*, unsigned int&, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&) */
-
-/* Walaber::Curve::Curve(char*, unsigned int&, unsigned int, Walaber::CompressionRecord const&,
-   Walaber::CompressionRecord const&) */
-
-void Walaber::Curve::Curve
-               (char *p0,uint *p1,uint p2,Walaber__CompressionRecord *p3,
-               Walaber__CompressionRecord *p4)
-
-{
+/* ok  address 0x3e4010  size 1888 */Walaber::Curve::Curve(char *p0,uint *p1,uint p2,Walaber__CompressionRecord *p3, Walaber__CompressionRecord *p4){
   long *plVar1;
   ulong uVar2;
   uint uVar3;

@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ee438  size 476 */
-/* mangled: _ZN7Walaber10ComicStripC1Ev */
-/* Walaber::ComicStrip::ComicStrip() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Walaber::ComicStrip::ComicStrip() */
-
-void Walaber::ComicStrip::ComicStrip()
-
-{
+/* ok  address 0x3ee438  size 476 */Walaber::ComicStrip::ComicStrip(){
   undefined8 uVar2;
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -41,15 +32,7 @@ void Walaber::ComicStrip::ComicStrip()
 
 
 
-/* ok  address 0x3ee614  size 268 */
-/* mangled: _ZN7Walaber10ComicStripD1Ev */
-/* Walaber::ComicStrip::~ComicStrip() */
-
-/* Walaber::ComicStrip::~ComicStrip() */
-
-void Walaber::ComicStrip::~ComicStrip(long param_1)
-
-{
+/* ok  address 0x3ee614  size 268 */Walaber::ComicStrip::~ComicStrip(){
   void *pvVar1;
   
   pvVar1 = *(void **)(param_1 + 0x168);

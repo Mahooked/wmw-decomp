@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ae054  size 548 */
-/* mangled: _ZN12WaterConcept19Screen_CollectiblesC1Ev */
-/* WaterConcept::Screen_Collectibles::Screen_Collectibles() */
-
-/* WaterConcept::Screen_Collectibles::Screen_Collectibles() */
-
-void WaterConcept::Screen_Collectibles::Screen_Collectibles()
-
-{
+/* ok  address 0x4ae054  size 548 */WaterConcept::Screen_Collectibles::Screen_Collectibles(){
   undefined8 uVar2;
   undefined8 uStack_90;
   undefined8 uStack_88;
@@ -74,15 +66,7 @@ void WaterConcept::Screen_Collectibles::Screen_Collectibles()
 
 
 
-/* ok  address 0x4ae278  size 192 */
-/* mangled: _ZN12WaterConcept19Screen_CollectiblesD1Ev */
-/* WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-/* WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-void WaterConcept::Screen_Collectibles::~Screen_Collectibles()
-
-{
+/* ok  address 0x4ae278  size 192 */WaterConcept::Screen_Collectibles::~Screen_Collectibles(){
   void *pvVar1;
   
   *this = &PTR__Screen_Collectibles_00713078;
@@ -118,15 +102,7 @@ void WaterConcept::Screen_Collectibles::~Screen_Collectibles()
 
 
 
-/* ok  address 0x4ae340  size 36 */
-/* mangled: _ZN12WaterConcept19Screen_CollectiblesD0Ev */
-/* WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-/* WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-void WaterConcept::Screen_Collectibles::~Screen_Collectibles(void *param_1)
-
-{
+/* ok  address 0x4ae340  size 36 */WaterConcept::Screen_Collectibles::~Screen_Collectibles(){
   WaterConcept::Screen_Collectibles::~Screen_Collectibles();
   operator delete(param_1);
   return;

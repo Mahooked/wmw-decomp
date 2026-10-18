@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f509c  size 84 */
-/* mangled: _ZNSt11range_errorD1Ev */
-/* also exported as: _ZNSt13runtime_errorD1Ev = std::runtime_error::~runtime_error() | _ZNSt13runtime_errorD2Ev = std::runtime_error::~runtime_error() | _ZNSt14overflow_errorD1Ev = std::overflow_error::~overflow_error() | _ZNSt14overflow_errorD2Ev = std::overflow_error::~overflow_error() | _ZNSt15underflow_errorD1Ev = std::underflow_error::~underflow_error() | _ZNSt15underflow_errorD2Ev = std::underflow_error::~underflow_error() */
-/* std::range_error::~range_error() */
-
-/* std::runtime_error::~runtime_error() */
-
-void std::range_error::~range_error()
-
-{
+/* ok  address 0x5f509c  size 84 */std::range_error::~range_error(){
   int iVar1;
   char cVar2;
   bool bVar3;
@@ -40,15 +31,7 @@ void std::range_error::~range_error()
 
 
 
-/* ok  address 0x5f52c4  size 92 */
-/* mangled: _ZNSt11range_errorD0Ev */
-/* std::range_error::~range_error() */
-
-/* std::range_error::~range_error() */
-
-void std::range_error::~range_error()
-
-{
+/* ok  address 0x5f52c4  size 92 */std::range_error::~range_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

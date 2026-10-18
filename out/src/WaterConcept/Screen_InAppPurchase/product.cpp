@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ea98c  size 116 */
-/* mangled: _ZN12WaterConcept20Screen_InAppPurchase7productC2ENSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_ */
-/* WaterConcept::Screen_InAppPurchase::product::product(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
-
-/* WaterConcept::Screen_InAppPurchase::product::product(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >) */
-
-void WaterConcept::Screen_InAppPurchase::product::product
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x4ea98c  size 116 */WaterConcept::Screen_InAppPurchase::product::product(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   param_1[3] = 0;
   param_1[2] = 0;
   param_1[5] = 0;

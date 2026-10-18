@@ -3,21 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d2d90  size 180 */
-/* mangled: _ZN7Walaber11FileManager26ReadFileCallbackParametersC2ERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEPcmSA_SA_RKNS_12PropertyListE */
-/* Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, char*, unsigned long, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::PropertyList const&) */
-
-/* Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, char*, unsigned long,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::PropertyList const&) */
-
-void Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters
-               (undefined4 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6,undefined8 param_7)
-
-{
+/* ok  address 0x3d2d90  size 180 */Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(undefined4 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6,undefined8 param_7){
   *param_1 = 1;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2);
   *(undefined8 *)(param_1 + 8) = param_3;

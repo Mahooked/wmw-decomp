@@ -3,29 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x442e08  size 4 */
-/* mangled: _ZN12WaterConcept16PushLevelHandlerC1Ev */
-/* WaterConcept::PushLevelHandler::PushLevelHandler() */
-
-/* WaterConcept::PushLevelHandler::PushLevelHandler() */
-
-void WaterConcept::PushLevelHandler::PushLevelHandler(void)
-
-{
+/* ok  address 0x442e08  size 4 */WaterConcept::PushLevelHandler::PushLevelHandler(void){
   return;
 }
 
 
 
-/* ok  address 0x442e0c  size 4 */
-/* mangled: _ZN12WaterConcept16PushLevelHandlerD1Ev */
-/* WaterConcept::PushLevelHandler::~PushLevelHandler() */
-
-/* WaterConcept::PushLevelHandler::~PushLevelHandler() */
-
-void WaterConcept::PushLevelHandler::~PushLevelHandler(void)
-
-{
+/* ok  address 0x442e0c  size 4 */WaterConcept::PushLevelHandler::~PushLevelHandler(){
   return;
 }
 

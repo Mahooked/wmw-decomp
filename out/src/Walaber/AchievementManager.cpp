@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x32f154  size 60 */
-/* mangled: _ZN7Walaber18AchievementManagerC1Ev */
-/* Walaber::AchievementManager::AchievementManager() */
-
-/* Walaber::AchievementManager::AchievementManager() */
-
-void Walaber::AchievementManager::AchievementManager()
-
-{
+/* ok  address 0x32f154  size 60 */Walaber::AchievementManager::AchievementManager(){
   this[1] = 0;
   *(undefined4 *)(this + 0xd) = 0x40400000;
   this[2] = 0;
@@ -35,15 +27,7 @@ void Walaber::AchievementManager::AchievementManager()
 
 
 
-/* ok  address 0x32f190  size 100 */
-/* mangled: _ZN7Walaber18AchievementManagerD1Ev */
-/* Walaber::AchievementManager::~AchievementManager() */
-
-/* Walaber::AchievementManager::~AchievementManager() */
-
-void Walaber::AchievementManager::~AchievementManager(long param_1)
-
-{
+/* ok  address 0x32f190  size 100 */Walaber::AchievementManager::~AchievementManager(){
   void *p0;
   
   p0 = *(void **)(param_1 + 0x80);

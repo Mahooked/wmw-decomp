@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ebbe8  size 252 */
-/* mangled: _ZN7Walaber10SceneGraphC1Ev */
-/* Walaber::SceneGraph::SceneGraph() */
-
-/* Walaber::SceneGraph::SceneGraph() */
-
-void Walaber::SceneGraph::SceneGraph()
-
-{
+/* ok  address 0x3ebbe8  size 252 */Walaber::SceneGraph::SceneGraph(){
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
@@ -63,16 +55,7 @@ void Walaber::SceneGraph::SceneGraph()
 
 
 
-/* ok  address 0x3ebce4  size 220 */
-/* mangled: _ZN7Walaber10SceneGraphC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::SceneGraph::SceneGraph(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
-
-{
+/* ok  address 0x3ebce4  size 220 */Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2){
   undefined8 uVar2;
   byte *pbVar3;
   ulong auStack_50 [2];
@@ -98,15 +81,7 @@ void Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2)
 
 
 
-/* ok  address 0x3ebdc0  size 4 */
-/* mangled: _ZN7Walaber10SceneGraphC1ERKS0_ */
-/* Walaber::SceneGraph::SceneGraph(Walaber::SceneGraph const&) */
-
-/* Walaber::SceneGraph::SceneGraph(Walaber::SceneGraph const&) */
-
-void Walaber::SceneGraph::SceneGraph(Walaber__SceneGraph *p0)
-
-{
+/* ok  address 0x3ebdc0  size 4 */Walaber::SceneGraph::SceneGraph(Walaber__SceneGraph *p0){
   return;
 }
 
@@ -126,15 +101,7 @@ void Walaber::SceneGraph::operator=(Walaber__SceneGraph *p0)
 
 
 
-/* ok  address 0x3ebdc8  size 28 */
-/* mangled: _ZN7Walaber10SceneGraphD1Ev */
-/* Walaber::SceneGraph::~SceneGraph() */
-
-/* Walaber::SceneGraph::~SceneGraph() */
-
-void Walaber::SceneGraph::~SceneGraph()
-
-{
+/* ok  address 0x3ebdc8  size 28 */Walaber::SceneGraph::~SceneGraph(){
                     /* try { // try from 003ebdd4 to 003ebdd7 has its CatchHandler @ 003ebde0 */
   Walaber::PCSNode::deleteNodeAndChildrenFromTree(*this);
   return;

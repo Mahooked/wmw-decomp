@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ee3e4  size 2156 */
-/* mangled: _ZN12WaterConcept18Screen_LevelSelectC1Ev */
-/* WaterConcept::Screen_LevelSelect::Screen_LevelSelect() */
-
-/* WaterConcept::Screen_LevelSelect::Screen_LevelSelect() */
-
-void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
-
-{
+/* ok  address 0x4ee3e4  size 2156 */WaterConcept::Screen_LevelSelect::Screen_LevelSelect(){
   undefined *puVar2;
   byte bVar3;
   undefined8 uVar4;
@@ -320,15 +312,7 @@ void WaterConcept::Screen_LevelSelect::Screen_LevelSelect()
 
 
 
-/* ok  address 0x4eec50  size 580 */
-/* mangled: _ZN12WaterConcept18Screen_LevelSelectD1Ev */
-/* WaterConcept::Screen_LevelSelect::~Screen_LevelSelect() */
-
-/* WaterConcept::Screen_LevelSelect::~Screen_LevelSelect() */
-
-void WaterConcept::Screen_LevelSelect::~Screen_LevelSelect()
-
-{
+/* ok  address 0x4eec50  size 580 */WaterConcept::Screen_LevelSelect::~Screen_LevelSelect(){
   ulong uVar1;
   long lVar2;
   long *plVar3;
@@ -460,15 +444,7 @@ void WaterConcept::Screen_LevelSelect::~Screen_LevelSelect()
 
 
 
-/* ok  address 0x4eee9c  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_LevelSelectD0Ev */
-/* WaterConcept::Screen_LevelSelect::~Screen_LevelSelect() */
-
-/* WaterConcept::Screen_LevelSelect::~Screen_LevelSelect() */
-
-void WaterConcept::Screen_LevelSelect::~Screen_LevelSelect(void *param_1)
-
-{
+/* ok  address 0x4eee9c  size 36 */WaterConcept::Screen_LevelSelect::~Screen_LevelSelect(){
   WaterConcept::Screen_LevelSelect::~Screen_LevelSelect();
   operator delete(param_1);
   return;

@@ -100,17 +100,7 @@ Walaber::Widget_ScoreCounter::operator=(Walaber__Widget_ScoreCounter *p0)
 
 
 
-/* ok  address 0x3848c4  size 272 */
-/* mangled: _ZN7Walaber19Widget_ScoreCounterC1EiRKNS_7Vector2ES3_ */
-/* Walaber::Widget_ScoreCounter::Widget_ScoreCounter(int, Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-/* Walaber::Widget_ScoreCounter::Widget_ScoreCounter(int, Walaber::Vector2 const&, Walaber::Vector2
-   const&) */
-
-void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
-               (int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
-
-{
+/* ok  address 0x3848c4  size 272 */Walaber::Widget_ScoreCounter::Widget_ScoreCounter(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
@@ -266,23 +256,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
 
 
 
-/* ok  address 0x384c5c  size 464 */
-/* mangled: _ZN7Walaber19Widget_ScoreCounterC1EiRKNS_7Vector2ES3_NS_9SharedPtrINS_7TextureEEERKNSt6__ndk112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEENS0_17MovementDirectionEiffffff */
-/* Walaber::Widget_ScoreCounter::Widget_ScoreCounter(int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::Widget_ScoreCounter::MovementDirection, int, float, float, float, float, float, float) */
-
-/* Walaber::Widget_ScoreCounter::Widget_ScoreCounter(int, Walaber::Vector2 const&, Walaber::Vector2
-   const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   Walaber::Widget_ScoreCounter::MovementDirection, int, float, float, float, float, float, float)
-    */
-
-void Walaber::Widget_ScoreCounter::Widget_ScoreCounter
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,undefined4 param_6,long *param_7,undefined8 param_8,
-               undefined8 *param_9,undefined8 *param_10,long *param_11,undefined8 param_12,
-               undefined4 param_13,undefined4 param_14)
-
-{
+/* ok  address 0x384c5c  size 464 */Walaber::Widget_ScoreCounter::Widget_ScoreCounter(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,undefined4 param_6,long *param_7,undefined8 param_8, undefined8 *param_9,undefined8 *param_10,long *param_11,undefined8 param_12, undefined4 param_13,undefined4 param_14){
   int *piVar2;
   long lVar3;
   undefined8 uStack_98;
@@ -369,15 +343,7 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
 
 
 
-/* ok  address 0x384efc  size 260 */
-/* mangled: _ZN7Walaber19Widget_ScoreCounterD1Ev */
-/* Walaber::Widget_ScoreCounter::~Widget_ScoreCounter() */
-
-/* Walaber::Widget_ScoreCounter::~Widget_ScoreCounter() */
-
-void Walaber::Widget_ScoreCounter::~Widget_ScoreCounter()
-
-{
+/* ok  address 0x384efc  size 260 */Walaber::Widget_ScoreCounter::~Widget_ScoreCounter(){
   void *pvVar1;
   long lVar2;
   void *p0;
@@ -423,15 +389,7 @@ void Walaber::Widget_ScoreCounter::~Widget_ScoreCounter()
 
 
 
-/* ok  address 0x385000  size 36 */
-/* mangled: _ZN7Walaber19Widget_ScoreCounterD0Ev */
-/* Walaber::Widget_ScoreCounter::~Widget_ScoreCounter() */
-
-/* Walaber::Widget_ScoreCounter::~Widget_ScoreCounter() */
-
-void Walaber::Widget_ScoreCounter::~Widget_ScoreCounter(void *param_1)
-
-{
+/* ok  address 0x385000  size 36 */Walaber::Widget_ScoreCounter::~Widget_ScoreCounter(){
   Walaber::Widget_ScoreCounter::~Widget_ScoreCounter();
   operator delete(param_1);
   return;

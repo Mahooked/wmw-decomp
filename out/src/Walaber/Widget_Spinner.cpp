@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x389fd8  size 176 */
-/* mangled: _ZN7Walaber14Widget_SpinnerC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_Spinner::Widget_Spinner(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_Spinner::Widget_Spinner(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_Spinner::Widget_Spinner(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x389fd8  size 176 */Walaber::Widget_Spinner::Widget_Spinner(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -53,18 +45,7 @@ void Walaber::Widget_Spinner::init(long param_1)
 
 
 
-/* ok  address 0x38a0a8  size 260 */
-/* mangled: _ZN7Walaber14Widget_SpinnerC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEE */
-/* Walaber::Widget_Spinner::Widget_Spinner(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>) */
-
-/* Walaber::Widget_Spinner::Widget_Spinner(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>) */
-
-void Walaber::Widget_Spinner::Widget_Spinner
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5)
-
-{
+/* ok  address 0x38a0a8  size 260 */Walaber::Widget_Spinner::Widget_Spinner(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -104,15 +85,7 @@ void Walaber::Widget_Spinner::Widget_Spinner
 
 
 
-/* ok  address 0x38a1ac  size 56 */
-/* mangled: _ZN7Walaber14Widget_SpinnerD1Ev */
-/* Walaber::Widget_Spinner::~Widget_Spinner() */
-
-/* Walaber::Widget_Spinner::~Widget_Spinner() */
-
-void Walaber::Widget_Spinner::~Widget_Spinner()
-
-{
+/* ok  address 0x38a1ac  size 56 */Walaber::Widget_Spinner::~Widget_Spinner(){
   *this = &PTR__Widget_Spinner_0070fce8;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
   Walaber::Widget::~Widget(this);
@@ -121,15 +94,7 @@ void Walaber::Widget_Spinner::~Widget_Spinner()
 
 
 
-/* ok  address 0x38a1e4  size 64 */
-/* mangled: _ZN7Walaber14Widget_SpinnerD0Ev */
-/* Walaber::Widget_Spinner::~Widget_Spinner() */
-
-/* Walaber::Widget_Spinner::~Widget_Spinner() */
-
-void Walaber::Widget_Spinner::~Widget_Spinner()
-
-{
+/* ok  address 0x38a1e4  size 64 */Walaber::Widget_Spinner::~Widget_Spinner(){
   *this = &PTR__Widget_Spinner_0070fce8;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
   Walaber::Widget::~Widget(this);

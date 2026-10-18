@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e2724  size 4 */
-/* mangled: _ZNSt6__ndk119__shared_weak_countD0Ev */
-/* std::__ndk1::__shared_weak_count::~__shared_weak_count() */
-
-/* std::__ndk1::__shared_weak_count::~__shared_weak_count() */
-
-void std::__ndk1::__shared_weak_count::~__shared_weak_count(void)
-
-{
+/* ok  address 0x5e2724  size 4 */std::__ndk1::__shared_weak_count::~__shared_weak_count(){
   code *pcVar1;
   
                     /* WARNING: Does not return */

@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x58b120  size 8 */
-/* mangled: _ZThn144_N12WaterConcept18Screen_WorldSelectD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-/* non-virtual thunk to WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(long param_1)
-
-{
+/* ok  address 0x58b120  size 8 */non_virtual_thunk_to_WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(){
   WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x58b14c  size 40 */
-/* mangled: _ZThn144_N12WaterConcept18Screen_WorldSelectD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-/* non-virtual thunk to WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(long param_1)
-
-{
+/* ok  address 0x58b14c  size 40 */non_virtual_thunk_to_WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(){
   WaterConcept::Screen_WorldSelect::~Screen_WorldSelect((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

@@ -101,15 +101,7 @@ void Walaber::Widget_Label::setPadding(float p0,float p1,float p2,float p3)
 
 
 
-/* ok  address 0x37f120  size 368 */
-/* mangled: _ZN7Walaber12Widget_LabelC1EiRKNS_7Vector2ES3_ */
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&) */
-
-void Walaber::Widget_Label::Widget_Label(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
-
-{
+/* ok  address 0x37f120  size 368 */Walaber::Widget_Label::Widget_Label(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2){
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined8 *in_x3;
@@ -204,18 +196,7 @@ void Walaber::Widget_Label::init(long param_1)
 
 
 
-/* ok  address 0x37f310  size 436 */
-/* mangled: _ZN7Walaber12Widget_LabelC1EiRKNS_7Vector2ES3_NS_9SharedPtrINS_7TextureEEE */
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>) */
-
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&,
-   Walaber::SharedPtr<Walaber::Texture>) */
-
-void Walaber::Widget_Label::Widget_Label
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5)
-
-{
+/* ok  address 0x37f310  size 436 */Walaber::Widget_Label::Widget_Label(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   undefined8 uVar2;
   int *piVar3;
   long lVar4;
@@ -293,22 +274,7 @@ void Walaber::Widget_Label::Widget_Label
 
 
 
-/* ok  address 0x37f4c4  size 644 */
-/* mangled: _ZN7Walaber12Widget_LabelC1EiRKNS_7Vector2ES3_NS_9SharedPtrINS_7TextureEEERKNSt6__ndk112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEESF_fNS0_6VAlignENS0_6HAlignE */
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, Walaber::Widget_Label::VAlign, Walaber::Widget_Label::HAlign) */
-
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&,
-   Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, float, Walaber::Widget_Label::VAlign, Walaber::Widget_Label::HAlign) */
-
-void Walaber::Widget_Label::Widget_Label
-               (float param_1,long *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,long *param_6,byte *param_7,undefined8 param_8,undefined4 param_9
-               ,undefined4 param_10)
-
-{
+/* ok  address 0x37f4c4  size 644 */Walaber::Widget_Label::Widget_Label(float param_1,long *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,byte *param_7,undefined8 param_8,undefined4 param_9 ,undefined4 param_10){
   ulong uVar1;
   int *piVar3;
   long lVar4;
@@ -485,23 +451,7 @@ LAB_0037f9d0:
 
 
 
-/* ok  address 0x37f9f4  size 664 */
-/* mangled: _ZN7Walaber12Widget_LabelC1EiRKNS_7Vector2ES3_NS_9SharedPtrINS_7TextureEEERKNSt6__ndk112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEESF_ffffNS0_6VAlignENS0_6HAlignE */
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, float, float, float, float, Walaber::Widget_Label::VAlign, Walaber::Widget_Label::HAlign) */
-
-/* Walaber::Widget_Label::Widget_Label(int, Walaber::Vector2 const&, Walaber::Vector2 const&,
-   Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, float, float, float, float, Walaber::Widget_Label::VAlign, Walaber::Widget_Label::HAlign)
-    */
-
-void Walaber::Widget_Label::Widget_Label
-               (float param_1,float param_2,float param_3,float param_4,long *param_5,
-               undefined8 param_6,undefined8 *param_7,undefined8 *param_8,long *param_9,
-               byte *param_10,undefined8 param_11,undefined4 param_12,undefined4 param_13)
-
-{
+/* ok  address 0x37f9f4  size 664 */Walaber::Widget_Label::Widget_Label(float param_1,float param_2,float param_3,float param_4,long *param_5, undefined8 param_6,undefined8 *param_7,undefined8 *param_8,long *param_9, byte *param_10,undefined8 param_11,undefined4 param_12,undefined4 param_13){
   ulong uVar1;
   int *piVar3;
   long lVar4;
@@ -581,15 +531,7 @@ void Walaber::Widget_Label::Widget_Label
 
 
 
-/* ok  address 0x37fc8c  size 72 */
-/* mangled: _ZN7Walaber12Widget_LabelD1Ev */
-/* Walaber::Widget_Label::~Widget_Label() */
-
-/* Walaber::Widget_Label::~Widget_Label() */
-
-void Walaber::Widget_Label::~Widget_Label()
-
-{
+/* ok  address 0x37fc8c  size 72 */Walaber::Widget_Label::~Widget_Label(){
   *this = &PTR__Widget_Label_0070f1a8;
   if ((*(byte *)(this + 0x2d) & 1) != 0) {
     operator delete((void *)this[0x2f]);
@@ -601,15 +543,7 @@ void Walaber::Widget_Label::~Widget_Label()
 
 
 
-/* ok  address 0x37fcd4  size 36 */
-/* mangled: _ZN7Walaber12Widget_LabelD0Ev */
-/* Walaber::Widget_Label::~Widget_Label() */
-
-/* Walaber::Widget_Label::~Widget_Label() */
-
-void Walaber::Widget_Label::~Widget_Label(void *param_1)
-
-{
+/* ok  address 0x37fcd4  size 36 */Walaber::Widget_Label::~Widget_Label(){
   Walaber::Widget_Label::~Widget_Label();
   operator delete(param_1);
   return;
@@ -1167,15 +1101,7 @@ void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0)
 
 
 
-/* ok  address 0x428b4c  size 452 */
-/* mangled: _ZN7Walaber12Widget_LabelC2ERKS0_ */
-/* Walaber::Widget_Label::Widget_Label(Walaber::Widget_Label const&) */
-
-/* Walaber::Widget_Label::Widget_Label(Walaber::Widget_Label const&) */
-
-void Walaber::Widget_Label::Widget_Label(Walaber__Widget_Label *p0)
-
-{
+/* ok  address 0x428b4c  size 452 */Walaber::Widget_Label::Widget_Label(Walaber__Widget_Label *p0){
   undefined4 uVar1;
   long in_x1;
   int *piVar2;

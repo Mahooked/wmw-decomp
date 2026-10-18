@@ -3,30 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f4f54  size 4 */
-/* mangled: _ZNSt13bad_exceptionD1Ev */
-/* also exported as: _ZNSt16bad_array_lengthD1Ev = std::bad_array_length::~bad_array_length() | _ZNSt16bad_array_lengthD2Ev = std::bad_array_length::~bad_array_length() | _ZNSt20bad_array_new_lengthD1Ev = std::bad_array_new_length::~bad_array_new_length() | _ZNSt20bad_array_new_lengthD2Ev = std::bad_array_new_length::~bad_array_new_length() | _ZNSt9bad_allocD1Ev = std::bad_alloc::~bad_alloc() | _ZNSt9bad_allocD2Ev = std::bad_alloc::~bad_alloc() | _ZNSt9exceptionD1Ev = std::exception::~exception() | _ZNSt9exceptionD2Ev = std::exception::~exception() */
-/* std::bad_exception::~bad_exception() */
-
-/* std::bad_exception::~bad_exception() */
-
-void std::bad_exception::~bad_exception(void)
-
-{
+/* ok  address 0x5f4f54  size 4 */std::bad_exception::~bad_exception(){
   return;
 }
 
 
 
-/* ok  address 0x5f4f68  size 4 */
-/* mangled: _ZNSt13bad_exceptionD0Ev */
-/* std::bad_exception::~bad_exception() */
-
-/* std::bad_exception::~bad_exception() */
-
-void std::bad_exception::~bad_exception(void *p0)
-
-{
+/* ok  address 0x5f4f68  size 4 */std::bad_exception::~bad_exception(){
   operator_delete(p0);
   return;
 }

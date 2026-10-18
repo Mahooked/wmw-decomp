@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e2b80  size 28 */
-/* mangled: _ZNSt6__ndk111timed_mutexC1Ev */
-/* std::__ndk1::timed_mutex::timed_mutex() */
-
-/* std::__ndk1::timed_mutex::timed_mutex() */
-
-void std::__ndk1::timed_mutex::timed_mutex()
-
-{
+/* ok  address 0x5e2b80  size 28 */std::__ndk1::timed_mutex::timed_mutex(){
   *(undefined1 *)(this + 0xb) = 0;
   this[10] = 0;
   this[7] = 0;
@@ -29,15 +21,7 @@ void std::__ndk1::timed_mutex::timed_mutex()
 
 
 
-/* ok  address 0x5e2b9c  size 108 */
-/* mangled: _ZNSt6__ndk111timed_mutexD1Ev */
-/* std::__ndk1::timed_mutex::~timed_mutex() */
-
-/* std::__ndk1::timed_mutex::~timed_mutex() */
-
-void std::__ndk1::timed_mutex::~timed_mutex(long param_1)
-
-{
+/* ok  address 0x5e2b9c  size 108 */std::__ndk1::timed_mutex::~timed_mutex(){
   undefined8 uVar1;
   
                     /* try { // try from 005e2bac to 005e2baf has its CatchHandler @ 005e2be8 */

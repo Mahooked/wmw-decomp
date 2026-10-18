@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x49dcec  size 8 */
-/* mangled: _ZThn8_N12WaterConcept21NotificationSingletonD1Ev */
-/* non-virtual thunk to WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-/* non-virtual thunk to WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-void non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(long param_1)
-
-{
+/* ok  address 0x49dcec  size 8 */non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(){
   WaterConcept::NotificationSingleton::~NotificationSingleton(param_1 + -8);
   return;
 }
 
 
 
-/* ok  address 0x49dd18  size 40 */
-/* mangled: _ZThn8_N12WaterConcept21NotificationSingletonD0Ev */
-/* non-virtual thunk to WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-/* non-virtual thunk to WaterConcept::NotificationSingleton::~NotificationSingleton() */
-
-void non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(long param_1)
-
-{
+/* ok  address 0x49dd18  size 40 */non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(){
   WaterConcept::NotificationSingleton::~NotificationSingleton((void *)(param_1 + -8));
   operator delete((void *)(param_1 + -8));
   return;

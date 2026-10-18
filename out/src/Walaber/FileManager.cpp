@@ -31,15 +31,7 @@ void Walaber::FileManager::updatePlatformTags(long param_1)
 
 
 
-/* ok  address 0x3d1824  size 288 */
-/* mangled: _ZN7Walaber11FileManagerC1Ev */
-/* Walaber::FileManager::FileManager() */
-
-/* Walaber::FileManager::FileManager() */
-
-void Walaber::FileManager::FileManager()
-
-{
+/* ok  address 0x3d1824  size 288 */Walaber::FileManager::FileManager(){
   undefined8 uStack_60;
   undefined8 uStack_58;
   undefined8 uStack_50;
@@ -102,15 +94,7 @@ void Walaber::FileManager::_initDefaultHandler(long param_1)
 
 
 
-/* ok  address 0x3d19c8  size 100 */
-/* mangled: _ZN7Walaber11FileManagerD1Ev */
-/* Walaber::FileManager::~FileManager() */
-
-/* Walaber::FileManager::~FileManager() */
-
-void Walaber::FileManager::~FileManager(long param_1)
-
-{
+/* ok  address 0x3d19c8  size 100 */Walaber::FileManager::~FileManager(){
   if (*(long **)(param_1 + 0x60) != (long *)0x0) {
     (**(code **)(**(long **)(param_1 + 0x60) + 8))();
   }

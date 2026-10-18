@@ -114,15 +114,7 @@ LAB_004623dc:
 
 
 
-/* ok  address 0x46bc24  size 184 */
-/* mangled: _ZN7Walaber16CharacterManagerD2Ev */
-/* Walaber::CharacterManager::~CharacterManager() */
-
-/* Walaber::CharacterManager::~CharacterManager() */
-
-void Walaber::CharacterManager::~CharacterManager()
-
-{
+/* ok  address 0x46bc24  size 184 */Walaber::CharacterManager::~CharacterManager(){
   bool bVar1;
   long *plVar2;
   long lVar3;

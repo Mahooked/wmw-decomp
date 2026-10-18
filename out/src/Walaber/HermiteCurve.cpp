@@ -491,15 +491,7 @@ LAB_003e6110:
 
 
 
-/* ok  address 0x3e61a4  size 60 */
-/* mangled: _ZN7Walaber12HermiteCurveD0Ev */
-/* Walaber::HermiteCurve::~HermiteCurve() */
-
-/* Walaber::HermiteCurve::~HermiteCurve() */
-
-void Walaber::HermiteCurve::~HermiteCurve(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x3e61a4  size 60 */Walaber::HermiteCurve::~HermiteCurve(){
   *param_1 = &PTR__Curve_00710ab8;
   if ((void *)param_1[3] != (void *)0x0) {
     operator delete[]((void *)param_1[3],param_2);

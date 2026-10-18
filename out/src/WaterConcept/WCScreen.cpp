@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a1790  size 240 */
-/* mangled: _ZN12WaterConcept8WCScreenC2Ej */
-/* WaterConcept::WCScreen::WCScreen(unsigned int) */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WaterConcept::WCScreen::WCScreen(unsigned int) */
-
-void WaterConcept::WCScreen::WCScreen(uint p0)
-
-{
+/* ok  address 0x4a1790  size 240 */WaterConcept::WCScreen::WCScreen(uint p0){
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined4 in_w1;
@@ -157,15 +148,7 @@ void WaterConcept::WCScreen::handleFocus(undefined8 param_1,long param_2,int par
 
 
 
-/* ok  address 0x4a4264  size 108 */
-/* mangled: _ZN12WaterConcept8WCScreenD2Ev */
-/* WaterConcept::WCScreen::~WCScreen() */
-
-/* WaterConcept::WCScreen::~WCScreen() */
-
-void WaterConcept::WCScreen::~WCScreen()
-
-{
+/* ok  address 0x4a4264  size 108 */WaterConcept::WCScreen::~WCScreen(){
   void *p0;
   
   *this = &PTR__WCScreen_00712a08;
@@ -183,15 +166,7 @@ void WaterConcept::WCScreen::~WCScreen()
 
 
 
-/* ok  address 0x4a42d0  size 4 */
-/* mangled: _ZN12WaterConcept8WCScreenD0Ev */
-/* WaterConcept::WCScreen::~WCScreen() */
-
-/* WaterConcept::WCScreen::~WCScreen() */
-
-void WaterConcept::WCScreen::~WCScreen(void)
-
-{
+/* ok  address 0x4a42d0  size 4 */WaterConcept::WCScreen::~WCScreen(){
   code *pcVar1;
   
                     /* WARNING: Does not return */

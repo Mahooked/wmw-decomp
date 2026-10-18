@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x339164  size 28 */
-/* mangled: _ZN7Walaber18NodeAnimationTrackC1Ev */
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack() */
-
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack() */
-
-void Walaber::NodeAnimationTrack::NodeAnimationTrack()
-
-{
+/* ok  address 0x339164  size 28 */Walaber::NodeAnimationTrack::NodeAnimationTrack(){
   memset(this,0,0x68);
   return;
 }
 
 
 
-/* ok  address 0x3391d8  size 48 */
-/* mangled: _ZN7Walaber18NodeAnimationTrackC1EPNS_4NodeE */
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber::Node*) */
-
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber::Node*) */
-
-void Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber__Node *p0)
-
-{
+/* ok  address 0x3391d8  size 48 */Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber__Node *p0){
   undefined8 in_x1;
   
   memset(p0,0,0x60);
@@ -37,15 +21,7 @@ void Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber__Node *p0)
 
 
 
-/* ok  address 0x339208  size 180 */
-/* mangled: _ZN7Walaber18NodeAnimationTrackC1ERKS0_ */
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber::NodeAnimationTrack const&) */
-
-/* Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber::NodeAnimationTrack const&) */
-
-void Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber__NodeAnimationTrack *p0)
-
-{
+/* ok  address 0x339208  size 180 */Walaber::NodeAnimationTrack::NodeAnimationTrack(Walaber__NodeAnimationTrack *p0){
   undefined8 *in_x1;
   undefined8 uVar1;
   int *piVar2;
@@ -127,15 +103,7 @@ Walaber::NodeAnimationTrack::operator=(Walaber__NodeAnimationTrack *p0)
 
 
 
-/* ok  address 0x3393a8  size 64 */
-/* mangled: _ZN7Walaber18NodeAnimationTrackD1Ev */
-/* Walaber::NodeAnimationTrack::~NodeAnimationTrack() */
-
-/* Walaber::NodeAnimationTrack::~NodeAnimationTrack() */
-
-void Walaber::NodeAnimationTrack::~NodeAnimationTrack(long param_1)
-
-{
+/* ok  address 0x3393a8  size 64 */Walaber::NodeAnimationTrack::~NodeAnimationTrack(){
   Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x48);
   Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x38);
   Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x28);

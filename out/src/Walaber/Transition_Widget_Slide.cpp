@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3f69e4  size 96 */
-/* mangled: _ZN7Walaber23Transition_Widget_SlideC1Ev */
-/* Walaber::Transition_Widget_Slide::Transition_Widget_Slide() */
-
-/* Walaber::Transition_Widget_Slide::Transition_Widget_Slide() */
-
-void Walaber::Transition_Widget_Slide::Transition_Widget_Slide()
-
-{
+/* ok  address 0x3f69e4  size 96 */Walaber::Transition_Widget_Slide::Transition_Widget_Slide(){
   Walaber::Transition::Transition();
   this[0x1d] = 0;
   this[0x1e] = 0;
@@ -31,15 +23,7 @@ void Walaber::Transition_Widget_Slide::Transition_Widget_Slide()
 
 
 
-/* ok  address 0x3f6a44  size 60 */
-/* mangled: _ZN7Walaber23Transition_Widget_SlideD1Ev */
-/* Walaber::Transition_Widget_Slide::~Transition_Widget_Slide() */
-
-/* Walaber::Transition_Widget_Slide::~Transition_Widget_Slide() */
-
-void Walaber::Transition_Widget_Slide::~Transition_Widget_Slide()
-
-{
+/* ok  address 0x3f6a44  size 60 */Walaber::Transition_Widget_Slide::~Transition_Widget_Slide(){
   *this = &PTR_setup_00711048;
   std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, float>>>::destroy(this + 0x23,this[0x24]);
   Walaber::Transition::~Transition(this);

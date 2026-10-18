@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e335c  size 140 */
-/* mangled: _ZNSt11logic_errorC1ERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE */
-/* std::logic_error::logic_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::logic_error::logic_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void std::logic_error::logic_error(undefined8 *param_1,byte *param_2)
-
-{
+/* ok  address 0x5e335c  size 140 */std::logic_error::logic_error(undefined8 *param_1,byte *param_2){
   long lVar1;
   long *plVar2;
   byte *pbVar3;
@@ -35,15 +26,7 @@ void std::logic_error::logic_error(undefined8 *param_1,byte *param_2)
 
 
 
-/* ok  address 0x5e33e8  size 128 */
-/* mangled: _ZNSt11logic_errorC1EPKc */
-/* std::logic_error::logic_error(char const*) */
-
-/* std::logic_error::logic_error(char const*) */
-
-void std::logic_error::logic_error(char *p0)
-
-{
+/* ok  address 0x5e33e8  size 128 */std::logic_error::logic_error(char *p0){
   long lVar1;
   long *plVar2;
   
@@ -61,15 +44,7 @@ void std::logic_error::logic_error(char *p0)
 
 
 
-/* ok  address 0x5e3468  size 48 */
-/* mangled: _ZNSt11logic_errorC1ERKS_ */
-/* std::logic_error::logic_error(std::logic_error const&) */
-
-/* std::logic_error::logic_error(std::logic_error const&) */
-
-void std::logic_error::logic_error(std__logic_error *p0)
-
-{
+/* ok  address 0x5e3468  size 48 */std::logic_error::logic_error(std__logic_error *p0){
   char cVar1;
   bool bVar2;
   long in_x1;
@@ -140,16 +115,7 @@ std__logic_error * std::logic_error::operator=(std__logic_error *p0)
 
 
 
-/* ok  address 0x5f4fe4  size 84 */
-/* mangled: _ZNSt11logic_errorD1Ev */
-/* also exported as: _ZNSt12domain_errorD1Ev = std::domain_error::~domain_error() | _ZNSt12domain_errorD2Ev = std::domain_error::~domain_error() | _ZNSt12length_errorD1Ev = std::length_error::~length_error() | _ZNSt12length_errorD2Ev = std::length_error::~length_error() | _ZNSt12out_of_rangeD1Ev = std::out_of_range::~out_of_range() | _ZNSt12out_of_rangeD2Ev = std::out_of_range::~out_of_range() | _ZNSt16invalid_argumentD1Ev = std::invalid_argument::~invalid_argument() | _ZNSt16invalid_argumentD2Ev = std::invalid_argument::~invalid_argument() */
-/* std::logic_error::~logic_error() */
-
-/* std::logic_error::~logic_error() */
-
-void std::logic_error::~logic_error()
-
-{
+/* ok  address 0x5f4fe4  size 84 */std::logic_error::~logic_error(){
   int iVar1;
   char cVar2;
   bool bVar3;
@@ -177,15 +143,7 @@ void std::logic_error::~logic_error()
 
 
 
-/* ok  address 0x5f5038  size 92 */
-/* mangled: _ZNSt11logic_errorD0Ev */
-/* std::logic_error::~logic_error() */
-
-/* std::logic_error::~logic_error() */
-
-void std::logic_error::~logic_error()
-
-{
+/* ok  address 0x5f5038  size 92 */std::logic_error::~logic_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e26e8  size 4 */
-/* mangled: _ZNSt6__ndk112bad_weak_ptrD1Ev */
-/* std::__ndk1::bad_weak_ptr::~bad_weak_ptr() */
-
-/* std::__ndk1::bad_weak_ptr::~bad_weak_ptr() */
-
-void std::__ndk1::bad_weak_ptr::~bad_weak_ptr(void)
-
-{
+/* ok  address 0x5e26e8  size 4 */std::__ndk1::bad_weak_ptr::~bad_weak_ptr(){
   bad_exception::~bad_exception();
   return;
 }
 
 
 
-/* ok  address 0x5e26ec  size 36 */
-/* mangled: _ZNSt6__ndk112bad_weak_ptrD0Ev */
-/* std::__ndk1::bad_weak_ptr::~bad_weak_ptr() */
-
-/* std::__ndk1::bad_weak_ptr::~bad_weak_ptr() */
-
-void std::__ndk1::bad_weak_ptr::~bad_weak_ptr(void *param_1)
-
-{
+/* ok  address 0x5e26ec  size 36 */std::__ndk1::bad_weak_ptr::~bad_weak_ptr(){
   std::exception::~exception();
   operator delete(param_1);
   return;

@@ -323,15 +323,7 @@ LAB_003d31c4:
 
 
 
-/* ok  address 0x3d4410  size 32 */
-/* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystemD2Ev */
-/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
-
-/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
-
-void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem()
-
-{
+/* ok  address 0x3d4410  size 32 */Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(){
   *this = &PTR__FH_StandardFileSystem_00710690;
   std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 1,this[2]);
   return;
@@ -339,15 +331,7 @@ void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem()
 
 
 
-/* ok  address 0x3d4430  size 56 */
-/* mangled: _ZN7Walaber11FileManager21FH_StandardFileSystemD0Ev */
-/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
-
-/* Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem() */
-
-void Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem()
-
-{
+/* ok  address 0x3d4430  size 56 */Walaber::FileManager::FH_StandardFileSystem::~FH_StandardFileSystem(){
   *this = &PTR__FH_StandardFileSystem_00710690;
   std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(this + 1,this[2]);
   operator delete(this);

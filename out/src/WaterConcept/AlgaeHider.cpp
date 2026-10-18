@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x477120  size 156 */
-/* mangled: _ZN12WaterConcept10AlgaeHiderC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::AlgaeHider::AlgaeHider(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::AlgaeHider::AlgaeHider(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x477120  size 156 */WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
@@ -32,15 +24,7 @@ void WaterConcept::AlgaeHider::AlgaeHider(Walaber__Vector2 p0,float p1,Walaber__
 
 
 
-/* ok  address 0x4771bc  size 64 */
-/* mangled: _ZN12WaterConcept10AlgaeHiderD1Ev */
-/* WaterConcept::AlgaeHider::~AlgaeHider() */
-
-/* WaterConcept::AlgaeHider::~AlgaeHider() */
-
-void WaterConcept::AlgaeHider::~AlgaeHider()
-
-{
+/* ok  address 0x4771bc  size 64 */WaterConcept::AlgaeHider::~AlgaeHider(){
   *this = &PTR__AlgaeHider_00711448;
   std::__ndk1::__list_imp<WaterConcept::GridCell, std::__ndk1::allocator<WaterConcept::GridCell>>::clear(this + 0x78);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
@@ -50,15 +34,7 @@ void WaterConcept::AlgaeHider::~AlgaeHider()
 
 
 
-/* ok  address 0x4771fc  size 36 */
-/* mangled: _ZN12WaterConcept10AlgaeHiderD0Ev */
-/* WaterConcept::AlgaeHider::~AlgaeHider() */
-
-/* WaterConcept::AlgaeHider::~AlgaeHider() */
-
-void WaterConcept::AlgaeHider::~AlgaeHider(void *param_1)
-
-{
+/* ok  address 0x4771fc  size 36 */WaterConcept::AlgaeHider::~AlgaeHider(){
   WaterConcept::AlgaeHider::~AlgaeHider();
   operator delete(param_1);
   return;

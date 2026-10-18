@@ -277,17 +277,7 @@ void WaterConcept::InteractiveObject::particleHasCollided
 
 
 
-/* ok  address 0x480bb8  size 1308 */
-/* mangled: _ZN12WaterConcept17InteractiveObjectC1EN7Walaber7Vector2EfS2_bb */
-/* WaterConcept::InteractiveObject::InteractiveObject(Walaber::Vector2, float, Walaber::Vector2, bool, bool) */
-
-/* WaterConcept::InteractiveObject::InteractiveObject(Walaber::Vector2, float, Walaber::Vector2,
-   bool, bool) */
-
-void WaterConcept::InteractiveObject::InteractiveObject
-               (Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,bool p3,bool p4)
-
-{
+/* ok  address 0x480bb8  size 1308 */WaterConcept::InteractiveObject::InteractiveObject(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,bool p3,bool p4){
   undefined8 *puVar2;
   int *piVar3;
   undefined8 uVar4;
@@ -453,15 +443,7 @@ void WaterConcept::InteractiveObject::InteractiveObject
 
 
 
-/* ok  address 0x4810d4  size 468 */
-/* mangled: _ZN12WaterConcept17InteractiveObjectD1Ev */
-/* WaterConcept::InteractiveObject::~InteractiveObject() */
-
-/* WaterConcept::InteractiveObject::~InteractiveObject() */
-
-void WaterConcept::InteractiveObject::~InteractiveObject(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x4810d4  size 468 */WaterConcept::InteractiveObject::~InteractiveObject(){
   void *pvVar1;
   ulong extraout_x1;
   ulong extraout_x1_00;
@@ -574,15 +556,7 @@ void WaterConcept::InteractiveObject::~InteractiveObject(undefined8 *param_1,ulo
 
 
 
-/* ok  address 0x4812a8  size 36 */
-/* mangled: _ZN12WaterConcept17InteractiveObjectD0Ev */
-/* WaterConcept::InteractiveObject::~InteractiveObject() */
-
-/* WaterConcept::InteractiveObject::~InteractiveObject() */
-
-void WaterConcept::InteractiveObject::~InteractiveObject(void *param_1)
-
-{
+/* ok  address 0x4812a8  size 36 */WaterConcept::InteractiveObject::~InteractiveObject(){
   WaterConcept::InteractiveObject::~InteractiveObject();
   operator delete(param_1);
   return;

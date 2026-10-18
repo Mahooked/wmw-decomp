@@ -73,15 +73,7 @@ Walaber__Widget_Slider * Walaber::Widget_Slider::operator=(Walaber__Widget_Slide
 
 
 
-/* ok  address 0x388a40  size 188 */
-/* mangled: _ZN7Walaber13Widget_SliderC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_Slider::Widget_Slider(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_Slider::Widget_Slider(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_Slider::Widget_Slider(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x388a40  size 188 */Walaber::Widget_Slider::Widget_Slider(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
@@ -128,20 +120,7 @@ void Walaber::Widget_Slider::init(long param_1)
 
 
 
-/* ok  address 0x388b68  size 344 */
-/* mangled: _ZN7Walaber13Widget_SliderC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_S1_fff */
-/* Walaber::Widget_Slider::Widget_Slider(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2, float, float, float) */
-
-/* Walaber::Widget_Slider::Widget_Slider(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2,
-   float, float, float) */
-
-void Walaber::Widget_Slider::Widget_Slider
-               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,
-               undefined8 param_5,undefined8 *param_6,float *param_7,long *param_8,long *param_9,
-               float *param_10)
-
-{
+/* ok  address 0x388b68  size 344 */Walaber::Widget_Slider::Widget_Slider(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4, undefined8 param_5,undefined8 *param_6,float *param_7,long *param_8,long *param_9, float *param_10){
   int *piVar2;
   undefined8 uVar3;
   long lVar4;
@@ -193,15 +172,7 @@ void Walaber::Widget_Slider::Widget_Slider
 
 
 
-/* ok  address 0x388cc0  size 80 */
-/* mangled: _ZN7Walaber13Widget_SliderD1Ev */
-/* Walaber::Widget_Slider::~Widget_Slider() */
-
-/* Walaber::Widget_Slider::~Widget_Slider() */
-
-void Walaber::Widget_Slider::~Widget_Slider()
-
-{
+/* ok  address 0x388cc0  size 80 */Walaber::Widget_Slider::~Widget_Slider(){
   *this = &PTR__Widget_Slider_0070fb08;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x27);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x25);
@@ -213,15 +184,7 @@ void Walaber::Widget_Slider::~Widget_Slider()
 
 
 
-/* ok  address 0x388d10  size 36 */
-/* mangled: _ZN7Walaber13Widget_SliderD0Ev */
-/* Walaber::Widget_Slider::~Widget_Slider() */
-
-/* Walaber::Widget_Slider::~Widget_Slider() */
-
-void Walaber::Widget_Slider::~Widget_Slider(void *param_1)
-
-{
+/* ok  address 0x388d10  size 36 */Walaber::Widget_Slider::~Widget_Slider(){
   Walaber::Widget_Slider::~Widget_Slider();
   operator delete(param_1);
   return;

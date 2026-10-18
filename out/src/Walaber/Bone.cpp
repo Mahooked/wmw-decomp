@@ -20,15 +20,7 @@ void Walaber::Bone::setSkeleton(Walaber__Skeleton *p0)
 
 
 
-/* ok  address 0x33d9a8  size 36 */
-/* mangled: _ZN7Walaber4BoneD0Ev */
-/* Walaber::Bone::~Bone() */
-
-/* Walaber::Bone::~Bone() */
-
-void Walaber::Bone::~Bone(void *param_1)
-
-{
+/* ok  address 0x33d9a8  size 36 */Walaber::Bone::~Bone(){
   Walaber::Node::~Node();
   operator delete(param_1);
   return;

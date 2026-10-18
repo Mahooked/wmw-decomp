@@ -56,15 +56,7 @@ void Walaber::SoundManager::subtitlePlayed(undefined4 param_1,long param_2)
 
 
 
-/* ok  address 0x34d68c  size 204 */
-/* mangled: _ZN7Walaber12SoundManagerC1Ev */
-/* Walaber::SoundManager::SoundManager() */
-
-/* Walaber::SoundManager::SoundManager() */
-
-void Walaber::SoundManager::SoundManager()
-
-{
+/* ok  address 0x34d68c  size 204 */Walaber::SoundManager::SoundManager(){
   undefined8 uVar1;
   
   this[2] = 0;
@@ -190,15 +182,7 @@ void Walaber::SoundManager::setMusicVolume(float p0)
 
 
 
-/* ok  address 0x34d80c  size 420 */
-/* mangled: _ZN7Walaber12SoundManagerD1Ev */
-/* Walaber::SoundManager::~SoundManager() */
-
-/* Walaber::SoundManager::~SoundManager() */
-
-void Walaber::SoundManager::~SoundManager(long param_1)
-
-{
+/* ok  address 0x34d80c  size 420 */Walaber::SoundManager::~SoundManager(){
   void *pvVar1;
   
                     /* try { // try from 0034d820 to 0034d873 has its CatchHandler @ 0034d920 */

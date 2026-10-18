@@ -22,17 +22,7 @@ void Walaber::WidgetManager::updateLayerCount(int p0)
 
 
 
-/* ok  address 0x36ace8  size 116 */
-/* mangled: _ZN7Walaber13WidgetManagerC1EPNS_25WidgetManagerEventHandlerERKNS_7Vector2E */
-/* Walaber::WidgetManager::WidgetManager(Walaber::WidgetManagerEventHandler*, Walaber::Vector2 const&) */
-
-/* Walaber::WidgetManager::WidgetManager(Walaber::WidgetManagerEventHandler*, Walaber::Vector2
-   const&) */
-
-void Walaber::WidgetManager::WidgetManager
-               (Walaber__WidgetManagerEventHandler *p0,Walaber__Vector2 *p1)
-
-{
+/* ok  address 0x36ace8  size 116 */Walaber::WidgetManager::WidgetManager(Walaber__WidgetManagerEventHandler *p0,Walaber__Vector2 *p1){
   undefined8 *in_x2;
   undefined8 uVar1;
   
@@ -57,15 +47,7 @@ void Walaber::WidgetManager::WidgetManager
 
 
 
-/* ok  address 0x36ad5c  size 204 */
-/* mangled: _ZN7Walaber13WidgetManagerD1Ev */
-/* Walaber::WidgetManager::~WidgetManager() */
-
-/* Walaber::WidgetManager::~WidgetManager() */
-
-void Walaber::WidgetManager::~WidgetManager(long param_1)
-
-{
+/* ok  address 0x36ad5c  size 204 */Walaber::WidgetManager::~WidgetManager(){
   bool bVar1;
   long *plVar2;
   long lVar3;
@@ -1944,15 +1926,7 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
 
 
 
-/* ok  address 0x49ca28  size 464 */
-/* mangled: _ZN7Walaber13WidgetManagerC2ERKS0_ */
-/* Walaber::WidgetManager::WidgetManager(Walaber::WidgetManager const&) */
-
-/* Walaber::WidgetManager::WidgetManager(Walaber::WidgetManager const&) */
-
-void Walaber::WidgetManager::WidgetManager(Walaber__WidgetManager *p0)
-
-{
+/* ok  address 0x49ca28  size 464 */Walaber::WidgetManager::WidgetManager(Walaber__WidgetManager *p0){
   undefined2 uVar1;
   bool bVar2;
   long in_x1;

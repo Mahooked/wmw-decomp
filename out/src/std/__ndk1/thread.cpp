@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5efd9c  size 24 */
-/* mangled: _ZNSt6__ndk16threadD1Ev */
-/* std::__ndk1::thread::~thread() */
-
-/* std::__ndk1::thread::~thread() */
-
-void std::__ndk1::thread::~thread(long *param_1)
-
-{
+/* ok  address 0x5efd9c  size 24 */std::__ndk1::thread::~thread(){
   if (*param_1 == 0) {
     return;
   }

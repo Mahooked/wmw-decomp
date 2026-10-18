@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2c2198  size 260 */
-/* mangled: _ZN7Walaber10GraphicsGL5StateC2Ev */
-/* Walaber::GraphicsGL::State::State() */
-
-/* Walaber::GraphicsGL::State::State() */
-
-void Walaber::GraphicsGL::State::State()
-
-{
+/* ok  address 0x2c2198  size 260 */Walaber::GraphicsGL::State::State(){
   undefined8 *puVar2;
   long lVar3;
   undefined8 uStack_48;

@@ -34,29 +34,13 @@ void Walaber::PCSNode::setName(long param_1,byte *param_2)
 
 
 
-/* ok  address 0x3eb04c  size 4 */
-/* mangled: _ZN7Walaber7PCSNodeD2Ev */
-/* Walaber::PCSNode::~PCSNode() */
-
-/* Walaber::PCSNode::~PCSNode() */
-
-void Walaber::PCSNode::~PCSNode(void)
-
-{
+/* ok  address 0x3eb04c  size 4 */Walaber::PCSNode::~PCSNode(){
   return;
 }
 
 
 
-/* ok  address 0x3eb050  size 4 */
-/* mangled: _ZN7Walaber7PCSNodeD0Ev */
-/* Walaber::PCSNode::~PCSNode() */
-
-/* Walaber::PCSNode::~PCSNode() */
-
-void Walaber::PCSNode::~PCSNode(void *p0)
-
-{
+/* ok  address 0x3eb050  size 4 */Walaber::PCSNode::~PCSNode(){
   operator_delete(p0);
   return;
 }

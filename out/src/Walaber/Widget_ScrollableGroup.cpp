@@ -83,17 +83,7 @@ Walaber::Widget_ScrollableGroup::operator=(Walaber__Widget_ScrollableGroup *p0)
 
 
 
-/* ok  address 0x387368  size 200 */
-/* mangled: _ZN7Walaber22Widget_ScrollableGroupC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup(int, Walaber::Vector2, Walaber::Vector2)
-    */
-
-void Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x387368  size 200 */Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
@@ -159,15 +149,7 @@ void Walaber::Widget_ScrollableGroup::init(long param_1)
 
 
 
-/* ok  address 0x3874c4  size 68 */
-/* mangled: _ZN7Walaber22Widget_ScrollableGroupD1Ev */
-/* Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup() */
-
-/* Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup() */
-
-void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup()
-
-{
+/* ok  address 0x3874c4  size 68 */Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(){
   void *p0;
   
   p0 = (void *)this[0x30];
@@ -183,15 +165,7 @@ void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup()
 
 
 
-/* ok  address 0x387508  size 36 */
-/* mangled: _ZN7Walaber22Widget_ScrollableGroupD0Ev */
-/* Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup() */
-
-/* Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup() */
-
-void Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(void *param_1)
-
-{
+/* ok  address 0x387508  size 36 */Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(){
   Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup();
   operator delete(param_1);
   return;

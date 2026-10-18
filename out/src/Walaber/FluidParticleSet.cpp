@@ -1487,15 +1487,7 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
 
 
 
-/* ok  address 0x4044fc  size 108 */
-/* mangled: _ZN7Walaber16FluidParticleSetC2Ev */
-/* Walaber::FluidParticleSet::FluidParticleSet() */
-
-/* Walaber::FluidParticleSet::FluidParticleSet() */
-
-void Walaber::FluidParticleSet::FluidParticleSet()
-
-{
+/* ok  address 0x4044fc  size 108 */Walaber::FluidParticleSet::FluidParticleSet(){
   *this = 0;
   this[1] = 0;
   this[5] = 0;
@@ -1513,15 +1505,7 @@ void Walaber::FluidParticleSet::FluidParticleSet()
 
 
 
-/* ok  address 0x405b2c  size 76 */
-/* mangled: _ZN7Walaber16FluidParticleSetD2Ev */
-/* Walaber::FluidParticleSet::~FluidParticleSet() */
-
-/* Walaber::FluidParticleSet::~FluidParticleSet() */
-
-void Walaber::FluidParticleSet::~FluidParticleSet()
-
-{
+/* ok  address 0x405b2c  size 76 */Walaber::FluidParticleSet::~FluidParticleSet(){
   void *p0;
   
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 8);

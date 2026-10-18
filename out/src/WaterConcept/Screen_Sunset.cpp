@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5654f0  size 140 */
-/* mangled: _ZN12WaterConcept13Screen_SunsetC1Ev */
-/* WaterConcept::Screen_Sunset::Screen_Sunset() */
-
-/* WaterConcept::Screen_Sunset::Screen_Sunset() */
-
-void WaterConcept::Screen_Sunset::Screen_Sunset()
-
-{
+/* ok  address 0x5654f0  size 140 */WaterConcept::Screen_Sunset::Screen_Sunset(){
   WaterConcept::WCScreen::WCScreen(this,0x26);
                     /* try { // try from 00565510 to 0056551b has its CatchHandler @ 00565568 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -26,15 +18,7 @@ void WaterConcept::Screen_Sunset::Screen_Sunset()
 
 
 
-/* ok  address 0x56557c  size 84 */
-/* mangled: _ZN12WaterConcept13Screen_SunsetD1Ev */
-/* WaterConcept::Screen_Sunset::~Screen_Sunset() */
-
-/* WaterConcept::Screen_Sunset::~Screen_Sunset() */
-
-void WaterConcept::Screen_Sunset::~Screen_Sunset()
-
-{
+/* ok  address 0x56557c  size 84 */WaterConcept::Screen_Sunset::~Screen_Sunset(){
   *this = &PTR__Screen_Sunset_00715a18;
   this[4] = &PTR_handleEvent_00715ad0;
   this[0x12] = &PTR__Screen_Sunset_00715af0;
@@ -46,15 +30,7 @@ void WaterConcept::Screen_Sunset::~Screen_Sunset()
 
 
 
-/* ok  address 0x5655d8  size 36 */
-/* mangled: _ZN12WaterConcept13Screen_SunsetD0Ev */
-/* WaterConcept::Screen_Sunset::~Screen_Sunset() */
-
-/* WaterConcept::Screen_Sunset::~Screen_Sunset() */
-
-void WaterConcept::Screen_Sunset::~Screen_Sunset(void *param_1)
-
-{
+/* ok  address 0x5655d8  size 36 */WaterConcept::Screen_Sunset::~Screen_Sunset(){
   WaterConcept::Screen_Sunset::~Screen_Sunset();
   operator delete(param_1);
   return;

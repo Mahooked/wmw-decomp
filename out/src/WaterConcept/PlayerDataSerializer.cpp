@@ -49,29 +49,13 @@ void WaterConcept::PlayerDataSerializer::resetAll(void)
 
 
 
-/* ok  address 0x435200  size 4 */
-/* mangled: _ZN12WaterConcept20PlayerDataSerializerC1Ev */
-/* WaterConcept::PlayerDataSerializer::PlayerDataSerializer() */
-
-/* WaterConcept::PlayerDataSerializer::PlayerDataSerializer() */
-
-void WaterConcept::PlayerDataSerializer::PlayerDataSerializer(void)
-
-{
+/* ok  address 0x435200  size 4 */WaterConcept::PlayerDataSerializer::PlayerDataSerializer(void){
   return;
 }
 
 
 
-/* ok  address 0x435204  size 4 */
-/* mangled: _ZN12WaterConcept20PlayerDataSerializerD1Ev */
-/* WaterConcept::PlayerDataSerializer::~PlayerDataSerializer() */
-
-/* WaterConcept::PlayerDataSerializer::~PlayerDataSerializer() */
-
-void WaterConcept::PlayerDataSerializer::~PlayerDataSerializer(void)
-
-{
+/* ok  address 0x435204  size 4 */WaterConcept::PlayerDataSerializer::~PlayerDataSerializer(){
   return;
 }
 

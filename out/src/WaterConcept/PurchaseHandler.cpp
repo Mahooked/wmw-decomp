@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x43d544  size 60 */
-/* mangled: _ZN12WaterConcept15PurchaseHandlerC1Ev */
-/* WaterConcept::PurchaseHandler::PurchaseHandler() */
-
-/* WaterConcept::PurchaseHandler::PurchaseHandler() */
-
-void WaterConcept::PurchaseHandler::PurchaseHandler()
-
-{
+/* ok  address 0x43d544  size 60 */WaterConcept::PurchaseHandler::PurchaseHandler(){
   Walaber::MessageReceiver::MessageReceiver(this,0x10);
   this[3] = 0;
   this[4] = 0;
@@ -22,15 +14,7 @@ void WaterConcept::PurchaseHandler::PurchaseHandler()
 
 
 
-/* ok  address 0x43d580  size 64 */
-/* mangled: _ZN12WaterConcept15PurchaseHandlerD1Ev */
-/* WaterConcept::PurchaseHandler::~PurchaseHandler() */
-
-/* WaterConcept::PurchaseHandler::~PurchaseHandler() */
-
-void WaterConcept::PurchaseHandler::~PurchaseHandler()
-
-{
+/* ok  address 0x43d580  size 64 */WaterConcept::PurchaseHandler::~PurchaseHandler(){
   *this = &PTR__PurchaseHandler_007113c8;
   if ((*(byte *)(this + 2) & 1) != 0) {
     operator delete((void *)this[4]);
@@ -41,15 +25,7 @@ void WaterConcept::PurchaseHandler::~PurchaseHandler()
 
 
 
-/* ok  address 0x43d5c0  size 36 */
-/* mangled: _ZN12WaterConcept15PurchaseHandlerD0Ev */
-/* WaterConcept::PurchaseHandler::~PurchaseHandler() */
-
-/* WaterConcept::PurchaseHandler::~PurchaseHandler() */
-
-void WaterConcept::PurchaseHandler::~PurchaseHandler(void *param_1)
-
-{
+/* ok  address 0x43d5c0  size 36 */WaterConcept::PurchaseHandler::~PurchaseHandler(){
   WaterConcept::PurchaseHandler::~PurchaseHandler();
   operator delete(param_1);
   return;

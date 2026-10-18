@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3827f4  size 224 */
-/* mangled: _ZN7Walaber18Widget_ProgressBarC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_ProgressBar::Widget_ProgressBar(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x3827f4  size 224 */Walaber::Widget_ProgressBar::Widget_ProgressBar(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -68,19 +60,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
 
 
 
-/* ok  address 0x382928  size 504 */
-/* mangled: _ZN7Walaber18Widget_ProgressBarC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_fNS0_8FillModeE */
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float, Walaber::Widget_ProgressBar::FillMode) */
-
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float,
-   Walaber::Widget_ProgressBar::FillMode) */
-
-void Walaber::Widget_ProgressBar::Widget_ProgressBar
-               (float param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8)
-
-{
+/* ok  address 0x382928  size 504 */Walaber::Widget_ProgressBar::Widget_ProgressBar(float param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -151,20 +131,7 @@ void Walaber::Widget_ProgressBar::Widget_ProgressBar
 
 
 
-/* ok  address 0x382b20  size 496 */
-/* mangled: _ZN7Walaber18Widget_ProgressBarC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_ffffNS0_8FillModeE */
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float, float, float, float, Walaber::Widget_ProgressBar::FillMode) */
-
-/* Walaber::Widget_ProgressBar::Widget_ProgressBar(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float, float, float,
-   float, Walaber::Widget_ProgressBar::FillMode) */
-
-void Walaber::Widget_ProgressBar::Widget_ProgressBar
-               (undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 *param_5,undefined8 param_6,undefined8 *param_7,undefined8 *param_8,
-               long *param_9,long *param_10,undefined4 param_11)
-
-{
+/* ok  address 0x382b20  size 496 */Walaber::Widget_ProgressBar::Widget_ProgressBar(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 *param_5,undefined8 param_6,undefined8 *param_7,undefined8 *param_8, long *param_9,long *param_10,undefined4 param_11){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -307,15 +274,7 @@ void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 
 
-/* ok  address 0x382f14  size 64 */
-/* mangled: _ZN7Walaber18Widget_ProgressBarD1Ev */
-/* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
-
-/* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
-
-void Walaber::Widget_ProgressBar::~Widget_ProgressBar()
-
-{
+/* ok  address 0x382f14  size 64 */Walaber::Widget_ProgressBar::~Widget_ProgressBar(){
   *this = &PTR__Widget_ProgressBar_0070f568;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
@@ -325,15 +284,7 @@ void Walaber::Widget_ProgressBar::~Widget_ProgressBar()
 
 
 
-/* ok  address 0x382f54  size 36 */
-/* mangled: _ZN7Walaber18Widget_ProgressBarD0Ev */
-/* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
-
-/* Walaber::Widget_ProgressBar::~Widget_ProgressBar() */
-
-void Walaber::Widget_ProgressBar::~Widget_ProgressBar(void *param_1)
-
-{
+/* ok  address 0x382f54  size 36 */Walaber::Widget_ProgressBar::~Widget_ProgressBar(){
   Walaber::Widget_ProgressBar::~Widget_ProgressBar();
   operator delete(param_1);
   return;

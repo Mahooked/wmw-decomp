@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x49aa94  size 8 */
-/* mangled: _ZThn488_N12WaterConcept15IAPNotificationD1Ev */
-/* non-virtual thunk to WaterConcept::IAPNotification::~IAPNotification() */
-
-/* non-virtual thunk to WaterConcept::IAPNotification::~IAPNotification() */
-
-void non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(long param_1)
-
-{
+/* ok  address 0x49aa94  size 8 */non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(){
   WaterConcept::IAPNotification::~IAPNotification(param_1 + -0x1e8);
   return;
 }
 
 
 
-/* ok  address 0x49aac0  size 40 */
-/* mangled: _ZThn488_N12WaterConcept15IAPNotificationD0Ev */
-/* non-virtual thunk to WaterConcept::IAPNotification::~IAPNotification() */
-
-/* non-virtual thunk to WaterConcept::IAPNotification::~IAPNotification() */
-
-void non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(long param_1)
-
-{
+/* ok  address 0x49aac0  size 40 */non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(){
   WaterConcept::IAPNotification::~IAPNotification((void *)(param_1 + -0x1e8));
   operator delete((void *)(param_1 + -0x1e8));
   return;

@@ -292,19 +292,7 @@ void Walaber::ProgrammaticTexture2D::reload(long *param_1,long *param_2)
 
 
 
-/* ok  address 0x3954d4  size 112 */
-/* mangled: _ZN7Walaber21ProgrammaticTexture2DC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceE */
-/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
-
-/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int, unsigned
-   int, Walaber::TextureInMemoryColorspace) */
-
-void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
-               (undefined8 *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5)
-
-{
+/* ok  address 0x3954d4  size 112 */Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(undefined8 *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5){
   Walaber::Texture::Texture(param_1,param_2,3);
   *param_1 = &PTR__ProgrammaticTexture2D_00710068;
                     /* try { // try from 0039550c to 0039551f has its CatchHandler @ 00395530 */
@@ -314,20 +302,7 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
 
 
 
-/* ok  address 0x395698  size 232 */
-/* mangled: _ZN7Walaber21ProgrammaticTexture2DC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEjjNS_25TextureInMemoryColorspaceENS_9SharedPtrINS1_6vectorINS_5ColorENS5_ISD_EEEEEE */
-/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, unsigned int, unsigned int, Walaber::TextureInMemoryColorspace, Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>) */
-
-/* Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, unsigned int, unsigned
-   int, Walaber::TextureInMemoryColorspace, Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color,
-   std::__ndk1::allocator<Walaber::Color> > >) */
-
-void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
-               (long *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4,
-               undefined4 param_5,long *param_6)
-
-{
+/* ok  address 0x395698  size 232 */Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(long *param_1,undefined8 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,long *param_6){
   long lStack_58;
   int *piStack_50;
   
@@ -348,15 +323,7 @@ void Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D
 
 
 
-/* ok  address 0x3959b8  size 116 */
-/* mangled: _ZN7Walaber21ProgrammaticTexture2DD2Ev */
-/* Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D() */
-
-/* Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D() */
-
-void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D()
-
-{
+/* ok  address 0x3959b8  size 116 */Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(){
   *this = &PTR__ProgrammaticTexture2D_00710068;
                     /* try { // try from 003959d8 to 00395a07 has its CatchHandler @ 00395a18 */
   Walaber::Logger::printf("Walaber",1,"ProgrammaticTexture2D::~ProgrammaticTexture2D()\n");
@@ -369,15 +336,7 @@ void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D()
 
 
 
-/* ok  address 0x395a2c  size 36 */
-/* mangled: _ZN7Walaber21ProgrammaticTexture2DD0Ev */
-/* Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D() */
-
-/* Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D() */
-
-void Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(void *param_1)
-
-{
+/* ok  address 0x395a2c  size 36 */Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D(){
   Walaber::ProgrammaticTexture2D::~ProgrammaticTexture2D();
   operator delete(param_1);
   return;

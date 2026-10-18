@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a18f0  size 8 */
-/* mangled: _ZThn144_N12WaterConcept19Screen_AchievementsD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-/* non-virtual thunk to WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(long param_1)
-
-{
+/* ok  address 0x4a18f0  size 8 */non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(){
   WaterConcept::Screen_Achievements::~Screen_Achievements(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4a191c  size 40 */
-/* mangled: _ZThn144_N12WaterConcept19Screen_AchievementsD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-/* non-virtual thunk to WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(long param_1)
-
-{
+/* ok  address 0x4a191c  size 40 */non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(){
   WaterConcept::Screen_Achievements::~Screen_Achievements((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

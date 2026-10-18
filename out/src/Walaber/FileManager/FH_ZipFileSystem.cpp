@@ -3,19 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d3860  size 412 */
-/* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystemC1ERKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_ */
-/* Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x3d3860  size 412 */Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   undefined8 uVar2;
   byte *pbVar3;
   byte *pbVar4;
@@ -67,15 +55,7 @@ void Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem
 
 
 
-/* ok  address 0x3d39fc  size 104 */
-/* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystemD1Ev */
-/* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
-
-/* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
-
-void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem()
-
-{
+/* ok  address 0x3d39fc  size 104 */Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(){
   void *p0;
   
   p0 = (void *)this[1];
@@ -95,15 +75,7 @@ void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem()
 
 
 
-/* ok  address 0x3d3a64  size 36 */
-/* mangled: _ZN7Walaber11FileManager16FH_ZipFileSystemD0Ev */
-/* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
-
-/* Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem() */
-
-void Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(void *param_1)
-
-{
+/* ok  address 0x3d3a64  size 36 */Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(){
   Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem();
   operator delete(param_1);
   return;

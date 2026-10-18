@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ffc84  size 20 */
-/* mangled: _ZN7Walaber12PropertyListC1Ev */
-/* Walaber::PropertyList::PropertyList() */
-
-/* Walaber::PropertyList::PropertyList() */
-
-void Walaber::PropertyList::PropertyList()
-
-{
+/* ok  address 0x3ffc84  size 20 */Walaber::PropertyList::PropertyList(){
   this[1] = 0;
   this[2] = 0;
   *this = this + 1;
@@ -20,15 +12,7 @@ void Walaber::PropertyList::PropertyList()
 
 
 
-/* ok  address 0x3ffc98  size 8 */
-/* mangled: _ZN7Walaber12PropertyListD1Ev */
-/* Walaber::PropertyList::~PropertyList() */
-
-/* Walaber::PropertyList::~PropertyList() */
-
-void Walaber::PropertyList::~PropertyList(long param_1)
-
-{
+/* ok  address 0x3ffc98  size 8 */Walaber::PropertyList::~PropertyList(){
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
   return;
 }

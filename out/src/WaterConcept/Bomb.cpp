@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4776e4  size 184 */
-/* mangled: _ZN12WaterConcept4BombC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::Bomb::Bomb(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::Bomb::Bomb(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x4776e4  size 184 */WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
@@ -34,15 +26,7 @@ void WaterConcept::Bomb::Bomb(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 
 
-/* ok  address 0x47779c  size 56 */
-/* mangled: _ZN12WaterConcept4BombD1Ev */
-/* WaterConcept::Bomb::~Bomb() */
-
-/* WaterConcept::Bomb::~Bomb() */
-
-void WaterConcept::Bomb::~Bomb()
-
-{
+/* ok  address 0x47779c  size 56 */WaterConcept::Bomb::~Bomb(){
   *this = &PTR__Bomb_00711548;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x77);
   WaterConcept::InteractiveObject::~InteractiveObject(this);
@@ -51,15 +35,7 @@ void WaterConcept::Bomb::~Bomb()
 
 
 
-/* ok  address 0x4777d4  size 64 */
-/* mangled: _ZN12WaterConcept4BombD0Ev */
-/* WaterConcept::Bomb::~Bomb() */
-
-/* WaterConcept::Bomb::~Bomb() */
-
-void WaterConcept::Bomb::~Bomb()
-
-{
+/* ok  address 0x4777d4  size 64 */WaterConcept::Bomb::~Bomb(){
   *this = &PTR__Bomb_00711548;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x77);
   WaterConcept::InteractiveObject::~InteractiveObject(this);

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4b64d4  size 816 */
-/* mangled: _ZN12WaterConcept14Screen_CreditsC1Ev */
-/* WaterConcept::Screen_Credits::Screen_Credits() */
-
-/* WaterConcept::Screen_Credits::Screen_Credits() */
-
-void WaterConcept::Screen_Credits::Screen_Credits()
-
-{
+/* ok  address 0x4b64d4  size 816 */WaterConcept::Screen_Credits::Screen_Credits(){
   undefined8 uVar2;
   undefined8 uStack_c0;
   undefined8 uStack_b8;
@@ -120,15 +112,7 @@ void WaterConcept::Screen_Credits::Screen_Credits()
 
 
 
-/* ok  address 0x4b6804  size 100 */
-/* mangled: _ZN12WaterConcept14Screen_CreditsD1Ev */
-/* WaterConcept::Screen_Credits::~Screen_Credits() */
-
-/* WaterConcept::Screen_Credits::~Screen_Credits() */
-
-void WaterConcept::Screen_Credits::~Screen_Credits()
-
-{
+/* ok  address 0x4b6804  size 100 */WaterConcept::Screen_Credits::~Screen_Credits(){
   *this = &PTR__Screen_Credits_007132e8;
   this[4] = &PTR_handleEvent_007133a0;
   this[0x12] = &PTR__Screen_Credits_007133c0;
@@ -142,15 +126,7 @@ void WaterConcept::Screen_Credits::~Screen_Credits()
 
 
 
-/* ok  address 0x4b6870  size 36 */
-/* mangled: _ZN12WaterConcept14Screen_CreditsD0Ev */
-/* WaterConcept::Screen_Credits::~Screen_Credits() */
-
-/* WaterConcept::Screen_Credits::~Screen_Credits() */
-
-void WaterConcept::Screen_Credits::~Screen_Credits(void *param_1)
-
-{
+/* ok  address 0x4b6870  size 36 */WaterConcept::Screen_Credits::~Screen_Credits(){
   WaterConcept::Screen_Credits::~Screen_Credits();
   operator delete(param_1);
   return;

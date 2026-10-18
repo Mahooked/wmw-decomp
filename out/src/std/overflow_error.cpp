@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f5320  size 92 */
-/* mangled: _ZNSt14overflow_errorD0Ev */
-/* std::overflow_error::~overflow_error() */
-
-/* std::overflow_error::~overflow_error() */
-
-void std::overflow_error::~overflow_error()
-
-{
+/* ok  address 0x5f5320  size 92 */std::overflow_error::~overflow_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

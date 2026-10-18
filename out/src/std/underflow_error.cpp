@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f537c  size 92 */
-/* mangled: _ZNSt15underflow_errorD0Ev */
-/* std::underflow_error::~underflow_error() */
-
-/* std::underflow_error::~underflow_error() */
-
-void std::underflow_error::~underflow_error()
-
-{
+/* ok  address 0x5f537c  size 92 */std::underflow_error::~underflow_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

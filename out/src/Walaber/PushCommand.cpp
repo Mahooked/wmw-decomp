@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3e89c8  size 36 */
-/* mangled: _ZN7Walaber11PushCommandC1Ev */
-/* Walaber::PushCommand::PushCommand() */
-
-/* Walaber::PushCommand::PushCommand() */
-
-void Walaber::PushCommand::PushCommand(long param_1)
-
-{
+/* ok  address 0x3e89c8  size 36 */Walaber::PushCommand::PushCommand(long param_1){
   *(long *)param_1 = param_1;
   *(long *)(param_1 + 8) = param_1;
   *(undefined8 *)(param_1 + 0x10) = 0;
@@ -25,15 +17,7 @@ void Walaber::PushCommand::PushCommand(long param_1)
 
 
 
-/* ok  address 0x3e89ec  size 44 */
-/* mangled: _ZN7Walaber11PushCommandD1Ev */
-/* Walaber::PushCommand::~PushCommand() */
-
-/* Walaber::PushCommand::~PushCommand() */
-
-void Walaber::PushCommand::~PushCommand(long param_1)
-
-{
+/* ok  address 0x3e89ec  size 44 */Walaber::PushCommand::~PushCommand(){
   std::__ndk1::__list_imp<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::clear();
   std::__ndk1::__list_imp<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::clear(param_1 + 0x18);
   std::__ndk1::__list_imp<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::clear(param_1);

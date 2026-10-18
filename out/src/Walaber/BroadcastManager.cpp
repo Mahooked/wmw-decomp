@@ -93,15 +93,7 @@ void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0)
 
 
 
-/* ok  address 0x3e86e4  size 92 */
-/* mangled: _ZN7Walaber16BroadcastManagerC1Ev */
-/* Walaber::BroadcastManager::BroadcastManager() */
-
-/* Walaber::BroadcastManager::BroadcastManager() */
-
-void Walaber::BroadcastManager::BroadcastManager()
-
-{
+/* ok  address 0x3e86e4  size 92 */Walaber::BroadcastManager::BroadcastManager(){
   *this = 0;
   this[1] = 0;
   this[2] = 0;
@@ -112,15 +104,7 @@ void Walaber::BroadcastManager::BroadcastManager()
 
 
 
-/* ok  address 0x3e8740  size 36 */
-/* mangled: _ZN7Walaber16BroadcastManagerD1Ev */
-/* Walaber::BroadcastManager::~BroadcastManager() */
-
-/* Walaber::BroadcastManager::~BroadcastManager() */
-
-void Walaber::BroadcastManager::~BroadcastManager()
-
-{
+/* ok  address 0x3e8740  size 36 */Walaber::BroadcastManager::~BroadcastManager(){
   void *p0;
   
   mInstancePtr = 0;

@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5450ac  size 8 */
-/* mangled: _ZThn144_N12WaterConcept12Screen_PopupD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_Popup::~Screen_Popup() */
-
-/* non-virtual thunk to WaterConcept::Screen_Popup::~Screen_Popup() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Popup::~Screen_Popup(long param_1)
-
-{
+/* ok  address 0x5450ac  size 8 */non_virtual_thunk_to_WaterConcept::Screen_Popup::~Screen_Popup(){
   WaterConcept::Screen_Popup::~Screen_Popup(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x5450d8  size 40 */
-/* mangled: _ZThn144_N12WaterConcept12Screen_PopupD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_Popup::~Screen_Popup() */
-
-/* non-virtual thunk to WaterConcept::Screen_Popup::~Screen_Popup() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Popup::~Screen_Popup(long param_1)
-
-{
+/* ok  address 0x5450d8  size 40 */non_virtual_thunk_to_WaterConcept::Screen_Popup::~Screen_Popup(){
   WaterConcept::Screen_Popup::~Screen_Popup((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

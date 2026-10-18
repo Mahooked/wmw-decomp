@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x35dc68  size 64 */
-/* mangled: _ZN7Walaber11SpriteBatchC1Ev */
-/* Walaber::SpriteBatch::SpriteBatch() */
-
-/* Walaber::SpriteBatch::SpriteBatch() */
-
-void Walaber::SpriteBatch::SpriteBatch()
-
-{
+/* ok  address 0x35dc68  size 64 */Walaber::SpriteBatch::SpriteBatch(){
   this[1] = 0;
   *(undefined4 *)(this + 5) = 0xffffffff;
   this[10] = this + 10;
@@ -30,15 +22,7 @@ void Walaber::SpriteBatch::SpriteBatch()
 
 
 
-/* ok  address 0x35dca8  size 248 */
-/* mangled: _ZN7Walaber11SpriteBatchC1ERKS0_ */
-/* Walaber::SpriteBatch::SpriteBatch(Walaber::SpriteBatch const&) */
-
-/* Walaber::SpriteBatch::SpriteBatch(Walaber::SpriteBatch const&) */
-
-void Walaber::SpriteBatch::SpriteBatch(Walaber__SpriteBatch *p0)
-
-{
+/* ok  address 0x35dca8  size 248 */Walaber::SpriteBatch::SpriteBatch(Walaber__SpriteBatch *p0){
   bool bVar1;
   undefined8 *in_x1;
   long *plVar2;
@@ -128,15 +112,7 @@ Walaber__SpriteBatch * Walaber::SpriteBatch::operator=(Walaber__SpriteBatch *p0)
 
 
 
-/* ok  address 0x35ddf4  size 276 */
-/* mangled: _ZN7Walaber11SpriteBatchD1Ev */
-/* Walaber::SpriteBatch::~SpriteBatch() */
-
-/* Walaber::SpriteBatch::~SpriteBatch() */
-
-void Walaber::SpriteBatch::~SpriteBatch(long param_1)
-
-{
+/* ok  address 0x35ddf4  size 276 */Walaber::SpriteBatch::~SpriteBatch(){
   long lVar1;
   long *plVar2;
   void *pvVar3;

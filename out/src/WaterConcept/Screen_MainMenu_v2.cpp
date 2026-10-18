@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x516f6c  size 776 */
-/* mangled: _ZN12WaterConcept18Screen_MainMenu_v2C1Ev */
-/* WaterConcept::Screen_MainMenu_v2::Screen_MainMenu_v2() */
-
-/* WaterConcept::Screen_MainMenu_v2::Screen_MainMenu_v2() */
-
-void WaterConcept::Screen_MainMenu_v2::Screen_MainMenu_v2()
-
-{
+/* ok  address 0x516f6c  size 776 */WaterConcept::Screen_MainMenu_v2::Screen_MainMenu_v2(){
   undefined8 uVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
@@ -123,15 +115,7 @@ void WaterConcept::Screen_MainMenu_v2::Screen_MainMenu_v2()
 
 
 
-/* ok  address 0x517274  size 460 */
-/* mangled: _ZN12WaterConcept18Screen_MainMenu_v2D1Ev */
-/* WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2() */
-
-/* WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2() */
-
-void WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2()
-
-{
+/* ok  address 0x517274  size 460 */WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2(){
   ulong p1;
   undefined8 *puVar1;
   undefined8 *puVar2;
@@ -250,15 +234,7 @@ void WaterConcept::Screen_MainMenu_v2::_unloadSprites(long param_1)
 
 
 
-/* ok  address 0x517494  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_MainMenu_v2D0Ev */
-/* WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2() */
-
-/* WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2() */
-
-void WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2(void *param_1)
-
-{
+/* ok  address 0x517494  size 36 */WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2(){
   WaterConcept::Screen_MainMenu_v2::~Screen_MainMenu_v2();
   operator delete(param_1);
   return;

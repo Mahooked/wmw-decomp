@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f520c  size 92 */
-/* mangled: _ZNSt12length_errorD0Ev */
-/* std::length_error::~length_error() */
-
-/* std::length_error::~length_error() */
-
-void std::length_error::~length_error()
-
-{
+/* ok  address 0x5f520c  size 92 */std::length_error::~length_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

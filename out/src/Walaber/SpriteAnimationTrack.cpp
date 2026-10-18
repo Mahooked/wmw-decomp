@@ -170,15 +170,7 @@ void Walaber::SpriteAnimationTrack::apply(float p0)
 
 
 
-/* ok  address 0x33a530  size 32 */
-/* mangled: _ZN7Walaber20SpriteAnimationTrackC1Ev */
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack() */
-
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack() */
-
-void Walaber::SpriteAnimationTrack::SpriteAnimationTrack()
-
-{
+/* ok  address 0x33a530  size 32 */Walaber::SpriteAnimationTrack::SpriteAnimationTrack(){
   *(undefined4 *)(this + 7) = 0;
   this[6] = 0;
   this[3] = 0;
@@ -193,15 +185,7 @@ void Walaber::SpriteAnimationTrack::SpriteAnimationTrack()
 
 
 
-/* ok  address 0x33a550  size 32 */
-/* mangled: _ZN7Walaber20SpriteAnimationTrackC1EPNS_6SpriteE */
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::Sprite*) */
-
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::Sprite*) */
-
-void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__Sprite *p0)
-
-{
+/* ok  address 0x33a550  size 32 */Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__Sprite *p0){
   ulong in_x1;
   
   *(undefined8 *)&p0->field_0x28 = 0;
@@ -218,15 +202,7 @@ void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__Sprite *p0)
 
 
 
-/* ok  address 0x33a570  size 140 */
-/* mangled: _ZN7Walaber20SpriteAnimationTrackC1ERKS0_ */
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::SpriteAnimationTrack const&) */
-
-/* Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber::SpriteAnimationTrack const&) */
-
-void Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__SpriteAnimationTrack *p0)
-
-{
+/* ok  address 0x33a570  size 140 */Walaber::SpriteAnimationTrack::SpriteAnimationTrack(Walaber__SpriteAnimationTrack *p0){
   ulong *in_x1;
   int *piVar1;
   ulong uVar2;
@@ -279,15 +255,7 @@ Walaber::SpriteAnimationTrack::operator=(Walaber__SpriteAnimationTrack *p0)
 
 
 
-/* ok  address 0x33a704  size 40 */
-/* mangled: _ZN7Walaber20SpriteAnimationTrackD1Ev */
-/* Walaber::SpriteAnimationTrack::~SpriteAnimationTrack() */
-
-/* Walaber::SpriteAnimationTrack::~SpriteAnimationTrack() */
-
-void Walaber::SpriteAnimationTrack::~SpriteAnimationTrack(long param_1)
-
-{
+/* ok  address 0x33a704  size 40 */Walaber::SpriteAnimationTrack::~SpriteAnimationTrack(){
   std::__ndk1::__vector_base<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::~__vector_base(param_1 + 0x20);
   Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(param_1 + 8);
   return;

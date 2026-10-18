@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ecd08  size 428 */
-/* mangled: _ZN12WaterConcept16Screen_LanguagesC1Ev */
-/* WaterConcept::Screen_Languages::Screen_Languages() */
-
-/* WaterConcept::Screen_Languages::Screen_Languages() */
-
-void WaterConcept::Screen_Languages::Screen_Languages()
-
-{
+/* ok  address 0x4ecd08  size 428 */WaterConcept::Screen_Languages::Screen_Languages(){
   undefined8 uVar2;
   undefined8 uStack_90;
   undefined8 uStack_88;
@@ -63,15 +55,7 @@ void WaterConcept::Screen_Languages::Screen_Languages()
 
 
 
-/* ok  address 0x4eceb4  size 92 */
-/* mangled: _ZN12WaterConcept16Screen_LanguagesD1Ev */
-/* WaterConcept::Screen_Languages::~Screen_Languages() */
-
-/* WaterConcept::Screen_Languages::~Screen_Languages() */
-
-void WaterConcept::Screen_Languages::~Screen_Languages()
-
-{
+/* ok  address 0x4eceb4  size 92 */WaterConcept::Screen_Languages::~Screen_Languages(){
   *this = &PTR__Screen_Languages_007141a8;
   this[4] = &PTR_handleEvent_00714260;
   this[0x12] = &PTR__Screen_Languages_00714280;
@@ -84,15 +68,7 @@ void WaterConcept::Screen_Languages::~Screen_Languages()
 
 
 
-/* ok  address 0x4ecf18  size 36 */
-/* mangled: _ZN12WaterConcept16Screen_LanguagesD0Ev */
-/* WaterConcept::Screen_Languages::~Screen_Languages() */
-
-/* WaterConcept::Screen_Languages::~Screen_Languages() */
-
-void WaterConcept::Screen_Languages::~Screen_Languages(void *param_1)
-
-{
+/* ok  address 0x4ecf18  size 36 */WaterConcept::Screen_Languages::~Screen_Languages(){
   WaterConcept::Screen_Languages::~Screen_Languages();
   operator delete(param_1);
   return;

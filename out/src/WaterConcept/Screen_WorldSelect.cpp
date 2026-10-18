@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x58ad64  size 660 */
-/* mangled: _ZN12WaterConcept18Screen_WorldSelectC1Ev */
-/* WaterConcept::Screen_WorldSelect::Screen_WorldSelect() */
-
-/* WaterConcept::Screen_WorldSelect::Screen_WorldSelect() */
-
-void WaterConcept::Screen_WorldSelect::Screen_WorldSelect()
-
-{
+/* ok  address 0x58ad64  size 660 */WaterConcept::Screen_WorldSelect::Screen_WorldSelect(){
   undefined8 uVar2;
   undefined8 uStack_80;
   undefined8 uStack_78;
@@ -98,15 +90,7 @@ void WaterConcept::Screen_WorldSelect::Screen_WorldSelect()
 
 
 
-/* ok  address 0x58aff8  size 228 */
-/* mangled: _ZN12WaterConcept18Screen_WorldSelectD1Ev */
-/* WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-/* WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-void WaterConcept::Screen_WorldSelect::~Screen_WorldSelect()
-
-{
+/* ok  address 0x58aff8  size 228 */WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(){
   long *plVar1;
   void *pvVar2;
   long lVar3;
@@ -176,15 +160,7 @@ void WaterConcept::Screen_WorldSelect::_unloadLocksmithSprites(long param_1)
 
 
 
-/* ok  address 0x58b128  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_WorldSelectD0Ev */
-/* WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-/* WaterConcept::Screen_WorldSelect::~Screen_WorldSelect() */
-
-void WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(void *param_1)
-
-{
+/* ok  address 0x58b128  size 36 */WaterConcept::Screen_WorldSelect::~Screen_WorldSelect(){
   WaterConcept::Screen_WorldSelect::~Screen_WorldSelect();
   operator delete(param_1);
   return;

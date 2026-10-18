@@ -437,15 +437,7 @@ void std::__ndk1::__assoc_sub_state::__execute(void)
 
 
 
-/* ok  address 0x5f1ba8  size 76 */
-/* mangled: _ZNSt6__ndk117__assoc_sub_stateD2Ev */
-/* std::__ndk1::__assoc_sub_state::~__assoc_sub_state() */
-
-/* std::__ndk1::__assoc_sub_state::~__assoc_sub_state() */
-
-void std::__ndk1::__assoc_sub_state::~__assoc_sub_state()
-
-{
+/* ok  address 0x5f1ba8  size 76 */std::__ndk1::__assoc_sub_state::~__assoc_sub_state(){
   *this = &PTR____assoc_sub_state_007193b8;
   std::__ndk1::condition_variable::~condition_variable(this + 8);
   std::__ndk1::mutex::~mutex(this + 3);
@@ -456,15 +448,7 @@ void std::__ndk1::__assoc_sub_state::~__assoc_sub_state()
 
 
 
-/* ok  address 0x5f1bf4  size 84 */
-/* mangled: _ZNSt6__ndk117__assoc_sub_stateD0Ev */
-/* std::__ndk1::__assoc_sub_state::~__assoc_sub_state() */
-
-/* std::__ndk1::__assoc_sub_state::~__assoc_sub_state() */
-
-void std::__ndk1::__assoc_sub_state::~__assoc_sub_state()
-
-{
+/* ok  address 0x5f1bf4  size 84 */std::__ndk1::__assoc_sub_state::~__assoc_sub_state(){
   *this = &PTR____assoc_sub_state_007193b8;
   std::__ndk1::condition_variable::~condition_variable(this + 8);
   std::__ndk1::mutex::~mutex(this + 3);

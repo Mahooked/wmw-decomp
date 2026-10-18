@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x330fd4  size 228 */
-/* mangled: _ZN7Walaber11AchievementC2ERKS0_ */
-/* Walaber::Achievement::Achievement(Walaber::Achievement const&) */
-
-/* Walaber::Achievement::Achievement(Walaber::Achievement const&) */
-
-void Walaber::Achievement::Achievement(Walaber__Achievement *p0)
-
-{
+/* ok  address 0x330fd4  size 228 */Walaber::Achievement::Achievement(Walaber__Achievement *p0){
   long in_x1;
   
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();

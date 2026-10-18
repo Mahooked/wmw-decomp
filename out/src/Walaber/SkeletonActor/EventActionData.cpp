@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x348088  size 4 */
-/* mangled: _ZN7Walaber13SkeletonActor15EventActionDataD2Ev */
-/* Walaber::SkeletonActor::EventActionData::~EventActionData() */
-
-/* Walaber::SkeletonActor::EventActionData::~EventActionData() */
-
-void Walaber::SkeletonActor::EventActionData::~EventActionData(void)
-
-{
+/* ok  address 0x348088  size 4 */Walaber::SkeletonActor::EventActionData::~EventActionData(){
   return;
 }
 

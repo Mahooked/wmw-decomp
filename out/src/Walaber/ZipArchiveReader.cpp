@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d7210  size 504 */
-/* mangled: _ZN7Walaber16ZipArchiveReaderC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::ZipArchiveReader::ZipArchiveReader(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::ZipArchiveReader::ZipArchiveReader(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2)
-
-{
+/* ok  address 0x3d7210  size 504 */Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2){
   int iVar2;
   long lVar3;
   ulong uVar4;
@@ -87,15 +78,7 @@ LAB_003d7328:
 
 
 
-/* ok  address 0x3d7410  size 76 */
-/* mangled: _ZN7Walaber16ZipArchiveReaderD1Ev */
-/* Walaber::ZipArchiveReader::~ZipArchiveReader() */
-
-/* Walaber::ZipArchiveReader::~ZipArchiveReader() */
-
-void Walaber::ZipArchiveReader::~ZipArchiveReader(long *param_1)
-
-{
+/* ok  address 0x3d7410  size 76 */Walaber::ZipArchiveReader::~ZipArchiveReader(){
   if (*param_1 != 0) {
                     /* try { // try from 003d7428 to 003d7433 has its CatchHandler @ 003d7448 */
     wUnzCloseCurrentFile();

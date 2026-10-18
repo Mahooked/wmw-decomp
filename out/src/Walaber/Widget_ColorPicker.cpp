@@ -74,15 +74,7 @@ Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
 
 
 
-/* ok  address 0x37af8c  size 208 */
-/* mangled: _ZN7Walaber18Widget_ColorPickerC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_ColorPicker::Widget_ColorPicker(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37af8c  size 208 */Walaber::Widget_ColorPicker::Widget_ColorPicker(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -139,17 +131,7 @@ void Walaber::Widget_ColorPicker::init(long param_1)
 
 
 
-/* ok  address 0x37b080  size 392 */
-/* mangled: _ZN7Walaber18Widget_ColorPickerC1EiNS_7Vector2ES1_iif */
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2, int, int, float) */
-
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2, int,
-   int, float) */
-
-void Walaber::Widget_ColorPicker::Widget_ColorPicker
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,int p3,int p4,float p5)
-
-{
+/* ok  address 0x37b080  size 392 */Walaber::Widget_ColorPicker::Widget_ColorPicker(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,int p3,int p4,float p5){
   uint uVar1;
   undefined8 *puVar3;
   undefined4 *puVar4;
@@ -293,20 +275,7 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
 
 
 
-/* ok  address 0x37b39c  size 564 */
-/* mangled: _ZN7Walaber18Widget_ColorPickerC1EiNS_7Vector2ES1_iifiNS_9SharedPtrINS_7TextureEEES4_S4_ */
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2, int, int, float, int, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>) */
-
-/* Walaber::Widget_ColorPicker::Widget_ColorPicker(int, Walaber::Vector2, Walaber::Vector2, int,
-   int, float, int, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>,
-   Walaber::SharedPtr<Walaber::Texture>) */
-
-void Walaber::Widget_ColorPicker::Widget_ColorPicker
-               (undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,int param_6,int param_7,undefined4 param_8,long *param_9,
-               long *param_10,long *param_11)
-
-{
+/* ok  address 0x37b39c  size 564 */Walaber::Widget_ColorPicker::Widget_ColorPicker(undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,int param_6,int param_7,undefined4 param_8,long *param_9, long *param_10,long *param_11){
   uint uVar1;
   undefined4 *puVar3;
   int *piVar4;
@@ -409,15 +378,7 @@ void Walaber::Widget_ColorPicker::Widget_ColorPicker
 
 
 
-/* ok  address 0x37b5d0  size 92 */
-/* mangled: _ZN7Walaber18Widget_ColorPickerD1Ev */
-/* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
-
-/* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
-
-void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x37b5d0  size 92 */Walaber::Widget_ColorPicker::~Widget_ColorPicker(){
   *param_1 = &PTR__Widget_ColorPicker_0070ede8;
   if ((void *)param_1[0x21] != (void *)0x0) {
     operator delete[]((void *)param_1[0x21],param_2);
@@ -432,15 +393,7 @@ void Walaber::Widget_ColorPicker::~Widget_ColorPicker(undefined8 *param_1,ulong 
 
 
 
-/* ok  address 0x37b62c  size 36 */
-/* mangled: _ZN7Walaber18Widget_ColorPickerD0Ev */
-/* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
-
-/* Walaber::Widget_ColorPicker::~Widget_ColorPicker() */
-
-void Walaber::Widget_ColorPicker::~Widget_ColorPicker(void *param_1)
-
-{
+/* ok  address 0x37b62c  size 36 */Walaber::Widget_ColorPicker::~Widget_ColorPicker(){
   Walaber::Widget_ColorPicker::~Widget_ColorPicker();
   operator delete(param_1);
   return;

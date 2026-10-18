@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3377ac  size 40 */
-/* mangled: _ZN7Walaber16AnimationManagerC1Ev */
-/* Walaber::AnimationManager::AnimationManager() */
-
-/* Walaber::AnimationManager::AnimationManager() */
-
-void Walaber::AnimationManager::AnimationManager()
-
-{
+/* ok  address 0x3377ac  size 40 */Walaber::AnimationManager::AnimationManager(){
   this[2] = 0;
   this[3] = 0;
   this[1] = 0;
@@ -27,15 +19,7 @@ void Walaber::AnimationManager::AnimationManager()
 
 
 
-/* ok  address 0x3377d4  size 240 */
-/* mangled: _ZN7Walaber16AnimationManagerC1ERKS0_ */
-/* Walaber::AnimationManager::AnimationManager(Walaber::AnimationManager const&) */
-
-/* Walaber::AnimationManager::AnimationManager(Walaber::AnimationManager const&) */
-
-void Walaber::AnimationManager::AnimationManager(Walaber__AnimationManager *p0)
-
-{
+/* ok  address 0x3377d4  size 240 */Walaber::AnimationManager::AnimationManager(Walaber__AnimationManager *p0){
   bool bVar1;
   undefined8 *in_x1;
   long *plVar2;
@@ -115,15 +99,7 @@ Walaber__AnimationManager * Walaber::AnimationManager::operator=(Walaber__Animat
 
 
 
-/* ok  address 0x337918  size 228 */
-/* mangled: _ZN7Walaber16AnimationManagerD1Ev */
-/* Walaber::AnimationManager::~AnimationManager() */
-
-/* Walaber::AnimationManager::~AnimationManager() */
-
-void Walaber::AnimationManager::~AnimationManager()
-
-{
+/* ok  address 0x337918  size 228 */Walaber::AnimationManager::~AnimationManager(){
   bool bVar1;
   long *plVar2;
   long lVar3;

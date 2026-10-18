@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x48ab20  size 280 */
-/* mangled: _ZN12WaterConcept11MysteryCaveC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::MysteryCave::MysteryCave(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::MysteryCave::MysteryCave(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x48ab20  size 280 */WaterConcept::MysteryCave::MysteryCave(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_420;
@@ -500,16 +492,7 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
 
 
 
-/* ok  address 0x48b6fc  size 180 */
-/* mangled: _ZN12WaterConcept11MysteryCaveD2Ev */
-/* WaterConcept::MysteryCave::~MysteryCave() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* WaterConcept::MysteryCave::~MysteryCave() */
-
-void WaterConcept::MysteryCave::~MysteryCave()
-
-{
+/* ok  address 0x48b6fc  size 180 */WaterConcept::MysteryCave::~MysteryCave(){
   undefined8 uStack_38;
   undefined8 uStack_30;
   
@@ -530,15 +513,7 @@ void WaterConcept::MysteryCave::~MysteryCave()
 
 
 
-/* ok  address 0x48b7b0  size 36 */
-/* mangled: _ZN12WaterConcept11MysteryCaveD0Ev */
-/* WaterConcept::MysteryCave::~MysteryCave() */
-
-/* WaterConcept::MysteryCave::~MysteryCave() */
-
-void WaterConcept::MysteryCave::~MysteryCave(void *param_1)
-
-{
+/* ok  address 0x48b7b0  size 36 */WaterConcept::MysteryCave::~MysteryCave(){
   WaterConcept::MysteryCave::~MysteryCave();
   operator delete(param_1);
   return;

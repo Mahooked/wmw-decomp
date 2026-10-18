@@ -3,17 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x479230  size 176 */
-/* mangled: _ZN12WaterConcept9DirtyWallC1EN7Walaber7Vector2EfS2_PNS_6FluidsE */
-/* WaterConcept::DirtyWall::DirtyWall(Walaber::Vector2, float, Walaber::Vector2, WaterConcept::Fluids*) */
-
-/* WaterConcept::DirtyWall::DirtyWall(Walaber::Vector2, float, Walaber::Vector2,
-   WaterConcept::Fluids*) */
-
-void WaterConcept::DirtyWall::DirtyWall
-               (Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3)
-
-{
+/* ok  address 0x479230  size 176 */WaterConcept::DirtyWall::DirtyWall(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3){
   undefined8 in_x3;
   undefined4 in_register_00005004;
   undefined8 uStack_48;
@@ -37,15 +27,7 @@ void WaterConcept::DirtyWall::DirtyWall
 
 
 
-/* ok  address 0x4792e0  size 72 */
-/* mangled: _ZN12WaterConcept9DirtyWallD1Ev */
-/* WaterConcept::DirtyWall::~DirtyWall() */
-
-/* WaterConcept::DirtyWall::~DirtyWall() */
-
-void WaterConcept::DirtyWall::~DirtyWall()
-
-{
+/* ok  address 0x4792e0  size 72 */WaterConcept::DirtyWall::~DirtyWall(){
   void *p0;
   
   p0 = (void *)this[0x7b];
@@ -61,15 +43,7 @@ void WaterConcept::DirtyWall::~DirtyWall()
 
 
 
-/* ok  address 0x479328  size 36 */
-/* mangled: _ZN12WaterConcept9DirtyWallD0Ev */
-/* WaterConcept::DirtyWall::~DirtyWall() */
-
-/* WaterConcept::DirtyWall::~DirtyWall() */
-
-void WaterConcept::DirtyWall::~DirtyWall(void *param_1)
-
-{
+/* ok  address 0x479328  size 36 */WaterConcept::DirtyWall::~DirtyWall(){
   WaterConcept::DirtyWall::~DirtyWall();
   operator delete(param_1);
   return;

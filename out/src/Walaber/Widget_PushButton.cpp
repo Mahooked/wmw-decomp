@@ -101,15 +101,7 @@ Walaber__Widget_PushButton * Walaber::Widget_PushButton::operator=(Walaber__Widg
 
 
 
-/* ok  address 0x383274  size 444 */
-/* mangled: _ZN7Walaber17Widget_PushButtonC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_PushButton::Widget_PushButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x383274  size 444 */Walaber::Widget_PushButton::Widget_PushButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 uVar3;
   undefined8 *in_x3;
@@ -215,18 +207,7 @@ void Walaber::Widget_PushButton::init(long param_1)
 
 
 
-/* ok  address 0x3834e4  size 516 */
-/* mangled: _ZN7Walaber17Widget_PushButtonC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEEb */
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, bool) */
-
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, bool) */
-
-void Walaber::Widget_PushButton::Widget_PushButton
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6)
-
-{
+/* ok  address 0x3834e4  size 516 */Walaber::Widget_PushButton::Widget_PushButton(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,byte param_6){
   undefined8 uVar2;
   int *piVar3;
   long lVar4;
@@ -312,20 +293,7 @@ void Walaber::Widget_PushButton::Widget_PushButton
 
 
 
-/* ok  address 0x3836e8  size 468 */
-/* mangled: _ZN7Walaber17Widget_PushButtonC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEEbNSt6__ndk112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKSB_ */
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, bool, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, bool, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::Widget_PushButton::Widget_PushButton
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,byte param_6,undefined8 param_7,undefined8 param_8)
-
-{
+/* ok  address 0x3836e8  size 468 */Walaber::Widget_PushButton::Widget_PushButton(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,byte param_6,undefined8 param_7,undefined8 param_8){
   int *piVar2;
   long lVar3;
   long lVar4;
@@ -427,21 +395,7 @@ void Walaber::Widget_PushButton::_resizeFont(long param_1)
 
 
 
-/* ok  address 0x3839e8  size 536 */
-/* mangled: _ZN7Walaber17Widget_PushButtonC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_bNSt6__ndk112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKSB_ */
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, bool, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::Widget_PushButton::Widget_PushButton(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, bool,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void Walaber::Widget_PushButton::Widget_PushButton
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,long *param_6,byte param_7,undefined8 param_8,undefined8 param_9)
-
-{
+/* ok  address 0x3839e8  size 536 */Walaber::Widget_PushButton::Widget_PushButton(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,long *param_6,byte param_7,undefined8 param_8,undefined8 param_9){
   int *piVar2;
   long lVar3;
   long lVar4;
@@ -516,15 +470,7 @@ void Walaber::Widget_PushButton::Widget_PushButton
 
 
 
-/* ok  address 0x383c00  size 96 */
-/* mangled: _ZN7Walaber17Widget_PushButtonD1Ev */
-/* Walaber::Widget_PushButton::~Widget_PushButton() */
-
-/* Walaber::Widget_PushButton::~Widget_PushButton() */
-
-void Walaber::Widget_PushButton::~Widget_PushButton()
-
-{
+/* ok  address 0x383c00  size 96 */Walaber::Widget_PushButton::~Widget_PushButton(){
   void *p0;
   
   p0 = (void *)this[0x35];
@@ -544,15 +490,7 @@ void Walaber::Widget_PushButton::~Widget_PushButton()
 
 
 
-/* ok  address 0x383c60  size 36 */
-/* mangled: _ZN7Walaber17Widget_PushButtonD0Ev */
-/* Walaber::Widget_PushButton::~Widget_PushButton() */
-
-/* Walaber::Widget_PushButton::~Widget_PushButton() */
-
-void Walaber::Widget_PushButton::~Widget_PushButton(void *param_1)
-
-{
+/* ok  address 0x383c60  size 36 */Walaber::Widget_PushButton::~Widget_PushButton(){
   Walaber::Widget_PushButton::~Widget_PushButton();
   operator delete(param_1);
   return;
@@ -1259,15 +1197,7 @@ void Walaber::Widget_PushButton::reloadFont()
 
 
 
-/* ok  address 0x429170  size 692 */
-/* mangled: _ZN7Walaber17Widget_PushButtonC2ERKS0_ */
-/* Walaber::Widget_PushButton::Widget_PushButton(Walaber::Widget_PushButton const&) */
-
-/* Walaber::Widget_PushButton::Widget_PushButton(Walaber::Widget_PushButton const&) */
-
-void Walaber::Widget_PushButton::Widget_PushButton(Walaber__Widget_PushButton *p0)
-
-{
+/* ok  address 0x429170  size 692 */Walaber::Widget_PushButton::Widget_PushButton(Walaber__Widget_PushButton *p0){
   uint uVar1;
   undefined4 uVar2;
   long in_x1;

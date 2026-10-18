@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x339c68  size 12 */
-/* mangled: _ZN7Walaber21NumericAnimationTrackC1Ev */
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack() */
-
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack() */
-
-void Walaber::NumericAnimationTrack::NumericAnimationTrack()
-
-{
+/* ok  address 0x339c68  size 12 */Walaber::NumericAnimationTrack::NumericAnimationTrack(){
   *this = 0;
   this[1] = 0;
   this[4] = 0;
@@ -20,16 +12,7 @@ void Walaber::NumericAnimationTrack::NumericAnimationTrack()
 
 
 
-/* ok  address 0x339c74  size 44 */
-/* mangled: _ZN7Walaber21NumericAnimationTrackC1ENS_9SharedPtrINS_5CurveEEEPf */
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::SharedPtr<Walaber::Curve>, float*) */
-
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::SharedPtr<Walaber::Curve>, float*)
-    */
-
-void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3)
-
-{
+/* ok  address 0x339c74  size 44 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3){
   int *piVar1;
   long lVar2;
   
@@ -48,16 +31,7 @@ void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *p
 
 
 
-/* ok  address 0x339ca0  size 48 */
-/* mangled: _ZN7Walaber21NumericAnimationTrackC1ENS_9SharedPtrINS_5CurveEEEPi */
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::SharedPtr<Walaber::Curve>, int*) */
-
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::SharedPtr<Walaber::Curve>, int*)
-    */
-
-void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3)
-
-{
+/* ok  address 0x339ca0  size 48 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3){
   int *piVar1;
   long lVar2;
   
@@ -76,15 +50,7 @@ void Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *p
 
 
 
-/* ok  address 0x339cd0  size 84 */
-/* mangled: _ZN7Walaber21NumericAnimationTrackC1ERKS0_ */
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::NumericAnimationTrack const&) */
-
-/* Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber::NumericAnimationTrack const&) */
-
-void Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber__NumericAnimationTrack *p0)
-
-{
+/* ok  address 0x339cd0  size 84 */Walaber::NumericAnimationTrack::NumericAnimationTrack(Walaber__NumericAnimationTrack *p0){
   ulong *in_x1;
   int *piVar1;
   ulong uVar2;
@@ -146,15 +112,7 @@ Walaber::NumericAnimationTrack::operator=(Walaber__NumericAnimationTrack *p0)
 
 
 
-/* ok  address 0x339d78  size 4 */
-/* mangled: _ZN7Walaber21NumericAnimationTrackD1Ev */
-/* Walaber::NumericAnimationTrack::~NumericAnimationTrack() */
-
-/* Walaber::NumericAnimationTrack::~NumericAnimationTrack() */
-
-void Walaber::NumericAnimationTrack::~NumericAnimationTrack(void)
-
-{
+/* ok  address 0x339d78  size 4 */Walaber::NumericAnimationTrack::~NumericAnimationTrack(){
   SharedPtr<Walaber::Curve>::~SharedPtr();
   return;
 }

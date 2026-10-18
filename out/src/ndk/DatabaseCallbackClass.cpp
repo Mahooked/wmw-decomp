@@ -275,30 +275,14 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
 
 
 
-/* ok  address 0x2c1bcc  size 8 */
-/* mangled: _ZN3ndk21DatabaseCallbackClassC1Ev */
-/* ndk::DatabaseCallbackClass::DatabaseCallbackClass() */
-
-/* ndk::DatabaseCallbackClass::DatabaseCallbackClass() */
-
-void ndk::DatabaseCallbackClass::DatabaseCallbackClass()
-
-{
+/* ok  address 0x2c1bcc  size 8 */ndk::DatabaseCallbackClass::DatabaseCallbackClass(){
   *this = 0;
   return;
 }
 
 
 
-/* ok  address 0x2c1bd4  size 4 */
-/* mangled: _ZN3ndk21DatabaseCallbackClassD1Ev */
-/* ndk::DatabaseCallbackClass::~DatabaseCallbackClass() */
-
-/* ndk::DatabaseCallbackClass::~DatabaseCallbackClass() */
-
-void ndk::DatabaseCallbackClass::~DatabaseCallbackClass(void)
-
-{
+/* ok  address 0x2c1bd4  size 4 */ndk::DatabaseCallbackClass::~DatabaseCallbackClass(){
   return;
 }
 

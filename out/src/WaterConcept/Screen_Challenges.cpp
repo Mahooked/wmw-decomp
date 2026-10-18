@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a84dc  size 272 */
-/* mangled: _ZN12WaterConcept17Screen_ChallengesC1Ev */
-/* WaterConcept::Screen_Challenges::Screen_Challenges() */
-
-/* WaterConcept::Screen_Challenges::Screen_Challenges() */
-
-void WaterConcept::Screen_Challenges::Screen_Challenges()
-
-{
+/* ok  address 0x4a84dc  size 272 */WaterConcept::Screen_Challenges::Screen_Challenges(){
   WaterConcept::WCScreen::WCScreen(this,0x18);
                     /* try { // try from 004a8504 to 004a850f has its CatchHandler @ 004a85d8 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -35,15 +27,7 @@ void WaterConcept::Screen_Challenges::Screen_Challenges()
 
 
 
-/* ok  address 0x4a85ec  size 116 */
-/* mangled: _ZN12WaterConcept17Screen_ChallengesD1Ev */
-/* WaterConcept::Screen_Challenges::~Screen_Challenges() */
-
-/* WaterConcept::Screen_Challenges::~Screen_Challenges() */
-
-void WaterConcept::Screen_Challenges::~Screen_Challenges()
-
-{
+/* ok  address 0x4a85ec  size 116 */WaterConcept::Screen_Challenges::~Screen_Challenges(){
   *this = &PTR__Screen_Challenges_00712ef8;
   this[4] = &PTR_handleEvent_00712fb0;
   this[0x12] = &PTR__Screen_Challenges_00712fd0;
@@ -59,15 +43,7 @@ void WaterConcept::Screen_Challenges::~Screen_Challenges()
 
 
 
-/* ok  address 0x4a8668  size 36 */
-/* mangled: _ZN12WaterConcept17Screen_ChallengesD0Ev */
-/* WaterConcept::Screen_Challenges::~Screen_Challenges() */
-
-/* WaterConcept::Screen_Challenges::~Screen_Challenges() */
-
-void WaterConcept::Screen_Challenges::~Screen_Challenges(void *param_1)
-
-{
+/* ok  address 0x4a8668  size 36 */WaterConcept::Screen_Challenges::~Screen_Challenges(){
   WaterConcept::Screen_Challenges::~Screen_Challenges();
   operator delete(param_1);
   return;

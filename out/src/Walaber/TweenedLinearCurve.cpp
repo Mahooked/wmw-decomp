@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3e1120  size 236 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveC2Ev */
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve() */
-
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve() */
-
-void Walaber::TweenedLinearCurve::TweenedLinearCurve()
-
-{
+/* ok  address 0x3e1120  size 236 */Walaber::TweenedLinearCurve::TweenedLinearCurve(){
   undefined8 uVar1;
   
   this[2] = 4;
@@ -37,15 +29,7 @@ void Walaber::TweenedLinearCurve::TweenedLinearCurve()
 
 
 
-/* ok  address 0x3e3830  size 656 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveC2EPcRjb */
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&, bool) */
-
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&, bool) */
-
-void Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1,bool p2)
-
-{
+/* ok  address 0x3e3830  size 656 */Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1,bool p2){
   uint uVar1;
   void *pvVar2;
   undefined8 uVar3;
@@ -168,18 +152,7 @@ void Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1,bool p2)
 
 
 
-/* ok  address 0x3e3ac0  size 460 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveC2EPcRjjRKNS_17CompressionRecordES5_ */
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&, unsigned int, Walaber::CompressionRecord const&, Walaber::CompressionRecord const&) */
-
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&, unsigned int,
-   Walaber::CompressionRecord const&, Walaber::CompressionRecord const&) */
-
-void Walaber::TweenedLinearCurve::TweenedLinearCurve
-               (char *p0,uint *p1,uint p2,Walaber__CompressionRecord *p3,
-               Walaber__CompressionRecord *p4)
-
-{
+/* ok  address 0x3e3ac0  size 460 */Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1,uint p2,Walaber__CompressionRecord *p3, Walaber__CompressionRecord *p4){
   uint uVar1;
   undefined8 uVar2;
   void *pvVar3;
@@ -272,15 +245,7 @@ void Walaber::TweenedLinearCurve::TweenedLinearCurve
 
 
 
-/* ok  address 0x3e3c8c  size 496 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveC2EPcRj */
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&) */
-
-/* Walaber::TweenedLinearCurve::TweenedLinearCurve(char*, unsigned int&) */
-
-void Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1)
-
-{
+/* ok  address 0x3e3c8c  size 496 */Walaber::TweenedLinearCurve::TweenedLinearCurve(char *p0,uint *p1){
   uint uVar1;
   undefined8 uVar2;
   void *pvVar3;
@@ -670,15 +635,7 @@ void Walaber::TweenedLinearCurve::_evaluateCurve(float p0,float p1)
 
 
 
-/* ok  address 0x3e6d74  size 116 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveD2Ev */
-/* Walaber::TweenedLinearCurve::~TweenedLinearCurve() */
-
-/* Walaber::TweenedLinearCurve::~TweenedLinearCurve() */
-
-void Walaber::TweenedLinearCurve::~TweenedLinearCurve(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x3e6d74  size 116 */Walaber::TweenedLinearCurve::~TweenedLinearCurve(){
   ulong extraout_x1;
   ulong extraout_x1_00;
   
@@ -706,15 +663,7 @@ void Walaber::TweenedLinearCurve::~TweenedLinearCurve(undefined8 *param_1,ulong 
 
 
 
-/* ok  address 0x3e6de8  size 36 */
-/* mangled: _ZN7Walaber18TweenedLinearCurveD0Ev */
-/* Walaber::TweenedLinearCurve::~TweenedLinearCurve() */
-
-/* Walaber::TweenedLinearCurve::~TweenedLinearCurve() */
-
-void Walaber::TweenedLinearCurve::~TweenedLinearCurve(void *param_1)
-
-{
+/* ok  address 0x3e6de8  size 36 */Walaber::TweenedLinearCurve::~TweenedLinearCurve(){
   Walaber::TweenedLinearCurve::~TweenedLinearCurve();
   operator delete(param_1);
   return;

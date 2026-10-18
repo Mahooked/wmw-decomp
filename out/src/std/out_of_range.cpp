@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f5268  size 92 */
-/* mangled: _ZNSt12out_of_rangeD0Ev */
-/* std::out_of_range::~out_of_range() */
-
-/* std::out_of_range::~out_of_range() */
-
-void std::out_of_range::~out_of_range()
-
-{
+/* ok  address 0x5f5268  size 92 */std::out_of_range::~out_of_range(){
   int iVar1;
   char cVar2;
   bool bVar3;

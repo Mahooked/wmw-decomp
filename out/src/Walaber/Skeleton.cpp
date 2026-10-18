@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x33aa54  size 236 */
-/* mangled: _ZN7Walaber8SkeletonC1Ev */
-/* Walaber::Skeleton::Skeleton() */
-
-/* Walaber::Skeleton::Skeleton() */
-
-void Walaber::Skeleton::Skeleton()
-
-{
+/* ok  address 0x33aa54  size 236 */Walaber::Skeleton::Skeleton(){
   Walaber::DrawableNode::DrawableNode();
   *this = &PTR__Skeleton_0070e3a8;
   this[0x12] = 0;
@@ -39,16 +31,7 @@ void Walaber::Skeleton::Skeleton()
 
 
 
-/* ok  address 0x33ab60  size 228 */
-/* mangled: _ZN7Walaber8SkeletonC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi */
-/* Walaber::Skeleton::Skeleton(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
-
-/* Walaber::Skeleton::Skeleton(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, int) */
-
-void Walaber::Skeleton::Skeleton(undefined8 *param_1)
-
-{
+/* ok  address 0x33ab60  size 228 */Walaber::Skeleton::Skeleton(undefined8 *param_1){
   Walaber::DrawableNode::DrawableNode();
   *param_1 = &PTR__Skeleton_0070e3a8;
   param_1[0x12] = 0;
@@ -75,15 +58,7 @@ void Walaber::Skeleton::Skeleton(undefined8 *param_1)
 
 
 
-/* ok  address 0x33ac44  size 536 */
-/* mangled: _ZN7Walaber8SkeletonC1ERKS0_ */
-/* Walaber::Skeleton::Skeleton(Walaber::Skeleton const&) */
-
-/* Walaber::Skeleton::Skeleton(Walaber::Skeleton const&) */
-
-void Walaber::Skeleton::Skeleton(Walaber__Skeleton *p0)
-
-{
+/* ok  address 0x33ac44  size 536 */Walaber::Skeleton::Skeleton(Walaber__Skeleton *p0){
   bool bVar1;
   long in_x1;
   long *plVar2;
@@ -190,15 +165,7 @@ Walaber__Skeleton * Walaber::Skeleton::operator=(Walaber__Skeleton *p0)
 
 
 
-/* ok  address 0x33aecc  size 500 */
-/* mangled: _ZN7Walaber8SkeletonD1Ev */
-/* Walaber::Skeleton::~Skeleton() */
-
-/* Walaber::Skeleton::~Skeleton() */
-
-void Walaber::Skeleton::~Skeleton()
-
-{
+/* ok  address 0x33aecc  size 500 */Walaber::Skeleton::~Skeleton(){
   byte bVar1;
   bool bVar2;
   undefined8 uVar3;
@@ -281,15 +248,7 @@ joined_r0x0033b00c:
 
 
 
-/* ok  address 0x33b0c0  size 36 */
-/* mangled: _ZN7Walaber8SkeletonD0Ev */
-/* Walaber::Skeleton::~Skeleton() */
-
-/* Walaber::Skeleton::~Skeleton() */
-
-void Walaber::Skeleton::~Skeleton(void *param_1)
-
-{
+/* ok  address 0x33b0c0  size 36 */Walaber::Skeleton::~Skeleton(){
   Walaber::Skeleton::~Skeleton();
   operator delete(param_1);
   return;

@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x48b7d4  size 424 */
-/* mangled: _ZN12WaterConcept5SpoutC1EN7Walaber7Vector2EfS2_PNS_6FluidsENS0_9SpoutTypeE */
-/* WaterConcept::Spout::Spout(Walaber::Vector2, float, Walaber::Vector2, WaterConcept::Fluids*, WaterConcept::Spout::SpoutType) */
-
-/* WaterConcept::Spout::Spout(Walaber::Vector2, float, Walaber::Vector2, WaterConcept::Fluids*,
-   WaterConcept::Spout::SpoutType) */
-
-void WaterConcept::Spout::Spout
-               (undefined8 *param_1,undefined8 *param_2,undefined8 *param_3,undefined8 param_4,
-               undefined4 param_5)
-
-{
+/* ok  address 0x48b7d4  size 424 */WaterConcept::Spout::Spout(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3,undefined8 param_4, undefined4 param_5){
   undefined8 *puVar2;
   undefined8 uStack_58;
   undefined8 uStack_50;
@@ -89,15 +78,7 @@ void WaterConcept::Spout::Spout
 
 
 
-/* ok  address 0x48b97c  size 148 */
-/* mangled: _ZN12WaterConcept5SpoutD1Ev */
-/* WaterConcept::Spout::~Spout() */
-
-/* WaterConcept::Spout::~Spout() */
-
-void WaterConcept::Spout::~Spout()
-
-{
+/* ok  address 0x48b97c  size 148 */WaterConcept::Spout::~Spout(){
   void *pvVar1;
   ulong p1;
   
@@ -132,15 +113,7 @@ void WaterConcept::Spout::~Spout()
 
 
 
-/* ok  address 0x48ba10  size 36 */
-/* mangled: _ZN12WaterConcept5SpoutD0Ev */
-/* WaterConcept::Spout::~Spout() */
-
-/* WaterConcept::Spout::~Spout() */
-
-void WaterConcept::Spout::~Spout(void *param_1)
-
-{
+/* ok  address 0x48ba10  size 36 */WaterConcept::Spout::~Spout(){
   WaterConcept::Spout::~Spout();
   operator delete(param_1);
   return;

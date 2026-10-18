@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4d4264  size 152 */
-/* mangled: _ZN12WaterConcept18Screen_FoodPyramidC1Ev */
-/* WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid() */
-
-/* WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid() */
-
-void WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid()
-
-{
+/* ok  address 0x4d4264  size 152 */WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid(){
   WaterConcept::WCScreen::WCScreen(this,0x1c);
                     /* try { // try from 004d4280 to 004d4287 has its CatchHandler @ 004d42e8 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -34,15 +26,7 @@ void WaterConcept::Screen_FoodPyramid::Screen_FoodPyramid()
 
 
 
-/* ok  address 0x4d42fc  size 112 */
-/* mangled: _ZN12WaterConcept18Screen_FoodPyramidD1Ev */
-/* WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-/* WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid()
-
-{
+/* ok  address 0x4d42fc  size 112 */WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
   void *p0;
   
   *this = &PTR__Screen_FoodPyramid_00713988;
@@ -62,15 +46,7 @@ void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid()
 
 
 
-/* ok  address 0x4d4374  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_FoodPyramidD0Ev */
-/* WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-/* WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-void WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(void *param_1)
-
-{
+/* ok  address 0x4d4374  size 36 */WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
   WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid();
   operator delete(param_1);
   return;

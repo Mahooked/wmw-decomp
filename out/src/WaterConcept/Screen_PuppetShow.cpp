@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x55bf88  size 188 */
-/* mangled: _ZN12WaterConcept17Screen_PuppetShowC1Ev */
-/* WaterConcept::Screen_PuppetShow::Screen_PuppetShow() */
-
-/* WaterConcept::Screen_PuppetShow::Screen_PuppetShow() */
-
-void WaterConcept::Screen_PuppetShow::Screen_PuppetShow()
-
-{
+/* ok  address 0x55bf88  size 188 */WaterConcept::Screen_PuppetShow::Screen_PuppetShow(){
   WaterConcept::WCScreen::WCScreen(this,0xf);
   *this = &PTR__Screen_PuppetShow_00715468;
   this[4] = &PTR_handleEvent_00715518;
@@ -36,15 +28,7 @@ void WaterConcept::Screen_PuppetShow::Screen_PuppetShow()
 
 
 
-/* ok  address 0x55c044  size 96 */
-/* mangled: _ZN12WaterConcept17Screen_PuppetShowD1Ev */
-/* WaterConcept::Screen_PuppetShow::~Screen_PuppetShow() */
-
-/* WaterConcept::Screen_PuppetShow::~Screen_PuppetShow() */
-
-void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow()
-
-{
+/* ok  address 0x55c044  size 96 */WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(){
   *this = &PTR__Screen_PuppetShow_00715468;
   this[4] = &PTR_handleEvent_00715518;
   if ((*(byte *)(this + 0x6a) & 1) != 0) {
@@ -59,15 +43,7 @@ void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow()
 
 
 
-/* ok  address 0x55c0a4  size 36 */
-/* mangled: _ZN12WaterConcept17Screen_PuppetShowD0Ev */
-/* WaterConcept::Screen_PuppetShow::~Screen_PuppetShow() */
-
-/* WaterConcept::Screen_PuppetShow::~Screen_PuppetShow() */
-
-void WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(void *param_1)
-
-{
+/* ok  address 0x55c0a4  size 36 */WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(){
   WaterConcept::Screen_PuppetShow::~Screen_PuppetShow();
   operator delete(param_1);
   return;

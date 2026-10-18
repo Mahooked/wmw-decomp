@@ -3,19 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4e32b0  size 104 */
-/* mangled: _ZN12WaterConcept10Screen_Hub10ButtonInfoC2EiRKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEES8_ */
-/* WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
-
-/* WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo(int, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >)
-    */
-
-void WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo
-               (undefined4 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
-
-{
+/* ok  address 0x4e32b0  size 104 */WaterConcept::Screen_Hub::ButtonInfo::ButtonInfo(undefined4 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4){
   *param_1 = param_2;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
                     /* try { // try from 004e32e0 to 004e32eb has its CatchHandler @ 004e32fc */

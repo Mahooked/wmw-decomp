@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3518f4  size 252 */
-/* mangled: _ZN7Walaber12SoundManager35SoundEffectInstanceLoadedParametersC2EiiNS_9SharedPtrINS_19SoundEffectInstanceEEERKNS_12PropertyListE */
-/* Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(int, int, Walaber::SharedPtr<Walaber::SoundEffectInstance>, Walaber::PropertyList const&) */
-
-/* Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(int,
-   int, Walaber::SharedPtr<Walaber::SoundEffectInstance>, Walaber::PropertyList const&) */
-
-void Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters
-               (undefined4 *param_1,undefined4 param_2,undefined4 param_3,long *param_4,
-               undefined8 *param_5)
-
-{
+/* ok  address 0x3518f4  size 252 */Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(undefined4 *param_1,undefined4 param_2,undefined4 param_3,long *param_4, undefined8 *param_5){
   int *piVar1;
   long *plVar2;
   long lVar3;

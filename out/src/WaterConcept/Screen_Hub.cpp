@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4dbc64  size 192 */
-/* mangled: _ZN12WaterConcept10Screen_HubC1Ev */
-/* WaterConcept::Screen_Hub::Screen_Hub() */
-
-/* WaterConcept::Screen_Hub::Screen_Hub() */
-
-void WaterConcept::Screen_Hub::Screen_Hub()
-
-{
+/* ok  address 0x4dbc64  size 192 */WaterConcept::Screen_Hub::Screen_Hub(){
   WaterConcept::WCScreen::WCScreen(this,0x1d);
                     /* try { // try from 004dbc80 to 004dbc87 has its CatchHandler @ 004dbd10 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -42,15 +34,7 @@ void WaterConcept::Screen_Hub::Screen_Hub()
 
 
 
-/* ok  address 0x4dbd24  size 140 */
-/* mangled: _ZN12WaterConcept10Screen_HubD1Ev */
-/* WaterConcept::Screen_Hub::~Screen_Hub() */
-
-/* WaterConcept::Screen_Hub::~Screen_Hub() */
-
-void WaterConcept::Screen_Hub::~Screen_Hub()
-
-{
+/* ok  address 0x4dbd24  size 140 */WaterConcept::Screen_Hub::~Screen_Hub(){
   void *p0;
   
   *this = &PTR__Screen_Hub_00713ea8;
@@ -71,15 +55,7 @@ void WaterConcept::Screen_Hub::~Screen_Hub()
 
 
 
-/* ok  address 0x4dbdb8  size 36 */
-/* mangled: _ZN12WaterConcept10Screen_HubD0Ev */
-/* WaterConcept::Screen_Hub::~Screen_Hub() */
-
-/* WaterConcept::Screen_Hub::~Screen_Hub() */
-
-void WaterConcept::Screen_Hub::~Screen_Hub(void *param_1)
-
-{
+/* ok  address 0x4dbdb8  size 36 */WaterConcept::Screen_Hub::~Screen_Hub(){
   WaterConcept::Screen_Hub::~Screen_Hub();
   operator delete(param_1);
   return;

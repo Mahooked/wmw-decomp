@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d7664  size 56 */
-/* mangled: _ZN7Walaber17ZipArchiveCreatorC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::ZipArchiveCreator::ZipArchiveCreator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::ZipArchiveCreator::ZipArchiveCreator(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::ZipArchiveCreator::ZipArchiveCreator(undefined8 *param_1,byte *param_2)
-
-{
+/* ok  address 0x3d7664  size 56 */Walaber::ZipArchiveCreator::ZipArchiveCreator(undefined8 *param_1,byte *param_2){
   undefined8 uVar1;
   byte *pbVar2;
   
@@ -27,15 +18,7 @@ void Walaber::ZipArchiveCreator::ZipArchiveCreator(undefined8 *param_1,byte *par
 
 
 
-/* ok  address 0x3d769c  size 40 */
-/* mangled: _ZN7Walaber17ZipArchiveCreatorD1Ev */
-/* Walaber::ZipArchiveCreator::~ZipArchiveCreator() */
-
-/* Walaber::ZipArchiveCreator::~ZipArchiveCreator() */
-
-void Walaber::ZipArchiveCreator::~ZipArchiveCreator(long *param_1)
-
-{
+/* ok  address 0x3d769c  size 40 */Walaber::ZipArchiveCreator::~ZipArchiveCreator(){
   if (*param_1 != 0) {
                     /* try { // try from 003d76ac to 003d76b7 has its CatchHandler @ 003d76c0 */
     wZipClose(*param_1,"created by ZipArchiveCreator");

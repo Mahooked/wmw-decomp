@@ -36,17 +36,7 @@ void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
 
 
 
-/* ok  address 0x3d6388  size 20 */
-/* mangled: _ZN7Walaber11XMLDocument13NamedIteratorC1EP8_xmlNodeRKNSt6__ndk112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE */
-/* Walaber::XMLDocument::NamedIterator::NamedIterator(_xmlNode*, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::XMLDocument::NamedIterator::NamedIterator(_xmlNode*, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::XMLDocument::NamedIterator::NamedIterator
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x3d6388  size 20 */Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   *param_1 = param_2;
   param_1[1] = param_2;
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
@@ -55,15 +45,7 @@ void Walaber::XMLDocument::NamedIterator::NamedIterator
 
 
 
-/* ok  address 0x3d639c  size 12 */
-/* mangled: _ZN7Walaber11XMLDocument13NamedIteratorC1ERKS1_ */
-/* Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber::XMLDocument::NamedIterator const&) */
-
-/* Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber::XMLDocument::NamedIterator const&) */
-
-void Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber__XMLDocument__NamedIterator *p0)
-
-{
+/* ok  address 0x3d639c  size 12 */Walaber::XMLDocument::NamedIterator::NamedIterator(Walaber__XMLDocument__NamedIterator *p0){
   ulong *in_x1;
   ulong uVar1;
   

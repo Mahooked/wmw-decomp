@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x530928  size 64 */
-/* mangled: _ZN12WaterConcept18Screen_MenuOverlayC1Ev */
-/* WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay() */
-
-/* WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay() */
-
-void WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay()
-
-{
+/* ok  address 0x530928  size 64 */WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay(){
   WaterConcept::WCScreen::WCScreen(this,6);
   *(undefined2 *)((long)this + 0x94) = 0;
   *this = &PTR__Screen_MenuOverlay_00714968;
@@ -21,30 +13,14 @@ void WaterConcept::Screen_MenuOverlay::Screen_MenuOverlay()
 
 
 
-/* ok  address 0x530968  size 4 */
-/* mangled: _ZN12WaterConcept18Screen_MenuOverlayD1Ev */
-/* WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay() */
-
-/* WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay() */
-
-void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(void)
-
-{
+/* ok  address 0x530968  size 4 */WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(){
   WCScreen::~WCScreen();
   return;
 }
 
 
 
-/* ok  address 0x53096c  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_MenuOverlayD0Ev */
-/* WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay() */
-
-/* WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay() */
-
-void WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(void *param_1)
-
-{
+/* ok  address 0x53096c  size 36 */WaterConcept::Screen_MenuOverlay::~Screen_MenuOverlay(){
   WaterConcept::WCScreen::~WCScreen();
   operator delete(param_1);
   return;

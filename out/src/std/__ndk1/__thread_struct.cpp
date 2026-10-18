@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f0144  size 52 */
-/* mangled: _ZNSt6__ndk115__thread_structC1Ev */
-/* std::__ndk1::__thread_struct::__thread_struct() */
-
-/* std::__ndk1::__thread_struct::__thread_struct() */
-
-void std::__ndk1::__thread_struct::__thread_struct()
-
-{
+/* ok  address 0x5f0144  size 52 */std::__ndk1::__thread_struct::__thread_struct(){
   undefined8 *puVar1;
   
   puVar1 = (undefined8 *)operator new(0x30);
@@ -27,15 +19,7 @@ void std::__ndk1::__thread_struct::__thread_struct()
 
 
 
-/* ok  address 0x5f0178  size 56 */
-/* mangled: _ZNSt6__ndk115__thread_structD1Ev */
-/* std::__ndk1::__thread_struct::~__thread_struct() */
-
-/* std::__ndk1::__thread_struct::~__thread_struct() */
-
-void std::__ndk1::__thread_struct::~__thread_struct()
-
-{
+/* ok  address 0x5f0178  size 56 */std::__ndk1::__thread_struct::~__thread_struct(){
   void *p0;
   
   p0 = (void *)*this;

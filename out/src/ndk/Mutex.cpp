@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2c6350  size 40 */
-/* mangled: _ZN3ndk5MutexD2Ev */
-/* ndk::Mutex::~Mutex() */
-
-/* ndk::Mutex::~Mutex() */
-
-void ndk::Mutex::~Mutex()
-
-{
+/* ok  address 0x2c6350  size 40 */ndk::Mutex::~Mutex(){
   *this = &PTR__Mutex_0070ce88;
                     /* try { // try from 002c6368 to 002c636b has its CatchHandler @ 002c6374 */
   pthread_mutex_destroy(this + 1);
@@ -20,15 +12,7 @@ void ndk::Mutex::~Mutex()
 
 
 
-/* ok  address 0x2c6378  size 36 */
-/* mangled: _ZN3ndk5MutexD0Ev */
-/* ndk::Mutex::~Mutex() */
-
-/* ndk::Mutex::~Mutex() */
-
-void ndk::Mutex::~Mutex(void *param_1)
-
-{
+/* ok  address 0x2c6378  size 36 */ndk::Mutex::~Mutex(){
   ndk::Mutex::~Mutex();
   operator delete(param_1);
   return;

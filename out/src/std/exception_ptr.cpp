@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5a3cc8  size 8 */
-/* mangled: _ZNSt13exception_ptrD1Ev */
-/* std::exception_ptr::~exception_ptr() */
-
-/* std::exception_ptr::~exception_ptr() */
-
-void std::exception_ptr::~exception_ptr()
-
-{
+/* ok  address 0x5a3cc8  size 8 */std::exception_ptr::~exception_ptr(){
   __cxa_decrement_exception_refcount(*this);
   return;
 }
 
 
 
-/* ok  address 0x5a3cd0  size 16 */
-/* mangled: _ZNSt13exception_ptrC1ERKS_ */
-/* std::exception_ptr::exception_ptr(std::exception_ptr const&) */
-
-/* std::exception_ptr::exception_ptr(std::exception_ptr const&) */
-
-void std::exception_ptr::exception_ptr(std__exception_ptr *p0)
-
-{
+/* ok  address 0x5a3cd0  size 16 */std::exception_ptr::exception_ptr(std__exception_ptr *p0){
   ulong *in_x1;
   ulong uVar1;
   

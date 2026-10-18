@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d6b3c  size 408 */
-/* mangled: _ZN7Walaber11XMLDocumentC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_8CallbackEEE */
-/* Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>) */
-
-/* Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::SharedPtr<Walaber::Callback>) */
-
-void Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,long *param_3)
-
-{
+/* ok  address 0x3d6b3c  size 408 */Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,long *param_3){
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -127,19 +118,7 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
 
 
 
-/* ok  address 0x3d6e44  size 472 */
-/* mangled: _ZN7Walaber11XMLDocumentC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_NS_9SharedPtrINS_8CallbackEEE */
-/* Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Callback>) */
-
-/* Walaber::XMLDocument::XMLDocument(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   Walaber::SharedPtr<Walaber::Callback>) */
-
-void Walaber::XMLDocument::XMLDocument
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,long *param_4)
-
-{
+/* ok  address 0x3d6e44  size 472 */Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,undefined8 param_3,long *param_4){
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -202,15 +181,7 @@ void Walaber::XMLDocument::XMLDocument
 
 
 
-/* ok  address 0x3d701c  size 60 */
-/* mangled: _ZN7Walaber11XMLDocumentC1EPcm */
-/* Walaber::XMLDocument::XMLDocument(char*, unsigned long) */
-
-/* Walaber::XMLDocument::XMLDocument(char*, unsigned long) */
-
-void Walaber::XMLDocument::XMLDocument(char *p0,ulong p1)
-
-{
+/* ok  address 0x3d701c  size 60 */Walaber::XMLDocument::XMLDocument(char *p0,ulong p1){
   p0[8] = '\0';
   p0[9] = '\0';
   p0[10] = '\0';
@@ -277,16 +248,7 @@ void Walaber::XMLDocument::_buildXMLObject(char *p0,ulong p1)
 
 
 
-/* ok  address 0x3d70b8  size 60 */
-/* mangled: _ZN7Walaber11XMLDocumentC1EPcmRKNSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEE */
-/* Walaber::XMLDocument::XMLDocument(char*, unsigned long, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::XMLDocument::XMLDocument(char*, unsigned long, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::XMLDocument::XMLDocument(undefined8 *param_1)
-
-{
+/* ok  address 0x3d70b8  size 60 */Walaber::XMLDocument::XMLDocument(undefined8 *param_1){
   param_1[1] = 0;
   *param_1 = 0;
   param_1[3] = 0;
@@ -325,15 +287,7 @@ void Walaber::XMLDocument::_buildXMLObject
 
 
 
-/* ok  address 0x3d7198  size 68 */
-/* mangled: _ZN7Walaber11XMLDocumentD1Ev */
-/* Walaber::XMLDocument::~XMLDocument() */
-
-/* Walaber::XMLDocument::~XMLDocument() */
-
-void Walaber::XMLDocument::~XMLDocument(long *param_1)
-
-{
+/* ok  address 0x3d7198  size 68 */Walaber::XMLDocument::~XMLDocument(){
   if (*param_1 != 0) {
                     /* try { // try from 003d71b0 to 003d71b7 has its CatchHandler @ 003d71c8 */
     xmlFreeDoc();

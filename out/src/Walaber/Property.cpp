@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3fe0b8  size 16 */
-/* mangled: _ZN7Walaber8PropertyC1Ev */
-/* Walaber::Property::Property() */
-
-/* Walaber::Property::Property() */
-
-void Walaber::Property::Property()
-
-{
+/* ok  address 0x3fe0b8  size 16 */Walaber::Property::Property(){
   *this = 0;
   *(undefined8 *)(this + 4) = 0;
   *(undefined8 *)(this + 6) = 0;
@@ -21,16 +13,7 @@ void Walaber::Property::Property()
 
 
 
-/* ok  address 0x3fe0c8  size 80 */
-/* mangled: _ZN7Walaber8PropertyC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1)
-
-{
+/* ok  address 0x3fe0c8  size 80 */Walaber::Property::Property(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const& param_1){
   *(undefined8 *)(param_1 + 4) = 0;
   *(undefined8 *)(param_1 + 6) = 0;
   *(undefined8 *)(param_1 + 2) = 0;
@@ -59,15 +42,7 @@ void Walaber::Property::setValue(std::__ndk1::basic_string<char, std::__ndk1::ch
 
 
 
-/* ok  address 0x3fe120  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1Ei */
-/* Walaber::Property::Property(int) */
-
-/* Walaber::Property::Property(int) */
-
-void Walaber::Property::Property(int p0)
-
-{
+/* ok  address 0x3fe120  size 72 */Walaber::Property::Property(int p0){
   ulong uVar1;
   
   uVar1 = (ulong)(uint)p0;
@@ -178,15 +153,7 @@ void Walaber::Property::setValue(int p0)
 
 
 
-/* ok  address 0x3fe394  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1Ef */
-/* Walaber::Property::Property(float) */
-
-/* Walaber::Property::Property(float) */
-
-void Walaber::Property::Property(float p0)
-
-{
+/* ok  address 0x3fe394  size 72 */Walaber::Property::Property(float p0){
   long in_x0;
   
   *(undefined8 *)(in_x0 + 8) = 0;
@@ -295,15 +262,7 @@ void Walaber::Property::setValue(float p0)
 
 
 
-/* ok  address 0x3fe610  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1ERKNS_7Vector2E */
-/* Walaber::Property::Property(Walaber::Vector2 const&) */
-
-/* Walaber::Property::Property(Walaber::Vector2 const&) */
-
-void Walaber::Property::Property(Walaber__Vector2 *p0)
-
-{
+/* ok  address 0x3fe610  size 72 */Walaber::Property::Property(Walaber__Vector2 *p0){
   p0[1].f_0x0 = 0.0;
   p0[1].f_0x4 = 0.0;
   p0[2].f_0x0 = 0.0;
@@ -418,15 +377,7 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0)
 
 
 
-/* ok  address 0x3fe89c  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1ERKNS_4RectE */
-/* Walaber::Property::Property(Walaber::Rect const&) */
-
-/* Walaber::Property::Property(Walaber::Rect const&) */
-
-void Walaber::Property::Property(Walaber__Rect *p0)
-
-{
+/* ok  address 0x3fe89c  size 72 */Walaber::Property::Property(Walaber__Rect *p0){
   p0->f_0x8 = 0.0;
   p0->f_0xc = 0.0;
   p0[1].f_0x0 = 0.0;
@@ -546,15 +497,7 @@ void Walaber::Property::setValue(Walaber__Rect *p0)
 
 
 
-/* ok  address 0x3feb58  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1ERKNS_5ColorE */
-/* Walaber::Property::Property(Walaber::Color const&) */
-
-/* Walaber::Property::Property(Walaber::Color const&) */
-
-void Walaber::Property::Property(Walaber__Color *p0)
-
-{
+/* ok  address 0x3feb58  size 72 */Walaber::Property::Property(Walaber__Color *p0){
   *(undefined8 *)(p0 + 2) = 0;
   *(undefined8 *)(p0 + 4) = 0;
   *(undefined8 *)(p0 + 6) = 0;
@@ -672,15 +615,7 @@ void Walaber::Property::setValue(Walaber__Color *p0)
 
 
 
-/* ok  address 0x3fee14  size 72 */
-/* mangled: _ZN7Walaber8PropertyC1ERKNS_4AABBE */
-/* Walaber::Property::Property(Walaber::AABB const&) */
-
-/* Walaber::Property::Property(Walaber::AABB const&) */
-
-void Walaber::Property::Property(Walaber__AABB *p0)
-
-{
+/* ok  address 0x3fee14  size 72 */Walaber::Property::Property(Walaber__AABB *p0){
   p0->f_0x8 = 0.0;
   p0->f_0xc = 0.0;
   *(undefined8 *)&p0->f_0x10 = 0;
@@ -795,15 +730,7 @@ void Walaber::Property::setValue(Walaber__AABB *p0)
 
 
 
-/* ok  address 0x3ff0d0  size 20 */
-/* mangled: _ZN7Walaber8PropertyD1Ev */
-/* Walaber::Property::~Property() */
-
-/* Walaber::Property::~Property() */
-
-void Walaber::Property::~Property(long param_1)
-
-{
+/* ok  address 0x3ff0d0  size 20 */Walaber::Property::~Property(){
   if ((*(byte *)(param_1 + 8) & 1) == 0) {
     return;
   }

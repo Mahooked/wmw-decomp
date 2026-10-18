@@ -3,32 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x532f64  size 8 */
-/* mangled: _ZThn144_N12WaterConcept22Screen_MusicCollectionD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-/* non-virtual thunk to WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCollection
-               (long param_1)
-
-{
+/* ok  address 0x532f64  size 8 */non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(){
   WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x532f90  size 40 */
-/* mangled: _ZThn144_N12WaterConcept22Screen_MusicCollectionD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-/* non-virtual thunk to WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCollection
-               (long param_1)
-
-{
+/* ok  address 0x532f90  size 40 */non_virtual_thunk_to_WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(){
   WaterConcept::Screen_MusicCollection::~Screen_MusicCollection((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

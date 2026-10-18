@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4e46f4  size 8 */
-/* mangled: _ZThn144_N12WaterConcept20Screen_InAppPurchaseD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-/* non-virtual thunk to WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(long param_1)
-
-{
+/* ok  address 0x4e46f4  size 8 */non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
   WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4e4720  size 40 */
-/* mangled: _ZThn144_N12WaterConcept20Screen_InAppPurchaseD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-/* non-virtual thunk to WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(long param_1)
-
-{
+/* ok  address 0x4e4720  size 40 */non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
   WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

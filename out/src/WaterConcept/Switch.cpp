@@ -21,15 +21,7 @@ void WaterConcept::Switch::triggerMomentary(Walaber__Vector2 *p0)
 
 
 
-/* ok  address 0x494910  size 200 */
-/* mangled: _ZN12WaterConcept6SwitchC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::Switch::Switch(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::Switch::Switch(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::Switch::Switch(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x494910  size 200 */WaterConcept::Switch::Switch(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
@@ -62,15 +54,7 @@ void WaterConcept::Switch::Switch(Walaber__Vector2 p0,float p1,Walaber__Vector2 
 
 
 
-/* ok  address 0x4949d8  size 96 */
-/* mangled: _ZN12WaterConcept6SwitchD1Ev */
-/* WaterConcept::Switch::~Switch() */
-
-/* WaterConcept::Switch::~Switch() */
-
-void WaterConcept::Switch::~Switch()
-
-{
+/* ok  address 0x4949d8  size 96 */WaterConcept::Switch::~Switch(){
   void *p0;
   
   *this = &PTR__Switch_00712158;
@@ -90,15 +74,7 @@ void WaterConcept::Switch::~Switch()
 
 
 
-/* ok  address 0x494a38  size 36 */
-/* mangled: _ZN12WaterConcept6SwitchD0Ev */
-/* WaterConcept::Switch::~Switch() */
-
-/* WaterConcept::Switch::~Switch() */
-
-void WaterConcept::Switch::~Switch(void *param_1)
-
-{
+/* ok  address 0x494a38  size 36 */WaterConcept::Switch::~Switch(){
   WaterConcept::Switch::~Switch();
   operator delete(param_1);
   return;

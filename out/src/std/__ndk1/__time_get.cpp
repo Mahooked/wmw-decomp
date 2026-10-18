@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5dda38  size 348 */
-/* mangled: _ZNSt6__ndk110__time_getC1EPKc */
-/* std::__ndk1::__time_get::__time_get(char const*) */
-
-/* std::__ndk1::__time_get::__time_get(char const*) */
-
-void std::__ndk1::__time_get::__time_get(char *p0)
-
-{
+/* ok  address 0x5dda38  size 348 */std::__ndk1::__time_get::__time_get(char *p0){
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
@@ -78,16 +70,7 @@ LAB_005ddb10:
 
 
 
-/* ok  address 0x5ddb94  size 172 */
-/* mangled: _ZNSt6__ndk110__time_getC1ERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE */
-/* std::__ndk1::__time_get::__time_get(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::__ndk1::__time_get::__time_get(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void std::__ndk1::__time_get::__time_get(long *param_1,byte *param_2)
-
-{
+/* ok  address 0x5ddb94  size 172 */std::__ndk1::__time_get::__time_get(long *param_1,byte *param_2){
   long lVar1;
   long lVar2;
   byte *pbVar3;
@@ -116,15 +99,7 @@ void std::__ndk1::__time_get::__time_get(long *param_1,byte *param_2)
 
 
 
-/* ok  address 0x5ddc40  size 28 */
-/* mangled: _ZNSt6__ndk110__time_getD1Ev */
-/* std::__ndk1::__time_get::~__time_get() */
-
-/* std::__ndk1::__time_get::~__time_get() */
-
-void std::__ndk1::__time_get::~__time_get()
-
-{
+/* ok  address 0x5ddc40  size 28 */std::__ndk1::__time_get::~__time_get(){
                     /* try { // try from 005ddc4c to 005ddc4f has its CatchHandler @ 005ddc58 */
   freelocale(*this);
   return;

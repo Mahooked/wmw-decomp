@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x443aec  size 100 */
-/* mangled: _ZN12WaterConcept13ShowerCurtainC1Ev */
-/* WaterConcept::ShowerCurtain::ShowerCurtain() */
-
-/* WaterConcept::ShowerCurtain::ShowerCurtain() */
-
-void WaterConcept::ShowerCurtain::ShowerCurtain(long param_1)
-
-{
+/* ok  address 0x443aec  size 100 */WaterConcept::ShowerCurtain::ShowerCurtain(long param_1){
   *(undefined4 *)(param_1 + 0x10) = 0x41200000;
   *(undefined8 *)(param_1 + 0x14) = 0x700000005;
   Walaber::ParticleSet::ParticleSet(param_1 + 0x20);
@@ -26,15 +18,7 @@ void WaterConcept::ShowerCurtain::ShowerCurtain(long param_1)
 
 
 
-/* ok  address 0x443b50  size 88 */
-/* mangled: _ZN12WaterConcept13ShowerCurtainD1Ev */
-/* WaterConcept::ShowerCurtain::~ShowerCurtain() */
-
-/* WaterConcept::ShowerCurtain::~ShowerCurtain() */
-
-void WaterConcept::ShowerCurtain::~ShowerCurtain(long param_1,ulong param_2)
-
-{
+/* ok  address 0x443b50  size 88 */WaterConcept::ShowerCurtain::~ShowerCurtain(){
   if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
     operator delete[](*(void **)(param_1 + 0xa8),param_2);
   }

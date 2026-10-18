@@ -51,15 +51,7 @@ LAB_00334a48:
 
 
 
-/* ok  address 0x33a068  size 20 */
-/* mangled: _ZN7Walaber30SkeletonActorCueAnimationTrackC1Ev */
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack() */
-
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack() */
-
-void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack()
-
-{
+/* ok  address 0x33a068  size 20 */Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(){
   this[1] = 0;
   *this = 0;
   this[3] = 0;
@@ -70,17 +62,7 @@ void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack()
 
 
 
-/* ok  address 0x33a07c  size 20 */
-/* mangled: _ZN7Walaber30SkeletonActorCueAnimationTrackC1EPNS_13SkeletonActorE */
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber::SkeletonActor*) */
-
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber::SkeletonActor*)
-    */
-
-void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
-               (Walaber__SkeletonActor *p0)
-
-{
+/* ok  address 0x33a07c  size 20 */Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber__SkeletonActor *p0){
   undefined8 in_x1;
   
   p0->f_0x10 = 0;
@@ -93,17 +75,7 @@ void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
 
 
 
-/* ok  address 0x33a090  size 56 */
-/* mangled: _ZN7Walaber30SkeletonActorCueAnimationTrackC1ERKS0_ */
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber::SkeletonActorCueAnimationTrack const&) */
-
-/* Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber::SkeletonActorCueAnimationTrack
-   const&) */
-
-void Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack
-               (Walaber__SkeletonActorCueAnimationTrack *p0)
-
-{
+/* ok  address 0x33a090  size 56 */Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(Walaber__SkeletonActorCueAnimationTrack *p0){
   ulong *in_x1;
   
   p0->f_0x0 = *in_x1;
@@ -137,15 +109,7 @@ Walaber::SkeletonActorCueAnimationTrack::operator=(Walaber__SkeletonActorCueAnim
 
 
 
-/* ok  address 0x33a1cc  size 8 */
-/* mangled: _ZN7Walaber30SkeletonActorCueAnimationTrackD1Ev */
-/* Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack() */
-
-/* Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack() */
-
-void Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack(long param_1)
-
-{
+/* ok  address 0x33a1cc  size 8 */Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack(){
   std::__ndk1::__vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::~__vector_base(param_1 + 8);
   return;
 }

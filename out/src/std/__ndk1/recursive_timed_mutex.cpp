@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e2d60  size 24 */
-/* mangled: _ZNSt6__ndk121recursive_timed_mutexC1Ev */
-/* std::__ndk1::recursive_timed_mutex::recursive_timed_mutex() */
-
-/* std::__ndk1::recursive_timed_mutex::recursive_timed_mutex() */
-
-void std::__ndk1::recursive_timed_mutex::recursive_timed_mutex()
-
-{
+/* ok  address 0x5e2d60  size 24 */std::__ndk1::recursive_timed_mutex::recursive_timed_mutex(){
   this[0xc] = 0;
   this[9] = 0;
   this[8] = 0;
@@ -30,15 +22,7 @@ void std::__ndk1::recursive_timed_mutex::recursive_timed_mutex()
 
 
 
-/* ok  address 0x5e2d78  size 108 */
-/* mangled: _ZNSt6__ndk121recursive_timed_mutexD1Ev */
-/* std::__ndk1::recursive_timed_mutex::~recursive_timed_mutex() */
-
-/* std::__ndk1::recursive_timed_mutex::~recursive_timed_mutex() */
-
-void std::__ndk1::recursive_timed_mutex::~recursive_timed_mutex(long param_1)
-
-{
+/* ok  address 0x5e2d78  size 108 */std::__ndk1::recursive_timed_mutex::~recursive_timed_mutex(){
   undefined8 uVar1;
   
                     /* try { // try from 005e2d88 to 005e2d8b has its CatchHandler @ 005e2dc4 */

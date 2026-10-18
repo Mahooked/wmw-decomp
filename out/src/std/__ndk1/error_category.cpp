@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5eed48  size 20 */
-/* mangled: _ZNSt6__ndk114error_categoryC2Ev */
-/* std::__ndk1::error_category::error_category() */
-
-/* std::__ndk1::error_category::error_category() */
-
-void std::__ndk1::error_category::error_category()
-
-{
+/* ok  address 0x5eed48  size 20 */std::__ndk1::error_category::error_category(){
   *this = &PTR__error_category_007191b8;
   return;
 }
 
 
 
-/* ok  address 0x5eed5c  size 4 */
-/* mangled: _ZNSt6__ndk114error_categoryD0Ev */
-/* std::__ndk1::error_category::~error_category() */
-
-/* std::__ndk1::error_category::~error_category() */
-
-void std::__ndk1::error_category::~error_category(void)
-
-{
+/* ok  address 0x5eed5c  size 4 */std::__ndk1::error_category::~error_category(){
   code *pcVar1;
   
                     /* WARNING: Does not return */
@@ -151,15 +135,7 @@ LAB_005eeed0:
 
 
 
-/* ok  address 0x5efbb0  size 4 */
-/* mangled: _ZNSt6__ndk114error_categoryD1Ev */
-/* std::__ndk1::error_category::~error_category() */
-
-/* std::__ndk1::error_category::~error_category() */
-
-void std::__ndk1::error_category::~error_category(void)
-
-{
+/* ok  address 0x5efbb0  size 4 */std::__ndk1::error_category::~error_category(){
   return;
 }
 

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x34808c  size 84 */
-/* mangled: _ZN7Walaber13SkeletonActor14PropActionDataD2Ev */
-/* Walaber::SkeletonActor::PropActionData::~PropActionData() */
-
-/* Walaber::SkeletonActor::PropActionData::~PropActionData() */
-
-void Walaber::SkeletonActor::PropActionData::~PropActionData()
-
-{
+/* ok  address 0x34808c  size 84 */Walaber::SkeletonActor::PropActionData::~PropActionData(){
   *this = &PTR__PropActionData_0070e528;
   if ((*(byte *)(this + 7) & 1) != 0) {
     operator delete((void *)this[9]);
@@ -25,15 +17,7 @@ void Walaber::SkeletonActor::PropActionData::~PropActionData()
 
 
 
-/* ok  address 0x3480e0  size 80 */
-/* mangled: _ZN7Walaber13SkeletonActor14PropActionDataD0Ev */
-/* Walaber::SkeletonActor::PropActionData::~PropActionData() */
-
-/* Walaber::SkeletonActor::PropActionData::~PropActionData() */
-
-void Walaber::SkeletonActor::PropActionData::~PropActionData()
-
-{
+/* ok  address 0x3480e0  size 80 */Walaber::SkeletonActor::PropActionData::~PropActionData(){
   *this = &PTR__PropActionData_0070e528;
   if ((*(byte *)(this + 7) & 1) != 0) {
     operator delete((void *)this[9]);

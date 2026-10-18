@@ -66,17 +66,7 @@ WaterConceptConstants::FluidDescription::operator=(WaterConceptConstants__FluidD
 
 
 
-/* ok  address 0x40ac58  size 444 */
-/* mangled: _ZN21WaterConceptConstants16FluidDescriptionC2ERKS0_ */
-/* WaterConceptConstants::FluidDescription::FluidDescription(WaterConceptConstants::FluidDescription const&) */
-
-/* WaterConceptConstants::FluidDescription::FluidDescription(WaterConceptConstants::FluidDescription
-   const&) */
-
-void WaterConceptConstants::FluidDescription::FluidDescription
-               (WaterConceptConstants__FluidDescription *p0)
-
-{
+/* ok  address 0x40ac58  size 444 */WaterConceptConstants::FluidDescription::FluidDescription(WaterConceptConstants__FluidDescription *p0){
   uint *in_x1;
   int *piVar1;
   long lVar2;

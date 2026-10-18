@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x47a9d0  size 248 */
-/* mangled: _ZN12WaterConcept7FloaterC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::Floater::Floater(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::Floater::Floater(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::Floater::Floater(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x47a9d0  size 248 */WaterConcept::Floater::Floater(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_48;
@@ -43,15 +35,7 @@ void WaterConcept::Floater::Floater(Walaber__Vector2 p0,float p1,Walaber__Vector
 
 
 
-/* ok  address 0x47aac8  size 172 */
-/* mangled: _ZN12WaterConcept7FloaterD1Ev */
-/* WaterConcept::Floater::~Floater() */
-
-/* WaterConcept::Floater::~Floater() */
-
-void WaterConcept::Floater::~Floater(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x47aac8  size 172 */WaterConcept::Floater::~Floater(){
   ulong extraout_x1;
   ulong extraout_x1_00;
   void *pvVar1;
@@ -99,15 +83,7 @@ void WaterConcept::Floater::~Floater(undefined8 *param_1,ulong param_2)
 
 
 
-/* ok  address 0x47ab74  size 36 */
-/* mangled: _ZN12WaterConcept7FloaterD0Ev */
-/* WaterConcept::Floater::~Floater() */
-
-/* WaterConcept::Floater::~Floater() */
-
-void WaterConcept::Floater::~Floater(void *param_1)
-
-{
+/* ok  address 0x47ab74  size 36 */WaterConcept::Floater::~Floater(){
   WaterConcept::Floater::~Floater();
   operator delete(param_1);
   return;

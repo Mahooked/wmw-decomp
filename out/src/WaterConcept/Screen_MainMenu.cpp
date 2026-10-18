@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x506c80  size 1620 */
-/* mangled: _ZN12WaterConcept15Screen_MainMenuC1Ev */
-/* WaterConcept::Screen_MainMenu::Screen_MainMenu() */
-
-/* WaterConcept::Screen_MainMenu::Screen_MainMenu() */
-
-void WaterConcept::Screen_MainMenu::Screen_MainMenu()
-
-{
+/* ok  address 0x506c80  size 1620 */WaterConcept::Screen_MainMenu::Screen_MainMenu(){
   undefined8 uVar2;
   undefined8 *puVar3;
   long lVar5;
@@ -288,15 +280,7 @@ void WaterConcept::Screen_MainMenu::_spriteAnimationEventCallback(void *p0)
 
 
 
-/* ok  address 0x50734c  size 232 */
-/* mangled: _ZN12WaterConcept15Screen_MainMenuD1Ev */
-/* WaterConcept::Screen_MainMenu::~Screen_MainMenu() */
-
-/* WaterConcept::Screen_MainMenu::~Screen_MainMenu() */
-
-void WaterConcept::Screen_MainMenu::~Screen_MainMenu(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x50734c  size 232 */WaterConcept::Screen_MainMenu::~Screen_MainMenu(){
   ulong extraout_x1;
   ulong extraout_x1_00;
   ulong extraout_x1_01;
@@ -342,15 +326,7 @@ void WaterConcept::Screen_MainMenu::~Screen_MainMenu(undefined8 *param_1,ulong p
 
 
 
-/* ok  address 0x50743c  size 36 */
-/* mangled: _ZN12WaterConcept15Screen_MainMenuD0Ev */
-/* WaterConcept::Screen_MainMenu::~Screen_MainMenu() */
-
-/* WaterConcept::Screen_MainMenu::~Screen_MainMenu() */
-
-void WaterConcept::Screen_MainMenu::~Screen_MainMenu(void *param_1)
-
-{
+/* ok  address 0x50743c  size 36 */WaterConcept::Screen_MainMenu::~Screen_MainMenu(){
   WaterConcept::Screen_MainMenu::~Screen_MainMenu();
   operator delete(param_1);
   return;

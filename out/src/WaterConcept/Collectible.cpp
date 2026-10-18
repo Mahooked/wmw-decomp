@@ -23,15 +23,7 @@ void WaterConcept::Collectible::getSpriteWorldSize(undefined8 *param_1,long para
 
 
 
-/* ok  address 0x4784c0  size 328 */
-/* mangled: _ZN12WaterConcept11CollectibleC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::Collectible::Collectible(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::Collectible::Collectible(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::Collectible::Collectible(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x4784c0  size 328 */WaterConcept::Collectible::Collectible(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   int iVar2;
   uint uVar3;
   undefined8 *in_x2;
@@ -66,15 +58,7 @@ void WaterConcept::Collectible::Collectible(Walaber__Vector2 p0,float p1,Walaber
 
 
 
-/* ok  address 0x478608  size 56 */
-/* mangled: _ZN12WaterConcept11CollectibleD1Ev */
-/* WaterConcept::Collectible::~Collectible() */
-
-/* WaterConcept::Collectible::~Collectible() */
-
-void WaterConcept::Collectible::~Collectible()
-
-{
+/* ok  address 0x478608  size 56 */WaterConcept::Collectible::~Collectible(){
   *this = &PTR__Collectible_007116c8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
   WaterConcept::InteractiveObject::~InteractiveObject(this);
@@ -83,15 +67,7 @@ void WaterConcept::Collectible::~Collectible()
 
 
 
-/* ok  address 0x478640  size 64 */
-/* mangled: _ZN12WaterConcept11CollectibleD0Ev */
-/* WaterConcept::Collectible::~Collectible() */
-
-/* WaterConcept::Collectible::~Collectible() */
-
-void WaterConcept::Collectible::~Collectible()
-
-{
+/* ok  address 0x478640  size 64 */WaterConcept::Collectible::~Collectible(){
   *this = &PTR__Collectible_007116c8;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
   WaterConcept::InteractiveObject::~InteractiveObject(this);

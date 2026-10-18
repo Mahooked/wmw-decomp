@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x55d51c  size 168 */
-/* mangled: _ZN12WaterConcept15Screen_SettingsC1Ev */
-/* WaterConcept::Screen_Settings::Screen_Settings() */
-
-/* WaterConcept::Screen_Settings::Screen_Settings() */
-
-void WaterConcept::Screen_Settings::Screen_Settings()
-
-{
+/* ok  address 0x55d51c  size 168 */WaterConcept::Screen_Settings::Screen_Settings(){
   WaterConcept::WCScreen::WCScreen(this,7);
                     /* try { // try from 0055d538 to 0055d53f has its CatchHandler @ 0055d5b0 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -37,15 +29,7 @@ void WaterConcept::Screen_Settings::Screen_Settings()
 
 
 
-/* ok  address 0x55d5c4  size 96 */
-/* mangled: _ZN12WaterConcept15Screen_SettingsD1Ev */
-/* WaterConcept::Screen_Settings::~Screen_Settings() */
-
-/* WaterConcept::Screen_Settings::~Screen_Settings() */
-
-void WaterConcept::Screen_Settings::~Screen_Settings()
-
-{
+/* ok  address 0x55d5c4  size 96 */WaterConcept::Screen_Settings::~Screen_Settings(){
   *this = &PTR__Screen_Settings_00715598;
   this[4] = &PTR_handleEvent_00715650;
   this[0x12] = &PTR__Screen_Settings_00715670;
@@ -58,15 +42,7 @@ void WaterConcept::Screen_Settings::~Screen_Settings()
 
 
 
-/* ok  address 0x55d62c  size 36 */
-/* mangled: _ZN12WaterConcept15Screen_SettingsD0Ev */
-/* WaterConcept::Screen_Settings::~Screen_Settings() */
-
-/* WaterConcept::Screen_Settings::~Screen_Settings() */
-
-void WaterConcept::Screen_Settings::~Screen_Settings(void *param_1)
-
-{
+/* ok  address 0x55d62c  size 36 */WaterConcept::Screen_Settings::~Screen_Settings(){
   WaterConcept::Screen_Settings::~Screen_Settings();
   operator delete(param_1);
   return;

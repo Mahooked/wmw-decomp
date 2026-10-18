@@ -210,15 +210,7 @@ LAB_003dfea0:
 
 
 
-/* ok  address 0x3e00d4  size 60 */
-/* mangled: _ZN7Walaber11BezierCurveD0Ev */
-/* Walaber::BezierCurve::~BezierCurve() */
-
-/* Walaber::BezierCurve::~BezierCurve() */
-
-void Walaber::BezierCurve::~BezierCurve(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x3e00d4  size 60 */Walaber::BezierCurve::~BezierCurve(){
   *param_1 = &PTR__Curve_00710ab8;
   if ((void *)param_1[3] != (void *)0x0) {
     operator delete[]((void *)param_1[3],param_2);

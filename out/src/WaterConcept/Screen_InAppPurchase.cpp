@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4e44ac  size 308 */
-/* mangled: _ZN12WaterConcept20Screen_InAppPurchaseC1Ev */
-/* WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase() */
-
-/* WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase() */
-
-void WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase()
-
-{
+/* ok  address 0x4e44ac  size 308 */WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase(){
   WaterConcept::WCScreen::WCScreen(this,0x19);
                     /* try { // try from 004e44c8 to 004e44cf has its CatchHandler @ 004e45cc */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -59,15 +51,7 @@ void WaterConcept::Screen_InAppPurchase::Screen_InAppPurchase()
 
 
 
-/* ok  address 0x4e45e0  size 276 */
-/* mangled: _ZN12WaterConcept20Screen_InAppPurchaseD1Ev */
-/* WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-/* WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-void WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase()
-
-{
+/* ok  address 0x4e45e0  size 276 */WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
   *this = &PTR__Screen_InAppPurchase_00714028;
   this[4] = &PTR_handleEvent_007140e0;
   this[0x12] = &PTR__Screen_InAppPurchase_00714100;
@@ -112,15 +96,7 @@ void WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase()
 
 
 
-/* ok  address 0x4e46fc  size 36 */
-/* mangled: _ZN12WaterConcept20Screen_InAppPurchaseD0Ev */
-/* WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-/* WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase() */
-
-void WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(void *param_1)
-
-{
+/* ok  address 0x4e46fc  size 36 */WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
   WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase();
   operator delete(param_1);
   return;

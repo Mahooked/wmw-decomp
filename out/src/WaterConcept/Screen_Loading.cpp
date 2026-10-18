@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4feca8  size 164 */
-/* mangled: _ZN12WaterConcept14Screen_LoadingC1Ev */
-/* WaterConcept::Screen_Loading::Screen_Loading() */
-
-/* WaterConcept::Screen_Loading::Screen_Loading() */
-
-void WaterConcept::Screen_Loading::Screen_Loading()
-
-{
+/* ok  address 0x4feca8  size 164 */WaterConcept::Screen_Loading::Screen_Loading(){
   WaterConcept::WCScreen::WCScreen(this,0x21);
                     /* try { // try from 004fecc4 to 004feccb has its CatchHandler @ 004fed38 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -32,15 +24,7 @@ void WaterConcept::Screen_Loading::Screen_Loading()
 
 
 
-/* ok  address 0x4fed4c  size 172 */
-/* mangled: _ZN12WaterConcept14Screen_LoadingD1Ev */
-/* WaterConcept::Screen_Loading::~Screen_Loading() */
-
-/* WaterConcept::Screen_Loading::~Screen_Loading() */
-
-void WaterConcept::Screen_Loading::~Screen_Loading()
-
-{
+/* ok  address 0x4fed4c  size 172 */WaterConcept::Screen_Loading::~Screen_Loading(){
   void *p0;
   
   *this = &PTR__Screen_Loading_007144a8;
@@ -62,15 +46,7 @@ void WaterConcept::Screen_Loading::~Screen_Loading()
 
 
 
-/* ok  address 0x4fee00  size 36 */
-/* mangled: _ZN12WaterConcept14Screen_LoadingD0Ev */
-/* WaterConcept::Screen_Loading::~Screen_Loading() */
-
-/* WaterConcept::Screen_Loading::~Screen_Loading() */
-
-void WaterConcept::Screen_Loading::~Screen_Loading(void *param_1)
-
-{
+/* ok  address 0x4fee00  size 36 */WaterConcept::Screen_Loading::~Screen_Loading(){
   WaterConcept::Screen_Loading::~Screen_Loading();
   operator delete(param_1);
   return;

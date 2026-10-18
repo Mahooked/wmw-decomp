@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x53b570  size 8 */
-/* mangled: _ZThn144_N12WaterConcept21Screen_NoteChallengesD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-/* non-virtual thunk to WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(long param_1)
-
-{
+/* ok  address 0x53b570  size 8 */non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
   WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x53b59c  size 40 */
-/* mangled: _ZThn144_N12WaterConcept21Screen_NoteChallengesD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-/* non-virtual thunk to WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(long param_1)
-
-{
+/* ok  address 0x53b59c  size 40 */non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
   WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

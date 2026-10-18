@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x532e30  size 168 */
-/* mangled: _ZN12WaterConcept22Screen_MusicCollectionC1Ev */
-/* WaterConcept::Screen_MusicCollection::Screen_MusicCollection() */
-
-/* WaterConcept::Screen_MusicCollection::Screen_MusicCollection() */
-
-void WaterConcept::Screen_MusicCollection::Screen_MusicCollection()
-
-{
+/* ok  address 0x532e30  size 168 */WaterConcept::Screen_MusicCollection::Screen_MusicCollection(){
   WaterConcept::WCScreen::WCScreen(this,0x22);
                     /* try { // try from 00532e4c to 00532e53 has its CatchHandler @ 00532ec4 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -35,15 +27,7 @@ void WaterConcept::Screen_MusicCollection::Screen_MusicCollection()
 
 
 
-/* ok  address 0x532ed8  size 140 */
-/* mangled: _ZN12WaterConcept22Screen_MusicCollectionD1Ev */
-/* WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-/* WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-void WaterConcept::Screen_MusicCollection::~Screen_MusicCollection()
-
-{
+/* ok  address 0x532ed8  size 140 */WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(){
   void *p0;
   
   *this = &PTR__Screen_MusicCollection_00714a98;
@@ -68,15 +52,7 @@ void WaterConcept::Screen_MusicCollection::~Screen_MusicCollection()
 
 
 
-/* ok  address 0x532f6c  size 36 */
-/* mangled: _ZN12WaterConcept22Screen_MusicCollectionD0Ev */
-/* WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-/* WaterConcept::Screen_MusicCollection::~Screen_MusicCollection() */
-
-void WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(void *param_1)
-
-{
+/* ok  address 0x532f6c  size 36 */WaterConcept::Screen_MusicCollection::~Screen_MusicCollection(){
   WaterConcept::Screen_MusicCollection::~Screen_MusicCollection();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x443084  size 120 */
-/* mangled: _ZN12WaterConcept13SeaweedStrandC1Ev */
-/* WaterConcept::SeaweedStrand::SeaweedStrand() */
-
-/* WaterConcept::SeaweedStrand::SeaweedStrand() */
-
-void WaterConcept::SeaweedStrand::SeaweedStrand()
-
-{
+/* ok  address 0x443084  size 120 */WaterConcept::SeaweedStrand::SeaweedStrand(){
   *(undefined4 *)(this + 3) = 0;
   *this = 0x53f800000;
   this[2] = 0;
@@ -29,15 +21,7 @@ void WaterConcept::SeaweedStrand::SeaweedStrand()
 
 
 
-/* ok  address 0x443170  size 52 */
-/* mangled: _ZN12WaterConcept13SeaweedStrandD1Ev */
-/* WaterConcept::SeaweedStrand::~SeaweedStrand() */
-
-/* WaterConcept::SeaweedStrand::~SeaweedStrand() */
-
-void WaterConcept::SeaweedStrand::~SeaweedStrand(long param_1,ulong param_2)
-
-{
+/* ok  address 0x443170  size 52 */WaterConcept::SeaweedStrand::~SeaweedStrand(){
   if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
     operator delete[](*(void **)(param_1 + 0xa8),param_2);
   }

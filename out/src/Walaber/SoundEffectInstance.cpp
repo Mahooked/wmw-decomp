@@ -3,19 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x34c8a4  size 124 */
-/* mangled: _ZN7Walaber19SoundEffectInstanceC1ENS_9SharedPtrINS_13SoundResourceEEEPN4FMOD12ChannelGroupEfNSt6__ndk112basic_stringIcNS7_11char_traitsIcEENS7_9allocatorIcEEEE */
-/* Walaber::SoundEffectInstance::SoundEffectInstance(Walaber::SharedPtr<Walaber::SoundResource>, FMOD::ChannelGroup*, float, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>) */
-
-/* Walaber::SoundEffectInstance::SoundEffectInstance(Walaber::SharedPtr<Walaber::SoundResource>,
-   FMOD::ChannelGroup*, float, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> >) */
-
-void Walaber::SoundEffectInstance::SoundEffectInstance
-               (undefined4 param_1,undefined8 *param_2,long *param_3,undefined8 param_4,
-               undefined8 param_5)
-
-{
+/* ok  address 0x34c8a4  size 124 */Walaber::SoundEffectInstance::SoundEffectInstance(undefined4 param_1,undefined8 *param_2,long *param_3,undefined8 param_4, undefined8 param_5){
   int *piVar1;
   long lVar2;
   
@@ -38,15 +26,7 @@ void Walaber::SoundEffectInstance::SoundEffectInstance
 
 
 
-/* ok  address 0x34c97c  size 188 */
-/* mangled: _ZN7Walaber19SoundEffectInstanceD1Ev */
-/* Walaber::SoundEffectInstance::~SoundEffectInstance() */
-
-/* Walaber::SoundEffectInstance::~SoundEffectInstance() */
-
-void Walaber::SoundEffectInstance::~SoundEffectInstance()
-
-{
+/* ok  address 0x34c97c  size 188 */Walaber::SoundEffectInstance::~SoundEffectInstance(){
   byte abStack_2c [4];
   
   *this = &PTR__SoundEffectInstance_0070e628;
@@ -88,15 +68,7 @@ void Walaber::SoundEffectInstance::stop(long param_1)
 
 
 
-/* ok  address 0x34ca64  size 36 */
-/* mangled: _ZN7Walaber19SoundEffectInstanceD0Ev */
-/* Walaber::SoundEffectInstance::~SoundEffectInstance() */
-
-/* Walaber::SoundEffectInstance::~SoundEffectInstance() */
-
-void Walaber::SoundEffectInstance::~SoundEffectInstance(void *param_1)
-
-{
+/* ok  address 0x34ca64  size 36 */Walaber::SoundEffectInstance::~SoundEffectInstance(){
   Walaber::SoundEffectInstance::~SoundEffectInstance();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4b87a0  size 300 */
-/* mangled: _ZN12WaterConcept15Screen_DialogueC1Ev */
-/* WaterConcept::Screen_Dialogue::Screen_Dialogue() */
-
-/* WaterConcept::Screen_Dialogue::Screen_Dialogue() */
-
-void WaterConcept::Screen_Dialogue::Screen_Dialogue()
-
-{
+/* ok  address 0x4b87a0  size 300 */WaterConcept::Screen_Dialogue::Screen_Dialogue(){
   undefined8 uStack_58;
   undefined8 uStack_50;
   
@@ -53,15 +45,7 @@ void WaterConcept::Screen_Dialogue::Screen_Dialogue()
 
 
 
-/* ok  address 0x4b88cc  size 144 */
-/* mangled: _ZN12WaterConcept15Screen_DialogueD1Ev */
-/* WaterConcept::Screen_Dialogue::~Screen_Dialogue() */
-
-/* WaterConcept::Screen_Dialogue::~Screen_Dialogue() */
-
-void WaterConcept::Screen_Dialogue::~Screen_Dialogue()
-
-{
+/* ok  address 0x4b88cc  size 144 */WaterConcept::Screen_Dialogue::~Screen_Dialogue(){
   *this = &PTR__Screen_Dialogue_00713468;
   this[4] = &PTR_handleEvent_00713518;
   if ((*(byte *)(this + 0x2e) & 1) != 0) {
@@ -84,15 +68,7 @@ void WaterConcept::Screen_Dialogue::~Screen_Dialogue()
 
 
 
-/* ok  address 0x4b895c  size 36 */
-/* mangled: _ZN12WaterConcept15Screen_DialogueD0Ev */
-/* WaterConcept::Screen_Dialogue::~Screen_Dialogue() */
-
-/* WaterConcept::Screen_Dialogue::~Screen_Dialogue() */
-
-void WaterConcept::Screen_Dialogue::~Screen_Dialogue(void *param_1)
-
-{
+/* ok  address 0x4b895c  size 36 */WaterConcept::Screen_Dialogue::~Screen_Dialogue(){
   WaterConcept::Screen_Dialogue::~Screen_Dialogue();
   operator delete(param_1);
   return;

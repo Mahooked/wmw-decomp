@@ -72,15 +72,7 @@ LAB_00345bd0:
 
 
 
-/* ok  address 0x3d6794  size 8 */
-/* mangled: _ZN7Walaber11XMLDocument8IteratorC1EP8_xmlNode */
-/* Walaber::XMLDocument::Iterator::Iterator(_xmlNode*) */
-
-/* Walaber::XMLDocument::Iterator::Iterator(_xmlNode*) */
-
-void Walaber::XMLDocument::Iterator::Iterator(_xmlNode *p0)
-
-{
+/* ok  address 0x3d6794  size 8 */Walaber::XMLDocument::Iterator::Iterator(_xmlNode *p0){
   undefined8 in_x1;
   
   *(undefined8 *)p0 = in_x1;
@@ -90,15 +82,7 @@ void Walaber::XMLDocument::Iterator::Iterator(_xmlNode *p0)
 
 
 
-/* ok  address 0x3d679c  size 12 */
-/* mangled: _ZN7Walaber11XMLDocument8IteratorC1ERKS1_ */
-/* Walaber::XMLDocument::Iterator::Iterator(Walaber::XMLDocument::Iterator const&) */
-
-/* Walaber::XMLDocument::Iterator::Iterator(Walaber::XMLDocument::Iterator const&) */
-
-void Walaber::XMLDocument::Iterator::Iterator(Walaber__XMLDocument__Iterator *p0)
-
-{
+/* ok  address 0x3d679c  size 12 */Walaber::XMLDocument::Iterator::Iterator(Walaber__XMLDocument__Iterator *p0){
   ulong *in_x1;
   ulong uVar1;
   

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a1710  size 128 */
-/* mangled: _ZN12WaterConcept19Screen_AchievementsC1Ev */
-/* WaterConcept::Screen_Achievements::Screen_Achievements() */
-
-/* WaterConcept::Screen_Achievements::Screen_Achievements() */
-
-void WaterConcept::Screen_Achievements::Screen_Achievements()
-
-{
+/* ok  address 0x4a1710  size 128 */WaterConcept::Screen_Achievements::Screen_Achievements(){
   WaterConcept::WCScreen::WCScreen(this,0x12);
                     /* try { // try from 004a172c to 004a1733 has its CatchHandler @ 004a177c */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -25,15 +17,7 @@ void WaterConcept::Screen_Achievements::Screen_Achievements()
 
 
 
-/* ok  address 0x4a1880  size 112 */
-/* mangled: _ZN12WaterConcept19Screen_AchievementsD1Ev */
-/* WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-/* WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-void WaterConcept::Screen_Achievements::~Screen_Achievements()
-
-{
+/* ok  address 0x4a1880  size 112 */WaterConcept::Screen_Achievements::~Screen_Achievements(){
   *this = &PTR__Screen_Achievements_00712878;
   this[4] = &PTR_handleEvent_00712930;
   this[0x12] = &PTR__Screen_Achievements_00712950;
@@ -50,15 +34,7 @@ void WaterConcept::Screen_Achievements::~Screen_Achievements()
 
 
 
-/* ok  address 0x4a18f8  size 36 */
-/* mangled: _ZN12WaterConcept19Screen_AchievementsD0Ev */
-/* WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-/* WaterConcept::Screen_Achievements::~Screen_Achievements() */
-
-void WaterConcept::Screen_Achievements::~Screen_Achievements(void *param_1)
-
-{
+/* ok  address 0x4a18f8  size 36 */WaterConcept::Screen_Achievements::~Screen_Achievements(){
   WaterConcept::Screen_Achievements::~Screen_Achievements();
   operator delete(param_1);
   return;

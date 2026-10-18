@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x56a600  size 2420 */
-/* mangled: _ZN12WaterConcept16Screen_WaterTestC1Ev */
-/* WaterConcept::Screen_WaterTest::Screen_WaterTest() */
-
-/* WaterConcept::Screen_WaterTest::Screen_WaterTest() */
-
-void WaterConcept::Screen_WaterTest::Screen_WaterTest()
-
-{
+/* ok  address 0x56a600  size 2420 */WaterConcept::Screen_WaterTest::Screen_WaterTest(){
   undefined *puVar2;
   byte bVar3;
   undefined8 *puVar4;
@@ -382,15 +374,7 @@ void WaterConcept::Screen_WaterTest::Screen_WaterTest()
 
 
 
-/* ok  address 0x56af74  size 712 */
-/* mangled: _ZN12WaterConcept16Screen_WaterTestD1Ev */
-/* WaterConcept::Screen_WaterTest::~Screen_WaterTest() */
-
-/* WaterConcept::Screen_WaterTest::~Screen_WaterTest() */
-
-void WaterConcept::Screen_WaterTest::~Screen_WaterTest()
-
-{
+/* ok  address 0x56af74  size 712 */WaterConcept::Screen_WaterTest::~Screen_WaterTest(){
   void *pvVar1;
   
   *this = &PTR__Screen_WaterTest_00715e98;
@@ -469,15 +453,7 @@ void WaterConcept::Screen_WaterTest::~Screen_WaterTest()
 
 
 
-/* ok  address 0x56b244  size 36 */
-/* mangled: _ZN12WaterConcept16Screen_WaterTestD0Ev */
-/* WaterConcept::Screen_WaterTest::~Screen_WaterTest() */
-
-/* WaterConcept::Screen_WaterTest::~Screen_WaterTest() */
-
-void WaterConcept::Screen_WaterTest::~Screen_WaterTest(void *param_1)
-
-{
+/* ok  address 0x56b244  size 36 */WaterConcept::Screen_WaterTest::~Screen_WaterTest(){
   WaterConcept::Screen_WaterTest::~Screen_WaterTest();
   operator delete(param_1);
   return;

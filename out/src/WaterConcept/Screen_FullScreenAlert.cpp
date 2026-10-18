@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4d87a0  size 216 */
-/* mangled: _ZN12WaterConcept22Screen_FullScreenAlertC1Ev */
-/* WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert() */
-
-/* WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert() */
-
-void WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert()
-
-{
+/* ok  address 0x4d87a0  size 216 */WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert(){
   undefined8 uVar1;
   
   WaterConcept::WCScreen::WCScreen(this,0x17);
@@ -45,15 +37,7 @@ void WaterConcept::Screen_FullScreenAlert::Screen_FullScreenAlert()
 
 
 
-/* ok  address 0x4d8878  size 144 */
-/* mangled: _ZN12WaterConcept22Screen_FullScreenAlertD1Ev */
-/* WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert() */
-
-/* WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert() */
-
-void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert()
-
-{
+/* ok  address 0x4d8878  size 144 */WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert(){
   *this = &PTR__Screen_FullScreenAlert_00713b08;
   this[4] = &PTR_handleEvent_00713bb8;
   Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x28);
@@ -78,15 +62,7 @@ void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert()
 
 
 
-/* ok  address 0x4d8908  size 36 */
-/* mangled: _ZN12WaterConcept22Screen_FullScreenAlertD0Ev */
-/* WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert() */
-
-/* WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert() */
-
-void WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert(void *param_1)
-
-{
+/* ok  address 0x4d8908  size 36 */WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert(){
   WaterConcept::Screen_FullScreenAlert::~Screen_FullScreenAlert();
   operator delete(param_1);
   return;

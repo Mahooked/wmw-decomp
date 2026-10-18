@@ -34,18 +34,7 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
 
 
 
-/* ok  address 0x39705c  size 220 */
-/* mangled: _ZN7Walaber10SubtextureC2ENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_7TextureEEERKNS_11TextureDataE */
-/* Walaber::Subtexture::Subtexture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>, Walaber::TextureData const&) */
-
-/* Walaber::Subtexture::Subtexture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> >, Walaber::SharedPtr<Walaber::Texture>, Walaber::TextureData
-   const&) */
-
-void Walaber::Subtexture::Subtexture
-               (undefined8 *param_1,undefined8 param_2,long *param_3,ulong *param_4)
-
-{
+/* ok  address 0x39705c  size 220 */Walaber::Subtexture::Subtexture(undefined8 *param_1,undefined8 param_2,long *param_3,ulong *param_4){
   int *piVar1;
   long lVar2;
   ulong uVar3;
@@ -76,15 +65,7 @@ void Walaber::Subtexture::Subtexture
 
 
 
-/* ok  address 0x397138  size 72 */
-/* mangled: _ZN7Walaber10SubtextureD2Ev */
-/* Walaber::Subtexture::~Subtexture() */
-
-/* Walaber::Subtexture::~Subtexture() */
-
-void Walaber::Subtexture::~Subtexture()
-
-{
+/* ok  address 0x397138  size 72 */Walaber::Subtexture::~Subtexture(){
   *this = &PTR__Subtexture_00710208;
   if ((*(byte *)(this + 0x1a) & 1) != 0) {
     operator delete((void *)this[0x1c]);
@@ -96,15 +77,7 @@ void Walaber::Subtexture::~Subtexture()
 
 
 
-/* ok  address 0x397180  size 36 */
-/* mangled: _ZN7Walaber10SubtextureD0Ev */
-/* Walaber::Subtexture::~Subtexture() */
-
-/* Walaber::Subtexture::~Subtexture() */
-
-void Walaber::Subtexture::~Subtexture(void *param_1)
-
-{
+/* ok  address 0x397180  size 36 */Walaber::Subtexture::~Subtexture(){
   Walaber::Subtexture::~Subtexture();
   operator delete(param_1);
   return;

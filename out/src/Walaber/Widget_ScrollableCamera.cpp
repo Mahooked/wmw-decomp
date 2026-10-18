@@ -93,17 +93,7 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
 
 
 
-/* ok  address 0x385f80  size 200 */
-/* mangled: _ZN7Walaber23Widget_ScrollableCameraC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int, Walaber::Vector2,
-   Walaber::Vector2) */
-
-void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x385f80  size 200 */Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -132,17 +122,7 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
 
 
 
-/* ok  address 0x386048  size 216 */
-/* mangled: _ZN7Walaber23Widget_ScrollableCameraC1EiNS_7Vector2ES1_PNS_6CameraE */
-/* Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int, Walaber::Vector2, Walaber::Vector2, Walaber::Camera*) */
-
-/* Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int, Walaber::Vector2,
-   Walaber::Vector2, Walaber::Camera*) */
-
-void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,Walaber__Camera *p3)
-
-{
+/* ok  address 0x386048  size 216 */Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,Walaber__Camera *p3){
   undefined8 *puVar2;
   undefined8 in_x4;
   undefined8 uStack_48;
@@ -172,15 +152,7 @@ void Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera
 
 
 
-/* ok  address 0x386120  size 168 */
-/* mangled: _ZN7Walaber23Widget_ScrollableCameraD1Ev */
-/* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
-
-/* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
-
-void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera()
-
-{
+/* ok  address 0x386120  size 168 */Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(){
   void *pvVar1;
   
   *this = &PTR__Widget_ScrollableCamera_0070f838;
@@ -220,15 +192,7 @@ void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera()
 
 
 
-/* ok  address 0x3861c8  size 36 */
-/* mangled: _ZN7Walaber23Widget_ScrollableCameraD0Ev */
-/* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
-
-/* Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera() */
-
-void Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(void *param_1)
-
-{
+/* ok  address 0x3861c8  size 36 */Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(){
   Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera();
   operator delete(param_1);
   return;

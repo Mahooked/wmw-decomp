@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5b095c  size 1200 */
-/* mangled: _ZNSt6__ndk18ios_base4InitC1Ev */
-/* std::__ndk1::ios_base::Init::Init() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* std::__ndk1::ios_base::Init::Init() */
-
-void std::__ndk1::ios_base::Init::Init(void)
-
-{
+/* ok  address 0x5b095c  size 1200 */std::__ndk1::ios_base::Init::Init(void){
   undefined **ppuVar2;
   undefined **ppuVar3;
   undefined **ppuVar4;
@@ -123,15 +114,7 @@ void std::__ndk1::ios_base::Init::Init(void)
 
 
 
-/* ok  address 0x5b0ffc  size 72 */
-/* mangled: _ZNSt6__ndk18ios_base4InitD1Ev */
-/* std::__ndk1::ios_base::Init::~Init() */
-
-/* std::__ndk1::ios_base::Init::~Init() */
-
-void std::__ndk1::ios_base::Init::~Init(void)
-
-{
+/* ok  address 0x5b0ffc  size 72 */std::__ndk1::ios_base::Init::~Init(){
                     /* try { // try from 005b1004 to 005b101b has its CatchHandler @ 005b1040 */
   std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::flush(cout);
   std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::flush(wcout);

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x389870  size 144 */
-/* mangled: _ZN7Walaber17Widget_SlideWheelC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_SlideWheel::Widget_SlideWheel(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_SlideWheel::Widget_SlideWheel(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_SlideWheel::Widget_SlideWheel(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x389870  size 144 */Walaber::Widget_SlideWheel::Widget_SlideWheel(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -47,18 +39,7 @@ void Walaber::Widget_SlideWheel::init(void)
 
 
 
-/* ok  address 0x389904  size 184 */
-/* mangled: _ZN7Walaber17Widget_SlideWheelC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEE */
-/* Walaber::Widget_SlideWheel::Widget_SlideWheel(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>) */
-
-/* Walaber::Widget_SlideWheel::Widget_SlideWheel(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>) */
-
-void Walaber::Widget_SlideWheel::Widget_SlideWheel
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5)
-
-{
+/* ok  address 0x389904  size 184 */Walaber::Widget_SlideWheel::Widget_SlideWheel(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   int *piVar2;
   long lVar3;
   undefined8 uStack_48;
@@ -84,15 +65,7 @@ void Walaber::Widget_SlideWheel::Widget_SlideWheel
 
 
 
-/* ok  address 0x3899bc  size 152 */
-/* mangled: _ZN7Walaber17Widget_SlideWheelD1Ev */
-/* Walaber::Widget_SlideWheel::~Widget_SlideWheel() */
-
-/* Walaber::Widget_SlideWheel::~Widget_SlideWheel() */
-
-void Walaber::Widget_SlideWheel::~Widget_SlideWheel()
-
-{
+/* ok  address 0x3899bc  size 152 */Walaber::Widget_SlideWheel::~Widget_SlideWheel(){
   *(undefined4 *)((long)this + 0xfc) = 0x7f26727f;
   *(undefined1 *)(this + 0x22) = 1;
   *this = &PTR__Widget_SlideWheel_0070fbf8;
@@ -112,15 +85,7 @@ void Walaber::Widget_SlideWheel::~Widget_SlideWheel()
 
 
 
-/* ok  address 0x389a54  size 36 */
-/* mangled: _ZN7Walaber17Widget_SlideWheelD0Ev */
-/* Walaber::Widget_SlideWheel::~Widget_SlideWheel() */
-
-/* Walaber::Widget_SlideWheel::~Widget_SlideWheel() */
-
-void Walaber::Widget_SlideWheel::~Widget_SlideWheel(void *param_1)
-
-{
+/* ok  address 0x389a54  size 36 */Walaber::Widget_SlideWheel::~Widget_SlideWheel(){
   Walaber::Widget_SlideWheel::~Widget_SlideWheel();
   operator delete(param_1);
   return;

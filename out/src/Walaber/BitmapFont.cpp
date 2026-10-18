@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x36461c  size 76 */
-/* mangled: _ZN7Walaber10BitmapFontC1Ev */
-/* Walaber::BitmapFont::BitmapFont() */
-
-/* Walaber::BitmapFont::BitmapFont() */
-
-void Walaber::BitmapFont::BitmapFont()
-
-{
+/* ok  address 0x36461c  size 76 */Walaber::BitmapFont::BitmapFont(){
   this[7] = 0;
   this[5] = 0;
   this[6] = this + 7;
@@ -38,15 +30,7 @@ void Walaber::BitmapFont::BitmapFont()
 
 
 
-/* ok  address 0x364668  size 108 */
-/* mangled: _ZN7Walaber10BitmapFontD1Ev */
-/* Walaber::BitmapFont::~BitmapFont() */
-
-/* Walaber::BitmapFont::~BitmapFont() */
-
-void Walaber::BitmapFont::~BitmapFont(byte *param_1)
-
-{
+/* ok  address 0x364668  size 108 */Walaber::BitmapFont::~BitmapFont(){
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0xa8);
   std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(param_1 + 0x78);
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x60);

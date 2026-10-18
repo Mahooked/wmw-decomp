@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x37c814  size 136 */
-/* mangled: _ZN7Walaber12Widget_GroupC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_Group::Widget_Group(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_Group::Widget_Group(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37c814  size 136 */Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -30,15 +22,7 @@ void Walaber::Widget_Group::Widget_Group(int p0,Walaber__Vector2 p1,Walaber__Vec
 
 
 
-/* ok  address 0x37c89c  size 60 */
-/* mangled: _ZN7Walaber12Widget_GroupD1Ev */
-/* Walaber::Widget_Group::~Widget_Group() */
-
-/* Walaber::Widget_Group::~Widget_Group() */
-
-void Walaber::Widget_Group::~Widget_Group()
-
-{
+/* ok  address 0x37c89c  size 60 */Walaber::Widget_Group::~Widget_Group(){
   *this = &PTR__Widget_Group_0070efc8;
   std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
   Walaber::Widget::~Widget(this);
@@ -47,15 +31,7 @@ void Walaber::Widget_Group::~Widget_Group()
 
 
 
-/* ok  address 0x37c8d8  size 68 */
-/* mangled: _ZN7Walaber12Widget_GroupD0Ev */
-/* Walaber::Widget_Group::~Widget_Group() */
-
-/* Walaber::Widget_Group::~Widget_Group() */
-
-void Walaber::Widget_Group::~Widget_Group()
-
-{
+/* ok  address 0x37c8d8  size 68 */Walaber::Widget_Group::~Widget_Group(){
   *this = &PTR__Widget_Group_0070efc8;
   std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
   Walaber::Widget::~Widget(this);

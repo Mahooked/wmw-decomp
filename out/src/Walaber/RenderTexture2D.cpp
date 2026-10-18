@@ -395,17 +395,7 @@ void Walaber::RenderTexture2D::_applySettings(long param_1)
 
 
 
-/* ok  address 0x396600  size 276 */
-/* mangled: _ZN7Walaber15RenderTexture2DC2EjjNS_25TextureInMemoryColorspaceE */
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, Walaber::TextureInMemoryColorspace) */
-
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int,
-   Walaber::TextureInMemoryColorspace) */
-
-void Walaber::RenderTexture2D::RenderTexture2D
-               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,int param_4)
-
-{
+/* ok  address 0x396600  size 276 */Walaber::RenderTexture2D::RenderTexture2D(undefined8 *param_1,undefined4 param_2,undefined4 param_3,int param_4){
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined3 uStack_4b;
@@ -448,17 +438,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
 
 
 
-/* ok  address 0x39686c  size 440 */
-/* mangled: _ZN7Walaber15RenderTexture2DC2EjjNS_15TextureSettingsENS_25TextureInMemoryColorspaceE */
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, Walaber::TextureSettings, Walaber::TextureInMemoryColorspace) */
-
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, Walaber::TextureSettings,
-   Walaber::TextureInMemoryColorspace) */
-
-void Walaber::RenderTexture2D::RenderTexture2D
-               (long *param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,int param_5)
-
-{
+/* ok  address 0x39686c  size 440 */Walaber::RenderTexture2D::RenderTexture2D(long *param_1,undefined4 param_2,undefined4 param_3,undefined8 *param_4,int param_5){
   undefined8 uStack_b8;
   undefined4 uStack_b0;
   undefined1 uStack_ac;
@@ -533,18 +513,7 @@ void Walaber::RenderTexture2D::RenderTexture2D
 
 
 
-/* ok  address 0x396aac  size 284 */
-/* mangled: _ZN7Walaber15RenderTexture2DC2EjjPhNS_25TextureInMemoryColorspaceE */
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, unsigned char*, Walaber::TextureInMemoryColorspace) */
-
-/* Walaber::RenderTexture2D::RenderTexture2D(unsigned int, unsigned int, unsigned char*,
-   Walaber::TextureInMemoryColorspace) */
-
-void Walaber::RenderTexture2D::RenderTexture2D
-               (undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4,
-               int param_5)
-
-{
+/* ok  address 0x396aac  size 284 */Walaber::RenderTexture2D::RenderTexture2D(undefined8 *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4, int param_5){
   byte abStack_60 [17];
   undefined4 uStack_4f;
   undefined3 uStack_4b;
@@ -617,15 +586,7 @@ undefined8 Walaber::RenderTexture2D::createScreenGrab(uint *p0,uint *p1,uint *p2
 
 
 
-/* ok  address 0x396c60  size 160 */
-/* mangled: _ZN7Walaber15RenderTexture2DD2Ev */
-/* Walaber::RenderTexture2D::~RenderTexture2D() */
-
-/* Walaber::RenderTexture2D::~RenderTexture2D() */
-
-void Walaber::RenderTexture2D::~RenderTexture2D()
-
-{
+/* ok  address 0x396c60  size 160 */Walaber::RenderTexture2D::~RenderTexture2D(){
   int *piVar1;
   int *piVar2;
   
@@ -647,15 +608,7 @@ void Walaber::RenderTexture2D::~RenderTexture2D()
 
 
 
-/* ok  address 0x396d00  size 36 */
-/* mangled: _ZN7Walaber15RenderTexture2DD0Ev */
-/* Walaber::RenderTexture2D::~RenderTexture2D() */
-
-/* Walaber::RenderTexture2D::~RenderTexture2D() */
-
-void Walaber::RenderTexture2D::~RenderTexture2D(void *param_1)
-
-{
+/* ok  address 0x396d00  size 36 */Walaber::RenderTexture2D::~RenderTexture2D(){
   Walaber::RenderTexture2D::~RenderTexture2D();
   operator delete(param_1);
   return;

@@ -64,15 +64,7 @@ Walaber__Widget_Toggle * Walaber::Widget_Toggle::operator=(Walaber__Widget_Toggl
 
 
 
-/* ok  address 0x38af98  size 196 */
-/* mangled: _ZN7Walaber13Widget_ToggleC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_Toggle::Widget_Toggle(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_Toggle::Widget_Toggle(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_Toggle::Widget_Toggle(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x38af98  size 196 */Walaber::Widget_Toggle::Widget_Toggle(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -125,22 +117,7 @@ void Walaber::Widget_Toggle::init(long param_1)
 
 
 
-/* ok  address 0x38c06c  size 508 */
-/* mangled: _ZN7Walaber13Widget_ToggleC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_NSt6__ndk112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEESB_RKSB_ */
-/* Walaber::Widget_Toggle::Widget_Toggle(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::Widget_Toggle::Widget_Toggle(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void Walaber::Widget_Toggle::Widget_Toggle
-               (long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9)
-
-{
+/* ok  address 0x38c06c  size 508 */Walaber::Widget_Toggle::Widget_Toggle(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9){
   int *piVar2;
   long lVar3;
   long lVar4;
@@ -207,15 +184,7 @@ void Walaber::Widget_Toggle::Widget_Toggle
 
 
 
-/* ok  address 0x38c268  size 104 */
-/* mangled: _ZN7Walaber13Widget_ToggleD1Ev */
-/* Walaber::Widget_Toggle::~Widget_Toggle() */
-
-/* Walaber::Widget_Toggle::~Widget_Toggle() */
-
-void Walaber::Widget_Toggle::~Widget_Toggle()
-
-{
+/* ok  address 0x38c268  size 104 */Walaber::Widget_Toggle::~Widget_Toggle(){
   *this = &PTR__Widget_Toggle_0070fec8;
   if ((*(byte *)(this + 0x30) & 1) != 0) {
     operator delete((void *)this[0x32]);
@@ -232,15 +201,7 @@ void Walaber::Widget_Toggle::~Widget_Toggle()
 
 
 
-/* ok  address 0x38c2d0  size 36 */
-/* mangled: _ZN7Walaber13Widget_ToggleD0Ev */
-/* Walaber::Widget_Toggle::~Widget_Toggle() */
-
-/* Walaber::Widget_Toggle::~Widget_Toggle() */
-
-void Walaber::Widget_Toggle::~Widget_Toggle(void *param_1)
-
-{
+/* ok  address 0x38c2d0  size 36 */Walaber::Widget_Toggle::~Widget_Toggle(){
   Walaber::Widget_Toggle::~Widget_Toggle();
   operator delete(param_1);
   return;

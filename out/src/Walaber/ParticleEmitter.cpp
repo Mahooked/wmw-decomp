@@ -30,15 +30,7 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
 
 
 
-/* ok  address 0x390600  size 268 */
-/* mangled: _ZN7Walaber15ParticleEmitterC1Ei */
-/* Walaber::ParticleEmitter::ParticleEmitter(int) */
-
-/* Walaber::ParticleEmitter::ParticleEmitter(int) */
-
-void Walaber::ParticleEmitter::ParticleEmitter(int p0)
-
-{
+/* ok  address 0x390600  size 268 */Walaber::ParticleEmitter::ParticleEmitter(int p0){
   undefined8 *puVar1;
   undefined4 in_w1;
   undefined8 uVar2;
@@ -86,15 +78,7 @@ void Walaber::ParticleEmitter::ParticleEmitter(int p0)
 
 
 
-/* ok  address 0x3907f0  size 168 */
-/* mangled: _ZN7Walaber15ParticleEmitterD1Ev */
-/* Walaber::ParticleEmitter::~ParticleEmitter() */
-
-/* Walaber::ParticleEmitter::~ParticleEmitter() */
-
-void Walaber::ParticleEmitter::~ParticleEmitter()
-
-{
+/* ok  address 0x3907f0  size 168 */Walaber::ParticleEmitter::~ParticleEmitter(){
   void *pvVar1;
   undefined8 *puVar2;
   undefined8 *puVar3;
@@ -136,15 +120,7 @@ void Walaber::ParticleEmitter::~ParticleEmitter()
 
 
 
-/* ok  address 0x3908e4  size 36 */
-/* mangled: _ZN7Walaber15ParticleEmitterD0Ev */
-/* Walaber::ParticleEmitter::~ParticleEmitter() */
-
-/* Walaber::ParticleEmitter::~ParticleEmitter() */
-
-void Walaber::ParticleEmitter::~ParticleEmitter(void *param_1)
-
-{
+/* ok  address 0x3908e4  size 36 */Walaber::ParticleEmitter::~ParticleEmitter(){
   Walaber::ParticleEmitter::~ParticleEmitter();
   operator delete(param_1);
   return;

@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x47eb6c  size 316 */
-/* mangled: _ZN12WaterConcept6IcyHotC1EN7Walaber7Vector2EfS2_PNS_6FluidsE */
-/* WaterConcept::IcyHot::IcyHot(Walaber::Vector2, float, Walaber::Vector2, WaterConcept::Fluids*) */
-
-/* WaterConcept::IcyHot::IcyHot(Walaber::Vector2, float, Walaber::Vector2, WaterConcept::Fluids*) */
-
-void WaterConcept::IcyHot::IcyHot
-               (Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3)
-
-{
+/* ok  address 0x47eb6c  size 316 */WaterConcept::IcyHot::IcyHot(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2,WaterConcept__Fluids *p3){
   undefined8 *puVar2;
   undefined8 in_x3;
   undefined4 in_register_00005004;
@@ -67,15 +58,7 @@ void WaterConcept::IcyHot::IcyHot
 
 
 
-/* ok  address 0x47eca8  size 108 */
-/* mangled: _ZN12WaterConcept6IcyHotD1Ev */
-/* WaterConcept::IcyHot::~IcyHot() */
-
-/* WaterConcept::IcyHot::~IcyHot() */
-
-void WaterConcept::IcyHot::~IcyHot()
-
-{
+/* ok  address 0x47eca8  size 108 */WaterConcept::IcyHot::~IcyHot(){
   void *pvVar1;
   ulong p1;
   
@@ -101,15 +84,7 @@ void WaterConcept::IcyHot::~IcyHot()
 
 
 
-/* ok  address 0x47ed14  size 36 */
-/* mangled: _ZN12WaterConcept6IcyHotD0Ev */
-/* WaterConcept::IcyHot::~IcyHot() */
-
-/* WaterConcept::IcyHot::~IcyHot() */
-
-void WaterConcept::IcyHot::~IcyHot(void *param_1)
-
-{
+/* ok  address 0x47ed14  size 36 */WaterConcept::IcyHot::~IcyHot(){
   WaterConcept::IcyHot::~IcyHot();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a4364  size 208 */
-/* mangled: _ZN12WaterConcept23Screen_AchievementsTestC1Ev */
-/* WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest() */
-
-/* WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest() */
-
-void WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest()
-
-{
+/* ok  address 0x4a4364  size 208 */WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest(){
   undefined8 uVar1;
   int iVar2;
   
@@ -36,30 +28,14 @@ void WaterConcept::Screen_AchievementsTest::Screen_AchievementsTest()
 
 
 
-/* ok  address 0x4a4434  size 4 */
-/* mangled: _ZN12WaterConcept23Screen_AchievementsTestD1Ev */
-/* WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest() */
-
-/* WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest() */
-
-void WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest(void)
-
-{
+/* ok  address 0x4a4434  size 4 */WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest(){
   WCScreen::~WCScreen();
   return;
 }
 
 
 
-/* ok  address 0x4a4438  size 36 */
-/* mangled: _ZN12WaterConcept23Screen_AchievementsTestD0Ev */
-/* WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest() */
-
-/* WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest() */
-
-void WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest(void *param_1)
-
-{
+/* ok  address 0x4a4438  size 36 */WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest(){
   WaterConcept::WCScreen::~WCScreen();
   operator delete(param_1);
   return;

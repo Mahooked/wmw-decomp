@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f4f78  size 20 */
-/* mangled: _ZNSt9bad_allocC1Ev */
-/* std::bad_alloc::bad_alloc() */
-
-/* std::bad_alloc::bad_alloc() */
-
-void std::bad_alloc::bad_alloc()
-
-{
+/* ok  address 0x5f4f78  size 20 */std::bad_alloc::bad_alloc(){
   *this = &PTR__bad_exception_0071a050;
   return;
 }
 
 
 
-/* ok  address 0x5f4f8c  size 4 */
-/* mangled: _ZNSt9bad_allocD0Ev */
-/* std::bad_alloc::~bad_alloc() */
-
-/* std::bad_alloc::~bad_alloc() */
-
-void std::bad_alloc::~bad_alloc(void *p0)
-
-{
+/* ok  address 0x5f4f8c  size 4 */std::bad_alloc::~bad_alloc(){
   operator_delete(p0);
   return;
 }

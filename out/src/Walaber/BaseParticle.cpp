@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x39059c  size 100 */
-/* mangled: _ZN7Walaber12BaseParticleC2ERKS0_ */
-/* Walaber::BaseParticle::BaseParticle(Walaber::BaseParticle const&) */
-
-/* Walaber::BaseParticle::BaseParticle(Walaber::BaseParticle const&) */
-
-void Walaber::BaseParticle::BaseParticle(Walaber__BaseParticle *p0)
-
-{
+/* ok  address 0x39059c  size 100 */Walaber::BaseParticle::BaseParticle(Walaber__BaseParticle *p0){
   uint uVar1;
   uint uVar2;
   uint uVar3;

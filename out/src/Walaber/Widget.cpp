@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x36a750  size 404 */
-/* mangled: _ZN7Walaber6WidgetC1EijNS_7Vector2ES1_NS_17WidgetOrientationEi */
-/* Walaber::Widget::Widget(int, unsigned int, Walaber::Vector2, Walaber::Vector2, Walaber::WidgetOrientation, int) */
-
-/* Walaber::Widget::Widget(int, unsigned int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::WidgetOrientation, int) */
-
-void Walaber::Widget::Widget
-               (long *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4,
-               undefined4 *param_5,undefined4 param_6,undefined4 param_7)
-
-{
+/* ok  address 0x36a750  size 404 */Walaber::Widget::Widget(long *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4, undefined4 *param_5,undefined4 param_6,undefined4 param_7){
   undefined8 auStack_70 [2];
   void *pvStack_60;
   
@@ -373,15 +362,7 @@ LAB_0036af30:
 
 
 
-/* ok  address 0x36d4a4  size 64 */
-/* mangled: _ZN7Walaber6WidgetD2Ev */
-/* Walaber::Widget::~Widget() */
-
-/* Walaber::Widget::~Widget() */
-
-void Walaber::Widget::~Widget()
-
-{
+/* ok  address 0x36d4a4  size 64 */Walaber::Widget::~Widget(){
   *this = &PTR__Widget_0070eb18;
   if ((*(byte *)(this + 0x1a) & 1) != 0) {
     operator delete((void *)this[0x1c]);
@@ -392,15 +373,7 @@ void Walaber::Widget::~Widget()
 
 
 
-/* ok  address 0x36d4e4  size 36 */
-/* mangled: _ZN7Walaber6WidgetD0Ev */
-/* Walaber::Widget::~Widget() */
-
-/* Walaber::Widget::~Widget() */
-
-void Walaber::Widget::~Widget(void *param_1)
-
-{
+/* ok  address 0x36d4e4  size 36 */Walaber::Widget::~Widget(){
   Walaber::Widget::~Widget();
   operator delete(param_1);
   return;

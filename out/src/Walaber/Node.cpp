@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ea5d8  size 280 */
-/* mangled: _ZN7Walaber4NodeC1Ev */
-/* Walaber::Node::Node() */
-
-/* Walaber::Node::Node() */
-
-void Walaber::Node::Node()
-
-{
+/* ok  address 0x3ea5d8  size 280 */Walaber::Node::Node(){
   byte abStack_40 [16];
   void *pvStack_30;
   
@@ -63,16 +55,7 @@ void Walaber::Node::Node()
 
 
 
-/* ok  address 0x3ea6f0  size 144 */
-/* mangled: _ZN7Walaber4NodeC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi */
-/* Walaber::Node::Node(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
-
-/* Walaber::Node::Node(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, int) */
-
-void Walaber::Node::Node(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
-
-{
+/* ok  address 0x3ea6f0  size 144 */Walaber::Node::Node(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
   param_1[2] = 0;
   param_1[3] = 0;
   *(undefined4 *)(param_1 + 4) = param_3;
@@ -100,15 +83,7 @@ void Walaber::Node::Node(undefined8 *param_1,undefined8 param_2,undefined4 param
 
 
 
-/* ok  address 0x3ea780  size 124 */
-/* mangled: _ZN7Walaber4NodeC1ERKS0_ */
-/* Walaber::Node::Node(Walaber::Node const&) */
-
-/* Walaber::Node::Node(Walaber::Node const&) */
-
-void Walaber::Node::Node(Walaber__Node *p0)
-
-{
+/* ok  address 0x3ea780  size 124 */Walaber::Node::Node(Walaber__Node *p0){
   long in_x1;
   ulong uVar1;
   undefined8 uVar2;
@@ -171,29 +146,13 @@ void Walaber::Node::operator=(Walaber__Node *p0)
 
 
 
-/* ok  address 0x3ea868  size 4 */
-/* mangled: _ZN7Walaber4NodeD1Ev */
-/* Walaber::Node::~Node() */
-
-/* Walaber::Node::~Node() */
-
-void Walaber::Node::~Node(void)
-
-{
+/* ok  address 0x3ea868  size 4 */Walaber::Node::~Node(){
   return;
 }
 
 
 
-/* ok  address 0x3ea86c  size 4 */
-/* mangled: _ZN7Walaber4NodeD0Ev */
-/* Walaber::Node::~Node() */
-
-/* Walaber::Node::~Node() */
-
-void Walaber::Node::~Node(void *p0)
-
-{
+/* ok  address 0x3ea86c  size 4 */Walaber::Node::~Node(){
   operator_delete(p0);
   return;
 }

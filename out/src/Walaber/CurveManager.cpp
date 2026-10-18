@@ -25,15 +25,7 @@ long Walaber::CurveManager::getManager(void)
 
 
 
-/* ok  address 0x3e1784  size 316 */
-/* mangled: _ZN7Walaber12CurveManagerC1Ev */
-/* Walaber::CurveManager::CurveManager() */
-
-/* Walaber::CurveManager::CurveManager() */
-
-void Walaber::CurveManager::CurveManager()
-
-{
+/* ok  address 0x3e1784  size 316 */Walaber::CurveManager::CurveManager(){
   undefined8 *puVar1;
   undefined8 uVar2;
   undefined4 *puVar3;
@@ -76,15 +68,7 @@ void Walaber::CurveManager::CurveManager()
 
 
 
-/* ok  address 0x3e18c0  size 84 */
-/* mangled: _ZN7Walaber12CurveManagerD1Ev */
-/* Walaber::CurveManager::~CurveManager() */
-
-/* Walaber::CurveManager::~CurveManager() */
-
-void Walaber::CurveManager::~CurveManager(long param_1)
-
-{
+/* ok  address 0x3e18c0  size 84 */Walaber::CurveManager::~CurveManager(){
   std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(param_1 + 0x78);
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(param_1 + 0x60,*(undefined8 *)(param_1 + 0x68));
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::destroy(param_1 + 0x48,*(undefined8 *)(param_1 + 0x50));

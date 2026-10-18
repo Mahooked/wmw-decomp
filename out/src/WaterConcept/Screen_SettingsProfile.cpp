@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x561064  size 164 */
-/* mangled: _ZN12WaterConcept22Screen_SettingsProfileC1Ev */
-/* WaterConcept::Screen_SettingsProfile::Screen_SettingsProfile() */
-
-/* WaterConcept::Screen_SettingsProfile::Screen_SettingsProfile() */
-
-void WaterConcept::Screen_SettingsProfile::Screen_SettingsProfile()
-
-{
+/* ok  address 0x561064  size 164 */WaterConcept::Screen_SettingsProfile::Screen_SettingsProfile(){
   WaterConcept::WCScreen::WCScreen(this,0x1a);
                     /* try { // try from 00561080 to 00561087 has its CatchHandler @ 005610f4 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -33,15 +25,7 @@ void WaterConcept::Screen_SettingsProfile::Screen_SettingsProfile()
 
 
 
-/* ok  address 0x561108  size 96 */
-/* mangled: _ZN12WaterConcept22Screen_SettingsProfileD1Ev */
-/* WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile() */
-
-/* WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile() */
-
-void WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile()
-
-{
+/* ok  address 0x561108  size 96 */WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile(){
   *this = &PTR__Screen_SettingsProfile_00715718;
   this[4] = &PTR_handleEvent_007157d0;
   this[0x12] = &PTR__Screen_SettingsProfile_007157f0;
@@ -54,15 +38,7 @@ void WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile()
 
 
 
-/* ok  address 0x561170  size 36 */
-/* mangled: _ZN12WaterConcept22Screen_SettingsProfileD0Ev */
-/* WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile() */
-
-/* WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile() */
-
-void WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile(void *param_1)
-
-{
+/* ok  address 0x561170  size 36 */WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile(){
   WaterConcept::Screen_SettingsProfile::~Screen_SettingsProfile();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x542be4  size 148 */
-/* mangled: _ZN12WaterConcept16Screen_PerryDemoC1Ev */
-/* WaterConcept::Screen_PerryDemo::Screen_PerryDemo() */
-
-/* WaterConcept::Screen_PerryDemo::Screen_PerryDemo() */
-
-void WaterConcept::Screen_PerryDemo::Screen_PerryDemo()
-
-{
+/* ok  address 0x542be4  size 148 */WaterConcept::Screen_PerryDemo::Screen_PerryDemo(){
   WaterConcept::WCScreen::WCScreen(this,0x1f);
                     /* try { // try from 00542c00 to 00542c07 has its CatchHandler @ 00542c64 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -36,15 +28,7 @@ void WaterConcept::Screen_PerryDemo::Screen_PerryDemo()
 
 
 
-/* ok  address 0x542c78  size 116 */
-/* mangled: _ZN12WaterConcept16Screen_PerryDemoD1Ev */
-/* WaterConcept::Screen_PerryDemo::~Screen_PerryDemo() */
-
-/* WaterConcept::Screen_PerryDemo::~Screen_PerryDemo() */
-
-void WaterConcept::Screen_PerryDemo::~Screen_PerryDemo()
-
-{
+/* ok  address 0x542c78  size 116 */WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(){
   *this = &PTR__Screen_PerryDemo_00714fe8;
   this[4] = &PTR_handleEvent_007150a0;
   this[0x12] = &PTR__Screen_PerryDemo_007150c0;
@@ -62,15 +46,7 @@ void WaterConcept::Screen_PerryDemo::~Screen_PerryDemo()
 
 
 
-/* ok  address 0x542cf4  size 36 */
-/* mangled: _ZN12WaterConcept16Screen_PerryDemoD0Ev */
-/* WaterConcept::Screen_PerryDemo::~Screen_PerryDemo() */
-
-/* WaterConcept::Screen_PerryDemo::~Screen_PerryDemo() */
-
-void WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(void *param_1)
-
-{
+/* ok  address 0x542cf4  size 36 */WaterConcept::Screen_PerryDemo::~Screen_PerryDemo(){
   WaterConcept::Screen_PerryDemo::~Screen_PerryDemo();
   operator delete(param_1);
   return;

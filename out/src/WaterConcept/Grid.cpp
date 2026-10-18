@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x42fb28  size 40 */
-/* mangled: _ZN12WaterConcept4GridC1Ev */
-/* WaterConcept::Grid::Grid() */
-
-/* WaterConcept::Grid::Grid() */
-
-void WaterConcept::Grid::Grid()
-
-{
+/* ok  address 0x42fb28  size 40 */WaterConcept::Grid::Grid(){
   this[1] = 0;
   this[2] = 0;
   *this = 0;
@@ -23,15 +15,7 @@ void WaterConcept::Grid::Grid()
 
 
 
-/* ok  address 0x42fb50  size 96 */
-/* mangled: _ZN12WaterConcept4GridC1ERKN7Walaber7Vector2Effii */
-/* WaterConcept::Grid::Grid(Walaber::Vector2 const&, float, float, int, int) */
-
-/* WaterConcept::Grid::Grid(Walaber::Vector2 const&, float, float, int, int) */
-
-void WaterConcept::Grid::Grid(Walaber__Vector2 *p0,float p1,float p2,int p3,int p4)
-
-{
+/* ok  address 0x42fb50  size 96 */WaterConcept::Grid::Grid(Walaber__Vector2 *p0,float p1,float p2,int p3,int p4){
   float in_w3;
   Walaber__Vector2 WVar1;
   float fVar2;
@@ -117,15 +101,7 @@ void WaterConcept::Grid::_setGridResolution(Walaber__Vector2 *p0,float p1,float 
 
 
 
-/* ok  address 0x42fc04  size 52 */
-/* mangled: _ZN12WaterConcept4GridC1ERKS0_ */
-/* WaterConcept::Grid::Grid(WaterConcept::Grid const&) */
-
-/* WaterConcept::Grid::Grid(WaterConcept::Grid const&) */
-
-void WaterConcept::Grid::Grid(WaterConcept__Grid *p0)
-
-{
+/* ok  address 0x42fc04  size 52 */WaterConcept::Grid::Grid(WaterConcept__Grid *p0){
   undefined8 *in_x1;
   undefined8 uVar1;
   undefined8 uVar2;
@@ -183,15 +159,7 @@ void WaterConcept::Grid::operator=(WaterConcept__Grid *p0)
 
 
 
-/* ok  address 0x42fc6c  size 4 */
-/* mangled: _ZN12WaterConcept4GridD1Ev */
-/* WaterConcept::Grid::~Grid() */
-
-/* WaterConcept::Grid::~Grid() */
-
-void WaterConcept::Grid::~Grid(void)
-
-{
+/* ok  address 0x42fc6c  size 4 */WaterConcept::Grid::~Grid(){
   return;
 }
 

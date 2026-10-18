@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f51b0  size 92 */
-/* mangled: _ZNSt16invalid_argumentD0Ev */
-/* std::invalid_argument::~invalid_argument() */
-
-/* std::invalid_argument::~invalid_argument() */
-
-void std::invalid_argument::~invalid_argument()
-
-{
+/* ok  address 0x5f51b0  size 92 */std::invalid_argument::~invalid_argument(){
   int iVar1;
   char cVar2;
   bool bVar3;

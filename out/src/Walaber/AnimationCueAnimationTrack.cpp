@@ -30,15 +30,7 @@ void Walaber::AnimationCueAnimationTrack::apply(float p0)
 
 
 
-/* ok  address 0x337328  size 24 */
-/* mangled: _ZN7Walaber26AnimationCueAnimationTrackC1Ev */
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack() */
-
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack() */
-
-void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack()
-
-{
+/* ok  address 0x337328  size 24 */Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(){
   this[4] = 0;
   this[1] = 0;
   *this = 0;
@@ -50,15 +42,7 @@ void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack()
 
 
 
-/* ok  address 0x337340  size 24 */
-/* mangled: _ZN7Walaber26AnimationCueAnimationTrackC1EPNS_16AnimationManagerE */
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber::AnimationManager*) */
-
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber::AnimationManager*) */
-
-void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber__AnimationManager *p0)
-
-{
+/* ok  address 0x337340  size 24 */Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber__AnimationManager *p0){
   ulong in_x1;
   
   p0->isCurrentAnimationPlaying = 0;
@@ -72,17 +56,7 @@ void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber__An
 
 
 
-/* ok  address 0x337358  size 56 */
-/* mangled: _ZN7Walaber26AnimationCueAnimationTrackC1ERKS0_ */
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber::AnimationCueAnimationTrack const&) */
-
-/* Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber::AnimationCueAnimationTrack
-   const&) */
-
-void Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack
-               (Walaber__AnimationCueAnimationTrack *p0)
-
-{
+/* ok  address 0x337358  size 56 */Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(Walaber__AnimationCueAnimationTrack *p0){
   ulong *in_x1;
   ulong uVar1;
   
@@ -122,15 +96,7 @@ Walaber::AnimationCueAnimationTrack::operator=(Walaber__AnimationCueAnimationTra
 
 
 
-/* ok  address 0x337484  size 8 */
-/* mangled: _ZN7Walaber26AnimationCueAnimationTrackD1Ev */
-/* Walaber::AnimationCueAnimationTrack::~AnimationCueAnimationTrack() */
-
-/* Walaber::AnimationCueAnimationTrack::~AnimationCueAnimationTrack() */
-
-void Walaber::AnimationCueAnimationTrack::~AnimationCueAnimationTrack(long param_1)
-
-{
+/* ok  address 0x337484  size 8 */Walaber::AnimationCueAnimationTrack::~AnimationCueAnimationTrack(){
   std::__ndk1::__vector_base<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::~__vector_base(param_1 + 0x10);
   return;
 }

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x540ea0  size 88 */
-/* mangled: _ZN12WaterConcept22Screen_PerformanceTestC1Ev */
-/* WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest() */
-
-/* WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest() */
-
-void WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest()
-
-{
+/* ok  address 0x540ea0  size 88 */WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest(){
   WaterConcept::WCScreen::WCScreen(this,0x16);
   this[0x12] = 0;
   *(undefined2 *)(this + 0x14) = 0;
@@ -26,30 +18,14 @@ void WaterConcept::Screen_PerformanceTest::Screen_PerformanceTest()
 
 
 
-/* ok  address 0x540ef8  size 4 */
-/* mangled: _ZN12WaterConcept22Screen_PerformanceTestD1Ev */
-/* WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest() */
-
-/* WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest() */
-
-void WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest(void)
-
-{
+/* ok  address 0x540ef8  size 4 */WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest(){
   WCScreen::~WCScreen();
   return;
 }
 
 
 
-/* ok  address 0x540efc  size 36 */
-/* mangled: _ZN12WaterConcept22Screen_PerformanceTestD0Ev */
-/* WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest() */
-
-/* WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest() */
-
-void WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest(void *param_1)
-
-{
+/* ok  address 0x540efc  size 36 */WaterConcept::Screen_PerformanceTest::~Screen_PerformanceTest(){
   WaterConcept::WCScreen::~WCScreen();
   operator delete(param_1);
   return;

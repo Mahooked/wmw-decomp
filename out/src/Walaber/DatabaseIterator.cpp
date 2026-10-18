@@ -60,31 +60,14 @@ float Walaber::DatabaseIterator::getFloatAtIndex(int p0)
 
 
 
-/* ok  address 0x32dbc8  size 8 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1Ev */
-/* Walaber::DatabaseIterator::DatabaseIterator() */
-
-/* Walaber::DatabaseIterator::DatabaseIterator() */
-
-void Walaber::DatabaseIterator::DatabaseIterator()
-
-{
+/* ok  address 0x32dbc8  size 8 */Walaber::DatabaseIterator::DatabaseIterator(){
   *this = 0;
   return;
 }
 
 
 
-/* ok  address 0x32dbd0  size 76 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2)
-
-{
+/* ok  address 0x32dbd0  size 76 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2){
   undefined8 uVar1;
   undefined4 uVar2;
   
@@ -122,19 +105,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
 
 
 
-/* ok  address 0x32dc44  size 276 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x32dc44  size 276 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   undefined8 uVar2;
   undefined4 uVar3;
   ulong auStack_70 [2];
@@ -176,20 +147,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32dd58  size 236 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_S9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
-
-{
+/* ok  address 0x32dd58  size 236 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4){
   undefined8 uVar2;
   undefined4 uVar3;
   ulong auStack_58 [2];
@@ -223,22 +181,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32de44  size 184 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_S9_S9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5)
-
-{
+/* ok  address 0x32de44  size 184 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
   undefined8 uVar2;
   undefined4 uVar3;
   byte abStack_40 [16];
@@ -263,16 +206,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32defc  size 40 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1EiRKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE */
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1)
-
-{
+/* ok  address 0x32defc  size 40 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1){
   undefined8 uVar1;
   
   *param_1 = 0;
@@ -332,19 +266,7 @@ LAB_0032dfe4:
 
 
 
-/* ok  address 0x32e010  size 264 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1EiRKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
-
-{
+/* ok  address 0x32e010  size 264 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4){
   undefined8 uVar2;
   ulong auStack_80 [2];
   void *pvStack_70;
@@ -379,21 +301,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32e118  size 220 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1EiRKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_S9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5)
-
-{
+/* ok  address 0x32e118  size 220 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
   undefined8 uVar2;
   ulong auStack_68 [2];
   void *pvStack_58;
@@ -420,22 +328,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32e1f4  size 168 */
-/* mangled: _ZN7Walaber16DatabaseIteratorC1EiRKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_S9_S9_ */
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* Walaber::DatabaseIterator::DatabaseIterator(int, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void Walaber::DatabaseIterator::DatabaseIterator
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined8 param_6)
-
-{
+/* ok  address 0x32e1f4  size 168 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6){
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
@@ -453,15 +346,7 @@ void Walaber::DatabaseIterator::DatabaseIterator
 
 
 
-/* ok  address 0x32e29c  size 32 */
-/* mangled: _ZN7Walaber16DatabaseIteratorD1Ev */
-/* Walaber::DatabaseIterator::~DatabaseIterator() */
-
-/* Walaber::DatabaseIterator::~DatabaseIterator() */
-
-void Walaber::DatabaseIterator::~DatabaseIterator(long *param_1)
-
-{
+/* ok  address 0x32e29c  size 32 */Walaber::DatabaseIterator::~DatabaseIterator(){
   if (*param_1 != 0) {
                     /* try { // try from 0032e2ac to 0032e2af has its CatchHandler @ 0032e2b8 */
     sqlite3_finalize();

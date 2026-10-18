@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x495e84  size 288 */
-/* mangled: _ZN12WaterConcept12WaterBalloonC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::WaterBalloon::WaterBalloon(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::WaterBalloon::WaterBalloon(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::WaterBalloon::WaterBalloon(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x495e84  size 288 */WaterConcept::WaterBalloon::WaterBalloon(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined4 in_register_00005004;
   undefined8 uStack_38;
@@ -48,15 +40,7 @@ void WaterConcept::WaterBalloon::WaterBalloon(Walaber__Vector2 p0,float p1,Walab
 
 
 
-/* ok  address 0x495fa4  size 100 */
-/* mangled: _ZN12WaterConcept12WaterBalloonD1Ev */
-/* WaterConcept::WaterBalloon::~WaterBalloon() */
-
-/* WaterConcept::WaterBalloon::~WaterBalloon() */
-
-void WaterConcept::WaterBalloon::~WaterBalloon()
-
-{
+/* ok  address 0x495fa4  size 100 */WaterConcept::WaterBalloon::~WaterBalloon(){
   void *pvVar1;
   
   pvVar1 = (void *)this[0x75];
@@ -78,15 +62,7 @@ void WaterConcept::WaterBalloon::~WaterBalloon()
 
 
 
-/* ok  address 0x496008  size 36 */
-/* mangled: _ZN12WaterConcept12WaterBalloonD0Ev */
-/* WaterConcept::WaterBalloon::~WaterBalloon() */
-
-/* WaterConcept::WaterBalloon::~WaterBalloon() */
-
-void WaterConcept::WaterBalloon::~WaterBalloon(void *param_1)
-
-{
+/* ok  address 0x496008  size 36 */WaterConcept::WaterBalloon::~WaterBalloon(){
   WaterConcept::WaterBalloon::~WaterBalloon();
   operator delete(param_1);
   return;

@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4d436c  size 8 */
-/* mangled: _ZThn144_N12WaterConcept18Screen_FoodPyramidD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-/* non-virtual thunk to WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(long param_1)
-
-{
+/* ok  address 0x4d436c  size 8 */non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
   WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4d4398  size 40 */
-/* mangled: _ZThn144_N12WaterConcept18Screen_FoodPyramidD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-/* non-virtual thunk to WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(long param_1)
-
-{
+/* ok  address 0x4d4398  size 40 */non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
   WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

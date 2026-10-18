@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4996e4  size 180 */
-/* mangled: _ZN12WaterConcept20HDAssetsNotificationC1Ev */
-/* WaterConcept::HDAssetsNotification::HDAssetsNotification() */
-
-/* WaterConcept::HDAssetsNotification::HDAssetsNotification() */
-
-void WaterConcept::HDAssetsNotification::HDAssetsNotification()
-
-{
+/* ok  address 0x4996e4  size 180 */WaterConcept::HDAssetsNotification::HDAssetsNotification(){
   WaterConcept::Notification::Notification();
                     /* try { // try from 004996fc to 00499703 has its CatchHandler @ 00499784 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x3d,0x10);
@@ -32,17 +24,7 @@ void WaterConcept::HDAssetsNotification::HDAssetsNotification()
 
 
 
-/* ok  address 0x499798  size 84 */
-/* mangled: _ZN12WaterConcept20HDAssetsNotificationC1ERKS0_ */
-/* WaterConcept::HDAssetsNotification::HDAssetsNotification(WaterConcept::HDAssetsNotification const&) */
-
-/* WaterConcept::HDAssetsNotification::HDAssetsNotification(WaterConcept::HDAssetsNotification
-   const&) */
-
-void WaterConcept::HDAssetsNotification::HDAssetsNotification
-               (WaterConcept__HDAssetsNotification *p0)
-
-{
+/* ok  address 0x499798  size 84 */WaterConcept::HDAssetsNotification::HDAssetsNotification(WaterConcept__HDAssetsNotification *p0){
   long in_x1;
   
   WaterConcept::Notification::Notification();
@@ -80,15 +62,7 @@ WaterConcept::HDAssetsNotification::operator=(WaterConcept__HDAssetsNotification
 
 
 
-/* ok  address 0x499810  size 40 */
-/* mangled: _ZN12WaterConcept20HDAssetsNotificationD1Ev */
-/* WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-/* WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-void WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
-
-{
+/* ok  address 0x499810  size 40 */WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x1e8);
   WaterConcept::Notification::~Notification(param_1);
   return;
@@ -96,15 +70,7 @@ void WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
 
 
 
-/* ok  address 0x49985c  size 48 */
-/* mangled: _ZN12WaterConcept20HDAssetsNotificationD0Ev */
-/* WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-/* WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-void WaterConcept::HDAssetsNotification::~HDAssetsNotification(void *param_1)
-
-{
+/* ok  address 0x49985c  size 48 */WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver((long)param_1 + 0x1e8);
   WaterConcept::Notification::~Notification(param_1);
   operator delete(param_1);

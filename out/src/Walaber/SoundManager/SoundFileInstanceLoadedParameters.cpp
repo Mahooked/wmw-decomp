@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x353ee8  size 300 */
-/* mangled: _ZN7Walaber12SoundManager33SoundFileInstanceLoadedParametersC2ENSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEENS_9SharedPtrINS_19SoundEffectInstanceEEERKNS_12PropertyListE */
-/* Walaber::SoundManager::SoundFileInstanceLoadedParameters::SoundFileInstanceLoadedParameters(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SoundEffectInstance>, Walaber::PropertyList const&) */
-
-/* Walaber::SoundManager::SoundFileInstanceLoadedParameters::SoundFileInstanceLoadedParameters(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
-   Walaber::SharedPtr<Walaber::SoundEffectInstance>, Walaber::PropertyList const&) */
-
-void Walaber::SoundManager::SoundFileInstanceLoadedParameters::SoundFileInstanceLoadedParameters
-               (undefined4 *param_1,undefined8 param_2,long *param_3,undefined8 *param_4)
-
-{
+/* ok  address 0x353ee8  size 300 */Walaber::SoundManager::SoundFileInstanceLoadedParameters::SoundFileInstanceLoadedParameters(undefined4 *param_1,undefined8 param_2,long *param_3,undefined8 *param_4){
   int *piVar1;
   long *plVar2;
   long lVar3;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x42984c  size 508 */
-/* mangled: _ZN12WaterConcept9GameStateC1EPNS_5WorldE */
-/* WaterConcept::GameState::GameState(WaterConcept::World*) */
-
-/* WaterConcept::GameState::GameState(WaterConcept::World*) */
-
-void WaterConcept::GameState::GameState(WaterConcept__World *p0)
-
-{
+/* ok  address 0x42984c  size 508 */WaterConcept::GameState::GameState(WaterConcept__World *p0){
   long in_x1;
   
   p0->field_0x90 = 0;
@@ -105,19 +97,7 @@ void WaterConcept::GameState::reset(long param_1)
 
 
 
-/* ok  address 0x429ae8  size 780 */
-/* mangled: _ZN12WaterConcept9GameStateC1EPNS_5WorldENS0_11StatePresetENSt6__ndk16vectorIPNS_5SpoutENS4_9allocatorIS7_EEEENS5_IPNS_8StarSeedENS8_ISC_EEEE */
-/* WaterConcept::GameState::GameState(WaterConcept::World*, WaterConcept::GameState::StatePreset, std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>, std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>) */
-
-/* WaterConcept::GameState::GameState(WaterConcept::World*, WaterConcept::GameState::StatePreset,
-   std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*> >,
-   std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*> >)
-    */
-
-void WaterConcept::GameState::GameState
-               (long param_1,long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5)
-
-{
+/* ok  address 0x429ae8  size 780 */WaterConcept::GameState::GameState(long param_1,long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5){
   ulong uVar2;
   void *pvStack_98;
   void *pvStack_80;
@@ -880,25 +860,7 @@ switchD_00429e9c_default:
 
 
 
-/* ok  address 0x42afcc  size 636 */
-/* mangled: _ZN12WaterConcept9GameStateC1EPNS_5WorldENSt6__ndk16vectorIN21WaterConceptConstants9FluidTypeENS3_9allocatorIS6_EEEENS4_INS0_4GoalENS7_ISA_EEEENS4_INS0_13SecondaryGoalENS7_ISD_EEEESF_ */
-/* WaterConcept::GameState::GameState(WaterConcept::World*, std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>, std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>, std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>, std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>) */
-
-/* WaterConcept::GameState::GameState(WaterConcept::World*,
-   std::__ndk1::vector<WaterConceptConstants::FluidType,
-   std::__ndk1::allocator<WaterConceptConstants::FluidType> >,
-   std::__ndk1::vector<WaterConcept::GameState::Goal,
-   std::__ndk1::allocator<WaterConcept::GameState::Goal> >,
-   std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal,
-   std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal> >,
-   std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal,
-   std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal> >) */
-
-void WaterConcept::GameState::GameState
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4,
-               undefined8 *param_5,undefined8 *param_6)
-
-{
+/* ok  address 0x42afcc  size 636 */WaterConcept::GameState::GameState(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, undefined8 *param_5,undefined8 *param_6){
   *(undefined1 *)(param_1 + 0x12) = 0;
   memset(param_1,0,0x78);
   param_1[0x16] = 0;
@@ -962,15 +924,7 @@ void WaterConcept::GameState::GameState
 
 
 
-/* ok  address 0x42b248  size 220 */
-/* mangled: _ZN12WaterConcept9GameStateD1Ev */
-/* WaterConcept::GameState::~GameState() */
-
-/* WaterConcept::GameState::~GameState() */
-
-void WaterConcept::GameState::~GameState()
-
-{
+/* ok  address 0x42b248  size 220 */WaterConcept::GameState::~GameState(){
   void *pvVar1;
   
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>>>::destroy(this + 0x37,this[0x38]);

@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ae338  size 8 */
-/* mangled: _ZThn144_N12WaterConcept19Screen_CollectiblesD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-/* non-virtual thunk to WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Collectibles::~Screen_Collectibles(long param_1)
-
-{
+/* ok  address 0x4ae338  size 8 */non_virtual_thunk_to_WaterConcept::Screen_Collectibles::~Screen_Collectibles(){
   WaterConcept::Screen_Collectibles::~Screen_Collectibles(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4ae364  size 40 */
-/* mangled: _ZThn144_N12WaterConcept19Screen_CollectiblesD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-/* non-virtual thunk to WaterConcept::Screen_Collectibles::~Screen_Collectibles() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Collectibles::~Screen_Collectibles(long param_1)
-
-{
+/* ok  address 0x4ae364  size 40 */non_virtual_thunk_to_WaterConcept::Screen_Collectibles::~Screen_Collectibles(){
   WaterConcept::Screen_Collectibles::~Screen_Collectibles((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

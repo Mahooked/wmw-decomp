@@ -20,15 +20,7 @@ void Walaber::DrawableNode::setLayer(int p0)
 
 
 
-/* ok  address 0x3ea474  size 188 */
-/* mangled: _ZN7Walaber12DrawableNodeC2Ev */
-/* Walaber::DrawableNode::DrawableNode() */
-
-/* Walaber::DrawableNode::DrawableNode() */
-
-void Walaber::DrawableNode::DrawableNode()
-
-{
+/* ok  address 0x3ea474  size 188 */Walaber::DrawableNode::DrawableNode(){
   byte abStack_40 [16];
   void *pvStack_30;
   
@@ -61,16 +53,7 @@ void Walaber::DrawableNode::DrawableNode()
 
 
 
-/* ok  address 0x3ea530  size 52 */
-/* mangled: _ZN7Walaber12DrawableNodeC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEi */
-/* Walaber::DrawableNode::DrawableNode(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
-
-/* Walaber::DrawableNode::DrawableNode(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int) */
-
-void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
-
-{
+/* ok  address 0x3ea530  size 52 */Walaber::DrawableNode::DrawableNode(undefined8 *param_1){
   Walaber::Node::Node();
   *(undefined4 *)(param_1 + 0x10) = 0;
   *param_1 = &PTR__DrawableNode_00710da8;
@@ -79,15 +62,7 @@ void Walaber::DrawableNode::DrawableNode(undefined8 *param_1)
 
 
 
-/* ok  address 0x3ea564  size 60 */
-/* mangled: _ZN7Walaber12DrawableNodeC2ERKS0_ */
-/* Walaber::DrawableNode::DrawableNode(Walaber::DrawableNode const&) */
-
-/* Walaber::DrawableNode::DrawableNode(Walaber::DrawableNode const&) */
-
-void Walaber::DrawableNode::DrawableNode(Walaber__DrawableNode *p0)
-
-{
+/* ok  address 0x3ea564  size 60 */Walaber::DrawableNode::DrawableNode(Walaber__DrawableNode *p0){
   long in_x1;
   
   Walaber::Node::Node();
@@ -116,30 +91,14 @@ Walaber__DrawableNode * Walaber::DrawableNode::operator=(Walaber__DrawableNode *
 
 
 
-/* ok  address 0x3ea5d0  size 4 */
-/* mangled: _ZN7Walaber12DrawableNodeD1Ev */
-/* Walaber::DrawableNode::~DrawableNode() */
-
-/* Walaber::DrawableNode::~DrawableNode() */
-
-void Walaber::DrawableNode::~DrawableNode(void)
-
-{
+/* ok  address 0x3ea5d0  size 4 */Walaber::DrawableNode::~DrawableNode(){
   Node::~Node();
   return;
 }
 
 
 
-/* ok  address 0x3ea5d4  size 4 */
-/* mangled: _ZN7Walaber12DrawableNodeD0Ev */
-/* Walaber::DrawableNode::~DrawableNode() */
-
-/* Walaber::DrawableNode::~DrawableNode() */
-
-void Walaber::DrawableNode::~DrawableNode(void)
-
-{
+/* ok  address 0x3ea5d4  size 4 */Walaber::DrawableNode::~DrawableNode(){
   code *pcVar1;
   
                     /* WARNING: Does not return */

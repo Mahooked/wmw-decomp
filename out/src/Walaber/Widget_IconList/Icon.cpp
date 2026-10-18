@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x37d670  size 52 */
-/* mangled: _ZN7Walaber15Widget_IconList4IconC1ENS_9SharedPtrINS_7TextureEEEi */
-/* Walaber::Widget_IconList::Icon::Icon(Walaber::SharedPtr<Walaber::Texture>, int) */
-
-/* Walaber::Widget_IconList::Icon::Icon(Walaber::SharedPtr<Walaber::Texture>, int) */
-
-void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
-
-{
+/* ok  address 0x37d670  size 52 */Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
   param_1[4] = 0;
   param_1[1] = 0;
   *param_1 = 0;
@@ -24,16 +16,7 @@ void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2
 
 
 
-/* ok  address 0x37d6a4  size 172 */
-/* mangled: _ZN7Walaber15Widget_IconList4IconC1ENSt6__ndk112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEEi */
-/* Walaber::Widget_IconList::Icon::Icon(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int) */
-
-/* Walaber::Widget_IconList::Icon::Icon(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, int) */
-
-void Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
-
-{
+/* ok  address 0x37d6a4  size 172 */Walaber::Widget_IconList::Icon::Icon(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
   undefined8 uStack_48;
   undefined8 uStack_40;
   

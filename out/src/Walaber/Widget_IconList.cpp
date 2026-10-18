@@ -73,15 +73,7 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
 
 
 
-/* ok  address 0x37d1ec  size 208 */
-/* mangled: _ZN7Walaber15Widget_IconListC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_IconList::Widget_IconList(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37d1ec  size 208 */Walaber::Widget_IconList::Widget_IconList(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -140,17 +132,7 @@ void Walaber::Widget_IconList::init(long param_1)
 
 
 
-/* ok  address 0x37d2e4  size 300 */
-/* mangled: _ZN7Walaber15Widget_IconListC1EiNS_7Vector2ES1_iiii */
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2, int, int, int, int) */
-
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2, int, int, int,
-   int) */
-
-void Walaber::Widget_IconList::Widget_IconList
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,int p3,int p4,int p5,int p6)
-
-{
+/* ok  address 0x37d2e4  size 300 */Walaber::Widget_IconList::Widget_IconList(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2,int p3,int p4,int p5,int p6){
   undefined8 *puVar2;
   int in_w7;
   float fStack_58;
@@ -194,20 +176,7 @@ void Walaber::Widget_IconList::Widget_IconList
 
 
 
-/* ok  address 0x37d410  size 492 */
-/* mangled: _ZN7Walaber15Widget_IconListC1EiNS_7Vector2ES1_iiiiNS_9SharedPtrINS_7TextureEEES4_S4_ */
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2, int, int, int, int, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>) */
-
-/* Walaber::Widget_IconList::Widget_IconList(int, Walaber::Vector2, Walaber::Vector2, int, int, int,
-   int, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>,
-   Walaber::SharedPtr<Walaber::Texture>) */
-
-void Walaber::Widget_IconList::Widget_IconList
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,float *param_4,
-               int param_5,int param_6,int param_7,int param_8,long *param_9,long *param_10,
-               long *param_11)
-
-{
+/* ok  address 0x37d410  size 492 */Walaber::Widget_IconList::Widget_IconList(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,float *param_4, int param_5,int param_6,int param_7,int param_8,long *param_9,long *param_10, long *param_11){
   long lVar2;
   long lVar3;
   long lVar4;
@@ -295,15 +264,7 @@ void Walaber::Widget_IconList::Widget_IconList
 
 
 
-/* ok  address 0x37d5fc  size 80 */
-/* mangled: _ZN7Walaber15Widget_IconListD1Ev */
-/* Walaber::Widget_IconList::~Widget_IconList() */
-
-/* Walaber::Widget_IconList::~Widget_IconList() */
-
-void Walaber::Widget_IconList::~Widget_IconList()
-
-{
+/* ok  address 0x37d5fc  size 80 */Walaber::Widget_IconList::~Widget_IconList(){
   *this = &PTR__Widget_IconList_0070f0b8;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x2e);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x2c);
@@ -315,15 +276,7 @@ void Walaber::Widget_IconList::~Widget_IconList()
 
 
 
-/* ok  address 0x37d64c  size 36 */
-/* mangled: _ZN7Walaber15Widget_IconListD0Ev */
-/* Walaber::Widget_IconList::~Widget_IconList() */
-
-/* Walaber::Widget_IconList::~Widget_IconList() */
-
-void Walaber::Widget_IconList::~Widget_IconList(void *param_1)
-
-{
+/* ok  address 0x37d64c  size 36 */Walaber::Widget_IconList::~Widget_IconList(){
   Walaber::Widget_IconList::~Widget_IconList();
   operator delete(param_1);
   return;

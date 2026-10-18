@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5a3d28  size 52 */
-/* mangled: _ZNSt16nested_exceptionC1Ev */
-/* std::nested_exception::nested_exception() */
-
-/* std::nested_exception::nested_exception() */
-
-void std::nested_exception::nested_exception()
-
-{
+/* ok  address 0x5a3d28  size 52 */std::nested_exception::nested_exception(){
   undefined8 uVar1;
   
   *this = &PTR__nested_exception_00716218;
@@ -22,15 +14,7 @@ void std::nested_exception::nested_exception()
 
 
 
-/* ok  address 0x5a3d80  size 28 */
-/* mangled: _ZNSt16nested_exceptionD1Ev */
-/* std::nested_exception::~nested_exception() */
-
-/* std::nested_exception::~nested_exception() */
-
-void std::nested_exception::~nested_exception()
-
-{
+/* ok  address 0x5a3d80  size 28 */std::nested_exception::~nested_exception(){
   *this = &PTR__nested_exception_00716218;
   __cxa_decrement_exception_refcount(this[1]);
   return;
@@ -38,15 +22,7 @@ void std::nested_exception::~nested_exception()
 
 
 
-/* ok  address 0x5a3d9c  size 56 */
-/* mangled: _ZNSt16nested_exceptionD0Ev */
-/* std::nested_exception::~nested_exception() */
-
-/* std::nested_exception::~nested_exception() */
-
-void std::nested_exception::~nested_exception()
-
-{
+/* ok  address 0x5a3d9c  size 56 */std::nested_exception::~nested_exception(){
   *this = &PTR__nested_exception_00716218;
   __cxa_decrement_exception_refcount(this[1]);
   operator delete(this);

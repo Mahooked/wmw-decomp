@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5388a4  size 1420 */
-/* mangled: _ZN12WaterConcept18Screen_MysteryShowC1Ev */
-/* WaterConcept::Screen_MysteryShow::Screen_MysteryShow() */
-
-/* WaterConcept::Screen_MysteryShow::Screen_MysteryShow() */
-
-void WaterConcept::Screen_MysteryShow::Screen_MysteryShow()
-
-{
+/* ok  address 0x5388a4  size 1420 */WaterConcept::Screen_MysteryShow::Screen_MysteryShow(){
   undefined8 *puVar2;
   undefined8 uVar3;
   long lVar5;
@@ -509,15 +501,7 @@ LAB_00539368:
 
 
 
-/* ok  address 0x539488  size 124 */
-/* mangled: _ZN12WaterConcept18Screen_MysteryShowD1Ev */
-/* WaterConcept::Screen_MysteryShow::~Screen_MysteryShow() */
-
-/* WaterConcept::Screen_MysteryShow::~Screen_MysteryShow() */
-
-void WaterConcept::Screen_MysteryShow::~Screen_MysteryShow()
-
-{
+/* ok  address 0x539488  size 124 */WaterConcept::Screen_MysteryShow::~Screen_MysteryShow(){
   *this = &PTR__Screen_MysteryShow_00714c18;
   this[4] = &PTR_handleEvent_00714cc8;
   if ((long *)this[0x15] != (long *)0x0) {
@@ -536,15 +520,7 @@ void WaterConcept::Screen_MysteryShow::~Screen_MysteryShow()
 
 
 
-/* ok  address 0x539504  size 36 */
-/* mangled: _ZN12WaterConcept18Screen_MysteryShowD0Ev */
-/* WaterConcept::Screen_MysteryShow::~Screen_MysteryShow() */
-
-/* WaterConcept::Screen_MysteryShow::~Screen_MysteryShow() */
-
-void WaterConcept::Screen_MysteryShow::~Screen_MysteryShow(void *param_1)
-
-{
+/* ok  address 0x539504  size 36 */WaterConcept::Screen_MysteryShow::~Screen_MysteryShow(){
   WaterConcept::Screen_MysteryShow::~Screen_MysteryShow();
   operator delete(param_1);
   return;

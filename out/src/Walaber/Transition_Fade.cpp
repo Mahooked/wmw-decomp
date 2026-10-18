@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3f4c2c  size 80 */
-/* mangled: _ZN7Walaber15Transition_FadeC1Ev */
-/* Walaber::Transition_Fade::Transition_Fade() */
-
-/* Walaber::Transition_Fade::Transition_Fade() */
-
-void Walaber::Transition_Fade::Transition_Fade()
-
-{
+/* ok  address 0x3f4c2c  size 80 */Walaber::Transition_Fade::Transition_Fade(){
   Walaber::Transition::Transition();
   *(undefined8 *)((long)this + 0xd4) = 0;
   *(undefined8 *)((long)this + 0xcc) = 0;
@@ -25,15 +17,7 @@ void Walaber::Transition_Fade::Transition_Fade()
 
 
 
-/* ok  address 0x3f4c7c  size 4 */
-/* mangled: _ZN7Walaber15Transition_FadeD1Ev */
-/* Walaber::Transition_Fade::~Transition_Fade() */
-
-/* Walaber::Transition_Fade::~Transition_Fade() */
-
-void Walaber::Transition_Fade::~Transition_Fade(void)
-
-{
+/* ok  address 0x3f4c7c  size 4 */Walaber::Transition_Fade::~Transition_Fade(){
   Transition::~Transition();
   return;
 }

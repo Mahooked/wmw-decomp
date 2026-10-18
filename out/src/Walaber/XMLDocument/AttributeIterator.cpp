@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d61b4  size 12 */
-/* mangled: _ZN7Walaber11XMLDocument17AttributeIteratorC1EP8_xmlNode */
-/* Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode*) */
-
-/* Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode*) */
-
-void Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode *p0)
-
-{
+/* ok  address 0x3d61b4  size 12 */Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode *p0){
   long in_x1;
   undefined8 uVar1;
   
@@ -23,17 +15,7 @@ void Walaber::XMLDocument::AttributeIterator::AttributeIterator(_xmlNode *p0)
 
 
 
-/* ok  address 0x3d61c0  size 12 */
-/* mangled: _ZN7Walaber11XMLDocument17AttributeIteratorC1ERKS1_ */
-/* Walaber::XMLDocument::AttributeIterator::AttributeIterator(Walaber::XMLDocument::AttributeIterator const&) */
-
-/* Walaber::XMLDocument::AttributeIterator::AttributeIterator(Walaber::XMLDocument::AttributeIterator
-   const&) */
-
-void Walaber::XMLDocument::AttributeIterator::AttributeIterator
-               (Walaber__XMLDocument__AttributeIterator *p0)
-
-{
+/* ok  address 0x3d61c0  size 12 */Walaber::XMLDocument::AttributeIterator::AttributeIterator(Walaber__XMLDocument__AttributeIterator *p0){
   ulong *in_x1;
   ulong uVar1;
   
@@ -66,15 +48,7 @@ void Walaber::XMLDocument::AttributeIterator::operator=(Walaber__XMLDocument__At
 
 
 
-/* ok  address 0x3d61d8  size 4 */
-/* mangled: _ZN7Walaber11XMLDocument17AttributeIteratorD1Ev */
-/* Walaber::XMLDocument::AttributeIterator::~AttributeIterator() */
-
-/* Walaber::XMLDocument::AttributeIterator::~AttributeIterator() */
-
-void Walaber::XMLDocument::AttributeIterator::~AttributeIterator(void)
-
-{
+/* ok  address 0x3d61d8  size 4 */Walaber::XMLDocument::AttributeIterator::~AttributeIterator(){
   return;
 }
 

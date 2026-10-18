@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x348024  size 36 */
-/* mangled: _ZN7Walaber13SkeletonActor15SoundActionDataD2Ev */
-/* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
-
-/* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
-
-void Walaber::SkeletonActor::SoundActionData::~SoundActionData()
-
-{
+/* ok  address 0x348024  size 36 */Walaber::SkeletonActor::SoundActionData::~SoundActionData(){
   *this = &PTR__SoundActionData_0070e4d8;
   if ((*(byte *)(this + 3) & 1) == 0) {
     return;
@@ -22,15 +14,7 @@ void Walaber::SkeletonActor::SoundActionData::~SoundActionData()
 
 
 
-/* ok  address 0x348048  size 64 */
-/* mangled: _ZN7Walaber13SkeletonActor15SoundActionDataD0Ev */
-/* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
-
-/* Walaber::SkeletonActor::SoundActionData::~SoundActionData() */
-
-void Walaber::SkeletonActor::SoundActionData::~SoundActionData()
-
-{
+/* ok  address 0x348048  size 64 */Walaber::SkeletonActor::SoundActionData::~SoundActionData(){
   *this = &PTR__SoundActionData_0070e4d8;
   if ((*(byte *)(this + 3) & 1) != 0) {
     operator delete((void *)this[5]);

@@ -1165,16 +1165,7 @@ void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Wa
 
 
 
-/* ok  address 0x39962c  size 272 */
-/* mangled: _ZN7Walaber9Texture2DC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_15TextureSettingsE */
-/* Walaber::Texture2D::Texture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::TextureSettings) */
-
-/* Walaber::Texture2D::Texture2D(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::TextureSettings) */
-
-void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3)
-
-{
+/* ok  address 0x39962c  size 272 */Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3){
   undefined8 uStack_90;
   undefined4 uStack_88;
   undefined1 uStack_84;
@@ -1219,16 +1210,7 @@ void Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefi
 
 
 
-/* ok  address 0x39973c  size 348 */
-/* mangled: _ZN7Walaber9Texture2DD2Ev */
-/* Walaber::Texture2D::~Texture2D() */
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Walaber::Texture2D::~Texture2D() */
-
-void Walaber::Texture2D::~Texture2D()
-
-{
+/* ok  address 0x39973c  size 348 */Walaber::Texture2D::~Texture2D(){
   ulong uVar1;
   ulong uVar2;
   byte bVar3;
@@ -1291,15 +1273,7 @@ LAB_00399834:
 
 
 
-/* ok  address 0x399898  size 36 */
-/* mangled: _ZN7Walaber9Texture2DD0Ev */
-/* Walaber::Texture2D::~Texture2D() */
-
-/* Walaber::Texture2D::~Texture2D() */
-
-void Walaber::Texture2D::~Texture2D(void *param_1)
-
-{
+/* ok  address 0x399898  size 36 */Walaber::Texture2D::~Texture2D(){
   Walaber::Texture2D::~Texture2D();
   operator delete(param_1);
   return;

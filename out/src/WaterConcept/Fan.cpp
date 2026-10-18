@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x479770  size 148 */
-/* mangled: _ZN12WaterConcept3FanC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::Fan::Fan(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::Fan::Fan(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x479770  size 148 */WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   undefined8 *in_x2;
   undefined8 uStack_38;
   undefined8 uStack_30;
@@ -28,15 +20,7 @@ void WaterConcept::Fan::Fan(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
 
 
 
-/* ok  address 0x479804  size 144 */
-/* mangled: _ZN12WaterConcept3FanD1Ev */
-/* WaterConcept::Fan::~Fan() */
-
-/* WaterConcept::Fan::~Fan() */
-
-void WaterConcept::Fan::~Fan()
-
-{
+/* ok  address 0x479804  size 144 */WaterConcept::Fan::~Fan(){
   void *pvVar1;
   
   pvVar1 = (void *)this[0x87];
@@ -73,15 +57,7 @@ void WaterConcept::Fan::~Fan()
 
 
 
-/* ok  address 0x479894  size 36 */
-/* mangled: _ZN12WaterConcept3FanD0Ev */
-/* WaterConcept::Fan::~Fan() */
-
-/* WaterConcept::Fan::~Fan() */
-
-void WaterConcept::Fan::~Fan(void *param_1)
-
-{
+/* ok  address 0x479894  size 36 */WaterConcept::Fan::~Fan(){
   WaterConcept::Fan::~Fan();
   operator delete(param_1);
   return;

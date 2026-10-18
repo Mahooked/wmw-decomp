@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f4f58  size 4 */
-/* mangled: _ZNSt9exceptionD0Ev */
-/* std::exception::~exception() */
-
-/* std::exception::~exception() */
-
-void std::exception::~exception(void *p0)
-
-{
+/* ok  address 0x5f4f58  size 4 */std::exception::~exception(){
   operator_delete(p0);
   return;
 }

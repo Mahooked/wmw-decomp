@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ec10c  size 64 */
-/* mangled: _ZN7Walaber6CameraC1Ev */
-/* Walaber::Camera::Camera() */
-
-/* Walaber::Camera::Camera() */
-
-void Walaber::Camera::Camera(long param_1)
-
-{
+/* ok  address 0x3ec10c  size 64 */Walaber::Camera::Camera(long param_1){
   memset(param_1,0,0x88);
   *(undefined1 *)(param_1 + 0x88) = 1;
   *(undefined4 *)(param_1 + 0x94) = 0;
@@ -21,15 +13,7 @@ void Walaber::Camera::Camera(long param_1)
 
 
 
-/* ok  address 0x3ec14c  size 96 */
-/* mangled: _ZN7Walaber6CameraC1ENS_7Vector2ES1_ */
-/* Walaber::Camera::Camera(Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Camera::Camera(Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Camera::Camera(Walaber__Vector2 p0,Walaber__Vector2 p1)
-
-{
+/* ok  address 0x3ec14c  size 96 */Walaber::Camera::Camera(Walaber__Vector2 p0,Walaber__Vector2 p1){
   undefined8 *in_x2;
   
   memset(p0,0,0x88);
@@ -43,15 +27,7 @@ void Walaber::Camera::Camera(Walaber__Vector2 p0,Walaber__Vector2 p1)
 
 
 
-/* ok  address 0x3ec1ac  size 116 */
-/* mangled: _ZN7Walaber6CameraD1Ev */
-/* Walaber::Camera::~Camera() */
-
-/* Walaber::Camera::~Camera() */
-
-void Walaber::Camera::~Camera(long param_1)
-
-{
+/* ok  address 0x3ec1ac  size 116 */Walaber::Camera::~Camera(){
   void *pvVar1;
   
   pvVar1 = *(void **)(param_1 + 0x70);

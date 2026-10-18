@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x38a81c  size 184 */
-/* mangled: _ZN7Walaber18Widget_TimedButtonC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_TimedButton::Widget_TimedButton(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_TimedButton::Widget_TimedButton(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_TimedButton::Widget_TimedButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x38a81c  size 184 */Walaber::Widget_TimedButton::Widget_TimedButton(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -57,18 +49,7 @@ void Walaber::Widget_TimedButton::init(long param_1)
 
 
 
-/* ok  address 0x38a8f4  size 344 */
-/* mangled: _ZN7Walaber18Widget_TimedButtonC1EiNS_7Vector2ES1_NS_9SharedPtrINS_7TextureEEES4_f */
-/* Walaber::Widget_TimedButton::Widget_TimedButton(int, Walaber::Vector2, Walaber::Vector2, Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float) */
-
-/* Walaber::Widget_TimedButton::Widget_TimedButton(int, Walaber::Vector2, Walaber::Vector2,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::SharedPtr<Walaber::Texture>, float) */
-
-void Walaber::Widget_TimedButton::Widget_TimedButton
-               (undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4,
-               undefined8 *param_5,long *param_6,long *param_7)
-
-{
+/* ok  address 0x38a8f4  size 344 */Walaber::Widget_TimedButton::Widget_TimedButton(undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -126,15 +107,7 @@ void Walaber::Widget_TimedButton::Widget_TimedButton
 
 
 
-/* ok  address 0x38aa4c  size 64 */
-/* mangled: _ZN7Walaber18Widget_TimedButtonD1Ev */
-/* Walaber::Widget_TimedButton::~Widget_TimedButton() */
-
-/* Walaber::Widget_TimedButton::~Widget_TimedButton() */
-
-void Walaber::Widget_TimedButton::~Widget_TimedButton()
-
-{
+/* ok  address 0x38aa4c  size 64 */Walaber::Widget_TimedButton::~Widget_TimedButton(){
   *this = &PTR__Widget_TimedButton_0070fdd8;
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
   Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
@@ -144,15 +117,7 @@ void Walaber::Widget_TimedButton::~Widget_TimedButton()
 
 
 
-/* ok  address 0x38aa8c  size 36 */
-/* mangled: _ZN7Walaber18Widget_TimedButtonD0Ev */
-/* Walaber::Widget_TimedButton::~Widget_TimedButton() */
-
-/* Walaber::Widget_TimedButton::~Widget_TimedButton() */
-
-void Walaber::Widget_TimedButton::~Widget_TimedButton(void *param_1)
-
-{
+/* ok  address 0x38aa8c  size 36 */Walaber::Widget_TimedButton::~Widget_TimedButton(){
   Walaber::Widget_TimedButton::~Widget_TimedButton();
   operator delete(param_1);
   return;

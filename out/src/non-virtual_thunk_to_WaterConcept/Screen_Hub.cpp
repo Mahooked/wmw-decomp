@@ -3,30 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4dbdb0  size 8 */
-/* mangled: _ZThn144_N12WaterConcept10Screen_HubD1Ev */
-/* non-virtual thunk to WaterConcept::Screen_Hub::~Screen_Hub() */
-
-/* non-virtual thunk to WaterConcept::Screen_Hub::~Screen_Hub() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Hub::~Screen_Hub(long param_1)
-
-{
+/* ok  address 0x4dbdb0  size 8 */non_virtual_thunk_to_WaterConcept::Screen_Hub::~Screen_Hub(){
   WaterConcept::Screen_Hub::~Screen_Hub(param_1 + -0x90);
   return;
 }
 
 
 
-/* ok  address 0x4dbddc  size 40 */
-/* mangled: _ZThn144_N12WaterConcept10Screen_HubD0Ev */
-/* non-virtual thunk to WaterConcept::Screen_Hub::~Screen_Hub() */
-
-/* non-virtual thunk to WaterConcept::Screen_Hub::~Screen_Hub() */
-
-void non_virtual_thunk_to_WaterConcept::Screen_Hub::~Screen_Hub(long param_1)
-
-{
+/* ok  address 0x4dbddc  size 40 */non_virtual_thunk_to_WaterConcept::Screen_Hub::~Screen_Hub(){
   WaterConcept::Screen_Hub::~Screen_Hub((void *)(param_1 + -0x90));
   operator delete((void *)(param_1 + -0x90));
   return;

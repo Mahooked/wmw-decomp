@@ -3,29 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2c2858  size 4 */
-/* mangled: _ZN7Walaber8CallbackD2Ev */
-/* Walaber::Callback::~Callback() */
-
-/* Walaber::Callback::~Callback() */
-
-void Walaber::Callback::~Callback(void)
-
-{
+/* ok  address 0x2c2858  size 4 */Walaber::Callback::~Callback(){
   return;
 }
 
 
 
-/* ok  address 0x32e5b4  size 4 */
-/* mangled: _ZN7Walaber8CallbackD0Ev */
-/* Walaber::Callback::~Callback() */
-
-/* Walaber::Callback::~Callback() */
-
-void Walaber::Callback::~Callback(void *p0)
-
-{
+/* ok  address 0x32e5b4  size 4 */Walaber::Callback::~Callback(){
   operator_delete(p0);
   return;
 }

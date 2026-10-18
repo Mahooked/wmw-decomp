@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4c010c  size 132 */
-/* mangled: _ZN12WaterConcept13Screen_Editor10ObjectDataC2Ev */
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData() */
-
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData() */
-
-void WaterConcept::Screen_Editor::ObjectData::ObjectData()
-
-{
+/* ok  address 0x4c010c  size 132 */WaterConcept::Screen_Editor::ObjectData::ObjectData(){
   this[1] = 0;
   *this = 0;
   this[3] = 0;
@@ -32,17 +24,7 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData()
 
 
 
-/* ok  address 0x4c2580  size 620 */
-/* mangled: _ZN12WaterConcept13Screen_Editor10ObjectDataC2ERKS1_ */
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData const&) */
-
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData
-   const&) */
-
-void WaterConcept::Screen_Editor::ObjectData::ObjectData
-               (WaterConcept__Screen_Editor__ObjectData *p0)
-
-{
+/* ok  address 0x4c2580  size 620 */WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept__Screen_Editor__ObjectData *p0){
   bool bVar1;
   long in_x1;
   ulong uVar2;
@@ -150,16 +132,7 @@ void WaterConcept::Screen_Editor::ObjectData::ObjectData
 
 
 
-/* ok  address 0x4ccd28  size 528 */
-/* mangled: _ZN12WaterConcept13Screen_Editor10ObjectDataC2EOS1_ */
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData&&) */
-
-/* WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept::Screen_Editor::ObjectData&&) */
-
-void WaterConcept::Screen_Editor::ObjectData::ObjectData
-               (WaterConcept__Screen_Editor__ObjectData **p0)
-
-{
+/* ok  address 0x4ccd28  size 528 */WaterConcept::Screen_Editor::ObjectData::ObjectData(WaterConcept__Screen_Editor__ObjectData **p0){
   undefined1 uVar1;
   bool bVar2;
   undefined8 *in_x1;

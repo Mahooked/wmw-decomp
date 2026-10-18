@@ -3,30 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e271c  size 4 */
-/* mangled: _ZNSt6__ndk114__shared_countD1Ev */
-/* also exported as: _ZNSt6__ndk119__shared_weak_countD1Ev = std::__ndk1::__shared_weak_count::~__shared_weak_count() | _ZNSt6__ndk119__shared_weak_countD2Ev = std::__ndk1::__shared_weak_count::~__shared_weak_count() */
-/* std::__ndk1::__shared_count::~__shared_count() */
-
-/* std::__ndk1::__shared_weak_count::~__shared_weak_count() */
-
-void std::__ndk1::__shared_count::~__shared_count(void)
-
-{
+/* ok  address 0x5e271c  size 4 */std::__ndk1::__shared_count::~__shared_count(){
   return;
 }
 
 
 
-/* ok  address 0x5e2720  size 4 */
-/* mangled: _ZNSt6__ndk114__shared_countD0Ev */
-/* std::__ndk1::__shared_count::~__shared_count() */
-
-/* std::__ndk1::__shared_count::~__shared_count() */
-
-void std::__ndk1::__shared_count::~__shared_count(void)
-
-{
+/* ok  address 0x5e2720  size 4 */std::__ndk1::__shared_count::~__shared_count(){
   code *pcVar1;
   
                     /* WARNING: Does not return */

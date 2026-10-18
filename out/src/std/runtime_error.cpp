@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e34f8  size 140 */
-/* mangled: _ZNSt13runtime_errorC1ERKNSt6__ndk112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE */
-/* std::runtime_error::runtime_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::runtime_error::runtime_error(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void std::runtime_error::runtime_error(undefined8 *param_1,byte *param_2)
-
-{
+/* ok  address 0x5e34f8  size 140 */std::runtime_error::runtime_error(undefined8 *param_1,byte *param_2){
   long lVar1;
   long *plVar2;
   byte *pbVar3;
@@ -35,15 +26,7 @@ void std::runtime_error::runtime_error(undefined8 *param_1,byte *param_2)
 
 
 
-/* ok  address 0x5e3584  size 128 */
-/* mangled: _ZNSt13runtime_errorC1EPKc */
-/* std::runtime_error::runtime_error(char const*) */
-
-/* std::runtime_error::runtime_error(char const*) */
-
-void std::runtime_error::runtime_error(char *p0)
-
-{
+/* ok  address 0x5e3584  size 128 */std::runtime_error::runtime_error(char *p0){
   long lVar1;
   long *plVar2;
   
@@ -61,15 +44,7 @@ void std::runtime_error::runtime_error(char *p0)
 
 
 
-/* ok  address 0x5e3604  size 48 */
-/* mangled: _ZNSt13runtime_errorC1ERKS_ */
-/* std::runtime_error::runtime_error(std::runtime_error const&) */
-
-/* std::runtime_error::runtime_error(std::runtime_error const&) */
-
-void std::runtime_error::runtime_error(std__runtime_error *p0)
-
-{
+/* ok  address 0x5e3604  size 48 */std::runtime_error::runtime_error(std__runtime_error *p0){
   char cVar1;
   bool bVar2;
   long in_x1;
@@ -140,15 +115,7 @@ std__runtime_error * std::runtime_error::operator=(std__runtime_error *p0)
 
 
 
-/* ok  address 0x5f50f0  size 92 */
-/* mangled: _ZNSt13runtime_errorD0Ev */
-/* std::runtime_error::~runtime_error() */
-
-/* std::runtime_error::~runtime_error() */
-
-void std::runtime_error::~runtime_error()
-
-{
+/* ok  address 0x5f50f0  size 92 */std::runtime_error::~runtime_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

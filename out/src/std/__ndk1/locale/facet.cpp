@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5d5bdc  size 36 */
-/* mangled: _ZNSt6__ndk16locale5facetD0Ev */
-/* std::__ndk1::locale::facet::~facet() */
-
-/* std::__ndk1::locale::facet::~facet() */
-
-void std::__ndk1::locale::facet::~facet(void *param_1)
-
-{
+/* ok  address 0x5d5bdc  size 36 */std::__ndk1::locale::facet::~facet(){
   std::__ndk1::__shared_count::~__shared_count();
   operator delete(param_1);
   return;

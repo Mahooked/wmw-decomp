@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e29d4  size 24 */
-/* mangled: _ZNSt6__ndk15mutexD1Ev */
-/* std::__ndk1::mutex::~mutex() */
-
-/* std::__ndk1::mutex::~mutex() */
-
-void std::__ndk1::mutex::~mutex(void)
-
-{
+/* ok  address 0x5e29d4  size 24 */std::__ndk1::mutex::~mutex(){
                     /* try { // try from 005e29dc to 005e29df has its CatchHandler @ 005e29e8 */
   pthread_mutex_destroy();
   return;

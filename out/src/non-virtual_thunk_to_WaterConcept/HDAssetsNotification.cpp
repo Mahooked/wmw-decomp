@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x499838  size 36 */
-/* mangled: _ZThn488_N12WaterConcept20HDAssetsNotificationD1Ev */
-/* non-virtual thunk to WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-/* non-virtual thunk to WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
-
-{
+/* ok  address 0x499838  size 36 */non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver();
   WaterConcept::Notification::~Notification(param_1 + -0x1e8);
   return;
@@ -19,15 +11,7 @@ void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotificat
 
 
 
-/* ok  address 0x49988c  size 44 */
-/* mangled: _ZThn488_N12WaterConcept20HDAssetsNotificationD0Ev */
-/* non-virtual thunk to WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-/* non-virtual thunk to WaterConcept::HDAssetsNotification::~HDAssetsNotification() */
-
-void non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(long param_1)
-
-{
+/* ok  address 0x49988c  size 44 */non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver();
   WaterConcept::Notification::~Notification((void *)(param_1 + -0x1e8));
   operator delete((void *)(param_1 + -0x1e8));

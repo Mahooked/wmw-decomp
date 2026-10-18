@@ -3,18 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x35b6e4  size 332 */
-/* mangled: _ZN7Walaber6SpriteC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_7Vector2EfSA_i */
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::Vector2, float, Walaber::Vector2, int) */
-
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::Vector2, float, Walaber::Vector2, int) */
-
-void Walaber::Sprite::Sprite
-               (undefined4 param_1,long *param_2,undefined8 param_3,undefined8 param_4,
-               undefined8 param_5,undefined4 param_6)
-
-{
+/* ok  address 0x35b6e4  size 332 */Walaber::Sprite::Sprite(undefined4 param_1,long *param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined4 param_6){
   undefined4 uStack_5c;
   
   uStack_5c = param_1;
@@ -43,20 +32,7 @@ void Walaber::Sprite::Sprite
 
 
 
-/* ok  address 0x35b830  size 620 */
-/* mangled: _ZN7Walaber6SpriteC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_7TextureEEENS_7Vector2ESD_fS7_i */
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2, Walaber::Vector2, float, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int) */
-
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2,
-   Walaber::Vector2, float, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> >, int) */
-
-void Walaber::Sprite::Sprite
-               (undefined4 param_1,long *param_2,undefined8 param_3,long *param_4,undefined8 param_5
-               ,undefined8 *param_6,undefined8 param_7,undefined4 param_8)
-
-{
+/* ok  address 0x35b830  size 620 */Walaber::Sprite::Sprite(undefined4 param_1,long *param_2,undefined8 param_3,long *param_4,undefined8 param_5 ,undefined8 *param_6,undefined8 param_7,undefined4 param_8){
   undefined8 uVar2;
   undefined1 auStack_e0 [16];
   undefined8 uStack_d0;
@@ -207,21 +183,7 @@ void Walaber::Sprite::setAnimation(long *param_1,long param_2)
 
 
 
-/* ok  address 0x35bc8c  size 620 */
-/* mangled: _ZN7Walaber6SpriteC1ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_7TextureEEENS_7Vector2ESD_fSD_SD_S7_i */
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2, Walaber::Vector2, float, Walaber::Vector2, Walaber::Vector2, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, int) */
-
-/* Walaber::Sprite::Sprite(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2,
-   Walaber::Vector2, float, Walaber::Vector2, Walaber::Vector2, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >, int) */
-
-void Walaber::Sprite::Sprite
-               (undefined4 param_1,long *param_2,undefined8 param_3,long *param_4,undefined8 param_5
-               ,undefined8 *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9,
-               undefined4 param_10)
-
-{
+/* ok  address 0x35bc8c  size 620 */Walaber::Sprite::Sprite(undefined4 param_1,long *param_2,undefined8 param_3,long *param_4,undefined8 param_5 ,undefined8 *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9, undefined4 param_10){
   undefined8 uVar2;
   undefined1 auStack_e0 [16];
   undefined8 uStack_d0;
@@ -912,15 +874,7 @@ void Walaber::Sprite::_animationLoaded(void *p0)
 
 
 
-/* ok  address 0x35cc84  size 80 */
-/* mangled: _ZN7Walaber6SpriteD2Ev */
-/* Walaber::Sprite::~Sprite() */
-
-/* Walaber::Sprite::~Sprite() */
-
-void Walaber::Sprite::~Sprite()
-
-{
+/* ok  address 0x35cc84  size 80 */Walaber::Sprite::~Sprite(){
   *this = &PTR__Sprite_0070e9a0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x1a);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x17);
@@ -932,15 +886,7 @@ void Walaber::Sprite::~Sprite()
 
 
 
-/* ok  address 0x35ccd4  size 88 */
-/* mangled: _ZN7Walaber6SpriteD0Ev */
-/* Walaber::Sprite::~Sprite() */
-
-/* Walaber::Sprite::~Sprite() */
-
-void Walaber::Sprite::~Sprite()
-
-{
+/* ok  address 0x35ccd4  size 88 */Walaber::Sprite::~Sprite(){
   *this = &PTR__Sprite_0070e9a0;
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x1a);
   Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x17);

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x403d2c  size 1920 */
-/* mangled: _ZN12WaterConcept6FluidsC1EiRKN7Walaber4AABBE */
-/* WaterConcept::Fluids::Fluids(int, Walaber::AABB const&) */
-
-/* WaterConcept::Fluids::Fluids(int, Walaber::AABB const&) */
-
-void WaterConcept::Fluids::Fluids(int p0,Walaber__AABB *p1)
-
-{
+/* ok  address 0x403d2c  size 1920 */WaterConcept::Fluids::Fluids(int p0,Walaber__AABB *p1){
   long lVar1;
   long *plVar3;
   long lVar4;
@@ -939,15 +931,7 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
 
 
 
-/* ok  address 0x4057b4  size 888 */
-/* mangled: _ZN12WaterConcept6FluidsD1Ev */
-/* WaterConcept::Fluids::~Fluids() */
-
-/* WaterConcept::Fluids::~Fluids() */
-
-void WaterConcept::Fluids::~Fluids(long *param_1,ulong param_2)
-
-{
+/* ok  address 0x4057b4  size 888 */WaterConcept::Fluids::~Fluids(){
   long *plVar1;
   void *p0;
   long lVar2;

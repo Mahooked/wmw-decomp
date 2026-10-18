@@ -35,15 +35,7 @@ void WaterConcept::Screen_Popup::getStageTranslation(float *param_1,long param_2
 
 
 
-/* ok  address 0x5447c0  size 1132 */
-/* mangled: _ZN12WaterConcept12Screen_PopupC1Ev */
-/* WaterConcept::Screen_Popup::Screen_Popup() */
-
-/* WaterConcept::Screen_Popup::Screen_Popup() */
-
-void WaterConcept::Screen_Popup::Screen_Popup()
-
-{
+/* ok  address 0x5447c0  size 1132 */WaterConcept::Screen_Popup::Screen_Popup(){
   undefined8 *puVar1;
   byte bVar2;
   byte bVar4;
@@ -304,15 +296,7 @@ void WaterConcept::Screen_Popup::_setupRenderTextureBuffer(long param_1)
 
 
 
-/* ok  address 0x544e70  size 572 */
-/* mangled: _ZN12WaterConcept12Screen_PopupD1Ev */
-/* WaterConcept::Screen_Popup::~Screen_Popup() */
-
-/* WaterConcept::Screen_Popup::~Screen_Popup() */
-
-void WaterConcept::Screen_Popup::~Screen_Popup()
-
-{
+/* ok  address 0x544e70  size 572 */WaterConcept::Screen_Popup::~Screen_Popup(){
   void *pvVar1;
   long lVar2;
   
@@ -375,15 +359,7 @@ void WaterConcept::Screen_Popup::~Screen_Popup()
 
 
 
-/* ok  address 0x5450b4  size 36 */
-/* mangled: _ZN12WaterConcept12Screen_PopupD0Ev */
-/* WaterConcept::Screen_Popup::~Screen_Popup() */
-
-/* WaterConcept::Screen_Popup::~Screen_Popup() */
-
-void WaterConcept::Screen_Popup::~Screen_Popup(void *param_1)
-
-{
+/* ok  address 0x5450b4  size 36 */WaterConcept::Screen_Popup::~Screen_Popup(){
   WaterConcept::Screen_Popup::~Screen_Popup();
   operator delete(param_1);
   return;

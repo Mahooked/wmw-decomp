@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f5154  size 92 */
-/* mangled: _ZNSt12domain_errorD0Ev */
-/* std::domain_error::~domain_error() */
-
-/* std::domain_error::~domain_error() */
-
-void std::domain_error::~domain_error()
-
-{
+/* ok  address 0x5f5154  size 92 */std::domain_error::~domain_error(){
   int iVar1;
   char cVar2;
   bool bVar3;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x47cc88  size 1384 */
-/* mangled: _ZN12WaterConcept14FluidConverterC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::FluidConverter::FluidConverter(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::FluidConverter::FluidConverter(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x47cc88  size 1384 */WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   long lVar1;
   undefined8 *in_x2;
   long lVar3;
@@ -204,15 +196,7 @@ void WaterConcept::FluidConverter::FluidConverter(Walaber__Vector2 p0,float p1,W
 
 
 
-/* ok  address 0x47d1f0  size 100 */
-/* mangled: _ZN12WaterConcept14FluidConverterD1Ev */
-/* WaterConcept::FluidConverter::~FluidConverter() */
-
-/* WaterConcept::FluidConverter::~FluidConverter() */
-
-void WaterConcept::FluidConverter::~FluidConverter()
-
-{
+/* ok  address 0x47d1f0  size 100 */WaterConcept::FluidConverter::~FluidConverter(){
   void *p0;
   long lVar1;
   
@@ -233,15 +217,7 @@ void WaterConcept::FluidConverter::~FluidConverter()
 
 
 
-/* ok  address 0x47d254  size 36 */
-/* mangled: _ZN12WaterConcept14FluidConverterD0Ev */
-/* WaterConcept::FluidConverter::~FluidConverter() */
-
-/* WaterConcept::FluidConverter::~FluidConverter() */
-
-void WaterConcept::FluidConverter::~FluidConverter(void *param_1)
-
-{
+/* ok  address 0x47d254  size 36 */WaterConcept::FluidConverter::~FluidConverter(){
   WaterConcept::FluidConverter::~FluidConverter();
   operator delete(param_1);
   return;

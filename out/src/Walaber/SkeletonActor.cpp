@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x33ffc4  size 220 */
-/* mangled: _ZN7Walaber13SkeletonActorC1Ev */
-/* Walaber::SkeletonActor::SkeletonActor() */
-
-/* Walaber::SkeletonActor::SkeletonActor() */
-
-void Walaber::SkeletonActor::SkeletonActor(long param_1)
-
-{
+/* ok  address 0x33ffc4  size 220 */Walaber::SkeletonActor::SkeletonActor(long param_1){
   *(undefined2 *)(param_1 + 2) = 0;
   *(undefined8 *)(param_1 + 8) = 0;
   *(undefined8 *)(param_1 + 0x20) = 0;
@@ -67,15 +59,7 @@ void Walaber::SkeletonActor::SkeletonActor(long param_1)
 
 
 
-/* ok  address 0x3400a8  size 1000 */
-/* mangled: _ZN7Walaber13SkeletonActorD1Ev */
-/* Walaber::SkeletonActor::~SkeletonActor() */
-
-/* Walaber::SkeletonActor::~SkeletonActor() */
-
-void Walaber::SkeletonActor::~SkeletonActor(long param_1)
-
-{
+/* ok  address 0x3400a8  size 1000 */Walaber::SkeletonActor::~SkeletonActor(){
   bool bVar2;
   void *p0;
   long *plVar3;

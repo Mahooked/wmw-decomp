@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4a4d38  size 212 */
-/* mangled: _ZN12WaterConcept14Screen_AgeGateC1Ev */
-/* WaterConcept::Screen_AgeGate::Screen_AgeGate() */
-
-/* WaterConcept::Screen_AgeGate::Screen_AgeGate() */
-
-void WaterConcept::Screen_AgeGate::Screen_AgeGate()
-
-{
+/* ok  address 0x4a4d38  size 212 */WaterConcept::Screen_AgeGate::Screen_AgeGate(){
   WaterConcept::WCScreen::WCScreen(this,0x28);
                     /* try { // try from 004a4d58 to 004a4d63 has its CatchHandler @ 004a4df8 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -38,15 +30,7 @@ void WaterConcept::Screen_AgeGate::Screen_AgeGate()
 
 
 
-/* ok  address 0x4a4e0c  size 92 */
-/* mangled: _ZN12WaterConcept14Screen_AgeGateD1Ev */
-/* WaterConcept::Screen_AgeGate::~Screen_AgeGate() */
-
-/* WaterConcept::Screen_AgeGate::~Screen_AgeGate() */
-
-void WaterConcept::Screen_AgeGate::~Screen_AgeGate()
-
-{
+/* ok  address 0x4a4e0c  size 92 */WaterConcept::Screen_AgeGate::~Screen_AgeGate(){
   *this = &PTR__Screen_AgeGate_00712c48;
   this[4] = &PTR_handleEvent_00712d00;
   this[0x12] = &PTR__Screen_AgeGate_00712d20;
@@ -59,15 +43,7 @@ void WaterConcept::Screen_AgeGate::~Screen_AgeGate()
 
 
 
-/* ok  address 0x4a4e70  size 36 */
-/* mangled: _ZN12WaterConcept14Screen_AgeGateD0Ev */
-/* WaterConcept::Screen_AgeGate::~Screen_AgeGate() */
-
-/* WaterConcept::Screen_AgeGate::~Screen_AgeGate() */
-
-void WaterConcept::Screen_AgeGate::~Screen_AgeGate(void *param_1)
-
-{
+/* ok  address 0x4a4e70  size 36 */WaterConcept::Screen_AgeGate::~Screen_AgeGate(){
   WaterConcept::Screen_AgeGate::~Screen_AgeGate();
   operator delete(param_1);
   return;

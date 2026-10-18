@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4cda40  size 232 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectEditorC1Ev */
-/* WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor() */
-
-/* WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor() */
-
-void WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor()
-
-{
+/* ok  address 0x4cda40  size 232 */WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor(){
   WaterConcept::WCScreen::WCScreen(this,0xb);
                     /* try { // try from 004cda60 to 004cda6b has its CatchHandler @ 004cdb14 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -46,15 +38,7 @@ void WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor()
 
 
 
-/* ok  address 0x4cdb28  size 136 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectEditorD1Ev */
-/* WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-/* WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-void WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor()
-
-{
+/* ok  address 0x4cdb28  size 136 */WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
   void *p0;
   
   *this = &PTR__Screen_EditorObjectEditor_007136c8;
@@ -78,15 +62,7 @@ void WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor()
 
 
 
-/* ok  address 0x4cdbb8  size 36 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectEditorD0Ev */
-/* WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-/* WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor() */
-
-void WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(void *param_1)
-
-{
+/* ok  address 0x4cdbb8  size 36 */WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
   WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor();
   operator delete(param_1);
   return;

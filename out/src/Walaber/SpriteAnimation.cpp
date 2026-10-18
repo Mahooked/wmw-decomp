@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x359940  size 176 */
-/* mangled: _ZN7Walaber15SpriteAnimationC1Ev */
-/* Walaber::SpriteAnimation::SpriteAnimation() */
-
-/* Walaber::SpriteAnimation::SpriteAnimation() */
-
-void Walaber::SpriteAnimation::SpriteAnimation()
-
-{
+/* ok  address 0x359940  size 176 */Walaber::SpriteAnimation::SpriteAnimation(){
   undefined8 *puVar1;
   
   *this = 0;
@@ -54,19 +46,7 @@ void Walaber::SpriteAnimation::SpriteAnimation()
 
 
 
-/* ok  address 0x3599f0  size 576 */
-/* mangled: _ZN7Walaber15SpriteAnimationC1ENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_9SharedPtrINS_7TextureEEENS_7Vector2ESB_SB_ */
-/* Walaber::SpriteAnimation::SpriteAnimation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::SpriteAnimation::SpriteAnimation(std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >,
-   Walaber::SharedPtr<Walaber::Texture>, Walaber::Vector2, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::SpriteAnimation::SpriteAnimation
-               (long param_1,undefined8 param_2,long *param_3,undefined8 param_4,undefined8 param_5,
-               undefined8 *param_6)
-
-{
+/* ok  address 0x3599f0  size 576 */Walaber::SpriteAnimation::SpriteAnimation(long param_1,undefined8 param_2,long *param_3,undefined8 param_4,undefined8 param_5, undefined8 *param_6){
   int *piVar2;
   undefined8 *puVar3;
   long lVar4;
@@ -789,15 +769,7 @@ void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
 
 
 
-/* ok  address 0x35ada0  size 164 */
-/* mangled: _ZN7Walaber15SpriteAnimationD1Ev */
-/* Walaber::SpriteAnimation::~SpriteAnimation() */
-
-/* Walaber::SpriteAnimation::~SpriteAnimation() */
-
-void Walaber::SpriteAnimation::~SpriteAnimation(byte *param_1)
-
-{
+/* ok  address 0x35ada0  size 164 */Walaber::SpriteAnimation::~SpriteAnimation(){
   long lVar1;
   long lVar2;
   

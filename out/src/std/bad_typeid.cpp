@@ -3,45 +3,21 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5f5428  size 20 */
-/* mangled: _ZNSt10bad_typeidC1Ev */
-/* std::bad_typeid::bad_typeid() */
-
-/* std::bad_typeid::bad_typeid() */
-
-void std::bad_typeid::bad_typeid()
-
-{
+/* ok  address 0x5f5428  size 20 */std::bad_typeid::bad_typeid(){
   *this = &PTR__bad_typeid_0071a420;
   return;
 }
 
 
 
-/* ok  address 0x5f543c  size 4 */
-/* mangled: _ZNSt10bad_typeidD1Ev */
-/* std::bad_typeid::~bad_typeid() */
-
-/* std::bad_typeid::~bad_typeid() */
-
-void std::bad_typeid::~bad_typeid(void)
-
-{
+/* ok  address 0x5f543c  size 4 */std::bad_typeid::~bad_typeid(){
   bad_exception::~bad_exception();
   return;
 }
 
 
 
-/* ok  address 0x5f5440  size 36 */
-/* mangled: _ZNSt10bad_typeidD0Ev */
-/* std::bad_typeid::~bad_typeid() */
-
-/* std::bad_typeid::~bad_typeid() */
-
-void std::bad_typeid::~bad_typeid(void *param_1)
-
-{
+/* ok  address 0x5f5440  size 36 */std::bad_typeid::~bad_typeid(){
   std::exception::~exception();
   operator delete(param_1);
   return;

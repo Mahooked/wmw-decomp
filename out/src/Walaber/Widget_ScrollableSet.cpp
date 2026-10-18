@@ -93,16 +93,7 @@ Walaber::Widget_ScrollableSet::operator=(Walaber__Widget_ScrollableSet *p0)
 
 
 
-/* ok  address 0x387f08  size 316 */
-/* mangled: _ZN7Walaber20Widget_ScrollableSetC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_ScrollableSet::Widget_ScrollableSet(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_ScrollableSet::Widget_ScrollableSet(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_ScrollableSet::Widget_ScrollableSet
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x387f08  size 316 */Walaber::Widget_ScrollableSet::Widget_ScrollableSet(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uVar3;
@@ -169,15 +160,7 @@ void Walaber::Widget_ScrollableSet::init(long param_1)
 
 
 
-/* ok  address 0x38808c  size 80 */
-/* mangled: _ZN7Walaber20Widget_ScrollableSetD1Ev */
-/* Walaber::Widget_ScrollableSet::~Widget_ScrollableSet() */
-
-/* Walaber::Widget_ScrollableSet::~Widget_ScrollableSet() */
-
-void Walaber::Widget_ScrollableSet::~Widget_ScrollableSet()
-
-{
+/* ok  address 0x38808c  size 80 */Walaber::Widget_ScrollableSet::~Widget_ScrollableSet(){
   void *pvVar1;
   
   pvVar1 = (void *)this[0x2b];
@@ -197,15 +180,7 @@ void Walaber::Widget_ScrollableSet::~Widget_ScrollableSet()
 
 
 
-/* ok  address 0x3880dc  size 36 */
-/* mangled: _ZN7Walaber20Widget_ScrollableSetD0Ev */
-/* Walaber::Widget_ScrollableSet::~Widget_ScrollableSet() */
-
-/* Walaber::Widget_ScrollableSet::~Widget_ScrollableSet() */
-
-void Walaber::Widget_ScrollableSet::~Widget_ScrollableSet(void *param_1)
-
-{
+/* ok  address 0x3880dc  size 36 */Walaber::Widget_ScrollableSet::~Widget_ScrollableSet(){
   Walaber::Widget_ScrollableSet::~Widget_ScrollableSet();
   operator delete(param_1);
   return;

@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3e844c  size 56 */
-/* mangled: _ZN7Walaber15MessageReceiverC1ENS_15MessageCategoryE */
-/* Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory) */
-
-/* Walaber::MessageReceiver::MessageReceiver(Walaber::MessageCategory) */
-
-void Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 param_2)
-
-{
+/* ok  address 0x3e844c  size 56 */Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 param_2){
   undefined8 uVar1;
   
   *(undefined4 *)(param_1 + 1) = param_2;
@@ -23,15 +15,7 @@ void Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 pa
 
 
 
-/* ok  address 0x3e8580  size 84 */
-/* mangled: _ZN7Walaber15MessageReceiverD1Ev */
-/* Walaber::MessageReceiver::~MessageReceiver() */
-
-/* Walaber::MessageReceiver::~MessageReceiver() */
-
-void Walaber::MessageReceiver::~MessageReceiver()
-
-{
+/* ok  address 0x3e8580  size 84 */Walaber::MessageReceiver::~MessageReceiver(){
   undefined8 uVar1;
   
   *this = &PTR__MessageReceiver_00710d70;
@@ -44,15 +28,7 @@ void Walaber::MessageReceiver::~MessageReceiver()
 
 
 
-/* ok  address 0x3e86c0  size 36 */
-/* mangled: _ZN7Walaber15MessageReceiverD0Ev */
-/* Walaber::MessageReceiver::~MessageReceiver() */
-
-/* Walaber::MessageReceiver::~MessageReceiver() */
-
-void Walaber::MessageReceiver::~MessageReceiver(void *param_1)
-
-{
+/* ok  address 0x3e86c0  size 36 */Walaber::MessageReceiver::~MessageReceiver(){
   Walaber::MessageReceiver::~MessageReceiver();
   operator delete(param_1);
   return;

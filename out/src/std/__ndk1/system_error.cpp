@@ -79,17 +79,7 @@ LAB_005ef274:
 
 
 
-/* ok  address 0x5ef2d0  size 392 */
-/* mangled: _ZNSt6__ndk112system_errorC1ENS_10error_codeERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE */
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&) */
-
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,ulong *param_4)
-
-{
+/* ok  address 0x5ef2d0  size 392 */std::__ndk1::system_error::system_error(undefined8 *param_1,undefined8 param_2,undefined8 param_3,ulong *param_4){
   ulong uVar2;
   ulong uVar3;
   void *pvVar4;
@@ -152,16 +142,7 @@ LAB_005ef384:
 
 
 
-/* ok  address 0x5ef458  size 372 */
-/* mangled: _ZNSt6__ndk112system_errorC1ENS_10error_codeEPKc */
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code, char const*) */
-
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code, char const*) */
-
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4)
-
-{
+/* ok  address 0x5ef458  size 372 */std::__ndk1::system_error::system_error(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4){
   ulong uVar2;
   void *pvVar3;
   ulong p0;
@@ -215,16 +196,7 @@ LAB_005ef4f4:
 
 
 
-/* ok  address 0x5ef5cc  size 240 */
-/* mangled: _ZNSt6__ndk112system_errorC1ENS_10error_codeE */
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code) */
-
-/* std::__ndk1::system_error::system_error(std::__ndk1::error_code) */
-
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x5ef5cc  size 240 */std::__ndk1::system_error::system_error(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
   ulong auStack_68 [2];
   void *pvStack_58;
   byte abStack_50 [16];
@@ -255,18 +227,7 @@ void std::__ndk1::system_error::system_error
 
 
 
-/* ok  address 0x5ef6bc  size 412 */
-/* mangled: _ZNSt6__ndk112system_errorC1EiRKNS_14error_categoryERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE */
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&,
-   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> >
-   const&) */
-
-void std::__ndk1::system_error::system_error
-               (undefined8 *param_1,undefined4 param_2,undefined8 param_3,ulong *param_4)
-
-{
+/* ok  address 0x5ef6bc  size 412 */std::__ndk1::system_error::system_error(undefined8 *param_1,undefined4 param_2,undefined8 param_3,ulong *param_4){
   ulong uVar2;
   ulong uVar3;
   void *pvVar4;
@@ -329,15 +290,7 @@ LAB_005ef780:
 
 
 
-/* ok  address 0x5ef858  size 392 */
-/* mangled: _ZNSt6__ndk112system_errorC1EiRKNS_14error_categoryEPKc */
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&, char const*) */
-
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&, char const*) */
-
-void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1,char *p2)
-
-{
+/* ok  address 0x5ef858  size 392 */std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1,char *p2){
   undefined8 *puVar2;
   ulong uVar3;
   void *pvVar4;
@@ -393,15 +346,7 @@ LAB_005ef904:
 
 
 
-/* ok  address 0x5ef9e0  size 260 */
-/* mangled: _ZNSt6__ndk112system_errorC1EiRKNS_14error_categoryE */
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&) */
-
-/* std::__ndk1::system_error::system_error(int, std::__ndk1::error_category const&) */
-
-void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1)
-
-{
+/* ok  address 0x5ef9e0  size 260 */std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category *p1){
   undefined8 *puVar2;
   undefined8 in_x2;
   ulong auStack_78 [2];
@@ -433,30 +378,14 @@ void std::__ndk1::system_error::system_error(int p0,std____ndk1__error_category 
 
 
 
-/* ok  address 0x5efae4  size 4 */
-/* mangled: _ZNSt6__ndk112system_errorD1Ev */
-/* std::__ndk1::system_error::~system_error() */
-
-/* std::__ndk1::system_error::~system_error() */
-
-void std::__ndk1::system_error::~system_error(void)
-
-{
+/* ok  address 0x5efae4  size 4 */std::__ndk1::system_error::~system_error(){
   range_error::~range_error();
   return;
 }
 
 
 
-/* ok  address 0x5efae8  size 36 */
-/* mangled: _ZNSt6__ndk112system_errorD0Ev */
-/* std::__ndk1::system_error::~system_error() */
-
-/* std::__ndk1::system_error::~system_error() */
-
-void std::__ndk1::system_error::~system_error(void *param_1)
-
-{
+/* ok  address 0x5efae8  size 36 */std::__ndk1::system_error::~system_error(){
   std::runtime_error::~runtime_error();
   operator delete(param_1);
   return;

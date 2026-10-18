@@ -122,15 +122,7 @@ LAB_0042c5a8:
 
 
 
-/* ok  address 0x4448b0  size 5980 */
-/* mangled: _ZN12WaterConcept5WorldC1Efi */
-/* WaterConcept::World::World(float, int) */
-
-/* WaterConcept::World::World(float, int) */
-
-void WaterConcept::World::World(float p0,int p1)
-
-{
+/* ok  address 0x4448b0  size 5980 */WaterConcept::World::World(float p0,int p1){
   long lVar1;
   ulong uVar3;
   void *pvVar4;
@@ -1693,15 +1685,7 @@ void WaterConcept::World::_calcUVScaleFactor(long param_1)
 
 
 
-/* ok  address 0x4473e4  size 2428 */
-/* mangled: _ZN12WaterConcept5WorldD1Ev */
-/* WaterConcept::World::~World() */
-
-/* WaterConcept::World::~World() */
-
-void WaterConcept::World::~World(undefined8 *param_1,ulong param_2)
-
-{
+/* ok  address 0x4473e4  size 2428 */WaterConcept::World::~World(){
   uint uVar1;
   bool bVar2;
   ulong extraout_x1;

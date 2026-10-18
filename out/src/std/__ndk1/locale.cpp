@@ -167,15 +167,7 @@ undefined8 * std::__ndk1::locale::__global(void)
 
 
 
-/* ok  address 0x5d51c0  size 44 */
-/* mangled: _ZNSt6__ndk16localeC1Ev */
-/* std::__ndk1::locale::locale() */
-
-/* std::__ndk1::locale::locale() */
-
-void std::__ndk1::locale::locale()
-
-{
+/* ok  address 0x5d51c0  size 44 */std::__ndk1::locale::locale(){
   undefined8 *puVar1;
   
                     /* try { // try from 005d51d0 to 005d51d3 has its CatchHandler @ 005d51e8 */
@@ -187,15 +179,7 @@ void std::__ndk1::locale::locale()
 
 
 
-/* ok  address 0x5d51ec  size 16 */
-/* mangled: _ZNSt6__ndk16localeC1ERKS0_ */
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&) */
-
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&) */
-
-void std::__ndk1::locale::locale(std____ndk1__locale *p0)
-
-{
+/* ok  address 0x5d51ec  size 16 */std::__ndk1::locale::locale(std____ndk1__locale *p0){
   ulong *in_x1;
   ulong uVar1;
   
@@ -207,15 +191,7 @@ void std::__ndk1::locale::locale(std____ndk1__locale *p0)
 
 
 
-/* ok  address 0x5d51fc  size 8 */
-/* mangled: _ZNSt6__ndk16localeD1Ev */
-/* std::__ndk1::locale::~locale() */
-
-/* std::__ndk1::locale::~locale() */
-
-void std::__ndk1::locale::~locale()
-
-{
+/* ok  address 0x5d51fc  size 8 */std::__ndk1::locale::~locale(){
   std::__ndk1::__shared_count::__release_shared(*this);
   return;
 }
@@ -241,15 +217,7 @@ std____ndk1__locale * std::__ndk1::locale::operator=(std____ndk1__locale *p0)
 
 
 
-/* ok  address 0x5d5244  size 392 */
-/* mangled: _ZNSt6__ndk16localeC1EPKc */
-/* std::__ndk1::locale::locale(char const*) */
-
-/* std::__ndk1::locale::locale(char const*) */
-
-void std::__ndk1::locale::locale(char *p0)
-
-{
+/* ok  address 0x5d5244  size 392 */std::__ndk1::locale::locale(char *p0){
   undefined8 uVar2;
   ulong uVar3;
   long in_x1;
@@ -304,16 +272,7 @@ LAB_005d52f0:
 
 
 
-/* ok  address 0x5d53cc  size 92 */
-/* mangled: _ZNSt6__ndk16localeC1ERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE */
-/* std::__ndk1::locale::locale(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&) */
-
-/* std::__ndk1::locale::locale(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&) */
-
-void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2)
-
-{
+/* ok  address 0x5d53cc  size 92 */std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2){
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
@@ -326,15 +285,7 @@ void std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2)
 
 
 
-/* ok  address 0x5d5428  size 416 */
-/* mangled: _ZNSt6__ndk16localeC1ERKS0_PKci */
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, char const*, int) */
-
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, char const*, int) */
-
-void std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2)
-
-{
+/* ok  address 0x5d5428  size 416 */std::__ndk1::locale::locale(std____ndk1__locale *p0,char *p1,int p2){
   ulong uVar2;
   ulong uVar3;
   undefined4 in_w3;
@@ -391,17 +342,7 @@ LAB_005d54e4:
 
 
 
-/* ok  address 0x5d55c8  size 104 */
-/* mangled: _ZNSt6__ndk16localeC1ERKS0_RKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEi */
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, int) */
-
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, std::__ndk1::basic_string<char,
-   std::__ndk1::char_traits<char>, std::__ndk1::allocator<char> > const&, int) */
-
-void std::__ndk1::locale::locale
-               (undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined4 param_4)
-
-{
+/* ok  address 0x5d55c8  size 104 */std::__ndk1::locale::locale(undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined4 param_4){
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
@@ -414,15 +355,7 @@ void std::__ndk1::locale::locale
 
 
 
-/* ok  address 0x5d5630  size 104 */
-/* mangled: _ZNSt6__ndk16localeC1ERKS0_S2_i */
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, std::__ndk1::locale const&, int) */
-
-/* std::__ndk1::locale::locale(std::__ndk1::locale const&, std::__ndk1::locale const&, int) */
-
-void std::__ndk1::locale::locale(std____ndk1__locale *p0,std____ndk1__locale *p1,int p2)
-
-{
+/* ok  address 0x5d5630  size 104 */std::__ndk1::locale::locale(std____ndk1__locale *p0,std____ndk1__locale *p1,int p2){
   ulong uVar1;
   undefined4 in_w3;
   

@@ -3,16 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x33189c  size 116 */
-/* mangled: _ZN7Walaber9AnimationC1ENSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEPNS_16AnimationManagerE */
-/* Walaber::Animation::Animation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::AnimationManager*) */
-
-/* Walaber::Animation::Animation(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> >, Walaber::AnimationManager*) */
-
-void Walaber::Animation::Animation(long param_1,undefined8 param_2,undefined8 param_3)
-
-{
+/* ok  address 0x33189c  size 116 */Walaber::Animation::Animation(long param_1,undefined8 param_2,undefined8 param_3){
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
   memset(param_1 + 0x18,0,0xa0);
   *(undefined4 *)(param_1 + 0xe4) = 0xffffffff;
@@ -34,15 +25,7 @@ void Walaber::Animation::Animation(long param_1,undefined8 param_2,undefined8 pa
 
 
 
-/* ok  address 0x331910  size 1068 */
-/* mangled: _ZN7Walaber9AnimationC1ERKS0_ */
-/* Walaber::Animation::Animation(Walaber::Animation const&) */
-
-/* Walaber::Animation::Animation(Walaber::Animation const&) */
-
-void Walaber::Animation::Animation(Walaber__Animation *p0)
-
-{
+/* ok  address 0x331910  size 1068 */Walaber::Animation::Animation(Walaber__Animation *p0){
   uint uVar1;
   undefined8 uVar3;
   long in_x1;
@@ -325,15 +308,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
 
 
 
-/* ok  address 0x332180  size 604 */
-/* mangled: _ZN7Walaber9AnimationD1Ev */
-/* Walaber::Animation::~Animation() */
-
-/* Walaber::Animation::~Animation() */
-
-void Walaber::Animation::~Animation(byte *param_1)
-
-{
+/* ok  address 0x332180  size 604 */Walaber::Animation::~Animation(){
   long lVar1;
   ulong uVar2;
   void *pvVar3;

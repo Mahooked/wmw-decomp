@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4b4104  size 7256 */
-/* mangled: _ZN12WaterConcept17Screen_ComicStripC1Ev */
-/* WaterConcept::Screen_ComicStrip::Screen_ComicStrip() */
-
-/* WaterConcept::Screen_ComicStrip::Screen_ComicStrip() */
-
-void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
-
-{
+/* ok  address 0x4b4104  size 7256 */WaterConcept::Screen_ComicStrip::Screen_ComicStrip(){
   undefined1 uVar2;
   undefined1 uVar3;
   undefined1 uVar4;
@@ -1269,30 +1261,14 @@ void WaterConcept::Screen_ComicStrip::Screen_ComicStrip()
 
 
 
-/* ok  address 0x4b5d5c  size 4 */
-/* mangled: _ZN12WaterConcept17Screen_ComicStripD1Ev */
-/* WaterConcept::Screen_ComicStrip::~Screen_ComicStrip() */
-
-/* WaterConcept::Screen_ComicStrip::~Screen_ComicStrip() */
-
-void WaterConcept::Screen_ComicStrip::~Screen_ComicStrip(void)
-
-{
+/* ok  address 0x4b5d5c  size 4 */WaterConcept::Screen_ComicStrip::~Screen_ComicStrip(){
   WCScreen::~WCScreen();
   return;
 }
 
 
 
-/* ok  address 0x4b5d60  size 36 */
-/* mangled: _ZN12WaterConcept17Screen_ComicStripD0Ev */
-/* WaterConcept::Screen_ComicStrip::~Screen_ComicStrip() */
-
-/* WaterConcept::Screen_ComicStrip::~Screen_ComicStrip() */
-
-void WaterConcept::Screen_ComicStrip::~Screen_ComicStrip(void *param_1)
-
-{
+/* ok  address 0x4b5d60  size 36 */WaterConcept::Screen_ComicStrip::~Screen_ComicStrip(){
   WaterConcept::WCScreen::~WCScreen();
   operator delete(param_1);
   return;

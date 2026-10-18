@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x37a744  size 192 */
-/* mangled: _ZN7Walaber13Widget_CanvasC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_Canvas::Widget_Canvas(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_Canvas::Widget_Canvas(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_Canvas::Widget_Canvas(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37a744  size 192 */Walaber::Widget_Canvas::Widget_Canvas(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_48;
@@ -56,30 +48,14 @@ void Walaber::Widget_Canvas::init(long param_1)
 
 
 
-/* ok  address 0x37a834  size 4 */
-/* mangled: _ZN7Walaber13Widget_CanvasD1Ev */
-/* Walaber::Widget_Canvas::~Widget_Canvas() */
-
-/* Walaber::Widget_Canvas::~Widget_Canvas() */
-
-void Walaber::Widget_Canvas::~Widget_Canvas(void)
-
-{
+/* ok  address 0x37a834  size 4 */Walaber::Widget_Canvas::~Widget_Canvas(){
   Widget::~Widget();
   return;
 }
 
 
 
-/* ok  address 0x37a838  size 36 */
-/* mangled: _ZN7Walaber13Widget_CanvasD0Ev */
-/* Walaber::Widget_Canvas::~Widget_Canvas() */
-
-/* Walaber::Widget_Canvas::~Widget_Canvas() */
-
-void Walaber::Widget_Canvas::~Widget_Canvas(void *param_1)
-
-{
+/* ok  address 0x37a838  size 36 */Walaber::Widget_Canvas::~Widget_Canvas(){
   Walaber::Widget::~Widget();
   operator delete(param_1);
   return;

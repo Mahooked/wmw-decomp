@@ -84,16 +84,7 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
 
 
 
-/* ok  address 0x395b40  size 168 */
-/* mangled: _ZN7Walaber7TextureC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_11TextureTypeE */
-/* Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::TextureType) */
-
-/* Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::TextureType) */
-
-void Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined4 param_3)
-
-{
+/* ok  address 0x395b40  size 168 */Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
   *param_1 = &PTR__Texture_00710128;
                     /* try { // try from 00395b6c to 00395b73 has its CatchHandler @ 00395bdc */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 1);
@@ -114,15 +105,7 @@ void Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined4
 
 
 
-/* ok  address 0x395c70  size 88 */
-/* mangled: _ZN7Walaber7TextureD2Ev */
-/* Walaber::Texture::~Texture() */
-
-/* Walaber::Texture::~Texture() */
-
-void Walaber::Texture::~Texture()
-
-{
+/* ok  address 0x395c70  size 88 */Walaber::Texture::~Texture(){
   *this = &PTR__Texture_00710128;
   Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(this + 0x15);
   if ((*(byte *)(this + 9) & 1) != 0) {
@@ -137,15 +120,7 @@ void Walaber::Texture::~Texture()
 
 
 
-/* ok  address 0x395cc8  size 36 */
-/* mangled: _ZN7Walaber7TextureD0Ev */
-/* Walaber::Texture::~Texture() */
-
-/* Walaber::Texture::~Texture() */
-
-void Walaber::Texture::~Texture(void *param_1)
-
-{
+/* ok  address 0x395cc8  size 36 */Walaber::Texture::~Texture(){
   Walaber::Texture::~Texture();
   operator delete(param_1);
   return;
@@ -241,17 +216,7 @@ void Walaber::Texture::_applySettings(void)
 
 
 
-/* ok  address 0x396d84  size 252 */
-/* mangled: _ZN7Walaber7TextureC2ERKNSt6__ndk112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEENS_15TextureSettingsENS_11TextureTypeE */
-/* Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&, Walaber::TextureSettings, Walaber::TextureType) */
-
-/* Walaber::Texture::Texture(std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>,
-   std::__ndk1::allocator<char> > const&, Walaber::TextureSettings, Walaber::TextureType) */
-
-void Walaber::Texture::Texture
-               (undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined4 param_4)
-
-{
+/* ok  address 0x396d84  size 252 */Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined4 param_4){
   undefined8 uVar1;
   undefined8 uVar2;
   undefined8 uVar3;

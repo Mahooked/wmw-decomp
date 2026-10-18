@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5efbc0  size 24 */
-/* mangled: _ZNSt6__ndk118condition_variableD1Ev */
-/* std::__ndk1::condition_variable::~condition_variable() */
-
-/* std::__ndk1::condition_variable::~condition_variable() */
-
-void std::__ndk1::condition_variable::~condition_variable(void)
-
-{
+/* ok  address 0x5efbc0  size 24 */std::__ndk1::condition_variable::~condition_variable(){
                     /* try { // try from 005efbc8 to 005efbcb has its CatchHandler @ 005efbd4 */
   pthread_cond_destroy();
   return;

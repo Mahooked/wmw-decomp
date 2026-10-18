@@ -46,15 +46,7 @@ void WaterConcept::StarSeed::addTeleport
 
 
 
-/* ok  address 0x48f430  size 2316 */
-/* mangled: _ZN12WaterConcept8StarSeedC1EN7Walaber7Vector2EfS2_ */
-/* WaterConcept::StarSeed::StarSeed(Walaber::Vector2, float, Walaber::Vector2) */
-
-/* WaterConcept::StarSeed::StarSeed(Walaber::Vector2, float, Walaber::Vector2) */
-
-void WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x48f430  size 2316 */WaterConcept::StarSeed::StarSeed(Walaber__Vector2 p0,float p1,Walaber__Vector2 p2){
   int iVar2;
   undefined8 *puVar3;
   undefined8 uVar4;
@@ -389,15 +381,7 @@ void WaterConcept::StarSeed::_gotSE(void *p0)
 
 
 
-/* ok  address 0x48fe24  size 160 */
-/* mangled: _ZN12WaterConcept8StarSeedD1Ev */
-/* WaterConcept::StarSeed::~StarSeed() */
-
-/* WaterConcept::StarSeed::~StarSeed() */
-
-void WaterConcept::StarSeed::~StarSeed()
-
-{
+/* ok  address 0x48fe24  size 160 */WaterConcept::StarSeed::~StarSeed(){
   void *p0;
   
   *this = &PTR__StarSeed_00712018;
@@ -424,15 +408,7 @@ void WaterConcept::StarSeed::~StarSeed()
 
 
 
-/* ok  address 0x48fec4  size 36 */
-/* mangled: _ZN12WaterConcept8StarSeedD0Ev */
-/* WaterConcept::StarSeed::~StarSeed() */
-
-/* WaterConcept::StarSeed::~StarSeed() */
-
-void WaterConcept::StarSeed::~StarSeed(void *param_1)
-
-{
+/* ok  address 0x48fec4  size 36 */WaterConcept::StarSeed::~StarSeed(){
   WaterConcept::StarSeed::~StarSeed();
   operator delete(param_1);
   return;

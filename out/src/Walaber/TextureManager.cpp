@@ -25,15 +25,7 @@ long Walaber::TextureManager::getManager(void)
 
 
 
-/* ok  address 0x399a00  size 268 */
-/* mangled: _ZN7Walaber14TextureManagerC1Ev */
-/* Walaber::TextureManager::TextureManager() */
-
-/* Walaber::TextureManager::TextureManager() */
-
-void Walaber::TextureManager::TextureManager()
-
-{
+/* ok  address 0x399a00  size 268 */Walaber::TextureManager::TextureManager(){
   this[2] = 0;
   this[3] = 0;
   this[1] = 0;
@@ -154,15 +146,7 @@ void Walaber::TextureManager::_createErrorTexture(long param_1)
 
 
 
-/* ok  address 0x399ce4  size 104 */
-/* mangled: _ZN7Walaber14TextureManagerD1Ev */
-/* Walaber::TextureManager::~TextureManager() */
-
-/* Walaber::TextureManager::~TextureManager() */
-
-void Walaber::TextureManager::~TextureManager(long param_1)
-
-{
+/* ok  address 0x399ce4  size 104 */Walaber::TextureManager::~TextureManager(){
   Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(param_1 + 0xa0);
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(param_1 + 0x88,*(undefined8 *)(param_1 + 0x90));
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::destroy(param_1 + 0x70,*(undefined8 *)(param_1 + 0x78));

@@ -47,16 +47,7 @@ Walaber::Widget_FingerCatcher::operator=(Walaber__Widget_FingerCatcher *p0)
 
 
 
-/* ok  address 0x37c010  size 156 */
-/* mangled: _ZN7Walaber20Widget_FingerCatcherC1EiNS_7Vector2ES1_ */
-/* Walaber::Widget_FingerCatcher::Widget_FingerCatcher(int, Walaber::Vector2, Walaber::Vector2) */
-
-/* Walaber::Widget_FingerCatcher::Widget_FingerCatcher(int, Walaber::Vector2, Walaber::Vector2) */
-
-void Walaber::Widget_FingerCatcher::Widget_FingerCatcher
-               (int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
-
-{
+/* ok  address 0x37c010  size 156 */Walaber::Widget_FingerCatcher::Widget_FingerCatcher(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2){
   undefined8 *puVar2;
   undefined8 *in_x3;
   undefined8 uStack_38;
@@ -81,15 +72,7 @@ void Walaber::Widget_FingerCatcher::Widget_FingerCatcher
 
 
 
-/* ok  address 0x37c0ac  size 80 */
-/* mangled: _ZN7Walaber20Widget_FingerCatcherD1Ev */
-/* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
-
-/* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
-
-void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher()
-
-{
+/* ok  address 0x37c0ac  size 80 */Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(){
   *this = &PTR__Widget_FingerCatcher_0070eed8;
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(this + 0x26);
   std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x23,this[0x24]);
@@ -100,15 +83,7 @@ void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher()
 
 
 
-/* ok  address 0x37c0fc  size 36 */
-/* mangled: _ZN7Walaber20Widget_FingerCatcherD0Ev */
-/* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
-
-/* Walaber::Widget_FingerCatcher::~Widget_FingerCatcher() */
-
-void Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(void *param_1)
-
-{
+/* ok  address 0x37c0fc  size 36 */Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(){
   Walaber::Widget_FingerCatcher::~Widget_FingerCatcher();
   operator delete(param_1);
   return;

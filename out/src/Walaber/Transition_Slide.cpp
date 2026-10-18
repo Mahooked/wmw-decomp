@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3f5df0  size 140 */
-/* mangled: _ZN7Walaber16Transition_SlideC1Ev */
-/* Walaber::Transition_Slide::Transition_Slide() */
-
-/* Walaber::Transition_Slide::Transition_Slide() */
-
-void Walaber::Transition_Slide::Transition_Slide()
-
-{
+/* ok  address 0x3f5df0  size 140 */Walaber::Transition_Slide::Transition_Slide(){
   Walaber::Transition::Transition();
   *(undefined1 *)(this + 0x1c) = 0;
   *this = &PTR_setup_00710ff8;
@@ -140,15 +132,7 @@ void Walaber::Transition_Slide::_setupRenderTextureBuffer(long param_1)
 
 
 
-/* ok  address 0x3f606c  size 108 */
-/* mangled: _ZN7Walaber16Transition_SlideD1Ev */
-/* Walaber::Transition_Slide::~Transition_Slide() */
-
-/* Walaber::Transition_Slide::~Transition_Slide() */
-
-void Walaber::Transition_Slide::~Transition_Slide()
-
-{
+/* ok  address 0x3f606c  size 108 */Walaber::Transition_Slide::~Transition_Slide(){
   *this = &PTR_setup_00710ff8;
                     /* try { // try from 003f6090 to 003f60a3 has its CatchHandler @ 003f60bc */
   glDeleteFramebuffersOES(1,(long)this + 0xc4);

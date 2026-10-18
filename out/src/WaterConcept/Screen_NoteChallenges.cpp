@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x53b3d4  size 288 */
-/* mangled: _ZN12WaterConcept21Screen_NoteChallengesC1Ev */
-/* WaterConcept::Screen_NoteChallenges::Screen_NoteChallenges() */
-
-/* WaterConcept::Screen_NoteChallenges::Screen_NoteChallenges() */
-
-void WaterConcept::Screen_NoteChallenges::Screen_NoteChallenges()
-
-{
+/* ok  address 0x53b3d4  size 288 */WaterConcept::Screen_NoteChallenges::Screen_NoteChallenges(){
   WaterConcept::WCScreen::WCScreen(this,0x23);
                     /* try { // try from 0053b3fc to 0053b407 has its CatchHandler @ 0053b4e0 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -37,15 +29,7 @@ void WaterConcept::Screen_NoteChallenges::Screen_NoteChallenges()
 
 
 
-/* ok  address 0x53b4f4  size 124 */
-/* mangled: _ZN12WaterConcept21Screen_NoteChallengesD1Ev */
-/* WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-/* WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-void WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges()
-
-{
+/* ok  address 0x53b4f4  size 124 */WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
   *this = &PTR__Screen_NoteChallenges_00714d48;
   this[4] = &PTR_handleEvent_00714e00;
   this[0x12] = &PTR__Screen_NoteChallenges_00714e20;
@@ -62,15 +46,7 @@ void WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges()
 
 
 
-/* ok  address 0x53b578  size 36 */
-/* mangled: _ZN12WaterConcept21Screen_NoteChallengesD0Ev */
-/* WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-/* WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges() */
-
-void WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(void *param_1)
-
-{
+/* ok  address 0x53b578  size 36 */WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
   WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges();
   operator delete(param_1);
   return;

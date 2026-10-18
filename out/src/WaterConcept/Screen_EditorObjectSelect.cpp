@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4d138c  size 136 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectSelectC1Ev */
-/* WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect() */
-
-/* WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect() */
-
-void WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect()
-
-{
+/* ok  address 0x4d138c  size 136 */WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect(){
   WaterConcept::WCScreen::WCScreen(this,10);
                     /* try { // try from 004d13a8 to 004d13af has its CatchHandler @ 004d1400 */
   Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
@@ -29,15 +21,7 @@ void WaterConcept::Screen_EditorObjectSelect::Screen_EditorObjectSelect()
 
 
 
-/* ok  address 0x4d1414  size 88 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectSelectD1Ev */
-/* WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect() */
-
-/* WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect() */
-
-void WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect()
-
-{
+/* ok  address 0x4d1414  size 88 */WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect(){
   *this = &PTR__Screen_EditorObjectSelect_00713848;
   this[4] = &PTR_handleEvent_00713900;
   this[0x12] = &PTR__Screen_EditorObjectSelect_00713920;
@@ -49,15 +33,7 @@ void WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect()
 
 
 
-/* ok  address 0x4d1474  size 36 */
-/* mangled: _ZN12WaterConcept25Screen_EditorObjectSelectD0Ev */
-/* WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect() */
-
-/* WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect() */
-
-void WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect(void *param_1)
-
-{
+/* ok  address 0x4d1474  size 36 */WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect(){
   WaterConcept::Screen_EditorObjectSelect::~Screen_EditorObjectSelect();
   operator delete(param_1);
   return;

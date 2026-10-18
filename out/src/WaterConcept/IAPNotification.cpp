@@ -3,15 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x49a798  size 436 */
-/* mangled: _ZN12WaterConcept15IAPNotificationC1Ev */
-/* WaterConcept::IAPNotification::IAPNotification() */
-
-/* WaterConcept::IAPNotification::IAPNotification() */
-
-void WaterConcept::IAPNotification::IAPNotification()
-
-{
+/* ok  address 0x49a798  size 436 */WaterConcept::IAPNotification::IAPNotification(){
   undefined8 uVar2;
   undefined8 uStack_80;
   undefined8 uStack_78;
@@ -71,15 +63,7 @@ void WaterConcept::IAPNotification::IAPNotification()
 
 
 
-/* ok  address 0x49a94c  size 108 */
-/* mangled: _ZN12WaterConcept15IAPNotificationC1ERKS0_ */
-/* WaterConcept::IAPNotification::IAPNotification(WaterConcept::IAPNotification const&) */
-
-/* WaterConcept::IAPNotification::IAPNotification(WaterConcept::IAPNotification const&) */
-
-void WaterConcept::IAPNotification::IAPNotification(WaterConcept__IAPNotification *p0)
-
-{
+/* ok  address 0x49a94c  size 108 */WaterConcept::IAPNotification::IAPNotification(WaterConcept__IAPNotification *p0){
   undefined4 uVar1;
   long in_x1;
   
@@ -114,15 +98,7 @@ WaterConcept::IAPNotification::operator=(WaterConcept__IAPNotification *p0)
 
 
 
-/* ok  address 0x49a9dc  size 132 */
-/* mangled: _ZN12WaterConcept15IAPNotificationD1Ev */
-/* WaterConcept::IAPNotification::~IAPNotification() */
-
-/* WaterConcept::IAPNotification::~IAPNotification() */
-
-void WaterConcept::IAPNotification::~IAPNotification()
-
-{
+/* ok  address 0x49a9dc  size 132 */WaterConcept::IAPNotification::~IAPNotification(){
   *this = &PTR_handleEvent_00712598;
   this[0x3d] = &PTR__IAPNotification_00712628;
   if ((long *)this[0x41] != (long *)0x0) {
@@ -161,15 +137,7 @@ void WaterConcept::IAPNotification::_unloadSprites(long param_1)
 
 
 
-/* ok  address 0x49aa9c  size 36 */
-/* mangled: _ZN12WaterConcept15IAPNotificationD0Ev */
-/* WaterConcept::IAPNotification::~IAPNotification() */
-
-/* WaterConcept::IAPNotification::~IAPNotification() */
-
-void WaterConcept::IAPNotification::~IAPNotification(void *param_1)
-
-{
+/* ok  address 0x49aa9c  size 36 */WaterConcept::IAPNotification::~IAPNotification(){
   WaterConcept::IAPNotification::~IAPNotification();
   operator delete(param_1);
   return;
