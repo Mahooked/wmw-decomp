@@ -9,7 +9,7 @@
 
 /* Walaber::LinearCurve::loadFromXmlNode(_xmlNode*) */
 
-void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0)
+void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0, long in_x1)
 
 {
   undefined *puVar2;
@@ -20,7 +20,6 @@ void Walaber::LinearCurve::loadFromXmlNode(_xmlNode *p0)
   undefined8 uVar7;
   ulong uVar8;
   void *pvVar9;
-  long in_x1;
   void *pvVar10;
   long lVar11;
   long lVar12;

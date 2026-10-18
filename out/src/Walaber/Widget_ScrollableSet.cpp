@@ -424,11 +424,10 @@ void Walaber::Widget_ScrollableSet::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_ScrollableSet::addGroup(Walaber::Widget_Group*) */
 
-void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0)
+void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0, undefined8 in_x1)
 
 {
   int *piVar1;
-  undefined8 in_x1;
   float fVar3;
   undefined1 auStack_70 [4];
   float fStack_6c;
@@ -478,13 +477,12 @@ void Walaber::Widget_ScrollableSet::addGroup(Walaber__Widget_Group *p0)
 
 /* Walaber::Widget_ScrollableSet::setIndex(int) */
 
-void Walaber::Widget_ScrollableSet::setIndex(int p0)
+void Walaber::Widget_ScrollableSet::setIndex(int p0, int in_w1)
 
 {
   int iVar1;
   int iVar2;
   ulong uVar3;
-  int in_w1;
   
   uVar3 = (ulong)(uint)p0;
   iVar2 = *(int *)(uVar3 + 0x114) + -1;
@@ -524,10 +522,9 @@ undefined4 Walaber::Widget_ScrollableSet::getCurrentIndex(long param_1)
 
 /* Walaber::Widget_ScrollableSet::setCameraMode(bool) */
 
-void Walaber::Widget_ScrollableSet::setCameraMode(bool p0)
+void Walaber::Widget_ScrollableSet::setCameraMode(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   
   *(byte *)((ulong)p0 + 0x180) = in_w1 & 1;
   return;
@@ -555,10 +552,9 @@ undefined1 Walaber::Widget_ScrollableSet::getCameraMode(long param_1)
 
 /* Walaber::Widget_ScrollableSet::setCamera(Walaber::Camera*) */
 
-void Walaber::Widget_ScrollableSet::setCamera(Walaber__Camera *p0)
+void Walaber::Widget_ScrollableSet::setCamera(Walaber__Camera *p0, ulong in_x1)
 
 {
-  ulong in_x1;
   
   p0[2].f_0x58 = in_x1;
   return;
@@ -665,11 +661,10 @@ void Walaber::Widget_ScrollableSet::setDistanceBetween(float p0)
 
 /* Walaber::Widget_ScrollableSet::linkSlider(Walaber::Widget_Slider*) */
 
-void Walaber::Widget_ScrollableSet::linkSlider(Walaber__Widget_Slider *p0)
+void Walaber::Widget_ScrollableSet::linkSlider(Walaber__Widget_Slider *p0, long in_x1)
 
 {
   int iVar1;
-  long in_x1;
   
   iVar1 = *(int *)&p0->field_0x114;
   p0->f_0x170 = (float)(int)in_x1;
@@ -688,10 +683,9 @@ void Walaber::Widget_ScrollableSet::linkSlider(Walaber__Widget_Slider *p0)
 
 /* Walaber::Widget_ScrollableSet::sliderMoved(Walaber::Widget_Slider*) */
 
-void Walaber::Widget_ScrollableSet::sliderMoved(Walaber__Widget_Slider *p0)
+void Walaber::Widget_ScrollableSet::sliderMoved(Walaber__Widget_Slider *p0, long in_x1)
 
 {
-  long in_x1;
   long lVar1;
   int iVar2;
   float fVar3;
@@ -742,11 +736,10 @@ undefined8 Walaber::Widget_ScrollableSet::acceptNewFingerDown(int p0,Walaber__Fi
 
 /* Walaber::Widget_ScrollableSet::_updateFinger(bool) */
 
-void Walaber::Widget_ScrollableSet::_updateFinger(bool p0)
+void Walaber::Widget_ScrollableSet::_updateFinger(bool p0, uint in_w1)
 
 {
   ulong uVar1;
-  uint in_w1;
   int iVar2;
   int iVar3;
   float fVar4;
@@ -794,11 +787,10 @@ LAB_00388938:
 
 /* Walaber::Widget_ScrollableSet::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined4 Walaber::Widget_ScrollableSet::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined4 Walaber::Widget_ScrollableSet::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined4 uVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -823,10 +815,9 @@ undefined4 Walaber::Widget_ScrollableSet::acceptNewFingerEntered(int p0,Walaber_
 
 /* Walaber::Widget_ScrollableSet::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableSet::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableSet::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   *(undefined8 *)((ulong)(uint)p0 + 0x100) = in_x2;
   Walaber::Widget_ScrollableSet::_updateFinger((ulong)(uint)p0,0);
@@ -841,10 +832,9 @@ undefined8 Walaber::Widget_ScrollableSet::releaseFingerStayed(int p0,Walaber__Fi
 
 /* Walaber::Widget_ScrollableSet::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableSet::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableSet::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   *(undefined8 *)((ulong)(uint)p0 + 0x100) = in_x2;
   Walaber::Widget_ScrollableSet::_updateFinger((ulong)(uint)p0,0);

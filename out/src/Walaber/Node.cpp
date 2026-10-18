@@ -165,10 +165,9 @@ void Walaber::Node::operator=(Walaber__Node *p0)
 
 /* Walaber::Node::setLocalPosition(Walaber::Vector2 const&) */
 
-void Walaber::Node::setLocalPosition(Walaber__Vector2 *p0)
+void Walaber::Node::setLocalPosition(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)&p0[10].f_0x4 = *in_x1;
   Walaber::Node::setWorldPosDirty(p0,1);
@@ -183,10 +182,9 @@ void Walaber::Node::setLocalPosition(Walaber__Vector2 *p0)
 
 /* Walaber::Node::setWorldPosDirty(bool) */
 
-void Walaber::Node::setWorldPosDirty(bool p0)
+void Walaber::Node::setWorldPosDirty(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   long lVar1;
   
   lVar1 = *(long *)((ulong)p0 + 0x10);
@@ -205,10 +203,9 @@ void Walaber::Node::setWorldPosDirty(bool p0)
 
 /* Walaber::Node::setLocalScale(Walaber::Vector2 const&) */
 
-void Walaber::Node::setLocalScale(Walaber__Vector2 *p0)
+void Walaber::Node::setLocalScale(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   Walaber__Vector2 WVar1;
   
   *(undefined8 *)&p0[0xb].f_0x4 = *in_x1;
@@ -228,10 +225,9 @@ void Walaber::Node::setLocalScale(Walaber__Vector2 *p0)
 
 /* Walaber::Node::setWorldScaleDirty(bool) */
 
-void Walaber::Node::setWorldScaleDirty(bool p0)
+void Walaber::Node::setWorldScaleDirty(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   long lVar1;
   
   lVar1 = *(long *)((ulong)p0 + 0x10);
@@ -250,11 +246,10 @@ void Walaber::Node::setWorldScaleDirty(bool p0)
 
 /* Walaber::Node::setLocalAngle(float const&) */
 
-void Walaber::Node::setLocalAngle(float *p0)
+void Walaber::Node::setLocalAngle(float *p0, undefined4 * in_x1)
 
 {
   long in_x0;
-  undefined4 *in_x1;
   long lVar1;
   
   *(undefined4 *)(in_x0 + 0x74) = *in_x1;
@@ -273,10 +268,9 @@ void Walaber::Node::setLocalAngle(float *p0)
 
 /* Walaber::Node::setWorldAngleDirty(bool) */
 
-void Walaber::Node::setWorldAngleDirty(bool p0)
+void Walaber::Node::setWorldAngleDirty(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   long lVar1;
   
   lVar1 = *(long *)((ulong)p0 + 0x10);
@@ -295,10 +289,9 @@ void Walaber::Node::setWorldAngleDirty(bool p0)
 
 /* Walaber::Node::applyPositionOffset(Walaber::Vector2 const&) */
 
-void Walaber::Node::applyPositionOffset(Walaber__Vector2 *p0)
+void Walaber::Node::applyPositionOffset(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(ulong *)&p0[10].f_0x4 =
        CONCAT44((float)((ulong)*in_x1 >> 0x20) +
@@ -316,10 +309,9 @@ void Walaber::Node::applyPositionOffset(Walaber__Vector2 *p0)
 
 /* Walaber::Node::applyScaleOffset(Walaber::Vector2 const&) */
 
-void Walaber::Node::applyScaleOffset(Walaber__Vector2 *p0)
+void Walaber::Node::applyScaleOffset(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   Walaber__Vector2 WVar1;
   
   *(ulong *)&p0[0xb].f_0x4 =
@@ -342,11 +334,10 @@ void Walaber::Node::applyScaleOffset(Walaber__Vector2 *p0)
 
 /* Walaber::Node::applyAngleOffset(float const&) */
 
-void Walaber::Node::applyAngleOffset(float *p0)
+void Walaber::Node::applyAngleOffset(float *p0, float * in_x1)
 
 {
   long in_x0;
-  float *in_x1;
   long lVar1;
   
   *(float *)(in_x0 + 0x74) = *in_x1 + *(float *)(in_x0 + 0x74);

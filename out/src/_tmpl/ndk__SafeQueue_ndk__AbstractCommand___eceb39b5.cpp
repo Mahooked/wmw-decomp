@@ -45,12 +45,11 @@ void ndk::SafeQueue<ndk::AbstractCommand*>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk::AbstractCommand*&) */
 
-bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk__AbstractCommand **p0)
+bool ndk::SafeQueue<ndk::AbstractCommand*>::pop(ndk__AbstractCommand **p0, undefined8 * in_x1)
 
 {
   long lVar1;
   ndk__AbstractCommand *p0_00;
-  undefined8 *in_x1;
   ndk__AbstractCommand *pnVar2;
   
   pthread_mutex_lock(p0 + 4);

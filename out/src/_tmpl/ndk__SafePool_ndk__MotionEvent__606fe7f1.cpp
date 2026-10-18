@@ -56,11 +56,10 @@ void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
 
 /* ndk::SafePool<ndk::MotionEvent>::getItem(int) */
 
-long ndk::SafePool<ndk::MotionEvent>::getItem(int p0)
+long ndk::SafePool<ndk::MotionEvent>::getItem(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   long lVar2;
   
   lVar1 = (ulong)(uint)p0 + 8;
@@ -79,12 +78,11 @@ long ndk::SafePool<ndk::MotionEvent>::getItem(int p0)
 
 /* ndk::SafePool<ndk::MotionEvent>::freeItem(int) */
 
-void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0)
+void ndk::SafePool<ndk::MotionEvent>::freeItem(int p0, undefined4 in_w1)
 
 {
   undefined4 *puVar1;
   ulong uVar3;
-  undefined4 in_w1;
   undefined1 auStack_3c [4];
   
   uVar3 = (ulong)(uint)p0;

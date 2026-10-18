@@ -1747,10 +1747,9 @@ void WaterConcept::Screen_PerformanceTest::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_PerformanceTest::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_PerformanceTest::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_PerformanceTest::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
-  int *in_x1;
   
   if (*in_x1 == 1) {
     *(undefined1 *)((long)p0 + 0xa2) = 1;

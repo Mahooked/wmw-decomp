@@ -464,10 +464,9 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
 
 /* WaterConcept::Screen_PuppetShow::_gotSoundtrack(void*) */
 
-void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0)
+void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0, long in_x1)
 
 {
-  long in_x1;
   long lStack_48;
   int *piStack_40;
   
@@ -490,12 +489,11 @@ void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0)
 
 /* WaterConcept::Screen_PuppetShow::_fileExists(void*) */
 
-void WaterConcept::Screen_PuppetShow::_fileExists(void *p0)
+void WaterConcept::Screen_PuppetShow::_fileExists(void *p0, long in_x1)
 
 {
   long lVar1;
   ulong uVar3;
-  long in_x1;
   byte abStack_50 [16];
   void *pvStack_40;
   
@@ -885,12 +883,11 @@ LAB_0055ce38:
 
 /* WaterConcept::Screen_PuppetShow::draw(int) */
 
-void WaterConcept::Screen_PuppetShow::draw(int p0)
+void WaterConcept::Screen_PuppetShow::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   Walaber::GraphicsGL::setAlphaBlending(1,1,0x303);
@@ -1196,10 +1193,9 @@ void WaterConcept::Screen_PuppetShow::pause(long param_1)
 
 /* WaterConcept::Screen_PuppetShow::setFocused(bool) */
 
-void WaterConcept::Screen_PuppetShow::setFocused(bool p0)
+void WaterConcept::Screen_PuppetShow::setFocused(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   
   *(byte *)((ulong)p0 + 0x36c) = in_w1 & 1;
   return;

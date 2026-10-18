@@ -881,13 +881,12 @@ LAB_004b752c:
 
 /* WaterConcept::Screen_Credits::draw(int) */
 
-void WaterConcept::Screen_Credits::draw(int p0)
+void WaterConcept::Screen_Credits::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar3;
   long *plVar4;
-  int in_w1;
   undefined4 uStack_8c;
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -1211,14 +1210,13 @@ LAB_004b7ce8:
 
 /* WaterConcept::Screen_Credits::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_Credits::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_Credits::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   void *pvVar1;
   int iVar3;
   long lVar4;
   ulong uVar5;
-  long in_x1;
   undefined8 uVar6;
   void *pvVar7;
   ulong p0_00;
@@ -1377,7 +1375,7 @@ LAB_004b8058:
 
 /* WaterConcept::Screen_Credits::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Credits::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Credits::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   long *plVar2;
@@ -1385,7 +1383,6 @@ void WaterConcept::Screen_Credits::_finishedLoadingWidgets(void *p0)
   int *piVar4;
   long lVar5;
   undefined8 uVar6;
-  int *in_x1;
   float fVar7;
   float fVar8;
   undefined **ppuStack_d0;
@@ -1509,10 +1506,9 @@ void WaterConcept::Screen_Credits::_finishedLoadingWidgets(void *p0)
 
 /* WaterConcept::Screen_Credits::_skeletonLoadedCallback(void*) */
 
-void WaterConcept::Screen_Credits::_skeletonLoadedCallback(void *p0)
+void WaterConcept::Screen_Credits::_skeletonLoadedCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   undefined8 uVar2;
   ulong auStack_40 [2];
   void *pvStack_30;

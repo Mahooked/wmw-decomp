@@ -26,11 +26,10 @@ void Walaber::ValueTweaker::TweakableValue::setValue(long param_1)
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(int) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
+void Walaber::ValueTweaker::TweakableValue::setValue(int p0, undefined4 in_w1)
 
 {
   int *piVar2;
-  undefined4 in_w1;
   undefined **ppuStack_190;
   undefined8 uStack_188;
   undefined **ppuStack_180;
@@ -104,10 +103,9 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0)
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(float) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
+void Walaber::ValueTweaker::TweakableValue::setValue(int * in_x0, float p0)
 
 {
-  int *in_x0;
   undefined4 in_register_00005004;
   undefined **ppuStack_1a0;
   undefined8 uStack_198;
@@ -181,11 +179,10 @@ void Walaber::ValueTweaker::TweakableValue::setValue(float p0)
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(Walaber::Vector2) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0)
+void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0, undefined4 * in_x1)
 
 {
   undefined8 uVar2;
-  undefined4 *in_x1;
   undefined **ppuStack_190;
   undefined8 uStack_188;
   undefined **ppuStack_180;
@@ -342,12 +339,11 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
 
 /* Walaber::ValueTweaker::TweakableValue::setValue(Walaber::Color) */
 
-void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0)
+void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0, undefined1 * in_x1)
 
 {
   int *piVar2;
   undefined8 uVar3;
-  undefined1 *in_x1;
   undefined1 auStack_194 [4];
   undefined **ppuStack_190;
   undefined8 uStack_188;
@@ -520,11 +516,10 @@ void Walaber::ValueTweaker::TweakableValue::_fireMappings(undefined4 *param_1)
 
 /* Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void*) */
 
-void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void *p0)
+void Walaber::ValueTweaker::TweakableValue::removeMappingForOwner(void *p0, long in_x1)
 
 {
   bool bVar1;
-  long in_x1;
   long *plVar2;
   long *plVar3;
   long lVar4;

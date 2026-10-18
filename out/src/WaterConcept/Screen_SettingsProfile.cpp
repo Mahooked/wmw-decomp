@@ -261,12 +261,11 @@ void WaterConcept::Screen_SettingsProfile::enter()
 
 /* WaterConcept::Screen_SettingsProfile::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_SettingsProfile::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_SettingsProfile::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -777,12 +776,11 @@ LAB_00561f1c:
 
 /* WaterConcept::Screen_SettingsProfile::draw(int) */
 
-void WaterConcept::Screen_SettingsProfile::draw(int p0)
+void WaterConcept::Screen_SettingsProfile::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -1224,7 +1222,7 @@ void WaterConcept::Screen_SettingsProfile::_updateAllowFacebookPostsButton(void)
 
 /* WaterConcept::Screen_SettingsProfile::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_SettingsProfile::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_SettingsProfile::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   byte bVar2;
@@ -1232,7 +1230,6 @@ ulong WaterConcept::Screen_SettingsProfile::messageRx(Walaber__Message *p0)
   int iVar4;
   long lVar5;
   ulong uVar6;
-  long in_x1;
   uint uVar7;
   undefined4 uStack_6c;
   byte bStack_68;
@@ -1352,13 +1349,12 @@ ulong WaterConcept::Screen_SettingsProfile::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_SettingsProfile::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_SettingsProfile::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_SettingsProfile::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   long lVar2;
   long lVar3;
   undefined8 uVar4;
-  int *in_x1;
   undefined **ppuStack_80;
   undefined8 uStack_78;
   undefined1 auStack_70 [24];

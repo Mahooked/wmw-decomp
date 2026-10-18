@@ -49,10 +49,9 @@ void WaterConcept::Notification::reloadWidgets(long param_1)
 
 /* WaterConcept::Notification::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Notification::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Notification::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -68,10 +67,9 @@ void WaterConcept::Notification::touchDown(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::Notification::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Notification::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Notification::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
   
@@ -89,10 +87,9 @@ void WaterConcept::Notification::touchMoved(int p0,Walaber__Vector2 p1,Walaber__
 
 /* WaterConcept::Notification::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -516,11 +513,10 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
 
 /* WaterConcept::Notification::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Notification::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Notification::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   int iVar1;
-  int *in_x1;
   
   if (*in_x1 == 1) {
     iVar1 = Walaber::PCSNode::getTreeSize(*(undefined8 *)((long)p0 + 8));

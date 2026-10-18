@@ -336,11 +336,10 @@ void WaterConcept::Screen_Languages::exit(void)
 
 /* WaterConcept::Screen_Languages::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Languages::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Languages::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar1;
-  int *in_x1;
   
   if (*in_x1 == 1) {
     WaterConcept::Screen_Languages::_setUpLanguages();
@@ -422,12 +421,11 @@ void WaterConcept::Screen_Languages::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Languages::draw(int) */
 
-void WaterConcept::Screen_Languages::draw(int p0)
+void WaterConcept::Screen_Languages::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar3;
-  int in_w1;
   undefined4 uStack_5c;
   undefined8 uStack_58;
   undefined8 uStack_50;
@@ -514,7 +512,7 @@ void WaterConcept::Screen_Languages::handleEvent
 
 /* WaterConcept::Screen_Languages::_handleLanguageButtonTap(int) */
 
-void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
+void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0, int in_w1)
 
 {
   int iVar1;
@@ -522,7 +520,6 @@ void WaterConcept::Screen_Languages::_handleLanguageButtonTap(int p0)
   long lVar4;
   undefined8 uVar5;
   char *pcVar6;
-  int in_w1;
   undefined8 uStack_110;
   undefined8 uStack_108;
   long lStack_100;

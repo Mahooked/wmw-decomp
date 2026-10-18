@@ -9,7 +9,7 @@
 
 /* std::__ndk1::ctype_byname<char>::ctype_byname(char const*, unsigned long) */
 
-void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1)
+void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
@@ -17,7 +17,6 @@ void std::__ndk1::ctype_byname<char>::ctype_byname(char *p0,ulong p1)
   ulong *puVar4;
   ulong extraout_x1;
   ulong extraout_x1_00;
-  long in_x2;
   void *pvVar5;
   ulong p0_00;
   undefined1 auVar6 [16];
@@ -170,10 +169,9 @@ void std::__ndk1::ctype_byname<char>::~ctype_byname()
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_toupper(char p0)
+void std::__ndk1::ctype_byname<char>::do_toupper(char p0, undefined1 in_w1)
 
 {
-  undefined1 in_w1;
   
   toupper(in_w1);
   return;
@@ -187,12 +185,11 @@ void std::__ndk1::ctype_byname<char>::do_toupper(char p0)
 
 /* std::__ndk1::ctype_byname<char>::do_toupper(char*, char const*) const */
 
-char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1)
+char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
   char cVar2;
-  char *in_x2;
   
   pcVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {
@@ -211,10 +208,9 @@ char * std::__ndk1::ctype_byname<char>::do_toupper(char *p0,char *p1)
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char) const */
 
-void std::__ndk1::ctype_byname<char>::do_tolower(char p0)
+void std::__ndk1::ctype_byname<char>::do_tolower(char p0, undefined1 in_w1)
 
 {
-  undefined1 in_w1;
   
   tolower(in_w1);
   return;
@@ -228,12 +224,11 @@ void std::__ndk1::ctype_byname<char>::do_tolower(char p0)
 
 /* std::__ndk1::ctype_byname<char>::do_tolower(char*, char const*) const */
 
-char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1)
+char * std::__ndk1::ctype_byname<char>::do_tolower(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
   char cVar2;
-  char *in_x2;
   
   pcVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {

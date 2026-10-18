@@ -1201,12 +1201,11 @@ void Walaber::Skeleton::_skeletonHasLoaded(void *p0)
 
 /* Walaber::Skeleton::setLayer(int) */
 
-void Walaber::Skeleton::setLayer(int p0)
+void Walaber::Skeleton::setLayer(int p0, undefined4 in_w1)
 
 {
   bool bVar1;
   ulong uVar2;
-  undefined4 in_w1;
   long *plVar3;
   long lVar4;
   long *plVar5;
@@ -1247,11 +1246,10 @@ void Walaber::Skeleton::setLayer(int p0)
 
 /* Walaber::Skeleton::update(float) */
 
-void Walaber::Skeleton::update(float p0)
+void Walaber::Skeleton::update(long in_x0, float p0)
 
 {
   bool bVar1;
-  long in_x0;
   long *plVar2;
   long lVar3;
   long *plVar4;
@@ -1334,14 +1332,13 @@ void Walaber::Skeleton::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Skeleton::addSpriteAsChildToBone(Walaber::Bone*, Walaber::Sprite*, int) */
 
-void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite *p1,int p2)
+void Walaber::Skeleton::addSpriteAsChildToBone(Walaber__Bone *p0,Walaber__Sprite *p1,int p2, int in_w3)
 
 {
   ulong uVar2;
   undefined1 *puVar3;
   long lVar4;
   ulong uVar5;
-  int in_w3;
   undefined8 uVar6;
   undefined8 *puVar7;
   undefined8 *puVar8;
@@ -1446,13 +1443,12 @@ LAB_0033c828:
 
 /* Walaber::Skeleton::addRootBone(Walaber::Bone*) */
 
-void Walaber::Skeleton::addRootBone(Walaber__Bone *p0)
+void Walaber::Skeleton::addRootBone(Walaber__Bone *p0, ulong in_x1)
 
 {
   undefined4 uVar1;
   long lVar3;
   undefined1 *puVar4;
-  ulong in_x1;
   ulong uVar5;
   undefined8 uVar6;
   undefined8 uVar7;
@@ -1547,13 +1543,12 @@ LAB_0033ca5c:
 
 /* Walaber::Skeleton::addChildBone(Walaber::Bone*, Walaber::Bone*) */
 
-void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1)
+void Walaber::Skeleton::addChildBone(Walaber__Bone *p0,Walaber__Bone *p1, ulong in_x2)
 
 {
   undefined4 uVar1;
   long lVar3;
   undefined1 *puVar4;
-  ulong in_x2;
   ulong uVar5;
   undefined8 uVar6;
   undefined8 uVar7;
@@ -1725,12 +1720,11 @@ long Walaber::Skeleton::getNode(long param_1,undefined8 param_2)
 
 /* Walaber::Skeleton::_animationsHaveLoaded(void*) */
 
-void Walaber::Skeleton::_animationsHaveLoaded(void *p0)
+void Walaber::Skeleton::_animationsHaveLoaded(void *p0, int * in_x1)
 
 {
   int iVar2;
   undefined8 uVar3;
-  int *in_x1;
   ulong extraout_x1;
   ulong extraout_x1_00;
   ulong p1;
@@ -2024,14 +2018,13 @@ Walaber::Skeleton::getBindPoseDataForBone(Walaber__Bone *p0,Walaber__Skeleton__B
 
 /* Walaber::Skeleton::setColor(Walaber::Color const&) */
 
-void Walaber::Skeleton::setColor(Walaber__Color *p0)
+void Walaber::Skeleton::setColor(Walaber__Color *p0, uchar * in_x1)
 
 {
   uchar uVar1;
   uchar uVar2;
   uchar uVar3;
   uchar uVar4;
-  uchar *in_x1;
   Walaber__Color *pWVar5;
   Walaber__Color *pWVar6;
   Walaber__Color *pWVar7;
@@ -2090,12 +2083,11 @@ void Walaber::Skeleton::setColor(Walaber__Color *p0)
 
 /* Walaber::Skeleton::scaleSpriteScale(Walaber::Vector2 const&) */
 
-void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
+void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
   bool bVar2;
   Walaber__Vector2 WVar3;
-  undefined8 *in_x1;
   Walaber__Vector2 *pWVar4;
   Walaber__Vector2 WVar5;
   undefined8 uStack_40;
@@ -2138,13 +2130,12 @@ void Walaber::Skeleton::scaleSpriteScale(Walaber__Vector2 *p0)
 
 /* Walaber::Skeleton::setScreenSpace(bool) */
 
-void Walaber::Skeleton::setScreenSpace(bool p0)
+void Walaber::Skeleton::setScreenSpace(bool p0, byte in_w1)
 
 {
   byte bVar1;
   bool bVar3;
   long *plVar4;
-  byte in_w1;
   long *plVar5;
   long *plVar6;
   long lVar7;

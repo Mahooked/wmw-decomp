@@ -23,10 +23,9 @@ undefined * std::__ndk1::ctype<char>::classic_table(void)
 
 /* std::__ndk1::ctype<char>::ctype(unsigned long const*, bool, unsigned long) */
 
-void std::__ndk1::ctype<char>::ctype(ulong *p0,bool p1,ulong p2)
+void std::__ndk1::ctype<char>::ctype(ulong *p0,bool p1,ulong p2, long in_x3)
 
 {
-  long in_x3;
   
   p0[1] = in_x3 - 1;
   p0[2] = (ulong)p1;
@@ -86,11 +85,10 @@ void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
 
 /* std::__ndk1::ctype<char>::do_toupper(char) const */
 
-uint std::__ndk1::ctype<char>::do_toupper(char p0)
+uint std::__ndk1::ctype<char>::do_toupper(char p0, uint in_w1)
 
 {
   int iVar1;
-  uint in_w1;
   
   if (-1 < (char)in_w1) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4e90), iVar1 != 0)) {
@@ -114,12 +112,11 @@ uint std::__ndk1::ctype<char>::do_toupper(char p0)
 
 /* std::__ndk1::ctype<char>::do_toupper(char*, char const*) const */
 
-char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1)
+char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
   int iVar2;
-  char *in_x2;
   char cVar3;
   
   pcVar1 = p1;
@@ -151,11 +148,10 @@ char * std::__ndk1::ctype<char>::do_toupper(char *p0,char *p1)
 
 /* std::__ndk1::ctype<char>::do_tolower(char) const */
 
-uint std::__ndk1::ctype<char>::do_tolower(char p0)
+uint std::__ndk1::ctype<char>::do_tolower(char p0, uint in_w1)
 
 {
   int iVar1;
-  uint in_w1;
   
   if (-1 < (char)in_w1) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4e90), iVar1 != 0)) {
@@ -179,12 +175,11 @@ uint std::__ndk1::ctype<char>::do_tolower(char p0)
 
 /* std::__ndk1::ctype<char>::do_tolower(char*, char const*) const */
 
-char * std::__ndk1::ctype<char>::do_tolower(char *p0,char *p1)
+char * std::__ndk1::ctype<char>::do_tolower(char *p0,char *p1, char * in_x2)
 
 {
   char *pcVar1;
   int iVar2;
-  char *in_x2;
   char cVar3;
   
   pcVar1 = p1;
@@ -232,13 +227,12 @@ undefined4 std::__ndk1::ctype<char>::do_widen(char p0)
 
 /* std::__ndk1::ctype<char>::do_widen(char const*, char const*, char*) const */
 
-char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2)
+char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2, char * in_x3)
 
 {
   char *pcVar1;
   char *pcVar2;
   char *pcVar3;
-  char *in_x3;
   ulong uVar4;
   ulong uVar5;
   ulong uVar6;
@@ -292,11 +286,10 @@ char * std::__ndk1::ctype<char>::do_widen(char *p0,char *p1,char *p2)
 
 /* std::__ndk1::ctype<char>::do_narrow(char, char) const */
 
-uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1)
+uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1, uint in_w2)
 
 {
   uint uVar1;
-  uint in_w2;
   
   uVar1 = (uint)(byte)p1;
   if (p1 < '\0') {
@@ -313,7 +306,7 @@ uint std::__ndk1::ctype<char>::do_narrow(char p0,char p1)
 
 /* std::__ndk1::ctype<char>::do_narrow(char const*, char const*, char, char*) const */
 
-byte * std::__ndk1::ctype<char>::do_narrow(char *p0,char *p1,char p2,char *p3)
+byte * std::__ndk1::ctype<char>::do_narrow(char *p0,char *p1,char p2,char *p3, byte * in_x4)
 
 {
   byte bVar1;
@@ -329,7 +322,6 @@ byte * std::__ndk1::ctype<char>::do_narrow(char *p0,char *p1,char p2,char *p3)
   byte *pbVar11;
   byte *pbVar12;
   byte bVar13;
-  byte *in_x4;
   byte *pbVar14;
   ulong uVar15;
   ulong uVar16;

@@ -141,12 +141,11 @@ Walaber::ParticleSet::addParticle
 
 /* Walaber::ParticleSet::initParticles(unsigned int) */
 
-void Walaber::ParticleSet::initParticles(uint p0)
+void Walaber::ParticleSet::initParticles(uint p0, int in_w1)
 
 {
   undefined8 *puVar2;
   long *plVar3;
-  int in_w1;
   long lVar4;
   int iVar5;
   undefined8 uStack_c0;
@@ -284,13 +283,12 @@ void Walaber::ParticleSet::updateParticles(float p0)
 
 /* Walaber::ParticleSet::removeParticle(int) */
 
-void Walaber::ParticleSet::removeParticle(int p0)
+void Walaber::ParticleSet::removeParticle(int p0, int in_w1)
 
 {
   char cVar1;
   long *plVar2;
   long *plVar3;
-  int in_w1;
   char *pcVar4;
   undefined8 *puVar5;
   long lVar6;

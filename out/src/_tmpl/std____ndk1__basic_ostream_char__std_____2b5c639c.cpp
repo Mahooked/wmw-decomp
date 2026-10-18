@@ -174,14 +174,13 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
 
 /* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >::put(char) */
 
-long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char p0)
+long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char p0, undefined1 in_w1)
 
 {
   undefined1 *puVar1;
   int iVar3;
   long *plVar4;
   long *plVar5;
-  undefined1 in_w1;
   long *plVar6;
   undefined1 auStack_48 [8];
   long *plStack_40;
@@ -1064,12 +1063,11 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
 
 /* std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char> >::write(char const*, long) */
 
-char * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::write(char *p0,long p1)
+char * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::write(char *p0,long p1, long in_x2)
 
 {
   long lVar2;
   char *pcVar3;
-  long in_x2;
   undefined1 auStack_48 [8];
   char *pcStack_40;
   

@@ -332,7 +332,7 @@
 
 /* Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode*) */
 
-void Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode *p0)
+void Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode *p0, long in_x1)
 
 {
   undefined *puVar2;
@@ -342,7 +342,6 @@ void Walaber::TweenedLinearCurve::loadFromXmlNode(_xmlNode *p0)
   ulong uVar6;
   long lVar7;
   undefined8 uVar8;
-  long in_x1;
   ulong p1;
   ulong p1_00;
   void *pvVar9;
@@ -677,11 +676,10 @@ void Walaber::TweenedLinearCurve::_evaluateCurve(float p0,float p1)
 
 /* Walaber::TweenedLinearCurve::getWriteSize(unsigned int) */
 
-long Walaber::TweenedLinearCurve::getWriteSize(uint p0)
+long Walaber::TweenedLinearCurve::getWriteSize(uint p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = Walaber::Curve::getWriteSize();
   if (in_w1 == 0) {
@@ -698,7 +696,7 @@ long Walaber::TweenedLinearCurve::getWriteSize(uint p0)
 
 /* Walaber::TweenedLinearCurve::writeToBuffer(char*) */
 
-int Walaber::TweenedLinearCurve::writeToBuffer(char *p0)
+int Walaber::TweenedLinearCurve::writeToBuffer(char *p0, undefined8 * in_x1)
 
 {
   int iVar1;
@@ -706,7 +704,6 @@ int Walaber::TweenedLinearCurve::writeToBuffer(char *p0)
   int iVar3;
   int iVar4;
   undefined1 uVar5;
-  undefined8 *in_x1;
   int iVar6;
   ulong uVar7;
   int iVar8;

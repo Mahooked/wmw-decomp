@@ -386,10 +386,9 @@ undefined1 Walaber::Widget_TimedButton::acceptNewFingerDown(int p0,Walaber__Fing
 
 /* Walaber::Widget_TimedButton::setEnabled(bool) */
 
-void Walaber::Widget_TimedButton::setEnabled(bool p0)
+void Walaber::Widget_TimedButton::setEnabled(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   
   *(byte *)((ulong)p0 + 0x140) = in_w1 & 1;
   if ((in_w1 & 1) == 0) {

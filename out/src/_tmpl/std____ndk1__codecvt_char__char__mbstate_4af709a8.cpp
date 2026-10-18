@@ -69,10 +69,9 @@ std::__ndk1::codecvt<char,char,mbstate_t>::do_in
     */
 
 undefined8
-std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
+std::__ndk1::codecvt<char,char,mbstate_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
-  undefined8 *in_x4;
   
   *in_x4 = p2;
   return 3;
@@ -116,11 +115,10 @@ undefined8 std::__ndk1::codecvt<char,char,mbstate_t>::do_always_noconv(void)
    unsigned long) const */
 
 undefined4
-std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
+std::__ndk1::codecvt<char,char,mbstate_t>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3, undefined4 in_w4)
 
 {
   undefined4 uVar1;
-  undefined4 in_w4;
   undefined4 in_register_00004024;
   
   uVar1 = (int)(p3 - (long)p2);

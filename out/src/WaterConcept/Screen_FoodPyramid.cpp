@@ -498,12 +498,11 @@ void WaterConcept::Screen_FoodPyramid::_buildUI(long param_1)
 
 /* WaterConcept::Screen_FoodPyramid::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_FoodPyramid::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_FoodPyramid::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -539,7 +538,7 @@ void WaterConcept::Screen_FoodPyramid::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   uint uVar1;
@@ -570,7 +569,6 @@ void WaterConcept::Screen_FoodPyramid::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar27;
   long *plVar28;
   undefined8 uVar29;
-  int *in_x1;
   undefined4 uVar30;
   undefined8 uVar32;
   undefined8 uVar33;
@@ -2265,11 +2263,10 @@ void WaterConcept::Screen_FoodPyramid::update(float p0,bool p1)
 
 /* WaterConcept::Screen_FoodPyramid::draw(int) */
 
-void WaterConcept::Screen_FoodPyramid::draw(int p0)
+void WaterConcept::Screen_FoodPyramid::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -2955,12 +2952,11 @@ void WaterConcept::Screen_FoodPyramid::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_FoodPyramid::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_FoodPyramid::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  long in_x1;
   byte abStack_90 [16];
   void *pvStack_80;
   byte abStack_78 [16];

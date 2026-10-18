@@ -1062,13 +1062,12 @@ LAB_0042b434:
 
 /* WaterConcept::GameState::_gotSE(void*) */
 
-void WaterConcept::GameState::_gotSE(void *p0)
+void WaterConcept::GameState::_gotSE(void *p0, int * in_x1)
 
 {
   int iVar1;
   long lVar3;
   ulong uVar4;
-  int *in_x1;
   ulong auStack_50 [2];
   void *pvStack_40;
   
@@ -1426,13 +1425,12 @@ LAB_0042be0c:
 
 /* WaterConcept::GameState::update(float) */
 
-void WaterConcept::GameState::update(float p0)
+void WaterConcept::GameState::update(long * in_x0, float p0)
 
 {
   char cVar1;
   long lVar2;
   int iVar3;
-  long *in_x0;
   long lVar4;
   ulong uVar5;
   int iVar6;
@@ -1904,7 +1902,7 @@ LAB_0042caac:
 
 /* WaterConcept::GameState::_addParticleCallback(void*) */
 
-void WaterConcept::GameState::_addParticleCallback(void *p0)
+void WaterConcept::GameState::_addParticleCallback(void *p0, long * in_x1)
 
 {
   int iVar1;
@@ -1912,7 +1910,6 @@ void WaterConcept::GameState::_addParticleCallback(void *p0)
   long lVar3;
   bool bVar4;
   undefined8 uVar5;
-  long *in_x1;
   int iVar6;
   char *pcVar7;
   ulong uVar8;
@@ -2008,13 +2005,12 @@ LAB_0042cd40:
 
 /* WaterConcept::GameState::_starChangeCallback(void*) */
 
-void WaterConcept::GameState::_starChangeCallback(void *p0)
+void WaterConcept::GameState::_starChangeCallback(void *p0, long * in_x1)
 
 {
   char cVar1;
   undefined1 uVar2;
   long lVar3;
-  long *in_x1;
   long lVar4;
   long *plVar5;
   long lVar6;
@@ -2111,12 +2107,11 @@ LAB_0042cf28:
 
 /* WaterConcept::GameState::_switchChangeCallback(void*) */
 
-void WaterConcept::GameState::_switchChangeCallback(void *p0)
+void WaterConcept::GameState::_switchChangeCallback(void *p0, long * in_x1)
 
 {
   long lVar1;
   ulong uVar3;
-  long *in_x1;
   void *pvVar4;
   ulong p0_00;
   ulong uStack_60;
@@ -2207,11 +2202,10 @@ void WaterConcept::GameState::_notifyExplosion
 
 /* WaterConcept::GameState::_notifySpoutActivity(WaterConcept::Spout*) */
 
-void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0)
+void WaterConcept::GameState::_notifySpoutActivity(WaterConcept__Spout *p0, long in_x1)
 
 {
   ulong uVar2;
-  long in_x1;
   void *pvVar3;
   ulong p0_00;
   ulong uStack_60;
@@ -2256,12 +2250,11 @@ LAB_0042d160:
 
 /* WaterConcept::GameState::_notifyBalloonCallback(void*) */
 
-void WaterConcept::GameState::_notifyBalloonCallback(void *p0)
+void WaterConcept::GameState::_notifyBalloonCallback(void *p0, long * in_x1)
 
 {
   uint uVar1;
   ulong uVar3;
-  long *in_x1;
   long lVar4;
   void *pvVar5;
   ulong p0_00;
@@ -2873,13 +2866,12 @@ int WaterConcept::GameState::getGoalOverflow(long param_1)
 
 /* WaterConcept::GameState::getNumSecondaryGoalsOfType(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalsOfType(int p0)
+int WaterConcept::GameState::getNumSecondaryGoalsOfType(int p0, int in_w1)
 
 {
   int iVar1;
   long lVar2;
   bool bVar3;
-  int in_w1;
   int iVar4;
   long lVar5;
   int iVar6;
@@ -2946,12 +2938,11 @@ int WaterConcept::GameState::getNumSecondaryGoalsOfType(int p0)
 
 /* WaterConcept::GameState::getNumSecondaryGoalSuccesses(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalSuccesses(int p0)
+int WaterConcept::GameState::getNumSecondaryGoalSuccesses(int p0, int in_w1)
 
 {
   int iVar1;
   long lVar2;
-  int in_w1;
   int iVar3;
   long *plVar4;
   long lVar5;
@@ -3000,12 +2991,11 @@ int WaterConcept::GameState::getNumSecondaryGoalSuccesses(int p0)
 
 /* WaterConcept::GameState::getNumSecondaryGoalFailures(int) */
 
-int WaterConcept::GameState::getNumSecondaryGoalFailures(int p0)
+int WaterConcept::GameState::getNumSecondaryGoalFailures(int p0, int in_w1)
 
 {
   int iVar1;
   long lVar2;
-  int in_w1;
   int iVar3;
   long *plVar4;
   ulong uVar5;

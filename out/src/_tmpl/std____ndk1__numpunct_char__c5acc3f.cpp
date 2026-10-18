@@ -9,10 +9,9 @@
 
 /* std::__ndk1::numpunct<char>::numpunct(unsigned long) */
 
-void std::__ndk1::numpunct<char>::numpunct(ulong p0)
+void std::__ndk1::numpunct<char>::numpunct(ulong p0, long in_x1)
 
 {
-  long in_x1;
   
   *(undefined8 *)(p0 + 0x20) = 0;
   *(undefined8 *)(p0 + 0x28) = 0;

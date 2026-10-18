@@ -58,10 +58,9 @@
 
 /* Walaber::CameraController::initCamera(Walaber::Camera*) */
 
-void Walaber::CameraController::initCamera(Walaber__Camera *p0)
+void Walaber::CameraController::initCamera(Walaber__Camera *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uVar1;
   
   *(undefined8 **)p0 = in_x1;
@@ -82,7 +81,7 @@ void Walaber::CameraController::initCamera(Walaber__Camera *p0)
 /* WARNING: Removing unreachable block (ram,0x003ed63c) */
 /* Walaber::CameraController::update(float) */
 
-void Walaber::CameraController::update(float p0)
+void Walaber::CameraController::update(undefined8 * in_x0, float p0)
 
 {
   undefined8 *puVar1;
@@ -90,7 +89,6 @@ void Walaber::CameraController::update(float p0)
   undefined8 *puVar3;
   undefined4 uVar4;
   long lVar5;
-  undefined8 *in_x0;
   ulong uVar7;
   uint uVar8;
   long lVar9;
@@ -285,10 +283,9 @@ void Walaber::CameraController::queueMovement
 
 /* Walaber::CameraController::setMovement(Walaber::Vector2, Walaber::Vector2) */
 
-void Walaber::CameraController::setMovement(Walaber__Vector2 p0,Walaber__Vector2 p1)
+void Walaber::CameraController::setMovement(Walaber__Vector2 p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_48;
   undefined8 uStack_40;
   
@@ -359,10 +356,9 @@ void Walaber::CameraController::clearQueue(undefined8 *param_1)
 
 /* Walaber::CameraController::endMovement(bool) */
 
-void Walaber::CameraController::endMovement(bool p0)
+void Walaber::CameraController::endMovement(bool p0, uint in_w1)
 
 {
-  uint in_w1;
   
   Walaber::Camera::endAnimations(*(undefined8 *)(ulong)p0,in_w1 & 1);
   return;

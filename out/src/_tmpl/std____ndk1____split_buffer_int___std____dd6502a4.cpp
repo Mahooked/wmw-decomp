@@ -34,12 +34,11 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::~__split_bu
 
 /* std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*> >::push_back(int*&&) */
 
-void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(int ***p0)
+void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(int ***p0, undefined8 * in_x1)
 
 {
   long lVar1;
   int **ppiVar3;
-  undefined8 *in_x1;
   ulong uVar4;
   int **ppiVar5;
   long lVar6;
@@ -125,10 +124,9 @@ void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_back(i
 
 /* std::__ndk1::__split_buffer<int*, std::__ndk1::allocator<int*> >::push_front(int*&&) */
 
-void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_front(int ***p0)
+void std::__ndk1::__split_buffer<int*,std::__ndk1::allocator<int*>>::push_front(int ***p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   long lVar2;
   int **ppiVar3;
   int **ppiVar4;

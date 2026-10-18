@@ -138,12 +138,11 @@ void WaterConcept::Screen_Processing::enter(long param_1)
 
 /* WaterConcept::Screen_Processing::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_Processing::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_Processing::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -429,11 +428,10 @@ void WaterConcept::Screen_Processing::_setAndshowState(long param_1,int param_2)
 
 /* WaterConcept::Screen_Processing::draw(int) */
 
-void WaterConcept::Screen_Processing::draw(int p0)
+void WaterConcept::Screen_Processing::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -459,11 +457,10 @@ void WaterConcept::Screen_Processing::draw(int p0)
 
 /* WaterConcept::Screen_Processing::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_Processing::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_Processing::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   uint uVar2;
-  long in_x1;
   ulong uVar3;
   byte abStack_50 [16];
   void *pvStack_40;
@@ -594,7 +591,7 @@ void WaterConcept::Screen_Processing::_buildUI(long param_1)
 
 /* WaterConcept::Screen_Processing::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Processing::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Processing::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   bool bVar1;
@@ -603,7 +600,6 @@ void WaterConcept::Screen_Processing::_finishedLoadingWidgets(void *p0)
   undefined8 uVar5;
   long lVar6;
   long *plVar7;
-  int *in_x1;
   float fVar8;
   float fVar9;
   undefined1 auStack_cc [4];

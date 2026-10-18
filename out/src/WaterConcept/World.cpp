@@ -9,13 +9,12 @@
 
 /* WaterConcept::World::hasOrCanProduce(int) */
 
-undefined8 WaterConcept::World::hasOrCanProduce(int p0)
+undefined8 WaterConcept::World::hasOrCanProduce(int p0, int in_w1)
 
 {
   ulong uVar1;
   undefined8 uVar2;
   ulong uVar3;
-  int in_w1;
   long lVar4;
   long lVar5;
   long lVar6;
@@ -1410,12 +1409,11 @@ void WaterConcept::World::_initLookupTables(long param_1)
 
 /* WaterConcept::World::_gotOtherSE(void*) */
 
-void WaterConcept::World::_gotOtherSE(void *p0)
+void WaterConcept::World::_gotOtherSE(void *p0, int * in_x1)
 
 {
   int iVar1;
   long lVar2;
-  int *in_x1;
   
   iVar1 = *in_x1;
   if (iVar1 < 0x105) {
@@ -1478,10 +1476,9 @@ void WaterConcept::World::_gotOtherSE(void *p0)
 
 /* WaterConcept::World::_gotAlgaeSE(void*) */
 
-void WaterConcept::World::_gotAlgaeSE(void *p0)
+void WaterConcept::World::_gotAlgaeSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   long *plVar2;
   int *piVar3;
   undefined4 *puVar4;
@@ -1531,10 +1528,9 @@ void WaterConcept::World::_gotAlgaeSE(void *p0)
 
 /* WaterConcept::World::_gotMixSE(void*) */
 
-void WaterConcept::World::_gotMixSE(void *p0)
+void WaterConcept::World::_gotMixSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   long *plVar2;
   undefined4 *puVar3;
   int *piVar4;
@@ -1575,10 +1571,9 @@ void WaterConcept::World::_gotMixSE(void *p0)
 
 /* WaterConcept::World::_gotSpoutSE(void*) */
 
-void WaterConcept::World::_gotSpoutSE(void *p0)
+void WaterConcept::World::_gotSpoutSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   long *plVar2;
   undefined4 *puVar3;
   int *piVar4;
@@ -1619,10 +1614,9 @@ void WaterConcept::World::_gotSpoutSE(void *p0)
 
 /* WaterConcept::World::_gotFanSE(void*) */
 
-void WaterConcept::World::_gotFanSE(void *p0)
+void WaterConcept::World::_gotFanSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   long *plVar2;
   int *piVar3;
   undefined4 *puVar4;
@@ -4754,10 +4748,9 @@ void WaterConcept::World::loadLevelDone(long param_1)
 
 /* WaterConcept::World::setAccelerometer(Walaber::Vector2 const&) */
 
-void WaterConcept::World::setAccelerometer(Walaber__Vector2 *p0)
+void WaterConcept::World::setAccelerometer(Walaber__Vector2 *p0, float * in_x1)
 
 {
-  float *in_x1;
   Walaber__Vector2 WVar1;
   Walaber__Vector2 WVar2;
   long lVar3;
@@ -5197,12 +5190,11 @@ LAB_0044c4ac:
 
 /* WaterConcept::World::_getTouchOwnerForPos(Walaber::Vector2 const&, void*&) */
 
-void WaterConcept::World::_getTouchOwnerForPos(Walaber__Vector2 *p0,void **p1)
+void WaterConcept::World::_getTouchOwnerForPos(Walaber__Vector2 *p0,void **p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  undefined8 *in_x2;
   long *plVar4;
   Walaber__Vector2 WVar5;
   long *plVar6;
@@ -6553,7 +6545,7 @@ LAB_0044eb68:
 
 /* WaterConcept::World::_fluidCollisionCallback_AtoB(void*) */
 
-void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0)
+void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0, long * in_x1)
 
 {
   undefined4 *puVar1;
@@ -6562,7 +6554,6 @@ void WaterConcept::World::_fluidCollisionCallback_AtoB(void *p0)
   int iVar5;
   long *plVar6;
   ulong uVar7;
-  long *in_x1;
   undefined8 *puVar8;
   long lVar9;
   ulong uVar10;
@@ -9336,13 +9327,12 @@ void WaterConcept::World::drawToRenderTexture
 
 /* WaterConcept::World::_drawWaterBG(void*) */
 
-void WaterConcept::World::_drawWaterBG(void *p0)
+void WaterConcept::World::_drawWaterBG(void *p0, undefined8 * in_x1)
 
 {
   undefined8 uVar2;
   undefined8 uVar3;
   long *plVar4;
-  undefined8 *in_x1;
   long lVar5;
   int *piVar6;
   ulong uVar7;
@@ -9479,11 +9469,10 @@ void WaterConcept::World::_drawWaterBG(void *p0)
 
 /* WaterConcept::World::_drawFluidRefractionColor(void*) */
 
-void WaterConcept::World::_drawFluidRefractionColor(void *p0)
+void WaterConcept::World::_drawFluidRefractionColor(void *p0, undefined8 * in_x1)
 
 {
   undefined8 uVar2;
-  undefined8 *in_x1;
   undefined8 uVar3;
   long lStack_b0;
   undefined8 uStack_a0;
@@ -9542,11 +9531,10 @@ void WaterConcept::World::_drawFluidRefractionColor(void *p0)
 
 /* WaterConcept::World::_drawFluidRefractionAlpha(void*) */
 
-void WaterConcept::World::_drawFluidRefractionAlpha(void *p0)
+void WaterConcept::World::_drawFluidRefractionAlpha(void *p0, undefined8 * in_x1)
 
 {
   undefined8 uVar2;
-  undefined8 *in_x1;
   undefined8 uVar3;
   long lStack_b0;
   undefined8 uStack_a0;
@@ -9608,7 +9596,7 @@ void WaterConcept::World::_drawFluidRefractionAlpha(void *p0)
 /* WARNING: Removing unreachable block (ram,0x00454db0) */
 /* WaterConcept::World::createGridFromFileDataCallback(void*) */
 
-void WaterConcept::World::createGridFromFileDataCallback(void *p0)
+void WaterConcept::World::createGridFromFileDataCallback(void *p0, long * in_x1)
 
 {
   undefined1 *puVar1;
@@ -9621,7 +9609,6 @@ void WaterConcept::World::createGridFromFileDataCallback(void *p0)
   int *piVar9;
   undefined8 *puVar10;
   undefined8 *puVar11;
-  long *in_x1;
   ulong uVar12;
   long lVar13;
   int iVar14;
@@ -10528,7 +10515,7 @@ void WaterConcept::World::loadLevelMetaFile(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::World::loadLevelMetaFileCallback(void*) */
 
-void WaterConcept::World::loadLevelMetaFileCallback(void *p0)
+void WaterConcept::World::loadLevelMetaFileCallback(void *p0, long in_x1)
 
 {
   byte bVar1;
@@ -10560,7 +10547,6 @@ void WaterConcept::World::loadLevelMetaFileCallback(void *p0)
   byte *pbVar28;
   byte *pbVar29;
   long *plVar30;
-  long in_x1;
   ulong extraout_x1;
   ulong uVar32;
   ulong *puVar33;
@@ -16550,7 +16536,7 @@ LAB_0045bdd8:
 
 /* WaterConcept::World::_spoutStateChangeCallback(void*) */
 
-void WaterConcept::World::_spoutStateChangeCallback(void *p0)
+void WaterConcept::World::_spoutStateChangeCallback(void *p0, undefined8 * in_x1)
 
 {
   float fVar2;
@@ -16560,7 +16546,6 @@ void WaterConcept::World::_spoutStateChangeCallback(void *p0)
   int iVar6;
   undefined8 uVar7;
   ulong uVar8;
-  undefined8 *in_x1;
   float *pfVar9;
   long lVar10;
   float fVar11;
@@ -16739,7 +16724,7 @@ void WaterConcept::World::_spoutStateChangeCallback(void *p0)
 
 /* WaterConcept::World::_starSeedStateChangeCallback(void*) */
 
-void WaterConcept::World::_starSeedStateChangeCallback(void *p0)
+void WaterConcept::World::_starSeedStateChangeCallback(void *p0, long * in_x1)
 
 {
   ulong uVar1;
@@ -16752,7 +16737,6 @@ void WaterConcept::World::_starSeedStateChangeCallback(void *p0)
   int iVar9;
   ulong *puVar10;
   undefined8 *puVar11;
-  long *in_x1;
   undefined8 uVar12;
   long lVar14;
   long lVar15;
@@ -17494,7 +17478,7 @@ LAB_0045e758:
 
 /* WaterConcept::World::_bombStateChangeCallback(void*) */
 
-void WaterConcept::World::_bombStateChangeCallback(void *p0)
+void WaterConcept::World::_bombStateChangeCallback(void *p0, long * in_x1)
 
 {
   undefined4 *puVar1;
@@ -17504,7 +17488,6 @@ void WaterConcept::World::_bombStateChangeCallback(void *p0)
   int iVar6;
   long *plVar7;
   ulong uVar8;
-  long *in_x1;
   long lVar9;
   undefined4 *puVar10;
   long lVar11;
@@ -17749,12 +17732,11 @@ LAB_0045f010:
 
 /* WaterConcept::World::_switchStateChangeCallback(void*) */
 
-void WaterConcept::World::_switchStateChangeCallback(void *p0)
+void WaterConcept::World::_switchStateChangeCallback(void *p0, long * in_x1)
 
 {
   int iVar2;
   long lVar3;
-  long *in_x1;
   long lVar5;
   long *plVar6;
   long lVar7;
@@ -17837,11 +17819,10 @@ LAB_0045f19c:
 
 /* WaterConcept::World::_collectibleCollected(void*) */
 
-void WaterConcept::World::_collectibleCollected(void *p0)
+void WaterConcept::World::_collectibleCollected(void *p0, long * in_x1)
 
 {
   undefined1 uVar2;
-  long *in_x1;
   undefined8 uStack_60;
   undefined4 uStack_58;
   uint uStack_54;
@@ -17872,7 +17853,7 @@ void WaterConcept::World::_collectibleCollected(void *p0)
 
 /* WaterConcept::World::_icyHotStateChangeCallback(void*) */
 
-void WaterConcept::World::_icyHotStateChangeCallback(void *p0)
+void WaterConcept::World::_icyHotStateChangeCallback(void *p0, int * in_x1)
 
 {
   float fVar2;
@@ -17880,7 +17861,6 @@ void WaterConcept::World::_icyHotStateChangeCallback(void *p0)
   int iVar4;
   int iVar5;
   ulong uVar6;
-  int *in_x1;
   long lVar7;
   undefined8 uVar8;
   float fVar9;
@@ -17934,11 +17914,10 @@ void WaterConcept::World::_icyHotStateChangeCallback(void *p0)
 
 /* WaterConcept::World::_dirtyWallStateChangeCallback(void*) */
 
-void WaterConcept::World::_dirtyWallStateChangeCallback(void *p0)
+void WaterConcept::World::_dirtyWallStateChangeCallback(void *p0, float * in_x1)
 
 {
   int iVar2;
-  float *in_x1;
   long lVar3;
   float fVar4;
   float fVar5;
@@ -17992,7 +17971,7 @@ void WaterConcept::World::_dirtyWallStateChangeCallback(void *p0)
 
 /* WaterConcept::World::_waterBalloonCallback(void*) */
 
-void WaterConcept::World::_waterBalloonCallback(void *p0)
+void WaterConcept::World::_waterBalloonCallback(void *p0, long * in_x1)
 
 {
   int iVar2;
@@ -18002,7 +17981,6 @@ void WaterConcept::World::_waterBalloonCallback(void *p0)
   int iVar6;
   int iVar7;
   undefined8 uVar8;
-  long *in_x1;
   uint uVar9;
   undefined4 uVar10;
   ulong uVar11;
@@ -18195,7 +18173,7 @@ void WaterConcept::World::_waterBalloonCallback(void *p0)
 
 /* WaterConcept::World::_algaeHiderCallback(void*) */
 
-void WaterConcept::World::_algaeHiderCallback(void *p0)
+void WaterConcept::World::_algaeHiderCallback(void *p0, int * in_x1)
 
 {
   char cVar1;
@@ -18206,7 +18184,6 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
   int iVar7;
   undefined8 uVar8;
   ulong uVar9;
-  int *in_x1;
   long lVar10;
   uint uVar11;
   int *piVar12;
@@ -18432,11 +18409,10 @@ void WaterConcept::World::_algaeHiderCallback(void *p0)
 
 /* WaterConcept::World::_fanCallback(void*) */
 
-void WaterConcept::World::_fanCallback(void *p0)
+void WaterConcept::World::_fanCallback(void *p0, long in_x1)
 
 {
   int iVar1;
-  long in_x1;
   long lVar2;
   
   lVar2 = (long)*(int *)(in_x1 + 8);
@@ -18468,7 +18444,7 @@ void WaterConcept::World::_fanCallback(void *p0)
 /* WARNING: Removing unreachable block (ram,0x00460b28) */
 /* WaterConcept::World::_fanParticleCallback(void*) */
 
-void WaterConcept::World::_fanParticleCallback(void *p0)
+void WaterConcept::World::_fanParticleCallback(void *p0, long * in_x1)
 
 {
   float *pfVar1;
@@ -18476,7 +18452,6 @@ void WaterConcept::World::_fanParticleCallback(void *p0)
   long lVar3;
   int iVar5;
   int iVar6;
-  long *in_x1;
   uint uVar7;
   long *plVar8;
   float *pfVar9;
@@ -18602,7 +18577,7 @@ void WaterConcept::World::_fanParticleCallback(void *p0)
 
 /* WaterConcept::World::_ySwitchStateChangeCallback(void*) */
 
-void WaterConcept::World::_ySwitchStateChangeCallback(void *p0)
+void WaterConcept::World::_ySwitchStateChangeCallback(void *p0, long in_x1)
 
 {
   int iVar2;
@@ -18610,7 +18585,6 @@ void WaterConcept::World::_ySwitchStateChangeCallback(void *p0)
   int iVar4;
   int iVar5;
   ulong uVar6;
-  long in_x1;
   long lVar7;
   float fVar8;
   float fVar9;
@@ -18687,7 +18661,7 @@ void WaterConcept::World::_ySwitchSwitchedCallback(void *p0)
 
 /* WaterConcept::World::_mysteryCaveStateChangeCallback(void*) */
 
-void WaterConcept::World::_mysteryCaveStateChangeCallback(void *p0)
+void WaterConcept::World::_mysteryCaveStateChangeCallback(void *p0, undefined4 * in_x1)
 
 {
   bool bVar1;
@@ -18696,7 +18670,6 @@ void WaterConcept::World::_mysteryCaveStateChangeCallback(void *p0)
   int iVar5;
   ulong uVar6;
   undefined8 uVar7;
-  undefined4 *in_x1;
   long lVar8;
   int iVar9;
   long *plVar10;
@@ -18854,12 +18827,11 @@ LAB_00461668:
 
 /* WaterConcept::World::interactiveObjectLoaded(void*) */
 
-void WaterConcept::World::interactiveObjectLoaded(void *p0)
+void WaterConcept::World::interactiveObjectLoaded(void *p0, long * in_x1)
 
 {
   int iVar1;
   ulong uVar3;
-  long *in_x1;
   long lVar4;
   undefined4 *puVar5;
   float fVar7;
@@ -19319,13 +19291,12 @@ void WaterConcept::World::_addParticleCallback(void *p0)
 
 /* WaterConcept::World::_crankyChompAnimationCallback(void*) */
 
-void WaterConcept::World::_crankyChompAnimationCallback(void *p0)
+void WaterConcept::World::_crankyChompAnimationCallback(void *p0, long in_x1)
 
 {
   int iVar2;
   int iVar3;
   int iVar4;
-  long in_x1;
   long *plVar5;
   long lVar6;
   int iVar7;
@@ -19578,11 +19549,10 @@ LAB_004627b0:
 
 /* WaterConcept::World::_shouldCutHoleFor(WaterConcept::InteractiveObject*) */
 
-bool WaterConcept::World::_shouldCutHoleFor(WaterConcept__InteractiveObject *p0)
+bool WaterConcept::World::_shouldCutHoleFor(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   byte bVar1;
-  long in_x1;
   
   if ((p0[3].field_0x211 == '\0') && (GameSettings::currentStoryline != 3)) {
     if (p0[3].field_0x212 == '\0') {
@@ -20039,7 +20009,7 @@ LAB_004635bc:
 
 /* WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept::AlgaeHider*) */
 
-void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0)
+void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0, long in_x1)
 
 {
   bool bVar1;
@@ -20047,7 +20017,6 @@ void WaterConcept::World::_addAlgaeHiderAlgaeDots(WaterConcept__AlgaeHider *p0)
   int iVar3;
   ulong uVar5;
   undefined8 uVar6;
-  long in_x1;
   uint uVar7;
   ulong uVar8;
   int iVar9;
@@ -20235,14 +20204,13 @@ void WaterConcept::World::_fillMaterialGridUsingObjectShape
 
 /* WaterConcept::World::setRoomPosition(Walaber::Vector2) */
 
-void WaterConcept::World::setRoomPosition(Walaber__Vector2 p0)
+void WaterConcept::World::setRoomPosition(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
   bool bVar2;
   int iVar3;
   ulong uVar4;
   void *pvVar5;
-  undefined8 *in_x1;
   long lVar6;
   long *plVar7;
   ulong p0_00;
@@ -20325,7 +20293,7 @@ LAB_00463cd8:
 
 /* WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void*) */
 
-void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
+void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0, long * in_x1)
 
 {
   float fVar2;
@@ -20333,7 +20301,6 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
   int iVar4;
   int iVar5;
   ulong uVar6;
-  long *in_x1;
   ulong uVar7;
   long lVar8;
   long lVar9;
@@ -20428,7 +20395,7 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsLava(void *p0)
 
 /* WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void*) */
 
-void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
+void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0, long * in_x1)
 
 {
   long lVar1;
@@ -20439,7 +20406,6 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
   int iVar6;
   int iVar7;
   long *plVar8;
-  long *in_x1;
   undefined8 *puVar9;
   uint uVar10;
   long lVar12;
@@ -20703,12 +20669,11 @@ void WaterConcept::World::_fluidCollisionCallbackContaminatedVsLava(void *p0)
 
 /* WaterConcept::World::_fluidCollisionCallback_BtoA(void*) */
 
-void WaterConcept::World::_fluidCollisionCallback_BtoA(void *p0)
+void WaterConcept::World::_fluidCollisionCallback_BtoA(void *p0, long * in_x1)
 
 {
   undefined8 *puVar1;
   undefined4 uVar2;
-  long *in_x1;
   long lVar5;
   ulong uVar6;
   long lVar7;
@@ -20744,7 +20709,7 @@ void WaterConcept::World::_fluidCollisionCallback_BtoA(void *p0)
 
 /* WaterConcept::World::_fluidCollisionCallbackMudVsMud(void*) */
 
-void WaterConcept::World::_fluidCollisionCallbackMudVsMud(void *p0)
+void WaterConcept::World::_fluidCollisionCallbackMudVsMud(void *p0, long * in_x1)
 
 {
   int *piVar1;
@@ -20753,7 +20718,6 @@ void WaterConcept::World::_fluidCollisionCallbackMudVsMud(void *p0)
   int iVar4;
   int iVar5;
   long *plVar6;
-  long *in_x1;
   long lVar7;
   int *piVar8;
   ulong uVar9;
@@ -20821,12 +20785,11 @@ LAB_00465040:
 
 /* WaterConcept::World::_fluidCollisionCallbackWaterVsMud(void*) */
 
-void WaterConcept::World::_fluidCollisionCallbackWaterVsMud(void *p0)
+void WaterConcept::World::_fluidCollisionCallbackWaterVsMud(void *p0, long * in_x1)
 
 {
   int iVar1;
   long *plVar2;
-  long *in_x1;
   long lVar3;
   long lVar4;
   
@@ -20868,12 +20831,11 @@ void WaterConcept::World::_fluidCollisionCallbackWaterVsMud(void *p0)
 
 /* WaterConcept::World::_fluidCollisionCallbackMoisten(void*) */
 
-void WaterConcept::World::_fluidCollisionCallbackMoisten(void *p0)
+void WaterConcept::World::_fluidCollisionCallbackMoisten(void *p0, long * in_x1)
 
 {
   undefined4 uVar1;
   long *plVar2;
-  long *in_x1;
   long lVar3;
   ulong uVar4;
   long lVar5;
@@ -20909,11 +20871,10 @@ void WaterConcept::World::_fluidCollisionCallbackMoisten(void *p0)
 
 /* WaterConcept::World::handleTouchDown(int, Walaber::Vector2 const&) */
 
-void WaterConcept::World::handleTouchDown(int p0,Walaber__Vector2 *p1)
+void WaterConcept::World::handleTouchDown(int p0,Walaber__Vector2 *p1, long * in_x2)
 
 {
   ulong uVar2;
-  long *in_x2;
   long *plVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -20944,11 +20905,10 @@ void WaterConcept::World::handleTouchDown(int p0,Walaber__Vector2 *p1)
 
 /* WaterConcept::World::handleTouchMoved(int, Walaber::Vector2 const&, Walaber::Vector2 const&) */
 
-void WaterConcept::World::handleTouchMoved(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2)
+void WaterConcept::World::handleTouchMoved(int p0,Walaber__Vector2 *p1,Walaber__Vector2 *p2, undefined8 * in_x3)
 
 {
   ulong uVar2;
-  undefined8 *in_x3;
   undefined8 *puVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -20981,11 +20941,10 @@ void WaterConcept::World::handleTouchMoved(int p0,Walaber__Vector2 *p1,Walaber__
 
 /* WaterConcept::World::handleTouchUp(int, Walaber::Vector2 const&) */
 
-void WaterConcept::World::handleTouchUp(int p0,Walaber__Vector2 *p1)
+void WaterConcept::World::handleTouchUp(int p0,Walaber__Vector2 *p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
-  undefined8 *in_x2;
   undefined8 *puVar3;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -21016,7 +20975,7 @@ void WaterConcept::World::handleTouchUp(int p0,Walaber__Vector2 *p1)
 
 /* WaterConcept::World::_flagCellForRedraw(WaterConcept::GridCell) */
 
-void WaterConcept::World::_flagCellForRedraw(WaterConcept__GridCell p0)
+void WaterConcept::World::_flagCellForRedraw(WaterConcept__GridCell p0, undefined8 in_x1)
 
 {
   bool bVar1;
@@ -21027,7 +20986,6 @@ void WaterConcept::World::_flagCellForRedraw(WaterConcept__GridCell p0)
   int iVar6;
   int iVar7;
   int iVar8;
-  undefined8 in_x1;
   int *piVar9;
   long lVar10;
   int iVar11;
@@ -21090,14 +21048,13 @@ void WaterConcept::World::_flagCellForRedraw(WaterConcept__GridCell p0)
 
 /* WaterConcept::World::_collectibleIsRevealedCheck(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::World::_collectibleIsRevealedCheck(WaterConcept__InteractiveObject *p0)
+void WaterConcept::World::_collectibleIsRevealedCheck(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   bool bVar1;
   int iVar2;
   ulong uVar4;
   undefined8 uVar5;
-  long in_x1;
   int iVar6;
   int iVar7;
   uint uVar8;
@@ -21995,7 +21952,7 @@ LAB_00466c74:
 
 /* WaterConcept::World::_getClosestGridCell(WaterConcept::GridCell const&, int, int) */
 
-ulong WaterConcept::World::_getClosestGridCell(WaterConcept__GridCell *p0,int p1,int p2)
+ulong WaterConcept::World::_getClosestGridCell(WaterConcept__GridCell *p0,int p1,int p2, uint in_w3)
 
 {
   bool bVar1;
@@ -22007,7 +21964,6 @@ ulong WaterConcept::World::_getClosestGridCell(WaterConcept__GridCell *p0,int p1
   uint uVar7;
   bool bVar8;
   uint *puVar9;
-  uint in_w3;
   uint uVar10;
   uint uVar11;
   uint uVar12;
@@ -22132,7 +22088,7 @@ LAB_00467500:
 
 /* WaterConcept::World::_plopOntoGrid3x3(WaterConceptConstants::MaterialType, int, int) */
 
-void WaterConcept::World::_plopOntoGrid3x3(WaterConceptConstants__MaterialType p0,int p1,int p2)
+void WaterConcept::World::_plopOntoGrid3x3(WaterConceptConstants__MaterialType p0,int p1,int p2, int in_w3)
 
 {
   bool bVar1;
@@ -22148,7 +22104,6 @@ void WaterConcept::World::_plopOntoGrid3x3(WaterConceptConstants__MaterialType p
   int iVar11;
   int iVar12;
   long *plVar13;
-  int in_w3;
   int iVar14;
   int iVar15;
   int iVar16;
@@ -22986,7 +22941,7 @@ LAB_00468c18:
 
 /* WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept::GridCell) */
 
-void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__GridCell p0)
+void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__GridCell p0, undefined8 in_x1)
 
 {
   int iVar1;
@@ -22995,7 +22950,6 @@ void WaterConcept::World::_calculateClosestEdgeCellsForVisBlock(WaterConcept__Gr
   int iVar4;
   int iVar5;
   undefined8 uVar7;
-  undefined8 in_x1;
   int iVar8;
   int iVar9;
   int *piVar10;
@@ -24166,13 +24120,12 @@ void WaterConcept::World::makeMysteryPoof(Walaber__Vector2 *p0,float p1)
 
 /* WaterConcept::World::_spawnConverterParticle(WaterConcept::FluidConverter*) */
 
-void WaterConcept::World::_spawnConverterParticle(WaterConcept__FluidConverter *p0)
+void WaterConcept::World::_spawnConverterParticle(WaterConcept__FluidConverter *p0, long in_x1)
 
 {
   uint uVar1;
   int iVar3;
   int iVar4;
-  long in_x1;
   int iVar5;
   ulong uVar6;
   float fVar7;

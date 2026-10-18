@@ -34,10 +34,9 @@ undefined8 * Walaber::CharacterManager::getInstancePtr(void)
 
 /* Walaber::CharacterManager::removeSkeletonActorWithID(int) */
 
-undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0)
+undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0, int in_w1)
 
 {
-  int in_w1;
   long *plVar1;
   long *plVar2;
   long *plVar3;
@@ -74,12 +73,11 @@ undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0)
 
 /* Walaber::CharacterManager::createSkeletonActorWithID(int) */
 
-undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0)
+undefined8 Walaber::CharacterManager::createSkeletonActorWithID(int p0, int in_w1)
 
 {
   undefined8 uVar2;
   long lVar3;
-  int in_w1;
   long *plVar4;
   long *plVar5;
   long *plVar6;

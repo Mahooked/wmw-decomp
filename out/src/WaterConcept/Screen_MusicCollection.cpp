@@ -511,12 +511,11 @@ void WaterConcept::Screen_MusicCollection::_buildUI(long param_1)
 
 /* WaterConcept::Screen_MusicCollection::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_MusicCollection::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_MusicCollection::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -552,7 +551,7 @@ void WaterConcept::Screen_MusicCollection::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   int iVar1;
@@ -587,7 +586,6 @@ void WaterConcept::Screen_MusicCollection::_finishedLoadingWidgets(void *p0)
   long lVar31;
   ulong uVar32;
   long *plVar33;
-  int *in_x1;
   undefined4 uVar34;
   undefined8 uVar36;
   undefined8 uVar37;
@@ -3223,11 +3221,10 @@ void WaterConcept::Screen_MusicCollection::update(float p0,bool p1)
 
 /* WaterConcept::Screen_MusicCollection::draw(int) */
 
-void WaterConcept::Screen_MusicCollection::draw(int p0)
+void WaterConcept::Screen_MusicCollection::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -4147,11 +4144,10 @@ void WaterConcept::Screen_MusicCollection::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_MusicCollection::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_MusicCollection::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_MusicCollection::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   undefined8 uVar2;
-  long in_x1;
   undefined1 auStack_78 [32];
   byte abStack_58 [16];
   void *pvStack_48;

@@ -525,12 +525,11 @@ void Walaber::Sprite::playAnimation
 
 /* Walaber::Sprite::_animationFileRead(void*) */
 
-void Walaber::Sprite::_animationFileRead(void *p0)
+void Walaber::Sprite::_animationFileRead(void *p0, int * in_x1)
 
 {
   int iVar2;
   long *plVar3;
-  int *in_x1;
   ulong extraout_x1;
   ulong p1;
   long lVar4;
@@ -835,12 +834,11 @@ void Walaber::Sprite::_loadAnimation(_xmlNode *p0)
 
 /* Walaber::Sprite::_animationLoaded(void*) */
 
-void Walaber::Sprite::_animationLoaded(void *p0)
+void Walaber::Sprite::_animationLoaded(void *p0, long in_x1)
 
 {
   int iVar1;
   long *plVar3;
-  long in_x1;
   long lVar4;
   long lStack_68;
   long lStack_58;

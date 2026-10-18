@@ -520,12 +520,11 @@ LAB_0039a30c:
 
 /* Walaber::TextureManager::_loadedTextureAtlas(void*) */
 
-void Walaber::TextureManager::_loadedTextureAtlas(void *p0)
+void Walaber::TextureManager::_loadedTextureAtlas(void *p0, int * in_x1)
 
 {
   undefined8 uVar2;
   long *plVar3;
-  int *in_x1;
   ulong extraout_x1;
   undefined8 extraout_x1_00;
   ulong extraout_x1_01;
@@ -2101,14 +2100,13 @@ undefined8 Walaber::TextureManager::_isTextureSupported(undefined8 param_1,byte 
 
 /* Walaber::TextureManager::_loadAtlasGotTexture(void*) */
 
-void Walaber::TextureManager::_loadAtlasGotTexture(void *p0)
+void Walaber::TextureManager::_loadAtlasGotTexture(void *p0, ulong * in_x1)
 
 {
   ulong *puVar2;
   long lVar3;
   long *plVar4;
   long *plVar5;
-  ulong *in_x1;
   long *plVar6;
   long *plVar7;
   byte *pbVar8;
@@ -2357,7 +2355,7 @@ void Walaber::TextureManager::loadTextureSettings(undefined8 param_1,undefined8 
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* Walaber::TextureManager::_loadedTextureSettings(void*) */
 
-void Walaber::TextureManager::_loadedTextureSettings(void *p0)
+void Walaber::TextureManager::_loadedTextureSettings(void *p0, long in_x1)
 
 {
   byte bVar1;
@@ -2370,7 +2368,6 @@ void Walaber::TextureManager::_loadedTextureSettings(void *p0)
   ulong uVar9;
   long lVar10;
   void *pvVar11;
-  long in_x1;
   ulong extraout_x1;
   undefined4 uVar12;
   undefined4 uVar13;
@@ -5091,12 +5088,11 @@ void Walaber::TextureManager::reloadTextures(undefined8 *param_1)
 
 /* Walaber::TextureManager::invalidateTextures(bool) */
 
-void Walaber::TextureManager::invalidateTextures(bool p0)
+void Walaber::TextureManager::invalidateTextures(bool p0, uint in_w1)
 
 {
   bool bVar1;
   long *plVar2;
-  uint in_w1;
   long *plVar3;
   long lVar4;
   long *plVar5;
@@ -5712,12 +5708,11 @@ void Walaber::TextureManager::clearCache(undefined8 *param_1)
 
 /* Walaber::TextureManager::memoryWarning(bool) */
 
-void Walaber::TextureManager::memoryWarning(bool p0)
+void Walaber::TextureManager::memoryWarning(bool p0, uint in_w1)
 
 {
   ulong uVar1;
   long lVar2;
-  uint in_w1;
   long lVar3;
   
   uVar1 = (ulong)p0;
@@ -5815,13 +5810,12 @@ void Walaber::TextureManager::_clearSubtextureParents(long *param_1)
 
 /* Walaber::TextureManager::_removeUnusedTextures(bool) */
 
-void Walaber::TextureManager::_removeUnusedTextures(bool p0)
+void Walaber::TextureManager::_removeUnusedTextures(bool p0, ulong in_x1)
 
 {
   void *pvVar1;
   bool bVar3;
   undefined8 *puVar4;
-  ulong in_x1;
   long lVar5;
   long *plVar6;
   long *plVar7;

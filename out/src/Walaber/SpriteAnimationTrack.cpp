@@ -81,12 +81,11 @@ void Walaber::SpriteAnimationTrack::addSpriteAnimationEvent
 
 /* Walaber::SpriteAnimationTrack::apply(float) */
 
-void Walaber::SpriteAnimationTrack::apply(float p0)
+void Walaber::SpriteAnimationTrack::apply(long * in_x0, float p0)
 
 {
   long *plVar1;
   long lVar2;
-  long *in_x0;
   int iVar4;
   long lVar5;
   byte *pbVar6;

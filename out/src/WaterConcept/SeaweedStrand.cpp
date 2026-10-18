@@ -122,10 +122,9 @@ void WaterConcept::SeaweedStrand::setTexture(long param_1)
 
 /* WaterConcept::SeaweedStrand::setBottomPosition(Walaber::Vector2 const&) */
 
-void WaterConcept::SeaweedStrand::setBottomPosition(Walaber__Vector2 *p0)
+void WaterConcept::SeaweedStrand::setBottomPosition(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   Walaber__Vector2 WVar1;
   
   *(undefined8 *)&p0[2].f_0x4 = *in_x1;
@@ -143,10 +142,9 @@ void WaterConcept::SeaweedStrand::setBottomPosition(Walaber__Vector2 *p0)
 
 /* WaterConcept::SeaweedStrand::update(float) */
 
-void WaterConcept::SeaweedStrand::update(float p0)
+void WaterConcept::SeaweedStrand::update(long in_x0, float p0)
 
 {
-  long in_x0;
   undefined8 *puVar1;
   int iVar2;
   int iVar3;

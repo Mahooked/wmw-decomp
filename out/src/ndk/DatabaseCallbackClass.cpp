@@ -9,10 +9,9 @@
 
 /* ndk::DatabaseCallbackClass::databaseCompletedCallback(void*) */
 
-void ndk::DatabaseCallbackClass::databaseCompletedCallback(void *p0)
+void ndk::DatabaseCallbackClass::databaseCompletedCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   *(undefined4 *)p0 = *(undefined4 *)(in_x1 + 0x34);
   return;
@@ -26,12 +25,11 @@ void ndk::DatabaseCallbackClass::databaseCompletedCallback(void *p0)
 
 /* ndk::DatabaseCallbackClass::databaseErrorCallback(void*) */
 
-void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0)
+void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  int *in_x1;
   byte abStack_b0 [16];
   void *pvStack_a0;
   byte abStack_98 [16];

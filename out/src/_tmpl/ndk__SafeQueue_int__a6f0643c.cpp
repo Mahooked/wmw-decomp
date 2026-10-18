@@ -45,12 +45,11 @@ void ndk::SafeQueue<int>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<int>::pop(int&) */
 
-bool ndk::SafeQueue<int>::pop(int *p0)
+bool ndk::SafeQueue<int>::pop(int *p0, undefined4 * in_x1)
 
 {
   long lVar1;
   long *p0_00;
-  undefined4 *in_x1;
   long lVar2;
   
   pthread_mutex_lock(p0 + 8);
@@ -77,11 +76,10 @@ bool ndk::SafeQueue<int>::pop(int *p0)
 
 /* ndk::SafeQueue<int>::push(int const&) */
 
-void ndk::SafeQueue<int>::push(int *p0)
+void ndk::SafeQueue<int>::push(int *p0, undefined4 * in_x1)
 
 {
   long *plVar1;
-  undefined4 *in_x1;
   long lVar2;
   
   pthread_mutex_lock(p0 + 8);

@@ -1027,12 +1027,11 @@ void * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
 
 /* std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t> >::put(wchar_t) */
 
-long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::put(wchar_t p0)
+long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::put(wchar_t p0, int in_w1)
 
 {
   int *piVar1;
   long *plVar3;
-  int in_w1;
   long *plVar4;
   long lVar5;
   undefined1 auStack_48 [8];

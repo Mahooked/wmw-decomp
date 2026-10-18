@@ -9,11 +9,10 @@
 
 /* Walaber::ParticleEmitter::addEmitterZone(Walaber::ParticleEmitter::EmitterZone const&) */
 
-void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZone *p0)
+void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZone *p0, undefined8 * in_x1)
 
 {
   undefined8 *puVar1;
-  undefined8 *in_x1;
   
   puVar1 = (undefined8 *)p0[5].f_0x0;
   if (puVar1 != (undefined8 *)p0[5].f_0x8) {
@@ -191,7 +190,7 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
 
 /* Walaber::ParticleEmitter::_xmlFileLoaded(void*) */
 
-void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
+void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0, int * in_x1)
 
 {
   long lVar2;
@@ -203,7 +202,6 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0)
   ulong uVar8;
   undefined8 uVar9;
   long *plVar10;
-  int *in_x1;
   ulong extraout_x1;
   ulong extraout_x1_00;
   uint uVar11;
@@ -1790,7 +1788,7 @@ LAB_003916f8:
 
 /* Walaber::ParticleEmitter::update(float) */
 
-void Walaber::ParticleEmitter::update(float p0)
+void Walaber::ParticleEmitter::update(long in_x0, float p0)
 
 {
   float *pfVar1;
@@ -1808,7 +1806,6 @@ void Walaber::ParticleEmitter::update(float p0)
   int iVar14;
   int iVar15;
   int iVar16;
-  long in_x0;
   uint uVar17;
   undefined8 *puVar18;
   ulong uVar19;
@@ -2160,10 +2157,9 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0,Walaber__Color p1)
 
 /* Walaber::ParticleEmitter::addDirectionRangeDegrees(float, float) */
 
-void Walaber::ParticleEmitter::addDirectionRangeDegrees(float p0,float p1)
+void Walaber::ParticleEmitter::addDirectionRangeDegrees(long in_x0, float p0,float p1)
 
 {
-  long in_x0;
   float fStack_30;
   float fStack_2c;
   

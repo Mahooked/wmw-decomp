@@ -520,7 +520,7 @@ void Walaber::Widget_ColorPicker::setIcon(long param_1,undefined8 param_2,undefi
 
 /* Walaber::Widget_ColorPicker::setSelection(Walaber::Color const&, bool) */
 
-void Walaber::Widget_ColorPicker::setSelection(Walaber__Color *p0,bool p1)
+void Walaber::Widget_ColorPicker::setSelection(Walaber__Color *p0,bool p1, uint in_w2)
 
 {
   byte *pbVar1;
@@ -530,7 +530,6 @@ void Walaber::Widget_ColorPicker::setSelection(Walaber__Color *p0,bool p1)
   Walaber__Color WVar5;
   Walaber__Color WVar6;
   byte *pbVar7;
-  uint in_w2;
   long lVar8;
   Walaber__Color WVar9;
   Walaber__Color WVar10;
@@ -843,10 +842,9 @@ undefined8 Walaber::Widget_ColorPicker::acceptNewFingerDown(int p0,Walaber__Fing
 
 /* Walaber::Widget_ColorPicker::_updateFinger(Walaber::FingerInfo*) */
 
-void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0)
+void Walaber::Widget_ColorPicker::_updateFinger(Walaber__FingerInfo *p0, long in_x1)
 
 {
-  long in_x1;
   float fVar2;
   float fVar3;
   float fVar4;

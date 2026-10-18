@@ -9,10 +9,9 @@
 
 /* Walaber::DrawableNode::setLayer(int) */
 
-void Walaber::DrawableNode::setLayer(int p0)
+void Walaber::DrawableNode::setLayer(int p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   *(undefined4 *)((ulong)(uint)p0 + 0x80) = in_w1;
   return;

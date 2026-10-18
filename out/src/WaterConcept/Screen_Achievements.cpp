@@ -335,11 +335,10 @@ void WaterConcept::Screen_Achievements::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Achievements::draw(int) */
 
-void WaterConcept::Screen_Achievements::draw(int p0)
+void WaterConcept::Screen_Achievements::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -667,7 +666,7 @@ LAB_004a2254:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong *puVar1;
@@ -708,7 +707,6 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0)
   long *plVar37;
   long *plVar38;
   ulong uVar39;
-  int *in_x1;
   code *pcVar40;
   int *piVar41;
   uint uVar42;
@@ -1457,13 +1455,12 @@ LAB_004a33ac:
 
 /* WaterConcept::Screen_Achievements::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_Achievements::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_Achievements::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   int iVar2;
   long lVar3;
   ulong uVar4;
-  long in_x1;
   uint uVar5;
   byte abStack_50 [17];
   undefined2 uStack_3f;

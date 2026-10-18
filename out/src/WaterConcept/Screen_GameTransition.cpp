@@ -389,12 +389,11 @@ void WaterConcept::Screen_GameTransition::update(float p0,bool p1)
 
 /* WaterConcept::Screen_GameTransition::draw(int) */
 
-void WaterConcept::Screen_GameTransition::draw(int p0)
+void WaterConcept::Screen_GameTransition::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if ((in_w1 != 0) && (*(int *)(uVar2 + 0x9c) < 3)) {
@@ -451,10 +450,9 @@ undefined8 WaterConcept::Screen_GameTransition::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_GameTransition::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_GameTransition::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_GameTransition::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
-  int *in_x1;
   
   if (*in_x1 == 1) {
     puts("[Water_Screen_GameTransition] finishedLoadingWidgets");

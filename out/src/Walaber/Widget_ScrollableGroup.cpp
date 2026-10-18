@@ -179,10 +179,9 @@ void Walaber::Widget_ScrollableGroup::init(long param_1)
 
 /* Walaber::Widget_ScrollableGroup::setGroup(Walaber::Widget_Group*) */
 
-void Walaber::Widget_ScrollableGroup::setGroup(Walaber__Widget_Group *p0)
+void Walaber::Widget_ScrollableGroup::setGroup(Walaber__Widget_Group *p0, ulong in_x1)
 
 {
-  ulong in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
@@ -226,10 +225,9 @@ void Walaber::Widget_ScrollableGroup::setGroup(Walaber__Widget_Group *p0)
 
 /* Walaber::Widget_ScrollableGroup::setDirectionMask(Walaber::Vector2) */
 
-void Walaber::Widget_ScrollableGroup::setDirectionMask(Walaber__Vector2 p0)
+void Walaber::Widget_ScrollableGroup::setDirectionMask(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x158) = *in_x1;
   return;
@@ -637,11 +635,10 @@ undefined8 Walaber::Widget_ScrollableGroup::acceptNewFingerDown(int p0,Walaber__
 
 /* Walaber::Widget_ScrollableGroup::_updateFinger(bool) */
 
-void Walaber::Widget_ScrollableGroup::_updateFinger(bool p0)
+void Walaber::Widget_ScrollableGroup::_updateFinger(bool p0, uint in_w1)
 
 {
   ulong uVar1;
-  uint in_w1;
   undefined8 uVar2;
   undefined8 uVar3;
   float fVar4;
@@ -718,11 +715,10 @@ LAB_00387dec:
 
 /* Walaber::Widget_ScrollableGroup::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined4 Walaber::Widget_ScrollableGroup::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined4 Walaber::Widget_ScrollableGroup::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined4 uVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -746,10 +742,9 @@ undefined4 Walaber::Widget_ScrollableGroup::acceptNewFingerEntered(int p0,Walabe
 
 /* Walaber::Widget_ScrollableGroup::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableGroup::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableGroup::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   *(undefined8 *)((ulong)(uint)p0 + 0x100) = in_x2;
   Walaber::Widget_ScrollableGroup::_updateFinger((ulong)(uint)p0,0);
@@ -764,10 +759,9 @@ undefined8 Walaber::Widget_ScrollableGroup::releaseFingerStayed(int p0,Walaber__
 
 /* Walaber::Widget_ScrollableGroup::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableGroup::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableGroup::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   *(undefined8 *)((ulong)(uint)p0 + 0x100) = in_x2;
   Walaber::Widget_ScrollableGroup::_updateFinger((ulong)(uint)p0,0);

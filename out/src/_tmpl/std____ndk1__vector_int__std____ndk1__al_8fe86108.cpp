@@ -9,10 +9,9 @@
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0)
+void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0, ulong in_x1)
 
 {
-  ulong in_x1;
   void *pvVar2;
   undefined8 uVar3;
   void *pvStack_50;
@@ -56,11 +55,10 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::reserve(ulong p0)
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0)
+void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;
-  ulong in_x1;
   
   if (in_x1 >> 0x3e == 0) {
     lVar1 = operator new(in_x1 << 2);
@@ -110,10 +108,9 @@ void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(undefined8 *pa
 
 /* std::__ndk1::vector<int, std::__ndk1::allocator<int> >::vector(unsigned long) */
 
-void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(ulong p0)
+void std::__ndk1::vector<int,std::__ndk1::allocator<int>>::vector(ulong p0, long in_x1)
 
 {
-  long in_x1;
   long lVar1;
   
   *(undefined8 *)p0 = 0;

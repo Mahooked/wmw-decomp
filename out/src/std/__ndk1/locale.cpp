@@ -480,12 +480,11 @@ void std::__ndk1::locale::global(std____ndk1__locale *p0)
 
 /* std::__ndk1::locale::has_facet(std::__ndk1::locale::id&) const */
 
-void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
+void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0, long * in_x1)
 
 {
   long lVar1;
   bool bVar3;
-  long *in_x1;
   ulong uVar4;
   ulong uVar5;
   undefined1 auStack_60 [8];
@@ -520,12 +519,11 @@ void std::__ndk1::locale::has_facet(std____ndk1__locale__id *p0)
 
 /* std::__ndk1::locale::use_facet(std::__ndk1::locale::id&) const */
 
-void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0)
+void std::__ndk1::locale::use_facet(std____ndk1__locale__id *p0, long * in_x1)
 
 {
   long lVar1;
   undefined8 uVar3;
-  long *in_x1;
   ulong uVar4;
   ulong uVar5;
   undefined1 auStack_60 [8];

@@ -128,12 +128,11 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
 
 /* Walaber::FontManager::_fontLoaded(void*) */
 
-void Walaber::FontManager::_fontLoaded(void *p0)
+void Walaber::FontManager::_fontLoaded(void *p0, int * in_x1)
 
 {
   long lVar1;
   undefined8 uVar3;
-  int *in_x1;
   undefined1 *puVar4;
   int iVar5;
   long lVar6;

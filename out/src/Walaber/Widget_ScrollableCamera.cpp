@@ -206,11 +206,10 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
 
 /* Walaber::Widget_ScrollableCamera::initCamera(Walaber::Camera*) */
 
-void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0)
+void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0, undefined8 in_x1)
 
 {
   ulong uVar2;
-  undefined8 in_x1;
   undefined8 uStack_90;
   undefined8 uStack_88;
   undefined8 uStack_80;
@@ -542,10 +541,9 @@ void Walaber::Widget_ScrollableCamera::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_ScrollableCamera::addGroup(Walaber::Widget_Group*, bool) */
 
-void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p1)
+void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p1, uint in_w2)
 
 {
-  uint in_w2;
   ulong uStack_40;
   
   uStack_40 = (ulong)p1;
@@ -572,13 +570,12 @@ void Walaber::Widget_ScrollableCamera::addGroup(Walaber__Widget_Group *p0,bool p
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int) */
 
-void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
+void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0, int in_w1)
 
 {
   int *piVar1;
   ulong uVar3;
   long *plVar4;
-  int in_w1;
   float fVar5;
   int iStack_6c;
   float fStack_68;
@@ -646,11 +643,10 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0)
 
 /* Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber::Widget_Group*) */
 
-void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0)
+void Walaber::Widget_ScrollableCamera::addMovableGroup(Walaber__Widget_Group *p0, undefined8 in_x1)
 
 {
   int *piVar1;
-  undefined8 in_x1;
   float afStack_40 [3];
   int iStack_34;
   undefined8 uStack_30;
@@ -777,11 +773,10 @@ undefined8 Walaber::Widget_ScrollableCamera::acceptNewFingerDown(int p0,Walaber_
 
 /* Walaber::Widget_ScrollableCamera::_updateFinger(bool) */
 
-void Walaber::Widget_ScrollableCamera::_updateFinger(bool p0)
+void Walaber::Widget_ScrollableCamera::_updateFinger(bool p0, uint in_w1)
 
 {
   ulong uVar1;
-  uint in_w1;
   float fVar2;
   float fVar3;
   
@@ -812,11 +807,10 @@ void Walaber::Widget_ScrollableCamera::_updateFinger(bool p0)
 
 /* Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined4 Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined4 Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined4 uVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -844,10 +838,9 @@ undefined4 Walaber::Widget_ScrollableCamera::acceptNewFingerEntered(int p0,Walab
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableCamera::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableCamera::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   Walaber::Logger::printf("Walaber",1,"Widget_ScrollableCamera::releaseFingerStayed(%d)\n",
                (ulong)p1 & 0xffffffff);
@@ -863,11 +856,10 @@ undefined8 Walaber::Widget_ScrollableCamera::releaseFingerStayed(int p0,Walaber_
 
 /* Walaber::Widget_ScrollableCamera::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ScrollableCamera::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ScrollableCamera::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   
   uVar1 = (ulong)(uint)p0;
   Walaber::Logger::printf("Walaber",1,"Widget_ScrollableCamera::releaseFingerMoved(%d)\n",

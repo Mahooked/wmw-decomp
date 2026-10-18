@@ -2030,10 +2030,9 @@ LAB_00546720:
 
 /* WaterConcept::Screen_Popup::_gotSE(void*) */
 
-void WaterConcept::Screen_Popup::_gotSE(void *p0)
+void WaterConcept::Screen_Popup::_gotSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x4c8,in_x1 + 8);
   if (*(long *)((long)p0 + 0x4c8) != 0) {
@@ -3993,11 +3992,10 @@ void WaterConcept::Screen_Popup::_buildUI(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Popup::_transitionEnter(float) */
 
-void WaterConcept::Screen_Popup::_transitionEnter(float p0)
+void WaterConcept::Screen_Popup::_transitionEnter(long in_x0, float p0)
 
 {
   int iVar1;
-  long in_x0;
   undefined8 uVar2;
   undefined8 uVar3;
   long lVar4;
@@ -8479,13 +8477,12 @@ void WaterConcept::Screen_Popup::goFBLoginConfirm(void)
 
 /* WaterConcept::Screen_Popup::_transitionUpdate(float) */
 
-void WaterConcept::Screen_Popup::_transitionUpdate(float p0)
+void WaterConcept::Screen_Popup::_transitionUpdate(long in_x0, float p0)
 
 {
   int iVar2;
   int iVar3;
   int iVar4;
-  long in_x0;
   long *plVar5;
   undefined8 uVar6;
   ulong uVar7;
@@ -8743,11 +8740,10 @@ LAB_00550708:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Popup::_transitionExit(float) */
 
-void WaterConcept::Screen_Popup::_transitionExit(float p0)
+void WaterConcept::Screen_Popup::_transitionExit(long in_x0, float p0)
 
 {
   int iVar1;
-  long in_x0;
   undefined8 uVar2;
   undefined8 uVar3;
   long lVar4;
@@ -8851,14 +8847,13 @@ void WaterConcept::Screen_Popup::_finishedIntroAnimations(void)
 
 /* WaterConcept::Screen_Popup::_addMysteryParticles(Walaber::Vector2 const&, int) */
 
-void WaterConcept::Screen_Popup::_addMysteryParticles(Walaber__Vector2 *p0,int p1)
+void WaterConcept::Screen_Popup::_addMysteryParticles(Walaber__Vector2 *p0,int p1, int in_w2)
 
 {
   float fVar2;
   int iVar3;
   int iVar4;
   ulong uVar5;
-  int in_w2;
   long lVar6;
   Walaber__Vector2 WVar7;
   float fVar8;
@@ -9042,7 +9037,7 @@ void WaterConcept::Screen_Popup::goHUB(void)
 
 /* WaterConcept::Screen_Popup::draw(int) */
 
-void WaterConcept::Screen_Popup::draw(int p0)
+void WaterConcept::Screen_Popup::draw(int p0, int in_w1)
 
 {
   long lVar1;
@@ -9054,7 +9049,6 @@ void WaterConcept::Screen_Popup::draw(int p0)
   ulong uVar8;
   long *plVar9;
   long lVar10;
-  int in_w1;
   int iVar11;
   undefined8 uVar12;
   long lVar13;
@@ -9482,10 +9476,9 @@ LAB_00551ae0:
 
 /* WaterConcept::Screen_Popup::setupWithDefault(int) */
 
-void WaterConcept::Screen_Popup::setupWithDefault(int p0)
+void WaterConcept::Screen_Popup::setupWithDefault(int p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   *(undefined4 *)((ulong)(uint)p0 + 0x9c) = in_w1;
   return;
@@ -10622,7 +10615,7 @@ void WaterConcept::Screen_Popup::goLevelSelect(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Popup::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   char *pcVar1;
@@ -10643,7 +10636,6 @@ void WaterConcept::Screen_Popup::messageRx(Walaber__Message *p0)
   ulong *puVar16;
   long lVar17;
   long lVar18;
-  long in_x1;
   long lVar19;
   long lVar20;
   undefined4 uVar21;
@@ -12373,7 +12365,7 @@ void WaterConcept::Screen_Popup::accelerometerChanged(float p0,float p1,float p2
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Popup::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   char *pcVar1;
@@ -12399,7 +12391,6 @@ void WaterConcept::Screen_Popup::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar22;
   undefined4 *puVar23;
   char *pcVar24;
-  int *in_x1;
   char *pcVar25;
   uint uVar26;
   undefined8 uVar28;
@@ -15590,10 +15581,9 @@ LAB_005589f4:
 
 /* WaterConcept::Screen_Popup::_spriteEventCallback(void*) */
 
-void WaterConcept::Screen_Popup::_spriteEventCallback(void *p0)
+void WaterConcept::Screen_Popup::_spriteEventCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
     *(undefined8 *)((long)p0 + 0x5a0) = 0x200000000;
@@ -15610,13 +15600,12 @@ void WaterConcept::Screen_Popup::_spriteEventCallback(void *p0)
 
 /* WaterConcept::Screen_Popup::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_Popup::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_Popup::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   byte bVar2;
   int iVar3;
-  byte *in_x1;
   ulong uVar4;
   undefined4 uVar5;
   ulong uVar6;
@@ -16104,12 +16093,11 @@ void WaterConcept::Screen_Popup::_updatePhotoFinishWidgets(long param_1)
 
 /* WaterConcept::Screen_Popup::_logoTextureExistsCallback(void*) */
 
-void WaterConcept::Screen_Popup::_logoTextureExistsCallback(void *p0)
+void WaterConcept::Screen_Popup::_logoTextureExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
@@ -16435,10 +16423,9 @@ LAB_0055a9b0:
 
 /* WaterConcept::Screen_Popup::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_Popup::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_Popup::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   ulong uVar2;
   ulong uVar3;
   undefined8 *puVar4;
@@ -16546,12 +16533,11 @@ void WaterConcept::Screen_Popup::touchMoved(int p0,Walaber__Vector2 p1,Walaber__
 
 /* WaterConcept::Screen_Popup::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_Popup::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_Popup::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
   long lVar3;
-  undefined8 *in_x2;
   undefined8 uStack_40;
   
   uVar2 = (ulong)(uint)p0;

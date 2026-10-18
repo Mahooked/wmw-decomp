@@ -270,14 +270,13 @@
 
 /* WaterConcept::Screen_MysteryShow::_spriteEventCallback(void*) */
 
-void WaterConcept::Screen_MysteryShow::_spriteEventCallback(void *p0)
+void WaterConcept::Screen_MysteryShow::_spriteEventCallback(void *p0, long * in_x1)
 
 {
   bool bVar2;
   int iVar3;
   ulong uVar4;
   undefined8 uVar5;
-  long *in_x1;
   long lVar6;
   ulong uVar7;
   void *pvVar8;
@@ -1746,12 +1745,11 @@ void WaterConcept::Screen_MysteryShow::_finishAnimation(long param_1)
 
 /* WaterConcept::Screen_MysteryShow::draw(int) */
 
-void WaterConcept::Screen_MysteryShow::draw(int p0)
+void WaterConcept::Screen_MysteryShow::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar3;
-  int in_w1;
   undefined8 uVar4;
   float fVar5;
   float fVar6;
@@ -1920,10 +1918,9 @@ void WaterConcept::Screen_MysteryShow::handleEvent
 
 /* WaterConcept::Screen_MysteryShow::_gotSE(void*) */
 
-void WaterConcept::Screen_MysteryShow::_gotSE(void *p0)
+void WaterConcept::Screen_MysteryShow::_gotSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0xc0,in_x1 + 8);
   return;

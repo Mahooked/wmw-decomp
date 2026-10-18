@@ -51,10 +51,9 @@ void WaterConcept::WCScreen::beingStacked(long param_1)
 
 /* WaterConcept::WCScreen::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::WCScreen::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::WCScreen::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -70,10 +69,9 @@ void WaterConcept::WCScreen::touchDown(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::WCScreen::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::WCScreen::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::WCScreen::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
   
@@ -91,10 +89,9 @@ void WaterConcept::WCScreen::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vect
 
 /* WaterConcept::WCScreen::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::WCScreen::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::WCScreen::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;

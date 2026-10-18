@@ -1230,10 +1230,9 @@ void WaterConcept::Fluids::addParticle
 /* WARNING: Removing unreachable block (ram,0x00406680) */
 /* WaterConcept::Fluids::removeParticle(WaterConcept::ParticleDescription const&) */
 
-void WaterConcept::Fluids::removeParticle(WaterConcept__ParticleDescription *p0)
+void WaterConcept::Fluids::removeParticle(WaterConcept__ParticleDescription *p0, int * in_x1)
 
 {
-  int *in_x1;
   long lVar1;
   long lVar2;
   long *plVar3;
@@ -1295,13 +1294,12 @@ void WaterConcept::Fluids::addCollisionBehavior
 /* WARNING: Removing unreachable block (ram,0x00406a7c) */
 /* WaterConcept::Fluids::changeParticleToFluidType(int, WaterConcept::ParticleDescription const&) */
 
-void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__ParticleDescription *p1)
+void WaterConcept::Fluids::changeParticleToFluidType(int p0,WaterConcept__ParticleDescription *p1, int * in_x2)
 
 {
   int iVar2;
   long *plVar3;
   undefined8 *puVar4;
-  int *in_x2;
   long lVar5;
   long lVar6;
   long lVar7;
@@ -1543,10 +1541,9 @@ void WaterConcept::Fluids::addCloneParticleToFluidWithDamping
 
 /* WaterConcept::Fluids::getParticlesForFluid(int) */
 
-undefined8 WaterConcept::Fluids::getParticlesForFluid(int p0)
+undefined8 WaterConcept::Fluids::getParticlesForFluid(int p0, int in_w1)
 
 {
-  int in_w1;
   
   return *(undefined8 *)(*(long *)(ulong)(uint)p0 + (long)in_w1 * 0xf0 + 0xe0);
 }
@@ -1559,10 +1556,9 @@ undefined8 WaterConcept::Fluids::getParticlesForFluid(int p0)
 
 /* WaterConcept::Fluids::getParticleListForFluidCell(WaterConcept::GridCell&) */
 
-long WaterConcept::Fluids::getParticleListForFluidCell(WaterConcept__GridCell *p0)
+long WaterConcept::Fluids::getParticleListForFluidCell(WaterConcept__GridCell *p0, int * in_x1)
 
 {
-  int *in_x1;
   
   return *(long *)((long)p0[0x79fa] + 8) + (long)(*in_x1 + *(int *)p0[0x79fa] * in_x1[1]) * 0x18;
 }
@@ -1628,12 +1624,11 @@ void WaterConcept::Fluids::getBoundaryFluidCellsForAABB
 
 /* WaterConcept::Fluids::update(float) */
 
-void WaterConcept::Fluids::update(float p0)
+void WaterConcept::Fluids::update(long * in_x0, float p0)
 
 {
   uint uVar1;
   long *p0_00;
-  long *in_x0;
   ulong uVar3;
   ulong uVar4;
   undefined8 *puVar5;
@@ -2776,7 +2771,7 @@ void WaterConcept::Fluids::renderOffscreenTargets
 /* WaterConcept::Fluids::_buildRefractionGrid(Walaber::Vector2 const&, Walaber::Vector2 const&,
    unsigned char) */
 
-void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Vector2 *p1,uchar p2)
+void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Vector2 *p1,uchar p2, uint in_w3)
 
 {
   uint uVar1;
@@ -2786,7 +2781,6 @@ void WaterConcept::Fluids::_buildRefractionGrid(Walaber__Vector2 *p0,Walaber__Ve
   Walaber__Vector2 *pWVar5;
   Walaber__Vector2 *pWVar6;
   uint uVar7;
-  uint in_w3;
   Walaber__Vector2 WVar9;
   uint uVar10;
   ulong uVar11;
@@ -3383,10 +3377,9 @@ WaterConcept::Fluids::_fillBuffer
 
 /* WaterConcept::Fluids::_getCollisionBehavior(int, int) */
 
-undefined8 WaterConcept::Fluids::_getCollisionBehavior(int p0,int p1)
+undefined8 WaterConcept::Fluids::_getCollisionBehavior(int p0,int p1, int in_w2)
 
 {
-  int in_w2;
   
   return *(undefined8 *)
           (*(long *)((long)&__DT_SYMTAB[0x1c0b].st_value + (ulong)(uint)p0) +

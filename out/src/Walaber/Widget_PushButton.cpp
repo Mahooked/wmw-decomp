@@ -542,11 +542,10 @@ void Walaber::Widget_PushButton::_applyTile(long param_1)
 
 /* Walaber::Widget_PushButton::setTextureFlipped(bool, bool) */
 
-void Walaber::Widget_PushButton::setTextureFlipped(bool p0,bool p1)
+void Walaber::Widget_PushButton::setTextureFlipped(bool p0,bool p1, uint in_w2)
 
 {
   ulong uVar1;
-  uint in_w2;
   
   uVar1 = (ulong)p0;
   if (p1) {
@@ -831,10 +830,9 @@ LAB_00384224:
 
 /* Walaber::Widget_PushButton::setTile(Walaber::Vector2) */
 
-void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0)
+void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x140) = *in_x1;
   Walaber::Widget_PushButton::_applyTile();
@@ -876,10 +874,9 @@ void Walaber::Widget_PushButton::setTile(Walaber__Vector2 p0,float p1)
 
 /* Walaber::Widget_PushButton::setTileOffset(Walaber::Vector2) */
 
-void Walaber::Widget_PushButton::setTileOffset(Walaber__Vector2 p0)
+void Walaber::Widget_PushButton::setTileOffset(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x120) = *in_x1;
   *(undefined8 *)((long)p0 + 0x130) = *in_x1;
@@ -894,10 +891,9 @@ void Walaber::Widget_PushButton::setTileOffset(Walaber__Vector2 p0)
 
 /* Walaber::Widget_PushButton::setTileAnimation(Walaber::Vector2) */
 
-void Walaber::Widget_PushButton::setTileAnimation(Walaber__Vector2 p0)
+void Walaber::Widget_PushButton::setTileAnimation(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x148) = *in_x1;
   return;
@@ -911,11 +907,10 @@ void Walaber::Widget_PushButton::setTileAnimation(Walaber__Vector2 p0)
 
 /* Walaber::Widget_PushButton::addLabel(Walaber::Widget_Label*) */
 
-void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0)
+void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0, undefined8 in_x1)
 
 {
   undefined8 uVar2;
-  undefined8 in_x1;
   undefined8 *puVar3;
   undefined8 uStack_50;
   undefined1 auStack_48 [8];
@@ -951,10 +946,9 @@ void Walaber::Widget_PushButton::addLabel(Walaber__Widget_Label *p0)
 
 /* Walaber::Widget_PushButton::setLocalPosition(Walaber::Vector2 const&) */
 
-void Walaber::Widget_PushButton::setLocalPosition(Walaber__Vector2 *p0)
+void Walaber::Widget_PushButton::setLocalPosition(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uStack_40;
   
   if (p0[0x38] != (Walaber__Vector2)0x0) {

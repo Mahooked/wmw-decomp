@@ -237,7 +237,7 @@ void WaterConcept::Floater::_updateSpringDs(long param_1)
 
 /* WaterConcept::Floater::_initFromXML(_xmlDoc*, _xmlNode*) */
 
-void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
+void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1, long in_x2)
 
 {
   ulong uVar1;
@@ -251,7 +251,6 @@ void WaterConcept::Floater::_initFromXML(_xmlDoc *p0,_xmlNode *p1)
   _xmlNode *extraout_x1_04;
   _xmlNode *extraout_x1_05;
   _xmlNode *extraout_x1_06;
-  long in_x2;
   ulong *puVar5;
   undefined4 *puVar6;
   long lVar7;
@@ -1233,11 +1232,10 @@ void WaterConcept::Floater::_draw(Walaber__SpriteBatch *p0,bool p1,float p2)
 
 /* WaterConcept::Floater::_drawSprite(Walaber::SpriteBatch*, int, int) */
 
-void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2)
+void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2, undefined4 in_w3)
 
 {
   uint uVar1;
-  undefined4 in_w3;
   long lVar3;
   ulong uVar4;
   long lVar5;
@@ -1340,14 +1338,13 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2)
 
 /* WaterConcept::Floater::_updateGlobalShape(bool) */
 
-void WaterConcept::Floater::_updateGlobalShape(bool p0)
+void WaterConcept::Floater::_updateGlobalShape(bool p0, uint in_w1)
 
 {
   bool bVar1;
   long *plVar2;
   long lVar3;
   ulong uVar5;
-  uint in_w1;
   long *plVar6;
   long lVar7;
   ulong uVar8;
@@ -1719,10 +1716,9 @@ void WaterConcept::Floater::_handleCollision
 
 /* WaterConcept::Floater::shouldCollideWithInteractiveObject(WaterConcept::InteractiveObject*) */
 
-bool WaterConcept::Floater::shouldCollideWithInteractiveObject(WaterConcept__InteractiveObject *p0)
+bool WaterConcept::Floater::shouldCollideWithInteractiveObject(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
-  long in_x1;
   
   if (*(int *)(in_x1 + 0xd8) != 2) {
     return *(int *)(in_x1 + 0xd8) != 5;

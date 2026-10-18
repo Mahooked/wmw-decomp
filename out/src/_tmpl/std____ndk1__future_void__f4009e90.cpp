@@ -9,12 +9,11 @@
 
 /* std::__ndk1::future<void>::future(std::__ndk1::__assoc_sub_state*) */
 
-void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0)
+void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong in_x1)
 
 {
   int iVar2;
   undefined8 *puVar3;
-  ulong in_x1;
   byte abStack_68 [16];
   void *pvStack_58;
   undefined8 uStack_50;

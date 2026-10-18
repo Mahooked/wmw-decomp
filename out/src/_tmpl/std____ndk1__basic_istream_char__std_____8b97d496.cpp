@@ -71,12 +71,11 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::tellg(long
 
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >::read(char*, long) */
 
-char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::read(char *p0,long p1)
+char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::read(char *p0,long p1, long in_x2)
 
 {
   long lVar2;
   char *pcVar3;
-  long in_x2;
   char acStack_40 [8];
   
   p0[8] = '\0';
@@ -992,11 +991,10 @@ LAB_005a7970:
 
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >::get(char&) */
 
-char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get(char *p0)
+char * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::get(char *p0, undefined1 * in_x1)
 
 {
   int iVar1;
-  undefined1 *in_x1;
   
   iVar1 = std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::get();
   if (iVar1 != -1) {
@@ -1380,13 +1378,12 @@ LAB_005a8208:
 
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >::ignore(long, int) */
 
-long std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::ignore(long p0,int p1)
+long std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::ignore(long p0,int p1, uint in_w2)
 
 {
   byte *pbVar1;
   uint uVar2;
   long *plVar3;
-  uint in_w2;
   long lVar4;
   long lVar5;
   
@@ -1508,12 +1505,11 @@ ulong std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::peek(long
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >::readsome(char*, long) */
 
 undefined8
-std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::readsome(char *p0,long p1)
+std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::readsome(char *p0,long p1, long in_x2)
 
 {
   char *pcVar1;
   long *plVar2;
-  long in_x2;
   long lVar3;
   uint uVar4;
   
@@ -1573,13 +1569,12 @@ LAB_005a8574:
 
 /* std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char> >::putback(char) */
 
-long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::putback(char p0)
+long * std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::putback(char p0, char in_w1)
 
 {
   int iVar1;
   long *plVar2;
   long lVar3;
-  char in_w1;
   uint uVar4;
   long *plVar5;
   char *pcVar6;

@@ -198,10 +198,9 @@ void Walaber::Widget_Slider::init(long param_1)
 
 /* Walaber::Widget_Slider::setHandleSize(Walaber::Vector2) */
 
-void Walaber::Widget_Slider::setHandleSize(Walaber__Vector2 p0)
+void Walaber::Widget_Slider::setHandleSize(Walaber__Vector2 p0, float * in_x1)
 
 {
-  float *in_x1;
   float fVar2;
   float fStack_40;
   float fStack_3c;
@@ -222,10 +221,9 @@ void Walaber::Widget_Slider::setHandleSize(Walaber__Vector2 p0)
 
 /* Walaber::Widget_Slider::setStepSize(Walaber::Vector2) */
 
-void Walaber::Widget_Slider::setStepSize(Walaber__Vector2 p0)
+void Walaber::Widget_Slider::setStepSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x158) = *in_x1;
   return;
@@ -239,10 +237,9 @@ void Walaber::Widget_Slider::setStepSize(Walaber__Vector2 p0)
 
 /* Walaber::Widget_Slider::setBaseSize(Walaber::Vector2) */
 
-void Walaber::Widget_Slider::setBaseSize(Walaber__Vector2 p0)
+void Walaber::Widget_Slider::setBaseSize(Walaber__Vector2 p0, float * in_x1)
 
 {
-  float *in_x1;
   float fVar2;
   undefined8 uStack_40;
   
@@ -540,10 +537,9 @@ void Walaber::Widget_Slider::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_Slider::linkScrollSet(Walaber::Widget_ScrollableSet*) */
 
-void Walaber::Widget_Slider::linkScrollSet(Walaber__Widget_ScrollableSet *p0)
+void Walaber::Widget_Slider::linkScrollSet(Walaber__Widget_ScrollableSet *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
   *(undefined8 *)&p0[1].field_0x18 = in_x1;
   return;
@@ -576,12 +572,11 @@ void Walaber::Widget_Slider::setValue(float p0)
 
 /* Walaber::Widget_Slider::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_Slider::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  long in_x2;
   float fVar4;
   float fVar5;
   float fVar6;

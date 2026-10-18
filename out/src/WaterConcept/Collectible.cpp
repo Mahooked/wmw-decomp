@@ -699,10 +699,9 @@ void WaterConcept::Collectible::update(float p0)
 
 /* WaterConcept::Collectible::handleTouchDown(Walaber::Vector2 const&) */
 
-void WaterConcept::Collectible::handleTouchDown(Walaber__Vector2 *p0)
+void WaterConcept::Collectible::handleTouchDown(Walaber__Vector2 *p0, Walaber__Vector2 * in_x1)
 
 {
-  Walaber__Vector2 *in_x1;
   
   if (p0[0x7b].f_0x0 < 0.0) {
     p0[0x77] = *in_x1;

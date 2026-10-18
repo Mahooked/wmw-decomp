@@ -1594,12 +1594,11 @@ void WaterConcept::Screen_Dialogue::enter(long param_1)
 
 /* WaterConcept::Screen_Dialogue::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_Dialogue::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_Dialogue::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -1809,11 +1808,10 @@ void WaterConcept::Screen_Dialogue::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Dialogue::draw(int) */
 
-void WaterConcept::Screen_Dialogue::draw(int p0)
+void WaterConcept::Screen_Dialogue::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -2005,7 +2003,7 @@ LAB_004ba63c:
 
 /* WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   char *pcVar1;
@@ -2018,7 +2016,6 @@ void WaterConcept::Screen_Dialogue::_finishedLoadingWidgets(void *p0)
   char *pcVar8;
   char *pcVar9;
   long *plVar10;
-  int *in_x1;
   float *pfVar11;
   ulong uVar12;
   long lVar14;

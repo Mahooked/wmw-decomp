@@ -71,11 +71,10 @@ void std::__ndk1::__thread_struct::notify_all_at_thread_exit
 
 /* std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std::__ndk1::__assoc_sub_state*) */
 
-void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std____ndk1____assoc_sub_state *p0)
+void std::__ndk1::__thread_struct::__make_ready_at_thread_exit(std____ndk1____assoc_sub_state *p0, undefined8 in_x1)
 
 {
   ulong uVar2;
-  undefined8 in_x1;
   undefined8 uStack_30;
   
   uVar2 = p0->f_0x0;

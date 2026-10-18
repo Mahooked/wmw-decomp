@@ -4326,13 +4326,12 @@ void WaterConcept::Screen_WorldSelect::_checkAndDeleteGiftApp(void)
 
 /* WaterConcept::Screen_WorldSelect::_spriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_WorldSelect::_spriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_WorldSelect::_spriteAnimationEventCallback(void *p0, undefined8 * in_x1)
 
 {
   long *plVar2;
   undefined8 uVar3;
   long lVar4;
-  undefined8 *in_x1;
   undefined1 auStack_40 [8];
   
   if (*(int *)(in_x1 + 3) == 4) {
@@ -6265,13 +6264,12 @@ void WaterConcept::Screen_WorldSelect::_updateLocksmithSprites(float p0)
 
 /* WaterConcept::Screen_WorldSelect::draw(int) */
 
-void WaterConcept::Screen_WorldSelect::draw(int p0)
+void WaterConcept::Screen_WorldSelect::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
   long *plVar3;
-  int in_w1;
   long lVar4;
   
   uVar2 = (ulong)(uint)p0;
@@ -10934,7 +10932,7 @@ LAB_00593658:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WorldSelect::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   char *pcVar1;
@@ -10964,7 +10962,6 @@ ulong WaterConcept::Screen_WorldSelect::messageRx(Walaber__Message *p0)
   char *pcVar25;
   char **ppcVar26;
   byte *pbVar27;
-  long in_x1;
   char *pcVar28;
   undefined8 uVar30;
   long *plVar31;
@@ -14675,7 +14672,7 @@ LAB_0059a330:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WorldSelect::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_WorldSelect::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_WorldSelect::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined4 *puVar1;
@@ -14740,7 +14737,6 @@ void WaterConcept::Screen_WorldSelect::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar61;
   long *plVar62;
   byte *pbVar63;
-  int *in_x1;
   undefined4 *puVar64;
   char *pcVar65;
   undefined8 uVar67;
@@ -19079,7 +19075,7 @@ LAB_005a0808:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WorldSelect::_locksmithSpriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_WorldSelect::_locksmithSpriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_WorldSelect::_locksmithSpriteAnimationEventCallback(void *p0, long * in_x1)
 
 {
   ulong uVar1;
@@ -19090,7 +19086,6 @@ void WaterConcept::Screen_WorldSelect::_locksmithSpriteAnimationEventCallback(vo
   ulong uVar7;
   undefined8 uVar8;
   undefined1 *puVar9;
-  long *in_x1;
   char *pcVar10;
   long lVar11;
   ulong uVar12;
@@ -19617,11 +19612,10 @@ void WaterConcept::Screen_WorldSelect::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_WorldSelect::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_WorldSelect::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_WorldSelect::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
-  undefined8 *in_x2;
   undefined1 auVar3 [16];
   undefined8 uStack_30;
   
@@ -19643,11 +19637,10 @@ void WaterConcept::Screen_WorldSelect::touchDown(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::Screen_WorldSelect::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_WorldSelect::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_WorldSelect::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
   ulong uVar2;
-  undefined8 *in_x3;
   undefined1 auVar3 [16];
   undefined8 uStack_38;
   undefined8 uStack_30;
@@ -19671,11 +19664,10 @@ void WaterConcept::Screen_WorldSelect::touchMoved(int p0,Walaber__Vector2 p1,Wal
 
 /* WaterConcept::Screen_WorldSelect::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_WorldSelect::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_WorldSelect::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
-  undefined8 *in_x2;
   undefined1 auVar3 [16];
   undefined8 uStack_30;
   

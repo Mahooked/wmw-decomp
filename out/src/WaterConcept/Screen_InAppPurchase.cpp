@@ -1574,12 +1574,11 @@ void WaterConcept::Screen_InAppPurchase::enter()
 
 /* WaterConcept::Screen_InAppPurchase::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_InAppPurchase::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_InAppPurchase::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -2495,11 +2494,10 @@ LAB_004e71d0:
 
 /* WaterConcept::Screen_InAppPurchase::draw(int) */
 
-void WaterConcept::Screen_InAppPurchase::draw(int p0)
+void WaterConcept::Screen_InAppPurchase::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -2526,7 +2524,7 @@ void WaterConcept::Screen_InAppPurchase::draw(int p0)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_InAppPurchase::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   void *pvVar1;
@@ -2546,7 +2544,6 @@ void WaterConcept::Screen_InAppPurchase::messageRx(Walaber__Message *p0)
   ulong *puVar16;
   long lVar17;
   long lVar18;
-  long in_x1;
   char *pcVar20;
   long lVar21;
   char *pcVar22;
@@ -6202,7 +6199,7 @@ LAB_004eb918:
 
 /* WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong uVar1;
@@ -6219,7 +6216,6 @@ void WaterConcept::Screen_InAppPurchase::_finishedLoadingWidgets(void *p0)
   long lVar13;
   ulong *puVar14;
   undefined8 *puVar15;
-  int *in_x1;
   char *pcVar16;
   char *pcVar18;
   byte bVar19;
@@ -6626,12 +6622,11 @@ LAB_004ec544:
 
 /* WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void*) */
 
-void WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void *p0)
+void WaterConcept::Screen_InAppPurchase::_fileExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;

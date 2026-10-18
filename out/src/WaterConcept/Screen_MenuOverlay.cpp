@@ -398,11 +398,10 @@ void WaterConcept::Screen_MenuOverlay::update(float p0,bool p1)
 
 /* WaterConcept::Screen_MenuOverlay::draw(int) */
 
-void WaterConcept::Screen_MenuOverlay::draw(int p0)
+void WaterConcept::Screen_MenuOverlay::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -1320,7 +1319,7 @@ LAB_00531ec4:
 
 /* WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined4 uVar1;
@@ -1330,7 +1329,6 @@ void WaterConcept::Screen_MenuOverlay::_finishedLoadingWidgets(void *p0)
   undefined8 uVar6;
   long lVar7;
   long *plVar8;
-  int *in_x1;
   undefined8 *puVar9;
   ulong uVar10;
   float fVar11;

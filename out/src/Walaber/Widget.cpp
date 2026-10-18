@@ -51,10 +51,9 @@
 
 /* Walaber::Widget::_generateWidgetName(int) */
 
-void Walaber::Widget::_generateWidgetName(int p0)
+void Walaber::Widget::_generateWidgetName(int p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   Walaber::StringHelper::intToStr(in_w1);
   return;
@@ -89,10 +88,9 @@ bool Walaber::Widget::getWidgetTypeFromString(std::__ndk1::basic_string<char, st
 
 /* Walaber::Widget::setLayer(int) */
 
-void Walaber::Widget::setLayer(int p0)
+void Walaber::Widget::setLayer(int p0, int in_w1)
 
 {
-  int in_w1;
   long lVar1;
   
   lVar1 = *(long *)((ulong)(uint)p0 + 200);
@@ -205,10 +203,9 @@ void Walaber::Widget::setLocalScale(Walaber__Vector2 *p0)
 
 /* Walaber::Widget::setBaseSize(Walaber::Vector2) */
 
-void Walaber::Widget::setBaseSize(Walaber__Vector2 p0)
+void Walaber::Widget::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x90) = *in_x1;
   Walaber::Widget::_updateAABB();
@@ -223,10 +220,9 @@ void Walaber::Widget::setBaseSize(Walaber__Vector2 p0)
 
 /* Walaber::Widget::setWidgetMgr(Walaber::WidgetManager*) */
 
-void Walaber::Widget::setWidgetMgr(Walaber__WidgetManager *p0)
+void Walaber::Widget::setWidgetMgr(Walaber__WidgetManager *p0, ulong in_x1)
 
 {
-  ulong in_x1;
   
   p0[1].f_0x38 = in_x1;
   return;
@@ -254,10 +250,9 @@ void Walaber::Widget::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget::draw(Walaber::SpriteBatch*, Walaber::Vector2) */
 
-void Walaber::Widget::draw(Walaber__SpriteBatch *p0,Walaber__Vector2 p1)
+void Walaber::Widget::draw(Walaber__SpriteBatch *p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   ulong uVar1;
   
   uVar1 = p0->f_0x0;
@@ -406,10 +401,9 @@ void Walaber::Widget::setRotation(float p0)
 
 /* Walaber::Widget::setEnabled(bool) */
 
-void Walaber::Widget::setEnabled(bool p0)
+void Walaber::Widget::setEnabled(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   
   *(byte *)((ulong)p0 + 0x8d) = in_w1 & 1;
   return;

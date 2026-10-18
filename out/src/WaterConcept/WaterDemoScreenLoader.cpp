@@ -9,11 +9,10 @@
 
 /* WaterConcept::WaterDemoScreenLoader::screenFromName(void*) */
 
-void * WaterConcept::WaterDemoScreenLoader::screenFromName(void *p0)
+void * WaterConcept::WaterDemoScreenLoader::screenFromName(void *p0, int * in_x1)
 
 {
   undefined8 uVar1;
-  int *in_x1;
   
   in_x1[2] = 0;
   in_x1[3] = 0;

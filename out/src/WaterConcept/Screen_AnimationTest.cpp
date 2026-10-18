@@ -356,12 +356,11 @@ void WaterConcept::Screen_AnimationTest::update(float p0,bool p1)
 
 /* WaterConcept::Screen_AnimationTest::draw(int) */
 
-void WaterConcept::Screen_AnimationTest::draw(int p0)
+void WaterConcept::Screen_AnimationTest::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -445,13 +444,12 @@ void WaterConcept::Screen_AnimationTest::handleEvent
 
 /* WaterConcept::Screen_AnimationTest::_playAnimation(int) */
 
-void WaterConcept::Screen_AnimationTest::_playAnimation(int p0)
+void WaterConcept::Screen_AnimationTest::_playAnimation(int p0, int in_w1)
 
 {
   char cVar1;
   undefined1 uVar2;
   ulong uVar4;
-  int in_w1;
   undefined8 uVar5;
   byte abStack_40 [16];
   void *pvStack_30;
@@ -954,11 +952,10 @@ LAB_004a8008:
 
 /* WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_AnimationTest::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar1;
-  int *in_x1;
   
   if (*in_x1 == 1) {
     uVar1 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),5);

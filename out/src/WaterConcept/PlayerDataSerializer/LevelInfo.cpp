@@ -10,12 +10,11 @@
 /* WaterConcept::PlayerDataSerializer::LevelInfo::merge(unsigned char, unsigned char, unsigned int,
    unsigned int, int) */
 
-bool WaterConcept::PlayerDataSerializer::LevelInfo::merge(uchar p0,uchar p1,uint p2,uint p3,int p4)
+bool WaterConcept::PlayerDataSerializer::LevelInfo::merge(uchar p0,uchar p1,uint p2,uint p3,int p4, int in_w5)
 
 {
   bool bVar1;
   byte *pbVar2;
-  int in_w5;
   
   pbVar2 = (byte *)(ulong)p0;
   bVar1 = *pbVar2 < p1;

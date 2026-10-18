@@ -258,12 +258,11 @@ void WaterConcept::Screen_Settings::enter()
 
 /* WaterConcept::Screen_Settings::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_Settings::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_Settings::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -797,12 +796,11 @@ void WaterConcept::Screen_Settings::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Settings::draw(int) */
 
-void WaterConcept::Screen_Settings::draw(int p0)
+void WaterConcept::Screen_Settings::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -2057,7 +2055,7 @@ LAB_005601f0:
 
 /* WaterConcept::Screen_Settings::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   long lVar1;
@@ -2068,7 +2066,6 @@ undefined8 WaterConcept::Screen_Settings::messageRx(Walaber__Message *p0)
   int iVar7;
   undefined8 uVar8;
   ulong uVar9;
-  long in_x1;
   ulong auStack_128 [2];
   void *pvStack_118;
   byte abStack_110 [16];
@@ -2529,14 +2526,13 @@ LAB_00560940:
 
 /* WaterConcept::Screen_Settings::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Settings::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Settings::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar2;
   long lVar3;
   ulong *puVar4;
   long *plVar5;
-  int *in_x1;
   int iVar6;
   float fVar7;
   byte abStack_b8 [16];

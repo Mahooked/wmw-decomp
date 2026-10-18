@@ -298,14 +298,13 @@ void WaterConcept::Screen_EditorObjectSelect::update(float p0,bool p1)
 
 /* WaterConcept::Screen_EditorObjectSelect::draw(int) */
 
-void WaterConcept::Screen_EditorObjectSelect::draw(int p0)
+void WaterConcept::Screen_EditorObjectSelect::draw(int p0, int in_w1)
 
 {
   long lVar1;
   bool bVar3;
   ulong uVar4;
   ulong uVar5;
-  int in_w1;
   long *plVar6;
   long *plVar7;
   long lVar8;
@@ -561,7 +560,7 @@ void WaterConcept::Screen_EditorObjectSelect::_screenToWorld(Walaber__Vector2 *p
 
 /* WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar1;
@@ -574,7 +573,6 @@ void WaterConcept::Screen_EditorObjectSelect::messageRx(Walaber__Message *p0)
   long *plVar9;
   long lVar10;
   undefined8 uVar11;
-  long in_x1;
   ulong uVar13;
   uint uVar14;
   char *pcVar15;
@@ -1767,10 +1765,9 @@ LAB_004d3b34:
 
 /* WaterConcept::Screen_EditorObjectSelect::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_EditorObjectSelect::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_EditorObjectSelect::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   *(undefined8 *)((ulong)(uint)p0 + 0xb8) = 0;
@@ -1809,10 +1806,9 @@ void WaterConcept::Screen_EditorObjectSelect::touchMoved
 
 /* WaterConcept::Screen_EditorObjectSelect::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_EditorObjectSelect::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_EditorObjectSelect::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;

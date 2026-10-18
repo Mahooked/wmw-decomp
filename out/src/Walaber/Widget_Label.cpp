@@ -79,10 +79,9 @@ Walaber__Widget_Label * Walaber::Widget_Label::operator=(Walaber__Widget_Label *
 
 /* Walaber::Widget_Label::setPadding(float, float, float, float) */
 
-void Walaber::Widget_Label::setPadding(float p0,float p1,float p2,float p3)
+void Walaber::Widget_Label::setPadding(long in_x0, float p0,float p1,float p2,float p3)
 
 {
-  long in_x0;
   float fStack_50;
   float fStack_4c;
   
@@ -578,10 +577,9 @@ void Walaber::Widget_Label::reloadFont(long param_1)
 
 /* Walaber::Widget_Label::setTile(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Label::setTile(Walaber__Vector2 *p0)
+void Walaber::Widget_Label::setTile(Walaber__Vector2 *p0, Walaber__Vector2 * in_x1)
 
 {
-  Walaber__Vector2 *in_x1;
   
   p0[0x26] = *in_x1;
   Walaber::Widget_Label::_applyTile();
@@ -664,10 +662,9 @@ void Walaber::Widget_Label::getTextureTile(undefined8 *param_1,long param_2)
 
 /* Walaber::Widget_Label::setTileOffset(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Label::setTileOffset(Walaber__Vector2 *p0)
+void Walaber::Widget_Label::setTileOffset(Walaber__Vector2 *p0, Walaber__Vector2 * in_x1)
 
 {
-  Walaber__Vector2 *in_x1;
   
   p0[0x24] = *in_x1;
   return;
@@ -716,10 +713,9 @@ void Walaber::Widget_Label::getTileOffsetBySize(undefined8 *param_1,long param_2
 
 /* Walaber::Widget_Label::setTileAnimation(Walaber::Vector2 const&) */
 
-void Walaber::Widget_Label::setTileAnimation(Walaber__Vector2 *p0)
+void Walaber::Widget_Label::setTileAnimation(Walaber__Vector2 *p0, Walaber__Vector2 * in_x1)
 
 {
-  Walaber__Vector2 *in_x1;
   
   p0[0x27] = *in_x1;
   return;
@@ -1086,10 +1082,9 @@ LAB_00380630:
 
 /* Walaber::Widget_Label::setBaseSize(Walaber::Vector2) */
 
-void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0)
+void Walaber::Widget_Label::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uStack_30;
   
   uStack_30 = *in_x1;
@@ -1233,10 +1228,9 @@ void Walaber::Widget_Label::setTextEdgePaddingPercentSize(float p0)
 
 /* Walaber::Widget_Label::setTextEdgeLRPaddingPercentSize(float, float) */
 
-void Walaber::Widget_Label::setTextEdgeLRPaddingPercentSize(float p0,float p1)
+void Walaber::Widget_Label::setTextEdgeLRPaddingPercentSize(long in_x0, float p0,float p1)
 
 {
-  long in_x0;
   float afStack_40 [2];
   
   Walaber::Node::getWorldScale(afStack_40);

@@ -9,10 +9,9 @@
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::vector(unsigned long, char const&) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,char *p1)
+void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,char *p1, undefined1 * in_x2)
 
 {
-  undefined1 *in_x2;
   undefined1 *puVar1;
   
   *(undefined8 *)p0 = 0;
@@ -40,11 +39,10 @@ void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::vector(ulong p0,cha
 
 /* std::__ndk1::vector<char, std::__ndk1::allocator<char> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(ulong p0)
+void std::__ndk1::vector<char,std::__ndk1::allocator<char>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;
-  ulong in_x1;
   
   if (-1 < (long)in_x1) {
     lVar1 = operator new(in_x1);

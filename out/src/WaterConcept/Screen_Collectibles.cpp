@@ -522,7 +522,7 @@ void WaterConcept::Screen_Collectibles::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined1 *puVar1;
@@ -556,7 +556,6 @@ void WaterConcept::Screen_Collectibles::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar30;
   undefined8 uVar31;
   long *plVar32;
-  int *in_x1;
   undefined8 uVar34;
   undefined8 uVar35;
   undefined8 uVar36;
@@ -3186,7 +3185,7 @@ LAB_004b1f68:
 
 /* WaterConcept::Screen_Collectibles::_addNewLabel(int, bool) */
 
-void WaterConcept::Screen_Collectibles::_addNewLabel(int p0,bool p1)
+void WaterConcept::Screen_Collectibles::_addNewLabel(int p0,bool p1, uint in_w2)
 
 {
   uint *puVar1;
@@ -3194,7 +3193,6 @@ void WaterConcept::Screen_Collectibles::_addNewLabel(int p0,bool p1)
   ulong uVar4;
   long lVar5;
   long *plVar6;
-  uint in_w2;
   undefined8 uStack_50;
   uint uStack_44;
   float fStack_40;
@@ -3344,12 +3342,11 @@ void WaterConcept::Screen_Collectibles::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Collectibles::draw(int) */
 
-void WaterConcept::Screen_Collectibles::draw(int p0)
+void WaterConcept::Screen_Collectibles::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar3;
-  int in_w1;
   undefined8 uVar4;
   undefined4 uStack_64;
   undefined1 auStack_60 [24];

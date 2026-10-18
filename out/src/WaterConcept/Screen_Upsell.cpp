@@ -339,11 +339,10 @@ void WaterConcept::Screen_Upsell::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Upsell::draw(int) */
 
-void WaterConcept::Screen_Upsell::draw(int p0)
+void WaterConcept::Screen_Upsell::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -559,7 +558,7 @@ undefined8 WaterConcept::Screen_Upsell::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_Upsell::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Upsell::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Upsell::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   char *pcVar1;
@@ -572,7 +571,6 @@ void WaterConcept::Screen_Upsell::_finishedLoadingWidgets(void *p0)
   ulong *puVar9;
   undefined8 *puVar10;
   undefined8 uVar11;
-  int *in_x1;
   char *pcVar12;
   char *pcVar14;
   byte bVar15;
@@ -1111,12 +1109,11 @@ LAB_00567fd8:
 
 /* WaterConcept::Screen_Upsell::_fileExistsCallback(void*) */
 
-void WaterConcept::Screen_Upsell::_fileExistsCallback(void *p0)
+void WaterConcept::Screen_Upsell::_fileExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;

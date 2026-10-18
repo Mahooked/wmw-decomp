@@ -9,14 +9,13 @@
 
 /* std::__ndk1::collate_byname<wchar_t>::collate_byname(char const*, unsigned long) */
 
-void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1)
+void std::__ndk1::collate_byname<wchar_t>::collate_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  long in_x2;
   void *pvVar6;
   ulong p0_00;
   ulong uStack_78;

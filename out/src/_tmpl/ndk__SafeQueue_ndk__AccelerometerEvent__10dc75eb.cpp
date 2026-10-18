@@ -45,12 +45,11 @@ void ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue(long param_1)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk::AccelerometerEvent&) */
 
-bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0)
+bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0, long * in_x1)
 
 {
   long lVar1;
   long *p0_00;
-  long *in_x1;
   long lVar2;
   
   pthread_mutex_lock(&p0[2].f_0x8);
@@ -78,11 +77,10 @@ bool ndk::SafeQueue<ndk::AccelerometerEvent>::pop(ndk__AccelerometerEvent *p0)
 
 /* ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk::AccelerometerEvent const&) */
 
-void ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk__AccelerometerEvent *p0)
+void ndk::SafeQueue<ndk::AccelerometerEvent>::push(ndk__AccelerometerEvent *p0, long * in_x1)
 
 {
   long *plVar1;
-  long *in_x1;
   long lVar2;
   
   pthread_mutex_lock(&p0[2].f_0x8);

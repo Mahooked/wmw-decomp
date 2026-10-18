@@ -333,10 +333,9 @@ void WaterConcept::IAPNotification::_loadSprites(long param_1)
 
 /* WaterConcept::IAPNotification::_spriteAnimationEventCallback(void*) */
 
-void WaterConcept::IAPNotification::_spriteAnimationEventCallback(void *p0)
+void WaterConcept::IAPNotification::_spriteAnimationEventCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
     *(undefined1 *)(*(long *)((long)p0 + 0x208) + 200) = 0;
@@ -1117,10 +1116,9 @@ LAB_0049bce4:
 
 /* WaterConcept::IAPNotification::_wrapTextInLabel(Walaber::Widget_Label*) */
 
-void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
+void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0, long in_x1)
 
 {
-  long in_x1;
   long lVar2;
   float fVar3;
   float fVar4;
@@ -1177,12 +1175,11 @@ void WaterConcept::IAPNotification::_wrapTextInLabel(Walaber__Widget_Label *p0)
 
 /* WaterConcept::IAPNotification::_wrapTextInButton(Walaber::Widget_PushButton*) */
 
-void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton *p0)
+void WaterConcept::IAPNotification::_wrapTextInButton(Walaber__Widget_PushButton *p0, long in_x1)
 
 {
   undefined8 uVar2;
   long lVar3;
-  long in_x1;
   float fVar4;
   float fVar5;
   float fVar6;

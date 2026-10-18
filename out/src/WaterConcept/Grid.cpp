@@ -171,12 +171,11 @@ void WaterConcept::Grid::operator=(WaterConcept__Grid *p0)
 
 /* WaterConcept::Grid::getCellForPos(Walaber::Vector2 const&) const */
 
-undefined8 WaterConcept::Grid::getCellForPos(Walaber__Vector2 *p0)
+undefined8 WaterConcept::Grid::getCellForPos(Walaber__Vector2 *p0, float * in_x1)
 
 {
   uint uVar1;
   uint uVar2;
-  float *in_x1;
   uint uVar3;
   uint uVar4;
   

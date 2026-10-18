@@ -118,11 +118,10 @@
 
 /* Walaber::ComicStrip::update(float) */
 
-void Walaber::ComicStrip::update(float p0)
+void Walaber::ComicStrip::update(int * in_x0, float p0)
 
 {
   int iVar2;
-  int *in_x0;
   ulong uVar3;
   long *plVar4;
   undefined8 uVar5;

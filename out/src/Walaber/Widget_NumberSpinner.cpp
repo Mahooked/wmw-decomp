@@ -56,14 +56,13 @@
 
 /* Walaber::Widget_NumberSpinner::setRange(int, int, bool) */
 
-void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2)
+void Walaber::Widget_NumberSpinner::setRange(int p0,int p1,bool p2, byte in_w3)
 
 {
   bool bVar1;
   int iVar2;
   ulong uVar4;
   uint uVar5;
-  byte in_w3;
   undefined4 *puVar6;
   int *piVar7;
   int iStack_3c;
@@ -196,11 +195,10 @@ void Walaber::Widget_NumberSpinner::setVisibleCellCount(float p0)
 
 /* Walaber::Widget_NumberSpinner::setNumberRect(int, int, int, int, int, int, int) */
 
-void Walaber::Widget_NumberSpinner::setNumberRect(int p0,int p1,int p2,int p3,int p4,int p5,int p6)
+void Walaber::Widget_NumberSpinner::setNumberRect(int p0,int p1,int p2,int p3,int p4,int p5,int p6, int in_w7)
 
 {
   long lVar1;
-  int in_w7;
   
   if ((uint)p1 < 10) {
     lVar1 = (ulong)(uint)p0 + (long)p1 * 0x10;
@@ -267,12 +265,11 @@ void Walaber::Widget_NumberSpinner::setNumberRect
 
 /* Walaber::Widget_NumberSpinner::setSelection(int) */
 
-void Walaber::Widget_NumberSpinner::setSelection(int p0)
+void Walaber::Widget_NumberSpinner::setSelection(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   ulong uVar3;
   
   uVar2 = (ulong)(uint)p0;
@@ -662,11 +659,10 @@ LAB_00382624:
 
 /* Walaber::Widget_NumberSpinner::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x250) != 0) {
@@ -685,10 +681,9 @@ undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerDown(int p0,Walaber__Fi
 
 /* Walaber::Widget_NumberSpinner::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) != 0) {
     return 0;
@@ -705,10 +700,9 @@ undefined8 Walaber::Widget_NumberSpinner::acceptNewFingerEntered(int p0,Walaber_
 
 /* Walaber::Widget_NumberSpinner::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_NumberSpinner::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_NumberSpinner::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) == in_x2) {
     Walaber::Widget_NumberSpinner::_updateFinger();
@@ -758,10 +752,9 @@ void Walaber::Widget_NumberSpinner::_updateFinger(long param_1)
 
 /* Walaber::Widget_NumberSpinner::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_NumberSpinner::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_NumberSpinner::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) == in_x2) {
     Walaber::Widget_NumberSpinner::_updateFinger();
@@ -777,10 +770,9 @@ undefined8 Walaber::Widget_NumberSpinner::releaseFingerMoved(int p0,Walaber__Fin
 
 /* Walaber::Widget_NumberSpinner::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_NumberSpinner::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_NumberSpinner::releaseFingerUp(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) != in_x2) {
     return;
@@ -797,10 +789,9 @@ void Walaber::Widget_NumberSpinner::releaseFingerUp(int p0,Walaber__FingerInfo *
 
 /* Walaber::Widget_NumberSpinner::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_NumberSpinner::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_NumberSpinner::releaseFingerLeft(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) == in_x2) {
     Walaber::Widget_NumberSpinner::_updateFinger();
@@ -817,10 +808,9 @@ undefined8 Walaber::Widget_NumberSpinner::releaseFingerLeft(int p0,Walaber__Fing
 
 /* Walaber::Widget_NumberSpinner::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_NumberSpinner::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_NumberSpinner::notifyFingerLost(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x250) != in_x2) {
     return;

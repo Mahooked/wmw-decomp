@@ -112,12 +112,11 @@ void Walaber::GraphicsGL::DumpedGLState::print(char *param_1)
 
 /* Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber::GraphicsGL::DumpedGLState const&) */
 
-void Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber__GraphicsGL__DumpedGLState *p0)
+void Walaber::GraphicsGL::DumpedGLState::printDiffs(Walaber__GraphicsGL__DumpedGLState *p0, uchar * in_x1)
 
 {
   char *pcVar1;
   int iVar2;
-  uchar *in_x1;
   long lVar3;
   long lVar4;
   

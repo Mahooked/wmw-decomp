@@ -161,14 +161,13 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::imbue(std_
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::setbuf(char*, long) */
 
-char * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1)
+char * std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::setbuf(char *p0,long p1, ulong in_x2)
 
 {
   char cVar1;
   undefined8 uVar2;
   ulong extraout_x1;
   ulong p1_00;
-  ulong in_x2;
   
   p0[0x28] = '\0';
   p0[0x29] = '\0';
@@ -631,12 +630,11 @@ LAB_003d5108:
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::pbackfail(int) */
 
-uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0)
+uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(int p0, uint in_w1)
 
 {
   ulong uVar1;
   ulong uVar2;
-  uint in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if ((*(long *)(uVar2 + 0x78) != 0) &&
@@ -663,7 +661,7 @@ uint std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::pbackfail(
 
 /* std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char> >::overflow(int) */
 
-void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(int p0)
+void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(int p0, int in_w1)
 
 {
   uint uVar2;
@@ -672,7 +670,6 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::overflow(i
   long lVar5;
   long *plVar6;
   undefined8 uVar7;
-  int in_w1;
   undefined1 *puVar8;
   undefined8 uVar9;
   long lVar10;

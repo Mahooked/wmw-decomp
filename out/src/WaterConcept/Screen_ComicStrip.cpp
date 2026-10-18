@@ -1417,12 +1417,11 @@ void WaterConcept::Screen_ComicStrip::endStrip(long param_1)
 
 /* WaterConcept::Screen_ComicStrip::draw(int) */
 
-void WaterConcept::Screen_ComicStrip::draw(int p0)
+void WaterConcept::Screen_ComicStrip::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   lVar1 = uVar2 + 0x28;

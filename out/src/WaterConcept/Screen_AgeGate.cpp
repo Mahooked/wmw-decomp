@@ -229,12 +229,11 @@ LAB_004a51bc:
 
 /* WaterConcept::Screen_AgeGate::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_AgeGate::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_AgeGate::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -735,12 +734,11 @@ void WaterConcept::Screen_AgeGate::update(float p0,bool p1)
 
 /* WaterConcept::Screen_AgeGate::draw(int) */
 
-void WaterConcept::Screen_AgeGate::draw(int p0)
+void WaterConcept::Screen_AgeGate::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -1088,12 +1086,11 @@ LAB_004a61dc:
 
 /* WaterConcept::Screen_AgeGate::_onAgeChange(int) */
 
-void WaterConcept::Screen_AgeGate::_onAgeChange(int p0)
+void WaterConcept::Screen_AgeGate::_onAgeChange(int p0, uint in_w1)
 
 {
   ulong uVar1;
   long *plVar2;
-  uint in_w1;
   
   uVar1 = (ulong)(uint)p0;
   *(uint *)(uVar1 + 0xfc) = in_w1 & ((int)in_w1 >> 0x1f ^ 0xffffffffU);

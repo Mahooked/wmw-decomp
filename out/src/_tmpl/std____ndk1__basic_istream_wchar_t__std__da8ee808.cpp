@@ -896,11 +896,10 @@ ulong std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::get(wchar_t&) */
 
-wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0)
+wchar_t * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::get(wchar_t *p0, int * in_x1)
 
 {
   int iVar1;
-  int *in_x1;
   
   iVar1 = std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t>>::get();
   if (iVar1 != -1) {
@@ -1280,13 +1279,12 @@ LAB_005aae68:
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::ignore(long, unsigned
    int) */
 
-long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore(long p0,uint p1)
+long std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::ignore(long p0,uint p1, int in_w2)
 
 {
   int *piVar1;
   int iVar2;
   long *plVar3;
-  int in_w2;
   uint uVar4;
   long lVar5;
   long lVar6;
@@ -1463,11 +1461,10 @@ LAB_005ab1e8:
     */
 
 undefined8
-std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome(wchar_t *p0,long p1)
+std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::readsome(wchar_t *p0,long p1, long in_x2)
 
 {
   long *plVar1;
-  long in_x2;
   long lVar2;
   long lVar3;
   uint uVar4;
@@ -1522,12 +1519,11 @@ LAB_005ab2f8:
 
 /* std::__ndk1::basic_istream<wchar_t, std::__ndk1::char_traits<wchar_t> >::putback(wchar_t) */
 
-long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback(wchar_t p0)
+long * std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::putback(wchar_t p0, int in_w1)
 
 {
   long *plVar1;
   long lVar2;
-  int in_w1;
   uint uVar3;
   long *plVar4;
   int *piVar5;

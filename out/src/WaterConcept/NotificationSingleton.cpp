@@ -372,7 +372,7 @@ void WaterConcept::NotificationSingleton::notify
 /* WARNING: Removing unreachable block (ram,0x0049e690) */
 /* WaterConcept::NotificationSingleton::update(void*) */
 
-void WaterConcept::NotificationSingleton::update(void *p0)
+void WaterConcept::NotificationSingleton::update(void *p0, float * in_x1)
 
 {
   long lVar1;
@@ -383,7 +383,6 @@ void WaterConcept::NotificationSingleton::update(void *p0)
   undefined8 uVar7;
   long lVar8;
   long *plVar9;
-  float *in_x1;
   ulong uVar10;
   long lVar11;
   undefined8 uVar12;
@@ -1437,13 +1436,12 @@ LAB_0049f6b8:
 
 /* WaterConcept::NotificationSingleton::touchFirstResponder(void*) */
 
-void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
+void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0, int * in_x1)
 
 {
   int iVar1;
   long *plVar3;
   ulong uVar4;
-  int *in_x1;
   undefined8 uStack_70;
   undefined8 uStack_68;
   undefined8 uStack_60;
@@ -1484,10 +1482,9 @@ void WaterConcept::NotificationSingleton::touchFirstResponder(void *p0)
 
 /* WaterConcept::NotificationSingleton::notifyAchievement(void*) */
 
-void WaterConcept::NotificationSingleton::notifyAchievement(void *p0)
+void WaterConcept::NotificationSingleton::notifyAchievement(void *p0, long in_x1)
 
 {
-  long in_x1;
   byte abStack_40 [16];
   void *pvStack_30;
   
@@ -1620,12 +1617,11 @@ void WaterConcept::NotificationSingleton::notifyIAPAdNotification
 
 /* WaterConcept::NotificationSingleton::hideIAPAdNotification(bool) */
 
-void WaterConcept::NotificationSingleton::hideIAPAdNotification(bool p0)
+void WaterConcept::NotificationSingleton::hideIAPAdNotification(bool p0, ulong in_x1)
 
 {
   long lVar2;
   long *plVar3;
-  ulong in_x1;
   byte abStack_50 [16];
   void *pvStack_40;
   
@@ -1671,14 +1667,13 @@ void WaterConcept::NotificationSingleton::hideIAPAdNotification(bool p0)
 
 /* WaterConcept::NotificationSingleton::messageRx(Walaber::Message const&) */
 
-void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0)
+void WaterConcept::NotificationSingleton::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar1;
   byte bVar2;
   int iVar4;
   undefined8 uVar5;
-  long in_x1;
   byte abStack_80 [16];
   void *pvStack_70;
   byte abStack_68 [16];

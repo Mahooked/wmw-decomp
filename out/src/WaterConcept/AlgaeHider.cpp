@@ -234,12 +234,11 @@ void WaterConcept::AlgaeHider::_initFinished(void)
 
 /* WaterConcept::AlgaeHider::addAlgae(WaterConcept::GridCell) */
 
-bool WaterConcept::AlgaeHider::addAlgae(WaterConcept__GridCell p0)
+bool WaterConcept::AlgaeHider::addAlgae(WaterConcept__GridCell p0, long in_x1)
 
 {
   int iVar1;
   long *plVar2;
-  long in_x1;
   long lVar3;
   ulong uVar4;
   

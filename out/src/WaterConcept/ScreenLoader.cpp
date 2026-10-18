@@ -9,11 +9,10 @@
 
 /* WaterConcept::ScreenLoader::screenFromName(void*) */
 
-void * WaterConcept::ScreenLoader::screenFromName(void *p0)
+void * WaterConcept::ScreenLoader::screenFromName(void *p0, undefined4 * in_x1)
 
 {
   undefined8 uVar1;
-  undefined4 *in_x1;
   
   *(undefined8 *)(in_x1 + 2) = 0;
   switch(*in_x1) {

@@ -253,7 +253,7 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
 
 /* Walaber::Texture2D::_fileLoaded(void*) */
 
-void Walaber::Texture2D::_fileLoaded(void *p0)
+void Walaber::Texture2D::_fileLoaded(void *p0, int * in_x1)
 
 {
   byte *pbVar1;
@@ -265,7 +265,6 @@ void Walaber::Texture2D::_fileLoaded(void *p0)
   ulong uVar7;
   undefined8 *puVar8;
   long lVar9;
-  int *in_x1;
   ulong p1;
   ulong extraout_x1;
   ulong extraout_x1_00;

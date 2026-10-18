@@ -267,12 +267,11 @@ void Walaber::SkeletonActor::loadSkeleton(long param_1,undefined8 param_2,undefi
 
 /* Walaber::SkeletonActor::_skeletonLoaded(void*) */
 
-void Walaber::SkeletonActor::_skeletonLoaded(void *p0)
+void Walaber::SkeletonActor::_skeletonLoaded(void *p0, long in_x1)
 
 {
   undefined8 *puVar2;
   int *piVar3;
-  long in_x1;
   long lVar4;
   undefined8 *puStack_88;
   undefined8 *puStack_78;
@@ -510,7 +509,7 @@ void Walaber::SkeletonActor::_clearAnimationGroupData(long param_1)
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* Walaber::SkeletonActor::_xmlFileLoaded(void*) */
 
-void Walaber::SkeletonActor::_xmlFileLoaded(void *p0)
+void Walaber::SkeletonActor::_xmlFileLoaded(void *p0, long in_x1)
 
 {
   byte bVar1;
@@ -535,7 +534,6 @@ void Walaber::SkeletonActor::_xmlFileLoaded(void *p0)
   long *plVar21;
   undefined1 *puVar22;
   byte *pbVar23;
-  long in_x1;
   byte *pbVar25;
   ulong uVar26;
   byte *pbVar27;
@@ -3550,13 +3548,12 @@ void Walaber::SkeletonActor::init
 /* Walaber::SkeletonActor::init(Walaber::Vector2 const&, unsigned int, Walaber::Vector2 const&,
    bool) */
 
-void Walaber::SkeletonActor::init(Walaber__Vector2 *p0,uint p1,Walaber__Vector2 *p2,bool p3)
+void Walaber::SkeletonActor::init(Walaber__Vector2 *p0,uint p1,Walaber__Vector2 *p2,bool p3, byte in_w4)
 
 {
   byte bVar1;
   bool bVar3;
   Walaber__Vector2 WVar4;
-  byte in_w4;
   long *plVar5;
   Walaber__Vector2 *pWVar6;
   undefined8 uVar7;
@@ -3649,12 +3646,11 @@ LAB_00344928:
 
 /* Walaber::SkeletonActor::update(float) */
 
-void Walaber::SkeletonActor::update(float p0)
+void Walaber::SkeletonActor::update(long in_x0, float p0)
 
 {
   bool bVar1;
   int iVar2;
-  long in_x0;
   long *plVar3;
   long lVar4;
   ulong uVar5;
@@ -3769,13 +3765,12 @@ void Walaber::SkeletonActor::setColor(Walaber__Color *p0)
 
 /* Walaber::SkeletonActor::draw(Walaber::SpriteBatch*, bool, bool) */
 
-void Walaber::SkeletonActor::draw(Walaber__SpriteBatch *p0,bool p1,bool p2)
+void Walaber::SkeletonActor::draw(Walaber__SpriteBatch *p0,bool p1,bool p2, uint in_w3)
 
 {
   bool bVar1;
   long *plVar2;
   long *plVar3;
-  uint in_w3;
   long lVar4;
   ulong uVar5;
   ulong uVar6;
@@ -4293,10 +4288,9 @@ bool Walaber::SkeletonActor::isCurrentAnimationMemberOfGroup(long param_1)
 
 /* Walaber::SkeletonActor::setPosition(Walaber::Vector2) */
 
-void Walaber::SkeletonActor::setPosition(Walaber__Vector2 p0)
+void Walaber::SkeletonActor::setPosition(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   *(undefined8 *)((long)p0 + 0x58) = *in_x1;
                     /* WARNING: Could not recover jumptable at 0x00345694. Too many branches */
@@ -4333,14 +4327,13 @@ void Walaber::SkeletonActor::setAngle(float p0)
 
 /* Walaber::SkeletonActor::_animationEventCallback(void*) */
 
-void Walaber::SkeletonActor::_animationEventCallback(void *p0)
+void Walaber::SkeletonActor::_animationEventCallback(void *p0, undefined8 * in_x1)
 
 {
   int iVar1;
   int iVar3;
   int iVar4;
   long lVar5;
-  undefined8 *in_x1;
   uint uVar6;
   long *plVar7;
   ulong uVar8;
@@ -4970,14 +4963,13 @@ void Walaber::SkeletonActor::_doEventAction(long param_1,long *param_2)
 
 /* Walaber::SkeletonActor::_soundLoaded(void*) */
 
-void Walaber::SkeletonActor::_soundLoaded(void *p0)
+void Walaber::SkeletonActor::_soundLoaded(void *p0, long in_x1)
 
 {
   long lVar1;
   long *plVar2;
   int iVar4;
   ulong uVar5;
-  long in_x1;
   int *piVar6;
   long *plVar7;
   undefined8 uVar8;
@@ -5162,13 +5154,12 @@ void Walaber::SkeletonActor::_soundLoaded(void *p0)
 
 /* Walaber::SkeletonActor::_gotSoundFile(void*) */
 
-void Walaber::SkeletonActor::_gotSoundFile(void *p0)
+void Walaber::SkeletonActor::_gotSoundFile(void *p0, int * in_x1)
 
 {
   long *plVar1;
   int iVar3;
   ulong uVar4;
-  int *in_x1;
   char *pcVar5;
   long lVar6;
   int *piVar7;

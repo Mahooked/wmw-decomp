@@ -207,11 +207,10 @@ undefined8 Walaber::ZipArchiveReader::getCurrentFileSize(long param_1)
 
 /* Walaber::ZipArchiveReader::readCurrentFile(void*) */
 
-void Walaber::ZipArchiveReader::readCurrentFile(void *p0)
+void Walaber::ZipArchiveReader::readCurrentFile(void *p0, undefined8 in_x1)
 
 {
   undefined4 uVar1;
-  undefined8 in_x1;
   
   uVar1 = wUnzReadCurrentFile(*(undefined8 *)p0,in_x1,*(undefined4 *)((long)p0 + 0x58));
   Walaber::Logger::printf("Walaber",2,"ZipArchiveReader::readCurrentFile() read %d bytes",uVar1);

@@ -131,7 +131,7 @@ void WaterConcept::Bomb::_initFinished(long param_1)
 
 /* WaterConcept::Bomb::_explosionAnimationFinished(void*) */
 
-void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
+void WaterConcept::Bomb::_explosionAnimationFinished(void *p0, long in_x1)
 
 {
   ulong uVar1;
@@ -141,7 +141,6 @@ void WaterConcept::Bomb::_explosionAnimationFinished(void *p0)
   undefined8 *puVar6;
   int *piVar7;
   undefined8 uVar8;
-  long in_x1;
   long lVar9;
   undefined8 *puStack_b8;
   undefined8 *puStack_a8;
@@ -353,7 +352,7 @@ void WaterConcept::Bomb::update(float p0)
 
 /* WaterConcept::Bomb::setToExplode(bool) */
 
-void WaterConcept::Bomb::setToExplode(bool p0)
+void WaterConcept::Bomb::setToExplode(bool p0, ulong in_x1)
 
 {
   long lVar1;
@@ -363,7 +362,6 @@ void WaterConcept::Bomb::setToExplode(bool p0)
   int *piVar6;
   undefined8 uVar7;
   undefined8 **ppuVar8;
-  ulong in_x1;
   long lVar10;
   undefined8 *puStack_e8;
   undefined1 auStack_d8 [16];

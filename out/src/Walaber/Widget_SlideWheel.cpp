@@ -99,10 +99,9 @@ void Walaber::Widget_SlideWheel::init(void)
 
 /* Walaber::Widget_SlideWheel::setPadding(float, float, float, float) */
 
-void Walaber::Widget_SlideWheel::setPadding(float p0,float p1,float p2,float p3)
+void Walaber::Widget_SlideWheel::setPadding(long in_x0, float p0,float p1,float p2,float p3)
 
 {
-  long in_x0;
   
   *(float *)(in_x0 + 0x130) = p0 + p1;
   *(float *)(in_x0 + 0x134) = p2 + p3;
@@ -264,11 +263,10 @@ void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_SlideWheel::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_SlideWheel::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_SlideWheel::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x140) != 0) {
@@ -287,10 +285,9 @@ undefined8 Walaber::Widget_SlideWheel::acceptNewFingerDown(int p0,Walaber__Finge
 
 /* Walaber::Widget_SlideWheel::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_SlideWheel::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_SlideWheel::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) != 0) {
     return 0;
@@ -307,10 +304,9 @@ undefined8 Walaber::Widget_SlideWheel::acceptNewFingerEntered(int p0,Walaber__Fi
 
 /* Walaber::Widget_SlideWheel::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_SlideWheel::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_SlideWheel::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) == in_x2) {
     Walaber::Widget_SlideWheel::_updateFinger();
@@ -360,10 +356,9 @@ void Walaber::Widget_SlideWheel::_updateFinger(long param_1)
 
 /* Walaber::Widget_SlideWheel::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_SlideWheel::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_SlideWheel::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) == in_x2) {
     Walaber::Widget_SlideWheel::_updateFinger();
@@ -379,10 +374,9 @@ undefined8 Walaber::Widget_SlideWheel::releaseFingerMoved(int p0,Walaber__Finger
 
 /* Walaber::Widget_SlideWheel::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_SlideWheel::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_SlideWheel::releaseFingerUp(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) != in_x2) {
     return;
@@ -399,10 +393,9 @@ void Walaber::Widget_SlideWheel::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 /* Walaber::Widget_SlideWheel::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_SlideWheel::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_SlideWheel::releaseFingerLeft(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) == in_x2) {
     Walaber::Widget_SlideWheel::_updateFinger();
@@ -419,10 +412,9 @@ undefined8 Walaber::Widget_SlideWheel::releaseFingerLeft(int p0,Walaber__FingerI
 
 /* Walaber::Widget_SlideWheel::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_SlideWheel::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_SlideWheel::notifyFingerLost(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x140) != in_x2) {
     return;

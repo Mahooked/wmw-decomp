@@ -9,14 +9,13 @@
 
 /* std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char const*, unsigned long) */
 
-void std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1)
+void std::__ndk1::ctype_byname<wchar_t>::ctype_byname(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  long in_x2;
   void *pvVar6;
   ulong p0_00;
   ulong uStack_78;
@@ -152,12 +151,11 @@ void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
 /* WARNING: Type propagation algorithm not settling */
 /* std::__ndk1::ctype_byname<wchar_t>::do_is(unsigned long, wchar_t) const */
 
-bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1)
+bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1, undefined4 in_w2)
 
 {
   undefined1 uVar1;
   int iVar2;
-  undefined4 in_w2;
   
   if ((p1 & 1U) == 0) {
     uVar1 = false;
@@ -214,13 +212,12 @@ bool std::__ndk1::ctype_byname<wchar_t>::do_is(ulong p0,wchar_t p1)
 /* std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t const*, wchar_t const*, unsigned long*) const
     */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2, ulong * in_x3)
 
 {
   wchar_t wVar1;
   wchar_t *pwVar2;
   int iVar3;
-  ulong *in_x3;
   ulong uVar4;
   
   pwVar2 = p1;
@@ -294,12 +291,11 @@ LAB_005d7ca4:
 /* std::__ndk1::ctype_byname<wchar_t>::do_scan_is(unsigned long, wchar_t const*, wchar_t const*)
    const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
   wchar_t wVar1;
   int iVar2;
-  wchar_t *in_x3;
   uint uVar3;
   
   if (p2 != in_x3) {
@@ -346,13 +342,12 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wc
 /* std::__ndk1::ctype_byname<wchar_t>::do_scan_not(unsigned long, wchar_t const*, wchar_t const*)
    const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
   wchar_t wVar1;
   wchar_t *pwVar2;
   int iVar3;
-  wchar_t *in_x3;
   uint uVar4;
   
   pwVar2 = p2;
@@ -392,10 +387,9 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,w
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t) const */
 
-void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0)
+void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   towupper(in_w1);
   return;
@@ -409,12 +403,11 @@ void std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t p0)
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
   wchar_t wVar2;
-  wchar_t *in_x2;
   
   pwVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {
@@ -433,10 +426,9 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t) const */
 
-void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0)
+void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   towlower(in_w1);
   return;
@@ -450,12 +442,11 @@ void std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t p0)
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
   wchar_t wVar2;
-  wchar_t *in_x2;
   
   pwVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {
@@ -474,12 +465,11 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_widen(char) const */
 
-undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0)
+undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0, undefined1 in_w1)
 
 {
   undefined4 uVar1;
   long lVar2;
-  undefined1 in_w1;
   
   lVar2 = uselocale(*(undefined8 *)((ulong)(byte)p0 + 0x10));
                     /* try { // try from 005d7f68 to 005d7f6f has its CatchHandler @ 005d7f94 */
@@ -499,14 +489,13 @@ undefined4 std::__ndk1::ctype_byname<wchar_t>::do_widen(char p0)
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_widen(char const*, char const*, wchar_t*) const */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2, undefined4 * in_x3)
 
 {
   wchar_t *pwVar1;
   wchar_t wVar2;
   undefined4 uVar3;
   long lVar4;
-  undefined4 *in_x3;
   
   pwVar1 = (wchar_t *)p1;
   for (; (wchar_t *)p1 != p2; p1 = (char *)((long)p1 + 1)) {
@@ -533,12 +522,11 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_widen(char *p0,char *p1,wchar_t
 
 /* std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t, char) const */
 
-int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1)
+int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1, int in_w2)
 
 {
   int iVar1;
   long lVar2;
-  int in_w2;
   
   lVar2 = uselocale(*(undefined8 *)((ulong)(uint)p0 + 0x10));
                     /* try { // try from 005d8074 to 005d807b has its CatchHandler @ 005d80a8 */
@@ -562,7 +550,7 @@ int std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t p0,char p1)
 /* std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t const*, wchar_t const*, char, char*) const
     */
 
-wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3)
+wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3, undefined1 * in_x4)
 
 {
   int iVar1;
@@ -570,7 +558,6 @@ wchar_t * std::__ndk1::ctype_byname<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,
   int iVar3;
   long lVar4;
   wchar_t *pwVar5;
-  undefined1 *in_x4;
   wchar_t *pwVar6;
   
   pwVar5 = (wchar_t *)(ulong)(byte)p2;

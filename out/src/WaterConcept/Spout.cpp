@@ -1024,11 +1024,10 @@ LAB_0048bbf4:
 
 /* WaterConcept::Spout::setInfiniteParticles(int, bool) */
 
-void WaterConcept::Spout::setInfiniteParticles(int p0,bool p1)
+void WaterConcept::Spout::setInfiniteParticles(int p0,bool p1, byte in_w2)
 
 {
   ulong uVar2;
-  byte in_w2;
   long lVar3;
   uint uStack_50;
   float fStack_4c;

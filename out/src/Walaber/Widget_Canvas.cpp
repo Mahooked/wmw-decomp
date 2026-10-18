@@ -148,11 +148,10 @@ LAB_0037a994:
 
 /* Walaber::Widget_Canvas::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == 0) {
@@ -180,11 +179,10 @@ undefined4 Walaber::Widget_Canvas::acceptNewFingerDown(int p0,Walaber__FingerInf
 
 /* Walaber::Widget_Canvas::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::_acceptFinger(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Canvas::_acceptFinger(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == 0) {
@@ -209,11 +207,10 @@ undefined8 Walaber::Widget_Canvas::_acceptFinger(int p0,Walaber__FingerInfo *p1)
 
 /* Walaber::Widget_Canvas::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Canvas::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(char *)(uVar1 + 0x128) == '\0') {
@@ -242,11 +239,10 @@ undefined8 Walaber::Widget_Canvas::acceptNewFingerEntered(int p0,Walaber__Finger
 
 /* Walaber::Widget_Canvas::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Canvas::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (((*(long *)(uVar1 + 0x100) != 0) && (*(long *)(uVar1 + 0x100) == in_x2)) &&
@@ -264,11 +260,10 @@ undefined8 Walaber::Widget_Canvas::releaseFingerStayed(int p0,Walaber__FingerInf
 
 /* Walaber::Widget_Canvas::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Canvas::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (((*(long *)(uVar1 + 0x100) != 0) && (*(long *)(uVar1 + 0x100) == in_x2)) &&
@@ -301,12 +296,11 @@ void Walaber::Widget_Canvas::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 /* Walaber::Widget_Canvas::_releaseFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Canvas::_releaseFinger(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Canvas::_releaseFinger(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   undefined4 uVar1;
   ulong uVar2;
-  long in_x2;
   long lVar3;
   float fVar4;
   float fVar5;

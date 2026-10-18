@@ -343,11 +343,10 @@ void WaterConcept::StarSeed::addTeleport
 
 /* WaterConcept::StarSeed::_curveLoadCallback(void*) */
 
-void * WaterConcept::StarSeed::_curveLoadCallback(void *p0)
+void * WaterConcept::StarSeed::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -368,10 +367,9 @@ void * WaterConcept::StarSeed::_curveLoadCallback(void *p0)
 
 /* WaterConcept::StarSeed::_gotSE(void*) */
 
-void WaterConcept::StarSeed::_gotSE(void *p0)
+void WaterConcept::StarSeed::_gotSE(void *p0, int * in_x1)
 
 {
-  int *in_x1;
   
   if (*in_x1 == 0x11c) {
     Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x610,in_x1 + 2);
@@ -620,7 +618,7 @@ void WaterConcept::StarSeed::_initFinished(long param_1)
 
 /* WaterConcept::StarSeed::_starSeedAnimationCallback(void*) */
 
-void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
+void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0, long in_x1)
 
 {
   ulong uVar1;
@@ -629,7 +627,6 @@ void WaterConcept::StarSeed::_starSeedAnimationCallback(void *p0)
   bool bVar5;
   int iVar6;
   undefined8 uVar7;
-  long in_x1;
   long lVar8;
   undefined8 uStack_80;
   undefined8 uStack_78;
@@ -4139,12 +4136,11 @@ void WaterConcept::StarSeed::killMe(long param_1)
 
 /* WaterConcept::StarSeed::setAllowCollection(bool) */
 
-void WaterConcept::StarSeed::setAllowCollection(bool p0)
+void WaterConcept::StarSeed::setAllowCollection(bool p0, byte in_w1)
 
 {
   long *plVar1;
   ulong uVar2;
-  byte in_w1;
   
   uVar2 = (ulong)p0;
   plVar1 = *(long **)(uVar2 + 400);

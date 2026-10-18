@@ -140,10 +140,9 @@ void WaterConcept::InteractiveObject::setLocalAngle(float *p0)
 
 /* WaterConcept::InteractiveObject::draw(Walaber::SpriteBatch*) */
 
-void WaterConcept::InteractiveObject::draw(Walaber__SpriteBatch *p0)
+void WaterConcept::InteractiveObject::draw(Walaber__SpriteBatch *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
                     /* WARNING: Could not recover jumptable at 0x0047765c. Too many branches */
                     /* WARNING: Treating indirect jump as call */
@@ -229,12 +228,11 @@ void WaterConcept::InteractiveObject::_spriteHasLoaded(Walaber__Sprite *p0)
 
 /* WaterConcept::InteractiveObject::_gotSE(void*) */
 
-void WaterConcept::InteractiveObject::_gotSE(void *p0)
+void WaterConcept::InteractiveObject::_gotSE(void *p0, int * in_x1)
 
 {
   int iVar1;
   undefined8 uVar2;
-  int *in_x1;
   
   iVar1 = *in_x1;
   if (iVar1 == 0x3c) {
@@ -627,7 +625,7 @@ void WaterConcept::InteractiveObject::init
 
 /* WaterConcept::InteractiveObject::_initFileLoaded(void*) */
 
-void WaterConcept::InteractiveObject::_initFileLoaded(void *p0)
+void WaterConcept::InteractiveObject::_initFileLoaded(void *p0, long in_x1)
 
 {
   undefined *puVar2;
@@ -644,7 +642,6 @@ void WaterConcept::InteractiveObject::_initFileLoaded(void *p0)
   undefined1 *puVar13;
   undefined8 *puVar14;
   long *plVar15;
-  long in_x1;
   ulong extraout_x1;
   ulong p1;
   long lVar17;
@@ -1108,13 +1105,12 @@ void WaterConcept::InteractiveObject::addSprite
 
 /* WaterConcept::InteractiveObject::_spriteLoaded(void*) */
 
-void WaterConcept::InteractiveObject::_spriteLoaded(void *p0)
+void WaterConcept::InteractiveObject::_spriteLoaded(void *p0, long in_x1)
 
 {
   ulong uVar1;
   int iVar3;
   long lVar4;
-  long in_x1;
   undefined8 *puVar5;
   byte *pbVar6;
   long *plVar7;
@@ -1502,7 +1498,7 @@ void WaterConcept::InteractiveObject::_gotDefaultProperties(void *p0)
 
 /* WaterConcept::InteractiveObject::setProperties(Walaber::PropertyList const&) */
 
-void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0)
+void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0, undefined8 * in_x1)
 
 {
   ulong uVar1;
@@ -1514,7 +1510,6 @@ void WaterConcept::InteractiveObject::setProperties(Walaber__PropertyList *p0)
   undefined8 *puVar8;
   void *pvVar9;
   char *pcVar10;
-  undefined8 *in_x1;
   long *plVar12;
   undefined8 *puVar13;
   undefined8 uVar14;
@@ -6710,11 +6705,10 @@ void WaterConcept::InteractiveObject::debugDrawAABB
 
 /* WaterConcept::InteractiveObject::contains(Walaber::Vector2 const&, int&) const */
 
-undefined8 WaterConcept::InteractiveObject::contains(Walaber__Vector2 *p0,int *p1)
+undefined8 WaterConcept::InteractiveObject::contains(Walaber__Vector2 *p0,int *p1, int * in_x2)
 
 {
   undefined8 uVar1;
-  int *in_x2;
   int iVar2;
   ulong uVar3;
   ulong uVar4;
@@ -6747,13 +6741,12 @@ LAB_00487de0:
 
 /* WaterConcept::InteractiveObject::shapeContains(Walaber::Vector2 const&, int) const */
 
-bool WaterConcept::InteractiveObject::shapeContains(Walaber__Vector2 *p0,int p1)
+bool WaterConcept::InteractiveObject::shapeContains(Walaber__Vector2 *p0,int p1, int in_w2)
 
 {
   float fVar1;
   float fVar2;
   float *pfVar3;
-  int in_w2;
   int iVar4;
   undefined8 *puVar5;
   ulong uVar6;
@@ -7428,14 +7421,13 @@ ulong WaterConcept::InteractiveObject::rayIntersect
 
 /* WaterConcept::InteractiveObject::setMotorOn(bool) */
 
-void WaterConcept::InteractiveObject::setMotorOn(bool p0)
+void WaterConcept::InteractiveObject::setMotorOn(bool p0, byte in_w1)
 
 {
   int iVar1;
   char cVar2;
   int iVar3;
   ulong uVar4;
-  byte in_w1;
   undefined4 uVar5;
   
   uVar4 = (ulong)p0;
@@ -7509,10 +7501,9 @@ LAB_00488be0:
 
 /* WaterConcept::InteractiveObject::handleTouchDown(Walaber::Vector2 const&) */
 
-void WaterConcept::InteractiveObject::handleTouchDown(Walaber__Vector2 *p0)
+void WaterConcept::InteractiveObject::handleTouchDown(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uStack_40;
   
   if (*(char *)((long)&p0[0x22].f_0x0 + 3) != '\0') {
@@ -7731,10 +7722,9 @@ void WaterConcept::InteractiveObject::_updateSpriteTransforms(void)
 
 /* WaterConcept::InteractiveObject::vacuumRaycastFilterCallback(void*) */
 
-void WaterConcept::InteractiveObject::vacuumRaycastFilterCallback(void *p0)
+void WaterConcept::InteractiveObject::vacuumRaycastFilterCallback(void *p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   void *pvVar1;
   
   pvVar1 = (void *)*in_x1;
@@ -7807,13 +7797,12 @@ void WaterConcept::InteractiveObject::_transformVertices
 
 /* WaterConcept::InteractiveObject::_updateGlobalShape(bool) */
 
-void WaterConcept::InteractiveObject::_updateGlobalShape(bool p0)
+void WaterConcept::InteractiveObject::_updateGlobalShape(bool p0, byte in_w1)
 
 {
   long lVar1;
   ulong uVar3;
   undefined8 uVar4;
-  byte in_w1;
   long lVar5;
   long *plVar6;
   ulong uVar7;
@@ -7987,10 +7976,9 @@ void WaterConcept::InteractiveObject::_handleCollision
 
 /* WaterConcept::InteractiveObject::applyVacuumForce(Walaber::BaseParticle*) */
 
-void WaterConcept::InteractiveObject::applyVacuumForce(Walaber__BaseParticle *p0)
+void WaterConcept::InteractiveObject::applyVacuumForce(Walaber__BaseParticle *p0, float * in_x1)
 
 {
-  float *in_x1;
   undefined8 *puVar2;
   float fVar3;
   float fVar4;
@@ -8129,7 +8117,7 @@ LAB_0048986c:
 
 /* WaterConcept::InteractiveObject::_applyCommand(int, bool) */
 
-void WaterConcept::InteractiveObject::_applyCommand(int p0,bool p1)
+void WaterConcept::InteractiveObject::_applyCommand(int p0,bool p1, uint in_w2)
 
 {
   float *pfVar1;
@@ -8137,7 +8125,6 @@ void WaterConcept::InteractiveObject::_applyCommand(int p0,bool p1)
   float fVar3;
   float fVar4;
   ulong uVar5;
-  uint in_w2;
   int iVar6;
   float *pfVar7;
   long lVar8;
@@ -8273,12 +8260,11 @@ LAB_00489b14:
 
 /* WaterConcept::InteractiveObject::intersects(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::InteractiveObject::intersects(WaterConcept__InteractiveObject *p0)
+void WaterConcept::InteractiveObject::intersects(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   undefined8 uVar2;
   ulong uVar3;
-  long in_x1;
   long lVar4;
   ulong uVar5;
   long *plVar6;

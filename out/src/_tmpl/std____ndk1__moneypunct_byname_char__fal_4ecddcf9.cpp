@@ -9,7 +9,7 @@
 
 /* std::__ndk1::moneypunct_byname<char, false>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
+void std::__ndk1::moneypunct_byname<char,false>::init(char *p0, undefined8 in_x1)
 
 {
   char *pcVar1;
@@ -20,7 +20,6 @@ void std::__ndk1::moneypunct_byname<char,false>::init(char *p0)
   ulong uVar7;
   ulong *puVar8;
   undefined8 uVar9;
-  undefined8 in_x1;
   void *pvVar10;
   ulong p0_00;
   ulong uStack_78;

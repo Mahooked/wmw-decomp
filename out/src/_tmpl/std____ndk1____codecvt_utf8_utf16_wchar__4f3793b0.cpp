@@ -60,10 +60,9 @@ void std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_in
 /* std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_unshift(mbstate_t&, char*, char*, char*&) const */
 
 undefined8
-std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
+std::__ndk1::__codecvt_utf8_utf16<wchar_t>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
-  undefined8 *in_x4;
   
   *in_x4 = p2;
   return 3;

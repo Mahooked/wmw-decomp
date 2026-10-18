@@ -30,11 +30,10 @@
 
 /* Walaber::Transition_Wipe::setup(float) */
 
-void Walaber::Transition_Wipe::setup(float p0)
+void Walaber::Transition_Wipe::setup(long in_x0, float p0)
 
 {
   float fVar1;
-  long in_x0;
   float fVar2;
   float fVar3;
   

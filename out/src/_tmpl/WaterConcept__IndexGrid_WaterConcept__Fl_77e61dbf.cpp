@@ -9,14 +9,13 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int p0,int p1)
+void WaterConcept::IndexGrid<WaterConcept::Fluids::NeighborList>::resize(int p0,int p1, int in_w2)
 
 {
   uint uVar1;
   undefined1 auVar2 [16];
   int *piVar3;
   undefined8 uVar4;
-  int in_w2;
   long lVar5;
   
   piVar3 = (int *)(ulong)(uint)p0;

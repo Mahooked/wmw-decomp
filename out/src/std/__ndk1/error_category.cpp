@@ -42,12 +42,11 @@ undefined4 std::__ndk1::error_category::default_error_condition(int p0)
 
 /* std::__ndk1::error_category::equivalent(int, std::__ndk1::error_condition const&) const */
 
-bool std::__ndk1::error_category::equivalent(int p0,std____ndk1__error_condition *p1)
+bool std::__ndk1::error_category::equivalent(int p0,std____ndk1__error_condition *p1, int * in_x2)
 
 {
   int iVar1;
   long extraout_x1;
-  int *in_x2;
   
   iVar1 = (**(code **)(*(long *)(ulong)(uint)p0 + 0x18))();
   return *(long *)(in_x2 + 2) == extraout_x1 && *in_x2 == iVar1;
@@ -61,10 +60,9 @@ bool std::__ndk1::error_category::equivalent(int p0,std____ndk1__error_condition
 
 /* std::__ndk1::error_category::equivalent(std::__ndk1::error_code const&, int) const */
 
-bool std::__ndk1::error_category::equivalent(std____ndk1__error_code *p0,int p1)
+bool std::__ndk1::error_category::equivalent(std____ndk1__error_code *p0,int p1, int in_w2)
 
 {
-  int in_w2;
   
   return *(std____ndk1__error_code **)((int *)(ulong)(uint)p1 + 2) == p0 &&
          *(int *)(ulong)(uint)p1 == in_w2;

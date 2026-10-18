@@ -272,10 +272,9 @@ void Walaber::Widget_MovingTextBox::setBGTexture(long param_1,long *param_2)
 
 /* Walaber::Widget_MovingTextBox::setPadding(float, float, float, float) */
 
-void Walaber::Widget_MovingTextBox::setPadding(float p0,float p1,float p2,float p3)
+void Walaber::Widget_MovingTextBox::setPadding(long in_x0, float p0,float p1,float p2,float p3)
 
 {
-  long in_x0;
   
   *(float *)(in_x0 + 0x164) = p0;
   *(float *)(in_x0 + 0x168) = p1;
@@ -722,10 +721,9 @@ void Walaber::Widget_MovingTextBox::notifyFingerLost(int p0,Walaber__FingerInfo 
 
 /* Walaber::Widget_MovingTextBox::setBaseSize(Walaber::Vector2) */
 
-void Walaber::Widget_MovingTextBox::setBaseSize(Walaber__Vector2 p0)
+void Walaber::Widget_MovingTextBox::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uStack_30;
   
   uStack_30 = *in_x1;

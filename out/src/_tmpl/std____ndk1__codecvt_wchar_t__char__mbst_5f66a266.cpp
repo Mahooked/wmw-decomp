@@ -9,14 +9,13 @@
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(char const*, unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(char *p0,ulong p1, long in_x2)
 
 {
   long lVar2;
   ulong uVar3;
   ulong *puVar4;
   undefined8 uVar5;
-  long in_x2;
   void *pvVar6;
   ulong p0_00;
   ulong uStack_78;
@@ -90,11 +89,10 @@ LAB_005cd6cc:
 
 /* std::__ndk1::codecvt<wchar_t, char, mbstate_t>::codecvt(unsigned long) */
 
-void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0)
+void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::codecvt(ulong p0, long in_x1)
 
 {
   int iVar1;
-  long in_x1;
   
   *(undefined ***)p0 = &PTR__codecvt_007178c8;
   *(long *)(p0 + 8) = in_x1 + -1;

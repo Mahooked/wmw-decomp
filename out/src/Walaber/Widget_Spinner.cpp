@@ -225,13 +225,12 @@ void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_Spinner::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Spinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_Spinner::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
-  long in_x2;
   float fVar4;
   float fVar5;
   undefined1 auStack_48 [8];
@@ -267,13 +266,12 @@ LAB_0038a4f4:
 
 /* Walaber::Widget_Spinner::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Spinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_Spinner::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
-  long in_x2;
   float fVar4;
   float fVar5;
   undefined1 auStack_48 [8];
@@ -309,10 +307,9 @@ LAB_0038a5bc:
 
 /* Walaber::Widget_Spinner::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Spinner::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Spinner::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x130) == in_x2) {
     Walaber::Widget_Spinner::_updateFinger();
@@ -394,10 +391,9 @@ void Walaber::Widget_Spinner::_updateFinger(long param_1)
 
 /* Walaber::Widget_Spinner::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Spinner::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Spinner::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x130) == in_x2) {
     Walaber::Widget_Spinner::_updateFinger();
@@ -413,10 +409,9 @@ undefined8 Walaber::Widget_Spinner::releaseFingerMoved(int p0,Walaber__FingerInf
 
 /* Walaber::Widget_Spinner::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Spinner::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_Spinner::releaseFingerUp(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x130) != in_x2) {
     return;
@@ -433,10 +428,9 @@ void Walaber::Widget_Spinner::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
 
 /* Walaber::Widget_Spinner::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Spinner::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Spinner::releaseFingerLeft(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x130) == in_x2) {
     Walaber::Widget_Spinner::_updateFinger();
@@ -453,10 +447,9 @@ undefined8 Walaber::Widget_Spinner::releaseFingerLeft(int p0,Walaber__FingerInfo
 
 /* Walaber::Widget_Spinner::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_Spinner::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_Spinner::notifyFingerLost(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
-  long in_x2;
   
   if (*(long *)((ulong)(uint)p0 + 0x130) != in_x2) {
     return;

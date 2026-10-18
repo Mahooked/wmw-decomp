@@ -1137,7 +1137,7 @@ void WaterConcept::Screen_Editor::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Editor::draw(int) */
 
-void WaterConcept::Screen_Editor::draw(int p0)
+void WaterConcept::Screen_Editor::draw(int p0, int in_w1)
 
 {
   ulong uVar1;
@@ -1152,7 +1152,6 @@ void WaterConcept::Screen_Editor::draw(int p0)
   ulong uVar11;
   long lVar12;
   ulong uVar13;
-  int in_w1;
   undefined2 *puVar14;
   long lVar15;
   uint uVar16;
@@ -2551,7 +2550,7 @@ LAB_004bfca4:
 
 /* WaterConcept::Screen_Editor::_gotDefaultProperties(void*) */
 
-void WaterConcept::Screen_Editor::_gotDefaultProperties(void *p0)
+void WaterConcept::Screen_Editor::_gotDefaultProperties(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
@@ -2559,7 +2558,6 @@ void WaterConcept::Screen_Editor::_gotDefaultProperties(void *p0)
   byte bVar3;
   byte bVar4;
   int iVar5;
-  byte *in_x1;
   byte *pbVar6;
   ulong uVar7;
   byte *pbVar8;
@@ -2624,14 +2622,13 @@ LAB_004c0288:
 
 /* WaterConcept::Screen_Editor::_loadedEditorData(void*) */
 
-void WaterConcept::Screen_Editor::_loadedEditorData(void *p0)
+void WaterConcept::Screen_Editor::_loadedEditorData(void *p0, long in_x1)
 
 {
   bool bVar2;
   int iVar3;
   undefined8 uVar4;
   ulong uVar5;
-  long in_x1;
   long *plVar6;
   long lVar7;
   undefined8 *puVar8;
@@ -2813,7 +2810,7 @@ void WaterConcept::Screen_Editor::_loadedEditorData(void *p0)
 
 /* WaterConcept::Screen_Editor::_gotDefaultPropertiesNewObject(void*) */
 
-void WaterConcept::Screen_Editor::_gotDefaultPropertiesNewObject(void *p0)
+void WaterConcept::Screen_Editor::_gotDefaultPropertiesNewObject(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
@@ -2823,7 +2820,6 @@ void WaterConcept::Screen_Editor::_gotDefaultPropertiesNewObject(void *p0)
   long lVar6;
   long *plVar7;
   ulong *puVar8;
-  byte *in_x1;
   byte *pbVar9;
   undefined4 uVar10;
   byte *pbVar12;
@@ -3864,7 +3860,7 @@ LAB_004c1d00:
 
 /* WaterConcept::Screen_Editor::selectObject(WaterConcept::InteractiveObject*, bool) */
 
-void WaterConcept::Screen_Editor::selectObject(WaterConcept__InteractiveObject *p0,bool p1)
+void WaterConcept::Screen_Editor::selectObject(WaterConcept__InteractiveObject *p0,bool p1, ulong in_x2)
 
 {
   ulong uVar1;
@@ -3872,7 +3868,6 @@ void WaterConcept::Screen_Editor::selectObject(WaterConcept__InteractiveObject *
   int iVar3;
   long lVar4;
   long lVar6;
-  ulong in_x2;
   undefined1 *puVar7;
   ulong uVar8;
   undefined1 *puVar9;
@@ -7061,13 +7056,12 @@ LAB_004c6798:
 
 /* WaterConcept::Screen_Editor::removeObject(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Screen_Editor::removeObject(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Screen_Editor::removeObject(WaterConcept__InteractiveObject *p0, ulong in_x1)
 
 {
   undefined8 *puVar1;
   byte bVar2;
   int iVar4;
-  ulong in_x1;
   ulong uVar5;
   byte *pbVar6;
   ulong *puVar7;
@@ -7534,12 +7528,11 @@ LAB_004c6a38:
 
 /* WaterConcept::Screen_Editor::_getObjectDataCopy(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Screen_Editor::_getObjectDataCopy(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Screen_Editor::_getObjectDataCopy(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   ulong uVar1;
   long lVar2;
-  long in_x1;
   ulong uVar3;
   ulong uVar4;
   uint uVar5;
@@ -8654,12 +8647,11 @@ void WaterConcept::Screen_Editor::_toggleGhost(long param_1)
 
 /* WaterConcept::Screen_Editor::_editObject(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Screen_Editor::_editObject(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Screen_Editor::_editObject(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   ulong uVar1;
   long lVar2;
-  long in_x1;
   ulong uVar4;
   ulong uVar5;
   uint uVar6;
@@ -9423,10 +9415,9 @@ LAB_004c9998:
 
 /* WaterConcept::Screen_Editor::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_Editor::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_Editor::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -9442,10 +9433,9 @@ void WaterConcept::Screen_Editor::touchDown(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::Screen_Editor::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_Editor::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_Editor::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
   
@@ -9463,10 +9453,9 @@ void WaterConcept::Screen_Editor::touchMoved(int p0,Walaber__Vector2 p1,Walaber_
 
 /* WaterConcept::Screen_Editor::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_Editor::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_Editor::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -9482,12 +9471,11 @@ void WaterConcept::Screen_Editor::touchUp(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::Screen_Editor::_selectGroupMembers(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Screen_Editor::_selectGroupMembers(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Screen_Editor::_selectGroupMembers(WaterConcept__InteractiveObject *p0, ulong in_x1)
 
 {
   undefined1 *puVar1;
   bool bVar2;
-  ulong in_x1;
   ulong uVar3;
   long *plVar4;
   undefined1 *puVar5;
@@ -9567,12 +9555,11 @@ LAB_004c9bb0:
 
 /* WaterConcept::Screen_Editor::_deselectGroupMembers(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Screen_Editor::_deselectGroupMembers(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Screen_Editor::_deselectGroupMembers(WaterConcept__InteractiveObject *p0, ulong in_x1)
 
 {
   undefined1 *puVar1;
   bool bVar2;
-  ulong in_x1;
   long *plVar3;
   ulong uVar4;
   undefined1 *puVar5;

@@ -41,10 +41,9 @@ void std::__ndk1::collate<char>::~collate(void *param_1)
 /* std::__ndk1::collate<char>::do_compare(char const*, char const*, char const*, char const*) const
     */
 
-ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3)
+ulong std::__ndk1::collate<char>::do_compare(char *p0,char *p1,char *p2,char *p3, byte * in_x4)
 
 {
-  byte *in_x4;
   
   while( true ) {
     if ((byte *)p3 == in_x4) {
@@ -154,12 +153,11 @@ LAB_005b2010:
 
 /* std::__ndk1::collate<char>::do_hash(char const*, char const*) const */
 
-ulong std::__ndk1::collate<char>::do_hash(char *p0,char *p1)
+ulong std::__ndk1::collate<char>::do_hash(char *p0,char *p1, byte * in_x2)
 
 {
   ulong uVar1;
   byte *pbVar2;
-  byte *in_x2;
   ulong uVar3;
   
   if ((byte *)p1 != in_x2) {

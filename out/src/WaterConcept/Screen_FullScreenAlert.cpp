@@ -140,12 +140,11 @@ void WaterConcept::Screen_FullScreenAlert::enter(long param_1)
 
 /* WaterConcept::Screen_FullScreenAlert::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_FullScreenAlert::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_FullScreenAlert::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -619,11 +618,10 @@ void WaterConcept::Screen_FullScreenAlert::update(float p0,bool p1)
 
 /* WaterConcept::Screen_FullScreenAlert::draw(int) */
 
-void WaterConcept::Screen_FullScreenAlert::draw(int p0)
+void WaterConcept::Screen_FullScreenAlert::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -671,7 +669,7 @@ void WaterConcept::Screen_FullScreenAlert::handleEvent
 
 /* WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong uVar1;
@@ -682,7 +680,6 @@ void WaterConcept::Screen_FullScreenAlert::_finishedLoadingWidgets(void *p0)
   long *plVar7;
   long lVar8;
   ulong *puVar9;
-  int *in_x1;
   undefined8 uVar11;
   byte *pbVar12;
   long lVar13;

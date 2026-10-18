@@ -1008,12 +1008,11 @@ void WaterConcept::Screen_Hub::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Hub::draw(int) */
 
-void WaterConcept::Screen_Hub::draw(int p0)
+void WaterConcept::Screen_Hub::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar3;
-  int in_w1;
   undefined8 uVar4;
   undefined4 uStack_64;
   undefined1 auStack_60 [24];
@@ -2718,14 +2717,13 @@ LAB_004de050:
 
 /* WaterConcept::Screen_Hub::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_Hub::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_Hub::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   int iVar1;
   int iVar3;
   ulong uVar4;
   undefined8 uVar5;
-  long in_x1;
   undefined1 *puVar6;
   byte abStack_e0 [17];
   undefined2 uStack_cf;
@@ -3277,7 +3275,7 @@ void WaterConcept::Screen_Hub::pushPerryDemoScreen(void)
 /* WARNING: Restarted to delay deadcode elimination for space: stack */
 /* WaterConcept::Screen_Hub::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Hub::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Hub::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   void *pvVar1;
@@ -3308,7 +3306,6 @@ void WaterConcept::Screen_Hub::_finishedLoadingWidgets(void *p0)
   long *plVar27;
   void *pvVar28;
   long lVar29;
-  int *in_x1;
   void *pvVar31;
   void *pvVar32;
   byte *pbVar33;
@@ -5616,12 +5613,11 @@ LAB_004e39f0:
 
 /* WaterConcept::Screen_Hub::_wrapTextInLabel(Walaber::Widget_Label*) */
 
-void WaterConcept::Screen_Hub::_wrapTextInLabel(Walaber__Widget_Label *p0)
+void WaterConcept::Screen_Hub::_wrapTextInLabel(Walaber__Widget_Label *p0, long in_x1)
 
 {
   undefined8 uVar2;
   long lVar3;
-  long in_x1;
   float fVar4;
   float fVar5;
   float fVar6;

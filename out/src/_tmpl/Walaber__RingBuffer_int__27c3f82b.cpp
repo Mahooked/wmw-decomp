@@ -9,12 +9,11 @@
 
 /* Walaber::RingBuffer<int>::setCapacity(int) */
 
-void Walaber::RingBuffer<int>::setCapacity(int p0)
+void Walaber::RingBuffer<int>::setCapacity(int p0, uint in_w1)
 
 {
   undefined8 *puVar1;
   undefined8 uVar2;
-  uint in_w1;
   undefined4 in_register_0000400c;
   ulong uVar3;
   

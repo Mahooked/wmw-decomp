@@ -553,11 +553,10 @@ void WaterConcept::Screen_GraphicsContextRestore::update(float p0,bool p1)
 
 /* WaterConcept::Screen_GraphicsContextRestore::draw(int) */
 
-void WaterConcept::Screen_GraphicsContextRestore::draw(int p0)
+void WaterConcept::Screen_GraphicsContextRestore::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   undefined4 auStack_50 [2];
   undefined8 uStack_48;
   undefined8 uStack_40;
@@ -605,10 +604,9 @@ int WaterConcept::Screen_GraphicsContextRestore::handleEvent
 
 /* WaterConcept::Screen_GraphicsContextRestore::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_GraphicsContextRestore::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_GraphicsContextRestore::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -647,10 +645,9 @@ void WaterConcept::Screen_GraphicsContextRestore::touchMoved
 
 /* WaterConcept::Screen_GraphicsContextRestore::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_GraphicsContextRestore::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_GraphicsContextRestore::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;

@@ -472,10 +472,9 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
 
 /* Walaber::Widget_IconList::setIconListSizes(Walaber::Vector2, int, int, int, int) */
 
-void Walaber::Widget_IconList::setIconListSizes(Walaber__Vector2 p0,int p1,int p2,int p3,int p4)
+void Walaber::Widget_IconList::setIconListSizes(Walaber__Vector2 p0,int p1,int p2,int p3,int p4, int in_w5)
 
 {
-  int in_w5;
   float fStack_50;
   float fStack_4c;
   
@@ -1064,13 +1063,12 @@ LAB_0037e8e4:
 
 /* Walaber::Widget_IconList::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
   Walaber__FingerInfo *extraout_x1;
-  long in_x2;
   float fVar4;
   float fVar5;
   float fVar6;
@@ -1122,11 +1120,10 @@ void Walaber::Widget_IconList::acceptNewFingerDown(int p0,Walaber__FingerInfo *p
 
 /* Walaber::Widget_IconList::_iconFromPos(Walaber::Vector2) */
 
-void Walaber::Widget_IconList::_iconFromPos(Walaber__Vector2 p0)
+void Walaber::Widget_IconList::_iconFromPos(Walaber__Vector2 p0, float * in_x1)
 
 {
   int iVar2;
-  float *in_x1;
   float fVar3;
   float fStack_40;
   float fStack_3c;
@@ -1299,11 +1296,10 @@ void Walaber::Widget_IconList::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
 
 /* Walaber::Widget_IconList::selectIconWithID(int) */
 
-void Walaber::Widget_IconList::selectIconWithID(int p0)
+void Walaber::Widget_IconList::selectIconWithID(int p0, int in_w1)
 
 {
   ulong uVar1;
-  int in_w1;
   long lVar2;
   int iVar3;
   int *piVar4;

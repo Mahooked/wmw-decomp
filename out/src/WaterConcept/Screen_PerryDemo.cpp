@@ -461,12 +461,11 @@ void WaterConcept::Screen_PerryDemo::update(float p0,bool p1)
 
 /* WaterConcept::Screen_PerryDemo::draw(int) */
 
-void WaterConcept::Screen_PerryDemo::draw(int p0)
+void WaterConcept::Screen_PerryDemo::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -595,14 +594,13 @@ void WaterConcept::Screen_PerryDemo::_closeButtonPressed(long param_1)
 
 /* WaterConcept::Screen_PerryDemo::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_PerryDemo::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_PerryDemo::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   int iVar2;
   long lVar3;
   byte *pbVar4;
   ulong uVar5;
-  long in_x1;
   uint uVar6;
   undefined8 uVar7;
   byte abStack_e8 [18];
@@ -1004,7 +1002,7 @@ void WaterConcept::Screen_PerryDemo::handleFocus(Walaber::Widget *param_1,Walabe
 
 /* WaterConcept::Screen_PerryDemo::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_PerryDemo::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_PerryDemo::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong uVar1;
@@ -1017,7 +1015,6 @@ void WaterConcept::Screen_PerryDemo::_finishedLoadingWidgets(void *p0)
   undefined8 *puVar9;
   undefined8 uVar10;
   long lVar11;
-  int *in_x1;
   char *pcVar12;
   char *pcVar14;
   uint uVar15;
@@ -1317,12 +1314,11 @@ LAB_0054436c:
 
 /* WaterConcept::Screen_PerryDemo::_localizedLogoExistsCallback(void*) */
 
-void WaterConcept::Screen_PerryDemo::_localizedLogoExistsCallback(void *p0)
+void WaterConcept::Screen_PerryDemo::_localizedLogoExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;

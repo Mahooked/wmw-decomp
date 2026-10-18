@@ -23,12 +23,11 @@ undefined8 std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sh
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::xsgetn(char*, long) */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsgetn(char *p0,long p1)
+long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsgetn(char *p0,long p1, long in_x2)
 
 {
   int iVar1;
   ulong uVar2;
-  long in_x2;
   long lVar3;
   long lVar4;
   undefined1 *puVar5;
@@ -104,13 +103,12 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::uflow(l
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::xsputn(char const*, long) */
 
-long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsputn(char *p0,long p1)
+long std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::xsputn(char *p0,long p1, long in_x2)
 
 {
   long lVar1;
   int iVar2;
   ulong uVar3;
-  long in_x2;
   long lVar4;
   long lVar5;
   
@@ -551,12 +549,11 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sgetn(ch
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sputbackc(char) */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputbackc(char p0)
+ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputbackc(char p0, byte in_w1)
 
 {
   long *plVar1;
   ulong uVar2;
-  byte in_w1;
   byte *pbVar3;
   
   plVar1 = (long *)(ulong)(byte)p0;
@@ -603,13 +600,12 @@ ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sungetc
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::sputc(char) */
 
-ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputc(char p0)
+ulong std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::sputc(char p0, byte in_w1)
 
 {
   byte *pbVar1;
   long *plVar2;
   ulong uVar3;
-  byte in_w1;
   
   plVar2 = (long *)(ulong)(byte)p0;
   pbVar1 = (byte *)plVar2[6];
@@ -771,10 +767,9 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::swap
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::gbump(int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::gbump(int p0)
+void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::gbump(int p0, int in_w1)
 
 {
-  int in_w1;
   
   *(long *)((ulong)(uint)p0 + 0x18) = *(long *)((ulong)(uint)p0 + 0x18) + (long)in_w1;
   return;
@@ -808,10 +803,9 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setg
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::pbump(int) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(int p0)
+void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(int p0, int in_w1)
 
 {
-  int in_w1;
   
   *(long *)((ulong)(uint)p0 + 0x30) = *(long *)((ulong)(uint)p0 + 0x30) + (long)in_w1;
   return;
@@ -825,10 +819,9 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::pbump(in
 
 /* std::__ndk1::basic_streambuf<char, std::__ndk1::char_traits<char> >::setp(char*, char*) */
 
-void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setp(char *p0,char *p1)
+void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::setp(char *p0,char *p1, undefined8 in_x2)
 
 {
-  undefined8 in_x2;
   
   *(char **)(p0 + 0x28) = p1;
   *(char **)(p0 + 0x30) = p1;

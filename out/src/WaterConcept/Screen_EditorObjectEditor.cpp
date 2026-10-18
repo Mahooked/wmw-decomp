@@ -216,7 +216,7 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
 
 /* WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void*) */
 
-void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0)
+void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x1)
 
 {
   ulong uVar2;
@@ -225,7 +225,6 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0)
   ulong uVar5;
   void *pvVar6;
   undefined8 uVar7;
-  long in_x1;
   undefined1 auStack_160 [32];
   ulong uStack_140;
   ulong uStack_138;
@@ -501,7 +500,7 @@ void WaterConcept::Screen_EditorObjectEditor::update(float p0,bool p1)
 
 /* WaterConcept::Screen_EditorObjectEditor::draw(int) */
 
-void WaterConcept::Screen_EditorObjectEditor::draw(int p0)
+void WaterConcept::Screen_EditorObjectEditor::draw(int p0, int in_w1)
 
 {
   long lVar1;
@@ -510,7 +509,6 @@ void WaterConcept::Screen_EditorObjectEditor::draw(int p0)
   ulong uVar5;
   long *plVar6;
   long lVar7;
-  int in_w1;
   uint uVar8;
   long *plVar9;
   long lVar10;

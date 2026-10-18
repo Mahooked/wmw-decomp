@@ -780,7 +780,7 @@ LAB_003e92dc:
 
 /* Walaber::PushCommand::DoCommand(Walaber::CommandData&) */
 
-void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0)
+void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0, long in_x1)
 
 {
   ulong uVar1;
@@ -789,7 +789,6 @@ void Walaber::PushCommand::DoCommand(Walaber__CommandData *p0)
   byte bVar5;
   bool bVar6;
   int iVar7;
-  long in_x1;
   char *pcVar8;
   long lVar9;
   char *pcVar10;
@@ -1190,10 +1189,9 @@ void Walaber::PushCommand::Register
 
 /* Walaber::PushCommand::SetDataBaseKey(int) */
 
-void Walaber::PushCommand::SetDataBaseKey(int p0)
+void Walaber::PushCommand::SetDataBaseKey(int p0, undefined4 in_w1)
 
 {
-  undefined4 in_w1;
   
   *(undefined4 *)((ulong)(uint)p0 + 0x30) = in_w1;
   return;

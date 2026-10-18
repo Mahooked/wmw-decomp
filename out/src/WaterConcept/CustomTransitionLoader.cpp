@@ -55,10 +55,9 @@ void WaterConcept::CustomTransitionLoader::init(void)
 
 /* WaterConcept::CustomTransitionLoader::transitionFromName(void*) */
 
-void WaterConcept::CustomTransitionLoader::transitionFromName(void *p0)
+void WaterConcept::CustomTransitionLoader::transitionFromName(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   *(undefined8 *)(in_x1 + 8) = 0;
   return;

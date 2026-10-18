@@ -133,10 +133,9 @@ LAB_005db0dc:
     */
 
 undefined8
-std::__ndk1::__codecvt_utf16<char32_t,false>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
+std::__ndk1::__codecvt_utf16<char32_t,false>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
-  undefined8 *in_x4;
   
   *in_x4 = p2;
   return 3;

@@ -151,10 +151,9 @@ void Walaber::Transition_Slide::_setupRenderTextureBuffer(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Slide::setup(float) */
 
-void Walaber::Transition_Slide::setup(float p0)
+void Walaber::Transition_Slide::setup(long in_x0, float p0)
 
 {
-  long in_x0;
   
   *(undefined4 *)(in_x0 + 0x70) = 0;
   *(float *)(in_x0 + 0x74) = p0;

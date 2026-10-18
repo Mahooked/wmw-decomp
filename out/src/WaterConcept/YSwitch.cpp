@@ -358,13 +358,12 @@ void WaterConcept::YSwitch::handleTouchDown(Walaber__Vector2 *p0)
 
 /* WaterConcept::YSwitch::setYSwitchPosition(bool) */
 
-void WaterConcept::YSwitch::setYSwitchPosition(bool p0)
+void WaterConcept::YSwitch::setYSwitchPosition(bool p0, byte in_w1)
 
 {
   ulong uVar2;
   undefined8 uVar3;
   long *plVar4;
-  byte in_w1;
   undefined4 uVar5;
   ulong uStack_40;
   

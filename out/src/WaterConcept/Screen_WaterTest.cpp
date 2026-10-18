@@ -1165,7 +1165,7 @@ void WaterConcept::Screen_WaterTest::loadPropertyList(Walaber__PropertyList *p0)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WaterTest::preloadLevel(bool) */
 
-void WaterConcept::Screen_WaterTest::preloadLevel(bool p0)
+void WaterConcept::Screen_WaterTest::preloadLevel(bool p0, ulong in_x1)
 
 {
   int *piVar1;
@@ -1184,7 +1184,6 @@ void WaterConcept::Screen_WaterTest::preloadLevel(bool p0)
   ulong uVar15;
   undefined8 *puVar16;
   ulong uVar17;
-  ulong in_x1;
   int iVar19;
   ulong uVar20;
   undefined8 uVar21;
@@ -5866,13 +5865,12 @@ void WaterConcept::Screen_WaterTest::_setSliderFromCamera(long param_1)
 
 /* WaterConcept::Screen_WaterTest::_goToWorldSelectPuppetShowExists(void*) */
 
-void WaterConcept::Screen_WaterTest::_goToWorldSelectPuppetShowExists(void *p0)
+void WaterConcept::Screen_WaterTest::_goToWorldSelectPuppetShowExists(void *p0, long in_x1)
 
 {
   int iVar1;
   bool bVar3;
   ulong uVar4;
-  long in_x1;
   long *plVar5;
   long lVar6;
   int *piVar7;
@@ -6065,11 +6063,10 @@ LAB_0057d194:
 
 /* WaterConcept::Screen_WaterTest::_focusOnSwampy(bool) */
 
-void WaterConcept::Screen_WaterTest::_focusOnSwampy(bool p0)
+void WaterConcept::Screen_WaterTest::_focusOnSwampy(bool p0, uint in_w1)
 
 {
   ulong uVar2;
-  uint in_w1;
   long lVar3;
   undefined4 uVar4;
   float fVar5;
@@ -6106,10 +6103,9 @@ void WaterConcept::Screen_WaterTest::_focusOnSwampy(bool p0)
 
 /* WaterConcept::Screen_WaterTest::_gotAllieSE(void*) */
 
-void WaterConcept::Screen_WaterTest::_gotAllieSE(void *p0)
+void WaterConcept::Screen_WaterTest::_gotAllieSE(void *p0, int * in_x1)
 
 {
-  int *in_x1;
   
   if ((*in_x1 == 0xfe5) && (*(int *)((long)p0 + 0x410) != 0xfe5)) {
     return;
@@ -6128,7 +6124,7 @@ void WaterConcept::Screen_WaterTest::_gotAllieSE(void *p0)
 
 /* WaterConcept::Screen_WaterTest::replayLevel(bool) */
 
-void WaterConcept::Screen_WaterTest::replayLevel(bool p0)
+void WaterConcept::Screen_WaterTest::replayLevel(bool p0, ulong in_x1)
 
 {
   ulong uVar2;
@@ -6136,7 +6132,6 @@ void WaterConcept::Screen_WaterTest::replayLevel(bool p0)
   long *plVar4;
   long lVar5;
   undefined4 uVar6;
-  ulong in_x1;
   long lVar7;
   ulong uVar8;
   long lVar9;
@@ -7417,7 +7412,7 @@ LAB_0057ee10:
 
 /* WaterConcept::Screen_WaterTest::draw(int) */
 
-void WaterConcept::Screen_WaterTest::draw(int p0)
+void WaterConcept::Screen_WaterTest::draw(int p0, int in_w1)
 
 {
   long lVar1;
@@ -7430,7 +7425,6 @@ void WaterConcept::Screen_WaterTest::draw(int p0)
   ulong uVar9;
   long *plVar10;
   long lVar11;
-  int in_w1;
   float fVar12;
   undefined8 uVar13;
   byte bVar14;
@@ -8215,11 +8209,10 @@ void WaterConcept::Screen_WaterTest::accelerometerChanged(float p0,float p1,floa
 
 /* WaterConcept::Screen_WaterTest::_bombCallback(void*) */
 
-void WaterConcept::Screen_WaterTest::_bombCallback(void *p0)
+void WaterConcept::Screen_WaterTest::_bombCallback(void *p0, char * in_x1)
 
 {
   ulong uVar1;
-  char *in_x1;
   undefined4 uVar2;
   float fVar3;
   float fVar4;
@@ -8254,7 +8247,7 @@ void WaterConcept::Screen_WaterTest::_bombCallback(void *p0)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WaterTest::_collectibleCallback(void*) */
 
-void WaterConcept::Screen_WaterTest::_collectibleCallback(void *p0)
+void WaterConcept::Screen_WaterTest::_collectibleCallback(void *p0, undefined4 * in_x1)
 
 {
   undefined1 *puVar1;
@@ -8273,7 +8266,6 @@ void WaterConcept::Screen_WaterTest::_collectibleCallback(void *p0)
   undefined8 uVar15;
   long *plVar16;
   long lVar17;
-  undefined4 *in_x1;
   undefined4 uVar18;
   float *pfVar20;
   float fVar21;
@@ -9376,7 +9368,7 @@ void WaterConcept::Screen_WaterTest::_collectibleCallback(void *p0)
 
 /* WaterConcept::Screen_WaterTest::_touchCallback(void*) */
 
-void WaterConcept::Screen_WaterTest::_touchCallback(void *p0)
+void WaterConcept::Screen_WaterTest::_touchCallback(void *p0, int * in_x1)
 
 {
   float fVar1;
@@ -9385,7 +9377,6 @@ void WaterConcept::Screen_WaterTest::_touchCallback(void *p0)
   undefined4 uVar4;
   float fVar5;
   char *pcVar7;
-  int *in_x1;
   long lVar8;
   long lVar9;
   float fVar10;
@@ -12112,7 +12103,7 @@ LAB_00583fa8:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_WaterTest::nextLevel(bool, bool) */
 
-void WaterConcept::Screen_WaterTest::nextLevel(bool p0,bool p1)
+void WaterConcept::Screen_WaterTest::nextLevel(bool p0,bool p1, ulong in_x2)
 
 {
   undefined1 *puVar1;
@@ -12130,7 +12121,6 @@ void WaterConcept::Screen_WaterTest::nextLevel(bool p0,bool p1)
   byte *pbVar14;
   long lVar15;
   long *plVar16;
-  ulong in_x2;
   uint uVar17;
   long lVar19;
   ulong uVar20;
@@ -15017,10 +15007,9 @@ LAB_00587f1c:
 
 /* WaterConcept::Screen_WaterTest::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_WaterTest::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_WaterTest::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -15036,10 +15025,9 @@ void WaterConcept::Screen_WaterTest::touchDown(int p0,Walaber__Vector2 p1)
 
 /* WaterConcept::Screen_WaterTest::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_WaterTest::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_WaterTest::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   undefined8 uStack_38;
   undefined8 uStack_30;
   
@@ -15057,10 +15045,9 @@ void WaterConcept::Screen_WaterTest::touchMoved(int p0,Walaber__Vector2 p1,Walab
 
 /* WaterConcept::Screen_WaterTest::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_WaterTest::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_WaterTest::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
-  undefined8 *in_x2;
   undefined8 uStack_30;
   
   uStack_30 = *in_x2;
@@ -15139,10 +15126,9 @@ void WaterConcept::Screen_WaterTest::handleFocus(Walaber::Widget *param_1,Walabe
 
 /* WaterConcept::Screen_WaterTest::setIsDrawPause(bool) */
 
-void WaterConcept::Screen_WaterTest::setIsDrawPause(bool p0)
+void WaterConcept::Screen_WaterTest::setIsDrawPause(bool p0, byte in_w1)
 
 {
-  byte in_w1;
   
   *(byte *)((ulong)p0 + 0x265) = in_w1 & 1;
   return;
@@ -15156,12 +15142,11 @@ void WaterConcept::Screen_WaterTest::setIsDrawPause(bool p0)
 
 /* WaterConcept::Screen_WaterTest::messageRx(Walaber::Message const&) */
 
-ulong WaterConcept::Screen_WaterTest::messageRx(Walaber__Message *p0)
+ulong WaterConcept::Screen_WaterTest::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   int iVar2;
   ulong uVar3;
-  long in_x1;
   uint uVar4;
   byte abStack_a0 [16];
   void *pvStack_90;
@@ -15566,7 +15551,7 @@ void WaterConcept::Screen_WaterTest::_worldToScreen(Walaber__Vector2 *p0)
 
 /* WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong uVar1;
@@ -15578,7 +15563,6 @@ void WaterConcept::Screen_WaterTest::_finishedLoadingWidgets(void *p0)
   long *plVar8;
   char *p0_00;
   long lVar9;
-  int *in_x1;
   float fVar11;
   float fVar12;
   float fVar13;
@@ -16179,10 +16163,9 @@ void WaterConcept::Screen_WaterTest::_grabAndPlayMysteryDuckSound
 
 /* WaterConcept::Screen_WaterTest::_gotMysterySE(void*) */
 
-void WaterConcept::Screen_WaterTest::_gotMysterySE(void *p0)
+void WaterConcept::Screen_WaterTest::_gotMysterySE(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x3f0,in_x1 + 8);
   Walaber::SoundEffectInstance::play(0x3f800000,*(undefined8 *)((long)p0 + 0x3f0));

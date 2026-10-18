@@ -302,12 +302,11 @@ void WaterConcept::Screen_SettingsReset::enter()
 
 /* WaterConcept::Screen_SettingsReset::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_SettingsReset::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_SettingsReset::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -979,12 +978,11 @@ void WaterConcept::Screen_SettingsReset::update(float p0,bool p1)
 
 /* WaterConcept::Screen_SettingsReset::draw(int) */
 
-void WaterConcept::Screen_SettingsReset::draw(int p0)
+void WaterConcept::Screen_SettingsReset::draw(int p0, int in_w1)
 
 {
   long lVar1;
   ulong uVar2;
-  int in_w1;
   
   uVar2 = (ulong)(uint)p0;
   if (in_w1 != 0) {
@@ -1257,7 +1255,7 @@ void WaterConcept::Screen_SettingsReset::handleEvent
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_SettingsReset::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar1;
@@ -1267,7 +1265,6 @@ undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0)
   undefined8 uVar6;
   ulong *puVar7;
   undefined8 *puVar8;
-  long in_x1;
   undefined8 uVar10;
   ulong auStack_110 [2];
   void *pvStack_100;
@@ -1507,14 +1504,13 @@ undefined8 WaterConcept::Screen_SettingsReset::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_SettingsReset::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar2;
   long lVar3;
   long lVar4;
   long *plVar5;
-  int *in_x1;
   uint uVar6;
   float fVar7;
   float fVar8;

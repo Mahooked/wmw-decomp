@@ -162,11 +162,10 @@ void Walaber::Widget_ClassicControls::getMainFingerPos(undefined4 *param_1,long 
 
 /* Walaber::Widget_ClassicControls::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ClassicControls::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined8 *puVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -191,11 +190,10 @@ undefined8 Walaber::Widget_ClassicControls::acceptNewFingerDown(int p0,Walaber__
 
 /* Walaber::Widget_ClassicControls::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::_acceptFinger(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ClassicControls::_acceptFinger(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined8 *puVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -220,11 +218,10 @@ undefined8 Walaber::Widget_ClassicControls::_acceptFinger(int p0,Walaber__Finger
 
 /* Walaber::Widget_ClassicControls::acceptNewFingerEntered(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ClassicControls::acceptNewFingerEntered(int p0,Walaber__FingerInfo *p1, undefined8 in_x2)
 
 {
   ulong uVar1;
-  undefined8 in_x2;
   undefined8 *puVar2;
   
   uVar1 = (ulong)(uint)p0;
@@ -277,11 +274,10 @@ undefined8 Walaber::Widget_ClassicControls::releaseFingerMoved(int p0,Walaber__F
 
 /* Walaber::Widget_ClassicControls::releaseFingerUp(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::releaseFingerUp(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_ClassicControls::releaseFingerUp(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == in_x2) {
@@ -306,11 +302,10 @@ void Walaber::Widget_ClassicControls::releaseFingerUp(int p0,Walaber__FingerInfo
 
 /* Walaber::Widget_ClassicControls::_releaseFinger(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::_releaseFinger(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_ClassicControls::_releaseFinger(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == in_x2) {
@@ -335,11 +330,10 @@ void Walaber::Widget_ClassicControls::_releaseFinger(int p0,Walaber__FingerInfo 
 
 /* Walaber::Widget_ClassicControls::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_ClassicControls::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_ClassicControls::releaseFingerLeft(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == in_x2) {
@@ -364,11 +358,10 @@ undefined8 Walaber::Widget_ClassicControls::releaseFingerLeft(int p0,Walaber__Fi
 
 /* Walaber::Widget_ClassicControls::notifyFingerLost(int, Walaber::FingerInfo*) */
 
-void Walaber::Widget_ClassicControls::notifyFingerLost(int p0,Walaber__FingerInfo *p1)
+void Walaber::Widget_ClassicControls::notifyFingerLost(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar1;
-  long in_x2;
   
   uVar1 = (ulong)(uint)p0;
   if (*(long *)(uVar1 + 0x100) == in_x2) {

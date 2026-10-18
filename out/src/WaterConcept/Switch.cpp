@@ -419,7 +419,7 @@ LAB_00494bac:
 
 /* WaterConcept::Switch::_setState(bool) */
 
-void WaterConcept::Switch::_setState(bool p0)
+void WaterConcept::Switch::_setState(bool p0, byte in_w1)
 
 {
   bool bVar1;
@@ -427,7 +427,6 @@ void WaterConcept::Switch::_setState(bool p0)
   char *pcVar3;
   ulong uVar5;
   long *plVar6;
-  byte in_w1;
   long *plVar7;
   long lVar8;
   ulong uVar9;
@@ -705,13 +704,12 @@ LAB_00495690:
 
 /* WaterConcept::Switch::_triggerMomentary(Walaber::Vector2 const&) */
 
-void WaterConcept::Switch::_triggerMomentary(Walaber__Vector2 *p0)
+void WaterConcept::Switch::_triggerMomentary(Walaber__Vector2 *p0, undefined8 * in_x1)
 
 {
   int iVar1;
   bool bVar3;
   undefined8 uVar4;
-  undefined8 *in_x1;
   Walaber__Vector2 WVar5;
   ulong uVar6;
   int iVar7;
@@ -783,10 +781,9 @@ void WaterConcept::Switch::_triggerMomentary(Walaber__Vector2 *p0)
 
 /* WaterConcept::Switch::setOn(bool) */
 
-void WaterConcept::Switch::setOn(bool p0)
+void WaterConcept::Switch::setOn(bool p0, uint in_w1)
 
 {
-  uint in_w1;
   
   WaterConcept::Switch::_setState(p0,in_w1 & 1);
   return;
@@ -890,14 +887,13 @@ void WaterConcept::Switch::_initFinished(long param_1)
 
 /* WaterConcept::Switch::_animationEvent(void*) */
 
-void WaterConcept::Switch::_animationEvent(void *p0)
+void WaterConcept::Switch::_animationEvent(void *p0, long in_x1)
 
 {
   ulong uVar1;
   char *pcVar2;
   bool bVar4;
   int iVar5;
-  long in_x1;
   long lVar6;
   ulong uVar7;
   ulong uVar8;

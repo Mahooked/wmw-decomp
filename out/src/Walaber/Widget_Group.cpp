@@ -76,10 +76,9 @@ void Walaber::Widget_Group::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_Group::addWidget(Walaber::Widget*) */
 
-void Walaber::Widget_Group::addWidget(Walaber__Widget *p0)
+void Walaber::Widget_Group::addWidget(Walaber__Widget *p0, long in_x1)
 
 {
-  long in_x1;
   undefined1 auStack_38 [8];
   undefined8 uStack_30;
   
@@ -99,7 +98,7 @@ void Walaber::Widget_Group::addWidget(Walaber__Widget *p0)
 
 /* Walaber::Widget_Group::getWidget(int) */
 
-long Walaber::Widget_Group::getWidget(int p0)
+long Walaber::Widget_Group::getWidget(int p0, undefined4 in_w1)
 
 {
   long *plVar1;
@@ -109,7 +108,6 @@ long Walaber::Widget_Group::getWidget(int p0)
   bool bVar5;
   int iVar6;
   long lVar7;
-  undefined4 in_w1;
   char *pcVar8;
   long *plVar9;
   long lVar10;
@@ -226,12 +224,11 @@ LAB_0037cb0c:
 
 /* Walaber::Widget_Group::setLocalPosition(Walaber::Vector2) */
 
-void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0)
+void Walaber::Widget_Group::setLocalPosition(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
   bool bVar2;
   Walaber__Vector2 p0_00;
-  undefined8 *in_x1;
   long *plVar3;
   long lVar4;
   long *plVar5;
@@ -431,12 +428,11 @@ void Walaber::Widget_Group::applyScaleOffset(Walaber__Vector2 *p0)
 
 /* Walaber::Widget_Group::setVisible(bool) */
 
-void Walaber::Widget_Group::setVisible(bool p0)
+void Walaber::Widget_Group::setVisible(bool p0, byte in_w1)
 
 {
   bool bVar1;
   ulong uVar2;
-  byte in_w1;
   long *plVar3;
   long *plVar4;
   long lVar5;
@@ -477,12 +473,11 @@ void Walaber::Widget_Group::setVisible(bool p0)
 
 /* Walaber::Widget_Group::setColor(Walaber::Color const&) */
 
-void Walaber::Widget_Group::setColor(Walaber__Color *p0)
+void Walaber::Widget_Group::setColor(Walaber__Color *p0, Walaber__Color * in_x1)
 
 {
   Walaber__Color WVar1;
   bool bVar3;
-  Walaber__Color *in_x1;
   Walaber__Color *pWVar4;
   Walaber__Color *pWVar5;
   long lVar6;

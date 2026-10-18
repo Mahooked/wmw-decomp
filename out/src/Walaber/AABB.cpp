@@ -43,10 +43,9 @@ void Walaber::AABB::clear(undefined8 *param_1)
 
 /* Walaber::AABB::expandToInclude(Walaber::Vector2 const&) */
 
-void Walaber::AABB::expandToInclude(Walaber__Vector2 *p0)
+void Walaber::AABB::expandToInclude(Walaber__Vector2 *p0, Walaber__Vector2 * in_x1)
 
 {
-  Walaber__Vector2 *in_x1;
   Walaber__Vector2 *pWVar1;
   float fVar2;
   Walaber__Vector2 WVar3;
@@ -88,10 +87,9 @@ void Walaber::AABB::expandToInclude(Walaber__Vector2 *p0)
 
 /* Walaber::AABB::expandToInclude(Walaber::AABB const&) */
 
-void Walaber::AABB::expandToInclude(Walaber__AABB *p0)
+void Walaber::AABB::expandToInclude(Walaber__AABB *p0, long in_x1)
 
 {
-  long in_x1;
   
   Walaber::AABB::expandToInclude();
   Walaber::AABB::expandToInclude(p0,in_x1 + 8);
@@ -106,10 +104,9 @@ void Walaber::AABB::expandToInclude(Walaber__AABB *p0)
 
 /* Walaber::AABB::contains(Walaber::Vector2 const&) const */
 
-bool Walaber::AABB::contains(Walaber__Vector2 *p0)
+bool Walaber::AABB::contains(Walaber__Vector2 *p0, float * in_x1)
 
 {
-  float *in_x1;
   
   if ((((p0[2].f_0x0 != 0.0) && (p0->f_0x0 <= *in_x1)) && (*in_x1 <= p0[1].f_0x0)) &&
      (p0->f_0x4 <= in_x1[1])) {
@@ -126,12 +123,11 @@ bool Walaber::AABB::contains(Walaber__Vector2 *p0)
 
 /* Walaber::AABB::intersects(Walaber::AABB const&) const */
 
-byte Walaber::AABB::intersects(Walaber__AABB *p0)
+byte Walaber::AABB::intersects(Walaber__AABB *p0, float * in_x1)
 
 {
   bool bVar1;
   bool bVar2;
-  float *in_x1;
   
   if (p0->f_0x0 <= in_x1[2]) {
     bVar1 = *in_x1 <= p0->f_0x8;

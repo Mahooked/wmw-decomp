@@ -9,10 +9,9 @@
 
 /* Walaber::WidgetManager::updateLayerCount(int) */
 
-void Walaber::WidgetManager::updateLayerCount(int p0)
+void Walaber::WidgetManager::updateLayerCount(int p0, int in_w1)
 
 {
-  int in_w1;
   
   if (*(int *)((ulong)(uint)p0 + 0x74) <= in_w1) {
     *(int *)((ulong)(uint)p0 + 0x74) = in_w1 + 1;
@@ -99,13 +98,12 @@ void Walaber::WidgetManager::updateLayerCount(int p0)
 
 /* Walaber::WidgetManager::addWidget(Walaber::Widget*, int) */
 
-void Walaber::WidgetManager::addWidget(Walaber__Widget *p0,int p1)
+void Walaber::WidgetManager::addWidget(Walaber__Widget *p0,int p1, undefined4 in_w2)
 
 {
   int iVar1;
   int iVar2;
   ulong uVar3;
-  undefined4 in_w2;
   ulong uVar4;
   undefined8 uVar5;
   
@@ -137,10 +135,9 @@ void Walaber::WidgetManager::addWidget(Walaber__Widget *p0,int p1)
 
 /* Walaber::WidgetManager::removeWidget(Walaber::Widget*) */
 
-void Walaber::WidgetManager::removeWidget(Walaber__Widget *p0)
+void Walaber::WidgetManager::removeWidget(Walaber__Widget *p0, long in_x1)
 
 {
-  long in_x1;
   long lVar1;
   long lVar2;
   ulong uVar3;
@@ -209,11 +206,10 @@ void Walaber::WidgetManager::clearAndDestroyAllWidgets(long *param_1)
 
 /* Walaber::WidgetManager::getWidget(int) */
 
-undefined8 Walaber::WidgetManager::getWidget(int p0)
+undefined8 Walaber::WidgetManager::getWidget(int p0, undefined4 in_w1)
 
 {
   undefined8 uVar2;
-  undefined4 in_w1;
   byte abStack_40 [16];
   void *pvStack_30;
   
@@ -234,14 +230,13 @@ undefined8 Walaber::WidgetManager::getWidget(int p0)
 
 /* Walaber::WidgetManager::update(float) */
 
-void Walaber::WidgetManager::update(float p0)
+void Walaber::WidgetManager::update(long * in_x0, float p0)
 
 {
   long *plVar1;
   int iVar2;
   bool bVar4;
   undefined4 uVar5;
-  long *in_x0;
   int *piVar6;
   undefined8 uVar7;
   ulong uVar8;
@@ -1163,12 +1158,11 @@ void Walaber::WidgetManager::drawLayerRange
 
 /* Walaber::WidgetManager::drawLayerRange(Walaber::SpriteBatch&, int, int) */
 
-void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int p2)
+void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int p2, int in_w3)
 
 {
   uint uVar2;
   int iVar3;
-  int in_w3;
   ulong uVar4;
   long *plVar5;
   float fVar6;
@@ -1265,11 +1259,10 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
 
 /* Walaber::WidgetManager::setCustomizeMode(bool) */
 
-void Walaber::WidgetManager::setCustomizeMode(bool p0)
+void Walaber::WidgetManager::setCustomizeMode(bool p0, byte in_w1)
 
 {
   ulong uVar1;
-  byte in_w1;
   
   uVar1 = (ulong)p0;
   *(byte *)(uVar1 + 0x48) = in_w1 & 1;
@@ -1497,14 +1490,13 @@ void Walaber::WidgetManager::_snapWidget
 
 /* Walaber::WidgetManager::touchDown(int, Walaber::Vector2) */
 
-void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1)
+void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   long *plVar2;
   long *plVar3;
   undefined8 *puVar4;
   long lVar5;
-  undefined8 *in_x2;
   void *p0_00;
   ulong uVar6;
   undefined4 *puVar7;

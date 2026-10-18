@@ -31,11 +31,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Fade::setup(float) */
 
-void Walaber::Transition_Fade::setup(float p0)
+void Walaber::Transition_Fade::setup(long in_x0, float p0)
 
 {
   undefined8 uVar1;
-  long in_x0;
   
   *(undefined4 *)(in_x0 + 0x70) = 0;
   *(undefined1 *)(in_x0 + 0xc4) = 0;

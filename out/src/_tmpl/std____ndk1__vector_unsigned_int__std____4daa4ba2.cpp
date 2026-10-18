@@ -40,11 +40,10 @@ void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::vec
 /* std::__ndk1::vector<unsigned int, std::__ndk1::allocator<unsigned int> >::__vallocate(unsigned
    long) */
 
-void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__vallocate(ulong p0)
+void std::__ndk1::vector<unsigned_int,std::__ndk1::allocator<unsigned_int>>::__vallocate(ulong p0, ulong in_x1)
 
 {
   long lVar1;
-  ulong in_x1;
   
   if (in_x1 >> 0x3e == 0) {
     lVar1 = operator new(in_x1 << 2);

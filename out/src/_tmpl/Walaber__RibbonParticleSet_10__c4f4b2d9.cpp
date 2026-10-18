@@ -47,14 +47,13 @@ void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(undefined8 *param_1,ulon
 
 /* Walaber::RibbonParticleSet<10>::RibbonParticleSet(unsigned int) */
 
-void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0)
+void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
 
 {
   ulong uVar1;
   long *plVar2;
   undefined8 uVar3;
   undefined4 *puVar4;
-  uint in_w1;
   long lVar5;
   undefined4 *puVar6;
   long *plVar8;
@@ -511,13 +510,12 @@ Walaber::RibbonParticleSet<10>::addParticle
 
 /* Walaber::RibbonParticleSet<10>::removeParticle(int) */
 
-void Walaber::RibbonParticleSet<10>::removeParticle(int p0)
+void Walaber::RibbonParticleSet<10>::removeParticle(int p0, int in_w1)
 
 {
   char cVar1;
   long *plVar2;
   long *plVar3;
-  int in_w1;
   char *pcVar4;
   undefined8 *puVar5;
   long lVar6;

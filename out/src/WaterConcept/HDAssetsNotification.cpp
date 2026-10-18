@@ -420,7 +420,7 @@ void WaterConcept::HDAssetsNotification::handleEvent
 
 /* WaterConcept::HDAssetsNotification::messageRx(Walaber::Message const&) */
 
-void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
+void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   byte bVar2;
@@ -428,7 +428,6 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0)
   int iVar4;
   undefined8 uVar5;
   undefined1 *puVar6;
-  long in_x1;
   byte abStack_e8 [16];
   void *pvStack_d8;
   byte abStack_d0 [16];

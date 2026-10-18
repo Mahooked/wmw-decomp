@@ -159,12 +159,11 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
 
 /* Walaber::Widget_Manipulator::acceptNewFingerDown(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_Manipulator::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_Manipulator::acceptNewFingerDown(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  long in_x2;
   undefined8 uStack_40;
   
   uVar2 = (ulong)(uint)p0;
@@ -216,12 +215,11 @@ undefined8 Walaber::Widget_Manipulator::releaseFingerStayed(int p0,Walaber__Fing
 
 /* Walaber::Widget_Manipulator::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_Manipulator::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+bool Walaber::Widget_Manipulator::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   bool bVar1;
   ulong uVar2;
-  long in_x2;
   
   uVar2 = (ulong)(uint)p0;
   bVar1 = *(char *)(uVar2 + 0x13a) != '\0';
@@ -259,12 +257,11 @@ void Walaber::Widget_Manipulator::releaseFingerUp(int p0,Walaber__FingerInfo *p1
 
 /* Walaber::Widget_Manipulator::releaseFingerLeft(int, Walaber::FingerInfo*) */
 
-bool Walaber::Widget_Manipulator::releaseFingerLeft(int p0,Walaber__FingerInfo *p1)
+bool Walaber::Widget_Manipulator::releaseFingerLeft(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   bool bVar1;
   ulong uVar2;
-  long in_x2;
   
   uVar2 = (ulong)(uint)p0;
   bVar1 = *(char *)(uVar2 + 0x13a) != '\0';

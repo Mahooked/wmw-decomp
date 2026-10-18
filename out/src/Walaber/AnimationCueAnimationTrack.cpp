@@ -9,11 +9,10 @@
 
 /* Walaber::AnimationCueAnimationTrack::apply(float) */
 
-void Walaber::AnimationCueAnimationTrack::apply(float p0)
+void Walaber::AnimationCueAnimationTrack::apply(undefined8 * in_x0, float p0)
 
 {
   int iVar1;
-  undefined8 *in_x0;
   long lVar2;
   
   if (*(int *)(in_x0 + 5) != *(int *)((long)in_x0 + 0x2c) + -1) {

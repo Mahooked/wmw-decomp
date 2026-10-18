@@ -9,10 +9,9 @@
 
 /* Walaber::Curve::getWriteSize(unsigned int) */
 
-ulong Walaber::Curve::getWriteSize(uint p0)
+ulong Walaber::Curve::getWriteSize(uint p0, uint in_w1)
 
 {
-  uint in_w1;
   ulong uVar1;
   
   uVar1 = (ulong)p0;
@@ -127,11 +126,10 @@ void Walaber::Curve::getMinMaxKeyPosition(long param_1)
 
 /* Walaber::Curve::writeToBuffer(char*) */
 
-int Walaber::Curve::writeToBuffer(char *p0)
+int Walaber::Curve::writeToBuffer(char *p0, undefined8 * in_x1)
 
 {
   int iVar1;
-  undefined8 *in_x1;
   
   *in_x1 = *(undefined8 *)(p0 + 8);
   memcpy(in_x1 + 1,*(undefined8 *)(p0 + 0x18),*(long *)(p0 + 8) * 0x18);

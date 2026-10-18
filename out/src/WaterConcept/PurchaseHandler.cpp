@@ -81,7 +81,7 @@ void WaterConcept::PurchaseHandler::init(void)
 
 /* WaterConcept::PurchaseHandler::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   long lVar1;
@@ -92,7 +92,6 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0)
   undefined8 *puVar7;
   ulong *puVar8;
   ulong uVar9;
-  long in_x1;
   undefined8 uVar11;
   Walaber__Message *pWVar12;
   undefined1 *puVar13;

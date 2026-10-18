@@ -168,11 +168,10 @@ void WaterConcept::Screen_AchievementsTest::update(float p0,bool p1)
 
 /* WaterConcept::Screen_AchievementsTest::draw(int) */
 
-void WaterConcept::Screen_AchievementsTest::draw(int p0)
+void WaterConcept::Screen_AchievementsTest::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     lVar1 = (ulong)(uint)p0 + 0x28;
@@ -403,11 +402,10 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
 
 /* WaterConcept::Screen_AchievementsTest::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_AchievementsTest::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_AchievementsTest::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar1;
-  int *in_x1;
   
   if (*in_x1 == 1) {
     uVar1 = Walaber::WidgetManager::getWidget(*(undefined8 *)((long)p0 + 0x10),4);

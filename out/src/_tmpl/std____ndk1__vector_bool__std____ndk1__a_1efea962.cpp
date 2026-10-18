@@ -9,10 +9,9 @@
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::push_back(bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0, char * in_x1)
 
 {
-  char *in_x1;
   ulong uVar1;
   ulong uVar2;
   long lVar3;
@@ -58,10 +57,9 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::push_back(bool *p0)
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::reserve(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0, ulong in_x1)
 
 {
-  ulong in_x1;
   undefined8 uVar2;
   void *p0_00;
   undefined8 uVar3;
@@ -108,12 +106,11 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::reserve(ulong p0)
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::__vallocate(unsigned long) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p0)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p0, long in_x1)
 
 {
   long lVar1;
   undefined8 uVar2;
-  long in_x1;
   
   if (-1 < in_x1) {
     lVar1 = (in_x1 - 1U >> 6) + 1;
@@ -135,12 +132,11 @@ void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::__vallocate(ulong p
 
 /* std::__ndk1::vector<bool, std::__ndk1::allocator<bool> >::vector(unsigned long, bool const&) */
 
-void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,bool *p1)
+void std::__ndk1::vector<bool,std::__ndk1::allocator<bool>>::vector(ulong p0,bool *p1, char * in_x2)
 
 {
   Elf64_Phdr *pEVar1;
   char cVar2;
-  char *in_x2;
   ulong uVar4;
   undefined8 *puVar5;
   long lStack_48;

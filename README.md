@@ -33,7 +33,7 @@ re-inferred.
 | Struct/field layouts, signatures applied to bodies | **partly done** | 2,450 functions carry exact AAPCS64-allocated parameters through Ghidra, plus 641 more applied as text where Ghidra cannot name the type (see "Types without a type system"); 325 class layouts recovered from p-code field-access evidence, imported into Ghidra and rendered as member reads in the output (see "Function signatures") |
 | Enum definitions | **partly done** | 9 value-typed enums recovered from constant-compare/store/mask/jump-table evidence, verified by a gate (see "Enums") |
 | Original local names, file layout, comments | not encodable | never present in the binary; must be re-inferred |
-| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **75,922** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
+| Compilable-tree syntax baseline | **measured** | every one of the 1,467 files parsed by `clang++ -fsyntax-only` against synthesised declarations; **74,002** diagnostics (down from 94,265), the declarations themselves compiling with **0 errors** (see "The syntax gate") |
 | Rebuild-equivalence check (recompile and compare) | not started | this is the definition of done |
 
 ### Remaining work
@@ -57,7 +57,7 @@ re-inferred.
    if-converted branches, sub-register noise (`CONCAT`/`SUB`/`ZEXT`) and the C++
    exception landing pads. "Is it source?" is now a *number* rather than an
    opinion: `tools/check_syntax.py` points `clang++ -fsyntax-only` at all 1,467
-   files against synthesised declarations and sorts the 75,922 diagnostics into
+   files against synthesised declarations and sorts the 74,002 diagnostics into
    the ones that are genuinely malformed C++ and the ones that are only missing
    declarations (see "The syntax gate"). The first two systematic defects it
    named are fixed — illegal return types and parameters on 695 constructors
@@ -113,6 +113,12 @@ re-inferred.
   `this`, never for constructors, destructors or operators — with every
   overload kept, moving *call to non-static member function* **17,182 →
   2,334**. See "The syntax gate".
+- The baseline driven **75,922 → 74,002** by re-binding Ghidra's unbound
+  input registers as parameters (`tools/shape_inw.py`): **764** definitions
+  reshaped, moving *too many arguments to function call* **4,817 →
+  1,895** — appends where AAPCS64 leaves no choice, front inserts only
+  where the call sites corroborate the extra argument. See "The syntax
+  gate".
 
 ## What the game turned out to be
 
@@ -965,8 +971,8 @@ The baseline over the whole tree:
 |---|---|
 | Files checked | 1,467 |
 | Files with at least one error | 1,459 |
-| Diagnostics | 75,922 |
-| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → **75,922** (static-form members) |
+| Diagnostics | 74,002 |
+| Trajectory | 94,265 → 84,570 (prelude) → 80,691 (ctor/dtor shape) → 79,870 (symbol regex) → 75,922 (static-form members) → **74,002** (input-register rebinding) |
 | Declarations compiled against | **0 errors** |
 
 The number is not a defect count, and the tool is careful to say so. Its own
@@ -975,14 +981,22 @@ largest buckets are **not** defects in the game:
 - **10,756** *implicit instantiation of undefined template* and **1,715** *too
   many template arguments*: the libc++ primary templates are declared, not
   defined, and their arity is guessed.
-- **6,971** *no matching function*, **4,817** *too many arguments to function
-  call* and **2,018** *too few*: a call/definition arity divergence. Ghidra
-  binds the callee's `w0` as its object parameter but leaves the argument the
-  binary passes in `w1` as an unbound input register (`in_w1`), so the
-  definition declares one parameter where the call site passes two:
+- **6,973** *no matching function*, **1,895** *too many arguments to function
+  call* (down from 4,817) and **2,130** *too few*: the call/definition arity
+  divergence, now largely decided. Ghidra binds the callee's `w0` as its
+  object parameter but leaves the argument the binary passes in the next
+  register as an unbound input register (`in_w1`), so the definition declares
+  one parameter where the call site passes two:
   `SoundManager::soundCountForGroup(uVar17, 0x79)` against
-  `soundCountForGroup(int p0)`. Re-binding those input registers is the next
-  systematic pass.
+  `soundCountForGroup(int p0)`. `tools/shape_inw.py` re-binds those
+  registers: an `in_wN` where N equals the parameter count is appended —
+  AAPCS64 leaves no choice, the register *is* argument N+1 — while an
+  `in_x0` preceding every bound parameter is inserted at the front only when
+  call sites of the same qualified name corroborate the extra argument,
+  because some bodies read `x0` while their call sites display no object at
+  all. What remains is the residue: duplicate definitions of one member that
+  decompile with divergent shapes, and call sites Ghidra printed without the
+  argument.
 - **3,922** *use of undeclared identifier*: overwhelmingly a *cascade*. When a
   definition fails to parse, its own parameter names (`p0`, `p1`, `param_1`)
   are not in scope in the body, and every use of them is reported.
@@ -996,15 +1010,17 @@ largest buckets are **not** defects in the game:
   declarations still compile with 0 errors and no *invalid use of `this`*
   diagnostic appeared — the guard holds.
 
-The buckets that *are* real shape the next pass. The first defect the gate
-named is fully fixed: **0** constructor or destructor definitions now carry a
-return type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`). What
-remains real: the arity divergence above (re-binding Ghidra's unbound
-`in_wN` input registers), definitions of two distinct overloads that flatten
-to a single signature (`stold` of a `char` string and of a `wchar_t` string
-both become `stold(byte *, long *)`, so the second definition collides; **7**
-of them newly visible now that both overloads are declared), and the
-libc++ template work.
+The buckets that *are* real shape the next pass. Two defects the gate named
+are now decided: **0** constructor or destructor definitions carry a return
+type or a parameter (695 reshaped by `tools/shape_ctor_dtor.py`), and the
+arity divergence above is largely rebound (`tools/shape_inw.py`, 764
+definitions). What remains real: definitions of two distinct overloads that
+flatten to a single signature (`stold` of a `char` string and of a `wchar_t`
+string both become `stold(byte *, long *)`, so the second definition
+collides; **7** of them newly visible now that both overloads are declared),
+the libc++ template work, and the type mismatches the arity errors used to
+mask — a call whose argument count now agrees gets its argument types
+checked for the first time.
 
 Run it with:
 

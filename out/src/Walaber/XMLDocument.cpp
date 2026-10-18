@@ -69,14 +69,13 @@
 
 /* Walaber::XMLDocument::_readFileCallback(void*) */
 
-void Walaber::XMLDocument::_readFileCallback(void *p0)
+void Walaber::XMLDocument::_readFileCallback(void *p0, long in_x1)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   ulong uVar4;
   long *plVar5;
-  long in_x1;
   ulong extraout_x1;
   ulong extraout_x1_00;
   ulong extraout_x1_01;
@@ -227,12 +226,11 @@ void Walaber::XMLDocument::_readFileCallback(void *p0)
 
 /* Walaber::XMLDocument::_buildXMLObject(char*, unsigned long) */
 
-void Walaber::XMLDocument::_buildXMLObject(char *p0,ulong p1)
+void Walaber::XMLDocument::_buildXMLObject(char *p0,ulong p1, undefined4 in_w2)
 
 {
   undefined8 uVar1;
   long lVar2;
-  undefined4 in_w2;
   
   uVar1 = xmlReadMemory(p1,in_w2,0,0,0);
   *(undefined8 *)p0 = uVar1;

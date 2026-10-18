@@ -147,12 +147,11 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerDown(int p0,Walaber__Fi
 
 /* Walaber::Widget_FingerCatcher::_acceptFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::_acceptFinger(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_FingerCatcher::_acceptFinger(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x2;
   undefined4 uStack_5c;
   undefined1 auStack_58 [8];
   undefined4 *puStack_50;
@@ -194,13 +193,12 @@ undefined8 Walaber::Widget_FingerCatcher::acceptNewFingerEntered(int p0,Walaber_
 
 /* Walaber::Widget_FingerCatcher::releaseFingerStayed(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   long lVar3;
   undefined8 uVar4;
-  long in_x2;
   long lVar5;
   int iStack_4c;
   undefined1 auStack_48 [8];
@@ -235,13 +233,12 @@ undefined8 Walaber::Widget_FingerCatcher::releaseFingerStayed(int p0,Walaber__Fi
 
 /* Walaber::Widget_FingerCatcher::releaseFingerMoved(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_FingerCatcher::releaseFingerMoved(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
   long lVar3;
   undefined8 uVar4;
-  long in_x2;
   long lVar5;
   int iStack_4c;
   undefined1 auStack_48 [8];
@@ -291,7 +288,7 @@ void Walaber::Widget_FingerCatcher::releaseFingerUp(int p0,Walaber__FingerInfo *
 
 /* Walaber::Widget_FingerCatcher::_releaseFinger(int, Walaber::FingerInfo*) */
 
-undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerInfo *p1)
+undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerInfo *p1, long in_x2)
 
 {
   ulong uVar2;
@@ -299,7 +296,6 @@ undefined8 Walaber::Widget_FingerCatcher::_releaseFinger(int p0,Walaber__FingerI
   undefined8 uVar4;
   int iVar5;
   long lVar6;
-  long in_x2;
   long lVar7;
   int iStack_5c;
   undefined1 auStack_58 [8];
@@ -416,12 +412,11 @@ LAB_0037c548:
 
 /* Walaber::Widget_FingerCatcher::lostFingerHandled(int) */
 
-void Walaber::Widget_FingerCatcher::lostFingerHandled(int p0)
+void Walaber::Widget_FingerCatcher::lostFingerHandled(int p0, int in_w1)
 
 {
   long *plVar1;
   ulong uVar2;
-  int in_w1;
   long lVar3;
   long *p0_00;
   

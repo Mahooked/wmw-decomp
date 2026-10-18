@@ -25,10 +25,9 @@ void std::__ndk1::ctype<wchar_t>::~ctype(void *param_1)
 
 /* std::__ndk1::ctype<wchar_t>::do_is(unsigned long, wchar_t) const */
 
-bool std::__ndk1::ctype<wchar_t>::do_is(ulong p0,wchar_t p1)
+bool std::__ndk1::ctype<wchar_t>::do_is(ulong p0,wchar_t p1, uint in_w2)
 
 {
-  uint in_w2;
   
   if (in_w2 < 0x80) {
     return (*(ulong *)(&DAT_00641af0 + (ulong)in_w2 * 8) & (ulong)(uint)p1) != 0;
@@ -44,10 +43,9 @@ bool std::__ndk1::ctype<wchar_t>::do_is(ulong p0,wchar_t p1)
 
 /* std::__ndk1::ctype<wchar_t>::do_is(wchar_t const*, wchar_t const*, unsigned long*) const */
 
-wchar_t * std::__ndk1::ctype<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2, undefined8 * in_x3)
 
 {
-  undefined8 *in_x3;
   wchar_t *pwVar1;
   undefined8 uVar2;
   
@@ -77,10 +75,9 @@ wchar_t * std::__ndk1::ctype<wchar_t>::do_is(wchar_t *p0,wchar_t *p1,ulong *p2)
 
 /* std::__ndk1::ctype<wchar_t>::do_scan_is(unsigned long, wchar_t const*, wchar_t const*) const */
 
-void std::__ndk1::ctype<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2)
+void std::__ndk1::ctype<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
-  wchar_t *in_x3;
   
   while ((p2 != in_x3 &&
          ((0x7f < (uint)*p2 || ((*(ulong *)(&DAT_00641af0 + (ulong)(uint)*p2 * 8) & (ulong)p1) == 0)
@@ -98,10 +95,9 @@ void std::__ndk1::ctype<wchar_t>::do_scan_is(ulong p0,wchar_t *p1,wchar_t *p2)
 
 /* std::__ndk1::ctype<wchar_t>::do_scan_not(unsigned long, wchar_t const*, wchar_t const*) const */
 
-void std::__ndk1::ctype<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2)
+void std::__ndk1::ctype<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2, wchar_t * in_x3)
 
 {
-  wchar_t *in_x3;
   
   while (((p2 != in_x3 && ((uint)*p2 < 0x80)) &&
          ((*(ulong *)(&DAT_00641af0 + (ulong)(uint)*p2 * 8) & (ulong)p1) != 0))) {
@@ -118,11 +114,10 @@ void std::__ndk1::ctype<wchar_t>::do_scan_not(ulong p0,wchar_t *p1,wchar_t *p2)
 
 /* std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t p0)
+uint std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t p0, uint in_w1)
 
 {
   int iVar1;
-  uint in_w1;
   
   if (in_w1 < 0x80) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4e90), iVar1 != 0)) {
@@ -146,13 +141,12 @@ uint std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t p0)
 
 /* std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
   int iVar2;
   wchar_t wVar3;
-  wchar_t *in_x2;
   
   pwVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {
@@ -183,11 +177,10 @@ wchar_t * std::__ndk1::ctype<wchar_t>::do_toupper(wchar_t *p0,wchar_t *p1)
 
 /* std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t p0)
+uint std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t p0, uint in_w1)
 
 {
   int iVar1;
-  uint in_w1;
   
   if (in_w1 < 0x80) {
     if (((DAT_007a4e90 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4e90), iVar1 != 0)) {
@@ -211,13 +204,12 @@ uint std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t p0)
 
 /* std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t*, wchar_t const*) const */
 
-wchar_t * std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_tolower(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   wchar_t *pwVar1;
   int iVar2;
   wchar_t wVar3;
-  wchar_t *in_x2;
   
   pwVar1 = p1;
   for (; p1 != in_x2; p1 = p1 + 1) {
@@ -264,11 +256,10 @@ undefined1 std::__ndk1::ctype<wchar_t>::do_widen(char p0)
 
 /* std::__ndk1::ctype<wchar_t>::do_widen(char const*, char const*, wchar_t*) const */
 
-wchar_t * std::__ndk1::ctype<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2, uint * in_x3)
 
 {
   wchar_t *pwVar1;
-  uint *in_x3;
   
   pwVar1 = (wchar_t *)p1;
   for (; (wchar_t *)p1 != p2; p1 = (char *)((long)p1 + 1)) {
@@ -287,11 +278,10 @@ wchar_t * std::__ndk1::ctype<wchar_t>::do_widen(char *p0,char *p1,wchar_t *p2)
 
 /* std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t, char) const */
 
-uint std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t p0,char p1)
+uint std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t p0,char p1, uint in_w2)
 
 {
   uint uVar1;
-  uint in_w2;
   
   uVar1 = (uint)(byte)p1;
   if (0x7f < (byte)p1) {
@@ -308,14 +298,13 @@ uint std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t p0,char p1)
 
 /* std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t const*, wchar_t const*, char, char*) const */
 
-wchar_t * std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3)
+wchar_t * std::__ndk1::ctype<wchar_t>::do_narrow(wchar_t *p0,wchar_t *p1,char p2,char *p3, wchar_t * in_x4)
 
 {
   ulong uVar1;
   wchar_t wVar2;
   wchar_t *pwVar3;
   ushort uVar4;
-  wchar_t *in_x4;
   wchar_t *pwVar5;
   ulong uVar6;
   wchar_t *pwVar7;

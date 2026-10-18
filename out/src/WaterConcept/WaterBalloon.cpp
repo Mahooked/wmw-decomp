@@ -1538,12 +1538,11 @@ LAB_00497680:
 
 /* WaterConcept::WaterBalloon::numParticlesOfFluidType(int) */
 
-int WaterConcept::WaterBalloon::numParticlesOfFluidType(int p0)
+int WaterConcept::WaterBalloon::numParticlesOfFluidType(int p0, int in_w1)
 
 {
   long lVar1;
   int iVar2;
-  int in_w1;
   int *piVar3;
   ulong uVar4;
   
@@ -1947,11 +1946,10 @@ void WaterConcept::WaterBalloon::particleHasCollided
 
 /* WaterConcept::WaterBalloon::containsFluidType(int) */
 
-undefined8 WaterConcept::WaterBalloon::containsFluidType(int p0)
+undefined8 WaterConcept::WaterBalloon::containsFluidType(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   int *piVar2;
   ulong uVar3;
   
@@ -1978,7 +1976,7 @@ undefined8 WaterConcept::WaterBalloon::containsFluidType(int p0)
 
 /* WaterConcept::WaterBalloon::pop(WaterConcept::Fluids*) */
 
-void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
+void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0, long in_x1)
 
 {
   long *plVar1;
@@ -1987,7 +1985,6 @@ void WaterConcept::WaterBalloon::pop(WaterConcept__Fluids *p0)
   byte bVar4;
   int iVar6;
   long *plVar7;
-  long in_x1;
   ulong uVar8;
   long lVar9;
   int iVar10;
@@ -2120,10 +2117,9 @@ void WaterConcept::WaterBalloon::doPop(long param_1,undefined4 param_2)
 
 /* WaterConcept::WaterBalloon::attachToSpout(WaterConcept::Spout*) */
 
-void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0)
+void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0, long in_x1)
 
 {
-  long in_x1;
   ulong auStack_50 [2];
   void *pvStack_40;
   undefined1 auStack_38 [16];

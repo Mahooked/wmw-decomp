@@ -10,7 +10,7 @@
 /* WARNING: Type propagation algorithm not settling */
 /* std::__ndk1::moneypunct_byname<wchar_t, true>::init(char const*) */
 
-void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0)
+void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0, long in_x1)
 
 {
   uint uVar1;
@@ -23,7 +23,6 @@ void std::__ndk1::moneypunct_byname<wchar_t,true>::init(char *p0)
   ulong uVar8;
   long lVar9;
   undefined8 uVar10;
-  long in_x1;
   ulong uVar11;
   char *pcVar12;
   ulong uVar13;

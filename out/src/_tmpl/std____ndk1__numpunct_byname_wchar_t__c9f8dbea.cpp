@@ -29,10 +29,9 @@ void std::__ndk1::numpunct_byname<wchar_t>::~numpunct_byname()
 
 /* std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char const*, unsigned long) */
 
-void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1)
+void std::__ndk1::numpunct_byname<wchar_t>::numpunct_byname(char *p0,ulong p1, long in_x2)
 
 {
-  long in_x2;
   
   p0[0x28] = '\0';
   p0[0x29] = '\0';

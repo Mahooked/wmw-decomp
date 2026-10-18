@@ -9,14 +9,13 @@
 
 /* WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int, int) */
 
-void WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int p0,int p1)
+void WaterConcept::IndexGrid<WaterConcept::World::MaterialInfo>::IndexGrid(int p0,int p1, int in_w2)
 
 {
   int iVar1;
   undefined1 auVar2 [16];
   int *piVar3;
   undefined8 *puVar4;
-  int in_w2;
   long lVar5;
   undefined8 *puVar6;
   

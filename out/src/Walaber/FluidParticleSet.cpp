@@ -9,12 +9,11 @@
 
 /* Walaber::FluidParticleSet::initParticles(unsigned int) */
 
-void Walaber::FluidParticleSet::initParticles(uint p0)
+void Walaber::FluidParticleSet::initParticles(uint p0, int in_w1)
 
 {
   undefined8 *puVar2;
   long *plVar3;
-  int in_w1;
   long lVar4;
   int iVar5;
   undefined8 uVar6;
@@ -67,11 +66,10 @@ void Walaber::FluidParticleSet::initParticles(uint p0)
 
 /* Walaber::FluidParticleSet::updateParticles(float) */
 
-void Walaber::FluidParticleSet::updateParticles(float p0)
+void Walaber::FluidParticleSet::updateParticles(long * in_x0, float p0)
 
 {
   undefined8 *puVar1;
-  long *in_x0;
   long lVar3;
   long *plVar4;
   ulong uVar5;
@@ -1671,13 +1669,12 @@ Walaber::FluidParticleSet::addParticle
 
 /* Walaber::FluidParticleSet::removeParticle(int) */
 
-void Walaber::FluidParticleSet::removeParticle(int p0)
+void Walaber::FluidParticleSet::removeParticle(int p0, int in_w1)
 
 {
   char cVar1;
   long *plVar2;
   long *plVar3;
-  int in_w1;
   char *pcVar4;
   undefined8 *puVar5;
   long lVar6;

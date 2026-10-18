@@ -111,7 +111,7 @@ void Walaber::BitmapFont::load(long param_1,undefined8 param_2,undefined8 param_
 
 /* Walaber::BitmapFont::_xmlFileLoaded(void*) */
 
-void Walaber::BitmapFont::_xmlFileLoaded(void *p0)
+void Walaber::BitmapFont::_xmlFileLoaded(void *p0, int * in_x1)
 
 {
   undefined8 *puVar1;
@@ -125,7 +125,6 @@ void Walaber::BitmapFont::_xmlFileLoaded(void *p0)
   ulong uVar10;
   void *pvVar11;
   long *plVar12;
-  int *in_x1;
   ulong extraout_x1;
   long lVar13;
   ulong uVar14;
@@ -1096,12 +1095,11 @@ LAB_00365fac:
    Walaber::BitmapFont::GlyphInfo const&) const */
 
 undefined1  [16]
-Walaber::BitmapFont::_getKern(Walaber__BitmapFont__GlyphInfo *p0,Walaber__BitmapFont__GlyphInfo *p1)
+Walaber::BitmapFont::_getKern(Walaber__BitmapFont__GlyphInfo *p0,Walaber__BitmapFont__GlyphInfo *p1, undefined4 * in_x2)
 
 {
   ulong uVar2;
   Walaber__BitmapFont__GlyphInfo *pWVar3;
-  undefined4 *in_x2;
   void *pvVar4;
   ulong p0_00;
   undefined1 auVar5 [16];
@@ -2701,13 +2699,12 @@ void Walaber::BitmapFont::_drawStringRight
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::BitmapFont::_insertQuadIntoBuffer(int) */
 
-void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0)
+void Walaber::BitmapFont::_insertQuadIntoBuffer(int p0, int in_w1)
 
 {
   undefined8 uVar1;
   undefined8 uVar2;
   ulong uVar3;
-  int in_w1;
   long lVar4;
   long *plVar5;
   undefined8 *puVar6;

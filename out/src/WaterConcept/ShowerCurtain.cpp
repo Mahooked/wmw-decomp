@@ -173,10 +173,9 @@ void WaterConcept::ShowerCurtain::setTopLeftPosition(Walaber__Vector2 *p0,float 
 
 /* WaterConcept::ShowerCurtain::update(float) */
 
-void WaterConcept::ShowerCurtain::update(float p0)
+void WaterConcept::ShowerCurtain::update(long in_x0, float p0)
 
 {
-  long in_x0;
   int iVar1;
   undefined4 in_register_00005004;
   
@@ -672,11 +671,10 @@ void WaterConcept::ShowerCurtain::_getLightingForVert(int p0,int p1)
 /* WaterConcept::ShowerCurtain::handleTouchMoved(Walaber::Vector2 const&, Walaber::Vector2 const&)
     */
 
-void WaterConcept::ShowerCurtain::handleTouchMoved(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
+void WaterConcept::ShowerCurtain::handleTouchMoved(Walaber__Vector2 *p0,Walaber__Vector2 *p1, undefined8 * in_x2)
 
 {
   int iVar1;
-  undefined8 *in_x2;
   long lVar2;
   int iVar3;
   int iVar4;

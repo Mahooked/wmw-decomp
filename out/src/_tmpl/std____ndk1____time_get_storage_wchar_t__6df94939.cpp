@@ -664,7 +664,7 @@ LAB_005dec28:
 
 /* std::__ndk1::__time_get_storage<wchar_t>::init(std::__ndk1::ctype<wchar_t> const&) */
 
-void std::__ndk1::__time_get_storage<wchar_t>::init(std____ndk1__ctype<wchar_t> *p0)
+void std::__ndk1::__time_get_storage<wchar_t>::init(std____ndk1__ctype<wchar_t> *p0, undefined8 in_x1)
 
 {
   byte bVar1;
@@ -672,7 +672,6 @@ void std::__ndk1::__time_get_storage<wchar_t>::init(std____ndk1__ctype<wchar_t> 
   undefined8 *puVar3;
   long lVar4;
   long lVar5;
-  undefined8 in_x1;
   ulong uVar6;
   ulong uVar7;
   undefined4 *puVar8;

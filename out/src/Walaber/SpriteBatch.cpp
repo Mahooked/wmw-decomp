@@ -1572,11 +1572,10 @@ void Walaber::SpriteBatch::_addQuadToBatchUVRect
 
 /* Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int, unsigned int) */
 
-void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1)
+void Walaber::SpriteBatch::_getDrawActionForTextureOnLayer(int p0,uint p1, int in_w2)
 
 {
   long lVar2;
-  int in_w2;
   long lVar3;
   uint uVar4;
   ulong uVar5;
@@ -2848,10 +2847,9 @@ void Walaber::SpriteBatch::setDefaultProjectionMatrix(void)
 
 /* Walaber::SpriteBatch::setCameraProjectionMatrix(Walaber::Vector2&, Walaber::Vector2&) */
 
-void Walaber::SpriteBatch::setCameraProjectionMatrix(Walaber__Vector2 *p0,Walaber__Vector2 *p1)
+void Walaber::SpriteBatch::setCameraProjectionMatrix(Walaber__Vector2 *p0,Walaber__Vector2 *p1, float * in_x2)
 
 {
-  float *in_x2;
   
   glMatrixMode(0x1701);
   glLoadIdentity();

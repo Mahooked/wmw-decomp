@@ -41,10 +41,9 @@ void std::__ndk1::collate<wchar_t>::~collate(void *param_1)
 /* std::__ndk1::collate<wchar_t>::do_compare(wchar_t const*, wchar_t const*, wchar_t const*, wchar_t
    const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3)
+ulong std::__ndk1::collate<wchar_t>::do_compare(wchar_t *p0,wchar_t *p1,wchar_t *p2,wchar_t *p3, wchar_t * in_x4)
 
 {
-  wchar_t *in_x4;
   
   while( true ) {
     if (p3 == in_x4) {
@@ -91,12 +90,11 @@ void std::__ndk1::collate<wchar_t>::do_transform(wchar_t *p0,wchar_t *p1)
 
 /* std::__ndk1::collate<wchar_t>::do_hash(wchar_t const*, wchar_t const*) const */
 
-ulong std::__ndk1::collate<wchar_t>::do_hash(wchar_t *p0,wchar_t *p1)
+ulong std::__ndk1::collate<wchar_t>::do_hash(wchar_t *p0,wchar_t *p1, wchar_t * in_x2)
 
 {
   ulong uVar1;
   wchar_t *pwVar2;
-  wchar_t *in_x2;
   ulong uVar3;
   
   if (p1 != in_x2) {

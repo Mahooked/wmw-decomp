@@ -2149,7 +2149,7 @@ void WaterConcept::Screen_LevelSelect::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   uint uVar1;
@@ -2178,7 +2178,6 @@ void WaterConcept::Screen_LevelSelect::_finishedLoadingWidgets(void *p0)
   byte *pbVar25;
   long *plVar26;
   long *plVar27;
-  int *in_x1;
   int *piVar29;
   int iVar30;
   int iVar31;
@@ -4283,12 +4282,11 @@ LAB_004f2ed0:
 
 /* WaterConcept::Screen_LevelSelect::_treasureSpriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_LevelSelect::_treasureSpriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_LevelSelect::_treasureSpriteAnimationEventCallback(void *p0, long * in_x1)
 
 {
   int iVar2;
   long lVar3;
-  long *in_x1;
   long lVar4;
   byte abStack_50 [16];
   void *pvStack_40;
@@ -7577,7 +7575,7 @@ void WaterConcept::Screen_LevelSelect::update(float p0,bool p1)
 
 /* WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int) */
 
-void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
+void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0, int in_w1)
 
 {
   uint uVar1;
@@ -7585,7 +7583,6 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
   int iVar4;
   uint uVar5;
   ulong uVar6;
-  int in_w1;
   long lVar7;
   undefined8 uVar8;
   undefined8 uVar9;
@@ -7661,14 +7658,13 @@ void WaterConcept::Screen_LevelSelect::_playUnlockAnimationForSprite(int p0)
 
 /* WaterConcept::Screen_LevelSelect::draw(int) */
 
-void WaterConcept::Screen_LevelSelect::draw(int p0)
+void WaterConcept::Screen_LevelSelect::draw(int p0, int in_w1)
 
 {
   ulong uVar1;
   long lVar2;
   ulong uVar4;
   long *plVar5;
-  int in_w1;
   long lVar6;
   ulong uVar7;
   uint uVar8;
@@ -7775,7 +7771,7 @@ void WaterConcept::Screen_LevelSelect::draw(int p0)
 
 /* WaterConcept::Screen_LevelSelect::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   int *piVar1;
@@ -7793,7 +7789,6 @@ void WaterConcept::Screen_LevelSelect::messageRx(Walaber__Message *p0)
   long *plVar14;
   undefined8 uVar15;
   void **ppvVar16;
-  long in_x1;
   long lVar18;
   byte *pbVar19;
   ulong uVar20;
@@ -11301,10 +11296,9 @@ LAB_004fb1a0:
 
 /* WaterConcept::Screen_LevelSelect::_spriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_LevelSelect::_spriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_LevelSelect::_spriteAnimationEventCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   ulong uVar1;
   ulong uVar2;
   
@@ -11330,10 +11324,9 @@ void WaterConcept::Screen_LevelSelect::_spriteAnimationEventCallback(void *p0)
 
 /* WaterConcept::Screen_LevelSelect::notifyTransitionPhaseChange(unsigned int) */
 
-void WaterConcept::Screen_LevelSelect::notifyTransitionPhaseChange(uint p0)
+void WaterConcept::Screen_LevelSelect::notifyTransitionPhaseChange(uint p0, int in_w1)
 
 {
-  int in_w1;
   
   if (in_w1 == 4) {
     *(undefined4 *)((ulong)p0 + 0x248) = 0x3e800000;
@@ -11426,11 +11419,10 @@ void WaterConcept::Screen_LevelSelect::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_LevelSelect::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_LevelSelect::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_LevelSelect::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
   ulong uVar2;
-  undefined8 *in_x3;
   long lVar3;
   ulong uVar4;
   undefined8 uStack_58;

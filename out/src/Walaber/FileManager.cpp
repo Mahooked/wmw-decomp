@@ -174,12 +174,11 @@ void Walaber::FileManager::addFileHandler(int p0,Walaber__FileManager__FileHandl
 
 /* Walaber::FileManager::removeFileHandler(Walaber::FileManager::FileHandler*) */
 
-void Walaber::FileManager::removeFileHandler(Walaber__FileManager__FileHandler *p0)
+void Walaber::FileManager::removeFileHandler(Walaber__FileManager__FileHandler *p0, ulong in_x1)
 
 {
   ulong *puVar1;
   bool bVar2;
-  ulong in_x1;
   Walaber__FileManager__FileHandler *pWVar3;
   Walaber__FileManager__FileHandler *pWVar4;
   

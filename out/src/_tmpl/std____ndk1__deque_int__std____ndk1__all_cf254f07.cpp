@@ -33,11 +33,10 @@ void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::pop_front(long param_1
 
 /* std::__ndk1::deque<int, std::__ndk1::allocator<int> >::push_back(int&&) */
 
-void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0)
+void std::__ndk1::deque<int,std::__ndk1::allocator<int>>::push_back(int **p0, undefined4 * in_x1)
 
 {
   ulong uVar1;
-  undefined4 *in_x1;
   int *piVar2;
   int *piVar3;
   ulong uVar4;

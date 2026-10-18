@@ -447,7 +447,7 @@ void WaterConcept::Screen_Challenges::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   uint uVar1;
@@ -485,7 +485,6 @@ void WaterConcept::Screen_Challenges::_finishedLoadingWidgets(void *p0)
   long *plVar34;
   undefined8 *puVar35;
   undefined8 uVar36;
-  int *in_x1;
   long lVar38;
   char *pcVar39;
   undefined4 *puVar40;
@@ -2807,11 +2806,10 @@ void WaterConcept::Screen_Challenges::update(float p0,bool p1)
 
 /* WaterConcept::Screen_Challenges::draw(int) */
 
-void WaterConcept::Screen_Challenges::draw(int p0)
+void WaterConcept::Screen_Challenges::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -3387,12 +3385,11 @@ void WaterConcept::Screen_Challenges::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_Challenges::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_Challenges::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_Challenges::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   Walaber__Message *pWVar2;
   undefined8 uVar3;
-  long in_x1;
   byte abStack_90 [16];
   void *pvStack_80;
   byte abStack_78 [16];

@@ -1008,12 +1008,11 @@ void WaterConcept::FluidConverter::handleTouchDown(Walaber__Vector2 *p0)
 
 /* WaterConcept::FluidConverter::_updateFluidSprite(int) */
 
-void WaterConcept::FluidConverter::_updateFluidSprite(int p0)
+void WaterConcept::FluidConverter::_updateFluidSprite(int p0, int in_w1)
 
 {
   ulong uVar1;
   ulong uVar2;
-  int in_w1;
   ulong uVar3;
   int iVar4;
   
@@ -1089,13 +1088,12 @@ void WaterConcept::FluidConverter::_initFinished(long param_1)
 
 /* WaterConcept::FluidConverter::_animationEvent(void*) */
 
-void WaterConcept::FluidConverter::_animationEvent(void *p0)
+void WaterConcept::FluidConverter::_animationEvent(void *p0, long in_x1)
 
 {
   ulong uVar1;
   bool bVar3;
   int iVar4;
-  long in_x1;
   ulong uVar5;
   byte abStack_50 [8];
   ulong uStack_48;

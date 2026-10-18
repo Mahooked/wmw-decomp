@@ -202,14 +202,13 @@ void Walaber::CurveManager::getCurve(long param_1,long *param_2,undefined8 param
 
 /* Walaber::CurveManager::_initCurveFileLoaded(void*) */
 
-void Walaber::CurveManager::_initCurveFileLoaded(void *p0)
+void Walaber::CurveManager::_initCurveFileLoaded(void *p0, long in_x1)
 
 {
   long lVar1;
   bool bVar3;
   long lVar4;
   undefined8 uVar5;
-  long in_x1;
   undefined8 extraout_x1;
   ulong *puVar8;
   ulong *puVar9;
@@ -504,12 +503,11 @@ LAB_003e20f8:
 
 /* Walaber::CurveManager::_initCurveCollectionLoaded(void*) */
 
-void Walaber::CurveManager::_initCurveCollectionLoaded(void *p0)
+void Walaber::CurveManager::_initCurveCollectionLoaded(void *p0, ulong in_x1)
 
 {
   byte bVar2;
   long *plVar3;
-  ulong in_x1;
   ulong extraout_x1;
   ulong extraout_x1_00;
   ulong p1;

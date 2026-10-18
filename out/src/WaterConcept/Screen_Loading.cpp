@@ -5882,11 +5882,10 @@ void WaterConcept::Screen_Loading::_goEnter(void)
 
 /* WaterConcept::Screen_Loading::draw(int) */
 
-void WaterConcept::Screen_Loading::draw(int p0)
+void WaterConcept::Screen_Loading::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   if (in_w1 != 0) {
     Walaber::GraphicsGL::setAlphaBlending(1,1,0x303);
@@ -5929,11 +5928,10 @@ int WaterConcept::Screen_Loading::handleEvent
 
 /* WaterConcept::Screen_Loading::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   undefined8 uVar2;
-  long in_x1;
   undefined1 auStack_c0 [32];
   byte abStack_a0 [16];
   void *pvStack_90;
@@ -6093,11 +6091,10 @@ undefined8 WaterConcept::Screen_Loading::messageRx(Walaber__Message *p0)
 
 /* WaterConcept::Screen_Loading::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_Loading::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_Loading::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined8 uVar1;
-  int *in_x1;
   
   if (*in_x1 == 1) {
     puts("[Screen_Loading] finishedLoadingWidgets");

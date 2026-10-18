@@ -556,12 +556,11 @@ LAB_00385240:
 
 /* Walaber::Widget_ScoreCounter::_getDigitAtIndex(int) */
 
-int Walaber::Widget_ScoreCounter::_getDigitAtIndex(int p0)
+int Walaber::Widget_ScoreCounter::_getDigitAtIndex(int p0, int in_w1)
 
 {
   int iVar1;
   int iVar2;
-  int in_w1;
   double dVar3;
   
   iVar1 = *(int *)((ulong)(uint)p0 + 0x174);
@@ -963,10 +962,9 @@ void Walaber::Widget_ScoreCounter::notifyFingerLost(int p0,Walaber__FingerInfo *
 
 /* Walaber::Widget_ScoreCounter::setBaseSize(Walaber::Vector2) */
 
-void Walaber::Widget_ScoreCounter::setBaseSize(Walaber__Vector2 p0)
+void Walaber::Widget_ScoreCounter::setBaseSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   undefined8 uStack_30;
   
   uStack_30 = *in_x1;

@@ -266,10 +266,9 @@ void WaterConcept::Screen_MainMenu::_spriteEventCallback(void *p0)
 
 /* WaterConcept::Screen_MainMenu::_spriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_MainMenu::_spriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_MainMenu::_spriteAnimationEventCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
     *(undefined1 *)((long)p0 + 0x2c0) = 1;
@@ -7960,13 +7959,12 @@ void WaterConcept::Screen_MainMenu::_buildUI(long param_1)
 
 /* WaterConcept::Screen_MainMenu::_loadedHolidayLights(void*) */
 
-void WaterConcept::Screen_MainMenu::_loadedHolidayLights(void *p0)
+void WaterConcept::Screen_MainMenu::_loadedHolidayLights(void *p0, long in_x1)
 
 {
   int iVar1;
   float fVar3;
   int iVar4;
-  long in_x1;
   long *plVar5;
   float fVar6;
   float fVar7;
@@ -8017,12 +8015,11 @@ void WaterConcept::Screen_MainMenu::_loadedHolidayLights(void *p0)
 
 /* WaterConcept::Screen_MainMenu::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_MainMenu::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_MainMenu::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar2;
-  byte *in_x1;
   
   uVar1 = (ulong)(*in_x1 >> 1);
   if ((*in_x1 & 1) != 0) {
@@ -8927,10 +8924,9 @@ void WaterConcept::Screen_MainMenu::triggerAccelerometerTheme(long param_1)
 
 /* WaterConcept::Screen_MainMenu::_updateCurtain(float) */
 
-void WaterConcept::Screen_MainMenu::_updateCurtain(float p0)
+void WaterConcept::Screen_MainMenu::_updateCurtain(long in_x0, float p0)
 
 {
-  long in_x0;
   float fVar2;
   float fVar3;
   undefined4 in_register_00005004;
@@ -8978,14 +8974,13 @@ void WaterConcept::Screen_MainMenu::_updateCurtain(float p0)
 
 /* WaterConcept::Screen_MainMenu::draw(int) */
 
-void WaterConcept::Screen_MainMenu::draw(int p0)
+void WaterConcept::Screen_MainMenu::draw(int p0, int in_w1)
 
 {
   long lVar1;
   uint uVar2;
   ulong uVar4;
   long *plVar5;
-  int in_w1;
   long lVar6;
   undefined8 uVar7;
   int aiStack_88 [2];
@@ -10943,7 +10938,7 @@ switchD_00511724_caseD_3:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_MainMenu::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_MainMenu::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   void *pvVar2;
@@ -10964,7 +10959,6 @@ void WaterConcept::Screen_MainMenu::messageRx(Walaber__Message *p0)
   long lVar17;
   ulong *puVar18;
   char *pcVar19;
-  long in_x1;
   ulong uVar21;
   undefined8 uVar22;
   ulong uVar23;
@@ -12849,7 +12843,7 @@ LAB_00515520:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_MainMenu::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_MainMenu::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   ulong uVar1;
@@ -12867,7 +12861,6 @@ void WaterConcept::Screen_MainMenu::_finishedLoadingWidgets(void *p0)
   ulong *puVar14;
   undefined8 *puVar15;
   ulong uVar16;
-  int *in_x1;
   char *pcVar17;
   char *pcVar19;
   byte bVar20;
@@ -13410,12 +13403,11 @@ LAB_00515fa8:
 
 /* WaterConcept::Screen_MainMenu::_fileExistsCallback(void*) */
 
-void WaterConcept::Screen_MainMenu::_fileExistsCallback(void *p0)
+void WaterConcept::Screen_MainMenu::_fileExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;

@@ -125,10 +125,9 @@ Walaber::NumericAnimationTrack::operator=(Walaber__NumericAnimationTrack *p0)
 
 /* Walaber::NumericAnimationTrack::setAnimation(Walaber::Animation*) */
 
-void Walaber::NumericAnimationTrack::setAnimation(Walaber__Animation *p0)
+void Walaber::NumericAnimationTrack::setAnimation(Walaber__Animation *p0, ulong in_x1)
 
 {
-  ulong in_x1;
   
   p0->f_0x20 = in_x1;
   return;

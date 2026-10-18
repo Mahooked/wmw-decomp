@@ -34,11 +34,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Walaber::Transition_Block::setup(float) */
 
-void Walaber::Transition_Block::setup(float p0)
+void Walaber::Transition_Block::setup(long in_x0, float p0)
 
 {
   ulong uVar2;
-  long in_x0;
   int iVar3;
   float fVar4;
   undefined1 auStack_3c [4];

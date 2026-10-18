@@ -640,14 +640,13 @@ LAB_0035a818:
 
 /* Walaber::SpriteAnimation::_loadedAtlas(void*) */
 
-void Walaber::SpriteAnimation::_loadedAtlas(void *p0)
+void Walaber::SpriteAnimation::_loadedAtlas(void *p0, int * in_x1)
 
 {
   uint uVar1;
   byte *pbVar3;
   undefined8 uVar4;
   long *plVar5;
-  int *in_x1;
   long lVar6;
   long lVar7;
   byte *pbVar8;

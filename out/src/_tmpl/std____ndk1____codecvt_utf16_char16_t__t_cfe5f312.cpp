@@ -111,10 +111,9 @@ LAB_005dae24:
     */
 
 undefined8
-std::__ndk1::__codecvt_utf16<char16_t,true>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3)
+std::__ndk1::__codecvt_utf16<char16_t,true>::do_unshift(mbstate_t *p0,char *p1,char *p2,char **p3, undefined8 * in_x4)
 
 {
-  undefined8 *in_x4;
   
   *in_x4 = p2;
   return 3;
@@ -157,12 +156,11 @@ undefined8 std::__ndk1::__codecvt_utf16<char16_t,true>::do_always_noconv(void)
 /* std::__ndk1::__codecvt_utf16<char16_t, true>::do_length(mbstate_t&, char const*, char const*,
    unsigned long) const */
 
-int std::__ndk1::__codecvt_utf16<char16_t,true>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3)
+int std::__ndk1::__codecvt_utf16<char16_t,true>::do_length(mbstate_t *p0,char *p1,char *p2,ulong p3, ulong in_x4)
 
 {
   mbstate_t mVar1;
   bool bVar2;
-  ulong in_x4;
   char *pcVar3;
   ulong uVar4;
   char *pcVar5;

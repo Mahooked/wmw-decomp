@@ -451,13 +451,12 @@ LAB_0047a054:
 
 /* WaterConcept::Fan::_setState(bool) */
 
-void WaterConcept::Fan::_setState(bool p0)
+void WaterConcept::Fan::_setState(bool p0, byte in_w1)
 
 {
   byte bVar1;
   ulong uVar3;
   long *plVar4;
-  byte in_w1;
   ulong uVar5;
   ulong uStack_48;
   uint uStack_40;
@@ -506,10 +505,9 @@ void WaterConcept::Fan::particleHasCollided
 
 /* WaterConcept::Fan::connectDrain(WaterConcept::Spout*) */
 
-void WaterConcept::Fan::connectDrain(WaterConcept__Spout *p0)
+void WaterConcept::Fan::connectDrain(WaterConcept__Spout *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
   *(undefined8 *)&p0->field_0x400 = in_x1;
   return;
@@ -523,12 +521,11 @@ void WaterConcept::Fan::connectDrain(WaterConcept__Spout *p0)
 
 /* WaterConcept::Fan::connectPump(WaterConcept::InteractiveObject*) */
 
-void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0)
+void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0, long in_x1)
 
 {
   bool bVar2;
   ulong uVar3;
-  long in_x1;
   long *plVar4;
   long *plVar5;
   long lVar6;

@@ -62,11 +62,10 @@ void Walaber::Property::setValue(std::__ndk1::basic_string<char, std::__ndk1::ch
 
 /* Walaber::Property::setValue(int) */
 
-void Walaber::Property::setValue(int p0)
+void Walaber::Property::setValue(int p0, undefined4 in_w1)
 
 {
   undefined4 *puVar2;
-  undefined4 in_w1;
   byte *pbVar3;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
@@ -282,12 +281,11 @@ void Walaber::Property::setValue(float p0)
 
 /* Walaber::Property::setValue(Walaber::Vector2 const&) */
 
-void Walaber::Property::setValue(Walaber__Vector2 *p0)
+void Walaber::Property::setValue(Walaber__Vector2 *p0, undefined4 * in_x1)
 
 {
   float fVar2;
   undefined8 uVar3;
-  undefined4 *in_x1;
   Walaber__Vector2 *pWVar4;
   Walaber__Vector2 WStack_1a8;
   Walaber__Vector2 WStack_1a0;
@@ -397,12 +395,11 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0)
 
 /* Walaber::Property::setValue(Walaber::Rect const&) */
 
-void Walaber::Property::setValue(Walaber__Rect *p0)
+void Walaber::Property::setValue(Walaber__Rect *p0, undefined4 * in_x1)
 
 {
   float fVar2;
   undefined8 uVar3;
-  undefined4 *in_x1;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;
@@ -514,12 +511,11 @@ void Walaber::Property::setValue(Walaber__Rect *p0)
 
 /* Walaber::Property::setValue(Walaber::Color const&) */
 
-void Walaber::Property::setValue(Walaber__Color *p0)
+void Walaber::Property::setValue(Walaber__Color *p0, undefined1 * in_x1)
 
 {
   byte bVar1;
   undefined8 uVar3;
-  undefined1 *in_x1;
   Walaber__Color *pWVar4;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
@@ -634,11 +630,10 @@ void Walaber::Property::setValue(Walaber__Color *p0)
 
 /* Walaber::Property::setValue(Walaber::AABB const&) */
 
-void Walaber::Property::setValue(Walaber__AABB *p0)
+void Walaber::Property::setValue(Walaber__AABB *p0, undefined4 * in_x1)
 
 {
   undefined8 uVar2;
-  undefined4 *in_x1;
   undefined8 uStack_1a8;
   undefined8 uStack_1a0;
   undefined8 uStack_198;

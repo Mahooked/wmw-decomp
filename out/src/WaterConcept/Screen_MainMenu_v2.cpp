@@ -1756,12 +1756,11 @@ void WaterConcept::Screen_MainMenu_v2::_buildUI(long param_1)
 
 /* WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void*) */
 
-void WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void *p0)
+void WaterConcept::Screen_MainMenu_v2::_curveLoadCallback(void *p0, byte * in_x1)
 
 {
   ulong uVar1;
   int iVar3;
-  byte *in_x1;
   long lVar4;
   long lStack_48;
   int *piStack_40;
@@ -2987,10 +2986,9 @@ LAB_0051af80:
 
 /* WaterConcept::Screen_MainMenu_v2::_updateSprites(float) */
 
-void WaterConcept::Screen_MainMenu_v2::_updateSprites(float p0)
+void WaterConcept::Screen_MainMenu_v2::_updateSprites(long in_x0, float p0)
 
 {
-  long in_x0;
   undefined4 in_register_00005004;
   undefined8 uVar1;
   
@@ -3016,10 +3014,9 @@ void WaterConcept::Screen_MainMenu_v2::_updateSprites(float p0)
 
 /* WaterConcept::Screen_MainMenu_v2::_updateAnimations(float) */
 
-void WaterConcept::Screen_MainMenu_v2::_updateAnimations(float p0)
+void WaterConcept::Screen_MainMenu_v2::_updateAnimations(long in_x0, float p0)
 
 {
-  long in_x0;
   undefined8 uVar1;
   float fVar2;
   undefined4 in_register_00005004;
@@ -3061,14 +3058,13 @@ switchD_0051b0e8_caseD_2:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::_updateMainMenuAnimation(float) */
 
-void WaterConcept::Screen_MainMenu_v2::_updateMainMenuAnimation(float p0)
+void WaterConcept::Screen_MainMenu_v2::_updateMainMenuAnimation(long in_x0, float p0)
 
 {
   bool bVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  long in_x0;
   undefined8 uVar6;
   long lVar7;
   long *plVar8;
@@ -3434,12 +3430,11 @@ void WaterConcept::Screen_MainMenu_v2::_handleSaleTransition(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::_updateTriDuckPosAccordingToCamPos(float) */
 
-void WaterConcept::Screen_MainMenu_v2::_updateTriDuckPosAccordingToCamPos(float p0)
+void WaterConcept::Screen_MainMenu_v2::_updateTriDuckPosAccordingToCamPos(long in_x0, float p0)
 
 {
   ulong uVar1;
   long lVar2;
-  long in_x0;
   long lVar3;
   int iVar4;
   long *plVar5;
@@ -4229,7 +4224,7 @@ void WaterConcept::Screen_MainMenu_v2::_loadSprites(long param_1)
 
 /* WaterConcept::Screen_MainMenu_v2::draw(int) */
 
-void WaterConcept::Screen_MainMenu_v2::draw(int p0)
+void WaterConcept::Screen_MainMenu_v2::draw(int p0, int in_w1)
 
 {
   ulong uVar1;
@@ -4237,7 +4232,6 @@ void WaterConcept::Screen_MainMenu_v2::draw(int p0)
   ulong uVar4;
   long lVar5;
   long *plVar6;
-  int in_w1;
   ulong uVar7;
   uint uVar8;
   long lVar9;
@@ -7740,7 +7734,7 @@ switchD_0052014c_caseD_2:
 
 /* WaterConcept::Screen_MainMenu_v2::_patternMatchSecretLevelHandle(int) */
 
-ulong WaterConcept::Screen_MainMenu_v2::_patternMatchSecretLevelHandle(int p0)
+ulong WaterConcept::Screen_MainMenu_v2::_patternMatchSecretLevelHandle(int p0, int in_w1)
 
 {
   int iVar1;
@@ -7748,7 +7742,6 @@ ulong WaterConcept::Screen_MainMenu_v2::_patternMatchSecretLevelHandle(int p0)
   undefined8 uVar4;
   char *pcVar5;
   ulong uVar6;
-  int in_w1;
   int iVar7;
   undefined4 uVar9;
   uint uVar10;
@@ -8242,11 +8235,10 @@ void WaterConcept::Screen_MainMenu_v2::backKeyPressed(long param_1)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::touchDown(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_MainMenu_v2::touchDown(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_MainMenu_v2::touchDown(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   ulong uVar2;
-  undefined8 *in_x2;
   long lVar3;
   undefined1 auVar4 [16];
   undefined8 uStack_30;
@@ -8294,13 +8286,12 @@ switchD_00521c34_caseD_4:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::touchMoved(int, Walaber::Vector2, Walaber::Vector2) */
 
-void WaterConcept::Screen_MainMenu_v2::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2)
+void WaterConcept::Screen_MainMenu_v2::touchMoved(int p0,Walaber__Vector2 p1,Walaber__Vector2 p2, undefined8 * in_x3)
 
 {
   ulong uVar1;
   ulong uVar3;
   ulong uVar4;
-  undefined8 *in_x3;
   long lVar5;
   ulong uVar6;
   uint uVar7;
@@ -8393,12 +8384,11 @@ switchD_00521d1c_caseD_4:
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::touchUp(int, Walaber::Vector2) */
 
-void WaterConcept::Screen_MainMenu_v2::touchUp(int p0,Walaber__Vector2 p1)
+void WaterConcept::Screen_MainMenu_v2::touchUp(int p0,Walaber__Vector2 p1, undefined8 * in_x2)
 
 {
   uint uVar1;
   ulong uVar3;
-  undefined8 *in_x2;
   long lVar4;
   undefined1 auVar5 [16];
   undefined8 uStack_30;
@@ -8439,11 +8429,10 @@ LAB_00521f40:
 
 /* WaterConcept::Screen_MainMenu_v2::notifyTransitionPhaseChange(unsigned int) */
 
-void WaterConcept::Screen_MainMenu_v2::notifyTransitionPhaseChange(uint p0)
+void WaterConcept::Screen_MainMenu_v2::notifyTransitionPhaseChange(uint p0, int in_w1)
 
 {
   undefined8 uVar2;
-  int in_w1;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
@@ -8585,7 +8574,7 @@ LAB_005222cc:
 
 /* WaterConcept::Screen_MainMenu_v2::messageRx(Walaber::Message const&) */
 
-void WaterConcept::Screen_MainMenu_v2::messageRx(Walaber__Message *p0)
+void WaterConcept::Screen_MainMenu_v2::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   long lVar1;
@@ -8607,7 +8596,6 @@ void WaterConcept::Screen_MainMenu_v2::messageRx(Walaber__Message *p0)
   undefined *puVar18;
   byte *pbVar19;
   long *plVar20;
-  long in_x1;
   undefined4 *puVar22;
   float fVar23;
   float fVar24;
@@ -11481,7 +11469,7 @@ switchD_0052279c_caseD_17:
 
 /* WaterConcept::Screen_MainMenu_v2::_notifyNetworkConnectionTest(bool) */
 
-void WaterConcept::Screen_MainMenu_v2::_notifyNetworkConnectionTest(bool p0)
+void WaterConcept::Screen_MainMenu_v2::_notifyNetworkConnectionTest(bool p0, ulong in_x1)
 
 {
   void *pvVar2;
@@ -11489,7 +11477,6 @@ void WaterConcept::Screen_MainMenu_v2::_notifyNetworkConnectionTest(bool p0)
   int iVar4;
   ulong uVar5;
   ulong *puVar6;
-  ulong in_x1;
   ulong auStack_110 [2];
   char *pcStack_100;
   byte abStack_f0 [8];
@@ -12525,7 +12512,7 @@ void WaterConcept::Screen_MainMenu_v2::getTransitionOffset(undefined8 *param_1,l
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_MainMenu_v2::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_MainMenu_v2::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   undefined *puVar1;
@@ -12564,7 +12551,6 @@ void WaterConcept::Screen_MainMenu_v2::_finishedLoadingWidgets(void *p0)
   long *plVar34;
   undefined *puVar35;
   byte *pbVar36;
-  int *in_x1;
   char *pcVar37;
   long lVar38;
   undefined8 uVar39;
@@ -14827,13 +14813,12 @@ LAB_00528b20:
 
 /* WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void*) */
 
-void WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void *p0)
+void WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void *p0, long in_x1)
 
 {
   int iVar2;
   long lVar3;
   undefined8 uVar4;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
@@ -14907,11 +14892,10 @@ void WaterConcept::Screen_MainMenu_v2::_logoTextureExistsCallback(void *p0)
 
 /* WaterConcept::Screen_MainMenu_v2::_adjustTextureSize(Walaber::Widget_Label*) */
 
-void WaterConcept::Screen_MainMenu_v2::_adjustTextureSize(Walaber__Widget_Label *p0)
+void WaterConcept::Screen_MainMenu_v2::_adjustTextureSize(Walaber__Widget_Label *p0, long * in_x1)
 
 {
   long lVar1;
-  long *in_x1;
   float fVar3;
   float fVar4;
   float fVar5;
@@ -16512,12 +16496,11 @@ switchD_0052b5a0_caseD_2:
 
 /* WaterConcept::Screen_MainMenu_v2::_fileExistsCallback(void*) */
 
-void WaterConcept::Screen_MainMenu_v2::_fileExistsCallback(void *p0)
+void WaterConcept::Screen_MainMenu_v2::_fileExistsCallback(void *p0, long in_x1)
 
 {
   long lVar2;
   undefined8 uVar3;
-  long in_x1;
   undefined8 uStack_80;
   undefined8 uStack_78;
   undefined8 uStack_70;
@@ -16576,10 +16559,9 @@ void WaterConcept::Screen_MainMenu_v2::_fileExistsCallback(void *p0)
 
 /* WaterConcept::Screen_MainMenu_v2::_spriteAnimationEventCallback(void*) */
 
-void WaterConcept::Screen_MainMenu_v2::_spriteAnimationEventCallback(void *p0)
+void WaterConcept::Screen_MainMenu_v2::_spriteAnimationEventCallback(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   if (*(int *)(in_x1 + 0x18) == 4) {
     *(undefined1 *)((long)p0 + 0xb0) = 1;
@@ -16596,10 +16578,9 @@ void WaterConcept::Screen_MainMenu_v2::_spriteAnimationEventCallback(void *p0)
 
 /* WaterConcept::Screen_MainMenu_v2::getMusicGroupForSubScreenID(int) */
 
-undefined4 WaterConcept::Screen_MainMenu_v2::getMusicGroupForSubScreenID(int p0)
+undefined4 WaterConcept::Screen_MainMenu_v2::getMusicGroupForSubScreenID(int p0, int in_w1)
 
 {
-  int in_w1;
   
   if (in_w1 - 1U < 6) {
     return *(undefined4 *)(&DAT_0063d510 + (long)(int)(in_w1 - 1U) * 4);
@@ -16616,7 +16597,7 @@ undefined4 WaterConcept::Screen_MainMenu_v2::getMusicGroupForSubScreenID(int p0)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber::Widget_Group*, bool) */
 
-void WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber__Widget_Group *p0,bool p1)
+void WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber__Widget_Group *p0,bool p1, ulong in_x2)
 
 {
   bool bVar1;
@@ -16641,7 +16622,6 @@ void WaterConcept::Screen_MainMenu_v2::_buildLOWScreen(Walaber__Widget_Group *p0
   char *pcVar21;
   ulong uVar22;
   char *pcVar23;
-  ulong in_x2;
   uint uVar24;
   undefined4 *puVar26;
   ulong uVar27;

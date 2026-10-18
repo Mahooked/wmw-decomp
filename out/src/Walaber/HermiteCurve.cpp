@@ -197,7 +197,7 @@ float Walaber::HermiteCurve::Hermite(Walaber__CurveKey *p0,Walaber__CurveKey *p1
 
 /* Walaber::HermiteCurve::loadFromXmlNode(_xmlNode*) */
 
-void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
+void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0, long in_x1)
 
 {
   undefined4 uVar4;
@@ -208,7 +208,6 @@ void Walaber::HermiteCurve::loadFromXmlNode(_xmlNode *p0)
   undefined8 uVar9;
   ulong uVar10;
   void *pvVar11;
-  long in_x1;
   ulong uVar12;
   byte *pbVar13;
   long lVar14;

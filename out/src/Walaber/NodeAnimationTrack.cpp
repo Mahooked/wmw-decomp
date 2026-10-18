@@ -120,10 +120,9 @@ Walaber::NodeAnimationTrack::operator=(Walaber__NodeAnimationTrack *p0)
 
 /* Walaber::NodeAnimationTrack::setAnimation(Walaber::Animation*) */
 
-void Walaber::NodeAnimationTrack::setAnimation(Walaber__Animation *p0)
+void Walaber::NodeAnimationTrack::setAnimation(Walaber__Animation *p0, ulong in_x1)
 
 {
-  ulong in_x1;
   
   p0->f_0x58 = in_x1;
   return;
@@ -203,10 +202,9 @@ void Walaber::NodeAnimationTrack::loadCurve
 
 /* Walaber::NodeAnimationTrack::_curveFinishedLoading(void*) */
 
-void Walaber::NodeAnimationTrack::_curveFinishedLoading(void *p0)
+void Walaber::NodeAnimationTrack::_curveFinishedLoading(void *p0, long in_x1)
 
 {
-  long in_x1;
   long lVar1;
   float fVar2;
   

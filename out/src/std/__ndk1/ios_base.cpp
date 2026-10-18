@@ -9,14 +9,13 @@
 
 /* std::__ndk1::ios_base::clear(unsigned int) */
 
-void std::__ndk1::ios_base::clear(uint p0)
+void std::__ndk1::ios_base::clear(uint p0, uint in_w1)
 
 {
   uint uVar1;
   int iVar2;
   ulong uVar3;
   undefined8 *puVar4;
-  uint in_w1;
   
   uVar3 = (ulong)p0;
   uVar1 = *(long *)(uVar3 + 0x28) == 0 | in_w1;
@@ -92,7 +91,7 @@ void std::__ndk1::ios_base::__call_callbacks(long param_1,undefined4 param_2)
 
 /* std::__ndk1::ios_base::copyfmt(std::__ndk1::ios_base const&) */
 
-void std::__ndk1::ios_base::copyfmt(std____ndk1__ios_base *p0)
+void std::__ndk1::ios_base::copyfmt(std____ndk1__ios_base *p0, long in_x1)
 
 {
   void *p0_00;
@@ -100,7 +99,6 @@ void std::__ndk1::ios_base::copyfmt(std____ndk1__ios_base *p0)
   undefined8 uVar1;
   void *p0_02;
   void *p0_03;
-  long in_x1;
   ulong uVar2;
   long lVar3;
   ulong uVar4;
@@ -278,10 +276,9 @@ void std::__ndk1::ios_base::imbue(std____ndk1__locale *p0)
 
 /* std::__ndk1::ios_base::init(void*) */
 
-void std::__ndk1::ios_base::init(void *p0)
+void std::__ndk1::ios_base::init(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   *(undefined4 *)((long)p0 + 8) = 0x1002;
   *(long *)((long)p0 + 0x28) = in_x1;
@@ -311,10 +308,9 @@ void std::__ndk1::ios_base::init(void *p0)
 
 /* std::__ndk1::ios_base::move(std::__ndk1::ios_base&) */
 
-void std::__ndk1::ios_base::move(std____ndk1__ios_base *p0)
+void std::__ndk1::ios_base::move(std____ndk1__ios_base *p0, long in_x1)
 
 {
-  long in_x1;
   undefined8 uVar1;
   ulong uVar2;
   
@@ -363,11 +359,10 @@ void std::__ndk1::ios_base::move(std____ndk1__ios_base *p0)
 
 /* std::__ndk1::ios_base::swap(std::__ndk1::ios_base&) */
 
-void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0)
+void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0, long in_x1)
 
 {
   uint uVar1;
-  long in_x1;
   undefined8 uVar3;
   ulong uVar4;
   ulong uVar5;
@@ -551,7 +546,7 @@ void std::__ndk1::ios_base::xalloc(void)
 
 /* std::__ndk1::ios_base::iword(int) */
 
-undefined8 * std::__ndk1::ios_base::iword(int p0)
+undefined8 * std::__ndk1::ios_base::iword(int p0, int in_w1)
 
 {
   ulong uVar1;
@@ -559,7 +554,6 @@ undefined8 * std::__ndk1::ios_base::iword(int p0)
   long lVar3;
   ulong uVar4;
   ulong uVar5;
-  int in_w1;
   ulong uVar6;
   ulong uVar7;
   ulong uVar8;
@@ -615,13 +609,12 @@ undefined8 * std::__ndk1::ios_base::iword(int p0)
 
 /* std::__ndk1::ios_base::pword(int) */
 
-undefined8 * std::__ndk1::ios_base::pword(int p0)
+undefined8 * std::__ndk1::ios_base::pword(int p0, int in_w1)
 
 {
   ulong uVar1;
   ulong uVar2;
   long lVar3;
-  int in_w1;
   ulong uVar4;
   undefined8 *puVar5;
   ulong uVar7;

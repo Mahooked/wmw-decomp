@@ -450,7 +450,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
 
 /* Walaber::Animation::copyProperties(Walaber::Animation const&) */
 
-void Walaber::Animation::copyProperties(Walaber__Animation *p0)
+void Walaber::Animation::copyProperties(Walaber__Animation *p0, Walaber__Animation * in_x1)
 
 {
   ulong uVar1;
@@ -461,7 +461,6 @@ void Walaber::Animation::copyProperties(Walaber__Animation *p0)
   float fVar6;
   float fVar7;
   int iVar8;
-  Walaber__Animation *in_x1;
   Walaber__Animation *pWVar9;
   long *plVar10;
   long lVar11;
@@ -957,10 +956,9 @@ LAB_00332db8:
 
 /* Walaber::Animation::addNodeTrack(Walaber::NodeAnimationTrack*) */
 
-void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0)
+void Walaber::Animation::addNodeTrack(Walaber__NodeAnimationTrack *p0, long in_x1)
 
 {
-  long in_x1;
   long lStack_40;
   
   lStack_40 = in_x1;
@@ -1467,10 +1465,9 @@ LAB_003335c0:
 
 /* Walaber::Animation::addSpriteTrack(Walaber::SpriteAnimationTrack*) */
 
-void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0)
+void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0, long in_x1)
 
 {
-  long in_x1;
   float fVar2;
   long lStack_30;
   
@@ -1503,10 +1500,9 @@ void Walaber::Animation::addSpriteTrack(Walaber__SpriteAnimationTrack *p0)
 
 /* Walaber::Animation::addNumericTrack(Walaber::NumericAnimationTrack*) */
 
-void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0)
+void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0, long * in_x1)
 
 {
-  long *in_x1;
   long lVar2;
   float fVar3;
   long *plStack_40;
@@ -1541,10 +1537,9 @@ void Walaber::Animation::addNumericTrack(Walaber__NumericAnimationTrack *p0)
 
 /* Walaber::Animation::addAnimationCueTrack(Walaber::AnimationCueAnimationTrack*) */
 
-void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrack *p0)
+void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrack *p0, long in_x1)
 
 {
-  long in_x1;
   float fVar2;
   long lStack_30;
   
@@ -1577,10 +1572,9 @@ void Walaber::Animation::addAnimationCueTrack(Walaber__AnimationCueAnimationTrac
 
 /* Walaber::Animation::addSkeletonActorCueTrack(Walaber::SkeletonActorCueAnimationTrack*) */
 
-void Walaber::Animation::addSkeletonActorCueTrack(Walaber__SkeletonActorCueAnimationTrack *p0)
+void Walaber::Animation::addSkeletonActorCueTrack(Walaber__SkeletonActorCueAnimationTrack *p0, long in_x1)
 
 {
-  long in_x1;
   float fVar2;
   long lStack_30;
   

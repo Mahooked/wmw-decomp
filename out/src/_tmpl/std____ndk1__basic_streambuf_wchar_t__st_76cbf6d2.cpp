@@ -278,12 +278,11 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sg
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputbackc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc(wchar_t p0)
+ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputbackc(wchar_t p0, uint in_w1)
 
 {
   long *plVar1;
   ulong uVar2;
-  uint in_w1;
   uint *puVar3;
   
   plVar1 = (long *)(ulong)(uint)p0;
@@ -331,13 +330,12 @@ ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::s
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::sputc(wchar_t) */
 
-ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t p0)
+ulong std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sputc(wchar_t p0, uint in_w1)
 
 {
   uint *puVar1;
   long *plVar2;
   ulong uVar3;
-  uint in_w1;
   
   plVar2 = (long *)(ulong)(uint)p0;
   puVar1 = (uint *)plVar2[6];
@@ -502,10 +500,9 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::sw
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::gbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump(int p0)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::gbump(int p0, int in_w1)
 
 {
-  int in_w1;
   
   *(long *)((ulong)(uint)p0 + 0x18) = *(long *)((ulong)(uint)p0 + 0x18) + (long)in_w1 * 4;
   return;
@@ -540,10 +537,9 @@ void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::se
 
 /* std::__ndk1::basic_streambuf<wchar_t, std::__ndk1::char_traits<wchar_t> >::pbump(int) */
 
-void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump(int p0)
+void std::__ndk1::basic_streambuf<wchar_t,std::__ndk1::char_traits<wchar_t>>::pbump(int p0, int in_w1)
 
 {
-  int in_w1;
   
   *(long *)((ulong)(uint)p0 + 0x30) = *(long *)((ulong)(uint)p0 + 0x30) + (long)in_w1 * 4;
   return;

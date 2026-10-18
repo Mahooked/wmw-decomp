@@ -204,10 +204,9 @@ void Walaber::Widget_ProgressBar::init(long param_1)
 
 /* Walaber::Widget_ProgressBar::setPadding(float, float, float, float) */
 
-void Walaber::Widget_ProgressBar::setPadding(float p0,float p1,float p2,float p3)
+void Walaber::Widget_ProgressBar::setPadding(long in_x0, float p0,float p1,float p2,float p3)
 
 {
-  long in_x0;
   float fVar2;
   float fVar3;
   float fVar4;

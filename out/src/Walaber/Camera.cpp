@@ -67,10 +67,9 @@
 
 /* Walaber::Camera::setPosition(Walaber::Vector2) */
 
-undefined8 Walaber::Camera::setPosition(Walaber__Vector2 p0)
+undefined8 Walaber::Camera::setPosition(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   if (*(char *)((long)p0 + 0x88) != '\0') {
     *(undefined8 *)p0 = *in_x1;
@@ -87,10 +86,9 @@ undefined8 Walaber::Camera::setPosition(Walaber__Vector2 p0)
 
 /* Walaber::Camera::setSize(Walaber::Vector2) */
 
-undefined8 Walaber::Camera::setSize(Walaber__Vector2 p0)
+undefined8 Walaber::Camera::setSize(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   if (*(char *)((long)p0 + 0x88) != '\0') {
     *(undefined8 *)((long)p0 + 8) = *in_x1;
@@ -155,10 +153,9 @@ undefined8 Walaber::Camera::setHeight(float p0,float p1)
 
 /* Walaber::Camera::changePosition(Walaber::Vector2) */
 
-undefined8 Walaber::Camera::changePosition(Walaber__Vector2 p0)
+undefined8 Walaber::Camera::changePosition(Walaber__Vector2 p0, undefined8 * in_x1)
 
 {
-  undefined8 *in_x1;
   
   if (*(char *)((long)p0 + 0x88) != '\0') {
     *(ulong *)p0 = CONCAT44((float)((ulong)*in_x1 >> 0x20) +
@@ -333,10 +330,9 @@ void Walaber::Camera::shake(float p0,float p1,float p2)
 
 /* Walaber::Camera::halfShake(float, float, float) */
 
-void Walaber::Camera::halfShake(float p0,float p1,float p2)
+void Walaber::Camera::halfShake(undefined8 * in_x0, float p0,float p1,float p2)
 
 {
-  undefined8 *in_x0;
   undefined8 uStack_38;
   float fStack_30;
   
@@ -469,14 +465,13 @@ void Walaber::Camera::zoomToHeight(float p0,float p1)
 
 /* Walaber::Camera::endAnimations(bool) */
 
-void Walaber::Camera::endAnimations(bool p0)
+void Walaber::Camera::endAnimations(bool p0, uint in_w1)
 
 {
   long lVar1;
   int iVar2;
   long lVar3;
   undefined4 *puVar4;
-  uint in_w1;
   long lVar5;
   long lVar6;
   ulong uVar7;
@@ -721,13 +716,12 @@ void Walaber::Camera::worldSizeToScreenSize(Walaber__Vector2 *p0)
 
 /* Walaber::Camera::update(float) */
 
-void Walaber::Camera::update(float p0)
+void Walaber::Camera::update(undefined8 * in_x0, float p0)
 
 {
   undefined8 *puVar1;
   float *pfVar2;
   undefined8 *puVar3;
-  undefined8 *in_x0;
   undefined8 *puVar4;
   long lVar5;
   ulong uVar6;
@@ -889,11 +883,10 @@ void Walaber::Camera::updateViewport(float *param_1)
 
 /* Walaber::Camera::updateViewport(bool) */
 
-void Walaber::Camera::updateViewport(bool p0)
+void Walaber::Camera::updateViewport(bool p0, uint in_w1)
 
 {
   float *pfVar1;
-  uint in_w1;
   float fVar2;
   float fVar3;
   float fVar4;

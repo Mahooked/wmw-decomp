@@ -9,10 +9,9 @@
 
 /* Walaber::Bone::setSkeleton(Walaber::Skeleton*) */
 
-void Walaber::Bone::setSkeleton(Walaber__Skeleton *p0)
+void Walaber::Bone::setSkeleton(Walaber__Skeleton *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
   *(undefined8 *)&p0->field_0x80 = in_x1;
   return;

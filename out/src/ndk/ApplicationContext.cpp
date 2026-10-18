@@ -116,10 +116,9 @@ void ndk::ApplicationContext::getJNIEnv(void)
 
 /* ndk::ApplicationContext::setJavaVM(_JavaVM*) */
 
-void ndk::ApplicationContext::setJavaVM(_JavaVM *p0)
+void ndk::ApplicationContext::setJavaVM(_JavaVM *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
   *(undefined8 *)(p0 + 0x10) = in_x1;
   return;
@@ -535,10 +534,9 @@ void ndk::ApplicationContext::setSKU(undefined8 param_1,byte *param_2)
 
 /* ndk::ApplicationContext::setActivity(_jobject*) */
 
-void ndk::ApplicationContext::setActivity(_jobject *p0)
+void ndk::ApplicationContext::setActivity(_jobject *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   
   *(undefined8 *)(p0 + 0x18) = in_x1;
   return;
@@ -631,11 +629,10 @@ void ndk::ApplicationContext::setPaths(char *p0,char *p1)
 
 /* ndk::ApplicationContext::setRedisplaySize(int, int) */
 
-void ndk::ApplicationContext::setRedisplaySize(int p0,int p1)
+void ndk::ApplicationContext::setRedisplaySize(int p0,int p1, int in_w2)
 
 {
   ulong uVar1;
-  int in_w2;
   undefined8 uVar2;
   float fVar3;
   
@@ -663,11 +660,10 @@ void ndk::ApplicationContext::setRedisplaySize(int p0,int p1)
 
 /* ndk::ApplicationContext::setDisplaySize(int, int) */
 
-void ndk::ApplicationContext::setDisplaySize(int p0,int p1)
+void ndk::ApplicationContext::setDisplaySize(int p0,int p1, int in_w2)
 
 {
   ulong uVar1;
-  int in_w2;
   undefined8 uVar2;
   float fVar3;
   
@@ -729,10 +725,9 @@ void ndk::ApplicationContext::setCountryCode(char *p0)
 
 /* ndk::ApplicationContext::touchBegan(ndk::MotionEvent const&) */
 
-void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0)
+void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0, int * in_x1)
 
 {
-  int *in_x1;
   long lVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -758,10 +753,9 @@ void ndk::ApplicationContext::touchBegan(ndk__MotionEvent *p0)
 
 /* ndk::ApplicationContext::touchMoved(ndk::MotionEvent const&) */
 
-void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0)
+void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0, int * in_x1)
 
 {
-  int *in_x1;
   long lVar2;
   undefined4 uStack_48;
   undefined4 uStack_44;
@@ -792,10 +786,9 @@ void ndk::ApplicationContext::touchMoved(ndk__MotionEvent *p0)
 
 /* ndk::ApplicationContext::touchEnded(ndk::MotionEvent const&) */
 
-void ndk::ApplicationContext::touchEnded(ndk__MotionEvent *p0)
+void ndk::ApplicationContext::touchEnded(ndk__MotionEvent *p0, int * in_x1)
 
 {
-  int *in_x1;
   long lVar2;
   undefined4 uStack_40;
   undefined4 uStack_3c;
@@ -821,10 +814,9 @@ void ndk::ApplicationContext::touchEnded(ndk__MotionEvent *p0)
 
 /* ndk::ApplicationContext::accelerometerChanged(ndk::AccelerometerEvent const&) */
 
-void ndk::ApplicationContext::accelerometerChanged(ndk__AccelerometerEvent *p0)
+void ndk::ApplicationContext::accelerometerChanged(ndk__AccelerometerEvent *p0, float * in_x1)
 
 {
-  float *in_x1;
   
   Walaber::ScreenManager::accelerometerChanged(*in_x1 / -9.8,in_x1[1] / -9.8,in_x1[2] / 9.8);
   return;
@@ -2154,7 +2146,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* ndk::ApplicationContext::messageRx(Walaber::Message const&) */
 
-ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0)
+ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   Walaber__Message *pWVar1;
@@ -2181,7 +2173,6 @@ ulong ndk::ApplicationContext::messageRx(Walaber__Message *p0)
   undefined8 uVar23;
   undefined1 *puVar24;
   ulong uVar25;
-  long in_x1;
   undefined *puVar26;
   char *pcVar27;
   int iVar29;
@@ -4646,7 +4637,7 @@ void ndk::ApplicationContext::notifyApplicationDidBecomeActive(void)
 
 /* ndk::ApplicationContext::mergeRemoteInfo(char const*) */
 
-void ndk::ApplicationContext::mergeRemoteInfo(char *p0)
+void ndk::ApplicationContext::mergeRemoteInfo(char *p0, long in_x1)
 
 {
   undefined1 *puVar1;
@@ -4656,7 +4647,6 @@ void ndk::ApplicationContext::mergeRemoteInfo(char *p0)
   ulong *puVar6;
   byte *pbVar7;
   undefined8 *puVar8;
-  long in_x1;
   undefined8 uVar10;
   void *pvVar11;
   undefined8 *puVar12;
@@ -5683,11 +5673,10 @@ LAB_002b9e6c:
 
 /* ndk::ApplicationContext::handleAgeChange(int, int) */
 
-void ndk::ApplicationContext::handleAgeChange(int p0,int p1)
+void ndk::ApplicationContext::handleAgeChange(int p0,int p1, int in_w2)
 
 {
   undefined8 uVar2;
-  int in_w2;
   undefined **ppuStack_60;
   undefined8 uStack_58;
   undefined1 auStack_50 [24];
@@ -6120,11 +6109,10 @@ void ndk::ApplicationContext::logApplicationOnResumeEvent(void)
 
 /* ndk::ApplicationContext::notifyReachability(bool) */
 
-void ndk::ApplicationContext::notifyReachability(bool p0)
+void ndk::ApplicationContext::notifyReachability(bool p0, uint in_w1)
 
 {
   undefined8 uVar2;
-  uint in_w1;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
   void *pvStack_68;
@@ -6177,11 +6165,10 @@ void ndk::ApplicationContext::notifyReachability(bool p0)
 
 /* ndk::ApplicationContext::notifyIAPAvailability(bool) */
 
-void ndk::ApplicationContext::notifyIAPAvailability(bool p0)
+void ndk::ApplicationContext::notifyIAPAvailability(bool p0, uint in_w1)
 
 {
   undefined8 uVar2;
-  uint in_w1;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
   void *pvStack_68;
@@ -6503,12 +6490,11 @@ LAB_002bb138:
 
 /* ndk::ApplicationContext::notifyPurchaseSuccess(char const*, bool) */
 
-void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1)
+void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1, uint in_w2)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  uint in_w2;
   void *pvVar4;
   ulong p0_00;
   ulong uStack_d0;
@@ -6785,11 +6771,10 @@ void ndk::ApplicationContext::notifyTwitterLoggedIn(bool p0)
 
 /* ndk::ApplicationContext::notifyAMPSAvailability(bool) */
 
-void ndk::ApplicationContext::notifyAMPSAvailability(bool p0)
+void ndk::ApplicationContext::notifyAMPSAvailability(bool p0, uint in_w1)
 
 {
   undefined8 uVar2;
-  uint in_w1;
   undefined1 auStack_98 [32];
   byte abStack_78 [17];
   undefined4 uStack_67;
@@ -9239,7 +9224,7 @@ LAB_002be3ac:
 
 /* ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char const*, int) */
 
-void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1)
+void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1, uint in_w2)
 
 {
   undefined1 *puVar1;
@@ -9250,7 +9235,6 @@ void ndk::ApplicationContext::notifyUpdateHubOrderInfoToDB(char *p0,int p1)
   int iVar7;
   ulong uVar8;
   byte *pbVar9;
-  uint in_w2;
   void *pvVar11;
   ulong uVar12;
   byte abStack_e8 [8];
@@ -9681,7 +9665,7 @@ LAB_002bf55c:
 
 /* ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char const*, int) */
 
-void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1)
+void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1, uint in_w2)
 
 {
   undefined1 *puVar1;
@@ -9692,7 +9676,6 @@ void ndk::ApplicationContext::notifyUpdateLowOrderInfoToDB(char *p0,int p1)
   int iVar7;
   ulong uVar8;
   byte *pbVar9;
-  uint in_w2;
   void *pvVar11;
   ulong uVar12;
   byte abStack_e8 [8];
@@ -10464,7 +10447,7 @@ LAB_002bffe8:
 
 /* ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char const*, char const*, bool) */
 
-void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bool p2)
+void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bool p2, ulong in_x3)
 
 {
   undefined1 *puVar1;
@@ -10478,7 +10461,6 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFinished(char *p0,char *p1,bo
   ulong *puVar10;
   undefined **ppuVar11;
   undefined8 uVar12;
-  ulong in_x3;
   undefined4 uVar14;
   void *pvVar15;
   ulong p0_00;
@@ -11163,11 +11145,10 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFailed(void)
 
 /* ndk::ApplicationContext::notifyLOTWCountDown(int) */
 
-void ndk::ApplicationContext::notifyLOTWCountDown(int p0)
+void ndk::ApplicationContext::notifyLOTWCountDown(int p0, undefined4 in_w1)
 
 {
   undefined8 uVar2;
-  undefined4 in_w1;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
   void *pvStack_68;
@@ -11239,11 +11220,10 @@ uint ndk::ApplicationContext::notifyUpdateIAPPromoToDB(char *p0,longlong p1,long
 
 /* ndk::ApplicationContext::notifyScreenCaptureResult(bool) */
 
-void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0)
+void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0, ulong in_x1)
 
 {
   undefined8 uVar2;
-  ulong in_x1;
   undefined1 auStack_98 [32];
   byte abStack_78 [16];
   void *pvStack_68;

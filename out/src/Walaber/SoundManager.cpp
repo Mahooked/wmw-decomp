@@ -114,10 +114,9 @@ void Walaber::SoundManager::subtitlePlayed(undefined4 param_1,long param_2)
 /* WARNING: Removing unreachable block (ram,0x0034d764) */
 /* Walaber::SoundManager::setSoundVolume(float) */
 
-void Walaber::SoundManager::setSoundVolume(float p0)
+void Walaber::SoundManager::setSoundVolume(long in_x0, float p0)
 
 {
-  long in_x0;
   
   if (p0 <= 0.0) {
     p0 = 0.0;
@@ -164,10 +163,9 @@ void Walaber::SoundManager::setVoiceVolume(float p0)
 /* WARNING: Removing unreachable block (ram,0x0034d7bc) */
 /* Walaber::SoundManager::setMusicVolume(float) */
 
-void Walaber::SoundManager::setMusicVolume(float p0)
+void Walaber::SoundManager::setMusicVolume(long in_x0, float p0)
 
 {
-  long in_x0;
   
   if (p0 <= 0.0) {
     p0 = 0.0;
@@ -428,7 +426,7 @@ LAB_0034db08:
 
 /* Walaber::SoundManager::_initConfigFileRead(void*) */
 
-void Walaber::SoundManager::_initConfigFileRead(void *p0)
+void Walaber::SoundManager::_initConfigFileRead(void *p0, long in_x1)
 
 {
   void *pvVar1;
@@ -446,7 +444,6 @@ void Walaber::SoundManager::_initConfigFileRead(void *p0)
   long lVar14;
   long lVar15;
   long lVar16;
-  long in_x1;
   ulong extraout_x1;
   void *pvVar17;
   void *pvVar18;
@@ -1058,7 +1055,7 @@ LAB_0034ea30:
 
 /* Walaber::SoundManager::_loadSoundFileExists(void*) */
 
-void Walaber::SoundManager::_loadSoundFileExists(void *p0)
+void Walaber::SoundManager::_loadSoundFileExists(void *p0, long in_x1)
 
 {
   char cVar1;
@@ -1068,7 +1065,6 @@ void Walaber::SoundManager::_loadSoundFileExists(void *p0)
   int iVar6;
   long lVar7;
   long lVar8;
-  long in_x1;
   undefined4 uVar9;
   undefined8 uStack_100;
   undefined8 uStack_f8;
@@ -2972,7 +2968,7 @@ LAB_00350b20:
 
 /* Walaber::SoundManager::_loadSoundFileRead(void*) */
 
-void Walaber::SoundManager::_loadSoundFileRead(void *p0)
+void Walaber::SoundManager::_loadSoundFileRead(void *p0, long in_x1)
 
 {
   char cVar1;
@@ -2982,7 +2978,6 @@ void Walaber::SoundManager::_loadSoundFileRead(void *p0)
   ulong uVar6;
   long lVar7;
   int *piVar8;
-  long in_x1;
   ulong uVar9;
   long *plVar11;
   long lVar12;
@@ -3546,12 +3541,11 @@ LAB_00351b0c:
 
 /* Walaber::SoundManager::preloadSoundGroup(int) */
 
-void Walaber::SoundManager::preloadSoundGroup(int p0)
+void Walaber::SoundManager::preloadSoundGroup(int p0, uint in_w1)
 
 {
   long lVar1;
   bool bVar3;
-  uint in_w1;
   long *plVar4;
   long lVar5;
   long *plVar6;
@@ -4049,11 +4043,10 @@ void Walaber::SoundManager::newSoundSpecific
 
 /* Walaber::SoundManager::soundCountForGroup(int) */
 
-int Walaber::SoundManager::soundCountForGroup(int p0)
+int Walaber::SoundManager::soundCountForGroup(int p0, uint in_w1)
 
 {
   long *plVar1;
-  uint in_w1;
   long *plVar2;
   long *plVar3;
   
@@ -4557,7 +4550,7 @@ void Walaber::SoundManager::getSoundFile
 
 /* Walaber::SoundManager::_loadSoundFileDirectRead(void*) */
 
-void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
+void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0, int * in_x1)
 
 {
   int *piVar1;
@@ -4569,7 +4562,6 @@ void Walaber::SoundManager::_loadSoundFileDirectRead(void *p0)
   long lVar8;
   undefined8 uVar9;
   ulong uVar10;
-  int *in_x1;
   long *plVar12;
   long *plVar13;
   uint uVar14;
@@ -4975,11 +4967,10 @@ LAB_00353c18:
 
 /* Walaber::SoundManager::optimize(bool) */
 
-void Walaber::SoundManager::optimize(bool p0)
+void Walaber::SoundManager::optimize(bool p0, uint in_w1)
 
 {
   ulong uVar2;
-  uint in_w1;
   long *plVar3;
   undefined8 *puVar4;
   undefined8 *puVar5;
@@ -5054,11 +5045,10 @@ LAB_003540ec:
 
 /* Walaber::SoundManager::freeGroup(int, bool) */
 
-void Walaber::SoundManager::freeGroup(int p0,bool p1)
+void Walaber::SoundManager::freeGroup(int p0,bool p1, ulong in_x2)
 
 {
   bool bVar2;
-  ulong in_x2;
   char *pcVar3;
   uint uVar4;
   uint uVar5;
@@ -5144,14 +5134,13 @@ LAB_003541cc:
 
 /* Walaber::SoundManager::removeGroup(int) */
 
-void Walaber::SoundManager::removeGroup(int p0)
+void Walaber::SoundManager::removeGroup(int p0, uint in_w1)
 
 {
   long lVar1;
   long lVar2;
   long lVar4;
   ulong uVar5;
-  uint in_w1;
   long *plVar6;
   long *plVar7;
   long *plVar8;
@@ -5392,11 +5381,10 @@ void Walaber::SoundManager::clearRetryInfo(long param_1)
 
 /* Walaber::SoundManager::setAllPaused(bool) */
 
-void Walaber::SoundManager::setAllPaused(bool p0)
+void Walaber::SoundManager::setAllPaused(bool p0, uint in_w1)
 
 {
   ulong uVar1;
-  uint in_w1;
   
   uVar1 = (ulong)p0;
   if (*(long *)(uVar1 + 0xa8) != 0) {
@@ -5417,10 +5405,9 @@ void Walaber::SoundManager::setAllPaused(bool p0)
 
 /* Walaber::SoundManager::setSoundsPaused(bool) */
 
-void Walaber::SoundManager::setSoundsPaused(bool p0)
+void Walaber::SoundManager::setSoundsPaused(bool p0, uint in_w1)
 
 {
-  uint in_w1;
   
   if (*(long *)((ulong)p0 + 0xa8) != 0) {
     FMOD::ChannelGroup::setPaused(*(long *)((ulong)p0 + 0xa8),in_w1 & 1);
@@ -5437,10 +5424,9 @@ void Walaber::SoundManager::setSoundsPaused(bool p0)
 
 /* Walaber::SoundManager::setVoicesPaused(bool) */
 
-void Walaber::SoundManager::setVoicesPaused(bool p0)
+void Walaber::SoundManager::setVoicesPaused(bool p0, uint in_w1)
 
 {
-  uint in_w1;
   
   if (*(long *)((ulong)p0 + 0xb0) != 0) {
     FMOD::ChannelGroup::setPaused(*(long *)((ulong)p0 + 0xb0),in_w1 & 1);
@@ -5457,12 +5443,11 @@ void Walaber::SoundManager::setVoicesPaused(bool p0)
 
 /* Walaber::SoundManager::setMusicPaused(bool, bool, bool) */
 
-void Walaber::SoundManager::setMusicPaused(bool p0,bool p1,bool p2)
+void Walaber::SoundManager::setMusicPaused(bool p0,bool p1,bool p2, byte in_w3)
 
 {
   byte bVar1;
   ulong uVar2;
-  byte in_w3;
   
   uVar2 = (ulong)p0;
   if ((((in_w3 & 1) == 0) || (*(char *)(uVar2 + 400) == '\0')) && (*(long *)(uVar2 + 0xb8) != 0)) {
@@ -5592,7 +5577,7 @@ void Walaber::SoundManager::updateMusicMuteStatus(long param_1)
 
 /* Walaber::SoundManager::playMusicFromGroup(int, bool) */
 
-ulong Walaber::SoundManager::playMusicFromGroup(int p0,bool p1)
+ulong Walaber::SoundManager::playMusicFromGroup(int p0,bool p1, ulong in_x2)
 
 {
   long lVar1;
@@ -5601,7 +5586,6 @@ ulong Walaber::SoundManager::playMusicFromGroup(int p0,bool p1)
   uint uVar5;
   ulong uVar6;
   ulong uVar7;
-  ulong in_x2;
   long *plVar8;
   long *plVar9;
   byte *pbVar10;
@@ -5912,12 +5896,11 @@ LAB_00354fdc:
 
 /* Walaber::SoundManager::_resumeStreamingMusicAtPath(void*) */
 
-void Walaber::SoundManager::_resumeStreamingMusicAtPath(void *p0)
+void Walaber::SoundManager::_resumeStreamingMusicAtPath(void *p0, long in_x1)
 
 {
   int iVar2;
   undefined8 uVar3;
-  long in_x1;
   long lVar4;
   undefined4 uStack_120;
   undefined4 uStack_11c;
@@ -5993,14 +5976,13 @@ void Walaber::SoundManager::clearHubMusicChannels(long param_1)
 
 /* Walaber::SoundManager::playNextTrackInGroup(int) */
 
-ulong Walaber::SoundManager::playNextTrackInGroup(int p0)
+ulong Walaber::SoundManager::playNextTrackInGroup(int p0, uint in_w1)
 
 {
   long lVar1;
   uint uVar3;
   ulong uVar4;
   ulong uVar5;
-  uint in_w1;
   long *plVar6;
   int iVar7;
   long *plVar8;
@@ -6088,14 +6070,13 @@ LAB_00355230:
 
 /* Walaber::SoundManager::playCurrentTrackInGroup(int) */
 
-ulong Walaber::SoundManager::playCurrentTrackInGroup(int p0)
+ulong Walaber::SoundManager::playCurrentTrackInGroup(int p0, uint in_w1)
 
 {
   long lVar1;
   uint uVar3;
   ulong uVar4;
   ulong uVar5;
-  uint in_w1;
   long *plVar6;
   long *plVar7;
   byte *pbVar8;
@@ -6172,13 +6153,12 @@ LAB_00355404:
 
 /* Walaber::SoundManager::playSpecificMusicFromGroup(int, int) */
 
-undefined8 Walaber::SoundManager::playSpecificMusicFromGroup(int p0,int p1)
+undefined8 Walaber::SoundManager::playSpecificMusicFromGroup(int p0,int p1, int in_w2)
 
 {
   long lVar1;
   ulong uVar2;
   undefined8 uVar3;
-  int in_w2;
   long *plVar4;
   long *plVar5;
   ulong uVar6;
@@ -6582,11 +6562,10 @@ void Walaber::SoundManager::removeUnderWaterMusicFilter(long param_1)
 
 /* Walaber::SoundManager::getLiveTracksInGroup(int) */
 
-int Walaber::SoundManager::getLiveTracksInGroup(int p0)
+int Walaber::SoundManager::getLiveTracksInGroup(int p0, uint in_w1)
 
 {
   long *plVar1;
-  uint in_w1;
   long *plVar2;
   long *plVar3;
   
@@ -6615,11 +6594,10 @@ int Walaber::SoundManager::getLiveTracksInGroup(int p0)
 
 /* Walaber::SoundManager::getLiveTracksInSoundGroup(int) */
 
-int Walaber::SoundManager::getLiveTracksInSoundGroup(int p0)
+int Walaber::SoundManager::getLiveTracksInSoundGroup(int p0, uint in_w1)
 
 {
   long *plVar1;
-  uint in_w1;
   long *plVar2;
   long *plVar3;
   

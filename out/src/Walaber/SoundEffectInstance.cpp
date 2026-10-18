@@ -276,10 +276,9 @@ void Walaber::SoundEffectInstance::resume(long param_1)
 
 /* Walaber::SoundEffectInstance::setVolume(float) */
 
-void Walaber::SoundEffectInstance::setVolume(float p0)
+void Walaber::SoundEffectInstance::setVolume(long in_x0, float p0)
 
 {
-  long in_x0;
   
   if (*(long *)(in_x0 + 0x18) != 0) {
     FMOD::Channel::setVolume(*(float *)(in_x0 + 0x2c) * p0);
@@ -296,10 +295,9 @@ void Walaber::SoundEffectInstance::setVolume(float p0)
 
 /* Walaber::SoundEffectInstance::setPitch(float) */
 
-void Walaber::SoundEffectInstance::setPitch(float p0)
+void Walaber::SoundEffectInstance::setPitch(long in_x0, float p0)
 
 {
-  long in_x0;
   
   if (*(long *)(in_x0 + 0x18) != 0) {
     FMOD::Channel::setFrequency(*(float *)(in_x0 + 0x28) * p0);
@@ -344,11 +342,10 @@ void Walaber::SoundEffectInstance::setPosition(float p0,float p1,float p2)
 
 /* Walaber::SoundEffectInstance::setPlaybackPosition(float) */
 
-void Walaber::SoundEffectInstance::setPlaybackPosition(float p0)
+void Walaber::SoundEffectInstance::setPlaybackPosition(long in_x0, float p0)
 
 {
   int iVar1;
-  long in_x0;
   undefined8 uVar2;
   
   if ((*(long *)(in_x0 + 0x18) != 0) &&
@@ -368,12 +365,11 @@ void Walaber::SoundEffectInstance::setPlaybackPosition(float p0)
 
 /* Walaber::SoundEffectInstance::setPlaybackPosition(unsigned int) */
 
-void Walaber::SoundEffectInstance::setPlaybackPosition(uint p0)
+void Walaber::SoundEffectInstance::setPlaybackPosition(uint p0, undefined8 in_x1)
 
 {
   int iVar1;
   undefined8 uVar2;
-  undefined8 in_x1;
   
   if ((*(long *)((ulong)p0 + 0x18) != 0) &&
      (iVar1 = FMOD::Channel::setPosition(*(long *)((ulong)p0 + 0x18),in_x1,2), iVar1 != 0)) {
@@ -442,7 +438,7 @@ void Walaber::SoundEffectInstance::getLength(long param_1)
 
 /* Walaber::SoundEffectInstance::getData(unsigned int, unsigned int, unsigned char*) */
 
-void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2)
+void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2, long in_x3)
 
 {
   ulong uVar2;
@@ -451,7 +447,6 @@ void Walaber::SoundEffectInstance::getData(uint p0,uint p1,uchar *p2)
   ulong uVar5;
   undefined8 uVar6;
   char *pcVar7;
-  long in_x3;
   ulong uVar8;
   undefined1 auStack_80 [4];
   int iStack_7c;
@@ -616,12 +611,11 @@ LAB_0034d38c:
 /* WARNING: Type propagation algorithm not settling */
 /* Walaber::SoundEffectInstance::_writeWavHeader(__sFILE*, int) */
 
-void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1)
+void Walaber::SoundEffectInstance::_writeWavHeader(__sFILE *p0,int p1, int in_w2)
 
 {
   uint uVar1;
   uint uVar2;
-  int in_w2;
   int iStack_78;
   float fStack_74;
   int iStack_70;

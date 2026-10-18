@@ -10,10 +10,9 @@
 /* std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color> >::vector(unsigned
    long) */
 
-void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::vector(ulong p0)
+void std::__ndk1::vector<Walaber::Color,std::__ndk1::allocator<Walaber::Color>>::vector(ulong p0, long in_x1)
 
 {
-  long in_x1;
   undefined4 *puVar1;
   undefined4 *puVar2;
   long lVar3;

@@ -209,12 +209,11 @@ LAB_00337ac4:
 
 /* Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(unsigned int) */
 
-void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(uint p0)
+void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(uint p0, uint in_w1)
 
 {
   ulong uVar1;
   ulong uVar2;
-  uint in_w1;
   long lVar3;
   ulong uVar4;
   long lVar5;
@@ -259,11 +258,10 @@ void Walaber::AnimationManager::_handleAnimationEventCallbackWithBitmask(uint p0
 
 /* Walaber::AnimationManager::addAnimation(Walaber::Animation*) */
 
-void Walaber::AnimationManager::addAnimation(Walaber__Animation *p0)
+void Walaber::AnimationManager::addAnimation(Walaber__Animation *p0, long in_x1)
 
 {
   long lVar2;
-  long in_x1;
   undefined1 auStack_38 [8];
   undefined1 auStack_30 [8];
   

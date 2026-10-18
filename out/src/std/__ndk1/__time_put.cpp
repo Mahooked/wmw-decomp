@@ -31,11 +31,10 @@
 
 /* std::__ndk1::__time_put::__do_put(char*, char*&, tm const*, char, char) const */
 
-void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4)
+void std::__ndk1::__time_put::__do_put(char *p0,char **p1,tm *p2,char p3,char p4, char in_w5)
 
 {
   long lVar2;
-  char in_w5;
   undefined1 uStack_3c;
   undefined1 uStack_39;
   
@@ -152,13 +151,12 @@ LAB_005c45dc:
 
 /* std::__ndk1::__time_put::__do_put(wchar_t*, wchar_t*&, tm const*, char, char) const */
 
-void std::__ndk1::__time_put::__do_put(wchar_t *p0,wchar_t **p1,tm *p2,char p3,char p4)
+void std::__ndk1::__time_put::__do_put(wchar_t *p0,wchar_t **p1,tm *p2,char p3,char p4, char in_w5)
 
 {
   long lVar1;
   undefined8 uVar2;
   long lVar3;
-  char in_w5;
   long lVar4;
   undefined1 *puStack_c0;
   undefined8 uStack_b8;

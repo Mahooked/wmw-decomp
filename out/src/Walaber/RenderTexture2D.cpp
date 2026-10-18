@@ -562,11 +562,10 @@ void Walaber::RenderTexture2D::_applySettings(long param_1)
 
 /* Walaber::RenderTexture2D::createScreenGrab(unsigned int*, unsigned int*, unsigned int*) */
 
-undefined8 Walaber::RenderTexture2D::createScreenGrab(uint *p0,uint *p1,uint *p2)
+undefined8 Walaber::RenderTexture2D::createScreenGrab(uint *p0,uint *p1,uint *p2, uint * in_x3)
 
 {
   undefined8 uVar1;
-  uint *in_x3;
   int iVar2;
   
   *p1 = p0[0x1f];

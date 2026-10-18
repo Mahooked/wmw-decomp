@@ -9,11 +9,10 @@
 
 /* Walaber::SkeletonActorCueAnimationTrack::apply(float) */
 
-void Walaber::SkeletonActorCueAnimationTrack::apply(float p0)
+void Walaber::SkeletonActorCueAnimationTrack::apply(long * in_x0, float p0)
 
 {
   int iVar1;
-  long *in_x0;
   long lVar3;
   long lVar4;
   long lVar5;

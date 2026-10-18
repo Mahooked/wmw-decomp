@@ -280,12 +280,11 @@ void WaterConcept::ParallaxPuppetShow::start(char *param_1)
 
 /* WaterConcept::ParallaxPuppetShow::update(float) */
 
-undefined8 WaterConcept::ParallaxPuppetShow::update(float p0)
+undefined8 WaterConcept::ParallaxPuppetShow::update(char * in_x0, float p0)
 
 {
   bool bVar1;
   int iVar2;
-  char *in_x0;
   long *plVar3;
   long lVar4;
   void *p0_00;
@@ -866,7 +865,7 @@ void WaterConcept::ParallaxPuppetShow::draw(char *param_1)
 
 /* WaterConcept::ParallaxPuppetShow::_gotXmlFile(void*) */
 
-void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0)
+void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0, long in_x1)
 
 {
   undefined *puVar2;
@@ -890,7 +889,6 @@ void WaterConcept::ParallaxPuppetShow::_gotXmlFile(void *p0)
   char *pcVar19;
   void *pvVar20;
   long lVar21;
-  long in_x1;
   ulong extraout_x1;
   float *pfVar22;
   ulong uVar23;
@@ -2376,13 +2374,12 @@ ulong WaterConcept::ParallaxPuppetShow::_stringToElementType(undefined8 param_1,
 
 /* WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void*) */
 
-void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0)
+void WaterConcept::ParallaxPuppetShow::_skeletonLoaded(void *p0, long in_x1)
 
 {
   int iVar1;
   ulong uVar3;
   long lVar4;
-  long in_x1;
   void *pvVar5;
   ulong p0_00;
   ulong uStack_70;

@@ -31,10 +31,9 @@ long Walaber::BroadcastManager::getInstancePtr(void)
 
 /* Walaber::BroadcastManager::_addReceiver(Walaber::MessageReceiver*) */
 
-void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0)
+void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0, undefined8 in_x1)
 
 {
-  undefined8 in_x1;
   undefined1 auStack_40 [8];
   
   Walaber::Logger::printf("Walaber",1,"BroadcastManager::_addReceiver( %p ) count %d\n");
@@ -56,12 +55,11 @@ void Walaber::BroadcastManager::_addReceiver(Walaber__MessageReceiver *p0)
 
 /* Walaber::BroadcastManager::_removeReceiver(Walaber::MessageReceiver*) */
 
-void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0)
+void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0, long in_x1)
 
 {
   long *plVar1;
   long *plVar2;
-  long in_x1;
   long lVar3;
   long *plVar4;
   
@@ -125,11 +123,10 @@ void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0)
 
 /* Walaber::BroadcastManager::messageTx(Walaber::Message const&) */
 
-void Walaber::BroadcastManager::messageTx(Walaber__Message *p0)
+void Walaber::BroadcastManager::messageTx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar1;
-  long in_x1;
   long *plVar2;
   long *plVar3;
   

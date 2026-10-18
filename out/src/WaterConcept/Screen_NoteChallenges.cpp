@@ -454,7 +454,7 @@ void WaterConcept::Screen_NoteChallenges::exit(void)
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void*) */
 
-void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
+void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0, int * in_x1)
 
 {
   uint uVar1;
@@ -495,7 +495,6 @@ void WaterConcept::Screen_NoteChallenges::_finishedLoadingWidgets(void *p0)
   long *plVar36;
   long *plVar37;
   undefined8 uVar38;
-  int *in_x1;
   undefined4 *puVar40;
   uint uVar41;
   char *pcVar42;
@@ -2810,11 +2809,10 @@ void WaterConcept::Screen_NoteChallenges::update(float p0,bool p1)
 
 /* WaterConcept::Screen_NoteChallenges::draw(int) */
 
-void WaterConcept::Screen_NoteChallenges::draw(int p0)
+void WaterConcept::Screen_NoteChallenges::draw(int p0, int in_w1)
 
 {
   long lVar1;
-  int in_w1;
   
   lVar1 = (ulong)(uint)p0 + 0x28;
   Walaber::SpriteBatch::start(lVar1,3);
@@ -3463,10 +3461,9 @@ void WaterConcept::Screen_NoteChallenges::handleEvent
 
 /* WaterConcept::Screen_NoteChallenges::_gotSE(void*) */
 
-void WaterConcept::Screen_NoteChallenges::_gotSE(void *p0)
+void WaterConcept::Screen_NoteChallenges::_gotSE(void *p0, long in_x1)
 
 {
-  long in_x1;
   
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0xf0,in_x1 + 8);
   if (*(long *)((long)p0 + 0xf0) != 0) {
@@ -3518,12 +3515,11 @@ void WaterConcept::Screen_NoteChallenges::backKeyPressed(long param_1)
 
 /* WaterConcept::Screen_NoteChallenges::messageRx(Walaber::Message const&) */
 
-undefined8 WaterConcept::Screen_NoteChallenges::messageRx(Walaber__Message *p0)
+undefined8 WaterConcept::Screen_NoteChallenges::messageRx(Walaber__Message *p0, long in_x1)
 
 {
   ulong uVar2;
   undefined8 uVar3;
-  long in_x1;
   byte abStack_a0 [16];
   void *pvStack_90;
   byte abStack_88 [16];
