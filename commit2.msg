@@ -1,1 +1,0 @@
-﻿Strip illegal return types and params from ctors/dtors. - Add tools/shape_ctor_dtor.py: removes oid return types from Class::Class and Class::~Class, drops params from destructors. - Applied to 249 files (695 definitions fixed). - Diagnostics: 84,570 → 80,691 (3,879 down), files with errors 1,460 → 1,459.
