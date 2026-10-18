@@ -19,7 +19,7 @@
 
 /* ok  address 0x5f5440  size 36 */std::bad_typeid::~bad_typeid(){
   std::exception::~exception();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

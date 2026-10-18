@@ -210,11 +210,11 @@ LAB_003dfea0:
 
 
 /* ok  address 0x3e00d4  size 60 */Walaber::BezierCurve::~BezierCurve(){
-  *param_1 = &PTR__Curve_00710ab8;
-  if ((void *)param_1[3] != (void *)0x0) {
-    operator delete[]((void *)param_1[3],param_2);
+  *this = &PTR__Curve_00710ab8;
+  if ((void *)this[3] != (void *)0x0) {
+    operator delete[]((void *)this[3],param_2);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

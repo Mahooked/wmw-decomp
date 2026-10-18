@@ -67,7 +67,7 @@ void std::__ndk1::__split_buffer<Walaber::Particle,std::__ndk1::allocator<Walabe
   
   lVar1 = *(long *)(p0 + 0x10);
   do {
-    Walaber::BaseParticle::BaseParticle(lVar1);
+    new ((void *)(lVar1)) Walaber::BaseParticle();
     p1 = p1 + -1;
     *(undefined8 *)(lVar1 + 0x38) = *(undefined8 *)(in_x2 + 0x38);
     *(undefined8 *)(lVar1 + 0x40) = *(undefined8 *)(in_x2 + 0x40);

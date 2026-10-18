@@ -63,7 +63,7 @@ void std::__ndk1::
   lStack_60 = lStack_60 + 0x48;
                     /* try { // try from 00356c18 to 00356c23 has its CatchHandler @ 00356c80 */
   std::__ndk1::vector<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::__swap_out_circular_buffer(p0,auStack_70);
-  std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>::~__split_buffer(auStack_70);
+  ((std::__ndk1::__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&> *)auStack_70)->~__split_buffer<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>&>();
   return;
 }
 

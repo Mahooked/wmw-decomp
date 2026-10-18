@@ -3,43 +3,43 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x36a750  size 404 */Walaber::Widget::Widget(long *param_1,undefined4 param_2,undefined4 param_3,undefined8 param_4, undefined4 *param_5,undefined4 param_6,undefined4 param_7){
+/* ok  address 0x36a750  size 404 */Walaber::Widget::Widget(undefined4 param_2,undefined4 param_3,undefined8 param_4, undefined4 *param_5,undefined4 param_6,undefined4 param_7){
   undefined8 auStack_70 [2];
   void *pvStack_60;
   
-  *param_1 = (long)&PTR__Widget_0070eb18;
+  *this = (long)&PTR__Widget_0070eb18;
   Walaber::StringHelper::intToStr(auStack_70,param_2);
                     /* try { // try from 0036a7ac to 0036a7bb has its CatchHandler @ 0036a8c8 */
-  Walaber::DrawableNode::DrawableNode(param_1,auStack_70,0xffffffff);
+  new ((void *)(this)) Walaber::DrawableNode(auStack_70,0xffffffff);
   if (((byte)auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  *(undefined4 *)((long)param_1 + 0x84) = param_3;
-  *(undefined4 *)(param_1 + 0x11) = param_6;
-  *param_1 = (long)&PTR__Widget_0070eb18;
-  *(undefined2 *)((long)param_1 + 0x8c) = 0x101;
-  *(undefined4 *)(param_1 + 0x12) = *param_5;
-  *(undefined4 *)((long)param_1 + 0x94) = param_5[1];
-  param_1[0x15] = 0;
-  *(undefined1 *)(param_1 + 0x16) = 1;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0;
-  param_1[0x1e] = 0;
-  *(undefined8 *)((long)param_1 + 0xdc) = 0;
-  *(undefined8 *)((long)param_1 + 0xd4) = 0;
-  *(undefined8 *)((long)param_1 + 0xcc) = 0;
-  *(undefined4 *)((long)param_1 + 0xec) = 0;
-  *(undefined8 *)((long)param_1 + 0xc4) = 0;
-  param_1[0x14] = 0;
-  param_1[0x13] = 0;
-  *(undefined8 *)((long)param_1 + 0xbc) = 0;
-  *(undefined8 *)((long)param_1 + 0xb4) = 0;
-  *(undefined4 *)(param_1 + 0x1f) = 0x3f800000;
-  Walaber::Widget::setLayer(param_1,param_7);
+  *(undefined4 *)((long)this + 0x84) = param_3;
+  *(undefined4 *)(this + 0x11) = param_6;
+  *this = (long)&PTR__Widget_0070eb18;
+  *(undefined2 *)((long)this + 0x8c) = 0x101;
+  *(undefined4 *)(this + 0x12) = *param_5;
+  *(undefined4 *)((long)this + 0x94) = param_5[1];
+  this[0x15] = 0;
+  *(undefined1 *)(this + 0x16) = 1;
+  *(undefined8 *)((long)this + 0xe4) = 0;
+  this[0x1e] = 0;
+  *(undefined8 *)((long)this + 0xdc) = 0;
+  *(undefined8 *)((long)this + 0xd4) = 0;
+  *(undefined8 *)((long)this + 0xcc) = 0;
+  *(undefined4 *)((long)this + 0xec) = 0;
+  *(undefined8 *)((long)this + 0xc4) = 0;
+  this[0x14] = 0;
+  this[0x13] = 0;
+  *(undefined8 *)((long)this + 0xbc) = 0;
+  *(undefined8 *)((long)this + 0xb4) = 0;
+  *(undefined4 *)(this + 0x1f) = 0x3f800000;
+  Walaber::Widget::setLayer(this,param_7);
                     /* try { // try from 0036a84c to 0036a857 has its CatchHandler @ 0036a8a8 */
-  (**(code **)(*param_1 + 0x10))(param_1,param_4);
+  (**(code **)(*this + 0x10))(this,param_4);
   auStack_70[0] = NEON_fmov(0x3f800000,4);
                     /* try { // try from 0036a868 to 0036a873 has its CatchHandler @ 0036a8a4 */
-  (**(code **)(*param_1 + 0x18))(param_1,auStack_70);
+  (**(code **)(*this + 0x18))(this,auStack_70);
   return;
 }
 
@@ -156,7 +156,7 @@ void Walaber::Widget::_updateAABB(long param_1)
   Walaber::Node::getWorldPosition(&fStack_80,param_1);
   fStack_78 = fStack_80 + fStack_78;
   fStack_74 = fStack_7c + fStack_74;
-  Walaber::AABB::AABB(&fStack_60,&fStack_68,&fStack_78);
+  new ((void *)(&fStack_60)) Walaber::AABB(&fStack_68,&fStack_78);
   *(undefined8 *)(param_1 + 0xa0) = uStack_58;
   *(ulong *)(param_1 + 0x98) = CONCAT44(fStack_5c,fStack_60);
   *(undefined4 *)(param_1 + 0xa8) = uStack_50;
@@ -362,7 +362,7 @@ LAB_0036af30:
   if ((*(byte *)(this + 0x1a) & 1) != 0) {
     operator delete((void *)this[0x1c]);
   }
-  Walaber::DrawableNode::~DrawableNode(this);
+  ((Walaber::DrawableNode *)this)->~DrawableNode();
   return;
 }
 
@@ -370,7 +370,7 @@ LAB_0036af30:
 
 /* ok  address 0x36d4e4  size 36 */Walaber::Widget::~Widget(){
   Walaber::Widget::~Widget();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

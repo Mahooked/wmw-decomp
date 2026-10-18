@@ -3,12 +3,12 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x5e34f8  size 140 */std::runtime_error::runtime_error(undefined8 *param_1,byte *param_2){
+/* ok  address 0x5e34f8  size 140 */std::runtime_error::runtime_error(byte *param_2){
   long lVar1;
   long *plVar2;
   byte *pbVar3;
   
-  *param_1 = &PTR__range_error_0071a1d0;
+  *this = &PTR__range_error_0071a1d0;
   pbVar3 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar3 = param_2 + 1;
@@ -20,7 +20,7 @@
   plVar2[1] = lVar1;
   *(undefined4 *)(plVar2 + 2) = 0;
   memcpy(plVar2 + 3,pbVar3,lVar1 + 1);
-  param_1[1] = plVar2 + 3;
+  this[1] = plVar2 + 3;
   return;
 }
 
@@ -137,7 +137,7 @@ std__runtime_error * std::runtime_error::operator=(std__runtime_error *p0)
   if (iVar1 + -1 < 0) {
     operator delete((void *)(lVar4 + -0x18));
   }
-  std::exception::~exception(this);
+  ((std::exception *)this)->~exception();
   operator delete(this);
   return;
 }

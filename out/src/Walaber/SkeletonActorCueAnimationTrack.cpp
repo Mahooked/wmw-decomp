@@ -109,7 +109,7 @@ Walaber::SkeletonActorCueAnimationTrack::operator=(Walaber__SkeletonActorCueAnim
 
 
 /* ok  address 0x33a1cc  size 8 */Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack(){
-  std::__ndk1::__vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>::~__vector_base(param_1 + 8);
+  ((std::__ndk1::__vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>> *)this + 8)->~__vector_base<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::SkeletonActorCueAnimationTrack::CueAnimationEvent>>();
   return;
 }
 

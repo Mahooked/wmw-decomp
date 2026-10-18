@@ -83,7 +83,7 @@ void std::__ndk1::
   puStack_60 = puStack_60 + 5;
                     /* try { // try from 0046e678 to 0046e683 has its CatchHandler @ 0046e6c0 */
   std::__ndk1::vector<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>>::__swap_out_circular_buffer(p0,auStack_70);
-  std::__ndk1::__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&>::~__split_buffer(auStack_70);
+  ((std::__ndk1::__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&> *)auStack_70)->~__split_buffer<WaterConcept::World::RegionInfo, std::__ndk1::allocator<WaterConcept::World::RegionInfo>&>();
   return;
 }
 

@@ -70,7 +70,7 @@ LAB_005ddb10:
 
 
 
-/* ok  address 0x5ddb94  size 172 */std::__ndk1::__time_get::__time_get(long *param_1,byte *param_2){
+/* ok  address 0x5ddb94  size 172 */std::__ndk1::__time_get::__time_get(byte *param_2){
   long lVar1;
   long lVar2;
   byte *pbVar3;
@@ -84,7 +84,7 @@ LAB_005ddb10:
     pbVar3 = param_2 + 1;
   }
   lVar2 = newlocale(0x1fbf,pbVar3,0);
-  *param_1 = lVar2;
+  *this = lVar2;
   if (lVar2 == 0) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"time_get_byname failed to construct for ",param_2);
                     /* try { // try from 005ddc18 to 005ddc1f has its CatchHandler @ 005ddc24 */

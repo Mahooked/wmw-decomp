@@ -6,7 +6,7 @@
 /* ok  address 0x4996e4  size 180 */WaterConcept::HDAssetsNotification::HDAssetsNotification(){
   WaterConcept::Notification::Notification();
                     /* try { // try from 004996fc to 00499703 has its CatchHandler @ 00499784 */
-  Walaber::MessageReceiver::MessageReceiver(this + 0x3d,0x10);
+  new ((void *)(this + 0x3d)) Walaber::MessageReceiver(0x10);
   *this = &PTR_handleEvent_007124a8;
   this[0x3d] = &PTR__HDAssetsNotification_00712538;
   *(undefined1 *)((long)this + 500) = 0xff;
@@ -63,17 +63,17 @@ WaterConcept::HDAssetsNotification::operator=(WaterConcept__HDAssetsNotification
 
 
 /* ok  address 0x499810  size 40 */WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
-  Walaber::MessageReceiver::~MessageReceiver(param_1 + 0x1e8);
-  WaterConcept::Notification::~Notification(param_1);
+  ((Walaber::MessageReceiver *)this + 0x1e8)->~MessageReceiver();
+  ((WaterConcept::Notification *)this)->~Notification();
   return;
 }
 
 
 
 /* ok  address 0x49985c  size 48 */WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
-  Walaber::MessageReceiver::~MessageReceiver((long)param_1 + 0x1e8);
-  WaterConcept::Notification::~Notification(param_1);
-  operator delete(param_1);
+  ((Walaber::MessageReceiver *)(long)this + 0x1e8)->~MessageReceiver();
+  ((WaterConcept::Notification *)this)->~Notification();
+  operator delete(this);
   return;
 }
 
@@ -400,11 +400,11 @@ void WaterConcept::HDAssetsNotification::handleEvent
     uVar2 = Walaber::BroadcastManager::getInstancePtr();
     uStack_58 = 0x1c00000010;
     ppuStack_60 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::PropertyList(auStack_50);
+    new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 00499ff4 to 00499fff has its CatchHandler @ 0049a034 */
     Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
     ppuStack_60 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::~PropertyList(auStack_50);
+    ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   }
   else if ((int)p1 == 3) {
     (**(code **)(*(long *)(ulong)(uint)p0 + 0x40))();
@@ -489,14 +489,14 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
           abStack_70[0xb] = 0;
           abStack_70[0xc] = 0x25;
           uStack_63 = uStack_63 & 0xff000000;
-          Walaber::PropertyList::PropertyList(puVar6);
+          new ((void *)(puVar6)) Walaber::PropertyList();
                     /* try { // try from 0049a17c to 0049a187 has its CatchHandler @ 0049a568 */
           Walaber::BroadcastManager::messageTx(uVar5,abStack_70);
           abStack_70[0] = bVar2;
           abStack_70._1_7_ = uVar3;
         }
         else {
-          Walaber::PropertyList::PropertyList(auStack_88);
+          new ((void *)(auStack_88)) Walaber::PropertyList();
           abStack_a0[0xe] = 0;
           abStack_a0[0xf] = 0;
           pvStack_90 = (void *)0x0;
@@ -515,10 +515,10 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
           abStack_a0[8] = 0x65;
           abStack_a0[0xd] = 0;
                     /* try { // try from 0049a230 to 0049a23b has its CatchHandler @ 0049a550 */
-          Walaber::Property::Property(abStack_70,0);
+          new ((void *)(abStack_70)) Walaber::Property(0);
                     /* try { // try from 0049a23c to 0049a24b has its CatchHandler @ 0049a540 */
           Walaber::PropertyList::setValueForKey(auStack_88,abStack_a0,abStack_70);
-          Walaber::Property::~Property(abStack_70);
+          ((Walaber::Property *)abStack_70)->~Property();
           if ((abStack_a0[0] & 1) != 0) {
             operator delete(pvStack_90);
           }
@@ -559,10 +559,10 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
                     /* try { // try from 0049a2a8 to 0049a2b3 has its CatchHandler @ 0049a528 */
           Walaber::TextManager::getString(abStack_b8,abStack_d0);
                     /* try { // try from 0049a2b4 to 0049a2bf has its CatchHandler @ 0049a510 */
-          Walaber::Property::Property(abStack_70,abStack_b8);
+          new ((void *)(abStack_70)) Walaber::Property(abStack_b8);
                     /* try { // try from 0049a2c0 to 0049a2cf has its CatchHandler @ 0049a500 */
           Walaber::PropertyList::setValueForKey(auStack_88,abStack_a0,abStack_70);
-          Walaber::Property::~Property(abStack_70);
+          ((Walaber::Property *)abStack_70)->~Property();
           if ((abStack_b8[0] & 1) != 0) {
             operator delete(pvStack_a8);
           }
@@ -609,10 +609,10 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
                     /* try { // try from 0049a354 to 0049a35f has its CatchHandler @ 0049a4ec */
           Walaber::TextManager::getString(abStack_b8,abStack_e8);
                     /* try { // try from 0049a360 to 0049a36b has its CatchHandler @ 0049a4d4 */
-          Walaber::Property::Property(abStack_70,abStack_b8);
+          new ((void *)(abStack_70)) Walaber::Property(abStack_b8);
                     /* try { // try from 0049a36c to 0049a37b has its CatchHandler @ 0049a4c4 */
           Walaber::PropertyList::setValueForKey(auStack_88,abStack_a0,abStack_70);
-          Walaber::Property::~Property(abStack_70);
+          ((Walaber::Property *)abStack_70)->~Property();
           if ((abStack_b8[0] & 1) != 0) {
             operator delete(pvStack_a8);
           }
@@ -640,10 +640,10 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
           abStack_a0[2] = 0x44;
           abStack_a0[3] = 0;
                     /* try { // try from 0049a3d0 to 0049a3db has its CatchHandler @ 0049a4c0 */
-          Walaber::Property::Property(abStack_70,6);
+          new ((void *)(abStack_70)) Walaber::Property(6);
                     /* try { // try from 0049a3dc to 0049a3eb has its CatchHandler @ 0049a4bc */
           Walaber::PropertyList::setValueForKey(auStack_88,abStack_a0,abStack_70);
-          Walaber::Property::~Property(abStack_70);
+          ((Walaber::Property *)abStack_70)->~Property();
           if ((abStack_a0[0] & 1) != 0) {
             operator delete(pvStack_90);
           }
@@ -654,7 +654,7 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
           Walaber::ScreenManager::commitScreenChanges();
           puVar6 = auStack_88;
         }
-        Walaber::PropertyList::~PropertyList(puVar6);
+        ((Walaber::PropertyList *)puVar6)->~PropertyList();
       }
       uVar5 = 0;
     }
@@ -695,7 +695,7 @@ void WaterConcept::HDAssetsNotification::messageRx(Walaber__Message *p0, long in
     if (((NotificationSingleton::getInstancePtr()::instance & 1) == 0) &&
        (iVar4 = __cxa_guard_acquire(&NotificationSingleton::getInstancePtr()::instance), iVar4 != 0)) {
                     /* try { // try from 0049a46c to 0049a477 has its CatchHandler @ 0049a4a8 */
-      WaterConcept::NotificationSingleton::NotificationSingleton(NotificationSingleton::getInstancePtr()::instance);
+      new ((void *)(NotificationSingleton::getInstancePtr()::instance)) WaterConcept::NotificationSingleton();
       __cxa_atexit(NotificationSingleton::~NotificationSingleton,
                    NotificationSingleton::getInstancePtr()::instance,&PTR_LOOP_00728000);
       __cxa_guard_release(&NotificationSingleton::getInstancePtr()::instance);

@@ -65,7 +65,7 @@ undefined1 * Walaber::GraphicsGL::getState(void)
   
   if (((getState()::state & 1) == 0) && (iVar1 = __cxa_guard_acquire(&getState()::state), iVar1 != 0)) {
                     /* try { // try from 002c2164 to 002c216f has its CatchHandler @ 002c2180 */
-    Walaber::GraphicsGL::State::State(getState()::state);
+    new ((void *)(getState()::state)) Walaber::GraphicsGL::State();
     __cxa_guard_release(&getState()::state);
   }
   return getState()::state;
@@ -405,7 +405,7 @@ undefined2 * Walaber::GraphicsGL::getExtensions(void)
   if (((getExtensions()::extensions & 1) == 0) &&
      (iVar1 = __cxa_guard_acquire(&getExtensions()::extensions), iVar1 != 0)) {
                     /* try { // try from 00409574 to 0040957f has its CatchHandler @ 00409590 */
-    Walaber::GraphicsGL::Extensions::Extensions(&getExtensions()::extensions);
+    new ((void *)(&getExtensions()::extensions)) Walaber::GraphicsGL::Extensions();
     __cxa_guard_release(&getExtensions()::extensions);
   }
   return &getExtensions()::extensions;

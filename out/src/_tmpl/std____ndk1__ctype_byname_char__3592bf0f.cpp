@@ -87,7 +87,7 @@ LAB_005d7478:
   if ((*(void **)(p0 + 0x10) != (void *)0x0) && (p0[0x18] != '\0')) {
     operator delete[](*(void **)(p0 + 0x10),uVar3);
   }
-  std::__ndk1::__shared_count::~__shared_count(p0);
+  ((std::__ndk1::__shared_count *)p0)->~__shared_count();
   _Unwind_Resume(auVar6._0_8_);
   return;
 }
@@ -156,7 +156,7 @@ void std::__ndk1::ctype_byname<char>::~ctype_byname()
   if (((void *)this[2] != (void *)0x0) && (*(char *)(this + 3) != '\0')) {
     operator delete[]((void *)this[2],p1);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }
@@ -259,7 +259,7 @@ void std::__ndk1::ctype_byname<char>::~ctype_byname()
   if (((void *)this[2] != (void *)0x0) && (*(char *)(this + 3) != '\0')) {
     operator delete[]((void *)this[2],p1);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 

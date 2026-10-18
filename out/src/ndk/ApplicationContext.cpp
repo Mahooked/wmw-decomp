@@ -4,7 +4,7 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x2b27d0  size 132 */ndk::ApplicationContext::ApplicationContext(){
-  Walaber::MessageReceiver::MessageReceiver(this,0x3f);
+  new ((void *)(this)) Walaber::MessageReceiver(0x3f);
   *(undefined4 *)((long)this + 0xcc) = 0x3f800000;
   *(undefined8 *)((long)this + 0x24) = 0x100000100000001;
   *(undefined4 *)((long)this + 0xa4) = 0;
@@ -60,7 +60,7 @@
   if ((*(byte *)(this + 0xc) & 1) != 0) {
     operator delete((void *)this[0xe]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(this);
+  ((Walaber::MessageReceiver *)this)->~MessageReceiver();
   return;
 }
 
@@ -104,7 +104,7 @@ void ndk::ApplicationContext::getJNIEnv(void)
 
 /* ok  address 0x2b29dc  size 36 */ndk::ApplicationContext::~ApplicationContext(){
   ndk::ApplicationContext::~ApplicationContext();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -194,7 +194,7 @@ void ndk::ApplicationContext::initializeGame(long param_1)
     uStack_4f = 0x2f737465737361;
     uStack_48 = 0;
                     /* try { // try from 002b2b9c to 002b2ba3 has its CatchHandler @ 002b2da0 */
-    Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(uVar3,param_1 + 0x60,&bStack_50);
+    new ((void *)(uVar3)) Walaber::FileManager::FH_ZipFileSystem(param_1 + 0x60,&bStack_50);
     if ((bStack_50 & 1) != 0) {
       operator delete(pcStack_40);
     }
@@ -242,21 +242,21 @@ void ndk::ApplicationContext::initializeGame(long param_1)
     puStack_88 = puVar5;
     puStack_78 = puVar5;
     piStack_70 = piStack_80;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
     puStack_98 = puStack_78;
     if (puStack_78 != (undefined8 *)0x0) {
       *piStack_70 = *piStack_70 + 1;
     }
                     /* try { // try from 002b2d14 to 002b2d1f has its CatchHandler @ 002b2d78 */
     Walaber::ScreenManager::addScreenLoader(&puStack_98,0x32);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 002b2d28 to 002b2d3f has its CatchHandler @ 002b2dd4 */
     WaterConcept::GameSettings::goLoadingScreen();
     Walaber::ScreenManager::commitScreenChanges();
     Walaber::ScreenManager::update(0);
     Walaber::ScreenManager::draw(0xf);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-    Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ScreenLoader>>::~SharedPtr(&bStack_50);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ScreenLoader>> *)&bStack_50)->~SharedPtr<Walaber::MemberCallback<WaterConcept::ScreenLoader>>();
   }
   return;
 }
@@ -938,7 +938,7 @@ void ndk::ApplicationContext::resetDatabaseAt
   uStack_c8 = 99;
   uStack_c2 = 0;
                     /* try { // try from 002b3d20 to 002b3d33 has its CatchHandler @ 002b4468 */
-  Walaber::DatabaseIterator::DatabaseIterator(&uStack_f0,&ppuStack_170,&bStack_d0,&bStack_190);
+  new ((void *)(&uStack_f0)) Walaber::DatabaseIterator(&ppuStack_170,&bStack_d0,&bStack_190);
   while( true ) {
     if ((bStack_d0 & 1) != 0) {
       operator delete(pvStack_c0);
@@ -964,7 +964,7 @@ void ndk::ApplicationContext::resetDatabaseAt
       }
     }
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&uStack_f0);
+  ((Walaber::DatabaseIterator *)&uStack_f0)->~DatabaseIterator();
   if ((bStack_190 & 1) != 0) {
     operator delete(pvStack_180);
   }
@@ -991,7 +991,7 @@ void ndk::ApplicationContext::resetDatabaseAt
   uStack_188 = 0;
   pvStack_c0 = (void *)0x0;
                     /* try { // try from 002b3e10 to 002b3e23 has its CatchHandler @ 002b4460 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_d8,&ppuStack_170,&bStack_190,&bStack_d0);
+  new ((void *)(auStack_d8)) Walaber::DatabaseIterator(&ppuStack_170,&bStack_190,&bStack_d0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -1103,7 +1103,7 @@ void ndk::ApplicationContext::resetDatabaseAt
       operator delete(pvStack_180);
     }
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_d8);
+  ((Walaber::DatabaseIterator *)auStack_d8)->~DatabaseIterator();
   if (((ulong)ppuStack_170 & 1) != 0) {
     operator delete(apvStack_160[0]);
   }
@@ -1119,7 +1119,7 @@ void ndk::ApplicationContext::resetDatabaseAt
       uStack_168 = 0x4300000010;
       ppuStack_170 = &PTR__Message_0070cdc8;
                     /* try { // try from 002b4118 to 002b411f has its CatchHandler @ 002b4530 */
-      Walaber::PropertyList::PropertyList(apvStack_160);
+      new ((void *)(apvStack_160)) Walaber::PropertyList();
       uStack_cc = 0;
       uStack_cb = 0;
       uStack_ca = 0;
@@ -1133,10 +1133,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       uStack_cf = 0x6469;
       uStack_cd = 0;
                     /* try { // try from 002b4140 to 002b414b has its CatchHandler @ 002b4518 */
-      Walaber::Property::Property(&bStack_190,lVar9);
+      new ((void *)(&bStack_190)) Walaber::Property(lVar9);
                     /* try { // try from 002b414c to 002b415b has its CatchHandler @ 002b4508 */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((bStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -1156,10 +1156,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       *puVar10 = 0x74736572;
       uStack_c8 = 0;
                     /* try { // try from 002b4190 to 002b419b has its CatchHandler @ 002b4504 */
-      Walaber::Property::Property(&bStack_190,1);
+      new ((void *)(&bStack_190)) Walaber::Property(1);
                     /* try { // try from 002b419c to 002b41ab has its CatchHandler @ 002b4500 */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((bStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -1176,10 +1176,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       uStack_c8 = 0x74;
       uStack_c7 = 0;
                     /* try { // try from 002b41dc to 002b41e7 has its CatchHandler @ 002b44fc */
-      Walaber::Property::Property(&bStack_190,1);
+      new ((void *)(&bStack_190)) Walaber::Property(1);
                     /* try { // try from 002b41e8 to 002b41f7 has its CatchHandler @ 002b44f8 */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((bStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -1187,7 +1187,7 @@ void ndk::ApplicationContext::resetDatabaseAt
       uVar7 = Walaber::BroadcastManager::getInstancePtr();
       Walaber::BroadcastManager::messageTx(uVar7,&ppuStack_170);
       ppuStack_170 = &PTR__Message_0070cdc8;
-      Walaber::PropertyList::~PropertyList(apvStack_160);
+      ((Walaber::PropertyList *)apvStack_160)->~PropertyList();
       lVar9 = lVar9 + 0x18;
     } while (lVar9 != lStack_98);
   }
@@ -1198,7 +1198,7 @@ void ndk::ApplicationContext::resetDatabaseAt
       uStack_168 = 0x4300000010;
       ppuStack_170 = &PTR__Message_0070cdc8;
                     /* try { // try from 002b42ac to 002b42b3 has its CatchHandler @ 002b44f4 */
-      Walaber::PropertyList::PropertyList(apvStack_160);
+      new ((void *)(apvStack_160)) Walaber::PropertyList();
       uStack_cc = 0;
       uStack_cb = 0;
       uStack_ca = 0;
@@ -1216,10 +1216,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       builtin_strncpy((char *)((ulong)&uStack_f0 | 1),"locksmith_one",0xd);
       uStack_e8 = 0;
                     /* try { // try from 002b42f8 to 002b4303 has its CatchHandler @ 002b44dc */
-      Walaber::Property::Property(&bStack_190,&uStack_f0);
+      new ((void *)(&bStack_190)) Walaber::Property(&uStack_f0);
                     /* try { // try from 002b4304 to 002b4313 has its CatchHandler @ 002b44cc */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((uStack_f0 & 1) != 0) {
         operator delete(pvStack_e0);
       }
@@ -1242,10 +1242,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       *puVar10 = 0x74736572;
       uStack_c8 = 0;
                     /* try { // try from 002b4360 to 002b436b has its CatchHandler @ 002b44c8 */
-      Walaber::Property::Property(&bStack_190,1);
+      new ((void *)(&bStack_190)) Walaber::Property(1);
                     /* try { // try from 002b436c to 002b437b has its CatchHandler @ 002b44c4 */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((bStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -1262,10 +1262,10 @@ void ndk::ApplicationContext::resetDatabaseAt
       uStack_c8 = 0x65;
       uStack_c7 = 0;
                     /* try { // try from 002b43ac to 002b43b7 has its CatchHandler @ 002b44c0 */
-      Walaber::Property::Property(&bStack_190,lVar9);
+      new ((void *)(&bStack_190)) Walaber::Property(lVar9);
                     /* try { // try from 002b43b8 to 002b43c7 has its CatchHandler @ 002b44bc */
       Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_d0,&bStack_190);
-      Walaber::Property::~Property(&bStack_190);
+      ((Walaber::Property *)&bStack_190)->~Property();
       if ((bStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -1273,12 +1273,12 @@ void ndk::ApplicationContext::resetDatabaseAt
       uVar7 = Walaber::BroadcastManager::getInstancePtr();
       Walaber::BroadcastManager::messageTx(uVar7,&ppuStack_170);
       ppuStack_170 = &PTR__Message_0070cdc8;
-      Walaber::PropertyList::~PropertyList(apvStack_160);
+      ((Walaber::PropertyList *)apvStack_160)->~PropertyList();
       lVar9 = lVar9 + 0x18;
     } while (lVar9 != lStack_b0);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_b8);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a0);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_b8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_a0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 
@@ -1311,7 +1311,7 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
   
   p0 = (void *)operator new(0xa8);
                     /* try { // try from 002b46a4 to 002b46ab has its CatchHandler @ 002b47ec */
-  Walaber::ZipArchiveReader::ZipArchiveReader(p0,(byte *)(param_1 + 0x60));
+  new ((void *)(p0)) Walaber::ZipArchiveReader((byte *)(param_1 + 0x60));
   bVar1 = *(byte *)(param_1 + 0x60);
   if ((bVar1 & 1) == 0) {
     uVar5 = (ulong)(bVar1 >> 1);
@@ -1354,7 +1354,7 @@ void ndk::ApplicationContext::copyDatabaseFromBundle(long param_1,undefined8 par
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  Walaber::ZipArchiveReader::~ZipArchiveReader(p0);
+  ((Walaber::ZipArchiveReader *)p0)->~ZipArchiveReader();
   operator delete(p0);
   return;
 }
@@ -1482,7 +1482,7 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
       uStack_c8 = 0x73;
       uStack_c7 = 0;
                     /* try { // try from 002b4960 to 002b4973 has its CatchHandler @ 002b522c */
-      Walaber::DatabaseIterator::DatabaseIterator(&bStack_f0,abStack_90,&bStack_d0,&uStack_b0);
+      new ((void *)(&bStack_f0)) Walaber::DatabaseIterator(abStack_90,&bStack_d0,&uStack_b0);
       if ((bStack_d0 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_bc,CONCAT13(uStack_bd,CONCAT21(uStack_bf,uStack_c0))));
       }
@@ -1498,7 +1498,7 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
       }
                     /* try { // try from 002b49bc to 002b49bf has its CatchHandler @ 002b5264 */
       Walaber::DatabaseManager::closeDatabase();
-      Walaber::DatabaseIterator::~DatabaseIterator(&bStack_f0);
+      ((Walaber::DatabaseIterator *)&bStack_f0)->~DatabaseIterator();
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
@@ -1572,7 +1572,7 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
       uStack_e7 = 0;
       pvStack_100 = (void *)0x0;
                     /* try { // try from 002b4ae8 to 002b4aff has its CatchHandler @ 002b51e8 */
-      Walaber::DatabaseIterator::DatabaseIterator(&puStack_128,&uStack_b0,&bStack_f0,&bStack_d0,&bStack_110);
+      new ((void *)(&puStack_128)) Walaber::DatabaseIterator(&uStack_b0,&bStack_f0,&bStack_d0,&bStack_110);
       if ((bStack_110 & 1) != 0) {
         operator delete(pvStack_100);
       }
@@ -1588,7 +1588,7 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         iVar5 = Walaber::DatabaseIterator::getIntAtIndex(&puStack_128,0);
       }
       Walaber::DatabaseManager::closeDatabase();
-      Walaber::DatabaseIterator::~DatabaseIterator(&puStack_128);
+      ((Walaber::DatabaseIterator *)&puStack_128)->~DatabaseIterator();
       if ((bStack_d0 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_bc,CONCAT13(uStack_bd,CONCAT21(uStack_bf,uStack_c0))));
       }
@@ -1716,13 +1716,13 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         uStack_c6 = (undefined6)((ulong)piStack_120 >> 0x10);
         *piStack_120 = 3;
         bStack_f0 = bStack_d0;
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_d0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_d0)->~SharedPtr<Walaber::Callback>();
         uStack_140 = CONCAT71(uStack_cf,bStack_f0);
         piStack_138 = (int *)CONCAT62(uStack_c6,CONCAT11(uStack_c7,uStack_c8));
         if (uStack_140 != 0) {
           *piStack_138 = *piStack_138 + 1;
         }
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_f0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_f0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 002b4dc8 to 002b4dff has its CatchHandler @ 002b51c0 */
         puVar9 = (undefined8 *)operator new(0x28);
         puVar9[2] = piVar10;
@@ -1739,13 +1739,13 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         uStack_c6 = (undefined6)((ulong)piVar11 >> 0x10);
         *piVar11 = 3;
         bStack_f0 = bStack_d0;
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_d0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_d0)->~SharedPtr<Walaber::Callback>();
         lStack_160 = CONCAT71(uStack_cf,bStack_f0);
         piStack_158 = (int *)CONCAT62(uStack_c6,CONCAT11(uStack_c7,uStack_c8));
         if (lStack_160 != 0) {
           *piStack_158 = *piStack_158 + 1;
         }
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_f0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_f0)->~SharedPtr<Walaber::Callback>();
         puStack_170 = puStack_128;
         if (puStack_128 != (undefined8 *)0x0) {
           *piStack_120 = *piStack_120 + 1;
@@ -1756,8 +1756,8 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
         }
                     /* try { // try from 002b4e70 to 002b4e7f has its CatchHandler @ 002b5110 */
         Walaber::DatabaseManager::runSQL(&uStack_b0,&puStack_170,&puStack_180);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_180);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_170);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_180)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_170)->~SharedPtr<Walaber::Callback>();
         iVar15 = iVar4 + 1;
         if (piVar10[1] < *piVar10) {
                     /* try { // try from 002b4e9c to 002b4eb3 has its CatchHandler @ 002b510c */
@@ -1821,10 +1821,10 @@ void ndk::ApplicationContext::updateDatabaseAt(long param_1,byte *param_2,undefi
           WaterConcept::GameSettings::restorePurchasedIAP();
         }
         Walaber::DatabaseManager::closeDatabase();
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_160);
-        Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&puStack_150);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_140);
-        Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&puStack_128);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_160)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&puStack_150)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_140)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&puStack_128)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
         if ((uStack_b0 & 1) != 0) {
           operator delete(pvStack_a0);
         }
@@ -1984,7 +1984,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
     uStack_a5 = 0;
     uStack_a4 = 0;
                     /* try { // try from 002b59f0 to 002b5a07 has its CatchHandler @ 002b5cfc */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_d8,abStack_60,&bStack_a0,&uStack_80,abStack_b8);
+    new ((void *)(auStack_d8)) Walaber::DatabaseIterator(abStack_60,&bStack_a0,&uStack_80,abStack_b8);
     if ((abStack_b8[0] & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_a4,
                                     CONCAT13(uStack_a5,CONCAT21(uStack_a7,abStack_b8[0x10]))));
@@ -2003,7 +2003,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
       printf("new val %i\n",uVar6);
       iVar7 = Walaber::DatabaseIterator::getIntAtIndex(auStack_d8,0);
     }
-    Walaber::DatabaseIterator::~DatabaseIterator(auStack_d8);
+    ((Walaber::DatabaseIterator *)auStack_d8)->~DatabaseIterator();
                     /* try { // try from 002b5a78 to 002b5a7b has its CatchHandler @ 002b5ce0 */
     Walaber::DatabaseManager::closeDatabase();
     if ((uStack_80 & 1) != 0) {
@@ -2097,7 +2097,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
     abStack_b8[9] = 0;
     pvStack_c8 = (void *)0x0;
                     /* try { // try from 002b5bb4 to 002b5bcb has its CatchHandler @ 002b5ca8 */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_c0,&uStack_80,abStack_b8,&bStack_a0,auStack_d8);
+    new ((void *)(auStack_c0)) Walaber::DatabaseIterator(&uStack_80,abStack_b8,&bStack_a0,auStack_d8);
     if ((auStack_d8[0] & 1) != 0) {
       operator delete(pvStack_c8);
     }
@@ -2114,7 +2114,7 @@ ulong ndk::ApplicationContext::getDatabaseUpdateSteps
       iVar8 = Walaber::DatabaseIterator::getIntAtIndex(auStack_c0,0);
     }
     Walaber::DatabaseManager::closeDatabase();
-    Walaber::DatabaseIterator::~DatabaseIterator(auStack_c0);
+    ((Walaber::DatabaseIterator *)auStack_c0)->~DatabaseIterator();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_8c,CONCAT13(uStack_8d,CONCAT21(uStack_8f,uStack_90))));
     }
@@ -2427,7 +2427,7 @@ LAB_002b7a7c:
       uStack_d6 = 0;
       uStack_d5 = 0;
       uStack_d4 = 0xf;
-      Walaber::PropertyList::PropertyList(apuStack_d0);
+      new ((void *)(apuStack_d0)) Walaber::PropertyList();
       uStack_f5 = 0;
       uStack_f4 = 0;
       uStack_f3 = 0;
@@ -2443,10 +2443,10 @@ LAB_002b7a7c:
       uStack_fe = 0x6c6c6174736e;
       uStack_f8 = 0x65;
                     /* try { // try from 002b705c to 002b7067 has its CatchHandler @ 002b8b24 */
-      Walaber::Property::Property(&bStack_120,0);
+      new ((void *)(&bStack_120)) Walaber::Property(0);
                     /* try { // try from 002b7068 to 002b7077 has its CatchHandler @ 002b8b04 */
       Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_100,&bStack_120);
-      Walaber::Property::~Property(&bStack_120);
+      ((Walaber::Property *)&bStack_120)->~Property();
       if ((bStack_100 & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_e9,CONCAT43(uStack_ed,CONCAT21(uStack_ef,uStack_f0))));
       }
@@ -2457,7 +2457,7 @@ LAB_002b7a7c:
       uStack_df = 0x70cd;
       uStack_dd = 0;
       uStack_dc = 0;
-      Walaber::PropertyList::~PropertyList(apuStack_d0);
+      ((Walaber::PropertyList *)apuStack_d0)->~PropertyList();
       goto LAB_002b7a80;
     case 0x10:
       iVar9 = (**(code **)(**(long **)(p0 + 1) + 0x30))(*(long **)(p0 + 1),&bStack_e0,0x10006);
@@ -2479,7 +2479,7 @@ LAB_002b7a7c:
       uStack_d6 = 0;
       uStack_d5 = 0;
       uStack_d4 = 0x11;
-      Walaber::PropertyList::PropertyList(apuStack_d0);
+      new ((void *)(apuStack_d0)) Walaber::PropertyList();
       uStack_f7 = 0;
       uStack_f6 = 0;
       uStack_f5 = 0;
@@ -2538,10 +2538,10 @@ LAB_002b7b38:
       }
       *(undefined1 *)((long)pvVar30 + uVar25) = 0;
                     /* try { // try from 002b7b4c to 002b7b57 has its CatchHandler @ 002b8a78 */
-      Walaber::Property::Property(&bStack_120,&bStack_140);
+      new ((void *)(&bStack_120)) Walaber::Property(&bStack_140);
                     /* try { // try from 002b7b58 to 002b7b67 has its CatchHandler @ 002b8a68 */
       Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_100,&bStack_120);
-      Walaber::Property::~Property(&bStack_120);
+      ((Walaber::Property *)&bStack_120)->~Property();
       if ((bStack_140 & 1) != 0) {
         operator delete(pvStack_130);
       }
@@ -2557,7 +2557,7 @@ LAB_002b7bb8:
       uStack_df = 0x70cd;
       uStack_dd = 0;
       uStack_dc = 0;
-      Walaber::PropertyList::~PropertyList(apuStack_d0);
+      ((Walaber::PropertyList *)apuStack_d0)->~PropertyList();
       break;
     case 0x12:
       uStack_d7 = 0;
@@ -2893,7 +2893,7 @@ LAB_002b7ffc:
       uStack_d5 = 0;
       uStack_d4 = 0x13;
                     /* try { // try from 002b8110 to 002b8117 has its CatchHandler @ 002b8a64 */
-      Walaber::PropertyList::PropertyList(apuStack_d0);
+      new ((void *)(apuStack_d0)) Walaber::PropertyList();
       uStack_155 = 0;
       bStack_160 = 0x12;
       pvStack_150 = (void *)0x0;
@@ -2903,10 +2903,10 @@ LAB_002b7ffc:
       uStack_15c = 0x6e49646c;
       uStack_158 = 0x66;
                     /* try { // try from 002b8140 to 002b814b has its CatchHandler @ 002b8a4c */
-      Walaber::Property::Property(&bStack_120,&bStack_140);
+      new ((void *)(&bStack_120)) Walaber::Property(&bStack_140);
                     /* try { // try from 002b814c to 002b815b has its CatchHandler @ 002b8a18 */
       Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_160,&bStack_120);
-      Walaber::Property::~Property(&bStack_120);
+      ((Walaber::Property *)&bStack_120)->~Property();
       if ((bStack_160 & 1) != 0) {
         operator delete(pvStack_150);
       }
@@ -2919,10 +2919,10 @@ LAB_002b7ffc:
       uStack_15c = 0x6e6f6973;
       uStack_158 = 0;
                     /* try { // try from 002b8198 to 002b81a3 has its CatchHandler @ 002b8a14 */
-      Walaber::Property::Property(&bStack_120,&bStack_100);
+      new ((void *)(&bStack_120)) Walaber::Property(&bStack_100);
                     /* try { // try from 002b81a4 to 002b81b3 has its CatchHandler @ 002b8a10 */
       Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_160,&bStack_120);
-      Walaber::Property::~Property(&bStack_120);
+      ((Walaber::Property *)&bStack_120)->~Property();
       if ((bStack_160 & 1) != 0) {
         operator delete(pvStack_150);
       }
@@ -2936,7 +2936,7 @@ LAB_002b7ffc:
       uStack_df = 0x70cd;
       uStack_dd = 0;
       uStack_dc = 0;
-      Walaber::PropertyList::~PropertyList(apuStack_d0);
+      ((Walaber::PropertyList *)apuStack_d0)->~PropertyList();
       if ((bStack_140 & 1) != 0) {
         operator delete(pvStack_130);
       }
@@ -3040,7 +3040,7 @@ LAB_002b824c:
       uStack_d5 = 0;
       uStack_d4 = 0x17;
                     /* try { // try from 002b7404 to 002b740b has its CatchHandler @ 002b8ab8 */
-      Walaber::PropertyList::PropertyList(apuStack_d0);
+      new ((void *)(apuStack_d0)) Walaber::PropertyList();
       uStack_16e = 0;
       uStack_16d = 0;
       pvStack_168 = (void *)0x0;
@@ -3051,10 +3051,10 @@ LAB_002b824c:
       uStack_170 = 0x73;
       uStack_16f = 0;
                     /* try { // try from 002b7434 to 002b743f has its CatchHandler @ 002b8a48 */
-      Walaber::Property::Property(&bStack_120,uVar10);
+      new ((void *)(&bStack_120)) Walaber::Property(uVar10);
                     /* try { // try from 002b7440 to 002b744f has its CatchHandler @ 002b8a28 */
       Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_178,&bStack_120);
-      Walaber::Property::~Property(&bStack_120);
+      ((Walaber::Property *)&bStack_120)->~Property();
       if ((bStack_178 & 1) != 0) {
         operator delete(pvStack_168);
       }
@@ -3065,7 +3065,7 @@ LAB_002b824c:
       uStack_df = 0x70cd;
       uStack_dd = 0;
       uStack_dc = 0;
-      Walaber::PropertyList::~PropertyList(apuStack_d0);
+      ((Walaber::PropertyList *)apuStack_d0)->~PropertyList();
       if ((bStack_160 & 1) != 0) {
         operator delete(pvStack_150);
       }
@@ -3465,7 +3465,7 @@ LAB_002b879c:
                     /* try { // try from 002b83d8 to 002b83df has its CatchHandler @ 002b8be0 */
         std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(p0 + 0xd,&bStack_120);
                     /* try { // try from 002b83e0 to 002b83e7 has its CatchHandler @ 002b89d4 */
-        Walaber::PropertyList::PropertyList(&bStack_100);
+        new ((void *)(&bStack_100)) Walaber::PropertyList();
         uStack_132 = 0;
         pvStack_130 = (void *)0x0;
         bStack_140 = 0x18;
@@ -3479,10 +3479,10 @@ LAB_002b879c:
         uStack_138 = 0x65;
         uStack_133 = 0;
                     /* try { // try from 002b8418 to 002b8423 has its CatchHandler @ 002b89b4 */
-        Walaber::Property::Property(&bStack_e0,1);
+        new ((void *)(&bStack_e0)) Walaber::Property(1);
                     /* try { // try from 002b8424 to 002b8433 has its CatchHandler @ 002b89a4 */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_140 & 1) != 0) {
           operator delete(pvStack_130);
         }
@@ -3499,10 +3499,10 @@ LAB_002b879c:
         uStack_13f = 0x4449;
         uStack_13d = 0;
                     /* try { // try from 002b8468 to 002b8473 has its CatchHandler @ 002b89a0 */
-        Walaber::Property::Property(&bStack_e0,0x1b);
+        new ((void *)(&bStack_e0)) Walaber::Property(0x1b);
                     /* try { // try from 002b8474 to 002b8483 has its CatchHandler @ 002b899c */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_140 & 1) != 0) {
           operator delete(pvStack_130);
         }
@@ -3529,10 +3529,10 @@ LAB_002b879c:
                     /* try { // try from 002b84ec to 002b84f7 has its CatchHandler @ 002b8984 */
         Walaber::TextManager::getString(&bStack_160,&bStack_1a8);
                     /* try { // try from 002b84f8 to 002b8503 has its CatchHandler @ 002b896c */
-        Walaber::Property::Property(&bStack_e0,&bStack_160);
+        new ((void *)(&bStack_e0)) Walaber::Property(&bStack_160);
                     /* try { // try from 002b8504 to 002b8513 has its CatchHandler @ 002b895c */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_160 & 1) != 0) {
           operator delete(pvStack_150);
         }
@@ -3566,10 +3566,10 @@ LAB_002b879c:
                     /* try { // try from 002b8598 to 002b85a3 has its CatchHandler @ 002b8948 */
         Walaber::TextManager::getString(&bStack_160,&bStack_1c0);
                     /* try { // try from 002b85a4 to 002b85af has its CatchHandler @ 002b8930 */
-        Walaber::Property::Property(&bStack_e0,&bStack_160);
+        new ((void *)(&bStack_e0)) Walaber::Property(&bStack_160);
                     /* try { // try from 002b85b0 to 002b85bf has its CatchHandler @ 002b8920 */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_160 & 1) != 0) {
           operator delete(pvStack_150);
         }
@@ -3597,10 +3597,10 @@ LAB_002b879c:
                     /* try { // try from 002b8638 to 002b8643 has its CatchHandler @ 002b890c */
         Walaber::TextManager::getString(&bStack_160,&uStack_1d8);
                     /* try { // try from 002b8644 to 002b864f has its CatchHandler @ 002b88f4 */
-        Walaber::Property::Property(&bStack_e0,&bStack_160);
+        new ((void *)(&bStack_e0)) Walaber::Property(&bStack_160);
                     /* try { // try from 002b8650 to 002b865f has its CatchHandler @ 002b88e4 */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_160 & 1) != 0) {
           operator delete(pvStack_150);
         }
@@ -3628,10 +3628,10 @@ LAB_002b879c:
                     /* try { // try from 002b86d8 to 002b86e3 has its CatchHandler @ 002b88d0 */
         Walaber::TextManager::getString(&bStack_160,&uStack_1f0);
                     /* try { // try from 002b86e4 to 002b86ef has its CatchHandler @ 002b88b8 */
-        Walaber::Property::Property(&bStack_e0,&bStack_160);
+        new ((void *)(&bStack_e0)) Walaber::Property(&bStack_160);
                     /* try { // try from 002b86f0 to 002b86ff has its CatchHandler @ 002b88a8 */
         Walaber::PropertyList::setValueForKey(&bStack_100,&bStack_140,&bStack_e0);
-        Walaber::Property::~Property(&bStack_e0);
+        ((Walaber::Property *)&bStack_e0)->~Property();
         if ((bStack_160 & 1) != 0) {
           operator delete(pvStack_150);
         }
@@ -3644,7 +3644,7 @@ LAB_002b879c:
                     /* try { // try from 002b8738 to 002b8747 has its CatchHandler @ 002b8be8 */
         Walaber::ScreenManager::pushScreen(0xd,&bStack_100);
         Walaber::ScreenManager::commitScreenChanges();
-        Walaber::PropertyList::~PropertyList(&bStack_100);
+        ((Walaber::PropertyList *)&bStack_100)->~PropertyList();
       }
 LAB_002b8750:
       uVar11 = 1;
@@ -3713,7 +3713,7 @@ joined_r0x002b8758:
         uStack_d6 = 0;
         uStack_d5 = 0;
         uStack_d4 = 0x33;
-        Walaber::PropertyList::PropertyList(apuStack_d0);
+        new ((void *)(apuStack_d0)) Walaber::PropertyList();
         uStack_f3 = 0;
         uStack_f1 = 0;
         bStack_100 = 0x16;
@@ -3729,10 +3729,10 @@ joined_r0x002b8758:
         uStack_fe = 0x6c6961764173;
         uStack_f8 = 0x61;
                     /* try { // try from 002b628c to 002b6297 has its CatchHandler @ 002b8a0c */
-        Walaber::Property::Property(&bStack_120,0);
+        new ((void *)(&bStack_120)) Walaber::Property(0);
                     /* try { // try from 002b6298 to 002b62a7 has its CatchHandler @ 002b8a08 */
         Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_100,&bStack_120);
-        Walaber::Property::~Property(&bStack_120);
+        ((Walaber::Property *)&bStack_120)->~Property();
         if ((bStack_100 & 1) != 0) {
           operator delete((void *)CONCAT17(uStack_e9,CONCAT43(uStack_ed,CONCAT21(uStack_ef,uStack_f0)))
                       );
@@ -3972,7 +3972,7 @@ LAB_002b79c4:
       uStack_f8 = 0x61;
       uStack_f5 = 0;
                     /* try { // try from 002b6588 to 002b659b has its CatchHandler @ 002b8b78 */
-      Walaber::DatabaseIterator::DatabaseIterator(&bStack_140,&bStack_e0,&bStack_100,&bStack_120);
+      new ((void *)(&bStack_140)) Walaber::DatabaseIterator(&bStack_e0,&bStack_100,&bStack_120);
       if ((bStack_100 & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_e9,CONCAT43(uStack_ed,CONCAT21(uStack_ef,uStack_f0))));
       }
@@ -3995,7 +3995,7 @@ LAB_002b79c4:
                     /* try { // try from 002b7ad4 to 002b7ad7 has its CatchHandler @ 002b8a00 */
         ndk::ApplicationContext::handleAgeChange(uVar25,iVar31);
       }
-      Walaber::DatabaseIterator::~DatabaseIterator(&bStack_140);
+      ((Walaber::DatabaseIterator *)&bStack_140)->~DatabaseIterator();
       goto LAB_002b7ae0;
     default:
       switch(iVar9) {
@@ -4026,7 +4026,7 @@ LAB_002b79c4:
         uStack_d6 = 0;
         uStack_d5 = 0;
         uStack_d4 = 0x65;
-        Walaber::PropertyList::PropertyList(apuStack_d0);
+        new ((void *)(apuStack_d0)) Walaber::PropertyList();
         bStack_100 = 0x2c;
         uStack_ef = 0x7075;
         uStack_ed = 0x74726f70;
@@ -4042,10 +4042,10 @@ LAB_002b79c4:
         uStack_f8 = 0x65;
         uStack_e9 = 0;
                     /* try { // try from 002b61ec to 002b61f3 has its CatchHandler @ 002b8820 */
-        Walaber::Property::Property(&bStack_120,cVar8 != '\0');
+        new ((void *)(&bStack_120)) Walaber::Property(cVar8 != '\0');
                     /* try { // try from 002b61f4 to 002b6203 has its CatchHandler @ 002b8800 */
         Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_100,&bStack_120);
-        Walaber::Property::~Property(&bStack_120);
+        ((Walaber::Property *)&bStack_120)->~Property();
         if ((bStack_100 & 1) != 0) {
           operator delete((void *)CONCAT17(uStack_e9,CONCAT43(uStack_ed,CONCAT21(uStack_ef,uStack_f0)))
                       );
@@ -4074,7 +4074,7 @@ LAB_002b79c4:
             uStack_d6 = 0;
             uStack_d5 = 0;
             uStack_d4 = 0x67;
-            Walaber::PropertyList::PropertyList(apuStack_d0);
+            new ((void *)(apuStack_d0)) Walaber::PropertyList();
             uStack_ed = 0;
             uStack_e9 = 0;
             bStack_100 = 0x22;
@@ -4090,10 +4090,10 @@ LAB_002b79c4:
             uStack_fe = 0x696863417361;
             uStack_f8 = 0x65;
                     /* try { // try from 002b7978 to 002b797f has its CatchHandler @ 002b87fc */
-            Walaber::Property::Property(&bStack_120,cVar8 != '\0');
+            new ((void *)(&bStack_120)) Walaber::Property(cVar8 != '\0');
                     /* try { // try from 002b7980 to 002b798f has its CatchHandler @ 002b87f8 */
             Walaber::PropertyList::setValueForKey(apuStack_d0,&bStack_100,&bStack_120);
-            Walaber::Property::~Property(&bStack_120);
+            ((Walaber::Property *)&bStack_120)->~Property();
             if ((bStack_100 & 1) != 0) {
               operator delete((void *)CONCAT17(uStack_e9,
                                             CONCAT43(uStack_ed,CONCAT21(uStack_ef,uStack_f0))));
@@ -5688,11 +5688,11 @@ void ndk::ApplicationContext::handleAgeChange(int p0,int p1, int in_w2)
   uVar2 = Walaber::BroadcastManager::getInstancePtr(p0);
   uStack_58 = 0x3800000010;
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002ba3a0 to 002ba3ab has its CatchHandler @ 002ba400 */
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   WaterConcept::GameSettings::setAllowFacebookPublishing(0xffffffff);
 LAB_002ba3c0:
   Walaber::Logger::printf(&DAT_0061d37e,1,"AGEGATE handler fine");
@@ -5830,7 +5830,7 @@ void ndk::ApplicationContext::reloadContextData(void)
   
   ndk::ApplicationContext::firstFrame();
   Walaber::Logger::printf(&DAT_0061d37e,1,"ApplicationContext::reloadContextData() - 1");
-  Walaber::GraphicsGL::State::State(&uStack_78);
+  new ((void *)(&uStack_78)) Walaber::GraphicsGL::State();
   puVar4 = (undefined8 *)Walaber::GraphicsGL::getState();
   puVar4[5] = uStack_50;
   puVar4[4] = uStack_58;
@@ -5851,7 +5851,7 @@ void ndk::ApplicationContext::reloadContextData(void)
   lVar2 = DAT_007304b8;
   if (*(int *)(lVar6 + 8) == 0x15) {
     for (; lVar2 != lVar3; lVar2 = lVar2 + -0x28) {
-      Walaber::PropertyList::~PropertyList(lVar2 + -0x18);
+      ((Walaber::PropertyList *)lVar2 + -0x18)->~PropertyList();
     }
     DAT_007304b8 = lVar3;
     Walaber::ScreenManager::swapScreen(0x15);
@@ -6122,7 +6122,7 @@ void ndk::ApplicationContext::notifyReachability(bool p0, uint in_w1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x1d00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   abStack_78[0xd] = 0;
   abStack_78[0xe] = 0;
   abStack_78[0xf] = 0;
@@ -6141,10 +6141,10 @@ void ndk::ApplicationContext::notifyReachability(bool p0, uint in_w1)
   abStack_78[7] = 0x65;
   abStack_78[8] = 99;
                     /* try { // try from 002baa68 to 002baa6f has its CatchHandler @ 002bab14 */
-  Walaber::Property::Property(auStack_98,in_w1 & 1);
+  new ((void *)(auStack_98)) Walaber::Property(in_w1 & 1);
                     /* try { // try from 002baa70 to 002baa7f has its CatchHandler @ 002baaf4 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -6153,7 +6153,7 @@ void ndk::ApplicationContext::notifyReachability(bool p0, uint in_w1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyReachability");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -6178,7 +6178,7 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0, uint in_w1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x3e00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   abStack_78[0xb] = 0;
   abStack_78[0xc] = 0;
   abStack_78[0xd] = 0;
@@ -6197,10 +6197,10 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0, uint in_w1)
   abStack_78[7] = 0x62;
   abStack_78[8] = 0x6c;
                     /* try { // try from 002babb0 to 002babb7 has its CatchHandler @ 002bac5c */
-  Walaber::Property::Property(auStack_98,in_w1 & 1);
+  new ((void *)(auStack_98)) Walaber::Property(in_w1 & 1);
                     /* try { // try from 002babb8 to 002babc7 has its CatchHandler @ 002bac3c */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -6209,7 +6209,7 @@ void ndk::ApplicationContext::notifyIAPAvailability(bool p0, uint in_w1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyIAPAvailability");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -6240,7 +6240,7 @@ void ndk::ApplicationContext::notifyProductInfo(char *p0,char *p1,char *p2)
   
   ppuStack_90 = &PTR__Message_0070cdc8;
   uStack_88 = 0x4000000010;
-  Walaber::PropertyList::PropertyList(auStack_80);
+  new ((void *)(auStack_80)) Walaber::PropertyList();
   abStack_a8[9] = 0;
   abStack_a8[10] = 0;
   abStack_a8[0xb] = 0;
@@ -6283,10 +6283,10 @@ LAB_002bad60:
   }
   *(undefined1 *)((long)pvVar5 + uVar2) = 0;
                     /* try { // try from 002bad74 to 002bad7f has its CatchHandler @ 002bb014 */
-  Walaber::Property::Property(auStack_c8,&uStack_e0);
+  new ((void *)(auStack_c8)) Walaber::Property(&uStack_e0);
                     /* try { // try from 002bad80 to 002bad8f has its CatchHandler @ 002bb004 */
   Walaber::PropertyList::setValueForKey(auStack_80,abStack_a8,auStack_c8);
-  Walaber::Property::~Property(auStack_c8);
+  ((Walaber::Property *)auStack_c8)->~Property();
   if ((uStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -6335,10 +6335,10 @@ LAB_002bae38:
   }
   *(undefined1 *)((long)pvVar5 + uVar2) = 0;
                     /* try { // try from 002bae4c to 002bae57 has its CatchHandler @ 002bb000 */
-  Walaber::Property::Property(auStack_c8,&uStack_e0);
+  new ((void *)(auStack_c8)) Walaber::Property(&uStack_e0);
                     /* try { // try from 002bae58 to 002bae67 has its CatchHandler @ 002baffc */
   Walaber::PropertyList::setValueForKey(auStack_80,abStack_a8,auStack_c8);
-  Walaber::Property::~Property(auStack_c8);
+  ((Walaber::Property *)auStack_c8)->~Property();
   if ((uStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -6387,10 +6387,10 @@ LAB_002bae38:
 LAB_002baf1c:
   *(undefined1 *)((long)pvVar5 + uVar2) = 0;
                     /* try { // try from 002baf20 to 002baf2b has its CatchHandler @ 002baff8 */
-  Walaber::Property::Property(auStack_c8,&uStack_e0);
+  new ((void *)(auStack_c8)) Walaber::Property(&uStack_e0);
                     /* try { // try from 002baf2c to 002baf3b has its CatchHandler @ 002baff4 */
   Walaber::PropertyList::setValueForKey(auStack_80,abStack_a8,auStack_c8);
-  Walaber::Property::~Property(auStack_c8);
+  ((Walaber::Property *)auStack_c8)->~Property();
   if ((uStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
@@ -6402,7 +6402,7 @@ LAB_002baf1c:
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_90);
   __android_log_write(4,&DAT_0061d37e,"notifyProductInfo");
   ppuStack_90 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_80);
+  ((Walaber::PropertyList *)auStack_80)->~PropertyList();
   return;
 }
 
@@ -6434,7 +6434,7 @@ void ndk::ApplicationContext::notifyProductInfoFailed(char *p0)
   
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4100000010;
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
   uStack_90 = 0;
   pvStack_88 = (void *)0x0;
   uStack_d0 = 0;
@@ -6463,10 +6463,10 @@ void ndk::ApplicationContext::notifyProductInfoFailed(char *p0)
 LAB_002bb138:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 002bb13c to 002bb147 has its CatchHandler @ 002bb204 */
-  Walaber::Property::Property(auStack_b8,&uStack_d0);
+  new ((void *)(auStack_b8)) Walaber::Property(&uStack_d0);
                     /* try { // try from 002bb148 to 002bb157 has its CatchHandler @ 002bb1f4 */
   Walaber::PropertyList::setValueForKey(auStack_70,&pfStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -6478,7 +6478,7 @@ LAB_002bb138:
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_80);
   __android_log_write(4,&DAT_0061d37e,"notifyProductInfoFailed");
   ppuStack_80 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   return;
 }
 
@@ -6509,7 +6509,7 @@ void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1, uint in_w2
   
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4300000010;
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
   abStack_98[9] = 0;
   abStack_98[10] = 0;
   abStack_98[0xb] = 0;
@@ -6528,10 +6528,10 @@ void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1, uint in_w2
   abStack_98[7] = 0x65;
   abStack_98[8] = 0;
                     /* try { // try from 002bb2cc to 002bb2d3 has its CatchHandler @ 002bb488 */
-  Walaber::Property::Property(auStack_b8,in_w2 & 1);
+  new ((void *)(auStack_b8)) Walaber::Property(in_w2 & 1);
                     /* try { // try from 002bb2d4 to 002bb2e3 has its CatchHandler @ 002bb468 */
   Walaber::PropertyList::setValueForKey(auStack_70,abStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((abStack_98[0] & 1) != 0) {
     operator delete(pvStack_88);
   }
@@ -6577,10 +6577,10 @@ void ndk::ApplicationContext::notifyPurchaseSuccess(char *p0,bool p1, uint in_w2
 LAB_002bb384:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 002bb388 to 002bb393 has its CatchHandler @ 002bb450 */
-  Walaber::Property::Property(auStack_b8,&uStack_d0);
+  new ((void *)(auStack_b8)) Walaber::Property(&uStack_d0);
                     /* try { // try from 002bb394 to 002bb3a3 has its CatchHandler @ 002bb440 */
   Walaber::PropertyList::setValueForKey(auStack_70,abStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -6592,7 +6592,7 @@ LAB_002bb384:
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_80);
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseSuccess");
   ppuStack_80 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   return;
 }
 
@@ -6624,7 +6624,7 @@ void ndk::ApplicationContext::notifyPurchaseFailed(char *p0)
   
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4400000010;
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
   uStack_90 = 0;
   pvStack_88 = (void *)0x0;
   uStack_d0 = 0;
@@ -6653,10 +6653,10 @@ void ndk::ApplicationContext::notifyPurchaseFailed(char *p0)
 LAB_002bb588:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 002bb58c to 002bb597 has its CatchHandler @ 002bb654 */
-  Walaber::Property::Property(auStack_b8,&uStack_d0);
+  new ((void *)(auStack_b8)) Walaber::Property(&uStack_d0);
                     /* try { // try from 002bb598 to 002bb5a7 has its CatchHandler @ 002bb644 */
   Walaber::PropertyList::setValueForKey(auStack_70,&pfStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -6668,7 +6668,7 @@ LAB_002bb588:
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_80);
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseFailed");
   ppuStack_80 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   return;
 }
 
@@ -6701,7 +6701,7 @@ void ndk::ApplicationContext::notifyPurchaseCancelled(char *p0)
   __android_log_write(4,&DAT_0061d37e,"notifyPurchaseCancelled");
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x4500000010;
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
   uStack_90 = 0;
   pvStack_88 = (void *)0x0;
   uStack_d0 = 0;
@@ -6730,10 +6730,10 @@ void ndk::ApplicationContext::notifyPurchaseCancelled(char *p0)
 LAB_002bb790:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 002bb794 to 002bb79f has its CatchHandler @ 002bb844 */
-  Walaber::Property::Property(auStack_b8,&uStack_d0);
+  new ((void *)(auStack_b8)) Walaber::Property(&uStack_d0);
                     /* try { // try from 002bb7a0 to 002bb7af has its CatchHandler @ 002bb834 */
   Walaber::PropertyList::setValueForKey(auStack_70,&pfStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -6744,7 +6744,7 @@ LAB_002bb790:
   uVar3 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_80);
   ppuStack_80 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   return;
 }
 
@@ -6785,7 +6785,7 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0, uint in_w1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2400000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   uStack_63 = 0;
   abStack_78[0] = 0x26;
   uStack_67 = 0x656c62;
@@ -6806,10 +6806,10 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0, uint in_w1)
   abStack_78[7] = 0x6c;
   abStack_78[8] = 0x6f;
                     /* try { // try from 002bb920 to 002bb927 has its CatchHandler @ 002bb9cc */
-  Walaber::Property::Property(auStack_98,in_w1 & 1);
+  new ((void *)(auStack_98)) Walaber::Property(in_w1 & 1);
                     /* try { // try from 002bb928 to 002bb937 has its CatchHandler @ 002bb9ac */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_63,CONCAT41(uStack_67,abStack_78[0x10])));
   }
@@ -6818,7 +6818,7 @@ void ndk::ApplicationContext::notifyAMPSAvailability(bool p0, uint in_w1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSAvailability");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -6840,13 +6840,13 @@ void ndk::ApplicationContext::notifyAMPSDownloadHasBegun(void)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2600000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002bba38 to 002bba5b has its CatchHandler @ 002bba94 */
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSDownloadHasBegun");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -6872,7 +6872,7 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2700000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   uStack_66 = 0;
   abStack_78[0] = 0x20;
   abStack_78[9] = 0x50;
@@ -6893,10 +6893,10 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
   abStack_78[8] = 100;
   abStack_78[0x11] = 0;
                     /* try { // try from 002bbb24 to 002bbb2f has its CatchHandler @ 002bbbc0 */
-  Walaber::Property::Property(CONCAT44(in_register_00005004,p0),auStack_98);
+  new ((void *)(CONCAT44(in_register_00005004,p0))) Walaber::Property(auStack_98);
                     /* try { // try from 002bbb30 to 002bbb3f has its CatchHandler @ 002bbba0 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
   }
@@ -6904,7 +6904,7 @@ void ndk::ApplicationContext::notifyAMPSDownloadProgress(float p0)
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -6926,13 +6926,13 @@ void ndk::ApplicationContext::notifyAMPSDownloadFinished(void)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x2800000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002bbc2c to 002bbc4f has its CatchHandler @ 002bbc88 */
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyAMPSDownloadFinished");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -7641,7 +7641,7 @@ void ndk::ApplicationContext::handleNewCloudData(char *p0)
   }
   ppuStack_80 = &PTR__Message_0070cdc8;
   uStack_78 = 0x8200000010;
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
   abStack_98[0xc] = 0;
   abStack_98[0xd] = 0;
   abStack_98[0xe] = 0;
@@ -7684,10 +7684,10 @@ LAB_002bcc4c:
   }
   *(undefined1 *)((long)pvVar5 + uVar3) = 0;
                     /* try { // try from 002bcc60 to 002bcc6b has its CatchHandler @ 002bcd10 */
-  Walaber::Property::Property(auStack_b8,&uStack_d0);
+  new ((void *)(auStack_b8)) Walaber::Property(&uStack_d0);
                     /* try { // try from 002bcc6c to 002bcc7b has its CatchHandler @ 002bcd00 */
   Walaber::PropertyList::setValueForKey(auStack_70,abStack_98,auStack_b8);
-  Walaber::Property::~Property(auStack_b8);
+  ((Walaber::Property *)auStack_b8)->~Property();
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -7698,7 +7698,7 @@ LAB_002bcc4c:
   uVar4 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar4,&ppuStack_80);
   ppuStack_80 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
 LAB_002bccc0:
   return;
 }
@@ -7910,7 +7910,7 @@ ulong ndk::ApplicationContext::getPlayerHasMadeProgress(void)
   abStack_78[7] = 0x6e;
   abStack_78[8] = 0x66;
                     /* try { // try from 002bd028 to 002bd03b has its CatchHandler @ 002bd104 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_80,abStack_40,abStack_78,&uStack_60);
+  new ((void *)(auStack_80)) Walaber::DatabaseIterator(abStack_40,abStack_78,&uStack_60);
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -7928,7 +7928,7 @@ ulong ndk::ApplicationContext::getPlayerHasMadeProgress(void)
                     /* try { // try from 002bd07c to 002bd0af has its CatchHandler @ 002bd100 */
     __android_log_write(4,&DAT_0061d37e,"playerHasMadeProgress=true");
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_80);
+  ((Walaber::DatabaseIterator *)auStack_80)->~DatabaseIterator();
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -8264,13 +8264,13 @@ LAB_002bd738:
     piStack_f8 = piStack_110;
     piStack_a8 = piVar5;
     piStack_a0 = piStack_110;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_100);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_100)->~SharedPtr<Walaber::Callback>();
     piStack_98 = piStack_a8;
     piStack_90 = piStack_a0;
     if (piStack_a8 != (int *)0x0) {
       *piStack_a0 = *piStack_a0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_a8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_a8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 002bd880 to 002bd8b7 has its CatchHandler @ 002bdb18 */
     piVar5 = (int *)operator new(0x28);
     *(undefined8 **)(piVar5 + 4) = puVar2;
@@ -8287,13 +8287,13 @@ LAB_002bd738:
     piStack_c8 = piVar5;
     piStack_c0 = piStack_f8;
     piStack_a0 = piStack_f8;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_100);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_100)->~SharedPtr<Walaber::Callback>();
     piStack_b8 = piStack_c8;
     piStack_b0 = piStack_c0;
     if (piStack_c8 != (int *)0x0) {
       *piStack_c0 = *piStack_c0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_c8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_c8)->~SharedPtr<Walaber::Callback>();
     piStack_d8 = piStack_98;
     piStack_d0 = piStack_90;
     if (piStack_98 != (int *)0x0) {
@@ -8306,12 +8306,12 @@ LAB_002bd738:
     }
                     /* try { // try from 002bd924 to 002bd933 has its CatchHandler @ 002bdab8 */
     Walaber::DatabaseManager::runSQL(&uStack_88,&piStack_d8,&piStack_e8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_e8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_d8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_b8);
-    Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&piStack_a8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&piStack_98);
-    Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&piStack_118);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_e8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_d8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_b8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&piStack_a8)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&piStack_98)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&piStack_118)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
   }
                     /* try { // try from 002bd980 to 002bd997 has its CatchHandler @ 002bdb10 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&piStack_100,&uStack_70,"Content/Script/Reward_WC.txt");
@@ -9205,8 +9205,8 @@ LAB_002be3ac:
   }
                     /* try { // try from 002be934 to 002be94b has its CatchHandler @ 002beadc */
   __android_log_write(4,&DAT_0061d37e,"notifyUpdateIAPADInfoToDB DONE!!!");
-  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>::~__vector_base(&plStack_f0);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_d8);
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>> *)&plStack_f0)->~__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_d8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((uStack_c0 & 1) != 0) {
     operator delete(puStack_b0);
   }
@@ -9646,8 +9646,8 @@ LAB_002bf30c:
   }
   __android_log_write(4,&DAT_0061d37e,"notifyUpdateHubOrderInfoToDB FAILED!!!");
 LAB_002bf55c:
-  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>::~__vector_base(&uStack_b8);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_a0);
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>> *)&uStack_b8)->~__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_a0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((uStack_88 & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -10087,8 +10087,8 @@ LAB_002bfbcc:
   }
   __android_log_write(4,&DAT_0061d37e,"notifyUpdateLowOrderInfoToDB FAILED!!!");
 LAB_002bfe1c:
-  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>::~__vector_base(&uStack_b8);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_a0);
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>> *)&uStack_b8)->~__vector_base<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_a0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((uStack_88 & 1) != 0) {
     operator delete(pvStack_78);
   }
@@ -10974,13 +10974,13 @@ LAB_002c09f4:
     *(undefined4 *)ppuStack_168 = 3;
     uStack_179 = uStack_79;
     ppuStack_170 = ppuVar11;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_170);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_170)->~SharedPtr<Walaber::Callback>();
     uStack_130 = CONCAT17(uStack_181,CONCAT61(uStack_187,bStack_188));
     piStack_128 = (int *)CONCAT17(uStack_179,CONCAT61(uStack_17f,uStack_180));
     if (uStack_130 != 0) {
       *piStack_128 = *piStack_128 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_188);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_188)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 002c0c9c to 002c0cd3 has its CatchHandler @ 002c10a0 */
     ppuVar11 = (undefined **)operator new(0x28);
     ppuVar11[2] = (undefined *)puVar6;
@@ -10999,13 +10999,13 @@ LAB_002c09f4:
     ppuStack_170 = ppuVar11;
     ppuStack_f0 = ppuVar11;
     piStack_e8 = (int *)ppuStack_168;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_170);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_170)->~SharedPtr<Walaber::Callback>();
     ppuStack_e0 = ppuStack_f0;
     piStack_d8 = piStack_e8;
     if (ppuStack_f0 != (undefined **)0x0) {
       *piStack_e8 = *piStack_e8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_f0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_f0)->~SharedPtr<Walaber::Callback>();
     if ((in_x3 & 1) != 0) {
       uStack_100 = uStack_130;
       piStack_f8 = piStack_128;
@@ -11019,13 +11019,13 @@ LAB_002c09f4:
       }
                     /* try { // try from 002c0d44 to 002c0d53 has its CatchHandler @ 002c0fd8 */
       Walaber::DatabaseManager::runSQL(&uStack_d0,&uStack_100,&ppuStack_110);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_110);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_100);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_110)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_100)->~SharedPtr<Walaber::Callback>();
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&ppuStack_e0);
-    Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&bStack_188);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_130);
-    Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>::~SharedPtr(&uStack_88);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&ppuStack_e0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&bStack_188)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_130)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>> *)&uStack_88)->~SharedPtr<Walaber::MemberCallback<ndk::DatabaseCallbackClass>>();
   }
                     /* try { // try from 002c0d84 to 002c0d97 has its CatchHandler @ 002c109c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_170,&bStack_b8,"/");
@@ -11073,7 +11073,7 @@ LAB_002c09f4:
   ppuStack_170 = &PTR__Message_0070cdc8;
   ppuStack_168 = (undefined **)0x6d00000010;
                     /* try { // try from 002c0e9c to 002c0ea3 has its CatchHandler @ 002c1064 */
-  Walaber::PropertyList::PropertyList(apvStack_160);
+  new ((void *)(apvStack_160)) Walaber::PropertyList();
   pvStack_178 = (void *)0x0;
   bStack_188 = 0x1c;
   uStack_17f = 0x656e694c7972;
@@ -11082,10 +11082,10 @@ LAB_002c09f4:
   uStack_180 = 0x6f;
   uStack_179 = 0;
                     /* try { // try from 002c0ecc to 002c0ed7 has its CatchHandler @ 002c104c */
-  Walaber::Property::Property(&uStack_88,uVar14);
+  new ((void *)(&uStack_88)) Walaber::Property(uVar14);
                     /* try { // try from 002c0ed8 to 002c0ee7 has its CatchHandler @ 002c103c */
   Walaber::PropertyList::setValueForKey(apvStack_160,&bStack_188,&uStack_88);
-  Walaber::Property::~Property(&uStack_88);
+  ((Walaber::Property *)&uStack_88)->~Property();
   if ((bStack_188 & 1) != 0) {
     operator delete(pvStack_178);
   }
@@ -11093,7 +11093,7 @@ LAB_002c09f4:
   uVar12 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar12,&ppuStack_170);
   ppuStack_170 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(apvStack_160);
+  ((Walaber::PropertyList *)apvStack_160)->~PropertyList();
   if ((uStack_130 & 1) != 0) {
     operator delete(pvStack_120);
   }
@@ -11128,12 +11128,12 @@ void ndk::ApplicationContext::notifyLoWAMPSDownloadFailed(void)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x6e00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002c1184 to 002c118f has its CatchHandler @ 002c11c8 */
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -11158,7 +11158,7 @@ void ndk::ApplicationContext::notifyLOTWCountDown(int p0, undefined4 in_w1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7200000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   abStack_78[0xe] = 0;
   abStack_78[0xf] = 0;
   pvStack_68 = (void *)0x0;
@@ -11177,10 +11177,10 @@ void ndk::ApplicationContext::notifyLOTWCountDown(int p0, undefined4 in_w1)
   abStack_78[8] = 0x65;
   abStack_78[0xd] = 0;
                     /* try { // try from 002c1260 to 002c126b has its CatchHandler @ 002c1310 */
-  Walaber::Property::Property(auStack_98,in_w1);
+  new ((void *)(auStack_98)) Walaber::Property(in_w1);
                     /* try { // try from 002c126c to 002c127b has its CatchHandler @ 002c12f0 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -11189,7 +11189,7 @@ void ndk::ApplicationContext::notifyLOTWCountDown(int p0, undefined4 in_w1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyLOTWCountDown DONE!!!");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -11233,7 +11233,7 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0, ulong in_x1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7800000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   if ((in_x1 & 1) == 0) {
     abStack_78[9] = 0;
     abStack_78[10] = 0;
@@ -11253,7 +11253,7 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0, ulong in_x1)
     abStack_78[7] = 100;
     abStack_78[8] = 0;
                     /* try { // try from 002c1438 to 002c1443 has its CatchHandler @ 002c14cc */
-    Walaber::Property::Property(auStack_98,0);
+    new ((void *)(auStack_98)) Walaber::Property(0);
                     /* try { // try from 002c1444 to 002c1453 has its CatchHandler @ 002c14c8 */
     Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
   }
@@ -11276,11 +11276,11 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0, ulong in_x1)
     abStack_78[7] = 100;
     abStack_78[8] = 0;
                     /* try { // try from 002c13f4 to 002c13ff has its CatchHandler @ 002c14f0 */
-    Walaber::Property::Property(auStack_98,1);
+    new ((void *)(auStack_98)) Walaber::Property(1);
                     /* try { // try from 002c1400 to 002c140f has its CatchHandler @ 002c14d0 */
     Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
   }
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -11289,7 +11289,7 @@ void ndk::ApplicationContext::notifyScreenCaptureResult(bool p0, ulong in_x1)
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyScreenCaptureResult CALLED!");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -11311,13 +11311,13 @@ void ndk::ApplicationContext::notifyEnableBackKey(void)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7d00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002c155c to 002c157f has its CatchHandler @ 002c15b8 */
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   __android_log_write(4,&DAT_0061d37e,"notifyEnableBackKey CALLED!");
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -11340,7 +11340,7 @@ void ndk::ApplicationContext::notifyHeadsetChange(void)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0x7e00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 002c161c to 002c1627 has its CatchHandler @ 002c1688 */
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
@@ -11352,7 +11352,7 @@ void ndk::ApplicationContext::notifyHeadsetChange(void)
     Walaber::ScreenManager::commitScreenChanges();
   }
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -11379,7 +11379,7 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
   undefined1 auStack_40 [24];
   
   __android_log_write(6,&DAT_0061db84,"notifyLaunchExternalUrlFailed");
-  Walaber::PropertyList::PropertyList(auStack_40);
+  new ((void *)(auStack_40)) Walaber::PropertyList();
   abStack_58[0xe] = 0;
   abStack_58[0xf] = 0;
   pvStack_48 = (void *)0x0;
@@ -11398,10 +11398,10 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
   abStack_58[8] = 0x65;
   abStack_58[0xd] = 0;
                     /* try { // try from 002c1710 to 002c171b has its CatchHandler @ 002c1984 */
-  Walaber::Property::Property(auStack_78,0);
+  new ((void *)(auStack_78)) Walaber::Property(0);
                     /* try { // try from 002c171c to 002c172b has its CatchHandler @ 002c1964 */
   Walaber::PropertyList::setValueForKey(auStack_40,abStack_58,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
   if ((abStack_58[0] & 1) != 0) {
     operator delete(pvStack_48);
   }
@@ -11442,10 +11442,10 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
                     /* try { // try from 002c1788 to 002c1793 has its CatchHandler @ 002c194c */
   Walaber::TextManager::getString(abStack_90,abStack_a8);
                     /* try { // try from 002c1794 to 002c179f has its CatchHandler @ 002c1934 */
-  Walaber::Property::Property(auStack_78,abStack_90);
+  new ((void *)(auStack_78)) Walaber::Property(abStack_90);
                     /* try { // try from 002c17a0 to 002c17af has its CatchHandler @ 002c1924 */
   Walaber::PropertyList::setValueForKey(auStack_40,abStack_58,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
@@ -11483,10 +11483,10 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
                     /* try { // try from 002c1844 to 002c184f has its CatchHandler @ 002c1908 */
   Walaber::TextManager::getString(abStack_90,auStack_c0);
                     /* try { // try from 002c1850 to 002c185b has its CatchHandler @ 002c18f0 */
-  Walaber::Property::Property(auStack_78,abStack_90);
+  new ((void *)(auStack_78)) Walaber::Property(abStack_90);
                     /* try { // try from 002c185c to 002c186b has its CatchHandler @ 002c18e0 */
   Walaber::PropertyList::setValueForKey(auStack_40,abStack_58,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
@@ -11499,7 +11499,7 @@ void ndk::ApplicationContext::notifyLaunchExternalUrlFailed(void)
                     /* try { // try from 002c18a4 to 002c18b3 has its CatchHandler @ 002c1988 */
   Walaber::ScreenManager::pushScreen(0xd,auStack_40);
   Walaber::ScreenManager::commitScreenChanges();
-  Walaber::PropertyList::~PropertyList(auStack_40);
+  ((Walaber::PropertyList *)auStack_40)->~PropertyList();
   return;
 }
 
@@ -11610,7 +11610,7 @@ LAB_002c1ac0:
   abStack_90[7] = 0x2f;
   abStack_90[8] = 0;
                     /* try { // try from 002c1ae8 to 002c1af7 has its CatchHandler @ 002c1b80 */
-  Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(uVar3,&uStack_78,abStack_90);
+  new ((void *)(uVar3)) Walaber::FileManager::FH_ZipFileSystem(&uStack_78,abStack_90);
   if ((abStack_90[0] & 1) != 0) {
     operator delete(pvStack_80);
   }
@@ -11642,7 +11642,7 @@ undefined1 * ndk::ApplicationContext::getInstance(void)
   if (((getInstance()::context & 1) == 0) &&
      (iVar1 = __cxa_guard_acquire(&getInstance()::context), iVar1 != 0)) {
                     /* try { // try from 002c3a58 to 002c3a63 has its CatchHandler @ 002c3a90 */
-    ndk::ApplicationContext::ApplicationContext(getInstance()::context);
+    new ((void *)(getInstance()::context)) ndk::ApplicationContext();
     __cxa_atexit(~ApplicationContext,getInstance()::context,&PTR_LOOP_00728000);
     __cxa_guard_release(&getInstance()::context);
   }

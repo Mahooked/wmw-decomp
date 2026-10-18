@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x49dcec  size 8 */non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(){
-  WaterConcept::NotificationSingleton::~NotificationSingleton(param_1 + -8);
+  ((WaterConcept::NotificationSingleton *)this + -8)->~NotificationSingleton();
   return;
 }
 
 
 
 /* ok  address 0x49dd18  size 40 */non_virtual_thunk_to_WaterConcept::NotificationSingleton::~NotificationSingleton(){
-  WaterConcept::NotificationSingleton::~NotificationSingleton((void *)(param_1 + -8));
-  operator delete((void *)(param_1 + -8));
+  ((WaterConcept::NotificationSingleton *)(void *)(this + -8))->~NotificationSingleton();
+  operator delete((void *)(this + -8));
   return;
 }
 

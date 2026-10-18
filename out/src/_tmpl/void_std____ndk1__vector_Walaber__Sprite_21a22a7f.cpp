@@ -60,7 +60,7 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 6;
                     /* try { // try from 0035d2cc to 0035d2d7 has its CatchHandler @ 0035d310 */
   std::__ndk1::vector<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&> *)auStack_60)->~__split_buffer<Walaber::SpriteAnimation::FrameImport, std::__ndk1::allocator<Walaber::SpriteAnimation::FrameImport>&>();
   return;
 }
 

@@ -3,15 +3,15 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3e89c8  size 36 */Walaber::PushCommand::PushCommand(long param_1){
-  *(long *)param_1 = param_1;
-  *(long *)(param_1 + 8) = param_1;
-  *(undefined8 *)(param_1 + 0x10) = 0;
-  *(long *)(param_1 + 0x18) = param_1 + 0x18;
-  *(long *)(param_1 + 0x20) = param_1 + 0x18;
-  *(undefined8 *)(param_1 + 0x28) = 0;
-  *(undefined4 *)(param_1 + 0x30) = 0xffffffff;
-  *(undefined1 *)(param_1 + 0x34) = 1;
+/* ok  address 0x3e89c8  size 36 */Walaber::PushCommand::PushCommand(){
+  *(long *)this = this;
+  *(long *)(this + 8) = this;
+  *(undefined8 *)(this + 0x10) = 0;
+  *(long *)(this + 0x18) = this + 0x18;
+  *(long *)(this + 0x20) = this + 0x18;
+  *(undefined8 *)(this + 0x28) = 0;
+  *(undefined4 *)(this + 0x30) = 0xffffffff;
+  *(undefined1 *)(this + 0x34) = 1;
   return;
 }
 
@@ -19,8 +19,8 @@
 
 /* ok  address 0x3e89ec  size 44 */Walaber::PushCommand::~PushCommand(){
   std::__ndk1::__list_imp<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::clear();
-  std::__ndk1::__list_imp<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::clear(param_1 + 0x18);
-  std::__ndk1::__list_imp<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::clear(param_1);
+  std::__ndk1::__list_imp<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::clear(this + 0x18);
+  std::__ndk1::__list_imp<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::clear(this);
   return;
 }
 
@@ -197,7 +197,7 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
     uStack_68 = 0x55;
     uStack_65 = 0;
                     /* try { // try from 003e8c34 to 003e8c43 has its CatchHandler @ 003e8c64 */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_40,*(int *)(param_1 + 0x30),&bStack_58,&bStack_70);
+    new ((void *)(auStack_40)) Walaber::DatabaseIterator(*(int *)(param_1 + 0x30),&bStack_58,&bStack_70);
     p0 = pvStack_48;
     bVar2 = bStack_58;
     if ((bStack_70 & 1) != 0) {
@@ -230,7 +230,7 @@ void Walaber::PushCommand::LoadHeldCommands(long param_1)
     if ((bStack_58 & 1) != 0) {
       operator delete(pvStack_48);
     }
-    Walaber::DatabaseIterator::~DatabaseIterator(auStack_40);
+    ((Walaber::DatabaseIterator *)auStack_40)->~DatabaseIterator();
   }
   return;
 }
@@ -1168,7 +1168,7 @@ void Walaber::PushCommand::Register
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_98,param_4);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(abStack_80,param_5);
   std::__ndk1::list<Walaber::CommandRegister, std::__ndk1::allocator<Walaber::CommandRegister>>::push_back(param_1,abStack_b0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(auStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)auStack_68)->~SharedPtr<Walaber::Callback>();
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }

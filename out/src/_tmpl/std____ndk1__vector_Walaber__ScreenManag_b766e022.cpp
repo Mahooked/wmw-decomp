@@ -130,7 +130,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
         puStack_a0 = puStack_70;
         puStack_68 = puVar5;
         puStack_70 = puVar4;
-        std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(&puStack_80);
+        ((std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&> *)&puStack_80)->~__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>();
       }
       else {
         lVar13 = ((long)puStack_a8 - (long)puStack_b0 >> 3) * -0x3333333333333333;
@@ -198,7 +198,7 @@ vector<Walaber::ScreenManager::ScreenOperationDetails,std::__ndk1::allocator<Wal
     puStack_a0 = puStack_a0 + 5;
                     /* try { // try from 003f10ec to 003f10fb has its CatchHandler @ 003f1154 */
     param_2 = (undefined8 *)std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(param_1,&puStack_b0,param_2);
-    std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(&puStack_b0);
+    ((std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&> *)&puStack_b0)->~__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>();
   }
   return puVar6;
 }
@@ -537,7 +537,7 @@ void std::__ndk1::
       do {
         lVar1 = (long)pvVar2 + -0x18;
         pvVar2 = (void *)((long)pvVar2 + -0x28);
-        Walaber::PropertyList::~PropertyList(lVar1);
+        ((Walaber::PropertyList *)lVar1)->~PropertyList();
       } while (pvVar3 != pvVar2);
       p0 = (void *)*param_1;
     }

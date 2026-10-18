@@ -104,7 +104,7 @@ Walaber::Widget_ScrollableSet::operator=(Walaber__Widget_ScrollableSet *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_48 = *(undefined8 *)p2;
   uStack_50 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0xe,&uStack_48,&uStack_50,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0xe,&uStack_48,&uStack_50,1,1);
   *(undefined4 *)(puVar2 + 0x23) = 0;
   puVar2[0x2c] = 0;
   puVar2[0x2d] = 0;
@@ -174,7 +174,7 @@ void Walaber::Widget_ScrollableSet::init(long param_1)
     this[0x29] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -182,7 +182,7 @@ void Walaber::Widget_ScrollableSet::init(long param_1)
 
 /* ok  address 0x3880dc  size 36 */Walaber::Widget_ScrollableSet::~Widget_ScrollableSet(){
   Walaber::Widget_ScrollableSet::~Widget_ScrollableSet();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

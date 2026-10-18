@@ -55,7 +55,7 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 5;
                     /* try { // try from 00335534 to 0033553f has its CatchHandler @ 00335578 */
   std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&> *)auStack_60)->~__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>();
   return;
 }
 

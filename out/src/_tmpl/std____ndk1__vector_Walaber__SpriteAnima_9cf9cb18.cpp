@@ -102,7 +102,7 @@ vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent,std::__ndk1::allocato
                     /* try { // try from 00334de0 to 00334dfb has its CatchHandler @ 00334ed8 */
     std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined8 *)std::__ndk1::vector<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
-    std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::~__split_buffer(auStack_80);
+    ((std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&> *)auStack_80)->~__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>();
   }
   return param_2;
 }

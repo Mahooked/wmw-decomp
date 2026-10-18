@@ -45,16 +45,16 @@
 
 
 /* ok  address 0x3f5294  size 68 */Walaber::Transition_Iris::~Transition_Iris(){
-  void *p0;
+  void *this;
   
   *this = &PTR_setup_00710fa8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x1f);
-  p0 = (void *)this[0x1c];
-  if (p0 != (void *)0x0) {
-    this[0x1d] = p0;
-    operator delete(p0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x1f)->~SharedPtr<Walaber::Texture>();
+  this = (void *)this[0x1c];
+  if (this != (void *)0x0) {
+    this[0x1d] = this;
+    operator delete(this);
   }
-  Walaber::Transition::~Transition(this);
+  ((Walaber::Transition *)this)->~Transition();
   return;
 }
 
@@ -182,9 +182,9 @@ void Walaber::Transition_Iris::setup(float p0,Walaber__PropertyList *p1)
                     /* try { // try from 003f551c to 003f5537 has its CatchHandler @ 003f5620 */
     Walaber::TextureManager::getTexture(auStack_58,uVar4,abStack_70,&uStack_80,0,0);
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1[10].f_0x8,auStack_58);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_58);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_58)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
     if ((abStack_70[0] & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -424,7 +424,7 @@ void Walaber::Transition_Iris::draw(long param_1)
         lStack_a0 = lVar4;
         Walaber::SpriteBatch::drawQuad(fVar11 + 1.5707964,lVar1,&lStack_a0,&uStack_a8,&fStack_90,param_1 + 0x118,
                         param_1 + 0x108,0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
       }
       if ((undefined8 *)((long)puVar3 + 0xc) == *(undefined8 **)(param_1 + 0xe8)) break;
       cVar6 = cVar6 + '\x01';

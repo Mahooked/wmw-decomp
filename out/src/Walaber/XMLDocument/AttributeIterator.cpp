@@ -138,7 +138,7 @@ void Walaber::XMLDocument::AttributeIterator::getValue(undefined8 param_1,long *
 LAB_003d6318:
   *(undefined1 *)((long)pvVar4 + uVar2) = 0;
                     /* try { // try from 003d631c to 003d6327 has its CatchHandler @ 003d636c */
-  Walaber::Property::Property(param_1,&uStack_60);
+  new ((void *)(param_1)) Walaber::Property(&uStack_60);
   if ((uStack_60 & 1) != 0) {
     operator delete(pvStack_50);
   }

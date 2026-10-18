@@ -19,7 +19,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::flush(lo
   
   if (*(long *)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28) != 0) {
                     /* try { // try from 003d5ff0 to 003d5ffb has its CatchHandler @ 003d6084 */
-    std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_38,param_1);
+    new ((void *)(acStack_38)) std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry(param_1);
                     /* try { // try from 003d601c to 003d603f has its CatchHandler @ 003d6070 */
     if ((acStack_38[0] != '\0') &&
        (iVar3 = (**(code **)(**(long **)((long)param_1 + *(long *)(*param_1 + -0x18) + 0x28) + 0x30)
@@ -27,7 +27,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::flush(lo
       lVar1 = (long)param_1 + *(long *)(*param_1 + -0x18);
       std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | 1);
     }
-    std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(acStack_38);
+    ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)acStack_38)->~sentry();
   }
   return plVar4;
 }
@@ -75,7 +75,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     plVar8 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar6 = (long)plVar7 + *(long *)(*plVar7 + -0x18);
     uVar4 = *(uint *)(lVar6 + 0x90);
     uVar9 = *(undefined8 *)(lVar6 + 0x28);
@@ -85,7 +85,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
                     /* try { // try from 003ff1a4 to 003ff1c3 has its CatchHandler @ 003ff278 */
       plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar4 = (**(code **)(*plVar5 + 0x38))(plVar5,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       uVar4 = uVar4 & 0xff;
       *(uint *)(lVar6 + 0x90) = uVar4;
     }
@@ -102,7 +102,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar6,*(uint *)(lVar6 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar7;
 }
 
@@ -142,7 +142,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
     plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
     uVar6 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
@@ -151,7 +151,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
                     /* try { // try from 003ff38c to 003ff3ab has its CatchHandler @ 003ff444 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 003ff3cc to 003ff3db has its CatchHandler @ 003ff45c */
@@ -162,7 +162,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return;
 }
 
@@ -211,7 +211,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::put(char
   }
   std::__ndk1::ios_base::clear((long)plVar5 + *plVar6,*(uint *)((long)plVar5 + *plVar6 + 0x20) | 1);
 LAB_004b4054:
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_48)->~sentry();
   return plVar5;
 }
 
@@ -250,7 +250,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::basic_ostr
   *(undefined8 *)((long)param_1 + lVar1 + 0x50) = 0;
   *(undefined8 *)((long)param_1 + lVar1 + 0x38) = 0;
   *(undefined8 *)((long)param_1 + lVar1 + 0x40) = 0;
-  std::__ndk1::locale::locale((long)param_1 + lVar1 + 0x30);
+  new ((void *)((long)param_1 + lVar1 + 0x30)) std::__ndk1::locale();
   *(undefined8 *)((long)param_1 + lVar1 + 0x88) = 0;
   *(undefined4 *)((long)param_1 + lVar1 + 0x90) = 0xffffffff;
   return;
@@ -287,7 +287,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::basic_ostr
   param_1[3] = 6;
   param_1[8] = 0;
   param_1[9] = 0;
-  std::__ndk1::locale::locale(param_1 + 7);
+  new ((void *)(param_1 + 7)) std::__ndk1::locale();
   param_1[0x12] = 0;
   *(undefined4 *)(param_1 + 0x13) = 0xffffffff;
   return;
@@ -318,7 +318,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ost
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ostream(long param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base(param_1 + 8);
+  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
   return;
 }
 
@@ -333,7 +333,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ost
 void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::~basic_ostream(void *param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base((long)param_1 + 8);
+  ((std::__ndk1::ios_base *)(long)param_1 + 8)->~ios_base();
   operator delete(param_1);
   return;
 }
@@ -402,21 +402,21 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       plVar6 = (long *)(*plVar5 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,(long)plVar5 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)plVar5 + *plVar6 + 0x30);
                     /* try { // try from 005ac004 to 005ac013 has its CatchHandler @ 005ac10c */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)plVar5 + *(long *)(*plVar5 + -0x18);
     uVar2 = *(uint *)(lVar4 + 0x90);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (uVar2 == 0xffffffff) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ac048 to 005ac067 has its CatchHandler @ 005ac100 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       uVar2 = uVar2 & 0xff;
       *(uint *)(lVar4 + 0x90) = uVar2;
     }
@@ -428,7 +428,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar5;
 }
 
@@ -469,21 +469,21 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     }
     auStack_70[0] = 1;
     uVar2 = *(uint *)((long)plVar7 + *plVar8 + 8);
-    std::__ndk1::locale::locale(auStack_60,(long)plVar7 + *plVar8 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)plVar7 + *plVar8 + 0x30);
                     /* try { // try from 005ac1e8 to 005ac1f7 has its CatchHandler @ 005ac30c */
     plVar8 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar6 = (long)plVar7 + *(long *)(*plVar7 + -0x18);
     uVar4 = *(uint *)(lVar6 + 0x90);
     uVar9 = *(undefined8 *)(lVar6 + 0x28);
     if (uVar4 == 0xffffffff) {
-      std::__ndk1::locale::locale(auStack_60,lVar6 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar6 + 0x30);
                     /* try { // try from 005ac22c to 005ac24b has its CatchHandler @ 005ac300 */
       plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar4 = (**(code **)(*plVar5 + 0x38))(plVar5,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       uVar4 = uVar4 & 0xff;
       *(uint *)(lVar6 + 0x90) = uVar4;
     }
@@ -500,7 +500,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar6,*(uint *)(lVar6 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar7;
 }
 
@@ -538,21 +538,21 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       plVar6 = (long *)(*plVar5 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,(long)plVar5 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)plVar5 + *plVar6 + 0x30);
                     /* try { // try from 005ac3e4 to 005ac3f3 has its CatchHandler @ 005ac4ec */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)plVar5 + *(long *)(*plVar5 + -0x18);
     uVar2 = *(uint *)(lVar4 + 0x90);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (uVar2 == 0xffffffff) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ac428 to 005ac447 has its CatchHandler @ 005ac4e0 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       uVar2 = uVar2 & 0xff;
       *(uint *)(lVar4 + 0x90) = uVar2;
     }
@@ -564,7 +564,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar5;
 }
 
@@ -602,21 +602,21 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       plVar6 = (long *)(*plVar5 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,(long)plVar5 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)plVar5 + *plVar6 + 0x30);
                     /* try { // try from 005ac5c4 to 005ac5d3 has its CatchHandler @ 005ac6cc */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)plVar5 + *(long *)(*plVar5 + -0x18);
     uVar2 = *(uint *)(lVar4 + 0x90);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (uVar2 == 0xffffffff) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ac608 to 005ac627 has its CatchHandler @ 005ac6c0 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       uVar2 = uVar2 & 0xff;
       *(uint *)(lVar4 + 0x90) = uVar2;
     }
@@ -628,7 +628,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar5;
 }
 
@@ -667,20 +667,20 @@ long std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       plVar5 = (long *)(*(long *)p0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,p0 + *plVar5 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale(p0 + *plVar5 + 0x30);
                     /* try { // try from 005ac7a4 to 005ac7b3 has its CatchHandler @ 005ac8ac */
     plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar3 = p0 + *(long *)(*(long *)p0 + -0x18);
     uVar6 = *(undefined8 *)(lVar3 + 0x28);
     if (*(int *)(lVar3 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar3 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar3 + 0x30);
                     /* try { // try from 005ac7e8 to 005ac807 has its CatchHandler @ 005ac8a0 */
       plVar2 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar1 = (**(code **)(*plVar2 + 0x38))(plVar2,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar3 + 0x90) = uVar1 & 0xff;
     }
                     /* try { // try from 005ac824 to 005ac837 has its CatchHandler @ 005ac8a4 */
@@ -691,7 +691,7 @@ long std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       std::__ndk1::ios_base::clear(lVar3,*(uint *)(lVar3 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   if (*(long *)(lVar4 + 0x28) == lStack_58) {
     return p0;
   }
@@ -731,20 +731,20 @@ ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<
       plVar6 = (long *)(*(long *)p0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,p0 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale(p0 + *plVar6 + 0x30);
                     /* try { // try from 005ac984 to 005ac993 has its CatchHandler @ 005aca8c */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = p0 + *(long *)(*(long *)p0 + -0x18);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ac9c8 to 005ac9e7 has its CatchHandler @ 005aca80 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005aca04 to 005aca17 has its CatchHandler @ 005aca84 */
@@ -755,7 +755,7 @@ ulong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return uVar5;
 }
 
@@ -791,20 +791,20 @@ longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operat
       plVar6 = (long *)(*(long *)p0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,p0 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale(p0 + *plVar6 + 0x30);
                     /* try { // try from 005acb64 to 005acb73 has its CatchHandler @ 005acc6c */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = p0 + *(long *)(*(long *)p0 + -0x18);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005acba8 to 005acbc7 has its CatchHandler @ 005acc60 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005acbe4 to 005acbf7 has its CatchHandler @ 005acc64 */
@@ -815,7 +815,7 @@ longlong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operat
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return lVar5;
 }
 
@@ -851,20 +851,20 @@ ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::opera
       plVar6 = (long *)(*(long *)p0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,p0 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale(p0 + *plVar6 + 0x30);
                     /* try { // try from 005acd44 to 005acd53 has its CatchHandler @ 005ace4c */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = p0 + *(long *)(*(long *)p0 + -0x18);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005acd88 to 005acda7 has its CatchHandler @ 005ace40 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005acdc4 to 005acdd7 has its CatchHandler @ 005ace44 */
@@ -875,7 +875,7 @@ ulonglong std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::opera
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return uVar5;
 }
 
@@ -909,20 +909,20 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       plVar5 = (long *)(*in_x0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,(long)in_x0 + *plVar5 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)in_x0 + *plVar5 + 0x30);
                     /* try { // try from 005acf24 to 005acf33 has its CatchHandler @ 005ad02c */
     plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
     uVar6 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005acf68 to 005acf87 has its CatchHandler @ 005ad020 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005acfa4 to 005acfb7 has its CatchHandler @ 005ad024 */
@@ -933,7 +933,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return;
 }
 
@@ -967,20 +967,20 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       plVar5 = (long *)(*in_x0 + -0x18);
     }
     auStack_60[0] = 1;
-    std::__ndk1::locale::locale(auStack_50,(long)in_x0 + *plVar5 + 0x30);
+    new ((void *)(auStack_50)) std::__ndk1::locale((long)in_x0 + *plVar5 + 0x30);
                     /* try { // try from 005ad100 to 005ad10f has its CatchHandler @ 005ad204 */
     plVar5 = (long *)std::__ndk1::locale::use_facet(auStack_50,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_50);
+    ((std::__ndk1::locale *)auStack_50)->~locale();
     lVar4 = (long)in_x0 + *(long *)(*in_x0 + -0x18);
     uVar6 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_50,lVar4 + 0x30);
+      new ((void *)(auStack_50)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ad144 to 005ad163 has its CatchHandler @ 005ad1f8 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_50);
+      ((std::__ndk1::locale *)auStack_50)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005ad180 to 005ad193 has its CatchHandler @ 005ad1fc */
@@ -991,7 +991,7 @@ void std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator<<
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_60);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_60)->~sentry();
   return;
 }
 
@@ -1027,20 +1027,20 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       plVar6 = (long *)(*(long *)p0 + -0x18);
     }
     auStack_70[0] = 1;
-    std::__ndk1::locale::locale(auStack_60,(long)p0 + *plVar6 + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)p0 + *plVar6 + 0x30);
                     /* try { // try from 005ad2dc to 005ad2eb has its CatchHandler @ 005ad3e4 */
     plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_put<char,std::__ndk1::ostreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar4 = (long)p0 + *(long *)(*(long *)p0 + -0x18);
     uVar7 = *(undefined8 *)(lVar4 + 0x28);
     if (*(int *)(lVar4 + 0x90) == -1) {
-      std::__ndk1::locale::locale(auStack_60,lVar4 + 0x30);
+      new ((void *)(auStack_60)) std::__ndk1::locale(lVar4 + 0x30);
                     /* try { // try from 005ad320 to 005ad33f has its CatchHandler @ 005ad3d8 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar4 + 0x90) = uVar2 & 0xff;
     }
                     /* try { // try from 005ad35c to 005ad36f has its CatchHandler @ 005ad3dc */
@@ -1051,7 +1051,7 @@ void * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
       std::__ndk1::ios_base::clear(lVar4,*(uint *)(lVar4 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return pvVar5;
 }
 
@@ -1088,7 +1088,7 @@ char * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::write(ch
                    *(uint *)(p0 + *(long *)(*(long *)p0 + -0x18) + 0x20) | 1);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_48)->~sentry();
   return pcVar3;
 }
 
@@ -1157,7 +1157,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
                     /* try { // try from 005ad8c0 to 005ad8c3 has its CatchHandler @ 005ad8f8 */
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_48)->~sentry();
   return plVar3;
 }
 
@@ -1203,7 +1203,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::seekp
                     /* try { // try from 005ad9c8 to 005ad9cb has its CatchHandler @ 005ada00 */
     std::__ndk1::ios_base::clear(lVar2,*(uint *)(lVar2 + 0x20) | 4);
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_48);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_48)->~sentry();
   return plVar3;
 }
 

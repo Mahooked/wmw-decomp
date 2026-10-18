@@ -37,7 +37,7 @@ void std::__ndk1::numpunct<wchar_t>::~numpunct()
   if ((*(byte *)(this + 3) & 1) != 0) {
     operator delete((void *)this[5]);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }

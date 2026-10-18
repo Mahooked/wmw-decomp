@@ -11,7 +11,7 @@
 
 
 /* ok  address 0x5f4f8c  size 4 */std::bad_alloc::~bad_alloc(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

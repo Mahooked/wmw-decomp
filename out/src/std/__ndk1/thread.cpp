@@ -4,7 +4,7 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x5efd9c  size 24 */std::__ndk1::thread::~thread(){
-  if (*param_1 == 0) {
+  if (*this == 0) {
     return;
   }
   std::terminate();

@@ -43,8 +43,8 @@ void ndk::SafePool<ndk::MotionEvent>::~SafePool(long param_1)
     *(void **)(param_1 + 0x50) = p0;
     operator delete(p0);
   }
-  std::__ndk1::__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::~__vector_base(param_1 + 0x30);
-  ndk::Mutex::~Mutex(param_1);
+  ((std::__ndk1::__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>> *)param_1 + 0x30)->~__vector_base<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>();
+  ((ndk::Mutex *)param_1)->~Mutex();
   return;
 }
 
@@ -136,7 +136,7 @@ ulong ndk::SafePool<ndk::MotionEvent>::getFreeItemIndex(long param_1)
   pthread_mutex_lock(param_1 + 8);
   if (*(long *)(param_1 + 0x50) == *(long *)(param_1 + 0x48)) {
                     /* try { // try from 002c4ae4 to 002c4aeb has its CatchHandler @ 002c4ca4 */
-    ndk::MotionEvent::MotionEvent(&uStack_b8);
+    new ((void *)(&uStack_b8)) ndk::MotionEvent();
     puVar1 = *(undefined8 **)(param_1 + 0x38);
     if (puVar1 < *(undefined8 **)(param_1 + 0x40)) {
       puVar1[2] = 0;

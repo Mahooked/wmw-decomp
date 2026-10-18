@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d7210  size 504 */Walaber::ZipArchiveReader::ZipArchiveReader(long *param_1,byte *param_2){
+/* ok  address 0x3d7210  size 504 */Walaber::ZipArchiveReader::ZipArchiveReader(byte *param_2){
   int iVar2;
   long lVar3;
   ulong uVar4;
@@ -22,21 +22,21 @@
   ulong *puStack_178;
   undefined1 auStack_170 [256];
   
-  plVar7 = param_1 + 2;
+  plVar7 = this + 2;
   *plVar7 = 0;
-  param_1[3] = 0;
-  param_1[1] = (long)plVar7;
+  this[3] = 0;
+  this[1] = (long)plVar7;
   pbVar6 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar6 = param_2 + 1;
   }
                     /* try { // try from 003d726c to 003d727b has its CatchHandler @ 003d73c8 */
   lVar3 = wUnzOpen(pbVar6);
-  *param_1 = lVar3;
+  *this = lVar3;
   if ((lVar3 != 0) && (iVar2 = wUnzGoToFirstFile(), iVar2 == 0)) {
     do {
                     /* try { // try from 003d72a4 to 003d72cb has its CatchHandler @ 003d73d0 */
-      wUnzGetCurrentFileInfo64(*param_1,auStack_220,auStack_198,auStack_170,0x100,0,0,0,0,auStack_190,
+      wUnzGetCurrentFileInfo64(*this,auStack_220,auStack_198,auStack_170,0x100,0,0,0,0,auStack_190,
                       auStack_188,plVar7);
       uStack_238 = 0;
       uStack_230 = 0;
@@ -64,13 +64,13 @@ LAB_003d7328:
       puStack_178 = &uStack_238;
       *(undefined1 *)((long)pvVar5 + uVar4) = 0;
                     /* try { // try from 003d7340 to 003d7357 has its CatchHandler @ 003d73d4 */
-      lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&&>, std::__ndk1::tuple<>>(param_1 + 1,&uStack_238,&DAT_006335a2,&puStack_178,auStack_180);
+      lVar3 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>&&>, std::__ndk1::tuple<>>(this + 1,&uStack_238,&DAT_006335a2,&puStack_178,auStack_180);
       memcpy(lVar3 + 0x38,auStack_220,0xa0);
       if ((uStack_238 & 1) != 0) {
         operator delete(pvStack_228);
       }
                     /* try { // try from 003d737c to 003d737f has its CatchHandler @ 003d73ec */
-      iVar2 = wUnzGoToNextFile(*param_1);
+      iVar2 = wUnzGoToNextFile(*this);
     } while (iVar2 == 0);
   }
   return;
@@ -79,12 +79,12 @@ LAB_003d7328:
 
 
 /* ok  address 0x3d7410  size 76 */Walaber::ZipArchiveReader::~ZipArchiveReader(){
-  if (*param_1 != 0) {
+  if (*this != 0) {
                     /* try { // try from 003d7428 to 003d7433 has its CatchHandler @ 003d7448 */
     wUnzCloseCurrentFile();
-    wUnzClose(*param_1);
+    wUnzClose(*this);
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>>>::destroy(param_1 + 1,param_1[2]);
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::ZipArchiveReader::FileLocation>>>::destroy(this + 1,this[2]);
   return;
 }
 

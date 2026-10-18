@@ -41,7 +41,7 @@ void Walaber::DrawableNode::setLayer(int p0, undefined4 in_w1)
   abStack_40[7] = 0x74;
   abStack_40[8] = 0x4e;
                     /* try { // try from 003ea4c0 to 003ea4cb has its CatchHandler @ 003ea514 */
-  Walaber::Node::Node(this,abStack_40,0xffffffff);
+  new ((void *)(this)) Walaber::Node(abStack_40,0xffffffff);
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }

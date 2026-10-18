@@ -25,7 +25,7 @@ long * std::__ndk1::operator>>(long *param_1,byte *param_2)
   char acStack_60 [8];
   
                     /* try { // try from 00402f94 to 00402fd3 has its CatchHandler @ 00403164 */
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_60,param_1,0);
+  new ((void *)(acStack_60)) std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry(param_1,0);
   if (acStack_60[0] == '\0') {
     lVar6 = (long)param_1 + *(long *)(*param_1 + -0x18);
     std::__ndk1::ios_base::clear(lVar6,*(uint *)(lVar6 + 0x20) | 4);
@@ -55,7 +55,7 @@ long * std::__ndk1::operator>>(long *param_1,byte *param_2)
     std::__ndk1::ios_base::getloc(auStack_68);
                     /* try { // try from 00403008 to 00403017 has its CatchHandler @ 00403150 */
     lVar5 = std::__ndk1::locale::use_facet(auStack_68,&ctype<char>::id);
-    std::__ndk1::locale::~locale(auStack_68);
+    ((std::__ndk1::locale *)auStack_68)->~locale();
     if (lVar6 < 1) {
       lVar7 = 0;
 LAB_004030dc:

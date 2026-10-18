@@ -258,9 +258,9 @@
     WaterConceptConstants::FluidDescription::operator=(lVar1,auStack_168);
     *(undefined1 *)(lVar1 + 0xe8) = uStack_80;
     *(long *)(lVar1 + 0xe0) = lStack_88;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_140);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_150);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_160);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_140)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_150)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_160)->~SharedPtr<Walaber::Texture>();
     uVar8 = uVar8 + 1;
     puVar9 = puVar9 + 0x38;
     lVar10 = lVar10 + 0xf0;
@@ -460,7 +460,7 @@ void WaterConcept::Fluids::_initFluidsWithBounds(Walaber__AABB *p0)
   }
   lVar6 = operator new(0x30);
                     /* try { // try from 00404b68 to 00404b7f has its CatchHandler @ 00404c5c */
-  WaterConcept::Grid::Grid(fVar13,-fVar9,lVar6,&fStack_70,(int)(fVar11 / fVar12),(int)(fVar10 / fVar12));
+  new ((void *)(fVar13)) WaterConcept::Grid(-fVar9,lVar6,&fStack_70,(int)(fVar11 / fVar12),(int)(fVar10 / fVar12));
   p0[0x30c9].f_0xc = (float)(int)lVar6;
   p0[0x30c9].f_0x10 = (int)((ulong)lVar6 >> 0x20);
   piVar7 = (int *)operator new(0x10);
@@ -899,7 +899,7 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
       *(undefined4 *)(lVar5 + 0x38) = *(undefined4 *)(lVar12 + 0x38);
       *(undefined8 *)(lVar5 + 0x30) = uVar9;
                     /* try { // try from 00405648 to 0040564b has its CatchHandler @ 00405734 */
-      Walaber::VerletIntegrator::VerletIntegrator(lVar5 + 0x3c,lVar12 + 0x3c);
+      new ((void *)(lVar5 + 0x3c)) Walaber::VerletIntegrator(lVar12 + 0x3c);
       lVar10 = *(long *)(lVar12 + 0x40);
       *(long *)(lVar5 + 0x40) = lVar10;
       piVar8 = *(int **)(lVar12 + 0x48);
@@ -916,16 +916,16 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
       lVar10 = lVar10 + (long)iVar3 * 0xf0;
       *(undefined1 *)(lVar10 + 0xe8) = uStack_168;
       *(long *)(lVar10 + 0xe0) = lStack_170;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_228);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_238);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_248);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_228)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_238)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_248)->~SharedPtr<Walaber::Texture>();
       piVar13 = piVar13 + 0x3c;
     } while (piVar13 != piVar2);
   }
   p0[8].particlesForFluid = *(float *)(in_x1 + 4);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_138);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_148);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_158);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_138)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_148)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_158)->~SharedPtr<Walaber::Texture>();
   return pWVar6;
 }
 
@@ -933,7 +933,7 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
 
 /* ok  address 0x4057b4  size 888 */WaterConcept::Fluids::~Fluids(){
   long *plVar1;
-  void *p0;
+  void *this;
   long lVar2;
   ulong extraout_x1;
   ulong extraout_x1_00;
@@ -945,40 +945,40 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
   void *pvVar4;
   long lVar5;
   
-  lVar2 = *param_1;
-  lVar5 = param_1[1];
-  plVar1 = param_1 + 0x79eb;
+  lVar2 = *this;
+  lVar5 = this[1];
+  plVar1 = this + 0x79eb;
   if (lVar2 != lVar5) {
     do {
       pvVar4 = *(void **)(lVar2 + 0xe0);
       if (pvVar4 != (void *)0x0) {
-        Walaber::FluidParticleSet::~FluidParticleSet(pvVar4);
+        ((Walaber::FluidParticleSet *)pvVar4)->~FluidParticleSet();
         operator delete(pvVar4);
         param_2 = extraout_x1;
       }
       lVar2 = lVar2 + 0xf0;
     } while (lVar5 != lVar2);
-    lVar2 = *param_1;
-    for (lVar5 = param_1[1]; lVar5 != lVar2; lVar5 = lVar5 + -0xf0) {
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar5 + -200);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar5 + -0xd8);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar5 + -0xe8);
+    lVar2 = *this;
+    for (lVar5 = this[1]; lVar5 != lVar2; lVar5 = lVar5 + -0xf0) {
+      ((Walaber::SharedPtr<Walaber::Texture> *)lVar5 + -200)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)lVar5 + -0xd8)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)lVar5 + -0xe8)->~SharedPtr<Walaber::Texture>();
       param_2 = extraout_x1_00;
     }
   }
-  param_1[1] = lVar2;
+  this[1] = lVar2;
   lVar2 = *plVar1;
-  uVar3 = param_1[0x79ec] - lVar2;
+  uVar3 = this[0x79ec] - lVar2;
   if ((int)(uVar3 >> 3) != 0) {
     lVar5 = 0;
     while( true ) {
       pvVar4 = *(void **)(lVar2 + lVar5);
       if (pvVar4 != (void *)0x0) {
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((long)pvVar4 + 0x28);
-        p0 = *(void **)((long)pvVar4 + 0x10);
-        if (p0 != (void *)0x0) {
-          *(void **)((long)pvVar4 + 0x18) = p0;
-          operator delete(p0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)(long)pvVar4 + 0x28)->~SharedPtr<Walaber::Callback>();
+        this = *(void **)((long)pvVar4 + 0x10);
+        if (this != (void *)0x0) {
+          *(void **)((long)pvVar4 + 0x18) = this;
+          operator delete(this);
         }
         operator delete(pvVar4);
         param_2 = extraout_x1_01;
@@ -988,64 +988,64 @@ WaterConcept__Fluids * WaterConcept::Fluids::operator=(WaterConcept__Fluids *p0)
       lVar5 = lVar5 + 8;
     }
   }
-  if ((void *)param_1[0x79ee] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x79ee],param_2);
+  if ((void *)this[0x79ee] != (void *)0x0) {
+    operator delete[]((void *)this[0x79ee],param_2);
     param_2 = extraout_x1_02;
   }
-  pvVar4 = (void *)param_1[0x79f8];
+  pvVar4 = (void *)this[0x79f8];
   if (pvVar4 != (void *)0x0) {
-    WaterConcept::Grid::~Grid(pvVar4);
+    ((WaterConcept::Grid *)pvVar4)->~Grid();
     operator delete(pvVar4);
     param_2 = extraout_x1_03;
   }
-  pvVar4 = (void *)param_1[0x79f9];
+  pvVar4 = (void *)this[0x79f9];
   if (pvVar4 != (void *)0x0) {
     if (*(void **)((long)pvVar4 + 8) != (void *)0x0) {
       operator delete[](*(void **)((long)pvVar4 + 8),param_2);
     }
     operator delete(pvVar4);
   }
-  pvVar4 = (void *)param_1[0x79fa];
+  pvVar4 = (void *)this[0x79fa];
   if (pvVar4 != (void *)0x0) {
-    WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>::~IndexGrid(pvVar4);
+    ((WaterConcept::IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>> *)pvVar4)->~IndexGrid<std::__ndk1::vector<WaterConcept::ParticleDescription, std::__ndk1::allocator<WaterConcept::ParticleDescription>>>();
     operator delete(pvVar4);
   }
                     /* try { // try from 00405914 to 004059bb has its CatchHandler @ 00405a74 */
   lVar2 = Walaber::PlatformManager::getInstancePtr();
   if (0x7f < *(int *)(lVar2 + 0x28)) {
-    glDeleteFramebuffersOES(1,param_1 + 0x79fe);
-    glDeleteFramebuffersOES(1,param_1 + 0x79ff);
-    glDeleteTextures(1,(long)param_1 + 0x3cff4);
-    glDeleteTextures(1,(long)param_1 + 0x3cffc);
+    glDeleteFramebuffersOES(1,this + 0x79fe);
+    glDeleteFramebuffersOES(1,this + 0x79ff);
+    glDeleteTextures(1,(long)this + 0x3cff4);
+    glDeleteTextures(1,(long)this + 0x3cffc);
   }
-  *(undefined4 *)((long)param_1 + 0x3d0ac) = 0;
-  *(undefined4 *)((long)param_1 + 0x3d1ac) = 0;
-  glDeleteBuffers(2,(long)param_1 + 0x3d09c);
-  if ((void *)param_1[0x7a08] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x7a08],p1);
+  *(undefined4 *)((long)this + 0x3d0ac) = 0;
+  *(undefined4 *)((long)this + 0x3d1ac) = 0;
+  glDeleteBuffers(2,(long)this + 0x3d09c);
+  if ((void *)this[0x7a08] != (void *)0x0) {
+    operator delete[]((void *)this[0x7a08],p1);
   }
-  Walaber::ValueTweaker::removeMappingsForOwner(param_1);
-  pvVar4 = (void *)param_1[0x7a04];
+  Walaber::ValueTweaker::removeMappingsForOwner(this);
+  pvVar4 = (void *)this[0x7a04];
   if (pvVar4 != (void *)0x0) {
-    param_1[0x7a05] = (long)pvVar4;
+    this[0x7a05] = (long)pvVar4;
     operator delete(pvVar4);
   }
-  std::__ndk1::__list_imp<WaterConcept::Fluids::CustomParticleDamping, std::__ndk1::allocator<WaterConcept::Fluids::CustomParticleDamping>>::clear(param_1 + 0x79fb);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79f3);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79f1);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79ef);
+  std::__ndk1::__list_imp<WaterConcept::Fluids::CustomParticleDamping, std::__ndk1::allocator<WaterConcept::Fluids::CustomParticleDamping>>::clear(this + 0x79fb);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79f3)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79f1)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79ef)->~SharedPtr<Walaber::Callback>();
   pvVar4 = (void *)*plVar1;
   if (pvVar4 != (void *)0x0) {
-    param_1[0x79ec] = (long)pvVar4;
+    this[0x79ec] = (long)pvVar4;
     operator delete(pvVar4);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x79e9);
-  pvVar4 = (void *)param_1[0x79e6];
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79e9)->~SharedPtr<Walaber::Callback>();
+  pvVar4 = (void *)this[0x79e6];
   if (pvVar4 != (void *)0x0) {
-    param_1[0x79e7] = (long)pvVar4;
+    this[0x79e7] = (long)pvVar4;
     operator delete(pvVar4);
   }
-  std::__ndk1::__vector_base<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::~__vector_base(param_1);
+  ((std::__ndk1::__vector_base<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>> *)this)->~__vector_base<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>();
   return;
 }
 

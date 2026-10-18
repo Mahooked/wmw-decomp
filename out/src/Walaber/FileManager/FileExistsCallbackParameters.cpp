@@ -3,14 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d278c  size 152 */Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(long param_1,undefined8 param_2,byte param_3,undefined8 param_4,undefined8 param_5, undefined8 param_6){
+/* ok  address 0x3d278c  size 152 */Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(undefined8 param_2,byte param_3,undefined8 param_4,undefined8 param_5, undefined8 param_6){
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
-  *(byte *)(param_1 + 0x18) = param_3 & 1;
+  *(byte *)(this + 0x18) = param_3 & 1;
                     /* try { // try from 003d27c0 to 003d27cb has its CatchHandler @ 003d2808 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x20,param_4);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x20,param_4);
                     /* try { // try from 003d27d0 to 003d27d7 has its CatchHandler @ 003d27f0 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x38,param_5);
-  *(undefined8 *)(param_1 + 0x50) = param_6;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x38,param_5);
+  *(undefined8 *)(this + 0x50) = param_6;
   return;
 }
 

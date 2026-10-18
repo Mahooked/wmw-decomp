@@ -53,7 +53,7 @@ void std::__ndk1::vector<Walaber::TextLineInfo,std::__ndk1::allocator<Walaber::T
   puStack_50 = puStack_50 + 4;
                     /* try { // try from 00385d68 to 00385d73 has its CatchHandler @ 00385dac */
   std::__ndk1::vector<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&> *)auStack_60)->~__split_buffer<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>&>();
   return;
 }
 

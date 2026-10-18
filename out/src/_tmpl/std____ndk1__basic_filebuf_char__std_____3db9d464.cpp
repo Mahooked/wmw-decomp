@@ -29,7 +29,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::~basic_fil
     operator delete[]((void *)this[0xd],p1_00);
   }
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   return;
 }
 
@@ -819,7 +819,7 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_file
   
   plVar1 = param_1 + 1;
   *param_1 = (long)&PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::locale(plVar1);
+  new ((void *)(plVar1)) std::__ndk1::locale();
   param_1[5] = 0;
   param_1[4] = 0;
   param_1[7] = 0;
@@ -831,16 +831,16 @@ void std::__ndk1::basic_filebuf<char,std::__ndk1::char_traits<char>>::basic_file
   *param_1 = (long)&PTR__basic_filebuf_007108b8;
   param_1[8] = 0;
   memset(param_1 + 0xc,0,0x43);
-  std::__ndk1::locale::locale(auStack_50,plVar1);
+  new ((void *)(auStack_50)) std::__ndk1::locale(plVar1);
                     /* try { // try from 003d5d00 to 003d5d0f has its CatchHandler @ 003d5dd0 */
   uVar4 = std::__ndk1::locale::has_facet(auStack_50,&codecvt<char,char,mbstate_t>::id);
-  std::__ndk1::locale::~locale(auStack_50);
+  ((std::__ndk1::locale *)auStack_50)->~locale();
   if ((uVar4 & 1) != 0) {
-    std::__ndk1::locale::locale(auStack_50,plVar1);
+    new ((void *)(auStack_50)) std::__ndk1::locale(plVar1);
                     /* try { // try from 003d5d2c to 003d5d3b has its CatchHandler @ 003d5da4 */
     lVar5 = std::__ndk1::locale::use_facet(auStack_50,&codecvt<char,char,mbstate_t>::id);
     param_1[0x10] = lVar5;
-    std::__ndk1::locale::~locale(auStack_50);
+    ((std::__ndk1::locale *)auStack_50)->~locale();
     bVar3 = (**(code **)(*(long *)param_1[0x10] + 0x38))();
     *(byte *)((long)param_1 + 0xa2) = bVar3 & 1;
   }

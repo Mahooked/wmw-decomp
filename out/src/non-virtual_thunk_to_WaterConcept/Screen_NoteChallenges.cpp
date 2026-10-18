@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x53b570  size 8 */non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
-  WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(param_1 + -0x90);
+  ((WaterConcept::Screen_NoteChallenges *)this + -0x90)->~Screen_NoteChallenges();
   return;
 }
 
 
 
 /* ok  address 0x53b59c  size 40 */non_virtual_thunk_to_WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges(){
-  WaterConcept::Screen_NoteChallenges::~Screen_NoteChallenges((void *)(param_1 + -0x90));
-  operator delete((void *)(param_1 + -0x90));
+  ((WaterConcept::Screen_NoteChallenges *)(void *)(this + -0x90))->~Screen_NoteChallenges();
+  operator delete((void *)(this + -0x90));
   return;
 }
 

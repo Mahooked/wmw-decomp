@@ -11,7 +11,7 @@
   undefined1 auStack_70 [8];
   
   DAT_007a4ac8 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::locale(&DAT_007a4ad0);
+  new ((void *)(&DAT_007a4ad0)) std::__ndk1::locale();
   uRam00000000007a4af0 = 0;
   _DAT_007a4ae8 = 0;
   uRam00000000007a4b00 = 0;
@@ -23,10 +23,10 @@
   DAT_007a4b18 = &DAT_007a4b30;
   DAT_007a4b24 = 0xffffffff;
   DAT_007a4b28 = 0;
-  std::__ndk1::locale::locale(auStack_70,&DAT_007a4ad0);
+  new ((void *)(auStack_70)) std::__ndk1::locale(&DAT_007a4ad0);
                     /* try { // try from 005b09fc to 005b0a07 has its CatchHandler @ 005b0de8 */
   (*(code *)DAT_007a4ac8[2])(&DAT_007a4ac8,auStack_70);
-  std::__ndk1::locale::~locale(auStack_70);
+  ((std::__ndk1::locale *)auStack_70)->~locale();
   cin = &PTR__basic_istream_00716310;
   DAT_007a45b8 = 0;
   DAT_007a45c0 = &PTR__basic_istream_00716338;
@@ -35,7 +35,7 @@
   DAT_007a4648 = 0;
   DAT_007a4b38 = &PTR__basic_streambuf_00716288;
   DAT_007a4650 = 0xffffffff;
-  std::__ndk1::locale::locale(&DAT_007a4b40);
+  new ((void *)(&DAT_007a4b40)) std::__ndk1::locale();
   DAT_007a4b78 = &__sF;
   DAT_007a4b94 = 0xffffffff;
   uRam00000000007a4b60 = 0;
@@ -47,10 +47,10 @@
   DAT_007a4b38 = &PTR__basic_streambuf_007167e8;
   DAT_007a4b88 = &DAT_007a4ba0;
   DAT_007a4b98 = 0;
-  std::__ndk1::locale::locale(auStack_70,&DAT_007a4b40);
+  new ((void *)(auStack_70)) std::__ndk1::locale(&DAT_007a4b40);
                     /* try { // try from 005b0ab4 to 005b0abf has its CatchHandler @ 005b0dbc */
   (*(code *)DAT_007a4b38[2])(&DAT_007a4b38,auStack_70);
-  std::__ndk1::locale::~locale(auStack_70);
+  ((std::__ndk1::locale *)auStack_70)->~locale();
   wcin = &PTR__basic_istream_00716370;
   DAT_007a4660 = 0;
   DAT_007a4668 = &PTR__basic_istream_00716398;

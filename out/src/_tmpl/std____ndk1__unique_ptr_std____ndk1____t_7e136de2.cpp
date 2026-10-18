@@ -43,7 +43,7 @@ void std::__ndk1::
                     /* try { // try from 003a1118 to 003a111f has its CatchHandler @ 003a115c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
                     /* try { // try from 003a1124 to 003a112b has its CatchHandler @ 003a1144 */
-  Walaber::TextureSettings::TextureSettings(lVar1 + 0x38,6);
+  new ((void *)(lVar1 + 0x38)) Walaber::TextureSettings(6);
   *(undefined1 *)(param_1 + 2) = 1;
   return;
 }

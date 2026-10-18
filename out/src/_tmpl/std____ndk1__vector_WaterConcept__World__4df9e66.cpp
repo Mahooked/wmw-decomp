@@ -104,7 +104,7 @@ ulong std::__ndk1::
         puStack_78 = puStack_a0;
         puStack_a0 = puVar4;
         puStack_a8 = puStack_80;
-        std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::~__split_buffer(&puStack_90);
+        ((std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&> *)&puStack_90)->~__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>();
       }
       else {
         lVar9 = (long)puStack_b0 - (long)puStack_b8 >> 5;
@@ -162,7 +162,7 @@ ulong std::__ndk1::
     puStack_a8[3] = *(undefined8 *)(param_3 + 0x18);
     puStack_a8 = puStack_a8 + 4;
     param_2 = std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(param_1,&puStack_b8,param_2);
-    std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::~__split_buffer(&puStack_b8);
+    ((std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&> *)&puStack_b8)->~__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>();
   }
   return param_2;
 }

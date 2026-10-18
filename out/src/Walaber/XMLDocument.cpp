@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d6b3c  size 408 */Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,long *param_3){
+/* ok  address 0x3d6b3c  size 408 */Walaber::XMLDocument::XMLDocument(undefined8 param_2,long *param_3){
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -17,20 +17,20 @@
   undefined8 *puStack_58;
   int *piStack_50;
   
-  *param_1 = 0;
-  param_1[1] = 0;
+  *this = 0;
+  this[1] = 0;
   lVar5 = *param_3;
-  param_1[2] = lVar5;
+  this[2] = lVar5;
   piVar4 = (int *)param_3[1];
-  param_1[3] = piVar4;
+  this[3] = piVar4;
   if (lVar5 != 0) {
     *piVar4 = *piVar4 + 1;
   }
                     /* try { // try from 003d6b8c to 003d6b93 has its CatchHandler @ 003d6cb0 */
-  Walaber::PropertyList::PropertyList(auStack_70);
+  new ((void *)(auStack_70)) Walaber::PropertyList();
                     /* try { // try from 003d6b94 to 003d6bd3 has its CatchHandler @ 003d6cb8 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_007109e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -41,11 +41,11 @@
   puStack_a0 = puVar2;
   puStack_58 = puVar2;
   piStack_50 = piVar4;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar4 = *piVar4 + 1;
   puStack_90 = puVar2;
   piStack_88 = piVar4;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003d6c0c to 003d6c0f has its CatchHandler @ 003d6c98 */
   uVar3 = Walaber::FileManager::getInstancePtr();
   puStack_b0 = puStack_90;
@@ -54,10 +54,10 @@
   }
                     /* try { // try from 003d6c28 to 003d6c3b has its CatchHandler @ 003d6c88 */
   Walaber::FileManager::readFile(uVar3,param_2,&puStack_b0,auStack_70,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_80);
-  Walaber::PropertyList::~PropertyList(auStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>> *)&puStack_80)->~SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>();
+  ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   return;
 }
 
@@ -117,7 +117,7 @@ void Walaber::XMLDocument::_readFileCallback(void *p0, long in_x1)
 
 
 
-/* ok  address 0x3d6e44  size 472 */Walaber::XMLDocument::XMLDocument(undefined8 *param_1,undefined8 param_2,undefined8 param_3,long *param_4){
+/* ok  address 0x3d6e44  size 472 */Walaber::XMLDocument::XMLDocument(undefined8 param_2,undefined8 param_3,long *param_4){
   undefined8 *puVar2;
   undefined8 uVar3;
   int *piVar4;
@@ -130,25 +130,25 @@ void Walaber::XMLDocument::_readFileCallback(void *p0, long in_x1)
   undefined8 *puStack_80;
   undefined1 auStack_60 [24];
   
-  *param_1 = 0;
-  param_1[1] = 0;
+  *this = 0;
+  this[1] = 0;
   lVar5 = *param_4;
-  param_1[2] = lVar5;
+  this[2] = lVar5;
   piVar4 = (int *)param_4[1];
-  param_1[3] = piVar4;
+  this[3] = piVar4;
   if (lVar5 != 0) {
     *piVar4 = *piVar4 + 1;
   }
                     /* try { // try from 003d6e98 to 003d6e9f has its CatchHandler @ 003d6ff8 */
-  Walaber::PropertyList::PropertyList(auStack_60);
+  new ((void *)(auStack_60)) Walaber::PropertyList();
                     /* try { // try from 003d6ea0 to 003d6eab has its CatchHandler @ 003d6ff4 */
-  Walaber::Property::Property(&puStack_80,param_3);
+  new ((void *)(&puStack_80)) Walaber::Property(param_3);
                     /* try { // try from 003d6eac to 003d6ebf has its CatchHandler @ 003d6fe4 */
   Walaber::PropertyList::setValueForKey(auStack_60,&ROOT_NODE_NAME_KEY,&puStack_80);
-  Walaber::Property::~Property(&puStack_80);
+  ((Walaber::Property *)&puStack_80)->~Property();
                     /* try { // try from 003d6ec8 to 003d6f07 has its CatchHandler @ 003d7000 */
   puVar2 = (undefined8 *)operator new(0x28);
-  puVar2[2] = param_1;
+  puVar2[2] = this;
   *puVar2 = &PTR__Callback_007109e8;
   puVar2[1] = 0;
   puVar2[4] = 0;
@@ -158,11 +158,11 @@ void Walaber::XMLDocument::_readFileCallback(void *p0, long in_x1)
   *piVar4 = 3;
   puStack_b0 = puVar2;
   puStack_80 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
   *piVar4 = *piVar4 + 1;
   puStack_a0 = puVar2;
   piStack_98 = piVar4;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003d6f40 to 003d6f43 has its CatchHandler @ 003d6fcc */
   uVar3 = Walaber::FileManager::getInstancePtr();
   puStack_c0 = puStack_a0;
@@ -171,10 +171,10 @@ void Walaber::XMLDocument::_readFileCallback(void *p0, long in_x1)
   }
                     /* try { // try from 003d6f5c to 003d6f6f has its CatchHandler @ 003d6fbc */
   Walaber::FileManager::readFile(uVar3,param_2,&puStack_c0,auStack_60,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>::~SharedPtr(&puStack_90);
-  Walaber::PropertyList::~PropertyList(auStack_60);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>> *)&puStack_90)->~SharedPtr<Walaber::MemberCallback<Walaber::XMLDocument>>();
+  ((Walaber::PropertyList *)auStack_60)->~PropertyList();
   return;
 }
 
@@ -286,12 +286,12 @@ void Walaber::XMLDocument::_buildXMLObject
 
 
 /* ok  address 0x3d7198  size 68 */Walaber::XMLDocument::~XMLDocument(){
-  if (*param_1 != 0) {
+  if (*this != 0) {
                     /* try { // try from 003d71b0 to 003d71b7 has its CatchHandler @ 003d71c8 */
     xmlFreeDoc();
     xmlCleanupMemory();
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 2);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 2)->~SharedPtr<Walaber::Callback>();
   return;
 }
 

@@ -109,7 +109,7 @@ Walaber::Widget_ScoreCounter::operator=(Walaber__Widget_ScoreCounter *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   WStack_40 = *p2;
   uStack_48 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0x12,&WStack_40,&uStack_48,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x12,&WStack_40,&uStack_48,1,1);
   puVar2[0x20] = 0;
   puVar2[0x21] = 0;
   *(undefined4 *)(puVar2 + 0x22) = 0xff000000;
@@ -256,7 +256,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
 
 
 
-/* ok  address 0x384c5c  size 464 */Walaber::Widget_ScoreCounter::Widget_ScoreCounter(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,undefined4 param_6,long *param_7,undefined8 param_8, undefined8 *param_9,undefined8 *param_10,long *param_11,undefined8 param_12, undefined4 param_13,undefined4 param_14){
+/* ok  address 0x384c5c  size 464 */Walaber::Widget_ScoreCounter::Widget_ScoreCounter(undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,undefined4 param_6,long *param_7,undefined8 param_8, undefined8 *param_9,undefined8 *param_10,long *param_11,undefined8 param_12, undefined4 param_13,undefined4 param_14){
   int *piVar2;
   long lVar3;
   undefined8 uStack_98;
@@ -264,7 +264,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   
   uStack_90 = *param_9;
   uStack_98 = *param_10;
-  Walaber::Widget::Widget(param_7,param_8,0x12,&uStack_90,&uStack_98,1,1);
+  new ((void *)(param_7)) Walaber::Widget(param_8,0x12,&uStack_90,&uStack_98,1,1);
   *param_7 = (long)&PTR__Widget_ScoreCounter_0070f748;
   lVar3 = *param_11;
   param_7[0x20] = lVar3;
@@ -292,7 +292,7 @@ void Walaber::Widget_ScoreCounter::init(long param_1)
   *(undefined4 *)((long)param_7 + 0x184) = param_3;
   *(undefined4 *)(param_7 + 0x31) = param_4;
   *(undefined4 *)((long)param_7 + 0x18c) = param_5;
-  *(undefined4 *)(param_7 + 0x32) = param_1;
+  *(undefined4 *)(param_7 + 0x32) = this;
   *(undefined4 *)((long)param_7 + 0x194) = param_13;
   *(undefined4 *)((long)param_7 + 0x19c) = 0;
   *(undefined4 *)(param_7 + 0x34) = param_6;
@@ -346,7 +346,7 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
 /* ok  address 0x384efc  size 260 */Walaber::Widget_ScoreCounter::~Widget_ScoreCounter(){
   void *pvVar1;
   long lVar2;
-  void *p0;
+  void *this;
   ulong uVar3;
   
   *this = &PTR__Widget_ScoreCounter_0070f748;
@@ -368,22 +368,22 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
   *(undefined1 *)((long)this + 0x17f) = 0xff;
   lVar2 = (long)this[0x2c] - (long)pvVar1;
   *(undefined1 *)((long)this + 0x1b4) = 0;
-  p0 = (void *)this[0x2c];
+  this = (void *)this[0x2c];
   if (lVar2 != 0) {
     uVar3 = 0;
     do {
       *(undefined4 *)((long)pvVar1 + uVar3 * 4) = 0;
       uVar3 = uVar3 + 1;
-      p0 = pvVar1;
+      this = pvVar1;
     } while (uVar3 < (ulong)(lVar2 >> 2));
   }
-  if (p0 != (void *)0x0) {
-    this[0x2c] = p0;
-    operator delete(p0);
+  if (this != (void *)0x0) {
+    this[0x2c] = this;
+    operator delete(this);
   }
-  std::__ndk1::__vector_base<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::~__vector_base(this + 0x28);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((std::__ndk1::__vector_base<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>> *)this + 0x28)->~__vector_base<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -391,7 +391,7 @@ void Walaber::Widget_ScoreCounter::_updateBorders(long param_1)
 
 /* ok  address 0x385000  size 36 */Walaber::Widget_ScoreCounter::~Widget_ScoreCounter(){
   Walaber::Widget_ScoreCounter::~Widget_ScoreCounter();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -780,7 +780,7 @@ void Walaber::Widget_ScoreCounter::draw(Walaber__SpriteBatch *p0)
     }
                     /* try { // try from 003857a4 to 003857c7 has its CatchHandler @ 00385a50 */
     Walaber::SpriteBatch::drawQuad(uVar8);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c8)->~SharedPtr<Walaber::Texture>();
   }
   if (*(long *)&p0[4].field_0x8 != 0) {
     if (*(char *)((long)&p0[2].f_0x1c + 1) == '\0') {

@@ -110,7 +110,7 @@ Walaber__AnimationManager * Walaber::AnimationManager::operator=(Walaber__Animat
   while (this + 1 != plVar5) {
     pvVar4 = (void *)plVar5[7];
     if (pvVar4 != (void *)0x0) {
-      Walaber::Animation::~Animation(pvVar4);
+      ((Walaber::Animation *)pvVar4)->~Animation();
       operator delete(pvVar4);
     }
     plVar2 = (long *)plVar5[1];
@@ -138,7 +138,7 @@ Walaber__AnimationManager * Walaber::AnimationManager::operator=(Walaber__Animat
   this[2] = 0;
   *this = this + 1;
   if ((*(char *)(this + 9) != '\0') && (pvVar4 = (void *)this[3], pvVar4 != (void *)0x0)) {
-    Walaber::Animation::~Animation(pvVar4);
+    ((Walaber::Animation *)pvVar4)->~Animation();
     operator delete(pvVar4);
   }
   std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(this + 5,this[6]);
@@ -180,7 +180,7 @@ void Walaber::AnimationManager::update(float p0)
         p0_00 = *(void **)(in_x0 + 0x18);
         *(undefined8 *)(in_x0 + 0x18) = *(undefined8 *)(in_x0 + 0x20);
         if (p0_00 != (void *)0x0) {
-          Walaber::Animation::~Animation(p0_00);
+          ((Walaber::Animation *)p0_00)->~Animation();
           operator delete(p0_00);
         }
         *(undefined1 *)(in_x0 + 0x48) = 0;
@@ -294,7 +294,7 @@ void Walaber::AnimationManager::createAnimation(undefined8 param_1,undefined8 pa
                     /* try { // try from 00337c58 to 00337c63 has its CatchHandler @ 00337ce8 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_60,param_2);
                     /* try { // try from 00337c64 to 00337c73 has its CatchHandler @ 00337cd0 */
-  Walaber::Animation::Animation(uVar2,abStack_60,param_1);
+  new ((void *)(uVar2)) Walaber::Animation(abStack_60,param_1);
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -393,7 +393,7 @@ void Walaber::AnimationManager::playAnimation
     if (*(char *)(param_2 + 0x48) != '\0') {
       p0 = *(void **)(param_2 + 0x18);
       if (p0 != (void *)0x0) {
-        Walaber::Animation::~Animation(p0);
+        ((Walaber::Animation *)p0)->~Animation();
         operator delete(p0);
       }
       *(undefined1 *)(param_2 + 0x48) = 0;
@@ -564,7 +564,7 @@ void Walaber::AnimationManager::crossFade
       if (*(char *)(param_3 + 0x48) == '\0') {
         p0 = (byte *)operator new(0x108);
                     /* try { // try from 003381a4 to 003381ab has its CatchHandler @ 0033823c */
-        Walaber::Animation::Animation(p0,pbVar11);
+        new ((void *)(p0)) Walaber::Animation(pbVar11);
         *(byte **)(param_3 + 0x18) = p0;
       }
       *(undefined1 *)(param_3 + 0x48) = 1;
@@ -574,7 +574,7 @@ void Walaber::AnimationManager::crossFade
 LAB_00338164:
   if (*(char *)(param_3 + 0x48) != '\0') {
     if (p0 != (byte *)0x0) {
-      Walaber::Animation::~Animation(p0);
+      ((Walaber::Animation *)p0)->~Animation();
       operator delete(p0);
     }
     *(undefined1 *)(param_3 + 0x48) = 0;

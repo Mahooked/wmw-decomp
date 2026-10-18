@@ -30,7 +30,7 @@ void std::__ndk1::
     do {
       lVar1 = (long)pvVar2 + -0x18;
       pvVar2 = (void *)((long)pvVar2 + -0x28);
-      Walaber::PropertyList::~PropertyList(lVar1);
+      ((Walaber::PropertyList *)lVar1)->~PropertyList();
     } while (pvVar3 != pvVar2);
     p0 = (void *)*this;
   }

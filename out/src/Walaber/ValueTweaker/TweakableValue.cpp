@@ -64,7 +64,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0, undefined4 in_w1)
     ppuStack_190 = &PTR__basic_stringstream_007110f0;
     appuStack_110[0] = &PTR__basic_stringstream_00711140;
     ppuStack_180 = &PTR__basic_stringstream_00711118;
-    std::__ndk1::locale::locale(auStack_170);
+    new ((void *)(auStack_170)) std::__ndk1::locale();
     uStack_140 = 0;
     uStack_148 = 0;
     uStack_150 = 0;
@@ -89,8 +89,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int p0, undefined4 in_w1)
       operator delete(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
-    std::__ndk1::locale::~locale(auStack_170);
-    std::__ndk1::ios_base::~ios_base(appuStack_110);
+    ((std::__ndk1::locale *)auStack_170)->~locale();
+    ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   }
   return;
 }
@@ -140,7 +140,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int * in_x0, float p0)
     ppuStack_1a0 = &PTR__basic_stringstream_007110f0;
     appuStack_120[0] = &PTR__basic_stringstream_00711140;
     ppuStack_190 = &PTR__basic_stringstream_00711118;
-    std::__ndk1::locale::locale(auStack_180);
+    new ((void *)(auStack_180)) std::__ndk1::locale();
     uStack_150 = 0;
     uStack_158 = 0;
     uStack_160 = 0;
@@ -165,8 +165,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int * in_x0, float p0)
       operator delete(pvStack_138);
     }
     ppuStack_188 = &PTR__basic_streambuf_00710968;
-    std::__ndk1::locale::~locale(auStack_180);
-    std::__ndk1::ios_base::~ios_base(appuStack_120);
+    ((std::__ndk1::locale *)auStack_180)->~locale();
+    ((std::__ndk1::ios_base *)appuStack_120)->~ios_base();
   }
   return;
 }
@@ -216,7 +216,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0, undefi
     ppuStack_190 = &PTR__basic_stringstream_007110f0;
     appuStack_110[0] = &PTR__basic_stringstream_00711140;
     ppuStack_180 = &PTR__basic_stringstream_00711118;
-    std::__ndk1::locale::locale(auStack_170);
+    new ((void *)(auStack_170)) std::__ndk1::locale();
     uStack_140 = 0;
     uStack_148 = 0;
     uStack_150 = 0;
@@ -243,8 +243,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Vector2 p0, undefi
       operator delete(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
-    std::__ndk1::locale::~locale(auStack_170);
-    std::__ndk1::ios_base::~ios_base(appuStack_110);
+    ((std::__ndk1::locale *)auStack_170)->~locale();
+    ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   }
   return;
 }
@@ -294,7 +294,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
     ppuStack_190 = &PTR__basic_stringstream_007110f0;
     appuStack_110[0] = &PTR__basic_stringstream_00711140;
     ppuStack_180 = &PTR__basic_stringstream_00711118;
-    std::__ndk1::locale::locale(auStack_170);
+    new ((void *)(auStack_170)) std::__ndk1::locale();
     uStack_140 = 0;
     uStack_148 = 0;
     uStack_150 = 0;
@@ -325,8 +325,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(int *param_1,undefined4 *pa
       operator delete(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
-    std::__ndk1::locale::~locale(auStack_170);
-    std::__ndk1::ios_base::~ios_base(appuStack_110);
+    ((std::__ndk1::locale *)auStack_170)->~locale();
+    ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   }
   return;
 }
@@ -379,7 +379,7 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0, undefine
     ppuStack_190 = &PTR__basic_stringstream_007110f0;
     appuStack_110[0] = &PTR__basic_stringstream_00711140;
     ppuStack_180 = &PTR__basic_stringstream_00711118;
-    std::__ndk1::locale::locale(auStack_170);
+    new ((void *)(auStack_170)) std::__ndk1::locale();
     uStack_140 = 0;
     uStack_148 = 0;
     uStack_150 = 0;
@@ -414,8 +414,8 @@ void Walaber::ValueTweaker::TweakableValue::setValue(Walaber__Color p0, undefine
       operator delete(pvStack_128);
     }
     ppuStack_178 = &PTR__basic_streambuf_00710968;
-    std::__ndk1::locale::~locale(auStack_170);
-    std::__ndk1::ios_base::~ios_base(appuStack_110);
+    ((std::__ndk1::locale *)auStack_170)->~locale();
+    ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   }
   return;
 }

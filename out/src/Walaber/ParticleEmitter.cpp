@@ -69,7 +69,7 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
   puVar1[0x1b] = 0x3f8000003f800000;
   puVar1[0x1a] = 0x3f8000003f800000;
                     /* try { // try from 003906a4 to 003906ab has its CatchHandler @ 003906c8 */
-  Walaber::ParticleSet::ParticleSet(puVar1 + 0x2e,in_w1);
+  new ((void *)(puVar1 + 0x2e)) Walaber::ParticleSet(in_w1);
   *(undefined2 *)(puVar1 + 0x39) = 0;
   *(undefined1 *)((long)puVar1 + 0x1ca) = 0;
   return;
@@ -100,8 +100,8 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
     }
     this[1] = 0;
   }
-  Walaber::ParticleSet::~ParticleSet(this + 0x2e);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x2a);
+  ((Walaber::ParticleSet *)this + 0x2e)->~ParticleSet();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x2a)->~SharedPtr<Walaber::Callback>();
   pvVar1 = (void *)this[0x1c];
   if (pvVar1 != (void *)0x0) {
     this[0x1d] = pvVar1;
@@ -112,8 +112,8 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
     this[0x14] = pvVar1;
     operator delete(pvVar1);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(this + 0x10);
-  Walaber::Node::~Node(this);
+  ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)this + 0x10)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
+  ((Walaber::Node *)this)->~Node();
   return;
 }
 
@@ -121,7 +121,7 @@ void Walaber::ParticleEmitter::addEmitterZone(Walaber__ParticleEmitter__EmitterZ
 
 /* ok  address 0x3908e4  size 36 */Walaber::ParticleEmitter::~ParticleEmitter(){
   Walaber::ParticleEmitter::~ParticleEmitter();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -160,11 +160,11 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
   *piVar3 = 3;
   puStack_90 = puVar2;
   puStack_68 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_58 = puVar2;
   piStack_50 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_68)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003909b4 to 003909b7 has its CatchHandler @ 00390a5c */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_78 = puStack_58;
@@ -172,13 +172,13 @@ void Walaber::ParticleEmitter::loadFromXML(long param_1,undefined8 param_2,undef
     *piStack_50 = *piStack_50 + 1;
   }
                     /* try { // try from 003909d4 to 003909db has its CatchHandler @ 00390a4c */
-  Walaber::PropertyList::PropertyList(&puStack_90);
+  new ((void *)(&puStack_90)) Walaber::PropertyList();
                     /* try { // try from 003909dc to 003909f3 has its CatchHandler @ 00390a3c */
   Walaber::FileManager::readFile(uVar4,param_2,&puStack_78,&puStack_90,0);
-  Walaber::PropertyList::~PropertyList(&puStack_90);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::ParticleEmitter>>::~SharedPtr(&puStack_48);
+  ((Walaber::PropertyList *)&puStack_90)->~PropertyList();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::ParticleEmitter>> *)&puStack_48)->~SharedPtr<Walaber::MemberCallback<Walaber::ParticleEmitter>>();
   return;
 }
 
@@ -273,7 +273,7 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0, int * in_x1)
     uStack_119 = 0x72;
     uStack_118 = 0;
                     /* try { // try from 00390af4 to 00390aff has its CatchHandler @ 003926bc */
-    Walaber::XMLDocument::XMLDocument(&lStack_b8,*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),&uStack_120);
+    new ((void *)(&lStack_b8)) Walaber::XMLDocument(*(undefined8 *)(in_x1 + 8),*(undefined8 *)(in_x1 + 10),&uStack_120);
     uVar8 = extraout_x1;
     if ((uStack_120 & 1) != 0) {
       operator delete(pvStack_110);
@@ -287,9 +287,9 @@ void Walaber::ParticleEmitter::_xmlFileLoaded(void *p0, int * in_x1)
     }
     else {
                     /* try { // try from 00390b24 to 00390b2b has its CatchHandler @ 003926b0 */
-      Walaber::Property::Property(auStack_d8);
+      new ((void *)(auStack_d8)) Walaber::Property();
                     /* try { // try from 00390b30 to 00390b37 has its CatchHandler @ 003926ac */
-      Walaber::XMLDocument::Iterator::Iterator(auStack_e8,uStack_b0);
+      new ((void *)(auStack_e8)) Walaber::XMLDocument::Iterator(uStack_b0);
       uStack_11a = 0;
       uStack_119 = 0;
       uStack_118 = 0;
@@ -610,9 +610,9 @@ LAB_00391174:
                 if (lStack_168 != 0) {
                   *piStack_160 = *piStack_160 + 1;
                 }
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_168);
-                Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_178);
-                Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_188);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_168)->~SharedPtr<Walaber::Texture>();
+                ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_178)->~SharedPtr<Walaber::Callback>();
+                ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_188)->~SharedPtr<Walaber::Callback>();
                 if ((uStack_140 & 1) != 0) {
                   operator delete((void *)CONCAT44(uStack_12c,uStack_130));
                 }
@@ -640,7 +640,7 @@ LAB_00391174:
                   }
                   *(long **)((long)p0 + 0x88) = plVar10 + 2;
                 }
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&bStack_158);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_158)->~SharedPtr<Walaber::Texture>();
               }
                     /* try { // try from 00391168 to 0039116f has its CatchHandler @ 003927f0 */
               Walaber::XMLDocument::NamedIterator::operator++(&uStack_120);
@@ -1766,9 +1766,9 @@ LAB_003916f8:
                     /* try { // try from 00391184 to 0039118b has its CatchHandler @ 0039278c */
         Walaber::XMLDocument::Iterator::operator++(alStack_f8);
       }
-      Walaber::Property::~Property(auStack_d8);
+      ((Walaber::Property *)auStack_d8)->~Property();
     }
-    Walaber::XMLDocument::~XMLDocument(&lStack_b8);
+    ((Walaber::XMLDocument *)&lStack_b8)->~XMLDocument();
   }
   else {
     auStack_98[0] = 3;
@@ -2125,7 +2125,7 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0)
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
                     /* try { // try from 003934cc to 003934df has its CatchHandler @ 00393510 */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20);
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(auStack_50);
+  ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)auStack_50)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
   return;
 }
 
@@ -2145,7 +2145,7 @@ void Walaber::ParticleEmitter::draw(Walaber__SpriteBatch *p0,Walaber__Color p1)
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::vector(auStack_50,&p0[2].field_0x10);
                     /* try { // try from 003935f4 to 0039360b has its CatchHandler @ 0039363c */
   Walaber::ParticleSet::drawParticles(&p0[6].f_0x20,p1,auStack_50);
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(auStack_50);
+  ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)auStack_50)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
   return;
 }
 

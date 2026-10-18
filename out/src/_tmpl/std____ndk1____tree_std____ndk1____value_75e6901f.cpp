@@ -22,7 +22,7 @@ void std::__ndk1::
   if (param_2 != (undefined8 *)0x0) {
     std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(param_1,*param_2);
     std::__ndk1::__tree<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<void*, std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<void*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<void*, Walaber::SharedPtr<Walaber::Callback>>>>::destroy(param_1,param_2[1]);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_2 + 5);
+    ((Walaber::SharedPtr<Walaber::Callback> *)param_2 + 5)->~SharedPtr<Walaber::Callback>();
     operator delete(param_2);
     return;
   }
@@ -76,7 +76,7 @@ long * std::__ndk1::
   }
   param_1[2] = param_1[2] + -1;
   void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((long)param_2 + 0x28);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(long)param_2 + 0x28)->~SharedPtr<Walaber::Callback>();
   operator delete(param_2);
   return plVar3;
 }

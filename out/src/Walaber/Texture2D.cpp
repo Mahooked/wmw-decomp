@@ -47,7 +47,7 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   void *pvStack_58;
   undefined1 auStack_50 [24];
   
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   uStack_5b = 0;
   pvStack_58 = (void *)0x0;
   bStack_68 = 0x10;
@@ -55,10 +55,10 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   uStack_60 = 0x78;
   uStack_5f = 0;
                     /* try { // try from 00397b48 to 00397b53 has its CatchHandler @ 00397d1c */
-  Walaber::Property::Property(&puStack_88,1);
+  new ((void *)(&puStack_88)) Walaber::Property(1);
                     /* try { // try from 00397b54 to 00397b63 has its CatchHandler @ 00397cfc */
   Walaber::PropertyList::setValueForKey(auStack_50,&bStack_68,&puStack_88);
-  Walaber::Property::~Property(&puStack_88);
+  ((Walaber::Property *)&puStack_88)->~Property();
   if ((bStack_68 & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -69,10 +69,10 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   uStack_67 = 0x75625f7065656b;
   uStack_60 = 0x66;
                     /* try { // try from 00397ba8 to 00397bb3 has its CatchHandler @ 00397cf8 */
-  Walaber::Property::Property(&puStack_88,0);
+  new ((void *)(&puStack_88)) Walaber::Property(0);
                     /* try { // try from 00397bb4 to 00397bc3 has its CatchHandler @ 00397cf4 */
   Walaber::PropertyList::setValueForKey(auStack_50,&bStack_68,&puStack_88);
-  Walaber::Property::~Property(&puStack_88);
+  ((Walaber::Property *)&puStack_88)->~Property();
   if ((bStack_68 & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -92,11 +92,11 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   *piVar3 = 3;
   puStack_a8 = puVar2;
   puStack_88 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_98 = puVar2;
   piStack_90 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00397c54 to 00397c57 has its CatchHandler @ 00397cdc */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_b8 = puStack_98;
@@ -105,10 +105,10 @@ void Walaber::Texture2D::initFromFileName(long param_1)
   }
                     /* try { // try from 00397c78 to 00397c83 has its CatchHandler @ 00397ccc */
   Walaber::FileManager::readFile(uVar4,param_1 + 8,&puStack_b8,auStack_50,*(undefined4 *)(param_1 + 0xe0));
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>::~SharedPtr(&bStack_68);
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>> *)&bStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>();
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -158,7 +158,7 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
   else if ((this[0x15] == 0) || (*(int *)this[0x16] == 0)) {
     puts("Texture2D::_getData() - reading data from disk");
     Walaber::SharedPtr<Walaber::Callback>::operator=(this + 0x18,param_1);
-    Walaber::PropertyList::PropertyList(auStack_50);
+    new ((void *)(auStack_50)) Walaber::PropertyList();
     uStack_5b = 0;
     pvStack_58 = (void *)0x0;
     bStack_68 = 0x10;
@@ -166,10 +166,10 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
     uStack_60 = 0x78;
     uStack_5f = 0;
                     /* try { // try from 00397e50 to 00397e5b has its CatchHandler @ 00398060 */
-    Walaber::Property::Property(&puStack_88,0);
+    new ((void *)(&puStack_88)) Walaber::Property(0);
                     /* try { // try from 00397e5c to 00397e6b has its CatchHandler @ 00398050 */
     Walaber::PropertyList::setValueForKey(auStack_50,&bStack_68,&puStack_88);
-    Walaber::Property::~Property(&puStack_88);
+    ((Walaber::Property *)&puStack_88)->~Property();
     if ((bStack_68 & 1) != 0) {
       operator delete(pvStack_58);
     }
@@ -180,10 +180,10 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
     uStack_67 = 0x75625f7065656b;
     uStack_60 = 0x66;
                     /* try { // try from 00397eb0 to 00397ebb has its CatchHandler @ 0039804c */
-    Walaber::Property::Property(&puStack_88,1);
+    new ((void *)(&puStack_88)) Walaber::Property(1);
                     /* try { // try from 00397ebc to 00397ecb has its CatchHandler @ 00398048 */
     Walaber::PropertyList::setValueForKey(auStack_50,&bStack_68,&puStack_88);
-    Walaber::Property::~Property(&puStack_88);
+    ((Walaber::Property *)&puStack_88)->~Property();
     if ((bStack_68 & 1) != 0) {
       operator delete(pvStack_58);
     }
@@ -204,11 +204,11 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
     puStack_a8 = puVar2;
     puStack_88 = puVar2;
     piStack_80 = piVar3;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
     *piVar3 = *piVar3 + 1;
     puStack_98 = puVar2;
     piStack_90 = piVar3;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00397f5c to 00397f5f has its CatchHandler @ 00398030 */
     uVar4 = Walaber::FileManager::getInstancePtr();
     puStack_b8 = puStack_98;
@@ -217,10 +217,10 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
     }
                     /* try { // try from 00397f80 to 00397f8b has its CatchHandler @ 00398020 */
     Walaber::FileManager::readFile(uVar4,this + 1,&puStack_b8,auStack_50,*(undefined4 *)(this + 0x1c));
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-    Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>::~SharedPtr(&bStack_68);
-    Walaber::PropertyList::~PropertyList(auStack_50);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>> *)&bStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>();
+    ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   }
   else {
     puts("Texture2D::_getData() - returning EXISTING data");
@@ -236,10 +236,10 @@ void Walaber::Texture2D::_getData(Walaber::SharedPtr<Walaber::Callback> param_1)
       }
       puStack_88 = this;
       piStack_78 = piStack_c0;
-      Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&piStack_c8);
+      ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&piStack_c8)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
                     /* try { // try from 00397fd4 to 00397fdb has its CatchHandler @ 0039800c */
       (**(code **)(*(long *)*param_1 + 0x10))((long *)*param_1,&puStack_88);
-      Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&piStack_80);
+      ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&piStack_80)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
     }
   }
   return;
@@ -370,10 +370,10 @@ void Walaber::Texture2D::_fileLoaded(void *p0, int * in_x1)
         }
       }
                     /* try { // try from 0039822c to 00398237 has its CatchHandler @ 00398c24 */
-      Walaber::Property::Property(0x3f000000,&uStack_a0);
+      new ((void *)(0x3f000000)) Walaber::Property(&uStack_a0);
                     /* try { // try from 00398238 to 0039824b has its CatchHandler @ 00398c14 */
       Walaber::PropertyList::setValueForKey(&puStack_b8,&TEXTURE_SCALE_KEY,&uStack_a0);
-      Walaber::Property::~Property(&uStack_a0);
+      ((Walaber::Property *)&uStack_a0)->~Property();
                     /* try { // try from 00398254 to 00398267 has its CatchHandler @ 00398c54 */
       uVar22 = Walaber::PlatformManager::getInstancePtr();
       Walaber::PlatformManager::appendSpecificPlatformTagToFilename(&uStack_a0,uVar22,in_x1 + 2,1);
@@ -392,11 +392,11 @@ void Walaber::Texture2D::_fileLoaded(void *p0, int * in_x1)
       puStack_e8 = puVar17;
       piStack_e0 = piVar6;
       piStack_c0 = piVar6;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_110);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_110)->~SharedPtr<Walaber::Callback>();
       *piVar6 = *piVar6 + 1;
       puStack_d8 = puVar17;
       piStack_d0 = piVar6;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003982e0 to 003982e3 has its CatchHandler @ 00398bfc */
       uVar22 = Walaber::FileManager::getInstancePtr();
       puStack_f8 = puStack_d8;
@@ -406,13 +406,13 @@ void Walaber::Texture2D::_fileLoaded(void *p0, int * in_x1)
       }
                     /* try { // try from 003982fc to 0039830f has its CatchHandler @ 00398bec */
       Walaber::FileManager::readFile(uVar22,&uStack_a0,&puStack_f8,&puStack_b8,1);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
-      Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>::~SharedPtr(&puStack_c8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_f8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>> *)&puStack_c8)->~SharedPtr<Walaber::MemberCallback<Walaber::Texture2D>>();
       if (((uint)uStack_a0 & 1) != 0) {
         operator delete(piStack_90);
       }
-      Walaber::PropertyList::~PropertyList(&puStack_b8);
+      ((Walaber::PropertyList *)&puStack_b8)->~PropertyList();
     }
     Walaber::Texture2D::_failedToLoad(p0,in_x1 + 2);
     goto LAB_00398b90;
@@ -786,7 +786,7 @@ LAB_0039882c:
                     /* try { // try from 00398a9c to 00398aa3 has its CatchHandler @ 00398be4 */
         Walaber::Texture2D::bufferFromImageData(&uStack_a0,auVar39._0_8_,puStack_110,iVar21,iVar29);
         Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::operator=((long)p0 + 0xa8,&uStack_a0);
-        Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_a0);
+        ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&uStack_a0)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
         uVar7 = extraout_x1;
         if (*(long *)((long)p0 + 0xc0) != 0) {
           lStack_130 = *(long *)((long)p0 + 0xa8);
@@ -804,11 +804,11 @@ LAB_0039882c:
           }
           piStack_90 = piStack_128;
           uStack_a0 = p0;
-          Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_130);
+          ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&lStack_130)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
                     /* try { // try from 00398b0c to 00398b13 has its CatchHandler @ 00398bd4 */
           (**(code **)(**(long **)((long)p0 + 0xc0) + 0x10))(*(long **)((long)p0 + 0xc0),&uStack_a0)
           ;
-          Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_98);
+          ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&uStack_98)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
           uVar7 = extraout_x1_00;
         }
         goto LAB_00398b1c;
@@ -1054,7 +1054,7 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
     uStack_68 = uVar1;
   }
   uStack_58 = uVar1;
-  Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(&uStack_58);
+  ((Walaber::SharedPtr<Walaber::ProgrammaticTexture2D> *)&uStack_58)->~SharedPtr<Walaber::ProgrammaticTexture2D>();
   *(undefined8 *)(param_1 + 0x7c) = *(undefined8 *)(uVar1 + 0x7c);
   *(undefined8 *)(param_1 + 0x8c) = 0;
   *(undefined8 *)(param_1 + 0x84) = 0x3f8000003f800000;
@@ -1071,7 +1071,7 @@ void Walaber::Texture2D::_failedToLoad(long param_1,byte *param_2)
       operator delete(pvStack_48);
     }
   }
-  Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(&uStack_68);
+  ((Walaber::SharedPtr<Walaber::ProgrammaticTexture2D> *)&uStack_68)->~SharedPtr<Walaber::ProgrammaticTexture2D>();
   return;
 }
 
@@ -1104,7 +1104,7 @@ void Walaber::Texture2D::bufferFromImageData(uchar *p0,int p1,int p2)
   *in_x8 = plVar2;
   in_x8[1] = puStack_50;
   *puStack_50 = 2;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_58);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&plStack_58)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   if (plVar2[1] == *plVar2) {
                     /* try { // try from 003992ac to 003992b3 has its CatchHandler @ 003992b8 */
     std::__ndk1::__vector_base_common<true>::__throw_out_of_range(plVar2);
@@ -1158,13 +1158,13 @@ void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Wa
   *(undefined4 *)(this + 0xe4) = 0;
                     /* try { // try from 00399414 to 0039941b has its CatchHandler @ 00399450 */
   Walaber::Texture2D::initFromFileName(this);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_58)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
 
 
-/* ok  address 0x39962c  size 272 */Walaber::Texture2D::Texture2D(undefined8 *param_1,undefined8 param_2,undefined8 *param_3){
+/* ok  address 0x39962c  size 272 */Walaber::Texture2D::Texture2D(undefined8 param_2,undefined8 *param_3){
   undefined8 uStack_90;
   undefined4 uStack_88;
   undefined1 uStack_84;
@@ -1194,16 +1194,16 @@ void Walaber::Texture2D::reload(Walaber::SharedPtr<Walaber::Callback> param_1,Wa
   uStack_48 = param_3[9];
   uStack_50 = param_3[8];
                     /* try { // try from 003996b8 to 003996cb has its CatchHandler @ 00399720 */
-  Walaber::Texture::Texture(param_1,param_2,&uStack_90,0);
+  new ((void *)(this)) Walaber::Texture(param_2,&uStack_90,0);
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
-  param_1[0x1b] = 0;
-  param_1[0x1c] = 0;
-  param_1[0x19] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x18] = 0;
-  *param_1 = &PTR__Texture2D_00710288;
+  this[0x1b] = 0;
+  this[0x1c] = 0;
+  this[0x19] = 0;
+  this[0x1a] = 0;
+  this[0x18] = 0;
+  *this = &PTR__Texture2D_00710288;
   return;
 }
 
@@ -1262,11 +1262,11 @@ LAB_00399814:
   uStack_50 = this[0x15];
   this[0x15] = 0;
   this[0x16] = 0;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_50);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&uStack_50)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
 LAB_00399834:
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x1a);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x18);
-  Walaber::Texture::~Texture(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x1a)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x18)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::Texture *)this)->~Texture();
   return;
 }
 
@@ -1274,7 +1274,7 @@ LAB_00399834:
 
 /* ok  address 0x399898  size 36 */Walaber::Texture2D::~Texture2D(){
   Walaber::Texture2D::~Texture2D();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -1340,7 +1340,7 @@ LAB_00399984:
   uStack_50 = *(undefined8 *)(param_1 + 0xa8);
   *(undefined8 *)(param_1 + 0xa8) = 0;
   *(undefined8 *)(param_1 + 0xb0) = 0;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_50);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&uStack_50)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
 LAB_003999a4:
   return;
 }

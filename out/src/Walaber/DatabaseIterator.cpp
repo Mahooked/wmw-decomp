@@ -67,19 +67,19 @@ float Walaber::DatabaseIterator::getFloatAtIndex(int p0)
 
 
 
-/* ok  address 0x32dbd0  size 76 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2){
+/* ok  address 0x32dbd0  size 76 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 param_2){
   undefined8 uVar1;
   undefined4 uVar2;
   
-  *param_1 = 0;
+  *this = 0;
   if (DAT_0072d698 == 0) {
     uVar2 = 0xffffffff;
   }
   else {
     uVar2 = *(undefined4 *)(DatabaseManager::databaseMap + 0x20);
   }
-  uVar1 = Walaber::DatabaseIterator::queryDatabase(param_1,uVar2,param_2);
-  *param_1 = uVar1;
+  uVar1 = Walaber::DatabaseIterator::queryDatabase(this,uVar2,param_2);
+  *this = uVar1;
   return;
 }
 
@@ -105,7 +105,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
 
 
 
-/* ok  address 0x32dc44  size 276 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
+/* ok  address 0x32dc44  size 276 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 param_2,undefined8 param_3){
   undefined8 uVar2;
   undefined4 uVar3;
   ulong auStack_70 [2];
@@ -115,7 +115,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
   byte abStack_40 [16];
   void *pvStack_30;
   
-  *param_1 = 0;
+  *this = 0;
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
@@ -132,7 +132,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
   }
                     /* try { // try from 0032dcb4 to 0032dcbb has its CatchHandler @ 0032dd14 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -147,7 +147,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
 
 
 
-/* ok  address 0x32dd58  size 236 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4){
+/* ok  address 0x32dd58  size 236 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 param_2,undefined8 param_3,undefined8 param_4){
   undefined8 uVar2;
   undefined4 uVar3;
   ulong auStack_58 [2];
@@ -155,7 +155,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
   byte abStack_40 [16];
   void *pvStack_30;
   
-  *param_1 = 0;
+  *this = 0;
   auStack_58[0] = 0;
   auStack_58[1] = 0;
   pvStack_48 = (void *)0x0;
@@ -169,7 +169,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
   }
                     /* try { // try from 0032ddc0 to 0032ddc7 has its CatchHandler @ 0032de10 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -181,13 +181,13 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
 
 
 
-/* ok  address 0x32de44  size 184 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
+/* ok  address 0x32de44  size 184 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
   undefined8 uVar2;
   undefined4 uVar3;
   byte abStack_40 [16];
   void *pvStack_30;
   
-  *param_1 = 0;
+  *this = 0;
   uVar2 = Walaber::DatabaseManager::constructQuery(abStack_40,param_2,param_3,param_4,param_5);
   if (DAT_0072d698 == 0) {
     uVar3 = 0xffffffff;
@@ -197,7 +197,7 @@ void Walaber::DatabaseIterator::queryDatabase(undefined8 param_1,undefined8 para
   }
                     /* try { // try from 0032dea0 to 0032dea7 has its CatchHandler @ 0032dee0 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,uVar3,abStack_40);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_40[0] & 1) != 0) {
     operator delete(pvStack_30);
   }
@@ -266,7 +266,7 @@ LAB_0032dfe4:
 
 
 
-/* ok  address 0x32e010  size 264 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4){
+/* ok  address 0x32e010  size 264 */Walaber::DatabaseIterator::DatabaseIterator(undefined4 param_2,undefined8 param_3,undefined8 param_4){
   undefined8 uVar2;
   ulong auStack_80 [2];
   void *pvStack_70;
@@ -275,7 +275,7 @@ LAB_0032dfe4:
   byte abStack_50 [16];
   void *pvStack_40;
   
-  *param_1 = 0;
+  *this = 0;
   auStack_68[0] = 0;
   auStack_68[1] = 0;
   pvStack_58 = (void *)0x0;
@@ -286,7 +286,7 @@ LAB_0032dfe4:
   uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,auStack_68,auStack_80);
                     /* try { // try from 0032e06c to 0032e077 has its CatchHandler @ 0032e0d4 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -301,14 +301,14 @@ LAB_0032dfe4:
 
 
 
-/* ok  address 0x32e118  size 220 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
+/* ok  address 0x32e118  size 220 */Walaber::DatabaseIterator::DatabaseIterator(undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5){
   undefined8 uVar2;
   ulong auStack_68 [2];
   void *pvStack_58;
   byte abStack_50 [16];
   void *pvStack_40;
   
-  *param_1 = 0;
+  *this = 0;
   auStack_68[0] = 0;
   auStack_68[1] = 0;
   pvStack_58 = (void *)0x0;
@@ -316,7 +316,7 @@ LAB_0032dfe4:
   uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,param_5,auStack_68);
                     /* try { // try from 0032e168 to 0032e173 has its CatchHandler @ 0032e1c0 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -328,16 +328,16 @@ LAB_0032dfe4:
 
 
 
-/* ok  address 0x32e1f4  size 168 */Walaber::DatabaseIterator::DatabaseIterator(undefined8 *param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6){
+/* ok  address 0x32e1f4  size 168 */Walaber::DatabaseIterator::DatabaseIterator(undefined4 param_2,undefined8 param_3,undefined8 param_4, undefined8 param_5,undefined8 param_6){
   undefined8 uVar2;
   byte abStack_50 [16];
   void *pvStack_40;
   
-  *param_1 = 0;
+  *this = 0;
   uVar2 = Walaber::DatabaseManager::constructQuery(abStack_50,param_3,param_4,param_5,param_6);
                     /* try { // try from 0032e238 to 0032e243 has its CatchHandler @ 0032e280 */
   uVar2 = Walaber::DatabaseIterator::queryDatabase(uVar2,param_2,abStack_50);
-  *param_1 = uVar2;
+  *this = uVar2;
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -347,7 +347,7 @@ LAB_0032dfe4:
 
 
 /* ok  address 0x32e29c  size 32 */Walaber::DatabaseIterator::~DatabaseIterator(){
-  if (*param_1 != 0) {
+  if (*this != 0) {
                     /* try { // try from 0032e2ac to 0032e2af has its CatchHandler @ 0032e2b8 */
     sqlite3_finalize();
   }

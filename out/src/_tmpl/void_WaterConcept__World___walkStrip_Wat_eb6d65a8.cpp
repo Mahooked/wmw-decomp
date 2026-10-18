@@ -465,10 +465,10 @@ LAB_0046fffc:
       piStack_e8 = (int *)0x0;
       piStack_e0 = (int *)0x0;
       piStack_d8 = (int *)0x0;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f0)->~SharedPtr<Walaber::Texture>();
       lVar41 = -0xf0;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar41);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&stack0xfffffffffffffff0 + lVar41)->~SharedPtr<Walaber::Texture>();
     uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
@@ -903,7 +903,7 @@ LAB_00470634:
                     /* try { // try from 00470a50 to 00470a73 has its CatchHandler @ 004713e0 */
                 WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_140)->~SharedPtr<Walaber::Texture>();
               }
               lVar41 = param_1[6];
               uVar26 = ~(uint)fVar46;
@@ -939,7 +939,7 @@ LAB_00470634:
                                 &uStack_130,0xffffffff);
                 ppiVar14 = &piStack_150;
 LAB_00470c68:
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(ppiVar14);
+                ((Walaber::SharedPtr<Walaber::Texture> *)ppiVar14)->~SharedPtr<Walaber::Texture>();
               }
             }
           }
@@ -1231,7 +1231,7 @@ LAB_00470fb4:
         lVar41 = lVar41 + 8;
       } while (uVar13 < iVar39 - 1U);
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   return;
 }
@@ -1701,10 +1701,10 @@ LAB_00472208:
       piStack_e8 = (int *)0x0;
       piStack_e0 = (int *)0x0;
       piStack_d8 = (int *)0x0;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f0)->~SharedPtr<Walaber::Texture>();
       lVar20 = -0xf0;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar20);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&stack0xfffffffffffffff0 + lVar20)->~SharedPtr<Walaber::Texture>();
     uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
@@ -2139,7 +2139,7 @@ LAB_00472858:
                     /* try { // try from 00472c70 to 00472c93 has its CatchHandler @ 00473608 */
                 WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_140)->~SharedPtr<Walaber::Texture>();
               }
               uVar31 = ~(uint)fVar46;
               lVar20 = param_1[6];
@@ -2175,7 +2175,7 @@ LAB_00472858:
                                 &uStack_130,0xffffffff);
                 ppiVar15 = &piStack_150;
 LAB_00472e88:
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(ppiVar15);
+                ((Walaber::SharedPtr<Walaber::Texture> *)ppiVar15)->~SharedPtr<Walaber::Texture>();
               }
             }
           }
@@ -2467,7 +2467,7 @@ LAB_004731dc:
         lVar20 = lVar20 + 8;
       } while (uVar21 < iVar39 - 1U);
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   return;
 }
@@ -2941,10 +2941,10 @@ LAB_00473e18:
       piStack_e8 = (int *)0x0;
       piStack_e0 = (int *)0x0;
       piStack_d8 = (int *)0x0;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f0)->~SharedPtr<Walaber::Texture>();
       lVar18 = -0xf0;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar18);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&stack0xfffffffffffffff0 + lVar18)->~SharedPtr<Walaber::Texture>();
     uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
     fVar53 = fVar48;
     if ((int)fStack_204 <= (int)fVar48) {
@@ -3379,7 +3379,7 @@ LAB_00474454:
                     /* try { // try from 0047486c to 0047488f has its CatchHandler @ 00475200 */
                 WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_140)->~SharedPtr<Walaber::Texture>();
               }
               lVar18 = param_1[6];
               uVar38 = ~(uint)fVar47;
@@ -3415,7 +3415,7 @@ LAB_00474454:
                                 &uStack_130,0xffffffff);
                 ppiVar13 = &piStack_150;
 LAB_00474a88:
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(ppiVar13);
+                ((Walaber::SharedPtr<Walaber::Texture> *)ppiVar13)->~SharedPtr<Walaber::Texture>();
               }
             }
           }
@@ -3707,7 +3707,7 @@ LAB_00474dd4:
         lVar18 = lVar18 + 8;
       } while (uVar22 < iVar43 - 1U);
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   return;
 }
@@ -4176,10 +4176,10 @@ LAB_004759dc:
       piStack_e8 = (int *)0x0;
       piStack_e0 = (int *)0x0;
       piStack_d8 = (int *)0x0;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f0)->~SharedPtr<Walaber::Texture>();
       lVar41 = -0xf0;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&stack0xfffffffffffffff0 + lVar41);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&stack0xfffffffffffffff0 + lVar41)->~SharedPtr<Walaber::Texture>();
     uStack_100 = CONCAT44(*(undefined4 *)((long)param_1 + 0x454),(int)param_1[0x89]);
     fVar52 = fVar47;
     if ((int)fStack_20c <= (int)fVar47) {
@@ -4614,7 +4614,7 @@ LAB_00476014:
                     /* try { // try from 00476430 to 00476453 has its CatchHandler @ 00476dc0 */
                 WaterConcept::World::_addSmoothingTriangle(param_1,&piStack_140,param_8,&uStack_100,&uStack_120,&uStack_118,
                                 &uStack_130,0xffffffff);
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_140);
+                ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_140)->~SharedPtr<Walaber::Texture>();
               }
               lVar41 = param_1[6];
               uVar27 = ~(uint)fVar46;
@@ -4650,7 +4650,7 @@ LAB_00476014:
                                 &uStack_130,0xffffffff);
                 ppiVar14 = &piStack_150;
 LAB_00476648:
-                Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(ppiVar14);
+                ((Walaber::SharedPtr<Walaber::Texture> *)ppiVar14)->~SharedPtr<Walaber::Texture>();
               }
             }
           }
@@ -4942,7 +4942,7 @@ LAB_00476994:
         lVar41 = lVar41 + 8;
       } while (uVar13 < iVar39 - 1U);
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&piStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&piStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   return;
 }

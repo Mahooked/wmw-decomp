@@ -19,7 +19,7 @@
 
 /* ok  address 0x5f53f8  size 36 */std::bad_cast::~bad_cast(){
   std::exception::~exception();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

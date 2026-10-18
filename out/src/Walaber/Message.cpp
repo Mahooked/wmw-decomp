@@ -5,7 +5,7 @@
 
 /* ok  address 0x2b52d0  size 20 */Walaber::Message::~Message(){
   *this = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(this + 2);
+  ((Walaber::PropertyList *)this + 2)->~PropertyList();
   return;
 }
 
@@ -13,7 +13,7 @@
 
 /* ok  address 0x2c22dc  size 52 */Walaber::Message::~Message(){
   *this = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(this + 2);
+  ((Walaber::PropertyList *)this + 2)->~PropertyList();
   operator delete(this);
   return;
 }

@@ -220,7 +220,7 @@ vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent,std::__ndk1::alloc
                     /* try { // try from 00433ec8 to 00433ee3 has its CatchHandler @ 00433fc0 */
     std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::push_back(auStack_80,param_3);
     param_2 = (undefined4 *)std::__ndk1::vector<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>>::__swap_out_circular_buffer(param_1,auStack_80,param_2);
-    std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>::~__split_buffer(auStack_80);
+    ((std::__ndk1::__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&> *)auStack_80)->~__split_buffer<Walaber::AnimationCueAnimationTrack::CueAnimationEvent, std::__ndk1::allocator<Walaber::AnimationCueAnimationTrack::CueAnimationEvent>&>();
   }
   return param_2;
 }

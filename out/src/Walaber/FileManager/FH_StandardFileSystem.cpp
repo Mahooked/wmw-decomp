@@ -75,7 +75,7 @@ void Walaber::FileManager::FH_StandardFileSystem::fileExists
                     /* try { // try from 003d2f58 to 003d2f63 has its CatchHandler @ 003d30b0 */
       (**(code **)(*this + 0x20))(abStack_e0,this);
                     /* try { // try from 003d2f64 to 003d2f7f has its CatchHandler @ 003d3098 */
-      Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_c8,param_1,1,&uStack_70,abStack_e0,param_3);
+      new ((void *)(abStack_c8)) Walaber::FileManager::FileExistsCallbackParameters(param_1,1,&uStack_70,abStack_e0,param_3);
       if ((abStack_e0[0] & 1) != 0) {
         operator delete(pvStack_d0);
       }
@@ -106,7 +106,7 @@ LAB_003d3010:
       }
                     /* try { // try from 003d2ff4 to 003d3007 has its CatchHandler @ 003d3050 */
       Walaber::FileManager::_existFail(uVar5,param_1,this,&lStack_f0,param_3);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_f0);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_f0)->~SharedPtr<Walaber::Callback>();
       goto LAB_003d3010;
     }
                     /* try { // try from 003d2e9c to 003d2ea7 has its CatchHandler @ 003d30b8 */
@@ -235,7 +235,7 @@ LAB_003d3234:
                     /* try { // try from 003d32b8 to 003d32c3 has its CatchHandler @ 003d34ec */
       (**(code **)(*this + 0x20))(abStack_270,this);
                     /* try { // try from 003d32c4 to 003d32e3 has its CatchHandler @ 003d34d4 */
-      Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(&uStack_258,param_1,uVar4,extraout_x1,auStack_1f0,abStack_270,param_3);
+      new ((void *)(&uStack_258)) Walaber::FileManager::ReadFileCallbackParameters(param_1,uVar4,extraout_x1,auStack_1f0,abStack_270,param_3);
       if ((abStack_270[0] & 1) != 0) {
         operator delete(pvStack_260);
       }
@@ -298,8 +298,8 @@ LAB_003d31c4:
     ppuStack_1d0 = &PTR__basic_fstream_00710720;
     appuStack_110[0] = &PTR__basic_fstream_00710770;
     ppuStack_1c0 = &PTR__basic_fstream_00710748;
-    std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(auStack_1b8);
-    std::__ndk1::ios_base::~ios_base(appuStack_110);
+    ((std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>> *)auStack_1b8)->~basic_filebuf<char, std::__ndk1::char_traits<char>>();
+    ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
     if (iVar9 != 0) {
       if (iVar9 == 2) {
                     /* try { // try from 003d3400 to 003d3403 has its CatchHandler @ 003d3494 */
@@ -311,7 +311,7 @@ LAB_003d31c4:
         }
                     /* try { // try from 003d3420 to 003d3433 has its CatchHandler @ 003d3484 */
         Walaber::FileManager::_readFail(uVar4,param_1,this,&lStack_280,param_3);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_280);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_280)->~SharedPtr<Walaber::Callback>();
       }
       if ((auStack_1f0[0] & 1) != 0) {
         operator delete(puStack_1e0);

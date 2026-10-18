@@ -29,7 +29,7 @@ void std::__ndk1::
         if ((*(byte *)((long)pvVar1 + -0x20) & 1) != 0) {
           operator delete(*(void **)((long)pvVar1 + -0x10));
         }
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(pvVar2);
+        ((Walaber::SharedPtr<Walaber::Texture> *)pvVar2)->~SharedPtr<Walaber::Texture>();
         pvVar1 = pvVar2;
       } while (pvVar3 != pvVar2);
       pvVar2 = (void *)*param_1;

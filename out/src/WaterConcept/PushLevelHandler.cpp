@@ -66,8 +66,8 @@ void WaterConcept::PushLevelHandler::Initialise(void)
   if ((auStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   return;
 }
 

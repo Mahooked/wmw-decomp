@@ -32,7 +32,7 @@ void ndk::SafeQueue<int>::SafeQueue(long param_1)
 void ndk::SafeQueue<int>::~SafeQueue(long param_1)
 
 {
-  ndk::Mutex::~Mutex(param_1 + 0x18);
+  ((ndk::Mutex *)param_1 + 0x18)->~Mutex();
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(param_1);
   return;
 }

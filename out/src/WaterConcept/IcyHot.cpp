@@ -12,7 +12,7 @@
   
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,0,0);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(p0,&uStack_40,&uStack_48,0,0);
   *(undefined8 *)((long)p0 + 0x3d0) = 0;
   *(undefined8 *)((long)p0 + 0x3c8) = 0;
   *(undefined8 *)((long)p0 + 0x3c0) = 0;
@@ -63,8 +63,8 @@
   ulong p1;
   
   *this = &PTR__IcyHot_00711c18;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x8a);
-  std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>>::~__deque_base(this + 0x81);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x8a)->~SharedPtr<Walaber::Callback>();
+  ((std::__ndk1::__deque_base<int, std::__ndk1::allocator<int>> *)this + 0x81)->~__deque_base<int, std::__ndk1::allocator<int>>();
   if ((void *)this[0x7b] != (void *)0x0) {
     operator delete[]((void *)this[0x7b],p1);
   }
@@ -78,7 +78,7 @@
     this[0x76] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -86,7 +86,7 @@
 
 /* ok  address 0x47ed14  size 36 */WaterConcept::IcyHot::~IcyHot(){
   WaterConcept::IcyHot::~IcyHot();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -578,7 +578,7 @@ void WaterConcept::IcyHot::update(float p0)
     uStack_cb = 0;
                     /* try { // try from 0047f578 to 0047f583 has its CatchHandler @ 0047fab8 */
     Walaber::Sprite::playAnimation(auStack_c0,*(undefined8 *)(*(long *)(in_x0 + 400) + 0x28),&fStack_d8);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_c0);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_c0)->~SharedPtr<Walaber::SpriteAnimation>();
     if (((uint)fStack_d8 & 1) != 0) {
       operator delete(pvStack_c8);
     }
@@ -829,7 +829,7 @@ void WaterConcept::IcyHot::_initFinished(long param_1)
     abStack_50[8] = 0x49;
                     /* try { // try from 0047fcfc to 0047fd07 has its CatchHandler @ 0047fd44 */
     Walaber::Sprite::playAnimation(auStack_38,*(undefined8 *)(*(long *)(param_1 + 400) + 0x28),abStack_50);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_38);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_38)->~SharedPtr<Walaber::SpriteAnimation>();
     if ((abStack_50[0] & 1) != 0) {
       operator delete(pvStack_40);
     }

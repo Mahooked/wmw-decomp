@@ -76,7 +76,7 @@ LAB_005d5d28:
   if ((uStack_78 & 1) != 0) {
     operator delete(pvStack_68);
   }
-  std::__ndk1::__shared_count::~__shared_count(p0);
+  ((std::__ndk1::__shared_count *)p0)->~__shared_count();
   _Unwind_Resume(uVar5);
   return;
 }
@@ -94,7 +94,7 @@ void FUN_005d5db0(undefined8 param_1)
   
   uVar1 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005d5dcc to 005d5dd3 has its CatchHandler @ 005d5dec */
-  std::runtime_error::runtime_error(uVar1,param_1);
+  new ((void *)(uVar1)) std::runtime_error(param_1);
   __cxa_throw(uVar1,&std::runtime_error::typeinfo,std::range_error::~range_error);
   return;
 }
@@ -157,7 +157,7 @@ void std::__ndk1::collate_byname<char>::~collate_byname()
   *this = &PTR__collate_byname_007176f0;
                     /* try { // try from 005d5ef8 to 005d5efb has its CatchHandler @ 005d5f0c */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 
@@ -175,7 +175,7 @@ void std::__ndk1::collate_byname<char>::~collate_byname()
   *this = &PTR__collate_byname_007176f0;
                     /* try { // try from 005d5f44 to 005d5f47 has its CatchHandler @ 005d5f60 */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }

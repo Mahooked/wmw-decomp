@@ -31,7 +31,7 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
       std::__ndk1::ios_base::getloc(auStack_50);
                     /* try { // try from 003d5e54 to 003d5e63 has its CatchHandler @ 003d5fa8 */
       lVar4 = std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
-      std::__ndk1::locale::~locale(auStack_50);
+      ((std::__ndk1::locale *)auStack_50)->~locale();
       plVar5 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
       while (plVar5 != (long *)0x0) {
         while( true ) {
@@ -97,10 +97,10 @@ void std::__ndk1::basic_istream<char,std::__ndk1::char_traits<char>>::sentry::se
     }
     if (((param_3 & 1) == 0) &&
        ((*(byte *)((long)param_2 + *(long *)(*param_2 + -0x18) + 9) >> 4 & 1) != 0)) {
-      std::__ndk1::locale::locale(auStack_50,(long)param_2 + *(long *)(*param_2 + -0x18) + 0x30);
+      new ((void *)(auStack_50)) std::__ndk1::locale((long)param_2 + *(long *)(*param_2 + -0x18) + 0x30);
                     /* try { // try from 005a6424 to 005a6433 has its CatchHandler @ 005a6580 */
       lVar4 = std::__ndk1::locale::use_facet(auStack_50,&ctype<char>::id);
-      std::__ndk1::locale::~locale(auStack_50);
+      ((std::__ndk1::locale *)auStack_50)->~locale();
       plVar5 = *(long **)((long)param_2 + *(long *)(*param_2 + -0x18) + 0x28);
       while (plVar5 != (long *)0x0) {
         while( true ) {

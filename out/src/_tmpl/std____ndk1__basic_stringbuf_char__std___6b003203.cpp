@@ -19,7 +19,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
     operator delete((void *)this[10]);
   }
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   return;
 }
 
@@ -41,7 +41,7 @@ void std::__ndk1::basic_stringbuf<char,std::__ndk1::char_traits<char>,std::__ndk
     operator delete((void *)this[10]);
   }
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   operator delete(this);
   return;
 }

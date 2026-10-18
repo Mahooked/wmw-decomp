@@ -14,7 +14,7 @@
 
 /* ok  address 0x2c6378  size 36 */ndk::Mutex::~Mutex(){
   ndk::Mutex::~Mutex();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

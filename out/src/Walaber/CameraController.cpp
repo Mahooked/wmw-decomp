@@ -18,32 +18,32 @@
 /* ok  address 0x3ed330  size 128 */Walaber::CameraController::~CameraController(){
   void *pvVar1;
   
-  if (*(void **)(param_1 + 0x90) != (void *)0x0) {
-    operator delete(*(void **)(param_1 + 0x90));
+  if (*(void **)(this + 0x90) != (void *)0x0) {
+    operator delete(*(void **)(this + 0x90));
   }
-  pvVar1 = *(void **)(param_1 + 0x78);
+  pvVar1 = *(void **)(this + 0x78);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x80) = pvVar1;
+    *(void **)(this + 0x80) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x60);
+  pvVar1 = *(void **)(this + 0x60);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x68) = pvVar1;
+    *(void **)(this + 0x68) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x48);
+  pvVar1 = *(void **)(this + 0x48);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x50) = pvVar1;
+    *(void **)(this + 0x50) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x30);
+  pvVar1 = *(void **)(this + 0x30);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x38) = pvVar1;
+    *(void **)(this + 0x38) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x18);
+  pvVar1 = *(void **)(this + 0x18);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x20) = pvVar1;
+    *(void **)(this + 0x20) = pvVar1;
     operator delete(pvVar1);
     return;
   }

@@ -881,7 +881,7 @@ LAB_00402a20:
                     /* try { // try from 00402aac to 00402ac7 has its CatchHandler @ 00402cc0 */
       plVar3 = (long *)std::__ndk1::locale::use_facet(&pbStack_1f0,&std::__ndk1::ctype<char>::id);
       uVar2 = (**(code **)(*plVar3 + 0x38))(plVar3,10);
-      std::__ndk1::locale::~locale(&pbStack_1f0);
+      ((std::__ndk1::locale *)&pbStack_1f0)->~locale();
                     /* try { // try from 00402ad4 to 00402ae3 has its CatchHandler @ 00402cb8 */
       std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>& std::__ndk1::getline<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(&ppuStack_1c0,auStack_1d8,uVar2);
       if (!bVar7) {
@@ -926,7 +926,7 @@ LAB_00402a20:
             operator delete(pvStack_1f8);
           }
         }
-        std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_1f0);
+        ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_1f0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       }
       if ((auStack_1d8[0] & 1) != 0) {
         operator delete(pvStack_1c8);
@@ -937,8 +937,8 @@ LAB_00402a20:
 LAB_00402bf4:
   ppuStack_1c0 = &PTR__basic_ifstream_00711270;
   appuStack_108[0] = &PTR__basic_ifstream_00711298;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(auStack_1b0);
-  std::__ndk1::ios_base::~ios_base(appuStack_108);
+  ((std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>> *)auStack_1b0)->~basic_filebuf<char, std::__ndk1::char_traits<char>>();
+  ((std::__ndk1::ios_base *)appuStack_108)->~ios_base();
   return;
 }
 

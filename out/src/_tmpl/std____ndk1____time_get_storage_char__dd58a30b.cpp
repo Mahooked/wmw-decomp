@@ -37,7 +37,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(char *p0)
     ppuVar2 = appuStack_60[0];
   }
   appuStack_60[0] = ppuVar2;
-  std::__ndk1::__shared_count::~__shared_count(appuStack_60);
+  ((std::__ndk1::__shared_count *)appuStack_60)->~__shared_count();
   return;
 }
 
@@ -95,7 +95,7 @@ void std::__ndk1::__time_get_storage<char>::__time_get_storage(long *param_1,byt
       ppuVar2 = appuStack_60[0];
     }
     appuStack_60[0] = ppuVar2;
-    std::__ndk1::__shared_count::~__shared_count(appuStack_60);
+    ((std::__ndk1::__shared_count *)appuStack_60)->~__shared_count();
     if (*(long *)(lVar1 + 0x28) == lStack_38) {
       return;
     }

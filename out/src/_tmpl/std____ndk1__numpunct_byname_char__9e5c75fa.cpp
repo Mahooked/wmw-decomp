@@ -17,7 +17,7 @@ void std::__ndk1::numpunct_byname<char>::~numpunct_byname()
   if ((*(byte *)(this + 3) & 1) != 0) {
     operator delete((void *)this[5]);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 
@@ -210,7 +210,7 @@ void std::__ndk1::numpunct_byname<char>::~numpunct_byname()
   if ((*(byte *)(this + 3) & 1) != 0) {
     operator delete((void *)this[5]);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }

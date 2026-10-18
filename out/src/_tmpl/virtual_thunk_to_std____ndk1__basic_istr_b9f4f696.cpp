@@ -14,7 +14,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
                (long *param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base((long)param_1 + *(long *)(*param_1 + -0x18) + 0x10);
+  ((std::__ndk1::ios_base *)(long)param_1 + *(long *)(*param_1 + -0x18) + 0x10)->~ios_base();
   return;
 }
 
@@ -34,7 +34,7 @@ void std::__ndk1::basic_istream<wchar_t,std::__ndk1::char_traits<wchar_t>>::~bas
   void *p0;
   
   p0 = (void *)((long)param_1 + *(long *)(*param_1 + -0x18));
-  std::__ndk1::ios_base::~ios_base((long)p0 + 0x10);
+  ((std::__ndk1::ios_base *)(long)p0 + 0x10)->~ios_base();
   operator delete(p0);
   return;
 }

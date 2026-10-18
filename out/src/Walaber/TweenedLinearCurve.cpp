@@ -638,25 +638,25 @@ void Walaber::TweenedLinearCurve::_evaluateCurve(float p0,float p1)
   ulong extraout_x1;
   ulong extraout_x1_00;
   
-  *param_1 = &PTR__TweenedLinearCurve_00710c68;
-  if ((void *)param_1[0xb] != (void *)0x0) {
-    operator delete[]((void *)param_1[0xb],param_2);
+  *this = &PTR__TweenedLinearCurve_00710c68;
+  if ((void *)this[0xb] != (void *)0x0) {
+    operator delete[]((void *)this[0xb],param_2);
     param_2 = extraout_x1;
   }
-  param_1[9] = 0;
-  param_1[10] = 0;
-  if ((void *)param_1[8] != (void *)0x0) {
-    operator delete[]((void *)param_1[8],param_2);
+  this[9] = 0;
+  this[10] = 0;
+  if ((void *)this[8] != (void *)0x0) {
+    operator delete[]((void *)this[8],param_2);
     param_2 = extraout_x1_00;
   }
-  param_1[6] = 0;
-  param_1[7] = 0;
-  *param_1 = &PTR__Curve_00710ab8;
-  if ((void *)param_1[3] != (void *)0x0) {
-    operator delete[]((void *)param_1[3],param_2);
+  this[6] = 0;
+  this[7] = 0;
+  *this = &PTR__Curve_00710ab8;
+  if ((void *)this[3] != (void *)0x0) {
+    operator delete[]((void *)this[3],param_2);
   }
-  param_1[1] = 0;
-  param_1[2] = 0;
+  this[1] = 0;
+  this[2] = 0;
   return;
 }
 
@@ -664,7 +664,7 @@ void Walaber::TweenedLinearCurve::_evaluateCurve(float p0,float p1)
 
 /* ok  address 0x3e6de8  size 36 */Walaber::TweenedLinearCurve::~TweenedLinearCurve(){
   Walaber::TweenedLinearCurve::~TweenedLinearCurve();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

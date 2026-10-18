@@ -28,7 +28,7 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
     lVar1 = param_2[1];
     do {
       lVar2 = lVar2 + -0x88;
-      Walaber::Achievement::Achievement(lVar1 + -0x88,lVar2);
+      new ((void *)(lVar1 + -0x88)) Walaber::Achievement(lVar2);
       lVar1 = param_2[1] + -0x88;
       param_2[1] = lVar1;
     } while (lVar3 != lVar2);
@@ -76,7 +76,7 @@ void std::__ndk1::vector<Walaber::Achievement,std::__ndk1::allocator<Walaber::Ac
       lVar2 = param_1[1];
       do {
                     /* try { // try from 004a3e3c to 004a3e43 has its CatchHandler @ 004a3e70 */
-        Walaber::Achievement::Achievement(lVar2,lVar3);
+        new ((void *)(lVar2)) Walaber::Achievement(lVar3);
         lVar3 = lVar3 + 0x88;
         lVar2 = param_1[1] + 0x88;
         param_1[1] = lVar2;

@@ -5,7 +5,7 @@
 
 /* ok  address 0x499838  size 36 */non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver();
-  WaterConcept::Notification::~Notification(param_1 + -0x1e8);
+  ((WaterConcept::Notification *)this + -0x1e8)->~Notification();
   return;
 }
 
@@ -13,8 +13,8 @@
 
 /* ok  address 0x49988c  size 44 */non_virtual_thunk_to_WaterConcept::HDAssetsNotification::~HDAssetsNotification(){
   Walaber::MessageReceiver::~MessageReceiver();
-  WaterConcept::Notification::~Notification((void *)(param_1 + -0x1e8));
-  operator delete((void *)(param_1 + -0x1e8));
+  ((WaterConcept::Notification *)(void *)(this + -0x1e8))->~Notification();
+  operator delete((void *)(this + -0x1e8));
   return;
 }
 

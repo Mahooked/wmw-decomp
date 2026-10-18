@@ -251,7 +251,7 @@ long Walaber::StringHelper::split(std::__ndk1::basic_string<char, std::__ndk1::c
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -291,8 +291,8 @@ long Walaber::StringHelper::split(std::__ndk1::basic_string<char, std::__ndk1::c
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   if (*(long *)(lVar2 + 0x28) == lStack_70) {
     return param_3;
   }
@@ -323,7 +323,7 @@ void Walaber::StringHelper::split(undefined8 param_1,undefined8 param_2,undefine
                     /* try { // try from 003f8584 to 003f8597 has its CatchHandler @ 003f85c4 */
   uVar2 = Walaber::StringHelper::split(param_2,param_3,&uStack_40);
   std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::vector(param_1,uVar2);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_40);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_40)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 
@@ -1024,7 +1024,7 @@ LAB_003f8fdc:
       uVar6 = (lStack_78 - lStack_80 >> 3) * -0x5555555555555555;
     } while (uVar10 <= uVar6 && uVar6 - uVar10 != 0);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_80)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 

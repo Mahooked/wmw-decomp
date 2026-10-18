@@ -75,7 +75,7 @@ LAB_005d7858:
   if ((uStack_78 & 1) != 0) {
     operator delete(pvStack_68);
   }
-  std::__ndk1::__shared_count::~__shared_count(p0);
+  ((std::__ndk1::__shared_count *)p0)->~__shared_count();
   _Unwind_Resume(uVar5);
   return;
 }
@@ -137,7 +137,7 @@ void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
   *this = &PTR__ctype_byname_00717840;
                     /* try { // try from 005d79d8 to 005d79db has its CatchHandler @ 005d79f4 */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }
@@ -599,7 +599,7 @@ void std::__ndk1::ctype_byname<wchar_t>::~ctype_byname()
   *this = &PTR__ctype_byname_00717840;
                     /* try { // try from 005e0228 to 005e022b has its CatchHandler @ 005e023c */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 

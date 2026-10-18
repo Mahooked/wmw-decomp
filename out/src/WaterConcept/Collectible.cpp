@@ -33,7 +33,7 @@ void WaterConcept::Collectible::getSpriteWorldSize(undefined8 *param_1,long para
   
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x2;
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0.f_0x0,&uStack_40,&uStack_48,0,1);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(p0.f_0x0,&uStack_40,&uStack_48,0,1);
   *(undefined8 *)((long)p0 + 0x3a8) = 0;
   *(undefined ***)p0 = &PTR__Collectible_007116c8;
   *(undefined8 *)((long)p0 + 0x3b0) = 0x3f8000003f800000;
@@ -60,8 +60,8 @@ void WaterConcept::Collectible::getSpriteWorldSize(undefined8 *param_1,long para
 
 /* ok  address 0x478608  size 56 */WaterConcept::Collectible::~Collectible(){
   *this = &PTR__Collectible_007116c8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -69,8 +69,8 @@ void WaterConcept::Collectible::getSpriteWorldSize(undefined8 *param_1,long para
 
 /* ok  address 0x478640  size 64 */WaterConcept::Collectible::~Collectible(){
   *this = &PTR__Collectible_007116c8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x79);
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x79)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   operator delete(this);
   return;
 }
@@ -564,7 +564,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
     uStack_d8 = 0;
     pvStack_d0 = (void *)0x0;
                     /* try { // try from 00478cd8 to 00478cf3 has its CatchHandler @ 00478e00 */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,abStack_88,&bStack_c0,&bStack_a0,&uStack_e0);
+    new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,abStack_88,&bStack_c0,&bStack_a0,&uStack_e0);
     if ((uStack_e0 & 1) != 0) {
       operator delete(pvStack_d0);
     }
@@ -577,7 +577,7 @@ void WaterConcept::Collectible::setProperties(Walaber__PropertyList *p0)
       *(undefined4 *)((long)&p0[0x29].f_0x8 + 4) = 0x3f000000;
       *(undefined1 *)((long)&p0[0x29].f_0x10 + 1) = 1;
     }
-    Walaber::DatabaseIterator::~DatabaseIterator(auStack_f8);
+    ((Walaber::DatabaseIterator *)auStack_f8)->~DatabaseIterator();
     if ((bStack_c0 & 1) != 0) {
       operator delete(pvStack_b0);
     }

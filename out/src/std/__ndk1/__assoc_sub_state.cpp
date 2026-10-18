@@ -44,7 +44,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
   if ((*(byte *)(param_1 + 0x70) & 1) == 0) {
     auStack_68[0] = 0;
     lVar4 = *(long *)(param_1 + 0x10);
-    std::exception_ptr::~exception_ptr(auStack_68);
+    ((std::exception_ptr *)auStack_68)->~exception_ptr();
     if (lVar4 == 0) {
       *(uint *)(param_1 + 0x70) = *(uint *)(param_1 + 0x70) | 5;
       std::__ndk1::condition_variable::notify_all(param_1 + 0x40);
@@ -54,7 +54,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
   }
   puVar3 = (undefined8 *)__cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
@@ -64,7 +64,7 @@ void std::__ndk1::__assoc_sub_state::set_value(long param_1)
                     /* try { // try from 005f08c8 to 005f08d3 has its CatchHandler @ 005f0944 */
   std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f08d4 to 005f08df has its CatchHandler @ 005f092c */
-  std::logic_error::logic_error(puVar3,auStack_68);
+  new ((void *)(puVar3)) std::logic_error(auStack_68);
   if ((auStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -101,7 +101,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
   if ((*(byte *)(param_1 + 0x70) & 1) == 0) {
     auStack_68[0] = 0;
     lVar6 = *(long *)(param_1 + 0x10);
-    std::exception_ptr::~exception_ptr(auStack_68);
+    ((std::exception_ptr *)auStack_68)->~exception_ptr();
     if (lVar6 == 0) {
       *(uint *)(param_1 + 0x70) = *(uint *)(param_1 + 0x70) | 1;
                     /* try { // try from 005f09b8 to 005f09cb has its CatchHandler @ 005f0b00 */
@@ -114,7 +114,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
   }
   puVar5 = (undefined8 *)__cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
@@ -124,7 +124,7 @@ void std::__ndk1::__assoc_sub_state::set_value_at_thread_exit(long param_1)
                     /* try { // try from 005f0a7c to 005f0a87 has its CatchHandler @ 005f0af0 */
   std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f0a88 to 005f0a93 has its CatchHandler @ 005f0ad8 */
-  std::logic_error::logic_error(puVar5,auStack_68);
+  new ((void *)(puVar5)) std::logic_error(auStack_68);
   if ((auStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -159,7 +159,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
   if ((*(byte *)(p0.f_0x0 + 0x70) & 1) == 0) {
     auStack_78[0] = 0;
     lVar4 = *(long *)(p0.f_0x0 + 0x10);
-    std::exception_ptr::~exception_ptr(auStack_78);
+    ((std::exception_ptr *)auStack_78)->~exception_ptr();
     if (lVar4 == 0) {
       std::exception_ptr::operator=(p0.f_0x0 + 0x10);
       *(uint *)(p0.f_0x0 + 0x70) = *(uint *)(p0.f_0x0 + 0x70) | 4;
@@ -170,7 +170,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
   }
   puVar3 = (undefined8 *)__cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
@@ -180,7 +180,7 @@ void std::__ndk1::__assoc_sub_state::set_exception(std__exception_ptr p0)
                     /* try { // try from 005f0c3c to 005f0c47 has its CatchHandler @ 005f0cb8 */
   std::__ndk1::error_code::message(auStack_78,&uStack_60);
                     /* try { // try from 005f0c48 to 005f0c53 has its CatchHandler @ 005f0ca0 */
-  std::logic_error::logic_error(puVar3,auStack_78);
+  new ((void *)(puVar3)) std::logic_error(auStack_78);
   if ((auStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -217,7 +217,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
   if ((*(byte *)(p0.f_0x0 + 0x70) & 1) == 0) {
     auStack_78[0] = 0;
     lVar6 = *(long *)(p0.f_0x0 + 0x10);
-    std::exception_ptr::~exception_ptr(auStack_78);
+    ((std::exception_ptr *)auStack_78)->~exception_ptr();
     if (lVar6 == 0) {
       std::exception_ptr::operator=(p0.f_0x0 + 0x10);
                     /* try { // try from 005f0d34 to 005f0d47 has its CatchHandler @ 005f0e80 */
@@ -230,7 +230,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
   }
   puVar5 = (undefined8 *)__cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
@@ -240,7 +240,7 @@ void std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(std__exception
                     /* try { // try from 005f0dfc to 005f0e07 has its CatchHandler @ 005f0e70 */
   std::__ndk1::error_code::message(auStack_78,&uStack_60);
                     /* try { // try from 005f0e08 to 005f0e13 has its CatchHandler @ 005f0e58 */
-  std::logic_error::logic_error(puVar5,auStack_78);
+  new ((void *)(puVar5)) std::logic_error(auStack_78);
   if ((auStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -314,7 +314,7 @@ void std::__ndk1::__assoc_sub_state::copy(long *param_1)
   }
   uStack_50 = 0;
   lVar4 = param_1[2];
-  std::exception_ptr::~exception_ptr(&uStack_50);
+  ((std::exception_ptr *)&uStack_50)->~exception_ptr();
   if (lVar4 == 0) {
     if (cStack_40 != '\0') {
       std::__ndk1::mutex::unlock(plStack_48);
@@ -324,7 +324,7 @@ void std::__ndk1::__assoc_sub_state::copy(long *param_1)
     }
   }
   else {
-    std::exception_ptr::exception_ptr(auStack_58,param_1 + 2);
+    new ((void *)(auStack_58)) std::exception_ptr(param_1 + 2);
                     /* try { // try from 005f0fb0 to 005f0fb7 has its CatchHandler @ 005f0fbc */
     std::rethrow_exception(auStack_58);
   }
@@ -424,13 +424,13 @@ void std::__ndk1::__assoc_sub_state::__execute(void)
   
   uVar2 = __cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a5f10), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
   }
                     /* try { // try from 005f11d8 to 005f11eb has its CatchHandler @ 005f1204 */
-  std::__ndk1::future_error::future_error(uVar2,3,&DAT_007a5f08);
+  new ((void *)(uVar2)) std::__ndk1::future_error(3,&DAT_007a5f08);
   __cxa_throw(uVar2,&future_error::typeinfo,future_error::~future_error);
   return;
 }
@@ -439,10 +439,10 @@ void std::__ndk1::__assoc_sub_state::__execute(void)
 
 /* ok  address 0x5f1ba8  size 76 */std::__ndk1::__assoc_sub_state::~__assoc_sub_state(){
   *this = &PTR____assoc_sub_state_007193b8;
-  std::__ndk1::condition_variable::~condition_variable(this + 8);
-  std::__ndk1::mutex::~mutex(this + 3);
-  std::exception_ptr::~exception_ptr(this + 2);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::condition_variable *)this + 8)->~condition_variable();
+  ((std::__ndk1::mutex *)this + 3)->~mutex();
+  ((std::exception_ptr *)this + 2)->~exception_ptr();
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 
@@ -450,10 +450,10 @@ void std::__ndk1::__assoc_sub_state::__execute(void)
 
 /* ok  address 0x5f1bf4  size 84 */std::__ndk1::__assoc_sub_state::~__assoc_sub_state(){
   *this = &PTR____assoc_sub_state_007193b8;
-  std::__ndk1::condition_variable::~condition_variable(this + 8);
-  std::__ndk1::mutex::~mutex(this + 3);
-  std::exception_ptr::~exception_ptr(this + 2);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::condition_variable *)this + 8)->~condition_variable();
+  ((std::__ndk1::mutex *)this + 3)->~mutex();
+  ((std::exception_ptr *)this + 2)->~exception_ptr();
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }

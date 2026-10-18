@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d3860  size 412 */Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
+/* ok  address 0x3d3860  size 412 */Walaber::FileManager::FH_ZipFileSystem::FH_ZipFileSystem(undefined8 param_2,undefined8 param_3){
   undefined8 uVar2;
   byte *pbVar3;
   byte *pbVar4;
@@ -11,33 +11,33 @@
   undefined8 uStack_68;
   undefined8 uStack_60;
   
-  *param_1 = &PTR__FH_ZipFileSystem_00710658;
-  param_1[1] = 0;
+  *this = &PTR__FH_ZipFileSystem_00710658;
+  this[1] = 0;
                     /* try { // try from 003d38a4 to 003d38af has its CatchHandler @ 003d39cc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
-  param_1[5] = 0;
-  param_1[6] = 0;
-  param_1[7] = 0;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_3);
+  this[5] = 0;
+  this[6] = 0;
+  this[7] = 0;
                     /* try { // try from 003d38bc to 003d38c3 has its CatchHandler @ 003d39d4 */
   uVar2 = operator new(0xa8);
                     /* try { // try from 003d38c8 to 003d38cf has its CatchHandler @ 003d39bc */
-  Walaber::ZipArchiveReader::ZipArchiveReader(uVar2,param_2);
-  param_1[1] = uVar2;
+  new ((void *)(uVar2)) Walaber::ZipArchiveReader(param_2);
+  this[1] = uVar2;
                     /* try { // try from 003d38d4 to 003d38df has its CatchHandler @ 003d39b8 */
   Walaber::ZipArchiveReader::getFilenames(&uStack_70,uVar2);
-  std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(param_1 + 5);
-  param_1[6] = uStack_68;
-  param_1[5] = uStack_70;
-  param_1[7] = uStack_60;
+  std::__ndk1::vector<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::__vdeallocate(this + 5);
+  this[6] = uStack_68;
+  this[5] = uStack_70;
+  this[7] = uStack_60;
   uStack_70 = 0;
   uStack_68 = 0;
   uStack_60 = 0;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_70);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_70)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
                     /* try { // try from 003d3920 to 003d3937 has its CatchHandler @ 003d39d4 */
   Walaber::Logger::printf("Walaber IO",1,"List of APK (%d):",
-               ((long)(param_1[6] - param_1[5]) >> 3) * -0x5555555555555555);
-  pbVar4 = (byte *)param_1[5];
-  if (pbVar4 != (byte *)param_1[6]) {
+               ((long)(this[6] - this[5]) >> 3) * -0x5555555555555555);
+  pbVar4 = (byte *)this[5];
+  if (pbVar4 != (byte *)this[6]) {
     do {
       if ((*pbVar4 & 1) == 0) {
         pbVar3 = pbVar4 + 1;
@@ -48,7 +48,7 @@
                     /* try { // try from 003d3968 to 003d3977 has its CatchHandler @ 003d39d8 */
       Walaber::Logger::printf("Walaber IO",1,"%s",pbVar3);
       pbVar4 = pbVar4 + 0x18;
-    } while (pbVar4 != (byte *)param_1[6]);
+    } while (pbVar4 != (byte *)this[6]);
   }
   return;
 }
@@ -56,16 +56,16 @@
 
 
 /* ok  address 0x3d39fc  size 104 */Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(){
-  void *p0;
+  void *this;
   
-  p0 = (void *)this[1];
+  this = (void *)this[1];
   *this = &PTR__FH_ZipFileSystem_00710658;
-  if (p0 != (void *)0x0) {
-    Walaber::ZipArchiveReader::~ZipArchiveReader(p0);
-    operator delete(p0);
+  if (this != (void *)0x0) {
+    ((Walaber::ZipArchiveReader *)this)->~ZipArchiveReader();
+    operator delete(this);
   }
   this[1] = 0;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 5);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 5)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((*(byte *)(this + 2) & 1) == 0) {
     return;
   }
@@ -77,7 +77,7 @@
 
 /* ok  address 0x3d3a64  size 36 */Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem(){
   Walaber::FileManager::FH_ZipFileSystem::~FH_ZipFileSystem();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -250,7 +250,7 @@ LAB_003d3cdc:
   Walaber::FileManager::_existFail(uVar7,param_1,this,&lStack_c8,param_3);
   plVar8 = &lStack_c8;
 LAB_003d3d58:
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(plVar8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)plVar8)->~SharedPtr<Walaber::Callback>();
   if ((uStack_80 & 1) != 0) {
     operator delete(puStack_70);
   }
@@ -287,7 +287,7 @@ void Walaber::FileManager::FH_ZipFileSystem::fileExistsSuceeded
   unsigned long std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::FileManager::FileRecord>>>::__erase_unique<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>(lVar2 + 0x18,param_2);
   (**(code **)(*param_1 + 0x20))(abStack_b8,param_1);
                     /* try { // try from 003d3e44 to 003d3e5f has its CatchHandler @ 003d3f14 */
-  Walaber::FileManager::FileExistsCallbackParameters::FileExistsCallbackParameters(abStack_a0,param_2,1,param_3,abStack_b8,param_5);
+  new ((void *)(abStack_a0)) Walaber::FileManager::FileExistsCallbackParameters(param_2,1,param_3,abStack_b8,param_5);
   if ((abStack_b8[0] & 1) != 0) {
     operator delete(pvStack_a8);
   }
@@ -474,7 +474,7 @@ LAB_003d4184:
   Walaber::FileManager::_readFail(uVar7,param_1,this,&lStack_c8,param_3);
   plVar8 = &lStack_c8;
 LAB_003d4200:
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(plVar8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)plVar8)->~SharedPtr<Walaber::Callback>();
   if ((uStack_80 & 1) != 0) {
     operator delete(puStack_70);
   }
@@ -518,7 +518,7 @@ void Walaber::FileManager::FH_ZipFileSystem::readFileSucceeded
   Walaber::FileManager::_readSuccess(uVar4,param_2);
   (**(code **)(*param_1 + 0x20))(abStack_d8,param_1);
                     /* try { // try from 003d431c to 003d433b has its CatchHandler @ 003d43f4 */
-  Walaber::FileManager::ReadFileCallbackParameters::ReadFileCallbackParameters(auStack_c0,param_2,uVar3,uVar2,param_3,abStack_d8,param_5);
+  new ((void *)(auStack_c0)) Walaber::FileManager::ReadFileCallbackParameters(param_2,uVar3,uVar2,param_3,abStack_d8,param_5);
   if ((abStack_d8[0] & 1) != 0) {
     operator delete(pvStack_c8);
   }

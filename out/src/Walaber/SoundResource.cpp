@@ -17,11 +17,11 @@
   undefined1 auStack_68 [64];
   
                     /* try { // try from 0034c860 to 0034c877 has its CatchHandler @ 0034c8a0 */
-  FMOD::Sound::getName(*param_1,auStack_68,0x40);
-  if (*param_1 != 0) {
+  FMOD::Sound::getName(*this,auStack_68,0x40);
+  if (*this != 0) {
     FMOD::Sound::release();
   }
-  *param_1 = 0;
+  *this = 0;
   return;
 }
 

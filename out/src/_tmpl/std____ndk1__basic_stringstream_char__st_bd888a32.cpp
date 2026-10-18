@@ -23,8 +23,8 @@ void std::__ndk1::
     operator delete((void *)this[0xd]);
   }
   this[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 4);
-  std::__ndk1::ios_base::~ios_base(this + 0x10);
+  ((std::__ndk1::locale *)this + 4)->~locale();
+  ((std::__ndk1::ios_base *)this + 0x10)->~ios_base();
   return;
 }
 
@@ -50,8 +50,8 @@ void std::__ndk1::
     operator delete((void *)this[0xd]);
   }
   this[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 4);
-  std::__ndk1::ios_base::~ios_base(this + 0x10);
+  ((std::__ndk1::locale *)this + 4)->~locale();
+  ((std::__ndk1::ios_base *)this + 0x10)->~ios_base();
   operator delete(this);
   return;
 }

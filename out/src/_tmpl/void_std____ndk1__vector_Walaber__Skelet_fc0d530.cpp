@@ -85,7 +85,7 @@ void std::__ndk1::
   p0[2] = pWStack_48;
   pWStack_58 = pWStack_60;
   pWStack_48 = pWVar8;
-  std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&>::~__split_buffer(&pWStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&> *)&pWStack_60)->~__split_buffer<Walaber::SkeletonActor::AnimationGroupDataAux, std::__ndk1::allocator<Walaber::SkeletonActor::AnimationGroupDataAux>&>();
   return;
 }
 

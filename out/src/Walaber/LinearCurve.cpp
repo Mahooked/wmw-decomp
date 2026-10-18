@@ -215,11 +215,11 @@ undefined1  [16] Walaber::LinearCurve::_evaluateCurve(float p0,float p1)
 
 
 /* ok  address 0x3e6698  size 60 */Walaber::LinearCurve::~LinearCurve(){
-  *param_1 = &PTR__Curve_00710ab8;
-  if ((void *)param_1[3] != (void *)0x0) {
-    operator delete[]((void *)param_1[3],param_2);
+  *this = &PTR__Curve_00710ab8;
+  if ((void *)this[3] != (void *)0x0) {
+    operator delete[]((void *)this[3],param_2);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

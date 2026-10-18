@@ -53,7 +53,7 @@ void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
   if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
     operator delete[]((void *)param_1[2],param_2);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
+  ((std::__ndk1::__shared_count *)param_1)->~__shared_count();
   return;
 }
 
@@ -72,7 +72,7 @@ void std::__ndk1::ctype<char>::~ctype(undefined8 *param_1,ulong param_2)
   if (((void *)param_1[2] != (void *)0x0) && (*(char *)(param_1 + 3) != '\0')) {
     operator delete[]((void *)param_1[2],param_2);
   }
-  std::__ndk1::__shared_count::~__shared_count(param_1);
+  ((std::__ndk1::__shared_count *)param_1)->~__shared_count();
   operator delete(param_1);
   return;
 }

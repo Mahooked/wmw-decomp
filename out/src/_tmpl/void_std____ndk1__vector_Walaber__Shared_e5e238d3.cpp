@@ -54,7 +54,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 0034a1e4 to 0034a1ef has its CatchHandler @ 0034a228 */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>();
   return;
 }
 
@@ -111,7 +111,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 0034a590 to 0034a59b has its CatchHandler @ 0034a5d4 */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>>&>();
   return;
 }
 

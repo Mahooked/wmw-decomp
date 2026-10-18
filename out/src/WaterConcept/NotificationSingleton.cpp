@@ -12,7 +12,7 @@
   char *pcStack_50;
   
   *this = &PTR_handleEvent_00712858;
-  Walaber::MessageReceiver::MessageReceiver(this + 1,0x10);
+  new ((void *)(this + 1)) Walaber::MessageReceiver(0x10);
   this[7] = 0;
   this[8] = 0;
   this[5] = 0;
@@ -32,7 +32,7 @@
   this[10] = this + 0xb;
   *(undefined8 *)((long)this + 0x8c) = 0;
                     /* try { // try from 0049d99c to 0049d9a3 has its CatchHandler @ 0049dae4 */
-  Walaber::SpriteBatch::SpriteBatch(this + 0x13);
+  new ((void *)(this + 0x13)) Walaber::SpriteBatch();
   *(undefined1 *)((long)this + 0x13c) = 0;
   this[0x20] = 0;
   this[0x21] = 0;
@@ -96,9 +96,9 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
                     /* try { // try from 0049db58 to 0049db6f has its CatchHandler @ 0049dbbc */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,param_2,&uStack_58,0,0);
   Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0x100,auStack_48);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_58);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_58)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_68)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
@@ -143,14 +143,14 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
   this[0xb] = 0;
   this[0xc] = 0;
   this[10] = this + 0xb;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::SpriteBatch::~SpriteBatch(this + 0x13);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SpriteBatch *)this + 0x13)->~SpriteBatch();
   if ((*(byte *)(this + 0xe) & 1) != 0) {
     operator delete((void *)this[0x10]);
   }
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::Notification*>>>::destroy(plVar4,this[0xb]);
-  std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>::~__deque_base(this + 3);
-  Walaber::MessageReceiver::~MessageReceiver(this + 1);
+  ((std::__ndk1::__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>> *)this + 3)->~__deque_base<WaterConcept::NotificationSingleton::NotificationData, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData>>();
+  ((Walaber::MessageReceiver *)this + 1)->~MessageReceiver();
   return;
 }
 
@@ -158,7 +158,7 @@ void WaterConcept::NotificationSingleton::setBusyTexture(long param_1,undefined8
 
 /* ok  address 0x49dcf4  size 36 */WaterConcept::NotificationSingleton::~NotificationSingleton(){
   WaterConcept::NotificationSingleton::~NotificationSingleton();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -419,13 +419,13 @@ void WaterConcept::NotificationSingleton::update(void *p0, float * in_x1)
       uStack_a9 = 0;
       uStack_a8 = 0x8000000010;
       uStack_a1 = 0;
-      Walaber::PropertyList::PropertyList(auStack_a0);
+      new ((void *)(auStack_a0)) Walaber::PropertyList();
                     /* try { // try from 0049e2b0 to 0049e2bb has its CatchHandler @ 0049e7bc */
       uVar7 = Walaber::BroadcastManager::getInstancePtr();
       Walaber::BroadcastManager::messageTx(uVar7,&uStack_b0);
       uStack_b0 = 0x70cdc8;
       uStack_a9 = 0;
-      Walaber::PropertyList::~PropertyList(auStack_a0);
+      ((Walaber::PropertyList *)auStack_a0)->~PropertyList();
     }
     if (*(long *)((long)p0 + 0x68) != 0) goto LAB_0049e67c;
   }
@@ -578,13 +578,13 @@ void WaterConcept::NotificationSingleton::update(void *p0, float * in_x1)
     uStack_a9 = 0;
     uStack_a8 = 0x7f00000010;
     uStack_a1 = 0;
-    Walaber::PropertyList::PropertyList(auStack_a0);
+    new ((void *)(auStack_a0)) Walaber::PropertyList();
                     /* try { // try from 0049e660 to 0049e66b has its CatchHandler @ 0049e7c0 */
     uVar7 = Walaber::BroadcastManager::getInstancePtr();
     Walaber::BroadcastManager::messageTx(uVar7,&uStack_b0);
     uStack_b0 = 0x70cdc8;
     uStack_a9 = 0;
-    Walaber::PropertyList::~PropertyList(auStack_a0);
+    ((Walaber::PropertyList *)auStack_a0)->~PropertyList();
   }
 LAB_0049e67c:
   fVar19 = fVar24;
@@ -735,7 +735,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
     uStack_d8 = 0x61;
     uStack_d5 = 0;
                     /* try { // try from 0049e90c to 0049e923 has its CatchHandler @ 0049f0dc */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_108,0,abStack_a8,&bStack_e0,&bStack_c0);
+    new ((void *)(auStack_108)) Walaber::DatabaseIterator(0,abStack_a8,&bStack_e0,&bStack_c0);
     if ((bStack_e0 & 1) != 0) {
       operator delete(pvStack_d0);
     }
@@ -875,7 +875,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
           uStack_d8 = 0x61;
           uStack_d5 = 0;
                     /* try { // try from 0049ec54 to 0049ec6b has its CatchHandler @ 0049ef50 */
-          Walaber::DatabaseIterator::DatabaseIterator(&uStack_100,0,abStack_a8,&bStack_e0,&bStack_c0);
+          new ((void *)(&uStack_100)) Walaber::DatabaseIterator(0,abStack_a8,&bStack_e0,&bStack_c0);
           if ((bStack_e0 & 1) != 0) {
             operator delete(pvStack_d0);
           }
@@ -887,7 +887,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
                (iVar6 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance),
                iVar6 != 0)) {
                     /* try { // try from 0049eed4 to 0049eedf has its CatchHandler @ 0049ef10 */
-              Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+              new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
               __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                               &Walaber::AchievementManager::getInstancePtr()::instance,
                               &PTR_LOOP_00728000);
@@ -917,7 +917,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
               operator delete(pvStack_128);
             }
           }
-          Walaber::DatabaseIterator::~DatabaseIterator(&uStack_100);
+          ((Walaber::DatabaseIterator *)&uStack_100)->~DatabaseIterator();
         }
         else {
                     /* try { // try from 0049ead4 to 0049eaeb has its CatchHandler @ 0049f020 */
@@ -1035,7 +1035,7 @@ void WaterConcept::NotificationSingleton::_handle10DaysAchievement(void)
         DAT_0075e028 = uVar9 * 0x15180;
       }
     }
-    Walaber::DatabaseIterator::~DatabaseIterator(auStack_108);
+    ((Walaber::DatabaseIterator *)auStack_108)->~DatabaseIterator();
     if ((bStack_c0 & 1) != 0) {
       operator delete(puStack_b0);
     }
@@ -1103,7 +1103,7 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
                     /* try { // try from 0049f238 to 0049f253 has its CatchHandler @ 0049f808 */
     Walaber::SpriteBatch::drawQuad(*(undefined4 *)((long)p0 + 0x130),lVar5,99,&lStack_48,(long)p0 + 0x120,
                     (long)p0 + 0x128,&Walaber::Color::White,0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_48);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_48)->~SharedPtr<Walaber::Texture>();
   }
   Walaber::SpriteBatch::flush(lVar5);
   if (*(char *)((long)p0 + 0x94) == '\0') goto LAB_0049f6b8;
@@ -1368,7 +1368,7 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
   if (uVar1 < 0x13) {
     if ((1 << (ulong)(uVar1 & 0x1f) & 0x5003cU) == 0) {
       if (uVar1 != 7) goto LAB_0049f6b4;
-      Walaber::PropertyList::PropertyList(auStack_60);
+      new ((void *)(auStack_60)) Walaber::PropertyList();
       uStack_6c = 0;
       uStack_6a = 0;
       uStack_69 = 0;
@@ -1392,10 +1392,10 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
       abStack_80[8] = 0x72;
       uStack_6d = 0;
                     /* try { // try from 0049f718 to 0049f723 has its CatchHandler @ 0049f7f8 */
-      Walaber::Property::Property(auStack_a0,1);
+      new ((void *)(auStack_a0)) Walaber::Property(1);
                     /* try { // try from 0049f724 to 0049f733 has its CatchHandler @ 0049f7d8 */
       Walaber::PropertyList::setValueForKey(auStack_60,abStack_80,auStack_a0);
-      Walaber::Property::~Property(auStack_a0);
+      ((Walaber::Property *)auStack_a0)->~Property();
       if ((abStack_80[0] & 1) != 0) {
         operator delete((void *)CONCAT17(uStack_69,
                                       CONCAT16(uStack_6a,
@@ -1413,14 +1413,14 @@ void WaterConcept::NotificationSingleton::draw(void *p0)
       puVar9 = auStack_60;
     }
     else {
-      Walaber::PropertyList::PropertyList(auStack_a0);
+      new ((void *)(auStack_a0)) Walaber::PropertyList();
                     /* try { // try from 0049f690 to 0049f6ab has its CatchHandler @ 0049f818 */
       Walaber::ScreenManager::beginScreenChanges(0);
       Walaber::ScreenManager::popAllScreens();
       Walaber::ScreenManager::pushScreen(uVar1,auStack_a0);
       Walaber::ScreenManager::commitScreenChanges();
     }
-    Walaber::PropertyList::~PropertyList(puVar9);
+    ((Walaber::PropertyList *)puVar9)->~PropertyList();
   }
 LAB_0049f6b4:
   *(undefined1 *)((long)p0 + 0x94) = 0;

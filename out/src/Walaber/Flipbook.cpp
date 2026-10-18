@@ -137,9 +137,9 @@ LAB_00359270:
                     /* try { // try from 00359298 to 003592b3 has its CatchHandler @ 003594ac */
   Walaber::TextureManager::getTexture(auStack_d0,uVar10,&uStack_e8,&uStack_f8,0,0);
   Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,auStack_d0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_d0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_f8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_108);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_d0)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_f8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_108)->~SharedPtr<Walaber::Callback>();
   if ((uStack_e8 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_d4,fStack_d8));
   }

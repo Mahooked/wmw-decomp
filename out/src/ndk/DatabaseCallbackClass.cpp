@@ -85,7 +85,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
   if (*(char *)((long)in_x1 + 0x39) == '\0') {
     ppuStack_60 = &PTR__Message_0070cdc8;
     uStack_58 = 0xa00000010;
-    Walaber::PropertyList::PropertyList(apvStack_50);
+    new ((void *)(apvStack_50)) Walaber::PropertyList();
     abStack_78[7] = 0;
     abStack_78[8] = 0;
     abStack_78[9] = 0;
@@ -123,10 +123,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     abStack_b0[7] = 0x65;
     abStack_b0[8] = 0x6e;
                     /* try { // try from 002b5580 to 002b558b has its CatchHandler @ 002b580c */
-    Walaber::Property::Property(abStack_98,abStack_b0);
+    new ((void *)(abStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 002b558c to 002b559b has its CatchHandler @ 002b57fc */
     Walaber::PropertyList::setValueForKey(apvStack_50,abStack_78,abStack_98);
-    Walaber::Property::~Property(abStack_98);
+    ((Walaber::Property *)abStack_98)->~Property();
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
     }
@@ -170,10 +170,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     abStack_b0[8] = 99;
     abStack_b0[0xd] = 0;
                     /* try { // try from 002b5618 to 002b5623 has its CatchHandler @ 002b57f8 */
-    Walaber::Property::Property(abStack_98,abStack_b0);
+    new ((void *)(abStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 002b5624 to 002b5633 has its CatchHandler @ 002b57f4 */
     Walaber::PropertyList::setValueForKey(apvStack_50,abStack_78,abStack_98);
-    Walaber::Property::~Property(abStack_98);
+    ((Walaber::Property *)abStack_98)->~Property();
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
     }
@@ -200,10 +200,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     abStack_78[7] = 0x6f;
     abStack_78[8] = 100;
                     /* try { // try from 002b5688 to 002b568f has its CatchHandler @ 002b57ec */
-    Walaber::Property::Property(abStack_98,*in_x1);
+    new ((void *)(abStack_98)) Walaber::Property(*in_x1);
                     /* try { // try from 002b5690 to 002b569f has its CatchHandler @ 002b57dc */
     Walaber::PropertyList::setValueForKey(apvStack_50,abStack_78,abStack_98);
-    Walaber::Property::~Property(abStack_98);
+    ((Walaber::Property *)abStack_98)->~Property();
     if ((abStack_78[0] & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
@@ -227,10 +227,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     abStack_78[5] = 0x79;
     abStack_78[6] = 0;
                     /* try { // try from 002b56e0 to 002b56e7 has its CatchHandler @ 002b57d8 */
-    Walaber::Property::Property(abStack_98,in_x1 + 2);
+    new ((void *)(abStack_98)) Walaber::Property(in_x1 + 2);
                     /* try { // try from 002b56e8 to 002b56f7 has its CatchHandler @ 002b57d4 */
     Walaber::PropertyList::setValueForKey(apvStack_50,abStack_78,abStack_98);
-    Walaber::Property::~Property(abStack_98);
+    ((Walaber::Property *)abStack_98)->~Property();
     if ((abStack_78[0] & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
@@ -254,10 +254,10 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     abStack_78[8] = 0x73;
     abStack_78[0x11] = 0;
                     /* try { // try from 002b5738 to 002b573f has its CatchHandler @ 002b57d0 */
-    Walaber::Property::Property(abStack_98,in_x1 + 8);
+    new ((void *)(abStack_98)) Walaber::Property(in_x1 + 8);
                     /* try { // try from 002b5740 to 002b574f has its CatchHandler @ 002b57cc */
     Walaber::PropertyList::setValueForKey(apvStack_50,abStack_78,abStack_98);
-    Walaber::Property::~Property(abStack_98);
+    ((Walaber::Property *)abStack_98)->~Property();
     if ((abStack_78[0] & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_66,CONCAT11(abStack_78[0x11],abStack_78[0x10])));
     }
@@ -265,7 +265,7 @@ void ndk::DatabaseCallbackClass::databaseErrorCallback(void *p0, int * in_x1)
     uVar3 = Walaber::BroadcastManager::getInstancePtr();
     Walaber::BroadcastManager::messageTx(uVar3,&ppuStack_60);
     ppuStack_60 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::~PropertyList(apvStack_50);
+    ((Walaber::PropertyList *)apvStack_50)->~PropertyList();
   }
   *(undefined1 *)(in_x1 + 0xe) = 1;
   return;

@@ -26,7 +26,7 @@
 /* ok  address 0x3f6a44  size 60 */Walaber::Transition_Widget_Slide::~Transition_Widget_Slide(){
   *this = &PTR_setup_00711048;
   std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, float>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, float>>>::destroy(this + 0x23,this[0x24]);
-  Walaber::Transition::~Transition(this);
+  ((Walaber::Transition *)this)->~Transition();
   return;
 }
 
@@ -305,7 +305,7 @@ void Walaber::Transition_Widget_Slide::update(float p0)
               fVar7 = (float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0;
               uStack_98 = CONCAT44(fVar7 + fVar7 + (float)((ulong)uVar14 >> 0x20),
                                    fVar9 + fVar9 + (float)uVar14);
-              Walaber::AABB::AABB(&uStack_90,(undefined8 *)(in_x0 + 0xd8),&uStack_98);
+              new ((void *)(&uStack_90)) Walaber::AABB((undefined8 *)(in_x0 + 0xd8),&uStack_98);
               *(undefined8 *)(in_x0 + 0x100) = uStack_88;
               *(undefined8 *)(in_x0 + 0xf8) = uStack_90;
               *(undefined4 *)(in_x0 + 0x108) = uStack_80;
@@ -711,7 +711,7 @@ void Walaber::Transition_Widget_Slide::_setPositionsByDirection(long param_1,und
   undefined8 uStack_40;
   
   uStack_40 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) + 0.0,(float)_sScreenSize + 0.0);
-  Walaber::AABB::AABB(auStack_58,&Vector2::Zero,&uStack_40);
+  new ((void *)(auStack_58)) Walaber::AABB(&Vector2::Zero,&uStack_40);
   Walaber::AABB::expandToInclude(param_2,auStack_58);
   uVar3 = *param_2;
   fVar5 = (float)param_2[1] - (float)uVar3;

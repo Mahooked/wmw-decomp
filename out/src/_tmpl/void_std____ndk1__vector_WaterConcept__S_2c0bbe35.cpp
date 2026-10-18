@@ -40,10 +40,10 @@ void std::__ndk1::
   }
   std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::__split_buffer(auStack_60,uVar5,lVar3,&p0->field_0x10);
                     /* try { // try from 004cc110 to 004cc12f has its CatchHandler @ 004cc168 */
-  WaterConcept::Screen_Editor::ObjectData::ObjectData(lStack_50);
+  new ((void *)(lStack_50)) WaterConcept::Screen_Editor::ObjectData();
   lStack_50 = lStack_50 + 0x88;
   std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&> *)auStack_60)->~__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>();
   return;
 }
 

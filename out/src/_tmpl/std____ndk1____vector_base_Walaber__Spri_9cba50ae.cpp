@@ -30,7 +30,7 @@ void std::__ndk1::
     do {
       lVar1 = (long)pvVar2 + -0x10;
       pvVar2 = (void *)((long)pvVar2 + -0x28);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar1);
+      ((Walaber::SharedPtr<Walaber::Texture> *)lVar1)->~SharedPtr<Walaber::Texture>();
     } while (pvVar3 != pvVar2);
     p0 = (void *)*this;
   }

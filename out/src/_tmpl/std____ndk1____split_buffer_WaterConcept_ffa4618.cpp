@@ -64,9 +64,9 @@ void std::__ndk1::__split_buffer<WaterConcept::Fluid,std::__ndk1::allocator<Wate
   lVar2 = this[2];
   while (lVar2 != lVar1) {
     this[2] = lVar2 + -0xf0;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -200);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -0xd8);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -0xe8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -200)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -0xd8)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -0xe8)->~SharedPtr<Walaber::Texture>();
     lVar2 = this[2];
   }
   if ((void *)*this != (void *)0x0) {

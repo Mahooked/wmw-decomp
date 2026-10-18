@@ -158,12 +158,12 @@ void Walaber::Curve::computeTangents(void)
 
 
 /* ok  address 0x3e0758  size 64 */Walaber::Curve::~Curve(){
-  *param_1 = &PTR__Curve_00710ab8;
-  if ((void *)param_1[3] != (void *)0x0) {
-    operator delete[]((void *)param_1[3],param_2);
+  *this = &PTR__Curve_00710ab8;
+  if ((void *)this[3] != (void *)0x0) {
+    operator delete[]((void *)this[3],param_2);
   }
-  param_1[1] = 0;
-  param_1[2] = 0;
+  this[1] = 0;
+  this[2] = 0;
   return;
 }
 

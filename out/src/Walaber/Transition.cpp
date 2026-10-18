@@ -5,7 +5,7 @@
 
 /* ok  address 0x3f4094  size 100 */Walaber::Transition::Transition(){
   *this = &PTR_setup_00710ec8;
-  Walaber::SpriteBatch::SpriteBatch(this + 1);
+  new ((void *)(this + 1)) Walaber::SpriteBatch();
   *(undefined4 *)(this + 0xe) = 0;
   *(undefined4 *)((long)this + 0x7c) = 0;
   *(undefined2 *)(this + 0x11) = 0;
@@ -27,7 +27,7 @@
   if ((*(byte *)(this + 0x13) & 1) != 0) {
     operator delete((void *)this[0x15]);
   }
-  Walaber::SpriteBatch::~SpriteBatch(this + 1);
+  ((Walaber::SpriteBatch *)this + 1)->~SpriteBatch();
   return;
 }
 

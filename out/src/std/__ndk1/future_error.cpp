@@ -13,7 +13,7 @@
   uStack_30 = param_3;
   std::__ndk1::error_code::message(abStack_50,&uStack_38);
                     /* try { // try from 005f0704 to 005f070f has its CatchHandler @ 005f075c */
-  std::logic_error::logic_error(param_1,abStack_50);
+  new ((void *)(param_1)) std::logic_error(abStack_50);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -34,7 +34,7 @@
 
 /* ok  address 0x5f077c  size 36 */std::__ndk1::future_error::~future_error(){
   std::logic_error::~logic_error();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

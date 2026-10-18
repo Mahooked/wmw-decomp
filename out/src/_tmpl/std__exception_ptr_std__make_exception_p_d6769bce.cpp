@@ -17,7 +17,7 @@ void std::make_exception_ptr<std::__ndk1::future_error>(long param_1)
   undefined8 uVar2;
   
   puVar1 = (undefined8 *)__cxa_allocate_exception(0x20);
-  std::logic_error::logic_error(puVar1,param_1);
+  new ((void *)(puVar1)) std::logic_error(param_1);
   *puVar1 = &PTR__future_error_00719378;
   uVar2 = *(undefined8 *)(param_1 + 0x10);
   puVar1[3] = *(undefined8 *)(param_1 + 0x18);

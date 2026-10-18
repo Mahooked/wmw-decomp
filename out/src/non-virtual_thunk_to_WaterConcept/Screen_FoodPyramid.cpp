@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x4d436c  size 8 */non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
-  WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(param_1 + -0x90);
+  ((WaterConcept::Screen_FoodPyramid *)this + -0x90)->~Screen_FoodPyramid();
   return;
 }
 
 
 
 /* ok  address 0x4d4398  size 40 */non_virtual_thunk_to_WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid(){
-  WaterConcept::Screen_FoodPyramid::~Screen_FoodPyramid((void *)(param_1 + -0x90));
-  operator delete((void *)(param_1 + -0x90));
+  ((WaterConcept::Screen_FoodPyramid *)(void *)(this + -0x90))->~Screen_FoodPyramid();
+  operator delete((void *)(this + -0x90));
   return;
 }
 

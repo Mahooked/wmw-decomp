@@ -79,7 +79,7 @@ long * std::__ndk1::basic_ostream<char,std::__ndk1::char_traits<char>>::operator
     std::__ndk1::ios_base::clear(lVar7,*(uint *)(lVar7 + 0x20) | 1);
   }
 LAB_005ad484:
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_58);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_58)->~sentry();
   return plVar5;
 LAB_005ad5ac:
   if (lVar7 == 0) {

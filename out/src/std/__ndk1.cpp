@@ -15,7 +15,7 @@ undefined8 * std::__ndk1::iostream_category(void)
   int iVar1;
   
   if (((DAT_007a4590 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a4590), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a4588);
+    new ((void *)(&DAT_007a4588)) std::__ndk1::error_category();
     DAT_007a4588 = &PTR__error_category_007166e0;
     __cxa_atexit(error_category::~error_category,&DAT_007a4588,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a4590);
@@ -197,7 +197,7 @@ void std::__ndk1::__throw_runtime_error(char *p0)
   
   uVar1 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005c90e0 to 005c90e7 has its CatchHandler @ 005c9100 */
-  std::runtime_error::runtime_error(uVar1,p0);
+  new ((void *)(uVar1)) std::runtime_error(p0);
   __cxa_throw(uVar1,&runtime_error::typeinfo,range_error::~range_error);
   return;
 }
@@ -475,7 +475,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eae4c to 005eae53 has its CatchHandler @ 005eaf40 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eae64 to 005eae7b has its CatchHandler @ 005eaf30 */
     uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -486,7 +486,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eae9c to 005eaea3 has its CatchHandler @ 005eaf2c */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eaeb4 to 005eaecb has its CatchHandler @ 005eaf28 */
     uVar5 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -505,7 +505,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<char, std::__ndk1::char_traits
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
   puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eaeec to 005eaef3 has its CatchHandler @ 005eaf24 */
-  std::logic_error::logic_error(puVar6,auStack_60);
+  new ((void *)(puVar6)) std::logic_error(auStack_60);
   *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eaf04 to 005eaf1b has its CatchHandler @ 005eaf20 */
   uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -554,7 +554,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb0a0 to 005eb0a7 has its CatchHandler @ 005eb194 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb0b8 to 005eb0cf has its CatchHandler @ 005eb184 */
     uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -565,7 +565,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb0f0 to 005eb0f7 has its CatchHandler @ 005eb180 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eb108 to 005eb11f has its CatchHandler @ 005eb17c */
     uVar6 = __cxa_throw(puVar7,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -584,7 +584,7 @@ ulong std::__ndk1::stoi(std::__ndk1::basic_string<wchar_t, std::__ndk1::char_tra
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
   puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb140 to 005eb147 has its CatchHandler @ 005eb178 */
-  std::logic_error::logic_error(puVar7,auStack_60);
+  new ((void *)(puVar7)) std::logic_error(auStack_60);
   *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb158 to 005eb16f has its CatchHandler @ 005eb174 */
   uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -633,7 +633,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_t
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb2e0 to 005eb2e7 has its CatchHandler @ 005eb37c */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb2f8 to 005eb30f has its CatchHandler @ 005eb36c */
     uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -644,7 +644,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<char, std::__ndk1::char_t
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb330 to 005eb337 has its CatchHandler @ 005eb368 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eb348 to 005eb35f has its CatchHandler @ 005eb364 */
     uVar5 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -701,7 +701,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::cha
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb4d0 to 005eb4d7 has its CatchHandler @ 005eb56c */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb4e8 to 005eb4ff has its CatchHandler @ 005eb55c */
     uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -712,7 +712,7 @@ undefined8 std::__ndk1::stol(std::__ndk1::basic_string<wchar_t, std::__ndk1::cha
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb520 to 005eb527 has its CatchHandler @ 005eb558 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eb538 to 005eb54f has its CatchHandler @ 005eb554 */
     uVar6 = __cxa_throw(puVar7,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -769,7 +769,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb6bc to 005eb6c3 has its CatchHandler @ 005eb758 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb6d4 to 005eb6eb has its CatchHandler @ 005eb748 */
     uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -780,7 +780,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<char, std::__ndk1::char_
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb70c to 005eb713 has its CatchHandler @ 005eb744 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eb724 to 005eb73b has its CatchHandler @ 005eb740 */
     uVar5 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -837,7 +837,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb8b0 to 005eb8b7 has its CatchHandler @ 005eb94c */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eb8c8 to 005eb8df has its CatchHandler @ 005eb93c */
     uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -848,7 +848,7 @@ undefined8 std::__ndk1::stoul(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eb900 to 005eb907 has its CatchHandler @ 005eb938 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eb918 to 005eb92f has its CatchHandler @ 005eb934 */
     uVar6 = __cxa_throw(puVar7,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -905,7 +905,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eba9c to 005ebaa3 has its CatchHandler @ 005ebb38 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ebab4 to 005ebacb has its CatchHandler @ 005ebb28 */
     uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -916,7 +916,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<char, std::__ndk1::char_
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ebaec to 005ebaf3 has its CatchHandler @ 005ebb24 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ebb04 to 005ebb1b has its CatchHandler @ 005ebb20 */
     uVar5 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -973,7 +973,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ebc90 to 005ebc97 has its CatchHandler @ 005ebd2c */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ebca8 to 005ebcbf has its CatchHandler @ 005ebd1c */
     uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -984,7 +984,7 @@ undefined8 std::__ndk1::stoll(std::__ndk1::basic_string<wchar_t, std::__ndk1::ch
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ebce0 to 005ebce7 has its CatchHandler @ 005ebd18 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ebcf8 to 005ebd0f has its CatchHandler @ 005ebd14 */
     uVar6 = __cxa_throw(puVar7,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1055,7 +1055,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,abStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ebe80 to 005ebe87 has its CatchHandler @ 005ebf1c */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ebe98 to 005ebeaf has its CatchHandler @ 005ebf0c */
     uVar5 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1066,7 +1066,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<char, std::__ndk1::char
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,abStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ebed0 to 005ebed7 has its CatchHandler @ 005ebf08 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ebee8 to 005ebeff has its CatchHandler @ 005ebf04 */
     uVar5 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1137,7 +1137,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::c
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,abStack_80,": out of range");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec078 to 005ec07f has its CatchHandler @ 005ec114 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ec090 to 005ec0a7 has its CatchHandler @ 005ec104 */
     uVar6 = __cxa_throw(puVar7,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1148,7 +1148,7 @@ undefined8 std::__ndk1::stoull(std::__ndk1::basic_string<wchar_t, std::__ndk1::c
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,abStack_80,": no conversion");
     puVar7 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec0c8 to 005ec0cf has its CatchHandler @ 005ec100 */
-    std::logic_error::logic_error(puVar7,auStack_60);
+    new ((void *)(puVar7)) std::logic_error(auStack_60);
     *puVar7 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ec0e0 to 005ec0f7 has its CatchHandler @ 005ec0fc */
     uVar6 = __cxa_throw(puVar7,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1207,7 +1207,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec260 to 005ec267 has its CatchHandler @ 005ec2fc */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ec278 to 005ec28f has its CatchHandler @ 005ec2ec */
     auVar7 = __cxa_throw(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1218,7 +1218,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec2b0 to 005ec2b7 has its CatchHandler @ 005ec2e8 */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ec2c8 to 005ec2df has its CatchHandler @ 005ec2e4 */
     auVar7 = __cxa_throw(puVar5,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1277,7 +1277,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec450 to 005ec457 has its CatchHandler @ 005ec4ec */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ec468 to 005ec47f has its CatchHandler @ 005ec4dc */
     auVar7 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1288,7 +1288,7 @@ undefined1  [16] std::__ndk1::stof(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec4a0 to 005ec4a7 has its CatchHandler @ 005ec4d8 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ec4b8 to 005ec4cf has its CatchHandler @ 005ec4d4 */
     auVar7 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1347,7 +1347,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec638 to 005ec63f has its CatchHandler @ 005ec6d4 */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ec650 to 005ec667 has its CatchHandler @ 005ec6c4 */
     auVar7 = __cxa_throw(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1358,7 +1358,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec688 to 005ec68f has its CatchHandler @ 005ec6c0 */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ec6a0 to 005ec6b7 has its CatchHandler @ 005ec6bc */
     auVar7 = __cxa_throw(puVar5,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1417,7 +1417,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec828 to 005ec82f has its CatchHandler @ 005ec8c4 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ec840 to 005ec857 has its CatchHandler @ 005ec8b4 */
     auVar7 = __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1428,7 +1428,7 @@ undefined1  [16] std::__ndk1::stod(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ec878 to 005ec87f has its CatchHandler @ 005ec8b0 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ec890 to 005ec8a7 has its CatchHandler @ 005ec8ac */
     auVar7 = __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1485,7 +1485,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eca0c to 005eca13 has its CatchHandler @ 005ecaa8 */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005eca24 to 005eca3b has its CatchHandler @ 005eca98 */
     __cxa_throw(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1496,7 +1496,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005eca5c to 005eca63 has its CatchHandler @ 005eca94 */
-    std::logic_error::logic_error(puVar5,auStack_60);
+    new ((void *)(puVar5)) std::logic_error(auStack_60);
     *puVar5 = &PTR__logic_error_0071a258;
                     /* try { // try from 005eca74 to 005eca8b has its CatchHandler @ 005eca90 */
     __cxa_throw(puVar5,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -1553,7 +1553,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": out of range");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ecbf8 to 005ecbff has its CatchHandler @ 005ecc94 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a2d8;
                     /* try { // try from 005ecc10 to 005ecc27 has its CatchHandler @ 005ecc84 */
     __cxa_throw(puVar6,&out_of_range::typeinfo,logic_error::~logic_error);
@@ -1564,7 +1564,7 @@ void std::__ndk1::stold(byte *param_1,long *param_2)
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_60,auStack_80,": no conversion");
     puVar6 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005ecc48 to 005ecc4f has its CatchHandler @ 005ecc80 */
-    std::logic_error::logic_error(puVar6,auStack_60);
+    new ((void *)(puVar6)) std::logic_error(auStack_60);
     *puVar6 = &PTR__logic_error_0071a258;
                     /* try { // try from 005ecc60 to 005ecc77 has its CatchHandler @ 005ecc7c */
     __cxa_throw(puVar6,&invalid_argument::typeinfo,logic_error::~logic_error);
@@ -3229,7 +3229,7 @@ void std::__ndk1::__throw_system_error(int p0,char *p1)
     __cxa_guard_release(&DAT_007a5ef0);
   }
                     /* try { // try from 005efb78 to 005efb83 has its CatchHandler @ 005efb9c */
-  std::__ndk1::system_error::system_error(uVar2,p0,&DAT_007a5ee8,p1);
+  new ((void *)(uVar2)) std::__ndk1::system_error(p0,&DAT_007a5ee8,p1);
   __cxa_throw(uVar2,&system_error::typeinfo,system_error::~system_error);
   return;
 }
@@ -3347,7 +3347,7 @@ undefined8 * std::__ndk1::future_category(void)
   int iVar1;
   
   if (((DAT_007a5f10 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a5f10), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);

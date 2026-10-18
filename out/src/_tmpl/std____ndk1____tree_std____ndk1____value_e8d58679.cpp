@@ -30,7 +30,7 @@ void std::__ndk1::
   if (param_2 != (undefined8 *)0x0) {
     std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>>>::destroy(param_1,*param_2);
     std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::SpriteAnimation>>>>::destroy(param_1,param_2[1]);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(param_2 + 7);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)param_2 + 7)->~SharedPtr<Walaber::SpriteAnimation>();
     if ((*(byte *)(param_2 + 4) & 1) != 0) {
       operator delete((void *)param_2[6]);
     }
@@ -134,7 +134,7 @@ long * std::__ndk1::
   }
   param_1[2] = param_1[2] + -1;
   void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr((long)param_2 + 0x38);
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)(long)param_2 + 0x38)->~SharedPtr<Walaber::SpriteAnimation>();
   if ((*(byte *)((long)param_2 + 0x20) & 1) != 0) {
     operator delete(*(void **)((long)param_2 + 0x30));
   }

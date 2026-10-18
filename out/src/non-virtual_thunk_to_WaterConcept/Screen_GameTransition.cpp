@@ -5,7 +5,7 @@
 
 /* ok  address 0x4da354  size 36 */non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver();
-  WaterConcept::WCScreen::~WCScreen(param_1 + -0x90);
+  ((WaterConcept::WCScreen *)this + -0x90)->~WCScreen();
   return;
 }
 
@@ -13,8 +13,8 @@
 
 /* ok  address 0x4da3a8  size 44 */non_virtual_thunk_to_WaterConcept::Screen_GameTransition::~Screen_GameTransition(){
   Walaber::MessageReceiver::~MessageReceiver();
-  WaterConcept::WCScreen::~WCScreen((void *)(param_1 + -0x90));
-  operator delete((void *)(param_1 + -0x90));
+  ((WaterConcept::WCScreen *)(void *)(this + -0x90))->~WCScreen();
+  operator delete((void *)(this + -0x90));
   return;
 }
 

@@ -52,7 +52,7 @@ void std::__ndk1::
     }
     if (uVar7 < (ulong)(lVar5 * -0x3333333333333333) || uVar7 + lVar5 * 0x3333333333333333 == 0) {
       for (puVar4 = *(undefined8 **)(p0 + 8); puVar4 != puVar9; puVar4 = puVar4 + -5) {
-        Walaber::PropertyList::~PropertyList(puVar4 + -3);
+        ((Walaber::PropertyList *)puVar4 + -3)->~PropertyList();
       }
       *(undefined8 **)(p0 + 8) = puVar9;
       return;

@@ -89,7 +89,7 @@ Walaber::Widget_MovingTextBox::operator=(Walaber__Widget_MovingTextBox *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   WStack_30 = *p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0xc,&WStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0xc,&WStack_30,&uStack_38,1,1);
   puVar2[0x20] = 0;
   puVar2[0x21] = 0;
   *(undefined4 *)(puVar2 + 0x22) = 0xff000000;
@@ -124,7 +124,7 @@ void Walaber::Widget_MovingTextBox::init(void)
 
 
 
-/* ok  address 0x380c30  size 392 */Walaber::Widget_MovingTextBox::Widget_MovingTextBox(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,long *param_6,undefined8 param_7,undefined8 *param_8, undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12){
+/* ok  address 0x380c30  size 392 */Walaber::Widget_MovingTextBox::Widget_MovingTextBox(undefined4 param_2,undefined4 param_3,undefined4 param_4, undefined4 param_5,long *param_6,undefined8 param_7,undefined8 *param_8, undefined8 *param_9,long *param_10,undefined8 param_11,undefined4 param_12){
   int *piVar2;
   long lVar3;
   undefined8 uStack_88;
@@ -132,7 +132,7 @@ void Walaber::Widget_MovingTextBox::init(void)
   
   uStack_80 = *param_8;
   uStack_88 = *param_9;
-  Walaber::Widget::Widget(param_6,param_7,0xc,&uStack_80,&uStack_88,1,1);
+  new ((void *)(param_6)) Walaber::Widget(param_7,0xc,&uStack_80,&uStack_88,1,1);
   *param_6 = (long)&PTR__Widget_MovingTextBox_0070f388;
   lVar3 = *param_10;
   param_6[0x20] = lVar3;
@@ -153,7 +153,7 @@ void Walaber::Widget_MovingTextBox::init(void)
   param_6[0x2a] = 0;
   param_6[0x2b] = 0;
   *(undefined4 *)(param_6 + 0x2c) = 0xff000000;
-  *(undefined4 *)((long)param_6 + 0x164) = param_1;
+  *(undefined4 *)((long)param_6 + 0x164) = this;
   *(undefined4 *)(param_6 + 0x2d) = param_2;
   *(undefined4 *)((long)param_6 + 0x16c) = param_3;
   *(undefined4 *)(param_6 + 0x2e) = param_4;
@@ -223,8 +223,8 @@ void Walaber::Widget_MovingTextBox::_updateBorders(long param_1)
   *(undefined1 *)((long)this + 0x163) = 0xff;
   *(undefined1 *)((long)this + 0x184) = 0;
   std::__ndk1::__list_imp<Walaber::TextLineInfo, std::__ndk1::allocator<Walaber::TextLineInfo>>::clear(this + 0x28);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -232,7 +232,7 @@ void Walaber::Widget_MovingTextBox::_updateBorders(long param_1)
 
 /* ok  address 0x380f5c  size 36 */Walaber::Widget_MovingTextBox::~Widget_MovingTextBox(){
   Walaber::Widget_MovingTextBox::~Widget_MovingTextBox();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -586,7 +586,7 @@ void Walaber::Widget_MovingTextBox::draw(Walaber__SpriteBatch *p0)
     uStack_50._0_4_ = CONCAT13(uVar4,CONCAT12(uVar6,CONCAT11(uVar5,(undefined1)uStack_50)));
                     /* try { // try from 003815ec to 0038160f has its CatchHandler @ 0038170c */
     Walaber::SpriteBatch::drawQuad(uVar9);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_60);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_60)->~SharedPtr<Walaber::Texture>();
   }
   if ((*(long *)&p0[4].field_0x8 != 0) && (p0[6].f_0x0 != 0)) {
     if (*(char *)((long)&p0[2].f_0x1c + 1) == '\0') {

@@ -16,7 +16,7 @@ void std::__ndk1::__basic_string_common<true>::__throw_length_error(void)
   
   puVar1 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 002c24d8 to 002c24e3 has its CatchHandler @ 002c250c */
-  std::logic_error::logic_error(puVar1,"basic_string");
+  new ((void *)(puVar1)) std::logic_error("basic_string");
   *puVar1 = &PTR__logic_error_0071a298;
   __cxa_throw(puVar1,&length_error::typeinfo,logic_error::~logic_error);
   return;
@@ -37,7 +37,7 @@ void std::__ndk1::__basic_string_common<true>::__throw_out_of_range(void)
   
   puVar1 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 002c2b60 to 002c2b6b has its CatchHandler @ 002c2b94 */
-  std::logic_error::logic_error(puVar1,"basic_string");
+  new ((void *)(puVar1)) std::logic_error("basic_string");
   *puVar1 = &PTR__logic_error_0071a2d8;
   __cxa_throw(puVar1,&out_of_range::typeinfo,logic_error::~logic_error);
   return;

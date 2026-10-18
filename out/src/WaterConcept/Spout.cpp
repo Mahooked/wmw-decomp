@@ -10,7 +10,7 @@
   
   uStack_50 = *param_2;
   uStack_58 = *param_3;
-  WaterConcept::InteractiveObject::InteractiveObject(param_1,&uStack_50,&uStack_58,1,0);
+  new ((void *)(param_1)) WaterConcept::InteractiveObject(&uStack_50,&uStack_58,1,0);
   *param_1 = &PTR__Spout_00711f18;
   param_1[0x76] = 0;
   param_1[0x75] = 0;
@@ -91,8 +91,8 @@
     this[0x95] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x92);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x8f);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x92)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x8f)->~SharedPtr<Walaber::Callback>();
   pvVar1 = (void *)this[0x8a];
   if (pvVar1 != (void *)0x0) {
     this[0x8b] = pvVar1;
@@ -103,11 +103,11 @@
     this[0x88] = pvVar1;
     operator delete(pvVar1);
   }
-  std::__ndk1::__deque_base<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>::~__deque_base(this + 0x80);
+  ((std::__ndk1::__deque_base<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>> *)this + 0x80)->~__deque_base<WaterConcept::Spout::QueuedParticle, std::__ndk1::allocator<WaterConcept::Spout::QueuedParticle>>();
   if ((void *)this[0x77] != (void *)0x0) {
     operator delete[]((void *)this[0x77],p1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -115,7 +115,7 @@
 
 /* ok  address 0x48ba10  size 36 */WaterConcept::Spout::~Spout(){
   WaterConcept::Spout::~Spout();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

@@ -105,8 +105,8 @@ void Walaber::DeepLink::Initialise(void)
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   sm_bIsInitialised = 1;
   return;
 }
@@ -237,14 +237,14 @@ void Walaber::DeepLink::OnScreenCommand(void *p0)
       Walaber::ScreenManager::popScreen(0,0);
       Walaber::ScreenManager::popAllScreens();
     }
-    Walaber::PropertyList::PropertyList(apuStack_70);
+    new ((void *)(apuStack_70)) Walaber::PropertyList();
     plVar8 = *(long **)((long)p0 + 0x48);
     while (plVar8 != (long *)((long)p0 + 0x50)) {
                     /* try { // try from 003f02a4 to 003f02ab has its CatchHandler @ 003f03a4 */
-      Walaber::Property::Property(abStack_90,plVar8 + 7);
+      new ((void *)(abStack_90)) Walaber::Property(plVar8 + 7);
                     /* try { // try from 003f02b0 to 003f02bb has its CatchHandler @ 003f0394 */
       Walaber::PropertyList::setValueForKey(apuStack_70,plVar8 + 4,abStack_90);
-      Walaber::Property::~Property(abStack_90);
+      ((Walaber::Property *)abStack_90)->~Property();
       plVar7 = (long *)plVar8[1];
       if ((long *)plVar8[1] == (long *)0x0) {
         plVar7 = plVar8 + 2;
@@ -268,7 +268,7 @@ void Walaber::DeepLink::OnScreenCommand(void *p0)
                     /* try { // try from 003f031c to 003f032f has its CatchHandler @ 003f0378 */
     Walaber::ScreenManager::pushScreen(*(undefined4 *)(puVar3 + 0x38),apuStack_70);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1);
-    Walaber::PropertyList::~PropertyList(apuStack_70);
+    ((Walaber::PropertyList *)apuStack_70)->~PropertyList();
   }
   return;
 }

@@ -104,7 +104,7 @@ void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1, undefined8 
   
   *this = &PTR_handleEvent_007126c8;
   uStack_40 = _sScreenSize;
-  Walaber::WidgetManager::WidgetManager(this + 1,this,&uStack_40);
+  new ((void *)(this + 1)) Walaber::WidgetManager(this,&uStack_40);
   *(undefined2 *)(this + 0x14) = 0;
   this[0x13] = 0;
   *(undefined4 *)((long)this + 0xa2) = 0xff00;
@@ -133,7 +133,7 @@ void WaterConcept::Notification::touchUp(int p0,Walaber__Vector2 p1, undefined8 
   long in_x1;
   
   p0->f_0x0 = (ulong)&PTR_handleEvent_007126c8;
-  Walaber::WidgetManager::WidgetManager(&p0->f_0x8,in_x1 + 8);
+  new ((void *)(&p0->f_0x8)) Walaber::WidgetManager(in_x1 + 8);
   *(undefined8 *)&p0->field_0xa0 = 0xff000000ff000000;
   memset(&p0->field_0xa8,0,0x73);
   *(undefined4 *)&p0->field_0x11b = 0xff;
@@ -172,19 +172,19 @@ void WaterConcept::Notification::operator=(WaterConcept__Notification *p0)
   if ((*(byte *)(this + 0x39) & 1) != 0) {
     operator delete((void *)this[0x3b]);
   }
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x2f);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x2d);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x2b);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x29);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x27);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x25);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x1f);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x1d);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x1b);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x19);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x17);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x15);
-  Walaber::WidgetManager::~WidgetManager(this + 1);
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x2f)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x2d)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x2b)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x29)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x27)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x25)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x1f)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x1d)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x1b)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x19)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x17)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x15)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::WidgetManager *)this + 1)->~WidgetManager();
   return;
 }
 
@@ -192,7 +192,7 @@ void WaterConcept::Notification::operator=(WaterConcept__Notification *p0)
 
 /* ok  address 0x49cca4  size 36 */WaterConcept::Notification::~Notification(){
   WaterConcept::Notification::~Notification();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -491,17 +491,17 @@ void WaterConcept::Notification::buildUI(long param_1,undefined8 param_2)
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 0049d330 to 0049d33b has its CatchHandler @ 0049d380 */
   puStack_98 = puVar2;
   Walaber::WidgetHelper::loadWidgetsXML(param_2,param_1 + 8,&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Notification>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Notification>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Notification>>();
   return;
 }
 

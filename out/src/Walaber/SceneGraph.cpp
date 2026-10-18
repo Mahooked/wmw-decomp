@@ -27,7 +27,7 @@
   abStack_50[4] = 0x74;
   abStack_50[5] = 0;
                     /* try { // try from 003ebc38 to 003ebc43 has its CatchHandler @ 003ebcc0 */
-  Walaber::Node::Node(uVar2,abStack_50,0xffffffff);
+  new ((void *)(uVar2)) Walaber::Node(abStack_50,0xffffffff);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -55,7 +55,7 @@
 
 
 
-/* ok  address 0x3ebce4  size 220 */Walaber::SceneGraph::SceneGraph(undefined8 *param_1,byte *param_2){
+/* ok  address 0x3ebce4  size 220 */Walaber::SceneGraph::SceneGraph(byte *param_2){
   undefined8 uVar2;
   byte *pbVar3;
   ulong auStack_50 [2];
@@ -66,16 +66,16 @@
   pvStack_40 = (void *)0x0;
   auStack_50[0] = 0x746f6f5208;
                     /* try { // try from 003ebd38 to 003ebd43 has its CatchHandler @ 003ebd9c */
-  Walaber::Node::Node(uVar2,auStack_50,0xffffffff);
+  new ((void *)(uVar2)) Walaber::Node(auStack_50,0xffffffff);
   if ((auStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
-  *param_1 = uVar2;
+  *this = uVar2;
   pbVar3 = *(byte **)(param_2 + 0x10);
   if ((*param_2 & 1) == 0) {
     pbVar3 = param_2 + 1;
   }
-  strncpy(param_1 + 1,pbVar3,0x1b);
+  strncpy(this + 1,pbVar3,0x1b);
   return;
 }
 

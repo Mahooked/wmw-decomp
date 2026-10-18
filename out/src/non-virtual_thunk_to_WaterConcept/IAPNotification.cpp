@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x49aa94  size 8 */non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(){
-  WaterConcept::IAPNotification::~IAPNotification(param_1 + -0x1e8);
+  ((WaterConcept::IAPNotification *)this + -0x1e8)->~IAPNotification();
   return;
 }
 
 
 
 /* ok  address 0x49aac0  size 40 */non_virtual_thunk_to_WaterConcept::IAPNotification::~IAPNotification(){
-  WaterConcept::IAPNotification::~IAPNotification((void *)(param_1 + -0x1e8));
-  operator delete((void *)(param_1 + -0x1e8));
+  ((WaterConcept::IAPNotification *)(void *)(this + -0x1e8))->~IAPNotification();
+  operator delete((void *)(this + -0x1e8));
   return;
 }
 

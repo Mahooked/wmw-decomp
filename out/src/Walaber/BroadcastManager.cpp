@@ -103,13 +103,13 @@ void Walaber::BroadcastManager::_removeReceiver(Walaber__MessageReceiver *p0, lo
 
 
 /* ok  address 0x3e8740  size 36 */Walaber::BroadcastManager::~BroadcastManager(){
-  void *p0;
+  void *this;
   
   mInstancePtr = 0;
-  p0 = (void *)*this;
-  if (p0 != (void *)0x0) {
-    this[1] = p0;
-    operator delete(p0);
+  this = (void *)*this;
+  if (this != (void *)0x0) {
+    this[1] = this;
+    operator delete(this);
     return;
   }
   return;

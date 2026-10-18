@@ -11,7 +11,7 @@
   
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38,0,0);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(p0,&uStack_30,&uStack_38,0,0);
   *(undefined ***)p0 = &PTR__AlgaeHider_00711448;
   *(undefined8 *)((long)p0 + 0x3b0) = 0;
   *(undefined8 *)((long)p0 + 0x3a8) = 0;
@@ -27,8 +27,8 @@
 /* ok  address 0x4771bc  size 64 */WaterConcept::AlgaeHider::~AlgaeHider(){
   *this = &PTR__AlgaeHider_00711448;
   std::__ndk1::__list_imp<WaterConcept::GridCell, std::__ndk1::allocator<WaterConcept::GridCell>>::clear(this + 0x78);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x75)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -36,7 +36,7 @@
 
 /* ok  address 0x4771fc  size 36 */WaterConcept::AlgaeHider::~AlgaeHider(){
   WaterConcept::AlgaeHider::~AlgaeHider();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

@@ -98,11 +98,11 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   piStack_60 = piVar5;
   puStack_58 = puVar4;
   piStack_50 = piVar5;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar5 = *piVar5 + 1;
   puStack_78 = puVar4;
   piStack_70 = piVar5;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00369e40 to 00369e4b has its CatchHandler @ 00369ee8 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_a0,param_3);
   puStack_b0 = puStack_78;
@@ -111,12 +111,12 @@ void Walaber::FontManager::addFont(long param_1,undefined8 *param_2,undefined8 p
   }
                     /* try { // try from 00369e64 to 00369e73 has its CatchHandler @ 00369ec8 */
   Walaber::BitmapFont::load(uVar2,abStack_a0,&puStack_b0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
   if ((abStack_a0[0] & 1) != 0) {
     operator delete(pvStack_90);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::FontManager>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::FontManager>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::FontManager>>();
   return;
 }
 
@@ -203,10 +203,10 @@ void Walaber::FontManager::_fontLoaded(void *p0, int * in_x1)
         }
                     /* try { // try from 0036a098 to 0036a0a3 has its CatchHandler @ 0036a120 */
         Walaber::BitmapFont::notifyTexture(lVar6,&uStack_a8);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_a8);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_98);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b8);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_c8);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a8)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_98)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c8)->~SharedPtr<Walaber::Callback>();
         lVar8 = lVar8 + 1;
         lVar7 = lVar7 + 0x18;
       } while (lVar8 < iVar5);
@@ -239,7 +239,7 @@ void Walaber::FontManager::removeAllFonts(long param_1)
   while ((long *)(param_1 + 0x20) != plVar4) {
     p0 = (void *)plVar4[7];
     if (p0 != (void *)0x0) {
-      Walaber::BitmapFont::~BitmapFont(p0);
+      ((Walaber::BitmapFont *)p0)->~BitmapFont();
       operator delete(p0);
     }
     plVar2 = (long *)plVar4[1];

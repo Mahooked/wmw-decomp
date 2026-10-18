@@ -17,7 +17,7 @@
   lVar3 = 0;
   *(undefined4 *)(this + 8) = 0;
   do {
-    Walaber::GraphicsGL::State::Texture::Texture((long)this + lVar3 + 0x14);
+    new ((void *)((long)this + lVar3 + 0x14)) Walaber::GraphicsGL::State::Texture();
     lVar3 = lVar3 + 0xc;
   } while (lVar3 != 0x18);
   *(undefined4 *)(this + 0x1e) = 0;
@@ -33,7 +33,7 @@
   puVar2 = (undefined8 *)(this + 10);
   do {
     *(undefined1 *)((long)this + lVar3 + 2) = 0;
-    Walaber::GraphicsGL::State::Texture::Texture(&uStack_48);
+    new ((void *)(&uStack_48)) Walaber::GraphicsGL::State::Texture();
     lVar3 = lVar3 + 1;
     *(undefined4 *)(puVar2 + 1) = uStack_40;
     *puVar2 = uStack_48;

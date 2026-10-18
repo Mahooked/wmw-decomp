@@ -485,7 +485,7 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
   if (param_2 != &mLanguagesToLoad) {
     std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 003fa32c to 003fa32f has its CatchHandler @ 003fa3e4 */
   uVar2 = Walaber::FileManager::getInstancePtr();
                     /* try { // try from 003fa334 to 003fa363 has its CatchHandler @ 003fa3e8 */
@@ -498,9 +498,9 @@ void Walaber::TextManager::loadScriptFromTSV(std::__ndk1::basic_string<char, std
                     /* try { // try from 003fa374 to 003fa38b has its CatchHandler @ 003fa3cc */
   puStack_60 = puVar3;
   Walaber::FileManager::readFile(uVar2,param_1,&puStack_60,auStack_50,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_60)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_70)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -865,7 +865,7 @@ LAB_003fa8a8:
     if (((ulong)ppppuStack_110 & 1) != 0) {
       operator delete(puStack_100);
     }
-    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_e0);
+    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_e0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
     if (((ulong)pbStack_c0 & 1) != 0) {
       operator delete(puStack_b0);
     }
@@ -1398,7 +1398,7 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
   if (param_2 != &mLanguagesToLoad) {
     std::__ndk1::enable_if<__is_forward_iterator<Walaber::Language*>::value&&is_constructible<Walaber::Language, std::__ndk1::iterator_traits<Walaber::Language*>::reference>::value, void>::type std::__ndk1::vector<Walaber::Language, std::__ndk1::allocator<Walaber::Language>>::assign<Walaber::Language*>(&mLanguagesToLoad,*param_2,param_2[1]);
   }
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 003fb838 to 003fb83b has its CatchHandler @ 003fb8f0 */
   uVar2 = Walaber::FileManager::getInstancePtr();
                     /* try { // try from 003fb840 to 003fb86f has its CatchHandler @ 003fb8f4 */
@@ -1411,9 +1411,9 @@ void Walaber::TextManager::loadSubtitlesFromTSV(std::__ndk1::basic_string<char, 
                     /* try { // try from 003fb880 to 003fb897 has its CatchHandler @ 003fb8d8 */
   puStack_60 = puVar3;
   Walaber::FileManager::readFile(uVar2,param_1,&puStack_60,auStack_50,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_60)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_70)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -1820,7 +1820,7 @@ LAB_003fbf68:
     if (((ulong)pppppuStack_108 & 1) != 0) {
       operator delete(puStack_f8);
     }
-    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_d0);
+    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_d0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
     if (((ulong)ppppppuStack_b0 & 1) != 0) {
       operator delete(puStack_a0);
     }

@@ -3,16 +3,16 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x4ea98c  size 116 */WaterConcept::Screen_InAppPurchase::product::product(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
-  param_1[3] = 0;
-  param_1[2] = 0;
-  param_1[5] = 0;
-  param_1[4] = 0;
-  param_1[1] = 0;
-  *param_1 = 0;
+/* ok  address 0x4ea98c  size 116 */WaterConcept::Screen_InAppPurchase::product::product(undefined8 param_2,undefined8 param_3){
+  this[3] = 0;
+  this[2] = 0;
+  this[5] = 0;
+  this[4] = 0;
+  this[1] = 0;
+  *this = 0;
                     /* try { // try from 004ea9b4 to 004ea9c3 has its CatchHandler @ 004ea9d4 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=();
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(param_1 + 3,param_3);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(this + 3,param_3);
   return;
 }
 

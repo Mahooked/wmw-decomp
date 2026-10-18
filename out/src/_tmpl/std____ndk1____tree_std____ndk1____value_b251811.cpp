@@ -30,7 +30,7 @@ void std::__ndk1::
   if (param_2 != (undefined8 *)0x0) {
     std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::destroy(param_1,*param_2);
     std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::CurveManager::PtrCurvePtrCallback>>>::destroy(param_1,param_2[1]);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_2 + 8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)param_2 + 8)->~SharedPtr<Walaber::Callback>();
     if ((*(byte *)(param_2 + 4) & 1) != 0) {
       operator delete((void *)param_2[6]);
     }
@@ -218,7 +218,7 @@ long * std::__ndk1::
   }
   param_1[2] = param_1[2] + -1;
   void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr((long)param_2 + 0x40);
+  ((Walaber::SharedPtr<Walaber::Callback> *)(long)param_2 + 0x40)->~SharedPtr<Walaber::Callback>();
   if ((*(byte *)((long)param_2 + 0x20) & 1) != 0) {
     operator delete(*(void **)((long)param_2 + 0x30));
   }

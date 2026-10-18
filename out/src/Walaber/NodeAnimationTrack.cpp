@@ -104,11 +104,11 @@ Walaber::NodeAnimationTrack::operator=(Walaber__NodeAnimationTrack *p0)
 
 
 /* ok  address 0x3393a8  size 64 */Walaber::NodeAnimationTrack::~NodeAnimationTrack(){
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x48);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x38);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x28);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 0x18);
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(param_1 + 8);
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x48)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x38)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x28)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x18)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 8)->~SharedPtr<Walaber::Curve>();
   return;
 }
 
@@ -166,11 +166,11 @@ void Walaber::NodeAnimationTrack::loadCurve
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003394a4 to 003394a7 has its CatchHandler @ 00339564 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
@@ -179,7 +179,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   }
                     /* try { // try from 003394c4 to 003394cf has its CatchHandler @ 00339554 */
   Walaber::CurveManager::getCurve(uVar4,param_1 + 2,param_3,&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003394d8 to 003394db has its CatchHandler @ 00339564 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_a8 = puStack_78;
@@ -188,9 +188,9 @@ void Walaber::NodeAnimationTrack::loadCurve
   }
                     /* try { // try from 003394f8 to 00339503 has its CatchHandler @ 00339548 */
   Walaber::CurveManager::getCurve(uVar4,param_1 + 6,param_4,&puStack_a8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>();
   return;
 }
 
@@ -264,11 +264,11 @@ void Walaber::NodeAnimationTrack::loadCurve
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00339730 to 00339733 has its CatchHandler @ 003397f0 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
@@ -277,7 +277,7 @@ void Walaber::NodeAnimationTrack::loadCurve
   }
                     /* try { // try from 00339750 to 0033975b has its CatchHandler @ 003397e0 */
   Walaber::CurveManager::getCurve(uVar4,param_1 + 10,param_3,&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00339764 to 00339767 has its CatchHandler @ 003397f0 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_a8 = puStack_78;
@@ -286,9 +286,9 @@ void Walaber::NodeAnimationTrack::loadCurve
   }
                     /* try { // try from 00339784 to 0033978f has its CatchHandler @ 003397d4 */
   Walaber::CurveManager::getCurve(uVar4,param_1 + 0xe,param_4,&puStack_a8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>();
   return;
 }
 
@@ -327,11 +327,11 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 003398bc to 003398bf has its CatchHandler @ 0033993c */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
@@ -340,9 +340,9 @@ void Walaber::NodeAnimationTrack::loadCurve(uint *param_1,undefined8 param_2,und
   }
                     /* try { // try from 003398dc to 003398e7 has its CatchHandler @ 0033992c */
   Walaber::CurveManager::getCurve(uVar4,param_1 + 0x12,param_3,&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::NodeAnimationTrack>>();
   return;
 }
 

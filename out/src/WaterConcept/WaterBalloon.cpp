@@ -11,7 +11,7 @@
   
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
-  WaterConcept::Floater::Floater(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::Floater(p0,&uStack_30,&uStack_38);
   *(undefined8 *)((long)p0 + 0x458) = 0;
   *(undefined4 *)((long)p0 + 0x478) = 0;
   *(undefined8 *)((long)p0 + 0x468) = 0;
@@ -46,17 +46,17 @@
   pvVar1 = (void *)this[0x75];
   *this = &PTR__WaterBalloon_00712298;
   if (pvVar1 != (void *)0x0) {
-    Walaber::ParticleSet::~ParticleSet(pvVar1);
+    ((Walaber::ParticleSet *)pvVar1)->~ParticleSet();
     operator delete(pvVar1);
     this[0x75] = 0;
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x9d);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x9d)->~SharedPtr<Walaber::Callback>();
   pvVar1 = (void *)this[0x8b];
   if (pvVar1 != (void *)0x0) {
     this[0x8c] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::Floater::~Floater(this);
+  ((WaterConcept::Floater *)this)->~Floater();
   return;
 }
 
@@ -64,7 +64,7 @@
 
 /* ok  address 0x496008  size 36 */WaterConcept::WaterBalloon::~WaterBalloon(){
   WaterConcept::WaterBalloon::~WaterBalloon();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -315,7 +315,7 @@ void WaterConcept::WaterBalloon::setProperties(Walaber__PropertyList *p0)
         lVar5 = lVar5 + 0x30;
       } while (uVar4 < (lStack_90 - lStack_98 >> 3) * -0x5555555555555555 - 1U);
     }
-    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_98);
+    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_98)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
     if ((abStack_80[0] & 1) != 0) {
       operator delete((void *)CONCAT17(uStack_69,
                                     CONCAT52(uStack_6e,CONCAT11(abStack_80[0x11],abStack_80[0x10])))
@@ -1628,7 +1628,7 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
   uStack_e8 = uStack_f0;
   Walaber::SpriteAnimation::projectCurrentFrame(uStack_98,&Walaber::Vector2::Zero,&Walaber::Vector2::One,&uStack_d0,auStack_d4,
                   &uStack_e0,&uStack_f0,0);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&uStack_98);
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&uStack_98)->~SharedPtr<Walaber::SpriteAnimation>();
   uStack_80 = 0;
   uStack_88 = 0;
   uStack_70 = 0;
@@ -1734,9 +1734,9 @@ void WaterConcept::WaterBalloon::_drawAttachMouth(Walaber__SpriteBatch *p0)
   piStack_108 = piStack_118;
                     /* try { // try from 00497a44 to 00497a67 has its CatchHandler @ 00497ab4 */
   Walaber::SpriteBatch::drawVerts();
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_110);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_130);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_110)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_130)->~SharedPtr<Walaber::SpriteAnimation>();
   return;
 }
 
@@ -1859,7 +1859,7 @@ void WaterConcept::WaterBalloon::_detachFromSpout(long param_1)
   auStack_80[0] = 0x646e696208;
                     /* try { // try from 00497c84 to 00497c8f has its CatchHandler @ 00497d00 */
   Walaber::Sprite::playAnimation(auStack_68,lVar2,auStack_80);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_68);
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_68)->~SharedPtr<Walaber::SpriteAnimation>();
   if ((auStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -2137,7 +2137,7 @@ void WaterConcept::WaterBalloon::attachToSpout(WaterConcept__Spout *p0, long in_
     Walaber::Sprite::playAnimation(auStack_38,
                     *(undefined8 *)(p0->f_0x190 + (ulong)*(uint *)((long)&p0->f_0x4a0 + 4) * 0x28),
                     auStack_50);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_38);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_38)->~SharedPtr<Walaber::SpriteAnimation>();
     if ((auStack_50[0] & 1) != 0) {
       operator delete(pvStack_40);
     }

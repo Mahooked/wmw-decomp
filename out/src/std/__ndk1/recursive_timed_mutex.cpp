@@ -29,10 +29,10 @@
   uVar1 = pthread_mutex_lock();
   if ((int)uVar1 == 0) {
                     /* try { // try from 005e2d90 to 005e2d97 has its CatchHandler @ 005e2de0 */
-    pthread_mutex_unlock(param_1);
-    std::__ndk1::condition_variable::~condition_variable(param_1 + 0x28);
+    pthread_mutex_unlock(this);
+    ((std::__ndk1::condition_variable *)this + 0x28)->~condition_variable();
                     /* try { // try from 005e2da0 to 005e2da7 has its CatchHandler @ 005e2dc0 */
-    pthread_mutex_destroy(param_1);
+    pthread_mutex_destroy(this);
     return;
   }
                     /* try { // try from 005e2db4 to 005e2dbf has its CatchHandler @ 005e2dc4 */

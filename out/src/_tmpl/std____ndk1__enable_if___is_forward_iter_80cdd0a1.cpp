@@ -26,7 +26,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
   if (p1 != (Walaber__FluidParticle *)p2) {
     lVar3 = *(long *)(p0 + 8);
     do {
-      Walaber::BaseParticle::BaseParticle(lVar3,p1);
+      new ((void *)(lVar3)) Walaber::BaseParticle(p1);
       lVar2 = 0x38;
       do {
         *(undefined8 *)(lVar3 + lVar2) = *(undefined8 *)(p1 + lVar2);

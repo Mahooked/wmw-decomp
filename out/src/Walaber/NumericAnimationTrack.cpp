@@ -12,39 +12,39 @@
 
 
 
-/* ok  address 0x339c74  size 44 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3){
+/* ok  address 0x339c74  size 44 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_2,long param_3){
   int *piVar1;
   long lVar2;
   
   lVar2 = *param_2;
-  *param_1 = lVar2;
+  *this = lVar2;
   piVar1 = (int *)param_2[1];
-  param_1[1] = (long)piVar1;
+  this[1] = (long)piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_1[3] = param_3;
-  param_1[4] = 0;
-  *(undefined4 *)(param_1 + 2) = 0;
+  this[3] = param_3;
+  this[4] = 0;
+  *(undefined4 *)(this + 2) = 0;
   return;
 }
 
 
 
-/* ok  address 0x339ca0  size 48 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_1,long *param_2,long param_3){
+/* ok  address 0x339ca0  size 48 */Walaber::NumericAnimationTrack::NumericAnimationTrack(long *param_2,long param_3){
   int *piVar1;
   long lVar2;
   
   lVar2 = *param_2;
-  *param_1 = lVar2;
+  *this = lVar2;
   piVar1 = (int *)param_2[1];
-  param_1[1] = (long)piVar1;
+  this[1] = (long)piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  param_1[3] = param_3;
-  param_1[4] = 0;
-  *(undefined4 *)(param_1 + 2) = 1;
+  this[3] = param_3;
+  this[4] = 0;
+  *(undefined4 *)(this + 2) = 1;
   return;
 }
 
@@ -166,11 +166,11 @@ void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 par
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00339e28 to 00339e2b has its CatchHandler @ 00339ea8 */
   uVar4 = Walaber::CurveManager::getManager();
   puStack_98 = puStack_78;
@@ -179,9 +179,9 @@ void Walaber::NumericAnimationTrack::loadCurve(undefined8 param_1,undefined8 par
   }
                     /* try { // try from 00339e44 to 00339e53 has its CatchHandler @ 00339e98 */
   Walaber::CurveManager::getCurve(uVar4,param_1,param_2,&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NumericAnimationTrack>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<Walaber::NumericAnimationTrack>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<Walaber::NumericAnimationTrack>>();
   return;
 }
 

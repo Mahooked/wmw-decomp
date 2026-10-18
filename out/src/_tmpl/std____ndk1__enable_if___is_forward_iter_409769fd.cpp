@@ -53,7 +53,7 @@ void std::__ndk1::
         if ((*(byte *)(uVar6 - 0x20) & 1) != 0) {
           operator delete(*(void **)(uVar6 - 0x10));
         }
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(uVar6 - 0x30);
+        ((Walaber::SharedPtr<Walaber::Texture> *)uVar6 - 0x30)->~SharedPtr<Walaber::Texture>();
         uVar6 = uVar6 - 0x30;
       }
       *(ulong *)&p0->field_0x8 = uVar7;

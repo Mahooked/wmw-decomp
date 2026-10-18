@@ -20,7 +20,7 @@ void Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr()
     iVar1 = *(int *)this[1] + -1;
     *(int *)this[1] = iVar1;
     if (iVar1 == 0) {
-      Walaber::SoundResource::~SoundResource(p0);
+      ((Walaber::SoundResource *)p0)->~SoundResource();
       operator delete(p0);
       if ((void *)this[1] != (void *)0x0) {
         operator delete((void *)this[1]);
@@ -57,7 +57,7 @@ Walaber::SharedPtr<Walaber::SoundResource>::operator=
       iVar1 = *(int *)p0->f_0x8 + -1;
       *(int *)p0->f_0x8 = iVar1;
       if (iVar1 == 0) {
-        Walaber::SoundResource::~SoundResource(p0_00);
+        ((Walaber::SoundResource *)p0_00)->~SoundResource();
         operator delete(p0_00);
         if ((void *)p0->f_0x8 != (void *)0x0) {
           operator delete((void *)p0->f_0x8);

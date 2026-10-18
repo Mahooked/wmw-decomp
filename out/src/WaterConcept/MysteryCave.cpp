@@ -14,7 +14,7 @@
   
   uStack_408 = *(undefined8 *)p2;
   uStack_410 = *in_x2;
-  WaterConcept::InteractiveObject::InteractiveObject(p0,&uStack_408,&uStack_410,1,0);
+  new ((void *)(p0)) WaterConcept::InteractiveObject(&uStack_408,&uStack_410,1,0);
   *(undefined4 *)((long)p0 + 0x3bc) = 0;
   *(undefined ***)p0 = &PTR__MysteryCave_00711e18;
   *(undefined2 *)((long)p0 + 0x3b8) = 0;
@@ -26,8 +26,8 @@
   uStack_418 = *(undefined8 *)p2;
   uStack_420 = *in_x2;
                     /* try { // try from 0048abc0 to 0048abdb has its CatchHandler @ 0048ac1c */
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),auStack_400,&uStack_418,&uStack_420,1,0);
-  WaterConcept::InteractiveObject::~InteractiveObject(auStack_400);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(auStack_400,&uStack_418,&uStack_420,1,0);
+  ((WaterConcept::InteractiveObject *)auStack_400)->~InteractiveObject();
   *(undefined4 *)((long)p0 + 0xd8) = 0xe;
   return;
 }
@@ -254,7 +254,7 @@ void WaterConcept::MysteryCave::update(float p0)
       sRockTexUVs = 0;
       uVar3 = operator new(0x160);
                     /* try { // try from 0048b128 to 0048b137 has its CatchHandler @ 0048b330 */
-      Walaber::RenderTexture2D::RenderTexture2D(uVar3,iVar5,iVar6,0);
+      new ((void *)(uVar3)) Walaber::RenderTexture2D(iVar5,iVar6,0);
       uStack_108 = (undefined4)uVar3;
       uStack_104 = (undefined4)((ulong)uVar3 >> 0x20);
       puVar4 = (undefined4 *)operator new(4);
@@ -262,7 +262,7 @@ void WaterConcept::MysteryCave::update(float p0)
       uStack_100 = SUB84(puVar4,0);
       uStack_fc = (undefined4)((ulong)puVar4 >> 0x20);
       Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=(&sRockTex,&uStack_108);
-      Walaber::SharedPtr<Walaber::RenderTexture2D>::~SharedPtr(&uStack_108);
+      ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)&uStack_108)->~SharedPtr<Walaber::RenderTexture2D>();
       Walaber::RenderTexture2D::bind(sRockTex);
       Walaber::GraphicsGL::setViewport(0,0,iVar10,iVar9);
       fVar13 = DAT_0074f144;
@@ -271,7 +271,7 @@ void WaterConcept::MysteryCave::update(float p0)
       fVar11 = sRockTexCoords;
       fVar14 = DAT_0074f140;
       fVar15 = DAT_0074f144;
-      Walaber::SpriteBatch::SpriteBatch(&uStack_108);
+      new ((void *)(&uStack_108)) Walaber::SpriteBatch();
                     /* try { // try from 0048b198 to 0048b1ab has its CatchHandler @ 0048b340 */
       Walaber::SpriteBatch::start(&uStack_108);
       glMatrixMode(0x1701);
@@ -292,7 +292,7 @@ void WaterConcept::MysteryCave::update(float p0)
       WaterConcept::World::draw(*(undefined8 *)(in_x0 + 0xb8),&uStack_108,&fStack_110,&fStack_118,1);
       Walaber::RenderTexture2D::unbind(sRockTex);
       sRockTexInit = '\x01';
-      Walaber::SpriteBatch::~SpriteBatch(&uStack_108);
+      ((Walaber::SpriteBatch *)&uStack_108)->~SpriteBatch();
     }
     if ((*(char *)(in_x0 + 0x3b9) == '\0') && (*(long *)(in_x0 + 0x3a8) != 0)) {
       *(undefined1 *)(in_x0 + 0x3b9) = 1;
@@ -421,7 +421,7 @@ void WaterConcept::MysteryCave::draw(Walaber__SpriteBatch *p0,bool p1,float p2)
                              (float)uVar4 * (float)uVar8);
                     /* try { // try from 0048b59c to 0048b5bf has its CatchHandler @ 0048b630 */
         Walaber::SpriteBatch::drawQuad(0,p1,&lStack_68,auStack_58,&uStack_70,&uStack_50,&uStack_3c,0);
-        uVar5 = Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_68);
+        uVar5 = ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_68)->~SharedPtr<Walaber::Texture>();
       }
     }
     goto LAB_0048b5fc;
@@ -500,14 +500,14 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
   uStack_38 = 0;
   uStack_30 = 0;
   Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=(&sRockTex,&uStack_38);
-  Walaber::SharedPtr<Walaber::RenderTexture2D>::~SharedPtr(&uStack_38);
+  ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)&uStack_38)->~SharedPtr<Walaber::RenderTexture2D>();
   _DAT_0074f140 = 0;
   _sRockTexCoords = 0;
   sRockTexInit = 0;
   _DAT_0074f150 = 0;
   sRockTexUVs = 0;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x75);
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x75)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -515,7 +515,7 @@ void WaterConcept::MysteryCave::drawBackground(Walaber__SpriteBatch *p0,bool p1,
 
 /* ok  address 0x48b7b0  size 36 */WaterConcept::MysteryCave::~MysteryCave(){
   WaterConcept::MysteryCave::~MysteryCave();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

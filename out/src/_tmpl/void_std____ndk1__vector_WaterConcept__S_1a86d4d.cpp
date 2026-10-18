@@ -48,7 +48,7 @@ void std::__ndk1::
   lStack_50 = lStack_50 + 0x30;
                     /* try { // try from 004ecac4 to 004ecacf has its CatchHandler @ 004ecb20 */
   std::__ndk1::vector<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&> *)auStack_60)->~__split_buffer<WaterConcept::Screen_InAppPurchase::product, std::__ndk1::allocator<WaterConcept::Screen_InAppPurchase::product>&>();
   return;
 }
 

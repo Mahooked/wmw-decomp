@@ -4,7 +4,7 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x5f4f58  size 4 */std::exception::~exception(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

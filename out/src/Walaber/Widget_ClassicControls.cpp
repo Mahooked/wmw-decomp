@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0,&uStack_30,&uStack_38,1,1);
   puVar2[0x20] = 0;
   puVar2[0x21] = 0;
   *(undefined1 *)(puVar2 + 0x16) = 0;
@@ -47,7 +47,7 @@ void Walaber::Widget_ClassicControls::init(long param_1)
 
 /* ok  address 0x37ac64  size 36 */Walaber::Widget_ClassicControls::~Widget_ClassicControls(){
   Walaber::Widget::~Widget();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

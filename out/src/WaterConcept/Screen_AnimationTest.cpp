@@ -8,7 +8,7 @@
   undefined8 uStack_48;
   undefined8 uStack_40;
   
-  WaterConcept::WCScreen::WCScreen(this,0x11);
+  new ((void *)(this)) WaterConcept::WCScreen(0x11);
   *(undefined4 *)(this + 0x18) = 0;
   this[0x19] = 0;
   *this = &PTR__Screen_AnimationTest_00712dc8;
@@ -18,7 +18,7 @@
   uStack_48 = 0x41c0000041800000;
   uStack_40 = 0x4240000042000000;
                     /* try { // try from 004a6c50 to 004a6c5b has its CatchHandler @ 004a6ca0 */
-  Walaber::Camera::Camera(uVar2,&uStack_40,&uStack_48);
+  new ((void *)(uVar2)) Walaber::Camera(&uStack_40,&uStack_48);
   this[0x12] = uVar2;
                     /* try { // try from 004a6c60 to 004a6c67 has its CatchHandler @ 004a6cb0 */
   uVar2 = operator new(0xb8);
@@ -37,15 +37,15 @@
   *this = &PTR__Screen_AnimationTest_00712dc8;
   this[4] = &PTR_handleEvent_00712e78;
   if (pvVar1 != (void *)0x0) {
-    Walaber::Camera::~Camera(pvVar1);
+    ((Walaber::Camera *)pvVar1)->~Camera();
     operator delete(pvVar1);
   }
   pvVar1 = (void *)this[0x13];
   if (pvVar1 != (void *)0x0) {
-    Walaber::CameraController::~CameraController(pvVar1);
+    ((Walaber::CameraController *)pvVar1)->~CameraController();
     operator delete(pvVar1);
   }
-  WaterConcept::WCScreen::~WCScreen(this);
+  ((WaterConcept::WCScreen *)this)->~WCScreen();
   return;
 }
 
@@ -53,7 +53,7 @@
 
 /* ok  address 0x4a6d2c  size 36 */WaterConcept::Screen_AnimationTest::~Screen_AnimationTest(){
   WaterConcept::Screen_AnimationTest::~Screen_AnimationTest();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -290,18 +290,18 @@ void WaterConcept::Screen_AnimationTest::_buildUI(long param_1)
   puStack_90 = puVar2;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a72bc to 004a72c7 has its CatchHandler @ 004a7318 */
   puStack_a0 = puVar2;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AnimationTest>>::~SharedPtr(&puStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AnimationTest>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AnimationTest>>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -323,7 +323,7 @@ void WaterConcept::Screen_AnimationTest::exit(long param_1)
   
   p0 = *(void **)(param_1 + 0xb8);
   if (p0 != (void *)0x0) {
-    Walaber::SkeletonActor::~SkeletonActor(p0);
+    ((Walaber::SkeletonActor *)p0)->~SkeletonActor();
     operator delete(p0);
     return;
   }
@@ -547,7 +547,7 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
   
   pvVar15 = *(void **)(param_1 + 0xb8);
   if (pvVar15 != (void *)0x0) {
-    Walaber::SkeletonActor::~SkeletonActor(pvVar15);
+    ((Walaber::SkeletonActor *)pvVar15)->~SkeletonActor();
     operator delete(pvVar15);
   }
   uVar5 = operator new(400);
@@ -630,10 +630,10 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           }
                     /* try { // try from 004a7864 to 004a786f has its CatchHandler @ 004a8104 */
           Walaber::Widget_Label::setBGTexture(uVar5,&uStack_e0);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_e0);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_f0);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_e0)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_f0)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
           if ((bStack_a0 & 1) != 0) {
             operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
@@ -660,10 +660,10 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           }
                     /* try { // try from 004a7928 to 004a7933 has its CatchHandler @ 004a80e0 */
           Walaber::Widget_Label::setBGTexture(uVar5,&uStack_100);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_100);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_110);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_100)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_110)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
           if ((bStack_a0 & 1) != 0) {
             operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
@@ -733,10 +733,10 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           }
                     /* try { // try from 004a7b14 to 004a7b1f has its CatchHandler @ 004a80bc */
           Walaber::Widget_Label::setBGTexture(uVar5,&uStack_138);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_138);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_148);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_138)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_148)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
           if ((bStack_a0 & 1) != 0) {
             operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
@@ -763,10 +763,10 @@ void WaterConcept::Screen_AnimationTest::_reloadCurrentActor(long param_1)
           }
                     /* try { // try from 004a7bd8 to 004a7be3 has its CatchHandler @ 004a8098 */
           Walaber::Widget_Label::setBGTexture(uVar5,&uStack_158);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_158);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_168);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_158)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_168)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
           if ((bStack_a0 & 1) != 0) {
             operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
           }
@@ -872,10 +872,10 @@ LAB_004a7d5c:
     }
                     /* try { // try from 004a7dec to 004a7df7 has its CatchHandler @ 004a8150 */
     Walaber::Widget_Label::setBGTexture(lVar9,&uStack_178);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_178);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_188);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_178)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_188)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
     }
@@ -902,10 +902,10 @@ LAB_004a7d5c:
     }
                     /* try { // try from 004a7eb0 to 004a7ebb has its CatchHandler @ 004a812c */
     Walaber::Widget_Label::setBGTexture(uVar5,&uStack_198);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_198);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_198)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1a8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
     if ((bStack_a0 & 1) != 0) {
       operator delete((void *)CONCAT35(uStack_8b,CONCAT41(uStack_8f,uStack_90)));
     }

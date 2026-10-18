@@ -3,13 +3,13 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3e844c  size 56 */Walaber::MessageReceiver::MessageReceiver(undefined8 *param_1,undefined4 param_2){
+/* ok  address 0x3e844c  size 56 */Walaber::MessageReceiver::MessageReceiver(undefined4 param_2){
   undefined8 uVar1;
   
-  *(undefined4 *)(param_1 + 1) = param_2;
-  *param_1 = &PTR__MessageReceiver_00710d70;
+  *(undefined4 *)(this + 1) = param_2;
+  *this = &PTR__MessageReceiver_00710d70;
   uVar1 = Walaber::BroadcastManager::getInstancePtr();
-  Walaber::BroadcastManager::_addReceiver(uVar1,param_1);
+  Walaber::BroadcastManager::_addReceiver(uVar1,this);
   return;
 }
 
@@ -30,7 +30,7 @@
 
 /* ok  address 0x3e86c0  size 36 */Walaber::MessageReceiver::~MessageReceiver(){
   Walaber::MessageReceiver::~MessageReceiver();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

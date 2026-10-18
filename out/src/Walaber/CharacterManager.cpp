@@ -55,7 +55,7 @@ undefined8 Walaber::CharacterManager::removeSkeletonActorWithID(int p0, int in_w
     if ((plVar3 != plVar1) && ((int)plVar3[4] <= in_w1)) {
       p0_00 = (void *)plVar3[5];
       if (p0_00 != (void *)0x0) {
-        Walaber::SkeletonActor::~SkeletonActor(p0_00);
+        ((Walaber::SkeletonActor *)p0_00)->~SkeletonActor();
         operator delete(p0_00);
       }
       std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::SkeletonActor*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::SkeletonActor*>>>::erase((ulong)(uint)p0,plVar3);
@@ -116,15 +116,15 @@ LAB_004623dc:
   bool bVar1;
   long *plVar2;
   long lVar3;
-  void *p0;
+  void *this;
   long *plVar4;
   
   plVar4 = (long *)*this;
   while (plVar4 != this + 1) {
-    p0 = (void *)plVar4[5];
-    if (p0 != (void *)0x0) {
-      Walaber::SkeletonActor::~SkeletonActor(p0);
-      operator delete(p0);
+    this = (void *)plVar4[5];
+    if (this != (void *)0x0) {
+      ((Walaber::SkeletonActor *)this)->~SkeletonActor();
+      operator delete(this);
     }
     plVar2 = (long *)plVar4[1];
     if ((long *)plVar4[1] == (long *)0x0) {

@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0xd,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0xd,&uStack_30,&uStack_38,1,1);
   puVar2[0x20] = 0;
   puVar2[0x21] = 0;
   puVar2[0x26] = 0;
@@ -39,7 +39,7 @@ void Walaber::Widget_SlideWheel::init(void)
 
 
 
-/* ok  address 0x389904  size 184 */Walaber::Widget_SlideWheel::Widget_SlideWheel(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
+/* ok  address 0x389904  size 184 */Walaber::Widget_SlideWheel::Widget_SlideWheel(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   int *piVar2;
   long lVar3;
   undefined8 uStack_48;
@@ -47,19 +47,19 @@ void Walaber::Widget_SlideWheel::init(void)
   
   uStack_40 = *param_3;
   uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,0xd,&uStack_40,&uStack_48,1,1);
-  *(undefined4 *)((long)param_1 + 0xfc) = 0xff000000;
-  *param_1 = &PTR__Widget_SlideWheel_0070fbf8;
+  new ((void *)(this)) Walaber::Widget(param_2,0xd,&uStack_40,&uStack_48,1,1);
+  *(undefined4 *)((long)this + 0xfc) = 0xff000000;
+  *this = &PTR__Widget_SlideWheel_0070fbf8;
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x20] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
+  this[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_1[0x26] = 0;
-  param_1[0x27] = 0;
-  param_1[0x25] = 0;
+  this[0x26] = 0;
+  this[0x27] = 0;
+  this[0x25] = 0;
   return;
 }
 
@@ -78,8 +78,8 @@ void Walaber::Widget_SlideWheel::init(void)
   this[0x28] = 0;
   *(undefined4 *)((long)this + 0x134) = 0;
   *(undefined4 *)((long)this + 0x13c) = 0;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -87,7 +87,7 @@ void Walaber::Widget_SlideWheel::init(void)
 
 /* ok  address 0x389a54  size 36 */Walaber::Widget_SlideWheel::~Widget_SlideWheel(){
   Walaber::Widget_SlideWheel::~Widget_SlideWheel();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -205,7 +205,7 @@ void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
                     /* try { // try from 00389d94 to 00389de3 has its CatchHandler @ 00389e3c */
     Walaber::Node::getWorldScale(&fStack_a0,p0);
     Walaber::SpriteBatch::drawQuad(uVar7);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   else {
     Walaber::Node::getWorldScale(&uStack_b0,p0);
@@ -245,7 +245,7 @@ void Walaber::Widget_SlideWheel::draw(Walaber__SpriteBatch *p0)
       fStack_c0 = (float)p0[2].f_0x20 * fStack_a0 - (float)p0[5].f_0x18;
       fStack_bc = fVar15;
       Walaber::SpriteBatch::drawQuad(uVar7);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
       uVar2 = uVar2 + 1;
       fVar5 = fVar16;
       fVar6 = fVar14;

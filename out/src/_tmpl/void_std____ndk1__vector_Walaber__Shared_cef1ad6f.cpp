@@ -54,7 +54,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 00506a3c to 00506a47 has its CatchHandler @ 00506a80 */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>();
   return;
 }
 
@@ -111,7 +111,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 005a36b0 to 005a36bb has its CatchHandler @ 005a36f4 */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>&>();
   return;
 }
 

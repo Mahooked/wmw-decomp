@@ -22,7 +22,7 @@ void std::__ndk1::__deque_base<Walaber::Node*,std::__ndk1::allocator<Walaber::No
   for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
     operator delete((void *)*puVar2);
   }
-  std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>::~__split_buffer(param_1);
+  ((std::__ndk1::__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>> *)param_1)->~__split_buffer<Walaber::Node**, std::__ndk1::allocator<Walaber::Node**>>();
   return;
 }
 

@@ -57,7 +57,7 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 4;
                     /* try { // try from 003e53ec to 003e53f7 has its CatchHandler @ 003e5430 */
   std::__ndk1::vector<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&> *)auStack_60)->~__split_buffer<Walaber::CurveManager::CurveCollection, std::__ndk1::allocator<Walaber::CurveManager::CurveCollection>&>();
   return;
 }
 

@@ -4,16 +4,16 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x55bf88  size 188 */WaterConcept::Screen_PuppetShow::Screen_PuppetShow(){
-  WaterConcept::WCScreen::WCScreen(this,0xf);
+  new ((void *)(this)) WaterConcept::WCScreen(0xf);
   *this = &PTR__Screen_PuppetShow_00715468;
   this[4] = &PTR_handleEvent_00715518;
                     /* try { // try from 0055bfc0 to 0055bfc7 has its CatchHandler @ 0055c030 */
-  WaterConcept::ParallaxPuppetShow::ParallaxPuppetShow(this + 0x12);
+  new ((void *)(this + 0x12)) WaterConcept::ParallaxPuppetShow();
   *(undefined1 *)((long)this + 0x314) = 0;
   *(undefined4 *)(this + 0x62) = 0xbf800000;
   *(undefined4 *)(this + 99) = 2;
                     /* try { // try from 0055bfe0 to 0055bfe3 has its CatchHandler @ 0055c020 */
-  Walaber::PropertyList::PropertyList(this + 100);
+  new ((void *)(this + 100)) Walaber::PropertyList();
   this[0x6a] = 0;
   this[0x6b] = 0;
   this[0x6c] = 0;
@@ -34,10 +34,10 @@
   if ((*(byte *)(this + 0x6a) & 1) != 0) {
     operator delete((void *)this[0x6c]);
   }
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0x68);
-  Walaber::PropertyList::~PropertyList(this + 100);
-  WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(this + 0x12);
-  WaterConcept::WCScreen::~WCScreen(this);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x68)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::PropertyList *)this + 100)->~PropertyList();
+  ((WaterConcept::ParallaxPuppetShow *)this + 0x12)->~ParallaxPuppetShow();
+  ((WaterConcept::WCScreen *)this)->~WCScreen();
   return;
 }
 
@@ -45,7 +45,7 @@
 
 /* ok  address 0x55c0a4  size 36 */WaterConcept::Screen_PuppetShow::~Screen_PuppetShow(){
   WaterConcept::Screen_PuppetShow::~Screen_PuppetShow();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -233,7 +233,7 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   }
   if ((uVar4 & 1) != 0) {
                     /* try { // try from 0055c2d0 to 0055c2d7 has its CatchHandler @ 0055c684 */
-    Walaber::PropertyList::PropertyList(&bStack_78);
+    new ((void *)(&bStack_78)) Walaber::PropertyList();
     uStack_82 = 0;
     pvStack_80 = (void *)0x0;
     bStack_90 = 0x18;
@@ -268,13 +268,13 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     *piStack_b8 = 3;
     puStack_c0 = puVar5;
     piStack_98 = piStack_b8;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_90);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_90)->~SharedPtr<Walaber::Callback>();
     puStack_b0 = puStack_c0;
     piStack_a8 = piStack_b8;
     if (puStack_c0 != (undefined8 *)0x0) {
       *piStack_b8 = *piStack_b8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0055c39c to 0055c39f has its CatchHandler @ 0055c66c */
     uVar6 = Walaber::SoundManager::getInstancePtr();
     uVar4 = p0[0x22].f_0x8;
@@ -284,10 +284,10 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
     }
                     /* try { // try from 0055c3bc to 0055c3c7 has its CatchHandler @ 0055c65c */
     Walaber::SoundManager::newSoundFromGroup(uVar6,(int)uVar4,&puStack_d0,&bStack_78);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
-    Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>>::~SharedPtr(&puStack_a0);
-    Walaber::PropertyList::~PropertyList(&bStack_78);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>> *)&puStack_a0)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>>();
+    ((Walaber::PropertyList *)&bStack_78)->~PropertyList();
   }
   uStack_6d = 0;
   uStack_6c = 0;
@@ -434,11 +434,11 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   uStack_70 = uStack_88;
   uStack_6f = uStack_87;
   uStack_6b = uStack_83;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&bStack_78);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&bStack_78)->~SharedPtr<Walaber::Callback>();
   *piVar7 = *piVar7 + 1;
   puStack_a0 = puVar5;
   piStack_98 = piVar7;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0055c5d0 to 0055c5d3 has its CatchHandler @ 0055c698 */
   uVar6 = Walaber::FileManager::getInstancePtr();
   puStack_e0 = puStack_a0;
@@ -447,9 +447,9 @@ void WaterConcept::Screen_PuppetShow::loadPropertyList(Walaber__PropertyList *p0
   }
                     /* try { // try from 0055c5ec to 0055c5ff has its CatchHandler @ 0055c688 */
   Walaber::FileManager::fileExists(uVar6,abStack_60,&puStack_e0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>>::~SharedPtr(&bStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>> *)&bStack_90)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_PuppetShow>>();
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -477,7 +477,7 @@ void WaterConcept::Screen_PuppetShow::_gotSoundtrack(void *p0, long in_x1)
     *piStack_40 = *piStack_40 + 1;
   }
   Walaber::SharedPtr<Walaber::SoundEffectInstance>::operator=((long)p0 + 0x2f8,&lStack_48);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&lStack_48);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&lStack_48)->~SharedPtr<Walaber::SoundEffectInstance>();
   return;
 }
 
@@ -587,8 +587,8 @@ void WaterConcept::Screen_PuppetShow::_buildUI(long param_1)
   uStack_58 = 0;
                     /* try { // try from 0055c9dc to 0055c9e7 has its CatchHandler @ 0055ca64 */
   Walaber::WidgetHelper::loadWidgetsXML(auStack_50,*(undefined8 *)(param_1 + 0x10),&uStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_60)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_70)->~SharedPtr<Walaber::Callback>();
   if (0.0 < *(float *)(param_1 + 0x368)) {
                     /* try { // try from 0055ca08 to 0055ca1b has its CatchHandler @ 0055ca5c */
     lVar2 = Walaber::WidgetManager::getWidget(*(undefined8 *)(param_1 + 0x10),2);
@@ -622,7 +622,7 @@ void WaterConcept::Screen_PuppetShow::exit(long param_1)
     uStack_40 = *(undefined8 *)(param_1 + 0x340);
     *(undefined8 *)(param_1 + 0x348) = 0;
     *(undefined8 *)(param_1 + 0x340) = 0;
-    Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_40);
+    ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&uStack_40)->~SharedPtr<Walaber::SoundEffectInstance>();
     uVar2 = Walaber::SoundManager::getInstancePtr();
     Walaber::SoundManager::freeGroup(uVar2,*(undefined4 *)(param_1 + 0x338),1);
   }
@@ -714,7 +714,7 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
     abStack_70[0xd] = 0;
     abStack_70[0xe] = 0;
     abStack_70[0xf] = 0;
-    Walaber::PropertyList::PropertyList(apvStack_60);
+    new ((void *)(apvStack_60)) Walaber::PropertyList();
     abStack_88[7] = 0;
     abStack_88[8] = 0;
     abStack_88[9] = 0;
@@ -752,10 +752,10 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
     abStack_c0[7] = 0x65;
     abStack_c0[8] = 0x6e;
                     /* try { // try from 0055cc0c to 0055cc17 has its CatchHandler @ 0055ced0 */
-    Walaber::Property::Property(auStack_a8,abStack_c0);
+    new ((void *)(auStack_a8)) Walaber::Property(abStack_c0);
                     /* try { // try from 0055cc18 to 0055cc27 has its CatchHandler @ 0055cec0 */
     Walaber::PropertyList::setValueForKey(apvStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_c0[0] & 1) != 0) {
       operator delete(pvStack_b0);
     }
@@ -782,10 +782,10 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
     abStack_88[8] = 0x69;
     uStack_77 = 100;
                     /* try { // try from 0055cc84 to 0055cc8b has its CatchHandler @ 0055ceb8 */
-    Walaber::Property::Property(auStack_a8,GameSettings::currentLevelPackIndex);
+    new ((void *)(auStack_a8)) Walaber::Property(GameSettings::currentLevelPackIndex);
                     /* try { // try from 0055cc8c to 0055cc9b has its CatchHandler @ 0055cea8 */
     Walaber::PropertyList::setValueForKey(apvStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_88[0] & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_75,CONCAT21(uStack_77,abStack_88[0x10])));
     }
@@ -800,7 +800,7 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
     abStack_70[5] = 0;
     abStack_70[6] = 0;
     abStack_70[7] = 0;
-    Walaber::PropertyList::~PropertyList(apvStack_60);
+    ((Walaber::PropertyList *)apvStack_60)->~PropertyList();
     Walaber::ScreenManager::popAllScreens();
     lVar5 = uVar2 + 800;
     Walaber::ScreenManager::pushScreen(*(undefined4 *)(uVar2 + 0x318),lVar5);
@@ -830,11 +830,11 @@ void WaterConcept::Screen_PuppetShow::update(float p0,bool p1)
       Walaber::ScreenManager::pushScreen(8,lVar5);
       Walaber::ScreenManager::pushScreen(0x1e,lVar5);
     }
-    Walaber::PropertyList::PropertyList(abStack_70);
+    new ((void *)(abStack_70)) Walaber::PropertyList();
                     /* try { // try from 0055cd50 to 0055cd67 has its CatchHandler @ 0055cef8 */
     WaterConcept::GameSettings::setStandardFadeProperties(abStack_70);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,abStack_70);
-    Walaber::PropertyList::~PropertyList(abStack_70);
+    ((Walaber::PropertyList *)abStack_70)->~PropertyList();
   }
   if (*(float *)(uVar2 + 0x368) <= 0.0) goto LAB_0055ce38;
   lVar5 = Walaber::WidgetManager::getWidget(*(undefined8 *)(uVar2 + 0x10),2);
@@ -958,7 +958,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     uStack_90 = 0x10;
     uStack_8f = 0;
     uStack_8d = 0xa00;
-    Walaber::PropertyList::PropertyList(apvStack_88);
+    new ((void *)(apvStack_88)) Walaber::PropertyList();
     abStack_50[7] = 0;
     abStack_50[8] = 0;
     abStack_50[9] = 0;
@@ -996,10 +996,10 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     abStack_70[7] = 0x65;
     abStack_70[8] = 0x6e;
                     /* try { // try from 0055d1ac to 0055d1b7 has its CatchHandler @ 0055d34c */
-    Walaber::Property::Property(afStack_b8,abStack_70);
+    new ((void *)(afStack_b8)) Walaber::Property(abStack_70);
                     /* try { // try from 0055d1b8 to 0055d1c7 has its CatchHandler @ 0055d33c */
     Walaber::PropertyList::setValueForKey(apvStack_88,abStack_50,afStack_b8);
-    Walaber::Property::~Property(afStack_b8);
+    ((Walaber::Property *)afStack_b8)->~Property();
     if ((abStack_70[0] & 1) != 0) {
       operator delete(pcStack_60);
     }
@@ -1026,10 +1026,10 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     abStack_50[8] = 0x69;
     abStack_50[0x11] = 0;
                     /* try { // try from 0055d220 to 0055d227 has its CatchHandler @ 0055d338 */
-    Walaber::Property::Property(afStack_b8,GameSettings::currentLevelPackIndex);
+    new ((void *)(afStack_b8)) Walaber::Property(GameSettings::currentLevelPackIndex);
                     /* try { // try from 0055d228 to 0055d237 has its CatchHandler @ 0055d328 */
     Walaber::PropertyList::setValueForKey(apvStack_88,abStack_50,afStack_b8);
-    Walaber::Property::~Property(afStack_b8);
+    ((Walaber::Property *)afStack_b8)->~Property();
     if ((abStack_50[0] & 1) != 0) {
       operator delete((void *)CONCAT62(uStack_3e,CONCAT11(abStack_50[0x11],abStack_50[0x10])));
     }
@@ -1038,7 +1038,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     Walaber::BroadcastManager::messageTx(uVar5,&fStack_98);
     fStack_98 = 1.0359396e-38;
     uStack_94 = 0;
-    Walaber::PropertyList::~PropertyList(apvStack_88);
+    ((Walaber::PropertyList *)apvStack_88)->~PropertyList();
     Walaber::ScreenManager::popAllScreens();
     lVar4 = uVar6 + 800;
     Walaber::ScreenManager::pushScreen(*(undefined4 *)(uVar6 + 0x318),lVar4);
@@ -1057,7 +1057,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
       Walaber::ScreenManager::pushScreen(8,lVar4);
       Walaber::ScreenManager::pushScreen(0x1e,lVar4);
     }
-    Walaber::PropertyList::PropertyList(&fStack_98);
+    new ((void *)(&fStack_98)) Walaber::PropertyList();
                     /* try { // try from 0055d2ec to 0055d303 has its CatchHandler @ 0055d374 */
     WaterConcept::GameSettings::setStandardFadeProperties(&fStack_98);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,&fStack_98);
@@ -1065,7 +1065,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
   }
   else {
     if ((int)p1 != 1) goto LAB_0055d114;
-    Walaber::PropertyList::PropertyList(afStack_b8);
+    new ((void *)(afStack_b8)) Walaber::PropertyList();
     abStack_50[0x10] = 0;
     abStack_50[0x11] = 0;
     uStack_3e = 0;
@@ -1122,10 +1122,10 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     abStack_70[7] = 0;
     builtin_strncpy(pcStack_60,"/PuppetShows/intro_01.ps",0x19);
                     /* try { // try from 0055d04c to 0055d057 has its CatchHandler @ 0055d3a4 */
-    Walaber::Property::Property(&fStack_98,abStack_70);
+    new ((void *)(&fStack_98)) Walaber::Property(abStack_70);
                     /* try { // try from 0055d058 to 0055d067 has its CatchHandler @ 0055d394 */
     Walaber::PropertyList::setValueForKey(afStack_b8,abStack_50,&fStack_98);
-    Walaber::Property::~Property(&fStack_98);
+    ((Walaber::Property *)&fStack_98)->~Property();
     if ((abStack_70[0] & 1) != 0) {
       operator delete(pcStack_60);
     }
@@ -1138,7 +1138,7 @@ void WaterConcept::Screen_PuppetShow::handleEvent
     Walaber::ScreenManager::commitScreenChanges();
     pfVar3 = afStack_b8;
   }
-  Walaber::PropertyList::~PropertyList(pfVar3);
+  ((Walaber::PropertyList *)pfVar3)->~PropertyList();
 LAB_0055d114:
   return;
 }
@@ -1160,11 +1160,11 @@ void WaterConcept::Screen_PuppetShow::backKeyPressed(long param_1)
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popAllScreens();
     Walaber::ScreenManager::pushScreen(2);
-    Walaber::PropertyList::PropertyList(auStack_40);
+    new ((void *)(auStack_40)) Walaber::PropertyList();
                     /* try { // try from 0055d430 to 0055d447 has its CatchHandler @ 0055d474 */
     WaterConcept::GameSettings::setStandardFadeProperties(auStack_40);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
-    Walaber::PropertyList::~PropertyList(auStack_40);
+    ((Walaber::PropertyList *)auStack_40)->~PropertyList();
   }
   return;
 }

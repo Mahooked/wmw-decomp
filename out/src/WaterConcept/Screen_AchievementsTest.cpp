@@ -7,13 +7,13 @@
   undefined8 uVar1;
   int iVar2;
   
-  WaterConcept::WCScreen::WCScreen(this,0x13);
+  new ((void *)(this)) WaterConcept::WCScreen(0x13);
   *this = &PTR__Screen_AchievementsTest_00712b18;
   this[4] = &PTR_handleEvent_00712bc8;
   if (((Walaber::AchievementManager::getInstancePtr()::instance & 1) == 0) &&
      (iVar2 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar2 != 0)) {
                     /* try { // try from 004a43dc to 004a43e7 has its CatchHandler @ 004a4414 */
-    Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+    new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
     __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                  &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
     __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
@@ -37,7 +37,7 @@
 
 /* ok  address 0x4a4438  size 36 */WaterConcept::Screen_AchievementsTest::~Screen_AchievementsTest(){
   WaterConcept::WCScreen::~WCScreen();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -111,18 +111,18 @@ void WaterConcept::Screen_AchievementsTest::_buildUI(long param_1)
   puStack_90 = puVar2;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a4570 to 004a457b has its CatchHandler @ 004a45cc */
   puStack_a0 = puVar2;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>>::~SharedPtr(&puStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_AchievementsTest>>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -343,10 +343,10 @@ void WaterConcept::Screen_AchievementsTest::_updateUIForCurrentAchievement(long 
   }
                     /* try { // try from 004a4950 to 004a495b has its CatchHandler @ 004a4b4c */
   Walaber::Widget_Label::setBGTexture(uVar3,auStack_90);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_90);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&bStack_68);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(auStack_b8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_90)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_68)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)auStack_b8)->~SharedPtr<Walaber::Callback>();
   lVar4 = *(long *)(param_1 + 0xa0);
   uVar2 = *(undefined8 *)(lVar4 + 0xe8);
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d0,*(long *)(*(long *)(param_1 + 0xc0) + 0x38) + 0x18);

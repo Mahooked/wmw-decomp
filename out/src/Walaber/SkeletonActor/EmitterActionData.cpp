@@ -4,7 +4,7 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x348194  size 4 */Walaber::SkeletonActor::EmitterActionData::~EmitterActionData(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

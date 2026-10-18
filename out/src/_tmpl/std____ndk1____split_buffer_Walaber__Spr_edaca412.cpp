@@ -66,7 +66,7 @@ void std::__ndk1::
   lVar2 = this[2];
   while (lVar2 != lVar1) {
     this[2] = lVar2 + -0x28;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -0x10);
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -0x10)->~SharedPtr<Walaber::Texture>();
     lVar2 = this[2];
   }
   if ((void *)*this != (void *)0x0) {

@@ -187,7 +187,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo(void)
   uStack_b8 = 99;
   uStack_b2 = 0;
                     /* try { // try from 0043538c to 004353a3 has its CatchHandler @ 004354fc */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_e0,0,&uStack_80,&bStack_c0,&uStack_a0);
+  new ((void *)(auStack_e0)) Walaber::DatabaseIterator(0,&uStack_80,&bStack_c0,&uStack_a0);
   if ((bStack_c0 & 1) != 0) {
     operator delete(pvStack_b0);
   }
@@ -196,7 +196,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelPackInfo(void)
                     /* try { // try from 00435494 to 0043549b has its CatchHandler @ 0043555c */
     uVar8 = Walaber::DatabaseIterator::next(auStack_e0);
     if ((uVar8 & 1) == 0) {
-      Walaber::DatabaseIterator::~DatabaseIterator(auStack_e0);
+      ((Walaber::DatabaseIterator *)auStack_e0)->~DatabaseIterator();
       if ((uStack_a0 & 1) != 0) {
         operator delete(pvStack_90);
       }
@@ -482,7 +482,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
   uStack_ce = 0x6e496c657665;
   uStack_c8 = 0x66;
                     /* try { // try from 00435930 to 00435947 has its CatchHandler @ 00435b84 */
-  Walaber::DatabaseIterator::DatabaseIterator(&uStack_110,0,&uStack_90,&bStack_d0,&uStack_b0);
+  new ((void *)(&uStack_110)) Walaber::DatabaseIterator(0,&uStack_90,&bStack_d0,&uStack_b0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(puStack_c0);
   }
@@ -551,7 +551,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalLevelInfo(void)
       operator delete(puStack_c0);
     }
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&uStack_110);
+  ((Walaber::DatabaseIterator *)&uStack_110)->~DatabaseIterator();
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
@@ -633,7 +633,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo(void)
   abStack_d8[8] = 0x6d;
   abStack_d8[0xd] = 0;
                     /* try { // try from 00435de8 to 00435dff has its CatchHandler @ 00435f80 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_c0,0,&uStack_a0,abStack_d8,auStack_b8);
+  new ((void *)(auStack_c0)) Walaber::DatabaseIterator(0,&uStack_a0,abStack_d8,auStack_b8);
   if ((abStack_d8[0] & 1) != 0) {
     operator delete(pvStack_c8);
   }
@@ -642,7 +642,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAchievementInfo(void)
                     /* try { // try from 00435f10 to 00435f17 has its CatchHandler @ 00435fb4 */
     uVar7 = Walaber::DatabaseIterator::next(auStack_c0);
     if ((uVar7 & 1) == 0) {
-      Walaber::DatabaseIterator::~DatabaseIterator(auStack_c0);
+      ((Walaber::DatabaseIterator *)auStack_c0)->~DatabaseIterator();
       if ((auStack_b8[0] & 1) != 0) {
         operator delete(pvStack_a8);
       }
@@ -781,7 +781,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
   uStack_c8 = 0x69;
   pvStack_c0 = (void *)0x0;
                     /* try { // try from 00436154 to 0043616b has its CatchHandler @ 004362e0 */
-  Walaber::DatabaseIterator::DatabaseIterator(abStack_e8,0,&uStack_90,&bStack_d0,&uStack_b0);
+  new ((void *)(abStack_e8)) Walaber::DatabaseIterator(0,&uStack_90,&bStack_d0,&uStack_b0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -790,7 +790,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCollectibleInfo(void)
                     /* try { // try from 00436274 to 0043627b has its CatchHandler @ 00436344 */
     uVar9 = Walaber::DatabaseIterator::next(abStack_e8);
     if ((uVar9 & 1) == 0) {
-      Walaber::DatabaseIterator::~DatabaseIterator(abStack_e8);
+      ((Walaber::DatabaseIterator *)abStack_e8)->~DatabaseIterator();
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
@@ -906,7 +906,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo(v
   uStack_a0 = 0x68;
   uStack_97 = 0x6f666e;
                     /* try { // try from 0043643c to 00436453 has its CatchHandler @ 00436584 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_90,0,&uStack_70,&bStack_a8,auStack_88);
+  new ((void *)(auStack_90)) Walaber::DatabaseIterator(0,&uStack_70,&bStack_a8,auStack_88);
   if ((bStack_a8 & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_93,CONCAT41(uStack_97,uStack_98)));
   }
@@ -916,7 +916,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyChallengeInfo(v
                     /* try { // try from 00436520 to 00436527 has its CatchHandler @ 004365bc */
       uVar6 = Walaber::DatabaseIterator::next(auStack_90);
       if ((uVar6 & 1) == 0) {
-        Walaber::DatabaseIterator::~DatabaseIterator(auStack_90);
+        ((Walaber::DatabaseIterator *)auStack_90)->~DatabaseIterator();
         if ((auStack_88[0] & 1) != 0) {
           operator delete(pvStack_78);
         }
@@ -1055,7 +1055,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
   uStack_c8 = 0x6f;
   uStack_c7 = 0;
                     /* try { // try from 00436744 to 0043675b has its CatchHandler @ 004368d0 */
-  Walaber::DatabaseIterator::DatabaseIterator(abStack_e8,0,&uStack_90,&bStack_d0,&uStack_b0);
+  new ((void *)(abStack_e8)) Walaber::DatabaseIterator(0,&uStack_90,&bStack_d0,&uStack_b0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -1064,7 +1064,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalCrankyFoodInfo(void)
                     /* try { // try from 00436864 to 0043686b has its CatchHandler @ 00436934 */
     uVar8 = Walaber::DatabaseIterator::next(abStack_e8);
     if ((uVar8 & 1) == 0) {
-      Walaber::DatabaseIterator::~DatabaseIterator(abStack_e8);
+      ((Walaber::DatabaseIterator *)abStack_e8)->~DatabaseIterator();
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
@@ -1217,7 +1217,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
   uStack_c8 = 0x6c;
   uStack_bf = 0;
                     /* try { // try from 00436abc to 00436acf has its CatchHandler @ 00436c44 */
-  Walaber::DatabaseIterator::DatabaseIterator(abStack_e8,&uStack_90,&bStack_d0,&uStack_b0);
+  new ((void *)(abStack_e8)) Walaber::DatabaseIterator(&uStack_90,&bStack_d0,&uStack_b0);
   if ((bStack_d0 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_be,CONCAT11(uStack_bf,uStack_c0)));
   }
@@ -1226,7 +1226,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieMusicInfo(void)
                     /* try { // try from 00436bd8 to 00436bdf has its CatchHandler @ 00436ca8 */
     uVar8 = Walaber::DatabaseIterator::next(abStack_e8);
     if ((uVar8 & 1) == 0) {
-      Walaber::DatabaseIterator::~DatabaseIterator(abStack_e8);
+      ((Walaber::DatabaseIterator *)abStack_e8)->~DatabaseIterator();
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
@@ -1344,7 +1344,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo(vo
   uStack_a0 = 0x61;
   uStack_95 = 0;
                     /* try { // try from 00436da0 to 00436db7 has its CatchHandler @ 00436ee8 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_90,0,&uStack_70,&bStack_a8,auStack_88);
+  new ((void *)(auStack_90)) Walaber::DatabaseIterator(0,&uStack_70,&bStack_a8,auStack_88);
   if ((bStack_a8 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_94,CONCAT13(uStack_95,CONCAT21(uStack_97,uStack_98))));
   }
@@ -1354,7 +1354,7 @@ ulong WaterConcept::PlayerDataSerializer::initAndMergeLocalAllieChallengeInfo(vo
                     /* try { // try from 00436e84 to 00436e8b has its CatchHandler @ 00436f20 */
       uVar6 = Walaber::DatabaseIterator::next(auStack_90);
       if ((uVar6 & 1) == 0) {
-        Walaber::DatabaseIterator::~DatabaseIterator(auStack_90);
+        ((Walaber::DatabaseIterator *)auStack_90)->~DatabaseIterator();
         if ((auStack_88[0] & 1) != 0) {
           operator delete(pvStack_78);
         }
@@ -1521,11 +1521,11 @@ LAB_00437144:
           operator delete(pvStack_b0);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar9 = lVar9 + 0x18;
     } while (lVar9 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar10;
 }
 
@@ -1644,13 +1644,13 @@ ulong WaterConcept::PlayerDataSerializer::deserializeAndMergeLevelInfo(std::__nd
         if ((abStack_d8[0] & 1) != 0) {
           operator delete(pvStack_c8);
         }
-        std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_c0);
+        ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_c0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar8 = lVar8 + 0x18;
     } while (lVar8 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)(uVar13 & 1);
 }
 
@@ -1725,11 +1725,11 @@ LAB_00437658:
           operator delete(pvStack_a0);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_98);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_98)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar8 = lVar8 + 0x18;
     } while (lVar8 != lStack_78);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_80)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar9;
 }
 
@@ -1837,11 +1837,11 @@ LAB_004378cc:
           operator delete(pcStack_b8);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar12 = lVar12 + 0x18;
     } while (lVar12 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar13;
 }
 
@@ -1937,11 +1937,11 @@ LAB_00437af4:
           operator delete(pcStack_b8);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar11 = lVar11 + 0x18;
     } while (lVar11 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar12;
 }
 
@@ -2048,11 +2048,11 @@ LAB_00437d8c:
           operator delete(pcStack_b8);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar12 = lVar12 + 0x18;
     } while (lVar12 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar13;
 }
 
@@ -2159,11 +2159,11 @@ LAB_00438010:
           operator delete(pcStack_b8);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar12 = lVar12 + 0x18;
     } while (lVar12 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar13;
 }
 
@@ -2259,11 +2259,11 @@ LAB_00438238:
           operator delete(pcStack_b8);
         }
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_a8);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_a8)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar11 = lVar11 + 0x18;
     } while (lVar11 != lStack_88);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_90);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_90)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return (ulong)uVar12;
 }
 
@@ -2348,7 +2348,7 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
   uStack_88 = 99;
   uStack_82 = 0;
                     /* try { // try from 00438430 to 00438447 has its CatchHandler @ 004384d0 */
-  Walaber::DatabaseIterator::DatabaseIterator(abStack_a8,0,abStack_50,&bStack_90,&uStack_70);
+  new ((void *)(abStack_a8)) Walaber::DatabaseIterator(0,abStack_50,&bStack_90,&uStack_70);
   if ((bStack_90 & 1) != 0) {
     operator delete(pvStack_80);
   }
@@ -2361,7 +2361,7 @@ ulong WaterConcept::PlayerDataSerializer::getStorylineForPack(byte *param_1)
     uVar5 = Walaber::DatabaseIterator::getIntAtIndex(abStack_a8,0);
     uVar5 = uVar5 & 0xffffffff;
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(abStack_a8);
+  ((Walaber::DatabaseIterator *)abStack_a8)->~DatabaseIterator();
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -3294,7 +3294,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelPackInfo(byte *param_1
   uStack_98 = 99;
   uStack_92 = 0;
                     /* try { // try from 0043993c to 00439953 has its CatchHandler @ 00439b80 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_c0,0,&uStack_60,&bStack_a0,&uStack_80);
+  new ((void *)(auStack_c0)) Walaber::DatabaseIterator(0,&uStack_60,&bStack_a0,&uStack_80);
   if ((bStack_a0 & 1) != 0) {
     operator delete(puStack_90);
   }
@@ -3384,7 +3384,7 @@ LAB_00439ac4:
   if ((bStack_a0 & 1) != 0) {
     operator delete(puStack_90);
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_c0);
+  ((Walaber::DatabaseIterator *)auStack_c0)->~DatabaseIterator();
   if ((uStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -3685,7 +3685,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalLevelInfo
   uStack_ee = 0x6e496c657665;
   uStack_e8 = 0x66;
                     /* try { // try from 00439fe0 to 00439ff7 has its CatchHandler @ 0043aa10 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_1b8,0,&uStack_b0,&bStack_f0,&uStack_d0);
+  new ((void *)(auStack_1b8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&uStack_d0);
   if ((bStack_f0 & 1) != 0) {
     operator delete(puStack_e0);
   }
@@ -3708,7 +3708,7 @@ LAB_0043a994:
       if ((bStack_f0 & 1) != 0) {
         operator delete(puStack_e0);
       }
-      Walaber::DatabaseIterator::~DatabaseIterator(auStack_1b8);
+      ((Walaber::DatabaseIterator *)auStack_1b8)->~DatabaseIterator();
       if ((uStack_d0 & 1) != 0) {
         operator delete(pvStack_c0);
       }
@@ -4300,7 +4300,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
   uStack_c8 = 0x6d;
   uStack_c3 = 0;
                     /* try { // try from 0043aec8 to 0043aedf has its CatchHandler @ 0043b1e8 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_f0,0,abStack_90,&bStack_d0,&uStack_b0);
+  new ((void *)(auStack_f0)) Walaber::DatabaseIterator(0,abStack_90,&bStack_d0,&uStack_b0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(puStack_c0);
   }
@@ -4414,7 +4414,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
          (iVar6 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar6 != 0
          )) {
                     /* try { // try from 0043b13c to 0043b147 has its CatchHandler @ 0043b178 */
-        Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+        new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
         __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                      &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
         __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
@@ -4432,7 +4432,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAchievementInfo(byte *param
   if ((bStack_d0 & 1) != 0) {
     operator delete(puStack_c0);
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_f0);
+  ((Walaber::DatabaseIterator *)auStack_f0)->~DatabaseIterator();
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
@@ -4528,7 +4528,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCollectibleInfo
   uStack_98 = 0x69;
   puStack_90 = (void *)0x0;
                     /* try { // try from 0043b3b8 to 0043b3cf has its CatchHandler @ 0043b5f8 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_c0,0,&uStack_60,&bStack_a0,&uStack_80);
+  new ((void *)(auStack_c0)) Walaber::DatabaseIterator(0,&uStack_60,&bStack_a0,&uStack_80);
   if ((bStack_a0 & 1) != 0) {
     operator delete(puStack_90);
   }
@@ -4609,7 +4609,7 @@ LAB_0043b53c:
   if ((bStack_a0 & 1) != 0) {
     operator delete(puStack_90);
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_c0);
+  ((Walaber::DatabaseIterator *)auStack_c0)->~DatabaseIterator();
   if ((uStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -4690,7 +4690,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
   uStack_88 = 0x68;
   uStack_7f = 0x6f666e;
                     /* try { // try from 0043b75c to 0043b773 has its CatchHandler @ 0043b8c4 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_b0,0,abStack_50,&bStack_90,&uStack_70);
+  new ((void *)(auStack_b0)) Walaber::DatabaseIterator(0,abStack_50,&bStack_90,&uStack_70);
   if ((bStack_90 & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
   }
@@ -4731,7 +4731,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyChallengeInfo
       operator delete((void *)CONCAT35(uStack_7b,CONCAT41(uStack_7f,uStack_80)));
     }
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_b0);
+  ((Walaber::DatabaseIterator *)auStack_b0)->~DatabaseIterator();
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -4829,7 +4829,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalCrankyFoodInfo
   uStack_88 = 0x6f;
   uStack_87 = 0;
                     /* try { // try from 0043ba70 to 0043ba87 has its CatchHandler @ 0043bcac */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_b0,0,&uStack_50,&bStack_90,&uStack_70);
+  new ((void *)(auStack_b0)) Walaber::DatabaseIterator(0,&uStack_50,&bStack_90,&uStack_70);
   if ((bStack_90 & 1) != 0) {
     operator delete(puStack_80);
   }
@@ -4914,7 +4914,7 @@ LAB_0043bbf4:
   if ((bStack_90 & 1) != 0) {
     operator delete(puStack_80);
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_b0);
+  ((Walaber::DatabaseIterator *)auStack_b0)->~DatabaseIterator();
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -5016,7 +5016,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieMusicInfo
   uStack_88 = 0x6c;
   uStack_7f = 0;
                     /* try { // try from 0043be60 to 0043be73 has its CatchHandler @ 0043c098 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_b0,&uStack_50,&bStack_90,&uStack_70);
+  new ((void *)(auStack_b0)) Walaber::DatabaseIterator(&uStack_50,&bStack_90,&uStack_70);
   if ((bStack_90 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_7e,CONCAT11(uStack_7f,uStack_80)));
   }
@@ -5103,7 +5103,7 @@ LAB_0043bfe0:
   if ((bStack_90 & 1) != 0) {
     operator delete((void *)CONCAT62(uStack_7e,CONCAT11(uStack_7f,uStack_80)));
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_b0);
+  ((Walaber::DatabaseIterator *)auStack_b0)->~DatabaseIterator();
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -5187,7 +5187,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
   uStack_88 = 0x61;
   uStack_7d = 0;
                     /* try { // try from 0043c1fc to 0043c213 has its CatchHandler @ 0043c364 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_b0,0,abStack_50,&bStack_90,&uStack_70);
+  new ((void *)(auStack_b0)) Walaber::DatabaseIterator(0,abStack_50,&bStack_90,&uStack_70);
   if ((bStack_90 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_7c,CONCAT13(uStack_7d,CONCAT21(uStack_7f,uStack_80))));
   }
@@ -5231,7 +5231,7 @@ void WaterConcept::PlayerDataSerializer::_updateLocalAllieChallengeInfo
       operator delete((void *)CONCAT44(uStack_7c,CONCAT13(uStack_7d,CONCAT21(uStack_7f,uStack_80))));
     }
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_b0);
+  ((Walaber::DatabaseIterator *)auStack_b0)->~DatabaseIterator();
   if ((uStack_70 & 1) != 0) {
     operator delete(pvStack_60);
   }

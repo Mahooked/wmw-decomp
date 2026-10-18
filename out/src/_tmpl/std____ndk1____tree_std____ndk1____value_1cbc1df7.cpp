@@ -23,7 +23,7 @@ void std::__ndk1::
   if (param_2 != (undefined8 *)0x0) {
     std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::destroy(param_1,*param_2);
     std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::destroy(param_1,param_2[1]);
-    Walaber::PropertyList::~PropertyList(param_2 + 6);
+    ((Walaber::PropertyList *)param_2 + 6)->~PropertyList();
     operator delete(param_2);
     return;
   }

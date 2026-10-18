@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x4a18f0  size 8 */non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(){
-  WaterConcept::Screen_Achievements::~Screen_Achievements(param_1 + -0x90);
+  ((WaterConcept::Screen_Achievements *)this + -0x90)->~Screen_Achievements();
   return;
 }
 
 
 
 /* ok  address 0x4a191c  size 40 */non_virtual_thunk_to_WaterConcept::Screen_Achievements::~Screen_Achievements(){
-  WaterConcept::Screen_Achievements::~Screen_Achievements((void *)(param_1 + -0x90));
-  operator delete((void *)(param_1 + -0x90));
+  ((WaterConcept::Screen_Achievements *)(void *)(this + -0x90))->~Screen_Achievements();
+  operator delete((void *)(this + -0x90));
   return;
 }
 

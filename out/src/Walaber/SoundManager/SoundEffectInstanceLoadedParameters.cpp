@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3518f4  size 252 */Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(undefined4 *param_1,undefined4 param_2,undefined4 param_3,long *param_4, undefined8 *param_5){
+/* ok  address 0x3518f4  size 252 */Walaber::SoundManager::SoundEffectInstanceLoadedParameters::SoundEffectInstanceLoadedParameters(undefined4 param_2,undefined4 param_3,long *param_4, undefined8 *param_5){
   int *piVar1;
   long *plVar2;
   long lVar3;
@@ -11,24 +11,24 @@
   undefined8 *puVar5;
   long *plVar6;
   
-  *param_1 = param_2;
-  param_1[1] = param_3;
+  *this = param_2;
+  this[1] = param_3;
   lVar3 = *param_4;
-  *(long *)(param_1 + 2) = lVar3;
+  *(long *)(this + 2) = lVar3;
   piVar1 = (int *)param_4[1];
-  *(int **)(param_1 + 4) = piVar1;
+  *(int **)(this + 4) = piVar1;
   if (lVar3 != 0) {
     *piVar1 = *piVar1 + 1;
   }
-  puVar5 = (undefined8 *)(param_1 + 8);
+  puVar5 = (undefined8 *)(this + 8);
   *puVar5 = 0;
-  *(undefined8 *)(param_1 + 10) = 0;
-  *(undefined8 **)(param_1 + 6) = puVar5;
+  *(undefined8 *)(this + 10) = 0;
+  *(undefined8 **)(this + 6) = puVar5;
   if ((long *)*param_5 != param_5 + 1) {
     plVar6 = (long *)*param_5;
     do {
                     /* try { // try from 00351958 to 00351967 has its CatchHandler @ 003519d0 */
-      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(param_1 + 6,puVar5,plVar6 + 4,plVar6 + 4);
+      std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::Property>>>::__emplace_hint_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const, Walaber::Property> const&>(this + 6,puVar5,plVar6 + 4,plVar6 + 4);
       plVar2 = (long *)plVar6[1];
       if ((long *)plVar6[1] == (long *)0x0) {
         plVar2 = plVar6 + 2;

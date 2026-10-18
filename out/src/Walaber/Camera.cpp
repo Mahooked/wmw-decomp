@@ -3,11 +3,11 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3ec10c  size 64 */Walaber::Camera::Camera(long param_1){
-  memset(param_1,0,0x88);
-  *(undefined1 *)(param_1 + 0x88) = 1;
-  *(undefined4 *)(param_1 + 0x94) = 0;
-  *(undefined8 *)(param_1 + 0x8c) = 0x3f800000;
+/* ok  address 0x3ec10c  size 64 */Walaber::Camera::Camera(){
+  memset(this,0,0x88);
+  *(undefined1 *)(this + 0x88) = 1;
+  *(undefined4 *)(this + 0x94) = 0;
+  *(undefined8 *)(this + 0x8c) = 0x3f800000;
   return;
 }
 
@@ -30,29 +30,29 @@
 /* ok  address 0x3ec1ac  size 116 */Walaber::Camera::~Camera(){
   void *pvVar1;
   
-  pvVar1 = *(void **)(param_1 + 0x70);
+  pvVar1 = *(void **)(this + 0x70);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x78) = pvVar1;
+    *(void **)(this + 0x78) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x58);
+  pvVar1 = *(void **)(this + 0x58);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x60) = pvVar1;
+    *(void **)(this + 0x60) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x40);
+  pvVar1 = *(void **)(this + 0x40);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x48) = pvVar1;
+    *(void **)(this + 0x48) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x28);
+  pvVar1 = *(void **)(this + 0x28);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x30) = pvVar1;
+    *(void **)(this + 0x30) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x10);
+  pvVar1 = *(void **)(this + 0x10);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x18) = pvVar1;
+    *(void **)(this + 0x18) = pvVar1;
     operator delete(pvVar1);
     return;
   }

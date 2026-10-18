@@ -21,7 +21,7 @@
   *(uint *)(uVar2 + 0x38) = in_w1;
   *(undefined4 *)(uVar2 + 0x3c) = 0x3f800000;
                     /* try { // try from 00390750 to 00390757 has its CatchHandler @ 003907b4 */
-  Walaber::VerletIntegrator::VerletIntegrator(uVar2 + 0x40);
+  new ((void *)(uVar2 + 0x40)) Walaber::VerletIntegrator();
   *(undefined8 *)(uVar2 + 0x48) = 0;
   *(undefined8 *)(uVar2 + 0x50) = 0;
   if (in_w1 != 0) {
@@ -45,15 +45,15 @@
 
 
 /* ok  address 0x390898  size 76 */Walaber::ParticleSet::~ParticleSet(){
-  void *p0;
+  void *this;
   
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 9);
-  Walaber::VerletIntegrator::~VerletIntegrator(this + 8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 9)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::VerletIntegrator *)this + 8)->~VerletIntegrator();
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(this + 3);
-  p0 = (void *)*this;
-  if (p0 != (void *)0x0) {
-    this[1] = p0;
-    operator delete(p0);
+  this = (void *)*this;
+  if (this != (void *)0x0) {
+    this[1] = this;
+    operator delete(this);
     return;
   }
   return;
@@ -401,7 +401,7 @@ void Walaber::ParticleSet::drawParticles
                           auStack_a8,0);
           plVar4 = &lStack_b8;
         }
-        plVar4 = (long *)Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
+        plVar4 = (long *)((Walaber::SharedPtr<Walaber::Texture> *)plVar4)->~SharedPtr<Walaber::Texture>();
       }
       lVar6 = lVar6 + 1;
       lVar5 = lVar5 + 0x74;
@@ -647,7 +647,7 @@ void Walaber::ParticleSet::drawParticles
                           auStack_a8,0);
           plVar4 = &lStack_b8;
         }
-        plVar4 = (long *)Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
+        plVar4 = (long *)((Walaber::SharedPtr<Walaber::Texture> *)plVar4)->~SharedPtr<Walaber::Texture>();
       }
       lVar7 = lVar7 + 1;
       lVar6 = lVar6 + 0x74;
@@ -741,7 +741,7 @@ void Walaber::ParticleSet::drawParticles
                           afStack_c0,0);
           plVar4 = &lStack_d0;
         }
-        plVar4 = (long *)Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
+        plVar4 = (long *)((Walaber::SharedPtr<Walaber::Texture> *)plVar4)->~SharedPtr<Walaber::Texture>();
       }
       lVar7 = lVar7 + 1;
       lVar6 = lVar6 + 0x74;
@@ -762,7 +762,7 @@ void Walaber::ParticleSet::drawParticles
   this[6] = 0xffffffff;
   this[7] = 0x3f80000000000000;
                     /* try { // try from 00443134 to 00443137 has its CatchHandler @ 0044314c */
-  Walaber::VerletIntegrator::VerletIntegrator(this + 8);
+  new ((void *)(this + 8)) Walaber::VerletIntegrator();
   this[9] = 0;
   this[10] = 0;
   return;

@@ -102,7 +102,7 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0x13,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x13,&uStack_30,&uStack_38,1,1);
   puVar2[0x20] = 0;
   *(undefined4 *)(puVar2 + 0x21) = 0xffffffff;
   puVar2[0x25] = 0x3f19999a00000000;
@@ -131,7 +131,7 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
-  Walaber::Widget::Widget(puVar2,p1,0x13,&uStack_40,&uStack_48,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x13,&uStack_40,&uStack_48,1,1);
   puVar2[0x20] = 0;
   *(undefined4 *)(puVar2 + 0x21) = 0xffffffff;
   puVar2[0x25] = 0x3f19999a00000000;
@@ -158,9 +158,9 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
   *this = &PTR__Widget_ScrollableCamera_0070f838;
   this[0x29] = this[0x28];
   this[0x2f] = this[0x2e];
-  Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(this + 0x3d);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x3b);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x39);
+  ((Walaber::SharedPtr<Walaber::Curve> *)this + 0x3d)->~SharedPtr<Walaber::Curve>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x3b)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x39)->~SharedPtr<Walaber::Texture>();
   pvVar1 = (void *)this[0x34];
   if (pvVar1 != (void *)0x0) {
     this[0x35] = pvVar1;
@@ -186,7 +186,7 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
     this[0x29] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -194,7 +194,7 @@ Walaber::Widget_ScrollableCamera::operator=(Walaber__Widget_ScrollableCamera *p0
 
 /* ok  address 0x3861c8  size 36 */Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera(){
   Walaber::Widget_ScrollableCamera::~Widget_ScrollableCamera();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -235,9 +235,9 @@ void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0, undefined
                     /* try { // try from 0038625c to 00386277 has its CatchHandler @ 00386370 */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,auStack_60,&uStack_70,0,0);
   Walaber::SharedPtr<Walaber::Texture>::operator=(&p0[3].f_0x28,auStack_48);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_70)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -253,9 +253,9 @@ void Walaber::Widget_ScrollableCamera::initCamera(Walaber__Camera *p0, undefined
                     /* try { // try from 003862ec to 00386307 has its CatchHandler @ 00386364 */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,auStack_60,&uStack_90,0,0);
   Walaber::SharedPtr<Walaber::Texture>::operator=(&p0[3].f_0x18,auStack_48);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -496,7 +496,7 @@ void Walaber::Widget_ScrollableCamera::_updateSlider(long param_1)
           Walaber::Widget_Label::setBGTexture(lVar2,&lStack_58);
           plVar3 = &lStack_58;
         }
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
+        ((Walaber::SharedPtr<Walaber::Texture> *)plVar3)->~SharedPtr<Walaber::Texture>();
       }
       lVar2 = *(long *)(param_1 + 0x170);
       uVar4 = uVar4 + 1;
@@ -600,8 +600,8 @@ void Walaber::Widget_ScrollableCamera::createFakeSliderIndex(int p0, int in_w1)
     *piStack_58 = *piStack_58 + 1;
   }
                     /* try { // try from 00386a6c to 00386a7f has its CatchHandler @ 00386bd8 */
-  Walaber::Widget_Label::Widget_Label(plVar4,in_w1 + 5000,&fStack_40,&fStack_50,&lStack_60);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_60);
+  new ((void *)(plVar4)) Walaber::Widget_Label(in_w1 + 5000,&fStack_40,&fStack_50,&lStack_60);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_60)->~SharedPtr<Walaber::Texture>();
   plStack_48 = plVar4;
   Walaber::Widget_Label::setPadding(0,0,0,0,plVar4);
   Walaber::Node::getWorldPosition(&fStack_50,plVar4);

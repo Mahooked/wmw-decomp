@@ -4,7 +4,7 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x43d544  size 60 */WaterConcept::PurchaseHandler::PurchaseHandler(){
-  Walaber::MessageReceiver::MessageReceiver(this,0x10);
+  new ((void *)(this)) Walaber::MessageReceiver(0x10);
   this[3] = 0;
   this[4] = 0;
   this[2] = 0;
@@ -19,7 +19,7 @@
   if ((*(byte *)(this + 2) & 1) != 0) {
     operator delete((void *)this[4]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(this);
+  ((Walaber::MessageReceiver *)this)->~MessageReceiver();
   return;
 }
 
@@ -27,7 +27,7 @@
 
 /* ok  address 0x43d5c0  size 36 */WaterConcept::PurchaseHandler::~PurchaseHandler(){
   WaterConcept::PurchaseHandler::~PurchaseHandler();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -48,7 +48,7 @@ undefined8 * WaterConcept::PurchaseHandler::getInstancePtr(void)
   if (mInstancePtr == (undefined8 *)0x0) {
     puVar1 = (undefined8 *)operator new(0x28);
                     /* try { // try from 0043d60c to 0043d613 has its CatchHandler @ 0043d640 */
-    Walaber::MessageReceiver::MessageReceiver(puVar1,0x10);
+    new ((void *)(puVar1)) Walaber::MessageReceiver(0x10);
     puVar1[3] = 0;
     puVar1[4] = 0;
     puVar1[2] = 0;
@@ -312,7 +312,7 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0, long i
       *puVar14 = 0x49504149;
       uStack_2b8 = 0;
                     /* try { // try from 0043d928 to 0043d93f has its CatchHandler @ 0043e5f8 */
-      Walaber::DatabaseIterator::DatabaseIterator(abStack_310,0,abStack_c8,&bStack_2c0,&uStack_e0);
+      new ((void *)(abStack_310)) Walaber::DatabaseIterator(0,abStack_c8,&bStack_2c0,&uStack_e0);
       if ((bStack_2c0 & 1) != 0) {
         operator delete(apuStack_2b0[0]);
       }
@@ -331,10 +331,10 @@ undefined8 WaterConcept::PurchaseHandler::messageRx(Walaber__Message *p0, long i
         uStack_a8 = CONCAT62(uStack_2b6,CONCAT11(uStack_2b7,uStack_2b8));
         uStack_b0 = CONCAT44(uStack_2bc,CONCAT13(uStack_2bd,CONCAT21(uStack_2bf,bStack_2c0)));
         puStack_a0 = apuStack_2b0[0];
-        Walaber::DatabaseIterator::~DatabaseIterator(abStack_310);
+        ((Walaber::DatabaseIterator *)abStack_310)->~DatabaseIterator();
         goto LAB_0043d9fc;
       }
-      Walaber::DatabaseIterator::~DatabaseIterator(abStack_310);
+      ((Walaber::DatabaseIterator *)abStack_310)->~DatabaseIterator();
       uVar16 = uVar16 + 1;
       puVar13 = puVar13 + 0x18;
     } while (uVar16 < 6);
@@ -384,7 +384,7 @@ LAB_0043d9fc:
       uStack_2bc = 0x6f666e49;
       uStack_2b8 = 0;
                     /* try { // try from 0043de30 to 0043de47 has its CatchHandler @ 0043e46c */
-      Walaber::DatabaseIterator::DatabaseIterator(abStack_310,0,abStack_c8,&bStack_2c0,&uStack_e0);
+      new ((void *)(abStack_310)) Walaber::DatabaseIterator(0,abStack_c8,&bStack_2c0,&uStack_e0);
       while( true ) {
         if ((bStack_2c0 & 1) != 0) {
           operator delete(apuStack_2b0[0]);
@@ -410,7 +410,7 @@ LAB_0043d9fc:
         }
       }
 LAB_0043e0a0:
-      Walaber::DatabaseIterator::~DatabaseIterator(abStack_310);
+      ((Walaber::DatabaseIterator *)abStack_310)->~DatabaseIterator();
       goto LAB_0043e0a8;
     }
 LAB_0043da6c:
@@ -445,7 +445,7 @@ LAB_0043da6c:
         uStack_2bc = 0x6f666e49;
         uStack_2b8 = 0;
                     /* try { // try from 0043e010 to 0043e027 has its CatchHandler @ 0043e464 */
-        Walaber::DatabaseIterator::DatabaseIterator(abStack_310,0,abStack_c8,&bStack_2c0,&uStack_e0);
+        new ((void *)(abStack_310)) Walaber::DatabaseIterator(0,abStack_c8,&bStack_2c0,&uStack_e0);
         while( true ) {
           if ((bStack_2c0 & 1) != 0) {
             operator delete(apuStack_2b0[0]);
@@ -812,14 +812,14 @@ LAB_0043e0a8:
     uStack_2b7 = 0;
     uStack_2b6 = 0x490000;
                     /* try { // try from 0043e0d4 to 0043e0db has its CatchHandler @ 0043e4e4 */
-    Walaber::PropertyList::PropertyList(apuStack_2b0);
+    new ((void *)(apuStack_2b0)) Walaber::PropertyList();
                     /* try { // try from 0043e0dc to 0043e0e7 has its CatchHandler @ 0043e4cc */
     Walaber::BroadcastManager::messageTx(uVar11,&bStack_2c0);
     bStack_2c0 = 200;
     uStack_2bf = 0x70cd;
     uStack_2bd = 0;
     uStack_2bc = 0;
-    Walaber::PropertyList::~PropertyList(apuStack_2b0);
+    ((Walaber::PropertyList *)apuStack_2b0)->~PropertyList();
   }
   uVar16 = uStack_b0 >> 1 & 0x7f;
   if ((uStack_b0 & 1) != 0) {
@@ -908,7 +908,7 @@ LAB_0043e0a8:
   uStack_2b7 = 0;
   uStack_2b6 = 0x4c0000;
                     /* try { // try from 0043e264 to 0043e26b has its CatchHandler @ 0043e50c */
-  Walaber::PropertyList::PropertyList(apuStack_2b0);
+  new ((void *)(apuStack_2b0)) Walaber::PropertyList();
   abStack_2f0[0xd] = 0;
   abStack_2f0[0xe] = 0;
   abStack_2f0[0xf] = 0;
@@ -927,10 +927,10 @@ LAB_0043e0a8:
   abStack_2f0[7] = 0x70;
   abStack_2f0[8] = 0x74;
                     /* try { // try from 0043e298 to 0043e2a3 has its CatchHandler @ 0043e508 */
-  Walaber::Property::Property(abStack_310,&bStack_90);
+  new ((void *)(abStack_310)) Walaber::Property(&bStack_90);
                     /* try { // try from 0043e2a4 to 0043e2b3 has its CatchHandler @ 0043e4e8 */
   Walaber::PropertyList::setValueForKey(apuStack_2b0,abStack_2f0,abStack_310);
-  Walaber::Property::~Property(abStack_310);
+  ((Walaber::Property *)abStack_310)->~Property();
   if ((abStack_2f0[0] & 1) != 0) {
     operator delete(pvStack_2e0);
   }
@@ -941,7 +941,7 @@ LAB_0043e0a8:
   uStack_2bf = 0x70cd;
   uStack_2bd = 0;
   uStack_2bc = 0;
-  Walaber::PropertyList::~PropertyList(apuStack_2b0);
+  ((Walaber::PropertyList *)apuStack_2b0)->~PropertyList();
   if ((bStack_90 & 1) != 0) {
     operator delete(pvStack_80);
   }
@@ -1107,7 +1107,7 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   uStack_1b8 = 99;
   uStack_1b2 = 0;
                     /* try { // try from 0043e830 to 0043e847 has its CatchHandler @ 0043f1ac */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,abStack_90,&bStack_1c0,&uStack_b0);
+  new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,abStack_90,&bStack_1c0,&uStack_b0);
   if ((bStack_1c0 & 1) != 0) {
     operator delete((void *)CONCAT44(uStack_1ac,CONCAT13(uStack_1ad,CONCAT21(uStack_1af,uStack_1b0))));
   }
@@ -1491,15 +1491,15 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   uStack_1b2 = 0;
   uStack_1b1 = 0;
                     /* try { // try from 0043ef00 to 0043ef07 has its CatchHandler @ 0043f068 */
-  Walaber::PropertyList::PropertyList(&uStack_1b0);
+  new ((void *)(&uStack_1b0)) Walaber::PropertyList();
   uStack_170 = 0;
   pvStack_168 = (void *)0x0;
   pfStack_178 = &fde_table_entry_00646904;
                     /* try { // try from 0043ef24 to 0043ef2f has its CatchHandler @ 0043f050 */
-  Walaber::Property::Property(&uStack_1e0,param_2);
+  new ((void *)(&uStack_1e0)) Walaber::Property(param_2);
                     /* try { // try from 0043ef30 to 0043ef3f has its CatchHandler @ 0043f040 */
   Walaber::PropertyList::setValueForKey(&uStack_1b0,&pfStack_178,&uStack_1e0);
-  Walaber::Property::~Property(&uStack_1e0);
+  ((Walaber::Property *)&uStack_1e0)->~Property();
   if (((ulong)pfStack_178 & 1) != 0) {
     operator delete(pvStack_168);
   }
@@ -1510,7 +1510,7 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   uStack_1bf = 0x70cd;
   uStack_1bb = 0;
   uStack_1ba = 0;
-  Walaber::PropertyList::~PropertyList(&uStack_1b0);
+  ((Walaber::PropertyList *)&uStack_1b0)->~PropertyList();
   if ((uStack_160 & 1) != 0) {
     operator delete(pvStack_150);
   }
@@ -1532,7 +1532,7 @@ void WaterConcept::PurchaseHandler::_processPurchase(undefined8 param_1,byte *pa
   if ((uStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_f8);
+  ((Walaber::DatabaseIterator *)auStack_f8)->~DatabaseIterator();
   if ((uStack_b0 & 1) != 0) {
     operator delete(pvStack_a0);
   }
@@ -1750,7 +1750,7 @@ void WaterConcept::PurchaseHandler::_processPurchaseSpecific(undefined8 param_1,
     uStack_ea = 0x6e49;
     uStack_e8 = 0x66;
                     /* try { // try from 0043f964 to 0043f97b has its CatchHandler @ 004425dc */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+    new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
     if ((bStack_f0 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0))));
     }
@@ -2182,7 +2182,7 @@ LAB_0043f408:
         uStack_ea = 0x6e49;
         uStack_e8 = 0x66;
                     /* try { // try from 0043fb3c to 0043fb53 has its CatchHandler @ 00442528 */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -2618,7 +2618,7 @@ LAB_0043f408:
         uStack_ea = 0x6e49;
         uStack_e8 = 0x66;
                     /* try { // try from 0043fd10 to 0043fd27 has its CatchHandler @ 004424fc */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -3037,7 +3037,7 @@ LAB_0043f408:
         uStack_e8 = 99;
         uStack_e5 = 0x6f666e;
                     /* try { // try from 0043fe90 to 0043fea7 has its CatchHandler @ 00442498 */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -3452,7 +3452,7 @@ LAB_0043f408:
         uStack_e8 = 99;
         uStack_e5 = 0x6f666e;
                     /* try { // try from 00440428 to 0044043f has its CatchHandler @ 0044243c */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -3867,7 +3867,7 @@ LAB_0043f408:
         uStack_e8 = 99;
         uStack_e5 = 0x6f666e;
                     /* try { // try from 00440afc to 00440b13 has its CatchHandler @ 004423e4 */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -4282,7 +4282,7 @@ LAB_0043f408:
         uStack_e8 = 99;
         uStack_e5 = 0x6f666e;
                     /* try { // try from 004411d8 to 004411eb has its CatchHandler @ 004423b0 */
-        Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,&uStack_b0,&bStack_f0,&bStack_d0);
+        new ((void *)(auStack_f8)) Walaber::DatabaseIterator(&uStack_b0,&bStack_f0,&bStack_d0);
         if ((bStack_f0 & 1) != 0) {
           operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0)))
                       );
@@ -4700,7 +4700,7 @@ LAB_0043f408:
     uStack_e8 = 99;
     uStack_e5 = 0x6f666e;
                     /* try { // try from 0043f6f8 to 0043f70f has its CatchHandler @ 0044237c */
-    Walaber::DatabaseIterator::DatabaseIterator(auStack_f8,0,&uStack_b0,&bStack_f0,&bStack_d0);
+    new ((void *)(auStack_f8)) Walaber::DatabaseIterator(0,&uStack_b0,&bStack_f0,&bStack_d0);
     if ((bStack_f0 & 1) != 0) {
       operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0))));
     }
@@ -4972,7 +4972,7 @@ LAB_00441f34:
     operator delete((void *)CONCAT44(uStack_dc,CONCAT13(uStack_dd,CONCAT21(uStack_df,uStack_e0))));
   }
 LAB_00441f64:
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_f8);
+  ((Walaber::DatabaseIterator *)auStack_f8)->~DatabaseIterator();
   if ((bStack_d0 & 1) != 0) {
     operator delete(puStack_c0);
   }
@@ -5055,7 +5055,7 @@ void WaterConcept::PurchaseHandler::_processFakeLocksmithPurchase(undefined8 par
   uStack_a2 = 0;
   pvStack_c0 = (void *)0x0;
                     /* try { // try from 00442838 to 0044284f has its CatchHandler @ 00442db8 */
-  Walaber::DatabaseIterator::DatabaseIterator(auStack_90,0,abStack_88,&bStack_b0,&bStack_d0);
+  new ((void *)(auStack_90)) Walaber::DatabaseIterator(0,abStack_88,&bStack_b0,&bStack_d0);
   if ((bStack_d0 & 1) != 0) {
     operator delete(pvStack_c0);
   }
@@ -5299,7 +5299,7 @@ LAB_00442958:
     operator delete(pbStack_a0);
   }
 LAB_00442cb8:
-  Walaber::DatabaseIterator::~DatabaseIterator(auStack_90);
+  ((Walaber::DatabaseIterator *)auStack_90)->~DatabaseIterator();
   if ((abStack_88[0] & 1) != 0) {
     operator delete(pvStack_78);
   }

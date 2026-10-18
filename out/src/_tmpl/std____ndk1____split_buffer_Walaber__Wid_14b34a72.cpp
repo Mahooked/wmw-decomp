@@ -69,7 +69,7 @@ void std::__ndk1::
     if ((*(byte *)(lVar2 + -0x20) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -0x10));
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -0x30);
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -0x30)->~SharedPtr<Walaber::Texture>();
     lVar2 = this[2];
   }
   if ((void *)*this != (void *)0x0) {

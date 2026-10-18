@@ -14,7 +14,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_60 = *(undefined8 *)p2;
   uStack_68 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0x14,&uStack_60,&uStack_68,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x14,&uStack_60,&uStack_68,1,1);
   puVar2[0x24] = 0;
   puVar2[0x25] = 0;
   puVar2[0x22] = 0;
@@ -122,22 +122,22 @@ void Walaber::Widget_NumberSpinner::init(void)
 
 
 /* ok  address 0x381be0  size 136 */Walaber::Widget_NumberSpinner::~Widget_NumberSpinner(){
-  void *p0;
+  void *this;
   
   *this = &PTR__Widget_NumberSpinner_0070f478;
   *(undefined8 *)((long)this + 0x22c) = 0x3f73333300000000;
   *(undefined8 *)((long)this + 0x23c) = 0;
-  p0 = (void *)this[0x41];
+  this = (void *)this[0x41];
   this[0x4a] = 0;
   this[0x1e] = 0;
-  if (p0 != (void *)0x0) {
-    this[0x42] = p0;
-    operator delete(p0);
+  if (this != (void *)0x0) {
+    this[0x42] = this;
+    operator delete(this);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x24);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x24)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x22)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -145,7 +145,7 @@ void Walaber::Widget_NumberSpinner::init(void)
 
 /* ok  address 0x381c68  size 36 */Walaber::Widget_NumberSpinner::~Widget_NumberSpinner(){
   Walaber::Widget_NumberSpinner::~Widget_NumberSpinner();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -478,7 +478,7 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
   uStack_f0 = CONCAT44((float)uVar13 * SUB84(aiStack_c8._0_8_,4),
                        (float)uVar10 * (float)aiStack_c8._0_8_);
   Walaber::SpriteBatch::drawQuad(uVar12);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d8)->~SharedPtr<Walaber::Texture>();
   Walaber::Widget_NumberSpinner::_getCellSize(&uStack_e0,p0);
   iVar8 = (int)(*(float *)&p0[9].f_0x0 * 0.5);
   iVar9 = -iVar8;
@@ -503,7 +503,7 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
       fStack_104 = fVar11 + fVar14;
                     /* try { // try from 003821d4 to 003821f7 has its CatchHandler @ 0038242c */
       Walaber::Widget_NumberSpinner::_drawLocalQuad(uVar12,p0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_100);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_100)->~SharedPtr<Walaber::Texture>();
       uVar5 = (long)(int)p0[9].f_0x28 + (long)iVar9;
       iVar4 = (int)uVar5;
       if (iVar4 < 0) {
@@ -557,7 +557,7 @@ void Walaber::Widget_NumberSpinner::draw(Walaber__SpriteBatch *p0)
             }
                     /* try { // try from 00382374 to 00382397 has its CatchHandler @ 00382438 */
             Walaber::Widget_NumberSpinner::_drawLocalQuad(uVar12,p0);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_138);
+            ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_138)->~SharedPtr<Walaber::Texture>();
             bVar1 = true;
           }
           else {
@@ -646,7 +646,7 @@ LAB_00382584:
   fStack_7c = fStack_94 + fVar3 * *param_6 + fVar2 * param_6[1];
                     /* try { // try from 003825f4 to 0038261b has its CatchHandler @ 00382660 */
   Walaber::SpriteBatch::drawQuad(param_1,param_3,param_4,&lStack_90,&fStack_80,param_7,param_8,param_9,0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
 LAB_00382624:
   return;
 }

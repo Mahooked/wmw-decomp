@@ -56,8 +56,8 @@ ulong std::__ndk1::
   }
                     /* try { // try from 0034b31c to 0034b327 has its CatchHandler @ 0034b508 */
   uVar3 = (*pcVar4)(&lStack_78,&lStack_88);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_88);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_78);
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_88)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_78)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
   if ((uVar3 & 1) != 0) {
     lStack_68 = *param_3;
     piStack_60 = (int *)param_3[1];
@@ -66,7 +66,7 @@ ulong std::__ndk1::
     }
     Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_3,param_4);
     Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_4,&lStack_68);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_68);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     lStack_98 = *param_3;
     piStack_90 = (int *)param_3[1];
     pcVar4 = (code *)*param_5;
@@ -80,8 +80,8 @@ ulong std::__ndk1::
     }
                     /* try { // try from 0034b3ac to 0034b3b7 has its CatchHandler @ 0034b4f4 */
     uVar5 = (*pcVar4)(&lStack_98,&lStack_a8);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_a8);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_98);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_a8)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_98)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     if ((uVar5 & 1) == 0) {
       uVar5 = (ulong)(uVar2 + 1);
     }
@@ -93,7 +93,7 @@ ulong std::__ndk1::
       }
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_2,param_3);
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_3,&lStack_68);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_68);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       lStack_b8 = *param_2;
       piStack_b0 = (int *)param_2[1];
       pcVar4 = (code *)*param_5;
@@ -107,8 +107,8 @@ ulong std::__ndk1::
       }
                     /* try { // try from 0034b43c to 0034b447 has its CatchHandler @ 0034b4e0 */
       uVar5 = (*pcVar4)(&lStack_b8,&lStack_c8);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_c8);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_b8);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_c8)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_b8)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       if ((uVar5 & 1) == 0) {
         uVar5 = (ulong)(uVar2 + 2);
       }
@@ -120,7 +120,7 @@ ulong std::__ndk1::
         }
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,param_2);
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_2,&lStack_68);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_68);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_68)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         uVar5 = (ulong)(uVar2 + 3);
       }
     }

@@ -58,7 +58,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 6;
                     /* try { // try from 0037eea8 to 0037eeb3 has its CatchHandler @ 0037eeec */
   std::__ndk1::vector<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&> *)auStack_60)->~__split_buffer<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>&>();
   return;
 }
 

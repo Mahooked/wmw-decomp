@@ -127,7 +127,7 @@ LAB_005ef384:
                     /* try { // try from 005ef384 to 005ef393 has its CatchHandler @ 005ef43c */
   std::__ndk1::system_error::__init(abStack_70,&uStack_58,&uStack_90);
                     /* try { // try from 005ef394 to 005ef39f has its CatchHandler @ 005ef40c */
-  std::runtime_error::runtime_error(param_1,abStack_70);
+  new ((void *)(param_1)) std::runtime_error(abStack_70);
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -181,7 +181,7 @@ LAB_005ef4f4:
                     /* try { // try from 005ef4f8 to 005ef507 has its CatchHandler @ 005ef5b0 */
   std::__ndk1::system_error::__init(abStack_70,&uStack_58,&uStack_88);
                     /* try { // try from 005ef508 to 005ef513 has its CatchHandler @ 005ef580 */
-  std::runtime_error::runtime_error(param_1,abStack_70);
+  new ((void *)(param_1)) std::runtime_error(abStack_70);
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -212,7 +212,7 @@ LAB_005ef4f4:
   uStack_30 = param_3;
   std::__ndk1::system_error::__init(abStack_50,&uStack_38,auStack_68);
                     /* try { // try from 005ef608 to 005ef613 has its CatchHandler @ 005ef670 */
-  std::runtime_error::runtime_error(param_1,abStack_50);
+  new ((void *)(param_1)) std::runtime_error(abStack_50);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -227,7 +227,7 @@ LAB_005ef4f4:
 
 
 
-/* ok  address 0x5ef6bc  size 412 */std::__ndk1::system_error::system_error(undefined8 *param_1,undefined4 param_2,undefined8 param_3,ulong *param_4){
+/* ok  address 0x5ef6bc  size 412 */std::__ndk1::system_error::system_error(undefined4 param_2,undefined8 param_3,ulong *param_4){
   ulong uVar2;
   ulong uVar3;
   void *pvVar4;
@@ -275,16 +275,16 @@ LAB_005ef780:
                     /* try { // try from 005ef780 to 005ef78f has its CatchHandler @ 005ef83c */
   std::__ndk1::system_error::__init(abStack_70,auStack_80,&uStack_a0);
                     /* try { // try from 005ef790 to 005ef79b has its CatchHandler @ 005ef80c */
-  std::runtime_error::runtime_error(param_1,abStack_70);
+  new ((void *)(this)) std::runtime_error(abStack_70);
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
   if ((uStack_a0 & 1) != 0) {
     operator delete(pvStack_90);
   }
-  *(undefined4 *)(param_1 + 2) = param_2;
-  param_1[3] = param_3;
-  *param_1 = &PTR__system_error_00719200;
+  *(undefined4 *)(this + 2) = param_2;
+  this[3] = param_3;
+  *this = &PTR__system_error_00719200;
   return;
 }
 
@@ -331,7 +331,7 @@ LAB_005ef904:
                     /* try { // try from 005ef908 to 005ef917 has its CatchHandler @ 005ef9c4 */
   std::__ndk1::system_error::__init(abStack_70,auStack_80,&uStack_98);
                     /* try { // try from 005ef918 to 005ef923 has its CatchHandler @ 005ef994 */
-  std::runtime_error::runtime_error(puVar2,abStack_70);
+  new ((void *)(puVar2)) std::runtime_error(abStack_70);
   if ((abStack_70[0] & 1) != 0) {
     operator delete(pvStack_60);
   }
@@ -363,7 +363,7 @@ LAB_005ef904:
   auStack_60[0] = (int)p1;
   std::__ndk1::system_error::__init(abStack_50,auStack_60,auStack_78);
                     /* try { // try from 005efa2c to 005efa37 has its CatchHandler @ 005efa98 */
-  std::runtime_error::runtime_error(puVar2,abStack_50);
+  new ((void *)(puVar2)) std::runtime_error(abStack_50);
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -387,7 +387,7 @@ LAB_005ef904:
 
 /* ok  address 0x5efae8  size 36 */std::__ndk1::system_error::~system_error(){
   std::runtime_error::~runtime_error();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

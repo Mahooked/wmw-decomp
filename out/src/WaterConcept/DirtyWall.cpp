@@ -11,7 +11,7 @@
   
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *(undefined8 *)p3;
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,0,0);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(p0,&uStack_40,&uStack_48,0,0);
   *(undefined8 *)((long)p0 + 0x3b8) = 0;
   *(undefined8 *)((long)p0 + 0x3b0) = 0;
   *(undefined8 *)((long)p0 + 0x3a8) = in_x3;
@@ -28,16 +28,16 @@
 
 
 /* ok  address 0x4792e0  size 72 */WaterConcept::DirtyWall::~DirtyWall(){
-  void *p0;
+  void *this;
   
-  p0 = (void *)this[0x7b];
+  this = (void *)this[0x7b];
   *this = &PTR__DirtyWall_007117c8;
-  if (p0 != (void *)0x0) {
-    this[0x7c] = p0;
-    operator delete(p0);
+  if (this != (void *)0x0) {
+    this[0x7c] = this;
+    operator delete(this);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x76);
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x76)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -45,7 +45,7 @@
 
 /* ok  address 0x479328  size 36 */WaterConcept::DirtyWall::~DirtyWall(){
   WaterConcept::DirtyWall::~DirtyWall();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

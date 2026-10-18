@@ -22,8 +22,8 @@ void std::__ndk1::
   if (param_2 != (undefined8 *)0x0) {
     std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>::destroy(param_1,*param_2);
     std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SoundManager::SoundGroup>>>::destroy(param_1,param_2[1]);
-    std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::~__vector_base(param_2 + 8);
-    std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::~__vector_base(param_2 + 5);
+    ((std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>> *)param_2 + 8)->~__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>();
+    ((std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>> *)param_2 + 5)->~__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>();
     operator delete(param_2);
     return;
   }
@@ -107,8 +107,8 @@ long * std::__ndk1::
   }
   param_1[2] = param_1[2] + -1;
   void std::__ndk1::__tree_remove<std::__ndk1::__tree_node_base<void*>*>(param_1[1],param_2);
-  std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::~__vector_base((long)param_2 + 0x40);
-  std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>::~__vector_base((long)param_2 + 0x28);
+  ((std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>> *)(long)param_2 + 0x40)->~__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>();
+  ((std::__ndk1::__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>> *)(long)param_2 + 0x28)->~__vector_base<Walaber::SoundManager::SoundInfo, std::__ndk1::allocator<Walaber::SoundManager::SoundInfo>>();
   operator delete(param_2);
   return plVar3;
 }

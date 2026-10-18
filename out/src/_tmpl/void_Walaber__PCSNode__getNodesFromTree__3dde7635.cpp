@@ -53,7 +53,7 @@ void Walaber::PCSNode::getNodesFromTree<Walaber::Node>(Walaber::PCSNode *param_1
       }
     }
   }
-  std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(alStack_78 + 1);
+  ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)alStack_78 + 1)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   return;
 }
 

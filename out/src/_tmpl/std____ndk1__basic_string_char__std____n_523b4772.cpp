@@ -2501,7 +2501,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
   if (uVar7 < param_2) {
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005e6d04 to 005e6d0f has its CatchHandler @ 005e6d58 */
-    std::logic_error::logic_error(puVar5,"string_view::substr");
+    new ((void *)(puVar5)) std::logic_error("string_view::substr");
   }
   else {
     if (param_3 <= uVar4) {
@@ -2533,7 +2533,7 @@ ulong std::__ndk1::basic_string<char,std::__ndk1::char_traits<char>,std::__ndk1:
     }
     puVar5 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 005e6d20 to 005e6d2b has its CatchHandler @ 005e6d54 */
-    std::logic_error::logic_error(puVar5,"string_view::substr");
+    new ((void *)(puVar5)) std::logic_error("string_view::substr");
   }
   *puVar5 = &PTR__logic_error_0071a2d8;
   uVar6 = __cxa_throw(puVar5,&out_of_range::typeinfo,logic_error::~logic_error);

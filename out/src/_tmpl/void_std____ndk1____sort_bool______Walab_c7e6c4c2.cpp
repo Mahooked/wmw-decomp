@@ -102,8 +102,8 @@ LAB_0034a644:
     }
                     /* try { // try from 0034ad18 to 0034ad23 has its CatchHandler @ 0034ae1c */
     uVar7 = (*pcVar8)(&lStack_90,&lStack_a0);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_a0);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_90);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_a0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_90)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     if ((uVar7 & 1) != 0) {
       lStack_80 = *param_1;
       piStack_78 = (int *)param_1[1];
@@ -112,7 +112,7 @@ LAB_0034a644:
       }
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,plVar13);
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,&lStack_80);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     }
     goto switchD_0034acd8_caseD_0;
   case 3:
@@ -159,8 +159,8 @@ LAB_0034a644:
     }
                     /* try { // try from 0034a708 to 0034a713 has its CatchHandler @ 0034ae58 */
     uVar7 = (*pcVar8)(&lStack_b0,&lStack_c0);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_c0);
-    Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_b0);
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_c0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+    ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_b0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
     plVar11 = plVar10;
     plVar14 = param_2 + -4;
     if ((uVar7 & 1) == 0) {
@@ -181,8 +181,8 @@ LAB_0034a644:
                     /* try { // try from 0034aa78 to 0034aa83 has its CatchHandler @ 0034ae30 */
           uVar7 = (*pcVar8)(&lStack_d0,&lStack_e0);
           plVar13 = param_1 + 2;
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_e0);
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_d0);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_e0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_d0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
           if ((uVar7 & 1) != 0) goto LAB_0034ab5c;
           goto LAB_0034aaa8;
         }
@@ -199,8 +199,8 @@ LAB_0034a644:
         }
                     /* try { // try from 0034a784 to 0034a78f has its CatchHandler @ 0034ae80 */
         uVar7 = (*pcVar8)(&lStack_150,&lStack_160);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_160);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_150);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_160)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_150)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         plVar14 = plVar11 + -2;
       } while ((uVar7 & 1) == 0);
       lStack_80 = *param_1;
@@ -210,7 +210,7 @@ LAB_0034a644:
       }
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(param_1,plVar11);
       Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar11,&lStack_80);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       iVar4 = iVar4 + 1;
     }
     plVar14 = param_1 + 2;
@@ -229,8 +229,8 @@ LAB_0034a644:
         }
                     /* try { // try from 0034a844 to 0034a84f has its CatchHandler @ 0034aed0 */
         uVar7 = (*pcVar8)(&lStack_170,&lStack_180);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_180);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_170);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_180)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_170)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         plVar12 = plVar13;
         plVar15 = plVar11;
         if ((uVar7 & 1) == 0) {
@@ -249,8 +249,8 @@ LAB_0034a644:
             }
                     /* try { // try from 0034a8b4 to 0034a8bf has its CatchHandler @ 0034aebc */
             uVar7 = (*pcVar8)(&lStack_190,&lStack_1a0);
-            Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_1a0);
-            Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_190);
+            ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_1a0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+            ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_190)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
             plVar15 = plVar11;
           } while ((uVar7 & 1) == 0);
           if (plVar11 < plVar14) break;
@@ -261,7 +261,7 @@ LAB_0034a644:
           }
           Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar14,plVar11);
           Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar11,&lStack_80);
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
           iVar4 = iVar4 + 1;
           plVar12 = plVar11;
           if (plVar13 != plVar14) {
@@ -286,8 +286,8 @@ LAB_0034a644:
       }
                     /* try { // try from 0034a96c to 0034a977 has its CatchHandler @ 0034ae44 */
       uVar7 = (*pcVar8)(&lStack_1b0,&lStack_1c0);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_1c0);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_1b0);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_1c0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_1b0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       if ((uVar7 & 1) != 0) {
         lStack_80 = *plVar14;
         piStack_78 = (int *)plVar14[1];
@@ -296,7 +296,7 @@ LAB_0034a644:
         }
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar14,plVar13);
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,&lStack_80);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
         iVar4 = iVar4 + 1;
       }
     }
@@ -329,8 +329,8 @@ LAB_0034aaa8:
   }
                     /* try { // try from 0034aaf4 to 0034aaff has its CatchHandler @ 0034ae6c */
   uVar7 = (*pcVar8)(&lStack_f0,&lStack_100);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_100);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_f0);
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_100)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_f0)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
   if ((uVar7 & 1) != 0) goto code_r0x0034ab18;
   plVar13 = plVar13 + 2;
   goto LAB_0034aaa8;
@@ -361,7 +361,7 @@ code_r0x0034ab18:
   }
   Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,plVar10);
   Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar10,&lStack_80);
-  Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+  ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
   plVar13 = plVar13 + 2;
 LAB_0034ab5c:
   if (plVar13 != plVar10) {
@@ -379,8 +379,8 @@ LAB_0034ab5c:
       }
                     /* try { // try from 0034aba8 to 0034abb3 has its CatchHandler @ 0034aea8 */
       uVar7 = (*pcVar8)(&lStack_110,&lStack_120);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_120);
-      Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_110);
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_120)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+      ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_110)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       plVar11 = plVar10;
       if ((uVar7 & 1) != 0) {
         do {
@@ -398,8 +398,8 @@ LAB_0034ab5c:
           }
                     /* try { // try from 0034ac18 to 0034ac23 has its CatchHandler @ 0034ae94 */
           uVar7 = (*pcVar8)(&lStack_130,&lStack_140);
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_140);
-          Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_130);
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_140)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
+          ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_130)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
           plVar11 = plVar10;
         } while ((uVar7 & 1) != 0);
         if (plVar10 <= plVar13) goto LAB_0034ac88;
@@ -410,7 +410,7 @@ LAB_0034ab5c:
         }
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar13,plVar10);
         Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::operator=(plVar10,&lStack_80);
-        Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData>::~SharedPtr(&lStack_80);
+        ((Walaber::SharedPtr<Walaber::SkeletonActor::EventActionData> *)&lStack_80)->~SharedPtr<Walaber::SkeletonActor::EventActionData>();
       }
       plVar13 = plVar13 + 2;
     } while( true );

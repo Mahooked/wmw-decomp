@@ -27,7 +27,7 @@ void std::__ndk1::__vector_base<Walaber::PropertyList,std::__ndk1::allocator<Wal
   if (pvVar1 != pvVar2) {
     do {
       pvVar1 = (void *)((long)pvVar1 + -0x18);
-      Walaber::PropertyList::~PropertyList(pvVar1);
+      ((Walaber::PropertyList *)pvVar1)->~PropertyList();
     } while (pvVar2 != pvVar1);
     p0 = (void *)*this;
   }

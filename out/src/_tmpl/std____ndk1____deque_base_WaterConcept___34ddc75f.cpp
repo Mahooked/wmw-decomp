@@ -24,7 +24,7 @@ void std::__ndk1::
   for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
     operator delete((void *)*puVar2);
   }
-  std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>::~__split_buffer(param_1);
+  ((std::__ndk1::__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>> *)param_1)->~__split_buffer<WaterConcept::NotificationSingleton::NotificationData*, std::__ndk1::allocator<WaterConcept::NotificationSingleton::NotificationData*>>();
   return;
 }
 

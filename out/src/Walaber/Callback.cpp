@@ -10,7 +10,7 @@
 
 
 /* ok  address 0x32e5b4  size 4 */Walaber::Callback::~Callback(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

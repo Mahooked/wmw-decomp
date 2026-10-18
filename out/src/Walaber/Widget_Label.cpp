@@ -112,7 +112,7 @@ void Walaber::Widget_Label::setPadding(long in_x0, float p0,float p1,float p2,fl
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   WStack_40 = *p2;
   uStack_48 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,10,&WStack_40,&uStack_48,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,10,&WStack_40,&uStack_48,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = 0;
   *(undefined8 *)((long)puVar2 + 0xfc) = 0;
@@ -195,7 +195,7 @@ void Walaber::Widget_Label::init(long param_1)
 
 
 
-/* ok  address 0x37f310  size 436 */Walaber::Widget_Label::Widget_Label(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
+/* ok  address 0x37f310  size 436 */Walaber::Widget_Label::Widget_Label(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   undefined8 uVar2;
   int *piVar3;
   long lVar4;
@@ -207,33 +207,33 @@ void Walaber::Widget_Label::init(long param_1)
   
   uStack_40 = *param_3;
   uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,10,&uStack_40,&uStack_48,1,1);
-  *(undefined8 *)((long)param_1 + 0xfc) = 0;
-  *param_1 = &PTR__Widget_Label_0070f1a8;
-  *(undefined8 *)((long)param_1 + 0x104) = 0;
+  new ((void *)(this)) Walaber::Widget(param_2,10,&uStack_40,&uStack_48,1,1);
+  *(undefined8 *)((long)this + 0xfc) = 0;
+  *this = &PTR__Widget_Label_0070f1a8;
+  *(undefined8 *)((long)this + 0x104) = 0;
   lVar4 = *param_5;
-  param_1[0x22] = lVar4;
+  this[0x22] = lVar4;
   piVar3 = (int *)param_5[1];
-  param_1[0x23] = piVar3;
+  this[0x23] = piVar3;
   if (lVar4 != 0) {
     *piVar3 = *piVar3 + 1;
   }
-  param_1[0x26] = 0;
-  param_1[0x27] = 0;
-  *(undefined1 *)((long)param_1 + 0x142) = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  *(undefined2 *)(param_1 + 0x28) = 0;
-  *(undefined4 *)((long)param_1 + 0x143) = 0xff;
-  *(undefined1 *)((long)param_1 + 0x147) = 0xff;
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x2c] = 0x100000001;
-  param_1[0x2f] = 0;
-  param_1[0x30] = 0;
-  param_1[0x2d] = 0;
-  param_1[0x2e] = 0;
-  Walaber::Widget_Label::init(param_1);
+  this[0x26] = 0;
+  this[0x27] = 0;
+  *(undefined1 *)((long)this + 0x142) = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  *(undefined2 *)(this + 0x28) = 0;
+  *(undefined4 *)((long)this + 0x143) = 0xff;
+  *(undefined1 *)((long)this + 0x147) = 0xff;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x2c] = 0x100000001;
+  this[0x2f] = 0;
+  this[0x30] = 0;
+  this[0x2d] = 0;
+  this[0x2e] = 0;
+  Walaber::Widget_Label::init(this);
                     /* try { // try from 0037f3ec to 0037f3ef has its CatchHandler @ 0037f494 */
   uVar2 = Walaber::FontManager::getInstancePtr();
   abStack_60[8] = 0;
@@ -255,16 +255,16 @@ void Walaber::Widget_Label::init(long param_1)
   abStack_60[7] = 0;
                     /* try { // try from 0037f414 to 0037f41b has its CatchHandler @ 0037f47c */
   uVar2 = Walaber::FontManager::getFont(uVar2,abStack_60);
-  param_1[0x1d] = uVar2;
+  this[0x1d] = uVar2;
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
-  lVar4 = param_1[0x22];
-  if ((lVar4 != 0) && (*(int *)param_1[0x23] != 0)) {
+  lVar4 = this[0x22];
+  if ((lVar4 != 0) && (*(int *)this[0x23] != 0)) {
     uVar2 = *(undefined8 *)(lVar4 + 0x8c);
     uVar5 = *(undefined8 *)(lVar4 + 0x84);
-    param_1[0x24] = uVar2;
-    param_1[0x25] =
+    this[0x24] = uVar2;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar2 >> 0x20),
                   (float)uVar5 - (float)uVar2);
   }
@@ -273,7 +273,7 @@ void Walaber::Widget_Label::init(long param_1)
 
 
 
-/* ok  address 0x37f4c4  size 644 */Walaber::Widget_Label::Widget_Label(float param_1,long *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,byte *param_7,undefined8 param_8,undefined4 param_9 ,undefined4 param_10){
+/* ok  address 0x37f4c4  size 644 */Walaber::Widget_Label::Widget_Label(long *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,byte *param_7,undefined8 param_8,undefined4 param_9 ,undefined4 param_10){
   ulong uVar1;
   int *piVar3;
   long lVar4;
@@ -286,7 +286,7 @@ void Walaber::Widget_Label::init(long param_1)
   
   uStack_68 = *param_4;
   uStack_70 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,10,&uStack_68,&uStack_70,1,1);
+  new ((void *)(param_2)) Walaber::Widget(param_3,10,&uStack_68,&uStack_70,1,1);
   *(undefined8 *)((long)param_2 + 0xfc) = 0;
   *param_2 = (long)&PTR__Widget_Label_0070f1a8;
   *(undefined8 *)((long)param_2 + 0x104) = 0;
@@ -307,20 +307,20 @@ void Walaber::Widget_Label::init(long param_1)
   *(undefined1 *)((long)param_2 + 0x147) = 0xff;
                     /* try { // try from 0037f5a0 to 0037f5ab has its CatchHandler @ 0037f714 */
   Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)(param_2 + 0x29) = *(float *)(param_2 + 0x12) * fStack_60 * param_1;
+  *(float *)(param_2 + 0x29) = *(float *)(param_2 + 0x12) * fStack_60 * this;
                     /* try { // try from 0037f5c0 to 0037f5cb has its CatchHandler @ 0037f710 */
   Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)((long)param_2 + 0x14c) = *(float *)(param_2 + 0x12) * fStack_60 * param_1;
+  *(float *)((long)param_2 + 0x14c) = *(float *)(param_2 + 0x12) * fStack_60 * this;
                     /* try { // try from 0037f5e0 to 0037f5eb has its CatchHandler @ 0037f70c */
   Walaber::Node::getWorldScale(&fStack_60,param_2);
-  *(float *)(param_2 + 0x2a) = *(float *)((long)param_2 + 0x94) * fStack_5c * param_1;
+  *(float *)(param_2 + 0x2a) = *(float *)((long)param_2 + 0x94) * fStack_5c * this;
                     /* try { // try from 0037f600 to 0037f60b has its CatchHandler @ 0037f708 */
   Walaber::Node::getWorldScale(&fStack_60,param_2);
   *(undefined4 *)(param_2 + 0x2c) = param_9;
   param_2[0x2f] = 0;
   param_2[0x30] = 0;
   *(undefined4 *)((long)param_2 + 0x164) = param_10;
-  *(float *)((long)param_2 + 0x154) = *(float *)((long)param_2 + 0x94) * fStack_5c * param_1;
+  *(float *)((long)param_2 + 0x154) = *(float *)((long)param_2 + 0x94) * fStack_5c * this;
   param_2[0x2d] = 0;
   param_2[0x2e] = 0;
                     /* try { // try from 0037f640 to 0037f67f has its CatchHandler @ 0037f71c */
@@ -450,7 +450,7 @@ LAB_0037f9d0:
 
 
 
-/* ok  address 0x37f9f4  size 664 */Walaber::Widget_Label::Widget_Label(float param_1,float param_2,float param_3,float param_4,long *param_5, undefined8 param_6,undefined8 *param_7,undefined8 *param_8,long *param_9, byte *param_10,undefined8 param_11,undefined4 param_12,undefined4 param_13){
+/* ok  address 0x37f9f4  size 664 */Walaber::Widget_Label::Widget_Label(float param_2,float param_3,float param_4,long *param_5, undefined8 param_6,undefined8 *param_7,undefined8 *param_8,long *param_9, byte *param_10,undefined8 param_11,undefined4 param_12,undefined4 param_13){
   ulong uVar1;
   int *piVar3;
   long lVar4;
@@ -463,7 +463,7 @@ LAB_0037f9d0:
   
   uStack_88 = *param_7;
   uStack_90 = *param_8;
-  Walaber::Widget::Widget(param_5,param_6,10,&uStack_88,&uStack_90,1,1);
+  new ((void *)(param_5)) Walaber::Widget(param_6,10,&uStack_88,&uStack_90,1,1);
   *(undefined8 *)((long)param_5 + 0xfc) = 0;
   *param_5 = (long)&PTR__Widget_Label_0070f1a8;
   *(undefined8 *)((long)param_5 + 0x104) = 0;
@@ -487,7 +487,7 @@ LAB_0037f9d0:
   *(float *)(param_5 + 0x29) = *(float *)(param_5 + 0x12) * fStack_80 * param_2;
                     /* try { // try from 0037fb00 to 0037fb0b has its CatchHandler @ 0037fc54 */
   Walaber::Node::getWorldScale(&fStack_80,param_5);
-  *(float *)((long)param_5 + 0x14c) = *(float *)(param_5 + 0x12) * fStack_80 * param_1;
+  *(float *)((long)param_5 + 0x14c) = *(float *)(param_5 + 0x12) * fStack_80 * this;
                     /* try { // try from 0037fb20 to 0037fb2b has its CatchHandler @ 0037fc50 */
   Walaber::Node::getWorldScale(&fStack_80,param_5);
   *(float *)(param_5 + 0x2a) = *(float *)((long)param_5 + 0x94) * fStack_7c * param_3;
@@ -535,8 +535,8 @@ LAB_0037f9d0:
   if ((*(byte *)(this + 0x2d) & 1) != 0) {
     operator delete((void *)this[0x2f]);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x22)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -544,7 +544,7 @@ LAB_0037f9d0:
 
 /* ok  address 0x37fcd4  size 36 */Walaber::Widget_Label::~Widget_Label(){
   Walaber::Widget_Label::~Widget_Label();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -978,7 +978,7 @@ void Walaber::Widget_Label::draw(Walaber__SpriteBatch *p0)
                                            (byte)iVar4 & ((byte)(iVar4 >> 0x1f) ^ 0xff))));
                     /* try { // try from 003802e8 to 0038030b has its CatchHandler @ 003806a0 */
     Walaber::SpriteBatch::drawQuad(uVar13);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
   }
   if (*(long *)&p0[4].field_0x8 == 0) goto LAB_00380630;
   bVar1 = (byte)p0[6].f_0x18;

@@ -477,7 +477,7 @@ LAB_003e5f6c:
           uVar15 = uVar15 + 5;
         } while (uVar17 <= uVar12 && uVar12 - uVar17 != 0);
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_98);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_98)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       if ((uStack_80 & 1) != 0) {
         operator delete(pvStack_70);
       }
@@ -491,11 +491,11 @@ LAB_003e6110:
 
 
 /* ok  address 0x3e61a4  size 60 */Walaber::HermiteCurve::~HermiteCurve(){
-  *param_1 = &PTR__Curve_00710ab8;
-  if ((void *)param_1[3] != (void *)0x0) {
-    operator delete[]((void *)param_1[3],param_2);
+  *this = &PTR__Curve_00710ab8;
+  if ((void *)this[3] != (void *)0x0) {
+    operator delete[]((void *)this[3],param_2);
   }
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

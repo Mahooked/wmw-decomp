@@ -72,6 +72,24 @@ typedef struct { char __opaque[64]; } pthread_attr_t;
 typedef unsigned int  pthread_key_t;
 typedef unsigned long pthread_t;
 
+/* libc++ spells the aligned-allocation tag `enum class align_val_t : size_t`.
+   Declaring any global operator new/delete (immediately below) makes clang
+   pre-declare this implicitly as an enum; the recovered `struct
+   align_val_t` is therefore suppressed in decls.h, and _globals.cpp defines
+   `operator_delete(void *, size_t, std::align_val_t)` with the parameter by
+   value, so declare it here -- complete -- before the operator block. */
+namespace std { enum class align_val_t : size_t {}; }
+
+/* ---- allocation: the bodies call operator new/delete by name, and the
+   constructor call-site rewrite (`new (obj) T(args)`) needs the placement
+   form declared.  Declared, never defined: the gate is syntax-only. ---- */
+void *operator new(size_t);
+void *operator new[](size_t);
+void *operator new(size_t, void *) noexcept;
+void operator delete(void *) noexcept;
+void operator delete[](void *) noexcept;
+void operator delete(void *, void *) noexcept;
+
 /* ---- ABI helpers emitted by the compiler ---- */
 extern "C" void __stack_chk_fail(void) __attribute__((noreturn));
 extern "C" void __cxa_pure_virtual(void) __attribute__((noreturn));
@@ -235,14 +253,15 @@ template <class T> struct __tree_iterator;
 template <class T> struct __tree_const_iterator;
 template <class T> struct __tree_node_destructor;
 template <class T, class A> struct __split_buffer;
-template <class T, class A = allocator<T>> struct __vector_base;
+template <class...> struct __deque_base { };
+template <class T, class A = allocator<T>> struct __vector_base { template <class... _A> __vector_base(_A...); };
 template <class T> struct __vector_base_common;
 template <class C, class T = char_traits<C>> struct basic_ostream;
 template <class C, class T = char_traits<C>> struct basic_istream;
 template <class C, class T = char_traits<C>> struct basic_iostream;
 template <class C, class T = char_traits<C>> struct basic_streambuf;
 template <class C, class T = char_traits<C>> struct basic_stringbuf;
-template <class C, class T = char_traits<C>> struct basic_filebuf;
+template <class C, class T = char_traits<C>> struct basic_filebuf { template <class... _A> basic_filebuf(_A...); };
 template <class C, class T = char_traits<C>> struct istreambuf_iterator;
 template <class C, class T = char_traits<C>> struct ostreambuf_iterator;
 template <class C> struct __basic_string_common;
@@ -271,9 +290,9 @@ struct __thread_struct;
 }
 
 namespace Walaber {
-template <class T> struct SharedPtr;
-template <class T> struct MemberCallback;
-template <class T> struct WeakPtr;
+template <class T> struct SharedPtr { template <class... _A> SharedPtr(_A...); };
+template <class T> struct MemberCallback { template <class... _A> MemberCallback(_A...); };
+template <class T> struct WeakPtr { template <class... _A> WeakPtr(_A...); };
 }
 
 /* ---- placeholder for unresolved data symbols ----

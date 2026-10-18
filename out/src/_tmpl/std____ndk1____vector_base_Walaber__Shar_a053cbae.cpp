@@ -28,7 +28,7 @@ void std::__ndk1::
   if (pvVar1 != pvVar2) {
     do {
       pvVar1 = (void *)((long)pvVar1 + -0x10);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(pvVar1);
+      ((Walaber::SharedPtr<Walaber::Texture> *)pvVar1)->~SharedPtr<Walaber::Texture>();
     } while (pvVar2 != pvVar1);
     p0 = (void *)*this;
   }

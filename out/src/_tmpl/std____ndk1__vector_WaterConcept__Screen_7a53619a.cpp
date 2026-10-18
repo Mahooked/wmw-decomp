@@ -41,7 +41,7 @@ ulong std::__ndk1::
   lVar7 = (long)(param_2 - lVar9) >> 3;
   if (uVar3 < (ulong)param_1[2]) {
     if (param_2 == uVar3) {
-      WaterConcept::Screen_Editor::ObjectData::ObjectData(param_2,param_3);
+      new ((void *)(param_2)) WaterConcept::Screen_Editor::ObjectData(param_3);
       param_1[1] = param_1[1] + 0x88;
     }
     else {
@@ -89,12 +89,12 @@ ulong std::__ndk1::
         for (; puVar5 != puStack_a8; puVar5 = puVar5 + 0x11) {
           puStack_88 = puStack_b0;
                     /* try { // try from 004c726c to 004c7273 has its CatchHandler @ 004c736c */
-          WaterConcept::Screen_Editor::ObjectData::ObjectData(puStack_80,puVar5);
+          new ((void *)(puStack_80)) WaterConcept::Screen_Editor::ObjectData(puVar5);
           puStack_80 = puStack_80 + 0x11;
           puStack_b0 = puStack_b0;
         }
         puStack_a8 = puStack_80;
-        std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(&puStack_90);
+        ((std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&> *)&puStack_90)->~__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>();
       }
       else {
         lVar7 = ((long)puStack_b0 - (long)puStack_b8 >> 3) * -0xf0f0f0f0f0f0f0f;
@@ -160,10 +160,10 @@ ulong std::__ndk1::
       }
     }
                     /* try { // try from 004c72f4 to 004c731b has its CatchHandler @ 004c7368 */
-    WaterConcept::Screen_Editor::ObjectData::ObjectData(puStack_a8,param_3);
+    new ((void *)(puStack_a8)) WaterConcept::Screen_Editor::ObjectData(param_3);
     puStack_a8 = puStack_a8 + 0x11;
     param_2 = std::__ndk1::vector<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>>::__swap_out_circular_buffer(param_1,&puStack_b8,param_2);
-    std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>::~__split_buffer(&puStack_b8);
+    ((std::__ndk1::__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&> *)&puStack_b8)->~__split_buffer<WaterConcept::Screen_Editor::ObjectData, std::__ndk1::allocator<WaterConcept::Screen_Editor::ObjectData>&>();
   }
   return param_2;
 }
@@ -197,7 +197,7 @@ void std::__ndk1::
     lVar1 = param_2[1];
     do {
       lVar2 = lVar2 + -0x88;
-      WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1 + -0x88,lVar2);
+      new ((void *)(lVar1 + -0x88)) WaterConcept::Screen_Editor::ObjectData(lVar2);
       lVar1 = param_2[1] + -0x88;
       param_2[1] = lVar1;
     } while (lVar3 != lVar2);
@@ -251,7 +251,7 @@ void std::__ndk1::
   lVar6 = lVar8;
   for (pWVar1 = pWVar2; pWVar1 < p2;
       pWVar1 = (WaterConcept__Screen_Editor__ObjectData *)&pWVar1[1].field_0x10) {
-    WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar6,pWVar1);
+    new ((void *)(lVar6)) WaterConcept::Screen_Editor::ObjectData(pWVar1);
     lVar6 = *(long *)&p0->field_0x8 + 0x88;
     *(long *)&p0->field_0x8 = lVar6;
   }
@@ -329,7 +329,7 @@ long std::__ndk1::
   lVar3 = param_3;
   while (lVar4 != lVar3) {
     lVar3 = lVar3 + -0x88;
-    WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1 + -0x88,lVar3);
+    new ((void *)(lVar1 + -0x88)) WaterConcept::Screen_Editor::ObjectData(lVar3);
     lVar1 = param_2[1] + -0x88;
     param_2[1] = lVar1;
   }
@@ -337,7 +337,7 @@ long std::__ndk1::
   if (lVar3 != param_3) {
     lVar1 = param_2[2];
     do {
-      WaterConcept::Screen_Editor::ObjectData::ObjectData(lVar1,param_3);
+      new ((void *)(lVar1)) WaterConcept::Screen_Editor::ObjectData(param_3);
       param_3 = param_3 + 0x88;
       lVar1 = param_2[2] + 0x88;
       param_2[2] = lVar1;

@@ -73,7 +73,7 @@ Walaber__Widget_Toggle * Walaber::Widget_Toggle::operator=(Walaber__Widget_Toggl
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,8,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,8,&uStack_30,&uStack_38,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = 0;
   puVar2[0x20] = 0;
@@ -117,7 +117,7 @@ void Walaber::Widget_Toggle::init(long param_1)
 
 
 
-/* ok  address 0x38c06c  size 508 */Walaber::Widget_Toggle::Widget_Toggle(long *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9){
+/* ok  address 0x38c06c  size 508 */Walaber::Widget_Toggle::Widget_Toggle(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,long *param_6,undefined8 param_7,undefined8 param_8,undefined8 param_9){
   int *piVar2;
   long lVar3;
   long lVar4;
@@ -127,46 +127,46 @@ void Walaber::Widget_Toggle::init(long param_1)
   
   uStack_60 = *param_3;
   uStack_68 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,8,&uStack_60,&uStack_68,1,1);
-  *param_1 = (long)&PTR__Widget_Toggle_0070fec8;
+  new ((void *)(this)) Walaber::Widget(param_2,8,&uStack_60,&uStack_68,1,1);
+  *this = (long)&PTR__Widget_Toggle_0070fec8;
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x20] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = (long)piVar2;
+  this[0x21] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
   lVar3 = *param_6;
-  param_1[0x22] = lVar3;
+  this[0x22] = lVar3;
   piVar2 = (int *)param_6[1];
-  param_1[0x23] = (long)piVar2;
+  this[0x23] = (long)piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  param_1[0x29] = 0;
-  param_1[0x2a] = 0;
-  param_1[0x28] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x27] = 0;
-  param_1[0x26] = 0;
-  param_1[0x2c] = 0;
-  param_1[0x2b] = 0;
+  this[0x29] = 0;
+  this[0x2a] = 0;
+  this[0x28] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x27] = 0;
+  this[0x26] = 0;
+  this[0x2c] = 0;
+  this[0x2b] = 0;
                     /* try { // try from 0038c148 to 0038c153 has its CatchHandler @ 0038c234 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x2d,param_7);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x2d,param_7);
                     /* try { // try from 0038c158 to 0038c163 has its CatchHandler @ 0038c21c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x30,param_8);
-  *(undefined4 *)((long)param_1 + 0x19c) = 0xff000000;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x30,param_8);
+  *(undefined4 *)((long)this + 0x19c) = 0xff000000;
                     /* try { // try from 0038c178 to 0038c17f has its CatchHandler @ 0038c204 */
-  (**(code **)(*param_1 + 0x70))(param_1,param_9);
-  *(undefined2 *)((long)param_1 + 0x1a4) = 0;
-  *(undefined4 *)(param_1 + 0x33) = 0x3f800000;
+  (**(code **)(*this + 0x70))(this,param_9);
+  *(undefined2 *)((long)this + 0x1a4) = 0;
+  *(undefined4 *)(this + 0x33) = 0x3f800000;
   lVar3 = *param_5;
   if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x24] = lVar4;
-    param_1[0x25] =
+    this[0x24] = lVar4;
+    this[0x25] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
@@ -174,8 +174,8 @@ void Walaber::Widget_Toggle::init(long param_1)
   if ((lVar3 != 0) && (*(int *)param_6[1] != 0)) {
     lVar4 = *(long *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x26] = lVar4;
-    param_1[0x27] =
+    this[0x26] = lVar4;
+    this[0x27] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)lVar4 >> 0x20),
                   (float)uVar5 - (float)lVar4);
   }
@@ -192,10 +192,10 @@ void Walaber::Widget_Toggle::init(long param_1)
   if ((*(byte *)(this + 0x2d) & 1) != 0) {
     operator delete((void *)this[0x2f]);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x28);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x28)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x22)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -203,7 +203,7 @@ void Walaber::Widget_Toggle::init(long param_1)
 
 /* ok  address 0x38c2d0  size 36 */Walaber::Widget_Toggle::~Widget_Toggle(){
   Walaber::Widget_Toggle::~Widget_Toggle();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -387,7 +387,7 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
     fStack_e0 = fVar10 * fVar8;
     fStack_dc = (float)p0[2].f_0x24 * fStack_b4;
     Walaber::SpriteBatch::drawQuad(uVar9);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c8)->~SharedPtr<Walaber::Texture>();
   }
   if ((*(long *)&p0[5].f_0x28 != 0) && (*(int *)p0[5].f_0x30 != 0)) {
     fVar11 = *(float *)&p0[6].f_0x0;
@@ -414,7 +414,7 @@ void Walaber::Widget_Toggle::draw(Walaber__SpriteBatch *p0)
     fStack_e0 = fVar10 * fVar8;
     fStack_dc = -((float)p0[2].f_0x24 * fStack_b4);
     Walaber::SpriteBatch::drawQuad(uVar9);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_f0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_f0)->~SharedPtr<Walaber::Texture>();
   }
   lVar3 = *(long *)&p0[4].field_0x8;
   if (lVar3 == 0) goto LAB_0038cb54;

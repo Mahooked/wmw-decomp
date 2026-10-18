@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0x10,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x10,&uStack_30,&uStack_38,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = 0;
   puVar2[0x21] = puVar2 + 0x22;
@@ -25,7 +25,7 @@
 /* ok  address 0x37c89c  size 60 */Walaber::Widget_Group::~Widget_Group(){
   *this = &PTR__Widget_Group_0070efc8;
   std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -34,7 +34,7 @@
 /* ok  address 0x37c8d8  size 68 */Walaber::Widget_Group::~Widget_Group(){
   *this = &PTR__Widget_Group_0070efc8;
   std::__ndk1::__tree<Walaber::Widget_Group::WidgetInfo, std::__ndk1::less<Walaber::Widget_Group::WidgetInfo>, std::__ndk1::allocator<Walaber::Widget_Group::WidgetInfo>>::destroy(this + 0x21,this[0x22]);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   operator delete(this);
   return;
 }
@@ -506,7 +506,7 @@ void Walaber::Widget_Group::setColor(Walaber__Color *p0, Walaber__Color * in_x1)
         *piStack_50 = *piStack_50 + 1;
       }
       lStack_58 = lVar6;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_58);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_58)->~SharedPtr<Walaber::Texture>();
       if (lVar6 != 0) {
         pWVar4[0x50].f_0x0 = in_x1->f_0x0;
         pWVar4[0x50].f_0x1 = in_x1->f_0x1;

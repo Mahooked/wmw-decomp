@@ -13,7 +13,7 @@
 void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base(param_1 + 8);
+  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
   return;
 }
 
@@ -29,7 +29,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base(param_1 + 8);
+  ((std::__ndk1::ios_base *)param_1 + 8)->~ios_base();
   operator delete((void *)(param_1 + -0x10));
   return;
 }

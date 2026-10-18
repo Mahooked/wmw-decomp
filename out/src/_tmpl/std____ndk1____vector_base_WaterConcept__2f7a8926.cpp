@@ -30,9 +30,9 @@ void std::__ndk1::
     lVar3 = 0;
     do {
       std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::destroy((long)pvVar2 + lVar3 + -0x18,*(undefined8 *)((long)pvVar2 + lVar3 + -0x10));
-      std::__ndk1::__vector_base<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::~__vector_base((long)pvVar2 + lVar3 + -0x30);
-      Walaber::PropertyList::~PropertyList((long)pvVar2 + lVar3 + -0x50);
-      Walaber::PropertyList::~PropertyList((long)pvVar2 + lVar3 + -0x68);
+      ((std::__ndk1::__vector_base<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>> *)(long)pvVar2 + lVar3 + -0x30)->~__vector_base<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>();
+      ((Walaber::PropertyList *)(long)pvVar2 + lVar3 + -0x50)->~PropertyList();
+      ((Walaber::PropertyList *)(long)pvVar2 + lVar3 + -0x68)->~PropertyList();
       if ((*(byte *)((long)pvVar2 + lVar3 + -0x88) & 1) != 0) {
         operator delete(*(void **)((long)pvVar2 + lVar3 + -0x78));
       }

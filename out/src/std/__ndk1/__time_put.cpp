@@ -7,7 +7,7 @@
   int iVar1;
   long lVar2;
   
-  lVar2 = *param_1;
+  lVar2 = *this;
   if ((DAT_007a4e90 & 1) == 0) {
     iVar1 = __cxa_guard_acquire(&DAT_007a4e90);
     if (iVar1 != 0) {
@@ -18,7 +18,7 @@
   }
   if (lVar2 != DAT_007a4e88) {
                     /* try { // try from 005c4294 to 005c4297 has its CatchHandler @ 005c430c */
-    freelocale(*param_1);
+    freelocale(*this);
   }
   return;
 }
@@ -116,7 +116,7 @@ LAB_005c45dc:
 
 
 
-/* ok  address 0x5c4740  size 172 */std::__ndk1::__time_put::__time_put(long *param_1,byte *param_2){
+/* ok  address 0x5c4740  size 172 */std::__ndk1::__time_put::__time_put(byte *param_2){
   long lVar1;
   long lVar2;
   byte *pbVar3;
@@ -130,7 +130,7 @@ LAB_005c45dc:
     pbVar3 = param_2 + 1;
   }
   lVar2 = newlocale(0x1fbf,pbVar3,0);
-  *param_1 = lVar2;
+  *this = lVar2;
   if (lVar2 == 0) {
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> std::__ndk1::operator+<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>(auStack_50,"time_put_byname failed to construct for ",param_2);
                     /* try { // try from 005c47c4 to 005c47cb has its CatchHandler @ 005c47d0 */

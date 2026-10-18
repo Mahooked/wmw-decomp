@@ -403,7 +403,7 @@ void WaterConcept::InteractiveObject::particleHasCollided
   *(undefined8 *)((long)p0 + 0x140) = auStack_98[0];
   *(undefined4 *)((long)p0 + 0x148) = *(undefined4 *)((long)p0 + 0x74);
                     /* try { // try from 00480e7c to 00480e83 has its CatchHandler @ 00480fb0 */
-  Walaber::PropertyList::PropertyList(auStack_98);
+  new ((void *)(auStack_98)) Walaber::PropertyList();
                     /* try { // try from 00480e84 to 00480ec3 has its CatchHandler @ 00480fc4 */
   puVar2 = (undefined8 *)operator new(0x28);
   *(Walaber__Vector2 *)(puVar2 + 2) = p0;
@@ -417,11 +417,11 @@ void WaterConcept::InteractiveObject::particleHasCollided
   puStack_c8 = puVar2;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_b8 = puVar2;
   piStack_b0 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00480efc to 00480eff has its CatchHandler @ 00480f98 */
   uVar4 = Walaber::SoundManager::getInstancePtr();
   puStack_d8 = puStack_b8;
@@ -430,12 +430,12 @@ void WaterConcept::InteractiveObject::particleHasCollided
   }
                     /* try { // try from 00480f18 to 00480f27 has its CatchHandler @ 00480f88 */
   Walaber::SoundManager::newSoundFromGroup(uVar4,0x6e,&puStack_d8,auStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
   *(undefined4 *)((long)p0 + 0x14c) = 0;
   *(undefined4 *)((long)p0 + 0x360) = *(undefined4 *)((long)p0 + 0x74);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>::~SharedPtr(&puStack_a8);
-  Walaber::PropertyList::~PropertyList(auStack_98);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>> *)&puStack_a8)->~SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>();
+  ((Walaber::PropertyList *)auStack_98)->~PropertyList();
   return;
 }
 
@@ -452,13 +452,13 @@ void WaterConcept::InteractiveObject::particleHasCollided
   long lVar2;
   long lVar3;
   
-  *param_1 = &PTR__InteractiveObject_00711d18;
-  lVar2 = param_1[0x30];
-  if (param_1[0x2f] != param_1[0x30]) {
+  *this = &PTR__InteractiveObject_00711d18;
+  lVar2 = this[0x30];
+  if (this[0x2f] != this[0x30]) {
     do {
       if (*(long **)(lVar2 + -0x28) != (long *)0x0) {
         (**(code **)(**(long **)(lVar2 + -0x28) + 8))();
-        lVar2 = param_1[0x30];
+        lVar2 = this[0x30];
         param_2 = extraout_x1;
       }
       lVar3 = lVar2 + -0x28;
@@ -466,16 +466,16 @@ void WaterConcept::InteractiveObject::particleHasCollided
         operator delete(*(void **)(lVar2 + -8));
         param_2 = extraout_x1_00;
       }
-      param_1[0x30] = lVar3;
+      this[0x30] = lVar3;
       lVar2 = lVar3;
-    } while (param_1[0x2f] != lVar3);
+    } while (this[0x2f] != lVar3);
   }
-  lVar2 = param_1[0x33];
-  if (param_1[0x32] != param_1[0x33]) {
+  lVar2 = this[0x33];
+  if (this[0x32] != this[0x33]) {
     do {
       if (*(long **)(lVar2 + -0x28) != (long *)0x0) {
         (**(code **)(**(long **)(lVar2 + -0x28) + 8))();
-        lVar2 = param_1[0x33];
+        lVar2 = this[0x33];
         param_2 = extraout_x1_01;
       }
       lVar3 = lVar2 + -0x28;
@@ -483,72 +483,72 @@ void WaterConcept::InteractiveObject::particleHasCollided
         operator delete(*(void **)(lVar2 + -8));
         param_2 = extraout_x1_02;
       }
-      param_1[0x33] = lVar3;
+      this[0x33] = lVar3;
       lVar2 = lVar3;
-    } while (param_1[0x32] != lVar3);
+    } while (this[0x32] != lVar3);
   }
-  if ((void *)param_1[0x5d] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x5d],param_2);
+  if ((void *)this[0x5d] != (void *)0x0) {
+    operator delete[]((void *)this[0x5d],param_2);
     param_2 = extraout_x1_03;
   }
-  if ((void *)param_1[0x5e] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x5e],param_2);
+  if ((void *)this[0x5e] != (void *)0x0) {
+    operator delete[]((void *)this[0x5e],param_2);
     param_2 = extraout_x1_04;
   }
-  if ((void *)param_1[0x5f] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x5f],param_2);
+  if ((void *)this[0x5f] != (void *)0x0) {
+    operator delete[]((void *)this[0x5f],param_2);
   }
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x72);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x70);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x6e);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0x69);
-  pvVar1 = (void *)param_1[100];
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x72)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x70)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x6e)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x69)->~SharedPtr<Walaber::Callback>();
+  pvVar1 = (void *)this[100];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x65] = pvVar1;
+    this[0x65] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x4d];
+  pvVar1 = (void *)this[0x4d];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x4e] = pvVar1;
+    this[0x4e] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x44];
+  pvVar1 = (void *)this[0x44];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x45] = pvVar1;
+    this[0x45] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x41];
+  pvVar1 = (void *)this[0x41];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x42] = pvVar1;
+    this[0x42] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x3e];
+  pvVar1 = (void *)this[0x3e];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x3f] = pvVar1;
+    this[0x3f] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x3b];
+  pvVar1 = (void *)this[0x3b];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x3c] = pvVar1;
+    this[0x3c] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x38];
+  pvVar1 = (void *)this[0x38];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x39] = pvVar1;
+    this[0x39] = pvVar1;
     operator delete(pvVar1);
   }
-  std::__ndk1::__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::~__vector_base(param_1 + 0x32);
-  std::__ndk1::__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>::~__vector_base(param_1 + 0x2f);
-  std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::~__vector_base(param_1 + 0x1f);
-  std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::~__vector_base(param_1 + 0x1c);
-  Walaber::PropertyList::~PropertyList(param_1 + 0x18);
-  if ((*(byte *)(param_1 + 0x14) & 1) != 0) {
-    operator delete((void *)param_1[0x16]);
+  ((std::__ndk1::__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>> *)this + 0x32)->~__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>();
+  ((std::__ndk1::__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>> *)this + 0x2f)->~__vector_base<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>> *)this + 0x1f)->~__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>> *)this + 0x1c)->~__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>();
+  ((Walaber::PropertyList *)this + 0x18)->~PropertyList();
+  if ((*(byte *)(this + 0x14) & 1) != 0) {
+    operator delete((void *)this[0x16]);
   }
-  if ((*(byte *)(param_1 + 0x11) & 1) != 0) {
-    operator delete((void *)param_1[0x13]);
+  if ((*(byte *)(this + 0x11) & 1) != 0) {
+    operator delete((void *)this[0x13]);
   }
-  Walaber::DrawableNode::~DrawableNode(param_1);
+  ((Walaber::DrawableNode *)this)->~DrawableNode();
   return;
 }
 
@@ -556,7 +556,7 @@ void WaterConcept::InteractiveObject::particleHasCollided
 
 /* ok  address 0x4812a8  size 36 */WaterConcept::InteractiveObject::~InteractiveObject(){
   WaterConcept::InteractiveObject::~InteractiveObject();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -598,11 +598,11 @@ void WaterConcept::InteractiveObject::init
   *piVar3 = 3;
   puStack_88 = puVar2;
   puStack_58 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_58)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_78 = puVar2;
   piStack_70 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00481390 to 00481393 has its CatchHandler @ 00481414 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_98 = puStack_78;
@@ -611,9 +611,9 @@ void WaterConcept::InteractiveObject::init
   }
                     /* try { // try from 004813ac to 004813bf has its CatchHandler @ 00481404 */
   Walaber::FileManager::readFile(uVar4,param_2,&puStack_98,param_3,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>::~SharedPtr(&puStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>> *)&puStack_68)->~SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>();
   return;
 }
 
@@ -822,7 +822,7 @@ LAB_0048177c:
                   uStack_108 = 0;
                   uStack_110 = 0x3f8000003f800000;
                     /* try { // try from 00481894 to 004818ab has its CatchHandler @ 00481de8 */
-                  Walaber::Sprite::Sprite(0,lVar10,&uStack_100,&uStack_108,&uStack_110,0);
+                  new ((void *)(0)) Walaber::Sprite(lVar10,&uStack_100,&uStack_108,&uStack_110,0);
                   piStack_128 = (int *)0x0;
                   puStack_120 = (undefined1 *)0x0;
                   puStack_130 = (undefined8 *)0x7473657408;
@@ -933,13 +933,13 @@ LAB_00481aac:
                   piStack_170 = piStack_190;
                   puStack_148 = puVar14;
                   piStack_140 = piStack_190;
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_148);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_148)->~SharedPtr<Walaber::Callback>();
                   puStack_188 = puStack_198;
                   piStack_180 = piStack_190;
                   if (puStack_198 != (undefined8 *)0x0) {
                     *piStack_190 = *piStack_190 + 1;
                   }
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_198);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_198)->~SharedPtr<Walaber::Callback>();
                   puStack_1a8 = puStack_188;
                   piStack_1a0 = piStack_180;
                   if (puStack_188 != (undefined8 *)0x0) {
@@ -947,9 +947,9 @@ LAB_00481aac:
                   }
                     /* try { // try from 00481c20 to 00481c2f has its CatchHandler @ 00481dc0 */
                   Walaber::Sprite::loadFromXML(lVar10,&puStack_c0,&puStack_1a8);
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1a8);
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_188);
-                  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>::~SharedPtr(&puStack_178);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_1a8)->~SharedPtr<Walaber::Callback>();
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_188)->~SharedPtr<Walaber::Callback>();
+                  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>> *)&puStack_178)->~SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>();
                   if (((ulong)puStack_130 & 1) != 0) {
                     operator delete(puStack_120);
                   }
@@ -966,11 +966,11 @@ LAB_00481aac:
           else {
             iVar5 = xmlStrcmp(*(undefined8 *)(lVar18 + 0x10),"DefaultProperties");
             if (iVar5 == 0) {
-              Walaber::PropertyList::PropertyList(&puStack_c0);
+              new ((void *)(&puStack_c0)) Walaber::PropertyList();
                     /* try { // try from 004815a8 to 004815c7 has its CatchHandler @ 00481d94 */
               Walaber::XML::parsePropertyList(lVar18,&puStack_c0);
               (**(code **)(*(long *)p0 + 0x50))(p0,&puStack_c0);
-              Walaber::PropertyList::~PropertyList(&puStack_c0);
+              ((Walaber::PropertyList *)&puStack_c0)->~PropertyList();
             }
           }
         }
@@ -1141,7 +1141,7 @@ void WaterConcept::InteractiveObject::_spriteLoaded(void *p0, long in_x1)
         else {
 LAB_004821f0:
           Walaber::Sprite::setAnimation(auStack_58,lVar4,pbVar6);
-          Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_58);
+          ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_58)->~SharedPtr<Walaber::SpriteAnimation>();
         }
         plVar7 = *(long **)(in_x1 + 8);
         uVar8 = *(undefined8 *)((long)plVar7 + 0x5c);
@@ -1388,7 +1388,7 @@ void WaterConcept::InteractiveObject::getDefaultProperties(std::__ndk1::basic_st
   auStack_50[0] = param_1;
   lVar2 = std::__ndk1::pair<std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long>, bool> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_unique_key_args<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::piecewise_construct_t const&, std::__ndk1::tuple<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>> const&>, std::__ndk1::tuple<>>(&mPropertiesCallbacks,param_1,&DAT_00638384,auStack_50,&puStack_70);
   Walaber::SharedPtr<Walaber::Callback>::operator=(lVar2 + 0x38,param_2);
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
                     /* try { // try from 004827f0 to 004827f3 has its CatchHandler @ 004828a8 */
   uVar3 = Walaber::FileManager::getInstancePtr();
                     /* try { // try from 004827f8 to 00482827 has its CatchHandler @ 004828ac */
@@ -1401,9 +1401,9 @@ void WaterConcept::InteractiveObject::getDefaultProperties(std::__ndk1::basic_st
                     /* try { // try from 00482838 to 0048284f has its CatchHandler @ 00482890 */
   puStack_60 = puVar4;
   Walaber::FileManager::readFile(uVar3,param_1,&puStack_60,auStack_50,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_70);
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_60)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_70)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   return;
 }
 
@@ -1457,7 +1457,7 @@ void WaterConcept::InteractiveObject::_gotDefaultProperties(void *p0)
     operator delete[](*(void **)((long)p0 + 0x20),p1);
   }
   if (auVar5._0_8_ != 0) {
-    Walaber::PropertyList::PropertyList(auStack_70);
+    new ((void *)(auStack_70)) Walaber::PropertyList();
     for (lVar4 = *(long *)(auVar5._0_8_ + 0x18); lVar4 != 0; lVar4 = *(long *)(lVar4 + 0x30)) {
                     /* try { // try from 00482960 to 00482977 has its CatchHandler @ 00482a94 */
       iVar2 = xmlStrcmp(*(undefined8 *)(lVar4 + 0x10),"DefaultProperties");
@@ -1475,17 +1475,17 @@ void WaterConcept::InteractiveObject::_gotDefaultProperties(void *p0)
       uStack_98 = 0;
       pvStack_90 = (void *)0x0;
                     /* try { // try from 004829c4 to 004829cb has its CatchHandler @ 00482a40 */
-      Walaber::PropertyList::PropertyList(auStack_88);
+      new ((void *)(auStack_88)) Walaber::PropertyList();
                     /* try { // try from 004829cc to 004829f7 has its CatchHandler @ 00482a6c */
       std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::operator=(&uStack_a0,(long)p0 + 8);
       Walaber::PropertyList::operator=(auStack_88,auStack_70);
       (**(code **)(**(long **)(puVar3 + 0x38) + 0x10))(*(long **)(puVar3 + 0x38),&uStack_a0);
-      Walaber::PropertyList::~PropertyList(auStack_88);
+      ((Walaber::PropertyList *)auStack_88)->~PropertyList();
       if ((uStack_a0 & 1) != 0) {
         operator delete(pvStack_90);
       }
     }
-    Walaber::PropertyList::~PropertyList(auStack_70);
+    ((Walaber::PropertyList *)auStack_70)->~PropertyList();
   }
   return;
 }
@@ -6045,11 +6045,11 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
       puStack_110 = puVar4;
       piStack_108 = piVar5;
       uStack_f0 = puVar4;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_110);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_110)->~SharedPtr<Walaber::Callback>();
       *piVar5 = *piVar5 + 1;
       puStack_e0 = puVar4;
       piStack_d8 = piVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_f0);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_f0)->~SharedPtr<Walaber::Callback>();
       lVar8 = (long)*(int *)(param_1 + 0x2a8);
       lVar10 = *(long *)(param_1 + 0xf8);
       plVar11 = (long *)(lVar10 + lVar8 * 0x18);
@@ -6103,7 +6103,7 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
                     /* try { // try from 00486f30 to 00486f4b has its CatchHandler @ 00487050 */
           uVar24 = WaterConcept::World::raycast(0x40000000,uVar6,&uStack_f8,&uStack_f0,&puStack_120,&pvStack_c0,
                                    &puStack_110);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_120);
+          ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_120)->~SharedPtr<Walaber::Callback>();
           if ((uVar24 & 1) == 0) {
             fVar18 = (float)uStack_f0;
             fVar16 = uStack_f0._4_4_;
@@ -6129,8 +6129,8 @@ void WaterConcept::InteractiveObject::_updateVacuum(long param_1)
           pfVar1[1] = fVar16;
         } while (uVar9 + uVar23 < (uVar12 >> 3 & 0xffffffff));
       }
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
-      Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>::~SharedPtr(&puStack_d0);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e0)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>> *)&puStack_d0)->~SharedPtr<Walaber::MemberCallback<WaterConcept::InteractiveObject>>();
       if (pvStack_c0 != (void *)0x0) {
         operator delete(pvStack_c0);
       }
@@ -6242,9 +6242,9 @@ void WaterConcept::InteractiveObject::drawBackground(Walaber__SpriteBatch *p0,bo
     if (lStack_c0 != 0) {
       *piStack_c8 = *piStack_c8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_d0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(auStack_110 + 2);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(auStack_110);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_d0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)auStack_110 + 2)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)auStack_110)->~SharedPtr<Walaber::Callback>();
     if ((auStack_f0[0] & 1) != 0) {
       operator delete(pcStack_e0);
     }
@@ -6386,8 +6386,8 @@ void WaterConcept::InteractiveObject::drawBackground(Walaber__SpriteBatch *p0,bo
     Walaber::SpriteBatch::drawVerts(p1,0xffffffff,&lStack_120,uVar10 << 1,1,*(undefined8 *)&p0[0xd].field_0x10,uVar8
                     ,uVar9,0);
     uVar25 = (ulong)(uint)p2;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
   }
   if ((in_x2 & 1) == 0) {
     if (((*(long *)&p0[3].field_0x10 != 0) &&
@@ -7635,7 +7635,7 @@ void WaterConcept::InteractiveObject::resumeBombAnimations(long param_1)
       }
                     /* try { // try from 00488ec8 to 00488ecb has its CatchHandler @ 00488f48 */
       Walaber::SpriteAnimation::play();
-      Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_38);
+      ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_38)->~SharedPtr<Walaber::SpriteAnimation>();
     }
     if (((*(long *)(param_1 + 0x380) != 0) && (**(int **)(param_1 + 0x388) != 0)) &&
        (iVar2 = Walaber::SoundEffectInstance::getState(), iVar2 == 1)) {
@@ -7686,7 +7686,7 @@ void WaterConcept::InteractiveObject::stopSounds(long param_1)
       }
                     /* try { // try from 00488fe4 to 00488fe7 has its CatchHandler @ 0048905c */
       Walaber::SpriteAnimation::pause();
-      Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_38);
+      ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_38)->~SharedPtr<Walaber::SpriteAnimation>();
     }
     if (((*(long *)(param_1 + 0x380) != 0) && (**(int **)(param_1 + 0x388) != 0)) &&
        (iVar2 = Walaber::SoundEffectInstance::getState(), iVar2 == 0)) {

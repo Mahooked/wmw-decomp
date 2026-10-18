@@ -12,7 +12,7 @@
 
 /* ok  address 0x5e26ec  size 36 */std::__ndk1::bad_weak_ptr::~bad_weak_ptr(){
   std::exception::~exception();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

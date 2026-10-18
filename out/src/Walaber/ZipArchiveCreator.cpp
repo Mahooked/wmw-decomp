@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3d7664  size 56 */Walaber::ZipArchiveCreator::ZipArchiveCreator(undefined8 *param_1,byte *param_2){
+/* ok  address 0x3d7664  size 56 */Walaber::ZipArchiveCreator::ZipArchiveCreator(byte *param_2){
   undefined8 uVar1;
   byte *pbVar2;
   
@@ -12,16 +12,16 @@
     pbVar2 = param_2 + 1;
   }
   uVar1 = wZipOpen(pbVar2,0);
-  *param_1 = uVar1;
+  *this = uVar1;
   return;
 }
 
 
 
 /* ok  address 0x3d769c  size 40 */Walaber::ZipArchiveCreator::~ZipArchiveCreator(){
-  if (*param_1 != 0) {
+  if (*this != 0) {
                     /* try { // try from 003d76ac to 003d76b7 has its CatchHandler @ 003d76c0 */
-    wZipClose(*param_1,"created by ZipArchiveCreator");
+    wZipClose(*this,"created by ZipArchiveCreator");
   }
   return;
 }
@@ -131,8 +131,8 @@ LAB_003d78d4:
   ppuStack_1c0 = &PTR__basic_fstream_00710720;
   appuStack_100[0] = &PTR__basic_fstream_00710770;
   ppuStack_1b0 = &PTR__basic_fstream_00710748;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(auStack_1a8);
-  std::__ndk1::ios_base::~ios_base(appuStack_100);
+  ((std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>> *)auStack_1a8)->~basic_filebuf<char, std::__ndk1::char_traits<char>>();
+  ((std::__ndk1::ios_base *)appuStack_100)->~ios_base();
 LAB_003d7900:
   return (ulong)uVar6;
 }

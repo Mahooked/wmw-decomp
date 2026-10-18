@@ -10,7 +10,7 @@
 
 
 /* ok  address 0x5f4f68  size 4 */std::bad_exception::~bad_exception(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

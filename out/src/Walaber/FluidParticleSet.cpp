@@ -186,7 +186,7 @@ void Walaber::FluidParticleSet::drawParticles
       lVar7 = lVar7 + lVar8;
                     /* try { // try from 0038df9c to 0038dfb7 has its CatchHandler @ 0038e014 */
       Walaber::SpriteBatch::drawQuad(0,param_4,param_8,&lStack_a0,lVar7,lVar7 + 0x20,&bStack_90,0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
     }
     uVar9 = uVar9 + 1;
     lVar8 = lVar8 + 0x90;
@@ -267,7 +267,7 @@ void Walaber::FluidParticleSet::drawParticles
       }
                     /* try { // try from 0038e1c0 to 0038e1db has its CatchHandler @ 0038e238 */
       Walaber::SpriteBatch::drawQuad(0,param_4,param_8,&lStack_a0,lVar5,lVar5 + 0x20,&bStack_90,0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
     }
     uVar8 = uVar8 + 1;
     lVar7 = lVar7 + 0x90;
@@ -352,7 +352,7 @@ void Walaber::FluidParticleSet::drawParticles
                     /* try { // try from 0038e3c0 to 0038e3df has its CatchHandler @ 0038e43c */
       Walaber::SpriteBatch::drawTeardrop(*(float *)(lVar6 + -0x20) * 0.5,param_4,param_8,&lStack_b0,lVar6 + -0x40,lVar6
                       ,&bStack_a0,0,0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
     }
     uVar7 = uVar7 + 1;
     lVar6 = lVar6 + 0x90;
@@ -439,7 +439,7 @@ void Walaber::FluidParticleSet::drawParticles
                     /* try { // try from 0038e818 to 0038e837 has its CatchHandler @ 0038e898 */
       Walaber::SpriteBatch::drawTeardrop(((param_4 - param_3) * fVar9 + param_3) * 0.5,param_6,param_10,&lStack_c0,
                       lVar6 + -0x40,lVar6,&bStack_b0,0,0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
     }
     lVar6 = lVar6 + 0x90;
   } while (uVar7 < *(uint *)(param_5 + 6));
@@ -1475,7 +1475,7 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
                     /* try { // try from 0038fd7c to 0038fd9b has its CatchHandler @ 0038fdec */
       Walaber::SpriteBatch::drawTeardrop(*(float *)(lVar2 + -0x20) * 0.5,param_2,param_5,&lStack_78,lVar2 + -0x40,lVar2
                       ,param_4,0,0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
     }
     uVar3 = uVar3 + 1;
     lVar2 = lVar2 + 0x90;
@@ -1495,7 +1495,7 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
   this[4] = this + 3;
   *(undefined4 *)(this + 7) = 0;
                     /* try { // try from 0040452c to 0040452f has its CatchHandler @ 00404544 */
-  Walaber::VerletIntegrator::VerletIntegrator((long)this + 0x3c);
+  new ((void *)((long)this + 0x3c)) Walaber::VerletIntegrator();
   this[8] = 0;
   this[9] = 0;
   return;
@@ -1504,15 +1504,15 @@ void Walaber::FluidParticleSet::drawParticlesTeardrop
 
 
 /* ok  address 0x405b2c  size 76 */Walaber::FluidParticleSet::~FluidParticleSet(){
-  void *p0;
+  void *this;
   
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 8);
-  Walaber::VerletIntegrator::~VerletIntegrator((long)this + 0x3c);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::VerletIntegrator *)(long)this + 0x3c)->~VerletIntegrator();
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(this + 3);
-  p0 = (void *)*this;
-  if (p0 != (void *)0x0) {
-    this[1] = p0;
-    operator delete(p0);
+  this = (void *)*this;
+  if (this != (void *)0x0) {
+    this[1] = this;
+    operator delete(this);
     return;
   }
   return;

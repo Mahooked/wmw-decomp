@@ -26,40 +26,40 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
                     /* try { // try from 00396ec8 to 00396edb has its CatchHandler @ 00396f2c */
   Walaber::TextureManager::getTexture(auStack_48,uVar2,param_1 + 0xd0,&lStack_58,0,0);
   Walaber::SharedPtr<Walaber::Texture>::operator=(param_1 + 0xc0,auStack_48);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_58);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_58)->~SharedPtr<Walaber::Callback>();
   *(undefined4 *)(param_1 + 0x78) = *(undefined4 *)(*(long *)(param_1 + 0xc0) + 0x78);
   return;
 }
 
 
 
-/* ok  address 0x39705c  size 220 */Walaber::Subtexture::Subtexture(undefined8 *param_1,undefined8 param_2,long *param_3,ulong *param_4){
+/* ok  address 0x39705c  size 220 */Walaber::Subtexture::Subtexture(undefined8 param_2,long *param_3,ulong *param_4){
   int *piVar1;
   long lVar2;
   ulong uVar3;
   
-  Walaber::Texture::Texture(param_1,param_2,1);
-  *param_1 = &PTR__Subtexture_00710208;
+  new ((void *)(this)) Walaber::Texture(param_2,1);
+  *this = &PTR__Subtexture_00710208;
   lVar2 = *param_3;
-  param_1[0x18] = lVar2;
+  this[0x18] = lVar2;
   piVar1 = (int *)param_3[1];
-  param_1[0x19] = piVar1;
+  this[0x19] = piVar1;
   if (lVar2 != 0) {
     *piVar1 = *piVar1 + 1;
   }
                     /* try { // try from 003970c0 to 003970c3 has its CatchHandler @ 0039711c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 0x1a,*param_3 + 8);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 0x1a,*param_3 + 8);
   uVar3 = *param_4;
-  *(ulong *)((long)param_1 + 0x84) = param_4[1];
-  *(ulong *)((long)param_1 + 0x7c) = uVar3;
-  *(float *)((long)param_1 + 0x94) = (float)(uVar3 & 0xffffffff);
-  *(float *)(param_1 + 0x13) = (float)(uVar3 >> 0x20);
-  *(int *)((long)param_1 + 0x8c) = (int)param_4[2];
-  *(undefined4 *)(param_1 + 0x12) = *(undefined4 *)((long)param_4 + 0x14);
-  *(ulong *)((long)param_1 + 0x9c) = param_4[3];
-  *(int *)((long)param_1 + 0xa4) = (int)param_4[4];
-  *(undefined4 *)(param_1 + 0xf) = *(undefined4 *)(*param_3 + 0x78);
+  *(ulong *)((long)this + 0x84) = param_4[1];
+  *(ulong *)((long)this + 0x7c) = uVar3;
+  *(float *)((long)this + 0x94) = (float)(uVar3 & 0xffffffff);
+  *(float *)(this + 0x13) = (float)(uVar3 >> 0x20);
+  *(int *)((long)this + 0x8c) = (int)param_4[2];
+  *(undefined4 *)(this + 0x12) = *(undefined4 *)((long)param_4 + 0x14);
+  *(ulong *)((long)this + 0x9c) = param_4[3];
+  *(int *)((long)this + 0xa4) = (int)param_4[4];
+  *(undefined4 *)(this + 0xf) = *(undefined4 *)(*param_3 + 0x78);
   return;
 }
 
@@ -70,8 +70,8 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
   if ((*(byte *)(this + 0x1a) & 1) != 0) {
     operator delete((void *)this[0x1c]);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x18);
-  Walaber::Texture::~Texture(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x18)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Texture *)this)->~Texture();
   return;
 }
 
@@ -79,7 +79,7 @@ void Walaber::Subtexture::reloadParent(long param_1,long *param_2)
 
 /* ok  address 0x397180  size 36 */Walaber::Subtexture::~Subtexture(){
   Walaber::Subtexture::~Subtexture();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

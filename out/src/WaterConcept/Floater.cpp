@@ -11,7 +11,7 @@
   
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x2;
-  WaterConcept::InteractiveObject::InteractiveObject(CONCAT44(in_register_00005004,p1),p0,&uStack_40,&uStack_48,1,0);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::InteractiveObject(p0,&uStack_40,&uStack_48,1,0);
   *(undefined8 *)((long)p0 + 0x3a8) = 0;
   *(undefined4 *)((long)p0 + 0x3b0) = 0x3f800000;
   *(undefined ***)p0 = &PTR__Floater_007119c8;
@@ -40,44 +40,44 @@
   ulong extraout_x1_00;
   void *pvVar1;
   
-  pvVar1 = (void *)param_1[0x75];
-  *param_1 = &PTR__Floater_007119c8;
+  pvVar1 = (void *)this[0x75];
+  *this = &PTR__Floater_007119c8;
   if (pvVar1 != (void *)0x0) {
-    Walaber::ParticleSet::~ParticleSet(pvVar1);
+    ((Walaber::ParticleSet *)pvVar1)->~ParticleSet();
     operator delete(pvVar1);
-    param_1[0x75] = 0;
+    this[0x75] = 0;
     param_2 = extraout_x1;
   }
-  if ((void *)param_1[0x85] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x85],param_2);
-    param_1[0x85] = 0;
+  if ((void *)this[0x85] != (void *)0x0) {
+    operator delete[]((void *)this[0x85],param_2);
+    this[0x85] = 0;
     param_2 = extraout_x1_00;
   }
-  if ((void *)param_1[0x86] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x86],param_2);
-    param_1[0x86] = 0;
+  if ((void *)this[0x86] != (void *)0x0) {
+    operator delete[]((void *)this[0x86],param_2);
+    this[0x86] = 0;
   }
-  pvVar1 = (void *)param_1[0x82];
+  pvVar1 = (void *)this[0x82];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x83] = pvVar1;
+    this[0x83] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x7d];
+  pvVar1 = (void *)this[0x7d];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x7e] = pvVar1;
+    this[0x7e] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x7a];
+  pvVar1 = (void *)this[0x7a];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x7b] = pvVar1;
+    this[0x7b] = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = (void *)param_1[0x77];
+  pvVar1 = (void *)this[0x77];
   if (pvVar1 != (void *)0x0) {
-    param_1[0x78] = pvVar1;
+    this[0x78] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(param_1);
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -85,7 +85,7 @@
 
 /* ok  address 0x47ab74  size 36 */WaterConcept::Floater::~Floater(){
   WaterConcept::Floater::~Floater();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -118,7 +118,7 @@ void WaterConcept::Floater::_initFinished(long param_1)
   if (plVar2 != *(long **)(param_1 + 0xe8)) {
     uVar4 = operator new(0x58);
                     /* try { // try from 0047abe8 to 0047abeb has its CatchHandler @ 0047ad84 */
-    Walaber::ParticleSet::ParticleSet(uVar4,(ulong)(plVar2[1] - *plVar2) >> 3);
+    new ((void *)(uVar4)) Walaber::ParticleSet((ulong)(plVar2[1] - *plVar2) >> 3);
     *(undefined8 *)(param_1 + 0x3a8) = uVar4;
     if ((*(long **)(param_1 + 0xe0))[1] != **(long **)(param_1 + 0xe0)) {
       uVar5 = 0;
@@ -478,7 +478,7 @@ void WaterConcept::Floater::setProperties(Walaber__PropertyList *p0)
       if ((uStack_b0 & 1) != 0) {
         operator delete(pvStack_a0);
       }
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&bStack_80);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&bStack_80)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       iVar10 = iVar10 + 1;
     } while (lVar4 != 0);
   }
@@ -1271,7 +1271,7 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2, 
     uStack_78 = uStack_80;
     Walaber::SpriteAnimation::projectCurrentFrame(0,lStack_90,&Walaber::Vector2::Zero,&Walaber::Vector2::One,&uStack_60,auStack_64
                     ,&uStack_70,&uStack_80,0);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_90);
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_90)->~SharedPtr<Walaber::SpriteAnimation>();
     lVar3 = *(long *)&p0[0x12].f_0x28;
     lVar5._0_4_ = p0[0x12].f_0x20;
     lVar5._4_4_ = p0[0x12].f_0x24;
@@ -1323,9 +1323,9 @@ void WaterConcept::Floater::_drawSprite(Walaber__SpriteBatch *p0,int p1,int p2, 
     piStack_88 = piStack_98;
     Walaber::SpriteBatch::drawVerts(p1,in_w3,&lStack_a0,uVar4,0,p0[0x13].f_0x0,*(undefined8 *)&p0[0x13].field_0x8,0,
                     0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
-    Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_b0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_b0)->~SharedPtr<Walaber::SpriteAnimation>();
   }
   return;
 }

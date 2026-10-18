@@ -83,7 +83,7 @@ void std::__ndk1::
   puStack_60 = puStack_60 + 5;
                     /* try { // try from 003f2d28 to 003f2d33 has its CatchHandler @ 003f2d70 */
   std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::__swap_out_circular_buffer(p0,auStack_70);
-  std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>::~__split_buffer(auStack_70);
+  ((std::__ndk1::__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&> *)auStack_70)->~__split_buffer<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>&>();
   return;
 }
 

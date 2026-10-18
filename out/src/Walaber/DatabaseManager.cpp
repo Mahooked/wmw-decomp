@@ -842,7 +842,7 @@ ulong Walaber::DatabaseManager::incrementValue
   long lStack_68;
   undefined1 auStack_60 [8];
   
-  Walaber::DatabaseIterator::DatabaseIterator(&lStack_68,param_1,param_3,param_2,param_4);
+  new ((void *)(&lStack_68)) Walaber::DatabaseIterator(param_1,param_3,param_2,param_4);
                     /* try { // try from 0032bd84 to 0032bda7 has its CatchHandler @ 0032bf70 */
   iVar2 = sqlite3_step(lStack_68);
   uVar3 = 0;
@@ -906,7 +906,7 @@ LAB_0032be4c:
     operator delete(pvStack_88);
   }
 LAB_0032bee0:
-  Walaber::DatabaseIterator::~DatabaseIterator(&lStack_68);
+  ((Walaber::DatabaseIterator *)&lStack_68)->~DatabaseIterator();
   return uVar4;
 }
 
@@ -977,8 +977,8 @@ void Walaber::DatabaseManager::runSQL(std::__ndk1::basic_string<char, std::__ndk
   }
                     /* try { // try from 0032c0c0 to 0032c0cf has its CatchHandler @ 0032c104 */
   Walaber::DatabaseManager::runSQL(uVar2,param_1,&lStack_38,&lStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_48);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_48)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_38)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
@@ -1027,7 +1027,7 @@ void Walaber::DatabaseManager::runSQL
   }
                     /* try { // try from 0032c1bc to 0032c1cb has its CatchHandler @ 0032c3a8 */
   std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>(&mSqlScriptCallbacks,&puStack_80);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_68)->~SharedPtr<Walaber::Callback>();
   if (((ulong)puStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -1039,12 +1039,12 @@ void Walaber::DatabaseManager::runSQL
   }
                     /* try { // try from 0032c210 to 0032c21f has its CatchHandler @ 0032c39c */
   std::__ndk1::__tree_iterator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>(&mSqlScriptErrorCallbacks,&puStack_80);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_68);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_68)->~SharedPtr<Walaber::Callback>();
   if (((ulong)puStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
   if (bVar2) {
-    Walaber::PropertyList::PropertyList(auStack_98);
+    new ((void *)(auStack_98)) Walaber::PropertyList();
     abStack_b0[0xd] = 0;
     abStack_b0[0xe] = 0;
     abStack_b0[0xf] = 0;
@@ -1063,10 +1063,10 @@ void Walaber::DatabaseManager::runSQL
     abStack_b0[7] = 0x73;
     abStack_b0[8] = 0x65;
                     /* try { // try from 0032c270 to 0032c27b has its CatchHandler @ 0032c388 */
-    Walaber::Property::Property(&puStack_80,param_1);
+    new ((void *)(&puStack_80)) Walaber::Property(param_1);
                     /* try { // try from 0032c27c to 0032c28b has its CatchHandler @ 0032c368 */
     Walaber::PropertyList::setValueForKey(auStack_98,abStack_b0,&puStack_80);
-    Walaber::Property::~Property(&puStack_80);
+    ((Walaber::Property *)&puStack_80)->~Property();
     if ((abStack_b0[0] & 1) != 0) {
       operator delete(pvStack_a0);
     }
@@ -1083,9 +1083,9 @@ void Walaber::DatabaseManager::runSQL
     puStack_c0 = puVar5;
     puStack_78 = puStack_b8;
     Walaber::FileManager::readFile(uVar4,param_2,&puStack_c0,auStack_98,0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-    Walaber::PropertyList::~PropertyList(auStack_98);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::PropertyList *)auStack_98)->~PropertyList();
   }
 LAB_0032c31c:
   return;
@@ -1462,7 +1462,7 @@ LAB_0032c8d8:
       std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, Walaber::SharedPtr<Walaber::Callback>>>>::erase(&mSqlScriptErrorCallbacks,plVar7);
     }
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_118);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_118)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((uStack_100 & 1) != 0) {
     operator delete(pvStack_f0);
   }
@@ -2043,7 +2043,7 @@ ulong Walaber::DatabaseManager::sumColAsInt(int param_1,std::__ndk1::basic_strin
     }
     uVar5 = iVar2 + uVar5;
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&lStack_40);
+  ((Walaber::DatabaseIterator *)&lStack_40)->~DatabaseIterator();
   return uVar4;
 }
 
@@ -2092,7 +2092,7 @@ Walaber::DatabaseManager::sumColAsFloat(int param_1,std::__ndk1::basic_string<ch
   undefined8 uVar7;
   long lStack_40;
   
-  Walaber::DatabaseIterator::DatabaseIterator(&lStack_40,param_1,param_2,param_3);
+  new ((void *)(&lStack_40)) Walaber::DatabaseIterator(param_1,param_2,param_3);
   fVar6 = 0.0;
   while( true ) {
     uVar7 = 0;
@@ -2108,7 +2108,7 @@ Walaber::DatabaseManager::sumColAsFloat(int param_1,std::__ndk1::basic_string<ch
     }
     fVar6 = fVar6 + fVar3;
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&lStack_40);
+  ((Walaber::DatabaseIterator *)&lStack_40)->~DatabaseIterator();
   return auVar5;
 }
 
@@ -2181,7 +2181,7 @@ ulong Walaber::DatabaseManager::numResults
   while (iVar2 = sqlite3_step(uVar3), iVar2 == 100) {
     uVar5 = uVar5 + 1;
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&uStack_40);
+  ((Walaber::DatabaseIterator *)&uStack_40)->~DatabaseIterator();
   return uVar4;
 }
 
@@ -2301,7 +2301,7 @@ ulong Walaber::DatabaseManager::updateEntryViaAddition
   else {
     uVar8 = 0;
   }
-  Walaber::DatabaseIterator::~DatabaseIterator(&lStack_60);
+  ((Walaber::DatabaseIterator *)&lStack_60)->~DatabaseIterator();
   return (ulong)uVar8;
 }
 
@@ -2423,7 +2423,7 @@ ulong Walaber::DatabaseManager::updateEntryWithLargestValue
   }
   uVar8 = 0;
 LAB_0032dafc:
-  Walaber::DatabaseIterator::~DatabaseIterator(&lStack_60);
+  ((Walaber::DatabaseIterator *)&lStack_60)->~DatabaseIterator();
   return (ulong)uVar8;
 }
 

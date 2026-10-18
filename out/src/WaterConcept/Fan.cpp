@@ -10,7 +10,7 @@
   
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
-  WaterConcept::InteractiveObject::InteractiveObject(p0,&uStack_30,&uStack_38,0,0);
+  new ((void *)(p0)) WaterConcept::InteractiveObject(&uStack_30,&uStack_38,0,0);
   *(undefined1 *)((long)p0 + 0x3a8) = 0;
   *(undefined ***)p0 = &PTR__Fan_007118c8;
   memset((long)p0 + 0x3ac,0,0xa4);
@@ -39,8 +39,8 @@
     this[0x82] = pvVar1;
     operator delete(pvVar1);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x7e);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0x7c);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x7e)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0x7c)->~SharedPtr<Walaber::Callback>();
   pvVar1 = (void *)this[0x79];
   if (pvVar1 != (void *)0x0) {
     this[0x7a] = pvVar1;
@@ -51,7 +51,7 @@
     this[0x77] = pvVar1;
     operator delete(pvVar1);
   }
-  WaterConcept::InteractiveObject::~InteractiveObject(this);
+  ((WaterConcept::InteractiveObject *)this)->~InteractiveObject();
   return;
 }
 
@@ -59,7 +59,7 @@
 
 /* ok  address 0x479894  size 36 */WaterConcept::Fan::~Fan(){
   WaterConcept::Fan::~Fan();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -157,7 +157,7 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
     }
-    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&bStack_60);
+    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&bStack_60)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   }
   uStack_57 = 0;
   pvStack_50 = (void *)0x0;
@@ -266,7 +266,7 @@ void WaterConcept::Fan::setProperties(Walaber__PropertyList *p0)
         pbVar7 = pbVar7 + 0x18;
       } while (pbVar7 != (byte *)CONCAT71(uStack_57,uStack_58));
     }
-    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&bStack_60);
+    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&bStack_60)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   }
   return;
 }
@@ -416,11 +416,11 @@ LAB_0047a054:
           uStack_90 = lStack_a0;
         }
         piStack_88 = piStack_98;
-        Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_a0);
+        ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_a0)->~SharedPtr<Walaber::SpriteAnimation>();
         if (uStack_90 != 0) {
           *(float *)(uStack_90 + 0x4c) = fVar13 + fVar13;
         }
-        Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&uStack_90);
+        ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&uStack_90)->~SharedPtr<Walaber::SpriteAnimation>();
         piVar10 = piVar10 + 1;
       } while (piVar10 != *(int **)(in_x0 + 0x3d0));
     }
@@ -658,7 +658,7 @@ void WaterConcept::Fan::connectPump(WaterConcept__InteractiveObject *p0, long in
     *(undefined4 *)(plVar5 + 4) = uStack_60;
     *(long **)&p0[1].field_0x148 = plVar5 + 5;
   }
-  Walaber::PropertyList::~PropertyList(&puStack_98);
+  ((Walaber::PropertyList *)&puStack_98)->~PropertyList();
   return;
 }
 
@@ -734,7 +734,7 @@ void WaterConcept::Fan::_initFinished(long param_1)
       Walaber::Sprite::playAnimation(auStack_78,0x3c23d70a,
                       *(undefined8 *)(*(long *)(param_1 + 0x178) + (long)*piVar8 * 0x28),&uStack_90)
       ;
-      Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_78);
+      ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_78)->~SharedPtr<Walaber::SpriteAnimation>();
       if ((uStack_90 & 1) != 0) {
         operator delete(pvStack_80);
       }
@@ -748,9 +748,9 @@ void WaterConcept::Fan::_initFinished(long param_1)
         *piStack_98 = *piStack_98 + 2;
         uStack_90 = lStack_a0;
       }
-      Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_a0);
+      ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_a0)->~SharedPtr<Walaber::SpriteAnimation>();
       *(undefined4 *)(uStack_90 + 0x4c) = 0;
-      Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&uStack_90);
+      ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&uStack_90)->~SharedPtr<Walaber::SpriteAnimation>();
       piVar8 = piVar8 + 1;
     } while (piVar8 != *(int **)(param_1 + 0x3d0));
   }

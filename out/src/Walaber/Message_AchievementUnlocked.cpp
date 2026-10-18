@@ -3,30 +3,30 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x3306d8  size 340 */Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked(undefined8 param_1,undefined8 *param_2,undefined8 param_3,uint param_4){
+/* ok  address 0x3306d8  size 340 */Walaber::Message_AchievementUnlocked::Message_AchievementUnlocked(undefined8 *param_2,undefined8 param_3,uint param_4){
   undefined8 *puVar1;
   undefined1 auStack_78 [32];
   
   puVar1 = param_2 + 2;
   *param_2 = &PTR__Message_0070cdc8;
   param_2[1] = 0x10;
-  Walaber::PropertyList::PropertyList(puVar1);
+  new ((void *)(puVar1)) Walaber::PropertyList();
   *param_2 = &PTR__Message_0070e2e8;
                     /* try { // try from 00330748 to 00330753 has its CatchHandler @ 00330810 */
-  Walaber::Property::Property(auStack_78,param_3);
+  new ((void *)(auStack_78)) Walaber::Property(param_3);
                     /* try { // try from 00330754 to 00330767 has its CatchHandler @ 00330800 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementIdentifier,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
                     /* try { // try from 00330770 to 0033077b has its CatchHandler @ 003307fc */
-  Walaber::Property::Property(param_1,auStack_78);
+  new ((void *)(this)) Walaber::Property(auStack_78);
                     /* try { // try from 0033077c to 0033078f has its CatchHandler @ 003307f8 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementPercent,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
                     /* try { // try from 0033079c to 003307a3 has its CatchHandler @ 003307f4 */
-  Walaber::Property::Property(auStack_78,param_4 & 1);
+  new ((void *)(auStack_78)) Walaber::Property(param_4 & 1);
                     /* try { // try from 003307a4 to 003307b7 has its CatchHandler @ 003307f0 */
   Walaber::PropertyList::setValueForKey(puVar1,&kPropAchievementIsNew,auStack_78);
-  Walaber::Property::~Property(auStack_78);
+  ((Walaber::Property *)auStack_78)->~Property();
   return;
 }
 
@@ -34,7 +34,7 @@
 
 /* ok  address 0x330d64  size 52 */Walaber::Message_AchievementUnlocked::~Message_AchievementUnlocked(){
   *this = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(this + 2);
+  ((Walaber::PropertyList *)this + 2)->~PropertyList();
   operator delete(this);
   return;
 }

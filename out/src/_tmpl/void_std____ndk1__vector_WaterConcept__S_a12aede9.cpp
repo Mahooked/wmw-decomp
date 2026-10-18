@@ -48,7 +48,7 @@ void std::__ndk1::
   std::__ndk1::vector<WaterConcept::Screen_WaterTest::FingerStamp, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::FingerStamp>>::vector(puStack_50 + 8,in_x1 + 8);
   puStack_50 = puStack_50 + 0x20;
   std::__ndk1::vector<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&> *)auStack_60)->~__split_buffer<WaterConcept::Screen_WaterTest::StrokeInfo, std::__ndk1::allocator<WaterConcept::Screen_WaterTest::StrokeInfo>&>();
   return;
 }
 

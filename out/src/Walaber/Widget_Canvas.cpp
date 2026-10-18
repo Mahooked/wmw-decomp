@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,6,&uStack_40,&uStack_48,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,6,&uStack_40,&uStack_48,1,1);
   *puVar2 = &PTR__Widget_Canvas_0070ec08;
   *(undefined8 *)((long)puVar2 + 300) = 0x412000003e800000;
   *(undefined4 *)(puVar2 + 0x22) = 0;
@@ -57,7 +57,7 @@ void Walaber::Widget_Canvas::init(long param_1)
 
 /* ok  address 0x37a838  size 36 */Walaber::Widget_Canvas::~Widget_Canvas(){
   Walaber::Widget::~Widget();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

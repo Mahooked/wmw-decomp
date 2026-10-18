@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,3,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,3,&uStack_30,&uStack_38,1,1);
   puVar2[0x20] = 0;
   puVar2[0x21] = 0;
   *puVar2 = &PTR__Widget_Spinner_0070fce8;
@@ -45,7 +45,7 @@ void Walaber::Widget_Spinner::init(long param_1)
 
 
 
-/* ok  address 0x38a0a8  size 260 */Walaber::Widget_Spinner::Widget_Spinner(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
+/* ok  address 0x38a0a8  size 260 */Walaber::Widget_Spinner::Widget_Spinner(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -55,28 +55,28 @@ void Walaber::Widget_Spinner::init(long param_1)
   
   uStack_40 = *param_3;
   uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,3,&uStack_40,&uStack_48,1,1);
-  *(undefined4 *)((long)param_1 + 0xfc) = 0xff000000;
-  *param_1 = &PTR__Widget_Spinner_0070fce8;
+  new ((void *)(this)) Walaber::Widget(param_2,3,&uStack_40,&uStack_48,1,1);
+  *(undefined4 *)((long)this + 0xfc) = 0xff000000;
+  *this = &PTR__Widget_Spinner_0070fce8;
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x20] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
+  this[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)((long)param_1 + 0xfc) = 0x7f26727f;
-  param_1[0x24] = 0x3f73333300000000;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x25] = 0;
-  param_1[0x26] = 0;
+  *(undefined4 *)((long)this + 0xfc) = 0x7f26727f;
+  this[0x24] = 0x3f73333300000000;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x25] = 0;
+  this[0x26] = 0;
   lVar3 = *param_5;
   if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x22] = uVar4;
-    param_1[0x23] =
+    this[0x22] = uVar4;
+    this[0x23] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
@@ -87,8 +87,8 @@ void Walaber::Widget_Spinner::init(long param_1)
 
 /* ok  address 0x38a1ac  size 56 */Walaber::Widget_Spinner::~Widget_Spinner(){
   *this = &PTR__Widget_Spinner_0070fce8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -96,8 +96,8 @@ void Walaber::Widget_Spinner::init(long param_1)
 
 /* ok  address 0x38a1e4  size 64 */Walaber::Widget_Spinner::~Widget_Spinner(){
   *this = &PTR__Widget_Spinner_0070fce8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   operator delete(this);
   return;
 }
@@ -199,7 +199,7 @@ void Walaber::Widget_Spinner::draw(Walaber__SpriteBatch *p0)
                     /* try { // try from 0038a354 to 0038a39f has its CatchHandler @ 0038a450 */
       Walaber::Node::getWorldScale(afStack_60,p0);
       Walaber::SpriteBatch::drawQuad(fVar5 + fVar6);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
       lVar3._0_4_ = p0[5].f_0x18;
       lVar3._4_4_ = p0[5].f_0x1c;
       if (lVar3 != 0) {

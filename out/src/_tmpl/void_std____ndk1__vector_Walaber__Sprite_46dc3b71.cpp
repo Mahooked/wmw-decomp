@@ -58,7 +58,7 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 5;
                     /* try { // try from 0035cfac to 0035cfb7 has its CatchHandler @ 0035cff0 */
   std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&> *)auStack_60)->~__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>();
   return;
 }
 
@@ -119,7 +119,7 @@ void std::__ndk1::
   puStack_50 = puStack_50 + 5;
                     /* try { // try from 0035d664 to 0035d66f has its CatchHandler @ 0035d6a8 */
   std::__ndk1::vector<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&> *)auStack_60)->~__split_buffer<Walaber::SpriteAnimation::AnimationFrame, std::__ndk1::allocator<Walaber::SpriteAnimation::AnimationFrame>&>();
   return;
 }
 

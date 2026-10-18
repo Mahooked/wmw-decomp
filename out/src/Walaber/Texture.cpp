@@ -28,7 +28,7 @@ void Walaber::Texture::create_empty_buffer(undefined8 *param_1,long param_2)
   *param_1 = uVar2;
   param_1[1] = puStack_50;
   *puStack_50 = 2;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&uStack_58);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&uStack_58)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   return;
 }
 
@@ -74,32 +74,32 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
       lStack_48 = lStack_60;
     }
     lStack_50 = param_1;
-    Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_60);
+    ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&lStack_60)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
                     /* try { // try from 00395af4 to 00395afb has its CatchHandler @ 00395b2c */
     (**(code **)(*(long *)*param_2 + 0x10))((long *)*param_2,&lStack_50);
-    Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_48);
+    ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&lStack_48)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   }
   return;
 }
 
 
 
-/* ok  address 0x395b40  size 168 */Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
-  *param_1 = &PTR__Texture_00710128;
+/* ok  address 0x395b40  size 168 */Walaber::Texture::Texture(undefined8 param_2,undefined4 param_3){
+  *this = &PTR__Texture_00710128;
                     /* try { // try from 00395b6c to 00395b73 has its CatchHandler @ 00395bdc */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
                     /* try { // try from 00395b78 to 00395b7f has its CatchHandler @ 00395bc4 */
-  Walaber::TextureSettings::TextureSettings(param_1 + 4,6);
-  *(undefined8 *)((long)param_1 + 0x8c) = 0;
-  *(undefined8 *)((long)param_1 + 0x84) = 0;
-  *(undefined8 *)((long)param_1 + 0x7c) = 0;
-  *(undefined4 *)(param_1 + 0xf) = 0xffffffff;
-  *(undefined8 *)((long)param_1 + 0xa4) = 0;
-  *(undefined8 *)((long)param_1 + 0xac) = 0;
-  *(undefined4 *)((long)param_1 + 0xb4) = 0;
-  *(undefined4 *)(param_1 + 0x17) = param_3;
-  *(undefined8 *)((long)param_1 + 0x9c) = 0;
-  *(undefined8 *)((long)param_1 + 0x94) = 0;
+  new ((void *)(this + 4)) Walaber::TextureSettings(6);
+  *(undefined8 *)((long)this + 0x8c) = 0;
+  *(undefined8 *)((long)this + 0x84) = 0;
+  *(undefined8 *)((long)this + 0x7c) = 0;
+  *(undefined4 *)(this + 0xf) = 0xffffffff;
+  *(undefined8 *)((long)this + 0xa4) = 0;
+  *(undefined8 *)((long)this + 0xac) = 0;
+  *(undefined4 *)((long)this + 0xb4) = 0;
+  *(undefined4 *)(this + 0x17) = param_3;
+  *(undefined8 *)((long)this + 0x9c) = 0;
+  *(undefined8 *)((long)this + 0x94) = 0;
   return;
 }
 
@@ -107,7 +107,7 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
 
 /* ok  address 0x395c70  size 88 */Walaber::Texture::~Texture(){
   *this = &PTR__Texture_00710128;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(this + 0x15);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)this + 0x15)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   if ((*(byte *)(this + 9) & 1) != 0) {
     operator delete((void *)this[0xb]);
   }
@@ -122,7 +122,7 @@ void Walaber::Texture::_getData(long param_1,long *param_2)
 
 /* ok  address 0x395cc8  size 36 */Walaber::Texture::~Texture(){
   Walaber::Texture::~Texture();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -216,44 +216,44 @@ void Walaber::Texture::_applySettings(void)
 
 
 
-/* ok  address 0x396d84  size 252 */Walaber::Texture::Texture(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined4 param_4){
+/* ok  address 0x396d84  size 252 */Walaber::Texture::Texture(undefined8 param_2,undefined8 *param_3,undefined4 param_4){
   undefined8 uVar1;
   undefined8 uVar2;
   undefined8 uVar3;
   
-  *param_1 = &PTR__Texture_00710128;
+  *this = &PTR__Texture_00710128;
                     /* try { // try from 00396db4 to 00396dbb has its CatchHandler @ 00396e74 */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 1);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 1);
   uVar1 = *param_3;
-  *(undefined4 *)(param_1 + 5) = *(undefined4 *)(param_3 + 1);
-  param_1[4] = uVar1;
-  *(undefined1 *)((long)param_1 + 0x2c) = *(undefined1 *)((long)param_3 + 0xc);
-  *(undefined1 *)((long)param_1 + 0x2d) = *(undefined1 *)((long)param_3 + 0xd);
-  *(undefined1 *)((long)param_1 + 0x2e) = *(undefined1 *)((long)param_3 + 0xe);
-  *(undefined1 *)((long)param_1 + 0x2f) = *(undefined1 *)((long)param_3 + 0xf);
+  *(undefined4 *)(this + 5) = *(undefined4 *)(param_3 + 1);
+  this[4] = uVar1;
+  *(undefined1 *)((long)this + 0x2c) = *(undefined1 *)((long)param_3 + 0xc);
+  *(undefined1 *)((long)this + 0x2d) = *(undefined1 *)((long)param_3 + 0xd);
+  *(undefined1 *)((long)this + 0x2e) = *(undefined1 *)((long)param_3 + 0xe);
+  *(undefined1 *)((long)this + 0x2f) = *(undefined1 *)((long)param_3 + 0xf);
   uVar2 = param_3[3];
   uVar1 = param_3[2];
-  param_1[8] = param_3[4];
-  param_1[7] = uVar2;
-  param_1[6] = uVar1;
+  this[8] = param_3[4];
+  this[7] = uVar2;
+  this[6] = uVar1;
                     /* try { // try from 00396e04 to 00396e07 has its CatchHandler @ 00396e5c */
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 9,param_3 + 5);
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 9,param_3 + 5);
   uVar1 = param_3[10];
   uVar3 = param_3[9];
   uVar2 = param_3[8];
-  *(undefined4 *)(param_1 + 0xf) = 0xffffffff;
-  *(undefined8 *)((long)param_1 + 0x8c) = 0;
-  *(undefined8 *)((long)param_1 + 0x84) = 0;
-  *(undefined8 *)((long)param_1 + 0x7c) = 0;
-  param_1[0xe] = uVar1;
-  param_1[0xd] = uVar3;
-  param_1[0xc] = uVar2;
-  *(undefined8 *)((long)param_1 + 0xa4) = 0;
-  *(undefined8 *)((long)param_1 + 0xac) = 0;
-  *(undefined4 *)((long)param_1 + 0xb4) = 0;
-  *(undefined4 *)(param_1 + 0x17) = param_4;
-  *(undefined8 *)((long)param_1 + 0x9c) = 0;
-  *(undefined8 *)((long)param_1 + 0x94) = 0;
+  *(undefined4 *)(this + 0xf) = 0xffffffff;
+  *(undefined8 *)((long)this + 0x8c) = 0;
+  *(undefined8 *)((long)this + 0x84) = 0;
+  *(undefined8 *)((long)this + 0x7c) = 0;
+  this[0xe] = uVar1;
+  this[0xd] = uVar3;
+  this[0xc] = uVar2;
+  *(undefined8 *)((long)this + 0xa4) = 0;
+  *(undefined8 *)((long)this + 0xac) = 0;
+  *(undefined4 *)((long)this + 0xb4) = 0;
+  *(undefined4 *)(this + 0x17) = param_4;
+  *(undefined8 *)((long)this + 0x9c) = 0;
+  *(undefined8 *)((long)this + 0x94) = 0;
   return;
 }
 
@@ -316,7 +316,7 @@ void Walaber::Texture::getData(long *param_1,long *param_2)
   }
                     /* try { // try from 004557f0 to 004557f7 has its CatchHandler @ 00455824 */
   (**(code **)(*param_1 + 0x40))(param_1,&lStack_38);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_38)->~SharedPtr<Walaber::Callback>();
   return;
 }
 

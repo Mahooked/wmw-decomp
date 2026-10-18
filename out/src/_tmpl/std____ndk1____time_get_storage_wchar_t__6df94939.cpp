@@ -25,7 +25,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(char *p0)
   appuStack_50[0] = &PTR__ctype_byname_00717840;
                     /* try { // try from 005c2fec to 005c2fef has its CatchHandler @ 005c3020 */
   freelocale(uStack_40);
-  std::__ndk1::__shared_count::~__shared_count(appuStack_50);
+  ((std::__ndk1::__shared_count *)appuStack_50)->~__shared_count();
   return;
 }
 
@@ -71,7 +71,7 @@ void std::__ndk1::__time_get_storage<wchar_t>::__time_get_storage(long *param_1,
     appuStack_50[0] = &PTR__ctype_byname_00717840;
                     /* try { // try from 005c3378 to 005c337b has its CatchHandler @ 005c33e4 */
     freelocale(uStack_40);
-    std::__ndk1::__shared_count::~__shared_count(appuStack_50);
+    ((std::__ndk1::__shared_count *)appuStack_50)->~__shared_count();
     if (*(long *)(lVar1 + 0x28) == lStack_38) {
       return;
     }

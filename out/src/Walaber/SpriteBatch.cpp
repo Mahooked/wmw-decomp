@@ -119,9 +119,9 @@ Walaber__SpriteBatch * Walaber::SpriteBatch::operator=(Walaber__SpriteBatch *p0)
   long lVar4;
   void *pvVar5;
   
-  lVar4 = *(long *)(param_1 + 0x48);
+  lVar4 = *(long *)(this + 0x48);
   while (lVar4 != 0) {
-    plVar2 = *(long **)(param_1 + 0x38);
+    plVar2 = *(long **)(this + 0x38);
     pvVar5 = (void *)plVar2[2];
     if (pvVar5 != (void *)0x0) {
       pvVar3 = *(void **)((long)pvVar5 + 0x20);
@@ -135,19 +135,19 @@ Walaber__SpriteBatch * Walaber::SpriteBatch::operator=(Walaber__SpriteBatch *p0)
         operator delete(pvVar3);
       }
       operator delete(pvVar5);
-      plVar2 = *(long **)(param_1 + 0x38);
-      lVar4 = *(long *)(param_1 + 0x48);
+      plVar2 = *(long **)(this + 0x38);
+      lVar4 = *(long *)(this + 0x48);
     }
     lVar1 = *plVar2;
     *(long *)(lVar1 + 8) = plVar2[1];
     *(long *)plVar2[1] = lVar1;
-    *(long *)(param_1 + 0x48) = lVar4 + -1;
+    *(long *)(this + 0x48) = lVar4 + -1;
     operator delete(plVar2);
-    lVar4 = *(long *)(param_1 + 0x48);
+    lVar4 = *(long *)(this + 0x48);
   }
-  lVar4 = *(long *)(param_1 + 0x60);
+  lVar4 = *(long *)(this + 0x60);
   while (lVar4 != 0) {
-    plVar2 = *(long **)(param_1 + 0x50);
+    plVar2 = *(long **)(this + 0x50);
     pvVar5 = (void *)plVar2[2];
     if (pvVar5 != (void *)0x0) {
       pvVar3 = *(void **)((long)pvVar5 + 0x20);
@@ -161,19 +161,19 @@ Walaber__SpriteBatch * Walaber::SpriteBatch::operator=(Walaber__SpriteBatch *p0)
         operator delete(pvVar3);
       }
       operator delete(pvVar5);
-      plVar2 = *(long **)(param_1 + 0x50);
-      lVar4 = *(long *)(param_1 + 0x60);
+      plVar2 = *(long **)(this + 0x50);
+      lVar4 = *(long *)(this + 0x60);
     }
     lVar1 = *plVar2;
     *(long *)(lVar1 + 8) = plVar2[1];
     *(long *)plVar2[1] = lVar1;
-    *(long *)(param_1 + 0x60) = lVar4 + -1;
+    *(long *)(this + 0x60) = lVar4 + -1;
     operator delete(plVar2);
-    lVar4 = *(long *)(param_1 + 0x60);
+    lVar4 = *(long *)(this + 0x60);
   }
-  std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::clear((undefined8 *)(param_1 + 0x50));
-  std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::clear((undefined8 *)(param_1 + 0x38));
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::destroy(param_1,*(undefined8 *)(param_1 + 8));
+  std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::clear((undefined8 *)(this + 0x50));
+  std::__ndk1::__list_imp<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>::clear((undefined8 *)(this + 0x38));
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, std::__ndk1::vector<Walaber::SpriteBatch::DrawAction*, std::__ndk1::allocator<Walaber::SpriteBatch::DrawAction*>>>>>::destroy(this,*(undefined8 *)(this + 8));
   return;
 }
 
@@ -509,7 +509,7 @@ void Walaber::SpriteBatch::drawQuad(long param_1,long *param_2)
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035e45c;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar3)->~SharedPtr<Walaber::Texture>();
 LAB_0035e45c:
   return;
 }
@@ -566,7 +566,7 @@ void Walaber::SpriteBatch::_addQuadToBatchImmediate
     **(undefined8 **)(lVar2 + 0x30) = puVar3;
     *(long *)(lVar2 + 0x30) = *(long *)(lVar2 + 0x30) + 8;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_88);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
   return;
 }
 
@@ -620,7 +620,7 @@ void Walaber::SpriteBatch::_addQuadToBatchOptimal
   }
   Walaber::SpriteBatch::_addQuadToBatchUVRect(uVar4,uVar5,param_2,lVar3 + 8,lVar3 + 0x20,&uStack_88,param_4,param_5,*param_6,
                   param_7);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
   return;
 }
 
@@ -701,7 +701,7 @@ void Walaber::SpriteBatch::drawQuad
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035e8bc;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar2)->~SharedPtr<Walaber::Texture>();
 LAB_0035e8bc:
   return;
 }
@@ -852,7 +852,7 @@ void Walaber::SpriteBatch::drawQuad
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035ec8c;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar5);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar5)->~SharedPtr<Walaber::Texture>();
 LAB_0035ec8c:
   return;
 }
@@ -1005,7 +1005,7 @@ void Walaber::SpriteBatch::drawQuad
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035f088;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar4)->~SharedPtr<Walaber::Texture>();
 LAB_0035f088:
   return;
 }
@@ -1156,7 +1156,7 @@ void Walaber::SpriteBatch::drawQuad
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035f46c;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar5);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar5)->~SharedPtr<Walaber::Texture>();
 LAB_0035f46c:
   return;
 }
@@ -1309,7 +1309,7 @@ void Walaber::SpriteBatch::drawQuad
     puts("ERROR: draw has been called before a call to start");
     goto LAB_0035f868;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar4);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar4)->~SharedPtr<Walaber::Texture>();
 LAB_0035f868:
   return;
 }
@@ -2077,7 +2077,7 @@ void Walaber::SpriteBatch::drawTri
     puts("ERROR: draw has been called before a call to start");
     goto LAB_00360a60;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar3)->~SharedPtr<Walaber::Texture>();
 LAB_00360a60:
   return;
 }
@@ -2351,7 +2351,7 @@ void Walaber::SpriteBatch::drawTri
     puts("ERROR: draw has been called before a call to start");
     goto LAB_00361048;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar2)->~SharedPtr<Walaber::Texture>();
 LAB_00361048:
   return;
 }
@@ -2431,7 +2431,7 @@ void Walaber::SpriteBatch::drawVerts(long param_1,long *param_2,undefined8 param
     puts("ERROR: draw has been called before a call to start");
     goto LAB_003611bc;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar3);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar3)->~SharedPtr<Walaber::Texture>();
 LAB_003611bc:
   return;
 }
@@ -2514,7 +2514,7 @@ void Walaber::SpriteBatch::drawVerts
     puts("ERROR: draw has been called before a call to start");
     goto LAB_003613ac;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(plVar2);
+  ((Walaber::SharedPtr<Walaber::Texture> *)plVar2)->~SharedPtr<Walaber::Texture>();
 LAB_003613ac:
   return;
 }
@@ -2921,7 +2921,7 @@ void Walaber::SpriteBatch::_drawStringCenter
       }
     }
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_a0);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_a0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 

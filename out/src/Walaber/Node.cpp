@@ -55,29 +55,29 @@
 
 
 
-/* ok  address 0x3ea6f0  size 144 */Walaber::Node::Node(undefined8 *param_1,undefined8 param_2,undefined4 param_3){
-  param_1[2] = 0;
-  param_1[3] = 0;
-  *(undefined4 *)(param_1 + 4) = param_3;
-  *(undefined8 *)((long)param_1 + 0x4c) = 0;
-  *(undefined8 *)((long)param_1 + 0x44) = 0;
-  *(undefined8 *)((long)param_1 + 0x3c) = 0;
-  *(undefined8 *)((long)param_1 + 0x34) = 0;
-  *(undefined8 *)((long)param_1 + 0x2c) = 0;
-  *param_1 = &PTR__PCSNode_00710ea8;
-  param_1[1] = 0;
-  *(undefined8 *)((long)param_1 + 0x24) = 0;
+/* ok  address 0x3ea6f0  size 144 */Walaber::Node::Node(undefined8 param_2,undefined4 param_3){
+  this[2] = 0;
+  this[3] = 0;
+  *(undefined4 *)(this + 4) = param_3;
+  *(undefined8 *)((long)this + 0x4c) = 0;
+  *(undefined8 *)((long)this + 0x44) = 0;
+  *(undefined8 *)((long)this + 0x3c) = 0;
+  *(undefined8 *)((long)this + 0x34) = 0;
+  *(undefined8 *)((long)this + 0x2c) = 0;
+  *this = &PTR__PCSNode_00710ea8;
+  this[1] = 0;
+  *(undefined8 *)((long)this + 0x24) = 0;
   Walaber::PCSNode::setName();
-  *(undefined8 *)((long)param_1 + 0x54) = 0;
-  *param_1 = &PTR__Node_00710e28;
-  *(undefined8 *)((long)param_1 + 100) = 0;
-  *(undefined1 *)((long)param_1 + 0x7e) = 0;
-  *(undefined2 *)((long)param_1 + 0x7c) = 0;
-  *(undefined4 *)((long)param_1 + 0x5c) = 0x3f800000;
-  *(undefined4 *)(param_1 + 0xc) = 0x3f800000;
-  *(undefined4 *)((long)param_1 + 0x6c) = 0x3f800000;
-  *(undefined4 *)(param_1 + 0xe) = 0x3f800000;
-  *(undefined8 *)((long)param_1 + 0x74) = 0;
+  *(undefined8 *)((long)this + 0x54) = 0;
+  *this = &PTR__Node_00710e28;
+  *(undefined8 *)((long)this + 100) = 0;
+  *(undefined1 *)((long)this + 0x7e) = 0;
+  *(undefined2 *)((long)this + 0x7c) = 0;
+  *(undefined4 *)((long)this + 0x5c) = 0x3f800000;
+  *(undefined4 *)(this + 0xc) = 0x3f800000;
+  *(undefined4 *)((long)this + 0x6c) = 0x3f800000;
+  *(undefined4 *)(this + 0xe) = 0x3f800000;
+  *(undefined8 *)((long)this + 0x74) = 0;
   return;
 }
 
@@ -153,7 +153,7 @@ void Walaber::Node::operator=(Walaber__Node *p0)
 
 
 /* ok  address 0x3ea86c  size 4 */Walaber::Node::~Node(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

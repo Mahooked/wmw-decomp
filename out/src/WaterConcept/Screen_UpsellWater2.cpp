@@ -4,9 +4,9 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x56859c  size 148 */WaterConcept::Screen_UpsellWater2::Screen_UpsellWater2(){
-  WaterConcept::WCScreen::WCScreen(this,0x27);
+  new ((void *)(this)) WaterConcept::WCScreen(0x27);
                     /* try { // try from 005685b8 to 005685bf has its CatchHandler @ 0056861c */
-  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  new ((void *)(this + 0x12)) Walaber::MessageReceiver(0x10);
   *(undefined2 *)((long)this + 0x9c) = 0;
   this[0x17] = 0;
   *this = &PTR__Screen_UpsellWater2_00715d18;
@@ -36,10 +36,10 @@
   if ((*(byte *)(this + 0x21) & 1) != 0) {
     operator delete((void *)this[0x23]);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>::~__vector_base(this + 0x19);
+  ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>> *)this + 0x19)->~__vector_base<Walaber::SharedPtr<Walaber::Callback>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Callback>>>();
   std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, WaterConcept::Screen_UpsellWater2::TransitionInfo>>>::destroy(this + 0x15,this[0x16]);
-  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
-  WaterConcept::WCScreen::~WCScreen(this);
+  ((Walaber::MessageReceiver *)this + 0x12)->~MessageReceiver();
+  ((WaterConcept::WCScreen *)this)->~WCScreen();
   return;
 }
 
@@ -47,7 +47,7 @@
 
 /* ok  address 0x5686ac  size 36 */WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2(){
   WaterConcept::Screen_UpsellWater2::~Screen_UpsellWater2();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -90,7 +90,7 @@ void WaterConcept::Screen_UpsellWater2::enter(long param_1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0xa00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   abStack_78[7] = 0;
   abStack_78[8] = 0;
   abStack_78[9] = 0;
@@ -129,10 +129,10 @@ void WaterConcept::Screen_UpsellWater2::enter(long param_1)
   abStack_b0[7] = 0x69;
   abStack_b0[8] = 0x65;
                     /* try { // try from 00568798 to 005687a3 has its CatchHandler @ 00568978 */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 005687a4 to 005687b3 has its CatchHandler @ 00568968 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10]))
                                  ));
@@ -178,10 +178,10 @@ void WaterConcept::Screen_UpsellWater2::enter(long param_1)
   abStack_78[8] = 0x69;
   abStack_b0[5] = 0;
                     /* try { // try from 00568824 to 0056882f has its CatchHandler @ 00568964 */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 00568830 to 0056883f has its CatchHandler @ 00568960 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10]))
                                  ));
@@ -227,10 +227,10 @@ void WaterConcept::Screen_UpsellWater2::enter(long param_1)
   abStack_b0[8] = 0x75;
   uStack_9b = 0;
                     /* try { // try from 005688c0 to 005688cb has its CatchHandler @ 0056895c */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 005688cc to 005688db has its CatchHandler @ 00568958 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT26(uStack_9a,CONCAT15(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10]))
                                  ));
@@ -242,7 +242,7 @@ void WaterConcept::Screen_UpsellWater2::enter(long param_1)
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   *(undefined1 *)(param_1 + 0xf0) = 1;
   WaterConcept::Screen_UpsellWater2::_buildUI(param_1);
   return;
@@ -303,18 +303,18 @@ void WaterConcept::Screen_UpsellWater2::_buildUI(long param_1)
   puStack_90 = puVar2;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 00568aa4 to 00568aaf has its CatchHandler @ 00568b00 */
   puStack_a0 = puVar2;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>>::~SharedPtr(&puStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -495,7 +495,7 @@ void WaterConcept::Screen_UpsellWater2::update(float p0,bool p1)
                     *piStack_b0 = *piStack_b0 + 1;
                   }
                   uStack_b8 = uVar7;
-                  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b8);
+                  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b8)->~SharedPtr<Walaber::Texture>();
                   if (uVar7 != 0) {
                     *(byte *)(lVar22 + 0x140) = bVar13;
                     *(byte *)(lVar22 + 0x141) = bVar12;
@@ -633,7 +633,7 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
   else if ((int)p1 == 4) {
     ppuStack_70 = &PTR__Message_0070cdc8;
     uStack_68 = 0xa00000010;
-    Walaber::PropertyList::PropertyList(auStack_60);
+    new ((void *)(auStack_60)) Walaber::PropertyList();
     abStack_88[7] = 0;
     abStack_88[8] = 0;
     abStack_88[9] = 0;
@@ -671,10 +671,10 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     abStack_c0[8] = 0x69;
     uStack_af = 0x6e;
                     /* try { // try from 0056911c to 00569127 has its CatchHandler @ 005693a4 */
-    Walaber::Property::Property(auStack_a8,abStack_c0);
+    new ((void *)(auStack_a8)) Walaber::Property(abStack_c0);
                     /* try { // try from 00569128 to 00569137 has its CatchHandler @ 00569394 */
     Walaber::PropertyList::setValueForKey(auStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_c0[0] & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
     }
@@ -718,10 +718,10 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     abStack_88[0xf] = 0;
     abStack_c0[9] = 0;
                     /* try { // try from 005691b0 to 005691bb has its CatchHandler @ 00569390 */
-    Walaber::Property::Property(auStack_a8,abStack_c0);
+    new ((void *)(auStack_a8)) Walaber::Property(abStack_c0);
                     /* try { // try from 005691bc to 005691cb has its CatchHandler @ 0056938c */
     Walaber::PropertyList::setValueForKey(auStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_c0[0] & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
     }
@@ -765,10 +765,10 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     abStack_c0[8] = 0x73;
     abStack_c0[0xe] = 0;
                     /* try { // try from 00569248 to 00569253 has its CatchHandler @ 00569388 */
-    Walaber::Property::Property(auStack_a8,abStack_c0);
+    new ((void *)(auStack_a8)) Walaber::Property(abStack_c0);
                     /* try { // try from 00569254 to 00569263 has its CatchHandler @ 00569384 */
     Walaber::PropertyList::setValueForKey(auStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_c0[0] & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
     }
@@ -779,10 +779,10 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     uVar2 = Walaber::BroadcastManager::getInstancePtr();
     Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_70);
     ppuStack_70 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::~PropertyList(auStack_60);
+    ((Walaber::PropertyList *)auStack_60)->~PropertyList();
     uStack_68 = 0x1b00000010;
     ppuStack_70 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::PropertyList(auStack_60);
+    new ((void *)(auStack_60)) Walaber::PropertyList();
     abStack_88[9] = 0;
     abStack_88[10] = 0;
     abStack_88[0xb] = 0;
@@ -801,10 +801,10 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     abStack_88[7] = 0x65;
     abStack_88[8] = 0;
                     /* try { // try from 005692ec to 005692f7 has its CatchHandler @ 00569380 */
-    Walaber::Property::Property(auStack_a8,9);
+    new ((void *)(auStack_a8)) Walaber::Property(9);
                     /* try { // try from 005692f8 to 00569307 has its CatchHandler @ 00569370 */
     Walaber::PropertyList::setValueForKey(auStack_60,abStack_88,auStack_a8);
-    Walaber::Property::~Property(auStack_a8);
+    ((Walaber::Property *)auStack_a8)->~Property();
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
@@ -812,7 +812,7 @@ void WaterConcept::Screen_UpsellWater2::handleEvent
     uVar2 = Walaber::BroadcastManager::getInstancePtr();
     Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_70);
     ppuStack_70 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::~PropertyList(auStack_60);
+    ((Walaber::PropertyList *)auStack_60)->~PropertyList();
   }
   return;
 }
@@ -862,15 +862,15 @@ void WaterConcept::Screen_UpsellWater2::_closeButtonPressed(long param_1)
       }
     }
     Walaber::ScreenManager::popScreen(0,0);
-    Walaber::PropertyList::PropertyList(auStack_40);
+    new ((void *)(auStack_40)) Walaber::PropertyList();
                     /* try { // try from 005694a8 to 005694af has its CatchHandler @ 00569524 */
-    Walaber::Property::Property(0x3dcccccd,auStack_60);
+    new ((void *)(0x3dcccccd)) Walaber::Property(auStack_60);
                     /* try { // try from 005694b0 to 005694c3 has its CatchHandler @ 00569514 */
     Walaber::PropertyList::setValueForKey(auStack_40,&Walaber::Transition::tk_pauseLength,auStack_60);
-    Walaber::Property::~Property(auStack_60);
+    ((Walaber::Property *)auStack_60)->~Property();
                     /* try { // try from 005694d8 to 005694e3 has its CatchHandler @ 00569510 */
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
-    Walaber::PropertyList::~PropertyList(auStack_40);
+    ((Walaber::PropertyList *)auStack_40)->~PropertyList();
   }
   return;
 }
@@ -985,7 +985,7 @@ void WaterConcept::Screen_UpsellWater2::_finishedLoadingWidgets(void *p0, int * 
     puStack_b0 = puVar18;
   }
   uStack_1f0 = puVar18;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_1f0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_1f0)->~SharedPtr<Walaber::Texture>();
   if (puVar18 != (undefined8 *)0x0) {
                     /* try { // try from 005695d8 to 005695df has its CatchHandler @ 00569e4c */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&uStack_c8,puVar18 + 1);
@@ -1120,7 +1120,7 @@ joined_r0x00569694:
       operator delete(pvStack_168);
     }
                     /* try { // try from 0056983c to 00569843 has its CatchHandler @ 00569dcc */
-    Walaber::PropertyList::PropertyList(&uStack_160);
+    new ((void *)(&uStack_160)) Walaber::PropertyList();
     uStack_16b = 0;
     bStack_178 = 0x16;
     pvStack_168 = (void *)0x0;
@@ -1128,10 +1128,10 @@ joined_r0x00569694:
     uStack_177 = 0x7865745f636f6c;
     uStack_170 = 0x74;
                     /* try { // try from 00569870 to 0056987b has its CatchHandler @ 00569db4 */
-    Walaber::Property::Property(&uStack_1f0,1);
+    new ((void *)(&uStack_1f0)) Walaber::Property(1);
                     /* try { // try from 0056987c to 0056988b has its CatchHandler @ 00569da4 */
     Walaber::PropertyList::setValueForKey(&uStack_160,&bStack_178,&uStack_1f0);
-    Walaber::Property::~Property(&uStack_1f0);
+    ((Walaber::Property *)&uStack_1f0)->~Property();
     if ((bStack_178 & 1) != 0) {
       operator delete(pvStack_168);
     }
@@ -1153,13 +1153,13 @@ joined_r0x00569694:
     *piStack_198 = 3;
     uStack_1f0 = puVar18;
     puStack_1a0 = puVar18;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1f0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1f0)->~SharedPtr<Walaber::Callback>();
     puStack_190 = puStack_1a0;
     piStack_188 = piStack_198;
     if (puStack_1a0 != (undefined8 *)0x0) {
       *piStack_198 = *piStack_198 + 1;
     }
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1a0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_1a0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00569920 to 00569923 has its CatchHandler @ 00569d8c */
     uVar19 = Walaber::FileManager::getInstancePtr();
     puStack_1b0 = puStack_190;
@@ -1168,10 +1168,10 @@ joined_r0x00569694:
     }
                     /* try { // try from 0056993c to 0056994f has its CatchHandler @ 00569d7c */
     Walaber::FileManager::fileExists(uVar19,&uStack_140,&puStack_1b0,&uStack_160,0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_1b0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_190);
-    Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>>::~SharedPtr(&bStack_178);
-    Walaber::PropertyList::~PropertyList(&uStack_160);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_1b0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_190)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>> *)&bStack_178)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_UpsellWater2>>();
+    ((Walaber::PropertyList *)&uStack_160)->~PropertyList();
     if ((uStack_140 & 1) != 0) {
       operator delete(pvStack_130);
     }
@@ -1227,7 +1227,7 @@ joined_r0x00569694:
               *piStack_c0 = *piStack_c0 + 1;
             }
             uStack_c8 = (ulong *)uVar22;
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c8)->~SharedPtr<Walaber::Texture>();
             if (uVar22 != 0) {
               uVar7 = *(undefined4 *)(uVar3 + 0x140);
               uStack_1d4 = (undefined2)uVar7;
@@ -1318,7 +1318,7 @@ joined_r0x00569694:
       iVar14 = iVar14 + 1;
     } while (iVar14 < *(int *)(lVar16 + 0x78));
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&puStack_b0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&puStack_b0)->~SharedPtr<Walaber::Texture>();
 LAB_00569d34:
   return;
 }
@@ -1377,10 +1377,10 @@ void WaterConcept::Screen_UpsellWater2::_fileExistsCallback(void *p0, long in_x1
       }
                     /* try { // try from 0056a030 to 0056a03b has its CatchHandler @ 0056a084 */
       Walaber::Widget_Label::setBGTexture(uVar3,&lStack_60);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_60);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&bStack_50);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_60)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_50)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_70)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
     }
   }
   return;

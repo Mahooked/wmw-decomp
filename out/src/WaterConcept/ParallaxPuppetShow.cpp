@@ -12,9 +12,9 @@
   *this = 0;
   *(undefined4 *)(this + 2) = 0;
   *(undefined1 *)(this + 4) = 0;
-  Walaber::Camera::Camera(puVar1);
+  new ((void *)(puVar1)) Walaber::Camera();
                     /* try { // try from 0042fd34 to 0042fd3b has its CatchHandler @ 0042fe48 */
-  Walaber::CameraController::CameraController(this + 0x54);
+  new ((void *)(this + 0x54)) Walaber::CameraController();
   *(undefined8 *)(this + 0xb0) = 0;
   *(undefined8 *)(this + 0xb4) = 0;
                     /* try { // try from 0042fd44 to 0042fd4b has its CatchHandler @ 0042fe40 */
@@ -52,15 +52,15 @@
 
 /* ok  address 0x42febc  size 120 */WaterConcept::ParallaxPuppetShow::~ParallaxPuppetShow(){
   WaterConcept::ParallaxPuppetShow::_clearScene();
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(param_1 + 0x268);
-  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>>>::destroy(param_1 + 0x240,*(undefined8 *)(param_1 + 0x248));
-  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>>>::destroy(param_1 + 0x228,*(undefined8 *)(param_1 + 0x230));
-  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::destroy(param_1 + 0x210,*(undefined8 *)(param_1 + 0x218));
-  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>>>::destroy(param_1 + 0x1f8,*(undefined8 *)(param_1 + 0x200));
-  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>>>::destroy(param_1 + 0x1e0,*(undefined8 *)(param_1 + 0x1e8));
-  Walaber::SpriteBatch::~SpriteBatch(param_1 + 0x178);
-  Walaber::CameraController::~CameraController(param_1 + 0xa8);
-  Walaber::Camera::~Camera(param_1 + 0x10);
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x268)->~SharedPtr<Walaber::SoundEffectInstance>();
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::ColorCue>>>::destroy(this + 0x240,*(undefined8 *)(this + 0x248));
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::AnimationCue>>>::destroy(this + 0x228,*(undefined8 *)(this + 0x230));
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::destroy(this + 0x210,*(undefined8 *)(this + 0x218));
+  std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::CameraMove>>>::destroy(this + 0x1f8,*(undefined8 *)(this + 0x200));
+  std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::ParallaxPuppetShow::ShowElement>>>::destroy(this + 0x1e0,*(undefined8 *)(this + 0x1e8));
+  ((Walaber::SpriteBatch *)this + 0x178)->~SpriteBatch();
+  ((Walaber::CameraController *)this + 0xa8)->~CameraController();
+  ((Walaber::Camera *)this + 0x10)->~Camera();
   return;
 }
 
@@ -89,7 +89,7 @@ void WaterConcept::ParallaxPuppetShow::_clearScene(long param_1)
       }
       pvVar4 = (void *)plVar5[8];
       if (pvVar4 != (void *)0x0) {
-        Walaber::AnimationManager::~AnimationManager(pvVar4);
+        ((Walaber::AnimationManager *)pvVar4)->~AnimationManager();
         operator delete(pvVar4);
       }
     }
@@ -131,13 +131,13 @@ void WaterConcept::ParallaxPuppetShow::_clearScene(long param_1)
   *(undefined8 *)(param_1 + 0x238) = 0;
   *(undefined8 *)(param_1 + 0x230) = 0;
   if (pvVar4 != (void *)0x0) {
-    Walaber::Transition::~Transition(pvVar4);
+    ((Walaber::Transition *)pvVar4)->~Transition();
     operator delete(pvVar4);
     *(undefined8 *)(param_1 + 600) = 0;
   }
   pvVar4 = *(void **)(param_1 + 0x160);
   if (pvVar4 != (void *)0x0) {
-    Walaber::AnimationManager::~AnimationManager(pvVar4);
+    ((Walaber::AnimationManager *)pvVar4)->~AnimationManager();
     operator delete(pvVar4);
     return;
   }
@@ -184,7 +184,7 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   undefined8 *puStack_48;
   int *piStack_40;
   
-  Walaber::PropertyList::PropertyList(auStack_60);
+  new ((void *)(auStack_60)) Walaber::PropertyList();
                     /* try { // try from 004300e0 to 0043011f has its CatchHandler @ 004301f8 */
   puVar2 = (undefined8 *)operator new(0x28);
   puVar2[2] = param_1;
@@ -198,11 +198,11 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   puStack_90 = puVar2;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
   piStack_78 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 00430158 to 0043015b has its CatchHandler @ 004301e0 */
   uVar4 = Walaber::FileManager::getInstancePtr();
   puStack_a0 = puStack_80;
@@ -211,10 +211,10 @@ void WaterConcept::ParallaxPuppetShow::_loadFromXml(undefined8 param_1,undefined
   }
                     /* try { // try from 00430174 to 00430187 has its CatchHandler @ 004301d0 */
   Walaber::FileManager::readFile(uVar4,param_2,&puStack_a0,auStack_60,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>::~SharedPtr(&puStack_70);
-  Walaber::PropertyList::~PropertyList(auStack_60);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>();
+  ((Walaber::PropertyList *)auStack_60)->~PropertyList();
   return;
 }
 
@@ -351,7 +351,7 @@ undefined8 WaterConcept::ParallaxPuppetShow::update(char * in_x0, float p0)
        (iVar2 = (**(code **)(**(long **)(in_x0 + 600) + 0x10))(uVar6), iVar2 == 4)) {
       p0_00 = *(void **)(in_x0 + 600);
       if (p0_00 != (void *)0x0) {
-        Walaber::Transition::~Transition(p0_00);
+        ((Walaber::Transition *)p0_00)->~Transition();
         operator delete(p0_00);
       }
       in_x0[600] = '\0';
@@ -615,7 +615,7 @@ void WaterConcept::ParallaxPuppetShow::_fireTransitions(float p0,float p1)
     if ((p0 < *(float *)(plVar4 + 4)) && (*(float *)(plVar4 + 4) <= p1)) {
       p0_00 = *(void **)(in_x0 + 600);
       if (p0_00 != (void *)0x0) {
-        Walaber::Transition::~Transition(p0_00);
+        ((Walaber::Transition *)p0_00)->~Transition();
         operator delete(p0_00);
         *(undefined8 *)(in_x0 + 600) = 0;
       }
@@ -1401,9 +1401,9 @@ LAB_00431dec:
                     if (uStack_190 != (long *)0x0) {
                       *piStack_188 = *piStack_188 + 1;
                     }
-                    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_190);
-                    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1a0);
-                    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&plStack_1b0);
+                    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_190)->~SharedPtr<Walaber::Texture>();
+                    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1a0)->~SharedPtr<Walaber::Callback>();
+                    ((Walaber::SharedPtr<Walaber::Callback> *)&plStack_1b0)->~SharedPtr<Walaber::Callback>();
                     uVar38 = *(undefined4 *)((long)uStack_220 + 0x94);
                     uVar30 = *(uint *)(uStack_220 + 0x13);
                     /* try { // try from 00431e80 to 00431e97 has its CatchHandler @ 004331f0 */
@@ -1440,11 +1440,11 @@ LAB_00431dec:
                     if ((uStack_1e8 & 1) != 0) {
                       operator delete(pvStack_1d8);
                     }
-                    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&plStack_1c0);
+                    ((Walaber::SharedPtr<Walaber::Texture> *)&plStack_1c0)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 00431f84 to 00431f8f has its CatchHandler @ 004331ec */
                     (**(code **)(*plVar14 + 0x18))(plVar14,&uStack_160);
                     *(long **)(lVar13 + 0x38) = plVar14;
-                    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_220);
+                    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_220)->~SharedPtr<Walaber::Texture>();
                     if (((ulong)uStack_e0 & 1) != 0) {
                       operator delete(uStack_d0);
                     }
@@ -1486,15 +1486,15 @@ LAB_00431d14:
                   uStack_168 = uStack_158;
                   uStack_170 = (undefined4)uStack_160;
                     /* try { // try from 00431d6c to 00431d83 has its CatchHandler @ 00433234 */
-                  Walaber::Sprite::Sprite(fVar36,uVar9,&uStack_110,&uStack_168,&uStack_170,0);
+                  new ((void *)(fVar36)) Walaber::Sprite(uVar9,&uStack_110,&uStack_168,&uStack_170,0);
                   piStack_218 = (int *)0x0;
                   uStack_220 = (long *)0x0;
                   uStack_178 = 0;
                   uStack_180 = 0;
                     /* try { // try from 00431d94 to 00431da3 has its CatchHandler @ 0043321c */
                   Walaber::Sprite::loadFromXML(uVar9,&uStack_e0,&uStack_180);
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_180);
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_220);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_180)->~SharedPtr<Walaber::Callback>();
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_220)->~SharedPtr<Walaber::Callback>();
                   *(undefined8 *)(lVar13 + 0x38) = uVar9;
 LAB_00431db8:
                   if (((ulong)uStack_e0 & 1) != 0) {
@@ -1547,13 +1547,13 @@ LAB_00431b84:
                   plStack_1f8 = plVar14;
                   piStack_1f0 = piStack_218;
                   piStack_188 = piStack_218;
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_220);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_220)->~SharedPtr<Walaber::Callback>();
                   plStack_1b0 = plStack_1f8;
                   piStack_1a8 = piStack_1f0;
                   if (plStack_1f8 != (long *)0x0) {
                     *piStack_1f0 = *piStack_1f0 + 1;
                   }
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&plStack_1f8);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&plStack_1f8)->~SharedPtr<Walaber::Callback>();
                   plStack_208 = plStack_1b0;
                   piStack_200 = piStack_1a8;
                   if (plStack_1b0 != (long *)0x0) {
@@ -1562,9 +1562,9 @@ LAB_00431b84:
                     /* try { // try from 00431c54 to 00431c6f has its CatchHandler @ 00433260 */
                   Walaber::Skeleton::loadSkeletonWithCallback(fVar36,&uStack_e0,&plStack_208,&uStack_158,&uStack_160,&uStack_110
                                  );
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&plStack_208);
-                  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&plStack_1b0);
-                  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>::~SharedPtr(&uStack_190);
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&plStack_208)->~SharedPtr<Walaber::Callback>();
+                  ((Walaber::SharedPtr<Walaber::Callback> *)&plStack_1b0)->~SharedPtr<Walaber::Callback>();
+                  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>> *)&uStack_190)->~SharedPtr<Walaber::MemberCallback<WaterConcept::ParallaxPuppetShow>>();
                   goto LAB_00431db8;
                 }
 LAB_00431fb4:
@@ -1649,7 +1649,7 @@ LAB_00431fb4:
                     sscanf(uVar9,"%f",&uStack_e0);
                     (*(code *)xmlFree)(uVar9);
                     uVar38 = (float)uStack_e0;
-                    Walaber::PropertyList::PropertyList(&ppuStack_108);
+                    new ((void *)(&ppuStack_108)) Walaber::PropertyList();
                     /* try { // try from 00432250 to 004322a7 has its CatchHandler @ 004332d8 */
                     uVar9 = xmlGetProp(lVar32,"type");
                     uStack_e0 = (undefined4 **)0x0;
@@ -1724,8 +1724,8 @@ LAB_004322b8:
                     }
                     /* try { // try from 004323cc to 004323d7 has its CatchHandler @ 00433298 */
                     std::__ndk1::__tree_iterator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__tree_node<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::__map_value_compare<float, std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>, std::__ndk1::less<float>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<float, WaterConcept::ParallaxPuppetShow::TransitionData>>>::__emplace_multi<std::__ndk1::pair<float, WaterConcept::ParallaxPuppetShow::TransitionData>>((long)p0 + 0x210,&uStack_e0);
-                    Walaber::PropertyList::~PropertyList(&uStack_d0);
-                    Walaber::PropertyList::~PropertyList(&ppuStack_108);
+                    ((Walaber::PropertyList *)&uStack_d0)->~PropertyList();
+                    ((Walaber::PropertyList *)&ppuStack_108)->~PropertyList();
                   }
                 }
               }
@@ -1814,7 +1814,7 @@ LAB_00432508:
                     /* try { // try from 004325ac to 004325b3 has its CatchHandler @ 0043315c */
                           lVar33 = operator new(0x30);
                     /* try { // try from 004325c0 to 004325c3 has its CatchHandler @ 004330dc */
-                          Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(lVar33,*(long *)(lVar13 + 0x38) + 0xe8);
+                          new ((void *)(lVar33)) Walaber::AnimationCueAnimationTrack(*(long *)(lVar13 + 0x38) + 0xe8);
                           lStack_340 = 0;
                         }
                         else {
@@ -1822,7 +1822,7 @@ LAB_00432508:
                     /* try { // try from 00432594 to 0043259b has its CatchHandler @ 0043315c */
                             lStack_340 = operator new(0x48);
                     /* try { // try from 004325a0 to 004325a7 has its CatchHandler @ 004330e8 */
-                            Walaber::SpriteAnimationTrack::SpriteAnimationTrack(lStack_340,*(undefined8 *)(lVar13 + 0x38));
+                            new ((void *)(lStack_340)) Walaber::SpriteAnimationTrack(*(undefined8 *)(lVar13 + 0x38));
                           }
                           else {
                             lStack_340 = 0;
@@ -1832,7 +1832,7 @@ LAB_00432508:
                     /* try { // try from 004325d4 to 004325db has its CatchHandler @ 0043318c */
                         p0_00 = (void *)operator new(0x68);
                     /* try { // try from 004325e4 to 004325e7 has its CatchHandler @ 00433180 */
-                        Walaber::NodeAnimationTrack::NodeAnimationTrack(p0_00,*(undefined8 *)(lVar13 + 0x38));
+                        new ((void *)(p0_00)) Walaber::NodeAnimationTrack(*(undefined8 *)(lVar13 + 0x38));
                     /* try { // try from 004325e8 to 004325ef has its CatchHandler @ 0043317c */
                         plVar14 = (long *)operator new(0x30);
                         *plVar14 = (long)&PTR__Curve_00710ab8;
@@ -1858,7 +1858,7 @@ LAB_00432508:
                         lVar15 = *(long *)(lVar32 + 0x18);
                         if (lVar15 == 0) {
 LAB_00432c78:
-                          Walaber::NodeAnimationTrack::~NodeAnimationTrack(p0_00);
+                          ((Walaber::NodeAnimationTrack *)p0_00)->~NodeAnimationTrack();
                           operator delete(p0_00);
                           (**(code **)(*plVar14 + 8))(plVar14);
                           (**(code **)(*plVar16 + 8))(plVar16);
@@ -2084,10 +2084,10 @@ LAB_00432bbc:
                           plStack_2a0 = plVar16;
                           puStack_a0 = puStack_298;
                           Walaber::NodeAnimationTrack::setCurve(p0_00,0,&plStack_290,&plStack_2a0);
-                          Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&plStack_2a0);
-                          Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&uStack_a8);
-                          Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&plStack_290);
-                          Walaber::SharedPtr<Walaber::Curve>::~SharedPtr(&uStack_220);
+                          ((Walaber::SharedPtr<Walaber::Curve> *)&plStack_2a0)->~SharedPtr<Walaber::Curve>();
+                          ((Walaber::SharedPtr<Walaber::Curve> *)&uStack_a8)->~SharedPtr<Walaber::Curve>();
+                          ((Walaber::SharedPtr<Walaber::Curve> *)&plStack_290)->~SharedPtr<Walaber::Curve>();
+                          ((Walaber::SharedPtr<Walaber::Curve> *)&uStack_220)->~SharedPtr<Walaber::Curve>();
                     /* try { // try from 00432c60 to 00432c6b has its CatchHandler @ 00433284 */
                           Walaber::Animation::addNodeTrack(uVar9,p0_00);
                         }

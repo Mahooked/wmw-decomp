@@ -21,7 +21,7 @@ void Walaber::Bone::setSkeleton(Walaber__Skeleton *p0, undefined8 in_x1)
 
 /* ok  address 0x33d9a8  size 36 */Walaber::Bone::~Bone(){
   Walaber::Node::~Node();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

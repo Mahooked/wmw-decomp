@@ -18,7 +18,7 @@
   uStack_40 = CONCAT44((float)((ulong)_sScreenSize >> 0x20) * 0.5 + 0.0,
                        (float)_sScreenSize * 0.5 + 0.0);
                     /* try { // try from 003ee4b0 to 003ee4bb has its CatchHandler @ 003ee50c */
-  Walaber::Camera::Camera(uVar2,&uStack_40,&uStack_48);
+  new ((void *)(uVar2)) Walaber::Camera(&uStack_40,&uStack_48);
   this[0x30] = uVar2;
                     /* try { // try from 003ee4c0 to 003ee4c7 has its CatchHandler @ 003ee520 */
   uVar2 = operator new(0xb8);
@@ -35,75 +35,75 @@
 /* ok  address 0x3ee614  size 268 */Walaber::ComicStrip::~ComicStrip(){
   void *pvVar1;
   
-  pvVar1 = *(void **)(param_1 + 0x168);
+  pvVar1 = *(void **)(this + 0x168);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x170) = pvVar1;
+    *(void **)(this + 0x170) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x150);
+  pvVar1 = *(void **)(this + 0x150);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x158) = pvVar1;
+    *(void **)(this + 0x158) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x138);
+  pvVar1 = *(void **)(this + 0x138);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x140) = pvVar1;
+    *(void **)(this + 0x140) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x120);
+  pvVar1 = *(void **)(this + 0x120);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x128) = pvVar1;
+    *(void **)(this + 0x128) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x108);
+  pvVar1 = *(void **)(this + 0x108);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x110) = pvVar1;
+    *(void **)(this + 0x110) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0xf0);
+  pvVar1 = *(void **)(this + 0xf0);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0xf8) = pvVar1;
+    *(void **)(this + 0xf8) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0xd8);
+  pvVar1 = *(void **)(this + 0xd8);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0xe0) = pvVar1;
+    *(void **)(this + 0xe0) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0xc0);
+  pvVar1 = *(void **)(this + 0xc0);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 200) = pvVar1;
+    *(void **)(this + 200) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0xa8);
+  pvVar1 = *(void **)(this + 0xa8);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0xb0) = pvVar1;
+    *(void **)(this + 0xb0) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x88);
+  pvVar1 = *(void **)(this + 0x88);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x90) = pvVar1;
+    *(void **)(this + 0x90) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x70);
+  pvVar1 = *(void **)(this + 0x70);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x78) = pvVar1;
+    *(void **)(this + 0x78) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x58);
+  pvVar1 = *(void **)(this + 0x58);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x60) = pvVar1;
+    *(void **)(this + 0x60) = pvVar1;
     operator delete(pvVar1);
   }
-  std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::~__vector_base(param_1 + 0x40);
-  pvVar1 = *(void **)(param_1 + 0x28);
+  ((std::__ndk1::__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>> *)this + 0x40)->~__vector_base<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>();
+  pvVar1 = *(void **)(this + 0x28);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x30) = pvVar1;
+    *(void **)(this + 0x30) = pvVar1;
     operator delete(pvVar1);
   }
-  pvVar1 = *(void **)(param_1 + 0x10);
+  pvVar1 = *(void **)(this + 0x10);
   if (pvVar1 != (void *)0x0) {
-    *(void **)(param_1 + 0x18) = pvVar1;
+    *(void **)(this + 0x18) = pvVar1;
     operator delete(pvVar1);
     return;
   }
@@ -165,7 +165,7 @@ LAB_003ee780:
   if (iVar2 == 4) {
     p0_00 = *(void **)piVar7;
     if (p0_00 != (void *)0x0) {
-      Walaber::Transition::~Transition(p0_00);
+      ((Walaber::Transition *)p0_00)->~Transition();
       operator delete(p0_00);
     }
     piVar7[0] = 0;
@@ -290,7 +290,7 @@ void Walaber::ComicStrip::draw(Walaber__SpriteBatch *p0)
       }
                     /* try { // try from 003eeb28 to 003eeb4b has its CatchHandler @ 003eebc0 */
       Walaber::SpriteBatch::drawQuad(0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_58);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_58)->~SharedPtr<Walaber::Texture>();
     }
     bVar1 = iVar5 < 1;
     iVar5 = iVar5 + 1;
@@ -327,7 +327,7 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   long *plStack_60;
   long alStack_58 [2];
   
-  Walaber::PropertyList::PropertyList(&plStack_60);
+  new ((void *)(&plStack_60)) Walaber::PropertyList();
   lStack_70 = *param_2;
   piStack_68 = (int *)param_2[1];
   if (lStack_70 != 0) {
@@ -362,9 +362,9 @@ void Walaber::ComicStrip::addPanel(undefined8 param_1,long *param_2)
   }
                     /* try { // try from 003eecac to 003eecbb has its CatchHandler @ 003eed00 */
   Walaber::ComicStrip::addPanel(param_1,&lStack_70,&puStack_88);
-  Walaber::PropertyList::~PropertyList(&puStack_88);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
-  Walaber::PropertyList::~PropertyList(&plStack_60);
+  ((Walaber::PropertyList *)&puStack_88)->~PropertyList();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::PropertyList *)&plStack_60)->~PropertyList();
   return;
 }
 

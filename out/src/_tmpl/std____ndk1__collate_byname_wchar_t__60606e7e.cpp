@@ -76,7 +76,7 @@ LAB_005d64f8:
   if ((uStack_78 & 1) != 0) {
     operator delete(pvStack_68);
   }
-  std::__ndk1::__shared_count::~__shared_count(p0);
+  ((std::__ndk1::__shared_count *)p0)->~__shared_count();
   _Unwind_Resume(uVar5);
   return;
 }
@@ -140,7 +140,7 @@ void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
   *this = &PTR__collate_byname_00717730;
                     /* try { // try from 005d6678 to 005d667b has its CatchHandler @ 005d668c */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 
@@ -158,7 +158,7 @@ void std::__ndk1::collate_byname<wchar_t>::~collate_byname()
   *this = &PTR__collate_byname_00717730;
                     /* try { // try from 005d66c4 to 005d66c7 has its CatchHandler @ 005d66e0 */
   freelocale(this[2]);
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   operator delete(this);
   return;
 }

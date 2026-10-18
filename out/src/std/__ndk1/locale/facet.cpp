@@ -5,7 +5,7 @@
 
 /* ok  address 0x5d5bdc  size 36 */std::__ndk1::locale::facet::~facet(){
   std::__ndk1::__shared_count::~__shared_count();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

@@ -25,7 +25,7 @@
   if (iVar1 + -1 < 0) {
     operator delete((void *)(lVar4 + -0x18));
   }
-  std::exception::~exception(this);
+  ((std::exception *)this)->~exception();
   operator delete(this);
   return;
 }

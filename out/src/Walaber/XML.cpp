@@ -179,7 +179,7 @@ long Walaber::XML::getNode(long param_1,byte *param_2)
   }
   lVar5 = 0;
 LAB_003472a0:
-  std::__ndk1::__deque_base<_xmlNode*, std::__ndk1::allocator<_xmlNode*>>::~__deque_base(&uStack_68);
+  ((std::__ndk1::__deque_base<_xmlNode*, std::__ndk1::allocator<_xmlNode*>> *)&uStack_68)->~__deque_base<_xmlNode*, std::__ndk1::allocator<_xmlNode*>>();
   if (*(long *)(lVar3 + 0x28) == lStack_38) {
     return lVar5;
   }
@@ -483,10 +483,10 @@ LAB_00433920:
                     /* try { // try from 00433938 to 0043393f has its CatchHandler @ 004339e0 */
         (*(code *)puVar2)(uVar4);
                     /* try { // try from 00433940 to 0043394b has its CatchHandler @ 004339d8 */
-        Walaber::Property::Property(auStack_a0,&uStack_b8);
+        new ((void *)(auStack_a0)) Walaber::Property(&uStack_b8);
                     /* try { // try from 0043394c to 0043395b has its CatchHandler @ 004339f0 */
         Walaber::PropertyList::setValueForKey(p1,&uStack_80,auStack_a0);
-        Walaber::Property::~Property(auStack_a0);
+        ((Walaber::Property *)auStack_a0)->~Property();
         if ((uStack_b8 & 1) != 0) {
           operator delete(pvStack_a8);
         }

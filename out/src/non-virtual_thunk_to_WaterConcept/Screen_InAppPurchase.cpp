@@ -4,15 +4,15 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x4e46f4  size 8 */non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
-  WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(param_1 + -0x90);
+  ((WaterConcept::Screen_InAppPurchase *)this + -0x90)->~Screen_InAppPurchase();
   return;
 }
 
 
 
 /* ok  address 0x4e4720  size 40 */non_virtual_thunk_to_WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase(){
-  WaterConcept::Screen_InAppPurchase::~Screen_InAppPurchase((void *)(param_1 + -0x90));
-  operator delete((void *)(param_1 + -0x90));
+  ((WaterConcept::Screen_InAppPurchase *)(void *)(this + -0x90))->~Screen_InAppPurchase();
+  operator delete((void *)(this + -0x90));
   return;
 }
 

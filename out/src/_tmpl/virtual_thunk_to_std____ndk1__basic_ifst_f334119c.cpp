@@ -19,8 +19,8 @@ void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_if
   puVar1 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
   *puVar1 = &PTR__basic_ifstream_00711270;
   puVar1[0x17] = &PTR__basic_ifstream_00711298;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(puVar1 + 2);
-  std::__ndk1::ios_base::~ios_base(puVar1 + 0x17);
+  ((std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>> *)puVar1 + 2)->~basic_filebuf<char, std::__ndk1::char_traits<char>>();
+  ((std::__ndk1::ios_base *)puVar1 + 0x17)->~ios_base();
   return;
 }
 
@@ -42,8 +42,8 @@ void std::__ndk1::basic_ifstream<char,std::__ndk1::char_traits<char>>::~basic_if
   p0 = (undefined8 *)((long)param_1 + *(long *)(*param_1 + -0x18));
   *p0 = &PTR__basic_ifstream_00711270;
   p0[0x17] = &PTR__basic_ifstream_00711298;
-  std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>>::~basic_filebuf(p0 + 2);
-  std::__ndk1::ios_base::~ios_base(p0 + 0x17);
+  ((std::__ndk1::basic_filebuf<char, std::__ndk1::char_traits<char>> *)p0 + 2)->~basic_filebuf<char, std::__ndk1::char_traits<char>>();
+  ((std::__ndk1::ios_base *)p0 + 0x17)->~ios_base();
   operator delete(p0);
   return;
 }

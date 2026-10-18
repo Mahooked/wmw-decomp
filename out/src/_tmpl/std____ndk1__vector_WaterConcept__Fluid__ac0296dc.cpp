@@ -115,7 +115,7 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
     lVar5 = param_1[1];
     do {
       lVar2 = lVar5 + -0xf0;
-      WaterConceptConstants::FluidDescription::FluidDescription(lVar4 + -0xf0,lVar2);
+      new ((void *)(lVar4 + -0xf0)) WaterConceptConstants::FluidDescription(lVar2);
       uVar1 = *(undefined8 *)(lVar5 + -0x10);
       *(undefined1 *)(lVar4 + -8) = *(undefined1 *)(lVar5 + -8);
       *(undefined8 *)(lVar4 + -0x10) = uVar1;

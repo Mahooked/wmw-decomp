@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x380720  size 260 */Walaber::Widget_Manipulator::Widget_Manipulator(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,byte param_6){
+/* ok  address 0x380720  size 260 */Walaber::Widget_Manipulator::Widget_Manipulator(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, long *param_5,byte param_6){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -13,29 +13,29 @@
   
   uStack_40 = *param_3;
   uStack_48 = *param_4;
-  Walaber::Widget::Widget(param_1,param_2,7,&uStack_40,&uStack_48,1,1);
-  *param_1 = &PTR__Widget_Manipulator_0070f298;
+  new ((void *)(this)) Walaber::Widget(param_2,7,&uStack_40,&uStack_48,1,1);
+  *this = &PTR__Widget_Manipulator_0070f298;
   lVar3 = *param_5;
-  param_1[0x20] = lVar3;
+  this[0x20] = lVar3;
   piVar2 = (int *)param_5[1];
-  param_1[0x21] = piVar2;
+  this[0x21] = piVar2;
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(byte *)((long)param_1 + 0x13a) = param_6 & 1;
-  *(undefined4 *)(param_1 + 0x24) = 0;
-  *(undefined1 *)((long)param_1 + 0x124) = 0;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x26] = 0;
-  param_1[0x25] = 0;
-  *(undefined2 *)(param_1 + 0x27) = 0xff00;
+  *(byte *)((long)this + 0x13a) = param_6 & 1;
+  *(undefined4 *)(this + 0x24) = 0;
+  *(undefined1 *)((long)this + 0x124) = 0;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x26] = 0;
+  this[0x25] = 0;
+  *(undefined2 *)(this + 0x27) = 0xff00;
   lVar3 = *param_5;
   if ((lVar3 != 0) && (*(int *)param_5[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
     uVar5 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x22] = uVar4;
-    param_1[0x23] =
+    this[0x22] = uVar4;
+    this[0x23] =
          CONCAT44((float)((ulong)uVar5 >> 0x20) - (float)((ulong)uVar4 >> 0x20),
                   (float)uVar5 - (float)uVar4);
   }
@@ -65,8 +65,8 @@ void Walaber::Widget_Manipulator::init(long param_1)
 
 /* ok  address 0x380850  size 56 */Walaber::Widget_Manipulator::~Widget_Manipulator(){
   *this = &PTR__Widget_Manipulator_0070f298;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -74,8 +74,8 @@ void Walaber::Widget_Manipulator::init(long param_1)
 
 /* ok  address 0x380888  size 64 */Walaber::Widget_Manipulator::~Widget_Manipulator(){
   *this = &PTR__Widget_Manipulator_0070f298;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   operator delete(this);
   return;
 }
@@ -146,7 +146,7 @@ void Walaber::Widget_Manipulator::draw(Walaber__SpriteBatch *p0)
   _uStack_60 = CONCAT13(uVar2,CONCAT12(uVar1,CONCAT11(uVar1,uVar1)));
                     /* try { // try from 003809bc to 003809db has its CatchHandler @ 00380a20 */
   Walaber::SpriteBatch::drawQuad(fVar4 + fVar5 * 57.295776);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
   Walaber::Widget::draw(p0);
   return;
 }

@@ -104,7 +104,7 @@ void Walaber::Property::setValue(int p0, undefined4 in_w1)
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -145,8 +145,8 @@ void Walaber::Property::setValue(int p0, undefined4 in_w1)
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   return;
 }
 
@@ -213,7 +213,7 @@ void Walaber::Property::setValue(float p0)
   ppuStack_1a0 = &PTR__basic_stringstream_007110f0;
   appuStack_120[0] = &PTR__basic_stringstream_00711140;
   ppuStack_190 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_180);
+  new ((void *)(auStack_180)) std::__ndk1::locale();
   uStack_150 = 0;
   uStack_158 = 0;
   uStack_160 = 0;
@@ -254,8 +254,8 @@ void Walaber::Property::setValue(float p0)
     operator delete(pvStack_138);
   }
   ppuStack_188 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_180);
-  std::__ndk1::ios_base::~ios_base(appuStack_120);
+  ((std::__ndk1::locale *)auStack_180)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_120)->~ios_base();
   return;
 }
 
@@ -323,7 +323,7 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0, undefined4 * in_x1)
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -368,8 +368,8 @@ void Walaber::Property::setValue(Walaber__Vector2 *p0, undefined4 * in_x1)
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   return;
 }
 
@@ -436,7 +436,7 @@ void Walaber::Property::setValue(Walaber__Rect *p0, undefined4 * in_x1)
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -487,8 +487,8 @@ void Walaber::Property::setValue(Walaber__Rect *p0, undefined4 * in_x1)
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   return;
 }
 
@@ -556,7 +556,7 @@ void Walaber::Property::setValue(Walaber__Color *p0, undefined1 * in_x1)
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -604,8 +604,8 @@ void Walaber::Property::setValue(Walaber__Color *p0, undefined1 * in_x1)
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   return;
 }
 
@@ -670,7 +670,7 @@ void Walaber::Property::setValue(Walaber__AABB *p0, undefined4 * in_x1)
   ppuStack_190 = &PTR__basic_stringstream_007110f0;
   appuStack_110[0] = &PTR__basic_stringstream_00711140;
   ppuStack_180 = &PTR__basic_stringstream_00711118;
-  std::__ndk1::locale::locale(auStack_170);
+  new ((void *)(auStack_170)) std::__ndk1::locale();
   uStack_140 = 0;
   uStack_148 = 0;
   uStack_150 = 0;
@@ -718,18 +718,18 @@ void Walaber::Property::setValue(Walaber__AABB *p0, undefined4 * in_x1)
     operator delete(pvStack_128);
   }
   ppuStack_178 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(auStack_170);
-  std::__ndk1::ios_base::~ios_base(appuStack_110);
+  ((std::__ndk1::locale *)auStack_170)->~locale();
+  ((std::__ndk1::ios_base *)appuStack_110)->~ios_base();
   return;
 }
 
 
 
 /* ok  address 0x3ff0d0  size 20 */Walaber::Property::~Property(){
-  if ((*(byte *)(param_1 + 8) & 1) == 0) {
+  if ((*(byte *)(this + 8) & 1) == 0) {
     return;
   }
-  operator delete(*(void **)(param_1 + 0x18));
+  operator delete(*(void **)(this + 0x18));
   return;
 }
 
@@ -922,7 +922,7 @@ void Walaber::Property::asAABB(long param_1,int *param_2)
 {
   long lVar1;
   
-  Walaber::AABB::AABB(param_1,&Vector2::Zero,&Vector2::One);
+  new ((void *)(param_1)) Walaber::AABB(&Vector2::Zero,&Vector2::One);
   if ((*param_2 != 6) && (*param_2 != 0)) {
     return;
   }

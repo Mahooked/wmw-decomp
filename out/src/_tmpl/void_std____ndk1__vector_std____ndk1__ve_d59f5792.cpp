@@ -47,7 +47,7 @@ void std::__ndk1::
   std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>::vector(lStack_50,param_2);
   lStack_50 = lStack_50 + 0x18;
   std::__ndk1::vector<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>>::__swap_out_circular_buffer(param_1,auStack_60);
-  std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>&> *)auStack_60)->~__split_buffer<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Widget*, std::__ndk1::allocator<Walaber::Widget*>>>&>();
   return;
 }
 

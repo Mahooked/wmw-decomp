@@ -76,7 +76,7 @@ LAB_005cd6cc:
   if ((uStack_78 & 1) != 0) {
     operator delete(pvStack_68);
   }
-  std::__ndk1::__shared_count::~__shared_count(p0);
+  ((std::__ndk1::__shared_count *)p0)->~__shared_count();
   _Unwind_Resume(uVar5);
   return;
 }
@@ -623,7 +623,7 @@ void std::__ndk1::codecvt<wchar_t,char,mbstate_t>::~codecvt()
                     /* try { // try from 005e0d7c to 005e0d7f has its CatchHandler @ 005e0de0 */
     freelocale(this[2]);
   }
-  std::__ndk1::__shared_count::~__shared_count(this);
+  ((std::__ndk1::__shared_count *)this)->~__shared_count();
   return;
 }
 

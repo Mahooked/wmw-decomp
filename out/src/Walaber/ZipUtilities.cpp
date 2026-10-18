@@ -32,7 +32,7 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   piStack_40 = (int *)operator new(4);
   *piStack_40 = 1;
                     /* try { // try from 003d7e2c to 003d7e33 has its CatchHandler @ 003d7f48 */
-  Walaber::PropertyList::PropertyList(auStack_60);
+  new ((void *)(auStack_60)) Walaber::PropertyList();
   abStack_78[0xd] = 0;
   abStack_78[0xe] = 0;
   abStack_78[0xf] = 0;
@@ -51,10 +51,10 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   abStack_78[7] = 0x5f;
   abStack_78[8] = 0x66;
                     /* try { // try from 003d7e64 to 003d7e6b has its CatchHandler @ 003d7f38 */
-  Walaber::Property::Property(auStack_98,param_3 & 1);
+  new ((void *)(auStack_98)) Walaber::Property(param_3 & 1);
                     /* try { // try from 003d7e6c to 003d7e7b has its CatchHandler @ 003d7f18 */
   Walaber::PropertyList::setValueForKey(auStack_60,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_78[0] & 1) != 0) {
     operator delete(pvStack_68);
   }
@@ -66,9 +66,9 @@ void Walaber::ZipUtilities::LoadArchiveDescription
   }
                     /* try { // try from 003d7eb0 to 003d7ec3 has its CatchHandler @ 003d7f04 */
   Walaber::FileManager::readFile(uVar2,param_1,&puStack_a8,auStack_60,0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
-  Walaber::PropertyList::~PropertyList(auStack_60);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::PropertyList *)auStack_60)->~PropertyList();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
@@ -189,7 +189,7 @@ void Walaber::ZipUtilities::_xmlFileRead(void *p0)
       uStack_193 = 0x73;
                     /* try { // try from 003d8014 to 003d8027 has its CatchHandler @ 003d8944 */
       uVar5 = Walaber::XML::getNode(uStack_90,&bStack_198);
-      Walaber::XMLDocument::Iterator::Iterator(alStack_a8,uVar5);
+      new ((void *)(alStack_a8)) Walaber::XMLDocument::Iterator(uVar5);
       if ((bStack_198 & 1) != 0) {
         operator delete((void *)CONCAT44(uStack_184,
                                       CONCAT13(uStack_185,CONCAT21(uStack_187,uStack_18b._3_1_))));
@@ -380,7 +380,7 @@ LAB_003d80e0:
       uStack_190 = 0x69;
                     /* try { // try from 003d83ac to 003d83bf has its CatchHandler @ 003d8940 */
       uVar5 = Walaber::XML::getNode(uStack_90,&bStack_198);
-      Walaber::XMLDocument::Iterator::Iterator(&bStack_1b8,uVar5);
+      new ((void *)(&bStack_1b8)) Walaber::XMLDocument::Iterator(uVar5);
                     /* try { // try from 003d83c0 to 003d83cb has its CatchHandler @ 003d88c4 */
       Walaber::XMLDocument::Iterator::operator=(alStack_a8,&bStack_1b8);
       uVar6 = extraout_x1_01;
@@ -410,7 +410,7 @@ LAB_003d80e0:
           puVar10 = (undefined4 *)((ulong)&bStack_220 | 1);
           do {
                     /* try { // try from 003d8488 to 003d848f has its CatchHandler @ 003d8a9c */
-            Walaber::Property::Property(&bStack_1b8);
+            new ((void *)(&bStack_1b8)) Walaber::Property();
             uStack_21a = 0;
             uStack_218 = 0;
             uStack_217 = 0;
@@ -484,16 +484,16 @@ LAB_003d80e0:
               }
               else {
                     /* try { // try from 003d85c0 to 003d85c7 has its CatchHandler @ 003d89ec */
-                Walaber::PropertyList::PropertyList(auStack_1e8);
+                new ((void *)(auStack_1e8)) Walaber::PropertyList();
                 puStack_200 = (undefined8 *)0x12;
                 pvStack_1f0 = (void *)0x0;
                 builtin_strncpy((char *)((ulong)&puStack_200 | 1),"file_path",9);
                 piStack_1f8 = (int *)0x0;
                     /* try { // try from 003d85f4 to 003d85ff has its CatchHandler @ 003d89a0 */
-                Walaber::Property::Property(&bStack_220,&uStack_1d0);
+                new ((void *)(&bStack_220)) Walaber::Property(&uStack_1d0);
                     /* try { // try from 003d8600 to 003d860f has its CatchHandler @ 003d899c */
                 Walaber::PropertyList::setValueForKey(auStack_1e8,&puStack_200,&bStack_220);
-                Walaber::Property::~Property(&bStack_220);
+                ((Walaber::Property *)&bStack_220)->~Property();
                 if (((ulong)puStack_200 & 1) != 0) {
                   operator delete(pvStack_1f0);
                 }
@@ -518,10 +518,10 @@ LAB_003d80e0:
                 builtin_strncpy((char *)((ulong)&puStack_200 | 1),"delete_file",0xb);
                 piStack_1f8 = (int *)0x0;
                     /* try { // try from 003d8698 to 003d86a3 has its CatchHandler @ 003d89c8 */
-                Walaber::Property::Property(&bStack_220,1);
+                new ((void *)(&bStack_220)) Walaber::Property(1);
                     /* try { // try from 003d86a4 to 003d86b3 has its CatchHandler @ 003d89b8 */
                 Walaber::PropertyList::setValueForKey(auStack_1e8,&puStack_200,&bStack_220);
-                Walaber::Property::~Property(&bStack_220);
+                ((Walaber::Property *)&bStack_220)->~Property();
                 if (((ulong)puStack_200 & 1) != 0) {
                   operator delete(pvStack_1f0);
                 }
@@ -547,12 +547,12 @@ LAB_003d80e0:
                 }
                     /* try { // try from 003d8758 to 003d876b has its CatchHandler @ 003d897c */
                 Walaber::FileManager::readFile(uVar5,&bStack_220,&puStack_230,auStack_1e8,1);
-                Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_230);
-                Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_200);
+                ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_230)->~SharedPtr<Walaber::Callback>();
+                ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_200)->~SharedPtr<Walaber::Callback>();
                 if ((bStack_220 & 1) != 0) {
                   operator delete(puStack_210);
                 }
-                Walaber::PropertyList::~PropertyList(auStack_1e8);
+                ((Walaber::PropertyList *)auStack_1e8)->~PropertyList();
               }
               if ((uStack_1d0 & 1) != 0) {
                 operator delete(puStack_1c0);
@@ -560,7 +560,7 @@ LAB_003d80e0:
             }
                     /* try { // try from 003d87d4 to 003d87db has its CatchHandler @ 003d8a68 */
             Walaber::XMLDocument::NamedIterator::operator++(&bStack_198);
-            Walaber::Property::~Property(&bStack_1b8);
+            ((Walaber::Property *)&bStack_1b8)->~Property();
             uVar6 = extraout_x1_05;
           } while (CONCAT17(uStack_191,CONCAT25(uStack_193,CONCAT41(uStack_197,bStack_198))) != 0);
         }
@@ -594,7 +594,7 @@ LAB_003d80e0:
                     /* try { // try from 003d8868 to 003d886b has its CatchHandler @ 003d88c0 */
       Walaber::FileHelper::deleteFile((long)p0 + 0x30);
     }
-    Walaber::XMLDocument::~XMLDocument(&lStack_98);
+    ((Walaber::XMLDocument *)&lStack_98)->~XMLDocument();
   }
   return;
 }
@@ -618,7 +618,7 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
   void *pvStack_90;
   undefined1 auStack_88 [32];
   
-  Walaber::Property::Property(auStack_88);
+  new ((void *)(auStack_88)) Walaber::Property();
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
     pvStack_90 = (void *)0x0;
@@ -661,7 +661,7 @@ void Walaber::ZipUtilities::_handleSounds(Walaber__XMLDocument__NamedIterator p0
                     /* try { // try from 003d8c04 to 003d8c0b has its CatchHandler @ 003d8c74 */
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
-  Walaber::Property::~Property(auStack_88);
+  ((Walaber::Property *)auStack_88)->~Property();
   return;
 }
 
@@ -687,7 +687,7 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
   void *pvStack_90;
   undefined1 auStack_88 [32];
   
-  Walaber::Property::Property(auStack_88);
+  new ((void *)(auStack_88)) Walaber::Property();
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
     pvStack_90 = (void *)0x0;
@@ -721,8 +721,8 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
         uStack_a8 = 0;
                     /* try { // try from 003d8d8c to 003d8d97 has its CatchHandler @ 003d8e0c */
         Walaber::TextureManager::reloadTextureFromDisk(uVar4,auStack_a0,&uStack_b0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_c0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b0)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c0)->~SharedPtr<Walaber::Callback>();
         if ((auStack_a0[0] & 1) != 0) {
           operator delete(pvStack_90);
         }
@@ -731,7 +731,7 @@ void Walaber::ZipUtilities::_handleTextures(Walaber__XMLDocument__NamedIterator 
                     /* try { // try from 003d8db8 to 003d8dbf has its CatchHandler @ 003d8e48 */
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
-  Walaber::Property::~Property(auStack_88);
+  ((Walaber::Property *)auStack_88)->~Property();
   return;
 }
 
@@ -757,7 +757,7 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
   void *pvStack_90;
   undefined1 auStack_88 [32];
   
-  Walaber::Property::Property(auStack_88);
+  new ((void *)(auStack_88)) Walaber::Property();
   while (*(long *)p0.f_0x0 != 0) {
     auStack_a0[1] = 0;
     pvStack_90 = (void *)0x0;
@@ -791,8 +791,8 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
         uStack_a8 = 0;
                     /* try { // try from 003d8f64 to 003d8f73 has its CatchHandler @ 003d8fdc */
         Walaber::TextureManager::reloadTextureAtlas(uVar4,auStack_a0,&uStack_b0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_c0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b0)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c0)->~SharedPtr<Walaber::Callback>();
         if ((auStack_a0[0] & 1) != 0) {
           operator delete(pvStack_90);
         }
@@ -801,7 +801,7 @@ void Walaber::ZipUtilities::_handleAtlases(Walaber__XMLDocument__NamedIterator p
                     /* try { // try from 003d8f94 to 003d8f9b has its CatchHandler @ 003d901c */
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
-  Walaber::Property::~Property(auStack_88);
+  ((Walaber::Property *)auStack_88)->~Property();
   return;
 }
 
@@ -827,7 +827,7 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
   void *pvStack_70;
   undefined1 auStack_68 [32];
   
-  Walaber::Property::Property(auStack_68);
+  new ((void *)(auStack_68)) Walaber::Property();
   while (*(long *)p0.f_0x0 != 0) {
     uStack_78 = 0;
     pvStack_70 = (void *)0x0;
@@ -868,7 +868,7 @@ void Walaber::ZipUtilities::_handleStreamedTracks(Walaber__XMLDocument__NamedIte
                     /* try { // try from 003d9138 to 003d913f has its CatchHandler @ 003d91c0 */
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
-  Walaber::Property::~Property(auStack_68);
+  ((Walaber::Property *)auStack_68)->~Property();
   return;
 }
 
@@ -897,7 +897,7 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
   void *pvStack_90;
   undefined1 auStack_88 [32];
   
-  Walaber::Property::Property(auStack_88);
+  new ((void *)(auStack_88)) Walaber::Property();
   while (*(long *)p0.f_0x0 != 0) {
     pvStack_90 = (void *)0x0;
     auStack_a0[0] = 0x16;
@@ -936,10 +936,10 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
                     /* try { // try from 003d9328 to 003d933b has its CatchHandler @ 003d93b8 */
         puStack_b0 = puVar4;
         Walaber::DatabaseManager::runSQL(uVar2,auStack_a0,&puStack_b0,&uStack_d0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_e0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b0);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d0)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_e0)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b0)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
         if ((auStack_a0[0] & 1) != 0) {
           operator delete(pvStack_90);
         }
@@ -948,7 +948,7 @@ void Walaber::ZipUtilities::_handleSQLFile(Walaber__XMLDocument__NamedIterator p
                     /* try { // try from 003d936c to 003d9373 has its CatchHandler @ 003d9414 */
     Walaber::XMLDocument::NamedIterator::operator++(p0.f_0x0);
   }
-  Walaber::Property::~Property(auStack_88);
+  ((Walaber::Property *)auStack_88)->~Property();
   return;
 }
 
@@ -1033,9 +1033,9 @@ void Walaber::ZipUtilities::_fileReadCallback(void *p0)
     }
     else {
                     /* try { // try from 003d94f4 to 003d94fb has its CatchHandler @ 003d9774 */
-      Walaber::XMLDocument::Iterator::Iterator(auStack_68,CONCAT35(uStack_4b,CONCAT41(uStack_4f,uStack_50)));
+      new ((void *)(auStack_68)) Walaber::XMLDocument::Iterator(CONCAT35(uStack_4b,CONCAT41(uStack_4f,uStack_50)));
                     /* try { // try from 003d94fc to 003d9503 has its CatchHandler @ 003d9770 */
-      Walaber::Property::Property(abStack_88);
+      new ((void *)(abStack_88)) Walaber::Property();
       abStack_a0[8] = 0;
       abStack_a0[9] = 0;
       abStack_a0[10] = 0;
@@ -1113,9 +1113,9 @@ LAB_003d9604:
         iVar5 = Walaber::Property::asInt(abStack_88);
         bVar7 = iVar5 < iVar4;
       }
-      Walaber::Property::~Property(abStack_88);
+      ((Walaber::Property *)abStack_88)->~Property();
     }
-    Walaber::XMLDocument::~XMLDocument(&bStack_58);
+    ((Walaber::XMLDocument *)&bStack_58)->~XMLDocument();
     uVar6 = extraout_x1_00;
   }
   if (*(void **)((long)p0 + 0x20) != (void *)0x0) {

@@ -42,7 +42,7 @@ void std::__ndk1::
                     /* try { // try from 004004d0 to 004004d7 has its CatchHandler @ 00400510 */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(lVar1 + 0x20,*param_4);
                     /* try { // try from 004004dc to 004004df has its CatchHandler @ 004004f8 */
-  Walaber::Property::Property(lVar1 + 0x38);
+  new ((void *)(lVar1 + 0x38)) Walaber::Property();
   *(undefined1 *)(param_1 + 2) = 1;
   return;
 }

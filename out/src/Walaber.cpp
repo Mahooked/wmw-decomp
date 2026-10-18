@@ -21,7 +21,7 @@ void Walaber::createProgrammaticTexture2D
   
   uVar1 = operator new(0xc0);
                     /* try { // try from 00395480 to 00395493 has its CatchHandler @ 003954c0 */
-  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar1,param_2,param_3,param_4,param_5);
+  new ((void *)(uVar1)) Walaber::ProgrammaticTexture2D(param_2,param_3,param_4,param_5);
   *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
   param_1[1] = puVar2;
@@ -57,13 +57,13 @@ void Walaber::createProgrammaticTexture2D
     *piStack_60 = *piStack_60 + 1;
   }
                     /* try { // try from 00395600 to 0039561b has its CatchHandler @ 0039567c */
-  Walaber::ProgrammaticTexture2D::ProgrammaticTexture2D(uVar2,param_2,param_3,param_4,param_5,&lStack_68);
+  new ((void *)(uVar2)) Walaber::ProgrammaticTexture2D(param_2,param_3,param_4,param_5,&lStack_68);
   *param_1 = uVar2;
                     /* try { // try from 00395620 to 00395627 has its CatchHandler @ 0039566c */
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
   param_1[1] = puVar3;
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&lStack_68);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&lStack_68)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   return;
 }
 
@@ -99,7 +99,7 @@ void Walaber::createProgrammaticSolidColorTexture2D
   if (plStack_68 != (long *)0x0) {
     *piStack_60 = *piStack_60 + 1;
   }
-  Walaber::SharedPtr<Walaber::ProgrammaticTexture2D>::~SharedPtr(&plStack_68);
+  ((Walaber::SharedPtr<Walaber::ProgrammaticTexture2D> *)&plStack_68)->~SharedPtr<Walaber::ProgrammaticTexture2D>();
                     /* try { // try from 003957e4 to 003957ef has its CatchHandler @ 003958f4 */
   Walaber::Texture::create_empty_buffer(&plStack_78,plStack_68);
   plStack_68 = plStack_78;
@@ -107,7 +107,7 @@ void Walaber::createProgrammaticSolidColorTexture2D
   if (plStack_78 != (long *)0x0) {
     *piStack_70 = *piStack_70 + 1;
   }
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_78);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&plStack_78)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   if (param_4 != 0) {
     uVar4 = 0;
     iVar5 = 0;
@@ -138,8 +138,8 @@ void Walaber::createProgrammaticSolidColorTexture2D
                     /* try { // try from 00395894 to 0039589b has its CatchHandler @ 003958dc */
   plStack_88 = plStack_78;
   (**(code **)(*param_1 + 0x10))(param_1,&plStack_88);
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_88);
-  Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>::~SharedPtr(&plStack_68);
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&plStack_88)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
+  ((Walaber::SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>> *)&plStack_68)->~SharedPtr<std::__ndk1::vector<Walaber::Color, std::__ndk1::allocator<Walaber::Color>>>();
   return;
 }
 
@@ -174,7 +174,7 @@ void Walaber::createRenderTexture2D
   
   uVar1 = operator new(0x160);
                     /* try { // try from 003965b0 to 003965bf has its CatchHandler @ 003965ec */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_2,param_3,param_4);
+  new ((void *)(uVar1)) Walaber::RenderTexture2D(param_2,param_3,param_4);
   *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
   param_1[1] = puVar2;
@@ -229,7 +229,7 @@ void Walaber::createRenderTexture2D
   uStack_68 = param_4[9];
   uStack_70 = param_4[8];
                     /* try { // try from 003967c0 to 003967e7 has its CatchHandler @ 0039683c */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar2,param_2,param_3,&uStack_b0,param_5);
+  new ((void *)(uVar2)) Walaber::RenderTexture2D(param_2,param_3,&uStack_b0,param_5);
   *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
@@ -259,7 +259,7 @@ void Walaber::createRenderTexture2D
   
   uVar1 = operator new(0x160);
                     /* try { // try from 00396a58 to 00396a6b has its CatchHandler @ 00396a98 */
-  Walaber::RenderTexture2D::RenderTexture2D(uVar1,param_2,param_3,param_5,param_4);
+  new ((void *)(uVar1)) Walaber::RenderTexture2D(param_2,param_3,param_5,param_4);
   *param_1 = uVar1;
   puVar2 = (undefined4 *)operator new(4);
   param_1[1] = puVar2;
@@ -297,12 +297,12 @@ void Walaber::createSubtexture
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 00396fa8 to 00396fcb has its CatchHandler @ 00397024 */
-  Walaber::Subtexture::Subtexture(uVar2,abStack_60,&lStack_70,param_4);
+  new ((void *)(uVar2)) Walaber::Subtexture(abStack_60,&lStack_70,param_4);
   *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;
   param_1[1] = puVar3;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
   if ((abStack_60[0] & 1) != 0) {
     operator delete(pvStack_50);
   }
@@ -739,7 +739,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2)
   
   puVar1 = (undefined8 *)operator new(0xe8);
                     /* try { // try from 00399488 to 00399493 has its CatchHandler @ 003994d8 */
-  Walaber::Texture::Texture(puVar1,param_2,0);
+  new ((void *)(puVar1)) Walaber::Texture(param_2,0);
   puVar1[0x1b] = 0;
   puVar1[0x1c] = 0;
   puVar1[0x19] = 0;
@@ -798,7 +798,7 @@ void Walaber::createTexture2D(undefined8 *param_1,undefined8 param_2,undefined8 
   uStack_58 = param_3[9];
   uStack_60 = param_3[8];
                     /* try { // try from 0039958c to 003995ab has its CatchHandler @ 003995fc */
-  Walaber::Texture2D::Texture2D(uVar2,param_2,&uStack_a0);
+  new ((void *)(uVar2)) Walaber::Texture2D(param_2,&uStack_a0);
   *param_1 = uVar2;
   puVar3 = (undefined4 *)operator new(4);
   *puVar3 = 1;

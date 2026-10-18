@@ -32,7 +32,7 @@ void ndk::SafeQueue<ndk::AccelerometerEvent>::SafeQueue(long param_1)
 void ndk::SafeQueue<ndk::AccelerometerEvent>::~SafeQueue(long param_1)
 
 {
-  ndk::Mutex::~Mutex(param_1 + 0x18);
+  ((ndk::Mutex *)param_1 + 0x18)->~Mutex();
   std::__ndk1::__list_imp<ndk::AccelerometerEvent, std::__ndk1::allocator<ndk::AccelerometerEvent>>::clear(param_1);
   return;
 }

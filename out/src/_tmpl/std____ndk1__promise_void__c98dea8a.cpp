@@ -61,10 +61,10 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
     if ((*(byte *)(lVar3 + 0x70) & 1) == 0) {
       auStack_68[0] = 0;
       lVar3 = *(long *)(lVar3 + 0x10);
-      std::exception_ptr::~exception_ptr(auStack_68);
+      ((std::exception_ptr *)auStack_68)->~exception_ptr();
       if ((lVar3 == 0) && (lVar3 = *param_1, 0 < *(long *)(lVar3 + 8))) {
         if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-          std::__ndk1::error_category::error_category(&DAT_007a5f08);
+          new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
           DAT_007a5f08 = &PTR__error_category_00719408;
           __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
           __cxa_guard_release(&DAT_007a5f10);
@@ -74,7 +74,7 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
                     /* try { // try from 005f14e8 to 005f14f3 has its CatchHandler @ 005f1614 */
         std::__ndk1::error_code::message(auStack_68,&uStack_50);
                     /* try { // try from 005f14f4 to 005f14ff has its CatchHandler @ 005f15f8 */
-        std::logic_error::logic_error(appuStack_90,auStack_68);
+        new ((void *)(appuStack_90)) std::logic_error(auStack_68);
         if ((auStack_68[0] & 1) != 0) {
           operator delete(pvStack_58);
         }
@@ -84,8 +84,8 @@ void std::__ndk1::promise<void>::~promise(long *param_1)
         std::exception_ptr std::make_exception_ptr<std::__ndk1::future_error>(auStack_70,appuStack_90);
                     /* try { // try from 005f1534 to 005f153f has its CatchHandler @ 005f15dc */
         std::__ndk1::__assoc_sub_state::set_exception(lVar3,auStack_70);
-        std::exception_ptr::~exception_ptr(auStack_70);
-        std::logic_error::~logic_error(appuStack_90);
+        ((std::exception_ptr *)auStack_70)->~exception_ptr();
+        ((std::logic_error *)appuStack_90)->~logic_error();
       }
     }
     std::__ndk1::__shared_count::__release_shared(*param_1);
@@ -113,13 +113,13 @@ void std::__ndk1::promise<void>::get_future(undefined8 param_1,long *param_2)
   }
   uVar2 = __cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a5f10), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
   }
                     /* try { // try from 005f1730 to 005f1743 has its CatchHandler @ 005f175c */
-  std::__ndk1::future_error::future_error(uVar2,3,&DAT_007a5f08);
+  new ((void *)(uVar2)) std::__ndk1::future_error(3,&DAT_007a5f08);
   __cxa_throw(uVar2,&future_error::typeinfo,future_error::~future_error);
   return;
 }
@@ -144,13 +144,13 @@ void std::__ndk1::promise<void>::set_value(long *param_1)
   }
   uVar2 = __cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a5f10), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
   }
                     /* try { // try from 005f17fc to 005f180f has its CatchHandler @ 005f1828 */
-  std::__ndk1::future_error::future_error(uVar2,3,&DAT_007a5f08);
+  new ((void *)(uVar2)) std::__ndk1::future_error(3,&DAT_007a5f08);
   __cxa_throw(uVar2,&future_error::typeinfo,future_error::~future_error);
   return;
 }
@@ -175,20 +175,20 @@ void std::__ndk1::promise<void>::set_exception(std__exception_ptr p0)
   if (lVar4 == 0) {
     uVar3 = __cxa_allocate_exception(0x20);
     if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-      std::__ndk1::error_category::error_category(&DAT_007a5f08);
+      new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
       DAT_007a5f08 = &PTR__error_category_00719408;
       __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
       __cxa_guard_release(&DAT_007a5f10);
     }
                     /* try { // try from 005f1908 to 005f191b has its CatchHandler @ 005f1938 */
-    std::__ndk1::future_error::future_error(uVar3,3,&DAT_007a5f08);
+    new ((void *)(uVar3)) std::__ndk1::future_error(3,&DAT_007a5f08);
     __cxa_throw(uVar3,&future_error::typeinfo,future_error::~future_error);
     return;
   }
-  std::exception_ptr::exception_ptr(auStack_30);
+  new ((void *)(auStack_30)) std::exception_ptr();
                     /* try { // try from 005f1868 to 005f1873 has its CatchHandler @ 005f194c */
   std::__ndk1::__assoc_sub_state::set_exception(lVar4,auStack_30);
-  std::exception_ptr::~exception_ptr(auStack_30);
+  ((std::exception_ptr *)auStack_30)->~exception_ptr();
   return;
 }
 
@@ -212,13 +212,13 @@ void std::__ndk1::promise<void>::set_value_at_thread_exit(long *param_1)
   }
   uVar2 = __cxa_allocate_exception(0x20);
   if (((DAT_007a5f10 & 1) == 0) && (iVar1 = __cxa_guard_acquire(&DAT_007a5f10), iVar1 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a5f08);
+    new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
     DAT_007a5f08 = &PTR__error_category_00719408;
     __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a5f10);
   }
                     /* try { // try from 005f19ec to 005f19ff has its CatchHandler @ 005f1a18 */
-  std::__ndk1::future_error::future_error(uVar2,3,&DAT_007a5f08);
+  new ((void *)(uVar2)) std::__ndk1::future_error(3,&DAT_007a5f08);
   __cxa_throw(uVar2,&future_error::typeinfo,future_error::~future_error);
   return;
 }
@@ -243,20 +243,20 @@ void std::__ndk1::promise<void>::set_exception_at_thread_exit(std__exception_ptr
   if (lVar4 == 0) {
     uVar3 = __cxa_allocate_exception(0x20);
     if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-      std::__ndk1::error_category::error_category(&DAT_007a5f08);
+      new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
       DAT_007a5f08 = &PTR__error_category_00719408;
       __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
       __cxa_guard_release(&DAT_007a5f10);
     }
                     /* try { // try from 005f1af8 to 005f1b0b has its CatchHandler @ 005f1b28 */
-    std::__ndk1::future_error::future_error(uVar3,3,&DAT_007a5f08);
+    new ((void *)(uVar3)) std::__ndk1::future_error(3,&DAT_007a5f08);
     __cxa_throw(uVar3,&future_error::typeinfo,future_error::~future_error);
     return;
   }
-  std::exception_ptr::exception_ptr(auStack_30);
+  new ((void *)(auStack_30)) std::exception_ptr();
                     /* try { // try from 005f1a58 to 005f1a63 has its CatchHandler @ 005f1b3c */
   std::__ndk1::__assoc_sub_state::set_exception_at_thread_exit(lVar4,auStack_30);
-  std::exception_ptr::~exception_ptr(auStack_30);
+  ((std::exception_ptr *)auStack_30)->~exception_ptr();
   return;
 }
 

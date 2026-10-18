@@ -4,9 +4,9 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x4cda40  size 232 */WaterConcept::Screen_EditorObjectEditor::Screen_EditorObjectEditor(){
-  WaterConcept::WCScreen::WCScreen(this,0xb);
+  new ((void *)(this)) WaterConcept::WCScreen(0xb);
                     /* try { // try from 004cda60 to 004cda6b has its CatchHandler @ 004cdb14 */
-  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  new ((void *)(this + 0x12)) Walaber::MessageReceiver(0x10);
   this[0x16] = 0;
   this[0x17] = 0;
   *this = &PTR__Screen_EditorObjectEditor_007136c8;
@@ -15,7 +15,7 @@
   this[0x14] = 0;
   this[0x15] = 0;
                     /* try { // try from 004cdaa0 to 004cdaa3 has its CatchHandler @ 004cdaf4 */
-  Walaber::PropertyList::PropertyList(this + 0x18);
+  new ((void *)(this + 0x18)) Walaber::PropertyList();
   this[0x1d] = 0;
   *(undefined4 *)(this + 0x1b) = 0xffffffff;
   this[0x1e] = 0;
@@ -39,24 +39,24 @@
 
 
 /* ok  address 0x4cdb28  size 136 */WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
-  void *p0;
+  void *this;
   
   *this = &PTR__Screen_EditorObjectEditor_007136c8;
   this[4] = &PTR_handleEvent_00713780;
   this[0x12] = &PTR__Screen_EditorObjectEditor_007137a0;
-  std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>::~__vector_base(this + 0x28);
-  p0 = (void *)this[0x25];
-  if (p0 != (void *)0x0) {
-    this[0x26] = p0;
-    operator delete(p0);
+  ((std::__ndk1::__vector_base<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>> *)this + 0x28)->~__vector_base<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>, std::__ndk1::allocator<std::__ndk1::vector<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>>>();
+  this = (void *)this[0x25];
+  if (this != (void *)0x0) {
+    this[0x26] = this;
+    operator delete(this);
   }
   std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy(this + 0x1c,this[0x1d]);
-  Walaber::PropertyList::~PropertyList(this + 0x18);
+  ((Walaber::PropertyList *)this + 0x18)->~PropertyList();
   if ((*(byte *)(this + 0x14) & 1) != 0) {
     operator delete((void *)this[0x16]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
-  WaterConcept::WCScreen::~WCScreen(this);
+  ((Walaber::MessageReceiver *)this + 0x12)->~MessageReceiver();
+  ((WaterConcept::WCScreen *)this)->~WCScreen();
   return;
 }
 
@@ -64,7 +64,7 @@
 
 /* ok  address 0x4cdbb8  size 36 */WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor(){
   WaterConcept::Screen_EditorObjectEditor::~Screen_EditorObjectEditor();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -147,13 +147,13 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     p0[7].f_0x8 = (ulong)pvStack_50;
     p0[7].f_0x0 = uStack_58;
     *puVar9 = CONCAT17(uStack_59,CONCAT25(uStack_5b,CONCAT41(uStack_5f,bStack_60)));
-    Walaber::PropertyList::PropertyList(&bStack_60);
+    new ((void *)(&bStack_60)) Walaber::PropertyList();
                     /* try { // try from 004cdd1c to 004cdd23 has its CatchHandler @ 004cdf5c */
     uVar4 = operator new(0x3a8);
     uStack_68 = 0;
     uStack_70 = 0x3f8000003f800000;
                     /* try { // try from 004cdd44 to 004cdd5b has its CatchHandler @ 004cdf20 */
-    WaterConcept::InteractiveObject::InteractiveObject(0,uVar4,&uStack_68,&uStack_70,1,0);
+    new ((void *)(0)) WaterConcept::InteractiveObject(uVar4,&uStack_68,&uStack_70,1,0);
     p0[7].f_0x10 = uVar4;
                     /* try { // try from 004cdd60 to 004cdd6b has its CatchHandler @ 004cdf5c */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_88,puVar9);
@@ -163,8 +163,8 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     uStack_90 = 0;
                     /* try { // try from 004cdd74 to 004cdd87 has its CatchHandler @ 004cdefc */
     WaterConcept::InteractiveObject::init(uVar4,abStack_88,&bStack_60,&uStack_98);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_98);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_b0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_98)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_b0)->~SharedPtr<Walaber::Callback>();
     if ((abStack_88[0] & 1) != 0) {
       operator delete(pvStack_78);
     }
@@ -172,7 +172,7 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
          -(uint)((int)((ulong)(*(long *)(p0[7].f_0x10 + 0xe8) - *(long *)(p0[7].f_0x10 + 0xe0)) >> 3
                       ) * -0x55555555 == 0);
                     /* try { // try from 004cddd0 to 004cddd7 has its CatchHandler @ 004cdef8 */
-    Walaber::PropertyList::PropertyList(&uStack_b0);
+    new ((void *)(&uStack_b0)) Walaber::PropertyList();
                     /* try { // try from 004cddd8 to 004cde17 has its CatchHandler @ 004cdf4c */
     puVar5 = (undefined8 *)operator new(0x28);
     puVar5[2] = p0;
@@ -186,11 +186,11 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     puStack_e0 = puVar5;
     puStack_48 = puVar5;
     piStack_40 = piVar6;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
     *piVar6 = *piVar6 + 1;
     puStack_d0 = puVar5;
     piStack_c8 = piVar6;
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e0);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e0)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 004cde50 to 004cde53 has its CatchHandler @ 004cdee0 */
     uVar7 = Walaber::FileManager::getInstancePtr();
     puStack_f0 = puStack_d0;
@@ -199,11 +199,11 @@ void WaterConcept::Screen_EditorObjectEditor::loadPropertyList(Walaber__Property
     }
                     /* try { // try from 004cde6c to 004cde7f has its CatchHandler @ 004cded0 */
     Walaber::FileManager::readFile(uVar7,puVar9,&puStack_f0,&uStack_b0,0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d0);
-    Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_EditorObjectEditor>>::~SharedPtr(&puStack_c0);
-    Walaber::PropertyList::~PropertyList(&uStack_b0);
-    Walaber::PropertyList::~PropertyList(&bStack_60);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_f0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_EditorObjectEditor>> *)&puStack_c0)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_EditorObjectEditor>>();
+    ((Walaber::PropertyList *)&uStack_b0)->~PropertyList();
+    ((Walaber::PropertyList *)&bStack_60)->~PropertyList();
   }
   return;
 }
@@ -284,7 +284,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
     uStack_108 = 0;
                     /* try { // try from 004ce014 to 004ce02b has its CatchHandler @ 004ce294 */
     uVar7 = Walaber::XML::getNode(uStack_60,&bStack_110);
-    Walaber::XMLDocument::NamedIterator::NamedIterator(alStack_90,uVar7,&bStack_110);
+    new ((void *)(alStack_90)) Walaber::XMLDocument::NamedIterator(uVar7,&bStack_110);
     if ((bStack_110 & 1) != 0) {
       operator delete((void *)CONCAT53(uStack_fd,CONCAT21(uStack_ff,uStack_100)));
     }
@@ -306,7 +306,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
       if (alStack_b8[0] != 0) {
         do {
                     /* try { // try from 004ce09c to 004ce0a3 has its CatchHandler @ 004ce2a8 */
-          Walaber::XMLDocument::AttributeIterator::AttributeIterator(alStack_c8);
+          new ((void *)(alStack_c8)) Walaber::XMLDocument::AttributeIterator();
           uStack_e0 = 0;
           puStack_d8 = (ulong *)0x0;
           puStack_d0 = (ulong *)0x0;
@@ -374,7 +374,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
             if ((uStack_140 & 1) != 0) {
               operator delete(pvStack_130);
             }
-            Walaber::Property::~Property(auStack_160);
+            ((Walaber::Property *)auStack_160)->~Property();
             if ((uStack_128 & 1) != 0) {
               operator delete(pvStack_118);
             }
@@ -389,8 +389,8 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
             *(long *)((long)p0 + 0x148) = *(long *)((long)p0 + 0x148) + 0x18;
           }
           Walaber::XMLDocument::NamedIterator::operator++(alStack_b8,0);
-          std::__ndk1::__vector_base<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>::~__vector_base(&uStack_e0);
-          Walaber::XMLDocument::AttributeIterator::~AttributeIterator(alStack_c8);
+          ((std::__ndk1::__vector_base<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>> *)&uStack_e0)->~__vector_base<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::pair<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>>();
+          ((Walaber::XMLDocument::AttributeIterator *)alStack_c8)->~AttributeIterator();
         } while (alStack_b8[0] != 0);
       }
       if ((bStack_a8 & 1) != 0) {
@@ -401,7 +401,7 @@ void WaterConcept::Screen_EditorObjectEditor::_gotObjectFile(void *p0, long in_x
       operator delete(pvStack_70);
     }
   }
-  Walaber::XMLDocument::~XMLDocument(&lStack_68);
+  ((Walaber::XMLDocument *)&lStack_68)->~XMLDocument();
   return;
 }
 
@@ -451,8 +451,8 @@ void WaterConcept::Screen_EditorObjectEditor::_buildUI(long param_1)
   uStack_48 = 0;
                     /* try { // try from 004ce448 to 004ce453 has its CatchHandler @ 004ce498 */
   Walaber::WidgetHelper::loadWidgetsXML(auStack_40,*(undefined8 *)(param_1 + 0x10),&uStack_50);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_50);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_60);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_50)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_60)->~SharedPtr<Walaber::Callback>();
   if ((auStack_40[0] & 1) != 0) {
     operator delete(pcStack_30);
   }
@@ -560,7 +560,7 @@ void WaterConcept::Screen_EditorObjectEditor::draw(int p0, int in_w1)
     fVar16 = (float)((ulong)*(undefined8 *)pfVar13 >> 0x20);
     uStack_98 = CONCAT44(fVar16 - fVar18,fVar15 - fVar17);
     uStack_a0 = CONCAT44(fVar18 + fVar16,fVar17 + fVar15);
-    Walaber::AABB::AABB(auStack_90,&uStack_98,&uStack_a0);
+    new ((void *)(auStack_90)) Walaber::AABB(&uStack_98,&uStack_a0);
     plVar6 = *(long **)(uVar5 + 0xb8);
     if (plVar6 != (long *)0x0) {
       (**(code **)(*plVar6 + 0x68))(0x3e4ccccd,plVar6,lVar1,0);
@@ -1421,7 +1421,7 @@ LAB_004cf6bc:
             plVar14 = (long *)(CONCAT44(fStack_114,fStack_118) + (long)(int)plVar9[0x1b] * 0x18);
           } while (uVar25 < (ulong)(plVar14[1] - *plVar14 >> 3));
         }
-        std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>::~__vector_base(&fStack_118);
+        ((std::__ndk1::__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>> *)&fStack_118)->~__vector_base<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>, std::__ndk1::allocator<std::__ndk1::vector<Walaber::Vector2, std::__ndk1::allocator<Walaber::Vector2>>>>();
       }
       else {
         std::__ndk1::__tree<int, std::__ndk1::less<int>, std::__ndk1::allocator<int>>::destroy(plVar9 + 0x1c,plVar9[0x1d]);
@@ -1471,10 +1471,10 @@ LAB_004cf6bc:
     Walaber::SharedPtr<Walaber::Texture>::operator=(lVar10 + 0x100,&lStack_b0);
                     /* try { // try from 004cebb0 to 004cebb7 has its CatchHandler @ 004cfc6c */
     Walaber::Widget_PushButton::_applyTile(lVar10);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_150);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_c0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_d8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_150)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_c0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_d8)->~SharedPtr<Walaber::Callback>();
     puStack_c8 = apuStack_108[0];
     if (((uint)fStack_118 & 1) == 0) break;
     goto LAB_004cf6c8;
@@ -1499,15 +1499,15 @@ LAB_004cf6bc:
     uStack_10f = 0;
     uStack_10e = 0x50000;
                     /* try { // try from 004cefe4 to 004cefeb has its CatchHandler @ 004cfcd8 */
-    Walaber::PropertyList::PropertyList(apuStack_108);
+    new ((void *)(apuStack_108)) Walaber::PropertyList();
     auStack_130[1] = 0;
     pvStack_120 = (void *)0x0;
     auStack_130[0] = 0x63727306;
                     /* try { // try from 004cf008 to 004cf013 has its CatchHandler @ 004cfcc0 */
-    Walaber::Property::Property(&lStack_150,&uStack_d8);
+    new ((void *)(&lStack_150)) Walaber::Property(&uStack_d8);
                     /* try { // try from 004cf014 to 004cf023 has its CatchHandler @ 004cfcb0 */
     Walaber::PropertyList::setValueForKey(apuStack_108,auStack_130,&lStack_150);
-    Walaber::Property::~Property(&lStack_150);
+    ((Walaber::Property *)&lStack_150)->~Property();
     if ((auStack_130[0] & 1) != 0) {
       operator delete(pvStack_120);
     }
@@ -1515,10 +1515,10 @@ LAB_004cf6bc:
     pvStack_120 = (void *)0x0;
     auStack_130[0] = 0x7473656408;
                     /* try { // try from 004cf05c to 004cf067 has its CatchHandler @ 004cfcac */
-    Walaber::Property::Property(&lStack_150,&bStack_f0);
+    new ((void *)(&lStack_150)) Walaber::Property(&bStack_f0);
                     /* try { // try from 004cf068 to 004cf077 has its CatchHandler @ 004cfca8 */
     Walaber::PropertyList::setValueForKey(apuStack_108,auStack_130,&lStack_150);
-    Walaber::Property::~Property(&lStack_150);
+    ((Walaber::Property *)&lStack_150)->~Property();
     if ((auStack_130[0] & 1) != 0) {
       operator delete(pvStack_120);
     }
@@ -1527,7 +1527,7 @@ LAB_004cf6bc:
     Walaber::BroadcastManager::messageTx(uVar12,&fStack_118);
     fStack_118 = 1.0359396e-38;
     fStack_114 = 0.0;
-    Walaber::PropertyList::~PropertyList(apuStack_108);
+    ((Walaber::PropertyList *)apuStack_108)->~PropertyList();
     if ((bStack_f0 & 1) != 0) {
       operator delete(pvStack_e0);
     }
@@ -1594,10 +1594,10 @@ void WaterConcept::Screen_EditorObjectEditor::_toggleSnap(long param_1)
   Walaber::SharedPtr<Walaber::Texture>::operator=(lVar5 + 0x100,&lStack_58);
                     /* try { // try from 004d01a0 to 004d01a7 has its CatchHandler @ 004d0204 */
   Walaber::Widget_PushButton::_applyTile(lVar5);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_58);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_68);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_a0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_58)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_68)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_a0)->~SharedPtr<Walaber::Callback>();
   if ((uStack_80 & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -1836,7 +1836,7 @@ void WaterConcept::Screen_EditorObjectEditor::_save(long param_1,undefined8 para
   if ((abStack_c0[0] & 1) != 0) {
     operator delete((void *)CONCAT53(uStack_ad,CONCAT21(uStack_af,abStack_c0[0x10])));
   }
-  Walaber::PropertyList::~PropertyList(&puStack_90);
+  ((Walaber::PropertyList *)&puStack_90)->~PropertyList();
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_d8,param_2);
   pvVar3 = (void *)((ulong)abStack_d8 | 1);
   if ((abStack_d8[0] & 1) != 0) {

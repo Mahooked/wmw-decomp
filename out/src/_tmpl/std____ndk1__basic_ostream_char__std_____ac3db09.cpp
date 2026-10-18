@@ -45,7 +45,7 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
                     /* try { // try from 003ff9c0 to 003ff9df has its CatchHandler @ 003ffa80 */
       plVar6 = (long *)std::__ndk1::locale::use_facet(auStack_60,&ctype<char>::id);
       uVar4 = (**(code **)(*plVar6 + 0x38))(plVar6,0x20);
-      std::__ndk1::locale::~locale(auStack_60);
+      ((std::__ndk1::locale *)auStack_60)->~locale();
       *(uint *)(lVar5 + 0x90) = uVar4 & 0xff;
     }
     lVar1 = param_2 + param_3;
@@ -60,7 +60,7 @@ long * std::__ndk1::__put_character_sequence<char,std::__ndk1::char_traits<char>
       std::__ndk1::ios_base::clear(lVar5,*(uint *)(lVar5 + 0x20) | 5);
     }
   }
-  std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry::~sentry(auStack_70);
+  ((std::__ndk1::basic_ostream<char, std::__ndk1::char_traits<char>>::sentry *)auStack_70)->~sentry();
   return plVar6;
 }
 

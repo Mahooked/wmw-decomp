@@ -159,7 +159,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 
 {
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   return;
 }
 
@@ -176,7 +176,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 
 {
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   operator delete(this);
   return;
 }
@@ -329,7 +329,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::~basic_s
 
 {
   *this = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(this + 1);
+  ((std::__ndk1::locale *)this + 1)->~locale();
   return;
 }
 
@@ -345,7 +345,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::getloc
                (undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::locale::locale(param_1,param_2 + 8);
+  new ((void *)(param_1)) std::__ndk1::locale(param_2 + 8);
   return;
 }
 
@@ -650,7 +650,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_st
 
 {
   *param_1 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::locale(param_1 + 1);
+  new ((void *)(param_1 + 1)) std::__ndk1::locale();
   param_1[5] = 0;
   param_1[4] = 0;
   param_1[7] = 0;
@@ -676,7 +676,7 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::basic_st
   undefined8 uVar1;
   
   *param_1 = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::locale(param_1 + 1,param_2 + 8);
+  new ((void *)(param_1 + 1)) std::__ndk1::locale(param_2 + 8);
   uVar1 = *(undefined8 *)(param_2 + 0x10);
   param_1[3] = *(undefined8 *)(param_2 + 0x18);
   param_1[2] = uVar1;
@@ -734,10 +734,10 @@ void std::__ndk1::basic_streambuf<char,std::__ndk1::char_traits<char>>::swap
   undefined8 uVar2;
   undefined1 auStack_50 [8];
   
-  std::__ndk1::locale::locale(auStack_50,param_1 + 8);
+  new ((void *)(auStack_50)) std::__ndk1::locale(param_1 + 8);
   std::__ndk1::locale::operator=(param_1 + 8,param_2 + 8);
   std::__ndk1::locale::operator=(param_2 + 8,auStack_50);
-  std::__ndk1::locale::~locale(auStack_50);
+  ((std::__ndk1::locale *)auStack_50)->~locale();
   uVar2 = *(undefined8 *)(param_1 + 0x10);
   *(undefined8 *)(param_1 + 0x10) = *(undefined8 *)(param_2 + 0x10);
   *(undefined8 *)(param_2 + 0x10) = uVar2;

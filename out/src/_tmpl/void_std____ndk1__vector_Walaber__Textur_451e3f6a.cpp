@@ -57,7 +57,7 @@ void std::__ndk1::
   *(undefined4 *)(lVar3 + 0x38) = *(undefined4 *)(in_x1 + 0x38);
   lStack_50 = lStack_50 + 0x40;
   std::__ndk1::vector<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&> *)auStack_60)->~__split_buffer<Walaber::TextureManager::SubTexInfo, std::__ndk1::allocator<Walaber::TextureManager::SubTexInfo>&>();
   return;
 }
 

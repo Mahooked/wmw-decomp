@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,2,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,2,&uStack_30,&uStack_38,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = 0;
   puVar2[0x20] = 0;
@@ -49,7 +49,7 @@ void Walaber::Widget_TimedButton::init(long param_1)
 
 
 
-/* ok  address 0x38a8f4  size 344 */Walaber::Widget_TimedButton::Widget_TimedButton(undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7){
+/* ok  address 0x38a8f4  size 344 */Walaber::Widget_TimedButton::Widget_TimedButton(undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -59,7 +59,7 @@ void Walaber::Widget_TimedButton::init(long param_1)
   
   uStack_50 = *param_4;
   uStack_58 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,2,&uStack_50,&uStack_58,1,1);
+  new ((void *)(param_2)) Walaber::Widget(param_3,2,&uStack_50,&uStack_58,1,1);
   *param_2 = &PTR__Widget_TimedButton_0070fdd8;
   lVar3 = *param_6;
   param_2[0x20] = lVar3;
@@ -75,7 +75,7 @@ void Walaber::Widget_TimedButton::init(long param_1)
   if (lVar3 != 0) {
     *piVar2 = *piVar2 + 1;
   }
-  *(undefined4 *)(param_2 + 0x29) = param_1;
+  *(undefined4 *)(param_2 + 0x29) = this;
   *(undefined2 *)(param_2 + 0x28) = 0;
   *(undefined4 *)((long)param_2 + 0x144) = 0;
   param_2[0x25] = 0;
@@ -109,9 +109,9 @@ void Walaber::Widget_TimedButton::init(long param_1)
 
 /* ok  address 0x38aa4c  size 64 */Walaber::Widget_TimedButton::~Widget_TimedButton(){
   *this = &PTR__Widget_TimedButton_0070fdd8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x22)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -119,7 +119,7 @@ void Walaber::Widget_TimedButton::init(long param_1)
 
 /* ok  address 0x38aa8c  size 36 */Walaber::Widget_TimedButton::~Widget_TimedButton(){
   Walaber::Widget_TimedButton::~Widget_TimedButton();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -311,7 +311,7 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
                     /* try { // try from 0038ad44 to 0038ad9f has its CatchHandler @ 0038af18 */
     Walaber::Node::getWorldScale(afStack_60,p0);
     Walaber::SpriteBatch::drawQuad(uVar4);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_90)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 0038ada8 to 0038adbb has its CatchHandler @ 0038af2c */
     Walaber::SpriteBatch::flush();
     Walaber::SpriteBatch::start();
@@ -342,7 +342,7 @@ void Walaber::Widget_TimedButton::draw(Walaber__SpriteBatch *p0)
   }
                     /* try { // try from 0038aeb4 to 0038aebf has its CatchHandler @ 0038af2c */
   Walaber::Widget::draw(p0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_70);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_70)->~SharedPtr<Walaber::Texture>();
   return;
 }
 

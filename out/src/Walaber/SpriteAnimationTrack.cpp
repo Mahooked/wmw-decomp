@@ -124,7 +124,7 @@ void Walaber::SpriteAnimationTrack::apply(long * in_x0, float p0)
         pfVar7 = (float *)(lVar8 + lVar2 * 0x28);
         Walaber::Sprite::playAnimation(auStack_88,(p0 - *pfVar7) + pfVar7[1],*in_x0,pfVar7 + 2);
         Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(plVar1,auStack_88);
-        Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_88);
+        ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_88)->~SharedPtr<Walaber::SpriteAnimation>();
         lVar5 = in_x0[1];
         if (((lVar5 != 0) && (*(int *)in_x0[2] != 0)) &&
            (*(char *)(lVar8 + lVar2 * 0x28 + 0x20) != '\0')) {
@@ -136,7 +136,7 @@ void Walaber::SpriteAnimationTrack::apply(long * in_x0, float p0)
         lVar5 = lVar8 + lVar2 * 0x28;
         Walaber::Sprite::playAnimation(auStack_88,*(undefined4 *)(lVar5 + 4),*in_x0,(byte *)(lVar5 + 8));
         Walaber::SharedPtr<Walaber::SpriteAnimation>::operator=(plVar1,auStack_88);
-        Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(auStack_88);
+        ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)auStack_88)->~SharedPtr<Walaber::SpriteAnimation>();
         if ((in_x0[1] == 0) || (*(int *)in_x0[2] == 0)) {
           if ((*(byte *)(lVar5 + 8) & 1) == 0) {
             lVar5 = lVar5 + 9;
@@ -255,8 +255,8 @@ Walaber::SpriteAnimationTrack::operator=(Walaber__SpriteAnimationTrack *p0)
 
 
 /* ok  address 0x33a704  size 40 */Walaber::SpriteAnimationTrack::~SpriteAnimationTrack(){
-  std::__ndk1::__vector_base<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>::~__vector_base(param_1 + 0x20);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(param_1 + 8);
+  ((std::__ndk1::__vector_base<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>> *)this + 0x20)->~__vector_base<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>>();
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)this + 8)->~SharedPtr<Walaber::SpriteAnimation>();
   return;
 }
 

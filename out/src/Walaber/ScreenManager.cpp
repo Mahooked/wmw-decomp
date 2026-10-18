@@ -24,7 +24,7 @@ void Walaber::ScreenManager::addScreenLoader(Walaber::SharedPtr<Walaber::Callbac
   auStack_40[0] = param_2;
                     /* try { // try from 002b3358 to 002b3367 has its CatchHandler @ 002b3394 */
   std::__ndk1::__tree_iterator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__tree_node<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, void*>*, long> std::__ndk1::__tree<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::__map_value_compare<unsigned int, std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>, std::__ndk1::less<unsigned int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>>::__emplace_multi<std::__ndk1::pair<unsigned int, Walaber::SharedPtr<Walaber::Callback>>>(&mLoaderFunctions,auStack_40);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&lStack_38);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&lStack_38)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
@@ -111,7 +111,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
   long alStack_68 [2];
   
   if (DAT_00730530 != 0) {
-    Walaber::PropertyList::PropertyList(&plStack_70);
+    new ((void *)(&plStack_70)) Walaber::PropertyList();
     puVar2 = DAT_007304b8;
     uStack_80 = 0x100000000;
     if (DAT_007304b8 == DAT_007304c0) {
@@ -153,7 +153,7 @@ void Walaber::ScreenManager::pushScreen(uint p0)
       }
       DAT_007304b8 = DAT_007304b8 + 5;
     }
-    Walaber::PropertyList::~PropertyList(&plStack_70);
+    ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   }
   return;
 }
@@ -181,7 +181,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
   long alStack_68 [2];
   
   if (DAT_00730530 != 0) {
-    Walaber::PropertyList::PropertyList(&plStack_70);
+    new ((void *)(&plStack_70)) Walaber::PropertyList();
     uStack_80 = 0x100000000;
     uStack_78 = p0;
                     /* try { // try from 003f0768 to 003f0773 has its CatchHandler @ 003f0880 */
@@ -226,7 +226,7 @@ void Walaber::ScreenManager::pushScreen(uint p0,Walaber__PropertyList *p1)
       }
       DAT_007304b8 = DAT_007304b8 + 5;
     }
-    Walaber::PropertyList::~PropertyList(&plStack_70);
+    ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   }
   return;
 }
@@ -253,7 +253,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
   long alStack_68 [2];
   
   if (DAT_00730530 != 0) {
-    Walaber::PropertyList::PropertyList(&plStack_70);
+    new ((void *)(&plStack_70)) Walaber::PropertyList();
     puVar2 = DAT_007304b8;
     uStack_80 = 0x100000001;
     if (DAT_007304b8 == DAT_007304c0) {
@@ -295,7 +295,7 @@ void Walaber::ScreenManager::swapScreen(uint p0)
       }
       DAT_007304b8 = DAT_007304b8 + 5;
     }
-    Walaber::PropertyList::~PropertyList(&plStack_70);
+    ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   }
   return;
 }
@@ -323,7 +323,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
   long alStack_68 [2];
   
   if (DAT_00730530 != 0) {
-    Walaber::PropertyList::PropertyList(&plStack_70);
+    new ((void *)(&plStack_70)) Walaber::PropertyList();
     uStack_80 = 0x100000001;
     uStack_78 = p0;
                     /* try { // try from 003f0a8c to 003f0a97 has its CatchHandler @ 003f0ba4 */
@@ -368,7 +368,7 @@ void Walaber::ScreenManager::swapScreen(uint p0,Walaber__PropertyList *p1)
       }
       DAT_007304b8 = DAT_007304b8 + 5;
     }
-    Walaber::PropertyList::~PropertyList(&plStack_70);
+    ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   }
   return;
 }
@@ -396,7 +396,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
   long *plStack_70;
   long alStack_68 [2];
   
-  Walaber::PropertyList::PropertyList(&plStack_70);
+  new ((void *)(&plStack_70)) Walaber::PropertyList();
   puVar2 = DAT_007304b8;
   uStack_80 = 2;
   if (p0) {
@@ -446,7 +446,7 @@ void Walaber::ScreenManager::popScreen(bool p0,bool p1)
     }
     DAT_007304b8 = DAT_007304b8 + 5;
   }
-  Walaber::PropertyList::~PropertyList(&plStack_70);
+  ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   return;
 }
 
@@ -473,7 +473,7 @@ void Walaber::ScreenManager::popAllScreens(void)
   long *plStack_70;
   long alStack_68 [2];
   
-  Walaber::PropertyList::PropertyList(&plStack_70);
+  new ((void *)(&plStack_70)) Walaber::PropertyList();
   puVar2 = DAT_007304b8;
   uStack_80 = 3;
   uStack_7c = (undefined4)((ulong)(DAT_007304a0 - mScreenStack) >> 3);
@@ -516,7 +516,7 @@ void Walaber::ScreenManager::popAllScreens(void)
     }
     DAT_007304b8 = DAT_007304b8 + 5;
   }
-  Walaber::PropertyList::~PropertyList(&plStack_70);
+  ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   return;
 }
 
@@ -542,7 +542,7 @@ void Walaber::ScreenManager::stopFlush(void)
   long *plStack_70;
   long alStack_68 [2];
   
-  Walaber::PropertyList::PropertyList(&plStack_70);
+  new ((void *)(&plStack_70)) Walaber::PropertyList();
   puVar2 = DAT_007304b8;
   uStack_80 = 0x100000004;
   if (DAT_007304b8 == DAT_007304c0) {
@@ -584,7 +584,7 @@ void Walaber::ScreenManager::stopFlush(void)
     }
     DAT_007304b8 = DAT_007304b8 + 5;
   }
-  Walaber::PropertyList::~PropertyList(&plStack_70);
+  ((Walaber::PropertyList *)&plStack_70)->~PropertyList();
   return;
 }
 
@@ -839,7 +839,7 @@ void Walaber::ScreenManager::update(float p0)
         while( true ) {
           p0_00 = *(void **)((long)mTransitions + uVar8);
           if (p0_00 != (void *)0x0) {
-            Walaber::Transition::~Transition(p0_00);
+            ((Walaber::Transition *)p0_00)->~Transition();
             operator delete(p0_00);
           }
           if (iVar5 < 0) break;
@@ -1102,14 +1102,14 @@ LAB_003f1e38:
                     /* try { // try from 003f1f78 to 003f1f7f has its CatchHandler @ 003f2084 */
         std::__ndk1::enable_if<__is_forward_iterator<Walaber::ScreenManager::ScreenOperationDetails*>::value&&is_constructible<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::iterator_traits<Walaber::ScreenManager::ScreenOperationDetails*>::reference>::value, void>::type std::__ndk1::vector<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::assign<Walaber::ScreenManager::ScreenOperationDetails*>(&mPrepList,uStack_a8,plStack_a0);
         mFlushMethod = 1;
-        std::__ndk1::__vector_base<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>::~__vector_base(&uStack_a8);
+        ((std::__ndk1::__vector_base<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>> *)&uStack_a8)->~__vector_base<Walaber::ScreenManager::ScreenOperationDetails, std::__ndk1::allocator<Walaber::ScreenManager::ScreenOperationDetails>>();
         bVar2 = false;
         goto switchD_003f1cd0_caseD_2;
       }
 LAB_003f1fec:
       bVar2 = true;
 switchD_003f1cd0_caseD_2:
-      Walaber::PropertyList::~PropertyList(&puStack_80);
+      ((Walaber::PropertyList *)&puStack_80)->~PropertyList();
       if (!bVar2) goto LAB_003f204c;
       uVar15 = (ulong)(uVar14 + 1);
       uVar9 = (DAT_007304b8 - mPrepList >> 3) * -0x3333333333333333;
@@ -1118,7 +1118,7 @@ switchD_003f1cd0_caseD_2:
     } while (uVar15 <= uVar9 && uVar9 - uVar15 != 0);
   }
   for (; lVar10 != lVar6; lVar6 = lVar6 + -0x28) {
-    Walaber::PropertyList::~PropertyList(lVar6 + -0x18);
+    ((Walaber::PropertyList *)lVar6 + -0x18)->~PropertyList();
   }
   mFlushMethod = 0;
   DAT_007304b8 = lVar10;

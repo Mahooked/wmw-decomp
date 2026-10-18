@@ -83,7 +83,7 @@ Walaber::Widget_ColorPicker::operator=(Walaber__Widget_ColorPicker *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,4,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,4,&uStack_30,&uStack_38,1,1);
   puVar2[0x23] = 0;
   puVar2[0x2a] = 0;
   puVar2[0x2b] = 0;
@@ -145,7 +145,7 @@ void Walaber::Widget_ColorPicker::init(long param_1)
   puVar3 = (undefined8 *)(ulong)(uint)p0;
   uStack_60 = *(undefined8 *)p2;
   uStack_68 = *(undefined8 *)(ulong)(uint)p3;
-  Walaber::Widget::Widget(puVar3,p1,4,&uStack_60,&uStack_68,1,1);
+  new ((void *)(puVar3)) Walaber::Widget(p1,4,&uStack_60,&uStack_68,1,1);
   *(int *)((long)puVar3 + 0xfc) = in_w5;
   *(int *)(puVar3 + 0x20) = p4;
   *(float *)((long)puVar3 + 0x114) = p5;
@@ -275,7 +275,7 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
 
 
 
-/* ok  address 0x37b39c  size 564 */Walaber::Widget_ColorPicker::Widget_ColorPicker(undefined4 param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,int param_6,int param_7,undefined4 param_8,long *param_9, long *param_10,long *param_11){
+/* ok  address 0x37b39c  size 564 */Walaber::Widget_ColorPicker::Widget_ColorPicker(undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,int param_6,int param_7,undefined4 param_8,long *param_9, long *param_10,long *param_11){
   uint uVar1;
   undefined4 *puVar3;
   int *piVar4;
@@ -290,11 +290,11 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
   
   uStack_70 = *param_4;
   uStack_78 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,4,&uStack_70,&uStack_78,1,1);
+  new ((void *)(param_2)) Walaber::Widget(param_3,4,&uStack_70,&uStack_78,1,1);
   *(int *)((long)param_2 + 0xfc) = param_7;
   *(int *)(param_2 + 0x20) = param_6;
   *(undefined4 *)(param_2 + 0x22) = param_8;
-  *(undefined4 *)((long)param_2 + 0x114) = param_1;
+  *(undefined4 *)((long)param_2 + 0x114) = this;
   param_2[0x23] = 0;
   *param_2 = &PTR__Widget_ColorPicker_0070ede8;
   lVar6 = *param_9;
@@ -379,15 +379,15 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
 
 
 /* ok  address 0x37b5d0  size 92 */Walaber::Widget_ColorPicker::~Widget_ColorPicker(){
-  *param_1 = &PTR__Widget_ColorPicker_0070ede8;
-  if ((void *)param_1[0x21] != (void *)0x0) {
-    operator delete[]((void *)param_1[0x21],param_2);
+  *this = &PTR__Widget_ColorPicker_0070ede8;
+  if ((void *)this[0x21] != (void *)0x0) {
+    operator delete[]((void *)this[0x21],param_2);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x32);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x2a);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x28);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x26);
-  Walaber::Widget::~Widget(param_1);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x32)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x2a)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x28)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x26)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -395,7 +395,7 @@ void Walaber::Widget_ColorPicker::_setupColorSwatches(long param_1)
 
 /* ok  address 0x37b62c  size 36 */Walaber::Widget_ColorPicker::~Widget_ColorPicker(){
   Walaber::Widget_ColorPicker::~Widget_ColorPicker();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -705,7 +705,7 @@ LAB_0037b98c:
     Walaber::Node::getWorldScale(&uStack_a0,p0);
     uStack_c8 = CONCAT44((float)p0[2].f_0x24 * uStack_a0._4_4_,fVar20 * fVar14);
     Walaber::SpriteBatch::drawQuad(uVar11);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
   }
   Walaber::Node::getWorldScale(&uStack_a0,p0);
   fVar10 = *(float *)&p0[5].f_0x0;
@@ -752,7 +752,7 @@ LAB_0037bb78:
             lStack_d8 = lVar2;
                     /* try { // try from 0037bb48 to 0037bb6b has its CatchHandler @ 0037be44 */
             Walaber::SpriteBatch::drawQuad(uVar11);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
+            ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d8)->~SharedPtr<Walaber::Texture>();
           }
           fVar10 = *(float *)&p0[5].f_0x0;
           if ((*(int *)&p0[5].field_0x10 == iVar7) && (iVar8 == *(int *)&p0[5].field_0xc)) {
@@ -780,7 +780,7 @@ LAB_0037bb78:
       uStack_e8 = uVar5;
                     /* try { // try from 0037bc38 to 0037bc53 has its CatchHandler @ 0037be24 */
       Walaber::SpriteBatch::drawQuad(uVar11);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_e8);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_e8)->~SharedPtr<Walaber::Texture>();
       goto LAB_0037bcb0;
     }
   }
@@ -813,7 +813,7 @@ LAB_0037bcb0:
     uStack_c0._4_4_ = (float)p0[7].f_0x1c;
                     /* try { // try from 0037bda0 to 0037bdc3 has its CatchHandler @ 0037be18 */
     Walaber::SpriteBatch::drawQuad(uVar11);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_f8)->~SharedPtr<Walaber::Texture>();
   }
   Walaber::Widget::draw(p0);
   return;

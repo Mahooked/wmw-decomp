@@ -18,12 +18,12 @@
   puVar2[4] = &PTR_handleEvent_00712ab0;
   *puVar2 = &PTR__WCScreen_00712a08;
                     /* try { // try from 004a17f4 to 004a17fb has its CatchHandler @ 004a1874 */
-  Walaber::SpriteBatch::SpriteBatch(puVar2 + 5);
+  new ((void *)(puVar2 + 5)) Walaber::SpriteBatch();
                     /* try { // try from 004a17fc to 004a1803 has its CatchHandler @ 004a1864 */
   uVar3 = operator new(0x90);
   uStack_50 = _sScreenSize;
                     /* try { // try from 004a1818 to 004a1823 has its CatchHandler @ 004a1854 */
-  Walaber::WidgetManager::WidgetManager(uVar3,puVar2 + 4,&uStack_50);
+  new ((void *)(uVar3)) Walaber::WidgetManager(puVar2 + 4,&uStack_50);
   puVar2[2] = uVar3;
   return;
 }
@@ -146,18 +146,18 @@ void WaterConcept::WCScreen::handleFocus(undefined8 param_1,long param_2,int par
 
 
 /* ok  address 0x4a4264  size 108 */WaterConcept::WCScreen::~WCScreen(){
-  void *p0;
+  void *this;
   
   *this = &PTR__WCScreen_00712a08;
   this[4] = &PTR_handleEvent_00712ab0;
                     /* try { // try from 004a4290 to 004a4293 has its CatchHandler @ 004a42bc */
   Walaber::WidgetManager::clearAndDestroyAllWidgets(this[2]);
-  p0 = (void *)this[2];
-  if (p0 != (void *)0x0) {
-    Walaber::WidgetManager::~WidgetManager(p0);
-    operator delete(p0);
+  this = (void *)this[2];
+  if (this != (void *)0x0) {
+    ((Walaber::WidgetManager *)this)->~WidgetManager();
+    operator delete(this);
   }
-  Walaber::SpriteBatch::~SpriteBatch(this + 5);
+  ((Walaber::SpriteBatch *)this + 5)->~SpriteBatch();
   return;
 }
 

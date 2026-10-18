@@ -82,7 +82,7 @@ Walaber__Widget_IconList * Walaber::Widget_IconList::operator=(Walaber__Widget_I
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,5,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,5,&uStack_30,&uStack_38,1,1);
   puVar2[0x21] = 0;
   puVar2[0x22] = 0;
   puVar2[0x20] = 0;
@@ -144,7 +144,7 @@ void Walaber::Widget_IconList::init(long param_1)
   fStack_58 = (float)p6 + (float)p6 + *(float *)(ulong)(uint)p3 * (float)p4 +
               (float)((p4 + -1) * in_w7);
   fStack_54 = (float)p5;
-  Walaber::Widget::Widget(puVar2,p1,5,&uStack_50,&fStack_58,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,5,&uStack_50,&fStack_58,1,1);
   puVar2[0x21] = 0;
   puVar2[0x22] = 0;
   puVar2[0x20] = 0;
@@ -176,7 +176,7 @@ void Walaber::Widget_IconList::init(long param_1)
 
 
 
-/* ok  address 0x37d410  size 492 */Walaber::Widget_IconList::Widget_IconList(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,float *param_4, int param_5,int param_6,int param_7,int param_8,long *param_9,long *param_10, long *param_11){
+/* ok  address 0x37d410  size 492 */Walaber::Widget_IconList::Widget_IconList(undefined8 param_2,undefined8 *param_3,float *param_4, int param_5,int param_6,int param_7,int param_8,long *param_9,long *param_10, long *param_11){
   long lVar2;
   long lVar3;
   long lVar4;
@@ -193,69 +193,69 @@ void Walaber::Widget_IconList::init(long param_1)
   fStack_78 = (float)param_7 + (float)param_7 + *param_4 * (float)param_5 +
               (float)((param_5 + -1) * param_8);
   fStack_74 = (float)param_6;
-  Walaber::Widget::Widget(param_1,param_2,5,&uStack_70,&fStack_78,1,1);
-  param_1[0x21] = 0;
-  param_1[0x22] = 0;
-  param_1[0x20] = 0;
-  *(int *)(param_1 + 0x23) = param_5;
-  *(int *)((long)param_1 + 0x11c) = param_7;
-  *param_1 = &PTR__Widget_IconList_0070f0b8;
-  *(int *)(param_1 + 0x24) = param_8;
-  *(undefined8 *)((long)param_1 + 0x124) = *(undefined8 *)param_4;
+  new ((void *)(this)) Walaber::Widget(param_2,5,&uStack_70,&fStack_78,1,1);
+  this[0x21] = 0;
+  this[0x22] = 0;
+  this[0x20] = 0;
+  *(int *)(this + 0x23) = param_5;
+  *(int *)((long)this + 0x11c) = param_7;
+  *this = &PTR__Widget_IconList_0070f0b8;
+  *(int *)(this + 0x24) = param_8;
+  *(undefined8 *)((long)this + 0x124) = *(undefined8 *)param_4;
   lVar4 = *param_9;
-  param_1[0x2a] = lVar4;
+  this[0x2a] = lVar4;
   piVar7 = (int *)param_9[1];
-  param_1[0x2b] = piVar7;
+  this[0x2b] = piVar7;
   if (lVar4 != 0) {
     *piVar7 = *piVar7 + 1;
   }
   lVar2 = *param_10;
-  param_1[0x2c] = lVar2;
+  this[0x2c] = lVar2;
   piVar5 = (int *)param_10[1];
-  param_1[0x2d] = piVar5;
+  this[0x2d] = piVar5;
   if (lVar2 != 0) {
     *piVar5 = *piVar5 + 1;
   }
   lVar3 = *param_11;
-  param_1[0x2e] = lVar3;
+  this[0x2e] = lVar3;
   piVar6 = (int *)param_11[1];
-  param_1[0x2f] = piVar6;
+  this[0x2f] = piVar6;
   if (lVar3 != 0) {
     *piVar6 = *piVar6 + 1;
   }
-  param_1[0x31] = 0;
-  param_1[0x30] = 0;
-  param_1[0x33] = 0;
-  param_1[0x32] = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  *(undefined8 *)((long)param_1 + 0x134) = 0;
-  *(undefined8 *)((long)param_1 + 300) = 0x3f66666600000000;
-  *(undefined4 *)((long)param_1 + 0x13c) = 0;
-  param_1[0x28] = 0xffffffffffffffff;
-  *(undefined1 *)(param_1 + 0x29) = 0;
-  param_1[0x36] = 0;
+  this[0x31] = 0;
+  this[0x30] = 0;
+  this[0x33] = 0;
+  this[0x32] = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  *(undefined8 *)((long)this + 0x134) = 0;
+  *(undefined8 *)((long)this + 300) = 0x3f66666600000000;
+  *(undefined4 *)((long)this + 0x13c) = 0;
+  this[0x28] = 0xffffffffffffffff;
+  *(undefined1 *)(this + 0x29) = 0;
+  this[0x36] = 0;
   if ((lVar4 != 0) && (*piVar7 != 0)) {
     uVar8 = *(undefined8 *)(lVar4 + 0x8c);
     uVar9 = *(undefined8 *)(lVar4 + 0x84);
-    param_1[0x30] = uVar8;
-    param_1[0x31] =
+    this[0x30] = uVar8;
+    this[0x31] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
   if ((lVar2 != 0) && (*piVar5 != 0)) {
     uVar8 = *(undefined8 *)(lVar2 + 0x8c);
     uVar9 = *(undefined8 *)(lVar2 + 0x84);
-    param_1[0x32] = uVar8;
-    param_1[0x33] =
+    this[0x32] = uVar8;
+    this[0x33] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
   if ((lVar3 != 0) && (*piVar6 != 0)) {
     uVar8 = *(undefined8 *)(lVar3 + 0x8c);
     uVar9 = *(undefined8 *)(lVar3 + 0x84);
-    param_1[0x34] = uVar8;
-    param_1[0x35] =
+    this[0x34] = uVar8;
+    this[0x35] =
          CONCAT44((float)((ulong)uVar9 >> 0x20) - (float)((ulong)uVar8 >> 0x20),
                   (float)uVar9 - (float)uVar8);
   }
@@ -266,11 +266,11 @@ void Walaber::Widget_IconList::init(long param_1)
 
 /* ok  address 0x37d5fc  size 80 */Walaber::Widget_IconList::~Widget_IconList(){
   *this = &PTR__Widget_IconList_0070f0b8;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x2e);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x2c);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x2a);
-  std::__ndk1::__vector_base<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>::~__vector_base(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x2e)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x2c)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x2a)->~SharedPtr<Walaber::Texture>();
+  ((std::__ndk1::__vector_base<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>> *)this + 0x20)->~__vector_base<Walaber::Widget_IconList::Icon, std::__ndk1::allocator<Walaber::Widget_IconList::Icon>>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -278,7 +278,7 @@ void Walaber::Widget_IconList::init(long param_1)
 
 /* ok  address 0x37d64c  size 36 */Walaber::Widget_IconList::~Widget_IconList(){
   Walaber::Widget_IconList::~Widget_IconList();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -302,7 +302,7 @@ void Walaber::Widget_IconList::clearIcons(long param_1)
     if ((*(byte *)(lVar2 + -0x20) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -0x10));
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(lVar2 + -0x30);
+    ((Walaber::SharedPtr<Walaber::Texture> *)lVar2 + -0x30)->~SharedPtr<Walaber::Texture>();
     lVar2 = lVar2 + -0x30;
   }
   *(long *)(param_1 + 0x108) = lVar1;
@@ -369,8 +369,8 @@ void Walaber::Widget_IconList::addIcon(long param_1,long *param_2,undefined4 par
       operator delete(pvStack_48);
     }
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_68);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_68)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
   lVar2 = *(long *)(param_1 + 0x100);
   lVar3 = *(long *)(param_1 + 0x108);
   iVar5 = *(int *)(param_1 + 0x118);
@@ -419,7 +419,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
   
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(abStack_80);
                     /* try { // try from 0037d9a4 to 0037d9b3 has its CatchHandler @ 0037db18 */
-  Walaber::Widget_IconList::Icon::Icon(&uStack_68,abStack_80,param_3);
+  new ((void *)(&uStack_68)) Walaber::Widget_IconList::Icon(abStack_80,param_3);
   plVar1 = *(long **)(param_1 + 0x108);
   if (plVar1 < *(long **)(param_1 + 0x110)) {
     *plVar1 = CONCAT44(fStack_64,uStack_68);
@@ -443,7 +443,7 @@ void Walaber::Widget_IconList::addIcon(long param_1,undefined8 param_2,undefined
       operator delete(pvStack_48);
     }
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_68);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_68)->~SharedPtr<Walaber::Texture>();
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -641,7 +641,7 @@ void Walaber::Widget_IconList::update(float p0,Walaber__Widget__WidgetActionRet 
       uStack_60 = CONCAT44((float)((ulong)*(undefined8 *)&p1[7].field_0x4 >> 0x20) * fStack_74 * 0.5
                            - (float)((ulong)uVar4 >> 0x20),
                            (float)*(undefined8 *)&p1[7].field_0x4 * fStack_78 * 0.5 - (float)uVar4);
-      Walaber::AABB::AABB(&fStack_78,&uStack_58,&uStack_60);
+      new ((void *)(&fStack_78)) Walaber::AABB(&uStack_58,&uStack_60);
       fVar13 = *(float *)&p1[0xf].field_0x8;
       Walaber::Node::getWorldScale(&fStack_50,p1);
       fVar8 = (float)p1[0xe].f_0x10;
@@ -802,7 +802,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
   uVar5 = (ulong)_fStack_e0 >> 0x20;
   fStack_e0 = fVar18 + (float)uVar25 + (float)uVar15 * (float)_fStack_e0 * 0.5;
   fStack_dc = (float)uVar10 + (float)((ulong)uVar25 >> 0x20) + (float)uVar21 * (float)uVar5 * 0.5;
-  Walaber::AABB::AABB(&fStack_c8,&uStack_110,&fStack_e0);
+  new ((void *)(&fStack_c8)) Walaber::AABB(&uStack_110,&fStack_e0);
   if ((p0[6].f_0x0 == 0) || (**(int **)&p0[6].field_0x8 == 0)) {
     uStack_110 = CONCAT44(fStack_bc - fStack_c4,fStack_c0 - fStack_c8);
     fStack_e0 = fStack_c8 + (fStack_c0 - fStack_c8) * 0.5;
@@ -837,7 +837,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
                           (float)uVar23 * uStack_110._4_4_ * 0.5 + (float)((ulong)uVar26 >> 0x20),
                           fVar18 + (float)uVar25 + (float)uVar17 * (float)uStack_110 * 0.5 +
                           (float)uVar26);
-    Walaber::AABB::AABB(&fStack_e0,&uStack_150,&uStack_110);
+    new ((void *)(&fStack_e0)) Walaber::AABB(&uStack_150,&uStack_110);
     uStack_f8 = p0[6].f_0x0;
     piStack_f0 = *(int **)&p0[6].field_0x8;
     if (uStack_f8 != 0) {
@@ -848,14 +848,14 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
                           fStack_e0 + (fStack_d8 - fStack_e0) * 0.5);
                     /* try { // try from 0037e168 to 0037e18b has its CatchHandler @ 0037e944 */
     Walaber::SpriteBatch::drawQuad(fVar13);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f8)->~SharedPtr<Walaber::Texture>();
   }
   piVar8 = (int *)((long)&p0[5].f_0x0 + 4);
   fVar18 = (float)*piVar8;
   uStack_110._0_4_ = fStack_c8 + fVar18;
   uStack_110._4_4_ = fStack_c4 + fVar18;
   uStack_150 = CONCAT44(fStack_bc - fVar18,fStack_c0 - fVar18);
-  Walaber::AABB::AABB(&fStack_e0,&uStack_110,&uStack_150);
+  new ((void *)(&fStack_e0)) Walaber::AABB(&uStack_110,&uStack_150);
   fVar30 = (float)p0[5].f_0x1c;
   Walaber::Node::getWorldScale(&uStack_110,p0);
   iVar6 = (int)(*(long *)&p0[4].f_0x28 - *(long *)&p0[4].f_0x20 >> 4) * -0x55555555;
@@ -877,7 +877,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
       fVar24 = fVar30 + uStack_110._4_4_ + *(float *)&p0[4].field_0x14;
       uStack_150 = CONCAT44(fVar24 - fVar28,fVar19 - fVar27);
       uStack_130 = CONCAT44(fVar24 + fVar28,fVar19 + fVar27);
-      Walaber::AABB::AABB(&uStack_110,&uStack_150,&uStack_130);
+      new ((void *)(&uStack_110)) Walaber::AABB(&uStack_150,&uStack_130);
       uVar5 = Walaber::AABB::intersects(&fStack_e0,&uStack_110);
       if ((uVar5 & 1) != 0) {
         lVar7 = *(long *)(*(long *)&p0[4].f_0x20 + lVar12);
@@ -891,9 +891,9 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
           Walaber::TextureManager::getTexture(&uStack_150,uVar25,*(long *)&p0[4].f_0x20 + lVar12 + 0x10,&uStack_120,0,0)
           ;
           Walaber::SharedPtr<Walaber::Texture>::operator=(*(long *)&p0[4].f_0x20 + lVar12,&uStack_150);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_150);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_120);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_130);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_150)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_120)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_130)->~SharedPtr<Walaber::Callback>();
           lVar7 = *(long *)(*(long *)&p0[4].f_0x20 + lVar12);
         }
         fVar19 = uStack_110._4_4_;
@@ -959,7 +959,7 @@ void Walaber::Widget_IconList::draw(Walaber__SpriteBatch *p0)
               lStack_160 = lVar7;
                     /* try { // try from 0037e584 to 0037e5a7 has its CatchHandler @ 0037e950 */
               Walaber::SpriteBatch::drawQuad(fVar13);
-              Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_160);
+              ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_160)->~SharedPtr<Walaber::Texture>();
               goto LAB_0037e5fc;
             }
           }
@@ -985,7 +985,7 @@ LAB_0037e5fc:
         uStack_e8 = CONCAT44(fVar27 + fVar24 * 0.5,(float)uStack_150 + fVar19 * 0.5);
                     /* try { // try from 0037e644 to 0037e667 has its CatchHandler @ 0037e974 */
         Walaber::SpriteBatch::drawQuad(fVar13);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_178);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_178)->~SharedPtr<Walaber::Texture>();
       }
       iVar11 = iVar11 + 1;
       if (iVar11 < (int)p0[5].f_0x0) {
@@ -1042,7 +1042,7 @@ LAB_0037e5fc:
       lStack_188 = lVar12;
                     /* try { // try from 0037e85c to 0037e87f has its CatchHandler @ 0037e938 */
       Walaber::SpriteBatch::drawQuad(fVar13);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_188);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_188)->~SharedPtr<Walaber::Texture>();
       goto LAB_0037e8e4;
     }
   }

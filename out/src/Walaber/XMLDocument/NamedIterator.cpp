@@ -36,10 +36,10 @@ void Walaber::XMLDocument::NamedIterator::operator++(long *param_1)
 
 
 
-/* ok  address 0x3d6388  size 20 */Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 *param_1,undefined8 param_2,undefined8 param_3){
-  *param_1 = param_2;
-  param_1[1] = param_2;
-  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_1 + 2,param_3);
+/* ok  address 0x3d6388  size 20 */Walaber::XMLDocument::NamedIterator::NamedIterator(undefined8 param_2,undefined8 param_3){
+  *this = param_2;
+  this[1] = param_2;
+  std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(this + 2,param_3);
   return;
 }
 

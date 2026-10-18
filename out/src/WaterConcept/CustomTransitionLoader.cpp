@@ -33,17 +33,17 @@ void WaterConcept::CustomTransitionLoader::init(void)
   *piVar4 = 3;
   puStack_78 = puVar3;
   puStack_48 = puVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar4 = *piVar4 + 1;
   puStack_68 = puVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_78);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_78)->~SharedPtr<Walaber::Callback>();
   *piVar4 = *piVar4 + 1;
                     /* try { // try from 005a34f0 to 005a34f7 has its CatchHandler @ 005a3538 */
   puStack_88 = puVar3;
   Walaber::TransitionLoader::addTransitionLoader(&puStack_88);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_68);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::CustomTransitionLoader>>::~SharedPtr(&puStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_68)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::CustomTransitionLoader>> *)&puStack_58)->~SharedPtr<Walaber::MemberCallback<WaterConcept::CustomTransitionLoader>>();
   return;
 }
 

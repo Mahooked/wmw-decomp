@@ -21,7 +21,7 @@
   if ((void *)this[0x1c] != (void *)0x0) {
     operator delete((void *)this[0x1c]);
   }
-  Walaber::Transition::~Transition(this);
+  ((Walaber::Transition *)this)->~Transition();
   return;
 }
 

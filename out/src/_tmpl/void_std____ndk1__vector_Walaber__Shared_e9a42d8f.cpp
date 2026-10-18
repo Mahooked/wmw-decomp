@@ -54,7 +54,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 00368ae8 to 00368af3 has its CatchHandler @ 00368b2c */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>();
   return;
 }
 
@@ -111,7 +111,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 0046cd54 to 0046cd5f has its CatchHandler @ 0046cd98 */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::Texture>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::Texture>>&>();
   return;
 }
 

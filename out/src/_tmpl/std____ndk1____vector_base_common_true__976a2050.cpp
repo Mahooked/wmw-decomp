@@ -16,7 +16,7 @@ void std::__ndk1::__vector_base_common<true>::__throw_length_error(void)
   
   puVar1 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 002c2a7c to 002c2a87 has its CatchHandler @ 002c2ab0 */
-  std::logic_error::logic_error(puVar1,"vector");
+  new ((void *)(puVar1)) std::logic_error("vector");
   *puVar1 = &PTR__logic_error_0071a298;
   __cxa_throw(puVar1,&length_error::typeinfo,logic_error::~logic_error);
   return;
@@ -37,7 +37,7 @@ void std::__ndk1::__vector_base_common<true>::__throw_out_of_range(void)
   
   puVar1 = (undefined8 *)__cxa_allocate_exception(0x10);
                     /* try { // try from 00395ddc to 00395de7 has its CatchHandler @ 00395e10 */
-  std::logic_error::logic_error(puVar1,"vector");
+  new ((void *)(puVar1)) std::logic_error("vector");
   *puVar1 = &PTR__logic_error_0071a2d8;
   __cxa_throw(puVar1,&out_of_range::typeinfo,logic_error::~logic_error);
   return;

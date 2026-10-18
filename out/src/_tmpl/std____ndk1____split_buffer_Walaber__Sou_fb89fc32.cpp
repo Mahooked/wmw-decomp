@@ -69,7 +69,7 @@ void std::__ndk1::
     if ((*(byte *)(lVar2 + -0x18) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -8));
     }
-    Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(lVar2 + -0x30);
+    ((Walaber::SharedPtr<Walaber::SoundResource> *)lVar2 + -0x30)->~SharedPtr<Walaber::SoundResource>();
     if ((*(byte *)(lVar2 + -0x48) & 1) != 0) {
       operator delete(*(void **)(lVar2 + -0x38));
     }

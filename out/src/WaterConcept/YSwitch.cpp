@@ -64,7 +64,7 @@ LAB_004617f0:
   
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x2;
-  WaterConcept::Spout::Spout(CONCAT44(in_register_00005004,p1),p0,&uStack_30,&uStack_38,0,4);
+  new ((void *)(CONCAT44(in_register_00005004,p1))) WaterConcept::Spout(p0,&uStack_30,&uStack_38,0,4);
   *(undefined ***)p0 = &PTR__YSwitch_007123a8;
   *(undefined1 *)((long)p0 + 0x505) = 1;
   *(undefined8 *)((long)p0 + 0x510) = 0xffffffff00000000;
@@ -87,8 +87,8 @@ LAB_004617f0:
 
 /* ok  address 0x49873c  size 56 */WaterConcept::YSwitch::~YSwitch(){
   *this = &PTR__YSwitch_007123a8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0xa9);
-  WaterConcept::Spout::~Spout(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0xa9)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::Spout *)this)->~Spout();
   return;
 }
 
@@ -96,8 +96,8 @@ LAB_004617f0:
 
 /* ok  address 0x498774  size 64 */WaterConcept::YSwitch::~YSwitch(){
   *this = &PTR__YSwitch_007123a8;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(this + 0xa9);
-  WaterConcept::Spout::~Spout(this);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0xa9)->~SharedPtr<Walaber::Callback>();
+  ((WaterConcept::Spout *)this)->~Spout();
   operator delete(this);
   return;
 }

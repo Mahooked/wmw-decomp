@@ -37,7 +37,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_ios
   *(undefined8 *)((long)param_1 + lVar1 + 0x50) = 0;
   *(undefined8 *)((long)param_1 + lVar1 + 0x38) = 0;
   *(undefined8 *)((long)param_1 + lVar1 + 0x40) = 0;
-  std::__ndk1::locale::locale((long)param_1 + lVar1 + 0x30);
+  new ((void *)((long)param_1 + lVar1 + 0x30)) std::__ndk1::locale();
   *(undefined8 *)((long)param_1 + lVar1 + 0x88) = 0;
   *(undefined4 *)((long)param_1 + lVar1 + 0x90) = 0xffffffff;
   lVar1 = param_2[3];
@@ -82,7 +82,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::basic_ios
   param_1[5] = 6;
   param_1[10] = 0;
   param_1[0xb] = 0;
-  std::__ndk1::locale::locale(param_1 + 9);
+  new ((void *)(param_1 + 9)) std::__ndk1::locale();
   param_1[0x14] = 0;
   *(undefined4 *)(param_1 + 0x15) = 0xffffffff;
   *param_1 = &PTR__basic_iostream_00716490;
@@ -116,7 +116,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
 void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_iostream(long param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base(param_1 + 0x18);
+  ((std::__ndk1::ios_base *)param_1 + 0x18)->~ios_base();
   return;
 }
 
@@ -132,7 +132,7 @@ void std::__ndk1::basic_iostream<char,std::__ndk1::char_traits<char>>::~basic_io
                (void *param_1)
 
 {
-  std::__ndk1::ios_base::~ios_base((long)param_1 + 0x18);
+  ((std::__ndk1::ios_base *)(long)param_1 + 0x18)->~ios_base();
   operator delete(param_1);
   return;
 }

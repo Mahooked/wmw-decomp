@@ -56,7 +56,7 @@ Walaber::Widget_FingerCatcher::operator=(Walaber__Widget_FingerCatcher *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0x11,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0x11,&uStack_30,&uStack_38,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = puVar2 + 0x24;
   puVar2[0x26] = puVar2 + 0x26;
@@ -77,7 +77,7 @@ Walaber::Widget_FingerCatcher::operator=(Walaber__Widget_FingerCatcher *p0)
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(this + 0x26);
   std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Vector2>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Vector2>>>::destroy(this + 0x23,this[0x24]);
   std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget_FingerCatcher::CaughtFingerInfo>>>::destroy(this + 0x20,this[0x21]);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -85,7 +85,7 @@ Walaber::Widget_FingerCatcher::operator=(Walaber__Widget_FingerCatcher *p0)
 
 /* ok  address 0x37c0fc  size 36 */Walaber::Widget_FingerCatcher::~Widget_FingerCatcher(){
   Walaber::Widget_FingerCatcher::~Widget_FingerCatcher();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

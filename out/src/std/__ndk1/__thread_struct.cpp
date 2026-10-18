@@ -20,12 +20,12 @@
 
 
 /* ok  address 0x5f0178  size 56 */std::__ndk1::__thread_struct::~__thread_struct(){
-  void *p0;
+  void *this;
   
-  p0 = (void *)*this;
-  if (p0 != (void *)0x0) {
-    __thread_local_data(p0);
-    operator delete(p0);
+  this = (void *)*this;
+  if (this != (void *)0x0) {
+    __thread_local_data(this);
+    operator delete(this);
     return;
   }
   return;

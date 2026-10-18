@@ -21,7 +21,7 @@ void std::__ndk1::__deque_base<_xmlNode*,std::__ndk1::allocator<_xmlNode*>>::~__
   for (puVar2 = *(undefined8 **)(param_1 + 8); puVar2 != puVar1; puVar2 = puVar2 + 1) {
     operator delete((void *)*puVar2);
   }
-  std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>>::~__split_buffer(param_1);
+  ((std::__ndk1::__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>> *)param_1)->~__split_buffer<_xmlNode**, std::__ndk1::allocator<_xmlNode**>>();
   return;
 }
 

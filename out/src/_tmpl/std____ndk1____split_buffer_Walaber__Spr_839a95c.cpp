@@ -119,7 +119,7 @@ void std::__ndk1::
       pWStack_78 = pWVar8;
       pWStack_70 = pWVar7;
       pWStack_68 = pWVar5;
-      std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>::~__split_buffer(&pWStack_80);
+      ((std::__ndk1::__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&> *)&pWStack_80)->~__split_buffer<Walaber::SpriteAnimationTrack::SpriteAnimationEvent, std::__ndk1::allocator<Walaber::SpriteAnimationTrack::SpriteAnimationEvent>&>();
       pWVar8 = p0[2];
     }
     else {

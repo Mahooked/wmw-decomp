@@ -92,7 +92,7 @@ Walaber::Widget_ScrollableGroup::operator=(Walaber__Widget_ScrollableGroup *p0)
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_40 = *(undefined8 *)p2;
   uStack_48 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,0xf,&uStack_40,&uStack_48,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,0xf,&uStack_40,&uStack_48,1,1);
   *puVar2 = &PTR__Widget_ScrollableGroup_0070f928;
   *(undefined8 *)((long)puVar2 + 0x14c) = 0;
   puVar2[0x2b] = 0;
@@ -150,16 +150,16 @@ void Walaber::Widget_ScrollableGroup::init(long param_1)
 
 
 /* ok  address 0x3874c4  size 68 */Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(){
-  void *p0;
+  void *this;
   
-  p0 = (void *)this[0x30];
+  this = (void *)this[0x30];
   this[0x22] = 0;
   *this = &PTR__Widget_ScrollableGroup_0070f928;
-  if (p0 != (void *)0x0) {
-    this[0x31] = p0;
-    operator delete(p0);
+  if (this != (void *)0x0) {
+    this[0x31] = this;
+    operator delete(this);
   }
-  Walaber::Widget::~Widget(this);
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -167,7 +167,7 @@ void Walaber::Widget_ScrollableGroup::init(long param_1)
 
 /* ok  address 0x387508  size 36 */Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup(){
   Walaber::Widget_ScrollableGroup::~Widget_ScrollableGroup();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

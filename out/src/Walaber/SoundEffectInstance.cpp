@@ -3,7 +3,7 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x34c8a4  size 124 */Walaber::SoundEffectInstance::SoundEffectInstance(undefined4 param_1,undefined8 *param_2,long *param_3,undefined8 param_4, undefined8 param_5){
+/* ok  address 0x34c8a4  size 124 */Walaber::SoundEffectInstance::SoundEffectInstance(undefined8 *param_2,long *param_3,undefined8 param_4, undefined8 param_5){
   int *piVar1;
   long lVar2;
   
@@ -17,7 +17,7 @@
   }
   param_2[3] = 0;
   param_2[4] = param_4;
-  *(undefined4 *)((long)param_2 + 0x2c) = param_1;
+  *(undefined4 *)((long)param_2 + 0x2c) = this;
                     /* try { // try from 0034c8f4 to 0034c8fb has its CatchHandler @ 0034c90c */
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(param_2 + 6,param_5);
   *(undefined1 *)(param_2 + 9) = 0;
@@ -44,7 +44,7 @@
   if ((*(byte *)(this + 6) & 1) != 0) {
     operator delete((void *)this[8]);
   }
-  Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr(this + 1);
+  ((Walaber::SharedPtr<Walaber::SoundResource> *)this + 1)->~SharedPtr<Walaber::SoundResource>();
   return;
 }
 
@@ -70,7 +70,7 @@ void Walaber::SoundEffectInstance::stop(long param_1)
 
 /* ok  address 0x34ca64  size 36 */Walaber::SoundEffectInstance::~SoundEffectInstance(){
   Walaber::SoundEffectInstance::~SoundEffectInstance();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

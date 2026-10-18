@@ -29,7 +29,7 @@ void std::__ndk1::
     param_1[2] = 0;
     while (p0 != param_1) {
       plVar3 = (long *)p0[1];
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(p0 + 0xb);
+      ((Walaber::SharedPtr<Walaber::Callback> *)p0 + 0xb)->~SharedPtr<Walaber::Callback>();
       if ((*(byte *)(p0 + 8) & 1) != 0) {
         operator delete((void *)p0[10]);
       }

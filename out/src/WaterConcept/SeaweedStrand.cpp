@@ -8,7 +8,7 @@
   *this = 0x53f800000;
   this[2] = 0;
   this[1] = 0x439600003e4ccccd;
-  Walaber::ParticleSet::ParticleSet(this + 4);
+  new ((void *)(this + 4)) Walaber::ParticleSet();
   this[0x11] = 0;
   this[0x12] = 0;
   *(undefined4 *)(this + 0x10) = 0x3f6b851f;
@@ -22,11 +22,11 @@
 
 
 /* ok  address 0x443170  size 52 */WaterConcept::SeaweedStrand::~SeaweedStrand(){
-  if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
-    operator delete[](*(void **)(param_1 + 0xa8),param_2);
+  if (*(void **)(this + 0xa8) != (void *)0x0) {
+    operator delete[](*(void **)(this + 0xa8),param_2);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x88);
-  Walaber::ParticleSet::~ParticleSet(param_1 + 0x20);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x88)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::ParticleSet *)this + 0x20)->~ParticleSet();
   return;
 }
 

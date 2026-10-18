@@ -137,8 +137,8 @@ void Walaber::Transition_Slide::_setupRenderTextureBuffer(long param_1)
                     /* try { // try from 003f6090 to 003f60a3 has its CatchHandler @ 003f60bc */
   glDeleteFramebuffersOES(1,(long)this + 0xc4);
   glDeleteTextures(1,this + 0x19);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x21);
-  Walaber::Transition::~Transition(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x21)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Transition *)this)->~Transition();
   return;
 }
 
@@ -275,9 +275,9 @@ void Walaber::Transition_Slide::setup(float p0,Walaber__PropertyList *p1)
                     /* try { // try from 003f62a0 to 003f62bb has its CatchHandler @ 003f6444 */
     Walaber::TextureManager::getTexture(auStack_58,uVar5,&bStack_70,&uStack_80,0,0);
     Walaber::SharedPtr<Walaber::Texture>::operator=(p1 + 0xb,auStack_58);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_58);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_58)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_90)->~SharedPtr<Walaber::Callback>();
     if ((bStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }

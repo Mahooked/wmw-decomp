@@ -27,8 +27,8 @@ void Walaber::RibbonParticleSet<10>::~RibbonParticleSet(undefined8 *param_1,ulon
   if ((void *)param_1[0xb] != (void *)0x0) {
     operator delete[]((void *)param_1[0xb],param_2);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0xc);
-  Walaber::VerletIntegrator::~VerletIntegrator(param_1 + 8);
+  ((Walaber::SharedPtr<Walaber::Callback> *)param_1 + 0xc)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::VerletIntegrator *)param_1 + 8)->~VerletIntegrator();
   std::__ndk1::__list_imp<int, std::__ndk1::allocator<int>>::clear(param_1 + 3);
   p0 = (void *)*param_1;
   if (p0 != (void *)0x0) {
@@ -72,7 +72,7 @@ void Walaber::RibbonParticleSet<10>::RibbonParticleSet(uint p0, uint in_w1)
   *(long **)(uVar1 + 0x18) = plVar8;
   *(long **)(uVar1 + 0x20) = plVar8;
                     /* try { // try from 0044b4b4 to 0044b4bb has its CatchHandler @ 0044b580 */
-  Walaber::VerletIntegrator::VerletIntegrator(uVar1 + 0x40);
+  new ((void *)(uVar1 + 0x40)) Walaber::VerletIntegrator();
   *(undefined8 *)(uVar1 + 0x60) = 0;
   *(undefined8 *)(uVar1 + 0x68) = 0;
   if (in_w1 != 0) {
@@ -251,7 +251,7 @@ void Walaber::RibbonParticleSet<10>::drawParticles
                     /* try { // try from 004537d4 to 004537ef has its CatchHandler @ 00453c50 */
         Walaber::SpriteBatch::drawQuad(*(float *)(lVar20 + 0x50) * 0.017453292,param_2,param_5,&lStack_c0,
                         &fStack_c8,lVar20 + 0x20,param_4,0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
       }
       else {
         lVar13 = lVar20 + uVar23 * 0xd0;
@@ -407,7 +407,7 @@ LAB_00453b08:
         }
                     /* try { // try from 00453bc4 to 00453bdb has its CatchHandler @ 00453c44 */
         Walaber::SpriteBatch::drawVerts(param_2,param_5,&lStack_d8,iVar15,0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d8)->~SharedPtr<Walaber::Texture>();
       }
     }
     lVar21 = lVar21 + 0xd0;

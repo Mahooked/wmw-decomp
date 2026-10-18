@@ -29,7 +29,7 @@ void std::__ndk1::
           operator delete(*(void **)((long)pvVar2 + -8));
         }
         pvVar3 = (void *)((long)pvVar2 + -0x48);
-        Walaber::SharedPtr<Walaber::SoundResource>::~SharedPtr((long)pvVar2 + -0x30);
+        ((Walaber::SharedPtr<Walaber::SoundResource> *)(long)pvVar2 + -0x30)->~SharedPtr<Walaber::SoundResource>();
         if ((*(byte *)((long)pvVar2 + -0x48) & 1) != 0) {
           operator delete(*(void **)((long)pvVar2 + -0x38));
         }

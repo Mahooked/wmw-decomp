@@ -4,9 +4,9 @@
    resolved from PLT imports by tools/resolve_refs.py */
 
 /* ok  address 0x4a1710  size 128 */WaterConcept::Screen_Achievements::Screen_Achievements(){
-  WaterConcept::WCScreen::WCScreen(this,0x12);
+  new ((void *)(this)) WaterConcept::WCScreen(0x12);
                     /* try { // try from 004a172c to 004a1733 has its CatchHandler @ 004a177c */
-  Walaber::MessageReceiver::MessageReceiver(this + 0x12,0x10);
+  new ((void *)(this + 0x12)) Walaber::MessageReceiver(0x10);
   *this = &PTR__Screen_Achievements_00712878;
   this[4] = &PTR_handleEvent_00712930;
   this[0x12] = &PTR__Screen_Achievements_00712950;
@@ -21,14 +21,14 @@
   *this = &PTR__Screen_Achievements_00712878;
   this[4] = &PTR_handleEvent_00712930;
   this[0x12] = &PTR__Screen_Achievements_00712950;
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1d);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1a);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x17);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x1d)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x1a)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x17)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   if ((void *)this[0x14] != (void *)0x0) {
     operator delete((void *)this[0x14]);
   }
-  Walaber::MessageReceiver::~MessageReceiver(this + 0x12);
-  WaterConcept::WCScreen::~WCScreen(this);
+  ((Walaber::MessageReceiver *)this + 0x12)->~MessageReceiver();
+  ((WaterConcept::WCScreen *)this)->~WCScreen();
   return;
 }
 
@@ -36,7 +36,7 @@
 
 /* ok  address 0x4a18f8  size 36 */WaterConcept::Screen_Achievements::~Screen_Achievements(){
   WaterConcept::Screen_Achievements::~Screen_Achievements();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -80,7 +80,7 @@ void WaterConcept::Screen_Achievements::enter(long param_1)
   
   ppuStack_60 = &PTR__Message_0070cdc8;
   uStack_58 = 0xa00000010;
-  Walaber::PropertyList::PropertyList(auStack_50);
+  new ((void *)(auStack_50)) Walaber::PropertyList();
   abStack_78[7] = 0;
   abStack_78[8] = 0;
   abStack_78[9] = 0;
@@ -118,10 +118,10 @@ void WaterConcept::Screen_Achievements::enter(long param_1)
   abStack_b0[7] = 0x69;
   abStack_b0[8] = 0x65;
                     /* try { // try from 004a19e4 to 004a19ef has its CatchHandler @ 004a1bec */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 004a19f0 to 004a19ff has its CatchHandler @ 004a1bdc */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
@@ -165,10 +165,10 @@ void WaterConcept::Screen_Achievements::enter(long param_1)
   abStack_78[8] = 0x69;
   abStack_b0[5] = 0;
                     /* try { // try from 004a1a70 to 004a1a7b has its CatchHandler @ 004a1bd8 */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 004a1a7c to 004a1a8b has its CatchHandler @ 004a1bd4 */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
@@ -212,10 +212,10 @@ void WaterConcept::Screen_Achievements::enter(long param_1)
   abStack_b0[8] = 0x61;
   uStack_9f = 0x73746e;
                     /* try { // try from 004a1b08 to 004a1b13 has its CatchHandler @ 004a1bd0 */
-  Walaber::Property::Property(auStack_98,abStack_b0);
+  new ((void *)(auStack_98)) Walaber::Property(abStack_b0);
                     /* try { // try from 004a1b14 to 004a1b23 has its CatchHandler @ 004a1bcc */
   Walaber::PropertyList::setValueForKey(auStack_50,abStack_78,auStack_98);
-  Walaber::Property::~Property(auStack_98);
+  ((Walaber::Property *)auStack_98)->~Property();
   if ((abStack_b0[0] & 1) != 0) {
     operator delete((void *)CONCAT35(uStack_9b,CONCAT41(uStack_9f,abStack_b0[0x10])));
   }
@@ -226,7 +226,7 @@ void WaterConcept::Screen_Achievements::enter(long param_1)
   uVar2 = Walaber::BroadcastManager::getInstancePtr();
   Walaber::BroadcastManager::messageTx(uVar2,&ppuStack_60);
   ppuStack_60 = &PTR__Message_0070cdc8;
-  Walaber::PropertyList::~PropertyList(auStack_50);
+  ((Walaber::PropertyList *)auStack_50)->~PropertyList();
   *(undefined4 *)(param_1 + 0x104) = 0;
   WaterConcept::Screen_Achievements::_buildUI(param_1);
   lVar3 = Walaber::SoundManager::getInstancePtr();
@@ -276,18 +276,18 @@ void WaterConcept::Screen_Achievements::_buildUI(long param_1)
   puStack_90 = puVar2;
   puStack_48 = puVar2;
   piStack_40 = piVar3;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_48);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_48)->~SharedPtr<Walaber::Callback>();
   *piVar3 = *piVar3 + 1;
   puStack_80 = puVar2;
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
   uVar4 = *(undefined8 *)(param_1 + 0x10);
   *piVar3 = *piVar3 + 1;
                     /* try { // try from 004a1d14 to 004a1d1f has its CatchHandler @ 004a1d70 */
   puStack_a0 = puVar2;
   Walaber::WidgetHelper::loadWidgetsXML(auStack_60,uVar4,&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a0);
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_80);
-  Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_Achievements>>::~SharedPtr(&puStack_70);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a0)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_80)->~SharedPtr<Walaber::Callback>();
+  ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_Achievements>> *)&puStack_70)->~SharedPtr<Walaber::MemberCallback<WaterConcept::Screen_Achievements>>();
   if ((auStack_60[0] & 1) != 0) {
     operator delete(pcStack_50);
   }
@@ -418,7 +418,7 @@ void WaterConcept::Screen_Achievements::handleEvent
     abStack_70[0xd] = 0;
     abStack_70[0xe] = 0;
     abStack_70[0xf] = 0;
-    Walaber::PropertyList::PropertyList(pbVar8);
+    new ((void *)(pbVar8)) Walaber::PropertyList();
                     /* try { // try from 004a1ee4 to 004a1eef has its CatchHandler @ 004a23b8 */
     Walaber::BroadcastManager::messageTx(uVar7,abStack_70);
     abStack_70[0] = bVar3;
@@ -499,7 +499,7 @@ void WaterConcept::Screen_Achievements::handleEvent
            (iVar5 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance),
            iVar5 != 0)) {
                     /* try { // try from 004a228c to 004a2297 has its CatchHandler @ 004a22c8 */
-          Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+          new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
           __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                        &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
           __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
@@ -532,7 +532,7 @@ void WaterConcept::Screen_Achievements::handleEvent
     }
     if ((char)plVar6[0x20] != '\0') goto LAB_004a2254;
     *(undefined1 *)(plVar6 + 0x20) = 1;
-    Walaber::PropertyList::PropertyList(abStack_88);
+    new ((void *)(abStack_88)) Walaber::PropertyList();
     abStack_a0[0xe] = 0;
     abStack_a0[0xf] = 0;
     pvStack_90 = (void *)0x0;
@@ -551,10 +551,10 @@ void WaterConcept::Screen_Achievements::handleEvent
     abStack_a0[8] = 0x65;
     abStack_a0[0xd] = 0;
                     /* try { // try from 004a1f58 to 004a1f63 has its CatchHandler @ 004a2394 */
-    Walaber::Property::Property(abStack_70,0);
+    new ((void *)(abStack_70)) Walaber::Property(0);
                     /* try { // try from 004a1f64 to 004a1f73 has its CatchHandler @ 004a2384 */
     Walaber::PropertyList::setValueForKey(abStack_88,abStack_a0,abStack_70);
-    Walaber::Property::~Property(abStack_70);
+    ((Walaber::Property *)abStack_70)->~Property();
     if ((abStack_a0[0] & 1) != 0) {
       operator delete(pvStack_90);
     }
@@ -580,10 +580,10 @@ void WaterConcept::Screen_Achievements::handleEvent
                     /* try { // try from 004a1fc4 to 004a1fcf has its CatchHandler @ 004a2368 */
     Walaber::TextManager::getString(abStack_b8,abStack_d0);
                     /* try { // try from 004a1fd0 to 004a1fdb has its CatchHandler @ 004a2350 */
-    Walaber::Property::Property(abStack_70,abStack_b8);
+    new ((void *)(abStack_70)) Walaber::Property(abStack_b8);
                     /* try { // try from 004a1fdc to 004a1feb has its CatchHandler @ 004a2340 */
     Walaber::PropertyList::setValueForKey(abStack_88,abStack_a0,abStack_70);
-    Walaber::Property::~Property(abStack_70);
+    ((Walaber::Property *)abStack_70)->~Property();
     if ((abStack_b8[0] & 1) != 0) {
       operator delete(pvStack_a8);
     }
@@ -612,10 +612,10 @@ void WaterConcept::Screen_Achievements::handleEvent
     abStack_a0[4] = 0x79;
     abStack_a0[5] = 0;
                     /* try { // try from 004a2054 to 004a205b has its CatchHandler @ 004a233c */
-    Walaber::Property::Property(abStack_70,plVar6[0x1a] + uVar10 * 0x18);
+    new ((void *)(abStack_70)) Walaber::Property(plVar6[0x1a] + uVar10 * 0x18);
                     /* try { // try from 004a205c to 004a206b has its CatchHandler @ 004a2338 */
     Walaber::PropertyList::setValueForKey(abStack_88,abStack_a0,abStack_70);
-    Walaber::Property::~Property(abStack_70);
+    ((Walaber::Property *)abStack_70)->~Property();
     if ((abStack_a0[0] & 1) != 0) {
       operator delete(pvStack_90);
     }
@@ -639,10 +639,10 @@ void WaterConcept::Screen_Achievements::handleEvent
       abStack_a0[5] = 0x65;
       abStack_a0[6] = 0;
                     /* try { // try from 004a20d4 to 004a20db has its CatchHandler @ 004a22e0 */
-      Walaber::Property::Property(abStack_70,plVar6[0x1d] + uVar10 * 0x18);
+      new ((void *)(abStack_70)) Walaber::Property(plVar6[0x1d] + uVar10 * 0x18);
                     /* try { // try from 004a20dc to 004a20eb has its CatchHandler @ 004a22dc */
       Walaber::PropertyList::setValueForKey(abStack_88,abStack_a0,abStack_70);
-      Walaber::Property::~Property(abStack_70);
+      ((Walaber::Property *)abStack_70)->~Property();
       if ((abStack_a0[0] & 1) != 0) {
         operator delete(pvStack_90);
       }
@@ -652,7 +652,7 @@ void WaterConcept::Screen_Achievements::handleEvent
     Walaber::ScreenManager::commitScreenChanges();
     pbVar8 = abStack_88;
   }
-  Walaber::PropertyList::~PropertyList(pbVar8);
+  ((Walaber::PropertyList *)pbVar8)->~PropertyList();
 LAB_004a2254:
   return;
 }
@@ -840,7 +840,7 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
        (iVar25 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar25 != 0
        )) {
                     /* try { // try from 004a3a18 to 004a3a23 has its CatchHandler @ 004a3ab4 */
-      Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+      new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
       __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                    &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
       __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
@@ -884,11 +884,11 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           *piStack_150 = *piStack_150 + 1;
         }
                     /* try { // try from 004a284c to 004a2867 has its CatchHandler @ 004a3c60 */
-        Walaber::Widget_PushButton::Widget_PushButton(plVar35,iVar3,&fStack_c0,&uStack_c8,&lStack_d8,0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d8);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_158);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_e8);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+        new ((void *)(plVar35)) Walaber::Widget_PushButton(iVar3,&fStack_c0,&uStack_c8,&lStack_d8,0);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d8)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_158)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_e8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
         if (((ulong)uStack_2c0 & 1) != 0) {
           operator delete(apcStack_2b0[0]);
         }
@@ -920,11 +920,11 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           *piStack_150 = *piStack_150 + 1;
         }
                     /* try { // try from 004a294c to 004a295f has its CatchHandler @ 004a3cb0 */
-        Walaber::Widget_Label::Widget_Label(plVar36,iVar45 + -200,&uStack_b8,&uStack_f0,&lStack_100);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_100);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_158);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_110);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+        new ((void *)(plVar36)) Walaber::Widget_Label(iVar45 + -200,&uStack_b8,&uStack_f0,&lStack_100);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_100)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_158)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_110)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
         if (((ulong)uStack_2c0 & 1) != 0) {
           operator delete(apcStack_2b0[0]);
         }
@@ -956,11 +956,11 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           *piStack_150 = *piStack_150 + 1;
         }
                     /* try { // try from 004a2a4c to 004a2a5f has its CatchHandler @ 004a3d00 */
-        Walaber::Widget_Label::Widget_Label(plVar37,iVar45 + -100,&uStack_b8,&uStack_f0,&lStack_120);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_158);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_130);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+        new ((void *)(plVar37)) Walaber::Widget_Label(iVar45 + -100,&uStack_b8,&uStack_f0,&lStack_120);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_158)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_130)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
         if (((ulong)uStack_2c0 & 1) != 0) {
           operator delete(apcStack_2b0[0]);
         }
@@ -999,8 +999,8 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
         if (((ulong)uStack_2c0 & 1) != 0) {
           operator delete(apcStack_2b0[0]);
         }
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_140);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_248);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_140)->~SharedPtr<Walaber::Texture>();
+        ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_248)->~SharedPtr<Walaber::Texture>();
         Walaber::Logger::printf(&DAT_0061d37e,2,"Creating achievement %d/%d",iVar45 - 0x12dU,iVar25);
         uVar39 = rand();
         if ((uVar39 & 1) == 0) {
@@ -1029,10 +1029,10 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
             }
                     /* try { // try from 004a2cb0 to 004a2cbb has its CatchHandler @ 004a3b44 */
             Walaber::Widget_Label::setBGTexture(plVar36,&lStack_170);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_170);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_158);
-            Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_180);
-            Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+            ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_170)->~SharedPtr<Walaber::Texture>();
+            ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_158)->~SharedPtr<Walaber::Texture>();
+            ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_180)->~SharedPtr<Walaber::Callback>();
+            ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
             if (((ulong)uStack_2c0 & 1) != 0) {
               operator delete(apcStack_2b0[0]);
             }
@@ -1086,10 +1086,10 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
             }
                     /* try { // try from 004a2ed8 to 004a2ee3 has its CatchHandler @ 004a3b68 */
             Walaber::Widget_Label::setBGTexture(plVar36,&lStack_1a0);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_1a0);
-            Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&fStack_158);
-            Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1b0);
-            Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+            ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_1a0)->~SharedPtr<Walaber::Texture>();
+            ((Walaber::SharedPtr<Walaber::Texture> *)&fStack_158)->~SharedPtr<Walaber::Texture>();
+            ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1b0)->~SharedPtr<Walaber::Callback>();
+            ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
             if (((ulong)uStack_2c0 & 1) != 0) {
               operator delete(apcStack_2b0[0]);
             }
@@ -1136,7 +1136,7 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
        (iVar25 = __cxa_guard_acquire(&Walaber::AchievementManager::getInstancePtr()::instance), iVar25 != 0
        )) {
                     /* try { // try from 004a3a68 to 004a3a73 has its CatchHandler @ 004a3ab0 */
-      Walaber::AchievementManager::AchievementManager(&Walaber::AchievementManager::getInstancePtr()::instance);
+      new ((void *)(&Walaber::AchievementManager::getInstancePtr()::instance)) Walaber::AchievementManager();
       __cxa_atexit(Walaber::AchievementManager::~AchievementManager,
                    &Walaber::AchievementManager::getInstancePtr()::instance,&PTR_LOOP_00728000);
       __cxa_guard_release(&Walaber::AchievementManager::getInstancePtr()::instance);
@@ -1165,10 +1165,10 @@ void WaterConcept::Screen_Achievements::_finishedLoadingWidgets(void *p0, int * 
           Walaber::SharedPtr<Walaber::Texture>::operator=(lVar28 + 0x100,&ppuStack_1c0);
                     /* try { // try from 004a3258 to 004a325f has its CatchHandler @ 004a3ba8 */
           Walaber::Widget_PushButton::_applyTile(lVar28);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&ppuStack_1c0);
-          Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_2c0);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_1d0);
-          Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_248);
+          ((Walaber::SharedPtr<Walaber::Texture> *)&ppuStack_1c0)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_2c0)->~SharedPtr<Walaber::Texture>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_1d0)->~SharedPtr<Walaber::Callback>();
+          ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_248)->~SharedPtr<Walaber::Callback>();
           uStack_2c0 = (undefined **)CONCAT71(uStack_2c0._1_7_,1);
                     /* try { // try from 004a3288 to 004a3293 has its CatchHandler @ 004a3be0 */
           std::__ndk1::vector<bool, std::__ndk1::allocator<bool>>::push_back((long)p0 + 0xa0,&uStack_2c0);
@@ -1417,7 +1417,7 @@ LAB_004a33ac:
     uStack_280 = CONCAT44(DAT_0072d884 + 0.0,Walaber::ScreenCoord::sScreenSize + 0.0);
     uStack_278 = CONCAT44(DAT_0072d884 * 0.5 + 0.0,Walaber::ScreenCoord::sScreenSize * 0.5 + 0.0);
                     /* try { // try from 004a38c0 to 004a38cf has its CatchHandler @ 004a3ae4 */
-    Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup(lVar27,0x3e9,&uStack_278,&uStack_280);
+    new ((void *)(lVar27)) Walaber::Widget_ScrollableGroup(0x3e9,&uStack_278,&uStack_280);
                     /* try { // try from 004a38d4 to 004a390f has its CatchHandler @ 004a3c10 */
     uVar26 = Walaber::WidgetManager::getWidget(*puVar43,1000);
     Walaber::Widget_ScrollableGroup::setGroup(lVar27,uVar26);
@@ -1437,12 +1437,12 @@ LAB_004a33ac:
     uStack_2c0 = &PTR__Message_0070cdc8;
     piStack_2b8 = (int *)0x6600000010;
                     /* try { // try from 004a3998 to 004a399f has its CatchHandler @ 004a3ae0 */
-    Walaber::PropertyList::PropertyList(apcStack_2b0);
+    new ((void *)(apcStack_2b0)) Walaber::PropertyList();
                     /* try { // try from 004a39a0 to 004a39ab has its CatchHandler @ 004a3ac8 */
     Walaber::BroadcastManager::messageTx(uVar26,&uStack_2c0);
     uStack_2c0 = &PTR__Message_0070cdc8;
-    Walaber::PropertyList::~PropertyList(apcStack_2b0);
-    std::__ndk1::__vector_base<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>::~__vector_base(&fStack_158);
+    ((Walaber::PropertyList *)apcStack_2b0)->~PropertyList();
+    ((std::__ndk1::__vector_base<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>> *)&fStack_158)->~__vector_base<Walaber::Achievement, std::__ndk1::allocator<Walaber::Achievement>>();
   }
   return;
 }
@@ -1538,16 +1538,16 @@ void WaterConcept::Screen_Achievements::backKeyPressed(long param_1)
     *(undefined1 *)(param_1 + 0xc) = 1;
     Walaber::ScreenManager::popAllScreens();
     Walaber::ScreenManager::pushScreen(5);
-    Walaber::PropertyList::PropertyList(auStack_40);
+    new ((void *)(auStack_40)) Walaber::PropertyList();
                     /* try { // try from 004a401c to 004a4023 has its CatchHandler @ 004a409c */
-    Walaber::Property::Property(0x3dcccccd,auStack_60);
+    new ((void *)(0x3dcccccd)) Walaber::Property(auStack_60);
                     /* try { // try from 004a4024 to 004a4037 has its CatchHandler @ 004a408c */
     Walaber::PropertyList::setValueForKey(auStack_40,&Walaber::Transition::tk_pauseLength,auStack_60);
-    Walaber::Property::~Property(auStack_60);
+    ((Walaber::Property *)auStack_60)->~Property();
                     /* try { // try from 004a4040 to 004a405f has its CatchHandler @ 004a40a0 */
     WaterConcept::GameSettings::setStandardFadeProperties(auStack_40);
     Walaber::ScreenManager::commitScreenChanges(0x3f000000,1,auStack_40);
-    Walaber::PropertyList::~PropertyList(auStack_40);
+    ((Walaber::PropertyList *)auStack_40)->~PropertyList();
   }
   return;
 }

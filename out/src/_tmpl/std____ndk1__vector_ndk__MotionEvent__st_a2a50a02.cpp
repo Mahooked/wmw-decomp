@@ -110,13 +110,13 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
     std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>::__split_buffer(auStack_60,uVar3,lVar1);
     do {
                     /* try { // try from 002c663c to 002c663f has its CatchHandler @ 002c669c */
-      ndk::MotionEvent::MotionEvent(lStack_50);
+      new ((void *)(lStack_50)) ndk::MotionEvent();
       in_x1 = in_x1 - 1;
       lStack_50 = lStack_50 + 0x80;
     } while (in_x1 != 0);
                     /* try { // try from 002c6654 to 002c665f has its CatchHandler @ 002c6698 */
     std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::__swap_out_circular_buffer(p0,auStack_60);
-    std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>::~__split_buffer(auStack_60);
+    ((std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&> *)auStack_60)->~__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>();
   }
   else {
     do {

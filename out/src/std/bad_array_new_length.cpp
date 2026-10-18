@@ -11,7 +11,7 @@
 
 
 /* ok  address 0x5f4fb0  size 4 */std::bad_array_new_length::~bad_array_new_length(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

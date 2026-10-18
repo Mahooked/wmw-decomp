@@ -67,7 +67,7 @@ std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::Fluid
         lVar11 = param_3 + lVar9 * 0x71c71c71c71c71c7;
         lVar9 = lVar6;
         do {
-          Walaber::BaseParticle::BaseParticle(lVar9,param_4);
+          new ((void *)(lVar9)) Walaber::BaseParticle(param_4);
           lVar5 = 0;
           do {
             *(undefined8 *)(lVar9 + 0x38 + lVar5) = *(undefined8 *)((long)param_4 + lVar5 + 0x38);
@@ -146,7 +146,7 @@ void std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
   pWVar4 = p1 + ((long)puVar6 - in_x3);
   puVar1 = puVar6;
   for (pWVar3 = pWVar4; pWVar3 < p2; pWVar3 = pWVar3 + 0x90) {
-    Walaber::BaseParticle::BaseParticle(puVar1,pWVar3);
+    new ((void *)(puVar1)) Walaber::BaseParticle(pWVar3);
     lVar2 = 0x38;
     do {
       *(undefined8 *)((long)puVar1 + lVar2) = *(undefined8 *)(pWVar3 + lVar2);
@@ -216,7 +216,7 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
   lVar4 = lVar3;
   lVar6 = param_3;
   while (lVar5 != lVar6) {
-    Walaber::BaseParticle::BaseParticle(lVar4 + -0x90,lVar6 + -0x90);
+    new ((void *)(lVar4 + -0x90)) Walaber::BaseParticle(lVar6 + -0x90);
     lVar2 = -0x58;
     do {
       *(undefined8 *)(lVar4 + lVar2) = *(undefined8 *)(lVar6 + lVar2);
@@ -235,7 +235,7 @@ long std::__ndk1::vector<Walaber::FluidParticle,std::__ndk1::allocator<Walaber::
   if (lVar6 != param_3) {
     lVar4 = param_2[2];
     do {
-      Walaber::BaseParticle::BaseParticle(lVar4,param_3);
+      new ((void *)(lVar4)) Walaber::BaseParticle(param_3);
       lVar5 = 0x38;
       do {
         *(undefined8 *)(lVar4 + lVar5) = *(undefined8 *)(param_3 + lVar5);

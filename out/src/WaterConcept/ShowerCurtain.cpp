@@ -3,29 +3,29 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x443aec  size 100 */WaterConcept::ShowerCurtain::ShowerCurtain(long param_1){
-  *(undefined4 *)(param_1 + 0x10) = 0x41200000;
-  *(undefined8 *)(param_1 + 0x14) = 0x700000005;
-  Walaber::ParticleSet::ParticleSet(param_1 + 0x20);
-  *(undefined8 *)(param_1 + 0x88) = 0;
-  *(undefined8 *)(param_1 + 0x90) = 0;
-  *(undefined4 *)(param_1 + 0x80) = 0x3f666666;
-  *(undefined8 *)(param_1 + 0x78) = 0x44960000;
-  *(undefined8 *)(param_1 + 0x98) = 0x600000003;
-  *(undefined8 *)(param_1 + 0xa8) = 0;
+/* ok  address 0x443aec  size 100 */WaterConcept::ShowerCurtain::ShowerCurtain(){
+  *(undefined4 *)(this + 0x10) = 0x41200000;
+  *(undefined8 *)(this + 0x14) = 0x700000005;
+  new ((void *)(this + 0x20)) Walaber::ParticleSet();
+  *(undefined8 *)(this + 0x88) = 0;
+  *(undefined8 *)(this + 0x90) = 0;
+  *(undefined4 *)(this + 0x80) = 0x3f666666;
+  *(undefined8 *)(this + 0x78) = 0x44960000;
+  *(undefined8 *)(this + 0x98) = 0x600000003;
+  *(undefined8 *)(this + 0xa8) = 0;
   return;
 }
 
 
 
 /* ok  address 0x443b50  size 88 */WaterConcept::ShowerCurtain::~ShowerCurtain(){
-  if (*(void **)(param_1 + 0xa8) != (void *)0x0) {
-    operator delete[](*(void **)(param_1 + 0xa8),param_2);
+  if (*(void **)(this + 0xa8) != (void *)0x0) {
+    operator delete[](*(void **)(this + 0xa8),param_2);
   }
                     /* try { // try from 00443b6c to 00443b73 has its CatchHandler @ 00443b8c */
-  Walaber::ValueTweaker::removeMappingsForOwner(param_1);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x88);
-  Walaber::ParticleSet::~ParticleSet(param_1 + 0x20);
+  Walaber::ValueTweaker::removeMappingsForOwner(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x88)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::ParticleSet *)this + 0x20)->~ParticleSet();
   return;
 }
 

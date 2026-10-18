@@ -12,7 +12,7 @@
   puVar2 = (undefined8 *)(ulong)(uint)p0;
   uStack_30 = *(undefined8 *)p2;
   uStack_38 = *in_x3;
-  Walaber::Widget::Widget(puVar2,p1,9,&uStack_30,&uStack_38,1,1);
+  new ((void *)(puVar2)) Walaber::Widget(p1,9,&uStack_30,&uStack_38,1,1);
   puVar2[0x22] = 0;
   puVar2[0x23] = 0;
   puVar2[0x20] = 0;
@@ -60,7 +60,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
 
 
 
-/* ok  address 0x382928  size 504 */Walaber::Widget_ProgressBar::Widget_ProgressBar(float param_1,undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8){
+/* ok  address 0x382928  size 504 */Walaber::Widget_ProgressBar::Widget_ProgressBar(undefined8 *param_2,undefined8 param_3,undefined8 *param_4, undefined8 *param_5,long *param_6,long *param_7,undefined4 param_8){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -71,7 +71,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
   
   uStack_68 = *param_4;
   uStack_70 = *param_5;
-  Walaber::Widget::Widget(param_2,param_3,9,&uStack_68,&uStack_70,1,1);
+  new ((void *)(param_2)) Walaber::Widget(param_3,9,&uStack_68,&uStack_70,1,1);
   *param_2 = &PTR__Widget_ProgressBar_0070f568;
   lVar3 = *param_6;
   param_2[0x20] = lVar3;
@@ -114,9 +114,9 @@ void Walaber::Widget_ProgressBar::init(long param_1)
                   (float)uVar5 - (float)uVar4);
   }
   param_2[0x2a] =
-       CONCAT44(1.0 - ((float)((ulong)param_2[0x12] >> 0x20) * auStack_60._4_4_ * param_1) /
+       CONCAT44(1.0 - ((float)((ulong)param_2[0x12] >> 0x20) * auStack_60._4_4_ * this) /
                       (float)((ulong)*param_5 >> 0x20),
-                1.0 - ((float)param_2[0x12] * auStack_60._0_4_ * param_1) / (float)*param_5);
+                1.0 - ((float)param_2[0x12] * auStack_60._0_4_ * this) / (float)*param_5);
   lVar3 = *param_7;
   if ((lVar3 != 0) && (*(int *)param_7[1] != 0)) {
     uVar4 = *(undefined8 *)(lVar3 + 0x8c);
@@ -131,7 +131,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
 
 
 
-/* ok  address 0x382b20  size 496 */Walaber::Widget_ProgressBar::Widget_ProgressBar(undefined8 param_1,undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 *param_5,undefined8 param_6,undefined8 *param_7,undefined8 *param_8, long *param_9,long *param_10,undefined4 param_11){
+/* ok  address 0x382b20  size 496 */Walaber::Widget_ProgressBar::Widget_ProgressBar(undefined8 param_2,undefined8 param_3,undefined8 param_4, undefined8 *param_5,undefined8 param_6,undefined8 *param_7,undefined8 *param_8, long *param_9,long *param_10,undefined4 param_11){
   int *piVar2;
   long lVar3;
   undefined8 uVar4;
@@ -141,7 +141,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
   
   uStack_70 = *param_7;
   uStack_78 = *param_8;
-  Walaber::Widget::Widget(param_5,param_6,9,&uStack_70,&uStack_78,1,1);
+  new ((void *)(param_5)) Walaber::Widget(param_6,9,&uStack_70,&uStack_78,1,1);
   *param_5 = &PTR__Widget_ProgressBar_0070f568;
   lVar3 = *param_9;
   param_5[0x20] = lVar3;
@@ -191,7 +191,7 @@ void Walaber::Widget_ProgressBar::init(long param_1)
                   (float)uVar5 - (float)uVar4);
   }
                     /* try { // try from 00382c94 to 00382cb7 has its CatchHandler @ 00382cec */
-  Walaber::Widget_ProgressBar::setPadding(param_1,param_2,param_3,param_4,param_5);
+  Walaber::Widget_ProgressBar::setPadding(this,param_2,param_3,param_4,param_5);
   Walaber::Widget_ProgressBar::updateValue(0,param_5);
   return;
 }
@@ -275,9 +275,9 @@ void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 /* ok  address 0x382f14  size 64 */Walaber::Widget_ProgressBar::~Widget_ProgressBar(){
   *this = &PTR__Widget_ProgressBar_0070f568;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x22);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(this + 0x20);
-  Walaber::Widget::~Widget(this);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x22)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x20)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::Widget *)this)->~Widget();
   return;
 }
 
@@ -285,7 +285,7 @@ void Walaber::Widget_ProgressBar::updateValue(float p0)
 
 /* ok  address 0x382f54  size 36 */Walaber::Widget_ProgressBar::~Widget_ProgressBar(){
   Walaber::Widget_ProgressBar::~Widget_ProgressBar();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 
@@ -373,7 +373,7 @@ void Walaber::Widget_ProgressBar::draw(Walaber__SpriteBatch *p0)
   fStack_90 = fVar4 * fVar3;
   fStack_8c = (float)p0[2].f_0x24 * uStack_a0._4_4_;
   Walaber::SpriteBatch::drawQuad(uVar2);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_80);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_80)->~SharedPtr<Walaber::Texture>();
   uStack_98._0_4_ = p0[5].f_0x20;
   uStack_98._4_4_ = p0[5].f_0x24;
   uStack_a0._0_4_ = (float)p0[5].f_0x18;
@@ -402,7 +402,7 @@ LAB_003830bc:
                     /* try { // try from 00383110 to 0038316b has its CatchHandler @ 003831c4 */
   Walaber::Node::getWorldScale(&fStack_70,p0);
   Walaber::SpriteBatch::drawQuad(uVar2);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_b0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_b0)->~SharedPtr<Walaber::Texture>();
   Walaber::Widget::draw(p0);
   return;
 }

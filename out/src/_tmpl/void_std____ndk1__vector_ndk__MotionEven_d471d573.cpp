@@ -95,7 +95,7 @@ void std::__ndk1::vector<ndk::MotionEvent,std::__ndk1::allocator<ndk::MotionEven
   puStack_50 = puStack_50 + 0x10;
                     /* try { // try from 002c6d04 to 002c6d0f has its CatchHandler @ 002c6d48 */
   std::__ndk1::vector<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&> *)auStack_60)->~__split_buffer<ndk::MotionEvent, std::__ndk1::allocator<ndk::MotionEvent>&>();
   return;
 }
 

@@ -81,7 +81,7 @@ void std::__ndk1::
   *(undefined8 *)(p0 + 0x10) = uStack_48;
   puStack_58 = puStack_60;
   uStack_48 = uVar10;
-  std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>::~__split_buffer(&puStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&> *)&puStack_60)->~__split_buffer<WaterConcept::InteractiveObject::SpriteInfo, std::__ndk1::allocator<WaterConcept::InteractiveObject::SpriteInfo>&>();
   return;
 }
 

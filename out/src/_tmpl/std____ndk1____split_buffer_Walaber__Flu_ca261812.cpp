@@ -68,7 +68,7 @@ void std::__ndk1::
   
   lVar2 = *(long *)(p0 + 0x10);
   do {
-    Walaber::BaseParticle::BaseParticle(lVar2);
+    new ((void *)(lVar2)) Walaber::BaseParticle();
     lVar1 = 0;
     do {
       *(undefined8 *)(lVar2 + 0x38 + lVar1) = *(undefined8 *)(in_x2 + 0x38 + lVar1);

@@ -82,7 +82,7 @@ void WaterConcept::GameState::reset(long param_1)
     uStack_40 = *(undefined8 *)(param_1 + 200);
     *(undefined8 *)(param_1 + 200) = 0;
     *(undefined8 *)(param_1 + 0xd0) = 0;
-    Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_40);
+    ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&uStack_40)->~SharedPtr<Walaber::SoundEffectInstance>();
   }
   if (*(long *)(param_1 + 0xa8) != 0) {
     Walaber::SoundEffectInstance::stop();
@@ -90,68 +90,68 @@ void WaterConcept::GameState::reset(long param_1)
     uStack_40 = *(undefined8 *)(param_1 + 0xa8);
     *(undefined8 *)(param_1 + 0xa8) = 0;
     *(undefined8 *)(param_1 + 0xb0) = 0;
-    Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(&uStack_40);
+    ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)&uStack_40)->~SharedPtr<Walaber::SoundEffectInstance>();
   }
   return;
 }
 
 
 
-/* ok  address 0x429ae8  size 780 */WaterConcept::GameState::GameState(long param_1,long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5){
+/* ok  address 0x429ae8  size 780 */WaterConcept::GameState::GameState(long param_2,undefined4 param_3,undefined8 param_4,undefined8 param_5){
   ulong uVar2;
   void *pvStack_98;
   void *pvStack_80;
   
-  *(undefined1 *)(param_1 + 0x90) = 0;
-  memset(param_1,0,0x78);
-  *(undefined8 *)(param_1 + 0xf0) = 0;
-  *(undefined8 *)(param_1 + 0xb0) = 0;
-  *(undefined8 *)(param_1 + 0xa8) = 0;
-  *(undefined8 *)(param_1 + 0xc0) = 0;
-  *(undefined8 *)(param_1 + 0xb8) = 0;
-  *(undefined8 *)(param_1 + 0xd0) = 0;
-  *(undefined8 *)(param_1 + 200) = 0;
-  *(undefined8 *)(param_1 + 0xdc) = 0xbf80000000000000;
-  *(undefined1 *)(param_1 + 0xd8) = 1;
-  *(long *)(param_1 + 0x108) = param_1 + 0x110;
-  *(undefined8 *)(param_1 + 0x9c) = 0;
-  *(undefined8 *)(param_1 + 0x94) = 0;
-  *(undefined8 *)(param_1 + 0xe4) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x100) = 0;
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0x118) = 0;
-  *(undefined8 *)(param_1 + 0x110) = 0;
-  *(undefined8 *)(param_1 + 0x128) = 0;
-  *(undefined8 *)(param_1 + 0x120) = 0;
-  *(undefined8 *)(param_1 + 0x148) = 0;
-  *(undefined8 *)(param_1 + 0x140) = 0;
-  *(undefined4 *)(param_1 + 0x150) = 0xffffffff;
-  *(long *)(param_1 + 0x170) = param_1 + 0x178;
-  *(long *)(param_1 + 0x1b8) = param_1 + 0x1c0;
-  *(undefined8 *)(param_1 + 0x15a) = 0;
-  *(undefined8 *)(param_1 + 0x154) = 0;
-  *(undefined8 *)(param_1 + 0x164) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0x180) = 0;
-  *(undefined8 *)(param_1 + 0x178) = 0;
-  *(undefined8 *)(param_1 + 0x1c8) = 0;
-  *(undefined8 *)(param_1 + 0x1c0) = 0;
-  *(undefined8 *)(param_1 + 0x1b0) = 0;
-  *(undefined8 *)(param_1 + 0x1a8) = 0;
-  *(undefined8 *)(param_1 + 0x1a0) = 0;
-  *(undefined8 *)(param_1 + 0x198) = 0;
-  *(undefined8 *)(param_1 + 400) = 0;
-  *(undefined8 *)(param_1 + 0x188) = 0;
-  *(undefined4 *)(param_1 + 0x1d4) = 0;
-  *(undefined8 *)(param_1 + 0x130) = 0;
-  *(undefined8 **)(param_1 + 0x138) = (undefined8 *)(param_1 + 0x140);
-  *(long *)(param_1 + 0x78) = param_2;
-  *(undefined8 *)(param_1 + 0x80) = *(undefined8 *)(param_2 + 0x440);
+  *(undefined1 *)(this + 0x90) = 0;
+  memset(this,0,0x78);
+  *(undefined8 *)(this + 0xf0) = 0;
+  *(undefined8 *)(this + 0xb0) = 0;
+  *(undefined8 *)(this + 0xa8) = 0;
+  *(undefined8 *)(this + 0xc0) = 0;
+  *(undefined8 *)(this + 0xb8) = 0;
+  *(undefined8 *)(this + 0xd0) = 0;
+  *(undefined8 *)(this + 200) = 0;
+  *(undefined8 *)(this + 0xdc) = 0xbf80000000000000;
+  *(undefined1 *)(this + 0xd8) = 1;
+  *(long *)(this + 0x108) = this + 0x110;
+  *(undefined8 *)(this + 0x9c) = 0;
+  *(undefined8 *)(this + 0x94) = 0;
+  *(undefined8 *)(this + 0xe4) = 0xffffffff;
+  *(undefined8 *)(this + 0x100) = 0;
+  *(undefined8 *)(this + 0xf8) = 0;
+  *(undefined8 *)(this + 0x118) = 0;
+  *(undefined8 *)(this + 0x110) = 0;
+  *(undefined8 *)(this + 0x128) = 0;
+  *(undefined8 *)(this + 0x120) = 0;
+  *(undefined8 *)(this + 0x148) = 0;
+  *(undefined8 *)(this + 0x140) = 0;
+  *(undefined4 *)(this + 0x150) = 0xffffffff;
+  *(long *)(this + 0x170) = this + 0x178;
+  *(long *)(this + 0x1b8) = this + 0x1c0;
+  *(undefined8 *)(this + 0x15a) = 0;
+  *(undefined8 *)(this + 0x154) = 0;
+  *(undefined8 *)(this + 0x164) = 0xffffffff;
+  *(undefined8 *)(this + 0x180) = 0;
+  *(undefined8 *)(this + 0x178) = 0;
+  *(undefined8 *)(this + 0x1c8) = 0;
+  *(undefined8 *)(this + 0x1c0) = 0;
+  *(undefined8 *)(this + 0x1b0) = 0;
+  *(undefined8 *)(this + 0x1a8) = 0;
+  *(undefined8 *)(this + 0x1a0) = 0;
+  *(undefined8 *)(this + 0x198) = 0;
+  *(undefined8 *)(this + 400) = 0;
+  *(undefined8 *)(this + 0x188) = 0;
+  *(undefined4 *)(this + 0x1d4) = 0;
+  *(undefined8 *)(this + 0x130) = 0;
+  *(undefined8 **)(this + 0x138) = (undefined8 *)(this + 0x140);
+  *(long *)(this + 0x78) = param_2;
+  *(undefined8 *)(this + 0x80) = *(undefined8 *)(param_2 + 0x440);
                     /* try { // try from 00429bec to 00429bf7 has its CatchHandler @ 00429d20 */
   std::__ndk1::vector<WaterConcept::Spout*, std::__ndk1::allocator<WaterConcept::Spout*>>::vector(&pvStack_80,param_4);
                     /* try { // try from 00429bf8 to 00429c03 has its CatchHandler @ 00429d08 */
   std::__ndk1::vector<WaterConcept::StarSeed*, std::__ndk1::allocator<WaterConcept::StarSeed*>>::vector(&pvStack_98,param_5);
                     /* try { // try from 00429c04 to 00429c17 has its CatchHandler @ 00429cec */
-  WaterConcept::GameState::init(param_1,param_3,&pvStack_80,&pvStack_98);
+  WaterConcept::GameState::init(this,param_3,&pvStack_80,&pvStack_98);
   if (pvStack_98 != (void *)0x0) {
     operator delete(pvStack_98);
   }
@@ -162,15 +162,15 @@ void WaterConcept::GameState::reset(long param_1)
   do {
     printf("Fluid type #%i (3 props:)\n",uVar2 & 0xffffffff);
     printf(" 1 -> Converter of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x510) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x510) + uVar2));
     printf(" 2 -> Touch spout of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x518) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x518) + uVar2));
     printf(" 3 -> Infinite spout of type: %i\n",
-                 *(undefined1 *)(*(long *)(*(long *)(param_1 + 0x78) + 0x518) + uVar2));
+                 *(undefined1 *)(*(long *)(*(long *)(this + 0x78) + 0x518) + uVar2));
     uVar2 = uVar2 + 1;
   } while (uVar2 != 5);
                     /* try { // try from 00429cb0 to 00429cb7 has its CatchHandler @ 00429d20 */
-  WaterConcept::GameState::reset(param_1);
+  WaterConcept::GameState::reset(this);
   return;
 }
 
@@ -349,7 +349,7 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
        ) {
       *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
     }
-    Walaber::PropertyList::PropertyList(&uStack_a8);
+    new ((void *)(&uStack_a8)) Walaber::PropertyList();
     if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
                     /* try { // try from 0042a8cc to 0042a90b has its CatchHandler @ 0042aea8 */
       puVar5 = (undefined8 *)operator new(0x28);
@@ -363,13 +363,13 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
       if (puStack_d8 != (undefined8 *)0x0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042a948 to 0042a94b has its CatchHandler @ 0042ae60 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_e8 = puStack_c8;
@@ -378,9 +378,9 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       }
                     /* try { // try from 0042a964 to 0042a973 has its CatchHandler @ 0042ae54 */
       Walaber::SoundManager::newSoundFromGroup(uVar6,0x15,&puStack_e8,&uStack_a8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
-      Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_b8)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
     }
     if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
                     /* try { // try from 0042a9a0 to 0042a9df has its CatchHandler @ 0042aea4 */
@@ -396,11 +396,11 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
       piStack_c0 = piVar7;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042aa18 to 0042aa1b has its CatchHandler @ 0042ae50 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_f8 = puStack_c8;
@@ -411,9 +411,9 @@ void WaterConcept::GameState::init(ulong *param_1,undefined4 param_2,long *param
       Walaber::SoundManager::newSoundFromGroup(uVar6,0x14,&puStack_f8,&uStack_a8);
       ppuVar8 = &puStack_f8;
 LAB_0042add0:
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(ppuVar8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
-      Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)ppuVar8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_b8)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
     }
     break;
   case 2:
@@ -529,7 +529,7 @@ LAB_0042add0:
        ) {
       *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
     }
-    Walaber::PropertyList::PropertyList(&uStack_a8);
+    new ((void *)(&uStack_a8)) Walaber::PropertyList();
     if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
                     /* try { // try from 0042ac54 to 0042ac93 has its CatchHandler @ 0042aea0 */
       puVar5 = (undefined8 *)operator new(0x28);
@@ -543,13 +543,13 @@ LAB_0042add0:
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
       if (puStack_d8 != (undefined8 *)0x0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042acd0 to 0042acd3 has its CatchHandler @ 0042ae40 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_108 = puStack_c8;
@@ -558,9 +558,9 @@ LAB_0042add0:
       }
                     /* try { // try from 0042acec to 0042acfb has its CatchHandler @ 0042ae34 */
       Walaber::SoundManager::newSoundFromGroup(uVar6,0x15,&puStack_108,&uStack_a8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_108);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
-      Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_108)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_b8)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
     }
     if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
                     /* try { // try from 0042ad28 to 0042ad67 has its CatchHandler @ 0042ae9c */
@@ -576,11 +576,11 @@ LAB_0042add0:
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
       piStack_c0 = piVar7;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042ada0 to 0042ada3 has its CatchHandler @ 0042ae30 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_118 = puStack_c8;
@@ -786,7 +786,7 @@ LAB_0042a07c:
        ) {
       *(int *)((long)param_1 + 0xe4) = (int)(param_1[0xd] - param_1[0xc] >> 3) * -0x55555555;
     }
-    Walaber::PropertyList::PropertyList(&uStack_a8);
+    new ((void *)(&uStack_a8)) Walaber::PropertyList();
     if ((param_1[0x15] == 0) || (*(int *)param_1[0x16] == 0)) {
                     /* try { // try from 0042a3b0 to 0042a3ef has its CatchHandler @ 0042aeb0 */
       puVar5 = (undefined8 *)operator new(0x28);
@@ -800,13 +800,13 @@ LAB_0042a07c:
       *piStack_d0 = 3;
       puStack_d8 = puVar5;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       puStack_c8 = puStack_d8;
       piStack_c0 = piStack_d0;
       if (puStack_d8 != (undefined8 *)0x0) {
         *piStack_d0 = *piStack_d0 + 1;
       }
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042a42c to 0042a42f has its CatchHandler @ 0042ae84 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_128 = puStack_c8;
@@ -815,9 +815,9 @@ LAB_0042a07c:
       }
                     /* try { // try from 0042a448 to 0042a457 has its CatchHandler @ 0042ae74 */
       Walaber::SoundManager::newSoundFromGroup(uVar6,0xfe9,&puStack_128,&uStack_a8);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_128);
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
-      Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_b8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_128)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
+      ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_b8)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
     }
     if ((param_1[0x17] == 0) || (*(int *)param_1[0x18] == 0)) {
                     /* try { // try from 0042a484 to 0042a4c3 has its CatchHandler @ 0042aeac */
@@ -833,11 +833,11 @@ LAB_0042a07c:
       puStack_d8 = puVar5;
       piStack_d0 = piVar7;
       puStack_90 = puVar5;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_90);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_90)->~SharedPtr<Walaber::Callback>();
       *piVar7 = *piVar7 + 1;
       puStack_c8 = puVar5;
       piStack_c0 = piVar7;
-      Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+      ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042a4fc to 0042a4ff has its CatchHandler @ 0042ae70 */
       uVar6 = Walaber::SoundManager::getInstancePtr();
       puStack_138 = puStack_c8;
@@ -853,72 +853,72 @@ LAB_0042a07c:
   default:
     goto switchD_00429e9c_default;
   }
-  Walaber::PropertyList::~PropertyList(&uStack_a8);
+  ((Walaber::PropertyList *)&uStack_a8)->~PropertyList();
 switchD_00429e9c_default:
   return;
 }
 
 
 
-/* ok  address 0x42afcc  size 636 */WaterConcept::GameState::GameState(undefined8 *param_1,undefined8 param_2,undefined8 *param_3,undefined8 *param_4, undefined8 *param_5,undefined8 *param_6){
-  *(undefined1 *)(param_1 + 0x12) = 0;
-  memset(param_1,0,0x78);
-  param_1[0x16] = 0;
-  param_1[0x15] = 0;
-  param_1[0x18] = 0;
-  param_1[0x17] = 0;
-  param_1[0x1a] = 0;
-  param_1[0x19] = 0;
-  *(undefined8 *)((long)param_1 + 0xdc) = 0xbf80000000000000;
-  *(undefined1 *)(param_1 + 0x1b) = 1;
-  *(undefined8 *)((long)param_1 + 0x9c) = 0;
-  *(undefined8 *)((long)param_1 + 0x94) = 0;
-  *(undefined8 *)((long)param_1 + 0xe4) = 0xffffffff;
-  param_1[0x1e] = 0;
-  param_1[0x21] = param_1 + 0x22;
-  param_1[0x26] = 0;
-  param_1[0x27] = param_1 + 0x28;
-  *(undefined4 *)(param_1 + 0x2a) = 0xffffffff;
-  param_1[0x20] = 0;
-  param_1[0x1f] = 0;
-  param_1[0x23] = 0;
-  param_1[0x22] = 0;
-  param_1[0x25] = 0;
-  param_1[0x24] = 0;
-  param_1[0x29] = 0;
-  param_1[0x28] = 0;
-  *(undefined8 *)((long)param_1 + 0x15a) = 0;
-  *(undefined8 *)((long)param_1 + 0x154) = 0;
-  *(undefined8 *)((long)param_1 + 0x164) = 0xffffffff;
-  param_1[0x30] = 0;
-  param_1[0x2f] = 0;
-  param_1[0x2e] = param_1 + 0x2f;
-  param_1[0x39] = 0;
-  param_1[0x38] = 0;
-  param_1[0x36] = 0;
-  param_1[0x35] = 0;
-  param_1[0x34] = 0;
-  param_1[0x33] = 0;
-  param_1[0x32] = 0;
-  param_1[0x31] = 0;
-  param_1[0x37] = param_1 + 0x38;
-  *(undefined4 *)((long)param_1 + 0x1d4) = 0;
-  param_1[0xf] = param_2;
-  if (param_1 != param_3) {
+/* ok  address 0x42afcc  size 636 */WaterConcept::GameState::GameState(undefined8 param_2,undefined8 *param_3,undefined8 *param_4, undefined8 *param_5,undefined8 *param_6){
+  *(undefined1 *)(this + 0x12) = 0;
+  memset(this,0,0x78);
+  this[0x16] = 0;
+  this[0x15] = 0;
+  this[0x18] = 0;
+  this[0x17] = 0;
+  this[0x1a] = 0;
+  this[0x19] = 0;
+  *(undefined8 *)((long)this + 0xdc) = 0xbf80000000000000;
+  *(undefined1 *)(this + 0x1b) = 1;
+  *(undefined8 *)((long)this + 0x9c) = 0;
+  *(undefined8 *)((long)this + 0x94) = 0;
+  *(undefined8 *)((long)this + 0xe4) = 0xffffffff;
+  this[0x1e] = 0;
+  this[0x21] = this + 0x22;
+  this[0x26] = 0;
+  this[0x27] = this + 0x28;
+  *(undefined4 *)(this + 0x2a) = 0xffffffff;
+  this[0x20] = 0;
+  this[0x1f] = 0;
+  this[0x23] = 0;
+  this[0x22] = 0;
+  this[0x25] = 0;
+  this[0x24] = 0;
+  this[0x29] = 0;
+  this[0x28] = 0;
+  *(undefined8 *)((long)this + 0x15a) = 0;
+  *(undefined8 *)((long)this + 0x154) = 0;
+  *(undefined8 *)((long)this + 0x164) = 0xffffffff;
+  this[0x30] = 0;
+  this[0x2f] = 0;
+  this[0x2e] = this + 0x2f;
+  this[0x39] = 0;
+  this[0x38] = 0;
+  this[0x36] = 0;
+  this[0x35] = 0;
+  this[0x34] = 0;
+  this[0x33] = 0;
+  this[0x32] = 0;
+  this[0x31] = 0;
+  this[0x37] = this + 0x38;
+  *(undefined4 *)((long)this + 0x1d4) = 0;
+  this[0xf] = param_2;
+  if (this != param_3) {
                     /* try { // try from 0042b10c to 0042b163 has its CatchHandler @ 0042b184 */
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConceptConstants::FluidType*>::value&&is_constructible<WaterConceptConstants::FluidType, std::__ndk1::iterator_traits<WaterConceptConstants::FluidType*>::reference>::value, void>::type std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(param_1,*param_3,param_3[1]);
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConceptConstants::FluidType*>::value&&is_constructible<WaterConceptConstants::FluidType, std::__ndk1::iterator_traits<WaterConceptConstants::FluidType*>::reference>::value, void>::type std::__ndk1::vector<WaterConceptConstants::FluidType, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::assign<WaterConceptConstants::FluidType*>(this,*param_3,param_3[1]);
   }
-  if (param_1 + 6 != param_4) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::Goal*>::value&&is_constructible<WaterConcept::GameState::Goal, std::__ndk1::iterator_traits<WaterConcept::GameState::Goal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(param_1 + 6,*param_4,param_4[1]);
+  if (this + 6 != param_4) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::Goal*>::value&&is_constructible<WaterConcept::GameState::Goal, std::__ndk1::iterator_traits<WaterConcept::GameState::Goal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::Goal, std::__ndk1::allocator<WaterConcept::GameState::Goal>>::assign<WaterConcept::GameState::Goal*>(this + 6,*param_4,param_4[1]);
   }
-  if (param_1 + 9 != param_5) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(param_1 + 9,*param_5,param_5[1]);
+  if (this + 9 != param_5) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 9,*param_5,param_5[1]);
   }
-  if (param_1 + 0xc != param_6) {
-    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(param_1 + 0xc,*param_6,param_6[1]);
+  if (this + 0xc != param_6) {
+    std::__ndk1::enable_if<__is_forward_iterator<WaterConcept::GameState::SecondaryGoal*>::value&&is_constructible<WaterConcept::GameState::SecondaryGoal, std::__ndk1::iterator_traits<WaterConcept::GameState::SecondaryGoal*>::reference>::value, void>::type std::__ndk1::vector<WaterConcept::GameState::SecondaryGoal, std::__ndk1::allocator<WaterConcept::GameState::SecondaryGoal>>::assign<WaterConcept::GameState::SecondaryGoal*>(this + 0xc,*param_6,param_6[1]);
   }
-  param_1[0x10] = *(undefined8 *)(param_1[0xf] + 0x440);
-  WaterConcept::GameState::reset(param_1);
+  this[0x10] = *(undefined8 *)(this[0xf] + 0x440);
+  WaterConcept::GameState::reset(this);
   return;
 }
 
@@ -928,16 +928,16 @@ switchD_00429e9c_default:
   void *pvVar1;
   
   std::__ndk1::__tree<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::__map_value_compare<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, WaterConcept::WaterBalloon::WaterBalloonCallbackReason>>>::destroy(this + 0x37,this[0x38]);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x34);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x31);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x34)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x31)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   std::__ndk1::__tree<WaterConceptConstants::FluidType, std::__ndk1::less<WaterConceptConstants::FluidType>, std::__ndk1::allocator<WaterConceptConstants::FluidType>>::destroy(this + 0x2e,this[0x2f]);
   std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::destroy(this + 0x27,this[0x28]);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x24);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x24)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   std::__ndk1::__tree<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::less<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::destroy(this + 0x21,this[0x22]);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(this + 0x1e);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0x19);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0x17);
-  Walaber::SharedPtr<Walaber::SoundEffectInstance>::~SharedPtr(this + 0x15);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)this + 0x1e)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x19)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x17)->~SharedPtr<Walaber::SoundEffectInstance>();
+  ((Walaber::SharedPtr<Walaber::SoundEffectInstance> *)this + 0x15)->~SharedPtr<Walaber::SoundEffectInstance>();
   pvVar1 = (void *)this[0xc];
   if (pvVar1 != (void *)0x0) {
     this[0xd] = pvVar1;
@@ -1244,7 +1244,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                       uVar10 = uVar10 + 1;
                     } while (uVar7 <= uVar6 && uVar6 - uVar7 != 0);
                   }
-                  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_b0);
+                  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_b0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
                 }
                 else {
                   uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1264,7 +1264,7 @@ void WaterConcept::GameState::setAdditionalRequirements(long param_1,undefined8 
                     uStack_b0 = 0;
                     uStack_a8 = 0;
                     uStack_a0 = 0;
-                    std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_b0);
+                    ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_b0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
                   }
                   else {
                     uVar8 = (ulong)(*pbStack_98 >> 1);
@@ -1405,15 +1405,15 @@ LAB_0042bdfc:
           uStack_b0 = 0;
           uStack_a8 = 0;
           uStack_a0 = 0;
-          std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&uStack_b0);
+          ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&uStack_b0)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
         }
       }
 LAB_0042be0c:
-      std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&pbStack_98);
+      ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&pbStack_98)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
       lVar9 = lVar9 + 0x18;
     } while (lVar9 != lStack_78);
   }
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_80);
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_80)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 
@@ -1714,15 +1714,15 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
     if (*(int *)(uVar3 + 0xa0) != 0) {
       if ((*(int *)(uVar3 + 0x94) == 4) &&
          ((*(long *)(uVar3 + 200) == 0 || (iVar2 = Walaber::SoundEffectInstance::getState(), iVar2 != 0)))) {
-        Walaber::PropertyList::PropertyList(auStack_70);
+        new ((void *)(auStack_70)) Walaber::PropertyList();
         piStack_80 = (int *)0x0;
         pvStack_78 = (void *)0x0;
         puStack_88 = (undefined8 *)0x79616c7008;
                     /* try { // try from 0042c6e0 to 0042c6eb has its CatchHandler @ 0042cb40 */
-        Walaber::Property::Property(&puStack_a8,1);
+        new ((void *)(&puStack_a8)) Walaber::Property(1);
                     /* try { // try from 0042c6ec to 0042c6fb has its CatchHandler @ 0042cb3c */
         Walaber::PropertyList::setValueForKey(auStack_70,&puStack_88,&puStack_a8);
-        Walaber::Property::~Property(&puStack_a8);
+        ((Walaber::Property *)&puStack_a8)->~Property();
         if (((ulong)puStack_88 & 1) != 0) {
           operator delete(pvStack_78);
         }
@@ -1741,13 +1741,13 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
         *piStack_c0 = 3;
         puStack_c8 = puVar4;
         puStack_a8 = puVar4;
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
         puStack_b8 = puStack_c8;
         piStack_b0 = piStack_c0;
         if (puStack_c8 != (undefined8 *)0x0) {
           *piStack_c0 = *piStack_c0 + 1;
         }
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042c7a4 to 0042c7a7 has its CatchHandler @ 0042cb38 */
         uVar5 = Walaber::SoundManager::getInstancePtr();
         puStack_d8 = puStack_b8;
@@ -1757,22 +1757,22 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
                     /* try { // try from 0042c7e0 to 0042c7eb has its CatchHandler @ 0042cb2c */
         Walaber::SoundManager::newSoundFromGroup(uVar5,(int)((float)(int)((fVar8 / fVar10) * 7.0) + 4060.0),&puStack_d8,
                         auStack_70);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
-        Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_88);
-        Walaber::PropertyList::~PropertyList(auStack_70);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_88)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
+        ((Walaber::PropertyList *)auStack_70)->~PropertyList();
       }
       iVar2 = Walaber::SoundEffectInstance::getState(*(undefined8 *)(uVar3 + 0xa8));
       if (iVar2 != 0) {
-        Walaber::PropertyList::PropertyList(auStack_70);
+        new ((void *)(auStack_70)) Walaber::PropertyList();
         piStack_80 = (int *)0x0;
         pvStack_78 = (void *)0x0;
         puStack_88 = (undefined8 *)0x79616c7008;
                     /* try { // try from 0042c838 to 0042c843 has its CatchHandler @ 0042cb7c */
-        Walaber::Property::Property(&puStack_a8,1);
+        new ((void *)(&puStack_a8)) Walaber::Property(1);
                     /* try { // try from 0042c844 to 0042c853 has its CatchHandler @ 0042cb6c */
         Walaber::PropertyList::setValueForKey(auStack_70,&puStack_88,&puStack_a8);
-        Walaber::Property::~Property(&puStack_a8);
+        ((Walaber::Property *)&puStack_a8)->~Property();
         if (((ulong)puStack_88 & 1) != 0) {
           operator delete(pvStack_78);
         }
@@ -1792,13 +1792,13 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
         *piStack_c0 = 3;
         puStack_c8 = puVar4;
         puStack_a8 = puVar4;
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_a8);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_a8)->~SharedPtr<Walaber::Callback>();
         puStack_b8 = puStack_c8;
         piStack_b0 = piStack_c0;
         if (puStack_c8 != (undefined8 *)0x0) {
           *piStack_c0 = *piStack_c0 + 1;
         }
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c8);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c8)->~SharedPtr<Walaber::Callback>();
                     /* try { // try from 0042c8fc to 0042c8ff has its CatchHandler @ 0042cb54 */
         uVar5 = Walaber::SoundManager::getInstancePtr();
         puStack_e8 = puStack_b8;
@@ -1807,10 +1807,10 @@ void WaterConcept::GameState::audioUpdate(float p0,int p1)
         }
                     /* try { // try from 0042c918 to 0042c927 has its CatchHandler @ 0042cb44 */
         Walaber::SoundManager::newSoundFromGroup(uVar5,uVar6,&puStack_e8,auStack_70);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
-        Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_b8);
-        Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>::~SharedPtr(&puStack_88);
-        Walaber::PropertyList::~PropertyList(auStack_70);
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_b8)->~SharedPtr<Walaber::Callback>();
+        ((Walaber::SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>> *)&puStack_88)->~SharedPtr<Walaber::MemberCallback<WaterConcept::GameState>>();
+        ((Walaber::PropertyList *)auStack_70)->~PropertyList();
       }
       lVar7 = *(long *)(uVar3 + 0x30) + (long)in_w1 * 0x18;
       iVar2 = *(int *)(uVar3 + 0x8c);

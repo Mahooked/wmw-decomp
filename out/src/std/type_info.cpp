@@ -10,7 +10,7 @@
 
 
 /* ok  address 0x5f53dc  size 4 */std::type_info::~type_info(){
-  operator_delete(p0);
+  operator_delete(this);
   return;
 }
 

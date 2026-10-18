@@ -80,7 +80,7 @@ long * std::__ndk1::basic_ostream<wchar_t,std::__ndk1::char_traits<wchar_t>>::op
       }
     }
   }
-  std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry::~sentry(auStack_58);
+  ((std::__ndk1::basic_ostream<wchar_t, std::__ndk1::char_traits<wchar_t>>::sentry *)auStack_58)->~sentry();
   return param_1;
 }
 

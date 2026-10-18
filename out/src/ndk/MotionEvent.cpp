@@ -3,14 +3,14 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x2c3864  size 232 */ndk::MotionEvent::MotionEvent(long param_1){
-  memset(param_1,0,0x80);
+/* ok  address 0x2c3864  size 232 */ndk::MotionEvent::MotionEvent(){
+  memset(this,0,0x80);
                     /* try { // try from 002c389c to 002c38d7 has its CatchHandler @ 002c38ec */
-  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(param_1 + 8,8);
-  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(param_1 + 0x20,8);
-  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(param_1 + 0x38,8);
-  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(param_1 + 0x50,8);
-  std::__ndk1::vector<int, std::__ndk1::allocator<int>>::reserve(param_1 + 0x68,8);
+  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(this + 8,8);
+  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(this + 0x20,8);
+  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(this + 0x38,8);
+  std::__ndk1::vector<float, std::__ndk1::allocator<float>>::reserve(this + 0x50,8);
+  std::__ndk1::vector<int, std::__ndk1::allocator<int>>::reserve(this + 0x68,8);
   return;
 }
 

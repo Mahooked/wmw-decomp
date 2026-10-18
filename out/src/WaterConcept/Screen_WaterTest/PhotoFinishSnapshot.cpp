@@ -19,7 +19,7 @@ void WaterConcept::Screen_WaterTest::PhotoFinishSnapshot::CreatePhotoFinishRende
   Walaber::createRenderTexture2D(auStack_38,*(undefined4 *)((long)&p0->f_0x0 + 4),(int)p0->f_0x8,(int)p0->f_0x0,
                   p0[1].f_0x0);
   Walaber::SharedPtr<Walaber::RenderTexture2D>::operator=();
-  Walaber::SharedPtr<Walaber::RenderTexture2D>::~SharedPtr(auStack_38);
+  ((Walaber::SharedPtr<Walaber::RenderTexture2D> *)auStack_38)->~SharedPtr<Walaber::RenderTexture2D>();
   return;
 }
 

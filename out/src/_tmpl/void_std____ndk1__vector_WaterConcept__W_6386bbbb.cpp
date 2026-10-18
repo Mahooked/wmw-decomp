@@ -49,7 +49,7 @@ void std::__ndk1::
   *(undefined8 *)(lVar3 + 0x18) = *(undefined8 *)(in_x1 + 0x18);
   lStack_50 = lStack_50 + 0x20;
   std::__ndk1::vector<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&> *)auStack_60)->~__split_buffer<WaterConcept::World::WorldSpoutConnection, std::__ndk1::allocator<WaterConcept::World::WorldSpoutConnection>&>();
   return;
 }
 

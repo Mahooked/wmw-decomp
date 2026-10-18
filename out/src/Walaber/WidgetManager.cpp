@@ -53,9 +53,9 @@ void Walaber::WidgetManager::updateLayerCount(int p0, int in_w1)
   undefined8 *puVar4;
   long *plVar5;
   
-  puVar4 = (undefined8 *)(param_1 + 0x30);
+  puVar4 = (undefined8 *)(this + 0x30);
   plVar5 = (long *)*puVar4;
-  while (plVar5 != (long *)(param_1 + 0x38)) {
+  while (plVar5 != (long *)(this + 0x38)) {
     if ((void *)plVar5[5] != (void *)0x0) {
       operator delete((void *)plVar5[5]);
     }
@@ -79,14 +79,14 @@ void Walaber::WidgetManager::updateLayerCount(int p0, int in_w1)
       } while ((long *)*plVar5 != (long *)0x0);
     }
   }
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::destroy(puVar4,*(undefined8 *)(param_1 + 0x38));
-  *(undefined8 *)(param_1 + 0x38) = 0;
-  *(undefined8 *)(param_1 + 0x40) = 0;
-  *(long **)(param_1 + 0x30) = (long *)(param_1 + 0x38);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(param_1 + 0x80);
-  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::destroy(param_1 + 0x50,*(undefined8 *)(param_1 + 0x58));
-  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::destroy(puVar4,*(undefined8 *)(param_1 + 0x38));
-  Walaber::SceneGraph::~SceneGraph(param_1);
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::destroy(puVar4,*(undefined8 *)(this + 0x38));
+  *(undefined8 *)(this + 0x38) = 0;
+  *(undefined8 *)(this + 0x40) = 0;
+  *(long **)(this + 0x30) = (long *)(this + 0x38);
+  ((Walaber::SharedPtr<Walaber::Texture> *)this + 0x80)->~SharedPtr<Walaber::Texture>();
+  std::__ndk1::__tree<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::__map_value_compare<Walaber::Widget*, std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>, std::__ndk1::less<Walaber::Widget*>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<Walaber::Widget*, Walaber::Vector2>>>::destroy(this + 0x50,*(undefined8 *)(this + 0x58));
+  std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::destroy(puVar4,*(undefined8 *)(this + 0x38));
+  ((Walaber::SceneGraph *)this)->~SceneGraph();
   return;
 }
 
@@ -371,7 +371,7 @@ LAB_0036b440:
                     (**(code **)(*(long *)in_x0[5] + 8))((long *)in_x0[5],plVar16,6);
                     (**(code **)(*(long *)in_x0[5] + 8))((long *)in_x0[5],plVar14[5],1);
                     std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::destroy(&uStack_b8,CONCAT44(uStack_ac,uStack_b0));
-                    std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&lStack_a0);
+                    ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&lStack_a0)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
                     goto LAB_0036b458;
                   }
                   plVar9 = (long *)plVar14[1];
@@ -395,7 +395,7 @@ LAB_0036b440:
                   }
                 }
                 std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::destroy(&uStack_b8,CONCAT44(uStack_ac,uStack_b0));
-                std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&lStack_a0);
+                ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&lStack_a0)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
               }
               Walaber::Widget::_updateAABB(plVar16);
               lStack_98 = plVar16[0x14];
@@ -568,7 +568,7 @@ LAB_0036b458:
                 }
               }
               std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::Widget*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::Widget*>>>::destroy(&uStack_b8,CONCAT44(uStack_ac,uStack_b0));
-              std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&lStack_a0);
+              ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&lStack_a0)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
               puVar11 = (uint *)plVar19[5];
               uVar13 = *puVar11;
             }
@@ -637,7 +637,7 @@ LAB_0036b458:
             std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&lStack_a0,&lStack_d0);
           }
         }
-        std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&lStack_a0);
+        ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&lStack_a0)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
       }
       plVar16 = (long *)*plVar15;
       while (plVar16 != plVar1) {
@@ -733,7 +733,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
           } while (plVar8 != (long *)0x0);
           if ((plVar7 != plVar11) && ((ulong)plVar7[4] <= uVar5)) {
             if (*(int *)(uVar5 + 0xc4) == 0) {
-              plVar3 = (long *)Walaber::AABB::AABB(&uStack_b8,&Vector2::Zero,param_1 + 0xd);
+              plVar3 = (long *)new ((void *)(&uStack_b8)) Walaber::AABB(&Vector2::Zero,param_1 + 0xd);
               piVar4 = (int *)plVar10[5];
               uVar5 = *(ulong *)(piVar4 + 6);
               uStack_f8 = uStack_b8;
@@ -806,7 +806,7 @@ void Walaber::WidgetManager::updateCustomize(long *param_1)
             std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&uStack_b8,&plStack_d0);
           }
         }
-        plVar3 = (long *)std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_b8);
+        plVar3 = (long *)((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_b8)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
       }
       plVar7 = (long *)plVar10[1];
       if ((long *)plVar10[1] == (long *)0x0) {
@@ -901,7 +901,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
   undefined1 auStack_b0 [24];
   
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
-    Walaber::AABB::AABB(auStack_b0,&Vector2::Zero,&p0[1].f_0x30);
+    new ((void *)(auStack_b0)) Walaber::AABB(&Vector2::Zero,&p0[1].f_0x30);
     uStack_c8 = 0;
     uStack_d0 = 0;
     lStack_b8 = 0;
@@ -930,7 +930,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
           uStack_108 = CONCAT44(fStack_e4 - fVar11,fStack_e8 - fVar10);
           uStack_110 = CONCAT44(fVar11 + fStack_e4,fVar10 + fStack_e8);
                     /* try { // try from 0036be9c to 0036beab has its CatchHandler @ 0036c0d0 */
-          Walaber::AABB::AABB(alStack_100,&uStack_108,&uStack_110);
+          new ((void *)(alStack_100)) Walaber::AABB(&uStack_108,&uStack_110);
                     /* try { // try from 0036beac to 0036becf has its CatchHandler @ 0036c0f4 */
           uVar6 = Walaber::AABB::intersects(auStack_b0,alStack_100);
           if ((uVar6 & 1) != 0) {
@@ -977,7 +977,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
                     /* try { // try from 0036bff8 to 0036c017 has its CatchHandler @ 0036c0e4 */
         fStack_e4 = fStack_e8;
         Walaber::SpriteBatch::drawQuad(0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
         pWVar2 = *(Walaber__SpriteBatch **)&pWVar9->field_0x8;
         if (*(Walaber__SpriteBatch **)&pWVar9->field_0x8 == (Walaber__SpriteBatch *)0x0) {
           puVar7 = (ulong *)&pWVar9->field_0x10;
@@ -999,7 +999,7 @@ void Walaber::WidgetManager::drawAll(Walaber__SpriteBatch *p0)
         }
       }
     }
-    std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_e0);
+    ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_e0)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   }
   return;
 }
@@ -1048,7 +1048,7 @@ void Walaber::WidgetManager::drawLayerRange
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
     uStack_b8 = *(undefined8 *)(ulong)(uint)p2;
     uStack_c0 = ((undefined8 *)(ulong)(uint)p2)[1];
-    Walaber::AABB::AABB(auStack_d8,&uStack_b8,&uStack_c0);
+    new ((void *)(auStack_d8)) Walaber::AABB(&uStack_b8,&uStack_c0);
     lStack_e0 = 0;
     lStack_e8 = 0;
     uStack_f0 = 0;
@@ -1078,7 +1078,7 @@ void Walaber::WidgetManager::drawLayerRange
             uStack_130 = CONCAT44(fStack_10c - fVar11,fStack_110 - fVar10);
             uStack_138 = CONCAT44(fVar11 + fStack_10c,fVar10 + fStack_110);
                     /* try { // try from 0036c280 to 0036c28f has its CatchHandler @ 0036c4b4 */
-            Walaber::AABB::AABB(alStack_128,&uStack_130,&uStack_138);
+            new ((void *)(alStack_128)) Walaber::AABB(&uStack_130,&uStack_138);
                     /* try { // try from 0036c298 to 0036c2a3 has its CatchHandler @ 0036c4b0 */
             (**(code **)(*plVar8 + 0x48))(plVar8,p1);
           }
@@ -1123,7 +1123,7 @@ void Walaber::WidgetManager::drawLayerRange
                     /* try { // try from 0036c3d8 to 0036c3f7 has its CatchHandler @ 0036c4c4 */
         fStack_10c = fStack_110;
         Walaber::SpriteBatch::drawQuad(0,p1,&lStack_148,alStack_128,&fStack_110,&Color::White,0);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_148);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_148)->~SharedPtr<Walaber::Texture>();
         pWVar2 = *(Walaber__SpriteBatch **)&pWVar9->field_0x8;
         if (*(Walaber__SpriteBatch **)&pWVar9->field_0x8 == (Walaber__SpriteBatch *)0x0) {
           puVar7 = (ulong *)&pWVar9->field_0x10;
@@ -1145,7 +1145,7 @@ void Walaber::WidgetManager::drawLayerRange
         }
       }
     }
-    std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_108);
+    ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_108)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   }
   return;
 }
@@ -1181,7 +1181,7 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
   undefined1 auStack_c8 [24];
   
   if (*(long *)(p0->f_0x0 + 0x10) != 0) {
-    Walaber::AABB::AABB(auStack_c8,&Vector2::Zero,&p0[1].f_0x30);
+    new ((void *)(auStack_c8)) Walaber::AABB(&Vector2::Zero,&p0[1].f_0x30);
     lStack_d0 = 0;
     lStack_d8 = 0;
     uStack_e0 = 0;
@@ -1212,7 +1212,7 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
             uStack_120 = CONCAT44(fVar8 - fVar7,(float)uStack_100 - fVar6);
             uStack_128 = CONCAT44(fVar7 + fVar8,fVar6 + (float)uStack_100);
                     /* try { // try from 0036c654 to 0036c663 has its CatchHandler @ 0036c7a4 */
-            Walaber::AABB::AABB(alStack_118,&uStack_120,&uStack_128);
+            new ((void *)(alStack_118)) Walaber::AABB(&uStack_120,&uStack_128);
                     /* try { // try from 0036c664 to 0036c687 has its CatchHandler @ 0036c7b0 */
             uVar4 = Walaber::AABB::intersects(auStack_c8,alStack_118);
             if ((uVar4 & 1) != 0) {
@@ -1246,7 +1246,7 @@ void Walaber::WidgetManager::drawLayerRange(Walaber__SpriteBatch *p0,int p1,int 
         std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&uStack_f8,alStack_118);
       }
     }
-    std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_f8);
+    ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_f8)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   }
   return;
 }
@@ -1361,7 +1361,7 @@ void Walaber::WidgetManager::_clearFingers(long *param_1)
         std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&uStack_88,&lStack_90);
       }
     }
-    std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_88);
+    ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_88)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   }
   std::__ndk1::__tree<std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::__map_value_compare<int, std::__ndk1::__value_type<int, Walaber::FingerInfo*>, std::__ndk1::less<int>, true>, std::__ndk1::allocator<std::__ndk1::__value_type<int, Walaber::FingerInfo*>>>::destroy(param_1 + 6,param_1[7]);
   param_1[7] = 0;
@@ -1581,7 +1581,7 @@ void Walaber::WidgetManager::touchDown(int p0,Walaber__Vector2 p1, undefined8 * 
               std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&pfStack_80,&lStack_a0);
             }
           }
-          std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&pfStack_80);
+          ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&pfStack_80)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
           p0_00 = (void *)plVar9[5];
           plVar3 = *(long **)((long)p0_00 + 0x18);
           if (plVar3 != (long *)0x0) goto LAB_0036cce8;
@@ -1754,7 +1754,7 @@ void Walaber::WidgetManager::touchUp(int p0,Walaber__Vector2 p1)
               std::__ndk1::deque<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::push_back(&uStack_68,&lStack_80);
             }
           }
-          std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_68);
+          ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_68)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
           p0_00 = (int *)plVar10[5];
           plVar4 = *(long **)(p0_00 + 6);
           if (plVar4 != (long *)0x0) {
@@ -1855,7 +1855,7 @@ void Walaber::WidgetManager::getBoundingArea(undefined8 *param_1,long *param_2)
     }
     lStack_90 = 0;
   }
-  std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(&uStack_68);
+  ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)&uStack_68)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   return;
 }
 
@@ -1912,7 +1912,7 @@ void Walaber::WidgetManager::reloadFonts(long *param_1)
       }
     }
   }
-  std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>::~__deque_base(alStack_60 + 1);
+  ((std::__ndk1::__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>> *)alStack_60 + 1)->~__deque_base<Walaber::PCSNode*, std::__ndk1::allocator<Walaber::PCSNode*>>();
   return;
 }
 

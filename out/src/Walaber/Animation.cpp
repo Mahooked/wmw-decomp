@@ -3,23 +3,23 @@
    ELF symbol table in out/symbols/functions.tsv; call targets
    resolved from PLT imports by tools/resolve_refs.py */
 
-/* ok  address 0x33189c  size 116 */Walaber::Animation::Animation(long param_1,undefined8 param_2,undefined8 param_3){
+/* ok  address 0x33189c  size 116 */Walaber::Animation::Animation(undefined8 param_2,undefined8 param_3){
   std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string();
-  memset(param_1 + 0x18,0,0xa0);
-  *(undefined4 *)(param_1 + 0xe4) = 0xffffffff;
-  *(undefined8 *)(param_1 + 0xc0) = 0;
-  *(undefined8 *)(param_1 + 200) = 0;
-  *(undefined8 *)(param_1 + 0xb8) = param_3;
-  *(undefined4 *)(param_1 + 0xd0) = 0;
-  *(undefined4 *)(param_1 + 0xdc) = 0;
-  *(undefined4 *)(param_1 + 0xe0) = 0;
-  *(undefined8 *)(param_1 + 0xf0) = 0;
-  *(undefined8 *)(param_1 + 0xf8) = 0;
-  *(undefined8 *)(param_1 + 0xe8) = 0;
-  *(undefined1 *)(param_1 + 0x100) = 0;
-  *(undefined8 *)(param_1 + 0xd4) = 0x3f800000;
-  *(undefined2 *)(param_1 + 0x101) = 1;
-  *(undefined1 *)(param_1 + 0x103) = 0;
+  memset(this + 0x18,0,0xa0);
+  *(undefined4 *)(this + 0xe4) = 0xffffffff;
+  *(undefined8 *)(this + 0xc0) = 0;
+  *(undefined8 *)(this + 200) = 0;
+  *(undefined8 *)(this + 0xb8) = param_3;
+  *(undefined4 *)(this + 0xd0) = 0;
+  *(undefined4 *)(this + 0xdc) = 0;
+  *(undefined4 *)(this + 0xe0) = 0;
+  *(undefined8 *)(this + 0xf0) = 0;
+  *(undefined8 *)(this + 0xf8) = 0;
+  *(undefined8 *)(this + 0xe8) = 0;
+  *(undefined1 *)(this + 0x100) = 0;
+  *(undefined8 *)(this + 0xd4) = 0x3f800000;
+  *(undefined2 *)(this + 0x101) = 1;
+  *(undefined1 *)(this + 0x103) = 0;
   return;
 }
 
@@ -74,7 +74,7 @@
                     /* try { // try from 00331a2c to 00331a33 has its CatchHandler @ 00331ca0 */
       uVar3 = operator new(0x28);
                     /* try { // try from 00331a40 to 00331a43 has its CatchHandler @ 00331c80 */
-      Walaber::NumericAnimationTrack::NumericAnimationTrack(uVar3,*(undefined8 *)(*(long *)(in_x1 + 0x18) + uVar6 * 8));
+      new ((void *)(uVar3)) Walaber::NumericAnimationTrack(*(undefined8 *)(*(long *)(in_x1 + 0x18) + uVar6 * 8));
       uStack_70 = uVar3;
       if ((undefined8 *)p0->f_0x20 < (undefined8 *)p0->f_0x28) {
         *(undefined8 *)p0->f_0x20 = uVar3;
@@ -94,7 +94,7 @@
                     /* try { // try from 00331a98 to 00331a9f has its CatchHandler @ 00331c9c */
       uVar3 = operator new(0x68);
                     /* try { // try from 00331aac to 00331aaf has its CatchHandler @ 00331c7c */
-      Walaber::NodeAnimationTrack::NodeAnimationTrack(uVar3,*(undefined8 *)(*(long *)(in_x1 + 0x30) + uVar6 * 8));
+      new ((void *)(uVar3)) Walaber::NodeAnimationTrack(*(undefined8 *)(*(long *)(in_x1 + 0x30) + uVar6 * 8));
       uStack_70 = uVar3;
       if ((undefined8 *)p0->f_0x38 < (undefined8 *)p0->f_0x40) {
         *(undefined8 *)p0->f_0x38 = uVar3;
@@ -114,7 +114,7 @@
                     /* try { // try from 00331b04 to 00331b0b has its CatchHandler @ 00331c98 */
       uVar3 = operator new(0x48);
                     /* try { // try from 00331b18 to 00331b1b has its CatchHandler @ 00331c78 */
-      Walaber::SpriteAnimationTrack::SpriteAnimationTrack(uVar3,*(undefined8 *)(*(long *)(in_x1 + 0x48) + uVar6 * 8));
+      new ((void *)(uVar3)) Walaber::SpriteAnimationTrack(*(undefined8 *)(*(long *)(in_x1 + 0x48) + uVar6 * 8));
       uStack_70 = uVar3;
       if ((undefined8 *)p0->f_0x50 < (undefined8 *)p0->f_0x58) {
         *(undefined8 *)p0->f_0x50 = uVar3;
@@ -134,7 +134,7 @@
                     /* try { // try from 00331b70 to 00331b77 has its CatchHandler @ 00331c94 */
       uVar3 = operator new(0x30);
                     /* try { // try from 00331b84 to 00331b87 has its CatchHandler @ 00331c74 */
-      Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(uVar3,*(undefined8 *)(*(long *)(in_x1 + 0x60) + uVar6 * 8));
+      new ((void *)(uVar3)) Walaber::AnimationCueAnimationTrack(*(undefined8 *)(*(long *)(in_x1 + 0x60) + uVar6 * 8));
       uStack_70 = uVar3;
       if ((undefined8 *)p0->f_0x68 < (undefined8 *)p0->f_0x70) {
         *(undefined8 *)p0->f_0x68 = uVar3;
@@ -154,7 +154,7 @@
                     /* try { // try from 00331bdc to 00331be3 has its CatchHandler @ 00331c90 */
       uVar3 = operator new(0x28);
                     /* try { // try from 00331bf0 to 00331bf3 has its CatchHandler @ 00331c70 */
-      Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(uVar3,*(undefined8 *)(*(long *)(in_x1 + 0x78) + uVar6 * 8));
+      new ((void *)(uVar3)) Walaber::SkeletonActorCueAnimationTrack(*(undefined8 *)(*(long *)(in_x1 + 0x78) + uVar6 * 8));
       uStack_70 = uVar3;
       if ((undefined8 *)p0->f_0x80 < (undefined8 *)p0->f_0x88) {
         *(undefined8 *)p0->f_0x80 = uVar3;
@@ -197,7 +197,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     do {
       uVar4 = operator new(0x28);
                     /* try { // try from 00331e24 to 00331e27 has its CatchHandler @ 003320e8 */
-      Walaber::NumericAnimationTrack::NumericAnimationTrack(uVar4,*(undefined8 *)(in_x1->f_0x18 + uVar7 * 8));
+      new ((void *)(uVar4)) Walaber::NumericAnimationTrack(*(undefined8 *)(in_x1->f_0x18 + uVar7 * 8));
       uStack_60 = uVar4;
       if ((undefined8 *)p0->f_0x20 < (undefined8 *)p0->f_0x28) {
         *(undefined8 *)p0->f_0x20 = uVar4;
@@ -215,7 +215,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     do {
       uVar4 = operator new(0x68);
                     /* try { // try from 00331e94 to 00331e97 has its CatchHandler @ 003320e4 */
-      Walaber::NodeAnimationTrack::NodeAnimationTrack(uVar4,*(undefined8 *)(in_x1->f_0x30 + uVar7 * 8));
+      new ((void *)(uVar4)) Walaber::NodeAnimationTrack(*(undefined8 *)(in_x1->f_0x30 + uVar7 * 8));
       uStack_60 = uVar4;
       if ((undefined8 *)p0->f_0x38 < (undefined8 *)p0->f_0x40) {
         *(undefined8 *)p0->f_0x38 = uVar4;
@@ -233,7 +233,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     do {
       uVar4 = operator new(0x48);
                     /* try { // try from 00331f04 to 00331f07 has its CatchHandler @ 003320e0 */
-      Walaber::SpriteAnimationTrack::SpriteAnimationTrack(uVar4,*(undefined8 *)(in_x1->f_0x48 + uVar7 * 8));
+      new ((void *)(uVar4)) Walaber::SpriteAnimationTrack(*(undefined8 *)(in_x1->f_0x48 + uVar7 * 8));
       uStack_60 = uVar4;
       if ((undefined8 *)p0->f_0x50 < (undefined8 *)p0->f_0x58) {
         *(undefined8 *)p0->f_0x50 = uVar4;
@@ -251,7 +251,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     do {
       uVar4 = operator new(0x30);
                     /* try { // try from 00331f74 to 00331f77 has its CatchHandler @ 003320dc */
-      Walaber::AnimationCueAnimationTrack::AnimationCueAnimationTrack(uVar4,*(undefined8 *)(in_x1->f_0x60 + uVar7 * 8));
+      new ((void *)(uVar4)) Walaber::AnimationCueAnimationTrack(*(undefined8 *)(in_x1->f_0x60 + uVar7 * 8));
       uStack_60 = uVar4;
       if ((undefined8 *)p0->f_0x68 < (undefined8 *)p0->f_0x70) {
         *(undefined8 *)p0->f_0x68 = uVar4;
@@ -269,7 +269,7 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
     do {
       uVar4 = operator new(0x28);
                     /* try { // try from 00331fe4 to 00331fe7 has its CatchHandler @ 003320d8 */
-      Walaber::SkeletonActorCueAnimationTrack::SkeletonActorCueAnimationTrack(uVar4,*(undefined8 *)(in_x1->f_0x78 + uVar7 * 8));
+      new ((void *)(uVar4)) Walaber::SkeletonActorCueAnimationTrack(*(undefined8 *)(in_x1->f_0x78 + uVar7 * 8));
       uStack_60 = uVar4;
       if ((undefined8 *)p0->f_0x80 < (undefined8 *)p0->f_0x88) {
         *(undefined8 *)p0->f_0x80 = uVar4;
@@ -314,131 +314,131 @@ Walaber__Animation * Walaber::Animation::operator=(Walaber__Animation *p0)
   void *pvVar3;
   long lVar4;
   
-  lVar1 = *(long *)(param_1 + 0x18);
-  uVar2 = *(long *)(param_1 + 0x20) - lVar1;
+  lVar1 = *(long *)(this + 0x18);
+  uVar2 = *(long *)(this + 0x20) - lVar1;
   if ((int)(uVar2 >> 3) != 0) {
     lVar4 = 0;
     while( true ) {
       pvVar3 = *(void **)(lVar1 + lVar4);
       if (pvVar3 != (void *)0x0) {
-        Walaber::NumericAnimationTrack::~NumericAnimationTrack(pvVar3);
+        ((Walaber::NumericAnimationTrack *)pvVar3)->~NumericAnimationTrack();
         operator delete(pvVar3);
       }
       if ((uVar2 >> 3 & 0xffffffff) * 8 + -8 == lVar4) break;
-      lVar1 = *(long *)(param_1 + 0x18);
+      lVar1 = *(long *)(this + 0x18);
       lVar4 = lVar4 + 8;
     }
-    lVar1 = *(long *)(param_1 + 0x18);
+    lVar1 = *(long *)(this + 0x18);
   }
-  lVar4 = *(long *)(param_1 + 0x30);
-  *(long *)(param_1 + 0x20) = lVar1;
-  uVar2 = *(long *)(param_1 + 0x38) - lVar4;
+  lVar4 = *(long *)(this + 0x30);
+  *(long *)(this + 0x20) = lVar1;
+  uVar2 = *(long *)(this + 0x38) - lVar4;
   if ((int)(uVar2 >> 3) != 0) {
     lVar1 = 0;
     while( true ) {
       pvVar3 = *(void **)(lVar4 + lVar1);
       if (pvVar3 != (void *)0x0) {
-        Walaber::NodeAnimationTrack::~NodeAnimationTrack(pvVar3);
+        ((Walaber::NodeAnimationTrack *)pvVar3)->~NodeAnimationTrack();
         operator delete(pvVar3);
       }
       if ((uVar2 >> 3 & 0xffffffff) * 8 + -8 == lVar1) break;
-      lVar4 = *(long *)(param_1 + 0x30);
+      lVar4 = *(long *)(this + 0x30);
       lVar1 = lVar1 + 8;
     }
-    lVar4 = *(long *)(param_1 + 0x30);
+    lVar4 = *(long *)(this + 0x30);
   }
-  lVar1 = *(long *)(param_1 + 0x48);
-  *(long *)(param_1 + 0x38) = lVar4;
-  uVar2 = *(long *)(param_1 + 0x50) - lVar1;
+  lVar1 = *(long *)(this + 0x48);
+  *(long *)(this + 0x38) = lVar4;
+  uVar2 = *(long *)(this + 0x50) - lVar1;
   if ((int)(uVar2 >> 3) != 0) {
     lVar4 = 0;
     while( true ) {
       pvVar3 = *(void **)(lVar1 + lVar4);
       if (pvVar3 != (void *)0x0) {
-        Walaber::SpriteAnimationTrack::~SpriteAnimationTrack(pvVar3);
+        ((Walaber::SpriteAnimationTrack *)pvVar3)->~SpriteAnimationTrack();
         operator delete(pvVar3);
       }
       if ((uVar2 >> 3 & 0xffffffff) * 8 + -8 == lVar4) break;
-      lVar1 = *(long *)(param_1 + 0x48);
+      lVar1 = *(long *)(this + 0x48);
       lVar4 = lVar4 + 8;
     }
-    lVar1 = *(long *)(param_1 + 0x48);
+    lVar1 = *(long *)(this + 0x48);
   }
-  lVar4 = *(long *)(param_1 + 0x60);
-  *(long *)(param_1 + 0x50) = lVar1;
-  uVar2 = *(long *)(param_1 + 0x68) - lVar4;
+  lVar4 = *(long *)(this + 0x60);
+  *(long *)(this + 0x50) = lVar1;
+  uVar2 = *(long *)(this + 0x68) - lVar4;
   if ((int)(uVar2 >> 3) != 0) {
     lVar1 = 0;
     while( true ) {
       pvVar3 = *(void **)(lVar4 + lVar1);
       if (pvVar3 != (void *)0x0) {
-        Walaber::AnimationCueAnimationTrack::~AnimationCueAnimationTrack(pvVar3);
+        ((Walaber::AnimationCueAnimationTrack *)pvVar3)->~AnimationCueAnimationTrack();
         operator delete(pvVar3);
       }
       if ((uVar2 >> 3 & 0xffffffff) * 8 + -8 == lVar1) break;
-      lVar4 = *(long *)(param_1 + 0x60);
+      lVar4 = *(long *)(this + 0x60);
       lVar1 = lVar1 + 8;
     }
-    lVar4 = *(long *)(param_1 + 0x60);
+    lVar4 = *(long *)(this + 0x60);
   }
-  lVar1 = *(long *)(param_1 + 0x78);
-  *(long *)(param_1 + 0x68) = lVar4;
-  uVar2 = *(long *)(param_1 + 0x80) - lVar1;
+  lVar1 = *(long *)(this + 0x78);
+  *(long *)(this + 0x68) = lVar4;
+  uVar2 = *(long *)(this + 0x80) - lVar1;
   if ((int)(uVar2 >> 3) != 0) {
     lVar4 = 0;
     while( true ) {
       pvVar3 = *(void **)(lVar1 + lVar4);
       if (pvVar3 != (void *)0x0) {
-        Walaber::SkeletonActorCueAnimationTrack::~SkeletonActorCueAnimationTrack(pvVar3);
+        ((Walaber::SkeletonActorCueAnimationTrack *)pvVar3)->~SkeletonActorCueAnimationTrack();
         operator delete(pvVar3);
       }
       if ((uVar2 >> 3 & 0xffffffff) * 8 + -8 == lVar4) break;
-      lVar1 = *(long *)(param_1 + 0x78);
+      lVar1 = *(long *)(this + 0x78);
       lVar4 = lVar4 + 8;
     }
-    lVar1 = *(long *)(param_1 + 0x78);
+    lVar1 = *(long *)(this + 0x78);
   }
-  pvVar3 = *(void **)(param_1 + 0xe8);
-  *(long *)(param_1 + 0x80) = lVar1;
+  pvVar3 = *(void **)(this + 0xe8);
+  *(long *)(this + 0x80) = lVar1;
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0xf0) = pvVar3;
+    *(void **)(this + 0xf0) = pvVar3;
     operator delete(pvVar3);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(param_1 + 0xa8);
-  pvVar3 = *(void **)(param_1 + 0x90);
+  ((Walaber::SharedPtr<Walaber::Callback> *)this + 0xa8)->~SharedPtr<Walaber::Callback>();
+  pvVar3 = *(void **)(this + 0x90);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x98) = pvVar3;
+    *(void **)(this + 0x98) = pvVar3;
     operator delete(pvVar3);
   }
-  pvVar3 = *(void **)(param_1 + 0x78);
+  pvVar3 = *(void **)(this + 0x78);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x80) = pvVar3;
+    *(void **)(this + 0x80) = pvVar3;
     operator delete(pvVar3);
   }
-  pvVar3 = *(void **)(param_1 + 0x60);
+  pvVar3 = *(void **)(this + 0x60);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x68) = pvVar3;
+    *(void **)(this + 0x68) = pvVar3;
     operator delete(pvVar3);
   }
-  pvVar3 = *(void **)(param_1 + 0x48);
+  pvVar3 = *(void **)(this + 0x48);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x50) = pvVar3;
+    *(void **)(this + 0x50) = pvVar3;
     operator delete(pvVar3);
   }
-  pvVar3 = *(void **)(param_1 + 0x30);
+  pvVar3 = *(void **)(this + 0x30);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x38) = pvVar3;
+    *(void **)(this + 0x38) = pvVar3;
     operator delete(pvVar3);
   }
-  pvVar3 = *(void **)(param_1 + 0x18);
+  pvVar3 = *(void **)(this + 0x18);
   if (pvVar3 != (void *)0x0) {
-    *(void **)(param_1 + 0x20) = pvVar3;
+    *(void **)(this + 0x20) = pvVar3;
     operator delete(pvVar3);
   }
-  if ((*param_1 & 1) == 0) {
+  if ((*this & 1) == 0) {
     return;
   }
-  operator delete(*(void **)(param_1 + 0x10));
+  operator delete(*(void **)(this + 0x10));
   return;
 }
 
@@ -754,7 +754,7 @@ LAB_00332a24:
                     /* try { // try from 00332a68 to 00332a6f has its CatchHandler @ 00332f78 */
           uVar4 = operator new(0x68);
                     /* try { // try from 00332a74 to 00332a7b has its CatchHandler @ 00332f44 */
-          Walaber::NodeAnimationTrack::NodeAnimationTrack(uVar4,lVar7);
+          new ((void *)(uVar4)) Walaber::NodeAnimationTrack(lVar7);
                     /* try { // try from 00332a7c to 00332a97 has its CatchHandler @ 00332f78 */
           lVar7 = xmlGetProp(lVar12,"angleRelCurvePath");
           (*(code *)xmlFree)();
@@ -1133,7 +1133,7 @@ LAB_00333374:
                     /* try { // try from 003333a8 to 003333af has its CatchHandler @ 00333c44 */
           uVar6 = operator new(0x68);
                     /* try { // try from 003333b4 to 003333bb has its CatchHandler @ 00333c14 */
-          Walaber::NodeAnimationTrack::NodeAnimationTrack(uVar6,lVar9);
+          new ((void *)(uVar6)) Walaber::NodeAnimationTrack(lVar9);
                     /* try { // try from 003333bc to 003333d7 has its CatchHandler @ 00333c44 */
           lVar9 = xmlGetProp(lVar15,"angleRelCurvePath");
           (*(code *)xmlFree)();
@@ -1359,7 +1359,7 @@ LAB_00333450:
                     /* try { // try from 00333494 to 0033349b has its CatchHandler @ 00333bac */
             uVar6 = operator new(0x48);
                     /* try { // try from 003334a0 to 003334a7 has its CatchHandler @ 00333b9c */
-            Walaber::SpriteAnimationTrack::SpriteAnimationTrack(uVar6,lVar9);
+            new ((void *)(uVar6)) Walaber::SpriteAnimationTrack(lVar9);
             for (lVar9 = *(long *)(lVar15 + 0x18); lVar9 != 0; lVar9 = *(long *)(lVar9 + 0x30)) {
                     /* try { // try from 003334b4 to 003334bb has its CatchHandler @ 00333c54 */
               iVar5 = xmlStrcmp(*(undefined8 *)(lVar9 + 0x10),"SpriteAnimationEvent");

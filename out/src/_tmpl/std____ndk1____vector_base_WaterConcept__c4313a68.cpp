@@ -27,9 +27,9 @@ void std::__ndk1::__vector_base<WaterConcept::Fluid,std::__ndk1::allocator<Water
   if ((void *)this[1] != pvVar1) {
     do {
       pvVar3 = (void *)((long)pvVar2 + -0xf0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)pvVar2 + -200);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)pvVar2 + -0xd8);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr((long)pvVar2 + -0xe8);
+      ((Walaber::SharedPtr<Walaber::Texture> *)(long)pvVar2 + -200)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)(long)pvVar2 + -0xd8)->~SharedPtr<Walaber::Texture>();
+      ((Walaber::SharedPtr<Walaber::Texture> *)(long)pvVar2 + -0xe8)->~SharedPtr<Walaber::Texture>();
       pvVar2 = pvVar3;
     } while (pvVar1 != pvVar3);
     pvVar3 = (void *)*this;

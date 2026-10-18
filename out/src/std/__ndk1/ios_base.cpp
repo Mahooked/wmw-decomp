@@ -25,13 +25,13 @@ void std::__ndk1::ios_base::clear(uint p0, uint in_w1)
   }
   puVar4 = (undefined8 *)__cxa_allocate_exception(0x20);
   if (((DAT_007a4590 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a4590), iVar2 != 0)) {
-    std::__ndk1::error_category::error_category(&DAT_007a4588);
+    new ((void *)(&DAT_007a4588)) std::__ndk1::error_category();
     DAT_007a4588 = &PTR__error_category_007166e0;
     __cxa_atexit(error_category::~error_category,&DAT_007a4588,&PTR_LOOP_00728000);
     __cxa_guard_release(&DAT_007a4590);
   }
                     /* try { // try from 005a3f28 to 005a3f43 has its CatchHandler @ 005a3f6c */
-  std::__ndk1::system_error::system_error(puVar4,1,&DAT_007a4588,"ios_base::clear");
+  new ((void *)(puVar4)) std::__ndk1::system_error(1,&DAT_007a4588,"ios_base::clear");
   *puVar4 = &PTR__failure_00716538;
   __cxa_throw(puVar4,&failure::typeinfo,failure::~failure);
   return;
@@ -51,7 +51,7 @@ void std::__ndk1::ios_base::clear(uint p0, uint in_w1)
       lVar1 = lVar1 + -1;
     } while (lVar1 != -1);
   }
-  std::__ndk1::locale::~locale(this + 6);
+  ((std::__ndk1::locale *)this + 6)->~locale();
   free((void *)this[7]);
   free((void *)this[8]);
   free((void *)this[0xb]);
@@ -238,7 +238,7 @@ void std::__ndk1::ios_base::copyfmt(std____ndk1__ios_base *p0, long in_x1)
 void std::__ndk1::ios_base::getloc(undefined8 param_1,long param_2)
 
 {
-  std::__ndk1::locale::locale(param_1,param_2 + 0x30);
+  new ((void *)(param_1)) std::__ndk1::locale(param_2 + 0x30);
   return;
 }
 
@@ -296,7 +296,7 @@ void std::__ndk1::ios_base::init(void *p0, long in_x1)
   *(undefined8 *)((long)p0 + 0x10) = 6;
   *(undefined8 *)((long)p0 + 0x38) = 0;
   *(undefined8 *)((long)p0 + 0x40) = 0;
-  std::__ndk1::locale::locale((long)p0 + 0x30);
+  new ((void *)((long)p0 + 0x30)) std::__ndk1::locale();
   return;
 }
 
@@ -322,7 +322,7 @@ void std::__ndk1::ios_base::move(std____ndk1__ios_base *p0, long in_x1)
   p0->f_0x20 = (int)uVar1;
   p0->f_0x24 = (int)((ulong)uVar1 >> 0x20);
   p0->f_0x28 = 0;
-  std::__ndk1::locale::locale(&p0->field_0x30,in_x1 + 0x30);
+  new ((void *)(&p0->field_0x30)) std::__ndk1::locale(in_x1 + 0x30);
   uVar2 = *(ulong *)(in_x1 + 0x38);
   p0->f_0x40 = *(ulong *)(in_x1 + 0x40);
   p0->f_0x38 = uVar2;
@@ -384,10 +384,10 @@ void std::__ndk1::ios_base::swap(std____ndk1__ios_base *p0, long in_x1)
   uVar1 = p0->f_0x24;
   p0->f_0x24 = *(uint *)(in_x1 + 0x24);
   *(uint *)(in_x1 + 0x24) = uVar1;
-  std::__ndk1::locale::locale(auStack_50,&p0->field_0x30);
+  new ((void *)(auStack_50)) std::__ndk1::locale(&p0->field_0x30);
   std::__ndk1::locale::operator=(&p0->field_0x30,in_x1 + 0x30);
   std::__ndk1::locale::operator=(in_x1 + 0x30,auStack_50);
-  std::__ndk1::locale::~locale(auStack_50);
+  ((std::__ndk1::locale *)auStack_50)->~locale();
   uVar4 = p0->f_0x38;
   p0->f_0x38 = *(ulong *)(in_x1 + 0x38);
   *(ulong *)(in_x1 + 0x38) = uVar4;
@@ -454,17 +454,17 @@ long * std::__ndk1::ios_base::__set_failbit_and_consider_rethrow(long *param_1)
   }
   auVar5 = __cxa_rethrow();
   plVar3 = auVar5._0_8_;
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_60,plVar3,0);
+  new ((void *)(acStack_60)) std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry(plVar3,0);
   if (acStack_60[0] != '\0') {
     uStack_64 = 0;
-    std::__ndk1::locale::locale(auStack_70,(long)plVar3 + *(long *)(*plVar3 + -0x18) + 0x30);
+    new ((void *)(auStack_70)) std::__ndk1::locale((long)plVar3 + *(long *)(*plVar3 + -0x18) + 0x30);
     plVar4 = (long *)std::__ndk1::locale::use_facet(auStack_70,
                                   &num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
     lVar1 = (long)plVar3 + *(long *)(*plVar3 + -0x18);
     (**(code **)(*plVar4 + 0x18))
               (plVar4,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_64,auVar5._8_8_);
-    std::__ndk1::locale::~locale(auStack_70);
+    ((std::__ndk1::locale *)auStack_70)->~locale();
     lVar1 = (long)plVar3 + *(long *)(*plVar3 + -0x18);
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_64);
   }
@@ -496,17 +496,17 @@ long * std::__ndk1::ios_base::__set_badbit_and_consider_rethrow(long *param_1)
   }
   auVar5 = __cxa_rethrow();
   plVar4 = auVar5._0_8_;
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_50,plVar4,0);
+  new ((void *)(acStack_50)) std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry(plVar4,0);
   if (acStack_50[0] != '\0') {
     uStack_54 = 0;
-    std::__ndk1::locale::locale(auStack_60,(long)plVar4 + *(long *)(*plVar4 + -0x18) + 0x30);
+    new ((void *)(auStack_60)) std::__ndk1::locale((long)plVar4 + *(long *)(*plVar4 + -0x18) + 0x30);
     plVar3 = (long *)std::__ndk1::locale::use_facet(auStack_60,
                                   &num_get<char,std::__ndk1::istreambuf_iterator<char,std::__ndk1::char_traits<char>>>
                                    ::id);
     lVar1 = (long)plVar4 + *(long *)(*plVar4 + -0x18);
     (**(code **)(*plVar3 + 0x18))
               (plVar3,*(undefined8 *)(lVar1 + 0x28),0,lVar1,&uStack_54,auVar5._8_8_);
-    std::__ndk1::locale::~locale(auStack_60);
+    ((std::__ndk1::locale *)auStack_60)->~locale();
     lVar1 = (long)plVar4 + *(long *)(*plVar4 + -0x18);
     std::__ndk1::ios_base::clear(lVar1,*(uint *)(lVar1 + 0x20) | uStack_54);
   }
@@ -716,7 +716,7 @@ void std::__ndk1::ios_base::register_callback(long param_1,undefined8 param_2,un
 
 /* ok  address 0x5b08fc  size 36 */std::__ndk1::ios_base::~ios_base(){
   std::__ndk1::ios_base::~ios_base();
-  operator delete(param_1);
+  operator delete(this);
   return;
 }
 

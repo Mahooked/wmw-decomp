@@ -1004,7 +1004,7 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
     *(undefined8 *)(lVar3 + 0x38) = uStack_60;
     Walaber::SharedPtr<Walaber::Callback>::operator=(lVar3 + 0x40,&uStack_58);
                     /* try { // try from 00371e60 to 00371e67 has its CatchHandler @ 00371f30 */
-    Walaber::PropertyList::PropertyList(apbStack_78);
+    new ((void *)(apbStack_78)) Walaber::PropertyList();
                     /* try { // try from 00371e68 to 00371e6b has its CatchHandler @ 00371f2c */
     uVar4 = Walaber::FileManager::getInstancePtr();
                     /* try { // try from 00371e70 to 00371e9f has its CatchHandler @ 00371f38 */
@@ -1017,9 +1017,9 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
                     /* try { // try from 00371eb0 to 00371ec7 has its CatchHandler @ 00371f14 */
     puStack_88 = puVar5;
     Walaber::FileManager::readFile(uVar4,param_1,&puStack_88,apbStack_78,0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_88);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_98);
-    Walaber::PropertyList::~PropertyList(apbStack_78);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_88)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_98)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::PropertyList *)apbStack_78)->~PropertyList();
   }
   else {
     pbVar6 = *(byte **)(param_1 + 0x10);
@@ -1028,7 +1028,7 @@ void Walaber::WidgetHelper::loadWidgetsXML(std::__ndk1::basic_string<char, std::
     }
     printf("Already trying to load widget file: %s\n",pbVar6);
   }
-  Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_58);
+  ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_58)->~SharedPtr<Walaber::Callback>();
   return;
 }
 
@@ -1146,7 +1146,7 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
   if ((uVar1 == 0) &&
      (iVar3 = std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::compare(&uStack_80,0,0xffffffffffffffff,&DAT_0063306f,0), iVar3 == 0)) {
                     /* try { // try from 003721d4 to 003721db has its CatchHandler @ 003722b0 */
-    Walaber::PropertyList::PropertyList(&uStack_b0);
+    new ((void *)(&uStack_b0)) Walaber::PropertyList();
                     /* try { // try from 003721e4 to 003721eb has its CatchHandler @ 003722ac */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(&puStack_d8,DAT_0072ddc0 + -0x18);
     pbVar9 = DAT_0072ddc0 + -0x18;
@@ -1166,15 +1166,15 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
                     /* try { // try from 00372250 to 00372267 has its CatchHandler @ 00372290 */
     puStack_e8 = puVar7;
     Walaber::FileManager::readFile(uVar6,&puStack_d8,&puStack_e8,&uStack_b0,1);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_e8);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_f8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_e8)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_f8)->~SharedPtr<Walaber::Callback>();
     if (((ulong)puStack_d8 & 1) != 0) {
       operator delete(pvStack_c8);
     }
   }
   else {
                     /* try { // try from 0037210c to 00372113 has its CatchHandler @ 00372308 */
-    Walaber::PropertyList::PropertyList(&uStack_b0);
+    new ((void *)(&uStack_b0)) Walaber::PropertyList();
                     /* try { // try from 00372114 to 00372117 has its CatchHandler @ 00372304 */
     uVar6 = Walaber::FileManager::getInstancePtr();
                     /* try { // try from 0037211c to 0037214b has its CatchHandler @ 00372314 */
@@ -1187,10 +1187,10 @@ void Walaber::WidgetHelper::_recurseFileReadCallback(void *p0)
                     /* try { // try from 0037215c to 00372173 has its CatchHandler @ 003722ec */
     puStack_c0 = puVar7;
     Walaber::FileManager::readFile(uVar6,&uStack_80,&puStack_c0,&uStack_b0,1);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_c0);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_d8);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_c0)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_d8)->~SharedPtr<Walaber::Callback>();
   }
-  Walaber::PropertyList::~PropertyList(&uStack_b0);
+  ((Walaber::PropertyList *)&uStack_b0)->~PropertyList();
   if ((uStack_80 & 1) != 0) {
     operator delete(puStack_70);
   }
@@ -1496,7 +1496,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_c0 = *(undefined8 *)p4;
       uStack_c8 = *(undefined8 *)p5;
                     /* try { // try from 0037292c to 0037293b has its CatchHandler @ 00372fac */
-      Walaber::Widget_ClassicControls::Widget_ClassicControls(p6,p3,&uStack_c0,&uStack_c8);
+      new ((void *)(p6)) Walaber::Widget_ClassicControls(p3,&uStack_c0,&uStack_c8);
                     /* try { // try from 0037293c to 00372963 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0);
     }
@@ -1507,7 +1507,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_d0 = *(undefined8 *)p4;
       uStack_d8 = *(undefined8 *)p5;
                     /* try { // try from 00372a68 to 00372a77 has its CatchHandler @ 00372f9c */
-      Walaber::Widget_PushButton::Widget_PushButton(p6,p3,&uStack_d0,&uStack_d8);
+      new ((void *)(p6)) Walaber::Widget_PushButton(p3,&uStack_d0,&uStack_d8);
                     /* try { // try from 00372a78 to 00372aab has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,1);
     }
@@ -1519,7 +1519,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_e0 = *(undefined8 *)p4;
       uStack_e8 = *(undefined8 *)p5;
                     /* try { // try from 00372c14 to 00372c23 has its CatchHandler @ 00372f88 */
-      Walaber::Widget_TimedButton::Widget_TimedButton(p6,p3,&uStack_e0,&uStack_e8);
+      new ((void *)(p6)) Walaber::Widget_TimedButton(p3,&uStack_e0,&uStack_e8);
                     /* try { // try from 00372c24 to 00372c57 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,2);
     }
@@ -1531,7 +1531,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_f0 = *(undefined8 *)p4;
       uStack_f8 = *(undefined8 *)p5;
                     /* try { // try from 00372c6c to 00372c7b has its CatchHandler @ 00372f84 */
-      Walaber::Widget_Spinner::Widget_Spinner(p6,p3,&uStack_f0,&uStack_f8);
+      new ((void *)(p6)) Walaber::Widget_Spinner(p3,&uStack_f0,&uStack_f8);
                     /* try { // try from 00372c7c to 00372caf has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,3);
     }
@@ -1543,7 +1543,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_100 = *(undefined8 *)p4;
       uStack_108 = *(undefined8 *)p5;
                     /* try { // try from 00372ac0 to 00372acf has its CatchHandler @ 00372f98 */
-      Walaber::Widget_ColorPicker::Widget_ColorPicker(p6,p3,&uStack_100,&uStack_108);
+      new ((void *)(p6)) Walaber::Widget_ColorPicker(p3,&uStack_100,&uStack_108);
                     /* try { // try from 00372ad0 to 00372b03 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,4);
     }
@@ -1555,7 +1555,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_110 = *(undefined8 *)p4;
       uStack_118 = *(undefined8 *)p5;
                     /* try { // try from 00372b18 to 00372b27 has its CatchHandler @ 00372f94 */
-      Walaber::Widget_IconList::Widget_IconList(p6,p3,&uStack_110,&uStack_118);
+      new ((void *)(p6)) Walaber::Widget_IconList(p3,&uStack_110,&uStack_118);
                     /* try { // try from 00372b28 to 00372b5f has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,5);
     }
@@ -1567,7 +1567,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_120 = *(undefined8 *)p4;
       uStack_128 = *(undefined8 *)p5;
                     /* try { // try from 00372cc4 to 00372cd3 has its CatchHandler @ 00372f80 */
-      Walaber::Widget_Canvas::Widget_Canvas(p6,p3,&uStack_120,&uStack_128);
+      new ((void *)(p6)) Walaber::Widget_Canvas(p3,&uStack_120,&uStack_128);
                     /* try { // try from 00372cd4 to 00372d07 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,6);
     }
@@ -1579,7 +1579,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_130 = *(undefined8 *)p4;
       uStack_138 = *(undefined8 *)p5;
                     /* try { // try from 00372d1c to 00372d2b has its CatchHandler @ 00372f7c */
-      Walaber::Widget_Toggle::Widget_Toggle(p6,p3,&uStack_130,&uStack_138);
+      new ((void *)(p6)) Walaber::Widget_Toggle(p3,&uStack_130,&uStack_138);
                     /* try { // try from 00372d2c to 00372d5f has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,8);
     }
@@ -1591,7 +1591,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_140 = *(undefined8 *)p4;
       uStack_148 = *(undefined8 *)p5;
                     /* try { // try from 00372e54 to 00372e63 has its CatchHandler @ 00372f6c */
-      Walaber::Widget_Slider::Widget_Slider(p6,p3,&uStack_140,&uStack_148);
+      new ((void *)(p6)) Walaber::Widget_Slider(p3,&uStack_140,&uStack_148);
                     /* try { // try from 00372e64 to 00372e97 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,9);
     }
@@ -1601,7 +1601,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
     if (p6 == (Walaber__Widget *)0x0) {
       p6 = (Walaber__Widget *)operator new(0x188);
                     /* try { // try from 00372d64 to 00372d73 has its CatchHandler @ 00372f78 */
-      Walaber::Widget_Label::Widget_Label(p6,p3,p4,p5);
+      new ((void *)(p6)) Walaber::Widget_Label(p3,p4,p5);
                     /* try { // try from 00372d74 to 00372da7 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,10);
     }
@@ -1613,7 +1613,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_160 = *(undefined8 *)p4;
       uStack_168 = *(undefined8 *)p5;
                     /* try { // try from 00372a10 to 00372a1f has its CatchHandler @ 00372fa0 */
-      Walaber::Widget_ProgressBar::Widget_ProgressBar(p6,p3,&uStack_160,&uStack_168);
+      new ((void *)(p6)) Walaber::Widget_ProgressBar(p3,&uStack_160,&uStack_168);
                     /* try { // try from 00372a20 to 00372a53 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0xb);
     }
@@ -1623,7 +1623,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
     if (p6 == (Walaber__Widget *)0x0) {
       p6 = (Walaber__Widget *)operator new(0x188);
                     /* try { // try from 00372b64 to 00372b73 has its CatchHandler @ 00372f90 */
-      Walaber::Widget_MovingTextBox::Widget_MovingTextBox(p6,p3,p4,p5);
+      new ((void *)(p6)) Walaber::Widget_MovingTextBox(p3,p4,p5);
                     /* try { // try from 00372b74 to 00372ba7 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0xc);
     }
@@ -1635,7 +1635,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_150 = *(undefined8 *)p4;
       uStack_158 = *(undefined8 *)p5;
                     /* try { // try from 00372bbc to 00372bcb has its CatchHandler @ 00372f8c */
-      Walaber::Widget_SlideWheel::Widget_SlideWheel(p6,p3,&uStack_150,&uStack_158);
+      new ((void *)(p6)) Walaber::Widget_SlideWheel(p3,&uStack_150,&uStack_158);
                     /* try { // try from 00372bcc to 00372bff has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0xd);
     }
@@ -1647,7 +1647,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_1a0 = *(undefined8 *)p4;
       uStack_1a8 = *(undefined8 *)p5;
                     /* try { // try from 00372978 to 00372987 has its CatchHandler @ 00372fa8 */
-      Walaber::Widget_ScrollableSet::Widget_ScrollableSet(p6,p3,&uStack_1a0,&uStack_1a8);
+      new ((void *)(p6)) Walaber::Widget_ScrollableSet(p3,&uStack_1a0,&uStack_1a8);
                     /* try { // try from 00372988 to 003729af has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0xe);
     }
@@ -1658,7 +1658,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_190 = *(undefined8 *)p4;
       uStack_198 = *(undefined8 *)p5;
                     /* try { // try from 00372dbc to 00372dcb has its CatchHandler @ 00372f74 */
-      Walaber::Widget_ScrollableGroup::Widget_ScrollableGroup(p6,p3,&uStack_190,&uStack_198);
+      new ((void *)(p6)) Walaber::Widget_ScrollableGroup(p3,&uStack_190,&uStack_198);
                     /* try { // try from 00372dcc to 00372df3 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0xf);
     }
@@ -1669,7 +1669,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_180 = *(undefined8 *)p4;
       uStack_188 = *(undefined8 *)p5;
                     /* try { // try from 00372e08 to 00372e17 has its CatchHandler @ 00372f70 */
-      Walaber::Widget_Group::Widget_Group(p6,p3,&uStack_180,&uStack_188);
+      new ((void *)(p6)) Walaber::Widget_Group(p3,&uStack_180,&uStack_188);
                     /* try { // try from 00372e18 to 00372e3f has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0x10);
     }
@@ -1680,7 +1680,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_170 = *(undefined8 *)p4;
       uStack_178 = *(undefined8 *)p5;
                     /* try { // try from 00372eac to 00372ebb has its CatchHandler @ 00372f68 */
-      Walaber::Widget_FingerCatcher::Widget_FingerCatcher(p6,p3,&uStack_170,&uStack_178);
+      new ((void *)(p6)) Walaber::Widget_FingerCatcher(p3,&uStack_170,&uStack_178);
                     /* try { // try from 00372ebc to 00372ee3 has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0x11);
     }
@@ -1689,7 +1689,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
     if (p6 == (Walaber__Widget *)0x0) {
       p6 = (Walaber__Widget *)operator new(0x1b8);
                     /* try { // try from 00372ee8 to 00372ef7 has its CatchHandler @ 00372f64 */
-      Walaber::Widget_ScoreCounter::Widget_ScoreCounter(p6,p3,p4,p5);
+      new ((void *)(p6)) Walaber::Widget_ScoreCounter(p3,p4,p5);
                     /* try { // try from 00372ef8 to 00372f1b has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0x12);
     }
@@ -1700,7 +1700,7 @@ Walaber::WidgetHelper::_createAndUpdateWidget
       uStack_1b0 = *(undefined8 *)p4;
       uStack_1b8 = *(undefined8 *)p5;
                     /* try { // try from 003729c4 to 003729d3 has its CatchHandler @ 00372fa4 */
-      Walaber::Widget_ScrollableCamera::Widget_ScrollableCamera(p6,p3,&uStack_1b0,&uStack_1b8);
+      new ((void *)(p6)) Walaber::Widget_ScrollableCamera(p3,&uStack_1b0,&uStack_1b8);
                     /* try { // try from 003729d4 to 003729fb has its CatchHandler @ 00372fc8 */
       Walaber::WidgetHelper::_copyFromPrototype(p0,p6,uVar6,p1,0x13);
     }
@@ -1887,7 +1887,7 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     if (uStack_d8 != 0) {
       *piStack_d0 = *piStack_d0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_d8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_d8)->~SharedPtr<Walaber::Texture>();
     uStack_90 = uStack_c0;
     piStack_88 = piStack_b8;
     if (uStack_c0 != 0) {
@@ -1896,8 +1896,8 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x100,&uStack_90);
                     /* try { // try from 00373318 to 0037331f has its CatchHandler @ 00373c60 */
     Walaber::Widget_PushButton::_applyTile(p1);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_90);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_90)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
     if ((abStack_80[0] & 1) != 0) {
       operator delete(pvStack_70);
     }
@@ -1913,7 +1913,7 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     if (uStack_d8 != 0) {
       *piStack_d0 = *piStack_d0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_d8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_d8)->~SharedPtr<Walaber::Texture>();
     uStack_a0 = uStack_c0;
     piStack_98 = piStack_b8;
     if (uStack_c0 != 0) {
@@ -1922,8 +1922,8 @@ void Walaber::WidgetHelper::_updateWidgetPushButton
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->f_0x110,&uStack_a0);
                     /* try { // try from 003733c4 to 003733cb has its CatchHandler @ 00373c50 */
     Walaber::Widget_PushButton::_applyTile(p1);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_a0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
     if ((abStack_80[0] & 1) != 0) {
       operator delete(pvStack_70);
     }
@@ -2265,7 +2265,7 @@ void Walaber::WidgetHelper::_updateWidgetTimedButton
   if (lStack_88 != 0) {
     *piStack_80 = *piStack_80 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_88);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 00373d70 to 00373d7b has its CatchHandler @ 00373e8c */
   Walaber::WidgetHelper::_getTexture(&lStack_98,abStack_68);
   lStack_88 = lStack_98;
@@ -2273,26 +2273,26 @@ void Walaber::WidgetHelper::_updateWidgetTimedButton
   if (lStack_98 != 0) {
     *piStack_90 = *piStack_90 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_98);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_98)->~SharedPtr<Walaber::Texture>();
   lStack_a8 = lStack_78;
   if (lStack_78 != 0) {
     *piStack_70 = *piStack_70 + 1;
   }
                     /* try { // try from 00373db4 to 00373dbf has its CatchHandler @ 00373e74 */
   Walaber::Widget_TimedButton::setActiveTexture(p1,&lStack_a8);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
   lStack_b8 = lStack_88;
   if (lStack_88 != 0) {
     *piStack_80 = *piStack_80 + 1;
   }
                     /* try { // try from 00373de0 to 00373deb has its CatchHandler @ 00373e68 */
   Walaber::Widget_TimedButton::setInactiveTexture(p1,&lStack_b8);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b8)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 00373df4 to 00373e03 has its CatchHandler @ 00373e60 */
   fVar2 = (float)Walaber::WidgetHelper::_parseFloat(p0,"maxTime");
   p1->f_0x148 = fVar2;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_88);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_78);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_88)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_78)->~SharedPtr<Walaber::Texture>();
   if ((abStack_68[0] & 1) != 0) {
     operator delete(pvStack_58);
   }
@@ -2329,17 +2329,17 @@ void Walaber::WidgetHelper::_updateWidgetSpinner
   lStack_60 = lStack_70;
   piStack_58 = piStack_68;
   if (lStack_70 == 0) {
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
   }
   else {
     *piStack_68 = *piStack_68 + 1;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_70);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_70)->~SharedPtr<Walaber::Texture>();
     *piStack_68 = *piStack_68 + 1;
   }
                     /* try { // try from 00373f50 to 00373f5b has its CatchHandler @ 00373fa4 */
   Walaber::Widget_Spinner::setTexture(p1,auStack_80);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_80);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_60);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_80)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_60)->~SharedPtr<Walaber::Texture>();
   if ((abStack_50[0] & 1) != 0) {
     operator delete(pvStack_40);
   }
@@ -2406,7 +2406,7 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   if (lStack_c0 != 0) {
     *piStack_b8 = *piStack_b8 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 003740f0 to 003740fb has its CatchHandler @ 003742c0 */
   Walaber::WidgetHelper::_getTexture(&lStack_d0,abStack_88);
   lStack_c0 = lStack_d0;
@@ -2414,7 +2414,7 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   if (lStack_d0 != 0) {
     *piStack_c8 = *piStack_c8 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 0037411c to 00374127 has its CatchHandler @ 00374298 */
   Walaber::WidgetHelper::_getTexture(&lStack_e0,abStack_a0);
   lStack_d0 = lStack_e0;
@@ -2422,34 +2422,34 @@ void Walaber::WidgetHelper::_updateWidgetColorPicker
   if (lStack_e0 != 0) {
     *piStack_d8 = *piStack_d8 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_e0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_e0)->~SharedPtr<Walaber::Texture>();
   lStack_f0 = lStack_b0;
   if (lStack_b0 != 0) {
     *piStack_a8 = *piStack_a8 + 1;
   }
                     /* try { // try from 00374160 to 0037416b has its CatchHandler @ 00374280 */
   Walaber::Widget_ColorPicker::setBGTexture(p1,&lStack_f0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_f0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_f0)->~SharedPtr<Walaber::Texture>();
   lStack_100 = lStack_c0;
   if (lStack_c0 != 0) {
     *piStack_b8 = *piStack_b8 + 1;
   }
                     /* try { // try from 0037418c to 00374197 has its CatchHandler @ 00374274 */
   Walaber::Widget_ColorPicker::setSwatchTexture(p1,&lStack_100);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_100);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_100)->~SharedPtr<Walaber::Texture>();
   lStack_110 = lStack_d0;
   if (lStack_d0 != 0) {
     *piStack_c8 = *piStack_c8 + 1;
   }
                     /* try { // try from 003741b8 to 003741c3 has its CatchHandler @ 00374268 */
   Walaber::Widget_ColorPicker::setSwatchHilightTexture(p1,&lStack_110);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_110);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_110)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 003741cc to 003741db has its CatchHandler @ 00374260 */
   bVar2 = Walaber::WidgetHelper::_parseBool(p0,"fireOnUp");
   *(byte *)&p1->f_0x12c = bVar2 & 1;
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_d0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_d0)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
   if ((abStack_a0[0] & 1) != 0) {
     operator delete(pvStack_90);
   }
@@ -2561,7 +2561,7 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   if (lStack_a8 != 0) {
     *piStack_a0 = *piStack_a0 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 0037452c to 00374537 has its CatchHandler @ 003747b4 */
   Walaber::WidgetHelper::_getTexture(&lStack_a8,abStack_f8);
   lStack_130 = lStack_a8;
@@ -2569,7 +2569,7 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   if (lStack_a8 != 0) {
     *piStack_a0 = *piStack_a0 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 00374558 to 00374563 has its CatchHandler @ 003747ac */
   Walaber::WidgetHelper::_getTexture(&lStack_a8,abStack_110);
   lStack_140 = lStack_a8;
@@ -2577,28 +2577,28 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   if (lStack_a8 != 0) {
     *piStack_a0 = *piStack_a0 + 1;
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
   lStack_150 = lStack_120;
   if (lStack_120 != 0) {
     *piStack_118 = *piStack_118 + 1;
   }
                     /* try { // try from 0037459c to 003745a7 has its CatchHandler @ 003747a0 */
   Walaber::Widget_IconList::setBGTexture(p1,&lStack_150);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_150);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_150)->~SharedPtr<Walaber::Texture>();
   lStack_160 = lStack_130;
   if (lStack_130 != 0) {
     *piStack_128 = *piStack_128 + 1;
   }
                     /* try { // try from 003745c8 to 003745d3 has its CatchHandler @ 00374794 */
   Walaber::Widget_IconList::setScrollBarTexture(p1,&lStack_160);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_160);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_160)->~SharedPtr<Walaber::Texture>();
   lStack_170 = lStack_140;
   if (lStack_140 != 0) {
     *piStack_138 = *piStack_138 + 1;
   }
                     /* try { // try from 003745f4 to 003745ff has its CatchHandler @ 00374788 */
   Walaber::Widget_IconList::setIconHilightTexture(p1,&lStack_170);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_170);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_170)->~SharedPtr<Walaber::Texture>();
   iVar5 = 0;
   lStack_180 = 0;
   piStack_178 = (int *)0x0;
@@ -2621,14 +2621,14 @@ void Walaber::WidgetHelper::_updateWidgetIconList
                     /* try { // try from 00374684 to 0037468f has its CatchHandler @ 003747e8 */
     Walaber::WidgetHelper::_getTexture(&uStack_1b8,&uStack_1a0);
     Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_180,&uStack_1b8);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_1b8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_1b8)->~SharedPtr<Walaber::Texture>();
     if (lStack_180 == 0) break;
     if (*piStack_178 != 0) {
       lStack_1c8 = lStack_180;
       *piStack_178 = *piStack_178 + 1;
                     /* try { // try from 003746c4 to 003746d3 has its CatchHandler @ 003747d4 */
       Walaber::Widget_IconList::addIcon(p1,&lStack_1c8,iVar5);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_1c8);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_1c8)->~SharedPtr<Walaber::Texture>();
       if (lStack_180 == 0) break;
     }
     iVar5 = iVar5 + 1;
@@ -2636,10 +2636,10 @@ void Walaber::WidgetHelper::_updateWidgetIconList
   if ((uStack_1a0 & 1) != 0) {
     operator delete(puStack_190);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_180);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_140);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_130);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_120);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_180)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_140)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_130)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_120)->~SharedPtr<Walaber::Texture>();
   if ((abStack_110[0] & 1) != 0) {
     operator delete(pvStack_100);
   }
@@ -2785,7 +2785,7 @@ void Walaber::WidgetHelper::_updateWidgetToggle
     if (uStack_c0 != 0) {
       *piStack_b8 = *piStack_b8 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
     uStack_d0 = uStack_f8;
     piStack_c8 = piStack_f0;
     if (uStack_f8 != 0) {
@@ -2793,8 +2793,8 @@ void Walaber::WidgetHelper::_updateWidgetToggle
     }
                     /* try { // try from 00374b48 to 00374b53 has its CatchHandler @ 00374e50 */
     Walaber::Widget_Toggle::setTextureOn(p1,&uStack_d0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_d0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_d0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f8)->~SharedPtr<Walaber::Texture>();
     if ((bStack_80 & 1) != 0) {
       operator delete(pvStack_70);
     }
@@ -2808,17 +2808,17 @@ void Walaber::WidgetHelper::_updateWidgetToggle
     uStack_f8 = uStack_c0;
     piStack_f0 = piStack_b8;
     if (uStack_c0 == 0) {
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
     }
     else {
       *piStack_b8 = *piStack_b8 + 1;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_c0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_c0)->~SharedPtr<Walaber::Texture>();
       *piStack_b8 = *piStack_b8 + 1;
     }
                     /* try { // try from 00374bf4 to 00374bff has its CatchHandler @ 00374e40 */
     Walaber::Widget_Toggle::setTextureOff(p1,auStack_e0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_e0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_e0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f8)->~SharedPtr<Walaber::Texture>();
     if ((bStack_80 & 1) != 0) {
       operator delete(pvStack_70);
     }
@@ -2947,15 +2947,15 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (lStack_90 != 0) {
       *piStack_88 = *piStack_88 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
     lStack_a0 = uStack_80;
     piStack_98 = piStack_78;
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x108,&lStack_a0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -2971,15 +2971,15 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (lStack_90 != 0) {
       *piStack_88 = *piStack_88 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
     lStack_b0 = uStack_80;
     piStack_a8 = piStack_78;
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x118,&lStack_b0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -2995,16 +2995,16 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     if (lStack_90 != 0) {
       *piStack_88 = *piStack_88 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
     lStack_c0 = uStack_80;
     piStack_b8 = piStack_78;
     if (uStack_80 != 0) {
       *piStack_78 = *piStack_78 + 1;
     }
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x128,&lStack_c0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c0)->~SharedPtr<Walaber::Texture>();
     p1->field_0x18c = 1;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -3018,16 +3018,16 @@ void Walaber::WidgetHelper::_updateWidgetSlider
     uStack_80 = lStack_90;
     piStack_78 = piStack_88;
     if (lStack_90 == 0) {
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
     }
     else {
       *piStack_88 = *piStack_88 + 1;
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_90);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_90)->~SharedPtr<Walaber::Texture>();
       *piStack_88 = *piStack_88 + 1;
     }
     Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x138,auStack_d0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_d0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_d0)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_80)->~SharedPtr<Walaber::Texture>();
     if (((uint)fStack_70 & 1) != 0) {
       operator delete(pvStack_60);
     }
@@ -3236,15 +3236,15 @@ void Walaber::WidgetHelper::_updateWidgetLabel
     if (uStack_f8 != 0) {
       *piStack_f0 = *piStack_f0 + 1;
     }
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_f8);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_f8)->~SharedPtr<Walaber::Texture>();
     uStack_108 = uStack_120;
     if (uStack_120 != 0) {
       *piStack_118 = *piStack_118 + 1;
     }
                     /* try { // try from 003756d4 to 003756df has its CatchHandler @ 00375f70 */
     Walaber::Widget_Label::setBGTexture(p1,&uStack_108);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_108);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_120);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_108)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_120)->~SharedPtr<Walaber::Texture>();
     if ((uStack_d0 & 1) != 0) {
       operator delete(puStack_c0);
     }
@@ -3571,15 +3571,15 @@ void Walaber::WidgetHelper::_updateWidgetSlideWheel
   Walaber::WidgetHelper::_getTexture(&uStack_a0,abStack_80);
   piStack_88 = piStack_98;
   if (CONCAT44(uStack_9c,uStack_a0) == 0) {
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_a0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
   }
   else {
     *piStack_98 = *piStack_98 + 1;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&uStack_a0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&uStack_a0)->~SharedPtr<Walaber::Texture>();
     *piStack_98 = *piStack_98 + 1;
   }
   Walaber::SharedPtr<Walaber::Texture>::operator=(&p1->field_0x100,auStack_b0);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_b0);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_b0)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 003760c0 to 003761eb has its CatchHandler @ 003763d8 */
   lVar4 = xmlGetProp(p0,"uv_scale");
   (*(code *)xmlFree)();
@@ -3658,7 +3658,7 @@ void Walaber::WidgetHelper::_updateWidgetSlideWheel
     uVar6 = uStack_a0;
   }
   Walaber::Widget_SlideWheel::setPadding(uVar7,uVar8,uVar9,uVar6,p1);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_90);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_90)->~SharedPtr<Walaber::Texture>();
   if ((abStack_80[0] & 1) != 0) {
     operator delete(pvStack_70);
   }
@@ -3720,14 +3720,14 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
                     /* try { // try from 00376464 to 0037646b has its CatchHandler @ 003768ec */
     Walaber::WidgetHelper::_getTexture(auStack_e0);
     Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_98,auStack_e0);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_e0)->~SharedPtr<Walaber::Texture>();
     if (lStack_98 != 0) {
       lStack_a8 = lStack_98;
       piStack_a0 = piStack_90;
       *piStack_90 = *piStack_90 + 1;
                     /* try { // try from 0037649c to 003764a7 has its CatchHandler @ 003768d8 */
       Walaber::Widget_ProgressBar::setBGTexture(p1,&lStack_a8);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_a8);
+      ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_a8)->~SharedPtr<Walaber::Texture>();
     }
     lStack_b8 = 0;
     piStack_b0 = (int *)0x0;
@@ -3735,14 +3735,14 @@ void Walaber::WidgetHelper::_updateWidgetProgressBar
                     /* try { // try from 003764c4 to 003764cb has its CatchHandler @ 003768d4 */
       Walaber::WidgetHelper::_getTexture(auStack_e0,lStack_88 + 0x18);
       Walaber::SharedPtr<Walaber::Texture>::operator=(&lStack_b8,auStack_e0);
-      Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_e0);
+      ((Walaber::SharedPtr<Walaber::Texture> *)auStack_e0)->~SharedPtr<Walaber::Texture>();
       if (lStack_b8 != 0) {
         lStack_c8 = lStack_b8;
         piStack_c0 = piStack_b0;
         *piStack_b0 = *piStack_b0 + 1;
                     /* try { // try from 003764fc to 00376507 has its CatchHandler @ 003768c4 */
         Walaber::Widget_ProgressBar::setFillTexture(p1,&lStack_c8);
-        Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_c8);
+        ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_c8)->~SharedPtr<Walaber::Texture>();
       }
     }
   }
@@ -3872,9 +3872,9 @@ LAB_00376704:
   if ((auStack_e0[0] & 1) != 0) {
     operator delete(pvStack_d0);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_b8);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_98);
-  std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>::~__vector_base(&lStack_88);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_b8)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_98)->~SharedPtr<Walaber::Texture>();
+  ((std::__ndk1::__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>> *)&lStack_88)->~__vector_base<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>, std::__ndk1::allocator<std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>>>();
   return;
 }
 
@@ -3928,16 +3928,16 @@ void Walaber::WidgetHelper::_updateWidgetMovingTextBox
   piVar1 = piStack_d8;
   piStack_b0 = piStack_d8;
   if (CONCAT71(uStack_df,bStack_e0) == 0) {
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&bStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_e0)->~SharedPtr<Walaber::Texture>();
   }
   else {
     *piStack_d8 = *piStack_d8 + 1;
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&bStack_e0);
+    ((Walaber::SharedPtr<Walaber::Texture> *)&bStack_e0)->~SharedPtr<Walaber::Texture>();
     *piVar1 = *piVar1 + 1;
   }
                     /* try { // try from 003769d4 to 003769df has its CatchHandler @ 00376fac */
   Walaber::Widget_MovingTextBox::setBGTexture(p1,auStack_c8);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_c8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_c8)->~SharedPtr<Walaber::Texture>();
                     /* try { // try from 003769e8 to 003769fb has its CatchHandler @ 00376fa4 */
   Walaber::WidgetHelper::_parseString(&bStack_e0,p0,"font");
   piVar1 = (int *)(ulong)(bStack_e0 >> 1);
@@ -4146,7 +4146,7 @@ void Walaber::WidgetHelper::_updateWidgetMovingTextBox
   if ((bStack_e0 & 1) != 0) {
     operator delete(pvStack_d0);
   }
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_b8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)auStack_b8)->~SharedPtr<Walaber::Texture>();
   if ((abStack_a8[0] & 1) != 0) {
     operator delete(pvStack_98);
   }
@@ -4454,9 +4454,9 @@ void Walaber::WidgetHelper::_getTexture(undefined8 *param_1,byte *param_2)
                     /* try { // try from 003774e8 to 00377503 has its CatchHandler @ 00377560 */
     Walaber::TextureManager::getTexture(auStack_48,uVar3,abStack_60,&uStack_70,0,0);
     Walaber::SharedPtr<Walaber::Texture>::operator=(param_1,auStack_48);
-    Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(auStack_48);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_70);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&uStack_80);
+    ((Walaber::SharedPtr<Walaber::Texture> *)auStack_48)->~SharedPtr<Walaber::Texture>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_70)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&uStack_80)->~SharedPtr<Walaber::Callback>();
     if ((abStack_60[0] & 1) != 0) {
       operator delete(pvStack_50);
     }
@@ -4943,7 +4943,7 @@ LAB_00378250:
   }
   else {
                     /* try { // try from 00378354 to 0037835b has its CatchHandler @ 003784dc */
-    Walaber::PropertyList::PropertyList(&uStack_a8);
+    new ((void *)(&uStack_a8)) Walaber::PropertyList();
                     /* try { // try from 00378364 to 0037836b has its CatchHandler @ 003784d4 */
     std::__ndk1::basic_string<char, std::__ndk1::char_traits<char>, std::__ndk1::allocator<char>>::basic_string(auStack_f0,DAT_0072ddc0 + -0x18);
     pbVar12 = DAT_0072ddc0 + -0x18;
@@ -4964,12 +4964,12 @@ LAB_00378250:
     puStack_100 = puVar10;
     puStack_f8 = puStack_108;
     Walaber::FileManager::readFile(uVar4,auStack_f0,&puStack_100,&uStack_a8,1);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_100);
-    Walaber::SharedPtr<Walaber::Callback>::~SharedPtr(&puStack_110);
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_100)->~SharedPtr<Walaber::Callback>();
+    ((Walaber::SharedPtr<Walaber::Callback> *)&puStack_110)->~SharedPtr<Walaber::Callback>();
     if ((auStack_f0[0] & 1) != 0) {
       operator delete(pvStack_e0);
     }
-    Walaber::PropertyList::~PropertyList(&uStack_a8);
+    ((Walaber::PropertyList *)&uStack_a8)->~PropertyList();
   }
   if ((uStack_90 & 1) != 0) {
     operator delete(puStack_80);

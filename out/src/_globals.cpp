@@ -61952,7 +61952,7 @@ void pumpEvents(void)
   void *pvStack_50;
   undefined4 uStack_3c;
   
-  ndk::MotionEvent::MotionEvent(auStack_c0);
+  new ((void *)(auStack_c0)) ndk::MotionEvent();
                     /* try { // try from 002c36e4 to 002c36ef has its CatchHandler @ 002c3800 */
   while (uVar3 = ndk::SafeQueue<int>::pop(touchEventIndices,&uStack_3c), (uVar3 & 1) != 0) {
                     /* try { // try from 002c36f8 to 002c3753 has its CatchHandler @ 002c3808 */
@@ -100010,7 +100010,7 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
                     /* try { // try from 0042f26c to 0042f293 has its CatchHandler @ 0042f6c8 */
   Walaber::SpriteAnimation::projectCurrentFrame(uVar13,lVar6,&lStack_198,&uStack_1a8,&uStack_158,&uStack_15c,&uStack_168,
                   &uStack_180,0);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&lStack_150);
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&lStack_150)->~SharedPtr<Walaber::SpriteAnimation>();
   uVar1 = uStack_15c;
   fVar11 = (float)uStack_180;
   fVar12 = uStack_180._4_4_;
@@ -100085,8 +100085,8 @@ void drawMasked(Walaber::Sprite *param_1,Walaber::SharedPtr<Walaber::Texture> pa
   }
                     /* try { // try from 0042f4f0 to 0042f4f3 has its CatchHandler @ 0042f6b4 */
   Walaber::GraphicsGL::bindTexture(*(undefined4 *)(lStack_198 + 0x78));
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_198);
-  Walaber::SharedPtr<Walaber::SpriteAnimation>::~SharedPtr(&uStack_1a8);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_198)->~SharedPtr<Walaber::Texture>();
+  ((Walaber::SharedPtr<Walaber::SpriteAnimation> *)&uStack_1a8)->~SharedPtr<Walaber::SpriteAnimation>();
   glTexCoordPointer(2,0x1406,0x1c,&fStack_148);
   Walaber::GraphicsGL::enableTextureClientState();
   glVertexPointer(2,0x1406,0x1c,&lStack_150);
@@ -100253,7 +100253,7 @@ void stretchQuad(Walaber::SpriteBatch *param_1,Walaber::SharedPtr<Walaber::Textu
   fStack_88 = fStack_88 + *param_5;
                     /* try { // try from 0042f9d8 to 0042f9f3 has its CatchHandler @ 0042fa30 */
   Walaber::SpriteBatch::drawQuad(param_1,&lStack_80,&uStack_70,&fStack_88,param_6,param_7);
-  Walaber::SharedPtr<Walaber::Texture>::~SharedPtr(&lStack_80);
+  ((Walaber::SharedPtr<Walaber::Texture> *)&lStack_80)->~SharedPtr<Walaber::Texture>();
   return;
 }
 
@@ -101829,7 +101829,7 @@ LAB_005f31c4:
         return;
       }
     }
-    std::bad_exception::~bad_exception(&ppuStack_78);
+    ((std::bad_exception *)&ppuStack_78)->~bad_exception();
   }
   __cxa_end_catch();
   std::get_terminate(uVar3);

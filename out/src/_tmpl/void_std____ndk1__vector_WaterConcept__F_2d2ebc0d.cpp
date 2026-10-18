@@ -39,13 +39,13 @@ void std::__ndk1::vector<WaterConcept::Fluid,std::__ndk1::allocator<WaterConcept
   std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>::__split_buffer(auStack_60,uVar5,lVar3,p0 + 0x10);
   lVar3 = lStack_50;
                     /* try { // try from 0040abd8 to 0040ac0b has its CatchHandler @ 0040ac44 */
-  WaterConceptConstants::FluidDescription::FluidDescription(lStack_50);
+  new ((void *)(lStack_50)) WaterConceptConstants::FluidDescription();
   uVar6 = *(undefined8 *)(in_x1 + 0xe0);
   *(undefined1 *)(lVar3 + 0xe8) = *(undefined1 *)(in_x1 + 0xe8);
   *(undefined8 *)(lVar3 + 0xe0) = uVar6;
   lStack_50 = lStack_50 + 0xf0;
   std::__ndk1::vector<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&> *)auStack_60)->~__split_buffer<WaterConcept::Fluid, std::__ndk1::allocator<WaterConcept::Fluid>&>();
   return;
 }
 

@@ -23,7 +23,7 @@ long * std::__ndk1::getline<char,std::__ndk1::char_traits<char>,std::__ndk1::all
   char acStack_50 [8];
   
                     /* try { // try from 003f8398 to 003f83a7 has its CatchHandler @ 003f84b0 */
-  std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry::sentry(acStack_50,param_1,1);
+  new ((void *)(acStack_50)) std::__ndk1::basic_istream<char, std::__ndk1::char_traits<char>>::sentry(param_1,1);
   if (acStack_50[0] != '\0') {
     if ((*param_2 & 1) == 0) {
       param_2[0] = 0;

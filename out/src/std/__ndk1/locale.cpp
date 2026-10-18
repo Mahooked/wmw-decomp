@@ -230,7 +230,7 @@ std____ndk1__locale * std::__ndk1::locale::operator=(std____ndk1__locale *p0)
   if (in_x1 == 0) {
     uVar2 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005d5358 to 005d5363 has its CatchHandler @ 005d538c */
-    std::runtime_error::runtime_error(uVar2,"locale constructed with null");
+    new ((void *)(uVar2)) std::runtime_error("locale constructed with null");
                     /* try { // try from 005d5364 to 005d537b has its CatchHandler @ 005d5388 */
     __cxa_throw(uVar2,&runtime_error::typeinfo,range_error::~range_error);
     return;
@@ -272,13 +272,13 @@ LAB_005d52f0:
 
 
 
-/* ok  address 0x5d53cc  size 92 */std::__ndk1::locale::locale(undefined8 *param_1,undefined8 param_2){
+/* ok  address 0x5d53cc  size 92 */std::__ndk1::locale::locale(undefined8 param_2){
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
                     /* try { // try from 005d53f0 to 005d53fb has its CatchHandler @ 005d5414 */
   func_0x005cf4bc(uVar1,param_2,0);
-  *param_1 = uVar1;
+  *this = uVar1;
   std::__ndk1::__shared_count::__add_shared(uVar1);
   return;
 }
@@ -299,7 +299,7 @@ LAB_005d52f0:
   if (p2 == 0) {
     uVar4 = __cxa_allocate_exception(0x10);
                     /* try { // try from 005d5554 to 005d555f has its CatchHandler @ 005d5588 */
-    std::runtime_error::runtime_error(uVar4,"locale constructed with null");
+    new ((void *)(uVar4)) std::runtime_error("locale constructed with null");
                     /* try { // try from 005d5560 to 005d5577 has its CatchHandler @ 005d5584 */
     __cxa_throw(uVar4,&runtime_error::typeinfo,range_error::~range_error);
     return;
@@ -342,13 +342,13 @@ LAB_005d54e4:
 
 
 
-/* ok  address 0x5d55c8  size 104 */std::__ndk1::locale::locale(undefined8 *param_1,undefined8 *param_2,undefined8 param_3,undefined4 param_4){
+/* ok  address 0x5d55c8  size 104 */std::__ndk1::locale::locale(undefined8 *param_2,undefined8 param_3,undefined4 param_4){
   undefined8 uVar1;
   
   uVar1 = operator new(0x140);
                     /* try { // try from 005d55f8 to 005d5603 has its CatchHandler @ 005d561c */
   func_0x005d17a0(uVar1,*param_2,param_3,param_4);
-  *param_1 = uVar1;
+  *this = uVar1;
   std::__ndk1::__shared_count::__add_shared(uVar1);
   return;
 }

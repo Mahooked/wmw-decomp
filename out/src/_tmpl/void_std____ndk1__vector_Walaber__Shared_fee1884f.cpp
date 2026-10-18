@@ -54,7 +54,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 0034c608 to 0034c613 has its CatchHandler @ 0034c64c */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>();
   return;
 }
 
@@ -111,7 +111,7 @@ void std::__ndk1::
   plStack_50 = plStack_50 + 2;
                     /* try { // try from 0046c808 to 0046c813 has its CatchHandler @ 0046c84c */
   std::__ndk1::vector<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>>::__swap_out_circular_buffer(p0,auStack_60);
-  std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>::~__split_buffer(auStack_60);
+  ((std::__ndk1::__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&> *)auStack_60)->~__split_buffer<Walaber::SharedPtr<Walaber::SoundEffectInstance>, std::__ndk1::allocator<Walaber::SharedPtr<Walaber::SoundEffectInstance>>&>();
   return;
 }
 

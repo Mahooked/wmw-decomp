@@ -26,8 +26,8 @@ void std::__ndk1::
     operator delete((void *)puVar1[0xd]);
   }
   puVar1[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(puVar1 + 4);
-  std::__ndk1::ios_base::~ios_base(puVar1 + 0x10);
+  ((std::__ndk1::locale *)puVar1 + 4)->~locale();
+  ((std::__ndk1::ios_base *)puVar1 + 0x10)->~ios_base();
   return;
 }
 
@@ -56,8 +56,8 @@ void std::__ndk1::
     operator delete((void *)p0[0xd]);
   }
   p0[3] = &PTR__basic_streambuf_00710968;
-  std::__ndk1::locale::~locale(p0 + 4);
-  std::__ndk1::ios_base::~ios_base(p0 + 0x10);
+  ((std::__ndk1::locale *)p0 + 4)->~locale();
+  ((std::__ndk1::ios_base *)p0 + 0x10)->~ios_base();
   operator delete(p0);
   return;
 }

@@ -24,7 +24,7 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong
   if ((*(byte *)(in_x1 + 0x70) >> 1 & 1) != 0) {
     puVar3 = (undefined8 *)__cxa_allocate_exception(0x20);
     if (((DAT_007a5f10 & 1) == 0) && (iVar2 = __cxa_guard_acquire(&DAT_007a5f10), iVar2 != 0)) {
-      std::__ndk1::error_category::error_category(&DAT_007a5f08);
+      new ((void *)(&DAT_007a5f08)) std::__ndk1::error_category();
       DAT_007a5f08 = &PTR__error_category_00719408;
       __cxa_atexit(error_category::~error_category,&DAT_007a5f08,&PTR_LOOP_00728000);
       __cxa_guard_release(&DAT_007a5f10);
@@ -34,7 +34,7 @@ void std::__ndk1::future<void>::future(std____ndk1____assoc_sub_state *p0, ulong
                     /* try { // try from 005f1318 to 005f1323 has its CatchHandler @ 005f1394 */
     std::__ndk1::error_code::message(abStack_68,&uStack_50);
                     /* try { // try from 005f1324 to 005f132f has its CatchHandler @ 005f137c */
-    std::logic_error::logic_error(puVar3,abStack_68);
+    new ((void *)(puVar3)) std::logic_error(abStack_68);
     if ((abStack_68[0] & 1) != 0) {
       operator delete(pvStack_58);
     }
